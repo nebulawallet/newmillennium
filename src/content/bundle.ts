@@ -4,6 +4,7 @@
  */
 import type { CompileResult, ContentDB, CountryContent, Issue } from "./compile.ts";
 import { PoliticsRulesFile, type PoliticsRules } from "./schemas/rules.ts";
+import { EconomyRulesFile } from "./schemas/economy.ts";
 
 export const BUNDLE_VERSION = 1;
 
@@ -28,6 +29,9 @@ export interface ContentBundle {
   decisions: unknown[];
   decisionCategories: unknown[];
   focusTrees: unknown[];
+  economyRules: ContentDB["economyRules"];
+  buildings: unknown[];
+  worldBank: ContentDB["worldBank"];
   countries: CountryContent[];
 }
 
@@ -60,6 +64,9 @@ export function toBundle({ db, issues }: CompileResult): ContentBundle {
     decisions: [...db.decisions.values()],
     decisionCategories: [...db.decisionCategories.values()],
     focusTrees: [...db.focusTrees.values()],
+    economyRules: db.economyRules,
+    buildings: [...db.buildings.values()],
+    worldBank: db.worldBank,
     countries: [...db.countries.values()].filter((c) => c.country),
   };
   return { ...body, hash: fnv1a(JSON.stringify(body)) };
@@ -86,6 +93,9 @@ export function fromBundle(b: ContentBundle): ContentDB {
     decisions: byId(b.decisions ?? []),
     decisionCategories: byId(b.decisionCategories ?? []),
     focusTrees: byId(b.focusTrees ?? []),
+    economyRules: b.economyRules ?? EconomyRulesFile.parse({}),
+    buildings: byId(b.buildings ?? []),
+    worldBank: b.worldBank ?? { year: 2000, source: [], countries: {} },
     people: new Map(),
     parties: new Map(),
     offices: new Map(),

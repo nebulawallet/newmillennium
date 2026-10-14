@@ -1,0 +1,8 @@
+{
+  "note": "Construction costs are gameplay values in construction points (civilian factories produce construction points each day).",
+  "buildings": [
+    { "id": "infrastructure", "name": "Infrastructure", "description": "Roads, rail and utilities in a province: better supply, movement and growth.", "cost": 1500, "level": "province", "max_per_province": 10, "adds": { "infrastructure": 1, "growth": 0.01 } },
+    { "id": "civilian_factory", "name": "Civilian factory", "description": "Industrial capacity for construction and consumer goods.", "cost": 10800, "level": "national", "adds": { "civilian_factories": 1, "growth": 0.02 } },
+    { "id": "military_factory", "name": "Military factory", "description": "Capacity for producing military equipment (production arrives in Phase 9).", "cost": 7200, "level": "national", "adds": { "military_factories": 1 } }
+  ]
+}

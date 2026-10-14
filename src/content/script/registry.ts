@@ -148,6 +148,14 @@ export const EFFECTS: Record<string, ScriptDef> = {
     refs: { person: "person", trait: "trait" },
   },
   add_unrest: { args: num, description: "Add to unrest (0..1 scale)." },
+  economic_shock: {
+    args: z.strictObject({ growth: num, months: z.number().positive(), unemployment: num.optional(), inflation: num.optional() }),
+    description: "An economic shock: growth points (fading over the months), plus unemployment and inflation pressure.",
+  },
+  set_budget: {
+    args: z.strictObject({ revenue: num.optional(), spending: num.optional() }),
+    description: "Change the tax and spending targets by these points of GDP.",
+  },
   add_economic_mood: { args: num, description: "Shift the economic mood (-1..1 scale)." },
   add_ruling_party_popularity: { args: num, description: "Add to the leading governing party's popularity." },
   person_leaves_office: {

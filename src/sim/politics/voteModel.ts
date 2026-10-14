@@ -125,6 +125,9 @@ export interface SimProvince {
   area_km2: number;
   /** [longitude, latitude]; optional (synthetic provinces have none). */
   centroid?: [number, number];
+  name?: string;
+  /** Starting infrastructure level (1-10) from the map. */
+  infrastructure?: number;
 }
 
 /** A country's provinces at the moment (owned), or synthetic equal units when no map is loaded. */

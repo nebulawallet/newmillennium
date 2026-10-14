@@ -226,8 +226,8 @@ export const unrestSystem: System = {
     const ur = db.politicsRules.unrest;
     for (const cs of Object.values(state.countries)) {
       if (!cs.active || cs.tag.endsWith(REBEL_SUFFIX)) continue;
-      // placeholder business cycle until the economy arrives in Phase 7
-      cs.economicMood = clamp(cs.economicMood * 0.92 + 0.12 * rng.normal(), -1, 1);
+      // countries without an economy model (e.g. rebels) keep a neutral mood
+      if (!cs.economy) cs.economicMood = clamp(cs.economicMood * 0.9, -1, 1);
       cs.unrest = clamp(cs.unrest * (1 - ur.monthly_decay), 0, 1);
       const actions = igActions(ctx, cs);
       if (actions.some((a) => a.startsWith("impeachment:"))) tryImpeachment(ctx, cs);

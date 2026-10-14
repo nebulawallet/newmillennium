@@ -13,6 +13,7 @@ import { clamp, effectiveLeader, isAvailable, normalise, rulingSubIdeology } fro
 import { mergeParty } from "../politics/parties.ts";
 import { calibrate } from "../politics/voteModel.ts";
 import { initialSchedule } from "../politics/schedule.ts";
+import { applyShock } from "../economy/economy.ts";
 
 export interface Scope {
   /** The country the script currently acts on. */
@@ -141,10 +142,8 @@ function trigger(ctx: SimContext, scope: Scope, k: string, v: unknown): boolean 
       return !!r && (r.winner === a.winner || r.winnerParty === a.winner);
     }
     case "ruling_party_popularity_above": return (cs.partyPopularity[cs.rulingParties[0] ?? ""] ?? 0) > (v as number);
-    // the economy arrives in Phase 7
-    case "gdp_growth_below":
-    case "gdp_growth_above":
-      return false;
+    case "gdp_growth_below": return !!cs.economy && cs.economy.growth < (v as number);
+    case "gdp_growth_above": return !!cs.economy && cs.economy.growth > (v as number);
     default:
       return false;
   }
@@ -196,7 +195,17 @@ function effect(ctx: SimContext, scope: Scope, k: string, v: unknown, source: st
     case "add_war_support": cs.warSupport = clamp(cs.warSupport + (v as number), 0, 1); break;
     case "add_political_power": cs.politicalPower = Math.max(0, cs.politicalPower + (v as number)); break;
     case "add_unrest": cs.unrest = clamp(cs.unrest + (v as number), 0, 1); break;
-    case "add_economic_mood": cs.economicMood = clamp(cs.economicMood + (v as number), -1, 1); break;
+    case "add_economic_mood":
+      if (cs.economy) applyShock(ctx, cs, { growth: (v as number) * 4, months: 12 }, source);
+      else cs.economicMood = clamp(cs.economicMood + (v as number), -1, 1);
+      break;
+    case "economic_shock": applyShock(ctx, cs, a as { growth: number; months: number; unemployment?: number; inflation?: number }, source); break;
+    case "set_budget":
+      if (cs.economy) {
+        cs.economy.revenueTarget = clamp(cs.economy.revenueTarget + ((a.revenue as number | undefined) ?? 0), 3, 70);
+        cs.economy.spendingTarget = clamp(cs.economy.spendingTarget + ((a.spending as number | undefined) ?? 0), 5, 75);
+      }
+      break;
     case "set_flag": cs.flags[v as string] = state.day; break;
     case "clear_flag": delete cs.flags[v as string]; break;
     case "set_global_flag": state.globalFlags[v as string] = state.day; break;
@@ -300,11 +309,11 @@ function effect(ctx: SimContext, scope: Scope, k: string, v: unknown, source: st
       break;
     }
     // stored for later systems: traits on people, opinions and war goals (Phase 11/10), techs (Phase 8), money (Phase 7)
+    case "add_treasury": if (cs.economy) cs.economy.treasury = Math.max(0, cs.economy.treasury + (v as number)); break;
     case "add_trait":
     case "add_opinion":
     case "add_wargoal":
     case "unlock_tech":
-    case "add_treasury":
       break;
   }
 }
@@ -351,7 +360,7 @@ export function describeEffects(db: ContentDB, effects: unknown[], depth = 0): s
       case "add_war_support": line = `War support ${signed(v as number, true)}`; break;
       case "add_political_power": line = `Political power ${signed(v as number)}`; break;
       case "add_unrest": line = `Unrest ${signed(v as number, true)}`; break;
-      case "add_economic_mood": line = `Economic mood ${signed(Math.round((v as number) * 100))}`; break;
+      case "add_economic_mood": line = `GDP growth ${signed(Math.round((v as number) * 40) / 10)} points, fading over a year`; break;
       case "set_flag": case "clear_flag": case "set_global_flag": line = null; break;
       case "add_timed_modifier": {
         const m = db.modifiers.get(a.modifier as string);
@@ -382,7 +391,21 @@ export function describeEffects(db: ContentDB, effects: unknown[], depth = 0): s
       case "release_country": line = `${name.tag(v as string)} is released`; break;
       case "country_event": line = `Leads to: ${(db.events.get(a.id as string)?.title) ?? a.id}`; break;
       case "person_leaves_office": line = `${name.person(a.person as string)} leaves office`; break;
-      case "add_treasury": line = later(`Treasury ${signed(v as number)} billion`, "Phase 7"); break;
+      case "add_treasury": line = `Reserves ${signed(v as number)} billion USD`; break;
+      case "economic_shock": {
+        const parts = [`GDP growth ${signed(a.growth as number)} points`];
+        if (a.unemployment) parts.push(`unemployment ${signed(a.unemployment as number)} points`);
+        if (a.inflation) parts.push(`inflation ${signed(a.inflation as number)} points`);
+        line = `${parts.join(", ")}, fading over ${a.months} months`;
+        break;
+      }
+      case "set_budget": {
+        const parts = [];
+        if (a.revenue) parts.push(`taxes ${signed(a.revenue as number)}`);
+        if (a.spending) parts.push(`spending ${signed(a.spending as number)}`);
+        line = `Budget: ${parts.join(", ")} points of GDP`;
+        break;
+      }
       case "unlock_tech": line = later(`Technology: ${v}`, "Phase 8"); break;
       case "add_wargoal": line = later(`War goal against ${name.tag(a.target as string)}`, "Phase 10"); break;
       case "add_opinion": line = later(`Opinion ${signed(a.value as number)}`, "Phase 11"); break;
@@ -435,6 +458,8 @@ export function describeTrigger(db: ContentDB, node: unknown): string[] {
     case "latest_winner": return [`${db.people.get(a.winner as string)?.name.en ?? db.parties.get(a.winner as string)?.name.en ?? a.winner} won the last election`];
     case "is_player": return [yes(v, "your country", "an AI country")];
     case "is_ai": return [yes(v, "an AI country", "your country")];
+    case "gdp_growth_below": return [`GDP growth below ${v}%`];
+    case "gdp_growth_above": return [`GDP growth above ${v}%`];
     case "has_flag": case "has_global_flag": return [];
     case "always": return v ? [] : ["never"];
     default: return [k.replace(/_/g, " ")];

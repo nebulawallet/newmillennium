@@ -1,0 +1,130 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "note": {
+      "type": "string"
+    },
+    "factory_value_bn": {
+      "default": 8,
+      "type": "number"
+    },
+    "construction_per_factory": {
+      "default": 5,
+      "type": "number"
+    },
+    "max_factories_per_project": {
+      "default": 15,
+      "type": "number"
+    },
+    "consumer_goods_share": {
+      "default": {},
+      "type": "object",
+      "propertyNames": {
+        "type": "string",
+        "pattern": "^[a-z0-9]+(?:_[a-z0-9]+)*$"
+      },
+      "additionalProperties": {
+        "type": "number",
+        "minimum": 0,
+        "maximum": 0.9
+      }
+    },
+    "trend_growth_base": {
+      "default": 1.2,
+      "type": "number"
+    },
+    "trend_growth_catch_up": {
+      "default": 5.5,
+      "type": "number"
+    },
+    "growth_adjustment": {
+      "default": 0.25,
+      "type": "number"
+    },
+    "okun": {
+      "default": 0.4,
+      "type": "number"
+    },
+    "unemployment_reversion": {
+      "default": 0.03,
+      "type": "number"
+    },
+    "inflation_gap_weight": {
+      "default": 0.3,
+      "type": "number"
+    },
+    "inflation_reversion": {
+      "default": 0.06,
+      "type": "number"
+    },
+    "fiscal_multiplier": {
+      "default": 0.15,
+      "type": "number"
+    },
+    "rate_effect": {
+      "default": 0.25,
+      "type": "number"
+    },
+    "budget_adjustment": {
+      "default": 0.1,
+      "type": "number"
+    },
+    "defaults": {
+      "default": {},
+      "type": "object",
+      "propertyNames": {
+        "type": "string",
+        "enum": [
+          "low",
+          "lower_middle",
+          "upper_middle",
+          "high"
+        ]
+      },
+      "additionalProperties": {
+        "type": "object",
+        "propertyNames": {
+          "type": "string"
+        },
+        "additionalProperties": {
+          "type": "number"
+        }
+      }
+    },
+    "resources": {
+      "default": [],
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[a-z0-9]+(?:_[a-z0-9]+)*$"
+          },
+          "name": {
+            "type": "string"
+          },
+          "rent_key": {
+            "type": "string"
+          },
+          "color": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "name",
+          "rent_key",
+          "color"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "price_elasticity": {
+      "default": 0.15,
+      "type": "number"
+    }
+  },
+  "additionalProperties": false
+}

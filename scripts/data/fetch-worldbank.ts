@@ -20,32 +20,63 @@ const INDICATORS: Record<string, string> = {
   central_gov_debt_pct_gdp: "GC.DOD.TOTL.GD.ZS",
   military_spending_pct_gdp: "MS.MIL.XPND.GD.ZS",
   urban_population_pct: "SP.URB.TOTL.IN.ZS",
+  pop_growth_pct: "SP.POP.GROW",
+  revenue_pct_gdp: "GC.REV.XGRT.GD.ZS",
+  expense_pct_gdp: "GC.XPN.TOTL.GD.ZS",
+  tax_revenue_pct_gdp: "GC.TAX.TOTL.GD.ZS",
+  lending_rate_pct: "FR.INR.LEND",
+  industry_pct_gdp: "NV.IND.TOTL.ZS",
+  manufacturing_pct_gdp: "NV.IND.MANF.ZS",
+  services_pct_gdp: "NV.SRV.TOTL.ZS",
+  agriculture_pct_gdp: "NV.AGR.TOTL.ZS",
+  exports_pct_gdp: "NE.EXP.GNFS.ZS",
+  imports_pct_gdp: "NE.IMP.GNFS.ZS",
+  oil_rents_pct_gdp: "NY.GDP.PETR.RT.ZS",
+  gas_rents_pct_gdp: "NY.GDP.NGAS.RT.ZS",
+  coal_rents_pct_gdp: "NY.GDP.COAL.RT.ZS",
+  mineral_rents_pct_gdp: "NY.GDP.MINR.RT.ZS",
+  reserves_usd: "FI.RES.TOTL.CD",
+  labor_force: "SL.TLF.TOTL.IN",
 };
+
+/** Sparse fiscal series: where 2000 is missing, the earliest value up to this year is used (and its year recorded). */
+const FILL_UNTIL = 2005;
+const SPARSE = new Set(["central_gov_debt_pct_gdp", "revenue_pct_gdp", "expense_pct_gdp", "tax_revenue_pct_gdp", "lending_rate_pct"]);
 
 interface Row {
   countryiso3code: string;
   country: { value: string };
   value: number | null;
+  date: string;
 }
 
-async function indicator(code: string): Promise<Row[]> {
-  const url = `https://api.worldbank.org/v2/country/all/indicator/${code}?date=${YEAR}&format=json&per_page=500`;
-  const r = await fetch(url, { headers: { "User-Agent": "NewMillennium-data/0.1" } });
-  if (!r.ok) throw new Error(`${code}: HTTP ${r.status}`);
-  const j = (await r.json()) as [unknown, Row[]];
-  return j[1] ?? [];
+async function indicator(code: string, until = YEAR): Promise<Row[]> {
+  const out: Row[] = [];
+  for (let page = 1; page < 20; page++) {
+    const url = `https://api.worldbank.org/v2/country/all/indicator/${code}?date=${YEAR}:${until}&format=json&per_page=1000&page=${page}`;
+    const r = await fetch(url, { headers: { "User-Agent": "NewMillennium-data/0.1" } });
+    if (!r.ok) throw new Error(`${code}: HTTP ${r.status}`);
+    const j = (await r.json()) as [{ pages: number }, Row[]];
+    out.push(...(j[1] ?? []));
+    if (page >= (j[0]?.pages ?? 1)) break;
+  }
+  return out;
 }
 
 async function main() {
   const countries: Record<string, Record<string, number | string>> = {};
   for (const [key, code] of Object.entries(INDICATORS)) {
-    const rows = await indicator(code);
+    const sparse = SPARSE.has(key);
+    const rows = (await indicator(code, sparse ? FILL_UNTIL : YEAR)).filter((r) => r.value !== null && r.countryiso3code);
+    // earliest year first, so 2000 wins where it exists
+    rows.sort((a, b) => Number(a.date) - Number(b.date));
     let n = 0;
     for (const row of rows) {
       const iso = row.countryiso3code;
-      if (!iso || row.value === null) continue;
       countries[iso] ??= { name: row.country.value };
-      countries[iso]![key] = row.value;
+      if (countries[iso]![key] !== undefined) continue;
+      countries[iso]![key] = row.value!;
+      if (Number(row.date) !== YEAR) countries[iso]![`${key}_year`] = Number(row.date);
       n++;
     }
     console.log(`  ${key} (${code}): ${n} values`);
@@ -60,7 +91,7 @@ async function main() {
           { url: "https://api.worldbank.org/v2/", title: "World Bank, World Development Indicators API (CC BY 4.0)", accessed: new Date().toISOString().slice(0, 10) },
         ],
         indicators: INDICATORS,
-        note: "Includes aggregates (regions, income groups) under their World Bank codes; game code only reads country ISO3 entries.",
+        note: `Includes aggregates (regions, income groups) under their World Bank codes; game code only reads country ISO3 entries. For sparse fiscal series (${[...SPARSE].join(", ")}) a missing 2000 value is filled with the earliest value up to ${FILL_UNTIL}; <key>_year records the year used.`,
         countries,
       },
       null,

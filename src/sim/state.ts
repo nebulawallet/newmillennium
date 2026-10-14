@@ -9,8 +9,9 @@ import { calibrate } from "./politics/voteModel.ts";
 import { initialSchedule } from "./politics/schedule.ts";
 import { igTargets } from "./politics/interestGroups.ts";
 import { seedRng, type RngState } from "./rng.ts";
+import { initialEconomy, type EconomyState, type MarketState } from "./economy/economy.ts";
 
-export const STATE_VERSION = 3;
+export const STATE_VERSION = 4;
 
 export interface GameRules {
   /** historical: real election winners are heavily weighted; dynamic: results come purely from the simulation. */
@@ -154,6 +155,8 @@ export interface CountryState {
   activeDecisions: { id: string; until: number }[];
   /** Event id -> day it last fired (fire_only_once). */
   eventsFired: Record<string, number>;
+  /** Present for countries with politics data. */
+  economy?: EconomyState;
 }
 
 export interface LogEntry {
@@ -210,6 +213,9 @@ export interface GameState {
   pendingCoalition: PendingCoalition | null;
   dynamicCountries: Record<string, DynamicCountry>;
   globalFlags: Record<string, number>;
+  market: MarketState;
+  /** Buildings added during play, per province id. */
+  provinceBuildings: Record<string, Record<string, number>>;
   /** Events waiting for the player's answer (AI answers at once). */
   pendingEvents: PendingEvent[];
   /** Events queued by country_event effects with a delay. */
@@ -229,6 +235,8 @@ export function createInitialState(
   const day = dayOf(GAME_START);
   const countries: Record<string, CountryState> = {};
   const rules: GameRules = { electionMode: "historical", ...opts.rules };
+  const mapPop = new Map<string, number>();
+  for (const p of map.provinces) mapPop.set(p.owner, (mapPop.get(p.owner) ?? 0) + p.population);
 
   for (const entry of db.countryList) {
     const cc = db.countries.get(entry.tag);
@@ -322,6 +330,8 @@ export function createInitialState(
       for (const o of cc?.cabinet ?? []) if (needsMajority) cs.historicalOffices[o.id] = false;
     }
     if (c) {
+      cs.economy = initialEconomy(db, entry.tag, mapPop.get(entry.tag) ?? 1_000_000);
+      cs.economicMood = 0;
       cs.partyBias = calibrate(db, cs, day);
       const targets = igTargets(db, cs);
       for (const [ig, s] of Object.entries(interestGroups)) cs.igBase[ig] = s.approval - (targets[ig] ?? 50);
@@ -346,6 +356,8 @@ export function createInitialState(
     pendingCoalition: null,
     dynamicCountries: {},
     globalFlags: {},
+    market: { prices: Object.fromEntries(db.economyRules.resources.map((r) => [r.id, 1])), demand: 1 },
+    provinceBuildings: {},
     pendingEvents: [],
     scheduledEvents: [],
     log: [],
@@ -376,6 +388,8 @@ export function migrateState(db: ContentDB, s: GameState): GameState {
   s.pendingCoalition ??= null;
   s.dynamicCountries ??= {};
   s.globalFlags ??= {};
+  s.market ??= fresh.market;
+  s.provinceBuildings ??= {};
   s.pendingEvents ??= [];
   s.scheduledEvents ??= [];
   for (const [tag, cs] of Object.entries(s.countries)) {
@@ -384,6 +398,7 @@ export function migrateState(db: ContentDB, s: GameState): GameState {
     cs.decisionCooldowns ??= {};
     cs.activeDecisions ??= [];
     cs.eventsFired ??= {};
+    if (!cs.economy && fresh.countries[tag]?.economy) cs.economy = fresh.countries[tag]!.economy;
   }
   s.version = STATE_VERSION;
   return s;

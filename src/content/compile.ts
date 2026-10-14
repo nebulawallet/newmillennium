@@ -6,6 +6,7 @@
 import type { z } from "zod";
 import type { FileProvider } from "./files.ts";
 import { PoliticsRulesFile, type PoliticsRules } from "./schemas/rules.ts";
+import { BuildingsFile, EconomyRulesFile, WorldBankFile, type BuildingDef, type EconomyRules } from "./schemas/economy.ts";
 import { DecisionsFile, EventsFile, FocusTreeFile, type DecisionDef, type EventDef, type FocusTree } from "./schemas/scripted.ts";
 import { validateEffects, validateTrigger, type ScriptIssue } from "./script/validate.ts";
 import type { RefKind } from "./script/registry.ts";
@@ -104,6 +105,10 @@ export interface ContentDB {
   decisions: Map<string, DecisionDef & { file: string }>;
   decisionCategories: Map<string, { id: string; name: string; description: string }>;
   focusTrees: Map<string, FocusTree & { file: string }>;
+  economyRules: EconomyRules;
+  buildings: Map<string, BuildingDef>;
+  /** World Bank 2000 figures by ISO3 code (only codes that are game tags), plus the file's sources. */
+  worldBank: { year: number; source: { url: string; title: string; accessed: string }[]; countries: Record<string, Record<string, number | string>> };
   people: Map<string, Person & { file: string }>;
   parties: Map<string, Party & { file: string }>;
   offices: Map<string, OfficeRec>;
@@ -205,6 +210,17 @@ export function compileContent(files: FileProvider, opts: CompileOptions = {}): 
     decisions: new Map(),
     decisionCategories: new Map(),
     focusTrees: new Map(),
+    economyRules: load("economy/economy.json", EconomyRulesFile, false) ?? EconomyRulesFile.parse({}),
+    buildings: indexBy(load("economy/buildings.json", BuildingsFile, false)?.buildings ?? [], "economy/buildings.json", "building"),
+    worldBank: (() => {
+      const wb = load("economy/worldbank_2000.json", WorldBankFile, false);
+      const tags = new Set((listF?.countries ?? []).map((c) => c.tag));
+      return {
+        year: wb?.year ?? 2000,
+        source: wb?.source ?? [],
+        countries: Object.fromEntries(Object.entries(wb?.countries ?? {}).filter(([k]) => tags.has(k))),
+      };
+    })(),
     people: new Map(),
     parties: new Map(),
     offices: new Map(),

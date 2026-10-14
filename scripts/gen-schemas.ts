@@ -10,6 +10,7 @@ import * as defs from "../src/content/schemas/definitions.ts";
 import * as cty from "../src/content/schemas/country.ts";
 import * as rules from "../src/content/schemas/rules.ts";
 import * as scripted from "../src/content/schemas/scripted.ts";
+import * as economy from "../src/content/schemas/economy.ts";
 
 const root = resolve(import.meta.dirname, "..");
 const out = resolve(root, "data/_schema");
@@ -37,6 +38,8 @@ const schemas: [string, z.ZodType, string[]][] = [
   ["events", scripted.EventsFile, ["data/events/*.json"]],
   ["decisions", scripted.DecisionsFile, ["data/decisions/*.json"]],
   ["focus_tree", scripted.FocusTreeFile, ["data/focus_trees/*.json"]],
+  ["economy_rules", economy.EconomyRulesFile, ["data/economy/economy.json"]],
+  ["buildings", economy.BuildingsFile, ["data/economy/buildings.json"]],
 ];
 
 const mapping: { fileMatch: string[]; url: string }[] = [];
