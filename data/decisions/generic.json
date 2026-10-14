@@ -1,0 +1,125 @@
+{
+  "categories": [
+    { "id": "campaign", "name": "Elections", "description": "Campaigning before national elections." },
+    { "id": "domestic", "name": "Domestic politics", "description": "Managing interest groups and public opinion." },
+    { "id": "security", "name": "Internal security", "description": "Responses to unrest. Each has a cost in public trust." }
+  ],
+  "decisions": [
+    {
+      "id": "election_campaign",
+      "name": "National election campaign",
+      "description": "Put the government's record before the voters in the months before an election.",
+      "category": "campaign",
+      "visible": { "election_within_days": 240 },
+      "available": { "election_within_days": 180 },
+      "cost": { "political_power": 75 },
+      "effects": [{ "add_ruling_party_popularity": 0.02 }],
+      "cooldown_days": 300,
+      "ai_weight": 2
+    },
+    {
+      "id": "national_unity_appeal",
+      "name": "Appeal for national unity",
+      "description": "The head of government addresses the nation and calls for calm and common purpose.",
+      "category": "domestic",
+      "available": { "unrest_above": 0.05 },
+      "cost": { "political_power": 50 },
+      "effects": [{ "add_unrest": -0.05 }, { "add_stability": 0.02 }],
+      "cooldown_days": 365,
+      "ai_weight": 1
+    },
+    {
+      "id": "negotiate_with_unions",
+      "name": "Negotiate with the unions",
+      "description": "Open talks with organised labour on wages and conditions.",
+      "category": "domestic",
+      "visible": { "ig_influence_above": { "group": "labour_unions", "value": 0.05 } },
+      "available": { "ig_approval_below": { "group": "labour_unions", "value": 45 } },
+      "cost": { "political_power": 60 },
+      "effects": [
+        { "add_interest_group_approval": { "group": "labour_unions", "value": 8 } },
+        { "add_interest_group_approval": { "group": "business", "value": -3 } }
+      ],
+      "cooldown_days": 540,
+      "ai_weight": 1
+    },
+    {
+      "id": "business_confidence_package",
+      "name": "Business confidence package",
+      "description": "Consult employers and promise a stable regulatory climate.",
+      "category": "domestic",
+      "visible": { "ig_influence_above": { "group": "business", "value": 0.05 } },
+      "available": { "ig_approval_below": { "group": "business", "value": 45 } },
+      "cost": { "political_power": 60 },
+      "effects": [
+        { "add_interest_group_approval": { "group": "business", "value": 8 } },
+        { "add_interest_group_approval": { "group": "labour_unions", "value": -3 } }
+      ],
+      "cooldown_days": 540,
+      "ai_weight": 1
+    },
+    {
+      "id": "outreach_to_minorities",
+      "name": "Outreach to minority communities",
+      "description": "Meet community representatives and fund local programmes.",
+      "category": "domestic",
+      "visible": { "ig_influence_above": { "group": "minorities", "value": 0.05 } },
+      "available": { "ig_approval_below": { "group": "minorities", "value": 45 } },
+      "cost": { "political_power": 50 },
+      "effects": [{ "add_interest_group_approval": { "group": "minorities", "value": 8 } }, { "add_unrest": -0.02 }],
+      "cooldown_days": 540,
+      "ai_weight": 1
+    },
+    {
+      "id": "rural_support_programme",
+      "name": "Rural support programme",
+      "description": "Fund farm support and rural infrastructure.",
+      "category": "domestic",
+      "visible": { "ig_influence_above": { "group": "rural", "value": 0.05 } },
+      "available": { "ig_approval_below": { "group": "rural", "value": 45 } },
+      "cost": { "political_power": 50 },
+      "effects": [{ "add_interest_group_approval": { "group": "rural", "value": 7 } }, { "add_interest_group_approval": { "group": "urban_middle_class", "value": -2 } }],
+      "cooldown_days": 540,
+      "ai_weight": 1
+    },
+    {
+      "id": "deploy_riot_police",
+      "name": "Deploy riot police",
+      "description": "Use police units to clear protests and restore order.",
+      "category": "security",
+      "visible": { "unrest_above": 0.05 },
+      "available": { "unrest_above": 0.12 },
+      "cost": { "political_power": 40 },
+      "effects": [
+        { "add_unrest": -0.1 },
+        { "add_interest_group_approval": { "group": "security_services", "value": 3 } },
+        { "add_interest_group_approval": { "group": "youth_students", "value": -5 } },
+        { "add_interest_group_approval": { "group": "urban_middle_class", "value": -3 } },
+        { "add_interest_group_approval": { "group": "media", "value": -3 } }
+      ],
+      "cooldown_days": 180,
+      "ai_weight": 1
+    },
+    {
+      "id": "state_of_emergency",
+      "name": "Declare a state of emergency",
+      "description": "Invoke the constitution's emergency powers for six months.",
+      "category": "security",
+      "visible": { "all": [{ "has_emergency_powers": true }, { "unrest_above": 0.2 }] },
+      "available": { "unrest_above": 0.35 },
+      "cost": { "political_power": 100 },
+      "effects": [
+        { "add_unrest": -0.2 },
+        { "add_stability": 0.05 },
+        { "add_timed_modifier": { "modifier": "civil_liberties", "value": -0.2, "days": 180 } },
+        { "add_interest_group_approval": { "group": "media", "value": -8 } },
+        { "add_interest_group_approval": { "group": "urban_middle_class", "value": -6 } },
+        { "add_interest_group_approval": { "group": "security_services", "value": 5 } }
+      ],
+      "days": 180,
+      "complete_effects": [{ "add_stability": -0.02 }],
+      "cooldown_days": 720,
+      "ai_weight": 0.5
+    }
+  ]
+}

@@ -2,7 +2,7 @@ import { describe, expect, it } from "vitest";
 import { compileContent } from "../src/content/compile.ts";
 import { parseSaveFile, toSaveFile } from "../src/sim/save.ts";
 import { Simulation, simMapFrom } from "../src/sim/simulation.ts";
-import { createInitialState, migrateState } from "../src/sim/state.ts";
+import { createInitialState, migrateState, STATE_VERSION } from "../src/sim/state.ts";
 import { checkLawChange } from "../src/sim/politics/laws.ts";
 import { igTarget } from "../src/sim/politics/interestGroups.ts";
 import { NodeFiles } from "../scripts/lib/nodeFiles.ts";
@@ -114,7 +114,7 @@ describe("saves", () => {
     delete old.mapResults;
     for (const c of Object.values(old.countries) as Record<string, unknown>[]) delete c.schedule;
     const m = migrateState(db, old);
-    expect(m.version).toBe(2);
+    expect(m.version).toBe(STATE_VERSION);
     expect(m.elections).toEqual([]);
     expect(m.countries.DEU!.schedule.length).toBeGreaterThan(0);
   });

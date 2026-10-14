@@ -1,6 +1,6 @@
 # Handoff: New Millennium
 
-Read this first when you pick up the project in a new session, with a new agent, or after a break. Last updated 14 October 2026, after the Phase 5 commit.
+Read this first when you pick up the project in a new session, with a new agent, or after a break. Last updated 14 October 2026, after the Phase 6 commit.
 
 ## What this is
 
@@ -31,7 +31,8 @@ New Millennium is a grand strategy game in the style of Hearts of Iron IV, set f
 | 4 | Time loop, top bar, save/load, politics screen | **Done** |
 | — | UI rebuild in the HOI4 layout | **Done** (`193ea02`), at the user's request |
 | 5 | Elections, coalitions, interest groups, laws, unrest, coups, civil war | **Done** (see "Phase 5 notes" below) |
-| 6–13 | Scripting and events, economy, research, production, combat, diplomacy, AI, content | Not started. Phase 6 is next. |
+| 6 | Scripting, events, decisions, focus trees | **Done** (see "Phase 6 notes") |
+| 7–13 | Economy, research, production, combat, diplomacy, AI, content | Not started. Phase 7 is next. |
 
 ## Where things stand right now
 
@@ -49,6 +50,15 @@ New Millennium is a grand strategy game in the style of Hearts of Iron IV, set f
 - **Interest groups, laws, unrest:** approval drifts to a target (laws, ruling ideology, leader traits, economy) with a per-country offset so 2000 values are the equilibrium. Laws cost PP and pass a legislature vote. Unhappy groups protest, strike, march, rise up or try impeachment; armed groups can stage coups (military junta, elections end); civil war splits the map into one contiguous rebel region (`force_civil_war` command for scripting and tests).
 - **UI:** election-night window, government-formation window, law picker, government support / unrest / economic mood rows, recent results, early elections, election-results and unrest map modes.
 - **Stubbed in Phase 5:** party bans, dynamic party congresses in one-party states, combat in civil wars (ends by a monthly chance until Phase 10), running mates are picked by appeal, the economic mood is a placeholder cycle until Phase 7, aging and health exits.
+
+### Phase 6 notes
+
+- **Script engine** (`src/sim/scripting/engine.ts`): evaluates every trigger and runs every effect in the registry, including scopes (`country`, neighbours, every/any country, root/from), `if` and `random_list`. Effects for systems not built yet (treasury, techs, war goals, opinion) are accepted, described as "arrives in Phase N" and do nothing. `describeEffects` / `describeTrigger` produce the tooltip text.
+- **Systems** (`src/sim/scripting/systems.ts`): historical events fire on their dates (historical mode, while the country follows history unless `any_path`); random events by `mean_days`; queued `country_event`s. The player answers in an event window (the game pauses); AI picks by weight. Focus progress is daily; AI countries pick weighted available focuses. Decisions cost PP, can last `days`, and cool down; AI takes them monthly.
+- **Content:** generic tree (24 focuses in four branches), USA tree (Bush and Gore administration branches by who is President, Republican/Democratic agendas by governing party), RUS tree (Putin-era reforms when Putin is President, CPRF programme when the CPRF governs), 8 generic decisions, 5 sourced historical events (Bush v. Gore, September 11, China joins the WTO, euro cash, 2004 EU enlargement).
+- **UI:** focus tile beside the flag opens the focus tree; Decisions tab (P); event windows. The Decisions tab is no longer a stub.
+- **Acceptance:** all scripts validate; the Gore and Bush branches diverge (`tests/scripting.test.ts`).
+- **Not yet:** Ecuador January 2000 and Yugoslavia October 2000 events (need ECU and YUG data); trees for the other ~30 tier-1 countries (Phase 13).
 
 ## How to run
 

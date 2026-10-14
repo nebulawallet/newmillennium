@@ -71,6 +71,7 @@ export function countryModifiers(db: ContentDB, cs: CountryState): Record<string
   if (sub) add(db.subIdeologies.get(sub)?.modifiers);
   const leader = effectiveLeader(db, cs);
   for (const t of (leader ? db.people.get(leader)?.traits : undefined) ?? []) add(db.traits.get(t)?.modifiers);
+  for (const tm of cs.timedModifiers ?? []) out[tm.modifier] = (out[tm.modifier] ?? 0) + tm.value;
   return out;
 }
 

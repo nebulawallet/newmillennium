@@ -26,5 +26,5 @@ export const TABS: TabDef[] = [
   { id: "recruitment", label: "Recruitment", key: "U", icon: "recruitment", phase: "Phase 9", summary: "Division templates, training and deployment, and manpower." },
   { id: "logistics", label: "Logistics", key: "I", icon: "logistics", phase: "Phase 10", summary: "Supply, equipment stockpiles and shortfalls." },
   { id: "intelligence", label: "Intelligence", key: "O", icon: "intelligence", phase: "Phase 11", summary: "Intelligence services, foreign influence and covert support for parties and movements." },
-  { id: "decisions", label: "Decisions", key: "P", icon: "decisions", phase: "Phase 6", summary: "Player decisions with costs: election campaigns, reforms, emergencies." },
+  { id: "decisions", label: "Decisions", key: "P", icon: "decisions", phase: null, summary: "Player decisions with costs: election campaigns, reforms, emergencies." },
 ];

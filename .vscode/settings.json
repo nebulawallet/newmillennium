@@ -108,6 +108,24 @@
         "/data/rules/politics.json"
       ],
       "url": "./data/_schema/politics_rules.schema.json"
+    },
+    {
+      "fileMatch": [
+        "/data/events/*.json"
+      ],
+      "url": "./data/_schema/events.schema.json"
+    },
+    {
+      "fileMatch": [
+        "/data/decisions/*.json"
+      ],
+      "url": "./data/_schema/decisions.schema.json"
+    },
+    {
+      "fileMatch": [
+        "/data/focus_trees/*.json"
+      ],
+      "url": "./data/_schema/focus_tree.schema.json"
     }
   ]
 }

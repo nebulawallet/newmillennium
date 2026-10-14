@@ -7,6 +7,7 @@ import { choosePendingCoalition } from "./politics/coalition.ts";
 import { scheduleSnapElection } from "./politics/elections.ts";
 import { changeLaw } from "./politics/laws.ts";
 import { regimeChange, startCivilWar } from "./politics/unrest.ts";
+import { answerEvent, setFocus, takeDecision } from "./scripting/systems.ts";
 
 export type Command =
   | { type: "change_law"; tag: string; category: string; law: string }
@@ -14,7 +15,11 @@ export type Command =
   | { type: "call_snap_election"; tag: string; chamber: string }
   /** Debug and scripting: force a civil war or a coup by an interest group. */
   | { type: "force_civil_war"; tag: string; group: string }
-  | { type: "force_coup"; tag: string; group: string };
+  | { type: "force_coup"; tag: string; group: string }
+  | { type: "answer_event"; key: string; option: string }
+  | { type: "set_focus"; tag: string; focus: string }
+  | { type: "cancel_focus"; tag: string }
+  | { type: "take_decision"; tag: string; decision: string };
 
 export interface CommandResult {
   ok: boolean;
@@ -47,6 +52,19 @@ export function applyCommand(ctx: SimContext, cmd: Command): CommandResult {
       const rebel = startCivilWar(ctx, cs, cmd.group);
       return rebel ? { ok: true, text: `Civil war started (${rebel}).` } : { ok: false, text: "A civil war is already under way." };
     }
+    case "answer_event":
+      return answerEvent(ctx, cmd.key, cmd.option);
+    case "set_focus":
+      return setFocus(ctx, cmd.tag, cmd.focus);
+    case "cancel_focus": {
+      const cs = state.countries[cmd.tag];
+      if (!cs?.focus.current) return { ok: false, text: "No focus in progress." };
+      cs.focus.current = null;
+      cs.focus.progress = 0;
+      return { ok: true, text: "Focus cancelled." };
+    }
+    case "take_decision":
+      return takeDecision(ctx, cmd.tag, cmd.decision);
     case "force_coup": {
       const cs = state.countries[cmd.tag];
       if (!cs || !db.interestGroupTypes.has(cmd.group)) return { ok: false, text: "Unknown country or group." };

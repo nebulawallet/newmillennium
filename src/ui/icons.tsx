@@ -23,6 +23,7 @@ export const Icon = {
   logistics: (p?: P) => svg(<><path d="M2 7h11v10H2z" /><path d="M13 10h4.5l3.5 3.5V17h-8" /><circle cx="6" cy="17.5" r="1.8" /><circle cx="17" cy="17.5" r="1.8" /></>, p),
   intelligence: (p?: P) => svg(<><path d="M2 12s3.5-6.5 10-6.5S22 12 22 12s-3.5 6.5-10 6.5S2 12 2 12Z" /><circle cx="12" cy="12" r="3" /><path d="M12 2v2M12 20v2" /></>, p),
   decisions: (p?: P) => svg(<><path d="M6 3h9l4 4v14H6z" /><path d="M15 3v4h4" /><path d="M9 11h7M9 14h7M9 17h4" /></>, p),
+  focus: (p?: P) => svg(<><circle cx="12" cy="12" r="8.5" /><circle cx="12" cy="12" r="4.5" /><path d="M12 2v4M12 18v4M2 12h4M18 12h4" /></>, p),
   // ---- stats
   power: (p?: P) => svg(<><path d="M12 3 5 7v2h14V7Z" /><path d="M7 9v8M12 9v8M17 9v8" /><path d="M4 20h16M5 17h14" /></>, p),
   stability: (p?: P) => svg(<><path d="M12 4v16" /><path d="M6 20h12" /><path d="M4 8h16" /><path d="M7 8 4.5 13.5h5Z" /><path d="M17 8l-2.5 5.5h5Z" /><circle cx="12" cy="4" r="1" /></>, p),

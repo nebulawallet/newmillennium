@@ -5,6 +5,7 @@ import { TERRAIN_COLORS } from "../../render/mapModes.ts";
 import { formatDate } from "../../sim/date.ts";
 import { Icon } from "../icons.tsx";
 import { PoliticsPanel } from "../politics/PoliticsPanel.tsx";
+import { DecisionsPanel } from "../scripted/DecisionsPanel.tsx";
 import { feed, panel, version, type Session } from "../session.ts";
 import { selectedProvince } from "../store.ts";
 import { TABS, type TabDef } from "../tabs.ts";
@@ -85,11 +86,17 @@ export function LeftPanel({ db, map, session }: { db: ContentDB; map: MapData; s
   version.value;
   const open = panel.value;
   const state = session.state;
-  if (open && open !== "menu") {
+  if (open && open !== "menu" && open !== "focus") {
     const tab = TABS.find((t) => t.id === open)!;
     return (
       <SidePanel title={tab.label} icon={tab.icon} onClose={() => (panel.value = null)}>
-        {tab.id === "politics" && state?.player ? <PoliticsPanel db={db} state={state} tag={state.player} session={session} /> : <StubPanel tab={tab} />}
+        {tab.id === "politics" && state?.player ? (
+          <PoliticsPanel db={db} state={state} tag={state.player} session={session} />
+        ) : tab.id === "decisions" ? (
+          <DecisionsPanel db={db} session={session} />
+        ) : (
+          <StubPanel tab={tab} />
+        )}
       </SidePanel>
     );
   }

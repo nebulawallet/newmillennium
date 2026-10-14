@@ -9,6 +9,7 @@ import { z } from "zod";
 import * as defs from "../src/content/schemas/definitions.ts";
 import * as cty from "../src/content/schemas/country.ts";
 import * as rules from "../src/content/schemas/rules.ts";
+import * as scripted from "../src/content/schemas/scripted.ts";
 
 const root = resolve(import.meta.dirname, "..");
 const out = resolve(root, "data/_schema");
@@ -33,6 +34,9 @@ const schemas: [string, z.ZodType, string[]][] = [
   ["country_laws", cty.CountryLawsFile, ["data/countries/*/laws.json"]],
   ["electoral_units", cty.ElectoralUnitsFile, ["data/countries/*/electoral_units.json"]],
   ["politics_rules", rules.PoliticsRulesFile, ["data/rules/politics.json"]],
+  ["events", scripted.EventsFile, ["data/events/*.json"]],
+  ["decisions", scripted.DecisionsFile, ["data/decisions/*.json"]],
+  ["focus_tree", scripted.FocusTreeFile, ["data/focus_trees/*.json"]],
 ];
 
 const mapping: { fileMatch: string[]; url: string }[] = [];

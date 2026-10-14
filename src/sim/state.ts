@@ -10,7 +10,7 @@ import { initialSchedule } from "./politics/schedule.ts";
 import { igTargets } from "./politics/interestGroups.ts";
 import { seedRng, type RngState } from "./rng.ts";
 
-export const STATE_VERSION = 2;
+export const STATE_VERSION = 3;
 
 export interface GameRules {
   /** historical: real election winners are heavily weighted; dynamic: results come purely from the simulation. */
@@ -81,6 +81,32 @@ export interface CivilWarState {
   group: string;
 }
 
+/** National focus progress. */
+export interface FocusState {
+  tree: string;
+  current: string | null;
+  /** Days of work done on the current focus. */
+  progress: number;
+  completed: string[];
+}
+
+export interface TimedModifier {
+  modifier: string;
+  value: number;
+  until: number;
+  /** What applied it (event, decision or focus id), for tooltips. */
+  source: string;
+}
+
+/** An event waiting for the player's choice. */
+export interface PendingEvent {
+  key: string;
+  event: string;
+  tag: string;
+  from: string | null;
+  day: number;
+}
+
 export interface CountryState {
   tag: string;
   /** Has politics data and exists as an actor (releasables are false until released). */
@@ -121,6 +147,13 @@ export interface CountryState {
   schedule: ScheduledElection[];
   civilWar: CivilWarState | null;
   flags: Record<string, number>;
+  timedModifiers: TimedModifier[];
+  focus: FocusState;
+  /** Decision id -> day it can be taken again; `active` decisions finish on `until`. */
+  decisionCooldowns: Record<string, number>;
+  activeDecisions: { id: string; until: number }[];
+  /** Event id -> day it last fired (fire_only_once). */
+  eventsFired: Record<string, number>;
 }
 
 export interface LogEntry {
@@ -176,6 +209,11 @@ export interface GameState {
   mapResults: Record<string, Record<string, string>>;
   pendingCoalition: PendingCoalition | null;
   dynamicCountries: Record<string, DynamicCountry>;
+  globalFlags: Record<string, number>;
+  /** Events waiting for the player's answer (AI answers at once). */
+  pendingEvents: PendingEvent[];
+  /** Events queued by country_event effects with a delay. */
+  scheduledEvents: { event: string; tag: string; from: string | null; day: number }[];
   log: LogEntry[];
 }
 
@@ -268,6 +306,11 @@ export function createInitialState(
       schedule: [],
       civilWar: null,
       flags: {},
+      timedModifiers: [],
+      focus: { tree: focusTreeFor(db, entry.tag), current: null, progress: 0, completed: [] },
+      decisionCooldowns: {},
+      activeDecisions: [],
+      eventsFired: {},
     };
     if (c && rules.electionMode === "dynamic") {
       const needsMajority = !!gov?.needs_majority;
@@ -302,8 +345,21 @@ export function createInitialState(
     mapResults: {},
     pendingCoalition: null,
     dynamicCountries: {},
+    globalFlags: {},
+    pendingEvents: [],
+    scheduledEvents: [],
     log: [],
   };
+}
+
+/** The focus tree a country uses: one naming it, else the generic tree. */
+export function focusTreeFor(db: ContentDB, tag: string): string {
+  let generic = "";
+  for (const t of db.focusTrees.values()) {
+    if (t.countries.includes(tag)) return t.id;
+    if (!t.countries.length) generic = t.id;
+  }
+  return generic;
 }
 
 /** Bring an older save up to the current state version (fields added later get their defaults). */
@@ -319,6 +375,16 @@ export function migrateState(db: ContentDB, s: GameState): GameState {
   s.mapResults ??= {};
   s.pendingCoalition ??= null;
   s.dynamicCountries ??= {};
+  s.globalFlags ??= {};
+  s.pendingEvents ??= [];
+  s.scheduledEvents ??= [];
+  for (const [tag, cs] of Object.entries(s.countries)) {
+    cs.timedModifiers ??= [];
+    cs.focus ??= { tree: focusTreeFor(db, tag), current: null, progress: 0, completed: [] };
+    cs.decisionCooldowns ??= {};
+    cs.activeDecisions ??= [];
+    cs.eventsFired ??= {};
+  }
   s.version = STATE_VERSION;
   return s;
 }

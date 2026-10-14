@@ -1,0 +1,114 @@
+{
+  "note": "Historical events of 2000-2009 for countries with politics data. Descriptions state documented facts only; effects are gameplay estimates. More arrive as the politics database grows (Ecuador January 2000 and Yugoslavia October 2000 need ECU and YUG data).",
+  "events": [
+    {
+      "id": "usa_bush_v_gore",
+      "title": "The Supreme Court decides Bush v. Gore",
+      "description": "On 12 December 2000 the Supreme Court of the United States decided Bush v. Gore, ending the recount of the presidential vote in Florida. Florida's electoral votes, and with them the presidency, went to George W. Bush.",
+      "countries": ["USA"],
+      "trigger": { "latest_winner": { "office": "usa.president", "winner": "usa.george_w_bush" } },
+      "historical": {
+        "date": "2000-12-12",
+        "source": [{ "url": "https://en.wikipedia.org/wiki/Bush_v._Gore", "title": "Wikipedia: Bush v. Gore", "accessed": "2026-10-14" }],
+        "confidence": "verified"
+      },
+      "options": [
+        { "id": "accept", "name": "The result stands", "effects": [{ "add_stability": -0.02 }, { "add_interest_group_approval": { "group": "youth_students", "value": -3 } }] }
+      ]
+    },
+    {
+      "id": "usa_september_11",
+      "title": "The September 11 attacks",
+      "description": "On 11 September 2001 hijackers from the al-Qaeda network flew airliners into the World Trade Center in New York and the Pentagon; a fourth plane crashed in Pennsylvania. The attacks killed 2,977 people, not counting the hijackers.",
+      "countries": ["USA"],
+      "major": true,
+      "historical": {
+        "date": "2001-09-11",
+        "any_path": true,
+        "source": [{ "url": "https://en.wikipedia.org/wiki/September_11_attacks", "title": "Wikipedia: September 11 attacks", "accessed": "2026-10-14" }],
+        "confidence": "verified"
+      },
+      "options": [
+        {
+          "id": "national_response",
+          "name": "A national response",
+          "effects": [
+            { "add_war_support": 0.3 },
+            { "add_stability": 0.05 },
+            { "add_interest_group_approval": { "group": "security_services", "value": 10 } },
+            { "add_interest_group_approval": { "group": "military", "value": 8 } },
+            { "add_timed_modifier": { "modifier": "internal_security", "value": 0.1, "days": 730 } },
+            { "add_economic_mood": -0.2 },
+            { "set_global_flag": "september_11" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "chn_wto_accession",
+      "title": "China joins the World Trade Organization",
+      "description": "China became a member of the World Trade Organization on 11 December 2001, after years of negotiations that required significant changes to its economy.",
+      "countries": ["CHN"],
+      "major": true,
+      "historical": {
+        "date": "2001-12-11",
+        "source": [{ "url": "https://en.wikipedia.org/wiki/China_and_the_World_Trade_Organization", "title": "Wikipedia: China and the World Trade Organization", "accessed": "2026-10-14" }],
+        "confidence": "verified"
+      },
+      "options": [
+        {
+          "id": "open_markets",
+          "name": "Open to world markets",
+          "effects": [
+            { "add_interest_group_approval": { "group": "business", "value": 6 } },
+            { "add_interest_group_approval": { "group": "rural", "value": -3 } },
+            { "add_economic_mood": 0.15 },
+            { "add_timed_modifier": { "modifier": "foreign_investment", "value": 0.15, "days": 1825 } },
+            { "set_flag": "wto_member" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "euro_cash_introduced",
+      "title": "Euro notes and coins enter circulation",
+      "description": "On 1 January 2002 the twelve members of the eurozone introduced euro banknotes and coins. After a short transition the former national currencies were withdrawn.",
+      "countries": ["AUT", "BEL", "FIN", "FRA", "DEU", "GRC", "IRL", "ITA", "LUX", "NLD", "PRT", "ESP"],
+      "historical": {
+        "date": "2002-01-01",
+        "any_path": true,
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/Eurozone", "title": "Wikipedia: Eurozone", "accessed": "2026-10-14" },
+          { "url": "https://en.wikipedia.org/wiki/Euro_banknotes", "title": "Wikipedia: Euro banknotes", "accessed": "2026-10-14" }
+        ],
+        "confidence": "verified"
+      },
+      "options": [
+        { "id": "changeover", "name": "Complete the changeover", "effects": [{ "add_interest_group_approval": { "group": "business", "value": 3 } }, { "set_flag": "euro_cash" }] }
+      ]
+    },
+    {
+      "id": "eu_enlargement_2004",
+      "title": "Accession to the European Union",
+      "description": "On 1 May 2004 ten countries joined the European Union: Cyprus, the Czech Republic, Estonia, Hungary, Latvia, Lithuania, Malta, Poland, Slovakia and Slovenia, the largest enlargement in its history.",
+      "countries": ["CYP", "CZE", "EST", "HUN", "LVA", "LTU", "MLT", "POL", "SVK", "SVN"],
+      "historical": {
+        "date": "2004-05-01",
+        "source": [{ "url": "https://en.wikipedia.org/wiki/2004_enlargement_of_the_European_Union", "title": "Wikipedia: 2004 enlargement of the European Union", "accessed": "2026-10-14" }],
+        "confidence": "verified"
+      },
+      "options": [
+        {
+          "id": "join",
+          "name": "Join the Union",
+          "effects": [
+            { "add_interest_group_approval": { "group": "business", "value": 4 } },
+            { "add_interest_group_approval": { "group": "urban_middle_class", "value": 3 } },
+            { "add_economic_mood": 0.1 },
+            { "set_flag": "eu_member" }
+          ]
+        }
+      ]
+    }
+  ]
+}

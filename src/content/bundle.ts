@@ -24,6 +24,10 @@ export interface ContentBundle {
   countryList: unknown[];
   countryColors: Record<string, string>;
   politicsRules: PoliticsRules;
+  events: unknown[];
+  decisions: unknown[];
+  decisionCategories: unknown[];
+  focusTrees: unknown[];
   countries: CountryContent[];
 }
 
@@ -52,6 +56,10 @@ export function toBundle({ db, issues }: CompileResult): ContentBundle {
     countryList: db.countryList,
     countryColors: Object.fromEntries(db.countryColors),
     politicsRules: db.politicsRules,
+    events: [...db.events.values()],
+    decisions: [...db.decisions.values()],
+    decisionCategories: [...db.decisionCategories.values()],
+    focusTrees: [...db.focusTrees.values()],
     countries: [...db.countries.values()].filter((c) => c.country),
   };
   return { ...body, hash: fnv1a(JSON.stringify(body)) };
@@ -74,6 +82,10 @@ export function fromBundle(b: ContentBundle): ContentDB {
     countryColors: new Map(Object.entries(b.countryColors ?? {})),
     countries: new Map(),
     politicsRules: b.politicsRules ?? PoliticsRulesFile.parse({}),
+    events: byId(b.events ?? []),
+    decisions: byId(b.decisions ?? []),
+    decisionCategories: byId(b.decisionCategories ?? []),
+    focusTrees: byId(b.focusTrees ?? []),
     people: new Map(),
     parties: new Map(),
     offices: new Map(),

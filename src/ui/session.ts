@@ -13,7 +13,7 @@ import { Simulation, simMapFrom, type SimEvent, type SimMap } from "../sim/simul
 import { createInitialState, migrateState, type ElectionResult, type GameRules, type GameState, type LogEntry } from "../sim/state.ts";
 
 export type Screen = "select" | "game";
-export type Panel = TabId | "menu" | null;
+export type Panel = TabId | "menu" | "focus" | null;
 
 export const screen = signal<Screen>("select");
 export const panel = signal<Panel>(null);
@@ -85,7 +85,7 @@ export class Session {
     if (e.type === "election" && e.result.tag === st.player) {
       electionNight.value = e.result;
       this.setPaused(true);
-    } else if (e.type === "coalition_needed" && e.tag === st.player) {
+    } else if ((e.type === "coalition_needed" || e.type === "event") && e.tag === st.player) {
       this.setPaused(true);
     }
   }

@@ -1,0 +1,519 @@
+{
+  "id": "usa",
+  "name": "United States",
+  "countries": [
+    "USA"
+  ],
+  "note": "Branches depend on the governing party and on who is President. Policies named after real laws or campaign proposals are cited; effects are gameplay estimates.",
+  "focuses": [
+    {
+      "id": "usa_new_administration",
+      "name": "A new administration",
+      "description": "Set the priorities of the administration for its first term.",
+      "x": 5,
+      "y": 0,
+      "days": 70,
+      "effects": [
+        {
+          "add_political_power": 50
+        }
+      ]
+    },
+    {
+      "id": "usa_bush_tax_cuts",
+      "name": "Economic growth and tax relief",
+      "description": "Pass the tax cuts the President campaigned on. In the historical timeline the Economic Growth and Tax Relief Reconciliation Act became law in June 2001.",
+      "x": 1,
+      "y": 1,
+      "days": 70,
+      "effects": [
+        {
+          "add_interest_group_approval": {
+            "group": "business",
+            "value": 6
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "labour_unions",
+            "value": -3
+          }
+        },
+        {
+          "add_economic_mood": 0.05
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "private_sector_output",
+            "value": 0.03,
+            "days": 3650
+          }
+        }
+      ],
+      "prerequisites": [
+        [
+          "usa_new_administration"
+        ]
+      ],
+      "available": {
+        "holds_office": {
+          "person": "usa.george_w_bush",
+          "office": "usa.president"
+        }
+      },
+      "ai_weight": 3
+    },
+    {
+      "id": "usa_bush_education",
+      "name": "No Child Left Behind",
+      "description": "Pass a national education bill. In the historical timeline the No Child Left Behind Act became law in 2002.",
+      "x": 0,
+      "y": 2,
+      "days": 70,
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "education_quality",
+            "value": 0.03,
+            "days": 3650
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "youth_students",
+            "value": 2
+          }
+        }
+      ],
+      "prerequisites": [
+        [
+          "usa_bush_tax_cuts"
+        ]
+      ],
+      "available": {
+        "holds_office": {
+          "person": "usa.george_w_bush",
+          "office": "usa.president"
+        }
+      },
+      "ai_weight": 2
+    },
+    {
+      "id": "usa_bush_medicare",
+      "name": "Medicare prescription drug benefit",
+      "description": "Add prescription drug cover to Medicare. In the historical timeline the Medicare Prescription Drug, Improvement, and Modernization Act of 2003 created Medicare Part D.",
+      "x": 2,
+      "y": 2,
+      "days": 70,
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "health_outcomes",
+            "value": 0.03,
+            "days": 3650
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "welfare_cost",
+            "value": 0.02,
+            "days": 3650
+          }
+        },
+        {
+          "add_ruling_party_popularity": 0.01
+        }
+      ],
+      "prerequisites": [
+        [
+          "usa_bush_tax_cuts"
+        ]
+      ],
+      "available": {
+        "holds_office": {
+          "person": "usa.george_w_bush",
+          "office": "usa.president"
+        }
+      },
+      "ai_weight": 2
+    },
+    {
+      "id": "usa_homeland_security",
+      "name": "Department of Homeland Security",
+      "description": "Create a cabinet department for domestic security. Congress created the Department of Homeland Security after the September 11 attacks.",
+      "x": 1,
+      "y": 3,
+      "days": 70,
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "internal_security",
+            "value": 0.1,
+            "days": 3650
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "security_services",
+            "value": 6
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "media",
+            "value": -2
+          }
+        }
+      ],
+      "prerequisites": [
+        [
+          "usa_bush_education",
+          "usa_bush_medicare"
+        ]
+      ],
+      "available": {
+        "has_global_flag": "september_11"
+      },
+      "ai_weight": 3
+    },
+    {
+      "id": "usa_gore_surplus",
+      "name": "Protect the Social Security surplus",
+      "description": "Dedicate the Social Security surplus to Social Security and paying down the national debt, as the 2000 Gore campaign proposed.",
+      "x": 9,
+      "y": 1,
+      "days": 70,
+      "effects": [
+        {
+          "add_economic_mood": 0.03
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "interest_rate",
+            "value": -0.005,
+            "days": 3650
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "labour_unions",
+            "value": 3
+          }
+        }
+      ],
+      "prerequisites": [
+        [
+          "usa_new_administration"
+        ]
+      ],
+      "available": {
+        "holds_office": {
+          "person": "usa.al_gore",
+          "office": "usa.president"
+        }
+      },
+      "ai_weight": 3
+    },
+    {
+      "id": "usa_gore_targeted_tax_cuts",
+      "name": "Targeted tax cuts",
+      "description": "Pass targeted tax cuts for child care, higher education, health insurance and long-term care, as the 2000 Gore campaign proposed.",
+      "x": 8,
+      "y": 2,
+      "days": 70,
+      "effects": [
+        {
+          "add_interest_group_approval": {
+            "group": "urban_middle_class",
+            "value": 5
+          }
+        },
+        {
+          "add_ruling_party_popularity": 0.01
+        }
+      ],
+      "prerequisites": [
+        [
+          "usa_gore_surplus"
+        ]
+      ],
+      "available": {
+        "holds_office": {
+          "person": "usa.al_gore",
+          "office": "usa.president"
+        }
+      },
+      "ai_weight": 2
+    },
+    {
+      "id": "usa_gore_trust_funds",
+      "name": "Health, education and environment trust funds",
+      "description": "Create the three trust funds for health care, education and the environment proposed by the 2000 Gore campaign.",
+      "x": 10,
+      "y": 2,
+      "days": 70,
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "health_outcomes",
+            "value": 0.02,
+            "days": 3650
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "education_quality",
+            "value": 0.02,
+            "days": 3650
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "renewable_output",
+            "value": 0.05,
+            "days": 3650
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "business",
+            "value": -2
+          }
+        }
+      ],
+      "prerequisites": [
+        [
+          "usa_gore_surplus"
+        ]
+      ],
+      "available": {
+        "holds_office": {
+          "person": "usa.al_gore",
+          "office": "usa.president"
+        }
+      },
+      "ai_weight": 2
+    },
+    {
+      "id": "usa_republican_agenda",
+      "name": "Republican legislative agenda",
+      "description": "Use the position of the party in government to pass its programme.",
+      "x": 4,
+      "y": 1,
+      "days": 70,
+      "effects": [
+        {
+          "add_political_power": 40
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "business",
+            "value": 3
+          }
+        }
+      ],
+      "prerequisites": [
+        [
+          "usa_new_administration"
+        ]
+      ],
+      "available": {
+        "ruling_party": "usa.republican"
+      },
+      "ai_weight": 2
+    },
+    {
+      "id": "usa_democratic_agenda",
+      "name": "Democratic legislative agenda",
+      "description": "Use the position of the party in government to pass its programme.",
+      "x": 6,
+      "y": 1,
+      "days": 70,
+      "effects": [
+        {
+          "add_political_power": 40
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "labour_unions",
+            "value": 3
+          }
+        }
+      ],
+      "prerequisites": [
+        [
+          "usa_new_administration"
+        ]
+      ],
+      "available": {
+        "ruling_party": "usa.democratic"
+      },
+      "ai_weight": 2
+    },
+    {
+      "id": "usa_bipartisan_compromise",
+      "name": "Bipartisan compromise",
+      "description": "Seek votes across the aisle for major bills.",
+      "x": 5,
+      "y": 2,
+      "days": 70,
+      "effects": [
+        {
+          "add_stability": 0.03
+        },
+        {
+          "add_unrest": -0.03
+        }
+      ],
+      "prerequisites": [
+        [
+          "usa_republican_agenda",
+          "usa_democratic_agenda"
+        ]
+      ]
+    },
+    {
+      "id": "usa_defence_review",
+      "name": "Quadrennial defence review",
+      "description": "Review strategy, forces and budgets.",
+      "x": 13,
+      "y": 1,
+      "days": 70,
+      "effects": [
+        {
+          "add_war_support": 0.03
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "military",
+            "value": 4
+          }
+        }
+      ],
+      "prerequisites": [
+        [
+          "usa_new_administration"
+        ]
+      ]
+    },
+    {
+      "id": "usa_missile_defence",
+      "name": "Missile defence",
+      "description": "Fund national missile defence programmes.",
+      "x": 12,
+      "y": 2,
+      "days": 70,
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "air_effectiveness",
+            "value": 0.03,
+            "days": 3650
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "military",
+            "value": 3
+          }
+        }
+      ],
+      "prerequisites": [
+        [
+          "usa_defence_review"
+        ]
+      ]
+    },
+    {
+      "id": "usa_force_transformation",
+      "name": "Force transformation",
+      "description": "Restructure the armed forces around lighter, networked units.",
+      "x": 14,
+      "y": 2,
+      "days": 70,
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "army_org",
+            "value": 0.05,
+            "days": 3650
+          }
+        }
+      ],
+      "prerequisites": [
+        [
+          "usa_defence_review"
+        ]
+      ]
+    },
+    {
+      "id": "usa_trade_agenda",
+      "name": "Trade agenda",
+      "description": "Negotiate new trade agreements.",
+      "x": 16,
+      "y": 1,
+      "days": 70,
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "trade_efficiency",
+            "value": 0.05,
+            "days": 3650
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "business",
+            "value": 3
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "labour_unions",
+            "value": -2
+          }
+        }
+      ],
+      "prerequisites": [
+        [
+          "usa_new_administration"
+        ]
+      ]
+    },
+    {
+      "id": "usa_energy_policy",
+      "name": "National energy policy",
+      "description": "Set a national energy strategy.",
+      "x": 16,
+      "y": 2,
+      "days": 70,
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "energy_cost",
+            "value": -0.03,
+            "days": 3650
+          }
+        }
+      ],
+      "prerequisites": [
+        [
+          "usa_trade_agenda"
+        ]
+      ]
+    }
+  ],
+  "source": [
+    {
+      "url": "https://en.wikipedia.org/wiki/Presidency_of_George_W._Bush",
+      "title": "Wikipedia: Presidency of George W. Bush",
+      "accessed": "2026-10-14"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Al_Gore_2000_presidential_campaign",
+      "title": "Wikipedia: Al Gore 2000 presidential campaign",
+      "accessed": "2026-10-14"
+    }
+  ],
+  "confidence": "verified"
+}

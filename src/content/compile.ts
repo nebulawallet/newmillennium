@@ -6,6 +6,9 @@
 import type { z } from "zod";
 import type { FileProvider } from "./files.ts";
 import { PoliticsRulesFile, type PoliticsRules } from "./schemas/rules.ts";
+import { DecisionsFile, EventsFile, FocusTreeFile, type DecisionDef, type EventDef, type FocusTree } from "./schemas/scripted.ts";
+import { validateEffects, validateTrigger, type ScriptIssue } from "./script/validate.ts";
+import type { RefKind } from "./script/registry.ts";
 import {
   CountryColorsFile,
   CountryListFile,
@@ -97,6 +100,10 @@ export interface ContentDB {
   countries: Map<string, CountryContent>;
   /** Tuning constants for elections, coalitions, interest groups, unrest and laws. */
   politicsRules: PoliticsRules;
+  events: Map<string, EventDef & { file: string }>;
+  decisions: Map<string, DecisionDef & { file: string }>;
+  decisionCategories: Map<string, { id: string; name: string; description: string }>;
+  focusTrees: Map<string, FocusTree & { file: string }>;
   people: Map<string, Person & { file: string }>;
   parties: Map<string, Party & { file: string }>;
   offices: Map<string, OfficeRec>;
@@ -194,6 +201,10 @@ export function compileContent(files: FileProvider, opts: CompileOptions = {}): 
     countryColors: new Map(Object.entries(load("world/colors.json", CountryColorsFile, false)?.colors ?? {})),
     countries: new Map(),
     politicsRules: load("rules/politics.json", PoliticsRulesFile, false) ?? PoliticsRulesFile.parse({}),
+    events: new Map(),
+    decisions: new Map(),
+    decisionCategories: new Map(),
+    focusTrees: new Map(),
     people: new Map(),
     parties: new Map(),
     offices: new Map(),
@@ -286,6 +297,10 @@ export function compileContent(files: FileProvider, opts: CompileOptions = {}): 
     checkCountry(db, cc, tier, err, warn);
   }
 
+  // ---- scripted content: events, decisions, focus trees
+  const jsonIn = (dir: string) => files.listFiles(dir).filter((p) => p.endsWith(".json")).sort();
+  loadScripted(db, jsonIn, load, err);
+
   // When narrowed with `only`, problems in other countries' files (e.g. a folder another
   // researcher is still writing) are reported as warnings so they do not fail this run.
   if (opts.only) {
@@ -299,6 +314,125 @@ export function compileContent(files: FileProvider, opts: CompileOptions = {}): 
   }
 
   return { db, issues };
+}
+
+// ---------------------------------------------------------------- scripted content
+
+type Loader = <S extends z.ZodType>(path: string, schema: S, required?: boolean) => z.infer<S> | undefined;
+
+function loadScripted(db: ContentDB, jsonIn: (dir: string) => string[], load: Loader, err: Report): void {
+  for (const f of jsonIn("events")) {
+    for (const e of load(f, EventsFile)?.events ?? []) {
+      if (db.events.has(e.id)) err("DUP_ID", f, `duplicate event id '${e.id}'`);
+      db.events.set(e.id, { ...e, file: f });
+    }
+  }
+  for (const f of jsonIn("decisions")) {
+    const d = load(f, DecisionsFile);
+    for (const c of d?.categories ?? []) db.decisionCategories.set(c.id, c);
+    for (const x of d?.decisions ?? []) {
+      if (db.decisions.has(x.id)) err("DUP_ID", f, `duplicate decision id '${x.id}'`);
+      db.decisions.set(x.id, { ...x, file: f });
+    }
+  }
+  for (const f of jsonIn("focus_trees")) {
+    const t = load(f, FocusTreeFile);
+    if (!t) continue;
+    if (db.focusTrees.has(t.id)) err("DUP_ID", f, `duplicate focus tree id '${t.id}'`);
+    db.focusTrees.set(t.id, { ...t, file: f });
+  }
+  checkScripted(db, err);
+}
+
+/** Does a content reference resolve? Shared by every script check. */
+export function refChecker(db: ContentDB) {
+  const tags = new Set(db.countryList.map((c) => c.tag));
+  return (kind: RefKind, v: string): boolean => {
+    switch (kind) {
+      case "tag": return tags.has(v);
+      case "person": return db.people.has(v);
+      case "party": return db.parties.has(v);
+      case "office": return db.offices.has(v);
+      case "sub_ideology": return db.subIdeologies.has(v);
+      case "ideology_group": return db.ideologyGroups.has(v);
+      case "law": return db.lawCategoryOf.has(v);
+      case "law_category": return db.lawCategories.has(v);
+      case "interest_group": return db.interestGroupTypes.has(v);
+      case "government_type": return db.governmentTypes.has(v);
+      case "trait": return db.traits.has(v);
+      case "modifier": return db.modifiers.has(v);
+    }
+  };
+}
+
+function checkScripted(db: ContentDB, err: Report): void {
+  const refs = refChecker(db);
+  const tags = new Set(db.countryList.map((c) => c.tag));
+  const focusIds = new Set<string>();
+  for (const t of db.focusTrees.values()) for (const f of t.focuses) focusIds.add(f.id);
+  const script = (file: string, where: string, run: (out: ScriptIssue[]) => void) => {
+    const out: ScriptIssue[] = [];
+    run(out);
+    for (const i of out) err("SCRIPT", file, `${where}: ${i.path}: ${i.message}`);
+  };
+  // references the registry cannot check on its own: events and focuses named in scripts
+  const deepRefs = (file: string, where: string, node: unknown) => {
+    const walk = (n: unknown): void => {
+      if (Array.isArray(n)) return n.forEach(walk);
+      if (!n || typeof n !== "object") return;
+      for (const [k, v] of Object.entries(n)) {
+        if (k === "country_event" && v && typeof v === "object" && !db.events.has((v as { id: string }).id))
+          err("REF", file, `${where}: country_event: unknown event '${(v as { id: string }).id}'`);
+        if (k === "has_completed_focus" && typeof v === "string" && !focusIds.has(v)) err("REF", file, `${where}: unknown focus '${v}'`);
+        walk(v);
+      }
+    };
+    walk(node);
+  };
+  const tagList = (file: string, where: string, list?: string[]) => {
+    for (const t of list ?? []) if (!tags.has(t)) err("REF", file, `${where}: unknown tag '${t}'`);
+  };
+
+  for (const e of db.events.values()) {
+    const w = `event ${e.id}`;
+    tagList(e.file, w, e.countries);
+    if (e.trigger !== undefined) script(e.file, w, (o) => validateTrigger(e.trigger, "trigger", o, refs));
+    for (const opt of e.options) {
+      if (opt.trigger !== undefined) script(e.file, w, (o) => validateTrigger(opt.trigger, `option ${opt.id}.trigger`, o, refs));
+      script(e.file, w, (o) => validateEffects(opt.effects, `option ${opt.id}.effects`, o, refs));
+    }
+    deepRefs(e.file, w, [e.trigger, e.options]);
+    if (!e.historical && !e.mean_days && !e.triggered_only) err("EVENT", e.file, `${w}: needs a historical date, mean_days or triggered_only`);
+  }
+  for (const d of db.decisions.values()) {
+    const w = `decision ${d.id}`;
+    tagList(d.file, w, d.countries);
+    if (!db.decisionCategories.has(d.category)) err("REF", d.file, `${w}: unknown category '${d.category}'`);
+    for (const [k, t] of [["visible", d.visible], ["available", d.available]] as const)
+      if (t !== undefined) script(d.file, w, (o) => validateTrigger(t, k, o, refs));
+    script(d.file, w, (o) => validateEffects(d.effects, "effects", o, refs));
+    script(d.file, w, (o) => validateEffects(d.complete_effects, "complete_effects", o, refs));
+    deepRefs(d.file, w, [d.visible, d.available, d.effects, d.complete_effects]);
+  }
+  let generic = 0;
+  for (const t of db.focusTrees.values()) {
+    if (!t.countries.length) generic++;
+    tagList(t.file, `tree ${t.id}`, t.countries);
+    const ids = new Set(t.focuses.map((f) => f.id));
+    const pos = new Set<string>();
+    for (const f of t.focuses) {
+      const w = `focus ${f.id}`;
+      if (pos.has(`${f.x},${f.y}`)) err("FOCUS", t.file, `${w}: another focus already sits at ${f.x},${f.y}`);
+      pos.add(`${f.x},${f.y}`);
+      for (const g of f.prerequisites) for (const p of g) if (!ids.has(p)) err("REF", t.file, `${w}: unknown prerequisite '${p}'`);
+      for (const m of f.mutually_exclusive) if (!ids.has(m)) err("REF", t.file, `${w}: unknown mutually exclusive focus '${m}'`);
+      for (const [k, tr] of [["available", f.available], ["bypass", f.bypass]] as const)
+        if (tr !== undefined) script(t.file, w, (o) => validateTrigger(tr, k, o, refs));
+      script(t.file, w, (o) => validateEffects(f.effects, "effects", o, refs));
+      deepRefs(t.file, w, [f.available, f.bypass, f.effects]);
+    }
+  }
+  if (db.focusTrees.size && generic !== 1) err("FOCUS", "focus_trees", `expected exactly one generic tree (no countries), found ${generic}`);
 }
 
 // ---------------------------------------------------------------- definition checks

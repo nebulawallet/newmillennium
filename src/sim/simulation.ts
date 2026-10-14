@@ -12,6 +12,7 @@ import { interestGroupSystem } from "./politics/interestGroups.ts";
 import { lawDriftSystem } from "./politics/laws.ts";
 import { createPartyLifecycleSystem, pollSystem } from "./politics/parties.ts";
 import { unrestSystem } from "./politics/unrest.ts";
+import { createScriptedSystem } from "./scripting/systems.ts";
 import { personParty } from "./politics/common.ts";
 import type { SimProvince } from "./politics/voteModel.ts";
 import { Rng } from "./rng.ts";
@@ -30,6 +31,7 @@ export type SimEvent =
   | { type: "coalition_needed"; tag: string }
   | { type: "coup"; tag: string }
   | { type: "civil_war"; tag: string }
+  | { type: "event"; tag: string; event: string }
   | { type: "map_changed" };
 
 export interface SimContext {
@@ -92,6 +94,11 @@ export class Simulation {
       },
     };
     for (const s of systems) s.init?.(this.ctx);
+  }
+
+  /** The context systems run with (read-only use by the UI: trigger checks, previews). */
+  get context(): SimContext {
+    return this.ctx;
   }
 
   onLog(f: (e: LogEntry) => void): () => void {
@@ -268,6 +275,7 @@ export function defaultSystems(): System[] {
     lawDriftSystem,
     pollSystem,
     unrestSystem,
+    createScriptedSystem(),
     stabilitySystem,
   ];
 }

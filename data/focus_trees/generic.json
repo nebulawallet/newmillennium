@@ -1,0 +1,655 @@
+{
+  "id": "generic",
+  "name": "National priorities",
+  "countries": [],
+  "note": "The generic focus tree for every country without its own. Effects are gameplay estimates.",
+  "focuses": [
+    {
+      "id": "pol_national_agenda",
+      "name": "National agenda",
+      "description": "Set out the government's priorities for its term.",
+      "x": 1,
+      "y": 0,
+      "days": 70,
+      "effects": [
+        {
+          "add_political_power": 40
+        }
+      ]
+    },
+    {
+      "id": "pol_institutions",
+      "name": "Strengthen institutions",
+      "description": "Invest in the civil service and the courts.",
+      "x": 0,
+      "y": 1,
+      "days": 70,
+      "effects": [
+        {
+          "add_stability": 0.05
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "corruption",
+            "value": -0.03,
+            "days": 3650
+          }
+        }
+      ],
+      "prerequisites": [
+        [
+          "pol_national_agenda"
+        ]
+      ]
+    },
+    {
+      "id": "pol_public_outreach",
+      "name": "Public outreach",
+      "description": "Explain the government's programme across the country.",
+      "x": 2,
+      "y": 1,
+      "days": 70,
+      "effects": [
+        {
+          "add_ruling_party_popularity": 0.02
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "urban_middle_class",
+            "value": 3
+          }
+        }
+      ],
+      "prerequisites": [
+        [
+          "pol_national_agenda"
+        ]
+      ]
+    },
+    {
+      "id": "pol_anti_corruption",
+      "name": "Anti-corruption drive",
+      "description": "Audit public contracts and strengthen oversight bodies.",
+      "x": 0,
+      "y": 2,
+      "days": 70,
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "corruption",
+            "value": -0.05,
+            "days": 3650
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "business",
+            "value": 2
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "media",
+            "value": 3
+          }
+        }
+      ],
+      "prerequisites": [
+        [
+          "pol_institutions"
+        ]
+      ]
+    },
+    {
+      "id": "pol_civic_education",
+      "name": "Civic education",
+      "description": "Fund civic education in schools and universities.",
+      "x": 2,
+      "y": 2,
+      "days": 70,
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "education_quality",
+            "value": 0.05,
+            "days": 3650
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "youth_students",
+            "value": 5
+          }
+        }
+      ],
+      "prerequisites": [
+        [
+          "pol_public_outreach"
+        ]
+      ]
+    },
+    {
+      "id": "pol_reconciliation",
+      "name": "National reconciliation",
+      "description": "Bring regions and communities into the political settlement.",
+      "x": 1,
+      "y": 3,
+      "days": 105,
+      "effects": [
+        {
+          "add_unrest": -0.1
+        },
+        {
+          "add_stability": 0.05
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "minorities",
+            "value": 5
+          }
+        }
+      ],
+      "prerequisites": [
+        [
+          "pol_anti_corruption",
+          "pol_civic_education"
+        ]
+      ]
+    },
+    {
+      "id": "eco_economic_council",
+      "name": "Economic council",
+      "description": "Convene ministers, employers and unions on the economy.",
+      "x": 7,
+      "y": 0,
+      "days": 70,
+      "effects": [
+        {
+          "add_political_power": 30
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "business",
+            "value": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "eco_fiscal_review",
+      "name": "Fiscal review",
+      "description": "Review spending and the tax base.",
+      "x": 6,
+      "y": 1,
+      "days": 70,
+      "effects": [
+        {
+          "add_economic_mood": 0.05
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "tax_efficiency",
+            "value": 0.05,
+            "days": 1825
+          }
+        }
+      ],
+      "prerequisites": [
+        [
+          "eco_economic_council"
+        ]
+      ]
+    },
+    {
+      "id": "eco_infrastructure",
+      "name": "Infrastructure programme",
+      "description": "Build and repair roads, rail and ports.",
+      "x": 8,
+      "y": 1,
+      "days": 70,
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "construction_speed",
+            "value": 0.1,
+            "days": 1825
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "rural",
+            "value": 4
+          }
+        }
+      ],
+      "prerequisites": [
+        [
+          "eco_economic_council"
+        ]
+      ]
+    },
+    {
+      "id": "eco_market_reform",
+      "name": "Market reform",
+      "description": "Open sectors to competition and private investment.",
+      "x": 5,
+      "y": 2,
+      "days": 70,
+      "effects": [
+        {
+          "add_interest_group_approval": {
+            "group": "business",
+            "value": 6
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "labour_unions",
+            "value": -4
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "private_sector_output",
+            "value": 0.05,
+            "days": 3650
+          }
+        }
+      ],
+      "prerequisites": [
+        [
+          "eco_fiscal_review"
+        ]
+      ],
+      "mutually_exclusive": [
+        "eco_state_led"
+      ]
+    },
+    {
+      "id": "eco_state_led",
+      "name": "State-led development",
+      "description": "Direct investment through state enterprises and development banks.",
+      "x": 7,
+      "y": 2,
+      "days": 70,
+      "effects": [
+        {
+          "add_interest_group_approval": {
+            "group": "labour_unions",
+            "value": 6
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "business",
+            "value": -4
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "state_industry_output",
+            "value": 0.05,
+            "days": 3650
+          }
+        }
+      ],
+      "prerequisites": [
+        [
+          "eco_fiscal_review"
+        ]
+      ],
+      "mutually_exclusive": [
+        "eco_market_reform"
+      ]
+    },
+    {
+      "id": "eco_innovation",
+      "name": "Innovation agenda",
+      "description": "Fund research and new industries.",
+      "x": 9,
+      "y": 2,
+      "days": 70,
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "research_speed",
+            "value": 0.05,
+            "days": 3650
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "youth_students",
+            "value": 3
+          }
+        }
+      ],
+      "prerequisites": [
+        [
+          "eco_infrastructure"
+        ]
+      ]
+    },
+    {
+      "id": "eco_energy_security",
+      "name": "Energy security",
+      "description": "Diversify energy supplies and storage.",
+      "x": 8,
+      "y": 3,
+      "days": 70,
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "energy_cost",
+            "value": -0.05,
+            "days": 3650
+          }
+        }
+      ],
+      "prerequisites": [
+        [
+          "eco_infrastructure"
+        ]
+      ]
+    },
+    {
+      "id": "eco_long_term_growth",
+      "name": "Long-term growth plan",
+      "description": "Commit to a ten-year plan for growth.",
+      "x": 6,
+      "y": 3,
+      "days": 105,
+      "effects": [
+        {
+          "add_economic_mood": 0.1
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "gdp_growth",
+            "value": 0.005,
+            "days": 3650
+          }
+        }
+      ],
+      "prerequisites": [
+        [
+          "eco_market_reform",
+          "eco_state_led"
+        ]
+      ]
+    },
+    {
+      "id": "mil_defence_review",
+      "name": "Defence review",
+      "description": "Review threats, forces and budgets.",
+      "x": 12,
+      "y": 0,
+      "days": 70,
+      "effects": [
+        {
+          "add_war_support": 0.03
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "military",
+            "value": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "mil_professional_forces",
+      "name": "Professional forces",
+      "description": "Move to an all-volunteer professional military.",
+      "x": 11,
+      "y": 1,
+      "days": 70,
+      "effects": [
+        {
+          "change_law": {
+            "category": "conscription",
+            "law": "volunteer_force"
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "army_org",
+            "value": 0.05,
+            "days": 3650
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "youth_students",
+            "value": 5
+          }
+        }
+      ],
+      "prerequisites": [
+        [
+          "mil_defence_review"
+        ]
+      ],
+      "mutually_exclusive": [
+        "mil_mass_reserve"
+      ]
+    },
+    {
+      "id": "mil_mass_reserve",
+      "name": "Mass reserve",
+      "description": "Keep universal service and a large trained reserve.",
+      "x": 13,
+      "y": 1,
+      "days": 70,
+      "effects": [
+        {
+          "change_law": {
+            "category": "conscription",
+            "law": "universal_conscription"
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "manpower_factor",
+            "value": 0.1,
+            "days": 3650
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "military",
+            "value": 5
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "youth_students",
+            "value": -5
+          }
+        }
+      ],
+      "prerequisites": [
+        [
+          "mil_defence_review"
+        ]
+      ],
+      "mutually_exclusive": [
+        "mil_professional_forces"
+      ]
+    },
+    {
+      "id": "mil_modernisation",
+      "name": "Force modernisation",
+      "description": "Replace ageing equipment.",
+      "x": 12,
+      "y": 2,
+      "days": 70,
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "army_attack",
+            "value": 0.05,
+            "days": 3650
+          }
+        }
+      ],
+      "prerequisites": [
+        [
+          "mil_professional_forces",
+          "mil_mass_reserve"
+        ]
+      ]
+    },
+    {
+      "id": "mil_intelligence",
+      "name": "Intelligence reform",
+      "description": "Reorganise and fund the intelligence services.",
+      "x": 14,
+      "y": 2,
+      "days": 70,
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "intelligence_power",
+            "value": 0.1,
+            "days": 3650
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "security_services",
+            "value": 5
+          }
+        }
+      ],
+      "prerequisites": [
+        [
+          "mil_defence_review"
+        ]
+      ]
+    },
+    {
+      "id": "mil_border_security",
+      "name": "Border security",
+      "description": "Tighten control of borders and ports.",
+      "x": 14,
+      "y": 3,
+      "days": 70,
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "internal_security",
+            "value": 0.05,
+            "days": 3650
+          }
+        },
+        {
+          "add_unrest": -0.03
+        }
+      ],
+      "prerequisites": [
+        [
+          "mil_intelligence"
+        ]
+      ]
+    },
+    {
+      "id": "dip_foreign_policy_review",
+      "name": "Foreign policy review",
+      "description": "Define the country's place in the world.",
+      "x": 17,
+      "y": 0,
+      "days": 70,
+      "effects": [
+        {
+          "add_political_power": 30
+        }
+      ]
+    },
+    {
+      "id": "dip_regional_cooperation",
+      "name": "Regional cooperation",
+      "description": "Seek closer ties and trade with neighbours.",
+      "x": 16,
+      "y": 1,
+      "days": 70,
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "trade_efficiency",
+            "value": 0.05,
+            "days": 3650
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "business",
+            "value": 3
+          }
+        }
+      ],
+      "prerequisites": [
+        [
+          "dip_foreign_policy_review"
+        ]
+      ],
+      "mutually_exclusive": [
+        "dip_independent_course"
+      ]
+    },
+    {
+      "id": "dip_independent_course",
+      "name": "Independent course",
+      "description": "Keep freedom of action and limit foreign influence.",
+      "x": 18,
+      "y": 1,
+      "days": 70,
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "foreign_influence_resistance",
+            "value": 0.1,
+            "days": 3650
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "military",
+            "value": 3
+          }
+        }
+      ],
+      "prerequisites": [
+        [
+          "dip_foreign_policy_review"
+        ]
+      ],
+      "mutually_exclusive": [
+        "dip_regional_cooperation"
+      ]
+    },
+    {
+      "id": "dip_international_standing",
+      "name": "International standing",
+      "description": "Raise the country's profile in international bodies.",
+      "x": 17,
+      "y": 2,
+      "days": 70,
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "international_opinion",
+            "value": 5,
+            "days": 3650
+          }
+        }
+      ],
+      "prerequisites": [
+        [
+          "dip_regional_cooperation",
+          "dip_independent_course"
+        ]
+      ]
+    }
+  ]
+}

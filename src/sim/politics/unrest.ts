@@ -34,6 +34,7 @@ function blankCountry(tag: string, govType: string, day: number): CountryState {
     govSinceDay: day, offices: {}, officeSince: {}, historicalOffices: {}, followsHistory: false, partyPopularity: {}, partyStatus: {},
     partyLeader: {}, partyBias: {}, ideologySupport: {}, laws: {}, lawChangedDay: {}, interestGroups: {}, igBase: {}, seats: {},
     unrest: 0, economicMood: 0, schedule: [], civilWar: null, flags: {},
+    timedModifiers: [], focus: { tree: "", current: null, progress: 0, completed: [] }, decisionCooldowns: {}, activeDecisions: [], eventsFired: {},
   };
 }
 

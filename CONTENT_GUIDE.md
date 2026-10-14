@@ -235,6 +235,33 @@ Focuses, events and decisions share one scripting format. The registry is `src/c
 - **Scopes:** `every_neighbor`, `any_ally`, `country` (with `tag`), and others.
 - **Adding a new effect or trigger** is an engine change: add it to the registry with an argument schema, then implement its handler.
 
-## 7. Techs, focuses, events, units
+## 7. Events, decisions and national focus trees
 
-These formats arrive in later phases (6–9). This guide will gain a section for each as it lands, with an example file.
+All three use the script format above. `validate-data` checks every trigger and effect, every referenced id, every `country_event` target and every `has_completed_focus` id.
+
+### Events (`data/events/*.json`)
+
+`{ "events": [ { id, title, description, options: [ { id, name, effects, trigger?, ai_weight? } ], ... } ] }`. Each event needs one of:
+- `historical: { date, source, confidence, any_path?, dynamic_mode? }`: fires on a real date in historical mode, for each listed country (`countries`) whose `trigger` holds, while the country follows history (`any_path: true` fires regardless; `dynamic_mode: true` also fires in dynamic mode).
+- `mean_days`: a random event, checked monthly while its `trigger` holds.
+- `triggered_only: true`: fired by a `country_event` effect (optionally after `days`).
+
+Rules for real events: the description states documented facts from the cited source, neutrally (no allegations, no characterisation). Never script the death of a living person. `data/events/historical_2000s.json` is the example.
+
+The player chooses an option in the event window; AI countries choose by `ai_weight`.
+
+### Decisions (`data/decisions/*.json`)
+
+`{ "categories": [ { id, name, description } ], "decisions": [ { id, name, description, category, visible?, available?, cost: { political_power }, effects, days?, complete_effects?, cooldown_days?, fire_once?, ai_weight? } ] }`. `days` makes a decision last; `complete_effects` run when it ends. Shown in the Decisions tab (P).
+
+### National focus trees (`data/focus_trees/*.json`)
+
+One file per tree: `{ id, name, countries, focuses: [ { id, name, description, x, y, days, prerequisites, mutually_exclusive, available?, bypass?, effects, ai_weight? } ] }`.
+- `countries: []` marks the single generic tree; a tree that lists countries replaces it for them.
+- `prerequisites` is a list of groups: every group must be met, and within a group any one completed focus is enough (`[["a", "b"]]` means a or b).
+- `available` makes branches depend on who governs, e.g. `{ "holds_office": { "person": "usa.al_gore", "office": "usa.president" } }` or `{ "ruling_party": "rus.cprf" }`.
+- Trees that name real laws, reforms or programmes carry `source` and `confidence`, and describe them neutrally (see `usa.json`, `rus.json`).
+
+## 8. Techs and units
+
+These formats arrive in Phases 8 and 9.

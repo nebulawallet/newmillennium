@@ -24,6 +24,8 @@ import { panel, paused, screen, Session, speed } from "./ui/session.ts";
 import { MapModeBar, ProvinceTooltip } from "./ui/MapUi.tsx";
 import { CoalitionPanel } from "./ui/politics/CoalitionPanel.tsx";
 import { ElectionNight } from "./ui/politics/ElectionNight.tsx";
+import { EventWindow } from "./ui/scripted/EventWindow.tsx";
+import { FocusTreeView } from "./ui/scripted/FocusTree.tsx";
 import { hoveredProvince, pickedCountry, pointer, selectedProvince } from "./ui/store.ts";
 
 async function loadContent(): Promise<{ db: ContentDB; bundle: ContentBundle }> {
@@ -138,7 +140,9 @@ function Root({ db, map, world, session, issues }: { db: ContentDB; map: MapData
       )}
       {inGame && <MapModeBar db={db} map={map} world={world} />}
       <ProvinceTooltip db={db} map={map} />
+      {inGame && panel.value === "focus" && <FocusTreeView db={db} session={session} />}
       {inGame && <ElectionNight db={db} session={session} />}
+      {inGame && <EventWindow db={db} session={session} />}
       {inGame && <CoalitionPanel db={db} session={session} />}
       {inGame && panel.value === "menu" && <GameMenu session={session} />}
       <TooltipLayer />

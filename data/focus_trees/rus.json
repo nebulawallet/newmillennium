@@ -1,0 +1,428 @@
+{
+  "id": "rus",
+  "name": "Russia",
+  "countries": [
+    "RUS"
+  ],
+  "note": "Branches depend on the governing party and on who is President. Policies named after real reforms or party programmes are cited; effects are gameplay estimates.",
+  "focuses": [
+    {
+      "id": "rus_federal_centre",
+      "name": "Strengthen the federal centre",
+      "description": "Reassert federal authority over the regions and the budget.",
+      "x": 5,
+      "y": 0,
+      "days": 70,
+      "effects": [
+        {
+          "add_political_power": 50
+        },
+        {
+          "add_stability": 0.02
+        }
+      ]
+    },
+    {
+      "id": "rus_federal_districts",
+      "name": "Federal districts",
+      "description": "Group the federal subjects into federal districts that monitor whether regional law is consistent with federal law.",
+      "x": 1,
+      "y": 1,
+      "days": 70,
+      "effects": [
+        {
+          "add_stability": 0.04
+        },
+        {
+          "add_unrest": -0.03
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "minorities",
+            "value": -3
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "security_services",
+            "value": 3
+          }
+        }
+      ],
+      "prerequisites": [
+        [
+          "rus_federal_centre"
+        ]
+      ],
+      "available": {
+        "holds_office": {
+          "person": "rus.vladimir_putin",
+          "office": "rus.president"
+        }
+      },
+      "ai_weight": 3
+    },
+    {
+      "id": "rus_flat_tax",
+      "name": "13 percent flat income tax",
+      "description": "Replace the progressive income tax with a single 13 percent rate, a reform of the early Putin years.",
+      "x": 0,
+      "y": 2,
+      "days": 70,
+      "effects": [
+        {
+          "add_interest_group_approval": {
+            "group": "business",
+            "value": 6
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "tax_efficiency",
+            "value": 0.05,
+            "days": 3650
+          }
+        },
+        {
+          "add_economic_mood": 0.04
+        }
+      ],
+      "prerequisites": [
+        [
+          "rus_federal_districts"
+        ]
+      ],
+      "available": {
+        "holds_office": {
+          "person": "rus.vladimir_putin",
+          "office": "rus.president"
+        }
+      },
+      "ai_weight": 3
+    },
+    {
+      "id": "rus_stabilization_fund",
+      "name": "Stabilization fund",
+      "description": "Save part of the oil revenue in a fund that balances the budget when prices fall. The real fund was established in 2004.",
+      "x": 2,
+      "y": 2,
+      "days": 70,
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "inflation",
+            "value": -0.02,
+            "days": 3650
+          }
+        },
+        {
+          "add_economic_mood": 0.03
+        }
+      ],
+      "prerequisites": [
+        [
+          "rus_federal_districts"
+        ]
+      ],
+      "available": {
+        "holds_office": {
+          "person": "rus.vladimir_putin",
+          "office": "rus.president"
+        }
+      },
+      "ai_weight": 2
+    },
+    {
+      "id": "rus_national_champions",
+      "name": "National champions in energy",
+      "description": "Build large state-controlled companies in the energy sector.",
+      "x": 1,
+      "y": 3,
+      "days": 70,
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "state_industry_output",
+            "value": 0.05,
+            "days": 3650
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "business",
+            "value": -3
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "security_services",
+            "value": 3
+          }
+        }
+      ],
+      "prerequisites": [
+        [
+          "rus_flat_tax",
+          "rus_stabilization_fund"
+        ]
+      ],
+      "available": {
+        "holds_office": {
+          "person": "rus.vladimir_putin",
+          "office": "rus.president"
+        }
+      },
+      "ai_weight": 2
+    },
+    {
+      "id": "rus_cprf_nationalisation",
+      "name": "Nationalise natural resources",
+      "description": "Bring natural resources and large industries into public ownership, a stated goal of the Communist Party of the Russian Federation.",
+      "x": 9,
+      "y": 1,
+      "days": 70,
+      "effects": [
+        {
+          "change_law": {
+            "category": "economic_system",
+            "law": "state_capitalism"
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "labour_unions",
+            "value": 8
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "business",
+            "value": -10
+          }
+        }
+      ],
+      "prerequisites": [
+        [
+          "rus_federal_centre"
+        ]
+      ],
+      "available": {
+        "ruling_party": "rus.cprf"
+      },
+      "ai_weight": 3
+    },
+    {
+      "id": "rus_cprf_agriculture",
+      "name": "Public ownership in agriculture",
+      "description": "Bring large farms into public ownership, part of the programme of the party.",
+      "x": 9,
+      "y": 2,
+      "days": 70,
+      "effects": [
+        {
+          "add_interest_group_approval": {
+            "group": "rural",
+            "value": 6
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "business",
+            "value": -3
+          }
+        }
+      ],
+      "prerequisites": [
+        [
+          "rus_cprf_nationalisation"
+        ]
+      ],
+      "available": {
+        "ruling_party": "rus.cprf"
+      },
+      "ai_weight": 2
+    },
+    {
+      "id": "rus_party_of_power",
+      "name": "Party of power",
+      "description": "Rally the deputies and regional leaders of the governing party behind the government.",
+      "x": 5,
+      "y": 1,
+      "days": 70,
+      "effects": [
+        {
+          "add_ruling_party_popularity": 0.03
+        },
+        {
+          "add_political_power": 30
+        }
+      ],
+      "prerequisites": [
+        [
+          "rus_federal_centre"
+        ]
+      ],
+      "available": {
+        "any": [
+          {
+            "ruling_party": "rus.united_russia"
+          },
+          {
+            "ruling_party": "rus.unity"
+          }
+        ]
+      },
+      "ai_weight": 2
+    },
+    {
+      "id": "rus_military_reform",
+      "name": "Military reform",
+      "description": "Reorganise the armed forces and their command.",
+      "x": 13,
+      "y": 1,
+      "days": 70,
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "army_org",
+            "value": 0.05,
+            "days": 3650
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "military",
+            "value": 4
+          }
+        }
+      ],
+      "prerequisites": [
+        [
+          "rus_federal_centre"
+        ]
+      ]
+    },
+    {
+      "id": "rus_contract_service",
+      "name": "Contract service",
+      "description": "Expand contract soldiers alongside conscripts.",
+      "x": 12,
+      "y": 2,
+      "days": 70,
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "army_org",
+            "value": 0.03,
+            "days": 3650
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "youth_students",
+            "value": 3
+          }
+        }
+      ],
+      "prerequisites": [
+        [
+          "rus_military_reform"
+        ]
+      ]
+    },
+    {
+      "id": "rus_strategic_forces",
+      "name": "Strategic forces",
+      "description": "Maintain and modernise strategic forces.",
+      "x": 14,
+      "y": 2,
+      "days": 70,
+      "effects": [
+        {
+          "add_war_support": 0.03
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "military",
+            "value": 3
+          }
+        }
+      ],
+      "prerequisites": [
+        [
+          "rus_military_reform"
+        ]
+      ]
+    },
+    {
+      "id": "rus_energy_exports",
+      "name": "Energy exports",
+      "description": "Expand oil and gas export capacity.",
+      "x": 16,
+      "y": 1,
+      "days": 70,
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "fossil_output",
+            "value": 0.1,
+            "days": 3650
+          }
+        },
+        {
+          "add_economic_mood": 0.05
+        }
+      ],
+      "prerequisites": [
+        [
+          "rus_federal_centre"
+        ]
+      ]
+    },
+    {
+      "id": "rus_eurasian_cooperation",
+      "name": "Eurasian cooperation",
+      "description": "Deepen economic ties with neighbouring former Soviet states.",
+      "x": 16,
+      "y": 2,
+      "days": 70,
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "trade_efficiency",
+            "value": 0.03,
+            "days": 3650
+          }
+        }
+      ],
+      "prerequisites": [
+        [
+          "rus_energy_exports"
+        ]
+      ]
+    }
+  ],
+  "source": [
+    {
+      "url": "https://en.wikipedia.org/wiki/Presidency_of_Vladimir_Putin",
+      "title": "Wikipedia: Presidency of Vladimir Putin",
+      "accessed": "2026-10-14"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Federal_districts_of_Russia",
+      "title": "Wikipedia: Federal districts of Russia",
+      "accessed": "2026-10-14"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Stabilization_Fund_of_the_Russian_Federation",
+      "title": "Wikipedia: Stabilization Fund of the Russian Federation",
+      "accessed": "2026-10-14"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Communist_Party_of_the_Russian_Federation",
+      "title": "Wikipedia: Communist Party of the Russian Federation",
+      "accessed": "2026-10-14"
+    }
+  ],
+  "confidence": "verified"
+}

@@ -18,7 +18,11 @@ export class FixtureFiles implements FileProvider {
     return this.disk.read(path);
   }
   listFiles(dir: string): string[] {
-    return this.disk.listFiles(dir);
+    const prefix = dir.endsWith("/") ? dir : dir + "/";
+    const mem = Object.keys(this.mem).filter((p) => p.startsWith(prefix) && !p.slice(prefix.length).includes("/"));
+    // scripted content on disk names real people and countries the fixture does not have
+    const disk = ["events", "decisions", "focus_trees"].includes(dir) ? [] : this.disk.listFiles(dir);
+    return [...new Set([...disk, ...mem])];
   }
 }
 

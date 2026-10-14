@@ -60,6 +60,29 @@ function statTips(db: ContentDB, cs: CountryState) {
   };
 }
 
+/** National focus tile (HOI4: beside the flag): current focus and its progress. */
+function FocusTile({ db, session }: { db: ContentDB; session: Session }) {
+  const state = session.state!;
+  const cs = state.countries[state.player!]!;
+  const f = cs.focus.current ? db.focusTrees.get(cs.focus.tree)?.focuses.find((x) => x.id === cs.focus.current) : undefined;
+  const open = panel.value === "focus";
+  return (
+    <button
+      class={`tile focus-tile ${open ? "on" : ""} ${f ? "" : "idle"}`}
+      aria-label="National focus"
+      onClick={() => (panel.value = open ? null : "focus")}
+      {...tip(() => ({
+        title: "National focus",
+        rows: f ? [["Current", f.name], ["Progress", `${cs.focus.progress} / ${f.days} days`]] : [["Current", "None selected"]],
+        note: `${cs.focus.completed.length} completed. Click to open the focus tree.`,
+      }))}
+    >
+      {Icon.focus({ size: 22 })}
+      {f && <span class="ft-bar"><span style={{ width: `${Math.min(100, (cs.focus.progress / f.days) * 100)}%` }} /></span>}
+    </button>
+  );
+}
+
 export function TopBar({ db, session }: { db: ContentDB; session: Session }) {
   version.value;
   const state = session.state;
@@ -93,6 +116,8 @@ export function TopBar({ db, session }: { db: ContentDB; session: Session }) {
           <span class="flag-tag">{tag}</span>
         </span>
       </button>
+
+      <FocusTile db={db} session={session} />
 
       <nav class="tabs" aria-label="Panels">
         {TABS.map((t) => (
