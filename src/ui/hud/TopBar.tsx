@@ -34,7 +34,7 @@ function Stat({ icon, value, numeric, tipContent, pending }: { icon: IconName; v
 
 function statTips(db: ContentDB, cs: CountryState) {
   const pp = politicalPowerGain(db, cs);
-  const st = stabilityTarget(cs);
+  const st = stabilityTarget(cs, db.politicsRules.unrest.stability_penalty);
   return {
     pp: (): TipContent => ({
       title: "Political power",
@@ -51,9 +51,10 @@ function statTips(db: ContentDB, cs: CountryState) {
       rows: [
         ["Current", pct(cs.stability)],
         ["Interest group approval (weighted)", Math.round(st.approval)],
+        ["Unrest", `${Math.round(st.unrest * 100)}%`],
         ["Drifting toward", <span class={st.target >= cs.stability ? "good" : "bad"}>{pct(st.target)}</span>],
       ],
-      note: "Moves 3% of the gap each week. Interest group approval sets the target.",
+      note: "Moves 3% of the gap each week. Interest group approval sets the target; unrest lowers it.",
     }),
     war: (): TipContent => ({ title: "War support", rows: [["Current", pct(cs.warSupport)]], note: "Will be driven by wars, threats and events from Phases 6 and 10." }),
   };

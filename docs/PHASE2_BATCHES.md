@@ -28,29 +28,22 @@ See the prompts used in the pilot (git history, early October 2026) for the form
 
 ## Done (Pass A)
 
-DEU (Pass A and Pass B), USA, RUS, GBR, CHN, IRN, SOM
+DEU (Pass A and Pass B), USA, RUS, GBR, CHN, IRN, SOM, SWE
 
-## Partial (stopped mid-run; uncommitted)
+## Running
 
-| Tags | State |
-|---|---|
-| SWE | Passes core validation, not audited |
-| FRA | Incomplete |
-| JPN | Incomplete |
-| TUR | Incomplete |
-
-The stopped batches also covered ITA, AND, MCO, NOR, DNK, FIN, ISL, ESP, NLD, PRT, KOR, TWN, PRK, MNG, POL, CZE, HUN, SVK, ISR and PSE. All of these are todo.
+Batches 1–6 below were launched on 14 October 2026 (SWE was audited and committed separately; batch 2 is NOR DNK FIN ISL). The partial FRA, JPN and TUR folders from the stopped run were handed to their batches as unverified drafts.
 
 ## Todo batches
 
 | # | Tags | Notes |
 |---|---|---|
-| 1 | FRA ITA AND MCO | Andorra's co-prince is `ex_officio_of: fra.president`, so France goes first |
-| 2 | SWE NOR DNK FIN ISL | Audit SWE; Finland's 2000 presidential election fell after game start |
-| 3 | ESP NLD PRT | Spain's 2000 election was in March, so seats come from the 1996 result |
-| 4 | JPN KOR TWN PRK MNG | Taiwan's 2000 election; North Korea's nominal vs effective head of state |
-| 5 | POL CZE HUN SVK | Czech "opposition agreement" uses `confidence_and_supply` |
-| 6 | TUR ISR PSE | Strict neutrality; Turkey's 2018 switch to a presidential system goes in a note |
+| 1 (running) | FRA ITA AND MCO | Andorra's co-prince is `ex_officio_of: fra.president`, so France goes first |
+| 2 (running) | NOR DNK FIN ISL | Finland's 2000 presidential election fell after game start |
+| 3 (running) | ESP NLD PRT | Spain's 2000 election was in March, so seats come from the 1996 result |
+| 4 (running) | JPN KOR TWN PRK MNG | Taiwan's 2000 election; North Korea's nominal vs effective head of state |
+| 5 (running) | POL CZE HUN SVK | Czech "opposition agreement" uses `confidence_and_supply` |
+| 6 (running) | TUR ISR PSE | Strict neutrality; Turkey's 2018 switch to a presidential system goes in a note |
 | 7 | BEL LUX IRL AUT CHE LIE | Switzerland is directorial (7-member Federal Council, `seats: 7`) |
 | 8 | ROU BGR GRC CYP NCY | |
 | 9 | YUG MNE KOS BIH HRV SVN MKD ALB | Bosnia has a 3-member presidency plus the High Representative; Kosovo under UNMIK |

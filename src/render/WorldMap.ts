@@ -9,6 +9,7 @@ import { ProvinceTexture } from "./layers/ProvinceTexture.ts";
 import { MAP_MODES, type MapModeContext } from "./mapModes.ts";
 import { provinceAt, type MapData } from "./mapData.ts";
 import { millerY, type MapView } from "./MapView.ts";
+import type { GameState } from "../sim/state.ts";
 
 export type RenderApproach = "mesh" | "texture";
 
@@ -24,6 +25,8 @@ export class WorldMap {
   private hovered = 0;
   private selected = 0;
   mode = "political";
+  /** Live game state for map modes (ownership, governments, results); null on the start screen. */
+  state: GameState | null = null;
   onHoverChange: (id: number) => void = () => {};
   onSelectChange: (id: number) => void = () => {};
 
@@ -101,13 +104,24 @@ export class WorldMap {
     const mode = MAP_MODES.find((m) => m.id === id && m.available);
     if (!mode?.color) return 0;
     this.mode = id;
-    const ctx: MapModeContext = { db: this.db, map: this.map };
+    const ctx: MapModeContext = { db: this.db, map: this.map, state: this.state };
     for (const p of this.map.provinces) {
       const [r, g, b] = mode.color(p, ctx);
       this.colors.set(p.id, r, g, b);
     }
     this.colors.commit();
     return performance.now() - t0;
+  }
+
+  /** Follow a game state (or none) and recolour the current mode. */
+  setOwners(state: GameState | null): void {
+    this.state = state;
+    this.refresh();
+  }
+
+  /** Recolour the current map mode (after ownership, government or election changes). */
+  refresh(): void {
+    this.setMode(this.mode);
   }
 
   /** Rough GPU memory estimate for the benchmark (bytes). */

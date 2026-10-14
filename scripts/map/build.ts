@@ -288,6 +288,40 @@ async function main(): Promise<void> {
   }
   log(`split ${splits} large units -> ${finalUnits.length} provinces`);
 
+  // ---- final populations. Shaping above used weights with a large area term (2 per km2), which
+  // gave huge empty provinces (Alaska, Siberia, deserts) far too many people, and places that
+  // coastline simplification left in the sea (e.g. Manhattan) counted for no province. Populations
+  // are re-spread within each pool from places assigned to their containing province (else the
+  // nearest province of the same country) plus a small area term. Shapes and ids are unchanged.
+  const AREA_W = Number(process.env.MAP_AREA_WEIGHT ?? 0.08);
+  // rural population thins out toward the poles (taiga, tundra)
+  const latFactor = (u: Unit) => Math.max(0.03, Math.min(1, (64 - Math.abs(centroid(u.geom)[1])) / 10));
+  const placeW = new Map<Unit, number>();
+  const boxes = finalUnits.map((u) => ({ u, bb: bbox(u.geom), c: centroid(u.geom) }));
+  for (const p of places) {
+    if (p.pop <= 0) continue;
+    let home = boxes.find((b) => p.x >= b.bb[0] && p.x <= b.bb[2] && p.y >= b.bb[1] && p.y <= b.bb[3] && pointInMultiPolygon(p.x, p.y, b.u.geom))?.u;
+    if (!home) {
+      let best = 1.2 ** 2;
+      for (const b of boxes) {
+        if (b.u.adm0 !== p.adm0) continue;
+        const dx = Math.max(b.bb[0] - p.x, 0, p.x - b.bb[2]), dy = Math.max(b.bb[1] - p.y, 0, p.y - b.bb[3]);
+        const d = dx * dx + dy * dy;
+        if (d < best) { best = d; home = b.u; }
+      }
+    }
+    if (home) placeW.set(home, (placeW.get(home) ?? 0) + Math.pow(Math.max(p.pop, 1000), 0.85));
+  }
+  const finalWeight = (u: Unit) => (placeW.get(u) ?? 0) + u.area * AREA_W * latFactor(u);
+  const finalPoolWeight = new Map<string, number>();
+  for (const u of finalUnits) finalPoolWeight.set(u.pool, (finalPoolWeight.get(u.pool) ?? 0) + finalWeight(u));
+  const finalPoolPop = new Map<string, number>();
+  for (const u of finalUnits) finalPoolPop.set(u.pool, (finalPoolPop.get(u.pool) ?? 0) + (popOf.get(u) ?? 0));
+  for (const u of finalUnits) {
+    const w = finalPoolWeight.get(u.pool) ?? 0;
+    if (w > 0) popOf.set(u, (finalPoolPop.get(u.pool)! * finalWeight(u)) / w);
+  }
+
   // ---- order & ids
   finalUnits.sort((a, b) => (a.owner < b.owner ? -1 : a.owner > b.owner ? 1 : centroid(a.geom)[1] > centroid(b.geom)[1] ? -1 : 1));
   if (finalUnits.length > 65_000) throw new Error("too many provinces for 16-bit ids");

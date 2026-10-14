@@ -149,8 +149,24 @@ The four required files are `country.json`, `people.json`, `parties.json` and `e
   - `winner`.
   - Its own `source` and `confidence`.
 - **`rules`**: the recurrence (`every_years` from an `anchor` date). The engine continues the calendar after the last real election.
+  - In historical mode the game holds each election on its real date (including real snap elections) for as long as the country follows history; otherwise it counts `every_years` from the last election.
+  - For a direct presidential election, set `system` when it is not decided in two rounds: `"plurality"` (one round, most votes wins), `"irv"` (instant runoff) or `"electoral_college"`. Two rounds is the default.
+- **How results are used.** In historical mode, an election whose real candidates and parties still exist follows the recorded result (`historical_adherence`, 97% by default). So:
+  - `winner` must be the real winner: the person for presidential elections, the party (or the leading party of a bloc, e.g. CDU for CDU/CSU) for legislative ones.
+  - Shares that the record does not attribute to a party count as "others"; seats with special keys (`independents`, `others`, …) are copied as they are.
 - **No elections:** countries without elections use `rules: []`, `elections: []` and `no_elections_reason`.
 - **Party congresses** in one-party states use `kind: "party_congress"`.
+
+### electoral_units.json (optional)
+
+Sub-national units with real past results. It does two things:
+- **Regional lean.** Every election breaks its national result down by province; where a province's admin-1 code is in a unit, the unit's real `basis_shares` set its lean (a proportional swing from the `basis_election`). Countries without the file get a generic breakdown (regional parties, culture, population density).
+- **Electoral college.** With `office` set, the units elect that office: each unit's `votes` (by apportionment year, `from_year`) go to its plurality winner (`method: "winner_take_all"`) or are split (`"proportional"`).
+
+Rules:
+- `basis_shares` are real vote shares from a fetched source, by party id; `basis_election` must be an election id in elections.json.
+- `adm1` codes are the map's Natural Earth `adm1_code` values (see `.cache/work/admin1_attrs.csv` after `npm run fetch-map`).
+- The USA file is the worked example: states and DC, electoral votes for the 1990–2020 censuses, and the 2000 state results.
 
 ### cabinet.json and military.json (optional; required by `--tier full`)
 
@@ -188,6 +204,12 @@ Both use the same office format.
 - **Government types.** Each type sets whether it holds elections, needs a majority, requires a legislature and requires parties. It also sets coup risk, political power gain, succession model and forbidden laws.
 - **Traits** must be factual. Use `background` for career or training and `stance` for documented positions. Advisor and commander role traits are attached by the engine according to office.
 - **Modifiers.** Every modifier id used anywhere must be defined in `data/modifiers.json`.
+
+### Politics tuning (`data/rules/politics.json`)
+
+Gameplay constants for elections, coalitions, interest groups, unrest and laws: voter affinity, leader appeal and incumbency weights, noise, historical adherence, coalition penalties, confidence-vote risk, coup and civil-war scales, law cooldowns. Every value has a default in `src/content/schemas/rules.ts`; list only the ones you change. These are gameplay estimates, not facts about the world.
+
+A law's `ideology_support_drift` may use the key `ruling` for "the ruling party's sub-ideology" (e.g. state-controlled media slowly favours whoever governs).
 
 ## 6. Scripts: effects and triggers
 

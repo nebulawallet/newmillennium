@@ -3,6 +3,7 @@
  * The compiler (Node) produces it with toBundle(); the game rebuilds the maps with fromBundle().
  */
 import type { CompileResult, ContentDB, CountryContent, Issue } from "./compile.ts";
+import { PoliticsRulesFile, type PoliticsRules } from "./schemas/rules.ts";
 
 export const BUNDLE_VERSION = 1;
 
@@ -22,6 +23,7 @@ export interface ContentBundle {
   cultures: unknown[];
   countryList: unknown[];
   countryColors: Record<string, string>;
+  politicsRules: PoliticsRules;
   countries: CountryContent[];
 }
 
@@ -49,6 +51,7 @@ export function toBundle({ db, issues }: CompileResult): ContentBundle {
     cultures: [...db.cultures.values()],
     countryList: db.countryList,
     countryColors: Object.fromEntries(db.countryColors),
+    politicsRules: db.politicsRules,
     countries: [...db.countries.values()].filter((c) => c.country),
   };
   return { ...body, hash: fnv1a(JSON.stringify(body)) };
@@ -70,6 +73,7 @@ export function fromBundle(b: ContentBundle): ContentDB {
     countryList: b.countryList as ContentDB["countryList"],
     countryColors: new Map(Object.entries(b.countryColors ?? {})),
     countries: new Map(),
+    politicsRules: b.politicsRules ?? PoliticsRulesFile.parse({}),
     people: new Map(),
     parties: new Map(),
     offices: new Map(),

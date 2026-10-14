@@ -1,6 +1,6 @@
 # Handoff: New Millennium
 
-Read this first when you pick up the project in a new session, with a new agent, or after a break. Last updated 14 October 2026, after commit `193ea02`.
+Read this first when you pick up the project in a new session, with a new agent, or after a break. Last updated 14 October 2026, after the Phase 5 commit.
 
 ## What this is
 
@@ -26,21 +26,29 @@ New Millennium is a grand strategy game in the style of Hearts of Iron IV, set f
 | # | Phase | Status |
 |---|---|---|
 | 1 | Politics schemas and `validate-data` | **Done** |
-| 2 | World politics database | **In progress.** 8 of 212 countries done: DEU, USA, RUS, GBR, CHN, IRN, SOM (Pass A, core 2000 data); DEU also has full Pass B depth. Research was paused by the user; see below. |
+| 2 | World politics database | **In progress.** Done: DEU, USA, RUS, GBR, CHN, IRN, SOM, SWE (Pass A); DEU also has Pass B. Research agents are running batches 1–6; see [docs/PHASE2_BATCHES.md](docs/PHASE2_BATCHES.md). |
 | 3 | Map pipeline and rendering | **Done** apart from polish: 4,580 provinces on 2000 borders; mesh renderer chosen. Resources per province are stubbed until Phase 7. |
 | 4 | Time loop, top bar, save/load, politics screen | **Done** |
 | — | UI rebuild in the HOI4 layout | **Done** (`193ea02`), at the user's request |
-| 5 | Elections, coalitions, interest groups, laws, unrest, coups, civil war | Not started. Next code phase. |
-| 6–13 | Scripting and events, economy, research, production, combat, diplomacy, AI, content | Not started |
+| 5 | Elections, coalitions, interest groups, laws, unrest, coups, civil war | **Done** (see "Phase 5 notes" below) |
+| 6–13 | Scripting and events, economy, research, production, combat, diplomacy, AI, content | Not started. Phase 6 is next. |
 
 ## Where things stand right now
 
-- **Nothing is running.** The user asked to stop all background agents and the dev server.
-- **Uncommitted, partial research output** from the stopped agents is in `data/countries/`:
-  - `SWE`: complete and passes core validation, but not yet audited. Audit before committing.
-  - `FRA`, `JPN`, `TUR`: incomplete; each fails validation on missing files.
-  - Finish them by relaunching their batches (see [docs/PHASE2_BATCHES.md](docs/PHASE2_BATCHES.md)), or delete the folders to start clean.
-- **Last verified on `193ea02`:** `npm run check` passes (typecheck, 41 tests, validation of the countries that have data).
+- **Research agents are running** (started 14 October 2026), at most six at once. Their folders in `data/countries/` are untracked until audited and committed. `npm run check` validates only countries tracked by git (`--tracked`), so half-written folders do not block commits.
+- **Batches in flight:** 1 (FRA ITA AND MCO), 2 (NOR DNK FIN ISL), 3 (ESP NLD PRT), 4 (JPN KOR TWN PRK MNG), 5 (POL CZE HUN SVK), 6 (TUR ISR PSE). When one finishes: audit, commit, launch the next todo batch.
+- **Audit checklist addition (Phase 5):** direct presidential elections decided by plurality need `"system": "plurality"` on their rule (e.g. KOR, TWN, ISL, PSE in the current batches); check `winner` is the real winner.
+- **Map rebuilt** in Phase 5 with a population fix (see gotchas). Province ids changed, so saves made before this commit load with misaligned province ownership.
+
+### Phase 5 notes
+
+- **Elections** (`src/sim/politics/`): party shares come from ideology support (policy-distance affinity), a per-party calibration fixed at start so the model begins at the real 2000 vote shares, leader appeal, incumbency and fatigue, law modifiers (managed elections) and the economic mood, plus logit-normal noise. Seats per system: D'Hondt, Sainte-Laguë, Imperiali, Hare, Droop, FPTP, two-round, AV, block, STV/SNTV approximations, MMP with overhang, parallel, staggered chambers, indirect chambers, and the US Electoral College (`data/countries/USA/electoral_units.json`, real 2000 state results and apportionments 1990–2020).
+- **Historical mode:** elections whose real candidates and parties exist follow the record with probability 0.97 (`data/rules/politics.json`); if the real winner would lose on the noisy shares, the smallest uniform swing that gives them the win is applied. A result that leaves the record sets `followsHistory = false` for that country. The timeline only continues an office from its real predecessor. Acceptance tests: US 2000, Russia 2000 and Germany 2002 reproduce in at least 90 of 100 seeds (`tests/elections.test.ts`).
+- **Dynamic mode:** elected offices and governments are decided only by the simulation; appointed, hereditary and military offices still follow their real successions while the predecessor matches. Presidential nominees are chosen by party, preferring people who stood for the office in real elections within about four years.
+- **Coalitions:** formateur = largest party (or the president's party in president-led systems; on the historical track, the real head of government's party). Partners scored by policy distance, size, cross-bloc gaps, grand-coalition and minority penalties, red lines; on the historical track the real cabinet's parties get a bonus where `cabinet.json` exists. The player picks from the options (partners may refuse). Confidence votes only in systems where the head of government is the effective executive.
+- **Interest groups, laws, unrest:** approval drifts to a target (laws, ruling ideology, leader traits, economy) with a per-country offset so 2000 values are the equilibrium. Laws cost PP and pass a legislature vote. Unhappy groups protest, strike, march, rise up or try impeachment; armed groups can stage coups (military junta, elections end); civil war splits the map into one contiguous rebel region (`force_civil_war` command for scripting and tests).
+- **UI:** election-night window, government-formation window, law picker, government support / unrest / economic mood rows, recent results, early elections, election-results and unrest map modes.
+- **Stubbed in Phase 5:** party bans, dynamic party congresses in one-party states, combat in civil wars (ends by a monthly chance until Phase 10), running mates are picked by appeal, the economic mood is a placeholder cycle until Phase 7, aging and health exits.
 
 ## How to run
 
@@ -61,18 +69,10 @@ In game: Space pauses, 1–5 or +/- set speed, Q–P open the tab row (Q is Poli
 
 ## Next steps, in order
 
-1. **Phase 2 research (when the user wants it resumed).**
-   - Audit `SWE`, then finish `FRA`, `JPN` and `TUR`.
-   - Launch the remaining batches from [docs/PHASE2_BATCHES.md](docs/PHASE2_BATCHES.md), at most about 6 agents at once (Wikimedia rate limits).
-   - Every agent follows [scripts/research/AGENT_BRIEF.md](scripts/research/AGENT_BRIEF.md).
-   - After each batch: validate it, spot-check facts yourself (especially anything after June 2026), run `npm run review-report`, commit.
-   - The Commonwealth realms reference `gbr.monarch`, which now exists. Andorra references `fra.president`, so do France first.
-2. **Phase 5 (can run in parallel with research):**
-   - Elections: vote share from ideology support, party popularity, economy and so on; seat allocation per electoral system (D'Hondt, Sainte-Laguë, Hare, FPTP, two-round, MMP, US Electoral College); historical-mode weighting.
-   - Coalitions and the negotiation UI, then interest-group approval, law changes, unrest, coups, civil war.
-   - Add an election-night screen and the election-results map mode (it is already listed as "unavailable").
-   - Acceptance: historical mode reproduces the real winners of US 2000 and Russia 2000.
-3. **Phase 2, Pass B:** cabinets, military chiefs, opposition depth and factions. `--tier full` must pass.
+1. **Phase 2 research:** keep about six batches running. After each: `npm run validate-data -- --only <tags> --tier core`, spot-check facts with `scripts/research/wiki.ts` (anything after June 2026 yourself), `npm run review-report`, commit, update the batch table, launch the next batch.
+2. **Phase 6:** effect/trigger/scope registry (exists in `src/content/script/`), events, decisions, the generic focus tree, USA and RUS trees, first historical events. Fill the Decisions tab.
+3. **Phases 7–13** in PLAN.md order.
+4. **Phase 2, Pass B** once Pass A covers all 212 tags: `--tier full` must pass.
 
 ## Decisions already made (don't relitigate)
 
@@ -99,3 +99,6 @@ In game: Space pauses, 1–5 or +/- set speed, Q–P open the tab row (Q is Poli
 - **Wikidata errors are common** (wrong dates, missing acting holders, dates stored at year precision). Always cross-check against Wikipedia; the research tool prints real date precision.
 - **Border quads must be `DoubleSide`.** Their winding depends on segment direction.
 - **Three.js `computeBoundingSphere` on 2D geometry gives NaN.** Use `setWorldBounds()` in `src/render/layers/ProvinceColors.ts`.
+- **The committed map is not byte-reproducible** from the current `.cache` (a plain rebuild renumbers about a third of the provinces). Province populations now come from a final pass (places assigned to the nearest province of their country, small latitude-scaled area term); before that, Alaska had 19 million people and Manhattan's population was lost.
+- **In-game synthetic key events** dispatched on `window` have no element target; the key handler guards for it.
+- **`npm run check` uses `--tracked`:** stage a newly audited country folder before running it, or it will not be validated.

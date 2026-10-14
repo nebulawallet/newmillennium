@@ -115,6 +115,8 @@ For each person:
   - Its own `source` and `confidence`.
 - `party_results[].seats` means the seats held **after** the election. When only part of the chamber was contested (e.g. US Senate classes, staggered upper houses), also give `seats_won`.
 - `rules` for the recurrence: `every_years`, an `anchor` set to the most recent real election, and `snap_possible`.
+  - For direct presidential elections decided in a single round by plurality (e.g. Mexico, South Korea, Taiwan, the Philippines), add `"system": "plurality"`. Two rounds is the default; use `"irv"` for instant runoff.
+- `winner` must be the real winner. In historical mode the game replays the record, so a wrong winner changes history. For a legislative election, the winner is the largest party (for a joint list or union such as CDU/CSU, the leading party).
 - A person has one `party` (their main party). Record concurrent or earlier memberships in `party_history`, e.g. a United Front party leader who is also a CCP member.
 - Seat keys besides party ids are `independents`, `others`, `appointed`, `vacant` and `speaker`. Parties whose members do not take their seats get `abstentionist: true`. For referendums that are not plain yes/no, use `options: [{label, share, votes}]`.
 - People, parties and offices have an optional `note` field. Use it to record conflicting sources (e.g. "Wikipedia gives 3 Feb, Wikidata 6 Feb").

@@ -3,6 +3,7 @@
  * exist yet are listed as unavailable (with the phase that adds them) rather than faked.
  */
 import type { ContentDB } from "../content/compile.ts";
+import type { GameState } from "../sim/state.ts";
 import type { MapData, Province } from "./mapData.ts";
 
 export type RGB = [number, number, number];
@@ -10,6 +11,18 @@ export type RGB = [number, number, number];
 export interface MapModeContext {
   db: ContentDB;
   map: MapData;
+  /** Live game state when a game is running (ownership, governments, results). */
+  state?: GameState | null;
+}
+
+/** Current owner and controller of a province (live state when a game runs). */
+const ownerOf = (p: Province, ctx: MapModeContext) => ctx.state?.provinceOwner[p.id - 1] ?? p.owner;
+const controllerOf = (p: Province, ctx: MapModeContext) => ctx.state?.provinceController[p.id - 1] ?? p.controller;
+/** The leading governing party of a country (live when a game runs, else the 2000 data). */
+function rulingParty(tag: string, ctx: MapModeContext): string | undefined {
+  const live = ctx.state?.countries[tag];
+  if (live) return live.rulingParties[0];
+  return ctx.db.countries.get(tag)?.country?.start_2000.ruling_parties[0];
 }
 
 export interface MapMode {
@@ -30,7 +43,7 @@ const mix = (a: RGB, b: RGB, t: number): RGB => [a[0] + (b[0] - a[0]) * t, a[1] 
 const GREY: RGB = [70, 76, 86];
 
 function ownerColor(tag: string, ctx: MapModeContext): RGB {
-  const c = ctx.db.countryColors.get(tag);
+  const c = ctx.state?.dynamicCountries[tag]?.color ?? ctx.db.countryColors.get(tag);
   return c ? hexToRgb(c) : GREY;
 }
 
@@ -55,8 +68,7 @@ export const TERRAIN_COLORS: Record<string, string> = {
 };
 
 function rulingSubIdeologyColor(tag: string, ctx: MapModeContext): RGB | null {
-  const c = ctx.db.countries.get(tag)?.country;
-  const lead = c?.start_2000.ruling_parties[0];
+  const lead = rulingParty(tag, ctx);
   const party = lead ? ctx.db.parties.get(lead) : undefined;
   const sub = party ? ctx.db.subIdeologies.get(party.sub_ideology) : undefined;
   return sub ? hexToRgb(sub.color) : null;
@@ -68,8 +80,9 @@ export const MAP_MODES: MapMode[] = [
     name: "Political",
     available: true,
     color: (p, ctx) => {
-      const own = ownerColor(p.owner, ctx);
-      return p.controller === p.owner ? own : mix(own, ownerColor(p.controller, ctx), 0.55);
+      const owner = ownerOf(p, ctx), ctrl = controllerOf(p, ctx);
+      const own = ownerColor(owner, ctx);
+      return ctrl === owner ? own : mix(own, ownerColor(ctrl, ctx), 0.55);
     },
   },
   {
@@ -83,11 +96,11 @@ export const MAP_MODES: MapMode[] = [
     id: "ideology",
     name: "Ruling ideology",
     available: true,
-    color: (p, ctx) => rulingSubIdeologyColor(p.owner, ctx) ?? GREY,
+    color: (p, ctx) => rulingSubIdeologyColor(ownerOf(p, ctx), ctx) ?? GREY,
     legend: (ctx) => {
       const seen = new Map<string, string>();
       for (const cc of ctx.db.countries.values()) {
-        const lead = cc.country?.start_2000.ruling_parties[0];
+        const lead = rulingParty(cc.entry.tag, ctx);
         const sub = lead ? ctx.db.subIdeologies.get(ctx.db.parties.get(lead)?.sub_ideology ?? "") : undefined;
         if (sub) seen.set(sub.name, sub.color);
       }
@@ -99,7 +112,7 @@ export const MAP_MODES: MapMode[] = [
     name: "Ruling party",
     available: true,
     color: (p, ctx) => {
-      const lead = ctx.db.countries.get(p.owner)?.country?.start_2000.ruling_parties[0];
+      const lead = rulingParty(ownerOf(p, ctx), ctx);
       const party = lead ? ctx.db.parties.get(lead) : undefined;
       return party ? hexToRgb(party.color) : GREY;
     },
@@ -121,15 +134,63 @@ export const MAP_MODES: MapMode[] = [
     id: "control",
     name: "Occupation",
     available: true,
-    color: (p, ctx) => (p.controller === p.owner ? mix(ownerColor(p.owner, ctx), [40, 44, 52], 0.75) : ownerColor(p.controller, ctx)),
+    color: (p, ctx) => (controllerOf(p, ctx) === ownerOf(p, ctx) ? mix(ownerColor(ownerOf(p, ctx), ctx), [40, 44, 52], 0.75) : ownerColor(controllerOf(p, ctx), ctx)),
   },
-  { id: "election", name: "Election results", available: false, availableIn: "Phase 5" },
-  { id: "unrest", name: "Unrest", available: false, availableIn: "Phase 5" },
+  {
+    id: "election",
+    name: "Election results",
+    available: true,
+    // the latest election in each country: the party that came first in each province; countries
+    // with no election yet show their governing party, dimmed
+    color: (p, ctx) => {
+      const owner = ownerOf(p, ctx);
+      const won = ctx.state?.mapResults[owner]?.[String(p.id)];
+      const party = won ? ctx.db.parties.get(won) : undefined;
+      if (party) return hexToRgb(party.color);
+      const lead = rulingParty(owner, ctx);
+      const gov = lead ? ctx.db.parties.get(lead) : undefined;
+      return gov ? mix(hexToRgb(gov.color), [30, 34, 40], 0.7) : GREY;
+    },
+    legend: (ctx) => {
+      const count = new Map<string, number>();
+      for (const res of Object.values(ctx.state?.mapResults ?? {})) for (const party of Object.values(res)) count.set(party, (count.get(party) ?? 0) + 1);
+      const top = [...count].sort((a, b) => b[1] - a[1]).slice(0, 10);
+      return [
+        ...top.map(([id]) => ({ color: ctx.db.parties.get(id)?.color ?? "#777777", label: ctx.db.parties.get(id)?.name.en ?? id })),
+        { color: "#2c3036", label: "no election yet (governing party, dimmed)" },
+      ];
+    },
+  },
+  {
+    id: "unrest",
+    name: "Unrest",
+    available: true,
+    // country unrest, higher in provinces whose culture differs from the country's, and in rebel hands
+    color: (p, ctx) => {
+      const owner = ownerOf(p, ctx);
+      const cs = ctx.state?.countries[owner];
+      if (ctx.state?.dynamicCountries[owner]) return [200, 40, 30];
+      if (!cs) return [40, 44, 52];
+      const primary = ctx.db.countries.get(owner)?.country?.culture_primary;
+      const minority = p.culture && primary && p.culture !== primary ? 0.15 : 0;
+      const u = Math.min(1, cs.unrest + minority * (0.5 + cs.unrest) + (cs.civilWar ? 0.35 : 0));
+      return heat(u);
+    },
+    legend: () => [0, 0.25, 0.5, 0.75, 1].map((u) => ({ color: rgbHex(heat(u)), label: u === 0 ? "calm" : u === 1 ? "civil war / rebel held" : `${Math.round(u * 100)}% unrest` })),
+  },
   { id: "resources", name: "Resources", available: false, availableIn: "Phase 7" },
   { id: "supply", name: "Supply", available: false, availableIn: "Phase 10" },
   { id: "diplomacy", name: "Relations", available: false, availableIn: "Phase 11" },
   { id: "factions", name: "Factions", available: false, availableIn: "Phase 11" },
 ];
+
+/** Calm (dark steel) to red. */
+function heat(t: number): RGB {
+  const stops: RGB[] = [[46, 52, 50], [110, 104, 60], [196, 140, 50], [214, 84, 40], [200, 40, 30]];
+  const x = Math.max(0, Math.min(0.9999, t)) * (stops.length - 1);
+  const i = Math.floor(x);
+  return mix(stops[i]!, stops[i + 1]!, x - i);
+}
 
 export function rgbHex(c: RGB): string {
   return "#" + c.map((v) => Math.round(v).toString(16).padStart(2, "0")).join("");

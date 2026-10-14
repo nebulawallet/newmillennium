@@ -16,16 +16,23 @@ scripts/
   research/AGENT_BRIEF.md  instructions every research agent follows
   map/fetch.ts, map/build.ts (+ lib/geo.ts, lib/raster.ts)
   data/fetch-worldbank.ts
+  dev/election-diag.ts     prints election outcomes per seed (historical or dynamic, optionally with the real map)
   vite/contentPlugin.ts    serves /content/bundle.json in dev, emits it in builds
 src/
   content/                 zod schemas, compile.ts (loader + every validation rule), bundle.ts, query.ts, script/ (effect/trigger registry)
-  sim/                     pure TS simulation: state.ts (GameState from content), simulation.ts (tick + systems),
-                           clock.ts (speeds), save.ts (localStorage/IndexedDB/file), rng.ts, date.ts
+  sim/                     pure TS simulation: state.ts (GameState from content, save migration), simulation.ts (tick,
+                           systems, historical timeline, SimMap, events), commands.ts (player/AI commands), clock.ts,
+                           save.ts (localStorage/IndexedDB/file), rng.ts, date.ts
+  sim/politics/            Phase 5: seats.ts (pure seat maths for every electoral system), voteModel.ts (party shares,
+                           calibration, province breakdown), schedule.ts (election calendar), elections.ts (running and
+                           applying elections, electoral college, historical weighting), coalition.ts (formation,
+                           confidence votes), interestGroups.ts, laws.ts, parties.ts (lifecycle, polls),
+                           unrest.ts (unrest ladder, coups, civil war split), common.ts
   render/                  MapView (camera, wrap, input), WorldMap (layers, picking, map modes),
                            layers/ (ProvinceMesh = chosen, ProvinceTexture = alternative, Borders, Lakes, Labels),
                            mapData.ts (loads public/map), mapModes.ts, benchmark.ts (?bench)
   ui/                      Preact shell: session.ts (game session + signals), CountrySelect, hud/ (TopBar, Panels, SidePanel,
-                           GameMenu), politics/PoliticsPanel, charts/ (Hemicycle, Donut), MapUi (map modes, hover),
+                           GameMenu), politics/ (PoliticsPanel, LawPicker, ElectionNight, CoalitionPanel), charts/ (Hemicycle, Donut), MapUi (map modes, hover),
                            tooltip.tsx, icons.tsx, tabs.ts, theme.css + shell.css
   main.tsx                 boot: loads content + map, builds MapView/WorldMap/Session, renders UI, key bindings
 tests/                     vitest: validator rules, scripts, real data (DEU full tier), map 2000 rules, simulation

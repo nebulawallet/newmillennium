@@ -1,0 +1,1503 @@
+{
+  "office": "usa.president",
+  "units_label": "State",
+  "majority": "absolute",
+  "note": "Electoral votes per state are House seats plus two (Washington, D.C. has three under the Twenty-third Amendment). Apportionments take effect for elections from the listed year: 1990 census from 1993, 2000 census from 2003, 2010 census from 2013, 2020 census from 2023. basis_shares are the Republican and Democratic shares of each state's popular vote in the 2000 presidential election; the game derives each state's lean from them. If no candidate wins an absolute majority of electoral votes, the game falls back to the candidate with the most electoral votes (the real contingent election in the House is not modelled).",
+  "basis_election": "president_2000",
+  "units": [
+    {
+      "id": "AL",
+      "name": "Alabama",
+      "adm1": [
+        "USA-3541"
+      ],
+      "votes": [
+        {
+          "from_year": 1993,
+          "votes": 9
+        },
+        {
+          "from_year": 2003,
+          "votes": 9
+        },
+        {
+          "from_year": 2013,
+          "votes": 9
+        },
+        {
+          "from_year": 2023,
+          "votes": 9
+        }
+      ],
+      "basis_shares": {
+        "usa.republican": 0.5648,
+        "usa.democratic": 0.4157
+      }
+    },
+    {
+      "id": "AK",
+      "name": "Alaska",
+      "adm1": [
+        "USA-3563"
+      ],
+      "votes": [
+        {
+          "from_year": 1993,
+          "votes": 3
+        },
+        {
+          "from_year": 2003,
+          "votes": 3
+        },
+        {
+          "from_year": 2013,
+          "votes": 3
+        },
+        {
+          "from_year": 2023,
+          "votes": 3
+        }
+      ],
+      "basis_shares": {
+        "usa.republican": 0.5862,
+        "usa.democratic": 0.2767
+      }
+    },
+    {
+      "id": "AZ",
+      "name": "Arizona",
+      "adm1": [
+        "USA-3520"
+      ],
+      "votes": [
+        {
+          "from_year": 1993,
+          "votes": 8
+        },
+        {
+          "from_year": 2003,
+          "votes": 10
+        },
+        {
+          "from_year": 2013,
+          "votes": 11
+        },
+        {
+          "from_year": 2023,
+          "votes": 11
+        }
+      ],
+      "basis_shares": {
+        "usa.republican": 0.5102,
+        "usa.democratic": 0.4473
+      }
+    },
+    {
+      "id": "AR",
+      "name": "Arkansas",
+      "adm1": [
+        "USA-3528"
+      ],
+      "votes": [
+        {
+          "from_year": 1993,
+          "votes": 6
+        },
+        {
+          "from_year": 2003,
+          "votes": 6
+        },
+        {
+          "from_year": 2013,
+          "votes": 6
+        },
+        {
+          "from_year": 2023,
+          "votes": 6
+        }
+      ],
+      "basis_shares": {
+        "usa.republican": 0.5131,
+        "usa.democratic": 0.4586
+      }
+    },
+    {
+      "id": "CA",
+      "name": "California",
+      "adm1": [
+        "USA-3521"
+      ],
+      "votes": [
+        {
+          "from_year": 1993,
+          "votes": 54
+        },
+        {
+          "from_year": 2003,
+          "votes": 55
+        },
+        {
+          "from_year": 2013,
+          "votes": 55
+        },
+        {
+          "from_year": 2023,
+          "votes": 54
+        }
+      ],
+      "basis_shares": {
+        "usa.republican": 0.4165,
+        "usa.democratic": 0.5345
+      }
+    },
+    {
+      "id": "CO",
+      "name": "Colorado",
+      "adm1": [
+        "USA-3522"
+      ],
+      "votes": [
+        {
+          "from_year": 1993,
+          "votes": 8
+        },
+        {
+          "from_year": 2003,
+          "votes": 9
+        },
+        {
+          "from_year": 2013,
+          "votes": 9
+        },
+        {
+          "from_year": 2023,
+          "votes": 10
+        }
+      ],
+      "basis_shares": {
+        "usa.republican": 0.5075,
+        "usa.democratic": 0.4239
+      }
+    },
+    {
+      "id": "CT",
+      "name": "Connecticut",
+      "adm1": [
+        "USA-3537"
+      ],
+      "votes": [
+        {
+          "from_year": 1993,
+          "votes": 8
+        },
+        {
+          "from_year": 2003,
+          "votes": 7
+        },
+        {
+          "from_year": 2013,
+          "votes": 7
+        },
+        {
+          "from_year": 2023,
+          "votes": 7
+        }
+      ],
+      "basis_shares": {
+        "usa.republican": 0.3844,
+        "usa.democratic": 0.5591
+      }
+    },
+    {
+      "id": "DE",
+      "name": "Delaware",
+      "adm1": [
+        "USA-3555"
+      ],
+      "votes": [
+        {
+          "from_year": 1993,
+          "votes": 3
+        },
+        {
+          "from_year": 2003,
+          "votes": 3
+        },
+        {
+          "from_year": 2013,
+          "votes": 3
+        },
+        {
+          "from_year": 2023,
+          "votes": 3
+        }
+      ],
+      "basis_shares": {
+        "usa.republican": 0.419,
+        "usa.democratic": 0.5496
+      }
+    },
+    {
+      "id": "DC",
+      "name": "District of Columbia",
+      "adm1": [
+        "USA-3556"
+      ],
+      "votes": [
+        {
+          "from_year": 1993,
+          "votes": 3
+        },
+        {
+          "from_year": 2003,
+          "votes": 3
+        },
+        {
+          "from_year": 2013,
+          "votes": 3
+        },
+        {
+          "from_year": 2023,
+          "votes": 3
+        }
+      ],
+      "basis_shares": {
+        "usa.republican": 0.0895,
+        "usa.democratic": 0.8516
+      }
+    },
+    {
+      "id": "FL",
+      "name": "Florida",
+      "adm1": [
+        "USA-3542"
+      ],
+      "votes": [
+        {
+          "from_year": 1993,
+          "votes": 25
+        },
+        {
+          "from_year": 2003,
+          "votes": 27
+        },
+        {
+          "from_year": 2013,
+          "votes": 29
+        },
+        {
+          "from_year": 2023,
+          "votes": 30
+        }
+      ],
+      "basis_shares": {
+        "usa.republican": 0.4885,
+        "usa.democratic": 0.4884
+      }
+    },
+    {
+      "id": "GA",
+      "name": "Georgia",
+      "adm1": [
+        "USA-3543"
+      ],
+      "votes": [
+        {
+          "from_year": 1993,
+          "votes": 13
+        },
+        {
+          "from_year": 2003,
+          "votes": 15
+        },
+        {
+          "from_year": 2013,
+          "votes": 16
+        },
+        {
+          "from_year": 2023,
+          "votes": 16
+        }
+      ],
+      "basis_shares": {
+        "usa.republican": 0.5467,
+        "usa.democratic": 0.4298
+      }
+    },
+    {
+      "id": "HI",
+      "name": "Hawaii",
+      "adm1": [
+        "USA-3517"
+      ],
+      "votes": [
+        {
+          "from_year": 1993,
+          "votes": 4
+        },
+        {
+          "from_year": 2003,
+          "votes": 4
+        },
+        {
+          "from_year": 2013,
+          "votes": 4
+        },
+        {
+          "from_year": 2023,
+          "votes": 4
+        }
+      ],
+      "basis_shares": {
+        "usa.republican": 0.3746,
+        "usa.democratic": 0.5579
+      }
+    },
+    {
+      "id": "ID",
+      "name": "Idaho",
+      "adm1": [
+        "USA-3518"
+      ],
+      "votes": [
+        {
+          "from_year": 1993,
+          "votes": 4
+        },
+        {
+          "from_year": 2003,
+          "votes": 4
+        },
+        {
+          "from_year": 2013,
+          "votes": 4
+        },
+        {
+          "from_year": 2023,
+          "votes": 4
+        }
+      ],
+      "basis_shares": {
+        "usa.republican": 0.6717,
+        "usa.democratic": 0.2764
+      }
+    },
+    {
+      "id": "IL",
+      "name": "Illinois",
+      "adm1": [
+        "USA-3546"
+      ],
+      "votes": [
+        {
+          "from_year": 1993,
+          "votes": 22
+        },
+        {
+          "from_year": 2003,
+          "votes": 21
+        },
+        {
+          "from_year": 2013,
+          "votes": 20
+        },
+        {
+          "from_year": 2023,
+          "votes": 19
+        }
+      ],
+      "basis_shares": {
+        "usa.republican": 0.4258,
+        "usa.democratic": 0.546
+      }
+    },
+    {
+      "id": "IN",
+      "name": "Indiana",
+      "adm1": [
+        "USA-3547"
+      ],
+      "votes": [
+        {
+          "from_year": 1993,
+          "votes": 12
+        },
+        {
+          "from_year": 2003,
+          "votes": 11
+        },
+        {
+          "from_year": 2013,
+          "votes": 11
+        },
+        {
+          "from_year": 2023,
+          "votes": 11
+        }
+      ],
+      "basis_shares": {
+        "usa.republican": 0.5665,
+        "usa.democratic": 0.4101
+      }
+    },
+    {
+      "id": "IA",
+      "name": "Iowa",
+      "adm1": [
+        "USA-3529"
+      ],
+      "votes": [
+        {
+          "from_year": 1993,
+          "votes": 7
+        },
+        {
+          "from_year": 2003,
+          "votes": 7
+        },
+        {
+          "from_year": 2013,
+          "votes": 6
+        },
+        {
+          "from_year": 2023,
+          "votes": 6
+        }
+      ],
+      "basis_shares": {
+        "usa.republican": 0.4822,
+        "usa.democratic": 0.4854
+      }
+    },
+    {
+      "id": "KS",
+      "name": "Kansas",
+      "adm1": [
+        "USA-3530"
+      ],
+      "votes": [
+        {
+          "from_year": 1993,
+          "votes": 6
+        },
+        {
+          "from_year": 2003,
+          "votes": 6
+        },
+        {
+          "from_year": 2013,
+          "votes": 6
+        },
+        {
+          "from_year": 2023,
+          "votes": 6
+        }
+      ],
+      "basis_shares": {
+        "usa.republican": 0.5804,
+        "usa.democratic": 0.3724
+      }
+    },
+    {
+      "id": "KY",
+      "name": "Kentucky",
+      "adm1": [
+        "USA-3548"
+      ],
+      "votes": [
+        {
+          "from_year": 1993,
+          "votes": 8
+        },
+        {
+          "from_year": 2003,
+          "votes": 8
+        },
+        {
+          "from_year": 2013,
+          "votes": 8
+        },
+        {
+          "from_year": 2023,
+          "votes": 8
+        }
+      ],
+      "basis_shares": {
+        "usa.republican": 0.565,
+        "usa.democratic": 0.4137
+      }
+    },
+    {
+      "id": "LA",
+      "name": "Louisiana",
+      "adm1": [
+        "USA-3535"
+      ],
+      "votes": [
+        {
+          "from_year": 1993,
+          "votes": 9
+        },
+        {
+          "from_year": 2003,
+          "votes": 9
+        },
+        {
+          "from_year": 2013,
+          "votes": 8
+        },
+        {
+          "from_year": 2023,
+          "votes": 8
+        }
+      ],
+      "basis_shares": {
+        "usa.republican": 0.5255,
+        "usa.democratic": 0.4488
+      }
+    },
+    {
+      "id": "ME",
+      "name": "Maine",
+      "adm1": [
+        "USA-3561"
+      ],
+      "votes": [
+        {
+          "from_year": 1993,
+          "votes": 4
+        },
+        {
+          "from_year": 2003,
+          "votes": 4
+        },
+        {
+          "from_year": 2013,
+          "votes": 4
+        },
+        {
+          "from_year": 2023,
+          "votes": 4
+        }
+      ],
+      "basis_shares": {
+        "usa.republican": 0.4397,
+        "usa.democratic": 0.4909
+      },
+      "note": "Allocates two electoral votes statewide and one per congressional district; modelled statewide (winner-take-all)."
+    },
+    {
+      "id": "MD",
+      "name": "Maryland",
+      "adm1": [
+        "USA-3557"
+      ],
+      "votes": [
+        {
+          "from_year": 1993,
+          "votes": 10
+        },
+        {
+          "from_year": 2003,
+          "votes": 10
+        },
+        {
+          "from_year": 2013,
+          "votes": 10
+        },
+        {
+          "from_year": 2023,
+          "votes": 10
+        }
+      ],
+      "basis_shares": {
+        "usa.republican": 0.4018,
+        "usa.democratic": 0.5657
+      }
+    },
+    {
+      "id": "MA",
+      "name": "Massachusetts",
+      "adm1": [
+        "USA-3513"
+      ],
+      "votes": [
+        {
+          "from_year": 1993,
+          "votes": 12
+        },
+        {
+          "from_year": 2003,
+          "votes": 12
+        },
+        {
+          "from_year": 2013,
+          "votes": 11
+        },
+        {
+          "from_year": 2023,
+          "votes": 11
+        }
+      ],
+      "basis_shares": {
+        "usa.republican": 0.325,
+        "usa.democratic": 0.598
+      }
+    },
+    {
+      "id": "MI",
+      "name": "Michigan",
+      "adm1": [
+        "USA-3562"
+      ],
+      "votes": [
+        {
+          "from_year": 1993,
+          "votes": 18
+        },
+        {
+          "from_year": 2003,
+          "votes": 17
+        },
+        {
+          "from_year": 2013,
+          "votes": 16
+        },
+        {
+          "from_year": 2023,
+          "votes": 15
+        }
+      ],
+      "basis_shares": {
+        "usa.republican": 0.4615,
+        "usa.democratic": 0.5128
+      }
+    },
+    {
+      "id": "MN",
+      "name": "Minnesota",
+      "adm1": [
+        "USA-3514"
+      ],
+      "votes": [
+        {
+          "from_year": 1993,
+          "votes": 10
+        },
+        {
+          "from_year": 2003,
+          "votes": 10
+        },
+        {
+          "from_year": 2013,
+          "votes": 10
+        },
+        {
+          "from_year": 2023,
+          "votes": 10
+        }
+      ],
+      "basis_shares": {
+        "usa.republican": 0.455,
+        "usa.democratic": 0.4791
+      }
+    },
+    {
+      "id": "MS",
+      "name": "Mississippi",
+      "adm1": [
+        "USA-3544"
+      ],
+      "votes": [
+        {
+          "from_year": 1993,
+          "votes": 7
+        },
+        {
+          "from_year": 2003,
+          "votes": 6
+        },
+        {
+          "from_year": 2013,
+          "votes": 6
+        },
+        {
+          "from_year": 2023,
+          "votes": 6
+        }
+      ],
+      "basis_shares": {
+        "usa.republican": 0.5762,
+        "usa.democratic": 0.407
+      }
+    },
+    {
+      "id": "MO",
+      "name": "Missouri",
+      "adm1": [
+        "USA-3531"
+      ],
+      "votes": [
+        {
+          "from_year": 1993,
+          "votes": 11
+        },
+        {
+          "from_year": 2003,
+          "votes": 11
+        },
+        {
+          "from_year": 2013,
+          "votes": 10
+        },
+        {
+          "from_year": 2023,
+          "votes": 10
+        }
+      ],
+      "basis_shares": {
+        "usa.republican": 0.5042,
+        "usa.democratic": 0.4708
+      }
+    },
+    {
+      "id": "MT",
+      "name": "Montana",
+      "adm1": [
+        "USA-3515"
+      ],
+      "votes": [
+        {
+          "from_year": 1993,
+          "votes": 3
+        },
+        {
+          "from_year": 2003,
+          "votes": 3
+        },
+        {
+          "from_year": 2013,
+          "votes": 3
+        },
+        {
+          "from_year": 2023,
+          "votes": 4
+        }
+      ],
+      "basis_shares": {
+        "usa.republican": 0.5844,
+        "usa.democratic": 0.3336
+      }
+    },
+    {
+      "id": "NE",
+      "name": "Nebraska",
+      "adm1": [
+        "USA-3532"
+      ],
+      "votes": [
+        {
+          "from_year": 1993,
+          "votes": 5
+        },
+        {
+          "from_year": 2003,
+          "votes": 5
+        },
+        {
+          "from_year": 2013,
+          "votes": 5
+        },
+        {
+          "from_year": 2023,
+          "votes": 5
+        }
+      ],
+      "basis_shares": {
+        "usa.republican": 0.6225,
+        "usa.democratic": 0.3325
+      },
+      "note": "Allocates two electoral votes statewide and one per congressional district; modelled statewide (winner-take-all)."
+    },
+    {
+      "id": "NV",
+      "name": "Nevada",
+      "adm1": [
+        "USA-3523"
+      ],
+      "votes": [
+        {
+          "from_year": 1993,
+          "votes": 4
+        },
+        {
+          "from_year": 2003,
+          "votes": 5
+        },
+        {
+          "from_year": 2013,
+          "votes": 6
+        },
+        {
+          "from_year": 2023,
+          "votes": 6
+        }
+      ],
+      "basis_shares": {
+        "usa.republican": 0.4952,
+        "usa.democratic": 0.4598
+      }
+    },
+    {
+      "id": "NH",
+      "name": "New Hampshire",
+      "adm1": [
+        "USA-3538"
+      ],
+      "votes": [
+        {
+          "from_year": 1993,
+          "votes": 4
+        },
+        {
+          "from_year": 2003,
+          "votes": 4
+        },
+        {
+          "from_year": 2013,
+          "votes": 4
+        },
+        {
+          "from_year": 2023,
+          "votes": 4
+        }
+      ],
+      "basis_shares": {
+        "usa.republican": 0.4807,
+        "usa.democratic": 0.468
+      }
+    },
+    {
+      "id": "NJ",
+      "name": "New Jersey",
+      "adm1": [
+        "USA-3558"
+      ],
+      "votes": [
+        {
+          "from_year": 1993,
+          "votes": 15
+        },
+        {
+          "from_year": 2003,
+          "votes": 15
+        },
+        {
+          "from_year": 2013,
+          "votes": 14
+        },
+        {
+          "from_year": 2023,
+          "votes": 14
+        }
+      ],
+      "basis_shares": {
+        "usa.republican": 0.4029,
+        "usa.democratic": 0.5613
+      }
+    },
+    {
+      "id": "NM",
+      "name": "New Mexico",
+      "adm1": [
+        "USA-3524"
+      ],
+      "votes": [
+        {
+          "from_year": 1993,
+          "votes": 5
+        },
+        {
+          "from_year": 2003,
+          "votes": 5
+        },
+        {
+          "from_year": 2013,
+          "votes": 5
+        },
+        {
+          "from_year": 2023,
+          "votes": 5
+        }
+      ],
+      "basis_shares": {
+        "usa.republican": 0.4785,
+        "usa.democratic": 0.4791
+      }
+    },
+    {
+      "id": "NY",
+      "name": "New York",
+      "adm1": [
+        "USA-3559"
+      ],
+      "votes": [
+        {
+          "from_year": 1993,
+          "votes": 33
+        },
+        {
+          "from_year": 2003,
+          "votes": 31
+        },
+        {
+          "from_year": 2013,
+          "votes": 29
+        },
+        {
+          "from_year": 2023,
+          "votes": 28
+        }
+      ],
+      "basis_shares": {
+        "usa.republican": 0.3523,
+        "usa.democratic": 0.6021
+      }
+    },
+    {
+      "id": "NC",
+      "name": "North Carolina",
+      "adm1": [
+        "USA-3549"
+      ],
+      "votes": [
+        {
+          "from_year": 1993,
+          "votes": 14
+        },
+        {
+          "from_year": 2003,
+          "votes": 15
+        },
+        {
+          "from_year": 2013,
+          "votes": 15
+        },
+        {
+          "from_year": 2023,
+          "votes": 16
+        }
+      ],
+      "basis_shares": {
+        "usa.republican": 0.5603,
+        "usa.democratic": 0.432
+      }
+    },
+    {
+      "id": "ND",
+      "name": "North Dakota",
+      "adm1": [
+        "USA-3516"
+      ],
+      "votes": [
+        {
+          "from_year": 1993,
+          "votes": 3
+        },
+        {
+          "from_year": 2003,
+          "votes": 3
+        },
+        {
+          "from_year": 2013,
+          "votes": 3
+        },
+        {
+          "from_year": 2023,
+          "votes": 3
+        }
+      ],
+      "basis_shares": {
+        "usa.republican": 0.6066,
+        "usa.democratic": 0.3306
+      }
+    },
+    {
+      "id": "OH",
+      "name": "Ohio",
+      "adm1": [
+        "USA-3550"
+      ],
+      "votes": [
+        {
+          "from_year": 1993,
+          "votes": 21
+        },
+        {
+          "from_year": 2003,
+          "votes": 20
+        },
+        {
+          "from_year": 2013,
+          "votes": 18
+        },
+        {
+          "from_year": 2023,
+          "votes": 17
+        }
+      ],
+      "basis_shares": {
+        "usa.republican": 0.4997,
+        "usa.democratic": 0.4646
+      }
+    },
+    {
+      "id": "OK",
+      "name": "Oklahoma",
+      "adm1": [
+        "USA-3533"
+      ],
+      "votes": [
+        {
+          "from_year": 1993,
+          "votes": 8
+        },
+        {
+          "from_year": 2003,
+          "votes": 7
+        },
+        {
+          "from_year": 2013,
+          "votes": 7
+        },
+        {
+          "from_year": 2023,
+          "votes": 7
+        }
+      ],
+      "basis_shares": {
+        "usa.republican": 0.6031,
+        "usa.democratic": 0.3843
+      }
+    },
+    {
+      "id": "OR",
+      "name": "Oregon",
+      "adm1": [
+        "USA-3525"
+      ],
+      "votes": [
+        {
+          "from_year": 1993,
+          "votes": 7
+        },
+        {
+          "from_year": 2003,
+          "votes": 7
+        },
+        {
+          "from_year": 2013,
+          "votes": 7
+        },
+        {
+          "from_year": 2023,
+          "votes": 8
+        }
+      ],
+      "basis_shares": {
+        "usa.republican": 0.4652,
+        "usa.democratic": 0.4696
+      }
+    },
+    {
+      "id": "PA",
+      "name": "Pennsylvania",
+      "adm1": [
+        "USA-3560"
+      ],
+      "votes": [
+        {
+          "from_year": 1993,
+          "votes": 23
+        },
+        {
+          "from_year": 2003,
+          "votes": 21
+        },
+        {
+          "from_year": 2013,
+          "votes": 20
+        },
+        {
+          "from_year": 2023,
+          "votes": 19
+        }
+      ],
+      "basis_shares": {
+        "usa.republican": 0.4643,
+        "usa.democratic": 0.506
+      }
+    },
+    {
+      "id": "RI",
+      "name": "Rhode Island",
+      "adm1": [
+        "USA-3539"
+      ],
+      "votes": [
+        {
+          "from_year": 1993,
+          "votes": 4
+        },
+        {
+          "from_year": 2003,
+          "votes": 4
+        },
+        {
+          "from_year": 2013,
+          "votes": 4
+        },
+        {
+          "from_year": 2023,
+          "votes": 4
+        }
+      ],
+      "basis_shares": {
+        "usa.republican": 0.3191,
+        "usa.democratic": 0.6099
+      }
+    },
+    {
+      "id": "SC",
+      "name": "South Carolina",
+      "adm1": [
+        "USA-3545"
+      ],
+      "votes": [
+        {
+          "from_year": 1993,
+          "votes": 8
+        },
+        {
+          "from_year": 2003,
+          "votes": 8
+        },
+        {
+          "from_year": 2013,
+          "votes": 9
+        },
+        {
+          "from_year": 2023,
+          "votes": 9
+        }
+      ],
+      "basis_shares": {
+        "usa.republican": 0.5684,
+        "usa.democratic": 0.409
+      }
+    },
+    {
+      "id": "SD",
+      "name": "South Dakota",
+      "adm1": [
+        "USA-3534"
+      ],
+      "votes": [
+        {
+          "from_year": 1993,
+          "votes": 3
+        },
+        {
+          "from_year": 2003,
+          "votes": 3
+        },
+        {
+          "from_year": 2013,
+          "votes": 3
+        },
+        {
+          "from_year": 2023,
+          "votes": 3
+        }
+      ],
+      "basis_shares": {
+        "usa.republican": 0.603,
+        "usa.democratic": 0.3756
+      }
+    },
+    {
+      "id": "TN",
+      "name": "Tennessee",
+      "adm1": [
+        "USA-3551"
+      ],
+      "votes": [
+        {
+          "from_year": 1993,
+          "votes": 11
+        },
+        {
+          "from_year": 2003,
+          "votes": 11
+        },
+        {
+          "from_year": 2013,
+          "votes": 11
+        },
+        {
+          "from_year": 2023,
+          "votes": 11
+        }
+      ],
+      "basis_shares": {
+        "usa.republican": 0.5115,
+        "usa.democratic": 0.4728
+      }
+    },
+    {
+      "id": "TX",
+      "name": "Texas",
+      "adm1": [
+        "USA-3536"
+      ],
+      "votes": [
+        {
+          "from_year": 1993,
+          "votes": 32
+        },
+        {
+          "from_year": 2003,
+          "votes": 34
+        },
+        {
+          "from_year": 2013,
+          "votes": 38
+        },
+        {
+          "from_year": 2023,
+          "votes": 40
+        }
+      ],
+      "basis_shares": {
+        "usa.republican": 0.593,
+        "usa.democratic": 0.3798
+      }
+    },
+    {
+      "id": "UT",
+      "name": "Utah",
+      "adm1": [
+        "USA-3526"
+      ],
+      "votes": [
+        {
+          "from_year": 1993,
+          "votes": 5
+        },
+        {
+          "from_year": 2003,
+          "votes": 5
+        },
+        {
+          "from_year": 2013,
+          "votes": 6
+        },
+        {
+          "from_year": 2023,
+          "votes": 6
+        }
+      ],
+      "basis_shares": {
+        "usa.republican": 0.6683,
+        "usa.democratic": 0.2634
+      }
+    },
+    {
+      "id": "VT",
+      "name": "Vermont",
+      "adm1": [
+        "USA-3540"
+      ],
+      "votes": [
+        {
+          "from_year": 1993,
+          "votes": 3
+        },
+        {
+          "from_year": 2003,
+          "votes": 3
+        },
+        {
+          "from_year": 2013,
+          "votes": 3
+        },
+        {
+          "from_year": 2023,
+          "votes": 3
+        }
+      ],
+      "basis_shares": {
+        "usa.republican": 0.407,
+        "usa.democratic": 0.5063
+      }
+    },
+    {
+      "id": "VA",
+      "name": "Virginia",
+      "adm1": [
+        "USA-3552"
+      ],
+      "votes": [
+        {
+          "from_year": 1993,
+          "votes": 13
+        },
+        {
+          "from_year": 2003,
+          "votes": 13
+        },
+        {
+          "from_year": 2013,
+          "votes": 13
+        },
+        {
+          "from_year": 2023,
+          "votes": 13
+        }
+      ],
+      "basis_shares": {
+        "usa.republican": 0.5247,
+        "usa.democratic": 0.4444
+      }
+    },
+    {
+      "id": "WA",
+      "name": "Washington",
+      "adm1": [
+        "USA-3519"
+      ],
+      "votes": [
+        {
+          "from_year": 1993,
+          "votes": 11
+        },
+        {
+          "from_year": 2003,
+          "votes": 11
+        },
+        {
+          "from_year": 2013,
+          "votes": 12
+        },
+        {
+          "from_year": 2023,
+          "votes": 12
+        }
+      ],
+      "basis_shares": {
+        "usa.republican": 0.4458,
+        "usa.democratic": 0.5016
+      }
+    },
+    {
+      "id": "WV",
+      "name": "West Virginia",
+      "adm1": [
+        "USA-3554"
+      ],
+      "votes": [
+        {
+          "from_year": 1993,
+          "votes": 5
+        },
+        {
+          "from_year": 2003,
+          "votes": 5
+        },
+        {
+          "from_year": 2013,
+          "votes": 5
+        },
+        {
+          "from_year": 2023,
+          "votes": 4
+        }
+      ],
+      "basis_shares": {
+        "usa.republican": 0.5192,
+        "usa.democratic": 0.4559
+      }
+    },
+    {
+      "id": "WI",
+      "name": "Wisconsin",
+      "adm1": [
+        "USA-3553"
+      ],
+      "votes": [
+        {
+          "from_year": 1993,
+          "votes": 11
+        },
+        {
+          "from_year": 2003,
+          "votes": 10
+        },
+        {
+          "from_year": 2013,
+          "votes": 10
+        },
+        {
+          "from_year": 2023,
+          "votes": 10
+        }
+      ],
+      "basis_shares": {
+        "usa.republican": 0.4761,
+        "usa.democratic": 0.4783
+      }
+    },
+    {
+      "id": "WY",
+      "name": "Wyoming",
+      "adm1": [
+        "USA-3527"
+      ],
+      "votes": [
+        {
+          "from_year": 1993,
+          "votes": 3
+        },
+        {
+          "from_year": 2003,
+          "votes": 3
+        },
+        {
+          "from_year": 2013,
+          "votes": 3
+        },
+        {
+          "from_year": 2023,
+          "votes": 3
+        }
+      ],
+      "basis_shares": {
+        "usa.republican": 0.6776,
+        "usa.democratic": 0.277
+      }
+    }
+  ],
+  "source": [
+    {
+      "url": "https://en.wikipedia.org/wiki/2000_United_States_presidential_election",
+      "title": "Wikipedia: 2000 United States presidential election (Results by state)",
+      "accessed": "2026-10-14"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/United_States_congressional_apportionment",
+      "title": "Wikipedia: United States congressional apportionment (seats by census)",
+      "accessed": "2026-10-14"
+    }
+  ],
+  "confidence": "verified"
+}

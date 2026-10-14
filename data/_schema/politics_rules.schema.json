@@ -1,0 +1,231 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "elections": {
+      "default": {},
+      "type": "object",
+      "properties": {
+        "affinity_sharpness": {
+          "default": 4,
+          "type": "number"
+        },
+        "leader_appeal_weight": {
+          "default": 0.35,
+          "type": "number"
+        },
+        "incumbency_bonus": {
+          "default": 0.04,
+          "type": "number"
+        },
+        "incumbency_fatigue": {
+          "default": 0.04,
+          "type": "number"
+        },
+        "fatigue_after_years": {
+          "default": 6,
+          "type": "number"
+        },
+        "economy_weight": {
+          "default": 0.25,
+          "type": "number"
+        },
+        "dynamic_noise": {
+          "default": 0.12,
+          "type": "number"
+        },
+        "historical_adherence": {
+          "default": 0.97,
+          "type": "number"
+        },
+        "historical_noise": {
+          "default": 0.01,
+          "type": "number"
+        },
+        "historical_pull": {
+          "default": 0.75,
+          "type": "number"
+        },
+        "province_noise": {
+          "default": 0.3,
+          "type": "number"
+        },
+        "district_noise": {
+          "default": 0.5,
+          "type": "number"
+        },
+        "regional_boost": {
+          "default": 1.6,
+          "type": "number"
+        },
+        "density_weight": {
+          "default": 0.25,
+          "type": "number"
+        },
+        "min_presidential_share": {
+          "default": 0.04,
+          "type": "number"
+        },
+        "max_presidential_candidates": {
+          "default": 6,
+          "type": "number"
+        },
+        "min_candidate_age": {
+          "default": 35,
+          "type": "number"
+        },
+        "max_candidate_age": {
+          "default": 80,
+          "type": "number"
+        },
+        "multi_member_magnitude": {
+          "default": 5,
+          "type": "number"
+        }
+      },
+      "additionalProperties": false
+    },
+    "coalitions": {
+      "default": {},
+      "type": "object",
+      "properties": {
+        "max_parties_considered": {
+          "default": 9,
+          "type": "number"
+        },
+        "max_partner_distance": {
+          "default": 0.55,
+          "type": "number"
+        },
+        "party_count_penalty": {
+          "default": 0.06,
+          "type": "number"
+        },
+        "surplus_penalty": {
+          "default": 0.6,
+          "type": "number"
+        },
+        "historical_bonus": {
+          "default": 1.5,
+          "type": "number"
+        },
+        "grand_coalition_penalty": {
+          "default": 0.35,
+          "type": "number"
+        },
+        "cross_bloc_penalty": {
+          "default": 1,
+          "type": "number"
+        },
+        "minority_penalty": {
+          "default": 1.5,
+          "type": "number"
+        },
+        "confidence_loss_base": {
+          "default": 0.06,
+          "type": "number"
+        },
+        "snap_election_delay_days": {
+          "default": 60,
+          "type": "number"
+        }
+      },
+      "additionalProperties": false
+    },
+    "interest_groups": {
+      "default": {},
+      "type": "object",
+      "properties": {
+        "weekly_drift": {
+          "default": 0.05,
+          "type": "number"
+        },
+        "economy_points": {
+          "default": 10,
+          "type": "number"
+        },
+        "action_chance": {
+          "default": 0.25,
+          "type": "number"
+        }
+      },
+      "additionalProperties": false
+    },
+    "unrest": {
+      "default": {},
+      "type": "object",
+      "properties": {
+        "action_unrest": {
+          "default": {
+            "protest": 0.04,
+            "strike": 0.05,
+            "mass_movement": 0.1,
+            "uprising": 0.2,
+            "impeachment": 0.03,
+            "coup": 0.1,
+            "civil_war": 0.3
+          },
+          "type": "object",
+          "propertyNames": {
+            "type": "string"
+          },
+          "additionalProperties": {
+            "type": "number"
+          }
+        },
+        "monthly_decay": {
+          "default": 0.12,
+          "type": "number"
+        },
+        "stability_penalty": {
+          "default": 0.4,
+          "type": "number"
+        },
+        "coup_scale": {
+          "default": 40,
+          "type": "number"
+        },
+        "civil_war_scale": {
+          "default": 0.03,
+          "type": "number"
+        },
+        "civil_war_min_unrest": {
+          "default": 0.5,
+          "type": "number"
+        },
+        "historical_factor": {
+          "default": 0.05,
+          "type": "number"
+        },
+        "civil_war_end_chance": {
+          "default": 0.04,
+          "type": "number"
+        }
+      },
+      "additionalProperties": false
+    },
+    "laws": {
+      "default": {},
+      "type": "object",
+      "properties": {
+        "extra_step_cost": {
+          "default": 0.5,
+          "type": "number"
+        },
+        "cooldown_days": {
+          "default": 180,
+          "type": "number"
+        },
+        "stability_hit": {
+          "default": 0.01,
+          "type": "number"
+        }
+      },
+      "additionalProperties": false
+    },
+    "note": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": false
+}

@@ -8,6 +8,7 @@ import { resolve } from "node:path";
 import { z } from "zod";
 import * as defs from "../src/content/schemas/definitions.ts";
 import * as cty from "../src/content/schemas/country.ts";
+import * as rules from "../src/content/schemas/rules.ts";
 
 const root = resolve(import.meta.dirname, "..");
 const out = resolve(root, "data/_schema");
@@ -30,6 +31,8 @@ const schemas: [string, z.ZodType, string[]][] = [
   ["offices", cty.OfficesFile, ["data/countries/*/cabinet.json", "data/countries/*/military.json"]],
   ["country_interest_groups", cty.CountryInterestGroupsFile, ["data/countries/*/interest_groups.json"]],
   ["country_laws", cty.CountryLawsFile, ["data/countries/*/laws.json"]],
+  ["electoral_units", cty.ElectoralUnitsFile, ["data/countries/*/electoral_units.json"]],
+  ["politics_rules", rules.PoliticsRulesFile, ["data/rules/politics.json"]],
 ];
 
 const mapping: { fileMatch: string[]; url: string }[] = [];

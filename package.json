@@ -17,7 +17,7 @@
     "content-stats": "tsx scripts/content-stats.ts",
     "typecheck": "tsc --noEmit",
     "test": "vitest run",
-    "check": "npm run typecheck && npm run test && npm run validate-data -- --existing --tier core"
+    "check": "npm run typecheck && npm run test && npm run validate-data -- --existing --tracked --tier core"
   },
   "engines": {
     "node": ">=22"

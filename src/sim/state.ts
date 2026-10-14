@@ -5,9 +5,12 @@
 import { GAME_START, holdersOn, type ContentDB } from "../content/compile.ts";
 import type { MapData } from "../render/mapData.ts";
 import { dayOf } from "./date.ts";
+import { calibrate } from "./politics/voteModel.ts";
+import { initialSchedule } from "./politics/schedule.ts";
+import { igTargets } from "./politics/interestGroups.ts";
 import { seedRng, type RngState } from "./rng.ts";
 
-export const STATE_VERSION = 1;
+export const STATE_VERSION = 2;
 
 export interface GameRules {
   /** historical: real election winners are heavily weighted; dynamic: results come purely from the simulation. */
@@ -19,26 +22,104 @@ export interface InterestGroupState {
   approval: number; // 0..100
 }
 
+/** An upcoming election in a country's calendar. */
+export interface ScheduledElection {
+  /** kind + chamber or office, e.g. "legislative:bundestag", "presidential:usa.president". */
+  key: string;
+  kind: string;
+  chamber?: string;
+  office?: string;
+  day: number;
+  everyYears: number;
+  snapPossible: boolean;
+  /** True for early elections called after a government collapse. */
+  snap: boolean;
+}
+
+export interface CandidateResult {
+  person: string;
+  party?: string;
+  share: number;
+  round: number;
+}
+
+/** The outcome of one election (kept for the election-night screen, history and map mode). */
+export interface ElectionResult {
+  id: string;
+  tag: string;
+  day: number;
+  kind: string;
+  chamber?: string;
+  office?: string;
+  /** Id of the real election in the data this one corresponds to, if any. */
+  historicalId?: string;
+  /** True when the result followed the historical record (historical mode). */
+  followedHistory: boolean;
+  snap: boolean;
+  turnout: number;
+  /** Party shares (legislative) or candidate shares in the first round (presidential). */
+  shares: Record<string, number>;
+  seats?: Record<string, number>;
+  seatsBefore?: Record<string, number>;
+  totalSeats?: number;
+  candidates?: CandidateResult[];
+  /** Electoral college: votes per candidate and the unit each candidate carried. */
+  unitVotes?: Record<string, number>;
+  unitWinners?: Record<string, string>;
+  /** Person (presidential) or party (legislative) id. */
+  winner: string | null;
+  winnerParty: string | null;
+  /** Government formed after this election, when one was. */
+  government?: { parties: string[]; support: string[]; leader: string | null; minority: boolean };
+}
+
+export interface CivilWarState {
+  /** Tag of the rebel side (a dynamic country). */
+  rebel: string;
+  startDay: number;
+  /** Interest group that rose up. */
+  group: string;
+}
+
 export interface CountryState {
   tag: string;
   /** Has politics data and exists as an actor (releasables are false until released). */
   active: boolean;
+  govType: string;
   politicalPower: number;
   stability: number; // 0..1
   warSupport: number; // 0..1
   rulingParties: string[];
+  confidenceAndSupply: string[];
+  /** Day the current lead governing party took office (incumbency fatigue). */
+  govSinceDay: number;
   /** Current office holders (person ids; null = vacant). */
   offices: Record<string, (string | null)[]>;
+  /** Day the current holder of each office took it. */
+  officeSince: Record<string, number>;
   /** Offices whose real-world timeline still applies (cleared when the simulation diverges, e.g. by election). */
   historicalOffices: Record<string, boolean>;
+  /** False once the country's politics leave the historical record (elections, coups). */
+  followsHistory: boolean;
   partyPopularity: Record<string, number>;
   partyStatus: Record<string, string>;
   partyLeader: Record<string, string | null>;
+  /** Calibration factor per party so the vote model starts at the real vote shares. */
+  partyBias: Record<string, number>;
   ideologySupport: Record<string, number>;
   laws: Record<string, string>;
+  lawChangedDay: Record<string, number>;
   interestGroups: Record<string, InterestGroupState>;
+  /** Per-group approval offset that makes the starting approvals an equilibrium. */
+  igBase: Record<string, number>;
   /** Seats per chamber per party key. */
   seats: Record<string, Record<string, number>>;
+  /** 0..1 */
+  unrest: number;
+  /** -1..1. A placeholder business cycle until the economy arrives in Phase 7. */
+  economicMood: number;
+  schedule: ScheduledElection[];
+  civilWar: CivilWarState | null;
   flags: Record<string, number>;
 }
 
@@ -47,6 +128,34 @@ export interface LogEntry {
   tag: string | null;
   kind: string;
   text: string;
+}
+
+/** A coalition the player must choose (the game pauses until they do). */
+export interface PendingCoalition {
+  tag: string;
+  chamber: string;
+  resultId: string;
+  options: CoalitionOption[];
+}
+
+export interface CoalitionOption {
+  parties: string[];
+  seats: number;
+  majority: number;
+  /** Probability each partner accepts (formateur = 1). */
+  acceptance: Record<string, number>;
+  /** Mean policy distance between members, 0..1. */
+  distance: number;
+  minority: boolean;
+  support: string[];
+}
+
+/** Countries created during play (civil war sides). */
+export interface DynamicCountry {
+  name: string;
+  color: string;
+  parent: string;
+  kind: "rebels";
 }
 
 export interface GameState {
@@ -61,6 +170,12 @@ export interface GameState {
   /** Province ownership/control, index = province id - 1. */
   provinceOwner: string[];
   provinceController: string[];
+  /** Recent election results, oldest first (capped). */
+  elections: ElectionResult[];
+  /** Latest election per country broken down by province: province id -> winning party id. */
+  mapResults: Record<string, Record<string, string>>;
+  pendingCoalition: PendingCoalition | null;
+  dynamicCountries: Record<string, DynamicCountry>;
   log: LogEntry[];
 }
 
@@ -75,6 +190,7 @@ export function createInitialState(
   const seed = opts.seed ?? 20000101;
   const day = dayOf(GAME_START);
   const countries: Record<string, CountryState> = {};
+  const rules: GameRules = { electionMode: "historical", ...opts.rules };
 
   for (const entry of db.countryList) {
     const cc = db.countries.get(entry.tag);
@@ -82,10 +198,13 @@ export function createInitialState(
     const gov = c ? db.governmentTypes.get(c.government.type) : undefined;
 
     const offices: Record<string, (string | null)[]> = {};
+    const officeSince: Record<string, number> = {};
     const historicalOffices: Record<string, boolean> = {};
     for (const o of [...(c?.offices ?? []), ...(cc?.cabinet ?? []), ...(cc?.military ?? [])]) {
       if (o.ex_officio_of) continue;
-      offices[o.id] = holdersOn(o, GAME_START).map((h) => h.person);
+      const hs = holdersOn(o, GAME_START);
+      offices[o.id] = hs.map((h) => h.person);
+      officeSince[o.id] = hs.length ? dayOf(hs[0]!.from) : day;
       historicalOffices[o.id] = true;
     }
 
@@ -114,24 +233,58 @@ export function createInitialState(
     const seats: Record<string, Record<string, number>> = {};
     for (const ch of c?.legislature?.chambers ?? []) seats[ch.id] = { ...ch.seats_2000 };
 
-    countries[entry.tag] = {
+    // the lead governing party's time in office: from the effective executive's start date if same party
+    const exec = c ? offices[c.government.effective_executive]?.[0] : null;
+    const execSince = c ? officeSince[c.government.effective_executive] : undefined;
+    const execParty = exec ? db.people.get(exec)?.party : undefined;
+    const lead = c?.start_2000.ruling_parties[0];
+
+    const cs: CountryState = {
       tag: entry.tag,
       active: !!c && entry.start_status !== "releasable",
+      govType: c?.government.type ?? "failed_contested",
       politicalPower: 50,
       stability: clamp01(c?.start_2000.stability ?? 0.5),
       warSupport: clamp01(c?.start_2000.war_support ?? 0.2),
       rulingParties: [...(c?.start_2000.ruling_parties ?? [])],
+      confidenceAndSupply: [...(c?.start_2000.confidence_and_supply ?? [])],
+      govSinceDay: execParty && execParty === lead && execSince !== undefined ? execSince : day,
       offices,
+      officeSince,
       historicalOffices,
+      followsHistory: true,
       partyPopularity,
       partyStatus,
       partyLeader,
+      partyBias: {},
       ideologySupport: { ...(c?.start_2000.ideology_support ?? {}) },
       laws,
+      lawChangedDay: {},
       interestGroups,
+      igBase: {},
       seats,
+      unrest: 0,
+      economicMood: 0,
+      schedule: [],
+      civilWar: null,
       flags: {},
     };
+    if (c && rules.electionMode === "dynamic") {
+      const needsMajority = !!gov?.needs_majority;
+      for (const o of c.offices) {
+        const elected = o.selection === "direct_election" || o.selection === "electoral_college" || o.selection === "legislature";
+        const formed = needsMajority && o.id === c.government.head_of_government_office;
+        if (elected || formed) cs.historicalOffices[o.id] = false;
+      }
+      for (const o of cc?.cabinet ?? []) if (needsMajority) cs.historicalOffices[o.id] = false;
+    }
+    if (c) {
+      cs.partyBias = calibrate(db, cs, day);
+      const targets = igTargets(db, cs);
+      for (const [ig, s] of Object.entries(interestGroups)) cs.igBase[ig] = s.approval - (targets[ig] ?? 50);
+      cs.schedule = initialSchedule(db, entry.tag, day);
+    }
+    countries[entry.tag] = cs;
   }
 
   return {
@@ -140,11 +293,32 @@ export function createInitialState(
     seed,
     rng: seedRng(seed),
     day,
-    rules: { electionMode: "historical", ...opts.rules },
+    rules,
     player: opts.player ?? null,
     countries,
     provinceOwner: map.provinces.map((p) => p.owner),
     provinceController: map.provinces.map((p) => p.controller),
+    elections: [],
+    mapResults: {},
+    pendingCoalition: null,
+    dynamicCountries: {},
     log: [],
   };
+}
+
+/** Bring an older save up to the current state version (fields added later get their defaults). */
+export function migrateState(db: ContentDB, s: GameState): GameState {
+  if (s.version >= STATE_VERSION) return s;
+  const fresh = createInitialState(db, { provinces: [] }, { contentHash: s.contentHash, seed: s.seed, player: s.player, rules: s.rules });
+  for (const [tag, cs] of Object.entries(s.countries)) {
+    const f = fresh.countries[tag];
+    if (!f) continue;
+    s.countries[tag] = { ...f, ...cs, schedule: (cs as Partial<CountryState>).schedule ?? f.schedule.filter((e) => e.day > s.day) };
+  }
+  s.elections ??= [];
+  s.mapResults ??= {};
+  s.pendingCoalition ??= null;
+  s.dynamicCountries ??= {};
+  s.version = STATE_VERSION;
+  return s;
 }

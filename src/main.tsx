@@ -22,6 +22,8 @@ import { TABS } from "./ui/tabs.ts";
 import { activeTip, TooltipLayer } from "./ui/tooltip.tsx";
 import { panel, paused, screen, Session, speed } from "./ui/session.ts";
 import { MapModeBar, ProvinceTooltip } from "./ui/MapUi.tsx";
+import { CoalitionPanel } from "./ui/politics/CoalitionPanel.tsx";
+import { ElectionNight } from "./ui/politics/ElectionNight.tsx";
 import { hoveredProvince, pickedCountry, pointer, selectedProvince } from "./ui/store.ts";
 
 async function loadContent(): Promise<{ db: ContentDB; bundle: ContentBundle }> {
@@ -136,6 +138,8 @@ function Root({ db, map, world, session, issues }: { db: ContentDB; map: MapData
       )}
       {inGame && <MapModeBar db={db} map={map} world={world} />}
       <ProvinceTooltip db={db} map={map} />
+      {inGame && <ElectionNight db={db} session={session} />}
+      {inGame && <CoalitionPanel db={db} session={session} />}
       {inGame && panel.value === "menu" && <GameMenu session={session} />}
       <TooltipLayer />
       <ContentChangedBanner />
@@ -146,7 +150,7 @@ function Root({ db, map, world, session, issues }: { db: ContentDB; map: MapData
 /** HOI4 keys: Q-P open the tab row, Space pauses, +/- or 1-5 set speed, Esc closes or opens the menu. */
 function bindKeys(session: Session): void {
   window.addEventListener("keydown", (e) => {
-    if (screen.value !== "game" || e.ctrlKey || e.metaKey || e.altKey || (e.target as HTMLElement).closest("input, select, textarea")) return;
+    if (screen.value !== "game" || e.ctrlKey || e.metaKey || e.altKey || (e.target as HTMLElement | null)?.closest?.("input, select, textarea")) return;
     const tab = TABS.find((t) => t.key === e.key.toUpperCase());
     if (e.code === "Space") { e.preventDefault(); session.setPaused(!paused.value); }
     else if (/^Digit[1-5]$/.test(e.code)) session.setSpeed(Number(e.code.slice(5)));

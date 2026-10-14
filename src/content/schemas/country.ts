@@ -335,6 +335,12 @@ export const ElectionRule = z.strictObject({
   /** A real election date the recurrence counts from. */
   anchor: IsoDate,
   snap_possible: z.boolean(),
+  /**
+   * How a directly elected office is decided. Defaults: "two_round" for direct presidential
+   * elections, "electoral_college" when the country has electoral_units.json for the office,
+   * "legislature" for indirect elections.
+   */
+  system: z.enum(["plurality", "two_round", "irv", "electoral_college", "legislature"]).optional(),
   note: z.string().optional(),
 });
 
@@ -391,6 +397,43 @@ export const ElectionsFile = z.strictObject({
   elections: z.array(Election),
   ...sourced,
 });
+
+// ---------------------------------------------------------------- electoral_units.json
+
+/**
+ * Sub-national voting units with real past results: an electoral college (e.g. US states) and/or
+ * the regional lean the game applies to every election in those regions.
+ */
+export const ElectoralUnitsFile = z.strictObject({
+  /** If set, these units form an electoral college for this office. */
+  office: ScopedId.optional(),
+  /** What a unit is called in the UI (e.g. "State"). */
+  units_label: z.string().default("Region"),
+  /** "absolute": the winner needs more than half of all unit votes; "plurality": most votes wins. */
+  majority: z.enum(["absolute", "plurality"]).default("absolute"),
+  /** Election id (in elections.json) whose results basis_shares come from. */
+  basis_election: Id,
+  units: z
+    .array(
+      z.strictObject({
+        id: z.string().min(1),
+        name: z.string().min(1),
+        /** Map admin-1 codes (Natural Earth adm1_code) covering this unit. */
+        adm1: z.array(z.string()).min(1),
+        /** Electoral votes, each entry applying to elections from `from_year` on. */
+        votes: z.array(z.strictObject({ from_year: z.number().int(), votes: z.number().int().min(0) })).default([]),
+        /** "winner_take_all" (default) or "proportional" split of this unit's votes. */
+        method: z.enum(["winner_take_all", "proportional"]).default("winner_take_all"),
+        /** Real vote shares in the basis election, by party id. */
+        basis_shares: z.record(ScopedId, Share),
+        note: z.string().optional(),
+      }),
+    )
+    .min(1),
+  note: z.string().optional(),
+  ...sourced,
+});
+export type ElectoralUnits = z.infer<typeof ElectoralUnitsFile>;
 
 // ---------------------------------------------------------------- interest_groups.json / laws.json
 

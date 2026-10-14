@@ -1,0 +1,156 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "office": {
+      "type": "string",
+      "pattern": "^[a-z]{3}\\.[a-z0-9]+(?:_[a-z0-9]+)*$"
+    },
+    "units_label": {
+      "default": "Region",
+      "type": "string"
+    },
+    "majority": {
+      "default": "absolute",
+      "type": "string",
+      "enum": [
+        "absolute",
+        "plurality"
+      ]
+    },
+    "basis_election": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(?:_[a-z0-9]+)*$"
+    },
+    "units": {
+      "minItems": 1,
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "name": {
+            "type": "string",
+            "minLength": 1
+          },
+          "adm1": {
+            "minItems": 1,
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "votes": {
+            "default": [],
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "from_year": {
+                  "type": "integer",
+                  "minimum": -9007199254740991,
+                  "maximum": 9007199254740991
+                },
+                "votes": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "maximum": 9007199254740991
+                }
+              },
+              "required": [
+                "from_year",
+                "votes"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "method": {
+            "default": "winner_take_all",
+            "type": "string",
+            "enum": [
+              "winner_take_all",
+              "proportional"
+            ]
+          },
+          "basis_shares": {
+            "type": "object",
+            "propertyNames": {
+              "type": "string",
+              "pattern": "^[a-z]{3}\\.[a-z0-9]+(?:_[a-z0-9]+)*$"
+            },
+            "additionalProperties": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            }
+          },
+          "note": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "name",
+          "adm1",
+          "basis_shares"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "note": {
+      "type": "string"
+    },
+    "source": {
+      "minItems": 1,
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "url": {
+            "type": "string",
+            "format": "uri"
+          },
+          "title": {
+            "type": "string",
+            "minLength": 1
+          },
+          "accessed": {
+            "type": "string",
+            "format": "date",
+            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))$",
+            "description": "Calendar date, YYYY-MM-DD"
+          },
+          "note": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "url",
+          "title",
+          "accessed"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "confidence": {
+      "type": "string",
+      "enum": [
+        "verified",
+        "needs_review"
+      ]
+    },
+    "review_note": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "basis_election",
+    "units",
+    "source",
+    "confidence"
+  ],
+  "additionalProperties": false
+}

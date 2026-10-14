@@ -42,6 +42,16 @@
           "snap_possible": {
             "type": "boolean"
           },
+          "system": {
+            "type": "string",
+            "enum": [
+              "plurality",
+              "two_round",
+              "irv",
+              "electoral_college",
+              "legislature"
+            ]
+          },
           "note": {
             "type": "string"
           }

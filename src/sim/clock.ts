@@ -56,10 +56,11 @@ export class Clock {
     this.carry -= days * per;
     days = Math.min(days, 10); // never stall the UI catching up
     if (days > 0) {
-      for (let i = 0; i < days; i++) this.sim.step();
+      // an event (election night, a coalition to form) may pause the game mid-batch
+      for (let i = 0; i < days && !this.paused; i++) this.sim.step();
       this.onAdvance();
     }
-    this.schedule();
+    if (!this.paused) this.schedule();
   };
 
   dispose(): void {

@@ -1,11 +1,14 @@
 /**
  * npm run validate-data -- [--tier core|full] [--region <region>] [--only TAG,TAG] [--existing] [--report] [--warnings]
  *
- *   --existing  only check countries that already have data (used by `npm run check` while Phase 2 is in progress)
+ *   --existing  only check countries that already have data
+ *   --tracked   only check countries whose data is tracked by git (staged or committed). `npm run check`
+ *               uses this so folders that research agents are still writing do not fail the pre-commit check.
  *
  * Exits 1 if any error is found. Coverage rules apply to every country in
  * data/world/countries.json unless narrowed with --only / --region.
  */
+import { execSync } from "node:child_process";
 import { compileContent, type Issue } from "../src/content/compile.ts";
 import { NodeFiles, parseArgs } from "./lib/nodeFiles.ts";
 import { coverageTable } from "./lib/coverage.ts";
@@ -31,6 +34,19 @@ if (args.existing) {
   const list = JSON.parse(files.read("world/countries.json") ?? '{"countries":[]}') as { countries: { tag: string }[] };
   const have = list.countries.map((c) => c.tag).filter((t) => files.read(`countries/${t}/country.json`) !== undefined);
   only = new Set([...(only ?? have)].filter((t) => have.includes(t)));
+}
+
+if (args.tracked) {
+  let tracked: string[] = [];
+  try {
+    tracked = execSync("git ls-files data/countries", { encoding: "utf8" })
+      .split("\n")
+      .map((l) => /^data\/countries\/([A-Z]{3})\/country\.json$/.exec(l.trim())?.[1])
+      .filter((t): t is string => !!t);
+  } catch {
+    console.error("--tracked needs git; falling back to every existing country");
+  }
+  if (tracked.length) only = new Set([...(only ?? tracked)].filter((t) => tracked.includes(t)));
 }
 
 const { db, issues } = compileContent(files, { tier, only });

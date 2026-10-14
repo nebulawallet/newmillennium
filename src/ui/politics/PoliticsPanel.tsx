@@ -1,13 +1,18 @@
 import { useState } from "preact/hooks";
 import type { ContentDB } from "../../content/compile.ts";
 import type { Person } from "../../content/schemas/country.ts";
-import { ageOn, dayOf, formatDate, isoOf } from "../../sim/date.ts";
+import { ageOn, formatDate } from "../../sim/date.ts";
+import { governmentSupport } from "../../sim/politics/coalition.ts";
+import { electionTitle } from "../../sim/politics/elections.ts";
+import { igTarget, igTargetParts } from "../../sim/politics/interestGroups.ts";
+import { partyFactors } from "../../sim/politics/voteModel.ts";
 import type { CountryState, GameState } from "../../sim/state.ts";
 import { Donut } from "../charts/Donut.tsx";
 import { Hemicycle, type SeatGroup } from "../charts/Hemicycle.tsx";
 import { Portrait } from "../hud/SidePanel.tsx";
-import { version } from "../session.ts";
+import { electionNight, version, type Session } from "../session.ts";
 import { tip } from "../tooltip.tsx";
+import { LawPicker } from "./LawPicker.tsx";
 
 const pct = (x: number) => `${(x * 100).toFixed(1)}%`;
 const SPECIAL: Record<string, { label: string; color: string }> = {
@@ -23,29 +28,20 @@ function holders(db: ContentDB, cs: CountryState, officeId: string): (Person | n
   return (cs.offices[officeId] ?? []).map((id) => (id ? (db.people.get(id) ?? null) : null));
 }
 
-function upcomingElections(db: ContentDB, tag: string, day: number) {
-  const el = db.countries.get(tag)?.elections;
-  if (!el) return [];
-  const today = isoOf(day);
-  const real = el.elections.filter((e) => e.date >= today).slice(0, 3).map((e) => ({ date: e.date, kind: e.kind, chamber: e.chamber, office: e.office }));
-  const projected = el.rules.map((r) => {
-    let d = dayOf(r.anchor);
-    const step = Math.round(r.every_years * 365.25);
-    while (d < day) d += step;
-    return { date: isoOf(d), kind: r.kind, chamber: r.chamber, office: r.office };
-  });
-  return [...real, ...projected.filter((p) => !real.some((x) => x.kind === p.kind && x.chamber === p.chamber))].slice(0, 4);
-}
+const nameOf = (db: ContentDB, id: string | null | undefined) => (id ? (db.people.get(id)?.name.en ?? db.parties.get(id)?.name.en ?? id) : "—");
 
-export function PoliticsPanel({ db, state, tag }: { db: ContentDB; state: GameState; tag: string }) {
+export function PoliticsPanel({ db, state, tag, session }: { db: ContentDB; state: GameState; tag: string; session: Session }) {
   version.value;
   const [chamberIx, setChamberIx] = useState(0);
+  const [lawCat, setLawCat] = useState<string | null>(null);
+  const [msg, setMsg] = useState("");
   const cc = db.countries.get(tag);
   const c = cc?.country;
   const cs = state.countries[tag];
   if (!cc || !c || !cs) return <p class="dim pad">No politics data for this country yet.</p>;
+  if (lawCat) return <LawPicker db={db} session={session} state={state} cs={cs} category={lawCat} onClose={() => setLawCat(null)} />;
 
-  const gov = db.governmentTypes.get(c.government.type);
+  const gov = db.governmentTypes.get(cs.govType);
   const execOffice = db.offices.get(c.government.effective_executive);
   const hosOffice = db.offices.get(c.government.head_of_state_office);
   const exOfficio = (officeId: string | undefined) => {
@@ -58,7 +54,7 @@ export function PoliticsPanel({ db, state, tag }: { db: ContentDB; state: GameSt
   const leader = execOffice?.ex_officio_of ? exOfficio(execOffice.id) : holders(db, cs, c.government.effective_executive)[0] ?? null;
   const hos = hosOffice?.ex_officio_of ? [exOfficio(hosOffice.id)] : holders(db, cs, c.government.head_of_state_office);
   const hog = holders(db, cs, c.government.head_of_government_office);
-  const leaderParty = (leader?.party ? db.parties.get(leader.party) : undefined) ?? (cs.rulingParties[0] ? db.parties.get(cs.rulingParties[0]) : undefined);
+  const leaderParty = (cs.rulingParties[0] ? db.parties.get(cs.rulingParties[0]) : undefined) ?? (leader?.party ? db.parties.get(leader.party) : undefined);
   const leaderSub = leader ? db.subIdeologies.get(leader.sub_ideology) : undefined;
   const others = [
     ...(c.government.head_of_state_office !== c.government.effective_executive ? hos.map((p) => ({ p, title: hosOffice?.title.en ?? "Head of state" })) : []),
@@ -88,11 +84,15 @@ export function PoliticsPanel({ db, state, tag }: { db: ContentDB; state: GameSt
     : [];
 
   const parties = cc.parties
-    .filter((p) => cs.partyStatus[p.id] !== "not_yet_founded")
+    .filter((p) => cs.partyStatus[p.id] !== "not_yet_founded" && cs.partyStatus[p.id] !== "dissolved")
     .sort((a, b) => (cs.partyPopularity[b.id] ?? 0) - (cs.partyPopularity[a.id] ?? 0));
   const seatsOf = (pid: string) => Object.values(cs.seats).reduce((s, ch) => s + (ch[pid] ?? 0), 0);
   const cabinet = [...cc.cabinet, ...cc.military];
-  const elections = upcomingElections(db, tag, state.day);
+  const elections = cs.schedule.slice(0, 4);
+  const support = governmentSupport(db, cs);
+  const factors = partyFactors(db, cs, state.day);
+  const results = state.elections.filter((e) => e.tag === tag).slice(-5).reverse();
+  const snapChamber = chambers.find((ch) => ch.confidence_chamber && cs.schedule.some((e) => e.chamber === ch.id && e.snapPossible));
 
   return (
     <div class="pol">
@@ -102,7 +102,7 @@ export function PoliticsPanel({ db, state, tag }: { db: ContentDB; state: GameSt
           <Portrait size="lg" />
         </div>
         <div class="pinfo">
-          <h3 class="pname">{leader?.name.en ?? "Vacant"}</h3>
+          <h3 class="pname">{leader?.name.en ?? (cs.govType === "military_junta" ? "Military council" : "Vacant")}</h3>
           <div class="ptitle">{execOffice?.title.en ?? "Leader"}</div>
           {leader && <div class="dim">{ageOn(leader.birth_year, state.day)} years old, born {leader.birth_year}</div>}
           {leaderParty && (
@@ -112,7 +112,7 @@ export function PoliticsPanel({ db, state, tag }: { db: ContentDB; state: GameSt
             </div>
           )}
           <div class="ptags">
-            <span class="ptag">{gov?.name}</span>
+            <span class="ptag" {...tip(() => ({ title: gov?.name ?? "Government", body: <span class="dim">{gov?.description}</span> }))}>{gov?.name}</span>
             {leaderSub && <span class="ptag" style={{ "--c": leaderSub.color }}>{leaderSub.name}</span>}
           </div>
         </div>
@@ -124,8 +124,8 @@ export function PoliticsPanel({ db, state, tag }: { db: ContentDB; state: GameSt
             <div class="slot" key={title}>
               <Portrait size="sm" />
               <div>
-                <div class="faint small">{title}</div>
                 <div class="sname">{p?.name.en ?? "Vacant"}</div>
+                <div class="faint small">{title}</div>
               </div>
             </div>
           ))}
@@ -139,7 +139,72 @@ export function PoliticsPanel({ db, state, tag }: { db: ContentDB; state: GameSt
           return p ? <span class="chip" key={id}><i class="sw" style={{ background: p.color }} />{p.name.en}</span> : null;
         })}
         {cs.rulingParties.length === 0 && <span class="faint">No party government</span>}
+        {cs.confidenceAndSupply.map((id) => {
+          const p = db.parties.get(id);
+          return p ? (
+            <span class="chip faint" key={id} {...tip(() => ({ title: `${p.name.en}: outside support`, note: "Backs the government in confidence votes without holding office." }))}>
+              <i class="sw" style={{ background: p.color }} />{p.abbrev.en} (support)
+            </span>
+          ) : null;
+        })}
       </div>
+      <dl class="kv gov-kv">
+        {support && (
+          <>
+            <dt>Support in parliament</dt>
+            <dd
+              class={`num ${support.support >= support.majority ? "good" : "warn"}`}
+              {...tip(() => ({
+                title: "Government support",
+                rows: [["Seats backing the government", support.support], ["Majority", support.majority], ["Seats", support.total]],
+                note: support.support >= support.majority ? "The government has a working majority." : "A minority government: it may lose a confidence vote, more easily when stability is low.",
+              }))}
+            >
+              {support.support} of {support.total} (majority {support.majority})
+            </dd>
+          </>
+        )}
+        <dt>Unrest</dt>
+        <dd
+          class={`num ${cs.unrest >= 0.4 ? "bad" : cs.unrest >= 0.15 ? "warn" : ""}`}
+          {...tip(() => ({
+            title: "Unrest",
+            rows: [["Level", `${Math.round(cs.unrest * 100)}%`], ["Stability target", `−${Math.round(cs.unrest * db.politicsRules.unrest.stability_penalty * 100)}%`]],
+            note: "Protests, strikes, mass movements and uprisings by unhappy interest groups raise it, and it fades by itself. High unrest makes coups and civil war possible.",
+          }))}
+        >
+          {Math.round(cs.unrest * 100)}%{cs.civilWar ? " · civil war" : ""}
+        </dd>
+        <dt>Economic mood</dt>
+        <dd
+          class={`num ${cs.economicMood > 0.15 ? "good" : cs.economicMood < -0.15 ? "bad" : ""}`}
+          {...tip(() => ({
+            title: "Economic mood",
+            rows: [["Mood (−100 to +100)", Math.round(cs.economicMood * 100)]],
+            note: "Helps or hurts governing parties at elections and moves interest group approval. A placeholder cycle until the economy arrives in Phase 7.",
+          }))}
+        >
+          {cs.economicMood >= 0 ? "+" : ""}
+          {Math.round(cs.economicMood * 100)}
+        </dd>
+      </dl>
+      {snapChamber && gov?.needs_majority && (
+        <div class="pad row-act">
+          <button
+            class="btn"
+            disabled={cs.politicalPower < 50}
+            onClick={() => setMsg(session.dispatch({ type: "call_snap_election", tag, chamber: snapChamber.id }).text)}
+            {...tip(() => ({
+              title: "Call an early election",
+              rows: [["Cost", "50 PP"], ["Held in", `${db.politicsRules.coalitions.snap_election_delay_days} days`]],
+              note: `Dissolves the ${snapChamber.name.en}. The new chamber forms the next government.`,
+            }))}
+          >
+            Call early election
+          </button>
+          {msg && <span class="dim small">{msg}</span>}
+        </div>
+      )}
 
       <div class="hp-section">Cabinet and high command</div>
       {cabinet.length === 0 ? (
@@ -152,8 +217,8 @@ export function PoliticsPanel({ db, state, tag }: { db: ContentDB; state: GameSt
               <div class="slot" key={o.id} {...tip(() => ({ title: o.title.en, rows: [["Holder", h?.name.en ?? "Vacant"], ...(h ? [["Born", String(h.birth_year)] as [string, string]] : [])] }))}>
                 <Portrait size="sm" />
                 <div class="slot-txt">
-                  <div class="faint small clip">{o.title.en.replace(/^(Federal )?Minister (of|for) (the )?/i, "")}</div>
                   <div class="sname clip">{h?.name.en ?? "Vacant"}</div>
+                  <div class="faint small clip">{o.title.en.replace(/^(Federal )?Minister (of|for) (the )?/i, "")}</div>
                 </div>
               </div>
             );
@@ -174,7 +239,7 @@ export function PoliticsPanel({ db, state, tag }: { db: ContentDB; state: GameSt
             </div>
           )}
           <div class="hp-well pad-sm">
-            <Hemicycle groups={groups} total={chamber.seats} title={chamber.name.en} />
+            <Hemicycle groups={groups} total={groups.reduce((n, g) => n + g.seats, 0) || chamber.seats} title={chamber.name.en} />
           </div>
         </>
       )}
@@ -198,7 +263,31 @@ export function PoliticsPanel({ db, state, tag }: { db: ContentDB; state: GameSt
             const lead = cs.partyLeader[p.id];
             const pop = cs.partyPopularity[p.id] ?? 0;
             return (
-              <tr key={p.id} class={cs.rulingParties.includes(p.id) ? "gov" : ""} {...tip(() => ({ title: p.name.en, rows: [["Ideology", db.subIdeologies.get(p.sub_ideology)?.name ?? "—"], ["Founded", String(p.founded).slice(0, 4)], ["Status", cs.partyStatus[p.id] ?? "—"]] }))}>
+              <tr
+                key={p.id}
+                class={cs.rulingParties.includes(p.id) ? "gov" : ""}
+                {...tip(() => {
+                  const f = factors[p.id];
+                  return {
+                    title: p.name.en,
+                    rows: [
+                      ["Ideology", db.subIdeologies.get(p.sub_ideology)?.name ?? "—"],
+                      ["Founded", String(p.founded).slice(0, 4)],
+                      ["Status", cs.partyStatus[p.id] ?? "—"],
+                      ...(f
+                        ? ([
+                            ["From ideology support", `${(f.ideology * 100).toFixed(1)}%`],
+                            ["Leader appeal", `×${f.leader.toFixed(2)}`],
+                            ["Incumbency", `×${f.incumbency.toFixed(2)}`],
+                            ["Economy", `×${f.economy.toFixed(2)}`],
+                            ["Model share now", `${(f.share * 100).toFixed(1)}%`],
+                          ] as [string, string][])
+                        : []),
+                    ],
+                    note: "Support drifts toward the model share between elections, like polls.",
+                  };
+                })}
+              >
                 <td><i class="sw" style={{ background: p.color }} /></td>
                 <td class="clip">{p.abbrev.en}</td>
                 <td class="clip dim">{lead ? (db.people.get(lead)?.name.en ?? lead) : "—"}</td>
@@ -218,7 +307,21 @@ export function PoliticsPanel({ db, state, tag }: { db: ContentDB; state: GameSt
             const s = cs.interestGroups[ig.id]!;
             const tone = s.approval >= 55 ? "good" : s.approval < 40 ? "bad" : "";
             return (
-              <div class="ig" key={ig.id} {...tip(() => ({ title: ig.name, body: <span class="dim">{ig.description}</span>, rows: [["Influence", `${Math.round(s.influence * 100)}%`], ["Approval", Math.round(s.approval)]] }))}>
+              <div
+                class="ig"
+                key={ig.id}
+                {...tip(() => ({
+                  title: ig.name,
+                  body: <span class="dim">{ig.description}</span>,
+                  rows: [
+                    ["Influence", `${Math.round(s.influence * 100)}%`],
+                    ["Approval", Math.round(s.approval)],
+                    ["Drifting toward", Math.round(igTarget(db, cs, ig.id))],
+                    ...igTargetParts(db, cs, ig.id).map((pt) => [pt.label, `${pt.value > 0 ? "+" : ""}${Math.round(pt.value)}`] as [string, string]),
+                  ],
+                  note: "Approval moves 5% of the way to its target each week. Low approval leads to protests, strikes and worse.",
+                }))}
+              >
                 <span class="ig-name">{ig.name}</span>
                 <span class="meter"><span style={{ width: `${s.influence * 100}%` }} /></span>
                 <span class={`ig-ap num ${tone}`}>{Math.round(s.approval)}</span>
@@ -232,30 +335,45 @@ export function PoliticsPanel({ db, state, tag }: { db: ContentDB; state: GameSt
         {[...db.lawCategories.values()].map((cat) => {
           const law = cat.laws.find((l) => l.id === cs.laws[cat.id]);
           return (
-            <div class="law" key={cat.id} {...tip(() => ({ title: law?.name ?? cat.name, body: <span class="dim">{law?.description}</span>, note: `${cat.name}. Changing laws arrives in Phase 5.` }))}>
-              <span class="faint small">{cat.name}</span>
+            <button class="law" key={cat.id} onClick={() => setLawCat(cat.id)} {...tip(() => ({ title: law?.name ?? cat.name, body: <span class="dim">{law?.description}</span>, note: `${cat.name}. Click to change.` }))}>
               <span class="lname">{law?.name ?? "—"}</span>
-            </div>
+              <span class="faint small">{cat.name}</span>
+            </button>
           );
         })}
       </div>
 
       <div class="hp-section">Upcoming elections</div>
       {elections.length === 0 ? (
-        <p class="faint small pad">{cc.elections?.no_elections_reason ?? "No national elections scheduled."}</p>
+        <p class="faint small pad">{cc.elections?.no_elections_reason ?? (gov && !gov.holds_elections ? `No elections under a ${gov.name.toLowerCase()}.` : "No national elections scheduled.")}</p>
       ) : (
         <ul class="elist">
           {elections.map((e) => (
-            <li key={e.date + e.kind}>
-              <b class="num">{formatDate(dayOf(e.date))}</b>
+            <li key={e.key + e.day}>
+              <b class="num">{formatDate(e.day)}</b>
               <span class="dim">
-                {e.kind.replace(/_/g, " ")}
-                {e.chamber ? ` · ${chambers.find((x) => x.id === e.chamber)?.name.en ?? e.chamber}` : ""}
-                {e.office ? ` · ${db.offices.get(e.office)?.title.en ?? ""}` : ""}
+                {electionTitle(db, tag, { kind: e.kind, chamber: e.chamber, office: e.office })}
+                {e.snap ? " (early)" : ""}
               </span>
             </li>
           ))}
         </ul>
+      )}
+
+      {results.length > 0 && (
+        <>
+          <div class="hp-section">Recent results</div>
+          <ul class="elist">
+            {results.map((r) => (
+              <li key={r.id}>
+                <b class="num">{formatDate(r.day)}</b>
+                <button class="lnk" onClick={() => (electionNight.value = r)} {...tip(() => ({ title: electionTitle(db, tag, r), rows: [["Winner", nameOf(db, r.winner)]], note: "Open the full result." }))}>
+                  {electionTitle(db, tag, r)}: {nameOf(db, r.winner)}
+                </button>
+              </li>
+            ))}
+          </ul>
+        </>
       )}
     </div>
   );

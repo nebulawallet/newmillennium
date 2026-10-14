@@ -89,7 +89,7 @@ export function LeftPanel({ db, map, session }: { db: ContentDB; map: MapData; s
     const tab = TABS.find((t) => t.id === open)!;
     return (
       <SidePanel title={tab.label} icon={tab.icon} onClose={() => (panel.value = null)}>
-        {tab.id === "politics" && state?.player ? <PoliticsPanel db={db} state={state} tag={state.player} /> : <StubPanel tab={tab} />}
+        {tab.id === "politics" && state?.player ? <PoliticsPanel db={db} state={state} tag={state.player} session={session} /> : <StubPanel tab={tab} />}
       </SidePanel>
     );
   }
