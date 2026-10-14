@@ -1,0 +1,82 @@
+.titlebar {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  right: 10px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 0 14px;
+}
+.brand {
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  font-size: 13px;
+}
+.issues {
+  margin-left: auto;
+  color: var(--warn);
+}
+
+.country-list {
+  position: absolute;
+  top: 60px;
+  left: 10px;
+  bottom: 10px;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 12px;
+}
+.country-list ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  overflow-y: auto;
+  flex: 1;
+}
+.country-list li {
+  display: grid;
+  grid-template-columns: 10px 1fr auto;
+  column-gap: 8px;
+  align-items: center;
+  padding: 7px 8px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.country-list li:hover { background: var(--panel-raised); }
+.country-list li.active { background: var(--accent-dim); }
+.country-list .sub {
+  grid-column: 2 / 4;
+  font-size: 12px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.cname { font-weight: 500; }
+
+.swatch {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 2px;
+  vertical-align: middle;
+}
+
+.country-card {
+  position: absolute;
+  top: 60px;
+  left: 320px;
+  width: 340px;
+  padding: 14px 16px;
+}
+.country-card dl {
+  display: grid;
+  grid-template-columns: 130px 1fr;
+  gap: 6px 10px;
+  margin: 12px 0;
+}
+.country-card dt { color: var(--text-dim); }
+.country-card dd { margin: 0; }

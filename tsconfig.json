@@ -17,7 +17,7 @@
     "allowImportingTsExtensions": true,
     "jsx": "react-jsx",
     "jsxImportSource": "preact",
-    "types": ["node"]
+    "types": ["node", "vite/client"]
   },
   "include": ["src", "scripts", "tests"]
 }

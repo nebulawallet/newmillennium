@@ -265,6 +265,18 @@ export function compileContent(files: FileProvider, opts: CompileOptions = {}): 
     checkCountry(db, cc, tier, err, warn);
   }
 
+  // When narrowed with `only`, problems in other countries' files (e.g. a folder another
+  // researcher is still writing) are reported as warnings so they do not fail this run.
+  if (opts.only) {
+    for (const i of issues) {
+      const m = /^countries\/([A-Z]{3})\//.exec(i.file);
+      if (m && !opts.only.has(m[1]!) && i.severity === "error") {
+        i.severity = "warning";
+        i.code = `OTHER_COUNTRY:${i.code}`;
+      }
+    }
+  }
+
   return { db, issues };
 }
 
