@@ -1,7 +1,10 @@
-import "@fontsource/inter/400.css";
-import "@fontsource/inter/600.css";
-import "./ui/app.css";
-import "./ui/game.css";
+import "@fontsource/barlow/400.css";
+import "@fontsource/barlow/500.css";
+import "@fontsource/barlow/600.css";
+import "@fontsource/barlow-semi-condensed/500.css";
+import "@fontsource/barlow-semi-condensed/600.css";
+import "@fontsource/barlow-semi-condensed/700.css";
+import "./ui/shell.css";
 import { render } from "preact";
 import { useEffect, useState } from "preact/hooks";
 import * as THREE from "three";
@@ -12,13 +15,14 @@ import { loadMapData, type MapData } from "./render/mapData.ts";
 import { MapView } from "./render/MapView.ts";
 import { WorldMap, type RenderApproach } from "./render/WorldMap.ts";
 import { CountrySelect } from "./ui/CountrySelect.tsx";
-import { EventFeed } from "./ui/hud/EventFeed.tsx";
 import { GameMenu } from "./ui/hud/GameMenu.tsx";
 import { TopBar } from "./ui/hud/TopBar.tsx";
-import { PoliticsScreen } from "./ui/politics/PoliticsScreen.tsx";
+import { LeftPanel, Outliner } from "./ui/hud/Panels.tsx";
+import { TABS } from "./ui/tabs.ts";
+import { activeTip, TooltipLayer } from "./ui/tooltip.tsx";
 import { panel, paused, screen, Session, speed } from "./ui/session.ts";
-import { MapModeBar, ProvincePanel, ProvinceTooltip } from "./ui/MapUi.tsx";
-import { hoveredProvince, pointer, selectedProvince } from "./ui/store.ts";
+import { MapModeBar, ProvinceTooltip } from "./ui/MapUi.tsx";
+import { hoveredProvince, pickedCountry, pointer, selectedProvince } from "./ui/store.ts";
 
 async function loadContent(): Promise<{ db: ContentDB; bundle: ContentBundle }> {
   const res = await fetch("/content/bundle.json");
@@ -28,10 +32,10 @@ async function loadContent(): Promise<{ db: ContentDB; bundle: ContentBundle }> 
 }
 
 function BenchPanel({ results }: { results: BenchResult[] | null }) {
-  if (!results) return <section class="bench panel">Running renderer benchmark…</section>;
+  if (!results) return <section class="bench hp">Running renderer benchmark…</section>;
   const views = Object.keys(results[0]!.frameMs);
   return (
-    <section class="bench panel">
+    <section class="bench hp">
       <h2>Renderer benchmark</h2>
       <table>
         <thead>
@@ -83,7 +87,18 @@ async function boot(): Promise<void> {
   const view = new MapView(canvas);
   const world = new WorldMap(view, map, db, approach);
   world.onHoverChange = (id) => (hoveredProvince.value = id);
-  world.onSelectChange = (id) => (selectedProvince.value = id);
+  world.onSelectChange = (id) => {
+    // start screen: clicking the map picks that province's country; in game it opens the state view
+    if (screen.value === "select") {
+      if (!id) return; // world.select(0) below re-enters here
+      const owner = map.provinces[id - 1]?.owner;
+      if (owner) pickedCountry.value = owner;
+      world.select(0);
+      return;
+    }
+    selectedProvince.value = id;
+    if (id) panel.value = null;
+  };
   selectedProvince.subscribe((id) => world.select(id));
   window.addEventListener("pointermove", (e) => (pointer.value = { x: e.clientX, y: e.clientY }));
   const session = new Session(db, map, world, bundle.hash);
@@ -100,38 +115,45 @@ function ContentChangedBanner() {
   }, []);
   if (!changed) return null;
   return (
-    <div class="content-banner panel">
-      Game data changed on disk. <button onClick={() => location.reload()}>Reload</button>
+    <div class="content-banner hp">
+      Game data changed on disk. <button class="btn" onClick={() => location.reload()}>Reload</button>
     </div>
   );
 }
 
 function Root({ db, map, world, session, issues }: { db: ContentDB; map: MapData; world: WorldMap; session: Session; issues: ContentBundle["issues"] }) {
-  const inGame = screen.value === "game" && session.state;
+  const inGame = screen.value === "game" && !!session.state;
   return (
     <>
-      {inGame ? <TopBar db={db} session={session} /> : <CountrySelect db={db} session={session} issues={issues} />}
-      <MapModeBar db={db} map={map} world={world} />
+      {inGame ? (
+        <>
+          <TopBar db={db} session={session} />
+          <LeftPanel db={db} map={map} session={session} />
+          <Outliner db={db} session={session} />
+        </>
+      ) : (
+        <CountrySelect db={db} session={session} issues={issues} />
+      )}
+      {inGame && <MapModeBar db={db} map={map} world={world} />}
       <ProvinceTooltip db={db} map={map} />
-      {panel.value === null && <ProvincePanel db={db} map={map} />}
-      {inGame && panel.value === "politics" && <PoliticsScreen db={db} state={session.state!} tag={session.state!.player!} />}
       {inGame && panel.value === "menu" && <GameMenu session={session} />}
-      {inGame && <EventFeed db={db} />}
+      <TooltipLayer />
       <ContentChangedBanner />
     </>
   );
 }
 
-/** Keyboard: Space pause, 1-5 / +/- speed, P politics, Esc menu/close. */
+/** HOI4 keys: Q-P open the tab row, Space pauses, +/- or 1-5 set speed, Esc closes or opens the menu. */
 function bindKeys(session: Session): void {
   window.addEventListener("keydown", (e) => {
-    if (screen.value !== "game" || (e.target as HTMLElement).closest("input, select, textarea")) return;
+    if (screen.value !== "game" || e.ctrlKey || e.metaKey || e.altKey || (e.target as HTMLElement).closest("input, select, textarea")) return;
+    const tab = TABS.find((t) => t.key === e.key.toUpperCase());
     if (e.code === "Space") { e.preventDefault(); session.setPaused(!paused.value); }
     else if (/^Digit[1-5]$/.test(e.code)) session.setSpeed(Number(e.code.slice(5)));
     else if (e.key === "+" || e.key === "=") session.setSpeed(speed.value + 1);
     else if (e.key === "-") session.setSpeed(speed.value - 1);
-    else if (e.key === "p" || e.key === "P") panel.value = panel.value === "politics" ? null : "politics";
-    else if (e.key === "Escape") panel.value = panel.value ? null : "menu";
+    else if (tab) { panel.value = panel.value === tab.id ? null : tab.id; activeTip.value = null; }
+    else if (e.key === "Escape") panel.value = panel.value ? null : selectedProvince.value ? ((selectedProvince.value = 0), null) : "menu";
   });
 }
 

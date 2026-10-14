@@ -73,15 +73,27 @@ export class Simulation {
 
 const activeCountries = (state: GameState) => Object.values(state.countries).filter((c) => c.active);
 
+/** Daily political power gain and its parts (also shown in the UI tooltip). */
+export function politicalPowerGain(db: ContentDB, c: CountryState): { base: number; stabilityFactor: number; total: number } {
+  const gov = db.governmentTypes.get(db.countries.get(c.tag)?.country?.government.type ?? "");
+  const base = (gov?.political_power_gain ?? 1) * 0.25;
+  const stabilityFactor = 0.6 + 0.4 * c.stability;
+  return { base, stabilityFactor, total: base * stabilityFactor };
+}
+
+/** Influence-weighted mean interest group approval (0..100) and the stability it pulls toward. */
+export function stabilityTarget(c: CountryState): { approval: number; target: number } {
+  let w = 0, a = 0;
+  for (const ig of Object.values(c.interestGroups)) { w += ig.influence; a += ig.influence * ig.approval; }
+  const approval = w > 0 ? a / w : 50;
+  return { approval, target: Math.max(0.05, Math.min(0.95, 0.5 + (approval - 50) / 80)) };
+}
+
 /** Political power accrues daily from the government type. */
 export const politicalPowerSystem: System = {
   id: "political_power",
   daily({ db, state }) {
-    for (const c of activeCountries(state)) {
-      const gov = db.governmentTypes.get(db.countries.get(c.tag)?.country?.government.type ?? "");
-      const gain = (gov?.political_power_gain ?? 1) * 0.25 * (0.6 + 0.4 * c.stability);
-      c.politicalPower = Math.min(2000, c.politicalPower + gain);
-    }
+    for (const c of activeCountries(state)) c.politicalPower = Math.min(2000, c.politicalPower + politicalPowerGain(db, c).total);
   },
 };
 
@@ -89,13 +101,7 @@ export const politicalPowerSystem: System = {
 export const stabilitySystem: System = {
   id: "stability",
   weekly({ state }) {
-    for (const c of activeCountries(state)) {
-      let w = 0, a = 0;
-      for (const ig of Object.values(c.interestGroups)) { w += ig.influence; a += ig.influence * ig.approval; }
-      const approval = w > 0 ? a / w : 50;
-      const target = Math.max(0.05, Math.min(0.95, 0.5 + (approval - 50) / 80));
-      c.stability += (target - c.stability) * 0.03;
-    }
+    for (const c of activeCountries(state)) c.stability += (stabilityTarget(c).target - c.stability) * 0.03;
   },
 };
 

@@ -1,7 +1,7 @@
 import * as THREE from "three";
 // @ts-expect-error troika-three-text ships without type declarations
 import { Text } from "troika-three-text";
-import fontUrl from "@fontsource/inter/files/inter-latin-600-normal.woff?url";
+import fontUrl from "@fontsource/barlow-semi-condensed/files/barlow-semi-condensed-latin-600-normal.woff?url";
 import type { CountryLabel } from "../mapData.ts";
 
 interface TroikaText extends THREE.Mesh {

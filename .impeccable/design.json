@@ -1,0 +1,103 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-14T06:00:00Z",
+  "title": "Design System: New Millennium",
+  "extensions": {
+    "colorMeta": {
+      "bronze": { "role": "primary", "displayName": "Bronze Trim", "canonical": "#8a6d43", "tonalRamp": ["#2a2116", "#4a3b26", "#6a5435", "#8a6d43", "#a98a59", "#c9a56a", "#e8cf98", "#f6ead0"] },
+      "steel-3": { "role": "neutral", "displayName": "Olive Steel", "canonical": "#232d29", "tonalRamp": ["#0b0f0e", "#141a18", "#1b2320", "#232d29", "#2e3a35", "#3c4a44", "#55635d", "#76837d"] },
+      "ink": { "role": "neutral", "displayName": "Cream Ink", "canonical": "#ece4cf", "tonalRamp": ["#3e3b33", "#5b5a50", "#7f7a69", "#9a947f", "#b3ab95", "#cfc7b0", "#ece4cf", "#f8f4ea"] },
+      "ocean": { "role": "neutral", "displayName": "Deep Teal Sea", "canonical": "#1a3038", "tonalRamp": ["#0b1518", "#0f1a1d", "#14252b", "#1a3038", "#24414b", "#30545f", "#456c78", "#628993"] }
+    },
+    "typographyMeta": {
+      "headline": { "displayName": "Headline", "purpose": "Leader and nation names." },
+      "title": { "displayName": "Panel title", "purpose": "Uppercase bronze text in panel header bands." },
+      "label": { "displayName": "Section label", "purpose": "Section bands, outliner and legend headers." },
+      "numeral": { "displayName": "Numeral", "purpose": "Stat values and the date; tabular figures." },
+      "body": { "displayName": "Body", "purpose": "Tables, descriptions, tooltips." }
+    },
+    "shadows": [
+      { "name": "bevel", "value": "inset 0 1px 0 rgba(255,236,196,0.07), inset 0 -1px 0 rgba(0,0,0,0.55)", "purpose": "Every steel slab's edge highlight and bottom shade." },
+      { "name": "lift", "value": "0 6px 18px rgba(0,0,0,0.55), 0 1px 2px rgba(0,0,0,0.7)", "purpose": "Slabs floating over the map." },
+      { "name": "well", "value": "inset 0 1px 3px rgba(0,0,0,0.6)", "purpose": "Recessed readouts, inputs and chart frames." },
+      { "name": "active-glow", "value": "inset 0 0 0 1px rgba(232,207,152,0.25), inset 0 2px 6px rgba(0,0,0,0.5), 0 0 10px rgba(201,165,106,0.25)", "purpose": "Active tile." }
+    ],
+    "motion": [
+      { "name": "panel-slide", "value": "220ms cubic-bezier(0.16, 1, 0.3, 1)", "purpose": "Left panel entering from 14px left." },
+      { "name": "stat-flash", "value": "650ms", "purpose": "Green or red flash when a stat moves." },
+      { "name": "hover", "value": "120ms ease-out", "purpose": "Tile and border hover transitions." }
+    ],
+    "breakpoints": [ { "name": "desktop-min", "value": "1366px" } ]
+  },
+  "components": [
+    {
+      "name": "Tile",
+      "kind": "nav",
+      "refersTo": "tile",
+      "description": "40px square icon tile used for the tab row and map modes.",
+      "html": "<button class=\"ds-tile\" aria-label=\"Politics\"><svg width=\"22\" height=\"22\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M4 20h16\"/><path d=\"M5 17h14\"/><path d=\"M6 17V9M10 17V9M14 17V9M18 17V9\"/><path d=\"M3.5 8.5 12 4l8.5 4.5\"/></svg></button><button class=\"ds-tile ds-on\" aria-label=\"Research\"><svg width=\"22\" height=\"22\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M9.5 3h5\"/><path d=\"M10.5 3v5.2L5.4 17.4A2 2 0 0 0 7.2 20.4h9.6a2 2 0 0 0 1.8-3L13.5 8.2V3\"/><path d=\"M7.6 14h8.8\"/></svg></button>",
+      "css": ".ds-tile{display:inline-grid;place-items:center;width:40px;height:40px;margin-right:3px;padding:0;color:#b3ab95;background:linear-gradient(180deg,#2e3a35,#1b2320);border:1px solid #4a3b26;box-shadow:inset 0 1px 0 rgba(255,236,196,.12),inset 0 -2px 0 rgba(0,0,0,.45),0 1px 2px rgba(0,0,0,.8);cursor:pointer;transition:color 120ms ease-out,border-color 120ms ease-out}.ds-tile:hover{color:#e8cf98;border-color:#8a6d43}.ds-tile:focus-visible{outline:1px solid #e8cf98;outline-offset:1px}.ds-tile.ds-on{color:#e8cf98;border-color:#c9a56a;background:linear-gradient(180deg,#3d3423,#241e14);box-shadow:inset 0 0 0 1px rgba(232,207,152,.25),inset 0 2px 6px rgba(0,0,0,.5),0 0 10px rgba(201,165,106,.25)}"
+    },
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Bronze action button (Play, Resume).",
+      "html": "<button class=\"ds-btn ds-btn-primary\">Play</button>",
+      "css": ".ds-btn{min-height:38px;padding:0 18px;font:700 15px/1 'Barlow Semi Condensed',sans-serif;letter-spacing:.08em;text-transform:uppercase;border:1px solid #3a2c17;cursor:pointer;box-shadow:inset 0 1px 0 rgba(255,236,196,.16),inset 0 -2px 0 rgba(0,0,0,.4),0 1px 2px rgba(0,0,0,.8)}.ds-btn-primary{color:#1a140a;background:linear-gradient(180deg,#e8cf98,#c9a56a 45%,#8a6d43)}.ds-btn-primary:hover{filter:brightness(1.06)}.ds-btn:active{box-shadow:inset 0 2px 5px rgba(0,0,0,.7)}.ds-btn:focus-visible{outline:1px solid #e8cf98;outline-offset:1px}"
+    },
+    {
+      "name": "Button",
+      "kind": "button",
+      "refersTo": "button",
+      "description": "Standard steel button.",
+      "html": "<button class=\"ds-btn2\">Save game</button>",
+      "css": ".ds-btn2{min-height:30px;padding:0 14px;font:700 13px/1 'Barlow Semi Condensed',sans-serif;letter-spacing:.08em;text-transform:uppercase;color:#ece4cf;background:linear-gradient(180deg,#3c4a44,#232d29);border:1px solid #8a6d43;cursor:pointer;box-shadow:inset 0 1px 0 rgba(255,236,196,.16),inset 0 -2px 0 rgba(0,0,0,.4)}.ds-btn2:hover{border-color:#c9a56a;color:#e8cf98}.ds-btn2:focus-visible{outline:1px solid #e8cf98;outline-offset:1px}"
+    },
+    {
+      "name": "Stat readout",
+      "kind": "custom",
+      "refersTo": "numeral",
+      "description": "Top-bar value in a recessed well; flashes green or red when it moves.",
+      "html": "<div class=\"ds-stat\"><svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\"><path d=\"M12 3 5 7v2h14V7Z\"/><path d=\"M7 9v8M12 9v8M17 9v8\"/><path d=\"M4 20h16M5 17h14\"/></svg><span>278</span></div><div class=\"ds-stat ds-up\"><svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\"><path d=\"M5 21V4\"/><path d=\"M5 4h11l-2.5 3.5L16 11H5\"/></svg><span>56%</span></div>",
+      "css": ".ds-stat{display:inline-flex;align-items:center;gap:6px;height:38px;margin-right:4px;padding:0 10px 0 8px;color:#c9a56a;background:rgba(0,0,0,.28);border:1px solid rgba(0,0,0,.55);box-shadow:inset 0 1px 2px rgba(0,0,0,.5)}.ds-stat span{font:600 16px/1 'Barlow Semi Condensed',sans-serif;color:#ece4cf;font-variant-numeric:tabular-nums}.ds-stat:hover{border-color:#8a6d43}.ds-stat.ds-up{background:rgba(143,207,111,.18)}.ds-stat.ds-up span{color:#8fcf6f}"
+    },
+    {
+      "name": "Search field",
+      "kind": "input",
+      "refersTo": "body",
+      "description": "Recessed input.",
+      "html": "<input class=\"ds-input\" type=\"search\" placeholder=\"Nation or leader\">",
+      "css": ".ds-input{font:500 13px 'Barlow',sans-serif;color:#ece4cf;background:rgba(0,0,0,.45);border:1px solid #4a3b26;box-shadow:inset 0 1px 3px rgba(0,0,0,.7);padding:6px 8px;outline:none}.ds-input:focus{border-color:#c9a56a}.ds-input::placeholder{color:#5b5a50}"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Steel Cabinet",
+    "overview": "The interface is a cabinet of dark, slightly olive steel slabs trimmed with thin bronze, laid over a full-screen map. It follows Hearts of Iron IV's topology exactly, because the players already know it: top bar, left slide-out panels, outliner on the right, map modes at the bottom right. All art is original. Density is high: numbers are read at a glance, and every element explains itself through a rich tooltip.",
+    "keyCharacteristics": [
+      "Square corners everywhere; no radius.",
+      "Bronze hairline borders, with brighter bronze for active state.",
+      "Condensed caps for headers and labels, condensed tabular numerals for values.",
+      "Cream ink on steel; green, red and amber only where they carry meaning.",
+      "Rich tooltips (title band plus rows) on every readout, tile and table row."
+    ],
+    "rules": [
+      { "name": "The Meaningful Colour Rule", "body": "Green (good), red (bad) and amber (warn) appear only on values that are actually improving, worsening or in a warning state, such as stat flashes and interest group approval. Never use them as decoration.", "section": "colors" },
+      { "name": "The Data Colour Rule", "body": "Party, ideology and country colours come from the game data. The shell never recolours them; it frames them in black hairlines so they read on steel.", "section": "colors" },
+      { "name": "The Heading-First Rule", "body": "A name or heading leads, and its role or date follows beneath it. No small label sits above a heading.", "section": "typography" },
+      { "name": "The Bevel-Not-Card Rule", "body": "Containers are bevelled steel slabs with hairline edges, never rounded cards with soft shadows, and never nested cards.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do put every new system in its HOI4 position: its tab in the top row, its panel on the left, lists in the outliner, map overlays in the map-mode cluster.",
+      "Do give every number a tooltip that explains where it comes from.",
+      "Do show unbuilt systems honestly, with the phase that adds them.",
+      "Do use the authored icon set (24px grid, 1.6 stroke) for any new icon."
+    ],
+    "donts": [
+      "Don't round corners or use glass, gradients on text, or soft floating cards.",
+      "Don't place small labels or eyebrows above headings, or coloured side stripes on list items.",
+      "Don't use Paradox-owned art, icons, fonts or textures.",
+      "Don't decorate with loaded political or military symbols."
+    ]
+  }
+}

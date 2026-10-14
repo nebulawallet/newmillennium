@@ -7,12 +7,13 @@ import { signal } from "@preact/signals";
 import type { ContentDB } from "../content/compile.ts";
 import type { MapData } from "../render/mapData.ts";
 import type { WorldMap } from "../render/WorldMap.ts";
+import type { TabId } from "./tabs.ts";
 import { Clock } from "../sim/clock.ts";
 import { Simulation } from "../sim/simulation.ts";
 import { createInitialState, type GameRules, type GameState, type LogEntry } from "../sim/state.ts";
 
 export type Screen = "select" | "game";
-export type Panel = "politics" | "menu" | null;
+export type Panel = TabId | "menu" | null;
 
 export const screen = signal<Screen>("select");
 export const panel = signal<Panel>(null);
