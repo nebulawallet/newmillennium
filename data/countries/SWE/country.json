@@ -1,0 +1,113 @@
+{
+  "tag": "SWE",
+  "name": { "en": "Sweden", "native": "Sverige", "official": { "en": "Kingdom of Sweden", "native": "Konungariket Sverige" } },
+  "adjective": "Swedish",
+  "culture_primary": "swedish",
+  "government": {
+    "type": "constitutional_monarchy",
+    "effective_executive": "swe.prime_minister",
+    "head_of_state_office": "swe.monarch",
+    "head_of_government_office": "swe.prime_minister",
+    "constitution": {
+      "term_limit_amendable": true,
+      "emergency_powers": true,
+      "referendum_required_for": []
+    },
+    "note": "Parliamentary constitutional monarchy with a ceremonial monarch. The Speaker of the Riksdag leads government formation, and a prime ministerial candidate takes office unless an absolute majority (175 of 349) votes against ('negative parliamentarism'). The 2003 euro referendum was non-binding and is the most recent national referendum."
+  },
+  "offices": [
+    {
+      "id": "swe.monarch",
+      "title": { "en": "King of Sweden", "native": "Sveriges konung" },
+      "role": "head_of_state",
+      "power_weight": 0.03,
+      "selection": "hereditary",
+      "succession": {
+        "type": "line",
+        "heirs": ["swe.crown_princess_victoria", "swe.prince_carl_philip", "swe.princess_madeleine"]
+      },
+      "holders": [
+        { "person": "swe.carl_xvi_gustaf", "from": "1973-09-15" }
+      ],
+      "source": [
+        { "url": "https://www.wikidata.org/wiki/Q45068", "title": "Wikidata: Carl XVI Gustaf (Monarch of Sweden from 1973-09-15)", "accessed": "2026-10-14" },
+        { "url": "https://en.wikipedia.org/wiki/Carl_XVI_Gustaf", "title": "Wikipedia: Carl XVI Gustaf", "accessed": "2026-10-14" },
+        { "url": "https://en.wikipedia.org/wiki/Victoria,_Crown_Princess_of_Sweden", "title": "Wikipedia: Victoria, Crown Princess of Sweden", "accessed": "2026-10-14", "note": "Heirs are the King's three children, Victoria first, as on 2000-01-01." }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "swe.prime_minister",
+      "title": { "en": "Prime Minister of Sweden", "native": "Sveriges statsminister" },
+      "role": "head_of_government",
+      "power_weight": 0.97,
+      "selection": "legislature",
+      "term_years": 4,
+      "holders": [
+        { "person": "swe.goran_persson", "from": "1996-03-22", "to": "2006-10-06" },
+        { "person": "swe.fredrik_reinfeldt", "from": "2006-10-06", "to": "2014-10-03" },
+        { "person": "swe.stefan_lofven", "from": "2014-10-03", "to": "2021-11-30", "note": "Led three successive cabinets (Löfven I-III); the list of prime ministers notes that the first two were defeated by motions of no confidence." },
+        { "person": "swe.magdalena_andersson", "from": "2021-11-30", "to": "2022-10-18" },
+        { "person": "swe.ulf_kristersson", "from": "2022-10-18", "note": "Resigned on 17 September 2026 after the opposition parties won 176 seats; heads a caretaker government while government formation continues (as of the data date)." }
+      ],
+      "source": [
+        { "url": "https://www.wikidata.org/wiki/Q687075", "title": "Wikidata: Prime Minister of Sweden (position held by)", "accessed": "2026-10-14" },
+        { "url": "https://en.wikipedia.org/wiki/List_of_prime_ministers_of_Sweden", "title": "Wikipedia: List of prime ministers of Sweden", "accessed": "2026-10-14" },
+        { "url": "https://en.wikipedia.org/wiki/2026_Swedish_government_formation", "title": "Wikipedia: 2026 Swedish government formation", "accessed": "2026-10-14" }
+      ],
+      "confidence": "verified"
+    }
+  ],
+  "legislature": {
+    "name": { "en": "Riksdag", "native": "Sveriges riksdag" },
+    "chambers": [
+      {
+        "id": "riksdag",
+        "name": { "en": "Riksdag", "native": "Riksdagen" },
+        "seats": 349,
+        "term_years": 4,
+        "elected": "direct",
+        "system": {
+          "type": "list_pr",
+          "formula": "sainte_lague",
+          "threshold": 0.04,
+          "district_model": "custom",
+          "note": "Modified Sainte-Lague in 29 multi-member constituencies (310 seats) plus 39 national adjustment (levelling) seats. Parties need 4% nationally, or 12% in a constituency. seats_2000 is the 1998 election result; no mid-term changes before 1 January 2000 were checked."
+        },
+        "seats_2000": { "swe.s": 131, "swe.m": 82, "swe.v": 43, "swe.kd": 42, "swe.c": 18, "swe.fp": 17, "swe.mp": 16 },
+        "confidence_chamber": true,
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/1998_Swedish_general_election", "title": "Wikipedia: 1998 Swedish general election", "accessed": "2026-10-14" },
+          { "url": "https://en.wikipedia.org/wiki/Elections_in_Sweden", "title": "Wikipedia: Elections in Sweden (electoral system)", "accessed": "2026-10-14" }
+        ],
+        "confidence": "verified"
+      }
+    ]
+  },
+  "party_system": "multi_party",
+  "start_2000": {
+    "ruling_parties": ["swe.s"],
+    "confidence_and_supply": ["swe.v", "swe.mp"],
+    "ideology_support": {
+      "social_democrat": 0.30,
+      "third_way": 0.064,
+      "liberal_conservative": 0.229,
+      "democratic_socialist": 0.121,
+      "christian_democrat": 0.117,
+      "agrarian": 0.051,
+      "social_liberal": 0.047,
+      "green": 0.045,
+      "right_populist": 0.005,
+      "big_tent": 0.021
+    },
+    "ideology_support_note": "Derived from 1998 Riksdag vote shares (computed from the official vote counts): Social Democrats 36.4% (split 30.0 social democrat / 6.4 Third Way, a gameplay estimate), Moderates 22.9%, Left Party 12.0% plus small socialist and communist lists 0.1% (democratic socialist), Christian Democrats 11.7%, Centre Party 5.1% (agrarian), Liberal People's Party 4.7% (social liberal), Greens 4.5%, Sweden Democrats 0.4% and New Democracy 0.2% (right populist, rounded to 0.5%), Senior Citizen Interest Party 1.0% and other minor lists about 1.1% (big tent).",
+    "stability": 0.82,
+    "war_support": 0.12
+  },
+  "claims": [],
+  "source": [
+    { "url": "https://en.wikipedia.org/wiki/1998_Swedish_general_election", "title": "Wikipedia: 1998 Swedish general election (results and the Left/Green support arrangement)", "accessed": "2026-10-14" },
+    { "url": "https://en.wikipedia.org/wiki/List_of_prime_ministers_of_Sweden", "title": "Wikipedia: List of prime ministers of Sweden", "accessed": "2026-10-14" }
+  ],
+  "confidence": "verified"
+}

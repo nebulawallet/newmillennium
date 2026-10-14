@@ -1,0 +1,240 @@
+{
+  "rules": [
+    {
+      "kind": "legislative",
+      "chamber": "riksdag",
+      "every_years": 4,
+      "anchor": "2026-09-13",
+      "snap_possible": true,
+      "note": "Ordinary elections every four years in September, held together with municipal and regional elections. Extra elections are constitutionally possible but none was held between 2000 and 2026."
+    }
+  ],
+  "elections": [
+    {
+      "id": "riksdag_2002",
+      "date": "2002-09-15",
+      "kind": "legislative",
+      "chamber": "riksdag",
+      "historical": {
+        "candidates": [
+          { "person": "swe.goran_persson", "party": "swe.s", "round": 1 },
+          { "person": "swe.bo_lundgren", "party": "swe.m", "round": 1 }
+        ],
+        "party_results": [
+          { "party": "swe.s", "share": 0.3985, "seats": 144 },
+          { "party": "swe.m", "share": 0.1526, "seats": 55 },
+          { "party": "swe.fp", "share": 0.1339, "seats": 48 },
+          { "party": "swe.kd", "share": 0.0915, "seats": 33 },
+          { "party": "swe.v", "share": 0.0839, "seats": 30 },
+          { "party": "swe.c", "share": 0.0619, "seats": 22 },
+          { "party": "swe.mp", "share": 0.0465, "seats": 17 },
+          { "party": "swe.sd", "share": 0.0144, "seats": 0 }
+        ],
+        "winner": "swe.s",
+        "turnout": 0.801,
+        "note": "Shares computed from the vote counts in the results table. The Social Democrats continued as a minority government supported by the Left and Green parties.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2002_Swedish_general_election", "title": "Wikipedia: 2002 Swedish general election", "accessed": "2026-10-14" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "euro_referendum_2003",
+      "date": "2003-09-14",
+      "kind": "referendum",
+      "question": "Do you think that Sweden should introduce the euro as currency?",
+      "historical": {
+        "yes_share": 0.4202,
+        "winner": "no",
+        "turnout": 0.826,
+        "note": "Non-binding. Yes 2,453,899, No 3,265,341, blank 121,073. Yes share is of all valid ballots including blanks (42.9% of Yes plus No votes). Sweden did not adopt the euro.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2003_Swedish_euro_referendum", "title": "Wikipedia: 2003 Swedish euro referendum", "accessed": "2026-10-14" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "riksdag_2006",
+      "date": "2006-09-17",
+      "kind": "legislative",
+      "chamber": "riksdag",
+      "historical": {
+        "candidates": [
+          { "person": "swe.fredrik_reinfeldt", "party": "swe.m", "round": 1 },
+          { "person": "swe.goran_persson", "party": "swe.s", "round": 1 }
+        ],
+        "party_results": [
+          { "party": "swe.s", "share": 0.3499, "seats": 130 },
+          { "party": "swe.m", "share": 0.2623, "seats": 97 },
+          { "party": "swe.c", "share": 0.0788, "seats": 29 },
+          { "party": "swe.fp", "share": 0.0754, "seats": 28 },
+          { "party": "swe.kd", "share": 0.0659, "seats": 24 },
+          { "party": "swe.v", "share": 0.0585, "seats": 22 },
+          { "party": "swe.mp", "share": 0.0524, "seats": 19 },
+          { "party": "swe.sd", "share": 0.0293, "seats": 0 }
+        ],
+        "winner": "swe.m",
+        "turnout": 0.82,
+        "note": "The four Alliance parties (M, C, FP, KD) won a majority and formed the Reinfeldt majority coalition.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2006_Swedish_general_election", "title": "Wikipedia: 2006 Swedish general election", "accessed": "2026-10-14" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "riksdag_2010",
+      "date": "2010-09-19",
+      "kind": "legislative",
+      "chamber": "riksdag",
+      "historical": {
+        "candidates": [
+          { "person": "swe.fredrik_reinfeldt", "party": "swe.m", "round": 1 },
+          { "person": "swe.mona_sahlin", "party": "swe.s", "round": 1 }
+        ],
+        "party_results": [
+          { "party": "swe.s", "share": 0.3066, "seats": 112 },
+          { "party": "swe.m", "share": 0.3006, "seats": 107 },
+          { "party": "swe.mp", "share": 0.0734, "seats": 25 },
+          { "party": "swe.fp", "share": 0.0706, "seats": 24 },
+          { "party": "swe.c", "share": 0.0656, "seats": 23 },
+          { "party": "swe.sd", "share": 0.057, "seats": 20 },
+          { "party": "swe.v", "share": 0.056, "seats": 19 },
+          { "party": "swe.kd", "share": 0.056, "seats": 19 }
+        ],
+        "winner": "swe.m",
+        "turnout": 0.846,
+        "note": "The Sweden Democrats entered the Riksdag for the first time. The Alliance continued as a minority government.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2010_Swedish_general_election", "title": "Wikipedia: 2010 Swedish general election", "accessed": "2026-10-14" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "riksdag_2014",
+      "date": "2014-09-14",
+      "kind": "legislative",
+      "chamber": "riksdag",
+      "historical": {
+        "candidates": [
+          { "person": "swe.stefan_lofven", "party": "swe.s", "round": 1 },
+          { "person": "swe.fredrik_reinfeldt", "party": "swe.m", "round": 1 }
+        ],
+        "party_results": [
+          { "party": "swe.s", "share": 0.3103, "seats": 113 },
+          { "party": "swe.m", "share": 0.2334, "seats": 84 },
+          { "party": "swe.sd", "share": 0.1286, "seats": 49 },
+          { "party": "swe.mp", "share": 0.0689, "seats": 25 },
+          { "party": "swe.c", "share": 0.0612, "seats": 22 },
+          { "party": "swe.v", "share": 0.0572, "seats": 21 },
+          { "party": "swe.fp", "share": 0.0542, "seats": 19 },
+          { "party": "swe.kd", "share": 0.0457, "seats": 16 }
+        ],
+        "winner": "swe.s",
+        "turnout": 0.858,
+        "note": "Löfven formed a Social Democrat-Green minority coalition.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2014_Swedish_general_election", "title": "Wikipedia: 2014 Swedish general election", "accessed": "2026-10-14" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "riksdag_2018",
+      "date": "2018-09-09",
+      "kind": "legislative",
+      "chamber": "riksdag",
+      "historical": {
+        "candidates": [
+          { "person": "swe.stefan_lofven", "party": "swe.s", "round": 1 },
+          { "person": "swe.ulf_kristersson", "party": "swe.m", "round": 1 }
+        ],
+        "party_results": [
+          { "party": "swe.s", "share": 0.2828, "seats": 100 },
+          { "party": "swe.m", "share": 0.1985, "seats": 70 },
+          { "party": "swe.sd", "share": 0.1754, "seats": 62 },
+          { "party": "swe.c", "share": 0.0861, "seats": 31 },
+          { "party": "swe.v", "share": 0.0801, "seats": 28 },
+          { "party": "swe.kd", "share": 0.0633, "seats": 22 },
+          { "party": "swe.fp", "share": 0.0549, "seats": 20 },
+          { "party": "swe.mp", "share": 0.0442, "seats": 16 }
+        ],
+        "winner": "swe.s",
+        "turnout": 0.871,
+        "note": "Löfven remained Prime Minister at the head of a second Social Democrat-Green coalition (Löfven II).",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2018_Swedish_general_election", "title": "Wikipedia: 2018 Swedish general election", "accessed": "2026-10-14" },
+          { "url": "https://en.wikipedia.org/wiki/List_of_prime_ministers_of_Sweden", "title": "Wikipedia: List of prime ministers of Sweden", "accessed": "2026-10-14" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "riksdag_2022",
+      "date": "2022-09-11",
+      "kind": "legislative",
+      "chamber": "riksdag",
+      "historical": {
+        "candidates": [
+          { "person": "swe.ulf_kristersson", "party": "swe.m", "round": 1 },
+          { "person": "swe.magdalena_andersson", "party": "swe.s", "round": 1 }
+        ],
+        "party_results": [
+          { "party": "swe.s", "share": 0.3033, "seats": 107 },
+          { "party": "swe.sd", "share": 0.2054, "seats": 73 },
+          { "party": "swe.m", "share": 0.191, "seats": 68 },
+          { "party": "swe.v", "share": 0.0675, "seats": 24 },
+          { "party": "swe.c", "share": 0.0671, "seats": 24 },
+          { "party": "swe.kd", "share": 0.0534, "seats": 19 },
+          { "party": "swe.mp", "share": 0.0508, "seats": 18 },
+          { "party": "swe.fp", "share": 0.0461, "seats": 16 }
+        ],
+        "winner": "swe.m",
+        "turnout": 0.842,
+        "note": "M, KD, L and SD won a majority; Kristersson formed an M-KD-L minority coalition backed by SD under the Tidö Agreement.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2022_Swedish_general_election", "title": "Wikipedia: 2022 Swedish general election", "accessed": "2026-10-14" },
+          { "url": "https://en.wikipedia.org/wiki/2026_Swedish_general_election", "title": "Wikipedia: 2026 Swedish general election (background)", "accessed": "2026-10-14" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "riksdag_2026",
+      "date": "2026-09-13",
+      "kind": "legislative",
+      "chamber": "riksdag",
+      "historical": {
+        "candidates": [
+          { "person": "swe.magdalena_andersson", "party": "swe.s", "round": 1 },
+          { "person": "swe.ulf_kristersson", "party": "swe.m", "round": 1 }
+        ],
+        "party_results": [
+          { "party": "swe.s", "share": 0.2802, "seats": 99 },
+          { "party": "swe.m", "share": 0.1985, "seats": 70 },
+          { "party": "swe.sd", "share": 0.1748, "seats": 62 },
+          { "party": "swe.v", "share": 0.084, "seats": 30 },
+          { "party": "swe.c", "share": 0.0703, "seats": 25 },
+          { "party": "swe.kd", "share": 0.0617, "seats": 22 },
+          { "party": "swe.mp", "share": 0.0612, "seats": 22 },
+          { "party": "swe.fp", "share": 0.0534, "seats": 19 }
+        ],
+        "turnout": 0.849,
+        "note": "The four opposition parties (S, V, C, MP) won 176 seats to 173 for the Tidö parties. Kristersson resigned on 17 September 2026 and leads a caretaker government; no new Prime Minister had been elected by the data date, so no winner is recorded. The infobox gives 1,343,438 votes for the Moderates and the results table 1,343,448.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2026_Swedish_general_election", "title": "Wikipedia: 2026 Swedish general election", "accessed": "2026-10-14" },
+          { "url": "https://en.wikipedia.org/wiki/2026_Swedish_government_formation", "title": "Wikipedia: 2026 Swedish government formation", "accessed": "2026-10-14" }
+        ],
+        "confidence": "needs_review",
+        "review_note": "Recent election: results were still described as subject to formal certification by the Election Authority. Re-check final vote counts and the outcome of government formation."
+      }
+    }
+  ],
+  "source": [
+    { "url": "https://en.wikipedia.org/wiki/Elections_in_Sweden", "title": "Wikipedia: Elections in Sweden", "accessed": "2026-10-14" }
+  ],
+  "confidence": "verified"
+}

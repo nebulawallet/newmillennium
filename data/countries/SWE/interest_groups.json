@@ -1,0 +1,15 @@
+{
+  "note": "Influence and approval are gameplay starting values for 1 January 2000 (Social Democratic minority government supported by the Left and Green parties), not measured data. Influence reflects institutional weight: very strong trade unions closely linked to the Social Democrats, organised employers, a free and influential press, and a non-aligned, conscript-based military under civilian control.",
+  "interest_groups": [
+    { "type": "military", "influence": 0.1, "approval": 50 },
+    { "type": "security_services", "influence": 0.08, "approval": 55 },
+    { "type": "business", "influence": 0.45, "approval": 45, "note": "Employers' organisations under a centre-left government." },
+    { "type": "labour_unions", "influence": 0.55, "approval": 62, "note": "LO unions are closely tied to the Social Democrats." },
+    { "type": "religious_establishment", "influence": 0.1, "approval": 50, "note": "The Church of Sweden ceased to be the state church in 2000." },
+    { "type": "rural", "influence": 0.15, "approval": 45 },
+    { "type": "urban_middle_class", "influence": 0.5, "approval": 52 },
+    { "type": "minorities", "influence": 0.08, "approval": 55, "note": "Includes immigrant communities, Sweden Finns and the Sami." },
+    { "type": "youth_students", "influence": 0.18, "approval": 52 },
+    { "type": "media", "influence": 0.4, "approval": 52 }
+  ]
+}

@@ -1,0 +1,201 @@
+{
+  "parties": [
+    {
+      "id": "swe.s",
+      "name": { "en": "Swedish Social Democratic Party", "native": "Sveriges socialdemokratiska arbetareparti" },
+      "abbrev": { "en": "S", "native": "S" },
+      "color": "#E8112D",
+      "sub_ideology": "social_democrat",
+      "founded": "1889-04-23",
+      "status_2000": "active",
+      "leader_history": [
+        { "person": "swe.goran_persson", "from": "1996-03-15", "to": "2007-03-17" },
+        { "person": "swe.mona_sahlin", "from": "2007-03-17", "to": "2011-03-25" },
+        { "person": "swe.hakan_juholt", "from": "2011-03-25", "to": "2012-01-21" },
+        { "person": "swe.stefan_lofven", "from": "2012-01-27", "to": "2021-11-04" },
+        { "person": "swe.magdalena_andersson", "from": "2021-11-04" }
+      ],
+      "popularity_2000": 0.364,
+      "popularity_note": "Vote share, 1998 Riksdag election.",
+      "source": [
+        { "url": "https://www.wikidata.org/wiki/Q105112", "title": "Wikidata: Swedish Social Democratic Party (founding date, chairpersons)", "accessed": "2026-10-14" },
+        { "url": "https://en.wikipedia.org/wiki/Swedish_Social_Democratic_Party", "title": "Wikipedia: Swedish Social Democratic Party (history of leadership changes)", "accessed": "2026-10-14" },
+        { "url": "https://en.wikipedia.org/wiki/1998_Swedish_general_election", "title": "Wikipedia: 1998 Swedish general election", "accessed": "2026-10-14" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "swe.m",
+      "name": { "en": "Moderate Party", "native": "Moderata samlingspartiet" },
+      "abbrev": { "en": "M", "native": "M" },
+      "color": "#52BDEC",
+      "sub_ideology": "liberal_conservative",
+      "founded": "1904-10-17",
+      "status_2000": "active",
+      "leader_history": [
+        { "person": "swe.bo_lundgren", "from": 1999, "to": 2003 },
+        { "person": "swe.fredrik_reinfeldt", "from": 2003, "to": 2015 },
+        { "person": "swe.anna_kinberg_batra", "from": 2015, "to": 2017 },
+        { "person": "swe.ulf_kristersson", "from": 2017 }
+      ],
+      "popularity_2000": 0.229,
+      "popularity_note": "Vote share, 1998 Riksdag election. Carl Bildt led the party at that election and was succeeded by Bo Lundgren in 1999.",
+      "source": [
+        { "url": "https://www.wikidata.org/wiki/Q110843", "title": "Wikidata: Moderate Party (founding date, chairpersons; year precision)", "accessed": "2026-10-14" },
+        { "url": "https://en.wikipedia.org/wiki/1998_Swedish_general_election", "title": "Wikipedia: 1998 Swedish general election", "accessed": "2026-10-14" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "swe.v",
+      "name": { "en": "Left Party", "native": "Vänsterpartiet" },
+      "abbrev": { "en": "V", "native": "V" },
+      "color": "#DA291C",
+      "sub_ideology": "democratic_socialist",
+      "founded": "1917-05-13",
+      "status_2000": "active",
+      "leader_history": [
+        { "person": "swe.gudrun_schyman", "from": "1993-01-07", "to": "2003-01-26" },
+        { "person": "swe.ulla_hoffmann", "from": "2003-01-26", "to": "2004-02-20", "title": "Interim chair" },
+        { "person": "swe.lars_ohly", "from": "2004-02-20", "to": "2012-01-06" },
+        { "person": "swe.jonas_sjostedt", "from": "2012-01-06", "to": "2020-10-31" },
+        { "person": "swe.nooshi_dadgostar", "from": "2020-10-31" }
+      ],
+      "popularity_2000": 0.12,
+      "popularity_note": "Vote share, 1998 Riksdag election. Gave confidence-and-supply support to the Persson government.",
+      "source": [
+        { "url": "https://www.wikidata.org/wiki/Q110837", "title": "Wikidata: Left Party (founding date, chairpersons)", "accessed": "2026-10-14" },
+        { "url": "https://en.wikipedia.org/wiki/Left_Party_(Sweden)", "title": "Wikipedia: Left Party (Sweden) (list of chairs; Hoffmann acting 2003-2004)", "accessed": "2026-10-14" },
+        { "url": "https://en.wikipedia.org/wiki/1998_Swedish_general_election", "title": "Wikipedia: 1998 Swedish general election", "accessed": "2026-10-14" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "swe.kd",
+      "name": { "en": "Christian Democrats", "native": "Kristdemokraterna" },
+      "abbrev": { "en": "KD", "native": "KD" },
+      "color": "#000077",
+      "sub_ideology": "christian_democrat",
+      "founded": "1964-03-20",
+      "status_2000": "active",
+      "leader_history": [
+        { "person": "swe.alf_svensson", "from": 1973, "to": 2004 },
+        { "person": "swe.goran_hagglund", "from": 2004, "to": 2015 },
+        { "person": "swe.ebba_busch", "from": 2015 }
+      ],
+      "popularity_2000": 0.117,
+      "popularity_note": "Vote share, 1998 Riksdag election.",
+      "international": "Centrist Democrat International; International Democracy Union; European People's Party",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/Christian_Democrats_(Sweden)", "title": "Wikipedia: Christian Democrats (Sweden) (infobox, list of party leaders)", "accessed": "2026-10-14" },
+        { "url": "https://www.wikidata.org/wiki/Q213654", "title": "Wikidata: Kristdemokraterna (chairpersons from 2015)", "accessed": "2026-10-14" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "swe.c",
+      "name": { "en": "Centre Party", "native": "Centerpartiet" },
+      "abbrev": { "en": "C", "native": "C" },
+      "color": "#009933",
+      "sub_ideology": "agrarian",
+      "founded": "1913-03-02",
+      "status_2000": "active",
+      "leader_history": [
+        { "person": "swe.lennart_daleus", "from": 1998, "to": 2001 },
+        { "person": "swe.maud_olofsson", "from": 2001, "to": "2011-09-23" },
+        { "person": "swe.annie_loof", "from": "2011-09-23", "to": "2023-02-02" },
+        { "person": "swe.muharrem_demirok", "from": "2023-02-02", "to": "2025-05-03" },
+        { "person": "swe.anna_karin_hatt", "from": "2025-05-03", "to": "2025-11-13" },
+        { "person": "swe.elisabeth_thand_ringqvist", "from": "2025-11-13" }
+      ],
+      "popularity_2000": 0.051,
+      "popularity_note": "Vote share, 1998 Riksdag election.",
+      "international": "Liberal International; ALDE Party",
+      "note": "Wikipedia lists its ideology as liberalism and Nordic agrarianism. Mapped to agrarian for the 2000 start; the party has since presented itself primarily as liberal.",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/Centre_Party_(Sweden)", "title": "Wikipedia: Centre Party (Sweden) (infobox, list of leaders)", "accessed": "2026-10-14" },
+        { "url": "https://www.wikidata.org/wiki/Q110832", "title": "Wikidata: Centre Party (founding date, chairpersons from 2011)", "accessed": "2026-10-14" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "swe.fp",
+      "name": { "en": "Liberals (Liberal People's Party until 2015)", "native": "Liberalerna (Folkpartiet liberalerna)" },
+      "abbrev": { "en": "L", "native": "L" },
+      "color": "#006AB3",
+      "sub_ideology": "social_liberal",
+      "founded": "1934-08-05",
+      "status_2000": "active",
+      "leader_history": [
+        { "person": "swe.lars_leijonborg", "from": "1997-03-15", "to": "2007-09-07" },
+        { "person": "swe.jan_bjorklund", "from": "2007-09-07", "to": "2019-06-28" },
+        { "person": "swe.nyamko_sabuni", "from": "2019-06-28", "to": "2022-04-08" },
+        { "person": "swe.johan_pehrson", "from": "2022-04-08", "to": "2025-06-24" },
+        { "person": "swe.simona_mohamsson", "from": "2025-06-24" }
+      ],
+      "popularity_2000": 0.047,
+      "popularity_note": "Vote share, 1998 Riksdag election (as Folkpartiet liberalerna, abbreviated FP).",
+      "note": "Contested elections as the Liberal People's Party (FP) until 2014 and as the Liberals (L) from 2018.",
+      "source": [
+        { "url": "https://www.wikidata.org/wiki/Q110857", "title": "Wikidata: Liberalerna (founding date, chairpersons)", "accessed": "2026-10-14" },
+        { "url": "https://en.wikipedia.org/wiki/2014_Swedish_general_election", "title": "Wikipedia: 2014 Swedish general election", "accessed": "2026-10-14" },
+        { "url": "https://en.wikipedia.org/wiki/2018_Swedish_general_election", "title": "Wikipedia: 2018 Swedish general election", "accessed": "2026-10-14" }
+      ],
+      "confidence": "needs_review",
+      "review_note": "Confirm the exact date of the rename from Folkpartiet liberalerna to Liberalerna (2015); the research sources only show the change of name between the 2014 and 2018 elections."
+    },
+    {
+      "id": "swe.mp",
+      "name": { "en": "Green Party", "native": "Miljöpartiet de gröna" },
+      "abbrev": { "en": "MP", "native": "MP" },
+      "color": "#83CF39",
+      "sub_ideology": "green",
+      "founded": "1981-09-20",
+      "status_2000": "active",
+      "leader_history": [
+        { "person": "swe.birger_schlaug", "from": 1992, "to": 2000, "title": "Spokesperson" },
+        { "person": "swe.lotta_hedstrom", "from": 1999, "to": 2002, "title": "Spokesperson" },
+        { "person": "swe.matz_hammarstrom", "from": 2000, "to": 2002, "title": "Spokesperson" },
+        { "person": "swe.maria_wetterstrand", "from": "2002-05-12", "to": "2011-05-21", "title": "Spokesperson" },
+        { "person": "swe.peter_eriksson", "from": "2002-05-12", "to": "2011-05-21", "title": "Spokesperson" },
+        { "person": "swe.asa_romson", "from": "2011-05-21", "to": "2016-05-13", "title": "Spokesperson" },
+        { "person": "swe.gustav_fridolin", "from": "2011-05-21", "to": "2019-05-04", "title": "Spokesperson" },
+        { "person": "swe.isabella_lovin", "from": "2016-05-13", "to": "2021-01-31", "title": "Spokesperson" },
+        { "person": "swe.per_bolund", "from": "2019-05-04", "to": "2023-11-18", "title": "Spokesperson" },
+        { "person": "swe.marta_stenevi", "from": "2021-01-31", "to": "2024-02-09", "title": "Spokesperson" },
+        { "person": "swe.daniel_hellden", "from": "2023-11-18", "title": "Spokesperson" },
+        { "person": "swe.amanda_lind", "from": "2024-04-28", "title": "Spokesperson" }
+      ],
+      "popularity_2000": 0.045,
+      "popularity_note": "Vote share, 1998 Riksdag election. Gave confidence-and-supply support to the Persson government.",
+      "international": "Global Greens; European Green Party",
+      "note": "Led by two spokespersons instead of a single leader.",
+      "source": [
+        { "url": "https://www.wikidata.org/wiki/Q213451", "title": "Wikidata: Green Party (Sweden) (spokespersons)", "accessed": "2026-10-14" },
+        { "url": "https://en.wikipedia.org/wiki/Green_Party_(Sweden)", "title": "Wikipedia: Green Party (Sweden) (infobox, list of spokespersons)", "accessed": "2026-10-14" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "swe.sd",
+      "name": { "en": "Sweden Democrats", "native": "Sverigedemokraterna" },
+      "abbrev": { "en": "SD", "native": "SD" },
+      "color": "#DDDD00",
+      "sub_ideology": "right_populist",
+      "founded": "1988-02-06",
+      "status_2000": "extra_parliamentary",
+      "leader_history": [
+        { "person": "swe.mikael_jansson", "from": "1995-03-05", "to": "2005-05-07" },
+        { "person": "swe.jimmie_akesson", "from": "2005-05-07" }
+      ],
+      "popularity_2000": 0.004,
+      "popularity_note": "Vote share, 1998 Riksdag election (19,624 votes, 0.37%). First won Riksdag seats in 2010.",
+      "source": [
+        { "url": "https://www.wikidata.org/wiki/Q504069", "title": "Wikidata: Sweden Democrats (founding date, chairpersons)", "accessed": "2026-10-14" },
+        { "url": "https://en.wikipedia.org/wiki/1998_Swedish_general_election", "title": "Wikipedia: 1998 Swedish general election", "accessed": "2026-10-14" },
+        { "url": "https://en.wikipedia.org/wiki/2010_Swedish_general_election", "title": "Wikipedia: 2010 Swedish general election", "accessed": "2026-10-14" }
+      ],
+      "confidence": "verified"
+    }
+  ]
+}
