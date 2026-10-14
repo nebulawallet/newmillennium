@@ -1,0 +1,15 @@
+{
+  "note": "Influence and approval are gameplay starting values for 1 January 2000, not measured data. With no central government, power lay with clan-based armed factions and militias (modelled as 'military'), clan elders and pastoralist communities ('rural'), Mogadishu merchants and the remittance and telecom businesses ('business'), and clerics and local Islamic courts ('religious_establishment'). Approval is of the national political order, which was absent, so it is low across the board.",
+  "interest_groups": [
+    { "type": "military", "influence": 0.55, "approval": 35, "note": "No national army existed; this group stands for clan militias and faction forces." },
+    { "type": "security_services", "influence": 0.03, "approval": 30, "note": "No national police or intelligence service was functioning." },
+    { "type": "business", "influence": 0.35, "approval": 30, "note": "Mogadishu traders, remittance (hawala) companies and private telecoms." },
+    { "type": "labour_unions", "influence": 0.02, "approval": 30 },
+    { "type": "religious_establishment", "influence": 0.35, "approval": 35, "note": "Clerics and the local Islamic courts that provided justice in parts of Mogadishu." },
+    { "type": "rural", "influence": 0.45, "approval": 30, "note": "Clan elders and pastoralist and farming communities." },
+    { "type": "urban_middle_class", "influence": 0.08, "approval": 25 },
+    { "type": "minorities", "influence": 0.04, "approval": 20, "note": "Bantu (Jareer), Benadiri and other minority groups outside the main clan families." },
+    { "type": "youth_students", "influence": 0.05, "approval": 25 },
+    { "type": "media", "influence": 0.06, "approval": 30, "note": "Private newspapers and radio stations, mainly in Mogadishu." }
+  ]
+}

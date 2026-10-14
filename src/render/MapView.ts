@@ -24,16 +24,35 @@ export class MapView {
   private center = new THREE.Vector2(10, millerY(25));
   private readonly minViewHeight = 2;
   private readonly maxViewHeight = millerY(LAT_MAX) - millerY(LAT_MIN);
-  /** The world is drawn three times (x - W, x, x + W) for seamless wrap-around. */
+  /** The world is drawn three times (x - W, x, x + W) for seamless wrap-around; copies off screen are hidden. */
   private readonly worldCopies = new THREE.Group();
+  private readonly copyGroups = [-1, 0, 1].map((i) => {
+    const g = new THREE.Group();
+    g.position.x = i * WORLD_W;
+    g.userData.offset = i * WORLD_W;
+    return g;
+  });
   private disposed = false;
+  /** Called every frame before rendering. */
+  readonly onFrame: ((v: { worldPerPx: number; zoom: number; centerX: number }) => void)[] = [];
+  /** Pointer hover over the map (world coordinates, x wrapped to [-180,180)). */
+  readonly onHover: ((x: number, y: number, e: PointerEvent) => void)[] = [];
+  /** Click (pointer released without dragging). */
+  readonly onClick: ((x: number, y: number, e: PointerEvent) => void)[] = [];
+  /** Frame-time samples for the benchmark (ms). */
+  readonly frameTimes: number[] = [];
+  private lastFrame = 0;
 
-  constructor(private canvas: HTMLCanvasElement) {
+  constructor(
+    private canvas: HTMLCanvasElement,
+    private showGraticule = false,
+  ) {
     this.renderer = new THREE.WebGLRenderer({ canvas, antialias: true, powerPreference: "high-performance" });
     this.renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
     this.renderer.setClearColor(new THREE.Color("#0b0e13"));
     this.camera = new THREE.OrthographicCamera(-1, 1, 1, -1, -10, 10);
     this.scene.add(this.worldCopies);
+    for (const g of this.copyGroups) this.worldCopies.add(g);
     this.buildBaseLayer();
     this.bindInput();
     this.resize();
@@ -43,11 +62,7 @@ export class MapView {
 
   /** Add an object to every world copy (it is cloned for the wrapped copies). */
   addToWorld(obj: THREE.Object3D): void {
-    for (let i = -1; i <= 1; i++) {
-      const o = i === 0 ? obj : obj.clone();
-      o.position.x += i * WORLD_W;
-      this.worldCopies.add(o);
-    }
+    this.copyGroups.forEach((g, i) => g.add(i === 1 ? obj : obj.clone()));
   }
 
   private buildBaseLayer(): void {
@@ -59,6 +74,7 @@ export class MapView {
     );
     ocean.position.set(0, (yMin + yMax) / 2, -1);
     this.addToWorld(ocean);
+    if (!this.showGraticule) return;
 
     const pts: number[] = [];
     for (let lon = -180; lon <= 180; lon += 15) pts.push(lon, yMin, 0, lon, yMax, 0);
@@ -94,14 +110,23 @@ export class MapView {
   private bindInput(): void {
     let dragging = false;
     let last = { x: 0, y: 0 };
+    let downAt = { x: 0, y: 0 };
+    let moved = 0;
     this.canvas.addEventListener("pointerdown", (e) => {
       if (e.button !== 0 && e.button !== 1 && e.button !== 2) return;
       dragging = true;
+      moved = 0;
       last = { x: e.clientX, y: e.clientY };
+      downAt = { ...last };
       this.canvas.setPointerCapture(e.pointerId);
     });
     this.canvas.addEventListener("pointermove", (e) => {
-      if (!dragging) return;
+      if (!dragging) {
+        const w = this.screenToWorld(e.clientX, e.clientY);
+        for (const f of this.onHover) f(MapView.wrapX(w.x), w.y, e);
+        return;
+      }
+      moved = Math.max(moved, Math.hypot(e.clientX - downAt.x, e.clientY - downAt.y));
       const r = this.canvas.getBoundingClientRect();
       const perPx = this.viewHeight / r.height;
       this.center.x -= (e.clientX - last.x) * perPx;
@@ -110,6 +135,10 @@ export class MapView {
       this.clampCenter();
     });
     const stop = (e: PointerEvent) => {
+      if (dragging && moved < 4 && e.type === "pointerup" && e.button === 0) {
+        const w = this.screenToWorld(e.clientX, e.clientY);
+        for (const f of this.onClick) f(MapView.wrapX(w.x), w.y, e);
+      }
       dragging = false;
       if (this.canvas.hasPointerCapture(e.pointerId)) this.canvas.releasePointerCapture(e.pointerId);
     };
@@ -157,11 +186,47 @@ export class MapView {
     this.camera.top = this.center.y + halfH;
     this.camera.bottom = this.center.y - halfH;
     this.camera.updateProjectionMatrix();
+    for (const g of this.copyGroups) {
+      const off = g.userData.offset as number;
+      g.visible = this.camera.right > off - 180 && this.camera.left < off + 180;
+    }
+  }
+
+  /** World units per CSS pixel at the current zoom. */
+  get worldPerPx(): number {
+    return this.viewHeight / Math.max(1, this.canvas.getBoundingClientRect().height);
+  }
+
+  get centerX(): number {
+    return this.center.x;
+  }
+
+  /** Move the camera (used by the benchmark and by "go to" actions). */
+  lookAt(x: number, y: number, viewHeight?: number): void {
+    this.center.set(x, y);
+    if (viewHeight !== undefined) this.viewHeight = THREE.MathUtils.clamp(viewHeight, this.minViewHeight, this.maxViewHeight);
+    this.clampCenter();
+  }
+
+  /** Render one frame immediately (frame hooks included), e.g. when the page is in the background. */
+  renderOnce(): void {
+    this.updateCamera();
+    const info = { worldPerPx: this.worldPerPx, zoom: this.zoom, centerX: this.center.x };
+    for (const f of this.onFrame) f(info);
+    this.renderer.render(this.scene, this.camera);
   }
 
   private loop = (): void => {
     if (this.disposed) return;
+    const now = performance.now();
+    if (this.lastFrame) {
+      this.frameTimes.push(now - this.lastFrame);
+      if (this.frameTimes.length > 600) this.frameTimes.shift();
+    }
+    this.lastFrame = now;
     this.updateCamera();
+    const info = { worldPerPx: this.worldPerPx, zoom: this.zoom, centerX: this.center.x };
+    for (const f of this.onFrame) f(info);
     this.renderer.render(this.scene, this.camera);
     requestAnimationFrame(this.loop);
   };

@@ -1,0 +1,403 @@
+{
+  "rules": [
+    {
+      "kind": "presidential",
+      "office": "irn.president",
+      "every_years": 4,
+      "anchor": "2024-06-28",
+      "snap_possible": true,
+      "note": "Direct election, two rounds if no candidate wins an absolute majority. Candidates must be approved by the Guardian Council. A vacancy is filled by the First Vice President (with the Leader's approval) and a new election within 50 days (Article 131), as in 2024."
+    },
+    {
+      "kind": "legislative",
+      "chamber": "majlis",
+      "every_years": 4,
+      "anchor": "2024-03-01",
+      "snap_possible": false,
+      "note": "Four-year term, two rounds. Candidates are vetted by the Guardian Council. Assembly of Experts elections (88 seats; 2006, 2016, 2024) are listed below as kind 'legislative' without a chamber, because the schema has no kind for them; they have no recurrence rule here."
+    }
+  ],
+  "elections": [
+    {
+      "id": "majlis_2000",
+      "date": "2000-02-18",
+      "kind": "legislative",
+      "chamber": "majlis",
+      "rounds": 2,
+      "historical": {
+        "party_results": [
+          { "party": "irn.reformists", "seats": 222 },
+          { "party": "irn.principlists", "seats": 54 },
+          { "party": "independents", "seats": 14 }
+        ],
+        "winner": "irn.reformists",
+        "turnout": 0.6927,
+        "note": "Second round 5 May 2000. First election to the enlarged 290-seat Majlis. Bloc totals from the Inter-Parliamentary Union: 2nd of Khordad Front 222, Front of Followers of the Line of the Imam and the Leader 54, independents 14. Nohlen et al. give IIPF and allies 216, CCA and allies 74. Mehdi Karroubi (ACC) became Speaker.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2000_Iranian_legislative_election", "title": "Wikipedia: 2000 Iranian legislative election (IPU, Samii, Bakhash and Nohlen tables)", "accessed": "2026-10-14" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "presidential_2001",
+      "date": "2001-06-08",
+      "kind": "presidential",
+      "office": "irn.president",
+      "historical": {
+        "candidates": [
+          { "person": "irn.mohammad_khatami", "party": "irn.acc", "votes": 21656476, "share": 0.7828, "round": 1 },
+          { "person": "irn.ahmad_tavakkoli", "votes": 4387112, "share": 0.1586, "round": 1 }
+        ],
+        "winner": "irn.mohammad_khatami",
+        "turnout": 0.6678,
+        "note": "Eight further candidates each won under 3% (Ali Shamkhani 2.66% the largest). Tavakkoli ran for the principlist Coordination Council of Islamic Revolution Forces. Shares are of valid votes.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2001_Iranian_presidential_election", "title": "Wikipedia: 2001 Iranian presidential election (infobox and results template)", "accessed": "2026-10-14" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "majlis_2004",
+      "date": "2004-02-20",
+      "kind": "legislative",
+      "chamber": "majlis",
+      "rounds": 2,
+      "historical": {
+        "party_results": [
+          { "party": "irn.principlists", "seats": 196 },
+          { "party": "irn.reformists", "seats": 47 },
+          { "party": "independents", "seats": 40 },
+          { "party": "others", "seats": 5 },
+          { "party": "vacant", "seats": 2 }
+        ],
+        "winner": "irn.principlists",
+        "turnout": 0.5121,
+        "note": "Second round 7 May 2004. IPU/Rulers figures; 'others' are the five reserved religious-minority seats and 'vacant' the two seats still undecided. The CIA gives conservatives 190, reformists 50, independents 43; Kazemzadeh gives hardliners 200, reformists 40, independents 40, vacant 10. Abadgaran (Alliance of Builders of Islamic Iran) was among the winning principlist lists; Gholam-Ali Haddad-Adel became Speaker.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2004_Iranian_legislative_election", "title": "Wikipedia: 2004 Iranian legislative election (IPU, CIA, Kazemzadeh tables)", "accessed": "2026-10-14" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "presidential_2005",
+      "date": "2005-06-17",
+      "kind": "presidential",
+      "office": "irn.president",
+      "rounds": 2,
+      "historical": {
+        "candidates": [
+          { "person": "irn.akbar_hashemi_rafsanjani", "party": "irn.cca", "votes": 6179653, "share": 0.2200, "round": 1 },
+          { "person": "irn.mahmoud_ahmadinejad", "party": "irn.abadgaran", "votes": 5710354, "share": 0.2033, "round": 1 },
+          { "person": "irn.mehdi_karroubi", "votes": 5056686, "share": 0.1800, "round": 1 },
+          { "person": "irn.mohammad_bagher_ghalibaf", "votes": 4075189, "share": 0.1450, "round": 1 },
+          { "person": "irn.mostafa_moeen", "party": "irn.iipf", "votes": 4069699, "share": 0.1449, "round": 1 },
+          { "person": "irn.ali_larijani", "votes": 1716081, "share": 0.0611, "round": 1 },
+          { "person": "irn.mahmoud_ahmadinejad", "party": "irn.abadgaran", "votes": 17284782, "share": 0.6324, "round": 2 },
+          { "person": "irn.akbar_hashemi_rafsanjani", "party": "irn.cca", "votes": 10046701, "share": 0.3676, "round": 2 }
+        ],
+        "winner": "irn.mahmoud_ahmadinejad",
+        "turnout": 0.6266,
+        "note": "Second round 24 June 2005 (turnout 59.84%). Mohsen Mehralizadeh (4.58%) is omitted. Rafsanjani's party is as given in the election infobox (CCA). Round-1 shares are computed from the results template's valid votes.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2005_Iranian_presidential_election", "title": "Wikipedia: 2005 Iranian presidential election (infobox and results template)", "accessed": "2026-10-14" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "assembly_of_experts_2006",
+      "date": "2006-12-15",
+      "kind": "legislative",
+      "historical": {
+        "party_results": [
+          { "party": "irn.principlists", "seats": 59 },
+          { "party": "irn.reformists", "seats": 29 }
+        ],
+        "winner": "irn.principlists",
+        "note": "Election to the 88-seat Assembly of Experts, which chooses and supervises the Supreme Leader. It is not a legislature; there is no chamber in country.json for it.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2006_Iranian_Assembly_of_Experts_election", "title": "Wikipedia: 2006 Iranian Assembly of Experts election (infobox)", "accessed": "2026-10-14" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "majlis_2008",
+      "date": "2008-03-14",
+      "kind": "legislative",
+      "chamber": "majlis",
+      "rounds": 2,
+      "historical": {
+        "party_results": [
+          { "party": "irn.principlists", "seats": 195 },
+          { "party": "irn.reformists", "seats": 51 },
+          { "party": "independents", "seats": 39 },
+          { "party": "others", "seats": 5 }
+        ],
+        "winner": "irn.principlists",
+        "note": "Second round 25 April 2008. IPU figures; 'others' are the five reserved religious-minority seats. Cainer gives conservatives 198, reformists 47, independents 40. Turnout is omitted because sources disagree (51% in the infobox, citing Ehteshami; 60% in the IPU table). Ali Larijani became Speaker.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2008_Iranian_legislative_election", "title": "Wikipedia: 2008 Iranian legislative election (IPU and Cainer tables)", "accessed": "2026-10-14" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "presidential_2009",
+      "date": "2009-06-12",
+      "kind": "presidential",
+      "office": "irn.president",
+      "historical": {
+        "candidates": [
+          { "person": "irn.mahmoud_ahmadinejad", "party": "irn.abadgaran", "votes": 24592793, "share": 0.6314, "round": 1 },
+          { "person": "irn.mir_hossein_mousavi", "party": "irn.reformists", "votes": 13338121, "share": 0.3424, "round": 1 }
+        ],
+        "winner": "irn.mahmoud_ahmadinejad",
+        "turnout": 0.8522,
+        "note": "Official results. Mohsen Rezaee and Mehdi Karroubi each won under 5% and are omitted. The infobox lists Mousavi under the Council for Coordinating the Reforms Front (reformists).",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2009_Iranian_presidential_election", "title": "Wikipedia: 2009 Iranian presidential election (infobox)", "accessed": "2026-10-14" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "majlis_2012",
+      "date": "2012-03-02",
+      "kind": "legislative",
+      "chamber": "majlis",
+      "rounds": 2,
+      "historical": {
+        "party_results": [
+          { "party": "irn.principlists", "seats": 182 },
+          { "party": "irn.reformists", "seats": 13 },
+          { "party": "independents", "seats": 88 },
+          { "party": "others", "seats": 5 },
+          { "party": "vacant", "seats": 2 }
+        ],
+        "winner": "irn.principlists",
+        "turnout": 0.662,
+        "note": "Second round 4 May 2012. Orientation of elected members per Mizan Online; 'others' are the five reserved religious-minority seats. Principlist lists overlapped heavily (United Front of Principlists 133, Stability Front 83, Resistance Front 70, counting shared seats), and the Council for Coordinating the Reforms Front did not contest; the infobox credits the smaller Reformists Front list (Mostafa Kavakebian) with 13 seats.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2012_Iranian_legislative_election", "title": "Wikipedia: 2012 Iranian legislative election (Mizan Online, IranPolitik, Stratfor figures)", "accessed": "2026-10-14" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "presidential_2013",
+      "date": "2013-06-14",
+      "kind": "presidential",
+      "office": "irn.president",
+      "historical": {
+        "candidates": [
+          { "person": "irn.hassan_rouhani", "party": "irn.mdp", "votes": 18613329, "share": 0.5249, "round": 1 },
+          { "person": "irn.mohammad_bagher_ghalibaf", "party": "irn.pjp", "votes": 6077292, "share": 0.1714, "round": 1 },
+          { "person": "irn.saeed_jalili", "party": "irn.firs", "votes": 4168946, "share": 0.1176, "round": 1 },
+          { "person": "irn.mohsen_rezaee", "party": "irn.rfi", "votes": 3884412, "share": 0.1095, "round": 1 },
+          { "person": "irn.ali_akbar_velayati", "votes": 2268753, "share": 0.0640, "round": 1 }
+        ],
+        "winner": "irn.hassan_rouhani",
+        "turnout": 0.7271,
+        "note": "Mohammad Gharazi (1.26%) is omitted. Velayati ran for the Front of Followers of the Line of the Imam and the Leader, which is not modelled. Shares are computed from the results template's valid votes.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2013_Iranian_presidential_election", "title": "Wikipedia: 2013 Iranian presidential election (results template)", "accessed": "2026-10-14" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "majlis_2016",
+      "date": "2016-02-26",
+      "kind": "legislative",
+      "chamber": "majlis",
+      "rounds": 2,
+      "historical": {
+        "party_results": [
+          { "party": "irn.reformists", "seats": 119 },
+          { "party": "irn.principlists", "seats": 84 },
+          { "party": "independents", "seats": 65 },
+          { "party": "others", "seats": 18 },
+          { "party": "vacant", "seats": 4 }
+        ],
+        "winner": "irn.reformists",
+        "turnout": 0.6164,
+        "note": "Second round 29 April 2016. Reformists = List of Hope; principlists = Principlists Grand Coalition. 'others' = People's Voice Coalition 10, candidates endorsed by both main lists 3, reserved religious-minority seats 5. Turnout is for the first round. No bloc had a majority.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2016_Iranian_legislative_election", "title": "Wikipedia: 2016 Iranian legislative election (final results table)", "accessed": "2026-10-14" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "assembly_of_experts_2016",
+      "date": "2016-02-26",
+      "kind": "legislative",
+      "historical": {
+        "turnout": 0.6097,
+        "note": "Election to the 88-seat Assembly of Experts, held with the Majlis election. Endorsement lists overlapped (Combatant Clergy Association 66, Society of Seminary Teachers of Qom 64, 'People's Experts' list associated with Rafsanjani 55, counting shared candidates), so no camp seat split is given.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2016_Iranian_Assembly_of_Experts_election", "title": "Wikipedia: 2016 Iranian Assembly of Experts election (infobox)", "accessed": "2026-10-14" }
+        ],
+        "confidence": "needs_review",
+        "review_note": "List endorsements overlap, so seat totals by camp could not be derived and the winner is omitted. Find a source giving a reformist/principlist/independent split of the 88 members."
+      }
+    },
+    {
+      "id": "presidential_2017",
+      "date": "2017-05-19",
+      "kind": "presidential",
+      "office": "irn.president",
+      "historical": {
+        "candidates": [
+          { "person": "irn.hassan_rouhani", "party": "irn.mdp", "votes": 23636652, "share": 0.5885, "round": 1 },
+          { "person": "irn.ebrahim_raisi", "party": "irn.cca", "votes": 15835794, "share": 0.3943, "round": 1 }
+        ],
+        "winner": "irn.hassan_rouhani",
+        "turnout": 0.7333,
+        "note": "Mostafa Mir-Salim (ICP, 1.19%) and Mostafa Hashemitaba (ECP, 0.53%) are omitted. Shares are computed from the results template's valid votes.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2017_Iranian_presidential_election", "title": "Wikipedia: 2017 Iranian presidential election (results template)", "accessed": "2026-10-14" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "majlis_2020",
+      "date": "2020-02-21",
+      "kind": "legislative",
+      "chamber": "majlis",
+      "rounds": 2,
+      "historical": {
+        "party_results": [
+          { "party": "irn.principlists", "seats": 221 },
+          { "party": "irn.reformists", "seats": 20 },
+          { "party": "independents", "seats": 38 },
+          { "party": "others", "seats": 11 }
+        ],
+        "winner": "irn.principlists",
+        "turnout": 0.4257,
+        "note": "Second round 11 September 2020. ICANA figures (quoted by the WSJ) after the first round; 'others' are the 11 seats then undecided. Mohammad Bagher Ghalibaf became Speaker.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2020_Iranian_legislative_election", "title": "Wikipedia: 2020 Iranian legislative election (ICANA table)", "accessed": "2026-10-14" }
+        ],
+        "confidence": "needs_review",
+        "review_note": "The source counts only seats decided after the first round (279 of 290); the 11 runoff seats of 11 September 2020 are not allocated to camps. It is also unclear whether the five minority seats are inside the 'independents' figure."
+      }
+    },
+    {
+      "id": "presidential_2021",
+      "date": "2021-06-18",
+      "kind": "presidential",
+      "office": "irn.president",
+      "historical": {
+        "candidates": [
+          { "person": "irn.ebrahim_raisi", "party": "irn.cca", "votes": 18021945, "share": 0.7235, "round": 1 },
+          { "person": "irn.mohsen_rezaee", "party": "irn.rfi", "votes": 3440835, "share": 0.1381, "round": 1 },
+          { "person": "irn.abdolnaser_hemmati", "party": "irn.ecp", "votes": 2443387, "share": 0.0981, "round": 1 }
+        ],
+        "winner": "irn.ebrahim_raisi",
+        "turnout": 0.4848,
+        "note": "Amir-Hossein Ghazizadeh Hashemi (4.03%) is omitted. Shares are of valid votes; invalid ballots numbered 3,840,919.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2021_Iranian_presidential_election", "title": "Wikipedia: 2021 Iranian presidential election (infobox and results template)", "accessed": "2026-10-14" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "majlis_2024",
+      "date": "2024-03-01",
+      "kind": "legislative",
+      "chamber": "majlis",
+      "rounds": 2,
+      "historical": {
+        "party_results": [
+          { "party": "irn.ccirf", "seats": 107 },
+          { "party": "irn.principlists", "seats": 92 },
+          { "party": "irn.reformists", "seats": 47 },
+          { "party": "independents", "seats": 39 },
+          { "party": "others", "seats": 5 }
+        ],
+        "winner": "irn.ccirf",
+        "turnout": 0.4064,
+        "note": "Second round 10 May 2024 (turnout about 8%). Lists: Coalition Council of Islamic Revolution Forces 107; People's Alliance of Islamic Revolution 79 and Unity Council 13 (both principlist, combined here as irn.principlists); Voice of the Nation 47 (Ali Motahari's list, grouped with the reformists in the infobox); independents 39; reserved religious-minority seats 5. Turnout is for the first round.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2024_Iranian_legislative_election", "title": "Wikipedia: 2024 Iranian legislative election (infobox and results template)", "accessed": "2026-10-14" }
+        ],
+        "confidence": "needs_review",
+        "review_note": "Check the camp assignment of the Voice of the Nation list (47 seats), which the infobox places under the reformists although its leader is usually described as an independent conservative, and whether the People's Alliance of Islamic Revolution should map to the Stability Front."
+      }
+    },
+    {
+      "id": "assembly_of_experts_2024",
+      "date": "2024-03-01",
+      "kind": "legislative",
+      "historical": {
+        "party_results": [
+          { "party": "irn.principlists", "seats": 58 },
+          { "party": "irn.reformists", "seats": 2 },
+          { "party": "independents", "seats": 28 }
+        ],
+        "winner": "irn.principlists",
+        "note": "Election to the 88-seat Assembly of Experts, held with the Majlis election. Turnout is given only as a range (40-41%) and is omitted.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2024_Iranian_Assembly_of_Experts_election", "title": "Wikipedia: 2024 Iranian Assembly of Experts election (infobox)", "accessed": "2026-10-14" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "presidential_2024",
+      "date": "2024-06-28",
+      "kind": "presidential",
+      "office": "irn.president",
+      "rounds": 2,
+      "snap": true,
+      "historical": {
+        "candidates": [
+          { "person": "irn.masoud_pezeshkian", "party": "irn.reformists", "votes": 10415991, "share": 0.4436, "round": 1 },
+          { "person": "irn.saeed_jalili", "party": "irn.principlists", "votes": 9473298, "share": 0.4035, "round": 1 },
+          { "person": "irn.mohammad_bagher_ghalibaf", "party": "irn.pjp", "votes": 3383340, "share": 0.1441, "round": 1 },
+          { "person": "irn.masoud_pezeshkian", "party": "irn.reformists", "votes": 16384403, "share": 0.5476, "round": 2 },
+          { "person": "irn.saeed_jalili", "party": "irn.principlists", "votes": 13538179, "share": 0.4524, "round": 2 }
+        ],
+        "winner": "irn.masoud_pezeshkian",
+        "turnout": 0.3993,
+        "note": "Early election after President Raisi's death on 2024-05-19. Second round 5 July 2024 (turnout 49.68%). Pezeshkian and Jalili stood as independents backed by the reformist and principlist camps respectively. Mostafa Pourmohammadi (0.88%) is omitted.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2024_Iranian_presidential_election", "title": "Wikipedia: 2024 Iranian presidential election (infobox and results template)", "accessed": "2026-10-14" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "supreme_leader_2026",
+      "date": "2026-03-08",
+      "kind": "indirect_presidential",
+      "office": "irn.supreme_leader",
+      "snap": true,
+      "historical": {
+        "candidates": [
+          { "person": "irn.mojtaba_khamenei", "round": 1 }
+        ],
+        "winner": "irn.mojtaba_khamenei",
+        "note": "Choice of a new Supreme Leader by the Assembly of Experts (88 statutory members; 59 votes needed) on 3-8 March 2026, after the death of Ali Khamenei on 2026-02-28. The result was announced on 8 March 2026.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2026_Iranian_supreme_leader_election", "title": "Wikipedia: 2026 Iranian supreme leader election (infobox)", "accessed": "2026-10-14" },
+          { "url": "https://en.wikipedia.org/wiki/Interim_Leadership_Council", "title": "Wikipedia: Interim Leadership Council", "accessed": "2026-10-14" }
+        ],
+        "confidence": "needs_review",
+        "review_note": "Vote totals were not published: the infobox gives the winner's tally only as at least 59, and lists Hassan Rouhani and Hassan Khomeini as other names considered, with unknown votes. Confirm the date and any published count."
+      }
+    }
+  ],
+  "source": [
+    { "url": "https://en.wikipedia.org/wiki/President_of_Iran", "title": "Wikipedia: President of Iran (term)", "accessed": "2026-10-14" },
+    { "url": "https://en.wikipedia.org/wiki/Islamic_Consultative_Assembly", "title": "Wikipedia: Islamic Consultative Assembly (term, voting system)", "accessed": "2026-10-14" }
+  ],
+  "confidence": "verified"
+}

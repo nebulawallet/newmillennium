@@ -1,0 +1,382 @@
+{
+  "tag": "RUS",
+  "name": {
+    "en": "Russia",
+    "native": "Россия",
+    "native_latin": "Rossiya",
+    "official": {
+      "en": "Russian Federation",
+      "native": "Российская Федерация"
+    }
+  },
+  "adjective": "Russian",
+  "culture_primary": "russian",
+  "government": {
+    "type": "semi_presidential",
+    "effective_executive": "rus.president",
+    "head_of_state_office": "rus.president",
+    "head_of_government_office": "rus.prime_minister",
+    "constitution": {
+      "term_limit_amendable": true,
+      "emergency_powers": true,
+      "referendum_required_for": [
+        "adoption of a new constitution (by a Constitutional Assembly or by nationwide vote)"
+      ]
+    },
+    "note": "Semi-presidential federal republic under the 1993 Constitution. The directly elected President appoints the Chairman of the Government (Prime Minister) with the consent of the State Duma and can dismiss the government. On 1 January 2000 Vladimir Putin was both acting President (from Yeltsin's resignation on 31 December 1999) and Prime Minister. Presidential terms were four years until a 2008 amendment extended them to six years from the 2012 election; the 2020 amendments replaced the 'two consecutive terms' limit with a two-term limit that did not count terms served before 2020. The cabinet in 2000 was largely non-partisan; Unity was the main pro-government party in the Duma."
+  },
+  "offices": [
+    {
+      "id": "rus.president",
+      "title": {
+        "en": "President of the Russian Federation",
+        "native": "Президент Российской Федерации",
+        "native_latin": "Prezident Rossiyskoy Federatsii"
+      },
+      "role": "head_of_state",
+      "power_weight": 0.75,
+      "selection": "direct_election",
+      "term_years": 4,
+      "term_limit": {
+        "max_terms": 2,
+        "consecutive_only": true
+      },
+      "succession": {
+        "type": "acting_then_election",
+        "acting_office": "rus.prime_minister"
+      },
+      "holders": [
+        {
+          "person": "rus.vladimir_putin",
+          "from": "1999-12-31",
+          "to": "2000-05-07",
+          "acting": true,
+          "note": "Acting President as Prime Minister after Boris Yeltsin resigned on 31 December 1999; elected on 26 March 2000. Wikidata's President of Russia list omits this acting period (it is recorded separately under 'Acting President of Russia')."
+        },
+        {
+          "person": "rus.vladimir_putin",
+          "from": "2000-05-07",
+          "to": "2008-05-07"
+        },
+        {
+          "person": "rus.dmitry_medvedev",
+          "from": "2008-05-07",
+          "to": "2012-05-07"
+        },
+        {
+          "person": "rus.vladimir_putin",
+          "from": "2012-05-07"
+        }
+      ],
+      "source": [
+        {
+          "url": "https://www.wikidata.org/wiki/Q218295",
+          "title": "Wikidata: President of Russia (position held by)",
+          "accessed": "2026-10-14"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/Acting_President_of_Russia",
+          "title": "Wikipedia: Acting President of Russia (Putin 31 December 1999 - 7 May 2000)",
+          "accessed": "2026-10-14"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/2000_Russian_presidential_election",
+          "title": "Wikipedia: 2000 Russian presidential election",
+          "accessed": "2026-10-14"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/Elections_in_Russia",
+          "title": "Wikipedia: Elections in Russia (electoral system, term lengths)",
+          "accessed": "2026-10-14"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "rus.prime_minister",
+      "title": {
+        "en": "Chairman of the Government (Prime Minister)",
+        "native": "Председатель Правительства Российской Федерации",
+        "native_latin": "Predsedatel Pravitelstva Rossiyskoy Federatsii"
+      },
+      "role": "head_of_government",
+      "power_weight": 0.25,
+      "selection": "appointed",
+      "appointed_by": "rus.president",
+      "holders": [
+        {
+          "person": "rus.vladimir_putin",
+          "from": "1999-08-16",
+          "to": "2000-05-07",
+          "note": "Confirmed by the Duma on 16 August 1999 after a week as acting Prime Minister; also acting President from 31 December 1999."
+        },
+        {
+          "person": "rus.mikhail_kasyanov",
+          "from": "2000-05-07",
+          "to": "2000-05-17",
+          "acting": true
+        },
+        {
+          "person": "rus.mikhail_kasyanov",
+          "from": "2000-05-17",
+          "to": "2004-02-24",
+          "note": "Dismissed with his government on 24 February 2004."
+        },
+        {
+          "person": "rus.viktor_khristenko",
+          "from": "2004-02-24",
+          "to": "2004-03-05",
+          "acting": true
+        },
+        {
+          "person": "rus.mikhail_fradkov",
+          "from": "2004-03-05",
+          "to": "2004-05-07"
+        },
+        {
+          "person": "rus.mikhail_fradkov",
+          "from": "2004-05-07",
+          "to": "2004-05-12",
+          "acting": true,
+          "note": "Government resigned at the presidential inauguration; reappointed on 12 May 2004."
+        },
+        {
+          "person": "rus.mikhail_fradkov",
+          "from": "2004-05-12",
+          "to": "2007-09-12",
+          "note": "Resigned on 12 September 2007. Wikidata records one continuous tenure 2004-03-05..2007-09-14 without the acting periods; the Wikipedia list is followed here."
+        },
+        {
+          "person": "rus.mikhail_fradkov",
+          "from": "2007-09-12",
+          "to": "2007-09-14",
+          "acting": true
+        },
+        {
+          "person": "rus.viktor_zubkov",
+          "from": "2007-09-14",
+          "to": "2008-05-07"
+        },
+        {
+          "person": "rus.viktor_zubkov",
+          "from": "2008-05-07",
+          "to": "2008-05-08",
+          "acting": true
+        },
+        {
+          "person": "rus.vladimir_putin",
+          "from": "2008-05-08",
+          "to": "2012-05-07"
+        },
+        {
+          "person": "rus.viktor_zubkov",
+          "from": "2012-05-07",
+          "to": "2012-05-08",
+          "acting": true
+        },
+        {
+          "person": "rus.dmitry_medvedev",
+          "from": "2012-05-08",
+          "to": "2018-05-07"
+        },
+        {
+          "person": "rus.dmitry_medvedev",
+          "from": "2018-05-07",
+          "to": "2018-05-08",
+          "acting": true
+        },
+        {
+          "person": "rus.dmitry_medvedev",
+          "from": "2018-05-08",
+          "to": "2020-01-15",
+          "note": "The government resigned on 15 January 2020."
+        },
+        {
+          "person": "rus.dmitry_medvedev",
+          "from": "2020-01-15",
+          "to": "2020-01-16",
+          "acting": true
+        },
+        {
+          "person": "rus.mikhail_mishustin",
+          "from": "2020-01-16",
+          "to": "2024-05-07"
+        },
+        {
+          "person": "rus.andrey_belousov",
+          "from": "2020-04-30",
+          "to": "2020-05-19",
+          "acting": true,
+          "note": "First Deputy Prime Minister Belousov temporarily performed the Prime Minister's duties; Mishustin remained Prime Minister."
+        },
+        {
+          "person": "rus.mikhail_mishustin",
+          "from": "2024-05-07",
+          "to": "2024-05-10",
+          "acting": true,
+          "note": "Government resigned at the presidential inauguration; reappointed on 10 May 2024."
+        },
+        {
+          "person": "rus.mikhail_mishustin",
+          "from": "2024-05-10"
+        }
+      ],
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/List_of_heads_of_government_of_Russia",
+          "title": "Wikipedia: List of heads of government of Russia (table and 'Acting prime ministers' section)",
+          "accessed": "2026-10-14"
+        },
+        {
+          "url": "https://www.wikidata.org/wiki/Q842386",
+          "title": "Wikidata: Prime Minister of Russia (position held by)",
+          "accessed": "2026-10-14"
+        }
+      ],
+      "confidence": "verified"
+    }
+  ],
+  "legislature": {
+    "name": {
+      "en": "Federal Assembly",
+      "native": "Федеральное Собрание",
+      "native_latin": "Federalnoye Sobraniye"
+    },
+    "chambers": [
+      {
+        "id": "state_duma",
+        "name": {
+          "en": "State Duma",
+          "native": "Государственная Дума",
+          "native_latin": "Gosudarstvennaya Duma"
+        },
+        "seats": 450,
+        "term_years": 4,
+        "elected": "direct",
+        "system": {
+          "type": "parallel",
+          "threshold": 0.05,
+          "district_model": "national",
+          "pr_share": 0.5,
+          "note": "1999 rules: 225 seats by national party-list PR (5% threshold) and 225 single-member districts by plurality. The 2007 and 2011 elections used 450 list seats with a 7% threshold; the parallel 225/225 system with a 5% threshold returned from 2016. The term was four years until the 2008 amendment extended it to five years from the 2011 election. seats_2000 is the result of the 19 December 1999 election. The new Duma first sat on 18 January 2000, when deputies registered into factions and groups (many independents joined the People's Deputy, Regions of Russia and Agro-Industrial groups), so faction strengths after that date differ from the election result. 'vacant' covers 8 districts where 'against all' won (repeat elections required) and 1 district (Chechnya) where no election was held; 'others' are single-district winners of the Pensioners' Party (1), Congress of Russian Communities-Boldyrev Movement (1), Movement in Support of the Army (2), Nikolayev-Fyodorov Bloc (1), Russian All-People's Union (2), Russian Socialist Party (1) and Spiritual Heritage (1)."
+        },
+        "seats_2000": {
+          "rus.cprf": 113,
+          "rus.unity": 73,
+          "rus.ovr": 68,
+          "rus.sps": 29,
+          "rus.yabloko": 20,
+          "rus.ldpr": 17,
+          "rus.our_home_russia": 7,
+          "others": 9,
+          "independents": 105,
+          "vacant": 9
+        },
+        "confidence_chamber": true,
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/1999_Russian_legislative_election",
+            "title": "Wikipedia: 1999 Russian legislative election (infobox and results table)",
+            "accessed": "2026-10-14"
+          },
+          {
+            "url": "https://en.wikipedia.org/wiki/3rd_State_Duma",
+            "title": "Wikipedia: 3rd State Duma (first sitting 18 January 2000, factions)",
+            "accessed": "2026-10-14"
+          },
+          {
+            "url": "https://en.wikipedia.org/wiki/Elections_in_Russia",
+            "title": "Wikipedia: Elections in Russia (electoral system, term lengths)",
+            "accessed": "2026-10-14"
+          }
+        ],
+        "confidence": "verified"
+      },
+      {
+        "id": "federation_council",
+        "name": {
+          "en": "Federation Council",
+          "native": "Совет Федерации",
+          "native_latin": "Sovet Federatsii"
+        },
+        "seats": 178,
+        "elected": "appointed",
+        "system": {
+          "type": "appointed",
+          "note": "Two members for each of the 89 federal subjects. Before the 2000 reform, governors and heads of regional legislatures sat ex officio; Putin's 2000 reform replaced them with representatives designated by the regional executive and legislature. Since 2014 (expanded by the 2020 amendments) the President may also appoint additional members. Members are officially non-partisan."
+        },
+        "seats_2000": {
+          "appointed": 178
+        },
+        "confidence_chamber": false,
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/Federation_Council_(Russia)",
+            "title": "Wikipedia: Federation Council (Russia)",
+            "accessed": "2026-10-14"
+          }
+        ],
+        "confidence": "needs_review",
+        "review_note": "The source confirms 89 subjects x 2 members and ex officio membership before the 2000 reform, but not the occupancy on 1 January 2000. Check whether Chechnya's two seats were filled on that date; if not, change 'appointed' to 176 and add 'vacant': 2."
+      }
+    ]
+  },
+  "party_system": "multi_party",
+  "start_2000": {
+    "ruling_parties": [
+      "rus.unity"
+    ],
+    "ideology_support": {
+      "statist": 0.387,
+      "reformed_communist": 0.256,
+      "marxist_leninist": 0.03,
+      "classical_liberal": 0.09,
+      "right_populist": 0.063,
+      "social_liberal": 0.063,
+      "liberal_conservative": 0.013,
+      "national_conservative": 0.013,
+      "left_populist": 0.012,
+      "social_democrat": 0.004,
+      "big_tent": 0.069
+    },
+    "ideology_support_note": "Derived from the 19 December 1999 Duma party-list votes, as shares of all votes cast for parties (excluding 'against all' and invalid ballots): Unity 24.6% + Fatherland-All Russia 14.1% (statist 'parties of power'); CPRF 25.6%; Communists and Workers of Russia 2.4% + Stalin Bloc 0.6% (Marxist-Leninist); Union of Right Forces 9.0%; Zhirinovsky Bloc (LDPR) 6.3%; Yabloko 6.3%; Our Home-Russia 1.3%; Congress of Russian Communities, Russian All-People's Union and Spiritual Heritage about 1.3% (national conservative); Movement in Support of the Army and Peace-Labour-May about 1.2% (left populist); small socialist and social-democratic lists about 0.4%; Women of Russia, Pensioners' Party and other small lists about 7% (big tent). Official CEC percentages (which include invalid ballots in the denominator) are slightly lower.",
+    "stability": 0.5,
+    "war_support": 0.6,
+    "civil_war": {
+      "sides": [
+        "RUS",
+        "ICH"
+      ],
+      "note": "Second Chechen War: its main phase ran from 7 August 1999 to 30 April 2000, followed by an insurgency phase until 16 April 2009. On 1 January 2000 federal forces were fighting the forces of the Chechen Republic of Ichkeria."
+    }
+  },
+  "claims": [],
+  "source": [
+    {
+      "url": "https://en.wikipedia.org/wiki/1999_Russian_legislative_election",
+      "title": "Wikipedia: 1999 Russian legislative election",
+      "accessed": "2026-10-14"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Acting_President_of_Russia",
+      "title": "Wikipedia: Acting President of Russia",
+      "accessed": "2026-10-14"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/2020_Russian_constitutional_referendum",
+      "title": "Wikipedia: 2020 Russian constitutional referendum (constitutional background)",
+      "accessed": "2026-10-14"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Second_Chechen_War",
+      "title": "Wikipedia: Second Chechen War (dates of phases)",
+      "accessed": "2026-10-14"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Elections_in_Russia",
+      "title": "Wikipedia: Elections in Russia (electoral system, term lengths)",
+      "accessed": "2026-10-14"
+    }
+  ],
+  "confidence": "verified"
+}

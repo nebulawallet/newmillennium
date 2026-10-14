@@ -1,0 +1,15 @@
+{
+  "note": "Population for map entities the World Bank 2000 data does not cover. Used only to seed province populations. Values are the census or estimate closest to 2000 that could be found; each is needs_review.",
+  "entities": [
+    { "tag": "TWN", "population": 22276672, "year": 2000, "confidence": "needs_review", "note": "Registered population at end of 2000 (Ministry of the Interior, ROC); confirm." },
+    { "tag": "PMR", "population": 555347, "year": 2004, "confidence": "needs_review", "note": "2004 Transnistrian census." },
+    { "tag": "ABK", "population": 215972, "year": 2003, "confidence": "needs_review", "note": "2003 census." },
+    { "tag": "SOS", "population": 70000, "year": 2000, "confidence": "needs_review", "note": "Rough estimate; the 2015 census counted 53,532." },
+    { "tag": "NKR", "population": 137737, "year": 2005, "confidence": "needs_review", "note": "2005 census." },
+    { "tag": "NCY", "population": 256644, "year": 2006, "confidence": "needs_review", "note": "2006 census (de jure)." },
+    { "tag": "SAH", "population": 300000, "year": 2000, "confidence": "needs_review", "note": "Rough estimate for Western Sahara in 2000; Natural Earth code SAH." }
+  ],
+  "source": [
+    { "url": "https://en.wikipedia.org/wiki/Transnistria", "title": "Wikipedia country/territory infoboxes (census history sections)", "accessed": "2026-10-14" }
+  ]
+}

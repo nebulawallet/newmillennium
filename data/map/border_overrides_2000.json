@@ -1,0 +1,207 @@
+{
+  "note": "Rules that turn Natural Earth 1:10m (current borders, de facto view) into the political map of 1 January 2000. Applied by scripts/map/build.ts in this order: adm0 owner mapping, admin-1 owner overrides, breakaway clips, start-of-game controllers.",
+  "adm0_owner": {
+    "SDS": "SDN",
+    "SRB": "YUG",
+    "MNE": "YUG",
+    "KOS": "YUG",
+    "SAH": "MAR",
+    "SOL": "SML",
+    "CYN": "NCY",
+    "CNM": "CYP",
+    "PSX": "PSE",
+    "HKG": "CHN",
+    "MAC": "CHN",
+    "KAS": "IND",
+    "KAB": "KAZ",
+    "ABW": "NLD",
+    "CUW": "NLD",
+    "SXM": "NLD",
+    "AIA": "GBR",
+    "BMU": "GBR",
+    "CYM": "GBR",
+    "ESB": "GBR",
+    "WSB": "GBR",
+    "FLK": "GBR",
+    "GGY": "GBR",
+    "GIB": "GBR",
+    "IMN": "GBR",
+    "IOT": "GBR",
+    "JEY": "GBR",
+    "MSR": "GBR",
+    "PCN": "GBR",
+    "SGS": "GBR",
+    "SHN": "GBR",
+    "TCA": "GBR",
+    "VGB": "GBR",
+    "ALD": "FIN",
+    "FRO": "DNK",
+    "GRL": "DNK",
+    "ASM": "USA",
+    "GUM": "USA",
+    "MNP": "USA",
+    "PRI": "USA",
+    "UMI": "USA",
+    "VIR": "USA",
+    "ATC": "AUS",
+    "CSI": "AUS",
+    "HMD": "AUS",
+    "IOA": "AUS",
+    "NFK": "AUS",
+    "ATF": "FRA",
+    "BLM": "FRA",
+    "CLP": "FRA",
+    "MAF": "FRA",
+    "NCL": "FRA",
+    "PYF": "FRA",
+    "SPM": "FRA",
+    "WLF": "FRA",
+    "COK": "NZL",
+    "NIU": "NZL",
+    "USG": "CUB"
+  },
+  "adm0_drop": [
+    "ATA",
+    "PGA"
+  ],
+  "adm1_owner": [
+    {
+      "adm1": [
+        "RUS-283",
+        "RUS-5482"
+      ],
+      "owner": "UKR",
+      "note": "Crimea and Sevastopol were part of Ukraine until 2014."
+    },
+    {
+      "adm1": [
+        "IRQ-3046",
+        "IRQ-3050",
+        "IRQ-3242"
+      ],
+      "owner": "KUR",
+      "note": "Dohuk, Erbil and Sulaymaniyah governorates: the area administered by the Kurdistan Regional Government outside Baghdad's control since 1991 (approximation at governorate level)."
+    },
+    {
+      "adm1": [
+        "AZE-1682",
+        "AZE-1735",
+        "AZE-1736",
+        "AZE-1740",
+        "AZE-1699",
+        "AZE-1737",
+        "AZE-5565",
+        "AZE-1739",
+        "AZE-1734"
+      ],
+      "owner": "NKR",
+      "confidence": "needs_review",
+      "note": "Districts held by Armenian forces from 1994 until 2020 in addition to the Artsakh polygon: Kalbajar, Lachin (AZE-1735, mislabelled 'Lankaran' in Natural Earth), Qubadli, Zangilan, Jabrayil, Shusha, Khojaly and Khojavend. Agdam and Fuzuli were only partly held and stay with Azerbaijan."
+    }
+  ],
+  "breakaway_clip": [
+    {
+      "brk_name": "Transnistria",
+      "owner": "PMR"
+    },
+    {
+      "brk_name": "Abkhazia",
+      "owner": "ABK"
+    },
+    {
+      "brk_name": "South Ossetia",
+      "owner": "SOS"
+    },
+    {
+      "brk_name": "Artsakh",
+      "owner": "NKR",
+      "note": "Natural Earth's Artsakh polygon is the post-2020 area; the surrounding districts held 1994-2020 are added via adm1_owner."
+    }
+  ],
+  "controllers": [
+    {
+      "adm0": [
+        "USG"
+      ],
+      "controller": "USA",
+      "note": "Guantanamo Bay naval base, leased to the United States."
+    },
+    {
+      "adm1": [
+        "AFG-1760",
+        "AFG-1765"
+      ],
+      "controller": "AFN",
+      "confidence": "needs_review",
+      "note": "United Front (Northern Alliance) held Badakhshan and parts of Takhar and the Panjshir valley in early 2000 (Taloqan fell in September 2000). Province-level approximation."
+    },
+    {
+      "adm1": [
+        "LKA-2458",
+        "LKA-2460"
+      ],
+      "controller": "TEL",
+      "confidence": "needs_review",
+      "note": "LTTE-held Vanni: Mullaitivu and Kilinochchi districts (approximation; parts of Mannar and Vavuniya were also contested)."
+    },
+    {
+      "adm1": [
+        "COD-1894",
+        "COD-1898",
+        "COD-1895"
+      ],
+      "controller": "RCD",
+      "confidence": "needs_review",
+      "note": "RCD-held eastern DRC (North Kivu, South Kivu, Maniema) at the start of 2000; province-level approximation."
+    },
+    {
+      "adm1": [
+        "COD-1461"
+      ],
+      "controller": "MLC",
+      "confidence": "needs_review",
+      "note": "MLC-held Équateur (northern parts; Mbandaka was government-held). Province-level approximation."
+    },
+    {
+      "adm1": [
+        "SDS-864",
+        "SDS-892",
+        "SDS-863",
+        "SDS-147",
+        "SDS-872"
+      ],
+      "controller": "SSD",
+      "confidence": "needs_review",
+      "note": "SPLA-held rural south (Western and Eastern Equatoria, Lakes, Northern Bahr el Ghazal, Warrap). Government garrisons held Juba, Wau, Malakal and the oil areas. Province-level approximation."
+    },
+    {
+      "adm1": [
+        "RUS-2416"
+      ],
+      "controller": "ICH",
+      "confidence": "needs_review",
+      "note": "Second Chechen War: separatists held Grozny and the southern mountains on 1 January 2000 while federal forces held the north; Grozny fell in February 2000. Whole-republic approximation."
+    },
+    {
+      "adm1": [
+        "AGO-1888",
+        "AGO-1892"
+      ],
+      "controller": "UNI",
+      "confidence": "needs_review",
+      "note": "UNITA had lost its central-highland strongholds in late 1999 and fought on as a guerrilla force mainly in the east and south-east. Representing it as controlling Moxico and Cuando Cubango is a gameplay approximation."
+    }
+  ],
+  "omitted": [
+    "FARC's zona de distension (about 42,000 km2 of municipalities in Meta and Caqueta) does not match whole departments; FAR starts without map control until a sub-department split exists.",
+    "Kosovo is owned and controlled by YUG as specified, although it was under UNMIK/KFOR administration from June 1999.",
+    "Western Sahara is owned by Morocco (the SADR is releasable) as specified; the Polisario-held strip east of the berm is not separated."
+  ],
+  "source": [
+    {
+      "url": "https://www.naturalearthdata.com/downloads/10m-cultural-vectors/",
+      "title": "Natural Earth 1:10m admin-0, admin-1 and breakaway/disputed areas (public domain)",
+      "accessed": "2026-10-14"
+    }
+  ]
+}

@@ -249,6 +249,9 @@
           "international": {
             "type": "string"
           },
+          "note": {
+            "type": "string"
+          },
           "source": {
             "minItems": 1,
             "type": "array",

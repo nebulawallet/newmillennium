@@ -1,0 +1,116 @@
+import * as THREE from "three";
+import type { ContentDB } from "../content/compile.ts";
+import { Borders } from "./layers/Borders.ts";
+import { createLakes } from "./layers/Lakes.ts";
+import { Labels } from "./layers/Labels.ts";
+import { ProvinceColors } from "./layers/ProvinceColors.ts";
+import { ProvinceMesh } from "./layers/ProvinceMesh.ts";
+import { ProvinceTexture } from "./layers/ProvinceTexture.ts";
+import { MAP_MODES, type MapModeContext } from "./mapModes.ts";
+import { provinceAt, type MapData } from "./mapData.ts";
+import type { MapView } from "./MapView.ts";
+
+export type RenderApproach = "mesh" | "texture";
+
+/**
+ * The world map: province fill (mesh or id-texture approach), borders, lakes and labels,
+ * plus map modes, hover and selection. UI talks to it through the callbacks below.
+ */
+export class WorldMap {
+  readonly colors = new ProvinceColors();
+  private fill: ProvinceMesh | ProvinceTexture;
+  private borders: Borders | null = null;
+  private labels: Labels;
+  private hovered = 0;
+  private selected = 0;
+  mode = "political";
+  onHoverChange: (id: number) => void = () => {};
+  onSelectChange: (id: number) => void = () => {};
+
+  constructor(
+    readonly view: MapView,
+    readonly map: MapData,
+    readonly db: ContentDB,
+    readonly approach: RenderApproach = "mesh",
+  ) {
+    // owner indices for the texture approach's country-border detection
+    const ownerIndex = new Map<string, number>();
+    for (const p of map.provinces) {
+      if (!ownerIndex.has(p.owner)) ownerIndex.set(p.owner, ownerIndex.size + 1);
+      this.colors.setOwnerIndex(p.id, ownerIndex.get(p.owner)!);
+    }
+
+    this.fill = approach === "mesh" ? new ProvinceMesh(map, this.colors) : new ProvinceTexture(map, this.colors);
+    view.addToWorld(this.fill.mesh);
+    view.addToWorld(createLakes(map));
+    if (approach === "mesh") {
+      this.borders = new Borders(map);
+      view.addToWorld(this.borders.mesh);
+      view.addToWorld(this.borders.provinceMesh);
+    }
+    const nameOf = (tag: string) => db.countries.get(tag)?.country?.name.en ?? db.countryList.find((c) => c.tag === tag)?.name ?? tag;
+    this.labels = new Labels(map.labels, nameOf);
+    view.scene.add(this.labels.group);
+
+    this.setMode(this.mode);
+
+    view.onFrame.push(({ worldPerPx, zoom, centerX }) => {
+      if (this.borders) {
+        this.borders.update(worldPerPx, zoom);
+        const pv = this.borders.provinceVisible;
+        view.scene.traverse((o) => { if ((o as THREE.Mesh).geometry === this.borders!.provinceMesh.geometry) o.visible = pv; });
+      }
+      if (this.fill instanceof ProvinceTexture) this.fill.material.uniforms.uBorderAlpha!.value = Math.min(0.4, Math.max(0, (zoom - 1.5) / 4) * 0.4);
+      // keep labels on the world copy nearest the camera
+      for (const child of this.labels.group.children) {
+        const baseX = (child.userData.baseX as number | undefined) ?? (child.userData.baseX = child.position.x);
+        child.position.x = baseX + 360 * Math.round((centerX - baseX) / 360);
+      }
+      this.labels.update(worldPerPx);
+    });
+    view.onHover.push((x, y) => {
+      const id = provinceAt(map, x, y);
+      if (id !== this.hovered) {
+        this.hovered = id;
+        this.fill.setHover(id);
+        this.onHoverChange(id);
+      }
+    });
+    view.onClick.push((x, y) => this.select(provinceAt(map, x, y)));
+  }
+
+  select(id: number): void {
+    this.selected = id;
+    this.fill.setSelected(id);
+    this.onSelectChange(id);
+  }
+
+  /** Recolour every province for a map mode. Returns the time taken (ms). */
+  setMode(id: string): number {
+    const t0 = performance.now();
+    const mode = MAP_MODES.find((m) => m.id === id && m.available);
+    if (!mode?.color) return 0;
+    this.mode = id;
+    const ctx: MapModeContext = { db: this.db, map: this.map };
+    for (const p of this.map.provinces) {
+      const [r, g, b] = mode.color(p, ctx);
+      this.colors.set(p.id, r, g, b);
+    }
+    this.colors.commit();
+    return performance.now() - t0;
+  }
+
+  /** Rough GPU memory estimate for the benchmark (bytes). */
+  gpuBytes(): number {
+    let bytes = ProvinceColors.SIZE * ProvinceColors.SIZE * 4;
+    const geomBytes = (g: THREE.BufferGeometry) => {
+      let b = g.index ? g.index.array.byteLength : 0;
+      for (const a of Object.values(g.attributes)) b += (a as THREE.BufferAttribute).array.byteLength;
+      return b;
+    };
+    bytes += geomBytes(this.fill.mesh.geometry);
+    if (this.borders) bytes += geomBytes(this.borders.mesh.geometry) + geomBytes(this.borders.provinceMesh.geometry);
+    if (this.fill instanceof ProvinceTexture) bytes += this.map.grid.width * this.map.grid.height * 4;
+    return bytes;
+  }
+}

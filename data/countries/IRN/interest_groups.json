@@ -1,0 +1,15 @@
+{
+  "note": "Influence and approval are gameplay starting values for 1 January 2000 (Supreme Leader Ali Khamenei, reformist President Khatami, conservative-led 5th Majlis), not measured data. Influence reflects institutional weight: the clergy and the security apparatus (Revolutionary Guards, Basij, intelligence) answer to the Supreme Leader, independent unions are weak, and the reformist press and student movement were at a high point.",
+  "interest_groups": [
+    { "type": "military", "influence": 0.35, "approval": 50, "note": "Regular army (Artesh) and Revolutionary Guards; both under the Supreme Leader's command." },
+    { "type": "security_services", "influence": 0.45, "approval": 42, "note": "Revolutionary Guards, Basij and intelligence services, generally aligned with the principlist camp rather than the reformist government." },
+    { "type": "business", "influence": 0.3, "approval": 50, "note": "Bazaar merchants (close to the Islamic Coalition Party) and large state-linked foundations." },
+    { "type": "labour_unions", "influence": 0.1, "approval": 50, "note": "No independent unions; officially sanctioned labour bodies." },
+    { "type": "religious_establishment", "influence": 0.55, "approval": 48, "note": "Clergy divided between the CCA (principlist) and the ACC (reformist)." },
+    { "type": "rural", "influence": 0.2, "approval": 50 },
+    { "type": "urban_middle_class", "influence": 0.4, "approval": 68, "note": "Core of the 1997 reformist vote." },
+    { "type": "minorities", "influence": 0.1, "approval": 52, "note": "Ethnic minorities (Azerbaijanis, Kurds, Arabs, Baloch and others) and the recognised religious minorities with five reserved Majlis seats." },
+    { "type": "youth_students", "influence": 0.35, "approval": 70, "note": "Student organisations were a pillar of the 2nd of Khordad movement." },
+    { "type": "media", "influence": 0.25, "approval": 62, "note": "A large reformist print press alongside state broadcasting controlled by the Supreme Leader's appointee." }
+  ]
+}

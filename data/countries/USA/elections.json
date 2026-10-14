@@ -1,0 +1,654 @@
+{
+  "rules": [
+    {
+      "kind": "presidential",
+      "office": "usa.president",
+      "every_years": 4,
+      "anchor": "2024-11-05",
+      "snap_possible": false,
+      "note": "Fixed four-year calendar in early November. Voters choose state slates of electors; 270 of 538 electoral votes are needed to win."
+    },
+    {
+      "kind": "legislative",
+      "chamber": "house",
+      "every_years": 2,
+      "anchor": "2024-11-05",
+      "snap_possible": false,
+      "note": "All 435 seats every two years; no dissolution. Vacancies are filled by special elections."
+    },
+    {
+      "kind": "legislative_upper",
+      "chamber": "senate",
+      "every_years": 2,
+      "anchor": "2024-11-05",
+      "snap_possible": false,
+      "note": "About one third of seats every two years for six-year terms, plus special elections for vacancies."
+    }
+  ],
+  "elections": [
+    {
+      "id": "president_2000",
+      "date": "2000-11-07",
+      "kind": "presidential",
+      "office": "usa.president",
+      "historical": {
+        "candidates": [
+          { "person": "usa.george_w_bush", "party": "usa.republican", "share": 0.4787, "votes": 271, "round": 1 },
+          { "person": "usa.al_gore", "party": "usa.democratic", "share": 0.4838, "votes": 266, "round": 1 },
+          { "person": "usa.ralph_nader", "party": "usa.asgp", "share": 0.0274, "votes": 0, "round": 1 },
+          { "person": "usa.pat_buchanan", "party": "usa.reform", "share": 0.0043, "votes": 0, "round": 1 }
+        ],
+        "winner": "usa.george_w_bush",
+        "turnout": 0.542,
+        "note": "votes = electoral votes; share = share of the national popular vote (105,405,100 votes). Gore won the popular vote (50,999,897 to 50,456,002) but Bush won the Electoral College. Florida's result was decided after a mandatory recount and a month of litigation ending with the Supreme Court's 5-4 decision in Bush v. Gore (12 December 2000), which ended the recount with Bush ahead by 537 votes (0.009%). Gore had 267 pledged electors; one District of Columbia elector cast a blank ballot. Running mates: Dick Cheney (R), Joe Lieberman (D), Winona LaDuke (Green), Ezola Foster (Reform). Harry Browne (Libertarian, 0.36%) and Howard Phillips (Constitution, 0.09%) omitted. Nader ran as the Green nominee, backed by the Association of State Green Parties.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2000_United_States_presidential_election", "title": "Wikipedia: 2000 United States presidential election (infobox, results table, Florida recount)", "accessed": "2026-10-14" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "house_2000",
+      "date": "2000-11-07",
+      "kind": "legislative",
+      "chamber": "house",
+      "historical": {
+        "party_results": [
+          { "party": "usa.republican", "share": 0.476, "seats": 221 },
+          { "party": "usa.democratic", "share": 0.471, "seats": 212 },
+          { "party": "independents", "share": 0.007, "seats": 2 }
+        ],
+        "winner": "usa.republican",
+        "note": "Shares are the national House popular vote.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2000_United_States_House_of_Representatives_elections", "title": "Wikipedia: 2000 United States House of Representatives elections", "accessed": "2026-10-14" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "senate_2000",
+      "date": "2000-11-07",
+      "kind": "legislative_upper",
+      "chamber": "senate",
+      "historical": {
+        "party_results": [
+          { "party": "usa.republican", "share": 0.4696, "seats": 50 },
+          { "party": "usa.democratic", "share": 0.4704, "seats": 50 }
+        ],
+        "winner": "usa.republican",
+        "note": "seats = Senate composition after the election (one third of seats were contested); shares are the national popular vote in that year's Senate races. The 50-50 tie gave Republicans control through Vice President Cheney's tie-breaking vote from 20 January 2001.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2000_United_States_Senate_elections", "title": "Wikipedia: 2000 United States Senate elections", "accessed": "2026-10-14" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "house_2002",
+      "date": "2002-11-05",
+      "kind": "legislative",
+      "chamber": "house",
+      "historical": {
+        "party_results": [
+          { "party": "usa.republican", "share": 0.500, "seats": 229 },
+          { "party": "usa.democratic", "share": 0.452, "seats": 205 },
+          { "party": "independents", "share": 0.005, "seats": 1 }
+        ],
+        "winner": "usa.republican",
+        "note": "Shares are the national House popular vote.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2002_United_States_House_of_Representatives_elections", "title": "Wikipedia: 2002 United States House of Representatives elections", "accessed": "2026-10-14" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "senate_2002",
+      "date": "2002-11-05",
+      "kind": "legislative_upper",
+      "chamber": "senate",
+      "historical": {
+        "party_results": [
+          { "party": "usa.republican", "share": 0.499, "seats": 51 },
+          { "party": "usa.democratic", "share": 0.460, "seats": 48 },
+          { "party": "independents", "share": 0.008, "seats": 1 }
+        ],
+        "winner": "usa.republican",
+        "note": "seats = Senate composition after the election; shares are the national popular vote in that year's Senate races. The independent was Jim Jeffords (Vermont), who caucused with the Democrats.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2002_United_States_Senate_elections", "title": "Wikipedia: 2002 United States Senate elections", "accessed": "2026-10-14" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "president_2004",
+      "date": "2004-11-02",
+      "kind": "presidential",
+      "office": "usa.president",
+      "historical": {
+        "candidates": [
+          { "person": "usa.george_w_bush", "party": "usa.republican", "share": 0.5073, "votes": 286, "round": 1 },
+          { "person": "usa.john_kerry", "party": "usa.democratic", "share": 0.4827, "votes": 251, "round": 1 }
+        ],
+        "winner": "usa.george_w_bush",
+        "turnout": 0.601,
+        "note": "votes = electoral votes; share = share of the national popular vote. A faithless Minnesota elector voted for John Edwards, so Kerry received 251 rather than 252. Running mates: Dick Cheney (R), John Edwards (D).",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2004_United_States_presidential_election", "title": "Wikipedia: 2004 United States presidential election", "accessed": "2026-10-14" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "house_2004",
+      "date": "2004-11-02",
+      "kind": "legislative",
+      "chamber": "house",
+      "historical": {
+        "party_results": [
+          { "party": "usa.republican", "share": 0.494, "seats": 232 },
+          { "party": "usa.democratic", "share": 0.468, "seats": 202 },
+          { "party": "independents", "share": 0.006, "seats": 1 }
+        ],
+        "winner": "usa.republican",
+        "note": "Shares are the national House popular vote.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2004_United_States_House_of_Representatives_elections", "title": "Wikipedia: 2004 United States House of Representatives elections", "accessed": "2026-10-14" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "senate_2004",
+      "date": "2004-11-02",
+      "kind": "legislative_upper",
+      "chamber": "senate",
+      "historical": {
+        "party_results": [
+          { "party": "usa.republican", "share": 0.453, "seats": 55 },
+          { "party": "usa.democratic", "share": 0.508, "seats": 44 },
+          { "party": "independents", "share": 0.002, "seats": 1 }
+        ],
+        "winner": "usa.republican",
+        "note": "seats = Senate composition after the election; shares are the national popular vote in that year's Senate races.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2004_United_States_Senate_elections", "title": "Wikipedia: 2004 United States Senate elections", "accessed": "2026-10-14" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "house_2006",
+      "date": "2006-11-07",
+      "kind": "legislative",
+      "chamber": "house",
+      "historical": {
+        "party_results": [
+          { "party": "usa.democratic", "share": 0.523, "seats": 233 },
+          { "party": "usa.republican", "share": 0.443, "seats": 202 }
+        ],
+        "winner": "usa.democratic",
+        "note": "Shares are the national House popular vote. Independents won 0.5% and no seats.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2006_United_States_House_of_Representatives_elections", "title": "Wikipedia: 2006 United States House of Representatives elections", "accessed": "2026-10-14" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "senate_2006",
+      "date": "2006-11-07",
+      "kind": "legislative_upper",
+      "chamber": "senate",
+      "historical": {
+        "party_results": [
+          { "party": "usa.democratic", "share": 0.532, "seats": 49 },
+          { "party": "usa.republican", "share": 0.418, "seats": 49 },
+          { "party": "independents", "share": 0.014, "seats": 2 }
+        ],
+        "winner": "usa.democratic",
+        "note": "seats = Senate composition after the election; shares are the national popular vote in that year's Senate races. The two non-party senators were Bernie Sanders (independent) and Joe Lieberman (elected on the Connecticut for Lieberman line, 0.8%); both caucused with the Democrats, giving them control.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2006_United_States_Senate_elections", "title": "Wikipedia: 2006 United States Senate elections", "accessed": "2026-10-14" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "president_2008",
+      "date": "2008-11-04",
+      "kind": "presidential",
+      "office": "usa.president",
+      "historical": {
+        "candidates": [
+          { "person": "usa.barack_obama", "party": "usa.democratic", "share": 0.5293, "votes": 365, "round": 1 },
+          { "person": "usa.john_mccain", "party": "usa.republican", "share": 0.4565, "votes": 173, "round": 1 }
+        ],
+        "winner": "usa.barack_obama",
+        "turnout": 0.616,
+        "note": "votes = electoral votes; share = share of the national popular vote. Running mates: Joe Biden (D), Sarah Palin (R).",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2008_United_States_presidential_election", "title": "Wikipedia: 2008 United States presidential election", "accessed": "2026-10-14" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "house_2008",
+      "date": "2008-11-04",
+      "kind": "legislative",
+      "chamber": "house",
+      "historical": {
+        "party_results": [
+          { "party": "usa.democratic", "share": 0.532, "seats": 257 },
+          { "party": "usa.republican", "share": 0.426, "seats": 178 }
+        ],
+        "winner": "usa.democratic",
+        "note": "Shares are the national House popular vote.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2008_United_States_House_of_Representatives_elections", "title": "Wikipedia: 2008 United States House of Representatives elections", "accessed": "2026-10-14" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "senate_2008",
+      "date": "2008-11-04",
+      "kind": "legislative_upper",
+      "chamber": "senate",
+      "historical": {
+        "party_results": [
+          { "party": "usa.democratic", "share": 0.5188, "seats": 57 },
+          { "party": "usa.republican", "share": 0.445, "seats": 41 },
+          { "party": "independents", "share": 0.0027, "seats": 2 }
+        ],
+        "winner": "usa.democratic",
+        "note": "seats = Senate composition after the election; shares are the national popular vote in that year's Senate races. Georgia's runoff was held on 2 December 2008. Both independents (Sanders, Lieberman) caucused with the Democrats.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2008_United_States_Senate_elections", "title": "Wikipedia: 2008 United States Senate elections", "accessed": "2026-10-14" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "house_2010",
+      "date": "2010-11-02",
+      "kind": "legislative",
+      "chamber": "house",
+      "historical": {
+        "party_results": [
+          { "party": "usa.republican", "share": 0.517, "seats": 242 },
+          { "party": "usa.democratic", "share": 0.449, "seats": 193 }
+        ],
+        "winner": "usa.republican",
+        "note": "Shares are the national House popular vote.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2010_United_States_House_of_Representatives_elections", "title": "Wikipedia: 2010 United States House of Representatives elections", "accessed": "2026-10-14" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "senate_2010",
+      "date": "2010-11-02",
+      "kind": "legislative_upper",
+      "chamber": "senate",
+      "historical": {
+        "party_results": [
+          { "party": "usa.democratic", "share": 0.451, "seats": 51 },
+          { "party": "usa.republican", "share": 0.482, "seats": 47 },
+          { "party": "independents", "share": 0.002, "seats": 2 }
+        ],
+        "winner": "usa.democratic",
+        "note": "seats = Senate composition after the election; shares are the national popular vote in that year's Senate races. Massachusetts also held a special election on 19 January 2010. Both independents caucused with the Democrats.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2010_United_States_Senate_elections", "title": "Wikipedia: 2010 United States Senate elections", "accessed": "2026-10-14" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "president_2012",
+      "date": "2012-11-06",
+      "kind": "presidential",
+      "office": "usa.president",
+      "historical": {
+        "candidates": [
+          { "person": "usa.barack_obama", "party": "usa.democratic", "share": 0.5106, "votes": 332, "round": 1 },
+          { "person": "usa.mitt_romney", "party": "usa.republican", "share": 0.4720, "votes": 206, "round": 1 }
+        ],
+        "winner": "usa.barack_obama",
+        "turnout": 0.586,
+        "note": "votes = electoral votes; share = share of the national popular vote. Running mates: Joe Biden (D), Paul Ryan (R).",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2012_United_States_presidential_election", "title": "Wikipedia: 2012 United States presidential election", "accessed": "2026-10-14" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "house_2012",
+      "date": "2012-11-06",
+      "kind": "legislative",
+      "chamber": "house",
+      "historical": {
+        "party_results": [
+          { "party": "usa.republican", "share": 0.477, "seats": 234 },
+          { "party": "usa.democratic", "share": 0.488, "seats": 201 }
+        ],
+        "winner": "usa.republican",
+        "note": "Shares are the national House popular vote; Democrats won more votes but fewer seats.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2012_United_States_House_of_Representatives_elections", "title": "Wikipedia: 2012 United States House of Representatives elections", "accessed": "2026-10-14" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "senate_2012",
+      "date": "2012-11-06",
+      "kind": "legislative_upper",
+      "chamber": "senate",
+      "historical": {
+        "party_results": [
+          { "party": "usa.democratic", "share": 0.534, "seats": 53 },
+          { "party": "usa.republican", "share": 0.418, "seats": 45 },
+          { "party": "independents", "share": 0.010, "seats": 2 }
+        ],
+        "winner": "usa.democratic",
+        "note": "seats = Senate composition after the election; shares are the national popular vote in that year's Senate races. Both independents caucused with the Democrats.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2012_United_States_Senate_elections", "title": "Wikipedia: 2012 United States Senate elections", "accessed": "2026-10-14" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "house_2014",
+      "date": "2014-11-04",
+      "kind": "legislative",
+      "chamber": "house",
+      "historical": {
+        "party_results": [
+          { "party": "usa.republican", "share": 0.512, "seats": 247 },
+          { "party": "usa.democratic", "share": 0.455, "seats": 188 }
+        ],
+        "winner": "usa.republican",
+        "note": "Shares are the national House popular vote.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2014_United_States_House_of_Representatives_elections", "title": "Wikipedia: 2014 United States House of Representatives elections", "accessed": "2026-10-14" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "senate_2014",
+      "date": "2014-11-04",
+      "kind": "legislative_upper",
+      "chamber": "senate",
+      "historical": {
+        "party_results": [
+          { "party": "usa.republican", "share": 0.515, "seats": 54 },
+          { "party": "usa.democratic", "share": 0.438, "seats": 44 },
+          { "party": "independents", "share": 0.015, "seats": 2 }
+        ],
+        "winner": "usa.republican",
+        "note": "seats = Senate composition after the election; shares are the national popular vote in that year's Senate races. Louisiana's runoff was held on 6 December 2014. Both independents caucused with the Democrats.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2014_United_States_Senate_elections", "title": "Wikipedia: 2014 United States Senate elections", "accessed": "2026-10-14" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "president_2016",
+      "date": "2016-11-08",
+      "kind": "presidential",
+      "office": "usa.president",
+      "historical": {
+        "candidates": [
+          { "person": "usa.donald_trump", "party": "usa.republican", "share": 0.4609, "votes": 304, "round": 1 },
+          { "person": "usa.hillary_clinton", "party": "usa.democratic", "share": 0.4818, "votes": 227, "round": 1 }
+        ],
+        "winner": "usa.donald_trump",
+        "turnout": 0.601,
+        "note": "votes = electoral votes; share = share of the national popular vote. Clinton won the popular vote; Trump won the Electoral College. Trump earned 306 pledged electors and Clinton 232; two and five electors respectively voted for others. Running mates: Mike Pence (R), Tim Kaine (D).",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2016_United_States_presidential_election", "title": "Wikipedia: 2016 United States presidential election", "accessed": "2026-10-14" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "house_2016",
+      "date": "2016-11-08",
+      "kind": "legislative",
+      "chamber": "house",
+      "historical": {
+        "party_results": [
+          { "party": "usa.republican", "share": 0.483, "seats": 241 },
+          { "party": "usa.democratic", "share": 0.473, "seats": 194 }
+        ],
+        "winner": "usa.republican",
+        "note": "Shares are the national House popular vote.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2016_United_States_House_of_Representatives_elections", "title": "Wikipedia: 2016 United States House of Representatives elections", "accessed": "2026-10-14" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "senate_2016",
+      "date": "2016-11-08",
+      "kind": "legislative_upper",
+      "chamber": "senate",
+      "historical": {
+        "party_results": [
+          { "party": "usa.republican", "share": 0.422, "seats": 52 },
+          { "party": "usa.democratic", "share": 0.530, "seats": 46 },
+          { "party": "independents", "share": 0.006, "seats": 2 }
+        ],
+        "winner": "usa.republican",
+        "note": "seats = Senate composition after the election; shares are the national popular vote in that year's Senate races (inflated for Democrats by California's two-Democrat top-two race). Louisiana's runoff was held on 10 December 2016. Both independents caucused with the Democrats.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2016_United_States_Senate_elections", "title": "Wikipedia: 2016 United States Senate elections", "accessed": "2026-10-14" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "house_2018",
+      "date": "2018-11-06",
+      "kind": "legislative",
+      "chamber": "house",
+      "historical": {
+        "party_results": [
+          { "party": "usa.democratic", "share": 0.534, "seats": 235 },
+          { "party": "usa.republican", "share": 0.448, "seats": 199 },
+          { "party": "vacant", "seats": 1 }
+        ],
+        "winner": "usa.democratic",
+        "note": "Shares are the national House popular vote. The North Carolina 9th district result was voided; the Republicans retained the seat in a September 2019 special election.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2018_United_States_House_of_Representatives_elections", "title": "Wikipedia: 2018 United States House of Representatives elections", "accessed": "2026-10-14" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "senate_2018",
+      "date": "2018-11-06",
+      "kind": "legislative_upper",
+      "chamber": "senate",
+      "historical": {
+        "party_results": [
+          { "party": "usa.republican", "share": 0.387, "seats": 53 },
+          { "party": "usa.democratic", "share": 0.582, "seats": 45 },
+          { "party": "independents", "share": 0.009, "seats": 2 }
+        ],
+        "winner": "usa.republican",
+        "note": "seats = Senate composition after the election; shares are the national popular vote in that year's Senate races (inflated for Democrats by California's two-Democrat top-two race). Mississippi's special-election runoff was held on 27 November 2018. Both independents (Angus King, Bernie Sanders) caucused with the Democrats.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2018_United_States_Senate_elections", "title": "Wikipedia: 2018 United States Senate elections", "accessed": "2026-10-14" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "president_2020",
+      "date": "2020-11-03",
+      "kind": "presidential",
+      "office": "usa.president",
+      "historical": {
+        "candidates": [
+          { "person": "usa.joe_biden", "party": "usa.democratic", "share": 0.5131, "votes": 306, "round": 1 },
+          { "person": "usa.donald_trump", "party": "usa.republican", "share": 0.4685, "votes": 232, "round": 1 }
+        ],
+        "winner": "usa.joe_biden",
+        "turnout": 0.666,
+        "note": "votes = electoral votes; share = share of the national popular vote. Turnout is of the voting-eligible population (the FEC calculates 62.8%). Running mates: Kamala Harris (D), Mike Pence (R).",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2020_United_States_presidential_election", "title": "Wikipedia: 2020 United States presidential election", "accessed": "2026-10-14" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "house_2020",
+      "date": "2020-11-03",
+      "kind": "legislative",
+      "chamber": "house",
+      "historical": {
+        "party_results": [
+          { "party": "usa.democratic", "share": 0.503, "seats": 222 },
+          { "party": "usa.republican", "share": 0.472, "seats": 213 }
+        ],
+        "winner": "usa.democratic",
+        "note": "Shares are the national House popular vote.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2020_United_States_House_of_Representatives_elections", "title": "Wikipedia: 2020 United States House of Representatives elections", "accessed": "2026-10-14" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "senate_2020",
+      "date": "2020-11-03",
+      "kind": "legislative_upper",
+      "chamber": "senate",
+      "historical": {
+        "party_results": [
+          { "party": "usa.democratic", "share": 0.470, "seats": 48 },
+          { "party": "usa.republican", "share": 0.493, "seats": 50 },
+          { "party": "independents", "share": 0.003, "seats": 2 }
+        ],
+        "winner": "usa.democratic",
+        "note": "seats = Senate composition after the election, including Georgia's two runoffs on 5 January 2021 (only runoff votes counted for Georgia). With both independents caucusing with the Democrats, the chamber split 50-50 and Vice President Harris's tie-breaking vote gave Democrats control.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2020_United_States_Senate_elections", "title": "Wikipedia: 2020 United States Senate elections", "accessed": "2026-10-14" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "house_2022",
+      "date": "2022-11-08",
+      "kind": "legislative",
+      "chamber": "house",
+      "historical": {
+        "party_results": [
+          { "party": "usa.republican", "share": 0.500, "seats": 222 },
+          { "party": "usa.democratic", "share": 0.473, "seats": 213 }
+        ],
+        "winner": "usa.republican",
+        "note": "Shares are the national House popular vote.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2022_United_States_House_of_Representatives_elections", "title": "Wikipedia: 2022 United States House of Representatives elections", "accessed": "2026-10-14" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "senate_2022",
+      "date": "2022-11-08",
+      "kind": "legislative_upper",
+      "chamber": "senate",
+      "historical": {
+        "party_results": [
+          { "party": "usa.democratic", "share": 0.500, "seats": 49 },
+          { "party": "usa.republican", "share": 0.474, "seats": 49 },
+          { "party": "independents", "share": 0.007, "seats": 2 }
+        ],
+        "winner": "usa.democratic",
+        "note": "seats = Senate composition after the election, including Georgia's runoff on 6 December 2022. Kyrsten Sinema (not up for election) left the Democratic Party in December 2022, so the new Congress opened with 48 Democrats and 3 independents; Democrats kept control.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2022_United_States_Senate_elections", "title": "Wikipedia: 2022 United States Senate elections", "accessed": "2026-10-14" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "president_2024",
+      "date": "2024-11-05",
+      "kind": "presidential",
+      "office": "usa.president",
+      "historical": {
+        "candidates": [
+          { "person": "usa.donald_trump", "party": "usa.republican", "share": 0.498, "votes": 312, "round": 1 },
+          { "person": "usa.kamala_harris", "party": "usa.democratic", "share": 0.483, "votes": 226, "round": 1 }
+        ],
+        "winner": "usa.donald_trump",
+        "turnout": 0.643,
+        "note": "votes = electoral votes; share = share of the national popular vote (77,302,580 and 75,017,613 votes). Running mates: JD Vance (R), Tim Walz (D).",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2024_United_States_presidential_election", "title": "Wikipedia: 2024 United States presidential election", "accessed": "2026-10-14" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "house_2024",
+      "date": "2024-11-05",
+      "kind": "legislative",
+      "chamber": "house",
+      "historical": {
+        "party_results": [
+          { "party": "usa.republican", "share": 0.498, "seats": 220 },
+          { "party": "usa.democratic", "share": 0.472, "seats": 215 }
+        ],
+        "winner": "usa.republican",
+        "note": "Shares are the national House popular vote.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2024_United_States_House_of_Representatives_elections", "title": "Wikipedia: 2024 United States House of Representatives elections", "accessed": "2026-10-14" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "senate_2024",
+      "date": "2024-11-05",
+      "kind": "legislative_upper",
+      "chamber": "senate",
+      "historical": {
+        "party_results": [
+          { "party": "usa.republican", "share": 0.477, "seats": 53 },
+          { "party": "usa.democratic", "share": 0.491, "seats": 45 },
+          { "party": "independents", "share": 0.011, "seats": 2 }
+        ],
+        "winner": "usa.republican",
+        "note": "seats = Senate composition after the election; shares are the national popular vote in that year's Senate races. Both remaining independents (Sanders, King) caucus with the Democrats.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2024_United_States_Senate_elections", "title": "Wikipedia: 2024 United States Senate elections", "accessed": "2026-10-14" }
+        ],
+        "confidence": "verified"
+      }
+    }
+  ],
+  "source": [
+    { "url": "https://en.wikipedia.org/wiki/2000_United_States_presidential_election", "title": "Wikipedia: 2000 United States presidential election (538 electoral votes, 270 to win)", "accessed": "2026-10-14" },
+    { "url": "https://en.wikipedia.org/wiki/106th_United_States_Congress", "title": "Wikipedia: 106th United States Congress (two-year term, special elections)", "accessed": "2026-10-14" }
+  ],
+  "confidence": "verified"
+}

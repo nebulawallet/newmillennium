@@ -20,6 +20,7 @@ The validator is the gatekeeper: the game loads content through the same compile
    - `confidence`: `"verified"` or `"needs_review"`.
 3. **When `verified` is allowed.** Use `verified` only if you actually opened the source and it confirms the record.
    - If you are unsure about any fact in the record, use `needs_review` and say what to check in `review_note`.
+   - `died` may be `YYYY` or `YYYY-MM` when sources give no exact day.
    - Never guess a date: Wikidata often stores dates at year precision. The research tool prints `2000` rather than `2000-01-01`, so copy it as a year (`2000`) where the schema allows, or mark the record `needs_review`.
 4. **Neutral content only.**
    - Traits record documented background or stated positions only (see `data/traits/leader.json`), never judgements.

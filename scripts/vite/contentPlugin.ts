@@ -23,10 +23,13 @@ export function contentPlugin(): Plugin {
     name: "new-millennium-content",
     configureServer(server: ViteDevServer) {
       server.watcher.add(DATA_ROOT);
+      // Don't force a reload (that would wipe a running game); notify the page, debounced.
+      let timer: ReturnType<typeof setTimeout> | null = null;
       server.watcher.on("all", (_event, file) => {
         if (file.replace(/\\/g, "/").includes("/data/") && file.endsWith(".json")) {
           cached = null;
-          server.ws.send({ type: "full-reload" });
+          if (timer) clearTimeout(timer);
+          timer = setTimeout(() => server.ws.send({ type: "custom", event: "nm:content-changed", data: {} }), 800);
         }
       });
       server.middlewares.use(URL_PATH, (_req, res) => {

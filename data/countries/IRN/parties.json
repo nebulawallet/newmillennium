@@ -1,0 +1,525 @@
+{
+  "parties": [
+    {
+      "id": "irn.reformists",
+      "name": {
+        "en": "Reformists (2nd of Khordad camp)",
+        "native": "اصلاح‌طلبان",
+        "native_latin": "Eslâh-Talabân"
+      },
+      "abbrev": {
+        "en": "Reformists"
+      },
+      "color": "#48D1CC",
+      "sub_ideology": "islamic_democrat",
+      "founded": "1997-05-23",
+      "status_2000": "active",
+      "leader_history": [],
+      "popularity_2000": 0,
+      "popularity_note": "Camp-level record used for bloc seat counts in Majlis and Assembly of Experts results, where sources only report reformist versus principlist totals. Popular support is carried by the member organisations (ACC, IIPF, ECP and others), so this record has zero own popularity to avoid double counting. Khatami is described as the camp's spiritual leader.",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Iranian_reformists",
+          "title": "Wikipedia: Iranian reformists (2nd of Khordad movement began with the 23 May 1997 election)",
+          "accessed": "2026-10-14"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/Council_for_Coordinating_the_Reforms_Front",
+          "title": "Wikipedia: Council for Coordinating the Reforms Front (founded 13 November 1999)",
+          "accessed": "2026-10-14"
+        }
+      ],
+      "confidence": "needs_review",
+      "review_note": "This is a political camp, not a registered party. 'founded' is the date of the 1997 presidential election that began the 2nd of Khordad movement; its coordinating body, the Council for Coordinating the Reforms Front, was founded on 1999-11-13. Confirm which date the project prefers."
+    },
+    {
+      "id": "irn.principlists",
+      "name": {
+        "en": "Principlists (conservative camp)",
+        "native": "اصول‌گرایان",
+        "native_latin": "Osul-Garâyân"
+      },
+      "abbrev": {
+        "en": "Principlists"
+      },
+      "color": "#0077B6",
+      "sub_ideology": "shia_theocratic",
+      "founded": "1988-03-16",
+      "status_2000": "active",
+      "leader_history": [],
+      "popularity_2000": 0,
+      "popularity_note": "Camp-level record used for bloc seat counts where sources only report camp totals. Popular support is carried by member organisations (CCA, Islamic Coalition Party and others), so this record has zero own popularity to avoid double counting.",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Principlists",
+          "title": "Wikipedia: Iranian Principlists",
+          "accessed": "2026-10-14"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/Association_of_Combatant_Clerics",
+          "title": "Wikipedia: Association of Combatant Clerics (split from the CCA, 16 March 1988)",
+          "accessed": "2026-10-14"
+        }
+      ],
+      "confidence": "needs_review",
+      "review_note": "This is a political camp, not a party, and sources give it no founding date. 'founded' is set to 1988-03-16, when the Association of Combatant Clerics split from the Combatant Clergy Association and the left/right camps took organisational form. Confirm or replace this date."
+    },
+    {
+      "id": "irn.cca",
+      "name": {
+        "en": "Combatant Clergy Association",
+        "native": "جامعه روحانیت مبارز",
+        "native_latin": "Jâme'e-ye Ruhâniat-e Mobârez"
+      },
+      "abbrev": {
+        "en": "CCA"
+      },
+      "color": "#009801",
+      "sub_ideology": "shia_theocratic",
+      "founded": "1977-11-06",
+      "status_2000": "active",
+      "leader_history": [
+        {
+          "person": "irn.mohammad_reza_mahdavi_kani",
+          "from": "1981-11-01",
+          "to": "2014-10-21",
+          "title": "Secretary-General"
+        },
+        {
+          "person": "irn.mohammad_ali_movahedi_kermani",
+          "from": "2014-12-02",
+          "to": "2018-05-30",
+          "title": "Secretary-General"
+        },
+        {
+          "person": "irn.mostafa_pourmohammadi",
+          "from": "2018-05-30",
+          "title": "Secretary-General"
+        }
+      ],
+      "popularity_2000": 0.2,
+      "popularity_note": "Estimate. No party vote shares exist; the CCA's candidate Nategh-Nouri won 24.91% in the 1997 presidential election and the CCA and allies won about 110 of 270 seats in 1996 (Nohlen et al.). An interim secretary-general in 1996 is omitted (before 2000).",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Combatant_Clergy_Association",
+          "title": "Wikipedia: Combatant Clergy Association (founding, list of general secretaries)",
+          "accessed": "2026-10-14"
+        },
+        {
+          "url": "https://www.wikidata.org/wiki/Q1817687",
+          "title": "Wikidata: Combatant Clergy Association (founded 1977)",
+          "accessed": "2026-10-14"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/1997_Iranian_presidential_election",
+          "title": "Wikipedia: 1997 Iranian presidential election",
+          "accessed": "2026-10-14"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "irn.acc",
+      "name": {
+        "en": "Association of Combatant Clerics",
+        "native": "مجمع روحانیون مبارز"
+      },
+      "abbrev": {
+        "en": "ACC"
+      },
+      "color": "#068CDA",
+      "sub_ideology": "islamic_democrat",
+      "founded": "1988-03-16",
+      "status_2000": "active",
+      "leader_history": [
+        {
+          "person": "irn.mehdi_karroubi",
+          "from": 1988,
+          "to": 2005,
+          "title": "Secretary-General"
+        },
+        {
+          "person": "irn.mohammad_mousavi_khoeiniha",
+          "from": 2005,
+          "title": "Secretary-General"
+        }
+      ],
+      "popularity_2000": 0.22,
+      "popularity_note": "Estimate. The ACC's candidate Khatami won 69.07% in 1997 as the candidate of a broad reformist coalition; the ACC and allies won about 80 of 270 seats in 1996 (Nohlen et al.).",
+      "lineage": {
+        "split_from": "irn.cca"
+      },
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Association_of_Combatant_Clerics",
+          "title": "Wikipedia: Association of Combatant Clerics (founding, secretaries-general)",
+          "accessed": "2026-10-14"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/Mehdi_Karroubi",
+          "title": "Wikipedia: Mehdi Karroubi (ACC 1988-2005)",
+          "accessed": "2026-10-14"
+        }
+      ],
+      "confidence": "needs_review",
+      "review_note": "Sources say Karroubi was a founding member and former secretary-general and left the ACC in 2005; the start of his secretary-generalship is not sourced (1988 is the founding year). After his resignation the post was vacant until Mousavi Khoeiniha was elected in late August 2005. Khatami chairs the Central Council (dates not sourced)."
+    },
+    {
+      "id": "irn.iipf",
+      "name": {
+        "en": "Islamic Iran Participation Front",
+        "native": "جبهه مشارکت ایران اسلامی"
+      },
+      "abbrev": {
+        "en": "IIPF"
+      },
+      "color": "#003399",
+      "sub_ideology": "islamic_democrat",
+      "founded": "1998-12-05",
+      "dissolved": "2010-04-19",
+      "status_2000": "extra_parliamentary",
+      "leader_history": [
+        {
+          "person": "irn.mohammad_reza_khatami",
+          "from": 1998,
+          "title": "Secretary-General"
+        }
+      ],
+      "popularity_2000": 0.15,
+      "popularity_note": "Estimate. Founded after the 1996 Majlis election, so it had no seats on 1 January 2000; it led the reformist list that won the February 2000 election (Nohlen et al.: IIPF and allies 216 of 290).",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Islamic_Iran_Participation_Front",
+          "title": "Wikipedia: Islamic Iran Participation Front (founded 5 December 1998, banned 19 April 2010)",
+          "accessed": "2026-10-14"
+        },
+        {
+          "url": "https://www.wikidata.org/wiki/Q1509407",
+          "title": "Wikidata: Islamic Iran Participation Front (dissolved 2010-09-27)",
+          "accessed": "2026-10-14"
+        }
+      ],
+      "confidence": "needs_review",
+      "review_note": "Mohammad-Reza Khatami led the front as secretary-general until Mohsen Mirdamadi was elected at its 9th congress; neither the end of Khatami's term nor Mirdamadi's start is sourced, so Mirdamadi is not listed. Wikipedia gives the ban as 2010-04-19; Wikidata gives dissolution as 2010-09-27."
+    },
+    {
+      "id": "irn.ecp",
+      "name": {
+        "en": "Executives of Construction Party",
+        "native": "حزب کارگزاران سازندگی ایران"
+      },
+      "abbrev": {
+        "en": "ECP"
+      },
+      "color": "#E30E21",
+      "sub_ideology": "islamic_democrat",
+      "founded": "1996-01-17",
+      "status_2000": "active",
+      "leader_history": [
+        {
+          "person": "irn.gholamhossein_karbaschi",
+          "from": 1998,
+          "to": 2021,
+          "title": "Secretary-General"
+        },
+        {
+          "person": "irn.hossein_marashi",
+          "from": 2021,
+          "title": "Secretary-General"
+        }
+      ],
+      "popularity_2000": 0.15,
+      "popularity_note": "Estimate. The ECP and allies won about 80 of 270 seats in 1996 (Nohlen et al.); it backed Khatami in 1997. Rafsanjani is described as its spiritual leader.",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Executives_of_Construction_Party",
+          "title": "Wikipedia: Executives of Construction Party (founding, secretaries general)",
+          "accessed": "2026-10-14"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/1996_Iranian_legislative_election",
+          "title": "Wikipedia: 1996 Iranian legislative election",
+          "accessed": "2026-10-14"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "irn.icp",
+      "name": {
+        "en": "Islamic Coalition Party",
+        "native": "حزب مؤتلفه اسلامی"
+      },
+      "abbrev": {
+        "en": "ICP"
+      },
+      "color": "#00844B",
+      "sub_ideology": "shia_theocratic",
+      "founded": 1963,
+      "status_2000": "active",
+      "leader_history": [
+        {
+          "person": "irn.habibollah_asgaroladi",
+          "from": 1987,
+          "to": 2004,
+          "title": "Secretary-General"
+        },
+        {
+          "person": "irn.mohammad_nabi_habibi",
+          "from": 2004,
+          "to": 2019,
+          "title": "Secretary-General"
+        },
+        {
+          "person": "irn.asadollah_badamchian",
+          "from": 2019,
+          "to": 2025,
+          "title": "Secretary-General"
+        },
+        {
+          "person": "irn.mohammad_ali_amani",
+          "from": 2025,
+          "title": "Secretary-General"
+        }
+      ],
+      "popularity_2000": 0.06,
+      "popularity_note": "Estimate. Its members sat within the right-wing bloc counted as 'CCA and allies' in 1996.",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Islamic_Coalition_Party",
+          "title": "Wikipedia: Islamic Coalition Party (founded April 1963; secretaries-general)",
+          "accessed": "2026-10-14"
+        },
+        {
+          "url": "https://www.wikidata.org/wiki/Q2843214",
+          "title": "Wikidata: Islamic Coalition Party (founded 1962)",
+          "accessed": "2026-10-14"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "irn.mdp",
+      "name": {
+        "en": "Moderation and Development Party",
+        "native": "حزب اعتدال و توسعه"
+      },
+      "abbrev": {
+        "en": "MDP"
+      },
+      "color": "#984B9E",
+      "sub_ideology": "islamic_democrat",
+      "founded": 1999,
+      "status_2000": "extra_parliamentary",
+      "leader_history": [
+        {
+          "person": "irn.hassan_rouhani",
+          "from": 1999,
+          "title": "Leader"
+        }
+      ],
+      "popularity_2000": 0.01,
+      "popularity_note": "Estimate. Founded in November 1999, after the last pre-2000 elections; no seats.",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Moderation_and_Development_Party",
+          "title": "Wikipedia: Moderation and Development Party (founded November 1999; leader Hassan Rouhani)",
+          "accessed": "2026-10-14"
+        },
+        {
+          "url": "https://www.wikidata.org/wiki/Q348144",
+          "title": "Wikidata: Hassan Rouhani (member of MDP from 1999)",
+          "accessed": "2026-10-14"
+        }
+      ],
+      "confidence": "needs_review",
+      "review_note": "The source gives the founding month only (November 1999), stored as the year. Rouhani is named as leader, with membership from 1999 in Wikidata; the start of his leadership is not dated in the source. Mohammad Bagher Nobakht is named as secretary-general (dates not sourced)."
+    },
+    {
+      "id": "irn.fmi",
+      "name": {
+        "en": "Freedom Movement of Iran",
+        "native": "نهضت آزادی ايران"
+      },
+      "abbrev": {
+        "en": "FMI"
+      },
+      "color": "#6B8E23",
+      "sub_ideology": "islamic_democrat",
+      "founded": "1961-05-17",
+      "status_2000": "extra_parliamentary",
+      "leader_history": [
+        {
+          "person": "irn.ebrahim_yazdi",
+          "from": 1995,
+          "to": 2017,
+          "title": "Secretary-General"
+        }
+      ],
+      "popularity_2000": 0.02,
+      "popularity_note": "Estimate. Nationalist-religious opposition group; its candidates were largely excluded by vetting and it withdrew from the 1996 election. Colour is a neutral placeholder.",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Freedom_Movement_of_Iran",
+          "title": "Wikipedia: Freedom Movement of Iran (founding, secretaries-general, legal status)",
+          "accessed": "2026-10-14"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/1996_Iranian_legislative_election",
+          "title": "Wikipedia: 1996 Iranian legislative election (FMI candidates vetted out; withdrawal)",
+          "accessed": "2026-10-14"
+        }
+      ],
+      "confidence": "needs_review",
+      "review_note": "Wikipedia says the group is outlawed but continues to exist; the date it was formally banned is not sourced, so status_2000 is 'extra_parliamentary' rather than 'banned'. Yazdi's successor (Mohammad Tavasoli, current secretary-general) has no sourced start date and is not listed."
+    },
+    {
+      "id": "irn.abadgaran",
+      "name": {
+        "en": "Alliance of Builders of Islamic Iran",
+        "native": "ائتلاف آبادگران ایران اسلامی"
+      },
+      "abbrev": {
+        "en": "Abadgaran"
+      },
+      "color": "#8B4513",
+      "sub_ideology": "islamist",
+      "founded": 2003,
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        {
+          "person": "irn.mahmoud_ahmadinejad",
+          "from": 2003,
+          "title": "Head of election campaign"
+        }
+      ],
+      "popularity_2000": 0,
+      "popularity_note": "Not founded until 2003. Colour is a neutral placeholder.",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Alliance_of_Builders_of_Islamic_Iran",
+          "title": "Wikipedia: Alliance of Builders of Islamic Iran (founded 2003; leaders)",
+          "accessed": "2026-10-14"
+        }
+      ],
+      "confidence": "needs_review",
+      "review_note": "The infobox names Ahmadinejad as head of the election campaign in 2003 and Hossein Fadaei in 2004; Fadaei was not researched and is not listed, and the alliance has no formal leader series. Dissolution date not sourced."
+    },
+    {
+      "id": "irn.pjp",
+      "name": {
+        "en": "Progress and Justice Population of Islamic Iran",
+        "native": "جمعیت پیشرفت و عدالت ایران اسلامی"
+      },
+      "abbrev": {
+        "en": "PJP"
+      },
+      "color": "#6A5ACD",
+      "sub_ideology": "islamist",
+      "founded": 2008,
+      "status_2000": "not_yet_founded",
+      "leader_history": [],
+      "popularity_2000": 0,
+      "popularity_note": "Not founded until 2008. Ghalibaf is described as its spiritual leader. Colour is a neutral placeholder.",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Progress_and_Justice_Population_of_Islamic_Iran",
+          "title": "Wikipedia: Progress and Justice Population of Islamic Iran",
+          "accessed": "2026-10-14"
+        }
+      ],
+      "confidence": "needs_review",
+      "review_note": "Leader history is empty: the secretary-general (Morteza Kamel Navvab) and spiritual leader (Ghalibaf) have no sourced dates."
+    },
+    {
+      "id": "irn.rfi",
+      "name": {
+        "en": "Resistance Front of Islamic Iran",
+        "native": "جبهه ایستادگی ایران اسلامی"
+      },
+      "abbrev": {
+        "en": "RFI"
+      },
+      "color": "#008080",
+      "sub_ideology": "shia_theocratic",
+      "founded": 2011,
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        {
+          "person": "irn.mohsen_rezaee",
+          "from": 2011,
+          "title": "Spiritual leader"
+        }
+      ],
+      "popularity_2000": 0,
+      "popularity_note": "Not founded until January 2011.",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Resistance_Front_of_Islamic_Iran",
+          "title": "Wikipedia: Resistance Front of Islamic Iran (founded January 2011)",
+          "accessed": "2026-10-14"
+        }
+      ],
+      "confidence": "needs_review",
+      "review_note": "Rezaee is named as spiritual leader; that he held the role from the 2011 founding is assumed. The secretary-general (Yadollah Habibi) has no sourced dates."
+    },
+    {
+      "id": "irn.firs",
+      "name": {
+        "en": "Front of Islamic Revolution Stability",
+        "native": "جبههٔ پایداری انقلاب اسلامی"
+      },
+      "abbrev": {
+        "en": "Stability Front"
+      },
+      "color": "#00A6A6",
+      "sub_ideology": "shia_theocratic",
+      "founded": "2011-07-28",
+      "status_2000": "not_yet_founded",
+      "leader_history": [],
+      "popularity_2000": 0,
+      "popularity_note": "Not founded until 2011. Colour is a neutral placeholder.",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Front_of_Islamic_Revolution_Stability",
+          "title": "Wikipedia: Front of Islamic Revolution Stability (founded 28 July 2011)",
+          "accessed": "2026-10-14"
+        }
+      ],
+      "confidence": "needs_review",
+      "review_note": "Leader history is empty: the infobox names Sadegh Mahsouli as secretary-general and Mahdi Mirbaqiri as spiritual leader, without dates. Neither was researched."
+    },
+    {
+      "id": "irn.ccirf",
+      "name": {
+        "en": "Coalition Council of Islamic Revolution Forces",
+        "native": "شورای ائتلاف نیروهای انقلاب اسلامی"
+      },
+      "abbrev": {
+        "en": "CCIRF (SHANA)"
+      },
+      "color": "#1F4E79",
+      "sub_ideology": "shia_theocratic",
+      "founded": "2019-11-12",
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        {
+          "person": "irn.gholam_ali_haddad_adel",
+          "from": 2019,
+          "title": "Leader"
+        }
+      ],
+      "popularity_2000": 0,
+      "popularity_note": "Not founded until 2019. Colour is a neutral placeholder.",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Coalition_Council_of_Islamic_Revolution_Forces",
+          "title": "Wikipedia: Coalition Council of Islamic Revolution Forces (founded 12 November 2019; leader Haddad-Adel)",
+          "accessed": "2026-10-14"
+        }
+      ],
+      "confidence": "needs_review",
+      "review_note": "Haddad-Adel is named as leader; that he led from the 2019 founding is assumed. Confirm the start of his leadership."
+    }
+  ]
+}

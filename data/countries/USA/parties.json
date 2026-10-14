@@ -1,0 +1,161 @@
+{
+  "parties": [
+    {
+      "id": "usa.democratic",
+      "name": { "en": "Democratic Party", "native": "Democratic Party" },
+      "abbrev": { "en": "Dem.", "native": "D" },
+      "color": "#3333FF",
+      "sub_ideology": "social_liberal",
+      "founded": "1828-01-08",
+      "status_2000": "active",
+      "leader_history": [
+        { "person": "usa.joe_andrew", "from": "1999-01-22", "to": "2001-01-21", "title": "DNC National Chair" },
+        { "person": "usa.ed_rendell", "from": "1999-09-25", "to": "2001-02-03", "title": "DNC General Chair" },
+        { "person": "usa.terry_mcauliffe", "from": "2001-02-03", "to": "2005-02-12", "title": "DNC Chair" },
+        { "person": "usa.howard_dean", "from": "2005-02-12", "to": "2009-01-21", "title": "DNC Chair" },
+        { "person": "usa.tim_kaine", "from": "2009-01-21", "to": "2011-04-05", "title": "DNC Chair" },
+        { "person": "usa.donna_brazile", "from": "2011-04-05", "to": "2011-05-04", "title": "Acting DNC Chair" },
+        { "person": "usa.debbie_wasserman_schultz", "from": "2011-05-04", "to": "2016-07-28", "title": "DNC Chair" },
+        { "person": "usa.donna_brazile", "from": "2016-07-28", "to": "2017-02-25", "title": "Acting DNC Chair" },
+        { "person": "usa.tom_perez", "from": "2017-02-25", "to": "2021-01-21", "title": "DNC Chair" },
+        { "person": "usa.jaime_harrison", "from": "2021-01-21", "to": "2025-02-01", "title": "DNC Chair" },
+        { "person": "usa.ken_martin", "from": "2025-02-01", "title": "DNC Chair" }
+      ],
+      "popularity_2000": 0.492,
+      "popularity_note": "Clinton's share of the 1996 presidential popular vote (the party won 47.3% of the 1998 House popular vote). Leaders are chairs of the Democratic National Committee; until 2001 the DNC had both a General Chair and a National Chair.",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/Chair_of_the_Democratic_National_Committee", "title": "Wikipedia: Chair of the Democratic National Committee (list of chairs)", "accessed": "2026-10-14" },
+        { "url": "https://www.wikidata.org/wiki/Q29552", "title": "Wikidata: Democratic Party (founding date, chairpersons)", "accessed": "2026-10-14" },
+        { "url": "https://en.wikipedia.org/wiki/Democratic_Party_(United_States)", "title": "Wikipedia: Democratic Party (United States)", "accessed": "2026-10-14" },
+        { "url": "https://en.wikipedia.org/wiki/1996_United_States_presidential_election", "title": "Wikipedia: 1996 United States presidential election", "accessed": "2026-10-14" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "usa.republican",
+      "name": { "en": "Republican Party", "native": "Republican Party" },
+      "abbrev": { "en": "GOP", "native": "R" },
+      "color": "#E81B23",
+      "sub_ideology": "traditional_conservative",
+      "founded": "1854-03-20",
+      "status_2000": "active",
+      "leader_history": [
+        { "person": "usa.jim_nicholson", "from": "1997-01-17", "to": "2001-01-18", "title": "RNC Chair" },
+        { "person": "usa.jim_gilmore", "from": "2001-01-18", "to": "2001-12-05", "title": "RNC Chair" },
+        { "person": "usa.marc_racicot", "from": "2001-12-05", "to": "2003-07-25", "title": "RNC Chair" },
+        { "person": "usa.ed_gillespie", "from": "2003-07-25", "to": "2005-01-20", "title": "RNC Chair" },
+        { "person": "usa.ken_mehlman", "from": "2005-01-20", "to": "2007-01-19", "title": "RNC Chair" },
+        { "person": "usa.mike_duncan", "from": "2007-01-19", "to": "2009-01-30", "title": "RNC National Chair" },
+        { "person": "usa.michael_steele", "from": "2009-01-30", "to": "2011-01-14", "title": "RNC Chair" },
+        { "person": "usa.reince_priebus", "from": "2011-01-14", "to": "2017-01-19", "title": "RNC Chair" },
+        { "person": "usa.ronna_mcdaniel", "from": "2017-01-19", "to": "2024-03-08", "title": "RNC Chair" },
+        { "person": "usa.michael_whatley", "from": "2024-03-08", "to": "2025-08-22", "title": "RNC Chair" },
+        { "person": "usa.joe_gruters", "from": "2025-08-22", "title": "RNC Chair" }
+      ],
+      "popularity_2000": 0.407,
+      "popularity_note": "Dole's share of the 1996 presidential popular vote (the party won 48.4% of the 1998 House popular vote). Leaders are chairs of the Republican National Committee. Mel Martinez served as RNC General Chair alongside Mike Duncan (19 January to 19 October 2007) and is omitted. Wikidata gives McDaniel's start as 2017-01-20 and still lists Whatley as incumbent; the Wikipedia list (2017-01-19; Gruters from 2025-08-22) is used.",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/Chair_of_the_Republican_National_Committee", "title": "Wikipedia: Chair of the Republican National Committee (list of chairs)", "accessed": "2026-10-14" },
+        { "url": "https://www.wikidata.org/wiki/Q29468", "title": "Wikidata: Republican Party (founding date, chairpersons)", "accessed": "2026-10-14" },
+        { "url": "https://en.wikipedia.org/wiki/Republican_Party_(United_States)", "title": "Wikipedia: Republican Party (United States)", "accessed": "2026-10-14" },
+        { "url": "https://en.wikipedia.org/wiki/1996_United_States_presidential_election", "title": "Wikipedia: 1996 United States presidential election", "accessed": "2026-10-14" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "usa.reform",
+      "name": { "en": "Reform Party of the United States of America", "native": "Reform Party of the United States of America" },
+      "abbrev": { "en": "Reform", "native": "Reform" },
+      "color": "#800080",
+      "sub_ideology": "right_populist",
+      "founded": 1995,
+      "status_2000": "extra_parliamentary",
+      "leader_history": [],
+      "popularity_2000": 0.084,
+      "popularity_note": "Ross Perot's share of the 1996 presidential popular vote as the Reform nominee. Founded by Perot; the Wikipedia infobox gives its position as centre. The right-populist mapping reflects its 2000 nominee (Buchanan) and is a gameplay choice. National chairs since 1999 are not recorded (no reliable list found).",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/Reform_Party_of_the_United_States_of_America", "title": "Wikipedia: Reform Party of the United States of America", "accessed": "2026-10-14" },
+        { "url": "https://www.wikidata.org/wiki/Q1893430", "title": "Wikidata: Reform Party of the United States of America (founded 1995)", "accessed": "2026-10-14" },
+        { "url": "https://en.wikipedia.org/wiki/1996_United_States_presidential_election", "title": "Wikipedia: 1996 United States presidential election", "accessed": "2026-10-14" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "usa.asgp",
+      "name": { "en": "Association of State Green Parties", "native": "Association of State Green Parties" },
+      "abbrev": { "en": "ASGP", "native": "ASGP" },
+      "color": "#17AA5C",
+      "sub_ideology": "green",
+      "founded": 1996,
+      "dissolved": 2001,
+      "status_2000": "extra_parliamentary",
+      "leader_history": [],
+      "popularity_2000": 0.0071,
+      "popularity_note": "Ralph Nader's share of the 1996 presidential popular vote. The ASGP backed Nader in 1996 and 2000 and in 2001 became the Green Party of the United States. A separate group, the Greens/Green Party USA, also existed until 2019 and is not modelled.",
+      "lineage": { "renamed_to": "usa.green" },
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/Green_Party_of_the_United_States", "title": "Wikipedia: Green Party of the United States (history: ASGP formed 1996)", "accessed": "2026-10-14" },
+        { "url": "https://en.wikipedia.org/wiki/1996_United_States_presidential_election", "title": "Wikipedia: 1996 United States presidential election", "accessed": "2026-10-14" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "usa.green",
+      "name": { "en": "Green Party of the United States", "native": "Green Party of the United States" },
+      "abbrev": { "en": "GPUS", "native": "GPUS" },
+      "color": "#17AA5C",
+      "sub_ideology": "green",
+      "founded": "2001-07-30",
+      "status_2000": "not_yet_founded",
+      "leader_history": [],
+      "popularity_2000": 0,
+      "popularity_note": "Not yet founded in 2000. Best results since: Jill Stein 1.07% (2016), 0.56% (2024). The party uses co-chairs; they are not recorded here.",
+      "lineage": { "renamed_from": "usa.asgp" },
+      "international": "Global Greens",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/Green_Party_of_the_United_States", "title": "Wikipedia: Green Party of the United States (formed 30 July 2001)", "accessed": "2026-10-14" },
+        { "url": "https://www.wikidata.org/wiki/Q849158", "title": "Wikidata: Green Party of the United States (founded 2001-04)", "accessed": "2026-10-14" }
+      ],
+      "confidence": "needs_review",
+      "review_note": "Founding date conflicts: Wikipedia says formally formed on 30 July 2001, Wikidata gives April 2001. Check which date marks the FEC recognition/rename from the ASGP."
+    },
+    {
+      "id": "usa.libertarian",
+      "name": { "en": "Libertarian Party", "native": "Libertarian Party" },
+      "abbrev": { "en": "LP", "native": "LP" },
+      "color": "#FED105",
+      "sub_ideology": "libertarian",
+      "founded": "1971-12-11",
+      "status_2000": "extra_parliamentary",
+      "leader_history": [],
+      "popularity_2000": 0.005,
+      "popularity_note": "Harry Browne's share of the 1996 presidential popular vote. National chairs (Libertarian National Committee) are not recorded because most have no Wikipedia or Wikidata biography to verify gender and birth dates.",
+      "international": "International Alliance of Libertarian Parties",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/Libertarian_Party_(United_States)", "title": "Wikipedia: Libertarian Party (United States)", "accessed": "2026-10-14" },
+        { "url": "https://www.wikidata.org/wiki/Q558334", "title": "Wikidata: Libertarian Party (founded 1971-12-11)", "accessed": "2026-10-14" },
+        { "url": "https://en.wikipedia.org/wiki/1996_United_States_presidential_election", "title": "Wikipedia: 1996 United States presidential election", "accessed": "2026-10-14" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "usa.constitution",
+      "name": { "en": "Constitution Party", "native": "Constitution Party" },
+      "abbrev": { "en": "CP", "native": "CP" },
+      "color": "#B22234",
+      "sub_ideology": "christian_conservative",
+      "founded": 1990,
+      "status_2000": "extra_parliamentary",
+      "leader_history": [],
+      "popularity_2000": 0.0019,
+      "popularity_note": "Howard Phillips's share of the 1996 presidential popular vote, when the party was called the U.S. Taxpayers' Party (renamed in 1999). National chairs are not recorded.",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/Constitution_Party_(United_States)", "title": "Wikipedia: Constitution Party (United States) (founded 1990; named U.S. Taxpayers' Party until 1999)", "accessed": "2026-10-14" },
+        { "url": "https://www.wikidata.org/wiki/Q1128321", "title": "Wikidata: Constitution Party (founded 1991)", "accessed": "2026-10-14" },
+        { "url": "https://en.wikipedia.org/wiki/1996_United_States_presidential_election", "title": "Wikipedia: 1996 United States presidential election", "accessed": "2026-10-14" }
+      ],
+      "confidence": "needs_review",
+      "review_note": "Founding year conflicts: Wikipedia infobox gives 1990, Wikidata gives 1991. Confirm the founding year."
+    }
+  ]
+}

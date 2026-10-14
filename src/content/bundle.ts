@@ -21,6 +21,7 @@ export interface ContentBundle {
   traits: unknown[];
   cultures: unknown[];
   countryList: unknown[];
+  countryColors: Record<string, string>;
   countries: CountryContent[];
 }
 
@@ -47,6 +48,7 @@ export function toBundle({ db, issues }: CompileResult): ContentBundle {
     traits: [...db.traits.values()],
     cultures: [...db.cultures.values()],
     countryList: db.countryList,
+    countryColors: Object.fromEntries(db.countryColors),
     countries: [...db.countries.values()].filter((c) => c.country),
   };
   return { ...body, hash: fnv1a(JSON.stringify(body)) };
@@ -66,6 +68,7 @@ export function fromBundle(b: ContentBundle): ContentDB {
     traits: byId(b.traits),
     cultures: byId(b.cultures),
     countryList: b.countryList as ContentDB["countryList"],
+    countryColors: new Map(Object.entries(b.countryColors ?? {})),
     countries: new Map(),
     people: new Map(),
     parties: new Map(),

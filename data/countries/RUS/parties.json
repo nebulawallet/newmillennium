@@ -1,0 +1,300 @@
+{
+  "parties": [
+    {
+      "id": "rus.cprf",
+      "name": { "en": "Communist Party of the Russian Federation", "native": "Коммунистическая партия Российской Федерации", "native_latin": "Kommunisticheskaya partiya Rossiyskoy Federatsii" },
+      "abbrev": { "en": "CPRF", "native": "КПРФ", "native_latin": "KPRF" },
+      "color": "#CC1111",
+      "sub_ideology": "reformed_communist",
+      "founded": "1993-02-14",
+      "status_2000": "active",
+      "leader_history": [
+        { "person": "rus.gennady_zyuganov", "from": "1993-02-14", "title": "Chairman of the Central Committee" }
+      ],
+      "popularity_2000": 0.2429,
+      "popularity_note": "Official party-list share, 1999 State Duma election.",
+      "international": "International Meeting of Communist and Workers' Parties",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/Communist_Party_of_the_Russian_Federation", "title": "Wikipedia: Communist Party of the Russian Federation", "accessed": "2026-10-14" },
+        { "url": "https://www.wikidata.org/wiki/Q192187", "title": "Wikidata: CPRF (founding date, chairperson)", "accessed": "2026-10-14" },
+        { "url": "https://en.wikipedia.org/wiki/1999_Russian_legislative_election", "title": "Wikipedia: 1999 Russian legislative election", "accessed": "2026-10-14" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "rus.unity",
+      "name": { "en": "Unity (Interregional Movement)", "native": "Межрегиональное движение «Единство»", "native_latin": "Mezhregionalnoye dvizheniye Yedinstvo" },
+      "abbrev": { "en": "Unity", "native": "Единство", "native_latin": "Yedinstvo" },
+      "color": "#1C5AA8",
+      "sub_ideology": "statist",
+      "founded": "1999-10-03",
+      "dissolved": "2001-12-01",
+      "status_2000": "active",
+      "leader_history": [
+        { "person": "rus.sergei_shoigu", "from": 1999, "to": "2001-12-01" }
+      ],
+      "popularity_2000": 0.2332,
+      "popularity_note": "Official party-list share, 1999 State Duma election (Unity's first election).",
+      "lineage": { "merged_into": "rus.united_russia" },
+      "note": "Founding date conflicts between sources: Wikipedia gives 3 October 1999, Wikidata 15 October 1999. In the 3rd Duma (2000-2003) the Unity faction was led by Boris Gryzlov.",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/Unity_(Russian_political_party)", "title": "Wikipedia: Unity (Russian political party)", "accessed": "2026-10-14" },
+        { "url": "https://www.wikidata.org/wiki/Q1957669", "title": "Wikidata: Unity (founding, dissolution, chair)", "accessed": "2026-10-14" },
+        { "url": "https://en.wikipedia.org/wiki/1999_Russian_legislative_election", "title": "Wikipedia: 1999 Russian legislative election", "accessed": "2026-10-14" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "rus.ovr",
+      "name": { "en": "Fatherland – All Russia", "native": "Отечество — Вся Россия", "native_latin": "Otechestvo – Vsya Rossiya" },
+      "abbrev": { "en": "OVR", "native": "ОВР", "native_latin": "OVR" },
+      "color": "#4B6CB7",
+      "sub_ideology": "statist",
+      "founded": "1999-08-28",
+      "dissolved": "2002-02-09",
+      "status_2000": "active",
+      "leader_history": [
+        { "person": "rus.yevgeny_primakov", "from": 1999, "to": 2001, "title": "Co-leader; leader of the Duma faction until 2001" },
+        { "person": "rus.yury_luzhkov", "from": 1999, "to": 2001, "title": "Co-leader" }
+      ],
+      "popularity_2000": 0.1333,
+      "popularity_note": "Official party-list share, 1999 State Duma election.",
+      "lineage": { "merged_into": "rus.united_russia" },
+      "note": "Electoral bloc of Luzhkov's Fatherland and the regional governors' All Russia movement (Shaimiev, Yakovlev); the Agrarian Party ran within it in 1999. Dates conflict between sources: Wikipedia gives the bloc's founding as 28 August 1999 and dissolution as 9 February 2002; Wikidata gives 19 November 1998 (likely the Fatherland movement's founding) and 9 April 2002. Wikipedia is followed. Vyacheslav Volodin led the Duma faction from 2001.",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/Fatherland_%E2%80%93_All_Russia", "title": "Wikipedia: Fatherland – All Russia", "accessed": "2026-10-14" },
+        { "url": "https://www.wikidata.org/wiki/Q1958474", "title": "Wikidata: Fatherland – All Russia", "accessed": "2026-10-14" },
+        { "url": "https://en.wikipedia.org/wiki/3rd_State_Duma", "title": "Wikipedia: 3rd State Duma (faction leaders)", "accessed": "2026-10-14" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "rus.sps",
+      "name": { "en": "Union of Right Forces", "native": "Союз правых сил", "native_latin": "Soyuz pravykh sil" },
+      "abbrev": { "en": "SPS", "native": "СПС", "native_latin": "SPS" },
+      "color": "#E6A23C",
+      "sub_ideology": "classical_liberal",
+      "founded": "1999-10-24",
+      "dissolved": "2008-11-15",
+      "status_2000": "active",
+      "leader_history": [
+        { "person": "rus.sergey_kiriyenko", "from": 1999, "to": 2001 },
+        { "person": "rus.boris_nemtsov", "from": 2001, "to": 2004 },
+        { "person": "rus.nikita_belykh", "from": 2005, "to": 2008 }
+      ],
+      "popularity_2000": 0.0852,
+      "popularity_note": "Official party-list share, 1999 State Duma election.",
+      "note": "Founded as an electoral bloc on 24 October 1999 (co-founders included Yegor Gaidar, Anatoly Chubais, Sergey Kiriyenko, Boris Nemtsov, Irina Khakamada and Konstantin Titov) and registered as a party on 26 May 2001. Viktor Nekrutenko (2004-2005) and Leonid Gozman (acting, 2008) are omitted from the leader history because the research tool found no Wikipedia/Wikidata record for Nekrutenko. In 2008 the SPS merged with Civilian Power and the Democratic Party of Russia into Right Cause, which is not modelled here. Kiriyenko led the Duma faction until 23 May 2000, then Nemtsov.",
+      "international": "International Democrat Union",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/Union_of_Right_Forces", "title": "Wikipedia: Union of Right Forces (presidents, founding, dissolution)", "accessed": "2026-10-14" },
+        { "url": "https://www.wikidata.org/wiki/Q686098", "title": "Wikidata: Union of Right Forces", "accessed": "2026-10-14" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "rus.yabloko",
+      "name": { "en": "Yabloko (Russian United Democratic Party)", "native": "Российская объединённая демократическая партия «Яблоко»", "native_latin": "Rossiyskaya obyedinyonnaya demokraticheskaya partiya Yabloko" },
+      "abbrev": { "en": "Yabloko", "native": "Яблоко", "native_latin": "Yabloko" },
+      "color": "#3AA335",
+      "sub_ideology": "social_liberal",
+      "founded": "1993-10-16",
+      "status_2000": "active",
+      "leader_history": [
+        { "person": "rus.grigory_yavlinsky", "from": 1993, "to": "2008-06-22" },
+        { "person": "rus.sergey_mitrokhin", "from": "2008-06-22", "to": "2015-12-20" },
+        { "person": "rus.emilia_slabunova", "from": "2015-12-20", "to": "2019-12-15" },
+        { "person": "rus.nikolay_rybakov", "from": "2019-12-15" }
+      ],
+      "popularity_2000": 0.0593,
+      "popularity_note": "Official party-list share, 1999 State Duma election.",
+      "note": "Founded on 16 October 1993 as the Yavlinsky-Boldyrev-Lukin electoral bloc; registered as a party in 2001-2002. Yavlinsky was its first chairman (1995-2008).",
+      "international": "Liberal International",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/Yabloko", "title": "Wikipedia: Yabloko (foundation, chairmen and congress dates)", "accessed": "2026-10-14" },
+        { "url": "https://www.wikidata.org/wiki/Q15332", "title": "Wikidata: Yabloko (chairs)", "accessed": "2026-10-14" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "rus.ldpr",
+      "name": { "en": "Liberal Democratic Party of Russia", "native": "Либерально-демократическая партия России", "native_latin": "Liberalno-demokraticheskaya partiya Rossii" },
+      "abbrev": { "en": "LDPR", "native": "ЛДПР", "native_latin": "LDPR" },
+      "color": "#4488CC",
+      "sub_ideology": "right_populist",
+      "founded": "1992-04-18",
+      "status_2000": "active",
+      "leader_history": [
+        { "person": "rus.vladimir_zhirinovsky", "from": 1992, "to": "2022-04-06" },
+        { "person": "rus.leonid_slutsky", "from": "2022-05-27" }
+      ],
+      "popularity_2000": 0.0598,
+      "popularity_note": "Official party-list share, 1999 State Duma election, contested as the 'Zhirinovsky Bloc'.",
+      "note": "Wikipedia gives the founding as 18 April 1992; Wikidata gives 14 December 1992. Slutsky's election as chairman is dated 27 May 2022 in Wikipedia's 2026 election infobox and 18 May 2022 in Wikidata. Wikipedia is followed for both.",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/Liberal_Democratic_Party_of_Russia", "title": "Wikipedia: Liberal Democratic Party of Russia", "accessed": "2026-10-14" },
+        { "url": "https://www.wikidata.org/wiki/Q212115", "title": "Wikidata: LDPR (chairs)", "accessed": "2026-10-14" },
+        { "url": "https://en.wikipedia.org/wiki/2026_Russian_legislative_election", "title": "Wikipedia: 2026 Russian legislative election (leader since)", "accessed": "2026-10-14" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "rus.our_home_russia",
+      "name": { "en": "Our Home – Russia", "native": "Наш дом — Россия", "native_latin": "Nash dom – Rossiya" },
+      "abbrev": { "en": "NDR", "native": "НДР", "native_latin": "NDR" },
+      "color": "#2F7FC1",
+      "sub_ideology": "liberal_conservative",
+      "founded": "1995-05-12",
+      "dissolved": "2006-05-12",
+      "status_2000": "active",
+      "leader_history": [
+        { "person": "rus.viktor_chernomyrdin", "from": "1995-05-12", "title": "President" }
+      ],
+      "popularity_2000": 0.0119,
+      "popularity_note": "Official party-list share, 1999 State Duma election; it won 7 single-member districts.",
+      "lineage": { "merged_into": "rus.united_russia" },
+      "note": "Joined United Russia after its 2001 founding; formally dissolved in 2006. The end date of Chernomyrdin's presidency is not recorded in the sources used.",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/Our_Home_%E2%80%93_Russia", "title": "Wikipedia: Our Home – Russia", "accessed": "2026-10-14" },
+        { "url": "https://www.wikidata.org/wiki/Q4488786", "title": "Wikidata: Our Home – Russia", "accessed": "2026-10-14" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "rus.agrarian",
+      "name": { "en": "Agrarian Party of Russia", "native": "Аграрная партия России", "native_latin": "Agrarnaya partiya Rossii" },
+      "abbrev": { "en": "APR", "native": "АПР", "native_latin": "APR" },
+      "color": "#2A872A",
+      "sub_ideology": "agrarian",
+      "founded": "1993-02-26",
+      "dissolved": "2008-09-12",
+      "status_2000": "active",
+      "leader_history": [
+        { "person": "rus.mikhail_lapshin", "from": "1993-02-26", "to": 2004 },
+        { "person": "rus.vladimir_plotnikov", "from": 2004, "to": "2008-09-12" }
+      ],
+      "popularity_2000": 0,
+      "popularity_note": "No separate national vote in 1999: the party ran within the Fatherland – All Russia bloc, so its vote is counted in OVR's 13.33%. Agrarian deputies formed the Agro-Industrial group (42 members) when the Duma convened in January 2000.",
+      "lineage": { "merged_into": "rus.united_russia" },
+      "note": "Merged into United Russia in 2008. A second Agrarian Party existed from 2012 to 2019 and is not modelled.",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/Agrarian_Party_of_Russia", "title": "Wikipedia: Agrarian Party of Russia", "accessed": "2026-10-14" },
+        { "url": "https://en.wikipedia.org/wiki/3rd_State_Duma", "title": "Wikipedia: 3rd State Duma (Agro-Industrial group)", "accessed": "2026-10-14" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "rus.united_russia",
+      "name": { "en": "United Russia", "native": "Единая Россия", "native_latin": "Yedinaya Rossiya" },
+      "abbrev": { "en": "UR", "native": "ЕР", "native_latin": "YeR" },
+      "color": "#2E4EA4",
+      "sub_ideology": "statist",
+      "founded": "2001-12-01",
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        { "person": "rus.sergei_shoigu", "from": "2001-12-01", "to": "2002-11-20", "title": "Co-chair of the Supreme Council" },
+        { "person": "rus.yury_luzhkov", "from": "2001-12-01", "to": "2002-11-20", "title": "Co-chair of the Supreme Council" },
+        { "person": "rus.mintimer_shaimiev", "from": "2001-12-01", "to": "2002-11-20", "title": "Co-chair of the Supreme Council" },
+        { "person": "rus.boris_gryzlov", "from": "2002-11-20", "to": "2008-05-07", "title": "Chairman of the Supreme Council; party chairman from 27 November 2004" },
+        { "person": "rus.vladimir_putin", "from": "2008-05-07", "to": "2012-05-26", "title": "Chairman (not a party member)" },
+        { "person": "rus.dmitry_medvedev", "from": "2012-05-26", "title": "Chairman" }
+      ],
+      "popularity_2000": 0,
+      "lineage": { "formed_from": ["rus.unity", "rus.ovr"] },
+      "note": "Formed on 1 December 2001 by the merger of Unity and the Fatherland – All Russia parties; Our Home – Russia and the Agrarian Party joined later. The co-chairs' end date is when Gryzlov became Supreme Council chairman. Wikidata dates Medvedev's chairmanship from 30 May 2012 in one record and 26 May 2012 in another; the Wikipedia date (13th congress, 26 May 2012) is used.",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/United_Russia", "title": "Wikipedia: United Russia (history and leadership)", "accessed": "2026-10-14" },
+        { "url": "https://www.wikidata.org/wiki/Q151469", "title": "Wikidata: United Russia (chairs)", "accessed": "2026-10-14" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "rus.peoples_party",
+      "name": { "en": "People's Party of the Russian Federation", "native": "Народная партия Российской Федерации", "native_latin": "Narodnaya partiya Rossiyskoy Federatsii" },
+      "abbrev": { "en": "NPRF", "native": "НПРФ", "native_latin": "NPRF" },
+      "color": "#6A5ACD",
+      "sub_ideology": "big_tent",
+      "founded": "2001-09-29",
+      "dissolved": "2007-04-14",
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        { "person": "rus.gennady_raikov", "from": "2001-09-29", "to": "2004-03-29" },
+        { "person": "rus.gennady_gudkov", "from": "2004-03-29", "to": "2007-04-14" }
+      ],
+      "popularity_2000": 0,
+      "lineage": { "merged_into": "rus.just_russia" },
+      "note": "Grew out of the 'People's Deputy' Duma group formed in January 2000 under Raikov (registered as a party on 29 September 2001). Joined A Just Russia on 14 April 2007. Wikidata gives only the dissolution date, not the successor.",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/People%27s_Party_of_the_Russian_Federation", "title": "Wikipedia: People's Party of the Russian Federation", "accessed": "2026-10-14" },
+        { "url": "https://www.wikidata.org/wiki/Q430616", "title": "Wikidata: People's Party of the Russian Federation (chairs)", "accessed": "2026-10-14" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "rus.rodina",
+      "name": { "en": "Rodina (Motherland)", "native": "Родина", "native_latin": "Rodina" },
+      "abbrev": { "en": "Rodina", "native": "Родина", "native_latin": "Rodina" },
+      "color": "#E55B62",
+      "sub_ideology": "national_conservative",
+      "founded": "2003-09-14",
+      "dissolved": "2006-10-28",
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        { "person": "rus.sergey_glazyev", "from": "2003-09-14", "to": 2004, "title": "Bloc co-leader; Duma faction leader until March 2004" },
+        { "person": "rus.dmitry_rogozin", "from": 2004, "to": 2006, "title": "Party chairman; Duma faction leader from March 2004" },
+        { "person": "rus.alexander_babakov", "from": 2006, "to": "2006-10-28", "title": "Party chairman" }
+      ],
+      "popularity_2000": 0,
+      "lineage": { "renamed_to": "rus.just_russia" },
+      "note": "The People's Patriotic Union 'Rodina' bloc was founded on 14 September 2003 (Glazyev, Rogozin, Baburin, Skokov) and won 37 seats in 2003. The Rodina party (registered 14 February 2004, successor of the Party of Russian Regions) absorbed the Party of Life and the Pensioners' Party and renamed itself A Just Russia at its 28 October 2006 congress. A separate party named Rodina was refounded on 29 September 2012 (leader Aleksey Zhuravlyov); its single-district seats in 2016, 2021 and 2026 are counted under 'others'.",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/Rodina_(political_bloc)", "title": "Wikipedia: Rodina (political bloc)", "accessed": "2026-10-14" },
+        { "url": "https://en.wikipedia.org/wiki/Rodina_(political_party)", "title": "Wikipedia: Rodina (political party)", "accessed": "2026-10-14" },
+        { "url": "https://en.wikipedia.org/wiki/A_Just_Russia_%E2%80%94_For_Truth", "title": "Wikipedia: A Just Russia (formation from Rodina)", "accessed": "2026-10-14" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "rus.just_russia",
+      "name": { "en": "A Just Russia", "native": "Социалистическая политическая партия «Справедливая Россия»", "native_latin": "Spravedlivaya Rossiya" },
+      "abbrev": { "en": "SR", "native": "СР", "native_latin": "SR" },
+      "color": "#FFC003",
+      "sub_ideology": "social_democrat",
+      "founded": "2006-10-28",
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        { "person": "rus.sergey_mironov", "from": "2006-10-28", "to": "2011-04-16" },
+        { "person": "rus.nikolai_levichev", "from": "2011-04-16", "to": "2013-10-27" },
+        { "person": "rus.sergey_mironov", "from": "2013-10-27" }
+      ],
+      "popularity_2000": 0,
+      "lineage": { "renamed_from": "rus.rodina" },
+      "note": "Formed on 28 October 2006 when Rodina, the Russian Party of Life and the Russian Pensioners' Party merged (legally Rodina renamed). Named 'A Just Russia – Patriots – For Truth' from 22 February 2021 to 25 October 2025 after absorbing Patriots of Russia and For Truth, then reverted to 'A Just Russia'. The People's Party joined in 2007.",
+      "international": "Socialist International (2008-2022)",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/A_Just_Russia_%E2%80%94_For_Truth", "title": "Wikipedia: A Just Russia (names, chairmen)", "accessed": "2026-10-14" },
+        { "url": "https://www.wikidata.org/wiki/Q210692", "title": "Wikidata: A Just Russia", "accessed": "2026-10-14" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "rus.new_people",
+      "name": { "en": "New People", "native": "Новые люди", "native_latin": "Novye lyudi" },
+      "abbrev": { "en": "NL", "native": "Новые люди", "native_latin": "Novye lyudi" },
+      "color": "#20C5C5",
+      "sub_ideology": "centrist_liberal",
+      "founded": "2020-03-01",
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        { "person": "rus.alexey_nechayev", "from": "2020-08-08", "title": "Chairman" }
+      ],
+      "popularity_2000": 0,
+      "note": "Constituent congress on 1 March 2020; led by its founder Nechayev since the first party congress on 8 August 2020. Party colour is turquoise; the hex value is approximate.",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/New_People_(political_party)", "title": "Wikipedia: New People (political party)", "accessed": "2026-10-14" },
+        { "url": "https://www.wikidata.org/wiki/Q98842815", "title": "Wikidata: New People", "accessed": "2026-10-14" }
+      ],
+      "confidence": "verified"
+    }
+  ]
+}

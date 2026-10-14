@@ -1,0 +1,113 @@
+{
+  "tag": "SOM",
+  "name": { "en": "Somalia", "native": "Soomaaliya", "official": { "en": "Federal Republic of Somalia" } },
+  "adjective": "Somali",
+  "culture_primary": "somali",
+  "government": {
+    "type": "failed_contested",
+    "effective_executive": "som.president",
+    "head_of_state_office": "som.president",
+    "head_of_government_office": "som.prime_minister",
+    "constitution": {
+      "term_limit_amendable": true,
+      "emergency_powers": false,
+      "referendum_required_for": []
+    },
+    "note": "No functioning central government existed on 1 January 2000: the state collapsed in 1991, and the south was divided among clan-based armed factions. Puntland (1998) and Somaliland (1991, tag SML) ran their own administrations. The Somali National Reconciliation Conference at Arta, Djibouti, created a 245-member Transitional National Assembly in 2000, which elected a President on 26 August 2000 (Transitional National Government). It was followed by the Transitional Federal Government and Transitional Federal Parliament (2004), and by the Federal Government and Federal Parliament (2012), whose members are chosen indirectly through clan delegates. All Presidents have been elected by these bodies; there has been no direct national election. Since 30 March 2024 a constitutional crisis has divided the Federal Government from Puntland, Jubaland and later South West State, and since 15 May 2026 the opposition has disputed the President's mandate. The 'constitution' flags are rough approximations: no constitution was in effective force in 2000, and the current provisional constitution dates from 2012 (amended in 2024 and 2026)."
+  },
+  "offices": [
+    {
+      "id": "som.president",
+      "title": { "en": "President of Somalia" },
+      "role": "head_of_state",
+      "power_weight": 0.65,
+      "selection": "legislature",
+      "term_years": 4,
+      "succession": { "type": "acting_then_election" },
+      "holders": [
+        { "person": null, "from": "1997-01-03", "to": "2000-08-27", "vacant_reason": "No recognised central government. Ali Mahdi Muhammad's interim presidency (from January 1991) ended on 3 January 1997, although he remained a de facto claimant until August 2000. Hussein Farrah Aidid's rival claim (from 2 August 1996) was not recognised, and he gave it up in the Cairo Declaration of December 1997." },
+        { "person": "som.abdiqasim_salad_hassan", "from": "2000-08-27", "to": "2004-10-14", "note": "Transitional National Government; elected by the Transitional National Assembly at Arta on 26 August 2000." },
+        { "person": "som.abdullahi_yusuf_ahmed", "from": "2004-10-14", "to": "2008-12-29", "note": "Transitional Federal Government. Resigned. His own Wikipedia article gives 15 October 2004 as the start of his term." },
+        { "person": "som.aden_madobe", "from": "2008-12-29", "to": "2009-01-31", "acting": true, "note": "Acting as Speaker of the Transitional Federal Parliament." },
+        { "person": "som.sharif_sheikh_ahmed", "from": "2009-01-31", "to": "2012-08-20" },
+        { "person": "som.muse_hassan_abdulle", "from": "2012-08-20", "to": "2012-08-28", "acting": true, "note": "Acting as interim Speaker of the new Federal Parliament." },
+        { "person": "som.mohamed_osman_jawari", "from": "2012-08-28", "to": "2012-09-16", "acting": true, "note": "Acting as Speaker of the House of the People." },
+        { "person": "som.hassan_sheikh_mohamud", "from": "2012-09-16", "to": "2017-02-16", "note": "Elected on 10 September 2012 and took office on 16 September (Wikidata gives 10 September)." },
+        { "person": "som.mohamed_abdullahi_farmaajo", "from": "2017-02-16", "to": "2022-05-23", "note": "His mandate was extended in 2021 amid an electoral dispute. Wikidata gives his term as ending on 15 May 2022, the election date; Wikipedia gives 23 May, the handover." },
+        { "person": "som.hassan_sheikh_mohamud", "from": "2022-05-23", "note": "Elected on 15 May 2022. Mandate disputed since 15 May 2026: he holds that the constitutional amendments of 30 March 2024 extend his term to 15 May 2027, while the opposition says his term expired on 15 May 2026. He remains in office in Mogadishu." }
+      ],
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/List_of_presidents_of_Somalia", "title": "Wikipedia: List of presidents of Somalia (incl. acting presidents, vacancy 1997-2000 and the 2026 dispute)", "accessed": "2026-10-14" },
+        { "url": "https://www.wikidata.org/wiki/Q19364214", "title": "Wikidata: President of Somalia (position held by)", "accessed": "2026-10-14", "note": "Wikidata has a spurious end date in 2024 for Hassan Sheikh Mohamud's second term and uses election dates rather than inauguration dates for some holders; Wikipedia is followed." },
+        { "url": "https://en.wikipedia.org/wiki/Constitutional_crisis_in_Somalia", "title": "Wikipedia: Constitutional crisis in Somalia", "accessed": "2026-10-14" },
+        { "url": "https://en.wikipedia.org/wiki/2026_in_Somalia", "title": "Wikipedia: 2026 in Somalia", "accessed": "2026-10-14", "note": "Its incumbents box lists Aden Madobe as 'acting president since 15 May' 2026. No other source supports this: the list of presidents still shows Hassan Sheikh Mohamud as incumbent (disputed), and news reports place Madobe as Speaker until he was elected leader of South West State in June 2026. The claim is not used." },
+        { "url": "https://www.somaliguardian.com/news/somalia-news/somalia-political-crisis-president-legitimacy-dispute/", "title": "Somali Guardian: Somalia president says term not expired as opposition rejects his legitimacy", "accessed": "2026-10-14" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "som.prime_minister",
+      "title": { "en": "Prime Minister of Somalia", "native": "Ra'iisul Wasaaraha Soomaaliya" },
+      "role": "head_of_government",
+      "power_weight": 0.35,
+      "selection": "appointed",
+      "appointed_by": "som.president",
+      "succession": { "type": "acting_then_election" },
+      "holders": [
+        { "person": null, "from": "1997-01-03", "to": "2000-10-08", "vacant_reason": "No recognised central government. Umar Arteh Ghalib's interim premiership ended in May 1993 according to the Wikipedia list, or on 3 January 1997 as a de facto claim (the date used here); the office stayed vacant until the Transitional National Government appointed a Prime Minister in October 2000." },
+        { "person": "som.ali_khalif_galaydh", "from": "2000-10-08", "to": "2001-10-28", "note": "Transitional National Government." },
+        { "person": "som.osman_jama_ali", "from": "2001-10-28", "to": "2001-11-12", "acting": true },
+        { "person": "som.hassan_abshir_farah", "from": "2001-11-12", "to": "2003-11-08", "note": "Wikidata gives 8 December 2003 as the end date." },
+        { "person": "som.muhammad_abdi_yusuf", "from": "2003-11-08", "to": "2004-11-01", "note": "Wikidata gives 8 December 2003 to 3 November 2004." },
+        { "person": "som.ali_mohammed_ghedi", "from": "2004-11-01", "to": "2007-10-29", "note": "Transitional Federal Government. Resigned. Wikidata gives his start as 23 December 2004." },
+        { "person": "som.salim_aliyow_ibrow", "from": "2007-10-29", "to": "2007-11-24", "acting": true },
+        { "person": "som.nur_hassan_hussein", "from": "2007-11-24", "to": "2009-02-14" },
+        { "person": "som.omar_sharmarke", "from": "2009-02-14", "to": "2010-09-24" },
+        { "person": "som.abdiwahid_gonjeh", "from": "2010-09-24", "to": "2010-11-01", "acting": true },
+        { "person": "som.mohamed_abdullahi_farmaajo", "from": "2010-11-01", "to": "2011-06-19" },
+        { "person": "som.abdiweli_gaas", "from": "2011-06-19", "to": "2012-08-20" },
+        { "person": "som.abdiweli_gaas", "from": "2012-08-20", "to": "2012-10-17", "acting": true, "note": "Stayed on as acting Prime Minister after the Federal Government replaced the TFG." },
+        { "person": "som.abdi_farah_shirdon", "from": "2012-10-17", "to": "2013-12-21" },
+        { "person": "som.abdiweli_sheikh_ahmed", "from": "2013-12-21", "to": "2014-12-24" },
+        { "person": "som.omar_sharmarke", "from": "2014-12-24", "to": "2017-03-01" },
+        { "person": "som.hassan_ali_khaire", "from": "2017-03-01", "to": "2020-07-25" },
+        { "person": "som.mahdi_mohammed_gulaid", "from": "2020-07-25", "to": "2020-09-23", "acting": true },
+        { "person": "som.mohamed_hussein_roble", "from": "2020-09-23", "to": "2022-06-25" },
+        { "person": "som.hamza_abdi_barre", "from": "2022-06-25", "note": "Approved by the House of the People on 25 June 2022. Still in office in 2026 (the 2026 in Somalia article and April-May 2026 reports)." }
+      ],
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/List_of_prime_ministers_of_Somalia", "title": "Wikipedia: List of prime ministers of Somalia (incl. acting PMs and the 1993-2000 vacancy)", "accessed": "2026-10-14" },
+        { "url": "https://www.wikidata.org/wiki/Q1335939", "title": "Wikidata: Prime Minister of Somalia (position held by)", "accessed": "2026-10-14", "note": "Several dates differ by days or weeks from Wikipedia (see holder notes); Wikipedia is followed." },
+        { "url": "https://en.wikipedia.org/wiki/2026_in_Somalia", "title": "Wikipedia: 2026 in Somalia (incumbent Prime Minister)", "accessed": "2026-10-14" }
+      ],
+      "confidence": "needs_review",
+      "review_note": "Wikipedia and Wikidata disagree on the 2003-2004 changeovers: Hassan Abshir Farah's end (8 Nov vs 8 Dec 2003), Muhammad Abdi Yusuf's start and end (8 Nov 2003 - 1 Nov 2004 vs 8 Dec 2003 - 3 Nov 2004) and Ali Mohammed Ghedi's start (1 Nov vs 23 Dec 2004). Check them against a primary source. Also confirm the date the 1990s vacancy began."
+    }
+  ],
+  "legislature": null,
+  "party_system": "multi_party",
+  "start_2000": {
+    "ruling_parties": [],
+    "ideology_support": {
+      "tribal_traditional": 0.45,
+      "regionalist": 0.15,
+      "islamist": 0.15,
+      "national_conservative": 0.10,
+      "islamic_democrat": 0.05,
+      "personalist_authoritarian": 0.05,
+      "technocratic": 0.05
+    },
+    "ideology_support_note": "Estimate only: the last national vote before 2000 listed by Wikipedia is the 1986 presidential election, and none was held after the state collapsed in 1991. The split reflects the 2000 political landscape. Clan-based armed factions (SNA, USC wings, SSDF, SNF) form the largest block (tribal_traditional). Regional autonomy movements (Puntland, the RRA's aim of a south-western state) count as regionalist. The sharia courts of Mogadishu and wider Islamist currents count as islamist and islamic_democrat. Somali nationalism (national_conservative), Barre-era loyalists (personalist_authoritarian), and diaspora and civil-society backing for the Arta process (technocratic) make up the rest.",
+    "stability": 0.08,
+    "war_support": 0.5
+  },
+  "claims": [
+    { "tag": "SML", "note": "Somaliland declared independence in 1991. Somalia regards it as part of its territory and does not recognise its independence." }
+  ],
+  "source": [
+    { "url": "https://en.wikipedia.org/wiki/List_of_presidents_of_Somalia", "title": "Wikipedia: List of presidents of Somalia", "accessed": "2026-10-14" },
+    { "url": "https://en.wikipedia.org/wiki/2000_Somali_presidential_election", "title": "Wikipedia: 2000 Somali presidential election (Transitional National Assembly of 245 members)", "accessed": "2026-10-14" },
+    { "url": "https://en.wikipedia.org/wiki/Constitutional_crisis_in_Somalia", "title": "Wikipedia: Constitutional crisis in Somalia", "accessed": "2026-10-14" }
+  ],
+  "confidence": "verified"
+}

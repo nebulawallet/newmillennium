@@ -1,0 +1,135 @@
+{
+  "tag": "USA",
+  "name": { "en": "United States", "native": "United States", "official": { "en": "United States of America", "native": "United States of America" } },
+  "adjective": "American",
+  "culture_primary": "american",
+  "government": {
+    "type": "presidential",
+    "effective_executive": "usa.president",
+    "head_of_state_office": "usa.president",
+    "head_of_government_office": "usa.president",
+    "constitution": {
+      "term_limit_amendable": true,
+      "emergency_powers": true,
+      "referendum_required_for": []
+    },
+    "note": "Federal presidential republic. The President is both head of state and head of government, chosen by the Electoral College (538 electors) for a four-year term, limited to two terms. Congress cannot remove the President by a vote of confidence, only by impeachment by the House and conviction by the Senate. There are no national referendums."
+  },
+  "offices": [
+    {
+      "id": "usa.president",
+      "title": { "en": "President of the United States", "native": "President of the United States" },
+      "role": "head_of_state_and_government",
+      "power_weight": 1.0,
+      "selection": "electoral_college",
+      "term_years": 4,
+      "term_limit": { "max_terms": 2, "consecutive_only": false },
+      "succession": { "type": "vice", "acting_office": "usa.vice_president" },
+      "holders": [
+        { "person": "usa.bill_clinton", "from": "1993-01-20", "to": "2001-01-20" },
+        { "person": "usa.george_w_bush", "from": "2001-01-20", "to": "2009-01-20" },
+        { "person": "usa.dick_cheney", "from": "2002-06-29", "to": "2002-06-29", "acting": true, "note": "Acting President for about two hours (7:09-9:24 am EDT) under Section 3 of the Twenty-fifth Amendment." },
+        { "person": "usa.dick_cheney", "from": "2007-07-21", "to": "2007-07-21", "acting": true, "note": "Acting President for about two hours (7:16-9:21 am EDT) under Section 3 of the Twenty-fifth Amendment." },
+        { "person": "usa.barack_obama", "from": "2009-01-20", "to": "2017-01-20" },
+        { "person": "usa.donald_trump", "from": "2017-01-20", "to": "2021-01-20" },
+        { "person": "usa.joe_biden", "from": "2021-01-20", "to": "2025-01-20" },
+        { "person": "usa.kamala_harris", "from": "2021-11-19", "to": "2021-11-19", "acting": true, "note": "Acting President for 85 minutes (10:10-11:35 am EST) under Section 3 of the Twenty-fifth Amendment." },
+        { "person": "usa.donald_trump", "from": "2025-01-20", "note": "Second, non-consecutive term." }
+      ],
+      "source": [
+        { "url": "https://www.wikidata.org/wiki/Q11696", "title": "Wikidata: President of the United States (position held by)", "accessed": "2026-10-14" },
+        { "url": "https://en.wikipedia.org/wiki/List_of_presidents_of_the_United_States", "title": "Wikipedia: List of presidents of the United States", "accessed": "2026-10-14" },
+        { "url": "https://en.wikipedia.org/wiki/Acting_President_of_the_United_States", "title": "Wikipedia: Acting President of the United States (Section 3 transfers)", "accessed": "2026-10-14" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "usa.vice_president",
+      "title": { "en": "Vice President of the United States", "native": "Vice President of the United States" },
+      "role": "deputy",
+      "power_weight": 0.05,
+      "selection": "electoral_college",
+      "term_years": 4,
+      "holders": [
+        { "person": "usa.al_gore", "from": "1993-01-20", "to": "2001-01-20" },
+        { "person": "usa.dick_cheney", "from": "2001-01-20", "to": "2009-01-20" },
+        { "person": "usa.joe_biden", "from": "2009-01-20", "to": "2017-01-20" },
+        { "person": "usa.mike_pence", "from": "2017-01-20", "to": "2021-01-20" },
+        { "person": "usa.kamala_harris", "from": "2021-01-20", "to": "2025-01-20" },
+        { "person": "usa.jd_vance", "from": "2025-01-20" }
+      ],
+      "source": [
+        { "url": "https://www.wikidata.org/wiki/Q11699", "title": "Wikidata: Vice President of the United States (position held by)", "accessed": "2026-10-14" },
+        { "url": "https://en.wikipedia.org/wiki/List_of_vice_presidents_of_the_United_States", "title": "Wikipedia: List of vice presidents of the United States", "accessed": "2026-10-14" }
+      ],
+      "confidence": "verified"
+    }
+  ],
+  "legislature": {
+    "name": { "en": "United States Congress", "native": "United States Congress" },
+    "chambers": [
+      {
+        "id": "house",
+        "name": { "en": "House of Representatives", "native": "United States House of Representatives" },
+        "seats": 435,
+        "term_years": 2,
+        "elected": "direct",
+        "system": {
+          "type": "fptp",
+          "district_model": "custom",
+          "note": "435 voting members elected from single-member congressional districts within the states (non-voting delegates not counted). Plurality voting in most districts; a few states use runoff or ranked-choice rules."
+        },
+        "seats_2000": { "usa.democratic": 212, "usa.republican": 222, "independents": 1 },
+        "confidence_chamber": false,
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/106th_United_States_Congress", "title": "Wikipedia: 106th United States Congress (party summary and membership changes)", "accessed": "2026-10-14" }
+        ],
+        "confidence": "verified"
+      },
+      {
+        "id": "senate",
+        "name": { "en": "Senate", "native": "United States Senate" },
+        "seats": 100,
+        "term_years": 6,
+        "elected": "direct",
+        "system": {
+          "type": "fptp",
+          "district_model": "admin1",
+          "note": "Two senators per state, elected statewide for staggered six-year terms; about one third of seats are contested every two years. The Vice President casts tie-breaking votes."
+        },
+        "seats_2000": { "usa.democratic": 45, "usa.republican": 55 },
+        "confidence_chamber": false,
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/106th_United_States_Congress", "title": "Wikipedia: 106th United States Congress (party summary and membership changes)", "accessed": "2026-10-14" }
+        ],
+        "confidence": "verified"
+      }
+    ]
+  },
+  "party_system": "multi_party",
+  "start_2000": {
+    "ruling_parties": ["usa.democratic"],
+    "ideology_support": {
+      "social_liberal": 0.30,
+      "third_way": 0.17,
+      "traditional_conservative": 0.20,
+      "liberal_conservative": 0.12,
+      "christian_conservative": 0.10,
+      "right_populist": 0.05,
+      "libertarian": 0.02,
+      "green": 0.015,
+      "democratic_socialist": 0.01,
+      "big_tent": 0.015
+    },
+    "ideology_support_note": "Derived from the 1996 presidential vote (Clinton 49.2%, Dole 40.7%, Perot/Reform 8.4%, Nader/Green 0.71%, Browne/Libertarian 0.50%, Phillips/Taxpayers 0.19%) and the 1998 House popular vote (Republican 48.4%, Democratic 47.3%, independents 0.6%). The Democratic share is split between liberal and centrist 'New Democrat' currents; the Republican share between traditional, business-oriented and religious conservatives; part of the Perot vote is assigned to right populism and the rest back to the two main parties. The splits within each party are gameplay estimates. The executive (Democratic President Clinton) and the Republican-controlled Congress were held by different parties on 1 January 2000.",
+    "stability": 0.8,
+    "war_support": 0.35
+  },
+  "claims": [],
+  "source": [
+    { "url": "https://en.wikipedia.org/wiki/106th_United_States_Congress", "title": "Wikipedia: 106th United States Congress", "accessed": "2026-10-14" },
+    { "url": "https://en.wikipedia.org/wiki/1996_United_States_presidential_election", "title": "Wikipedia: 1996 United States presidential election", "accessed": "2026-10-14" },
+    { "url": "https://en.wikipedia.org/wiki/1998_United_States_House_of_Representatives_elections", "title": "Wikipedia: 1998 United States House of Representatives elections", "accessed": "2026-10-14" }
+  ],
+  "confidence": "verified"
+}

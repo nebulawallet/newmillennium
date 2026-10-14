@@ -212,6 +212,9 @@
             "type": "string",
             "maxLength": 400
           },
+          "note": {
+            "type": "string"
+          },
           "source": {
             "minItems": 1,
             "type": "array",

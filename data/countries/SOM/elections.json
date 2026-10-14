@@ -1,0 +1,143 @@
+{
+  "rules": [
+    {
+      "kind": "indirect_presidential",
+      "office": "som.president",
+      "every_years": 4,
+      "anchor": "2022-05-15",
+      "snap_possible": true,
+      "note": "The President is elected by members of the Federal Parliament, who are themselves chosen indirectly through clan delegates. The Parliament approved a new constitution in March 2026 allowing direct election of MPs, but when talks collapsed on 15 May 2026 no election plan had been agreed. The President's mandate has been disputed since 15 May 2026."
+    }
+  ],
+  "elections": [
+    {
+      "id": "president_2000",
+      "date": "2000-08-26",
+      "kind": "indirect_presidential",
+      "office": "som.president",
+      "rounds": 3,
+      "historical": {
+        "candidates": [
+          { "person": "som.abdiqasim_salad_hassan", "votes": 78, "round": 1 },
+          { "person": "som.abdullahi_ahmed_addow", "votes": 83, "round": 1 },
+          { "person": "som.abdiqasim_salad_hassan", "votes": 124, "round": 2 },
+          { "person": "som.abdullahi_ahmed_addow", "votes": 110, "round": 2 },
+          { "person": "som.abdiqasim_salad_hassan", "votes": 145, "round": 3 },
+          { "person": "som.abdullahi_ahmed_addow", "votes": 92, "round": 3 }
+        ],
+        "winner": "som.abdiqasim_salad_hassan",
+        "note": "Elected in Djibouti by the 245-member Transitional National Assembly created at the Arta conference. Both candidates stood as independents. A third first-round candidate (35 votes) is unnamed in the source and omitted.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2000_Somali_presidential_election", "title": "Wikipedia: 2000 Somali presidential election (infobox and round-by-round results citing Goobjoog)", "accessed": "2026-10-14" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "president_2004",
+      "date": "2004-10-10",
+      "kind": "indirect_presidential",
+      "office": "som.president",
+      "rounds": 3,
+      "historical": {
+        "candidates": [
+          { "person": "som.abdullahi_yusuf_ahmed", "votes": 189, "round": 3 },
+          { "person": "som.abdullahi_ahmed_addow", "votes": 79, "round": 3 }
+        ],
+        "winner": "som.abdullahi_yusuf_ahmed",
+        "note": "Elected by the Transitional Federal Parliament (the infobox says 281 MPs; 150 votes needed). Abdullahi Yusuf led the first round with 29.30%. The infobox percentages (70.52% and 30.97%) do not add up, so only vote counts are stored.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2004_Somali_presidential_election", "title": "Wikipedia: 2004 Somali presidential election", "accessed": "2026-10-14" }
+        ],
+        "confidence": "needs_review",
+        "review_note": "The source does not label the 189-79 result as the third round, although the text says he won after the second and third rounds; confirm the round number and the first- and second-round tallies."
+      }
+    },
+    {
+      "id": "president_2009",
+      "date": "2009-01-30",
+      "kind": "indirect_presidential",
+      "office": "som.president",
+      "historical": {
+        "candidates": [
+          { "person": "som.sharif_sheikh_ahmed", "party": "som.ars", "votes": 215, "round": 1 },
+          { "person": "som.nur_hassan_hussein", "votes": 59, "round": 1 },
+          { "person": "som.ali_khalif_galaydh", "votes": 31, "round": 1 },
+          { "person": "som.sharif_sheikh_ahmed", "party": "som.ars", "votes": 293, "round": 2 }
+        ],
+        "winner": "som.sharif_sheikh_ahmed",
+        "note": "Held in Djibouti by the enlarged Transitional Federal Parliament. The runner-up, General Maslah Mohammed Siad Barre (60 votes in round 1, 126 in the run-off), is omitted because no source gives his birth year, which the person schema requires. Results template gives two columns; the article text describes three rounds.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2009_Somali_presidential_election", "title": "Wikipedia: 2009 Somali presidential election (infobox and results table)", "accessed": "2026-10-14" }
+        ],
+        "confidence": "needs_review",
+        "review_note": "The article text says three rounds, but the results template shows two columns (first round and run-off). Confirm round numbering. Add Maslah Mohammed Siad Barre once his birth year is sourced."
+      }
+    },
+    {
+      "id": "president_2012",
+      "date": "2012-09-10",
+      "kind": "indirect_presidential",
+      "office": "som.president",
+      "rounds": 2,
+      "historical": {
+        "candidates": [
+          { "person": "som.sharif_sheikh_ahmed", "votes": 64, "round": 1 },
+          { "person": "som.hassan_sheikh_mohamud", "party": "som.pdp", "votes": 60, "round": 1 },
+          { "person": "som.hassan_sheikh_mohamud", "party": "som.pdp", "votes": 190, "round": 2 },
+          { "person": "som.sharif_sheikh_ahmed", "votes": 79, "round": 2 }
+        ],
+        "winner": "som.hassan_sheikh_mohamud",
+        "note": "First presidential election by the new Federal Parliament. The infobox lists Sharif under the ARS label; he is entered without a party because the ARS had merged into the transitional institutions by then. Prime Minister Abdiweli Mohamed Ali came third in round 1.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2012_Somali_presidential_election", "title": "Wikipedia: 2012 Somali presidential election", "accessed": "2026-10-14" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "president_2017",
+      "date": "2017-02-08",
+      "kind": "indirect_presidential",
+      "office": "som.president",
+      "rounds": 2,
+      "historical": {
+        "candidates": [
+          { "person": "som.mohamed_abdullahi_farmaajo", "party": "som.tayo", "votes": 184, "share": 0.5644, "round": 2 },
+          { "person": "som.hassan_sheikh_mohamud", "party": "som.pdp", "votes": 97, "share": 0.2975, "round": 2 },
+          { "person": "som.sharif_sheikh_ahmed", "votes": 45, "share": 0.138, "round": 2 }
+        ],
+        "winner": "som.mohamed_abdullahi_farmaajo",
+        "note": "Elected by the Federal Parliament chosen in the 2016 indirect parliamentary process. Omar Abdirashid Sharmarke withdrew before round 2, and Hassan Sheikh Mohamud conceded after it. The infobox labels Hassan Sheikh as UPD, but the UPD was only founded in October 2018, so his then party, the PDP, is used.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2017_Somali_presidential_election", "title": "Wikipedia: 2017 Somali presidential election", "accessed": "2026-10-14" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "president_2022",
+      "date": "2022-05-15",
+      "kind": "indirect_presidential",
+      "office": "som.president",
+      "rounds": 3,
+      "historical": {
+        "candidates": [
+          { "person": "som.hassan_sheikh_mohamud", "party": "som.upd", "votes": 214, "share": 0.6605, "round": 3 },
+          { "person": "som.mohamed_abdullahi_farmaajo", "party": "som.tayo", "votes": 110, "share": 0.3395, "round": 3 }
+        ],
+        "winner": "som.hassan_sheikh_mohamud",
+        "note": "Joint sitting of both houses of the Federal Parliament (329 votes available, 165 needed) after the 2021-2022 indirect parliamentary elections. Three rounds; earlier-round tallies are not stored.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2022_Somali_presidential_election", "title": "Wikipedia: 2022 Somali presidential election", "accessed": "2026-10-14" }
+        ],
+        "confidence": "verified"
+      }
+    }
+  ],
+  "source": [
+    { "url": "https://en.wikipedia.org/wiki/List_of_presidents_of_Somalia", "title": "Wikipedia: List of presidents of Somalia", "accessed": "2026-10-14" },
+    { "url": "https://en.wikipedia.org/wiki/2026_in_Somalia", "title": "Wikipedia: 2026 in Somalia (March 2026 constitution vote; 15 May 2026 talks collapse with no election plan)", "accessed": "2026-10-14" }
+  ],
+  "confidence": "verified"
+}

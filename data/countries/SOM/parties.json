@@ -1,0 +1,231 @@
+{
+  "parties": [
+    {
+      "id": "som.sna",
+      "name": { "en": "Somali National Alliance", "native": "Isbahaysiga Qaranka Soomaaliyeed" },
+      "abbrev": { "en": "SNA", "native": "SNA" },
+      "color": "#8B6F47",
+      "sub_ideology": "tribal_traditional",
+      "founded": "1992-06-16",
+      "dissolved": 2002,
+      "status_2000": "insurgent",
+      "leader_history": [
+        { "person": "som.hussein_farrah_aidid", "from": 1996, "title": "Leader (succeeded his father, Mohamed Farrah Aidid)" }
+      ],
+      "popularity_2000": 0.15,
+      "popularity_note": "No vote has ever been held; this is a gameplay estimate of the armed faction's weight in 2000, based on its standing as one of the most powerful factions in and around Mogadishu.",
+      "lineage": { "split_from": "som.usc" },
+      "regional_base": ["Banaadir", "Mogadishu", "Hawiye (Habar Gidir)"],
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/Somali_National_Alliance", "title": "Wikipedia: Somali National Alliance (founded 16 June 1992; dissolved 2002 into the SRRC; leaders)", "accessed": "2026-10-14" },
+        { "url": "https://en.wikipedia.org/wiki/Hussein_Farrah_Aidid", "title": "Wikipedia: Hussein Farrah Aidid (succeeded his father as SNA leader in 1996)", "accessed": "2026-10-14" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "som.usc",
+      "name": { "en": "United Somali Congress (Ali Mahdi wing)", "native": "Golaha Midnimada Soomaaliyeed" },
+      "abbrev": { "en": "USC", "native": "USC" },
+      "color": "#2E8B57",
+      "sub_ideology": "tribal_traditional",
+      "founded": 1987,
+      "status_2000": "insurgent",
+      "leader_history": [
+        { "person": "som.ali_mahdi_muhammad", "from": 1991, "title": "Leader of the Ali Mahdi wing" }
+      ],
+      "popularity_2000": 0.12,
+      "popularity_note": "No vote has ever been held; gameplay estimate of the faction's weight in north Mogadishu in 2000.",
+      "regional_base": ["Banaadir", "Mogadishu", "Hawiye"],
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/United_Somali_Congress", "title": "Wikipedia: United Somali Congress (split into Aidid and Ali Mahdi wings; ex-USC leaders joined the TNG in 2000)", "accessed": "2026-10-14" },
+        { "url": "https://en.wikipedia.org/wiki/Somali_National_Alliance", "title": "Wikipedia: Somali National Alliance (1991 USC split between Aidid and Ali Mahdi)", "accessed": "2026-10-14" }
+      ],
+      "confidence": "needs_review",
+      "review_note": "Founding year conflicts within the Wikipedia article: the infobox says 1987, the lead says 'Formed in 1989'. Also confirm the start year of Ali Mahdi's leadership of his wing and whether the wing used a separate name (e.g. Somali Salvation Alliance) on 1 January 2000."
+    },
+    {
+      "id": "som.ssdf",
+      "name": { "en": "Somali Salvation Democratic Front", "native": "Jabhadda Badbaadinta Dimuqraadiyada Soomaaliya" },
+      "abbrev": { "en": "SSDF", "native": "SSDF" },
+      "color": "#1F5FA8",
+      "sub_ideology": "tribal_traditional",
+      "founded": 1978,
+      "dissolved": 2001,
+      "status_2000": "active",
+      "leader_history": [
+        { "person": "som.abdullahi_yusuf_ahmed", "from": 1991, "to": 1998, "title": "Leader" }
+      ],
+      "popularity_2000": 0.12,
+      "popularity_note": "No vote has ever been held; gameplay estimate. The SSDF was the main political force behind the Puntland administration founded in 1998.",
+      "regional_base": ["Puntland", "Darod (Majeerteen)"],
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/Somali_Salvation_Democratic_Front", "title": "Wikipedia: Somali Salvation Democratic Front (founded 1978; active until 2001; leaders)", "accessed": "2026-10-14" },
+        { "url": "https://en.wikipedia.org/wiki/Abdullahi_Yusuf_Ahmed", "title": "Wikipedia: Abdullahi Yusuf Ahmed (SSDF; President of Puntland from 1 August 1998)", "accessed": "2026-10-14" }
+      ],
+      "confidence": "needs_review",
+      "review_note": "The infobox lists Abdullahi Yusuf Ahmed and Mohamed Abshir Muse as leaders 1991-1998 but no leader after 1998; on 1 January 2000 Abdullahi Yusuf was President of Puntland. Confirm who led the SSDF in 2000."
+    },
+    {
+      "id": "som.rra",
+      "name": { "en": "Rahanweyn Resistance Army" },
+      "abbrev": { "en": "RRA", "native": "RRA" },
+      "color": "#C8A400",
+      "sub_ideology": "regionalist",
+      "founded": 1995,
+      "status_2000": "insurgent",
+      "leader_history": [
+        { "person": "som.hassan_shatigadud", "from": 1995, "title": "Chairman" }
+      ],
+      "popularity_2000": 0.10,
+      "popularity_note": "No vote has ever been held; gameplay estimate. The RRA controlled Baidoa and the Bay and Bakool regions and sought autonomy for south-western Somalia.",
+      "regional_base": ["Bay", "Bakool", "Rahanweyn"],
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/Rahanweyn_Resistance_Army", "title": "Wikipedia: Rahanweyn Resistance Army (active from 13 October 1995; headquarters Baidoa; leaders)", "accessed": "2026-10-14" },
+        { "url": "https://en.wikipedia.org/wiki/Hasan_Shatigadud", "title": "Wikipedia: Hasan Muhammad Nur Shatigadud (RRA chairman; says the RRA was founded in September 1995)", "accessed": "2026-10-14" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "som.snf",
+      "name": { "en": "Somali National Front", "native": "Dhaqdhaqaaqa Jabhada Soomaliyeed" },
+      "abbrev": { "en": "SNF", "native": "SNF" },
+      "color": "#FF0000",
+      "sub_ideology": "tribal_traditional",
+      "founded": 1991,
+      "dissolved": 2001,
+      "status_2000": "insurgent",
+      "leader_history": [
+        { "person": "som.omar_haji_mohamed", "from": 1991, "title": "Leader" }
+      ],
+      "popularity_2000": 0.06,
+      "popularity_note": "No vote has ever been held; gameplay estimate. The SNF operated mainly in the Gedo region and was made up largely of former army loyalists of the Barre government.",
+      "regional_base": ["Gedo", "Darod (Marehan)"],
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/Somali_National_Front", "title": "Wikipedia: Somali National Front (founded March 1991; dissolved 2001 into the TNG; leaders)", "accessed": "2026-10-14" },
+        { "url": "https://en.wikipedia.org/wiki/Omar_Haji_Mohamed", "title": "Wikipedia: Omar Haji Mohamed (led the SNF from 1991)", "accessed": "2026-10-14" }
+      ],
+      "confidence": "needs_review",
+      "review_note": "The infobox also lists Mohammed Hashi Gani as a leader without dates; confirm who led the SNF on 1 January 2000."
+    },
+    {
+      "id": "som.icu",
+      "name": { "en": "Islamic Courts Union", "native": "Midowga Maxkamadaha Islaamiga" },
+      "abbrev": { "en": "ICU", "native": "ICU" },
+      "color": "#2F6B4F",
+      "sub_ideology": "islamist",
+      "founded": 2000,
+      "dissolved": 2009,
+      "status_2000": "active",
+      "leader_history": [
+        { "person": "som.sharif_sheikh_ahmed", "from": 2004, "to": 2007, "title": "Chairman (executive committee from June 2006)" },
+        { "person": "som.hassan_dahir_aweys", "from": "2006-06-26", "to": 2007, "title": "Chairman of the Shura council" }
+      ],
+      "popularity_2000": 0.06,
+      "popularity_note": "No vote has ever been held; gameplay estimate. In 1999 several Mogadishu sharia courts were already cooperating; the Islamic Courts Council was formed during 2000.",
+      "regional_base": ["Mogadishu"],
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/Islamic_Courts_Union", "title": "Wikipedia: Islamic Courts Union (courts united in 1999-2000; Sharif Sheikh Ahmed chairman from 2004; Shura council under Hassan Dahir Aweys from 26 June 2006; toppled December 2006; succeeded by the ARS in 2007)", "accessed": "2026-10-14" }
+      ],
+      "confidence": "needs_review",
+      "review_note": "The Wikipedia infobox gives foundation 2000 and dissolution '2007-2009', and the text says eleven courts formed the Islamic Courts Council 'during 2000'. Status 'active' on 1 January 2000 reflects the courts' cooperation from April 1999; confirm the founding date and whether the ICU should instead appear as not yet founded."
+    },
+    {
+      "id": "som.ars",
+      "name": { "en": "Alliance for the Re-liberation of Somalia" },
+      "abbrev": { "en": "ARS", "native": "ARS" },
+      "color": "#3C7A3C",
+      "sub_ideology": "islamist",
+      "founded": 2007,
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        { "person": "som.sharif_sheikh_ahmed", "from": 2007, "title": "Chairman (Djibouti wing from 2008)" }
+      ],
+      "popularity_2000": 0,
+      "popularity_note": "Founded in Eritrea in September 2007 as the political successor to the ICU; its Djibouti wing joined the transitional parliament in 2008-2009.",
+      "lineage": { "formed_from": ["som.icu"] },
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/Alliance_for_the_Re-liberation_of_Somalia", "title": "Wikipedia: Alliance for the Re-liberation of Somalia (founded September 2007; chair Sharif Sheikh Ahmed; split into Djibouti and Asmara wings in 2008)", "accessed": "2026-10-14" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "som.al_shabaab",
+      "name": { "en": "Harakat al-Shabaab al-Mujahideen (al-Shabaab)", "native": "حركة الشباب المجاهدين" },
+      "abbrev": { "en": "al-Shabaab", "native": "الشباب" },
+      "color": "#000000",
+      "sub_ideology": "islamist",
+      "founded": 2006,
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        { "person": "som.ahmed_abdi_godane", "from": 2007, "to": 2014, "title": "Emir" },
+        { "person": "som.ahmed_diriye", "from": 2014, "title": "Emir" }
+      ],
+      "popularity_2000": 0,
+      "popularity_note": "Armed Salafi jihadist movement, active from August 2006; it emerged from the ICU's military wing and has fought the transitional and federal governments since. Its first emir, Ismail Arale (2006-2007), is omitted because no Wikipedia or Wikidata record for him was found.",
+      "lineage": { "split_from": "som.icu" },
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/Al-Shabaab_(militant_group)", "title": "Wikipedia: Al-Shabaab (militant group) (active from August 2006; emirs Ismail Arale 2006-2007, Ahmed Godane 2007-2014, Ahmad Diriye since 2014)", "accessed": "2026-10-14" },
+        { "url": "https://www.wikidata.org/wiki/Q1825075", "title": "Wikidata: Ahmed Abdi Godane (leader of al-Shabaab 2007-2014)", "accessed": "2026-10-14" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "som.pdp",
+      "name": { "en": "Peace and Development Party", "native": "Xisbiga Nabadda Iyo Horumarka" },
+      "abbrev": { "en": "PDP", "native": "PDP" },
+      "color": "#32CD32",
+      "sub_ideology": "islamic_democrat",
+      "founded": 2011,
+      "dissolved": "2018-10-04",
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        { "person": "som.hassan_sheikh_mohamud", "from": 2011, "to": "2018-10-04", "title": "Founder and leader" }
+      ],
+      "popularity_2000": 0,
+      "popularity_note": "Founded in April 2011 by Hassan Sheikh Mohamud, who won the 2012 indirect presidential election as its candidate.",
+      "lineage": { "merged_into": "som.upd" },
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/Peace_and_Development_Party", "title": "Wikipedia: Peace and Development Party (founded April 2011 by Hassan Sheikh Mohamud; succeeded by the UPD on 4 October 2018)", "accessed": "2026-10-14" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "som.upd",
+      "name": { "en": "Union for Peace and Development Party", "native": "Xisbiga Midowga Nabadda iyo Horumarka" },
+      "abbrev": { "en": "UPD", "native": "XMNH" },
+      "color": "#1E7B3C",
+      "sub_ideology": "islamic_democrat",
+      "founded": "2018-10-04",
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        { "person": "som.hassan_sheikh_mohamud", "from": "2018-10-04", "title": "Leader" }
+      ],
+      "popularity_2000": 0,
+      "popularity_note": "Unveiled on 4 October 2018, formed by the Peace and Development Party and the Horseed caucus. Its leader Hassan Sheikh Mohamud won the 2022 indirect presidential election and Prime Minister Hamza Abdi Barre is a member.",
+      "lineage": { "formed_from": ["som.pdp"] },
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/Union_for_Peace_and_Development_Party", "title": "Wikipedia: Union for Peace and Development Party (founded 4 October 2018; leader Hassan Sheikh Mohamud; green and white)", "accessed": "2026-10-14" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "som.tayo",
+      "name": { "en": "Tayo Political Party", "native": "Xisbiga Siyaasadda ee Tayo" },
+      "abbrev": { "en": "TPP", "native": "Tayo" },
+      "color": "#87CEEB",
+      "sub_ideology": "centrist_liberal",
+      "founded": 2012,
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        { "person": "som.mohamed_abdullahi_farmaajo", "from": 2012, "title": "Founder" }
+      ],
+      "popularity_2000": 0,
+      "popularity_note": "Founded in 2012 by Mohamed Abdullahi Mohamed (Farmaajo), who won the 2017 indirect presidential election as its candidate. Described by Wikipedia as a liberal party; light blue.",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/Tayo_(political_party)", "title": "Wikipedia: Tayo Political Party (founded 2012; founder Farmaajo; chairperson Maryam Qasim)", "accessed": "2026-10-14" }
+      ],
+      "confidence": "needs_review",
+      "review_note": "Wikipedia names Farmaajo as founder and Maryam Qasim as chairperson but gives no dates for either; confirm the leadership timeline."
+    }
+  ]
+}

@@ -209,3 +209,8 @@ export const CountryListFile = z.strictObject({
   as_of: z.iso.date(),
   countries: z.array(CountryListEntry),
 });
+
+export const CountryColorsFile = z.strictObject({
+  note: z.string().optional(),
+  colors: z.record(Tag, Color),
+});

@@ -14,6 +14,7 @@ The project root is `C:\Users\eskis\Documents\grandstrategy`. Read these before 
 - **Never invent a person, name, party, date or number.** Every fact must come from a page you actually fetched in this session.
 - **Marking confidence.** Only use `"confidence": "verified"` when fetched data confirms the record. Otherwise use `"needs_review"` with a `review_note` saying exactly what to check. A `needs_review` record is fine; a guessed record is not.
 - **Cross-check Wikidata against Wikipedia**, because Wikidata has errors and gaps. In Germany it got resignation dates wrong and omitted acting office-holders. When they disagree, prefer the Wikipedia article (or an official source) and mention the conflict in a `note`.
+- **Death dates.** `died` may be `YYYY` or `YYYY-MM` if no exact day is documented.
 - **Date precision.** If the tool prints a year (`1999`) rather than a full date, store a bare year where the schema allows it (party `founded`, leader `from`/`to`). Where a full date is required, mark the record `needs_review`.
 - **Neutrality.**
   - Traits may only be factual background (lawyer, former regional executive…) or clearly documented stances.
@@ -112,7 +113,9 @@ For each person:
   - `candidates` (share or votes, and round) for presidential elections.
   - `winner`.
   - Its own `source` and `confidence`.
+- `party_results[].seats` means the seats held **after** the election. When only part of the chamber was contested (e.g. US Senate classes, staggered upper houses), also give `seats_won`.
 - `rules` for the recurrence: `every_years`, an `anchor` set to the most recent real election, and `snap_possible`.
+- People and parties have an optional `note` field. Use it to record conflicting sources (e.g. "Wikipedia gives 3 Feb, Wikidata 6 Feb").
 - Countries without national elections: use `rules: []`, `elections: []` and a `no_elections_reason`.
 
 ### interest_groups.json and laws.json

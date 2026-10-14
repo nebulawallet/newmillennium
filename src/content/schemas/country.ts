@@ -235,7 +235,7 @@ export const Person = z.strictObject({
   birth_year: z.number().int().min(1880).max(2010),
   birth_date: IsoDate.optional(),
   /** Only for people who have actually died. Used by historical-mode events only. */
-  died: IsoDate.optional(),
+  died: z.union([IsoDate, z.string().regex(/^\d{4}(-\d{2})?$/, "YYYY, YYYY-MM or YYYY-MM-DD")]).optional(),
   country: Tag,
   /** Party at game start or when they enter the game. */
   party: ScopedId.optional(),
@@ -252,6 +252,8 @@ export const Person = z.strictObject({
   generated: z.boolean().optional(),
   /** One or two neutral sentences of documented facts. */
   bio: z.string().max(400).optional(),
+  /** Free-text note, e.g. conflicting sources about a date. */
+  note: z.string().optional(),
   ...sourced,
 });
 export type Person = z.infer<typeof Person>;
@@ -299,6 +301,8 @@ export const Party = z.strictObject({
   /** For regional parties: culture ids or region names where support is concentrated. */
   regional_base: z.array(z.string()).optional(),
   international: z.string().optional(),
+  /** Free-text note, e.g. conflicting sources. */
+  note: z.string().optional(),
   ...sourced,
 });
 export type Party = z.infer<typeof Party>;
@@ -353,7 +357,16 @@ export const Election = z.strictObject({
       )
       .optional(),
     party_results: z
-      .array(z.strictObject({ party: z.string(), share: Share.optional(), seats: z.number().int().min(0) }))
+      .array(
+        z.strictObject({
+          party: z.string(),
+          share: Share.optional(),
+          /** Seats held after the election (chamber composition). */
+          seats: z.number().int().min(0),
+          /** Seats won in this election, when only part of the chamber was contested (e.g. US Senate classes). */
+          seats_won: z.number().int().min(0).optional(),
+        }),
+      )
       .optional(),
     /** Referendum result. */
     yes_share: Share.optional(),

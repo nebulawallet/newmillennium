@@ -1,0 +1,119 @@
+{
+  "tag": "IRN",
+  "name": { "en": "Iran", "native": "ایران", "native_latin": "Irân", "official": { "en": "Islamic Republic of Iran", "native": "جمهوری اسلامی ایران", "native_latin": "Jomhuri-ye Eslâmi-ye Irân" } },
+  "adjective": "Iranian",
+  "culture_primary": "persian",
+  "government": {
+    "type": "theocracy",
+    "effective_executive": "irn.supreme_leader",
+    "head_of_state_office": "irn.supreme_leader",
+    "head_of_government_office": "irn.president",
+    "constitution": {
+      "term_limit_amendable": true,
+      "emergency_powers": false,
+      "referendum_required_for": ["revision of the constitution (approved by referendum, as in 1989)"]
+    },
+    "note": "Islamic republic under the Guardianship of the Islamic Jurist. The Supreme Leader is chosen, supervised and can be dismissed by the elected Assembly of Experts (88 members), and holds final authority over the armed forces, judiciary, state broadcasting, the Guardian Council and the Expediency Discernment Council. The directly elected President heads the government; the office of Prime Minister was abolished in 1989. The Guardian Council vets all candidates for the presidency, the Majlis and the Assembly of Experts before they may stand. The Assembly of Experts is not modelled as a legislative chamber (the schema has no slot for it); its elections are listed in elections.json. The Constitute Project describes the President as the de jure head of state in diplomatic functions, but the Supreme Leader is treated here as head of state and effective executive."
+  },
+  "offices": [
+    {
+      "id": "irn.supreme_leader",
+      "title": { "en": "Supreme Leader", "native": "رهبر جمهوری اسلامی ایران", "native_latin": "Rahbar-e Jomhuri-ye Eslâmi-ye Irân" },
+      "role": "supreme_leader",
+      "power_weight": 0.6,
+      "selection": "religious_council",
+      "succession": { "type": "council_choice" },
+      "holders": [
+        { "person": "irn.ali_khamenei", "from": "1989-06-04", "to": "2026-02-28", "note": "Died in office on 2026-02-28." },
+        { "person": null, "from": "2026-02-28", "to": "2026-03-08", "vacant_reason": "Office vacant after the death of Ali Khamenei. Under Article 111 of the constitution an Interim Leadership Council of the President, the Chief Justice and a Guardian Council jurist exercised the Leader's duties from 1 to 8 March 2026, until the Assembly of Experts named a successor." },
+        { "person": "irn.masoud_pezeshkian", "from": "2026-03-01", "to": "2026-03-08", "acting": true, "note": "Member of the Interim Leadership Council ex officio as President." },
+        { "person": "irn.gholam_hossein_mohseni_ejei", "from": "2026-03-01", "to": "2026-03-08", "acting": true, "note": "Member of the Interim Leadership Council ex officio as Chief Justice." },
+        { "person": "irn.alireza_arafi", "from": "2026-03-01", "to": "2026-03-08", "acting": true, "note": "Member of the Interim Leadership Council as the Guardian Council jurist." },
+        { "person": "irn.mojtaba_khamenei", "from": "2026-03-08", "note": "Named by the Assembly of Experts on 8 March 2026." }
+      ],
+      "source": [
+        { "url": "https://www.wikidata.org/wiki/Q332486", "title": "Wikidata: Supreme Leader of Iran (position held by)", "accessed": "2026-10-14" },
+        { "url": "https://en.wikipedia.org/wiki/Supreme_Leader_of_Iran", "title": "Wikipedia: Supreme Leader of Iran (infobox and holders)", "accessed": "2026-10-14" },
+        { "url": "https://en.wikipedia.org/wiki/Interim_Leadership_Council", "title": "Wikipedia: Interim Leadership Council (composition, 1-8 March 2026)", "accessed": "2026-10-14" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "irn.president",
+      "title": { "en": "President", "native": "رئیس جمهور ایران" },
+      "role": "head_of_government",
+      "power_weight": 0.4,
+      "selection": "direct_election",
+      "appointed_by": "irn.supreme_leader",
+      "term_years": 4,
+      "term_limit": { "max_terms": 2, "consecutive_only": true },
+      "succession": { "type": "acting_then_election" },
+      "holders": [
+        { "person": "irn.mohammad_khatami", "from": "1997-08-03", "to": "2005-08-03", "note": "Wikipedia gives 3 August 1997; Wikidata gives 2 August 1997." },
+        { "person": "irn.mahmoud_ahmadinejad", "from": "2005-08-03", "to": "2013-08-03" },
+        { "person": "irn.hassan_rouhani", "from": "2013-08-03", "to": "2021-08-03" },
+        { "person": "irn.ebrahim_raisi", "from": "2021-08-03", "to": "2024-05-19", "note": "Died in office on 2024-05-19." },
+        { "person": "irn.mohammad_mokhber", "from": "2024-05-19", "to": "2024-07-28", "acting": true, "note": "Acting as First Vice President under Article 131." },
+        { "person": "irn.masoud_pezeshkian", "from": "2024-07-28", "note": "Formally endorsed by the Supreme Leader on 28 July 2024; sworn in before the Majlis on 30 July 2024." }
+      ],
+      "source": [
+        { "url": "https://www.wikidata.org/wiki/Q838380", "title": "Wikidata: President of Iran (position held by)", "accessed": "2026-10-14" },
+        { "url": "https://en.wikipedia.org/wiki/List_of_presidents_of_Iran", "title": "Wikipedia: List of presidents of Iran (incl. acting president 2024)", "accessed": "2026-10-14" },
+        { "url": "https://en.wikipedia.org/wiki/President_of_Iran", "title": "Wikipedia: President of Iran (term: 4 years, renewable once consecutively)", "accessed": "2026-10-14" }
+      ],
+      "confidence": "verified"
+    }
+  ],
+  "legislature": {
+    "name": { "en": "Islamic Consultative Assembly (Majlis)", "native": "مجلس شورای اسلامی" },
+    "chambers": [
+      {
+        "id": "majlis",
+        "name": { "en": "Islamic Consultative Assembly", "native": "مجلس شورای اسلامی" },
+        "seats": 270,
+        "term_years": 4,
+        "elected": "direct",
+        "system": {
+          "type": "two_round",
+          "district_model": "custom",
+          "reserved_seats": [
+            { "group": "Religious minorities (Armenians 2, Assyrians 1, Jews 1, Zoroastrians 1)", "seats": 5 }
+          ],
+          "note": "Single- and multi-member constituencies; an absolute (later qualified) majority wins in the first round, otherwise a plurality runoff. All candidates are vetted by the Guardian Council. 270 seats on 1 January 2000 (5th Majlis, elected March/April 1996); enlarged to 290 from the February 2000 election (6th Majlis met in May 2000). seats_2000 uses the last election before 2000 (1996), as summarised by Nohlen et al. (2001), who count independents as allies of the three blocs."
+        },
+        "seats_2000": { "irn.cca": 110, "irn.acc": 80, "irn.ecp": 80 },
+        "confidence_chamber": false,
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/1996_Iranian_legislative_election", "title": "Wikipedia: 1996 Iranian legislative election (Nohlen et al. 2001 table; Adelkhah and Kazemzadeh estimates)", "accessed": "2026-10-14" },
+          { "url": "https://en.wikipedia.org/wiki/Islamic_Consultative_Assembly", "title": "Wikipedia: Islamic Consultative Assembly (seats, voting system, term)", "accessed": "2026-10-14" },
+          { "url": "https://en.wikipedia.org/wiki/2004_Iranian_legislative_election", "title": "Wikipedia: 2004 Iranian legislative election (reserved minority seats)", "accessed": "2026-10-14" }
+        ],
+        "confidence": "needs_review",
+        "review_note": "Bloc seat counts for the 5th Majlis differ by source: Nohlen et al. give CCA and allies 110, Combatant Clerics and allies 80, Executives of Construction and allies 80 (used here, with the five minority seats folded into the blocs); Adelkhah gives Right 90-100, Executives of Construction 70-80, Left about 40; Kazemzadeh gives hardliners 150, Rafsanjani/Executives of Construction 15-60, Imam's Line 30, independents 30. Confirm a preferred breakdown. Also confirm whether the Majlis should count as a confidence chamber (it votes confidence in individual ministers)."
+      }
+    ]
+  },
+  "party_system": "multi_party",
+  "start_2000": {
+    "ruling_parties": ["irn.acc", "irn.ecp", "irn.iipf"],
+    "ideology_support": {
+      "islamic_democrat": 0.52,
+      "shia_theocratic": 0.22,
+      "islamist": 0.10,
+      "social_liberal": 0.05,
+      "regionalist": 0.05,
+      "constitutional_monarchist": 0.03,
+      "democratic_socialist": 0.03
+    },
+    "ideology_support_note": "Estimate, not a measured distribution: candidate vetting limits what national votes can show. Anchored on the 1997 presidential election (Khatami, reformist, 69.07%; Nategh-Nouri, CCA, 24.91%; other candidates about 6%) and the 1996 Majlis blocs. Reformist support is split between the Islamic-democrat camp; principlist support between velayat-e faqih conservatives (shia_theocratic) and other religious conservatives (islamist). Small shares are assigned to currents that could not appear on the ballot (secular liberals, monarchists, the secular left) and to ethnic-regional movements; these are gameplay estimates.",
+    "stability": 0.55,
+    "war_support": 0.3
+  },
+  "claims": [],
+  "source": [
+    { "url": "https://en.wikipedia.org/wiki/Supreme_Leader_of_Iran", "title": "Wikipedia: Supreme Leader of Iran", "accessed": "2026-10-14" },
+    { "url": "https://en.wikipedia.org/wiki/1997_Iranian_presidential_election", "title": "Wikipedia: 1997 Iranian presidential election", "accessed": "2026-10-14" },
+    { "url": "https://en.wikipedia.org/wiki/1996_Iranian_legislative_election", "title": "Wikipedia: 1996 Iranian legislative election", "accessed": "2026-10-14" }
+  ],
+  "confidence": "verified"
+}

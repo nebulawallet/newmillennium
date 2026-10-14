@@ -1,0 +1,664 @@
+{
+  "rules": [
+    {
+      "kind": "presidential",
+      "office": "rus.president",
+      "every_years": 6,
+      "anchor": "2024-03-17",
+      "snap_possible": true,
+      "note": "Direct election (all elections since 2000 were decided in the first round). Four-year terms until the 2008 amendment; six-year terms from 2012. An early election follows a resignation, as in 2000."
+    },
+    {
+      "kind": "legislative",
+      "chamber": "state_duma",
+      "every_years": 5,
+      "anchor": "2026-09-20",
+      "snap_possible": true,
+      "note": "Five-year term since the 2011 election (four years before). Early elections are possible if the President dissolves the Duma."
+    }
+  ],
+  "elections": [
+    {
+      "id": "presidential_2000",
+      "date": "2000-03-26",
+      "kind": "presidential",
+      "office": "rus.president",
+      "rounds": 1,
+      "snap": true,
+      "historical": {
+        "candidates": [
+          {
+            "person": "rus.vladimir_putin",
+            "share": 0.5344,
+            "votes": 39740434,
+            "round": 1
+          },
+          {
+            "person": "rus.gennady_zyuganov",
+            "party": "rus.cprf",
+            "share": 0.2949,
+            "votes": 21928471,
+            "round": 1
+          },
+          {
+            "person": "rus.grigory_yavlinsky",
+            "party": "rus.yabloko",
+            "share": 0.0585,
+            "votes": 4351452,
+            "round": 1
+          }
+        ],
+        "winner": "rus.vladimir_putin",
+        "turnout": 0.6864,
+        "note": "Early election after Yeltsin's resignation; won in the first round. Putin stood as an independent. Other candidates below 5%: Aman Tuleyev, Vladimir Zhirinovsky (2,026,513 votes), Konstantin Titov, Ella Pamfilova and others.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2000_Russian_presidential_election",
+            "title": "Wikipedia: 2000 Russian presidential election",
+            "accessed": "2026-10-14"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "duma_2003",
+      "date": "2003-12-07",
+      "kind": "legislative",
+      "chamber": "state_duma",
+      "historical": {
+        "party_results": [
+          {
+            "party": "rus.united_russia",
+            "share": 0.3756,
+            "seats": 223
+          },
+          {
+            "party": "rus.cprf",
+            "share": 0.1261,
+            "seats": 52
+          },
+          {
+            "party": "rus.ldpr",
+            "share": 0.1145,
+            "seats": 36
+          },
+          {
+            "party": "rus.rodina",
+            "share": 0.0902,
+            "seats": 37
+          },
+          {
+            "party": "rus.yabloko",
+            "share": 0.043,
+            "seats": 4
+          },
+          {
+            "party": "rus.sps",
+            "share": 0.0397,
+            "seats": 3
+          },
+          {
+            "party": "rus.agrarian",
+            "share": 0.0364,
+            "seats": 2
+          },
+          {
+            "party": "rus.peoples_party",
+            "share": 0.0118,
+            "seats": 17
+          },
+          {
+            "party": "others",
+            "seats": 6
+          },
+          {
+            "party": "independents",
+            "seats": 67
+          },
+          {
+            "party": "vacant",
+            "seats": 3
+          }
+        ],
+        "winner": "rus.united_russia",
+        "turnout": 0.5575,
+        "note": "Party-list shares are official CEC percentages. 'others' are single-district seats: Party of Russia's Rebirth-Russian Party of Life bloc 3 (1.88% list vote), New Course-Automobile Russia 1, Development of Enterprise 1, Great Russia-Eurasian Union 1. 'vacant' are 3 districts won by 'against all'.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2003_Russian_legislative_election",
+            "title": "Wikipedia: 2003 Russian legislative election (infobox and results table)",
+            "accessed": "2026-10-14"
+          }
+        ],
+        "confidence": "needs_review",
+        "review_note": "The infobox gives LDPR 11.35% while LDPR's list votes (6,944,322) against United Russia's (22,776,294 = 37.56%) imply about 11.45%; 11.45% is stored. Check the official CEC figure."
+      }
+    },
+    {
+      "id": "presidential_2004",
+      "date": "2004-03-14",
+      "kind": "presidential",
+      "office": "rus.president",
+      "rounds": 1,
+      "historical": {
+        "candidates": [
+          {
+            "person": "rus.vladimir_putin",
+            "share": 0.7191,
+            "votes": 49563020,
+            "round": 1
+          },
+          {
+            "person": "rus.nikolay_kharitonov",
+            "party": "rus.cprf",
+            "share": 0.138,
+            "votes": 9514224,
+            "round": 1
+          }
+        ],
+        "winner": "rus.vladimir_putin",
+        "turnout": 0.6432,
+        "note": "Putin stood as an independent. No other candidate reached 5%: Sergey Glazyev (2,850,330 votes) and Irina Khakamada (2,671,519), both independents, came third and fourth.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2004_Russian_presidential_election",
+            "title": "Wikipedia: 2004 Russian presidential election",
+            "accessed": "2026-10-14"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "duma_2007",
+      "date": "2007-12-02",
+      "kind": "legislative",
+      "chamber": "state_duma",
+      "historical": {
+        "party_results": [
+          {
+            "party": "rus.united_russia",
+            "share": 0.643,
+            "seats": 315
+          },
+          {
+            "party": "rus.cprf",
+            "share": 0.1157,
+            "seats": 57
+          },
+          {
+            "party": "rus.ldpr",
+            "share": 0.0814,
+            "seats": 40
+          },
+          {
+            "party": "rus.just_russia",
+            "share": 0.0774,
+            "seats": 38
+          },
+          {
+            "party": "rus.agrarian",
+            "share": 0.023,
+            "seats": 0
+          },
+          {
+            "party": "rus.yabloko",
+            "share": 0.0159,
+            "seats": 0
+          },
+          {
+            "party": "rus.sps",
+            "share": 0.0096,
+            "seats": 0
+          }
+        ],
+        "winner": "rus.united_russia",
+        "turnout": 0.6371,
+        "note": "First election with all 450 seats by party-list PR and a 7% threshold. Shares for the four seat-winning parties are the infobox figures; Agrarian, Yabloko and SPS shares are computed from the vote totals on the same basis.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2007_Russian_legislative_election",
+            "title": "Wikipedia: 2007 Russian legislative election",
+            "accessed": "2026-10-14"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "presidential_2008",
+      "date": "2008-03-02",
+      "kind": "presidential",
+      "office": "rus.president",
+      "rounds": 1,
+      "historical": {
+        "candidates": [
+          {
+            "person": "rus.dmitry_medvedev",
+            "party": "rus.united_russia",
+            "share": 0.7125,
+            "votes": 52530712,
+            "round": 1
+          },
+          {
+            "person": "rus.gennady_zyuganov",
+            "party": "rus.cprf",
+            "share": 0.1796,
+            "votes": 13243550,
+            "round": 1
+          },
+          {
+            "person": "rus.vladimir_zhirinovsky",
+            "party": "rus.ldpr",
+            "share": 0.0948,
+            "votes": 6988510,
+            "round": 1
+          }
+        ],
+        "winner": "rus.dmitry_medvedev",
+        "turnout": 0.6971,
+        "note": "Medvedev was nominated by United Russia but was not a party member at the time. The fourth candidate, Andrei Bogdanov (Democratic Party), received 968,344 votes.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2008_Russian_presidential_election",
+            "title": "Wikipedia: 2008 Russian presidential election",
+            "accessed": "2026-10-14"
+          },
+          {
+            "url": "https://en.wikipedia.org/wiki/United_Russia",
+            "title": "Wikipedia: United Russia (Medvedev's 2008 nomination)",
+            "accessed": "2026-10-14"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "duma_2011",
+      "date": "2011-12-04",
+      "kind": "legislative",
+      "chamber": "state_duma",
+      "historical": {
+        "party_results": [
+          {
+            "party": "rus.united_russia",
+            "share": 0.4932,
+            "seats": 238
+          },
+          {
+            "party": "rus.cprf",
+            "share": 0.1919,
+            "seats": 92
+          },
+          {
+            "party": "rus.just_russia",
+            "share": 0.1324,
+            "seats": 64
+          },
+          {
+            "party": "rus.ldpr",
+            "share": 0.1167,
+            "seats": 56
+          },
+          {
+            "party": "rus.yabloko",
+            "share": 0.0343,
+            "seats": 0
+          }
+        ],
+        "winner": "rus.united_russia",
+        "turnout": 0.601,
+        "note": "All 450 seats by party-list PR with a 7% threshold. Yabloko's share is computed from its vote total on the infobox basis.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2011_Russian_legislative_election",
+            "title": "Wikipedia: 2011 Russian legislative election",
+            "accessed": "2026-10-14"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "presidential_2012",
+      "date": "2012-03-04",
+      "kind": "presidential",
+      "office": "rus.president",
+      "rounds": 1,
+      "historical": {
+        "candidates": [
+          {
+            "person": "rus.vladimir_putin",
+            "party": "rus.united_russia",
+            "share": 0.6435,
+            "votes": 45602075,
+            "round": 1
+          },
+          {
+            "person": "rus.gennady_zyuganov",
+            "party": "rus.cprf",
+            "share": 0.1738,
+            "votes": 12318353,
+            "round": 1
+          },
+          {
+            "person": "rus.mikhail_prokhorov",
+            "share": 0.0808,
+            "votes": 5722508,
+            "round": 1
+          },
+          {
+            "person": "rus.vladimir_zhirinovsky",
+            "party": "rus.ldpr",
+            "share": 0.0629,
+            "votes": 4458103,
+            "round": 1
+          }
+        ],
+        "winner": "rus.vladimir_putin",
+        "turnout": 0.6527,
+        "note": "Putin was nominated by United Russia; Prokhorov stood as an independent. Sergey Mironov (A Just Russia) received 2,763,935 votes.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2012_Russian_presidential_election",
+            "title": "Wikipedia: 2012 Russian presidential election",
+            "accessed": "2026-10-14"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "duma_2016",
+      "date": "2016-09-18",
+      "kind": "legislative",
+      "chamber": "state_duma",
+      "historical": {
+        "party_results": [
+          {
+            "party": "rus.united_russia",
+            "share": 0.542,
+            "seats": 343
+          },
+          {
+            "party": "rus.cprf",
+            "share": 0.1334,
+            "seats": 42
+          },
+          {
+            "party": "rus.ldpr",
+            "share": 0.1314,
+            "seats": 39
+          },
+          {
+            "party": "rus.just_russia",
+            "share": 0.0622,
+            "seats": 23
+          },
+          {
+            "party": "rus.yabloko",
+            "share": 0.02,
+            "seats": 0
+          },
+          {
+            "party": "others",
+            "seats": 2
+          },
+          {
+            "party": "independents",
+            "seats": 1
+          }
+        ],
+        "winner": "rus.united_russia",
+        "turnout": 0.4788,
+        "note": "Return to the parallel system (225 list seats with a 5% threshold, 225 single-member districts). 'others' are single-district seats for Rodina (refounded 2012) and Civic Platform. Yabloko's share is computed from its list vote on the infobox basis.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2016_Russian_legislative_election",
+            "title": "Wikipedia: 2016 Russian legislative election",
+            "accessed": "2026-10-14"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "presidential_2018",
+      "date": "2018-03-18",
+      "kind": "presidential",
+      "office": "rus.president",
+      "rounds": 1,
+      "historical": {
+        "candidates": [
+          {
+            "person": "rus.vladimir_putin",
+            "share": 0.7753,
+            "votes": 56430712,
+            "round": 1
+          },
+          {
+            "person": "rus.pavel_grudinin",
+            "party": "rus.cprf",
+            "share": 0.119,
+            "votes": 8659206,
+            "round": 1
+          },
+          {
+            "person": "rus.vladimir_zhirinovsky",
+            "party": "rus.ldpr",
+            "share": 0.0571,
+            "votes": 4154985,
+            "round": 1
+          }
+        ],
+        "winner": "rus.vladimir_putin",
+        "turnout": 0.675,
+        "note": "Putin stood as an independent. Grudinin, not a party member, was the CPRF's nominee. Grigory Yavlinsky (Yabloko) received 769,644 votes.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2018_Russian_presidential_election",
+            "title": "Wikipedia: 2018 Russian presidential election",
+            "accessed": "2026-10-14"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "constitutional_vote_2020",
+      "date": "2020-07-01",
+      "kind": "referendum",
+      "question": "Do you approve amendments to the Constitution of the Russian Federation?",
+      "historical": {
+        "yes_share": 0.7856,
+        "winner": "yes",
+        "turnout": 0.6788,
+        "note": "Voting ran from 25 June to 1 July 2020 (originally scheduled for 22 April). Legal form: not a referendum under the referendum law but an 'All-Russian vote' (obshcherossiyskoye golosovaniye) created by Article 2 of the constitutional amendment law; the amendments did not legally require a nationwide vote. Yes 57,747,288, No 15,761,978, invalid 604,951; the yes share here is of valid votes. The amendments included the reset of presidential term counting.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2020_Russian_constitutional_referendum",
+            "title": "Wikipedia: 2020 Russian constitutional referendum (infobox and 'All-Russian voting' section)",
+            "accessed": "2026-10-14"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "duma_2021",
+      "date": "2021-09-19",
+      "kind": "legislative",
+      "chamber": "state_duma",
+      "historical": {
+        "party_results": [
+          {
+            "party": "rus.united_russia",
+            "share": 0.4982,
+            "seats": 324
+          },
+          {
+            "party": "rus.cprf",
+            "share": 0.1893,
+            "seats": 57
+          },
+          {
+            "party": "rus.ldpr",
+            "share": 0.0755,
+            "seats": 21
+          },
+          {
+            "party": "rus.just_russia",
+            "share": 0.0746,
+            "seats": 27
+          },
+          {
+            "party": "rus.new_people",
+            "share": 0.0532,
+            "seats": 13
+          },
+          {
+            "party": "rus.yabloko",
+            "share": 0.0134,
+            "seats": 0
+          },
+          {
+            "party": "others",
+            "seats": 3
+          },
+          {
+            "party": "independents",
+            "seats": 5
+          }
+        ],
+        "winner": "rus.united_russia",
+        "turnout": 0.5172,
+        "note": "Voting held over three days, 17-19 September 2021; the final day is stored. A Just Russia ran as 'A Just Russia – For Truth'. 'others' are single-district seats for Rodina, Party of Growth and Civic Platform.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2021_Russian_legislative_election",
+            "title": "Wikipedia: 2021 Russian legislative election",
+            "accessed": "2026-10-14"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "presidential_2024",
+      "date": "2024-03-17",
+      "kind": "presidential",
+      "office": "rus.president",
+      "rounds": 1,
+      "historical": {
+        "candidates": [
+          {
+            "person": "rus.vladimir_putin",
+            "share": 0.8848,
+            "votes": 76277708,
+            "round": 1
+          },
+          {
+            "person": "rus.nikolay_kharitonov",
+            "party": "rus.cprf",
+            "share": 0.0437,
+            "votes": 3768470,
+            "round": 1
+          },
+          {
+            "person": "rus.vladislav_davankov",
+            "party": "rus.new_people",
+            "share": 0.039,
+            "votes": 3362484,
+            "round": 1
+          },
+          {
+            "person": "rus.leonid_slutsky",
+            "party": "rus.ldpr",
+            "share": 0.0324,
+            "votes": 2795629,
+            "round": 1
+          }
+        ],
+        "winner": "rus.vladimir_putin",
+        "turnout": 0.7749,
+        "note": "Voting held over three days, 15-17 March 2024; the final day is stored. Putin stood as an independent supported by United Russia, A Just Russia and others. Davankov's and Slutsky's shares are computed from their votes on the infobox basis (valid votes).",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2024_Russian_presidential_election",
+            "title": "Wikipedia: 2024 Russian presidential election",
+            "accessed": "2026-10-14"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "duma_2026",
+      "date": "2026-09-20",
+      "kind": "legislative",
+      "chamber": "state_duma",
+      "historical": {
+        "party_results": [
+          {
+            "party": "rus.united_russia",
+            "share": 0.5901,
+            "seats": 349
+          },
+          {
+            "party": "rus.cprf",
+            "share": 0.1366,
+            "seats": 37
+          },
+          {
+            "party": "rus.ldpr",
+            "share": 0.0901,
+            "seats": 23
+          },
+          {
+            "party": "rus.new_people",
+            "share": 0.0792,
+            "seats": 19
+          },
+          {
+            "party": "rus.just_russia",
+            "share": 0.0542,
+            "seats": 17
+          },
+          {
+            "party": "others",
+            "seats": 1
+          },
+          {
+            "party": "independents",
+            "seats": 4
+          }
+        ],
+        "winner": "rus.united_russia",
+        "note": "Voting held over three days, 18-20 September 2026; the final day is stored. 'others' is a single-district seat for Rodina. Turnout is omitted because the article's infobox (59.58%) and its results text (55.66%) disagree.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2026_Russian_legislative_election",
+            "title": "Wikipedia: 2026 Russian legislative election (infobox and results table)",
+            "accessed": "2026-10-14"
+          }
+        ],
+        "confidence": "needs_review",
+        "review_note": "Recent article flagged for copy-editing. Confirm the seat totals and list percentages against the final CEC protocol, and settle turnout (infobox 59.58% vs text 55.66%)."
+      }
+    }
+  ],
+  "source": [
+    {
+      "url": "https://en.wikipedia.org/wiki/2024_Russian_presidential_election",
+      "title": "Wikipedia: 2024 Russian presidential election",
+      "accessed": "2026-10-14"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/2026_Russian_legislative_election",
+      "title": "Wikipedia: 2026 Russian legislative election",
+      "accessed": "2026-10-14"
+    }
+  ],
+  "confidence": "verified"
+}
