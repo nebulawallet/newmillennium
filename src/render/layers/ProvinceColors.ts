@@ -43,3 +43,9 @@ export class ProvinceColors {
     }
   `;
 }
+
+/** Bounding sphere covering the whole projected world, for 2D (xy-only) geometries. */
+export function setWorldBounds(g: THREE.BufferGeometry): void {
+  g.boundingSphere = new THREE.Sphere(new THREE.Vector3(0, 30, 0), 400);
+  g.boundingBox = new THREE.Box3(new THREE.Vector3(-180, -120, -1), new THREE.Vector3(180, 180, 1));
+}

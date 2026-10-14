@@ -1,6 +1,6 @@
 import * as THREE from "three";
 import type { MapData } from "../mapData.ts";
-import { ProvinceColors } from "./ProvinceColors.ts";
+import { ProvinceColors, setWorldBounds } from "./ProvinceColors.ts";
 
 /**
  * Approach A: one merged triangle mesh for all provinces. Each vertex carries its province id;
@@ -17,7 +17,7 @@ export class ProvinceMesh {
     for (let i = 0; i < pid.length; i++) pid[i] = map.provinceOfVertex[i]!;
     g.setAttribute("pid", new THREE.Float32BufferAttribute(pid, 1));
     g.setIndex(new THREE.BufferAttribute(map.indices, 1));
-    g.computeBoundingSphere();
+    setWorldBounds(g); // positions are 2D; three's computeBoundingSphere expects xyz
 
     this.material = new THREE.ShaderMaterial({
       uniforms: {

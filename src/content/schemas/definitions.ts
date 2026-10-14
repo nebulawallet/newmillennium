@@ -104,6 +104,10 @@ export const GovernmentType = z.strictObject({
   succession_model: z.enum(["election", "hereditary", "party", "council", "military", "religious", "external", "none"]),
   /** Laws that cannot be enacted under this government type. */
   forbidden_laws: z.array(Id).default([]),
+  /** Starting law per category for countries without a laws.json. */
+  default_laws: z.record(Id, Id).default({}),
+  /** Starting interest group influence (0..1) for countries without an interest_groups.json. */
+  default_ig_influence: z.record(Id, z.number().min(0).max(1)).default({}),
   modifiers: Modifiers.default({}),
 });
 export const GovernmentTypesFile = z.strictObject({ government_types: z.array(GovernmentType) });

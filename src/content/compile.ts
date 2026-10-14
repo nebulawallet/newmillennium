@@ -321,6 +321,13 @@ function checkDefinitions(db: ContentDB, err: Report): void {
   }
   for (const g of db.governmentTypes.values()) {
     for (const l of g.forbidden_laws) if (!db.lawCategoryOf.has(l)) err("REF", "government_types.json", `${g.id}: unknown law '${l}'`);
+    for (const [cat, l] of Object.entries(g.default_laws)) {
+      if (db.lawCategoryOf.get(l) !== cat) err("REF", "government_types.json", `${g.id}: default law '${l}' is not in category '${cat}'`);
+      if (g.forbidden_laws.includes(l)) err("LAW_GOV", "government_types.json", `${g.id}: default law '${l}' is forbidden for this type`);
+    }
+    for (const cat of db.lawCategories.keys())
+      if (db.lawCategories.size && !(cat in g.default_laws)) err("REF", "government_types.json", `${g.id}: no default law for category '${cat}'`);
+    for (const ig of Object.keys(g.default_ig_influence)) if (!db.interestGroupTypes.has(ig)) err("REF", "government_types.json", `${g.id}: unknown interest group '${ig}'`);
     for (const m of Object.keys(g.modifiers)) mod(m, "government_types.json", g.id);
   }
   for (const ig of db.interestGroupTypes.values()) {

@@ -1,5 +1,6 @@
 import * as THREE from "three";
 import type { MapData } from "../mapData.ts";
+import { setWorldBounds } from "./ProvinceColors.ts";
 
 /**
  * Border lines as screen-space-width quads (WebGL lines are 1px only). Each segment becomes a
@@ -51,6 +52,7 @@ export class Borders {
     g.setAttribute("aCorner", new THREE.Float32BufferAttribute(corner, 2));
     g.setAttribute("aType", new THREE.Float32BufferAttribute(type, 1));
     g.setIndex(new THREE.BufferAttribute(index, 1));
+    setWorldBounds(g);
     const mesh = new THREE.Mesh(g, material);
     mesh.frustumCulled = false;
     mesh.renderOrder = 2;
