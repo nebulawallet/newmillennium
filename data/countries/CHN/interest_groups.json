@@ -1,0 +1,15 @@
+{
+  "note": "Influence and approval are gameplay starting values for 1 January 2000 (Jiang Zemin and Zhu Rongji leadership), not measured data. Influence reflects institutional weight in a one-party state: the PLA and the security apparatus are answerable to the party and powerful within it; state-owned and private business gained weight under market reform; there are no independent unions (the All-China Federation of Trade Unions is party-led), no independent press and no legal opposition.",
+  "interest_groups": [
+    { "type": "military", "influence": 0.35, "approval": 62, "note": "The PLA answers to the party Central Military Commission, which Jiang Zemin chaired." },
+    { "type": "security_services", "influence": 0.35, "approval": 65, "note": "Ministry of Public Security, Ministry of State Security and the People's Armed Police." },
+    { "type": "business", "influence": 0.35, "approval": 58, "note": "State-owned enterprises under restructuring alongside a growing private and foreign-invested sector." },
+    { "type": "labour_unions", "influence": 0.1, "approval": 40, "note": "Only the party-led ACFTU is legal. Approval is reduced by state-enterprise layoffs (xiagang) under the late-1990s reforms." },
+    { "type": "religious_establishment", "influence": 0.04, "approval": 35, "note": "Officially registered religious associations under state supervision; unregistered groups operate outside the system." },
+    { "type": "rural", "influence": 0.15, "approval": 45, "note": "The majority of the population still lived in the countryside." },
+    { "type": "urban_middle_class", "influence": 0.25, "approval": 60 },
+    { "type": "minorities", "influence": 0.05, "approval": 38, "note": "Includes Tibetans, Uyghurs and other recognised minorities in autonomous regions." },
+    { "type": "youth_students", "influence": 0.1, "approval": 52 },
+    { "type": "media", "influence": 0.1, "approval": 55, "note": "State-controlled media under the party's Propaganda Department." }
+  ]
+}

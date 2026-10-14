@@ -191,6 +191,8 @@ export const StartStatus = z.enum(START_STATUSES);
 export const CountryListEntry = z.strictObject({
   tag: Tag,
   name: z.string(),
+  /** Short name for map labels when `name` is long (e.g. "Yugoslavia"). */
+  short_name: z.string().optional(),
   region: Region,
   start_status: StartStatus,
   /** Member of the UN on 1 January 2000. */

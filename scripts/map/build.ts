@@ -70,6 +70,8 @@ interface FC<P> { features: Feature<P>[] }
 // ------------------------------------------------------------------ units
 
 interface Unit {
+  /** Regional majority culture from data/map/regional_cultures.json (null = owner's default). */
+  culture: string | null;
   owner: string;
   controller: string;
   adm0: string;
@@ -93,14 +95,12 @@ function bboxOverlap(a: number[], b: number[]): boolean {
   return a[0]! <= b[2]! && b[0]! <= a[2]! && a[1]! <= b[3]! && b[1]! <= a[3]!;
 }
 
-/** Drop parts south of the map crop and tiny slivers. */
+/** Drop parts south of the map crop and tiny slivers (but never a unit's last polygon, e.g. Vatican City). */
 function cleanGeom(mp: MultiPolygon): MultiPolygon {
-  return mp.filter((poly) => {
-    const ring = poly[0]!;
-    if (ring.length < 4) return false;
-    const maxLat = Math.max(...ring.map((p) => p[1]));
-    return maxLat > LAT_MIN && Math.abs(areaKm2([poly])) > 0.5;
-  });
+  const valid = mp.filter((poly) => poly[0]!.length >= 4 && Math.max(...poly[0]!.map((p) => p[1])) > LAT_MIN);
+  const kept = valid.filter((poly) => Math.abs(areaKm2([poly])) > 0.5);
+  if (kept.length || !valid.length) return kept;
+  return [valid.reduce((a, b) => (Math.abs(areaKm2([a])) >= Math.abs(areaKm2([b])) ? a : b))];
 }
 
 // ------------------------------------------------------------------ main
@@ -116,6 +116,9 @@ async function main(): Promise<void> {
   const overrides = readJson<any>(join(DATA, "map/border_overrides_2000.json"));
   const popOverrides = readJson<any>(join(DATA, "map/population_overrides.json"));
   const wb = readJson<any>(join(DATA, "economy/worldbank_2000.json")).countries as Record<string, { population?: number }>;
+  const cultureRules = readJson<{ rules: { adm0: string; names?: string[]; regions?: string[]; culture: string }[] }>(join(DATA, "map/regional_cultures.json")).rules;
+  const cultureIds = new Set(readJson<{ cultures: { id: string }[] }>(join(DATA, "cultures/cultures.json")).cultures.map((c) => c.id));
+  for (const r of cultureRules) if (!cultureIds.has(r.culture)) throw new Error(`regional_cultures: unknown culture '${r.culture}'`);
   const provOverridesPath = join(DATA, "map/province_overrides.json");
   const provOverrides = existsSync(provOverridesPath) ? readJson<any>(provOverridesPath) : { provinces: {} };
 
@@ -126,6 +129,7 @@ async function main(): Promise<void> {
   const dropped = new Set<string>(overrides.adm0_drop);
   const unmapped = new Map<string, number>();
   let units: Unit[] = [];
+  const matchedRules = new Set<unknown>();
   for (const f of admin1.features) {
     const p = f.properties;
     if (dropped.has(p.adm0_a3)) continue;
@@ -137,7 +141,14 @@ async function main(): Promise<void> {
     const geom = cleanGeom(roundMP(toMulti(f.geometry)));
     if (!geom.length) continue;
     const pool = { KOS: "XKX", SDS: "SSD", PSX: "PSE", SOL: "SOM", SAH: "SAH", CYN: "NCY", CNM: "CYP" }[p.adm0_a3] ?? p.adm0_a3;
-    units.push({ owner, controller: owner, adm0: p.adm0_a3, adm1: [p.adm1_code], name: p.name || p.adm1_code, region: p.region ?? "", geom, area: areaKm2(geom), popWeight: 0, pool });
+    const rule = cultureRules.find((r) => r.adm0 === p.adm0_a3 && (r.names?.includes(p.name) || r.regions?.includes(p.region)));
+    if (rule) matchedRules.add(rule);
+    units.push({ culture: rule?.culture ?? null, owner, controller: owner, adm0: p.adm0_a3, adm1: [p.adm1_code], name: p.name || p.adm1_code, region: p.region ?? "", geom, area: areaKm2(geom), popWeight: 0, pool });
+  }
+  for (const r of cultureRules) {
+    const names = new Set(admin1.features.filter((f) => f.properties.adm0_a3 === r.adm0).flatMap((f) => [f.properties.name, f.properties.region]));
+    const missing = [...(r.names ?? []), ...(r.regions ?? [])].filter((n) => !names.has(n));
+    if (missing.length) log(`  regional_cultures: no ${r.adm0} unit named ${missing.join(", ")}`);
   }
   if (unmapped.size) throw new Error(`admin-1 units with no owner tag (add to adm0_owner or adm0_drop): ${[...unmapped].map(([k, n]) => `${k}(${n})`).join(" ")}`);
   log(`${units.length} admin-1 units mapped to ${new Set(units.map((u) => u.owner)).size} owners`);
@@ -398,7 +409,7 @@ async function main(): Promise<void> {
       area_km2: Math.round(u.area), population: pop, terrain,
       elevation_m: Math.round(mean), ruggedness_m: Math.round(sd), infrastructure,
       coastal: coastal[id] === 1, lake_share: Math.round((lakeCount[id]! / pc) * 100) / 100,
-      culture: cultureOf.get(u.owner) ?? null, resources: {},
+      culture: u.culture ?? cultureOf.get(u.owner) ?? null, resources: {},
     };
     // manual overrides keyed by the first admin-1 code (stable across rebuilds)
     const o = provOverrides.provinces?.[u.adm1[0]!];

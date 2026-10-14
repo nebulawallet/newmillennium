@@ -48,18 +48,20 @@ Live sources sometimes report allegations or investigations involving real peopl
 
 <!-- AUTO-GENERATED BELOW: run `npm run review-report`; edits below this line are overwritten -->
 
-## Needs review: 49 of 509 records
+## Needs review: 52 of 567 records
 
-Countries with politics data: 7 / 212.
+Countries with politics data: 8 / 212.
 
-Countries with no data yet (205): ALB, AND, AUT, BEL, BIH, BGR, HRV, CYP, CZE, DNK, FIN, FRA, GRC, HUN, ISL, IRL, ITA, LIE, LUX, MLT, MCO, NLD, MKD, NOR, POL, PRT, ROU, SMR, SVK, SVN, ESP, SWE, CHE, YUG, MNE, KOS, VAT, NCY, UKR, BLR, MDA, EST, LVA, LTU, GEO, ARM, AZE, KAZ, KGZ, TJK, TKM, UZB, PMR, ABK, SOS, NKR, ICH, CAN, ATG, ARG, BHS, BRB, BLZ, BOL, BRA, CHL, COL, CRI, CUB, DMA, DOM, ECU, SLV, GRD, GTM, GUY, HTI, HND, JAM, MEX, NIC, PAN, PRY, PER, KNA, LCA, VCT, SUR, TTO, URY, VEN, FAR, DZA, BHR, EGY, IRQ, ISR, JOR, KWT, LBN, LBY, MRT, MAR, OMN, QAT, SAU, SYR, TUN, TUR, ARE, YEM, PSE, ESH, KUR, AGO, BEN, BWA, BFA, BDI, CPV, CMR, CAF, TCD, COM, COD, COG, CIV, DJI, GNQ, ERI, SWZ, ETH, GAB, GMB, GHA, GIN, GNB, KEN, LSO, LBR, MDG, MWI, MLI, MUS, MOZ, NAM, NER, NGA, RWA, STP, SEN, SYC, SLE, ZAF, SDN, TZA, TGO, UGA, ZMB, ZWE, SSD, SML, UNI, RCD, MLC, AFG, AFN, BGD, BTN, IND, MDV, NPL, PAK, LKA, TEL, JPN, KOR, PRK, MNG, TWN, BRN, KHM, IDN, LAO, MYS, MMR, PHL, SGP, THA, VNM, TLS, AUS, NZL, FJI, PNG, SLB, VUT, WSM, TON, KIR, TUV, NRU, FSM, MHL, PLW
+Countries with no data yet (204): ALB, AND, AUT, BEL, BIH, BGR, HRV, CYP, CZE, DNK, FIN, FRA, GRC, HUN, ISL, IRL, ITA, LIE, LUX, MLT, MCO, NLD, MKD, NOR, POL, PRT, ROU, SMR, SVK, SVN, ESP, CHE, YUG, MNE, KOS, VAT, NCY, UKR, BLR, MDA, EST, LVA, LTU, GEO, ARM, AZE, KAZ, KGZ, TJK, TKM, UZB, PMR, ABK, SOS, NKR, ICH, CAN, ATG, ARG, BHS, BRB, BLZ, BOL, BRA, CHL, COL, CRI, CUB, DMA, DOM, ECU, SLV, GRD, GTM, GUY, HTI, HND, JAM, MEX, NIC, PAN, PRY, PER, KNA, LCA, VCT, SUR, TTO, URY, VEN, FAR, DZA, BHR, EGY, IRQ, ISR, JOR, KWT, LBN, LBY, MRT, MAR, OMN, QAT, SAU, SYR, TUN, TUR, ARE, YEM, PSE, ESH, KUR, AGO, BEN, BWA, BFA, BDI, CPV, CMR, CAF, TCD, COM, COD, COG, CIV, DJI, GNQ, ERI, SWZ, ETH, GAB, GMB, GHA, GIN, GNB, KEN, LSO, LBR, MDG, MWI, MLI, MUS, MOZ, NAM, NER, NGA, RWA, STP, SEN, SYC, SLE, ZAF, SDN, TZA, TGO, UGA, ZMB, ZWE, SSD, SML, UNI, RCD, MLC, AFG, AFN, BGD, BTN, IND, MDV, NPL, PAK, LKA, TEL, JPN, KOR, PRK, MNG, TWN, BRN, KHM, IDN, LAO, MYS, MMR, PHL, SGP, THA, VNM, TLS, AUS, NZL, FJI, PNG, SLB, VUT, WSM, TON, KIR, TUV, NRU, FSM, MHL, PLW
 
-### CHN — China (2)
+### CHN — China (4)
 
 | kind | record | what to check | file |
 |---|---|---|---|
 | chamber | `npc` National People's Congress | The 9th NPC article gives 2,979 deputies and 2,130 CCP deputies, but a single figure of 460 for the eight other parties plus independents together, which leaves 389 deputies unaccounted for (2,130 + 460 = 2,590). Only the China Democratic League's own count (77) was found. The 772 'others' are every non-CCP deputy except the CDL: the other seven parties, non-party deputies and the unexplained remainder. The election results table in the list of presidents gives 2,983 total seats instead of 2,979. Check an official NPC source for the total and the per-party breakdown. | data/countries/CHN/country.json |
+| person | `chn.sang_guowei` Sang Guowei (b. 1941) | Birth date 1941-11-11 and death date 2023-12-07 come from Wikidata only; no birth or death date was found in the Wikipedia infobox. Confirm both. | data/countries/CHN/people.json |
 | party | `chn.rcck` Revolutionary Committee of the Chinese Kuomintang (RCCK) | The Wikipedia chair table ends Wan Exiang's term on 18 March 2018 and starts Zheng Jianbang on 10 December 2022, leaving a gap; Wikidata shows Wan Exiang as chair from December 2012 with no end. Wan is recorded here until Zheng took over. Confirm who chaired the RCCK from 2018 to 2022. | data/countries/CHN/parties.json |
+| party | `chn.cdp` China Democracy Party (CDP) | The article says the party's history and founding date are unclear because several groups founded it along different paths; the infobox date (28 June 1998) is used. Leaders are left empty for Pass B. Confirm the founding date and whether to list its founders. | data/countries/CHN/parties.json |
 
 ### DEU — Germany (5)
 
@@ -130,6 +132,12 @@ Countries with no data yet (205): ALB, AND, AUT, BEL, BIH, BGR, HRV, CYP, CZE, D
 | party | `som.tayo` Tayo Political Party (TPP) | Wikipedia names Farmaajo as founder and Maryam Qasim as chairperson but gives no dates for either; confirm the leadership timeline. | data/countries/SOM/parties.json |
 | election | `president_2004` indirect_presidential 2004-10-10 | The source does not label the 189-79 result as the third round, although the text says he won after the second and third rounds; confirm the round number and the first- and second-round tallies. | data/countries/SOM/elections.json |
 | election | `president_2009` indirect_presidential 2009-01-30 | The article text says three rounds, but the results template shows two columns (first round and run-off). Confirm round numbering. Add Maslah Mohammed Siad Barre once his birth year is sourced. | data/countries/SOM/elections.json |
+
+### SWE — Sweden (1)
+
+| kind | record | what to check | file |
+|---|---|---|---|
+| party | `swe.fp` Liberals (Liberal People's Party until 2015) (L) | Confirm the exact date of the rename from Folkpartiet liberalerna to Liberalerna (2015); the research sources only show the change of name between the 2014 and 2018 elections. | data/countries/SWE/parties.json |
 
 ### USA — United States (2)
 

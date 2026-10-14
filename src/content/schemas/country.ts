@@ -319,6 +319,8 @@ export const ELECTION_KINDS = [
   "party_congress",
   "party_leadership",
   "local_regional",
+  /** Elections to non-legislative national councils, e.g. Iran's Assembly of Experts. */
+  "council",
 ] as const;
 export const ElectionKind = z.enum(ELECTION_KINDS);
 

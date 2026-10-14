@@ -1,0 +1,157 @@
+{
+  "tag": "CHN",
+  "name": { "en": "China", "native": "中国", "native_latin": "Zhōngguó", "official": { "en": "People's Republic of China", "native": "中华人民共和国", "native_latin": "Zhōnghuá Rénmín Gònghéguó" } },
+  "adjective": "Chinese",
+  "culture_primary": "han_chinese",
+  "government": {
+    "type": "one_party_state",
+    "effective_executive": "chn.general_secretary",
+    "head_of_state_office": "chn.president",
+    "head_of_government_office": "chn.premier",
+    "constitution": {
+      "term_limit_amendable": true,
+      "emergency_powers": true,
+      "referendum_required_for": []
+    },
+    "note": "Unitary one-party socialist republic led by the Chinese Communist Party. Real power lies with the CCP General Secretary and the Politburo Standing Committee. Since 1993 the General Secretary has also been state President and Chairman of the Central Military Commission (the 'three-in-one' arrangement). The two-consecutive-term limit on the President and Vice President was removed by the 2018 constitutional amendment, so the President office carries no term_limit here. The Premier, appointed by the NPC on the President's nomination, is still limited to two consecutive five-year terms. The President can declare a state of emergency subject to NPC or NPC Standing Committee decisions."
+  },
+  "offices": [
+    {
+      "id": "chn.general_secretary",
+      "title": { "en": "General Secretary of the Chinese Communist Party", "native": "中国共产党中央委员会总书记" },
+      "role": "party_general_secretary",
+      "power_weight": 0.6,
+      "selection": "party_congress",
+      "term_years": 5,
+      "succession": { "type": "council_choice" },
+      "holders": [
+        { "person": "chn.jiang_zemin", "from": "1989-06-24", "to": "2002-11-15" },
+        { "person": "chn.hu_jintao", "from": "2002-11-15", "to": "2012-11-15" },
+        { "person": "chn.xi_jinping", "from": "2012-11-15" }
+      ],
+      "source": [
+        { "url": "https://www.wikidata.org/wiki/Q849418", "title": "Wikidata: General Secretary of the Chinese Communist Party (position held by)", "accessed": "2026-10-14" },
+        { "url": "https://en.wikipedia.org/wiki/Leader_of_the_Chinese_Communist_Party", "title": "Wikipedia: Leader of the Chinese Communist Party (list of leaders)", "accessed": "2026-10-14" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "chn.president",
+      "title": { "en": "President of the People's Republic of China", "native": "国家主席", "native_latin": "Guójiā Zhǔxí" },
+      "role": "head_of_state",
+      "power_weight": 0.05,
+      "selection": "legislature",
+      "term_years": 5,
+      "succession": { "type": "vice" },
+      "holders": [
+        { "person": "chn.jiang_zemin", "from": "1993-03-27", "to": "2003-03-15" },
+        { "person": "chn.hu_jintao", "from": "2003-03-15", "to": "2013-03-14" },
+        { "person": "chn.xi_jinping", "from": "2013-03-14" }
+      ],
+      "source": [
+        { "url": "https://www.wikidata.org/wiki/Q655407", "title": "Wikidata: President of the People's Republic of China (position held by)", "accessed": "2026-10-14" },
+        { "url": "https://en.wikipedia.org/wiki/List_of_presidents_of_the_People%27s_Republic_of_China", "title": "Wikipedia: List of presidents of the People's Republic of China", "accessed": "2026-10-14" },
+        { "url": "https://en.wikipedia.org/wiki/President_of_China", "title": "Wikipedia: President of China (powers, 2018 removal of term limits, succession)", "accessed": "2026-10-14" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "chn.premier",
+      "title": { "en": "Premier of the State Council", "native": "中华人民共和国国务院总理" },
+      "role": "head_of_government",
+      "power_weight": 0.2,
+      "selection": "legislature",
+      "appointed_by": "chn.president",
+      "term_years": 5,
+      "term_limit": { "max_terms": 2, "consecutive_only": true },
+      "succession": { "type": "acting_then_election" },
+      "holders": [
+        { "person": "chn.zhu_rongji", "from": "1998-03-17", "to": "2003-03-16" },
+        { "person": "chn.wen_jiabao", "from": "2003-03-16", "to": "2013-03-15" },
+        { "person": "chn.li_keqiang", "from": "2013-03-15", "to": "2023-03-11" },
+        { "person": "chn.li_qiang", "from": "2023-03-11" }
+      ],
+      "source": [
+        { "url": "https://www.wikidata.org/wiki/Q4122271", "title": "Wikidata: Premier of the People's Republic of China (position held by)", "accessed": "2026-10-14" },
+        { "url": "https://en.wikipedia.org/wiki/List_of_premiers_of_the_People%27s_Republic_of_China", "title": "Wikipedia: List of premiers of the People's Republic of China", "accessed": "2026-10-14" },
+        { "url": "https://en.wikipedia.org/wiki/Premier_of_China", "title": "Wikipedia: Premier of China (appointment, term renewable once consecutively)", "accessed": "2026-10-14" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "chn.cmc_chair",
+      "title": { "en": "Chairman of the Central Military Commission", "native": "中国共产党中央军事委员会主席" },
+      "role": "other",
+      "power_weight": 0.15,
+      "selection": "party_congress",
+      "term_years": 5,
+      "succession": { "type": "council_choice" },
+      "holders": [
+        { "person": "chn.jiang_zemin", "from": "1989-11-09", "to": "2004-09-19", "note": "Kept the party CMC chair for almost two years after stepping down as General Secretary; held the state CMC chair until 8 March 2005." },
+        { "person": "chn.hu_jintao", "from": "2004-09-19", "to": "2012-11-15" },
+        { "person": "chn.xi_jinping", "from": "2012-11-15" }
+      ],
+      "source": [
+        { "url": "https://www.wikidata.org/wiki/Q20792297", "title": "Wikidata: Chairman of the Central Military Commission of the Chinese Communist Party (position held by)", "accessed": "2026-10-14" },
+        { "url": "https://www.wikidata.org/wiki/Q20792347", "title": "Wikidata: Chairman of the Central Military Commission of the People's Republic of China (position held by)", "accessed": "2026-10-14", "note": "Wikidata gives Hu Jintao's start as state CMC chair as 2005-03-13; Wikipedia gives 8 March 2005. Wikipedia preferred." },
+        { "url": "https://en.wikipedia.org/wiki/Chairman_of_the_Central_Military_Commission_(China)", "title": "Wikipedia: Chairman of the Central Military Commission (China) (party and state commission lists)", "accessed": "2026-10-14" }
+      ],
+      "confidence": "verified"
+    }
+  ],
+  "legislature": {
+    "name": { "en": "National People's Congress", "native": "全国人民代表大会" },
+    "chambers": [
+      {
+        "id": "npc",
+        "name": { "en": "National People's Congress", "native": "全国人民代表大会" },
+        "seats": 2979,
+        "term_years": 5,
+        "elected": "indirect",
+        "system": {
+          "type": "indirect",
+          "district_model": "admin1",
+          "note": "Deputies are elected for five years by the people's congresses of the 22 provinces, 5 autonomous regions and 4 directly administered municipalities; the 9th NPC was the first with deputies for the Hong Kong SAR. The 9th NPC was elected October 1997 to February 1998 and sat 1998-2003, so seats_2000 is its composition. The NPC elects, and can remove, the President and other state officers by majority vote, but the CCP effectively makes the nominations and the Presidium has always put forward a single candidate, so the chamber is not treated as a confidence chamber."
+        },
+        "seats_2000": { "chn.ccp": 2130, "chn.cdl": 77, "others": 772 },
+        "confidence_chamber": false,
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/9th_National_People%27s_Congress", "title": "Wikipedia: 9th National People's Congress (2,979 deputies; seat distribution)", "accessed": "2026-10-14" },
+          { "url": "https://en.wikipedia.org/wiki/China_Democratic_League", "title": "Wikipedia: China Democratic League (NPC seats by congress: 77 of 2,979 in the 9th NPC)", "accessed": "2026-10-14" },
+          { "url": "https://en.wikipedia.org/wiki/List_of_presidents_of_the_People%27s_Republic_of_China", "title": "Wikipedia: List of presidents of the PRC (election results table gives 2,983 total seats for the 9th NPC)", "accessed": "2026-10-14" }
+        ],
+        "confidence": "needs_review",
+        "review_note": "The 9th NPC article gives 2,979 deputies and 2,130 CCP deputies, but a single figure of 460 for the eight other parties plus independents together, which leaves 389 deputies unaccounted for (2,130 + 460 = 2,590). Only the China Democratic League's own count (77) was found. The 772 'others' are every non-CCP deputy except the CDL: the other seven parties, non-party deputies and the unexplained remainder. The election results table in the list of presidents gives 2,983 total seats instead of 2,979. Check an official NPC source for the total and the per-party breakdown."
+      }
+    ]
+  },
+  "party_system": "one_party",
+  "start_2000": {
+    "ruling_parties": ["chn.ccp"],
+    "ideology_support": {
+      "market_socialist": 0.55,
+      "marxist_leninist": 0.10,
+      "maoist": 0.03,
+      "statist": 0.07,
+      "social_democrat": 0.05,
+      "social_liberal": 0.06,
+      "classical_liberal": 0.04,
+      "regionalist": 0.04,
+      "big_tent": 0.06
+    },
+    "ideology_support_note": "Estimate only. China has no competitive national elections, so there is no vote share to derive from. The weights are a gameplay estimate: most support goes to the CCP's official line of a socialist market economy under one-party rule (market_socialist), with smaller shares for orthodox and Maoist currents, nationalist statism, liberal and social-democratic reform sentiment, and regional autonomy movements among Tibetans and Uyghurs. The eight United Front parties formally accept CCP leadership and are counted under market_socialist.",
+    "stability": 0.7,
+    "war_support": 0.35
+  },
+  "claims": [
+    { "tag": "TWN", "note": "The PRC regards Taiwan and its associated islands, governed by the Republic of China, as part of China and seeks unification. The Anti-Secession Law, ratified by the NPC on 14 March 2005, formalised (Article 8) the long-standing policy of using military means against Taiwan independence." }
+  ],
+  "source": [
+    { "url": "https://en.wikipedia.org/wiki/China", "title": "Wikipedia: China (infobox: official and common names)", "accessed": "2026-10-14" },
+    { "url": "https://en.wikipedia.org/wiki/President_of_China", "title": "Wikipedia: President of China (three-in-one leadership, 2018 amendment)", "accessed": "2026-10-14" },
+    { "url": "https://en.wikipedia.org/wiki/9th_National_People%27s_Congress", "title": "Wikipedia: 9th National People's Congress", "accessed": "2026-10-14" },
+    { "url": "https://en.wikipedia.org/wiki/Anti-Secession_Law", "title": "Wikipedia: Anti-Secession Law", "accessed": "2026-10-14" },
+    { "url": "https://en.wikipedia.org/wiki/Political_status_of_Taiwan", "title": "Wikipedia: Political status of Taiwan", "accessed": "2026-10-14" }
+  ],
+  "confidence": "verified"
+}

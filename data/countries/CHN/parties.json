@@ -1,0 +1,247 @@
+{
+  "parties": [
+    {
+      "id": "chn.ccp",
+      "name": { "en": "Chinese Communist Party", "native": "中国共产党", "native_latin": "Zhōngguó Gòngchǎndǎng" },
+      "abbrev": { "en": "CCP" },
+      "color": "#EE1C25",
+      "sub_ideology": "market_socialist",
+      "founded": "1921-07-23",
+      "status_2000": "active",
+      "leader_history": [
+        { "person": "chn.jiang_zemin", "from": "1989-06-24", "to": "2002-11-15", "title": "General Secretary" },
+        { "person": "chn.hu_jintao", "from": "2002-11-15", "to": "2012-11-15", "title": "General Secretary" },
+        { "person": "chn.xi_jinping", "from": "2012-11-15", "title": "General Secretary" }
+      ],
+      "popularity_2000": 0.715,
+      "popularity_note": "No competitive elections. Proxy: the CCP's share of 9th NPC deputies (2,130 of 2,979 = 0.715). This is a gameplay estimate, not a vote share.",
+      "factions": [
+        {
+          "id": "shanghai_group",
+          "name": "Leaders associated with Jiang Zemin's Shanghai administration",
+          "sub_ideology": "market_socialist",
+          "strength": 0.4,
+          "figures": ["chn.jiang_zemin", "chn.wu_bangguo", "chn.huang_ju", "chn.zeng_qinghong", "chn.jia_qinglin"],
+          "note": "An informal network of officials who worked with Jiang Zemin in Shanghai or rose under his patronage. Commentators often call it the 'Shanghai clique'. It is an informal grouping, not a formal body. Members follow the infobox of the Wikipedia article. Strength is a gameplay estimate."
+        },
+        {
+          "id": "youth_league_group",
+          "name": "Leaders with a Communist Youth League background",
+          "sub_ideology": "market_socialist",
+          "strength": 0.25,
+          "figures": ["chn.hu_jintao", "chn.li_keqiang", "chn.li_yuanchao", "chn.wang_yang", "chn.hu_chunhua"],
+          "note": "An informal grouping of officials whose careers ran through the Communist Youth League leadership; Hu Jintao and Li Keqiang were both First Secretaries of the League. Chinese name 团派 (tuanpai). Members follow the infobox of the Wikipedia article. Strength is a gameplay estimate."
+        },
+        {
+          "id": "other_senior_leaders",
+          "name": "Other senior leaders",
+          "sub_ideology": "market_socialist",
+          "strength": 0.35,
+          "figures": ["chn.li_peng", "chn.zhu_rongji", "chn.li_ruihuan", "chn.wei_jianxing", "chn.li_lanqing", "chn.wen_jiabao"],
+          "note": "A catch-all for 2000 Politburo Standing Committee members and later leaders not listed in either grouping above. It is a modelling convenience, not a documented faction. Strength is a gameplay estimate."
+        }
+      ],
+      "international": "International Meeting of Communist and Workers' Parties",
+      "source": [
+        { "url": "https://www.wikidata.org/wiki/Q17427", "title": "Wikidata: Chinese Communist Party (founding date, leaders)", "accessed": "2026-10-14" },
+        { "url": "https://en.wikipedia.org/wiki/Chinese_Communist_Party", "title": "Wikipedia: Chinese Communist Party (infobox: founded 23 July 1921)", "accessed": "2026-10-14" },
+        { "url": "https://en.wikipedia.org/wiki/Leader_of_the_Chinese_Communist_Party", "title": "Wikipedia: Leader of the Chinese Communist Party", "accessed": "2026-10-14" },
+        { "url": "https://en.wikipedia.org/wiki/Shanghai_clique", "title": "Wikipedia: Shanghai clique (infobox members)", "accessed": "2026-10-14" },
+        { "url": "https://en.wikipedia.org/wiki/Tuanpai", "title": "Wikipedia: Tuanpai (infobox members)", "accessed": "2026-10-14" },
+        { "url": "https://en.wikipedia.org/wiki/15th_Politburo_Standing_Committee_of_the_Chinese_Communist_Party", "title": "Wikipedia: 15th Politburo Standing Committee", "accessed": "2026-10-14" },
+        { "url": "https://en.wikipedia.org/wiki/Module:Political_party/C", "title": "Wikipedia: Module:Political party/C (party colour #ee1c25)", "accessed": "2026-10-14" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "chn.rcck",
+      "name": { "en": "Revolutionary Committee of the Chinese Kuomintang", "native": "中国国民党革命委员会" },
+      "abbrev": { "en": "RCCK" },
+      "color": "#1B65AF",
+      "sub_ideology": "market_socialist",
+      "founded": "1948-01-01",
+      "status_2000": "active",
+      "leader_history": [
+        { "person": "chn.he_luli", "from": "1996-11-11", "to": "2007-12-15", "title": "Chairperson" },
+        { "person": "chn.zhou_tienong", "from": "2007-12-15", "to": "2012-12-18", "title": "Chairperson" },
+        { "person": "chn.wan_exiang", "from": "2012-12-18", "to": "2022-12-10", "title": "Chairperson" },
+        { "person": "chn.zheng_jianbang", "from": "2022-12-10", "title": "Chairperson" }
+      ],
+      "popularity_2000": 0.01,
+      "popularity_note": "Gameplay estimate. Its 9th NPC seat count was not found (the party article lists it as unknown); it held 47 of 2,984 seats in the 10th NPC.",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/Revolutionary_Committee_of_the_Chinese_Kuomintang", "title": "Wikipedia: Revolutionary Committee of the Chinese Kuomintang (chairpersons, NPC seats)", "accessed": "2026-10-14" },
+        { "url": "https://www.wikidata.org/wiki/Q1202612", "title": "Wikidata: Revolutionary Committee of the Chinese Kuomintang (founded 1948-01-01, chairpersons)", "accessed": "2026-10-14" },
+        { "url": "https://en.wikipedia.org/wiki/9th_National_People%27s_Congress", "title": "Wikipedia: 9th National People's Congress (chairperson in 1998-2003: He Luli)", "accessed": "2026-10-14" }
+      ],
+      "confidence": "needs_review",
+      "review_note": "The Wikipedia chair table ends Wan Exiang's term on 18 March 2018 and starts Zheng Jianbang on 10 December 2022, leaving a gap; Wikidata shows Wan Exiang as chair from December 2012 with no end. Wan is recorded here until Zheng took over. Confirm who chaired the RCCK from 2018 to 2022."
+    },
+    {
+      "id": "chn.cdl",
+      "name": { "en": "China Democratic League", "native": "中国民主同盟", "native_latin": "Zhōngguó Mínzhǔ Tóngméng" },
+      "abbrev": { "en": "CDL" },
+      "color": "#CB7E1F",
+      "sub_ideology": "market_socialist",
+      "founded": "1941-03-19",
+      "status_2000": "active",
+      "leader_history": [
+        { "person": "chn.ding_shisun", "from": 1996, "to": 2005, "title": "Chairperson" },
+        { "person": "chn.jiang_shusheng", "from": 2005, "to": 2012, "title": "Chairperson" },
+        { "person": "chn.zhang_baowen", "from": 2012, "to": "2017-12-10", "title": "Chairperson" },
+        { "person": "chn.ding_zhongli", "from": "2017-12-10", "title": "Chairperson" }
+      ],
+      "popularity_2000": 0.026,
+      "popularity_note": "No competitive elections. Proxy: 77 of 2,979 deputies in the 9th NPC. Gameplay estimate.",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/China_Democratic_League", "title": "Wikipedia: China Democratic League (chairpersons, NPC seats, founded 19 March 1941)", "accessed": "2026-10-14" },
+        { "url": "https://www.wikidata.org/wiki/Q1348513", "title": "Wikidata: China Democratic League", "accessed": "2026-10-14" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "chn.cndca",
+      "name": { "en": "China National Democratic Construction Association", "native": "中国民主建国会", "native_latin": "Zhōngguó Mínzhǔ Jiànguó Huì" },
+      "abbrev": { "en": "CNDCA" },
+      "color": "#FF4500",
+      "sub_ideology": "market_socialist",
+      "founded": "1945-12-16",
+      "status_2000": "active",
+      "leader_history": [
+        { "person": "chn.cheng_siwei", "from": 1996, "to": "2007-12-14", "title": "Chairperson" },
+        { "person": "chn.chen_changzhi", "from": "2007-12-14", "to": "2017-12-20", "title": "Chairperson" },
+        { "person": "chn.hao_mingjin", "from": "2017-12-20", "title": "Chairperson" }
+      ],
+      "popularity_2000": 0.01,
+      "popularity_note": "Gameplay estimate; the party's 9th NPC seat count was not found. Members are mainly entrepreneurs and economists.",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/China_National_Democratic_Construction_Association", "title": "Wikipedia: China National Democratic Construction Association (chairpersons, founded 16 December 1945)", "accessed": "2026-10-14", "note": "The chair table gives Cheng Siwei's end as December 2017, which contradicts Chen Changzhi's start on 14 December 2007 in the same table; 2007 is used." },
+        { "url": "https://www.wikidata.org/wiki/Q1133577", "title": "Wikidata: China Democratic National Construction Association (founded 1945-12-16)", "accessed": "2026-10-14" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "chn.capd",
+      "name": { "en": "China Association for Promoting Democracy", "native": "中国民主促进会" },
+      "abbrev": { "en": "CAPD" },
+      "color": "#FFF500",
+      "sub_ideology": "market_socialist",
+      "founded": "1945-12-30",
+      "status_2000": "active",
+      "leader_history": [
+        { "person": "chn.xu_jialu", "from": 1997, "to": 2007, "title": "Chairperson" },
+        { "person": "chn.yan_junqi", "from": 2007, "to": "2017-12-06", "title": "Chairperson" },
+        { "person": "chn.cai_dafeng", "from": "2017-12-06", "title": "Chairperson" }
+      ],
+      "popularity_2000": 0.01,
+      "popularity_note": "Gameplay estimate; the party's 9th NPC seat count was not found. Members are mainly from education, culture and publishing.",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/China_Association_for_Promoting_Democracy", "title": "Wikipedia: China Association for Promoting Democracy (chairpersons, founded 30 December 1945)", "accessed": "2026-10-14" },
+        { "url": "https://www.wikidata.org/wiki/Q1133583", "title": "Wikidata: China Association for Promoting Democracy", "accessed": "2026-10-14", "note": "Wikidata gives the founding date as 1945-12-12; Wikipedia's 30 December 1945 is used." }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "chn.cpwdp",
+      "name": { "en": "Chinese Peasants' and Workers' Democratic Party", "native": "中国农工民主党" },
+      "abbrev": { "en": "CPWDP" },
+      "color": "#189DF0",
+      "sub_ideology": "market_socialist",
+      "founded": "1930-08-09",
+      "status_2000": "active",
+      "leader_history": [
+        { "person": "chn.jiang_zhenghua", "from": 1997, "to": "2007-12-11", "title": "Chairperson" },
+        { "person": "chn.sang_guowei", "from": "2007-12-15", "to": 2012, "title": "Chairperson" },
+        { "person": "chn.chen_zhu", "from": 2012, "to": "2022-12-09", "title": "Chairperson" },
+        { "person": "chn.he_wei", "from": "2022-12-09", "title": "Chairperson" }
+      ],
+      "popularity_2000": 0.01,
+      "popularity_note": "Gameplay estimate; the party's 9th NPC seat count was not found. Members mostly work in public health and medicine.",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/Chinese_Peasants%27_and_Workers%27_Democratic_Party", "title": "Wikipedia: Chinese Peasants' and Workers' Democratic Party (chairpersons, founded 9 August 1930)", "accessed": "2026-10-14" },
+        { "url": "https://www.wikidata.org/wiki/Q1133626", "title": "Wikidata: Chinese Peasants' and Workers' Democratic Party", "accessed": "2026-10-14", "note": "Wikidata gives He Wei's start as chair as 2022-12-08; Wikipedia gives 9 December 2022, which is used." }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "chn.zhi_gong",
+      "name": { "en": "China Zhi Gong Party", "native": "中国致公党", "native_latin": "Zhōngguó Zhìgōngdǎng" },
+      "abbrev": { "en": "CZGP" },
+      "color": "#D7263D",
+      "sub_ideology": "market_socialist",
+      "founded": "1925-10-10",
+      "status_2000": "active",
+      "leader_history": [
+        { "person": "chn.luo_haocai", "from": 1997, "to": 2007, "title": "Chairperson" },
+        { "person": "chn.wan_gang", "from": "2007-12-21", "to": "2022-12-14", "title": "Chairperson" },
+        { "person": "chn.jiang_zuojun", "from": "2022-12-14", "title": "Chairperson" }
+      ],
+      "popularity_2000": 0.01,
+      "popularity_note": "Gameplay estimate; the party's 9th NPC seat count was not found. Represents returned overseas Chinese and their relatives.",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/China_Zhi_Gong_Party", "title": "Wikipedia: China Zhi Gong Party (chairpersons, founded 10 October 1925 in San Francisco)", "accessed": "2026-10-14", "note": "Wikipedia's party-colour module gives plain 'Red'; a darker red is used to distinguish it from the CCP." },
+        { "url": "https://www.wikidata.org/wiki/Q197765", "title": "Wikidata: China Zhi Gong Party", "accessed": "2026-10-14" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "chn.jiusan",
+      "name": { "en": "Jiusan Society", "native": "九三学社", "native_latin": "Jiǔsān Xuéshè" },
+      "abbrev": { "en": "Jiusan" },
+      "color": "#CD5C5C",
+      "sub_ideology": "market_socialist",
+      "founded": "1946-05-04",
+      "status_2000": "active",
+      "leader_history": [
+        { "person": "chn.wu_jieping", "from": 1992, "to": 2002, "title": "Chairperson" },
+        { "person": "chn.han_qide", "from": 2002, "to": "2017-12-07", "title": "Chairperson" },
+        { "person": "chn.wu_weihua", "from": "2017-12-07", "title": "Chairperson" }
+      ],
+      "popularity_2000": 0.01,
+      "popularity_note": "Gameplay estimate; the party's 9th NPC seat count was not found. Members are mainly scientists and academics.",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/Jiusan_Society", "title": "Wikipedia: Jiusan Society (chairpersons, founded 4 May 1946)", "accessed": "2026-10-14" },
+        { "url": "https://www.wikidata.org/wiki/Q1185348", "title": "Wikidata: Jiusan Society", "accessed": "2026-10-14" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "chn.tdsgl",
+      "name": { "en": "Taiwan Democratic Self-Government League", "native": "台湾民主自治同盟", "native_latin": "Táiwān Mínzhǔ Zìzhì Tóngméng" },
+      "abbrev": { "en": "TDSGL" },
+      "color": "#1678C1",
+      "sub_ideology": "market_socialist",
+      "founded": "1947-11-12",
+      "status_2000": "active",
+      "leader_history": [
+        { "person": "chn.zhang_kehui", "from": 1997, "to": 2005, "title": "Chairperson" },
+        { "person": "chn.lin_wenyi", "from": 2005, "to": 2017, "title": "Chairperson" },
+        { "person": "chn.su_hui", "from": 2017, "title": "Chairperson" }
+      ],
+      "popularity_2000": 0.005,
+      "popularity_note": "Gameplay estimate; the party's 9th NPC seat count was not found (13 of 2,970 in the 13th NPC). Members are mainly people of Taiwanese origin living on the mainland.",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/Taiwan_Democratic_Self-Government_League", "title": "Wikipedia: Taiwan Democratic Self-Government League (chairpersons, founded 12 November 1947)", "accessed": "2026-10-14" },
+        { "url": "https://www.wikidata.org/wiki/Q1185330", "title": "Wikidata: Taiwan Democratic Self-Government League (founded November 1947)", "accessed": "2026-10-14" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "chn.cdp",
+      "name": { "en": "China Democracy Party", "native": "中国民主党", "native_latin": "Zhōngguó Mínzhǔ Dǎng" },
+      "abbrev": { "en": "CDP" },
+      "color": "#0000FF",
+      "sub_ideology": "centrist_liberal",
+      "founded": "1998-06-28",
+      "status_2000": "banned",
+      "leader_history": [],
+      "popularity_2000": 0.005,
+      "popularity_note": "Banned and never on any ballot; gameplay estimate of latent support for an organised liberal-democratic opposition.",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/China_Democracy_Party", "title": "Wikipedia: China Democracy Party (infobox: founded 28 June 1998, ideology liberal democracy; banned by the CCP)", "accessed": "2026-10-14" }
+      ],
+      "confidence": "needs_review",
+      "review_note": "The article says the party's history and founding date are unclear because several groups founded it along different paths; the infobox date (28 June 1998) is used. Leaders are left empty for Pass B. Confirm the founding date and whether to list its founders."
+    }
+  ]
+}

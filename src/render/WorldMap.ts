@@ -8,7 +8,7 @@ import { ProvinceMesh } from "./layers/ProvinceMesh.ts";
 import { ProvinceTexture } from "./layers/ProvinceTexture.ts";
 import { MAP_MODES, type MapModeContext } from "./mapModes.ts";
 import { provinceAt, type MapData } from "./mapData.ts";
-import type { MapView } from "./MapView.ts";
+import { millerY, type MapView } from "./MapView.ts";
 
 export type RenderApproach = "mesh" | "texture";
 
@@ -48,7 +48,10 @@ export class WorldMap {
       view.addToWorld(this.borders.mesh);
       view.addToWorld(this.borders.provinceMesh);
     }
-    const nameOf = (tag: string) => db.countries.get(tag)?.country?.name.en ?? db.countryList.find((c) => c.tag === tag)?.name ?? tag;
+    const nameOf = (tag: string) => {
+      const entry = db.countryList.find((c) => c.tag === tag);
+      return entry?.short_name ?? db.countries.get(tag)?.country?.name.en ?? entry?.name ?? tag;
+    };
     this.labels = new Labels(map.labels, nameOf);
     view.scene.add(this.labels.group);
 
@@ -68,15 +71,22 @@ export class WorldMap {
       }
       this.labels.update(worldPerPx);
     });
+    // microstates are smaller than one id-map pixel: snap to them when the cursor is close
+    const tiny = map.provinces.filter((p) => p.area_km2 < 60).map((p) => ({ id: p.id, x: p.centroid[0], y: millerY(p.centroid[1]) }));
+    const pick = (x: number, y: number) => {
+      const r = 8 * view.worldPerPx;
+      for (const t of tiny) if (Math.abs(t.x - x) < r && Math.abs(t.y - y) < r) return t.id;
+      return provinceAt(map, x, y);
+    };
     view.onHover.push((x, y) => {
-      const id = provinceAt(map, x, y);
+      const id = pick(x, y);
       if (id !== this.hovered) {
         this.hovered = id;
         this.fill.setHover(id);
         this.onHoverChange(id);
       }
     });
-    view.onClick.push((x, y) => this.select(provinceAt(map, x, y)));
+    view.onClick.push((x, y) => this.select(pick(x, y)));
   }
 
   select(id: number): void {
