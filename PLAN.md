@@ -1,6 +1,6 @@
 # New Millennium: Architecture & Build Plan
 
-Status: **draft, awaiting approval**. No code has been written yet.
+Status: **approved** (October 2026); Phases 1, 3 and 4 done, Phase 2 in progress. See HANDOFF.md for current state.
 
 Decisions already made:
 - **UI:** Preact + signals.
