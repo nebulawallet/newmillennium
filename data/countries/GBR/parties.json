@@ -1,0 +1,1265 @@
+{
+  "parties": [
+    {
+      "id": "gbr.labour",
+      "name": {
+        "en": "Labour Party",
+        "native": "Labour Party"
+      },
+      "abbrev": {
+        "en": "Lab",
+        "native": "Lab"
+      },
+      "color": "#D10020",
+      "sub_ideology": "third_way",
+      "founded": 1900,
+      "status_2000": "active",
+      "leader_history": [
+        {
+          "person": "gbr.tony_blair",
+          "from": "1994-07-21",
+          "to": "2007-06-24"
+        },
+        {
+          "person": "gbr.gordon_brown",
+          "from": "2007-06-24",
+          "to": "2010-05-11"
+        },
+        {
+          "person": "gbr.harriet_harman",
+          "from": "2010-05-11",
+          "to": "2010-09-25",
+          "title": "Acting leader"
+        },
+        {
+          "person": "gbr.ed_miliband",
+          "from": "2010-09-25",
+          "to": "2015-05-08"
+        },
+        {
+          "person": "gbr.harriet_harman",
+          "from": "2015-05-08",
+          "to": "2015-09-12",
+          "title": "Acting leader"
+        },
+        {
+          "person": "gbr.jeremy_corbyn",
+          "from": "2015-09-12",
+          "to": "2020-04-04"
+        },
+        {
+          "person": "gbr.keir_starmer",
+          "from": "2020-04-04",
+          "to": "2026-07-17"
+        },
+        {
+          "person": "gbr.andy_burnham",
+          "from": "2026-07-17"
+        }
+      ],
+      "popularity_2000": 0.432,
+      "popularity_note": "UK-wide vote share, 1997 general election (includes Labour Co-operative candidates). Sub-ideology reflects the 'New Labour' leadership of 2000.",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Leader_of_the_Labour_Party_(UK)",
+          "title": "Wikipedia: Leader of the Labour Party (UK) (incl. acting leaders)",
+          "accessed": "2026-10-14"
+        },
+        {
+          "url": "https://www.wikidata.org/wiki/Q9630",
+          "title": "Wikidata: Labour Party (founding year, leaders)",
+          "accessed": "2026-10-14"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/1997_United_Kingdom_general_election",
+          "title": "Wikipedia: 1997 United Kingdom general election",
+          "accessed": "2026-10-14"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "gbr.conservative",
+      "name": {
+        "en": "Conservative and Unionist Party",
+        "native": "Conservative and Unionist Party"
+      },
+      "abbrev": {
+        "en": "Con",
+        "native": "Con"
+      },
+      "color": "#007AD7",
+      "sub_ideology": "liberal_conservative",
+      "founded": "1834-12-18",
+      "status_2000": "active",
+      "leader_history": [
+        {
+          "person": "gbr.william_hague",
+          "from": "1997-06-19",
+          "to": "2001-09-13"
+        },
+        {
+          "person": "gbr.iain_duncan_smith",
+          "from": "2001-09-13",
+          "to": "2003-11-06"
+        },
+        {
+          "person": "gbr.michael_howard",
+          "from": "2003-11-06",
+          "to": "2005-12-06"
+        },
+        {
+          "person": "gbr.david_cameron",
+          "from": "2005-12-06",
+          "to": "2016-07-11"
+        },
+        {
+          "person": "gbr.theresa_may",
+          "from": "2016-07-11",
+          "to": "2019-06-07"
+        },
+        {
+          "person": "gbr.theresa_may",
+          "from": "2019-06-07",
+          "to": "2019-07-23",
+          "title": "Acting leader"
+        },
+        {
+          "person": "gbr.boris_johnson",
+          "from": "2019-07-23",
+          "to": "2022-09-05"
+        },
+        {
+          "person": "gbr.liz_truss",
+          "from": "2022-09-05",
+          "to": "2022-10-24"
+        },
+        {
+          "person": "gbr.rishi_sunak",
+          "from": "2022-10-24",
+          "to": "2024-07-24"
+        },
+        {
+          "person": "gbr.rishi_sunak",
+          "from": "2024-07-24",
+          "to": "2024-11-02",
+          "title": "Acting leader"
+        },
+        {
+          "person": "gbr.kemi_badenoch",
+          "from": "2024-11-02"
+        }
+      ],
+      "popularity_2000": 0.307,
+      "popularity_note": "UK-wide vote share, 1997 general election.",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Leader_of_the_Conservative_Party_(UK)",
+          "title": "Wikipedia: Leader of the Conservative Party (UK) (incl. acting periods)",
+          "accessed": "2026-10-14"
+        },
+        {
+          "url": "https://www.wikidata.org/wiki/Q9626",
+          "title": "Wikidata: Conservative Party (founding date)",
+          "accessed": "2026-10-14"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/1997_United_Kingdom_general_election",
+          "title": "Wikipedia: 1997 United Kingdom general election",
+          "accessed": "2026-10-14"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "gbr.liberal_democrats",
+      "name": {
+        "en": "Liberal Democrats",
+        "native": "Liberal Democrats"
+      },
+      "abbrev": {
+        "en": "LD",
+        "native": "Lib Dem"
+      },
+      "color": "#FFB400",
+      "sub_ideology": "social_liberal",
+      "founded": "1988-03-03",
+      "status_2000": "active",
+      "leader_history": [
+        {
+          "person": "gbr.charles_kennedy",
+          "from": "1999-08-09",
+          "to": "2006-01-07"
+        },
+        {
+          "person": "gbr.menzies_campbell",
+          "from": "2006-01-07",
+          "to": "2006-03-02",
+          "title": "Acting leader"
+        },
+        {
+          "person": "gbr.menzies_campbell",
+          "from": "2006-03-02",
+          "to": "2007-10-15"
+        },
+        {
+          "person": "gbr.vince_cable",
+          "from": "2007-10-15",
+          "to": "2007-12-18",
+          "title": "Acting leader"
+        },
+        {
+          "person": "gbr.nick_clegg",
+          "from": "2007-12-18",
+          "to": "2015-07-16"
+        },
+        {
+          "person": "gbr.tim_farron",
+          "from": "2015-07-16",
+          "to": "2017-07-20"
+        },
+        {
+          "person": "gbr.vince_cable",
+          "from": "2017-07-20",
+          "to": "2019-07-22"
+        },
+        {
+          "person": "gbr.jo_swinson",
+          "from": "2019-07-22",
+          "to": "2019-12-13"
+        },
+        {
+          "person": "gbr.ed_davey",
+          "from": "2019-12-13",
+          "to": "2020-08-27",
+          "title": "Acting co-leader"
+        },
+        {
+          "person": "gbr.ed_davey",
+          "from": "2020-08-27"
+        }
+      ],
+      "popularity_2000": 0.168,
+      "popularity_note": "UK-wide vote share, 1997 general election. The party presidents who were acting co-leaders with Ed Davey (Sal Brinton, then Mark Pack, 2019-2020) are omitted.",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Leader_of_the_Liberal_Democrats",
+          "title": "Wikipedia: Leader of the Liberal Democrats (incl. acting leaders)",
+          "accessed": "2026-10-14"
+        },
+        {
+          "url": "https://www.wikidata.org/wiki/Q9624",
+          "title": "Wikidata: Liberal Democrats (founding date)",
+          "accessed": "2026-10-14"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "gbr.snp",
+      "name": {
+        "en": "Scottish National Party",
+        "native": "Pàrtaidh Nàiseanta na h-Alba"
+      },
+      "abbrev": {
+        "en": "SNP",
+        "native": "SNP"
+      },
+      "color": "#FFF95D",
+      "sub_ideology": "regionalist",
+      "founded": "1934-04-07",
+      "status_2000": "active",
+      "leader_history": [
+        {
+          "person": "gbr.alex_salmond",
+          "from": "1990-09-22",
+          "to": "2000-09-26"
+        },
+        {
+          "person": "gbr.john_swinney",
+          "from": "2000-09-26",
+          "to": "2004-09-03"
+        },
+        {
+          "person": "gbr.alex_salmond",
+          "from": "2004-09-03",
+          "to": "2014-11-14"
+        },
+        {
+          "person": "gbr.nicola_sturgeon",
+          "from": "2014-11-14",
+          "to": "2023-03-27"
+        },
+        {
+          "person": "gbr.humza_yousaf",
+          "from": "2023-03-27",
+          "to": "2024-05-06"
+        },
+        {
+          "person": "gbr.john_swinney",
+          "from": "2024-05-06"
+        }
+      ],
+      "popularity_2000": 0.02,
+      "popularity_note": "UK-wide vote share, 1997 general election (stands only in Scotland). Seeks Scottish independence.",
+      "regional_base": [
+        "scottish",
+        "Scotland"
+      ],
+      "source": [
+        {
+          "url": "https://www.wikidata.org/wiki/Q10658",
+          "title": "Wikidata: Scottish National Party (founding date, leaders)",
+          "accessed": "2026-10-14"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/Leader_of_the_Scottish_National_Party",
+          "title": "Wikipedia: Leader of the Scottish National Party",
+          "accessed": "2026-10-14"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "gbr.plaid_cymru",
+      "name": {
+        "en": "Plaid Cymru – The Party of Wales",
+        "native": "Plaid Cymru"
+      },
+      "abbrev": {
+        "en": "PC",
+        "native": "Plaid"
+      },
+      "color": "#005B54",
+      "sub_ideology": "regionalist",
+      "founded": "1925-08-05",
+      "status_2000": "active",
+      "leader_history": [
+        {
+          "person": "gbr.dafydd_wigley",
+          "from": 1991,
+          "to": "2000-08-04",
+          "title": "President (leader from March 2000)"
+        },
+        {
+          "person": "gbr.ieuan_wyn_jones",
+          "from": "2000-08-04",
+          "to": "2012-03-16"
+        },
+        {
+          "person": "gbr.leanne_wood",
+          "from": "2012-03-16",
+          "to": "2018-09-28"
+        },
+        {
+          "person": "gbr.adam_price",
+          "from": "2018-09-28",
+          "to": "2023-05-16"
+        },
+        {
+          "person": "gbr.llyr_gruffydd",
+          "from": "2023-05-16",
+          "to": "2023-06-16",
+          "title": "Acting leader"
+        },
+        {
+          "person": "gbr.rhun_ap_iorwerth",
+          "from": "2023-06-16"
+        }
+      ],
+      "popularity_2000": 0.005,
+      "popularity_note": "UK-wide vote share, 1997 general election (stands only in Wales). Wikidata wrongly ends Leanne Wood's leadership in 2023 and starts Ieuan Wyn Jones's in March 2000; the Wikipedia list (August 2000 and September 2018) is used.",
+      "regional_base": [
+        "welsh",
+        "Wales"
+      ],
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Leader_of_Plaid_Cymru",
+          "title": "Wikipedia: Leader of Plaid Cymru",
+          "accessed": "2026-10-14"
+        },
+        {
+          "url": "https://www.wikidata.org/wiki/Q10691",
+          "title": "Wikidata: Plaid Cymru (founding date)",
+          "accessed": "2026-10-14"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "gbr.uup",
+      "name": {
+        "en": "Ulster Unionist Party",
+        "native": "Ulster Unionist Party"
+      },
+      "abbrev": {
+        "en": "UUP",
+        "native": "UUP"
+      },
+      "color": "#48A5EE",
+      "sub_ideology": "traditional_conservative",
+      "founded": "1905-03-03",
+      "status_2000": "active",
+      "leader_history": [
+        {
+          "person": "gbr.david_trimble",
+          "from": "1995-09-08",
+          "to": "2005-06-24"
+        },
+        {
+          "person": "gbr.reg_empey",
+          "from": "2005-06-24",
+          "to": "2010-09-22"
+        },
+        {
+          "person": "gbr.tom_elliott",
+          "from": "2010-09-22",
+          "to": "2012-03-31"
+        },
+        {
+          "person": "gbr.mike_nesbitt",
+          "from": "2012-03-31",
+          "to": 2017
+        },
+        {
+          "person": "gbr.robin_swann",
+          "from": 2017,
+          "to": "2019-11-09"
+        },
+        {
+          "person": "gbr.steve_aiken",
+          "from": "2019-11-09",
+          "to": "2021-05-27"
+        },
+        {
+          "person": "gbr.doug_beattie",
+          "from": "2021-05-27",
+          "to": 2024
+        },
+        {
+          "person": "gbr.mike_nesbitt",
+          "from": 2024,
+          "to": "2026-01-31"
+        },
+        {
+          "person": "gbr.jon_burrows",
+          "from": "2026-01-31"
+        }
+      ],
+      "popularity_2000": 0.008,
+      "popularity_note": "UK-wide vote share, 1997 general election (stands only in Northern Ireland). Nesbitt-to-Swann handover stored as the year 2017: Wikipedia gives Swann from 8 March 2017, Wikidata ends Nesbitt on 8 April 2017. The Beattie-to-Nesbitt handover is stored as 2024: the leaders list gives 30 August 2024, Beattie's infobox 28 September 2024.",
+      "regional_base": [
+        "Northern Ireland"
+      ],
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Leader_of_the_Ulster_Unionist_Party",
+          "title": "Wikipedia: Leader of the Ulster Unionist Party",
+          "accessed": "2026-10-14"
+        },
+        {
+          "url": "https://www.wikidata.org/wiki/Q22979245",
+          "title": "Wikidata: Leader of the Ulster Unionist Party (holders' exact dates)",
+          "accessed": "2026-10-14"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "gbr.dup",
+      "name": {
+        "en": "Democratic Unionist Party",
+        "native": "Democratic Unionist Party"
+      },
+      "abbrev": {
+        "en": "DUP",
+        "native": "DUP"
+      },
+      "color": "#D46A4C",
+      "sub_ideology": "national_conservative",
+      "founded": "1971-09-30",
+      "status_2000": "active",
+      "leader_history": [
+        {
+          "person": "gbr.ian_paisley",
+          "from": "1971-09-30",
+          "to": "2008-05-31"
+        },
+        {
+          "person": "gbr.peter_robinson",
+          "from": "2008-05-31",
+          "to": "2015-12-17"
+        },
+        {
+          "person": "gbr.arlene_foster",
+          "from": "2015-12-17",
+          "to": "2021-05-28"
+        },
+        {
+          "person": "gbr.edwin_poots",
+          "from": "2021-05-28",
+          "to": "2021-06-30"
+        },
+        {
+          "person": "gbr.jeffrey_donaldson",
+          "from": "2021-06-30",
+          "to": "2024-03-29"
+        },
+        {
+          "person": "gbr.gavin_robinson",
+          "from": "2024-03-29",
+          "to": "2024-05-29",
+          "title": "Interim leader"
+        },
+        {
+          "person": "gbr.gavin_robinson",
+          "from": "2024-05-29"
+        }
+      ],
+      "popularity_2000": 0.003,
+      "popularity_note": "UK-wide vote share, 1997 general election (stands only in Northern Ireland).",
+      "regional_base": [
+        "Northern Ireland"
+      ],
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Democratic_Unionist_Party",
+          "title": "Wikipedia: Democratic Unionist Party (leadership table)",
+          "accessed": "2026-10-14"
+        },
+        {
+          "url": "https://www.wikidata.org/wiki/Q215519",
+          "title": "Wikidata: Democratic Unionist Party (founding date)",
+          "accessed": "2026-10-14"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "gbr.sdlp",
+      "name": {
+        "en": "Social Democratic and Labour Party",
+        "native": "Social Democratic and Labour Party"
+      },
+      "abbrev": {
+        "en": "SDLP",
+        "native": "SDLP"
+      },
+      "color": "#2AA82C",
+      "sub_ideology": "social_democrat",
+      "founded": "1970-08-21",
+      "status_2000": "active",
+      "leader_history": [
+        {
+          "person": "gbr.john_hume",
+          "from": "1979-11-28",
+          "to": "2001-11-11"
+        },
+        {
+          "person": "gbr.mark_durkan",
+          "from": "2001-11-11",
+          "to": "2010-02-07"
+        },
+        {
+          "person": "gbr.margaret_ritchie",
+          "from": "2010-02-07",
+          "to": "2011-11-05"
+        },
+        {
+          "person": "gbr.alasdair_mcdonnell",
+          "from": "2011-11-05",
+          "to": "2015-11-14"
+        },
+        {
+          "person": "gbr.colum_eastwood",
+          "from": "2015-11-14",
+          "to": "2024-10-05"
+        },
+        {
+          "person": "gbr.claire_hanna",
+          "from": "2024-10-05"
+        }
+      ],
+      "popularity_2000": 0.006,
+      "popularity_note": "UK-wide vote share, 1997 general election (stands only in Northern Ireland). Irish nationalist and social democratic. Wikidata gives the Hume-Durkan handover as 6 November 2001; the Wikipedia list (11 November 2001) is used.",
+      "regional_base": [
+        "irish",
+        "Northern Ireland"
+      ],
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Leader_of_the_Social_Democratic_and_Labour_Party",
+          "title": "Wikipedia: Leader of the Social Democratic and Labour Party",
+          "accessed": "2026-10-14"
+        },
+        {
+          "url": "https://www.wikidata.org/wiki/Q175443",
+          "title": "Wikidata: SDLP (founding date)",
+          "accessed": "2026-10-14"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "gbr.sinn_fein",
+      "name": {
+        "en": "Sinn Féin",
+        "native": "Sinn Féin"
+      },
+      "abbrev": {
+        "en": "SF",
+        "native": "SF"
+      },
+      "color": "#326760",
+      "sub_ideology": "regionalist",
+      "founded": "1905-11-28",
+      "status_2000": "active",
+      "leader_history": [
+        {
+          "person": "gbr.gerry_adams",
+          "from": "1983-11-13",
+          "to": "2018-02-10"
+        },
+        {
+          "person": "gbr.mary_lou_mcdonald",
+          "from": "2018-02-10"
+        }
+      ],
+      "popularity_2000": 0.004,
+      "popularity_note": "UK-wide vote share, 1997 general election. All-Ireland Irish republican party; its MPs do not take their Westminster seats (abstentionism). Recorded under GBR for its Northern Ireland and Westminster role.",
+      "regional_base": [
+        "irish",
+        "Northern Ireland"
+      ],
+      "source": [
+        {
+          "url": "https://www.wikidata.org/wiki/Q76382",
+          "title": "Wikidata: Sinn Féin (founding date, leaders)",
+          "accessed": "2026-10-14"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/Sinn_F%C3%A9in",
+          "title": "Wikipedia: Sinn Féin",
+          "accessed": "2026-10-14"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/1997_United_Kingdom_general_election",
+          "title": "Wikipedia: 1997 United Kingdom general election (Sinn Féin MPs did not take their seats)",
+          "accessed": "2026-10-14"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "gbr.ukup",
+      "name": {
+        "en": "UK Unionist Party",
+        "native": "UK Unionist Party"
+      },
+      "abbrev": {
+        "en": "UKUP",
+        "native": "UKUP"
+      },
+      "color": "#7B4A8C",
+      "sub_ideology": "traditional_conservative",
+      "founded": "1996-04-20",
+      "dissolved": "2008-09-04",
+      "status_2000": "active",
+      "leader_history": [
+        {
+          "person": "gbr.robert_mccartney",
+          "from": "1996-04-20",
+          "to": "2008-09-04"
+        }
+      ],
+      "popularity_2000": 0.0004,
+      "popularity_note": "1997 general election: 12,817 votes (0.04% UK-wide), one seat (North Down). Wikidata gives founding year 1995; the Wikipedia infobox (20 April 1996) is used.",
+      "regional_base": [
+        "Northern Ireland"
+      ],
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/UK_Unionist_Party",
+          "title": "Wikipedia: UK Unionist Party (infobox)",
+          "accessed": "2026-10-14"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/1997_United_Kingdom_general_election",
+          "title": "Wikipedia: 1997 United Kingdom general election",
+          "accessed": "2026-10-14"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "gbr.ukip",
+      "name": {
+        "en": "UK Independence Party",
+        "native": "UK Independence Party"
+      },
+      "abbrev": {
+        "en": "UKIP",
+        "native": "UKIP"
+      },
+      "color": "#70147A",
+      "sub_ideology": "right_populist",
+      "founded": "1993-09-03",
+      "status_2000": "extra_parliamentary",
+      "leader_history": [
+        {
+          "person": "gbr.michael_holmes",
+          "from": 1997,
+          "to": "2000-01-22"
+        },
+        {
+          "person": "gbr.jeffrey_titford",
+          "from": "2000-01-22",
+          "to": "2002-10-05"
+        },
+        {
+          "person": "gbr.roger_knapman",
+          "from": "2002-10-05",
+          "to": "2006-09-12"
+        },
+        {
+          "person": "gbr.nigel_farage",
+          "from": "2006-09-12",
+          "to": "2009-11-27"
+        },
+        {
+          "person": "gbr.malcolm_pearson",
+          "from": "2009-11-27",
+          "to": "2010-09-02"
+        },
+        {
+          "person": "gbr.nigel_farage",
+          "from": "2010-11-05",
+          "to": "2016-09-16"
+        },
+        {
+          "person": "gbr.diane_james",
+          "from": "2016-09-16",
+          "to": "2016-10-04"
+        },
+        {
+          "person": "gbr.paul_nuttall",
+          "from": "2016-11-28",
+          "to": "2017-06-09"
+        },
+        {
+          "person": "gbr.henry_bolton",
+          "from": "2017-09-29",
+          "to": "2018-02-17"
+        },
+        {
+          "person": "gbr.gerard_batten",
+          "from": "2018-04-14",
+          "to": "2019-06-02"
+        },
+        {
+          "person": "gbr.richard_braine",
+          "from": "2019-08-10",
+          "to": "2019-10-30"
+        },
+        {
+          "person": "gbr.freddy_vachha",
+          "from": "2020-06-22",
+          "to": "2020-09-12"
+        },
+        {
+          "person": "gbr.neil_hamilton",
+          "from": "2020-09-12",
+          "to": "2024-05-13"
+        },
+        {
+          "person": "gbr.lois_perry",
+          "from": "2024-05-13",
+          "to": "2024-06-15"
+        },
+        {
+          "person": "gbr.nick_tenconi",
+          "from": "2025-02-05"
+        }
+      ],
+      "popularity_2000": 0.003,
+      "popularity_note": "UK-wide vote share, 1997 general election. Acting leaders between elected leaders (Titford 2010, Farage 2016, Crowther 2017, Batten 2018, Wauchope 2019, Mountain 2019-20, interim 2020-21 and 2024-25) are omitted. Wikidata starts Farage's first term on 27 September 2006; the Wikipedia list (12 September 2006) is used. Won one seat at the 2015 general election (12.6% of the vote).",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Leader_of_the_UK_Independence_Party",
+          "title": "Wikipedia: Leader of the UK Independence Party (list of leaders)",
+          "accessed": "2026-10-14"
+        },
+        {
+          "url": "https://www.wikidata.org/wiki/Q10647",
+          "title": "Wikidata: UK Independence Party (founding date)",
+          "accessed": "2026-10-14"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "gbr.green",
+      "name": {
+        "en": "Green Party of England and Wales",
+        "native": "Green Party of England and Wales"
+      },
+      "abbrev": {
+        "en": "Green",
+        "native": "Green"
+      },
+      "color": "#6AB023",
+      "sub_ideology": "green",
+      "founded": 1990,
+      "status_2000": "extra_parliamentary",
+      "leader_history": [
+        {
+          "person": "gbr.mike_woodin",
+          "from": 1997,
+          "to": 2001,
+          "title": "Male principal speaker"
+        },
+        {
+          "person": "gbr.margaret_wright",
+          "from": 1999,
+          "to": 2003,
+          "title": "Female principal speaker"
+        },
+        {
+          "person": "gbr.darren_johnson",
+          "from": 2001,
+          "to": 2003,
+          "title": "Male principal speaker"
+        },
+        {
+          "person": "gbr.mike_woodin",
+          "from": 2003,
+          "to": 2004,
+          "title": "Male principal speaker"
+        },
+        {
+          "person": "gbr.caroline_lucas",
+          "from": 2003,
+          "to": 2006,
+          "title": "Female principal speaker"
+        },
+        {
+          "person": "gbr.keith_taylor",
+          "from": 2004,
+          "to": 2006,
+          "title": "Male principal speaker"
+        },
+        {
+          "person": "gbr.derek_wall",
+          "from": 2006,
+          "to": 2008,
+          "title": "Male principal speaker"
+        },
+        {
+          "person": "gbr.sian_berry",
+          "from": 2006,
+          "to": 2007,
+          "title": "Female principal speaker"
+        },
+        {
+          "person": "gbr.caroline_lucas",
+          "from": 2007,
+          "to": "2008-09-05",
+          "title": "Female principal speaker"
+        },
+        {
+          "person": "gbr.caroline_lucas",
+          "from": "2008-09-05",
+          "to": "2012-09-03"
+        },
+        {
+          "person": "gbr.natalie_bennett",
+          "from": "2012-09-03",
+          "to": "2016-09-02"
+        },
+        {
+          "person": "gbr.caroline_lucas",
+          "from": "2016-09-02",
+          "to": "2018-09-04",
+          "title": "Co-leader"
+        },
+        {
+          "person": "gbr.jonathan_bartley",
+          "from": "2016-09-02",
+          "to": 2021,
+          "title": "Co-leader"
+        },
+        {
+          "person": "gbr.sian_berry",
+          "from": "2018-09-04",
+          "to": 2021,
+          "title": "Co-leader"
+        },
+        {
+          "person": "gbr.carla_denyer",
+          "from": "2021-10-01",
+          "to": "2025-09-02",
+          "title": "Co-leader"
+        },
+        {
+          "person": "gbr.adrian_ramsay",
+          "from": "2021-10-01",
+          "to": "2025-09-02",
+          "title": "Co-leader"
+        },
+        {
+          "person": "gbr.zack_polanski",
+          "from": "2025-09-02"
+        }
+      ],
+      "popularity_2000": 0.002,
+      "popularity_note": "England and Wales party's UK-wide vote share, 1997 general election. Until September 2008 the party had two principal speakers (one male, one female) elected annually instead of a leader; their terms are known only to the year. First Commons seat (Brighton Pavilion) in 2010.",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Leader_of_the_Green_Party_of_England_and_Wales",
+          "title": "Wikipedia: Leader of the Green Party of England and Wales (principal speakers and leaders)",
+          "accessed": "2026-10-14"
+        },
+        {
+          "url": "https://www.wikidata.org/wiki/Q9669",
+          "title": "Wikidata: Green Party of England and Wales (founding year)",
+          "accessed": "2026-10-14"
+        }
+      ],
+      "confidence": "needs_review",
+      "review_note": "Principal-speaker terms are seasonal years from a table with rowspans; confirm them. The end of the Bartley/Berry co-leadership in 2021 is unclear in the source (Bartley resigned and Berry was acting leader until 1 October 2021?): confirm the exact dates."
+    },
+    {
+      "id": "gbr.bnp",
+      "name": {
+        "en": "British National Party",
+        "native": "British National Party"
+      },
+      "abbrev": {
+        "en": "BNP",
+        "native": "BNP"
+      },
+      "color": "#2E3B74",
+      "sub_ideology": "ethno_nationalist",
+      "founded": "1982-04-07",
+      "status_2000": "extra_parliamentary",
+      "leader_history": [
+        {
+          "person": "gbr.nick_griffin",
+          "from": "1999-09-27",
+          "to": "2014-07-21",
+          "title": "Chairman"
+        },
+        {
+          "person": "gbr.adam_walker",
+          "from": "2014-07-21",
+          "title": "Chairman"
+        }
+      ],
+      "popularity_2000": 0.001,
+      "popularity_note": "UK-wide vote share, 1997 general election. Won no Commons seats at the general elections recorded here; its best general-election share was 1.9% in 2010. Wikidata gives the founding year as 1982; the Wikipedia infobox gives 7 April 1982.",
+      "source": [
+        {
+          "url": "https://www.wikidata.org/wiki/Q161269",
+          "title": "Wikidata: British National Party (chairmen)",
+          "accessed": "2026-10-14"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/British_National_Party",
+          "title": "Wikipedia: British National Party (infobox)",
+          "accessed": "2026-10-14"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "gbr.alliance",
+      "name": {
+        "en": "Alliance Party of Northern Ireland",
+        "native": "Alliance Party of Northern Ireland"
+      },
+      "abbrev": {
+        "en": "APNI",
+        "native": "Alliance"
+      },
+      "color": "#F6CB2F",
+      "sub_ideology": "social_liberal",
+      "founded": "1970-04-21",
+      "status_2000": "extra_parliamentary",
+      "leader_history": [
+        {
+          "person": "gbr.sean_neeson",
+          "from": 1998,
+          "to": 2001
+        },
+        {
+          "person": "gbr.david_ford",
+          "from": 2001,
+          "to": "2016-10-26"
+        },
+        {
+          "person": "gbr.naomi_long",
+          "from": "2016-10-26"
+        }
+      ],
+      "popularity_2000": 0.002,
+      "popularity_note": "UK-wide vote share, 1997 general election (stands only in Northern Ireland). Won Belfast East from the DUP in 2010. Leader years from Wikidata position records (Neeson 1998-2001, Ford from 2001, Long from 26 October 2016); confirmed by the leaders named in the 2001, 2005 and 2019 results tables.",
+      "regional_base": [
+        "Northern Ireland"
+      ],
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Alliance_Party_of_Northern_Ireland",
+          "title": "Wikipedia: Alliance Party of Northern Ireland (infobox)",
+          "accessed": "2026-10-14"
+        },
+        {
+          "url": "https://www.wikidata.org/wiki/Q23641308",
+          "title": "Wikidata: Leader of the Alliance Party of Northern Ireland (holders Neeson, Ford, Long)",
+          "accessed": "2026-10-14"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "gbr.respect",
+      "name": {
+        "en": "Respect Party",
+        "native": "Respect – The Unity Coalition"
+      },
+      "abbrev": {
+        "en": "Respect",
+        "native": "Respect"
+      },
+      "color": "#46801C",
+      "sub_ideology": "left_populist",
+      "founded": "2004-01-25",
+      "dissolved": "2016-08-18",
+      "status_2000": "not_yet_founded",
+      "leader_history": [],
+      "popularity_2000": 0,
+      "popularity_note": "Founded 2004; won one seat (Bethnal Green and Bow) at the 2005 general election with 0.3% of the vote.",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Respect_Party",
+          "title": "Wikipedia: Respect Party (infobox)",
+          "accessed": "2026-10-14"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/Template:2005_United_Kingdom_general_election",
+          "title": "Wikipedia: Template:2005 United Kingdom general election",
+          "accessed": "2026-10-14"
+        }
+      ],
+      "confidence": "needs_review",
+      "review_note": "Leader history is empty: the infobox names no leader (the 2005 results table names Linda Smith). Confirm the party's leaders or national chairs 2004-2016."
+    },
+    {
+      "id": "gbr.tuv",
+      "name": {
+        "en": "Traditional Unionist Voice",
+        "native": "Traditional Unionist Voice"
+      },
+      "abbrev": {
+        "en": "TUV",
+        "native": "TUV"
+      },
+      "color": "#0C3A6A",
+      "sub_ideology": "national_conservative",
+      "founded": "2007-12-07",
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        {
+          "person": "gbr.jim_allister",
+          "from": 2007
+        }
+      ],
+      "popularity_2000": 0,
+      "popularity_note": "Founded in 2007 by Jim Allister after he left the DUP; first Commons seat (Jim Allister) at the 2024 general election.",
+      "lineage": {
+        "split_from": "gbr.dup"
+      },
+      "regional_base": [
+        "Northern Ireland"
+      ],
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Traditional_Unionist_Voice",
+          "title": "Wikipedia: Traditional Unionist Voice (infobox)",
+          "accessed": "2026-10-14"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/Democratic_Unionist_Party",
+          "title": "Wikipedia: Democratic Unionist Party (2007 split)",
+          "accessed": "2026-10-14"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "gbr.brexit_party",
+      "name": {
+        "en": "The Brexit Party",
+        "native": "The Brexit Party"
+      },
+      "abbrev": {
+        "en": "BXP",
+        "native": "Brexit"
+      },
+      "color": "#12B6CF",
+      "sub_ideology": "right_populist",
+      "founded": "2018-11-23",
+      "dissolved": "2021-01-04",
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        {
+          "person": "gbr.catherine_blaiklock",
+          "from": "2019-01-20",
+          "to": "2019-03-20"
+        },
+        {
+          "person": "gbr.nigel_farage",
+          "from": "2019-03-22",
+          "to": "2021-01-04"
+        }
+      ],
+      "popularity_2000": 0,
+      "popularity_note": "Incorporated November 2018 and announced on 20 January 2019; won the 2019 European Parliament election in the UK and 2% (no seats) at the December 2019 general election. Renamed Reform UK on 4 January 2021 (Electoral Commission approval).",
+      "lineage": {
+        "renamed_to": "gbr.reform_uk"
+      },
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Reform_UK",
+          "title": "Wikipedia: Reform UK (Brexit Party history, leaders, rename)",
+          "accessed": "2026-10-14"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "gbr.reform_uk",
+      "name": {
+        "en": "Reform UK",
+        "native": "Reform UK"
+      },
+      "abbrev": {
+        "en": "Reform",
+        "native": "Reform"
+      },
+      "color": "#12B6CF",
+      "sub_ideology": "right_populist",
+      "founded": "2021-01-04",
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        {
+          "person": "gbr.nigel_farage",
+          "from": "2021-01-04",
+          "to": "2021-03-06"
+        },
+        {
+          "person": "gbr.richard_tice",
+          "from": "2021-03-06",
+          "to": "2024-06-03"
+        },
+        {
+          "person": "gbr.nigel_farage",
+          "from": "2024-06-03"
+        }
+      ],
+      "popularity_2000": 0,
+      "popularity_note": "The Brexit Party under its new name from 4 January 2021. Five seats and 14.3% at the 2024 general election.",
+      "lineage": {
+        "renamed_from": "gbr.brexit_party"
+      },
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Reform_UK",
+          "title": "Wikipedia: Reform UK (leaders table, rename)",
+          "accessed": "2026-10-14"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/2024_United_Kingdom_general_election",
+          "title": "Wikipedia: 2024 United Kingdom general election",
+          "accessed": "2026-10-14"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "gbr.change_uk",
+      "name": {
+        "en": "Change UK – The Independent Group",
+        "native": "The Independent Group for Change"
+      },
+      "abbrev": {
+        "en": "CUK",
+        "native": "TIG"
+      },
+      "color": "#222222",
+      "sub_ideology": "centrist_liberal",
+      "founded": "2019-02-18",
+      "dissolved": "2019-12-19",
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        {
+          "person": "gbr.heidi_allen",
+          "from": "2019-03-29",
+          "to": "2019-06-04",
+          "title": "Acting leader"
+        },
+        {
+          "person": "gbr.anna_soubry",
+          "from": "2019-06-04",
+          "to": "2019-12-19"
+        }
+      ],
+      "popularity_2000": 0,
+      "popularity_note": "Formed by MPs who left Labour and the Conservatives in February 2019; never won a seat at an election and dissolved after the 2019 general election.",
+      "lineage": {
+        "split_from": "gbr.labour"
+      },
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Change_UK",
+          "title": "Wikipedia: Change UK (infobox)",
+          "accessed": "2026-10-14"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "gbr.your_party",
+      "name": {
+        "en": "Your Party",
+        "native": "Your Party"
+      },
+      "abbrev": {
+        "en": "YP",
+        "native": "Your Party"
+      },
+      "color": "#B5103C",
+      "sub_ideology": "democratic_socialist",
+      "founded": "2025-07-24",
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        {
+          "person": "gbr.jeremy_corbyn",
+          "from": 2025,
+          "title": "Parliamentary leader (collective leadership)"
+        }
+      ],
+      "popularity_2000": 0,
+      "popularity_note": "Founded in 2025 by Jeremy Corbyn, Zarah Sultana and others, with a collective leadership; included because its founders sit in the Commons.",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Your_Party_(UK)",
+          "title": "Wikipedia: Your Party (UK) (infobox)",
+          "accessed": "2026-10-14"
+        }
+      ],
+      "confidence": "needs_review",
+      "review_note": "Check how many sitting MPs belong to the party and the date Corbyn became parliamentary leader (stored as the year 2025)."
+    }
+  ]
+}

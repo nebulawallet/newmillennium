@@ -1,0 +1,322 @@
+{
+  "rules": [
+    {
+      "kind": "legislative",
+      "chamber": "house_of_commons",
+      "every_years": 5,
+      "anchor": "2024-07-04",
+      "snap_possible": true,
+      "note": "Maximum five-year Parliament. Under the Fixed-term Parliaments Act 2011 elections fell on the first Thursday in May of the fifth year unless two-thirds of the Commons agreed to an early election (2017) or a special act was passed (Early Parliamentary General Election Act 2019). The Dissolution and Calling of Parliament Act 2022 restored the Prime Minister's power to request a dissolution at any time."
+    }
+  ],
+  "elections": [
+    {
+      "id": "general_2001",
+      "date": "2001-06-07",
+      "kind": "legislative",
+      "chamber": "house_of_commons",
+      "historical": {
+        "candidates": [
+          { "person": "gbr.tony_blair", "party": "gbr.labour", "round": 1 },
+          { "person": "gbr.william_hague", "party": "gbr.conservative", "round": 1 },
+          { "person": "gbr.charles_kennedy", "party": "gbr.liberal_democrats", "round": 1 }
+        ],
+        "party_results": [
+          { "party": "gbr.labour", "share": 0.407, "seats": 412 },
+          { "party": "gbr.conservative", "share": 0.316, "seats": 166 },
+          { "party": "gbr.liberal_democrats", "share": 0.183, "seats": 52 },
+          { "party": "gbr.snp", "share": 0.018, "seats": 5 },
+          { "party": "gbr.ukip", "share": 0.015, "seats": 0 },
+          { "party": "gbr.uup", "share": 0.008, "seats": 6 },
+          { "party": "gbr.plaid_cymru", "share": 0.007, "seats": 4 },
+          { "party": "gbr.dup", "share": 0.007, "seats": 5 },
+          { "party": "gbr.sinn_fein", "share": 0.007, "seats": 4 },
+          { "party": "gbr.sdlp", "share": 0.006, "seats": 3 },
+          { "party": "gbr.green", "share": 0.006, "seats": 0 },
+          { "party": "gbr.bnp", "share": 0.002, "seats": 0 },
+          { "party": "gbr.alliance", "share": 0.001, "seats": 0 },
+          { "party": "gbr.ukup", "share": 0.001, "seats": 0 },
+          { "party": "others", "seats": 2 }
+        ],
+        "winner": "gbr.labour",
+        "turnout": 0.594,
+        "note": "Labour's 412 excludes the Speaker, Michael Martin. 'others' = the Speaker and Richard Taylor (Independent Kidderminster Hospital and Health Concern, Wyre Forest).",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2001_United_Kingdom_general_election", "title": "Wikipedia: 2001 United Kingdom general election (results summary)", "accessed": "2026-10-14" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "general_2005",
+      "date": "2005-05-05",
+      "kind": "legislative",
+      "chamber": "house_of_commons",
+      "historical": {
+        "candidates": [
+          { "person": "gbr.tony_blair", "party": "gbr.labour", "round": 1 },
+          { "person": "gbr.michael_howard", "party": "gbr.conservative", "round": 1 },
+          { "person": "gbr.charles_kennedy", "party": "gbr.liberal_democrats", "round": 1 }
+        ],
+        "party_results": [
+          { "party": "gbr.labour", "share": 0.352, "seats": 355 },
+          { "party": "gbr.conservative", "share": 0.324, "seats": 198 },
+          { "party": "gbr.liberal_democrats", "share": 0.22, "seats": 62 },
+          { "party": "gbr.ukip", "share": 0.022, "seats": 0 },
+          { "party": "gbr.snp", "share": 0.015, "seats": 6 },
+          { "party": "gbr.green", "share": 0.01, "seats": 0 },
+          { "party": "gbr.dup", "share": 0.009, "seats": 9 },
+          { "party": "gbr.bnp", "share": 0.007, "seats": 0 },
+          { "party": "gbr.plaid_cymru", "share": 0.006, "seats": 3 },
+          { "party": "gbr.sinn_fein", "share": 0.006, "seats": 5 },
+          { "party": "gbr.uup", "share": 0.005, "seats": 1 },
+          { "party": "gbr.sdlp", "share": 0.005, "seats": 3 },
+          { "party": "gbr.respect", "share": 0.003, "seats": 1 },
+          { "party": "gbr.alliance", "share": 0.001, "seats": 0 },
+          { "party": "independents", "share": 0.005, "seats": 1 },
+          { "party": "others", "seats": 2 }
+        ],
+        "winner": "gbr.labour",
+        "turnout": 0.614,
+        "note": "646 seats. Labour's 355 excludes the Speaker. 'others' = the Speaker and Richard Taylor (Health Concern); the independent seat is Blaenau Gwent.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2005_United_Kingdom_general_election", "title": "Wikipedia: 2005 United Kingdom general election", "accessed": "2026-10-14" },
+          { "url": "https://en.wikipedia.org/wiki/Template:2005_United_Kingdom_general_election", "title": "Wikipedia: Template:2005 United Kingdom general election (full results table)", "accessed": "2026-10-14" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "general_2010",
+      "date": "2010-05-06",
+      "kind": "legislative",
+      "chamber": "house_of_commons",
+      "historical": {
+        "candidates": [
+          { "person": "gbr.david_cameron", "party": "gbr.conservative", "round": 1 },
+          { "person": "gbr.gordon_brown", "party": "gbr.labour", "round": 1 },
+          { "person": "gbr.nick_clegg", "party": "gbr.liberal_democrats", "round": 1 }
+        ],
+        "party_results": [
+          { "party": "gbr.conservative", "share": 0.361, "seats": 306 },
+          { "party": "gbr.labour", "share": 0.29, "seats": 258 },
+          { "party": "gbr.liberal_democrats", "share": 0.23, "seats": 57 },
+          { "party": "gbr.dup", "share": 0.006, "seats": 8 },
+          { "party": "gbr.snp", "share": 0.017, "seats": 6 },
+          { "party": "gbr.sinn_fein", "share": 0.006, "seats": 5 },
+          { "party": "gbr.plaid_cymru", "share": 0.006, "seats": 3 },
+          { "party": "gbr.sdlp", "share": 0.004, "seats": 3 },
+          { "party": "gbr.green", "share": 0.009, "seats": 1 },
+          { "party": "gbr.alliance", "share": 0.001, "seats": 1 },
+          { "party": "gbr.bnp", "share": 0.019, "seats": 0 },
+          { "party": "independents", "share": 0.0007, "seats": 1 },
+          { "party": "others", "seats": 1 }
+        ],
+        "winner": "gbr.conservative",
+        "turnout": 0.651,
+        "note": "Hung parliament; Conservative-Liberal Democrat coalition formed on 11 May 2010. 'others' = the Speaker, John Bercow; the independent is Sylvia Hermon (North Down). UKIP won no seats; its vote share was not captured from the fetched tables.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2010_United_Kingdom_general_election", "title": "Wikipedia: 2010 United Kingdom general election (results table)", "accessed": "2026-10-14" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "av_referendum_2011",
+      "date": "2011-05-05",
+      "kind": "referendum",
+      "question": "At present, the UK uses the \"first past the post\" system to elect MPs to the House of Commons. Should the \"alternative vote\" system be used instead?",
+      "historical": {
+        "yes_share": 0.321,
+        "winner": "no",
+        "turnout": 0.422,
+        "note": "Yes 6,152,607; No 13,013,123. Shares computed from those totals; turnout from 19,279,022 ballots on an electorate of 45,684,501.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2011_United_Kingdom_Alternative_Vote_referendum", "title": "Wikipedia: 2011 United Kingdom Alternative Vote referendum", "accessed": "2026-10-14" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "scottish_independence_referendum_2014",
+      "date": "2014-09-18",
+      "kind": "referendum",
+      "question": "Should Scotland be an independent country?",
+      "historical": {
+        "yes_share": 0.447,
+        "winner": "no",
+        "turnout": 0.846,
+        "note": "Held in Scotland only, not UK-wide; included because it decided the possible secession of a constituent country. Yes 1,617,989; No 2,001,926 (55.3% No).",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2014_Scottish_independence_referendum", "title": "Wikipedia: 2014 Scottish independence referendum", "accessed": "2026-10-14" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "general_2015",
+      "date": "2015-05-07",
+      "kind": "legislative",
+      "chamber": "house_of_commons",
+      "historical": {
+        "candidates": [
+          { "person": "gbr.david_cameron", "party": "gbr.conservative", "round": 1 },
+          { "person": "gbr.ed_miliband", "party": "gbr.labour", "round": 1 },
+          { "person": "gbr.nick_clegg", "party": "gbr.liberal_democrats", "round": 1 }
+        ],
+        "party_results": [
+          { "party": "gbr.conservative", "share": 0.368, "seats": 330 },
+          { "party": "gbr.labour", "share": 0.304, "seats": 232 },
+          { "party": "gbr.snp", "share": 0.047, "seats": 56 },
+          { "party": "gbr.liberal_democrats", "share": 0.079, "seats": 8 },
+          { "party": "gbr.dup", "share": 0.006, "seats": 8 },
+          { "party": "gbr.sinn_fein", "share": 0.006, "seats": 4 },
+          { "party": "gbr.plaid_cymru", "share": 0.006, "seats": 3 },
+          { "party": "gbr.sdlp", "share": 0.003, "seats": 3 },
+          { "party": "gbr.uup", "share": 0.004, "seats": 2 },
+          { "party": "gbr.ukip", "share": 0.126, "seats": 1 },
+          { "party": "gbr.green", "share": 0.038, "seats": 1 },
+          { "party": "independents", "share": 0.0006, "seats": 1 },
+          { "party": "others", "seats": 1 }
+        ],
+        "winner": "gbr.conservative",
+        "turnout": 0.664,
+        "note": "Conservative majority. 'others' = the Speaker, John Bercow; the independent is Sylvia Hermon. The article infobox gives the Conservatives 36.9%, the results table 36.8%.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2015_United_Kingdom_general_election", "title": "Wikipedia: 2015 United Kingdom general election (results table)", "accessed": "2026-10-14" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "eu_referendum_2016",
+      "date": "2016-06-23",
+      "kind": "referendum",
+      "question": "Should the United Kingdom remain a member of the European Union or leave the European Union?",
+      "historical": {
+        "yes_share": 0.519,
+        "winner": "leave",
+        "turnout": 0.722,
+        "note": "yes_share is the Leave share (51.89%): Leave 17,410,742; Remain 16,141,241. Held under the European Union Referendum Act 2015; also held in Gibraltar.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2016_United_Kingdom_European_Union_membership_referendum", "title": "Wikipedia: 2016 United Kingdom European Union membership referendum", "accessed": "2026-10-14" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "general_2017",
+      "date": "2017-06-08",
+      "kind": "legislative",
+      "chamber": "house_of_commons",
+      "snap": true,
+      "historical": {
+        "candidates": [
+          { "person": "gbr.theresa_may", "party": "gbr.conservative", "round": 1 },
+          { "person": "gbr.jeremy_corbyn", "party": "gbr.labour", "round": 1 },
+          { "person": "gbr.tim_farron", "party": "gbr.liberal_democrats", "round": 1 }
+        ],
+        "party_results": [
+          { "party": "gbr.conservative", "share": 0.423, "seats": 317 },
+          { "party": "gbr.labour", "share": 0.40, "seats": 262 },
+          { "party": "gbr.snp", "share": 0.03, "seats": 35 },
+          { "party": "gbr.liberal_democrats", "share": 0.074, "seats": 12 },
+          { "party": "gbr.dup", "share": 0.009, "seats": 10 },
+          { "party": "gbr.sinn_fein", "share": 0.007, "seats": 7 },
+          { "party": "gbr.plaid_cymru", "share": 0.005, "seats": 4 },
+          { "party": "gbr.green", "share": 0.016, "seats": 1 },
+          { "party": "gbr.ukip", "share": 0.018, "seats": 0 },
+          { "party": "independents", "share": 0.0005, "seats": 1 },
+          { "party": "others", "share": 0.001, "seats": 1 }
+        ],
+        "winner": "gbr.conservative",
+        "turnout": 0.688,
+        "note": "Early election called by Theresa May and approved by the required two-thirds Commons vote under the Fixed-term Parliaments Act. Hung parliament; Conservative minority government with DUP confidence and supply. 'others' = the Speaker; the independent is Sylvia Hermon.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2017_United_Kingdom_general_election", "title": "Wikipedia: 2017 United Kingdom general election (results table)", "accessed": "2026-10-14" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "general_2019",
+      "date": "2019-12-12",
+      "kind": "legislative",
+      "chamber": "house_of_commons",
+      "snap": true,
+      "historical": {
+        "candidates": [
+          { "person": "gbr.boris_johnson", "party": "gbr.conservative", "round": 1 },
+          { "person": "gbr.jeremy_corbyn", "party": "gbr.labour", "round": 1 },
+          { "person": "gbr.jo_swinson", "party": "gbr.liberal_democrats", "round": 1 }
+        ],
+        "party_results": [
+          { "party": "gbr.conservative", "share": 0.436, "seats": 365 },
+          { "party": "gbr.labour", "share": 0.321, "seats": 202 },
+          { "party": "gbr.snp", "share": 0.039, "seats": 48 },
+          { "party": "gbr.liberal_democrats", "share": 0.116, "seats": 11 },
+          { "party": "gbr.dup", "share": 0.008, "seats": 8 },
+          { "party": "gbr.sinn_fein", "share": 0.006, "seats": 7 },
+          { "party": "gbr.plaid_cymru", "share": 0.005, "seats": 4 },
+          { "party": "gbr.sdlp", "share": 0.004, "seats": 2 },
+          { "party": "gbr.green", "share": 0.026, "seats": 1 },
+          { "party": "gbr.alliance", "share": 0.004, "seats": 1 },
+          { "party": "gbr.brexit_party", "share": 0.02, "seats": 0 },
+          { "party": "others", "share": 0.001, "seats": 1 }
+        ],
+        "winner": "gbr.conservative",
+        "turnout": 0.673,
+        "note": "Early election held under the Early Parliamentary General Election Act 2019. 'others' = the Speaker, Lindsay Hoyle. The Brexit Party share is the rounded 'two percent' given in the Reform UK article.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2019_United_Kingdom_general_election", "title": "Wikipedia: 2019 United Kingdom general election (results table)", "accessed": "2026-10-14" },
+          { "url": "https://en.wikipedia.org/wiki/Reform_UK", "title": "Wikipedia: Reform UK (Brexit Party 2019 vote share)", "accessed": "2026-10-14" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "general_2024",
+      "date": "2024-07-04",
+      "kind": "legislative",
+      "chamber": "house_of_commons",
+      "historical": {
+        "candidates": [
+          { "person": "gbr.keir_starmer", "party": "gbr.labour", "round": 1 },
+          { "person": "gbr.rishi_sunak", "party": "gbr.conservative", "round": 1 },
+          { "person": "gbr.ed_davey", "party": "gbr.liberal_democrats", "round": 1 },
+          { "person": "gbr.nigel_farage", "party": "gbr.reform_uk", "round": 1 }
+        ],
+        "party_results": [
+          { "party": "gbr.labour", "share": 0.337, "seats": 411 },
+          { "party": "gbr.conservative", "share": 0.237, "seats": 121 },
+          { "party": "gbr.liberal_democrats", "share": 0.122, "seats": 72 },
+          { "party": "gbr.snp", "share": 0.025, "seats": 9 },
+          { "party": "gbr.sinn_fein", "share": 0.007, "seats": 7 },
+          { "party": "independents", "share": 0.02, "seats": 6 },
+          { "party": "gbr.reform_uk", "share": 0.143, "seats": 5 },
+          { "party": "gbr.dup", "share": 0.006, "seats": 5 },
+          { "party": "gbr.green", "share": 0.064, "seats": 4 },
+          { "party": "gbr.plaid_cymru", "share": 0.007, "seats": 4 },
+          { "party": "gbr.sdlp", "share": 0.003, "seats": 2 },
+          { "party": "gbr.alliance", "share": 0.004, "seats": 1 },
+          { "party": "gbr.uup", "share": 0.003, "seats": 1 },
+          { "party": "gbr.tuv", "share": 0.002, "seats": 1 },
+          { "party": "others", "share": 0.001, "seats": 1 }
+        ],
+        "winner": "gbr.labour",
+        "turnout": 0.597,
+        "note": "First election under the Dissolution and Calling of Parliament Act 2022. Labour's 411 includes 43 Labour Co-operative MPs. 'others' = the Speaker, Lindsay Hoyle.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2024_United_Kingdom_general_election", "title": "Wikipedia: 2024 United Kingdom general election (results table)", "accessed": "2026-10-14" }
+        ],
+        "confidence": "verified"
+      }
+    }
+  ],
+  "source": [
+    { "url": "https://en.wikipedia.org/wiki/2019_United_Kingdom_general_election", "title": "Wikipedia: 2019 United Kingdom general election (Early Parliamentary General Election Act 2019)", "accessed": "2026-10-14" },
+    { "url": "https://en.wikipedia.org/wiki/2017_United_Kingdom_general_election", "title": "Wikipedia: 2017 United Kingdom general election (Fixed-term Parliaments Act background)", "accessed": "2026-10-14" },
+    { "url": "https://en.wikipedia.org/wiki/2024_United_Kingdom_general_election", "title": "Wikipedia: 2024 United Kingdom general election (Dissolution and Calling of Parliament Act 2022)", "accessed": "2026-10-14" }
+  ],
+  "confidence": "verified"
+}

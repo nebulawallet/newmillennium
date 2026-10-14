@@ -1,0 +1,151 @@
+{
+  "tag": "GBR",
+  "name": { "en": "United Kingdom", "native": "United Kingdom", "official": { "en": "United Kingdom of Great Britain and Northern Ireland", "native": "United Kingdom of Great Britain and Northern Ireland" } },
+  "adjective": "British",
+  "culture_primary": "english",
+  "government": {
+    "type": "constitutional_monarchy",
+    "effective_executive": "gbr.prime_minister",
+    "head_of_state_office": "gbr.monarch",
+    "head_of_government_office": "gbr.prime_minister",
+    "constitution": {
+      "term_limit_amendable": true,
+      "emergency_powers": true,
+      "referendum_required_for": []
+    },
+    "note": "Parliamentary constitutional monarchy. The Prime Minister heads the government and depends on the confidence of the House of Commons; the monarch's role is largely ceremonial. National referendums are held only when Parliament passes an act for one (for example 2011 and 2016). The Fixed-term Parliaments Act 2011 fixed election dates until the Dissolution and Calling of Parliament Act 2022 replaced it."
+  },
+  "offices": [
+    {
+      "id": "gbr.monarch",
+      "title": { "en": "Monarch of the United Kingdom" },
+      "role": "head_of_state",
+      "power_weight": 0.05,
+      "selection": "hereditary",
+      "succession": {
+        "type": "line",
+        "heirs": ["gbr.charles_iii", "gbr.prince_william", "gbr.prince_harry"]
+      },
+      "holders": [
+        { "person": "gbr.elizabeth_ii", "from": "1952-02-06", "to": "2022-09-08", "note": "Reigned until her death." },
+        { "person": "gbr.charles_iii", "from": "2022-09-08" }
+      ],
+      "source": [
+        { "url": "https://www.wikidata.org/wiki/Q9134365", "title": "Wikidata: Monarch of the United Kingdom (position held by)", "accessed": "2026-10-14" },
+        { "url": "https://en.wikipedia.org/wiki/List_of_prime_ministers_of_the_United_Kingdom", "title": "Wikipedia: List of prime ministers of the United Kingdom (monarch column)", "accessed": "2026-10-14" },
+        { "url": "https://en.wikipedia.org/wiki/Line_of_succession_to_the_British_throne", "title": "Wikipedia: Line of succession to the British throne", "accessed": "2026-10-14", "note": "Heirs are the first three in line on 2000-01-01 (Charles, then his sons William and Harry). Since 2022 the line is William, his three children, then Harry." }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "gbr.prime_minister",
+      "title": { "en": "Prime Minister of the United Kingdom" },
+      "role": "head_of_government",
+      "power_weight": 0.95,
+      "selection": "legislature",
+      "appointed_by": "gbr.monarch",
+      "term_years": 5,
+      "holders": [
+        { "person": "gbr.tony_blair", "from": "1997-05-02", "to": "2007-06-27" },
+        { "person": "gbr.gordon_brown", "from": "2007-06-27", "to": "2010-05-11" },
+        { "person": "gbr.david_cameron", "from": "2010-05-11", "to": "2016-07-13", "note": "Conservative-Liberal Democrat coalition 2010-2015." },
+        { "person": "gbr.theresa_may", "from": "2016-07-13", "to": "2019-07-24", "note": "DUP confidence-and-supply agreement after the 2017 election." },
+        { "person": "gbr.boris_johnson", "from": "2019-07-24", "to": "2022-09-06" },
+        { "person": "gbr.liz_truss", "from": "2022-09-06", "to": "2022-10-25" },
+        { "person": "gbr.rishi_sunak", "from": "2022-10-25", "to": "2024-07-05" },
+        { "person": "gbr.keir_starmer", "from": "2024-07-05", "to": "2026-07-20" },
+        { "person": "gbr.andy_burnham", "from": "2026-07-20", "note": "Succeeded Starmer after being elected Labour leader on 2026-07-17." }
+      ],
+      "source": [
+        { "url": "https://www.wikidata.org/wiki/Q14211", "title": "Wikidata: Prime Minister of the United Kingdom (position held by)", "accessed": "2026-10-14" },
+        { "url": "https://en.wikipedia.org/wiki/List_of_prime_ministers_of_the_United_Kingdom", "title": "Wikipedia: List of prime ministers of the United Kingdom", "accessed": "2026-10-14" }
+      ],
+      "confidence": "verified"
+    }
+  ],
+  "legislature": {
+    "name": { "en": "Parliament of the United Kingdom" },
+    "chambers": [
+      {
+        "id": "house_of_commons",
+        "name": { "en": "House of Commons" },
+        "seats": 659,
+        "term_years": 5,
+        "elected": "direct",
+        "system": {
+          "type": "fptp",
+          "district_model": "custom",
+          "note": "659 single-member constituencies on 1 January 2000 (646 from 2005, 650 from 2010). seats_2000 is the 1997 result adjusted for floor crossings to 1 January 2000: Peter Temple-Morris (Con to Lab via independent, 1997-98), Tommy Graham (Lab to independent, 1998), Dennis Canavan (Lab to independent, 1999) and Shaun Woodward (Con to Lab, 18 December 1999). All nine by-elections from 1997 to 1999 were holds, and Ceredigion was not vacated until 10 January 2000. 'others' is the Speaker, Betty Boothroyd; the independents are Martin Bell, Tommy Graham and Dennis Canavan. The two Sinn Fein MPs do not take their seats."
+        },
+        "seats_2000": {
+          "gbr.labour": 418,
+          "gbr.conservative": 163,
+          "gbr.liberal_democrats": 46,
+          "gbr.uup": 10,
+          "gbr.snp": 6,
+          "gbr.plaid_cymru": 4,
+          "gbr.sdlp": 3,
+          "gbr.dup": 2,
+          "gbr.sinn_fein": 2,
+          "gbr.ukup": 1,
+          "independents": 3,
+          "others": 1
+        },
+        "confidence_chamber": true,
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/1997_United_Kingdom_general_election", "title": "Wikipedia: 1997 United Kingdom general election (results)", "accessed": "2026-10-14" },
+          { "url": "https://en.wikipedia.org/wiki/List_of_MPs_elected_in_the_1997_United_Kingdom_general_election", "title": "Wikipedia: List of MPs elected in the 1997 United Kingdom general election (composition)", "accessed": "2026-10-14" },
+          { "url": "https://en.wikipedia.org/wiki/List_of_British_politicians_who_have_crossed_the_floor", "title": "Wikipedia: List of British politicians who have crossed the floor (1997-2001 Parliament)", "accessed": "2026-10-14" },
+          { "url": "https://en.wikipedia.org/wiki/List_of_United_Kingdom_by-elections_(1979%E2%80%932010)", "title": "Wikipedia: List of United Kingdom by-elections (1979-2010)", "accessed": "2026-10-14" },
+          { "url": "https://en.wikipedia.org/wiki/2000_Ceredigion_by-election", "title": "Wikipedia: 2000 Ceredigion by-election (seat vacated 10 January 2000)", "accessed": "2026-10-14" }
+        ],
+        "confidence": "verified"
+      },
+      {
+        "id": "house_of_lords",
+        "name": { "en": "House of Lords" },
+        "seats": 669,
+        "elected": "appointed",
+        "system": {
+          "type": "appointed",
+          "note": "Appointed life peers, Church of England bishops and (from the House of Lords Act 1999 until 2026) 92 excepted hereditary peers, 75 of them elected by party group (42 Conservative, 28 Crossbench, 3 Liberal Democrat, 2 Labour) and 15 by the whole House. Members have no fixed term. The House of Lords (Hereditary Peers) Act 2026 removed the remaining hereditary peers."
+        },
+        "seats_2000": { "appointed": 669 },
+        "confidence_chamber": false,
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/House_of_Lords_Act_1999", "title": "Wikipedia: House of Lords Act 1999 (membership fell from 1,330 in October 1999 to 669 in March 2000)", "accessed": "2026-10-14" },
+          { "url": "https://en.wikipedia.org/wiki/1999_House_of_Lords_elections", "title": "Wikipedia: 1999 House of Lords elections", "accessed": "2026-10-14" }
+        ],
+        "confidence": "needs_review",
+        "review_note": "669 is the membership in March 2000 (House of Lords Annual Report 1999-2000, quoted on Wikipedia); the exact figure on 1 January 2000 was not found. The party/group breakdown (Conservative, Labour, Liberal Democrat, Crossbench, bishops, others) for early 2000 could not be fetched (House of Commons Library Research Paper 00/61 was unreachable), so all seats are recorded as 'appointed'. Replace with the group breakdown from that paper."
+      }
+    ]
+  },
+  "party_system": "multi_party",
+  "start_2000": {
+    "ruling_parties": ["gbr.labour"],
+    "ideology_support": {
+      "third_way": 0.30,
+      "social_democrat": 0.138,
+      "liberal_conservative": 0.22,
+      "traditional_conservative": 0.095,
+      "social_liberal": 0.17,
+      "right_populist": 0.029,
+      "regionalist": 0.029,
+      "national_conservative": 0.003,
+      "green": 0.003,
+      "democratic_socialist": 0.004,
+      "ethno_nationalist": 0.001,
+      "big_tent": 0.008
+    },
+    "ideology_support_note": "Derived from 1997 general election UK-wide vote shares: Labour 43.2% (split 30.0 Third Way 'New Labour' / 13.2 social democrat), Conservative 30.7% (22.0 liberal conservative / 8.7 traditional conservative), Liberal Democrats 16.8% plus Alliance 0.2% (social liberal), Referendum Party 2.6% plus UKIP 0.3% (right populist), SNP 2.0% + Plaid Cymru 0.5% + Sinn Fein 0.4% (regionalist/nationalist), UUP 0.8% (traditional conservative), SDLP 0.6% (social democrat), DUP 0.3% (national conservative), Greens 0.2% plus others (green), Socialist Labour 0.2% and others (democratic socialist), BNP 0.1% (ethno-nationalist), independents, the Speaker and minor parties about 0.8% (big tent). Splits within Labour and the Conservatives are gameplay estimates.",
+    "stability": 0.8,
+    "war_support": 0.35
+  },
+  "claims": [],
+  "source": [
+    { "url": "https://en.wikipedia.org/wiki/1997_United_Kingdom_general_election", "title": "Wikipedia: 1997 United Kingdom general election", "accessed": "2026-10-14" },
+    { "url": "https://en.wikipedia.org/wiki/List_of_prime_ministers_of_the_United_Kingdom", "title": "Wikipedia: List of prime ministers of the United Kingdom", "accessed": "2026-10-14" }
+  ],
+  "confidence": "verified"
+}

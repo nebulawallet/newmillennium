@@ -18,6 +18,7 @@ const SPECIAL: Record<string, { label: string; color: string }> = {
   others: { label: "Others", color: "#6b7280" },
   appointed: { label: "Appointed", color: "#4b5563" },
   vacant: { label: "Vacant", color: "#2b313b" },
+  speaker: { label: "Speaker", color: "#9aa3b2" },
 };
 
 /** Silhouette placeholder; real portraits can replace it later (data/portraits/<person>.jpg). */

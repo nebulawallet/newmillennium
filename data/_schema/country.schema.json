@@ -310,6 +310,9 @@
               "additionalProperties": false
             }
           },
+          "note": {
+            "type": "string"
+          },
           "source": {
             "minItems": 1,
             "type": "array",

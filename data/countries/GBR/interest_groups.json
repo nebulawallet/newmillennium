@@ -1,0 +1,15 @@
+{
+  "note": "Influence and approval are gameplay starting values for 1 January 2000 (Labour government under Tony Blair with a large Commons majority), not measured data. Influence reflects institutional weight: a strong financial and business sector, trade unions affiliated to Labour but weaker than before the 1980s, a powerful national press, an established church with limited political weight, and a civilian-controlled professional military.",
+  "interest_groups": [
+    { "type": "military", "influence": 0.15, "approval": 55, "note": "Professional all-volunteer forces under civilian control." },
+    { "type": "security_services", "influence": 0.15, "approval": 55 },
+    { "type": "business", "influence": 0.55, "approval": 55, "note": "City of London and employers' organisations; gameplay estimate under a centre-left government." },
+    { "type": "labour_unions", "influence": 0.3, "approval": 55, "note": "TUC unions are affiliated to Labour but have less influence than before the 1980s." },
+    { "type": "religious_establishment", "influence": 0.12, "approval": 50, "note": "Established Church of England." },
+    { "type": "rural", "influence": 0.15, "approval": 40, "note": "Farming and countryside groups, wary of a predominantly urban Labour government." },
+    { "type": "urban_middle_class", "influence": 0.5, "approval": 60 },
+    { "type": "minorities", "influence": 0.12, "approval": 58, "note": "Ethnic-minority communities plus the Scottish, Welsh and Northern Irish national identities." },
+    { "type": "youth_students", "influence": 0.15, "approval": 50 },
+    { "type": "media", "influence": 0.5, "approval": 55, "note": "Influential national press and BBC." }
+  ]
+}

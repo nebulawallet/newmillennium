@@ -48,7 +48,7 @@ Live sources sometimes report allegations or investigations involving real peopl
 
 <!-- AUTO-GENERATED BELOW: run `npm run review-report`; edits below this line are overwritten -->
 
-## Needs review: 52 of 567 records
+## Needs review: 53 of 721 records
 
 Countries with politics data: 8 / 212.
 
@@ -133,11 +133,12 @@ Countries with no data yet (204): ALB, AND, AUT, BEL, BIH, BGR, HRV, CYP, CZE, D
 | election | `president_2004` indirect_presidential 2004-10-10 | The source does not label the 189-79 result as the third round, although the text says he won after the second and third rounds; confirm the round number and the first- and second-round tallies. | data/countries/SOM/elections.json |
 | election | `president_2009` indirect_presidential 2009-01-30 | The article text says three rounds, but the results template shows two columns (first round and run-off). Confirm round numbering. Add Maslah Mohammed Siad Barre once his birth year is sourced. | data/countries/SOM/elections.json |
 
-### SWE — Sweden (1)
+### SWE — Sweden (2)
 
 | kind | record | what to check | file |
 |---|---|---|---|
 | party | `swe.fp` Liberals (Liberal People's Party until 2015) (L) | Confirm the exact date of the rename from Folkpartiet liberalerna to Liberalerna (2015); the research sources only show the change of name between the 2014 and 2018 elections. | data/countries/SWE/parties.json |
+| election | `riksdag_2026` legislative 2026-09-13 | Recent election: results were still described as subject to formal certification by the Election Authority. Re-check final vote counts and the outcome of government formation. | data/countries/SWE/elections.json |
 
 ### USA — United States (2)
 

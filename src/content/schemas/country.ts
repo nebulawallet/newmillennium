@@ -109,6 +109,7 @@ export const Office = z.strictObject({
     .optional(),
   /** Real tenure timeline from at least 2000-01-01 onward, in chronological order. */
   holders: z.array(Holder),
+  note: z.string().optional(),
   ...sourced,
 });
 export type Office = z.infer<typeof Office>;
@@ -145,7 +146,7 @@ export const Chamber = z.strictObject({
   ...sourced,
 });
 export type Chamber = z.infer<typeof Chamber>;
-export const SEAT_SPECIAL_KEYS = new Set(["independents", "vacant", "appointed", "others"]);
+export const SEAT_SPECIAL_KEYS = new Set(["independents", "vacant", "appointed", "others", "speaker"]);
 
 export const Legislature = z.strictObject({
   name: LocalName,
@@ -298,6 +299,8 @@ export const Party = z.strictObject({
   factions: z.array(Faction).default([]),
   /** Parties this party has documented refusals to govern with. */
   coalition_red_lines: z.array(ScopedId).default([]),
+  /** Elected members do not take their seats (e.g. Sinn Féin at Westminster). */
+  abstentionist: z.boolean().optional(),
   /** For regional parties: culture ids or region names where support is concentrated. */
   regional_base: z.array(z.string()).optional(),
   international: z.string().optional(),
@@ -370,8 +373,10 @@ export const Election = z.strictObject({
         }),
       )
       .optional(),
-    /** Referendum result. */
+    /** Referendum result: share for the proposal. */
     yes_share: Share.optional(),
+    /** Referendum options when they are not a plain yes/no (e.g. Leave / Remain). */
+    options: z.array(z.strictObject({ label: z.string(), share: Share.optional(), votes: z.number().int().optional() })).optional(),
     winner: z.string().optional(),
     turnout: Share.optional(),
     note: z.string().optional(),
