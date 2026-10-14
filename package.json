@@ -1,0 +1,28 @@
+{
+  "name": "new-millennium",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "New Millennium: a modern-day grand strategy game (2000 onward) built with Three.js",
+  "scripts": {
+    "validate-data": "tsx scripts/validate-data.ts",
+    "review-report": "tsx scripts/review-report.ts",
+    "gen-schemas": "tsx scripts/gen-schemas.ts",
+    "content-stats": "tsx scripts/content-stats.ts",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "check": "npm run typecheck && npm run test && npm run validate-data -- --existing --tier full"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.5",
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2",
+    "vitest": "^5.0.4"
+  },
+  "dependencies": {
+    "zod": "^4.6.7"
+  }
+}

@@ -1,0 +1,316 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "parties": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[a-z]{3}\\.[a-z0-9]+(?:_[a-z0-9]+)*$"
+          },
+          "name": {
+            "type": "object",
+            "properties": {
+              "en": {
+                "type": "string",
+                "minLength": 1
+              },
+              "native": {
+                "type": "string",
+                "minLength": 1
+              },
+              "native_latin": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "required": [
+              "en"
+            ],
+            "additionalProperties": false
+          },
+          "abbrev": {
+            "type": "object",
+            "properties": {
+              "en": {
+                "type": "string",
+                "minLength": 1
+              },
+              "native": {
+                "type": "string",
+                "minLength": 1
+              },
+              "native_latin": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "required": [
+              "en"
+            ],
+            "additionalProperties": false
+          },
+          "color": {
+            "type": "string",
+            "pattern": "^#[0-9a-fA-F]{6}$"
+          },
+          "sub_ideology": {
+            "type": "string",
+            "pattern": "^[a-z0-9]+(?:_[a-z0-9]+)*$"
+          },
+          "founded": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date",
+                "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))$",
+                "description": "Calendar date, YYYY-MM-DD"
+              },
+              {
+                "type": "integer",
+                "minimum": 1500,
+                "maximum": 2100
+              }
+            ]
+          },
+          "dissolved": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date",
+                "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))$",
+                "description": "Calendar date, YYYY-MM-DD"
+              },
+              {
+                "type": "integer",
+                "minimum": 1500,
+                "maximum": 2100
+              }
+            ]
+          },
+          "status_2000": {
+            "type": "string",
+            "enum": [
+              "active",
+              "extra_parliamentary",
+              "banned",
+              "exiled",
+              "not_yet_founded",
+              "insurgent"
+            ]
+          },
+          "leader_history": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "person": {
+                  "type": "string",
+                  "pattern": "^[a-z]{3}\\.[a-z0-9]+(?:_[a-z0-9]+)*$"
+                },
+                "from": {
+                  "anyOf": [
+                    {
+                      "type": "string",
+                      "format": "date",
+                      "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))$",
+                      "description": "Calendar date, YYYY-MM-DD"
+                    },
+                    {
+                      "type": "integer",
+                      "minimum": 1500,
+                      "maximum": 2100
+                    }
+                  ]
+                },
+                "to": {
+                  "anyOf": [
+                    {
+                      "type": "string",
+                      "format": "date",
+                      "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))$",
+                      "description": "Calendar date, YYYY-MM-DD"
+                    },
+                    {
+                      "type": "integer",
+                      "minimum": 1500,
+                      "maximum": 2100
+                    }
+                  ]
+                },
+                "title": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "person",
+                "from"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "popularity_2000": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1
+          },
+          "popularity_note": {
+            "type": "string"
+          },
+          "lineage": {
+            "type": "object",
+            "properties": {
+              "formed_from": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "pattern": "^[a-z]{3}\\.[a-z0-9]+(?:_[a-z0-9]+)*$"
+                }
+              },
+              "merged_into": {
+                "type": "string",
+                "pattern": "^[a-z]{3}\\.[a-z0-9]+(?:_[a-z0-9]+)*$"
+              },
+              "split_from": {
+                "type": "string",
+                "pattern": "^[a-z]{3}\\.[a-z0-9]+(?:_[a-z0-9]+)*$"
+              },
+              "renamed_from": {
+                "type": "string",
+                "pattern": "^[a-z]{3}\\.[a-z0-9]+(?:_[a-z0-9]+)*$"
+              },
+              "renamed_to": {
+                "type": "string",
+                "pattern": "^[a-z]{3}\\.[a-z0-9]+(?:_[a-z0-9]+)*$"
+              }
+            },
+            "additionalProperties": false
+          },
+          "factions": {
+            "default": [],
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "pattern": "^[a-z0-9]+(?:_[a-z0-9]+)*$"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "sub_ideology": {
+                  "type": "string",
+                  "pattern": "^[a-z0-9]+(?:_[a-z0-9]+)*$"
+                },
+                "strength": {
+                  "type": "number",
+                  "minimum": 0,
+                  "maximum": 1
+                },
+                "figures": {
+                  "default": [],
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "pattern": "^[a-z]{3}\\.[a-z0-9]+(?:_[a-z0-9]+)*$"
+                  }
+                },
+                "note": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "id",
+                "name",
+                "sub_ideology",
+                "strength"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "coalition_red_lines": {
+            "default": [],
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "^[a-z]{3}\\.[a-z0-9]+(?:_[a-z0-9]+)*$"
+            }
+          },
+          "regional_base": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "international": {
+            "type": "string"
+          },
+          "source": {
+            "minItems": 1,
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "url": {
+                  "type": "string",
+                  "format": "uri"
+                },
+                "title": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "accessed": {
+                  "type": "string",
+                  "format": "date",
+                  "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))$",
+                  "description": "Calendar date, YYYY-MM-DD"
+                },
+                "note": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "url",
+                "title",
+                "accessed"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "verified",
+              "needs_review"
+            ]
+          },
+          "review_note": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "name",
+          "abbrev",
+          "color",
+          "sub_ideology",
+          "founded",
+          "status_2000",
+          "leader_history",
+          "popularity_2000",
+          "source",
+          "confidence"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "required": [
+    "parties"
+  ],
+  "additionalProperties": false
+}

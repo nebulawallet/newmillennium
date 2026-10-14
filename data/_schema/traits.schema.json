@@ -1,0 +1,71 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "traits": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[a-z0-9]+(?:_[a-z0-9]+)*$"
+          },
+          "name": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "kind": {
+            "type": "string",
+            "enum": [
+              "background",
+              "stance",
+              "experience",
+              "advisor",
+              "commander",
+              "party"
+            ]
+          },
+          "applies_to": {
+            "minItems": 1,
+            "type": "array",
+            "items": {
+              "type": "string",
+              "enum": [
+                "leader",
+                "advisor",
+                "commander",
+                "party"
+              ]
+            }
+          },
+          "modifiers": {
+            "default": {},
+            "type": "object",
+            "propertyNames": {
+              "type": "string",
+              "pattern": "^[a-z0-9]+(?:_[a-z0-9]+)*$"
+            },
+            "additionalProperties": {
+              "type": "number"
+            }
+          }
+        },
+        "required": [
+          "id",
+          "name",
+          "description",
+          "kind",
+          "applies_to"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "required": [
+    "traits"
+  ],
+  "additionalProperties": false
+}

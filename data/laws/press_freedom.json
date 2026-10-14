@@ -1,0 +1,17 @@
+{
+  "id": "press_freedom",
+  "name": "Press freedom",
+  "description": "Independence of newspapers, broadcasters and online media.",
+  "laws": [
+    { "id": "free_press", "name": "Free press", "description": "Independent media with strong legal protection.", "pp_cost": 80, "requires_vote": true,
+      "modifiers": { "press_freedom": 0.3, "propaganda_efficiency": -0.2, "international_opinion": 10 } },
+    { "id": "regulated_press", "name": "Regulated press", "description": "Independent media under licensing and content rules.", "pp_cost": 60, "requires_vote": true,
+      "modifiers": { "press_freedom": 0.1 } },
+    { "id": "state_influenced_media", "name": "State-influenced media", "description": "Major broadcasters under state or allied ownership; independent outlets operate under pressure.", "pp_cost": 100, "requires_vote": true,
+      "modifiers": { "press_freedom": -0.15, "propaganda_efficiency": 0.15, "international_opinion": -5 } },
+    { "id": "state_controlled_media", "name": "State-controlled media", "description": "Nearly all media are state run or tightly controlled.", "pp_cost": 120, "requires_vote": false,
+      "modifiers": { "press_freedom": -0.35, "propaganda_efficiency": 0.3, "international_opinion": -10 } },
+    { "id": "total_censorship", "name": "Total censorship", "description": "No independent media; foreign media blocked.", "pp_cost": 150, "requires_vote": false,
+      "modifiers": { "press_freedom": -0.5, "propaganda_efficiency": 0.4, "international_opinion": -20, "research_speed": -0.03 } }
+  ]
+}

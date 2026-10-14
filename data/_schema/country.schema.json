@@ -1,0 +1,778 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "tag": {
+      "type": "string",
+      "pattern": "^[A-Z]{3}$"
+    },
+    "name": {
+      "type": "object",
+      "properties": {
+        "en": {
+          "type": "string",
+          "minLength": 1
+        },
+        "native": {
+          "type": "string",
+          "minLength": 1
+        },
+        "native_latin": {
+          "type": "string",
+          "minLength": 1
+        },
+        "official": {
+          "type": "object",
+          "properties": {
+            "en": {
+              "type": "string",
+              "minLength": 1
+            },
+            "native": {
+              "type": "string",
+              "minLength": 1
+            },
+            "native_latin": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "required": [
+            "en"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "en"
+      ],
+      "additionalProperties": false
+    },
+    "adjective": {
+      "type": "string"
+    },
+    "culture_primary": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(?:_[a-z0-9]+)*$"
+    },
+    "government": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "pattern": "^[a-z0-9]+(?:_[a-z0-9]+)*$"
+        },
+        "effective_executive": {
+          "type": "string",
+          "pattern": "^[a-z]{3}\\.[a-z0-9]+(?:_[a-z0-9]+)*$"
+        },
+        "head_of_state_office": {
+          "type": "string",
+          "pattern": "^[a-z]{3}\\.[a-z0-9]+(?:_[a-z0-9]+)*$"
+        },
+        "head_of_government_office": {
+          "type": "string",
+          "pattern": "^[a-z]{3}\\.[a-z0-9]+(?:_[a-z0-9]+)*$"
+        },
+        "constitution": {
+          "type": "object",
+          "properties": {
+            "term_limit_amendable": {
+              "type": "boolean"
+            },
+            "emergency_powers": {
+              "type": "boolean"
+            },
+            "referendum_required_for": {
+              "default": [],
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          "required": [
+            "term_limit_amendable",
+            "emergency_powers"
+          ],
+          "additionalProperties": false
+        },
+        "note": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "type",
+        "effective_executive",
+        "head_of_state_office",
+        "head_of_government_office",
+        "constitution"
+      ],
+      "additionalProperties": false
+    },
+    "offices": {
+      "minItems": 1,
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[a-z]{3}\\.[a-z0-9]+(?:_[a-z0-9]+)*$"
+          },
+          "title": {
+            "type": "object",
+            "properties": {
+              "en": {
+                "type": "string",
+                "minLength": 1
+              },
+              "native": {
+                "type": "string",
+                "minLength": 1
+              },
+              "native_latin": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "required": [
+              "en"
+            ],
+            "additionalProperties": false
+          },
+          "role": {
+            "type": "string",
+            "enum": [
+              "head_of_state",
+              "head_of_government",
+              "head_of_state_and_government",
+              "supreme_leader",
+              "party_general_secretary",
+              "governor_general",
+              "deputy",
+              "collective_head_member",
+              "transitional_administrator",
+              "military_council_chair",
+              "minister",
+              "intelligence_chief",
+              "military_chief",
+              "army_chief",
+              "navy_chief",
+              "air_chief",
+              "other"
+            ]
+          },
+          "portfolio": {
+            "type": "string",
+            "enum": [
+              "foreign",
+              "defence",
+              "finance",
+              "interior",
+              "economy",
+              "justice",
+              "energy",
+              "trade",
+              "intelligence",
+              "other"
+            ]
+          },
+          "power_weight": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1
+          },
+          "selection": {
+            "type": "string",
+            "enum": [
+              "direct_election",
+              "legislature",
+              "electoral_college",
+              "hereditary",
+              "appointed",
+              "party_congress",
+              "council",
+              "military",
+              "religious_council",
+              "foreign_ex_officio",
+              "rotation",
+              "external_appointment"
+            ]
+          },
+          "appointed_by": {
+            "type": "string",
+            "pattern": "^[a-z]{3}\\.[a-z0-9]+(?:_[a-z0-9]+)*$"
+          },
+          "ex_officio_of": {
+            "type": "string",
+            "pattern": "^[a-z]{3}\\.[a-z0-9]+(?:_[a-z0-9]+)*$"
+          },
+          "term_years": {
+            "type": "number",
+            "exclusiveMinimum": 0
+          },
+          "term_limit": {
+            "type": "object",
+            "properties": {
+              "max_terms": {
+                "type": "integer",
+                "exclusiveMinimum": 0,
+                "maximum": 9007199254740991
+              },
+              "consecutive_only": {
+                "type": "boolean"
+              }
+            },
+            "required": [
+              "max_terms",
+              "consecutive_only"
+            ],
+            "additionalProperties": false
+          },
+          "seats": {
+            "type": "integer",
+            "exclusiveMinimum": 0,
+            "maximum": 9007199254740991
+          },
+          "succession": {
+            "type": "object",
+            "properties": {
+              "type": {
+                "type": "string",
+                "enum": [
+                  "line",
+                  "vice",
+                  "council_choice",
+                  "election",
+                  "acting_then_election"
+                ]
+              },
+              "heirs": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "pattern": "^[a-z]{3}\\.[a-z0-9]+(?:_[a-z0-9]+)*$"
+                }
+              },
+              "acting_office": {
+                "type": "string",
+                "pattern": "^[a-z]{3}\\.[a-z0-9]+(?:_[a-z0-9]+)*$"
+              }
+            },
+            "required": [
+              "type"
+            ],
+            "additionalProperties": false
+          },
+          "holders": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "person": {
+                  "anyOf": [
+                    {
+                      "type": "string",
+                      "pattern": "^[a-z]{3}\\.[a-z0-9]+(?:_[a-z0-9]+)*$"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                },
+                "from": {
+                  "type": "string",
+                  "format": "date",
+                  "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))$",
+                  "description": "Calendar date, YYYY-MM-DD"
+                },
+                "to": {
+                  "type": "string",
+                  "format": "date",
+                  "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))$",
+                  "description": "Calendar date, YYYY-MM-DD"
+                },
+                "acting": {
+                  "type": "boolean"
+                },
+                "vacant_reason": {
+                  "type": "string"
+                },
+                "note": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "person",
+                "from"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "source": {
+            "minItems": 1,
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "url": {
+                  "type": "string",
+                  "format": "uri"
+                },
+                "title": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "accessed": {
+                  "type": "string",
+                  "format": "date",
+                  "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))$",
+                  "description": "Calendar date, YYYY-MM-DD"
+                },
+                "note": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "url",
+                "title",
+                "accessed"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "verified",
+              "needs_review"
+            ]
+          },
+          "review_note": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "title",
+          "role",
+          "power_weight",
+          "selection",
+          "holders",
+          "source",
+          "confidence"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "legislature": {
+      "anyOf": [
+        {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "object",
+              "properties": {
+                "en": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "native": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "native_latin": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              },
+              "required": [
+                "en"
+              ],
+              "additionalProperties": false
+            },
+            "chambers": {
+              "minItems": 1,
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "string",
+                    "pattern": "^[a-z0-9]+(?:_[a-z0-9]+)*$"
+                  },
+                  "name": {
+                    "type": "object",
+                    "properties": {
+                      "en": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "native": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "native_latin": {
+                        "type": "string",
+                        "minLength": 1
+                      }
+                    },
+                    "required": [
+                      "en"
+                    ],
+                    "additionalProperties": false
+                  },
+                  "seats": {
+                    "type": "integer",
+                    "exclusiveMinimum": 0,
+                    "maximum": 9007199254740991
+                  },
+                  "term_years": {
+                    "type": "number",
+                    "exclusiveMinimum": 0
+                  },
+                  "elected": {
+                    "type": "string",
+                    "enum": [
+                      "direct",
+                      "indirect",
+                      "appointed",
+                      "mixed"
+                    ]
+                  },
+                  "system": {
+                    "type": "object",
+                    "properties": {
+                      "type": {
+                        "type": "string",
+                        "enum": [
+                          "fptp",
+                          "two_round",
+                          "av",
+                          "list_pr",
+                          "mmp",
+                          "parallel",
+                          "stv",
+                          "block",
+                          "sntv",
+                          "appointed",
+                          "indirect",
+                          "mixed_other"
+                        ]
+                      },
+                      "formula": {
+                        "type": "string",
+                        "enum": [
+                          "dhondt",
+                          "sainte_lague",
+                          "hare",
+                          "droop",
+                          "imperiali"
+                        ]
+                      },
+                      "threshold": {
+                        "type": "number",
+                        "minimum": 0,
+                        "maximum": 1
+                      },
+                      "district_model": {
+                        "type": "string",
+                        "enum": [
+                          "national",
+                          "provinces",
+                          "admin1",
+                          "custom"
+                        ]
+                      },
+                      "pr_share": {
+                        "type": "number",
+                        "minimum": 0,
+                        "maximum": 1
+                      },
+                      "reserved_seats": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "group": {
+                              "type": "string"
+                            },
+                            "seats": {
+                              "type": "integer",
+                              "exclusiveMinimum": 0,
+                              "maximum": 9007199254740991
+                            }
+                          },
+                          "required": [
+                            "group",
+                            "seats"
+                          ],
+                          "additionalProperties": false
+                        }
+                      },
+                      "note": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "type"
+                    ],
+                    "additionalProperties": false
+                  },
+                  "seats_2000": {
+                    "type": "object",
+                    "propertyNames": {
+                      "type": "string"
+                    },
+                    "additionalProperties": {
+                      "type": "integer",
+                      "minimum": 0,
+                      "maximum": 9007199254740991
+                    }
+                  },
+                  "confidence_chamber": {
+                    "type": "boolean"
+                  },
+                  "source": {
+                    "minItems": 1,
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "url": {
+                          "type": "string",
+                          "format": "uri"
+                        },
+                        "title": {
+                          "type": "string",
+                          "minLength": 1
+                        },
+                        "accessed": {
+                          "type": "string",
+                          "format": "date",
+                          "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))$",
+                          "description": "Calendar date, YYYY-MM-DD"
+                        },
+                        "note": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "url",
+                        "title",
+                        "accessed"
+                      ],
+                      "additionalProperties": false
+                    }
+                  },
+                  "confidence": {
+                    "type": "string",
+                    "enum": [
+                      "verified",
+                      "needs_review"
+                    ]
+                  },
+                  "review_note": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "id",
+                  "name",
+                  "seats",
+                  "elected",
+                  "system",
+                  "seats_2000",
+                  "confidence_chamber",
+                  "source",
+                  "confidence"
+                ],
+                "additionalProperties": false
+              }
+            }
+          },
+          "required": [
+            "name",
+            "chambers"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "party_system": {
+      "type": "string",
+      "enum": [
+        "multi_party",
+        "dominant_party",
+        "one_party",
+        "no_parties"
+      ]
+    },
+    "no_parties_reason": {
+      "type": "string"
+    },
+    "start_2000": {
+      "type": "object",
+      "properties": {
+        "ruling_parties": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[a-z]{3}\\.[a-z0-9]+(?:_[a-z0-9]+)*$"
+          }
+        },
+        "confidence_and_supply": {
+          "default": [],
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[a-z]{3}\\.[a-z0-9]+(?:_[a-z0-9]+)*$"
+          }
+        },
+        "ideology_support": {
+          "type": "object",
+          "propertyNames": {
+            "type": "string",
+            "pattern": "^[a-z0-9]+(?:_[a-z0-9]+)*$"
+          },
+          "additionalProperties": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1
+          }
+        },
+        "ideology_support_note": {
+          "type": "string"
+        },
+        "stability": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "war_support": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "at_war_with": {
+          "default": [],
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[A-Z]{3}$"
+          }
+        },
+        "civil_war": {
+          "type": "object",
+          "properties": {
+            "sides": {
+              "minItems": 2,
+              "type": "array",
+              "items": {
+                "type": "string",
+                "pattern": "^[A-Z]{3}$"
+              }
+            },
+            "note": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "sides",
+            "note"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "ruling_parties",
+        "ideology_support",
+        "ideology_support_note",
+        "stability",
+        "war_support"
+      ],
+      "additionalProperties": false
+    },
+    "claims": {
+      "default": [],
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "tag": {
+            "type": "string",
+            "pattern": "^[A-Z]{3}$"
+          },
+          "note": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "tag",
+          "note"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "source": {
+      "minItems": 1,
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "url": {
+            "type": "string",
+            "format": "uri"
+          },
+          "title": {
+            "type": "string",
+            "minLength": 1
+          },
+          "accessed": {
+            "type": "string",
+            "format": "date",
+            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))$",
+            "description": "Calendar date, YYYY-MM-DD"
+          },
+          "note": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "url",
+          "title",
+          "accessed"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "confidence": {
+      "type": "string",
+      "enum": [
+        "verified",
+        "needs_review"
+      ]
+    },
+    "review_note": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "tag",
+    "name",
+    "adjective",
+    "culture_primary",
+    "government",
+    "offices",
+    "legislature",
+    "party_system",
+    "start_2000",
+    "source",
+    "confidence"
+  ],
+  "additionalProperties": false
+}

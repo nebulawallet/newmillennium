@@ -1,0 +1,102 @@
+{
+  "government_types": [
+    {
+      "id": "presidential", "name": "Presidential republic",
+      "description": "A directly elected president is both head of state and head of government; the legislature is separately elected.",
+      "holds_elections": true, "needs_majority": false, "legislature_required": true, "parties_required": true,
+      "coup_base_risk": 0.002, "political_power_gain": 2.0, "succession_model": "election",
+      "forbidden_laws": ["no_elections", "single_party_elections", "theocratic_law"]
+    },
+    {
+      "id": "parliamentary", "name": "Parliamentary republic",
+      "description": "The government depends on the confidence of parliament; a largely ceremonial president is head of state.",
+      "holds_elections": true, "needs_majority": true, "legislature_required": true, "parties_required": true,
+      "coup_base_risk": 0.001, "political_power_gain": 1.8, "succession_model": "election",
+      "forbidden_laws": ["no_elections", "single_party_elections", "theocratic_law"]
+    },
+    {
+      "id": "semi_presidential", "name": "Semi-presidential republic",
+      "description": "An elected president shares executive power with a prime minister responsible to parliament.",
+      "holds_elections": true, "needs_majority": true, "legislature_required": true, "parties_required": true,
+      "coup_base_risk": 0.002, "political_power_gain": 2.0, "succession_model": "election",
+      "forbidden_laws": ["no_elections", "single_party_elections", "theocratic_law"]
+    },
+    {
+      "id": "directorial", "name": "Directorial republic",
+      "description": "A collegial executive council elected by parliament collectively serves as head of state and government.",
+      "holds_elections": true, "needs_majority": false, "legislature_required": true, "parties_required": true,
+      "coup_base_risk": 0.0005, "political_power_gain": 1.5, "succession_model": "council",
+      "forbidden_laws": ["no_elections", "single_party_elections", "theocratic_law"]
+    },
+    {
+      "id": "constitutional_monarchy", "name": "Constitutional monarchy",
+      "description": "A hereditary monarch is head of state with limited powers; government depends on parliament.",
+      "holds_elections": true, "needs_majority": true, "legislature_required": true, "parties_required": true,
+      "coup_base_risk": 0.001, "political_power_gain": 1.8, "succession_model": "election",
+      "forbidden_laws": ["no_elections", "single_party_elections", "theocratic_law"]
+    },
+    {
+      "id": "absolute_monarchy", "name": "Absolute monarchy",
+      "description": "A hereditary monarch holds executive and legislative authority; any assembly is advisory or limited.",
+      "holds_elections": false, "needs_majority": false, "legislature_required": false, "parties_required": false,
+      "coup_base_risk": 0.003, "political_power_gain": 2.2, "succession_model": "hereditary",
+      "forbidden_laws": ["free_elections"]
+    },
+    {
+      "id": "theocracy", "name": "Theocratic republic",
+      "description": "Religious authorities hold final power over elected institutions.",
+      "holds_elections": true, "needs_majority": false, "legislature_required": true, "parties_required": false,
+      "coup_base_risk": 0.002, "political_power_gain": 2.0, "succession_model": "religious",
+      "forbidden_laws": ["strict_secularism", "pluralist_secularism"]
+    },
+    {
+      "id": "one_party_state", "name": "One-party state",
+      "description": "A single ruling party controls the state; leadership changes through party institutions.",
+      "holds_elections": true, "needs_majority": false, "legislature_required": true, "parties_required": true,
+      "coup_base_risk": 0.002, "political_power_gain": 2.4, "succession_model": "party",
+      "forbidden_laws": ["free_elections", "free_press"]
+    },
+    {
+      "id": "military_junta", "name": "Military government",
+      "description": "The armed forces govern directly, usually after a coup, with constitutional institutions suspended.",
+      "holds_elections": false, "needs_majority": false, "legislature_required": false, "parties_required": false,
+      "coup_base_risk": 0.01, "political_power_gain": 2.2, "succession_model": "military",
+      "forbidden_laws": ["free_elections"]
+    },
+    {
+      "id": "hybrid_authoritarian", "name": "Competitive authoritarian",
+      "description": "Elections and opposition exist, but the incumbent controls the state, media and courts enough to tilt competition.",
+      "holds_elections": true, "needs_majority": false, "legislature_required": true, "parties_required": true,
+      "coup_base_risk": 0.004, "political_power_gain": 2.2, "succession_model": "election",
+      "forbidden_laws": []
+    },
+    {
+      "id": "personalist_regime", "name": "Personalist regime",
+      "description": "Power rests with an individual ruler outside, or above, formal institutions.",
+      "holds_elections": false, "needs_majority": false, "legislature_required": false, "parties_required": false,
+      "coup_base_risk": 0.006, "political_power_gain": 2.4, "succession_model": "none",
+      "forbidden_laws": ["free_elections"]
+    },
+    {
+      "id": "failed_contested", "name": "Failed or contested state",
+      "description": "No government controls the whole territory, or rival authorities claim to govern.",
+      "holds_elections": false, "needs_majority": false, "legislature_required": false, "parties_required": false,
+      "coup_base_risk": 0.02, "political_power_gain": 0.8, "succession_model": "none",
+      "forbidden_laws": []
+    },
+    {
+      "id": "transitional_administration", "name": "International transitional administration",
+      "description": "Territory administered by an international mission pending a political settlement.",
+      "holds_elections": true, "needs_majority": false, "legislature_required": false, "parties_required": false,
+      "coup_base_risk": 0.0, "political_power_gain": 0.8, "succession_model": "external",
+      "forbidden_laws": ["no_elections", "single_party_elections", "theocratic_law"]
+    },
+    {
+      "id": "insurgent_movement", "name": "Insurgent movement",
+      "description": "An armed movement controlling territory and claiming to govern it.",
+      "holds_elections": false, "needs_majority": false, "legislature_required": false, "parties_required": false,
+      "coup_base_risk": 0.01, "political_power_gain": 1.2, "succession_model": "council",
+      "forbidden_laws": []
+    }
+  ]
+}

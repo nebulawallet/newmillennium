@@ -1,0 +1,15 @@
+{
+  "id": "healthcare",
+  "name": "Healthcare",
+  "description": "How healthcare is financed and provided.",
+  "laws": [
+    { "id": "minimal_healthcare", "name": "Minimal public healthcare", "description": "Basic public clinics; most care is paid out of pocket.", "pp_cost": 60, "requires_vote": true,
+      "modifiers": { "health_outcomes": -0.15, "welfare_cost": -0.04 } },
+    { "id": "private_insurance", "name": "Private insurance system", "description": "Care mostly financed by private or employer insurance with public safety nets.", "pp_cost": 80, "requires_vote": true,
+      "modifiers": { "health_outcomes": 0.02, "welfare_cost": -0.02, "private_sector_output": 0.02 } },
+    { "id": "social_insurance", "name": "Social health insurance", "description": "Compulsory insurance funds with regulated providers.", "pp_cost": 80, "requires_vote": true,
+      "modifiers": { "health_outcomes": 0.08, "welfare_cost": 0.02 } },
+    { "id": "national_health_service", "name": "National health service", "description": "Tax-funded, publicly provided universal care.", "pp_cost": 100, "requires_vote": true,
+      "modifiers": { "health_outcomes": 0.1, "welfare_cost": 0.04 } }
+  ]
+}

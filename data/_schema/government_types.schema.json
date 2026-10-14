@@ -1,0 +1,93 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "government_types": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[a-z0-9]+(?:_[a-z0-9]+)*$"
+          },
+          "name": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "holds_elections": {
+            "type": "boolean"
+          },
+          "needs_majority": {
+            "type": "boolean"
+          },
+          "legislature_required": {
+            "type": "boolean"
+          },
+          "parties_required": {
+            "type": "boolean"
+          },
+          "coup_base_risk": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1
+          },
+          "political_power_gain": {
+            "type": "number"
+          },
+          "succession_model": {
+            "type": "string",
+            "enum": [
+              "election",
+              "hereditary",
+              "party",
+              "council",
+              "military",
+              "religious",
+              "external",
+              "none"
+            ]
+          },
+          "forbidden_laws": {
+            "default": [],
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "^[a-z0-9]+(?:_[a-z0-9]+)*$"
+            }
+          },
+          "modifiers": {
+            "default": {},
+            "type": "object",
+            "propertyNames": {
+              "type": "string",
+              "pattern": "^[a-z0-9]+(?:_[a-z0-9]+)*$"
+            },
+            "additionalProperties": {
+              "type": "number"
+            }
+          }
+        },
+        "required": [
+          "id",
+          "name",
+          "description",
+          "holds_elections",
+          "needs_majority",
+          "legislature_required",
+          "parties_required",
+          "coup_base_risk",
+          "political_power_gain",
+          "succession_model"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "required": [
+    "government_types"
+  ],
+  "additionalProperties": false
+}

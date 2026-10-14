@@ -1,0 +1,10 @@
+{
+  "traits": [
+    { "id": "party_big_tent", "name": "Big-tent party", "description": "Broad coalition party drawing support across ideological camps.", "kind": "party", "applies_to": ["party"], "modifiers": {} },
+    { "id": "party_regional", "name": "Regional party", "description": "Support concentrated in one region or minority.", "kind": "party", "applies_to": ["party"], "modifiers": {} },
+    { "id": "party_new_movement", "name": "New movement", "description": "Recently founded; weak organisation but no record in office.", "kind": "party", "applies_to": ["party"], "modifiers": {} },
+    { "id": "party_mass_membership", "name": "Mass-membership party", "description": "Large dues-paying membership and local organisation.", "kind": "party", "applies_to": ["party"], "modifiers": {} },
+    { "id": "party_of_power", "name": "Party of power", "description": "Organised around the executive and state administration.", "kind": "party", "applies_to": ["party"], "modifiers": {} },
+    { "id": "party_independence_movement", "name": "Independence-era party", "description": "Led the country's independence or liberation struggle.", "kind": "party", "applies_to": ["party"], "modifiers": {} }
+  ]
+}

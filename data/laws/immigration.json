@@ -1,0 +1,15 @@
+{
+  "id": "immigration",
+  "name": "Immigration",
+  "description": "Rules for entering, working in and settling in the country.",
+  "laws": [
+    { "id": "open_immigration", "name": "Open immigration", "description": "Few barriers to settlement and work.", "pp_cost": 80, "requires_vote": true,
+      "modifiers": { "immigration": 0.4, "population_growth": 0.003 } },
+    { "id": "managed_immigration", "name": "Managed immigration", "description": "Points, quotas or sponsorship systems.", "pp_cost": 60, "requires_vote": true,
+      "modifiers": { "immigration": 0.15 } },
+    { "id": "restrictive_immigration", "name": "Restrictive immigration", "description": "Tight quotas and strict asylum rules.", "pp_cost": 80, "requires_vote": true,
+      "modifiers": { "immigration": -0.2 } },
+    { "id": "closed_borders", "name": "Closed borders", "description": "Almost no legal immigration; exit may also be restricted.", "pp_cost": 120, "requires_vote": true,
+      "modifiers": { "immigration": -0.5, "trade_efficiency": -0.05, "international_opinion": -5 } }
+  ]
+}

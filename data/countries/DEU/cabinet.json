@@ -1,0 +1,112 @@
+{
+  "offices": [
+    {
+      "id": "deu.foreign_minister",
+      "title": { "en": "Federal Minister for Foreign Affairs", "native": "Bundesminister des Auswärtigen" },
+      "role": "minister",
+      "portfolio": "foreign",
+      "power_weight": 0.15,
+      "selection": "appointed",
+      "appointed_by": "deu.chancellor",
+      "holders": [
+        { "person": "deu.joschka_fischer", "from": "1998-10-27", "to": "2005-11-22" },
+        { "person": "deu.frank_walter_steinmeier", "from": "2005-11-22", "to": "2009-10-28" },
+        { "person": "deu.guido_westerwelle", "from": "2009-10-28", "to": "2013-12-17" },
+        { "person": "deu.frank_walter_steinmeier", "from": "2013-12-17", "to": "2017-01-27" },
+        { "person": "deu.sigmar_gabriel", "from": "2017-01-27", "to": "2018-03-14" },
+        { "person": "deu.heiko_maas", "from": "2018-03-14", "to": "2021-12-08" },
+        { "person": "deu.annalena_baerbock", "from": "2021-12-08", "to": "2025-05-06" },
+        { "person": "deu.johann_wadephul", "from": "2025-05-06" }
+      ],
+      "source": [{ "url": "https://www.wikidata.org/wiki/Q568605", "title": "Wikidata: Federal Minister for Foreign Affairs (position held by)", "accessed": "2026-10-14" }],
+      "confidence": "verified"
+    },
+    {
+      "id": "deu.defence_minister",
+      "title": { "en": "Federal Minister of Defence", "native": "Bundesminister der Verteidigung" },
+      "role": "minister",
+      "portfolio": "defence",
+      "power_weight": 0.1,
+      "selection": "appointed",
+      "appointed_by": "deu.chancellor",
+      "holders": [
+        { "person": "deu.rudolf_scharping", "from": "1998-10-27", "to": "2002-07-19" },
+        { "person": "deu.peter_struck", "from": "2002-07-19", "to": "2005-11-22" },
+        { "person": "deu.franz_josef_jung", "from": "2005-11-22", "to": "2009-10-28" },
+        { "person": "deu.karl_theodor_zu_guttenberg", "from": "2009-10-28", "to": "2011-03-03" },
+        { "person": "deu.thomas_de_maiziere", "from": "2011-03-03", "to": "2013-12-17" },
+        { "person": "deu.ursula_von_der_leyen", "from": "2013-12-17", "to": "2019-07-17" },
+        { "person": "deu.annegret_kramp_karrenbauer", "from": "2019-07-17", "to": "2021-12-08" },
+        { "person": "deu.christine_lambrecht", "from": "2021-12-08", "to": "2023-01-19" },
+        { "person": "deu.boris_pistorius", "from": "2023-01-19", "note": "Reappointed in the Merz cabinet on 2025-05-06." }
+      ],
+      "source": [{ "url": "https://www.wikidata.org/wiki/Q23016036", "title": "Wikidata: Federal Minister of Defence (position held by)", "accessed": "2026-10-14" }],
+      "confidence": "verified"
+    },
+    {
+      "id": "deu.finance_minister",
+      "title": { "en": "Federal Minister of Finance", "native": "Bundesminister der Finanzen" },
+      "role": "minister",
+      "portfolio": "finance",
+      "power_weight": 0.12,
+      "selection": "appointed",
+      "appointed_by": "deu.chancellor",
+      "holders": [
+        { "person": "deu.hans_eichel", "from": "1999-04-12", "to": "2005-11-22" },
+        { "person": "deu.peer_steinbrueck", "from": "2005-11-22", "to": "2009-10-28" },
+        { "person": "deu.wolfgang_schaeuble", "from": "2009-10-28", "to": "2017-10-24" },
+        { "person": "deu.peter_altmaier", "from": "2017-10-24", "to": "2018-03-14", "acting": true },
+        { "person": "deu.olaf_scholz", "from": "2018-03-14", "to": "2021-12-08" },
+        { "person": "deu.christian_lindner", "from": "2021-12-08", "to": "2024-11-07" },
+        { "person": "deu.joerg_kukies", "from": "2024-11-07", "to": "2025-05-06" },
+        { "person": "deu.lars_klingbeil", "from": "2025-05-06" }
+      ],
+      "source": [
+        { "url": "https://www.wikidata.org/wiki/Q22575092", "title": "Wikidata: Federal Minister of Finance (position held by)", "accessed": "2026-10-14" },
+        { "url": "https://en.wikipedia.org/wiki/Federal_Ministry_of_Finance_(Germany)", "title": "Wikipedia: Federal Ministry of Finance (acting minister Altmaier 2017-2018)", "accessed": "2026-10-14" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "deu.interior_minister",
+      "title": { "en": "Federal Minister of the Interior", "native": "Bundesminister des Innern" },
+      "role": "minister",
+      "portfolio": "interior",
+      "power_weight": 0.1,
+      "selection": "appointed",
+      "appointed_by": "deu.chancellor",
+      "holders": [
+        { "person": "deu.otto_schily", "from": "1998-10-27", "to": "2005-11-22" },
+        { "person": "deu.wolfgang_schaeuble", "from": "2005-11-22", "to": "2009-10-28" },
+        { "person": "deu.thomas_de_maiziere", "from": "2009-10-28", "to": "2011-03-03" },
+        { "person": "deu.hans_peter_friedrich", "from": "2011-03-03", "to": "2013-12-17" },
+        { "person": "deu.thomas_de_maiziere", "from": "2013-12-17", "to": "2018-03-14" },
+        { "person": "deu.horst_seehofer", "from": "2018-03-14", "to": "2021-12-08" },
+        { "person": "deu.nancy_faeser", "from": "2021-12-08", "to": "2025-05-06" },
+        { "person": "deu.alexander_dobrindt", "from": "2025-05-06" }
+      ],
+      "source": [{ "url": "https://www.wikidata.org/wiki/Q22575628", "title": "Wikidata: Federal Minister of the Interior (position held by)", "accessed": "2026-10-14" }],
+      "confidence": "verified"
+    },
+    {
+      "id": "deu.bnd_president",
+      "title": { "en": "President of the Federal Intelligence Service", "native": "Präsident des Bundesnachrichtendienstes" },
+      "role": "intelligence_chief",
+      "power_weight": 0.05,
+      "selection": "appointed",
+      "appointed_by": "deu.chancellor",
+      "holders": [
+        { "person": "deu.august_hanning", "from": "1998-12-17", "to": "2005-11-30" },
+        { "person": "deu.ernst_uhrlau", "from": "2005-12-01", "to": "2011-12-07" },
+        { "person": "deu.gerhard_schindler", "from": "2011-12-07", "to": "2016-07-01" },
+        { "person": "deu.bruno_kahl", "from": "2016-07-01", "to": "2025-09-14" },
+        { "person": "deu.martin_jaeger", "from": "2025-09-15" }
+      ],
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/Federal_Intelligence_Service", "title": "Wikipedia: Federal Intelligence Service (list of presidents)", "accessed": "2026-10-14" },
+        { "url": "https://www.bnd.bund.de/EN/About-BND/leadership/Leadership_node.html", "title": "BND: Leadership", "accessed": "2026-10-14", "note": "Cited by Wikipedia for the current president; not fetched directly." }
+      ],
+      "confidence": "verified"
+    }
+  ]
+}

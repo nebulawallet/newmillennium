@@ -1,0 +1,17 @@
+{
+  "id": "religion_state",
+  "name": "Religion and state",
+  "description": "The relationship between religious institutions and the state.",
+  "laws": [
+    { "id": "strict_secularism", "name": "Strict secularism", "description": "Religion is kept out of public institutions by law.", "pp_cost": 100, "requires_vote": true,
+      "modifiers": {} },
+    { "id": "pluralist_secularism", "name": "Pluralist secularism", "description": "No state religion; religions are treated equally and may cooperate with the state.", "pp_cost": 80, "requires_vote": true,
+      "modifiers": {} },
+    { "id": "official_religion", "name": "Official religion", "description": "A state church or recognised official religion, with freedom of worship for others.", "pp_cost": 80, "requires_vote": true,
+      "modifiers": {} },
+    { "id": "religious_law_partial", "name": "Partial religious law", "description": "Religious law governs family and personal status, or is a main source of legislation.", "pp_cost": 120, "requires_vote": true,
+      "modifiers": { "civil_liberties": -0.05 } },
+    { "id": "theocratic_law", "name": "Theocratic law", "description": "Religious authorities hold final legal and political authority.", "pp_cost": 200, "requires_vote": false,
+      "modifiers": { "civil_liberties": -0.15, "international_opinion": -10 } }
+  ]
+}

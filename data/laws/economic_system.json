@@ -1,0 +1,19 @@
+{
+  "id": "economic_system",
+  "name": "Economic system",
+  "description": "Who owns and directs the economy.",
+  "laws": [
+    { "id": "command_economy", "name": "Command economy", "description": "Central planning; most enterprises are state owned.", "pp_cost": 150, "requires_vote": true,
+      "modifiers": { "state_industry_output": 0.15, "private_sector_output": -0.3, "foreign_investment": -0.5, "gdp_growth": -0.01 } },
+    { "id": "state_capitalism", "name": "State capitalism", "description": "Markets operate, but the state owns strategic sectors and directs investment.", "pp_cost": 120, "requires_vote": true,
+      "modifiers": { "state_industry_output": 0.1, "private_sector_output": -0.05, "foreign_investment": -0.1, "corruption": 0.03 } },
+    { "id": "mixed_economy", "name": "Mixed economy", "description": "A private sector alongside significant public ownership and planning.", "pp_cost": 100, "requires_vote": true,
+      "modifiers": { "state_industry_output": 0.05 } },
+    { "id": "social_market_economy", "name": "Social market economy", "description": "Competitive markets with strong social insurance and labour protections.", "pp_cost": 100, "requires_vote": true,
+      "modifiers": { "welfare_cost": 0.05, "stability_factor": 0.03, "private_sector_output": 0.03 } },
+    { "id": "free_market", "name": "Free market", "description": "Private ownership, light regulation and a limited state role.", "pp_cost": 100, "requires_vote": true,
+      "modifiers": { "private_sector_output": 0.08, "foreign_investment": 0.1, "welfare_cost": -0.03 } },
+    { "id": "laissez_faire", "name": "Laissez-faire", "description": "Minimal regulation, minimal state ownership and low taxation.", "pp_cost": 150, "requires_vote": true,
+      "modifiers": { "private_sector_output": 0.12, "foreign_investment": 0.15, "tax_efficiency": -0.1, "stability_factor": -0.03 } }
+  ]
+}

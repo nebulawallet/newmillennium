@@ -1,0 +1,265 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "offices": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[a-z]{3}\\.[a-z0-9]+(?:_[a-z0-9]+)*$"
+          },
+          "title": {
+            "type": "object",
+            "properties": {
+              "en": {
+                "type": "string",
+                "minLength": 1
+              },
+              "native": {
+                "type": "string",
+                "minLength": 1
+              },
+              "native_latin": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "required": [
+              "en"
+            ],
+            "additionalProperties": false
+          },
+          "role": {
+            "type": "string",
+            "enum": [
+              "head_of_state",
+              "head_of_government",
+              "head_of_state_and_government",
+              "supreme_leader",
+              "party_general_secretary",
+              "governor_general",
+              "deputy",
+              "collective_head_member",
+              "transitional_administrator",
+              "military_council_chair",
+              "minister",
+              "intelligence_chief",
+              "military_chief",
+              "army_chief",
+              "navy_chief",
+              "air_chief",
+              "other"
+            ]
+          },
+          "portfolio": {
+            "type": "string",
+            "enum": [
+              "foreign",
+              "defence",
+              "finance",
+              "interior",
+              "economy",
+              "justice",
+              "energy",
+              "trade",
+              "intelligence",
+              "other"
+            ]
+          },
+          "power_weight": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1
+          },
+          "selection": {
+            "type": "string",
+            "enum": [
+              "direct_election",
+              "legislature",
+              "electoral_college",
+              "hereditary",
+              "appointed",
+              "party_congress",
+              "council",
+              "military",
+              "religious_council",
+              "foreign_ex_officio",
+              "rotation",
+              "external_appointment"
+            ]
+          },
+          "appointed_by": {
+            "type": "string",
+            "pattern": "^[a-z]{3}\\.[a-z0-9]+(?:_[a-z0-9]+)*$"
+          },
+          "ex_officio_of": {
+            "type": "string",
+            "pattern": "^[a-z]{3}\\.[a-z0-9]+(?:_[a-z0-9]+)*$"
+          },
+          "term_years": {
+            "type": "number",
+            "exclusiveMinimum": 0
+          },
+          "term_limit": {
+            "type": "object",
+            "properties": {
+              "max_terms": {
+                "type": "integer",
+                "exclusiveMinimum": 0,
+                "maximum": 9007199254740991
+              },
+              "consecutive_only": {
+                "type": "boolean"
+              }
+            },
+            "required": [
+              "max_terms",
+              "consecutive_only"
+            ],
+            "additionalProperties": false
+          },
+          "seats": {
+            "type": "integer",
+            "exclusiveMinimum": 0,
+            "maximum": 9007199254740991
+          },
+          "succession": {
+            "type": "object",
+            "properties": {
+              "type": {
+                "type": "string",
+                "enum": [
+                  "line",
+                  "vice",
+                  "council_choice",
+                  "election",
+                  "acting_then_election"
+                ]
+              },
+              "heirs": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "pattern": "^[a-z]{3}\\.[a-z0-9]+(?:_[a-z0-9]+)*$"
+                }
+              },
+              "acting_office": {
+                "type": "string",
+                "pattern": "^[a-z]{3}\\.[a-z0-9]+(?:_[a-z0-9]+)*$"
+              }
+            },
+            "required": [
+              "type"
+            ],
+            "additionalProperties": false
+          },
+          "holders": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "person": {
+                  "anyOf": [
+                    {
+                      "type": "string",
+                      "pattern": "^[a-z]{3}\\.[a-z0-9]+(?:_[a-z0-9]+)*$"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                },
+                "from": {
+                  "type": "string",
+                  "format": "date",
+                  "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))$",
+                  "description": "Calendar date, YYYY-MM-DD"
+                },
+                "to": {
+                  "type": "string",
+                  "format": "date",
+                  "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))$",
+                  "description": "Calendar date, YYYY-MM-DD"
+                },
+                "acting": {
+                  "type": "boolean"
+                },
+                "vacant_reason": {
+                  "type": "string"
+                },
+                "note": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "person",
+                "from"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "source": {
+            "minItems": 1,
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "url": {
+                  "type": "string",
+                  "format": "uri"
+                },
+                "title": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "accessed": {
+                  "type": "string",
+                  "format": "date",
+                  "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))$",
+                  "description": "Calendar date, YYYY-MM-DD"
+                },
+                "note": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "url",
+                "title",
+                "accessed"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "verified",
+              "needs_review"
+            ]
+          },
+          "review_note": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "title",
+          "role",
+          "power_weight",
+          "selection",
+          "holders",
+          "source",
+          "confidence"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "required": [
+    "offices"
+  ],
+  "additionalProperties": false
+}

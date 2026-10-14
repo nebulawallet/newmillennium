@@ -1,0 +1,103 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "interest_groups": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[a-z0-9]+(?:_[a-z0-9]+)*$"
+          },
+          "name": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "law_preferences": {
+            "default": {},
+            "type": "object",
+            "propertyNames": {
+              "type": "string",
+              "pattern": "^[a-z0-9]+(?:_[a-z0-9]+)*$"
+            },
+            "additionalProperties": {
+              "type": "number",
+              "minimum": -30,
+              "maximum": 30
+            }
+          },
+          "trait_reactions": {
+            "default": {},
+            "type": "object",
+            "propertyNames": {
+              "type": "string",
+              "pattern": "^[a-z0-9]+(?:_[a-z0-9]+)*$"
+            },
+            "additionalProperties": {
+              "type": "number",
+              "minimum": -20,
+              "maximum": 20
+            }
+          },
+          "economy_sensitivity": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 2
+          },
+          "actions": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "action": {
+                  "type": "string",
+                  "enum": [
+                    "protest",
+                    "strike",
+                    "mass_movement",
+                    "uprising",
+                    "coup",
+                    "impeachment",
+                    "civil_war"
+                  ]
+                },
+                "approval_below": {
+                  "type": "number",
+                  "minimum": 0,
+                  "maximum": 100
+                },
+                "min_influence": {
+                  "type": "number",
+                  "minimum": 0,
+                  "maximum": 1
+                }
+              },
+              "required": [
+                "action",
+                "approval_below",
+                "min_influence"
+              ],
+              "additionalProperties": false
+            }
+          }
+        },
+        "required": [
+          "id",
+          "name",
+          "description",
+          "economy_sensitivity",
+          "actions"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "required": [
+    "interest_groups"
+  ],
+  "additionalProperties": false
+}

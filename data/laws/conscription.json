@@ -1,0 +1,17 @@
+{
+  "id": "conscription",
+  "name": "Conscription",
+  "description": "How the armed forces are recruited.",
+  "laws": [
+    { "id": "volunteer_force", "name": "All-volunteer force", "description": "Professional armed forces with no conscription.", "pp_cost": 60, "requires_vote": true,
+      "modifiers": { "manpower_factor": -0.5, "army_org": 0.05, "training_time": -0.1 } },
+    { "id": "selective_conscription", "name": "Selective conscription", "description": "Conscription exists but only a fraction of each cohort serves.", "pp_cost": 60, "requires_vote": true,
+      "modifiers": { "manpower_factor": -0.2 } },
+    { "id": "universal_conscription", "name": "Universal conscription", "description": "Most eligible citizens serve a fixed term.", "pp_cost": 80, "requires_vote": true,
+      "modifiers": { "manpower_factor": 0.3, "private_sector_output": -0.02 } },
+    { "id": "extended_service", "name": "Extended service", "description": "Long or open-ended military service obligations.", "pp_cost": 120, "requires_vote": true,
+      "modifiers": { "manpower_factor": 0.6, "private_sector_output": -0.05, "emigration": 0.05 } },
+    { "id": "total_mobilisation", "name": "Total mobilisation", "description": "Wartime mobilisation of the population.", "pp_cost": 200, "requires_vote": true,
+      "modifiers": { "manpower_factor": 1.2, "private_sector_output": -0.15, "stability_factor": -0.05 } }
+  ]
+}

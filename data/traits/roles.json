@@ -1,0 +1,19 @@
+{
+  "traits": [
+    { "id": "advisor_foreign", "name": "Foreign policy advisor", "description": "Serves as foreign minister or chief foreign policy advisor.", "kind": "advisor", "applies_to": ["advisor"], "modifiers": { "diplomatic_reputation": 0.05, "international_opinion": 3 } },
+    { "id": "advisor_defence", "name": "Defence advisor", "description": "Serves as defence minister.", "kind": "advisor", "applies_to": ["advisor"], "modifiers": { "training_time": -0.05, "army_org": 0.02 } },
+    { "id": "advisor_finance", "name": "Finance advisor", "description": "Serves as finance minister.", "kind": "advisor", "applies_to": ["advisor"], "modifiers": { "tax_efficiency": 0.03, "interest_rate": -0.002 } },
+    { "id": "advisor_interior", "name": "Interior advisor", "description": "Serves as interior minister.", "kind": "advisor", "applies_to": ["advisor"], "modifiers": { "internal_security": 0.05, "unrest": -0.02 } },
+    { "id": "advisor_economy", "name": "Economy advisor", "description": "Serves as economy or industry minister.", "kind": "advisor", "applies_to": ["advisor"], "modifiers": { "construction_speed": 0.03 } },
+    { "id": "advisor_intelligence", "name": "Intelligence chief", "description": "Heads a national intelligence service.", "kind": "advisor", "applies_to": ["advisor"], "modifiers": { "intelligence_power": 0.08 } },
+    { "id": "advisor_energy", "name": "Energy advisor", "description": "Serves as energy minister.", "kind": "advisor", "applies_to": ["advisor"], "modifiers": { "energy_cost": -0.03 } },
+    { "id": "advisor_justice", "name": "Justice advisor", "description": "Serves as justice minister.", "kind": "advisor", "applies_to": ["advisor"], "modifiers": { "law_change_cost": -0.05 } },
+
+    { "id": "commander_chief_of_staff", "name": "Chief of the defence staff", "description": "Heads the national armed forces' general staff.", "kind": "commander", "applies_to": ["commander"], "modifiers": { "army_org": 0.03 } },
+    { "id": "commander_army", "name": "Army commander", "description": "Commands the land forces.", "kind": "commander", "applies_to": ["commander"], "modifiers": { "army_attack": 0.03 } },
+    { "id": "commander_navy", "name": "Navy commander", "description": "Commands the naval forces.", "kind": "commander", "applies_to": ["commander"], "modifiers": { "naval_effectiveness": 0.03 } },
+    { "id": "commander_air", "name": "Air force commander", "description": "Commands the air forces.", "kind": "commander", "applies_to": ["commander"], "modifiers": { "air_effectiveness": 0.03 } },
+    { "id": "combat_command_experience", "name": "Combat command experience", "description": "Commanded forces in a documented armed conflict.", "kind": "commander", "applies_to": ["commander"], "modifiers": { "army_defence": 0.02 } },
+    { "id": "multinational_command", "name": "Multinational command experience", "description": "Held a documented command in a multinational (e.g. NATO or UN) structure.", "kind": "commander", "applies_to": ["commander"], "modifiers": { "bloc_integration": 0.03 } }
+  ]
+}

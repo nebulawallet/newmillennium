@@ -1,0 +1,442 @@
+{
+  "sub_ideologies": [
+    {
+      "id": "social_liberal", "group": "liberal_democratic", "name": "Social liberal", "color": "#f2d14b",
+      "description": "Civil liberties, social progressivism and market economics with a welfare safety net.",
+      "policy": { "economy": 0.1, "social": -0.6, "authority": -0.7, "sovereignty": -0.5, "religion": -0.4, "environment": 0.4 },
+      "laws": {
+        "preferred": { "economic_system": ["social_market_economy", "free_market"], "civil_rights": ["full_civil_liberties"], "press_freedom": ["free_press"], "political_freedom": ["free_elections"], "immigration": ["managed_immigration", "open_immigration"], "internet_surveillance": ["open_internet"], "education": ["mass_higher_education"], "religion_state": ["pluralist_secularism"] },
+        "forbidden": ["police_state", "total_censorship", "no_elections", "single_party_elections", "theocratic_law"]
+      },
+      "modifiers": { "civil_liberties": 0.05 },
+      "ai_weights": { "aggression": 0.5, "trade": 1.3, "integration": 1.5, "democratisation": 1.5 },
+      "ig_affinity": { "urban_middle_class": 8, "youth_students": 8, "media": 6, "religious_establishment": -6, "security_services": -4 }
+    },
+    {
+      "id": "classical_liberal", "group": "liberal_democratic", "name": "Classical liberal", "color": "#e6c02e",
+      "description": "Free markets, low taxation, rule of law and limited government.",
+      "policy": { "economy": 0.7, "social": -0.2, "authority": -0.5, "sovereignty": -0.2, "religion": -0.3, "environment": -0.1 },
+      "laws": {
+        "preferred": { "economic_system": ["free_market", "laissez_faire"], "trade": ["free_trade"], "press_freedom": ["free_press"], "political_freedom": ["free_elections"], "healthcare": ["private_insurance", "social_insurance"], "conscription": ["volunteer_force"] },
+        "forbidden": ["command_economy", "police_state", "total_censorship", "no_elections", "single_party_elections", "theocratic_law"]
+      },
+      "modifiers": { "private_sector_output": 0.03 },
+      "ai_weights": { "aggression": 0.6, "trade": 1.6, "integration": 1.2 },
+      "ig_affinity": { "business": 10, "urban_middle_class": 6, "labour_unions": -8 }
+    },
+    {
+      "id": "libertarian", "group": "liberal_democratic", "name": "Libertarian", "color": "#d9b400",
+      "description": "Minimal state in both economic and personal affairs.",
+      "policy": { "economy": 0.9, "social": -0.4, "authority": -0.9, "sovereignty": 0.2, "religion": -0.2, "environment": -0.4 },
+      "laws": {
+        "preferred": { "economic_system": ["laissez_faire"], "trade": ["free_trade"], "civil_rights": ["full_civil_liberties"], "internet_surveillance": ["open_internet"], "conscription": ["volunteer_force"], "healthcare": ["private_insurance"] },
+        "forbidden": ["command_economy", "mass_surveillance", "police_state", "total_censorship", "no_elections", "single_party_elections", "theocratic_law"]
+      },
+      "modifiers": {},
+      "ai_weights": { "aggression": 0.4, "trade": 1.5, "integration": 0.8 },
+      "ig_affinity": { "business": 8, "youth_students": 4, "security_services": -10, "labour_unions": -10 }
+    },
+    {
+      "id": "centrist_liberal", "group": "liberal_democratic", "name": "Centrist liberal", "color": "#f5e08a",
+      "description": "Pragmatic centrism combining market economics, social moderation and institutional reform.",
+      "policy": { "economy": 0.3, "social": -0.2, "authority": -0.4, "sovereignty": -0.4, "religion": -0.1, "environment": 0.2 },
+      "laws": {
+        "preferred": { "economic_system": ["social_market_economy", "free_market"], "trade": ["free_trade"], "press_freedom": ["free_press"], "political_freedom": ["free_elections"], "immigration": ["managed_immigration"], "energy_policy": ["energy_mix"] },
+        "forbidden": ["police_state", "total_censorship", "no_elections", "single_party_elections", "theocratic_law"]
+      },
+      "modifiers": { "foreign_investment": 0.03 },
+      "ai_weights": { "aggression": 0.6, "trade": 1.3, "integration": 1.4 },
+      "ig_affinity": { "urban_middle_class": 8, "business": 4 }
+    },
+
+    {
+      "id": "social_democrat", "group": "social_democratic", "name": "Social democrat", "color": "#e04a4a",
+      "description": "Regulated market economy with a strong welfare state, labour rights and redistribution.",
+      "policy": { "economy": -0.4, "social": -0.3, "authority": -0.4, "sovereignty": -0.3, "religion": -0.3, "environment": 0.3 },
+      "laws": {
+        "preferred": { "economic_system": ["social_market_economy", "mixed_economy"], "trade": ["managed_trade", "free_trade"], "healthcare": ["national_health_service", "social_insurance"], "education": ["mass_higher_education"], "press_freedom": ["free_press"], "political_freedom": ["free_elections"] },
+        "forbidden": ["laissez_faire", "police_state", "total_censorship", "no_elections", "single_party_elections", "theocratic_law"]
+      },
+      "modifiers": { "stability_factor": 0.02 },
+      "ai_weights": { "aggression": 0.5, "trade": 1.1, "integration": 1.3, "welfare": 1.5 },
+      "ig_affinity": { "labour_unions": 10, "urban_middle_class": 3, "business": -4 }
+    },
+    {
+      "id": "third_way", "group": "social_democratic", "name": "Third Way social democrat", "color": "#ec6a5e",
+      "description": "Centre-left modernisers combining social democracy with market-friendly reform.",
+      "policy": { "economy": 0.1, "social": -0.3, "authority": -0.3, "sovereignty": -0.3, "religion": -0.2, "environment": 0.2 },
+      "laws": {
+        "preferred": { "economic_system": ["social_market_economy", "free_market"], "trade": ["free_trade"], "healthcare": ["national_health_service", "social_insurance"], "education": ["mass_higher_education"], "political_freedom": ["free_elections"] },
+        "forbidden": ["command_economy", "police_state", "total_censorship", "no_elections", "single_party_elections", "theocratic_law"]
+      },
+      "modifiers": { "foreign_investment": 0.02 },
+      "ai_weights": { "aggression": 0.7, "trade": 1.3, "integration": 1.3 },
+      "ig_affinity": { "urban_middle_class": 6, "labour_unions": 3, "business": 3 }
+    },
+    {
+      "id": "democratic_socialist", "group": "social_democratic", "name": "Democratic socialist", "color": "#b8202b",
+      "description": "Democratic left seeking extensive public ownership and redistribution.",
+      "policy": { "economy": -0.7, "social": -0.5, "authority": -0.4, "sovereignty": 0.0, "religion": -0.5, "environment": 0.5 },
+      "laws": {
+        "preferred": { "economic_system": ["mixed_economy"], "trade": ["managed_trade", "protectionism"], "healthcare": ["national_health_service"], "immigration": ["open_immigration", "managed_immigration"], "political_freedom": ["free_elections"] },
+        "forbidden": ["laissez_faire", "free_market", "police_state", "total_censorship", "no_elections", "theocratic_law"]
+      },
+      "modifiers": { "welfare_cost": 0.02 },
+      "ai_weights": { "aggression": 0.4, "trade": 0.9, "integration": 1.0, "welfare": 1.8 },
+      "ig_affinity": { "labour_unions": 10, "youth_students": 6, "business": -10 }
+    },
+    {
+      "id": "green", "group": "social_democratic", "name": "Green", "color": "#3fae49",
+      "description": "Environmentalism, climate policy, civil liberties and grassroots democracy.",
+      "policy": { "economy": -0.3, "social": -0.7, "authority": -0.6, "sovereignty": -0.4, "religion": -0.4, "environment": 0.95 },
+      "laws": {
+        "preferred": { "energy_policy": ["green_transition", "nuclear_phaseout"], "civil_rights": ["full_civil_liberties"], "internet_surveillance": ["open_internet"], "immigration": ["open_immigration", "managed_immigration"], "conscription": ["volunteer_force", "selective_conscription"] },
+        "forbidden": ["fossil_first", "police_state", "total_censorship", "no_elections", "single_party_elections", "theocratic_law"]
+      },
+      "modifiers": { "emissions": -0.03 },
+      "ai_weights": { "aggression": 0.3, "trade": 1.0, "integration": 1.4, "militarism": 0.4 },
+      "ig_affinity": { "youth_students": 10, "urban_middle_class": 4, "business": -4, "rural": -4, "military": -4 }
+    },
+
+    {
+      "id": "christian_democrat", "group": "conservative", "name": "Christian democrat", "color": "#2f5fbf",
+      "description": "Centre-right politics rooted in Christian social teaching: social market economy, family and subsidiarity.",
+      "policy": { "economy": 0.2, "social": 0.4, "authority": 0.0, "sovereignty": -0.3, "religion": 0.5, "environment": 0.1 },
+      "laws": {
+        "preferred": { "economic_system": ["social_market_economy"], "trade": ["free_trade"], "religion_state": ["pluralist_secularism", "official_religion"], "healthcare": ["social_insurance"], "political_freedom": ["free_elections"] },
+        "forbidden": ["command_economy", "police_state", "total_censorship", "no_elections", "single_party_elections"]
+      },
+      "modifiers": { "stability_factor": 0.02 },
+      "ai_weights": { "aggression": 0.6, "trade": 1.2, "integration": 1.3 },
+      "ig_affinity": { "religious_establishment": 8, "business": 4, "rural": 4, "youth_students": -3 }
+    },
+    {
+      "id": "liberal_conservative", "group": "conservative", "name": "Liberal conservative", "color": "#1f4ea8",
+      "description": "Centre-right combining free-market economics with moderate social conservatism.",
+      "policy": { "economy": 0.5, "social": 0.1, "authority": 0.0, "sovereignty": 0.1, "religion": 0.0, "environment": -0.1 },
+      "laws": {
+        "preferred": { "economic_system": ["free_market", "social_market_economy"], "trade": ["free_trade"], "immigration": ["managed_immigration"], "political_freedom": ["free_elections"] },
+        "forbidden": ["command_economy", "police_state", "total_censorship", "no_elections", "single_party_elections", "theocratic_law"]
+      },
+      "modifiers": { "private_sector_output": 0.02 },
+      "ai_weights": { "aggression": 0.8, "trade": 1.3, "integration": 1.0 },
+      "ig_affinity": { "business": 8, "urban_middle_class": 4, "labour_unions": -6 }
+    },
+    {
+      "id": "traditional_conservative", "group": "conservative", "name": "Traditional conservative", "color": "#163a7a",
+      "description": "Emphasis on tradition, national institutions, religion and social order.",
+      "policy": { "economy": 0.4, "social": 0.7, "authority": 0.3, "sovereignty": 0.5, "religion": 0.5, "environment": -0.3 },
+      "laws": {
+        "preferred": { "religion_state": ["official_religion"], "immigration": ["restrictive_immigration", "managed_immigration"], "economic_system": ["free_market"], "conscription": ["selective_conscription", "universal_conscription"] },
+        "forbidden": ["command_economy", "total_censorship", "single_party_elections"]
+      },
+      "modifiers": { "ideology_drift_resistance": 0.05 },
+      "ai_weights": { "aggression": 0.9, "militarism": 1.2, "trade": 1.0, "integration": 0.7 },
+      "ig_affinity": { "religious_establishment": 8, "military": 5, "rural": 5, "youth_students": -6, "minorities": -4 }
+    },
+    {
+      "id": "agrarian", "group": "conservative", "name": "Agrarian", "color": "#6f9b3a",
+      "description": "Parties representing farmers and rural communities, often decentralist and protectionist.",
+      "policy": { "economy": -0.1, "social": 0.4, "authority": 0.0, "sovereignty": 0.4, "religion": 0.2, "environment": 0.2 },
+      "laws": {
+        "preferred": { "trade": ["protectionism", "managed_trade"], "economic_system": ["social_market_economy", "mixed_economy"] },
+        "forbidden": ["police_state", "total_censorship", "single_party_elections"]
+      },
+      "modifiers": {},
+      "ai_weights": { "aggression": 0.5, "trade": 0.8, "integration": 0.7 },
+      "ig_affinity": { "rural": 15, "business": -3 }
+    },
+
+    {
+      "id": "right_populist", "group": "nationalist_populist", "name": "Right-wing populist", "color": "#6a3fa0",
+      "description": "Anti-establishment politics emphasising national sovereignty, restrictive immigration and the will of the majority.",
+      "policy": { "economy": 0.1, "social": 0.6, "authority": 0.5, "sovereignty": 0.8, "religion": 0.2, "environment": -0.5 },
+      "laws": {
+        "preferred": { "immigration": ["restrictive_immigration", "closed_borders"], "trade": ["protectionism", "managed_trade"], "energy_policy": ["fossil_first", "energy_mix"] },
+        "forbidden": ["open_immigration", "single_party_elections"]
+      },
+      "modifiers": {},
+      "ai_weights": { "aggression": 1.0, "trade": 0.8, "integration": 0.3 },
+      "ig_affinity": { "rural": 6, "urban_middle_class": -3, "media": -6, "minorities": -8, "youth_students": -3 }
+    },
+    {
+      "id": "national_conservative", "group": "nationalist_populist", "name": "National conservative", "color": "#4d2a7a",
+      "description": "Nation-centred conservatism stressing sovereignty, religion, family and a strong state.",
+      "policy": { "economy": 0.2, "social": 0.7, "authority": 0.5, "sovereignty": 0.8, "religion": 0.6, "environment": -0.3 },
+      "laws": {
+        "preferred": { "religion_state": ["official_religion"], "immigration": ["restrictive_immigration"], "trade": ["managed_trade"], "conscription": ["universal_conscription", "selective_conscription"] },
+        "forbidden": ["open_immigration", "single_party_elections"]
+      },
+      "modifiers": { "ideology_drift_resistance": 0.05 },
+      "ai_weights": { "aggression": 1.1, "militarism": 1.3, "trade": 0.9, "integration": 0.4 },
+      "ig_affinity": { "religious_establishment": 8, "military": 6, "rural": 6, "minorities": -8, "media": -4 }
+    },
+    {
+      "id": "ethno_nationalist", "group": "nationalist_populist", "name": "Ethnic nationalist", "color": "#3a1d5c",
+      "description": "Politics defined by the interests and identity of a single ethnic nation.",
+      "policy": { "economy": -0.1, "social": 0.8, "authority": 0.7, "sovereignty": 1.0, "religion": 0.3, "environment": -0.3 },
+      "laws": {
+        "preferred": { "immigration": ["closed_borders", "restrictive_immigration"], "trade": ["protectionism"], "conscription": ["universal_conscription", "extended_service"] },
+        "forbidden": ["open_immigration"]
+      },
+      "modifiers": { "war_support_factor": 0.03 },
+      "ai_weights": { "aggression": 1.5, "militarism": 1.5, "trade": 0.6, "integration": 0.2 },
+      "ig_affinity": { "military": 5, "minorities": -15, "media": -5 }
+    },
+
+    {
+      "id": "marxist_leninist", "group": "socialist_communist", "name": "Marxist-Leninist", "color": "#a1121b",
+      "description": "Vanguard-party communism with a planned economy and single-party rule.",
+      "policy": { "economy": -1.0, "social": 0.0, "authority": 0.9, "sovereignty": 0.7, "religion": -0.9, "environment": -0.4 },
+      "laws": {
+        "preferred": { "economic_system": ["command_economy"], "trade": ["closed_economy", "protectionism"], "press_freedom": ["state_controlled_media", "total_censorship"], "political_freedom": ["single_party_elections"], "religion_state": ["strict_secularism"], "healthcare": ["national_health_service"], "education": ["ideological_education"] },
+        "forbidden": ["laissez_faire", "free_market", "official_religion", "religious_law_partial", "theocratic_law"]
+      },
+      "modifiers": { "state_industry_output": 0.05, "ideology_drift_resistance": 0.1 },
+      "ai_weights": { "aggression": 1.0, "militarism": 1.5, "trade": 0.4, "integration": 0.3, "foreign_influence": 1.3 },
+      "ig_affinity": { "labour_unions": 6, "business": -20, "religious_establishment": -15 }
+    },
+    {
+      "id": "market_socialist", "group": "socialist_communist", "name": "Socialist market reformer", "color": "#c41e2a",
+      "description": "Ruling communist parties that keep single-party rule while running a market-oriented, state-led economy.",
+      "policy": { "economy": -0.3, "social": 0.3, "authority": 0.9, "sovereignty": 0.7, "religion": -0.7, "environment": -0.4 },
+      "laws": {
+        "preferred": { "economic_system": ["state_capitalism", "mixed_economy"], "trade": ["managed_trade"], "press_freedom": ["state_controlled_media"], "political_freedom": ["single_party_elections"], "internet_surveillance": ["filtered_internet"] },
+        "forbidden": ["laissez_faire", "theocratic_law"]
+      },
+      "modifiers": { "gdp_growth": 0.005, "state_industry_output": 0.05 },
+      "ai_weights": { "aggression": 0.7, "militarism": 1.2, "trade": 1.3, "integration": 0.5 },
+      "ig_affinity": { "business": 2, "security_services": 6, "religious_establishment": -10, "media": -8 }
+    },
+    {
+      "id": "reformed_communist", "group": "socialist_communist", "name": "Democratic communist", "color": "#8e1b24",
+      "description": "Communist and post-communist parties competing in multi-party elections while retaining socialist goals.",
+      "policy": { "economy": -0.6, "social": 0.2, "authority": 0.2, "sovereignty": 0.5, "religion": -0.3, "environment": -0.2 },
+      "laws": {
+        "preferred": { "economic_system": ["mixed_economy"], "trade": ["protectionism", "managed_trade"], "healthcare": ["national_health_service", "social_insurance"] },
+        "forbidden": ["laissez_faire", "theocratic_law"]
+      },
+      "modifiers": {},
+      "ai_weights": { "aggression": 0.6, "trade": 0.8, "integration": 0.5, "welfare": 1.5 },
+      "ig_affinity": { "labour_unions": 8, "rural": 3, "business": -8 }
+    },
+    {
+      "id": "left_populist", "group": "socialist_communist", "name": "Left-wing populist", "color": "#d1342f",
+      "description": "Anti-establishment left politics centred on a leader, national sovereignty over resources and redistribution.",
+      "policy": { "economy": -0.7, "social": -0.1, "authority": 0.5, "sovereignty": 0.8, "religion": 0.0, "environment": -0.3 },
+      "laws": {
+        "preferred": { "economic_system": ["state_capitalism", "mixed_economy"], "trade": ["protectionism"], "energy_policy": ["fossil_first"], "healthcare": ["national_health_service"] },
+        "forbidden": ["laissez_faire"]
+      },
+      "modifiers": { "state_industry_output": 0.03 },
+      "ai_weights": { "aggression": 0.8, "trade": 0.7, "integration": 0.6, "foreign_influence": 1.3, "welfare": 1.4 },
+      "ig_affinity": { "labour_unions": 6, "rural": 4, "business": -12, "media": -6 }
+    },
+    {
+      "id": "maoist", "group": "socialist_communist", "name": "Maoist", "color": "#7a0c14",
+      "description": "Communist movements following Maoist doctrine, including peasant-based insurgencies.",
+      "policy": { "economy": -1.0, "social": 0.0, "authority": 0.9, "sovereignty": 0.7, "religion": -0.8, "environment": -0.2 },
+      "laws": {
+        "preferred": { "economic_system": ["command_economy"], "trade": ["closed_economy"], "political_freedom": ["single_party_elections"] },
+        "forbidden": ["laissez_faire", "free_market", "theocratic_law"]
+      },
+      "modifiers": {},
+      "ai_weights": { "aggression": 1.2, "militarism": 1.4, "trade": 0.3, "integration": 0.2 },
+      "ig_affinity": { "rural": 8, "business": -20, "religious_establishment": -12 }
+    },
+
+    {
+      "id": "dominant_party_developmental", "group": "autocratic", "name": "Dominant-party developmentalist", "color": "#6b7280",
+      "description": "Long-ruling parties pursuing state-led growth while limiting political competition.",
+      "policy": { "economy": 0.0, "social": 0.3, "authority": 0.6, "sovereignty": 0.4, "religion": 0.0, "environment": -0.5 },
+      "laws": {
+        "preferred": { "economic_system": ["state_capitalism", "mixed_economy"], "political_freedom": ["restricted_elections", "managed_elections"], "press_freedom": ["state_influenced_media", "regulated_press"] },
+        "forbidden": []
+      },
+      "modifiers": { "gdp_growth": 0.005, "stability_factor": 0.03 },
+      "ai_weights": { "aggression": 0.6, "trade": 1.2, "integration": 0.8 },
+      "ig_affinity": { "business": 5, "security_services": 5, "media": -6, "youth_students": -4 }
+    },
+    {
+      "id": "statist", "group": "autocratic", "name": "Statist / party of power", "color": "#4b5563",
+      "description": "Politics organised around the state executive: strong central authority, order and national revival.",
+      "policy": { "economy": -0.1, "social": 0.5, "authority": 0.6, "sovereignty": 0.8, "religion": 0.3, "environment": -0.4 },
+      "laws": {
+        "preferred": { "economic_system": ["state_capitalism"], "political_freedom": ["restricted_elections", "managed_elections"], "press_freedom": ["state_influenced_media"], "energy_policy": ["fossil_first"] },
+        "forbidden": []
+      },
+      "modifiers": { "political_power_gain": 0.2 },
+      "ai_weights": { "aggression": 1.1, "militarism": 1.3, "trade": 1.0, "integration": 0.5, "foreign_influence": 1.2 },
+      "ig_affinity": { "security_services": 8, "military": 5, "media": -6, "youth_students": -4 }
+    },
+    {
+      "id": "personalist_authoritarian", "group": "autocratic", "name": "Personalist authoritarian", "color": "#374151",
+      "description": "Rule centred on a single leader and their personal network.",
+      "policy": { "economy": 0.0, "social": 0.4, "authority": 0.9, "sovereignty": 0.6, "religion": 0.0, "environment": -0.4 },
+      "laws": {
+        "preferred": { "political_freedom": ["managed_elections", "no_elections"], "press_freedom": ["state_controlled_media"], "civil_rights": ["security_state", "police_state"] },
+        "forbidden": ["free_elections"]
+      },
+      "modifiers": { "political_power_gain": 0.3, "corruption": 0.03 },
+      "ai_weights": { "aggression": 1.0, "militarism": 1.3, "trade": 0.8, "integration": 0.4 },
+      "ig_affinity": { "security_services": 8, "urban_middle_class": -8, "media": -10 }
+    },
+    {
+      "id": "military_junta", "group": "autocratic", "name": "Military rule", "color": "#556b2f",
+      "description": "Government by the armed forces, typically justified as restoring order.",
+      "policy": { "economy": 0.1, "social": 0.5, "authority": 1.0, "sovereignty": 0.6, "religion": 0.1, "environment": -0.4 },
+      "laws": {
+        "preferred": { "political_freedom": ["no_elections"], "press_freedom": ["state_controlled_media"], "conscription": ["universal_conscription", "extended_service"], "civil_rights": ["security_state"] },
+        "forbidden": ["free_elections"]
+      },
+      "gov_types_allowed": ["military_junta"],
+      "modifiers": { "army_org": 0.05, "coup_risk": 0.3 },
+      "ai_weights": { "aggression": 1.2, "militarism": 1.8, "trade": 0.8, "integration": 0.4 },
+      "ig_affinity": { "military": 20, "urban_middle_class": -8, "media": -10, "youth_students": -8 }
+    },
+    {
+      "id": "absolute_monarchist", "group": "autocratic", "name": "Absolute monarchist", "color": "#8b6d1f",
+      "description": "Supporters of rule by a hereditary monarch holding executive power.",
+      "policy": { "economy": 0.2, "social": 0.8, "authority": 0.9, "sovereignty": 0.4, "religion": 0.7, "environment": -0.5 },
+      "laws": {
+        "preferred": { "political_freedom": ["no_elections"], "religion_state": ["official_religion", "religious_law_partial"], "press_freedom": ["state_controlled_media", "state_influenced_media"] },
+        "forbidden": ["free_elections", "strict_secularism"]
+      },
+      "gov_types_allowed": ["absolute_monarchy"],
+      "modifiers": { "stability_factor": 0.03 },
+      "ai_weights": { "aggression": 0.6, "trade": 1.2, "integration": 0.7 },
+      "ig_affinity": { "religious_establishment": 8, "business": 4, "youth_students": -6 }
+    },
+    {
+      "id": "baathist", "group": "autocratic", "name": "Ba'athist / Pan-Arab nationalist", "color": "#2f4f4f",
+      "description": "Arab nationalist and socialist politics under a single ruling party.",
+      "policy": { "economy": -0.4, "social": 0.2, "authority": 0.9, "sovereignty": 0.8, "religion": -0.4, "environment": -0.4 },
+      "laws": {
+        "preferred": { "economic_system": ["state_capitalism", "mixed_economy"], "political_freedom": ["single_party_elections"], "press_freedom": ["state_controlled_media"], "civil_rights": ["police_state", "security_state"], "religion_state": ["pluralist_secularism"] },
+        "forbidden": ["free_elections", "theocratic_law"]
+      },
+      "modifiers": { "internal_security": 0.05 },
+      "ai_weights": { "aggression": 1.3, "militarism": 1.6, "trade": 0.7, "integration": 0.5 },
+      "ig_affinity": { "security_services": 10, "military": 6, "religious_establishment": -8, "minorities": -6 }
+    },
+
+    {
+      "id": "islamic_democrat", "group": "religious", "name": "Islamic democrat", "color": "#3c9a5f",
+      "description": "Parties combining Islamic values with participation in competitive elections.",
+      "policy": { "economy": 0.2, "social": 0.6, "authority": 0.1, "sovereignty": 0.3, "religion": 0.7, "environment": -0.2 },
+      "laws": {
+        "preferred": { "religion_state": ["official_religion", "pluralist_secularism"], "political_freedom": ["free_elections", "restricted_elections"], "economic_system": ["free_market", "social_market_economy"] },
+        "forbidden": ["strict_secularism"]
+      },
+      "modifiers": {},
+      "ai_weights": { "aggression": 0.7, "trade": 1.2, "integration": 0.8 },
+      "ig_affinity": { "religious_establishment": 8, "rural": 4, "business": 3, "military": -4 }
+    },
+    {
+      "id": "islamist", "group": "religious", "name": "Islamist", "color": "#1f7a43",
+      "description": "Movements seeking a state governed according to Islamic law.",
+      "policy": { "economy": 0.1, "social": 0.9, "authority": 0.5, "sovereignty": 0.5, "religion": 0.95, "environment": -0.2 },
+      "laws": {
+        "preferred": { "religion_state": ["religious_law_partial", "theocratic_law"], "press_freedom": ["regulated_press", "state_influenced_media"] },
+        "forbidden": ["strict_secularism", "pluralist_secularism"]
+      },
+      "modifiers": {},
+      "ai_weights": { "aggression": 1.0, "trade": 0.8, "integration": 0.5, "foreign_influence": 1.2 },
+      "ig_affinity": { "religious_establishment": 12, "youth_students": -4, "media": -4, "military": -6 }
+    },
+    {
+      "id": "shia_theocratic", "group": "religious", "name": "Shia theocratic (velayat-e faqih)", "color": "#14532d",
+      "description": "Supporters of guardianship of the Islamic jurist as the basis of state authority.",
+      "policy": { "economy": -0.3, "social": 0.9, "authority": 0.8, "sovereignty": 0.8, "religion": 1.0, "environment": -0.3 },
+      "laws": {
+        "preferred": { "religion_state": ["theocratic_law"], "press_freedom": ["state_influenced_media", "state_controlled_media"], "internet_surveillance": ["filtered_internet"] },
+        "forbidden": ["strict_secularism", "pluralist_secularism"]
+      },
+      "modifiers": { "ideology_drift_resistance": 0.1 },
+      "ai_weights": { "aggression": 1.1, "militarism": 1.4, "trade": 0.7, "integration": 0.4, "foreign_influence": 1.5 },
+      "ig_affinity": { "religious_establishment": 15, "security_services": 6, "youth_students": -8, "media": -8 }
+    },
+    {
+      "id": "hindu_nationalist", "group": "religious", "name": "Hindu nationalist", "color": "#e07b1f",
+      "description": "Politics centred on Hindu cultural identity as the basis of the nation.",
+      "policy": { "economy": 0.3, "social": 0.7, "authority": 0.3, "sovereignty": 0.7, "religion": 0.7, "environment": -0.3 },
+      "laws": {
+        "preferred": { "economic_system": ["free_market", "mixed_economy"], "conscription": ["volunteer_force"] },
+        "forbidden": ["strict_secularism"]
+      },
+      "modifiers": {},
+      "ai_weights": { "aggression": 0.9, "militarism": 1.3, "trade": 1.1, "integration": 0.5 },
+      "ig_affinity": { "religious_establishment": 10, "business": 5, "minorities": -10 }
+    },
+    {
+      "id": "jewish_religious", "group": "religious", "name": "Jewish religious", "color": "#1e40af",
+      "description": "Religious Zionist and Haredi parties representing observant communities.",
+      "policy": { "economy": -0.1, "social": 0.9, "authority": 0.3, "sovereignty": 0.6, "religion": 0.95, "environment": -0.2 },
+      "laws": {
+        "preferred": { "religion_state": ["official_religion", "religious_law_partial"], "education": ["ideological_education", "public_schooling"] },
+        "forbidden": ["strict_secularism"]
+      },
+      "modifiers": {},
+      "ai_weights": { "aggression": 0.9, "trade": 0.9, "integration": 0.5 },
+      "ig_affinity": { "religious_establishment": 15, "youth_students": -4 }
+    },
+    {
+      "id": "christian_conservative", "group": "religious", "name": "Christian conservative", "color": "#155e75",
+      "description": "Religious-right parties prioritising Christian moral teaching in law and public life.",
+      "policy": { "economy": 0.3, "social": 0.9, "authority": 0.3, "sovereignty": 0.4, "religion": 0.9, "environment": -0.2 },
+      "laws": {
+        "preferred": { "religion_state": ["official_religion"], "education": ["public_schooling"] },
+        "forbidden": ["strict_secularism"]
+      },
+      "modifiers": {},
+      "ai_weights": { "aggression": 0.8, "trade": 1.0, "integration": 0.6 },
+      "ig_affinity": { "religious_establishment": 12, "youth_students": -6, "media": -3 }
+    },
+
+    {
+      "id": "technocratic", "group": "non_aligned", "name": "Technocratic", "color": "#9ca3af",
+      "description": "Governments or movements of non-partisan experts focused on administration and reform.",
+      "policy": { "economy": 0.2, "social": 0.0, "authority": 0.0, "sovereignty": -0.2, "religion": 0.0, "environment": 0.1 },
+      "laws": { "preferred": {}, "forbidden": [] },
+      "modifiers": { "tax_efficiency": 0.03, "political_power_gain": -0.2 },
+      "ai_weights": { "aggression": 0.5, "trade": 1.2, "integration": 1.0 },
+      "ig_affinity": { "business": 4, "urban_middle_class": 4 }
+    },
+    {
+      "id": "big_tent", "group": "non_aligned", "name": "Big tent / independent", "color": "#b0b4bb",
+      "description": "Independents and broad catch-all movements without a defined ideology.",
+      "policy": { "economy": 0.0, "social": 0.0, "authority": 0.0, "sovereignty": 0.0, "religion": 0.0, "environment": 0.0 },
+      "laws": { "preferred": {}, "forbidden": [] },
+      "modifiers": {},
+      "ai_weights": {},
+      "ig_affinity": {}
+    },
+    {
+      "id": "regionalist", "group": "non_aligned", "name": "Regionalist / separatist", "color": "#c27c0e",
+      "description": "Parties seeking autonomy or independence for a region or minority nation.",
+      "policy": { "economy": 0.0, "social": -0.1, "authority": -0.2, "sovereignty": -0.2, "religion": 0.0, "environment": 0.2 },
+      "laws": { "preferred": { "civil_rights": ["full_civil_liberties"] }, "forbidden": [] },
+      "modifiers": {},
+      "ai_weights": { "aggression": 0.4 },
+      "ig_affinity": { "minorities": 15 }
+    },
+    {
+      "id": "constitutional_monarchist", "group": "non_aligned", "name": "Royalist", "color": "#a07d2c",
+      "description": "Parties supporting a constitutional monarchy or restoration of the crown.",
+      "policy": { "economy": 0.3, "social": 0.5, "authority": 0.2, "sovereignty": 0.3, "religion": 0.4, "environment": 0.0 },
+      "laws": { "preferred": { "religion_state": ["official_religion"] }, "forbidden": [] },
+      "modifiers": {},
+      "ai_weights": {},
+      "ig_affinity": { "religious_establishment": 4, "rural": 3 }
+    },
+    {
+      "id": "tribal_traditional", "group": "non_aligned", "name": "Tribal / traditional", "color": "#8d6e63",
+      "description": "Political blocs organised around tribal, clan or customary authority.",
+      "policy": { "economy": 0.0, "social": 0.7, "authority": 0.3, "sovereignty": 0.3, "religion": 0.6, "environment": 0.0 },
+      "laws": { "preferred": { "religion_state": ["official_religion"] }, "forbidden": [] },
+      "modifiers": {},
+      "ai_weights": {},
+      "ig_affinity": { "rural": 8, "religious_establishment": 4, "urban_middle_class": -4 }
+    }
+  ]
+}

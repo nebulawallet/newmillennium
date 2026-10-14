@@ -1,0 +1,15 @@
+{
+  "id": "education",
+  "name": "Education",
+  "description": "Public investment in schooling and universities.",
+  "laws": [
+    { "id": "basic_education", "name": "Basic schooling", "description": "Public primary schooling; little else.", "pp_cost": 60, "requires_vote": true,
+      "modifiers": { "education_quality": -0.15, "welfare_cost": -0.02 } },
+    { "id": "public_schooling", "name": "Public secondary schooling", "description": "Universal free schooling to secondary level.", "pp_cost": 60, "requires_vote": true,
+      "modifiers": {} },
+    { "id": "mass_higher_education", "name": "Mass higher education", "description": "Subsidised universities and vocational training for a large share of each cohort.", "pp_cost": 80, "requires_vote": true,
+      "modifiers": { "education_quality": 0.1, "research_speed": 0.03, "welfare_cost": 0.02 } },
+    { "id": "ideological_education", "name": "State ideological education", "description": "Curricula centred on the state ideology or religion, under tight state control.", "pp_cost": 100, "requires_vote": false,
+      "modifiers": { "education_quality": -0.05, "propaganda_efficiency": 0.1, "ideology_drift_resistance": 0.1 } }
+  ]
+}

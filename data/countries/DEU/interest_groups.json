@@ -1,0 +1,15 @@
+{
+  "note": "Influence and approval are gameplay starting values for 1 January 2000 (SPD-Green government), not measured data. Influence reflects institutional weight: strong unions and employers' associations in Germany's social-partnership model, a powerful press, and a civilian-controlled military.",
+  "interest_groups": [
+    { "type": "military", "influence": 0.12, "approval": 50 },
+    { "type": "security_services", "influence": 0.1, "approval": 55 },
+    { "type": "business", "influence": 0.5, "approval": 45, "note": "Employers' associations (BDA, BDI) under a centre-left government." },
+    { "type": "labour_unions", "influence": 0.45, "approval": 62, "note": "DGB unions closely tied to the SPD." },
+    { "type": "religious_establishment", "influence": 0.25, "approval": 50, "note": "Catholic and Protestant churches (state-collected church tax)." },
+    { "type": "rural", "influence": 0.12, "approval": 45 },
+    { "type": "urban_middle_class", "influence": 0.5, "approval": 55 },
+    { "type": "minorities", "influence": 0.08, "approval": 58, "note": "Includes Turkish-origin residents ahead of the 2000 citizenship reform, and the Danish and Sorbian minorities." },
+    { "type": "youth_students", "influence": 0.18, "approval": 55 },
+    { "type": "media", "influence": 0.4, "approval": 55 }
+  ]
+}

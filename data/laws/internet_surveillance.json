@@ -1,0 +1,17 @@
+{
+  "id": "internet_surveillance",
+  "name": "Internet and surveillance",
+  "description": "State control over communications and data.",
+  "laws": [
+    { "id": "open_internet", "name": "Open internet", "description": "No content filtering; surveillance requires judicial warrants.", "pp_cost": 80, "requires_vote": true,
+      "modifiers": { "civil_liberties": 0.05, "research_speed": 0.03, "intelligence_power": -0.1 } },
+    { "id": "regulated_internet", "name": "Regulated internet", "description": "Limited takedown rules and lawful intercept with oversight.", "pp_cost": 60, "requires_vote": true,
+      "modifiers": {} },
+    { "id": "mass_surveillance", "name": "Mass surveillance", "description": "Bulk collection of communications data with weak oversight.", "pp_cost": 100, "requires_vote": true,
+      "modifiers": { "intelligence_power": 0.2, "internal_security": 0.1, "civil_liberties": -0.1 } },
+    { "id": "filtered_internet", "name": "Filtered internet", "description": "National filtering of political and foreign content.", "pp_cost": 120, "requires_vote": false,
+      "modifiers": { "intelligence_power": 0.15, "propaganda_efficiency": 0.15, "civil_liberties": -0.15, "research_speed": -0.03 } },
+    { "id": "sovereign_internet", "name": "Sovereign internet", "description": "A national network that can be cut off from the global internet.", "pp_cost": 150, "requires_vote": false,
+      "modifiers": { "intelligence_power": 0.25, "propaganda_efficiency": 0.25, "foreign_influence_resistance": 0.3, "civil_liberties": -0.25, "research_speed": -0.06 } }
+  ]
+}

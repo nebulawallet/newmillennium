@@ -1,0 +1,132 @@
+{
+  "tag": "DEU",
+  "name": { "en": "Germany", "native": "Deutschland", "official": { "en": "Federal Republic of Germany", "native": "Bundesrepublik Deutschland" } },
+  "adjective": "German",
+  "culture_primary": "german",
+  "government": {
+    "type": "parliamentary",
+    "effective_executive": "deu.chancellor",
+    "head_of_state_office": "deu.federal_president",
+    "head_of_government_office": "deu.chancellor",
+    "constitution": {
+      "term_limit_amendable": true,
+      "emergency_powers": true,
+      "referendum_required_for": ["reorganisation of federal territory (Basic Law Art. 29)", "replacement of the Basic Law (Art. 146)"]
+    },
+    "note": "Federal parliamentary republic. The Chancellor is elected by the Bundestag and can only be removed by a constructive vote of no confidence."
+  },
+  "offices": [
+    {
+      "id": "deu.federal_president",
+      "title": { "en": "Federal President", "native": "Bundespräsident" },
+      "role": "head_of_state",
+      "power_weight": 0.1,
+      "selection": "electoral_college",
+      "term_years": 5,
+      "term_limit": { "max_terms": 2, "consecutive_only": true },
+      "succession": { "type": "acting_then_election" },
+      "holders": [
+        { "person": "deu.johannes_rau", "from": "1999-07-01", "to": "2004-06-30" },
+        { "person": "deu.horst_koehler", "from": "2004-07-01", "to": "2010-05-31", "note": "Resigned." },
+        { "person": "deu.jens_boehrnsen", "from": "2010-05-31", "to": "2010-06-30", "acting": true, "note": "Acting as President of the Bundesrat." },
+        { "person": "deu.christian_wulff", "from": "2010-06-30", "to": "2012-02-17", "note": "Resigned." },
+        { "person": "deu.horst_seehofer", "from": "2012-02-17", "to": "2012-03-18", "acting": true, "note": "Acting as President of the Bundesrat." },
+        { "person": "deu.joachim_gauck", "from": "2012-03-18", "to": "2017-03-18" },
+        { "person": "deu.frank_walter_steinmeier", "from": "2017-03-19" }
+      ],
+      "source": [
+        { "url": "https://www.wikidata.org/wiki/Q25223", "title": "Wikidata: president of Germany (position held by)", "accessed": "2026-10-14" },
+        { "url": "https://en.wikipedia.org/wiki/President_of_Germany", "title": "Wikipedia: President of Germany (list and acting presidents)", "accessed": "2026-10-14" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "deu.chancellor",
+      "title": { "en": "Federal Chancellor", "native": "Bundeskanzler" },
+      "role": "head_of_government",
+      "power_weight": 0.9,
+      "selection": "legislature",
+      "appointed_by": "deu.federal_president",
+      "term_years": 4,
+      "holders": [
+        { "person": "deu.gerhard_schroeder", "from": "1998-10-27", "to": "2005-11-22" },
+        { "person": "deu.angela_merkel", "from": "2005-11-22", "to": "2021-12-08" },
+        { "person": "deu.olaf_scholz", "from": "2021-12-08", "to": "2025-05-06" },
+        { "person": "deu.friedrich_merz", "from": "2025-05-06" }
+      ],
+      "source": [
+        { "url": "https://www.wikidata.org/wiki/Q4970706", "title": "Wikidata: Federal Chancellor of Germany (position held by)", "accessed": "2026-10-14" },
+        { "url": "https://en.wikipedia.org/wiki/Chancellor_of_Germany", "title": "Wikipedia: Chancellor of Germany", "accessed": "2026-10-14" }
+      ],
+      "confidence": "verified"
+    }
+  ],
+  "legislature": {
+    "name": { "en": "Federal legislature", "native": "Bundestag und Bundesrat" },
+    "chambers": [
+      {
+        "id": "bundestag",
+        "name": { "en": "Bundestag", "native": "Deutscher Bundestag" },
+        "seats": 669,
+        "term_years": 4,
+        "elected": "direct",
+        "system": {
+          "type": "mmp",
+          "formula": "hare",
+          "threshold": 0.05,
+          "district_model": "admin1",
+          "pr_share": 0.5,
+          "note": "Two votes: 299 constituency seats by FPTP, list seats for proportionality. Largest remainder (Hare-Niemeyer) until 2005, Sainte-Lague/Schepers from 2009; seat count varies with overhang and levelling seats until the 2023 reform fixed it at 630. Parties with three constituency wins are exempt from the threshold."
+        },
+        "seats_2000": { "deu.spd": 298, "deu.cdu": 198, "deu.csu": 47, "deu.greens": 47, "deu.fdp": 43, "deu.pds": 36 },
+        "confidence_chamber": true,
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/1998_German_federal_election", "title": "Wikipedia: 1998 German federal election (results table)", "accessed": "2026-10-14" },
+          { "url": "https://en.wikipedia.org/wiki/Electoral_system_of_Germany", "title": "Wikipedia: Electoral system of Germany", "accessed": "2026-10-14" }
+        ],
+        "confidence": "verified"
+      },
+      {
+        "id": "bundesrat",
+        "name": { "en": "Bundesrat", "native": "Bundesrat" },
+        "seats": 69,
+        "elected": "appointed",
+        "system": { "type": "appointed", "note": "Members are delegates of the 16 state governments; each state casts its 3-6 votes as a bloc. Party balance follows state elections." },
+        "seats_2000": { "appointed": 69 },
+        "confidence_chamber": false,
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/Bundesrat_of_Germany", "title": "Wikipedia: Bundesrat of Germany", "accessed": "2026-10-14" }
+        ],
+        "confidence": "needs_review",
+        "review_note": "The source confirms 69 votes today; confirm the total was also 69 on 1 January 2000 (Hesse's fifth vote dates from 1996)."
+      }
+    ]
+  },
+  "party_system": "multi_party",
+  "start_2000": {
+    "ruling_parties": ["deu.spd", "deu.greens"],
+    "ideology_support": {
+      "social_democrat": 0.30,
+      "third_way": 0.11,
+      "christian_democrat": 0.33,
+      "green": 0.07,
+      "classical_liberal": 0.06,
+      "democratic_socialist": 0.05,
+      "right_populist": 0.02,
+      "ethno_nationalist": 0.015,
+      "national_conservative": 0.005,
+      "social_liberal": 0.01,
+      "regionalist": 0.01,
+      "big_tent": 0.02
+    },
+    "ideology_support_note": "Derived from 1998 Bundestag party-list shares: SPD 40.9% (split between social democrat and Third Way 'Neue Mitte' currents), CDU 28.4% + CSU 6.7%, Greens 6.7%, FDP 6.2%, PDS 5.1%, Republikaner 1.8%, DVU 1.2%, NPD 0.3%, Initiative Pro D-Mark 0.9%, others about 2%.",
+    "stability": 0.75,
+    "war_support": 0.25
+  },
+  "claims": [],
+  "source": [
+    { "url": "https://en.wikipedia.org/wiki/Politics_of_Germany", "title": "Wikipedia: Politics of Germany", "accessed": "2026-10-14" },
+    { "url": "https://en.wikipedia.org/wiki/1998_German_federal_election", "title": "Wikipedia: 1998 German federal election", "accessed": "2026-10-14" }
+  ],
+  "confidence": "verified"
+}

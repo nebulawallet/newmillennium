@@ -1,0 +1,26 @@
+{
+  "offices": [
+    {
+      "id": "deu.inspector_general",
+      "title": { "en": "Inspector General of the Bundeswehr", "native": "Generalinspekteur der Bundeswehr" },
+      "role": "military_chief",
+      "power_weight": 0.05,
+      "selection": "appointed",
+      "appointed_by": "deu.defence_minister",
+      "holders": [
+        { "person": "deu.hans_peter_von_kirchbach", "from": "1999-04-01", "to": "2000-06-30" },
+        { "person": "deu.harald_kujat", "from": "2000-07-01", "to": "2002-06-30" },
+        { "person": "deu.wolfgang_schneiderhan", "from": "2002-07-01", "to": "2009-11-26" },
+        { "person": "deu.johann_georg_dora", "from": "2009-11-27", "to": "2010-01-21", "acting": true },
+        { "person": "deu.volker_wieker", "from": "2010-01-21", "to": "2018-04-18" },
+        { "person": "deu.eberhard_zorn", "from": "2018-04-19", "to": "2023-03-17" },
+        { "person": "deu.carsten_breuer", "from": "2023-03-17" }
+      ],
+      "source": [
+        { "url": "https://www.wikidata.org/wiki/Q896878", "title": "Wikidata: General Inspector of the Bundeswehr (position held by)", "accessed": "2026-10-14" },
+        { "url": "https://en.wikipedia.org/wiki/Inspector_General_of_the_Bundeswehr", "title": "Wikipedia: Inspector General of the Bundeswehr (list, incl. acting holder 2009-2010)", "accessed": "2026-10-14" }
+      ],
+      "confidence": "verified"
+    }
+  ]
+}

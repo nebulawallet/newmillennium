@@ -1,0 +1,60 @@
+{
+  "groups": [
+    {
+      "id": "liberal_democratic",
+      "name": "Liberal democratic",
+      "color": "#e8c547",
+      "description": "Pluralist parties centred on individual rights, market economics and constitutional limits on power.",
+      "diplomacy_affinity": { "liberal_democratic": 25, "social_democratic": 20, "conservative": 20, "nationalist_populist": -5, "socialist_communist": -20, "autocratic": -25, "religious": -10, "non_aligned": 5 }
+    },
+    {
+      "id": "social_democratic",
+      "name": "Social democratic / left",
+      "color": "#d94a4a",
+      "description": "Parties of the democratic left: welfare states, labour rights and regulated markets.",
+      "diplomacy_affinity": { "liberal_democratic": 20, "social_democratic": 25, "conservative": 10, "nationalist_populist": -15, "socialist_communist": 0, "autocratic": -20, "religious": -10, "non_aligned": 5 }
+    },
+    {
+      "id": "conservative",
+      "name": "Conservative / centre-right",
+      "color": "#3a6fd8",
+      "description": "Centre-right parties emphasising tradition, markets, order and national institutions.",
+      "diplomacy_affinity": { "liberal_democratic": 20, "social_democratic": 10, "conservative": 25, "nationalist_populist": 5, "socialist_communist": -25, "autocratic": -10, "religious": 0, "non_aligned": 5 }
+    },
+    {
+      "id": "nationalist_populist",
+      "name": "Nationalist / populist right",
+      "color": "#5b3a8c",
+      "description": "Parties prioritising national sovereignty, identity and restrictive immigration, often anti-establishment.",
+      "diplomacy_affinity": { "liberal_democratic": -10, "social_democratic": -15, "conservative": 10, "nationalist_populist": 10, "socialist_communist": -20, "autocratic": 5, "religious": 0, "non_aligned": 0 }
+    },
+    {
+      "id": "socialist_communist",
+      "name": "Socialist / communist",
+      "color": "#a1121b",
+      "description": "Parties seeking public ownership of the economy, from reformed communists to Marxist-Leninist ruling parties.",
+      "diplomacy_affinity": { "liberal_democratic": -20, "social_democratic": 5, "conservative": -25, "nationalist_populist": -20, "socialist_communist": 25, "autocratic": 10, "religious": -15, "non_aligned": 10 }
+    },
+    {
+      "id": "autocratic",
+      "name": "Autocratic / state-capitalist",
+      "color": "#5a5f66",
+      "description": "Systems where power is concentrated in a ruler, military, royal family or dominant party with limited competition.",
+      "diplomacy_affinity": { "liberal_democratic": -20, "social_democratic": -15, "conservative": -5, "nationalist_populist": 5, "socialist_communist": 5, "autocratic": 15, "religious": 5, "non_aligned": 10 }
+    },
+    {
+      "id": "religious",
+      "name": "Religious / theocratic",
+      "color": "#2e8b57",
+      "description": "Movements and systems that root law and politics in religious tradition, from democratic religious parties to theocracy.",
+      "diplomacy_affinity": { "liberal_democratic": -10, "social_democratic": -10, "conservative": 5, "nationalist_populist": 0, "socialist_communist": -20, "autocratic": 0, "religious": 15, "non_aligned": 5 }
+    },
+    {
+      "id": "non_aligned",
+      "name": "Non-aligned / technocratic",
+      "color": "#8a8f98",
+      "description": "Technocrats, independents, regionalists and big-tent movements without a fixed ideological camp.",
+      "diplomacy_affinity": { "liberal_democratic": 5, "social_democratic": 5, "conservative": 5, "nationalist_populist": 0, "socialist_communist": 5, "autocratic": 5, "religious": 0, "non_aligned": 10 }
+    }
+  ]
+}

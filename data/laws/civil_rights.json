@@ -1,0 +1,15 @@
+{
+  "id": "civil_rights",
+  "name": "Civil rights",
+  "description": "Legal protection of personal freedoms against the state.",
+  "laws": [
+    { "id": "full_civil_liberties", "name": "Full civil liberties", "description": "Strong rights to speech, assembly and due process.", "pp_cost": 100, "requires_vote": true,
+      "modifiers": { "civil_liberties": 0.3, "internal_security": -0.1, "international_opinion": 5 } },
+    { "id": "limited_civil_liberties", "name": "Limited civil liberties", "description": "Rights protected with broad security exceptions.", "pp_cost": 80, "requires_vote": true,
+      "modifiers": { "civil_liberties": 0.05 } },
+    { "id": "security_state", "name": "Security state", "description": "Assembly restricted, extended detention powers, pervasive policing.", "pp_cost": 120, "requires_vote": false,
+      "modifiers": { "civil_liberties": -0.2, "internal_security": 0.15, "international_opinion": -10 } },
+    { "id": "police_state", "name": "Police state", "description": "Dissent is criminalised and security services act without legal limits.", "pp_cost": 150, "requires_vote": false,
+      "modifiers": { "civil_liberties": -0.4, "internal_security": 0.3, "international_opinion": -20, "emigration": 0.05 } }
+  ]
+}

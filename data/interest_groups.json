@@ -1,0 +1,108 @@
+{
+  "interest_groups": [
+    {
+      "id": "military", "name": "Armed forces", "description": "The officer corps and defence establishment.",
+      "law_preferences": { "universal_conscription": 5, "extended_service": 8, "volunteer_force": -3, "security_state": 4, "full_civil_liberties": -2 },
+      "trait_reactions": { "former_military_officer": 10, "anti_war_stance": -10, "security_hawk": 8 },
+      "economy_sensitivity": 0.5,
+      "actions": [
+        { "action": "protest", "approval_below": 35, "min_influence": 0.1 },
+        { "action": "coup", "approval_below": 20, "min_influence": 0.3 },
+        { "action": "civil_war", "approval_below": 10, "min_influence": 0.35 }
+      ]
+    },
+    {
+      "id": "security_services", "name": "Security services", "description": "Intelligence agencies, interior ministry forces and police leadership.",
+      "law_preferences": { "mass_surveillance": 8, "filtered_internet": 6, "sovereign_internet": 8, "security_state": 8, "police_state": 10, "full_civil_liberties": -8, "open_internet": -6 },
+      "trait_reactions": { "former_intelligence_officer": 12, "security_hawk": 6, "former_dissident": -8 },
+      "economy_sensitivity": 0.3,
+      "actions": [
+        { "action": "coup", "approval_below": 20, "min_influence": 0.3 },
+        { "action": "impeachment", "approval_below": 25, "min_influence": 0.2 }
+      ]
+    },
+    {
+      "id": "business", "name": "Business and oligarchs", "description": "Large companies, business associations and wealthy owners.",
+      "law_preferences": { "free_market": 10, "laissez_faire": 12, "free_trade": 8, "command_economy": -25, "closed_economy": -15, "state_capitalism": -4, "national_health_service": -3 },
+      "trait_reactions": { "business_executive": 8, "market_reformer": 10, "fiscal_conservative": 6, "welfare_expansionist": -6, "protectionist_stance": -4 },
+      "economy_sensitivity": 1.5,
+      "actions": [
+        { "action": "protest", "approval_below": 30, "min_influence": 0.15 },
+        { "action": "impeachment", "approval_below": 20, "min_influence": 0.3 },
+        { "action": "coup", "approval_below": 10, "min_influence": 0.45 }
+      ]
+    },
+    {
+      "id": "labour_unions", "name": "Labour unions", "description": "Trade unions and organised workers.",
+      "law_preferences": { "social_market_economy": 8, "mixed_economy": 6, "laissez_faire": -15, "free_market": -5, "national_health_service": 6, "social_insurance": 4, "protectionism": 4 },
+      "trait_reactions": { "trade_unionist": 12, "welfare_expansionist": 8, "labour_market_reformer": -12, "market_reformer": -6 },
+      "economy_sensitivity": 1.2,
+      "actions": [
+        { "action": "strike", "approval_below": 35, "min_influence": 0.1 },
+        { "action": "mass_movement", "approval_below": 20, "min_influence": 0.25 }
+      ]
+    },
+    {
+      "id": "religious_establishment", "name": "Religious establishment", "description": "Clergy, religious institutions and faith organisations.",
+      "law_preferences": { "official_religion": 8, "religious_law_partial": 10, "theocratic_law": 12, "strict_secularism": -15, "pluralist_secularism": -2 },
+      "trait_reactions": { "religious_scholar": 12, "religious_conservative": 10, "social_conservative": 6, "secularist": -10, "social_liberal_stance": -6 },
+      "economy_sensitivity": 0.3,
+      "actions": [
+        { "action": "protest", "approval_below": 30, "min_influence": 0.15 },
+        { "action": "mass_movement", "approval_below": 15, "min_influence": 0.35 }
+      ]
+    },
+    {
+      "id": "rural", "name": "Rural and agrarian", "description": "Farmers, rural communities and agricultural interests.",
+      "law_preferences": { "protectionism": 8, "free_trade": -6, "green_transition": -5, "fossil_first": 3 },
+      "trait_reactions": { "farmer": 10, "free_trade_advocate": -5, "protectionist_stance": 6, "decentralist": 4 },
+      "economy_sensitivity": 0.8,
+      "actions": [
+        { "action": "protest", "approval_below": 30, "min_influence": 0.1 },
+        { "action": "uprising", "approval_below": 12, "min_influence": 0.35 }
+      ]
+    },
+    {
+      "id": "urban_middle_class", "name": "Urban middle class", "description": "Professionals, small business owners and salaried urban workers.",
+      "law_preferences": { "free_press": 6, "full_civil_liberties": 8, "free_elections": 8, "police_state": -15, "managed_elections": -8, "mass_higher_education": 5, "open_internet": 4 },
+      "trait_reactions": { "anti_corruption_platform": 8, "market_reformer": 4, "economist": 4 },
+      "economy_sensitivity": 1.4,
+      "actions": [
+        { "action": "protest", "approval_below": 35, "min_influence": 0.1 },
+        { "action": "mass_movement", "approval_below": 20, "min_influence": 0.25 },
+        { "action": "uprising", "approval_below": 10, "min_influence": 0.35 }
+      ]
+    },
+    {
+      "id": "minorities", "name": "Ethnic and regional minorities", "description": "Ethnic, linguistic, religious and regional minority communities.",
+      "law_preferences": { "full_civil_liberties": 8, "police_state": -12, "security_state": -6, "pluralist_secularism": 4 },
+      "trait_reactions": { "decentralist": 10, "centralist": -10, "pro_independence": 6, "restrictive_immigration_stance": -4 },
+      "economy_sensitivity": 0.6,
+      "actions": [
+        { "action": "protest", "approval_below": 30, "min_influence": 0.05 },
+        { "action": "uprising", "approval_below": 15, "min_influence": 0.2 },
+        { "action": "civil_war", "approval_below": 8, "min_influence": 0.3 }
+      ]
+    },
+    {
+      "id": "youth_students", "name": "Youth and students", "description": "University students and young people.",
+      "law_preferences": { "open_internet": 8, "filtered_internet": -10, "sovereign_internet": -12, "free_press": 6, "mass_higher_education": 8, "extended_service": -8, "green_transition": 4 },
+      "trait_reactions": { "environmentalist": 6, "social_liberal_stance": 6, "anti_corruption_platform": 6 },
+      "economy_sensitivity": 1.0,
+      "actions": [
+        { "action": "protest", "approval_below": 40, "min_influence": 0.05 },
+        { "action": "mass_movement", "approval_below": 20, "min_influence": 0.2 }
+      ]
+    },
+    {
+      "id": "media", "name": "Media", "description": "Newspapers, broadcasters and online outlets.",
+      "law_preferences": { "free_press": 12, "regulated_press": 2, "state_controlled_media": -12, "total_censorship": -20 },
+      "trait_reactions": { "journalist": 8, "former_intelligence_officer": -3 },
+      "economy_sensitivity": 0.4,
+      "actions": [
+        { "action": "protest", "approval_below": 30, "min_influence": 0.1 },
+        { "action": "impeachment", "approval_below": 20, "min_influence": 0.25 }
+      ]
+    }
+  ]
+}

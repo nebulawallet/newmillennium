@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "modifiers": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[a-z0-9]+(?:_[a-z0-9]+)*$"
+          },
+          "name": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "display": {
+            "type": "string",
+            "enum": [
+              "percent",
+              "flat"
+            ]
+          },
+          "positive_is_good": {
+            "default": true,
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "id",
+          "name",
+          "description",
+          "display"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "required": [
+    "modifiers"
+  ],
+  "additionalProperties": false
+}

@@ -1,0 +1,297 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "rules": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "kind": {
+            "type": "string",
+            "enum": [
+              "presidential",
+              "legislative",
+              "legislative_upper",
+              "indirect_presidential",
+              "referendum",
+              "party_congress",
+              "party_leadership",
+              "local_regional"
+            ]
+          },
+          "chamber": {
+            "type": "string",
+            "pattern": "^[a-z0-9]+(?:_[a-z0-9]+)*$"
+          },
+          "office": {
+            "type": "string",
+            "pattern": "^[a-z]{3}\\.[a-z0-9]+(?:_[a-z0-9]+)*$"
+          },
+          "every_years": {
+            "type": "number",
+            "exclusiveMinimum": 0
+          },
+          "anchor": {
+            "type": "string",
+            "format": "date",
+            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))$",
+            "description": "Calendar date, YYYY-MM-DD"
+          },
+          "snap_possible": {
+            "type": "boolean"
+          },
+          "note": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "kind",
+          "every_years",
+          "anchor",
+          "snap_possible"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "no_elections_reason": {
+      "type": "string"
+    },
+    "elections": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[a-z0-9]+(?:_[a-z0-9]+)*$"
+          },
+          "date": {
+            "type": "string",
+            "format": "date",
+            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))$",
+            "description": "Calendar date, YYYY-MM-DD"
+          },
+          "kind": {
+            "type": "string",
+            "enum": [
+              "presidential",
+              "legislative",
+              "legislative_upper",
+              "indirect_presidential",
+              "referendum",
+              "party_congress",
+              "party_leadership",
+              "local_regional"
+            ]
+          },
+          "chamber": {
+            "type": "string",
+            "pattern": "^[a-z0-9]+(?:_[a-z0-9]+)*$"
+          },
+          "office": {
+            "type": "string",
+            "pattern": "^[a-z]{3}\\.[a-z0-9]+(?:_[a-z0-9]+)*$"
+          },
+          "rounds": {
+            "type": "integer",
+            "exclusiveMinimum": 0,
+            "maximum": 9007199254740991
+          },
+          "question": {
+            "type": "string"
+          },
+          "snap": {
+            "type": "boolean"
+          },
+          "historical": {
+            "type": "object",
+            "properties": {
+              "candidates": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "person": {
+                      "type": "string",
+                      "pattern": "^[a-z]{3}\\.[a-z0-9]+(?:_[a-z0-9]+)*$"
+                    },
+                    "party": {
+                      "type": "string",
+                      "pattern": "^[a-z]{3}\\.[a-z0-9]+(?:_[a-z0-9]+)*$"
+                    },
+                    "share": {
+                      "type": "number",
+                      "minimum": 0,
+                      "maximum": 1
+                    },
+                    "votes": {
+                      "type": "integer",
+                      "minimum": -9007199254740991,
+                      "maximum": 9007199254740991
+                    },
+                    "round": {
+                      "default": 1,
+                      "type": "integer",
+                      "exclusiveMinimum": 0,
+                      "maximum": 9007199254740991
+                    }
+                  },
+                  "required": [
+                    "person"
+                  ],
+                  "additionalProperties": false
+                }
+              },
+              "party_results": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "party": {
+                      "type": "string"
+                    },
+                    "share": {
+                      "type": "number",
+                      "minimum": 0,
+                      "maximum": 1
+                    },
+                    "seats": {
+                      "type": "integer",
+                      "minimum": 0,
+                      "maximum": 9007199254740991
+                    }
+                  },
+                  "required": [
+                    "party",
+                    "seats"
+                  ],
+                  "additionalProperties": false
+                }
+              },
+              "yes_share": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 1
+              },
+              "winner": {
+                "type": "string"
+              },
+              "turnout": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 1
+              },
+              "note": {
+                "type": "string"
+              },
+              "source": {
+                "minItems": 1,
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "url": {
+                      "type": "string",
+                      "format": "uri"
+                    },
+                    "title": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "accessed": {
+                      "type": "string",
+                      "format": "date",
+                      "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))$",
+                      "description": "Calendar date, YYYY-MM-DD"
+                    },
+                    "note": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "url",
+                    "title",
+                    "accessed"
+                  ],
+                  "additionalProperties": false
+                }
+              },
+              "confidence": {
+                "type": "string",
+                "enum": [
+                  "verified",
+                  "needs_review"
+                ]
+              },
+              "review_note": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "source",
+              "confidence"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "required": [
+          "id",
+          "date",
+          "kind",
+          "historical"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "source": {
+      "minItems": 1,
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "url": {
+            "type": "string",
+            "format": "uri"
+          },
+          "title": {
+            "type": "string",
+            "minLength": 1
+          },
+          "accessed": {
+            "type": "string",
+            "format": "date",
+            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))$",
+            "description": "Calendar date, YYYY-MM-DD"
+          },
+          "note": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "url",
+          "title",
+          "accessed"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "confidence": {
+      "type": "string",
+      "enum": [
+        "verified",
+        "needs_review"
+      ]
+    },
+    "review_note": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "rules",
+    "elections",
+    "source",
+    "confidence"
+  ],
+  "additionalProperties": false
+}

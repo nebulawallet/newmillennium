@@ -1,0 +1,346 @@
+{
+  "parties": [
+    {
+      "id": "deu.spd",
+      "name": { "en": "Social Democratic Party of Germany", "native": "Sozialdemokratische Partei Deutschlands" },
+      "abbrev": { "en": "SPD", "native": "SPD" },
+      "color": "#E3000F",
+      "sub_ideology": "social_democrat",
+      "founded": "1863-05-23",
+      "status_2000": "active",
+      "leader_history": [
+        { "person": "deu.gerhard_schroeder", "from": "1999-03-12", "to": "2004-03-21" },
+        { "person": "deu.franz_muentefering", "from": "2004-03-21", "to": "2005-11-15" },
+        { "person": "deu.matthias_platzeck", "from": "2005-11-15", "to": "2006-04-10" },
+        { "person": "deu.kurt_beck", "from": "2006-04-10", "to": "2008-09-07" },
+        { "person": "deu.frank_walter_steinmeier", "from": "2008-09-07", "to": "2008-10-18", "title": "Acting chair" },
+        { "person": "deu.franz_muentefering", "from": "2008-10-18", "to": "2009-11-13" },
+        { "person": "deu.sigmar_gabriel", "from": "2009-11-13", "to": "2017-03-19" },
+        { "person": "deu.martin_schulz", "from": "2017-03-19", "to": "2018-02-13" },
+        { "person": "deu.olaf_scholz", "from": "2018-02-13", "to": "2018-04-22", "title": "Acting chair" },
+        { "person": "deu.andrea_nahles", "from": "2018-04-22", "to": "2019-06-03" },
+        { "person": "deu.norbert_walter_borjans", "from": "2019-12-06", "to": "2021-12-11", "title": "Co-chair" },
+        { "person": "deu.saskia_esken", "from": "2019-12-06", "to": "2025-06-27", "title": "Co-chair" },
+        { "person": "deu.lars_klingbeil", "from": "2021-12-11", "title": "Co-chair" },
+        { "person": "deu.baerbel_bas", "from": "2025-06-27", "title": "Co-chair" }
+      ],
+      "popularity_2000": 0.409,
+      "popularity_note": "Party-list vote share, 1998 Bundestag election. An acting leadership of three (June-December 2019) is omitted.",
+      "factions": [
+        { "id": "seeheimer_kreis", "name": "Seeheimer Kreis", "sub_ideology": "third_way", "strength": 0.4, "figures": [], "note": "Centrist wing of the parliamentary group (founded 1974). Strength is a gameplay estimate." },
+        { "id": "neue_mitte", "name": "Neue Mitte modernisers", "sub_ideology": "third_way", "strength": 0.25, "figures": ["deu.gerhard_schroeder"], "note": "Supporters of the 'New Centre' programme on which Schroeder campaigned in 1998. Strength is a gameplay estimate." },
+        { "id": "parlamentarische_linke", "name": "Parlamentarische Linke", "sub_ideology": "democratic_socialist", "strength": 0.35, "figures": [], "note": "Left wing of the parliamentary group. Strength is a gameplay estimate." }
+      ],
+      "international": "Socialist International; Party of European Socialists",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/Leader_of_the_Social_Democratic_Party_of_Germany", "title": "Wikipedia: Leader of the SPD (incl. acting leaders)", "accessed": "2026-10-14" },
+        { "url": "https://www.wikidata.org/wiki/Q49768", "title": "Wikidata: SPD (founding date, chairpersons)", "accessed": "2026-10-14" },
+        { "url": "https://en.wikipedia.org/wiki/1998_German_federal_election", "title": "Wikipedia: 1998 German federal election", "accessed": "2026-10-14" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "deu.cdu",
+      "name": { "en": "Christian Democratic Union of Germany", "native": "Christlich Demokratische Union Deutschlands" },
+      "abbrev": { "en": "CDU", "native": "CDU" },
+      "color": "#2B2B2B",
+      "sub_ideology": "christian_democrat",
+      "founded": "1945-06-26",
+      "status_2000": "active",
+      "leader_history": [
+        { "person": "deu.wolfgang_schaeuble", "from": "1998-11-07", "to": "2000-02-16" },
+        { "person": "deu.angela_merkel", "from": "2000-04-10", "to": "2018-12-07" },
+        { "person": "deu.annegret_kramp_karrenbauer", "from": "2018-12-07", "to": "2021-01-22" },
+        { "person": "deu.armin_laschet", "from": "2021-01-22", "to": "2022-01-31" },
+        { "person": "deu.friedrich_merz", "from": "2022-01-31" }
+      ],
+      "popularity_2000": 0.284,
+      "popularity_note": "Party-list vote share, 1998 Bundestag election (CDU only; CSU stands in Bavaria).",
+      "factions": [
+        { "id": "wirtschaftsfluegel", "name": "Business wing (MIT)", "sub_ideology": "liberal_conservative", "strength": 0.35, "figures": ["deu.friedrich_merz"], "note": "Mittelstands- und Wirtschaftsunion. Strength is a gameplay estimate." },
+        { "id": "cda", "name": "Christian Democratic Employees' Association (CDA)", "sub_ideology": "christian_democrat", "strength": 0.25, "figures": [], "note": "Labour wing. Strength is a gameplay estimate." },
+        { "id": "party_mainstream", "name": "Party centre", "sub_ideology": "christian_democrat", "strength": 0.4, "figures": ["deu.angela_merkel", "deu.wolfgang_schaeuble"], "note": "Strength is a gameplay estimate." }
+      ],
+      "coalition_red_lines": ["deu.afd"],
+      "international": "Centrist Democrat International; European People's Party",
+      "source": [
+        { "url": "https://www.wikidata.org/wiki/Q49762", "title": "Wikidata: CDU (founding date, chairpersons)", "accessed": "2026-10-14" },
+        { "url": "https://en.wikipedia.org/wiki/Christian_Democratic_Union_of_Germany", "title": "Wikipedia: Christian Democratic Union of Germany", "accessed": "2026-10-14" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "deu.csu",
+      "name": { "en": "Christian Social Union in Bavaria", "native": "Christlich-Soziale Union in Bayern" },
+      "abbrev": { "en": "CSU", "native": "CSU" },
+      "color": "#0080C8",
+      "sub_ideology": "christian_democrat",
+      "founded": "1945-10-13",
+      "status_2000": "active",
+      "leader_history": [
+        { "person": "deu.edmund_stoiber", "from": 1999, "to": 2007 },
+        { "person": "deu.erwin_huber", "from": 2007, "to": 2008 },
+        { "person": "deu.horst_seehofer", "from": 2008, "to": 2019 },
+        { "person": "deu.markus_soeder", "from": 2019 }
+      ],
+      "popularity_2000": 0.067,
+      "popularity_note": "National party-list vote share, 1998 (stands only in Bavaria; forms a joint parliamentary group with the CDU).",
+      "regional_base": ["Bavaria"],
+      "coalition_red_lines": ["deu.afd"],
+      "source": [
+        { "url": "https://www.wikidata.org/wiki/Q49763", "title": "Wikidata: CSU (founding date, chairpersons; year precision)", "accessed": "2026-10-14" },
+        { "url": "https://en.wikipedia.org/wiki/Christian_Social_Union_in_Bavaria", "title": "Wikipedia: Christian Social Union in Bavaria", "accessed": "2026-10-14" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "deu.greens",
+      "name": { "en": "Alliance 90/The Greens", "native": "Bündnis 90/Die Grünen" },
+      "abbrev": { "en": "Greens", "native": "Grüne" },
+      "color": "#1AA037",
+      "sub_ideology": "green",
+      "founded": "1993-05-14",
+      "status_2000": "active",
+      "leader_history": [
+        { "person": "deu.antje_radcke", "from": 1998, "to": 2000, "title": "Co-spokesperson" },
+        { "person": "deu.gunda_roestel", "from": 1998, "to": 2000, "title": "Co-spokesperson" },
+        { "person": "deu.renate_kuenast", "from": 2000, "to": 2001, "title": "Co-spokesperson" },
+        { "person": "deu.fritz_kuhn", "from": 2000, "to": 2002, "title": "Co-spokesperson" },
+        { "person": "deu.claudia_roth", "from": 2001, "to": 2002, "title": "Co-spokesperson" },
+        { "person": "deu.reinhard_buetikofer", "from": 2002, "to": 2008, "title": "Co-spokesperson" },
+        { "person": "deu.angelika_beer", "from": 2002, "to": 2004, "title": "Co-spokesperson" },
+        { "person": "deu.claudia_roth", "from": 2004, "to": 2013, "title": "Co-chair" },
+        { "person": "deu.cem_oezdemir", "from": 2008, "to": "2018-01-27", "title": "Co-chair" },
+        { "person": "deu.simone_peter", "from": "2013-10-19", "to": "2018-01-27", "title": "Co-chair" },
+        { "person": "deu.robert_habeck", "from": "2018-01-27", "to": "2022-01-29", "title": "Co-chair" },
+        { "person": "deu.annalena_baerbock", "from": "2018-01-27", "to": "2022-01-29", "title": "Co-chair" },
+        { "person": "deu.omid_nouripour", "from": "2022-01-29", "to": "2024-11-16", "title": "Co-chair" },
+        { "person": "deu.ricarda_lang", "from": "2022-01-29", "to": "2024-11-16", "title": "Co-chair" },
+        { "person": "deu.franziska_brantner", "from": "2024-11-16", "title": "Co-chair" },
+        { "person": "deu.felix_banaszak", "from": "2024-11-16", "title": "Co-chair" }
+      ],
+      "popularity_2000": 0.067,
+      "popularity_note": "Party-list vote share, 1998 Bundestag election.",
+      "factions": [
+        { "id": "realos", "name": "Realos", "sub_ideology": "green", "strength": 0.6, "figures": ["deu.joschka_fischer", "deu.fritz_kuhn"], "note": "Pragmatic wing. Strength is a gameplay estimate." },
+        { "id": "parteilinke", "name": "Party left", "sub_ideology": "democratic_socialist", "strength": 0.4, "figures": ["deu.claudia_roth"], "note": "Left wing (historically the 'Fundis'). Strength is a gameplay estimate." }
+      ],
+      "international": "Global Greens; European Green Party",
+      "source": [
+        { "url": "https://www.wikidata.org/wiki/Q49766", "title": "Wikidata: Alliance 90/The Greens (founding, chairpersons; early dates at year precision)", "accessed": "2026-10-14" },
+        { "url": "https://en.wikipedia.org/wiki/Alliance_90/The_Greens", "title": "Wikipedia: Alliance 90/The Greens", "accessed": "2026-10-14" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "deu.fdp",
+      "name": { "en": "Free Democratic Party", "native": "Freie Demokratische Partei" },
+      "abbrev": { "en": "FDP", "native": "FDP" },
+      "color": "#FFED00",
+      "sub_ideology": "classical_liberal",
+      "founded": "1948-12-12",
+      "status_2000": "active",
+      "leader_history": [
+        { "person": "deu.wolfgang_gerhardt", "from": 1995, "to": 2001 },
+        { "person": "deu.guido_westerwelle", "from": 2001, "to": 2011 },
+        { "person": "deu.philipp_roesler", "from": 2011, "to": 2013 },
+        { "person": "deu.christian_lindner", "from": 2013, "to": "2025-05-16" },
+        { "person": "deu.christian_duerr", "from": "2025-05-16", "to": "2026-05-30" },
+        { "person": "deu.wolfgang_kubicki", "from": "2026-05-30" }
+      ],
+      "popularity_2000": 0.0625,
+      "popularity_note": "Party-list vote share, 1998 Bundestag election.",
+      "international": "Liberal International; ALDE Party",
+      "source": [
+        { "url": "https://www.wikidata.org/wiki/Q13124", "title": "Wikidata: FDP (founding date, chairpersons)", "accessed": "2026-10-14" },
+        { "url": "https://en.wikipedia.org/wiki/Free_Democratic_Party_(Germany)", "title": "Wikipedia: Free Democratic Party (current leader in infobox)", "accessed": "2026-10-14" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "deu.pds",
+      "name": { "en": "Party of Democratic Socialism", "native": "Partei des Demokratischen Sozialismus" },
+      "abbrev": { "en": "PDS", "native": "PDS" },
+      "color": "#BE3075",
+      "sub_ideology": "democratic_socialist",
+      "founded": "1989-12-16",
+      "dissolved": "2007-06-16",
+      "status_2000": "active",
+      "leader_history": [
+        { "person": "deu.lothar_bisky", "from": 1993, "to": 2000 },
+        { "person": "deu.gabi_zimmer", "from": 2000, "to": 2003 },
+        { "person": "deu.lothar_bisky", "from": 2003, "to": 2007 }
+      ],
+      "popularity_2000": 0.051,
+      "popularity_note": "Party-list vote share, 1998 Bundestag election. Successor of the East German SED; renamed Linkspartei.PDS in 2005 and merged with the WASG into Die Linke in 2007.",
+      "lineage": { "merged_into": "deu.linke" },
+      "factions": [
+        { "id": "reformers", "name": "Reformers", "sub_ideology": "democratic_socialist", "strength": 0.85, "figures": ["deu.lothar_bisky", "deu.gregor_gysi"], "note": "Strength is a gameplay estimate." },
+        { "id": "kommunistische_plattform", "name": "Communist Platform", "sub_ideology": "marxist_leninist", "strength": 0.15, "figures": ["deu.sahra_wagenknecht"], "note": "Strength is a gameplay estimate." }
+      ],
+      "regional_base": ["Berlin", "Brandenburg", "Mecklenburg-Vorpommern", "Saxony", "Saxony-Anhalt", "Thuringia"],
+      "source": [
+        { "url": "https://www.wikidata.org/wiki/Q152554", "title": "Wikidata: Party of Democratic Socialism (founding, dissolution, chairpersons; year precision)", "accessed": "2026-10-14" },
+        { "url": "https://en.wikipedia.org/wiki/Party_of_Democratic_Socialism_(Germany)", "title": "Wikipedia: Party of Democratic Socialism", "accessed": "2026-10-14" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "deu.wasg",
+      "name": { "en": "Labour and Social Justice – The Electoral Alternative", "native": "Arbeit & soziale Gerechtigkeit – Die Wahlalternative" },
+      "abbrev": { "en": "WASG", "native": "WASG" },
+      "color": "#E2001A",
+      "sub_ideology": "democratic_socialist",
+      "founded": "2005-01-22",
+      "dissolved": "2007-06-16",
+      "status_2000": "not_yet_founded",
+      "leader_history": [{ "person": "deu.klaus_ernst", "from": 2005, "to": 2007, "title": "Member of the executive board" }],
+      "popularity_2000": 0,
+      "lineage": { "merged_into": "deu.linke" },
+      "source": [
+        { "url": "https://www.wikidata.org/wiki/Q166027", "title": "Wikidata: WASG (founding and dissolution dates)", "accessed": "2026-10-14" }
+      ],
+      "confidence": "needs_review",
+      "review_note": "Founding/dissolution dates confirmed on Wikidata; confirm Klaus Ernst's role and dates on the WASG executive board."
+    },
+    {
+      "id": "deu.linke",
+      "name": { "en": "The Left", "native": "Die Linke" },
+      "abbrev": { "en": "Linke", "native": "Die Linke" },
+      "color": "#BE3075",
+      "sub_ideology": "democratic_socialist",
+      "founded": "2007-06-16",
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        { "person": "deu.lothar_bisky", "from": "2007-06-16", "to": "2010-05-15", "title": "Co-chair" },
+        { "person": "deu.oskar_lafontaine", "from": "2007-06-16", "to": "2010-05-15", "title": "Co-chair" },
+        { "person": "deu.klaus_ernst", "from": "2010-05-15", "to": "2012-06-02", "title": "Co-chair" },
+        { "person": "deu.gesine_loetzsch", "from": "2010-05-15", "to": "2012-04-10", "title": "Co-chair" },
+        { "person": "deu.bernd_riexinger", "from": "2012-06-02", "to": "2021-02-27", "title": "Co-chair" },
+        { "person": "deu.katja_kipping", "from": "2012-06-02", "to": "2021-02-27", "title": "Co-chair" },
+        { "person": "deu.janine_wissler", "from": "2021-02-27", "to": "2024-10-19", "title": "Co-chair" },
+        { "person": "deu.susanne_hennig_wellsow", "from": "2021-02-27", "to": "2022-04-20", "title": "Co-chair" },
+        { "person": "deu.martin_schirdewan", "from": "2022-06-25", "to": "2024-10-19", "title": "Co-chair" },
+        { "person": "deu.jan_van_aken", "from": "2024-10-19", "title": "Co-chair" },
+        { "person": "deu.ines_schwerdtner", "from": "2024-10-19", "title": "Co-chair" }
+      ],
+      "popularity_2000": 0,
+      "lineage": { "formed_from": ["deu.pds", "deu.wasg"] },
+      "factions": [
+        { "id": "reformers", "name": "Reformers", "sub_ideology": "democratic_socialist", "strength": 0.6, "figures": ["deu.gregor_gysi"], "note": "Strength is a gameplay estimate." },
+        { "id": "left_wing", "name": "Party left", "sub_ideology": "left_populist", "strength": 0.4, "figures": ["deu.sahra_wagenknecht", "deu.oskar_lafontaine"], "note": "Its leading figures left to found the BSW in 2023-2024. Strength is a gameplay estimate." }
+      ],
+      "source": [
+        { "url": "https://www.wikidata.org/wiki/Q49764", "title": "Wikidata: Die Linke (founding date, chairpersons)", "accessed": "2026-10-14" },
+        { "url": "https://en.wikipedia.org/wiki/Susanne_Hennig-Wellsow", "title": "Wikipedia: Susanne Hennig-Wellsow (resigned as co-leader 20 April 2022)", "accessed": "2026-10-14" }
+      ],
+      "confidence": "needs_review",
+      "review_note": "Wikidata lists a change of co-chair on 2026-06-20 (Jan van Aken succeeded by Luigi Pantisano). Confirm with the party or Wikipedia before adding it."
+    },
+    {
+      "id": "deu.afd",
+      "name": { "en": "Alternative for Germany", "native": "Alternative für Deutschland" },
+      "abbrev": { "en": "AfD", "native": "AfD" },
+      "color": "#009EE0",
+      "sub_ideology": "right_populist",
+      "founded": "2013-02-06",
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        { "person": "deu.bernd_lucke", "from": "2013-04-14", "to": "2015-07-04", "title": "Co-spokesperson" },
+        { "person": "deu.konrad_adam", "from": "2013-04-14", "to": "2015-07-04", "title": "Co-spokesperson" },
+        { "person": "deu.frauke_petry", "from": "2013-04-14", "to": "2017-09-29", "title": "Co-spokesperson" },
+        { "person": "deu.joerg_meuthen", "from": "2015-07-04", "to": "2022-01-28", "title": "Co-spokesperson" },
+        { "person": "deu.alexander_gauland", "from": "2017-12-02", "to": "2019-11-30", "title": "Co-spokesperson" },
+        { "person": "deu.tino_chrupalla", "from": "2019-11-30", "title": "Co-spokesperson" },
+        { "person": "deu.alice_weidel", "from": "2022-06-18", "title": "Co-spokesperson" }
+      ],
+      "popularity_2000": 0,
+      "factions": [
+        { "id": "national_conservatives", "name": "National-conservative wing", "sub_ideology": "national_conservative", "strength": 0.45, "figures": ["deu.alexander_gauland"], "note": "Strength is a gameplay estimate." },
+        { "id": "economic_liberal_founders", "name": "Eurosceptic economic liberals", "sub_ideology": "liberal_conservative", "strength": 0.2, "figures": ["deu.bernd_lucke"], "note": "Founding wing; most left with Lucke in 2015. Strength is a gameplay estimate." },
+        { "id": "mainstream", "name": "Party mainstream", "sub_ideology": "right_populist", "strength": 0.35, "figures": ["deu.alice_weidel", "deu.tino_chrupalla"], "note": "Strength is a gameplay estimate." }
+      ],
+      "source": [
+        { "url": "https://www.wikidata.org/wiki/Q6721203", "title": "Wikidata: Alternative for Germany (founding date, chairpersons)", "accessed": "2026-10-14" },
+        { "url": "https://en.wikipedia.org/wiki/Frauke_Petry", "title": "Wikipedia: Frauke Petry (left the party on 29 September 2017)", "accessed": "2026-10-14" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "deu.bsw",
+      "name": { "en": "Sahra Wagenknecht Alliance", "native": "Bündnis Sahra Wagenknecht – Vernunft und Gerechtigkeit" },
+      "abbrev": { "en": "BSW", "native": "BSW" },
+      "color": "#7D254F",
+      "sub_ideology": "left_populist",
+      "founded": "2024-01-08",
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        { "person": "deu.sahra_wagenknecht", "from": "2024-01-08", "title": "Co-chair" },
+        { "person": "deu.amira_mohamed_ali", "from": "2024-01-08", "title": "Co-chair" }
+      ],
+      "popularity_2000": 0,
+      "lineage": { "split_from": "deu.linke" },
+      "source": [
+        { "url": "https://www.wikidata.org/wiki/Q123121346", "title": "Wikidata: Sahra Wagenknecht Alliance (founding date, chairpersons)", "accessed": "2026-10-14" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "deu.npd",
+      "name": { "en": "National Democratic Party of Germany", "native": "Nationaldemokratische Partei Deutschlands" },
+      "abbrev": { "en": "NPD", "native": "NPD" },
+      "color": "#8B4513",
+      "sub_ideology": "ethno_nationalist",
+      "founded": "1964-11-28",
+      "status_2000": "extra_parliamentary",
+      "leader_history": [
+        { "person": "deu.udo_voigt", "from": 1996, "to": 2011 },
+        { "person": "deu.holger_apfel", "from": 2011, "to": 2013 },
+        { "person": "deu.frank_franz", "from": 2014, "to": 2024 }
+      ],
+      "popularity_2000": 0.003,
+      "popularity_note": "Party-list vote share, 1998 Bundestag election. Renamed 'Die Heimat' in 2023. Interim leaders and post-2024 leadership are omitted.",
+      "source": [
+        { "url": "https://www.wikidata.org/wiki/Q156019", "title": "Wikidata: NPD / Die Heimat (founding date, chairpersons; year precision)", "accessed": "2026-10-14" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "deu.rep",
+      "name": { "en": "The Republicans", "native": "Die Republikaner" },
+      "abbrev": { "en": "REP", "native": "REP" },
+      "color": "#0A3C8C",
+      "sub_ideology": "national_conservative",
+      "founded": "1983-11-26",
+      "status_2000": "extra_parliamentary",
+      "leader_history": [{ "person": "deu.rolf_schlierer", "from": 1994, "to": 2014 }],
+      "popularity_2000": 0.018,
+      "popularity_note": "Party-list vote share, 1998 Bundestag election.",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/The_Republicans_(Germany)", "title": "Wikipedia: The Republicans (Germany) (Schlierer leadership 1994-2014)", "accessed": "2026-10-14" },
+        { "url": "https://www.wikidata.org/wiki/Q269316", "title": "Wikidata: Die Republikaner (founding date)", "accessed": "2026-10-14" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "deu.dvu",
+      "name": { "en": "German People's Union", "native": "Deutsche Volksunion" },
+      "abbrev": { "en": "DVU", "native": "DVU" },
+      "color": "#5C4033",
+      "sub_ideology": "ethno_nationalist",
+      "founded": 1971,
+      "dissolved": "2010-12-31",
+      "status_2000": "extra_parliamentary",
+      "leader_history": [{ "person": "deu.gerhard_frey", "from": 1971, "to": 2009 }],
+      "popularity_2000": 0.012,
+      "popularity_note": "Party-list vote share, 1998 Bundestag election. Founded in 1971 as an association, registered as a party in 1987; held seats in some state parliaments.",
+      "lineage": { "merged_into": "deu.npd" },
+      "source": [
+        { "url": "https://www.wikidata.org/wiki/Q505829", "title": "Wikidata: German People's Union (founding, dissolution, chairpersons)", "accessed": "2026-10-14" },
+        { "url": "https://www.wikidata.org/wiki/Q92215", "title": "Wikidata: Gerhard Frey (association chairman 1971-1987)", "accessed": "2026-10-14" }
+      ],
+      "confidence": "needs_review",
+      "review_note": "Confirm the 1987 registration as a party and the 2010-2011 merger into the NPD."
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "id": "energy_policy",
+  "name": "Energy policy",
+  "description": "Priorities for energy production.",
+  "laws": [
+    { "id": "fossil_first", "name": "Fossil fuels first", "description": "Prioritise oil, gas and coal production and low energy prices.", "pp_cost": 80, "requires_vote": true,
+      "modifiers": { "fossil_output": 0.15, "energy_cost": -0.05, "emissions": 0.15 } },
+    { "id": "energy_mix", "name": "Balanced energy mix", "description": "Market-led mix of fossil, nuclear and renewable sources.", "pp_cost": 60, "requires_vote": true,
+      "modifiers": {} },
+    { "id": "nuclear_expansion", "name": "Nuclear expansion", "description": "State support for building nuclear power.", "pp_cost": 100, "requires_vote": true,
+      "modifiers": { "nuclear_output": 0.25, "emissions": -0.1 } },
+    { "id": "nuclear_phaseout", "name": "Nuclear phase-out", "description": "Close nuclear plants on a fixed timetable and expand renewables.", "pp_cost": 100, "requires_vote": true,
+      "modifiers": { "nuclear_output": -0.5, "renewable_output": 0.2, "energy_cost": 0.05 } },
+    { "id": "green_transition", "name": "Green transition", "description": "Binding emissions targets and heavy renewable investment.", "pp_cost": 120, "requires_vote": true,
+      "modifiers": { "renewable_output": 0.35, "fossil_output": -0.15, "energy_cost": 0.08, "emissions": -0.25 } }
+  ]
+}

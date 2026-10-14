@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "interest_groups": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "pattern": "^[a-z0-9]+(?:_[a-z0-9]+)*$"
+          },
+          "influence": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1
+          },
+          "approval": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 100
+          },
+          "figurehead": {
+            "type": "string",
+            "pattern": "^[a-z]{3}\\.[a-z0-9]+(?:_[a-z0-9]+)*$"
+          },
+          "note": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "type",
+          "influence",
+          "approval"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "note": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "interest_groups"
+  ],
+  "additionalProperties": false
+}

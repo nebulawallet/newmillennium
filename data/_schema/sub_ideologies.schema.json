@@ -1,0 +1,163 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "sub_ideologies": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[a-z0-9]+(?:_[a-z0-9]+)*$"
+          },
+          "group": {
+            "type": "string",
+            "pattern": "^[a-z0-9]+(?:_[a-z0-9]+)*$"
+          },
+          "name": {
+            "type": "string"
+          },
+          "color": {
+            "type": "string",
+            "pattern": "^#[0-9a-fA-F]{6}$"
+          },
+          "description": {
+            "type": "string"
+          },
+          "policy": {
+            "type": "object",
+            "properties": {
+              "economy": {
+                "type": "number",
+                "minimum": -1,
+                "maximum": 1
+              },
+              "social": {
+                "type": "number",
+                "minimum": -1,
+                "maximum": 1
+              },
+              "authority": {
+                "type": "number",
+                "minimum": -1,
+                "maximum": 1
+              },
+              "sovereignty": {
+                "type": "number",
+                "minimum": -1,
+                "maximum": 1
+              },
+              "religion": {
+                "type": "number",
+                "minimum": -1,
+                "maximum": 1
+              },
+              "environment": {
+                "type": "number",
+                "minimum": -1,
+                "maximum": 1
+              }
+            },
+            "required": [
+              "economy",
+              "social",
+              "authority",
+              "sovereignty",
+              "religion",
+              "environment"
+            ],
+            "additionalProperties": false
+          },
+          "laws": {
+            "type": "object",
+            "properties": {
+              "preferred": {
+                "default": {},
+                "type": "object",
+                "propertyNames": {
+                  "type": "string",
+                  "pattern": "^[a-z0-9]+(?:_[a-z0-9]+)*$"
+                },
+                "additionalProperties": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "pattern": "^[a-z0-9]+(?:_[a-z0-9]+)*$"
+                  }
+                }
+              },
+              "forbidden": {
+                "default": [],
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "pattern": "^[a-z0-9]+(?:_[a-z0-9]+)*$"
+                }
+              }
+            },
+            "additionalProperties": false
+          },
+          "gov_types_allowed": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "^[a-z0-9]+(?:_[a-z0-9]+)*$"
+            }
+          },
+          "modifiers": {
+            "default": {},
+            "type": "object",
+            "propertyNames": {
+              "type": "string",
+              "pattern": "^[a-z0-9]+(?:_[a-z0-9]+)*$"
+            },
+            "additionalProperties": {
+              "type": "number"
+            }
+          },
+          "ai_weights": {
+            "default": {},
+            "type": "object",
+            "propertyNames": {
+              "type": "string",
+              "pattern": "^[a-z0-9]+(?:_[a-z0-9]+)*$"
+            },
+            "additionalProperties": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 2
+            }
+          },
+          "ig_affinity": {
+            "default": {},
+            "type": "object",
+            "propertyNames": {
+              "type": "string",
+              "pattern": "^[a-z0-9]+(?:_[a-z0-9]+)*$"
+            },
+            "additionalProperties": {
+              "type": "number",
+              "minimum": -30,
+              "maximum": 30
+            }
+          }
+        },
+        "required": [
+          "id",
+          "group",
+          "name",
+          "color",
+          "description",
+          "policy",
+          "laws"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "required": [
+    "sub_ideologies"
+  ],
+  "additionalProperties": false
+}

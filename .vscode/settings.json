@@ -1,0 +1,101 @@
+{
+  "json.schemas": [
+    {
+      "fileMatch": [
+        "/data/modifiers.json"
+      ],
+      "url": "./data/_schema/modifiers.schema.json"
+    },
+    {
+      "fileMatch": [
+        "/data/ideologies/groups.json"
+      ],
+      "url": "./data/_schema/ideology_groups.schema.json"
+    },
+    {
+      "fileMatch": [
+        "/data/ideologies/sub_ideologies.json"
+      ],
+      "url": "./data/_schema/sub_ideologies.schema.json"
+    },
+    {
+      "fileMatch": [
+        "/data/government_types.json"
+      ],
+      "url": "./data/_schema/government_types.schema.json"
+    },
+    {
+      "fileMatch": [
+        "/data/interest_groups.json"
+      ],
+      "url": "./data/_schema/interest_groups.schema.json"
+    },
+    {
+      "fileMatch": [
+        "/data/laws/*.json"
+      ],
+      "url": "./data/_schema/law_category.schema.json"
+    },
+    {
+      "fileMatch": [
+        "/data/traits/*.json"
+      ],
+      "url": "./data/_schema/traits.schema.json"
+    },
+    {
+      "fileMatch": [
+        "/data/cultures/*.json"
+      ],
+      "url": "./data/_schema/cultures.schema.json"
+    },
+    {
+      "fileMatch": [
+        "/data/world/countries.json"
+      ],
+      "url": "./data/_schema/country_list.schema.json"
+    },
+    {
+      "fileMatch": [
+        "/data/countries/*/country.json"
+      ],
+      "url": "./data/_schema/country.schema.json"
+    },
+    {
+      "fileMatch": [
+        "/data/countries/*/people.json"
+      ],
+      "url": "./data/_schema/people.schema.json"
+    },
+    {
+      "fileMatch": [
+        "/data/countries/*/parties.json"
+      ],
+      "url": "./data/_schema/parties.schema.json"
+    },
+    {
+      "fileMatch": [
+        "/data/countries/*/elections.json"
+      ],
+      "url": "./data/_schema/elections.schema.json"
+    },
+    {
+      "fileMatch": [
+        "/data/countries/*/cabinet.json",
+        "/data/countries/*/military.json"
+      ],
+      "url": "./data/_schema/offices.schema.json"
+    },
+    {
+      "fileMatch": [
+        "/data/countries/*/interest_groups.json"
+      ],
+      "url": "./data/_schema/country_interest_groups.schema.json"
+    },
+    {
+      "fileMatch": [
+        "/data/countries/*/laws.json"
+      ],
+      "url": "./data/_schema/country_laws.schema.json"
+    }
+  ]
+}

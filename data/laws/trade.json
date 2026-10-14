@@ -1,0 +1,15 @@
+{
+  "id": "trade",
+  "name": "Trade",
+  "description": "Openness to international trade.",
+  "laws": [
+    { "id": "closed_economy", "name": "Closed economy", "description": "Foreign trade is tightly restricted and state-controlled.", "pp_cost": 120, "requires_vote": true,
+      "modifiers": { "trade_efficiency": -0.4, "foreign_investment": -0.4, "consumer_goods_factor": 0.05 } },
+    { "id": "protectionism", "name": "Protectionism", "description": "High tariffs and quotas shield domestic producers.", "pp_cost": 80, "requires_vote": true,
+      "modifiers": { "trade_efficiency": -0.15, "state_industry_output": 0.03 } },
+    { "id": "managed_trade", "name": "Managed trade", "description": "Moderate tariffs, selective protection and bilateral deals.", "pp_cost": 60, "requires_vote": true,
+      "modifiers": {} },
+    { "id": "free_trade", "name": "Free trade", "description": "Low tariffs and broad market access.", "pp_cost": 80, "requires_vote": true,
+      "modifiers": { "trade_efficiency": 0.15, "foreign_investment": 0.1 } }
+  ]
+}

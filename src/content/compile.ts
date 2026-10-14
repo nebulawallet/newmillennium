@@ -1,0 +1,608 @@
+/**
+ * Content compiler: loads every data file, parses it with the zod schemas, resolves
+ * cross-references and runs the politics coverage rules. validate-data and the game
+ * both go through compileContent(), so content that fails here never reaches the game.
+ */
+import type { z } from "zod";
+import type { FileProvider } from "./files.ts";
+import {
+  CountryListFile,
+  CulturesFile,
+  GovernmentTypesFile,
+  IdeologyGroupsFile,
+  InterestGroupsFile,
+  LawCategory,
+  ModifiersFile,
+  SubIdeologiesFile,
+  TraitsFile,
+  type CountryListEntry,
+} from "./schemas/definitions.ts";
+import {
+  Country,
+  CountryInterestGroupsFile,
+  CountryLawsFile,
+  ElectionsFile,
+  HEAD_OF_GOVERNMENT_ROLES,
+  HEAD_OF_STATE_ROLES,
+  OfficesFile,
+  PartiesFile,
+  PeopleFile,
+  SEAT_SPECIAL_KEYS,
+  type Holder,
+  type Office,
+  type Party,
+  type Person,
+} from "./schemas/country.ts";
+
+export const GAME_START = "2000-01-01";
+/** Generated (fictional) leaders may only become available after this date. */
+export const GENERATED_EARLIEST = "2027-01-01";
+
+export type Severity = "error" | "warning";
+export interface Issue {
+  severity: Severity;
+  code: string;
+  file: string;
+  message: string;
+  path?: string;
+  tag?: string;
+}
+
+export type Tier = "core" | "full";
+export interface CompileOptions {
+  tier?: Tier;
+  /** Only check these tags (coverage rules); definitions are always checked. */
+  only?: Set<string>;
+}
+
+type Def<S extends z.ZodType> = z.infer<S>;
+export interface OfficeRec extends Office {
+  tag: string;
+  file: string;
+}
+export interface CountryContent {
+  entry: CountryListEntry;
+  country?: Def<typeof Country>;
+  people: Person[];
+  parties: Party[];
+  elections?: Def<typeof ElectionsFile>;
+  cabinet: Office[];
+  military: Office[];
+  interestGroups?: Def<typeof CountryInterestGroupsFile>;
+  laws?: Def<typeof CountryLawsFile>;
+}
+
+export interface ContentDB {
+  asOf: string;
+  modifiers: Map<string, Def<typeof ModifiersFile>["modifiers"][number]>;
+  ideologyGroups: Map<string, Def<typeof IdeologyGroupsFile>["groups"][number]>;
+  subIdeologies: Map<string, Def<typeof SubIdeologiesFile>["sub_ideologies"][number]>;
+  governmentTypes: Map<string, Def<typeof GovernmentTypesFile>["government_types"][number]>;
+  interestGroupTypes: Map<string, Def<typeof InterestGroupsFile>["interest_groups"][number]>;
+  lawCategories: Map<string, LawCategory>;
+  /** law id -> category id */
+  lawCategoryOf: Map<string, string>;
+  traits: Map<string, Def<typeof TraitsFile>["traits"][number]>;
+  cultures: Map<string, Def<typeof CulturesFile>["cultures"][number]>;
+  countryList: CountryListEntry[];
+  countries: Map<string, CountryContent>;
+  people: Map<string, Person & { file: string }>;
+  parties: Map<string, Party & { file: string }>;
+  offices: Map<string, OfficeRec>;
+}
+
+export interface CompileResult {
+  db: ContentDB;
+  issues: Issue[];
+}
+
+// ---------------------------------------------------------------- date helpers
+
+function addDays(d: string, n: number): string {
+  const t = new Date(d + "T00:00:00Z");
+  t.setUTCDate(t.getUTCDate() + n);
+  return t.toISOString().slice(0, 10);
+}
+const yearOf = (d: string | number) => (typeof d === "number" ? d : Number(d.slice(0, 4)));
+const asDate = (d: string | number, end = false) => (typeof d === "number" ? (end ? `${d}-12-31` : `${d}-01-01`) : d);
+
+/** Holder in office on date d: from <= d < to (to exclusive, open-ended if absent). */
+export function holdersOn(office: Office, d: string): Holder[] {
+  return office.holders.filter((h) => h.from <= d && (h.to === undefined || d < h.to));
+}
+
+// ---------------------------------------------------------------- compiler
+
+export function compileContent(files: FileProvider, opts: CompileOptions = {}): CompileResult {
+  const issues: Issue[] = [];
+  const tier = opts.tier ?? "core";
+  const err = (code: string, file: string, message: string, extra: Partial<Issue> = {}) =>
+    issues.push({ severity: "error", code, file, message, ...extra });
+  const warn = (code: string, file: string, message: string, extra: Partial<Issue> = {}) =>
+    issues.push({ severity: "warning", code, file, message, ...extra });
+
+  function load<S extends z.ZodType>(path: string, schema: S, required = true): z.infer<S> | undefined {
+    const text = files.read(path);
+    if (text === undefined) {
+      if (required) err("MISSING_FILE", path, "required file is missing");
+      return undefined;
+    }
+    let raw: unknown;
+    try {
+      raw = JSON.parse(text);
+    } catch (e) {
+      err("JSON", path, `invalid JSON: ${(e as Error).message}`);
+      return undefined;
+    }
+    const r = schema.safeParse(raw);
+    if (!r.success) {
+      for (const iss of r.error.issues.slice(0, 50)) err("SCHEMA", path, iss.message, { path: iss.path.join(".") });
+      if (r.error.issues.length > 50) err("SCHEMA", path, `...and ${r.error.issues.length - 50} more schema errors`);
+      return undefined;
+    }
+    return r.data;
+  }
+
+  function indexBy<T extends { id: string }>(items: T[], file: string, what: string): Map<string, T> {
+    const m = new Map<string, T>();
+    for (const it of items) {
+      if (m.has(it.id)) err("DUP_ID", file, `duplicate ${what} id '${it.id}'`);
+      m.set(it.id, it);
+    }
+    return m;
+  }
+
+  // ---- global definitions
+  const modifiersF = load("modifiers.json", ModifiersFile);
+  const groupsF = load("ideologies/groups.json", IdeologyGroupsFile);
+  const subsF = load("ideologies/sub_ideologies.json", SubIdeologiesFile);
+  const govF = load("government_types.json", GovernmentTypesFile);
+  const igF = load("interest_groups.json", InterestGroupsFile);
+  const culturesF = load("cultures/cultures.json", CulturesFile);
+  const listF = load("world/countries.json", CountryListFile);
+
+  const db: ContentDB = {
+    asOf: listF?.as_of ?? "2026-01-01",
+    modifiers: indexBy(modifiersF?.modifiers ?? [], "modifiers.json", "modifier"),
+    ideologyGroups: indexBy(groupsF?.groups ?? [], "ideologies/groups.json", "ideology group"),
+    subIdeologies: indexBy(subsF?.sub_ideologies ?? [], "ideologies/sub_ideologies.json", "sub-ideology"),
+    governmentTypes: indexBy(govF?.government_types ?? [], "government_types.json", "government type"),
+    interestGroupTypes: indexBy(igF?.interest_groups ?? [], "interest_groups.json", "interest group"),
+    lawCategories: new Map(),
+    lawCategoryOf: new Map(),
+    traits: new Map(),
+    cultures: indexBy(culturesF?.cultures ?? [], "cultures/cultures.json", "culture"),
+    countryList: listF?.countries ?? [],
+    countries: new Map(),
+    people: new Map(),
+    parties: new Map(),
+    offices: new Map(),
+  };
+
+  for (const f of files.listFiles("laws").filter((p) => p.endsWith(".json")).sort()) {
+    const cat = load(f, LawCategory);
+    if (!cat) continue;
+    if (db.lawCategories.has(cat.id)) err("DUP_ID", f, `duplicate law category '${cat.id}'`);
+    db.lawCategories.set(cat.id, cat);
+    for (const law of cat.laws) {
+      if (db.lawCategoryOf.has(law.id)) err("DUP_ID", f, `duplicate law id '${law.id}'`);
+      db.lawCategoryOf.set(law.id, cat.id);
+    }
+  }
+  for (const f of files.listFiles("traits").filter((p) => p.endsWith(".json")).sort()) {
+    const t = load(f, TraitsFile);
+    for (const tr of t?.traits ?? []) {
+      if (db.traits.has(tr.id)) err("DUP_ID", f, `duplicate trait id '${tr.id}'`);
+      db.traits.set(tr.id, tr);
+    }
+  }
+
+  checkDefinitions(db, err);
+
+  // ---- country list
+  const listFile = "world/countries.json";
+  const seenTags = new Set<string>();
+  for (const c of db.countryList) {
+    if (seenTags.has(c.tag)) err("DUP_ID", listFile, `duplicate tag ${c.tag}`, { tag: c.tag });
+    seenTags.add(c.tag);
+  }
+  for (const c of db.countryList) {
+    if (c.parent && !seenTags.has(c.parent)) err("REF", listFile, `${c.tag}: unknown parent ${c.parent}`, { tag: c.tag });
+    if (c.start_status !== "independent" && c.start_status !== "un_administered" && !c.parent)
+      warn("PARENT", listFile, `${c.tag}: ${c.start_status} entity should name its parent`, { tag: c.tag });
+  }
+
+  // ---- load every country folder (all of them, so cross-country references resolve)
+  for (const entry of db.countryList) {
+    const dir = `countries/${entry.tag}`;
+    const required = !opts.only || opts.only.has(entry.tag);
+    const exists = files.read(`${dir}/country.json`) !== undefined;
+    const cc: CountryContent = { entry, people: [], parties: [], cabinet: [], military: [] };
+    db.countries.set(entry.tag, cc);
+    if (!exists) {
+      if (required) err("MISSING_COUNTRY", `${dir}/country.json`, `${entry.tag} (${entry.name}) has no politics data yet`, { tag: entry.tag });
+      continue;
+    }
+    cc.country = load(`${dir}/country.json`, Country);
+    cc.people = load(`${dir}/people.json`, PeopleFile)?.people ?? [];
+    cc.parties = load(`${dir}/parties.json`, PartiesFile)?.parties ?? [];
+    cc.elections = load(`${dir}/elections.json`, ElectionsFile);
+    cc.cabinet = load(`${dir}/cabinet.json`, OfficesFile, false)?.offices ?? [];
+    cc.military = load(`${dir}/military.json`, OfficesFile, false)?.offices ?? [];
+    cc.interestGroups = load(`${dir}/interest_groups.json`, CountryInterestGroupsFile, false);
+    cc.laws = load(`${dir}/laws.json`, CountryLawsFile, false);
+
+    const prefix = entry.tag.toLowerCase() + ".";
+    const own = (id: string, file: string, what: string) => {
+      if (!id.startsWith(prefix)) err("ID_PREFIX", file, `${what} id '${id}' must start with '${prefix}'`, { tag: entry.tag });
+    };
+    for (const p of cc.people) {
+      own(p.id, `${dir}/people.json`, "person");
+      if (db.people.has(p.id)) err("DUP_ID", `${dir}/people.json`, `duplicate person id '${p.id}'`, { tag: entry.tag });
+      db.people.set(p.id, { ...p, file: `${dir}/people.json` });
+    }
+    for (const p of cc.parties) {
+      own(p.id, `${dir}/parties.json`, "party");
+      if (db.parties.has(p.id)) err("DUP_ID", `${dir}/parties.json`, `duplicate party id '${p.id}'`, { tag: entry.tag });
+      db.parties.set(p.id, { ...p, file: `${dir}/parties.json` });
+    }
+    const addOffices = (list: Office[], file: string) => {
+      for (const o of list) {
+        own(o.id, file, "office");
+        if (db.offices.has(o.id)) err("DUP_ID", file, `duplicate office id '${o.id}'`, { tag: entry.tag });
+        db.offices.set(o.id, { ...o, tag: entry.tag, file });
+      }
+    };
+    if (cc.country) addOffices(cc.country.offices, `${dir}/country.json`);
+    addOffices(cc.cabinet, `${dir}/cabinet.json`);
+    addOffices(cc.military, `${dir}/military.json`);
+  }
+
+  // ---- per-country rules
+  for (const [tag, cc] of db.countries) {
+    if (!cc.country) continue;
+    if (opts.only && !opts.only.has(tag)) continue;
+    checkCountry(db, cc, tier, err, warn);
+  }
+
+  return { db, issues };
+}
+
+// ---------------------------------------------------------------- definition checks
+
+type Report = (code: string, file: string, message: string, extra?: Partial<Issue>) => void;
+
+function checkDefinitions(db: ContentDB, err: Report): void {
+  const mod = (id: string, file: string, where: string) => {
+    if (!db.modifiers.has(id)) err("REF", file, `${where}: unknown modifier '${id}'`);
+  };
+  const groupIds = [...db.ideologyGroups.keys()];
+  for (const g of db.ideologyGroups.values()) {
+    for (const other of groupIds)
+      if (!(other in g.diplomacy_affinity)) err("REF", "ideologies/groups.json", `${g.id}: diplomacy_affinity missing '${other}'`);
+    for (const k of Object.keys(g.diplomacy_affinity))
+      if (!db.ideologyGroups.has(k)) err("REF", "ideologies/groups.json", `${g.id}: unknown group '${k}'`);
+  }
+  const sf = "ideologies/sub_ideologies.json";
+  for (const s of db.subIdeologies.values()) {
+    if (!db.ideologyGroups.has(s.group)) err("REF", sf, `${s.id}: unknown group '${s.group}'`);
+    for (const [cat, laws] of Object.entries(s.laws.preferred)) {
+      if (!db.lawCategories.has(cat)) err("REF", sf, `${s.id}: unknown law category '${cat}'`);
+      for (const l of laws)
+        if (db.lawCategoryOf.get(l) !== cat) err("REF", sf, `${s.id}: law '${l}' is not in category '${cat}'`);
+    }
+    for (const l of s.laws.forbidden) if (!db.lawCategoryOf.has(l)) err("REF", sf, `${s.id}: unknown law '${l}'`);
+    for (const g of s.gov_types_allowed ?? []) if (!db.governmentTypes.has(g)) err("REF", sf, `${s.id}: unknown government type '${g}'`);
+    for (const m of Object.keys(s.modifiers)) mod(m, sf, s.id);
+    for (const ig of Object.keys(s.ig_affinity)) if (!db.interestGroupTypes.has(ig)) err("REF", sf, `${s.id}: unknown interest group '${ig}'`);
+  }
+  for (const g of db.governmentTypes.values()) {
+    for (const l of g.forbidden_laws) if (!db.lawCategoryOf.has(l)) err("REF", "government_types.json", `${g.id}: unknown law '${l}'`);
+    for (const m of Object.keys(g.modifiers)) mod(m, "government_types.json", g.id);
+  }
+  for (const ig of db.interestGroupTypes.values()) {
+    for (const l of Object.keys(ig.law_preferences)) if (!db.lawCategoryOf.has(l)) err("REF", "interest_groups.json", `${ig.id}: unknown law '${l}'`);
+    for (const t of Object.keys(ig.trait_reactions)) if (!db.traits.has(t)) err("REF", "interest_groups.json", `${ig.id}: unknown trait '${t}'`);
+  }
+  for (const cat of db.lawCategories.values()) {
+    for (const law of cat.laws) {
+      for (const m of Object.keys(law.modifiers)) mod(m, `laws/${cat.id}.json`, law.id);
+      for (const g of law.allowed_gov_types ?? []) if (!db.governmentTypes.has(g)) err("REF", `laws/${cat.id}.json`, `${law.id}: unknown government type '${g}'`);
+      for (const s of Object.keys(law.ideology_support_drift))
+        if (!db.subIdeologies.has(s)) err("REF", `laws/${cat.id}.json`, `${law.id}: unknown sub-ideology '${s}'`);
+    }
+  }
+  for (const t of db.traits.values()) for (const m of Object.keys(t.modifiers)) mod(m, "traits", t.id);
+}
+
+// ---------------------------------------------------------------- country checks
+
+function checkCountry(db: ContentDB, cc: CountryContent, tier: Tier, err: Report, warn: Report): void {
+  const c = cc.country!;
+  const tag = cc.entry.tag;
+  const dir = `countries/${tag}`;
+  const cf = `${dir}/country.json`;
+  const x = { tag };
+  const asOf = db.asOf;
+
+  if (c.tag !== tag) err("TAG", cf, `file tag '${c.tag}' does not match folder '${tag}'`, x);
+  if (!db.cultures.has(c.culture_primary)) err("REF", cf, `unknown culture '${c.culture_primary}'`, x);
+
+  // government type
+  const gov = db.governmentTypes.get(c.government.type);
+  if (!gov) err("NO_GOV_TYPE", cf, `unknown or missing government type '${c.government.type}'`, x);
+
+  const officeRef = (id: string, file: string, where: string) => {
+    if (!db.offices.has(id)) err("REF", file, `${where}: unknown office '${id}'`, x);
+  };
+  officeRef(c.government.effective_executive, cf, "government.effective_executive");
+  officeRef(c.government.head_of_state_office, cf, "government.head_of_state_office");
+  officeRef(c.government.head_of_government_office, cf, "government.head_of_government_office");
+
+  // offices: holders, references, age, overlaps
+  const allOffices = [
+    ...c.offices.map((o) => [o, cf] as const),
+    ...cc.cabinet.map((o) => [o, `${dir}/cabinet.json`] as const),
+    ...cc.military.map((o) => [o, `${dir}/military.json`] as const),
+  ];
+  for (const [o, file] of allOffices) checkOffice(db, o, file, tag, err, warn);
+
+  // head of state / government on 2000-01-01
+  const resolveHolders = (officeId: string, seen = new Set<string>()): Holder[] => {
+    const o = db.offices.get(officeId);
+    if (!o || seen.has(officeId)) return [];
+    seen.add(officeId);
+    if (o.ex_officio_of) return resolveHolders(o.ex_officio_of, seen);
+    return holdersOn(o, GAME_START);
+  };
+  const roleOk = (officeId: string, roles: Set<string>) => {
+    const o = db.offices.get(officeId);
+    return o ? roles.has(o.role) : true;
+  };
+  const hos = c.government.head_of_state_office;
+  const hog = c.government.head_of_government_office;
+  if (!roleOk(hos, HEAD_OF_STATE_ROLES)) err("ROLE", cf, `head_of_state_office '${hos}' does not have a head-of-state role`, x);
+  if (!roleOk(hog, HEAD_OF_GOVERNMENT_ROLES)) err("ROLE", cf, `head_of_government_office '${hog}' does not have a head-of-government role`, x);
+  if (db.offices.has(hos) && resolveHolders(hos).length === 0)
+    err("NO_HOS_2000", cf, `no head of state (or documented vacancy) on ${GAME_START} in '${hos}'`, x);
+  if (db.offices.has(hog) && resolveHolders(hog).length === 0)
+    err("NO_HOG_2000", cf, `no head of government (or documented vacancy) on ${GAME_START} in '${hog}'`, x);
+
+  // continuity of HoS/HoG from 2000 to as_of (full tier)
+  if (tier === "full") {
+    for (const id of new Set([hos, hog])) {
+      const o = db.offices.get(id);
+      if (o && !o.ex_officio_of) checkContinuity(o, cf, asOf, err, x);
+    }
+  }
+
+  // legislature
+  if (gov?.legislature_required && !c.legislature) err("NO_LEGISLATURE", cf, `government type '${gov.id}' requires a legislature`, x);
+  for (const ch of c.legislature?.chambers ?? []) {
+    const sum = Object.values(ch.seats_2000).reduce((a, b) => a + b, 0);
+    if (sum !== ch.seats) err("SEATS_SUM", cf, `chamber '${ch.id}': seats_2000 sums to ${sum}, chamber has ${ch.seats}`, x);
+    for (const k of Object.keys(ch.seats_2000))
+      if (!SEAT_SPECIAL_KEYS.has(k) && !db.parties.has(k)) err("REF", cf, `chamber '${ch.id}': unknown party '${k}' in seats_2000`, x);
+  }
+
+  // parties
+  if (cc.parties.length === 0 && c.party_system !== "no_parties")
+    err("NO_PARTIES", `${dir}/parties.json`, "party list is empty (set party_system 'no_parties' with a reason if that is accurate)", x);
+  if (c.party_system === "no_parties" && !c.no_parties_reason) err("NO_PARTIES", cf, "party_system 'no_parties' needs no_parties_reason", x);
+  if (c.party_system === "no_parties" && gov?.parties_required) err("NO_PARTIES", cf, `government type '${gov.id}' requires parties`, x);
+  for (const p of cc.parties) checkParty(db, p, `${dir}/parties.json`, err, warn, x);
+  for (const id of [...c.start_2000.ruling_parties, ...c.start_2000.confidence_and_supply])
+    if (!db.parties.has(id)) err("REF", cf, `start_2000: unknown party '${id}'`, x);
+  if (c.party_system !== "no_parties" && c.start_2000.ruling_parties.length === 0 && c.party_system !== "multi_party")
+    warn("RULING", cf, "no ruling party listed for a party-based system", x);
+
+  // ideology support
+  let sum = 0;
+  for (const [k, v] of Object.entries(c.start_2000.ideology_support)) {
+    if (!db.subIdeologies.has(k)) err("REF", cf, `ideology_support: unknown sub-ideology '${k}'`, x);
+    sum += v;
+  }
+  if (Math.abs(sum - 1) > 0.01) err("SUPPORT_SUM", cf, `ideology_support sums to ${sum.toFixed(3)}, must be 1`, x);
+
+  // people
+  for (const p of cc.people) checkPerson(db, p, `${dir}/people.json`, err, warn, x);
+
+  // elections
+  const ef = `${dir}/elections.json`;
+  const el = cc.elections;
+  if (el) {
+    if (gov?.holds_elections && el.rules.length === 0 && el.elections.length === 0)
+      err("NO_ELECTION_CALENDAR", ef, `government type '${gov.id}' holds elections but the calendar is empty`, x);
+    if (el.rules.length === 0 && !el.no_elections_reason && el.elections.length === 0)
+      err("NO_ELECTION_CALENDAR", ef, "empty calendar needs no_elections_reason", x);
+    let prev = "";
+    const ids = new Set<string>();
+    for (const e of el.elections) {
+      if (ids.has(e.id)) err("DUP_ID", ef, `duplicate election id '${e.id}'`, x);
+      ids.add(e.id);
+      if (e.date < prev) err("ORDER", ef, `election '${e.id}' is out of date order`, x);
+      prev = e.date;
+      if (e.date < GAME_START || e.date > asOf) warn("DATE_RANGE", ef, `election '${e.id}' (${e.date}) is outside ${GAME_START}..${asOf}`, x);
+      if (e.chamber && !c.legislature?.chambers.some((ch) => ch.id === e.chamber)) err("REF", ef, `election '${e.id}': unknown chamber '${e.chamber}'`, x);
+      if (e.office && !db.offices.has(e.office)) err("REF", ef, `election '${e.id}': unknown office '${e.office}'`, x);
+      for (const cand of e.historical.candidates ?? []) {
+        const per = db.people.get(cand.person);
+        if (!per) err("REF", ef, `election '${e.id}': unknown candidate '${cand.person}'`, x);
+        else if (per.generated) err("GENERATED_EARLY", ef, `election '${e.id}': generated person '${per.id}' in a historical election`, x);
+        else if (per.available.from && e.date < per.available.from)
+          err("AVAILABILITY", ef, `election '${e.id}': ${per.id} stands on ${e.date} but is only available from ${per.available.from}`, x);
+        if (cand.party && !db.parties.has(cand.party)) err("REF", ef, `election '${e.id}': unknown party '${cand.party}'`, x);
+      }
+      for (const pr of e.historical.party_results ?? [])
+        if (!SEAT_SPECIAL_KEYS.has(pr.party) && !db.parties.has(pr.party)) err("REF", ef, `election '${e.id}': unknown party '${pr.party}'`, x);
+      if (e.historical.confidence === "needs_review" && !e.historical.review_note)
+        warn("REVIEW_NOTE", ef, `election '${e.id}' is needs_review without review_note`, x);
+    }
+    for (const r of el.rules) {
+      if (r.chamber && !c.legislature?.chambers.some((ch) => ch.id === r.chamber)) err("REF", ef, `rule: unknown chamber '${r.chamber}'`, x);
+      if (r.office && !db.offices.has(r.office)) err("REF", ef, `rule: unknown office '${r.office}'`, x);
+    }
+  } else if (gov?.holds_elections) {
+    err("NO_ELECTION_CALENDAR", ef, "missing election calendar", x);
+  }
+
+  // interest groups & laws (optional files; defaults come from government type later)
+  for (const ig of cc.interestGroups?.interest_groups ?? []) {
+    if (!db.interestGroupTypes.has(ig.type)) err("REF", `${dir}/interest_groups.json`, `unknown interest group '${ig.type}'`, x);
+    if (ig.figurehead && !db.people.has(ig.figurehead)) err("REF", `${dir}/interest_groups.json`, `unknown person '${ig.figurehead}'`, x);
+  }
+  for (const [cat, law] of Object.entries(cc.laws?.laws ?? {})) {
+    if (!db.lawCategories.has(cat)) err("REF", `${dir}/laws.json`, `unknown law category '${cat}'`, x);
+    else if (db.lawCategoryOf.get(law) !== cat) err("REF", `${dir}/laws.json`, `law '${law}' is not in category '${cat}'`, x);
+    if (gov?.forbidden_laws.includes(law)) err("LAW_GOV", `${dir}/laws.json`, `law '${law}' is forbidden under '${gov.id}'`, x);
+  }
+
+  // full-tier depth requirements
+  if (tier === "full") checkDepth(db, cc, err, warn);
+}
+
+function checkOffice(db: ContentDB, o: Office, file: string, tag: string, err: Report, warn: Report): void {
+  const x = { tag };
+  if (o.appointed_by && !db.offices.has(o.appointed_by)) err("REF", file, `${o.id}: unknown appointed_by '${o.appointed_by}'`, x);
+  if (o.ex_officio_of && !db.offices.has(o.ex_officio_of)) err("REF", file, `${o.id}: unknown ex_officio_of '${o.ex_officio_of}'`, x);
+  if (o.role === "minister" && !o.portfolio) err("PORTFOLIO", file, `${o.id}: minister offices need a portfolio`, x);
+  for (const h of o.succession?.heirs ?? []) if (!db.people.has(h)) err("REF", file, `${o.id}: unknown heir '${h}'`, x);
+  if (o.succession?.acting_office && !db.offices.has(o.succession.acting_office))
+    err("REF", file, `${o.id}: unknown acting_office '${o.succession.acting_office}'`, x);
+  if (!o.ex_officio_of && o.holders.length === 0) err("NO_HOLDERS", file, `${o.id}: office has no holders`, x);
+  if (o.confidence === "needs_review" && !o.review_note) warn("REVIEW_NOTE", file, `${o.id} is needs_review without review_note`, x);
+
+  const capacity = o.seats ?? 1;
+  let prevFrom = "";
+  for (const h of o.holders) {
+    if (h.to !== undefined && h.to < h.from) err("DATE_ORDER", file, `${o.id}: holder ${h.person} has to < from`, x);
+    if (h.from < prevFrom) err("ORDER", file, `${o.id}: holders are not in chronological order`, x);
+    prevFrom = h.from;
+    if (h.person === null) {
+      if (!h.vacant_reason) err("VACANCY", file, `${o.id}: vacancy from ${h.from} needs vacant_reason`, x);
+      continue;
+    }
+    const p = db.people.get(h.person);
+    if (!p) {
+      err("REF", file, `${o.id}: unknown person '${h.person}'`, x);
+      continue;
+    }
+    if (p.generated) err("GENERATED_EARLY", file, `${o.id}: generated person '${p.id}' in a historical tenure`, x);
+    if (p.available.from && h.from < p.available.from)
+      err("AVAILABILITY", file, `${o.id}: ${p.id} holds office from ${h.from} but is only available from ${p.available.from}`, x);
+    if (yearOf(h.from) - p.birth_year < 18) err("UNDERAGE", file, `${o.id}: ${p.id} would be under 18 on ${h.from}`, x);
+    if (p.died && h.from > p.died) err("DEAD", file, `${o.id}: ${p.id} takes office after their death (${p.died})`, x);
+    if (p.died && (h.to === undefined || h.to > addDays(p.died, 1)))
+      err("DEAD", file, `${o.id}: ${p.id} tenure continues past death on ${p.died}`, x);
+  }
+  // overlapping tenures beyond capacity (acting holders excluded)
+  const real = o.holders.filter((h) => !h.acting);
+  for (const h of real) {
+    const concurrent = real.filter((k) => k.from <= h.from && (k.to === undefined || h.from < k.to)).length;
+    if (concurrent > capacity) err("OVERLAP", file, `${o.id}: ${concurrent} holders at once on ${h.from} (capacity ${capacity})`, x);
+  }
+}
+
+function checkContinuity(o: Office, file: string, asOf: string, err: Report, x: Partial<Issue>): void {
+  const hs = [...o.holders].sort((a, b) => (a.from < b.from ? -1 : 1));
+  let covered = GAME_START;
+  for (const h of hs) {
+    if (h.to !== undefined && h.to <= covered) continue;
+    if (h.from > addDays(covered, 1)) {
+      err("HOLDER_GAP", file, `${o.id}: nobody in office (and no documented vacancy) ${covered} .. ${h.from}`, x);
+    }
+    if (h.to === undefined) return;
+    if (h.to > covered) covered = h.to;
+  }
+  if (covered < asOf) err("HOLDER_GAP", file, `${o.id}: holder timeline ends on ${covered}, before data date ${asOf}`, x);
+}
+
+function checkParty(db: ContentDB, p: Party, file: string, err: Report, warn: Report, x: Partial<Issue>): void {
+  if (!db.subIdeologies.has(p.sub_ideology)) err("REF", file, `${p.id}: unknown sub-ideology '${p.sub_ideology}'`, x);
+  for (const l of p.leader_history) {
+    const per = db.people.get(l.person);
+    if (!per) err("REF", file, `${p.id}: unknown leader '${l.person}'`, x);
+    else if (
+      per.available.from &&
+      (typeof l.from === "number" ? l.from < yearOf(per.available.from) : l.from < per.available.from)
+    )
+      err("AVAILABILITY", file, `${p.id}: ${per.id} leads from ${l.from} but is only available from ${per.available.from}`, x);
+  }
+  for (const f of p.factions) {
+    if (!db.subIdeologies.has(f.sub_ideology)) err("REF", file, `${p.id}/${f.id}: unknown sub-ideology '${f.sub_ideology}'`, x);
+    for (const fig of f.figures) if (!db.people.has(fig)) err("REF", file, `${p.id}/${f.id}: unknown person '${fig}'`, x);
+  }
+  if (p.factions.length) {
+    const s = p.factions.reduce((a, f) => a + f.strength, 0);
+    if (Math.abs(s - 1) > 0.05) warn("FACTION_SUM", file, `${p.id}: faction strengths sum to ${s.toFixed(2)}`, x);
+  }
+  for (const r of p.coalition_red_lines) if (!db.parties.has(r)) err("REF", file, `${p.id}: unknown red-line party '${r}'`, x);
+  const lin = p.lineage ?? {};
+  for (const id of [...(lin.formed_from ?? []), lin.merged_into, lin.split_from, lin.renamed_from, lin.renamed_to])
+    if (id && !db.parties.has(id)) err("REF", file, `${p.id}: unknown lineage party '${id}'`, x);
+  const founded = asDate(p.founded);
+  if (p.status_2000 === "not_yet_founded" && founded <= GAME_START)
+    err("FOUNDED", file, `${p.id}: not_yet_founded but founded ${p.founded}`, x);
+  if (p.status_2000 !== "not_yet_founded" && founded > GAME_START)
+    err("FOUNDED", file, `${p.id}: founded ${p.founded} (after game start) but status is '${p.status_2000}'`, x);
+  if (p.status_2000 === "not_yet_founded" && p.popularity_2000 > 0) warn("FOUNDED", file, `${p.id}: not yet founded but has popularity`, x);
+  if (p.confidence === "needs_review" && !p.review_note) warn("REVIEW_NOTE", file, `${p.id} is needs_review without review_note`, x);
+}
+
+function checkPerson(db: ContentDB, p: Person, file: string, err: Report, warn: Report, x: Partial<Issue>): void {
+  if (!db.subIdeologies.has(p.sub_ideology)) err("REF", file, `${p.id}: unknown sub-ideology '${p.sub_ideology}'`, x);
+  for (const t of p.traits) if (!db.traits.has(t)) err("REF", file, `${p.id}: unknown trait '${t}'`, x);
+  if (p.party && !db.parties.has(p.party)) err("REF", file, `${p.id}: unknown party '${p.party}'`, x);
+  for (const ph of p.party_history) if (!db.parties.has(ph.party)) err("REF", file, `${p.id}: unknown party '${ph.party}' in party_history`, x);
+  if (p.birth_date && Number(p.birth_date.slice(0, 4)) !== p.birth_year) err("BIRTH", file, `${p.id}: birth_date and birth_year disagree`, x);
+  if (p.died && p.died < GAME_START) warn("DIED", file, `${p.id}: died before the game starts`, x);
+  if (p.generated) {
+    if (!p.available.from || p.available.from < GENERATED_EARLIEST)
+      err("GENERATED_EARLY", file, `${p.id}: generated people must have available.from >= ${GENERATED_EARLIEST}`, x);
+  } else if (p.generated === false) {
+    warn("GENERATED_FLAG", file, `${p.id}: omit 'generated' for real people`, x);
+  }
+  if (p.available.from && p.available.to && p.available.to < p.available.from) err("DATE_ORDER", file, `${p.id}: available.to < available.from`, x);
+  if (p.confidence === "needs_review" && !p.review_note) warn("REVIEW_NOTE", file, `${p.id} is needs_review without review_note`, x);
+  if (p.confidence === "verified" && p.source.every((s) => /^https?:\/\/[^/]+\/?$/.test(s.url)))
+    warn("WEAK_SOURCE", file, `${p.id}: verified but only cites site home pages`, x);
+}
+
+const OPPOSITION_ROLES = new Set(["opposition_leader", "presidential_candidate", "party_leader", "faction_leader", "insurgent_leader"]);
+const MIN_OPPOSITION: Record<1 | 2 | 3, number> = { 1: 4, 2: 2, 3: 1 };
+const CABINET_PORTFOLIOS = ["foreign", "defence", "finance", "interior"] as const;
+
+function checkDepth(db: ContentDB, cc: CountryContent, err: Report, warn: Report): void {
+  const tag = cc.entry.tag;
+  const x = { tag };
+  const dir = `countries/${tag}`;
+  const c = cc.country!;
+  const executiveHolders = new Set(
+    [c.government.head_of_state_office, c.government.head_of_government_office]
+      .map((id) => db.offices.get(id))
+      .flatMap((o) => (o ? holdersOn(o, GAME_START).map((h) => h.person) : [])),
+  );
+  const opp = cc.people.filter((p) => !executiveHolders.has(p.id) && p.roles_possible.some((r) => OPPOSITION_ROLES.has(r)));
+  const need = MIN_OPPOSITION[cc.entry.detail_tier];
+  if (opp.length < need && cc.entry.start_status !== "releasable")
+    err("OPPOSITION_COUNT", `${dir}/people.json`, `${opp.length} opposition/rival figures, tier ${cc.entry.detail_tier} needs ${need}`, x);
+
+  if (cc.entry.detail_tier === 1) {
+    for (const pf of CABINET_PORTFOLIOS) {
+      const o = cc.cabinet.find((k) => k.role === "minister" && k.portfolio === pf);
+      if (!o) err("CABINET", `${dir}/cabinet.json`, `tier-1 country has no '${pf}' minister office`, x);
+      else if (holdersOn(o, GAME_START).length === 0) err("CABINET", `${dir}/cabinet.json`, `no ${pf} minister on ${GAME_START}`, x);
+    }
+    if (!cc.cabinet.some((k) => k.role === "intelligence_chief"))
+      err("CABINET", `${dir}/cabinet.json`, "tier-1 country has no intelligence chief office", x);
+  }
+  const chief = cc.military.find((k) => k.role === "military_chief");
+  if (!chief) {
+    if (cc.entry.start_status === "independent") err("MILITARY", `${dir}/military.json`, "no military_chief office", x);
+  } else {
+    if (holdersOn(chief, GAME_START).length === 0) err("MILITARY", `${dir}/military.json`, `no military chief on ${GAME_START}`, x);
+    if (cc.entry.detail_tier === 1) checkContinuity(chief, `${dir}/military.json`, db.asOf, err, x);
+  }
+  if (cc.entry.start_status !== "releasable" && !cc.interestGroups)
+    warn("IG_DEFAULTS", `${dir}/interest_groups.json`, "no interest group file; government-type defaults will be used", x);
+}

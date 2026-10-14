@@ -1,0 +1,728 @@
+{
+  "rules": [
+    {
+      "kind": "legislative",
+      "chamber": "bundestag",
+      "every_years": 4,
+      "anchor": "2025-02-23",
+      "snap_possible": true,
+      "note": "Four-year term; early elections need a failed confidence vote and dissolution by the President."
+    },
+    {
+      "kind": "indirect_presidential",
+      "office": "deu.federal_president",
+      "every_years": 5,
+      "anchor": "2022-02-13",
+      "snap_possible": true,
+      "note": "Federal Convention (Bundestag members plus an equal number of state delegates); absolute majority in rounds 1-2, plurality in round 3."
+    }
+  ],
+  "elections": [
+    {
+      "id": "bundestag_2002",
+      "date": "2002-09-22",
+      "kind": "legislative",
+      "chamber": "bundestag",
+      "historical": {
+        "candidates": [
+          {
+            "person": "deu.gerhard_schroeder",
+            "party": "deu.spd",
+            "round": 1
+          },
+          {
+            "person": "deu.edmund_stoiber",
+            "party": "deu.csu",
+            "round": 1
+          }
+        ],
+        "party_results": [
+          {
+            "party": "deu.spd",
+            "share": 0.3852,
+            "seats": 251
+          },
+          {
+            "party": "deu.cdu",
+            "share": 0.2952,
+            "seats": 190
+          },
+          {
+            "party": "deu.csu",
+            "share": 0.0899,
+            "seats": 58
+          },
+          {
+            "party": "deu.greens",
+            "share": 0.0856,
+            "seats": 55
+          },
+          {
+            "party": "deu.fdp",
+            "share": 0.0737,
+            "seats": 47
+          },
+          {
+            "party": "deu.pds",
+            "share": 0.0399,
+            "seats": 2
+          }
+        ],
+        "winner": "deu.spd",
+        "turnout": 0.791,
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2002_German_federal_election",
+            "title": "Wikipedia: 2002 German federal election",
+            "accessed": "2026-10-14"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "federal_convention_2004",
+      "date": "2004-05-23",
+      "kind": "indirect_presidential",
+      "office": "deu.federal_president",
+      "historical": {
+        "candidates": [
+          {
+            "person": "deu.horst_koehler",
+            "party": "deu.cdu",
+            "votes": 604,
+            "round": 1
+          },
+          {
+            "person": "deu.gesine_schwan",
+            "party": "deu.spd",
+            "votes": 589,
+            "round": 1
+          }
+        ],
+        "winner": "deu.horst_koehler",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2004_German_presidential_election",
+            "title": "Wikipedia: 2004 German presidential election",
+            "accessed": "2026-10-14"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "bundestag_2005",
+      "date": "2005-09-18",
+      "kind": "legislative",
+      "chamber": "bundestag",
+      "historical": {
+        "candidates": [
+          {
+            "person": "deu.angela_merkel",
+            "party": "deu.cdu",
+            "round": 1
+          },
+          {
+            "person": "deu.gerhard_schroeder",
+            "party": "deu.spd",
+            "round": 1
+          }
+        ],
+        "party_results": [
+          {
+            "party": "deu.cdu",
+            "share": 0.2778,
+            "seats": 180
+          },
+          {
+            "party": "deu.spd",
+            "share": 0.3425,
+            "seats": 222
+          },
+          {
+            "party": "deu.fdp",
+            "share": 0.0983,
+            "seats": 61
+          },
+          {
+            "party": "deu.pds",
+            "share": 0.0871,
+            "seats": 54
+          },
+          {
+            "party": "deu.greens",
+            "share": 0.0812,
+            "seats": 51
+          },
+          {
+            "party": "deu.csu",
+            "share": 0.0739,
+            "seats": 46
+          }
+        ],
+        "winner": "deu.cdu",
+        "turnout": 0.777,
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2005_German_federal_election",
+            "title": "Wikipedia: 2005 German federal election",
+            "accessed": "2026-10-14"
+          }
+        ],
+        "confidence": "verified",
+        "note": "The PDS ran as 'Die Linkspartei.PDS' with WASG candidates on its lists."
+      },
+      "snap": true
+    },
+    {
+      "id": "federal_convention_2009",
+      "date": "2009-05-23",
+      "kind": "indirect_presidential",
+      "office": "deu.federal_president",
+      "historical": {
+        "candidates": [
+          {
+            "person": "deu.horst_koehler",
+            "party": "deu.cdu",
+            "votes": 613,
+            "round": 1
+          },
+          {
+            "person": "deu.gesine_schwan",
+            "party": "deu.spd",
+            "votes": 503,
+            "round": 1
+          }
+        ],
+        "winner": "deu.horst_koehler",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2009_German_presidential_election",
+            "title": "Wikipedia: 2009 German presidential election",
+            "accessed": "2026-10-14"
+          }
+        ],
+        "confidence": "verified",
+        "note": "Third candidate Peter Sodann (Die Linke, 91 votes) omitted."
+      }
+    },
+    {
+      "id": "bundestag_2009",
+      "date": "2009-09-27",
+      "kind": "legislative",
+      "chamber": "bundestag",
+      "historical": {
+        "candidates": [
+          {
+            "person": "deu.angela_merkel",
+            "party": "deu.cdu",
+            "round": 1
+          },
+          {
+            "person": "deu.frank_walter_steinmeier",
+            "party": "deu.spd",
+            "round": 1
+          }
+        ],
+        "party_results": [
+          {
+            "party": "deu.cdu",
+            "share": 0.2727,
+            "seats": 194
+          },
+          {
+            "party": "deu.spd",
+            "share": 0.2303,
+            "seats": 146
+          },
+          {
+            "party": "deu.fdp",
+            "share": 0.1456,
+            "seats": 93
+          },
+          {
+            "party": "deu.linke",
+            "share": 0.1189,
+            "seats": 76
+          },
+          {
+            "party": "deu.greens",
+            "share": 0.1071,
+            "seats": 68
+          },
+          {
+            "party": "deu.csu",
+            "share": 0.0653,
+            "seats": 45
+          }
+        ],
+        "winner": "deu.cdu",
+        "turnout": 0.708,
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2009_German_federal_election",
+            "title": "Wikipedia: 2009 German federal election",
+            "accessed": "2026-10-14"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "federal_convention_2010",
+      "date": "2010-06-30",
+      "kind": "indirect_presidential",
+      "office": "deu.federal_president",
+      "historical": {
+        "candidates": [
+          {
+            "person": "deu.christian_wulff",
+            "party": "deu.cdu",
+            "votes": 600,
+            "round": 1
+          },
+          {
+            "person": "deu.christian_wulff",
+            "party": "deu.cdu",
+            "votes": 615,
+            "round": 2
+          },
+          {
+            "person": "deu.christian_wulff",
+            "party": "deu.cdu",
+            "votes": 625,
+            "round": 3
+          },
+          {
+            "person": "deu.joachim_gauck",
+            "votes": 499,
+            "round": 1
+          },
+          {
+            "person": "deu.joachim_gauck",
+            "votes": 490,
+            "round": 2
+          },
+          {
+            "person": "deu.joachim_gauck",
+            "votes": 494,
+            "round": 3
+          }
+        ],
+        "winner": "deu.christian_wulff",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2010_German_presidential_election",
+            "title": "Wikipedia: 2010 German presidential election",
+            "accessed": "2026-10-14"
+          }
+        ],
+        "confidence": "verified",
+        "note": "Elected in the third round. Luc Jochimsen (Die Linke) withdrew before the third round; omitted."
+      },
+      "snap": true,
+      "rounds": 3
+    },
+    {
+      "id": "federal_convention_2012",
+      "date": "2012-03-18",
+      "kind": "indirect_presidential",
+      "office": "deu.federal_president",
+      "historical": {
+        "candidates": [
+          {
+            "person": "deu.joachim_gauck",
+            "votes": 991,
+            "round": 1
+          },
+          {
+            "person": "deu.beate_klarsfeld",
+            "votes": 126,
+            "round": 1
+          }
+        ],
+        "winner": "deu.joachim_gauck",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2012_German_presidential_election",
+            "title": "Wikipedia: 2012 German presidential election",
+            "accessed": "2026-10-14"
+          }
+        ],
+        "confidence": "verified"
+      },
+      "snap": true,
+      "rounds": 1
+    },
+    {
+      "id": "bundestag_2013",
+      "date": "2013-09-22",
+      "kind": "legislative",
+      "chamber": "bundestag",
+      "historical": {
+        "candidates": [
+          {
+            "person": "deu.angela_merkel",
+            "party": "deu.cdu",
+            "round": 1
+          },
+          {
+            "person": "deu.peer_steinbrueck",
+            "party": "deu.spd",
+            "round": 1
+          }
+        ],
+        "party_results": [
+          {
+            "party": "deu.cdu",
+            "share": 0.3413,
+            "seats": 255
+          },
+          {
+            "party": "deu.spd",
+            "share": 0.2573,
+            "seats": 193
+          },
+          {
+            "party": "deu.linke",
+            "share": 0.0859,
+            "seats": 64
+          },
+          {
+            "party": "deu.greens",
+            "share": 0.0845,
+            "seats": 63
+          },
+          {
+            "party": "deu.csu",
+            "share": 0.0742,
+            "seats": 56
+          },
+          {
+            "party": "deu.fdp",
+            "share": 0.0476,
+            "seats": 0
+          },
+          {
+            "party": "deu.afd",
+            "share": 0.047,
+            "seats": 0
+          }
+        ],
+        "winner": "deu.cdu",
+        "turnout": 0.715,
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2013_German_federal_election",
+            "title": "Wikipedia: 2013 German federal election",
+            "accessed": "2026-10-14"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "federal_convention_2017",
+      "date": "2017-02-12",
+      "kind": "indirect_presidential",
+      "office": "deu.federal_president",
+      "historical": {
+        "candidates": [
+          {
+            "person": "deu.frank_walter_steinmeier",
+            "party": "deu.spd",
+            "votes": 931,
+            "round": 1
+          },
+          {
+            "person": "deu.christoph_butterwegge",
+            "votes": 128,
+            "round": 1
+          }
+        ],
+        "winner": "deu.frank_walter_steinmeier",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2017_German_presidential_election",
+            "title": "Wikipedia: 2017 German presidential election",
+            "accessed": "2026-10-14"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "bundestag_2017",
+      "date": "2017-09-24",
+      "kind": "legislative",
+      "chamber": "bundestag",
+      "historical": {
+        "candidates": [
+          {
+            "person": "deu.angela_merkel",
+            "party": "deu.cdu",
+            "round": 1
+          },
+          {
+            "person": "deu.martin_schulz",
+            "party": "deu.spd",
+            "round": 1
+          }
+        ],
+        "party_results": [
+          {
+            "party": "deu.cdu",
+            "share": 0.2676,
+            "seats": 200
+          },
+          {
+            "party": "deu.spd",
+            "share": 0.2051,
+            "seats": 153
+          },
+          {
+            "party": "deu.afd",
+            "share": 0.1264,
+            "seats": 94
+          },
+          {
+            "party": "deu.fdp",
+            "share": 0.1075,
+            "seats": 80
+          },
+          {
+            "party": "deu.linke",
+            "share": 0.0924,
+            "seats": 69
+          },
+          {
+            "party": "deu.greens",
+            "share": 0.0894,
+            "seats": 67
+          },
+          {
+            "party": "deu.csu",
+            "share": 0.0617,
+            "seats": 46
+          }
+        ],
+        "winner": "deu.cdu",
+        "turnout": 0.762,
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2017_German_federal_election",
+            "title": "Wikipedia: 2017 German federal election",
+            "accessed": "2026-10-14"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "bundestag_2021",
+      "date": "2021-09-26",
+      "kind": "legislative",
+      "chamber": "bundestag",
+      "historical": {
+        "candidates": [
+          {
+            "person": "deu.olaf_scholz",
+            "party": "deu.spd",
+            "round": 1
+          },
+          {
+            "person": "deu.armin_laschet",
+            "party": "deu.cdu",
+            "round": 1
+          },
+          {
+            "person": "deu.annalena_baerbock",
+            "party": "deu.greens",
+            "round": 1
+          }
+        ],
+        "party_results": [
+          {
+            "party": "deu.spd",
+            "share": 0.2571,
+            "seats": 206
+          },
+          {
+            "party": "deu.cdu",
+            "share": 0.1895,
+            "seats": 152
+          },
+          {
+            "party": "deu.greens",
+            "share": 0.1472,
+            "seats": 118
+          },
+          {
+            "party": "deu.fdp",
+            "share": 0.1143,
+            "seats": 91
+          },
+          {
+            "party": "deu.afd",
+            "share": 0.1039,
+            "seats": 83
+          },
+          {
+            "party": "deu.csu",
+            "share": 0.0519,
+            "seats": 45
+          },
+          {
+            "party": "deu.linke",
+            "share": 0.0487,
+            "seats": 39
+          },
+          {
+            "party": "others",
+            "seats": 1
+          }
+        ],
+        "winner": "deu.spd",
+        "turnout": 0.764,
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2021_German_federal_election",
+            "title": "Wikipedia: 2021 German federal election",
+            "accessed": "2026-10-14"
+          }
+        ],
+        "confidence": "verified",
+        "note": "FDP seats after the 2024 Berlin repeat election (initially 92). The 'others' seat is the SSW (Danish minority party, exempt from the threshold)."
+      }
+    },
+    {
+      "id": "federal_convention_2022",
+      "date": "2022-02-13",
+      "kind": "indirect_presidential",
+      "office": "deu.federal_president",
+      "historical": {
+        "candidates": [
+          {
+            "person": "deu.frank_walter_steinmeier",
+            "party": "deu.spd",
+            "votes": 1045,
+            "round": 1
+          },
+          {
+            "person": "deu.max_otte",
+            "party": "deu.cdu",
+            "votes": 140,
+            "round": 1
+          }
+        ],
+        "winner": "deu.frank_walter_steinmeier",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2022_German_presidential_election",
+            "title": "Wikipedia: 2022 German presidential election",
+            "accessed": "2026-10-14"
+          }
+        ],
+        "confidence": "verified",
+        "note": "Max Otte was nominated by the AfD while a CDU member (his membership was later revoked). Gerhard Trabert (96) and Stefanie Gebauer (58) omitted."
+      }
+    },
+    {
+      "id": "bundestag_2025",
+      "date": "2025-02-23",
+      "kind": "legislative",
+      "chamber": "bundestag",
+      "historical": {
+        "candidates": [
+          {
+            "person": "deu.friedrich_merz",
+            "party": "deu.cdu",
+            "round": 1
+          },
+          {
+            "person": "deu.olaf_scholz",
+            "party": "deu.spd",
+            "round": 1
+          },
+          {
+            "person": "deu.robert_habeck",
+            "party": "deu.greens",
+            "round": 1
+          },
+          {
+            "person": "deu.alice_weidel",
+            "party": "deu.afd",
+            "round": 1
+          }
+        ],
+        "party_results": [
+          {
+            "party": "deu.cdu",
+            "share": 0.2255,
+            "seats": 164
+          },
+          {
+            "party": "deu.afd",
+            "share": 0.208,
+            "seats": 152
+          },
+          {
+            "party": "deu.spd",
+            "share": 0.1641,
+            "seats": 120
+          },
+          {
+            "party": "deu.greens",
+            "share": 0.1161,
+            "seats": 85
+          },
+          {
+            "party": "deu.linke",
+            "share": 0.0877,
+            "seats": 64
+          },
+          {
+            "party": "deu.csu",
+            "share": 0.0597,
+            "seats": 44
+          },
+          {
+            "party": "deu.bsw",
+            "share": 0.0498,
+            "seats": 0
+          },
+          {
+            "party": "deu.fdp",
+            "share": 0.0433,
+            "seats": 0
+          },
+          {
+            "party": "others",
+            "seats": 1
+          }
+        ],
+        "winner": "deu.cdu",
+        "turnout": 0.825,
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2025_German_federal_election",
+            "title": "Wikipedia: 2025 German federal election",
+            "accessed": "2026-10-14"
+          }
+        ],
+        "confidence": "verified",
+        "note": "Snap election after the government lost a confidence vote. The 'others' seat is the SSW."
+      },
+      "snap": true
+    }
+  ],
+  "source": [
+    {
+      "url": "https://en.wikipedia.org/wiki/Elections_in_Germany",
+      "title": "Wikipedia: Elections in Germany",
+      "accessed": "2026-10-14"
+    }
+  ],
+  "confidence": "verified"
+}
