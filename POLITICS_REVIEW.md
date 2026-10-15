@@ -48,11 +48,20 @@ Live sources sometimes report allegations or investigations involving real peopl
 
 <!-- AUTO-GENERATED BELOW: run `npm run review-report`; edits below this line are overwritten -->
 
-## Needs review: 189 of 2573 records
+## Needs review: 283 of 3983 records
 
-Countries with politics data: 28 / 212.
+Countries with politics data: 44 / 212.
 
-Countries with no data yet (184): ALB, AUT, BIH, BGR, HRV, CYP, FIN, GRC, ISL, IRL, LIE, LUX, MLT, MKD, ROU, SMR, SVN, CHE, YUG, MNE, KOS, VAT, NCY, UKR, BLR, MDA, EST, LVA, LTU, GEO, ARM, AZE, KAZ, KGZ, TJK, TKM, UZB, PMR, ABK, SOS, NKR, ICH, CAN, ATG, ARG, BHS, BRB, BLZ, BOL, BRA, CHL, COL, CRI, CUB, DMA, DOM, ECU, SLV, GRD, GTM, GUY, HTI, HND, JAM, MEX, NIC, PAN, PRY, PER, KNA, LCA, VCT, SUR, TTO, URY, VEN, FAR, DZA, BHR, EGY, IRQ, JOR, KWT, LBN, LBY, MRT, MAR, OMN, QAT, SAU, SYR, TUN, ARE, YEM, ESH, KUR, AGO, BEN, BWA, BFA, BDI, CPV, CMR, CAF, TCD, COM, COD, COG, CIV, DJI, GNQ, ERI, SWZ, ETH, GAB, GMB, GHA, GIN, GNB, KEN, LSO, LBR, MDG, MWI, MLI, MUS, MOZ, NAM, NER, NGA, RWA, STP, SEN, SYC, SLE, ZAF, SDN, TZA, TGO, UGA, ZMB, ZWE, SSD, SML, UNI, RCD, MLC, AFG, AFN, BGD, BTN, IND, MDV, NPL, PAK, LKA, TEL, PRK, MNG, BRN, KHM, IDN, LAO, MYS, MMR, PHL, SGP, THA, VNM, TLS, AUS, NZL, FJI, PNG, SLB, VUT, WSM, TON, KIR, TUV, NRU, FSM, MHL, PLW
+Countries with no data yet (168): CYP, ISL, LIE, MLT, SMR, CHE, VAT, NCY, UKR, BLR, MDA, EST, LVA, LTU, GEO, ARM, AZE, KAZ, KGZ, TJK, TKM, UZB, PMR, ABK, SOS, NKR, ICH, CAN, ATG, ARG, BHS, BRB, BLZ, BOL, BRA, CHL, COL, CRI, CUB, DMA, DOM, ECU, SLV, GRD, GTM, GUY, HTI, HND, JAM, MEX, NIC, PAN, PRY, PER, KNA, LCA, VCT, SUR, TTO, URY, VEN, FAR, DZA, BHR, EGY, IRQ, JOR, KWT, LBN, LBY, MRT, MAR, OMN, QAT, SAU, SYR, TUN, ARE, YEM, ESH, KUR, AGO, BEN, BWA, BFA, BDI, CPV, CMR, CAF, TCD, COM, COD, COG, CIV, DJI, GNQ, ERI, SWZ, ETH, GAB, GMB, GHA, GIN, GNB, KEN, LSO, LBR, MDG, MWI, MLI, MUS, MOZ, NAM, NER, NGA, RWA, STP, SEN, SYC, SLE, ZAF, SDN, TZA, TGO, UGA, ZMB, ZWE, SSD, SML, UNI, RCD, MLC, AFG, AFN, BGD, BTN, IND, MDV, NPL, PAK, LKA, TEL, MNG, BRN, KHM, IDN, LAO, MYS, MMR, PHL, SGP, THA, VNM, TLS, AUS, NZL, FJI, PNG, SLB, VUT, WSM, TON, KIR, TUV, NRU, FSM, MHL, PLW
+
+### ALB — Albania (4)
+
+| kind | record | what to check | file |
+|---|---|---|---|
+| party | `alb.pd` Democratic Party of Albania (PD) | Check when Sali Berisha resumed the chairmanship after 1997 (1997 assumed) and the date the 2022 leadership dispute was settled. | data/countries/ALB/parties.json |
+| party | `alb.pbdnj` Unity for Human Rights Party (PBDNJ) | Check the year Vangjel Dule became party leader (2005 assumed). | data/countries/ALB/parties.json |
+| party | `alb.pa` Democratic Alliance Party (PAD) | Check the founding year (1992 assumed), the ideology (centrist liberal assumed) and the leader's dates. | data/countries/ALB/parties.json |
+| party | `alb.pr` Republican Party of Albania (PR) | Check the year Fatmir Mediu became party leader (2005 assumed). | data/countries/ALB/parties.json |
 
 ### AND — Andorra (12)
 
@@ -71,15 +80,57 @@ Countries with no data yet (184): ALB, AUT, BIH, BGR, HRV, CYP, FIN, GRC, ISL, I
 | party | `and.ae` Andorra Forward (AE) | Sub-ideology (right_populist) not checked against a fetched source. | data/countries/AND/parties.json |
 | party | `and.concordia` Concord (Concòrdia) | Sub-ideology (centrist_liberal) not checked against a fetched source; Escalé's start as leader assumed from the founding date. | data/countries/AND/parties.json |
 
-### BEL — Belgium (5)
+### AUT — Austria (3)
 
 | kind | record | what to check | file |
 |---|---|---|---|
-| party | `bel.vu` People's Union (VU) | The 1999 results table labels the list 'People's Union'; confirm the list composition and that the cordon sanitaire agreement covered the VU (the source says 'all the traditional Flemish parties'). | data/countries/BEL/parties.json |
-| party | `bel.pvda` Workers' Party of Belgium (PVDA-PTB) | Ludo Martens's end date and Peter Mertens's start date (entered as 2008) are not given in the fetched sources; confirm the handover. | data/countries/BEL/parties.json |
-| party | `bel.les_engages` The Committed (LE) | Wikipedia's infobox lists Yvan Verougstraete as acting president but gives no date; confirm when (and whether) Maxime Prévot's presidency ended and add Verougstraete. | data/countries/BEL/parties.json |
-| party | `bel.ecolo` Ecolo (Ecolo) | Neither Wikipedia nor Wikidata (as fetched) gives a dated list of Ecolo co-presidents; add the leader history from 1999 (e.g. from the French Wikipedia). | data/countries/BEL/parties.json |
-| party | `bel.defi` DéFI (DéFI) | Leader history incomplete: Wikidata lists Maingain from 1995 with no end date. Add the end of Maingain's presidency, François De Smet's term, and Sophie Rohonyi from July 2024. | data/countries/BEL/parties.json |
+| chamber | `bundesrat` Federal Council | The source gives 64 members from 1993 and 62 in 2002, so 64 on 1 January 2000 is inferred; confirm, and add the party breakdown (XXI. GP member list) if the chamber should carry party seats. | data/countries/AUT/country.json |
+| party | `aut.greens` The Greens – The Green Alternative (Greens) | Founding date is a placeholder for '1986' (no day given; Wikidata says 1987-02-13). The article timeline shows Felipe from 2015 overlapping Glawischnig; confirm Felipe's 2017 tenure. | data/countries/AUT/parties.json |
+| party | `aut.lif` Liberal Forum (LIF) | Check when Heide Schmidt stepped down as LIF leader. | data/countries/AUT/parties.json |
+
+### BEL — Belgium (2)
+
+| kind | record | what to check | file |
+|---|---|---|---|
+| party | `bel.groen` Green (Groen) | Add Aimen Horch (Groen chair since 21 March 2026) as a person once a birth year is documented, and append him to leader_history. | data/countries/BEL/parties.json |
+| party | `bel.ecolo` Ecolo (Ecolo) | Leader history before July 2024 is not recorded: no fetched source gives dated terms for Ecolo's federal secretaries/co-presidents from 1999 to 2024. Also confirm the current pair (French Wikipedia: Leroy and Vanden Burre since 15 March 2026; English infobox: Vanden Burre and Cogolati). | data/countries/BEL/parties.json |
+
+### BGR — Bulgaria (9)
+
+| kind | record | what to check | file |
+|---|---|---|---|
+| party | `bgr.bbb` Bulgarian Business Bloc (BBB) | Check the BBB's ideology (recorded as right_populist) and whether Ganchev led it from its founding. | data/countries/BGR/parties.json |
+| party | `bgr.ndsv` National Movement for Stability and Progress (National Movement Simeon II until 2007) (NDSV) | Add the date Simeon Sakskoburggotski stopped leading the NDSV (recorded as open-ended). | data/countries/BGR/parties.json |
+| party | `bgr.dsb` Democrats for a Strong Bulgaria (DSB) | Leader dates come from Wikidata only; confirm the July 2026 return of Radan Kanev against a Wikipedia or official source. | data/countries/BGR/parties.json |
+| party | `bgr.rzs` Order, Law and Justice (RZS) | Check RZS's ideology (recorded as national_conservative), the start of Yane Yanev's leadership and whether/when the party dissolved. | data/countries/BGR/parties.json |
+| party | `bgr.abv` Alternative for Bulgarian Revival (ABV) | Parvanov's leadership is open-ended because the end date was not found; Wikidata lists Rumen Petkov as chairman from 19 May 2018. | data/countries/BGR/parties.json |
+| party | `bgr.ismv` Stand Up.BG! We are coming! (ISMV) | Check ISMV's ideology (recorded as left_populist). | data/countries/BGR/parties.json |
+| party | `bgr.velichie` Velichie (Greatness) (Velichie) | Check Velichie's ideology (recorded as right_populist) and when Ivelin Mihaylov became its leader. | data/countries/BGR/parties.json |
+| party | `bgr.mech` Morality, Unity, Honour (MECh) | Check MECh's ideology (recorded as right_populist). | data/countries/BGR/parties.json |
+| party | `bgr.aps` Alliance for Rights and Freedoms (APS) | Sources disagree on APS's leader (Chakarov in the election infobox, Hayri Sadakov in Wikidata). | data/countries/BGR/parties.json |
+
+### BIH — Bosnia and Herzegovina (18)
+
+| kind | record | what to check | file |
+|---|---|---|---|
+| chamber | `house_of_peoples` House of Peoples | Party composition of the House of Peoples on 1 January 2000 not researched; check and replace the 'appointed' placeholder. | data/countries/BIH/country.json |
+| office | `bih.high_representative` High Representative for Bosnia and Herzegovina | The July 2026 change (Schmidt's term ending on 1 July 2026 and Louis Crishock acting) comes from a Wikipedia article on a recent event; confirm with the OHR and check whether a permanent successor was appointed after July 2026. | data/countries/BIH/country.json |
+| person | `bih.svetozar_mihajlovic` Svetozar Mihajlović (b. 1949) | Wikipedia and Wikidata give only the birth year (1949); party (Serb National Alliance) taken from his 2002 candidacy. | data/countries/BIH/people.json |
+| person | `bih.spasoje_tusevljak` Spasoje Tuševljak (b. 1952) | Wikidata gives only the birth year (1952); party affiliation not recorded (the timeline colours him SDS). | data/countries/BIH/people.json |
+| person | `bih.branko_dokic` Branko Dokić (b. 1949) | No English Wikipedia article; Wikidata gives only a birth year and gender, not cross-checked. | data/countries/BIH/people.json |
+| person | `bih.bakir_hadziomerovic` Bakir Hadžiomerović (b. 1972) | No English Wikipedia article; Wikidata gives only a birth year and gender, not cross-checked. | data/countries/BIH/people.json |
+| person | `bih.mirsad_hadzikadic` Mirsad Hadžikadić (b. 1955) | Wikidata records his gender as undisclosed; the Wikipedia article refers to him as "he". Check before relying on the gender field. | data/countries/BIH/people.json |
+| person | `bih.vojin_mijatovic` Vojin Mijatović (b. 1979) | Wikidata gives only the birth year (1979); check the Wikipedia article for a full date. | data/countries/BIH/people.json |
+| person | `bih.zdenko_lucic` Zdenko Lučić (b. 1967) | Wikidata gives only the birth year (1967); stood as an independent in 2026. | data/countries/BIH/people.json |
+| person | `bih.dragan_kalinic` Dragan Kalinić (b. 1948) | No English Wikipedia article; birth date and gender from Wikidata only. Listed as SDS leader at the 1998 and 2002 elections. | data/countries/BIH/people.json |
+| person | `bih.drasko_stanivukovic` Draško Stanivuković (b. 1993) | Wikidata gives only the birth year (1993). PDP president; led the Safe Srpska Movement (PSS) list in 2026. | data/countries/BIH/people.json |
+| party | `bih.sds` Serb Democratic Party (SDS) | Leader dates are only the election years at which each was listed as leader; check the party's list of presidents. | data/countries/BIH/parties.json |
+| party | `bih.hdz_bih` Croatian Democratic Union of Bosnia and Herzegovina (HDZ BiH) | Check when Dragan Čović became HDZ BiH president (2005 assumed). | data/countries/BIH/parties.json |
+| party | `bih.snsd` Alliance of Independent Social Democrats (SNSD) | Confirm that Milorad Dodik has led SNSD since its foundation in 1996. | data/countries/BIH/parties.json |
+| election | `presidency_bosniak_2026` presidential 2026-10-04 | Preliminary results; replace with the CEC's certified figures. | data/countries/BIH/elections.json |
+| election | `presidency_croat_2026` presidential 2026-10-04 | Preliminary results; replace with the CEC's certified figures. | data/countries/BIH/elections.json |
+| election | `presidency_serb_2026` presidential 2026-10-04 | Preliminary results; replace with the CEC's certified figures. | data/countries/BIH/elections.json |
+| election | `hor_2026` legislative 2026-10-04 | Preliminary results; replace with the CEC's certified figures. | data/countries/BIH/elections.json |
 
 ### CHN — China (4)
 
@@ -158,6 +209,27 @@ Countries with no data yet (184): ALB, AUT, BIH, BGR, HRV, CYP, FIN, GRC, ISL, I
 | party | `gbr.respect` Respect Party (Respect) | Leader history is empty: the infobox names no leader (the 2005 results table names Linda Smith). Confirm the party's leaders or national chairs 2004-2016. | data/countries/GBR/parties.json |
 | party | `gbr.your_party` Your Party (YP) | Check how many sitting MPs belong to the party and the date Corbyn became parliamentary leader (stored as the year 2025). | data/countries/GBR/parties.json |
 
+### GRC — Greece (4)
+
+| kind | record | what to check | file |
+|---|---|---|---|
+| party | `grc.golden_dawn` Golden Dawn (XA) | Check the start of Michaloliakos's leadership and the party's status in 2000 (recorded as extra-parliamentary). | data/countries/GRC/parties.json |
+| party | `grc.spartans` Spartans (Spartans) | Check the Spartans' ideology (recorded as ethno_nationalist). | data/countries/GRC/parties.json |
+| party | `grc.niki` Democratic Patriotic Popular Movement "Niki" (Victory) (NIKI) | Check Niki's ideology classification (christian_conservative). | data/countries/GRC/parties.json |
+| party | `grc.plefsi` Course of Freedom (Plefsi) | Check Course of Freedom's ideology (recorded as left_populist). | data/countries/GRC/parties.json |
+
+### HRV — Croatia (7)
+
+| kind | record | what to check | file |
+|---|---|---|---|
+| chamber | `sabor` Chamber of Representatives (Croatian Parliament) | seats_2000 is the October 1995 result as shown in the election infobox (HDZ 75; HSS–IDS–HNS–HKDU–SBHS alliance 18, recorded under HSS; HSLS 12; SDP 10; HSP 4), with one second-round seat for IDS, the Serb People's Party (2) and Social Democratic Action (1) as others, and four minority members as independents. How the four joint-list seats were split between the infobox totals was inferred; mid-term changes up to 1 January 2000 were not checked. | data/countries/HRV/country.json |
+| party | `hrv.hsls` Croatian Social Liberal Party (HSLS) | Check the year Đurđa Adlešič became HSLS president (2006 assumed) and the end dates of the Čehok and Adlešič leaderships. | data/countries/HRV/parties.json |
+| party | `hrv.hsp` Croatian Party of Rights (HSP) | Check the year Anto Đapić became party leader (1993 assumed). | data/countries/HRV/parties.json |
+| party | `hrv.sdss` Independent Democratic Serb Party (SDSS) | Check the year Milorad Pupovac became party president (2019 assumed between the 2016 and 2020 elections). | data/countries/HRV/parties.json |
+| party | `hrv.most` The Bridge (Most) (Most) | Check the year Nikola Grmoja succeeded Božo Petrov as party president (2022 assumed). | data/countries/HRV/parties.json |
+| party | `hrv.zivi_zid` Human Shield (Živi zid) (ŽZ) | Check the merger date (3 February or 3 March 2024) and the start of Sinčić's leadership. | data/countries/HRV/parties.json |
+| party | `hrv.mozemo` We Can! – Political Platform (Možemo) | Check Sandra Benčić's formal party role and dates (the party uses co-presidents). | data/countries/HRV/parties.json |
+
 ### HUN — Hungary (4)
 
 | kind | record | what to check | file |
@@ -166,6 +238,12 @@ Countries with no data yet (184): ALB, AUT, BIH, BGR, HRV, CYP, FIN, GRC, ISL, I
 | party | `hun.egyutt` Together (Együtt) | Leaders (including Gordon Bajnai and Péter Juhász) and dates are not recorded; check the party article. | data/countries/HUN/parties.json |
 | party | `hun.dk` Democratic Coalition (DK) | When Gyurcsány stepped down and Dobrev became leader is unknown here; Dobrev's entry is dated only to 2026, the year she resigned. Check the DK leadership history. | data/countries/HUN/parties.json |
 | party | `hun.momentum` Momentum Movement (Momentum) | Fekete-Győr's term dates and later leaders are not recorded; check the party's leadership history. | data/countries/HUN/parties.json |
+
+### IRL — Ireland (1)
+
+| kind | record | what to check | file |
+|---|---|---|---|
+| person | `irl.michael_collins` Michael Collins (b. 1968) | Birth year conflict (Wikidata 1958-07-15 vs Wikipedia 1968-02-26, unsourced there); confirm from an official biography. | data/countries/IRL/people.json |
 
 ### IRN — Iran (19)
 
@@ -229,16 +307,13 @@ Countries with no data yet (184): ALB, AUT, BIH, BGR, HRV, CYP, FIN, GRC, ISL, I
 | party | `jpn.reiwa` Reiwa Shinsengumi (Reiwa) | The party's Wikipedia infobox (fetched 2026-10-14) shows the name 'Party of Life' (いのちの党) with leader Joji Yamamoto, while Tarō Yamamoto's article still lists him as leader. Confirm the party's current name and leader. | data/countries/JPN/parties.json |
 | party | `jpn.sanseito` Sanseitō (DIY) | Confirm the date Kamiya became party leader (he led it at the 2025 election; Matsuda was leader in 2022). | data/countries/JPN/parties.json |
 
-### KOR — South Korea (18)
+### KOR — South Korea (15)
 
 | kind | record | what to check | file |
 |---|---|---|---|
 | chamber | `national_assembly` National Assembly | seats_2000 is the last 1999 row (29 December 1999) of the Korean Wikipedia seat-change table: GNP 130, NCNP 103, ULD 55, independents 11 (total 299). The table's running totals are not fully consistent with its +/- labels; check against National Assembly records. The 3% list threshold is the current rule; confirm the threshold in force in 1996-2000. | data/countries/KOR/country.json |
-| person | `kor.suh_chung_won` Suh Chung-won (b. 1943) | The end year (2010) of his Pro-Park Alliance membership is not sourced; confirm when he returned to the GNP/Saenuri. | data/countries/KOR/people.json |
-| person | `kor.sohn_hak_kyu` Sohn Hak-kyu (b. 1947) | His 2000 party (GNP) and Gyeonggi governorship were not confirmed from a fetched source; the record uses the UNDP as his main party. Confirm and add party_history for the GNP years. | data/countries/KOR/people.json |
-| person | `kor.jung_chung_rae` Jung Chung-rae (b. 1965) | available.from (2004-04-15) assumes he entered the National Assembly at the 2004 election; this was not confirmed from a fetched source. | data/countries/KOR/people.json |
 | party | `kor.mdp` Millennium Democratic Party (MDP) | Leader history is incomplete: only Kim Dae-jung (party president until 2002) was found. Add the party's chairs 2000-2007 (e.g. Cho Soon-hyung, who led it into the 2004 election). | data/countries/KOR/parties.json |
-| party | `kor.uri` Uri Party (Uri) | Leader history is incomplete: only Chung Dong-young (chairman at the 2004 election) is recorded, without exact dates. The party had several chairs (e.g. Shin Ki-nam in 2004). Confirm the founding date (1 vs 11 November 2003). | data/countries/KOR/parties.json |
+| party | `kor.uri` Uri Party (Uri) | Leader history is incomplete: only Chung Dong-young (chairman at the 2004 election) is recorded, without exact dates. The party had several chairs (e.g. Shin Ki-nam, who resigned on 19 August 2004); the English Wikipedia article has no dated leader list (founding date 1 November 2003 confirmed from its infobox). | data/countries/KOR/parties.json |
 | party | `kor.undp` Grand Unified Democratic New Party (UNDP) | Leader history is incomplete: earlier leaders (2007) are missing and Sohn Hak-kyu's start date is unknown. | data/countries/KOR/parties.json |
 | party | `kor.uld` United Liberal Democrats (ULD) | Leader dates are years only and incomplete. The merger into the Grand National Party in 2006 is inferred from Kim Jong-pil's Wikidata party record; confirm it against the ULD article. | data/countries/KOR/parties.json |
 | party | `kor.dlp` Democratic Labor Party (DLP) | Leader history is incomplete: only Kwon Young-ghil (leader at the 2004 election) is listed, with a year only. | data/countries/KOR/parties.json |
@@ -250,7 +325,32 @@ Countries with no data yet (184): ALB, AUT, BIH, BGR, HRV, CYP, FIN, GRC, ISL, I
 | party | `kor.people_2016` People Party (2016) (PP) | Leader history is incomplete (only Ahn Cheol-soo, without an end date). | data/countries/KOR/parties.json |
 | party | `kor.bareun` Bareun Party (Bareun) | Leader history is incomplete; the infobox lists Yoo Seong-min among its leaders without dates. | data/countries/KOR/parties.json |
 | party | `kor.people_2020` People Party (2020) (PP) | The infobox gives no founding date; only the year 2020 is recorded. | data/countries/KOR/parties.json |
-| party | `kor.reform` Reform Party (Reform) | Leader history is empty; add the party's leaders with dates (the infobox names Chun Ha-ram as a leader and Lee Jun-seok as founder). | data/countries/KOR/parties.json |
+| party | `kor.reform` Reform Party (Reform) | Leader history has gaps: the leader(s) between 19 May 2024 and 27 July 2025 and after 26 August 2026 are not recorded (the article has no dated leader list). | data/countries/KOR/parties.json |
+
+### KOS — Kosovo (14)
+
+| kind | record | what to check | file |
+|---|---|---|---|
+| office | `kos.srsg` Special Representative of the UN Secretary-General for Kosovo (head of UNMIK) | Five acting or current SRSGs (Brayshaw, Sorenson, Freeman, Shin, Due) are recorded as null holders because no birth data was found; Caroline Ziadeh's end date is uncited in the source. | data/countries/KOS/country.json |
+| person | `kos.soren_jessen_petersen` Søren Jessen-Petersen (b. 1945) | Wikidata gives only the birth year; check for a full date. | data/countries/KOS/people.json |
+| person | `kos.steven_schook` Steven P. Schook (b. 1953) | Wikidata gives only the birth year; check for a full date. | data/countries/KOS/people.json |
+| person | `kos.farid_zarif` Farid Zarif (b. 1951) | Wikidata gives only the birth year; check for a full date. | data/countries/KOS/people.json |
+| person | `kos.caroline_ziadeh` Caroline Ziadeh (b. 1974) | Birth year 1974 from the Wikipedia list of SRSGs; Wikidata gives 2000, which is clearly wrong. Check. | data/countries/KOS/people.json |
+| person | `kos.bedri_hamza` Bedri Hamza (b. 1963) | Wikidata gives only the birth year; check for a full date. | data/countries/KOS/people.json |
+| person | `kos.enver_hoxhaj` Enver Hoxhaj (b. 1969) | Wikidata gives only the birth year; check for a full date. | data/countries/KOS/people.json |
+| person | `kos.goran_rakic` Goran Rakić (b. 1971) | Wikidata gives only the birth year; check for a full date. | data/countries/KOS/people.json |
+| person | `kos.ardian_gjini` Ardian Gjini (b. 1971) | Wikidata gives only the birth year; check for a full date. | data/countries/KOS/people.json |
+| party | `kos.ldk` Democratic League of Kosovo (LDK) | Check LDK leaders and dates after 2006 (Sejdiu 2006, Mustafa 2010, Abdixhiku 2025 assumed; intervening leaders not recorded). | data/countries/KOS/parties.json |
+| party | `kos.aak` Alliance for the Future of Kosovo (AAK) | Check when Ardian Gjini replaced Ramush Haradinaj as chairman (2026 assumed). | data/countries/KOS/parties.json |
+| party | `kos.lvv` Vetëvendosje (Self-Determination Movement) (LVV) | Kurti is recorded as leader since the 2005 foundation; check whether anyone else chaired the movement in between. | data/countries/KOS/parties.json |
+| party | `kos.sl` Serb List (SL) | Check the years Goran Rakić led the party (2017 assumed) and add Zlatan Elek if biographical data can be found. | data/countries/KOS/parties.json |
+| election | `president_2026` indirect_presidential 2026-10-06 | Very recent event (October 2026) sourced only from Wikipedia; confirm the vote count and inauguration date with an official source. | data/countries/KOS/elections.json |
+
+### LUX — Luxembourg (1)
+
+| kind | record | what to check | file |
+|---|---|---|---|
+| party | `lux.greng` The Greens (Greens) | No fetched source gives a dated list of the Greens' spokespersons since 2000; add the leader history (e.g. from the party's own records). | data/countries/LUX/parties.json |
 
 ### MCO — Monaco (6)
 
@@ -262,6 +362,29 @@ Countries with no data yet (184): ALB, AUT, BIH, BGR, HRV, CYP, FIN, GRC, ISL, I
 | party | `mco.hm` Horizon Monaco (HM) | Nouvion is listed as leader without dates; the 2012 start (party founding) and the absence of an end date need checking. | data/countries/MCO/parties.json |
 | party | `mco.renaissance` Renaissance (Renaissance) | Leaders are not recorded: the party article names Eric Elena as leader, while the 2013 election article names Jean-Michel Rapaire as list leader. Neither gives dates. | data/countries/MCO/parties.json |
 | party | `mco.primo` Priorité Monaco (Primo!) | No dated leader list exists in the sources: Valeri's leadership has no end date (he left the National Council presidency in October 2022), and Boccone-Pagès is recorded as head of the 2023 joint list, not as formal party leader. | data/countries/MCO/parties.json |
+
+### MKD — Macedonia (6)
+
+| kind | record | what to check | file |
+|---|---|---|---|
+| person | `mkd.zidi_xhelili` Zidi Xhelili (b. 1961) | No English Wikipedia article; Wikidata gives only a birth year (1961) and gender, not cross-checked. | data/countries/MKD/people.json |
+| person | `mkd.ljubomir_frckoski` Ljubomir Frčkoski (b. 1957) | Wikidata holds two birth dates (2 February and 12 December 1957); check the Wikipedia article. | data/countries/MKD/people.json |
+| person | `mkd.imer_selmani` Imer Selmani (b. 1968) | No English Wikipedia article; birth date and gender are from Wikidata only and were not cross-checked. | data/countries/MKD/people.json |
+| person | `mkd.agron_buxhaku` Agron Buxhaku (b. 1957) | No English Wikipedia article; birth date and gender are from Wikidata only and were not cross-checked. | data/countries/MKD/people.json |
+| party | `mkd.aa` Alliance for Albanians (AA) | Check when Arben Taravari became leader (2020 assumed) and the party's 2024 alliance. | data/countries/MKD/parties.json |
+| party | `mkd.vlen` VLEN Coalition (VLEN) | The article dates the conversion into a party only as 2026 (after June 2026 by the article's edit history); check the date and the member parties. | data/countries/MKD/parties.json |
+
+### MNE — Montenegro (7)
+
+| kind | record | what to check | file |
+|---|---|---|---|
+| person | `mne.dragan_kujovic` Dragan Kujović (b. 1948) | Wikidata gives only the birth year (1948); acting President for three days in May 2003. | data/countries/MNE/people.json |
+| person | `mne.bozidar_bojovic` Božidar Bojović (b. 1938) | Wikidata gives only the years of birth (1938) and death (2021); founder of the Serb People's Party. | data/countries/MNE/people.json |
+| party | `mne.sdp` Social Democratic Party of Montenegro (SDP) | Check the years Ranko Krivokapić (2001 assumed) and Draginja Vuksanović (2019 assumed) led the party. | data/countries/MNE/parties.json |
+| party | `mne.lscg` Liberal Alliance of Montenegro (LSCG) | Check whether and when the Liberal Alliance dissolved (2005 assumed from the end of its leader list). | data/countries/MNE/parties.json |
+| party | `mne.df` Democratic Front (DF) | Collective leadership: list leaders are recorded as leaders; check dates. | data/countries/MNE/parties.json |
+| party | `mne.ura` United Reform Action (URA) | Check when Dritan Abazović became URA president (2017 assumed). | data/countries/MNE/parties.json |
+| party | `mne.bs` Bosniak Party (BS) | Check when Ervin Ibrahimović became party president (2023 assumed). | data/countries/MNE/parties.json |
 
 ### NLD — Netherlands (3)
 
@@ -290,11 +413,18 @@ Countries with no data yet (184): ALB, AUT, BIH, BGR, HRV, CYP, FIN, GRC, ISL, I
 | party | `pol.konfederacja` Confederation Liberty and Independence (KWiN) | The current infobox names Slawomir Mentzen and Krzysztof Bosak as co-chairmen, but no start dates were found, so leader_history is empty. Add their co-chairmanship with dates. | data/countries/POL/parties.json |
 | party | `pol.nowa_lewica` New Left (NL) | Wikidata lists Robert Biedron as co-chair alongside Czarzasty (no dates); the current infobox names only Czarzasty. Add Biedron's co-chair tenure with dates. | data/countries/POL/parties.json |
 
-### PRT — Portugal (1)
+### PRK — North Korea (8)
 
 | kind | record | what to check | file |
 |---|---|---|---|
-| party | `prt.jpp` Together for the People (JPP) | The source names Élvio Sousa as secretary-general and as the party's lead figure in every election since 2015, but gives no start date for his post; confirm he has led JPP since 2015. | data/countries/PRT/parties.json |
+| office | `prk.premier` Premier of the Cabinet | The date of the change from Kim Tok-hun to Pak Thae-song differs within Wikipedia (24, 27 or 29 December 2024). Check the KCNA report. | data/countries/PRK/country.json |
+| person | `prk.kim_jong_un` Kim Jong Un (b. 1982) | Birth year is disputed: 1982 (North Korean sources, Wikidata), 1983 (South Korean intelligence) or 1984 (US government). | data/countries/PRK/people.json |
+| person | `prk.ri_son_gwon` Ri Son-gwon (b. 1960) | Birth year is approximate: Wikidata gives about 1960 and Wikipedia gives none. Also confirm his party membership (Wikidata lists the WPK while he chairs the KSDP). | data/countries/PRK/people.json |
+| party | `prk.ksdp` Korean Social Democratic Party (KSDP) | The chairman from September 2022 to February 2026 is not known from the fetched sources. | data/countries/PRK/parties.json |
+| party | `prk.chondoist_chongu` Chondoist Chongu Party (CCP) | Leader history is empty: Ryu Mi-yong's term as chairwoman and the dates of later chairs (Ri Myong-chol) were not found. | data/countries/PRK/parties.json |
+| election | `spa_presidium_2003` indirect_presidential 2003-09-03 | His re-election at this session is inferred from his unbroken tenure and the convocation date; confirm with the KCNA report of the session. | data/countries/PRK/elections.json |
+| election | `spa_presidium_2009` indirect_presidential 2009-04-09 | His re-election at this session is inferred from his unbroken tenure and the convocation date; confirm with the KCNA report of the session. | data/countries/PRK/elections.json |
+| election | `spa_presidium_2014` indirect_presidential 2014-04-09 | His re-election at this session is inferred from his unbroken tenure and the convocation date; confirm with the KCNA report of the session. | data/countries/PRK/elections.json |
 
 ### PSE — Palestine (4)
 
@@ -304,6 +434,14 @@ Countries with no data yet (184): ALB, AUT, BIH, BGR, HRV, CYP, FIN, GRC, ISL, I
 | party | `pse.ppp` Palestinian People's Party (PPP) | Leadership dates are not given in the fetched sources: confirm who was general secretary on 1 January 2000 (Bashir Barghouti, who died in September 2000, or Mustafa Barghouti) and when Bassam al-Salhi took over (recorded as 2005, the year of his presidential candidacy). | data/countries/PSE/parties.json |
 | party | `pse.fida` Palestinian Democratic Union (FIDA) (FIDA) | No dated leadership list was found; confirm FIDA's leader on 1 January 2000 and the dates of later leaders (Saleh Ra'fat). | data/countries/PSE/parties.json |
 | party | `pse.pij` Palestinian Islamic Jihad (PIJ) | The founding year (1981) is taken from the start of Fathi Shaqaqi's leadership in the infobox; confirm. | data/countries/PSE/parties.json |
+
+### ROU — Romania (3)
+
+| kind | record | what to check | file |
+|---|---|---|---|
+| party | `rou.psdr` Romanian Social Democratic Party (PSDR) | Check Sergiu Cunescu's tenure as PSDR leader (recorded from the party's founding to its merger) and the PSDR's 1996 vote estimate. | data/countries/ROU/parties.json |
+| party | `rou.punr` Romanian National Unity Party (PUNR) | The fetched article does not give leadership dates, so leader_history is empty; check who led the PUNR on 1 January 2000 and add them. | data/countries/ROU/parties.json |
+| party | `rou.sos` S.O.S. Romania (SOS RO) | Check the date Diana Șoșoacă became president of S.O.S. Romania (recorded from 2024 only). | data/countries/ROU/parties.json |
 
 ### RUS — Russia (3)
 
@@ -343,6 +481,21 @@ Countries with no data yet (184): ALB, AUT, BIH, BGR, HRV, CYP, FIN, GRC, ISL, I
 | party | `svk.zl` For the People (ZĽ) | The date Remišová succeeded Kiska is not in the fetched sources; 2021 is a placeholder. | data/countries/SVK/parties.json |
 | election | `referendum_2010` referendum 2010-09-18 | The individual questions and their number were not checked; only the first question's figures were read from the source. | data/countries/SVK/elections.json |
 
+### SVN — Slovenia (10)
+
+| kind | record | what to check | file |
+|---|---|---|---|
+| person | `svn.france_arhar` France Arhar (b. 1948) | No English Wikipedia article; birth date and gender are from Wikidata only and were not cross-checked. | data/countries/SVN/people.json |
+| person | `svn.sabina_sencar` Sabina Senčar (b. 1970) | No English Wikipedia article; birth date and gender are from Wikidata only and were not cross-checked. | data/countries/SVN/people.json |
+| person | `svn.marjan_podobnik` Marjan Podobnik (b. 1960) | No English Wikipedia article; birth date and gender are from Wikidata only and were not cross-checked. | data/countries/SVN/people.json |
+| person | `svn.franc_zagozen` Franc Zagožen (b. 1942) | No English Wikipedia article; birth date and gender are from Wikidata only and were not cross-checked. | data/countries/SVN/people.json |
+| party | `svn.smc` Modern Centre Party (SMC) | Check the date Zdravko Počivalšek succeeded Miro Cerar as party president (2019 assumed from his later role; not stated in the fetched article). | data/countries/SVN/parties.json |
+| election | `ref_regions_2008` referendum 2008-06-22 | National yes/no totals are not in the fetched article; check the State Election Commission (DVK) report. | data/countries/SVN/elections.json |
+| election | `ref_parliamentary_inquiry_2026` referendum 2026-10-11 | Recent event (October 2026) taken from a short Wikipedia article that calls all four questions non-binding; confirm the figures and the binding status with the State Election Commission (DVK). | data/countries/SVN/elections.json |
+| election | `ref_social_assistance_2026` referendum 2026-10-11 | Recent event (October 2026); confirm with the State Election Commission (DVK). | data/countries/SVN/elections.json |
+| election | `ref_local_voting_2026` referendum 2026-10-11 | Recent event (October 2026); confirm with the State Election Commission (DVK). | data/countries/SVN/elections.json |
+| election | `ref_rtv_fee_2026` referendum 2026-10-11 | Recent event (October 2026); confirm with the State Election Commission (DVK). | data/countries/SVN/elections.json |
+
 ### SWE — Sweden (2)
 
 | kind | record | what to check | file |
@@ -359,17 +512,15 @@ Countries with no data yet (184): ALB, AUT, BIH, BGR, HRV, CYP, FIN, GRC, ISL, I
 | party | `tur.saadet` Felicity Party (SAADET) | Leaders before 2016 are missing: Recai Kutan (from 2001), Numan Kurtulmus, Necmettin Erbakan (from 2010-10-18 per Wikidata) and Mustafa Kamalak (2011-2016, years only). Add them with dates from a leader list. | data/countries/TUR/parties.json |
 | party | `tur.hdp` Peoples' Democratic Party (HDP) | Co-chairs omitted for lack of person records: Yavuz Onen and Fatma Gok (2012-2013), Sebahat Tuncel and Ertugrul Kurkcu (2013-2014), Serpil Kemalbay (2017-2018), Sultan Ozcan and Cahit Kirkazak (from 2023-08-27). Wikidata also splits Demirtas's tenure (to 2017-03-09, again from 2017-05-20). | data/countries/TUR/parties.json |
 
-### TWN — Taiwan (7)
+### TWN — Taiwan (5)
 
 | kind | record | what to check | file |
 |---|---|---|---|
 | chamber | `legislative_yuan` Legislative Yuan | seats_2000 is the December 1998 election result (others: Democratic Union of Taiwan 4, Democratic Non-Partisan Alliance 3, New Nation Alliance 1, Taiwan Independence Party 1), not the composition on 1 January 2000. Check the split of district and list seats in 1998 and the list-seat threshold then in force. | data/countries/TWN/country.json |
-| person | `twn.huang_kuo_chang` Huang Kuo-chang (b. 1973) | Wikidata gives his party moves to the month only (NPP May 2015 - November 2023, TPP from November 2023); stored as years. Confirm the dates of his NPP chairmanship. | data/countries/TWN/people.json |
 | person | `twn.chang_po_ya` Chang Po-ya (b. 1942) | Her NPSU leadership dates were not found. | data/countries/TWN/people.json |
-| party | `twn.np` New Party (NP) | Leader history is empty; add the party's conveners/chairmen since 2000 with dates. | data/countries/TWN/parties.json |
-| party | `twn.tsu` Taiwan Solidarity Union (TSU) | Leader history only names Lee Teng-hui (undated Wikidata chair). Add the party's formal chairmen with dates. | data/countries/TWN/parties.json |
-| party | `twn.npsu` Non-Partisan Solidarity Union (NPSU) | Chang Po-ya is listed as leader from the founding date; confirm her leadership dates. | data/countries/TWN/parties.json |
-| party | `twn.npp` New Power Party (NPP) | Huang Kuo-chang's chairmanship dates are missing, as are the chairs between him and Claire Wang. | data/countries/TWN/parties.json |
+| person | `twn.shu_chin_chiang` Shu Chin-chiang (b. 1953) | His party affiliation on 1 January 2000, before he joined the TSU in 2001, was not found. | data/countries/TWN/people.json |
+| party | `twn.tsu` Taiwan Solidarity Union (TSU) | The current chair, Chou Ni-an (since 29 January 2024), has no person record because no Wikipedia or Wikidata entry was found; add one if a source is found. | data/countries/TWN/parties.json |
+| party | `twn.npsu` Non-Partisan Solidarity Union (NPSU) | The English Wikipedia article only names election leaders (Chang Po-ya for 2004-2005 and 2016, Lin Pin-kuan for later elections; the infobox names Lin Pin-kuan as current leader) and has no dated leader list. Confirm Chang Po-ya's chairmanship dates and add Lin Pin-kuan. | data/countries/TWN/parties.json |
 
 ### USA — United States (2)
 
@@ -377,3 +528,16 @@ Countries with no data yet (184): ALB, AUT, BIH, BGR, HRV, CYP, FIN, GRC, ISL, I
 |---|---|---|---|
 | party | `usa.green` Green Party of the United States (GPUS) | Founding date conflicts: Wikipedia says formally formed on 30 July 2001, Wikidata gives April 2001. Check which date marks the FEC recognition/rename from the ASGP. | data/countries/USA/parties.json |
 | party | `usa.constitution` Constitution Party (CP) | Founding year conflicts: Wikipedia infobox gives 1990, Wikidata gives 1991. Confirm the founding year. | data/countries/USA/parties.json |
+
+### YUG — Federal Republic of Yugoslavia (8)
+
+| kind | record | what to check | file |
+|---|---|---|---|
+| chamber | `chamber_of_citizens` Chamber of Citizens (Federal Assembly) | 1996 result; party realignments in Montenegro after the 1997 DPS split are not reflected. Check the chamber's composition on 1 January 2000. | data/countries/YUG/country.json |
+| chamber | `chamber_of_republics` Chamber of Republics (Federal Assembly) | Party composition of the Chamber of Republics on 1 January 2000 not researched; replace the 'appointed' placeholder. | data/countries/YUG/country.json |
+| person | `yug.srdjan_milivojevic` Srđan Milivojević (b. 1965) | Wikidata gives only the birth year (1965); check the Wikipedia article for a full date. | data/countries/YUG/people.json |
+| party | `yug.svm` Alliance of Vojvodina Hungarians (SVM) | Check the years István Pásztor (2008 assumed) and Bálint Pásztor (2023 assumed) became party president. | data/countries/YUG/parties.json |
+| party | `yug.dveri` Serbian Movement Dveri (Dveri) | Check when Boško Obradović became party president (2016 assumed) and whether he still leads it. | data/countries/YUG/parties.json |
+| party | `yug.ssz` Serbian Party Oathkeepers (SSZ) | Check when Milica Đurđević Stamenkovski became party president (2022 assumed). | data/countries/YUG/parties.json |
+| party | `yug.zlf` Green–Left Front (ZLF) | Check the party's leadership (co-leaders) and Radomir Lazović's role. | data/countries/YUG/parties.json |
+| party | `yug.mi_gin` We – Voice from the People (MI–GIN) | Check the founding date and ideology (right populist assumed). | data/countries/YUG/parties.json |

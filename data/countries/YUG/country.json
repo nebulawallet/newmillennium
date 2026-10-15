@@ -1,0 +1,209 @@
+{
+  "tag": "YUG",
+  "name": { "en": "Yugoslavia", "native": "Jugoslavija", "official": { "en": "Federal Republic of Yugoslavia", "native": "Savezna Republika Jugoslavija" } },
+  "adjective": "Yugoslav",
+  "culture_primary": "serbian",
+  "government": {
+    "type": "parliamentary",
+    "effective_executive": "yug.president",
+    "head_of_state_office": "yug.president",
+    "head_of_government_office": "yug.prime_minister",
+    "constitution": {
+      "term_limit_amendable": true,
+      "emergency_powers": true,
+      "referendum_required_for": []
+    },
+    "note": "On 1 January 2000 this tag is the Federal Republic of Yugoslavia (FRY), a federation of the Republic of Serbia (including Vojvodina and Kosovo, the latter under UN administration since June 1999) and the Republic of Montenegro. Wikipedia classes it as a federal parliamentary republic (1992-2000) and a federal semi-presidential republic (2000-2003; the federal President was directly elected in September 2000); the effective executive is set to the federal President, the office Slobodan Milošević held in January 2000. On 4 February 2003 the FRY became the State Union of Serbia and Montenegro, with a President who also chaired the Council of Ministers and a unicameral Assembly delegated by the republic parliaments. After Montenegro's independence (3 June 2006) Serbia continued the state's legal personality; under the 2006 Constitution Serbia is a parliamentary republic with a directly elected President (five-year term, two terms at most) and a Government responsible to the 250-member National Assembly. The office records below follow the continuing state: federal offices until 2006, Serbian offices afterwards. The Serbian republic-level President and Prime Minister of 2000-2006 are kept as separate offices (role 'other'). Vojvodina's provincial institutions are not modelled."
+  },
+  "offices": [
+    {
+      "id": "yug.president",
+      "title": { "en": "President of the Federal Republic of Yugoslavia (later of Serbia and Montenegro, then of Serbia)", "native": "Predsednik Savezne Republike Jugoslavije" },
+      "role": "head_of_state",
+      "power_weight": 0.5,
+      "selection": "direct_election",
+      "term_years": 5,
+      "term_limit": { "max_terms": 2, "consecutive_only": false },
+      "succession": { "type": "acting_then_election" },
+      "holders": [
+        { "person": "yug.slobodan_milosevic", "from": "1997-07-23", "to": "2000-10-07", "note": "President of the FRY, elected by the Federal Assembly in 1997." },
+        { "person": "yug.vojislav_kostunica", "from": "2000-10-07", "to": "2003-03-07", "note": "President of the FRY, directly elected in September 2000." },
+        { "person": "mne.svetozar_marovic", "from": "2003-03-07", "to": "2006-06-03", "note": "President of Serbia and Montenegro (also chaired the Council of Ministers)." },
+        { "person": null, "from": "2006-06-03", "to": "2006-06-05", "vacant_reason": "The State Union ended with Montenegro's declaration of independence on 3 June 2006; Serbia's President is counted from 5 June 2006." },
+        { "person": "yug.boris_tadic", "from": "2006-06-05", "to": "2012-04-05", "note": "President of Serbia (in office as republic President since 11 July 2004); re-elected in 2008; resigned early to bring forward the 2012 election." },
+        { "person": "yug.slavica_djukic_dejanovic", "from": "2012-04-05", "to": "2012-05-31", "acting": true, "note": "Acting President as Speaker of the National Assembly." },
+        { "person": "yug.tomislav_nikolic", "from": "2012-05-31", "to": "2017-05-31" },
+        { "person": "yug.aleksandar_vucic", "from": "2017-05-31", "to": "2026-09-28", "note": "Re-elected in 2022. Resigned in September 2026 (27 September per the 2026 presidential election article; the list of presidents ends his term on 28 September) to run for prime minister in the early parliamentary election called for 25 October 2026." },
+        { "person": "yug.ana_brnabic", "from": "2026-09-28", "acting": true, "note": "Acting President as President of the National Assembly, pending the presidential election called for 25 December 2026 (verified against the fetched Wikipedia articles on the President of Serbia and the 2026 presidential election)." }
+      ],
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/President_of_Serbia_and_Montenegro", "title": "Wikipedia: President of Serbia and Montenegro (presidents of the FRY and Serbia and Montenegro)", "accessed": "2026-10-15" },
+        { "url": "https://en.wikipedia.org/wiki/List_of_presidents_of_Serbia", "title": "Wikipedia: List of presidents of Serbia", "accessed": "2026-10-15" },
+        { "url": "https://en.wikipedia.org/wiki/President_of_Serbia", "title": "Wikipedia: President of Serbia (acting president since 28 September 2026)", "accessed": "2026-10-15" },
+        { "url": "https://en.wikipedia.org/wiki/2026_Serbian_presidential_election", "title": "Wikipedia: 2026 Serbian presidential election (Vučić's resignation)", "accessed": "2026-10-15" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "yug.prime_minister",
+      "title": { "en": "Prime Minister of the Federal Republic of Yugoslavia (later of Serbia)", "native": "Predsednik Savezne vlade" },
+      "role": "head_of_government",
+      "power_weight": 0.4,
+      "selection": "legislature",
+      "appointed_by": "yug.president",
+      "term_years": 4,
+      "holders": [
+        { "person": "mne.momir_bulatovic", "from": "1998-05-19", "to": "2000-11-04", "note": "Federal Prime Minister (SNP); resigned on 9 October 2000 and served until his successor took office." },
+        { "person": "mne.zoran_zizic", "from": "2000-11-04", "to": "2001-07-24", "note": "Federal Prime Minister (SNP)." },
+        { "person": "mne.dragisa_pesic", "from": "2001-07-24", "to": "2003-03-07", "note": "Federal Prime Minister (SNP)." },
+        { "person": "mne.svetozar_marovic", "from": "2003-03-07", "to": "2006-06-03", "note": "The State Union had no prime minister; its President chaired the Council of Ministers." },
+        { "person": null, "from": "2006-06-03", "to": "2006-06-05", "vacant_reason": "End of the State Union; Serbia's Prime Minister is counted from 5 June 2006." },
+        { "person": "yug.vojislav_kostunica", "from": "2006-06-05", "to": "2008-07-07", "note": "Prime Minister of Serbia since 4 March 2004 (republic level until June 2006)." },
+        { "person": "yug.mirko_cvetkovic", "from": "2008-07-07", "to": "2012-07-27" },
+        { "person": "yug.ivica_dacic", "from": "2012-07-27", "to": "2014-04-27" },
+        { "person": "yug.aleksandar_vucic", "from": "2014-04-27", "to": "2017-05-31" },
+        { "person": "yug.ivica_dacic", "from": "2017-05-31", "to": "2017-06-29", "acting": true },
+        { "person": "yug.ana_brnabic", "from": "2017-06-29", "to": "2024-05-02", "note": "Acting from 6 February 2024 until her successor took office." },
+        { "person": "yug.milos_vucevic", "from": "2024-05-02", "to": "2025-04-16" },
+        { "person": "yug.djuro_macut", "from": "2025-04-16" }
+      ],
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/Prime_Minister_of_Serbia_and_Montenegro", "title": "Wikipedia: Prime Minister of Serbia and Montenegro (federal prime ministers)", "accessed": "2026-10-15" },
+        { "url": "https://en.wikipedia.org/wiki/List_of_prime_ministers_of_Serbia", "title": "Wikipedia: List of prime ministers of Serbia", "accessed": "2026-10-15" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "yug.serbia_republic_president",
+      "title": { "en": "President of the Republic of Serbia (constituent republic, until 2006)", "native": "Predsednik Republike Srbije" },
+      "role": "other",
+      "power_weight": 0.05,
+      "selection": "direct_election",
+      "term_years": 5,
+      "holders": [
+        { "person": "yug.milan_milutinovic", "from": "1997-12-29", "to": "2002-12-29" },
+        { "person": "yug.natasa_micic", "from": "2002-12-29", "to": "2004-01-27", "acting": true, "note": "Acting President as Speaker; the 2002 and 2003 elections failed to meet the turnout requirement." },
+        { "person": null, "from": "2004-01-27", "to": "2004-02-04", "vacant_reason": "No acting holder is listed between 27 January and 4 February 2004 (after the December 2003 parliamentary election)." },
+        { "person": "yug.dragan_marsicanin", "from": "2004-02-04", "to": "2004-03-03", "acting": true },
+        { "person": "yug.vojislav_mihailovic", "from": "2004-03-03", "to": "2004-03-04", "acting": true },
+        { "person": "yug.predrag_markovic", "from": "2004-03-04", "to": "2004-07-11", "acting": true },
+        { "person": "yug.boris_tadic", "from": "2004-07-11", "to": "2006-06-05", "note": "Continued as President of the independent state from 5 June 2006 (see yug.president)." }
+      ],
+      "note": "Republic-level office while Serbia was part of the FRY and Serbia and Montenegro; it became the state presidency in June 2006.",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/List_of_presidents_of_Serbia", "title": "Wikipedia: List of presidents of Serbia", "accessed": "2026-10-15" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "yug.serbia_republic_pm",
+      "title": { "en": "Prime Minister of the Republic of Serbia (constituent republic, until 2006)", "native": "Predsednik Vlade Republike Srbije" },
+      "role": "other",
+      "power_weight": 0.05,
+      "selection": "legislature",
+      "holders": [
+        { "person": "yug.mirko_marjanovic", "from": "1994-03-18", "to": "2000-10-24", "note": "SPS-led governments (SPS–JUL–SRS from 1998)." },
+        { "person": "yug.milomir_minic", "from": "2000-10-25", "to": "2001-01-25", "note": "Transitional SPS–DOS–SPO government." },
+        { "person": "yug.zoran_djindjic", "from": "2001-01-25", "to": "2003-03-12", "note": "DOS government; died in office on 12 March 2003." },
+        { "person": "yug.nebojsa_covic", "from": "2003-03-12", "to": "2003-03-17", "acting": true },
+        { "person": "yug.zarko_korac", "from": "2003-03-17", "to": "2003-03-18", "acting": true },
+        { "person": "yug.zoran_zivkovic", "from": "2003-03-18", "to": "2004-03-04" },
+        { "person": "yug.vojislav_kostunica", "from": "2004-03-04", "to": "2006-06-05", "note": "Continued as Prime Minister of the independent state (see yug.prime_minister)." }
+      ],
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/List_of_prime_ministers_of_Serbia", "title": "Wikipedia: List of prime ministers of Serbia", "accessed": "2026-10-15" }
+      ],
+      "confidence": "verified"
+    }
+  ],
+  "legislature": {
+    "name": { "en": "Federal Assembly / National Assembly of Serbia", "native": "Savezna skupština / Narodna skupština" },
+    "chambers": [
+      {
+        "id": "chamber_of_citizens",
+        "name": { "en": "Chamber of Citizens (Federal Assembly)", "native": "Veće građana" },
+        "seats": 138,
+        "term_years": 4,
+        "elected": "direct",
+        "system": {
+          "type": "list_pr",
+          "note": "108 members from Serbia and 30 from Montenegro. seats_2000 is the result of the November 1996 federal election; coalitions are recorded under their leading party (the Left Coalition SPS–JUL–ND under SPS, Coalition Together under SPO, the For a Better Life coalition led by DPS in Montenegro under DPS). Others: List for Sandžak (1), Vojvodina Coalition (2) and the Party of Democratic Action of Montenegro (1). The DPS split in 1997 (Momir Bulatović founded the SNP), so the Montenegrin seats had realigned by 2000; this was not checked. The Federal Assembly was replaced by the Assembly of Serbia and Montenegro in 2003."
+        },
+        "seats_2000": { "yug.sps": 64, "yug.spo": 22, "yug.srs": 16, "yug.svm": 3, "mne.dps": 20, "mne.ns": 8, "mne.sdp": 1, "others": 4 },
+        "confidence_chamber": true,
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/1996_Yugoslavian_parliamentary_election", "title": "Wikipedia: 1996 Yugoslavian parliamentary election", "accessed": "2026-10-15" },
+          { "url": "https://en.wikipedia.org/wiki/Assembly_of_Serbia_and_Montenegro", "title": "Wikipedia: Assembly of Serbia and Montenegro", "accessed": "2026-10-15" }
+        ],
+        "confidence": "needs_review",
+        "review_note": "1996 result; party realignments in Montenegro after the 1997 DPS split are not reflected. Check the chamber's composition on 1 January 2000."
+      },
+      {
+        "id": "chamber_of_republics",
+        "name": { "en": "Chamber of Republics (Federal Assembly)", "native": "Veće republika" },
+        "seats": 40,
+        "term_years": 4,
+        "elected": "mixed",
+        "system": {
+          "type": "mixed_other",
+
+          "note": "20 representatives for each republic; the chamber was elected at the September 2000 federal election (how its 1996-2000 members were chosen is not covered by the fetched sources). Party composition on 1 January 2000 was not checked, so all 40 seats are recorded as appointed."
+        },
+        "seats_2000": { "appointed": 40 },
+        "confidence_chamber": false,
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/Assembly_of_Serbia_and_Montenegro", "title": "Wikipedia: Assembly of Serbia and Montenegro", "accessed": "2026-10-15" }
+        ],
+        "confidence": "needs_review",
+        "review_note": "Party composition of the Chamber of Republics on 1 January 2000 not researched; replace the 'appointed' placeholder."
+      },
+      {
+        "id": "national_assembly",
+        "name": { "en": "National Assembly of Serbia", "native": "Narodna skupština Republike Srbije" },
+        "seats": 250,
+        "term_years": 4,
+        "elected": "direct",
+        "system": {
+          "type": "list_pr",
+          "formula": "dhondt",
+          "district_model": "national",
+          "note": "In 2000 the assembly of the Republic of Serbia (a constituent republic); the national legislature of the continuing state since June 2006. 250 members elected by list PR. seats_2000 is the result of the September-October 1997 election, with the Left Coalition (SPS–JUL–ND) under SPS; others: Vojvodina Coalition (4), List for Sandžak (3), Democratic Alternative (1) and the Democratic Coalition Preševo-Bujanovac (1)."
+        },
+        "seats_2000": { "yug.sps": 110, "yug.srs": 82, "yug.spo": 45, "yug.svm": 4, "others": 9 },
+        "confidence_chamber": true,
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/1997_Serbian_general_election", "title": "Wikipedia: 1997 Serbian general election", "accessed": "2026-10-15" },
+          { "url": "https://en.wikipedia.org/wiki/National_Assembly_(Serbia)", "title": "Wikipedia: National Assembly (Serbia)", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      }
+    ]
+  },
+  "party_system": "multi_party",
+  "start_2000": {
+    "ruling_parties": ["yug.sps", "mne.snp"],
+    "confidence_and_supply": [],
+    "ideology_support": {
+      "left_populist": 0.425,
+      "classical_liberal": 0.2224,
+      "ethno_nationalist": 0.1957,
+      "regionalist": 0.0608,
+      "social_democrat": 0.0395,
+      "national_conservative": 0.0182,
+      "marxist_leninist": 0.0075,
+      "big_tent": 0.0309
+    },
+    "ideology_support_note": "Derived from the November 1996 federal Chamber of Citizens vote in both republics (shares computed from the vote counts): SPS–JUL–ND Left Coalition 42.4% plus the Yugoslav Left in Montenegro 0.1% (left populist; SPS's article lists social democracy and populism), Coalition Together 22.2% (classical liberal after its leading party SPO), Serbian Radical Party and splinter lists 19.6% (ethno-nationalist), Vojvodina, Hungarian, Sandžak, Croat and Montenegrin Bosniak minority lists 6.1% (regionalist), DPS-led list 3.4% and SDP 0.6% in Montenegro (social democrat), People's Party (Montenegro) and Serb Union lists 1.8% (national conservative), communist lists 0.8%; remaining lists about 3.1% (big tent). ruling_parties lists the federal government parties (SPS with the Montenegrin SNP; JUL is included under SPS).",
+    "stability": 0.35,
+    "war_support": 0.35
+  },
+  "claims": [
+    { "tag": "KOS", "note": "Kosovo was part of the FRY (under UN administration since June 1999) in 2000. It declared independence on 17 February 2008; the Government of Serbia does not diplomatically recognise Kosovo as a sovereign state (International recognition of Kosovo article)." }
+  ],
+  "source": [
+    { "url": "https://en.wikipedia.org/wiki/International_recognition_of_Kosovo", "title": "Wikipedia: International recognition of Kosovo (Serbia's position)", "accessed": "2026-10-15" },
+    { "url": "https://en.wikipedia.org/wiki/Serbia_and_Montenegro", "title": "Wikipedia: Serbia and Montenegro (Federal Republic of Yugoslavia; government type; events)", "accessed": "2026-10-15" },
+    { "url": "https://en.wikipedia.org/wiki/1996_Yugoslavian_parliamentary_election", "title": "Wikipedia: 1996 Yugoslavian parliamentary election", "accessed": "2026-10-15" }
+  ],
+  "confidence": "verified"
+}

@@ -1,0 +1,546 @@
+{
+  "parties": [
+    {
+      "id": "mne.dps",
+      "name": {
+        "en": "Democratic Party of Socialists of Montenegro",
+        "native": "Demokratska partija socijalista Crne Gore"
+      },
+      "abbrev": {
+        "en": "DPS",
+        "native": "DPS"
+      },
+      "color": "#B7282E",
+      "sub_ideology": "social_democrat",
+      "founded": "1991-06-22",
+      "status_2000": "active",
+      "leader_history": [
+        {
+          "person": "mne.milo_djukanovic",
+          "from": "1998-10-31",
+          "to": "2023-04-06"
+        },
+        {
+          "person": "mne.danijel_zivkovic",
+          "from": "2023-04-06"
+        }
+      ],
+      "popularity_2000": 0.4954,
+      "popularity_note": "1998 parliamentary vote share of the So That We Live Better coalition (DPS, SDP and People's Party), led by DPS.",
+      "note": "The party article lists social democracy, social liberalism, populism, Montenegrin nationalism and pro-Europeanism. Led the Victory is Montenegro (2001), Coalition for a European Montenegro (2002, 2006, 2009) and European Montenegro (2012) lists. Momir Bulatović led it 1991-1997 and Milica Pejanović 1997-1998.",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Democratic_Party_of_Socialists_of_Montenegro",
+          "title": "Wikipedia: Democratic Party of Socialists of Montenegro (presidents)",
+          "accessed": "2026-10-15"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/1998_Montenegrin_parliamentary_election",
+          "title": "Wikipedia: 1998 Montenegrin parliamentary election",
+          "accessed": "2026-10-15"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "mne.snp",
+      "name": {
+        "en": "Socialist People's Party of Montenegro",
+        "native": "Socijalistička narodna partija Crne Gore"
+      },
+      "abbrev": {
+        "en": "SNP",
+        "native": "SNP"
+      },
+      "color": "#E2001A",
+      "sub_ideology": "social_democrat",
+      "founded": "1998-02-18",
+      "status_2000": "active",
+      "leader_history": [
+        {
+          "person": "mne.momir_bulatovic",
+          "from": "1998-02-18",
+          "to": "2000-09-24"
+        },
+        {
+          "person": "mne.predrag_bulatovic",
+          "from": "2000-09-24",
+          "to": "2006-11-26"
+        },
+        {
+          "person": "mne.srdjan_milic",
+          "from": "2006-11-26",
+          "to": "2017-08-13"
+        },
+        {
+          "person": "mne.vladimir_jokovic",
+          "from": "2017-08-13"
+        }
+      ],
+      "popularity_2000": 0.361,
+      "popularity_note": "1998 parliamentary vote share (main opposition party in Montenegro; in the federal government in 2000).",
+      "lineage": {
+        "split_from": "mne.dps"
+      },
+      "note": "The party article lists social democracy, social conservatism and left-conservatism. Led the Together for Yugoslavia (2001) and Together for Changes (2002) lists.",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Socialist_People's_Party_of_Montenegro",
+          "title": "Wikipedia: Socialist People's Party of Montenegro (presidents)",
+          "accessed": "2026-10-15"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "mne.sdp",
+      "name": {
+        "en": "Social Democratic Party of Montenegro",
+        "native": "Socijaldemokratska partija Crne Gore"
+      },
+      "abbrev": {
+        "en": "SDP",
+        "native": "SDP"
+      },
+      "color": "#C11B17",
+      "sub_ideology": "social_democrat",
+      "founded": "1993-06-12",
+      "status_2000": "active",
+      "leader_history": [
+        {
+          "person": "mne.ranko_krivokapic",
+          "from": 2001,
+          "to": 2019
+        },
+        {
+          "person": "mne.draginja_vuksanovic",
+          "from": 2019
+        }
+      ],
+      "popularity_2000": 0,
+      "popularity_note": "Ran in the DPS-led coalition in 1998 (share included under DPS).",
+      "note": "The article lists Montenegrin nationalism, pro-Europeanism and social democracy. Krivokapić is listed as leader at the 2016 election and Vuksanović at the 2020 election; the changeover dates are assumed. Current president Ivan Vujović is not recorded.",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Social_Democratic_Party_of_Montenegro",
+          "title": "Wikipedia: Social Democratic Party of Montenegro",
+          "accessed": "2026-10-15"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/2016_Montenegrin_parliamentary_election",
+          "title": "Wikipedia: 2016 Montenegrin parliamentary election",
+          "accessed": "2026-10-15"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/2020_Montenegrin_parliamentary_election",
+          "title": "Wikipedia: 2020 Montenegrin parliamentary election",
+          "accessed": "2026-10-15"
+        }
+      ],
+      "confidence": "needs_review",
+      "review_note": "Check the years Ranko Krivokapić (2001 assumed) and Draginja Vuksanović (2019 assumed) led the party."
+    },
+    {
+      "id": "mne.ns",
+      "name": {
+        "en": "People's Party",
+        "native": "Narodna stranka"
+      },
+      "abbrev": {
+        "en": "NS",
+        "native": "NS"
+      },
+      "color": "#00539C",
+      "sub_ideology": "christian_democrat",
+      "founded": 1990,
+      "status_2000": "active",
+      "leader_history": [],
+      "popularity_2000": 0,
+      "popularity_note": "Ran in the DPS-led coalition in 1998 (share included under DPS).",
+      "note": "Founded by Novak Kilibarda (not recorded as a person). The article lists cultural conservatism, Serb ethnic interests, Serbian–Montenegrin unionism and Christian democracy. Part of the governing coalition formed after the 1998 election.",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/People's_Party_(Montenegro)",
+          "title": "Wikipedia: People's Party (Montenegro)",
+          "accessed": "2026-10-15"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/1998_Montenegrin_parliamentary_election",
+          "title": "Wikipedia: 1998 Montenegrin parliamentary election",
+          "accessed": "2026-10-15"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "mne.lscg",
+      "name": {
+        "en": "Liberal Alliance of Montenegro",
+        "native": "Liberalni savez Crne Gore"
+      },
+      "abbrev": {
+        "en": "LSCG",
+        "native": "LSCG"
+      },
+      "color": "#2E8B57",
+      "sub_ideology": "social_liberal",
+      "founded": "1990-01-26",
+      "dissolved": 2005,
+      "status_2000": "active",
+      "leader_history": [
+        {
+          "person": "mne.slavko_perovic",
+          "from": 1990,
+          "to": 1999
+        },
+        {
+          "person": "mne.miodrag_zivkovic",
+          "from": 2002,
+          "to": 2004
+        }
+      ],
+      "popularity_2000": 0.0629,
+      "popularity_note": "1998 parliamentary vote share.",
+      "note": "The article lists liberalism, civic nationalism and Montenegrin sovereignism. Leaders not recorded as people: Miroslav Vicković (1999-2002) and Vesna Perović (2004-2005); the article's leader list ends in 2005 (dissolution year assumed).",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Liberal_Alliance_of_Montenegro",
+          "title": "Wikipedia: Liberal Alliance of Montenegro",
+          "accessed": "2026-10-15"
+        }
+      ],
+      "confidence": "needs_review",
+      "review_note": "Check whether and when the Liberal Alliance dissolved (2005 assumed from the end of its leader list)."
+    },
+    {
+      "id": "mne.sns",
+      "name": {
+        "en": "Serb People's Party",
+        "native": "Srpska narodna stranka"
+      },
+      "abbrev": {
+        "en": "SNS",
+        "native": "СНС"
+      },
+      "color": "#0067A5",
+      "sub_ideology": "national_conservative",
+      "founded": 1997,
+      "dissolved": 2009,
+      "status_2000": "extra_parliamentary",
+      "leader_history": [
+        {
+          "person": "mne.bozidar_bojovic",
+          "from": 1997
+        },
+        {
+          "person": "mne.andrija_mandic",
+          "from": 2006,
+          "to": 2009
+        }
+      ],
+      "popularity_2000": 0,
+      "popularity_note": "Did not win seats in the Montenegrin parliament in 1998.",
+      "lineage": {
+        "split_from": "mne.ns",
+        "merged_into": "mne.nsd"
+      },
+      "note": "The article lists national conservatism, Serbian–Montenegrin unionism and Serbian nationalism. Won federal seats in 2000. Led the Serb List in 2006. Merged into New Serb Democracy in 2009.",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Serb_People's_Party_(Montenegro)",
+          "title": "Wikipedia: Serb People's Party (Montenegro)",
+          "accessed": "2026-10-15"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/2000_Yugoslavian_general_election",
+          "title": "Wikipedia: 2000 Yugoslavian general election",
+          "accessed": "2026-10-15"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "mne.nsd",
+      "name": {
+        "en": "New Serb Democracy",
+        "native": "Nova srpska demokratija"
+      },
+      "abbrev": {
+        "en": "NOVA",
+        "native": "NOVA"
+      },
+      "color": "#1C3F94",
+      "sub_ideology": "national_conservative",
+      "founded": "2009-01-24",
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        {
+          "person": "mne.andrija_mandic",
+          "from": "2009-01-24"
+        }
+      ],
+      "popularity_2000": 0,
+      "note": "The article lists Serbian nationalism, Serbian–Montenegrin unionism, right-wing populism and social conservatism. Core member of the Democratic Front (2012-2023) and of For the Future of Montenegro (2023).",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/New_Serb_Democracy",
+          "title": "Wikipedia: New Serb Democracy",
+          "accessed": "2026-10-15"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "mne.pzp",
+      "name": {
+        "en": "Movement for Changes",
+        "native": "Pokret za promjene"
+      },
+      "abbrev": {
+        "en": "PzP",
+        "native": "PzP"
+      },
+      "color": "#FF8C00",
+      "sub_ideology": "national_conservative",
+      "founded": "2006-07-17",
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        {
+          "person": "mne.nebojsa_medojevic",
+          "from": "2006-07-17"
+        }
+      ],
+      "popularity_2000": 0,
+      "note": "The article lists populism and national conservatism.",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Movement_for_Changes",
+          "title": "Wikipedia: Movement for Changes",
+          "accessed": "2026-10-15"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "mne.df",
+      "name": {
+        "en": "Democratic Front",
+        "native": "Demokratski front"
+      },
+      "abbrev": {
+        "en": "DF",
+        "native": "DF"
+      },
+      "color": "#3B5998",
+      "sub_ideology": "national_conservative",
+      "founded": "2012-07-24",
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        {
+          "person": "mne.miodrag_lekic",
+          "from": "2012-07-24"
+        },
+        {
+          "person": "mne.andrija_mandic",
+          "from": 2016
+        }
+      ],
+      "popularity_2000": 0,
+      "note": "Alliance with collective leadership (NSD, PzP and others); the article lists Serbian nationalism, social conservatism and right-wing populism. Lekić led its 2012 list and Mandić its 2016 list. Partly succeeded by For the Future of Montenegro.",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Democratic_Front_(Montenegro)",
+          "title": "Wikipedia: Democratic Front (Montenegro)",
+          "accessed": "2026-10-15"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/2012_Montenegrin_parliamentary_election",
+          "title": "Wikipedia: 2012 Montenegrin parliamentary election",
+          "accessed": "2026-10-15"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/2016_Montenegrin_parliamentary_election",
+          "title": "Wikipedia: 2016 Montenegrin parliamentary election",
+          "accessed": "2026-10-15"
+        }
+      ],
+      "confidence": "needs_review",
+      "review_note": "Collective leadership: list leaders are recorded as leaders; check dates."
+    },
+    {
+      "id": "mne.dcg",
+      "name": {
+        "en": "Democratic Montenegro",
+        "native": "Demokratska Crna Gora"
+      },
+      "abbrev": {
+        "en": "DCG",
+        "native": "DCG"
+      },
+      "color": "#00A0E3",
+      "sub_ideology": "liberal_conservative",
+      "founded": "2015-04-19",
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        {
+          "person": "mne.aleksa_becic",
+          "from": "2015-04-19"
+        }
+      ],
+      "popularity_2000": 0,
+      "lineage": {
+        "split_from": "mne.snp"
+      },
+      "note": "The article lists conservative liberalism and populism. Led the Peace is Our Nation list (2020) and the Aleksa and Dritan – Count Bravely! list with URA (2023).",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Democratic_Montenegro",
+          "title": "Wikipedia: Democratic Montenegro",
+          "accessed": "2026-10-15"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "mne.ura",
+      "name": {
+        "en": "United Reform Action",
+        "native": "Ujedinjena reformska akcija"
+      },
+      "abbrev": {
+        "en": "URA",
+        "native": "URA"
+      },
+      "color": "#7CB342",
+      "sub_ideology": "green",
+      "founded": "2015-03-14",
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        {
+          "person": "mne.dritan_abazovic",
+          "from": 2017
+        }
+      ],
+      "popularity_2000": 0,
+      "note": "Founded by Žarko Rakčević (not recorded). The article lists green liberalism, social liberalism and progressivism. Led the In Black and White list in 2020. Abazović's start year as president is not given in the fetched text.",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/United_Reform_Action",
+          "title": "Wikipedia: United Reform Action",
+          "accessed": "2026-10-15"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/2020_Montenegrin_parliamentary_election",
+          "title": "Wikipedia: 2020 Montenegrin parliamentary election",
+          "accessed": "2026-10-15"
+        }
+      ],
+      "confidence": "needs_review",
+      "review_note": "Check when Dritan Abazović became URA president (2017 assumed)."
+    },
+    {
+      "id": "mne.bs",
+      "name": {
+        "en": "Bosniak Party",
+        "native": "Bošnjačka stranka"
+      },
+      "abbrev": {
+        "en": "BS",
+        "native": "BS"
+      },
+      "color": "#006633",
+      "sub_ideology": "regionalist",
+      "founded": "2006-02-26",
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        {
+          "person": "mne.rafet_husovic",
+          "from": "2006-02-26"
+        },
+        {
+          "person": "mne.ervin_ibrahimovic",
+          "from": 2023
+        }
+      ],
+      "popularity_2000": 0,
+      "regional_base": [
+        "bosniak"
+      ],
+      "note": "The article lists Bosniak nationalism, social conservatism and Bosniak minority interests. Ibrahimović is listed as leader at the 2023 election (start year assumed).",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Bosniak_Party",
+          "title": "Wikipedia: Bosniak Party",
+          "accessed": "2026-10-15"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/2023_Montenegrin_parliamentary_election",
+          "title": "Wikipedia: 2023 Montenegrin parliamentary election",
+          "accessed": "2026-10-15"
+        }
+      ],
+      "confidence": "needs_review",
+      "review_note": "Check when Ervin Ibrahimović became party president (2023 assumed)."
+    },
+    {
+      "id": "mne.sd",
+      "name": {
+        "en": "Social Democrats of Montenegro",
+        "native": "Socijaldemokrate Crne Gore"
+      },
+      "abbrev": {
+        "en": "SD",
+        "native": "SD"
+      },
+      "color": "#E30613",
+      "sub_ideology": "social_democrat",
+      "founded": "2015-07-31",
+      "status_2000": "not_yet_founded",
+      "leader_history": [],
+      "popularity_2000": 0,
+      "lineage": {
+        "split_from": "mne.sdp"
+      },
+      "note": "Leaders (Ivan Brajović, Damir Šehović) not recorded as people. Ran within the DPS list in 2023.",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Social_Democrats_of_Montenegro",
+          "title": "Wikipedia: Social Democrats of Montenegro",
+          "accessed": "2026-10-15"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "mne.pes",
+      "name": {
+        "en": "Europe Now!",
+        "native": "Pokret Evropa sad!"
+      },
+      "abbrev": {
+        "en": "PES!",
+        "native": "PES!"
+      },
+      "color": "#FFD700",
+      "sub_ideology": "centrist_liberal",
+      "founded": "2022-06-26",
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        {
+          "person": "mne.milojko_spajic",
+          "from": "2022-06-26"
+        }
+      ],
+      "popularity_2000": 0,
+      "note": "The article lists populism, economic liberalism and pro-Europeanism; centre to centre-right. Largest party since 2023.",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Europe_Now!",
+          "title": "Wikipedia: Europe Now!",
+          "accessed": "2026-10-15"
+        }
+      ],
+      "confidence": "verified"
+    }
+  ]
+}

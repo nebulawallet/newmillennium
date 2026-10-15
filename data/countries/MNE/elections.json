@@ -1,0 +1,734 @@
+{
+  "rules": [
+    {
+      "kind": "legislative",
+      "chamber": "parliament",
+      "every_years": 4,
+      "anchor": "2023-06-11",
+      "snap_possible": true,
+      "note": "Four-year term; most elections since 2001 were early."
+    },
+    {
+      "kind": "presidential",
+      "office": "mne.president",
+      "every_years": 5,
+      "anchor": "2023-03-19",
+      "snap_possible": true,
+      "note": "Direct two-round election."
+    }
+  ],
+  "elections": [
+    {
+      "id": "parliament_2001",
+      "date": "2001-04-22",
+      "kind": "legislative",
+      "chamber": "parliament",
+      "snap": true,
+      "historical": {
+        "party_results": [
+          {
+            "party": "mne.dps",
+            "share": 0.4236,
+            "seats": 36
+          },
+          {
+            "party": "mne.snp",
+            "share": 0.4087,
+            "seats": 33
+          },
+          {
+            "party": "mne.lscg",
+            "share": 0.0791,
+            "seats": 6
+          },
+          {
+            "party": "others",
+            "seats": 2
+          }
+        ],
+        "winner": "mne.dps",
+        "note": "Early election. DPS figure is the Victory is Montenegro coalition (DPS–SDP); SNP the Together for Yugoslavia coalition (with NS and SNS). Others: Democratic Union of Albanians and Democratic League in Montenegro (1 each). 77 seats.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2001_Montenegrin_parliamentary_election",
+            "title": "Wikipedia: 2001 Montenegrin parliamentary election",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "parliament_2002",
+      "date": "2002-10-20",
+      "kind": "legislative",
+      "chamber": "parliament",
+      "snap": true,
+      "historical": {
+        "party_results": [
+          {
+            "party": "mne.dps",
+            "share": 0.4798,
+            "seats": 39
+          },
+          {
+            "party": "mne.snp",
+            "share": 0.3843,
+            "seats": 30
+          },
+          {
+            "party": "mne.lscg",
+            "share": 0.0585,
+            "seats": 4
+          },
+          {
+            "party": "others",
+            "share": 0.0244,
+            "seats": 2
+          }
+        ],
+        "winner": "mne.dps",
+        "note": "Early election. DPS figure is the Coalition for a European Montenegro; SNP the Together for Changes coalition. Others: Albanians Together. 75 seats. Đukanović became Prime Minister in January 2003.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2002_Montenegrin_parliamentary_election",
+            "title": "Wikipedia: 2002 Montenegrin parliamentary election",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "president_2002",
+      "date": "2002-12-22",
+      "kind": "presidential",
+      "office": "mne.president",
+      "rounds": 1,
+      "historical": {
+        "candidates": [
+          {
+            "person": "mne.filip_vujanovic",
+            "party": "mne.dps",
+            "share": 0.8573,
+            "votes": 175328,
+            "round": 1
+          },
+          {
+            "person": "mne.dragan_hajdukovic",
+            "share": 0.0602,
+            "votes": 12319,
+            "round": 1
+          }
+        ],
+        "turnout": 0.4587,
+        "note": "Invalid: turnout (45.87%) was below the required 50%. Vujanović led the vote. Shares computed from the vote counts.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2002_Montenegrin_presidential_election",
+            "title": "Wikipedia: 2002 Montenegrin presidential election",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "president_2003_feb",
+      "date": "2003-02-09",
+      "kind": "presidential",
+      "office": "mne.president",
+      "rounds": 1,
+      "historical": {
+        "candidates": [
+          {
+            "person": "mne.filip_vujanovic",
+            "party": "mne.dps",
+            "share": 0.845,
+            "votes": 174536,
+            "round": 1
+          },
+          {
+            "person": "mne.dragan_hajdukovic",
+            "share": 0.0705,
+            "votes": 14556,
+            "round": 1
+          }
+        ],
+        "turnout": 0.4673,
+        "note": "Repeat election; invalid because turnout was below the required 50%. Vujanović led the vote. Shares computed from the vote counts.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/February_2003_Montenegrin_presidential_election",
+            "title": "Wikipedia: February 2003 Montenegrin presidential election",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "president_2003_may",
+      "date": "2003-05-11",
+      "kind": "presidential",
+      "office": "mne.president",
+      "rounds": 1,
+      "historical": {
+        "candidates": [
+          {
+            "person": "mne.filip_vujanovic",
+            "party": "mne.dps",
+            "share": 0.6425,
+            "votes": 139574,
+            "round": 1
+          },
+          {
+            "person": "mne.miodrag_zivkovic",
+            "party": "mne.lscg",
+            "share": 0.3138,
+            "votes": 68169,
+            "round": 1
+          }
+        ],
+        "winner": "mne.filip_vujanovic",
+        "turnout": 0.4832,
+        "note": "Third attempt; valid with a turnout of 48.32%. Shares computed from the vote counts.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/May_2003_Montenegrin_presidential_election",
+            "title": "Wikipedia: May 2003 Montenegrin presidential election",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "ref_independence_2006",
+      "date": "2006-05-21",
+      "kind": "referendum",
+      "question": "Do you want the Republic of Montenegro to be an independent state with full international and legal personality?",
+      "historical": {
+        "yes_share": 0.555,
+        "winner": "yes",
+        "turnout": 0.8649,
+        "note": "For 230,711; against 184,954; invalid/blank 3,571; electorate 484,718. Passed with about 55.5% in favour, above the required 55%. Independence was declared on 3 June 2006.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2006_Montenegrin_independence_referendum",
+            "title": "Wikipedia: 2006 Montenegrin independence referendum",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "parliament_2006",
+      "date": "2006-09-10",
+      "kind": "legislative",
+      "chamber": "parliament",
+      "historical": {
+        "party_results": [
+          {
+            "party": "mne.dps",
+            "share": 0.4862,
+            "seats": 41
+          },
+          {
+            "party": "mne.sns",
+            "share": 0.1468,
+            "seats": 12
+          },
+          {
+            "party": "mne.snp",
+            "share": 0.1407,
+            "seats": 11
+          },
+          {
+            "party": "mne.pzp",
+            "share": 0.1313,
+            "seats": 11
+          },
+          {
+            "party": "others",
+            "seats": 6
+          }
+        ],
+        "winner": "mne.dps",
+        "turnout": 0.7137,
+        "note": "First election after independence. DPS figure is the European Montenegro coalition (DPS–SDP); SNS the Serb List; SNP the SNP–NS–DSS list. Others: Liberal Party–Bosniak Party (3), DSCG–PDP, Democratic Union of Albanians and Albanian Alternative (1 each).",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2006_Montenegrin_parliamentary_election",
+            "title": "Wikipedia: 2006 Montenegrin parliamentary election",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "president_2008",
+      "date": "2008-04-06",
+      "kind": "presidential",
+      "office": "mne.president",
+      "rounds": 1,
+      "historical": {
+        "candidates": [
+          {
+            "person": "mne.filip_vujanovic",
+            "party": "mne.dps",
+            "share": 0.5189,
+            "votes": 171118,
+            "round": 1
+          },
+          {
+            "person": "mne.andrija_mandic",
+            "party": "mne.sns",
+            "share": 0.1955,
+            "votes": 64473,
+            "round": 1
+          },
+          {
+            "person": "mne.nebojsa_medojevic",
+            "party": "mne.pzp",
+            "share": 0.1664,
+            "votes": 54874,
+            "round": 1
+          },
+          {
+            "person": "mne.srdjan_milic",
+            "party": "mne.snp",
+            "share": 0.1192,
+            "votes": 39316,
+            "round": 1
+          }
+        ],
+        "winner": "mne.filip_vujanovic",
+        "turnout": 0.682,
+        "note": "Won in the first round. Shares computed from the vote counts.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2008_Montenegrin_presidential_election",
+            "title": "Wikipedia: 2008 Montenegrin presidential election",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "parliament_2009",
+      "date": "2009-03-29",
+      "kind": "legislative",
+      "chamber": "parliament",
+      "snap": true,
+      "historical": {
+        "party_results": [
+          {
+            "party": "mne.dps",
+            "share": 0.5194,
+            "seats": 48
+          },
+          {
+            "party": "mne.snp",
+            "share": 0.1684,
+            "seats": 16
+          },
+          {
+            "party": "mne.nsd",
+            "share": 0.0922,
+            "seats": 8
+          },
+          {
+            "party": "mne.pzp",
+            "share": 0.0603,
+            "seats": 5
+          },
+          {
+            "party": "others",
+            "seats": 4
+          }
+        ],
+        "winner": "mne.dps",
+        "turnout": 0.6619,
+        "note": "Early election. DPS figure is the European Montenegro coalition. Others: Democratic Union of Albanians, New Democratic Force, DS–AA and AKP (1 each).",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2009_Montenegrin_parliamentary_election",
+            "title": "Wikipedia: 2009 Montenegrin parliamentary election",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "parliament_2012",
+      "date": "2012-10-14",
+      "kind": "legislative",
+      "chamber": "parliament",
+      "snap": true,
+      "historical": {
+        "party_results": [
+          {
+            "party": "mne.dps",
+            "share": 0.4633,
+            "seats": 39
+          },
+          {
+            "party": "mne.df",
+            "share": 0.2319,
+            "seats": 20
+          },
+          {
+            "party": "mne.snp",
+            "share": 0.1124,
+            "seats": 9
+          },
+          {
+            "party": "mne.bs",
+            "share": 0.0424,
+            "seats": 3
+          },
+          {
+            "party": "others",
+            "seats": 10
+          }
+        ],
+        "winner": "mne.dps",
+        "turnout": 0.7056,
+        "note": "Early election. DPS figure is the European Montenegro coalition. Others: Positive Montenegro (7, 8.37%), Albanian lists (2) and Croatian Civic Initiative (1).",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2012_Montenegrin_parliamentary_election",
+            "title": "Wikipedia: 2012 Montenegrin parliamentary election",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "president_2013",
+      "date": "2013-04-07",
+      "kind": "presidential",
+      "office": "mne.president",
+      "rounds": 1,
+      "historical": {
+        "candidates": [
+          {
+            "person": "mne.filip_vujanovic",
+            "party": "mne.dps",
+            "share": 0.5121,
+            "votes": 161940,
+            "round": 1
+          },
+          {
+            "person": "mne.miodrag_lekic",
+            "share": 0.4879,
+            "votes": 154289,
+            "round": 1
+          }
+        ],
+        "winner": "mne.filip_vujanovic",
+        "turnout": 0.639,
+        "note": "Won in the first round. Lekić stood as an independent. Shares computed from the vote counts.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2013_Montenegrin_presidential_election",
+            "title": "Wikipedia: 2013 Montenegrin presidential election",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "parliament_2016",
+      "date": "2016-10-16",
+      "kind": "legislative",
+      "chamber": "parliament",
+      "historical": {
+        "party_results": [
+          {
+            "party": "mne.dps",
+            "share": 0.4141,
+            "seats": 36
+          },
+          {
+            "party": "mne.df",
+            "share": 0.2032,
+            "seats": 18
+          },
+          {
+            "party": "mne.dcg",
+            "share": 0.1001,
+            "seats": 8
+          },
+          {
+            "party": "mne.sdp",
+            "share": 0.0523,
+            "seats": 4
+          },
+          {
+            "party": "mne.sd",
+            "share": 0.0326,
+            "seats": 2
+          },
+          {
+            "party": "mne.bs",
+            "share": 0.0316,
+            "seats": 2
+          },
+          {
+            "party": "others",
+            "seats": 11
+          }
+        ],
+        "winner": "mne.dps",
+        "turnout": 0.7341,
+        "note": "Others: the Key coalition (9, 11.05%; led by Miodrag Lekić), Albanians Decisively and Croatian Civic Initiative (1 each). Duško Marković formed a DPS-led government.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2016_Montenegrin_parliamentary_election",
+            "title": "Wikipedia: 2016 Montenegrin parliamentary election",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "president_2018",
+      "date": "2018-04-15",
+      "kind": "presidential",
+      "office": "mne.president",
+      "rounds": 1,
+      "historical": {
+        "candidates": [
+          {
+            "person": "mne.milo_djukanovic",
+            "party": "mne.dps",
+            "share": 0.539,
+            "votes": 180272,
+            "round": 1
+          },
+          {
+            "person": "mne.mladen_bojanic",
+            "share": 0.334,
+            "votes": 111711,
+            "round": 1
+          },
+          {
+            "person": "mne.draginja_vuksanovic",
+            "party": "mne.sdp",
+            "share": 0.082,
+            "votes": 27441,
+            "round": 1
+          }
+        ],
+        "winner": "mne.milo_djukanovic",
+        "turnout": 0.6392,
+        "note": "Won in the first round. Shares computed from the vote counts.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2018_Montenegrin_presidential_election",
+            "title": "Wikipedia: 2018 Montenegrin presidential election",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "parliament_2020",
+      "date": "2020-08-30",
+      "kind": "legislative",
+      "chamber": "parliament",
+      "historical": {
+        "party_results": [
+          {
+            "party": "mne.dps",
+            "share": 0.3506,
+            "seats": 30
+          },
+          {
+            "party": "mne.df",
+            "share": 0.3255,
+            "seats": 27
+          },
+          {
+            "party": "mne.dcg",
+            "share": 0.1253,
+            "seats": 10
+          },
+          {
+            "party": "mne.ura",
+            "share": 0.0554,
+            "seats": 4
+          },
+          {
+            "party": "mne.sd",
+            "share": 0.0409,
+            "seats": 3
+          },
+          {
+            "party": "mne.bs",
+            "share": 0.0398,
+            "seats": 3
+          },
+          {
+            "party": "mne.sdp",
+            "share": 0.0314,
+            "seats": 2
+          },
+          {
+            "party": "others",
+            "seats": 2
+          }
+        ],
+        "winner": "mne.dps",
+        "turnout": 0.7664,
+        "note": "DF figure is the For the Future of Montenegro coalition led by Zdravko Krivokapić; DCG the Peace is Our Nation coalition; URA the In Black and White list. Others: Albanian List and Albanian Coalition (1 each).",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2020_Montenegrin_parliamentary_election",
+            "title": "Wikipedia: 2020 Montenegrin parliamentary election",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "president_2023",
+      "date": "2023-03-19",
+      "kind": "presidential",
+      "office": "mne.president",
+      "rounds": 2,
+      "historical": {
+        "candidates": [
+          {
+            "person": "mne.milo_djukanovic",
+            "party": "mne.dps",
+            "share": 0.3537,
+            "votes": 119685,
+            "round": 1
+          },
+          {
+            "person": "mne.jakov_milatovic",
+            "party": "mne.pes",
+            "share": 0.2892,
+            "votes": 97867,
+            "round": 1
+          },
+          {
+            "person": "mne.andrija_mandic",
+            "party": "mne.nsd",
+            "share": 0.1932,
+            "votes": 65394,
+            "round": 1
+          },
+          {
+            "person": "mne.aleksa_becic",
+            "party": "mne.dcg",
+            "share": 0.111,
+            "votes": 37563,
+            "round": 1
+          },
+          {
+            "person": "mne.jakov_milatovic",
+            "party": "mne.pes",
+            "share": 0.5888,
+            "votes": 221592,
+            "round": 2
+          },
+          {
+            "person": "mne.milo_djukanovic",
+            "party": "mne.dps",
+            "share": 0.4112,
+            "votes": 154769,
+            "round": 2
+          }
+        ],
+        "winner": "mne.jakov_milatovic",
+        "turnout": 0.6407,
+        "note": "First round 19 March, runoff 2 April 2023. Mandić was the Democratic Front candidate. Shares computed from the vote counts; turnout is the first round (70.14% in the runoff).",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2023_Montenegrin_presidential_election",
+            "title": "Wikipedia: 2023 Montenegrin presidential election",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "parliament_2023",
+      "date": "2023-06-11",
+      "kind": "legislative",
+      "chamber": "parliament",
+      "snap": true,
+      "historical": {
+        "party_results": [
+          {
+            "party": "mne.pes",
+            "share": 0.2553,
+            "seats": 24
+          },
+          {
+            "party": "mne.dps",
+            "share": 0.2322,
+            "seats": 21
+          },
+          {
+            "party": "mne.nsd",
+            "share": 0.1474,
+            "seats": 13
+          },
+          {
+            "party": "mne.dcg",
+            "share": 0.1248,
+            "seats": 11
+          },
+          {
+            "party": "mne.bs",
+            "share": 0.0708,
+            "seats": 6
+          },
+          {
+            "party": "mne.snp",
+            "share": 0.0313,
+            "seats": 2
+          },
+          {
+            "party": "others",
+            "seats": 4
+          }
+        ],
+        "winner": "mne.pes",
+        "turnout": 0.5628,
+        "note": "Early election. DPS list included SD and others; NSD figure is the For the Future of Montenegro list (NSD and the Democratic People's Party); DCG the Aleksa and Dritan – Count Bravely! list (with URA); SNP the SNP–Demos list. Others: Albanian lists (3) and Croatian Civic Initiative (1). Spajić formed a government in October 2023.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2023_Montenegrin_parliamentary_election",
+            "title": "Wikipedia: 2023 Montenegrin parliamentary election",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified"
+      }
+    }
+  ],
+  "source": [
+    {
+      "url": "https://en.wikipedia.org/wiki/Template:Montenegrin_elections",
+      "title": "Wikipedia: Template:Montenegrin elections",
+      "accessed": "2026-10-15"
+    }
+  ],
+  "confidence": "verified"
+}

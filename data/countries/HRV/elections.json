@@ -1,0 +1,946 @@
+{
+  "rules": [
+    {
+      "kind": "legislative",
+      "chamber": "sabor",
+      "every_years": 4,
+      "anchor": "2024-04-17",
+      "snap_possible": true,
+      "note": "Four-year term; early elections in 2016, 2020 and 2024."
+    },
+    {
+      "kind": "presidential",
+      "office": "hrv.president",
+      "every_years": 5,
+      "anchor": "2024-12-29",
+      "snap_possible": true,
+      "note": "Direct two-round election."
+    }
+  ],
+  "elections": [
+    {
+      "id": "sabor_2000",
+      "date": "2000-01-03",
+      "kind": "legislative",
+      "chamber": "sabor",
+      "historical": {
+        "party_results": [
+          {
+            "party": "hrv.sdp",
+            "share": 0.3925,
+            "seats": 71
+          },
+          {
+            "party": "hrv.hdz",
+            "share": 0.2704,
+            "seats": 46
+          },
+          {
+            "party": "hrv.hss",
+            "share": 0.1492,
+            "seats": 24
+          },
+          {
+            "party": "hrv.hsp",
+            "share": 0.053,
+            "seats": 5
+          },
+          {
+            "party": "hrv.hsu",
+            "share": 0.0182,
+            "seats": 0
+          },
+          {
+            "party": "hrv.sdss",
+            "share": 0.0079,
+            "seats": 0
+          },
+          {
+            "party": "others",
+            "seats": 5
+          }
+        ],
+        "winner": "hrv.sdp",
+        "turnout": 0.7085,
+        "note": "Joint lists recorded under the leading party: SDP–HSLS–PGS–SBHS (SDP), HSS–IDS–HNS–LS–ASH (HSS), HSP–HKDU (HSP). Five national-minority seats as others. Chamber enlarged to 151 seats. Račan formed an SDP-led six-party government on 27 January 2000.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2000_Croatian_parliamentary_election",
+            "title": "Wikipedia: 2000 Croatian parliamentary election",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "president_2000",
+      "date": "2000-01-24",
+      "kind": "presidential",
+      "office": "hrv.president",
+      "rounds": 2,
+      "snap": true,
+      "historical": {
+        "candidates": [
+          {
+            "person": "hrv.stjepan_mesic",
+            "party": "hrv.hns",
+            "share": 0.4131,
+            "votes": 1100671,
+            "round": 1
+          },
+          {
+            "person": "hrv.drazen_budisa",
+            "party": "hrv.hsls",
+            "share": 0.2784,
+            "votes": 741837,
+            "round": 1
+          },
+          {
+            "person": "hrv.mate_granic",
+            "party": "hrv.hdz",
+            "share": 0.2258,
+            "votes": 601588,
+            "round": 1
+          },
+          {
+            "person": "hrv.stjepan_mesic",
+            "party": "hrv.hns",
+            "share": 0.5601,
+            "votes": 1433372,
+            "round": 2
+          },
+          {
+            "person": "hrv.drazen_budisa",
+            "party": "hrv.hsls",
+            "share": 0.4399,
+            "votes": 1125969,
+            "round": 2
+          }
+        ],
+        "winner": "hrv.stjepan_mesic",
+        "turnout": 0.6298,
+        "note": "Early election after President Tuđman's death. First round 24 January, runoff 7 February 2000. Shares computed from the vote counts; turnout is the first round.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2000_Croatian_presidential_election",
+            "title": "Wikipedia: 2000 Croatian presidential election",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "sabor_2003",
+      "date": "2003-11-23",
+      "kind": "legislative",
+      "chamber": "sabor",
+      "historical": {
+        "party_results": [
+          {
+            "party": "hrv.hdz",
+            "share": 0.3391,
+            "seats": 66
+          },
+          {
+            "party": "hrv.sdp",
+            "share": 0.2261,
+            "seats": 43
+          },
+          {
+            "party": "hrv.hns",
+            "share": 0.0802,
+            "seats": 11
+          },
+          {
+            "party": "hrv.hss",
+            "share": 0.0715,
+            "seats": 9
+          },
+          {
+            "party": "hrv.hsp",
+            "share": 0.0638,
+            "seats": 8
+          },
+          {
+            "party": "hrv.hsls",
+            "share": 0.0405,
+            "seats": 3
+          },
+          {
+            "party": "hrv.hsu",
+            "share": 0.0397,
+            "seats": 3
+          },
+          {
+            "party": "hrv.sdss",
+            "seats": 3
+          },
+          {
+            "party": "others",
+            "seats": 6
+          }
+        ],
+        "winner": "hrv.hdz",
+        "turnout": 0.6165,
+        "note": "Joint lists under the leading party: SDP–IDS–SLD–LS, HNS–PGS–SBHS, HSP–ZDS–MS, HSLS–DC. Others: one HDSS-coalition seat and five minority seats. 152 seats in total. Sanader formed an HDZ-led government.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2003_Croatian_parliamentary_election",
+            "title": "Wikipedia: 2003 Croatian parliamentary election",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "president_2005",
+      "date": "2005-01-02",
+      "kind": "presidential",
+      "office": "hrv.president",
+      "rounds": 2,
+      "historical": {
+        "candidates": [
+          {
+            "person": "hrv.stjepan_mesic",
+            "party": "hrv.hns",
+            "share": 0.4937,
+            "votes": 1089398,
+            "round": 1
+          },
+          {
+            "person": "hrv.jadranka_kosor",
+            "party": "hrv.hdz",
+            "share": 0.2049,
+            "votes": 452218,
+            "round": 1
+          },
+          {
+            "person": "hrv.boris_miksic",
+            "share": 0.1795,
+            "votes": 396093,
+            "round": 1
+          },
+          {
+            "person": "hrv.stjepan_mesic",
+            "party": "hrv.hns",
+            "share": 0.6593,
+            "votes": 1454451,
+            "round": 2
+          },
+          {
+            "person": "hrv.jadranka_kosor",
+            "party": "hrv.hdz",
+            "share": 0.3407,
+            "votes": 751692,
+            "round": 2
+          }
+        ],
+        "winner": "hrv.stjepan_mesic",
+        "turnout": 0.5057,
+        "note": "First round 2 January, runoff 16 January 2005. Mesić was backed by HNS and other parties; Mikšić stood as an independent. Turnout is the first round.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2005_Croatian_presidential_election",
+            "title": "Wikipedia: 2005 Croatian presidential election",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "sabor_2007",
+      "date": "2007-11-25",
+      "kind": "legislative",
+      "chamber": "sabor",
+      "historical": {
+        "party_results": [
+          {
+            "party": "hrv.hdz",
+            "share": 0.3662,
+            "seats": 66
+          },
+          {
+            "party": "hrv.sdp",
+            "share": 0.3133,
+            "seats": 56
+          },
+          {
+            "party": "hrv.hns",
+            "share": 0.0679,
+            "seats": 7
+          },
+          {
+            "party": "hrv.hss",
+            "share": 0.0653,
+            "seats": 8
+          },
+          {
+            "party": "hrv.hsu",
+            "share": 0.0408,
+            "seats": 1
+          },
+          {
+            "party": "hrv.hsp",
+            "share": 0.035,
+            "seats": 1
+          },
+          {
+            "party": "hrv.hdssb",
+            "share": 0.018,
+            "seats": 3
+          },
+          {
+            "party": "hrv.ids",
+            "share": 0.0154,
+            "seats": 3
+          },
+          {
+            "party": "hrv.sdss",
+            "seats": 3
+          },
+          {
+            "party": "others",
+            "seats": 5
+          }
+        ],
+        "winner": "hrv.hdz",
+        "turnout": 0.5948,
+        "note": "HSS figure is the HSS–HSLS coalition; HSU the HSU–DSU list. Minority seats not won by a recorded party are counted as others. 153 seats in total. Sanader formed his second government.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2007_Croatian_parliamentary_election",
+            "title": "Wikipedia: 2007 Croatian parliamentary election",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "president_2009",
+      "date": "2009-12-27",
+      "kind": "presidential",
+      "office": "hrv.president",
+      "rounds": 2,
+      "historical": {
+        "candidates": [
+          {
+            "person": "hrv.ivo_josipovic",
+            "party": "hrv.sdp",
+            "share": 0.3278,
+            "votes": 640594,
+            "round": 1
+          },
+          {
+            "person": "hrv.milan_bandic",
+            "share": 0.1499,
+            "votes": 293068,
+            "round": 1
+          },
+          {
+            "person": "hrv.andrija_hebrang",
+            "party": "hrv.hdz",
+            "share": 0.1218,
+            "votes": 237998,
+            "round": 1
+          },
+          {
+            "person": "hrv.nadan_vidosevic",
+            "share": 0.1146,
+            "votes": 223892,
+            "round": 1
+          },
+          {
+            "person": "hrv.vesna_pusic",
+            "party": "hrv.hns",
+            "share": 0.0733,
+            "votes": 143190,
+            "round": 1
+          },
+          {
+            "person": "hrv.dragan_primorac",
+            "share": 0.0599,
+            "votes": 117154,
+            "round": 1
+          },
+          {
+            "person": "hrv.ivo_josipovic",
+            "party": "hrv.sdp",
+            "share": 0.6026,
+            "votes": 1339385,
+            "round": 2
+          },
+          {
+            "person": "hrv.milan_bandic",
+            "share": 0.3974,
+            "votes": 883222,
+            "round": 2
+          }
+        ],
+        "winner": "hrv.ivo_josipovic",
+        "turnout": 0.4394,
+        "note": "First round 27 December 2009, runoff 10 January 2010. Shares computed from the vote counts; turnout is the first round.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2009%E2%80%9310_Croatian_presidential_election",
+            "title": "Wikipedia: 2009–10 Croatian presidential election",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "sabor_2011",
+      "date": "2011-12-04",
+      "kind": "legislative",
+      "chamber": "sabor",
+      "historical": {
+        "party_results": [
+          {
+            "party": "hrv.sdp",
+            "share": 0.4072,
+            "seats": 80
+          },
+          {
+            "party": "hrv.hdz",
+            "share": 0.2393,
+            "seats": 47
+          },
+          {
+            "party": "hrv.laburisti",
+            "share": 0.0517,
+            "seats": 6
+          },
+          {
+            "party": "hrv.hdssb",
+            "share": 0.0293,
+            "seats": 6
+          },
+          {
+            "party": "hrv.hss",
+            "share": 0.0313,
+            "seats": 1
+          },
+          {
+            "party": "independents",
+            "share": 0.0447,
+            "seats": 2
+          },
+          {
+            "party": "hrv.sdss",
+            "seats": 3
+          },
+          {
+            "party": "others",
+            "seats": 6
+          }
+        ],
+        "winner": "hrv.sdp",
+        "turnout": 0.5629,
+        "note": "SDP figure is the Kukuriku coalition (SDP, HNS, IDS, HSU); HDZ figure the HDZ–HGS–DC coalition; HSS the HSS–ZS–SP list. Others: the HSP AS–HČSP seat and five minority seats. Turnout computed from valid plus invalid votes over the electorate. Milanović formed a Kukuriku government.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2011_Croatian_parliamentary_election",
+            "title": "Wikipedia: 2011 Croatian parliamentary election",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "ref_eu_2012",
+      "date": "2012-01-22",
+      "kind": "referendum",
+      "question": "Are you in favour of the membership of the Republic of Croatia in the European Union?",
+      "historical": {
+        "yes_share": 0.6667,
+        "winner": "yes",
+        "turnout": 0.4351,
+        "note": "For 1,299,008; against 649,490; electorate 4,504,765. Turnout 43.51% as reported in the source.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2012_Croatian_European_Union_membership_referendum",
+            "title": "Wikipedia: 2012 Croatian European Union membership referendum",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "ref_marriage_2013",
+      "date": "2013-12-01",
+      "kind": "referendum",
+      "question": "Constitutional amendment defining marriage as a union of a woman and a man",
+      "historical": {
+        "yes_share": 0.6628,
+        "winner": "yes",
+        "turnout": 0.3792,
+        "note": "For 946,433; against 481,534; invalid/blank 8,196; electorate 3,787,017. Citizens' initiative; the amendment was adopted.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2013_Croatian_constitutional_referendum",
+            "title": "Wikipedia: 2013 Croatian constitutional referendum",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "president_2014",
+      "date": "2014-12-28",
+      "kind": "presidential",
+      "office": "hrv.president",
+      "rounds": 2,
+      "historical": {
+        "candidates": [
+          {
+            "person": "hrv.ivo_josipovic",
+            "share": 0.3909,
+            "votes": 687678,
+            "round": 1
+          },
+          {
+            "person": "hrv.kolinda_grabar_kitarovic",
+            "party": "hrv.hdz",
+            "share": 0.3782,
+            "votes": 665379,
+            "round": 1
+          },
+          {
+            "person": "hrv.ivan_vilibor_sincic",
+            "party": "hrv.zivi_zid",
+            "share": 0.1669,
+            "votes": 293570,
+            "round": 1
+          },
+          {
+            "person": "hrv.milan_kujundzic",
+            "share": 0.064,
+            "votes": 112585,
+            "round": 1
+          },
+          {
+            "person": "hrv.kolinda_grabar_kitarovic",
+            "party": "hrv.hdz",
+            "share": 0.5074,
+            "votes": 1114945,
+            "round": 2
+          },
+          {
+            "person": "hrv.ivo_josipovic",
+            "share": 0.4926,
+            "votes": 1082436,
+            "round": 2
+          }
+        ],
+        "winner": "hrv.kolinda_grabar_kitarovic",
+        "turnout": 0.471,
+        "note": "First round 28 December 2014, runoff 11 January 2015. Josipović stood as an independent backed by SDP; Kujundžić for the Alliance for Croatia. Runoff figures from the infobox; turnout is the first round.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2014%E2%80%9315_Croatian_presidential_election",
+            "title": "Wikipedia: 2014–15 Croatian presidential election",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "sabor_2015",
+      "date": "2015-11-08",
+      "kind": "legislative",
+      "chamber": "sabor",
+      "historical": {
+        "party_results": [
+          {
+            "party": "hrv.hdz",
+            "share": 0.3464,
+            "seats": 59
+          },
+          {
+            "party": "hrv.sdp",
+            "share": 0.3338,
+            "seats": 56
+          },
+          {
+            "party": "hrv.most",
+            "share": 0.1364,
+            "seats": 19
+          },
+          {
+            "party": "hrv.zivi_zid",
+            "share": 0.0454,
+            "seats": 1
+          },
+          {
+            "party": "hrv.ids",
+            "share": 0.019,
+            "seats": 3
+          },
+          {
+            "party": "hrv.hdssb",
+            "share": 0.0137,
+            "seats": 2
+          },
+          {
+            "party": "hrv.sdss",
+            "seats": 3
+          },
+          {
+            "party": "independents",
+            "seats": 3
+          },
+          {
+            "party": "others",
+            "seats": 5
+          }
+        ],
+        "winner": "hrv.hdz",
+        "turnout": 0.6306,
+        "note": "HDZ figure is the Patriotic Coalition; SDP the Croatia is Growing coalition; IDS the IDS–PGS–RI list. Others: Labour and Solidarity (2 seats, 3.39%), Successful Croatia (1 seat) and two minority seats. Orešković became prime minister of an HDZ–Most government in January 2016.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2015_Croatian_parliamentary_election",
+            "title": "Wikipedia: 2015 Croatian parliamentary election",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "sabor_2016",
+      "date": "2016-09-11",
+      "kind": "legislative",
+      "chamber": "sabor",
+      "snap": true,
+      "historical": {
+        "party_results": [
+          {
+            "party": "hrv.hdz",
+            "share": 0.3658,
+            "seats": 61
+          },
+          {
+            "party": "hrv.sdp",
+            "share": 0.3345,
+            "seats": 54
+          },
+          {
+            "party": "hrv.most",
+            "share": 0.0984,
+            "seats": 13
+          },
+          {
+            "party": "hrv.zivi_zid",
+            "share": 0.0617,
+            "seats": 8
+          },
+          {
+            "party": "hrv.ids",
+            "share": 0.0227,
+            "seats": 3
+          },
+          {
+            "party": "hrv.hdssb",
+            "share": 0.0124,
+            "seats": 1
+          },
+          {
+            "party": "hrv.sdss",
+            "seats": 3
+          },
+          {
+            "party": "independents",
+            "seats": 3
+          },
+          {
+            "party": "others",
+            "seats": 5
+          }
+        ],
+        "winner": "hrv.hdz",
+        "turnout": 0.5462,
+        "note": "Early election. HDZ figure is the HDZ-led coalition; SDP the People's Coalition; IDS the IDS–PGS–RI list; HDSSB the HDSSB–HKS list. Others: For Prime Minister (Bandić, 2 seats) and three minority seats. Plenković formed an HDZ–Most government.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2016_Croatian_parliamentary_election",
+            "title": "Wikipedia: 2016 Croatian parliamentary election",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "president_2019",
+      "date": "2019-12-22",
+      "kind": "presidential",
+      "office": "hrv.president",
+      "rounds": 2,
+      "historical": {
+        "candidates": [
+          {
+            "person": "hrv.zoran_milanovic",
+            "party": "hrv.sdp",
+            "share": 0.2991,
+            "votes": 562783,
+            "round": 1
+          },
+          {
+            "person": "hrv.kolinda_grabar_kitarovic",
+            "share": 0.2698,
+            "votes": 507628,
+            "round": 1
+          },
+          {
+            "person": "hrv.miroslav_skoro",
+            "share": 0.2475,
+            "votes": 465704,
+            "round": 1
+          },
+          {
+            "person": "hrv.mislav_kolakusic",
+            "share": 0.0595,
+            "votes": 111916,
+            "round": 1
+          },
+          {
+            "person": "hrv.zoran_milanovic",
+            "party": "hrv.sdp",
+            "share": 0.5266,
+            "votes": 1034170,
+            "round": 2
+          },
+          {
+            "person": "hrv.kolinda_grabar_kitarovic",
+            "share": 0.4734,
+            "votes": 929707,
+            "round": 2
+          }
+        ],
+        "winner": "hrv.zoran_milanovic",
+        "turnout": 0.5118,
+        "note": "First round 22 December 2019, runoff 5 January 2020. Grabar-Kitarović stood as an independent backed by HDZ; Škoro and Kolakušić as independents. Runoff figures from the infobox; turnout is the first round.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2019%E2%80%9320_Croatian_presidential_election",
+            "title": "Wikipedia: 2019–20 Croatian presidential election",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "sabor_2020",
+      "date": "2020-07-05",
+      "kind": "legislative",
+      "chamber": "sabor",
+      "snap": true,
+      "historical": {
+        "party_results": [
+          {
+            "party": "hrv.hdz",
+            "share": 0.3726,
+            "seats": 66
+          },
+          {
+            "party": "hrv.sdp",
+            "share": 0.2487,
+            "seats": 41
+          },
+          {
+            "party": "hrv.dp",
+            "share": 0.1089,
+            "seats": 16
+          },
+          {
+            "party": "hrv.most",
+            "share": 0.0739,
+            "seats": 8
+          },
+          {
+            "party": "hrv.mozemo",
+            "share": 0.0699,
+            "seats": 7
+          },
+          {
+            "party": "hrv.hns",
+            "share": 0.013,
+            "seats": 1
+          },
+          {
+            "party": "hrv.sdss",
+            "seats": 3
+          },
+          {
+            "party": "independents",
+            "seats": 2
+          },
+          {
+            "party": "others",
+            "seats": 7
+          }
+        ],
+        "winner": "hrv.hdz",
+        "turnout": 0.4644,
+        "note": "Early election. HDZ figure is the HDZ-led coalition; SDP the Restart coalition; DP the DPMŠ-led coalition; Možemo the Green–Left coalition. Others: IP–P–Focus (3 seats, 3.98%), Reformists (1 seat) and three minority seats. Plenković formed an HDZ–SDSS government.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2020_Croatian_parliamentary_election",
+            "title": "Wikipedia: 2020 Croatian parliamentary election",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "sabor_2024",
+      "date": "2024-04-17",
+      "kind": "legislative",
+      "chamber": "sabor",
+      "snap": true,
+      "historical": {
+        "party_results": [
+          {
+            "party": "hrv.hdz",
+            "share": 0.3442,
+            "seats": 61
+          },
+          {
+            "party": "hrv.sdp",
+            "share": 0.254,
+            "seats": 42
+          },
+          {
+            "party": "hrv.dp",
+            "share": 0.0956,
+            "seats": 14
+          },
+          {
+            "party": "hrv.mozemo",
+            "share": 0.091,
+            "seats": 10
+          },
+          {
+            "party": "hrv.most",
+            "share": 0.0802,
+            "seats": 11
+          },
+          {
+            "party": "hrv.ids",
+            "share": 0.0225,
+            "seats": 2
+          },
+          {
+            "party": "hrv.sdss",
+            "seats": 3
+          },
+          {
+            "party": "independents",
+            "seats": 2
+          },
+          {
+            "party": "others",
+            "seats": 6
+          }
+        ],
+        "winner": "hrv.hdz",
+        "turnout": 0.6231,
+        "note": "Early election. HDZ figure is the HDZ-led coalition; SDP the Rivers of Justice coalition (Zoran Milanović was its unofficial prime-minister nominee); DP the DP-led coalition; Most the Most–HS list; IDS the IDS–PGS list. Others: Focus–Republic (1 seat), NPS (2 seats) and three minority seats. Plenković formed an HDZ–DP government.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2024_Croatian_parliamentary_election",
+            "title": "Wikipedia: 2024 Croatian parliamentary election",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "president_2024",
+      "date": "2024-12-29",
+      "kind": "presidential",
+      "office": "hrv.president",
+      "rounds": 2,
+      "historical": {
+        "candidates": [
+          {
+            "person": "hrv.zoran_milanovic",
+            "share": 0.4968,
+            "votes": 797938,
+            "round": 1
+          },
+          {
+            "person": "hrv.dragan_primorac",
+            "share": 0.1959,
+            "votes": 314663,
+            "round": 1
+          },
+          {
+            "person": "hrv.marija_selak_raspudic",
+            "share": 0.0937,
+            "votes": 150435,
+            "round": 1
+          },
+          {
+            "person": "hrv.ivana_kekin",
+            "party": "hrv.mozemo",
+            "share": 0.09,
+            "votes": 144533,
+            "round": 1
+          },
+          {
+            "person": "hrv.tomislav_jonjic",
+            "share": 0.0515,
+            "votes": 82787,
+            "round": 1
+          },
+          {
+            "person": "hrv.zoran_milanovic",
+            "share": 0.7468,
+            "votes": 1122859,
+            "round": 2
+          },
+          {
+            "person": "hrv.dragan_primorac",
+            "share": 0.2532,
+            "votes": 380752,
+            "round": 2
+          }
+        ],
+        "winner": "hrv.zoran_milanovic",
+        "turnout": 0.4601,
+        "note": "First round 29 December 2024, runoff 12 January 2025. Milanović (backed by SDP) and Primorac (backed by HDZ and allies) stood as independents. Shares computed from the vote counts; turnout is the first round.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2024%E2%80%9325_Croatian_presidential_election",
+            "title": "Wikipedia: 2024–25 Croatian presidential election",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified"
+      }
+    }
+  ],
+  "source": [
+    {
+      "url": "https://en.wikipedia.org/wiki/Template:Croatian_elections",
+      "title": "Wikipedia: Template:Croatian elections",
+      "accessed": "2026-10-15"
+    }
+  ],
+  "confidence": "verified"
+}

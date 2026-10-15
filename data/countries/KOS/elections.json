@@ -1,0 +1,794 @@
+{
+  "rules": [
+    {
+      "kind": "legislative",
+      "chamber": "assembly",
+      "every_years": 4,
+      "anchor": "2026-06-07",
+      "snap_possible": true,
+      "note": "Four-year term; most elections since 2010 were early."
+    },
+    {
+      "kind": "indirect_presidential",
+      "office": "kos.president",
+      "every_years": 5,
+      "anchor": "2026-10-06",
+      "snap_possible": true,
+      "system": "legislature",
+      "note": "Elected by the Assembly: 80 votes needed in the first two rounds, 61 in the third; failure dissolves the Assembly."
+    }
+  ],
+  "elections": [
+    {
+      "id": "assembly_2001",
+      "date": "2001-11-17",
+      "kind": "legislative",
+      "chamber": "assembly",
+      "historical": {
+        "party_results": [
+          {
+            "party": "kos.ldk",
+            "share": 0.4565,
+            "seats": 47
+          },
+          {
+            "party": "kos.pdk",
+            "share": 0.257,
+            "seats": 26
+          },
+          {
+            "party": "kos.aak",
+            "share": 0.0783,
+            "seats": 8
+          },
+          {
+            "party": "others",
+            "seats": 39
+          }
+        ],
+        "winner": "kos.ldk",
+        "turnout": 0.643,
+        "note": "First Assembly under UNMIK's Constitutional Framework (120 seats). Others include the Serb Return Coalition (22, 11.34%), Vatan Coalition (4), Turkish Democratic Party (3) and smaller Albanian and minority lists.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2001_Kosovan_parliamentary_election",
+            "title": "Wikipedia: 2001 Kosovan parliamentary election",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "president_2002",
+      "date": "2002-03-04",
+      "kind": "indirect_presidential",
+      "office": "kos.president",
+      "historical": {
+        "candidates": [
+          {
+            "person": "kos.ibrahim_rugova",
+            "party": "kos.ldk",
+            "share": 0.7333,
+            "votes": 88,
+            "round": 1
+          }
+        ],
+        "winner": "kos.ibrahim_rugova",
+        "note": "Elected by the Assembly with 88 votes (78.6% per the infobox; share here is of all 120 members).",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2002_Kosovan_presidential_election",
+            "title": "Wikipedia: 2002 Kosovan presidential election",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "assembly_2004",
+      "date": "2004-10-24",
+      "kind": "legislative",
+      "chamber": "assembly",
+      "historical": {
+        "party_results": [
+          {
+            "party": "kos.ldk",
+            "share": 0.4542,
+            "seats": 47
+          },
+          {
+            "party": "kos.pdk",
+            "share": 0.2885,
+            "seats": 30
+          },
+          {
+            "party": "kos.aak",
+            "share": 0.0839,
+            "seats": 9
+          },
+          {
+            "party": "others",
+            "seats": 34
+          }
+        ],
+        "winner": "kos.ldk",
+        "turnout": 0.4952,
+        "note": "Others include the Reformist Party ORA (7, 6.23%) and minority lists.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2004_Kosovan_parliamentary_election",
+            "title": "Wikipedia: 2004 Kosovan parliamentary election",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "president_2006",
+      "date": "2006-02-10",
+      "kind": "indirect_presidential",
+      "office": "kos.president",
+      "historical": {
+        "candidates": [
+          {
+            "person": "kos.fatmir_sejdiu",
+            "party": "kos.ldk",
+            "share": 0.6667,
+            "votes": 80,
+            "round": 1
+          }
+        ],
+        "winner": "kos.fatmir_sejdiu",
+        "note": "Elected by the Assembly in the third round with 80 votes (78 and 77 in the first two rounds) after Rugova's death.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2006_Kosovan_presidential_election",
+            "title": "Wikipedia: 2006 Kosovan presidential election",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "assembly_2007",
+      "date": "2007-11-17",
+      "kind": "legislative",
+      "chamber": "assembly",
+      "historical": {
+        "party_results": [
+          {
+            "party": "kos.pdk",
+            "share": 0.3432,
+            "seats": 37
+          },
+          {
+            "party": "kos.ldk",
+            "share": 0.2263,
+            "seats": 25
+          },
+          {
+            "party": "kos.akr",
+            "share": 0.1227,
+            "seats": 13
+          },
+          {
+            "party": "kos.aak",
+            "share": 0.0955,
+            "seats": 10
+          },
+          {
+            "party": "others",
+            "seats": 35
+          }
+        ],
+        "winner": "kos.pdk",
+        "turnout": 0.401,
+        "note": "Others include the LDD–PSHDK list led by Nexhat Daci (11, 9.97%) and minority lists. Thaçi became prime minister in January 2008.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2007_Kosovan_parliamentary_election",
+            "title": "Wikipedia: 2007 Kosovan parliamentary election",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "president_2008",
+      "date": "2008-01-09",
+      "kind": "indirect_presidential",
+      "office": "kos.president",
+      "historical": {
+        "candidates": [
+          {
+            "person": "kos.fatmir_sejdiu",
+            "party": "kos.ldk",
+            "share": 0.5667,
+            "votes": 68,
+            "round": 1
+          },
+          {
+            "person": "kos.naim_maloku",
+            "party": "kos.aak",
+            "share": 0.325,
+            "votes": 39,
+            "round": 1
+          }
+        ],
+        "winner": "kos.fatmir_sejdiu",
+        "note": "Re-elected by the Assembly in the third round with 68 votes (57.73% per the infobox).",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2008_Kosovan_presidential_election",
+            "title": "Wikipedia: 2008 Kosovan presidential election",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "assembly_2010",
+      "date": "2010-12-12",
+      "kind": "legislative",
+      "chamber": "assembly",
+      "snap": true,
+      "historical": {
+        "party_results": [
+          {
+            "party": "kos.pdk",
+            "share": 0.3211,
+            "seats": 34
+          },
+          {
+            "party": "kos.ldk",
+            "share": 0.2469,
+            "seats": 27
+          },
+          {
+            "party": "kos.lvv",
+            "share": 0.1269,
+            "seats": 14
+          },
+          {
+            "party": "kos.aak",
+            "share": 0.1104,
+            "seats": 12
+          },
+          {
+            "party": "kos.akr",
+            "share": 0.0729,
+            "seats": 8
+          },
+          {
+            "party": "others",
+            "seats": 25
+          }
+        ],
+        "winner": "kos.pdk",
+        "turnout": 0.4489,
+        "note": "Early election. Others: minority lists (including the Independent Liberal Party, 8).",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2010_Kosovan_parliamentary_election",
+            "title": "Wikipedia: 2010 Kosovan parliamentary election",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "president_2011_feb",
+      "date": "2011-02-22",
+      "kind": "indirect_presidential",
+      "office": "kos.president",
+      "historical": {
+        "candidates": [
+          {
+            "person": "kos.behgjet_pacolli",
+            "party": "kos.akr",
+            "share": 0.5167,
+            "votes": 62,
+            "round": 1
+          }
+        ],
+        "winner": "kos.behgjet_pacolli",
+        "note": "Elected in the third round with 62 votes; the Constitutional Court declared the election unconstitutional on 28 March 2011 because the quorum had not been reached in the first two rounds.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2011_Kosovan_presidential_election",
+            "title": "Wikipedia: 2011 Kosovan presidential election",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "president_2011_apr",
+      "date": "2011-04-07",
+      "kind": "indirect_presidential",
+      "office": "kos.president",
+      "historical": {
+        "candidates": [
+          {
+            "person": "kos.atifete_jahjaga",
+            "share": 0.6667,
+            "votes": 80,
+            "round": 1
+          }
+        ],
+        "winner": "kos.atifete_jahjaga",
+        "note": "Elected with 80 votes as a consensus candidate. Suzan Novoberdali (AKR, 19 votes) is not recorded (no birth data found).",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2011_Kosovan_presidential_election",
+            "title": "Wikipedia: 2011 Kosovan presidential election",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "assembly_2014",
+      "date": "2014-06-08",
+      "kind": "legislative",
+      "chamber": "assembly",
+      "snap": true,
+      "historical": {
+        "party_results": [
+          {
+            "party": "kos.pdk",
+            "share": 0.3038,
+            "seats": 37
+          },
+          {
+            "party": "kos.ldk",
+            "share": 0.2524,
+            "seats": 30
+          },
+          {
+            "party": "kos.lvv",
+            "share": 0.1359,
+            "seats": 16
+          },
+          {
+            "party": "kos.aak",
+            "share": 0.0954,
+            "seats": 11
+          },
+          {
+            "party": "kos.sl",
+            "share": 0.0522,
+            "seats": 9
+          },
+          {
+            "party": "kos.nisma",
+            "share": 0.0515,
+            "seats": 6
+          },
+          {
+            "party": "kos.akr",
+            "share": 0.0467,
+            "seats": 0
+          },
+          {
+            "party": "others",
+            "seats": 11
+          }
+        ],
+        "winner": "kos.pdk",
+        "turnout": 0.4262,
+        "note": "Early election. PDK figure is the PDK–PD–LB–PSHDK–PK list. Isa Mustafa (LDK) became prime minister in December 2014.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2014_Kosovan_parliamentary_election",
+            "title": "Wikipedia: 2014 Kosovan parliamentary election",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "president_2016",
+      "date": "2016-02-26",
+      "kind": "indirect_presidential",
+      "office": "kos.president",
+      "historical": {
+        "candidates": [
+          {
+            "person": "kos.hashim_thaci",
+            "party": "kos.pdk",
+            "share": 0.5917,
+            "votes": 71,
+            "round": 1
+          }
+        ],
+        "winner": "kos.hashim_thaci",
+        "note": "Elected by the Assembly in the third round with 71 votes (50 and 64 in the first two rounds).",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2016_Kosovan_presidential_election",
+            "title": "Wikipedia: 2016 Kosovan presidential election",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "assembly_2017",
+      "date": "2017-06-11",
+      "kind": "legislative",
+      "chamber": "assembly",
+      "snap": true,
+      "historical": {
+        "party_results": [
+          {
+            "party": "kos.pdk",
+            "share": 0.3374,
+            "seats": 39
+          },
+          {
+            "party": "kos.lvv",
+            "share": 0.2749,
+            "seats": 32
+          },
+          {
+            "party": "kos.ldk",
+            "share": 0.2553,
+            "seats": 29
+          },
+          {
+            "party": "kos.sl",
+            "share": 0.0612,
+            "seats": 9
+          },
+          {
+            "party": "others",
+            "seats": 11
+          }
+        ],
+        "winner": "kos.pdk",
+        "turnout": 0.4116,
+        "note": "Early election. PDK figure is the PAN coalition (PDK, AAK, NISMA) led by Ramush Haradinaj; LDK figure the LAA coalition led by Avdullah Hoti. Haradinaj became prime minister.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2017_Kosovan_parliamentary_election",
+            "title": "Wikipedia: 2017 Kosovan parliamentary election",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "assembly_2019",
+      "date": "2019-10-06",
+      "kind": "legislative",
+      "chamber": "assembly",
+      "snap": true,
+      "historical": {
+        "party_results": [
+          {
+            "party": "kos.lvv",
+            "share": 0.2627,
+            "seats": 29
+          },
+          {
+            "party": "kos.ldk",
+            "share": 0.2455,
+            "seats": 28
+          },
+          {
+            "party": "kos.pdk",
+            "share": 0.2123,
+            "seats": 24
+          },
+          {
+            "party": "kos.aak",
+            "share": 0.1151,
+            "seats": 13
+          },
+          {
+            "party": "kos.sl",
+            "share": 0.064,
+            "seats": 10
+          },
+          {
+            "party": "kos.nisma",
+            "share": 0.05,
+            "seats": 6
+          },
+          {
+            "party": "others",
+            "seats": 10
+          }
+        ],
+        "winner": "kos.lvv",
+        "turnout": 0.4459,
+        "note": "Early election. AAK figure is the AAK–PSD list; NISMA the NISMA–AKR–PD list. Kurti became prime minister in February 2020.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2019_Kosovan_parliamentary_election",
+            "title": "Wikipedia: 2019 Kosovan parliamentary election",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "assembly_2021",
+      "date": "2021-02-14",
+      "kind": "legislative",
+      "chamber": "assembly",
+      "snap": true,
+      "historical": {
+        "party_results": [
+          {
+            "party": "kos.lvv",
+            "share": 0.5028,
+            "seats": 58
+          },
+          {
+            "party": "kos.pdk",
+            "share": 0.1701,
+            "seats": 19
+          },
+          {
+            "party": "kos.ldk",
+            "share": 0.1273,
+            "seats": 15
+          },
+          {
+            "party": "kos.aak",
+            "share": 0.0712,
+            "seats": 8
+          },
+          {
+            "party": "kos.sl",
+            "share": 0.0509,
+            "seats": 10
+          },
+          {
+            "party": "others",
+            "seats": 10
+          }
+        ],
+        "winner": "kos.lvv",
+        "turnout": 0.4878,
+        "note": "Early election. Kurti formed his second government in March 2021.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2021_Kosovan_parliamentary_election",
+            "title": "Wikipedia: 2021 Kosovan parliamentary election",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "president_2021",
+      "date": "2021-04-04",
+      "kind": "indirect_presidential",
+      "office": "kos.president",
+      "historical": {
+        "candidates": [
+          {
+            "person": "kos.vjosa_osmani",
+            "share": 0.5917,
+            "votes": 71,
+            "round": 1
+          }
+        ],
+        "winner": "kos.vjosa_osmani",
+        "note": "Elected in the third round on 3-4 April 2021 with 71 votes (69 and 67 in the first two). Osmani stood for Guxo (not recorded as a party).",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2021_Kosovan_presidential_election",
+            "title": "Wikipedia: 2021 Kosovan presidential election",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "assembly_2025_feb",
+      "date": "2025-02-09",
+      "kind": "legislative",
+      "chamber": "assembly",
+      "historical": {
+        "party_results": [
+          {
+            "party": "kos.lvv",
+            "share": 0.423,
+            "seats": 48
+          },
+          {
+            "party": "kos.pdk",
+            "share": 0.2095,
+            "seats": 24
+          },
+          {
+            "party": "kos.ldk",
+            "share": 0.1827,
+            "seats": 20
+          },
+          {
+            "party": "kos.aak",
+            "share": 0.0706,
+            "seats": 8
+          },
+          {
+            "party": "kos.sl",
+            "share": 0.0426,
+            "seats": 9
+          },
+          {
+            "party": "others",
+            "seats": 11
+          }
+        ],
+        "winner": "kos.lvv",
+        "turnout": 0.4655,
+        "note": "AAK figure is the AAK–NISMA list.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/February_2025_Kosovan_parliamentary_election",
+            "title": "Wikipedia: February 2025 Kosovan parliamentary election",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "assembly_2025_dec",
+      "date": "2025-12-28",
+      "kind": "legislative",
+      "chamber": "assembly",
+      "snap": true,
+      "historical": {
+        "party_results": [
+          {
+            "party": "kos.lvv",
+            "share": 0.511,
+            "seats": 57
+          },
+          {
+            "party": "kos.pdk",
+            "share": 0.2019,
+            "seats": 22
+          },
+          {
+            "party": "kos.ldk",
+            "share": 0.1324,
+            "seats": 15
+          },
+          {
+            "party": "kos.aak",
+            "share": 0.055,
+            "seats": 6
+          },
+          {
+            "party": "kos.sl",
+            "share": 0.0449,
+            "seats": 9
+          },
+          {
+            "party": "others",
+            "seats": 11
+          }
+        ],
+        "winner": "kos.lvv",
+        "turnout": 0.4768,
+        "note": "Early election.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/December_2025_Kosovan_parliamentary_election",
+            "title": "Wikipedia: December 2025 Kosovan parliamentary election",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "assembly_2026",
+      "date": "2026-06-07",
+      "kind": "legislative",
+      "chamber": "assembly",
+      "snap": true,
+      "historical": {
+        "party_results": [
+          {
+            "party": "kos.lvv",
+            "share": 0.4713,
+            "seats": 53
+          },
+          {
+            "party": "kos.pdk",
+            "share": 0.1944,
+            "seats": 22
+          },
+          {
+            "party": "kos.ldk",
+            "share": 0.1669,
+            "seats": 18
+          },
+          {
+            "party": "kos.aak",
+            "share": 0.0674,
+            "seats": 7
+          },
+          {
+            "party": "kos.sl",
+            "share": 0.054,
+            "seats": 9
+          },
+          {
+            "party": "others",
+            "seats": 11
+          }
+        ],
+        "winner": "kos.lvv",
+        "turnout": 0.4145,
+        "note": "Early election after the Assembly failed to elect a President by the Constitutional Court's deadline. LDK's list was led by Vjosa Osmani. The fourth Kurti cabinet was sworn in on 13 September 2026 (per the fetched 2026 presidential election article).",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2026_Kosovan_parliamentary_election",
+            "title": "Wikipedia: 2026 Kosovan parliamentary election",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "president_2026",
+      "date": "2026-10-06",
+      "kind": "indirect_presidential",
+      "office": "kos.president",
+      "historical": {
+        "candidates": [
+          {
+            "person": "kos.justina_shiroka_pula",
+            "share": 0.675,
+            "votes": 81,
+            "round": 1
+          }
+        ],
+        "winner": "kos.justina_shiroka_pula",
+        "note": "Elected by the Assembly on 6-7 October 2026 with 81 votes (98.78% of votes cast; one vote for Eliza Hoxha of PDK, not recorded). Earlier attempts in March, April and September 2026 had failed. Verified against the fetched Wikipedia articles on the 2026 presidential election and the President of Kosovo.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2026_Kosovan_presidential_election",
+            "title": "Wikipedia: 2026 Kosovan presidential election",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "needs_review",
+        "review_note": "Very recent event (October 2026) sourced only from Wikipedia; confirm the vote count and inauguration date with an official source."
+      }
+    }
+  ],
+  "source": [
+    {
+      "url": "https://en.wikipedia.org/wiki/Elections_in_Kosovo",
+      "title": "Wikipedia: Elections in Kosovo",
+      "accessed": "2026-10-15"
+    }
+  ],
+  "confidence": "verified"
+}

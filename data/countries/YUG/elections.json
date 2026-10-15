@@ -1,0 +1,1235 @@
+{
+  "rules": [
+    {
+      "kind": "legislative",
+      "chamber": "national_assembly",
+      "every_years": 4,
+      "anchor": "2023-12-17",
+      "snap_possible": true,
+      "note": "National Assembly of Serbia. An early election has been called for 25 October 2026 (after the data date; per the fetched 2026 Serbian parliamentary election article)."
+    },
+    {
+      "kind": "presidential",
+      "office": "yug.president",
+      "every_years": 5,
+      "anchor": "2022-04-03",
+      "snap_possible": true,
+      "note": "President of Serbia, two rounds if no majority. After Vučić's resignation an election has been called for 25 December 2026 (after the data date)."
+    }
+  ],
+  "elections": [
+    {
+      "id": "president_fry_2000",
+      "date": "2000-09-24",
+      "kind": "presidential",
+      "office": "yug.president",
+      "rounds": 1,
+      "historical": {
+        "candidates": [
+          {
+            "person": "yug.vojislav_kostunica",
+            "party": "yug.dss",
+            "share": 0.5171,
+            "votes": 2470304,
+            "round": 1
+          },
+          {
+            "person": "yug.slobodan_milosevic",
+            "party": "yug.sps",
+            "share": 0.3824,
+            "votes": 1826799,
+            "round": 1
+          },
+          {
+            "person": "yug.tomislav_nikolic",
+            "party": "yug.srs",
+            "share": 0.0605,
+            "votes": 289013,
+            "round": 1
+          }
+        ],
+        "winner": "yug.vojislav_kostunica",
+        "turnout": 0.7153,
+        "note": "First direct election of the federal President. Koštunica was the DOS candidate; Milošević ran for SPS–JUL–SNP. Figures as revised on 10 October 2000 (the 28 September figures gave Koštunica 50.4% and Milošević 39.7%, computed from the vote counts). No second round was held.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2000_Yugoslavian_general_election",
+            "title": "Wikipedia: 2000 Yugoslavian general election",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "citizens_2000",
+      "date": "2000-09-24",
+      "kind": "legislative",
+      "chamber": "chamber_of_citizens",
+      "historical": {
+        "party_results": [
+          {
+            "party": "yug.dos",
+            "share": 0.4386,
+            "seats": 58
+          },
+          {
+            "party": "yug.sps",
+            "share": 0.3295,
+            "seats": 44
+          },
+          {
+            "party": "yug.srs",
+            "share": 0.0873,
+            "seats": 5
+          },
+          {
+            "party": "yug.spo",
+            "share": 0.0512,
+            "seats": 0
+          },
+          {
+            "party": "mne.snp",
+            "share": 0.0224,
+            "seats": 28
+          },
+          {
+            "party": "yug.svm",
+            "share": 0.0103,
+            "seats": 1
+          },
+          {
+            "party": "mne.sns",
+            "share": 0.0017,
+            "seats": 2
+          }
+        ],
+        "winner": "yug.dos",
+        "turnout": 0.7153,
+        "note": "Federal election. Chamber of Citizens. SPS figure is the SPS–JUL list. SNP won the most seats in Montenegro.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2000_Yugoslavian_general_election",
+            "title": "Wikipedia: 2000 Yugoslavian general election",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "republics_2000",
+      "date": "2000-09-24",
+      "kind": "legislative",
+      "chamber": "chamber_of_republics",
+      "historical": {
+        "party_results": [
+          {
+            "party": "yug.dos",
+            "share": 0.4499,
+            "seats": 10
+          },
+          {
+            "party": "yug.sps",
+            "seats": 7
+          },
+          {
+            "party": "yug.srs",
+            "share": 0.1017,
+            "seats": 2
+          },
+          {
+            "party": "yug.spo",
+            "share": 0.0604,
+            "seats": 1
+          },
+          {
+            "party": "mne.snp",
+            "share": 0.0222,
+            "seats": 19
+          },
+          {
+            "party": "mne.sns",
+            "share": 0.002,
+            "seats": 1
+          }
+        ],
+        "winner": "mne.snp",
+        "turnout": 0.7153,
+        "note": "Federal election. Chamber of Republics (20 seats per republic). SNP won the most seats. One DOS seat went to the List for Sandžak under a pre-election agreement. SPS (SPS–JUL) share not given in the infobox.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2000_Yugoslavian_general_election",
+            "title": "Wikipedia: 2000 Yugoslavian general election",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "assembly_2000",
+      "date": "2000-12-23",
+      "kind": "legislative",
+      "chamber": "national_assembly",
+      "snap": true,
+      "historical": {
+        "party_results": [
+          {
+            "party": "yug.dos",
+            "share": 0.6569,
+            "seats": 176
+          },
+          {
+            "party": "yug.sps",
+            "share": 0.141,
+            "seats": 37
+          },
+          {
+            "party": "yug.srs",
+            "share": 0.0881,
+            "seats": 23
+          },
+          {
+            "party": "yug.ssj",
+            "share": 0.0546,
+            "seats": 14
+          }
+        ],
+        "winner": "yug.dos",
+        "turnout": 0.5762,
+        "note": "Early election to the Serbian National Assembly. Đinđić formed a DOS government in January 2001.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2000_Serbian_parliamentary_election",
+            "title": "Wikipedia: 2000 Serbian parliamentary election",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "president_serbia_2002_sep",
+      "date": "2002-09-29",
+      "kind": "presidential",
+      "office": "yug.serbia_republic_president",
+      "rounds": 2,
+      "historical": {
+        "candidates": [
+          {
+            "person": "yug.vojislav_kostunica",
+            "party": "yug.dss",
+            "share": 0.3156,
+            "votes": 1123420,
+            "round": 1
+          },
+          {
+            "person": "yug.miroljub_labus",
+            "share": 0.2796,
+            "votes": 995200,
+            "round": 1
+          },
+          {
+            "person": "yug.vojislav_seselj",
+            "party": "yug.srs",
+            "share": 0.2374,
+            "votes": 845308,
+            "round": 1
+          },
+          {
+            "person": "yug.vojislav_kostunica",
+            "party": "yug.dss",
+            "share": 0.6838,
+            "votes": 1991947,
+            "round": 2
+          },
+          {
+            "person": "yug.miroljub_labus",
+            "share": 0.3162,
+            "votes": 921094,
+            "round": 2
+          }
+        ],
+        "turnout": 0.5546,
+        "note": "Republic-level presidential election. First round 29 September, runoff 13 October 2002. Koštunica led the runoff, but no one was elected: the turnout requirement (more than 50% of registered voters) was not met, so the election was void. Shares computed from the vote counts; turnout is the first round.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/September%E2%80%93October_2002_Serbian_presidential_election",
+            "title": "Wikipedia: September–October 2002 Serbian presidential election",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "president_serbia_2002_dec",
+      "date": "2002-12-08",
+      "kind": "presidential",
+      "office": "yug.serbia_republic_president",
+      "rounds": 1,
+      "historical": {
+        "candidates": [
+          {
+            "person": "yug.vojislav_kostunica",
+            "party": "yug.dss",
+            "share": 0.5928,
+            "votes": 1699098,
+            "round": 1
+          },
+          {
+            "person": "yug.vojislav_seselj",
+            "party": "yug.srs",
+            "share": 0.371,
+            "votes": 1063296,
+            "round": 1
+          }
+        ],
+        "turnout": 0.4516,
+        "note": "Republic-level presidential election (repeat). No winner: the turnout requirement (more than 50% of registered voters) was not met, so the election was void. Koštunica led the vote. Šešelj was backed by SRS and SPS.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/December_2002_Serbian_presidential_election",
+            "title": "Wikipedia: December 2002 Serbian presidential election",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "president_serbia_2003",
+      "date": "2003-11-16",
+      "kind": "presidential",
+      "office": "yug.serbia_republic_president",
+      "rounds": 1,
+      "historical": {
+        "candidates": [
+          {
+            "person": "yug.tomislav_nikolic",
+            "party": "yug.srs",
+            "share": 0.4787,
+            "votes": 1166896,
+            "round": 1
+          },
+          {
+            "person": "yug.dragoljub_micunovic",
+            "party": "yug.ds",
+            "share": 0.3667,
+            "votes": 893906,
+            "round": 1
+          },
+          {
+            "person": "yug.velimir_ilic",
+            "share": 0.094,
+            "votes": 229229,
+            "round": 1
+          }
+        ],
+        "turnout": 0.3879,
+        "note": "Republic-level presidential election (repeat). No winner: the turnout requirement (more than 50% of registered voters) was not met, so the election was void. Nikolić led the vote. Mićunović was the DOS candidate, Ilić the New Serbia candidate.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2003_Serbian_presidential_election",
+            "title": "Wikipedia: 2003 Serbian presidential election",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "assembly_2003",
+      "date": "2003-12-28",
+      "kind": "legislative",
+      "chamber": "national_assembly",
+      "snap": true,
+      "historical": {
+        "party_results": [
+          {
+            "party": "yug.srs",
+            "share": 0.2798,
+            "seats": 82
+          },
+          {
+            "party": "yug.dss",
+            "share": 0.1796,
+            "seats": 53
+          },
+          {
+            "party": "yug.ds",
+            "share": 0.1275,
+            "seats": 37
+          },
+          {
+            "party": "yug.g17",
+            "share": 0.1161,
+            "seats": 34
+          },
+          {
+            "party": "yug.spo",
+            "share": 0.0776,
+            "seats": 22
+          },
+          {
+            "party": "yug.sps",
+            "share": 0.0772,
+            "seats": 22
+          }
+        ],
+        "winner": "yug.srs",
+        "turnout": 0.5874,
+        "note": "Early election. Coalition lists recorded under the leading party (DSS coalition, DS coalition, G17 Plus–SDP, SPO–New Serbia). Koštunica formed a DSS–G17 Plus–SPO–NS minority government with SPS support in March 2004.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2003_Serbian_parliamentary_election",
+            "title": "Wikipedia: 2003 Serbian parliamentary election",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "president_serbia_2004",
+      "date": "2004-06-13",
+      "kind": "presidential",
+      "office": "yug.serbia_republic_president",
+      "rounds": 2,
+      "historical": {
+        "candidates": [
+          {
+            "person": "yug.tomislav_nikolic",
+            "party": "yug.srs",
+            "share": 0.3097,
+            "votes": 954339,
+            "round": 1
+          },
+          {
+            "person": "yug.boris_tadic",
+            "party": "yug.ds",
+            "share": 0.277,
+            "votes": 853584,
+            "round": 1
+          },
+          {
+            "person": "yug.bogoljub_karic",
+            "share": 0.1846,
+            "votes": 568691,
+            "round": 1
+          },
+          {
+            "person": "yug.dragan_marsicanin",
+            "party": "yug.dss",
+            "share": 0.1347,
+            "votes": 414971,
+            "round": 1
+          },
+          {
+            "person": "yug.boris_tadic",
+            "party": "yug.ds",
+            "share": 0.5397,
+            "votes": 1681528,
+            "round": 2
+          },
+          {
+            "person": "yug.tomislav_nikolic",
+            "party": "yug.srs",
+            "share": 0.4603,
+            "votes": 1434068,
+            "round": 2
+          }
+        ],
+        "winner": "yug.boris_tadic",
+        "turnout": 0.4835,
+        "note": "Republic-level presidential election after the turnout requirement was abolished. First round 13 June, runoff 27 June 2004. Maršićanin was backed by DSS, G17 Plus, SPO and NS. Shares computed from the vote counts; turnout is the first round.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2004_Serbian_presidential_election",
+            "title": "Wikipedia: 2004 Serbian presidential election",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "ref_constitution_2006",
+      "date": "2006-10-28",
+      "kind": "referendum",
+      "question": "Are you in favour of confirming the new Constitution of the Republic of Serbia?",
+      "historical": {
+        "yes_share": 0.9731,
+        "winner": "yes",
+        "turnout": 0.549,
+        "note": "For 3,521,724; against 97,497; invalid/blank 25,866; electorate 6,639,385. Held on 28-29 October 2006.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2006_Serbian_constitutional_referendum",
+            "title": "Wikipedia: 2006 Serbian constitutional referendum",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "assembly_2007",
+      "date": "2007-01-21",
+      "kind": "legislative",
+      "chamber": "national_assembly",
+      "snap": true,
+      "historical": {
+        "party_results": [
+          {
+            "party": "yug.srs",
+            "share": 0.2907,
+            "seats": 81
+          },
+          {
+            "party": "yug.ds",
+            "share": 0.2308,
+            "seats": 64
+          },
+          {
+            "party": "yug.dss",
+            "share": 0.1683,
+            "seats": 47
+          },
+          {
+            "party": "yug.g17",
+            "share": 0.0693,
+            "seats": 19
+          },
+          {
+            "party": "yug.sps",
+            "share": 0.0574,
+            "seats": 16
+          },
+          {
+            "party": "yug.ldp",
+            "share": 0.054,
+            "seats": 15
+          },
+          {
+            "party": "yug.svm",
+            "share": 0.0132,
+            "seats": 3
+          },
+          {
+            "party": "others",
+            "seats": 5
+          }
+        ],
+        "winner": "yug.srs",
+        "turnout": 0.6061,
+        "note": "Early election under the new constitution. DSS figure is the DSS–New Serbia list; LDP the LDP–GSS–SDU–LSV list. Others: List for Sandžak (2), Roma Union of Serbia, Albanian Coalition of Preševo Valley and Roma Party (1 each). Koštunica formed a DS–DSS–G17 Plus–NS government.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2007_Serbian_parliamentary_election",
+            "title": "Wikipedia: 2007 Serbian parliamentary election",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "president_2008",
+      "date": "2008-01-20",
+      "kind": "presidential",
+      "office": "yug.president",
+      "rounds": 2,
+      "snap": true,
+      "historical": {
+        "candidates": [
+          {
+            "person": "yug.tomislav_nikolic",
+            "party": "yug.srs",
+            "share": 0.4076,
+            "votes": 1646172,
+            "round": 1
+          },
+          {
+            "person": "yug.boris_tadic",
+            "party": "yug.ds",
+            "share": 0.3608,
+            "votes": 1457030,
+            "round": 1
+          },
+          {
+            "person": "yug.velimir_ilic",
+            "share": 0.0757,
+            "votes": 305828,
+            "round": 1
+          },
+          {
+            "person": "yug.milutin_mrkonjic",
+            "party": "yug.sps",
+            "share": 0.0609,
+            "votes": 245889,
+            "round": 1
+          },
+          {
+            "person": "yug.cedomir_jovanovic",
+            "party": "yug.ldp",
+            "share": 0.0544,
+            "votes": 219689,
+            "round": 1
+          },
+          {
+            "person": "yug.boris_tadic",
+            "party": "yug.ds",
+            "share": 0.5119,
+            "votes": 2304467,
+            "round": 2
+          },
+          {
+            "person": "yug.tomislav_nikolic",
+            "party": "yug.srs",
+            "share": 0.4881,
+            "votes": 2197155,
+            "round": 2
+          }
+        ],
+        "winner": "yug.boris_tadic",
+        "turnout": 0.6137,
+        "note": "Early election. First round 20 January, runoff 3 February 2008. Ilić was backed by New Serbia, DSS and SPO. Shares computed from the vote counts; turnout is the first round (68.12% in the runoff).",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2008_Serbian_presidential_election",
+            "title": "Wikipedia: 2008 Serbian presidential election",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "assembly_2008",
+      "date": "2008-05-11",
+      "kind": "legislative",
+      "chamber": "national_assembly",
+      "snap": true,
+      "historical": {
+        "party_results": [
+          {
+            "party": "yug.ds",
+            "share": 0.3925,
+            "seats": 102
+          },
+          {
+            "party": "yug.srs",
+            "share": 0.301,
+            "seats": 78
+          },
+          {
+            "party": "yug.dss",
+            "share": 0.1187,
+            "seats": 30
+          },
+          {
+            "party": "yug.sps",
+            "share": 0.0775,
+            "seats": 20
+          },
+          {
+            "party": "yug.ldp",
+            "share": 0.0535,
+            "seats": 13
+          },
+          {
+            "party": "yug.svm",
+            "share": 0.0185,
+            "seats": 4
+          },
+          {
+            "party": "others",
+            "seats": 3
+          }
+        ],
+        "winner": "yug.ds",
+        "turnout": 0.6133,
+        "note": "Early election. DS figure is the For a European Serbia coalition; DSS the DSS–New Serbia list; SPS the SPS coalition; SVM the Hungarian Coalition. Others: Bosniak List for a European Sandžak (2) and Albanian Coalition of Preševo Valley (1). Cvetković formed a DS–SPS-led government.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2008_Serbian_parliamentary_election",
+            "title": "Wikipedia: 2008 Serbian parliamentary election",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "president_2012",
+      "date": "2012-05-06",
+      "kind": "presidential",
+      "office": "yug.president",
+      "rounds": 2,
+      "snap": true,
+      "historical": {
+        "candidates": [
+          {
+            "person": "yug.boris_tadic",
+            "party": "yug.ds",
+            "share": 0.265,
+            "votes": 989454,
+            "round": 1
+          },
+          {
+            "person": "yug.tomislav_nikolic",
+            "party": "yug.sns",
+            "share": 0.2622,
+            "votes": 979216,
+            "round": 1
+          },
+          {
+            "person": "yug.ivica_dacic",
+            "party": "yug.sps",
+            "share": 0.1489,
+            "votes": 556013,
+            "round": 1
+          },
+          {
+            "person": "yug.vojislav_kostunica",
+            "party": "yug.dss",
+            "share": 0.0779,
+            "votes": 290861,
+            "round": 1
+          },
+          {
+            "person": "yug.zoran_stankovic",
+            "party": "yug.urs",
+            "share": 0.0688,
+            "votes": 257054,
+            "round": 1
+          },
+          {
+            "person": "yug.cedomir_jovanovic",
+            "party": "yug.ldp",
+            "share": 0.0527,
+            "votes": 196668,
+            "round": 1
+          },
+          {
+            "person": "yug.tomislav_nikolic",
+            "party": "yug.sns",
+            "share": 0.5116,
+            "votes": 1552063,
+            "round": 2
+          },
+          {
+            "person": "yug.boris_tadic",
+            "party": "yug.ds",
+            "share": 0.4884,
+            "votes": 1481952,
+            "round": 2
+          }
+        ],
+        "winner": "yug.tomislav_nikolic",
+        "turnout": 0.5791,
+        "note": "Early election after Tadić resigned. First round 6 May (with the parliamentary election), runoff 20 May 2012. Shares computed from the vote counts; turnout is the first round.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2012_Serbian_presidential_election",
+            "title": "Wikipedia: 2012 Serbian presidential election",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "assembly_2012",
+      "date": "2012-05-06",
+      "kind": "legislative",
+      "chamber": "national_assembly",
+      "historical": {
+        "party_results": [
+          {
+            "party": "yug.sns",
+            "share": 0.2516,
+            "seats": 73
+          },
+          {
+            "party": "yug.ds",
+            "share": 0.2309,
+            "seats": 67
+          },
+          {
+            "party": "yug.sps",
+            "share": 0.1518,
+            "seats": 44
+          },
+          {
+            "party": "yug.dss",
+            "share": 0.0732,
+            "seats": 21
+          },
+          {
+            "party": "yug.ldp",
+            "share": 0.0683,
+            "seats": 19
+          },
+          {
+            "party": "yug.urs",
+            "share": 0.0577,
+            "seats": 16
+          },
+          {
+            "party": "yug.srs",
+            "share": 0.0483,
+            "seats": 0
+          },
+          {
+            "party": "yug.dveri",
+            "share": 0.0454,
+            "seats": 0
+          },
+          {
+            "party": "yug.svm",
+            "share": 0.0183,
+            "seats": 5
+          },
+          {
+            "party": "others",
+            "seats": 5
+          }
+        ],
+        "winner": "yug.sns",
+        "turnout": 0.5776,
+        "note": "SNS figure is the Let's Get Serbia Moving coalition; DS Choice for a Better Life; SPS the SPS–PUPS–JS coalition; LDP the Preokret list. Others: SDA of Sandžak (2), All Together, None of the Above and Albanian Coalition of Preševo Valley (1 each). Dačić formed an SNS–SPS-led government.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2012_Serbian_parliamentary_election",
+            "title": "Wikipedia: 2012 Serbian parliamentary election",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "assembly_2014",
+      "date": "2014-03-16",
+      "kind": "legislative",
+      "chamber": "national_assembly",
+      "snap": true,
+      "historical": {
+        "party_results": [
+          {
+            "party": "yug.sns",
+            "share": 0.4996,
+            "seats": 158
+          },
+          {
+            "party": "yug.sps",
+            "share": 0.1394,
+            "seats": 44
+          },
+          {
+            "party": "yug.ds",
+            "share": 0.0623,
+            "seats": 19
+          },
+          {
+            "party": "yug.dss",
+            "share": 0.0438,
+            "seats": 0
+          },
+          {
+            "party": "yug.dveri",
+            "share": 0.0369,
+            "seats": 0
+          },
+          {
+            "party": "yug.ldp",
+            "share": 0.0348,
+            "seats": 0
+          },
+          {
+            "party": "yug.urs",
+            "share": 0.0314,
+            "seats": 0
+          },
+          {
+            "party": "yug.svm",
+            "share": 0.0217,
+            "seats": 6
+          },
+          {
+            "party": "yug.djb",
+            "share": 0.0216,
+            "seats": 0
+          },
+          {
+            "party": "yug.srs",
+            "share": 0.0208,
+            "seats": 0
+          },
+          {
+            "party": "others",
+            "seats": 23
+          }
+        ],
+        "winner": "yug.sns",
+        "turnout": 0.5309,
+        "note": "Early election. SNS figure is the Future We Believe In coalition; SPS the SPS–PUPS–JS list; DS the For a Democratic Serbia list. Others: the NDS-led list of Boris Tadić (18, 5.89%), SDA of Sandžak (3) and Party for Democratic Action (2). Vučić formed an SNS–SPS government.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2014_Serbian_parliamentary_election",
+            "title": "Wikipedia: 2014 Serbian parliamentary election",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "assembly_2016",
+      "date": "2016-04-24",
+      "kind": "legislative",
+      "chamber": "national_assembly",
+      "snap": true,
+      "historical": {
+        "party_results": [
+          {
+            "party": "yug.sns",
+            "share": 0.4971,
+            "seats": 131
+          },
+          {
+            "party": "yug.sps",
+            "share": 0.1128,
+            "seats": 29
+          },
+          {
+            "party": "yug.srs",
+            "share": 0.0834,
+            "seats": 22
+          },
+          {
+            "party": "yug.djb",
+            "share": 0.0621,
+            "seats": 16
+          },
+          {
+            "party": "yug.ds",
+            "share": 0.062,
+            "seats": 16
+          },
+          {
+            "party": "yug.dveri",
+            "share": 0.0519,
+            "seats": 13
+          },
+          {
+            "party": "yug.ldp",
+            "share": 0.0517,
+            "seats": 13
+          },
+          {
+            "party": "yug.svm",
+            "share": 0.0154,
+            "seats": 4
+          },
+          {
+            "party": "others",
+            "seats": 6
+          }
+        ],
+        "winner": "yug.sns",
+        "turnout": 0.5607,
+        "note": "Early election. SNS figure is the Serbia is Winning coalition; SPS the SPS–JS–ZS list; DS For a Just Serbia; Dveri the Dveri–DSS list; LDP the Alliance for a Better Serbia (LDP–LSV–SDS). Others: Bosniak Democratic Union of Sandžak (2), SDA of Sandžak (2), Green Party and Party for Democratic Action (1 each).",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2016_Serbian_parliamentary_election",
+            "title": "Wikipedia: 2016 Serbian parliamentary election",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "president_2017",
+      "date": "2017-04-02",
+      "kind": "presidential",
+      "office": "yug.president",
+      "rounds": 1,
+      "historical": {
+        "candidates": [
+          {
+            "person": "yug.aleksandar_vucic",
+            "party": "yug.sns",
+            "share": 0.5601,
+            "votes": 2012788,
+            "round": 1
+          },
+          {
+            "person": "yug.sasa_jankovic",
+            "share": 0.1663,
+            "votes": 597728,
+            "round": 1
+          },
+          {
+            "person": "yug.luka_maksimovic",
+            "share": 0.0959,
+            "votes": 344498,
+            "round": 1
+          },
+          {
+            "person": "yug.vuk_jeremic",
+            "share": 0.0575,
+            "votes": 206676,
+            "round": 1
+          }
+        ],
+        "winner": "yug.aleksandar_vucic",
+        "turnout": 0.5434,
+        "note": "Won in the first round. Shares computed from the vote counts; turnout computed from valid plus invalid votes over the electorate.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2017_Serbian_presidential_election",
+            "title": "Wikipedia: 2017 Serbian presidential election",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "assembly_2020",
+      "date": "2020-06-21",
+      "kind": "legislative",
+      "chamber": "national_assembly",
+      "historical": {
+        "party_results": [
+          {
+            "party": "yug.sns",
+            "share": 0.6302,
+            "seats": 188
+          },
+          {
+            "party": "yug.sps",
+            "share": 0.1078,
+            "seats": 32
+          },
+          {
+            "party": "yug.svm",
+            "share": 0.0232,
+            "seats": 9
+          },
+          {
+            "party": "others",
+            "seats": 21
+          }
+        ],
+        "winner": "yug.sns",
+        "turnout": 0.4888,
+        "note": "SNS figure is the For Our Children coalition; SPS the SPS–JS–ZS–KP list. Several opposition parties boycotted the election. Others: Serbian Patriotic Alliance (11, 3.98%), Straight Ahead (4), Albanian Democratic Alternative (3) and SDA of Sandžak (3).",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2020_Serbian_parliamentary_election",
+            "title": "Wikipedia: 2020 Serbian parliamentary election",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "ref_constitution_2022",
+      "date": "2022-01-16",
+      "kind": "referendum",
+      "question": "Are you in favour of confirming the act on changing the Constitution of the Republic of Serbia?",
+      "historical": {
+        "yes_share": 0.6024,
+        "winner": "yes",
+        "turnout": 0.3065,
+        "note": "For 1,189,460; against 785,163; invalid/blank 20,592; electorate 6,510,323. Constitutional amendments on the judiciary.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2022_Serbian_constitutional_referendum",
+            "title": "Wikipedia: 2022 Serbian constitutional referendum",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "president_2022",
+      "date": "2022-04-03",
+      "kind": "presidential",
+      "office": "yug.president",
+      "rounds": 1,
+      "historical": {
+        "candidates": [
+          {
+            "person": "yug.aleksandar_vucic",
+            "party": "yug.sns",
+            "share": 0.6001,
+            "votes": 2224914,
+            "round": 1
+          },
+          {
+            "person": "yug.zdravko_ponos",
+            "share": 0.1884,
+            "votes": 698538,
+            "round": 1
+          },
+          {
+            "person": "yug.milos_jovanovic",
+            "party": "yug.dss",
+            "share": 0.061,
+            "votes": 226137,
+            "round": 1
+          }
+        ],
+        "winner": "yug.aleksandar_vucic",
+        "turnout": 0.584,
+        "note": "Won in the first round; held with the parliamentary election. Ponoš was the United for the Victory of Serbia candidate; Jovanović the National Democratic Alternative candidate. Shares computed from the vote counts.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2022_Serbian_general_election",
+            "title": "Wikipedia: 2022 Serbian general election",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "assembly_2022",
+      "date": "2022-04-03",
+      "kind": "legislative",
+      "chamber": "national_assembly",
+      "historical": {
+        "party_results": [
+          {
+            "party": "yug.sns",
+            "share": 0.4427,
+            "seats": 120
+          },
+          {
+            "party": "yug.ssp",
+            "share": 0.1409,
+            "seats": 38
+          },
+          {
+            "party": "yug.sps",
+            "share": 0.1179,
+            "seats": 31
+          },
+          {
+            "party": "yug.dss",
+            "share": 0.0554,
+            "seats": 15
+          },
+          {
+            "party": "yug.dveri",
+            "share": 0.0392,
+            "seats": 10
+          },
+          {
+            "party": "yug.ssz",
+            "share": 0.0382,
+            "seats": 10
+          },
+          {
+            "party": "yug.svm",
+            "share": 0.0163,
+            "seats": 5
+          },
+          {
+            "party": "others",
+            "seats": 21
+          }
+        ],
+        "winner": "yug.sns",
+        "turnout": 0.5863,
+        "note": "SNS figure is the Together We Can Do Everything coalition; SSP the United for the Victory of Serbia coalition; SPS the SPS–JS–Zeleni list; DSS the National Democratic Alternative; Dveri the Dveri–POKS list. Others: We Must (13, 4.84%), Justice and Reconciliation Party (3), DSHV–ZZV (2), SDA of Sandžak (2) and Albanian Coalition of Preševo Valley (1). Brnabić formed her third government.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2022_Serbian_general_election",
+            "title": "Wikipedia: 2022 Serbian general election",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "assembly_2023",
+      "date": "2023-12-17",
+      "kind": "legislative",
+      "chamber": "national_assembly",
+      "snap": true,
+      "historical": {
+        "party_results": [
+          {
+            "party": "yug.sns",
+            "share": 0.4806,
+            "seats": 129
+          },
+          {
+            "party": "yug.ssp",
+            "share": 0.2432,
+            "seats": 65
+          },
+          {
+            "party": "yug.sps",
+            "share": 0.0673,
+            "seats": 18
+          },
+          {
+            "party": "yug.dss",
+            "share": 0.0516,
+            "seats": 13
+          },
+          {
+            "party": "yug.mi_gin",
+            "share": 0.0482,
+            "seats": 13
+          },
+          {
+            "party": "yug.svm",
+            "share": 0.0174,
+            "seats": 6
+          },
+          {
+            "party": "others",
+            "seats": 6
+          }
+        ],
+        "winner": "yug.sns",
+        "turnout": 0.5877,
+        "note": "Early election. SNS figure is the Serbia Must Not Stop coalition; SSP the Serbia Against Violence coalition (led by Marinika Tepić and Miroslav Aleksić); DSS the National Democratic Alternative. Others: SPP–DSHV (2), SDA of Sandžak (2), PBASN and RS–NKPJ (1 each). Vučević became prime minister in May 2024.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2023_Serbian_parliamentary_election",
+            "title": "Wikipedia: 2023 Serbian parliamentary election",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified"
+      }
+    }
+  ],
+  "source": [
+    {
+      "url": "https://en.wikipedia.org/wiki/Template:Serbian_elections",
+      "title": "Wikipedia: Template:Serbian elections",
+      "accessed": "2026-10-15"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Template:Yugoslav_elections",
+      "title": "Wikipedia: Template:Yugoslav elections",
+      "accessed": "2026-10-15"
+    }
+  ],
+  "confidence": "verified"
+}

@@ -1,0 +1,837 @@
+{
+  "parties": [
+    {
+      "id": "svn.lds",
+      "name": {
+        "en": "Liberal Democracy of Slovenia",
+        "native": "Liberalna demokracija Slovenije"
+      },
+      "abbrev": {
+        "en": "LDS",
+        "native": "LDS"
+      },
+      "color": "#0072BB",
+      "sub_ideology": "social_liberal",
+      "founded": "1994-03-12",
+      "status_2000": "active",
+      "leader_history": [
+        {
+          "person": "svn.janez_drnovsek",
+          "from": 1994,
+          "to": 2002
+        },
+        {
+          "person": "svn.anton_rop",
+          "from": 2002,
+          "to": 2005
+        },
+        {
+          "person": "svn.jelko_kacin",
+          "from": 2005,
+          "to": 2007
+        },
+        {
+          "person": "svn.katarina_kresal",
+          "from": 2007
+        }
+      ],
+      "popularity_2000": 0.2701,
+      "popularity_note": "Vote share, 1996 National Assembly election (largest party; led the governing coalition in 2000).",
+      "note": "Formed in 1994 by a merger of the Liberal Democratic Party, the Democratic Party, the Socialist Party and a Green party. Lost representation in 2011 and has not contested national elections since 2014. Leaders after Kresal are not recorded (the party infobox lists Tone Anderlič as current leader).",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Liberal_Democracy_of_Slovenia",
+          "title": "Wikipedia: Liberal Democracy of Slovenia",
+          "accessed": "2026-10-15"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/1996_Slovenian_parliamentary_election",
+          "title": "Wikipedia: 1996 Slovenian parliamentary election",
+          "accessed": "2026-10-15"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "svn.sls",
+      "name": {
+        "en": "Slovenian People's Party",
+        "native": "Slovenska ljudska stranka"
+      },
+      "abbrev": {
+        "en": "SLS",
+        "native": "SLS"
+      },
+      "color": "#46A13A",
+      "sub_ideology": "agrarian",
+      "founded": "1988-05-12",
+      "status_2000": "active",
+      "leader_history": [
+        {
+          "person": "svn.marjan_podobnik",
+          "from": 1992,
+          "to": 2000
+        },
+        {
+          "person": "svn.franc_zagozen",
+          "from": 2000,
+          "to": 2001
+        },
+        {
+          "person": "svn.janez_podobnik",
+          "from": 2003,
+          "to": 2007
+        },
+        {
+          "person": "svn.bojan_srot",
+          "from": 2007,
+          "to": 2009
+        },
+        {
+          "person": "svn.radovan_zerjav",
+          "from": 2009,
+          "to": 2013
+        },
+        {
+          "person": "svn.franc_bogovic",
+          "from": 2013,
+          "to": 2014
+        },
+        {
+          "person": "svn.marjan_podobnik",
+          "from": 2018,
+          "to": 2022
+        },
+        {
+          "person": "svn.tina_bregant",
+          "from": 2025
+        }
+      ],
+      "popularity_2000": 0.1938,
+      "popularity_note": "Vote share, 1996 National Assembly election. Coalition partner in 2000 (left the Drnovšek government in spring 2000).",
+      "lineage": {
+        "formed_from": [
+          "svn.skd"
+        ]
+      },
+      "note": "Merged with the Slovene Christian Democrats in April 2000 as SLS+SKD; reverted to the SLS name later. Leaders not recorded as people: Franci But (2001-2003), Marko Zidanšek (2014-2018), Marko Balažic (2022-2025). Ran in the 2026 election on a joint list with NSi and FOKUS.",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Slovenian_People's_Party",
+          "title": "Wikipedia: Slovenian People's Party (presidents of the party)",
+          "accessed": "2026-10-15"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/1996_Slovenian_parliamentary_election",
+          "title": "Wikipedia: 1996 Slovenian parliamentary election",
+          "accessed": "2026-10-15"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "svn.sds",
+      "name": {
+        "en": "Slovenian Democratic Party",
+        "native": "Slovenska demokratska stranka"
+      },
+      "abbrev": {
+        "en": "SDS",
+        "native": "SDS"
+      },
+      "color": "#FFD500",
+      "sub_ideology": "national_conservative",
+      "founded": "1989-02-16",
+      "status_2000": "active",
+      "leader_history": [
+        {
+          "person": "svn.janez_jansa",
+          "from": "1993-05-15"
+        }
+      ],
+      "popularity_2000": 0.1613,
+      "popularity_note": "Vote share, 1996 National Assembly election (as the Social Democratic Party of Slovenia, SDSS). Joined the Bajuk government in June 2000.",
+      "note": "Called the Social Democratic Party of Slovenia (SDSS) until it adopted the SDS name. The party article lists national conservatism, nationalism and right-wing populism.",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Slovenian_Democratic_Party",
+          "title": "Wikipedia: Slovenian Democratic Party",
+          "accessed": "2026-10-15"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/1996_Slovenian_parliamentary_election",
+          "title": "Wikipedia: 1996 Slovenian parliamentary election",
+          "accessed": "2026-10-15"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/2026_Slovenian_parliamentary_election",
+          "title": "Wikipedia: 2026 Slovenian parliamentary election (leader since 15 May 1993)",
+          "accessed": "2026-10-15"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "svn.skd",
+      "name": {
+        "en": "Slovene Christian Democrats",
+        "native": "Slovenski krščanski demokrati"
+      },
+      "abbrev": {
+        "en": "SKD",
+        "native": "SKD"
+      },
+      "color": "#2E5EAA",
+      "sub_ideology": "christian_democrat",
+      "founded": 1989,
+      "dissolved": "2000-04-15",
+      "status_2000": "active",
+      "leader_history": [
+        {
+          "person": "svn.lojze_peterle",
+          "from": 1989,
+          "to": 2000
+        }
+      ],
+      "popularity_2000": 0.0962,
+      "popularity_note": "Vote share, 1996 National Assembly election (in opposition).",
+      "lineage": {
+        "merged_into": "svn.sls"
+      },
+      "note": "Founded in March 1989. Merged into SLS (as SLS+SKD) in April 2000; Wikidata gives 15 April 2000 as the dissolution date.",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Slovene_Christian_Democrats",
+          "title": "Wikipedia: Slovene Christian Democrats",
+          "accessed": "2026-10-15"
+        },
+        {
+          "url": "https://www.wikidata.org/wiki/Q2395554",
+          "title": "Wikidata: Slovene Christian Democrats (dissolution date)",
+          "accessed": "2026-10-15"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "svn.sd",
+      "name": {
+        "en": "Social Democrats",
+        "native": "Socialni demokrati"
+      },
+      "abbrev": {
+        "en": "SD",
+        "native": "SD"
+      },
+      "color": "#E3001B",
+      "sub_ideology": "social_democrat",
+      "founded": "1993-05-29",
+      "status_2000": "active",
+      "leader_history": [
+        {
+          "person": "svn.borut_pahor",
+          "from": 1997,
+          "to": 2012
+        },
+        {
+          "person": "svn.igor_luksic",
+          "from": 2012,
+          "to": 2014
+        },
+        {
+          "person": "svn.dejan_zidan",
+          "from": 2014,
+          "to": 2020
+        },
+        {
+          "person": "svn.tanja_fajon",
+          "from": 2020,
+          "to": 2024
+        },
+        {
+          "person": "svn.matjaz_han",
+          "from": "2024-04-13"
+        }
+      ],
+      "popularity_2000": 0.0903,
+      "popularity_note": "Vote share, 1996 National Assembly election (as the United List of Social Democrats, ZLSD).",
+      "note": "Known as the United List of Social Democrats (ZLSD) until 2005. Founding date: Wikidata gives 29 May 1993 (formation of ZLSD); the party infobox gives 2 April 1990 (the reformed League of Communists of Slovenia).",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Social_Democrats_(Slovenia)",
+          "title": "Wikipedia: Social Democrats (Slovenia) (party leadership)",
+          "accessed": "2026-10-15"
+        },
+        {
+          "url": "https://www.wikidata.org/wiki/Q917211",
+          "title": "Wikidata: Social Democrats (Slovenia) (founding date, chairs)",
+          "accessed": "2026-10-15"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "svn.desus",
+      "name": {
+        "en": "Democratic Party of Pensioners of Slovenia",
+        "native": "Demokratična stranka upokojencev Slovenije"
+      },
+      "abbrev": {
+        "en": "DeSUS",
+        "native": "DeSUS"
+      },
+      "color": "#8DC63F",
+      "sub_ideology": "big_tent",
+      "founded": 1991,
+      "dissolved": "2025-05-17",
+      "status_2000": "active",
+      "leader_history": [
+        {
+          "person": "svn.karl_erjavec",
+          "from": 2005,
+          "to": 2020
+        },
+        {
+          "person": "svn.aleksandra_pivec",
+          "from": 2020,
+          "to": 2020
+        },
+        {
+          "person": "svn.karl_erjavec",
+          "from": 2020,
+          "to": 2021
+        }
+      ],
+      "popularity_2000": 0.0432,
+      "popularity_note": "Vote share, 1996 National Assembly election. Coalition partner in 2000.",
+      "note": "Pensioners' interest party (recorded as big tent). Leaders before 2005 (Jože Globačnik in 1996, Janko Kušar in 2000, Anton Rous in 2004) and after 2021 (Ljubo Jasnič and others) are not recorded as people. Merged into the Party of Generations on 17 May 2025.",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Democratic_Party_of_Pensioners_of_Slovenia",
+          "title": "Wikipedia: Democratic Party of Pensioners of Slovenia",
+          "accessed": "2026-10-15"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/2000_Slovenian_parliamentary_election",
+          "title": "Wikipedia: 2000 Slovenian parliamentary election (leader in 2000)",
+          "accessed": "2026-10-15"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "svn.sns",
+      "name": {
+        "en": "Slovenian National Party",
+        "native": "Slovenska nacionalna stranka"
+      },
+      "abbrev": {
+        "en": "SNS",
+        "native": "SNS"
+      },
+      "color": "#1C3F94",
+      "sub_ideology": "right_populist",
+      "founded": "1991-03-17",
+      "status_2000": "active",
+      "leader_history": [
+        {
+          "person": "svn.zmago_jelincic",
+          "from": 1991
+        }
+      ],
+      "popularity_2000": 0.0322,
+      "popularity_note": "Vote share, 1996 National Assembly election.",
+      "note": "The party article lists nationalism, right-wing populism and Euroscepticism. Led by Zmago Jelinčič Plemeniti since its foundation.",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Slovenian_National_Party",
+          "title": "Wikipedia: Slovenian National Party",
+          "accessed": "2026-10-15"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "svn.nsi",
+      "name": {
+        "en": "New Slovenia – Christian Democrats",
+        "native": "Nova Slovenija – Krščanski demokrati"
+      },
+      "abbrev": {
+        "en": "NSi",
+        "native": "NSi"
+      },
+      "color": "#0D4A9E",
+      "sub_ideology": "christian_democrat",
+      "founded": "2000-08-04",
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        {
+          "person": "svn.andrej_bajuk",
+          "from": "2000-08-04",
+          "to": 2008
+        },
+        {
+          "person": "svn.ljudmila_novak",
+          "from": 2008,
+          "to": 2018
+        },
+        {
+          "person": "svn.matej_tonin",
+          "from": 2018,
+          "to": 2025
+        },
+        {
+          "person": "svn.jernej_vrtovec",
+          "from": "2025-09-13"
+        }
+      ],
+      "popularity_2000": 0,
+      "lineage": {
+        "split_from": "svn.sls"
+      },
+      "note": "Founded by Andrej Bajuk after a split from SLS+SKD. Led the NSi–SLS–FOKUS joint list in 2026.",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/New_Slovenia",
+          "title": "Wikipedia: New Slovenia",
+          "accessed": "2026-10-15"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/Matej_Tonin",
+          "title": "Wikipedia: Matej Tonin (January 2018 leadership change)",
+          "accessed": "2026-10-15"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/2026_Slovenian_parliamentary_election",
+          "title": "Wikipedia: 2026 Slovenian parliamentary election (Vrtovec leader since 13 September 2025)",
+          "accessed": "2026-10-15"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "svn.sms",
+      "name": {
+        "en": "Youth Party – European Greens",
+        "native": "Stranka mladih – Zeleni Evrope"
+      },
+      "abbrev": {
+        "en": "SMS",
+        "native": "SMS"
+      },
+      "color": "#7AC143",
+      "sub_ideology": "green",
+      "founded": "2000-07-04",
+      "status_2000": "not_yet_founded",
+      "leader_history": [],
+      "popularity_2000": 0,
+      "note": "Youth Party of Slovenia at its foundation; won 4 seats in 2000 (leader Dominik Černjak, not recorded as a person).",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Youth_Party_%E2%80%93_European_Greens",
+          "title": "Wikipedia: Youth Party – European Greens",
+          "accessed": "2026-10-15"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/2000_Slovenian_parliamentary_election",
+          "title": "Wikipedia: 2000 Slovenian parliamentary election",
+          "accessed": "2026-10-15"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "svn.zares",
+      "name": {
+        "en": "Zares – Social Liberals",
+        "native": "Zares – socialno-liberalni"
+      },
+      "abbrev": {
+        "en": "Zares",
+        "native": "Zares"
+      },
+      "color": "#D7192D",
+      "sub_ideology": "social_liberal",
+      "founded": 2007,
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        {
+          "person": "svn.gregor_golobic",
+          "from": 2007,
+          "to": 2012
+        }
+      ],
+      "popularity_2000": 0,
+      "lineage": {
+        "split_from": "svn.lds"
+      },
+      "note": "Split from LDS in 2007. Pavel Gantar became president on 15 February 2012 (not recorded as a person).",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Zares",
+          "title": "Wikipedia: Zares",
+          "accessed": "2026-10-15"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "svn.ps",
+      "name": {
+        "en": "Positive Slovenia",
+        "native": "Pozitivna Slovenija"
+      },
+      "abbrev": {
+        "en": "PS",
+        "native": "PS"
+      },
+      "color": "#F28C28",
+      "sub_ideology": "social_liberal",
+      "founded": "2011-10-22",
+      "dissolved": 2024,
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        {
+          "person": "svn.zoran_jankovic",
+          "from": "2011-10-22",
+          "to": 2013
+        },
+        {
+          "person": "svn.alenka_bratusek",
+          "from": 2013,
+          "to": 2014
+        },
+        {
+          "person": "svn.zoran_jankovic",
+          "from": "2014-04-26"
+        }
+      ],
+      "popularity_2000": 0,
+      "note": "Founded as Zoran Janković's List – Positive Slovenia. Did not contest elections after 2014; officially dissolved in 2024.",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Positive_Slovenia",
+          "title": "Wikipedia: Positive Slovenia",
+          "accessed": "2026-10-15"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "svn.dl",
+      "name": {
+        "en": "Civic List",
+        "native": "Državljanska lista"
+      },
+      "abbrev": {
+        "en": "DL",
+        "native": "DL"
+      },
+      "color": "#00A3E0",
+      "sub_ideology": "classical_liberal",
+      "founded": "2011-10-21",
+      "dissolved": 2024,
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        {
+          "person": "svn.gregor_virant",
+          "from": "2011-10-21"
+        }
+      ],
+      "popularity_2000": 0,
+      "note": "Founded as Gregor Virant's Civic List. Later led by Bojan Starman (not recorded). Officially dissolved in 2024.",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Gregor_Virant's_Civic_List",
+          "title": "Wikipedia: Gregor Virant's Civic List",
+          "accessed": "2026-10-15"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "svn.smc",
+      "name": {
+        "en": "Modern Centre Party",
+        "native": "Stranka modernega centra"
+      },
+      "abbrev": {
+        "en": "SMC",
+        "native": "SMC"
+      },
+      "color": "#1E90FF",
+      "sub_ideology": "social_liberal",
+      "founded": "2014-06-02",
+      "dissolved": "2021-12-04",
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        {
+          "person": "svn.miro_cerar",
+          "from": "2014-06-02"
+        },
+        {
+          "person": "svn.zdravko_pocivalsek",
+          "from": 2019
+        }
+      ],
+      "popularity_2000": 0,
+      "note": "Founded as the Party of Miro Cerar. Merged with the Economic Active Party on 4 December 2021 to form Concretely (not recorded). The year Počivalšek took over is not confirmed by the fetched source.",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Modern_Centre_Party",
+          "title": "Wikipedia: Modern Centre Party",
+          "accessed": "2026-10-15"
+        }
+      ],
+      "confidence": "needs_review",
+      "review_note": "Check the date Zdravko Počivalšek succeeded Miro Cerar as party president (2019 assumed from his later role; not stated in the fetched article)."
+    },
+    {
+      "id": "svn.levica",
+      "name": {
+        "en": "The Left",
+        "native": "Levica"
+      },
+      "abbrev": {
+        "en": "Levica",
+        "native": "Levica"
+      },
+      "color": "#C8102E",
+      "sub_ideology": "democratic_socialist",
+      "founded": "2014-03-01",
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        {
+          "person": "svn.luka_mesec",
+          "from": "2017-06-24",
+          "to": "2023-09-02"
+        },
+        {
+          "person": "svn.asta_vrecko",
+          "from": "2023-09-02"
+        }
+      ],
+      "popularity_2000": 0,
+      "note": "Founded as the United Left coalition on 1 March 2014; became a single party on 24 June 2017. Luka Mesec headed the United Left from 2014 and has been co-coordinator with Asta Vrečko since 14 November 2025. Ran with Vesna in 2022 and 2026 (Levica and Vesna).",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/The_Left_(Slovenia)",
+          "title": "Wikipedia: The Left (Slovenia)",
+          "accessed": "2026-10-15"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/Luka_Mesec",
+          "title": "Wikipedia: Luka Mesec (coordinator terms)",
+          "accessed": "2026-10-15"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "svn.sab",
+      "name": {
+        "en": "Party of Alenka Bratušek",
+        "native": "Stranka Alenke Bratušek"
+      },
+      "abbrev": {
+        "en": "SAB",
+        "native": "SAB"
+      },
+      "color": "#00AEEF",
+      "sub_ideology": "social_liberal",
+      "founded": "2014-05-31",
+      "dissolved": "2022-06-27",
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        {
+          "person": "svn.alenka_bratusek",
+          "from": "2014-05-31",
+          "to": "2022-06-27"
+        }
+      ],
+      "popularity_2000": 0,
+      "lineage": {
+        "split_from": "svn.ps",
+        "merged_into": "svn.gs"
+      },
+      "note": "Founded as the Alliance of Alenka Bratušek (ZaAB). Merged into the Freedom Movement in 2022.",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Party_of_Alenka_Bratu%C5%A1ek",
+          "title": "Wikipedia: Party of Alenka Bratušek",
+          "accessed": "2026-10-15"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "svn.lms",
+      "name": {
+        "en": "List of Marjan Šarec",
+        "native": "Lista Marjana Šarca"
+      },
+      "abbrev": {
+        "en": "LMŠ",
+        "native": "LMŠ"
+      },
+      "color": "#1980C7",
+      "sub_ideology": "social_liberal",
+      "founded": "2014-05-31",
+      "dissolved": "2022-06-27",
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        {
+          "person": "svn.marjan_sarec",
+          "from": "2014-05-31",
+          "to": "2022-06-27"
+        }
+      ],
+      "popularity_2000": 0,
+      "lineage": {
+        "merged_into": "svn.gs"
+      },
+      "note": "Merged into the Freedom Movement in 2022.",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/List_of_Marjan_%C5%A0arec",
+          "title": "Wikipedia: List of Marjan Šarec",
+          "accessed": "2026-10-15"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "svn.gs",
+      "name": {
+        "en": "Freedom Movement",
+        "native": "Gibanje Svoboda"
+      },
+      "abbrev": {
+        "en": "GS",
+        "native": "GS"
+      },
+      "color": "#00A6A6",
+      "sub_ideology": "social_liberal",
+      "founded": "2022-01-26",
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        {
+          "person": "svn.robert_golob",
+          "from": "2022-01-26"
+        }
+      ],
+      "popularity_2000": 0,
+      "note": "Successor of the Green Actions Party (Z.DEJ, founded 8 May 2021), renamed and taken over by Robert Golob on 26 January 2022. LMŠ and SAB merged into it in June 2022.",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Freedom_Movement_(Slovenia)",
+          "title": "Wikipedia: Freedom Movement (Slovenia)",
+          "accessed": "2026-10-15"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/2026_Slovenian_parliamentary_election",
+          "title": "Wikipedia: 2026 Slovenian parliamentary election (leader since 26 January 2022)",
+          "accessed": "2026-10-15"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "svn.demokrati",
+      "name": {
+        "en": "Democrats",
+        "native": "Demokrati. Anžeta Logarja"
+      },
+      "abbrev": {
+        "en": "Demokrati",
+        "native": "Demokrati"
+      },
+      "color": "#2D3C8C",
+      "sub_ideology": "liberal_conservative",
+      "founded": "2024-11-16",
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        {
+          "person": "svn.anze_logar",
+          "from": "2024-11-16"
+        }
+      ],
+      "popularity_2000": 0,
+      "lineage": {
+        "split_from": "svn.sds"
+      },
+      "note": "Anže Logar's Democrats; grew out of the Cooperation Platform association (31 May 2023). The party article lists conservative liberalism. Joined the Janša government in 2026.",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Democrats_(Slovenia)",
+          "title": "Wikipedia: Democrats (Slovenia)",
+          "accessed": "2026-10-15"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "svn.resnica",
+      "name": {
+        "en": "Resni.ca",
+        "native": "Resni.ca"
+      },
+      "abbrev": {
+        "en": "Resni.ca",
+        "native": "Resni.ca"
+      },
+      "color": "#5B2C83",
+      "sub_ideology": "right_populist",
+      "founded": "2021-01-14",
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        {
+          "person": "svn.zoran_stevanovic",
+          "from": "2021-01-14"
+        }
+      ],
+      "popularity_2000": 0,
+      "note": "The party article lists right-wing populism, economic liberalism, ultraconservatism and sovereigntism. Won seats for the first time in 2026 and supports the Janša government.",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Resni.ca",
+          "title": "Wikipedia: Resni.ca",
+          "accessed": "2026-10-15"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "svn.fokus",
+      "name": {
+        "en": "Focus of Marko Lotrič",
+        "native": "FOKUS Marka Lotriča"
+      },
+      "abbrev": {
+        "en": "FOKUS",
+        "native": "FOKUS"
+      },
+      "color": "#F7A600",
+      "sub_ideology": "liberal_conservative",
+      "founded": "2025-01-18",
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        {
+          "person": "svn.marko_lotric",
+          "from": "2025-01-18"
+        }
+      ],
+      "popularity_2000": 0,
+      "note": "Centre-right; ran on the NSi–SLS–FOKUS joint list in 2026 and joined the Janša government.",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Focus_of_Marko_Lotri%C4%8D",
+          "title": "Wikipedia: Focus of Marko Lotrič",
+          "accessed": "2026-10-15"
+        }
+      ],
+      "confidence": "verified"
+    }
+  ]
+}

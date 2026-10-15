@@ -1,0 +1,1549 @@
+{
+  "rules": [
+    {
+      "kind": "legislative",
+      "chamber": "national_assembly",
+      "every_years": 4,
+      "anchor": "2026-03-22",
+      "snap_possible": true,
+      "note": "National Assembly elected every four years; early elections in 2000, 2011 and 2014."
+    },
+    {
+      "kind": "presidential",
+      "office": "svn.president",
+      "every_years": 5,
+      "anchor": "2022-10-23",
+      "snap_possible": true,
+      "note": "Direct two-round election; next due in 2027."
+    }
+  ],
+  "elections": [
+    {
+      "id": "assembly_2000",
+      "date": "2000-10-15",
+      "kind": "legislative",
+      "chamber": "national_assembly",
+      "snap": true,
+      "historical": {
+        "party_results": [
+          {
+            "party": "svn.lds",
+            "share": 0.3626,
+            "seats": 34
+          },
+          {
+            "party": "svn.sds",
+            "share": 0.1581,
+            "seats": 14
+          },
+          {
+            "party": "svn.sd",
+            "share": 0.1208,
+            "seats": 11
+          },
+          {
+            "party": "svn.sls",
+            "share": 0.0954,
+            "seats": 9
+          },
+          {
+            "party": "svn.nsi",
+            "share": 0.0866,
+            "seats": 8
+          },
+          {
+            "party": "svn.desus",
+            "share": 0.0517,
+            "seats": 4
+          },
+          {
+            "party": "svn.sns",
+            "share": 0.0439,
+            "seats": 4
+          },
+          {
+            "party": "svn.sms",
+            "share": 0.0434,
+            "seats": 4
+          },
+          {
+            "party": "others",
+            "seats": 2
+          }
+        ],
+        "winner": "svn.lds",
+        "turnout": 0.7009,
+        "note": "SLS+SKD listed under SLS; SD as ZLSD. The two national-community seats (Italian and Hungarian) are counted as others. Drnovšek formed an LDS, ZLSD, SLS+SKD and DeSUS government on 30 November 2000.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2000_Slovenian_parliamentary_election",
+            "title": "Wikipedia: 2000 Slovenian parliamentary election",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "ref_fertility_2001",
+      "date": "2001-06-17",
+      "kind": "referendum",
+      "question": "Law amending the infertility treatment and biomedically assisted fertilisation act (fertility treatment for unmarried women)",
+      "historical": {
+        "yes_share": 0.2672,
+        "winner": "no",
+        "turnout": 0.3565,
+        "note": "For 149,799; against 410,856; invalid/blank 7,129; electorate 1,592,650. ",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2001_Slovenian_fertility_treatment_referendum",
+            "title": "Wikipedia: 2001 Slovenian fertility treatment referendum",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "president_2002",
+      "date": "2002-11-10",
+      "kind": "presidential",
+      "office": "svn.president",
+      "rounds": 2,
+      "historical": {
+        "candidates": [
+          {
+            "person": "svn.janez_drnovsek",
+            "party": "svn.lds",
+            "share": 0.4439,
+            "votes": 508114,
+            "round": 1
+          },
+          {
+            "person": "svn.barbara_brezigar",
+            "share": 0.308,
+            "votes": 352520,
+            "round": 1
+          },
+          {
+            "person": "svn.zmago_jelincic",
+            "party": "svn.sns",
+            "share": 0.0849,
+            "votes": 97178,
+            "round": 1
+          },
+          {
+            "person": "svn.france_arhar",
+            "share": 0.0759,
+            "votes": 86836,
+            "round": 1
+          },
+          {
+            "person": "svn.janez_drnovsek",
+            "party": "svn.lds",
+            "share": 0.5658,
+            "votes": 586263,
+            "round": 2
+          },
+          {
+            "person": "svn.barbara_brezigar",
+            "share": 0.4342,
+            "votes": 449995,
+            "round": 2
+          }
+        ],
+        "winner": "svn.janez_drnovsek",
+        "turnout": 0.7204,
+        "note": "First round 10 November, runoff 1 December 2002. Brezigar and Arhar stood as independents. Shares computed from the vote counts; turnout is the first round (valid plus invalid votes over the electorate).",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2002_Slovenian_presidential_election",
+            "title": "Wikipedia: 2002 Slovenian presidential election",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "ref_railways_2003",
+      "date": "2003-01-19",
+      "kind": "referendum",
+      "question": "Keeping Slovenian Railways as a single company during privatisation",
+      "historical": {
+        "yes_share": 0.4813,
+        "winner": "no",
+        "turnout": 0.3114,
+        "note": "For 236,534; against 254,904; invalid/blank 9,991; electorate 1,610,180. Held with the Telekom question.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2003_Slovenian_privatisation_referendum",
+            "title": "Wikipedia: 2003 Slovenian privatisation referendum",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "ref_telekom_2003",
+      "date": "2003-01-19",
+      "kind": "referendum",
+      "question": "Refunding Telekom Slovenije subscribers for connection fees",
+      "historical": {
+        "yes_share": 0.776,
+        "winner": "yes",
+        "turnout": 0.3116,
+        "note": "For 384,925; against 111,143; invalid/blank 5,664; electorate 1,610,180. Held with the railways question.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2003_Slovenian_privatisation_referendum",
+            "title": "Wikipedia: 2003 Slovenian privatisation referendum",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "ref_eu_2003",
+      "date": "2003-03-23",
+      "kind": "referendum",
+      "question": "Should the Republic of Slovenia become a member of the European Union?",
+      "historical": {
+        "yes_share": 0.8964,
+        "winner": "yes",
+        "turnout": 0.6041,
+        "note": "For 869,171; against 100,503; invalid/blank 4,884; electorate 1,613,305. ",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2003_Slovenian_European_Union_and_NATO_membership_referendum",
+            "title": "Wikipedia: 2003 Slovenian European Union and NATO membership referendum",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "ref_nato_2003",
+      "date": "2003-03-23",
+      "kind": "referendum",
+      "question": "Should the Republic of Slovenia become a member of NATO?",
+      "historical": {
+        "yes_share": 0.6608,
+        "winner": "yes",
+        "turnout": 0.6041,
+        "note": "For 637,882; against 327,463; invalid/blank 9,179; electorate 1,613,305. ",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2003_Slovenian_European_Union_and_NATO_membership_referendum",
+            "title": "Wikipedia: 2003 Slovenian European Union and NATO membership referendum",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "ref_sunday_shopping_2003",
+      "date": "2003-09-21",
+      "kind": "referendum",
+      "question": "Amendment to the Trade Act limiting Sunday shop opening",
+      "historical": {
+        "yes_share": 0.5799,
+        "winner": "yes",
+        "turnout": 0.2754,
+        "note": "For 256,461; against 185,773; invalid/blank 3,554; electorate 1,618,978. ",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2003_Slovenian_Sunday_shopping_referendum",
+            "title": "Wikipedia: 2003 Slovenian Sunday shopping referendum",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "ref_erased_2004",
+      "date": "2004-04-04",
+      "kind": "referendum",
+      "question": "Act implementing the Constitutional Court decision on the residence status of persons removed from the permanent-residence register in 1992",
+      "historical": {
+        "yes_share": 0.0395,
+        "winner": "no",
+        "turnout": 0.3154,
+        "note": "For 19,984; against 485,356; invalid/blank 7,794; electorate 1,626,913. ",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2004_Slovenian_minority_rights_referendum",
+            "title": "Wikipedia: 2004 Slovenian minority rights referendum",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "assembly_2004",
+      "date": "2004-10-03",
+      "kind": "legislative",
+      "chamber": "national_assembly",
+      "historical": {
+        "party_results": [
+          {
+            "party": "svn.sds",
+            "share": 0.2908,
+            "seats": 29
+          },
+          {
+            "party": "svn.lds",
+            "share": 0.228,
+            "seats": 23
+          },
+          {
+            "party": "svn.sd",
+            "share": 0.1017,
+            "seats": 10
+          },
+          {
+            "party": "svn.nsi",
+            "share": 0.0909,
+            "seats": 9
+          },
+          {
+            "party": "svn.sls",
+            "share": 0.0682,
+            "seats": 7
+          },
+          {
+            "party": "svn.sns",
+            "share": 0.0627,
+            "seats": 6
+          },
+          {
+            "party": "svn.desus",
+            "share": 0.0404,
+            "seats": 4
+          },
+          {
+            "party": "others",
+            "seats": 2
+          }
+        ],
+        "winner": "svn.sds",
+        "turnout": 0.6064,
+        "note": "SD as ZLSD. The two national-community seats (Italian and Hungarian) are counted as others. Janša formed an SDS, NSi, SLS and DeSUS government.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2004_Slovenian_parliamentary_election",
+            "title": "Wikipedia: 2004 Slovenian parliamentary election",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "ref_rtvs_2005",
+      "date": "2005-09-25",
+      "kind": "referendum",
+      "question": "Act on Radiotelevizija Slovenija (ZRTVS-1)",
+      "historical": {
+        "yes_share": 0.507,
+        "winner": "yes",
+        "turnout": 0.307,
+        "note": "For 253,931; against 246,960; invalid/blank 3,960; electorate 1,644,270. ",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2005_Slovenian_RTVS_referendum",
+            "title": "Wikipedia: 2005 Slovenian RTVS referendum",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "president_2007",
+      "date": "2007-10-21",
+      "kind": "presidential",
+      "office": "svn.president",
+      "rounds": 2,
+      "historical": {
+        "candidates": [
+          {
+            "person": "svn.lojze_peterle",
+            "share": 0.2873,
+            "votes": 283412,
+            "round": 1
+          },
+          {
+            "person": "svn.danilo_turk",
+            "share": 0.2447,
+            "votes": 241349,
+            "round": 1
+          },
+          {
+            "person": "svn.mitja_gaspari",
+            "share": 0.2409,
+            "votes": 237632,
+            "round": 1
+          },
+          {
+            "person": "svn.zmago_jelincic",
+            "party": "svn.sns",
+            "share": 0.1916,
+            "votes": 188951,
+            "round": 1
+          },
+          {
+            "person": "svn.danilo_turk",
+            "share": 0.6803,
+            "votes": 677333,
+            "round": 2
+          },
+          {
+            "person": "svn.lojze_peterle",
+            "share": 0.3197,
+            "votes": 318288,
+            "round": 2
+          }
+        ],
+        "winner": "svn.danilo_turk",
+        "turnout": 0.5764,
+        "note": "First round 21 October, runoff 11 November 2007. Peterle (backed by NSi, SDS and SLS), Türk (SD, DeSUS, Zares, Active Slovenia) and Gaspari (LDS) stood as independents. Shares computed from the vote counts; turnout is the first round.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2007_Slovenian_presidential_election",
+            "title": "Wikipedia: 2007 Slovenian presidential election",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "ref_insurance_2007",
+      "date": "2007-11-11",
+      "kind": "referendum",
+      "question": "Amendments to the Ownership Transformation of Insurance Companies Act (sale of Zavarovalnica Triglav shares)",
+      "historical": {
+        "yes_share": 0.2888,
+        "winner": "no",
+        "turnout": 0.5791,
+        "note": "For 273,736; against 674,132; invalid/blank 48,215; electorate 1,720,152. Held with the presidential runoff.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2007_Slovenian_privatisation_referendum",
+            "title": "Wikipedia: 2007 Slovenian privatisation referendum",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "ref_regions_2008",
+      "date": "2008-06-22",
+      "kind": "referendum",
+      "question": "Consultative referendum on establishing thirteen provinces",
+      "historical": {
+        "winner": "yes",
+        "note": "Consultative. Turnout was 10.9%; voters approved the proposal in eleven of the thirteen proposed provinces (not in Central Slovenia or Coastal–Karst). No national total is given in the source.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2008_Slovenian_regionalisation_referendum",
+            "title": "Wikipedia: 2008 Slovenian regionalisation referendum",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "needs_review",
+        "review_note": "National yes/no totals are not in the fetched article; check the State Election Commission (DVK) report."
+      }
+    },
+    {
+      "id": "assembly_2008",
+      "date": "2008-09-21",
+      "kind": "legislative",
+      "chamber": "national_assembly",
+      "historical": {
+        "party_results": [
+          {
+            "party": "svn.sd",
+            "share": 0.3045,
+            "seats": 29
+          },
+          {
+            "party": "svn.sds",
+            "share": 0.2926,
+            "seats": 28
+          },
+          {
+            "party": "svn.zares",
+            "share": 0.0937,
+            "seats": 9
+          },
+          {
+            "party": "svn.desus",
+            "share": 0.0745,
+            "seats": 7
+          },
+          {
+            "party": "svn.sns",
+            "share": 0.054,
+            "seats": 5
+          },
+          {
+            "party": "svn.sls",
+            "share": 0.0521,
+            "seats": 5
+          },
+          {
+            "party": "svn.lds",
+            "share": 0.0521,
+            "seats": 5
+          },
+          {
+            "party": "svn.nsi",
+            "share": 0.034,
+            "seats": 0
+          },
+          {
+            "party": "others",
+            "seats": 2
+          }
+        ],
+        "winner": "svn.sd",
+        "turnout": 0.631,
+        "note": "SLS ran on a joint list with the Youth Party (SMS). The two national-community seats (Italian and Hungarian) are counted as others. Pahor formed an SD, Zares, DeSUS and LDS government. NSi share from the party article.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2008_Slovenian_parliamentary_election",
+            "title": "Wikipedia: 2008 Slovenian parliamentary election",
+            "accessed": "2026-10-15"
+          },
+          {
+            "url": "https://en.wikipedia.org/wiki/New_Slovenia",
+            "title": "Wikipedia: New Slovenia (2008 result)",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "ref_arbitration_2010",
+      "date": "2010-06-06",
+      "kind": "referendum",
+      "question": "Ratification of the border arbitration agreement with Croatia",
+      "historical": {
+        "yes_share": 0.5154,
+        "winner": "yes",
+        "turnout": 0.4264,
+        "note": "For 371,848; against 349,595; invalid/blank 5,544; electorate 1,705,105. ",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2010_Slovenian_border_dispute_agreement_referendum",
+            "title": "Wikipedia: 2010 Slovenian border dispute agreement referendum",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "ref_rtv_2010",
+      "date": "2010-12-12",
+      "kind": "referendum",
+      "question": "Act on Radiotelevizija Slovenija (ZRTVS-2)",
+      "historical": {
+        "yes_share": 0.2767,
+        "winner": "no",
+        "turnout": 0.1478,
+        "note": "For 69,175; against 180,820; invalid/blank 2,348; electorate 1,707,209. ",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2010_Slovenian_public_broadcaster_law_referendum",
+            "title": "Wikipedia: 2010 Slovenian public broadcaster law referendum",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "ref_minor_work_2011",
+      "date": "2011-04-10",
+      "kind": "referendum",
+      "question": "Small Work Act (part-time work)",
+      "historical": {
+        "yes_share": 0.1993,
+        "winner": "no",
+        "turnout": 0.3397,
+        "note": "For 115,063; against 462,198; invalid/blank 2,773; electorate 1,707,534. ",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2011_Slovenian_part-time_work_referendum",
+            "title": "Wikipedia: 2011 Slovenian part-time work referendum",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "ref_illicit_work_2011",
+      "date": "2011-06-05",
+      "kind": "referendum",
+      "question": "Act on preventing illicit work and employment",
+      "historical": {
+        "yes_share": 0.2459,
+        "winner": "no",
+        "turnout": 0.4043,
+        "note": "For 168,538; against 516,805; invalid/blank 4,959; electorate 1,707,299. One of three referendums held the same day.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/June_2011_Slovenian_referendum",
+            "title": "Wikipedia: June 2011 Slovenian referendum",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "ref_archives_2011",
+      "date": "2011-06-05",
+      "kind": "referendum",
+      "question": "Amendment on access to the archives of the former security services",
+      "historical": {
+        "yes_share": 0.2912,
+        "winner": "no",
+        "turnout": 0.4041,
+        "note": "For 197,680; against 481,130; invalid/blank 11,063; electorate 1,707,299. One of three referendums held the same day.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/June_2011_Slovenian_referendum",
+            "title": "Wikipedia: June 2011 Slovenian referendum",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "ref_pensions_2011",
+      "date": "2011-06-05",
+      "kind": "referendum",
+      "question": "Pension and disability insurance reform act",
+      "historical": {
+        "yes_share": 0.2795,
+        "winner": "no",
+        "turnout": 0.4046,
+        "note": "For 192,169; against 495,329; invalid/blank 3,229; electorate 1,707,299. One of three referendums held the same day.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/June_2011_Slovenian_referendum",
+            "title": "Wikipedia: June 2011 Slovenian referendum",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "assembly_2011",
+      "date": "2011-12-04",
+      "kind": "legislative",
+      "chamber": "national_assembly",
+      "snap": true,
+      "historical": {
+        "party_results": [
+          {
+            "party": "svn.ps",
+            "share": 0.2851,
+            "seats": 28
+          },
+          {
+            "party": "svn.sds",
+            "share": 0.2619,
+            "seats": 26
+          },
+          {
+            "party": "svn.sd",
+            "share": 0.1052,
+            "seats": 10
+          },
+          {
+            "party": "svn.dl",
+            "share": 0.0837,
+            "seats": 8
+          },
+          {
+            "party": "svn.desus",
+            "share": 0.0697,
+            "seats": 6
+          },
+          {
+            "party": "svn.sls",
+            "share": 0.0683,
+            "seats": 6
+          },
+          {
+            "party": "svn.nsi",
+            "share": 0.0488,
+            "seats": 4
+          },
+          {
+            "party": "others",
+            "seats": 2
+          }
+        ],
+        "winner": "svn.ps",
+        "turnout": 0.656,
+        "note": "Early election after the Pahor government lost a confidence vote. The two national-community seats (Italian and Hungarian) are counted as others. Janša formed an SDS, DL, DeSUS, SLS and NSi government in February 2012.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2011_Slovenian_parliamentary_election",
+            "title": "Wikipedia: 2011 Slovenian parliamentary election",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "ref_family_code_2012",
+      "date": "2012-03-25",
+      "kind": "referendum",
+      "question": "Family Code adopted on 16 June 2011",
+      "historical": {
+        "yes_share": 0.4545,
+        "winner": "no",
+        "turnout": 0.3031,
+        "note": "For 233,268; against 279,937; invalid/blank 4,893; electorate 1,709,417. ",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2012_Slovenian_Family_Code_referendum",
+            "title": "Wikipedia: 2012 Slovenian Family Code referendum",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "president_2012",
+      "date": "2012-11-11",
+      "kind": "presidential",
+      "office": "svn.president",
+      "rounds": 2,
+      "historical": {
+        "candidates": [
+          {
+            "person": "svn.borut_pahor",
+            "party": "svn.sd",
+            "share": 0.3987,
+            "votes": 326006,
+            "round": 1
+          },
+          {
+            "person": "svn.danilo_turk",
+            "share": 0.3588,
+            "votes": 293429,
+            "round": 1
+          },
+          {
+            "person": "svn.milan_zver",
+            "party": "svn.sds",
+            "share": 0.2425,
+            "votes": 198337,
+            "round": 1
+          },
+          {
+            "person": "svn.borut_pahor",
+            "party": "svn.sd",
+            "share": 0.6737,
+            "votes": 478859,
+            "round": 2
+          },
+          {
+            "person": "svn.danilo_turk",
+            "share": 0.3263,
+            "votes": 231971,
+            "round": 2
+          }
+        ],
+        "winner": "svn.borut_pahor",
+        "turnout": 0.4841,
+        "note": "First round 11 November, runoff 2 December 2012. Zver was the SDS and NSi candidate. Shares computed from the vote counts; turnout is the first round.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2012_Slovenian_presidential_election",
+            "title": "Wikipedia: 2012 Slovenian presidential election",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "ref_archives_2014",
+      "date": "2014-06-08",
+      "kind": "referendum",
+      "question": "Amendments to the Protection of Documentary and Archival Material Act (ZVDAGA-A)",
+      "historical": {
+        "yes_share": 0.3263,
+        "winner": "invalid",
+        "turnout": 0.1174,
+        "note": "For 64,571; against 133,347; invalid/blank 3,129; electorate 1,712,733. A majority voted against, but the votes against did not reach one fifth of the electorate, so the law was not rejected.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2014_Slovenian_archives_law_referendum",
+            "title": "Wikipedia: 2014 Slovenian archives law referendum",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "assembly_2014",
+      "date": "2014-07-13",
+      "kind": "legislative",
+      "chamber": "national_assembly",
+      "snap": true,
+      "historical": {
+        "party_results": [
+          {
+            "party": "svn.smc",
+            "share": 0.3461,
+            "seats": 36
+          },
+          {
+            "party": "svn.sds",
+            "share": 0.2069,
+            "seats": 21
+          },
+          {
+            "party": "svn.desus",
+            "share": 0.1021,
+            "seats": 10
+          },
+          {
+            "party": "svn.sd",
+            "share": 0.0598,
+            "seats": 6
+          },
+          {
+            "party": "svn.levica",
+            "share": 0.0597,
+            "seats": 6
+          },
+          {
+            "party": "svn.nsi",
+            "share": 0.0559,
+            "seats": 5
+          },
+          {
+            "party": "svn.sab",
+            "share": 0.0438,
+            "seats": 4
+          },
+          {
+            "party": "others",
+            "seats": 2
+          }
+        ],
+        "winner": "svn.smc",
+        "turnout": 0.5099,
+        "note": "Early election after Prime Minister Bratušek resigned. Levica as the United Left; SAB as the Alliance of Alenka Bratušek. The two national-community seats (Italian and Hungarian) are counted as others. Cerar formed an SMC, DeSUS and SD government.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2014_Slovenian_parliamentary_election",
+            "title": "Wikipedia: 2014 Slovenian parliamentary election",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "ref_marriage_2015",
+      "date": "2015-12-20",
+      "kind": "referendum",
+      "question": "Amendments to the Marriage and Family Relations Act (same-sex marriage)",
+      "historical": {
+        "yes_share": 0.3649,
+        "winner": "no",
+        "turnout": 0.3638,
+        "note": "For 226,651; against 394,482; invalid/blank 2,356; electorate 1,714,055. ",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2015_Slovenian_same-sex_marriage_referendum",
+            "title": "Wikipedia: 2015 Slovenian same-sex marriage referendum",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "ref_railway_2017",
+      "date": "2017-09-24",
+      "kind": "referendum",
+      "question": "Act on the second track of the Divača–Koper railway (ZIUGDT)",
+      "historical": {
+        "yes_share": 0.5347,
+        "winner": "yes",
+        "turnout": 0.2055,
+        "note": "For 186,877; against 162,596; invalid/blank 2,619; electorate 1,713,532. The result was annulled by the Supreme Court in March 2018 and the vote repeated on 13 May 2018.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2017_Slovenian_railway_referendum",
+            "title": "Wikipedia: 2017 Slovenian railway referendum",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "president_2017",
+      "date": "2017-10-22",
+      "kind": "presidential",
+      "office": "svn.president",
+      "rounds": 2,
+      "historical": {
+        "candidates": [
+          {
+            "person": "svn.borut_pahor",
+            "share": 0.4721,
+            "votes": 355117,
+            "round": 1
+          },
+          {
+            "person": "svn.marjan_sarec",
+            "party": "svn.lms",
+            "share": 0.2476,
+            "votes": 186235,
+            "round": 1
+          },
+          {
+            "person": "svn.romana_tomc",
+            "party": "svn.sds",
+            "share": 0.1368,
+            "votes": 102925,
+            "round": 1
+          },
+          {
+            "person": "svn.ljudmila_novak",
+            "party": "svn.nsi",
+            "share": 0.0724,
+            "votes": 54437,
+            "round": 1
+          },
+          {
+            "person": "svn.borut_pahor",
+            "share": 0.5309,
+            "votes": 378307,
+            "round": 2
+          },
+          {
+            "person": "svn.marjan_sarec",
+            "party": "svn.lms",
+            "share": 0.4691,
+            "votes": 334239,
+            "round": 2
+          }
+        ],
+        "winner": "svn.borut_pahor",
+        "turnout": 0.4422,
+        "note": "First round 22 October, runoff 12 November 2017. Pahor stood as an independent supported by SD. Shares computed from the vote counts; turnout is the first round.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2017_Slovenian_presidential_election",
+            "title": "Wikipedia: 2017 Slovenian presidential election",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "ref_railway_2018",
+      "date": "2018-05-13",
+      "kind": "referendum",
+      "question": "Act on the second track of the Divača–Koper railway (repeat vote)",
+      "historical": {
+        "yes_share": 0.4994,
+        "winner": "invalid",
+        "turnout": 0.1501,
+        "note": "For 127,293; against 127,602; invalid/blank 2,203; electorate 1,712,686. A narrow majority voted against, but the votes against did not reach one fifth of the electorate, so the law remained in force.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2018_Slovenian_railway_referendum",
+            "title": "Wikipedia: 2018 Slovenian railway referendum",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "assembly_2018",
+      "date": "2018-06-03",
+      "kind": "legislative",
+      "chamber": "national_assembly",
+      "historical": {
+        "party_results": [
+          {
+            "party": "svn.sds",
+            "share": 0.2492,
+            "seats": 25
+          },
+          {
+            "party": "svn.lms",
+            "share": 0.126,
+            "seats": 13
+          },
+          {
+            "party": "svn.sd",
+            "share": 0.0993,
+            "seats": 10
+          },
+          {
+            "party": "svn.smc",
+            "share": 0.0975,
+            "seats": 10
+          },
+          {
+            "party": "svn.levica",
+            "share": 0.0933,
+            "seats": 9
+          },
+          {
+            "party": "svn.nsi",
+            "share": 0.0716,
+            "seats": 7
+          },
+          {
+            "party": "svn.sab",
+            "share": 0.0511,
+            "seats": 5
+          },
+          {
+            "party": "svn.desus",
+            "share": 0.0493,
+            "seats": 5
+          },
+          {
+            "party": "svn.sns",
+            "share": 0.0417,
+            "seats": 4
+          },
+          {
+            "party": "others",
+            "seats": 2
+          }
+        ],
+        "winner": "svn.sds",
+        "turnout": 0.5263,
+        "note": "The two national-community seats (Italian and Hungarian) are counted as others. Šarec formed an LMŠ, SD, SMC, SAB and DeSUS minority government with Levica support in September 2018.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2018_Slovenian_parliamentary_election",
+            "title": "Wikipedia: 2018 Slovenian parliamentary election",
+            "accessed": "2026-10-15"
+          },
+          {
+            "url": "https://en.wikipedia.org/wiki/List_of_prime_ministers_of_Slovenia",
+            "title": "Wikipedia: List of prime ministers of Slovenia",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "ref_waters_2021",
+      "date": "2021-07-11",
+      "kind": "referendum",
+      "question": "Amendments to the Waters Act (ZV-1G)",
+      "historical": {
+        "yes_share": 0.1325,
+        "winner": "no",
+        "turnout": 0.4645,
+        "note": "For 104,312; against 682,760; invalid/blank 1,896; electorate 1,698,642. ",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2021_Slovenian_Waters_Act_referendum",
+            "title": "Wikipedia: 2021 Slovenian Waters Act referendum",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "assembly_2022",
+      "date": "2022-04-24",
+      "kind": "legislative",
+      "chamber": "national_assembly",
+      "historical": {
+        "party_results": [
+          {
+            "party": "svn.gs",
+            "share": 0.3445,
+            "seats": 41
+          },
+          {
+            "party": "svn.sds",
+            "share": 0.2348,
+            "seats": 27
+          },
+          {
+            "party": "svn.nsi",
+            "share": 0.0686,
+            "seats": 8
+          },
+          {
+            "party": "svn.sd",
+            "share": 0.0669,
+            "seats": 7
+          },
+          {
+            "party": "svn.levica",
+            "share": 0.0446,
+            "seats": 5
+          },
+          {
+            "party": "svn.lms",
+            "share": 0.0372,
+            "seats": 0
+          },
+          {
+            "party": "svn.sab",
+            "share": 0.0261,
+            "seats": 0
+          },
+          {
+            "party": "others",
+            "seats": 2
+          }
+        ],
+        "winner": "svn.gs",
+        "turnout": 0.7096,
+        "note": "The two national-community seats (Italian and Hungarian) are counted as others. Golob formed a GS, SD and Levica government on 1 June 2022. LMŠ and SAB shares from the 2026 election article.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2022_Slovenian_parliamentary_election",
+            "title": "Wikipedia: 2022 Slovenian parliamentary election",
+            "accessed": "2026-10-15"
+          },
+          {
+            "url": "https://en.wikipedia.org/wiki/2026_Slovenian_parliamentary_election",
+            "title": "Wikipedia: 2026 Slovenian parliamentary election (2022 aggregates)",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "president_2022",
+      "date": "2022-10-23",
+      "kind": "presidential",
+      "office": "svn.president",
+      "rounds": 2,
+      "historical": {
+        "candidates": [
+          {
+            "person": "svn.anze_logar",
+            "share": 0.3395,
+            "votes": 296000,
+            "round": 1
+          },
+          {
+            "person": "svn.natasa_pirc_musar",
+            "share": 0.2688,
+            "votes": 234361,
+            "round": 1
+          },
+          {
+            "person": "svn.milan_brglez",
+            "party": "svn.sd",
+            "share": 0.1545,
+            "votes": 134726,
+            "round": 1
+          },
+          {
+            "person": "svn.vladimir_prebilic",
+            "share": 0.106,
+            "votes": 92456,
+            "round": 1
+          },
+          {
+            "person": "svn.sabina_sencar",
+            "party": "svn.resnica",
+            "share": 0.0594,
+            "votes": 51767,
+            "round": 1
+          },
+          {
+            "person": "svn.natasa_pirc_musar",
+            "share": 0.5389,
+            "votes": 483812,
+            "round": 2
+          },
+          {
+            "person": "svn.anze_logar",
+            "share": 0.4611,
+            "votes": 414029,
+            "round": 2
+          }
+        ],
+        "winner": "svn.natasa_pirc_musar",
+        "turnout": 0.5173,
+        "note": "First round 23 October, runoff 13 November 2022. Logar, Pirc Musar and Prebilič stood as independents. Shares computed from the vote counts; turnout is the first round.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2022_Slovenian_presidential_election",
+            "title": "Wikipedia: 2022 Slovenian presidential election",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "ref_government_act_2022",
+      "date": "2022-11-27",
+      "kind": "referendum",
+      "question": "Amendments to the Government Act (repeal proposed by SDS)",
+      "historical": {
+        "yes_share": 0.5669,
+        "winner": "yes",
+        "turnout": 0.4182,
+        "note": "For 399,588; against 305,317; invalid/blank 3,710; electorate 1,694,348. For = keeping the law; the law was retained. One of three questions held the same day.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2022_Slovenian_referendum",
+            "title": "Wikipedia: 2022 Slovenian referendum",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "ref_long_term_care_2022",
+      "date": "2022-11-27",
+      "kind": "referendum",
+      "question": "Act deferring the Long-Term Care Act (repeal proposed by SDS)",
+      "historical": {
+        "yes_share": 0.6227,
+        "winner": "yes",
+        "turnout": 0.4183,
+        "note": "For 439,376; against 266,206; invalid/blank 3,209; electorate 1,694,348. For = keeping the law; the law was retained.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2022_Slovenian_referendum",
+            "title": "Wikipedia: 2022 Slovenian referendum",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "ref_rtv_2022",
+      "date": "2022-11-27",
+      "kind": "referendum",
+      "question": "Amendments to the Act on RTV Slovenija (repeal proposed by SDS)",
+      "historical": {
+        "yes_share": 0.6283,
+        "winner": "yes",
+        "turnout": 0.4184,
+        "note": "For 443,971; against 262,648; invalid/blank 2,347; electorate 1,694,348. For = keeping the law; the law was retained.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2022_Slovenian_referendum",
+            "title": "Wikipedia: 2022 Slovenian referendum",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "ref_medical_cannabis_2024",
+      "date": "2024-06-09",
+      "kind": "referendum",
+      "question": "Consultative: allowing the cultivation and processing of cannabis for medical purposes",
+      "historical": {
+        "yes_share": 0.6671,
+        "winner": "yes",
+        "turnout": 0.4142,
+        "note": "For 462,292; against 230,724; invalid/blank 7,923; electorate 1,692,371. Non-binding; held with the European Parliament election.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2024_Slovenian_referendum",
+            "title": "Wikipedia: 2024 Slovenian referendum",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "ref_personal_cannabis_2024",
+      "date": "2024-06-09",
+      "kind": "referendum",
+      "question": "Consultative: allowing the cultivation and possession of cannabis for limited personal use",
+      "historical": {
+        "yes_share": 0.5157,
+        "winner": "yes",
+        "turnout": 0.4141,
+        "note": "For 356,944; against 335,183; invalid/blank 8,759; electorate 1,692,371. Non-binding.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2024_Slovenian_referendum",
+            "title": "Wikipedia: 2024 Slovenian referendum",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "ref_assisted_dying_2024",
+      "date": "2024-06-09",
+      "kind": "referendum",
+      "question": "Consultative: adopting a law on medically assisted dying",
+      "historical": {
+        "yes_share": 0.5489,
+        "winner": "yes",
+        "turnout": 0.4142,
+        "note": "For 378,917; against 311,429; invalid/blank 10,651; electorate 1,692,371. Non-binding.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2024_Slovenian_referendum",
+            "title": "Wikipedia: 2024 Slovenian referendum",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "ref_preferential_vote_2024",
+      "date": "2024-06-09",
+      "kind": "referendum",
+      "question": "Consultative: introducing a decisive preferential vote in National Assembly elections",
+      "historical": {
+        "yes_share": 0.7089,
+        "winner": "yes",
+        "turnout": 0.4141,
+        "note": "For 486,516; against 199,744; invalid/blank 14,593; electorate 1,692,371. Non-binding.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2024_Slovenian_referendum",
+            "title": "Wikipedia: 2024 Slovenian referendum",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "ref_assisted_dying_2025",
+      "date": "2025-11-23",
+      "kind": "referendum",
+      "question": "Assisted Voluntary End of Life Act (ZPPKŽ) adopted on 24 July 2025",
+      "historical": {
+        "yes_share": 0.4656,
+        "winner": "no",
+        "turnout": 0.4108,
+        "note": "For 323,047; against 370,802; invalid/blank 2,445; electorate 1,695,039. The votes against exceeded one fifth of the electorate, so the law was rejected.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2025_Slovenian_assisted_dying_referendum",
+            "title": "Wikipedia: 2025 Slovenian assisted dying referendum",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "assembly_2026",
+      "date": "2026-03-22",
+      "kind": "legislative",
+      "chamber": "national_assembly",
+      "historical": {
+        "party_results": [
+          {
+            "party": "svn.gs",
+            "share": 0.2866,
+            "seats": 29
+          },
+          {
+            "party": "svn.sds",
+            "share": 0.2788,
+            "seats": 28
+          },
+          {
+            "party": "svn.nsi",
+            "share": 0.0926,
+            "seats": 9
+          },
+          {
+            "party": "svn.sd",
+            "share": 0.0671,
+            "seats": 6
+          },
+          {
+            "party": "svn.demokrati",
+            "share": 0.0669,
+            "seats": 6
+          },
+          {
+            "party": "svn.levica",
+            "share": 0.0569,
+            "seats": 5
+          },
+          {
+            "party": "svn.resnica",
+            "share": 0.0549,
+            "seats": 5
+          },
+          {
+            "party": "svn.sns",
+            "share": 0.0224,
+            "seats": 0
+          },
+          {
+            "party": "others",
+            "seats": 2
+          }
+        ],
+        "winner": "svn.gs",
+        "turnout": 0.7025,
+        "note": "NSi figure is the NSi–SLS–FOKUS joint list; Levica figure is the Levica and Vesna list. The two national-community seats (Italian and Hungarian) are counted as others. Golob failed to form a government; Janša formed an SDS, NSi, Demokrati, SLS and FOKUS government with Resni.ca support on 4 June 2026.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2026_Slovenian_parliamentary_election",
+            "title": "Wikipedia: 2026 Slovenian parliamentary election",
+            "accessed": "2026-10-15"
+          },
+          {
+            "url": "https://en.wikipedia.org/wiki/List_of_prime_ministers_of_Slovenia",
+            "title": "Wikipedia: List of prime ministers of Slovenia",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "ref_parliamentary_inquiry_2026",
+      "date": "2026-10-11",
+      "kind": "referendum",
+      "question": "Law on Parliamentary Investigation adopted in May 2026",
+      "historical": {
+        "yes_share": 0.4874,
+        "winner": "no",
+        "turnout": 0.5461,
+        "note": "For 449,297; against 472,444; invalid/blank 5,191; electorate 1,697,366. One of four questions held the same day; the law was rejected.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2026_Slovenian_referendum",
+            "title": "Wikipedia: 2026 Slovenian referendum",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "needs_review",
+        "review_note": "Recent event (October 2026) taken from a short Wikipedia article that calls all four questions non-binding; confirm the figures and the binding status with the State Election Commission (DVK)."
+      }
+    },
+    {
+      "id": "ref_social_assistance_2026",
+      "date": "2026-10-11",
+      "kind": "referendum",
+      "question": "Making social assistance conditional on community service",
+      "historical": {
+        "yes_share": 0.6054,
+        "winner": "yes",
+        "turnout": 0.5461,
+        "note": "For 559,082; against 364,377; invalid/blank 3,408; electorate 1,697,366. One of four questions held the same day.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2026_Slovenian_referendum",
+            "title": "Wikipedia: 2026 Slovenian referendum",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "needs_review",
+        "review_note": "Recent event (October 2026); confirm with the State Election Commission (DVK)."
+      }
+    },
+    {
+      "id": "ref_local_voting_2026",
+      "date": "2026-10-11",
+      "kind": "referendum",
+      "question": "Limiting voting rights in local elections to Slovenian and EU citizens",
+      "historical": {
+        "yes_share": 0.553,
+        "winner": "yes",
+        "turnout": 0.5461,
+        "note": "For 510,484; against 412,708; invalid/blank 3,667; electorate 1,697,366. One of four questions held the same day.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2026_Slovenian_referendum",
+            "title": "Wikipedia: 2026 Slovenian referendum",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "needs_review",
+        "review_note": "Recent event (October 2026); confirm with the State Election Commission (DVK)."
+      }
+    },
+    {
+      "id": "ref_rtv_fee_2026",
+      "date": "2026-10-11",
+      "kind": "referendum",
+      "question": "Abolishing the RTV Slovenija licence fee",
+      "historical": {
+        "yes_share": 0.4997,
+        "winner": "no",
+        "turnout": 0.5461,
+        "note": "For 461,753; against 462,299; invalid/blank 2,913; electorate 1,697,366. One of four questions held the same day.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2026_Slovenian_referendum",
+            "title": "Wikipedia: 2026 Slovenian referendum",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "needs_review",
+        "review_note": "Recent event (October 2026); confirm with the State Election Commission (DVK)."
+      }
+    }
+  ],
+  "source": [
+    {
+      "url": "https://en.wikipedia.org/wiki/Template:Slovenian_elections",
+      "title": "Wikipedia: Template:Slovenian elections",
+      "accessed": "2026-10-15"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Elections_in_Slovenia",
+      "title": "Wikipedia: Elections in Slovenia",
+      "accessed": "2026-10-15"
+    }
+  ],
+  "confidence": "verified"
+}

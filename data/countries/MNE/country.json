@@ -1,0 +1,115 @@
+{
+  "tag": "MNE",
+  "name": { "en": "Montenegro", "native": "Crna Gora", "official": { "en": "Montenegro", "native": "Crna Gora" } },
+  "adjective": "Montenegrin",
+  "culture_primary": "montenegrin",
+  "government": {
+    "type": "parliamentary",
+    "effective_executive": "mne.prime_minister",
+    "head_of_state_office": "mne.president",
+    "head_of_government_office": "mne.prime_minister",
+    "constitution": {
+      "term_limit_amendable": true,
+      "emergency_powers": true,
+      "referendum_required_for": []
+    },
+    "note": "Releasable country. On 1 January 2000 Montenegro was a constituent republic of the Federal Republic of Yugoslavia (from February 2003 of the State Union of Serbia and Montenegro), with its own directly elected President, a Government headed by a Prime Minister and a unicameral Parliament. It declared independence on 3 June 2006 after the referendum of 21 May 2006 (which required 55% in favour). The offices below are the republic's own institutions throughout; the federal offices are recorded under YUG. The December 2002 and February 2003 presidential elections were invalid because turnout was below 50%."
+
+  },
+  "offices": [
+    {
+      "id": "mne.president",
+      "title": { "en": "President of Montenegro", "native": "Predsjednik Crne Gore" },
+      "role": "head_of_state",
+      "power_weight": 0.25,
+      "selection": "direct_election",
+      "term_years": 5,
+      "term_limit": { "max_terms": 2, "consecutive_only": true },
+      "succession": { "type": "acting_then_election" },
+      "holders": [
+        { "person": "mne.milo_djukanovic", "from": "1998-01-15", "to": "2002-11-25" },
+        { "person": "mne.filip_vujanovic", "from": "2002-11-25", "to": "2003-05-19", "acting": true, "note": "Acting President as Speaker of Parliament." },
+        { "person": "mne.dragan_kujovic", "from": "2003-05-19", "to": "2003-05-22", "acting": true, "note": "The list of presidents shows both Dragan Kujović and Rifat Rastoder as acting for these days." },
+        { "person": "mne.rifat_rastoder", "from": "2003-05-19", "to": "2003-05-22", "acting": true },
+        { "person": "mne.filip_vujanovic", "from": "2003-05-22", "to": "2018-05-20", "note": "Elected in May 2003, re-elected in 2008 and 2013 (President of the independent state from 3 June 2006)." },
+        { "person": "mne.milo_djukanovic", "from": "2018-05-20", "to": "2023-05-20" },
+        { "person": "mne.jakov_milatovic", "from": "2023-05-20" }
+      ],
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/List_of_presidents_of_Montenegro", "title": "Wikipedia: List of presidents of Montenegro", "accessed": "2026-10-15" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "mne.prime_minister",
+      "title": { "en": "Prime Minister of Montenegro", "native": "Predsjednik Vlade Crne Gore" },
+      "role": "head_of_government",
+      "power_weight": 0.75,
+      "selection": "legislature",
+      "appointed_by": "mne.president",
+      "term_years": 4,
+      "holders": [
+        { "person": "mne.filip_vujanovic", "from": "1998-02-05", "to": "2003-01-08" },
+        { "person": "mne.milo_djukanovic", "from": "2003-01-08", "to": "2006-11-10" },
+        { "person": "mne.zeljko_sturanovic", "from": "2006-11-10", "to": "2008-02-29" },
+        { "person": "mne.milo_djukanovic", "from": "2008-02-29", "to": "2010-12-29" },
+        { "person": "mne.igor_luksic", "from": "2010-12-29", "to": "2012-12-04" },
+        { "person": "mne.milo_djukanovic", "from": "2012-12-04", "to": "2016-11-28" },
+        { "person": "mne.dusko_markovic", "from": "2016-11-28", "to": "2020-12-04" },
+        { "person": "mne.zdravko_krivokapic", "from": "2020-12-04", "to": "2022-04-28" },
+        { "person": "mne.dritan_abazovic", "from": "2022-04-28", "to": "2023-10-31" },
+        { "person": "mne.milojko_spajic", "from": "2023-10-31" }
+      ],
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/Prime_Minister_of_Montenegro", "title": "Wikipedia: Prime Minister of Montenegro (list of prime ministers)", "accessed": "2026-10-15" }
+      ],
+      "confidence": "verified"
+    }
+  ],
+  "legislature": {
+    "name": { "en": "Parliament of Montenegro", "native": "Skupština Crne Gore" },
+    "chambers": [
+      {
+        "id": "parliament",
+        "name": { "en": "Parliament", "native": "Skupština" },
+        "seats": 78,
+        "term_years": 4,
+        "elected": "direct",
+        "system": {
+          "type": "list_pr",
+          "formula": "dhondt",
+          "threshold": 0.03,
+          "district_model": "national",
+          "note": "Currently 81 seats in one national constituency, closed lists, D'Hondt, 3% threshold with a lower threshold for minority lists. The chamber had 78 seats after 1998, 77 in 2001, 75 in 2002 and 81 since 2006. seats_2000 is the May 1998 result; the So That We Live Better coalition (DPS, SDP and People's Party) is recorded under DPS. Others: Democratic League in Montenegro (1) and Democratic Union of Albanians (1)."
+        },
+        "seats_2000": { "mne.dps": 42, "mne.snp": 29, "mne.lscg": 5, "others": 2 },
+        "confidence_chamber": true,
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/1998_Montenegrin_parliamentary_election", "title": "Wikipedia: 1998 Montenegrin parliamentary election", "accessed": "2026-10-15" },
+          { "url": "https://en.wikipedia.org/wiki/Parliament_of_Montenegro", "title": "Wikipedia: Parliament of Montenegro (electoral system)", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      }
+    ]
+  },
+  "party_system": "multi_party",
+  "start_2000": {
+    "ruling_parties": ["mne.dps", "mne.sdp", "mne.ns"],
+    "confidence_and_supply": [],
+    "ideology_support": {
+      "social_democrat": 0.8564,
+      "social_liberal": 0.0629,
+      "regionalist": 0.0261,
+      "big_tent": 0.0546
+    },
+    "ideology_support_note": "Derived from the May 1998 parliamentary vote (shares from the infobox): the DPS-led So That We Live Better coalition 49.5% and SNP 36.1% (both recorded as social democrat; the parties' articles list social democracy first, while they were divided on independence versus union with Serbia), Liberal Alliance 6.3% (social liberal), the two Albanian lists 2.6% (regionalist); remaining lists about 5.5% (big tent).",
+    "stability": 0.6,
+    "war_support": 0.2
+  },
+  "claims": [],
+  "source": [
+    { "url": "https://en.wikipedia.org/wiki/1998_Montenegrin_parliamentary_election", "title": "Wikipedia: 1998 Montenegrin parliamentary election (results; DPS–SDP–NS coalition)", "accessed": "2026-10-15" },
+    { "url": "https://en.wikipedia.org/wiki/2006_Montenegrin_independence_referendum", "title": "Wikipedia: 2006 Montenegrin independence referendum", "accessed": "2026-10-15" }
+  ],
+  "confidence": "verified"
+}

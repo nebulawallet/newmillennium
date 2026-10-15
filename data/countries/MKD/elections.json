@@ -1,0 +1,784 @@
+{
+  "rules": [
+    {
+      "kind": "legislative",
+      "chamber": "assembly",
+      "every_years": 4,
+      "anchor": "2024-05-08",
+      "snap_possible": true,
+      "note": "Four-year term; early elections in 2008, 2011, 2014, 2016 and 2020."
+    },
+    {
+      "kind": "presidential",
+      "office": "mkd.president",
+      "every_years": 5,
+      "anchor": "2024-04-24",
+      "snap_possible": true,
+      "note": "Direct two-round election; the runoff needs a 40% turnout (50% before 2009)."
+    }
+  ],
+  "elections": [
+    {
+      "id": "assembly_2002",
+      "date": "2002-09-15",
+      "kind": "legislative",
+      "chamber": "assembly",
+      "historical": {
+        "party_results": [
+          {
+            "party": "mkd.sdsm",
+            "share": 0.414,
+            "seats": 60
+          },
+          {
+            "party": "mkd.vmro",
+            "share": 0.2502,
+            "seats": 33
+          },
+          {
+            "party": "mkd.dui",
+            "share": 0.1213,
+            "seats": 16
+          },
+          {
+            "party": "mkd.dpa",
+            "share": 0.0533,
+            "seats": 7
+          },
+          {
+            "party": "mkd.pdp",
+            "share": 0.0238,
+            "seats": 2
+          },
+          {
+            "party": "others",
+            "seats": 2
+          }
+        ],
+        "winner": "mkd.sdsm",
+        "turnout": 0.7347,
+        "note": "SDSM figure is the Together for Macedonia coalition; VMRO-DPMNE ran with the Liberal Party. Others: National Democratic Party (1) and Union of Roma (1). Turnout computed from the vote counts. Crvenkovski formed an SDSM-led government with DUI.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2002_Macedonian_parliamentary_election",
+            "title": "Wikipedia: 2002 Macedonian parliamentary election",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "president_2004",
+      "date": "2004-04-14",
+      "kind": "presidential",
+      "office": "mkd.president",
+      "rounds": 2,
+      "snap": true,
+      "historical": {
+        "candidates": [
+          {
+            "person": "mkd.branko_crvenkovski",
+            "party": "mkd.sdsm",
+            "share": 0.4247,
+            "votes": 385347,
+            "round": 1
+          },
+          {
+            "person": "mkd.sasko_kedev",
+            "party": "mkd.vmro",
+            "share": 0.3407,
+            "votes": 309132,
+            "round": 1
+          },
+          {
+            "person": "mkd.gezim_ostreni",
+            "party": "mkd.dui",
+            "share": 0.1479,
+            "votes": 134208,
+            "round": 1
+          },
+          {
+            "person": "mkd.zidi_xhelili",
+            "party": "mkd.dpa",
+            "share": 0.0867,
+            "votes": 78714,
+            "round": 1
+          },
+          {
+            "person": "mkd.branko_crvenkovski",
+            "party": "mkd.sdsm",
+            "share": 0.6257,
+            "votes": 550317,
+            "round": 2
+          },
+          {
+            "person": "mkd.sasko_kedev",
+            "party": "mkd.vmro",
+            "share": 0.3743,
+            "votes": 329179,
+            "round": 2
+          }
+        ],
+        "winner": "mkd.branko_crvenkovski",
+        "turnout": 0.5518,
+        "note": "Early election after President Trajkovski's death. First round 14 April, runoff 28 April 2004. Shares computed from the vote counts; turnout is the first round.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2004_Macedonian_presidential_election",
+            "title": "Wikipedia: 2004 Macedonian presidential election",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "ref_territorial_2004",
+      "date": "2004-11-07",
+      "kind": "referendum",
+      "question": "Territorial organisation of local self-government (municipalities and the City of Skopje)",
+      "historical": {
+        "yes_share": 0.9506,
+        "winner": "invalid",
+        "turnout": 0.2658,
+        "note": "For 427,112; against 22,212; invalid/blank 5,023; electorate 1,709,536. About 95% voted in favour, but turnout was below the required 50%, so the result was not valid.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2004_Macedonian_autonomy_referendum",
+            "title": "Wikipedia: 2004 Macedonian autonomy referendum",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "assembly_2006",
+      "date": "2006-07-05",
+      "kind": "legislative",
+      "chamber": "assembly",
+      "historical": {
+        "party_results": [
+          {
+            "party": "mkd.vmro",
+            "share": 0.3262,
+            "seats": 45
+          },
+          {
+            "party": "mkd.sdsm",
+            "share": 0.234,
+            "seats": 32
+          },
+          {
+            "party": "mkd.dui",
+            "share": 0.1216,
+            "seats": 16
+          },
+          {
+            "party": "mkd.dpa",
+            "share": 0.0753,
+            "seats": 11
+          },
+          {
+            "party": "mkd.nsdp",
+            "share": 0.0606,
+            "seats": 7
+          },
+          {
+            "party": "mkd.vmro_np",
+            "share": 0.0611,
+            "seats": 6
+          },
+          {
+            "party": "independents",
+            "share": 0.0066,
+            "seats": 1
+          },
+          {
+            "party": "others",
+            "seats": 2
+          }
+        ],
+        "winner": "mkd.vmro",
+        "turnout": 0.5579,
+        "note": "VMRO-DPMNE figure is the For a Better Macedonia coalition; SDSM Together for Macedonia; DUI the DUI–PDP list. Others: Democratic Renewal (1) and Party for a European Future (1). Turnout computed from the vote counts. Gruevski formed a government with DPA.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2006_Macedonian_parliamentary_election",
+            "title": "Wikipedia: 2006 Macedonian parliamentary election",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "assembly_2008",
+      "date": "2008-06-01",
+      "kind": "legislative",
+      "chamber": "assembly",
+      "snap": true,
+      "historical": {
+        "party_results": [
+          {
+            "party": "mkd.vmro",
+            "share": 0.4878,
+            "seats": 63
+          },
+          {
+            "party": "mkd.sdsm",
+            "share": 0.2364,
+            "seats": 27
+          },
+          {
+            "party": "mkd.dui",
+            "share": 0.1282,
+            "seats": 18
+          },
+          {
+            "party": "mkd.dpa",
+            "share": 0.0826,
+            "seats": 11
+          },
+          {
+            "party": "others",
+            "share": 0.0147,
+            "seats": 1
+          }
+        ],
+        "winner": "mkd.vmro",
+        "turnout": 0.5706,
+        "note": "Early election. VMRO-DPMNE figure is the For a Better Macedonia coalition; SDSM the Coalition for Europe. Others: Party for a European Future. Turnout computed from the vote counts. Gruevski formed a government with DUI.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2008_Macedonian_parliamentary_election",
+            "title": "Wikipedia: 2008 Macedonian parliamentary election",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "president_2009",
+      "date": "2009-03-22",
+      "kind": "presidential",
+      "office": "mkd.president",
+      "rounds": 2,
+      "historical": {
+        "candidates": [
+          {
+            "person": "mkd.gjorge_ivanov",
+            "party": "mkd.vmro",
+            "share": 0.3505,
+            "votes": 345850,
+            "round": 1
+          },
+          {
+            "person": "mkd.ljubomir_frckoski",
+            "party": "mkd.sdsm",
+            "share": 0.2054,
+            "votes": 202691,
+            "round": 1
+          },
+          {
+            "person": "mkd.imer_selmani",
+            "share": 0.1495,
+            "votes": 147547,
+            "round": 1
+          },
+          {
+            "person": "mkd.ljube_boskoski",
+            "share": 0.1488,
+            "votes": 146878,
+            "round": 1
+          },
+          {
+            "person": "mkd.agron_buxhaku",
+            "party": "mkd.dui",
+            "share": 0.0746,
+            "votes": 73629,
+            "round": 1
+          },
+          {
+            "person": "mkd.gjorge_ivanov",
+            "party": "mkd.vmro",
+            "share": 0.6314,
+            "votes": 453616,
+            "round": 2
+          },
+          {
+            "person": "mkd.ljubomir_frckoski",
+            "party": "mkd.sdsm",
+            "share": 0.3686,
+            "votes": 264828,
+            "round": 2
+          }
+        ],
+        "winner": "mkd.gjorge_ivanov",
+        "turnout": 0.5688,
+        "note": "First round 22 March, runoff 5 April 2009. Selmani stood for New Democracy, Boškoski as an independent. Shares computed from the vote counts; turnout is the first round.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2009_Macedonian_presidential_election",
+            "title": "Wikipedia: 2009 Macedonian presidential election",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "assembly_2011",
+      "date": "2011-06-05",
+      "kind": "legislative",
+      "chamber": "assembly",
+      "snap": true,
+      "historical": {
+        "party_results": [
+          {
+            "party": "mkd.vmro",
+            "share": 0.3898,
+            "seats": 56
+          },
+          {
+            "party": "mkd.sdsm",
+            "share": 0.3278,
+            "seats": 42
+          },
+          {
+            "party": "mkd.dui",
+            "share": 0.1024,
+            "seats": 15
+          },
+          {
+            "party": "mkd.dpa",
+            "share": 0.059,
+            "seats": 8
+          },
+          {
+            "party": "others",
+            "share": 0.0267,
+            "seats": 2
+          }
+        ],
+        "winner": "mkd.vmro",
+        "turnout": 0.6348,
+        "note": "Early election; 123 seats including three diaspora seats. Coalition lists recorded under the leading party. Others: National Democratic Revival. Turnout computed from the vote counts.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2011_Macedonian_parliamentary_election",
+            "title": "Wikipedia: 2011 Macedonian parliamentary election",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "president_2014",
+      "date": "2014-04-13",
+      "kind": "presidential",
+      "office": "mkd.president",
+      "rounds": 2,
+      "historical": {
+        "candidates": [
+          {
+            "person": "mkd.gjorge_ivanov",
+            "party": "mkd.vmro",
+            "share": 0.5313,
+            "votes": 449442,
+            "round": 1
+          },
+          {
+            "person": "mkd.stevo_pendarovski",
+            "party": "mkd.sdsm",
+            "share": 0.3856,
+            "votes": 326164,
+            "round": 1
+          },
+          {
+            "person": "mkd.gjorge_ivanov",
+            "party": "mkd.vmro",
+            "share": 0.5733,
+            "votes": 534910,
+            "round": 2
+          },
+          {
+            "person": "mkd.stevo_pendarovski",
+            "party": "mkd.sdsm",
+            "share": 0.4267,
+            "votes": 398077,
+            "round": 2
+          }
+        ],
+        "winner": "mkd.gjorge_ivanov",
+        "turnout": 0.4887,
+        "note": "First round 13 April, runoff 27 April 2014 (held with the parliamentary election). The other candidates were Ilijaz Halimi (DPA, 4.6%) and Zoran Popovski (GROM, 3.7%). Shares computed from the vote counts; turnout is the first round.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2014_Macedonian_general_election",
+            "title": "Wikipedia: 2014 Macedonian general election",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "assembly_2014",
+      "date": "2014-04-27",
+      "kind": "legislative",
+      "chamber": "assembly",
+      "snap": true,
+      "historical": {
+        "party_results": [
+          {
+            "party": "mkd.vmro",
+            "share": 0.4447,
+            "seats": 61
+          },
+          {
+            "party": "mkd.sdsm",
+            "share": 0.2622,
+            "seats": 34
+          },
+          {
+            "party": "mkd.dui",
+            "share": 0.1419,
+            "seats": 19
+          },
+          {
+            "party": "mkd.dpa",
+            "share": 0.0613,
+            "seats": 7
+          },
+          {
+            "party": "others",
+            "seats": 2
+          }
+        ],
+        "winner": "mkd.vmro",
+        "note": "Early election held with the presidential runoff; 123 seats. Coalition lists recorded under the leading party. Others: Citizen Option for Macedonia (1) and National Democratic Revival (1).",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2014_Macedonian_general_election",
+            "title": "Wikipedia: 2014 Macedonian general election",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "assembly_2016",
+      "date": "2016-12-11",
+      "kind": "legislative",
+      "chamber": "assembly",
+      "snap": true,
+      "historical": {
+        "party_results": [
+          {
+            "party": "mkd.vmro",
+            "share": 0.3939,
+            "seats": 51
+          },
+          {
+            "party": "mkd.sdsm",
+            "share": 0.3787,
+            "seats": 49
+          },
+          {
+            "party": "mkd.dui",
+            "share": 0.0752,
+            "seats": 10
+          },
+          {
+            "party": "mkd.besa",
+            "share": 0.0501,
+            "seats": 5
+          },
+          {
+            "party": "mkd.aa",
+            "share": 0.0304,
+            "seats": 3
+          },
+          {
+            "party": "mkd.dpa",
+            "share": 0.0268,
+            "seats": 2
+          }
+        ],
+        "winner": "mkd.vmro",
+        "note": "Early election. VMRO-DPMNE figure is the For a Better Macedonia coalition; SDSM the For Life in Macedonia coalition. Zaev formed an SDSM–DUI government in May 2017.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2016_Macedonian_parliamentary_election",
+            "title": "Wikipedia: 2016 Macedonian parliamentary election",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "ref_prespa_2018",
+      "date": "2018-09-30",
+      "kind": "referendum",
+      "question": "Are you in favour of European Union and NATO membership by accepting the agreement between the Republic of Macedonia and the Hellenic Republic?",
+      "historical": {
+        "yes_share": 0.9418,
+        "winner": "invalid",
+        "turnout": 0.3689,
+        "note": "For 609,427; against 37,687; invalid/blank 19,230; electorate 1,806,336. About 94% voted in favour, but turnout (about 37%) was below the 50% threshold for the result to be valid.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2018_Macedonian_referendum",
+            "title": "Wikipedia: 2018 Macedonian referendum",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "president_2019",
+      "date": "2019-04-21",
+      "kind": "presidential",
+      "office": "mkd.president",
+      "rounds": 2,
+      "historical": {
+        "candidates": [
+          {
+            "person": "mkd.stevo_pendarovski",
+            "party": "mkd.sdsm",
+            "share": 0.4475,
+            "votes": 322581,
+            "round": 1
+          },
+          {
+            "person": "mkd.gordana_siljanovska_davkova",
+            "party": "mkd.vmro",
+            "share": 0.4416,
+            "votes": 318341,
+            "round": 1
+          },
+          {
+            "person": "mkd.blerim_reka",
+            "share": 0.1108,
+            "votes": 79888,
+            "round": 1
+          },
+          {
+            "person": "mkd.stevo_pendarovski",
+            "party": "mkd.sdsm",
+            "share": 0.5358,
+            "votes": 435656,
+            "round": 2
+          },
+          {
+            "person": "mkd.gordana_siljanovska_davkova",
+            "party": "mkd.vmro",
+            "share": 0.4642,
+            "votes": 377446,
+            "round": 2
+          }
+        ],
+        "winner": "mkd.stevo_pendarovski",
+        "turnout": 0.4167,
+        "note": "First round 21 April, runoff 5 May 2019. Runoff figures from the infobox; turnout is the first round (46.65% in the runoff).",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2019_North_Macedonian_presidential_election",
+            "title": "Wikipedia: 2019 North Macedonian presidential election",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "assembly_2020",
+      "date": "2020-07-15",
+      "kind": "legislative",
+      "chamber": "assembly",
+      "snap": true,
+      "historical": {
+        "party_results": [
+          {
+            "party": "mkd.sdsm",
+            "share": 0.3589,
+            "seats": 46
+          },
+          {
+            "party": "mkd.vmro",
+            "share": 0.3457,
+            "seats": 44
+          },
+          {
+            "party": "mkd.dui",
+            "share": 0.1148,
+            "seats": 15
+          },
+          {
+            "party": "mkd.aa",
+            "share": 0.0895,
+            "seats": 12
+          },
+          {
+            "party": "mkd.levica",
+            "share": 0.041,
+            "seats": 2
+          },
+          {
+            "party": "mkd.dpa",
+            "share": 0.0153,
+            "seats": 1
+          }
+        ],
+        "winner": "mkd.sdsm",
+        "turnout": 0.5202,
+        "note": "Early election. SDSM figure is the We Can coalition; VMRO-DPMNE the Renewal for Macedonia coalition; AA the AA–Alternativa list. Zaev formed an SDSM–DUI government.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2020_North_Macedonian_parliamentary_election",
+            "title": "Wikipedia: 2020 North Macedonian parliamentary election",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "president_2024",
+      "date": "2024-04-24",
+      "kind": "presidential",
+      "office": "mkd.president",
+      "rounds": 2,
+      "historical": {
+        "candidates": [
+          {
+            "person": "mkd.gordana_siljanovska_davkova",
+            "party": "mkd.vmro",
+            "share": 0.4121,
+            "votes": 363085,
+            "round": 1
+          },
+          {
+            "person": "mkd.stevo_pendarovski",
+            "party": "mkd.sdsm",
+            "share": 0.2049,
+            "votes": 180499,
+            "round": 1
+          },
+          {
+            "person": "mkd.bujar_osmani",
+            "party": "mkd.dui",
+            "share": 0.1371,
+            "votes": 120811,
+            "round": 1
+          },
+          {
+            "person": "mkd.maksim_dimitrievski",
+            "party": "mkd.znam",
+            "share": 0.0952,
+            "votes": 83855,
+            "round": 1
+          },
+          {
+            "person": "mkd.arben_taravari",
+            "party": "mkd.aa",
+            "share": 0.0946,
+            "votes": 83337,
+            "round": 1
+          },
+          {
+            "person": "mkd.gordana_siljanovska_davkova",
+            "party": "mkd.vmro",
+            "share": 0.6901,
+            "votes": 561000,
+            "round": 2
+          },
+          {
+            "person": "mkd.stevo_pendarovski",
+            "party": "mkd.sdsm",
+            "share": 0.3099,
+            "votes": 251899,
+            "round": 2
+          }
+        ],
+        "winner": "mkd.gordana_siljanovska_davkova",
+        "turnout": 0.4991,
+        "note": "First round 24 April, runoff 8 May 2024 (held with the parliamentary election). Shares computed from the vote counts; turnout is the first round.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2024_North_Macedonian_presidential_election",
+            "title": "Wikipedia: 2024 North Macedonian presidential election",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "assembly_2024",
+      "date": "2024-05-08",
+      "kind": "legislative",
+      "chamber": "assembly",
+      "historical": {
+        "party_results": [
+          {
+            "party": "mkd.vmro",
+            "share": 0.4458,
+            "seats": 58
+          },
+          {
+            "party": "mkd.sdsm",
+            "share": 0.1578,
+            "seats": 18
+          },
+          {
+            "party": "mkd.dui",
+            "share": 0.1406,
+            "seats": 18
+          },
+          {
+            "party": "mkd.vlen",
+            "share": 0.1092,
+            "seats": 14
+          },
+          {
+            "party": "mkd.levica",
+            "share": 0.0701,
+            "seats": 6
+          },
+          {
+            "party": "mkd.znam",
+            "share": 0.0574,
+            "seats": 6
+          }
+        ],
+        "winner": "mkd.vmro",
+        "turnout": 0.5544,
+        "note": "VMRO-DPMNE figure is the Your Macedonia coalition; SDSM For a European Future; DUI the European Front. Mickoski formed a government with VLEN and ZNAM.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2024_North_Macedonian_parliamentary_election",
+            "title": "Wikipedia: 2024 North Macedonian parliamentary election",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified"
+      }
+    }
+  ],
+  "source": [
+    {
+      "url": "https://en.wikipedia.org/wiki/Template:North_Macedonian_elections",
+      "title": "Wikipedia: Template:North Macedonian elections",
+      "accessed": "2026-10-15"
+    }
+  ],
+  "confidence": "verified"
+}

@@ -1,0 +1,127 @@
+{
+  "tag": "SVN",
+  "name": { "en": "Slovenia", "native": "Slovenija", "official": { "en": "Republic of Slovenia", "native": "Republika Slovenija" } },
+  "adjective": "Slovenian",
+  "culture_primary": "slovene",
+  "government": {
+    "type": "parliamentary",
+    "effective_executive": "svn.prime_minister",
+    "head_of_state_office": "svn.president",
+    "head_of_government_office": "svn.prime_minister",
+    "constitution": {
+      "term_limit_amendable": true,
+      "emergency_powers": true,
+      "referendum_required_for": []
+    },
+    "note": "Parliamentary republic under the 1991 Constitution. Executive authority is vested in the Government headed by the Prime Minister, who is elected by the National Assembly; the directly elected President (five-year term, two consecutive terms at most) has a largely ceremonial role. The 90-member National Assembly is the legislature proper. The 40-member National Council (Državni svet), indirectly elected by local and interest-group electors, has an advisory role and a suspensive veto; it is not modelled as a chamber here. Laws passed by the National Assembly can be put to a legislative referendum on the demand of 40,000 voters; a law is rejected only if a majority votes against and the votes against amount to at least one fifth of registered voters (rule since 2013)."
+  },
+  "offices": [
+    {
+      "id": "svn.president",
+      "title": { "en": "President of the Republic of Slovenia", "native": "Predsednik Republike Slovenije" },
+      "role": "head_of_state",
+      "power_weight": 0.1,
+      "selection": "direct_election",
+      "term_years": 5,
+      "term_limit": { "max_terms": 2, "consecutive_only": true },
+      "succession": { "type": "acting_then_election" },
+      "holders": [
+        { "person": "svn.milan_kucan", "from": "1991-12-23", "to": "2002-12-22", "note": "President of the Presidency from 10 May 1990; President of the Republic from 23 December 1991. Elected in 1990, 1992 and 1997." },
+        { "person": "svn.janez_drnovsek", "from": "2002-12-22", "to": "2007-12-23" },
+        { "person": "svn.danilo_turk", "from": "2007-12-23", "to": "2012-12-22" },
+        { "person": "svn.borut_pahor", "from": "2012-12-22", "to": "2022-12-22", "note": "Re-elected in 2017." },
+        { "person": "svn.natasa_pirc_musar", "from": "2022-12-23" }
+      ],
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/President_of_Slovenia", "title": "Wikipedia: President of Slovenia (list of presidents, term)", "accessed": "2026-10-15" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "svn.prime_minister",
+      "title": { "en": "Prime Minister of the Republic of Slovenia", "native": "Predsednik Vlade Republike Slovenije" },
+      "role": "head_of_government",
+      "power_weight": 0.9,
+      "selection": "legislature",
+      "appointed_by": "svn.president",
+      "term_years": 4,
+      "holders": [
+        { "person": "svn.janez_drnovsek", "from": "1992-05-14", "to": "2000-06-07", "note": "Fourth government (LDS, SLS, DeSUS) from 27 February 1997." },
+        { "person": "svn.andrej_bajuk", "from": "2000-06-07", "to": "2000-11-30", "note": "SLS+SKD, SDS government; Bajuk left SLS+SKD and founded New Slovenia in August 2000." },
+        { "person": "svn.janez_drnovsek", "from": "2000-11-30", "to": "2002-12-19", "note": "LDS, SLS, DeSUS and ZLSD coalition after the October 2000 election. Resigned on election as President." },
+        { "person": "svn.anton_rop", "from": "2002-12-19", "to": "2004-12-03" },
+        { "person": "svn.janez_jansa", "from": "2004-12-03", "to": "2008-11-21", "note": "SDS, NSi, SLS and DeSUS coalition." },
+        { "person": "svn.borut_pahor", "from": "2008-11-21", "to": "2012-02-10", "note": "SD, Zares, DeSUS and LDS coalition." },
+        { "person": "svn.janez_jansa", "from": "2012-02-10", "to": "2013-03-20" },
+        { "person": "svn.alenka_bratusek", "from": "2013-03-20", "to": "2014-09-18" },
+        { "person": "svn.miro_cerar", "from": "2014-09-18", "to": "2018-09-13" },
+        { "person": "svn.marjan_sarec", "from": "2018-09-13", "to": "2020-03-13" },
+        { "person": "svn.janez_jansa", "from": "2020-03-13", "to": "2022-06-01" },
+        { "person": "svn.robert_golob", "from": "2022-06-01", "to": "2026-06-04", "note": "GS, SD and Levica coalition." },
+        { "person": "svn.janez_jansa", "from": "2026-06-04", "note": "Fourth Janša government (SDS, NSi, Demokrati, SLS and FOKUS, with Resni.ca support), formed after the March 2026 election." }
+      ],
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/List_of_prime_ministers_of_Slovenia", "title": "Wikipedia: List of prime ministers of Slovenia", "accessed": "2026-10-15" },
+        { "url": "https://en.wikipedia.org/wiki/2026_Slovenian_parliamentary_election", "title": "Wikipedia: 2026 Slovenian parliamentary election (government formation)", "accessed": "2026-10-15" }
+      ],
+      "confidence": "verified"
+    }
+  ],
+  "legislature": {
+    "name": { "en": "National Assembly", "native": "Državni zbor" },
+    "chambers": [
+      {
+        "id": "national_assembly",
+        "name": { "en": "National Assembly", "native": "Državni zbor" },
+        "seats": 90,
+        "term_years": 4,
+        "elected": "direct",
+        "system": {
+          "type": "list_pr",
+          "formula": "dhondt",
+          "threshold": 0.04,
+          "reserved_seats": [
+            { "group": "Italian national community", "seats": 1 },
+            { "group": "Hungarian national community", "seats": 1 }
+          ],
+          "note": "88 seats by list PR in eight constituencies (D'Hondt), plus one seat each for the Italian and Hungarian national communities (Borda count). The threshold was 3.2% (three seats) in 1996 and has been 4% since 2000. seats_2000 is the result of the November 1996 election; changes between 1996 and 1 January 2000 were not checked. The two minority members are counted under 'others'."
+        },
+        "seats_2000": { "svn.lds": 25, "svn.sls": 19, "svn.sds": 16, "svn.skd": 10, "svn.sd": 9, "svn.desus": 5, "svn.sns": 4, "others": 2 },
+        "confidence_chamber": true,
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/1996_Slovenian_parliamentary_election", "title": "Wikipedia: 1996 Slovenian parliamentary election", "accessed": "2026-10-15" },
+          { "url": "https://en.wikipedia.org/wiki/Elections_in_Slovenia", "title": "Wikipedia: Elections in Slovenia (electoral system)", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      }
+    ]
+  },
+  "party_system": "multi_party",
+  "start_2000": {
+    "ruling_parties": ["svn.lds", "svn.sls", "svn.desus"],
+    "confidence_and_supply": [],
+    "ideology_support": {
+      "social_liberal": 0.27,
+      "agrarian": 0.194,
+      "national_conservative": 0.161,
+      "christian_democrat": 0.096,
+      "social_democrat": 0.09,
+      "big_tent": 0.043,
+      "right_populist": 0.032,
+      "centrist_liberal": 0.027,
+      "green": 0.023,
+      "classical_liberal": 0.008,
+      "marxist_leninist": 0.005,
+      "liberal_conservative": 0.051
+    },
+    "ideology_support_note": "Derived from the November 1996 National Assembly vote (shares computed from the vote counts): LDS 27.0% (social liberal), SLS 19.4% (agrarian), SDS (then SDSS) 16.1% (recorded with the party's later national-conservative profile), SKD 9.6% (Christian democrat), ZLSD 9.0% (social democrat), DeSUS 4.3% (pensioners' party, recorded as big tent), SNS 3.2% (right populist), Democratic Party 2.7% (centrist liberal), Greens of Slovenia 1.8% and Green Alternative 0.5% (green), Liberal Party 0.7% (classical liberal), Communist Party 0.5% (Marxist-Leninist); the remaining small lists and independents (about 5.1%) are assigned to liberal conservative.",
+    "stability": 0.7,
+    "war_support": 0.2
+  },
+  "claims": [],
+  "source": [
+    { "url": "https://en.wikipedia.org/wiki/1996_Slovenian_parliamentary_election", "title": "Wikipedia: 1996 Slovenian parliamentary election (results)", "accessed": "2026-10-15" },
+    { "url": "https://en.wikipedia.org/wiki/List_of_prime_ministers_of_Slovenia", "title": "Wikipedia: List of prime ministers of Slovenia (fourth Drnovšek government: LDS, SLS, DeSUS)", "accessed": "2026-10-15" }
+  ],
+  "confidence": "verified"
+}

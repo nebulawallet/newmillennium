@@ -1,0 +1,133 @@
+{
+  "tag": "HRV",
+  "name": { "en": "Croatia", "native": "Hrvatska", "official": { "en": "Republic of Croatia", "native": "Republika Hrvatska" } },
+  "adjective": "Croatian",
+  "culture_primary": "croatian",
+  "government": {
+    "type": "semi_presidential",
+    "effective_executive": "hrv.prime_minister",
+    "head_of_state_office": "hrv.president",
+    "head_of_government_office": "hrv.prime_minister",
+    "constitution": {
+      "term_limit_amendable": true,
+      "emergency_powers": true,
+      "referendum_required_for": []
+    },
+    "note": "Government type as on 1 January 2000: the 1990 Constitution gave the directly elected President wide executive powers (a semi-presidential system). President Franjo Tuđman had been incapacitated since 26 November 1999 and died on 10 December 1999; the Speaker acted as President. The constitutional amendments of November 2000 (completed in 2001) moved Croatia to a parliamentary system with a directly elected, non-partisan President (five-year term, two terms at most), and the Government headed by the Prime Minister has held executive power since; the type field keeps the 2000 value. The Chamber of Counties was abolished by a 2001 constitutional amendment, leaving a unicameral Sabor."
+  },
+  "offices": [
+    {
+      "id": "hrv.president",
+      "title": { "en": "President of the Republic of Croatia", "native": "Predsjednik Republike Hrvatske" },
+      "role": "head_of_state",
+      "power_weight": 0.35,
+      "selection": "direct_election",
+      "term_years": 5,
+      "term_limit": { "max_terms": 2, "consecutive_only": false },
+      "succession": { "type": "acting_then_election" },
+      "holders": [
+        { "person": "hrv.vlatko_pavletic", "from": "1999-12-10", "to": "2000-02-02", "acting": true, "note": "Acting President as Speaker of the Croatian Parliament after Franjo Tuđman's death on 10 December 1999 (Tuđman had been incapacitated since 26 November 1999)." },
+        { "person": "hrv.zlatko_tomcic", "from": "2000-02-02", "to": "2000-02-18", "acting": true, "note": "Acting President as Speaker of the new Parliament elected on 3 January 2000." },
+        { "person": "hrv.stjepan_mesic", "from": "2000-02-19", "to": "2010-02-18", "note": "Elected in 2000, re-elected in 2005." },
+        { "person": "hrv.ivo_josipovic", "from": "2010-02-19", "to": "2015-02-18" },
+        { "person": "hrv.kolinda_grabar_kitarovic", "from": "2015-02-19", "to": "2020-02-18" },
+        { "person": "hrv.zoran_milanovic", "from": "2020-02-19", "note": "Re-elected in January 2025; second term from 19 February 2025." }
+      ],
+      "note": "During a vacancy or incapacity the Speaker of the Croatian Parliament acts as President.",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/List_of_presidents_of_Croatia", "title": "Wikipedia: List of presidents of Croatia", "accessed": "2026-10-15" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "hrv.prime_minister",
+      "title": { "en": "Prime Minister of Croatia", "native": "Predsjednik Vlade Republike Hrvatske" },
+      "role": "head_of_government",
+      "power_weight": 0.65,
+      "selection": "legislature",
+      "appointed_by": "hrv.president",
+      "term_years": 4,
+      "holders": [
+        { "person": "hrv.zlatko_matesa", "from": "1995-11-07", "to": "2000-01-27", "note": "HDZ government." },
+        { "person": "hrv.ivica_racan", "from": "2000-01-27", "to": "2003-12-23", "note": "SDP-led coalition (with HSLS, HSS, HNS, IDS and LS at first)." },
+        { "person": "hrv.ivo_sanader", "from": "2003-12-23", "to": "2009-07-06" },
+        { "person": "hrv.jadranka_kosor", "from": "2009-07-06", "to": "2011-12-23" },
+        { "person": "hrv.zoran_milanovic", "from": "2011-12-23", "to": "2016-01-22" },
+        { "person": "hrv.tihomir_oreskovic", "from": "2016-01-22", "to": "2016-10-19", "note": "Non-party prime minister of an HDZ and Most government." },
+        { "person": "hrv.andrej_plenkovic", "from": "2016-10-19", "note": "Third government (HDZ and DP) from May 2024." }
+      ],
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/Prime_Minister_of_Croatia", "title": "Wikipedia: Prime Minister of Croatia (list of prime ministers)", "accessed": "2026-10-15" }
+      ],
+      "confidence": "verified"
+    }
+  ],
+  "legislature": {
+    "name": { "en": "Croatian Parliament", "native": "Hrvatski sabor" },
+    "chambers": [
+      {
+        "id": "sabor",
+        "name": { "en": "Chamber of Representatives (Croatian Parliament)", "native": "Zastupnički dom (Hrvatski sabor)" },
+        "seats": 127,
+        "term_years": 4,
+        "elected": "direct",
+        "system": {
+          "type": "list_pr",
+          "formula": "dhondt",
+          "threshold": 0.05,
+          "district_model": "custom",
+          "note": "Since the January 2000 election: ten constituencies of 14 seats each (D'Hondt, 5% threshold per constituency), plus seats for voters abroad (3 under the current law) and 8 seats for national minorities, giving 151 seats (152 in 2003 and 153 in 2007). The 127-member chamber elected in October 1995 used a mixed system with diaspora and minority seats. Since 2001 this is the whole (unicameral) Sabor."
+        },
+        "seats_2000": { "hrv.hdz": 75, "hrv.hss": 18, "hrv.hsls": 12, "hrv.sdp": 10, "hrv.hsp": 4, "hrv.ids": 1, "others": 3, "independents": 4 },
+        "confidence_chamber": true,
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/1995_Croatian_parliamentary_election", "title": "Wikipedia: 1995 Croatian parliamentary election", "accessed": "2026-10-15" },
+          { "url": "https://en.wikipedia.org/wiki/Croatian_Parliament", "title": "Wikipedia: Croatian Parliament (electoral system)", "accessed": "2026-10-15" }
+        ],
+        "confidence": "needs_review",
+        "review_note": "seats_2000 is the October 1995 result as shown in the election infobox (HDZ 75; HSS–IDS–HNS–HKDU–SBHS alliance 18, recorded under HSS; HSLS 12; SDP 10; HSP 4), with one second-round seat for IDS, the Serb People's Party (2) and Social Democratic Action (1) as others, and four minority members as independents. How the four joint-list seats were split between the infobox totals was inferred; mid-term changes up to 1 January 2000 were not checked."
+      },
+      {
+        "id": "chamber_of_counties",
+        "name": { "en": "Chamber of Counties", "native": "Županijski dom" },
+        "seats": 68,
+        "term_years": 4,
+        "elected": "mixed",
+        "system": {
+          "type": "list_pr",
+          "note": "Three members elected per county (and the City of Zagreb), plus up to five members appointed by the President. seats_2000 is the result of the April 1997 election (63 elected, 5 appointed). Abolished by the 2001 constitutional amendment."
+        },
+        "seats_2000": { "hrv.hdz": 40, "hrv.hss": 9, "hrv.hsls": 6, "hrv.sdp": 4, "hrv.ids": 2, "hrv.hsp": 2, "appointed": 5 },
+        "confidence_chamber": false,
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/1997_Croatian_Chamber_of_Counties_election", "title": "Wikipedia: 1997 Croatian Chamber of Counties election", "accessed": "2026-10-15" },
+          { "url": "https://en.wikipedia.org/wiki/Croatian_Parliament", "title": "Wikipedia: Croatian Parliament (abolition of the Chamber of Counties in 2001)", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      }
+    ]
+  },
+  "party_system": "multi_party",
+  "start_2000": {
+    "ruling_parties": ["hrv.hdz"],
+    "confidence_and_supply": [],
+    "ideology_support": {
+      "christian_democrat": 0.459,
+      "agrarian": 0.183,
+      "liberal_conservative": 0.116,
+      "social_democrat": 0.139,
+      "ethno_nationalist": 0.063,
+      "centrist_liberal": 0.03,
+      "big_tent": 0.01
+    },
+    "ideology_support_note": "Derived from the October 1995 Chamber of Representatives list vote (shares computed from the vote counts): HDZ 45.2% plus the Croatian Christian Democratic Party 0.7% (Christian democrat), the HSS–IDS–HNS–HKDU–SBHS alliance 18.3% (recorded as agrarian after its leading party), HSLS 11.6% (liberal conservative, the party's current classification), SDP 8.9%, Social Democratic Union 3.2% and Social Democratic Action 1.7% (social democrat), HSP 5.0% and HSP 1861 1.3% (ethno-nationalist), Croatian Independent Democrats 3.0% (centrist liberal); the remaining small lists (about 1%) are recorded as big tent. The 3 January 2000 election, two days after the start date, changed this balance sharply.",
+    "stability": 0.55,
+    "war_support": 0.3
+  },
+  "claims": [],
+  "source": [
+    { "url": "https://en.wikipedia.org/wiki/1995_Croatian_parliamentary_election", "title": "Wikipedia: 1995 Croatian parliamentary election (results; HDZ government)", "accessed": "2026-10-15" },
+    { "url": "https://en.wikipedia.org/wiki/List_of_presidents_of_Croatia", "title": "Wikipedia: List of presidents of Croatia (semi-presidential system until 2000)", "accessed": "2026-10-15" }
+  ],
+  "confidence": "verified"
+}

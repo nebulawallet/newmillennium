@@ -1,0 +1,171 @@
+{
+  "tag": "KOS",
+  "name": { "en": "Kosovo", "native": "Kosova / Kosovo", "official": { "en": "Republic of Kosovo", "native": "Republika e Kosovës" } },
+  "adjective": "Kosovar",
+  "culture_primary": "kosovar_albanian",
+  "government": {
+    "type": "transitional_administration",
+    "effective_executive": "kos.srsg",
+    "head_of_state_office": "kos.president",
+    "head_of_government_office": "kos.prime_minister",
+    "constitution": {
+      "term_limit_amendable": true,
+      "emergency_powers": false,
+      "referendum_required_for": []
+    },
+    "note": "Releasable country. On 1 January 2000 Kosovo was administered by the United Nations Interim Administration Mission in Kosovo (UNMIK) under the Special Representative of the Secretary-General (SRSG), the effective executive here. The lists of Kosovo's presidents and prime ministers record the parallel institutions of the self-proclaimed Republic of Kosova (President Ibrahim Rugova from 1992, Prime Minister Bujar Bukoshi from 1991) and a provisional government with Hashim Thaçi as prime minister from April 1999, all ending on 1 February 2000; UNMIK set up its Joint Interim Administrative Structure in January 2000. The Provisional Institutions of Self-Government followed: an Assembly elected in November 2001, which elected a President and a Prime Minister in March 2002. Kosovo declared independence on 17 February 2008; the 2008 Constitution provides for a President elected by the Assembly (two-thirds in the first two rounds, a simple majority of all members in the third) and a Government responsible to the 120-member Assembly. The type field keeps the 2000 value."
+  },
+  "offices": [
+    {
+      "id": "kos.srsg",
+      "title": { "en": "Special Representative of the UN Secretary-General for Kosovo (head of UNMIK)", "native": "Special Representative of the Secretary-General" },
+      "role": "transitional_administrator",
+      "power_weight": 0.6,
+      "selection": "external_appointment",
+      "holders": [
+        { "person": "kos.bernard_kouchner", "from": "1999-07-15", "to": "2001-01-12" },
+        { "person": "kos.hans_haekkerup", "from": "2001-01-13", "to": "2001-12-31" },
+        { "person": null, "from": "2002-01-01", "to": "2002-02-14", "vacant_reason": "Acting SRSG Charles H. Brayshaw (not recorded as a person: no biographical data found)." },
+        { "person": "kos.michael_steiner", "from": "2002-02-14", "to": "2003-07-08" },
+        { "person": null, "from": "2003-07-08", "to": "2003-08-25", "vacant_reason": "Acting SRSG Charles H. Brayshaw (not recorded as a person)." },
+        { "person": "kos.harri_holkeri", "from": "2003-08-25", "to": "2004-06-11" },
+        { "person": null, "from": "2004-06-11", "to": "2004-08-16", "vacant_reason": "Acting SRSG Charles H. Brayshaw (not recorded as a person)." },
+        { "person": "kos.soren_jessen_petersen", "from": "2004-08-16", "to": "2006-06-30" },
+        { "person": "kos.steven_schook", "from": "2006-06-30", "to": "2006-08-31", "acting": true },
+        { "person": "kos.joachim_rucker", "from": "2006-09-01", "to": "2008-06-20" },
+        { "person": "kos.lamberto_zannier", "from": "2008-06-20", "to": "2011-06-30" },
+        { "person": null, "from": "2011-07-01", "to": "2011-08-03", "vacant_reason": "Acting SRSG Robert E. Sorenson (not recorded as a person)." },
+        { "person": "kos.farid_zarif", "from": "2011-08-03", "to": "2015-08-31" },
+        { "person": "kos.simona_miculescu", "from": "2015-09-01", "to": "2015-10-09", "acting": true },
+        { "person": "kos.zahir_tanin", "from": "2015-10-09", "to": "2021-11-04" },
+        { "person": null, "from": "2021-11-04", "to": "2022-01-19", "vacant_reason": "Acting SRSG Barrie Lynne Freeman (not recorded as a person)." },
+        { "person": "kos.caroline_ziadeh", "from": "2022-01-19", "to": "2025-08-20", "note": "The list's end date (20 August 2025) is marked as needing a citation." },
+        { "person": null, "from": "2025-08-20", "to": "2025-11-10", "vacant_reason": "Acting SRSG Milbert Dongjoon Shin (not recorded as a person)." },
+        { "person": null, "from": "2025-11-10", "vacant_reason": "SRSG Peter N. Due (in office since 10 November 2025; not recorded as a person because no biographical data was found)." }
+      ],
+      "note": "Sérgio Vieira de Mello was acting SRSG in June-July 1999. The 'vacancies' after 2001 are periods when the SRSG was a person not recorded here, not actual vacancies.",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/Special_Representative_of_the_Secretary-General_for_Kosovo", "title": "Wikipedia: Special Representative of the Secretary-General for Kosovo (list)", "accessed": "2026-10-15" }
+      ],
+      "confidence": "needs_review",
+      "review_note": "Five acting or current SRSGs (Brayshaw, Sorenson, Freeman, Shin, Due) are recorded as null holders because no birth data was found; Caroline Ziadeh's end date is uncited in the source."
+    },
+    {
+      "id": "kos.president",
+      "title": { "en": "President of Kosovo", "native": "Presidenti i Kosovës" },
+      "role": "head_of_state",
+      "power_weight": 0.15,
+      "selection": "legislature",
+      "term_years": 5,
+      "term_limit": { "max_terms": 2, "consecutive_only": false },
+      "succession": { "type": "acting_then_election" },
+      "holders": [
+        { "person": "kos.ibrahim_rugova", "from": "1992-01-25", "to": "2000-02-01", "note": "President of the self-proclaimed Republic of Kosova (parallel institutions, not internationally recognised); the list ends this tenure on 1 February 2000." },
+        { "person": null, "from": "2000-02-01", "to": "2002-03-04", "vacant_reason": "No Kosovo presidency existed between the end of the parallel institutions and the Assembly's election of a President under UNMIK's Constitutional Framework." },
+        { "person": "kos.ibrahim_rugova", "from": "2002-03-04", "to": "2006-01-21", "note": "Elected by the Assembly; died in office." },
+        { "person": "kos.nexhat_daci", "from": "2006-01-21", "to": "2006-02-10", "acting": true, "note": "Acting as Speaker of the Assembly." },
+        { "person": "kos.fatmir_sejdiu", "from": "2006-02-10", "to": "2010-09-27", "note": "Re-elected in January 2008; President of the independent state from 17 February 2008; resigned on 27 September 2010." },
+        { "person": "kos.jakup_krasniqi", "from": "2010-09-27", "to": "2011-02-22", "acting": true },
+        { "person": "kos.behgjet_pacolli", "from": "2011-02-22", "to": "2011-04-04", "note": "The Constitutional Court declared the February 2011 election unconstitutional on 28 March 2011 (quorum not reached in the first two rounds); he left office on 4 April 2011." },
+        { "person": "kos.jakup_krasniqi", "from": "2011-04-04", "to": "2011-04-07", "acting": true },
+        { "person": "kos.atifete_jahjaga", "from": "2011-04-07", "to": "2016-04-07" },
+        { "person": "kos.hashim_thaci", "from": "2016-04-07", "to": "2020-11-05" },
+        { "person": "kos.vjosa_osmani", "from": "2020-11-05", "to": "2021-03-22", "acting": true, "note": "Acting as Speaker of the Assembly." },
+        { "person": "kos.glauk_konjufca", "from": "2021-03-22", "to": "2021-04-04", "acting": true },
+        { "person": "kos.vjosa_osmani", "from": "2021-04-04", "to": "2026-04-04", "note": "Term expired on 4 April 2026 without a successor elected." },
+        { "person": "kos.albulena_haxhiu", "from": "2026-04-04", "to": "2026-10-07", "acting": true, "note": "Acting as Speaker of the Assembly (verified against the fetched 2026 presidential election article)." },
+        { "person": "kos.justina_shiroka_pula", "from": "2026-10-07", "note": "Elected by the Assembly on 6-7 October 2026 with 81 votes (verified against the fetched Wikipedia articles)." }
+      ],
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/President_of_Kosovo", "title": "Wikipedia: President of Kosovo (list of presidents and acting presidents)", "accessed": "2026-10-15" },
+        { "url": "https://en.wikipedia.org/wiki/2026_Kosovan_presidential_election", "title": "Wikipedia: 2026 Kosovan presidential election", "accessed": "2026-10-15" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "kos.prime_minister",
+      "title": { "en": "Prime Minister of Kosovo", "native": "Kryeministri i Kosovës" },
+      "role": "head_of_government",
+      "power_weight": 0.25,
+      "selection": "legislature",
+      "appointed_by": "kos.president",
+      "term_years": 4,
+      "seats": 2,
+      "holders": [
+        { "person": "kos.bujar_bukoshi", "from": "1991-10-05", "to": "2000-02-01", "note": "Prime Minister of the self-proclaimed Republic of Kosova (parallel institutions)." },
+        { "person": "kos.hashim_thaci", "from": "1999-04-02", "to": "2000-02-01", "note": "Prime Minister of the provisional government proclaimed in April 1999 (parallel institutions). Both parallel governments ended on 1 February 2000." },
+        { "person": null, "from": "2000-02-01", "to": "2002-03-04", "vacant_reason": "No Kosovo prime minister until the Assembly elected one under UNMIK's Constitutional Framework." },
+        { "person": "kos.bajram_rexhepi", "from": "2002-03-04", "to": "2004-12-03" },
+        { "person": "kos.ramush_haradinaj", "from": "2004-12-03", "to": "2005-03-08" },
+        { "person": "kos.adem_salihaj", "from": "2005-03-08", "to": "2005-03-25", "acting": true },
+        { "person": "kos.bajram_kosumi", "from": "2005-03-25", "to": "2006-03-10" },
+        { "person": "kos.agim_ceku", "from": "2006-03-10", "to": "2008-01-09" },
+        { "person": "kos.hashim_thaci", "from": "2008-01-09", "to": "2014-12-09", "note": "Prime Minister of the independent state from 17 February 2008." },
+        { "person": "kos.isa_mustafa", "from": "2014-12-09", "to": "2017-09-09" },
+        { "person": "kos.ramush_haradinaj", "from": "2017-09-09", "to": "2020-02-03" },
+        { "person": "kos.albin_kurti", "from": "2020-02-03", "to": "2020-06-03" },
+        { "person": "kos.avdullah_hoti", "from": "2020-06-03", "to": "2021-03-22" },
+        { "person": "kos.albin_kurti", "from": "2021-03-22", "note": "Remained in office through the 2025-2026 elections; his fourth cabinet was sworn in on 13 September 2026 (verified against the fetched 2026 presidential election article)." }
+      ],
+      "note": "seats = 2 only because two rival parallel prime ministers (Bukoshi and Thaçi) are listed until 1 February 2000; one prime minister since 2002.",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/Prime_Minister_of_Kosovo", "title": "Wikipedia: Prime Minister of Kosovo (list)", "accessed": "2026-10-15" },
+        { "url": "https://en.wikipedia.org/wiki/2026_Kosovan_presidential_election", "title": "Wikipedia: 2026 Kosovan presidential election (fourth Kurti cabinet)", "accessed": "2026-10-15" }
+      ],
+      "confidence": "verified"
+    }
+  ],
+  "legislature": {
+    "name": { "en": "Assembly of the Republic of Kosovo", "native": "Kuvendi i Republikës së Kosovës" },
+    "chambers": [
+      {
+        "id": "assembly",
+        "name": { "en": "Assembly", "native": "Kuvendi" },
+        "seats": 120,
+        "term_years": 4,
+        "elected": "direct",
+        "system": {
+          "type": "list_pr",
+          "reserved_seats": [
+            { "group": "Kosovo Serbs", "seats": 10 },
+            { "group": "Roma, Ashkali and Egyptians", "seats": 4 },
+            { "group": "Bosniaks", "seats": 3 },
+            { "group": "Turks", "seats": 2 },
+            { "group": "Gorani", "seats": 1 }
+          ],
+          "note": "120 directly elected members; 20 seats are reserved for non-Albanian communities. No Assembly existed on 1 January 2000: the first was elected on 17 November 2001, so all seats are recorded as vacant."
+        },
+        "seats_2000": { "vacant": 120 },
+        "confidence_chamber": true,
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/Assembly_of_the_Republic_of_Kosovo", "title": "Wikipedia: Assembly of the Republic of Kosovo", "accessed": "2026-10-15" },
+          { "url": "https://en.wikipedia.org/wiki/2001_Kosovan_parliamentary_election", "title": "Wikipedia: 2001 Kosovan parliamentary election", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      }
+    ]
+  },
+  "party_system": "multi_party",
+  "start_2000": {
+    "ruling_parties": [],
+    "confidence_and_supply": [],
+    "ideology_support": {
+      "liberal_conservative": 0.4565,
+      "national_conservative": 0.3353,
+      "regionalist": 0.1479,
+      "ethno_nationalist": 0.0167,
+      "christian_democrat": 0.0098,
+      "big_tent": 0.0338
+    },
+    "ideology_support_note": "Estimate: there was no Kosovo-wide vote before 2000 that UNMIK recognised, so the shares of the first Assembly election (17 November 2001) are used: LDK 45.7% (liberal conservative), PDK 25.7% and AAK 7.8% (national conservative), the Serb Return Coalition 11.3% and other minority lists 3.5% (regionalist), LKÇK and LPK 1.7% (ethno-nationalist), the Albanian Christian Democratic Party 1.0% (Christian democrat); remaining lists about 3.4% (big tent).",
+    "stability": 0.35,
+    "war_support": 0.2
+  },
+  "claims": [],
+  "source": [
+    { "url": "https://en.wikipedia.org/wiki/Joint_Interim_Administrative_Structure", "title": "Wikipedia: Joint Interim Administrative Structure", "accessed": "2026-10-15" },
+    { "url": "https://en.wikipedia.org/wiki/Political_status_of_Kosovo", "title": "Wikipedia: Political status of Kosovo", "accessed": "2026-10-15" },
+    { "url": "https://en.wikipedia.org/wiki/2001_Kosovan_parliamentary_election", "title": "Wikipedia: 2001 Kosovan parliamentary election", "accessed": "2026-10-15" }
+  ],
+  "confidence": "verified"
+}

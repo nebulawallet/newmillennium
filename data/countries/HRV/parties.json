@@ -1,0 +1,619 @@
+{
+  "parties": [
+    {
+      "id": "hrv.hdz",
+      "name": {
+        "en": "Croatian Democratic Union",
+        "native": "Hrvatska demokratska zajednica"
+      },
+      "abbrev": {
+        "en": "HDZ",
+        "native": "HDZ"
+      },
+      "color": "#1A4D9C",
+      "sub_ideology": "christian_democrat",
+      "founded": "1989-06-17",
+      "status_2000": "active",
+      "leader_history": [
+        {
+          "person": "hrv.vladimir_seks",
+          "from": "2000-01-05",
+          "to": "2000-04-30",
+          "title": "Acting president"
+        },
+        {
+          "person": "hrv.ivo_sanader",
+          "from": "2000-05-01",
+          "to": "2009-07-03"
+        },
+        {
+          "person": "hrv.jadranka_kosor",
+          "from": "2009-07-04",
+          "to": "2012-05-21"
+        },
+        {
+          "person": "hrv.tomislav_karamarko",
+          "from": "2012-05-22",
+          "to": "2016-06-21"
+        },
+        {
+          "person": "hrv.andrej_plenkovic",
+          "from": "2016-06-21"
+        }
+      ],
+      "popularity_2000": 0.4523,
+      "popularity_note": "Vote share, October 1995 Chamber of Representatives election (governing party in 2000 until the 3 January 2000 election).",
+      "note": "Founded by Franjo Tuđman, who led it until his death on 10 December 1999; the leadership was vacant until Vladimir Šeks became acting president on 5 January 2000 (dates from the party timeline chart). The party article lists conservatism and Christian democracy.",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Croatian_Democratic_Union",
+          "title": "Wikipedia: Croatian Democratic Union (party presidents timeline)",
+          "accessed": "2026-10-15"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/1995_Croatian_parliamentary_election",
+          "title": "Wikipedia: 1995 Croatian parliamentary election",
+          "accessed": "2026-10-15"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "hrv.sdp",
+      "name": {
+        "en": "Social Democratic Party of Croatia",
+        "native": "Socijaldemokratska partija Hrvatske"
+      },
+      "abbrev": {
+        "en": "SDP",
+        "native": "SDP"
+      },
+      "color": "#E3000F",
+      "sub_ideology": "social_democrat",
+      "founded": "1990-11-03",
+      "status_2000": "active",
+      "leader_history": [
+        {
+          "person": "hrv.ivica_racan",
+          "from": "1990-11-03",
+          "to": "2007-04-11"
+        },
+        {
+          "person": "hrv.zoran_milanovic",
+          "from": "2007-06-02",
+          "to": "2016-11-26"
+        },
+        {
+          "person": "hrv.davor_bernardic",
+          "from": "2016-11-26",
+          "to": "2020-07-06"
+        },
+        {
+          "person": "hrv.peda_grbin",
+          "from": "2020-10-03",
+          "to": "2024-09-21"
+        },
+        {
+          "person": "hrv.sinisa_hajdas_doncic",
+          "from": "2024-09-21"
+        }
+      ],
+      "popularity_2000": 0.0893,
+      "popularity_note": "Vote share, October 1995 election. Led the opposition SDP–HSLS alliance that won the 3 January 2000 election.",
+      "note": "Acting presidents Željka Antunović (April-June 2007) and Zlatko Komadina (July-October 2020) are not recorded as people.",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Social_Democratic_Party_of_Croatia",
+          "title": "Wikipedia: Social Democratic Party of Croatia (party presidents since 1990)",
+          "accessed": "2026-10-15"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "hrv.hsls",
+      "name": {
+        "en": "Croatian Social Liberal Party",
+        "native": "Hrvatska socijalno-liberalna stranka"
+      },
+      "abbrev": {
+        "en": "HSLS",
+        "native": "HSLS"
+      },
+      "color": "#FFD100",
+      "sub_ideology": "liberal_conservative",
+      "founded": "1989-05-20",
+      "status_2000": "active",
+      "leader_history": [
+        {
+          "person": "hrv.drazen_budisa",
+          "from": 1997,
+          "to": 2003
+        },
+        {
+          "person": "hrv.ivan_cehok",
+          "from": 2004
+        },
+        {
+          "person": "hrv.durda_adlesic",
+          "from": 2006
+        }
+      ],
+      "popularity_2000": 0.1155,
+      "popularity_note": "Vote share, October 1995 election (in opposition; allied with SDP in January 2000).",
+      "note": "The party article lists conservative liberalism (historically social liberalism). Budiša led it 1990-1995 and again from November 1997, resigning after the 2003 election; Čehok was elected in 2004. The year Adlešič succeeded Čehok (after the party reunited) is not given in the fetched text; current president Dario Hrebak is not recorded.",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Croatian_Social_Liberal_Party",
+          "title": "Wikipedia: Croatian Social Liberal Party",
+          "accessed": "2026-10-15"
+        }
+      ],
+      "confidence": "needs_review",
+      "review_note": "Check the year Đurđa Adlešič became HSLS president (2006 assumed) and the end dates of the Čehok and Adlešič leaderships."
+    },
+    {
+      "id": "hrv.hss",
+      "name": {
+        "en": "Croatian Peasant Party",
+        "native": "Hrvatska seljačka stranka"
+      },
+      "abbrev": {
+        "en": "HSS",
+        "native": "HSS"
+      },
+      "color": "#00843D",
+      "sub_ideology": "agrarian",
+      "founded": "1989-12-15",
+      "status_2000": "active",
+      "leader_history": [
+        {
+          "person": "hrv.zlatko_tomcic",
+          "from": 1994,
+          "to": 2005
+        },
+        {
+          "person": "hrv.josip_friscic",
+          "from": 2005,
+          "to": 2012
+        },
+        {
+          "person": "hrv.branko_hrg",
+          "from": 2012,
+          "to": 2016
+        },
+        {
+          "person": "hrv.kreso_beljak",
+          "from": 2020,
+          "to": 2025
+        }
+      ],
+      "popularity_2000": 0.1826,
+      "popularity_note": "Vote share, October 1995 election, of the HSS–IDS–HNS–HKDU–SBHS alliance (HSS was the leading party; separate party shares are not available).",
+      "note": "Modern party refounded on 15 December 1989 (historical party 1904). The party article lists agrarianism, republicanism and Christian democracy. Leaders not recorded as people: Hrvoje Duvnjak (2016-2020), Darko Vuletić (since 2025).",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Croatian_Peasant_Party",
+          "title": "Wikipedia: Croatian Peasant Party (list of presidents)",
+          "accessed": "2026-10-15"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "hrv.hns",
+      "name": {
+        "en": "Croatian People's Party – Liberal Democrats",
+        "native": "Hrvatska narodna stranka – Liberalni demokrati"
+      },
+      "abbrev": {
+        "en": "HNS",
+        "native": "HNS"
+      },
+      "color": "#F68B1F",
+      "sub_ideology": "social_liberal",
+      "founded": "1990-10-13",
+      "status_2000": "active",
+      "leader_history": [
+        {
+          "person": "hrv.radimir_cacic",
+          "from": 1995,
+          "to": 2000
+        },
+        {
+          "person": "hrv.vesna_pusic",
+          "from": 2000,
+          "to": 2008
+        },
+        {
+          "person": "hrv.radimir_cacic",
+          "from": 2008,
+          "to": 2013
+        },
+        {
+          "person": "hrv.vesna_pusic",
+          "from": 2013,
+          "to": 2016
+        },
+        {
+          "person": "hrv.ivan_vrdoljak",
+          "from": 2016,
+          "to": 2020
+        }
+      ],
+      "popularity_2000": 0,
+      "popularity_note": "Ran in the HSS-led alliance in 1995 (no separate share); its share is included under HSS.",
+      "note": "Later leaders (Predrag Štromar 2020, Stjepan Čuraj 2020-2022, Krunoslav Lukačić since 2024) are not recorded as people.",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Croatian_People's_Party_%E2%80%93_Liberal_Democrats",
+          "title": "Wikipedia: Croatian People's Party – Liberal Democrats (list of presidents)",
+          "accessed": "2026-10-15"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "hrv.ids",
+      "name": {
+        "en": "Istrian Democratic Assembly",
+        "native": "Istarski demokratski sabor / Dieta democratica istriana"
+      },
+      "abbrev": {
+        "en": "IDS",
+        "native": "IDS-DDI"
+      },
+      "color": "#2FA84F",
+      "sub_ideology": "regionalist",
+      "founded": "1990-02-14",
+      "status_2000": "active",
+      "leader_history": [
+        {
+          "person": "hrv.ivan_jakovcic",
+          "from": 1991,
+          "to": 2014
+        },
+        {
+          "person": "hrv.boris_miletic",
+          "from": 2014
+        }
+      ],
+      "popularity_2000": 0,
+      "popularity_note": "Ran in the HSS-led alliance in 1995 (no separate share).",
+      "regional_base": [
+        "Istria"
+      ],
+      "note": "Istrian regionalist and social-liberal party. Boris Miletić led it after Jakovčić (the end of his leadership is not dated in the fetched text; he left the party in February 2022); the current leader is Loris Peršurić (not recorded).",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Istrian_Democratic_Assembly",
+          "title": "Wikipedia: Istrian Democratic Assembly",
+          "accessed": "2026-10-15"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "hrv.hsp",
+      "name": {
+        "en": "Croatian Party of Rights",
+        "native": "Hrvatska stranka prava"
+      },
+      "abbrev": {
+        "en": "HSP",
+        "native": "HSP"
+      },
+      "color": "#1C1C1C",
+      "sub_ideology": "ethno_nationalist",
+      "founded": "1990-02-25",
+      "status_2000": "active",
+      "leader_history": [
+        {
+          "person": "hrv.anto_dapic",
+          "from": 1993,
+          "to": "2009-11-07"
+        }
+      ],
+      "popularity_2000": 0.0501,
+      "popularity_note": "Vote share, October 1995 election.",
+      "note": "The party article lists Croatian ultranationalism, national conservatism and social conservatism. Đapić took over from founder Dobroslav Paraga after a leadership dispute (year taken as 1993; the fetched text does not date it) and stepped down on 7 November 2009.",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Croatian_Party_of_Rights",
+          "title": "Wikipedia: Croatian Party of Rights",
+          "accessed": "2026-10-15"
+        }
+      ],
+      "confidence": "needs_review",
+      "review_note": "Check the year Anto Đapić became party leader (1993 assumed)."
+    },
+    {
+      "id": "hrv.hsu",
+      "name": {
+        "en": "Croatian Party of Pensioners",
+        "native": "Hrvatska stranka umirovljenika"
+      },
+      "abbrev": {
+        "en": "HSU",
+        "native": "HSU"
+      },
+      "color": "#C8102E",
+      "sub_ideology": "big_tent",
+      "founded": "1996-04-26",
+      "status_2000": "extra_parliamentary",
+      "leader_history": [],
+      "popularity_2000": 0.0182,
+      "popularity_note": "Vote share in the 3 January 2000 election (it did not contest 1995 separately).",
+      "note": "Pensioners' interest party (recorded as big tent). Won seats in 2003 and 2007 and later ran within SDP-led coalitions.",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Croatian_Party_of_Pensioners",
+          "title": "Wikipedia: Croatian Party of Pensioners",
+          "accessed": "2026-10-15"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/2000_Croatian_parliamentary_election",
+          "title": "Wikipedia: 2000 Croatian parliamentary election",
+          "accessed": "2026-10-15"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "hrv.sdss",
+      "name": {
+        "en": "Independent Democratic Serb Party",
+        "native": "Samostalna demokratska srpska stranka"
+      },
+      "abbrev": {
+        "en": "SDSS",
+        "native": "SDSS"
+      },
+      "color": "#2D3C8C",
+      "sub_ideology": "regionalist",
+      "founded": "1997-03-05",
+      "status_2000": "extra_parliamentary",
+      "leader_history": [
+        {
+          "person": "hrv.vojislav_stanimirovic",
+          "from": "1997-03-05"
+        },
+        {
+          "person": "hrv.milorad_pupovac",
+          "from": 2019
+        }
+      ],
+      "popularity_2000": 0.0079,
+      "popularity_note": "Vote share in the 3 January 2000 general list vote (no seats).",
+      "regional_base": [
+        "serbian"
+      ],
+      "note": "Party of the Serb minority; has held the three Serb minority seats since 2003. The year Pupovac succeeded Stanimirović is not given in the fetched text (the 2016 election infobox still lists Stanimirović, the 2020 one Pupovac).",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Independent_Democratic_Serb_Party",
+          "title": "Wikipedia: Independent Democratic Serb Party",
+          "accessed": "2026-10-15"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/2016_Croatian_parliamentary_election",
+          "title": "Wikipedia: 2016 Croatian parliamentary election",
+          "accessed": "2026-10-15"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/2020_Croatian_parliamentary_election",
+          "title": "Wikipedia: 2020 Croatian parliamentary election",
+          "accessed": "2026-10-15"
+        }
+      ],
+      "confidence": "needs_review",
+      "review_note": "Check the year Milorad Pupovac became party president (2019 assumed between the 2016 and 2020 elections)."
+    },
+    {
+      "id": "hrv.hdssb",
+      "name": {
+        "en": "Croatian Democratic Alliance of Slavonia and Baranja",
+        "native": "Hrvatski demokratski savez Slavonije i Baranje"
+      },
+      "abbrev": {
+        "en": "HDSSB",
+        "native": "HDSSB"
+      },
+      "color": "#B22234",
+      "sub_ideology": "regionalist",
+      "founded": "2006-05-06",
+      "status_2000": "not_yet_founded",
+      "leader_history": [],
+      "popularity_2000": 0,
+      "regional_base": [
+        "Slavonia",
+        "Baranja"
+      ],
+      "note": "Slavonian regionalist and national-conservative party, founded as a split from HDZ. Leaders not recorded as people.",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Croatian_Democratic_Alliance_of_Slavonia_and_Baranja",
+          "title": "Wikipedia: Croatian Democratic Alliance of Slavonia and Baranja",
+          "accessed": "2026-10-15"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "hrv.laburisti",
+      "name": {
+        "en": "Croatian Labourists – Labour Party",
+        "native": "Hrvatski laburisti – Stranka rada"
+      },
+      "abbrev": {
+        "en": "Laburisti",
+        "native": "HL-SR"
+      },
+      "color": "#F39200",
+      "sub_ideology": "left_populist",
+      "founded": "2010-02-27",
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        {
+          "person": "hrv.dragutin_lesar",
+          "from": "2010-02-27"
+        }
+      ],
+      "popularity_2000": 0,
+      "note": "The party article lists democratic socialism, social democracy, left-wing populism and labourism. Current leader David Bregovac not recorded.",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Croatian_Labourists_%E2%80%93_Labour_Party",
+          "title": "Wikipedia: Croatian Labourists – Labour Party",
+          "accessed": "2026-10-15"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "hrv.most",
+      "name": {
+        "en": "The Bridge (Most)",
+        "native": "Most"
+      },
+      "abbrev": {
+        "en": "Most",
+        "native": "Most"
+      },
+      "color": "#F7941D",
+      "sub_ideology": "national_conservative",
+      "founded": "2012-11-17",
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        {
+          "person": "hrv.bozo_petrov",
+          "from": "2012-11-17"
+        },
+        {
+          "person": "hrv.nikola_grmoja",
+          "from": 2022
+        }
+      ],
+      "popularity_2000": 0,
+      "note": "Founded as the Bridge of Independent Lists. The party article lists national conservatism, right-wing populism, economic liberalism and soft Euroscepticism. The year Grmoja became president is not given in the fetched text.",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/The_Bridge_(Croatia)",
+          "title": "Wikipedia: The Bridge (Croatia)",
+          "accessed": "2026-10-15"
+        }
+      ],
+      "confidence": "needs_review",
+      "review_note": "Check the year Nikola Grmoja succeeded Božo Petrov as party president (2022 assumed)."
+    },
+    {
+      "id": "hrv.zivi_zid",
+      "name": {
+        "en": "Human Shield (Živi zid)",
+        "native": "Živi zid"
+      },
+      "abbrev": {
+        "en": "ŽZ",
+        "native": "ŽZ"
+      },
+      "color": "#E4A11B",
+      "sub_ideology": "big_tent",
+      "founded": "2011-06-02",
+      "dissolved": "2024-02-03",
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        {
+          "person": "hrv.ivan_vilibor_sincic",
+          "from": 2014
+        }
+      ],
+      "popularity_2000": 0,
+      "note": "Founded as the Alliance for Change; known as Human Shield until 21 May 2022, then The Key of Croatia. The party article lists populism, Euroscepticism and anti-establishment politics (no left-right classification; recorded as big tent). Merged into Law and Justice in February 2024 (the infobox gives 3 March 2024, the article text 3 February 2024).",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/%C5%BDivi_zid",
+          "title": "Wikipedia: Živi zid",
+          "accessed": "2026-10-15"
+        }
+      ],
+      "confidence": "needs_review",
+      "review_note": "Check the merger date (3 February or 3 March 2024) and the start of Sinčić's leadership."
+    },
+    {
+      "id": "hrv.dp",
+      "name": {
+        "en": "Homeland Movement",
+        "native": "Domovinski pokret"
+      },
+      "abbrev": {
+        "en": "DP",
+        "native": "DP"
+      },
+      "color": "#5A6C7D",
+      "sub_ideology": "national_conservative",
+      "founded": "2020-02-29",
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        {
+          "person": "hrv.miroslav_skoro",
+          "from": "2020-02-29",
+          "to": "2021-07-20"
+        },
+        {
+          "person": "hrv.ivan_penava",
+          "from": "2021-10-09"
+        }
+      ],
+      "popularity_2000": 0,
+      "lineage": {
+        "split_from": "hrv.hdz"
+      },
+      "note": "The party article lists Croatian nationalism, national conservatism, social conservatism and right-wing populism. Mario Radić was acting president July-October 2021 (not recorded). Junior partner in the third Plenković government from 2024.",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Homeland_Movement_(Croatia)",
+          "title": "Wikipedia: Homeland Movement (Croatia)",
+          "accessed": "2026-10-15"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "hrv.mozemo",
+      "name": {
+        "en": "We Can! – Political Platform",
+        "native": "Možemo! – politička platforma"
+      },
+      "abbrev": {
+        "en": "Možemo",
+        "native": "Možemo!"
+      },
+      "color": "#3AAA35",
+      "sub_ideology": "green",
+      "founded": "2019-02-10",
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        {
+          "person": "hrv.sandra_bencic",
+          "from": "2019-02-10"
+        }
+      ],
+      "popularity_2000": 0,
+      "note": "The party article lists green politics, progressivism, eco-socialism and social democracy. It has collective leadership; Sandra Benčić is recorded as a leading figure (start date taken as the founding date).",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/We_Can!_(Croatia)",
+          "title": "Wikipedia: We Can! (Croatia)",
+          "accessed": "2026-10-15"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/2024_Croatian_parliamentary_election",
+          "title": "Wikipedia: 2024 Croatian parliamentary election",
+          "accessed": "2026-10-15"
+        }
+      ],
+      "confidence": "needs_review",
+      "review_note": "Check Sandra Benčić's formal party role and dates (the party uses co-presidents)."
+    }
+  ]
+}

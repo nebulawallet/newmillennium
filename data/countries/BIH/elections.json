@@ -1,0 +1,1525 @@
+{
+  "rules": [
+    {
+      "kind": "legislative",
+      "chamber": "house_of_representatives",
+      "every_years": 4,
+      "anchor": "2026-10-04",
+      "snap_possible": false,
+      "note": "General elections every four years (the 2000 House election was held two years after 1998)."
+    },
+    {
+      "kind": "presidential",
+      "office": "bih.presidency",
+      "every_years": 4,
+      "anchor": "2026-10-04",
+      "snap_possible": false,
+      "system": "plurality",
+      "note": "Three members elected on the same day by plurality: Bosniak and Croat members by voters in the Federation, the Serb member by voters in Republika Srpska."
+    }
+  ],
+  "elections": [
+    {
+      "id": "hor_2000",
+      "date": "2000-11-11",
+      "kind": "legislative",
+      "chamber": "house_of_representatives",
+      "historical": {
+        "party_results": [
+          {
+            "party": "bih.sda",
+            "share": 0.1876,
+            "seats": 8
+          },
+          {
+            "party": "bih.sdp_bih",
+            "share": 0.18,
+            "seats": 9
+          },
+          {
+            "party": "bih.sds",
+            "share": 0.1668,
+            "seats": 6
+          },
+          {
+            "party": "bih.hdz_bih",
+            "share": 0.114,
+            "seats": 5
+          },
+          {
+            "party": "bih.sbih",
+            "share": 0.1134,
+            "seats": 5
+          },
+          {
+            "party": "bih.pdp",
+            "share": 0.0639,
+            "seats": 2
+          },
+          {
+            "party": "bih.snsd",
+            "share": 0.0509,
+            "seats": 1
+          },
+          {
+            "party": "bih.sp",
+            "share": 0.0261,
+            "seats": 1
+          },
+          {
+            "party": "bih.sns",
+            "share": 0.0189,
+            "seats": 1
+          },
+          {
+            "party": "others",
+            "seats": 4
+          }
+        ],
+        "winner": "bih.sdp_bih",
+        "turnout": 0.644,
+        "note": "Early House of Representatives election (no Presidency election). SDP won the most seats although SDA had slightly more votes. Others: New Croatian Initiative, Democratic People's Union, Bosnian-Herzegovinian Patriotic Party and Democratic Party of Pensioners (1 each).",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2000_Bosnian_parliamentary_election",
+            "title": "Wikipedia: 2000 Bosnian parliamentary election",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "presidency_bosniak_2002",
+      "date": "2002-10-05",
+      "kind": "presidential",
+      "office": "bih.presidency",
+      "rounds": 1,
+      "historical": {
+        "candidates": [
+          {
+            "person": "bih.sulejman_tihic",
+            "party": "bih.sda",
+            "share": 0.3729,
+            "votes": 192661,
+            "round": 1
+          },
+          {
+            "person": "bih.haris_silajdzic",
+            "party": "bih.sbih",
+            "share": 0.3479,
+            "votes": 179726,
+            "round": 1
+          },
+          {
+            "person": "bih.alija_behmen",
+            "party": "bih.sdp_bih",
+            "share": 0.1751,
+            "votes": 90434,
+            "round": 1
+          }
+        ],
+        "winner": "bih.sulejman_tihic",
+        "note": "Bosniak member, first-past-the-post. Shares computed from the vote counts.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2002_Bosnian_general_election",
+            "title": "Wikipedia: 2002 Bosnian general election",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "presidency_croat_2002",
+      "date": "2002-10-05",
+      "kind": "presidential",
+      "office": "bih.presidency",
+      "rounds": 1,
+      "historical": {
+        "candidates": [
+          {
+            "person": "bih.dragan_covic",
+            "party": "bih.hdz_bih",
+            "share": 0.6152,
+            "votes": 114606,
+            "round": 1
+          },
+          {
+            "person": "bih.mladen_ivankovic_lijanovic",
+            "share": 0.174,
+            "votes": 32411,
+            "round": 1
+          },
+          {
+            "person": "bih.stjepan_kljuic",
+            "share": 0.0505,
+            "votes": 9413,
+            "round": 1
+          }
+        ],
+        "winner": "bih.dragan_covic",
+        "note": "Croat member. Mijo Anić (New Croatian Initiative, 8.77%) is not recorded (no biographical data found). Shares computed from the vote counts.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2002_Bosnian_general_election",
+            "title": "Wikipedia: 2002 Bosnian general election",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "presidency_serb_2002",
+      "date": "2002-10-05",
+      "kind": "presidential",
+      "office": "bih.presidency",
+      "rounds": 1,
+      "historical": {
+        "candidates": [
+          {
+            "person": "bih.mirko_sarovic",
+            "party": "bih.sds",
+            "share": 0.3552,
+            "votes": 180212,
+            "round": 1
+          },
+          {
+            "person": "bih.nebojsa_radmanovic",
+            "party": "bih.snsd",
+            "share": 0.1993,
+            "votes": 101119,
+            "round": 1
+          },
+          {
+            "person": "bih.ognjen_tadic",
+            "party": "bih.srs",
+            "share": 0.0872,
+            "votes": 44262,
+            "round": 1
+          },
+          {
+            "person": "bih.desnica_radivojevic",
+            "party": "bih.sda",
+            "share": 0.0821,
+            "votes": 41667,
+            "round": 1
+          },
+          {
+            "person": "bih.branko_dokic",
+            "party": "bih.pdp",
+            "share": 0.0813,
+            "votes": 41228,
+            "round": 1
+          }
+        ],
+        "winner": "bih.mirko_sarovic",
+        "note": "Serb member. Shares computed from the vote counts.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2002_Bosnian_general_election",
+            "title": "Wikipedia: 2002 Bosnian general election",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "hor_2002",
+      "date": "2002-10-05",
+      "kind": "legislative",
+      "chamber": "house_of_representatives",
+      "historical": {
+        "party_results": [
+          {
+            "party": "bih.sda",
+            "share": 0.2192,
+            "seats": 10
+          },
+          {
+            "party": "bih.sds",
+            "share": 0.1404,
+            "seats": 5
+          },
+          {
+            "party": "bih.sbih",
+            "share": 0.1107,
+            "seats": 6
+          },
+          {
+            "party": "bih.sdp_bih",
+            "share": 0.1043,
+            "seats": 4
+          },
+          {
+            "party": "bih.snsd",
+            "share": 0.098,
+            "seats": 3
+          },
+          {
+            "party": "bih.hdz_bih",
+            "share": 0.0948,
+            "seats": 5
+          },
+          {
+            "party": "bih.pdp",
+            "share": 0.0461,
+            "seats": 2
+          },
+          {
+            "party": "bih.srs",
+            "share": 0.02,
+            "seats": 1
+          },
+          {
+            "party": "bih.sp",
+            "share": 0.0191,
+            "seats": 1
+          },
+          {
+            "party": "others",
+            "seats": 5
+          }
+        ],
+        "winner": "bih.sda",
+        "turnout": 0.5546,
+        "note": "HDZ figure is the HDZ–Croatian Christian Democrats list. Others: Bosnian Party, Pensioners' Party, Democratic People's Union, New Croatian Initiative and Economic Bloc (1 each).",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2002_Bosnian_general_election",
+            "title": "Wikipedia: 2002 Bosnian general election",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "presidency_bosniak_2006",
+      "date": "2006-10-01",
+      "kind": "presidential",
+      "office": "bih.presidency",
+      "rounds": 1,
+      "historical": {
+        "candidates": [
+          {
+            "person": "bih.haris_silajdzic",
+            "party": "bih.sbih",
+            "share": 0.628,
+            "votes": 350520,
+            "round": 1
+          },
+          {
+            "person": "bih.sulejman_tihic",
+            "party": "bih.sda",
+            "share": 0.2753,
+            "votes": 153683,
+            "round": 1
+          }
+        ],
+        "winner": "bih.haris_silajdzic",
+        "note": "Bosniak member. Mirnes Ajanović (Patriotic Bloc, 8.17%) is not recorded (no biographical data found). Shares computed from the vote counts.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2006_Bosnian_general_election",
+            "title": "Wikipedia: 2006 Bosnian general election",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "presidency_croat_2006",
+      "date": "2006-10-01",
+      "kind": "presidential",
+      "office": "bih.presidency",
+      "rounds": 1,
+      "historical": {
+        "candidates": [
+          {
+            "person": "bih.zeljko_komsic",
+            "party": "bih.sdp_bih",
+            "share": 0.3956,
+            "votes": 116062,
+            "round": 1
+          },
+          {
+            "person": "bih.ivo_miro_jovic",
+            "party": "bih.hdz_bih",
+            "share": 0.2614,
+            "votes": 76681,
+            "round": 1
+          },
+          {
+            "person": "bih.bozo_ljubic",
+            "party": "bih.hdz1990",
+            "share": 0.1818,
+            "votes": 53325,
+            "round": 1
+          },
+          {
+            "person": "bih.mladen_ivankovic_lijanovic",
+            "share": 0.0846,
+            "votes": 24822,
+            "round": 1
+          },
+          {
+            "person": "bih.zvonko_jurisic",
+            "share": 0.0694,
+            "votes": 20350,
+            "round": 1
+          }
+        ],
+        "winner": "bih.zeljko_komsic",
+        "note": "Croat member. Shares computed from the vote counts (the list of members gives 40.0% for Komšić).",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2006_Bosnian_general_election",
+            "title": "Wikipedia: 2006 Bosnian general election",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "presidency_serb_2006",
+      "date": "2006-10-01",
+      "kind": "presidential",
+      "office": "bih.presidency",
+      "rounds": 1,
+      "historical": {
+        "candidates": [
+          {
+            "person": "bih.nebojsa_radmanovic",
+            "party": "bih.snsd",
+            "share": 0.5326,
+            "votes": 287675,
+            "round": 1
+          },
+          {
+            "person": "bih.mladen_bosic",
+            "party": "bih.sds",
+            "share": 0.2422,
+            "votes": 130824,
+            "round": 1
+          }
+        ],
+        "winner": "bih.nebojsa_radmanovic",
+        "note": "Serb member. Shares computed from the vote counts.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2006_Bosnian_general_election",
+            "title": "Wikipedia: 2006 Bosnian general election",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "hor_2006",
+      "date": "2006-10-01",
+      "kind": "legislative",
+      "chamber": "house_of_representatives",
+      "historical": {
+        "party_results": [
+          {
+            "party": "bih.snsd",
+            "share": 0.1908,
+            "seats": 7
+          },
+          {
+            "party": "bih.sda",
+            "share": 0.1689,
+            "seats": 9
+          },
+          {
+            "party": "bih.sbih",
+            "share": 0.1554,
+            "seats": 8
+          },
+          {
+            "party": "bih.sdp_bih",
+            "share": 0.1015,
+            "seats": 5
+          },
+          {
+            "party": "bih.sds",
+            "share": 0.0769,
+            "seats": 3
+          },
+          {
+            "party": "bih.hdz_bih",
+            "share": 0.0491,
+            "seats": 3
+          },
+          {
+            "party": "bih.hdz1990",
+            "share": 0.0373,
+            "seats": 2
+          },
+          {
+            "party": "bih.pdp",
+            "share": 0.0201,
+            "seats": 1
+          },
+          {
+            "party": "bih.dns",
+            "share": 0.0142,
+            "seats": 1
+          },
+          {
+            "party": "others",
+            "seats": 3
+          }
+        ],
+        "winner": "bih.sda",
+        "turnout": 0.5536,
+        "note": "SNSD won the most votes, SDA the most seats. HDZ figure is the Croatian Coalition (HDZ–HNZ–HSP); HDZ 1990 the Croats Together list. Others: Bosnian-Herzegovinian Patriotic Party, People's Party Work for Prosperity and Democratic People's Union (1 each).",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2006_Bosnian_general_election",
+            "title": "Wikipedia: 2006 Bosnian general election",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "presidency_bosniak_2010",
+      "date": "2010-10-03",
+      "kind": "presidential",
+      "office": "bih.presidency",
+      "rounds": 1,
+      "historical": {
+        "candidates": [
+          {
+            "person": "bih.bakir_izetbegovic",
+            "party": "bih.sda",
+            "share": 0.3486,
+            "votes": 162831,
+            "round": 1
+          },
+          {
+            "person": "bih.fahrudin_radoncic",
+            "party": "bih.sbb",
+            "share": 0.3049,
+            "votes": 142387,
+            "round": 1
+          },
+          {
+            "person": "bih.haris_silajdzic",
+            "party": "bih.sbih",
+            "share": 0.251,
+            "votes": 117240,
+            "round": 1
+          }
+        ],
+        "winner": "bih.bakir_izetbegovic",
+        "note": "Bosniak member. Shares computed from the vote counts.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2010_Bosnian_general_election",
+            "title": "Wikipedia: 2010 Bosnian general election",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "presidency_croat_2010",
+      "date": "2010-10-03",
+      "kind": "presidential",
+      "office": "bih.presidency",
+      "rounds": 1,
+      "historical": {
+        "candidates": [
+          {
+            "person": "bih.zeljko_komsic",
+            "party": "bih.sdp_bih",
+            "share": 0.6061,
+            "votes": 337065,
+            "round": 1
+          },
+          {
+            "person": "bih.borjana_kristo",
+            "party": "bih.hdz_bih",
+            "share": 0.1974,
+            "votes": 109758,
+            "round": 1
+          },
+          {
+            "person": "bih.martin_raguz",
+            "party": "bih.hdz1990",
+            "share": 0.1084,
+            "votes": 60266,
+            "round": 1
+          },
+          {
+            "person": "bih.jerko_ivankovic_lijanovic",
+            "share": 0.0816,
+            "votes": 45397,
+            "round": 1
+          }
+        ],
+        "winner": "bih.zeljko_komsic",
+        "note": "Croat member. Raguž stood for the Croatian Coalition (HDZ 1990-led). Shares computed from the vote counts.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2010_Bosnian_general_election",
+            "title": "Wikipedia: 2010 Bosnian general election",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "presidency_serb_2010",
+      "date": "2010-10-03",
+      "kind": "presidential",
+      "office": "bih.presidency",
+      "rounds": 1,
+      "historical": {
+        "candidates": [
+          {
+            "person": "bih.nebojsa_radmanovic",
+            "party": "bih.snsd",
+            "share": 0.4892,
+            "votes": 295629,
+            "round": 1
+          },
+          {
+            "person": "bih.mladen_ivanic",
+            "party": "bih.pdp",
+            "share": 0.4731,
+            "votes": 285951,
+            "round": 1
+          }
+        ],
+        "winner": "bih.nebojsa_radmanovic",
+        "note": "Serb member. Ivanić stood for Together for Srpska (PDP–SDS). Shares computed from the vote counts.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2010_Bosnian_general_election",
+            "title": "Wikipedia: 2010 Bosnian general election",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "hor_2010",
+      "date": "2010-10-03",
+      "kind": "legislative",
+      "chamber": "house_of_representatives",
+      "historical": {
+        "party_results": [
+          {
+            "party": "bih.sdp_bih",
+            "share": 0.1733,
+            "seats": 8
+          },
+          {
+            "party": "bih.snsd",
+            "share": 0.1692,
+            "seats": 8
+          },
+          {
+            "party": "bih.sda",
+            "share": 0.1305,
+            "seats": 7
+          },
+          {
+            "party": "bih.sds",
+            "share": 0.084,
+            "seats": 4
+          },
+          {
+            "party": "bih.sbb",
+            "share": 0.0795,
+            "seats": 4
+          },
+          {
+            "party": "bih.hdz_bih",
+            "share": 0.0697,
+            "seats": 3
+          },
+          {
+            "party": "bih.sbih",
+            "share": 0.0528,
+            "seats": 2
+          },
+          {
+            "party": "bih.hdz1990",
+            "share": 0.0305,
+            "seats": 2
+          },
+          {
+            "party": "bih.pdp",
+            "share": 0.0244,
+            "seats": 1
+          },
+          {
+            "party": "bih.dns",
+            "share": 0.0181,
+            "seats": 1
+          },
+          {
+            "party": "others",
+            "seats": 2
+          }
+        ],
+        "winner": "bih.sdp_bih",
+        "turnout": 0.5653,
+        "note": "HDZ 1990 figure is the Croatian Coalition list. Others: People's Party Work for Prosperity and Democratic People's Union (1 each).",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2010_Bosnian_general_election",
+            "title": "Wikipedia: 2010 Bosnian general election",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "presidency_bosniak_2014",
+      "date": "2014-10-12",
+      "kind": "presidential",
+      "office": "bih.presidency",
+      "rounds": 1,
+      "historical": {
+        "candidates": [
+          {
+            "person": "bih.bakir_izetbegovic",
+            "party": "bih.sda",
+            "share": 0.3287,
+            "votes": 247235,
+            "round": 1
+          },
+          {
+            "person": "bih.fahrudin_radoncic",
+            "party": "bih.sbb",
+            "share": 0.2678,
+            "votes": 201454,
+            "round": 1
+          },
+          {
+            "person": "bih.emir_suljagic",
+            "party": "bih.df",
+            "share": 0.152,
+            "votes": 114334,
+            "round": 1
+          },
+          {
+            "person": "bih.bakir_hadziomerovic",
+            "party": "bih.sdp_bih",
+            "share": 0.1002,
+            "votes": 75369,
+            "round": 1
+          },
+          {
+            "person": "bih.sefer_halilovic",
+            "share": 0.088,
+            "votes": 66230,
+            "round": 1
+          }
+        ],
+        "winner": "bih.bakir_izetbegovic",
+        "note": "Bosniak member. Shares computed from the vote counts.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2014_Bosnian_general_election",
+            "title": "Wikipedia: 2014 Bosnian general election",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "presidency_croat_2014",
+      "date": "2014-10-12",
+      "kind": "presidential",
+      "office": "bih.presidency",
+      "rounds": 1,
+      "historical": {
+        "candidates": [
+          {
+            "person": "bih.dragan_covic",
+            "party": "bih.hdz_bih",
+            "share": 0.522,
+            "votes": 128053,
+            "round": 1
+          },
+          {
+            "person": "bih.martin_raguz",
+            "party": "bih.hdz1990",
+            "share": 0.386,
+            "votes": 94695,
+            "round": 1
+          },
+          {
+            "person": "bih.zivko_budimir",
+            "share": 0.0627,
+            "votes": 15368,
+            "round": 1
+          }
+        ],
+        "winner": "bih.dragan_covic",
+        "note": "Croat member. Shares computed from the vote counts.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2014_Bosnian_general_election",
+            "title": "Wikipedia: 2014 Bosnian general election",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "presidency_serb_2014",
+      "date": "2014-10-12",
+      "kind": "presidential",
+      "office": "bih.presidency",
+      "rounds": 1,
+      "historical": {
+        "candidates": [
+          {
+            "person": "bih.mladen_ivanic",
+            "party": "bih.pdp",
+            "share": 0.4871,
+            "votes": 318196,
+            "round": 1
+          },
+          {
+            "person": "bih.zeljka_cvijanovic",
+            "party": "bih.snsd",
+            "share": 0.4756,
+            "votes": 310658,
+            "round": 1
+          }
+        ],
+        "winner": "bih.mladen_ivanic",
+        "note": "Serb member. Ivanić stood for the SDS–PDP–NDP–SRS RS–PUP alliance, Cvijanović for SNSD–DNS–SP. Shares computed from the vote counts.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2014_Bosnian_general_election",
+            "title": "Wikipedia: 2014 Bosnian general election",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "hor_2014",
+      "date": "2014-10-12",
+      "kind": "legislative",
+      "chamber": "house_of_representatives",
+      "historical": {
+        "party_results": [
+          {
+            "party": "bih.sda",
+            "share": 0.1873,
+            "seats": 10
+          },
+          {
+            "party": "bih.snsd",
+            "share": 0.1564,
+            "seats": 6
+          },
+          {
+            "party": "bih.sds",
+            "share": 0.1297,
+            "seats": 5
+          },
+          {
+            "party": "bih.df",
+            "share": 0.0924,
+            "seats": 5
+          },
+          {
+            "party": "bih.sbb",
+            "share": 0.0871,
+            "seats": 4
+          },
+          {
+            "party": "bih.hdz_bih",
+            "share": 0.0754,
+            "seats": 4
+          },
+          {
+            "party": "bih.sdp_bih",
+            "share": 0.0665,
+            "seats": 3
+          },
+          {
+            "party": "bih.pdp",
+            "share": 0.031,
+            "seats": 1
+          },
+          {
+            "party": "bih.hdz1990",
+            "share": 0.0246,
+            "seats": 1
+          },
+          {
+            "party": "bih.dns",
+            "share": 0.0227,
+            "seats": 1
+          },
+          {
+            "party": "others",
+            "seats": 2
+          }
+        ],
+        "winner": "bih.sda",
+        "note": "HDZ figure is the HDZ–HSS–HKDU–HSP AS–HSP BA list; PDP the PDP–NDP list. Others: Bosnian-Herzegovinian Patriotic Party and Party of Democratic Activity (1 each).",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2014_Bosnian_general_election",
+            "title": "Wikipedia: 2014 Bosnian general election",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "presidency_bosniak_2018",
+      "date": "2018-10-07",
+      "kind": "presidential",
+      "office": "bih.presidency",
+      "rounds": 1,
+      "historical": {
+        "candidates": [
+          {
+            "person": "bih.sefik_dzaferovic",
+            "party": "bih.sda",
+            "share": 0.3661,
+            "votes": 212581,
+            "round": 1
+          },
+          {
+            "person": "bih.denis_becirovic",
+            "party": "bih.sdp_bih",
+            "share": 0.3353,
+            "votes": 194688,
+            "round": 1
+          },
+          {
+            "person": "bih.fahrudin_radoncic",
+            "party": "bih.sbb",
+            "share": 0.1295,
+            "votes": 75210,
+            "round": 1
+          },
+          {
+            "person": "bih.mirsad_hadzikadic",
+            "share": 0.1009,
+            "votes": 58555,
+            "round": 1
+          },
+          {
+            "person": "bih.senad_sepic",
+            "share": 0.0515,
+            "votes": 29922,
+            "round": 1
+          }
+        ],
+        "winner": "bih.sefik_dzaferovic",
+        "note": "Bosniak member. Shares computed from the vote counts.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2018_Bosnian_general_election",
+            "title": "Wikipedia: 2018 Bosnian general election",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "presidency_croat_2018",
+      "date": "2018-10-07",
+      "kind": "presidential",
+      "office": "bih.presidency",
+      "rounds": 1,
+      "historical": {
+        "candidates": [
+          {
+            "person": "bih.zeljko_komsic",
+            "party": "bih.df",
+            "share": 0.5264,
+            "votes": 225500,
+            "round": 1
+          },
+          {
+            "person": "bih.dragan_covic",
+            "party": "bih.hdz_bih",
+            "share": 0.3614,
+            "votes": 154819,
+            "round": 1
+          }
+        ],
+        "winner": "bih.zeljko_komsic",
+        "note": "Croat member. Diana Zelenika (HDZ 1990, 6.04%) is not recorded (no birth data found). Shares computed from the vote counts.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2018_Bosnian_general_election",
+            "title": "Wikipedia: 2018 Bosnian general election",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "presidency_serb_2018",
+      "date": "2018-10-07",
+      "kind": "presidential",
+      "office": "bih.presidency",
+      "rounds": 1,
+      "historical": {
+        "candidates": [
+          {
+            "person": "bih.milorad_dodik",
+            "party": "bih.snsd",
+            "share": 0.5388,
+            "votes": 368210,
+            "round": 1
+          },
+          {
+            "person": "bih.mladen_ivanic",
+            "party": "bih.pdp",
+            "share": 0.4274,
+            "votes": 292065,
+            "round": 1
+          }
+        ],
+        "winner": "bih.milorad_dodik",
+        "note": "Serb member. Ivanić stood for the Alliance for Victory. Shares computed from the vote counts.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2018_Bosnian_general_election",
+            "title": "Wikipedia: 2018 Bosnian general election",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "hor_2018",
+      "date": "2018-10-07",
+      "kind": "legislative",
+      "chamber": "house_of_representatives",
+      "historical": {
+        "party_results": [
+          {
+            "party": "bih.sda",
+            "share": 0.1701,
+            "seats": 9
+          },
+          {
+            "party": "bih.snsd",
+            "share": 0.1603,
+            "seats": 6
+          },
+          {
+            "party": "bih.sds",
+            "share": 0.098,
+            "seats": 3
+          },
+          {
+            "party": "bih.sdp_bih",
+            "share": 0.0908,
+            "seats": 5
+          },
+          {
+            "party": "bih.hdz_bih",
+            "share": 0.0905,
+            "seats": 5
+          },
+          {
+            "party": "bih.df",
+            "share": 0.0581,
+            "seats": 3
+          },
+          {
+            "party": "bih.pdp",
+            "share": 0.0506,
+            "seats": 2
+          },
+          {
+            "party": "bih.dns",
+            "share": 0.0418,
+            "seats": 1
+          },
+          {
+            "party": "bih.sbb",
+            "share": 0.0416,
+            "seats": 2
+          },
+          {
+            "party": "bih.nasa_stranka",
+            "share": 0.0292,
+            "seats": 2
+          },
+          {
+            "party": "bih.sp",
+            "share": 0.0189,
+            "seats": 1
+          },
+          {
+            "party": "others",
+            "seats": 3
+          }
+        ],
+        "winner": "bih.sda",
+        "turnout": 0.5403,
+        "note": "SDS figure is the SDS–NDP–NS–SRS list; HDZ the HDZ–HSS–HSP–HSP AS–HKDU list; DF the DF–Civic Alliance list. Others: Independent Bloc, Movement of Democratic Action and Party of Democratic Activity (1 each).",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2018_Bosnian_general_election",
+            "title": "Wikipedia: 2018 Bosnian general election",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "presidency_bosniak_2022",
+      "date": "2022-10-02",
+      "kind": "presidential",
+      "office": "bih.presidency",
+      "rounds": 1,
+      "historical": {
+        "candidates": [
+          {
+            "person": "bih.denis_becirovic",
+            "party": "bih.sdp_bih",
+            "share": 0.5737,
+            "votes": 330238,
+            "round": 1
+          },
+          {
+            "person": "bih.bakir_izetbegovic",
+            "party": "bih.sda",
+            "share": 0.3725,
+            "votes": 214412,
+            "round": 1
+          },
+          {
+            "person": "bih.mirsad_hadzikadic",
+            "share": 0.0538,
+            "votes": 30968,
+            "round": 1
+          }
+        ],
+        "winner": "bih.denis_becirovic",
+        "note": "Bosniak member. Shares computed from the vote counts.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2022_Bosnian_general_election",
+            "title": "Wikipedia: 2022 Bosnian general election",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "presidency_croat_2022",
+      "date": "2022-10-02",
+      "kind": "presidential",
+      "office": "bih.presidency",
+      "rounds": 1,
+      "historical": {
+        "candidates": [
+          {
+            "person": "bih.zeljko_komsic",
+            "party": "bih.df",
+            "share": 0.558,
+            "votes": 227540,
+            "round": 1
+          },
+          {
+            "person": "bih.borjana_kristo",
+            "party": "bih.hdz_bih",
+            "share": 0.442,
+            "votes": 180255,
+            "round": 1
+          }
+        ],
+        "winner": "bih.zeljko_komsic",
+        "note": "Croat member.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2022_Bosnian_general_election",
+            "title": "Wikipedia: 2022 Bosnian general election",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "presidency_serb_2022",
+      "date": "2022-10-02",
+      "kind": "presidential",
+      "office": "bih.presidency",
+      "rounds": 1,
+      "historical": {
+        "candidates": [
+          {
+            "person": "bih.zeljka_cvijanovic",
+            "party": "bih.snsd",
+            "share": 0.5165,
+            "votes": 327720,
+            "round": 1
+          },
+          {
+            "person": "bih.mirko_sarovic",
+            "party": "bih.sds",
+            "share": 0.3545,
+            "votes": 224912,
+            "round": 1
+          },
+          {
+            "person": "bih.vojin_mijatovic",
+            "party": "bih.sdp_bih",
+            "share": 0.0609,
+            "votes": 38655,
+            "round": 1
+          },
+          {
+            "person": "bih.nenad_nesic",
+            "party": "bih.dns",
+            "share": 0.0551,
+            "votes": 34955,
+            "round": 1
+          }
+        ],
+        "winner": "bih.zeljka_cvijanovic",
+        "note": "Serb member. Shares computed from the vote counts.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2022_Bosnian_general_election",
+            "title": "Wikipedia: 2022 Bosnian general election",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "hor_2022",
+      "date": "2022-10-02",
+      "kind": "legislative",
+      "chamber": "house_of_representatives",
+      "historical": {
+        "party_results": [
+          {
+            "party": "bih.sda",
+            "share": 0.1723,
+            "seats": 9
+          },
+          {
+            "party": "bih.snsd",
+            "share": 0.1634,
+            "seats": 6
+          },
+          {
+            "party": "bih.hdz_bih",
+            "share": 0.0875,
+            "seats": 4
+          },
+          {
+            "party": "bih.sdp_bih",
+            "share": 0.0815,
+            "seats": 5
+          },
+          {
+            "party": "bih.sds",
+            "share": 0.0707,
+            "seats": 2
+          },
+          {
+            "party": "bih.df",
+            "share": 0.0641,
+            "seats": 3
+          },
+          {
+            "party": "bih.nip",
+            "share": 0.0501,
+            "seats": 3
+          },
+          {
+            "party": "bih.pdp",
+            "share": 0.0463,
+            "seats": 2
+          },
+          {
+            "party": "bih.nasa_stranka",
+            "share": 0.0312,
+            "seats": 2
+          },
+          {
+            "party": "others",
+            "seats": 6
+          }
+        ],
+        "winner": "bih.sda",
+        "turnout": 0.5145,
+        "note": "DF figure is the DF–Civic Alliance list. Others: People's European Union–For New Generations (2), For Justice and Order, Democratic Union, United Srpska and Bosnian-Herzegovinian Initiative (1 each).",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2022_Bosnian_general_election",
+            "title": "Wikipedia: 2022 Bosnian general election",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "presidency_bosniak_2026",
+      "date": "2026-10-04",
+      "kind": "presidential",
+      "office": "bih.presidency",
+      "rounds": 1,
+      "historical": {
+        "candidates": [
+          {
+            "person": "bih.denis_becirovic",
+            "party": "bih.sdp_bih",
+            "share": 0.3811,
+            "votes": 215944,
+            "round": 1
+          },
+          {
+            "person": "bih.bakir_izetbegovic",
+            "party": "bih.sda",
+            "share": 0.3399,
+            "votes": 192582,
+            "round": 1
+          },
+          {
+            "person": "bih.semir_efendic",
+            "party": "bih.sbih",
+            "share": 0.2575,
+            "votes": 145907,
+            "round": 1
+          }
+        ],
+        "winner": "bih.denis_becirovic",
+        "note": "Bosniak member. Preliminary results (about 98-99% of polling stations counted) reported by the Central Election Commission and taken from the Wikipedia article; final certified figures were not available.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2026_Bosnian_general_election",
+            "title": "Wikipedia: 2026 Bosnian general election",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "needs_review",
+        "review_note": "Preliminary results; replace with the CEC's certified figures."
+      }
+    },
+    {
+      "id": "presidency_croat_2026",
+      "date": "2026-10-04",
+      "kind": "presidential",
+      "office": "bih.presidency",
+      "rounds": 1,
+      "historical": {
+        "candidates": [
+          {
+            "person": "bih.darijana_filipovic",
+            "party": "bih.hdz_bih",
+            "share": 0.4651,
+            "votes": 111671,
+            "round": 1
+          },
+          {
+            "person": "bih.slaven_kovacevic",
+            "party": "bih.df",
+            "share": 0.3061,
+            "votes": 73501,
+            "round": 1
+          },
+          {
+            "person": "bih.zdenko_lucic",
+            "share": 0.2288,
+            "votes": 54924,
+            "round": 1
+          }
+        ],
+        "winner": "bih.darijana_filipovic",
+        "note": "Croat member. Preliminary results (about 98-99% of polling stations counted) reported by the Central Election Commission and taken from the Wikipedia article; final certified figures were not available. The infobox shows a later count (Filipović 112,041, 46.59%).",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2026_Bosnian_general_election",
+            "title": "Wikipedia: 2026 Bosnian general election",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "needs_review",
+        "review_note": "Preliminary results; replace with the CEC's certified figures."
+      }
+    },
+    {
+      "id": "presidency_serb_2026",
+      "date": "2026-10-04",
+      "kind": "presidential",
+      "office": "bih.presidency",
+      "rounds": 1,
+      "historical": {
+        "candidates": [
+          {
+            "person": "bih.zeljka_cvijanovic",
+            "party": "bih.snsd",
+            "share": 0.5559,
+            "votes": 306123,
+            "round": 1
+          },
+          {
+            "person": "bih.marinko_bozovic",
+            "party": "bih.sds",
+            "share": 0.2644,
+            "votes": 145624,
+            "round": 1
+          },
+          {
+            "person": "bih.nebojsa_vukanovic",
+            "share": 0.1797,
+            "votes": 98978,
+            "round": 1
+          }
+        ],
+        "winner": "bih.zeljka_cvijanovic",
+        "note": "Serb member. Preliminary results (about 98-99% of polling stations counted) reported by the Central Election Commission and taken from the Wikipedia article; final certified figures were not available.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2026_Bosnian_general_election",
+            "title": "Wikipedia: 2026 Bosnian general election",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "needs_review",
+        "review_note": "Preliminary results; replace with the CEC's certified figures."
+      }
+    },
+    {
+      "id": "hor_2026",
+      "date": "2026-10-04",
+      "kind": "legislative",
+      "chamber": "house_of_representatives",
+      "historical": {
+        "party_results": [
+          {
+            "party": "bih.sda",
+            "share": 0.1958,
+            "seats": 9
+          },
+          {
+            "party": "bih.snsd",
+            "share": 0.1688,
+            "seats": 6
+          },
+          {
+            "party": "bih.sdp_bih",
+            "share": 0.0936,
+            "seats": 5
+          },
+          {
+            "party": "bih.hdz_bih",
+            "share": 0.0782,
+            "seats": 4
+          },
+          {
+            "party": "bih.pdp",
+            "share": 0.0616,
+            "seats": 2
+          },
+          {
+            "party": "bih.sbih",
+            "share": 0.0546,
+            "seats": 3
+          },
+          {
+            "party": "bih.sds",
+            "share": 0.0518,
+            "seats": 2
+          },
+          {
+            "party": "bih.nip",
+            "share": 0.0431,
+            "seats": 2
+          },
+          {
+            "party": "bih.df",
+            "share": 0.0382,
+            "seats": 2
+          },
+          {
+            "party": "bih.hdz1990",
+            "share": 0.0264,
+            "seats": 1
+          },
+          {
+            "party": "bih.nasa_stranka",
+            "share": 0.024,
+            "seats": 1
+          },
+          {
+            "party": "bih.dns",
+            "share": 0.0214,
+            "seats": 1
+          },
+          {
+            "party": "bih.sp",
+            "share": 0.019,
+            "seats": 1
+          },
+          {
+            "party": "others",
+            "seats": 3
+          }
+        ],
+        "winner": "bih.sda",
+        "turnout": 0.4062,
+        "note": "PDP figure is the Safe Srpska Movement (PSS) coalition list; NiP the NiP–Social Democrats list; DF the DF–Civic Alliance list; HDZ 1990 the Croatian Five list; DNS the DNS–People's Party of Srpska list; SP the SP–Democratic Union list. Shares for NS, DNS and SP computed from the vote counts. Others: NES–Forward!–PDA, For Justice and Order and United Srpska (1 each). Preliminary results (about 98-99% of polling stations counted) reported by the Central Election Commission and taken from the Wikipedia article; final certified figures were not available.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2026_Bosnian_general_election",
+            "title": "Wikipedia: 2026 Bosnian general election",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "needs_review",
+        "review_note": "Preliminary results; replace with the CEC's certified figures."
+      }
+    }
+  ],
+  "source": [
+    {
+      "url": "https://en.wikipedia.org/wiki/Template:Bosnian_elections",
+      "title": "Wikipedia: Template:Bosnian elections",
+      "accessed": "2026-10-15"
+    }
+  ],
+  "confidence": "verified"
+}

@@ -1,0 +1,119 @@
+{
+  "tag": "MKD",
+  "name": { "en": "North Macedonia", "native": "Severna Makedonija", "official": { "en": "Republic of North Macedonia", "native": "Republika Severna Makedonija" } },
+  "adjective": "Macedonian",
+  "culture_primary": "macedonian",
+  "government": {
+    "type": "parliamentary",
+    "effective_executive": "mkd.prime_minister",
+    "head_of_state_office": "mkd.president",
+    "head_of_government_office": "mkd.prime_minister",
+    "constitution": {
+      "term_limit_amendable": true,
+      "emergency_powers": true,
+      "referendum_required_for": []
+    },
+    "note": "Parliamentary republic; in 2000 the country was the Republic of Macedonia (admitted to the UN as 'the former Yugoslav Republic of Macedonia') and was renamed North Macedonia in 2019 after the Prespa Agreement with Greece. The President is directly elected for five years (two terms at most) in two rounds; before the 2009 constitutional amendment the second round also needed a 50% turnout, and now a 40% turnout. The Government is headed by the Prime Minister and responsible to the unicameral Assembly (Sobranie). Referendums are valid only with a turnout above 50%."
+  },
+  "offices": [
+    {
+      "id": "mkd.president",
+      "title": { "en": "President of the Republic of North Macedonia", "native": "Pretsedatel na Republika Severna Makedonija" },
+      "role": "head_of_state",
+      "power_weight": 0.2,
+      "selection": "direct_election",
+      "term_years": 5,
+      "term_limit": { "max_terms": 2, "consecutive_only": false },
+      "succession": { "type": "acting_then_election" },
+      "holders": [
+        { "person": "mkd.boris_trajkovski", "from": "1999-12-15", "to": "2004-02-26", "note": "Died in office on 26 February 2004." },
+        { "person": "mkd.ljupco_jordanovski", "from": "2004-02-26", "to": "2004-05-12", "acting": true, "note": "Acting President as Speaker of the Assembly." },
+        { "person": "mkd.branko_crvenkovski", "from": "2004-05-12", "to": "2009-05-12" },
+        { "person": "mkd.gjorge_ivanov", "from": "2009-05-12", "to": "2019-05-12", "note": "Re-elected in 2014." },
+        { "person": "mkd.stevo_pendarovski", "from": "2019-05-12", "to": "2024-05-12" },
+        { "person": "mkd.gordana_siljanovska_davkova", "from": "2024-05-12" }
+      ],
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/President_of_North_Macedonia", "title": "Wikipedia: President of North Macedonia (list of presidents)", "accessed": "2026-10-15" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "mkd.prime_minister",
+      "title": { "en": "Prime Minister of North Macedonia", "native": "Pretsedatel na Vladata na Republika Severna Makedonija" },
+      "role": "head_of_government",
+      "power_weight": 0.8,
+      "selection": "legislature",
+      "appointed_by": "mkd.president",
+      "term_years": 4,
+      "holders": [
+        { "person": "mkd.ljubco_georgievski", "from": "1998-11-30", "to": "2002-11-01", "note": "VMRO-DPMNE, Democratic Alternative and DPA coalition from 1998." },
+        { "person": "mkd.branko_crvenkovski", "from": "2002-11-01", "to": "2004-05-12", "note": "Left office on becoming President." },
+        { "person": "mkd.radmila_sekerinska", "from": "2004-05-12", "to": "2004-06-02", "acting": true },
+        { "person": "mkd.hari_kostov", "from": "2004-06-02", "to": "2004-11-18" },
+        { "person": "mkd.radmila_sekerinska", "from": "2004-11-18", "to": "2004-12-12", "acting": true },
+        { "person": "mkd.vlado_buckovski", "from": "2004-12-12", "to": "2006-08-26" },
+        { "person": "mkd.nikola_gruevski", "from": "2006-08-26", "to": "2016-01-18" },
+        { "person": "mkd.emil_dimitriev", "from": "2016-01-18", "to": "2017-05-31" },
+        { "person": "mkd.zoran_zaev", "from": "2017-05-31", "to": "2020-01-03" },
+        { "person": "mkd.oliver_spasovski", "from": "2020-01-03", "to": "2020-08-30" },
+        { "person": "mkd.zoran_zaev", "from": "2020-08-30", "to": "2022-01-16" },
+        { "person": "mkd.dimitar_kovacevski", "from": "2022-01-16", "to": "2024-01-28" },
+        { "person": "mkd.talat_xhaferi", "from": "2024-01-28", "to": "2024-06-23" },
+        { "person": "mkd.hristijan_mickoski", "from": "2024-06-23" }
+      ],
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/Prime_Minister_of_North_Macedonia", "title": "Wikipedia: Prime Minister of North Macedonia (list of prime ministers)", "accessed": "2026-10-15" }
+      ],
+      "confidence": "verified"
+    }
+  ],
+  "legislature": {
+    "name": { "en": "Assembly of North Macedonia", "native": "Sobranie na Republika Severna Makedonija" },
+    "chambers": [
+      {
+        "id": "assembly",
+        "name": { "en": "Assembly", "native": "Sobranie" },
+        "seats": 120,
+        "term_years": 4,
+        "elected": "direct",
+        "system": {
+          "type": "list_pr",
+          "formula": "dhondt",
+          "district_model": "custom",
+          "note": "Since 2002: six constituencies electing 20 members each by proportional representation; three diaspora seats were added for the 2011 and 2014 elections (123 members). The 1998 Assembly was elected by a mixed system (85 single-member constituencies in two rounds and 35 national list seats). seats_2000 is the result of the October-November 1998 election; changes before 1 January 2000 were not checked. The PDP and DPA ran a joint national list in 1998; their constituency seats are shown separately."
+        },
+        "seats_2000": { "mkd.vmro": 49, "mkd.sdsm": 27, "mkd.pdp": 14, "mkd.da": 13, "mkd.dpa": 11, "mkd.ldp": 4, "others": 2 },
+        "confidence_chamber": true,
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/1998_Macedonian_parliamentary_election", "title": "Wikipedia: 1998 Macedonian parliamentary election", "accessed": "2026-10-15" },
+          { "url": "https://en.wikipedia.org/wiki/Assembly_of_North_Macedonia", "title": "Wikipedia: Assembly of North Macedonia (electoral system)", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      }
+    ]
+  },
+  "party_system": "multi_party",
+  "start_2000": {
+    "ruling_parties": ["mkd.vmro", "mkd.da", "mkd.dpa"],
+    "confidence_and_supply": [],
+    "ideology_support": {
+      "national_conservative": 0.2914,
+      "social_democrat": 0.2514,
+      "regionalist": 0.206,
+      "liberal_conservative": 0.1073,
+      "social_liberal": 0.0699,
+      "democratic_socialist": 0.047,
+      "big_tent": 0.027
+    },
+    "ideology_support_note": "Derived from the 1998 national list (PR) vote (shares computed from the vote counts): VMRO-DPMNE 28.1% and VMRO-DOM 1.0% (national conservative), SDSM 25.1% (social democrat), the PDP–DPA joint list 19.3% and the Democratic Party of Serbs 1.3% (regionalist: ethnic-community parties), Democratic Alternative 10.7% (liberal conservative; the party article lists conservatism), LDP–DPM 7.0% (social liberal), the Socialist Party-led list 4.7% (democratic socialist); the remaining small lists (about 2.7%) are recorded as big tent.",
+    "stability": 0.55,
+    "war_support": 0.3
+  },
+  "claims": [],
+  "source": [
+    { "url": "https://en.wikipedia.org/wiki/1998_Macedonian_parliamentary_election", "title": "Wikipedia: 1998 Macedonian parliamentary election (results, Georgievski coalition)", "accessed": "2026-10-15" },
+    { "url": "https://en.wikipedia.org/wiki/President_of_North_Macedonia", "title": "Wikipedia: President of North Macedonia", "accessed": "2026-10-15" }
+  ],
+  "confidence": "verified"
+}

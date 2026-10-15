@@ -1,0 +1,114 @@
+{
+  "tag": "ALB",
+  "name": { "en": "Albania", "native": "Shqipëria", "official": { "en": "Republic of Albania", "native": "Republika e Shqipërisë" } },
+  "adjective": "Albanian",
+  "culture_primary": "albanian",
+  "government": {
+    "type": "parliamentary",
+    "effective_executive": "alb.prime_minister",
+    "head_of_state_office": "alb.president",
+    "head_of_government_office": "alb.prime_minister",
+    "constitution": {
+      "term_limit_amendable": true,
+      "emergency_powers": true,
+      "referendum_required_for": []
+    },
+    "note": "Parliamentary republic under the 1998 Constitution. The President is elected by the unicameral Parliament (Kuvendi) by secret ballot for a five-year term: a three-fifths majority of all members is needed in the first three ballots, after which a fourth ballot is limited to the two leading candidates. The Prime Minister heads the Council of Ministers and is responsible to Parliament."
+  },
+  "offices": [
+    {
+      "id": "alb.president",
+      "title": { "en": "President of Albania", "native": "Presidenti i Republikës së Shqipërisë" },
+      "role": "head_of_state",
+      "power_weight": 0.15,
+      "selection": "legislature",
+      "term_years": 5,
+      "term_limit": { "max_terms": 2, "consecutive_only": false },
+      "succession": { "type": "acting_then_election" },
+      "holders": [
+        { "person": "alb.rexhep_meidani", "from": "1997-07-24", "to": "2002-07-24" },
+        { "person": "alb.alfred_moisiu", "from": "2002-07-24", "to": "2007-07-24" },
+        { "person": "alb.bamir_topi", "from": "2007-07-24", "to": "2012-07-24" },
+        { "person": "alb.bujar_nishani", "from": "2012-07-24", "to": "2017-07-24" },
+        { "person": "alb.ilir_meta", "from": "2017-07-24", "to": "2022-07-24" },
+        { "person": "alb.bajram_begaj", "from": "2022-07-24" }
+      ],
+      "note": "During a vacancy or incapacity the Speaker of Parliament exercises the President's powers.",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/President_of_Albania", "title": "Wikipedia: President of Albania (list of presidents)", "accessed": "2026-10-15" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "alb.prime_minister",
+      "title": { "en": "Prime Minister of Albania", "native": "Kryeministri i Shqipërisë" },
+      "role": "head_of_government",
+      "power_weight": 0.85,
+      "selection": "legislature",
+      "appointed_by": "alb.president",
+      "term_years": 4,
+      "holders": [
+        { "person": "alb.ilir_meta", "from": "1999-10-29", "to": "2002-01-29", "note": "Meta I and II governments (Socialist Party-led)." },
+        { "person": null, "from": "2002-01-29", "to": "2002-02-07", "vacant_reason": "Interval between Ilir Meta's resignation (29 January 2002) and Pandeli Majko's appointment (7 February 2002); the source names no acting prime minister." },
+        { "person": "alb.pandeli_majko", "from": "2002-02-07", "to": "2002-07-24" },
+        { "person": "alb.fatos_nano", "from": "2002-07-24", "to": "2005-09-08" },
+        { "person": "alb.sali_berisha", "from": "2005-09-08", "to": "2013-09-11" },
+        { "person": "alb.edi_rama", "from": "2013-09-11", "note": "Fourth Rama government after the May 2025 election." }
+      ],
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/Prime_Minister_of_Albania", "title": "Wikipedia: Prime Minister of Albania (list of prime ministers)", "accessed": "2026-10-15" }
+      ],
+      "confidence": "verified"
+    }
+  ],
+  "legislature": {
+    "name": { "en": "Parliament of Albania", "native": "Kuvendi i Shqipërisë" },
+    "chambers": [
+      {
+        "id": "kuvendi",
+        "name": { "en": "Parliament", "native": "Kuvendi" },
+        "seats": 155,
+        "term_years": 4,
+        "elected": "direct",
+        "system": {
+          "type": "list_pr",
+          "threshold": 0.03,
+          "district_model": "admin1",
+          "note": "Since 2009: 140 members elected by closed-list proportional representation in 12 multi-member constituencies matching the counties (threshold 3% for parties and 5% for pre-election coalitions within a constituency; the formula is not stated in the fetched source). The 1997 and 2001-2005 parliaments used a mixed system (single-member constituencies plus national list seats); the 1997 parliament had 155 members (115 constituency and 40 list seats). seats_2000 is the result of the June-July 1997 election; the article's text says 151 seats, but its results table sums to 155. Changes before 1 January 2000 were not checked."
+        },
+        "seats_2000": { "alb.ps": 100, "alb.pd": 27, "alb.psd": 9, "alb.pbdnj": 4, "alb.pa": 2, "alb.pl": 2, "alb.pr": 1, "alb.pae": 1, "others": 6, "independents": 3 },
+        "confidence_chamber": true,
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/1997_Albanian_parliamentary_election", "title": "Wikipedia: 1997 Albanian parliamentary election", "accessed": "2026-10-15" },
+          { "url": "https://en.wikipedia.org/wiki/Parliament_of_Albania", "title": "Wikipedia: Parliament of Albania (electoral system)", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      }
+    ]
+  },
+  "party_system": "multi_party",
+  "start_2000": {
+    "ruling_parties": ["alb.ps"],
+    "confidence_and_supply": [],
+    "ideology_support": {
+      "social_democrat": 0.5524,
+      "liberal_conservative": 0.257,
+      "national_conservative": 0.0476,
+      "constitutional_monarchist": 0.0325,
+      "regionalist": 0.0284,
+      "centrist_liberal": 0.0272,
+      "christian_democrat": 0.0097,
+      "agrarian": 0.008,
+      "big_tent": 0.0372
+    },
+    "ideology_support_note": "Derived from the June 1997 national list (PR) vote (shares computed from the vote counts): Socialist Party 52.8% and Social Democratic Party 2.5% (social democrat), Democratic Party 25.7% (liberal conservative; the party article lists conservatism), Republican Party 2.4% and the Albanian National Front 2.4% (national conservative), Legality Movement 3.3% (constitutional monarchist), Unity for Human Rights 2.8% (regionalist: Greek minority party), Democratic Alliance 2.7% (centrist liberal), Demochristian Party 1.0% (Christian democrat), Agrarian Party 0.8% (agrarian); remaining lists (about 3.7%) as big tent. The Socialist Party led the government in 2000 with smaller allies, which are not recorded as ruling parties here.",
+    "stability": 0.45,
+    "war_support": 0.3
+  },
+  "claims": [],
+  "source": [
+    { "url": "https://en.wikipedia.org/wiki/1997_Albanian_parliamentary_election", "title": "Wikipedia: 1997 Albanian parliamentary election (results)", "accessed": "2026-10-15" },
+    { "url": "https://en.wikipedia.org/wiki/Prime_Minister_of_Albania", "title": "Wikipedia: Prime Minister of Albania", "accessed": "2026-10-15" }
+  ],
+  "confidence": "verified"
+}

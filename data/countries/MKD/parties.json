@@ -1,0 +1,554 @@
+{
+  "parties": [
+    {
+      "id": "mkd.vmro",
+      "name": {
+        "en": "VMRO-DPMNE (Internal Macedonian Revolutionary Organization – Democratic Party for Macedonian National Unity)",
+        "native": "VMRO-DPMNE"
+      },
+      "abbrev": {
+        "en": "VMRO-DPMNE",
+        "native": "ВМРО-ДПМНЕ"
+      },
+      "color": "#C8102E",
+      "sub_ideology": "national_conservative",
+      "founded": "1990-06-17",
+      "status_2000": "active",
+      "leader_history": [
+        {
+          "person": "mkd.ljubco_georgievski",
+          "from": 1990,
+          "to": 2003
+        },
+        {
+          "person": "mkd.nikola_gruevski",
+          "from": 2003,
+          "to": "2017-12-23"
+        },
+        {
+          "person": "mkd.hristijan_mickoski",
+          "from": "2017-12-23"
+        }
+      ],
+      "popularity_2000": 0.281,
+      "popularity_note": "National list vote share, 1998 Assembly election (largest party; led the government in 2000).",
+      "note": "The party article lists conservatism, Christian democracy and Macedonian nationalism. Georgievski (a co-founder) led it until Gruevski was elected leader in May 2003.",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/VMRO-DPMNE",
+          "title": "Wikipedia: VMRO-DPMNE",
+          "accessed": "2026-10-15"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/Hristijan_Mickoski",
+          "title": "Wikipedia: Hristijan Mickoski (party president since 23 December 2017)",
+          "accessed": "2026-10-15"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/1998_Macedonian_parliamentary_election",
+          "title": "Wikipedia: 1998 Macedonian parliamentary election",
+          "accessed": "2026-10-15"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "mkd.sdsm",
+      "name": {
+        "en": "Social Democratic Union of Macedonia",
+        "native": "Socijaldemokratski sojuz na Makedonija"
+      },
+      "abbrev": {
+        "en": "SDSM",
+        "native": "СДСМ"
+      },
+      "color": "#033A73",
+      "sub_ideology": "social_democrat",
+      "founded": "1991-04-20",
+      "status_2000": "active",
+      "leader_history": [
+        {
+          "person": "mkd.branko_crvenkovski",
+          "from": 1991,
+          "to": 2004
+        },
+        {
+          "person": "mkd.vlado_buckovski",
+          "from": 2004,
+          "to": 2006
+        },
+        {
+          "person": "mkd.radmila_sekerinska",
+          "from": 2006,
+          "to": 2008
+        },
+        {
+          "person": "mkd.zoran_zaev",
+          "from": 2008,
+          "to": 2009
+        },
+        {
+          "person": "mkd.branko_crvenkovski",
+          "from": 2009,
+          "to": 2013
+        },
+        {
+          "person": "mkd.zoran_zaev",
+          "from": 2013,
+          "to": 2021
+        },
+        {
+          "person": "mkd.dimitar_kovacevski",
+          "from": 2021,
+          "to": 2024
+        },
+        {
+          "person": "mkd.venko_filipce",
+          "from": 2024
+        }
+      ],
+      "popularity_2000": 0.2514,
+      "popularity_note": "National list vote share, 1998 Assembly election (main opposition party in 2000).",
+      "note": "Successor of the League of Communists of Macedonia. Led the Together for Macedonia (2002, 2006), Coalition for Europe (2008), For Life in Macedonia (2016) and We Can (2020) lists.",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Social_Democratic_Union_of_Macedonia",
+          "title": "Wikipedia: Social Democratic Union of Macedonia (party leaders)",
+          "accessed": "2026-10-15"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "mkd.pdp",
+      "name": {
+        "en": "Party for Democratic Prosperity",
+        "native": "Partia për Prosperitet Demokratik"
+      },
+      "abbrev": {
+        "en": "PDP",
+        "native": "PPD"
+      },
+      "color": "#2E8B57",
+      "sub_ideology": "regionalist",
+      "founded": 1990,
+      "status_2000": "active",
+      "leader_history": [],
+      "popularity_2000": 0.1079,
+      "popularity_note": "Estimate: the PDP–DPA joint national list won 19.3% in 1998; it is split here in proportion to the two parties' seats (14:11).",
+      "regional_base": [
+        "albanian"
+      ],
+      "note": "Albanian community party founded in April 1990. Leaders not recorded as people (Abdurrahman Aliti in 1998, Imer Imeri in 2002).",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Party_for_Democratic_Prosperity",
+          "title": "Wikipedia: Party for Democratic Prosperity",
+          "accessed": "2026-10-15"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/1998_Macedonian_parliamentary_election",
+          "title": "Wikipedia: 1998 Macedonian parliamentary election",
+          "accessed": "2026-10-15"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "mkd.dpa",
+      "name": {
+        "en": "Democratic Party of Albanians",
+        "native": "Partia Demokratike e Shqiptarëve"
+      },
+      "abbrev": {
+        "en": "DPA",
+        "native": "PDSh"
+      },
+      "color": "#B22222",
+      "sub_ideology": "regionalist",
+      "founded": "1997-06-04",
+      "status_2000": "active",
+      "leader_history": [
+        {
+          "person": "mkd.arben_xhaferi",
+          "from": "1997-06-04",
+          "to": 2007
+        },
+        {
+          "person": "mkd.menduh_thaci",
+          "from": 2007
+        }
+      ],
+      "popularity_2000": 0.0847,
+      "popularity_note": "Estimate: the PDP–DPA joint national list won 19.3% in 1998; split in proportion to seats (14:11). Coalition partner in 2000.",
+      "regional_base": [
+        "albanian"
+      ],
+      "note": "The party article lists Albanian minority interests and conservatism.",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Democratic_Party_of_Albanians",
+          "title": "Wikipedia: Democratic Party of Albanians",
+          "accessed": "2026-10-15"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/Menduh_Tha%C3%A7i",
+          "title": "Wikipedia: Menduh Thaçi (leader since 2007)",
+          "accessed": "2026-10-15"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "mkd.da",
+      "name": {
+        "en": "Democratic Alternative",
+        "native": "Demokratska alternativa"
+      },
+      "abbrev": {
+        "en": "DA",
+        "native": "ДА"
+      },
+      "color": "#7B68EE",
+      "sub_ideology": "liberal_conservative",
+      "founded": 1998,
+      "status_2000": "active",
+      "leader_history": [
+        {
+          "person": "mkd.vasil_tupurkovski",
+          "from": 1998
+        }
+      ],
+      "popularity_2000": 0.1073,
+      "popularity_note": "National list vote share, 1998 Assembly election. Coalition partner in 2000.",
+      "note": "Founded in March 1998; centrist; the party article lists conservatism.",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Democratic_Alternative_(North_Macedonia)",
+          "title": "Wikipedia: Democratic Alternative (North Macedonia)",
+          "accessed": "2026-10-15"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "mkd.ldp",
+      "name": {
+        "en": "Liberal Democratic Party",
+        "native": "Liberalno-demokratska partija"
+      },
+      "abbrev": {
+        "en": "LDP",
+        "native": "ЛДП"
+      },
+      "color": "#F4C430",
+      "sub_ideology": "social_liberal",
+      "founded": 1997,
+      "status_2000": "active",
+      "leader_history": [],
+      "popularity_2000": 0.0699,
+      "popularity_note": "National list vote share of the LDP–DPM list, 1998 Assembly election.",
+      "note": "Formed in April 1997 by a merger of the Liberal Party and the Democratic Party. Leaders not recorded as people (Petar Gošev in 1998).",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Liberal_Democratic_Party_(North_Macedonia)",
+          "title": "Wikipedia: Liberal Democratic Party (North Macedonia)",
+          "accessed": "2026-10-15"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/1998_Macedonian_parliamentary_election",
+          "title": "Wikipedia: 1998 Macedonian parliamentary election",
+          "accessed": "2026-10-15"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "mkd.dui",
+      "name": {
+        "en": "Democratic Union for Integration",
+        "native": "Bashkimi Demokratik për Integrim"
+      },
+      "abbrev": {
+        "en": "DUI",
+        "native": "BDI"
+      },
+      "color": "#1F4E9C",
+      "sub_ideology": "regionalist",
+      "founded": "2002-06-05",
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        {
+          "person": "mkd.ali_ahmeti",
+          "from": "2002-06-05"
+        }
+      ],
+      "popularity_2000": 0,
+      "regional_base": [
+        "albanian"
+      ],
+      "note": "The party article lists Albanian minority interests and pro-Europeanism. Led the European Front list in 2024.",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Democratic_Union_for_Integration",
+          "title": "Wikipedia: Democratic Union for Integration",
+          "accessed": "2026-10-15"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "mkd.nsdp",
+      "name": {
+        "en": "New Social Democratic Party",
+        "native": "Nova socijaldemokratska partija"
+      },
+      "abbrev": {
+        "en": "NSDP",
+        "native": "НСДП"
+      },
+      "color": "#4169E1",
+      "sub_ideology": "social_democrat",
+      "founded": "2005-11-30",
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        {
+          "person": "mkd.tito_petkovski",
+          "from": "2005-11-30"
+        }
+      ],
+      "popularity_2000": 0,
+      "lineage": {
+        "split_from": "mkd.sdsm"
+      },
+      "note": "Current leader Goran Misovski not recorded.",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/New_Social_Democratic_Party",
+          "title": "Wikipedia: New Social Democratic Party",
+          "accessed": "2026-10-15"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "mkd.vmro_np",
+      "name": {
+        "en": "VMRO – People's Party",
+        "native": "VMRO – Narodna partija"
+      },
+      "abbrev": {
+        "en": "VMRO-NP",
+        "native": "ВМРО-НП"
+      },
+      "color": "#8B0000",
+      "sub_ideology": "national_conservative",
+      "founded": "2004-07-04",
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        {
+          "person": "mkd.ljubco_georgievski",
+          "from": "2004-07-04"
+        }
+      ],
+      "popularity_2000": 0,
+      "lineage": {
+        "split_from": "mkd.vmro"
+      },
+      "note": "The party article lists national conservatism, Christian democracy and Atlanticism. Vesna Janevska led its list in 2006.",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/VMRO_%E2%80%93_People's_Party",
+          "title": "Wikipedia: VMRO – People's Party",
+          "accessed": "2026-10-15"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "mkd.besa",
+      "name": {
+        "en": "Besa Movement",
+        "native": "Lëvizja Besa"
+      },
+      "abbrev": {
+        "en": "Besa",
+        "native": "Besa"
+      },
+      "color": "#8B1A1A",
+      "sub_ideology": "regionalist",
+      "founded": 2014,
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        {
+          "person": "mkd.bilal_kasami",
+          "from": 2014
+        }
+      ],
+      "popularity_2000": 0,
+      "regional_base": [
+        "albanian"
+      ],
+      "lineage": {
+        "merged_into": "mkd.vlen"
+      },
+      "note": "Founded in November 2014; later merged into VLEN.",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Besa_Movement",
+          "title": "Wikipedia: Besa Movement",
+          "accessed": "2026-10-15"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "mkd.aa",
+      "name": {
+        "en": "Alliance for Albanians",
+        "native": "Aleanca për Shqiptarët"
+      },
+      "abbrev": {
+        "en": "AA",
+        "native": "ASH"
+      },
+      "color": "#6A0DAD",
+      "sub_ideology": "regionalist",
+      "founded": 2015,
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        {
+          "person": "mkd.ziadin_sela",
+          "from": 2015
+        },
+        {
+          "person": "mkd.arben_taravari",
+          "from": 2020
+        }
+      ],
+      "popularity_2000": 0,
+      "regional_base": [
+        "albanian"
+      ],
+      "note": "The party article lists Albanian minority rights, conservatism and decentralisation. Sela led it at the 2016 and 2020 elections (in 2020 with Alternativa); the infobox names Arben Taravari as leader, and the year he took over is not given in the fetched text.",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Alliance_for_Albanians",
+          "title": "Wikipedia: Alliance for Albanians",
+          "accessed": "2026-10-15"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/2020_North_Macedonian_parliamentary_election",
+          "title": "Wikipedia: 2020 North Macedonian parliamentary election",
+          "accessed": "2026-10-15"
+        }
+      ],
+      "confidence": "needs_review",
+      "review_note": "Check when Arben Taravari became leader (2020 assumed) and the party's 2024 alliance."
+    },
+    {
+      "id": "mkd.levica",
+      "name": {
+        "en": "The Left",
+        "native": "Levica"
+      },
+      "abbrev": {
+        "en": "Levica",
+        "native": "Левица"
+      },
+      "color": "#8B0000",
+      "sub_ideology": "left_populist",
+      "founded": 2015,
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        {
+          "person": "mkd.dimitar_apasiev",
+          "from": 2015
+        }
+      ],
+      "popularity_2000": 0,
+      "note": "Founded in November 2015. The party article lists socialism, anti-capitalism, left-wing nationalism and Euroscepticism.",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/The_Left_(North_Macedonia)",
+          "title": "Wikipedia: The Left (North Macedonia)",
+          "accessed": "2026-10-15"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "mkd.znam",
+      "name": {
+        "en": "For Our Macedonia",
+        "native": "Za naša Makedonija"
+      },
+      "abbrev": {
+        "en": "ZNAM",
+        "native": "ЗНАМ"
+      },
+      "color": "#1E4E9C",
+      "sub_ideology": "social_democrat",
+      "founded": "2023-10-09",
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        {
+          "person": "mkd.maksim_dimitrievski",
+          "from": "2023-10-09"
+        }
+      ],
+      "popularity_2000": 0,
+      "lineage": {
+        "split_from": "mkd.sdsm"
+      },
+      "note": "The party article lists social democracy and left-wing populism. Joined the Mickoski government in 2024.",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/For_Our_Macedonia",
+          "title": "Wikipedia: For Our Macedonia",
+          "accessed": "2026-10-15"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "mkd.vlen",
+      "name": {
+        "en": "VLEN Coalition",
+        "native": "Koalicioni Vlen"
+      },
+      "abbrev": {
+        "en": "VLEN",
+        "native": "VLEN"
+      },
+      "color": "#A6011F",
+      "sub_ideology": "regionalist",
+      "founded": 2024,
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        {
+          "person": "mkd.bilal_kasami",
+          "from": 2024
+        },
+        {
+          "person": "mkd.izet_mexhiti",
+          "from": 2024
+        }
+      ],
+      "popularity_2000": 0,
+      "regional_base": [
+        "albanian"
+      ],
+      "note": "Alliance of Albanian community parties formed in 2024 (co-led by Bilal Kasami and Izet Mexhiti); the article says it became a single political party in 2026 (date not given). Joined the Mickoski government in 2024.",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/VLEN_Coalition",
+          "title": "Wikipedia: VLEN Coalition",
+          "accessed": "2026-10-15"
+        }
+      ],
+      "confidence": "needs_review",
+      "review_note": "The article dates the conversion into a party only as 2026 (after June 2026 by the article's edit history); check the date and the member parties."
+    }
+  ]
+}

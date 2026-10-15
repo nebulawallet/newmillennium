@@ -1,0 +1,607 @@
+{
+  "parties": [
+    {
+      "id": "bih.sda",
+      "name": {
+        "en": "Party of Democratic Action",
+        "native": "Stranka demokratske akcije"
+      },
+      "abbrev": {
+        "en": "SDA",
+        "native": "SDA"
+      },
+      "color": "#007A33",
+      "sub_ideology": "national_conservative",
+      "founded": "1990-05-26",
+      "status_2000": "active",
+      "leader_history": [
+        {
+          "person": "bih.alija_izetbegovic",
+          "from": 1990,
+          "to": 2001
+        },
+        {
+          "person": "bih.sulejman_tihic",
+          "from": 2001,
+          "to": 2014
+        },
+        {
+          "person": "bih.bakir_izetbegovic",
+          "from": 2014
+        }
+      ],
+      "popularity_2000": 0.3383,
+      "popularity_note": "1998 House of Representatives vote share of the SDA-led Coalition for Unity and Democracy (with SBiH, LS and GDS); separate shares not available.",
+      "regional_base": [
+        "bosniak"
+      ],
+      "note": "The party article lists Bosniak nationalism, conservatism, Muslim democracy and pro-Europeanism.",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Party_of_Democratic_Action",
+          "title": "Wikipedia: Party of Democratic Action (presidents)",
+          "accessed": "2026-10-15"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/1998_Bosnian_general_election",
+          "title": "Wikipedia: 1998 Bosnian general election",
+          "accessed": "2026-10-15"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "bih.sbih",
+      "name": {
+        "en": "Party for Bosnia and Herzegovina",
+        "native": "Stranka za Bosnu i Hercegovinu"
+      },
+      "abbrev": {
+        "en": "SBiH",
+        "native": "SBiH"
+      },
+      "color": "#0072BC",
+      "sub_ideology": "traditional_conservative",
+      "founded": "1996-04-13",
+      "status_2000": "active",
+      "leader_history": [
+        {
+          "person": "bih.haris_silajdzic",
+          "from": "1996-04-13",
+          "to": "2012-03-06"
+        },
+        {
+          "person": "bih.semir_efendic",
+          "from": "2021-04-23"
+        }
+      ],
+      "popularity_2000": 0,
+      "popularity_note": "Ran in the SDA-led coalition in 1998 (share included under SDA).",
+      "lineage": {
+        "split_from": "bih.sda"
+      },
+      "regional_base": [
+        "bosniak"
+      ],
+      "note": "The party article lists social conservatism and political unitarism. The leader between 2012 and 2021 is not recorded.",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Party_for_Bosnia_and_Herzegovina",
+          "title": "Wikipedia: Party for Bosnia and Herzegovina",
+          "accessed": "2026-10-15"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "bih.sds",
+      "name": {
+        "en": "Serb Democratic Party",
+        "native": "Srpska demokratska stranka"
+      },
+      "abbrev": {
+        "en": "SDS",
+        "native": "СДС"
+      },
+      "color": "#1F3A93",
+      "sub_ideology": "national_conservative",
+      "founded": "1990-07-12",
+      "status_2000": "active",
+      "leader_history": [
+        {
+          "person": "bih.dragan_kalinic",
+          "from": 1998
+        },
+        {
+          "person": "bih.dragan_cavic",
+          "from": 2006
+        },
+        {
+          "person": "bih.branko_blanusa",
+          "from": 2026
+        }
+      ],
+      "popularity_2000": 0.0943,
+      "popularity_note": "1998 House of Representatives vote share.",
+      "regional_base": [
+        "serbian"
+      ],
+      "note": "The party article lists Serbian nationalism, conservatism and pro-Europeanism. Leaders are taken from the election infoboxes (1998-2002 Kalinić, 2006 Čavić, 2026 Blanuša); other leaders, including Mladen Bosić and Mirko Šarović, are not dated.",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Serb_Democratic_Party_(Bosnia_and_Herzegovina)",
+          "title": "Wikipedia: Serb Democratic Party (Bosnia and Herzegovina)",
+          "accessed": "2026-10-15"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/2002_Bosnian_general_election",
+          "title": "Wikipedia: 2002 Bosnian general election",
+          "accessed": "2026-10-15"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/2006_Bosnian_general_election",
+          "title": "Wikipedia: 2006 Bosnian general election",
+          "accessed": "2026-10-15"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/2026_Bosnian_general_election",
+          "title": "Wikipedia: 2026 Bosnian general election",
+          "accessed": "2026-10-15"
+        }
+      ],
+      "confidence": "needs_review",
+      "review_note": "Leader dates are only the election years at which each was listed as leader; check the party's list of presidents."
+    },
+    {
+      "id": "bih.hdz_bih",
+      "name": {
+        "en": "Croatian Democratic Union of Bosnia and Herzegovina",
+        "native": "Hrvatska demokratska zajednica Bosne i Hercegovine"
+      },
+      "abbrev": {
+        "en": "HDZ BiH",
+        "native": "HDZ BiH"
+      },
+      "color": "#1A4D9C",
+      "sub_ideology": "christian_democrat",
+      "founded": "1990-08-18",
+      "status_2000": "active",
+      "leader_history": [
+        {
+          "person": "bih.ante_jelavic",
+          "from": 1998
+        },
+        {
+          "person": "bih.dragan_covic",
+          "from": 2005
+        }
+      ],
+      "popularity_2000": 0.1159,
+      "popularity_note": "1998 House of Representatives vote share.",
+      "regional_base": [
+        "croatian"
+      ],
+      "note": "The party article lists conservatism, Christian democracy and Croatian nationalism. Jelavić is listed as leader at the 1998 election and Čović at the 2006 and later elections; the year Čović took over is not given in the fetched sources.",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Croatian_Democratic_Union_of_Bosnia_and_Herzegovina",
+          "title": "Wikipedia: Croatian Democratic Union of Bosnia and Herzegovina",
+          "accessed": "2026-10-15"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/1998_Bosnian_general_election",
+          "title": "Wikipedia: 1998 Bosnian general election",
+          "accessed": "2026-10-15"
+        }
+      ],
+      "confidence": "needs_review",
+      "review_note": "Check when Dragan Čović became HDZ BiH president (2005 assumed)."
+    },
+    {
+      "id": "bih.sdp_bih",
+      "name": {
+        "en": "Social Democratic Party of Bosnia and Herzegovina",
+        "native": "Socijaldemokratska partija Bosne i Hercegovine"
+      },
+      "abbrev": {
+        "en": "SDP BiH",
+        "native": "SDP BiH"
+      },
+      "color": "#E2001A",
+      "sub_ideology": "social_democrat",
+      "founded": "1992-12-27",
+      "status_2000": "active",
+      "leader_history": [
+        {
+          "person": "bih.zlatko_lagumdzija",
+          "from": "1997-04-06",
+          "to": "2014-12-07"
+        },
+        {
+          "person": "bih.nermin_niksic",
+          "from": "2014-12-07"
+        }
+      ],
+      "popularity_2000": 0.0926,
+      "popularity_note": "1998 House of Representatives vote share.",
+      "note": "Founded by Nijaz Duraković (president until 1997).",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Social_Democratic_Party_of_Bosnia_and_Herzegovina",
+          "title": "Wikipedia: Social Democratic Party of Bosnia and Herzegovina (presidents)",
+          "accessed": "2026-10-15"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "bih.snsd",
+      "name": {
+        "en": "Alliance of Independent Social Democrats",
+        "native": "Savez nezavisnih socijaldemokrata"
+      },
+      "abbrev": {
+        "en": "SNSD",
+        "native": "СНСД"
+      },
+      "color": "#002F6C",
+      "sub_ideology": "social_democrat",
+      "founded": "1996-03-10",
+      "status_2000": "active",
+      "leader_history": [
+        {
+          "person": "bih.milorad_dodik",
+          "from": 1996
+        }
+      ],
+      "popularity_2000": 0,
+      "popularity_note": "Ran in the Sloga list (SNS–SP–SNSD) in 1998; its share is included under SNS.",
+      "regional_base": [
+        "serbian"
+      ],
+      "note": "The party article lists social democracy, populism, left-conservatism and Serbian nationalism. Dodik is recorded as leader since the party's foundation (the article names him as leader; the start year is assumed).",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Alliance_of_Independent_Social_Democrats",
+          "title": "Wikipedia: Alliance of Independent Social Democrats",
+          "accessed": "2026-10-15"
+        }
+      ],
+      "confidence": "needs_review",
+      "review_note": "Confirm that Milorad Dodik has led SNSD since its foundation in 1996."
+    },
+    {
+      "id": "bih.pdp",
+      "name": {
+        "en": "Party of Democratic Progress",
+        "native": "Partija demokratskog progresa"
+      },
+      "abbrev": {
+        "en": "PDP",
+        "native": "ПДП"
+      },
+      "color": "#0099CC",
+      "sub_ideology": "liberal_conservative",
+      "founded": "1999-09-26",
+      "status_2000": "extra_parliamentary",
+      "leader_history": [
+        {
+          "person": "bih.mladen_ivanic",
+          "from": "1999-09-26"
+        }
+      ],
+      "popularity_2000": 0,
+      "popularity_note": "Founded after the 1998 election.",
+      "regional_base": [
+        "serbian"
+      ],
+      "note": "The party article lists moderate conservatism, Serb ethnic interests and economic liberalism. Its current president is Draško Stanivuković, who led the Safe Srpska Movement (PSS) coalition list in 2026 (recorded under PDP); the year he took over is not given.",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Party_of_Democratic_Progress",
+          "title": "Wikipedia: Party of Democratic Progress",
+          "accessed": "2026-10-15"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "bih.sp",
+      "name": {
+        "en": "Socialist Party (Republika Srpska)",
+        "native": "Socijalistička partija"
+      },
+      "abbrev": {
+        "en": "SP",
+        "native": "СП"
+      },
+      "color": "#C8102E",
+      "sub_ideology": "social_democrat",
+      "founded": "1993-06-02",
+      "status_2000": "active",
+      "leader_history": [],
+      "popularity_2000": 0,
+      "popularity_note": "Ran in the Sloga list in 1998 (share included under SNS).",
+      "regional_base": [
+        "serbian"
+      ],
+      "note": "Party of Presidency member Živko Radišić. The article lists social democracy. Current president Petar Đokić not recorded.",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Socialist_Party_(Bosnia_and_Herzegovina)",
+          "title": "Wikipedia: Socialist Party (Bosnia and Herzegovina)",
+          "accessed": "2026-10-15"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "bih.sns",
+      "name": {
+        "en": "Serb National Alliance",
+        "native": "Srpski narodni savez"
+      },
+      "abbrev": {
+        "en": "SNS",
+        "native": "СНС"
+      },
+      "color": "#4B6EAF",
+      "sub_ideology": "national_conservative",
+      "founded": 1997,
+      "dissolved": 2006,
+      "status_2000": "active",
+      "leader_history": [],
+      "popularity_2000": 0.1244,
+      "popularity_note": "1998 House of Representatives vote share of the Sloga list (SNS, SP and SNSD), which SNS led.",
+      "regional_base": [
+        "serbian"
+      ],
+      "lineage": {
+        "merged_into": "bih.dns"
+      },
+      "note": "Founded in August 1997 by Biljana Plavšić (not recorded as a person); dissolved after 2006 (the article says \"past 2006\") and merged into the Democratic People's Alliance.",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Serb_National_Alliance",
+          "title": "Wikipedia: Serb National Alliance",
+          "accessed": "2026-10-15"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/1998_Bosnian_general_election",
+          "title": "Wikipedia: 1998 Bosnian general election",
+          "accessed": "2026-10-15"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "bih.srs",
+      "name": {
+        "en": "Serbian Radical Party of Republika Srpska",
+        "native": "Srpska radikalna stranka Republike Srpske"
+      },
+      "abbrev": {
+        "en": "SRS RS",
+        "native": "СРС РС"
+      },
+      "color": "#0B3D91",
+      "sub_ideology": "national_conservative",
+      "founded": "1992-02-12",
+      "dissolved": 2019,
+      "status_2000": "active",
+      "leader_history": [],
+      "popularity_2000": 0.0687,
+      "popularity_note": "1998 House of Representatives vote share.",
+      "regional_base": [
+        "serbian"
+      ],
+      "lineage": {
+        "split_from": "bih.sds",
+        "merged_into": "bih.pdp"
+      },
+      "note": "The article lists Serbian nationalism and national conservatism. Merged into PDP in April 2019. Leaders not recorded as people.",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Serbian_Radical_Party_of_Republika_Srpska",
+          "title": "Wikipedia: Serbian Radical Party of Republika Srpska",
+          "accessed": "2026-10-15"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "bih.dns",
+      "name": {
+        "en": "Democratic People's Alliance",
+        "native": "Demokratski narodni savez"
+      },
+      "abbrev": {
+        "en": "DNS",
+        "native": "ДНС"
+      },
+      "color": "#3D6CB9",
+      "sub_ideology": "national_conservative",
+      "founded": "2000-06-17",
+      "status_2000": "not_yet_founded",
+      "leader_history": [],
+      "popularity_2000": 0,
+      "regional_base": [
+        "serbian"
+      ],
+      "lineage": {
+        "split_from": "bih.sns"
+      },
+      "note": "The article lists Serbian nationalism, national conservatism and Euroscepticism. Current leader Nenad Nešić (start date not given).",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Democratic_People's_Alliance",
+          "title": "Wikipedia: Democratic People's Alliance",
+          "accessed": "2026-10-15"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "bih.sbb",
+      "name": {
+        "en": "Union for a Better Future of BiH",
+        "native": "Savez za bolju budućnost BiH"
+      },
+      "abbrev": {
+        "en": "SBB",
+        "native": "SBB"
+      },
+      "color": "#E30613",
+      "sub_ideology": "liberal_conservative",
+      "founded": "2009-10-30",
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        {
+          "person": "bih.fahrudin_radoncic",
+          "from": "2009-10-30"
+        }
+      ],
+      "popularity_2000": 0,
+      "note": "The article lists conservatism and pro-Europeanism.",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Union_for_a_Better_Future_of_BiH",
+          "title": "Wikipedia: Union for a Better Future of BiH",
+          "accessed": "2026-10-15"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "bih.df",
+      "name": {
+        "en": "Democratic Front",
+        "native": "Demokratska fronta"
+      },
+      "abbrev": {
+        "en": "DF",
+        "native": "DF"
+      },
+      "color": "#F16822",
+      "sub_ideology": "social_liberal",
+      "founded": "2013-04-07",
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        {
+          "person": "bih.zeljko_komsic",
+          "from": "2013-04-07"
+        }
+      ],
+      "popularity_2000": 0,
+      "lineage": {
+        "split_from": "bih.sdp_bih"
+      },
+      "note": "The article lists liberalism, social democracy, political unitarism and civic nationalism. Ran as DF–Civic Alliance from 2018.",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Democratic_Front_(Bosnia_and_Herzegovina)",
+          "title": "Wikipedia: Democratic Front (Bosnia and Herzegovina)",
+          "accessed": "2026-10-15"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "bih.hdz1990",
+      "name": {
+        "en": "Croatian Democratic Union 1990",
+        "native": "Hrvatska demokratska zajednica 1990"
+      },
+      "abbrev": {
+        "en": "HDZ 1990",
+        "native": "HDZ 1990"
+      },
+      "color": "#5B9BD5",
+      "sub_ideology": "christian_democrat",
+      "founded": "2006-04-16",
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        {
+          "person": "bih.bozo_ljubic",
+          "from": "2006-04-16"
+        }
+      ],
+      "popularity_2000": 0,
+      "lineage": {
+        "split_from": "bih.hdz_bih"
+      },
+      "regional_base": [
+        "croatian"
+      ],
+      "note": "The article lists Christian democracy, conservatism, Croatian nationalism and federalism. Later presidents (including Martin Raguž and current president Ilija Cvitanović) are not dated in the fetched text. Led the Croats Together (2006), Croatian Coalition (2010) and Croatian Five (2026) lists.",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Croatian_Democratic_Union_1990",
+          "title": "Wikipedia: Croatian Democratic Union 1990",
+          "accessed": "2026-10-15"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "bih.nasa_stranka",
+      "name": {
+        "en": "Our Party",
+        "native": "Naša stranka"
+      },
+      "abbrev": {
+        "en": "NS",
+        "native": "NS"
+      },
+      "color": "#00A651",
+      "sub_ideology": "social_liberal",
+      "founded": "2008-04-05",
+      "status_2000": "not_yet_founded",
+      "leader_history": [],
+      "popularity_2000": 0,
+      "note": "The article lists liberalism, social liberalism, secularism and multiculturalism. Leaders not recorded as people (current president Sabina Ćudić).",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Our_Party_(Bosnia_and_Herzegovina)",
+          "title": "Wikipedia: Our Party (Bosnia and Herzegovina)",
+          "accessed": "2026-10-15"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "bih.nip",
+      "name": {
+        "en": "People and Justice",
+        "native": "Narod i pravda"
+      },
+      "abbrev": {
+        "en": "NiP",
+        "native": "NiP"
+      },
+      "color": "#0057B8",
+      "sub_ideology": "liberal_conservative",
+      "founded": "2018-03-12",
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        {
+          "person": "bih.elmedin_konakovic",
+          "from": "2018-03-12"
+        }
+      ],
+      "popularity_2000": 0,
+      "lineage": {
+        "split_from": "bih.sda"
+      },
+      "note": "The article lists liberal conservatism, pro-Europeanism and Atlanticism.",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/People_and_Justice",
+          "title": "Wikipedia: People and Justice",
+          "accessed": "2026-10-15"
+        }
+      ],
+      "confidence": "verified"
+    }
+  ]
+}

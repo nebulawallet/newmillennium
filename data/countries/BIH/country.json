@@ -1,0 +1,179 @@
+{
+  "tag": "BIH",
+  "name": { "en": "Bosnia and Herzegovina", "native": "Bosna i Hercegovina", "official": { "en": "Bosnia and Herzegovina", "native": "Bosna i Hercegovina" } },
+  "adjective": "Bosnian",
+  "culture_primary": "bosniak",
+  "government": {
+    "type": "parliamentary",
+    "effective_executive": "bih.chair_council_of_ministers",
+    "head_of_state_office": "bih.presidency",
+    "head_of_government_office": "bih.chair_council_of_ministers",
+    "constitution": {
+      "term_limit_amendable": false,
+      "emergency_powers": false,
+      "referendum_required_for": []
+    },
+    "note": "State institutions under the Dayton constitution (Annex 4 of the 1995 Dayton Agreement). The head of state is a three-member Presidency (one Bosniak and one Croat member elected from the Federation of Bosnia and Herzegovina, one Serb member elected from Republika Srpska) with a rotating chair. The Presidency nominates the Chair of the Council of Ministers, who takes office on approval by the House of Representatives; until June 2000 the Council of Ministers had two co-chairmen. The bicameral Parliamentary Assembly has a directly elected House of Representatives (42 members: 28 from the Federation, 14 from Republika Srpska) and a House of Peoples (15 delegates: five Bosniaks, five Croats and five Serbs, chosen by the entity parliaments). An international High Representative oversees civilian implementation of the Dayton Agreement and holds the 'Bonn Powers' to impose legislation and remove officials. The two entities and the Brčko District have their own institutions, which are not modelled as offices here."
+  },
+  "offices": [
+    {
+      "id": "bih.presidency",
+      "title": { "en": "Member of the Presidency of Bosnia and Herzegovina", "native": "Član Predsjedništva Bosne i Hercegovine" },
+      "role": "collective_head_member",
+      "power_weight": 0.4,
+      "selection": "direct_election",
+      "term_years": 4,
+      "seats": 3,
+      "succession": { "type": "council_choice" },
+      "holders": [
+        { "person": "bih.alija_izetbegovic", "from": "1996-10-05", "to": "2000-10-14", "note": "Bosniak member (SDA)." },
+        { "person": "bih.zivko_radisic", "from": "1998-10-13", "to": "2002-10-28", "note": "Serb member (Socialist Party)." },
+        { "person": "bih.ante_jelavic", "from": "1998-11-15", "to": "2001-03-07", "note": "Croat member (HDZ BiH)." },
+        { "person": "bih.halid_genjac", "from": "2000-10-14", "to": "2001-03-30", "note": "Bosniak member (SDA)." },
+        { "person": "bih.jozo_krizanovic", "from": "2001-03-07", "to": "2002-10-28", "note": "Croat member (SDP BiH)." },
+        { "person": "bih.beriz_belkic", "from": "2001-03-30", "to": "2002-10-28", "note": "Bosniak member (SBiH)." },
+        { "person": "bih.sulejman_tihic", "from": "2002-10-28", "to": "2006-11-06", "note": "Bosniak member (SDA)." },
+        { "person": "bih.dragan_covic", "from": "2002-10-28", "to": "2005-05-09", "note": "Croat member (HDZ BiH)." },
+        { "person": "bih.mirko_sarovic", "from": "2002-10-28", "to": "2003-04-02", "note": "Serb member (SDS)." },
+        { "person": null, "from": "2003-04-02", "to": "2003-04-10", "vacant_reason": "Serb seat vacant between Mirko Šarović's departure and Borislav Paravac's appointment." },
+        { "person": "bih.borislav_paravac", "from": "2003-04-10", "to": "2006-11-06", "note": "Serb member (SDS)." },
+        { "person": "bih.ivo_miro_jovic", "from": "2005-05-09", "to": "2006-11-06", "note": "Croat member (HDZ BiH)." },
+        { "person": "bih.haris_silajdzic", "from": "2006-11-06", "to": "2010-11-10", "note": "Bosniak member (SBiH)." },
+        { "person": "bih.zeljko_komsic", "from": "2006-11-06", "to": "2014-11-17", "note": "Croat member (SDP BiH until 2012, then DF)." },
+        { "person": "bih.nebojsa_radmanovic", "from": "2006-11-06", "to": "2014-11-17", "note": "Serb member (SNSD)." },
+        { "person": "bih.bakir_izetbegovic", "from": "2010-11-10", "to": "2018-11-20", "note": "Bosniak member (SDA)." },
+        { "person": "bih.dragan_covic", "from": "2014-11-17", "to": "2018-11-20", "note": "Croat member (HDZ BiH)." },
+        { "person": "bih.mladen_ivanic", "from": "2014-11-17", "to": "2018-11-20", "note": "Serb member (PDP)." },
+        { "person": "bih.sefik_dzaferovic", "from": "2018-11-20", "to": "2022-11-16", "note": "Bosniak member (SDA)." },
+        { "person": "bih.zeljko_komsic", "from": "2018-11-20", "note": "Croat member (DF); re-elected in 2022. Darijana Filipović (HDZ BiH) won the October 2026 election and is due to take the seat in November 2026." },
+        { "person": "bih.milorad_dodik", "from": "2018-11-20", "to": "2022-11-15", "note": "Serb member (SNSD)." },
+        { "person": "bih.zeljka_cvijanovic", "from": "2022-11-16", "note": "Serb member (SNSD); re-elected in October 2026." },
+        { "person": "bih.denis_becirovic", "from": "2022-11-16", "note": "Bosniak member (SDP BiH); re-elected in October 2026." }
+      ],
+      "note": "The chairmanship rotates among the three members every eight months. Dates from the Wikipedia list of members of the Presidency.",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/List_of_members_of_the_Presidency_of_Bosnia_and_Herzegovina", "title": "Wikipedia: List of members of the Presidency of Bosnia and Herzegovina", "accessed": "2026-10-15" },
+        { "url": "https://en.wikipedia.org/wiki/2026_Bosnian_general_election", "title": "Wikipedia: 2026 Bosnian general election (preliminary results)", "accessed": "2026-10-15" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "bih.chair_council_of_ministers",
+      "title": { "en": "Chair of the Council of Ministers of Bosnia and Herzegovina", "native": "Predsjedavajući Vijeća ministara Bosne i Hercegovine" },
+      "role": "head_of_government",
+      "power_weight": 0.35,
+      "selection": "legislature",
+      "appointed_by": "bih.presidency",
+      "term_years": 4,
+      "seats": 2,
+      "holders": [
+        { "person": "bih.haris_silajdzic", "from": "1997-01-03", "to": "2000-06-06", "note": "Co-chairman (with Boro Bosić until 1999, then Svetozar Mihajlović)." },
+        { "person": "bih.svetozar_mihajlovic", "from": "1999-02-03", "to": "2000-06-06", "note": "Co-chairman." },
+        { "person": "bih.spasoje_tusevljak", "from": "2000-06-06", "to": "2000-10-18", "note": "First single chairman." },
+        { "person": "bih.martin_raguz", "from": "2000-10-18", "to": "2001-02-22" },
+        { "person": "bih.bozidar_matic", "from": "2001-02-22", "to": "2001-07-18" },
+        { "person": "bih.zlatko_lagumdzija", "from": "2001-07-18", "to": "2002-03-15" },
+        { "person": "bih.dragan_mikerevic", "from": "2002-03-15", "to": "2002-12-23" },
+        { "person": "bih.adnan_terzic", "from": "2002-12-23", "to": "2007-01-11" },
+        { "person": "bih.nikola_spiric", "from": "2007-01-11", "to": "2012-01-12" },
+        { "person": "bih.vjekoslav_bevanda", "from": "2012-01-12", "to": "2015-03-31" },
+        { "person": "bih.denis_zvizdic", "from": "2015-03-31", "to": "2019-12-23" },
+        { "person": "bih.zoran_tegeltija", "from": "2019-12-23", "to": "2023-01-25" },
+        { "person": "bih.borjana_kristo", "from": "2023-01-25" }
+      ],
+      "note": "seats = 2 only because of the two co-chairmen who served until 6 June 2000; there has been a single chair since.",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/Chairman_of_the_Council_of_Ministers_of_Bosnia_and_Herzegovina", "title": "Wikipedia: Chairman of the Council of Ministers of Bosnia and Herzegovina (timeline)", "accessed": "2026-10-15" },
+        { "url": "https://en.wikipedia.org/wiki/Svetozar_Mihajlovi%C4%87", "title": "Wikipedia: Svetozar Mihajlović (co-chairman 1999-2000)", "accessed": "2026-10-15" },
+        { "url": "https://en.wikipedia.org/wiki/Haris_Silajd%C5%BEi%C4%87", "title": "Wikipedia: Haris Silajdžić (co-chairman 1997-2000)", "accessed": "2026-10-15" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "bih.high_representative",
+      "title": { "en": "High Representative for Bosnia and Herzegovina", "native": "Visoki predstavnik za Bosnu i Hercegovinu" },
+      "role": "other",
+      "power_weight": 0.25,
+      "selection": "external_appointment",
+      "holders": [
+        { "person": "bih.wolfgang_petritsch", "from": "1999-08-18", "to": "2002-05-27" },
+        { "person": "bih.paddy_ashdown", "from": "2002-05-27", "to": "2006-01-31" },
+        { "person": "bih.christian_schwarz_schilling", "from": "2006-01-31", "to": "2007-07-02" },
+        { "person": "bih.miroslav_lajcak", "from": "2007-07-02", "to": "2009-03-26" },
+        { "person": "bih.valentin_inzko", "from": "2009-03-26", "to": "2021-08-01" },
+        { "person": "bih.christian_schmidt", "from": "2021-08-01", "to": "2026-07-01", "note": "Announced his resignation on 11 May 2026; his term ended on 1 July 2026." },
+        { "person": "bih.louis_crishock", "from": "2026-07-01", "acting": true, "note": "Acting High Representative (previously Principal Deputy High Representative and International Supervisor for Brčko)." }
+      ],
+      "note": "Appointed with the endorsement of the Peace Implementation Council under Annex 10 of the Dayton Agreement. Between 2002 and 2011 the High Representative was also the EU Special Representative. The holders are foreign nationals, recorded under BIH because they hold this BIH office.",
+
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/High_Representative_for_Bosnia_and_Herzegovina", "title": "Wikipedia: High Representative for Bosnia and Herzegovina (list; 2026 resignation)", "accessed": "2026-10-15" }
+      ],
+      "confidence": "needs_review",
+      "review_note": "The July 2026 change (Schmidt's term ending on 1 July 2026 and Louis Crishock acting) comes from a Wikipedia article on a recent event; confirm with the OHR and check whether a permanent successor was appointed after July 2026."
+    }
+  ],
+  "legislature": {
+    "name": { "en": "Parliamentary Assembly of Bosnia and Herzegovina", "native": "Parlamentarna skupština Bosne i Hercegovine" },
+    "chambers": [
+      {
+        "id": "house_of_representatives",
+        "name": { "en": "House of Representatives", "native": "Predstavnički dom" },
+        "seats": 42,
+        "term_years": 4,
+        "elected": "direct",
+        "system": {
+          "type": "list_pr",
+          "formula": "sainte_lague",
+          "threshold": 0.03,
+          "district_model": "custom",
+          "note": "28 members from the Federation (21 in five multi-member units plus seven compensatory seats) and 14 from Republika Srpska (nine in three units plus five compensatory seats), Sainte-Laguë, 3% threshold at entity level (current law). seats_2000 is the result of the October 1998 election; joint lists are recorded under their leading party: the SDA–SBiH–LS–GDS Coalition for Unity and Democracy (17) under SDA, and the Sloga list of SNS, SP and SNSD (4) under SNS. Others: Serbian Radical Party (2), NHI–HKDU (1), Union of Social Democrats (2), Radical Party of Republika Srpska (1) and Democratic People's Union (1). Changes before 1 January 2000 were not checked."
+        },
+        "seats_2000": { "bih.sda": 17, "bih.hdz_bih": 6, "bih.sns": 4, "bih.sds": 4, "bih.sdp_bih": 4, "bih.srs": 2, "others": 5 },
+        "confidence_chamber": true,
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/1998_Bosnian_general_election", "title": "Wikipedia: 1998 Bosnian general election", "accessed": "2026-10-15" },
+          { "url": "https://en.wikipedia.org/wiki/2026_Bosnian_general_election", "title": "Wikipedia: 2026 Bosnian general election (electoral system)", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      },
+      {
+        "id": "house_of_peoples",
+        "name": { "en": "House of Peoples", "native": "Dom naroda" },
+        "seats": 15,
+        "elected": "indirect",
+        "system": {
+          "type": "indirect",
+          "note": "Five Bosniak and five Croat delegates chosen by the Federation's House of Peoples and five Serb delegates chosen by the National Assembly of Republika Srpska. Party composition on 1 January 2000 was not checked, so all 15 seats are recorded as appointed."
+        },
+        "seats_2000": { "appointed": 15 },
+        "confidence_chamber": false,
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/House_of_Peoples_of_Bosnia_and_Herzegovina", "title": "Wikipedia: House of Peoples of Bosnia and Herzegovina", "accessed": "2026-10-15" }
+        ],
+        "confidence": "needs_review",
+        "review_note": "Party composition of the House of Peoples on 1 January 2000 not researched; check and replace the 'appointed' placeholder."
+      }
+    ]
+  },
+  "party_system": "multi_party",
+  "start_2000": {
+    "ruling_parties": ["bih.sda", "bih.sbih", "bih.hdz_bih", "bih.sns", "bih.sp"],
+    "confidence_and_supply": [],
+    "ideology_support": {
+      "national_conservative": 0.6562,
+      "christian_democrat": 0.1391,
+      "social_democrat": 0.1092,
+      "big_tent": 0.0955
+    },
+    "ideology_support_note": "Derived from the October 1998 House of Representatives vote (shares computed from the vote counts), with joint lists assigned by their leading party: SDA-led Coalition for Unity and Democracy 33.8%, Sloga (SNS–SP–SNSD) 12.4%, SDS 9.4%, Serbian Radical Party 6.9%, Radical Party of Republika Srpska 1.6% and Serbian Coalition for Republika Srpska 1.5% (national conservative); HDZ BiH 11.6% and NHI–HKDU 2.3% (Christian democrat); SDP 9.3% and Union of Social Democrats 1.7% (social democrat); the Democratic People's Union 1.2% and the remaining lists (about 8.3%) as big tent. Voting followed ethnic lines, which this mapping does not capture. ruling_parties lists the parties holding the Presidency seats and the Council of Ministers co-chairmanships in January 2000 (the Council's full party composition was not checked).",
+    "stability": 0.4,
+    "war_support": 0.15
+  },
+  "claims": [],
+  "source": [
+    { "url": "https://en.wikipedia.org/wiki/1998_Bosnian_general_election", "title": "Wikipedia: 1998 Bosnian general election", "accessed": "2026-10-15" },
+    { "url": "https://en.wikipedia.org/wiki/Presidency_of_Bosnia_and_Herzegovina", "title": "Wikipedia: Presidency of Bosnia and Herzegovina", "accessed": "2026-10-15" }
+  ],
+  "confidence": "verified"
+}
