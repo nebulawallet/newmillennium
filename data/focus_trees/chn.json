@@ -1,0 +1,564 @@
+{
+  "id": "chn",
+  "name": "China",
+  "countries": [
+    "CHN"
+  ],
+  "note": "Branches depend on the governing parties and office holders. Policies named after real reforms are cited; effects are gameplay estimates.",
+  "focuses": [
+    {
+      "id": "chn_national_programme",
+      "name": "Reform and opening up",
+      "description": "Continue the policy of reform and opening up.",
+      "x": 8,
+      "y": 0,
+      "days": 70,
+      "effects": [
+        {
+          "add_political_power": 50
+        },
+        {
+          "add_stability": 0.02
+        }
+      ]
+    },
+    {
+      "id": "chn_defence_review",
+      "name": "Defence review",
+      "description": "Review strategy, forces and budgets for the new decade.",
+      "x": 11,
+      "y": 1,
+      "days": 70,
+      "effects": [
+        {
+          "add_war_support": 0.02
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "military",
+            "value": 4
+          }
+        }
+      ],
+      "prerequisites": [
+        [
+          "chn_national_programme"
+        ]
+      ]
+    },
+    {
+      "id": "chn_modern_forces",
+      "name": "Modern forces",
+      "description": "Equip the armed forces with modern communications and precision weapons.",
+      "x": 11,
+      "y": 3,
+      "days": 105,
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "army_attack",
+            "value": 0.05,
+            "days": 3650
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "air_effectiveness",
+            "value": 0.05,
+            "days": 3650
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "military",
+            "value": 3
+          }
+        }
+      ],
+      "prerequisites": [
+        [
+          "chn_defence_review"
+        ]
+      ]
+    },
+    {
+      "id": "chn_intelligence_services",
+      "name": "Intelligence services",
+      "description": "Expand the foreign and domestic intelligence services.",
+      "x": 12,
+      "y": 2,
+      "days": 70,
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "intelligence_power",
+            "value": 0.1,
+            "days": 3650
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "security_services",
+            "value": 4
+          }
+        }
+      ],
+      "prerequisites": [
+        [
+          "chn_defence_review"
+        ]
+      ]
+    },
+    {
+      "id": "chn_foreign_policy",
+      "name": "Foreign policy priorities",
+      "description": "Set the course of foreign policy.",
+      "x": 14,
+      "y": 1,
+      "days": 70,
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "diplomatic_reputation",
+            "value": 0.05,
+            "days": 3650
+          }
+        },
+        {
+          "add_political_power": 20
+        }
+      ],
+      "prerequisites": [
+        [
+          "chn_national_programme"
+        ]
+      ]
+    },
+    {
+      "id": "chn_partners",
+      "name": "Closer ties with our neighbours",
+      "description": "Deepen political and economic ties with our neighbours.",
+      "x": 14,
+      "y": 2,
+      "days": 70,
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "bloc_integration",
+            "value": 0.1,
+            "days": 3650
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "trade_efficiency",
+            "value": 0.03,
+            "days": 3650
+          }
+        },
+        {
+          "country": {
+            "tag": "RUS",
+            "effects": [
+              {
+                "add_opinion": {
+                  "target": "ROOT",
+                  "value": 15,
+                  "days": 3650
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "prerequisites": [
+        [
+          "chn_foreign_policy"
+        ]
+      ]
+    },
+    {
+      "id": "chn_international_standing",
+      "name": "International standing",
+      "description": "Raise the country's profile in international institutions and summits.",
+      "x": 15,
+      "y": 3,
+      "days": 70,
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "diplomatic_reputation",
+            "value": 0.1,
+            "days": 3650
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "international_opinion",
+            "value": 0.05,
+            "days": 3650
+          }
+        }
+      ],
+      "prerequisites": [
+        [
+          "chn_partners",
+          "chn_own_course"
+        ]
+      ]
+    },
+    {
+      "id": "chn_own_course",
+      "name": "An independent course",
+      "description": "Keep a free hand in foreign policy and trade.",
+      "x": 16,
+      "y": 2,
+      "days": 70,
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "foreign_influence_resistance",
+            "value": 0.1,
+            "days": 3650
+          }
+        },
+        {
+          "add_war_support": 0.02
+        }
+      ],
+      "prerequisites": [
+        [
+          "chn_foreign_policy"
+        ]
+      ],
+      "mutually_exclusive": [
+        "chn_partners"
+      ],
+      "ai_weight": 0.5
+    },
+    {
+      "id": "chn_economic_council",
+      "name": "Economic council",
+      "description": "Bring ministries, employers and unions together on economic priorities.",
+      "x": 5,
+      "y": 1,
+      "days": 70,
+      "effects": [
+        {
+          "add_economic_mood": 0.03
+        },
+        {
+          "add_political_power": 15
+        }
+      ],
+      "prerequisites": [
+        [
+          "chn_national_programme"
+        ]
+      ]
+    },
+    {
+      "id": "chn_infrastructure",
+      "name": "Infrastructure programme",
+      "description": "Invest in transport, power grids and communications.",
+      "x": 5,
+      "y": 3,
+      "days": 105,
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "construction_speed",
+            "value": 0.1,
+            "days": 3650
+          }
+        },
+        {
+          "add_economic_mood": 0.02
+        }
+      ],
+      "prerequisites": [
+        [
+          "chn_economic_council"
+        ]
+      ]
+    },
+    {
+      "id": "chn_research_programme",
+      "name": "Research and innovation",
+      "description": "Fund universities, research institutes and new industries.",
+      "x": 6,
+      "y": 4,
+      "days": 105,
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "research_speed",
+            "value": 0.05,
+            "days": 3650
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "education_quality",
+            "value": 0.02,
+            "days": 3650
+          }
+        }
+      ],
+      "prerequisites": [
+        [
+          "chn_infrastructure"
+        ]
+      ]
+    },
+    {
+      "id": "chn_three_represents",
+      "name": "The Three Represents",
+      "description": "Admit new social groups to the Party. Jiang Zemin introduced the Three Represents on 25 February 2000.",
+      "x": 1,
+      "y": 1,
+      "days": 70,
+      "effects": [
+        {
+          "add_political_power": 40
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "business",
+            "value": 5
+          }
+        },
+        {
+          "add_stability": 0.02
+        }
+      ],
+      "prerequisites": [
+        [
+          "chn_national_programme"
+        ]
+      ],
+      "available": {
+        "ruling_party": "chn.ccp"
+      },
+      "ai_weight": 3
+    },
+    {
+      "id": "chn_western_development",
+      "name": "Western Development",
+      "description": "Invest in the western provinces. The State Council set up a leading group for Western China development in January 2000.",
+      "x": 0,
+      "y": 2,
+      "days": 105,
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "construction_speed",
+            "value": 0.1,
+            "days": 3650
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "minorities",
+            "value": 2
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "rural",
+            "value": 3
+          }
+        }
+      ],
+      "prerequisites": [
+        [
+          "chn_three_represents"
+        ]
+      ],
+      "available": {
+        "ruling_party": "chn.ccp"
+      },
+      "ai_weight": 3
+    },
+    {
+      "id": "chn_go_out",
+      "name": "Go Out",
+      "description": "Encourage Chinese companies to invest abroad. Jiang Zemin announced the Go Out policy as a national strategy in March 2000.",
+      "x": 2,
+      "y": 2,
+      "days": 70,
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "foreign_investment",
+            "value": 0.04,
+            "days": 3650
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "trade_efficiency",
+            "value": 0.04,
+            "days": 3650
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "business",
+            "value": 3
+          }
+        }
+      ],
+      "prerequisites": [
+        [
+          "chn_three_represents"
+        ]
+      ],
+      "available": {
+        "ruling_party": "chn.ccp"
+      },
+      "ai_weight": 3
+    },
+    {
+      "id": "chn_state_enterprise_reform",
+      "name": "State enterprise reform",
+      "description": "Restructure loss-making state enterprises.",
+      "x": 1,
+      "y": 3,
+      "days": 70,
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "state_industry_output",
+            "value": 0.05,
+            "days": 3650
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "labour_unions",
+            "value": -3
+          }
+        }
+      ],
+      "prerequisites": [
+        [
+          "chn_western_development",
+          "chn_go_out"
+        ]
+      ]
+    },
+    {
+      "id": "chn_manufacturing",
+      "name": "Workshop of the world",
+      "description": "Expand export manufacturing on the coast.",
+      "x": 7,
+      "y": 2,
+      "days": 70,
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "production_efficiency",
+            "value": 0.05,
+            "days": 3650
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "trade_efficiency",
+            "value": 0.04,
+            "days": 3650
+          }
+        }
+      ],
+      "prerequisites": [
+        [
+          "chn_economic_council"
+        ]
+      ]
+    },
+    {
+      "id": "chn_power_grid",
+      "name": "Power for growth",
+      "description": "Build coal, hydro and nuclear plants to meet demand.",
+      "x": 8,
+      "y": 3,
+      "days": 105,
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "fossil_output",
+            "value": 0.08,
+            "days": 3650
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "nuclear_output",
+            "value": 0.05,
+            "days": 3650
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "emissions",
+            "value": 0.03,
+            "days": 3650
+          }
+        }
+      ],
+      "prerequisites": [
+        [
+          "chn_manufacturing"
+        ]
+      ]
+    },
+    {
+      "id": "chn_military_modernisation",
+      "name": "Military modernisation",
+      "description": "Shift the armed forces from numbers to technology.",
+      "x": 10,
+      "y": 2,
+      "days": 105,
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "army_attack",
+            "value": 0.05,
+            "days": 3650
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "naval_effectiveness",
+            "value": 0.05,
+            "days": 3650
+          }
+        }
+      ],
+      "prerequisites": [
+        [
+          "chn_defence_review"
+        ]
+      ]
+    }
+  ],
+  "source": [
+    {
+      "url": "https://en.wikipedia.org/wiki/China_Western_Development",
+      "title": "Wikipedia: China Western Development",
+      "accessed": "2026-10-15"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Three_Represents",
+      "title": "Wikipedia: Three Represents",
+      "accessed": "2026-10-15"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Go_Out_policy",
+      "title": "Wikipedia: Go Out policy",
+      "accessed": "2026-10-15"
+    }
+  ],
+  "confidence": "verified"
+}

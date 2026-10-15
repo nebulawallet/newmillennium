@@ -1,0 +1,588 @@
+{
+  "id": "ita",
+  "name": "Italy",
+  "countries": [
+    "ITA"
+  ],
+  "note": "Branches depend on the governing parties and office holders. Policies named after real reforms are cited; effects are gameplay estimates.",
+  "focuses": [
+    {
+      "id": "ita_national_programme",
+      "name": "A programme for Italy",
+      "description": "Set the priorities of the government.",
+      "x": 8,
+      "y": 0,
+      "days": 70,
+      "effects": [
+        {
+          "add_political_power": 50
+        },
+        {
+          "add_stability": 0.02
+        }
+      ]
+    },
+    {
+      "id": "ita_defence_review",
+      "name": "Defence review",
+      "description": "Review strategy, forces and budgets for the new decade.",
+      "x": 11,
+      "y": 1,
+      "days": 70,
+      "effects": [
+        {
+          "add_war_support": 0.02
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "military",
+            "value": 4
+          }
+        }
+      ],
+      "prerequisites": [
+        [
+          "ita_national_programme"
+        ]
+      ]
+    },
+    {
+      "id": "ita_modern_forces",
+      "name": "Modern forces",
+      "description": "Equip the armed forces with modern communications and precision weapons.",
+      "x": 11,
+      "y": 3,
+      "days": 105,
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "army_attack",
+            "value": 0.05,
+            "days": 3650
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "air_effectiveness",
+            "value": 0.05,
+            "days": 3650
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "military",
+            "value": 3
+          }
+        }
+      ],
+      "prerequisites": [
+        [
+          "ita_defence_review"
+        ]
+      ]
+    },
+    {
+      "id": "ita_intelligence_services",
+      "name": "Intelligence services",
+      "description": "Expand the foreign and domestic intelligence services.",
+      "x": 12,
+      "y": 2,
+      "days": 70,
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "intelligence_power",
+            "value": 0.1,
+            "days": 3650
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "security_services",
+            "value": 4
+          }
+        }
+      ],
+      "prerequisites": [
+        [
+          "ita_defence_review"
+        ]
+      ]
+    },
+    {
+      "id": "ita_foreign_policy",
+      "name": "Foreign policy priorities",
+      "description": "Set the course of foreign policy.",
+      "x": 14,
+      "y": 1,
+      "days": 70,
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "diplomatic_reputation",
+            "value": 0.05,
+            "days": 3650
+          }
+        },
+        {
+          "add_political_power": 20
+        }
+      ],
+      "prerequisites": [
+        [
+          "ita_national_programme"
+        ]
+      ]
+    },
+    {
+      "id": "ita_partners",
+      "name": "Closer ties with the European Union",
+      "description": "Deepen political and economic ties with the European Union.",
+      "x": 14,
+      "y": 2,
+      "days": 70,
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "bloc_integration",
+            "value": 0.1,
+            "days": 3650
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "trade_efficiency",
+            "value": 0.03,
+            "days": 3650
+          }
+        },
+        {
+          "country": {
+            "tag": "FRA",
+            "effects": [
+              {
+                "add_opinion": {
+                  "target": "ROOT",
+                  "value": 15,
+                  "days": 3650
+                }
+              }
+            ]
+          }
+        },
+        {
+          "country": {
+            "tag": "DEU",
+            "effects": [
+              {
+                "add_opinion": {
+                  "target": "ROOT",
+                  "value": 15,
+                  "days": 3650
+                }
+              }
+            ]
+          }
+        },
+        {
+          "country": {
+            "tag": "ESP",
+            "effects": [
+              {
+                "add_opinion": {
+                  "target": "ROOT",
+                  "value": 15,
+                  "days": 3650
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "prerequisites": [
+        [
+          "ita_foreign_policy"
+        ]
+      ]
+    },
+    {
+      "id": "ita_international_standing",
+      "name": "International standing",
+      "description": "Raise the country's profile in international institutions and summits.",
+      "x": 15,
+      "y": 3,
+      "days": 70,
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "diplomatic_reputation",
+            "value": 0.1,
+            "days": 3650
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "international_opinion",
+            "value": 0.05,
+            "days": 3650
+          }
+        }
+      ],
+      "prerequisites": [
+        [
+          "ita_partners",
+          "ita_own_course"
+        ]
+      ]
+    },
+    {
+      "id": "ita_own_course",
+      "name": "An independent course",
+      "description": "Keep a free hand in foreign policy and trade.",
+      "x": 16,
+      "y": 2,
+      "days": 70,
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "foreign_influence_resistance",
+            "value": 0.1,
+            "days": 3650
+          }
+        },
+        {
+          "add_war_support": 0.02
+        }
+      ],
+      "prerequisites": [
+        [
+          "ita_foreign_policy"
+        ]
+      ],
+      "mutually_exclusive": [
+        "ita_partners"
+      ],
+      "ai_weight": 0.5
+    },
+    {
+      "id": "ita_economic_council",
+      "name": "Economic council",
+      "description": "Bring ministries, employers and unions together on economic priorities.",
+      "x": 5,
+      "y": 1,
+      "days": 70,
+      "effects": [
+        {
+          "add_economic_mood": 0.03
+        },
+        {
+          "add_political_power": 15
+        }
+      ],
+      "prerequisites": [
+        [
+          "ita_national_programme"
+        ]
+      ]
+    },
+    {
+      "id": "ita_infrastructure",
+      "name": "Infrastructure programme",
+      "description": "Invest in transport, power grids and communications.",
+      "x": 5,
+      "y": 3,
+      "days": 105,
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "construction_speed",
+            "value": 0.1,
+            "days": 3650
+          }
+        },
+        {
+          "add_economic_mood": 0.02
+        }
+      ],
+      "prerequisites": [
+        [
+          "ita_economic_council"
+        ]
+      ]
+    },
+    {
+      "id": "ita_research_programme",
+      "name": "Research and innovation",
+      "description": "Fund universities, research institutes and new industries.",
+      "x": 6,
+      "y": 4,
+      "days": 105,
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "research_speed",
+            "value": 0.05,
+            "days": 3650
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "education_quality",
+            "value": 0.02,
+            "days": 3650
+          }
+        }
+      ],
+      "prerequisites": [
+        [
+          "ita_infrastructure"
+        ]
+      ]
+    },
+    {
+      "id": "ita_contract_with_italians",
+      "name": "Contract with the Italians",
+      "description": "Carry out the programme Silvio Berlusconi signed on 8 May 2001: lower taxes, public works and more jobs.",
+      "x": 3,
+      "y": 1,
+      "days": 70,
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "private_sector_output",
+            "value": 0.03,
+            "days": 3650
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "construction_speed",
+            "value": 0.05,
+            "days": 3650
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "business",
+            "value": 5
+          }
+        }
+      ],
+      "prerequisites": [
+        [
+          "ita_national_programme"
+        ]
+      ],
+      "available": {
+        "holds_office": {
+          "person": "ita.silvio_berlusconi",
+          "office": "ita.prime_minister"
+        }
+      },
+      "ai_weight": 3
+    },
+    {
+      "id": "ita_olive_tree",
+      "name": "The Olive Tree",
+      "description": "Govern as a broad centre-left coalition.",
+      "x": 1,
+      "y": 1,
+      "days": 70,
+      "effects": [
+        {
+          "add_ruling_party_popularity": 0.02
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "labour_unions",
+            "value": 3
+          }
+        }
+      ],
+      "prerequisites": [
+        [
+          "ita_national_programme"
+        ]
+      ],
+      "available": {
+        "any": [
+          {
+            "party_in_government": "ita.ds"
+          },
+          {
+            "party_in_government": "ita.ppi"
+          },
+          {
+            "party_in_government": "ita.democrats"
+          }
+        ]
+      },
+      "ai_weight": 2
+    },
+    {
+      "id": "ita_euro_discipline",
+      "name": "Meet the euro rules",
+      "description": "Keep the deficit within the limits of the Stability and Growth Pact.",
+      "x": 1,
+      "y": 2,
+      "days": 70,
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "interest_rate",
+            "value": -0.005,
+            "days": 3650
+          }
+        },
+        {
+          "add_economic_mood": 0.02
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "labour_unions",
+            "value": -2
+          }
+        }
+      ],
+      "prerequisites": [
+        [
+          "ita_olive_tree"
+        ]
+      ]
+    },
+    {
+      "id": "ita_southern_development",
+      "name": "Develop the South",
+      "description": "Invest in the Mezzogiorno.",
+      "x": 2,
+      "y": 2,
+      "days": 70,
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "construction_speed",
+            "value": 0.05,
+            "days": 3650
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "rural",
+            "value": 3
+          }
+        },
+        {
+          "add_unrest": -0.02
+        }
+      ],
+      "prerequisites": [
+        [
+          "ita_olive_tree",
+          "ita_contract_with_italians"
+        ]
+      ]
+    },
+    {
+      "id": "ita_end_conscription",
+      "name": "End conscription",
+      "description": "Move to an all-volunteer army. Italy had mandatory military service until 31 December 2004.",
+      "x": 10,
+      "y": 2,
+      "days": 70,
+      "effects": [
+        {
+          "change_law": {
+            "category": "conscription",
+            "law": "volunteer_force"
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "army_org",
+            "value": 0.04,
+            "days": 3650
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "youth_students",
+            "value": 4
+          }
+        }
+      ],
+      "prerequisites": [
+        [
+          "ita_defence_review"
+        ]
+      ],
+      "ai_weight": 2
+    },
+    {
+      "id": "ita_made_in_italy",
+      "name": "Made in Italy",
+      "description": "Promote fashion, design, food and machinery exports.",
+      "x": 7,
+      "y": 2,
+      "days": 70,
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "trade_efficiency",
+            "value": 0.05,
+            "days": 3650
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "consumer_goods_factor",
+            "value": -0.02,
+            "days": 3650
+          }
+        }
+      ],
+      "prerequisites": [
+        [
+          "ita_economic_council"
+        ]
+      ]
+    },
+    {
+      "id": "ita_tourism",
+      "name": "Tourism",
+      "description": "Invest in heritage and tourism.",
+      "x": 8,
+      "y": 3,
+      "days": 70,
+      "effects": [
+        {
+          "add_economic_mood": 0.02
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "foreign_investment",
+            "value": 0.03,
+            "days": 3650
+          }
+        }
+      ],
+      "prerequisites": [
+        [
+          "ita_made_in_italy"
+        ]
+      ]
+    }
+  ],
+  "source": [
+    {
+      "url": "https://en.wikipedia.org/wiki/Contract_with_the_Italians",
+      "title": "Wikipedia: Contract with the Italians",
+      "accessed": "2026-10-15"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Military_service",
+      "title": "Wikipedia: Military service",
+      "accessed": "2026-10-15"
+    }
+  ],
+  "confidence": "verified"
+}

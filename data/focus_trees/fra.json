@@ -1,0 +1,594 @@
+{
+  "id": "fra",
+  "name": "France",
+  "countries": [
+    "FRA"
+  ],
+  "note": "Branches depend on the governing parties and office holders. Policies named after real reforms are cited; effects are gameplay estimates.",
+  "focuses": [
+    {
+      "id": "fra_national_programme",
+      "name": "La France du nouveau siècle",
+      "description": "Set the priorities of the government.",
+      "x": 8,
+      "y": 0,
+      "days": 70,
+      "effects": [
+        {
+          "add_political_power": 50
+        },
+        {
+          "add_stability": 0.02
+        }
+      ]
+    },
+    {
+      "id": "fra_defence_review",
+      "name": "Defence review",
+      "description": "Review strategy, forces and budgets for the new decade.",
+      "x": 11,
+      "y": 1,
+      "days": 70,
+      "effects": [
+        {
+          "add_war_support": 0.02
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "military",
+            "value": 4
+          }
+        }
+      ],
+      "prerequisites": [
+        [
+          "fra_national_programme"
+        ]
+      ]
+    },
+    {
+      "id": "fra_modern_forces",
+      "name": "Modern forces",
+      "description": "Equip the armed forces with modern communications and precision weapons.",
+      "x": 11,
+      "y": 3,
+      "days": 105,
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "army_attack",
+            "value": 0.05,
+            "days": 3650
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "air_effectiveness",
+            "value": 0.05,
+            "days": 3650
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "military",
+            "value": 3
+          }
+        }
+      ],
+      "prerequisites": [
+        [
+          "fra_defence_review"
+        ]
+      ]
+    },
+    {
+      "id": "fra_intelligence_services",
+      "name": "Intelligence services",
+      "description": "Expand the foreign and domestic intelligence services.",
+      "x": 12,
+      "y": 2,
+      "days": 70,
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "intelligence_power",
+            "value": 0.1,
+            "days": 3650
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "security_services",
+            "value": 4
+          }
+        }
+      ],
+      "prerequisites": [
+        [
+          "fra_defence_review"
+        ]
+      ]
+    },
+    {
+      "id": "fra_foreign_policy",
+      "name": "Foreign policy priorities",
+      "description": "Set the course of foreign policy.",
+      "x": 14,
+      "y": 1,
+      "days": 70,
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "diplomatic_reputation",
+            "value": 0.05,
+            "days": 3650
+          }
+        },
+        {
+          "add_political_power": 20
+        }
+      ],
+      "prerequisites": [
+        [
+          "fra_national_programme"
+        ]
+      ]
+    },
+    {
+      "id": "fra_partners",
+      "name": "Closer ties with the European Union",
+      "description": "Deepen political and economic ties with the European Union.",
+      "x": 14,
+      "y": 2,
+      "days": 70,
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "bloc_integration",
+            "value": 0.1,
+            "days": 3650
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "trade_efficiency",
+            "value": 0.03,
+            "days": 3650
+          }
+        },
+        {
+          "country": {
+            "tag": "DEU",
+            "effects": [
+              {
+                "add_opinion": {
+                  "target": "ROOT",
+                  "value": 15,
+                  "days": 3650
+                }
+              }
+            ]
+          }
+        },
+        {
+          "country": {
+            "tag": "ESP",
+            "effects": [
+              {
+                "add_opinion": {
+                  "target": "ROOT",
+                  "value": 15,
+                  "days": 3650
+                }
+              }
+            ]
+          }
+        },
+        {
+          "country": {
+            "tag": "ITA",
+            "effects": [
+              {
+                "add_opinion": {
+                  "target": "ROOT",
+                  "value": 15,
+                  "days": 3650
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "prerequisites": [
+        [
+          "fra_foreign_policy"
+        ]
+      ]
+    },
+    {
+      "id": "fra_international_standing",
+      "name": "International standing",
+      "description": "Raise the country's profile in international institutions and summits.",
+      "x": 15,
+      "y": 3,
+      "days": 70,
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "diplomatic_reputation",
+            "value": 0.1,
+            "days": 3650
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "international_opinion",
+            "value": 0.05,
+            "days": 3650
+          }
+        }
+      ],
+      "prerequisites": [
+        [
+          "fra_partners",
+          "fra_own_course"
+        ]
+      ]
+    },
+    {
+      "id": "fra_own_course",
+      "name": "An independent course",
+      "description": "Keep a free hand in foreign policy and trade.",
+      "x": 16,
+      "y": 2,
+      "days": 70,
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "foreign_influence_resistance",
+            "value": 0.1,
+            "days": 3650
+          }
+        },
+        {
+          "add_war_support": 0.02
+        }
+      ],
+      "prerequisites": [
+        [
+          "fra_foreign_policy"
+        ]
+      ],
+      "mutually_exclusive": [
+        "fra_partners"
+      ],
+      "ai_weight": 0.5
+    },
+    {
+      "id": "fra_economic_council",
+      "name": "Economic council",
+      "description": "Bring ministries, employers and unions together on economic priorities.",
+      "x": 5,
+      "y": 1,
+      "days": 70,
+      "effects": [
+        {
+          "add_economic_mood": 0.03
+        },
+        {
+          "add_political_power": 15
+        }
+      ],
+      "prerequisites": [
+        [
+          "fra_national_programme"
+        ]
+      ]
+    },
+    {
+      "id": "fra_infrastructure",
+      "name": "Infrastructure programme",
+      "description": "Invest in transport, power grids and communications.",
+      "x": 5,
+      "y": 3,
+      "days": 105,
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "construction_speed",
+            "value": 0.1,
+            "days": 3650
+          }
+        },
+        {
+          "add_economic_mood": 0.02
+        }
+      ],
+      "prerequisites": [
+        [
+          "fra_economic_council"
+        ]
+      ]
+    },
+    {
+      "id": "fra_research_programme",
+      "name": "Research and innovation",
+      "description": "Fund universities, research institutes and new industries.",
+      "x": 6,
+      "y": 4,
+      "days": 105,
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "research_speed",
+            "value": 0.05,
+            "days": 3650
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "education_quality",
+            "value": 0.02,
+            "days": 3650
+          }
+        }
+      ],
+      "prerequisites": [
+        [
+          "fra_infrastructure"
+        ]
+      ]
+    },
+    {
+      "id": "fra_thirty_five_hours",
+      "name": "The 35-hour week",
+      "description": "Cut the legal working week to share out work. The Aubry 2 law of January 2000, under Prime Minister Lionel Jospin, set the 35-hour week.",
+      "x": 1,
+      "y": 1,
+      "days": 70,
+      "effects": [
+        {
+          "add_interest_group_approval": {
+            "group": "labour_unions",
+            "value": 8
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "business",
+            "value": -6
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "private_sector_output",
+            "value": -0.02,
+            "days": 3650
+          }
+        },
+        {
+          "add_unrest": -0.02
+        }
+      ],
+      "prerequisites": [
+        [
+          "fra_national_programme"
+        ]
+      ],
+      "available": {
+        "ruling_party": "fra.ps"
+      },
+      "ai_weight": 3
+    },
+    {
+      "id": "fra_plural_left",
+      "name": "The plural left",
+      "description": "Hold together the coalition of Socialists, Communists, Greens and Radicals.",
+      "x": 0,
+      "y": 2,
+      "days": 70,
+      "effects": [
+        {
+          "add_ruling_party_popularity": 0.02
+        },
+        {
+          "add_political_power": 20
+        }
+      ],
+      "prerequisites": [
+        [
+          "fra_thirty_five_hours"
+        ]
+      ],
+      "available": {
+        "ruling_party": "fra.ps"
+      }
+    },
+    {
+      "id": "fra_liberalise",
+      "name": "Loosen the 35-hour week",
+      "description": "Allow more overtime and simplify labour rules.",
+      "x": 3,
+      "y": 1,
+      "days": 70,
+      "effects": [
+        {
+          "add_interest_group_approval": {
+            "group": "business",
+            "value": 5
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "labour_unions",
+            "value": -5
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "private_sector_output",
+            "value": 0.03,
+            "days": 3650
+          }
+        }
+      ],
+      "prerequisites": [
+        [
+          "fra_national_programme"
+        ]
+      ],
+      "available": {
+        "any": [
+          {
+            "party_in_government": "fra.rpr"
+          },
+          {
+            "party_in_government": "fra.ump"
+          },
+          {
+            "party_in_government": "fra.udf"
+          },
+          {
+            "party_in_government": "fra.dl"
+          },
+          {
+            "party_in_government": "fra.lr"
+          }
+        ]
+      },
+      "ai_weight": 2
+    },
+    {
+      "id": "fra_decentralisation",
+      "name": "Decentralisation",
+      "description": "Transfer powers to the regions and departments.",
+      "x": 2,
+      "y": 2,
+      "days": 70,
+      "effects": [
+        {
+          "add_stability": 0.02
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "tax_efficiency",
+            "value": 0.02,
+            "days": 3650
+          }
+        }
+      ],
+      "prerequisites": [
+        [
+          "fra_plural_left",
+          "fra_liberalise"
+        ]
+      ]
+    },
+    {
+      "id": "fra_professional_army",
+      "name": "Professional army",
+      "description": "Complete the move to an all-volunteer force. France phased out conscription between 1997 and 2001.",
+      "x": 10,
+      "y": 2,
+      "days": 70,
+      "effects": [
+        {
+          "change_law": {
+            "category": "conscription",
+            "law": "volunteer_force"
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "army_org",
+            "value": 0.05,
+            "days": 3650
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "youth_students",
+            "value": 4
+          }
+        }
+      ],
+      "prerequisites": [
+        [
+          "fra_defence_review"
+        ]
+      ],
+      "ai_weight": 2
+    },
+    {
+      "id": "fra_nuclear_power",
+      "name": "Nuclear power",
+      "description": "Keep nuclear plants at the core of electricity supply.",
+      "x": 7,
+      "y": 2,
+      "days": 70,
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "nuclear_output",
+            "value": 0.1,
+            "days": 3650
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "energy_cost",
+            "value": -0.03,
+            "days": 3650
+          }
+        }
+      ],
+      "prerequisites": [
+        [
+          "fra_economic_council"
+        ]
+      ]
+    },
+    {
+      "id": "fra_aerospace",
+      "name": "Aerospace and defence industry",
+      "description": "Back the aerospace and arms industries.",
+      "x": 8,
+      "y": 3,
+      "days": 105,
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "production_efficiency",
+            "value": 0.04,
+            "days": 3650
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "air_effectiveness",
+            "value": 0.03,
+            "days": 3650
+          }
+        }
+      ],
+      "prerequisites": [
+        [
+          "fra_nuclear_power"
+        ]
+      ]
+    }
+  ],
+  "source": [
+    {
+      "url": "https://en.wikipedia.org/wiki/35-hour_workweek",
+      "title": "Wikipedia: 35-hour workweek",
+      "accessed": "2026-10-15"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Conscription_in_France",
+      "title": "Wikipedia: Conscription in France",
+      "accessed": "2026-10-15"
+    }
+  ],
+  "confidence": "verified"
+}

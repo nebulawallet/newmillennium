@@ -1,0 +1,549 @@
+{
+  "id": "esp",
+  "name": "Spain",
+  "countries": [
+    "ESP"
+  ],
+  "note": "Branches depend on the governing parties and office holders. Policies named after real reforms are cited; effects are gameplay estimates.",
+  "focuses": [
+    {
+      "id": "esp_national_programme",
+      "name": "Spain in Europe",
+      "description": "Set the priorities of the government.",
+      "x": 8,
+      "y": 0,
+      "days": 70,
+      "effects": [
+        {
+          "add_political_power": 50
+        },
+        {
+          "add_stability": 0.02
+        }
+      ]
+    },
+    {
+      "id": "esp_defence_review",
+      "name": "Defence review",
+      "description": "Review strategy, forces and budgets for the new decade.",
+      "x": 11,
+      "y": 1,
+      "days": 70,
+      "effects": [
+        {
+          "add_war_support": 0.02
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "military",
+            "value": 4
+          }
+        }
+      ],
+      "prerequisites": [
+        [
+          "esp_national_programme"
+        ]
+      ]
+    },
+    {
+      "id": "esp_modern_forces",
+      "name": "Modern forces",
+      "description": "Equip the armed forces with modern communications and precision weapons.",
+      "x": 11,
+      "y": 3,
+      "days": 105,
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "army_attack",
+            "value": 0.05,
+            "days": 3650
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "air_effectiveness",
+            "value": 0.05,
+            "days": 3650
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "military",
+            "value": 3
+          }
+        }
+      ],
+      "prerequisites": [
+        [
+          "esp_defence_review"
+        ]
+      ]
+    },
+    {
+      "id": "esp_intelligence_services",
+      "name": "Intelligence services",
+      "description": "Expand the foreign and domestic intelligence services.",
+      "x": 12,
+      "y": 2,
+      "days": 70,
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "intelligence_power",
+            "value": 0.1,
+            "days": 3650
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "security_services",
+            "value": 4
+          }
+        }
+      ],
+      "prerequisites": [
+        [
+          "esp_defence_review"
+        ]
+      ]
+    },
+    {
+      "id": "esp_foreign_policy",
+      "name": "Foreign policy priorities",
+      "description": "Set the course of foreign policy.",
+      "x": 14,
+      "y": 1,
+      "days": 70,
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "diplomatic_reputation",
+            "value": 0.05,
+            "days": 3650
+          }
+        },
+        {
+          "add_political_power": 20
+        }
+      ],
+      "prerequisites": [
+        [
+          "esp_national_programme"
+        ]
+      ]
+    },
+    {
+      "id": "esp_partners",
+      "name": "Closer ties with the European Union",
+      "description": "Deepen political and economic ties with the European Union.",
+      "x": 14,
+      "y": 2,
+      "days": 70,
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "bloc_integration",
+            "value": 0.1,
+            "days": 3650
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "trade_efficiency",
+            "value": 0.03,
+            "days": 3650
+          }
+        },
+        {
+          "country": {
+            "tag": "FRA",
+            "effects": [
+              {
+                "add_opinion": {
+                  "target": "ROOT",
+                  "value": 15,
+                  "days": 3650
+                }
+              }
+            ]
+          }
+        },
+        {
+          "country": {
+            "tag": "PRT",
+            "effects": [
+              {
+                "add_opinion": {
+                  "target": "ROOT",
+                  "value": 15,
+                  "days": 3650
+                }
+              }
+            ]
+          }
+        },
+        {
+          "country": {
+            "tag": "DEU",
+            "effects": [
+              {
+                "add_opinion": {
+                  "target": "ROOT",
+                  "value": 15,
+                  "days": 3650
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "prerequisites": [
+        [
+          "esp_foreign_policy"
+        ]
+      ]
+    },
+    {
+      "id": "esp_international_standing",
+      "name": "International standing",
+      "description": "Raise the country's profile in international institutions and summits.",
+      "x": 15,
+      "y": 3,
+      "days": 70,
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "diplomatic_reputation",
+            "value": 0.1,
+            "days": 3650
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "international_opinion",
+            "value": 0.05,
+            "days": 3650
+          }
+        }
+      ],
+      "prerequisites": [
+        [
+          "esp_partners",
+          "esp_own_course"
+        ]
+      ]
+    },
+    {
+      "id": "esp_own_course",
+      "name": "An independent course",
+      "description": "Keep a free hand in foreign policy and trade.",
+      "x": 16,
+      "y": 2,
+      "days": 70,
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "foreign_influence_resistance",
+            "value": 0.1,
+            "days": 3650
+          }
+        },
+        {
+          "add_war_support": 0.02
+        }
+      ],
+      "prerequisites": [
+        [
+          "esp_foreign_policy"
+        ]
+      ],
+      "mutually_exclusive": [
+        "esp_partners"
+      ],
+      "ai_weight": 0.5
+    },
+    {
+      "id": "esp_economic_council",
+      "name": "Economic council",
+      "description": "Bring ministries, employers and unions together on economic priorities.",
+      "x": 5,
+      "y": 1,
+      "days": 70,
+      "effects": [
+        {
+          "add_economic_mood": 0.03
+        },
+        {
+          "add_political_power": 15
+        }
+      ],
+      "prerequisites": [
+        [
+          "esp_national_programme"
+        ]
+      ]
+    },
+    {
+      "id": "esp_infrastructure",
+      "name": "Infrastructure programme",
+      "description": "Invest in transport, power grids and communications.",
+      "x": 5,
+      "y": 3,
+      "days": 105,
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "construction_speed",
+            "value": 0.1,
+            "days": 3650
+          }
+        },
+        {
+          "add_economic_mood": 0.02
+        }
+      ],
+      "prerequisites": [
+        [
+          "esp_economic_council"
+        ]
+      ]
+    },
+    {
+      "id": "esp_research_programme",
+      "name": "Research and innovation",
+      "description": "Fund universities, research institutes and new industries.",
+      "x": 6,
+      "y": 4,
+      "days": 105,
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "research_speed",
+            "value": 0.05,
+            "days": 3650
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "education_quality",
+            "value": 0.02,
+            "days": 3650
+          }
+        }
+      ],
+      "prerequisites": [
+        [
+          "esp_infrastructure"
+        ]
+      ]
+    },
+    {
+      "id": "esp_end_conscription",
+      "name": "End the mili",
+      "description": "Abolish compulsory military service. José María Aznar brought its end forward to 2001; conscription ended in December 2001.",
+      "x": 10,
+      "y": 2,
+      "days": 70,
+      "effects": [
+        {
+          "change_law": {
+            "category": "conscription",
+            "law": "volunteer_force"
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "youth_students",
+            "value": 6
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "army_org",
+            "value": 0.03,
+            "days": 3650
+          }
+        }
+      ],
+      "prerequisites": [
+        [
+          "esp_defence_review"
+        ]
+      ],
+      "available": {
+        "holds_office": {
+          "person": "esp.jose_maria_aznar",
+          "office": "esp.prime_minister"
+        }
+      },
+      "ai_weight": 3
+    },
+    {
+      "id": "esp_balanced_budget",
+      "name": "Balanced budget",
+      "description": "Eliminate the budget deficit and cut taxes.",
+      "x": 3,
+      "y": 1,
+      "days": 70,
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "interest_rate",
+            "value": -0.005,
+            "days": 3650
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "business",
+            "value": 5
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "welfare_cost",
+            "value": -0.02,
+            "days": 3650
+          }
+        }
+      ],
+      "prerequisites": [
+        [
+          "esp_national_programme"
+        ]
+      ],
+      "available": {
+        "ruling_party": "esp.pp"
+      },
+      "ai_weight": 3
+    },
+    {
+      "id": "esp_social_rights",
+      "name": "Extend civil rights",
+      "description": "Widen civil rights. Under José Luis Rodríguez Zapatero, same-sex marriage became legal in Spain on 3 July 2005.",
+      "x": 1,
+      "y": 1,
+      "days": 70,
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "civil_liberties",
+            "value": 0.05,
+            "days": 3650
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "youth_students",
+            "value": 5
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "religious_establishment",
+            "value": -6
+          }
+        }
+      ],
+      "prerequisites": [
+        [
+          "esp_national_programme"
+        ]
+      ],
+      "available": {
+        "ruling_party": "esp.psoe"
+      },
+      "ai_weight": 2
+    },
+    {
+      "id": "esp_autonomies",
+      "name": "The autonomous communities",
+      "description": "Negotiate powers and funding with the autonomous communities.",
+      "x": 2,
+      "y": 2,
+      "days": 70,
+      "effects": [
+        {
+          "add_stability": 0.02
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "minorities",
+            "value": 4
+          }
+        }
+      ],
+      "prerequisites": [
+        [
+          "esp_social_rights",
+          "esp_balanced_budget"
+        ]
+      ]
+    },
+    {
+      "id": "esp_construction_boom",
+      "name": "Housing and transport",
+      "description": "Build housing, motorways and high-speed rail.",
+      "x": 7,
+      "y": 2,
+      "days": 70,
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "construction_speed",
+            "value": 0.1,
+            "days": 3650
+          }
+        },
+        {
+          "add_economic_mood": 0.03
+        }
+      ],
+      "prerequisites": [
+        [
+          "esp_economic_council"
+        ]
+      ]
+    },
+    {
+      "id": "esp_tourism",
+      "name": "Tourism",
+      "description": "Expand tourism.",
+      "x": 8,
+      "y": 3,
+      "days": 70,
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "foreign_investment",
+            "value": 0.03,
+            "days": 3650
+          }
+        },
+        {
+          "add_economic_mood": 0.02
+        }
+      ],
+      "prerequisites": [
+        [
+          "esp_construction_boom"
+        ]
+      ]
+    }
+  ],
+  "source": [
+    {
+      "url": "https://en.wikipedia.org/wiki/Conscription_in_Spain",
+      "title": "Wikipedia: Conscription in Spain",
+      "accessed": "2026-10-15"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Same-sex_marriage_in_Spain",
+      "title": "Wikipedia: Same-sex marriage in Spain",
+      "accessed": "2026-10-15"
+    }
+  ],
+  "confidence": "verified"
+}

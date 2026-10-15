@@ -1,3 +1,4 @@
+import { focusTreeFor } from "../src/sim/state.ts";
 import { describe, expect, it } from "vitest";
 import { compileContent } from "../src/content/compile.ts";
 import { dayOf } from "../src/sim/date.ts";
@@ -19,7 +20,8 @@ describe("scripted content", () => {
     expect(scriptIssues).toEqual([]);
     expect(db.events.size).toBeGreaterThan(0);
     expect(db.decisions.size).toBeGreaterThan(0);
-    expect([...db.focusTrees.keys()].sort()).toEqual(["generic", "rus", "usa"]);
+    // one generic tree for every country without its own, plus national trees for major countries
+    expect([...db.focusTrees.keys()]).toEqual(expect.arrayContaining(["generic", "usa", "rus", "deu", "gbr", "fra", "chn", "jpn"]));
   });
 
   it("reports broken scripts in content files", () => {
@@ -72,8 +74,9 @@ describe("focus trees", () => {
     usa.offices["usa.president"] = ["usa.al_gore"];
     expect(status("usa_bush_tax_cuts")).toBe("unavailable");
     expect(status("usa_gore_surplus")).toBe("available");
-    // other countries use the generic tree
-    expect(state.countries.DEU!.focus.tree).toBe("generic");
+    // Germany has its own tree; countries without one use the generic tree
+    expect(state.countries.DEU!.focus.tree).toBe("deu");
+    expect(focusTreeFor(db, "BEL")).toBe("generic");
   });
 
   it("an AI United States follows the branch of the President it elected", () => {

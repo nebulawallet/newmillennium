@@ -1,0 +1,555 @@
+{
+  "id": "tur",
+  "name": "Turkey",
+  "countries": [
+    "TUR"
+  ],
+  "note": "Branches depend on the governing parties and office holders. Policies named after real reforms are cited; effects are gameplay estimates.",
+  "focuses": [
+    {
+      "id": "tur_national_programme",
+      "name": "A stronger Turkey",
+      "description": "Set the priorities of the government.",
+      "x": 8,
+      "y": 0,
+      "days": 70,
+      "effects": [
+        {
+          "add_political_power": 50
+        },
+        {
+          "add_stability": 0.02
+        }
+      ]
+    },
+    {
+      "id": "tur_defence_review",
+      "name": "Defence review",
+      "description": "Review strategy, forces and budgets for the new decade.",
+      "x": 11,
+      "y": 1,
+      "days": 70,
+      "effects": [
+        {
+          "add_war_support": 0.02
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "military",
+            "value": 4
+          }
+        }
+      ],
+      "prerequisites": [
+        [
+          "tur_national_programme"
+        ]
+      ]
+    },
+    {
+      "id": "tur_modern_forces",
+      "name": "Modern forces",
+      "description": "Equip the armed forces with modern communications and precision weapons.",
+      "x": 11,
+      "y": 3,
+      "days": 105,
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "army_attack",
+            "value": 0.05,
+            "days": 3650
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "air_effectiveness",
+            "value": 0.05,
+            "days": 3650
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "military",
+            "value": 3
+          }
+        }
+      ],
+      "prerequisites": [
+        [
+          "tur_defence_review"
+        ]
+      ]
+    },
+    {
+      "id": "tur_intelligence_services",
+      "name": "Intelligence services",
+      "description": "Expand the foreign and domestic intelligence services.",
+      "x": 12,
+      "y": 2,
+      "days": 70,
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "intelligence_power",
+            "value": 0.1,
+            "days": 3650
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "security_services",
+            "value": 4
+          }
+        }
+      ],
+      "prerequisites": [
+        [
+          "tur_defence_review"
+        ]
+      ]
+    },
+    {
+      "id": "tur_foreign_policy",
+      "name": "Foreign policy priorities",
+      "description": "Set the course of foreign policy.",
+      "x": 14,
+      "y": 1,
+      "days": 70,
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "diplomatic_reputation",
+            "value": 0.05,
+            "days": 3650
+          }
+        },
+        {
+          "add_political_power": 20
+        }
+      ],
+      "prerequisites": [
+        [
+          "tur_national_programme"
+        ]
+      ]
+    },
+    {
+      "id": "tur_partners",
+      "name": "Closer ties with Europe and our neighbours",
+      "description": "Deepen political and economic ties with Europe and our neighbours.",
+      "x": 14,
+      "y": 2,
+      "days": 70,
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "bloc_integration",
+            "value": 0.1,
+            "days": 3650
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "trade_efficiency",
+            "value": 0.03,
+            "days": 3650
+          }
+        },
+        {
+          "country": {
+            "tag": "DEU",
+            "effects": [
+              {
+                "add_opinion": {
+                  "target": "ROOT",
+                  "value": 15,
+                  "days": 3650
+                }
+              }
+            ]
+          }
+        },
+        {
+          "country": {
+            "tag": "USA",
+            "effects": [
+              {
+                "add_opinion": {
+                  "target": "ROOT",
+                  "value": 15,
+                  "days": 3650
+                }
+              }
+            ]
+          }
+        },
+        {
+          "country": {
+            "tag": "AZE",
+            "effects": [
+              {
+                "add_opinion": {
+                  "target": "ROOT",
+                  "value": 15,
+                  "days": 3650
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "prerequisites": [
+        [
+          "tur_foreign_policy"
+        ]
+      ]
+    },
+    {
+      "id": "tur_international_standing",
+      "name": "International standing",
+      "description": "Raise the country's profile in international institutions and summits.",
+      "x": 15,
+      "y": 3,
+      "days": 70,
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "diplomatic_reputation",
+            "value": 0.1,
+            "days": 3650
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "international_opinion",
+            "value": 0.05,
+            "days": 3650
+          }
+        }
+      ],
+      "prerequisites": [
+        [
+          "tur_partners",
+          "tur_own_course"
+        ]
+      ]
+    },
+    {
+      "id": "tur_own_course",
+      "name": "An independent course",
+      "description": "Keep a free hand in foreign policy and trade.",
+      "x": 16,
+      "y": 2,
+      "days": 70,
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "foreign_influence_resistance",
+            "value": 0.1,
+            "days": 3650
+          }
+        },
+        {
+          "add_war_support": 0.02
+        }
+      ],
+      "prerequisites": [
+        [
+          "tur_foreign_policy"
+        ]
+      ],
+      "mutually_exclusive": [
+        "tur_partners"
+      ],
+      "ai_weight": 0.5
+    },
+    {
+      "id": "tur_economic_council",
+      "name": "Economic council",
+      "description": "Bring ministries, employers and unions together on economic priorities.",
+      "x": 5,
+      "y": 1,
+      "days": 70,
+      "effects": [
+        {
+          "add_economic_mood": 0.03
+        },
+        {
+          "add_political_power": 15
+        }
+      ],
+      "prerequisites": [
+        [
+          "tur_national_programme"
+        ]
+      ]
+    },
+    {
+      "id": "tur_infrastructure",
+      "name": "Infrastructure programme",
+      "description": "Invest in transport, power grids and communications.",
+      "x": 5,
+      "y": 3,
+      "days": 105,
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "construction_speed",
+            "value": 0.1,
+            "days": 3650
+          }
+        },
+        {
+          "add_economic_mood": 0.02
+        }
+      ],
+      "prerequisites": [
+        [
+          "tur_economic_council"
+        ]
+      ]
+    },
+    {
+      "id": "tur_research_programme",
+      "name": "Research and innovation",
+      "description": "Fund universities, research institutes and new industries.",
+      "x": 6,
+      "y": 4,
+      "days": 105,
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "research_speed",
+            "value": 0.05,
+            "days": 3650
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "education_quality",
+            "value": 0.02,
+            "days": 3650
+          }
+        }
+      ],
+      "prerequisites": [
+        [
+          "tur_infrastructure"
+        ]
+      ]
+    },
+    {
+      "id": "tur_economic_programme",
+      "name": "Economic stabilisation",
+      "description": "Bring in an economic manager to stabilise the economy. Kemal Derviş returned from the World Bank and became Minister of State for Economic Affairs on 13 March 2001, under Prime Minister Bülent Ecevit.",
+      "x": 1,
+      "y": 1,
+      "days": 70,
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "inflation",
+            "value": -0.03,
+            "days": 3650
+          }
+        },
+        {
+          "add_economic_mood": 0.03
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "business",
+            "value": 4
+          }
+        }
+      ],
+      "prerequisites": [
+        [
+          "tur_national_programme"
+        ]
+      ],
+      "available": {
+        "holds_office": {
+          "person": "tur.bulent_ecevit",
+          "office": "tur.prime_minister"
+        }
+      },
+      "ai_weight": 3
+    },
+    {
+      "id": "tur_eu_harmonisation",
+      "name": "EU harmonisation",
+      "description": "Align laws with the European Union. Turkey was recognised as a candidate for membership at the Helsinki summit on 12 December 1999.",
+      "x": 0,
+      "y": 2,
+      "days": 70,
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "civil_liberties",
+            "value": 0.04,
+            "days": 3650
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "bloc_integration",
+            "value": 0.1,
+            "days": 3650
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "minorities",
+            "value": 4
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "military",
+            "value": -3
+          }
+        }
+      ],
+      "prerequisites": [
+        [
+          "tur_economic_programme",
+          "tur_new_government"
+        ]
+      ],
+      "ai_weight": 2
+    },
+    {
+      "id": "tur_new_government",
+      "name": "A new governing programme",
+      "description": "Govern with a programme of growth, services and reform.",
+      "x": 3,
+      "y": 1,
+      "days": 70,
+      "effects": [
+        {
+          "add_ruling_party_popularity": 0.02
+        },
+        {
+          "add_political_power": 25
+        }
+      ],
+      "prerequisites": [
+        [
+          "tur_national_programme"
+        ]
+      ],
+      "available": {
+        "ruling_party": "tur.akp"
+      },
+      "ai_weight": 2
+    },
+    {
+      "id": "tur_anatolian_growth",
+      "name": "Anatolian growth",
+      "description": "Support businesses in the cities of Anatolia.",
+      "x": 2,
+      "y": 2,
+      "days": 70,
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "private_sector_output",
+            "value": 0.03,
+            "days": 3650
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "rural",
+            "value": 3
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "business",
+            "value": 3
+          }
+        }
+      ],
+      "prerequisites": [
+        [
+          "tur_new_government",
+          "tur_economic_programme"
+        ]
+      ]
+    },
+    {
+      "id": "tur_energy_corridor",
+      "name": "Energy corridor",
+      "description": "Bring oil and gas pipelines from the Caspian through Turkey.",
+      "x": 7,
+      "y": 2,
+      "days": 70,
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "energy_cost",
+            "value": -0.03,
+            "days": 3650
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "trade_efficiency",
+            "value": 0.03,
+            "days": 3650
+          }
+        }
+      ],
+      "prerequisites": [
+        [
+          "tur_economic_council"
+        ]
+      ]
+    },
+    {
+      "id": "tur_defence_industry",
+      "name": "National defence industry",
+      "description": "Build armoured vehicles, ships and drones at home.",
+      "x": 10,
+      "y": 2,
+      "days": 105,
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "production_efficiency",
+            "value": 0.03,
+            "days": 3650
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "army_attack",
+            "value": 0.03,
+            "days": 3650
+          }
+        }
+      ],
+      "prerequisites": [
+        [
+          "tur_defence_review"
+        ]
+      ]
+    }
+  ],
+  "source": [
+    {
+      "url": "https://en.wikipedia.org/wiki/Kemal_Derviş",
+      "title": "Wikipedia: Kemal Derviş",
+      "accessed": "2026-10-15"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Accession_of_Turkey_to_the_European_Union",
+      "title": "Wikipedia: Accession of Turkey to the European Union",
+      "accessed": "2026-10-15"
+    }
+  ],
+  "confidence": "verified"
+}

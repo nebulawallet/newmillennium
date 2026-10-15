@@ -1,0 +1,584 @@
+{
+  "id": "pol",
+  "name": "Poland",
+  "countries": [
+    "POL"
+  ],
+  "note": "Branches depend on the governing parties and office holders. Policies named after real reforms are cited; effects are gameplay estimates.",
+  "focuses": [
+    {
+      "id": "pol_national_programme",
+      "name": "Poland's return to Europe",
+      "description": "Set the priorities of the government.",
+      "x": 8,
+      "y": 0,
+      "days": 70,
+      "effects": [
+        {
+          "add_political_power": 50
+        },
+        {
+          "add_stability": 0.02
+        }
+      ]
+    },
+    {
+      "id": "pol_defence_review",
+      "name": "Defence review",
+      "description": "Review strategy, forces and budgets for the new decade.",
+      "x": 11,
+      "y": 1,
+      "days": 70,
+      "effects": [
+        {
+          "add_war_support": 0.02
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "military",
+            "value": 4
+          }
+        }
+      ],
+      "prerequisites": [
+        [
+          "pol_national_programme"
+        ]
+      ]
+    },
+    {
+      "id": "pol_modern_forces",
+      "name": "Modern forces",
+      "description": "Equip the armed forces with modern communications and precision weapons.",
+      "x": 11,
+      "y": 3,
+      "days": 105,
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "army_attack",
+            "value": 0.05,
+            "days": 3650
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "air_effectiveness",
+            "value": 0.05,
+            "days": 3650
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "military",
+            "value": 3
+          }
+        }
+      ],
+      "prerequisites": [
+        [
+          "pol_defence_review"
+        ]
+      ]
+    },
+    {
+      "id": "pol_intelligence_services",
+      "name": "Intelligence services",
+      "description": "Expand the foreign and domestic intelligence services.",
+      "x": 12,
+      "y": 2,
+      "days": 70,
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "intelligence_power",
+            "value": 0.1,
+            "days": 3650
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "security_services",
+            "value": 4
+          }
+        }
+      ],
+      "prerequisites": [
+        [
+          "pol_defence_review"
+        ]
+      ]
+    },
+    {
+      "id": "pol_foreign_policy",
+      "name": "Foreign policy priorities",
+      "description": "Set the course of foreign policy.",
+      "x": 14,
+      "y": 1,
+      "days": 70,
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "diplomatic_reputation",
+            "value": 0.05,
+            "days": 3650
+          }
+        },
+        {
+          "add_political_power": 20
+        }
+      ],
+      "prerequisites": [
+        [
+          "pol_national_programme"
+        ]
+      ]
+    },
+    {
+      "id": "pol_partners",
+      "name": "Closer ties with our allies and neighbours",
+      "description": "Deepen political and economic ties with our allies and neighbours.",
+      "x": 14,
+      "y": 2,
+      "days": 70,
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "bloc_integration",
+            "value": 0.1,
+            "days": 3650
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "trade_efficiency",
+            "value": 0.03,
+            "days": 3650
+          }
+        },
+        {
+          "country": {
+            "tag": "DEU",
+            "effects": [
+              {
+                "add_opinion": {
+                  "target": "ROOT",
+                  "value": 15,
+                  "days": 3650
+                }
+              }
+            ]
+          }
+        },
+        {
+          "country": {
+            "tag": "USA",
+            "effects": [
+              {
+                "add_opinion": {
+                  "target": "ROOT",
+                  "value": 15,
+                  "days": 3650
+                }
+              }
+            ]
+          }
+        },
+        {
+          "country": {
+            "tag": "LTU",
+            "effects": [
+              {
+                "add_opinion": {
+                  "target": "ROOT",
+                  "value": 15,
+                  "days": 3650
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "prerequisites": [
+        [
+          "pol_foreign_policy"
+        ]
+      ]
+    },
+    {
+      "id": "pol_international_standing",
+      "name": "International standing",
+      "description": "Raise the country's profile in international institutions and summits.",
+      "x": 15,
+      "y": 3,
+      "days": 70,
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "diplomatic_reputation",
+            "value": 0.1,
+            "days": 3650
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "international_opinion",
+            "value": 0.05,
+            "days": 3650
+          }
+        }
+      ],
+      "prerequisites": [
+        [
+          "pol_partners",
+          "pol_own_course"
+        ]
+      ]
+    },
+    {
+      "id": "pol_own_course",
+      "name": "An independent course",
+      "description": "Keep a free hand in foreign policy and trade.",
+      "x": 16,
+      "y": 2,
+      "days": 70,
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "foreign_influence_resistance",
+            "value": 0.1,
+            "days": 3650
+          }
+        },
+        {
+          "add_war_support": 0.02
+        }
+      ],
+      "prerequisites": [
+        [
+          "pol_foreign_policy"
+        ]
+      ],
+      "mutually_exclusive": [
+        "pol_partners"
+      ],
+      "ai_weight": 0.5
+    },
+    {
+      "id": "pol_economic_council",
+      "name": "Economic council",
+      "description": "Bring ministries, employers and unions together on economic priorities.",
+      "x": 5,
+      "y": 1,
+      "days": 70,
+      "effects": [
+        {
+          "add_economic_mood": 0.03
+        },
+        {
+          "add_political_power": 15
+        }
+      ],
+      "prerequisites": [
+        [
+          "pol_national_programme"
+        ]
+      ]
+    },
+    {
+      "id": "pol_infrastructure",
+      "name": "Infrastructure programme",
+      "description": "Invest in transport, power grids and communications.",
+      "x": 5,
+      "y": 3,
+      "days": 105,
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "construction_speed",
+            "value": 0.1,
+            "days": 3650
+          }
+        },
+        {
+          "add_economic_mood": 0.02
+        }
+      ],
+      "prerequisites": [
+        [
+          "pol_economic_council"
+        ]
+      ]
+    },
+    {
+      "id": "pol_research_programme",
+      "name": "Research and innovation",
+      "description": "Fund universities, research institutes and new industries.",
+      "x": 6,
+      "y": 4,
+      "days": 105,
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "research_speed",
+            "value": 0.05,
+            "days": 3650
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "education_quality",
+            "value": 0.02,
+            "days": 3650
+          }
+        }
+      ],
+      "prerequisites": [
+        [
+          "pol_infrastructure"
+        ]
+      ]
+    },
+    {
+      "id": "pol_four_reforms",
+      "name": "The four reforms",
+      "description": "Carry through the reforms of local government, pensions, education and health care that Jerzy Buzek's cabinet introduced.",
+      "x": 1,
+      "y": 1,
+      "days": 70,
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "tax_efficiency",
+            "value": 0.03,
+            "days": 3650
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "education_quality",
+            "value": 0.02,
+            "days": 3650
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "welfare_cost",
+            "value": -0.02,
+            "days": 3650
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "labour_unions",
+            "value": -3
+          }
+        }
+      ],
+      "prerequisites": [
+        [
+          "pol_national_programme"
+        ]
+      ],
+      "available": {
+        "holds_office": {
+          "person": "pol.jerzy_buzek",
+          "office": "pol.prime_minister"
+        }
+      },
+      "ai_weight": 3
+    },
+    {
+      "id": "pol_eu_referendum",
+      "name": "The road to the Union",
+      "description": "Prepare the country for membership of the European Union. Poland held its referendum on joining on 7 and 8 June 2003.",
+      "x": 2,
+      "y": 2,
+      "days": 70,
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "bloc_integration",
+            "value": 0.1,
+            "days": 3650
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "foreign_investment",
+            "value": 0.04,
+            "days": 3650
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "rural",
+            "value": -2
+          }
+        }
+      ],
+      "prerequisites": [
+        [
+          "pol_four_reforms",
+          "pol_social_programme"
+        ]
+      ],
+      "ai_weight": 2
+    },
+    {
+      "id": "pol_social_programme",
+      "name": "A social programme",
+      "description": "Protect those who lost out in the transition.",
+      "x": 3,
+      "y": 1,
+      "days": 70,
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "welfare_cost",
+            "value": 0.02,
+            "days": 3650
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "labour_unions",
+            "value": 4
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "rural",
+            "value": 3
+          }
+        }
+      ],
+      "prerequisites": [
+        [
+          "pol_national_programme"
+        ]
+      ],
+      "available": {
+        "any": [
+          {
+            "party_in_government": "pol.sld"
+          },
+          {
+            "party_in_government": "pol.psl"
+          },
+          {
+            "party_in_government": "pol.up"
+          }
+        ]
+      },
+      "ai_weight": 2
+    },
+    {
+      "id": "pol_professional_army",
+      "name": "Professional army",
+      "description": "Move to an all-volunteer army. Poland suspended compulsory military service on 5 December 2008.",
+      "x": 10,
+      "y": 2,
+      "days": 70,
+      "effects": [
+        {
+          "change_law": {
+            "category": "conscription",
+            "law": "volunteer_force"
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "army_org",
+            "value": 0.04,
+            "days": 3650
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "youth_students",
+            "value": 4
+          }
+        }
+      ],
+      "prerequisites": [
+        [
+          "pol_defence_review"
+        ]
+      ],
+      "ai_weight": 1.5
+    },
+    {
+      "id": "pol_motorways",
+      "name": "Motorways",
+      "description": "Build a national motorway network.",
+      "x": 7,
+      "y": 2,
+      "days": 70,
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "construction_speed",
+            "value": 0.08,
+            "days": 3650
+          }
+        },
+        {
+          "add_economic_mood": 0.02
+        }
+      ],
+      "prerequisites": [
+        [
+          "pol_economic_council"
+        ]
+      ]
+    },
+    {
+      "id": "pol_coal_and_energy",
+      "name": "Coal and energy security",
+      "description": "Keep coal mining while diversifying gas supply.",
+      "x": 8,
+      "y": 3,
+      "days": 70,
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "fossil_output",
+            "value": 0.05,
+            "days": 3650
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "foreign_influence_resistance",
+            "value": 0.04,
+            "days": 3650
+          }
+        }
+      ],
+      "prerequisites": [
+        [
+          "pol_motorways"
+        ]
+      ]
+    }
+  ],
+  "source": [
+    {
+      "url": "https://en.wikipedia.org/wiki/Jerzy_Buzek",
+      "title": "Wikipedia: Jerzy Buzek",
+      "accessed": "2026-10-15"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/2003_Polish_European_Union_membership_referendum",
+      "title": "Wikipedia: 2003 Polish European Union membership referendum",
+      "accessed": "2026-10-15"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Military_service",
+      "title": "Wikipedia: Military service",
+      "accessed": "2026-10-15"
+    }
+  ],
+  "confidence": "verified"
+}

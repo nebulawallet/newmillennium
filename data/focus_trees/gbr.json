@@ -1,0 +1,608 @@
+{
+  "id": "gbr",
+  "name": "United Kingdom",
+  "countries": [
+    "GBR"
+  ],
+  "note": "Branches depend on the governing parties and office holders. Policies named after real reforms are cited; effects are gameplay estimates.",
+  "focuses": [
+    {
+      "id": "gbr_national_programme",
+      "name": "A programme for government",
+      "description": "Set the priorities of Her Majesty's Government.",
+      "x": 8,
+      "y": 0,
+      "days": 70,
+      "effects": [
+        {
+          "add_political_power": 50
+        },
+        {
+          "add_stability": 0.02
+        }
+      ]
+    },
+    {
+      "id": "gbr_defence_review",
+      "name": "Defence review",
+      "description": "Review strategy, forces and budgets for the new decade.",
+      "x": 11,
+      "y": 1,
+      "days": 70,
+      "effects": [
+        {
+          "add_war_support": 0.02
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "military",
+            "value": 4
+          }
+        }
+      ],
+      "prerequisites": [
+        [
+          "gbr_national_programme"
+        ]
+      ]
+    },
+    {
+      "id": "gbr_modern_forces",
+      "name": "Modern forces",
+      "description": "Equip the armed forces with modern communications and precision weapons.",
+      "x": 11,
+      "y": 3,
+      "days": 105,
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "army_attack",
+            "value": 0.05,
+            "days": 3650
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "air_effectiveness",
+            "value": 0.05,
+            "days": 3650
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "military",
+            "value": 3
+          }
+        }
+      ],
+      "prerequisites": [
+        [
+          "gbr_defence_review"
+        ]
+      ]
+    },
+    {
+      "id": "gbr_intelligence_services",
+      "name": "Intelligence services",
+      "description": "Expand the foreign and domestic intelligence services.",
+      "x": 12,
+      "y": 2,
+      "days": 70,
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "intelligence_power",
+            "value": 0.1,
+            "days": 3650
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "security_services",
+            "value": 4
+          }
+        }
+      ],
+      "prerequisites": [
+        [
+          "gbr_defence_review"
+        ]
+      ]
+    },
+    {
+      "id": "gbr_foreign_policy",
+      "name": "Foreign policy priorities",
+      "description": "Set the course of foreign policy.",
+      "x": 14,
+      "y": 1,
+      "days": 70,
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "diplomatic_reputation",
+            "value": 0.05,
+            "days": 3650
+          }
+        },
+        {
+          "add_political_power": 20
+        }
+      ],
+      "prerequisites": [
+        [
+          "gbr_national_programme"
+        ]
+      ]
+    },
+    {
+      "id": "gbr_partners",
+      "name": "Closer ties with the Atlantic alliance and Europe",
+      "description": "Deepen political and economic ties with the Atlantic alliance and Europe.",
+      "x": 14,
+      "y": 2,
+      "days": 70,
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "bloc_integration",
+            "value": 0.1,
+            "days": 3650
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "trade_efficiency",
+            "value": 0.03,
+            "days": 3650
+          }
+        },
+        {
+          "country": {
+            "tag": "USA",
+            "effects": [
+              {
+                "add_opinion": {
+                  "target": "ROOT",
+                  "value": 15,
+                  "days": 3650
+                }
+              }
+            ]
+          }
+        },
+        {
+          "country": {
+            "tag": "FRA",
+            "effects": [
+              {
+                "add_opinion": {
+                  "target": "ROOT",
+                  "value": 15,
+                  "days": 3650
+                }
+              }
+            ]
+          }
+        },
+        {
+          "country": {
+            "tag": "DEU",
+            "effects": [
+              {
+                "add_opinion": {
+                  "target": "ROOT",
+                  "value": 15,
+                  "days": 3650
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "prerequisites": [
+        [
+          "gbr_foreign_policy"
+        ]
+      ]
+    },
+    {
+      "id": "gbr_international_standing",
+      "name": "International standing",
+      "description": "Raise the country's profile in international institutions and summits.",
+      "x": 15,
+      "y": 3,
+      "days": 70,
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "diplomatic_reputation",
+            "value": 0.1,
+            "days": 3650
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "international_opinion",
+            "value": 0.05,
+            "days": 3650
+          }
+        }
+      ],
+      "prerequisites": [
+        [
+          "gbr_partners",
+          "gbr_own_course"
+        ]
+      ]
+    },
+    {
+      "id": "gbr_own_course",
+      "name": "An independent course",
+      "description": "Keep a free hand in foreign policy and trade.",
+      "x": 16,
+      "y": 2,
+      "days": 70,
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "foreign_influence_resistance",
+            "value": 0.1,
+            "days": 3650
+          }
+        },
+        {
+          "add_war_support": 0.02
+        }
+      ],
+      "prerequisites": [
+        [
+          "gbr_foreign_policy"
+        ]
+      ],
+      "mutually_exclusive": [
+        "gbr_partners"
+      ],
+      "ai_weight": 0.5
+    },
+    {
+      "id": "gbr_economic_council",
+      "name": "Economic council",
+      "description": "Bring ministries, employers and unions together on economic priorities.",
+      "x": 5,
+      "y": 1,
+      "days": 70,
+      "effects": [
+        {
+          "add_economic_mood": 0.03
+        },
+        {
+          "add_political_power": 15
+        }
+      ],
+      "prerequisites": [
+        [
+          "gbr_national_programme"
+        ]
+      ]
+    },
+    {
+      "id": "gbr_infrastructure",
+      "name": "Infrastructure programme",
+      "description": "Invest in transport, power grids and communications.",
+      "x": 5,
+      "y": 3,
+      "days": 105,
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "construction_speed",
+            "value": 0.1,
+            "days": 3650
+          }
+        },
+        {
+          "add_economic_mood": 0.02
+        }
+      ],
+      "prerequisites": [
+        [
+          "gbr_economic_council"
+        ]
+      ]
+    },
+    {
+      "id": "gbr_research_programme",
+      "name": "Research and innovation",
+      "description": "Fund universities, research institutes and new industries.",
+      "x": 6,
+      "y": 4,
+      "days": 105,
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "research_speed",
+            "value": 0.05,
+            "days": 3650
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "education_quality",
+            "value": 0.02,
+            "days": 3650
+          }
+        }
+      ],
+      "prerequisites": [
+        [
+          "gbr_infrastructure"
+        ]
+      ]
+    },
+    {
+      "id": "gbr_public_services",
+      "name": "Investment in public services",
+      "description": "Raise spending on health and education.",
+      "x": 1,
+      "y": 1,
+      "days": 70,
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "health_outcomes",
+            "value": 0.03,
+            "days": 3650
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "education_quality",
+            "value": 0.03,
+            "days": 3650
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "welfare_cost",
+            "value": 0.02,
+            "days": 3650
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "urban_middle_class",
+            "value": 3
+          }
+        }
+      ],
+      "prerequisites": [
+        [
+          "gbr_national_programme"
+        ]
+      ],
+      "available": {
+        "ruling_party": "gbr.labour"
+      },
+      "ai_weight": 3
+    },
+    {
+      "id": "gbr_five_tests",
+      "name": "The five economic tests",
+      "description": "Assess whether to join the euro. The Treasury published its assessment of the five economic tests in June 2003.",
+      "x": 0,
+      "y": 2,
+      "days": 70,
+      "effects": [
+        {
+          "add_economic_mood": 0.02
+        },
+        {
+          "add_political_power": 20
+        }
+      ],
+      "prerequisites": [
+        [
+          "gbr_public_services"
+        ]
+      ],
+      "available": {
+        "ruling_party": "gbr.labour"
+      },
+      "ai_weight": 2
+    },
+    {
+      "id": "gbr_constitutional_reform",
+      "name": "Constitutional reform",
+      "description": "Continue the reform of the constitution and the House of Lords.",
+      "x": 2,
+      "y": 2,
+      "days": 70,
+      "effects": [
+        {
+          "add_stability": 0.02
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "civil_liberties",
+            "value": 0.03,
+            "days": 3650
+          }
+        }
+      ],
+      "prerequisites": [
+        [
+          "gbr_public_services"
+        ]
+      ],
+      "available": {
+        "ruling_party": "gbr.labour"
+      }
+    },
+    {
+      "id": "gbr_lower_taxes",
+      "name": "Lower taxes",
+      "description": "Cut income and business taxes.",
+      "x": 3,
+      "y": 1,
+      "days": 70,
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "private_sector_output",
+            "value": 0.04,
+            "days": 3650
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "business",
+            "value": 5
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "welfare_cost",
+            "value": -0.02,
+            "days": 3650
+          }
+        }
+      ],
+      "prerequisites": [
+        [
+          "gbr_national_programme"
+        ]
+      ],
+      "available": {
+        "ruling_party": "gbr.conservative"
+      },
+      "ai_weight": 3
+    },
+    {
+      "id": "gbr_sovereignty",
+      "name": "Defend sovereignty",
+      "description": "Resist further transfers of power to European institutions.",
+      "x": 4,
+      "y": 2,
+      "days": 70,
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "foreign_influence_resistance",
+            "value": 0.1,
+            "days": 3650
+          }
+        },
+        {
+          "add_ruling_party_popularity": 0.01
+        }
+      ],
+      "prerequisites": [
+        [
+          "gbr_lower_taxes"
+        ]
+      ],
+      "available": {
+        "ruling_party": "gbr.conservative"
+      }
+    },
+    {
+      "id": "gbr_financial_centre",
+      "name": "The City of London",
+      "description": "Keep London a leading financial centre.",
+      "x": 7,
+      "y": 2,
+      "days": 70,
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "foreign_investment",
+            "value": 0.05,
+            "days": 3650
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "business",
+            "value": 3
+          }
+        }
+      ],
+      "prerequisites": [
+        [
+          "gbr_economic_council"
+        ]
+      ]
+    },
+    {
+      "id": "gbr_north_sea",
+      "name": "North Sea energy",
+      "description": "Manage the North Sea oil and gas fields as output declines.",
+      "x": 8,
+      "y": 3,
+      "days": 70,
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "fossil_output",
+            "value": 0.05,
+            "days": 3650
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "energy_cost",
+            "value": -0.02,
+            "days": 3650
+          }
+        }
+      ],
+      "prerequisites": [
+        [
+          "gbr_financial_centre"
+        ]
+      ]
+    },
+    {
+      "id": "gbr_expeditionary_forces",
+      "name": "Expeditionary forces",
+      "description": "Build forces that can deploy far from home.",
+      "x": 10,
+      "y": 2,
+      "days": 70,
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "army_org",
+            "value": 0.05,
+            "days": 3650
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "naval_effectiveness",
+            "value": 0.05,
+            "days": 3650
+          }
+        }
+      ],
+      "prerequisites": [
+        [
+          "gbr_defence_review"
+        ]
+      ]
+    }
+  ],
+  "source": [
+    {
+      "url": "https://en.wikipedia.org/wiki/Five_economic_tests",
+      "title": "Wikipedia: Five economic tests",
+      "accessed": "2026-10-15"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Premiership_of_Tony_Blair",
+      "title": "Wikipedia: Premiership of Tony Blair",
+      "accessed": "2026-10-15"
+    }
+  ],
+  "confidence": "verified"
+}

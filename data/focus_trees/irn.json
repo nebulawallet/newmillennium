@@ -1,0 +1,535 @@
+{
+  "id": "irn",
+  "name": "Iran",
+  "countries": [
+    "IRN"
+  ],
+  "note": "Branches depend on the governing parties and office holders. Policies named after real reforms are cited; effects are gameplay estimates.",
+  "focuses": [
+    {
+      "id": "irn_national_programme",
+      "name": "The Islamic Republic in the new century",
+      "description": "Set the priorities of the government.",
+      "x": 8,
+      "y": 0,
+      "days": 70,
+      "effects": [
+        {
+          "add_political_power": 50
+        },
+        {
+          "add_stability": 0.02
+        }
+      ]
+    },
+    {
+      "id": "irn_defence_review",
+      "name": "Defence review",
+      "description": "Review strategy, forces and budgets for the new decade.",
+      "x": 11,
+      "y": 1,
+      "days": 70,
+      "effects": [
+        {
+          "add_war_support": 0.02
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "military",
+            "value": 4
+          }
+        }
+      ],
+      "prerequisites": [
+        [
+          "irn_national_programme"
+        ]
+      ]
+    },
+    {
+      "id": "irn_modern_forces",
+      "name": "Modern forces",
+      "description": "Equip the armed forces with modern communications and precision weapons.",
+      "x": 11,
+      "y": 3,
+      "days": 105,
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "army_attack",
+            "value": 0.05,
+            "days": 3650
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "air_effectiveness",
+            "value": 0.05,
+            "days": 3650
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "military",
+            "value": 3
+          }
+        }
+      ],
+      "prerequisites": [
+        [
+          "irn_defence_review"
+        ]
+      ]
+    },
+    {
+      "id": "irn_intelligence_services",
+      "name": "Intelligence services",
+      "description": "Expand the foreign and domestic intelligence services.",
+      "x": 12,
+      "y": 2,
+      "days": 70,
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "intelligence_power",
+            "value": 0.1,
+            "days": 3650
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "security_services",
+            "value": 4
+          }
+        }
+      ],
+      "prerequisites": [
+        [
+          "irn_defence_review"
+        ]
+      ]
+    },
+    {
+      "id": "irn_foreign_policy",
+      "name": "Foreign policy priorities",
+      "description": "Set the course of foreign policy.",
+      "x": 14,
+      "y": 1,
+      "days": 70,
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "diplomatic_reputation",
+            "value": 0.05,
+            "days": 3650
+          }
+        },
+        {
+          "add_political_power": 20
+        }
+      ],
+      "prerequisites": [
+        [
+          "irn_national_programme"
+        ]
+      ]
+    },
+    {
+      "id": "irn_partners",
+      "name": "Closer ties with friendly states",
+      "description": "Deepen political and economic ties with friendly states.",
+      "x": 14,
+      "y": 2,
+      "days": 70,
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "bloc_integration",
+            "value": 0.1,
+            "days": 3650
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "trade_efficiency",
+            "value": 0.03,
+            "days": 3650
+          }
+        },
+        {
+          "country": {
+            "tag": "RUS",
+            "effects": [
+              {
+                "add_opinion": {
+                  "target": "ROOT",
+                  "value": 15,
+                  "days": 3650
+                }
+              }
+            ]
+          }
+        },
+        {
+          "country": {
+            "tag": "CHN",
+            "effects": [
+              {
+                "add_opinion": {
+                  "target": "ROOT",
+                  "value": 15,
+                  "days": 3650
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "prerequisites": [
+        [
+          "irn_foreign_policy"
+        ]
+      ]
+    },
+    {
+      "id": "irn_international_standing",
+      "name": "International standing",
+      "description": "Raise the country's profile in international institutions and summits.",
+      "x": 15,
+      "y": 3,
+      "days": 70,
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "diplomatic_reputation",
+            "value": 0.1,
+            "days": 3650
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "international_opinion",
+            "value": 0.05,
+            "days": 3650
+          }
+        }
+      ],
+      "prerequisites": [
+        [
+          "irn_partners",
+          "irn_own_course"
+        ]
+      ]
+    },
+    {
+      "id": "irn_own_course",
+      "name": "An independent course",
+      "description": "Keep a free hand in foreign policy and trade.",
+      "x": 16,
+      "y": 2,
+      "days": 70,
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "foreign_influence_resistance",
+            "value": 0.1,
+            "days": 3650
+          }
+        },
+        {
+          "add_war_support": 0.02
+        }
+      ],
+      "prerequisites": [
+        [
+          "irn_foreign_policy"
+        ]
+      ],
+      "mutually_exclusive": [
+        "irn_partners"
+      ],
+      "ai_weight": 0.5
+    },
+    {
+      "id": "irn_economic_council",
+      "name": "Economic council",
+      "description": "Bring ministries, employers and unions together on economic priorities.",
+      "x": 5,
+      "y": 1,
+      "days": 70,
+      "effects": [
+        {
+          "add_economic_mood": 0.03
+        },
+        {
+          "add_political_power": 15
+        }
+      ],
+      "prerequisites": [
+        [
+          "irn_national_programme"
+        ]
+      ]
+    },
+    {
+      "id": "irn_infrastructure",
+      "name": "Infrastructure programme",
+      "description": "Invest in transport, power grids and communications.",
+      "x": 5,
+      "y": 3,
+      "days": 105,
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "construction_speed",
+            "value": 0.1,
+            "days": 3650
+          }
+        },
+        {
+          "add_economic_mood": 0.02
+        }
+      ],
+      "prerequisites": [
+        [
+          "irn_economic_council"
+        ]
+      ]
+    },
+    {
+      "id": "irn_research_programme",
+      "name": "Research and innovation",
+      "description": "Fund universities, research institutes and new industries.",
+      "x": 6,
+      "y": 4,
+      "days": 105,
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "research_speed",
+            "value": 0.05,
+            "days": 3650
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "education_quality",
+            "value": 0.02,
+            "days": 3650
+          }
+        }
+      ],
+      "prerequisites": [
+        [
+          "irn_infrastructure"
+        ]
+      ]
+    },
+    {
+      "id": "irn_dialogue_among_civilizations",
+      "name": "Dialogue Among Civilizations",
+      "description": "Promote dialogue with other cultures, the idea President Mohammad Khatami put forward.",
+      "x": 1,
+      "y": 1,
+      "days": 70,
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "international_opinion",
+            "value": 0.05,
+            "days": 3650
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "youth_students",
+            "value": 4
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "religious_establishment",
+            "value": -2
+          }
+        }
+      ],
+      "prerequisites": [
+        [
+          "irn_national_programme"
+        ]
+      ],
+      "available": {
+        "holds_office": {
+          "person": "irn.mohammad_khatami",
+          "office": "irn.president"
+        }
+      },
+      "ai_weight": 3
+    },
+    {
+      "id": "irn_civil_society",
+      "name": "Civil society",
+      "description": "Allow more room for newspapers and associations.",
+      "x": 0,
+      "y": 2,
+      "days": 70,
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "press_freedom",
+            "value": 0.05,
+            "days": 3650
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "media",
+            "value": 5
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "security_services",
+            "value": -4
+          }
+        }
+      ],
+      "prerequisites": [
+        [
+          "irn_dialogue_among_civilizations"
+        ]
+      ],
+      "available": {
+        "ruling_party": "irn.reformists"
+      },
+      "ai_weight": 2
+    },
+    {
+      "id": "irn_revolutionary_values",
+      "name": "Revolutionary values",
+      "description": "Reassert the values of the revolution.",
+      "x": 3,
+      "y": 1,
+      "days": 70,
+      "effects": [
+        {
+          "add_stability": 0.03
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "religious_establishment",
+            "value": 5
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "youth_students",
+            "value": -3
+          }
+        }
+      ],
+      "prerequisites": [
+        [
+          "irn_national_programme"
+        ]
+      ],
+      "available": {
+        "ruling_party": "irn.principlists"
+      },
+      "ai_weight": 2
+    },
+    {
+      "id": "irn_oil_revenue",
+      "name": "Oil revenue",
+      "description": "Raise oil and gas output and manage the revenue.",
+      "x": 7,
+      "y": 2,
+      "days": 70,
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "fossil_output",
+            "value": 0.08,
+            "days": 3650
+          }
+        },
+        {
+          "add_economic_mood": 0.02
+        }
+      ],
+      "prerequisites": [
+        [
+          "irn_economic_council"
+        ]
+      ]
+    },
+    {
+      "id": "irn_self_sufficiency",
+      "name": "Self-sufficiency",
+      "description": "Reduce dependence on imports under sanctions.",
+      "x": 8,
+      "y": 3,
+      "days": 70,
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "state_industry_output",
+            "value": 0.04,
+            "days": 3650
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "foreign_influence_resistance",
+            "value": 0.05,
+            "days": 3650
+          }
+        }
+      ],
+      "prerequisites": [
+        [
+          "irn_oil_revenue"
+        ]
+      ]
+    },
+    {
+      "id": "irn_missile_forces",
+      "name": "Missile forces",
+      "description": "Expand the missile forces.",
+      "x": 10,
+      "y": 2,
+      "days": 70,
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "army_attack",
+            "value": 0.03,
+            "days": 3650
+          }
+        },
+        {
+          "add_war_support": 0.03
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "military",
+            "value": 3
+          }
+        }
+      ],
+      "prerequisites": [
+        [
+          "irn_defence_review"
+        ]
+      ]
+    }
+  ],
+  "source": [
+    {
+      "url": "https://en.wikipedia.org/wiki/Dialogue_Among_Civilizations",
+      "title": "Wikipedia: Dialogue Among Civilizations",
+      "accessed": "2026-10-15"
+    }
+  ],
+  "confidence": "verified"
+}

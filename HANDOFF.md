@@ -38,7 +38,7 @@ New Millennium is a grand strategy game in the style of Hearts of Iron IV, set f
 | 10 | Combat, supply, war and peace | **Done** (see "Phase 10 notes") |
 | 11 | Diplomacy | **Done** (see "Phase 11 notes") |
 | 12 | AI | **Done** (see "Phase 12 notes") |
-| 13 | Content and polish | Not started. Phase 13 is next. |
+| 13 | Content and polish | **In progress.** National focus trees for 13 major countries (USA, RUS, DEU, GBR, FRA, CHN, JPN, ITA, ESP, TUR, IRN, POL, ISR); every other country uses the shared generic tree. |
 
 ## Where things stand right now
 
@@ -140,7 +140,7 @@ In game: Space pauses, 1–5 or +/- set speed, Q–P open the tab row (Q is Poli
 ## Next steps, in order
 
 1. **Phase 2 research:** audit the uncommitted folders, then keep about six batches running. After each: `npm run validate-data -- --only <tags> --tier core`, spot-check facts with `scripts/research/wiki.ts` (anything after June 2026 yourself), `npm run review-report`, commit, update the batch table, launch the next batch.
-2. **Phase 13** (content and polish): the other unique focus trees, more events (including the historical wars), balance, UI polish.
+2. **Phase 13** (content and polish): more events (including the historical wars), balance (Japan's debt falls to zero by 2010, and Turkish and Iranian debt fall fast, with or without the new trees), UI polish. Focus trees: `scripts/dev/gen-focus-trees-major.py` builds the 11 newer national trees; minor countries keep the generic tree by design (the user asked for one shared default). Add a national tree only for important countries, and only once they have politics data.
 4. **Phase 2, Pass B** once Pass A covers all 212 tags: `--tier full` must pass.
 
 ## Decisions already made (don't relitigate)

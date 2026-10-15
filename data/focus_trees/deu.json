@@ -1,0 +1,682 @@
+{
+  "id": "deu",
+  "name": "Germany",
+  "countries": [
+    "DEU"
+  ],
+  "note": "Branches depend on the governing parties and office holders. Policies named after real reforms are cited; effects are gameplay estimates.",
+  "focuses": [
+    {
+      "id": "deu_national_programme",
+      "name": "Germany in the new century",
+      "description": "Set the priorities of the federal government.",
+      "x": 8,
+      "y": 0,
+      "days": 70,
+      "effects": [
+        {
+          "add_political_power": 50
+        },
+        {
+          "add_stability": 0.02
+        }
+      ]
+    },
+    {
+      "id": "deu_defence_review",
+      "name": "Defence review",
+      "description": "Review strategy, forces and budgets for the new decade.",
+      "x": 11,
+      "y": 1,
+      "days": 70,
+      "effects": [
+        {
+          "add_war_support": 0.02
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "military",
+            "value": 4
+          }
+        }
+      ],
+      "prerequisites": [
+        [
+          "deu_national_programme"
+        ]
+      ]
+    },
+    {
+      "id": "deu_modern_forces",
+      "name": "Modern forces",
+      "description": "Equip the armed forces with modern communications and precision weapons.",
+      "x": 11,
+      "y": 3,
+      "days": 105,
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "army_attack",
+            "value": 0.05,
+            "days": 3650
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "air_effectiveness",
+            "value": 0.05,
+            "days": 3650
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "military",
+            "value": 3
+          }
+        }
+      ],
+      "prerequisites": [
+        [
+          "deu_defence_review"
+        ]
+      ]
+    },
+    {
+      "id": "deu_intelligence_services",
+      "name": "Intelligence services",
+      "description": "Expand the foreign and domestic intelligence services.",
+      "x": 12,
+      "y": 2,
+      "days": 70,
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "intelligence_power",
+            "value": 0.1,
+            "days": 3650
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "security_services",
+            "value": 4
+          }
+        }
+      ],
+      "prerequisites": [
+        [
+          "deu_defence_review"
+        ]
+      ]
+    },
+    {
+      "id": "deu_foreign_policy",
+      "name": "Foreign policy priorities",
+      "description": "Set the course of foreign policy.",
+      "x": 14,
+      "y": 1,
+      "days": 70,
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "diplomatic_reputation",
+            "value": 0.05,
+            "days": 3650
+          }
+        },
+        {
+          "add_political_power": 20
+        }
+      ],
+      "prerequisites": [
+        [
+          "deu_national_programme"
+        ]
+      ]
+    },
+    {
+      "id": "deu_partners",
+      "name": "Closer ties with our European neighbours",
+      "description": "Deepen political and economic ties with our European neighbours.",
+      "x": 14,
+      "y": 2,
+      "days": 70,
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "bloc_integration",
+            "value": 0.1,
+            "days": 3650
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "trade_efficiency",
+            "value": 0.03,
+            "days": 3650
+          }
+        },
+        {
+          "country": {
+            "tag": "FRA",
+            "effects": [
+              {
+                "add_opinion": {
+                  "target": "ROOT",
+                  "value": 15,
+                  "days": 3650
+                }
+              }
+            ]
+          }
+        },
+        {
+          "country": {
+            "tag": "POL",
+            "effects": [
+              {
+                "add_opinion": {
+                  "target": "ROOT",
+                  "value": 15,
+                  "days": 3650
+                }
+              }
+            ]
+          }
+        },
+        {
+          "country": {
+            "tag": "NLD",
+            "effects": [
+              {
+                "add_opinion": {
+                  "target": "ROOT",
+                  "value": 15,
+                  "days": 3650
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "prerequisites": [
+        [
+          "deu_foreign_policy"
+        ]
+      ]
+    },
+    {
+      "id": "deu_international_standing",
+      "name": "International standing",
+      "description": "Raise the country's profile in international institutions and summits.",
+      "x": 15,
+      "y": 3,
+      "days": 70,
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "diplomatic_reputation",
+            "value": 0.1,
+            "days": 3650
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "international_opinion",
+            "value": 0.05,
+            "days": 3650
+          }
+        }
+      ],
+      "prerequisites": [
+        [
+          "deu_partners",
+          "deu_own_course"
+        ]
+      ]
+    },
+    {
+      "id": "deu_own_course",
+      "name": "An independent course",
+      "description": "Keep a free hand in foreign policy and trade.",
+      "x": 16,
+      "y": 2,
+      "days": 70,
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "foreign_influence_resistance",
+            "value": 0.1,
+            "days": 3650
+          }
+        },
+        {
+          "add_war_support": 0.02
+        }
+      ],
+      "prerequisites": [
+        [
+          "deu_foreign_policy"
+        ]
+      ],
+      "mutually_exclusive": [
+        "deu_partners"
+      ],
+      "ai_weight": 0.5
+    },
+    {
+      "id": "deu_economic_council",
+      "name": "Economic council",
+      "description": "Bring ministries, employers and unions together on economic priorities.",
+      "x": 5,
+      "y": 1,
+      "days": 70,
+      "effects": [
+        {
+          "add_economic_mood": 0.03
+        },
+        {
+          "add_political_power": 15
+        }
+      ],
+      "prerequisites": [
+        [
+          "deu_national_programme"
+        ]
+      ]
+    },
+    {
+      "id": "deu_infrastructure",
+      "name": "Infrastructure programme",
+      "description": "Invest in transport, power grids and communications.",
+      "x": 5,
+      "y": 3,
+      "days": 105,
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "construction_speed",
+            "value": 0.1,
+            "days": 3650
+          }
+        },
+        {
+          "add_economic_mood": 0.02
+        }
+      ],
+      "prerequisites": [
+        [
+          "deu_economic_council"
+        ]
+      ]
+    },
+    {
+      "id": "deu_research_programme",
+      "name": "Research and innovation",
+      "description": "Fund universities, research institutes and new industries.",
+      "x": 6,
+      "y": 4,
+      "days": 105,
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "research_speed",
+            "value": 0.05,
+            "days": 3650
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "education_quality",
+            "value": 0.02,
+            "days": 3650
+          }
+        }
+      ],
+      "prerequisites": [
+        [
+          "deu_infrastructure"
+        ]
+      ]
+    },
+    {
+      "id": "deu_agenda_2010",
+      "name": "Agenda 2010",
+      "description": "Reform the welfare state and labour market. Chancellor Gerhard Schröder outlined the Agenda 2010 reforms to the Bundestag on 14 March 2003.",
+      "x": 1,
+      "y": 1,
+      "days": 70,
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "welfare_cost",
+            "value": -0.015,
+            "days": 3650
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "private_sector_output",
+            "value": 0.02,
+            "days": 3650
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "business",
+            "value": 6
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "labour_unions",
+            "value": -8
+          }
+        }
+      ],
+      "prerequisites": [
+        [
+          "deu_national_programme"
+        ]
+      ],
+      "available": {
+        "ruling_party": "deu.spd"
+      },
+      "ai_weight": 3
+    },
+    {
+      "id": "deu_hartz_reforms",
+      "name": "Hartz reforms",
+      "description": "Restructure unemployment benefits and job placement. The Hartz I to III measures took effect from 2003, and Hartz IV on 1 January 2005.",
+      "x": 0,
+      "y": 2,
+      "days": 70,
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "welfare_cost",
+            "value": -0.01,
+            "days": 3650
+          }
+        },
+        {
+          "add_economic_mood": 0.02
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "labour_unions",
+            "value": -6
+          }
+        },
+        {
+          "add_ruling_party_popularity": -0.02
+        }
+      ],
+      "prerequisites": [
+        [
+          "deu_agenda_2010"
+        ]
+      ],
+      "available": {
+        "ruling_party": "deu.spd"
+      },
+      "ai_weight": 2
+    },
+    {
+      "id": "deu_nuclear_phaseout",
+      "name": "Nuclear phase-out",
+      "description": "Wind down nuclear power. Germany decided in 2002 to phase out nuclear power.",
+      "x": 2,
+      "y": 2,
+      "days": 70,
+      "effects": [
+        {
+          "change_law": {
+            "category": "energy_policy",
+            "law": "nuclear_phaseout"
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "renewable_output",
+            "value": 0.1,
+            "days": 3650
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "youth_students",
+            "value": 4
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "business",
+            "value": -3
+          }
+        }
+      ],
+      "prerequisites": [
+        [
+          "deu_agenda_2010",
+          "deu_social_market_renewal"
+        ]
+      ],
+      "available": {
+        "any": [
+          {
+            "party_in_government": "deu.greens"
+          },
+          {
+            "party_in_government": "deu.spd"
+          }
+        ]
+      },
+      "ai_weight": 2
+    },
+    {
+      "id": "deu_social_market_renewal",
+      "name": "Renew the social market economy",
+      "description": "Lower taxes and labour costs while keeping social partnership.",
+      "x": 3,
+      "y": 1,
+      "days": 70,
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "private_sector_output",
+            "value": 0.04,
+            "days": 3650
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "business",
+            "value": 5
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "rural",
+            "value": 2
+          }
+        }
+      ],
+      "prerequisites": [
+        [
+          "deu_national_programme"
+        ]
+      ],
+      "available": {
+        "any": [
+          {
+            "party_in_government": "deu.cdu"
+          },
+          {
+            "party_in_government": "deu.csu"
+          },
+          {
+            "party_in_government": "deu.fdp"
+          }
+        ]
+      },
+      "ai_weight": 2
+    },
+    {
+      "id": "deu_federalism_reform",
+      "name": "Federalism reform",
+      "description": "Clarify the division of powers between the federation and the states.",
+      "x": 2,
+      "y": 3,
+      "days": 70,
+      "effects": [
+        {
+          "add_stability": 0.03
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "law_change_cost",
+            "value": -0.1,
+            "days": 3650
+          }
+        }
+      ],
+      "prerequisites": [
+        [
+          "deu_hartz_reforms",
+          "deu_nuclear_phaseout",
+          "deu_social_market_renewal"
+        ]
+      ]
+    },
+    {
+      "id": "deu_suspend_conscription",
+      "name": "Suspend conscription",
+      "description": "Move to an all-volunteer Bundeswehr. Germany put conscription into abeyance on 1 July 2011.",
+      "x": 10,
+      "y": 2,
+      "days": 70,
+      "effects": [
+        {
+          "change_law": {
+            "category": "conscription",
+            "law": "volunteer_force"
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "army_org",
+            "value": 0.05,
+            "days": 3650
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "youth_students",
+            "value": 5
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "military",
+            "value": -2
+          }
+        }
+      ],
+      "prerequisites": [
+        [
+          "deu_defence_review"
+        ]
+      ],
+      "ai_weight": 1.5
+    },
+    {
+      "id": "deu_export_industry",
+      "name": "Export industry",
+      "description": "Support the engineering and car industries on world markets.",
+      "x": 7,
+      "y": 2,
+      "days": 70,
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "trade_efficiency",
+            "value": 0.05,
+            "days": 3650
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "production_efficiency",
+            "value": 0.03,
+            "days": 3650
+          }
+        }
+      ],
+      "prerequisites": [
+        [
+          "deu_economic_council"
+        ]
+      ]
+    },
+    {
+      "id": "deu_energy_transition",
+      "name": "Energy transition",
+      "description": "Expand wind and solar power and modernise the grid.",
+      "x": 8,
+      "y": 3,
+      "days": 105,
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "renewable_output",
+            "value": 0.15,
+            "days": 3650
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "emissions",
+            "value": -0.05,
+            "days": 3650
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "energy_cost",
+            "value": 0.02,
+            "days": 3650
+          }
+        }
+      ],
+      "prerequisites": [
+        [
+          "deu_export_industry"
+        ]
+      ]
+    }
+  ],
+  "source": [
+    {
+      "url": "https://en.wikipedia.org/wiki/Agenda_2010",
+      "title": "Wikipedia: Agenda 2010",
+      "accessed": "2026-10-15"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Hartz_concept",
+      "title": "Wikipedia: Hartz concept",
+      "accessed": "2026-10-15"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Nuclear_power_in_Germany",
+      "title": "Wikipedia: Nuclear power in Germany",
+      "accessed": "2026-10-15"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Conscription_in_Germany",
+      "title": "Wikipedia: Conscription in Germany",
+      "accessed": "2026-10-15"
+    }
+  ],
+  "confidence": "verified"
+}

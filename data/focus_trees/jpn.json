@@ -1,0 +1,580 @@
+{
+  "id": "jpn",
+  "name": "Japan",
+  "countries": [
+    "JPN"
+  ],
+  "note": "Branches depend on the governing parties and office holders. Policies named after real reforms are cited; effects are gameplay estimates.",
+  "focuses": [
+    {
+      "id": "jpn_national_programme",
+      "name": "Revive the economy",
+      "description": "Lead Japan out of the long slowdown of the 1990s.",
+      "x": 8,
+      "y": 0,
+      "days": 70,
+      "effects": [
+        {
+          "add_political_power": 50
+        },
+        {
+          "add_stability": 0.02
+        }
+      ]
+    },
+    {
+      "id": "jpn_defence_review",
+      "name": "Defence review",
+      "description": "Review strategy, forces and budgets for the new decade.",
+      "x": 11,
+      "y": 1,
+      "days": 70,
+      "effects": [
+        {
+          "add_war_support": 0.02
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "military",
+            "value": 4
+          }
+        }
+      ],
+      "prerequisites": [
+        [
+          "jpn_national_programme"
+        ]
+      ]
+    },
+    {
+      "id": "jpn_modern_forces",
+      "name": "Modern forces",
+      "description": "Equip the armed forces with modern communications and precision weapons.",
+      "x": 11,
+      "y": 3,
+      "days": 105,
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "army_attack",
+            "value": 0.05,
+            "days": 3650
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "air_effectiveness",
+            "value": 0.05,
+            "days": 3650
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "military",
+            "value": 3
+          }
+        }
+      ],
+      "prerequisites": [
+        [
+          "jpn_defence_review"
+        ]
+      ]
+    },
+    {
+      "id": "jpn_intelligence_services",
+      "name": "Intelligence services",
+      "description": "Expand the foreign and domestic intelligence services.",
+      "x": 12,
+      "y": 2,
+      "days": 70,
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "intelligence_power",
+            "value": 0.1,
+            "days": 3650
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "security_services",
+            "value": 4
+          }
+        }
+      ],
+      "prerequisites": [
+        [
+          "jpn_defence_review"
+        ]
+      ]
+    },
+    {
+      "id": "jpn_foreign_policy",
+      "name": "Foreign policy priorities",
+      "description": "Set the course of foreign policy.",
+      "x": 14,
+      "y": 1,
+      "days": 70,
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "diplomatic_reputation",
+            "value": 0.05,
+            "days": 3650
+          }
+        },
+        {
+          "add_political_power": 20
+        }
+      ],
+      "prerequisites": [
+        [
+          "jpn_national_programme"
+        ]
+      ]
+    },
+    {
+      "id": "jpn_partners",
+      "name": "Closer ties with the United States and Asian neighbours",
+      "description": "Deepen political and economic ties with the United States and Asian neighbours.",
+      "x": 14,
+      "y": 2,
+      "days": 70,
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "bloc_integration",
+            "value": 0.1,
+            "days": 3650
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "trade_efficiency",
+            "value": 0.03,
+            "days": 3650
+          }
+        },
+        {
+          "country": {
+            "tag": "USA",
+            "effects": [
+              {
+                "add_opinion": {
+                  "target": "ROOT",
+                  "value": 15,
+                  "days": 3650
+                }
+              }
+            ]
+          }
+        },
+        {
+          "country": {
+            "tag": "KOR",
+            "effects": [
+              {
+                "add_opinion": {
+                  "target": "ROOT",
+                  "value": 15,
+                  "days": 3650
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "prerequisites": [
+        [
+          "jpn_foreign_policy"
+        ]
+      ]
+    },
+    {
+      "id": "jpn_international_standing",
+      "name": "International standing",
+      "description": "Raise the country's profile in international institutions and summits.",
+      "x": 15,
+      "y": 3,
+      "days": 70,
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "diplomatic_reputation",
+            "value": 0.1,
+            "days": 3650
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "international_opinion",
+            "value": 0.05,
+            "days": 3650
+          }
+        }
+      ],
+      "prerequisites": [
+        [
+          "jpn_partners",
+          "jpn_own_course"
+        ]
+      ]
+    },
+    {
+      "id": "jpn_own_course",
+      "name": "An independent course",
+      "description": "Keep a free hand in foreign policy and trade.",
+      "x": 16,
+      "y": 2,
+      "days": 70,
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "foreign_influence_resistance",
+            "value": 0.1,
+            "days": 3650
+          }
+        },
+        {
+          "add_war_support": 0.02
+        }
+      ],
+      "prerequisites": [
+        [
+          "jpn_foreign_policy"
+        ]
+      ],
+      "mutually_exclusive": [
+        "jpn_partners"
+      ],
+      "ai_weight": 0.5
+    },
+    {
+      "id": "jpn_economic_council",
+      "name": "Economic council",
+      "description": "Bring ministries, employers and unions together on economic priorities.",
+      "x": 5,
+      "y": 1,
+      "days": 70,
+      "effects": [
+        {
+          "add_economic_mood": 0.03
+        },
+        {
+          "add_political_power": 15
+        }
+      ],
+      "prerequisites": [
+        [
+          "jpn_national_programme"
+        ]
+      ]
+    },
+    {
+      "id": "jpn_infrastructure",
+      "name": "Infrastructure programme",
+      "description": "Invest in transport, power grids and communications.",
+      "x": 5,
+      "y": 3,
+      "days": 105,
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "construction_speed",
+            "value": 0.1,
+            "days": 3650
+          }
+        },
+        {
+          "add_economic_mood": 0.02
+        }
+      ],
+      "prerequisites": [
+        [
+          "jpn_economic_council"
+        ]
+      ]
+    },
+    {
+      "id": "jpn_research_programme",
+      "name": "Research and innovation",
+      "description": "Fund universities, research institutes and new industries.",
+      "x": 6,
+      "y": 4,
+      "days": 105,
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "research_speed",
+            "value": 0.05,
+            "days": 3650
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "education_quality",
+            "value": 0.02,
+            "days": 3650
+          }
+        }
+      ],
+      "prerequisites": [
+        [
+          "jpn_infrastructure"
+        ]
+      ]
+    },
+    {
+      "id": "jpn_structural_reform",
+      "name": "Structural reform",
+      "description": "Deal with bad bank debts and reform the public sector, as Prime Minister Junichiro Koizumi set out to do.",
+      "x": 1,
+      "y": 1,
+      "days": 70,
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "private_sector_output",
+            "value": 0.03,
+            "days": 3650
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "business",
+            "value": 4
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "rural",
+            "value": -3
+          }
+        }
+      ],
+      "prerequisites": [
+        [
+          "jpn_national_programme"
+        ]
+      ],
+      "available": {
+        "holds_office": {
+          "person": "jpn.junichiro_koizumi",
+          "office": "jpn.prime_minister"
+        }
+      },
+      "ai_weight": 3
+    },
+    {
+      "id": "jpn_postal_privatisation",
+      "name": "Postal privatisation",
+      "description": "Privatise the postal savings system. Japan Post Holdings was founded in January 2006 and took over Japan Post's functions in October 2007.",
+      "x": 0,
+      "y": 2,
+      "days": 70,
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "foreign_investment",
+            "value": 0.03,
+            "days": 3650
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "private_sector_output",
+            "value": 0.02,
+            "days": 3650
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "rural",
+            "value": -4
+          }
+        }
+      ],
+      "prerequisites": [
+        [
+          "jpn_structural_reform"
+        ]
+      ],
+      "available": {
+        "holds_office": {
+          "person": "jpn.junichiro_koizumi",
+          "office": "jpn.prime_minister"
+        }
+      },
+      "ai_weight": 2
+    },
+    {
+      "id": "jpn_public_works",
+      "name": "Public works stimulus",
+      "description": "Spend on public works to support demand.",
+      "x": 3,
+      "y": 1,
+      "days": 70,
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "construction_speed",
+            "value": 0.1,
+            "days": 3650
+          }
+        },
+        {
+          "add_economic_mood": 0.03
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "rural",
+            "value": 4
+          }
+        }
+      ],
+      "prerequisites": [
+        [
+          "jpn_national_programme"
+        ]
+      ],
+      "available": {
+        "ruling_party": "jpn.ldp"
+      },
+      "ai_weight": 2
+    },
+    {
+      "id": "jpn_bank_cleanup",
+      "name": "Clean up the banks",
+      "description": "Force banks to write off bad loans.",
+      "x": 2,
+      "y": 2,
+      "days": 70,
+      "effects": [
+        {
+          "add_economic_mood": 0.03
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "interest_rate",
+            "value": -0.005,
+            "days": 3650
+          }
+        }
+      ],
+      "prerequisites": [
+        [
+          "jpn_structural_reform",
+          "jpn_public_works"
+        ]
+      ]
+    },
+    {
+      "id": "jpn_electronics",
+      "name": "Electronics and robotics",
+      "description": "Lead in electronics, robotics and cars.",
+      "x": 7,
+      "y": 2,
+      "days": 70,
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "research_speed",
+            "value": 0.04,
+            "days": 3650
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "production_efficiency",
+            "value": 0.03,
+            "days": 3650
+          }
+        }
+      ],
+      "prerequisites": [
+        [
+          "jpn_economic_council"
+        ]
+      ]
+    },
+    {
+      "id": "jpn_ageing_society",
+      "name": "An ageing society",
+      "description": "Prepare pensions and care for an ageing population.",
+      "x": 8,
+      "y": 3,
+      "days": 70,
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "welfare_cost",
+            "value": 0.02,
+            "days": 3650
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "health_outcomes",
+            "value": 0.03,
+            "days": 3650
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "immigration",
+            "value": 0.02,
+            "days": 3650
+          }
+        }
+      ],
+      "prerequisites": [
+        [
+          "jpn_electronics"
+        ]
+      ]
+    },
+    {
+      "id": "jpn_self_defence_forces",
+      "name": "Self-Defense Forces",
+      "description": "Modernise the Self-Defense Forces within the constitution.",
+      "x": 10,
+      "y": 2,
+      "days": 70,
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "air_effectiveness",
+            "value": 0.04,
+            "days": 3650
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "naval_effectiveness",
+            "value": 0.04,
+            "days": 3650
+          }
+        }
+      ],
+      "prerequisites": [
+        [
+          "jpn_defence_review"
+        ]
+      ]
+    }
+  ],
+  "source": [
+    {
+      "url": "https://en.wikipedia.org/wiki/Junichiro_Koizumi",
+      "title": "Wikipedia: Junichiro Koizumi",
+      "accessed": "2026-10-15"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Japan_Post_Holdings",
+      "title": "Wikipedia: Japan Post Holdings",
+      "accessed": "2026-10-15"
+    }
+  ],
+  "confidence": "verified"
+}
