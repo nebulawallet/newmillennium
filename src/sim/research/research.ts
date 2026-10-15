@@ -19,6 +19,8 @@ export interface ResearchState {
   /** Days of progress per technology (kept if a slot is switched away). */
   progress: Record<string, number>;
   completed: string[];
+  /** Research speed, refreshed monthly (modifiers change with laws, technologies and events). */
+  speed?: number;
 }
 
 /** Lag in years behind the frontier at the start, for civilian and military categories. */
@@ -129,7 +131,8 @@ export const researchSystem: System = {
     for (const cs of Object.values(state.countries)) {
       const r = cs.research;
       if (!cs.active || !r) continue;
-      const speed = researchSpeed(db, cs).total;
+      r.speed ??= researchSpeed(db, cs).total;
+      const speed = r.speed;
       r.slots.forEach((id, i) => {
         if (!id) {
           if (cs.tag !== state.player && state.day % 5 === i % 5) r.slots[i] = aiPick(ctx, cs);
@@ -144,6 +147,9 @@ export const researchSystem: System = {
         }
       });
     }
+  },
+  monthly({ db, state }) {
+    for (const cs of Object.values(state.countries)) if (cs.active && cs.research) cs.research.speed = researchSpeed(db, cs).total;
   },
   yearly({ db, state }) {
     // growing economies earn more slots

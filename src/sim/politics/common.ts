@@ -8,14 +8,25 @@ import type { Person } from "../../content/schemas/country.ts";
 import { dayOf, isoOf, ymdOf } from "../date.ts";
 import type { CountryState, GameState } from "../state.ts";
 
-/** Policy distance between two sub-ideologies, 0 (same) .. 1 (opposite on every axis). */
+const distanceCache = new WeakMap<ContentDB, Map<string, number>>();
+
+/** Policy distance between two sub-ideologies, 0 (same) .. 1 (opposite on every axis). Memoised per content database. */
 export function policyDistance(db: ContentDB, a: string, b: string): number {
   if (a === b) return 0;
+  let cache = distanceCache.get(db);
+  if (!cache) distanceCache.set(db, (cache = new Map()));
+  const key = a < b ? `${a}|${b}` : `${b}|${a}`;
+  const hit = cache.get(key);
+  if (hit !== undefined) return hit;
   const pa = db.subIdeologies.get(a)?.policy, pb = db.subIdeologies.get(b)?.policy;
-  if (!pa || !pb) return 0.5;
-  let s = 0;
-  for (const ax of POLICY_AXES) s += (pa[ax] - pb[ax]) ** 2;
-  return Math.sqrt(s / POLICY_AXES.length) / 2;
+  let d = 0.5;
+  if (pa && pb) {
+    let s = 0;
+    for (const ax of POLICY_AXES) s += (pa[ax] - pb[ax]) ** 2;
+    d = Math.sqrt(s / POLICY_AXES.length) / 2;
+  }
+  cache.set(key, d);
+  return d;
 }
 
 export const partySub = (db: ContentDB, party: string) => db.parties.get(party)?.sub_ideology ?? "big_tent";

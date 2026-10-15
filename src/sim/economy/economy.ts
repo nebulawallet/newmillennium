@@ -71,6 +71,8 @@ export interface EconomyState {
   estimated: string[];
   /** Economic modifiers in force at the start: only changes from these move the economy (2000 figures already include them). */
   modBase: Record<string, number> | null;
+  /** Construction capacity, refreshed monthly: free civilian factories and points per factory per day. */
+  capacity?: { factories: number; perFactory: number };
 }
 
 const ECON_MODS = ["gdp_growth", "inflation", "interest_rate", "tax_efficiency", "welfare_cost", "population_growth", "construction_speed"];
@@ -307,9 +309,9 @@ function dailyConstruction(ctx: SimContext, cs: CountryState): void {
   const { db, state } = ctx;
   const e = cs.economy!;
   if (!e.construction.length) return;
-  const { factories: free } = constructionPerDay(db, cs);
-  let left = free;
-  const perFactory = db.economyRules.construction_per_factory * (1 + (econMods(db, cs).construction_speed ?? 0));
+  e.capacity ??= refreshCapacity(db, cs);
+  let left = e.capacity.factories;
+  const perFactory = e.capacity.perFactory;
   for (const item of [...e.construction]) {
     if (left <= 0) break;
     const use = Math.min(left, db.economyRules.max_factories_per_project);
@@ -327,6 +329,13 @@ function dailyConstruction(ctx: SimContext, cs: CountryState): void {
     if (b.adds.growth) e.trend += b.adds.growth * (10 / Math.max(10, Math.sqrt(e.gdp)));
     if (cs.tag === state.player) ctx.log(cs.tag, "construction", `${b.name} completed${item.province ? ` in ${ctx.map?.provinces.find((p) => p.id === item.province)?.name ?? "a province"}` : ""}`);
   }
+}
+
+function refreshCapacity(db: ContentDB, cs: CountryState): { factories: number; perFactory: number } {
+  return {
+    factories: constructionPerDay(db, cs).factories,
+    perFactory: db.economyRules.construction_per_factory * (1 + (econMods(db, cs).construction_speed ?? 0)),
+  };
 }
 
 /** Can this building go in this province (owned, below the maximum including queued levels)? */
@@ -369,6 +378,7 @@ export const economySystem: System = {
     const countries = Object.values(state.countries).filter((c) => c.active && c.economy);
     for (const cs of countries) {
       monthlyCountry(ctx, cs);
+      cs.economy!.capacity = refreshCapacity(db, cs);
       if (cs.tag !== state.player) aiConstruction(ctx, cs);
       cs.economy!.shocks = cs.economy!.shocks.filter((s) => s.until > state.day);
     }

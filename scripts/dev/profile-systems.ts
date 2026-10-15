@@ -1,0 +1,20 @@
+/** Dev: time spent per system over N simulated days (npx tsx scripts/dev/profile-systems.ts 730). */
+import { compileContent } from "../../src/content/compile.ts";
+import { ymdOf } from "../../src/sim/date.ts";
+import { defaultSystems, Simulation, type System } from "../../src/sim/simulation.ts";
+import { createInitialState } from "../../src/sim/state.ts";
+import { NodeFiles } from "../lib/nodeFiles.ts";
+const { db } = compileContent(new NodeFiles(), {});
+const times = new Map<string, number>();
+const wrap = (s: System): System => {
+  const t = (k: "daily" | "weekly" | "monthly" | "yearly") =>
+    s[k] && ((ctx: Parameters<NonNullable<System["daily"]>>[0]) => { const a = performance.now(); s[k]!(ctx); times.set(s.id, (times.get(s.id) ?? 0) + performance.now() - a); });
+  return { ...s, daily: t("daily"), weekly: t("weekly"), monthly: t("monthly"), yearly: t("yearly"), init: s.init };
+};
+const sim = new Simulation(db, createInitialState(db, { provinces: [] }, { contentHash: "p" }), defaultSystems().map(wrap));
+const n = Number(process.argv[2] ?? 730);
+const t0 = performance.now();
+for (let i = 0; i < n; i++) sim.step();
+const total = performance.now() - t0;
+console.log(`${n} days in ${total.toFixed(0)} ms (${(total / n).toFixed(3)} ms/day), ${Object.values(sim.state.countries).filter((c) => c.active && c.economy).length} countries; ${ymdOf(sim.state.day).year}`);
+for (const [k, v] of [...times].sort((a, b) => b[1] - a[1])) console.log(`  ${k.padEnd(20)} ${v.toFixed(0)} ms`);

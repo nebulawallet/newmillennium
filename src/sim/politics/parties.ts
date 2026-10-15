@@ -5,7 +5,7 @@
  *    pass to the new party.
  *  - Dissolution: on its dissolution date a party merges into its successor (merged_into /
  *    renamed_to), or its seats pass to independents.
- *  - Polls: each week a party's support moves toward the vote model's current share.
+ *  - Polls: each month a party's support moves toward the vote model's current share.
  */
 import type { ContentDB } from "../../content/compile.ts";
 import { dayOf } from "../date.ts";
@@ -97,14 +97,14 @@ export function createPartyLifecycleSystem(): System {
   };
 }
 
-/** Weekly polls: party support drifts toward the model's current share. */
+/** Monthly polls: party support drifts toward the model's current share. */
 export const pollSystem: System = {
   id: "polls",
-  weekly({ db, state }) {
+  monthly({ db, state }) {
     for (const cs of Object.values(state.countries)) {
       if (!cs.active || !Object.keys(cs.partyStatus).length) continue;
       const m = modelShares(db, cs, state.day);
-      for (const [p, v] of Object.entries(m)) cs.partyPopularity[p] = (cs.partyPopularity[p] ?? 0) * 0.92 + v * 0.08;
+      for (const [p, v] of Object.entries(m)) cs.partyPopularity[p] = (cs.partyPopularity[p] ?? 0) * 0.7 + v * 0.3;
     }
   },
 };
