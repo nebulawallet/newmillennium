@@ -1,0 +1,139 @@
+{
+  "tag": "ISR",
+  "name": { "en": "Israel", "native": "Yisra'el", "official": { "en": "State of Israel", "native": "Medinat Yisra'el" } },
+  "adjective": "Israeli",
+  "culture_primary": "jewish_israeli",
+  "government": {
+    "type": "parliamentary",
+    "effective_executive": "isr.prime_minister",
+    "head_of_state_office": "isr.president",
+    "head_of_government_office": "isr.prime_minister",
+    "constitution": {
+      "term_limit_amendable": true,
+      "emergency_powers": true,
+      "referendum_required_for": []
+    },
+    "note": "Parliamentary republic without a single written constitution; the Basic Laws serve constitutional functions. On 1 January 2000 the Prime Minister was directly elected (a system used for the 1996, 1999 and 2001 elections) while governing with the confidence of the Knesset. The direct election was abolished before the 2003 Knesset election; since then the President asks a Knesset member to form a government after consultations with the parties. The President, elected by the Knesset, is largely ceremonial."
+  },
+  "offices": [
+    {
+      "id": "isr.president",
+      "title": { "en": "President of the State of Israel", "native": "Nesi Medinat Yisra'el" },
+      "role": "head_of_state",
+      "power_weight": 0.1,
+      "selection": "legislature",
+      "term_years": 7,
+      "term_limit": { "max_terms": 1, "consecutive_only": false },
+      "succession": { "type": "acting_then_election" },
+      "holders": [
+        { "person": "isr.ezer_weizman", "from": "1993-05-13", "to": "2000-07-13", "note": "Resigned." },
+        { "person": "isr.avraham_burg", "from": "2000-07-13", "to": "2000-08-01", "acting": true, "note": "Acting as Speaker of the Knesset." },
+        { "person": "isr.moshe_katsav", "from": "2000-08-01", "to": "2007-07-01", "note": "On leave of absence from 25 January 2007; resignation took effect on 1 July 2007." },
+        { "person": "isr.dalia_itzik", "from": "2007-01-25", "to": "2007-07-15", "acting": true, "note": "Acting as Speaker of the Knesset during the President's leave of absence and, from 1 July 2007, until the next President's inauguration. Majalli Wahabi briefly acted while she travelled abroad." },
+        { "person": "isr.shimon_peres", "from": "2007-07-15", "to": "2014-07-24" },
+        { "person": "isr.reuven_rivlin", "from": "2014-07-24", "to": "2021-07-07" },
+        { "person": "isr.isaac_herzog", "from": "2021-07-07", "note": "Wikipedia's President of Israel article also gives 9 July as the start of his term in one passage; the list of presidents and the inauguration report give 7 July 2021." }
+      ],
+      "note": "The Speaker of the Knesset acts as President during a vacancy or incapacity. Wikidata gives 13 June 2000 for the end of Weizman's term and 13 June 2007 (the election date) for the start of Peres's; the list of presidents gives 13 July 2000 and 15 July 2007.",
+      "source": [
+        { "url": "https://www.wikidata.org/wiki/Q327948", "title": "Wikidata: President of Israel (position held by)", "accessed": "2026-10-15" },
+        { "url": "https://en.wikipedia.org/wiki/List_of_presidents_of_Israel", "title": "Wikipedia: List of presidents of Israel (incl. acting presidents)", "accessed": "2026-10-15" },
+        { "url": "https://en.wikipedia.org/wiki/President_of_Israel", "title": "Wikipedia: President of Israel", "accessed": "2026-10-15" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "isr.prime_minister",
+      "title": { "en": "Prime Minister", "native": "Rosh HaMemshala" },
+      "role": "head_of_government",
+      "power_weight": 0.9,
+      "selection": "legislature",
+      "appointed_by": "isr.president",
+      "term_years": 4,
+      "succession": { "type": "acting_then_election" },
+      "holders": [
+        { "person": "isr.ehud_barak", "from": "1999-07-06", "to": "2001-03-07", "note": "Directly elected in May 1999." },
+        { "person": "isr.ariel_sharon", "from": "2001-03-07", "to": "2006-04-14", "note": "Directly elected in February 2001. From 4 January 2006 the powers of the office were exercised by the Acting Prime Minister; his tenure ended on 14 April 2006 under section 16(b) of Basic Law: The Government." },
+        { "person": "isr.ehud_olmert", "from": "2006-01-04", "to": "2006-04-14", "acting": true, "note": "Acting Prime Minister under Basic Law: The Government." },
+        { "person": "isr.ehud_olmert", "from": "2006-04-14", "to": "2009-03-31", "note": "Interim Prime Minister from 14 April 2006, Prime Minister from 4 May 2006. Resigned on 21 September 2008 and headed an interim government until 31 March 2009." },
+        { "person": "isr.benjamin_netanyahu", "from": "2009-03-31", "to": "2021-06-13" },
+        { "person": "isr.naftali_bennett", "from": "2021-06-13", "to": "2022-07-01", "note": "Rotation agreement of the 36th government; Yair Lapid was Alternate Prime Minister." },
+        { "person": "isr.yair_lapid", "from": "2022-07-01", "to": "2022-12-29" },
+        { "person": "isr.benjamin_netanyahu", "from": "2022-12-29" }
+      ],
+      "note": "Wikidata lists Olmert from 4 January 2006 without distinguishing the acting period; the list of prime ministers separates acting (4 January-14 April 2006), interim (14 April-4 May 2006) and full tenure.",
+      "source": [
+        { "url": "https://www.wikidata.org/wiki/Q208487", "title": "Wikidata: Prime Minister of Israel (position held by)", "accessed": "2026-10-15" },
+        { "url": "https://en.wikipedia.org/wiki/List_of_prime_ministers_of_Israel", "title": "Wikipedia: List of prime ministers of Israel", "accessed": "2026-10-15" }
+      ],
+      "confidence": "verified"
+    }
+  ],
+  "legislature": {
+    "name": { "en": "Knesset", "native": "HaKnesset" },
+    "chambers": [
+      {
+        "id": "knesset",
+        "name": { "en": "Knesset", "native": "HaKnesset" },
+        "seats": 120,
+        "term_years": 4,
+        "elected": "direct",
+        "system": {
+          "type": "list_pr",
+          "formula": "dhondt",
+          "threshold": 0.015,
+          "district_model": "national",
+          "note": "Closed-list proportional representation in a single national constituency. The threshold was 3.25% for the 2026 election and lower in 1999 (1.5% is recorded here, pending review). seats_2000 is the result of the May 1999 election (15th Knesset); later defections and splits within the term are not reflected. One Israel's 26 seats (a joint list of Labor, Gesher and Meimad) are recorded under Labor, and Balad's 2 seats include Ahmad Tibi of Ta'al, elected on the joint Balad list."
+        },
+        "seats_2000": {
+          "isr.labor": 26,
+          "isr.likud": 19,
+          "isr.shas": 17,
+          "isr.meretz": 10,
+          "isr.yisrael_baaliyah": 6,
+          "isr.shinui": 6,
+          "isr.centre_party": 6,
+          "isr.nrp": 5,
+          "isr.utj": 5,
+          "isr.ual": 5,
+          "isr.national_union": 4,
+          "isr.yisrael_beiteinu": 4,
+          "isr.hadash": 3,
+          "isr.balad": 2,
+          "isr.one_nation": 2
+        },
+        "confidence_chamber": true,
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/1999_Israeli_general_election", "title": "Wikipedia: 1999 Israeli general election", "accessed": "2026-10-15" }
+        ],
+        "confidence": "needs_review",
+        "review_note": "Seats are the 1999 election result. Check the 15th Knesset faction strengths on 1 January 2000 (e.g. the Knesset website), the 1999 threshold (1.5% recorded) and the seat formula (D'Hondt-type, Bader-Ofer, recorded as dhondt)."
+      }
+    ]
+  },
+  "party_system": "multi_party",
+  "start_2000": {
+    "ruling_parties": ["isr.labor", "isr.shas", "isr.meretz", "isr.yisrael_baaliyah", "isr.centre_party", "isr.nrp"],
+    "ideology_support": {
+      "social_democrat": 0.299,
+      "national_conservative": 0.172,
+      "jewish_religious": 0.210,
+      "liberal_conservative": 0.078,
+      "classical_liberal": 0.051,
+      "centrist_liberal": 0.050,
+      "islamic_democrat": 0.035,
+      "reformed_communist": 0.026,
+      "regionalist": 0.020,
+      "big_tent": 0.059
+    },
+    "ideology_support_note": "Derived from the 1999 Knesset list vote shares: social democrat = One Israel 20.26% + Meretz 7.66% + One Nation 1.94%; national conservative = Likud 14.14% + National Union 3.03%; Jewish religious = Shas 13.01% + NRP 4.24% + UTJ 3.80%; liberal conservative = Yisrael BaAliyah 5.19% + Yisrael Beiteinu 2.60%; classical liberal = Shinui 5.07%; centrist liberal = Centre Party 5.00%; Islamic democrat = United Arab List 3.47%; reformed communist = Hadash 2.63%; regionalist = Balad 2.00% (Arab nationalist; no closer sub-ideology exists); big tent = lists below the threshold, about 6%.",
+    "stability": 0.55,
+    "war_support": 0.45
+  },
+  "claims": [],
+  "source": [
+    { "url": "https://en.wikipedia.org/wiki/1999_Israeli_general_election", "title": "Wikipedia: 1999 Israeli general election", "accessed": "2026-10-15" },
+    { "url": "https://en.wikipedia.org/wiki/List_of_prime_ministers_of_Israel", "title": "Wikipedia: List of prime ministers of Israel (governments and coalition parties)", "accessed": "2026-10-15" }
+  ],
+  "confidence": "verified"
+}

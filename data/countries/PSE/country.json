@@ -1,0 +1,291 @@
+{
+  "tag": "PSE",
+  "name": {
+    "en": "Palestine",
+    "native": "Filastin",
+    "official": {
+      "en": "Palestinian National Authority",
+      "native": "al-Sulta al-Wataniya al-Filastiniya"
+    }
+  },
+  "adjective": "Palestinian",
+  "culture_primary": "palestinian",
+  "government": {
+    "type": "presidential",
+    "effective_executive": "pse.president",
+    "head_of_state_office": "pse.president",
+    "head_of_government_office": "pse.prime_minister",
+    "constitution": {
+      "term_limit_amendable": true,
+      "emergency_powers": true,
+      "referendum_required_for": []
+    },
+    "note": "Government type as on 1 January 2000. The Palestinian National Authority was formed on 4 May 1994 under the Gaza-Jericho Agreement as a five-year interim body exercising limited self-government in parts of the West Bank and the Gaza Strip; the interim period expired in 1999 without a final-status agreement. The directly elected President headed the executive. The office of Prime Minister was created in 2003, when the Basic Law was amended so that each new government requires the Legislative Council's approval (in effect a semi-presidential system from then on; the type field keeps the 2000 value). The PLO title 'President of the State of Palestine' (state proclaimed in 1988) has been held by the same person as the PA presidency. After the Legislative Council election of January 2006, Hamas formed a government under Ismail Haniyeh; a national unity government followed in March 2007. On 14 June 2007, after fighting between Fatah and Hamas in the Gaza Strip, President Abbas dismissed that government and declared a state of emergency, and on 15 June appointed a new government under Salam Fayyad. Since then the administration has been divided: the Authority's Ramallah-based government administers the PA areas of the West Bank, while the Gaza Strip, de jure under the Authority, has been administered de facto by Hamas (Haniyeh continued to head a government there until June 2014, when a unity government was sworn in). The Legislative Council has not convened since 2007 and laws have been issued by presidential decree. A Vice President of the State of Palestine, first in the line of succession, was created in April 2025."
+  },
+  "offices": [
+    {
+      "id": "pse.president",
+      "title": {
+        "en": "President of the Palestinian National Authority",
+        "native": "Ra'is al-Sulta al-Wataniya al-Filastiniya"
+      },
+      "role": "head_of_state",
+      "power_weight": 0.8,
+      "selection": "direct_election",
+      "term_years": 4,
+      "succession": {
+        "type": "acting_then_election"
+      },
+      "holders": [
+        {
+          "person": "pse.yasser_arafat",
+          "from": "1994-07-05",
+          "to": "2004-11-11",
+          "note": "Took the title in 1994; elected in January 1996. Died in office."
+        },
+        {
+          "person": "pse.rawhi_fattouh",
+          "from": "2004-11-11",
+          "to": "2005-01-15",
+          "acting": true,
+          "note": "Acting as Speaker of the Legislative Council under Article 54(2) of the Basic Law."
+        },
+        {
+          "person": "pse.mahmoud_abbas",
+          "from": "2005-01-15",
+          "note": "Elected in January 2005 for a four-year term; no presidential election has been held since, and he has continued in office since the term's expiry on 9 January 2009. Also President of the State of Palestine (acting from May 2005, elected by the PLO Central Council on 23 November 2008)."
+        }
+      ],
+      "note": "Wikidata also lists Aziz Duwaik, Speaker of the Legislative Council, as holder from 9 January 2009 to 5 January 2013, reflecting the dispute over the presidency after the four-year term expired; the Wikipedia list of presidents does not include him, and he is not recorded as a holder here.",
+      "source": [
+        {
+          "url": "https://www.wikidata.org/wiki/Q2336111",
+          "title": "Wikidata: President of the Palestinian National Authority (position held by)",
+          "accessed": "2026-10-15"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/President_of_the_State_of_Palestine",
+          "title": "Wikipedia: President of the State of Palestine (list of presidents)",
+          "accessed": "2026-10-15"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/Palestinian_National_Authority",
+          "title": "Wikipedia: Palestinian National Authority (succession in 2004)",
+          "accessed": "2026-10-15"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/2005_Palestinian_presidential_election",
+          "title": "Wikipedia: 2005 Palestinian presidential election (term expiry)",
+          "accessed": "2026-10-15"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "pse.prime_minister",
+      "title": {
+        "en": "Prime Minister",
+        "native": "Ra'is al-Wuzara"
+      },
+      "role": "head_of_government",
+      "power_weight": 0.3,
+      "selection": "appointed",
+      "appointed_by": "pse.president",
+      "holders": [
+        {
+          "person": null,
+          "from": "1994-07-05",
+          "to": "2003-03-19",
+          "vacant_reason": "The office did not exist until the Basic Law was amended in 2003; the President headed the government."
+        },
+        {
+          "person": "pse.mahmoud_abbas",
+          "from": "2003-03-19",
+          "to": "2003-09-06",
+          "note": "Wikidata gives 30 March to 7 October 2003; the Wikipedia list gives 19 March to 6 September 2003."
+        },
+        {
+          "person": "pse.ahmed_qurei",
+          "from": "2003-09-06",
+          "to": "2003-10-07",
+          "acting": true,
+          "note": "Acting as Speaker of the Legislative Council; appointed Prime Minister by decree on 5 October 2003."
+        },
+        {
+          "person": "pse.ahmed_qurei",
+          "from": "2003-10-07",
+          "to": "2005-12-15"
+        },
+        {
+          "person": "pse.nabil_shaath",
+          "from": "2005-12-15",
+          "to": "2005-12-24",
+          "acting": true
+        },
+        {
+          "person": "pse.ahmed_qurei",
+          "from": "2005-12-24",
+          "to": "2006-03-29",
+          "note": "Resigned after the January 2006 election and remained as interim Prime Minister until his successor's government was sworn in."
+        },
+        {
+          "person": "pse.ismail_haniyeh",
+          "from": "2006-03-29",
+          "to": "2007-06-14",
+          "note": "Headed a national unity government from 17 March 2007. Dismissed by the President on 14 June 2007; continued to head the government in the Gaza Strip until 2 June 2014, which the Ramallah-based Authority did not recognise."
+        },
+        {
+          "person": "pse.salam_fayyad",
+          "from": "2007-06-15",
+          "to": "2013-06-06",
+          "note": "Appointed by presidential decree; styled Prime Minister of the State of Palestine from 6 January 2013."
+        },
+        {
+          "person": "pse.rami_hamdallah",
+          "from": "2013-06-06",
+          "to": "2019-04-14",
+          "note": "Resigned on 23 June 2013 and was reappointed on 19 September 2013 and 2 June 2014."
+        },
+        {
+          "person": "pse.mohammad_shtayyeh",
+          "from": "2019-04-14",
+          "to": "2024-03-31"
+        },
+        {
+          "person": "pse.mohammad_mustafa",
+          "from": "2024-03-31"
+        }
+      ],
+      "note": "Appointed by the President; each government is presented to the Legislative Council for approval under the amended Basic Law.",
+      "source": [
+        {
+          "url": "https://www.wikidata.org/wiki/Q2344709",
+          "title": "Wikidata: Prime Minister of the Palestinian National Authority (position held by)",
+          "accessed": "2026-10-15"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/Prime_Minister_of_the_Palestinian_National_Authority",
+          "title": "Wikipedia: Prime Minister of the Palestinian National Authority (list, incl. acting)",
+          "accessed": "2026-10-15"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/Prime_Minister_of_the_State_of_Palestine",
+          "title": "Wikipedia: Prime Minister of the State of Palestine (list from 2013)",
+          "accessed": "2026-10-15"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "pse.vice_president",
+      "title": {
+        "en": "Vice President of the State of Palestine",
+        "native": "Na'ib Ra'is Dawlat Filastin"
+      },
+      "role": "deputy",
+      "power_weight": 0.05,
+      "selection": "appointed",
+      "appointed_by": "pse.president",
+      "holders": [
+        {
+          "person": "pse.hussein_al_sheikh",
+          "from": "2025-04-26"
+        }
+      ],
+      "note": "Established by the Palestinian Central Council on 24 April 2025; the President appoints the Vice President from among the PLO Executive Committee. First in the presidential line of succession.",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Vice_President_of_the_State_of_Palestine",
+          "title": "Wikipedia: Vice President of the State of Palestine",
+          "accessed": "2026-10-15"
+        }
+      ],
+      "confidence": "verified"
+    }
+  ],
+  "legislature": {
+    "name": {
+      "en": "Palestinian Legislative Council",
+      "native": "al-Majlis al-Tashri'i al-Filastini"
+    },
+    "chambers": [
+      {
+        "id": "plc",
+        "name": {
+          "en": "Palestinian Legislative Council",
+          "native": "al-Majlis al-Tashri'i al-Filastini"
+        },
+        "seats": 88,
+        "term_years": 4,
+        "elected": "direct",
+        "system": {
+          "type": "block",
+          "district_model": "custom",
+          "note": "1996: 88 members chosen by block voting in multi-member constituencies. In June 2005 the Council was enlarged to 132 seats: 66 by national list PR (Sainte-Lague, 2% threshold) and 66 in 16 multi-member districts (used in 2006). In September 2007 a presidential decree changed the system to full proportional representation. The Council has not convened since 2007. seats_2000 is the 1996 election result."
+        },
+        "seats_2000": {
+          "pse.fatah": 50,
+          "pse.fida": 1,
+          "others": 2,
+          "independents": 35
+        },
+        "confidence_chamber": false,
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/1996_Palestinian_general_election",
+            "title": "Wikipedia: 1996 Palestinian general election",
+            "accessed": "2026-10-15"
+          },
+          {
+            "url": "https://en.wikipedia.org/wiki/Palestinian_Legislative_Council",
+            "title": "Wikipedia: Palestinian Legislative Council",
+            "accessed": "2026-10-15"
+          },
+          {
+            "url": "https://en.wikipedia.org/wiki/2006_Palestinian_legislative_election",
+            "title": "Wikipedia: 2006 Palestinian legislative election (electoral system)",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "needs_review",
+        "review_note": "Sources disagree on Fatah's 1996 seats: the 1996 election infobox gives Fatah 50 and independents 35 (plus FIDA 1 and two other lists with 1 each, recorded as 'others'); the Legislative Council article says Fatah won 62 of 88, and the 2006 election article says Fatah held 68 of 88 before 2006 (counting Fatah-aligned independents)."
+      }
+    ]
+  },
+  "party_system": "multi_party",
+  "start_2000": {
+    "ruling_parties": [
+      "pse.fatah"
+    ],
+    "ideology_support": {
+      "social_democrat": 0.55,
+      "islamist": 0.25,
+      "marxist_leninist": 0.07,
+      "reformed_communist": 0.02,
+      "democratic_socialist": 0.02,
+      "big_tent": 0.09
+    },
+    "ideology_support_note": "Estimate. The last vote before 2000, the 1996 Legislative Council election, was boycotted by Hamas, so its shares (Fatah 30.9% of list votes and most of the 57.5% for independents) overstate Fatah. The estimate blends that result with the first contested vote, the 2006 election (Hamas 44.45%, Fatah 41.43%, PFLP 4.25%, other left lists about 5%): social democrat = Fatah (no secular-nationalist sub-ideology exists) and the smaller centre-left lists; islamist = Hamas and Islamic Jihad; Marxist-Leninist = PFLP and DFLP; reformed communist = PPP; democratic socialist = FIDA; big tent = independents and clan-based candidates.",
+    "stability": 0.5,
+    "war_support": 0.4
+  },
+  "claims": [],
+  "source": [
+    {
+      "url": "https://en.wikipedia.org/wiki/Palestinian_National_Authority",
+      "title": "Wikipedia: Palestinian National Authority",
+      "accessed": "2026-10-15"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Fatah%E2%80%93Hamas_conflict",
+      "title": "Wikipedia: Fatah-Hamas conflict (2007 split, 2014 unity government)",
+      "accessed": "2026-10-15"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Palestinian_Legislative_Council",
+      "title": "Wikipedia: Palestinian Legislative Council",
+      "accessed": "2026-10-15"
+    }
+  ],
+  "confidence": "verified"
+}

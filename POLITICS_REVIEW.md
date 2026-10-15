@@ -48,11 +48,11 @@ Live sources sometimes report allegations or investigations involving real peopl
 
 <!-- AUTO-GENERATED BELOW: run `npm run review-report`; edits below this line are overwritten -->
 
-## Needs review: 120 of 1478 records
+## Needs review: 176 of 2393 records
 
-Countries with politics data: 17 / 212.
+Countries with politics data: 26 / 212.
 
-Countries with no data yet (195): ALB, AUT, BEL, BIH, BGR, HRV, CYP, DNK, FIN, GRC, HUN, ISL, IRL, ITA, LIE, LUX, MLT, MCO, MKD, PRT, ROU, SMR, SVK, SVN, CHE, YUG, MNE, KOS, VAT, NCY, UKR, BLR, MDA, EST, LVA, LTU, GEO, ARM, AZE, KAZ, KGZ, TJK, TKM, UZB, PMR, ABK, SOS, NKR, ICH, CAN, ATG, ARG, BHS, BRB, BLZ, BOL, BRA, CHL, COL, CRI, CUB, DMA, DOM, ECU, SLV, GRD, GTM, GUY, HTI, HND, JAM, MEX, NIC, PAN, PRY, PER, KNA, LCA, VCT, SUR, TTO, URY, VEN, FAR, DZA, BHR, EGY, IRQ, ISR, JOR, KWT, LBN, LBY, MRT, MAR, OMN, QAT, SAU, SYR, TUN, ARE, YEM, PSE, ESH, KUR, AGO, BEN, BWA, BFA, BDI, CPV, CMR, CAF, TCD, COM, COD, COG, CIV, DJI, GNQ, ERI, SWZ, ETH, GAB, GMB, GHA, GIN, GNB, KEN, LSO, LBR, MDG, MWI, MLI, MUS, MOZ, NAM, NER, NGA, RWA, STP, SEN, SYC, SLE, ZAF, SDN, TZA, TGO, UGA, ZMB, ZWE, SSD, SML, UNI, RCD, MLC, AFG, AFN, BGD, BTN, IND, MDV, NPL, PAK, LKA, TEL, KOR, PRK, MNG, TWN, BRN, KHM, IDN, LAO, MYS, MMR, PHL, SGP, THA, VNM, TLS, AUS, NZL, FJI, PNG, SLB, VUT, WSM, TON, KIR, TUV, NRU, FSM, MHL, PLW
+Countries with no data yet (186): ALB, AUT, BIH, BGR, HRV, CYP, FIN, GRC, ISL, IRL, LIE, LUX, MLT, MKD, ROU, SMR, SVK, SVN, CHE, YUG, MNE, KOS, VAT, NCY, UKR, BLR, MDA, EST, LVA, LTU, GEO, ARM, AZE, KAZ, KGZ, TJK, TKM, UZB, PMR, ABK, SOS, NKR, ICH, CAN, ATG, ARG, BHS, BRB, BLZ, BOL, BRA, CHL, COL, CRI, CUB, DMA, DOM, ECU, SLV, GRD, GTM, GUY, HTI, HND, JAM, MEX, NIC, PAN, PRY, PER, KNA, LCA, VCT, SUR, TTO, URY, VEN, FAR, DZA, BHR, EGY, IRQ, JOR, KWT, LBN, LBY, MRT, MAR, OMN, QAT, SAU, SYR, TUN, ARE, YEM, ESH, KUR, AGO, BEN, BWA, BFA, BDI, CPV, CMR, CAF, TCD, COM, COD, COG, CIV, DJI, GNQ, ERI, SWZ, ETH, GAB, GMB, GHA, GIN, GNB, KEN, LSO, LBR, MDG, MWI, MLI, MUS, MOZ, NAM, NER, NGA, RWA, STP, SEN, SYC, SLE, ZAF, SDN, TZA, TGO, UGA, ZMB, ZWE, SSD, SML, UNI, RCD, MLC, AFG, AFN, BGD, BTN, IND, MDV, NPL, PAK, LKA, TEL, PRK, MNG, TWN, BRN, KHM, IDN, LAO, MYS, MMR, PHL, SGP, THA, VNM, TLS, AUS, NZL, FJI, PNG, SLB, VUT, WSM, TON, KIR, TUV, NRU, FSM, MHL, PLW
 
 ### AND — Andorra (12)
 
@@ -71,6 +71,16 @@ Countries with no data yet (195): ALB, AUT, BEL, BIH, BGR, HRV, CYP, DNK, FIN, G
 | party | `and.ae` Andorra Forward (AE) | Sub-ideology (right_populist) not checked against a fetched source. | data/countries/AND/parties.json |
 | party | `and.concordia` Concord (Concòrdia) | Sub-ideology (centrist_liberal) not checked against a fetched source; Escalé's start as leader assumed from the founding date. | data/countries/AND/parties.json |
 
+### BEL — Belgium (5)
+
+| kind | record | what to check | file |
+|---|---|---|---|
+| party | `bel.vu` People's Union (VU) | The 1999 results table labels the list 'People's Union'; confirm the list composition and that the cordon sanitaire agreement covered the VU (the source says 'all the traditional Flemish parties'). | data/countries/BEL/parties.json |
+| party | `bel.pvda` Workers' Party of Belgium (PVDA-PTB) | Ludo Martens's end date and Peter Mertens's start date (entered as 2008) are not given in the fetched sources; confirm the handover. | data/countries/BEL/parties.json |
+| party | `bel.les_engages` The Committed (LE) | Wikipedia's infobox lists Yvan Verougstraete as acting president but gives no date; confirm when (and whether) Maxime Prévot's presidency ended and add Verougstraete. | data/countries/BEL/parties.json |
+| party | `bel.ecolo` Ecolo (Ecolo) | Neither Wikipedia nor Wikidata (as fetched) gives a dated list of Ecolo co-presidents; add the leader history from 1999 (e.g. from the French Wikipedia). | data/countries/BEL/parties.json |
+| party | `bel.defi` DéFI (DéFI) | Leader history incomplete: Wikidata lists Maingain from 1995 with no end date. Add the end of Maingain's presidency, François De Smet's term, and Sophie Rohonyi from July 2024. | data/countries/BEL/parties.json |
+
 ### CHN — China (4)
 
 | kind | record | what to check | file |
@@ -79,6 +89,18 @@ Countries with no data yet (195): ALB, AUT, BEL, BIH, BGR, HRV, CYP, DNK, FIN, G
 | person | `chn.sang_guowei` Sang Guowei (b. 1941) | Birth date 1941-11-11 and death date 2023-12-07 come from Wikidata only; no birth or death date was found in the Wikipedia infobox. Confirm both. | data/countries/CHN/people.json |
 | party | `chn.rcck` Revolutionary Committee of the Chinese Kuomintang (RCCK) | The Wikipedia chair table ends Wan Exiang's term on 18 March 2018 and starts Zheng Jianbang on 10 December 2022, leaving a gap; Wikidata shows Wan Exiang as chair from December 2012 with no end. Wan is recorded here until Zheng took over. Confirm who chaired the RCCK from 2018 to 2022. | data/countries/CHN/parties.json |
 | party | `chn.cdp` China Democracy Party (CDP) | The article says the party's history and founding date are unclear because several groups founded it along different paths; the infobox date (28 June 1998) is used. Leaders are left empty for Pass B. Confirm the founding date and whether to list its founders. | data/countries/CHN/parties.json |
+
+### CZE — Czech Republic (7)
+
+| kind | record | what to check | file |
+|---|---|---|---|
+| party | `cze.spr_rsc` Rally for the Republic – Republican Party of Czechoslovakia (SPR-RSČ) | Leadership after 2000 and founding/dissolution years rest on Wikidata only; check the party article. | data/countries/CZE/parties.json |
+| party | `cze.sz` Green Party (SZ) | Leader history is from Wikidata only; cross-check against the party's Wikipedia article. | data/countries/CZE/parties.json |
+| party | `cze.auto` Motorists for Themselves (AUTO) | The year Macinka became leader was not in the fetched sources; 2025 (the year he is first documented as leader) is a placeholder. Check the party article. | data/countries/CZE/parties.json |
+| election | `senate_2002` legislative_upper 2002-10-25 | Post-election Senate composition (seats) is derived from the last three elections' seats won, not taken from a source; check the Senate composition after November 2002 (party switches and by-elections are not reflected). | data/countries/CZE/elections.json |
+| election | `senate_2004` legislative_upper 2004-11-05 | Post-election Senate composition (seats) is derived from seats won in 2000-2004, not taken from a source; check the composition after November 2004. | data/countries/CZE/elections.json |
+| election | `senate_2012` legislative_upper 2012-10-12 | Post-election Senate composition (seats) is derived from seats won in 2008-2012, not taken from a source; check the composition after October 2012. | data/countries/CZE/elections.json |
+| election | `senate_2014` legislative_upper 2014-10-10 | Post-election Senate composition (seats) is derived from seats won in 2010-2014, not taken from a source; check the composition after October 2014. | data/countries/CZE/elections.json |
 
 ### DEU — Germany (5)
 
@@ -136,6 +158,15 @@ Countries with no data yet (195): ALB, AUT, BEL, BIH, BGR, HRV, CYP, DNK, FIN, G
 | party | `gbr.respect` Respect Party (Respect) | Leader history is empty: the infobox names no leader (the 2005 results table names Linda Smith). Confirm the party's leaders or national chairs 2004-2016. | data/countries/GBR/parties.json |
 | party | `gbr.your_party` Your Party (YP) | Check how many sitting MPs belong to the party and the date Corbyn became parliamentary leader (stored as the year 2025). | data/countries/GBR/parties.json |
 
+### HUN — Hungary (4)
+
+| kind | record | what to check | file |
+|---|---|---|---|
+| party | `hun.kdnp` Christian Democratic People's Party (KDNP) | Leaders on 1 January 2000 and until 2003 (Giczy, Varga) are missing; check the party's leader list. | data/countries/HUN/parties.json |
+| party | `hun.egyutt` Together (Együtt) | Leaders (including Gordon Bajnai and Péter Juhász) and dates are not recorded; check the party article. | data/countries/HUN/parties.json |
+| party | `hun.dk` Democratic Coalition (DK) | When Gyurcsány stepped down and Dobrev became leader is unknown here; Dobrev's entry is dated only to 2026, the year she resigned. Check the DK leadership history. | data/countries/HUN/parties.json |
+| party | `hun.momentum` Momentum Movement (Momentum) | Fekete-Győr's term dates and later leaders are not recorded; check the party's leadership history. | data/countries/HUN/parties.json |
+
 ### IRN — Iran (19)
 
 | kind | record | what to check | file |
@@ -160,6 +191,27 @@ Countries with no data yet (195): ALB, AUT, BEL, BIH, BGR, HRV, CYP, DNK, FIN, G
 | election | `majlis_2024` legislative 2024-03-01 | Check the camp assignment of the Voice of the Nation list (47 seats), which the infobox places under the reformists although its leader is usually described as an independent conservative, and whether the People's Alliance of Islamic Revolution should map to the Stability Front. | data/countries/IRN/elections.json |
 | election | `supreme_leader_2026` indirect_presidential 2026-03-08 | Vote totals were not published: the infobox gives the winner's tally only as at least 59, and lists Hassan Rouhani and Hassan Khomeini as other names considered, with unknown votes. Confirm the date and any published count. | data/countries/IRN/elections.json |
 
+### ISR — Israel (7)
+
+| kind | record | what to check | file |
+|---|---|---|---|
+| chamber | `knesset` Knesset | Seats are the 1999 election result. Check the 15th Knesset faction strengths on 1 January 2000 (e.g. the Knesset website), the 1999 threshold (1.5% recorded) and the seat formula (D'Hondt-type, Bader-Ofer, recorded as dhondt). | data/countries/ISR/country.json |
+| party | `isr.centre_party` Centre Party (Merkaz) | Check who led the party after Yitzhak Mordechai left politics in 2000, and its exact dissolution date. | data/countries/ISR/parties.json |
+| party | `isr.nrp` National Religious Party (NRP) | Leader years are inferred from the leaders listed in the infobox, the list leaders at the 1999 (Levy) and 2003 (Eitam) elections and Eitam's suspension as chairman in February 2005; confirm the year of each leadership change. | data/countries/ISR/parties.json |
+| party | `isr.utj` United Torah Judaism (UTJ) | Leader years are the list leaders at Knesset elections (1999 Porush; 2003-2020 Litzman; 2021 Gafni; 2022 Goldknopf), not formal leadership dates. The September 2026 change to Ya'akov Asher rests on one cited report (ynet, 5 September 2026). | data/countries/ISR/parties.json |
+| party | `isr.ual` United Arab List (Ra'am) (Ra'am) | Leader years are inferred from list leaders at Knesset elections (1999-2003 Dehamshe; 2006-2013 Sarsur; April 2019 onward Mansour Abbas); confirm formal leadership dates. | data/countries/ISR/parties.json |
+| party | `isr.taal` Ta'al (Arab Movement for Renewal) (Ta'al) | Wikipedia dates the founding to the run-up to the 1996 election with a citation-needed tag; confirm the founding year. | data/countries/ISR/parties.json |
+| party | `isr.gil` Gil (Pensioners of Israel) (Gil) | The infobox gives the founding only as '1990s'; 1996 is the first election it contested. Confirm the founding year and leadership dates. | data/countries/ISR/parties.json |
+
+### ITA — Italy (4)
+
+| kind | record | what to check | file |
+|---|---|---|---|
+| chamber | `camera` Chamber of Deputies | seats_2000 is the April 1996 election result, mapped to the parties existing in 2000 (PDS -> DS; the Populars for Prodi list -> PPI, incl. 5 UD and 2 PRI deputies; CCD-CDU split 19/11 as given in the source). The real group composition on 1 January 2000 differed substantially after mid-term splits (PdCI from PRC in 1998, UDEUR, The Democrats, SDI). Check the parliamentary group composition of the XIII legislature on that date. 'others' = The Network 3, Ladin Autonomist Union 1, Southern Action League 1, Aosta Valley 1. | data/countries/ITA/country.json |
+| chamber | `senato` Senate of the Republic | The 315 elected seats are the April 1996 result mapped to 2000 parties (PDS -> DS; Progressives -> PRC; SVP-PATT -> SVP); mid-term splits before 1 January 2000 are not reflected. 'appointed' = 9 senators for life on that date (former Presidents Leone, Cossiga and Scalfaro; appointed senators Bo, Bobbio, Agnelli, Andreotti, De Martino and Taviani). 'others' = The Network, Venetian Autonomy League, Sardinian Action Party, Pannella-Sgarbi List and Aosta Valley, 1 each. Check the group composition on 1 January 2000. | data/countries/ITA/country.json |
+| person | `ita.benedetto_della_vedova` Benedetto Della Vedova (b. 1962) | Birth year conflicts within the Wikipedia article: the infobox gives 3 April 1963, the lead and categories 3 April 1962. Check an official source (Senate/Chamber biography) and add birth_date. | data/countries/ITA/people.json |
+| party | `ita.si` Italian Left (SI) | Confirm the founding date: Wikidata gives 7 November 2015, while Fratoianni's article dates his first term as secretary from 19 February 2017. The secretary between June 2019 and February 2021 is not recorded. | data/countries/ITA/parties.json |
+
 ### JPN — Japan (12)
 
 | kind | record | what to check | file |
@@ -176,6 +228,40 @@ Countries with no data yet (195): ALB, AUT, BEL, BIH, BGR, HRV, CYP, DNK, FIN, G
 | party | `jpn.cdp` Constitutional Democratic Party of Japan (CDP) | Post-2026 status is unsettled in the sources: Wikipedia lists Shunichi Mizuoka as interim leader (no start date) and the Democratic Reform Party (founded 17 September 2026) as successor. Confirm when Noda's leadership ended and whether the CDP still exists as a separate party. | data/countries/JPN/parties.json |
 | party | `jpn.reiwa` Reiwa Shinsengumi (Reiwa) | The party's Wikipedia infobox (fetched 2026-10-14) shows the name 'Party of Life' (いのちの党) with leader Joji Yamamoto, while Tarō Yamamoto's article still lists him as leader. Confirm the party's current name and leader. | data/countries/JPN/parties.json |
 | party | `jpn.sanseito` Sanseitō (DIY) | Confirm the date Kamiya became party leader (he led it at the 2025 election; Matsuda was leader in 2022). | data/countries/JPN/parties.json |
+
+### KOR — South Korea (18)
+
+| kind | record | what to check | file |
+|---|---|---|---|
+| chamber | `national_assembly` National Assembly | seats_2000 is the last 1999 row (29 December 1999) of the Korean Wikipedia seat-change table: GNP 130, NCNP 103, ULD 55, independents 11 (total 299). The table's running totals are not fully consistent with its +/- labels; check against National Assembly records. The 3% list threshold is the current rule; confirm the threshold in force in 1996-2000. | data/countries/KOR/country.json |
+| person | `kor.suh_chung_won` Suh Chung-won (b. 1943) | The end year (2010) of his Pro-Park Alliance membership is not sourced; confirm when he returned to the GNP/Saenuri. | data/countries/KOR/people.json |
+| person | `kor.sohn_hak_kyu` Sohn Hak-kyu (b. 1947) | His 2000 party (GNP) and Gyeonggi governorship were not confirmed from a fetched source; the record uses the UNDP as his main party. Confirm and add party_history for the GNP years. | data/countries/KOR/people.json |
+| person | `kor.jung_chung_rae` Jung Chung-rae (b. 1965) | available.from (2004-04-15) assumes he entered the National Assembly at the 2004 election; this was not confirmed from a fetched source. | data/countries/KOR/people.json |
+| party | `kor.mdp` Millennium Democratic Party (MDP) | Leader history is incomplete: only Kim Dae-jung (party president until 2002) was found. Add the party's chairs 2000-2007 (e.g. Cho Soon-hyung, who led it into the 2004 election). | data/countries/KOR/parties.json |
+| party | `kor.uri` Uri Party (Uri) | Leader history is incomplete: only Chung Dong-young (chairman at the 2004 election) is recorded, without exact dates. The party had several chairs (e.g. Shin Ki-nam in 2004). Confirm the founding date (1 vs 11 November 2003). | data/countries/KOR/parties.json |
+| party | `kor.undp` Grand Unified Democratic New Party (UNDP) | Leader history is incomplete: earlier leaders (2007) are missing and Sohn Hak-kyu's start date is unknown. | data/countries/KOR/parties.json |
+| party | `kor.uld` United Liberal Democrats (ULD) | Leader dates are years only and incomplete. The merger into the Grand National Party in 2006 is inferred from Kim Jong-pil's Wikidata party record; confirm it against the ULD article. | data/countries/KOR/parties.json |
+| party | `kor.dlp` Democratic Labor Party (DLP) | Leader history is incomplete: only Kwon Young-ghil (leader at the 2004 election) is listed, with a year only. | data/countries/KOR/parties.json |
+| party | `kor.upp` Unified Progressive Party (UPP) | Leader history is empty; add Lee Jung-hee and other co-leaders with dates. | data/countries/KOR/parties.json |
+| party | `kor.justice` Justice Party (JP) | Leader history is incomplete: only Sim Sang-jung's 2019 election is recorded; add her end date and the party's other leaders. | data/countries/KOR/parties.json |
+| party | `kor.lfp` Liberty Forward Party (LFP) | Lee Hoi-chang's end date as leader and the later leaders (e.g. Lee In-je) are missing. | data/countries/KOR/parties.json |
+| party | `kor.pro_park` Pro-Park Alliance (PPA) | Suh Chung-won's end date as leader is missing (the infobox names Rho Cheol-rae as the last leader). | data/countries/KOR/parties.json |
+| party | `kor.ckp` Creative Korea Party (CKP) | Moon Kook-hyun is listed as party leader from the founding date; confirm his start and end dates (the infobox names Han Myeon-hee as the last leader). | data/countries/KOR/parties.json |
+| party | `kor.people_2016` People Party (2016) (PP) | Leader history is incomplete (only Ahn Cheol-soo, without an end date). | data/countries/KOR/parties.json |
+| party | `kor.bareun` Bareun Party (Bareun) | Leader history is incomplete; the infobox lists Yoo Seong-min among its leaders without dates. | data/countries/KOR/parties.json |
+| party | `kor.people_2020` People Party (2020) (PP) | The infobox gives no founding date; only the year 2020 is recorded. | data/countries/KOR/parties.json |
+| party | `kor.reform` Reform Party (Reform) | Leader history is empty; add the party's leaders with dates (the infobox names Chun Ha-ram as a leader and Lee Jun-seok as founder). | data/countries/KOR/parties.json |
+
+### MCO — Monaco (6)
+
+| kind | record | what to check | file |
+|---|---|---|---|
+| party | `mco.und` National and Democratic Union (from 2008 Rally & Issues) (UND) | Leadership is only partly documented: Campora is recorded from his presidency of the National Council (1993-2003) and as UND list leader in 2003, but no formal party-leader list was found, and Laurent Nouvion's start as Rally & Issues leader is undated. Confirm the dissolution year (Wikipedia: 'c. 2020'). | data/countries/MCO/parties.json |
+| party | `mco.unam` National Union for the Future of Monaco (UNAM) | No leader is documented in the sources fetched, and the founding year (1998) comes only from the article's category. The UNAM article dates its merger into Union Monégasque to 2013, while the Union Monégasque article gives 2003; check both. | data/countries/MCO/parties.json |
+| party | `mco.um` Union for Monaco / Union Monégasque (UM) | Identity is ambiguous in the sources: check whether the 2003-2008 Union for Monaco alliance (led by Valeri) and the party Union Monégasque (led by Robillon from 2011) should be separate records. | data/countries/MCO/parties.json |
+| party | `mco.hm` Horizon Monaco (HM) | Nouvion is listed as leader without dates; the 2012 start (party founding) and the absence of an end date need checking. | data/countries/MCO/parties.json |
+| party | `mco.renaissance` Renaissance (Renaissance) | Leaders are not recorded: the party article names Eric Elena as leader, while the 2013 election article names Jean-Michel Rapaire as list leader. Neither gives dates. | data/countries/MCO/parties.json |
+| party | `mco.primo` Priorité Monaco (Primo!) | No dated leader list exists in the sources: Valeri's leadership has no end date (he left the National Council presidency in October 2022), and Boccone-Pagès is recorded as head of the 2023 joint list, not as formal party leader. | data/countries/MCO/parties.json |
 
 ### NLD — Netherlands (3)
 
@@ -203,6 +289,21 @@ Countries with no data yet (195): ALB, AUT, BEL, BIH, BGR, HRV, CYP, DNK, FIN, G
 | party | `pol.sdpl` Social Democracy of Poland (SDPL) | Borowski's end date as leader and later chairs are not in the fetched sources (Wikidata lists only Wojciech Filemonowicz with no dates). | data/countries/POL/parties.json |
 | party | `pol.konfederacja` Confederation Liberty and Independence (KWiN) | The current infobox names Slawomir Mentzen and Krzysztof Bosak as co-chairmen, but no start dates were found, so leader_history is empty. Add their co-chairmanship with dates. | data/countries/POL/parties.json |
 | party | `pol.nowa_lewica` New Left (NL) | Wikidata lists Robert Biedron as co-chair alongside Czarzasty (no dates); the current infobox names only Czarzasty. Add Biedron's co-chair tenure with dates. | data/countries/POL/parties.json |
+
+### PRT — Portugal (1)
+
+| kind | record | what to check | file |
+|---|---|---|---|
+| party | `prt.jpp` Together for the People (JPP) | The source names Élvio Sousa as secretary-general and as the party's lead figure in every election since 2015, but gives no start date for his post; confirm he has led JPP since 2015. | data/countries/PRT/parties.json |
+
+### PSE — Palestine (4)
+
+| kind | record | what to check | file |
+|---|---|---|---|
+| chamber | `plc` Palestinian Legislative Council | Sources disagree on Fatah's 1996 seats: the 1996 election infobox gives Fatah 50 and independents 35 (plus FIDA 1 and two other lists with 1 each, recorded as 'others'); the Legislative Council article says Fatah won 62 of 88, and the 2006 election article says Fatah held 68 of 88 before 2006 (counting Fatah-aligned independents). | data/countries/PSE/country.json |
+| party | `pse.ppp` Palestinian People's Party (PPP) | Leadership dates are not given in the fetched sources: confirm who was general secretary on 1 January 2000 (Bashir Barghouti, who died in September 2000, or Mustafa Barghouti) and when Bassam al-Salhi took over (recorded as 2005, the year of his presidential candidacy). | data/countries/PSE/parties.json |
+| party | `pse.fida` Palestinian Democratic Union (FIDA) (FIDA) | No dated leadership list was found; confirm FIDA's leader on 1 January 2000 and the dates of later leaders (Saleh Ra'fat). | data/countries/PSE/parties.json |
+| party | `pse.pij` Palestinian Islamic Jihad (PIJ) | The founding year (1981) is taken from the start of Fathi Shaqaqi's leadership in the infobox; confirm. | data/countries/PSE/parties.json |
 
 ### RUS — Russia (3)
 

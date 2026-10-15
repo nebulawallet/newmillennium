@@ -1,0 +1,58 @@
+{
+  "note": "Influence and approval are gameplay starting values for 1 January 2000 (Palestinian Authority under President Yasser Arafat, Fatah-led), not measured data. Influence reflects institutional weight: security services reporting to the President, a large public sector, clan and refugee-camp networks, and religious institutions.",
+  "interest_groups": [
+    {
+      "type": "military",
+      "influence": 0.3,
+      "approval": 55,
+      "note": "The Authority has no army; its security forces fill this role."
+    },
+    {
+      "type": "security_services",
+      "influence": 0.4,
+      "approval": 60
+    },
+    {
+      "type": "business",
+      "influence": 0.3,
+      "approval": 45
+    },
+    {
+      "type": "labour_unions",
+      "influence": 0.2,
+      "approval": 50
+    },
+    {
+      "type": "religious_establishment",
+      "influence": 0.3,
+      "approval": 45
+    },
+    {
+      "type": "rural",
+      "influence": 0.25,
+      "approval": 50,
+      "note": "Village and clan networks."
+    },
+    {
+      "type": "urban_middle_class",
+      "influence": 0.3,
+      "approval": 45
+    },
+    {
+      "type": "minorities",
+      "influence": 0.05,
+      "approval": 50,
+      "note": "Christian communities."
+    },
+    {
+      "type": "youth_students",
+      "influence": 0.25,
+      "approval": 45
+    },
+    {
+      "type": "media",
+      "influence": 0.2,
+      "approval": 45
+    }
+  ]
+}

@@ -1,0 +1,416 @@
+{
+  "parties": [
+    {
+      "id": "pse.fatah",
+      "name": {
+        "en": "Fatah (Palestinian National Liberation Movement)",
+        "native": "Harakat al-Tahrir al-Watani al-Filastini"
+      },
+      "abbrev": {
+        "en": "Fatah",
+        "native": "Fatah"
+      },
+      "color": "#F2C500",
+      "sub_ideology": "social_democrat",
+      "founded": 1959,
+      "status_2000": "active",
+      "leader_history": [
+        {
+          "person": "pse.yasser_arafat",
+          "from": 1959,
+          "to": 2004,
+          "title": "Chairman"
+        },
+        {
+          "person": "pse.farouk_kaddoumi",
+          "from": 2004,
+          "to": 2009,
+          "title": "Chairman"
+        },
+        {
+          "person": "pse.mahmoud_abbas",
+          "from": 2009,
+          "title": "Chairman"
+        }
+      ],
+      "popularity_2000": 0.309,
+      "popularity_note": "List share of Fatah candidates in the 1996 Legislative Council election (block voting in districts); most of the 57.5% won by independents was also cast in a field dominated by Fatah and its supporters.",
+      "international": "Progressive Alliance; Socialist International",
+      "note": "Founded in 1959 as a movement (a party from 1965); the largest faction of the PLO. Arafat was its founder and chairman until his death in 2004 (his start is recorded as the founding year); Farouk Kaddoumi succeeded him until 2009, when Abbas was elected chairman. Wikipedia lists Palestinian nationalism, secularism and a two-state solution, with conservative, liberal and social democratic factions, and a centre to centre-left position. No secular-nationalist sub-ideology exists; social_democrat is the closest (Fatah belongs to the Socialist International and the Progressive Alliance).",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Fatah",
+          "title": "Wikipedia: Fatah",
+          "accessed": "2026-10-15"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/1996_Palestinian_general_election",
+          "title": "Wikipedia: 1996 Palestinian general election (Legislative Council results)",
+          "accessed": "2026-10-15"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "pse.hamas",
+      "name": {
+        "en": "Hamas (Islamic Resistance Movement)",
+        "native": "Harakat al-Muqawama al-Islamiya"
+      },
+      "abbrev": {
+        "en": "Hamas",
+        "native": "Hamas"
+      },
+      "color": "#007A3D",
+      "sub_ideology": "islamist",
+      "founded": "1987-12-10",
+      "status_2000": "extra_parliamentary",
+      "leader_history": [
+        {
+          "person": "pse.ahmed_yassin",
+          "from": "1987-12-10",
+          "to": "2004-03-22",
+          "title": "Chairman of the Shura Council"
+        },
+        {
+          "person": "pse.abdel_aziz_al_rantisi",
+          "from": "2004-03-22",
+          "to": "2004-04-17",
+          "title": "Chairman of the Shura Council"
+        },
+        {
+          "person": "pse.khaled_mashal",
+          "from": "2004-04-17",
+          "to": "2017-05-06",
+          "title": "Chairman of the Political Bureau"
+        },
+        {
+          "person": "pse.ismail_haniyeh",
+          "from": "2017-05-06",
+          "to": "2024-07-31",
+          "title": "Chairman of the Political Bureau"
+        },
+        {
+          "person": "pse.khaled_mashal",
+          "from": "2024-07-31",
+          "to": "2024-08-06",
+          "title": "Acting chairman"
+        },
+        {
+          "person": "pse.yahya_sinwar",
+          "from": "2024-08-06",
+          "to": "2024-10-16",
+          "title": "Chairman of the Political Bureau"
+        },
+        {
+          "person": "pse.khalil_al_hayya",
+          "from": "2026-07-20",
+          "title": "Chairman of the Political Bureau"
+        }
+      ],
+      "popularity_2000": 0,
+      "popularity_note": "Did not take part in the 1996 elections; won 44.45% of list votes in 2006.",
+      "note": "Wikipedia lists Sunni Islamism, Palestinian nationalism and Islamic nationalism. Contested the 2006 Legislative Council election as the Change and Reform list. Khaled Mashal chaired the Political Bureau from 1996. After October 2024 a leadership council governed until Khalil al-Hayya was elected chairman of the Political Bureau in July 2026 (List of leaders of Hamas, incumbent since 20 July 2026).",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Hamas",
+          "title": "Wikipedia: Hamas",
+          "accessed": "2026-10-15"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/List_of_leaders_of_Hamas",
+          "title": "Wikipedia: List of leaders of Hamas",
+          "accessed": "2026-10-15"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "pse.pflp",
+      "name": {
+        "en": "Popular Front for the Liberation of Palestine",
+        "native": "al-Jabha al-Shaabiya li-Tahrir Filastin"
+      },
+      "abbrev": {
+        "en": "PFLP",
+        "native": "PFLP"
+      },
+      "color": "#C8102E",
+      "sub_ideology": "marxist_leninist",
+      "founded": 1967,
+      "status_2000": "extra_parliamentary",
+      "leader_history": [
+        {
+          "person": "pse.george_habash",
+          "from": 1967,
+          "to": 2000,
+          "title": "General Secretary"
+        },
+        {
+          "person": "pse.abu_ali_mustafa",
+          "from": 2000,
+          "to": 2001,
+          "title": "General Secretary"
+        },
+        {
+          "person": "pse.ahmad_saadat",
+          "from": 2001,
+          "title": "General Secretary"
+        }
+      ],
+      "popularity_2000": 0,
+      "popularity_note": "Held no Legislative Council seats from the 1996 election; won 4.25% of list votes in 2006.",
+      "note": "Founded by George Habash; a PLO faction. Wikipedia lists communism, Marxism-Leninism, Palestinian nationalism and secularism.",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Popular_Front_for_the_Liberation_of_Palestine",
+          "title": "Wikipedia: Popular Front for the Liberation of Palestine",
+          "accessed": "2026-10-15"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/2006_Palestinian_legislative_election",
+          "title": "Wikipedia: 2006 Palestinian legislative election",
+          "accessed": "2026-10-15"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "pse.dflp",
+      "name": {
+        "en": "Democratic Front for the Liberation of Palestine",
+        "native": "al-Jabha al-Dimuqratiya li-Tahrir Filastin"
+      },
+      "abbrev": {
+        "en": "DFLP",
+        "native": "DFLP"
+      },
+      "color": "#9B1B30",
+      "sub_ideology": "marxist_leninist",
+      "founded": 1969,
+      "status_2000": "extra_parliamentary",
+      "leader_history": [
+        {
+          "person": "pse.nayef_hawatmeh",
+          "from": 1969,
+          "title": "Secretary General"
+        }
+      ],
+      "popularity_2000": 0,
+      "popularity_note": "Held no Legislative Council seats from the 1996 election.",
+      "note": "Founded in 1969 by Nayef Hawatmeh and Yasser Abed Rabbo as a split from the PFLP; a PLO faction. Wikipedia lists communism, Marxism-Leninism and Palestinian nationalism. Led the Alternative list in 2006 (with other left-wing groups), whose result is recorded here.",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Democratic_Front_for_the_Liberation_of_Palestine",
+          "title": "Wikipedia: Democratic Front for the Liberation of Palestine",
+          "accessed": "2026-10-15"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/2006_Palestinian_legislative_election",
+          "title": "Wikipedia: 2006 Palestinian legislative election",
+          "accessed": "2026-10-15"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "pse.ppp",
+      "name": {
+        "en": "Palestinian People's Party",
+        "native": "Hizb al-Shaab al-Filastini"
+      },
+      "abbrev": {
+        "en": "PPP",
+        "native": "PPP"
+      },
+      "color": "#CB0000",
+      "sub_ideology": "reformed_communist",
+      "founded": 1982,
+      "status_2000": "extra_parliamentary",
+      "leader_history": [
+        {
+          "person": "pse.mustafa_barghouti",
+          "from": 2000,
+          "to": 2002,
+          "title": "General Secretary"
+        },
+        {
+          "person": "pse.bassam_al_salhi",
+          "from": 2005,
+          "title": "General Secretary"
+        }
+      ],
+      "popularity_2000": 0,
+      "popularity_note": "Held no Legislative Council seats from the 1996 election.",
+      "note": "Founded in February 1982 (as a split from the Jordanian Communist Party) under Bashir Barghouti. Wikipedia lists communism, Marxism, Palestinian nationalism and a two-state solution. Its general secretary Mustafa Barghouti left in 2002 to found the Palestinian National Initiative; Bassam al-Salhi was its 2005 presidential candidate and is its current leader.",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Palestinian_People's_Party",
+          "title": "Wikipedia: Palestinian People's Party",
+          "accessed": "2026-10-15"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/2005_Palestinian_presidential_election",
+          "title": "Wikipedia: 2005 Palestinian presidential election",
+          "accessed": "2026-10-15"
+        }
+      ],
+      "confidence": "needs_review",
+      "review_note": "Leadership dates are not given in the fetched sources: confirm who was general secretary on 1 January 2000 (Bashir Barghouti, who died in September 2000, or Mustafa Barghouti) and when Bassam al-Salhi took over (recorded as 2005, the year of his presidential candidacy)."
+    },
+    {
+      "id": "pse.fida",
+      "name": {
+        "en": "Palestinian Democratic Union (FIDA)",
+        "native": "al-Ittihad al-Dimuqrati al-Filastini"
+      },
+      "abbrev": {
+        "en": "FIDA",
+        "native": "FIDA"
+      },
+      "color": "#E2725B",
+      "sub_ideology": "democratic_socialist",
+      "founded": 1991,
+      "status_2000": "active",
+      "leader_history": [],
+      "popularity_2000": 0.0204,
+      "popularity_note": "List share, 1996 Legislative Council election (1 seat).",
+      "note": "Founded in September 1991 by Yasser Abed Rabbo as a split from the DFLP; a PLO faction. Wikipedia lists scientific socialism, secularism and a two-state solution. Later led by Saleh Ra'fat, its current Secretary-General.",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Palestinian_Democratic_Union",
+          "title": "Wikipedia: Palestinian Democratic Union",
+          "accessed": "2026-10-15"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/1996_Palestinian_general_election",
+          "title": "Wikipedia: 1996 Palestinian general election (Legislative Council results)",
+          "accessed": "2026-10-15"
+        }
+      ],
+      "confidence": "needs_review",
+      "review_note": "No dated leadership list was found; confirm FIDA's leader on 1 January 2000 and the dates of later leaders (Saleh Ra'fat)."
+    },
+    {
+      "id": "pse.pni",
+      "name": {
+        "en": "Palestinian National Initiative",
+        "native": "al-Mubadara al-Wataniya al-Filastiniya"
+      },
+      "abbrev": {
+        "en": "PNI",
+        "native": "PNI"
+      },
+      "color": "#FEA802",
+      "sub_ideology": "social_democrat",
+      "founded": "2002-06-17",
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        {
+          "person": "pse.mustafa_barghouti",
+          "from": 2002
+        }
+      ],
+      "popularity_2000": 0,
+      "lineage": {
+        "split_from": "pse.ppp"
+      },
+      "international": "Progressive Alliance; Socialist International (consultative)",
+      "note": "Founded by Mustafa Barghouti; Wikipedia lists Palestinian nationalism, social democracy and secularism. Its 2006 list was Independent Palestine.",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Palestinian_National_Initiative",
+          "title": "Wikipedia: Palestinian National Initiative",
+          "accessed": "2026-10-15"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/Palestinian_People's_Party",
+          "title": "Wikipedia: Palestinian People's Party",
+          "accessed": "2026-10-15"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "pse.third_way",
+      "name": {
+        "en": "Third Way",
+        "native": "al-Tariq al-Thalith"
+      },
+      "abbrev": {
+        "en": "Third Way",
+        "native": "Third Way"
+      },
+      "color": "#6A3D9A",
+      "sub_ideology": "centrist_liberal",
+      "founded": "2005-12-16",
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        {
+          "person": "pse.salam_fayyad",
+          "from": 2005
+        },
+        {
+          "person": "pse.hanan_ashrawi",
+          "from": 2005,
+          "title": "Co-leader"
+        }
+      ],
+      "popularity_2000": 0,
+      "note": "Founded on 16 December 2005 and led by Salam Fayyad and Hanan Ashrawi; centre to left-wing.",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Third_Way_(Palestine)",
+          "title": "Wikipedia: Third Way (Palestine)",
+          "accessed": "2026-10-15"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "pse.pij",
+      "name": {
+        "en": "Palestinian Islamic Jihad",
+        "native": "Harakat al-Jihad al-Islami fi Filastin"
+      },
+      "abbrev": {
+        "en": "PIJ",
+        "native": "PIJ"
+      },
+      "color": "#1C1C1C",
+      "sub_ideology": "islamist",
+      "founded": 1981,
+      "status_2000": "extra_parliamentary",
+      "leader_history": [
+        {
+          "person": "pse.ramadan_shalah",
+          "from": 1995,
+          "to": 2018,
+          "title": "Secretary-General"
+        },
+        {
+          "person": "pse.ziyad_al_nakhalah",
+          "from": 2018,
+          "title": "Secretary-General"
+        }
+      ],
+      "popularity_2000": 0,
+      "popularity_note": "Does not take part in elections; boycotted the 2005 presidential election.",
+      "note": "Founded by Fathi Shaqaqi and Abd al-Aziz Awda (Shaqaqi led it 1981-1995). Wikipedia lists Palestinian nationalism, Islamic nationalism and Sunni Islamism.",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Palestinian_Islamic_Jihad",
+          "title": "Wikipedia: Palestinian Islamic Jihad",
+          "accessed": "2026-10-15"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/2005_Palestinian_presidential_election",
+          "title": "Wikipedia: 2005 Palestinian presidential election",
+          "accessed": "2026-10-15"
+        }
+      ],
+      "confidence": "needs_review",
+      "review_note": "The founding year (1981) is taken from the start of Fathi Shaqaqi's leadership in the infobox; confirm."
+    }
+  ]
+}

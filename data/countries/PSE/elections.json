@@ -1,0 +1,76 @@
+{
+  "rules": [
+    {
+      "kind": "presidential",
+      "office": "pse.president",
+      "every_years": 4,
+      "anchor": "2005-01-09",
+      "snap_possible": true,
+      "system": "plurality",
+      "note": "Direct election decided by plurality in a single round. No presidential election has been held since 2005: the elections scheduled for 2021 were postponed indefinitely, and a decree of October 2026 set combined presidential and legislative elections for 11 September 2027."
+    },
+    {
+      "kind": "legislative",
+      "chamber": "plc",
+      "every_years": 4,
+      "anchor": "2006-01-25",
+      "snap_possible": true,
+      "note": "The Basic Law sets a four-year term, but no Legislative Council election has been held since 2006. The election scheduled for 22 May 2021 was postponed on 29 April 2021; one set for 28 November 2026 was replaced in October 2026 by combined elections on 11 September 2027."
+    }
+  ],
+  "elections": [
+    {
+      "id": "president_2005",
+      "date": "2005-01-09",
+      "kind": "presidential",
+      "office": "pse.president",
+      "historical": {
+        "candidates": [
+          { "person": "pse.mahmoud_abbas", "party": "pse.fatah", "share": 0.6738, "votes": 501448, "round": 1 },
+          { "person": "pse.mustafa_barghouti", "party": "pse.pni", "share": 0.2099, "votes": 156227, "round": 1 },
+          { "person": "pse.taysir_khalid", "party": "pse.dflp", "share": 0.0361, "votes": 26848, "round": 1 },
+          { "person": "pse.bassam_al_salhi", "party": "pse.ppp", "share": 0.0288, "votes": 21429, "round": 1 }
+        ],
+        "winner": "pse.mahmoud_abbas",
+        "turnout": 0.7342,
+        "note": "Held after the death of President Yasser Arafat; seven candidates. Three independent candidates (22,171, 10,406 and 5,717 votes) are not listed. Hamas and Islamic Jihad boycotted the election. Shares are of valid votes (744,246).",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2005_Palestinian_presidential_election", "title": "Wikipedia: 2005 Palestinian presidential election (results table)", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "plc_2006",
+      "date": "2006-01-25",
+      "kind": "legislative",
+      "chamber": "plc",
+      "historical": {
+        "candidates": [
+          { "person": "pse.ismail_haniyeh", "party": "pse.hamas", "round": 1 }
+        ],
+        "party_results": [
+          { "party": "pse.hamas", "share": 0.4445, "seats": 74 },
+          { "party": "pse.fatah", "share": 0.4143, "seats": 45 },
+          { "party": "pse.pflp", "share": 0.0425, "seats": 3 },
+          { "party": "pse.dflp", "share": 0.0292, "seats": 2 },
+          { "party": "pse.pni", "share": 0.0272, "seats": 2 },
+          { "party": "pse.third_way", "share": 0.0241, "seats": 2 },
+          { "party": "independents", "seats": 4 }
+        ],
+        "winner": "pse.hamas",
+        "turnout": 0.7118,
+        "note": "The Council was enlarged from 88 to 132 seats: 66 by national list PR (Sainte-Lague, 2% threshold) and 66 in 16 multi-member districts. Shares are national list votes. Hamas ran as the Change and Reform list; the Alternative list (led by Qais Abd al-Karim of the DFLP) is recorded under the DFLP; the Independent Palestine list (led by Mustafa Barghouti, mainly the Palestinian National Initiative) under the PNI. Ismail Haniyeh became Prime Minister on 29 March 2006.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2006_Palestinian_legislative_election", "title": "Wikipedia: 2006 Palestinian legislative election", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      }
+    }
+  ],
+  "source": [
+    { "url": "https://en.wikipedia.org/wiki/Palestinian_Legislative_Council", "title": "Wikipedia: Palestinian Legislative Council (2021 postponement)", "accessed": "2026-10-15" },
+    { "url": "https://www.aljazeera.com/news/2026/10/10/abbas-postpones-palestinian-legislative-elections-to-september-2027", "title": "Al Jazeera: Abbas postpones Palestinian legislative elections to September 2027 (10 October 2026)", "accessed": "2026-10-15" }
+  ],
+  "confidence": "verified"
+}

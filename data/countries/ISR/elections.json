@@ -1,0 +1,463 @@
+{
+  "rules": [
+    {
+      "kind": "legislative",
+      "chamber": "knesset",
+      "every_years": 4,
+      "anchor": "2022-11-01",
+      "snap_possible": true,
+      "note": "Four-year term; the Knesset can dissolve itself early, and early elections follow if no government can be formed. The election for the 26th Knesset was scheduled for 27 October 2026, after the data date."
+    },
+    {
+      "kind": "indirect_presidential",
+      "office": "isr.president",
+      "every_years": 7,
+      "anchor": "2021-06-02",
+      "snap_possible": true,
+      "system": "legislature",
+      "note": "The President is elected by the Knesset by secret ballot for a single seven-year term; an early election follows a resignation. Herzog's term runs until 2028."
+    }
+  ],
+  "elections": [
+    {
+      "id": "president_2000",
+      "date": "2000-07-31",
+      "kind": "indirect_presidential",
+      "office": "isr.president",
+      "rounds": 2,
+      "historical": {
+        "candidates": [
+          { "person": "isr.moshe_katsav", "party": "isr.likud", "votes": 60, "round": 1 },
+          { "person": "isr.shimon_peres", "party": "isr.labor", "votes": 57, "round": 1 },
+          { "person": "isr.moshe_katsav", "party": "isr.likud", "votes": 63, "round": 2 },
+          { "person": "isr.shimon_peres", "party": "isr.labor", "votes": 57, "round": 2 }
+        ],
+        "winner": "isr.moshe_katsav",
+        "note": "Election by the 120-member Knesset after Ezer Weizman's resignation. Peres stood for One Israel (the Labor-led list).",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2000_Israeli_presidential_election", "title": "Wikipedia: 2000 Israeli presidential election", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "prime_minister_2001",
+      "date": "2001-02-06",
+      "kind": "presidential",
+      "office": "isr.prime_minister",
+      "snap": true,
+      "historical": {
+        "candidates": [
+          { "person": "isr.ariel_sharon", "party": "isr.likud", "share": 0.6238, "votes": 1698077, "round": 1 },
+          { "person": "isr.ehud_barak", "party": "isr.labor", "share": 0.3762, "votes": 1023944, "round": 1 }
+        ],
+        "winner": "isr.ariel_sharon",
+        "turnout": 0.6229,
+        "note": "Special direct election for Prime Minister under the 1992 direct-election law (in force 1996-2001), held after Barak's resignation without a Knesset election. It was the last direct prime-ministerial election: the direct election was abolished before the 2003 Knesset election, and recorded here with kind 'presidential' because the schema has no kind for a directly elected head of government.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2001_Israeli_prime_ministerial_election", "title": "Wikipedia: 2001 Israeli prime ministerial election", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "knesset_2003",
+      "date": "2003-01-28",
+      "kind": "legislative",
+      "chamber": "knesset",
+      "snap": true,
+      "historical": {
+        "candidates": [
+          { "person": "isr.ariel_sharon", "party": "isr.likud", "round": 1 },
+          { "person": "isr.amram_mitzna", "party": "isr.labor", "round": 1 }
+        ],
+        "party_results": [
+          { "party": "isr.likud", "share": 0.2939, "seats": 38 },
+          { "party": "isr.labor", "share": 0.1446, "seats": 19 },
+          { "party": "isr.shinui", "share": 0.1228, "seats": 15 },
+          { "party": "isr.shas", "share": 0.0822, "seats": 11 },
+          { "party": "isr.national_union", "share": 0.0552, "seats": 7 },
+          { "party": "isr.meretz", "share": 0.0521, "seats": 6 },
+          { "party": "isr.nrp", "share": 0.0420, "seats": 6 },
+          { "party": "isr.utj", "share": 0.0429, "seats": 5 },
+          { "party": "isr.hadash", "share": 0.0298, "seats": 3 },
+          { "party": "isr.one_nation", "share": 0.0276, "seats": 3 },
+          { "party": "isr.balad", "share": 0.0226, "seats": 3 },
+          { "party": "isr.yisrael_baaliyah", "share": 0.0215, "seats": 2 },
+          { "party": "isr.ual", "share": 0.0208, "seats": 2 }
+        ],
+        "winner": "isr.likud",
+        "turnout": 0.6781,
+        "note": "First Knesset election after the direct election of the Prime Minister was abolished. Joint lists are recorded under their leading party: Labor ran as Labor-Meimad, Hadash as Hadash-Ta'al, and the National Union list (led by Avigdor Lieberman) included Yisrael Beiteinu.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2003_Israeli_legislative_election", "title": "Wikipedia: 2003 Israeli legislative election", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "knesset_2006",
+      "date": "2006-03-28",
+      "kind": "legislative",
+      "chamber": "knesset",
+      "snap": true,
+      "historical": {
+        "candidates": [
+          { "person": "isr.ehud_olmert", "party": "isr.kadima", "round": 1 },
+          { "person": "isr.amir_peretz", "party": "isr.labor", "round": 1 },
+          { "person": "isr.benjamin_netanyahu", "party": "isr.likud", "round": 1 }
+        ],
+        "party_results": [
+          { "party": "isr.kadima", "share": 0.2202, "seats": 29 },
+          { "party": "isr.labor", "share": 0.1506, "seats": 19 },
+          { "party": "isr.shas", "share": 0.0953, "seats": 12 },
+          { "party": "isr.likud", "share": 0.0899, "seats": 12 },
+          { "party": "isr.yisrael_beiteinu", "share": 0.0899, "seats": 11 },
+          { "party": "isr.national_union", "share": 0.0714, "seats": 9 },
+          { "party": "isr.gil", "share": 0.0592, "seats": 7 },
+          { "party": "isr.utj", "share": 0.0469, "seats": 6 },
+          { "party": "isr.meretz", "share": 0.0377, "seats": 5 },
+          { "party": "isr.ual", "share": 0.0302, "seats": 4 },
+          { "party": "isr.hadash", "share": 0.0274, "seats": 3 },
+          { "party": "isr.balad", "share": 0.0230, "seats": 3 }
+        ],
+        "winner": "isr.kadima",
+        "turnout": 0.6355,
+        "note": "Olmert led Kadima as Acting Prime Minister. Joint lists under their leading party: Labor-Meimad, National Union-NRP (led by Benny Elon), Ra'am-Ta'al.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2006_Israeli_legislative_election", "title": "Wikipedia: 2006 Israeli legislative election", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "president_2007",
+      "date": "2007-06-13",
+      "kind": "indirect_presidential",
+      "office": "isr.president",
+      "rounds": 2,
+      "historical": {
+        "candidates": [
+          { "person": "isr.shimon_peres", "party": "isr.kadima", "votes": 58, "round": 1 },
+          { "person": "isr.reuven_rivlin", "party": "isr.likud", "votes": 37, "round": 1 },
+          { "person": "isr.colette_avital", "party": "isr.labor", "votes": 21, "round": 1 },
+          { "person": "isr.shimon_peres", "party": "isr.kadima", "votes": 86, "round": 2 }
+        ],
+        "winner": "isr.shimon_peres",
+        "note": "Rivlin and Avital withdrew after the first round.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2007_Israeli_presidential_election", "title": "Wikipedia: 2007 Israeli presidential election", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "knesset_2009",
+      "date": "2009-02-10",
+      "kind": "legislative",
+      "chamber": "knesset",
+      "snap": true,
+      "historical": {
+        "candidates": [
+          { "person": "isr.tzipi_livni", "party": "isr.kadima", "round": 1 },
+          { "person": "isr.benjamin_netanyahu", "party": "isr.likud", "round": 1 }
+        ],
+        "party_results": [
+          { "party": "isr.kadima", "share": 0.2247, "seats": 28 },
+          { "party": "isr.likud", "share": 0.2161, "seats": 27 },
+          { "party": "isr.yisrael_beiteinu", "share": 0.1170, "seats": 15 },
+          { "party": "isr.labor", "share": 0.0993, "seats": 13 },
+          { "party": "isr.shas", "share": 0.0849, "seats": 11 },
+          { "party": "isr.utj", "share": 0.0439, "seats": 5 },
+          { "party": "isr.ual", "share": 0.0338, "seats": 4 },
+          { "party": "isr.national_union", "share": 0.0334, "seats": 4 },
+          { "party": "isr.hadash", "share": 0.0332, "seats": 4 },
+          { "party": "isr.meretz", "share": 0.0295, "seats": 3 },
+          { "party": "isr.jewish_home", "share": 0.0287, "seats": 3 },
+          { "party": "isr.balad", "share": 0.0248, "seats": 3 }
+        ],
+        "winner": "isr.kadima",
+        "turnout": 0.6472,
+        "note": "Kadima won the most seats, but Likud leader Benjamin Netanyahu formed the government. Joint lists under their leading party: Likud-Ahi, Ra'am-Ta'al.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2009_Israeli_legislative_election", "title": "Wikipedia: 2009 Israeli legislative election", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "knesset_2013",
+      "date": "2013-01-22",
+      "kind": "legislative",
+      "chamber": "knesset",
+      "snap": true,
+      "historical": {
+        "candidates": [
+          { "person": "isr.benjamin_netanyahu", "party": "isr.likud", "round": 1 },
+          { "person": "isr.yair_lapid", "party": "isr.yesh_atid", "round": 1 },
+          { "person": "isr.shelly_yachimovich", "party": "isr.labor", "round": 1 }
+        ],
+        "party_results": [
+          { "party": "isr.likud", "share": 0.2334, "seats": 31 },
+          { "party": "isr.yesh_atid", "share": 0.1433, "seats": 19 },
+          { "party": "isr.labor", "share": 0.1139, "seats": 15 },
+          { "party": "isr.jewish_home", "share": 0.0912, "seats": 12 },
+          { "party": "isr.shas", "share": 0.0875, "seats": 11 },
+          { "party": "isr.utj", "share": 0.0516, "seats": 7 },
+          { "party": "isr.hatnua", "share": 0.0499, "seats": 6 },
+          { "party": "isr.meretz", "share": 0.0455, "seats": 6 },
+          { "party": "isr.ual", "share": 0.0365, "seats": 4 },
+          { "party": "isr.hadash", "share": 0.0299, "seats": 4 },
+          { "party": "isr.balad", "share": 0.0256, "seats": 3 },
+          { "party": "isr.kadima", "share": 0.0209, "seats": 2 }
+        ],
+        "winner": "isr.likud",
+        "turnout": 0.6777,
+        "note": "Likud ran on a joint list with Yisrael Beiteinu (Likud Yisrael Beiteinu); its 31 seats and vote share are recorded under Likud.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2013_Israeli_legislative_election", "title": "Wikipedia: 2013 Israeli legislative election", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "president_2014",
+      "date": "2014-06-10",
+      "kind": "indirect_presidential",
+      "office": "isr.president",
+      "rounds": 2,
+      "historical": {
+        "candidates": [
+          { "person": "isr.reuven_rivlin", "party": "isr.likud", "votes": 44, "round": 1 },
+          { "person": "isr.meir_sheetrit", "party": "isr.hatnua", "votes": 31, "round": 1 },
+          { "person": "isr.dalia_itzik", "party": "isr.kadima", "votes": 28, "round": 1 },
+          { "person": "isr.dalia_dorner", "votes": 13, "round": 1 },
+          { "person": "isr.reuven_rivlin", "party": "isr.likud", "votes": 63, "round": 2 },
+          { "person": "isr.meir_sheetrit", "party": "isr.hatnua", "votes": 53, "round": 2 }
+        ],
+        "winner": "isr.reuven_rivlin",
+        "note": "Dan Shechtman (independent) received 1 vote in the first round and is not listed. 119 members voted.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2014_Israeli_presidential_election", "title": "Wikipedia: 2014 Israeli presidential election (results table)", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "knesset_2015",
+      "date": "2015-03-17",
+      "kind": "legislative",
+      "chamber": "knesset",
+      "snap": true,
+      "historical": {
+        "candidates": [
+          { "person": "isr.benjamin_netanyahu", "party": "isr.likud", "round": 1 },
+          { "person": "isr.isaac_herzog", "party": "isr.labor", "round": 1 }
+        ],
+        "party_results": [
+          { "party": "isr.likud", "share": 0.2340, "seats": 30 },
+          { "party": "isr.labor", "share": 0.1867, "seats": 24 },
+          { "party": "isr.hadash", "share": 0.1054, "seats": 13 },
+          { "party": "isr.yesh_atid", "share": 0.0881, "seats": 11 },
+          { "party": "isr.kulanu", "share": 0.0749, "seats": 10 },
+          { "party": "isr.jewish_home", "share": 0.0674, "seats": 8 },
+          { "party": "isr.shas", "share": 0.0573, "seats": 7 },
+          { "party": "isr.yisrael_beiteinu", "share": 0.0511, "seats": 6 },
+          { "party": "isr.utj", "share": 0.0503, "seats": 6 },
+          { "party": "isr.meretz", "share": 0.0393, "seats": 5 }
+        ],
+        "winner": "isr.likud",
+        "turnout": 0.7234,
+        "note": "Joint lists under their leading party: the Zionist Union (Labor and Hatnua, led by Isaac Herzog) under Labor; the Joint List (Hadash, Balad, the United Arab List and Ta'al, led by Ayman Odeh) under Hadash.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2015_Israeli_legislative_election", "title": "Wikipedia: 2015 Israeli legislative election", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "knesset_2019_04",
+      "date": "2019-04-09",
+      "kind": "legislative",
+      "chamber": "knesset",
+      "snap": true,
+      "historical": {
+        "candidates": [
+          { "person": "isr.benjamin_netanyahu", "party": "isr.likud", "round": 1 },
+          { "person": "isr.benny_gantz", "party": "isr.blue_and_white", "round": 1 }
+        ],
+        "party_results": [
+          { "party": "isr.likud", "share": 0.2646, "seats": 35 },
+          { "party": "isr.blue_and_white", "share": 0.2613, "seats": 35 },
+          { "party": "isr.shas", "share": 0.0599, "seats": 8 },
+          { "party": "isr.utj", "share": 0.0578, "seats": 8 },
+          { "party": "isr.hadash", "share": 0.0449, "seats": 6 },
+          { "party": "isr.labor", "share": 0.0443, "seats": 6 },
+          { "party": "isr.yisrael_beiteinu", "share": 0.0401, "seats": 5 },
+          { "party": "isr.jewish_home", "share": 0.0370, "seats": 5 },
+          { "party": "isr.meretz", "share": 0.0363, "seats": 4 },
+          { "party": "isr.kulanu", "share": 0.0354, "seats": 4 },
+          { "party": "isr.ual", "share": 0.0333, "seats": 4 }
+        ],
+        "winner": "isr.likud",
+        "turnout": 0.6846,
+        "note": "Likud and Blue and White tied on seats; Likud received the larger vote share. No government was formed and the Knesset dissolved itself. Joint lists under their leading party: the Blue and White alliance (Israel Resilience, Yesh Atid and Telem, led by Benny Gantz) under Gantz's party; Hadash-Ta'al; the Union of Right-Wing Parties (led by Rafi Peretz of the Jewish Home) under the Jewish Home; Ra'am-Balad under the United Arab List.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/April_2019_Israeli_legislative_election", "title": "Wikipedia: April 2019 Israeli legislative election", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "knesset_2019_09",
+      "date": "2019-09-17",
+      "kind": "legislative",
+      "chamber": "knesset",
+      "snap": true,
+      "historical": {
+        "candidates": [
+          { "person": "isr.benny_gantz", "party": "isr.blue_and_white", "round": 1 },
+          { "person": "isr.benjamin_netanyahu", "party": "isr.likud", "round": 1 }
+        ],
+        "party_results": [
+          { "party": "isr.blue_and_white", "share": 0.2595, "seats": 33 },
+          { "party": "isr.likud", "share": 0.2510, "seats": 32 },
+          { "party": "isr.hadash", "share": 0.1060, "seats": 13 },
+          { "party": "isr.shas", "share": 0.0744, "seats": 9 },
+          { "party": "isr.yisrael_beiteinu", "share": 0.0699, "seats": 8 },
+          { "party": "isr.utj", "share": 0.0606, "seats": 7 },
+          { "party": "isr.yamina", "share": 0.0587, "seats": 7 },
+          { "party": "isr.labor", "share": 0.0480, "seats": 6 },
+          { "party": "isr.meretz", "share": 0.0434, "seats": 5 }
+        ],
+        "winner": "isr.blue_and_white",
+        "turnout": 0.6983,
+        "note": "No government was formed. Joint lists under their leading party: the Blue and White alliance under Gantz's party; the Joint List under Hadash; Yamina (led by Ayelet Shaked); Labor-Gesher under Labor; the Democratic Union (led by Nitzan Horowitz) under Meretz.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/September_2019_Israeli_legislative_election", "title": "Wikipedia: September 2019 Israeli legislative election", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "knesset_2020",
+      "date": "2020-03-02",
+      "kind": "legislative",
+      "chamber": "knesset",
+      "snap": true,
+      "historical": {
+        "candidates": [
+          { "person": "isr.benjamin_netanyahu", "party": "isr.likud", "round": 1 },
+          { "person": "isr.benny_gantz", "party": "isr.blue_and_white", "round": 1 }
+        ],
+        "party_results": [
+          { "party": "isr.likud", "share": 0.2946, "seats": 36 },
+          { "party": "isr.blue_and_white", "share": 0.2659, "seats": 33 },
+          { "party": "isr.hadash", "share": 0.1267, "seats": 15 },
+          { "party": "isr.shas", "share": 0.0769, "seats": 9 },
+          { "party": "isr.utj", "share": 0.0598, "seats": 7 },
+          { "party": "isr.labor", "share": 0.0583, "seats": 7 },
+          { "party": "isr.yisrael_beiteinu", "share": 0.0574, "seats": 7 },
+          { "party": "isr.yamina", "share": 0.0524, "seats": 6 }
+        ],
+        "winner": "isr.likud",
+        "turnout": 0.7152,
+        "note": "Netanyahu and Gantz formed a coalition government in May 2020 under a rotation agreement. Joint lists under their leading party: the Blue and White alliance under Gantz's party; the Joint List under Hadash; Labor-Gesher-Meretz (led by Amir Peretz) under Labor.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2020_Israeli_legislative_election", "title": "Wikipedia: 2020 Israeli legislative election", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "knesset_2021",
+      "date": "2021-03-23",
+      "kind": "legislative",
+      "chamber": "knesset",
+      "snap": true,
+      "historical": {
+        "candidates": [
+          { "person": "isr.benjamin_netanyahu", "party": "isr.likud", "round": 1 },
+          { "person": "isr.yair_lapid", "party": "isr.yesh_atid", "round": 1 }
+        ],
+        "party_results": [
+          { "party": "isr.likud", "share": 0.2419, "seats": 30 },
+          { "party": "isr.yesh_atid", "share": 0.1393, "seats": 17 },
+          { "party": "isr.shas", "share": 0.0717, "seats": 9 },
+          { "party": "isr.blue_and_white", "share": 0.0663, "seats": 8 },
+          { "party": "isr.yamina", "share": 0.0621, "seats": 7 },
+          { "party": "isr.labor", "share": 0.0609, "seats": 7 },
+          { "party": "isr.utj", "share": 0.0563, "seats": 7 },
+          { "party": "isr.yisrael_beiteinu", "share": 0.0563, "seats": 7 },
+          { "party": "isr.rzp", "share": 0.0512, "seats": 6 },
+          { "party": "isr.hadash", "share": 0.0482, "seats": 6 },
+          { "party": "isr.new_hope", "share": 0.0474, "seats": 6 },
+          { "party": "isr.meretz", "share": 0.0459, "seats": 6 },
+          { "party": "isr.ual", "share": 0.0379, "seats": 4 }
+        ],
+        "winner": "isr.likud",
+        "turnout": 0.6744,
+        "note": "A coalition of eight parties formed the government in June 2021 under a rotation agreement: Naftali Bennett (Yamina) became Prime Minister and Yair Lapid (Yesh Atid) Alternate Prime Minister. Joint lists under their leading party: the Religious Zionist Party list (with Otzma Yehudit and Noam); the Joint List (Hadash, Balad, Ta'al) under Hadash. The United Arab List (Ra'am) ran separately.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2021_Israeli_legislative_election", "title": "Wikipedia: 2021 Israeli legislative election", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "president_2021",
+      "date": "2021-06-02",
+      "kind": "indirect_presidential",
+      "office": "isr.president",
+      "historical": {
+        "candidates": [
+          { "person": "isr.isaac_herzog", "votes": 87, "round": 1 },
+          { "person": "isr.miriam_peretz", "votes": 26, "round": 1 }
+        ],
+        "winner": "isr.isaac_herzog",
+        "note": "Both candidates stood as independents; neither was a sitting member of the Knesset.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2021_Israeli_presidential_election", "title": "Wikipedia: 2021 Israeli presidential election", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "knesset_2022",
+      "date": "2022-11-01",
+      "kind": "legislative",
+      "chamber": "knesset",
+      "snap": true,
+      "historical": {
+        "candidates": [
+          { "person": "isr.benjamin_netanyahu", "party": "isr.likud", "round": 1 },
+          { "person": "isr.yair_lapid", "party": "isr.yesh_atid", "round": 1 }
+        ],
+        "party_results": [
+          { "party": "isr.likud", "share": 0.2341, "seats": 32 },
+          { "party": "isr.yesh_atid", "share": 0.1778, "seats": 24 },
+          { "party": "isr.rzp", "share": 0.1084, "seats": 14 },
+          { "party": "isr.blue_and_white", "share": 0.0908, "seats": 12 },
+          { "party": "isr.shas", "share": 0.0825, "seats": 11 },
+          { "party": "isr.utj", "share": 0.0588, "seats": 7 },
+          { "party": "isr.yisrael_beiteinu", "share": 0.0448, "seats": 6 },
+          { "party": "isr.ual", "share": 0.0407, "seats": 5 },
+          { "party": "isr.hadash", "share": 0.0375, "seats": 5 },
+          { "party": "isr.labor", "share": 0.0369, "seats": 4 }
+        ],
+        "winner": "isr.likud",
+        "turnout": 0.7063,
+        "note": "Joint lists under their leading party: the Religious Zionist Party list (with Otzma Yehudit and Noam, led by Bezalel Smotrich); National Unity (Blue and White and New Hope, led by Benny Gantz) under Blue and White; Hadash-Ta'al under Hadash. Lapid was the outgoing Prime Minister.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2022_Israeli_legislative_election", "title": "Wikipedia: 2022 Israeli legislative election", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      }
+    }
+  ],
+  "source": [
+    { "url": "https://en.wikipedia.org/wiki/2022_Israeli_legislative_election", "title": "Wikipedia: 2022 Israeli legislative election", "accessed": "2026-10-15" },
+    { "url": "https://en.wikipedia.org/wiki/2026_Israeli_legislative_election", "title": "Wikipedia: 2026 Israeli legislative election (scheduled for 27 October 2026)", "accessed": "2026-10-15" }
+  ],
+  "confidence": "verified"
+}

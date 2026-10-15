@@ -1,0 +1,15 @@
+{
+  "note": "Influence and approval are gameplay starting values for 1 January 2000 (One Israel-led coalition under Ehud Barak), not measured data. Influence reflects institutional weight: a conscript army and security services with a large role in policy, the Histadrut labour federation, a religious establishment with authority over personal status law, and a competitive press.",
+  "interest_groups": [
+    { "type": "military", "influence": 0.45, "approval": 55, "note": "Israel Defense Forces; many senior politicians are former officers." },
+    { "type": "security_services", "influence": 0.35, "approval": 55, "note": "Shin Bet and Mossad." },
+    { "type": "business", "influence": 0.4, "approval": 55 },
+    { "type": "labour_unions", "influence": 0.35, "approval": 55, "note": "Histadrut general federation of labour." },
+    { "type": "religious_establishment", "influence": 0.35, "approval": 40, "note": "Chief Rabbinate and religious courts; Haredi and religious Zionist parties held coalition posts." },
+    { "type": "rural", "influence": 0.12, "approval": 50, "note": "Kibbutz and moshav movements." },
+    { "type": "urban_middle_class", "influence": 0.5, "approval": 55 },
+    { "type": "minorities", "influence": 0.12, "approval": 45, "note": "Arab citizens of Israel." },
+    { "type": "youth_students", "influence": 0.15, "approval": 50 },
+    { "type": "media", "influence": 0.4, "approval": 50 }
+  ]
+}
