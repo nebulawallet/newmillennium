@@ -10,8 +10,9 @@ import { initialSchedule } from "./politics/schedule.ts";
 import { igTargets } from "./politics/interestGroups.ts";
 import { seedRng, type RngState } from "./rng.ts";
 import { initialEconomy, type EconomyState, type MarketState } from "./economy/economy.ts";
+import { initialResearch, type ResearchState } from "./research/research.ts";
 
-export const STATE_VERSION = 4;
+export const STATE_VERSION = 5;
 
 export interface GameRules {
   /** historical: real election winners are heavily weighted; dynamic: results come purely from the simulation. */
@@ -157,6 +158,7 @@ export interface CountryState {
   eventsFired: Record<string, number>;
   /** Present for countries with politics data. */
   economy?: EconomyState;
+  research?: ResearchState;
 }
 
 export interface LogEntry {
@@ -331,6 +333,7 @@ export function createInitialState(
     }
     if (c) {
       cs.economy = initialEconomy(db, entry.tag, mapPop.get(entry.tag) ?? 1_000_000);
+      cs.research = initialResearch(db, entry.tag, cs.economy.gdp, cs.economy.population);
       cs.economicMood = 0;
       cs.partyBias = calibrate(db, cs, day);
       const targets = igTargets(db, cs);
@@ -399,6 +402,7 @@ export function migrateState(db: ContentDB, s: GameState): GameState {
     cs.activeDecisions ??= [];
     cs.eventsFired ??= {};
     if (!cs.economy && fresh.countries[tag]?.economy) cs.economy = fresh.countries[tag]!.economy;
+    if (!cs.research && fresh.countries[tag]?.research) cs.research = fresh.countries[tag]!.research;
   }
   s.version = STATE_VERSION;
   return s;

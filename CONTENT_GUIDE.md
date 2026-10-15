@@ -269,6 +269,12 @@ One file per tree: `{ id, name, countries, focuses: [ { id, name, description, x
 - `data/economy/buildings.json`: buildings with a construction cost, `level` (province or national) and what one level adds.
 - Economic shocks are events: use the `economic_shock` effect (growth points fading over months, plus unemployment and inflation pressure) and `set_budget` (see `data/events/economic_shocks.json`).
 
-## 9. Techs and units
+## 9. Technologies
+
+- One file per category in `data/techs/` (`id`, `name`, `description`, `military`, `techs`). Each technology has a `year` (when it became broadly available), a `cost` in research days, `prerequisites` (groups, any one per group), a column `x`, and permanent modifier `effects`.
+- Keep technologies generic (no real product names); the year is a design choice, not a claim.
+- `data/techs/rules.json` holds the research rules (slots, penalties, starting lags).
+
+## 10. Units
 
 These formats arrive in Phases 8 and 9.

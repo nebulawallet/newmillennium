@@ -28,7 +28,8 @@ export type RefKind =
   | "interest_group"
   | "government_type"
   | "trait"
-  | "modifier";
+  | "modifier"
+  | "tech";
 
 interface ScriptDef {
   args: z.ZodType;
@@ -137,7 +138,7 @@ export const EFFECTS: Record<string, ScriptDef> = {
     description: "Change this country's opinion of the target.",
   },
   release_country: { args: Tag, description: "Release a releasable country.", refs: { "": "tag" } },
-  unlock_tech: { args: Id, description: "Grant a technology." },
+  unlock_tech: { args: Id, description: "Grant a technology.", refs: { "": "tech" } },
   country_event: {
     args: z.strictObject({ id: Id, days: z.number().int().min(0).optional() }),
     description: "Fire an event for the scoped country.",
@@ -220,6 +221,7 @@ export const TRIGGERS: Record<string, ScriptDef> = {
   has_completed_focus: { args: Id, description: "Focus completed." },
   exists: { args: Tag, description: "Country exists on the map.", refs: { "": "tag" } },
   is_player: { args: z.boolean(), description: "Scoped country is the player's." },
+  has_tech: { args: Id, description: "The technology has been researched.", refs: { "": "tech" } },
   unrest_above: { args: Share, description: "Unrest above value." },
   political_power_above: { args: z.number(), description: "Political power above value." },
   has_civil_war: { args: z.boolean(), description: "A civil war is under way." },

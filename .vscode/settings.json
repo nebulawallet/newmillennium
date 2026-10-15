@@ -138,6 +138,18 @@
         "/data/economy/buildings.json"
       ],
       "url": "./data/_schema/buildings.schema.json"
+    },
+    {
+      "fileMatch": [
+        "/data/techs/*.json"
+      ],
+      "url": "./data/_schema/tech_category.schema.json"
+    },
+    {
+      "fileMatch": [
+        "/data/techs/rules.json"
+      ],
+      "url": "./data/_schema/research_rules.schema.json"
     }
   ]
 }

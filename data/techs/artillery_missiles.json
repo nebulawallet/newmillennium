@@ -1,0 +1,132 @@
+{
+  "id": "artillery_missiles",
+  "name": "Artillery and missiles",
+  "description": "Artillery, rockets, missiles and air defence.",
+  "military": true,
+  "techs": [
+    {
+      "id": "art_self_propelled_artillery",
+      "name": "Self-propelled artillery",
+      "description": "Armoured guns that move with the army.",
+      "year": 1985,
+      "x": 1,
+      "effects": {
+        "army_attack": 0.02
+      },
+      "cost": 500
+    },
+    {
+      "id": "art_counter_battery_radar",
+      "name": "Counter-battery radar",
+      "description": "Radars that locate enemy guns from their shells.",
+      "year": 1999,
+      "x": 2,
+      "effects": {
+        "army_defence": 0.03
+      },
+      "cost": 700,
+      "prerequisites": [
+        [
+          "art_self_propelled_artillery"
+        ]
+      ]
+    },
+    {
+      "id": "art_guided_rockets",
+      "name": "Guided multiple rocket launchers",
+      "description": "Rocket artillery with satellite-guided rounds.",
+      "year": 2000,
+      "x": 0,
+      "effects": {
+        "army_attack": 0.03
+      },
+      "cost": 700,
+      "prerequisites": [
+        [
+          "art_self_propelled_artillery"
+        ]
+      ]
+    },
+    {
+      "id": "art_cruise_missiles",
+      "name": "Long-range cruise missiles",
+      "description": "Ground- and air-launched missiles with ranges over 1,000 km.",
+      "year": 2002,
+      "x": 0,
+      "effects": {
+        "army_attack": 0.03
+      },
+      "prerequisites": [
+        [
+          "art_guided_rockets"
+        ]
+      ],
+      "cost": 700
+    },
+    {
+      "id": "art_precision_shells",
+      "name": "Precision-guided shells",
+      "description": "Artillery shells that steer to their target.",
+      "year": 2004,
+      "x": 1,
+      "effects": {
+        "army_attack": 0.03
+      },
+      "cost": 700,
+      "prerequisites": [
+        [
+          "art_self_propelled_artillery"
+        ]
+      ]
+    },
+    {
+      "id": "art_layered_air_defence",
+      "name": "Layered air defence",
+      "description": "Short-, medium- and long-range air defence working as one network.",
+      "year": 2010,
+      "x": 2,
+      "effects": {
+        "air_effectiveness": 0.03,
+        "army_defence": 0.02
+      },
+      "prerequisites": [
+        [
+          "art_counter_battery_radar"
+        ]
+      ],
+      "cost": 850
+    },
+    {
+      "id": "art_hypersonic_missiles",
+      "name": "Hypersonic missiles",
+      "description": "Manoeuvring missiles faster than five times the speed of sound.",
+      "year": 2024,
+      "x": 0,
+      "effects": {
+        "army_attack": 0.05
+      },
+      "prerequisites": [
+        [
+          "art_cruise_missiles"
+        ]
+      ],
+      "cost": 1000
+    },
+    {
+      "id": "art_directed_energy",
+      "name": "Directed-energy air defence",
+      "description": "Lasers that destroy drones and rockets.",
+      "year": 2034,
+      "x": 2,
+      "effects": {
+        "air_effectiveness": 0.05
+      },
+      "prerequisites": [
+        [
+          "art_layered_air_defence"
+        ]
+      ],
+      "cost": 1200
+    }
+  ]
+}

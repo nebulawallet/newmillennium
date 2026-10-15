@@ -33,9 +33,10 @@
   "coal_rents_pct_gdp": "NY.GDP.COAL.RT.ZS",
   "mineral_rents_pct_gdp": "NY.GDP.MINR.RT.ZS",
   "reserves_usd": "FI.RES.TOTL.CD",
-  "labor_force": "SL.TLF.TOTL.IN"
+  "labor_force": "SL.TLF.TOTL.IN",
+  "rnd_pct_gdp": "GB.XPD.RSDV.GD.ZS"
  },
- "note": "Includes aggregates (regions, income groups) under their World Bank codes; game code only reads country ISO3 entries. For sparse fiscal series (central_gov_debt_pct_gdp, revenue_pct_gdp, expense_pct_gdp, tax_revenue_pct_gdp, lending_rate_pct) a missing 2000 value is filled with the earliest value up to 2005; <key>_year records the year used.",
+ "note": "Includes aggregates (regions, income groups) under their World Bank codes; game code only reads country ISO3 entries. For sparse fiscal series (central_gov_debt_pct_gdp, revenue_pct_gdp, expense_pct_gdp, tax_revenue_pct_gdp, lending_rate_pct, rnd_pct_gdp) a missing 2000 value is filled with the earliest value up to 2005; <key>_year records the year used.",
  "countries": {
   "AFE": {
    "name": "Africa Eastern and Southern",
@@ -65,6 +66,8 @@
    "coal_rents_pct_gdp": 0.720265276798836,
    "mineral_rents_pct_gdp": 0.48306266536069,
    "labor_force": 160532909,
+   "rnd_pct_gdp": 0.594539921118996,
+   "rnd_pct_gdp_year": 2003,
    "gdp_growth_avg_1995_2000": 3.549829640146919
   },
   "AFW": {
@@ -163,6 +166,7 @@
    "coal_rents_pct_gdp": 0.116187824962689,
    "mineral_rents_pct_gdp": 0.0462839962081946,
    "labor_force": 48344815,
+   "rnd_pct_gdp": 0.746123027660077,
    "gdp_growth_avg_1995_2000": 3.4856784849049447
   },
   "EAR": {
@@ -187,6 +191,7 @@
    "coal_rents_pct_gdp": 0.140303215976643,
    "mineral_rents_pct_gdp": 0.187169270985264,
    "labor_force": 948733712,
+   "rnd_pct_gdp": 0.591430820372247,
    "gdp_growth_avg_1995_2000": 3.6977278115977223
   },
   "EAS": {
@@ -214,6 +219,7 @@
    "coal_rents_pct_gdp": 0.0357157464486785,
    "mineral_rents_pct_gdp": 0.102219785676685,
    "labor_force": 1085239922,
+   "rnd_pct_gdp": 2.23032794078797,
    "gdp_growth_avg_1995_2000": 4.17259855596388
   },
   "EAP": {
@@ -241,6 +247,7 @@
    "coal_rents_pct_gdp": 0.121319377992882,
    "mineral_rents_pct_gdp": 0.220769222182678,
    "labor_force": 967103304,
+   "rnd_pct_gdp": 0.722183945753278,
    "gdp_growth_avg_1995_2000": 7.268611086336612
   },
   "TEA": {
@@ -268,6 +275,7 @@
    "coal_rents_pct_gdp": 0.121319377992882,
    "mineral_rents_pct_gdp": 0.22075031867402,
    "labor_force": 952624543,
+   "rnd_pct_gdp": 0.722183945753278,
    "gdp_growth_avg_1995_2000": 7.267813879816188
   },
   "EMU": {
@@ -296,6 +304,7 @@
    "mineral_rents_pct_gdp": 0.00227920851189027,
    "reserves_usd": 351979822071.882,
    "labor_force": 153824859,
+   "rnd_pct_gdp": 1.80098522477828,
    "gdp_growth_avg_1995_2000": 2.800304310055972
   },
   "ECS": {
@@ -323,6 +332,7 @@
    "coal_rents_pct_gdp": 0.0208907431850706,
    "mineral_rents_pct_gdp": 0.0297752872176937,
    "labor_force": 397088955,
+   "rnd_pct_gdp": 1.67991880168832,
    "gdp_growth_avg_1995_2000": 2.8686300506879334
   },
   "ECA": {
@@ -347,6 +357,7 @@
    "coal_rents_pct_gdp": 0.129384197923653,
    "mineral_rents_pct_gdp": 0.0809804352437972,
    "labor_force": 90565340,
+   "rnd_pct_gdp": 0.496310943586314,
    "gdp_growth_avg_1995_2000": 2.9959172432543277
   },
   "TEC": {
@@ -373,6 +384,7 @@
    "coal_rents_pct_gdp": 0.172638531677706,
    "mineral_rents_pct_gdp": 0.298552712905662,
    "labor_force": 196028772,
+   "rnd_pct_gdp": 0.695753116263651,
    "gdp_growth_avg_1995_2000": 2.1729869336354084
   },
   "EUU": {
@@ -400,6 +412,7 @@
    "coal_rents_pct_gdp": 0.0116840147259979,
    "mineral_rents_pct_gdp": 0.00706568059390482,
    "labor_force": 197119935,
+   "rnd_pct_gdp": 1.75999874566084,
    "gdp_growth_avg_1995_2000": 2.8740011608809084
   },
   "FCV": {
@@ -475,6 +488,7 @@
    "coal_rents_pct_gdp": 0.134803473934153,
    "mineral_rents_pct_gdp": 0.271771938657018,
    "labor_force": 1822455997,
+   "rnd_pct_gdp": 0.650023289183398,
    "gdp_growth_avg_1995_2000": 4.525970581877985
   },
   "IBT": {
@@ -502,6 +516,7 @@
    "coal_rents_pct_gdp": 0.127580327328002,
    "mineral_rents_pct_gdp": 0.266069927994848,
    "labor_force": 2246122392,
+   "rnd_pct_gdp": 0.633964390130209,
    "gdp_growth_avg_1995_2000": 4.4660859973651705
   },
   "IDB": {
@@ -600,6 +615,7 @@
    "coal_rents_pct_gdp": 0.0901546217813163,
    "mineral_rents_pct_gdp": 0.314944846484737,
    "labor_force": 1076217553,
+   "rnd_pct_gdp": 0.822240063648511,
    "gdp_growth_avg_1995_2000": 5.170299566790927
   },
   "LCN": {
@@ -624,6 +640,7 @@
    "coal_rents_pct_gdp": 0.000582749292894221,
    "mineral_rents_pct_gdp": 0.324760145453547,
    "labor_force": 223044186,
+   "rnd_pct_gdp": 0.557752059828362,
    "gdp_growth_avg_1995_2000": 2.899454105946162
   },
   "LAC": {
@@ -648,6 +665,7 @@
    "coal_rents_pct_gdp": 0.000641766870606215,
    "mineral_rents_pct_gdp": 0.193109468519201,
    "labor_force": 209741419,
+   "rnd_pct_gdp": 0.566281961796708,
    "gdp_growth_avg_1995_2000": 2.721623695553131
   },
   "TLA": {
@@ -672,6 +690,7 @@
    "coal_rents_pct_gdp": 0.000609648389673603,
    "mineral_rents_pct_gdp": 0.329282131610998,
    "labor_force": 216788322,
+   "rnd_pct_gdp": 0.55901999067423,
    "gdp_growth_avg_1995_2000": 2.8385649079618855
   },
   "LDC": {
@@ -723,6 +742,7 @@
    "coal_rents_pct_gdp": 0.123094601361339,
    "mineral_rents_pct_gdp": 0.197607460790693,
    "labor_force": 2148709003,
+   "rnd_pct_gdp": 0.614258093754642,
    "gdp_growth_avg_1995_2000": 4.821952248358886
   },
   "MEA": {
@@ -747,6 +767,8 @@
    "coal_rents_pct_gdp": 0.00307093286175713,
    "mineral_rents_pct_gdp": 0.0161096453519454,
    "labor_force": 144270404,
+   "rnd_pct_gdp": 0.723768521489148,
+   "rnd_pct_gdp_year": 2005,
    "gdp_growth_avg_1995_2000": 4.296901183806433
   },
   "MNA": {
@@ -771,6 +793,8 @@
    "coal_rents_pct_gdp": 0.00585868375630009,
    "mineral_rents_pct_gdp": 0.0306925901995009,
    "labor_force": 131972078,
+   "rnd_pct_gdp": 0.399556830861665,
+   "rnd_pct_gdp_year": 2005,
    "gdp_growth_avg_1995_2000": 4.625834786434764
   },
   "TMN": {
@@ -795,6 +819,8 @@
    "coal_rents_pct_gdp": 0.00590304239142885,
    "mineral_rents_pct_gdp": 0.0309249771086513,
    "labor_force": 131353894,
+   "rnd_pct_gdp": 0.399556830861665,
+   "rnd_pct_gdp_year": 2005,
    "gdp_growth_avg_1995_2000": 4.618267773350735
   },
   "MIC": {
@@ -822,6 +848,7 @@
    "coal_rents_pct_gdp": 0.125338418151955,
    "mineral_rents_pct_gdp": 0.199334853068723,
    "labor_force": 2000438095,
+   "rnd_pct_gdp": 0.615159732427844,
    "gdp_growth_avg_1995_2000": 4.831057286505984
   },
   "NAC": {
@@ -850,6 +877,7 @@
    "coal_rents_pct_gdp": 0.135249397687705,
    "mineral_rents_pct_gdp": 0.024714604410221,
    "labor_force": 163326810,
+   "rnd_pct_gdp": 2.56825283882575,
    "gdp_growth_avg_1995_2000": 4.023438931160357
   },
   "OED": {
@@ -877,6 +905,7 @@
    "coal_rents_pct_gdp": 0.0597534493727272,
    "mineral_rents_pct_gdp": 0.041906356634876,
    "labor_force": 572772220,
+   "rnd_pct_gdp": 2.24621915834745,
    "gdp_growth_avg_1995_2000": 3.3481699350198
   },
   "OSS": {
@@ -904,6 +933,8 @@
    "coal_rents_pct_gdp": 0.212351069407838,
    "mineral_rents_pct_gdp": 0.00354196762993528,
    "labor_force": 3759047,
+   "rnd_pct_gdp": 0.857517603206836,
+   "rnd_pct_gdp_year": 2002,
    "gdp_growth_avg_1995_2000": 4.525928662979081
   },
   "PSS": {
@@ -954,6 +985,7 @@
    "coal_rents_pct_gdp": 0.0623178713691322,
    "mineral_rents_pct_gdp": 0.0275870685474728,
    "labor_force": 505253468,
+   "rnd_pct_gdp": 2.31961096604645,
    "gdp_growth_avg_1995_2000": 3.2645539461116244
   },
   "PRE": {
@@ -1007,6 +1039,8 @@
    "coal_rents_pct_gdp": 0.129964806226341,
    "mineral_rents_pct_gdp": 0.112134126922826,
    "labor_force": 6040230,
+   "rnd_pct_gdp": 0.728870052377194,
+   "rnd_pct_gdp_year": 2003,
    "gdp_growth_avg_1995_2000": 4.36170719054065
   },
   "SAS": {
@@ -1035,6 +1069,7 @@
    "coal_rents_pct_gdp": 0.42452685906077,
    "mineral_rents_pct_gdp": 0.224755534697101,
    "labor_force": 472836407,
+   "rnd_pct_gdp": 0.736011405769646,
    "gdp_growth_avg_1995_2000": 6.1272516096401155
   },
   "TSA": {
@@ -1063,6 +1098,7 @@
    "coal_rents_pct_gdp": 0.42452685906077,
    "mineral_rents_pct_gdp": 0.224755534697101,
    "labor_force": 472836407,
+   "rnd_pct_gdp": 0.736011405769646,
    "gdp_growth_avg_1995_2000": 6.1272516096401155
   },
   "SSF": {
@@ -1164,6 +1200,7 @@
    "coal_rents_pct_gdp": 0.0725929198444206,
    "mineral_rents_pct_gdp": 0.073675772351214,
    "labor_force": 2762297138,
+   "rnd_pct_gdp": 2.04500045332699,
    "gdp_growth_avg_1995_2000": 3.6146865440319136
   },
   "AFG": {
@@ -1232,13 +1269,17 @@
    "mineral_rents_pct_gdp": 0.0216085733371284,
    "reserves_usd": 13556106802.2148,
    "labor_force": 9070882,
+   "rnd_pct_gdp": 0.21219,
+   "rnd_pct_gdp_year": 2001,
    "gdp_growth_avg_1995_2000": 3.51666639416894
   },
   "ASM": {
    "name": "American Samoa",
    "population": 56855,
    "urban_population_pct": 88.6075809307222,
-   "pop_growth_pct": 1.07336821798259
+   "pop_growth_pct": 1.07336821798259,
+   "rnd_pct_gdp": 0.18787,
+   "rnd_pct_gdp_year": 2003
   },
   "AND": {
    "name": "Andorra",
@@ -1324,6 +1365,7 @@
    "mineral_rents_pct_gdp": 0.00202036861517756,
    "reserves_usd": 25152117244.4133,
    "labor_force": 16658086,
+   "rnd_pct_gdp": 0.43884,
    "gdp_growth_avg_1995_2000": 1.744708309866655
   },
   "ARM": {
@@ -1352,6 +1394,7 @@
    "mineral_rents_pct_gdp": 0.271357451879854,
    "reserves_usd": 314200332.802207,
    "labor_force": 1475960,
+   "rnd_pct_gdp": 0.19106,
    "gdp_growth_avg_1995_2000": 5.431079810175722
   },
   "ABW": {
@@ -1405,6 +1448,7 @@
    "mineral_rents_pct_gdp": 0.944083748919392,
    "reserves_usd": 18821546023.5147,
    "labor_force": 9542614,
+   "rnd_pct_gdp": 1.57198,
    "gdp_growth_avg_1995_2000": 4.215816068401172
   },
   "AUT": {
@@ -1433,6 +1477,7 @@
    "mineral_rents_pct_gdp": 0.00670765421289272,
    "reserves_usd": 17649557521.9085,
    "labor_force": 3883391,
+   "rnd_pct_gdp": 1.89667,
    "gdp_growth_avg_1995_2000": 2.912318897729804
   },
   "AZE": {
@@ -1459,6 +1504,7 @@
    "mineral_rents_pct_gdp": 0,
    "reserves_usd": 679605504.08201,
    "labor_force": 4306234,
+   "rnd_pct_gdp": 0.336,
    "gdp_growth_avg_1995_2000": 3.9666667499119086
   },
   "BHS": {
@@ -1609,6 +1655,7 @@
    "mineral_rents_pct_gdp": 0,
    "reserves_usd": 350495841.300001,
    "labor_force": 4815953,
+   "rnd_pct_gdp": 0.7221,
    "gdp_growth_avg_1995_2000": 3.566667239536861
   },
   "BEL": {
@@ -1637,6 +1684,7 @@
    "mineral_rents_pct_gdp": 0,
    "reserves_usd": 12271745172.0012,
    "labor_force": 4412646,
+   "rnd_pct_gdp": 1.9362,
    "gdp_growth_avg_1995_2000": 2.7868527579938203
   },
   "BLZ": {
@@ -1768,6 +1816,7 @@
    "mineral_rents_pct_gdp": 0.278147845667971,
    "reserves_usd": 1184108227.67536,
    "labor_force": 3741182,
+   "rnd_pct_gdp": 0.28744,
    "gdp_growth_avg_1995_2000": 3.6596463752656603
   },
   "BIH": {
@@ -1799,6 +1848,8 @@
    "mineral_rents_pct_gdp": 0.0579154373195127,
    "reserves_usd": 496626475.424899,
    "labor_force": 1760409,
+   "rnd_pct_gdp": 0.01826,
+   "rnd_pct_gdp_year": 2003,
    "gdp_growth_avg_1995_2000": 23.0601651560177
   },
   "BWA": {
@@ -1825,6 +1876,8 @@
    "mineral_rents_pct_gdp": 1.9342105987552,
    "reserves_usd": 6318214000.31791,
    "labor_force": 605662,
+   "rnd_pct_gdp": 0.53286,
+   "rnd_pct_gdp_year": 2005,
    "gdp_growth_avg_1995_2000": 5.547450211454305
   },
   "BRA": {
@@ -1851,6 +1904,7 @@
    "mineral_rents_pct_gdp": 0.287289488101813,
    "reserves_usd": 33015297295.6899,
    "labor_force": 80295093,
+   "rnd_pct_gdp": 1.04752,
    "gdp_growth_avg_1995_2000": 2.50358143089028
   },
   "VGB": {
@@ -1883,6 +1937,8 @@
    "mineral_rents_pct_gdp": 0,
    "reserves_usd": 408340574.417856,
    "labor_force": 155602,
+   "rnd_pct_gdp": 0.01469,
+   "rnd_pct_gdp_year": 2002,
    "gdp_growth_avg_1995_2000": 1.4570270696658205
   },
   "BGR": {
@@ -1911,6 +1967,7 @@
    "mineral_rents_pct_gdp": 0.04334628179999,
    "reserves_usd": 3507198891.18447,
    "labor_force": 3441466,
+   "rnd_pct_gdp": 0.49517,
    "gdp_growth_avg_1995_2000": -1.00455503730654
   },
   "BFA": {
@@ -1943,6 +2000,8 @@
    "coal_rents_pct_gdp": 0,
    "mineral_rents_pct_gdp": 0.0381539913096733,
    "labor_force": 5231474,
+   "rnd_pct_gdp": 0.16816,
+   "rnd_pct_gdp_year": 2001,
    "gdp_growth_avg_1995_2000": 6.606563965374238
   },
   "BDI": {
@@ -2029,6 +2088,8 @@
    "mineral_rents_pct_gdp": 0,
    "reserves_usd": 611415267.593156,
    "labor_force": 5758610,
+   "rnd_pct_gdp": 0.0474,
+   "rnd_pct_gdp_year": 2002,
    "gdp_growth_avg_1995_2000": 7.864698192014802
   },
   "CMR": {
@@ -2084,6 +2145,7 @@
    "mineral_rents_pct_gdp": 0.180010591231763,
    "reserves_usd": 32427268296.4521,
    "labor_force": 16186923,
+   "rnd_pct_gdp": 1.85849,
    "gdp_growth_avg_1995_2000": 3.803980925791977
   },
   "CYM": {
@@ -2211,6 +2273,7 @@
    "mineral_rents_pct_gdp": 0.143065124667862,
    "reserves_usd": 171763098225.843,
    "labor_force": 706837950,
+   "rnd_pct_gdp": 0.88409,
    "gdp_growth_avg_1995_2000": 9.087442166973817
   },
   "COL": {
@@ -2241,6 +2304,7 @@
    "mineral_rents_pct_gdp": 0.389708655622565,
    "reserves_usd": 9005870484.66314,
    "labor_force": 17848151,
+   "rnd_pct_gdp": 0.13106,
    "gdp_growth_avg_1995_2000": 1.6632027185491778
   },
   "COM": {
@@ -2292,6 +2356,8 @@
    "mineral_rents_pct_gdp": 0.0774613162726291,
    "reserves_usd": 82500000,
    "labor_force": 19902693,
+   "rnd_pct_gdp": 0.26777,
+   "rnd_pct_gdp_year": 2004,
    "gdp_growth_avg_1995_2000": -3.1242404339567007
   },
   "COG": {
@@ -2352,6 +2418,7 @@
    "mineral_rents_pct_gdp": 0.000646314517951147,
    "reserves_usd": 1318296304.08344,
    "labor_force": 1596716,
+   "rnd_pct_gdp": 0.41135,
    "gdp_growth_avg_1995_2000": 4.336498106578765
   },
   "CIV": {
@@ -2412,6 +2479,7 @@
    "mineral_rents_pct_gdp": 0,
    "reserves_usd": 3524350092.11558,
    "labor_force": 1953924,
+   "rnd_pct_gdp": 1.04221,
    "gdp_growth_avg_1995_2000": 3.896190100029567
   },
   "CUB": {
@@ -2434,6 +2502,7 @@
    "coal_rents_pct_gdp": 0,
    "mineral_rents_pct_gdp": 0.758448871373936,
    "labor_force": 4697933,
+   "rnd_pct_gdp": 0.47865,
    "gdp_growth_avg_1995_2000": 4.223672900511565
   },
   "CUW": {
@@ -2474,6 +2543,7 @@
    "mineral_rents_pct_gdp": 0.0168027182428898,
    "reserves_usd": 1868515473.45376,
    "labor_force": 444571,
+   "rnd_pct_gdp": 0.2269,
    "gdp_growth_avg_1995_2000": 4.8876805158549335
   },
   "CZE": {
@@ -2503,6 +2573,7 @@
    "mineral_rents_pct_gdp": 0,
    "reserves_usd": 13141569747.9339,
    "labor_force": 5175714,
+   "rnd_pct_gdp": 1.10377,
    "gdp_growth_avg_1995_2000": 2.4650053132080987
   },
   "DNK": {
@@ -2531,6 +2602,7 @@
    "mineral_rents_pct_gdp": 0,
    "reserves_usd": 15695951232.7906,
    "labor_force": 2861618,
+   "rnd_pct_gdp": 2.18774,
    "gdp_growth_avg_1995_2000": 3.019978456239448
   },
   "DJI": {
@@ -2622,6 +2694,8 @@
    "mineral_rents_pct_gdp": 0.0312504676242629,
    "reserves_usd": 1178958455.54318,
    "labor_force": 5202036,
+   "rnd_pct_gdp": 0.05448,
+   "rnd_pct_gdp_year": 2001,
    "gdp_growth_avg_1995_2000": 1.3218510292140433
   },
   "EGY": {
@@ -2654,6 +2728,7 @@
    "mineral_rents_pct_gdp": 0.0130912613990578,
    "reserves_usd": 13785040867.624,
    "labor_force": 21302020,
+   "rnd_pct_gdp": 0.19247,
    "gdp_growth_avg_1995_2000": 5.520414026022849
   },
   "SLV": {
@@ -2752,6 +2827,7 @@
    "mineral_rents_pct_gdp": 0,
    "reserves_usd": 922839655.587259,
    "labor_force": 677821,
+   "rnd_pct_gdp": 0.6,
    "gdp_growth_avg_1995_2000": 6.087026195878331
   },
   "SWZ": {
@@ -2809,6 +2885,8 @@
    "mineral_rents_pct_gdp": 0.128654580125834,
    "reserves_usd": 362554236.557216,
    "labor_force": 28908590,
+   "rnd_pct_gdp": 0.17917,
+   "rnd_pct_gdp_year": 2005,
    "gdp_growth_avg_1995_2000": 4.910802703044868
   },
   "FRO": {
@@ -2827,7 +2905,9 @@
    "oil_rents_pct_gdp": 0,
    "gas_rents_pct_gdp": 0,
    "coal_rents_pct_gdp": 0,
-   "mineral_rents_pct_gdp": 0
+   "mineral_rents_pct_gdp": 0,
+   "rnd_pct_gdp": 0.85253,
+   "rnd_pct_gdp_year": 2003
   },
   "FJI": {
    "name": "Fiji",
@@ -2887,6 +2967,7 @@
    "mineral_rents_pct_gdp": 0.0229423943544132,
    "reserves_usd": 8409731733.14766,
    "labor_force": 2601528,
+   "rnd_pct_gdp": 3.24271,
    "gdp_growth_avg_1995_2000": 4.982002263695916
   },
   "FRA": {
@@ -2915,6 +2996,7 @@
    "mineral_rents_pct_gdp": 0.000414116623984834,
    "reserves_usd": 63728079967.5087,
    "labor_force": 27313657,
+   "rnd_pct_gdp": 2.10066,
    "gdp_growth_avg_1995_2000": 2.8703061141278035
   },
   "PYF": {
@@ -3016,6 +3098,7 @@
    "mineral_rents_pct_gdp": 0.214207470912808,
    "reserves_usd": 115965903.57973,
    "labor_force": 2341585,
+   "rnd_pct_gdp": 0.2153,
    "gdp_growth_avg_1995_2000": 5.354852041742782
   },
   "DEU": {
@@ -3044,6 +3127,7 @@
    "mineral_rents_pct_gdp": 0.000222783857547795,
    "reserves_usd": 87496869035.2706,
    "labor_force": 40210993,
+   "rnd_pct_gdp": 2.38654,
    "gdp_growth_avg_1995_2000": 1.9164828988163782
   },
   "GHA": {
@@ -3109,6 +3193,8 @@
    "mineral_rents_pct_gdp": 0.0153684132685933,
    "reserves_usd": 14594006578.5544,
    "labor_force": 4679182,
+   "rnd_pct_gdp": 0.57753,
+   "rnd_pct_gdp_year": 2001,
    "gdp_growth_avg_1995_2000": 2.886436964109367
   },
   "GRL": {
@@ -3123,6 +3209,8 @@
    "gas_rents_pct_gdp": 0,
    "coal_rents_pct_gdp": 0,
    "mineral_rents_pct_gdp": 0,
+   "rnd_pct_gdp": 0.52741,
+   "rnd_pct_gdp_year": 2001,
    "gdp_growth_avg_1995_2000": 3.8274507172149126
   },
   "GRD": {
@@ -3152,7 +3240,9 @@
    "unemployment_pct": 15.32,
    "urban_population_pct": 93.1395316242857,
    "pop_growth_pct": 1.11575065774253,
-   "labor_force": 75675
+   "labor_force": 75675,
+   "rnd_pct_gdp": 0.2657,
+   "rnd_pct_gdp_year": 2003
   },
   "GTM": {
    "name": "Guatemala",
@@ -3182,6 +3272,8 @@
    "mineral_rents_pct_gdp": 0.0458793875654051,
    "reserves_usd": 1805677836.93431,
    "labor_force": 4394451,
+   "rnd_pct_gdp": 0.03556,
+   "rnd_pct_gdp_year": 2005,
    "gdp_growth_avg_1995_2000": 4.119979340957595
   },
   "GIN": {
@@ -3314,6 +3406,7 @@
    "mineral_rents_pct_gdp": 0,
    "reserves_usd": 1318911702.08956,
    "labor_force": 2409908,
+   "rnd_pct_gdp": 0.04453,
    "gdp_growth_avg_1995_2000": 17.13730736130088
   },
   "HKG": {
@@ -3339,6 +3432,7 @@
    "mineral_rents_pct_gdp": 0,
    "reserves_usd": 107560388150,
    "labor_force": 3358981,
+   "rnd_pct_gdp": 0.46493,
    "gdp_growth_avg_1995_2000": 2.669921158300888
   },
   "HUN": {
@@ -3369,6 +3463,7 @@
    "mineral_rents_pct_gdp": 0.00165012313788559,
    "reserves_usd": 11217315165.5178,
    "labor_force": 4344023,
+   "rnd_pct_gdp": 0.78999,
    "gdp_growth_avg_1995_2000": 2.6520300079065584
   },
   "ISL": {
@@ -3399,6 +3494,7 @@
    "mineral_rents_pct_gdp": 0,
    "reserves_usd": 405074266.016599,
    "labor_force": 167968,
+   "rnd_pct_gdp": 2.57201,
    "gdp_growth_avg_1995_2000": 4.0947934120663
   },
   "IND": {
@@ -3429,6 +3525,7 @@
    "mineral_rents_pct_gdp": 0.261484986654409,
    "reserves_usd": 41059061574.6632,
    "labor_force": 409617771,
+   "rnd_pct_gdp": 0.75699,
    "gdp_growth_avg_1995_2000": 6.340832912832553
   },
   "IDN": {
@@ -3463,6 +3560,7 @@
    "mineral_rents_pct_gdp": 0.990349937041244,
    "reserves_usd": 29352929561.4767,
    "labor_force": 101308307,
+   "rnd_pct_gdp": 0.06769,
    "gdp_growth_avg_1995_2000": 2.2204236110468565
   },
   "IRN": {
@@ -3492,6 +3590,8 @@
    "coal_rents_pct_gdp": 0.00362533401870033,
    "mineral_rents_pct_gdp": 0.0843084131247478,
    "labor_force": 19476868,
+   "rnd_pct_gdp": 0.50218,
+   "rnd_pct_gdp_year": 2001,
    "gdp_growth_avg_1995_2000": 3.338367555637458
   },
   "IRQ": {
@@ -3546,6 +3646,7 @@
    "mineral_rents_pct_gdp": 0.0239798475453334,
    "reserves_usd": 5407973929.95671,
    "labor_force": 1915533,
+   "rnd_pct_gdp": 1.08383,
    "gdp_growth_avg_1995_2000": 9.455890694902756
   },
   "IMN": {
@@ -3585,6 +3686,7 @@
    "mineral_rents_pct_gdp": 0,
    "reserves_usd": 23281206067.5375,
    "labor_force": 2766361,
+   "rnd_pct_gdp": 3.81316,
    "gdp_growth_avg_1995_2000": 5.338987905842839
   },
   "ITA": {
@@ -3614,6 +3716,7 @@
    "mineral_rents_pct_gdp": 0.000138489874672659,
    "reserves_usd": 47201146787.795,
    "labor_force": 23341777,
+   "rnd_pct_gdp": 1.00104,
    "gdp_growth_avg_1995_2000": 2.2537677381994516
   },
   "JAM": {
@@ -3642,6 +3745,8 @@
    "mineral_rents_pct_gdp": 1.36817354519982,
    "reserves_usd": 1053690047.86883,
    "labor_force": 1160690,
+   "rnd_pct_gdp": 0.0491,
+   "rnd_pct_gdp_year": 2001,
    "gdp_growth_avg_1995_2000": 0.11459830607625687
   },
   "JPN": {
@@ -3669,6 +3774,7 @@
    "mineral_rents_pct_gdp": 0.000539184817417449,
    "reserves_usd": 361639097011.665,
    "labor_force": 67813478,
+   "rnd_pct_gdp": 2.85841,
    "gdp_growth_avg_1995_2000": 1.273096574794387
   },
   "JOR": {
@@ -3699,6 +3805,8 @@
    "mineral_rents_pct_gdp": 0,
    "reserves_usd": 3441302675.1737,
    "labor_force": 1272412,
+   "rnd_pct_gdp": 0.33689,
+   "rnd_pct_gdp_year": 2002,
    "gdp_growth_avg_1995_2000": 3.7072976689623434
   },
   "KAZ": {
@@ -3727,6 +3835,7 @@
    "mineral_rents_pct_gdp": 0.862769121792731,
    "reserves_usd": 2098969798.52753,
    "labor_force": 7959482,
+   "rnd_pct_gdp": 0.18104,
    "gdp_growth_avg_1995_2000": 0.7666666668241664
   },
   "KEN": {
@@ -3809,6 +3918,7 @@
    "mineral_rents_pct_gdp": 0.00865486696785494,
    "reserves_usd": 96250965793.1311,
    "labor_force": 22567537,
+   "rnd_pct_gdp": 2.0494,
    "gdp_growth_avg_1995_2000": 6.648117971215849
   },
   "XKX": {
@@ -3844,6 +3954,7 @@
    "mineral_rents_pct_gdp": 0,
    "reserves_usd": 7779055735.12478,
    "labor_force": 910204,
+   "rnd_pct_gdp": 0.12542,
    "gdp_growth_avg_1995_2000": 2.4173951905201796
   },
   "KGZ": {
@@ -3870,6 +3981,7 @@
    "mineral_rents_pct_gdp": 3.15869466085072,
    "reserves_usd": 261849461.304369,
    "labor_force": 2126902,
+   "rnd_pct_gdp": 0.15637,
    "gdp_growth_avg_1995_2000": 3.799482614330478
   },
   "LAO": {
@@ -3896,6 +4008,8 @@
    "mineral_rents_pct_gdp": 0,
    "reserves_usd": 144286276.317585,
    "labor_force": 1904793,
+   "rnd_pct_gdp": 0.0371,
+   "rnd_pct_gdp_year": 2002,
    "gdp_growth_avg_1995_2000": 6.317405969284575
   },
   "LVA": {
@@ -3924,6 +4038,7 @@
    "mineral_rents_pct_gdp": 0,
    "reserves_usd": 919162856.263872,
    "labor_force": 1094541,
+   "rnd_pct_gdp": 0.4459,
    "gdp_growth_avg_1995_2000": 4.289351357288828
   },
   "LBN": {
@@ -3979,6 +4094,8 @@
    "mineral_rents_pct_gdp": 0,
    "reserves_usd": 417891096.032124,
    "labor_force": 876334,
+   "rnd_pct_gdp": 0.04185,
+   "rnd_pct_gdp_year": 2002,
    "gdp_growth_avg_1995_2000": 3.0801342232977293
   },
   "LBR": {
@@ -4062,6 +4179,7 @@
    "mineral_rents_pct_gdp": 0,
    "reserves_usd": 1362679200.14877,
    "labor_force": 1685904,
+   "rnd_pct_gdp": 0.58422,
    "gdp_growth_avg_1995_2000": 4.400367966851313
   },
   "LUX": {
@@ -4090,6 +4208,7 @@
    "mineral_rents_pct_gdp": 0,
    "reserves_usd": 97465747.9509168,
    "labor_force": 188913,
+   "rnd_pct_gdp": 1.58314,
    "gdp_growth_avg_1995_2000": 5.006405143660041
   },
   "MAC": {
@@ -4117,6 +4236,8 @@
    "mineral_rents_pct_gdp": 0,
    "reserves_usd": 3323014302.25176,
    "labor_force": 217883,
+   "rnd_pct_gdp": 0.06224,
+   "rnd_pct_gdp_year": 2001,
    "gdp_growth_avg_1995_2000": 0.23578784026718871
   },
   "MDG": {
@@ -4147,6 +4268,7 @@
    "mineral_rents_pct_gdp": 0.000221203767551962,
    "reserves_usd": 285182984.805488,
    "labor_force": 7777716,
+   "rnd_pct_gdp": 0.10032,
    "gdp_growth_avg_1995_2000": 3.433241665235872
   },
   "MWI": {
@@ -4201,6 +4323,7 @@
    "mineral_rents_pct_gdp": 0.0117604999428554,
    "reserves_usd": 28650936563.5297,
    "labor_force": 9003136,
+   "rnd_pct_gdp": 0.46899,
    "gdp_growth_avg_1995_2000": 5.79859878765783
   },
   "MDV": {
@@ -4282,6 +4405,8 @@
    "mineral_rents_pct_gdp": 0,
    "reserves_usd": 1471281813.84209,
    "labor_force": 155461,
+   "rnd_pct_gdp": 0.25107,
+   "rnd_pct_gdp_year": 2002,
    "gdp_growth_avg_1995_2000": 7.483942404868537
   },
   "MHL": {
@@ -4355,6 +4480,7 @@
    "mineral_rents_pct_gdp": 0,
    "reserves_usd": 914366133.679955,
    "labor_force": 519717,
+   "rnd_pct_gdp": 0.28025,
    "gdp_growth_avg_1995_2000": 5.408120364554385
   },
   "MEX": {
@@ -4385,6 +4511,7 @@
    "mineral_rents_pct_gdp": 0.0689659453339466,
    "reserves_usd": 35577279053.6649,
    "labor_force": 38588417,
+   "rnd_pct_gdp": 0.29205,
    "gdp_growth_avg_1995_2000": 3.579377834262395
   },
   "FSM": {
@@ -4436,6 +4563,8 @@
    "mineral_rents_pct_gdp": 0,
    "reserves_usd": 222490325.115233,
    "labor_force": 1340815,
+   "rnd_pct_gdp": 0.32405,
+   "rnd_pct_gdp_year": 2003,
    "gdp_growth_avg_1995_2000": -2.238787542080775
   },
   "MCO": {
@@ -4447,6 +4576,8 @@
    "urban_population_pct": 100,
    "pop_growth_pct": 0.138749733197593,
    "mineral_rents_pct_gdp": 0,
+   "rnd_pct_gdp": 0.03787,
+   "rnd_pct_gdp_year": 2004,
    "gdp_growth_avg_1995_2000": 2.696528169422427
   },
   "MNG": {
@@ -4477,6 +4608,7 @@
    "mineral_rents_pct_gdp": 3.03510381790946,
    "reserves_usd": 202077115.561911,
    "labor_force": 921234,
+   "rnd_pct_gdp": 0.18757,
    "gdp_growth_avg_1995_2000": 3.3441003434907253
   },
   "MNE": {
@@ -4497,7 +4629,9 @@
    "exports_pct_gdp": 36.8149918504193,
    "imports_pct_gdp": 51.110210293901,
    "mineral_rents_pct_gdp": 0,
-   "labor_force": 232893
+   "labor_force": 232893,
+   "rnd_pct_gdp": 0.79772,
+   "rnd_pct_gdp_year": 2003
   },
   "MAR": {
    "name": "Morocco",
@@ -4530,6 +4664,8 @@
    "mineral_rents_pct_gdp": 0.126939155104646,
    "reserves_usd": 5016934754.82375,
    "labor_force": 9622622,
+   "rnd_pct_gdp": 0.5463,
+   "rnd_pct_gdp_year": 2001,
    "gdp_growth_avg_1995_2000": 2.820753520290283
   },
   "MOZ": {
@@ -4555,6 +4691,8 @@
    "mineral_rents_pct_gdp": 0.0017922560594659,
    "reserves_usd": 742321151.033547,
    "labor_force": 8468296,
+   "rnd_pct_gdp": 0.35598,
+   "rnd_pct_gdp_year": 2002,
    "gdp_growth_avg_1995_2000": 7.931034118496719
   },
   "MMR": {
@@ -4581,6 +4719,7 @@
    "mineral_rents_pct_gdp": 0.210015668247603,
    "reserves_usd": 286495285.090852,
    "labor_force": 20800913,
+   "rnd_pct_gdp": 0.11306,
    "gdp_growth_avg_1995_2000": 8.266603906390085
   },
   "NAM": {
@@ -4678,6 +4817,7 @@
    "mineral_rents_pct_gdp": 0,
    "reserves_usd": 17688007846.9298,
    "labor_force": 8771496,
+   "rnd_pct_gdp": 1.78907,
    "gdp_growth_avg_1995_2000": 4.1159818404626
   },
   "NCL": {
@@ -4734,6 +4874,8 @@
    "mineral_rents_pct_gdp": 0.0783679904071662,
    "reserves_usd": 3952081062.22381,
    "labor_force": 1929758,
+   "rnd_pct_gdp": 1.10029,
+   "rnd_pct_gdp_year": 2001,
    "gdp_growth_avg_1995_2000": 3.25170809784805
   },
   "NIC": {
@@ -4763,6 +4905,8 @@
    "mineral_rents_pct_gdp": 0.137652458211628,
    "reserves_usd": 492485081.971073,
    "labor_force": 1804371,
+   "rnd_pct_gdp": 0.03493,
+   "rnd_pct_gdp_year": 2002,
    "gdp_growth_avg_1995_2000": 5.178678233819014
   },
   "NER": {
@@ -4846,6 +4990,7 @@
    "mineral_rents_pct_gdp": 0.158868721809393,
    "reserves_usd": 460208291.007042,
    "labor_force": 818451,
+   "rnd_pct_gdp": 0.41888,
    "gdp_growth_avg_1995_2000": 2.296209479054504
   },
   "MNP": {
@@ -4880,6 +5025,8 @@
    "mineral_rents_pct_gdp": 0.00274125387903448,
    "reserves_usd": 27922060281.566,
    "labor_force": 2399174,
+   "rnd_pct_gdp": 1.56019,
+   "rnd_pct_gdp_year": 2001,
    "gdp_growth_avg_1995_2000": 3.761069238990688
   },
   "OMN": {
@@ -4934,6 +5081,7 @@
    "mineral_rents_pct_gdp": 0.000907732162106178,
    "reserves_usd": 2087167574.18215,
    "labor_force": 44283074,
+   "rnd_pct_gdp": 0.09536,
    "gdp_growth_avg_1995_2000": 3.5490069154278436
   },
   "PLW": {
@@ -4975,6 +5123,7 @@
    "mineral_rents_pct_gdp": 0.0236592233139777,
    "reserves_usd": 722595056.913888,
    "labor_force": 1282474,
+   "rnd_pct_gdp": 0.37287,
    "gdp_growth_avg_1995_2000": 5.2247575102937835
   },
   "PNG": {
@@ -5036,6 +5185,8 @@
    "mineral_rents_pct_gdp": 0,
    "reserves_usd": 772414513.758737,
    "labor_force": 2152330,
+   "rnd_pct_gdp": 0.06699,
+   "rnd_pct_gdp_year": 2001,
    "gdp_growth_avg_1995_2000": 1.5044881688752092
   },
   "PER": {
@@ -5065,6 +5216,7 @@
    "mineral_rents_pct_gdp": 1.31664311353393,
    "reserves_usd": 8675891763.57695,
    "labor_force": 11421931,
+   "rnd_pct_gdp": 0.11266,
    "gdp_growth_avg_1995_2000": 3.4141561720996663
   },
   "PHL": {
@@ -5095,6 +5247,8 @@
    "mineral_rents_pct_gdp": 0.179542055129519,
    "reserves_usd": 15074070180.8191,
    "labor_force": 29661770,
+   "rnd_pct_gdp": 0.13263,
+   "rnd_pct_gdp_year": 2002,
    "gdp_growth_avg_1995_2000": 3.814475041395155
   },
   "POL": {
@@ -5123,6 +5277,7 @@
    "mineral_rents_pct_gdp": 0.0999517476893002,
    "reserves_usd": 27469379417.1751,
    "labor_force": 17100972,
+   "rnd_pct_gdp": 0.63806,
    "gdp_growth_avg_1995_2000": 5.7265953411210555
   },
   "PRT": {
@@ -5151,6 +5306,7 @@
    "mineral_rents_pct_gdp": 0.0000929800904584882,
    "reserves_usd": 14262113156.7968,
    "labor_force": 5230882,
+   "rnd_pct_gdp": 0.72156,
    "gdp_growth_avg_1995_2000": 4.119768749062193
   },
   "PRI": {
@@ -5228,6 +5384,7 @@
    "mineral_rents_pct_gdp": 0.03351046349024,
    "reserves_usd": 3395672575.31484,
    "labor_force": 9326339,
+   "rnd_pct_gdp": 0.36626,
    "gdp_growth_avg_1995_2000": 0.891156780275916
   },
   "RUS": {
@@ -5257,6 +5414,7 @@
    "mineral_rents_pct_gdp": 0.833857339720371,
    "reserves_usd": 27656266696.1263,
    "labor_force": 73640731,
+   "rnd_pct_gdp": 1.04983,
    "gdp_growth_avg_1995_2000": 0.7668896400242184
   },
   "RWA": {
@@ -5369,6 +5527,8 @@
    "mineral_rents_pct_gdp": 0.000106454883501944,
    "reserves_usd": 20846854711.0682,
    "labor_force": 4891476,
+   "rnd_pct_gdp": 0.06233,
+   "rnd_pct_gdp_year": 2003,
    "gdp_growth_avg_1995_2000": 2.19204373178648
   },
   "SEN": {
@@ -5420,6 +5580,7 @@
    "coal_rents_pct_gdp": 0.380086161152018,
    "mineral_rents_pct_gdp": 0,
    "labor_force": 3502798,
+   "rnd_pct_gdp": 0.80171,
    "gdp_growth_avg_1995_2000": 3.234079970120368
   },
   "SYC": {
@@ -5447,6 +5608,8 @@
    "coal_rents_pct_gdp": 0,
    "mineral_rents_pct_gdp": 0,
    "reserves_usd": 43752074.0468577,
+   "rnd_pct_gdp": 0.39968,
+   "rnd_pct_gdp_year": 2001,
    "gdp_growth_avg_1995_2000": 5.211544799395134
   },
   "SLE": {
@@ -5501,6 +5664,7 @@
    "mineral_rents_pct_gdp": 0,
    "reserves_usd": 81084978988.8663,
    "labor_force": 2138100,
+   "rnd_pct_gdp": 1.81699,
    "gdp_growth_avg_1995_2000": 5.92144569478716
   },
   "SXM": {
@@ -5535,6 +5699,7 @@
    "mineral_rents_pct_gdp": 0.0140502267731677,
    "reserves_usd": 4376328677.41435,
    "labor_force": 2581927,
+   "rnd_pct_gdp": 0.63865,
    "gdp_growth_avg_1995_2000": 3.598497379078676
   },
   "SVN": {
@@ -5565,6 +5730,7 @@
    "mineral_rents_pct_gdp": 0,
    "reserves_usd": 3196099145.64647,
    "labor_force": 962184,
+   "rnd_pct_gdp": 1.36862,
    "gdp_growth_avg_1995_2000": 4.003644539294787
   },
   "SLB": {
@@ -5629,6 +5795,8 @@
    "mineral_rents_pct_gdp": 0.706162575140753,
    "reserves_usd": 7702061131.77161,
    "labor_force": 17579103,
+   "rnd_pct_gdp": 0.64224,
+   "rnd_pct_gdp_year": 2001,
    "gdp_growth_avg_1995_2000": 2.8499999996264287
   },
   "SSD": {
@@ -5667,6 +5835,7 @@
    "mineral_rents_pct_gdp": 0.00693067970674643,
    "reserves_usd": 35607623344.835,
    "labor_force": 18277062,
+   "rnd_pct_gdp": 0.88315,
    "gdp_growth_avg_1995_2000": 3.8106148432558613
   },
   "LKA": {
@@ -5698,6 +5867,7 @@
    "mineral_rents_pct_gdp": 0,
    "reserves_usd": 1131355289.18666,
    "labor_force": 7826298,
+   "rnd_pct_gdp": 0.14392,
    "gdp_growth_avg_1995_2000": 5.117408139949455
   },
   "KNA": {
@@ -5780,6 +5950,8 @@
    "mineral_rents_pct_gdp": 0,
    "reserves_usd": 55179038.1673819,
    "labor_force": 50373,
+   "rnd_pct_gdp": 0.04008,
+   "rnd_pct_gdp_year": 2001,
    "gdp_growth_avg_1995_2000": 3.4998751117490614
   },
   "SDN": {
@@ -5805,6 +5977,7 @@
    "mineral_rents_pct_gdp": 0.0964740807339254,
    "reserves_usd": 137814239.250022,
    "labor_force": 7658513,
+   "rnd_pct_gdp": 0.47277,
    "gdp_growth_avg_1995_2000": 7.331223419929948
   },
   "SUR": {
@@ -5857,6 +6030,8 @@
    "mineral_rents_pct_gdp": 0.068212327043002,
    "reserves_usd": 16498728321.8884,
    "labor_force": 4486411,
+   "rnd_pct_gdp": 3.87215,
+   "rnd_pct_gdp_year": 2001,
    "gdp_growth_avg_1995_2000": 3.6570290172012414
   },
   "CHE": {
@@ -5886,6 +6061,7 @@
    "mineral_rents_pct_gdp": 0,
    "reserves_usd": 53620270122.4935,
    "labor_force": 3994754,
+   "rnd_pct_gdp": 2.26386,
    "gdp_growth_avg_1995_2000": 2.473596642956291
   },
   "SYR": {
@@ -5939,6 +6115,8 @@
    "mineral_rents_pct_gdp": 0.633697728184772,
    "reserves_usd": 94280831.9251687,
    "labor_force": 1995679,
+   "rnd_pct_gdp": 0.08953,
+   "rnd_pct_gdp_year": 2001,
    "gdp_growth_avg_1995_2000": -1.6831506100932865
   },
   "TZA": {
@@ -5995,6 +6173,7 @@
    "mineral_rents_pct_gdp": 0.00208046959774586,
    "reserves_usd": 32665494240.0387,
    "labor_force": 35011504,
+   "rnd_pct_gdp": 0.24471,
    "gdp_growth_avg_1995_2000": 2.068700694435368
   },
   "TLS": {
@@ -6096,6 +6275,7 @@
    "mineral_rents_pct_gdp": 0,
    "reserves_usd": 1402802249.32216,
    "labor_force": 616212,
+   "rnd_pct_gdp": 0.108,
    "gdp_growth_avg_1995_2000": 6.919664410917666
   },
   "TUN": {
@@ -6125,6 +6305,8 @@
    "mineral_rents_pct_gdp": 0.0157043017549626,
    "reserves_usd": 1871427065.05158,
    "labor_force": 3270136,
+   "rnd_pct_gdp": 0.54302,
+   "rnd_pct_gdp_year": 2002,
    "gdp_growth_avg_1995_2000": 5.08117736513397
   },
   "TUR": {
@@ -6150,6 +6332,7 @@
    "mineral_rents_pct_gdp": 0.0238700694895731,
    "reserves_usd": 23514529510.3899,
    "labor_force": 22804910,
+   "rnd_pct_gdp": 0.46558,
    "gdp_growth_avg_1995_2000": 4.705835799389843
   },
   "TKM": {
@@ -6223,6 +6406,8 @@
    "mineral_rents_pct_gdp": 0.00185183596797401,
    "reserves_usd": 808042388.803331,
    "labor_force": 8905138,
+   "rnd_pct_gdp": 0.36756,
+   "rnd_pct_gdp_year": 2002,
    "gdp_growth_avg_1995_2000": 6.966080242625638
   },
   "UKR": {
@@ -6253,6 +6438,7 @@
    "mineral_rents_pct_gdp": 0,
    "reserves_usd": 1477202335.54994,
    "labor_force": 23286247,
+   "rnd_pct_gdp": 0.92904,
    "gdp_growth_avg_1995_2000": -3.5666666668602165
   },
   "ARE": {
@@ -6305,6 +6491,7 @@
    "mineral_rents_pct_gdp": 0.00000394334534740473,
    "reserves_usd": 50939389681.3509,
    "labor_force": 29283662,
+   "rnd_pct_gdp": 1.60963,
    "gdp_growth_avg_1995_2000": 3.623907768691875
   },
   "USA": {
@@ -6335,6 +6522,7 @@
    "mineral_rents_pct_gdp": 0.0134401090902058,
    "reserves_usd": 128399516602.723,
    "labor_force": 147139887,
+   "rnd_pct_gdp": 2.61982,
    "gdp_growth_avg_1995_2000": 4.0422459213233255
   },
   "URY": {
@@ -6366,6 +6554,7 @@
    "mineral_rents_pct_gdp": 0.0185114499533399,
    "reserves_usd": 2775536525.06833,
    "labor_force": 1486319,
+   "rnd_pct_gdp": 0.20925,
    "gdp_growth_avg_1995_2000": 2.2910092562347932
   },
   "UZB": {
@@ -6388,6 +6577,7 @@
    "coal_rents_pct_gdp": 0.0200116320320681,
    "mineral_rents_pct_gdp": 0.164238515501257,
    "labor_force": 8934705,
+   "rnd_pct_gdp": 0.36063,
    "gdp_growth_avg_1995_2000": 3.072499999526965
   },
   "VUT": {
@@ -6436,6 +6626,8 @@
    "mineral_rents_pct_gdp": 0.0791049284520338,
    "reserves_usd": 15898851162.5221,
    "labor_force": 10357302,
+   "rnd_pct_gdp": 0.18907,
+   "rnd_pct_gdp_year": 2005,
    "gdp_growth_avg_1995_2000": 1.3523032921845795
   },
   "VNM": {
@@ -6460,6 +6652,8 @@
    "mineral_rents_pct_gdp": 0.0281474119945084,
    "reserves_usd": 3416511105.0847,
    "labor_force": 38790735,
+   "rnd_pct_gdp": 0.19273,
+   "rnd_pct_gdp_year": 2002,
    "gdp_growth_avg_1995_2000": 7.392990094038076
   },
   "VIR": {
@@ -6468,7 +6662,9 @@
    "unemployment_pct": 9.834,
    "urban_population_pct": 92.6234446497486,
    "pop_growth_pct": 0.0395873712251061,
-   "labor_force": 48131
+   "labor_force": 48131,
+   "rnd_pct_gdp": 0.06617,
+   "rnd_pct_gdp_year": 2002
   },
   "PSE": {
    "name": "West Bank and Gaza",
@@ -6550,6 +6746,8 @@
    "mineral_rents_pct_gdp": 0.620250874620162,
    "reserves_usd": 244824131.796944,
    "labor_force": 3100873,
+   "rnd_pct_gdp": 0.00544,
+   "rnd_pct_gdp_year": 2002,
    "gdp_growth_avg_1995_2000": 3.5153315705910284
   },
   "ZWE": {

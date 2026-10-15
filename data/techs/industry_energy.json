@@ -1,0 +1,170 @@
+{
+  "id": "industry_energy",
+  "name": "Industry and energy",
+  "description": "Manufacturing methods and power generation.",
+  "military": false,
+  "techs": [
+    {
+      "id": "ind_nuclear_power",
+      "name": "Nuclear power",
+      "description": "Large nuclear power stations.",
+      "year": 1980,
+      "x": 3,
+      "effects": {
+        "nuclear_output": 0.1
+      },
+      "cost": 500
+    },
+    {
+      "id": "ind_lean_manufacturing",
+      "name": "Lean manufacturing",
+      "description": "Just-in-time production with less waste.",
+      "year": 1997,
+      "x": 0,
+      "effects": {
+        "production_efficiency": 0.05
+      },
+      "cost": 700,
+      "prerequisites": [
+        [
+          "ind_nuclear_power"
+        ]
+      ]
+    },
+    {
+      "id": "ind_combined_cycle_gas",
+      "name": "Combined-cycle gas power",
+      "description": "Efficient gas power stations.",
+      "year": 1998,
+      "x": 1,
+      "effects": {
+        "energy_cost": -0.03,
+        "fossil_output": 0.05
+      },
+      "cost": 700,
+      "prerequisites": [
+        [
+          "ind_nuclear_power"
+        ]
+      ]
+    },
+    {
+      "id": "ind_industrial_robotics",
+      "name": "Industrial robotics",
+      "description": "Robots on assembly lines.",
+      "year": 2005,
+      "x": 0,
+      "effects": {
+        "production_efficiency": 0.05,
+        "construction_speed": 0.03
+      },
+      "prerequisites": [
+        [
+          "ind_lean_manufacturing"
+        ]
+      ],
+      "cost": 850
+    },
+    {
+      "id": "ind_horizontal_drilling",
+      "name": "Horizontal drilling and fracking",
+      "description": "Extracting oil and gas from shale.",
+      "year": 2008,
+      "x": 1,
+      "effects": {
+        "fossil_output": 0.1,
+        "energy_cost": -0.03
+      },
+      "prerequisites": [
+        [
+          "ind_combined_cycle_gas"
+        ]
+      ],
+      "cost": 850
+    },
+    {
+      "id": "ind_wind_and_solar",
+      "name": "Utility-scale wind and solar",
+      "description": "Large wind farms and solar parks.",
+      "year": 2008,
+      "x": 2,
+      "effects": {
+        "renewable_output": 0.15,
+        "emissions": -0.05
+      },
+      "cost": 850,
+      "prerequisites": [
+        [
+          "ind_nuclear_power"
+        ]
+      ]
+    },
+    {
+      "id": "ind_additive_manufacturing",
+      "name": "Additive manufacturing",
+      "description": "Industrial 3D printing.",
+      "year": 2014,
+      "x": 0,
+      "effects": {
+        "production_efficiency": 0.04
+      },
+      "prerequisites": [
+        [
+          "ind_industrial_robotics"
+        ]
+      ],
+      "cost": 850
+    },
+    {
+      "id": "ind_grid_storage",
+      "name": "Grid-scale batteries",
+      "description": "Batteries that store renewable power for the grid.",
+      "year": 2018,
+      "x": 2,
+      "effects": {
+        "renewable_output": 0.1,
+        "energy_cost": -0.02
+      },
+      "prerequisites": [
+        [
+          "ind_wind_and_solar"
+        ]
+      ],
+      "cost": 1000
+    },
+    {
+      "id": "ind_small_modular_reactors",
+      "name": "Small modular reactors",
+      "description": "Factory-built nuclear reactors.",
+      "year": 2030,
+      "x": 1,
+      "effects": {
+        "nuclear_output": 0.2,
+        "emissions": -0.05
+      },
+      "cost": 1200,
+      "prerequisites": [
+        [
+          "ind_nuclear_power"
+        ]
+      ]
+    },
+    {
+      "id": "ind_green_hydrogen",
+      "name": "Green hydrogen",
+      "description": "Hydrogen made with renewable power for industry.",
+      "year": 2030,
+      "x": 2,
+      "effects": {
+        "emissions": -0.08,
+        "renewable_output": 0.05
+      },
+      "prerequisites": [
+        [
+          "ind_grid_storage"
+        ]
+      ],
+      "cost": 1200
+    }
+  ]
+}

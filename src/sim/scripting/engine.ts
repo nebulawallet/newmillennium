@@ -14,6 +14,7 @@ import { mergeParty } from "../politics/parties.ts";
 import { calibrate } from "../politics/voteModel.ts";
 import { initialSchedule } from "../politics/schedule.ts";
 import { applyShock } from "../economy/economy.ts";
+import { grantTech } from "../research/research.ts";
 
 export interface Scope {
   /** The country the script currently acts on. */
@@ -102,6 +103,7 @@ function trigger(ctx: SimContext, scope: Scope, k: string, v: unknown): boolean 
     case "has_global_flag": return v as string in state.globalFlags;
     case "is_ai": return (state.player !== scope.tag) === v;
     case "is_player": return (state.player === scope.tag) === v;
+    case "has_tech": return !!cs.research?.completed.includes(v as string);
     case "election_mode": return state.rules.electionMode === v;
     case "ruling_party": return cs.rulingParties[0] === v;
     case "party_in_government": return cs.rulingParties.includes(v as string);
@@ -310,10 +312,10 @@ function effect(ctx: SimContext, scope: Scope, k: string, v: unknown, source: st
     }
     // stored for later systems: traits on people, opinions and war goals (Phase 11/10), techs (Phase 8), money (Phase 7)
     case "add_treasury": if (cs.economy) cs.economy.treasury = Math.max(0, cs.economy.treasury + (v as number)); break;
+    case "unlock_tech": grantTech(db, cs, v as string); break;
     case "add_trait":
     case "add_opinion":
     case "add_wargoal":
-    case "unlock_tech":
       break;
   }
 }
@@ -406,7 +408,7 @@ export function describeEffects(db: ContentDB, effects: unknown[], depth = 0): s
         line = `Budget: ${parts.join(", ")} points of GDP`;
         break;
       }
-      case "unlock_tech": line = later(`Technology: ${v}`, "Phase 8"); break;
+      case "unlock_tech": line = `Technology: ${db.techs.get(v as string)?.name ?? v}`; break;
       case "add_wargoal": line = later(`War goal against ${name.tag(a.target as string)}`, "Phase 10"); break;
       case "add_opinion": line = later(`Opinion ${signed(a.value as number)}`, "Phase 11"); break;
       case "add_trait": line = `${name.person(a.person as string)} gains a trait`; break;
@@ -458,6 +460,7 @@ export function describeTrigger(db: ContentDB, node: unknown): string[] {
     case "latest_winner": return [`${db.people.get(a.winner as string)?.name.en ?? db.parties.get(a.winner as string)?.name.en ?? a.winner} won the last election`];
     case "is_player": return [yes(v, "your country", "an AI country")];
     case "is_ai": return [yes(v, "an AI country", "your country")];
+    case "has_tech": return [`researched ${db.techs.get(v as string)?.name ?? v}`];
     case "gdp_growth_below": return [`GDP growth below ${v}%`];
     case "gdp_growth_above": return [`GDP growth above ${v}%`];
     case "has_flag": case "has_global_flag": return [];

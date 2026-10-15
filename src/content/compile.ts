@@ -7,6 +7,7 @@ import type { z } from "zod";
 import type { FileProvider } from "./files.ts";
 import { PoliticsRulesFile, type PoliticsRules } from "./schemas/rules.ts";
 import { BuildingsFile, EconomyRulesFile, WorldBankFile, type BuildingDef, type EconomyRules } from "./schemas/economy.ts";
+import { ResearchRulesFile, TechCategoryFile, type ResearchRules, type TechCategory, type TechDef } from "./schemas/research.ts";
 import { DecisionsFile, EventsFile, FocusTreeFile, type DecisionDef, type EventDef, type FocusTree } from "./schemas/scripted.ts";
 import { validateEffects, validateTrigger, type ScriptIssue } from "./script/validate.ts";
 import type { RefKind } from "./script/registry.ts";
@@ -106,6 +107,10 @@ export interface ContentDB {
   decisionCategories: Map<string, { id: string; name: string; description: string }>;
   focusTrees: Map<string, FocusTree & { file: string }>;
   economyRules: EconomyRules;
+  researchRules: ResearchRules;
+  techCategories: Map<string, Omit<TechCategory, "techs"> & { techs: string[] }>;
+  /** Every technology, with its category. */
+  techs: Map<string, TechDef & { category: string }>;
   buildings: Map<string, BuildingDef>;
   /** World Bank 2000 figures by ISO3 code (only codes that are game tags), plus the file's sources. */
   worldBank: { year: number; source: { url: string; title: string; accessed: string }[]; countries: Record<string, Record<string, number | string>> };
@@ -211,6 +216,9 @@ export function compileContent(files: FileProvider, opts: CompileOptions = {}): 
     decisionCategories: new Map(),
     focusTrees: new Map(),
     economyRules: load("economy/economy.json", EconomyRulesFile, false) ?? EconomyRulesFile.parse({}),
+    researchRules: load("techs/rules.json", ResearchRulesFile, false) ?? ResearchRulesFile.parse({}),
+    techCategories: new Map(),
+    techs: new Map(),
     buildings: indexBy(load("economy/buildings.json", BuildingsFile, false)?.buildings ?? [], "economy/buildings.json", "building"),
     worldBank: (() => {
       const wb = load("economy/worldbank_2000.json", WorldBankFile, false);
@@ -313,6 +321,23 @@ export function compileContent(files: FileProvider, opts: CompileOptions = {}): 
     checkCountry(db, cc, tier, err, warn);
   }
 
+  // ---- technologies
+  for (const f of files.listFiles("techs").filter((p) => p.endsWith(".json") && !p.endsWith("/rules.json")).sort()) {
+    const cat = load(f, TechCategoryFile);
+    if (!cat) continue;
+    if (db.techCategories.has(cat.id)) err("DUP_ID", f, `duplicate tech category '${cat.id}'`);
+    db.techCategories.set(cat.id, { ...cat, techs: cat.techs.map((t) => t.id) });
+    for (const t of cat.techs) {
+      if (db.techs.has(t.id)) err("DUP_ID", f, `duplicate tech id '${t.id}'`);
+      db.techs.set(t.id, { ...t, category: cat.id });
+    }
+  }
+  for (const t of db.techs.values()) {
+    const f = `techs/${t.category}.json`;
+    for (const g of t.prerequisites) for (const p of g) if (!db.techs.has(p)) err("REF", f, `${t.id}: unknown prerequisite '${p}'`);
+    for (const m of Object.keys(t.effects)) if (!db.modifiers.has(m)) err("REF", f, `${t.id}: unknown modifier '${m}'`);
+  }
+
   // ---- scripted content: events, decisions, focus trees
   const jsonIn = (dir: string) => files.listFiles(dir).filter((p) => p.endsWith(".json")).sort();
   loadScripted(db, jsonIn, load, err);
@@ -377,6 +402,7 @@ export function refChecker(db: ContentDB) {
       case "government_type": return db.governmentTypes.has(v);
       case "trait": return db.traits.has(v);
       case "modifier": return db.modifiers.has(v);
+      case "tech": return db.techs.has(v);
     }
   };
 }

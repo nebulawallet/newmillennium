@@ -1,0 +1,240 @@
+{
+  "id": "electronics_cyber",
+  "name": "Electronics and cyber",
+  "description": "Computing, communications and cyber capabilities.",
+  "military": false,
+  "techs": [
+    {
+      "id": "ele_personal_computers",
+      "name": "Personal computers",
+      "description": "Computers in offices and homes.",
+      "year": 1985,
+      "x": 3,
+      "effects": {
+        "research_speed": 0.02
+      },
+      "cost": 500
+    },
+    {
+      "id": "ele_mobile_2g",
+      "name": "2G mobile phones",
+      "description": "Digital mobile phone networks.",
+      "year": 1993,
+      "x": 3,
+      "effects": {
+        "private_sector_output": 0.01
+      },
+      "prerequisites": [
+        [
+          "ele_personal_computers"
+        ]
+      ],
+      "cost": 500
+    },
+    {
+      "id": "ele_internet",
+      "name": "The internet",
+      "description": "A public worldwide computer network.",
+      "year": 1994,
+      "x": 2,
+      "effects": {
+        "research_speed": 0.02
+      },
+      "prerequisites": [
+        [
+          "ele_personal_computers"
+        ]
+      ],
+      "cost": 500
+    },
+    {
+      "id": "ele_broadband",
+      "name": "Broadband internet",
+      "description": "Always-on internet access in homes and businesses.",
+      "year": 1999,
+      "x": 0,
+      "effects": {
+        "research_speed": 0.03,
+        "private_sector_output": 0.01
+      },
+      "cost": 700,
+      "prerequisites": [
+        [
+          "ele_personal_computers"
+        ],
+        [
+          "ele_internet"
+        ]
+      ]
+    },
+    {
+      "id": "ele_civil_gps",
+      "name": "Precision civil GPS",
+      "description": "Accurate satellite positioning for civilian use.",
+      "year": 2000,
+      "x": 1,
+      "effects": {
+        "trade_efficiency": 0.02
+      },
+      "cost": 700,
+      "prerequisites": [
+        [
+          "ele_personal_computers"
+        ]
+      ]
+    },
+    {
+      "id": "ele_mobile_3g",
+      "name": "3G mobile networks",
+      "description": "Mobile data networks.",
+      "year": 2002,
+      "x": 0,
+      "effects": {
+        "private_sector_output": 0.02
+      },
+      "prerequisites": [
+        [
+          "ele_broadband"
+        ],
+        [
+          "ele_mobile_2g"
+        ]
+      ],
+      "cost": 700
+    },
+    {
+      "id": "ele_smartphones",
+      "name": "Smartphones",
+      "description": "Pocket computers with internet access.",
+      "year": 2007,
+      "x": 1,
+      "effects": {
+        "education_quality": 0.02,
+        "private_sector_output": 0.02
+      },
+      "prerequisites": [
+        [
+          "ele_mobile_3g"
+        ]
+      ],
+      "cost": 850
+    },
+    {
+      "id": "ele_cyber_defence",
+      "name": "National cyber defence",
+      "description": "Agencies and systems that protect government and infrastructure networks.",
+      "year": 2008,
+      "x": 2,
+      "effects": {
+        "intelligence_power": 0.05,
+        "internal_security": 0.03
+      },
+      "cost": 850,
+      "prerequisites": [
+        [
+          "ele_personal_computers"
+        ]
+      ]
+    },
+    {
+      "id": "ele_mobile_4g",
+      "name": "4G mobile networks",
+      "description": "Fast mobile broadband.",
+      "year": 2010,
+      "x": 0,
+      "effects": {
+        "gdp_growth": 0.002
+      },
+      "prerequisites": [
+        [
+          "ele_mobile_3g"
+        ]
+      ],
+      "cost": 850
+    },
+    {
+      "id": "ele_cyber_operations",
+      "name": "Offensive cyber capabilities",
+      "description": "Units able to disrupt foreign networks.",
+      "year": 2012,
+      "x": 2,
+      "effects": {
+        "intelligence_power": 0.08,
+        "foreign_influence_power": 0.05
+      },
+      "prerequisites": [
+        [
+          "ele_cyber_defence"
+        ]
+      ],
+      "cost": 850
+    },
+    {
+      "id": "ele_machine_learning",
+      "name": "Machine learning",
+      "description": "Systems that learn from data at scale.",
+      "year": 2016,
+      "x": 1,
+      "effects": {
+        "research_speed": 0.05
+      },
+      "prerequisites": [
+        [
+          "ele_smartphones"
+        ]
+      ],
+      "cost": 1000
+    },
+    {
+      "id": "ele_mobile_5g",
+      "name": "5G mobile networks",
+      "description": "High-capacity, low-latency mobile networks.",
+      "year": 2019,
+      "x": 0,
+      "effects": {
+        "gdp_growth": 0.002,
+        "private_sector_output": 0.02
+      },
+      "prerequisites": [
+        [
+          "ele_mobile_4g"
+        ]
+      ],
+      "cost": 1000
+    },
+    {
+      "id": "ele_generative_ai",
+      "name": "Generative AI",
+      "description": "Large models that write, code and design.",
+      "year": 2023,
+      "x": 1,
+      "effects": {
+        "research_speed": 0.05,
+        "private_sector_output": 0.03
+      },
+      "prerequisites": [
+        [
+          "ele_machine_learning"
+        ]
+      ],
+      "cost": 1000
+    },
+    {
+      "id": "ele_quantum_computing",
+      "name": "Quantum computing",
+      "description": "Practical quantum computers for science and cryptography.",
+      "year": 2032,
+      "x": 2,
+      "effects": {
+        "intelligence_power": 0.05,
+        "research_speed": 0.05
+      },
+      "prerequisites": [
+        [
+          "ele_generative_ai"
+        ]
+      ],
+      "cost": 1200
+    }
+  ]
+}

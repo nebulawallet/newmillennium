@@ -32,12 +32,13 @@ src/
                            unrest.ts (unrest ladder, coups, civil war split), common.ts
   sim/scripting/           Phase 6: engine.ts (triggers, effects, descriptions), systems.ts (events, focuses, decisions)
   sim/economy/             Phase 7: economy.ts (macro model, budget, factories, construction, resource market, shocks)
+  sim/research/            Phase 8: research.ts (slots, speed, costs, starting technologies, AI)
   render/                  MapView (camera, wrap, input), WorldMap (layers, picking, map modes),
                            layers/ (ProvinceMesh = chosen, ProvinceTexture = alternative, Borders, Lakes, Labels),
                            mapData.ts (loads public/map), mapModes.ts, benchmark.ts (?bench)
   ui/                      Preact shell: session.ts (game session + signals), CountrySelect, hud/ (TopBar, Panels, SidePanel,
                            GameMenu), politics/ (PoliticsPanel, LawPicker, ElectionNight, CoalitionPanel),
-                           scripted/ (FocusTree, DecisionsPanel, EventWindow, fx), economy/ (Economy, Construction, Trade), charts/ (Hemicycle, Donut), MapUi (map modes, hover),
+                           scripted/ (FocusTree, DecisionsPanel, EventWindow, fx), economy/ (Economy, Construction, Trade), research/ (ResearchPanel), charts/ (Hemicycle, Donut), MapUi (map modes, hover),
                            tooltip.tsx, icons.tsx, tabs.ts, theme.css + shell.css
   main.tsx                 boot: loads content + map, builds MapView/WorldMap/Session, renders UI, key bindings
 tests/                     vitest: validator rules, scripts, real data (DEU full tier), map 2000 rules, simulation

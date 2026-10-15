@@ -1,0 +1,135 @@
+{
+  "id": "armour",
+  "name": "Armour",
+  "description": "Tanks and armoured vehicles.",
+  "military": true,
+  "techs": [
+    {
+      "id": "arm_third_generation_mbt",
+      "name": "Third-generation main battle tank",
+      "description": "Tanks with composite armour and stabilised guns.",
+      "year": 1985,
+      "x": 2,
+      "effects": {
+        "army_defence": 0.02
+      },
+      "cost": 500
+    },
+    {
+      "id": "arm_mbt_modernisation",
+      "name": "Main battle tank modernisation",
+      "description": "New sights, guns and armour for existing tanks.",
+      "year": 1998,
+      "x": 0,
+      "effects": {
+        "army_attack": 0.03
+      },
+      "cost": 700,
+      "prerequisites": [
+        [
+          "arm_third_generation_mbt"
+        ]
+      ]
+    },
+    {
+      "id": "arm_digital_fire_control",
+      "name": "Digital fire control",
+      "description": "Hunter-killer sights and ballistic computers.",
+      "year": 2003,
+      "x": 1,
+      "effects": {
+        "army_attack": 0.02
+      },
+      "cost": 700,
+      "prerequisites": [
+        [
+          "arm_third_generation_mbt"
+        ]
+      ]
+    },
+    {
+      "id": "arm_composite_armour",
+      "name": "Advanced composite armour",
+      "description": "Layered armour against modern anti-tank weapons.",
+      "year": 2005,
+      "x": 0,
+      "effects": {
+        "army_defence": 0.04
+      },
+      "prerequisites": [
+        [
+          "arm_mbt_modernisation"
+        ]
+      ],
+      "cost": 850
+    },
+    {
+      "id": "arm_active_protection",
+      "name": "Active protection systems",
+      "description": "Systems that intercept incoming missiles and rockets.",
+      "year": 2012,
+      "x": 1,
+      "effects": {
+        "army_defence": 0.05
+      },
+      "prerequisites": [
+        [
+          "arm_composite_armour"
+        ]
+      ],
+      "cost": 850
+    },
+    {
+      "id": "arm_networked_brigade",
+      "name": "Networked armoured brigade",
+      "description": "Vehicles that share targets and positions automatically.",
+      "year": 2016,
+      "x": 0,
+      "effects": {
+        "army_org": 0.04
+      },
+      "prerequisites": [
+        [
+          "arm_composite_armour"
+        ],
+        [
+          "arm_digital_fire_control"
+        ]
+      ],
+      "cost": 1000
+    },
+    {
+      "id": "arm_next_generation_mbt",
+      "name": "Next-generation main battle tank",
+      "description": "A new tank design with a smaller crew and better protection.",
+      "year": 2028,
+      "x": 1,
+      "effects": {
+        "army_attack": 0.05,
+        "army_defence": 0.03
+      },
+      "prerequisites": [
+        [
+          "arm_active_protection"
+        ]
+      ],
+      "cost": 1200
+    },
+    {
+      "id": "arm_unmanned_ground_vehicles",
+      "name": "Unmanned ground vehicles",
+      "description": "Remotely operated and autonomous combat vehicles.",
+      "year": 2032,
+      "x": 2,
+      "effects": {
+        "army_attack": 0.03
+      },
+      "prerequisites": [
+        [
+          "arm_networked_brigade"
+        ]
+      ],
+      "cost": 1200
+    }
+  ]
+}

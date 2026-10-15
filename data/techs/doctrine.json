@@ -1,0 +1,119 @@
+{
+  "id": "doctrine",
+  "name": "Doctrine",
+  "description": "How the armed forces organise and fight.",
+  "military": true,
+  "techs": [
+    {
+      "id": "doc_combined_arms",
+      "name": "Combined-arms manoeuvre",
+      "description": "Infantry, armour, artillery and air power fighting together.",
+      "year": 1985,
+      "x": 3,
+      "effects": {
+        "army_org": 0.02
+      },
+      "cost": 500
+    },
+    {
+      "id": "doc_rapid_reaction",
+      "name": "Rapid reaction forces",
+      "description": "Units ready to deploy within days.",
+      "year": 1999,
+      "x": 0,
+      "effects": {
+        "army_org": 0.03
+      },
+      "cost": 700,
+      "prerequisites": [
+        [
+          "doc_combined_arms"
+        ]
+      ]
+    },
+    {
+      "id": "doc_network_centric",
+      "name": "Network-centric warfare",
+      "description": "Sharing information across all units in real time.",
+      "year": 2003,
+      "x": 1,
+      "effects": {
+        "army_org": 0.03,
+        "air_effectiveness": 0.02
+      },
+      "cost": 700,
+      "prerequisites": [
+        [
+          "doc_combined_arms"
+        ]
+      ]
+    },
+    {
+      "id": "doc_counterinsurgency",
+      "name": "Counter-insurgency doctrine",
+      "description": "Securing populations and working with local forces.",
+      "year": 2006,
+      "x": 0,
+      "effects": {
+        "internal_security": 0.05
+      },
+      "prerequisites": [
+        [
+          "doc_rapid_reaction"
+        ]
+      ],
+      "cost": 850
+    },
+    {
+      "id": "doc_territorial_defence",
+      "name": "Total territorial defence",
+      "description": "Reservists and local units trained to defend their regions.",
+      "year": 2015,
+      "x": 2,
+      "effects": {
+        "manpower_factor": 0.1,
+        "army_defence": 0.03
+      },
+      "cost": 1000,
+      "prerequisites": [
+        [
+          "doc_combined_arms"
+        ]
+      ]
+    },
+    {
+      "id": "doc_multi_domain",
+      "name": "Multi-domain operations",
+      "description": "Land, sea, air, space and cyber forces planned as one.",
+      "year": 2018,
+      "x": 1,
+      "effects": {
+        "army_org": 0.04,
+        "naval_effectiveness": 0.02,
+        "air_effectiveness": 0.02
+      },
+      "prerequisites": [
+        [
+          "doc_network_centric"
+        ]
+      ],
+      "cost": 1000
+    },
+    {
+      "id": "doc_drone_warfare",
+      "name": "Drone-centric warfare",
+      "description": "Organising units around large numbers of drones.",
+      "year": 2024,
+      "x": 1,
+      "effects": {
+        "army_attack": 0.05
+      },
+      "prerequisites": [
+        [
+          "doc_multi_domain"
+        ]
+      ],
+      "cost": 1000
+    }
+  ]
+}

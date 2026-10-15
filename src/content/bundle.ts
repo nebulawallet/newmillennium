@@ -5,6 +5,7 @@
 import type { CompileResult, ContentDB, CountryContent, Issue } from "./compile.ts";
 import { PoliticsRulesFile, type PoliticsRules } from "./schemas/rules.ts";
 import { EconomyRulesFile } from "./schemas/economy.ts";
+import { ResearchRulesFile } from "./schemas/research.ts";
 
 export const BUNDLE_VERSION = 1;
 
@@ -30,6 +31,9 @@ export interface ContentBundle {
   decisionCategories: unknown[];
   focusTrees: unknown[];
   economyRules: ContentDB["economyRules"];
+  researchRules: ContentDB["researchRules"];
+  techCategories: unknown[];
+  techs: unknown[];
   buildings: unknown[];
   worldBank: ContentDB["worldBank"];
   countries: CountryContent[];
@@ -65,6 +69,9 @@ export function toBundle({ db, issues }: CompileResult): ContentBundle {
     decisionCategories: [...db.decisionCategories.values()],
     focusTrees: [...db.focusTrees.values()],
     economyRules: db.economyRules,
+    researchRules: db.researchRules,
+    techCategories: [...db.techCategories.values()],
+    techs: [...db.techs.values()],
     buildings: [...db.buildings.values()],
     worldBank: db.worldBank,
     countries: [...db.countries.values()].filter((c) => c.country),
@@ -94,6 +101,9 @@ export function fromBundle(b: ContentBundle): ContentDB {
     decisionCategories: byId(b.decisionCategories ?? []),
     focusTrees: byId(b.focusTrees ?? []),
     economyRules: b.economyRules ?? EconomyRulesFile.parse({}),
+    researchRules: b.researchRules ?? ResearchRulesFile.parse({}),
+    techCategories: byId(b.techCategories ?? []),
+    techs: byId(b.techs ?? []),
     buildings: byId(b.buildings ?? []),
     worldBank: b.worldBank ?? { year: 2000, source: [], countries: {} },
     people: new Map(),

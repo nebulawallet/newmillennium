@@ -1,0 +1,158 @@
+{
+  "id": "economy_digital",
+  "name": "Economy and digital",
+  "description": "Commerce, government services and finance.",
+  "military": false,
+  "techs": [
+    {
+      "id": "eco_electronic_banking",
+      "name": "Electronic banking and card payments",
+      "description": "Computerised banks, cash machines and payment cards.",
+      "year": 1988,
+      "x": 3,
+      "effects": {
+        "private_sector_output": 0.01
+      },
+      "cost": 500
+    },
+    {
+      "id": "eco_e_commerce",
+      "name": "E-commerce",
+      "description": "Buying and selling online.",
+      "year": 1999,
+      "x": 0,
+      "effects": {
+        "trade_efficiency": 0.03,
+        "private_sector_output": 0.01
+      },
+      "cost": 700,
+      "prerequisites": [
+        [
+          "eco_electronic_banking"
+        ],
+        [
+          "ele_internet"
+        ]
+      ]
+    },
+    {
+      "id": "eco_container_logistics",
+      "name": "Global container logistics",
+      "description": "Integrated shipping and supply chains.",
+      "year": 2000,
+      "x": 2,
+      "effects": {
+        "trade_efficiency": 0.04
+      },
+      "cost": 700,
+      "prerequisites": [
+        [
+          "eco_electronic_banking"
+        ]
+      ]
+    },
+    {
+      "id": "eco_online_banking",
+      "name": "Online banking",
+      "description": "Banking services over the internet.",
+      "year": 2002,
+      "x": 0,
+      "effects": {
+        "private_sector_output": 0.02
+      },
+      "prerequisites": [
+        [
+          "eco_e_commerce"
+        ]
+      ],
+      "cost": 700
+    },
+    {
+      "id": "eco_e_government",
+      "name": "E-government",
+      "description": "Public services and tax filing online.",
+      "year": 2003,
+      "x": 1,
+      "effects": {
+        "tax_efficiency": 0.03,
+        "corruption": -0.02
+      },
+      "cost": 700,
+      "prerequisites": [
+        [
+          "eco_electronic_banking"
+        ]
+      ]
+    },
+    {
+      "id": "eco_cloud_computing",
+      "name": "Cloud computing",
+      "description": "Computing rented as a service.",
+      "year": 2010,
+      "x": 1,
+      "effects": {
+        "research_speed": 0.03,
+        "private_sector_output": 0.02
+      },
+      "prerequisites": [
+        [
+          "eco_e_government"
+        ]
+      ],
+      "cost": 850
+    },
+    {
+      "id": "eco_mobile_payments",
+      "name": "Mobile payments",
+      "description": "Payments by phone.",
+      "year": 2012,
+      "x": 0,
+      "effects": {
+        "tax_efficiency": 0.02,
+        "private_sector_output": 0.02
+      },
+      "prerequisites": [
+        [
+          "eco_online_banking"
+        ]
+      ],
+      "cost": 850
+    },
+    {
+      "id": "eco_platform_economy",
+      "name": "Platform economy",
+      "description": "Online marketplaces for services and work.",
+      "year": 2015,
+      "x": 2,
+      "effects": {
+        "gdp_growth": 0.002
+      },
+      "prerequisites": [
+        [
+          "eco_cloud_computing"
+        ],
+        [
+          "eco_mobile_payments"
+        ]
+      ],
+      "cost": 1000
+    },
+    {
+      "id": "eco_service_automation",
+      "name": "Service automation",
+      "description": "Automated customer service and back offices.",
+      "year": 2027,
+      "x": 1,
+      "effects": {
+        "production_efficiency": 0.03,
+        "private_sector_output": 0.03
+      },
+      "prerequisites": [
+        [
+          "eco_platform_economy"
+        ]
+      ],
+      "cost": 1200
+    }
+  ]
+}

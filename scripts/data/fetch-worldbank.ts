@@ -37,12 +37,13 @@ const INDICATORS: Record<string, string> = {
   mineral_rents_pct_gdp: "NY.GDP.MINR.RT.ZS",
   reserves_usd: "FI.RES.TOTL.CD",
   labor_force: "SL.TLF.TOTL.IN",
+  rnd_pct_gdp: "GB.XPD.RSDV.GD.ZS",
   // gdp_growth_avg_1995_2000 is derived below from NY.GDP.MKTP.KD.ZG
 };
 
 /** Sparse fiscal series: where 2000 is missing, the earliest value up to this year is used (and its year recorded). */
 const FILL_UNTIL = 2005;
-const SPARSE = new Set(["central_gov_debt_pct_gdp", "revenue_pct_gdp", "expense_pct_gdp", "tax_revenue_pct_gdp", "lending_rate_pct"]);
+const SPARSE = new Set(["central_gov_debt_pct_gdp", "revenue_pct_gdp", "expense_pct_gdp", "tax_revenue_pct_gdp", "lending_rate_pct", "rnd_pct_gdp"]);
 
 interface Row {
   countryiso3code: string;

@@ -14,6 +14,7 @@ import { createPartyLifecycleSystem, pollSystem } from "./politics/parties.ts";
 import { unrestSystem } from "./politics/unrest.ts";
 import { createScriptedSystem } from "./scripting/systems.ts";
 import { economySystem } from "./economy/economy.ts";
+import { researchSystem } from "./research/research.ts";
 import { personParty } from "./politics/common.ts";
 import type { SimProvince } from "./politics/voteModel.ts";
 import { Rng } from "./rng.ts";
@@ -271,6 +272,7 @@ export function defaultSystems(): System[] {
     createPartyLifecycleSystem(),
     politicalPowerSystem,
     economySystem,
+    researchSystem,
     electionSystem,
     confidenceSystem,
     interestGroupSystem,

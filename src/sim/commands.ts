@@ -9,6 +9,7 @@ import { changeLaw } from "./politics/laws.ts";
 import { regimeChange, startCivilWar } from "./politics/unrest.ts";
 import { answerEvent, setFocus, takeDecision } from "./scripting/systems.ts";
 import { canBuild } from "./economy/economy.ts";
+import { setResearch } from "./research/research.ts";
 
 export type Command =
   | { type: "change_law"; tag: string; category: string; law: string }
@@ -24,7 +25,8 @@ export type Command =
   /** Tax and spending targets, percent of GDP. */
   | { type: "set_budget"; tag: string; revenue?: number; spending?: number }
   | { type: "queue_building"; tag: string; building: string; province?: number }
-  | { type: "cancel_building"; tag: string; index: number };
+  | { type: "cancel_building"; tag: string; index: number }
+  | { type: "set_research"; tag: string; slot: number; tech: string | null };
 
 export interface CommandResult {
   ok: boolean;
@@ -92,6 +94,8 @@ export function applyCommand(ctx: SimContext, cmd: Command): CommandResult {
       e.construction.splice(cmd.index, 1);
       return { ok: true, text: "Removed from the queue." };
     }
+    case "set_research":
+      return setResearch(ctx, cmd.tag, cmd.slot, cmd.tech);
     case "force_coup": {
       const cs = state.countries[cmd.tag];
       if (!cs || !db.interestGroupTypes.has(cmd.group)) return { ok: false, text: "Unknown country or group." };

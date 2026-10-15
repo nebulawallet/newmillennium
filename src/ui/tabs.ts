@@ -18,7 +18,7 @@ export type TabId =
 
 export const TABS: TabDef[] = [
   { id: "politics", label: "Politics", key: "Q", icon: "politics", phase: null, summary: "Government, cabinet, parliament, parties, interest groups and laws." },
-  { id: "research", label: "Research", key: "W", icon: "research", phase: "Phase 8", summary: "Technology trees from 1995 to beyond 2035: infantry, armour, artillery and missiles, air and drones, naval, electronics and cyber, industry and energy, economy and digital, doctrines." },
+  { id: "research", label: "Research", key: "W", icon: "research", phase: null, summary: "Technology trees from 1995 to beyond 2035: infantry, armour, artillery and missiles, air and drones, naval, electronics and cyber, industry and energy, economy and digital, doctrines." },
   { id: "diplomacy", label: "Diplomacy", key: "E", icon: "diplomacy", phase: "Phase 11", summary: "Relations, guarantees, military access, sanctions, blocs, the UN Security Council and foreign influence campaigns." },
   { id: "trade", label: "Trade", key: "R", icon: "trade", phase: null, summary: "The international resource market: oil, gas, rare earths, steel, aluminium, uranium and trade deals." },
   { id: "construction", label: "Construction", key: "T", icon: "construction", phase: null, summary: "The construction queue: infrastructure, factories, power plants, bases and air defences." },

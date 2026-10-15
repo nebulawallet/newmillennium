@@ -1,0 +1,132 @@
+{
+  "id": "naval",
+  "name": "Naval",
+  "description": "Warships, submarines and naval systems.",
+  "military": true,
+  "techs": [
+    {
+      "id": "nav_guided_missile_ships",
+      "name": "Guided-missile warships",
+      "description": "Frigates and destroyers armed with anti-ship and air-defence missiles.",
+      "year": 1985,
+      "x": 2,
+      "effects": {
+        "naval_effectiveness": 0.03
+      },
+      "cost": 500
+    },
+    {
+      "id": "nav_integrated_combat_systems",
+      "name": "Integrated combat systems",
+      "description": "Ship-wide radar and weapons control.",
+      "year": 1998,
+      "x": 0,
+      "effects": {
+        "naval_effectiveness": 0.03
+      },
+      "cost": 700,
+      "prerequisites": [
+        [
+          "nav_guided_missile_ships"
+        ]
+      ]
+    },
+    {
+      "id": "nav_aip_submarines",
+      "name": "Air-independent propulsion",
+      "description": "Conventional submarines that stay submerged for weeks.",
+      "year": 2002,
+      "x": 1,
+      "effects": {
+        "naval_effectiveness": 0.04
+      },
+      "cost": 700,
+      "prerequisites": [
+        [
+          "nav_guided_missile_ships"
+        ]
+      ]
+    },
+    {
+      "id": "nav_littoral_ships",
+      "name": "Littoral combat ships",
+      "description": "Fast, modular ships for coastal waters.",
+      "year": 2008,
+      "x": 2,
+      "effects": {
+        "naval_effectiveness": 0.02
+      },
+      "cost": 850,
+      "prerequisites": [
+        [
+          "nav_guided_missile_ships"
+        ]
+      ]
+    },
+    {
+      "id": "nav_modern_carriers",
+      "name": "Modern aircraft carriers",
+      "description": "Large carriers with modern launch and recovery systems.",
+      "year": 2010,
+      "x": 0,
+      "effects": {
+        "naval_effectiveness": 0.05
+      },
+      "prerequisites": [
+        [
+          "nav_integrated_combat_systems"
+        ]
+      ],
+      "cost": 850
+    },
+    {
+      "id": "nav_sea_missile_defence",
+      "name": "Sea-based missile defence",
+      "description": "Warships that intercept ballistic missiles.",
+      "year": 2012,
+      "x": 1,
+      "effects": {
+        "naval_effectiveness": 0.03,
+        "air_effectiveness": 0.02
+      },
+      "prerequisites": [
+        [
+          "nav_integrated_combat_systems"
+        ]
+      ],
+      "cost": 850
+    },
+    {
+      "id": "nav_unmanned_surface_vessels",
+      "name": "Unmanned surface vessels",
+      "description": "Remotely operated and autonomous boats.",
+      "year": 2020,
+      "x": 2,
+      "effects": {
+        "naval_effectiveness": 0.03
+      },
+      "prerequisites": [
+        [
+          "nav_littoral_ships"
+        ]
+      ],
+      "cost": 1000
+    },
+    {
+      "id": "nav_large_underwater_drones",
+      "name": "Large underwater drones",
+      "description": "Autonomous submarines for patrol and mine warfare.",
+      "year": 2030,
+      "x": 1,
+      "effects": {
+        "naval_effectiveness": 0.05
+      },
+      "prerequisites": [
+        [
+          "nav_aip_submarines"
+        ]
+      ],
+      "cost": 1200
+    }
+  ]
+}

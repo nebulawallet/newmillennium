@@ -1,0 +1,152 @@
+{
+  "id": "air_drones",
+  "name": "Air and drones",
+  "description": "Combat aircraft, munitions and unmanned aircraft.",
+  "military": true,
+  "techs": [
+    {
+      "id": "air_fourth_generation_fighters",
+      "name": "Fourth-generation fighters",
+      "description": "Agile multirole fighters with modern radar.",
+      "year": 1985,
+      "x": 1,
+      "effects": {
+        "air_effectiveness": 0.03
+      },
+      "cost": 500
+    },
+    {
+      "id": "air_fighter_upgrades",
+      "name": "Fourth-generation fighter upgrades",
+      "description": "Radar, weapons and engine upgrades for existing fighters.",
+      "year": 1998,
+      "x": 0,
+      "effects": {
+        "air_effectiveness": 0.03
+      },
+      "cost": 700,
+      "prerequisites": [
+        [
+          "air_fourth_generation_fighters"
+        ]
+      ]
+    },
+    {
+      "id": "air_precision_bombs",
+      "name": "Precision-guided bombs",
+      "description": "Laser- and satellite-guided bombs for all strike aircraft.",
+      "year": 1999,
+      "x": 1,
+      "effects": {
+        "air_effectiveness": 0.03,
+        "army_attack": 0.01
+      },
+      "cost": 700,
+      "prerequisites": [
+        [
+          "air_fourth_generation_fighters"
+        ]
+      ]
+    },
+    {
+      "id": "air_reconnaissance_drones",
+      "name": "Medium-altitude reconnaissance drones",
+      "description": "Long-endurance unmanned aircraft for surveillance.",
+      "year": 2002,
+      "x": 2,
+      "effects": {
+        "intelligence_power": 0.05
+      },
+      "cost": 700,
+      "prerequisites": [
+        [
+          "air_fourth_generation_fighters"
+        ]
+      ]
+    },
+    {
+      "id": "air_aesa_radar",
+      "name": "AESA radar",
+      "description": "Electronically scanned radar for fighters.",
+      "year": 2006,
+      "x": 1,
+      "effects": {
+        "air_effectiveness": 0.03
+      },
+      "prerequisites": [
+        [
+          "air_precision_bombs"
+        ]
+      ],
+      "cost": 850
+    },
+    {
+      "id": "air_armed_drones",
+      "name": "Armed drones",
+      "description": "Unmanned aircraft that carry missiles and bombs.",
+      "year": 2008,
+      "x": 2,
+      "effects": {
+        "air_effectiveness": 0.03,
+        "army_attack": 0.02
+      },
+      "prerequisites": [
+        [
+          "air_reconnaissance_drones"
+        ]
+      ],
+      "cost": 850
+    },
+    {
+      "id": "air_stealth_fighters",
+      "name": "Fifth-generation stealth fighters",
+      "description": "Fighters designed to evade radar.",
+      "year": 2010,
+      "x": 0,
+      "effects": {
+        "air_effectiveness": 0.06
+      },
+      "prerequisites": [
+        [
+          "air_fighter_upgrades"
+        ]
+      ],
+      "cost": 850
+    },
+    {
+      "id": "air_drone_swarms",
+      "name": "Drone swarms",
+      "description": "Large numbers of cheap drones coordinated automatically.",
+      "year": 2025,
+      "x": 2,
+      "effects": {
+        "air_effectiveness": 0.05
+      },
+      "prerequisites": [
+        [
+          "air_armed_drones"
+        ]
+      ],
+      "cost": 1200
+    },
+    {
+      "id": "air_sixth_generation",
+      "name": "Sixth-generation combat aircraft",
+      "description": "Crewed fighters that command unmanned wingmen.",
+      "year": 2035,
+      "x": 0,
+      "effects": {
+        "air_effectiveness": 0.08
+      },
+      "prerequisites": [
+        [
+          "air_stealth_fighters"
+        ],
+        [
+          "air_aesa_radar"
+        ]
+      ],
+      "cost": 1200
+    }
+  ]
+}

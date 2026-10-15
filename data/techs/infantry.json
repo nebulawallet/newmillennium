@@ -1,0 +1,151 @@
+{
+  "id": "infantry",
+  "name": "Infantry",
+  "description": "Equipment and protection for infantry.",
+  "military": true,
+  "techs": [
+    {
+      "id": "inf_modern_rifles",
+      "name": "Modern assault rifles and radios",
+      "description": "Standard rifles, radios and helmets for a modern army.",
+      "year": 1985,
+      "x": 3,
+      "effects": {
+        "army_attack": 0.02
+      },
+      "cost": 500
+    },
+    {
+      "id": "inf_body_armour",
+      "name": "Improved body armour",
+      "description": "Lighter ceramic plates and helmets for every soldier.",
+      "year": 1998,
+      "x": 0,
+      "effects": {
+        "army_defence": 0.03
+      },
+      "cost": 700,
+      "prerequisites": [
+        [
+          "inf_modern_rifles"
+        ]
+      ]
+    },
+    {
+      "id": "inf_night_vision",
+      "name": "Night vision for all units",
+      "description": "Image-intensifier and thermal sights issued down to squad level.",
+      "year": 2000,
+      "x": 1,
+      "effects": {
+        "army_attack": 0.02
+      },
+      "cost": 700,
+      "prerequisites": [
+        [
+          "inf_modern_rifles"
+        ]
+      ]
+    },
+    {
+      "id": "inf_atgm_fire_forget",
+      "name": "Fire-and-forget anti-tank missiles",
+      "description": "Portable guided missiles that do not need guiding to the target.",
+      "year": 2004,
+      "x": 2,
+      "effects": {
+        "army_attack": 0.04
+      },
+      "cost": 700,
+      "prerequisites": [
+        [
+          "inf_modern_rifles"
+        ]
+      ]
+    },
+    {
+      "id": "inf_digital_soldier",
+      "name": "Digitised infantry",
+      "description": "Radios, displays and positioning for every squad.",
+      "year": 2006,
+      "x": 0,
+      "effects": {
+        "army_org": 0.03
+      },
+      "prerequisites": [
+        [
+          "inf_body_armour"
+        ]
+      ],
+      "cost": 850
+    },
+    {
+      "id": "inf_mrap",
+      "name": "Mine-resistant vehicles",
+      "description": "Protected vehicles against mines and roadside bombs.",
+      "year": 2007,
+      "x": 1,
+      "effects": {
+        "army_defence": 0.04
+      },
+      "prerequisites": [
+        [
+          "inf_night_vision"
+        ]
+      ],
+      "cost": 850
+    },
+    {
+      "id": "inf_squad_drones",
+      "name": "Squad reconnaissance drones",
+      "description": "Small drones for scouting at platoon and squad level.",
+      "year": 2015,
+      "x": 1,
+      "effects": {
+        "army_attack": 0.03
+      },
+      "prerequisites": [
+        [
+          "inf_digital_soldier",
+          "inf_mrap"
+        ]
+      ],
+      "cost": 1000
+    },
+    {
+      "id": "inf_loitering_munitions",
+      "name": "Portable loitering munitions",
+      "description": "Man-portable drones that strike targets they find.",
+      "year": 2022,
+      "x": 2,
+      "effects": {
+        "army_attack": 0.05
+      },
+      "prerequisites": [
+        [
+          "inf_atgm_fire_forget"
+        ],
+        [
+          "inf_squad_drones"
+        ]
+      ],
+      "cost": 1000
+    },
+    {
+      "id": "inf_exoskeletons",
+      "name": "Load-bearing exoskeletons",
+      "description": "Powered frames that let soldiers carry more for longer.",
+      "year": 2032,
+      "x": 0,
+      "effects": {
+        "army_org": 0.03
+      },
+      "prerequisites": [
+        [
+          "inf_squad_drones"
+        ]
+      ],
+      "cost": 1200
+    }
+  ]
+}

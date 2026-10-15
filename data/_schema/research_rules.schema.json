@@ -1,0 +1,86 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "note": {
+      "type": "string"
+    },
+    "base_slots": {
+      "default": 3,
+      "type": "number"
+    },
+    "slot_gdp_thresholds": {
+      "default": [
+        500,
+        2000,
+        8000
+      ],
+      "type": "array",
+      "items": {
+        "type": "number"
+      }
+    },
+    "max_slots": {
+      "default": 6,
+      "type": "number"
+    },
+    "ahead_penalty_per_year": {
+      "default": 0.25,
+      "type": "number"
+    },
+    "behind_bonus_per_year": {
+      "default": 0.06,
+      "type": "number"
+    },
+    "max_behind_bonus": {
+      "default": 0.5,
+      "type": "number"
+    },
+    "rnd_speed_per_point": {
+      "default": 0.12,
+      "type": "number"
+    },
+    "rnd_baseline": {
+      "default": 1,
+      "type": "number"
+    },
+    "start_lag_years": {
+      "default": {
+        "high": 0,
+        "upper_middle": 3,
+        "lower_middle": 6,
+        "low": 10
+      },
+      "type": "object",
+      "propertyNames": {
+        "type": "string",
+        "enum": [
+          "low",
+          "lower_middle",
+          "upper_middle",
+          "high"
+        ]
+      },
+      "additionalProperties": {
+        "type": "number"
+      }
+    },
+    "military_lag_per_point": {
+      "default": 1.5,
+      "type": "number"
+    },
+    "max_military_lag_reduction": {
+      "default": 6,
+      "type": "number"
+    },
+    "rnd_lag_per_point": {
+      "default": 1.5,
+      "type": "number"
+    },
+    "max_rnd_lag_reduction": {
+      "default": 3,
+      "type": "number"
+    }
+  },
+  "additionalProperties": false
+}

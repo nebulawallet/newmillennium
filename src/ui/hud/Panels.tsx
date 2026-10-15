@@ -7,6 +7,7 @@ import { Icon } from "../icons.tsx";
 import { PoliticsPanel } from "../politics/PoliticsPanel.tsx";
 import { DecisionsPanel } from "../scripted/DecisionsPanel.tsx";
 import { ConstructionPanel, EconomyPanel, TradePanel } from "../economy/EconomyPanels.tsx";
+import { ResearchPanel } from "../research/ResearchPanel.tsx";
 import { feed, panel, version, type Session } from "../session.ts";
 import { selectedProvince } from "../store.ts";
 import { TABS, type TabDef } from "../tabs.ts";
@@ -101,6 +102,8 @@ export function LeftPanel({ db, map, session }: { db: ContentDB; map: MapData; s
           <PoliticsPanel db={db} state={state} tag={state.player} session={session} />
         ) : tab.id === "decisions" ? (
           <DecisionsPanel db={db} session={session} />
+        ) : tab.id === "research" ? (
+          <ResearchPanel db={db} session={session} />
         ) : tab.id === "construction" ? (
           <ConstructionPanel db={db} session={session} />
         ) : tab.id === "trade" ? (
