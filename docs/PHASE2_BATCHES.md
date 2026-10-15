@@ -28,7 +28,7 @@ See the prompts used in the pilot (git history, early October 2026) for the form
 
 ## Done (Pass A)
 
-DEU (Pass A and Pass B), USA, RUS, GBR, CHN, IRN, SOM, SWE, FRA, AND, ESP, NLD, JPN, NOR, POL, TUR, ISR, PSE, ITA, MCO
+DEU (Pass A and Pass B), USA, RUS, GBR, CHN, IRN, SOM, SWE, FRA, AND, ESP, NLD, JPN, NOR, POL, TUR, ISR, PSE, ITA, MCO, CZE, HUN, SVK
 
 ## Running (since 15 October 2026)
 
@@ -37,7 +37,6 @@ DEU (Pass A and Pass B), USA, RUS, GBR, CHN, IRN, SOM, SWE, FRA, AND, ESP, NLD, 
 | 2b | DNK FIN ISL (DNK had a partial elections.json) |
 | 3b | PRT BEL LUX |
 | 4b | KOR TWN PRK MNG |
-| 5b | CZE HUN SVK (CZE had a partial country.json) |
 | 7 | IRL AUT CHE LIE |
 | 8 | ROU BGR GRC CYP NCY |
 
@@ -45,11 +44,10 @@ DEU (Pass A and Pass B), USA, RUS, GBR, CHN, IRN, SOM, SWE, FRA, AND, ESP, NLD, 
 
 | # | Tags | Notes |
 |---|---|---|
+| 9 | YUG MNE KOS BIH HRV SVN MKD ALB | Bosnia has a 3-member presidency plus the High Representative; Kosovo under UNMIK |
 | 2 | NOR DNK FIN ISL | Finland's 2000 presidential election fell after game start |
 | 3 | ESP NLD PRT | Spain's 2000 election was in March, so seats come from the 1996 result |
 | 4 | JPN KOR TWN PRK MNG | Taiwan's 2000 election; North Korea's nominal vs effective head of state |
-| 5 | POL CZE HUN SVK | Czech "opposition agreement" uses `confidence_and_supply` |
-| 9 | YUG MNE KOS BIH HRV SVN MKD ALB | Bosnia has a 3-member presidency plus the High Representative; Kosovo under UNMIK |
 | 10 | SMR VAT MLT | San Marino's Captains Regent rotate every 6 months |
 | 11 | UKR BLR MDA PMR | |
 | 12 | EST LVA LTU | |

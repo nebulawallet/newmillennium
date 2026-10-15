@@ -42,7 +42,7 @@ New Millennium is a grand strategy game in the style of Hearts of Iron IV, set f
 
 ## Where things stand right now
 
-- **Research agents are running** (relaunched 15 October 2026): ITA MCO; DNK FIN ISL; PRT BEL LUX; KOR TWN PRK MNG; CZE HUN SVK; ISR PSE. Their folders are untracked until audited. FRA, AND, ESP, NLD, JPN, NOR, POL and TUR were audited and committed.
+- **Research agents (stopped 15 October 2026 at the usage limit):** batches 2b (DNK FIN ISL), 3b (PRT BEL LUX), 4b (KOR TWN PRK MNG), 7 (IRL AUT CHE LIE) and 8 (ROU BGR GRC CYP NCY) were stopped mid-work; their folders are untracked partial drafts. Ask before relaunching. Done and committed: FRA, AND, ESP, NLD, JPN, NOR, POL, TUR, ISR, PSE, ITA, MCO, CZE, HUN, SVK (plus the earlier eight).
 - **Audit helper:** `python -I -X utf8 scripts/dev/audit-country.py TAG` prints offices, legislature, latest elections, needs_review items and dates after June 2026.
 - `npm run check` validates only countries tracked by git (`--tracked`), so untracked folders do not block commits.
 - **Audit checklist addition (Phase 5):** direct presidential elections decided by plurality need `"system": "plurality"` on their rule (e.g. KOR, TWN, ISL, PSE in the current batches); check `winner` is the real winner.
