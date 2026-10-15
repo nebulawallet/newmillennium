@@ -145,8 +145,17 @@ export function initialEconomy(db: ContentDB, tag: string, mapPopulation: number
   const inflation = clamp(fig("inflation_pct", "inflation"), -5, 200);
   const unemployment = clamp(fig("unemployment_pct", "unemployment"), 0.5, 60);
   const lending = clamp(fig("lending_rate_pct", "interest"), 0.5, 80);
-  const revenue = clamp(fig("revenue_pct_gdp", "revenue"), 3, 70);
-  const spending = clamp(fig("expense_pct_gdp", "spending"), 5, 75);
+  // when only one side of the budget is known, the other keeps the income group's typical gap to it
+  // (a default level next to a real figure would invent a large surplus or deficit)
+  const rev = figure(db, tag, "revenue_pct_gdp", gdppc), exp = figure(db, tag, "expense_pct_gdp", gdppc);
+  const tierDefaults = rules.defaults[incomeTier(gdppc)] ?? {};
+  const gap = (tierDefaults.expense_pct_gdp ?? 0) - (tierDefaults.revenue_pct_gdp ?? 0);
+  if (rev.estimated && !exp.estimated) rev.value = exp.value - gap;
+  if (exp.estimated && !rev.estimated) exp.value = rev.value + gap;
+  if (rev.estimated) estimated.push("revenue");
+  if (exp.estimated) estimated.push("spending");
+  const revenue = clamp(rev.value, 3, 70);
+  const spending = clamp(exp.value, 5, 75);
   const debt = clamp(fig("central_gov_debt_pct_gdp", "debt"), 0, 300);
   const industryShare = clamp(fig("industry_pct_gdp", "industry"), 5, 80) / 100;
   const mil = (num("military_spending_pct_gdp") ?? 1.5) / 100;
