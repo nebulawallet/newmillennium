@@ -1,0 +1,163 @@
+{
+  "tag": "FRA",
+  "name": { "en": "France", "native": "France", "official": { "en": "French Republic", "native": "République française" } },
+  "adjective": "French",
+  "culture_primary": "french",
+  "government": {
+    "type": "semi_presidential",
+    "effective_executive": "fra.president",
+    "head_of_state_office": "fra.president",
+    "head_of_government_office": "fra.prime_minister",
+    "constitution": {
+      "term_limit_amendable": true,
+      "emergency_powers": true,
+      "referendum_required_for": ["constitutional amendments not approved by Parliament in Congress (Constitution Art. 89)"]
+    },
+    "note": "Semi-presidential republic (Fifth Republic). The directly elected President appoints the Prime Minister, who must keep the confidence of the National Assembly. On 1 January 2000 France was in 'cohabitation': President Jacques Chirac (RPR, centre-right) and Prime Minister Lionel Jospin (PS, Plural Left government). During cohabitation the Prime Minister directs most domestic policy. The presidential term was seven years until the 2000 referendum cut it to five, starting with the 2002 election; the 2008 constitutional revision limited presidents to two consecutive terms. During a presidential vacancy the President of the Senate acts as interim."
+  },
+  "offices": [
+    {
+      "id": "fra.president",
+      "title": { "en": "President of the French Republic", "native": "Président de la République française" },
+      "role": "head_of_state",
+      "power_weight": 0.6,
+      "selection": "direct_election",
+      "term_years": 5,
+      "term_limit": { "max_terms": 2, "consecutive_only": true },
+      "succession": { "type": "acting_then_election" },
+      "holders": [
+        { "person": "fra.jacques_chirac", "from": "1995-05-17", "to": "2007-05-16", "note": "Elected in 1995 for seven years; re-elected in 2002 for the first five-year term." },
+        { "person": "fra.nicolas_sarkozy", "from": "2007-05-16", "to": "2012-05-15" },
+        { "person": "fra.francois_hollande", "from": "2012-05-15", "to": "2017-05-14" },
+        { "person": "fra.emmanuel_macron", "from": "2017-05-14", "note": "Re-elected in 2022; the term runs to May 2027." }
+      ],
+      "note": "Two-round direct election; term seven years until 2002, five years since. Term limit of two consecutive terms since the 2008 constitutional revision. The President of the Senate acts as interim during a vacancy (none since 2000).",
+      "source": [
+        { "url": "https://www.wikidata.org/wiki/Q191954", "title": "Wikidata: President of the French Republic (position held by)", "accessed": "2026-10-14" },
+        { "url": "https://en.wikipedia.org/wiki/List_of_presidents_of_France", "title": "Wikipedia: List of presidents of France", "accessed": "2026-10-14" },
+        { "url": "https://en.wikipedia.org/wiki/2000_French_constitutional_referendum", "title": "Wikipedia: 2000 French constitutional referendum (five-year term)", "accessed": "2026-10-14" },
+        { "url": "https://en.wikipedia.org/wiki/President_of_France", "title": "Wikipedia: President of France (infobox: five years, renewable once consecutively)", "accessed": "2026-10-14" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "fra.prime_minister",
+      "title": { "en": "Prime Minister of France", "native": "Premier ministre" },
+      "role": "head_of_government",
+      "power_weight": 0.4,
+      "selection": "appointed",
+      "appointed_by": "fra.president",
+      "holders": [
+        { "person": "fra.lionel_jospin", "from": "1997-06-02", "to": "2002-05-06", "note": "Wikipedia gives 2 June 1997 as the start; Wikidata gives 3 June 1997." },
+        { "person": "fra.jean_pierre_raffarin", "from": "2002-05-06", "to": "2005-05-31" },
+        { "person": "fra.dominique_de_villepin", "from": "2005-05-31", "to": "2007-05-17" },
+        { "person": "fra.francois_fillon", "from": "2007-05-17", "to": "2012-05-15", "note": "Wikipedia gives 15 May 2012 as the end; Wikidata gives 16 May 2012." },
+        { "person": "fra.jean_marc_ayrault", "from": "2012-05-15", "to": "2014-03-31" },
+        { "person": "fra.manuel_valls", "from": "2014-03-31", "to": "2016-12-06" },
+        { "person": "fra.bernard_cazeneuve", "from": "2016-12-06", "to": "2017-05-15", "note": "Wikipedia gives 15 May 2017 as the end; Wikidata gives 10 May 2017." },
+        { "person": "fra.edouard_philippe", "from": "2017-05-15", "to": "2020-07-03" },
+        { "person": "fra.jean_castex", "from": "2020-07-03", "to": "2022-05-16" },
+        { "person": "fra.elisabeth_borne", "from": "2022-05-16", "to": "2024-01-09" },
+        { "person": "fra.gabriel_attal", "from": "2024-01-09", "to": "2024-09-05" },
+        { "person": "fra.michel_barnier", "from": "2024-09-05", "to": "2024-12-13" },
+        { "person": "fra.francois_bayrou", "from": "2024-12-13", "to": "2025-09-09" },
+        { "person": "fra.sebastien_lecornu", "from": "2025-09-09", "note": "Resigned on 6 October 2025 and served in a caretaker capacity until President Macron reappointed him on 10 October 2025 (Lecornu II government); in office on the data date." }
+      ],
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/List_of_prime_ministers_of_France", "title": "Wikipedia: List of prime ministers of France (Fifth Republic table)", "accessed": "2026-10-14" },
+        { "url": "https://www.wikidata.org/wiki/Q1587677", "title": "Wikidata: Prime Minister of France (position held by)", "accessed": "2026-10-14" },
+        { "url": "https://en.wikipedia.org/wiki/S%C3%A9bastien_Lecornu", "title": "Wikipedia: Sébastien Lecornu (infobox)", "accessed": "2026-10-14" }
+      ],
+      "confidence": "verified"
+    }
+  ],
+  "legislature": {
+    "name": { "en": "Parliament", "native": "Parlement" },
+    "chambers": [
+      {
+        "id": "national_assembly",
+        "name": { "en": "National Assembly", "native": "Assemblée nationale" },
+        "seats": 577,
+        "term_years": 5,
+        "elected": "direct",
+        "system": {
+          "type": "two_round",
+          "district_model": "custom",
+          "note": "577 single-member constituencies. A candidate is elected in the first round with an absolute majority of valid votes and more than 25% of registered voters; otherwise the top two candidates, plus any candidate with more than 12.5% of registered voters, go to a second round decided by plurality. seats_2000 uses the result of the 1997 election (Interior Ministry labels), not the group composition on 1 January 2000: Liberal Democracy's deputies (elected under the UDF label) formed their own group in 1998, the Citizens' Movement's 7 deputies (French Wikipedia) are shown separately and assumed to be among the 11 miscellaneous-left seats of the official results, and the remaining 9 seats of miscellaneous left, miscellaneous right and other labels are under 'others'."
+        },
+        "seats_2000": {
+          "fra.ps": 255,
+          "fra.rpr": 139,
+          "fra.udf": 112,
+          "fra.pcf": 35,
+          "fra.prg": 12,
+          "fra.verts": 7,
+          "fra.fn": 1,
+          "fra.mdc": 7,
+          "others": 9
+        },
+        "confidence_chamber": true,
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/1997_French_legislative_election", "title": "Wikipedia: 1997 French legislative election (results table)", "accessed": "2026-10-14" },
+          { "url": "https://fr.wikipedia.org/wiki/Mouvement_des_citoyens_(France)", "title": "Wikipédia (fr): Mouvement des citoyens (seven deputies elected in 1997)", "accessed": "2026-10-14" },
+          { "url": "https://en.wikipedia.org/wiki/11th_legislature_of_the_French_Fifth_Republic", "title": "Wikipedia: 11th legislature of the French Fifth Republic (parliamentary groups)", "accessed": "2026-10-14" }
+        ],
+        "confidence": "needs_review",
+        "review_note": "Seats are the June 1997 election result by label. Check the group composition on 1 January 2000 (UDF/DL split of 1998, by-elections) and move DL's deputies from fra.udf to fra.dl; confirm that the 7 MDC deputies were counted as miscellaneous left in the official results."
+      },
+      {
+        "id": "senate",
+        "name": { "en": "Senate", "native": "Sénat" },
+        "seats": 321,
+        "term_years": 9,
+        "elected": "indirect",
+        "system": {
+          "type": "indirect",
+          "note": "Indirectly elected by local councillors. In 2000 senators served nine-year terms with one third of seats renewed every three years; terms are now six years with half renewed every three years, and the chamber now has 348 seats. seats_2000 is the group composition after the September 1998 renewal: RPR group 99, Socialist group 78, Centrist Union (UDF) 52, Independent Republicans (Liberal Democracy) 49, RDSE (mostly Radicals, under others) 21, Communist (CRC) 16, unaffiliated 6."
+        },
+        "seats_2000": {
+          "fra.rpr": 99,
+          "fra.ps": 78,
+          "fra.udf": 52,
+          "fra.dl": 49,
+          "fra.pcf": 16,
+          "others": 21,
+          "independents": 6
+        },
+        "confidence_chamber": false,
+        "source": [
+          { "url": "https://fr.wikipedia.org/wiki/%C3%89lections_s%C3%A9natoriales_fran%C3%A7aises_de_1998", "title": "Wikipédia (fr): Élections sénatoriales françaises de 1998 (groups after renewal, 321 seats)", "accessed": "2026-10-14" },
+          { "url": "https://en.wikipedia.org/wiki/Senate_(France)", "title": "Wikipedia: Senate (France)", "accessed": "2026-10-14" }
+        ],
+        "confidence": "needs_review",
+        "review_note": "The fetched source gives the six largest groups after the 1998 renewal (315 seats); the 6 unaffiliated senators are the remainder of 321. Groups are mapped to parties approximately (Independent Republicans to DL, Centrist Union to UDF). Confirm group sizes on 1 January 2000."
+      }
+    ]
+  },
+  "party_system": "multi_party",
+  "start_2000": {
+    "ruling_parties": ["fra.ps", "fra.pcf", "fra.verts", "fra.prg", "fra.mdc"],
+    "ideology_support": {
+      "social_democrat": 0.268,
+      "democratic_socialist": 0.01,
+      "liberal_conservative": 0.223,
+      "christian_democrat": 0.07,
+      "classical_liberal": 0.05,
+      "centrist_liberal": 0.022,
+      "right_populist": 0.15,
+      "reformed_communist": 0.099,
+      "green": 0.068,
+      "marxist_leninist": 0.025,
+      "regionalist": 0.015
+    },
+    "ideology_support_note": "Derived from first-round shares in the 1997 National Assembly election: PS 23.5% + Radical-Socialists 1.4% + miscellaneous left 2.8% (social democrat, with about 1 point for the Citizens' Movement as democratic socialist); RPR 15.7% + miscellaneous right 6.6% (liberal conservative); UDF 14.2% split between its Christian-democrat, liberal (later Liberal Democracy) and centrist components; National Front 14.9% (right populist); PCF 9.9% (reformed communist); Greens 6.8%; far left 2.5% (Trotskyist parties, mapped to marxist_leninist); miscellaneous 1.4% (mostly regionalist).",
+    "stability": 0.72,
+    "war_support": 0.3
+  },
+  "claims": [],
+  "source": [
+    { "url": "https://en.wikipedia.org/wiki/1997_French_legislative_election", "title": "Wikipedia: 1997 French legislative election", "accessed": "2026-10-14" },
+    { "url": "https://en.wikipedia.org/wiki/List_of_prime_ministers_of_France", "title": "Wikipedia: List of prime ministers of France", "accessed": "2026-10-14" }
+  ],
+  "confidence": "verified"
+}

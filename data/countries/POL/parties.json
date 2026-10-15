@@ -1,0 +1,997 @@
+{
+  "parties": [
+    {
+      "id": "pol.aws",
+      "name": {
+        "en": "Solidarity Electoral Action",
+        "native": "Akcja Wyborcza Solidarność"
+      },
+      "abbrev": {
+        "en": "AWS",
+        "native": "AWS"
+      },
+      "color": "#9C9C9C",
+      "sub_ideology": "christian_democrat",
+      "founded": "1996-06-08",
+      "dissolved": "2001-10-18",
+      "status_2000": "active",
+      "leader_history": [
+        {
+          "person": "pol.marian_krzaklewski",
+          "from": 1996,
+          "to": 2000
+        },
+        {
+          "person": "pol.jerzy_buzek",
+          "from": 2000,
+          "to": 2001
+        }
+      ],
+      "popularity_2000": 0.338,
+      "popularity_note": "Sejm vote share, 1997 election.",
+      "note": "An alliance of more than 30 organisations built around the Solidarity trade union. Wikidata gives 1997 as the founding year; the Wikipedia infobox gives 8 June 1996. For the 2001 election it ran as Solidarity Electoral Action of the Right (AWSP). Dissolution date is the end of the Sejm term. Colour is the customary grey.",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Solidarity_Electoral_Action",
+          "title": "Wikipedia: Solidarity Electoral Action (infobox: leaders, founding, dissolution)",
+          "accessed": "2026-10-14"
+        },
+        {
+          "url": "https://www.wikidata.org/wiki/Q416916",
+          "title": "Wikidata: Solidarity Electoral Action (founding date, chairpersons)",
+          "accessed": "2026-10-14"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/1997_Polish_parliamentary_election",
+          "title": "Wikipedia: 1997 Polish parliamentary election (Sejm results)",
+          "accessed": "2026-10-14"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "pol.sld",
+      "name": {
+        "en": "Democratic Left Alliance",
+        "native": "Sojusz Lewicy Demokratycznej"
+      },
+      "abbrev": {
+        "en": "SLD",
+        "native": "SLD"
+      },
+      "color": "#E2001A",
+      "sub_ideology": "social_democrat",
+      "founded": "1999-04-15",
+      "dissolved": "2021-10-09",
+      "status_2000": "active",
+      "leader_history": [
+        {
+          "person": "pol.leszek_miller",
+          "from": "1999-04-15",
+          "to": "2004-03-06"
+        },
+        {
+          "person": "pol.krzysztof_janik",
+          "from": "2004-03-06",
+          "to": "2004-12-18"
+        },
+        {
+          "person": "pol.jozef_oleksy",
+          "from": "2004-12-18",
+          "to": "2005-05-29"
+        },
+        {
+          "person": "pol.wojciech_olejniczak",
+          "from": "2005-05-29",
+          "to": "2008-05-31"
+        },
+        {
+          "person": "pol.grzegorz_napieralski",
+          "from": "2008-05-31",
+          "to": "2011-12-10"
+        },
+        {
+          "person": "pol.leszek_miller",
+          "from": "2011-12-10",
+          "to": "2016-01-23"
+        },
+        {
+          "person": "pol.wlodzimierz_czarzasty",
+          "from": "2016-01-23",
+          "to": "2021-10-09"
+        }
+      ],
+      "popularity_2000": 0.271,
+      "popularity_note": "Sejm vote share, 1997 election (SLD electoral coalition).",
+      "lineage": {
+        "renamed_to": "pol.nowa_lewica"
+      },
+      "note": "Founded as an electoral coalition in 1991 and constituted as a single party on 15 April 1999. Led joint lists with the Labour Union (2001), the Left and Democrats (2007), the United Left (2015) and The Left (2019). Became New Left in October 2021.",
+      "source": [
+        {
+          "url": "https://www.wikidata.org/wiki/Q953174",
+          "title": "Wikidata: Democratic Left Alliance (founding date, chairpersons)",
+          "accessed": "2026-10-14"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/1997_Polish_parliamentary_election",
+          "title": "Wikipedia: 1997 Polish parliamentary election (Sejm results)",
+          "accessed": "2026-10-14"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "pol.uw",
+      "name": {
+        "en": "Freedom Union",
+        "native": "Unia Wolności"
+      },
+      "abbrev": {
+        "en": "UW",
+        "native": "UW"
+      },
+      "color": "#F5B800",
+      "sub_ideology": "centrist_liberal",
+      "founded": "1994-03-20",
+      "dissolved": 2005,
+      "status_2000": "active",
+      "leader_history": [
+        {
+          "person": "pol.leszek_balcerowicz",
+          "from": 1995,
+          "to": 2000
+        },
+        {
+          "person": "pol.bronislaw_geremek",
+          "from": 2000,
+          "to": 2001
+        },
+        {
+          "person": "pol.wladyslaw_frasyniuk",
+          "from": 2001,
+          "to": 2005
+        }
+      ],
+      "popularity_2000": 0.134,
+      "popularity_note": "Sejm vote share, 1997 election.",
+      "note": "Left the Buzek government on 8 June 2000. Succeeded by the Democratic Party - demokraci.pl in 2005; many members had joined Civic Platform. Colour is a placeholder.",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Freedom_Union_(Poland)",
+          "title": "Wikipedia: Freedom Union (Poland) (infobox: chairmen, foundation, successor)",
+          "accessed": "2026-10-14"
+        },
+        {
+          "url": "https://www.wikidata.org/wiki/Q2307945",
+          "title": "Wikidata: Freedom Union (founding date, chairpersons)",
+          "accessed": "2026-10-14"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/1997_Polish_parliamentary_election",
+          "title": "Wikipedia: 1997 Polish parliamentary election (Sejm results)",
+          "accessed": "2026-10-14"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "pol.psl",
+      "name": {
+        "en": "Polish People's Party",
+        "native": "Polskie Stronnictwo Ludowe"
+      },
+      "abbrev": {
+        "en": "PSL",
+        "native": "PSL"
+      },
+      "color": "#1BB100",
+      "sub_ideology": "agrarian",
+      "founded": "1990-05-05",
+      "status_2000": "active",
+      "leader_history": [
+        {
+          "person": "pol.jaroslaw_kalinowski",
+          "from": "1997-10-11",
+          "to": "2004-03-16"
+        },
+        {
+          "person": "pol.janusz_wojciechowski",
+          "from": "2004-03-16",
+          "to": "2005-01-29"
+        },
+        {
+          "person": "pol.waldemar_pawlak",
+          "from": "2005-01-29",
+          "to": "2012-11-17"
+        },
+        {
+          "person": "pol.janusz_piechocinski",
+          "from": "2012-11-17",
+          "to": "2015-11-07"
+        },
+        {
+          "person": "pol.wladyslaw_kosiniak_kamysz",
+          "from": "2015-11-07"
+        }
+      ],
+      "popularity_2000": 0.073,
+      "popularity_note": "Sejm vote share, 1997 election.",
+      "note": "Junior partner in the Miller (2001-2003) and Tusk/Kopacz (2007-2015) governments; ran in the Polish Coalition (2019) and Third Way (2023) alliances. Wikidata's chair list contains duplicate Pawlak entries with inconsistent dates; the sequence used here is the consistent one.",
+      "source": [
+        {
+          "url": "https://www.wikidata.org/wiki/Q218477",
+          "title": "Wikidata: Polish People's Party (founding date, chairpersons)",
+          "accessed": "2026-10-14"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/1997_Polish_parliamentary_election",
+          "title": "Wikipedia: 1997 Polish parliamentary election (Sejm results)",
+          "accessed": "2026-10-14"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "pol.rop",
+      "name": {
+        "en": "Movement for Reconstruction of Poland",
+        "native": "Ruch Odbudowy Polski"
+      },
+      "abbrev": {
+        "en": "ROP",
+        "native": "ROP"
+      },
+      "color": "#7A1F2B",
+      "sub_ideology": "national_conservative",
+      "founded": 1995,
+      "dissolved": 2012,
+      "status_2000": "active",
+      "leader_history": [
+        {
+          "person": "pol.jan_olszewski",
+          "from": 1995,
+          "to": 2011
+        }
+      ],
+      "popularity_2000": 0.056,
+      "popularity_note": "Sejm vote share, 1997 election.",
+      "note": "Colour is a placeholder. Stanisław Gogacz led the party in its final year (2011-2012) and is not modelled.",
+      "source": [
+        {
+          "url": "https://www.wikidata.org/wiki/Q1271959",
+          "title": "Wikidata: Movement for Reconstruction of Poland (founding date, chairpersons)",
+          "accessed": "2026-10-14"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/1997_Polish_parliamentary_election",
+          "title": "Wikipedia: 1997 Polish parliamentary election (Sejm results)",
+          "accessed": "2026-10-14"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "pol.mn",
+      "name": {
+        "en": "German Minority Electoral Committee",
+        "native": "Mniejszość Niemiecka"
+      },
+      "abbrev": {
+        "en": "MN",
+        "native": "MN"
+      },
+      "color": "#2E5CB8",
+      "sub_ideology": "regionalist",
+      "founded": 1990,
+      "status_2000": "active",
+      "leader_history": [
+        {
+          "person": "pol.henryk_kroll",
+          "from": "1991-03-23"
+        },
+        {
+          "person": "pol.ryszard_galla",
+          "from": 2011
+        }
+      ],
+      "popularity_2000": 0.0039,
+      "popularity_note": "Sejm vote share, 1997 election; national-minority lists are exempt from the 5% threshold.",
+      "regional_base": [
+        "Opole Voivodeship",
+        "german"
+      ],
+      "note": "Colour is a placeholder.",
+      "source": [
+        {
+          "url": "https://www.wikidata.org/wiki/Q491791",
+          "title": "Wikidata: German Minority Electoral Committee (founding date, chairpersons)",
+          "accessed": "2026-10-14"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/German_Minority_Electoral_Committee",
+          "title": "Wikipedia: German Minority Electoral Committee (infobox)",
+          "accessed": "2026-10-14"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/2011_Polish_parliamentary_election",
+          "title": "Wikipedia: 2011 Polish parliamentary election (infobox)",
+          "accessed": "2026-10-14"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/1997_Polish_parliamentary_election",
+          "title": "Wikipedia: 1997 Polish parliamentary election (Sejm results)",
+          "accessed": "2026-10-14"
+        }
+      ],
+      "confidence": "needs_review",
+      "review_note": "Kroll's end date and Galla's start date are not in the fetched sources; Galla is placed from 2011 because the 2011 Sejm election infobox names him as the committee's leader (and 2007 still names Kroll). Confirm the handover year."
+    },
+    {
+      "id": "pol.up",
+      "name": {
+        "en": "Labour Union",
+        "native": "Unia Pracy"
+      },
+      "abbrev": {
+        "en": "UP",
+        "native": "UP"
+      },
+      "color": "#C8102E",
+      "sub_ideology": "social_democrat",
+      "founded": "1992-06-07",
+      "status_2000": "extra_parliamentary",
+      "leader_history": [],
+      "popularity_2000": 0.047,
+      "popularity_note": "Sejm vote share, 1997 election (no seats).",
+      "note": "Ran jointly with the SLD in 2001 (16 seats) and within the Left and Democrats in 2007. Leader history not modelled; the current leader is Waldemar Witkowski.",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Labour_Union_(Poland)",
+          "title": "Wikipedia: Labour Union (Poland) (infobox)",
+          "accessed": "2026-10-14"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/1997_Polish_parliamentary_election",
+          "title": "Wikipedia: 1997 Polish parliamentary election (Sejm results)",
+          "accessed": "2026-10-14"
+        }
+      ],
+      "confidence": "needs_review",
+      "review_note": "Leader history 2000-2026 not fetched; Wikidata has no chairs for this party. Add the chairs from the Polish Wikipedia article."
+    },
+    {
+      "id": "pol.samoobrona",
+      "name": {
+        "en": "Self-Defence of the Republic of Poland",
+        "native": "Samoobrona Rzeczpospolitej Polskiej"
+      },
+      "abbrev": {
+        "en": "SRP",
+        "native": "SRP"
+      },
+      "color": "#E8C21A",
+      "sub_ideology": "left_populist",
+      "founded": "1992-01-10",
+      "status_2000": "extra_parliamentary",
+      "leader_history": [
+        {
+          "person": "pol.andrzej_lepper",
+          "from": "1992-01-10",
+          "to": "2011-08-05",
+          "title": "Founder and leader"
+        }
+      ],
+      "popularity_2000": 0.0008,
+      "popularity_note": "Sejm vote share, 1997 election (10,073 votes).",
+      "note": "Agrarian left-wing populist party; entered the Sejm in 2001 and joined the PiS-led government in 2006-2007. The current leader is Krzysztof Prokopczyk. Wikidata gives a 2012 dissolution date, but the Wikipedia article treats the party as still existing.",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Self-Defence_of_the_Republic_of_Poland",
+          "title": "Wikipedia: Self-Defence of the Republic of Poland (infobox and lead)",
+          "accessed": "2026-10-14"
+        },
+        {
+          "url": "https://www.wikidata.org/wiki/Q1128266",
+          "title": "Wikidata: Self-Defence of the Republic of Poland (founding date, chairpersons)",
+          "accessed": "2026-10-14"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/1997_Polish_parliamentary_election",
+          "title": "Wikipedia: 1997 Polish parliamentary election (Sejm results)",
+          "accessed": "2026-10-14"
+        }
+      ],
+      "confidence": "needs_review",
+      "review_note": "Lepper is recorded as leader until his death on 5 August 2011; confirm whether he remained chairman until then and who succeeded him."
+    },
+    {
+      "id": "pol.po",
+      "name": {
+        "en": "Civic Platform",
+        "native": "Platforma Obywatelska"
+      },
+      "abbrev": {
+        "en": "PO",
+        "native": "PO"
+      },
+      "color": "#F68B1F",
+      "sub_ideology": "liberal_conservative",
+      "founded": "2001-01-24",
+      "dissolved": "2025-10-25",
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        {
+          "person": "pol.maciej_plazynski",
+          "from": "2001-10-18",
+          "to": "2003-06-01"
+        },
+        {
+          "person": "pol.donald_tusk",
+          "from": "2003-06-01",
+          "to": "2014-11-08"
+        },
+        {
+          "person": "pol.ewa_kopacz",
+          "from": "2014-11-08",
+          "to": "2016-01-26"
+        },
+        {
+          "person": "pol.grzegorz_schetyna",
+          "from": "2016-01-26",
+          "to": "2020-01-25"
+        },
+        {
+          "person": "pol.borys_budka",
+          "from": "2020-01-26",
+          "to": "2021-07-03"
+        },
+        {
+          "person": "pol.donald_tusk",
+          "from": "2021-07-03",
+          "to": "2025-10-25"
+        }
+      ],
+      "popularity_2000": 0,
+      "lineage": {
+        "renamed_to": "pol.ko"
+      },
+      "note": "Led the Civic Coalition electoral alliance from 2018. In October 2025 it became the single party Civic Coalition (pol.ko); the end date here is that party's founding date.",
+      "source": [
+        {
+          "url": "https://www.wikidata.org/wiki/Q156868",
+          "title": "Wikidata: Civic Platform (founding date, chairpersons)",
+          "accessed": "2026-10-14"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/Civic_Coalition_(party)",
+          "title": "Wikipedia: Civic Coalition (party) (infobox)",
+          "accessed": "2026-10-14"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "pol.ko",
+      "name": {
+        "en": "Civic Coalition",
+        "native": "Koalicja Obywatelska"
+      },
+      "abbrev": {
+        "en": "KO",
+        "native": "KO"
+      },
+      "color": "#F68B1F",
+      "sub_ideology": "liberal_conservative",
+      "founded": "2025-10-25",
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        {
+          "person": "pol.donald_tusk",
+          "from": "2025-10-25"
+        }
+      ],
+      "popularity_2000": 0,
+      "lineage": {
+        "renamed_from": "pol.po",
+        "formed_from": [
+          "pol.po",
+          "pol.nowoczesna"
+        ]
+      },
+      "note": "Created on 25 October 2025 by merging Civic Platform, Modern and Polish Initiative (the Greens stayed separate); registered on 21 November 2025 as a change of Civic Platform's name and statute. Holds 142 Sejm seats per the fetched infobox.",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Civic_Coalition_(party)",
+          "title": "Wikipedia: Civic Coalition (party) (infobox and history)",
+          "accessed": "2026-10-14"
+        },
+        {
+          "url": "https://www.wikidata.org/wiki/Q136735839",
+          "title": "Wikidata: Civic Coalition (founding date, chairpersons)",
+          "accessed": "2026-10-14"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "pol.pis",
+      "name": {
+        "en": "Law and Justice",
+        "native": "Prawo i Sprawiedliwość"
+      },
+      "abbrev": {
+        "en": "PiS",
+        "native": "PiS"
+      },
+      "color": "#073A76",
+      "sub_ideology": "national_conservative",
+      "founded": "2001-06-13",
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        {
+          "person": "pol.lech_kaczynski",
+          "from": "2001-06-13",
+          "to": "2003-01-18"
+        },
+        {
+          "person": "pol.jaroslaw_kaczynski",
+          "from": "2003-01-18"
+        }
+      ],
+      "popularity_2000": 0,
+      "note": "Led the United Right alliance from 2015.",
+      "source": [
+        {
+          "url": "https://www.wikidata.org/wiki/Q156874",
+          "title": "Wikidata: Law and Justice (founding date, chairpersons)",
+          "accessed": "2026-10-14"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "pol.lpr",
+      "name": {
+        "en": "League of Polish Families",
+        "native": "Liga Polskich Rodzin"
+      },
+      "abbrev": {
+        "en": "LPR",
+        "native": "LPR"
+      },
+      "color": "#87CEEB",
+      "sub_ideology": "national_conservative",
+      "founded": "2001-05-30",
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        {
+          "person": "pol.roman_giertych",
+          "from": 2005,
+          "to": "2007-10-24"
+        }
+      ],
+      "popularity_2000": 0,
+      "note": "Joined the PiS-led government in 2006-2007; left the Sejm in 2007. Colour is the party's sky blue.",
+      "source": [
+        {
+          "url": "https://www.wikidata.org/wiki/Q687574",
+          "title": "Wikidata: League of Polish Families (founding date, chairpersons)",
+          "accessed": "2026-10-14"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/2005_Polish_parliamentary_election",
+          "title": "Wikipedia: 2005 Polish parliamentary election (infobox: Giertych as leader)",
+          "accessed": "2026-10-14"
+        }
+      ],
+      "confidence": "needs_review",
+      "review_note": "Leaders before Giertych (2001-2005) and his start date are not confirmed: Wikidata gives 2006-03-11 while the 2005 election infobox already names him as leader."
+    },
+    {
+      "id": "pol.sdpl",
+      "name": {
+        "en": "Social Democracy of Poland",
+        "native": "Socjaldemokracja Polska"
+      },
+      "abbrev": {
+        "en": "SDPL",
+        "native": "SDPL"
+      },
+      "color": "#B5121B",
+      "sub_ideology": "social_democrat",
+      "founded": "2004-03-26",
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        {
+          "person": "pol.marek_borowski",
+          "from": "2004-03-26"
+        }
+      ],
+      "popularity_2000": 0,
+      "lineage": {
+        "split_from": "pol.sld"
+      },
+      "note": "Joined the Belka II government (2004-2005) and the Left and Democrats list in 2007. Colour is a placeholder.",
+      "source": [
+        {
+          "url": "https://www.wikidata.org/wiki/Q980083",
+          "title": "Wikidata: Social Democracy of Poland (founding date, chairpersons)",
+          "accessed": "2026-10-14"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/List_of_prime_ministers_of_Poland",
+          "title": "Wikipedia: List of prime ministers of Poland (Belka II coalition)",
+          "accessed": "2026-10-14"
+        }
+      ],
+      "confidence": "needs_review",
+      "review_note": "Borowski's end date as leader and later chairs are not in the fetched sources (Wikidata lists only Wojciech Filemonowicz with no dates)."
+    },
+    {
+      "id": "pol.ruch_palikota",
+      "name": {
+        "en": "Your Movement",
+        "native": "Twój Ruch"
+      },
+      "abbrev": {
+        "en": "TR",
+        "native": "TR"
+      },
+      "color": "#F07D00",
+      "sub_ideology": "social_liberal",
+      "founded": "2011-06-01",
+      "dissolved": 2023,
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        {
+          "person": "pol.janusz_palikot",
+          "from": "2011-06-01"
+        }
+      ],
+      "popularity_2000": 0,
+      "note": "Founded as Palikot's Movement (1 June 2011) and renamed Your Movement on 6 October 2013; dissolved in January 2023. Palikot's end date as leader is not given in the fetched sources.",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Your_Movement",
+          "title": "Wikipedia: Your Movement (infobox)",
+          "accessed": "2026-10-14"
+        },
+        {
+          "url": "https://www.wikidata.org/wiki/Q15052137",
+          "title": "Wikidata: Your Movement (founding date, chairpersons)",
+          "accessed": "2026-10-14"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "pol.kukiz15",
+      "name": {
+        "en": "Kukiz'15",
+        "native": "Kukiz'15"
+      },
+      "abbrev": {
+        "en": "K'15",
+        "native": "K'15"
+      },
+      "color": "#000000",
+      "sub_ideology": "right_populist",
+      "founded": 2015,
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        {
+          "person": "pol.pawel_kukiz",
+          "from": 2015
+        }
+      ],
+      "popularity_2000": 0,
+      "note": "Movement of Paweł Kukiz; its candidates ran on the Polish Coalition list in 2019 and the PiS list in 2023.",
+      "source": [
+        {
+          "url": "https://www.wikidata.org/wiki/Q20740347",
+          "title": "Wikidata: Kukiz'15 (founding date, chairpersons)",
+          "accessed": "2026-10-14"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/2019_Polish_parliamentary_election",
+          "title": "Wikipedia: 2019 Polish parliamentary election",
+          "accessed": "2026-10-14"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/2023_Polish_parliamentary_election",
+          "title": "Wikipedia: 2023 Polish parliamentary election",
+          "accessed": "2026-10-14"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "pol.nowoczesna",
+      "name": {
+        "en": "Modern",
+        "native": "Nowoczesna"
+      },
+      "abbrev": {
+        "en": ".N",
+        "native": ".N"
+      },
+      "color": "#2B5DA8",
+      "sub_ideology": "classical_liberal",
+      "founded": "2015-05-31",
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        {
+          "person": "pol.ryszard_petru",
+          "from": "2015-05-31",
+          "to": "2017-11-25"
+        },
+        {
+          "person": "pol.katarzyna_lubnauer",
+          "from": "2017-11-25",
+          "to": "2019-11-24"
+        },
+        {
+          "person": "pol.adam_szlapka",
+          "from": "2019-11-24"
+        }
+      ],
+      "popularity_2000": 0,
+      "dissolved": "2025-10-25",
+      "lineage": {
+        "merged_into": "pol.ko"
+      },
+      "note": "Ran within the Civic Coalition alliance from 2018; merged into the Civic Coalition party on 25 October 2025.",
+      "source": [
+        {
+          "url": "https://www.wikidata.org/wiki/Q20738981",
+          "title": "Wikidata: Modern (founding date, chairpersons)",
+          "accessed": "2026-10-14"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/Civic_Coalition_(party)",
+          "title": "Wikipedia: Civic Coalition (party) (merger)",
+          "accessed": "2026-10-14"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "pol.razem",
+      "name": {
+        "en": "Together",
+        "native": "Partia Razem"
+      },
+      "abbrev": {
+        "en": "Razem",
+        "native": "Razem"
+      },
+      "color": "#870F57",
+      "sub_ideology": "democratic_socialist",
+      "founded": "2015-05-16",
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        {
+          "person": "pol.adrian_zandberg",
+          "from": "2022-11-27",
+          "title": "Co-chair"
+        }
+      ],
+      "popularity_2000": 0,
+      "note": "Won seats on The Left's lists in 2019 and 2023. Collective leadership before 2022; Aleksandra Owca became the other co-chair on 3 December 2024 (not modelled).",
+      "source": [
+        {
+          "url": "https://www.wikidata.org/wiki/Q21006495",
+          "title": "Wikidata: Partia Razem (founding date, chairpersons)",
+          "accessed": "2026-10-14"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "pol.konfederacja",
+      "name": {
+        "en": "Confederation Liberty and Independence",
+        "native": "Konfederacja Wolność i Niepodległość"
+      },
+      "abbrev": {
+        "en": "KWiN",
+        "native": "Konfederacja"
+      },
+      "color": "#122B4D",
+      "sub_ideology": "right_populist",
+      "founded": "2018-12-06",
+      "status_2000": "not_yet_founded",
+      "leader_history": [],
+      "popularity_2000": 0,
+      "note": "Alliance of national-conservative (National Movement) and libertarian (KORWiN, later New Hope) parties; registered as a party for the 2023 election. Mentzen has chaired New Hope since 15 October 2022.",
+      "source": [
+        {
+          "url": "https://www.wikidata.org/wiki/Q61568052",
+          "title": "Wikidata: Confederation Liberty and Independence (founding date, chairpersons)",
+          "accessed": "2026-10-14"
+        },
+        {
+          "url": "https://www.wikidata.org/wiki/Q19600733",
+          "title": "Wikidata: New Hope (founding date, chairpersons)",
+          "accessed": "2026-10-14"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/2023_Polish_parliamentary_election",
+          "title": "Wikipedia: 2023 Polish parliamentary election",
+          "accessed": "2026-10-14"
+        }
+      ],
+      "confidence": "needs_review",
+      "review_note": "The current infobox names Slawomir Mentzen and Krzysztof Bosak as co-chairmen, but no start dates were found, so leader_history is empty. Add their co-chairmanship with dates."
+    },
+    {
+      "id": "pol.kkp",
+      "name": {
+        "en": "Confederation of the Polish Crown",
+        "native": "Konfederacja Korony Polskiej"
+      },
+      "abbrev": {
+        "en": "KKP",
+        "native": "KKP"
+      },
+      "color": "#C9A227",
+      "sub_ideology": "ethno_nationalist",
+      "founded": "2019-09-07",
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        {
+          "person": "pol.grzegorz_braun",
+          "from": "2019-09-07",
+          "title": "Chairman"
+        }
+      ],
+      "popularity_2000": 0,
+      "note": "Won seats on the Confederation lists in 2019 and 2023. Colour is a placeholder.",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Confederation_of_the_Polish_Crown",
+          "title": "Wikipedia: Confederation of the Polish Crown (infobox)",
+          "accessed": "2026-10-14"
+        },
+        {
+          "url": "https://www.wikidata.org/wiki/Q80578532",
+          "title": "Wikidata: Confederation of the Polish Crown (founding date, chairpersons)",
+          "accessed": "2026-10-14"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "pol.wiosna",
+      "name": {
+        "en": "Spring",
+        "native": "Wiosna"
+      },
+      "abbrev": {
+        "en": "W",
+        "native": "Wiosna"
+      },
+      "color": "#7D2C8C",
+      "sub_ideology": "social_liberal",
+      "founded": "2019-02-03",
+      "dissolved": "2021-10-09",
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        {
+          "person": "pol.robert_biedron",
+          "from": "2019-02-03",
+          "to": "2021-10-09"
+        }
+      ],
+      "popularity_2000": 0,
+      "lineage": {
+        "merged_into": "pol.nowa_lewica"
+      },
+      "note": "Won seats on The Left's list in 2019; merged with the SLD to form New Left.",
+      "source": [
+        {
+          "url": "https://www.wikidata.org/wiki/Q61452057",
+          "title": "Wikidata: Spring (founding date, chairpersons)",
+          "accessed": "2026-10-14"
+        },
+        {
+          "url": "https://www.wikidata.org/wiki/Q107418166",
+          "title": "Wikidata: New Left (founding date, chairpersons)",
+          "accessed": "2026-10-14"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "pol.nowa_lewica",
+      "name": {
+        "en": "New Left",
+        "native": "Nowa Lewica"
+      },
+      "abbrev": {
+        "en": "NL",
+        "native": "NL"
+      },
+      "color": "#D6002A",
+      "sub_ideology": "social_democrat",
+      "founded": "2021-10-09",
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        {
+          "person": "pol.wlodzimierz_czarzasty",
+          "from": "2021-10-09"
+        }
+      ],
+      "popularity_2000": 0,
+      "lineage": {
+        "renamed_from": "pol.sld",
+        "formed_from": [
+          "pol.sld",
+          "pol.wiosna"
+        ]
+      },
+      "note": "Wikidata gives 2021-06-11 as founding date; the SLD's Wikidata dissolution date (2021-10-09) is used here for the merger with Spring. Junior partner in the Tusk III government.",
+      "source": [
+        {
+          "url": "https://www.wikidata.org/wiki/Q107418166",
+          "title": "Wikidata: New Left (founding date, chairpersons)",
+          "accessed": "2026-10-14"
+        },
+        {
+          "url": "https://www.wikidata.org/wiki/Q953174",
+          "title": "Wikidata: Democratic Left Alliance (founding date, chairpersons)",
+          "accessed": "2026-10-14"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/New_Left_(Poland)",
+          "title": "Wikipedia: New Left (Poland) (infobox)",
+          "accessed": "2026-10-14"
+        }
+      ],
+      "confidence": "needs_review",
+      "review_note": "Wikidata lists Robert Biedron as co-chair alongside Czarzasty (no dates); the current infobox names only Czarzasty. Add Biedron's co-chair tenure with dates."
+    },
+    {
+      "id": "pol.pl2050",
+      "name": {
+        "en": "Poland 2050",
+        "native": "Polska 2050"
+      },
+      "abbrev": {
+        "en": "PL2050",
+        "native": "PL2050"
+      },
+      "color": "#F9C300",
+      "sub_ideology": "christian_democrat",
+      "founded": "2020-06-30",
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        {
+          "person": "pol.szymon_holownia",
+          "from": 2020,
+          "to": 2026
+        },
+        {
+          "person": "pol.katarzyna_pelczynska_nalecz",
+          "from": 2026
+        }
+      ],
+      "popularity_2000": 0,
+      "note": "Founded by Szymon Hołownia after the 2020 presidential election; ran in the Third Way alliance in 2023 and joined the Tusk III government. Hołownia announced in September 2025 that he would stand down; Katarzyna Pełczyńska-Nałęcz took over after the January 2026 leadership election (exact date not given). In February 2026 a group of 15 MPs left the party.",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Poland_2050",
+          "title": "Wikipedia: Poland 2050 (infobox and history)",
+          "accessed": "2026-10-14"
+        },
+        {
+          "url": "https://www.wikidata.org/wiki/Q100979832",
+          "title": "Wikidata: Poland 2050 (founding date, chairpersons)",
+          "accessed": "2026-10-14"
+        }
+      ],
+      "confidence": "verified"
+    }
+  ]
+}

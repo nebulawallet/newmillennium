@@ -1,0 +1,15 @@
+{
+  "note": "Influence and approval are gameplay starting values for 1 January 2000 (PP minority government of José María Aznar, supported by CiU, PNV and Canarian Coalition, during an economic boom), not measured data. Influence reflects institutional weight: strong employers' organisations and banks, two large union confederations (CCOO and UGT) with collective-bargaining weight, a Catholic Church with a privileged but non-official status, a conscript army being professionalised and under civilian control, and strong regional and national minority identities (Catalan, Basque, Galician).",
+  "interest_groups": [
+    { "type": "military", "influence": 0.15, "approval": 55, "note": "Under civilian control; conscription was being phased out (ended December 2001)." },
+    { "type": "security_services", "influence": 0.2, "approval": 55, "note": "Police and Guardia Civil focused on ETA terrorism." },
+    { "type": "business", "influence": 0.5, "approval": 65, "note": "Favourable to the PP government's privatisations and liberalisation (gameplay estimate)." },
+    { "type": "labour_unions", "influence": 0.35, "approval": 45, "note": "CCOO and UGT, sceptical of a centre-right government." },
+    { "type": "religious_establishment", "influence": 0.25, "approval": 60, "note": "Catholic Church; the state is non-confessional but cooperates with it." },
+    { "type": "rural", "influence": 0.2, "approval": 55 },
+    { "type": "urban_middle_class", "influence": 0.45, "approval": 60 },
+    { "type": "minorities", "influence": 0.3, "approval": 45, "note": "Catalan, Basque and Galician national identities and their parties; Basque nationalists at odds with the government." },
+    { "type": "youth_students", "influence": 0.15, "approval": 45, "note": "High youth unemployment." },
+    { "type": "media", "influence": 0.45, "approval": 55 }
+  ]
+}

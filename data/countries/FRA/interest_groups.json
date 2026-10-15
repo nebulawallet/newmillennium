@@ -1,0 +1,15 @@
+{
+  "note": "Influence and approval are gameplay starting values for 1 January 2000 (cohabitation between President Chirac and the Plural Left government of Lionel Jospin), not measured data. Influence reflects institutional weight: a large public sector with active unions, an influential employers' federation, a strong national press and a professional, civilian-controlled military.",
+  "interest_groups": [
+    { "type": "military", "influence": 0.15, "approval": 50, "note": "Moving from conscription to a professional army." },
+    { "type": "security_services", "influence": 0.12, "approval": 52 },
+    { "type": "business", "influence": 0.45, "approval": 42, "note": "Employers' federation under a centre-left government introducing the 35-hour week." },
+    { "type": "labour_unions", "influence": 0.35, "approval": 58, "note": "Low membership but strong in the public sector and in strike mobilisation." },
+    { "type": "religious_establishment", "influence": 0.1, "approval": 50, "note": "Limited institutional role under laicite." },
+    { "type": "rural", "influence": 0.2, "approval": 48, "note": "Farm unions with a strong voice on the Common Agricultural Policy." },
+    { "type": "urban_middle_class", "influence": 0.5, "approval": 55 },
+    { "type": "minorities", "influence": 0.08, "approval": 50 },
+    { "type": "youth_students", "influence": 0.2, "approval": 55 },
+    { "type": "media", "influence": 0.4, "approval": 52 }
+  ]
+}

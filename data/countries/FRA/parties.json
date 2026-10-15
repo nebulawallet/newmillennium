@@ -1,0 +1,1175 @@
+{
+  "parties": [
+    {
+      "id": "fra.ps",
+      "name": {
+        "en": "Socialist Party",
+        "native": "Parti socialiste"
+      },
+      "abbrev": {
+        "en": "PS",
+        "native": "PS"
+      },
+      "color": "#FF8080",
+      "sub_ideology": "social_democrat",
+      "founded": "1969-05-04",
+      "status_2000": "active",
+      "leader_history": [
+        {
+          "person": "fra.francois_hollande",
+          "from": "1997-11-27",
+          "to": "2008-11-26",
+          "title": "First Secretary"
+        },
+        {
+          "person": "fra.martine_aubry",
+          "from": "2008-11-26",
+          "to": "2012-09-12",
+          "title": "First Secretary"
+        },
+        {
+          "person": "fra.harlem_desir",
+          "from": "2012-09-12",
+          "to": "2014-04-15",
+          "title": "First Secretary"
+        },
+        {
+          "person": "fra.jean_christophe_cambadelis",
+          "from": "2014-04-15",
+          "to": "2017-09-30",
+          "title": "First Secretary"
+        },
+        {
+          "person": "fra.olivier_faure",
+          "from": "2018-04-07",
+          "title": "First Secretary"
+        }
+      ],
+      "popularity_2000": 0.2353,
+      "popularity_note": "First-round share, 1997 National Assembly election. Interim leaders (Harlem Desir, June-October 2011; Rachid Temal, 2017-2018) are omitted.",
+      "international": "Socialist International; Party of European Socialists",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/First_Secretary_of_the_Socialist_Party_(France)",
+          "title": "Wikipedia: First Secretary of the Socialist Party (list with dates)",
+          "accessed": "2026-10-14"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/Socialist_Party_(France)",
+          "title": "Wikipedia: Socialist Party (France) (infobox)",
+          "accessed": "2026-10-14"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/1997_French_legislative_election",
+          "title": "Wikipedia: 1997 French legislative election (first-round results)",
+          "accessed": "2026-10-14"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "fra.rpr",
+      "name": {
+        "en": "Rally for the Republic",
+        "native": "Rassemblement pour la République"
+      },
+      "abbrev": {
+        "en": "RPR",
+        "native": "RPR"
+      },
+      "color": "#0000C8",
+      "sub_ideology": "liberal_conservative",
+      "founded": "1976-12-05",
+      "dissolved": 2002,
+      "status_2000": "active",
+      "leader_history": [
+        {
+          "person": "fra.michele_alliot_marie",
+          "from": "1999-12-04",
+          "to": 2002,
+          "title": "President"
+        }
+      ],
+      "popularity_2000": 0.157,
+      "popularity_note": "First-round share, 1997 National Assembly election. Serge Lepeltier's interim presidency in 2002 is omitted.",
+      "lineage": {
+        "merged_into": "fra.ump"
+      },
+      "international": "European People's Party (from 1999)",
+      "note": "Gaullist party founded by Jacques Chirac; merged into the UMP in 2002. Alliot-Marie's start date is from Wikidata; the party's list of presidents gives 1999-2002.",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Rally_for_the_Republic",
+          "title": "Wikipedia: Rally for the Republic (infobox, past presidents)",
+          "accessed": "2026-10-14"
+        },
+        {
+          "url": "https://www.wikidata.org/wiki/Q58130",
+          "title": "Wikidata: Michèle Alliot-Marie (chairperson from 1999-12-04)",
+          "accessed": "2026-10-14"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/1997_French_legislative_election",
+          "title": "Wikipedia: 1997 French legislative election (first-round results)",
+          "accessed": "2026-10-14"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "fra.udf",
+      "name": {
+        "en": "Union for French Democracy",
+        "native": "Union pour la démocratie française"
+      },
+      "abbrev": {
+        "en": "UDF",
+        "native": "UDF"
+      },
+      "color": "#00CCCC",
+      "sub_ideology": "christian_democrat",
+      "founded": "1978-02-01",
+      "dissolved": "2007-11-30",
+      "status_2000": "active",
+      "leader_history": [
+        {
+          "person": "fra.francois_bayrou",
+          "from": 1998,
+          "to": 2007,
+          "title": "President"
+        }
+      ],
+      "popularity_2000": 0.1421,
+      "popularity_note": "First-round share of the UDF label in the 1997 National Assembly election, which still included the future Liberal Democracy.",
+      "lineage": {
+        "merged_into": "fra.modem"
+      },
+      "note": "Founded as an alliance on 1 February 1978 and became a unified party on 29 November 1998. MoDem took over its activity on 1 December 2007 (de facto dissolution 30 November 2007).",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Union_for_French_Democracy",
+          "title": "Wikipedia: Union for French Democracy (infobox, presidents)",
+          "accessed": "2026-10-14"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/1997_French_legislative_election",
+          "title": "Wikipedia: 1997 French legislative election (first-round results)",
+          "accessed": "2026-10-14"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "fra.dl",
+      "name": {
+        "en": "Liberal Democracy",
+        "native": "Démocratie libérale"
+      },
+      "abbrev": {
+        "en": "DL",
+        "native": "DL"
+      },
+      "color": "#1E90FF",
+      "sub_ideology": "classical_liberal",
+      "founded": "1997-06-24",
+      "dissolved": 2002,
+      "status_2000": "active",
+      "leader_history": [
+        {
+          "person": "fra.alain_madelin",
+          "from": 1997,
+          "to": 2002,
+          "title": "President"
+        }
+      ],
+      "popularity_2000": 0.04,
+      "popularity_note": "Estimate: DL contested the 1997 election inside the UDF (14.2% combined) and split from it in 1998.",
+      "lineage": {
+        "split_from": "fra.udf",
+        "merged_into": "fra.ump"
+      },
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Liberal_Democracy_(France)",
+          "title": "Wikipedia: Liberal Democracy (France) (infobox, leaders)",
+          "accessed": "2026-10-14"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "fra.pcf",
+      "name": {
+        "en": "French Communist Party",
+        "native": "Parti communiste français"
+      },
+      "abbrev": {
+        "en": "PCF",
+        "native": "PCF"
+      },
+      "color": "#DD0000",
+      "sub_ideology": "reformed_communist",
+      "founded": "1920-12-30",
+      "status_2000": "active",
+      "leader_history": [
+        {
+          "person": "fra.robert_hue",
+          "from": "1994-01-29",
+          "to": "2001-10-28",
+          "title": "National Secretary"
+        },
+        {
+          "person": "fra.marie_george_buffet",
+          "from": "2001-10-28",
+          "to": "2010-06-20",
+          "title": "National Secretary"
+        },
+        {
+          "person": "fra.pierre_laurent",
+          "from": "2010-06-20",
+          "to": "2018-11-24",
+          "title": "National Secretary"
+        },
+        {
+          "person": "fra.fabien_roussel",
+          "from": "2018-11-24",
+          "title": "National Secretary"
+        }
+      ],
+      "popularity_2000": 0.0994,
+      "popularity_note": "First-round share, 1997 National Assembly election.",
+      "note": "In 2012 its candidates ran in the Left Front alliance with the Left Party; in 2022 in NUPES.",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/French_Communist_Party",
+          "title": "Wikipedia: French Communist Party (infobox, list of leaders)",
+          "accessed": "2026-10-14"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/1997_French_legislative_election",
+          "title": "Wikipedia: 1997 French legislative election (first-round results)",
+          "accessed": "2026-10-14"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "fra.verts",
+      "name": {
+        "en": "The Greens",
+        "native": "Les Verts"
+      },
+      "abbrev": {
+        "en": "Verts",
+        "native": "Verts"
+      },
+      "color": "#00C000",
+      "sub_ideology": "green",
+      "founded": "1984-01-20",
+      "dissolved": "2010-11-13",
+      "status_2000": "active",
+      "leader_history": [
+        {
+          "person": "fra.jean_luc_bennahmias",
+          "from": 1997,
+          "to": 2001,
+          "title": "National Secretary"
+        },
+        {
+          "person": "fra.dominique_voynet",
+          "from": 2001,
+          "to": 2003,
+          "title": "National Secretary"
+        },
+        {
+          "person": "fra.gilles_lemaire",
+          "from": 2003,
+          "to": 2005,
+          "title": "National Secretary"
+        },
+        {
+          "person": "fra.yann_wehrling",
+          "from": 2005,
+          "to": 2006,
+          "title": "National Secretary"
+        },
+        {
+          "person": "fra.cecile_duflot",
+          "from": 2006,
+          "to": 2010,
+          "title": "National Secretary"
+        }
+      ],
+      "popularity_2000": 0.0681,
+      "popularity_note": "First-round share, 1997 National Assembly election.",
+      "lineage": {
+        "merged_into": "fra.eelv"
+      },
+      "note": "English Wikipedia gives the foundation as 20 January 1984; French Wikipedia lists earlier forerunners (1982, 1983). Merged with Europe Ecology to form EELV on 13 November 2010.",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/The_Greens_(France)",
+          "title": "Wikipedia: The Greens (France) (infobox)",
+          "accessed": "2026-10-14"
+        },
+        {
+          "url": "https://fr.wikipedia.org/wiki/Les_Verts_(France)",
+          "title": "Wikipédia (fr): Les Verts (secrétaires nationaux)",
+          "accessed": "2026-10-14"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/1997_French_legislative_election",
+          "title": "Wikipedia: 1997 French legislative election (first-round results)",
+          "accessed": "2026-10-14"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "fra.eelv",
+      "name": {
+        "en": "The Ecologists – Europe Ecology The Greens",
+        "native": "Les Écologistes – Europe Écologie Les Verts"
+      },
+      "abbrev": {
+        "en": "EELV",
+        "native": "LÉ–EELV"
+      },
+      "color": "#00A86B",
+      "sub_ideology": "green",
+      "founded": "2010-11-13",
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        {
+          "person": "fra.cecile_duflot",
+          "from": 2010,
+          "to": 2012,
+          "title": "National Secretary"
+        },
+        {
+          "person": "fra.pascal_durand",
+          "from": 2012,
+          "to": 2013,
+          "title": "National Secretary"
+        },
+        {
+          "person": "fra.emmanuelle_cosse",
+          "from": 2013,
+          "to": 2016,
+          "title": "National Secretary"
+        },
+        {
+          "person": "fra.david_cormand",
+          "from": 2016,
+          "to": 2019,
+          "title": "National Secretary"
+        },
+        {
+          "person": "fra.julien_bayou",
+          "from": 2019,
+          "to": 2022,
+          "title": "National Secretary"
+        },
+        {
+          "person": "fra.marine_tondelier",
+          "from": 2022,
+          "title": "National Secretary"
+        }
+      ],
+      "popularity_2000": 0,
+      "lineage": {
+        "formed_from": [
+          "fra.verts"
+        ]
+      },
+      "note": "Known as Europe Ecology – The Greens (EELV) from 2010; now styled Les Écologistes.",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/The_Ecologists_(France)",
+          "title": "Wikipedia: The Ecologists (France) (infobox)",
+          "accessed": "2026-10-14"
+        },
+        {
+          "url": "https://fr.wikipedia.org/wiki/Les_%C3%89cologistes",
+          "title": "Wikipédia (fr): Les Écologistes (secrétaires nationaux)",
+          "accessed": "2026-10-14"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "fra.prg",
+      "name": {
+        "en": "Radical Party of the Left",
+        "native": "Parti radical de gauche"
+      },
+      "abbrev": {
+        "en": "PRG",
+        "native": "PRG"
+      },
+      "color": "#FFD700",
+      "sub_ideology": "social_liberal",
+      "founded": 1972,
+      "status_2000": "active",
+      "leader_history": [
+        {
+          "person": "fra.jean_michel_baylet",
+          "from": 1996,
+          "to": 2016,
+          "title": "President"
+        },
+        {
+          "person": "fra.sylvia_pinel",
+          "from": 2016,
+          "to": 2017,
+          "title": "President"
+        },
+        {
+          "person": "fra.guillaume_lacroix",
+          "from": 2019,
+          "title": "President"
+        }
+      ],
+      "popularity_2000": 0.0144,
+      "popularity_note": "First-round share of the Radical-Socialist label, 1997 National Assembly election.",
+      "note": "Founding year is given as 1971-1973 for successive forerunners (GEARS, MGRS, MRG); 1972 is used. The 1998 PRG merged into the Radical Movement in December 2017; a PRG was re-formed in 2019 under Guillaume Lacroix.",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Radical_Party_of_the_Left",
+          "title": "Wikipedia: Radical Party of the Left (infobox, leadership)",
+          "accessed": "2026-10-14"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/1997_French_legislative_election",
+          "title": "Wikipedia: 1997 French legislative election (first-round results)",
+          "accessed": "2026-10-14"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "fra.mdc",
+      "name": {
+        "en": "Citizens' Movement",
+        "native": "Mouvement des citoyens"
+      },
+      "abbrev": {
+        "en": "MDC",
+        "native": "MDC"
+      },
+      "color": "#C41E3A",
+      "sub_ideology": "democratic_socialist",
+      "founded": "1993-05-01",
+      "status_2000": "active",
+      "leader_history": [
+        {
+          "person": "fra.jean_pierre_chevenement",
+          "from": 1993,
+          "to": 2001,
+          "title": "President"
+        },
+        {
+          "person": "fra.georges_sarre",
+          "from": 2001,
+          "to": 2003,
+          "title": "President"
+        },
+        {
+          "person": "fra.jean_pierre_chevenement",
+          "from": 2008,
+          "to": 2010,
+          "title": "President (MRC)"
+        }
+      ],
+      "popularity_2000": 0.01,
+      "popularity_note": "Estimate: the MDC stood with the Plural Left in 1997 and won 7 seats; its 1994 European list won 2.54%.",
+      "lineage": {
+        "split_from": "fra.ps"
+      },
+      "note": "Dissolved itself into the Republican Pole in May 2002 and was succeeded by the Citizen and Republican Movement (MRC, founded 25 January 2003); this record covers both. MRC president Jean-Luc Laurent (2010-2024) is omitted.",
+      "source": [
+        {
+          "url": "https://fr.wikipedia.org/wiki/Mouvement_des_citoyens_(France)",
+          "title": "Wikipédia (fr): Mouvement des citoyens (infobox, présidents)",
+          "accessed": "2026-10-14"
+        },
+        {
+          "url": "https://fr.wikipedia.org/wiki/Mouvement_r%C3%A9publicain_et_citoyen",
+          "title": "Wikipédia (fr): Mouvement républicain et citoyen (présidents)",
+          "accessed": "2026-10-14"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/Citizen_and_Republican_Movement",
+          "title": "Wikipedia: Citizen and Republican Movement",
+          "accessed": "2026-10-14"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "fra.fn",
+      "name": {
+        "en": "National Front",
+        "native": "Front national"
+      },
+      "abbrev": {
+        "en": "FN",
+        "native": "FN"
+      },
+      "color": "#0D378A",
+      "sub_ideology": "right_populist",
+      "founded": "1972-10-05",
+      "dissolved": "2018-06-01",
+      "status_2000": "active",
+      "leader_history": [
+        {
+          "person": "fra.jean_marie_le_pen",
+          "from": "1972-10-05",
+          "to": "2011-01-15",
+          "title": "President"
+        },
+        {
+          "person": "fra.marine_le_pen",
+          "from": "2011-01-15",
+          "to": "2018-06-01",
+          "title": "President"
+        }
+      ],
+      "popularity_2000": 0.1494,
+      "popularity_note": "First-round share, 1997 National Assembly election (before the 1999 split that created the MNR).",
+      "lineage": {
+        "renamed_to": "fra.rn"
+      },
+      "note": "Renamed National Rally after a members' vote announced on 1 June 2018. Wikipedia gives 15 January 2011 for the change of leader; Wikidata gives 16 January 2011.",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/National_Rally",
+          "title": "Wikipedia: National Rally (history, list of presidents)",
+          "accessed": "2026-10-14"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/1997_French_legislative_election",
+          "title": "Wikipedia: 1997 French legislative election (first-round results)",
+          "accessed": "2026-10-14"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "fra.rn",
+      "name": {
+        "en": "National Rally",
+        "native": "Rassemblement national"
+      },
+      "abbrev": {
+        "en": "RN",
+        "native": "RN"
+      },
+      "color": "#0D378A",
+      "sub_ideology": "right_populist",
+      "founded": "2018-06-01",
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        {
+          "person": "fra.marine_le_pen",
+          "from": "2018-06-01",
+          "to": "2021-09-13",
+          "title": "President"
+        },
+        {
+          "person": "fra.jordan_bardella",
+          "from": "2021-09-13",
+          "title": "Acting president until 5 November 2022, then president"
+        }
+      ],
+      "popularity_2000": 0,
+      "lineage": {
+        "renamed_from": "fra.fn"
+      },
+      "note": "Marine Le Pen formally remained president until 5 November 2022; Bardella acted from 13 September 2021 during her presidential campaign.",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/National_Rally",
+          "title": "Wikipedia: National Rally (list of presidents)",
+          "accessed": "2026-10-14"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "fra.rpf",
+      "name": {
+        "en": "Rally for France",
+        "native": "Rassemblement pour la France"
+      },
+      "abbrev": {
+        "en": "RPF",
+        "native": "RPF"
+      },
+      "color": "#3355AA",
+      "sub_ideology": "national_conservative",
+      "founded": "1999-11-21",
+      "status_2000": "active",
+      "leader_history": [
+        {
+          "person": "fra.charles_pasqua",
+          "from": 1999
+        }
+      ],
+      "popularity_2000": 0.13,
+      "popularity_note": "The Pasqua-de Villiers list won about 13% in the 1999 European Parliament election; the party did not exist at the 1997 legislative election.",
+      "lineage": {
+        "split_from": "fra.rpr"
+      },
+      "note": "Founded by Charles Pasqua with Philippe de Villiers, who left in July 2000 to relaunch the Movement for France. Won 2 seats in 2002 in alliance with the UMP; French Wikipedia says it ceased activity de facto in 2004.",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Rally_for_France",
+          "title": "Wikipedia: Rally for France",
+          "accessed": "2026-10-14"
+        },
+        {
+          "url": "https://fr.wikipedia.org/wiki/Rassemblement_pour_la_France",
+          "title": "Wikipédia (fr): Rassemblement pour la France (infobox, histoire)",
+          "accessed": "2026-10-14"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "fra.mpf",
+      "name": {
+        "en": "Movement for France",
+        "native": "Mouvement pour la France"
+      },
+      "abbrev": {
+        "en": "MPF",
+        "native": "MPF"
+      },
+      "color": "#800080",
+      "sub_ideology": "national_conservative",
+      "founded": "1994-11-20",
+      "dissolved": "2018-06-28",
+      "status_2000": "extra_parliamentary",
+      "leader_history": [
+        {
+          "person": "fra.philippe_de_villiers",
+          "from": "1994-11-20",
+          "to": "2018-06-28",
+          "title": "President"
+        }
+      ],
+      "popularity_2000": 0,
+      "popularity_note": "On 1 January 2000 de Villiers was vice-president of the RPF; he relaunched the MPF in July 2000.",
+      "lineage": {
+        "split_from": "fra.udf"
+      },
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Movement_for_France",
+          "title": "Wikipedia: Movement for France (infobox)",
+          "accessed": "2026-10-14"
+        },
+        {
+          "url": "https://fr.wikipedia.org/wiki/Rassemblement_pour_la_France",
+          "title": "Wikipédia (fr): Rassemblement pour la France",
+          "accessed": "2026-10-14"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "fra.lo",
+      "name": {
+        "en": "Workers' Struggle",
+        "native": "Lutte ouvrière"
+      },
+      "abbrev": {
+        "en": "LO",
+        "native": "LO"
+      },
+      "color": "#B00000",
+      "sub_ideology": "marxist_leninist",
+      "founded": 1956,
+      "status_2000": "extra_parliamentary",
+      "leader_history": [
+        {
+          "person": "fra.arlette_laguiller",
+          "from": 1973,
+          "to": "2008-12-08",
+          "title": "Spokesperson"
+        },
+        {
+          "person": "fra.nathalie_arthaud",
+          "from": "2008-12-08",
+          "title": "Spokesperson"
+        }
+      ],
+      "popularity_2000": 0.0252,
+      "popularity_note": "Upper bound: the whole far-left vote (LO, LCR and others) in the first round of the 1997 National Assembly election.",
+      "note": "Trotskyist party with a collective leadership; the spokesperson is its public face and presidential candidate. Mapped to marxist_leninist as the nearest available sub-ideology.",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Lutte_Ouvri%C3%A8re",
+          "title": "Wikipedia: Lutte Ouvrière (infobox, leadership)",
+          "accessed": "2026-10-14"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/1997_French_legislative_election",
+          "title": "Wikipedia: 1997 French legislative election (first-round results)",
+          "accessed": "2026-10-14"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "fra.ump",
+      "name": {
+        "en": "Union for a Popular Movement",
+        "native": "Union pour un mouvement populaire"
+      },
+      "abbrev": {
+        "en": "UMP",
+        "native": "UMP"
+      },
+      "color": "#0055A4",
+      "sub_ideology": "liberal_conservative",
+      "founded": "2002-04-23",
+      "dissolved": "2015-05-30",
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        {
+          "person": "fra.alain_juppe",
+          "from": "2002-11-17",
+          "to": "2004-07-16",
+          "title": "President"
+        },
+        {
+          "person": "fra.nicolas_sarkozy",
+          "from": "2004-11-28",
+          "to": "2007-05-14",
+          "title": "President"
+        },
+        {
+          "person": "fra.jean_francois_cope",
+          "from": "2012-11-19",
+          "to": "2014-06-15",
+          "title": "President"
+        },
+        {
+          "person": "fra.nicolas_sarkozy",
+          "from": "2014-11-30",
+          "to": "2015-05-30",
+          "title": "President"
+        }
+      ],
+      "popularity_2000": 0,
+      "lineage": {
+        "formed_from": [
+          "fra.rpr",
+          "fra.dl"
+        ],
+        "renamed_to": "fra.lr"
+      },
+      "note": "The presidency was held by an interim (Jean-Claude Gaudin) in 2004, left vacant with secretaries-general leading in 2007-2012, and held by an interim triumvirate (Juppe, Raffarin, Fillon) in 2014; these are omitted. Renamed The Republicans on 30 May 2015.",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Union_for_a_Popular_Movement",
+          "title": "Wikipedia: Union for a Popular Movement (infobox, presidents)",
+          "accessed": "2026-10-14"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "fra.lr",
+      "name": {
+        "en": "The Republicans",
+        "native": "Les Républicains"
+      },
+      "abbrev": {
+        "en": "LR",
+        "native": "LR"
+      },
+      "color": "#0066CC",
+      "sub_ideology": "liberal_conservative",
+      "founded": "2015-05-30",
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        {
+          "person": "fra.nicolas_sarkozy",
+          "from": "2015-05-30",
+          "to": "2016-08-23",
+          "title": "President"
+        },
+        {
+          "person": "fra.laurent_wauquiez",
+          "from": "2016-08-23",
+          "to": "2016-11-29",
+          "title": "Acting president"
+        },
+        {
+          "person": "fra.laurent_wauquiez",
+          "from": "2017-12-10",
+          "to": "2019-06-02",
+          "title": "President"
+        },
+        {
+          "person": "fra.christian_jacob",
+          "from": "2019-10-13",
+          "to": "2022-06-30",
+          "title": "President"
+        },
+        {
+          "person": "fra.eric_ciotti",
+          "from": "2022-12-11",
+          "to": "2024-09-22",
+          "title": "President"
+        },
+        {
+          "person": "fra.bruno_retailleau",
+          "from": "2025-05-18",
+          "title": "President"
+        }
+      ],
+      "popularity_2000": 0,
+      "lineage": {
+        "renamed_from": "fra.ump"
+      },
+      "note": "Vacancies and interim leaderships omitted: vacant 2016-2017, Jean Leonetti (2019), Annie Genevard (2022), and a collegial leadership (September 2024 - May 2025) after the 2024 crisis over Ciotti's alliance with the RN.",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/The_Republicans_(France)",
+          "title": "Wikipedia: The Republicans (France) (list of presidents)",
+          "accessed": "2026-10-14"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "fra.modem",
+      "name": {
+        "en": "Democratic Movement",
+        "native": "Mouvement démocrate"
+      },
+      "abbrev": {
+        "en": "MoDem",
+        "native": "MoDem"
+      },
+      "color": "#FF9900",
+      "sub_ideology": "centrist_liberal",
+      "founded": "2007-12-01",
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        {
+          "person": "fra.francois_bayrou",
+          "from": "2007-12-01",
+          "title": "President"
+        }
+      ],
+      "popularity_2000": 0,
+      "lineage": {
+        "formed_from": [
+          "fra.udf"
+        ]
+      },
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Democratic_Movement_(France)",
+          "title": "Wikipedia: Democratic Movement (France) (infobox)",
+          "accessed": "2026-10-14"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "fra.nc",
+      "name": {
+        "en": "The Centrists – New Centre",
+        "native": "Les Centristes"
+      },
+      "abbrev": {
+        "en": "NC",
+        "native": "LC"
+      },
+      "color": "#6F97CF",
+      "sub_ideology": "centrist_liberal",
+      "founded": "2007-05-29",
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        {
+          "person": "fra.herve_morin",
+          "from": 2007,
+          "title": "President"
+        }
+      ],
+      "popularity_2000": 0,
+      "lineage": {
+        "split_from": "fra.udf"
+      },
+      "note": "Founded as the New Centre on 29 May 2007 by UDF deputies who backed Sarkozy; renamed The Centrists on 11 December 2016.",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/New_Centre",
+          "title": "Wikipedia: New Centre (infobox, leaders)",
+          "accessed": "2026-10-14"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "fra.renaissance",
+      "name": {
+        "en": "Renaissance",
+        "native": "Renaissance"
+      },
+      "abbrev": {
+        "en": "RE",
+        "native": "RE"
+      },
+      "color": "#FFD600",
+      "sub_ideology": "centrist_liberal",
+      "founded": "2016-04-06",
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        {
+          "person": "fra.emmanuel_macron",
+          "from": "2016-04-06",
+          "to": "2017-05-08",
+          "title": "President"
+        },
+        {
+          "person": "fra.christophe_castaner",
+          "from": "2017-11-18",
+          "to": "2018-10-21",
+          "title": "Delegate-General"
+        },
+        {
+          "person": "fra.stanislas_guerini",
+          "from": "2018-12-01",
+          "to": "2022-09-17",
+          "title": "Delegate-General"
+        },
+        {
+          "person": "fra.stephane_sejourne",
+          "from": "2022-09-17",
+          "to": "2024-12-08",
+          "title": "Secretary-General"
+        },
+        {
+          "person": "fra.gabriel_attal",
+          "from": "2024-12-08",
+          "title": "Secretary-General"
+        }
+      ],
+      "popularity_2000": 0,
+      "note": "Founded as En Marche! (6 April 2016), renamed La République En Marche! (4 August 2017) and Renaissance (17 September 2022). Interim and collegial leaderships in 2017 and 2018 are omitted; Macron has been the party's president/honorary president since 2022.",
+      "source": [
+        {
+          "url": "https://fr.wikipedia.org/wiki/Renaissance_(parti)",
+          "title": "Wikipédia (fr): Renaissance (fondation, présidents, délégués et secrétaires généraux)",
+          "accessed": "2026-10-14"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/Renaissance_(French_political_party)",
+          "title": "Wikipedia: Renaissance (French political party) (infobox)",
+          "accessed": "2026-10-14"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "fra.lfi",
+      "name": {
+        "en": "France Unbowed",
+        "native": "La France insoumise"
+      },
+      "abbrev": {
+        "en": "LFI",
+        "native": "LFI"
+      },
+      "color": "#CC2443",
+      "sub_ideology": "left_populist",
+      "founded": "2016-02-10",
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        {
+          "person": "fra.jean_luc_melenchon",
+          "from": "2016-02-10",
+          "title": "Founder and presidential candidate"
+        },
+        {
+          "person": "fra.manuel_bompard",
+          "from": 2022,
+          "title": "Coordinator"
+        }
+      ],
+      "popularity_2000": 0,
+      "note": "The movement has no formal president. Coordinators: Manuel Bompard (2017-2019), Adrien Quatennens (2019-2022, omitted), Manuel Bompard again from 2022.",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/La_France_Insoumise",
+          "title": "Wikipedia: La France Insoumise (infobox)",
+          "accessed": "2026-10-14"
+        },
+        {
+          "url": "https://fr.wikipedia.org/wiki/La_France_insoumise",
+          "title": "Wikipédia (fr): La France insoumise (coordinateurs)",
+          "accessed": "2026-10-14"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "fra.reconquete",
+      "name": {
+        "en": "Reconquest",
+        "native": "Reconquête"
+      },
+      "abbrev": {
+        "en": "REC",
+        "native": "R!"
+      },
+      "color": "#1F2E5C",
+      "sub_ideology": "national_conservative",
+      "founded": "2021-12-05",
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        {
+          "person": "fra.eric_zemmour",
+          "from": "2021-12-05",
+          "title": "President"
+        }
+      ],
+      "popularity_2000": 0,
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Reconqu%C3%AAte",
+          "title": "Wikipedia: Reconquête (infobox, results)",
+          "accessed": "2026-10-14"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "fra.horizons",
+      "name": {
+        "en": "Horizons",
+        "native": "Horizons"
+      },
+      "abbrev": {
+        "en": "HOR",
+        "native": "HOR"
+      },
+      "color": "#2F5EA8",
+      "sub_ideology": "liberal_conservative",
+      "founded": "2021-10-09",
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        {
+          "person": "fra.edouard_philippe",
+          "from": "2021-10-09",
+          "title": "President"
+        }
+      ],
+      "popularity_2000": 0,
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Horizons_(political_party)",
+          "title": "Wikipedia: Horizons (political party) (infobox)",
+          "accessed": "2026-10-14"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "fra.udi",
+      "name": {
+        "en": "Union of Democrats and Independents",
+        "native": "Union des démocrates et indépendants"
+      },
+      "abbrev": {
+        "en": "UDI",
+        "native": "UDI"
+      },
+      "color": "#61468F",
+      "sub_ideology": "centrist_liberal",
+      "founded": "2012-09-18",
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        {
+          "person": "fra.jean_louis_borloo",
+          "from": "2012-09-18",
+          "to": "2014-04-06",
+          "title": "President"
+        },
+        {
+          "person": "fra.jean_christophe_lagarde",
+          "from": "2014-11-13",
+          "to": "2022-10-20",
+          "title": "President"
+        },
+        {
+          "person": "fra.herve_marseille",
+          "from": "2022-10-20",
+          "title": "President"
+        }
+      ],
+      "popularity_2000": 0,
+      "note": "Interim president Yves Jégo (April-June 2014) omitted.",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Union_of_Democrats_and_Independents",
+          "title": "Wikipedia: Union of Democrats and Independents (infobox)",
+          "accessed": "2026-10-14"
+        },
+        {
+          "url": "https://fr.wikipedia.org/wiki/Union_des_d%C3%A9mocrates_et_ind%C3%A9pendants",
+          "title": "Wikipédia (fr): Union des démocrates et indépendants (présidents)",
+          "accessed": "2026-10-14"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "fra.udr",
+      "name": {
+        "en": "Union of the Right for the Republic",
+        "native": "Union des droites pour la République"
+      },
+      "abbrev": {
+        "en": "UDR",
+        "native": "UDR"
+      },
+      "color": "#1B3A6B",
+      "sub_ideology": "national_conservative",
+      "founded": "2024-08-31",
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        {
+          "person": "fra.eric_ciotti",
+          "from": "2024-08-31",
+          "title": "President"
+        }
+      ],
+      "popularity_2000": 0,
+      "lineage": {
+        "split_from": "fra.lr"
+      },
+      "note": "Formed by Eric Ciotti's faction of The Republicans after its 2024 alliance with the National Rally (contested in 2024 as the 'Union of the Far-Right', UXD, label).",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Union_of_the_Right_for_the_Republic",
+          "title": "Wikipedia: Union of the Right for the Republic (infobox)",
+          "accessed": "2026-10-14"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/2024_French_legislative_election",
+          "title": "Wikipedia: 2024 French legislative election (results)",
+          "accessed": "2026-10-14"
+        }
+      ],
+      "confidence": "verified"
+    }
+  ]
+}

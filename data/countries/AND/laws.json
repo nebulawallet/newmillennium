@@ -1,0 +1,17 @@
+{
+  "note": "Laws in force on 1 January 2000 (gameplay mapping). Andorra has no army, so volunteer_force stands for the absence of conscription. Low-tax economy, mapped to free_market. The Catholic Church has a special constitutional relationship but there is no state religion, mapped to pluralist_secularism.",
+  "laws": {
+    "economic_system": "free_market",
+    "trade": "free_trade",
+    "conscription": "volunteer_force",
+    "press_freedom": "free_press",
+    "political_freedom": "free_elections",
+    "civil_rights": "full_civil_liberties",
+    "religion_state": "pluralist_secularism",
+    "immigration": "managed_immigration",
+    "energy_policy": "energy_mix",
+    "internet_surveillance": "regulated_internet",
+    "healthcare": "social_insurance",
+    "education": "public_schooling"
+  }
+}

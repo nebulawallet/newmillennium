@@ -1,0 +1,162 @@
+{
+  "tag": "ESP",
+  "name": { "en": "Spain", "native": "España", "official": { "en": "Kingdom of Spain", "native": "Reino de España" } },
+  "adjective": "Spanish",
+  "culture_primary": "spanish",
+  "government": {
+    "type": "constitutional_monarchy",
+    "effective_executive": "esp.prime_minister",
+    "head_of_state_office": "esp.monarch",
+    "head_of_government_office": "esp.prime_minister",
+    "constitution": {
+      "term_limit_amendable": true,
+      "emergency_powers": true,
+      "referendum_required_for": ["total or core constitutional revision"]
+    },
+    "note": "Parliamentary monarchy under the Constitution of 1978. The Prime Minister (President of the Government) is invested by the Congress of Deputies and can be removed only by a constructive vote of no confidence (as happened to Mariano Rajoy on 1 June 2018). The monarch's role is largely ceremonial. A total revision of the Constitution, or a revision of its core titles, must be ratified by referendum; other amendments go to referendum only if a tenth of either chamber requests it. Consultative national referendums may also be called (the 2005 European Constitution referendum)."
+  },
+  "offices": [
+    {
+      "id": "esp.monarch",
+      "title": { "en": "King of Spain", "native": "Rey de España" },
+      "role": "head_of_state",
+      "power_weight": 0.05,
+      "selection": "hereditary",
+      "succession": {
+        "type": "line",
+        "heirs": ["esp.felipe_vi", "esp.infanta_elena", "esp.infanta_cristina"]
+      },
+      "holders": [
+        { "person": "esp.juan_carlos_i", "from": "1975-11-22", "to": "2014-06-19", "note": "Abdicated; the abdication took effect on 19 June 2014." },
+        { "person": "esp.felipe_vi", "from": "2014-06-19" }
+      ],
+      "note": "Heirs are the line of succession on 2000-01-01 (male-preference primogeniture): Felipe, Prince of Asturias, then his sisters Elena and Cristina. Since 2014 the heir presumptive is Felipe VI's elder daughter Leonor, Princess of Asturias (esp.leonor).",
+      "source": [
+        { "url": "https://www.wikidata.org/wiki/Q3847454", "title": "Wikidata: Monarch of Spain (position held by)", "accessed": "2026-10-14" },
+        { "url": "https://en.wikipedia.org/wiki/Juan_Carlos_I", "title": "Wikipedia: Juan Carlos I (reign 22 November 1975 - 19 June 2014)", "accessed": "2026-10-14" },
+        { "url": "https://en.wikipedia.org/wiki/Felipe_VI", "title": "Wikipedia: Felipe VI (reign 19 June 2014 - present)", "accessed": "2026-10-14" },
+        { "url": "https://en.wikipedia.org/wiki/Leonor,_Princess_of_Asturias", "title": "Wikipedia: Leonor, Princess of Asturias (heir presumptive)", "accessed": "2026-10-14" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "esp.prime_minister",
+      "title": { "en": "Prime Minister of Spain", "native": "Presidente del Gobierno de España" },
+      "role": "head_of_government",
+      "power_weight": 0.95,
+      "selection": "legislature",
+      "appointed_by": "esp.monarch",
+      "term_years": 4,
+      "holders": [
+        { "person": "esp.jose_maria_aznar", "from": "1996-05-05", "to": "2004-04-17", "note": "Re-invested after the 2000 election (second government from 27 April 2000)." },
+        { "person": "esp.jose_luis_rodriguez_zapatero", "from": "2004-04-17", "to": "2011-12-21" },
+        { "person": "esp.mariano_rajoy", "from": "2011-12-21", "to": "2018-06-02", "note": "Acting (en funciones) from December 2015 to 31 October 2016 during the 2015-2016 deadlock; removed by a constructive vote of no confidence on 1 June 2018." },
+        { "person": "esp.pedro_sanchez", "from": "2018-06-02", "note": "Took office after the 2018 no-confidence vote; re-invested 8 January 2020 and 17 November 2023. On 2 October 2026 the Cortes defeated his housing relief plans and he called a snap general election for 29 November 2026 (Wikipedia, 'Next Spanish general election', fetched 2026-10-14)." }
+      ],
+      "note": "Dates follow the Wikipedia list, which uses the day each Prime Minister took office (the appointment decree appears in the Official State Gazette the day after it is signed). Wikidata gives the decree dates instead (Aznar 1996-05-04, Zapatero 2004-04-16, Rajoy 2011-12-20, end 2018-06-01).",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/List_of_prime_ministers_of_Spain", "title": "Wikipedia: List of prime ministers of Spain", "accessed": "2026-10-14" },
+        { "url": "https://www.wikidata.org/wiki/Q844587", "title": "Wikidata: Prime Minister of Spain (position held by)", "accessed": "2026-10-14" },
+        { "url": "https://en.wikipedia.org/wiki/Next_Spanish_general_election", "title": "Wikipedia: Next Spanish general election (snap election called for 29 November 2026)", "accessed": "2026-10-14" }
+      ],
+      "confidence": "verified"
+    }
+  ],
+  "legislature": {
+    "name": { "en": "Cortes Generales", "native": "Cortes Generales" },
+    "chambers": [
+      {
+        "id": "congress",
+        "name": { "en": "Congress of Deputies", "native": "Congreso de los Diputados" },
+        "seats": 350,
+        "term_years": 4,
+        "elected": "direct",
+        "system": {
+          "type": "list_pr",
+          "formula": "dhondt",
+          "district_model": "provinces",
+          "note": "Closed-list proportional representation in 52 constituencies (the 50 provinces plus Ceuta and Melilla, which elect one deputy each by plurality), with a 3% threshold applied in each constituency rather than nationally. The 2000 general election was held on 12 March 2000, so seats_2000 is the composition of the chamber at its dissolution in January 2000 (6th Cortes, elected 3 March 1996). PSOE includes its Catalan partner PSC (19). The PP list of 1996 elected 153 PP, 2 UPN and 1 PAR deputies. United Left had won 21 seats in 1996, but the Democratic Party of the New Left (3) and Initiative for Catalonia-Greens (2) had left its group. 'others' is Pilar Rahola of the Partit per la Independència, elected for ERC in 1996. The Canarian Coalition's 4 deputies belonged to its member parties AIC (2), ICAN and CCN."
+        },
+        "seats_2000": {
+          "esp.pp": 153,
+          "esp.psoe": 141,
+          "esp.ciu": 16,
+          "esp.iu": 16,
+          "esp.pnv": 5,
+          "esp.cc": 4,
+          "esp.pdni": 3,
+          "esp.upn": 2,
+          "esp.bng": 2,
+          "esp.icv": 2,
+          "esp.hb": 2,
+          "esp.ea": 1,
+          "esp.uv": 1,
+          "esp.par": 1,
+          "others": 1
+        },
+        "confidence_chamber": true,
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2000_Spanish_general_election", "title": "Wikipedia: 2000 Spanish general election (Outgoing parliament: composition in January 2000)", "accessed": "2026-10-14" },
+          { "url": "https://en.wikipedia.org/wiki/1996_Spanish_general_election", "title": "Wikipedia: 1996 Spanish general election (results)", "accessed": "2026-10-14" }
+        ],
+        "confidence": "verified"
+      },
+      {
+        "id": "senate",
+        "name": { "en": "Senate", "native": "Senado" },
+        "seats": 259,
+        "term_years": 4,
+        "elected": "mixed",
+        "system": {
+          "type": "block",
+          "district_model": "provinces",
+          "note": "208 senators were directly elected in 2000 by limited (partial block) vote, four per mainland province with each voter choosing up to three, with fixed numbers for the islands, Ceuta and Melilla; the rest are appointed by the regional legislatures in proportion to their population, so the size varies (259 at dissolution in January 2000; 267 seats, 209 of them elected, from the 2026 constitutional reform giving Formentera its own senator). seats_2000 is the composition at dissolution in January 2000. PSOE includes PSC (10). The Canarian Coalition's 2 are its member groups AIC and AHI. 'others' are one senator of the Pacte Progressista (Ibiza-Formentera) and one of the Lanzarote Independents Party. The Senate cannot bring down the government."
+        },
+        "seats_2000": {
+          "esp.pp": 129,
+          "esp.psoe": 100,
+          "esp.ciu": 11,
+          "esp.pnv": 6,
+          "esp.upn": 3,
+          "esp.par": 3,
+          "esp.iu": 2,
+          "esp.cc": 2,
+          "esp.erc": 1,
+          "others": 2
+        },
+        "confidence_chamber": false,
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2000_Spanish_general_election", "title": "Wikipedia: 2000 Spanish general election (Outgoing parliament: Senate composition in January 2000; electoral system)", "accessed": "2026-10-14" },
+          { "url": "https://en.wikipedia.org/wiki/Next_Spanish_general_election", "title": "Wikipedia: Next Spanish general election (267 Senate seats, 209 elected, after the 20 May 2026 reform)", "accessed": "2026-10-14" }
+        ],
+        "confidence": "verified"
+      }
+    ]
+  },
+  "party_system": "multi_party",
+  "start_2000": {
+    "ruling_parties": ["esp.pp"],
+    "confidence_and_supply": ["esp.ciu", "esp.pnv", "esp.cc"],
+    "ideology_support": {
+      "liberal_conservative": 0.31,
+      "christian_democrat": 0.082,
+      "social_democrat": 0.38,
+      "democratic_socialist": 0.106,
+      "regionalist": 0.105,
+      "green": 0.004,
+      "national_conservative": 0.001,
+      "big_tent": 0.012
+    },
+    "ideology_support_note": "Derived from the 1996 Congress vote (the last national vote before 2000), as shares of valid votes excluding blank ballots (0.97%): PP 38.79% (split 31.0 liberal conservative / 8.2 Christian democrat as a gameplay estimate), PSOE 37.63% (social democrat), IU 10.54% (democratic socialist), regional and nationalist parties 10.39% (CiU 4.60, PNV 1.27, CC 0.88, BNG 0.88, HB 0.72, ERC 0.67, PA 0.54, EA 0.46, UV 0.37: regionalist), green lists about 0.4%, Falangist lists about 0.06% (national conservative), and the remaining minor lists about 1.2% (big tent).",
+    "stability": 0.75,
+    "war_support": 0.3
+  },
+  "claims": [],
+  "source": [
+    { "url": "https://en.wikipedia.org/wiki/1996_Spanish_general_election", "title": "Wikipedia: 1996 Spanish general election", "accessed": "2026-10-14" },
+    { "url": "https://en.wikipedia.org/wiki/2000_Spanish_general_election", "title": "Wikipedia: 2000 Spanish general election", "accessed": "2026-10-14" },
+    { "url": "https://en.wikipedia.org/wiki/List_of_prime_ministers_of_Spain", "title": "Wikipedia: List of prime ministers of Spain", "accessed": "2026-10-14" },
+    { "url": "https://en.wikipedia.org/wiki/Spanish_Constitution_of_1978", "title": "Wikipedia: Spanish Constitution of 1978 (amendment procedure and referendums)", "accessed": "2026-10-14", "note": "This article lists three amendments (1992, 2011, 2024), while 'Next Spanish general election' reports a constitutional reform of 20 May 2026 giving Formentera its own senator." }
+  ],
+  "confidence": "verified"
+}

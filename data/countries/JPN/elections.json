@@ -1,0 +1,1510 @@
+{
+  "rules": [
+    {
+      "kind": "legislative",
+      "chamber": "house_of_representatives",
+      "every_years": 4,
+      "anchor": "2026-02-08",
+      "snap_possible": true,
+      "note": "Four-year term; the Cabinet may dissolve the House early, and most elections since 2000 have been early."
+    },
+    {
+      "kind": "legislative_upper",
+      "chamber": "house_of_councillors",
+      "every_years": 3,
+      "anchor": "2025-07-20",
+      "snap_possible": false,
+      "note": "Six-year terms with half the seats elected every three years; the House of Councillors cannot be dissolved."
+    }
+  ],
+  "elections": [
+    {
+      "id": "shugiin_2000",
+      "date": "2000-06-25",
+      "kind": "legislative",
+      "chamber": "house_of_representatives",
+      "snap": true,
+      "historical": {
+        "candidates": [
+          {
+            "person": "jpn.yoshiro_mori",
+            "party": "jpn.ldp",
+            "round": 1
+          },
+          {
+            "person": "jpn.yukio_hatoyama",
+            "party": "jpn.dpj",
+            "round": 1
+          }
+        ],
+        "party_results": [
+          {
+            "party": "jpn.ldp",
+            "share": 0.2831,
+            "seats": 233
+          },
+          {
+            "party": "jpn.dpj",
+            "share": 0.2518,
+            "seats": 127
+          },
+          {
+            "party": "jpn.komeito",
+            "share": 0.1297,
+            "seats": 31
+          },
+          {
+            "party": "jpn.jcp",
+            "share": 0.1123,
+            "seats": 20
+          },
+          {
+            "party": "jpn.liberal_1998",
+            "share": 0.1101,
+            "seats": 22
+          },
+          {
+            "party": "jpn.sdp",
+            "share": 0.0936,
+            "seats": 19
+          },
+          {
+            "party": "jpn.conservative_2000",
+            "share": 0.0041,
+            "seats": 7
+          },
+          {
+            "party": "others",
+            "seats": 6
+          },
+          {
+            "party": "independents",
+            "seats": 15
+          }
+        ],
+        "winner": "jpn.ldp",
+        "turnout": 0.6245,
+        "note": "First election to the reduced 480-seat House (300 constituency, 180 PR). Shares are national proportional-representation (party-list) votes; seats are the party's total after the election (constituency plus PR). 'others' are the Independent Association (5) and the Liberal League (1). The LDP-Komeito-Conservative coalition continued under Mori.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2000_Japanese_general_election",
+            "title": "Wikipedia: 2000 Japanese general election (infobox and results table)",
+            "accessed": "2026-10-14"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "sangiin_2001",
+      "date": "2001-07-29",
+      "kind": "legislative_upper",
+      "chamber": "house_of_councillors",
+      "historical": {
+        "party_results": [
+          {
+            "party": "jpn.ldp",
+            "share": 0.3857,
+            "seats": 110,
+            "seats_won": 64
+          },
+          {
+            "party": "jpn.dpj",
+            "share": 0.1642,
+            "seats": 59,
+            "seats_won": 26
+          },
+          {
+            "party": "jpn.komeito",
+            "share": 0.1496,
+            "seats": 23,
+            "seats_won": 13
+          },
+          {
+            "party": "jpn.jcp",
+            "share": 0.0791,
+            "seats": 20,
+            "seats_won": 5
+          },
+          {
+            "party": "jpn.liberal_1998",
+            "share": 0.0772,
+            "seats": 8,
+            "seats_won": 6
+          },
+          {
+            "party": "jpn.sdp",
+            "share": 0.0663,
+            "seats": 8,
+            "seats_won": 3
+          },
+          {
+            "party": "jpn.conservative_2000",
+            "share": 0.0233,
+            "seats": 5,
+            "seats_won": 1
+          },
+          {
+            "party": "others",
+            "seats": 6,
+            "seats_won": 0
+          },
+          {
+            "party": "independents",
+            "seats": 8,
+            "seats_won": 3
+          }
+        ],
+        "winner": "jpn.ldp",
+        "note": "121 of 247 seats contested (the chamber was being reduced from 252 to 242 over two elections). Shares are national proportional-block votes; seats_won are seats won in this half-election, seats are the party's total in the chamber after it. 'others' (not up) include the Dainiin Club (1).",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2001_Japanese_House_of_Councillors_election",
+            "title": "Wikipedia: 2001 Japanese House of Councillors election (infobox and results table)",
+            "accessed": "2026-10-14"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "shugiin_2003",
+      "date": "2003-11-09",
+      "kind": "legislative",
+      "chamber": "house_of_representatives",
+      "snap": true,
+      "historical": {
+        "candidates": [
+          {
+            "person": "jpn.junichiro_koizumi",
+            "party": "jpn.ldp",
+            "round": 1
+          },
+          {
+            "person": "jpn.naoto_kan",
+            "party": "jpn.dpj",
+            "round": 1
+          }
+        ],
+        "party_results": [
+          {
+            "party": "jpn.ldp",
+            "share": 0.3496,
+            "seats": 237
+          },
+          {
+            "party": "jpn.dpj",
+            "share": 0.3739,
+            "seats": 177
+          },
+          {
+            "party": "jpn.komeito",
+            "share": 0.1478,
+            "seats": 34
+          },
+          {
+            "party": "jpn.jcp",
+            "share": 0.0776,
+            "seats": 9
+          },
+          {
+            "party": "jpn.sdp",
+            "share": 0.0512,
+            "seats": 6
+          },
+          {
+            "party": "jpn.conservative_2000",
+            "seats": 4
+          },
+          {
+            "party": "others",
+            "seats": 2
+          },
+          {
+            "party": "independents",
+            "seats": 11
+          }
+        ],
+        "winner": "jpn.ldp",
+        "turnout": 0.598,
+        "note": "Shares are national proportional-representation (party-list) votes; seats are the party's total after the election (constituency plus PR). The DPJ (which had absorbed the Liberal Party in September 2003) won the most PR votes; the LDP won the most seats. The New Conservative Party ran only in constituencies and merged into the LDP after the election. 'others': Independent Association 1, Liberal League 1.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2003_Japanese_general_election",
+            "title": "Wikipedia: 2003 Japanese general election (infobox and results table)",
+            "accessed": "2026-10-14"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "sangiin_2004",
+      "date": "2004-07-11",
+      "kind": "legislative_upper",
+      "chamber": "house_of_councillors",
+      "historical": {
+        "party_results": [
+          {
+            "party": "jpn.ldp",
+            "share": 0.3003,
+            "seats": 115,
+            "seats_won": 49
+          },
+          {
+            "party": "jpn.dpj",
+            "share": 0.3779,
+            "seats": 82,
+            "seats_won": 50
+          },
+          {
+            "party": "jpn.komeito",
+            "share": 0.1541,
+            "seats": 24,
+            "seats_won": 11
+          },
+          {
+            "party": "jpn.jcp",
+            "share": 0.078,
+            "seats": 9,
+            "seats_won": 4
+          },
+          {
+            "party": "jpn.sdp",
+            "share": 0.0535,
+            "seats": 5,
+            "seats_won": 2
+          },
+          {
+            "party": "independents",
+            "seats": 7,
+            "seats_won": 5
+          }
+        ],
+        "winner": "jpn.ldp",
+        "note": "121 of 242 seats contested. Shares are national proportional-block votes; seats_won are seats won in this half-election, seats are the party's total in the chamber after it. The DPJ won one more seat than the LDP in this half-election; the LDP remained the largest party in the chamber.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2004_Japanese_House_of_Councillors_election",
+            "title": "Wikipedia: 2004 Japanese House of Councillors election (infobox and results table)",
+            "accessed": "2026-10-14"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "shugiin_2005",
+      "date": "2005-09-11",
+      "kind": "legislative",
+      "chamber": "house_of_representatives",
+      "snap": true,
+      "historical": {
+        "candidates": [
+          {
+            "person": "jpn.junichiro_koizumi",
+            "party": "jpn.ldp",
+            "round": 1
+          },
+          {
+            "person": "jpn.katsuya_okada",
+            "party": "jpn.dpj",
+            "round": 1
+          }
+        ],
+        "party_results": [
+          {
+            "party": "jpn.ldp",
+            "share": 0.3818,
+            "seats": 296
+          },
+          {
+            "party": "jpn.dpj",
+            "share": 0.3102,
+            "seats": 113
+          },
+          {
+            "party": "jpn.komeito",
+            "share": 0.1325,
+            "seats": 31
+          },
+          {
+            "party": "jpn.jcp",
+            "share": 0.0725,
+            "seats": 9
+          },
+          {
+            "party": "jpn.sdp",
+            "share": 0.0549,
+            "seats": 7
+          },
+          {
+            "party": "jpn.pnp",
+            "share": 0.0174,
+            "seats": 4
+          },
+          {
+            "party": "others",
+            "seats": 2
+          },
+          {
+            "party": "independents",
+            "seats": 18
+          }
+        ],
+        "winner": "jpn.ldp",
+        "turnout": 0.6746,
+        "note": "Snap election after the House of Councillors rejected the postal privatisation bills. Shares are national proportional-representation (party-list) votes; seats are the party's total after the election (constituency plus PR). 'others': New Party Nippon 1, New Party Daichi 1.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2005_Japanese_general_election",
+            "title": "Wikipedia: 2005 Japanese general election (infobox and results table)",
+            "accessed": "2026-10-14"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "sangiin_2007",
+      "date": "2007-07-29",
+      "kind": "legislative_upper",
+      "chamber": "house_of_councillors",
+      "historical": {
+        "party_results": [
+          {
+            "party": "jpn.dpj",
+            "share": 0.3948,
+            "seats": 109,
+            "seats_won": 60
+          },
+          {
+            "party": "jpn.ldp",
+            "share": 0.2808,
+            "seats": 83,
+            "seats_won": 37
+          },
+          {
+            "party": "jpn.komeito",
+            "share": 0.1318,
+            "seats": 20,
+            "seats_won": 9
+          },
+          {
+            "party": "jpn.jcp",
+            "share": 0.0748,
+            "seats": 7,
+            "seats_won": 3
+          },
+          {
+            "party": "jpn.sdp",
+            "share": 0.0447,
+            "seats": 5,
+            "seats_won": 2
+          },
+          {
+            "party": "jpn.pnp",
+            "share": 0.0215,
+            "seats": 4,
+            "seats_won": 2
+          },
+          {
+            "party": "others",
+            "seats": 2,
+            "seats_won": 1
+          },
+          {
+            "party": "independents",
+            "seats": 12,
+            "seats_won": 7
+          }
+        ],
+        "winner": "jpn.dpj",
+        "note": "121 of 242 seats contested. Shares are national proportional-block votes; seats_won are seats won in this half-election, seats are the party's total in the chamber after it. The DPJ became the largest party in the chamber, which the LDP-Komeito coalition no longer controlled. 'others': New Party Nippon (3.01%, 1 seat won) and one other seat not up.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2007_Japanese_House_of_Councillors_election",
+            "title": "Wikipedia: 2007 Japanese House of Councillors election (infobox and results table)",
+            "accessed": "2026-10-14"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "shugiin_2009",
+      "date": "2009-08-30",
+      "kind": "legislative",
+      "chamber": "house_of_representatives",
+      "historical": {
+        "candidates": [
+          {
+            "person": "jpn.taro_aso",
+            "party": "jpn.ldp",
+            "round": 1
+          },
+          {
+            "person": "jpn.yukio_hatoyama",
+            "party": "jpn.dpj",
+            "round": 1
+          }
+        ],
+        "party_results": [
+          {
+            "party": "jpn.dpj",
+            "share": 0.4241,
+            "seats": 308
+          },
+          {
+            "party": "jpn.ldp",
+            "share": 0.2673,
+            "seats": 119
+          },
+          {
+            "party": "jpn.komeito",
+            "share": 0.1145,
+            "seats": 21
+          },
+          {
+            "party": "jpn.jcp",
+            "share": 0.0703,
+            "seats": 9
+          },
+          {
+            "party": "jpn.sdp",
+            "share": 0.0427,
+            "seats": 7
+          },
+          {
+            "party": "jpn.your_party",
+            "share": 0.0427,
+            "seats": 5
+          },
+          {
+            "party": "jpn.pnp",
+            "share": 0.0173,
+            "seats": 3
+          },
+          {
+            "party": "others",
+            "seats": 2
+          },
+          {
+            "party": "independents",
+            "seats": 6
+          }
+        ],
+        "winner": "jpn.dpj",
+        "turnout": 0.6919,
+        "note": "Shares are national proportional-representation (party-list) votes; seats are the party's total after the election (constituency plus PR). The DPJ formed a government with the SDP and the People's New Party. 'others': New Party Nippon 1, New Party Daichi 1.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2009_Japanese_general_election",
+            "title": "Wikipedia: 2009 Japanese general election (infobox and results table)",
+            "accessed": "2026-10-14"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "sangiin_2010",
+      "date": "2010-07-11",
+      "kind": "legislative_upper",
+      "chamber": "house_of_councillors",
+      "historical": {
+        "party_results": [
+          {
+            "party": "jpn.dpj",
+            "share": 0.3156,
+            "seats": 106,
+            "seats_won": 44
+          },
+          {
+            "party": "jpn.ldp",
+            "share": 0.2407,
+            "seats": 84,
+            "seats_won": 51
+          },
+          {
+            "party": "jpn.your_party",
+            "share": 0.1359,
+            "seats": 11,
+            "seats_won": 10
+          },
+          {
+            "party": "jpn.komeito",
+            "share": 0.1307,
+            "seats": 19,
+            "seats_won": 9
+          },
+          {
+            "party": "jpn.jcp",
+            "share": 0.061,
+            "seats": 6,
+            "seats_won": 3
+          },
+          {
+            "party": "jpn.sdp",
+            "share": 0.0384,
+            "seats": 4,
+            "seats_won": 2
+          },
+          {
+            "party": "jpn.pnp",
+            "share": 0.0171,
+            "seats": 3,
+            "seats_won": 0
+          },
+          {
+            "party": "others",
+            "seats": 6,
+            "seats_won": 2
+          },
+          {
+            "party": "independents",
+            "seats": 3,
+            "seats_won": 0
+          }
+        ],
+        "winner": "jpn.dpj",
+        "note": "121 of 242 seats contested. Shares are national proportional-block votes; seats_won are seats won in this half-election, seats are the party's total in the chamber after it. The DPJ-PNP coalition lost its majority in the chamber. 'others': Sunrise Party 3, New Renaissance Party 2, Happiness Realization Party 1.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2010_Japanese_House_of_Councillors_election",
+            "title": "Wikipedia: 2010 Japanese House of Councillors election (infobox and results table)",
+            "accessed": "2026-10-14"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "shugiin_2012",
+      "date": "2012-12-16",
+      "kind": "legislative",
+      "chamber": "house_of_representatives",
+      "snap": true,
+      "historical": {
+        "candidates": [
+          {
+            "person": "jpn.shinzo_abe",
+            "party": "jpn.ldp",
+            "round": 1
+          },
+          {
+            "person": "jpn.yoshihiko_noda",
+            "party": "jpn.dpj",
+            "round": 1
+          }
+        ],
+        "party_results": [
+          {
+            "party": "jpn.ldp",
+            "share": 0.2762,
+            "seats": 294
+          },
+          {
+            "party": "jpn.dpj",
+            "share": 0.16,
+            "seats": 57
+          },
+          {
+            "party": "jpn.jrp",
+            "share": 0.2038,
+            "seats": 54
+          },
+          {
+            "party": "jpn.komeito",
+            "share": 0.1183,
+            "seats": 31
+          },
+          {
+            "party": "jpn.your_party",
+            "share": 0.0872,
+            "seats": 18
+          },
+          {
+            "party": "jpn.jcp",
+            "share": 0.0613,
+            "seats": 8
+          },
+          {
+            "party": "jpn.tomorrow",
+            "share": 0.0569,
+            "seats": 9
+          },
+          {
+            "party": "jpn.sdp",
+            "share": 0.0236,
+            "seats": 2
+          },
+          {
+            "party": "jpn.pnp",
+            "share": 0.0012,
+            "seats": 1
+          },
+          {
+            "party": "others",
+            "seats": 1
+          },
+          {
+            "party": "independents",
+            "seats": 5
+          }
+        ],
+        "winner": "jpn.ldp",
+        "turnout": 0.5931,
+        "note": "Early election after Prime Minister Noda dissolved the House. Shares are national proportional-representation (party-list) votes; seats are the party's total after the election (constituency plus PR). 'others': New Party Daichi 1. The LDP and Komeito returned to government.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2012_Japanese_general_election",
+            "title": "Wikipedia: 2012 Japanese general election (infobox and results table)",
+            "accessed": "2026-10-14"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "sangiin_2013",
+      "date": "2013-07-21",
+      "kind": "legislative_upper",
+      "chamber": "house_of_councillors",
+      "historical": {
+        "party_results": [
+          {
+            "party": "jpn.ldp",
+            "share": 0.3468,
+            "seats": 115,
+            "seats_won": 65
+          },
+          {
+            "party": "jpn.komeito",
+            "share": 0.1422,
+            "seats": 20,
+            "seats_won": 11
+          },
+          {
+            "party": "jpn.dpj",
+            "share": 0.134,
+            "seats": 59,
+            "seats_won": 17
+          },
+          {
+            "party": "jpn.jrp",
+            "share": 0.1194,
+            "seats": 9,
+            "seats_won": 8
+          },
+          {
+            "party": "jpn.jcp",
+            "share": 0.0968,
+            "seats": 11,
+            "seats_won": 8
+          },
+          {
+            "party": "jpn.your_party",
+            "share": 0.0893,
+            "seats": 18,
+            "seats_won": 8
+          },
+          {
+            "party": "jpn.sdp",
+            "share": 0.0236,
+            "seats": 3,
+            "seats_won": 1
+          },
+          {
+            "party": "jpn.plp",
+            "share": 0.0177,
+            "seats": 2,
+            "seats_won": 0
+          },
+          {
+            "party": "others",
+            "seats": 2,
+            "seats_won": 1
+          },
+          {
+            "party": "independents",
+            "seats": 3,
+            "seats_won": 2
+          }
+        ],
+        "winner": "jpn.ldp",
+        "note": "121 of 242 seats contested. Shares are national proportional-block votes; seats_won are seats won in this half-election, seats are the party's total in the chamber after it. The LDP-Komeito coalition regained a majority in the chamber. 'others': Okinawa Social Mass Party 1, New Renaissance Party 1.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2013_Japanese_House_of_Councillors_election",
+            "title": "Wikipedia: 2013 Japanese House of Councillors election (infobox and results table)",
+            "accessed": "2026-10-14"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "shugiin_2014",
+      "date": "2014-12-14",
+      "kind": "legislative",
+      "chamber": "house_of_representatives",
+      "snap": true,
+      "historical": {
+        "candidates": [
+          {
+            "person": "jpn.shinzo_abe",
+            "party": "jpn.ldp",
+            "round": 1
+          },
+          {
+            "person": "jpn.banri_kaieda",
+            "party": "jpn.dpj",
+            "round": 1
+          }
+        ],
+        "party_results": [
+          {
+            "party": "jpn.ldp",
+            "share": 0.3311,
+            "seats": 291
+          },
+          {
+            "party": "jpn.dpj",
+            "share": 0.1833,
+            "seats": 73
+          },
+          {
+            "party": "jpn.jip_2014",
+            "share": 0.1572,
+            "seats": 41
+          },
+          {
+            "party": "jpn.komeito",
+            "share": 0.1371,
+            "seats": 35
+          },
+          {
+            "party": "jpn.jcp",
+            "share": 0.1137,
+            "seats": 21
+          },
+          {
+            "party": "jpn.sdp",
+            "share": 0.0246,
+            "seats": 2
+          },
+          {
+            "party": "jpn.plp",
+            "share": 0.0193,
+            "seats": 2
+          },
+          {
+            "party": "others",
+            "share": 0.0265,
+            "seats": 2
+          },
+          {
+            "party": "independents",
+            "seats": 8
+          }
+        ],
+        "winner": "jpn.ldp",
+        "turnout": 0.5265,
+        "note": "Snap election. The House was reduced to 475 seats (295 constituency, 180 PR). Shares are national proportional-representation (party-list) votes; seats are the party's total after the election (constituency plus PR). 'others' is the Party for Future Generations.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2014_Japanese_general_election",
+            "title": "Wikipedia: 2014 Japanese general election (infobox and results table)",
+            "accessed": "2026-10-14"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "sangiin_2016",
+      "date": "2016-07-10",
+      "kind": "legislative_upper",
+      "chamber": "house_of_councillors",
+      "historical": {
+        "party_results": [
+          {
+            "party": "jpn.ldp",
+            "share": 0.3591,
+            "seats": 120,
+            "seats_won": 55
+          },
+          {
+            "party": "jpn.dp_2016",
+            "share": 0.2098,
+            "seats": 49,
+            "seats_won": 32
+          },
+          {
+            "party": "jpn.komeito",
+            "share": 0.1352,
+            "seats": 25,
+            "seats_won": 14
+          },
+          {
+            "party": "jpn.jcp",
+            "share": 0.1074,
+            "seats": 14,
+            "seats_won": 6
+          },
+          {
+            "party": "jpn.ishin",
+            "share": 0.092,
+            "seats": 12,
+            "seats_won": 7
+          },
+          {
+            "party": "jpn.sdp",
+            "share": 0.0274,
+            "seats": 2,
+            "seats_won": 1
+          },
+          {
+            "party": "jpn.plp",
+            "share": 0.0191,
+            "seats": 2,
+            "seats_won": 1
+          },
+          {
+            "party": "others",
+            "seats": 6,
+            "seats_won": 0
+          },
+          {
+            "party": "independents",
+            "seats": 12,
+            "seats_won": 5
+          }
+        ],
+        "winner": "jpn.ldp",
+        "note": "121 of 242 seats contested; first national election with a voting age of 18. Shares are national proportional-block votes; seats_won are seats won in this half-election, seats are the party's total in the chamber after it. Nippon Ishin no Kai stood under its then name, Initiatives from Osaka. 'others' (seats not up): Party for Japanese Kokoro 3, Assembly to Energize Japan 2, Okinawa Social Mass Party 1.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2016_Japanese_House_of_Councillors_election",
+            "title": "Wikipedia: 2016 Japanese House of Councillors election (infobox and results table)",
+            "accessed": "2026-10-14"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "shugiin_2017",
+      "date": "2017-10-22",
+      "kind": "legislative",
+      "chamber": "house_of_representatives",
+      "snap": true,
+      "historical": {
+        "candidates": [
+          {
+            "person": "jpn.shinzo_abe",
+            "party": "jpn.ldp",
+            "round": 1
+          },
+          {
+            "person": "jpn.yukio_edano",
+            "party": "jpn.cdp",
+            "round": 1
+          },
+          {
+            "person": "jpn.yuriko_koike",
+            "party": "jpn.kibo",
+            "round": 1
+          }
+        ],
+        "party_results": [
+          {
+            "party": "jpn.ldp",
+            "share": 0.3328,
+            "seats": 284
+          },
+          {
+            "party": "jpn.cdp",
+            "share": 0.1988,
+            "seats": 55
+          },
+          {
+            "party": "jpn.kibo",
+            "share": 0.1736,
+            "seats": 50
+          },
+          {
+            "party": "jpn.komeito",
+            "share": 0.1251,
+            "seats": 29
+          },
+          {
+            "party": "jpn.jcp",
+            "share": 0.079,
+            "seats": 12
+          },
+          {
+            "party": "jpn.ishin",
+            "share": 0.0607,
+            "seats": 11
+          },
+          {
+            "party": "jpn.sdp",
+            "share": 0.0169,
+            "seats": 2
+          },
+          {
+            "party": "independents",
+            "seats": 22
+          }
+        ],
+        "winner": "jpn.ldp",
+        "turnout": 0.5368,
+        "note": "Snap election. The House was reduced to 465 seats (289 constituency, 176 PR). Shares are national proportional-representation (party-list) votes; seats are the party's total after the election (constituency plus PR). Most Democratic Party (2016) members ran for Kibo no To, the newly founded CDP, or as independents. Koike, Kibo no To's leader, was Governor of Tokyo and did not stand for the House.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2017_Japanese_general_election",
+            "title": "Wikipedia: 2017 Japanese general election (infobox and results table)",
+            "accessed": "2026-10-14"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "sangiin_2019",
+      "date": "2019-07-21",
+      "kind": "legislative_upper",
+      "chamber": "house_of_councillors",
+      "historical": {
+        "party_results": [
+          {
+            "party": "jpn.ldp",
+            "share": 0.3537,
+            "seats": 113,
+            "seats_won": 57
+          },
+          {
+            "party": "jpn.cdp",
+            "share": 0.1581,
+            "seats": 32,
+            "seats_won": 17
+          },
+          {
+            "party": "jpn.komeito",
+            "share": 0.1305,
+            "seats": 28,
+            "seats_won": 14
+          },
+          {
+            "party": "jpn.ishin",
+            "share": 0.098,
+            "seats": 16,
+            "seats_won": 10
+          },
+          {
+            "party": "jpn.jcp",
+            "share": 0.0895,
+            "seats": 13,
+            "seats_won": 7
+          },
+          {
+            "party": "jpn.dpfp",
+            "share": 0.0695,
+            "seats": 21,
+            "seats_won": 6
+          },
+          {
+            "party": "jpn.reiwa",
+            "share": 0.0455,
+            "seats": 2,
+            "seats_won": 2
+          },
+          {
+            "party": "jpn.sdp",
+            "share": 0.0209,
+            "seats": 2,
+            "seats_won": 1
+          },
+          {
+            "party": "others",
+            "share": 0.0197,
+            "seats": 1,
+            "seats_won": 1
+          },
+          {
+            "party": "independents",
+            "seats": 17,
+            "seats_won": 9
+          }
+        ],
+        "winner": "jpn.ldp",
+        "turnout": 0.488,
+        "note": "124 of 245 seats contested (the chamber was enlarged to 248 over two elections). Shares are national proportional-block votes; seats_won are seats won in this half-election, seats are the party's total in the chamber after it. 'others' is the NHK Party.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2019_Japanese_House_of_Councillors_election",
+            "title": "Wikipedia: 2019 Japanese House of Councillors election (infobox and results table)",
+            "accessed": "2026-10-14"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "shugiin_2021",
+      "date": "2021-10-31",
+      "kind": "legislative",
+      "chamber": "house_of_representatives",
+      "historical": {
+        "candidates": [
+          {
+            "person": "jpn.fumio_kishida",
+            "party": "jpn.ldp",
+            "round": 1
+          },
+          {
+            "person": "jpn.yukio_edano",
+            "party": "jpn.cdp",
+            "round": 1
+          }
+        ],
+        "party_results": [
+          {
+            "party": "jpn.ldp",
+            "share": 0.3466,
+            "seats": 259
+          },
+          {
+            "party": "jpn.cdp",
+            "share": 0.2,
+            "seats": 96
+          },
+          {
+            "party": "jpn.ishin",
+            "share": 0.1401,
+            "seats": 41
+          },
+          {
+            "party": "jpn.komeito",
+            "share": 0.1238,
+            "seats": 32
+          },
+          {
+            "party": "jpn.jcp",
+            "share": 0.0725,
+            "seats": 10
+          },
+          {
+            "party": "jpn.dpfp",
+            "share": 0.0451,
+            "seats": 11
+          },
+          {
+            "party": "jpn.reiwa",
+            "share": 0.0386,
+            "seats": 3
+          },
+          {
+            "party": "jpn.sdp",
+            "share": 0.0177,
+            "seats": 1
+          },
+          {
+            "party": "independents",
+            "seats": 12
+          }
+        ],
+        "winner": "jpn.ldp",
+        "turnout": 0.5597,
+        "note": "Shares are national proportional-representation (party-list) votes; seats are the party's total after the election (constituency plus PR).",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2021_Japanese_general_election",
+            "title": "Wikipedia: 2021 Japanese general election (infobox and results table)",
+            "accessed": "2026-10-14"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "sangiin_2022",
+      "date": "2022-07-10",
+      "kind": "legislative_upper",
+      "chamber": "house_of_councillors",
+      "historical": {
+        "party_results": [
+          {
+            "party": "jpn.ldp",
+            "share": 0.3443,
+            "seats": 119,
+            "seats_won": 63
+          },
+          {
+            "party": "jpn.ishin",
+            "share": 0.148,
+            "seats": 21,
+            "seats_won": 12
+          },
+          {
+            "party": "jpn.cdp",
+            "share": 0.1277,
+            "seats": 39,
+            "seats_won": 17
+          },
+          {
+            "party": "jpn.komeito",
+            "share": 0.1166,
+            "seats": 27,
+            "seats_won": 13
+          },
+          {
+            "party": "jpn.jcp",
+            "share": 0.0682,
+            "seats": 11,
+            "seats_won": 4
+          },
+          {
+            "party": "jpn.dpfp",
+            "share": 0.0596,
+            "seats": 10,
+            "seats_won": 5
+          },
+          {
+            "party": "jpn.reiwa",
+            "share": 0.0437,
+            "seats": 5,
+            "seats_won": 3
+          },
+          {
+            "party": "jpn.sanseito",
+            "share": 0.0333,
+            "seats": 1,
+            "seats_won": 1
+          },
+          {
+            "party": "jpn.sdp",
+            "share": 0.0237,
+            "seats": 1,
+            "seats_won": 1
+          },
+          {
+            "party": "others",
+            "share": 0.0236,
+            "seats": 2,
+            "seats_won": 1
+          },
+          {
+            "party": "independents",
+            "seats": 12,
+            "seats_won": 5
+          }
+        ],
+        "winner": "jpn.ldp",
+        "turnout": 0.5205,
+        "note": "125 seats contested (124 regular seats plus one by-election seat filled at the same time) in a chamber of 248. Shares are national proportional-block votes; seats_won are seats won in this half-election, seats are the party's total in the chamber after it. 'others' is the NHK Party.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2022_Japanese_House_of_Councillors_election",
+            "title": "Wikipedia: 2022 Japanese House of Councillors election (infobox and results table)",
+            "accessed": "2026-10-14"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "shugiin_2024",
+      "date": "2024-10-27",
+      "kind": "legislative",
+      "chamber": "house_of_representatives",
+      "snap": true,
+      "historical": {
+        "candidates": [
+          {
+            "person": "jpn.shigeru_ishiba",
+            "party": "jpn.ldp",
+            "round": 1
+          },
+          {
+            "person": "jpn.yoshihiko_noda",
+            "party": "jpn.cdp",
+            "round": 1
+          }
+        ],
+        "party_results": [
+          {
+            "party": "jpn.ldp",
+            "share": 0.2673,
+            "seats": 191
+          },
+          {
+            "party": "jpn.cdp",
+            "share": 0.212,
+            "seats": 148
+          },
+          {
+            "party": "jpn.ishin",
+            "share": 0.0936,
+            "seats": 38
+          },
+          {
+            "party": "jpn.dpfp",
+            "share": 0.1132,
+            "seats": 28
+          },
+          {
+            "party": "jpn.komeito",
+            "share": 0.1093,
+            "seats": 24
+          },
+          {
+            "party": "jpn.reiwa",
+            "share": 0.0698,
+            "seats": 9
+          },
+          {
+            "party": "jpn.jcp",
+            "share": 0.0616,
+            "seats": 8
+          },
+          {
+            "party": "jpn.sanseito",
+            "share": 0.0343,
+            "seats": 3
+          },
+          {
+            "party": "jpn.cpj",
+            "share": 0.021,
+            "seats": 3
+          },
+          {
+            "party": "jpn.sdp",
+            "share": 0.0171,
+            "seats": 1
+          },
+          {
+            "party": "independents",
+            "seats": 12
+          }
+        ],
+        "winner": "jpn.ldp",
+        "turnout": 0.5384,
+        "note": "Snap election called days after Ishiba became Prime Minister. Shares are national proportional-representation (party-list) votes; seats are the party's total after the election (constituency plus PR). The LDP-Komeito coalition lost its majority; Ishiba was re-elected Prime Minister at the head of a minority government.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2024_Japanese_general_election",
+            "title": "Wikipedia: 2024 Japanese general election (infobox and results table)",
+            "accessed": "2026-10-14"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "sangiin_2025",
+      "date": "2025-07-20",
+      "kind": "legislative_upper",
+      "chamber": "house_of_councillors",
+      "historical": {
+        "party_results": [
+          {
+            "party": "jpn.ldp",
+            "share": 0.2164,
+            "seats": 101,
+            "seats_won": 39
+          },
+          {
+            "party": "jpn.dpfp",
+            "share": 0.1288,
+            "seats": 22,
+            "seats_won": 17
+          },
+          {
+            "party": "jpn.sanseito",
+            "share": 0.1255,
+            "seats": 15,
+            "seats_won": 14
+          },
+          {
+            "party": "jpn.cdp",
+            "share": 0.125,
+            "seats": 38,
+            "seats_won": 22
+          },
+          {
+            "party": "jpn.komeito",
+            "share": 0.088,
+            "seats": 21,
+            "seats_won": 8
+          },
+          {
+            "party": "jpn.ishin",
+            "share": 0.0739,
+            "seats": 19,
+            "seats_won": 7
+          },
+          {
+            "party": "jpn.reiwa",
+            "share": 0.0656,
+            "seats": 6,
+            "seats_won": 3
+          },
+          {
+            "party": "jpn.cpj",
+            "share": 0.0504,
+            "seats": 2,
+            "seats_won": 2
+          },
+          {
+            "party": "jpn.jcp",
+            "share": 0.0484,
+            "seats": 7,
+            "seats_won": 3
+          },
+          {
+            "party": "jpn.team_mirai",
+            "share": 0.0256,
+            "seats": 1,
+            "seats_won": 1
+          },
+          {
+            "party": "jpn.sdp",
+            "share": 0.0206,
+            "seats": 2,
+            "seats_won": 1
+          },
+          {
+            "party": "others",
+            "seats": 1,
+            "seats_won": 0
+          },
+          {
+            "party": "independents",
+            "seats": 13,
+            "seats_won": 8
+          }
+        ],
+        "winner": "jpn.ldp",
+        "turnout": 0.5851,
+        "note": "125 of 248 seats contested (124 regular seats plus one by-election seat). Shares are national proportional-block votes; seats_won are seats won in this half-election, seats are the party's total in the chamber after it. The LDP-Komeito coalition lost its majority in the chamber. 'others' is the NHK Party (seat not up).",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2025_Japanese_House_of_Councillors_election",
+            "title": "Wikipedia: 2025 Japanese House of Councillors election (infobox and results table)",
+            "accessed": "2026-10-14"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "shugiin_2026",
+      "date": "2026-02-08",
+      "kind": "legislative",
+      "chamber": "house_of_representatives",
+      "snap": true,
+      "historical": {
+        "candidates": [
+          {
+            "person": "jpn.sanae_takaichi",
+            "party": "jpn.ldp",
+            "round": 1
+          },
+          {
+            "person": "jpn.yoshihiko_noda",
+            "party": "jpn.cra",
+            "round": 1
+          },
+          {
+            "person": "jpn.tetsuo_saito",
+            "party": "jpn.cra",
+            "round": 1
+          }
+        ],
+        "party_results": [
+          {
+            "party": "jpn.ldp",
+            "share": 0.3672,
+            "seats": 316
+          },
+          {
+            "party": "jpn.cra",
+            "share": 0.1823,
+            "seats": 49
+          },
+          {
+            "party": "jpn.ishin",
+            "share": 0.0863,
+            "seats": 36
+          },
+          {
+            "party": "jpn.dpfp",
+            "share": 0.0973,
+            "seats": 28
+          },
+          {
+            "party": "jpn.sanseito",
+            "share": 0.0744,
+            "seats": 15
+          },
+          {
+            "party": "jpn.team_mirai",
+            "share": 0.0666,
+            "seats": 11
+          },
+          {
+            "party": "jpn.jcp",
+            "share": 0.044,
+            "seats": 4
+          },
+          {
+            "party": "jpn.reiwa",
+            "share": 0.0292,
+            "seats": 1
+          },
+          {
+            "party": "jpn.cpj",
+            "share": 0.0254,
+            "seats": 0
+          },
+          {
+            "party": "jpn.sdp",
+            "share": 0.0127,
+            "seats": 0
+          },
+          {
+            "party": "others",
+            "share": 0.0142,
+            "seats": 1
+          },
+          {
+            "party": "independents",
+            "seats": 4
+          }
+        ],
+        "winner": "jpn.ldp",
+        "turnout": 0.5625,
+        "note": "Snap election called by Prime Minister Takaichi, who governed in coalition with Nippon Ishin no Kai. Shares are national proportional-representation (party-list) votes; seats are the party's total after the election (constituency plus PR). The Centrist Reform Alliance, formed by the CDP and Komeito for this election, was co-led by Noda and Saito, who resigned afterwards. 'others' is the Tax Cuts Japan and Yukoku Alliance. The LDP alone won a two-thirds majority.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2026_Japanese_general_election",
+            "title": "Wikipedia: 2026 Japanese general election (infobox and results table)",
+            "accessed": "2026-10-14"
+          }
+        ],
+        "confidence": "verified"
+      }
+    }
+  ],
+  "source": [
+    {
+      "url": "https://en.wikipedia.org/wiki/Elections_in_Japan",
+      "title": "Wikipedia: Elections in Japan",
+      "accessed": "2026-10-14"
+    }
+  ],
+  "confidence": "verified"
+}

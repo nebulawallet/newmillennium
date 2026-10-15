@@ -1,0 +1,347 @@
+{
+  "tag": "JPN",
+  "name": {
+    "en": "Japan",
+    "native": "日本",
+    "native_latin": "Nihon / Nippon",
+    "official": {
+      "en": "Japan",
+      "native": "日本国"
+    }
+  },
+  "adjective": "Japanese",
+  "culture_primary": "japanese",
+  "government": {
+    "type": "constitutional_monarchy",
+    "effective_executive": "jpn.prime_minister",
+    "head_of_state_office": "jpn.emperor",
+    "head_of_government_office": "jpn.prime_minister",
+    "constitution": {
+      "term_limit_amendable": true,
+      "emergency_powers": false,
+      "referendum_required_for": [
+        "constitutional amendments (Article 96)"
+      ]
+    },
+    "note": "Parliamentary constitutional monarchy. The Emperor is a ceremonial head of state. The Prime Minister is designated by the National Diet from among its members and appointed by the Emperor; the cabinet depends on the confidence of the House of Representatives, which the cabinet may dissolve early. The House of Councillors cannot be dissolved. Constitutional amendments need two-thirds of both houses and a national referendum, which has never been held."
+  },
+  "offices": [
+    {
+      "id": "jpn.emperor",
+      "title": {
+        "en": "Emperor of Japan",
+        "native": "天皇",
+        "native_latin": "Tennō"
+      },
+      "role": "head_of_state",
+      "power_weight": 0.02,
+      "selection": "hereditary",
+      "succession": {
+        "type": "line",
+        "heirs": [
+          "jpn.naruhito"
+        ]
+      },
+      "holders": [
+        {
+          "person": "jpn.akihito",
+          "from": "1989-01-07",
+          "to": "2019-04-30",
+          "note": "Abdicated."
+        },
+        {
+          "person": "jpn.naruhito",
+          "from": "2019-05-01"
+        }
+      ],
+      "note": "The heir list reflects 1 January 2000 (Crown Prince Naruhito). Later heirs (Prince Fumihito, Prince Hisahito) are not yet modelled as people.",
+      "source": [
+        {
+          "url": "https://www.wikidata.org/wiki/Q208233",
+          "title": "Wikidata: Emperor of Japan (position held by)",
+          "accessed": "2026-10-14"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/Akihito",
+          "title": "Wikipedia: Akihito",
+          "accessed": "2026-10-14"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/Naruhito",
+          "title": "Wikipedia: Naruhito",
+          "accessed": "2026-10-14"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "jpn.prime_minister",
+      "title": {
+        "en": "Prime Minister of Japan",
+        "native": "内閣総理大臣",
+        "native_latin": "Naikaku Sōri-Daijin"
+      },
+      "role": "head_of_government",
+      "power_weight": 0.98,
+      "selection": "legislature",
+      "appointed_by": "jpn.emperor",
+      "succession": {
+        "type": "acting_then_election"
+      },
+      "holders": [
+        {
+          "person": "jpn.keizo_obuchi",
+          "from": "1998-07-30",
+          "to": "2000-04-03",
+          "note": "Wikipedia's list ends his tenure on 3 April 2000; Wikidata gives 5 April. He died on 14 May 2000."
+        },
+        {
+          "person": "jpn.mikio_aoki",
+          "from": "2000-04-03",
+          "to": "2000-04-05",
+          "acting": true,
+          "note": "Acting Prime Minister as Chief Cabinet Secretary."
+        },
+        {
+          "person": "jpn.yoshiro_mori",
+          "from": "2000-04-05",
+          "to": "2001-04-26"
+        },
+        {
+          "person": "jpn.junichiro_koizumi",
+          "from": "2001-04-26",
+          "to": "2006-09-26"
+        },
+        {
+          "person": "jpn.shinzo_abe",
+          "from": "2006-09-26",
+          "to": "2007-09-26",
+          "note": "Wikidata gives 25 September 2007 as the end date."
+        },
+        {
+          "person": "jpn.yasuo_fukuda",
+          "from": "2007-09-26",
+          "to": "2008-09-24"
+        },
+        {
+          "person": "jpn.taro_aso",
+          "from": "2008-09-24",
+          "to": "2009-09-16"
+        },
+        {
+          "person": "jpn.yukio_hatoyama",
+          "from": "2009-09-16",
+          "to": "2010-06-08"
+        },
+        {
+          "person": "jpn.naoto_kan",
+          "from": "2010-06-08",
+          "to": "2011-09-02"
+        },
+        {
+          "person": "jpn.yoshihiko_noda",
+          "from": "2011-09-02",
+          "to": "2012-12-26"
+        },
+        {
+          "person": "jpn.shinzo_abe",
+          "from": "2012-12-26",
+          "to": "2020-09-16"
+        },
+        {
+          "person": "jpn.yoshihide_suga",
+          "from": "2020-09-16",
+          "to": "2021-10-04"
+        },
+        {
+          "person": "jpn.fumio_kishida",
+          "from": "2021-10-04",
+          "to": "2024-10-01"
+        },
+        {
+          "person": "jpn.shigeru_ishiba",
+          "from": "2024-10-01",
+          "to": "2025-10-21"
+        },
+        {
+          "person": "jpn.sanae_takaichi",
+          "from": "2025-10-21"
+        }
+      ],
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/List_of_prime_ministers_of_Japan",
+          "title": "Wikipedia: List of prime ministers of Japan (tenure table incl. acting PM)",
+          "accessed": "2026-10-14"
+        },
+        {
+          "url": "https://www.wikidata.org/wiki/Q274948",
+          "title": "Wikidata: Prime Minister of Japan (position held by)",
+          "accessed": "2026-10-14"
+        }
+      ],
+      "confidence": "verified"
+    }
+  ],
+  "legislature": {
+    "name": {
+      "en": "National Diet",
+      "native": "国会",
+      "native_latin": "Kokkai"
+    },
+    "chambers": [
+      {
+        "id": "house_of_representatives",
+        "name": {
+          "en": "House of Representatives",
+          "native": "衆議院",
+          "native_latin": "Shūgiin"
+        },
+        "seats": 500,
+        "term_years": 4,
+        "elected": "direct",
+        "system": {
+          "type": "parallel",
+          "formula": "dhondt",
+          "district_model": "custom",
+          "pr_share": 0.4,
+          "note": "Parallel system: single-member constituencies by plurality plus party-list seats allocated by D'Hondt in regional blocks. 500 seats (300 + 200) on 1 January 2000; 480 (300 + 180) from the 2000 election, 475 from 2014 and 465 (289 + 176) from 2017. seats_2000 uses the party strengths at the June 2000 dissolution, as no 1 January 2000 count was found: the Liberal Party figure (36) adds back the 18 members who formed the Conservative Party in April 2000; 'others' are the Independent Association (4) and the Liberal League (1); the 10 seats not itemised are counted as independents."
+        },
+        "seats_2000": {
+          "jpn.ldp": 271,
+          "jpn.dpj": 95,
+          "jpn.komeito": 42,
+          "jpn.jcp": 26,
+          "jpn.liberal_1998": 36,
+          "jpn.sdp": 14,
+          "jpn.sakigake": 1,
+          "others": 5,
+          "independents": 10
+        },
+        "confidence_chamber": true,
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2000_Japanese_general_election",
+            "title": "Wikipedia: 2000 Japanese general election (party table: seats at dissolution)",
+            "accessed": "2026-10-14"
+          },
+          {
+            "url": "https://en.wikipedia.org/wiki/Elections_in_Japan",
+            "title": "Wikipedia: Elections in Japan (electoral system)",
+            "accessed": "2026-10-14"
+          },
+          {
+            "url": "https://en.wikipedia.org/wiki/New_Conservative_Party_(Japan)",
+            "title": "Wikipedia: New Conservative Party (Japan)",
+            "accessed": "2026-10-14"
+          }
+        ],
+        "confidence": "needs_review",
+        "review_note": "Seat counts are from the June 2000 dissolution, not 1 January 2000. Confirm the composition on 1 January 2000, in particular the Liberal Party total before the April 2000 split and the 10 unitemised seats (independents or vacancies)."
+      },
+      {
+        "id": "house_of_councillors",
+        "name": {
+          "en": "House of Councillors",
+          "native": "参議院",
+          "native_latin": "Sangiin"
+        },
+        "seats": 252,
+        "term_years": 6,
+        "elected": "direct",
+        "system": {
+          "type": "parallel",
+          "formula": "dhondt",
+          "district_model": "custom",
+          "pr_share": 0.4,
+          "note": "Half the chamber is elected every three years for six-year terms: prefectural constituencies plus a nationwide party-list block allocated by D'Hondt. 252 seats in 2000, reduced to 247 (2001) and 242 (2004), then raised to 245 (2019) and 248 (2022). The chamber cannot be dissolved. seats_2000 is the composition after the July 1998 election (the last one before 2000); 'others' are the Reformers Club (3) and one other member."
+        },
+        "seats_2000": {
+          "jpn.ldp": 102,
+          "jpn.dpj": 47,
+          "jpn.jcp": 23,
+          "jpn.komeito": 22,
+          "jpn.sdp": 13,
+          "jpn.liberal_1998": 12,
+          "jpn.sakigake": 3,
+          "others": 4,
+          "independents": 26
+        },
+        "confidence_chamber": false,
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/1998_Japanese_House_of_Councillors_election",
+            "title": "Wikipedia: 1998 Japanese House of Councillors election (results table: total seats after)",
+            "accessed": "2026-10-14"
+          },
+          {
+            "url": "https://en.wikipedia.org/wiki/Elections_in_Japan",
+            "title": "Wikipedia: Elections in Japan (electoral system)",
+            "accessed": "2026-10-14"
+          }
+        ],
+        "confidence": "needs_review",
+        "review_note": "Composition after the July 1998 election, not on 1 January 2000; party switching in 1998-99 (for example the November 1998 formation of New Komeito) is not reflected."
+      }
+    ]
+  },
+  "party_system": "multi_party",
+  "start_2000": {
+    "ruling_parties": [
+      "jpn.ldp",
+      "jpn.liberal_1998",
+      "jpn.komeito"
+    ],
+    "ideology_support": {
+      "liberal_conservative": 0.2,
+      "traditional_conservative": 0.05,
+      "centrist_liberal": 0.28,
+      "reformed_communist": 0.146,
+      "classical_liberal": 0.093,
+      "social_democrat": 0.113,
+      "social_liberal": 0.054,
+      "big_tent": 0.064
+    },
+    "ideology_support_note": "Derived from national PR vote shares in the July 1998 House of Councillors election: LDP 25.2% (split liberal_conservative 0.20 / traditional_conservative 0.05), DPJ 21.7% (centrist_liberal 0.14, social_liberal 0.04, social_democrat 0.035 for its ex-socialist wing), JCP 14.6% (reformed_communist), Komeito 13.8% (centrist_liberal, see the party note), Liberal Party 9.3% (classical_liberal), SDP 7.8% (social_democrat), Sakigake 1.4% (social_liberal), other parties about 6.3% (big_tent).",
+    "stability": 0.7,
+    "war_support": 0.1
+  },
+  "claims": [
+    {
+      "tag": "RUS",
+      "note": "Japan claims the four southernmost Kuril Islands (Etorofu, Kunashiri, Shikotan, Habomai; the 'Northern Territories'), administered by Russia."
+    },
+    {
+      "tag": "KOR",
+      "note": "Japan claims the Liancourt Rocks (Takeshima), administered by South Korea as Dokdo."
+    }
+  ],
+  "source": [
+    {
+      "url": "https://en.wikipedia.org/wiki/List_of_prime_ministers_of_Japan",
+      "title": "Wikipedia: List of prime ministers of Japan",
+      "accessed": "2026-10-14"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Elections_in_Japan",
+      "title": "Wikipedia: Elections in Japan",
+      "accessed": "2026-10-14"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/1998_Japanese_House_of_Councillors_election",
+      "title": "Wikipedia: 1998 Japanese House of Councillors election",
+      "accessed": "2026-10-14"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Kuril_Islands_dispute",
+      "title": "Wikipedia: Kuril Islands dispute",
+      "accessed": "2026-10-14"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Liancourt_Rocks_dispute",
+      "title": "Wikipedia: Liancourt Rocks dispute",
+      "accessed": "2026-10-14"
+    }
+  ],
+  "confidence": "verified"
+}

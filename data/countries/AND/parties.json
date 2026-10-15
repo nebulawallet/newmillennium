@@ -1,0 +1,395 @@
+{
+  "parties": [
+    {
+      "id": "and.pla",
+      "name": {
+        "en": "Liberals of Andorra",
+        "native": "Liberals d'Andorra"
+      },
+      "abbrev": {
+        "en": "L'A",
+        "native": "L'A"
+      },
+      "color": "#1F3A93",
+      "sub_ideology": "liberal_conservative",
+      "founded": 1992,
+      "status_2000": "active",
+      "leader_history": [
+        {
+          "person": "and.marc_forne_molne",
+          "from": 1992,
+          "title": "Founder and leader"
+        }
+      ],
+      "popularity_2000": 0.4227,
+      "popularity_note": "National-list share of the Liberal Union in the 1997 General Council election.",
+      "note": "Called Liberal Union (UL) 1992-2001, Liberal Party of Andorra (PLA) 2001-2012 and Liberals of Andorra since 2012. In 2009 it led the Reformist Coalition, the forerunner of Democrats for Andorra. Lead candidates included Josep Pintat Forné (2015) and Jordi Gallardo (2019).",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Liberal_Party_of_Andorra",
+          "title": "Wikipedia: Liberals of Andorra (infobox)",
+          "accessed": "2026-10-14"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/1997_Andorran_parliamentary_election",
+          "title": "Wikipedia: 1997 Andorran parliamentary election (results)",
+          "accessed": "2026-10-14"
+        }
+      ],
+      "confidence": "needs_review",
+      "review_note": "Only the founder is recorded as leader; add the party's presidents with dates (the fetched pages give lead candidates, not presidents)."
+    },
+    {
+      "id": "and.ps",
+      "name": {
+        "en": "Social Democratic Party",
+        "native": "Partit Socialdemòcrata"
+      },
+      "abbrev": {
+        "en": "PS",
+        "native": "PS"
+      },
+      "color": "#E2001A",
+      "sub_ideology": "social_democrat",
+      "founded": "2000-06-01",
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        {
+          "person": "and.jaume_bartumeu",
+          "from": 2000,
+          "to": 2013,
+          "title": "Leader and lead candidate (2005, 2009, 2011)"
+        },
+        {
+          "person": "and.pere_lopez_agras",
+          "from": 2015,
+          "title": "Lead candidate (2015, 2019, 2023)"
+        }
+      ],
+      "popularity_2000": 0,
+      "note": "Founded in June 2000 by members of the National Democratic Group and New Democracy. In 2023 it ran jointly with Social Democracy and Progress.",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Social_Democratic_Party_(Andorra)",
+          "title": "Wikipedia: Social Democratic Party (Andorra) (infobox: founded June 2000)",
+          "accessed": "2026-10-14"
+        },
+        {
+          "url": "https://ca.wikipedia.org/wiki/Partit_Socialdem%C3%B2crata_(Andorra)",
+          "title": "Viquipèdia (ca): Partit Socialdemòcrata (Bartumeu as president in 2009)",
+          "accessed": "2026-10-14"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/2005_Andorran_parliamentary_election",
+          "title": "Wikipedia: 2005 Andorran parliamentary election (results)",
+          "accessed": "2026-10-14"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/2023_Andorran_parliamentary_election",
+          "title": "Wikipedia: 2023 Andorran parliamentary election",
+          "accessed": "2026-10-14"
+        }
+      ],
+      "confidence": "needs_review",
+      "review_note": "Founding: sources give only June 2000; the day (01) is a placeholder because a bare year 2000 counts as before the game start for not_yet_founded parties. Leaders: Catalan Wikipedia confirms Bartumeu as PS president in 2009; other dates are inferred from lead candidacies and Wikidata memberships (he joined SDP in 2013). Confirm presidents and dates."
+    },
+    {
+      "id": "and.pd",
+      "name": {
+        "en": "Democratic Party",
+        "native": "Partit Demòcrata"
+      },
+      "abbrev": {
+        "en": "PD",
+        "native": "PD"
+      },
+      "color": "#FFCC00",
+      "sub_ideology": "christian_democrat",
+      "founded": 2001,
+      "status_2000": "not_yet_founded",
+      "leader_history": [],
+      "popularity_2000": 0,
+      "note": "Christian-democratic party formed from the National Democratic Group and the Democratic National Initiative; its only election was 2001.",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Democratic_Party_(Andorra)",
+          "title": "Wikipedia: Democratic Party (Andorra)",
+          "accessed": "2026-10-14"
+        }
+      ],
+      "confidence": "needs_review",
+      "review_note": "No leader found in the fetched sources."
+    },
+    {
+      "id": "and.lauredian_union",
+      "name": {
+        "en": "Lauredian Union",
+        "native": "Unió Laurediana"
+      },
+      "abbrev": {
+        "en": "UL",
+        "native": "UL"
+      },
+      "color": "#3A7D44",
+      "sub_ideology": "regionalist",
+      "founded": 2001,
+      "status_2000": "not_yet_founded",
+      "leader_history": [],
+      "popularity_2000": 0,
+      "regional_base": [
+        "Sant Julià de Lòria"
+      ],
+      "note": "Parish party of Sant Julià de Lòria. Wikipedia gives its foundation as 2001, but its 1997 results table already lists a Lauredian Union winning the parish's 2 seats; those 1997 seats are under 'others' in seats_2000.",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Lauredian_Union",
+          "title": "Wikipedia: Lauredian Union",
+          "accessed": "2026-10-14"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/1997_Andorran_parliamentary_election",
+          "title": "Wikipedia: 1997 Andorran parliamentary election",
+          "accessed": "2026-10-14"
+        }
+      ],
+      "confidence": "needs_review",
+      "review_note": "Resolve the founding year conflict (2001 per the infobox; a list of that name won 2 seats in 1997) and add leaders."
+    },
+    {
+      "id": "and.apc",
+      "name": {
+        "en": "Andorra for Change",
+        "native": "Andorra pel Canvi"
+      },
+      "abbrev": {
+        "en": "APC",
+        "native": "APC"
+      },
+      "color": "#7F7F7F",
+      "sub_ideology": "liberal_conservative",
+      "founded": 2008,
+      "dissolved": 2020,
+      "status_2000": "not_yet_founded",
+      "leader_history": [],
+      "popularity_2000": 0,
+      "note": "Founded by Eusebi Nomen (not in this file); 3 seats in 2009.",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Andorra_for_Change",
+          "title": "Wikipedia: Andorra for Change (infobox)",
+          "accessed": "2026-10-14"
+        }
+      ],
+      "confidence": "needs_review",
+      "review_note": "Add founder Eusebi Nomen as a person and leader; sub-ideology not checked."
+    },
+    {
+      "id": "and.da",
+      "name": {
+        "en": "Democrats for Andorra",
+        "native": "Demòcrates per Andorra"
+      },
+      "abbrev": {
+        "en": "DA",
+        "native": "DA"
+      },
+      "color": "#F28C28",
+      "sub_ideology": "liberal_conservative",
+      "founded": "2011-02-22",
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        {
+          "person": "and.antoni_marti",
+          "from": "2011-02-22",
+          "to": 2019,
+          "title": "Founder and leader"
+        },
+        {
+          "person": "and.xavier_espot_zamora",
+          "from": 2019,
+          "title": "President"
+        }
+      ],
+      "popularity_2000": 0,
+      "lineage": {
+        "formed_from": [
+          "and.pla"
+        ]
+      },
+      "note": "Successor of the 2009 Reformist Coalition, which was led by the Liberal Party. Espot's presidency start is approximate (lead candidate in 2019, president per the infobox).",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Democrats_for_Andorra",
+          "title": "Wikipedia: Democrats for Andorra (infobox)",
+          "accessed": "2026-10-14"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/2019_Andorran_parliamentary_election",
+          "title": "Wikipedia: 2019 Andorran parliamentary election (results)",
+          "accessed": "2026-10-14"
+        }
+      ],
+      "confidence": "needs_review",
+      "review_note": "Confirm the year Xavier Espot became party president (2019 assumed from his lead candidacy) and whether formed_from the Liberal Party is the right lineage (infobox: predecessor Reformist Coalition)."
+    },
+    {
+      "id": "and.sdp",
+      "name": {
+        "en": "Social Democracy and Progress",
+        "native": "Socialdemocràcia i Progrés"
+      },
+      "abbrev": {
+        "en": "SDP",
+        "native": "SDP"
+      },
+      "color": "#C2185B",
+      "sub_ideology": "social_democrat",
+      "founded": 2013,
+      "status_2000": "not_yet_founded",
+      "leader_history": [],
+      "popularity_2000": 0,
+      "lineage": {
+        "split_from": "and.ps"
+      },
+      "note": "Founded in May 2013 as a split from the PS; Jaume Bartumeu joined it (Wikidata). Lead candidate in 2015: Víctor Naudi.",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Social_Democracy_and_Progress",
+          "title": "Wikipedia: Social Democracy and Progress (infobox)",
+          "accessed": "2026-10-14"
+        }
+      ],
+      "confidence": "needs_review",
+      "review_note": "Add presidents with dates."
+    },
+    {
+      "id": "and.tv",
+      "name": {
+        "en": "Third Way",
+        "native": "Tercera Via"
+      },
+      "abbrev": {
+        "en": "TV",
+        "native": "TV"
+      },
+      "color": "#233364",
+      "sub_ideology": "national_conservative",
+      "founded": 2018,
+      "status_2000": "not_yet_founded",
+      "leader_history": [],
+      "popularity_2000": 0,
+      "lineage": {
+        "split_from": "and.pla"
+      },
+      "note": "Led by Josep Pintat Forné (not in this file); ran with the Lauredian Union in 2019 (4 seats). Andorra Forward is its de facto successor.",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Third_Way_(Andorra)",
+          "title": "Wikipedia: Third Way (Andorra) (infobox)",
+          "accessed": "2026-10-14"
+        }
+      ],
+      "confidence": "needs_review",
+      "review_note": "Sub-ideology not checked against a source; add Josep Pintat Forné as leader."
+    },
+    {
+      "id": "and.cc",
+      "name": {
+        "en": "Committed Citizens",
+        "native": "Ciutadans Compromesos"
+      },
+      "abbrev": {
+        "en": "CC",
+        "native": "CC"
+      },
+      "color": "#6E2B8C",
+      "sub_ideology": "social_liberal",
+      "founded": 2019,
+      "status_2000": "not_yet_founded",
+      "leader_history": [],
+      "popularity_2000": 0,
+      "note": "Social-liberal and localist group (list of parties); won 2 parish seats in 2019 and ran with Democrats for Andorra in 2023. Lead candidate in 2019: David Baró Riba.",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/List_of_political_parties_in_Andorra",
+          "title": "Wikipedia: List of political parties in Andorra (Committed Citizens: social liberalism, environmentalism, localism)",
+          "accessed": "2026-10-14"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/2019_Andorran_parliamentary_election",
+          "title": "Wikipedia: 2019 Andorran parliamentary election (results)",
+          "accessed": "2026-10-14"
+        }
+      ],
+      "confidence": "needs_review",
+      "review_note": "Founding year assumed from its first election (2019); confirm the founding date and leaders."
+    },
+    {
+      "id": "and.ae",
+      "name": {
+        "en": "Andorra Forward",
+        "native": "Andorra Endavant"
+      },
+      "abbrev": {
+        "en": "AE",
+        "native": "AE"
+      },
+      "color": "#1E40AF",
+      "sub_ideology": "right_populist",
+      "founded": "2021-11-18",
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        {
+          "person": "and.carine_montaner_raynaud",
+          "from": "2021-11-18",
+          "title": "Founder and leader"
+        }
+      ],
+      "popularity_2000": 0,
+      "lineage": {
+        "split_from": "and.tv"
+      },
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Andorra_Forward",
+          "title": "Wikipedia: Andorra Forward (infobox)",
+          "accessed": "2026-10-14"
+        }
+      ],
+      "confidence": "needs_review",
+      "review_note": "Sub-ideology (right_populist) not checked against a fetched source."
+    },
+    {
+      "id": "and.concordia",
+      "name": {
+        "en": "Concord",
+        "native": "Concòrdia"
+      },
+      "abbrev": {
+        "en": "Concòrdia",
+        "native": "Concòrdia"
+      },
+      "color": "#008080",
+      "sub_ideology": "centrist_liberal",
+      "founded": "2022-07-06",
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        {
+          "person": "and.cerni_escale",
+          "from": "2022-07-06",
+          "title": "Leader"
+        }
+      ],
+      "popularity_2000": 0,
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Concord_(political_party)",
+          "title": "Wikipedia: Concord (infobox)",
+          "accessed": "2026-10-14"
+        }
+      ],
+      "confidence": "needs_review",
+      "review_note": "Sub-ideology (centrist_liberal) not checked against a fetched source; Escalé's start as leader assumed from the founding date."
+    }
+  ]
+}

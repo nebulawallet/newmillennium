@@ -1,0 +1,241 @@
+{
+  "rules": [
+    {
+      "kind": "legislative",
+      "chamber": "storting",
+      "every_years": 4,
+      "anchor": "2025-09-08",
+      "snap_possible": false,
+      "note": "Elections every four years, normally on the second Monday of September (some municipalities also vote on the Sunday). The Constitution does not allow snap elections: the Storting always serves its full four-year term."
+    }
+  ],
+  "elections": [
+    {
+      "id": "storting_2001",
+      "date": "2001-09-10",
+      "kind": "legislative",
+      "chamber": "storting",
+      "historical": {
+        "candidates": [
+          { "person": "nor.jens_stoltenberg", "party": "nor.ap", "round": 1 },
+          { "person": "nor.jan_petersen", "party": "nor.h", "round": 1 },
+          { "person": "nor.carl_i_hagen", "party": "nor.frp", "round": 1 }
+        ],
+        "party_results": [
+          { "party": "nor.ap", "share": 0.2429, "seats": 43 },
+          { "party": "nor.h", "share": 0.2121, "seats": 38 },
+          { "party": "nor.frp", "share": 0.1464, "seats": 26 },
+          { "party": "nor.sv", "share": 0.1255, "seats": 23 },
+          { "party": "nor.krf", "share": 0.1241, "seats": 22 },
+          { "party": "nor.sp", "share": 0.0556, "seats": 10 },
+          { "party": "nor.v", "share": 0.0391, "seats": 2 },
+          { "party": "nor.kyst", "share": 0.0175, "seats": 1 },
+          { "party": "nor.rv", "share": 0.0119, "seats": 0 }
+        ],
+        "winner": "nor.krf",
+        "turnout": 0.755,
+        "note": "Held on 9-10 September 2001. Shares computed from the vote counts in the results table. Labour remained the largest party but Kjell Magne Bondevik (KrF) formed a KrF-H-V minority coalition (Bondevik II) on 19 October 2001. Candidates listed are the leaders shown for the three largest parties.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2001_Norwegian_parliamentary_election", "title": "Wikipedia: 2001 Norwegian parliamentary election", "accessed": "2026-10-14" },
+          { "url": "https://en.wikipedia.org/wiki/List_of_prime_ministers_of_Norway", "title": "Wikipedia: List of prime ministers of Norway", "accessed": "2026-10-14" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "storting_2005",
+      "date": "2005-09-12",
+      "kind": "legislative",
+      "chamber": "storting",
+      "historical": {
+        "candidates": [
+          { "person": "nor.jens_stoltenberg", "party": "nor.ap", "round": 1 },
+          { "person": "nor.carl_i_hagen", "party": "nor.frp", "round": 1 },
+          { "person": "nor.erna_solberg", "party": "nor.h", "round": 1 }
+        ],
+        "party_results": [
+          { "party": "nor.ap", "share": 0.3269, "seats": 61 },
+          { "party": "nor.frp", "share": 0.2206, "seats": 38 },
+          { "party": "nor.h", "share": 0.141, "seats": 23 },
+          { "party": "nor.sv", "share": 0.0883, "seats": 15 },
+          { "party": "nor.krf", "share": 0.0678, "seats": 11 },
+          { "party": "nor.sp", "share": 0.0648, "seats": 11 },
+          { "party": "nor.v", "share": 0.0592, "seats": 10 },
+          { "party": "nor.rv", "share": 0.0123, "seats": 0 },
+          { "party": "nor.kyst", "share": 0.0083, "seats": 0 }
+        ],
+        "winner": "nor.ap",
+        "turnout": 0.774,
+        "note": "Held on 11-12 September 2005; the Storting grew from 165 to 169 seats. The Ap-SV-Sp red-green coalition (Stoltenberg II) took office on 17 October 2005.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2005_Norwegian_parliamentary_election", "title": "Wikipedia: 2005 Norwegian parliamentary election", "accessed": "2026-10-14" },
+          { "url": "https://en.wikipedia.org/wiki/List_of_prime_ministers_of_Norway", "title": "Wikipedia: List of prime ministers of Norway", "accessed": "2026-10-14" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "storting_2009",
+      "date": "2009-09-14",
+      "kind": "legislative",
+      "chamber": "storting",
+      "historical": {
+        "candidates": [
+          { "person": "nor.jens_stoltenberg", "party": "nor.ap", "round": 1 },
+          { "person": "nor.siv_jensen", "party": "nor.frp", "round": 1 },
+          { "person": "nor.erna_solberg", "party": "nor.h", "round": 1 }
+        ],
+        "party_results": [
+          { "party": "nor.ap", "share": 0.3537, "seats": 64 },
+          { "party": "nor.frp", "share": 0.2291, "seats": 41 },
+          { "party": "nor.h", "share": 0.1724, "seats": 30 },
+          { "party": "nor.sv", "share": 0.062, "seats": 11 },
+          { "party": "nor.sp", "share": 0.0615, "seats": 11 },
+          { "party": "nor.krf", "share": 0.0554, "seats": 10 },
+          { "party": "nor.v", "share": 0.0388, "seats": 2 },
+          { "party": "nor.rodt", "share": 0.0135, "seats": 0 }
+        ],
+        "winner": "nor.ap",
+        "turnout": 0.764,
+        "note": "Held on 13-14 September 2009. The red-green coalition kept its majority and Stoltenberg II continued. First Storting without the Odelsting/Lagting division.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2009_Norwegian_parliamentary_election", "title": "Wikipedia: 2009 Norwegian parliamentary election", "accessed": "2026-10-14" },
+          { "url": "https://en.wikipedia.org/wiki/Storting", "title": "Wikipedia: Storting (end of qualified unicameralism in 2009)", "accessed": "2026-10-14" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "storting_2013",
+      "date": "2013-09-09",
+      "kind": "legislative",
+      "chamber": "storting",
+      "historical": {
+        "candidates": [
+          { "person": "nor.jens_stoltenberg", "party": "nor.ap", "round": 1 },
+          { "person": "nor.erna_solberg", "party": "nor.h", "round": 1 },
+          { "person": "nor.siv_jensen", "party": "nor.frp", "round": 1 }
+        ],
+        "party_results": [
+          { "party": "nor.ap", "share": 0.3084, "seats": 55 },
+          { "party": "nor.h", "share": 0.2681, "seats": 48 },
+          { "party": "nor.frp", "share": 0.1635, "seats": 29 },
+          { "party": "nor.krf", "share": 0.0559, "seats": 10 },
+          { "party": "nor.sp", "share": 0.0548, "seats": 10 },
+          { "party": "nor.v", "share": 0.0523, "seats": 9 },
+          { "party": "nor.sv", "share": 0.0409, "seats": 7 },
+          { "party": "nor.mdg", "share": 0.0279, "seats": 1 },
+          { "party": "nor.rodt", "share": 0.0108, "seats": 0 }
+        ],
+        "winner": "nor.h",
+        "turnout": 0.783,
+        "note": "Held on 8-9 September 2013. Erna Solberg formed an H-FrP minority coalition on 16 October 2013.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2013_Norwegian_parliamentary_election", "title": "Wikipedia: 2013 Norwegian parliamentary election", "accessed": "2026-10-14" },
+          { "url": "https://en.wikipedia.org/wiki/List_of_prime_ministers_of_Norway", "title": "Wikipedia: List of prime ministers of Norway", "accessed": "2026-10-14" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "storting_2017",
+      "date": "2017-09-11",
+      "kind": "legislative",
+      "chamber": "storting",
+      "historical": {
+        "candidates": [
+          { "person": "nor.jonas_gahr_store", "party": "nor.ap", "round": 1 },
+          { "person": "nor.erna_solberg", "party": "nor.h", "round": 1 },
+          { "person": "nor.siv_jensen", "party": "nor.frp", "round": 1 }
+        ],
+        "party_results": [
+          { "party": "nor.ap", "share": 0.2737, "seats": 49 },
+          { "party": "nor.h", "share": 0.2504, "seats": 45 },
+          { "party": "nor.frp", "share": 0.1519, "seats": 27 },
+          { "party": "nor.sp", "share": 0.1032, "seats": 19 },
+          { "party": "nor.sv", "share": 0.0602, "seats": 11 },
+          { "party": "nor.v", "share": 0.0437, "seats": 8 },
+          { "party": "nor.krf", "share": 0.042, "seats": 8 },
+          { "party": "nor.mdg", "share": 0.0324, "seats": 1 },
+          { "party": "nor.rodt", "share": 0.0241, "seats": 1 }
+        ],
+        "winner": "nor.h",
+        "turnout": 0.784,
+        "note": "The Solberg government continued. During the term the Liberals and then the Christian Democrats joined it (a majority government from 2019), and the Progress Party later left.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2017_Norwegian_parliamentary_election", "title": "Wikipedia: 2017 Norwegian parliamentary election", "accessed": "2026-10-14" },
+          { "url": "https://en.wikipedia.org/wiki/List_of_prime_ministers_of_Norway", "title": "Wikipedia: List of prime ministers of Norway (Solberg cabinet compositions)", "accessed": "2026-10-14" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "storting_2021",
+      "date": "2021-09-13",
+      "kind": "legislative",
+      "chamber": "storting",
+      "historical": {
+        "candidates": [
+          { "person": "nor.jonas_gahr_store", "party": "nor.ap", "round": 1 },
+          { "person": "nor.erna_solberg", "party": "nor.h", "round": 1 },
+          { "person": "nor.trygve_slagsvold_vedum", "party": "nor.sp", "round": 1 }
+        ],
+        "party_results": [
+          { "party": "nor.ap", "share": 0.2625, "seats": 48 },
+          { "party": "nor.h", "share": 0.2035, "seats": 36 },
+          { "party": "nor.sp", "share": 0.135, "seats": 28 },
+          { "party": "nor.frp", "share": 0.1161, "seats": 21 },
+          { "party": "nor.sv", "share": 0.0764, "seats": 13 },
+          { "party": "nor.rodt", "share": 0.0472, "seats": 8 },
+          { "party": "nor.v", "share": 0.0461, "seats": 8 },
+          { "party": "nor.mdg", "share": 0.0394, "seats": 3 },
+          { "party": "nor.krf", "share": 0.038, "seats": 3 },
+          { "party": "nor.pf", "share": 0.0017, "seats": 1 }
+        ],
+        "winner": "nor.ap",
+        "turnout": 0.772,
+        "note": "Jonas Gahr Støre formed an Ap-Sp minority coalition on 14 October 2021. The 2025 election article gives Labour's 2021 share as 26.35%; the 2021 results table gives 783,394 votes (26.25%).",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2021_Norwegian_parliamentary_election", "title": "Wikipedia: 2021 Norwegian parliamentary election", "accessed": "2026-10-14" },
+          { "url": "https://en.wikipedia.org/wiki/List_of_prime_ministers_of_Norway", "title": "Wikipedia: List of prime ministers of Norway", "accessed": "2026-10-14" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "storting_2025",
+      "date": "2025-09-08",
+      "kind": "legislative",
+      "chamber": "storting",
+      "historical": {
+        "candidates": [
+          { "person": "nor.jonas_gahr_store", "party": "nor.ap", "round": 1 },
+          { "person": "nor.sylvi_listhaug", "party": "nor.frp", "round": 1 },
+          { "person": "nor.erna_solberg", "party": "nor.h", "round": 1 }
+        ],
+        "party_results": [
+          { "party": "nor.ap", "share": 0.2802, "seats": 53 },
+          { "party": "nor.frp", "share": 0.2385, "seats": 47 },
+          { "party": "nor.h", "share": 0.1465, "seats": 24 },
+          { "party": "nor.sv", "share": 0.0563, "seats": 9 },
+          { "party": "nor.sp", "share": 0.0559, "seats": 9 },
+          { "party": "nor.rodt", "share": 0.0532, "seats": 9 },
+          { "party": "nor.mdg", "share": 0.0474, "seats": 8 },
+          { "party": "nor.krf", "share": 0.042, "seats": 7 },
+          { "party": "nor.v", "share": 0.0369, "seats": 3 }
+        ],
+        "winner": "nor.ap",
+        "turnout": 0.801,
+        "note": "The Centre Party had left the government in January 2025, leaving a Labour-only cabinet. The red-green parties won 88 seats and Støre continued with a Labour minority government.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2025_Norwegian_parliamentary_election", "title": "Wikipedia: 2025 Norwegian parliamentary election", "accessed": "2026-10-14" }
+        ],
+        "confidence": "verified"
+      }
+    }
+  ],
+  "source": [
+    { "url": "https://en.wikipedia.org/wiki/Storting", "title": "Wikipedia: Storting (elections and electoral system)", "accessed": "2026-10-14" }
+  ],
+  "confidence": "verified"
+}

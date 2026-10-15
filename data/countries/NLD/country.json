@@ -1,0 +1,130 @@
+{
+  "tag": "NLD",
+  "name": { "en": "Netherlands", "native": "Nederland", "official": { "en": "Kingdom of the Netherlands", "native": "Koninkrijk der Nederlanden" } },
+  "adjective": "Dutch",
+  "culture_primary": "dutch",
+  "government": {
+    "type": "constitutional_monarchy",
+    "effective_executive": "nld.prime_minister",
+    "head_of_state_office": "nld.monarch",
+    "head_of_government_office": "nld.prime_minister",
+    "constitution": {
+      "term_limit_amendable": true,
+      "emergency_powers": true,
+      "referendum_required_for": []
+    },
+    "note": "Parliamentary monarchy. Cabinets are formed by coalition negotiation after each House of Representatives election and depend on the confidence of that chamber; the monarch's role is largely ceremonial. National referendums are not part of the regular constitutional order: a consultative referendum on the European Constitution was held in 2005, and the Advisory Referendum Act (in force from 1 July 2015 until its repeal in 2018) produced the 2016 and 2018 referendums."
+  },
+  "offices": [
+    {
+      "id": "nld.monarch",
+      "title": { "en": "Monarch of the Netherlands", "native": "Koning(in) der Nederlanden" },
+      "role": "head_of_state",
+      "power_weight": 0.05,
+      "selection": "hereditary",
+      "succession": { "type": "line", "heirs": ["nld.willem_alexander", "nld.prince_friso", "nld.prince_constantijn"] },
+      "holders": [
+        { "person": "nld.beatrix", "from": "1980-04-30", "to": "2013-04-30", "note": "Abdicated in favour of her eldest son." },
+        { "person": "nld.willem_alexander", "from": "2013-04-30" }
+      ],
+      "note": "Heirs are the line of succession on 2000-01-01: Beatrix's sons Willem-Alexander, Friso and Constantijn. Friso left the Royal House on his 2004 marriage without parliamentary consent and died in 2013. Since 2013 the heir is Catharina-Amalia, Princess of Orange (nld.catharina_amalia).",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/Beatrix_of_the_Netherlands", "title": "Wikipedia: Beatrix of the Netherlands (reign 30 April 1980 - 30 April 2013)", "accessed": "2026-10-14" },
+        { "url": "https://en.wikipedia.org/wiki/Willem-Alexander_of_the_Netherlands", "title": "Wikipedia: Willem-Alexander of the Netherlands (reign from 30 April 2013)", "accessed": "2026-10-14" },
+        { "url": "https://en.wikipedia.org/wiki/Prince_Friso_of_Orange-Nassau", "title": "Wikipedia: Prince Friso of Orange-Nassau", "accessed": "2026-10-14" },
+        { "url": "https://en.wikipedia.org/wiki/Monarchy_of_the_Netherlands", "title": "Wikipedia: Monarchy of the Netherlands", "accessed": "2026-10-14" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "nld.prime_minister",
+      "title": { "en": "Prime Minister of the Netherlands", "native": "Minister-president van Nederland" },
+      "role": "head_of_government",
+      "power_weight": 0.95,
+      "selection": "legislature",
+      "appointed_by": "nld.monarch",
+      "term_years": 4,
+      "holders": [
+        { "person": "nld.wim_kok", "from": "1994-08-22", "to": "2002-07-22", "note": "Second Kok cabinet (PvdA-VVD-D66) from 1998." },
+        { "person": "nld.jan_peter_balkenende", "from": "2002-07-22", "to": "2010-10-14", "note": "Four cabinets: CDA-LPF-VVD (2002), CDA-VVD-D66 (2003), CDA-VVD (2006), CDA-PvdA-CU (2007)." },
+        { "person": "nld.mark_rutte", "from": "2010-10-14", "to": "2024-07-02", "note": "Four cabinets: VVD-CDA (2010, with PVV support), VVD-PvdA (2012), VVD-CDA-D66-CU (2017 and 2022)." },
+        { "person": "nld.dick_schoof", "from": "2024-07-02", "to": "2026-02-23", "note": "Non-partisan Prime Minister of a PVV-VVD-NSC-BBB cabinet." },
+        { "person": "nld.rob_jetten", "from": "2026-02-23", "note": "D66-VVD-CDA minority cabinet sworn in on 23 February 2026." }
+      ],
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/List_of_prime_ministers_of_the_Netherlands", "title": "Wikipedia: List of prime ministers of the Netherlands (dates and cabinet parties)", "accessed": "2026-10-14" },
+        { "url": "https://en.wikipedia.org/wiki/Jetten_cabinet", "title": "Wikipedia: Jetten cabinet (formed 23 February 2026)", "accessed": "2026-10-14" }
+      ],
+      "confidence": "verified"
+    }
+  ],
+  "legislature": {
+    "name": { "en": "States General", "native": "Staten-Generaal" },
+    "chambers": [
+      {
+        "id": "house_of_representatives",
+        "name": { "en": "House of Representatives", "native": "Tweede Kamer" },
+        "seats": 150,
+        "term_years": 4,
+        "elected": "direct",
+        "system": {
+          "type": "list_pr",
+          "formula": "dhondt",
+          "district_model": "national",
+          "note": "List proportional representation with seats allocated nationally; the legal threshold is 1/150 of the valid votes (one full quota). seats_2000 is the result of the 6 May 1998 election; changes of group membership between May 1998 and January 2000 were not checked. The orthodox Protestant RPF (3) and GPV (2) merged into the ChristenUnie on 22 January 2000."
+        },
+        "seats_2000": { "nld.pvda": 45, "nld.vvd": 38, "nld.cda": 29, "nld.d66": 14, "nld.gl": 11, "nld.sp": 5, "nld.rpf": 3, "nld.sgp": 3, "nld.gpv": 2 },
+        "confidence_chamber": true,
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/1998_Dutch_general_election", "title": "Wikipedia: 1998 Dutch general election (results)", "accessed": "2026-10-14" },
+          { "url": "https://en.wikipedia.org/wiki/Reformed_Political_League", "title": "Wikipedia: Reformed Political League (union with the RPF formalised 22 January 2000)", "accessed": "2026-10-14" }
+        ],
+        "confidence": "verified"
+      },
+      {
+        "id": "senate",
+        "name": { "en": "Senate", "native": "Eerste Kamer" },
+        "seats": 75,
+        "term_years": 4,
+        "elected": "indirect",
+        "system": {
+          "type": "indirect",
+          "district_model": "national",
+          "note": "Elected every four years, in May after the provincial elections, by the members of the twelve provincial councils (and, since 2019, electoral colleges for the Caribbean Netherlands, later also one for Dutch expatriates), each weighted by population. seats_2000 is the result of the 1999 Senate election as given in the 'previous' column of the 2003 election article. 'others' is the joint GPV-RPF Senate group (4 seats; the two parties' Senate groups merged in 1999), whose split between the parties was not found. Cabinets depend on the confidence of the House of Representatives, so this chamber is not treated as a confidence chamber."
+        },
+        "seats_2000": { "nld.cda": 20, "nld.vvd": 19, "nld.pvda": 15, "nld.gl": 8, "nld.d66": 4, "nld.sp": 2, "nld.sgp": 2, "nld.osf": 1, "others": 4 },
+        "confidence_chamber": false,
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2003_Dutch_Senate_election", "title": "Wikipedia: 2003 Dutch Senate election (seats won in 1999)", "accessed": "2026-10-14" },
+          { "url": "https://en.wikipedia.org/wiki/Reformed_Political_League", "title": "Wikipedia: Reformed Political League (GPV and RPF Senate groups merged in 1999)", "accessed": "2026-10-14" }
+        ],
+        "confidence": "verified"
+      }
+    ]
+  },
+  "party_system": "multi_party",
+  "start_2000": {
+    "ruling_parties": ["nld.pvda", "nld.vvd", "nld.d66"],
+    "ideology_support": {
+      "social_democrat": 0.29,
+      "classical_liberal": 0.247,
+      "christian_democrat": 0.184,
+      "social_liberal": 0.09,
+      "green": 0.075,
+      "democratic_socialist": 0.035,
+      "christian_conservative": 0.051,
+      "right_populist": 0.007,
+      "big_tent": 0.021
+    },
+    "ideology_support_note": "Derived from the 1998 House of Representatives vote (shares of valid votes): PvdA 29.0% (social democrat), VVD 24.7% (classical liberal), CDA 18.4% (Christian democrat), D66 9.0% (social liberal), GroenLinks 7.3% plus The Greens 0.2% (green), SP 3.5% (democratic socialist), RPF 2.0% + SGP 1.8% + GPV 1.3% (Christian conservative), Centre Democrats 0.6% (right populist), and the pensioners' lists and other minor lists about 2.1% (big tent).",
+    "stability": 0.85,
+    "war_support": 0.3
+  },
+  "claims": [],
+  "source": [
+    { "url": "https://en.wikipedia.org/wiki/1998_Dutch_general_election", "title": "Wikipedia: 1998 Dutch general election", "accessed": "2026-10-14" },
+    { "url": "https://en.wikipedia.org/wiki/List_of_prime_ministers_of_the_Netherlands", "title": "Wikipedia: List of prime ministers of the Netherlands", "accessed": "2026-10-14" },
+    { "url": "https://en.wikipedia.org/wiki/Elections_in_the_Netherlands", "title": "Wikipedia: Elections in the Netherlands", "accessed": "2026-10-14" }
+  ],
+  "confidence": "verified"
+}

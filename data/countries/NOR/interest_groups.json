@@ -1,0 +1,15 @@
+{
+  "note": "Influence and approval are gameplay starting values for 1 January 2000 (KrF-Sp-V centrist minority government under Kjell Magne Bondevik), not measured data. Influence reflects institutional weight: strong trade unions linked to Labour, organised employers, influential rural and fishing interests, a free press, a state Lutheran church, and a conscript-based NATO military under civilian control.",
+  "interest_groups": [
+    { "type": "military", "influence": 0.12, "approval": 52 },
+    { "type": "security_services", "influence": 0.08, "approval": 55 },
+    { "type": "business", "influence": 0.42, "approval": 48 },
+    { "type": "labour_unions", "influence": 0.5, "approval": 48, "note": "LO unions are closely tied to Labour, which was in opposition on 1 January 2000." },
+    { "type": "religious_establishment", "influence": 0.15, "approval": 62, "note": "State Lutheran church; the government was led by the Christian Democrats." },
+    { "type": "rural", "influence": 0.25, "approval": 60, "note": "Includes farming and coastal fishing districts; the Centre Party was in government." },
+    { "type": "urban_middle_class", "influence": 0.5, "approval": 50 },
+    { "type": "minorities", "influence": 0.07, "approval": 55, "note": "Includes the Sami and immigrant communities." },
+    { "type": "youth_students", "influence": 0.18, "approval": 50 },
+    { "type": "media", "influence": 0.4, "approval": 50 }
+  ]
+}

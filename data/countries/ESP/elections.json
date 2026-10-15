@@ -1,0 +1,1511 @@
+{
+ "rules": [
+  {
+   "kind": "legislative",
+   "chamber": "congress",
+   "every_years": 4,
+   "anchor": "2023-07-23",
+   "snap_possible": true,
+   "note": "The Cortes are elected for at most four years; the Prime Minister may request an early dissolution, and a repeat election follows automatically if no candidate is invested within two months of the first investiture vote (2016, November 2019). On 2 October 2026 the Cortes defeated the government's housing relief plans and Pedro Sánchez dissolved the Cortes, calling a general election for 29 November 2026 (Wikipedia, 'Next Spanish general election', fetched 2026-10-14)."
+  },
+  {
+   "kind": "legislative_upper",
+   "chamber": "senate",
+   "every_years": 4,
+   "anchor": "2023-07-23",
+   "snap_possible": true,
+   "note": "Elected on the same day as the Congress."
+  }
+ ],
+ "elections": [
+  {
+   "id": "general_2000",
+   "date": "2000-03-12",
+   "kind": "legislative",
+   "chamber": "congress",
+   "historical": {
+    "candidates": [
+     {
+      "person": "esp.jose_maria_aznar",
+      "party": "esp.pp",
+      "round": 1
+     },
+     {
+      "person": "esp.joaquin_almunia",
+      "party": "esp.psoe",
+      "round": 1
+     },
+     {
+      "person": "esp.francisco_frutos",
+      "party": "esp.iu",
+      "round": 1
+     }
+    ],
+    "party_results": [
+     {
+      "party": "esp.pp",
+      "share": 0.4452,
+      "seats": 183
+     },
+     {
+      "party": "esp.psoe",
+      "share": 0.3416,
+      "seats": 125
+     },
+     {
+      "party": "esp.iu",
+      "share": 0.0545,
+      "seats": 8
+     },
+     {
+      "party": "esp.ciu",
+      "share": 0.0419,
+      "seats": 15
+     },
+     {
+      "party": "esp.pnv",
+      "share": 0.0153,
+      "seats": 7
+     },
+     {
+      "party": "esp.bng",
+      "share": 0.0132,
+      "seats": 3
+     },
+     {
+      "party": "esp.cc",
+      "share": 0.0107,
+      "seats": 4
+     },
+     {
+      "party": "esp.pa",
+      "share": 0.0089,
+      "seats": 1
+     },
+     {
+      "party": "esp.erc",
+      "share": 0.0084,
+      "seats": 1
+     },
+     {
+      "party": "esp.icv",
+      "share": 0.0051,
+      "seats": 1
+     },
+     {
+      "party": "esp.ea",
+      "share": 0.0043,
+      "seats": 1
+     },
+     {
+      "party": "esp.cha",
+      "share": 0.0033,
+      "seats": 1
+     }
+    ],
+    "winner": "esp.pp",
+    "turnout": 0.687,
+    "note": "PP absolute majority. PSOE ran as PSOE-Progressives with the Democratic Party of the New Left. PP figures include its Navarrese partner UPN.",
+    "source": [
+     {
+      "url": "https://en.wikipedia.org/wiki/2000_Spanish_general_election",
+      "title": "Wikipedia: 2000 Spanish general election (results tables)",
+      "accessed": "2026-10-14"
+     }
+    ],
+    "confidence": "verified"
+   }
+  },
+  {
+   "id": "senate_2000",
+   "date": "2000-03-12",
+   "kind": "legislative_upper",
+   "chamber": "senate",
+   "historical": {
+    "party_results": [
+     {
+      "party": "esp.pp",
+      "seats": 127,
+      "seats_won": 127
+     },
+     {
+      "party": "esp.psoe",
+      "seats": 53,
+      "seats_won": 53
+     },
+     {
+      "party": "esp.ciu",
+      "seats": 8,
+      "seats_won": 8
+     },
+     {
+      "party": "esp.pnv",
+      "seats": 6,
+      "seats_won": 6
+     },
+     {
+      "party": "esp.cc",
+      "seats": 5,
+      "seats_won": 5
+     },
+     {
+      "party": "others",
+      "seats": 9,
+      "seats_won": 9
+     }
+    ],
+    "winner": "esp.pp",
+    "note": "Only the 208 directly elected Senate seats are recorded: 'seats' and 'seats_won' both give the seats won, because the senators appointed by the regional legislatures (about 50, varying over time) are not included. 'others' = the Catalan Agreement of Progress (PSC-ERC-IC-V, 8) and the Lanzarote Independents Party (1).",
+    "source": [
+     {
+      "url": "https://en.wikipedia.org/wiki/2000_Spanish_general_election",
+      "title": "Wikipedia: 2000 Spanish general election (Senate results table)",
+      "accessed": "2026-10-14"
+     }
+    ],
+    "confidence": "needs_review",
+    "review_note": "seats should be the full Senate composition after the election; the regionally appointed senators (about 50) still need to be added by party."
+   }
+  },
+  {
+   "id": "general_2004",
+   "date": "2004-03-14",
+   "kind": "legislative",
+   "chamber": "congress",
+   "historical": {
+    "candidates": [
+     {
+      "person": "esp.jose_luis_rodriguez_zapatero",
+      "party": "esp.psoe",
+      "round": 1
+     },
+     {
+      "person": "esp.mariano_rajoy",
+      "party": "esp.pp",
+      "round": 1
+     },
+     {
+      "person": "esp.gaspar_llamazares",
+      "party": "esp.iu",
+      "round": 1
+     }
+    ],
+    "party_results": [
+     {
+      "party": "esp.psoe",
+      "share": 0.4259,
+      "seats": 164
+     },
+     {
+      "party": "esp.pp",
+      "share": 0.3771,
+      "seats": 148
+     },
+     {
+      "party": "esp.iu",
+      "share": 0.0496,
+      "seats": 5
+     },
+     {
+      "party": "esp.ciu",
+      "share": 0.0323,
+      "seats": 10
+     },
+     {
+      "party": "esp.erc",
+      "share": 0.0252,
+      "seats": 8
+     },
+     {
+      "party": "esp.pnv",
+      "share": 0.0163,
+      "seats": 7
+     },
+     {
+      "party": "esp.cc",
+      "share": 0.0091,
+      "seats": 3
+     },
+     {
+      "party": "esp.bng",
+      "share": 0.0081,
+      "seats": 2
+     },
+     {
+      "party": "esp.cha",
+      "share": 0.0036,
+      "seats": 1
+     },
+     {
+      "party": "esp.ea",
+      "share": 0.0031,
+      "seats": 1
+     },
+     {
+      "party": "esp.nabai",
+      "share": 0.0024,
+      "seats": 1
+     }
+    ],
+    "winner": "esp.psoe",
+    "turnout": 0.757,
+    "note": "PSOE minority government under Zapatero. PP figures include UPN.",
+    "source": [
+     {
+      "url": "https://en.wikipedia.org/wiki/2004_Spanish_general_election",
+      "title": "Wikipedia: 2004 Spanish general election (results tables)",
+      "accessed": "2026-10-14"
+     }
+    ],
+    "confidence": "verified"
+   }
+  },
+  {
+   "id": "senate_2004",
+   "date": "2004-03-14",
+   "kind": "legislative_upper",
+   "chamber": "senate",
+   "historical": {
+    "party_results": [
+     {
+      "party": "esp.pp",
+      "seats": 102,
+      "seats_won": 102
+     },
+     {
+      "party": "esp.psoe",
+      "seats": 81,
+      "seats_won": 81
+     },
+     {
+      "party": "esp.ciu",
+      "seats": 4,
+      "seats_won": 4
+     },
+     {
+      "party": "esp.pnv",
+      "seats": 6,
+      "seats_won": 6
+     },
+     {
+      "party": "esp.cc",
+      "seats": 3,
+      "seats_won": 3
+     },
+     {
+      "party": "others",
+      "seats": 12,
+      "seats_won": 12
+     }
+    ],
+    "winner": "esp.psoe",
+    "note": "Only the 208 directly elected Senate seats are recorded: 'seats' and 'seats_won' both give the seats won, because the senators appointed by the regional legislatures (about 50, varying over time) are not included. 'others' = the Catalan Agreement of Progress (PSC-ERC-ICV-EUiA).",
+    "source": [
+     {
+      "url": "https://en.wikipedia.org/wiki/2004_Spanish_general_election",
+      "title": "Wikipedia: 2004 Spanish general election (Senate results table)",
+      "accessed": "2026-10-14"
+     }
+    ],
+    "confidence": "needs_review",
+    "review_note": "seats should be the full Senate composition after the election; the regionally appointed senators (about 50) still need to be added by party."
+   }
+  },
+  {
+   "id": "referendum_2005_eu_constitution",
+   "date": "2005-02-20",
+   "kind": "referendum",
+   "question": "Do you approve of the Treaty establishing a Constitution for Europe?",
+   "historical": {
+    "yes_share": 0.818,
+    "options": [
+     {
+      "label": "Yes",
+      "votes": 11057563
+     },
+     {
+      "label": "No",
+      "votes": 2453002
+     }
+    ],
+    "winner": "Yes",
+    "turnout": 0.418,
+    "note": "Consultative referendum. yes_share is Yes as a share of Yes plus No votes; 14,491,752 votes were cast in total (including blank and invalid ballots) out of an electorate of 34,692,491. The Cortes then ratified the treaty.",
+    "source": [
+     {
+      "url": "https://en.wikipedia.org/wiki/2005_Spanish_European_Constitution_referendum",
+      "title": "Wikipedia: 2005 Spanish European Constitution referendum",
+      "accessed": "2026-10-14"
+     }
+    ],
+    "confidence": "verified"
+   }
+  },
+  {
+   "id": "general_2008",
+   "date": "2008-03-09",
+   "kind": "legislative",
+   "chamber": "congress",
+   "historical": {
+    "candidates": [
+     {
+      "person": "esp.jose_luis_rodriguez_zapatero",
+      "party": "esp.psoe",
+      "round": 1
+     },
+     {
+      "person": "esp.mariano_rajoy",
+      "party": "esp.pp",
+      "round": 1
+     },
+     {
+      "person": "esp.gaspar_llamazares",
+      "party": "esp.iu",
+      "round": 1
+     }
+    ],
+    "party_results": [
+     {
+      "party": "esp.psoe",
+      "share": 0.4387,
+      "seats": 169
+     },
+     {
+      "party": "esp.pp",
+      "share": 0.3994,
+      "seats": 154
+     },
+     {
+      "party": "esp.iu",
+      "share": 0.0377,
+      "seats": 2
+     },
+     {
+      "party": "esp.ciu",
+      "share": 0.0303,
+      "seats": 10
+     },
+     {
+      "party": "esp.pnv",
+      "share": 0.0119,
+      "seats": 6
+     },
+     {
+      "party": "esp.upyd",
+      "share": 0.0119,
+      "seats": 1
+     },
+     {
+      "party": "esp.erc",
+      "share": 0.0116,
+      "seats": 3
+     },
+     {
+      "party": "esp.bng",
+      "share": 0.0083,
+      "seats": 2
+     },
+     {
+      "party": "esp.cc",
+      "share": 0.0068,
+      "seats": 2
+     },
+     {
+      "party": "esp.nabai",
+      "share": 0.0024,
+      "seats": 1
+     }
+    ],
+    "winner": "esp.psoe",
+    "turnout": 0.738,
+    "note": "PSOE minority government under Zapatero. PP figures include UPN; CC ran with the Canarian Nationalist Party.",
+    "source": [
+     {
+      "url": "https://en.wikipedia.org/wiki/2008_Spanish_general_election",
+      "title": "Wikipedia: 2008 Spanish general election (results tables)",
+      "accessed": "2026-10-14"
+     }
+    ],
+    "confidence": "verified"
+   }
+  },
+  {
+   "id": "senate_2008",
+   "date": "2008-03-09",
+   "kind": "legislative_upper",
+   "chamber": "senate",
+   "historical": {
+    "party_results": [
+     {
+      "party": "esp.pp",
+      "seats": 101,
+      "seats_won": 101
+     },
+     {
+      "party": "esp.psoe",
+      "seats": 86,
+      "seats_won": 86
+     },
+     {
+      "party": "esp.ciu",
+      "seats": 4,
+      "seats_won": 4
+     },
+     {
+      "party": "esp.pnv",
+      "seats": 2,
+      "seats_won": 2
+     },
+     {
+      "party": "esp.cc",
+      "seats": 1,
+      "seats_won": 1
+     },
+     {
+      "party": "others",
+      "seats": 14,
+      "seats_won": 14
+     }
+    ],
+    "winner": "esp.psoe",
+    "note": "Only the 208 directly elected Senate seats are recorded: 'seats' and 'seats_won' both give the seats won, because the senators appointed by the regional legislatures (about 50, varying over time) are not included. 'others' = the Catalan Agreement of Progress (12) and two PSOE-led island alliances in Ibiza and Menorca (2).",
+    "source": [
+     {
+      "url": "https://en.wikipedia.org/wiki/2008_Spanish_general_election",
+      "title": "Wikipedia: 2008 Spanish general election (Senate results table)",
+      "accessed": "2026-10-14"
+     }
+    ],
+    "confidence": "needs_review",
+    "review_note": "seats should be the full Senate composition after the election; the regionally appointed senators (about 50) still need to be added by party."
+   }
+  },
+  {
+   "id": "general_2011",
+   "date": "2011-11-20",
+   "kind": "legislative",
+   "chamber": "congress",
+   "snap": true,
+   "historical": {
+    "candidates": [
+     {
+      "person": "esp.mariano_rajoy",
+      "party": "esp.pp",
+      "round": 1
+     },
+     {
+      "person": "esp.alfredo_perez_rubalcaba",
+      "party": "esp.psoe",
+      "round": 1
+     },
+     {
+      "person": "esp.cayo_lara",
+      "party": "esp.iu",
+      "round": 1
+     },
+     {
+      "person": "esp.rosa_diez",
+      "party": "esp.upyd",
+      "round": 1
+     }
+    ],
+    "party_results": [
+     {
+      "party": "esp.pp",
+      "share": 0.4463,
+      "seats": 186
+     },
+     {
+      "party": "esp.psoe",
+      "share": 0.2876,
+      "seats": 110
+     },
+     {
+      "party": "esp.iu",
+      "share": 0.0692,
+      "seats": 11
+     },
+     {
+      "party": "esp.upyd",
+      "share": 0.047,
+      "seats": 5
+     },
+     {
+      "party": "esp.ciu",
+      "share": 0.0417,
+      "seats": 16
+     },
+     {
+      "party": "esp.amaiur",
+      "share": 0.0137,
+      "seats": 7
+     },
+     {
+      "party": "esp.pnv",
+      "share": 0.0133,
+      "seats": 5
+     },
+     {
+      "party": "esp.erc",
+      "share": 0.0106,
+      "seats": 3
+     },
+     {
+      "party": "esp.bng",
+      "share": 0.0076,
+      "seats": 2
+     },
+     {
+      "party": "esp.cc",
+      "share": 0.0059,
+      "seats": 2
+     },
+     {
+      "party": "esp.compromis",
+      "share": 0.0051,
+      "seats": 1
+     },
+     {
+      "party": "esp.fac",
+      "share": 0.0041,
+      "seats": 1
+     },
+     {
+      "party": "esp.geroa_bai",
+      "share": 0.0017,
+      "seats": 1
+     }
+    ],
+    "winner": "esp.pp",
+    "turnout": 0.689,
+    "note": "Held four months ahead of schedule. PP absolute majority (figures include UPN). IU ran as the Plural Left (IU-LV with ICV-EUiA and CHA); CC with New Canaries; Compromís-Q with Equo.",
+    "source": [
+     {
+      "url": "https://en.wikipedia.org/wiki/2011_Spanish_general_election",
+      "title": "Wikipedia: 2011 Spanish general election (results tables)",
+      "accessed": "2026-10-14"
+     }
+    ],
+    "confidence": "verified"
+   }
+  },
+  {
+   "id": "senate_2011",
+   "date": "2011-11-20",
+   "kind": "legislative_upper",
+   "chamber": "senate",
+   "snap": true,
+   "historical": {
+    "party_results": [
+     {
+      "party": "esp.pp",
+      "seats": 136,
+      "seats_won": 136
+     },
+     {
+      "party": "esp.psoe",
+      "seats": 48,
+      "seats_won": 48
+     },
+     {
+      "party": "esp.ciu",
+      "seats": 9,
+      "seats_won": 9
+     },
+     {
+      "party": "esp.amaiur",
+      "seats": 3,
+      "seats_won": 3
+     },
+     {
+      "party": "esp.pnv",
+      "seats": 4,
+      "seats_won": 4
+     },
+     {
+      "party": "esp.cc",
+      "seats": 1,
+      "seats_won": 1
+     },
+     {
+      "party": "others",
+      "seats": 7,
+      "seats_won": 7
+     }
+    ],
+    "winner": "esp.pp",
+    "note": "Only the 208 directly elected Senate seats are recorded: 'seats' and 'seats_won' both give the seats won, because the senators appointed by the regional legislatures (about 50, varying over time) are not included. 'others' = the Agreement for Catalonia Progress (PSC-ICV-EUiA).",
+    "source": [
+     {
+      "url": "https://en.wikipedia.org/wiki/2011_Spanish_general_election",
+      "title": "Wikipedia: 2011 Spanish general election (Senate results table)",
+      "accessed": "2026-10-14"
+     }
+    ],
+    "confidence": "needs_review",
+    "review_note": "seats should be the full Senate composition after the election; the regionally appointed senators (about 50) still need to be added by party."
+   }
+  },
+  {
+   "id": "general_2015",
+   "date": "2015-12-20",
+   "kind": "legislative",
+   "chamber": "congress",
+   "historical": {
+    "candidates": [
+     {
+      "person": "esp.mariano_rajoy",
+      "party": "esp.pp",
+      "round": 1
+     },
+     {
+      "person": "esp.pedro_sanchez",
+      "party": "esp.psoe",
+      "round": 1
+     },
+     {
+      "person": "esp.pablo_iglesias",
+      "party": "esp.podemos",
+      "round": 1
+     },
+     {
+      "person": "esp.albert_rivera",
+      "party": "esp.cs",
+      "round": 1
+     }
+    ],
+    "party_results": [
+     {
+      "party": "esp.pp",
+      "share": 0.2871,
+      "seats": 123
+     },
+     {
+      "party": "esp.psoe",
+      "share": 0.22,
+      "seats": 90
+     },
+     {
+      "party": "esp.podemos",
+      "share": 0.2068,
+      "seats": 69
+     },
+     {
+      "party": "esp.cs",
+      "share": 0.1394,
+      "seats": 40
+     },
+     {
+      "party": "esp.iu",
+      "share": 0.0368,
+      "seats": 2
+     },
+     {
+      "party": "esp.erc",
+      "share": 0.024,
+      "seats": 9
+     },
+     {
+      "party": "esp.cdc",
+      "share": 0.0225,
+      "seats": 8
+     },
+     {
+      "party": "esp.pnv",
+      "share": 0.012,
+      "seats": 6
+     },
+     {
+      "party": "esp.eh_bildu",
+      "share": 0.0087,
+      "seats": 2
+     },
+     {
+      "party": "esp.cc",
+      "share": 0.0032,
+      "seats": 1
+     }
+    ],
+    "winner": "esp.pp",
+    "turnout": 0.697,
+    "note": "Hung parliament; no government was formed and a repeat election followed. Podemos figures combine its own lists with the En Comú Podem, Compromís-Podemos and En Marea alliances; CDC ran as Democracy and Freedom (DiL); ERC as ERC-Catalonia Yes.",
+    "source": [
+     {
+      "url": "https://en.wikipedia.org/wiki/2015_Spanish_general_election",
+      "title": "Wikipedia: 2015 Spanish general election (results tables)",
+      "accessed": "2026-10-14"
+     }
+    ],
+    "confidence": "verified"
+   }
+  },
+  {
+   "id": "senate_2015",
+   "date": "2015-12-20",
+   "kind": "legislative_upper",
+   "chamber": "senate",
+   "historical": {
+    "party_results": [
+     {
+      "party": "esp.pp",
+      "seats": 124,
+      "seats_won": 124
+     },
+     {
+      "party": "esp.psoe",
+      "seats": 47,
+      "seats_won": 47
+     },
+     {
+      "party": "esp.podemos",
+      "seats": 16,
+      "seats_won": 16
+     },
+     {
+      "party": "esp.erc",
+      "seats": 6,
+      "seats_won": 6
+     },
+     {
+      "party": "esp.cdc",
+      "seats": 6,
+      "seats_won": 6
+     },
+     {
+      "party": "esp.pnv",
+      "seats": 6,
+      "seats_won": 6
+     },
+     {
+      "party": "esp.cc",
+      "seats": 1,
+      "seats_won": 1
+     },
+     {
+      "party": "others",
+      "seats": 2,
+      "seats_won": 2
+     }
+    ],
+    "winner": "esp.pp",
+    "note": "Only the 208 directly elected Senate seats are recorded: 'seats' and 'seats_won' both give the seats won, because the senators appointed by the regional legislatures (about 50, varying over time) are not included. 'others' = Cambio/Aldaketa (1) and the Gomera Socialist Group (1).",
+    "source": [
+     {
+      "url": "https://en.wikipedia.org/wiki/2015_Spanish_general_election",
+      "title": "Wikipedia: 2015 Spanish general election (Senate results table)",
+      "accessed": "2026-10-14"
+     }
+    ],
+    "confidence": "needs_review",
+    "review_note": "seats should be the full Senate composition after the election; the regionally appointed senators (about 50) still need to be added by party."
+   }
+  },
+  {
+   "id": "general_2016",
+   "date": "2016-06-26",
+   "kind": "legislative",
+   "chamber": "congress",
+   "snap": true,
+   "historical": {
+    "candidates": [
+     {
+      "person": "esp.mariano_rajoy",
+      "party": "esp.pp",
+      "round": 1
+     },
+     {
+      "person": "esp.pedro_sanchez",
+      "party": "esp.psoe",
+      "round": 1
+     },
+     {
+      "person": "esp.pablo_iglesias",
+      "party": "esp.podemos",
+      "round": 1
+     },
+     {
+      "person": "esp.albert_rivera",
+      "party": "esp.cs",
+      "round": 1
+     }
+    ],
+    "party_results": [
+     {
+      "party": "esp.pp",
+      "share": 0.3301,
+      "seats": 137
+     },
+     {
+      "party": "esp.psoe",
+      "share": 0.2263,
+      "seats": 85
+     },
+     {
+      "party": "esp.podemos",
+      "share": 0.2115,
+      "seats": 71
+     },
+     {
+      "party": "esp.cs",
+      "share": 0.1306,
+      "seats": 32
+     },
+     {
+      "party": "esp.erc",
+      "share": 0.0266,
+      "seats": 9
+     },
+     {
+      "party": "esp.cdc",
+      "share": 0.0201,
+      "seats": 8
+     },
+     {
+      "party": "esp.pnv",
+      "share": 0.0119,
+      "seats": 5
+     },
+     {
+      "party": "esp.eh_bildu",
+      "share": 0.0077,
+      "seats": 2
+     },
+     {
+      "party": "esp.cc",
+      "share": 0.0033,
+      "seats": 1
+     }
+    ],
+    "winner": "esp.pp",
+    "turnout": 0.665,
+    "note": "Repeat election under Article 99.5 of the Constitution after the failed 2015-2016 government formation. Rajoy was re-invested in October 2016. Podemos figures are the Unidos Podemos alliance (with IU and Equo) and its regional partners.",
+    "source": [
+     {
+      "url": "https://en.wikipedia.org/wiki/2016_Spanish_general_election",
+      "title": "Wikipedia: 2016 Spanish general election (results tables)",
+      "accessed": "2026-10-14"
+     }
+    ],
+    "confidence": "verified"
+   }
+  },
+  {
+   "id": "senate_2016",
+   "date": "2016-06-26",
+   "kind": "legislative_upper",
+   "chamber": "senate",
+   "snap": true,
+   "historical": {
+    "party_results": [
+     {
+      "party": "esp.pp",
+      "seats": 130,
+      "seats_won": 130
+     },
+     {
+      "party": "esp.psoe",
+      "seats": 43,
+      "seats_won": 43
+     },
+     {
+      "party": "esp.podemos",
+      "seats": 16,
+      "seats_won": 16
+     },
+     {
+      "party": "esp.erc",
+      "seats": 10,
+      "seats_won": 10
+     },
+     {
+      "party": "esp.cdc",
+      "seats": 2,
+      "seats_won": 2
+     },
+     {
+      "party": "esp.pnv",
+      "seats": 5,
+      "seats_won": 5
+     },
+     {
+      "party": "esp.cc",
+      "seats": 1,
+      "seats_won": 1
+     },
+     {
+      "party": "others",
+      "seats": 1,
+      "seats_won": 1
+     }
+    ],
+    "winner": "esp.pp",
+    "note": "Only the 208 directly elected Senate seats are recorded: 'seats' and 'seats_won' both give the seats won, because the senators appointed by the regional legislatures (about 50, varying over time) are not included. 'others' = the Gomera Socialist Group.",
+    "source": [
+     {
+      "url": "https://en.wikipedia.org/wiki/2016_Spanish_general_election",
+      "title": "Wikipedia: 2016 Spanish general election (Senate results table)",
+      "accessed": "2026-10-14"
+     }
+    ],
+    "confidence": "needs_review",
+    "review_note": "seats should be the full Senate composition after the election; the regionally appointed senators (about 50) still need to be added by party."
+   }
+  },
+  {
+   "id": "general_2019_04",
+   "date": "2019-04-28",
+   "kind": "legislative",
+   "chamber": "congress",
+   "snap": true,
+   "historical": {
+    "candidates": [
+     {
+      "person": "esp.pedro_sanchez",
+      "party": "esp.psoe",
+      "round": 1
+     },
+     {
+      "person": "esp.pablo_casado",
+      "party": "esp.pp",
+      "round": 1
+     },
+     {
+      "person": "esp.albert_rivera",
+      "party": "esp.cs",
+      "round": 1
+     },
+     {
+      "person": "esp.pablo_iglesias",
+      "party": "esp.podemos",
+      "round": 1
+     },
+     {
+      "person": "esp.santiago_abascal",
+      "party": "esp.vox",
+      "round": 1
+     }
+    ],
+    "party_results": [
+     {
+      "party": "esp.psoe",
+      "share": 0.2867,
+      "seats": 123
+     },
+     {
+      "party": "esp.pp",
+      "share": 0.1669,
+      "seats": 66
+     },
+     {
+      "party": "esp.cs",
+      "share": 0.1586,
+      "seats": 57
+     },
+     {
+      "party": "esp.podemos",
+      "share": 0.1432,
+      "seats": 42
+     },
+     {
+      "party": "esp.vox",
+      "share": 0.1026,
+      "seats": 24
+     },
+     {
+      "party": "esp.erc",
+      "share": 0.0391,
+      "seats": 15
+     },
+     {
+      "party": "esp.pdecat",
+      "share": 0.0191,
+      "seats": 7
+     },
+     {
+      "party": "esp.pnv",
+      "share": 0.0151,
+      "seats": 6
+     },
+     {
+      "party": "esp.eh_bildu",
+      "share": 0.0099,
+      "seats": 4
+     },
+     {
+      "party": "esp.compromis",
+      "share": 0.0066,
+      "seats": 1
+     },
+     {
+      "party": "esp.cc",
+      "share": 0.0053,
+      "seats": 2
+     },
+     {
+      "party": "esp.upn",
+      "share": 0.0041,
+      "seats": 2
+     },
+     {
+      "party": "esp.prc",
+      "share": 0.002,
+      "seats": 1
+     }
+    ],
+    "winner": "esp.psoe",
+    "turnout": 0.718,
+    "note": "Snap election called after the 2019 budget was defeated. No investiture succeeded and a repeat election followed. Podemos figures are Unidas Podemos and its regional partners; PDeCAT figures are the Together for Catalonia (JxCat) list; UPN figures are the Navarra Suma (NA+) coalition of UPN, PP and Cs in Navarre.",
+    "source": [
+     {
+      "url": "https://en.wikipedia.org/wiki/April_2019_Spanish_general_election",
+      "title": "Wikipedia: April 2019 Spanish general election (results tables)",
+      "accessed": "2026-10-14"
+     }
+    ],
+    "confidence": "verified"
+   }
+  },
+  {
+   "id": "senate_2019_04",
+   "date": "2019-04-28",
+   "kind": "legislative_upper",
+   "chamber": "senate",
+   "snap": true,
+   "historical": {
+    "party_results": [
+     {
+      "party": "esp.psoe",
+      "seats": 123,
+      "seats_won": 123
+     },
+     {
+      "party": "esp.pp",
+      "seats": 54,
+      "seats_won": 54
+     },
+     {
+      "party": "esp.cs",
+      "seats": 4,
+      "seats_won": 4
+     },
+     {
+      "party": "esp.erc",
+      "seats": 11,
+      "seats_won": 11
+     },
+     {
+      "party": "esp.pdecat",
+      "seats": 2,
+      "seats_won": 2
+     },
+     {
+      "party": "esp.pnv",
+      "seats": 9,
+      "seats_won": 9
+     },
+     {
+      "party": "esp.eh_bildu",
+      "seats": 1,
+      "seats_won": 1
+     },
+     {
+      "party": "esp.upn",
+      "seats": 3,
+      "seats_won": 3
+     },
+     {
+      "party": "others",
+      "seats": 1,
+      "seats_won": 1
+     }
+    ],
+    "winner": "esp.psoe",
+    "note": "Only the 208 directly elected Senate seats are recorded: 'seats' and 'seats_won' both give the seats won, because the senators appointed by the regional legislatures (about 50, varying over time) are not included. 'others' = the Gomera Socialist Group.",
+    "source": [
+     {
+      "url": "https://en.wikipedia.org/wiki/April_2019_Spanish_general_election",
+      "title": "Wikipedia: April 2019 Spanish general election (Senate results table)",
+      "accessed": "2026-10-14"
+     }
+    ],
+    "confidence": "needs_review",
+    "review_note": "seats should be the full Senate composition after the election; the regionally appointed senators (about 50) still need to be added by party."
+   }
+  },
+  {
+   "id": "general_2019_11",
+   "date": "2019-11-10",
+   "kind": "legislative",
+   "chamber": "congress",
+   "snap": true,
+   "historical": {
+    "candidates": [
+     {
+      "person": "esp.pedro_sanchez",
+      "party": "esp.psoe",
+      "round": 1
+     },
+     {
+      "person": "esp.pablo_casado",
+      "party": "esp.pp",
+      "round": 1
+     },
+     {
+      "person": "esp.santiago_abascal",
+      "party": "esp.vox",
+      "round": 1
+     },
+     {
+      "person": "esp.pablo_iglesias",
+      "party": "esp.podemos",
+      "round": 1
+     },
+     {
+      "person": "esp.albert_rivera",
+      "party": "esp.cs",
+      "round": 1
+     }
+    ],
+    "party_results": [
+     {
+      "party": "esp.psoe",
+      "share": 0.28,
+      "seats": 120
+     },
+     {
+      "party": "esp.pp",
+      "share": 0.2081,
+      "seats": 89
+     },
+     {
+      "party": "esp.vox",
+      "share": 0.1508,
+      "seats": 52
+     },
+     {
+      "party": "esp.podemos",
+      "share": 0.1286,
+      "seats": 35
+     },
+     {
+      "party": "esp.cs",
+      "share": 0.068,
+      "seats": 10
+     },
+     {
+      "party": "esp.erc",
+      "share": 0.0363,
+      "seats": 13
+     },
+     {
+      "party": "esp.mas_pais",
+      "share": 0.024,
+      "seats": 3
+     },
+     {
+      "party": "esp.pdecat",
+      "share": 0.0219,
+      "seats": 8
+     },
+     {
+      "party": "esp.pnv",
+      "share": 0.0156,
+      "seats": 6
+     },
+     {
+      "party": "esp.eh_bildu",
+      "share": 0.0114,
+      "seats": 5
+     },
+     {
+      "party": "esp.cup",
+      "share": 0.0102,
+      "seats": 2
+     },
+     {
+      "party": "esp.cc",
+      "share": 0.0051,
+      "seats": 2
+     },
+     {
+      "party": "esp.bng",
+      "share": 0.005,
+      "seats": 1
+     },
+     {
+      "party": "esp.upn",
+      "share": 0.0041,
+      "seats": 2
+     },
+     {
+      "party": "esp.prc",
+      "share": 0.0028,
+      "seats": 1
+     },
+     {
+      "party": "esp.teruel_existe",
+      "share": 0.0008,
+      "seats": 1
+     }
+    ],
+    "winner": "esp.psoe",
+    "turnout": 0.662,
+    "note": "Repeat election under Article 99.5. Sánchez was re-invested in January 2020 at the head of a PSOE-Unidas Podemos coalition. Más País figures include Més Compromís (1 seat); CC ran with New Canaries; UPN figures are Navarra Suma.",
+    "source": [
+     {
+      "url": "https://en.wikipedia.org/wiki/November_2019_Spanish_general_election",
+      "title": "Wikipedia: November 2019 Spanish general election (results tables)",
+      "accessed": "2026-10-14"
+     }
+    ],
+    "confidence": "verified"
+   }
+  },
+  {
+   "id": "senate_2019_11",
+   "date": "2019-11-10",
+   "kind": "legislative_upper",
+   "chamber": "senate",
+   "snap": true,
+   "historical": {
+    "party_results": [
+     {
+      "party": "esp.psoe",
+      "seats": 93,
+      "seats_won": 93
+     },
+     {
+      "party": "esp.pp",
+      "seats": 83,
+      "seats_won": 83
+     },
+     {
+      "party": "esp.vox",
+      "seats": 2,
+      "seats_won": 2
+     },
+     {
+      "party": "esp.erc",
+      "seats": 11,
+      "seats_won": 11
+     },
+     {
+      "party": "esp.pdecat",
+      "seats": 3,
+      "seats_won": 3
+     },
+     {
+      "party": "esp.pnv",
+      "seats": 9,
+      "seats_won": 9
+     },
+     {
+      "party": "esp.eh_bildu",
+      "seats": 1,
+      "seats_won": 1
+     },
+     {
+      "party": "esp.upn",
+      "seats": 3,
+      "seats_won": 3
+     },
+     {
+      "party": "esp.teruel_existe",
+      "seats": 2,
+      "seats_won": 2
+     },
+     {
+      "party": "others",
+      "seats": 1,
+      "seats_won": 1
+     }
+    ],
+    "winner": "esp.psoe",
+    "note": "Only the 208 directly elected Senate seats are recorded: 'seats' and 'seats_won' both give the seats won, because the senators appointed by the regional legislatures (about 50, varying over time) are not included. 'others' = the Gomera Socialist Group.",
+    "source": [
+     {
+      "url": "https://en.wikipedia.org/wiki/November_2019_Spanish_general_election",
+      "title": "Wikipedia: November 2019 Spanish general election (Senate results table)",
+      "accessed": "2026-10-14"
+     }
+    ],
+    "confidence": "needs_review",
+    "review_note": "seats should be the full Senate composition after the election; the regionally appointed senators (about 50) still need to be added by party."
+   }
+  },
+  {
+   "id": "general_2023",
+   "date": "2023-07-23",
+   "kind": "legislative",
+   "chamber": "congress",
+   "snap": true,
+   "historical": {
+    "candidates": [
+     {
+      "person": "esp.alberto_nunez_feijoo",
+      "party": "esp.pp",
+      "round": 1
+     },
+     {
+      "person": "esp.pedro_sanchez",
+      "party": "esp.psoe",
+      "round": 1
+     },
+     {
+      "person": "esp.santiago_abascal",
+      "party": "esp.vox",
+      "round": 1
+     },
+     {
+      "person": "esp.yolanda_diaz",
+      "party": "esp.sumar",
+      "round": 1
+     }
+    ],
+    "party_results": [
+     {
+      "party": "esp.pp",
+      "share": 0.3306,
+      "seats": 137
+     },
+     {
+      "party": "esp.psoe",
+      "share": 0.3168,
+      "seats": 121
+     },
+     {
+      "party": "esp.vox",
+      "share": 0.1238,
+      "seats": 33
+     },
+     {
+      "party": "esp.sumar",
+      "share": 0.1233,
+      "seats": 31
+     },
+     {
+      "party": "esp.erc",
+      "share": 0.0189,
+      "seats": 7
+     },
+     {
+      "party": "esp.junts",
+      "share": 0.016,
+      "seats": 7
+     },
+     {
+      "party": "esp.eh_bildu",
+      "share": 0.0136,
+      "seats": 6
+     },
+     {
+      "party": "esp.pnv",
+      "share": 0.0112,
+      "seats": 5
+     },
+     {
+      "party": "esp.bng",
+      "share": 0.0062,
+      "seats": 1
+     },
+     {
+      "party": "esp.cc",
+      "share": 0.0047,
+      "seats": 1
+     },
+     {
+      "party": "esp.upn",
+      "share": 0.0021,
+      "seats": 1
+     }
+    ],
+    "winner": "esp.pp",
+    "turnout": 0.666,
+    "note": "Early dissolution after the May 2023 local and regional elections. The PP came first, but Feijóo's investiture failed and Sánchez was re-invested in November 2023 (PSOE-Sumar coalition, with the support of Junts and other parties). Sumar's list included IU, Podemos, Más Madrid, Compromís and the Comuns.",
+    "source": [
+     {
+      "url": "https://en.wikipedia.org/wiki/2023_Spanish_general_election",
+      "title": "Wikipedia: 2023 Spanish general election (results tables)",
+      "accessed": "2026-10-14"
+     }
+    ],
+    "confidence": "verified"
+   }
+  },
+  {
+   "id": "senate_2023",
+   "date": "2023-07-23",
+   "kind": "legislative_upper",
+   "chamber": "senate",
+   "snap": true,
+   "historical": {
+    "party_results": [
+     {
+      "party": "esp.pp",
+      "seats": 120,
+      "seats_won": 120
+     },
+     {
+      "party": "esp.psoe",
+      "seats": 72,
+      "seats_won": 72
+     },
+     {
+      "party": "esp.erc",
+      "seats": 3,
+      "seats_won": 3
+     },
+     {
+      "party": "esp.eh_bildu",
+      "seats": 4,
+      "seats_won": 4
+     },
+     {
+      "party": "esp.junts",
+      "seats": 1,
+      "seats_won": 1
+     },
+     {
+      "party": "esp.pnv",
+      "seats": 4,
+      "seats_won": 4
+     },
+     {
+      "party": "esp.upn",
+      "seats": 1,
+      "seats_won": 1
+     },
+     {
+      "party": "others",
+      "seats": 3,
+      "seats_won": 3
+     }
+    ],
+    "winner": "esp.pp",
+    "note": "Only the 208 directly elected Senate seats are recorded: 'seats' and 'seats_won' both give the seats won, because the senators appointed by the regional legislatures (about 50, varying over time) are not included. ERC and EH Bildu ran jointly as Left for Independence (ERC 3, EH Bildu 4). 'others' = Ibiza and Formentera in the Senate, the Gomera Socialist Group and the Independent Herrenian Group (1 each).",
+    "source": [
+     {
+      "url": "https://en.wikipedia.org/wiki/2023_Spanish_general_election",
+      "title": "Wikipedia: 2023 Spanish general election (Senate results table)",
+      "accessed": "2026-10-14"
+     }
+    ],
+    "confidence": "needs_review",
+    "review_note": "seats should be the full Senate composition after the election; the regionally appointed senators (about 50) still need to be added by party."
+   }
+  }
+ ],
+ "source": [
+  {
+   "url": "https://en.wikipedia.org/wiki/Next_Spanish_general_election",
+   "title": "Wikipedia: Next Spanish general election",
+   "accessed": "2026-10-14"
+  },
+  {
+   "url": "https://en.wikipedia.org/wiki/2023_Spanish_general_election",
+   "title": "Wikipedia: 2023 Spanish general election (electoral system)",
+   "accessed": "2026-10-14"
+  }
+ ],
+ "confidence": "verified"
+}

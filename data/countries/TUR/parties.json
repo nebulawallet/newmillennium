@@ -1,0 +1,336 @@
+{
+  "parties": [
+    {
+      "id": "tur.dsp",
+      "name": { "en": "Democratic Left Party", "native": "Demokratik Sol Parti" },
+      "abbrev": { "en": "DSP", "native": "DSP" },
+      "color": "#2E9AFE",
+      "sub_ideology": "social_democrat",
+      "founded": "1985-11-14",
+      "status_2000": "active",
+      "leader_history": [
+        { "person": "tur.bulent_ecevit", "from": 1989, "to": "2004-07-25" },
+        { "person": "tur.zeki_sezer", "from": "2004-07-25", "to": 2009 },
+        { "person": "tur.masum_turker", "from": 2009, "to": 2015 },
+        { "person": "tur.onder_aksakal", "from": "2015-12-13" }
+      ],
+      "popularity_2000": 0.2219,
+      "popularity_note": "Vote share, April 1999 general election. Senior partner of the DSP-MHP-ANAP coalition led by Bulent Ecevit. Lost all seats in 2002; 13 DSP members were elected on CHP lists in 2007.",
+      "note": "Leader years from the party article's list; Ecevit's handover at the 25 July 2004 congress is from the same article and Aksakal's start date from Wikidata.",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/Democratic_Left_Party_(Turkey)", "title": "Wikipedia: Democratic Left Party (Turkey) (leaders)", "accessed": "2026-10-14" },
+        { "url": "https://www.wikidata.org/wiki/Q942515", "title": "Wikidata: Democratic Left Party (founding, chairpersons)", "accessed": "2026-10-14" },
+        { "url": "https://en.wikipedia.org/wiki/1999_Turkish_general_election", "title": "Wikipedia: 1999 Turkish general election", "accessed": "2026-10-14" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "tur.mhp",
+      "name": { "en": "Nationalist Movement Party", "native": "Milliyetçi Hareket Partisi" },
+      "abbrev": { "en": "MHP", "native": "MHP" },
+      "color": "#870000",
+      "sub_ideology": "national_conservative",
+      "founded": "1969-02-09",
+      "status_2000": "active",
+      "leader_history": [
+        { "person": "tur.devlet_bahceli", "from": "1997-07-06" }
+      ],
+      "popularity_2000": 0.1798,
+      "popularity_note": "Vote share, April 1999 general election. Junior partner in the 1999-2002 coalition. Part of the People's Alliance with the AKP since 2018.",
+      "note": "Turkish nationalist party. Founding date from Wikidata (9 February 1969); the Wikipedia leader table starts Alparslan Turkes's leadership on 8 February 1969.",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/Nationalist_Movement_Party", "title": "Wikipedia: Nationalist Movement Party (party leaders)", "accessed": "2026-10-14" },
+        { "url": "https://www.wikidata.org/wiki/Q251077", "title": "Wikidata: Nationalist Movement Party", "accessed": "2026-10-14" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "tur.fp",
+      "name": { "en": "Virtue Party", "native": "Fazilet Partisi" },
+      "abbrev": { "en": "FP", "native": "FP" },
+      "color": "#F7819F",
+      "sub_ideology": "islamic_democrat",
+      "founded": "1997-12-17",
+      "dissolved": "2001-06-22",
+      "status_2000": "active",
+      "leader_history": [
+        { "person": "tur.recai_kutan", "from": 1998, "to": "2001-06-22" }
+      ],
+      "popularity_2000": 0.1541,
+      "popularity_note": "Vote share, April 1999 general election (main opposition party).",
+      "note": "Party of the Milli Gorus (National Outlook) tradition. Closed by the Constitutional Court on 22 June 2001; its members went on to found the Felicity Party (July 2001) and the Justice and Development Party (August 2001).",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/Virtue_Party", "title": "Wikipedia: Virtue Party", "accessed": "2026-10-14" },
+        { "url": "https://www.wikidata.org/wiki/Q263102", "title": "Wikidata: Recai Kutan (Virtue Party 1998-2001)", "accessed": "2026-10-14" }
+      ],
+      "confidence": "needs_review",
+      "review_note": "Kutan's leadership start is taken as 1998 from his Wikidata party membership; check the date he became chairman."
+    },
+    {
+      "id": "tur.anap",
+      "name": { "en": "Motherland Party", "native": "Anavatan Partisi" },
+      "abbrev": { "en": "ANAP", "native": "ANAP" },
+      "color": "#FFD700",
+      "sub_ideology": "liberal_conservative",
+      "founded": "1983-05-20",
+      "dissolved": "2009-10-31",
+      "status_2000": "active",
+      "leader_history": [
+        { "person": "tur.mesut_yilmaz", "from": "1991-06-15", "to": "2002-11-04" },
+        { "person": "tur.ali_talip_ozdemir", "from": "2002-11-18", "to": "2003-10-03" },
+        { "person": "tur.nesrin_nas", "from": "2003-10-15", "to": "2005-03-21" },
+        { "person": "tur.erkan_mumcu", "from": "2005-04-02", "to": "2008-10-26" },
+        { "person": "tur.salih_uzun", "from": "2008-10-26", "to": "2009-10-31" }
+      ],
+      "popularity_2000": 0.1322,
+      "popularity_note": "Vote share, April 1999 general election. Junior partner in the 1999-2002 coalition.",
+      "note": "Centre-right. Merged into the Democrat Party (the renamed True Path Party) on 31 October 2009. Between leaders the central committee acted collectively.",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/Motherland_Party_(Turkey)", "title": "Wikipedia: Motherland Party (Turkey) (list of leaders)", "accessed": "2026-10-14" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "tur.dyp",
+      "name": { "en": "True Path Party", "native": "Doğru Yol Partisi" },
+      "abbrev": { "en": "DYP", "native": "DYP" },
+      "color": "#FF0000",
+      "sub_ideology": "liberal_conservative",
+      "founded": 1983,
+      "dissolved": "2007-05-27",
+      "status_2000": "active",
+      "leader_history": [
+        { "person": "tur.tansu_ciller", "from": "1993-06-13", "to": "2002-12-14" },
+        { "person": "tur.mehmet_agar", "from": "2002-12-14", "to": "2007-05-27" }
+      ],
+      "popularity_2000": 0.1201,
+      "popularity_note": "Vote share, April 1999 general election.",
+      "note": "Centre-right. Renamed the Democrat Party on 27 May 2007 (Mehmet Agar's Wikidata positions); that successor party won no seats and is not modelled.",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/True_Path_Party", "title": "Wikipedia: True Path Party", "accessed": "2026-10-14" },
+        { "url": "https://www.wikidata.org/wiki/Q208377", "title": "Wikidata: Tansu Ciller (Leader of True Path Party 1993-06-13 to 2002-12-14)", "accessed": "2026-10-14" },
+        { "url": "https://www.wikidata.org/wiki/Q735547", "title": "Wikidata: Mehmet Agar (Leader of True Path Party 2002-12-14 to 2007-05-27)", "accessed": "2026-10-14" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "tur.chp",
+      "name": { "en": "Republican People's Party", "native": "Cumhuriyet Halk Partisi" },
+      "abbrev": { "en": "CHP", "native": "CHP" },
+      "color": "#ED1C24",
+      "sub_ideology": "social_democrat",
+      "founded": "1923-09-09",
+      "status_2000": "extra_parliamentary",
+      "leader_history": [
+        { "person": "tur.altan_oymen", "from": "1999-05-23", "to": "2000-09-30" },
+        { "person": "tur.deniz_baykal", "from": "2000-09-30", "to": "2010-05-10" },
+        { "person": "tur.kemal_kilicdaroglu", "from": "2010-05-22", "to": "2023-11-05" },
+        { "person": "tur.ozgur_ozel", "from": "2023-11-05", "to": "2026-05-21" },
+        { "person": "tur.kemal_kilicdaroglu", "from": "2026-05-21", "title": "Chair (court-appointed)" }
+      ],
+      "popularity_2000": 0.0871,
+      "popularity_note": "Vote share, April 1999 general election; below the 10% threshold, so no seats in 2000.",
+      "note": "Founded 9 September 1923; re-established in its current form on 9 September 1992. On 21 May 2026 a ruling of the Ankara Regional Court of Justice annulled the party's 2023 congress, removed Ozgur Ozel as chair and transferred the leadership to Kemal Kilicdaroglu (Wikipedia, Leader of the Republican People's Party). Most of the party's MPs later joined Ozel's New Party (July 2026). The 2007 seat total includes 13 DSP members elected on CHP lists, and the 2023 total includes 39 members of DEVA, Felicity, Future, Democrat and other parties elected on CHP lists.",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/Leader_of_the_Republican_People%27s_Party", "title": "Wikipedia: Leader of the Republican People's Party (list)", "accessed": "2026-10-14" },
+        { "url": "https://en.wikipedia.org/wiki/Republican_People%27s_Party", "title": "Wikipedia: Republican People's Party", "accessed": "2026-10-14" },
+        { "url": "https://en.wikipedia.org/wiki/New_Party_(Turkey,_2026)", "title": "Wikipedia: New Party (Turkey, 2026)", "accessed": "2026-10-14" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "tur.hadep",
+      "name": { "en": "People's Democracy Party", "native": "Halkın Demokrasi Partisi" },
+      "abbrev": { "en": "HADEP", "native": "HADEP" },
+      "color": "#2E8B57",
+      "sub_ideology": "regionalist",
+      "founded": "1994-05-11",
+      "dissolved": "2003-03-13",
+      "status_2000": "extra_parliamentary",
+      "leader_history": [
+        { "person": "tur.murat_bozlak", "from": 2000, "to": "2003-03-13" }
+      ],
+      "popularity_2000": 0.0475,
+      "popularity_note": "Vote share, April 1999 general election; below the 10% threshold.",
+      "regional_base": ["kurdish"],
+      "note": "Pro-Kurdish party; closed by the Constitutional Court on 13 March 2003 and succeeded by the Democratic People's Party (DEHAP) and later by other pro-Kurdish parties, including the HDP (2012). DTP- and BDP-backed candidates ran as independents in 2007 and 2011 to get around the 10% threshold.",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/People%27s_Democracy_Party", "title": "Wikipedia: People's Democracy Party (Turkey)", "accessed": "2026-10-14" }
+      ],
+      "confidence": "needs_review",
+      "review_note": "Chair on 1 January 2000 is unclear: the infobox lists Ahmet Turan Demir 1999-2000 and Murat Bozlak again 2000-2003, while the text says Demir served September 1998 to November 1999. Bozlak's return is entered with the year 2000 only; Demir has no person record."
+    },
+    {
+      "id": "tur.akp",
+      "name": { "en": "Justice and Development Party", "native": "Adalet ve Kalkınma Partisi" },
+      "abbrev": { "en": "AK Party", "native": "AK PARTİ" },
+      "color": "#F7A01C",
+      "sub_ideology": "islamic_democrat",
+      "founded": "2001-08-14",
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        { "person": "tur.recep_tayyip_erdogan", "from": "2001-08-14", "to": "2014-08-27" },
+        { "person": "tur.ahmet_davutoglu", "from": "2014-08-27", "to": "2016-05-22" },
+        { "person": "tur.binali_yildirim", "from": "2016-05-22", "to": "2017-05-21" },
+        { "person": "tur.recep_tayyip_erdogan", "from": "2017-05-21" }
+      ],
+      "popularity_2000": 0,
+      "lineage": { "split_from": "tur.fp" },
+      "note": "Conservative party founded in August 2001 by former Virtue Party members; governing party since November 2002. Erdogan left the chairmanship on becoming President in August 2014 and was elected chair again on 21 May 2017.",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/Justice_and_Development_Party_(Turkey)", "title": "Wikipedia: Justice and Development Party (Turkey) (party leaders)", "accessed": "2026-10-14" },
+        { "url": "https://www.wikidata.org/wiki/Q19077", "title": "Wikidata: Justice and Development Party", "accessed": "2026-10-14" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "tur.saadet",
+      "name": { "en": "Felicity Party", "native": "Saadet Partisi" },
+      "abbrev": { "en": "SAADET", "native": "SAADET" },
+      "color": "#B22222",
+      "sub_ideology": "islamic_democrat",
+      "founded": "2001-07-20",
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        { "person": "tur.temel_karamollaoglu", "from": "2016-10-30", "to": "2024-11-27" },
+        { "person": "tur.mahmut_arikan", "from": "2024-11-27" }
+      ],
+      "popularity_2000": 0,
+      "lineage": { "split_from": "tur.fp" },
+      "note": "Founded on 20 July 2001 by Milli Gorus members of the closed Virtue Party (founders Necmettin Erbakan and Recai Kutan). Won no seats in its own right; some members were elected on CHP lists in 2023.",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/Felicity_Party", "title": "Wikipedia: Felicity Party", "accessed": "2026-10-14" },
+        { "url": "https://www.wikidata.org/wiki/Q131385498", "title": "Wikidata: Leader of the Felicity Party (position held by)", "accessed": "2026-10-14" }
+      ],
+      "confidence": "needs_review",
+      "review_note": "Leaders before 2016 are missing: Recai Kutan (from 2001), Numan Kurtulmus, Necmettin Erbakan (from 2010-10-18 per Wikidata) and Mustafa Kamalak (2011-2016, years only). Add them with dates from a leader list."
+    },
+    {
+      "id": "tur.hdp",
+      "name": { "en": "Peoples' Democratic Party", "native": "Halkların Demokratik Partisi" },
+      "abbrev": { "en": "HDP", "native": "HDP" },
+      "color": "#8B4C9E",
+      "sub_ideology": "regionalist",
+      "founded": "2012-10-15",
+      "dissolved": "2023-10-15",
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        { "person": "tur.selahattin_demirtas", "from": "2014-06-22", "to": "2018-02-11", "title": "Co-chair" },
+        { "person": "tur.figen_yuksekdag", "from": "2014-06-22", "to": "2017-03-09", "title": "Co-chair" },
+        { "person": "tur.pervin_buldan", "from": "2018-02-11", "to": "2023-08-27", "title": "Co-chair" },
+        { "person": "tur.sezai_temelli", "from": "2018-02-11", "to": "2020-02-23", "title": "Co-chair" },
+        { "person": "tur.mithat_sancar", "from": "2020-02-23", "to": "2023-08-27", "title": "Co-chair" }
+      ],
+      "popularity_2000": 0,
+      "lineage": { "merged_into": "tur.dem" },
+      "regional_base": ["kurdish"],
+      "note": "Left-wing party with a mainly Kurdish voter base, founded in 2012 as the political wing of the Peoples' Democratic Congress. Its candidates ran on the Green Left Party lists in 2023 because of a pending closure case; Wikipedia gives 15 October 2023 as its end date, when the Green Left Party became the DEM Party.",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/Peoples%27_Democratic_Party_(Turkey)", "title": "Wikipedia: Peoples' Democratic Party (Turkey)", "accessed": "2026-10-14" },
+        { "url": "https://www.wikidata.org/wiki/Q15123187", "title": "Wikidata: Peoples' Democratic Party (co-chairs)", "accessed": "2026-10-14" }
+      ],
+      "confidence": "needs_review",
+      "review_note": "Co-chairs omitted for lack of person records: Yavuz Onen and Fatma Gok (2012-2013), Sebahat Tuncel and Ertugrul Kurkcu (2013-2014), Serpil Kemalbay (2017-2018), Sultan Ozcan and Cahit Kirkazak (from 2023-08-27). Wikidata also splits Demirtas's tenure (to 2017-03-09, again from 2017-05-20)."
+    },
+    {
+      "id": "tur.dem",
+      "name": { "en": "Peoples' Equality and Democracy Party", "native": "Halkların Eşitlik ve Demokrasi Partisi" },
+      "abbrev": { "en": "DEM Party", "native": "DEM PARTİ" },
+      "color": "#7B2D8E",
+      "sub_ideology": "regionalist",
+      "founded": "2012-11-30",
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        { "person": "tur.tulay_hatimogullari", "from": "2023-10-15", "title": "Co-chair" },
+        { "person": "tur.tuncer_bakirhan", "from": "2023-10-15", "title": "Co-chair" }
+      ],
+      "popularity_2000": 0,
+      "regional_base": ["kurdish"],
+      "note": "Founded as the Green Left Party (Yesil Sol Parti); HDP candidates ran on its lists in May 2023 and it was renamed the Peoples' Equality and Democracy Party at its congress of 15 October 2023. Founding date from Wikidata. In 2023 the list was led by co-spokespersons Cigdem Kilicgun Ucar and Ibrahim Akin.",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/Peoples%27_Equality_and_Democracy_Party", "title": "Wikipedia: Peoples' Equality and Democracy Party", "accessed": "2026-10-14" },
+        { "url": "https://www.wikidata.org/wiki/Q725173", "title": "Wikidata: Peoples' Equality and Democracy Party (founding, co-leaders)", "accessed": "2026-10-14" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "tur.iyi",
+      "name": { "en": "Good Party", "native": "İYİ Parti" },
+      "abbrev": { "en": "İYİ", "native": "İYİ" },
+      "color": "#1DA1F2",
+      "sub_ideology": "liberal_conservative",
+      "founded": "2017-10-25",
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        { "person": "tur.meral_aksener", "from": "2017-10-25", "to": "2024-04-30" },
+        { "person": "tur.musavat_dervisoglu", "from": "2024-04-30" }
+      ],
+      "popularity_2000": 0,
+      "lineage": { "split_from": "tur.mhp" },
+      "note": "Centre-right nationalist party founded by Meral Aksener after leaving the MHP. Handover date: Wikidata gives 30 April 2024, the party article's leader table 1 May 2024.",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/Good_Party", "title": "Wikipedia: Good Party (party leaders)", "accessed": "2026-10-14" },
+        { "url": "https://www.wikidata.org/wiki/Q42313794", "title": "Wikidata: IYI Party (chairpersons)", "accessed": "2026-10-14" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "tur.yrp",
+      "name": { "en": "New Welfare Party", "native": "Yeniden Refah Partisi" },
+      "abbrev": { "en": "YRP", "native": "Yeniden Refah" },
+      "color": "#006400",
+      "sub_ideology": "islamic_democrat",
+      "founded": "2018-11-23",
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        { "person": "tur.fatih_erbakan", "from": "2018-11-23" }
+      ],
+      "popularity_2000": 0,
+      "lineage": { "split_from": "tur.saadet" },
+      "note": "Milli Gorus party founded and led by Fatih Erbakan; won 5 seats in 2023 as part of the People's Alliance.",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/New_Welfare_Party", "title": "Wikipedia: New Welfare Party", "accessed": "2026-10-14" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "tur.tip",
+      "name": { "en": "Workers' Party of Turkey", "native": "Türkiye İşçi Partisi" },
+      "abbrev": { "en": "TİP", "native": "TİP" },
+      "color": "#B61F23",
+      "sub_ideology": "democratic_socialist",
+      "founded": "2017-11-07",
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        { "person": "tur.erkan_bas", "from": "2017-11-07" }
+      ],
+      "popularity_2000": 0,
+      "note": "Socialist party; won 4 seats in 2023 within the Labour and Freedom Alliance. Erkan Bas is listed as its founder and president.",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/Workers%27_Party_of_Turkey_(2017)", "title": "Wikipedia: Workers' Party of Turkey (2017)", "accessed": "2026-10-14" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "tur.yeni",
+      "name": { "en": "New Party", "native": "Yeni Parti" },
+      "abbrev": { "en": "YENİ", "native": "YENİ Parti" },
+      "color": "#E30A17",
+      "sub_ideology": "social_democrat",
+      "founded": "2026-07-24",
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        { "person": "tur.ozgur_ozel", "from": "2026-07-24" }
+      ],
+      "popularity_2000": 0,
+      "lineage": { "split_from": "tur.chp" },
+      "note": "Founded on 24 July 2026 by Ozgur Ozel after the court ruling that removed him as CHP chair. Wikipedia lists 91 of 600 Assembly seats for it (former CHP MPs), making it the largest opposition group; it has not yet contested a national election.",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/New_Party_(Turkey,_2026)", "title": "Wikipedia: New Party (Turkey, 2026)", "accessed": "2026-10-14" },
+        { "url": "https://www.wikidata.org/wiki/Q17046812", "title": "Wikidata: Ozgur Ozel (member of New Party from 2026-07-24)", "accessed": "2026-10-14" },
+        { "url": "https://en.wikipedia.org/wiki/Grand_National_Assembly_of_Turkey", "title": "Wikipedia: Grand National Assembly of Turkey (current composition)", "accessed": "2026-10-14" }
+      ],
+      "confidence": "verified"
+    }
+  ]
+}

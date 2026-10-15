@@ -1,0 +1,1436 @@
+{
+  "rules": [
+    {
+      "kind": "legislative",
+      "chamber": "sejm",
+      "every_years": 4,
+      "anchor": "2023-10-15",
+      "snap_possible": true,
+      "note": "Four-year term; early elections are possible (as in 2007)."
+    },
+    {
+      "kind": "legislative_upper",
+      "chamber": "senate",
+      "every_years": 4,
+      "anchor": "2023-10-15",
+      "snap_possible": true,
+      "note": "Elected on the same day as the Sejm for the same term."
+    },
+    {
+      "kind": "presidential",
+      "office": "pol.president",
+      "every_years": 5,
+      "anchor": "2025-05-18",
+      "snap_possible": true,
+      "note": "Two-round system; an early election follows a vacancy (as in 2010)."
+    }
+  ],
+  "elections": [
+    {
+      "id": "presidential_2000",
+      "date": "2000-10-08",
+      "kind": "presidential",
+      "office": "pol.president",
+      "rounds": 1,
+      "historical": {
+        "candidates": [
+          {
+            "person": "pol.aleksander_kwasniewski",
+            "party": "pol.sld",
+            "share": 0.539,
+            "votes": 9485224,
+            "round": 1
+          },
+          {
+            "person": "pol.andrzej_olechowski",
+            "share": 0.173,
+            "votes": 3044141,
+            "round": 1
+          },
+          {
+            "person": "pol.marian_krzaklewski",
+            "party": "pol.aws",
+            "share": 0.1557,
+            "votes": 2739621,
+            "round": 1
+          },
+          {
+            "person": "pol.jaroslaw_kalinowski",
+            "party": "pol.psl",
+            "share": 0.0595,
+            "votes": 1047949,
+            "round": 1
+          },
+          {
+            "person": "pol.andrzej_lepper",
+            "party": "pol.samoobrona",
+            "share": 0.0305,
+            "votes": 537570,
+            "round": 1
+          }
+        ],
+        "winner": "pol.aleksander_kwasniewski",
+        "turnout": 0.6108,
+        "note": "Kwaśniewski ran as an independent endorsed by the SLD; Olechowski ran as an independent backed by the Conservative People's Party. Won outright in the first round.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2000_Polish_presidential_election",
+            "title": "Wikipedia: 2000 Polish presidential election",
+            "accessed": "2026-10-14"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "sejm_2001",
+      "date": "2001-09-23",
+      "kind": "legislative",
+      "chamber": "sejm",
+      "historical": {
+        "candidates": [
+          {
+            "person": "pol.leszek_miller",
+            "round": 1,
+            "party": "pol.sld"
+          },
+          {
+            "person": "pol.maciej_plazynski",
+            "round": 1,
+            "party": "pol.po"
+          }
+        ],
+        "party_results": [
+          {
+            "party": "pol.sld",
+            "share": 0.4104,
+            "seats": 216
+          },
+          {
+            "party": "pol.po",
+            "share": 0.1268,
+            "seats": 65
+          },
+          {
+            "party": "pol.samoobrona",
+            "share": 0.102,
+            "seats": 53
+          },
+          {
+            "party": "pol.pis",
+            "share": 0.095,
+            "seats": 44
+          },
+          {
+            "party": "pol.psl",
+            "share": 0.0898,
+            "seats": 42
+          },
+          {
+            "party": "pol.lpr",
+            "share": 0.0787,
+            "seats": 38
+          },
+          {
+            "party": "pol.aws",
+            "share": 0.056,
+            "seats": 0
+          },
+          {
+            "party": "pol.uw",
+            "share": 0.031,
+            "seats": 0
+          },
+          {
+            "party": "pol.mn",
+            "share": 0.0036,
+            "seats": 2
+          }
+        ],
+        "winner": "pol.sld",
+        "turnout": 0.4629,
+        "note": "pol.sld is the joint SLD-Labour Union list (of its 216 seats, 16 went to the Labour Union). pol.aws is the Solidarity Electoral Action of the Right list, which missed the 8% coalition threshold.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2001_Polish_parliamentary_election",
+            "title": "Wikipedia: 2001 Polish parliamentary election",
+            "accessed": "2026-10-14"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "senate_2001",
+      "date": "2001-09-23",
+      "kind": "legislative_upper",
+      "chamber": "senate",
+      "historical": {
+        "party_results": [
+          {
+            "party": "pol.sld",
+            "share": 0.3891,
+            "seats": 75
+          },
+          {
+            "party": "others",
+            "share": 0.2442,
+            "seats": 15
+          },
+          {
+            "party": "pol.psl",
+            "share": 0.1321,
+            "seats": 4
+          },
+          {
+            "party": "pol.samoobrona",
+            "share": 0.0428,
+            "seats": 2
+          },
+          {
+            "party": "pol.lpr",
+            "share": 0.0405,
+            "seats": 2
+          },
+          {
+            "party": "independents",
+            "seats": 2
+          }
+        ],
+        "winner": "pol.sld",
+        "turnout": 0.4615,
+        "note": "Block voting; shares are of all votes cast. 'others' is the Senate 2001 bloc (AWS, Freedom Union, Civic Platform and Law and Justice). The two independents were elected from local voters' committees.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2001_Polish_parliamentary_election",
+            "title": "Wikipedia: 2001 Polish parliamentary election",
+            "accessed": "2026-10-14"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "eu_referendum_2003",
+      "date": "2003-06-08",
+      "kind": "referendum",
+      "question": "Accession of Poland to the European Union (summary, not the ballot wording)",
+      "historical": {
+        "yes_share": 0.7745,
+        "turnout": 0.5885,
+        "options": [
+          {
+            "label": "Yes",
+            "share": 0.7745,
+            "votes": 13514872
+          },
+          {
+            "label": "No",
+            "share": 0.2255,
+            "votes": 3935655
+          }
+        ],
+        "winner": "Yes",
+        "note": "Held over two days, 7-8 June 2003; the date is the second day. Turnout above 50% made the result binding.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2003_Polish_European_Union_membership_referendum",
+            "title": "Wikipedia: 2003 Polish European Union membership referendum",
+            "accessed": "2026-10-14"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "sejm_2005",
+      "date": "2005-09-25",
+      "kind": "legislative",
+      "chamber": "sejm",
+      "historical": {
+        "candidates": [
+          {
+            "person": "pol.jaroslaw_kaczynski",
+            "round": 1,
+            "party": "pol.pis"
+          },
+          {
+            "person": "pol.donald_tusk",
+            "round": 1,
+            "party": "pol.po"
+          }
+        ],
+        "party_results": [
+          {
+            "party": "pol.pis",
+            "share": 0.2699,
+            "seats": 155
+          },
+          {
+            "party": "pol.po",
+            "share": 0.2414,
+            "seats": 133
+          },
+          {
+            "party": "pol.samoobrona",
+            "share": 0.1141,
+            "seats": 56
+          },
+          {
+            "party": "pol.sld",
+            "share": 0.1131,
+            "seats": 55
+          },
+          {
+            "party": "pol.lpr",
+            "share": 0.0797,
+            "seats": 34
+          },
+          {
+            "party": "pol.psl",
+            "share": 0.0696,
+            "seats": 25
+          },
+          {
+            "party": "pol.sdpl",
+            "share": 0.0389,
+            "seats": 0
+          },
+          {
+            "party": "pol.mn",
+            "share": 0.0029,
+            "seats": 2
+          }
+        ],
+        "winner": "pol.pis",
+        "turnout": 0.4057,
+        "note": "Kazimierz Marcinkiewicz, not party leader Jarosław Kaczyński, became Prime Minister after the election.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2005_Polish_parliamentary_election",
+            "title": "Wikipedia: 2005 Polish parliamentary election",
+            "accessed": "2026-10-14"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "senate_2005",
+      "date": "2005-09-25",
+      "kind": "legislative_upper",
+      "chamber": "senate",
+      "historical": {
+        "party_results": [
+          {
+            "party": "pol.pis",
+            "share": 0.208,
+            "seats": 49
+          },
+          {
+            "party": "pol.po",
+            "share": 0.1694,
+            "seats": 34
+          },
+          {
+            "party": "pol.lpr",
+            "share": 0.1239,
+            "seats": 7
+          },
+          {
+            "party": "pol.samoobrona",
+            "share": 0.0835,
+            "seats": 3
+          },
+          {
+            "party": "pol.psl",
+            "share": 0.0586,
+            "seats": 2
+          },
+          {
+            "party": "pol.sld",
+            "share": 0.129,
+            "seats": 0
+          },
+          {
+            "party": "independents",
+            "share": 0.1157,
+            "seats": 5
+          }
+        ],
+        "winner": "pol.pis",
+        "turnout": 0.4049,
+        "note": "Block voting; shares are of all votes cast.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2005_Polish_parliamentary_election",
+            "title": "Wikipedia: 2005 Polish parliamentary election",
+            "accessed": "2026-10-14"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "presidential_2005",
+      "date": "2005-10-09",
+      "kind": "presidential",
+      "office": "pol.president",
+      "rounds": 2,
+      "historical": {
+        "candidates": [
+          {
+            "person": "pol.donald_tusk",
+            "party": "pol.po",
+            "share": 0.3633,
+            "votes": 5429666,
+            "round": 1
+          },
+          {
+            "person": "pol.lech_kaczynski",
+            "party": "pol.pis",
+            "share": 0.331,
+            "votes": 4947927,
+            "round": 1
+          },
+          {
+            "person": "pol.andrzej_lepper",
+            "party": "pol.samoobrona",
+            "share": 0.1511,
+            "votes": 2259094,
+            "round": 1
+          },
+          {
+            "person": "pol.marek_borowski",
+            "party": "pol.sdpl",
+            "share": 0.1033,
+            "votes": 1544642,
+            "round": 1
+          },
+          {
+            "person": "pol.lech_kaczynski",
+            "party": "pol.pis",
+            "share": 0.5404,
+            "votes": 8257468,
+            "round": 2
+          },
+          {
+            "person": "pol.donald_tusk",
+            "party": "pol.po",
+            "share": 0.4596,
+            "votes": 7022319,
+            "round": 2
+          }
+        ],
+        "winner": "pol.lech_kaczynski",
+        "turnout": 0.5098,
+        "note": "First round 9 October 2005 (turnout 49.72%), second round 23 October 2005 (turnout 50.98%, stored).",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2005_Polish_presidential_election",
+            "title": "Wikipedia: 2005 Polish presidential election",
+            "accessed": "2026-10-14"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "sejm_2007",
+      "date": "2007-10-21",
+      "kind": "legislative",
+      "chamber": "sejm",
+      "snap": true,
+      "historical": {
+        "candidates": [
+          {
+            "person": "pol.donald_tusk",
+            "round": 1,
+            "party": "pol.po"
+          },
+          {
+            "person": "pol.jaroslaw_kaczynski",
+            "round": 1,
+            "party": "pol.pis"
+          }
+        ],
+        "party_results": [
+          {
+            "party": "pol.po",
+            "share": 0.4151,
+            "seats": 209
+          },
+          {
+            "party": "pol.pis",
+            "share": 0.3211,
+            "seats": 166
+          },
+          {
+            "party": "pol.sld",
+            "share": 0.1315,
+            "seats": 53
+          },
+          {
+            "party": "pol.psl",
+            "share": 0.0891,
+            "seats": 31
+          },
+          {
+            "party": "pol.samoobrona",
+            "share": 0.0153,
+            "seats": 0
+          },
+          {
+            "party": "pol.lpr",
+            "share": 0.013,
+            "seats": 0
+          },
+          {
+            "party": "pol.mn",
+            "share": 0.002,
+            "seats": 1
+          }
+        ],
+        "winner": "pol.po",
+        "turnout": 0.5382,
+        "note": "pol.sld is the Left and Democrats (LiD) list of SLD, Social Democracy of Poland, the Labour Union and the Democratic Party, led into the election by Aleksander Kwaśniewski.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2007_Polish_parliamentary_election",
+            "title": "Wikipedia: 2007 Polish parliamentary election",
+            "accessed": "2026-10-14"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "senate_2007",
+      "date": "2007-10-21",
+      "kind": "legislative_upper",
+      "chamber": "senate",
+      "snap": true,
+      "historical": {
+        "party_results": [
+          {
+            "party": "pol.po",
+            "share": 0.3914,
+            "seats": 60
+          },
+          {
+            "party": "pol.pis",
+            "share": 0.3138,
+            "seats": 39
+          },
+          {
+            "party": "independents",
+            "share": 0.0364,
+            "seats": 1
+          }
+        ],
+        "winner": "pol.po",
+        "turnout": 0.5381,
+        "note": "Block voting; shares are of all votes cast.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2007_Polish_parliamentary_election",
+            "title": "Wikipedia: 2007 Polish parliamentary election",
+            "accessed": "2026-10-14"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "presidential_2010",
+      "date": "2010-06-20",
+      "kind": "presidential",
+      "office": "pol.president",
+      "rounds": 2,
+      "snap": true,
+      "historical": {
+        "candidates": [
+          {
+            "person": "pol.bronislaw_komorowski",
+            "party": "pol.po",
+            "share": 0.4154,
+            "votes": 6981319,
+            "round": 1
+          },
+          {
+            "person": "pol.jaroslaw_kaczynski",
+            "party": "pol.pis",
+            "share": 0.3646,
+            "votes": 6128255,
+            "round": 1
+          },
+          {
+            "person": "pol.grzegorz_napieralski",
+            "party": "pol.sld",
+            "share": 0.1368,
+            "votes": 2299870,
+            "round": 1
+          },
+          {
+            "person": "pol.bronislaw_komorowski",
+            "party": "pol.po",
+            "share": 0.5301,
+            "votes": 8933887,
+            "round": 2
+          },
+          {
+            "person": "pol.jaroslaw_kaczynski",
+            "party": "pol.pis",
+            "share": 0.4699,
+            "votes": 7919134,
+            "round": 2
+          }
+        ],
+        "winner": "pol.bronislaw_komorowski",
+        "turnout": 0.553,
+        "note": "Early election after President Lech Kaczyński died on 10 April 2010. First round 20 June (turnout 54.92%), second round 4 July 2010 (turnout 55.30%, stored).",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2010_Polish_presidential_election",
+            "title": "Wikipedia: 2010 Polish presidential election",
+            "accessed": "2026-10-14"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "sejm_2011",
+      "date": "2011-10-09",
+      "kind": "legislative",
+      "chamber": "sejm",
+      "historical": {
+        "candidates": [
+          {
+            "person": "pol.donald_tusk",
+            "round": 1,
+            "party": "pol.po"
+          },
+          {
+            "person": "pol.jaroslaw_kaczynski",
+            "round": 1,
+            "party": "pol.pis"
+          }
+        ],
+        "party_results": [
+          {
+            "party": "pol.po",
+            "share": 0.3918,
+            "seats": 207
+          },
+          {
+            "party": "pol.pis",
+            "share": 0.2989,
+            "seats": 157
+          },
+          {
+            "party": "pol.ruch_palikota",
+            "share": 0.1002,
+            "seats": 40
+          },
+          {
+            "party": "pol.psl",
+            "share": 0.0836,
+            "seats": 28
+          },
+          {
+            "party": "pol.sld",
+            "share": 0.0824,
+            "seats": 27
+          },
+          {
+            "party": "pol.mn",
+            "share": 0.0019,
+            "seats": 1
+          }
+        ],
+        "winner": "pol.po",
+        "turnout": 0.4892,
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2011_Polish_parliamentary_election",
+            "title": "Wikipedia: 2011 Polish parliamentary election",
+            "accessed": "2026-10-14"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "senate_2011",
+      "date": "2011-10-09",
+      "kind": "legislative_upper",
+      "chamber": "senate",
+      "historical": {
+        "party_results": [
+          {
+            "party": "pol.po",
+            "share": 0.356,
+            "seats": 63
+          },
+          {
+            "party": "pol.pis",
+            "share": 0.2694,
+            "seats": 31
+          },
+          {
+            "party": "pol.psl",
+            "share": 0.0939,
+            "seats": 2
+          },
+          {
+            "party": "pol.sld",
+            "share": 0.0933,
+            "seats": 0
+          },
+          {
+            "party": "others",
+            "share": 0.018,
+            "seats": 1
+          },
+          {
+            "party": "independents",
+            "seats": 3
+          }
+        ],
+        "winner": "pol.po",
+        "turnout": 0.4892,
+        "note": "First election under first-past-the-post in 100 single-member constituencies. 'others' is Rafał Dutkiewicz's electoral committee.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2011_Polish_parliamentary_election",
+            "title": "Wikipedia: 2011 Polish parliamentary election",
+            "accessed": "2026-10-14"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "presidential_2015",
+      "date": "2015-05-10",
+      "kind": "presidential",
+      "office": "pol.president",
+      "rounds": 2,
+      "historical": {
+        "candidates": [
+          {
+            "person": "pol.andrzej_duda",
+            "party": "pol.pis",
+            "share": 0.3476,
+            "votes": 5179092,
+            "round": 1
+          },
+          {
+            "person": "pol.bronislaw_komorowski",
+            "party": "pol.po",
+            "share": 0.3377,
+            "votes": 5031060,
+            "round": 1
+          },
+          {
+            "person": "pol.pawel_kukiz",
+            "share": 0.208,
+            "votes": 3099079,
+            "round": 1
+          },
+          {
+            "person": "pol.andrzej_duda",
+            "party": "pol.pis",
+            "share": 0.5155,
+            "votes": 8630627,
+            "round": 2
+          },
+          {
+            "person": "pol.bronislaw_komorowski",
+            "party": "pol.po",
+            "share": 0.4845,
+            "votes": 8112311,
+            "round": 2
+          }
+        ],
+        "winner": "pol.andrzej_duda",
+        "turnout": 0.5534,
+        "note": "First round 10 May (turnout 48.96%), second round 24 May 2015 (turnout 55.34%, stored). Komorowski stood as an independent backed by Civic Platform; Kukiz stood as an independent.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2015_Polish_presidential_election",
+            "title": "Wikipedia: 2015 Polish presidential election",
+            "accessed": "2026-10-14"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "referendum_2015_q1",
+      "date": "2015-09-06",
+      "kind": "referendum",
+      "question": "Are you in favour of introducing single-member constituencies in elections to the Sejm?",
+      "historical": {
+        "yes_share": 0.7875,
+        "turnout": 0.078,
+        "winner": "Yes",
+        "note": "Not binding: turnout of 7.80% was below the 50% required.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2015_Polish_referendum",
+            "title": "Wikipedia: 2015 Polish referendum",
+            "accessed": "2026-10-14"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "referendum_2015_q2",
+      "date": "2015-09-06",
+      "kind": "referendum",
+      "question": "Are you in favour of maintaining the current system of financing political parties from the state budget?",
+      "historical": {
+        "yes_share": 0.1737,
+        "turnout": 0.078,
+        "winner": "No",
+        "note": "Not binding: turnout of 7.80% was below the 50% required.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2015_Polish_referendum",
+            "title": "Wikipedia: 2015 Polish referendum",
+            "accessed": "2026-10-14"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "referendum_2015_q3",
+      "date": "2015-09-06",
+      "kind": "referendum",
+      "question": "Are you in favour of introducing a general rule of resolving doubts regarding the interpretation of tax law in favour of the taxpayer?",
+      "historical": {
+        "yes_share": 0.9451,
+        "turnout": 0.078,
+        "winner": "Yes",
+        "note": "Not binding: turnout of 7.80% was below the 50% required.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2015_Polish_referendum",
+            "title": "Wikipedia: 2015 Polish referendum",
+            "accessed": "2026-10-14"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "sejm_2015",
+      "date": "2015-10-25",
+      "kind": "legislative",
+      "chamber": "sejm",
+      "historical": {
+        "candidates": [
+          {
+            "person": "pol.beata_szydlo",
+            "round": 1,
+            "party": "pol.pis"
+          },
+          {
+            "person": "pol.ewa_kopacz",
+            "round": 1,
+            "party": "pol.po"
+          }
+        ],
+        "party_results": [
+          {
+            "party": "pol.pis",
+            "share": 0.3758,
+            "seats": 235
+          },
+          {
+            "party": "pol.po",
+            "share": 0.2409,
+            "seats": 138
+          },
+          {
+            "party": "pol.kukiz15",
+            "share": 0.0881,
+            "seats": 42
+          },
+          {
+            "party": "pol.nowoczesna",
+            "share": 0.076,
+            "seats": 28
+          },
+          {
+            "party": "pol.sld",
+            "share": 0.0755,
+            "seats": 0
+          },
+          {
+            "party": "pol.psl",
+            "share": 0.0513,
+            "seats": 16
+          },
+          {
+            "party": "pol.razem",
+            "share": 0.0362,
+            "seats": 0
+          },
+          {
+            "party": "pol.mn",
+            "share": 0.0018,
+            "seats": 1
+          }
+        ],
+        "winner": "pol.pis",
+        "turnout": 0.5092,
+        "note": "pol.pis is the United Right list (PiS 193 seats, allies and independents 42). pol.sld is the United Left coalition list, which missed the 8% coalition threshold. Party leader Jarosław Kaczyński named Beata Szydło as the candidate for Prime Minister.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2015_Polish_parliamentary_election",
+            "title": "Wikipedia: 2015 Polish parliamentary election",
+            "accessed": "2026-10-14"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "senate_2015",
+      "date": "2015-10-25",
+      "kind": "legislative_upper",
+      "chamber": "senate",
+      "historical": {
+        "party_results": [
+          {
+            "party": "pol.pis",
+            "share": 0.3999,
+            "seats": 61
+          },
+          {
+            "party": "pol.po",
+            "share": 0.2885,
+            "seats": 34
+          },
+          {
+            "party": "pol.psl",
+            "share": 0.074,
+            "seats": 1
+          },
+          {
+            "party": "independents",
+            "share": 0.1095,
+            "seats": 4
+          }
+        ],
+        "winner": "pol.pis",
+        "turnout": 0.5092,
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2015_Polish_parliamentary_election",
+            "title": "Wikipedia: 2015 Polish parliamentary election",
+            "accessed": "2026-10-14"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "sejm_2019",
+      "date": "2019-10-13",
+      "kind": "legislative",
+      "chamber": "sejm",
+      "historical": {
+        "candidates": [
+          {
+            "person": "pol.mateusz_morawiecki",
+            "round": 1,
+            "party": "pol.pis"
+          },
+          {
+            "person": "pol.malgorzata_kidawa_blonska",
+            "round": 1,
+            "party": "pol.po"
+          }
+        ],
+        "party_results": [
+          {
+            "party": "pol.pis",
+            "share": 0.4359,
+            "seats": 235
+          },
+          {
+            "party": "pol.po",
+            "share": 0.274,
+            "seats": 134
+          },
+          {
+            "party": "pol.sld",
+            "share": 0.1256,
+            "seats": 49
+          },
+          {
+            "party": "pol.psl",
+            "share": 0.0855,
+            "seats": 30
+          },
+          {
+            "party": "pol.konfederacja",
+            "share": 0.0681,
+            "seats": 11
+          },
+          {
+            "party": "pol.mn",
+            "share": 0.0017,
+            "seats": 1
+          }
+        ],
+        "winner": "pol.pis",
+        "turnout": 0.6174,
+        "note": "Electoral committees recorded under their lead party: United Right (pol.pis), Civic Coalition (pol.po; includes Modern, Polish Initiative and the Greens), The Left (pol.sld; includes Spring and Left Together), Polish Coalition (pol.psl; includes Kukiz'15 candidates).",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2019_Polish_parliamentary_election",
+            "title": "Wikipedia: 2019 Polish parliamentary election",
+            "accessed": "2026-10-14"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "senate_2019",
+      "date": "2019-10-13",
+      "kind": "legislative_upper",
+      "chamber": "senate",
+      "historical": {
+        "party_results": [
+          {
+            "party": "pol.pis",
+            "share": 0.4456,
+            "seats": 48
+          },
+          {
+            "party": "pol.po",
+            "share": 0.3566,
+            "seats": 43
+          },
+          {
+            "party": "pol.psl",
+            "share": 0.0572,
+            "seats": 3
+          },
+          {
+            "party": "pol.sld",
+            "share": 0.0228,
+            "seats": 2
+          },
+          {
+            "party": "independents",
+            "share": 0.0598,
+            "seats": 4
+          }
+        ],
+        "winner": "pol.pis",
+        "turnout": 0.6174,
+        "note": "Committees recorded under their lead party as for the Sejm. The opposition parties together won a Senate majority.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2019_Polish_parliamentary_election",
+            "title": "Wikipedia: 2019 Polish parliamentary election",
+            "accessed": "2026-10-14"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "presidential_2020",
+      "date": "2020-06-28",
+      "kind": "presidential",
+      "office": "pol.president",
+      "rounds": 2,
+      "historical": {
+        "candidates": [
+          {
+            "person": "pol.andrzej_duda",
+            "party": "pol.pis",
+            "share": 0.435,
+            "votes": 8450513,
+            "round": 1
+          },
+          {
+            "person": "pol.rafal_trzaskowski",
+            "party": "pol.po",
+            "share": 0.3046,
+            "votes": 5917340,
+            "round": 1
+          },
+          {
+            "person": "pol.szymon_holownia",
+            "share": 0.1387,
+            "votes": 2693397,
+            "round": 1
+          },
+          {
+            "person": "pol.krzysztof_bosak",
+            "party": "pol.konfederacja",
+            "share": 0.0678,
+            "votes": 1317380,
+            "round": 1
+          },
+          {
+            "person": "pol.andrzej_duda",
+            "party": "pol.pis",
+            "share": 0.5103,
+            "votes": 10440648,
+            "round": 2
+          },
+          {
+            "person": "pol.rafal_trzaskowski",
+            "party": "pol.po",
+            "share": 0.4897,
+            "votes": 10018263,
+            "round": 2
+          }
+        ],
+        "winner": "pol.andrzej_duda",
+        "turnout": 0.6818,
+        "note": "First round 28 June (turnout 64.51%), second round 12 July 2020 (turnout 68.18%, stored). Duda stood as an independent backed by PiS; Hołownia as an independent.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2020_Polish_presidential_election",
+            "title": "Wikipedia: 2020 Polish presidential election",
+            "accessed": "2026-10-14"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "sejm_2023",
+      "date": "2023-10-15",
+      "kind": "legislative",
+      "chamber": "sejm",
+      "historical": {
+        "candidates": [
+          {
+            "person": "pol.mateusz_morawiecki",
+            "round": 1,
+            "party": "pol.pis"
+          },
+          {
+            "person": "pol.donald_tusk",
+            "round": 1,
+            "party": "pol.po"
+          }
+        ],
+        "party_results": [
+          {
+            "party": "pol.pis",
+            "share": 0.3538,
+            "seats": 194
+          },
+          {
+            "party": "pol.po",
+            "share": 0.307,
+            "seats": 157
+          },
+          {
+            "party": "pol.pl2050",
+            "seats": 33
+          },
+          {
+            "party": "pol.psl",
+            "seats": 32
+          },
+          {
+            "party": "pol.nowa_lewica",
+            "share": 0.0861,
+            "seats": 26
+          },
+          {
+            "party": "pol.konfederacja",
+            "share": 0.0716,
+            "seats": 18
+          }
+        ],
+        "winner": "pol.pis",
+        "turnout": 0.7438,
+        "note": "Committees recorded under their lead party: United Right (pol.pis), Civic Coalition (pol.po), The Left (pol.nowa_lewica; includes Left Together). The Third Way list (14.40%, 65 seats) is split by seat: Poland 2050 33; PSL 28 plus Centre for Poland 3 and 1 other, recorded as pol.psl. PiS won most seats but Donald Tusk formed a KO-Third Way-Left coalition government.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2023_Polish_parliamentary_election",
+            "title": "Wikipedia: 2023 Polish parliamentary election",
+            "accessed": "2026-10-14"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "senate_2023",
+      "date": "2023-10-15",
+      "kind": "legislative_upper",
+      "chamber": "senate",
+      "historical": {
+        "party_results": [
+          {
+            "party": "pol.po",
+            "share": 0.2891,
+            "seats": 41
+          },
+          {
+            "party": "pol.pis",
+            "share": 0.3481,
+            "seats": 34
+          },
+          {
+            "party": "pol.psl",
+            "share": 0.115,
+            "seats": 11
+          },
+          {
+            "party": "pol.nowa_lewica",
+            "share": 0.0529,
+            "seats": 9
+          },
+          {
+            "party": "independents",
+            "seats": 5
+          }
+        ],
+        "winner": "pol.po",
+        "turnout": 0.7431,
+        "note": "Third Way's 11 senators (PSL and Poland 2050) are recorded under pol.psl. Four of the independents ran with the opposition 'Senate Pact'.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2023_Polish_parliamentary_election",
+            "title": "Wikipedia: 2023 Polish parliamentary election",
+            "accessed": "2026-10-14"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "referendum_2023_q1",
+      "date": "2023-10-15",
+      "kind": "referendum",
+      "question": "Do you support the selling off of state assets to foreign entities, leading to the loss of Poles' control over strategic sectors of the economy?",
+      "historical": {
+        "yes_share": 0.0351,
+        "turnout": 0.4091,
+        "options": [
+          {
+            "label": "Yes",
+            "votes": 394704
+          },
+          {
+            "label": "No",
+            "votes": 10857496
+          }
+        ],
+        "winner": "No",
+        "note": "Held alongside the parliamentary election. Not binding: turnout (about 40.9%) was below the 50% required.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2023_Polish_referendum",
+            "title": "Wikipedia: 2023 Polish referendum",
+            "accessed": "2026-10-14"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "referendum_2023_q2",
+      "date": "2023-10-15",
+      "kind": "referendum",
+      "question": "Do you support an increase in the retirement age, including the restoration of the increased retirement age to 67 for men and women?",
+      "historical": {
+        "yes_share": 0.0539,
+        "turnout": 0.4091,
+        "options": [
+          {
+            "label": "Yes",
+            "votes": 608254
+          },
+          {
+            "label": "No",
+            "votes": 10675211
+          }
+        ],
+        "winner": "No",
+        "note": "Held alongside the parliamentary election. Not binding: turnout (about 40.9%) was below the 50% required.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2023_Polish_referendum",
+            "title": "Wikipedia: 2023 Polish referendum",
+            "accessed": "2026-10-14"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "referendum_2023_q3",
+      "date": "2023-10-15",
+      "kind": "referendum",
+      "question": "Do you support the removal of the barrier on the border between Poland and Belarus?",
+      "historical": {
+        "yes_share": 0.0396,
+        "turnout": 0.4091,
+        "options": [
+          {
+            "label": "Yes",
+            "votes": 445270
+          },
+          {
+            "label": "No",
+            "votes": 10808410
+          }
+        ],
+        "winner": "No",
+        "note": "Held alongside the parliamentary election. Not binding: turnout (about 40.9%) was below the 50% required.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2023_Polish_referendum",
+            "title": "Wikipedia: 2023 Polish referendum",
+            "accessed": "2026-10-14"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "referendum_2023_q4",
+      "date": "2023-10-15",
+      "kind": "referendum",
+      "question": "Do you support the admission of thousands of illegal immigrants from the Middle East and Africa, in accordance with the forced relocation mechanism imposed by the European bureaucracy?",
+      "historical": {
+        "yes_share": 0.0321,
+        "turnout": 0.4091,
+        "options": [
+          {
+            "label": "Yes",
+            "votes": 360803
+          },
+          {
+            "label": "No",
+            "votes": 10878863
+          }
+        ],
+        "winner": "No",
+        "note": "Held alongside the parliamentary election. Not binding: turnout (about 40.9%) was below the 50% required.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2023_Polish_referendum",
+            "title": "Wikipedia: 2023 Polish referendum",
+            "accessed": "2026-10-14"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "presidential_2025",
+      "date": "2025-05-18",
+      "kind": "presidential",
+      "office": "pol.president",
+      "rounds": 2,
+      "historical": {
+        "candidates": [
+          {
+            "person": "pol.rafal_trzaskowski",
+            "party": "pol.po",
+            "share": 0.3136,
+            "votes": 6147797,
+            "round": 1
+          },
+          {
+            "person": "pol.karol_nawrocki",
+            "share": 0.2954,
+            "votes": 5790804,
+            "round": 1
+          },
+          {
+            "person": "pol.slawomir_mentzen",
+            "party": "pol.konfederacja",
+            "share": 0.1481,
+            "votes": 2902448,
+            "round": 1
+          },
+          {
+            "person": "pol.grzegorz_braun",
+            "party": "pol.kkp",
+            "share": 0.0634,
+            "votes": 1242917,
+            "round": 1
+          },
+          {
+            "person": "pol.szymon_holownia",
+            "party": "pol.pl2050",
+            "share": 0.0499,
+            "votes": 978901,
+            "round": 1
+          },
+          {
+            "person": "pol.adrian_zandberg",
+            "party": "pol.razem",
+            "share": 0.0486,
+            "votes": 952832,
+            "round": 1
+          },
+          {
+            "person": "pol.karol_nawrocki",
+            "share": 0.5089,
+            "votes": 10606877,
+            "round": 2
+          },
+          {
+            "person": "pol.rafal_trzaskowski",
+            "party": "pol.po",
+            "share": 0.4911,
+            "votes": 10237286,
+            "round": 2
+          }
+        ],
+        "winner": "pol.karol_nawrocki",
+        "turnout": 0.7163,
+        "note": "First round 18 May (turnout 67.31%), second round 1 June 2025 (turnout 71.63%, stored). Nawrocki stood as an independent backed by PiS.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2025_Polish_presidential_election",
+            "title": "Wikipedia: 2025 Polish presidential election",
+            "accessed": "2026-10-14"
+          }
+        ],
+        "confidence": "verified"
+      }
+    }
+  ],
+  "source": [
+    {
+      "url": "https://en.wikipedia.org/wiki/2015_Polish_parliamentary_election",
+      "title": "Wikipedia: 2015 Polish parliamentary election",
+      "accessed": "2026-10-14"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/2023_Polish_parliamentary_election",
+      "title": "Wikipedia: 2023 Polish parliamentary election",
+      "accessed": "2026-10-14"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/2025_Polish_presidential_election",
+      "title": "Wikipedia: 2025 Polish presidential election",
+      "accessed": "2026-10-14"
+    }
+  ],
+  "confidence": "verified"
+}

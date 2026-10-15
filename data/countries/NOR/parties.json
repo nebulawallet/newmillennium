@@ -1,0 +1,277 @@
+{
+  "parties": [
+    {
+      "id": "nor.ap",
+      "name": { "en": "Labour Party", "native": "Arbeiderpartiet" },
+      "abbrev": { "en": "Ap", "native": "Ap" },
+      "color": "#E31836",
+      "sub_ideology": "social_democrat",
+      "founded": "1887-08-22",
+      "status_2000": "active",
+      "leader_history": [
+        { "person": "nor.thorbjorn_jagland", "from": 1992, "to": 2002 },
+        { "person": "nor.jens_stoltenberg", "from": 2002, "to": 2014 },
+        { "person": "nor.jonas_gahr_store", "from": "2014-06-14" }
+      ],
+      "popularity_2000": 0.35,
+      "popularity_note": "Vote share, 1997 Storting election (904,362 of 2,584,161 valid votes).",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/Labour_Party_(Norway)", "title": "Wikipedia: Labour Party (Norway) (founding date, list of party leaders)", "accessed": "2026-10-14" },
+        { "url": "https://en.wikipedia.org/wiki/2025_Norwegian_parliamentary_election", "title": "Wikipedia: 2025 Norwegian parliamentary election (Støre leader since 14 June 2014)", "accessed": "2026-10-14" },
+        { "url": "https://en.wikipedia.org/wiki/1997_Norwegian_parliamentary_election", "title": "Wikipedia: 1997 Norwegian parliamentary election", "accessed": "2026-10-14" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "nor.h",
+      "name": { "en": "Conservative Party", "native": "Høyre" },
+      "abbrev": { "en": "H", "native": "H" },
+      "color": "#87ADD7",
+      "sub_ideology": "liberal_conservative",
+      "founded": "1884-08-25",
+      "status_2000": "active",
+      "leader_history": [
+        { "person": "nor.jan_petersen", "from": 1994, "to": 2004 },
+        { "person": "nor.erna_solberg", "from": "2004-05-09", "to": 2026 },
+        { "person": "nor.ine_eriksen_soreide", "from": 2026 }
+      ],
+      "popularity_2000": 0.1434,
+      "popularity_note": "Vote share, 1997 Storting election.",
+      "international": "International Democracy Union",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/Conservative_Party_(Norway)", "title": "Wikipedia: Conservative Party (Norway) (founding date, list of party leaders including Søreide from 2026)", "accessed": "2026-10-14" },
+        { "url": "https://en.wikipedia.org/wiki/2025_Norwegian_parliamentary_election", "title": "Wikipedia: 2025 Norwegian parliamentary election (Solberg leader since 9 May 2004)", "accessed": "2026-10-14" },
+        { "url": "https://en.wikipedia.org/wiki/1997_Norwegian_parliamentary_election", "title": "Wikipedia: 1997 Norwegian parliamentary election", "accessed": "2026-10-14" }
+      ],
+      "confidence": "needs_review",
+      "review_note": "The leadership change from Erna Solberg to Ine Eriksen Søreide is given only as the year 2026 in the party article; confirm the exact date of the 2026 party convention."
+    },
+    {
+      "id": "nor.frp",
+      "name": { "en": "Progress Party", "native": "Fremskrittspartiet" },
+      "abbrev": { "en": "FrP", "native": "FrP" },
+      "color": "#024C93",
+      "sub_ideology": "right_populist",
+      "founded": "1973-04-08",
+      "status_2000": "active",
+      "leader_history": [
+        { "person": "nor.carl_i_hagen", "from": "1978-02-11", "to": "2006-05-06" },
+        { "person": "nor.siv_jensen", "from": "2006-05-06", "to": "2021-05-08" },
+        { "person": "nor.sylvi_listhaug", "from": "2021-05-08" }
+      ],
+      "popularity_2000": 0.153,
+      "popularity_note": "Vote share, 1997 Storting election.",
+      "note": "The party article lists national conservatism, right-libertarianism and right-wing populism as its ideologies; mapped to right_populist.",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/Progress_Party_(Norway)", "title": "Wikipedia: Progress Party (Norway) (founding date, table of party leaders)", "accessed": "2026-10-14" },
+        { "url": "https://en.wikipedia.org/wiki/1997_Norwegian_parliamentary_election", "title": "Wikipedia: 1997 Norwegian parliamentary election", "accessed": "2026-10-14" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "nor.krf",
+      "name": { "en": "Christian Democratic Party", "native": "Kristelig Folkeparti" },
+      "abbrev": { "en": "KrF", "native": "KrF" },
+      "color": "#FEC11E",
+      "sub_ideology": "christian_democrat",
+      "founded": "1933-09-04",
+      "status_2000": "active",
+      "leader_history": [
+        { "person": "nor.valgerd_svarstad_haugland", "from": 1995, "to": 2004 },
+        { "person": "nor.dagfinn_hoybraten", "from": 2004, "to": 2011 },
+        { "person": "nor.knut_arild_hareide", "from": 2011, "to": 2019 },
+        { "person": "nor.kjell_ingolf_ropstad", "from": 2019, "to": 2021 },
+        { "person": "nor.olaug_bollestad", "from": 2021, "to": 2024 },
+        { "person": "nor.dag_inge_ulstein", "from": "2024-08-22" }
+      ],
+      "popularity_2000": 0.1366,
+      "popularity_note": "Vote share, 1997 Storting election. Party of Prime Minister Kjell Magne Bondevik on 1 January 2000.",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/Christian_Democratic_Party_(Norway)", "title": "Wikipedia: Christian Democratic Party (Norway) (founding date, list of party leaders)", "accessed": "2026-10-14" },
+        { "url": "https://en.wikipedia.org/wiki/2025_Norwegian_parliamentary_election", "title": "Wikipedia: 2025 Norwegian parliamentary election (Ulstein leader since 22 August 2024)", "accessed": "2026-10-14" },
+        { "url": "https://en.wikipedia.org/wiki/1997_Norwegian_parliamentary_election", "title": "Wikipedia: 1997 Norwegian parliamentary election", "accessed": "2026-10-14" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "nor.sp",
+      "name": { "en": "Centre Party", "native": "Senterpartiet" },
+      "abbrev": { "en": "Sp", "native": "Sp" },
+      "color": "#008542",
+      "sub_ideology": "agrarian",
+      "founded": "1920-05-19",
+      "status_2000": "active",
+      "leader_history": [
+        { "person": "nor.odd_roger_enoksen", "from": 1999, "to": 2003 },
+        { "person": "nor.aslaug_haga", "from": 2003, "to": 2008 },
+        { "person": "nor.lars_peder_brekk", "from": 2008, "to": 2008, "title": "Acting leader" },
+        { "person": "nor.liv_signe_navarsete", "from": 2008, "to": 2014 },
+        { "person": "nor.trygve_slagsvold_vedum", "from": "2014-04-07" }
+      ],
+      "popularity_2000": 0.0793,
+      "popularity_note": "Vote share, 1997 Storting election.",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/Centre_Party_(Norway)", "title": "Wikipedia: Centre Party (Norway) (founding date, list of party leaders)", "accessed": "2026-10-14" },
+        { "url": "https://en.wikipedia.org/wiki/2025_Norwegian_parliamentary_election", "title": "Wikipedia: 2025 Norwegian parliamentary election (Vedum leader since 7 April 2014)", "accessed": "2026-10-14" },
+        { "url": "https://en.wikipedia.org/wiki/1997_Norwegian_parliamentary_election", "title": "Wikipedia: 1997 Norwegian parliamentary election", "accessed": "2026-10-14" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "nor.sv",
+      "name": { "en": "Socialist Left Party", "native": "Sosialistisk Venstreparti" },
+      "abbrev": { "en": "SV", "native": "SV" },
+      "color": "#B5317C",
+      "sub_ideology": "democratic_socialist",
+      "founded": "1975-03-16",
+      "status_2000": "active",
+      "leader_history": [
+        { "person": "nor.kristin_halvorsen", "from": 1997, "to": 2012 },
+        { "person": "nor.audun_lysbakken", "from": 2012, "to": 2023 },
+        { "person": "nor.kirsti_bergsto", "from": "2023-03-18" }
+      ],
+      "popularity_2000": 0.0601,
+      "popularity_note": "Vote share, 1997 Storting election.",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/Socialist_Left_Party_(Norway)", "title": "Wikipedia: Socialist Left Party (Norway) (founding date, list of party leaders)", "accessed": "2026-10-14" },
+        { "url": "https://en.wikipedia.org/wiki/2025_Norwegian_parliamentary_election", "title": "Wikipedia: 2025 Norwegian parliamentary election (Bergstø leader since 18 March 2023)", "accessed": "2026-10-14" },
+        { "url": "https://en.wikipedia.org/wiki/1997_Norwegian_parliamentary_election", "title": "Wikipedia: 1997 Norwegian parliamentary election", "accessed": "2026-10-14" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "nor.v",
+      "name": { "en": "Liberal Party", "native": "Venstre" },
+      "abbrev": { "en": "V", "native": "V" },
+      "color": "#116468",
+      "sub_ideology": "social_liberal",
+      "founded": "1884-01-28",
+      "status_2000": "active",
+      "leader_history": [
+        { "person": "nor.lars_sponheim", "from": 1996, "to": 2010 },
+        { "person": "nor.trine_skei_grande", "from": 2010, "to": 2020 },
+        { "person": "nor.guri_melby", "from": "2020-09-26" }
+      ],
+      "popularity_2000": 0.0445,
+      "popularity_note": "Vote share, 1997 Storting election.",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/Liberal_Party_(Norway)", "title": "Wikipedia: Liberal Party (Norway) (founding date, list of party leaders)", "accessed": "2026-10-14" },
+        { "url": "https://en.wikipedia.org/wiki/2025_Norwegian_parliamentary_election", "title": "Wikipedia: 2025 Norwegian parliamentary election (Melby leader since 26 September 2020)", "accessed": "2026-10-14" },
+        { "url": "https://en.wikipedia.org/wiki/1997_Norwegian_parliamentary_election", "title": "Wikipedia: 1997 Norwegian parliamentary election", "accessed": "2026-10-14" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "nor.kyst",
+      "name": { "en": "Coastal Party", "native": "Kystpartiet" },
+      "abbrev": { "en": "KP", "native": "KP" },
+      "color": "#00AD8E",
+      "sub_ideology": "agrarian",
+      "founded": "1999-02-01",
+      "status_2000": "active",
+      "leader_history": [
+        { "person": "nor.steinar_bastesen", "from": 1999, "to": 2005 }
+      ],
+      "popularity_2000": 0.0036,
+      "popularity_note": "Vote share, 1997 Storting election, when Steinar Bastesen won the party's seat on the Non-Partisan Deputies (Tverrpolitisk Folkevalgte) list before the party was formally founded on 1 February 1999.",
+      "regional_base": ["Northern Norway"],
+      "note": "Described as regionalist and agrarian, with fishing and coastal-district policies and its base in Northern Norway. Lost its only seat in 2005. Later leaders (Roy Waage from 2005 and others) are not recorded.",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/Coastal_Party", "title": "Wikipedia: Coastal Party (founding, 1997 seat, party leaders)", "accessed": "2026-10-14" },
+        { "url": "https://en.wikipedia.org/wiki/1997_Norwegian_parliamentary_election", "title": "Wikipedia: 1997 Norwegian parliamentary election", "accessed": "2026-10-14" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "nor.rv",
+      "name": { "en": "Red Electoral Alliance", "native": "Rød Valgallianse" },
+      "abbrev": { "en": "RV", "native": "RV" },
+      "color": "#E73445",
+      "sub_ideology": "democratic_socialist",
+      "founded": 1973,
+      "dissolved": 2007,
+      "status_2000": "extra_parliamentary",
+      "leader_history": [
+        { "person": "nor.aslak_sira_myhre", "from": 1997, "to": 2003 },
+        { "person": "nor.torstein_dahle", "from": 2003, "to": 2007 }
+      ],
+      "popularity_2000": 0.0167,
+      "popularity_note": "Vote share, 1997 Storting election (no seats).",
+      "lineage": { "merged_into": "nor.rodt" },
+      "note": "The party article lists revolutionary socialism, Marxism and (from 1991) democratic socialism; mapped to democratic_socialist.",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/Red_Electoral_Alliance", "title": "Wikipedia: Red Electoral Alliance (founding, dissolution, party leaders)", "accessed": "2026-10-14" },
+        { "url": "https://en.wikipedia.org/wiki/1997_Norwegian_parliamentary_election", "title": "Wikipedia: 1997 Norwegian parliamentary election", "accessed": "2026-10-14" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "nor.rodt",
+      "name": { "en": "Red Party", "native": "Rødt" },
+      "abbrev": { "en": "R", "native": "R" },
+      "color": "#E73445",
+      "sub_ideology": "democratic_socialist",
+      "founded": "2007-03-11",
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        { "person": "nor.torstein_dahle", "from": 2007, "to": "2010-05-30" },
+        { "person": "nor.turid_thomassen", "from": "2010-05-30", "to": "2012-05-06" },
+        { "person": "nor.bjornar_moxnes", "from": "2012-05-06", "to": "2023-07-24" },
+        { "person": "nor.marie_sneve_martinussen", "from": "2023-07-24", "title": "Leader (acting until 24 May 2024)" }
+      ],
+      "popularity_2000": 0,
+      "lineage": { "formed_from": ["nor.rv"] },
+      "note": "Formed in 2007 by the merger of the Red Electoral Alliance and the Workers' Communist Party (AKP, not modelled). The party article lists communism, socialism, democratic socialism and Marxism; mapped to democratic_socialist.",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/Red_Party_(Norway)", "title": "Wikipedia: Red Party (Norway) (founding, table of party leaders)", "accessed": "2026-10-14" },
+        { "url": "https://en.wikipedia.org/wiki/Red_Electoral_Alliance", "title": "Wikipedia: Red Electoral Alliance (successor)", "accessed": "2026-10-14" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "nor.mdg",
+      "name": { "en": "Green Party", "native": "Miljøpartiet De Grønne" },
+      "abbrev": { "en": "MDG", "native": "MDG" },
+      "color": "#5D961C",
+      "sub_ideology": "green",
+      "founded": "1988-10-29",
+      "status_2000": "extra_parliamentary",
+      "leader_history": [
+        { "person": "nor.rasmus_hansson", "from": 2016, "to": 2018, "title": "National spokesperson" },
+        { "person": "nor.une_aina_bastholm", "from": 2016, "to": 2020, "title": "National spokesperson" },
+        { "person": "nor.arild_hermstad", "from": 2018, "to": 2020, "title": "National spokesperson" },
+        { "person": "nor.une_aina_bastholm", "from": 2020, "to": 2022 },
+        { "person": "nor.arild_hermstad", "from": "2022-11-26" }
+      ],
+      "popularity_2000": 0.0023,
+      "popularity_note": "Vote share, 1997 Storting election (no seats).",
+      "note": "Led by pairs of national spokespersons until 2020, then by a single leader. Spokespersons from 2000 to 2016 (none of whom held national office) are not recorded.",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/Green_Party_(Norway)", "title": "Wikipedia: Green Party (Norway) (founding date, spokespersons and leaders)", "accessed": "2026-10-14" },
+        { "url": "https://en.wikipedia.org/wiki/2025_Norwegian_parliamentary_election", "title": "Wikipedia: 2025 Norwegian parliamentary election (Hermstad leader since 26 November 2022)", "accessed": "2026-10-14" },
+        { "url": "https://en.wikipedia.org/wiki/1997_Norwegian_parliamentary_election", "title": "Wikipedia: 1997 Norwegian parliamentary election", "accessed": "2026-10-14" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "nor.pf",
+      "name": { "en": "Patient Focus", "native": "Pasientfokus" },
+      "abbrev": { "en": "PF", "native": "PF" },
+      "color": "#F69465",
+      "sub_ideology": "big_tent",
+      "founded": 2021,
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        { "person": "nor.irene_ojala", "from": 2021 }
+      ],
+      "popularity_2000": 0,
+      "regional_base": ["Finnmark"],
+      "note": "Single-issue regionalist party (founded April 2021) that won one seat in Finnmark in 2021.",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/Patient_Focus", "title": "Wikipedia: Patient Focus", "accessed": "2026-10-14" },
+        { "url": "https://en.wikipedia.org/wiki/2021_Norwegian_parliamentary_election", "title": "Wikipedia: 2021 Norwegian parliamentary election", "accessed": "2026-10-14" }
+      ],
+      "confidence": "verified"
+    }
+  ]
+}

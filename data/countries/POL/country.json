@@ -1,0 +1,308 @@
+{
+  "tag": "POL",
+  "name": {
+    "en": "Poland",
+    "native": "Polska",
+    "official": {
+      "en": "Republic of Poland",
+      "native": "Rzeczpospolita Polska"
+    }
+  },
+  "adjective": "Polish",
+  "culture_primary": "polish",
+  "government": {
+    "type": "semi_presidential",
+    "effective_executive": "pol.prime_minister",
+    "head_of_state_office": "pol.president",
+    "head_of_government_office": "pol.prime_minister",
+    "constitution": {
+      "term_limit_amendable": true,
+      "emergency_powers": true,
+      "referendum_required_for": []
+    },
+    "note": "The President is directly elected for five years (two-round system, at most two terms); the Prime Minister is appointed by the President and needs the confidence of the Sejm, which is the chamber that can bring down the government."
+  },
+  "offices": [
+    {
+      "id": "pol.president",
+      "title": {
+        "en": "President of the Republic of Poland",
+        "native": "Prezydent Rzeczypospolitej Polskiej"
+      },
+      "role": "head_of_state",
+      "power_weight": 0.3,
+      "selection": "direct_election",
+      "term_years": 5,
+      "term_limit": {
+        "max_terms": 2,
+        "consecutive_only": false
+      },
+      "succession": {
+        "type": "acting_then_election"
+      },
+      "holders": [
+        {
+          "person": "pol.aleksander_kwasniewski",
+          "from": "1995-12-23",
+          "to": "2005-12-23"
+        },
+        {
+          "person": "pol.lech_kaczynski",
+          "from": "2005-12-23",
+          "to": "2010-04-10",
+          "note": "Died in office in the Smolensk air crash."
+        },
+        {
+          "person": "pol.bronislaw_komorowski",
+          "from": "2010-04-10",
+          "to": "2010-07-08",
+          "acting": true,
+          "note": "Acting as Marshal of the Sejm; resigned as Marshal on 8 July 2010 after winning the presidential election."
+        },
+        {
+          "person": "pol.bogdan_borusewicz",
+          "from": "2010-07-08",
+          "to": "2010-07-08",
+          "acting": true,
+          "note": "Acting as Marshal of the Senate for part of 8 July 2010, until a new Marshal of the Sejm was elected."
+        },
+        {
+          "person": "pol.grzegorz_schetyna",
+          "from": "2010-07-08",
+          "to": "2010-08-06",
+          "acting": true,
+          "note": "Acting as the newly elected Marshal of the Sejm."
+        },
+        {
+          "person": "pol.bronislaw_komorowski",
+          "from": "2010-08-06",
+          "to": "2015-08-06"
+        },
+        {
+          "person": "pol.andrzej_duda",
+          "from": "2015-08-06",
+          "to": "2025-08-06"
+        },
+        {
+          "person": "pol.karol_nawrocki",
+          "from": "2025-08-06"
+        }
+      ],
+      "note": "On a vacancy the Marshal of the Sejm acts as President (or the Marshal of the Senate if the Sejm Marshal cannot); the Marshals are not modelled as offices.",
+      "source": [
+        {
+          "url": "https://www.wikidata.org/wiki/Q1054799",
+          "title": "Wikidata: President of the Republic of Poland (position held by)",
+          "accessed": "2026-10-14"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/President_of_Poland",
+          "title": "Wikipedia: President of Poland (2010 acting presidents)",
+          "accessed": "2026-10-14"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "pol.prime_minister",
+      "title": {
+        "en": "Prime Minister of Poland",
+        "native": "Prezes Rady Ministrów"
+      },
+      "role": "head_of_government",
+      "power_weight": 0.7,
+      "selection": "legislature",
+      "appointed_by": "pol.president",
+      "term_years": 4,
+      "holders": [
+        {
+          "person": "pol.jerzy_buzek",
+          "from": "1997-10-31",
+          "to": "2001-10-19",
+          "note": "AWS-UW coalition; UW left the cabinet on 8 June 2000, leaving an AWS minority government."
+        },
+        {
+          "person": "pol.leszek_miller",
+          "from": "2001-10-19",
+          "to": "2004-05-02"
+        },
+        {
+          "person": "pol.marek_belka",
+          "from": "2004-05-02",
+          "to": "2005-10-31",
+          "note": "First cabinet lost its confidence vote; reappointed with a second cabinet on 11 June 2004."
+        },
+        {
+          "person": "pol.kazimierz_marcinkiewicz",
+          "from": "2005-10-31",
+          "to": "2006-07-14"
+        },
+        {
+          "person": "pol.jaroslaw_kaczynski",
+          "from": "2006-07-14",
+          "to": "2007-11-16"
+        },
+        {
+          "person": "pol.donald_tusk",
+          "from": "2007-11-16",
+          "to": "2014-09-22"
+        },
+        {
+          "person": "pol.ewa_kopacz",
+          "from": "2014-09-22",
+          "to": "2015-11-16"
+        },
+        {
+          "person": "pol.beata_szydlo",
+          "from": "2015-11-16",
+          "to": "2017-12-11"
+        },
+        {
+          "person": "pol.mateusz_morawiecki",
+          "from": "2017-12-11",
+          "to": "2023-12-13",
+          "note": "His third cabinet (27 November 2023) failed to win a Sejm confidence vote; Tusk was appointed on 13 December 2023."
+        },
+        {
+          "person": "pol.donald_tusk",
+          "from": "2023-12-13"
+        }
+      ],
+      "source": [
+        {
+          "url": "https://www.wikidata.org/wiki/Q3259469",
+          "title": "Wikidata: Prime Minister of Poland (position held by)",
+          "accessed": "2026-10-14"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/List_of_prime_ministers_of_Poland",
+          "title": "Wikipedia: List of prime ministers of Poland",
+          "accessed": "2026-10-14"
+        }
+      ],
+      "confidence": "verified"
+    }
+  ],
+  "legislature": {
+    "name": {
+      "en": "National Assembly",
+      "native": "Zgromadzenie Narodowe"
+    },
+    "chambers": [
+      {
+        "id": "sejm",
+        "name": {
+          "en": "Sejm",
+          "native": "Sejm Rzeczypospolitej Polskiej"
+        },
+        "seats": 460,
+        "term_years": 4,
+        "elected": "direct",
+        "system": {
+          "type": "list_pr",
+          "formula": "dhondt",
+          "threshold": 0.05,
+          "district_model": "custom",
+          "note": "Open-list PR in 41 multi-member constituencies; 5% national threshold for parties and 8% for coalitions, waived for national-minority lists. seats_2000 is the result of the September 1997 election; defections changed the club strengths before 1 January 2000."
+        },
+        "seats_2000": {
+          "pol.aws": 201,
+          "pol.sld": 164,
+          "pol.uw": 60,
+          "pol.psl": 27,
+          "pol.rop": 6,
+          "pol.mn": 2
+        },
+        "confidence_chamber": true,
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/1997_Polish_parliamentary_election",
+            "title": "Wikipedia: 1997 Polish parliamentary election (Sejm results)",
+            "accessed": "2026-10-14"
+          },
+          {
+            "url": "https://en.wikipedia.org/wiki/2015_Polish_parliamentary_election",
+            "title": "Wikipedia: 2015 Polish parliamentary election (electoral system)",
+            "accessed": "2026-10-14"
+          }
+        ],
+        "confidence": "verified"
+      },
+      {
+        "id": "senate",
+        "name": {
+          "en": "Senate",
+          "native": "Senat Rzeczypospolitej Polskiej"
+        },
+        "seats": 100,
+        "term_years": 4,
+        "elected": "direct",
+        "system": {
+          "type": "block",
+          "district_model": "custom",
+          "note": "Plurality block voting in multi-member constituencies until 2007; the 2011 Election Code replaced it with first-past-the-post in 100 single-member constituencies. seats_2000 is the result of the September 1997 election."
+        },
+        "seats_2000": {
+          "pol.aws": 51,
+          "pol.sld": 28,
+          "pol.uw": 8,
+          "pol.rop": 5,
+          "pol.psl": 3,
+          "independents": 5
+        },
+        "confidence_chamber": false,
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/1997_Polish_parliamentary_election",
+            "title": "Wikipedia: 1997 Polish parliamentary election (Senate results)",
+            "accessed": "2026-10-14"
+          },
+          {
+            "url": "https://en.wikipedia.org/wiki/2011_Polish_parliamentary_election",
+            "title": "Wikipedia: 2011 Polish parliamentary election (new Election Code)",
+            "accessed": "2026-10-14"
+          }
+        ],
+        "confidence": "verified"
+      }
+    ]
+  },
+  "party_system": "multi_party",
+  "start_2000": {
+    "ruling_parties": [
+      "pol.aws",
+      "pol.uw"
+    ],
+    "ideology_support": {
+      "christian_democrat": 0.2,
+      "liberal_conservative": 0.06,
+      "national_conservative": 0.15,
+      "social_democrat": 0.267,
+      "third_way": 0.05,
+      "classical_liberal": 0.08,
+      "social_liberal": 0.054,
+      "agrarian": 0.073,
+      "left_populist": 0.038,
+      "libertarian": 0.02,
+      "regionalist": 0.004,
+      "big_tent": 0.004
+    },
+    "ideology_support_note": "Derived from 1997 Sejm vote shares: AWS 33.8% (split between Christian democratic, national-conservative and liberal-conservative currents), SLD 27.1% (social democrat with a Third Way modernising wing), UW 13.4% (market liberal and social liberal wings), PSL 7.3% (agrarian), ROP 5.6% and Bloc for Poland 1.4% (national conservative), Labour Union 4.7% (social democrat), two pensioners' lists 3.8% (left populist), UPR 2.0% (libertarian), German Minority 0.4% (regionalist), others 0.4%.",
+    "stability": 0.6,
+    "war_support": 0.3
+  },
+  "claims": [],
+  "source": [
+    {
+      "url": "https://en.wikipedia.org/wiki/1997_Polish_parliamentary_election",
+      "title": "Wikipedia: 1997 Polish parliamentary election",
+      "accessed": "2026-10-14"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/List_of_prime_ministers_of_Poland",
+      "title": "Wikipedia: List of prime ministers of Poland",
+      "accessed": "2026-10-14"
+    }
+  ],
+  "confidence": "verified"
+}

@@ -1,0 +1,15 @@
+{
+  "note": "Influence and approval are gameplay starting values for 1 January 2000 (DSP-MHP-ANAP coalition under Bulent Ecevit), not measured data. Influence reflects institutional weight: the armed forces saw themselves as guardians of Kemalism and kept significant influence over politics, the Constitutional Court could close parties, and organised business and large private media groups were prominent.",
+  "interest_groups": [
+    { "type": "military", "influence": 0.55, "approval": 60, "note": "Armed forces with significant political influence as self-described guardians of the secular republic (Politics of Turkey)." },
+    { "type": "security_services", "influence": 0.3, "approval": 55 },
+    { "type": "business", "influence": 0.45, "approval": 45 },
+    { "type": "labour_unions", "influence": 0.25, "approval": 40 },
+    { "type": "religious_establishment", "influence": 0.15, "approval": 40, "note": "Refers to religious communities and conservative civil society in a constitutionally secular state." },
+    { "type": "rural", "influence": 0.3, "approval": 45 },
+    { "type": "urban_middle_class", "influence": 0.4, "approval": 50 },
+    { "type": "minorities", "influence": 0.1, "approval": 30, "note": "Mainly the Kurdish population; the main pro-Kurdish party (HADEP) won 4.75% in 1999 but no seats under the 10% threshold." },
+    { "type": "youth_students", "influence": 0.15, "approval": 45 },
+    { "type": "media", "influence": 0.35, "approval": 50 }
+  ]
+}

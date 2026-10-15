@@ -1,0 +1,118 @@
+{
+  "tag": "NOR",
+  "name": { "en": "Norway", "native": "Norge", "official": { "en": "Kingdom of Norway", "native": "Kongeriket Norge" } },
+  "adjective": "Norwegian",
+  "culture_primary": "norwegian",
+  "government": {
+    "type": "constitutional_monarchy",
+    "effective_executive": "nor.prime_minister",
+    "head_of_state_office": "nor.monarch",
+    "head_of_government_office": "nor.prime_minister",
+    "constitution": {
+      "term_limit_amendable": true,
+      "emergency_powers": true,
+      "referendum_required_for": []
+    },
+    "note": "Parliamentary constitutional monarchy with a ceremonial monarch. The government depends on the confidence of the unicameral Storting, which cannot be dissolved early. On 1 January 2000 Kjell Magne Bondevik led a KrF-Sp-V minority coalition (42 of 165 seats) formed after the 1997 election; the 1997 election article says it relied on support from the Conservative and Progress parties. It resigned in March 2000 and Labour's Jens Stoltenberg took over."
+  },
+  "offices": [
+    {
+      "id": "nor.monarch",
+      "title": { "en": "King of Norway", "native": "Norges konge" },
+      "role": "head_of_state",
+      "power_weight": 0.03,
+      "selection": "hereditary",
+      "succession": {
+        "type": "line",
+        "heirs": ["nor.haakon_viii", "nor.princess_martha_louise"]
+      },
+      "holders": [
+        { "person": "nor.harald_v", "from": "1991-01-17", "to": "2026-08-28", "note": "Reigned until his death on 28 August 2026. Crown Prince Haakon acted as regent for several periods (2003-2004, 2005, 2020, 2024 and 18-28 August 2026); these regencies are not recorded as separate tenures." },
+        { "person": "nor.haakon_viii", "from": "2026-08-28" }
+      ],
+      "note": "Heirs are listed as on 1 January 2000: Crown Prince Haakon, then Princess Märtha Louise (Haakon took precedence under the male-preference rule that applied to Harald V's children; absolute primogeniture applies to later generations). Haakon's daughter Ingrid Alexandra, born 2004, became heir apparent on his accession.",
+      "source": [
+        { "url": "https://www.wikidata.org/wiki/Q57287", "title": "Wikidata: Harald V of Norway (Monarch of Norway 1991-01-17..2026-08-28; died 2026-08-28)", "accessed": "2026-10-14" },
+        { "url": "https://en.wikipedia.org/wiki/Harald_V", "title": "Wikipedia: Harald V (reign 17 January 1991 - 28 August 2026; regencies)", "accessed": "2026-10-14" },
+        { "url": "https://en.wikipedia.org/wiki/Haakon_VIII", "title": "Wikipedia: Haakon VIII (ascended the throne on 28 August 2026)", "accessed": "2026-10-14" },
+        { "url": "https://en.wikipedia.org/wiki/Succession_to_the_Norwegian_throne", "title": "Wikipedia: Succession to the Norwegian throne", "accessed": "2026-10-14" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "nor.prime_minister",
+      "title": { "en": "Prime Minister of Norway", "native": "Norges statsminister" },
+      "role": "head_of_government",
+      "power_weight": 0.97,
+      "selection": "legislature",
+      "appointed_by": "nor.monarch",
+      "term_years": 4,
+      "holders": [
+        { "person": "nor.kjell_magne_bondevik", "from": "1997-10-17", "to": "2000-03-17", "note": "Bondevik I (KrF-Sp-V)." },
+        { "person": "nor.jens_stoltenberg", "from": "2000-03-17", "to": "2001-10-19", "note": "Stoltenberg I (Labour only)." },
+        { "person": "nor.kjell_magne_bondevik", "from": "2001-10-19", "to": "2005-10-17", "note": "Bondevik II (KrF-H-V)." },
+        { "person": "nor.jens_stoltenberg", "from": "2005-10-17", "to": "2013-10-16", "note": "Stoltenberg II (Ap-SV-Sp)." },
+        { "person": "nor.erna_solberg", "from": "2013-10-16", "to": "2021-10-14", "note": "Solberg cabinet: H-FrP, later joined by V and KrF; FrP left before 2021." },
+        { "person": "nor.jonas_gahr_store", "from": "2021-10-14", "note": "Ap-Sp coalition until January 2025, then Labour only; continued after the 2025 election." }
+      ],
+      "source": [
+        { "url": "https://www.wikidata.org/wiki/Q2334076", "title": "Wikidata: Prime Minister of Norway (position held by)", "accessed": "2026-10-14" },
+        { "url": "https://en.wikipedia.org/wiki/List_of_prime_ministers_of_Norway", "title": "Wikipedia: List of prime ministers of Norway", "accessed": "2026-10-14" },
+        { "url": "https://en.wikipedia.org/wiki/2025_Norwegian_parliamentary_election", "title": "Wikipedia: 2025 Norwegian parliamentary election (government background)", "accessed": "2026-10-14" }
+      ],
+      "confidence": "verified"
+    }
+  ],
+  "legislature": {
+    "name": { "en": "Storting", "native": "Stortinget" },
+    "chambers": [
+      {
+        "id": "storting",
+        "name": { "en": "Storting", "native": "Stortinget" },
+        "seats": 165,
+        "term_years": 4,
+        "elected": "direct",
+        "system": {
+          "type": "list_pr",
+          "formula": "sainte_lague",
+          "threshold": 0.04,
+          "district_model": "custom",
+          "note": "Modified Sainte-Laguë in 19 multi-member constituencies (the former counties) plus national levelling seats, for which a party needs 4% nationally. The chamber had 165 seats until the 2005 election and 169 since. Until 2009 the elected Storting divided itself into the Lagting (a quarter of members) and the Odelsting for passing laws ('qualified unicameralism'); the 2007 amendment ending this took effect with the Storting elected in 2009. It is modelled as one chamber throughout. seats_2000 is the 1997 election result; mid-term changes before 1 January 2000 were not checked."
+        },
+        "seats_2000": { "nor.ap": 65, "nor.frp": 25, "nor.krf": 25, "nor.h": 23, "nor.sp": 11, "nor.sv": 9, "nor.v": 6, "nor.kyst": 1 },
+        "confidence_chamber": true,
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/1997_Norwegian_parliamentary_election", "title": "Wikipedia: 1997 Norwegian parliamentary election", "accessed": "2026-10-14" },
+          { "url": "https://en.wikipedia.org/wiki/Storting", "title": "Wikipedia: Storting (seat numbers, Lagting/Odelsting, electoral system)", "accessed": "2026-10-14" },
+          { "url": "https://en.wikipedia.org/wiki/Coastal_Party", "title": "Wikipedia: Coastal Party (the 1997 Non-Partisan Deputies seat)", "accessed": "2026-10-14" }
+        ],
+        "confidence": "verified"
+      }
+    ]
+  },
+  "party_system": "multi_party",
+  "start_2000": {
+    "ruling_parties": ["nor.krf", "nor.sp", "nor.v"],
+    "confidence_and_supply": [],
+    "ideology_support": {
+      "social_democrat": 0.35,
+      "right_populist": 0.1545,
+      "liberal_conservative": 0.1434,
+      "christian_democrat": 0.1366,
+      "agrarian": 0.0828,
+      "democratic_socialist": 0.0776,
+      "social_liberal": 0.0445,
+      "green": 0.0023,
+      "big_tent": 0.0083
+    },
+    "ideology_support_note": "Derived from 1997 Storting vote shares (computed from the official vote counts): Labour 35.0%; Progress Party 15.3% plus Fatherland Party 0.15% (right populist); Conservatives 14.3%; Christian Democrats 13.7%; Centre Party 7.9% plus the Non-Partisan Deputies/Coastal list 0.4% (agrarian); Socialist Left 6.0%, Red Electoral Alliance 1.7% and Communist Party 0.1% (democratic socialist); Liberals 4.5%; Greens 0.2%; Pensioners' Party and other minor lists 0.8% (big tent).",
+    "stability": 0.75,
+    "war_support": 0.15
+  },
+  "claims": [],
+  "source": [
+    { "url": "https://en.wikipedia.org/wiki/1997_Norwegian_parliamentary_election", "title": "Wikipedia: 1997 Norwegian parliamentary election (results and the Bondevik I government)", "accessed": "2026-10-14" },
+    { "url": "https://en.wikipedia.org/wiki/List_of_prime_ministers_of_Norway", "title": "Wikipedia: List of prime ministers of Norway", "accessed": "2026-10-14" }
+  ],
+  "confidence": "verified"
+}

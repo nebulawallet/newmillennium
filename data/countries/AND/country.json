@@ -1,0 +1,120 @@
+{
+  "tag": "AND",
+  "name": { "en": "Andorra", "native": "Andorra", "official": { "en": "Principality of Andorra", "native": "Principat d'Andorra" } },
+  "adjective": "Andorran",
+  "culture_primary": "andorran",
+  "government": {
+    "type": "constitutional_monarchy",
+    "effective_executive": "and.head_of_government",
+    "head_of_state_office": "and.episcopal_co_prince",
+    "head_of_government_office": "and.head_of_government",
+    "constitution": {
+      "term_limit_amendable": true,
+      "emergency_powers": false,
+      "referendum_required_for": []
+    },
+    "note": "Parliamentary co-principality. The heads of state are jointly the two co-princes: the Bishop of Urgell (Episcopal Co-Prince, appointed by the Pope) and the President of France (Lay Co-Prince, ex officio). Each co-prince appoints a personal representative. The Head of Government (Cap de Govern) is chosen by the General Council."
+  },
+  "offices": [
+    {
+      "id": "and.episcopal_co_prince",
+      "title": { "en": "Episcopal Co-Prince of Andorra", "native": "Copríncep episcopal d'Andorra" },
+      "role": "head_of_state",
+      "power_weight": 0.05,
+      "selection": "external_appointment",
+      "holders": [
+        { "person": "and.joan_marti_alanis", "from": "1971-01-31", "to": "2003-05-12" },
+        { "person": "and.joan_enric_vives", "from": "2003-05-12", "to": "2025-05-31" },
+        { "person": "and.josep_lluis_serrano_pentinat", "from": "2025-05-31", "note": "Coadjutor bishop from 12 July 2024; succeeded on 31 May 2025." }
+      ],
+      "note": "Held ex officio by the Roman Catholic Bishop of Urgell, who is appointed by the Pope.",
+      "source": [
+        { "url": "https://www.wikidata.org/wiki/Q19808790", "title": "Wikidata: Episcopal Co-Prince (positions held by Martí i Alanis, Vives i Sicília and Serrano Pentinat)", "accessed": "2026-10-14" },
+        { "url": "https://en.wikipedia.org/wiki/List_of_co-princes_of_Andorra", "title": "Wikipedia: List of co-princes of Andorra", "accessed": "2026-10-14" },
+        { "url": "https://en.wikipedia.org/wiki/Co-princes_of_Andorra", "title": "Wikipedia: Co-princes of Andorra (incumbents)", "accessed": "2026-10-14" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "and.french_co_prince",
+      "title": { "en": "French Co-Prince of Andorra", "native": "Copríncep francès d'Andorra" },
+      "role": "head_of_state",
+      "power_weight": 0.05,
+      "selection": "foreign_ex_officio",
+      "ex_officio_of": "fra.president",
+      "holders": [],
+      "note": "Held ex officio by the President of the French Republic.",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/Co-princes_of_Andorra", "title": "Wikipedia: Co-princes of Andorra", "accessed": "2026-10-14" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "and.head_of_government",
+      "title": { "en": "Head of Government of Andorra", "native": "Cap de Govern d'Andorra" },
+      "role": "head_of_government",
+      "power_weight": 0.9,
+      "selection": "legislature",
+      "term_years": 4,
+      "holders": [
+        { "person": "and.marc_forne_molne", "from": "1994-12-07", "to": "2005-05-27" },
+        { "person": "and.albert_pintat", "from": "2005-05-27", "to": "2009-06-05" },
+        { "person": "and.jaume_bartumeu", "from": "2009-06-05", "to": "2011-04-28", "note": "Wikidata gives 12 May 2011 as the end of his term." },
+        { "person": "and.pere_lopez_agras", "from": "2011-04-28", "to": "2011-05-12", "acting": true },
+        { "person": "and.antoni_marti", "from": "2011-05-12", "to": "2015-03-23" },
+        { "person": "and.gilbert_saboya_sunye", "from": "2015-03-23", "to": "2015-04-01", "acting": true },
+        { "person": "and.antoni_marti", "from": "2015-04-01", "to": "2019-05-16" },
+        { "person": "and.xavier_espot_zamora", "from": "2019-05-16", "note": "Re-elected after the 2023 election; in office on the data date." }
+      ],
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/Head_of_Government_of_Andorra", "title": "Wikipedia: Head of Government of Andorra (list, including acting heads)", "accessed": "2026-10-14" },
+        { "url": "https://www.wikidata.org/wiki/Q634322", "title": "Wikidata: Prime Minister of Andorra (position held by)", "accessed": "2026-10-14" }
+      ],
+      "confidence": "verified"
+    }
+  ],
+  "legislature": {
+    "name": { "en": "General Council", "native": "Consell General" },
+    "chambers": [
+      {
+        "id": "general_council",
+        "name": { "en": "General Council", "native": "Consell General" },
+        "seats": 28,
+        "term_years": 4,
+        "elected": "direct",
+        "system": {
+          "type": "parallel",
+          "district_model": "custom",
+          "pr_share": 0.5,
+          "note": "Parallel voting: 14 members by national-list proportional representation and two members for each of the seven parishes. seats_2000 is the 1997 election result: the Liberal Union won 10 seats and allied parish lists 6 (16 in total, under and.pla); the National Democratic Group (6), New Democracy (2), Democratic National Initiative (2) and the Lauredian Union list (2) are under 'others' because no founding dates were found for them."
+        },
+        "seats_2000": { "and.pla": 16, "others": 12 },
+        "confidence_chamber": true,
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/1997_Andorran_parliamentary_election", "title": "Wikipedia: 1997 Andorran parliamentary election (results table)", "accessed": "2026-10-14" },
+          { "url": "https://en.wikipedia.org/wiki/General_Council_(Andorra)", "title": "Wikipedia: General Council (Andorra) (voting system)", "accessed": "2026-10-14" }
+        ],
+        "confidence": "needs_review",
+        "review_note": "Add party records (with founding dates) for the National Democratic Group, New Democracy and the Democratic National Initiative and move their 10 seats out of 'others'; confirm no changes between 1997 and 1 January 2000."
+      }
+    ]
+  },
+  "party_system": "multi_party",
+  "start_2000": {
+    "ruling_parties": ["and.pla"],
+    "ideology_support": {
+      "liberal_conservative": 0.4227,
+      "christian_democrat": 0.2602,
+      "social_democrat": 0.3171
+    },
+    "ideology_support_note": "Estimate from the 1997 national-list shares: Liberal Union 42.27% (liberal conservative); National Democratic Group 28.33% split evenly between Christian democrats (later the Democratic Party) and social democrats (later the PS); New Democracy 17.55% (social democrat, later the PS); Democratic National Initiative 11.85% (Christian democrat, later the Democratic Party). The splits are an estimate.",
+    "stability": 0.85,
+    "war_support": 0.05
+  },
+  "claims": [],
+  "source": [
+    { "url": "https://en.wikipedia.org/wiki/Co-princes_of_Andorra", "title": "Wikipedia: Co-princes of Andorra", "accessed": "2026-10-14" },
+    { "url": "https://en.wikipedia.org/wiki/Head_of_Government_of_Andorra", "title": "Wikipedia: Head of Government of Andorra", "accessed": "2026-10-14" }
+  ],
+  "confidence": "verified"
+}

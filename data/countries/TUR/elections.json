@@ -1,0 +1,842 @@
+{
+  "rules": [
+    {
+      "kind": "legislative",
+      "chamber": "tbmm",
+      "every_years": 5,
+      "anchor": "2023-05-14",
+      "snap_possible": true,
+      "note": "Five-year term since 2018 (four years 2007-2018); elections are held together with the presidential election. The Assembly or the President can call early elections."
+    },
+    {
+      "kind": "presidential",
+      "office": "tur.president",
+      "every_years": 5,
+      "anchor": "2023-05-14",
+      "snap_possible": true,
+      "note": "Two-round direct election since 2014; held concurrently with the parliamentary election since 2018. Next due by 14 May 2028."
+    }
+  ],
+  "elections": [
+    {
+      "id": "presidential_2000",
+      "date": "2000-04-27",
+      "kind": "indirect_presidential",
+      "office": "tur.president",
+      "rounds": 3,
+      "historical": {
+        "candidates": [
+          {
+            "person": "tur.ahmet_necdet_sezer",
+            "votes": 281,
+            "round": 1
+          },
+          {
+            "person": "tur.nevzat_yalcintas",
+            "party": "tur.fp",
+            "votes": 61,
+            "round": 1
+          },
+          {
+            "person": "tur.ahmet_necdet_sezer",
+            "votes": 314,
+            "round": 2
+          },
+          {
+            "person": "tur.nevzat_yalcintas",
+            "party": "tur.fp",
+            "votes": 66,
+            "round": 2
+          },
+          {
+            "person": "tur.ahmet_necdet_sezer",
+            "votes": 330,
+            "round": 3
+          },
+          {
+            "person": "tur.nevzat_yalcintas",
+            "party": "tur.fp",
+            "votes": 113,
+            "round": 3
+          }
+        ],
+        "winner": "tur.ahmet_necdet_sezer",
+        "note": "Election by the 550-member Grand National Assembly: rounds on 27 April, 1 May and 5 May 2000. Two-thirds (367) needed in rounds 1-2, an absolute majority (276) from round 3. Sezer, former President of the Constitutional Court, was endorsed by the leaders of DSP, MHP, ANAP, Virtue and DYP. Other candidates (Sadi Somuncuoglu, MHP: 58/32/43 votes; Yildirim Akbulut, ANAP: 56/88, withdrew after round 2; and several others) are not listed.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2000_Turkish_presidential_election",
+            "title": "Wikipedia: 2000 Turkish presidential election",
+            "accessed": "2026-10-14"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "tbmm_2002",
+      "date": "2002-11-03",
+      "kind": "legislative",
+      "chamber": "tbmm",
+      "historical": {
+        "candidates": [
+          {
+            "person": "tur.recep_tayyip_erdogan",
+            "party": "tur.akp",
+            "round": 1
+          },
+          {
+            "person": "tur.deniz_baykal",
+            "party": "tur.chp",
+            "round": 1
+          }
+        ],
+        "party_results": [
+          {
+            "party": "tur.akp",
+            "share": 0.3428,
+            "seats": 363
+          },
+          {
+            "party": "tur.chp",
+            "share": 0.1939,
+            "seats": 178
+          },
+          {
+            "party": "tur.dyp",
+            "share": 0.0954,
+            "seats": 0
+          },
+          {
+            "party": "tur.mhp",
+            "share": 0.0836,
+            "seats": 0
+          },
+          {
+            "party": "tur.anap",
+            "share": 0.0513,
+            "seats": 0
+          },
+          {
+            "party": "tur.saadet",
+            "share": 0.0249,
+            "seats": 0
+          },
+          {
+            "party": "tur.dsp",
+            "share": 0.0122,
+            "seats": 0
+          },
+          {
+            "party": "independents",
+            "share": 0.01,
+            "seats": 9
+          },
+          {
+            "party": "others",
+            "share": 0.1859,
+            "seats": 0
+          }
+        ],
+        "winner": "tur.akp",
+        "turnout": 0.7914,
+        "note": "Only AKP and CHP passed the 10% threshold. Others include the Young Party (7.25%) and DEHAP (6.22%). AKP leader Erdogan was initially barred from standing for parliament, so Abdullah Gul became Prime Minister; Erdogan entered parliament at a 2003 by-election and became Prime Minister in March 2003.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2002_Turkish_general_election",
+            "title": "Wikipedia: 2002 Turkish general election",
+            "accessed": "2026-10-14"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "tbmm_2007",
+      "date": "2007-07-22",
+      "kind": "legislative",
+      "chamber": "tbmm",
+      "snap": true,
+      "historical": {
+        "candidates": [
+          {
+            "person": "tur.recep_tayyip_erdogan",
+            "party": "tur.akp",
+            "round": 1
+          },
+          {
+            "person": "tur.deniz_baykal",
+            "party": "tur.chp",
+            "round": 1
+          },
+          {
+            "person": "tur.devlet_bahceli",
+            "party": "tur.mhp",
+            "round": 1
+          }
+        ],
+        "party_results": [
+          {
+            "party": "tur.akp",
+            "share": 0.4658,
+            "seats": 341
+          },
+          {
+            "party": "tur.chp",
+            "share": 0.2088,
+            "seats": 112
+          },
+          {
+            "party": "tur.mhp",
+            "share": 0.1427,
+            "seats": 71
+          },
+          {
+            "party": "tur.saadet",
+            "share": 0.0234,
+            "seats": 0
+          },
+          {
+            "party": "independents",
+            "share": 0.0524,
+            "seats": 26
+          },
+          {
+            "party": "others",
+            "share": 0.1069,
+            "seats": 0
+          }
+        ],
+        "winner": "tur.akp",
+        "turnout": 0.8425,
+        "note": "Brought forward from November after parliament failed to elect a president. CHP's 112 seats include 13 DSP members elected on its lists. Of the 26 independents, 20 were backed by the Democratic Society Party (DTP). Others include the Democrat Party (renamed DYP, 5.42%) and the Young Party (3.04%).",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2007_Turkish_general_election",
+            "title": "Wikipedia: 2007 Turkish general election",
+            "accessed": "2026-10-14"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "presidential_2007",
+      "date": "2007-08-20",
+      "kind": "indirect_presidential",
+      "office": "tur.president",
+      "rounds": 3,
+      "historical": {
+        "candidates": [
+          {
+            "person": "tur.abdullah_gul",
+            "party": "tur.akp",
+            "votes": 341,
+            "round": 1
+          },
+          {
+            "person": "tur.sabahattin_cakmakoglu",
+            "party": "tur.mhp",
+            "votes": 70,
+            "round": 1
+          },
+          {
+            "person": "tur.abdullah_gul",
+            "party": "tur.akp",
+            "votes": 337,
+            "round": 2
+          },
+          {
+            "person": "tur.sabahattin_cakmakoglu",
+            "party": "tur.mhp",
+            "votes": 71,
+            "round": 2
+          },
+          {
+            "person": "tur.abdullah_gul",
+            "party": "tur.akp",
+            "votes": 339,
+            "round": 3
+          },
+          {
+            "person": "tur.sabahattin_cakmakoglu",
+            "party": "tur.mhp",
+            "votes": 70,
+            "round": 3
+          }
+        ],
+        "winner": "tur.abdullah_gul",
+        "note": "Rounds on 20, 24 and 28 August 2007 in the newly elected Assembly; Hüseyin Tayfun Icli (DSP, 13/14/13 votes) not listed. A first attempt in April-May 2007 (first round 27 April, repeated 6 May) failed after the Constitutional Court ruled on 1 May that a two-thirds quorum was required for the first round; this led to the early general election of July 2007.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2007_Turkish_presidential_election",
+            "title": "Wikipedia: 2007 Turkish presidential election",
+            "accessed": "2026-10-14"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "referendum_2007",
+      "date": "2007-10-21",
+      "kind": "referendum",
+      "question": "Constitutional amendments: election of the President by popular vote (five-year term, at most two terms), parliamentary elections every four years instead of five, and a quorum of 184 for parliamentary decisions.",
+      "historical": {
+        "yes_share": 0.6895,
+        "winner": "yes",
+        "turnout": 0.6751,
+        "note": "Yes 19,422,714; No 8,744,947 (YSK figures in the article).",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2007_Turkish_constitutional_referendum",
+            "title": "Wikipedia: 2007 Turkish constitutional referendum",
+            "accessed": "2026-10-14"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "referendum_2010",
+      "date": "2010-09-12",
+      "kind": "referendum",
+      "question": "Package of constitutional amendments adopted by the Grand National Assembly in 2010.",
+      "historical": {
+        "yes_share": 0.5788,
+        "winner": "yes",
+        "turnout": 0.7371,
+        "note": "Yes 21,789,180; No 15,854,113.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2010_Turkish_constitutional_referendum",
+            "title": "Wikipedia: 2010 Turkish constitutional referendum",
+            "accessed": "2026-10-14"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "tbmm_2011",
+      "date": "2011-06-12",
+      "kind": "legislative",
+      "chamber": "tbmm",
+      "historical": {
+        "candidates": [
+          {
+            "person": "tur.recep_tayyip_erdogan",
+            "party": "tur.akp",
+            "round": 1
+          },
+          {
+            "person": "tur.kemal_kilicdaroglu",
+            "party": "tur.chp",
+            "round": 1
+          },
+          {
+            "person": "tur.devlet_bahceli",
+            "party": "tur.mhp",
+            "round": 1
+          }
+        ],
+        "party_results": [
+          {
+            "party": "tur.akp",
+            "share": 0.4983,
+            "seats": 327
+          },
+          {
+            "party": "tur.chp",
+            "share": 0.2598,
+            "seats": 135
+          },
+          {
+            "party": "tur.mhp",
+            "share": 0.1301,
+            "seats": 53
+          },
+          {
+            "party": "tur.saadet",
+            "share": 0.0127,
+            "seats": 0
+          },
+          {
+            "party": "independents",
+            "share": 0.0657,
+            "seats": 35
+          },
+          {
+            "party": "others",
+            "share": 0.0334,
+            "seats": 0
+          }
+        ],
+        "winner": "tur.akp",
+        "turnout": 0.8316,
+        "note": "All 35 elected independents were backed by the Peace and Democracy Party (BDP) under the Labour, Democracy and Freedom Bloc.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2011_Turkish_general_election",
+            "title": "Wikipedia: 2011 Turkish general election",
+            "accessed": "2026-10-14"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "presidential_2014",
+      "date": "2014-08-10",
+      "kind": "presidential",
+      "office": "tur.president",
+      "historical": {
+        "candidates": [
+          {
+            "person": "tur.recep_tayyip_erdogan",
+            "party": "tur.akp",
+            "share": 0.5179,
+            "round": 1
+          },
+          {
+            "person": "tur.ekmeleddin_ihsanoglu",
+            "share": 0.3844,
+            "round": 1
+          },
+          {
+            "person": "tur.selahattin_demirtas",
+            "party": "tur.hdp",
+            "share": 0.0976,
+            "round": 1
+          }
+        ],
+        "winner": "tur.recep_tayyip_erdogan",
+        "turnout": 0.7413,
+        "note": "First direct presidential election. Ihsanoglu stood as the joint candidate of CHP and MHP (listed as Independent).",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2014_Turkish_presidential_election",
+            "title": "Wikipedia: 2014 Turkish presidential election",
+            "accessed": "2026-10-14"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "tbmm_2015_06",
+      "date": "2015-06-07",
+      "kind": "legislative",
+      "chamber": "tbmm",
+      "historical": {
+        "candidates": [
+          {
+            "person": "tur.ahmet_davutoglu",
+            "party": "tur.akp",
+            "round": 1
+          },
+          {
+            "person": "tur.kemal_kilicdaroglu",
+            "party": "tur.chp",
+            "round": 1
+          },
+          {
+            "person": "tur.devlet_bahceli",
+            "party": "tur.mhp",
+            "round": 1
+          },
+          {
+            "person": "tur.selahattin_demirtas",
+            "party": "tur.hdp",
+            "round": 1
+          }
+        ],
+        "party_results": [
+          {
+            "party": "tur.akp",
+            "share": 0.4087,
+            "seats": 258
+          },
+          {
+            "party": "tur.chp",
+            "share": 0.2495,
+            "seats": 132
+          },
+          {
+            "party": "tur.mhp",
+            "share": 0.1629,
+            "seats": 80
+          },
+          {
+            "party": "tur.hdp",
+            "share": 0.1312,
+            "seats": 80
+          },
+          {
+            "party": "tur.saadet",
+            "share": 0.0206,
+            "seats": 0
+          },
+          {
+            "party": "independents",
+            "share": 0.0106,
+            "seats": 0
+          },
+          {
+            "party": "others",
+            "share": 0.0165,
+            "seats": 0
+          }
+        ],
+        "winner": "tur.akp",
+        "turnout": 0.8392,
+        "note": "No party won a majority; coalition talks failed and a snap election was called for November 2015.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/June_2015_Turkish_general_election",
+            "title": "Wikipedia: June 2015 Turkish general election",
+            "accessed": "2026-10-14"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "tbmm_2015_11",
+      "date": "2015-11-01",
+      "kind": "legislative",
+      "chamber": "tbmm",
+      "snap": true,
+      "historical": {
+        "candidates": [
+          {
+            "person": "tur.ahmet_davutoglu",
+            "party": "tur.akp",
+            "round": 1
+          },
+          {
+            "person": "tur.kemal_kilicdaroglu",
+            "party": "tur.chp",
+            "round": 1
+          },
+          {
+            "person": "tur.devlet_bahceli",
+            "party": "tur.mhp",
+            "round": 1
+          },
+          {
+            "person": "tur.selahattin_demirtas",
+            "party": "tur.hdp",
+            "round": 1
+          }
+        ],
+        "party_results": [
+          {
+            "party": "tur.akp",
+            "share": 0.495,
+            "seats": 317
+          },
+          {
+            "party": "tur.chp",
+            "share": 0.2532,
+            "seats": 134
+          },
+          {
+            "party": "tur.mhp",
+            "share": 0.119,
+            "seats": 40
+          },
+          {
+            "party": "tur.hdp",
+            "share": 0.1076,
+            "seats": 59
+          },
+          {
+            "party": "tur.saadet",
+            "share": 0.0068,
+            "seats": 0
+          },
+          {
+            "party": "independents",
+            "share": 0.0011,
+            "seats": 0
+          },
+          {
+            "party": "others",
+            "share": 0.0173,
+            "seats": 0
+          }
+        ],
+        "winner": "tur.akp",
+        "turnout": 0.8523,
+        "note": "Snap election called by President Erdogan on 24 August 2015.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/November_2015_Turkish_general_election",
+            "title": "Wikipedia: November 2015 Turkish general election",
+            "accessed": "2026-10-14"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "referendum_2017",
+      "date": "2017-04-16",
+      "kind": "referendum",
+      "question": "Constitutional amendments replacing the parliamentary system with an executive presidency (abolition of the office of Prime Minister) and enlarging the Grand National Assembly to 600 seats.",
+      "historical": {
+        "yes_share": 0.5141,
+        "winner": "yes",
+        "turnout": 0.8543,
+        "note": "Yes 25,157,463; No 23,779,141. The changes took full effect with the June 2018 elections.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2017_Turkish_constitutional_referendum",
+            "title": "Wikipedia: 2017 Turkish constitutional referendum",
+            "accessed": "2026-10-14"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "presidential_2018",
+      "date": "2018-06-24",
+      "kind": "presidential",
+      "office": "tur.president",
+      "snap": true,
+      "historical": {
+        "candidates": [
+          {
+            "person": "tur.recep_tayyip_erdogan",
+            "party": "tur.akp",
+            "share": 0.5259,
+            "round": 1
+          },
+          {
+            "person": "tur.muharrem_ince",
+            "party": "tur.chp",
+            "share": 0.3064,
+            "round": 1
+          },
+          {
+            "person": "tur.selahattin_demirtas",
+            "party": "tur.hdp",
+            "share": 0.084,
+            "round": 1
+          },
+          {
+            "person": "tur.meral_aksener",
+            "party": "tur.iyi",
+            "share": 0.0729,
+            "round": 1
+          },
+          {
+            "person": "tur.temel_karamollaoglu",
+            "party": "tur.saadet",
+            "share": 0.0089,
+            "round": 1
+          }
+        ],
+        "winner": "tur.recep_tayyip_erdogan",
+        "turnout": 0.8624,
+        "note": "Early election (originally due November 2019), held with the parliamentary election. First election under the executive presidential system. Dogu Perincek (Patriotic Party, 0.20%) not listed.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2018_Turkish_presidential_election",
+            "title": "Wikipedia: 2018 Turkish presidential election",
+            "accessed": "2026-10-14"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "tbmm_2018",
+      "date": "2018-06-24",
+      "kind": "legislative",
+      "chamber": "tbmm",
+      "snap": true,
+      "historical": {
+        "party_results": [
+          {
+            "party": "tur.akp",
+            "share": 0.4256,
+            "seats": 295
+          },
+          {
+            "party": "tur.chp",
+            "share": 0.2265,
+            "seats": 146
+          },
+          {
+            "party": "tur.hdp",
+            "share": 0.117,
+            "seats": 67
+          },
+          {
+            "party": "tur.mhp",
+            "share": 0.111,
+            "seats": 49
+          },
+          {
+            "party": "tur.iyi",
+            "share": 0.0996,
+            "seats": 43
+          },
+          {
+            "party": "tur.saadet",
+            "share": 0.0134,
+            "seats": 0
+          },
+          {
+            "party": "independents",
+            "share": 0.0015,
+            "seats": 0
+          },
+          {
+            "party": "others",
+            "share": 0.0054,
+            "seats": 0
+          }
+        ],
+        "winner": "tur.akp",
+        "turnout": 0.8622,
+        "note": "First election to the enlarged 600-seat Assembly. Alliances: People's Alliance (AKP, MHP) and Nation Alliance (CHP, IYI, Felicity). HDP's 67 seats include candidates of allied parties elected on its lists.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2018_Turkish_parliamentary_election",
+            "title": "Wikipedia: 2018 Turkish parliamentary election",
+            "accessed": "2026-10-14"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "presidential_2023",
+      "date": "2023-05-14",
+      "kind": "presidential",
+      "office": "tur.president",
+      "rounds": 2,
+      "historical": {
+        "candidates": [
+          {
+            "person": "tur.recep_tayyip_erdogan",
+            "party": "tur.akp",
+            "share": 0.4952,
+            "round": 1
+          },
+          {
+            "person": "tur.kemal_kilicdaroglu",
+            "party": "tur.chp",
+            "share": 0.4488,
+            "round": 1
+          },
+          {
+            "person": "tur.sinan_ogan",
+            "share": 0.0517,
+            "round": 1
+          },
+          {
+            "person": "tur.recep_tayyip_erdogan",
+            "party": "tur.akp",
+            "share": 0.5218,
+            "round": 2
+          },
+          {
+            "person": "tur.kemal_kilicdaroglu",
+            "party": "tur.chp",
+            "share": 0.4782,
+            "round": 2
+          }
+        ],
+        "winner": "tur.recep_tayyip_erdogan",
+        "turnout": 0.8704,
+        "note": "First round 14 May 2023, run-off 28 May 2023 (turnout 84.15%). Kilicdaroglu was the Nation Alliance candidate and Ogan the Ancestral Alliance candidate. Muharrem Ince (Homeland Party) withdrew before the vote but remained on the ballot (0.43%).",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2023_Turkish_presidential_election",
+            "title": "Wikipedia: 2023 Turkish presidential election",
+            "accessed": "2026-10-14"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "tbmm_2023",
+      "date": "2023-05-14",
+      "kind": "legislative",
+      "chamber": "tbmm",
+      "historical": {
+        "party_results": [
+          {
+            "party": "tur.akp",
+            "share": 0.3561,
+            "seats": 268
+          },
+          {
+            "party": "tur.chp",
+            "share": 0.2533,
+            "seats": 169
+          },
+          {
+            "party": "tur.mhp",
+            "share": 0.1007,
+            "seats": 50
+          },
+          {
+            "party": "tur.iyi",
+            "share": 0.0969,
+            "seats": 43
+          },
+          {
+            "party": "tur.dem",
+            "share": 0.0882,
+            "seats": 61
+          },
+          {
+            "party": "tur.yrp",
+            "share": 0.0281,
+            "seats": 5
+          },
+          {
+            "party": "tur.tip",
+            "share": 0.0173,
+            "seats": 4
+          },
+          {
+            "party": "others",
+            "share": 0.0594,
+            "seats": 0
+          }
+        ],
+        "winner": "tur.akp",
+        "turnout": 0.8705,
+        "note": "Shares from the article infobox. The DEM entry is the Party of Greens and the Left Future (YSGP) list, which carried HDP candidates; the party was renamed DEM in October 2023. CHP's 169 seats include 39 members of DEVA, Felicity, Future, Democrat and other parties elected on its lists. Others include the Victory Party (about 2.2%) and the Great Unity Party (about 1.0%).",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2023_Turkish_parliamentary_election",
+            "title": "Wikipedia: 2023 Turkish parliamentary election",
+            "accessed": "2026-10-14"
+          }
+        ],
+        "confidence": "verified"
+      }
+    }
+  ],
+  "source": [
+    {
+      "url": "https://en.wikipedia.org/wiki/Elections_in_Turkey",
+      "title": "Wikipedia: Elections in Turkey",
+      "accessed": "2026-10-14"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Next_Turkish_presidential_election",
+      "title": "Wikipedia: Next Turkish presidential election",
+      "accessed": "2026-10-14"
+    }
+  ],
+  "confidence": "verified"
+}

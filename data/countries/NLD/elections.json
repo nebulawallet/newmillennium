@@ -1,0 +1,1628 @@
+{
+ "rules": [
+  {
+   "kind": "legislative",
+   "chamber": "house_of_representatives",
+   "every_years": 4,
+   "anchor": "2025-10-29",
+   "snap_possible": true,
+   "note": "Elections are due every four years; most since 2000 were early elections after a cabinet fell. The next scheduled election is 15 May 2030 (Wikipedia, 'Next Dutch general election')."
+  },
+  {
+   "kind": "legislative_upper",
+   "chamber": "senate",
+   "every_years": 4,
+   "anchor": "2023-05-30",
+   "snap_possible": false,
+   "note": "Indirect election in May, two months after the provincial elections. The Senate can be dissolved, but this seldom happens because the provincial councils stay the same."
+  }
+ ],
+ "elections": [
+  {
+   "id": "general_2002",
+   "date": "2002-05-15",
+   "kind": "legislative",
+   "chamber": "house_of_representatives",
+   "historical": {
+    "candidates": [
+     {
+      "person": "nld.jan_peter_balkenende",
+      "party": "nld.cda",
+      "round": 1
+     },
+     {
+      "person": "nld.ad_melkert",
+      "party": "nld.pvda",
+      "round": 1
+     },
+     {
+      "person": "nld.hans_dijkstal",
+      "party": "nld.vvd",
+      "round": 1
+     }
+    ],
+    "party_results": [
+     {
+      "party": "nld.cda",
+      "share": 0.2793,
+      "seats": 43
+     },
+     {
+      "party": "nld.lpf",
+      "share": 0.17,
+      "seats": 26
+     },
+     {
+      "party": "nld.vvd",
+      "share": 0.1544,
+      "seats": 24
+     },
+     {
+      "party": "nld.pvda",
+      "share": 0.1511,
+      "seats": 23
+     },
+     {
+      "party": "nld.gl",
+      "share": 0.0695,
+      "seats": 10
+     },
+     {
+      "party": "nld.sp",
+      "share": 0.059,
+      "seats": 9
+     },
+     {
+      "party": "nld.d66",
+      "share": 0.051,
+      "seats": 7
+     },
+     {
+      "party": "nld.cu",
+      "share": 0.0254,
+      "seats": 4
+     },
+     {
+      "party": "nld.sgp",
+      "share": 0.0172,
+      "seats": 2
+     },
+     {
+      "party": "nld.ln",
+      "share": 0.0161,
+      "seats": 2
+     }
+    ],
+    "winner": "nld.cda",
+    "turnout": 0.791,
+    "note": "Pim Fortuyn, the LPF's leader, was killed on 6 May 2002; the list still carried his name. Balkenende formed a CDA-LPF-VVD cabinet.",
+    "source": [
+     {
+      "url": "https://en.wikipedia.org/wiki/2002_Dutch_general_election",
+      "title": "Wikipedia: 2002 Dutch general election (results and infobox)",
+      "accessed": "2026-10-14"
+     }
+    ],
+    "confidence": "verified"
+   }
+  },
+  {
+   "id": "general_2003",
+   "date": "2003-01-22",
+   "kind": "legislative",
+   "chamber": "house_of_representatives",
+   "snap": true,
+   "historical": {
+    "candidates": [
+     {
+      "person": "nld.jan_peter_balkenende",
+      "party": "nld.cda",
+      "round": 1
+     },
+     {
+      "person": "nld.wouter_bos",
+      "party": "nld.pvda",
+      "round": 1
+     },
+     {
+      "person": "nld.gerrit_zalm",
+      "party": "nld.vvd",
+      "round": 1
+     },
+     {
+      "person": "nld.mat_herben",
+      "party": "nld.lpf",
+      "round": 1
+     }
+    ],
+    "party_results": [
+     {
+      "party": "nld.cda",
+      "share": 0.2862,
+      "seats": 44
+     },
+     {
+      "party": "nld.pvda",
+      "share": 0.2726,
+      "seats": 42
+     },
+     {
+      "party": "nld.vvd",
+      "share": 0.1791,
+      "seats": 28
+     },
+     {
+      "party": "nld.sp",
+      "share": 0.0632,
+      "seats": 9
+     },
+     {
+      "party": "nld.lpf",
+      "share": 0.057,
+      "seats": 8
+     },
+     {
+      "party": "nld.gl",
+      "share": 0.0514,
+      "seats": 8
+     },
+     {
+      "party": "nld.d66",
+      "share": 0.0407,
+      "seats": 6
+     },
+     {
+      "party": "nld.cu",
+      "share": 0.0212,
+      "seats": 3
+     },
+     {
+      "party": "nld.sgp",
+      "share": 0.0156,
+      "seats": 2
+     }
+    ],
+    "winner": "nld.cda",
+    "turnout": 0.8,
+    "note": "Early election after the first Balkenende cabinet resigned on 16 October 2002. Followed by a CDA-VVD-D66 cabinet.",
+    "source": [
+     {
+      "url": "https://en.wikipedia.org/wiki/2003_Dutch_general_election",
+      "title": "Wikipedia: 2003 Dutch general election (results and infobox)",
+      "accessed": "2026-10-14"
+     }
+    ],
+    "confidence": "verified"
+   }
+  },
+  {
+   "id": "senate_2003",
+   "date": "2003-05-26",
+   "kind": "legislative_upper",
+   "chamber": "senate",
+   "historical": {
+    "party_results": [
+     {
+      "party": "nld.cda",
+      "share": 0.29,
+      "seats": 23
+     },
+     {
+      "party": "nld.pvda",
+      "share": 0.251,
+      "seats": 19
+     },
+     {
+      "party": "nld.vvd",
+      "share": 0.192,
+      "seats": 15
+     },
+     {
+      "party": "nld.gl",
+      "share": 0.067,
+      "seats": 5
+     },
+     {
+      "party": "nld.sp",
+      "share": 0.053,
+      "seats": 4
+     },
+     {
+      "party": "nld.d66",
+      "share": 0.044,
+      "seats": 3
+     },
+     {
+      "party": "nld.cu",
+      "share": 0.031,
+      "seats": 2
+     },
+     {
+      "party": "nld.sgp",
+      "share": 0.029,
+      "seats": 2
+     },
+     {
+      "party": "nld.lpf",
+      "share": 0.026,
+      "seats": 1
+     },
+     {
+      "party": "nld.osf",
+      "share": 0.018,
+      "seats": 1
+     }
+    ],
+    "winner": "nld.cda",
+    "note": "Indirect election by the provincial councils; shares are of the weighted provincial vote. ",
+    "source": [
+     {
+      "url": "https://en.wikipedia.org/wiki/2003_Dutch_Senate_election",
+      "title": "Wikipedia: 2003 Dutch Senate election (infobox)",
+      "accessed": "2026-10-14"
+     }
+    ],
+    "confidence": "verified"
+   }
+  },
+  {
+   "id": "referendum_2005_eu_constitution",
+   "date": "2005-06-01",
+   "kind": "referendum",
+   "question": "Are you for or against approval by the Netherlands of the treaty establishing a constitution for Europe?",
+   "historical": {
+    "yes_share": 0.385,
+    "options": [
+     {
+      "label": "For",
+      "votes": 2940730
+     },
+     {
+      "label": "Against",
+      "votes": 4705685
+     }
+    ],
+    "winner": "Against",
+    "turnout": 0.633,
+    "note": "Consultative referendum; yes_share is For as a share of For plus Against. 7,705,196 votes were cast out of an electorate of 12,172,740.",
+    "source": [
+     {
+      "url": "https://en.wikipedia.org/wiki/2005_Dutch_European_Constitution_referendum",
+      "title": "Wikipedia: 2005 Dutch European Constitution referendum (infobox)",
+      "accessed": "2026-10-14"
+     }
+    ],
+    "confidence": "verified"
+   }
+  },
+  {
+   "id": "general_2006",
+   "date": "2006-11-22",
+   "kind": "legislative",
+   "chamber": "house_of_representatives",
+   "snap": true,
+   "historical": {
+    "candidates": [
+     {
+      "person": "nld.jan_peter_balkenende",
+      "party": "nld.cda",
+      "round": 1
+     },
+     {
+      "person": "nld.wouter_bos",
+      "party": "nld.pvda",
+      "round": 1
+     },
+     {
+      "person": "nld.jan_marijnissen",
+      "party": "nld.sp",
+      "round": 1
+     },
+     {
+      "person": "nld.mark_rutte",
+      "party": "nld.vvd",
+      "round": 1
+     },
+     {
+      "person": "nld.geert_wilders",
+      "party": "nld.pvv",
+      "round": 1
+     }
+    ],
+    "party_results": [
+     {
+      "party": "nld.cda",
+      "share": 0.2651,
+      "seats": 41
+     },
+     {
+      "party": "nld.pvda",
+      "share": 0.2119,
+      "seats": 33
+     },
+     {
+      "party": "nld.sp",
+      "share": 0.1658,
+      "seats": 25
+     },
+     {
+      "party": "nld.vvd",
+      "share": 0.1467,
+      "seats": 22
+     },
+     {
+      "party": "nld.pvv",
+      "share": 0.0589,
+      "seats": 9
+     },
+     {
+      "party": "nld.gl",
+      "share": 0.046,
+      "seats": 7
+     },
+     {
+      "party": "nld.cu",
+      "share": 0.0397,
+      "seats": 6
+     },
+     {
+      "party": "nld.d66",
+      "share": 0.0196,
+      "seats": 3
+     },
+     {
+      "party": "nld.pvdd",
+      "share": 0.0183,
+      "seats": 2
+     },
+     {
+      "party": "nld.sgp",
+      "share": 0.0156,
+      "seats": 2
+     }
+    ],
+    "winner": "nld.cda",
+    "turnout": 0.804,
+    "note": "Early election (originally due in May 2007) after the second Balkenende cabinet fell. Followed by a CDA-PvdA-CU cabinet.",
+    "source": [
+     {
+      "url": "https://en.wikipedia.org/wiki/2006_Dutch_general_election",
+      "title": "Wikipedia: 2006 Dutch general election (results and infobox)",
+      "accessed": "2026-10-14"
+     }
+    ],
+    "confidence": "verified"
+   }
+  },
+  {
+   "id": "senate_2007",
+   "date": "2007-05-29",
+   "kind": "legislative_upper",
+   "chamber": "senate",
+   "historical": {
+    "party_results": [
+     {
+      "party": "nld.cda",
+      "share": 0.267,
+      "seats": 21
+     },
+     {
+      "party": "nld.vvd",
+      "share": 0.192,
+      "seats": 14
+     },
+     {
+      "party": "nld.pvda",
+      "share": 0.19,
+      "seats": 14
+     },
+     {
+      "party": "nld.sp",
+      "share": 0.155,
+      "seats": 12
+     },
+     {
+      "party": "nld.cu",
+      "share": 0.06,
+      "seats": 4
+     },
+     {
+      "party": "nld.gl",
+      "share": 0.056,
+      "seats": 4
+     },
+     {
+      "party": "nld.sgp",
+      "share": 0.023,
+      "seats": 2
+     },
+     {
+      "party": "nld.d66",
+      "share": 0.02,
+      "seats": 2
+     },
+     {
+      "party": "nld.pvdd",
+      "share": 0.021,
+      "seats": 1
+     },
+     {
+      "party": "nld.osf",
+      "share": 0.018,
+      "seats": 1
+     }
+    ],
+    "winner": "nld.cda",
+    "note": "Indirect election by the provincial councils; shares are of the weighted provincial vote. ",
+    "source": [
+     {
+      "url": "https://en.wikipedia.org/wiki/2007_Dutch_Senate_election",
+      "title": "Wikipedia: 2007 Dutch Senate election (infobox)",
+      "accessed": "2026-10-14"
+     }
+    ],
+    "confidence": "verified"
+   }
+  },
+  {
+   "id": "general_2010",
+   "date": "2010-06-09",
+   "kind": "legislative",
+   "chamber": "house_of_representatives",
+   "snap": true,
+   "historical": {
+    "candidates": [
+     {
+      "person": "nld.mark_rutte",
+      "party": "nld.vvd",
+      "round": 1
+     },
+     {
+      "person": "nld.job_cohen",
+      "party": "nld.pvda",
+      "round": 1
+     },
+     {
+      "person": "nld.geert_wilders",
+      "party": "nld.pvv",
+      "round": 1
+     },
+     {
+      "person": "nld.jan_peter_balkenende",
+      "party": "nld.cda",
+      "round": 1
+     },
+     {
+      "person": "nld.emile_roemer",
+      "party": "nld.sp",
+      "round": 1
+     }
+    ],
+    "party_results": [
+     {
+      "party": "nld.vvd",
+      "share": 0.2049,
+      "seats": 31
+     },
+     {
+      "party": "nld.pvda",
+      "share": 0.1963,
+      "seats": 30
+     },
+     {
+      "party": "nld.pvv",
+      "share": 0.1545,
+      "seats": 24
+     },
+     {
+      "party": "nld.cda",
+      "share": 0.1361,
+      "seats": 21
+     },
+     {
+      "party": "nld.sp",
+      "share": 0.0982,
+      "seats": 15
+     },
+     {
+      "party": "nld.d66",
+      "share": 0.0695,
+      "seats": 10
+     },
+     {
+      "party": "nld.gl",
+      "share": 0.0667,
+      "seats": 10
+     },
+     {
+      "party": "nld.cu",
+      "share": 0.0324,
+      "seats": 5
+     },
+     {
+      "party": "nld.sgp",
+      "share": 0.0174,
+      "seats": 2
+     },
+     {
+      "party": "nld.pvdd",
+      "share": 0.013,
+      "seats": 2
+     }
+    ],
+    "winner": "nld.vvd",
+    "turnout": 0.754,
+    "note": "Early election after the fourth Balkenende cabinet fell on 20 February 2010. Followed by a VVD-CDA minority cabinet with PVV support.",
+    "source": [
+     {
+      "url": "https://en.wikipedia.org/wiki/2010_Dutch_general_election",
+      "title": "Wikipedia: 2010 Dutch general election (results and infobox)",
+      "accessed": "2026-10-14"
+     }
+    ],
+    "confidence": "verified"
+   }
+  },
+  {
+   "id": "senate_2011",
+   "date": "2011-05-23",
+   "kind": "legislative_upper",
+   "chamber": "senate",
+   "historical": {
+    "party_results": [
+     {
+      "party": "nld.vvd",
+      "share": 0.2083,
+      "seats": 16
+     },
+     {
+      "party": "nld.pvda",
+      "share": 0.1811,
+      "seats": 14
+     },
+     {
+      "party": "nld.cda",
+      "share": 0.1461,
+      "seats": 11
+     },
+     {
+      "party": "nld.pvv",
+      "share": 0.1307,
+      "seats": 10
+     },
+     {
+      "party": "nld.sp",
+      "share": 0.1035,
+      "seats": 8
+     },
+     {
+      "party": "nld.d66",
+      "share": 0.0762,
+      "seats": 5
+     },
+     {
+      "party": "nld.gl",
+      "share": 0.0648,
+      "seats": 5
+     },
+     {
+      "party": "nld.cu",
+      "share": 0.0344,
+      "seats": 2
+     },
+     {
+      "party": "nld.sgp",
+      "share": 0.0157,
+      "seats": 1
+     },
+     {
+      "party": "nld.50plus",
+      "share": 0.0132,
+      "seats": 1
+     },
+     {
+      "party": "nld.pvdd",
+      "share": 0.0131,
+      "seats": 1
+     },
+     {
+      "party": "nld.osf",
+      "share": 0.013,
+      "seats": 1
+     }
+    ],
+    "winner": "nld.vvd",
+    "note": "Indirect election by the provincial councils; shares are of the weighted provincial vote. ",
+    "source": [
+     {
+      "url": "https://en.wikipedia.org/wiki/2011_Dutch_Senate_election",
+      "title": "Wikipedia: 2011 Dutch Senate election (infobox)",
+      "accessed": "2026-10-14"
+     }
+    ],
+    "confidence": "verified"
+   }
+  },
+  {
+   "id": "general_2012",
+   "date": "2012-09-12",
+   "kind": "legislative",
+   "chamber": "house_of_representatives",
+   "snap": true,
+   "historical": {
+    "candidates": [
+     {
+      "person": "nld.mark_rutte",
+      "party": "nld.vvd",
+      "round": 1
+     },
+     {
+      "person": "nld.diederik_samsom",
+      "party": "nld.pvda",
+      "round": 1
+     },
+     {
+      "person": "nld.geert_wilders",
+      "party": "nld.pvv",
+      "round": 1
+     },
+     {
+      "person": "nld.emile_roemer",
+      "party": "nld.sp",
+      "round": 1
+     },
+     {
+      "person": "nld.sybrand_van_haersma_buma",
+      "party": "nld.cda",
+      "round": 1
+     }
+    ],
+    "party_results": [
+     {
+      "party": "nld.vvd",
+      "share": 0.2658,
+      "seats": 41
+     },
+     {
+      "party": "nld.pvda",
+      "share": 0.2484,
+      "seats": 38
+     },
+     {
+      "party": "nld.pvv",
+      "share": 0.1008,
+      "seats": 15
+     },
+     {
+      "party": "nld.sp",
+      "share": 0.0965,
+      "seats": 15
+     },
+     {
+      "party": "nld.cda",
+      "share": 0.0851,
+      "seats": 13
+     },
+     {
+      "party": "nld.d66",
+      "share": 0.0803,
+      "seats": 12
+     },
+     {
+      "party": "nld.cu",
+      "share": 0.0313,
+      "seats": 5
+     },
+     {
+      "party": "nld.gl",
+      "share": 0.0233,
+      "seats": 4
+     },
+     {
+      "party": "nld.sgp",
+      "share": 0.0209,
+      "seats": 3
+     },
+     {
+      "party": "nld.pvdd",
+      "share": 0.0193,
+      "seats": 2
+     },
+     {
+      "party": "nld.50plus",
+      "share": 0.0188,
+      "seats": 2
+     }
+    ],
+    "winner": "nld.vvd",
+    "turnout": 0.746,
+    "note": "Early election after the first Rutte cabinet resigned on 23 April 2012 when the PVV withdrew its support. Followed by a VVD-PvdA cabinet.",
+    "source": [
+     {
+      "url": "https://en.wikipedia.org/wiki/2012_Dutch_general_election",
+      "title": "Wikipedia: 2012 Dutch general election (results and infobox)",
+      "accessed": "2026-10-14"
+     }
+    ],
+    "confidence": "verified"
+   }
+  },
+  {
+   "id": "senate_2015",
+   "date": "2015-05-26",
+   "kind": "legislative_upper",
+   "chamber": "senate",
+   "historical": {
+    "party_results": [
+     {
+      "party": "nld.vvd",
+      "share": 0.1687,
+      "seats": 13
+     },
+     {
+      "party": "nld.cda",
+      "share": 0.1487,
+      "seats": 12
+     },
+     {
+      "party": "nld.d66",
+      "share": 0.1301,
+      "seats": 10
+     },
+     {
+      "party": "nld.pvv",
+      "share": 0.1197,
+      "seats": 9
+     },
+     {
+      "party": "nld.sp",
+      "share": 0.1185,
+      "seats": 9
+     },
+     {
+      "party": "nld.pvda",
+      "share": 0.1045,
+      "seats": 8
+     },
+     {
+      "party": "nld.gl",
+      "share": 0.0563,
+      "seats": 4
+     },
+     {
+      "party": "nld.cu",
+      "share": 0.0487,
+      "seats": 3
+     },
+     {
+      "party": "nld.pvdd",
+      "share": 0.0359,
+      "seats": 2
+     },
+     {
+      "party": "nld.sgp",
+      "share": 0.0272,
+      "seats": 2
+     },
+     {
+      "party": "nld.50plus",
+      "share": 0.026,
+      "seats": 2
+     },
+     {
+      "party": "nld.osf",
+      "share": 0.0157,
+      "seats": 1
+     }
+    ],
+    "winner": "nld.vvd",
+    "note": "Indirect election by the provincial councils; shares are of the weighted provincial vote. ",
+    "source": [
+     {
+      "url": "https://en.wikipedia.org/wiki/2015_Dutch_Senate_election",
+      "title": "Wikipedia: 2015 Dutch Senate election (infobox)",
+      "accessed": "2026-10-14"
+     }
+    ],
+    "confidence": "verified"
+   }
+  },
+  {
+   "id": "referendum_2016_ukraine_association",
+   "date": "2016-04-06",
+   "kind": "referendum",
+   "question": "Are you for or against the Approval Act of the Association Agreement between the European Union and Ukraine?",
+   "historical": {
+    "yes_share": 0.385,
+    "options": [
+     {
+      "label": "For",
+      "votes": 1571874
+     },
+     {
+      "label": "Against",
+      "votes": 2509395
+     }
+    ],
+    "winner": "Against",
+    "turnout": 0.323,
+    "note": "Suspensory, non-binding referendum under the Advisory Referendum Act (valid with at least 30% turnout). 4,151,613 votes cast (including 32,344 blank) out of 12,862,658.",
+    "source": [
+     {
+      "url": "https://en.wikipedia.org/wiki/2016_Dutch_Ukraine%E2%80%93European_Union_Association_Agreement_referendum",
+      "title": "Wikipedia: 2016 Dutch Ukraine–European Union Association Agreement referendum (infobox)",
+      "accessed": "2026-10-14"
+     }
+    ],
+    "confidence": "verified"
+   }
+  },
+  {
+   "id": "general_2017",
+   "date": "2017-03-15",
+   "kind": "legislative",
+   "chamber": "house_of_representatives",
+   "historical": {
+    "candidates": [
+     {
+      "person": "nld.mark_rutte",
+      "party": "nld.vvd",
+      "round": 1
+     },
+     {
+      "person": "nld.geert_wilders",
+      "party": "nld.pvv",
+      "round": 1
+     },
+     {
+      "person": "nld.sybrand_van_haersma_buma",
+      "party": "nld.cda",
+      "round": 1
+     },
+     {
+      "person": "nld.alexander_pechtold",
+      "party": "nld.d66",
+      "round": 1
+     },
+     {
+      "person": "nld.jesse_klaver",
+      "party": "nld.gl",
+      "round": 1
+     },
+     {
+      "person": "nld.lodewijk_asscher",
+      "party": "nld.pvda",
+      "round": 1
+     }
+    ],
+    "party_results": [
+     {
+      "party": "nld.vvd",
+      "share": 0.2129,
+      "seats": 33
+     },
+     {
+      "party": "nld.pvv",
+      "share": 0.1306,
+      "seats": 20
+     },
+     {
+      "party": "nld.cda",
+      "share": 0.1238,
+      "seats": 19
+     },
+     {
+      "party": "nld.d66",
+      "share": 0.1223,
+      "seats": 19
+     },
+     {
+      "party": "nld.gl",
+      "share": 0.0913,
+      "seats": 14
+     },
+     {
+      "party": "nld.sp",
+      "share": 0.0909,
+      "seats": 14
+     },
+     {
+      "party": "nld.pvda",
+      "share": 0.057,
+      "seats": 9
+     },
+     {
+      "party": "nld.cu",
+      "share": 0.0339,
+      "seats": 5
+     },
+     {
+      "party": "nld.pvdd",
+      "share": 0.0319,
+      "seats": 5
+     },
+     {
+      "party": "nld.50plus",
+      "share": 0.0311,
+      "seats": 4
+     },
+     {
+      "party": "nld.sgp",
+      "share": 0.0208,
+      "seats": 3
+     },
+     {
+      "party": "nld.denk",
+      "share": 0.0206,
+      "seats": 3
+     },
+     {
+      "party": "nld.fvd",
+      "share": 0.0178,
+      "seats": 2
+     }
+    ],
+    "winner": "nld.vvd",
+    "turnout": 0.819,
+    "note": "Followed by the third Rutte cabinet (VVD-CDA-D66-CU).",
+    "source": [
+     {
+      "url": "https://en.wikipedia.org/wiki/2017_Dutch_general_election",
+      "title": "Wikipedia: 2017 Dutch general election (results and infobox)",
+      "accessed": "2026-10-14"
+     }
+    ],
+    "confidence": "verified"
+   }
+  },
+  {
+   "id": "referendum_2018_intelligence_act",
+   "date": "2018-03-21",
+   "kind": "referendum",
+   "question": "Are you for or against the Intelligence and Security Services Act 2017?",
+   "historical": {
+    "yes_share": 0.485,
+    "options": [
+     {
+      "label": "For",
+      "votes": 3122628
+     },
+     {
+      "label": "Against",
+      "votes": 3317496
+     }
+    ],
+    "winner": "Against",
+    "turnout": 0.515,
+    "note": "Second and last referendum under the Advisory Referendum Act. 6,734,225 votes cast (including 270,288 blank) out of 13,064,932. The question wording is paraphrased from the article title.",
+    "source": [
+     {
+      "url": "https://en.wikipedia.org/wiki/2018_Dutch_Intelligence_and_Security_Services_Act_referendum",
+      "title": "Wikipedia: 2018 Dutch Intelligence and Security Services Act referendum (infobox)",
+      "accessed": "2026-10-14"
+     }
+    ],
+    "confidence": "verified"
+   }
+  },
+  {
+   "id": "senate_2019",
+   "date": "2019-05-27",
+   "kind": "legislative_upper",
+   "chamber": "senate",
+   "historical": {
+    "party_results": [
+     {
+      "party": "nld.fvd",
+      "share": 0.1587,
+      "seats": 12
+     },
+     {
+      "party": "nld.vvd",
+      "share": 0.1511,
+      "seats": 12
+     },
+     {
+      "party": "nld.cda",
+      "share": 0.1141,
+      "seats": 9
+     },
+     {
+      "party": "nld.gl",
+      "share": 0.1118,
+      "seats": 8
+     },
+     {
+      "party": "nld.d66",
+      "share": 0.0875,
+      "seats": 7
+     },
+     {
+      "party": "nld.pvda",
+      "share": 0.0862,
+      "seats": 6
+     },
+     {
+      "party": "nld.pvv",
+      "share": 0.0653,
+      "seats": 5
+     },
+     {
+      "party": "nld.sp",
+      "share": 0.0588,
+      "seats": 4
+     },
+     {
+      "party": "nld.cu",
+      "share": 0.0503,
+      "seats": 4
+     },
+     {
+      "party": "nld.pvdd",
+      "share": 0.0378,
+      "seats": 3
+     },
+     {
+      "party": "nld.50plus",
+      "share": 0.0303,
+      "seats": 2
+     },
+     {
+      "party": "nld.sgp",
+      "share": 0.026,
+      "seats": 2
+     },
+     {
+      "party": "nld.osf",
+      "share": 0.0131,
+      "seats": 1
+     }
+    ],
+    "winner": "nld.fvd",
+    "note": "Indirect election by the provincial councils and the electoral colleges; shares are of the weighted provincial vote. FvD and VVD both won 12 seats; FvD had the larger weighted vote.",
+    "source": [
+     {
+      "url": "https://en.wikipedia.org/wiki/2019_Dutch_Senate_election",
+      "title": "Wikipedia: 2019 Dutch Senate election (infobox)",
+      "accessed": "2026-10-14"
+     }
+    ],
+    "confidence": "verified"
+   }
+  },
+  {
+   "id": "general_2021",
+   "date": "2021-03-17",
+   "kind": "legislative",
+   "chamber": "house_of_representatives",
+   "historical": {
+    "candidates": [
+     {
+      "person": "nld.mark_rutte",
+      "party": "nld.vvd",
+      "round": 1
+     },
+     {
+      "person": "nld.sigrid_kaag",
+      "party": "nld.d66",
+      "round": 1
+     },
+     {
+      "person": "nld.geert_wilders",
+      "party": "nld.pvv",
+      "round": 1
+     },
+     {
+      "person": "nld.wopke_hoekstra",
+      "party": "nld.cda",
+      "round": 1
+     },
+     {
+      "person": "nld.lilian_marijnissen",
+      "party": "nld.sp",
+      "round": 1
+     },
+     {
+      "person": "nld.lilianne_ploumen",
+      "party": "nld.pvda",
+      "round": 1
+     },
+     {
+      "person": "nld.jesse_klaver",
+      "party": "nld.gl",
+      "round": 1
+     },
+     {
+      "person": "nld.thierry_baudet",
+      "party": "nld.fvd",
+      "round": 1
+     }
+    ],
+    "party_results": [
+     {
+      "party": "nld.vvd",
+      "share": 0.2187,
+      "seats": 34
+     },
+     {
+      "party": "nld.d66",
+      "share": 0.1502,
+      "seats": 24
+     },
+     {
+      "party": "nld.pvv",
+      "share": 0.1079,
+      "seats": 17
+     },
+     {
+      "party": "nld.cda",
+      "share": 0.095,
+      "seats": 15
+     },
+     {
+      "party": "nld.sp",
+      "share": 0.0598,
+      "seats": 9
+     },
+     {
+      "party": "nld.pvda",
+      "share": 0.0573,
+      "seats": 9
+     },
+     {
+      "party": "nld.gl",
+      "share": 0.0516,
+      "seats": 8
+     },
+     {
+      "party": "nld.fvd",
+      "share": 0.0502,
+      "seats": 8
+     },
+     {
+      "party": "nld.pvdd",
+      "share": 0.0384,
+      "seats": 6
+     },
+     {
+      "party": "nld.cu",
+      "share": 0.0337,
+      "seats": 5
+     },
+     {
+      "party": "nld.volt",
+      "share": 0.0242,
+      "seats": 3
+     },
+     {
+      "party": "nld.ja21",
+      "share": 0.0237,
+      "seats": 3
+     },
+     {
+      "party": "nld.sgp",
+      "share": 0.0207,
+      "seats": 3
+     },
+     {
+      "party": "nld.denk",
+      "share": 0.0203,
+      "seats": 3
+     },
+     {
+      "party": "nld.50plus",
+      "share": 0.0102,
+      "seats": 1
+     },
+     {
+      "party": "nld.bbb",
+      "share": 0.01,
+      "seats": 1
+     },
+     {
+      "party": "nld.bij1",
+      "share": 0.0084,
+      "seats": 1
+     }
+    ],
+    "winner": "nld.vvd",
+    "turnout": 0.787,
+    "note": "Voting took place over 15-17 March 2021 because of the COVID-19 pandemic; 17 March was the scheduled election day. The third Rutte cabinet had resigned on 15 January 2021. Followed by the fourth Rutte cabinet (VVD-CDA-D66-CU).",
+    "source": [
+     {
+      "url": "https://en.wikipedia.org/wiki/2021_Dutch_general_election",
+      "title": "Wikipedia: 2021 Dutch general election (results and infobox)",
+      "accessed": "2026-10-14"
+     }
+    ],
+    "confidence": "verified"
+   }
+  },
+  {
+   "id": "senate_2023",
+   "date": "2023-05-30",
+   "kind": "legislative_upper",
+   "chamber": "senate",
+   "historical": {
+    "party_results": [
+     {
+      "party": "nld.bbb",
+      "share": 0.2066,
+      "seats": 16
+     },
+     {
+      "party": "nld.vvd",
+      "share": 0.124,
+      "seats": 10
+     },
+     {
+      "party": "nld.gl",
+      "share": 0.0967,
+      "seats": 7
+     },
+     {
+      "party": "nld.pvda",
+      "share": 0.0886,
+      "seats": 7
+     },
+     {
+      "party": "nld.cda",
+      "share": 0.0734,
+      "seats": 6
+     },
+     {
+      "party": "nld.d66",
+      "share": 0.0623,
+      "seats": 5
+     },
+     {
+      "party": "nld.pvv",
+      "share": 0.061,
+      "seats": 4
+     },
+     {
+      "party": "nld.pvdd",
+      "share": 0.0478,
+      "seats": 3
+     },
+     {
+      "party": "nld.ja21",
+      "share": 0.0463,
+      "seats": 3
+     },
+     {
+      "party": "nld.sp",
+      "share": 0.0414,
+      "seats": 3
+     },
+     {
+      "party": "nld.cu",
+      "share": 0.0368,
+      "seats": 3
+     },
+     {
+      "party": "nld.fvd",
+      "share": 0.0272,
+      "seats": 2
+     },
+     {
+      "party": "nld.volt",
+      "share": 0.027,
+      "seats": 2
+     },
+     {
+      "party": "nld.sgp",
+      "share": 0.0248,
+      "seats": 2
+     },
+     {
+      "party": "nld.50plus",
+      "share": 0.0182,
+      "seats": 1
+     },
+     {
+      "party": "nld.osf",
+      "share": 0.0178,
+      "seats": 1
+     }
+    ],
+    "winner": "nld.bbb",
+    "note": "Indirect election by the provincial councils and the electoral colleges; shares are of the weighted provincial vote. GroenLinks and the PvdA stood separate lists but formed a joint Senate group (14). The OSF is now named Independent Politics Netherlands.",
+    "source": [
+     {
+      "url": "https://en.wikipedia.org/wiki/2023_Dutch_Senate_election",
+      "title": "Wikipedia: 2023 Dutch Senate election (infobox)",
+      "accessed": "2026-10-14"
+     }
+    ],
+    "confidence": "verified"
+   }
+  },
+  {
+   "id": "general_2023",
+   "date": "2023-11-22",
+   "kind": "legislative",
+   "chamber": "house_of_representatives",
+   "snap": true,
+   "historical": {
+    "candidates": [
+     {
+      "person": "nld.geert_wilders",
+      "party": "nld.pvv",
+      "round": 1
+     },
+     {
+      "person": "nld.frans_timmermans",
+      "party": "nld.gl_pvda",
+      "round": 1
+     },
+     {
+      "person": "nld.dilan_yesilgoz",
+      "party": "nld.vvd",
+      "round": 1
+     },
+     {
+      "person": "nld.pieter_omtzigt",
+      "party": "nld.nsc",
+      "round": 1
+     },
+     {
+      "person": "nld.rob_jetten",
+      "party": "nld.d66",
+      "round": 1
+     },
+     {
+      "person": "nld.caroline_van_der_plas",
+      "party": "nld.bbb",
+      "round": 1
+     },
+     {
+      "person": "nld.henri_bontenbal",
+      "party": "nld.cda",
+      "round": 1
+     }
+    ],
+    "party_results": [
+     {
+      "party": "nld.pvv",
+      "share": 0.2349,
+      "seats": 37
+     },
+     {
+      "party": "nld.gl_pvda",
+      "share": 0.1575,
+      "seats": 25
+     },
+     {
+      "party": "nld.vvd",
+      "share": 0.1524,
+      "seats": 24
+     },
+     {
+      "party": "nld.nsc",
+      "share": 0.1288,
+      "seats": 20
+     },
+     {
+      "party": "nld.d66",
+      "share": 0.0629,
+      "seats": 9
+     },
+     {
+      "party": "nld.bbb",
+      "share": 0.0465,
+      "seats": 7
+     },
+     {
+      "party": "nld.cda",
+      "share": 0.0331,
+      "seats": 5
+     },
+     {
+      "party": "nld.sp",
+      "share": 0.0315,
+      "seats": 5
+     },
+     {
+      "party": "nld.denk",
+      "share": 0.0237,
+      "seats": 3
+     },
+     {
+      "party": "nld.pvdd",
+      "share": 0.0225,
+      "seats": 3
+     },
+     {
+      "party": "nld.fvd",
+      "share": 0.0223,
+      "seats": 3
+     },
+     {
+      "party": "nld.sgp",
+      "share": 0.0208,
+      "seats": 3
+     },
+     {
+      "party": "nld.cu",
+      "share": 0.0204,
+      "seats": 3
+     },
+     {
+      "party": "nld.volt",
+      "share": 0.0171,
+      "seats": 2
+     },
+     {
+      "party": "nld.ja21",
+      "share": 0.0068,
+      "seats": 1
+     }
+    ],
+    "winner": "nld.pvv",
+    "turnout": 0.778,
+    "note": "Early election after the fourth Rutte cabinet collapsed on 7 July 2023. Followed by the Schoof cabinet (PVV-VVD-NSC-BBB) under a non-partisan Prime Minister.",
+    "source": [
+     {
+      "url": "https://en.wikipedia.org/wiki/2023_Dutch_general_election",
+      "title": "Wikipedia: 2023 Dutch general election (results and infobox)",
+      "accessed": "2026-10-14"
+     }
+    ],
+    "confidence": "verified"
+   }
+  },
+  {
+   "id": "general_2025",
+   "date": "2025-10-29",
+   "kind": "legislative",
+   "chamber": "house_of_representatives",
+   "snap": true,
+   "historical": {
+    "candidates": [
+     {
+      "person": "nld.rob_jetten",
+      "party": "nld.d66",
+      "round": 1
+     },
+     {
+      "person": "nld.geert_wilders",
+      "party": "nld.pvv",
+      "round": 1
+     },
+     {
+      "person": "nld.dilan_yesilgoz",
+      "party": "nld.vvd",
+      "round": 1
+     },
+     {
+      "person": "nld.frans_timmermans",
+      "party": "nld.gl_pvda",
+      "round": 1
+     },
+     {
+      "person": "nld.henri_bontenbal",
+      "party": "nld.cda",
+      "round": 1
+     },
+     {
+      "person": "nld.joost_eerdmans",
+      "party": "nld.ja21",
+      "round": 1
+     },
+     {
+      "person": "nld.caroline_van_der_plas",
+      "party": "nld.bbb",
+      "round": 1
+     },
+     {
+      "person": "nld.jimmy_dijk",
+      "party": "nld.sp",
+      "round": 1
+     }
+    ],
+    "party_results": [
+     {
+      "party": "nld.d66",
+      "share": 0.1694,
+      "seats": 26
+     },
+     {
+      "party": "nld.pvv",
+      "share": 0.1666,
+      "seats": 26
+     },
+     {
+      "party": "nld.vvd",
+      "share": 0.1424,
+      "seats": 22
+     },
+     {
+      "party": "nld.gl_pvda",
+      "share": 0.1279,
+      "seats": 20
+     },
+     {
+      "party": "nld.cda",
+      "share": 0.1179,
+      "seats": 18
+     },
+     {
+      "party": "nld.ja21",
+      "share": 0.0595,
+      "seats": 9
+     },
+     {
+      "party": "nld.fvd",
+      "share": 0.0454,
+      "seats": 7
+     },
+     {
+      "party": "nld.bbb",
+      "share": 0.0265,
+      "seats": 4
+     },
+     {
+      "party": "nld.denk",
+      "share": 0.0237,
+      "seats": 3
+     },
+     {
+      "party": "nld.sgp",
+      "share": 0.0225,
+      "seats": 3
+     },
+     {
+      "party": "nld.pvdd",
+      "share": 0.0208,
+      "seats": 3
+     },
+     {
+      "party": "nld.cu",
+      "share": 0.019,
+      "seats": 3
+     },
+     {
+      "party": "nld.sp",
+      "share": 0.0189,
+      "seats": 3
+     },
+     {
+      "party": "nld.50plus",
+      "share": 0.0143,
+      "seats": 2
+     },
+     {
+      "party": "nld.volt",
+      "share": 0.011,
+      "seats": 1
+     }
+    ],
+    "winner": "nld.d66",
+    "turnout": 0.783,
+    "note": "Early election after the Schoof cabinet collapsed when the PVV left the coalition. D66 and the PVV both won 26 seats; D66 received 29,668 more votes. Followed by the Jetten cabinet (D66-VVD-CDA minority) on 23 February 2026. The GroenLinks-PvdA seats passed to the merged Progressief Nederland on 1 July 2026.",
+    "source": [
+     {
+      "url": "https://en.wikipedia.org/wiki/2025_Dutch_general_election",
+      "title": "Wikipedia: 2025 Dutch general election (results and infobox)",
+      "accessed": "2026-10-14"
+     }
+    ],
+    "confidence": "verified"
+   }
+  }
+ ],
+ "source": [
+  {
+   "url": "https://en.wikipedia.org/wiki/Elections_in_the_Netherlands",
+   "title": "Wikipedia: Elections in the Netherlands",
+   "accessed": "2026-10-14"
+  },
+  {
+   "url": "https://en.wikipedia.org/wiki/Next_Dutch_general_election",
+   "title": "Wikipedia: Next Dutch general election",
+   "accessed": "2026-10-14"
+  }
+ ],
+ "confidence": "verified"
+}

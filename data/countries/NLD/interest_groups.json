@@ -1,0 +1,15 @@
+{
+  "note": "Influence and approval are gameplay starting values for 1 January 2000 (second 'purple' Kok cabinet of PvdA, VVD and D66 during an economic boom), not measured data. Influence reflects the consensual 'polder model': employers and unions bargain together with the government, a large trading and financial sector, churches with declining but still organised weight (Christian parties and schools), a small professional military, and an influential farming sector.",
+  "interest_groups": [
+    { "type": "military", "influence": 0.1, "approval": 55, "note": "All-volunteer forces since the mid-1990s." },
+    { "type": "security_services", "influence": 0.1, "approval": 55 },
+    { "type": "business", "influence": 0.55, "approval": 65, "note": "Multinationals, ports and banks; content with a coalition including the liberal VVD (gameplay estimate)." },
+    { "type": "labour_unions", "influence": 0.35, "approval": 60, "note": "Union federations bargain with employers and government under the polder model." },
+    { "type": "religious_establishment", "influence": 0.15, "approval": 40, "note": "Protestant and Catholic churches; the CDA was in opposition to the Kok cabinets."},
+    { "type": "rural", "influence": 0.25, "approval": 50, "note": "Intensive, export-oriented agriculture." },
+    { "type": "urban_middle_class", "influence": 0.5, "approval": 65 },
+    { "type": "minorities", "influence": 0.1, "approval": 55, "note": "Immigrant communities (Turkish, Moroccan, Surinamese, Antillean) and the Frisian minority." },
+    { "type": "youth_students", "influence": 0.15, "approval": 55 },
+    { "type": "media", "influence": 0.4, "approval": 60 }
+  ]
+}

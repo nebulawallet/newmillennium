@@ -1,0 +1,825 @@
+{
+  "rules": [
+    {
+      "kind": "presidential",
+      "office": "fra.president",
+      "every_years": 5,
+      "anchor": "2022-04-10",
+      "snap_possible": true,
+      "system": "two_round",
+      "note": "Two-round system (absolute majority, else a run-off between the top two). Five-year term since 2002; an early election follows a vacancy."
+    },
+    {
+      "kind": "legislative",
+      "chamber": "national_assembly",
+      "every_years": 5,
+      "anchor": "2024-06-30",
+      "snap_possible": true,
+      "note": "Five-year term; the President may dissolve the National Assembly (as in 1997 and 2024)."
+    }
+  ],
+  "elections": [
+    {
+      "id": "referendum_2000",
+      "date": "2000-09-24",
+      "kind": "referendum",
+      "question": "Reduce the President's term of office from seven to five years (quinquennat).",
+      "historical": {
+        "yes_share": 0.7321,
+        "turnout": 0.302,
+        "note": "Yes 7,407,697; No 2,710,651; 1,940,340 blank or invalid ballots; 39,941,192 registered.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2000_French_constitutional_referendum",
+            "title": "Wikipedia: 2000 French constitutional referendum",
+            "accessed": "2026-10-14"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "president_2002",
+      "date": "2002-04-21",
+      "kind": "presidential",
+      "office": "fra.president",
+      "rounds": 2,
+      "historical": {
+        "candidates": [
+          {
+            "person": "fra.jacques_chirac",
+            "party": "fra.rpr",
+            "share": 0.1988,
+            "round": 1
+          },
+          {
+            "person": "fra.jean_marie_le_pen",
+            "party": "fra.fn",
+            "share": 0.1686,
+            "round": 1
+          },
+          {
+            "person": "fra.lionel_jospin",
+            "party": "fra.ps",
+            "share": 0.1618,
+            "round": 1
+          },
+          {
+            "person": "fra.francois_bayrou",
+            "party": "fra.udf",
+            "share": 0.0684,
+            "round": 1
+          },
+          {
+            "person": "fra.arlette_laguiller",
+            "party": "fra.lo",
+            "share": 0.0572,
+            "round": 1
+          },
+          {
+            "person": "fra.jean_pierre_chevenement",
+            "party": "fra.mdc",
+            "share": 0.0533,
+            "round": 1
+          },
+          {
+            "person": "fra.noel_mamere",
+            "party": "fra.verts",
+            "share": 0.0525,
+            "round": 1
+          },
+          {
+            "person": "fra.alain_madelin",
+            "party": "fra.dl",
+            "share": 0.0391,
+            "round": 1
+          },
+          {
+            "person": "fra.jacques_chirac",
+            "party": "fra.rpr",
+            "share": 0.8221,
+            "votes": 25537956,
+            "round": 2
+          },
+          {
+            "person": "fra.jean_marie_le_pen",
+            "party": "fra.fn",
+            "share": 0.1779,
+            "votes": 5525032,
+            "round": 2
+          }
+        ],
+        "winner": "fra.jacques_chirac",
+        "turnout": 0.716,
+        "note": "First round 21 April, second round 5 May 2002. Shares are of valid votes. Candidates below 5% omitted except Madelin (Liberal Democracy leader); Olivier Besancenot (LCR, 4.25%), Jean Saint-Josse (CPNT, 4.23%), Robert Hue (PCF, 3.37%), Bruno Megret (MNR, 2.34%), Christiane Taubira (PRG, 2.32%) and others. Turnout is for the first round (79.71% in the second).",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2002_French_presidential_election",
+            "title": "Wikipedia: 2002 French presidential election (results table)",
+            "accessed": "2026-10-14"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "assembly_2002",
+      "date": "2002-06-09",
+      "kind": "legislative",
+      "chamber": "national_assembly",
+      "rounds": 2,
+      "historical": {
+        "party_results": [
+          {
+            "party": "fra.ump",
+            "share": 0.333,
+            "seats": 357
+          },
+          {
+            "party": "fra.ps",
+            "share": 0.2411,
+            "seats": 140
+          },
+          {
+            "party": "fra.fn",
+            "share": 0.1134,
+            "seats": 0
+          },
+          {
+            "party": "fra.udf",
+            "share": 0.0486,
+            "seats": 27
+          },
+          {
+            "party": "fra.pcf",
+            "share": 0.0482,
+            "seats": 21
+          },
+          {
+            "party": "fra.verts",
+            "share": 0.0451,
+            "seats": 3
+          },
+          {
+            "party": "fra.prg",
+            "share": 0.0154,
+            "seats": 7
+          },
+          {
+            "party": "fra.mpf",
+            "share": 0.008,
+            "seats": 1
+          },
+          {
+            "party": "fra.dl",
+            "share": 0.0041,
+            "seats": 2
+          },
+          {
+            "party": "fra.rpf",
+            "share": 0.0037,
+            "seats": 2
+          },
+          {
+            "party": "others",
+            "seats": 17
+          }
+        ],
+        "winner": "fra.ump",
+        "turnout": 0.6442,
+        "note": "First round 9 June, second round 16 June 2002. Shares are first-round shares by Interior Ministry label. 'others' = miscellaneous right 9, miscellaneous left 6, miscellaneous 1, regionalist 1.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2002_French_legislative_election",
+            "title": "Wikipedia: 2002 French legislative election (results table)",
+            "accessed": "2026-10-14"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "referendum_2005",
+      "date": "2005-05-29",
+      "kind": "referendum",
+      "question": "Ratify the Treaty establishing a Constitution for Europe.",
+      "historical": {
+        "yes_share": 0.4533,
+        "turnout": 0.6937,
+        "note": "Rejected. Yes 12,808,270; No 15,449,508; 730,522 invalid; 41,789,202 registered. Turnout computed from these figures.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2005_French_European_Constitution_referendum",
+            "title": "Wikipedia: 2005 French European Constitution referendum",
+            "accessed": "2026-10-14"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "president_2007",
+      "date": "2007-04-22",
+      "kind": "presidential",
+      "office": "fra.president",
+      "rounds": 2,
+      "historical": {
+        "candidates": [
+          {
+            "person": "fra.nicolas_sarkozy",
+            "party": "fra.ump",
+            "share": 0.3118,
+            "round": 1
+          },
+          {
+            "person": "fra.segolene_royal",
+            "party": "fra.ps",
+            "share": 0.2587,
+            "round": 1
+          },
+          {
+            "person": "fra.francois_bayrou",
+            "party": "fra.udf",
+            "share": 0.1857,
+            "round": 1
+          },
+          {
+            "person": "fra.jean_marie_le_pen",
+            "party": "fra.fn",
+            "share": 0.1044,
+            "round": 1
+          },
+          {
+            "person": "fra.philippe_de_villiers",
+            "party": "fra.mpf",
+            "share": 0.0223,
+            "round": 1
+          },
+          {
+            "person": "fra.marie_george_buffet",
+            "party": "fra.pcf",
+            "share": 0.0193,
+            "round": 1
+          },
+          {
+            "person": "fra.dominique_voynet",
+            "party": "fra.verts",
+            "share": 0.0157,
+            "round": 1
+          },
+          {
+            "person": "fra.arlette_laguiller",
+            "party": "fra.lo",
+            "share": 0.0133,
+            "round": 1
+          },
+          {
+            "person": "fra.nicolas_sarkozy",
+            "party": "fra.ump",
+            "share": 0.5306,
+            "votes": 18983138,
+            "round": 2
+          },
+          {
+            "person": "fra.segolene_royal",
+            "party": "fra.ps",
+            "share": 0.4694,
+            "votes": 16790440,
+            "round": 2
+          }
+        ],
+        "winner": "fra.nicolas_sarkozy",
+        "turnout": 0.8377,
+        "note": "First round 22 April, second round 6 May 2007. Shares are of valid votes; minor candidates listed because they lead parties in this file. Olivier Besancenot (LCR, 4.08%), Jose Bove, Frederic Nihous and Gerard Schivardi omitted. Turnout is for the first round.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2007_French_presidential_election",
+            "title": "Wikipedia: 2007 French presidential election (results table)",
+            "accessed": "2026-10-14"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "assembly_2007",
+      "date": "2007-06-10",
+      "kind": "legislative",
+      "chamber": "national_assembly",
+      "rounds": 2,
+      "historical": {
+        "party_results": [
+          {
+            "party": "fra.ump",
+            "share": 0.3954,
+            "seats": 313
+          },
+          {
+            "party": "fra.ps",
+            "share": 0.2473,
+            "seats": 186
+          },
+          {
+            "party": "fra.udf",
+            "share": 0.0761,
+            "seats": 3
+          },
+          {
+            "party": "fra.fn",
+            "share": 0.0429,
+            "seats": 0
+          },
+          {
+            "party": "fra.pcf",
+            "share": 0.0429,
+            "seats": 15
+          },
+          {
+            "party": "fra.verts",
+            "share": 0.0325,
+            "seats": 4
+          },
+          {
+            "party": "fra.prg",
+            "share": 0.0132,
+            "seats": 7
+          },
+          {
+            "party": "fra.mpf",
+            "share": 0.012,
+            "seats": 1
+          },
+          {
+            "party": "others",
+            "seats": 48
+          }
+        ],
+        "winner": "fra.ump",
+        "turnout": 0.604,
+        "note": "First round 10 June, second round 17 June 2007. UDF-MoDem candidates are shown as fra.udf (MoDem was formally founded in December 2007). 'others' = 'presidential majority' label 22 (mostly New Centre), miscellaneous left 15, miscellaneous right 9, miscellaneous 1, regionalist 1.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2007_French_legislative_election",
+            "title": "Wikipedia: 2007 French legislative election (results table)",
+            "accessed": "2026-10-14"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "president_2012",
+      "date": "2012-04-22",
+      "kind": "presidential",
+      "office": "fra.president",
+      "rounds": 2,
+      "historical": {
+        "candidates": [
+          {
+            "person": "fra.francois_hollande",
+            "party": "fra.ps",
+            "share": 0.2863,
+            "round": 1
+          },
+          {
+            "person": "fra.nicolas_sarkozy",
+            "party": "fra.ump",
+            "share": 0.2718,
+            "round": 1
+          },
+          {
+            "person": "fra.marine_le_pen",
+            "party": "fra.fn",
+            "share": 0.179,
+            "round": 1
+          },
+          {
+            "person": "fra.jean_luc_melenchon",
+            "share": 0.111,
+            "round": 1
+          },
+          {
+            "person": "fra.francois_bayrou",
+            "party": "fra.modem",
+            "share": 0.0913,
+            "round": 1
+          },
+          {
+            "person": "fra.francois_hollande",
+            "party": "fra.ps",
+            "share": 0.5164,
+            "votes": 18000668,
+            "round": 2
+          },
+          {
+            "person": "fra.nicolas_sarkozy",
+            "party": "fra.ump",
+            "share": 0.4836,
+            "votes": 16860685,
+            "round": 2
+          }
+        ],
+        "winner": "fra.francois_hollande",
+        "turnout": 0.7948,
+        "note": "First round 22 April, second round 6 May 2012. Melenchon ran for the Left Front (Left Party and PCF), which has no party record here. Eva Joly (EELV, 2.31%) and Nicolas Dupont-Aignan (1.79%) and others omitted. Turnout is for the first round.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2012_French_presidential_election",
+            "title": "Wikipedia: 2012 French presidential election (results table)",
+            "accessed": "2026-10-14"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "assembly_2012",
+      "date": "2012-06-10",
+      "kind": "legislative",
+      "chamber": "national_assembly",
+      "rounds": 2,
+      "historical": {
+        "party_results": [
+          {
+            "party": "fra.ps",
+            "share": 0.2935,
+            "seats": 280
+          },
+          {
+            "party": "fra.ump",
+            "share": 0.2712,
+            "seats": 194
+          },
+          {
+            "party": "fra.fn",
+            "share": 0.136,
+            "seats": 2
+          },
+          {
+            "party": "fra.pcf",
+            "share": 0.0691,
+            "seats": 10
+          },
+          {
+            "party": "fra.eelv",
+            "share": 0.0546,
+            "seats": 17
+          },
+          {
+            "party": "fra.nc",
+            "share": 0.022,
+            "seats": 12
+          },
+          {
+            "party": "fra.prg",
+            "share": 0.0165,
+            "seats": 12
+          },
+          {
+            "party": "fra.modem",
+            "share": 0.0177,
+            "seats": 2
+          },
+          {
+            "party": "others",
+            "seats": 48
+          }
+        ],
+        "winner": "fra.ps",
+        "turnout": 0.572,
+        "note": "First round 10 June, second round 17 June 2012. fra.pcf stands for the Left Front label (PCF and Left Party); fra.modem for the 'Centre for France' label. 'others' = miscellaneous left 22, miscellaneous right 15, Radical Party 6, Centrist Alliance 2, regionalist 2, far right 1.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2012_French_legislative_election",
+            "title": "Wikipedia: 2012 French legislative election (results table)",
+            "accessed": "2026-10-14"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "president_2017",
+      "date": "2017-04-23",
+      "kind": "presidential",
+      "office": "fra.president",
+      "rounds": 2,
+      "historical": {
+        "candidates": [
+          {
+            "person": "fra.emmanuel_macron",
+            "party": "fra.renaissance",
+            "share": 0.2401,
+            "round": 1
+          },
+          {
+            "person": "fra.marine_le_pen",
+            "party": "fra.fn",
+            "share": 0.213,
+            "round": 1
+          },
+          {
+            "person": "fra.francois_fillon",
+            "party": "fra.lr",
+            "share": 0.2001,
+            "round": 1
+          },
+          {
+            "person": "fra.jean_luc_melenchon",
+            "party": "fra.lfi",
+            "share": 0.1958,
+            "round": 1
+          },
+          {
+            "person": "fra.benoit_hamon",
+            "party": "fra.ps",
+            "share": 0.0636,
+            "round": 1
+          },
+          {
+            "person": "fra.emmanuel_macron",
+            "party": "fra.renaissance",
+            "share": 0.661,
+            "votes": 20743128,
+            "round": 2
+          },
+          {
+            "person": "fra.marine_le_pen",
+            "party": "fra.fn",
+            "share": 0.339,
+            "votes": 10638475,
+            "round": 2
+          }
+        ],
+        "winner": "fra.emmanuel_macron",
+        "turnout": 0.7777,
+        "note": "First round 23 April, second round 7 May 2017. Macron ran for En Marche! (now Renaissance). Nicolas Dupont-Aignan (4.70%) and others omitted. Turnout is for the first round.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2017_French_presidential_election",
+            "title": "Wikipedia: 2017 French presidential election (results table)",
+            "accessed": "2026-10-14"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "assembly_2017",
+      "date": "2017-06-11",
+      "kind": "legislative",
+      "chamber": "national_assembly",
+      "rounds": 2,
+      "historical": {
+        "party_results": [
+          {
+            "party": "fra.renaissance",
+            "share": 0.2821,
+            "seats": 308
+          },
+          {
+            "party": "fra.lr",
+            "share": 0.1577,
+            "seats": 112
+          },
+          {
+            "party": "fra.modem",
+            "share": 0.0412,
+            "seats": 42
+          },
+          {
+            "party": "fra.ps",
+            "share": 0.0744,
+            "seats": 30
+          },
+          {
+            "party": "fra.udi",
+            "share": 0.0303,
+            "seats": 18
+          },
+          {
+            "party": "fra.lfi",
+            "share": 0.1103,
+            "seats": 17
+          },
+          {
+            "party": "fra.pcf",
+            "share": 0.0272,
+            "seats": 10
+          },
+          {
+            "party": "fra.fn",
+            "share": 0.132,
+            "seats": 8
+          },
+          {
+            "party": "fra.prg",
+            "share": 0.0047,
+            "seats": 3
+          },
+          {
+            "party": "others",
+            "seats": 29
+          }
+        ],
+        "winner": "fra.renaissance",
+        "turnout": 0.487,
+        "note": "First round 11 June, second round 18 June 2017. 'others' = miscellaneous left 12, miscellaneous right 6, regionalists 5, miscellaneous 3, ecologists 1, Debout la France 1, far right 1.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2017_French_legislative_election",
+            "title": "Wikipedia: 2017 French legislative election (results table)",
+            "accessed": "2026-10-14"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "president_2022",
+      "date": "2022-04-10",
+      "kind": "presidential",
+      "office": "fra.president",
+      "rounds": 2,
+      "historical": {
+        "candidates": [
+          {
+            "person": "fra.emmanuel_macron",
+            "party": "fra.renaissance",
+            "share": 0.2785,
+            "round": 1
+          },
+          {
+            "person": "fra.marine_le_pen",
+            "party": "fra.rn",
+            "share": 0.2315,
+            "round": 1
+          },
+          {
+            "person": "fra.jean_luc_melenchon",
+            "party": "fra.lfi",
+            "share": 0.2195,
+            "round": 1
+          },
+          {
+            "person": "fra.eric_zemmour",
+            "party": "fra.reconquete",
+            "share": 0.0707,
+            "round": 1
+          },
+          {
+            "person": "fra.valerie_pecresse",
+            "party": "fra.lr",
+            "share": 0.0478,
+            "round": 1
+          },
+          {
+            "person": "fra.fabien_roussel",
+            "party": "fra.pcf",
+            "share": 0.0228,
+            "round": 1
+          },
+          {
+            "person": "fra.emmanuel_macron",
+            "party": "fra.renaissance",
+            "share": 0.5855,
+            "votes": 18768639,
+            "round": 2
+          },
+          {
+            "person": "fra.marine_le_pen",
+            "party": "fra.rn",
+            "share": 0.4145,
+            "votes": 13288686,
+            "round": 2
+          }
+        ],
+        "winner": "fra.emmanuel_macron",
+        "turnout": 0.7369,
+        "note": "First round 10 April, second round 24 April 2022. Yannick Jadot (EELV, 4.63%), Jean Lassalle (3.13%) and others omitted. Turnout is for the first round.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2022_French_presidential_election",
+            "title": "Wikipedia: 2022 French presidential election (results table)",
+            "accessed": "2026-10-14"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "assembly_2022",
+      "date": "2022-06-12",
+      "kind": "legislative",
+      "chamber": "national_assembly",
+      "rounds": 2,
+      "historical": {
+        "party_results": [
+          {
+            "party": "fra.renaissance",
+            "seats": 172
+          },
+          {
+            "party": "fra.modem",
+            "seats": 48
+          },
+          {
+            "party": "fra.horizons",
+            "seats": 30
+          },
+          {
+            "party": "fra.lfi",
+            "seats": 75
+          },
+          {
+            "party": "fra.ps",
+            "seats": 31
+          },
+          {
+            "party": "fra.eelv",
+            "seats": 23
+          },
+          {
+            "party": "fra.pcf",
+            "seats": 22
+          },
+          {
+            "party": "fra.rn",
+            "share": 0.1868,
+            "seats": 89
+          },
+          {
+            "party": "fra.lr",
+            "seats": 62
+          },
+          {
+            "party": "others",
+            "seats": 25
+          }
+        ],
+        "winner": "fra.renaissance",
+        "turnout": 0.475,
+        "note": "First round 12 June, second round 19 June 2022. Seats are parliamentary group sizes on 29 June 2022 (members plus related members), mapped to parties: Renaissance group 172, MoDem group 48, Horizons group 30, LFI 75, Socialists 31, Ecologists 23, GDR (Communist-led) 22, RN 89, LR 62, 'others' = LIOT group 16 and 9 non-attached. Shares by alliance (first round): Ensemble 25.75% (245 seats), NUPES 25.66% (131), RN 18.68% (89), Union of the Right and Centre 11.29% (64); party-level shares are not given except for the RN.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2022_French_legislative_election",
+            "title": "Wikipedia: 2022 French legislative election (results table)",
+            "accessed": "2026-10-14"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "assembly_2024",
+      "date": "2024-06-30",
+      "kind": "legislative",
+      "chamber": "national_assembly",
+      "rounds": 2,
+      "snap": true,
+      "historical": {
+        "party_results": [
+          {
+            "party": "fra.rn",
+            "share": 0.2926,
+            "seats": 125
+          },
+          {
+            "party": "fra.udr",
+            "share": 0.0396,
+            "seats": 17
+          },
+          {
+            "party": "others",
+            "seats": 435
+          }
+        ],
+        "winner": "fra.rn",
+        "turnout": 0.6671,
+        "note": "Snap election after the dissolution of the National Assembly; first round 30 June, second round 7 July 2024. Interior Ministry blocs: New Popular Front 180 seats (28.21%), Ensemble 159 (21.28%), RN 125 (29.26%), Union of the Far-Right (Ciotti allies, later UDR) 17 (3.96%), LR 39 (6.57%), miscellaneous right 27, miscellaneous left 12, miscellaneous centre 6, regionalists 9, others 3. The left alliance, the presidential camp and LR are not split by party here, so they sit in 'others'; 'winner' is the largest single party, while the New Popular Front was the largest bloc.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2024_French_legislative_election",
+            "title": "Wikipedia: 2024 French legislative election (results table)",
+            "accessed": "2026-10-14"
+          }
+        ],
+        "confidence": "needs_review",
+        "review_note": "Bloc totals are verified, but 435 seats of the New Popular Front, Ensemble, LR and minor labels are not split by party. Split them using the group composition at the opening of the 17th legislature (18 July 2024): LFI, PS, Ecologists, GDR/PCF, Renaissance, MoDem, Horizons, LR (Republican Right)."
+      }
+    }
+  ],
+  "source": [
+    {
+      "url": "https://en.wikipedia.org/wiki/Elections_in_France",
+      "title": "Wikipedia: Elections in France",
+      "accessed": "2026-10-14"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/List_of_presidents_of_France",
+      "title": "Wikipedia: List of presidents of France",
+      "accessed": "2026-10-14"
+    }
+  ],
+  "confidence": "verified"
+}

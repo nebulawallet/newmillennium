@@ -1,0 +1,114 @@
+{
+  "tag": "TUR",
+  "name": { "en": "Turkey", "native": "Türkiye", "official": { "en": "Republic of Türkiye", "native": "Türkiye Cumhuriyeti" } },
+  "adjective": "Turkish",
+  "culture_primary": "turkish",
+  "government": {
+    "type": "parliamentary",
+    "effective_executive": "tur.prime_minister",
+    "head_of_state_office": "tur.president",
+    "head_of_government_office": "tur.prime_minister",
+    "constitution": {
+      "term_limit_amendable": true,
+      "emergency_powers": true,
+      "referendum_required_for": ["constitutional amendments passed by a three-fifths but less than two-thirds majority of the Grand National Assembly (as in 2007, 2010 and 2017)"]
+    },
+    "note": "Government type as on 1 January 2000: a parliamentary republic under the 1982 constitution, with a Prime Minister responsible to the Grand National Assembly and a President elected by the Assembly for a single seven-year term. The 2007 constitutional referendum introduced direct election of the President (five-year term, at most two terms); the first direct election was held on 10 August 2014. The 2017 constitutional referendum introduced an executive presidential system: the office of Prime Minister was abolished when the President elected on 24 June 2018 took office on 9 July 2018, and the President has since been head of state and of government. The type field is kept as in 2000; from July 2018 the system is presidential."
+  },
+  "offices": [
+    {
+      "id": "tur.president",
+      "title": { "en": "President of the Republic", "native": "Cumhurbaşkanı" },
+      "role": "head_of_state",
+      "power_weight": 0.15,
+      "selection": "direct_election",
+      "term_years": 5,
+      "term_limit": { "max_terms": 2, "consecutive_only": false },
+      "succession": { "type": "acting_then_election" },
+      "holders": [
+        { "person": "tur.suleyman_demirel", "from": "1993-05-16", "to": "2000-05-16" },
+        { "person": "tur.ahmet_necdet_sezer", "from": "2000-05-16", "to": "2007-08-28", "note": "Elected by the Grand National Assembly in May 2000." },
+        { "person": "tur.abdullah_gul", "from": "2007-08-28", "to": "2014-08-28", "note": "Elected by the Grand National Assembly in August 2007." },
+        { "person": "tur.recep_tayyip_erdogan", "from": "2014-08-28", "note": "First directly elected President (2014); re-elected in 2018 and 2023. Head of state and of government since 9 July 2018." }
+      ],
+      "note": "In 2000 the President was elected by the Grand National Assembly for one seven-year term and had a largely ceremonial role with some appointment and veto powers. Selection, term and term limit here reflect the rules introduced by the 2007 referendum (direct election, five-year term, two terms). After the 2017 referendum the President became the head of government from 9 July 2018; power_weight reflects the 2000 position.",
+      "source": [
+        { "url": "https://www.wikidata.org/wiki/Q1922067", "title": "Wikidata: President of Turkey (position held by)", "accessed": "2026-10-14" },
+        { "url": "https://en.wikipedia.org/wiki/2007_Turkish_constitutional_referendum", "title": "Wikipedia: 2007 Turkish constitutional referendum", "accessed": "2026-10-14" },
+        { "url": "https://en.wikipedia.org/wiki/2000_Turkish_presidential_election", "title": "Wikipedia: 2000 Turkish presidential election", "accessed": "2026-10-14" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "tur.prime_minister",
+      "title": { "en": "Prime Minister", "native": "Başbakan" },
+      "role": "head_of_government",
+      "power_weight": 0.85,
+      "selection": "legislature",
+      "appointed_by": "tur.president",
+      "holders": [
+        { "person": "tur.bulent_ecevit", "from": "1999-01-11", "to": "2002-11-18", "note": "Wikidata splits the tenure at 1999-05-28 (new government after the April 1999 election)." },
+        { "person": "tur.abdullah_gul", "from": "2002-11-18", "to": "2003-03-14" },
+        { "person": "tur.recep_tayyip_erdogan", "from": "2003-03-14", "to": "2014-08-29", "note": "Took office as President on 28 August 2014. Wikipedia's list of prime ministers gives 29 August 2014 as the end of his premiership and the start of Davutoglu's; Wikidata ends it on 28 August." },
+        { "person": "tur.ahmet_davutoglu", "from": "2014-08-29", "to": "2016-05-24" },
+        { "person": "tur.binali_yildirim", "from": "2016-05-24", "to": "2018-07-09", "note": "Last Prime Minister of Turkey." },
+        { "person": null, "from": "2018-07-09", "vacant_reason": "Office abolished under the 2017 constitutional amendments when the President elected on 24 June 2018 took office on 9 July 2018. Executive authority passed to the President." }
+      ],
+      "note": "Office abolished on 9 July 2018 (2017 constitutional referendum). From that date the President is head of government.",
+      "source": [
+        { "url": "https://www.wikidata.org/wiki/Q2430415", "title": "Wikidata: Prime Minister of Turkey (position held by)", "accessed": "2026-10-14" },
+        { "url": "https://en.wikipedia.org/wiki/List_of_prime_ministers_of_Turkey", "title": "Wikipedia: List of prime ministers of Turkey", "accessed": "2026-10-14" }
+      ],
+      "confidence": "verified"
+    }
+  ],
+  "legislature": {
+    "name": { "en": "Grand National Assembly of Turkey", "native": "Türkiye Büyük Millet Meclisi" },
+    "chambers": [
+      {
+        "id": "tbmm",
+        "name": { "en": "Grand National Assembly", "native": "Türkiye Büyük Millet Meclisi" },
+        "seats": 550,
+        "term_years": 5,
+        "elected": "direct",
+        "system": {
+          "type": "list_pr",
+          "formula": "dhondt",
+          "threshold": 0.1,
+          "district_model": "provinces",
+          "note": "Closed-list PR by the D'Hondt method in multi-member districts based on the provinces, with a 10% national threshold; independent candidates may stand. 550 seats until 2018 and 600 from the 2018 election. The term was five years in 2000, four years after the 2007 referendum and five years again from 2018. In 2022 the threshold was lowered to 7%. seats_2000 is the result of the April 1999 election; changes between the election and 1 January 2000 were not checked."
+        },
+        "seats_2000": { "tur.dsp": 136, "tur.mhp": 129, "tur.fp": 111, "tur.anap": 86, "tur.dyp": 85, "independents": 3 },
+        "confidence_chamber": true,
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/1999_Turkish_general_election", "title": "Wikipedia: 1999 Turkish general election (results table)", "accessed": "2026-10-14" },
+          { "url": "https://en.wikipedia.org/wiki/Grand_National_Assembly_of_Turkey", "title": "Wikipedia: Grand National Assembly of Turkey", "accessed": "2026-10-14" }
+        ],
+        "confidence": "verified"
+      }
+    ]
+  },
+  "party_system": "multi_party",
+  "start_2000": {
+    "ruling_parties": ["tur.dsp", "tur.mhp", "tur.anap"],
+    "ideology_support": {
+      "social_democrat": 0.309,
+      "national_conservative": 0.194,
+      "islamic_democrat": 0.154,
+      "liberal_conservative": 0.252,
+      "regionalist": 0.048,
+      "democratic_socialist": 0.013,
+      "big_tent": 0.03
+    },
+    "ideology_support_note": "Derived from the April 1999 general election vote shares: DSP 22.19% + CHP 8.71% (social democrat); MHP 17.98% + BBP 1.46% (national conservative); Virtue Party 15.41% (islamic democrat); ANAP 13.22% + DYP 12.01% (liberal conservative); HADEP 4.75% (regionalist, pro-Kurdish); Freedom and Solidarity, Workers', Labour and Socialist Power parties about 1.3% (democratic socialist); independents 0.87% and small parties about 2.1% (big tent).",
+    "stability": 0.55,
+    "war_support": 0.35
+  },
+  "claims": [],
+  "source": [
+    { "url": "https://en.wikipedia.org/wiki/Politics_of_Turkey", "title": "Wikipedia: Politics of Turkey", "accessed": "2026-10-14" },
+    { "url": "https://en.wikipedia.org/wiki/1999_Turkish_general_election", "title": "Wikipedia: 1999 Turkish general election", "accessed": "2026-10-14" },
+    { "url": "https://en.wikipedia.org/wiki/2017_Turkish_constitutional_referendum", "title": "Wikipedia: 2017 Turkish constitutional referendum", "accessed": "2026-10-14" }
+  ],
+  "confidence": "verified"
+}

@@ -1,0 +1,15 @@
+{
+  "note": "Influence and approval are gameplay starting values for 1 January 2000 (Obuchi's LDP-led coalition, during the post-bubble slowdown), not measured data. Influence reflects institutional weight: strong business federations (Keidanren) and an influential bureaucracy, organised farmers (JA) tied to the LDP, enterprise unions grouped in Rengo, a large national press, and a constitutionally constrained, civilian-controlled Self-Defense Force.",
+  "interest_groups": [
+    { "type": "military", "influence": 0.08, "approval": 55, "note": "Self-Defense Forces under strict civilian control." },
+    { "type": "security_services", "influence": 0.08, "approval": 55 },
+    { "type": "business", "influence": 0.6, "approval": 55, "note": "Keidanren and the major business federations, historically close to the LDP." },
+    { "type": "labour_unions", "influence": 0.25, "approval": 40, "note": "Rengo, aligned mainly with the opposition DPJ." },
+    { "type": "religious_establishment", "influence": 0.15, "approval": 55, "note": "Includes Soka Gakkai, the lay Buddhist organisation behind Komeito." },
+    { "type": "rural", "influence": 0.35, "approval": 60, "note": "Agricultural cooperatives (JA); rural districts were over-represented in the Diet." },
+    { "type": "urban_middle_class", "influence": 0.45, "approval": 42 },
+    { "type": "minorities", "influence": 0.04, "approval": 45, "note": "Zainichi Koreans, Ainu, Ryukyuans and Burakumin communities." },
+    { "type": "youth_students", "influence": 0.1, "approval": 40 },
+    { "type": "media", "influence": 0.4, "approval": 45, "note": "Large national newspapers and NHK; press clubs (kisha kurabu)." }
+  ]
+}

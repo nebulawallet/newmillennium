@@ -48,11 +48,28 @@ Live sources sometimes report allegations or investigations involving real peopl
 
 <!-- AUTO-GENERATED BELOW: run `npm run review-report`; edits below this line are overwritten -->
 
-## Needs review: 53 of 721 records
+## Needs review: 120 of 1478 records
 
-Countries with politics data: 8 / 212.
+Countries with politics data: 17 / 212.
 
-Countries with no data yet (204): ALB, AND, AUT, BEL, BIH, BGR, HRV, CYP, CZE, DNK, FIN, FRA, GRC, HUN, ISL, IRL, ITA, LIE, LUX, MLT, MCO, NLD, MKD, NOR, POL, PRT, ROU, SMR, SVK, SVN, ESP, CHE, YUG, MNE, KOS, VAT, NCY, UKR, BLR, MDA, EST, LVA, LTU, GEO, ARM, AZE, KAZ, KGZ, TJK, TKM, UZB, PMR, ABK, SOS, NKR, ICH, CAN, ATG, ARG, BHS, BRB, BLZ, BOL, BRA, CHL, COL, CRI, CUB, DMA, DOM, ECU, SLV, GRD, GTM, GUY, HTI, HND, JAM, MEX, NIC, PAN, PRY, PER, KNA, LCA, VCT, SUR, TTO, URY, VEN, FAR, DZA, BHR, EGY, IRQ, ISR, JOR, KWT, LBN, LBY, MRT, MAR, OMN, QAT, SAU, SYR, TUN, TUR, ARE, YEM, PSE, ESH, KUR, AGO, BEN, BWA, BFA, BDI, CPV, CMR, CAF, TCD, COM, COD, COG, CIV, DJI, GNQ, ERI, SWZ, ETH, GAB, GMB, GHA, GIN, GNB, KEN, LSO, LBR, MDG, MWI, MLI, MUS, MOZ, NAM, NER, NGA, RWA, STP, SEN, SYC, SLE, ZAF, SDN, TZA, TGO, UGA, ZMB, ZWE, SSD, SML, UNI, RCD, MLC, AFG, AFN, BGD, BTN, IND, MDV, NPL, PAK, LKA, TEL, JPN, KOR, PRK, MNG, TWN, BRN, KHM, IDN, LAO, MYS, MMR, PHL, SGP, THA, VNM, TLS, AUS, NZL, FJI, PNG, SLB, VUT, WSM, TON, KIR, TUV, NRU, FSM, MHL, PLW
+Countries with no data yet (195): ALB, AUT, BEL, BIH, BGR, HRV, CYP, DNK, FIN, GRC, HUN, ISL, IRL, ITA, LIE, LUX, MLT, MCO, MKD, PRT, ROU, SMR, SVK, SVN, CHE, YUG, MNE, KOS, VAT, NCY, UKR, BLR, MDA, EST, LVA, LTU, GEO, ARM, AZE, KAZ, KGZ, TJK, TKM, UZB, PMR, ABK, SOS, NKR, ICH, CAN, ATG, ARG, BHS, BRB, BLZ, BOL, BRA, CHL, COL, CRI, CUB, DMA, DOM, ECU, SLV, GRD, GTM, GUY, HTI, HND, JAM, MEX, NIC, PAN, PRY, PER, KNA, LCA, VCT, SUR, TTO, URY, VEN, FAR, DZA, BHR, EGY, IRQ, ISR, JOR, KWT, LBN, LBY, MRT, MAR, OMN, QAT, SAU, SYR, TUN, ARE, YEM, PSE, ESH, KUR, AGO, BEN, BWA, BFA, BDI, CPV, CMR, CAF, TCD, COM, COD, COG, CIV, DJI, GNQ, ERI, SWZ, ETH, GAB, GMB, GHA, GIN, GNB, KEN, LSO, LBR, MDG, MWI, MLI, MUS, MOZ, NAM, NER, NGA, RWA, STP, SEN, SYC, SLE, ZAF, SDN, TZA, TGO, UGA, ZMB, ZWE, SSD, SML, UNI, RCD, MLC, AFG, AFN, BGD, BTN, IND, MDV, NPL, PAK, LKA, TEL, KOR, PRK, MNG, TWN, BRN, KHM, IDN, LAO, MYS, MMR, PHL, SGP, THA, VNM, TLS, AUS, NZL, FJI, PNG, SLB, VUT, WSM, TON, KIR, TUV, NRU, FSM, MHL, PLW
+
+### AND — Andorra (12)
+
+| kind | record | what to check | file |
+|---|---|---|---|
+| chamber | `general_council` General Council | Add party records (with founding dates) for the National Democratic Group, New Democracy and the Democratic National Initiative and move their 10 seats out of 'others'; confirm no changes between 1997 and 1 January 2000. | data/countries/AND/country.json |
+| party | `and.pla` Liberals of Andorra (L'A) | Only the founder is recorded as leader; add the party's presidents with dates (the fetched pages give lead candidates, not presidents). | data/countries/AND/parties.json |
+| party | `and.ps` Social Democratic Party (PS) | Founding: sources give only June 2000; the day (01) is a placeholder because a bare year 2000 counts as before the game start for not_yet_founded parties. Leaders: Catalan Wikipedia confirms Bartumeu as PS president in 2009; other dates are inferred from lead candidacies and Wikidata memberships (he joined SDP in 2013). Confirm presidents and dates. | data/countries/AND/parties.json |
+| party | `and.pd` Democratic Party (PD) | No leader found in the fetched sources. | data/countries/AND/parties.json |
+| party | `and.lauredian_union` Lauredian Union (UL) | Resolve the founding year conflict (2001 per the infobox; a list of that name won 2 seats in 1997) and add leaders. | data/countries/AND/parties.json |
+| party | `and.apc` Andorra for Change (APC) | Add founder Eusebi Nomen as a person and leader; sub-ideology not checked. | data/countries/AND/parties.json |
+| party | `and.da` Democrats for Andorra (DA) | Confirm the year Xavier Espot became party president (2019 assumed from his lead candidacy) and whether formed_from the Liberal Party is the right lineage (infobox: predecessor Reformist Coalition). | data/countries/AND/parties.json |
+| party | `and.sdp` Social Democracy and Progress (SDP) | Add presidents with dates. | data/countries/AND/parties.json |
+| party | `and.tv` Third Way (TV) | Sub-ideology not checked against a source; add Josep Pintat Forné as leader. | data/countries/AND/parties.json |
+| party | `and.cc` Committed Citizens (CC) | Founding year assumed from its first election (2019); confirm the founding date and leaders. | data/countries/AND/parties.json |
+| party | `and.ae` Andorra Forward (AE) | Sub-ideology (right_populist) not checked against a fetched source. | data/countries/AND/parties.json |
+| party | `and.concordia` Concord (Concòrdia) | Sub-ideology (centrist_liberal) not checked against a fetched source; Escalé's start as leader assumed from the founding date. | data/countries/AND/parties.json |
 
 ### CHN — China (4)
 
@@ -72,6 +89,43 @@ Countries with no data yet (204): ALB, AND, AUT, BEL, BIH, BGR, HRV, CYP, CZE, D
 | party | `deu.wasg` Labour and Social Justice – The Electoral Alternative (WASG) | Founding/dissolution dates confirmed on Wikidata; confirm Klaus Ernst's role and dates on the WASG executive board. | data/countries/DEU/parties.json |
 | party | `deu.linke` The Left (Linke) | Wikidata lists a change of co-chair on 2026-06-20 (Jan van Aken succeeded by Luigi Pantisano). Confirm with the party or Wikipedia before adding it. | data/countries/DEU/parties.json |
 | party | `deu.dvu` German People's Union (DVU) | Confirm the 1987 registration as a party and the 2010-2011 merger into the NPD. | data/countries/DEU/parties.json |
+
+### ESP — Spain (24)
+
+| kind | record | what to check | file |
+|---|---|---|---|
+| person | `esp.guillerme_vazquez` Guillerme Vázquez (b. 1952) | Birth year and gender come from Wikidata only; cross-check with the Galician Wikipedia. | data/countries/ESP/people.json |
+| person | `esp.xavier_vence` Xavier Vence (b. 1961) | Birth date and gender come from Wikidata only; cross-check with the Galician Wikipedia. | data/countries/ESP/people.json |
+| person | `esp.david_bonvehi` David Bonvehí (b. 1979) | Birth year, gender and party presidency come from Wikidata only; cross-check with the Catalan Wikipedia. | data/countries/ESP/people.json |
+| party | `esp.pdecat` Catalan European Democratic Party (PDeCAT) | Leadership 2016-2018 (founder Artur Mas as president, Marta Pascal as general coordinator) was not confirmed from a fetched source, and Bonvehí's 2018-2023 presidency comes from Wikidata only. Complete the leader history. | data/countries/ESP/parties.json |
+| party | `esp.cc` Canarian Coalition (CC) | Leader history not found in the fetched sources (the article names only Fernando Clavijo as current leader of the regional government). Add the party's presidents/secretaries general from 2000. | data/countries/ESP/parties.json |
+| party | `esp.ea` Basque Solidarity (EA) | Leader history from 2000 not found in the fetched article (it names Unai Ziarreta as leader around 2009 and Eva Blanco now). Add the presidents with dates. | data/countries/ESP/parties.json |
+| party | `esp.uv` Valencian Union (UV) | Leader in 2000 not confirmed (the article names Chiquillo, then Joaquín Ballester Sanz until April 2006 and José Manuel Miralles from May 2006, without full dates). Add leaders as people if needed. | data/countries/ESP/parties.json |
+| party | `esp.icv` Initiative for Catalonia Greens (ICV) | The article's list of presidents ends with 'Joan Saura (2000-present)' but its infobox names Joan Herrera and Dolors Camats as later national coordinators. Find when Saura stood down and add the later leaders. | data/countries/ESP/parties.json |
+| party | `esp.par` Aragonese Party (PAR) | Leader history from 2000 not found in the fetched article (it names only the current president). Add the party presidents with dates. | data/countries/ESP/parties.json |
+| party | `esp.upn` Navarrese People's Union (UPN) | Leader history not found with dates (the article mentions Miguel Sanz as president and Cristina Ibarrola as current president). Add the presidents from 2000. | data/countries/ESP/parties.json |
+| party | `esp.pa` Andalusian Party (PA) | Leader history from 2000 not found in the fetched article. Add the secretaries general with dates. | data/countries/ESP/parties.json |
+| party | `esp.cha` Aragonese Union (CHA) | Leader history from 2000 not found in the fetched article (only current president and secretary general). Add the presidents with dates. | data/countries/ESP/parties.json |
+| party | `esp.geroa_bai` Yes to the Future (GBai) | The infobox names Uxue Barkos (esp.uxue_barkos) as leader but gives no dates; add her tenure. | data/countries/ESP/parties.json |
+| party | `esp.fac` Asturias Forum (FAC) | Later presidents Cristina Coto (2015-2018) and Carmen Moriyón (2018-) are listed in the article but not added as people. | data/countries/ESP/parties.json |
+| party | `esp.prc` Regionalist Party of Cantabria (PRC) | The infobox now names Paula Fernández Viaña as leader; find the date Revilla handed over and add her as a person. | data/countries/ESP/parties.json |
+| election | `senate_2000` legislative_upper 2000-03-12 | seats should be the full Senate composition after the election; the regionally appointed senators (about 50) still need to be added by party. | data/countries/ESP/elections.json |
+| election | `senate_2004` legislative_upper 2004-03-14 | seats should be the full Senate composition after the election; the regionally appointed senators (about 50) still need to be added by party. | data/countries/ESP/elections.json |
+| election | `senate_2008` legislative_upper 2008-03-09 | seats should be the full Senate composition after the election; the regionally appointed senators (about 50) still need to be added by party. | data/countries/ESP/elections.json |
+| election | `senate_2011` legislative_upper 2011-11-20 | seats should be the full Senate composition after the election; the regionally appointed senators (about 50) still need to be added by party. | data/countries/ESP/elections.json |
+| election | `senate_2015` legislative_upper 2015-12-20 | seats should be the full Senate composition after the election; the regionally appointed senators (about 50) still need to be added by party. | data/countries/ESP/elections.json |
+| election | `senate_2016` legislative_upper 2016-06-26 | seats should be the full Senate composition after the election; the regionally appointed senators (about 50) still need to be added by party. | data/countries/ESP/elections.json |
+| election | `senate_2019_04` legislative_upper 2019-04-28 | seats should be the full Senate composition after the election; the regionally appointed senators (about 50) still need to be added by party. | data/countries/ESP/elections.json |
+| election | `senate_2019_11` legislative_upper 2019-11-10 | seats should be the full Senate composition after the election; the regionally appointed senators (about 50) still need to be added by party. | data/countries/ESP/elections.json |
+| election | `senate_2023` legislative_upper 2023-07-23 | seats should be the full Senate composition after the election; the regionally appointed senators (about 50) still need to be added by party. | data/countries/ESP/elections.json |
+
+### FRA — France (3)
+
+| kind | record | what to check | file |
+|---|---|---|---|
+| chamber | `national_assembly` National Assembly | Seats are the June 1997 election result by label. Check the group composition on 1 January 2000 (UDF/DL split of 1998, by-elections) and move DL's deputies from fra.udf to fra.dl; confirm that the 7 MDC deputies were counted as miscellaneous left in the official results. | data/countries/FRA/country.json |
+| chamber | `senate` Senate | The fetched source gives the six largest groups after the 1998 renewal (315 seats); the 6 unaffiliated senators are the remainder of 321. Groups are mapped to parties approximately (Independent Republicans to DL, Centrist Union to UDF). Confirm group sizes on 1 January 2000. | data/countries/FRA/country.json |
+| election | `assembly_2024` legislative 2024-06-30 | Bloc totals are verified, but 435 seats of the New Popular Front, Ensemble, LR and minor labels are not split by party. Split them using the group composition at the opening of the 17th legislature (18 July 2024): LFI, PS, Ecologists, GDR/PCF, Renaissance, MoDem, Horizons, LR (Republican Right). | data/countries/FRA/elections.json |
 
 ### GBR — United Kingdom (4)
 
@@ -106,6 +160,50 @@ Countries with no data yet (204): ALB, AND, AUT, BEL, BIH, BGR, HRV, CYP, CZE, D
 | election | `majlis_2024` legislative 2024-03-01 | Check the camp assignment of the Voice of the Nation list (47 seats), which the infobox places under the reformists although its leader is usually described as an independent conservative, and whether the People's Alliance of Islamic Revolution should map to the Stability Front. | data/countries/IRN/elections.json |
 | election | `supreme_leader_2026` indirect_presidential 2026-03-08 | Vote totals were not published: the infobox gives the winner's tally only as at least 59, and lists Hassan Rouhani and Hassan Khomeini as other names considered, with unknown votes. Confirm the date and any published count. | data/countries/IRN/elections.json |
 
+### JPN — Japan (12)
+
+| kind | record | what to check | file |
+|---|---|---|---|
+| chamber | `house_of_representatives` House of Representatives | Seat counts are from the June 2000 dissolution, not 1 January 2000. Confirm the composition on 1 January 2000, in particular the Liberal Party total before the April 2000 split and the 10 unitemised seats (independents or vacancies). | data/countries/JPN/country.json |
+| chamber | `house_of_councillors` House of Councillors | Composition after the July 1998 election, not on 1 January 2000; party switching in 1998-99 (for example the November 1998 formation of New Komeito) is not reflected. | data/countries/JPN/country.json |
+| person | `jpn.yuriko_koike` Yuriko Koike (b. 1952) | Her party on 1 January 2000 is not recorded: Wikidata lists New Frontier Party (to 1997) and LDP (from 2003) only. Check her Liberal / Conservative Party membership in 2000. | data/countries/JPN/people.json |
+| person | `jpn.shunichi_mizuoka` Shun'ichi Mizuoka (b. 1956) | Wikipedia lists him as interim CDP leader in 2026 without a start date; confirm when he took over from Noda. | data/countries/JPN/people.json |
+| party | `jpn.sakigake` New Party Sakigake (NPS) | Takemura is listed as leader in 2000; check when he stopped leading the party before its 2004 dissolution. | data/countries/JPN/parties.json |
+| party | `jpn.conservative_2000` Conservative Party / New Conservative Party (NCP) | Check when Chikage Ogi's leadership ended and the exact date of the 2003 merger into the LDP. | data/countries/JPN/parties.json |
+| party | `jpn.pnp` People's New Party (PNP) | Leadership years come from election infoboxes (Watanuki in 2005 and 2007, Kamei in 2010); confirm the exact handover dates. | data/countries/JPN/parties.json |
+| party | `jpn.tomorrow` Tomorrow Party of Japan (TPJ) | Check when Kada's leadership ended (the Wikipedia infobox lists Tomoko Abe as its final president). | data/countries/JPN/parties.json |
+| party | `jpn.plp` People's Life Party / Liberal Party (2016) (PLP) | Ozawa is the party's president per the infobox; confirm he led it continuously from December 2012 (co-leadership arrangements in 2014-2016 are not modelled). | data/countries/JPN/parties.json |
+| party | `jpn.cdp` Constitutional Democratic Party of Japan (CDP) | Post-2026 status is unsettled in the sources: Wikipedia lists Shunichi Mizuoka as interim leader (no start date) and the Democratic Reform Party (founded 17 September 2026) as successor. Confirm when Noda's leadership ended and whether the CDP still exists as a separate party. | data/countries/JPN/parties.json |
+| party | `jpn.reiwa` Reiwa Shinsengumi (Reiwa) | The party's Wikipedia infobox (fetched 2026-10-14) shows the name 'Party of Life' (いのちの党) with leader Joji Yamamoto, while Tarō Yamamoto's article still lists him as leader. Confirm the party's current name and leader. | data/countries/JPN/parties.json |
+| party | `jpn.sanseito` Sanseitō (DIY) | Confirm the date Kamiya became party leader (he led it at the 2025 election; Matsuda was leader in 2022). | data/countries/JPN/parties.json |
+
+### NLD — Netherlands (3)
+
+| kind | record | what to check | file |
+|---|---|---|---|
+| party | `nld.50plus` 50PLUS (50+) | The leadership list ends with Martin van Rooijen from 17 June 2021 while the infobox names Jan Struijs as leader; add the handover date to Struijs. | data/countries/NLD/parties.json |
+| party | `nld.fvd` Forum for Democracy (FvD) | Lidewij de Vos's infobox ends her term as leader in the House on 6 August 2026; check who leads the party and its House group after that date. | data/countries/NLD/parties.json |
+| party | `nld.bij1` BIJ1 (BIJ1) | Simons's tenure as leader has no end date in the fetched sources; the infobox names Tofik Dibi as current leader. Add the handover date. | data/countries/NLD/parties.json |
+
+### NOR — Norway (1)
+
+| kind | record | what to check | file |
+|---|---|---|---|
+| party | `nor.h` Conservative Party (H) | The leadership change from Erna Solberg to Ine Eriksen Søreide is given only as the year 2026 in the party article; confirm the exact date of the 2026 party convention. | data/countries/NOR/parties.json |
+
+### POL — Poland (8)
+
+| kind | record | what to check | file |
+|---|---|---|---|
+| person | `pol.marek_borowski` Marek Borowski (b. 1946) | Confirm Borowski's SLD membership years (left to found Social Democracy of Poland in 2004) and his SdPl chairmanship dates. | data/countries/POL/people.json |
+| party | `pol.mn` German Minority Electoral Committee (MN) | Kroll's end date and Galla's start date are not in the fetched sources; Galla is placed from 2011 because the 2011 Sejm election infobox names him as the committee's leader (and 2007 still names Kroll). Confirm the handover year. | data/countries/POL/parties.json |
+| party | `pol.up` Labour Union (UP) | Leader history 2000-2026 not fetched; Wikidata has no chairs for this party. Add the chairs from the Polish Wikipedia article. | data/countries/POL/parties.json |
+| party | `pol.samoobrona` Self-Defence of the Republic of Poland (SRP) | Lepper is recorded as leader until his death on 5 August 2011; confirm whether he remained chairman until then and who succeeded him. | data/countries/POL/parties.json |
+| party | `pol.lpr` League of Polish Families (LPR) | Leaders before Giertych (2001-2005) and his start date are not confirmed: Wikidata gives 2006-03-11 while the 2005 election infobox already names him as leader. | data/countries/POL/parties.json |
+| party | `pol.sdpl` Social Democracy of Poland (SDPL) | Borowski's end date as leader and later chairs are not in the fetched sources (Wikidata lists only Wojciech Filemonowicz with no dates). | data/countries/POL/parties.json |
+| party | `pol.konfederacja` Confederation Liberty and Independence (KWiN) | The current infobox names Slawomir Mentzen and Krzysztof Bosak as co-chairmen, but no start dates were found, so leader_history is empty. Add their co-chairmanship with dates. | data/countries/POL/parties.json |
+| party | `pol.nowa_lewica` New Left (NL) | Wikidata lists Robert Biedron as co-chair alongside Czarzasty (no dates); the current infobox names only Czarzasty. Add Biedron's co-chair tenure with dates. | data/countries/POL/parties.json |
+
 ### RUS — Russia (3)
 
 | kind | record | what to check | file |
@@ -139,6 +237,15 @@ Countries with no data yet (204): ALB, AND, AUT, BEL, BIH, BGR, HRV, CYP, CZE, D
 |---|---|---|---|
 | party | `swe.fp` Liberals (Liberal People's Party until 2015) (L) | Confirm the exact date of the rename from Folkpartiet liberalerna to Liberalerna (2015); the research sources only show the change of name between the 2014 and 2018 elections. | data/countries/SWE/parties.json |
 | election | `riksdag_2026` legislative 2026-09-13 | Recent election: results were still described as subject to formal certification by the Election Authority. Re-check final vote counts and the outcome of government formation. | data/countries/SWE/elections.json |
+
+### TUR — Turkey (4)
+
+| kind | record | what to check | file |
+|---|---|---|---|
+| party | `tur.fp` Virtue Party (FP) | Kutan's leadership start is taken as 1998 from his Wikidata party membership; check the date he became chairman. | data/countries/TUR/parties.json |
+| party | `tur.hadep` People's Democracy Party (HADEP) | Chair on 1 January 2000 is unclear: the infobox lists Ahmet Turan Demir 1999-2000 and Murat Bozlak again 2000-2003, while the text says Demir served September 1998 to November 1999. Bozlak's return is entered with the year 2000 only; Demir has no person record. | data/countries/TUR/parties.json |
+| party | `tur.saadet` Felicity Party (SAADET) | Leaders before 2016 are missing: Recai Kutan (from 2001), Numan Kurtulmus, Necmettin Erbakan (from 2010-10-18 per Wikidata) and Mustafa Kamalak (2011-2016, years only). Add them with dates from a leader list. | data/countries/TUR/parties.json |
+| party | `tur.hdp` Peoples' Democratic Party (HDP) | Co-chairs omitted for lack of person records: Yavuz Onen and Fatma Gok (2012-2013), Sebahat Tuncel and Ertugrul Kurkcu (2013-2014), Serpil Kemalbay (2017-2018), Sultan Ozcan and Cahit Kirkazak (from 2023-08-27). Wikidata also splits Demirtas's tenure (to 2017-03-09, again from 2017-05-20). | data/countries/TUR/parties.json |
 
 ### USA — United States (2)
 

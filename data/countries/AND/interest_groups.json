@@ -1,0 +1,15 @@
+{
+  "note": "Influence and approval are gameplay starting values for 1 January 2000 (Liberal government of Marc Forné), not measured data. Andorra has no armed forces; the economy rests on commerce, tourism and finance.",
+  "interest_groups": [
+    { "type": "military", "influence": 0.0, "approval": 50, "note": "No armed forces." },
+    { "type": "security_services", "influence": 0.05, "approval": 55 },
+    { "type": "business", "influence": 0.55, "approval": 62, "note": "Commerce, tourism and banking." },
+    { "type": "labour_unions", "influence": 0.08, "approval": 45 },
+    { "type": "religious_establishment", "influence": 0.15, "approval": 55, "note": "The Bishop of Urgell is one of the two co-princes." },
+    { "type": "rural", "influence": 0.08, "approval": 50 },
+    { "type": "urban_middle_class", "influence": 0.45, "approval": 58 },
+    { "type": "minorities", "influence": 0.1, "approval": 45 },
+    { "type": "youth_students", "influence": 0.1, "approval": 52 },
+    { "type": "media", "influence": 0.2, "approval": 55 }
+  ]
+}

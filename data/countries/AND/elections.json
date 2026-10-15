@@ -1,0 +1,308 @@
+{
+  "rules": [
+    {
+      "kind": "legislative",
+      "chamber": "general_council",
+      "every_years": 4,
+      "anchor": "2023-04-02",
+      "snap_possible": true,
+      "note": "Four-year term (next election 2027 per the General Council article); the 2011 election came two years after 2009."
+    }
+  ],
+  "elections": [
+    {
+      "id": "general_council_2001",
+      "date": "2001-03-04",
+      "kind": "legislative",
+      "chamber": "general_council",
+      "historical": {
+        "party_results": [
+          {
+            "party": "and.pla",
+            "share": 0.4618,
+            "seats": 15
+          },
+          {
+            "party": "and.ps",
+            "share": 0.3004,
+            "seats": 6
+          },
+          {
+            "party": "and.pd",
+            "share": 0.2378,
+            "seats": 5
+          },
+          {
+            "party": "and.lauredian_union",
+            "seats": 2
+          }
+        ],
+        "winner": "and.pla",
+        "turnout": 0.816,
+        "note": "Shares are national-list shares (14 seats); the other 14 seats are elected in the seven parishes. Turnout computed from national-list votes.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2001_Andorran_parliamentary_election",
+            "title": "Wikipedia: 2001 Andorran parliamentary election (results)",
+            "accessed": "2026-10-14"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "general_council_2005",
+      "date": "2005-04-24",
+      "kind": "legislative",
+      "chamber": "general_council",
+      "historical": {
+        "party_results": [
+          {
+            "party": "and.pla",
+            "share": 0.4121,
+            "seats": 14
+          },
+          {
+            "party": "and.ps",
+            "share": 0.3807,
+            "seats": 11
+          },
+          {
+            "party": "others",
+            "seats": 3
+          }
+        ],
+        "winner": "and.pla",
+        "turnout": 0.804,
+        "note": "PS ran as L'Alternativa. 'others': Democratic Renewal 1 (allied with the PS), Andorran Democratic Centre + Century 21 2 (10.99%). Turnout computed from national-list votes.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2005_Andorran_parliamentary_election",
+            "title": "Wikipedia: 2005 Andorran parliamentary election (results)",
+            "accessed": "2026-10-14"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "general_council_2009",
+      "date": "2009-04-26",
+      "kind": "legislative",
+      "chamber": "general_council",
+      "historical": {
+        "party_results": [
+          {
+            "party": "and.ps",
+            "share": 0.4503,
+            "seats": 14
+          },
+          {
+            "party": "and.pla",
+            "share": 0.3234,
+            "seats": 11
+          },
+          {
+            "party": "and.apc",
+            "share": 0.1886,
+            "seats": 3
+          }
+        ],
+        "winner": "and.ps",
+        "turnout": 0.753,
+        "note": "The Liberal Party ran as the Reformist Coalition (with the Lauredian Union in Sant Julià). Turnout computed from national-list votes.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2009_Andorran_parliamentary_election",
+            "title": "Wikipedia: 2009 Andorran parliamentary election (results)",
+            "accessed": "2026-10-14"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "general_council_2011",
+      "date": "2011-04-03",
+      "kind": "legislative",
+      "chamber": "general_council",
+      "historical": {
+        "party_results": [
+          {
+            "party": "and.da",
+            "share": 0.5515,
+            "seats": 20
+          },
+          {
+            "party": "and.ps",
+            "share": 0.348,
+            "seats": 6
+          },
+          {
+            "party": "and.lauredian_union",
+            "share": 0.0901,
+            "seats": 2
+          }
+        ],
+        "winner": "and.da",
+        "note": "Shares as given in the infobox.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2011_Andorran_parliamentary_election",
+            "title": "Wikipedia: 2011 Andorran parliamentary election (results)",
+            "accessed": "2026-10-14"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "general_council_2015",
+      "date": "2015-03-01",
+      "kind": "legislative",
+      "chamber": "general_council",
+      "historical": {
+        "party_results": [
+          {
+            "party": "and.da",
+            "share": 0.3703,
+            "seats": 15
+          },
+          {
+            "party": "and.pla",
+            "share": 0.2769,
+            "seats": 8
+          },
+          {
+            "party": "and.ps",
+            "share": 0.2353,
+            "seats": 3
+          },
+          {
+            "party": "and.sdp",
+            "share": 0.1175,
+            "seats": 2
+          }
+        ],
+        "winner": "and.da",
+        "turnout": 0.656,
+        "note": "The PS ran in a joint list with the Greens and others. Turnout computed from national-list votes.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2015_Andorran_parliamentary_election",
+            "title": "Wikipedia: 2015 Andorran parliamentary election (results)",
+            "accessed": "2026-10-14"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "general_council_2019",
+      "date": "2019-04-07",
+      "kind": "legislative",
+      "chamber": "general_council",
+      "historical": {
+        "party_results": [
+          {
+            "party": "and.da",
+            "share": 0.3513,
+            "seats": 11
+          },
+          {
+            "party": "and.ps",
+            "share": 0.3062,
+            "seats": 7
+          },
+          {
+            "party": "and.pla",
+            "share": 0.1248,
+            "seats": 4
+          },
+          {
+            "party": "and.tv",
+            "share": 0.1042,
+            "seats": 4
+          },
+          {
+            "party": "and.sdp",
+            "share": 0.0587,
+            "seats": 0
+          },
+          {
+            "party": "and.cc",
+            "seats": 2
+          }
+        ],
+        "winner": "and.da",
+        "turnout": 0.664,
+        "note": "PS total includes 2 parish seats won on a joint PS-Liberal list; Third Way ran with the Lauredian Union. Committed Citizens stood only in parishes. Turnout computed from national-list votes.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2019_Andorran_parliamentary_election",
+            "title": "Wikipedia: 2019 Andorran parliamentary election (results)",
+            "accessed": "2026-10-14"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "general_council_2023",
+      "date": "2023-04-02",
+      "kind": "legislative",
+      "chamber": "general_council",
+      "historical": {
+        "party_results": [
+          {
+            "party": "and.da",
+            "share": 0.3266,
+            "seats": 16
+          },
+          {
+            "party": "and.concordia",
+            "share": 0.2143,
+            "seats": 5
+          },
+          {
+            "party": "and.ps",
+            "share": 0.2105,
+            "seats": 3
+          },
+          {
+            "party": "and.ae",
+            "share": 0.16,
+            "seats": 3
+          },
+          {
+            "party": "others",
+            "seats": 1
+          }
+        ],
+        "winner": "and.da",
+        "note": "DA ran with Committed Citizens and the PS with Social Democracy and Progress; 'others' is Action for Andorra (4.20%).",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2023_Andorran_parliamentary_election",
+            "title": "Wikipedia: 2023 Andorran parliamentary election (results)",
+            "accessed": "2026-10-14"
+          }
+        ],
+        "confidence": "verified"
+      }
+    }
+  ],
+  "source": [
+    {
+      "url": "https://en.wikipedia.org/wiki/General_Council_(Andorra)",
+      "title": "Wikipedia: General Council (Andorra)",
+      "accessed": "2026-10-14"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Head_of_Government_of_Andorra",
+      "title": "Wikipedia: Head of Government of Andorra (list of heads of government)",
+      "accessed": "2026-10-14"
+    }
+  ],
+  "confidence": "verified"
+}
