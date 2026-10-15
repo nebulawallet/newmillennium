@@ -13,6 +13,7 @@ import * as scripted from "../src/content/schemas/scripted.ts";
 import * as economy from "../src/content/schemas/economy.ts";
 import * as research from "../src/content/schemas/research.ts";
 import * as units from "../src/content/schemas/units.ts";
+import * as war from "../src/content/schemas/war.ts";
 
 const root = resolve(import.meta.dirname, "..");
 const out = resolve(root, "data/_schema");
@@ -47,6 +48,7 @@ const schemas: [string, z.ZodType, string[]][] = [
   ["equipment", units.EquipmentFile, ["data/units/equipment.json"]],
   ["sub_units", units.SubUnitsFile, ["data/units/sub_units.json"]],
   ["military_rules", units.MilitaryRulesFile, ["data/units/military.json"]],
+  ["war_rules", war.WarRulesFile, ["data/units/war.json"]],
 ];
 
 const mapping: { fileMatch: string[]; url: string }[] = [];

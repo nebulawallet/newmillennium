@@ -14,15 +14,21 @@ export interface TipContent {
 }
 
 export const activeTip = signal<TipContent | null>(null);
+/** The element the tooltip belongs to: when it unmounts (a dialog closes), the tooltip goes too. */
+let anchor: Element | null = null;
+
+const show = (content: () => TipContent) => (e: Event) => {
+  anchor = e.currentTarget as Element | null;
+  activeTip.value = content();
+};
+const hide = () => {
+  anchor = null;
+  activeTip.value = null;
+};
 
 /** Props that attach a tooltip to an element. Content is computed on hover so it is always current. */
 export function tip(content: () => TipContent) {
-  return {
-    onMouseEnter: () => (activeTip.value = content()),
-    onMouseLeave: () => (activeTip.value = null),
-    onFocus: () => (activeTip.value = content()),
-    onBlur: () => (activeTip.value = null),
-  };
+  return { onMouseEnter: show(content), onMouseLeave: hide, onFocus: show(content), onBlur: hide };
 }
 
 export function TipBox({ t, x, y }: { t: TipContent; x: number; y: number }) {
@@ -50,7 +56,7 @@ export function TipBox({ t, x, y }: { t: TipContent; x: number; y: number }) {
 
 export function TooltipLayer() {
   const t = activeTip.value;
-  if (!t) return null;
   const { x, y } = pointer.value;
+  if (!t || (anchor && !anchor.isConnected)) return null;
   return <TipBox t={t} x={x} y={y} />;
 }

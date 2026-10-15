@@ -26,6 +26,7 @@ import { CoalitionPanel } from "./ui/politics/CoalitionPanel.tsx";
 import { ElectionNight } from "./ui/politics/ElectionNight.tsx";
 import { EventWindow } from "./ui/scripted/EventWindow.tsx";
 import { FocusTreeView } from "./ui/scripted/FocusTree.tsx";
+import { PeaceConference } from "./ui/units/WarUi.tsx";
 import { hoveredProvince, pickedCountry, pointer, selectedDivisions, selectedProvince } from "./ui/store.ts";
 import { UnitCounters } from "./ui/units/UnitCounters.ts";
 import { version } from "./ui/session.ts";
@@ -155,6 +156,7 @@ function Root({ db, map, world, session, issues }: { db: ContentDB; map: MapData
       {inGame && panel.value === "focus" && <FocusTreeView db={db} session={session} />}
       {inGame && <ElectionNight db={db} session={session} />}
       {inGame && <EventWindow db={db} session={session} />}
+      {inGame && <PeaceConference db={db} session={session} />}
       {inGame && <CoalitionPanel db={db} session={session} />}
       {inGame && panel.value === "menu" && <GameMenu session={session} />}
       <TooltipLayer />

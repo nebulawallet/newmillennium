@@ -8,6 +8,7 @@ import type { FileProvider } from "./files.ts";
 import { PoliticsRulesFile, type PoliticsRules } from "./schemas/rules.ts";
 import { BuildingsFile, EconomyRulesFile, WorldBankFile, type BuildingDef, type EconomyRules } from "./schemas/economy.ts";
 import { ResearchRulesFile, TechCategoryFile, type ResearchRules, type TechCategory, type TechDef } from "./schemas/research.ts";
+import { WarRulesFile, type WarRules } from "./schemas/war.ts";
 import { EquipmentFile, MilitaryRulesFile, SubUnitsFile, type EquipmentDef, type MilitaryRules, type SubUnitDef } from "./schemas/units.ts";
 import { DecisionsFile, EventsFile, FocusTreeFile, type DecisionDef, type EventDef, type FocusTree } from "./schemas/scripted.ts";
 import { validateEffects, validateTrigger, type ScriptIssue } from "./script/validate.ts";
@@ -112,6 +113,7 @@ export interface ContentDB {
   equipment: Map<string, EquipmentDef>;
   subUnits: Map<string, SubUnitDef>;
   militaryRules: MilitaryRules;
+  warRules: WarRules;
   techCategories: Map<string, Omit<TechCategory, "techs"> & { techs: string[] }>;
   /** Every technology, with its category. */
   techs: Map<string, TechDef & { category: string }>;
@@ -224,6 +226,7 @@ export function compileContent(files: FileProvider, opts: CompileOptions = {}): 
     equipment: indexBy(load("units/equipment.json", EquipmentFile, false)?.equipment ?? [], "units/equipment.json", "equipment"),
     subUnits: indexBy(load("units/sub_units.json", SubUnitsFile, false)?.sub_units ?? [], "units/sub_units.json", "sub-unit"),
     militaryRules: load("units/military.json", MilitaryRulesFile, false) ?? MilitaryRulesFile.parse({}),
+    warRules: load("units/war.json", WarRulesFile, false) ?? WarRulesFile.parse({}),
     techCategories: new Map(),
     techs: new Map(),
     buildings: indexBy(load("economy/buildings.json", BuildingsFile, false)?.buildings ?? [], "economy/buildings.json", "building"),

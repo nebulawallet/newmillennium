@@ -1,0 +1,153 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "note": {
+      "type": "string"
+    },
+    "combat_width": {
+      "default": 30,
+      "type": "number"
+    },
+    "org_damage": {
+      "default": 0.02,
+      "type": "number"
+    },
+    "strength_damage": {
+      "default": 0.0025,
+      "type": "number"
+    },
+    "terrain_defence": {
+      "default": {
+        "plains": 0,
+        "forest": 0.15,
+        "hills": 0.25,
+        "mountains": 0.5,
+        "desert": 0,
+        "jungle": 0.25,
+        "marsh": 0.2,
+        "urban": 0.3,
+        "arctic": 0.1
+      },
+      "type": "object",
+      "propertyNames": {
+        "type": "string"
+      },
+      "additionalProperties": {
+        "type": "number"
+      }
+    },
+    "entrenchment_per_day": {
+      "default": 0.02,
+      "type": "number"
+    },
+    "max_entrenchment": {
+      "default": 0.25,
+      "type": "number"
+    },
+    "armour_penalty": {
+      "default": 0.5,
+      "type": "number"
+    },
+    "air_superiority_bonus": {
+      "default": 0.15,
+      "type": "number"
+    },
+    "supply_base": {
+      "default": 2,
+      "type": "number"
+    },
+    "supply_per_infrastructure": {
+      "default": 1.2,
+      "type": "number"
+    },
+    "out_of_supply_attrition": {
+      "default": 0.002,
+      "type": "number"
+    },
+    "capitulation_share": {
+      "default": 0.7,
+      "type": "number"
+    },
+    "war_exhaustion_monthly": {
+      "default": 0.03,
+      "type": "number"
+    },
+    "white_peace_war_support": {
+      "default": 0.15,
+      "type": "number"
+    },
+    "white_peace_min_months": {
+      "default": 6,
+      "type": "number"
+    },
+    "defender_rally": {
+      "default": 0.5,
+      "type": "number"
+    },
+    "occupation_war_support": {
+      "default": 0.15,
+      "type": "number"
+    },
+    "tension_per_war": {
+      "default": 0.15,
+      "type": "number"
+    },
+    "tension_decay": {
+      "default": 0.02,
+      "type": "number"
+    },
+    "nuclear_states_2000": {
+      "default": [],
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^[A-Z]{3}$"
+      }
+    },
+    "nuclear_tension_multiplier": {
+      "default": 2.5,
+      "type": "number"
+    },
+    "source": {
+      "minItems": 1,
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "url": {
+            "type": "string",
+            "format": "uri"
+          },
+          "title": {
+            "type": "string",
+            "minLength": 1
+          },
+          "accessed": {
+            "type": "string",
+            "format": "date",
+            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))$",
+            "description": "Calendar date, YYYY-MM-DD"
+          },
+          "note": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "url",
+          "title",
+          "accessed"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "confidence": {
+      "type": "string",
+      "enum": [
+        "verified",
+        "needs_review"
+      ]
+    }
+  },
+  "additionalProperties": false
+}

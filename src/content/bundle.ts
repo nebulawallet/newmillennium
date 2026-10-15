@@ -7,6 +7,7 @@ import { PoliticsRulesFile, type PoliticsRules } from "./schemas/rules.ts";
 import { EconomyRulesFile } from "./schemas/economy.ts";
 import { ResearchRulesFile } from "./schemas/research.ts";
 import { MilitaryRulesFile } from "./schemas/units.ts";
+import { WarRulesFile } from "./schemas/war.ts";
 
 export const BUNDLE_VERSION = 1;
 
@@ -36,6 +37,7 @@ export interface ContentBundle {
   equipment: unknown[];
   subUnits: unknown[];
   militaryRules: ContentDB["militaryRules"];
+  warRules: ContentDB["warRules"];
   techCategories: unknown[];
   techs: unknown[];
   buildings: unknown[];
@@ -77,6 +79,7 @@ export function toBundle({ db, issues }: CompileResult): ContentBundle {
     equipment: [...db.equipment.values()],
     subUnits: [...db.subUnits.values()],
     militaryRules: db.militaryRules,
+    warRules: db.warRules,
     techCategories: [...db.techCategories.values()],
     techs: [...db.techs.values()],
     buildings: [...db.buildings.values()],
@@ -112,6 +115,7 @@ export function fromBundle(b: ContentBundle): ContentDB {
     equipment: byId(b.equipment ?? []),
     subUnits: byId(b.subUnits ?? []),
     militaryRules: b.militaryRules ?? MilitaryRulesFile.parse({}),
+    warRules: b.warRules ?? WarRulesFile.parse({}),
     techCategories: byId(b.techCategories ?? []),
     techs: byId(b.techs ?? []),
     buildings: byId(b.buildings ?? []),

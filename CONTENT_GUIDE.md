@@ -280,3 +280,4 @@ One file per tree: `{ id, name, countries, focuses: [ { id, name, description, x
 - `data/units/equipment.json`: equipment families (`domain` land, air or naval) with variants from oldest to newest; each variant has a `requires_tech` (omit for the base model), a `cost` in military-factory days and combat `stats`. Use generic names, never real product names.
 - `data/units/sub_units.json`: battalions (`kind: battalion`) and support companies (`kind: support`, width 0) with manpower, equipment needs, organisation, hp, width, speed (km/h) and training days.
 - `data/units/military.json`: manpower share by conscription law, production efficiency, the default division templates (`modern_level` decides which countries start with them) and starting-army rules.
+- `data/units/war.json`: combat, supply, capitulation, war support, white peace and world-tension values (gameplay estimates), plus `nuclear_states_2000`, which must stay sourced.

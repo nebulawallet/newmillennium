@@ -11,6 +11,7 @@ import { ConstructionPanel, EconomyPanel, TradePanel } from "../economy/EconomyP
 import { ResearchPanel } from "../research/ResearchPanel.tsx";
 import { ProductionPanel, RecruitmentPanel } from "../units/MilitaryPanels.tsx";
 import { selectedDivisions } from "../store.ts";
+import { WarButton, WarsOutliner } from "../units/WarUi.tsx";
 import { feed, panel, version, type Session } from "../session.ts";
 import { selectedProvince } from "../store.ts";
 import { TABS, type TabDef } from "../tabs.ts";
@@ -31,7 +32,7 @@ function StubPanel({ tab }: { tab: TabDef }) {
 }
 
 /** HOI4 "state view": the selected province, shown in the left panel slot when no tab is open. */
-function StatePanel({ db, map, id }: { db: ContentDB; map: MapData; id: number }) {
+function StatePanel({ db, map, id, session }: { db: ContentDB; map: MapData; id: number; session?: Session }) {
   const p = map.provinces[id - 1];
   if (!p) return null;
   const owner = countrySummary(db, p.owner);
@@ -80,6 +81,7 @@ function StatePanel({ db, map, id }: { db: ContentDB; map: MapData; id: number }
           </dl>
         </>
       )}
+      {session && <WarButton db={db} session={session} target={(session.state?.provinceOwner[id - 1]) ?? p.owner} />}
       <div class="hp-section">Resources</div>
       <p class="faint small pad">Deposits and output arrive with the economy in Phase 7.</p>
     </SidePanel>
@@ -121,7 +123,7 @@ export function LeftPanel({ db, map, session }: { db: ContentDB; map: MapData; s
       </SidePanel>
     );
   }
-  if (selectedProvince.value) return <StatePanel db={db} map={map} id={selectedProvince.value} />;
+  if (selectedProvince.value) return <StatePanel db={db} map={map} id={selectedProvince.value} session={session} />;
   return null;
 }
 
@@ -143,7 +145,7 @@ export function Outliner({ db, session }: { db: ContentDB; session: Session }) {
             {items.map((e, i) => (
               <li key={`${e.day}-${i}`} class={e.tag === state?.player ? "mine" : ""}>
                 <span class="faint num small">{formatDate(e.day)}</span>
-                <span><b>{nameOf(e.tag)}</b> {e.text}</span>
+                <span>{e.tag && <><b>{nameOf(e.tag)}</b> </>}{e.text}</span>
               </li>
             ))}
           </ul>
@@ -171,6 +173,7 @@ export function Outliner({ db, session }: { db: ContentDB; session: Session }) {
           );
         })()}
       </details>
+      <WarsOutliner db={db} session={session} />
       <details>
         <summary class="ol-h">Construction</summary>
         {(state?.player ? state.countries[state.player]?.economy?.construction ?? [] : []).length === 0 ? (

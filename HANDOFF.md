@@ -1,6 +1,6 @@
 # Handoff: New Millennium
 
-Read this first when you pick up the project in a new session, with a new agent, or after a break. Last updated 15 October 2026, after the Phase 9 commit.
+Read this first when you pick up the project in a new session, with a new agent, or after a break. Last updated 15 October 2026, after the Phase 10 commit.
 
 ## What this is
 
@@ -35,7 +35,8 @@ New Millennium is a grand strategy game in the style of Hearts of Iron IV, set f
 | 7 | Economy | **Done** (see "Phase 7 notes") |
 | 8 | Research | **Done** (see "Phase 8 notes") |
 | 9 | Production and units | **Done** (see "Phase 9 notes") |
-| 10–13 | Combat, diplomacy, AI, content | Not started. Phase 10 is next. |
+| 10 | Combat, supply, war and peace | **Done** (see "Phase 10 notes") |
+| 11–13 | Diplomacy, AI, content | Not started. Phase 11 is next. |
 
 ## Where things stand right now
 
@@ -86,6 +87,15 @@ New Millennium is a grand strategy game in the style of Hearts of Iron IV, set f
 - **UI:** unit counters on the map (click to select, shift adds, right-click a province to move), Production tab (Y), Recruitment tab (U) with a template designer, armies list in the outliner.
 - **GameState v6** adds `divisions`, `wars` (empty until Phase 10).
 
+### Phase 10 notes
+
+- **Data:** `data/units/war.json` (combat width, damage rates, terrain defence, entrenchment, armour and air bonuses, supply, capitulation, war support, white peace, world tension, sourced list of nuclear states in 2000).
+- **Model** (`src/sim/military/war.ts`): a division ordered into a province held by enemy divisions attacks from where it stands; daily battles fit both sides into the combat width; attack is soft/hard by target hardness, halved when piercing is below armour, scaled by organisation and strength; defence adds terrain and entrenchment; air superiority from fighter and drone stockpiles gives a bonus. Beaten defenders retreat to a friendly neighbour or are destroyed. Moving into an enemy province without divisions occupies it. Supply: provinces feed `2 + 1.2 × infrastructure` divisions (half in enemy territory); extra divisions lose strength.
+- **Peace:** a side capitulates when enemies hold 70% of its population; the AI annexes the occupied provinces on a conquest goal; the player gets a peace conference (annex or return). After 6 months, a side whose war support falls to 15% makes a white peace. Invaded countries rally to at least 50% war support; holding enemy territory raises war support each month.
+- **UI:** "Declare war" in a foreign province's panel (tooltip shows tension and rules), battle highlight on unit counters, Wars section in the outliner (tension, occupation, war support), peace-conference dialog (pauses the game).
+- **Stubbed:** nuclear weapons only raise world tension (no use), naval combat and invasions, air missions beyond the superiority bonus, alliances, war justification and AI declarations (Phase 11 and 12). The AI does not move its divisions yet (Phase 12), so AI defenders hold where they stand.
+- **GameState v7** adds `worldTension`, `battles`, `pendingPeace`, `War.goal`, `Division.entrenchment`.
+
 ## How to run
 
 ```bash
@@ -106,7 +116,7 @@ In game: Space pauses, 1–5 or +/- set speed, Q–P open the tab row (Q is Poli
 ## Next steps, in order
 
 1. **Phase 2 research:** audit the uncommitted folders, then keep about six batches running. After each: `npm run validate-data -- --only <tags> --tier core`, spot-check facts with `scripts/research/wiki.ts` (anything after June 2026 yourself), `npm run review-report`, commit, update the batch table, launch the next batch.
-2. **Phases 8–13** in PLAN.md order.
+2. **Phases 11–13** in PLAN.md order (Phase 11 diplomacy is next).
 4. **Phase 2, Pass B** once Pass A covers all 212 tags: `--tier full` must pass.
 
 ## Decisions already made (don't relitigate)

@@ -92,7 +92,7 @@ export class Session {
 
   setPaused(p: boolean): void {
     // the player must answer a pending government formation first
-    if (!p && this.sim?.state.pendingCoalition) return;
+    if (!p && (this.sim?.state.pendingCoalition || this.sim?.state.pendingPeace)) return;
     this.clock?.setPaused(p);
     paused.value = p;
   }

@@ -12,8 +12,9 @@ import { seedRng, type RngState } from "./rng.ts";
 import { initialEconomy, type EconomyState, type MarketState } from "./economy/economy.ts";
 import { initialResearch, type ResearchState } from "./research/research.ts";
 import { initialMilitary, type Division, type MilitaryState } from "./military/military.ts";
+import type { Battle } from "./military/war.ts";
 
-export const STATE_VERSION = 6;
+export const STATE_VERSION = 7;
 
 export interface GameRules {
   /** historical: real election winners are heavily weighted; dynamic: results come purely from the simulation. */
@@ -170,6 +171,7 @@ export interface War {
   attackers: string[];
   defenders: string[];
   startDay: number;
+  goal: "conquest" | "status_quo";
 }
 
 export interface LogEntry {
@@ -233,6 +235,11 @@ export interface GameState {
   nextDivisionId: number;
   wars: War[];
   nextWarId: number;
+  /** 0..1, raised by wars, fading monthly. */
+  worldTension: number;
+  battles: Battle[];
+  /** A peace conference the player won and must settle. */
+  pendingPeace: { war: number; winner: "attackers" | "defenders" } | null;
   /** Events waiting for the player's answer (AI answers at once). */
   pendingEvents: PendingEvent[];
   /** Events queued by country_event effects with a delay. */
@@ -387,6 +394,9 @@ export function createInitialState(
     nextDivisionId: divisionId,
     wars: [],
     nextWarId: 1,
+    worldTension: 0,
+    battles: [],
+    pendingPeace: null,
     pendingEvents: [],
     scheduledEvents: [],
     log: [],
@@ -423,6 +433,10 @@ export function migrateState(db: ContentDB, s: GameState): GameState {
   s.nextDivisionId ??= fresh.nextDivisionId;
   s.wars ??= [];
   s.nextWarId ??= 1;
+  s.worldTension ??= 0;
+  s.battles ??= [];
+  s.pendingPeace ??= null;
+  for (const d of s.divisions) d.entrenchment ??= 0;
   s.pendingEvents ??= [];
   s.scheduledEvents ??= [];
   for (const [tag, cs] of Object.entries(s.countries)) {

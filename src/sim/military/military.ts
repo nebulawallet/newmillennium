@@ -62,6 +62,12 @@ export interface Division {
   /** 0..1 */
   strength: number;
   organisation: number;
+  /** Defence bonus built up while standing still (0..max). */
+  entrenchment: number;
+  /** Province this division is attacking from where it stands (Phase 10). */
+  attacking?: number;
+  /** Last day it fought (no organisation recovery for a few days after). */
+  lastCombat?: number;
 }
 
 // ------------------------------------------------------------------ equipment
@@ -208,6 +214,7 @@ export function initialMilitary(db: ContentDB, cs: CountryState, provinces: { id
       progress: 0,
       strength: fill(db, t.units, equipment),
       organisation: 1,
+      entrenchment: 0.1,
     });
   });
   const serving = divisions.reduce((sum, d) => sum + templateStats(db, d.units).manpower, 0);
@@ -237,16 +244,20 @@ export function provinceDistance(map: SimMap, a: number, b: number): number {
   return Math.max(10, Math.hypot(dx, dy));
 }
 
+/** Are these two countries enemies (a war or a civil war)? */
+function hostileTo(state: GameState, a: string, b: string): boolean {
+  if (a === b) return false;
+  if (state.countries[a]?.civilWar?.rebel === b || state.countries[b]?.civilWar?.rebel === a) return true;
+  return state.wars?.some((w) => (w.attackers.includes(a) && w.defenders.includes(b)) || (w.defenders.includes(a) && w.attackers.includes(b))) ?? false;
+}
+
 /** Can a division of `owner` enter this province? Own territory, and that of enemies in a war. */
 export function canEnter(state: GameState, owner: string, province: number): boolean {
   const o = state.provinceOwner[province - 1];
+  const c = state.provinceController[province - 1];
   if (!o) return false;
-  if (o === owner) return true;
-  const cs = state.countries[owner];
-  if (cs?.civilWar?.rebel === o) return true;
-  const other = state.countries[o];
-  if (other?.civilWar?.rebel === owner) return true;
-  return state.wars?.some((w) => (w.attackers.includes(owner) && w.defenders.includes(o)) || (w.defenders.includes(owner) && w.attackers.includes(o))) ?? false;
+  if (o === owner || c === owner) return true;
+  return hostileTo(state, owner, o) || (!!c && hostileTo(state, owner, c));
 }
 
 /** Shortest land path (A*) from one province to another through provinces the owner may enter. */
@@ -389,23 +400,36 @@ export const militarySystem: System = {
           progress: 0,
           strength: fill(db, tpl.units, equipment),
           organisation: 0.5,
+          entrenchment: 0,
         });
         if (cs.tag === state.player) ctx.log(cs.tag, "military", `${ordinal(n)} ${tpl.name} deployed`);
       }
     }
-    // movement and organisation recovery
-    if (map)
+    // movement, attacks, occupation and organisation recovery
+    if (map) {
+      let occupied = false;
+      const enemyAt = (province: number, owner: string) => state.divisions.some((x) => x.province === province && hostileTo(state, x.owner, owner));
       for (const d of state.divisions) {
         if (!d.path.length) {
-          d.organisation = Math.min(1, d.organisation + 0.02);
+          if (!d.attacking && state.day - (d.lastCombat ?? -99) > 3) {
+            d.organisation = Math.min(1, d.organisation + 0.02);
+            d.entrenchment = Math.min(db.warRules.max_entrenchment, d.entrenchment + db.warRules.entrenchment_per_day);
+          }
           continue;
         }
+        d.entrenchment = 0;
         const next = d.path[0]!;
         if (!canEnter(state, d.owner, next)) {
           d.path = [];
           d.progress = 0;
           continue;
         }
+        // enemy divisions in the way: attack from here (the war system fights the battle)
+        if (enemyAt(next, d.owner)) {
+          d.attacking = next;
+          continue;
+        }
+        d.attacking = undefined;
         const kmPerDay = templateStats(db, d.units).speed * rules.march_hours;
         d.progress += kmPerDay / provinceDistance(map, d.province, next);
         d.organisation = Math.max(0.3, d.organisation - 0.005);
@@ -413,8 +437,16 @@ export const militarySystem: System = {
           d.province = next;
           d.path.shift();
           d.progress = 0;
+          const c = state.provinceController[next - 1];
+          if (c && c !== d.owner && hostileTo(state, c, d.owner)) {
+            // occupy: an enemy province, or liberate one of our own held by the enemy
+            state.provinceController[next - 1] = d.owner;
+            occupied = true;
+          }
         }
       }
+      if (occupied) ctx.emit({ type: "map_changed" });
+    }
   },
   monthly(ctx) {
     const { db, state } = ctx;

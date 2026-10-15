@@ -11,6 +11,7 @@ import { answerEvent, setFocus, takeDecision } from "./scripting/systems.ts";
 import { canBuild } from "./economy/economy.ts";
 import { setResearch } from "./research/research.ts";
 import { addLine, moveDivision, setTemplate, trainDivision, type Template } from "./military/military.ts";
+import { choosePeace, declareWar, type WarGoal } from "./military/war.ts";
 
 export type Command =
   | { type: "change_law"; tag: string; category: string; law: string }
@@ -33,7 +34,9 @@ export type Command =
   | { type: "remove_production_line"; tag: string; line: number }
   | { type: "set_template"; tag: string; template: Template }
   | { type: "train_division"; tag: string; template: string }
-  | { type: "move_division"; tag: string; division: number; province: number };
+  | { type: "move_division"; tag: string; division: number; province: number }
+  | { type: "declare_war"; tag: string; target: string; goal?: WarGoal }
+  | { type: "choose_peace"; annex: boolean };
 
 export interface CommandResult {
   ok: boolean;
@@ -123,6 +126,10 @@ export function applyCommand(ctx: SimContext, cmd: Command): CommandResult {
       return trainDivision(ctx, cmd.tag, cmd.template);
     case "move_division":
       return moveDivision(ctx, cmd.tag, cmd.division, cmd.province);
+    case "declare_war":
+      return declareWar(ctx, cmd.tag, cmd.target, cmd.goal);
+    case "choose_peace":
+      return choosePeace(ctx, cmd.annex);
     case "force_coup": {
       const cs = state.countries[cmd.tag];
       if (!cs || !db.interestGroupTypes.has(cmd.group)) return { ok: false, text: "Unknown country or group." };

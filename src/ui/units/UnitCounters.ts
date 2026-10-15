@@ -54,6 +54,7 @@ export class UnitCounters {
     const live = new Set(this.groups.map((g) => g.key));
     for (const [k, n] of this.nodes) if (!live.has(k)) { n.remove(); this.nodes.delete(k); }
     const sel = new Set(selectedDivisions.value);
+    const fighting = new Set((state?.battles ?? []).flatMap((b) => [...b.attackers, ...b.defenders]));
     for (const g of this.groups) {
       let n = this.nodes.get(g.key);
       if (!n) {
@@ -74,6 +75,7 @@ export class UnitCounters {
       n.classList.toggle("mine", mine);
       n.classList.toggle("sel", g.divisions.some((d) => sel.has(d.id)));
       n.classList.toggle("moving", moving);
+      n.classList.toggle("fight", g.divisions.some((d) => fighting.has(d.id)));
       n.innerHTML = `<b>${g.divisions.length}</b><i style="width:${Math.round(strength * 100)}%"></i>`;
     }
     this.position();

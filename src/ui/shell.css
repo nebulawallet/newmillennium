@@ -185,6 +185,7 @@
 .unit.mine { border-color: var(--bronze-lt); }
 .unit.sel { outline: 2px solid var(--bronze-hi); outline-offset: 1px; }
 .unit.moving b::after { content: " ›"; color: var(--bronze-hi); }
+.unit.fight { border-color: var(--bad); box-shadow: 0 0 8px rgba(229, 96, 79, 0.7); }
 
 /* production and recruitment */
 .prod-add { display: flex; gap: 6px; padding: 6px 4px; }
