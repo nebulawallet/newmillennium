@@ -38,6 +38,51 @@
       "default": 5.5,
       "type": "number"
     },
+    "trend_history_weight": {
+      "default": 0.6,
+      "type": "number"
+    },
+    "trend_convergence": {
+      "default": 0.002,
+      "type": "number"
+    },
+    "inflation_targets": {
+      "default": {
+        "low": 6,
+        "lower_middle": 5,
+        "upper_middle": 4,
+        "high": 2
+      },
+      "type": "object",
+      "propertyNames": {
+        "type": "string",
+        "enum": [
+          "low",
+          "lower_middle",
+          "upper_middle",
+          "high"
+        ]
+      },
+      "additionalProperties": {
+        "type": "number"
+      }
+    },
+    "anchor_convergence": {
+      "default": 0.01,
+      "type": "number"
+    },
+    "ai_target_deficit": {
+      "default": 1.5,
+      "type": "number"
+    },
+    "ai_debt_ceiling": {
+      "default": 60,
+      "type": "number"
+    },
+    "ai_fiscal_adjustment": {
+      "default": 0.02,
+      "type": "number"
+    },
     "growth_adjustment": {
       "default": 0.25,
       "type": "number"

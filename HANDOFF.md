@@ -1,6 +1,6 @@
 # Handoff: New Millennium
 
-Read this first when you pick up the project in a new session, with a new agent, or after a break. Last updated 14 October 2026: work paused by the user partway through Phase 7.
+Read this first when you pick up the project in a new session, with a new agent, or after a break. Last updated 15 October 2026, after the Phase 7 commit.
 
 ## What this is
 
@@ -26,23 +26,19 @@ New Millennium is a grand strategy game in the style of Hearts of Iron IV, set f
 | # | Phase | Status |
 |---|---|---|
 | 1 | Politics schemas and `validate-data` | **Done** |
-| 2 | World politics database | **In progress.** Done: DEU, USA, RUS, GBR, CHN, IRN, SOM, SWE (Pass A); DEU also has Pass B. Research agents are running batches 1–6; see [docs/PHASE2_BATCHES.md](docs/PHASE2_BATCHES.md). |
+| 2 | World politics database | **In progress.** 16 countries done (Pass A); DEU also has Pass B. Agents are running; see [docs/PHASE2_BATCHES.md](docs/PHASE2_BATCHES.md). |
 | 3 | Map pipeline and rendering | **Done** apart from polish: 4,580 provinces on 2000 borders; mesh renderer chosen. Resources per province are stubbed until Phase 7. |
 | 4 | Time loop, top bar, save/load, politics screen | **Done** |
 | — | UI rebuild in the HOI4 layout | **Done** (`193ea02`), at the user's request |
 | 5 | Elections, coalitions, interest groups, laws, unrest, coups, civil war | **Done** (see "Phase 5 notes" below) |
 | 6 | Scripting, events, decisions, focus trees | **Done** (see "Phase 6 notes") |
-| 7 | Economy | **In progress** (engine committed, UI and shocks not yet; see "Phase 7 status") |
-| 8–13 | Research, production, combat, diplomacy, AI, content | Not started |
+| 7 | Economy | **Done** (see "Phase 7 notes") |
+| 8–13 | Research, production, combat, diplomacy, AI, content | Not started. Phase 8 is next. |
 
 ## Where things stand right now
 
-- **Nothing is running.** The user paused the session on 14 October 2026; the six research agents and the dev server were stopped.
-- **Uncommitted research folders** (left by the stopped agents; untracked, never audited):
-  - Pass core validation, need a full audit before committing: AND, ESP, FRA, JPN, NLD, NOR, POL, TUR. Some agents were stopped mid-edit (notes and source fixes), so re-check each file, not only validation.
-  - Incomplete: CZE (country.json only), DNK (elections.json only).
-  - Not started: MCO, ITA, FIN, ISL, PRT, KOR, TWN, PRK, MNG, HUN, SVK, ISR, PSE.
-  - To resume: relaunch batches 1–6 (docs/PHASE2_BATCHES.md) telling each agent its folders are unverified drafts, or audit the passing folders yourself first.
+- **Research agents are running** (relaunched 15 October 2026): ITA MCO; DNK FIN ISL; PRT BEL LUX; KOR TWN PRK MNG; CZE HUN SVK; ISR PSE. Their folders are untracked until audited. FRA, AND, ESP, NLD, JPN, NOR, POL and TUR were audited and committed.
+- **Audit helper:** `python -I -X utf8 scripts/dev/audit-country.py TAG` prints offices, legislature, latest elections, needs_review items and dates after June 2026.
 - `npm run check` validates only countries tracked by git (`--tracked`), so untracked folders do not block commits.
 - **Audit checklist addition (Phase 5):** direct presidential elections decided by plurality need `"system": "plurality"` on their rule (e.g. KOR, TWN, ISL, PSE in the current batches); check `winner` is the real winner.
 - **Map rebuilt** in Phase 5 with a population fix (see gotchas). Province ids changed, so saves made before this commit load with misaligned province ownership.
@@ -66,16 +62,12 @@ New Millennium is a grand strategy game in the style of Hearts of Iron IV, set f
 - **Acceptance:** all scripts validate; the Gore and Bush branches diverge (`tests/scripting.test.ts`).
 - **Not yet:** Ecuador January 2000 and Yugoslavia October 2000 events (need ECU and YUG data); trees for the other ~30 tier-1 countries (Phase 13).
 
-### Phase 7 status
+### Phase 7 notes
 
-- **Done and committed:** `src/sim/economy/economy.ts` (starting state from World Bank 2000 figures, monthly growth/unemployment/inflation/interest/budget/debt model, factories from industry value added, daily construction queue, world resource price index, shocks), state version 4 with migration, commands `set_budget`, `queue_building`, `cancel_building`, script effects `economic_shock`, `set_budget`, working `add_treasury` and `gdp_growth_*` triggers. The economic mood used by elections and interest groups now comes from the economy (the placeholder cycle is gone). Data: `data/economy/economy.json` (rules, labelled estimates by income tier), `data/economy/buildings.json`, and `worldbank_2000.json` refreshed with 17 more indicators (sparse fiscal series filled from the nearest year up to 2005, with the year recorded).
-- **Known calibration problems** (see `npx tsx scripts/dev/economy-diag.ts 10`): US debt drifts to zero and German/Chinese debt climbs (the World Bank series mixes central-government revenue and expense definitions; consider anchoring the starting deficit to zero drift); economic mood saturates at ±1 (divisors too small); interest rates are lending rates, so they look high.
-- **Still to do for Phase 7:**
-  1. Calibration fixes above.
-  2. UI: Economy panel (GDP, growth breakdown tooltip from `growthTarget`, budget sliders via `set_budget`), Construction tab (queue, `queue_building` on a selected province), Trade tab (resource prices and national rents), Resources map mode, top-bar factories and treasury readouts.
-  3. Historical shocks as events with choices (2008 financial crisis with bailout/stimulus vs austerity options, 2020 pandemic), sourced, using `economic_shock` and `set_budget`.
-  4. Acceptance test: the 2008 shock lowers the US governing party's model share before the 2008 election (compare `partyFactors` with and without the shock).
-  5. Sourced figures for tags with no World Bank data (TWN, YUG and de facto states currently use estimates).
+- **Model** (`src/sim/economy/economy.ts`): every country starts from World Bank 2000 figures (`data/economy/worldbank_2000.json`; sparse fiscal series use the nearest year up to 2005; anything missing is a labelled estimate by income tier). Monthly: growth moves toward a target (potential growth from real 1995-2000 growth blended with an income catch-up path, fiscal stance, interest rates, stability, high debt, resource prices, modifiers changed since 2000, shocks); Okun's law for unemployment; inflation with an anchor that converges on a long-run target; Taylor-style interest rates; budget toward targets (AI governments follow a simple fiscal rule; the player sets targets); debt dynamics; factories from industry value added; daily construction; a world resource price index. The economic mood that drives elections and interest groups comes from these numbers.
+- **Shocks:** the 2008 financial crisis and the 2020 pandemic are world events (`data/events/economic_shocks.json`, sourced) with two choices each; they fire in both modes. Acceptance: the 2008 crisis lowers the US governing party's share before the 2008 election (`tests/economy.test.ts`).
+- **UI:** Economy panel (click the growth readout in the top bar), Construction tab (T; infrastructure needs a selected province), Trade tab (R), Resources map mode, infrastructure map mode shows built levels, outliner construction list.
+- **Stubbed:** province-level resource deposits (national rents only), trade deals and sanctions (Phase 11), military factories produce nothing until Phase 9, sourced figures for tags without World Bank data (TWN, YUG, de facto states use estimates).
 
 ## How to run
 
@@ -96,7 +88,6 @@ In game: Space pauses, 1–5 or +/- set speed, Q–P open the tab row (Q is Poli
 
 ## Next steps, in order
 
-0. **Finish Phase 7** (see "Phase 7 status").
 1. **Phase 2 research:** audit the uncommitted folders, then keep about six batches running. After each: `npm run validate-data -- --only <tags> --tier core`, spot-check facts with `scripts/research/wiki.ts` (anything after June 2026 yourself), `npm run review-report`, commit, update the batch table, launch the next batch.
 2. **Phases 8–13** in PLAN.md order.
 4. **Phase 2, Pass B** once Pass A covers all 212 tags: `--tier full` must pass.

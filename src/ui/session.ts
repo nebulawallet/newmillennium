@@ -13,7 +13,7 @@ import { Simulation, simMapFrom, type SimEvent, type SimMap } from "../sim/simul
 import { createInitialState, migrateState, type ElectionResult, type GameRules, type GameState, type LogEntry } from "../sim/state.ts";
 
 export type Screen = "select" | "game";
-export type Panel = TabId | "menu" | "focus" | null;
+export type Panel = TabId | "menu" | "focus" | "economy" | null;
 
 export const screen = signal<Screen>("select");
 export const panel = signal<Panel>(null);

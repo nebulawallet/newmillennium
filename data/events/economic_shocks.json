@@ -1,0 +1,82 @@
+{
+  "note": "World economic shocks. They reach every country with politics data in both modes. Effects are gameplay estimates; the economic mood they cause moves elections and interest groups.",
+  "events": [
+    {
+      "id": "financial_crisis_2008",
+      "title": "The global financial crisis",
+      "description": "On 15 September 2008 the investment bank Lehman Brothers filed for bankruptcy, the climax of a financial crisis that spread from the United States housing market to banks and economies around the world.",
+      "major": true,
+      "historical": {
+        "date": "2008-09-15",
+        "any_path": true,
+        "dynamic_mode": true,
+        "source": [{ "url": "https://en.wikipedia.org/wiki/2008_financial_crisis", "title": "Wikipedia: 2008 financial crisis", "accessed": "2026-10-15" }],
+        "confidence": "verified"
+      },
+      "options": [
+        {
+          "id": "rescue_and_stimulus",
+          "name": "Rescue the banks and stimulate demand",
+          "ai_weight": 2,
+          "effects": [
+            { "economic_shock": { "growth": -3, "months": 18, "unemployment": 1.5 } },
+            { "set_budget": { "spending": 2 } },
+            { "add_interest_group_approval": { "group": "business", "value": 4 } },
+            { "add_interest_group_approval": { "group": "labour_unions", "value": -2 } },
+            { "add_interest_group_approval": { "group": "urban_middle_class", "value": -3 } }
+          ]
+        },
+        {
+          "id": "fiscal_discipline",
+          "name": "Protect the public finances",
+          "ai_weight": 1,
+          "effects": [
+            { "economic_shock": { "growth": -4.5, "months": 24, "unemployment": 2.5 } },
+            { "set_budget": { "spending": -1 } },
+            { "add_interest_group_approval": { "group": "business", "value": -2 } },
+            { "add_interest_group_approval": { "group": "labour_unions", "value": -8 } },
+            { "add_interest_group_approval": { "group": "urban_middle_class", "value": -4 } }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "pandemic_2020",
+      "title": "The COVID-19 pandemic",
+      "description": "On 11 March 2020 the World Health Organization assessed the spread of COVID-19 as a pandemic. Governments around the world responded with public health measures that disrupted economic life.",
+      "major": true,
+      "historical": {
+        "date": "2020-03-11",
+        "any_path": true,
+        "dynamic_mode": true,
+        "source": [{ "url": "https://en.wikipedia.org/wiki/COVID-19_pandemic", "title": "Wikipedia: COVID-19 pandemic", "accessed": "2026-10-15" }],
+        "confidence": "verified"
+      },
+      "options": [
+        {
+          "id": "restrictions_and_support",
+          "name": "Restrictions with income support",
+          "ai_weight": 2,
+          "effects": [
+            { "economic_shock": { "growth": -6, "months": 18, "unemployment": 3 } },
+            { "set_budget": { "spending": 4 } },
+            { "add_interest_group_approval": { "group": "business", "value": -4 } },
+            { "add_interest_group_approval": { "group": "youth_students", "value": -3 } },
+            { "add_stability": 0.02 }
+          ]
+        },
+        {
+          "id": "keep_open",
+          "name": "Keep the economy open",
+          "ai_weight": 1,
+          "effects": [
+            { "economic_shock": { "growth": -4, "months": 24, "unemployment": 2 } },
+            { "add_interest_group_approval": { "group": "business", "value": 4 } },
+            { "add_stability": -0.05 },
+            { "add_unrest": 0.05 }
+          ]
+        }
+      ]
+    }
+  ]
+}

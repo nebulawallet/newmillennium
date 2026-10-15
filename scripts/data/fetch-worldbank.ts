@@ -37,6 +37,7 @@ const INDICATORS: Record<string, string> = {
   mineral_rents_pct_gdp: "NY.GDP.MINR.RT.ZS",
   reserves_usd: "FI.RES.TOTL.CD",
   labor_force: "SL.TLF.TOTL.IN",
+  // gdp_growth_avg_1995_2000 is derived below from NY.GDP.MKTP.KD.ZG
 };
 
 /** Sparse fiscal series: where 2000 is missing, the earliest value up to this year is used (and its year recorded). */
@@ -80,6 +81,21 @@ async function main() {
       n++;
     }
     console.log(`  ${key} (${code}): ${n} values`);
+  }
+  // average real GDP growth 1995-2000 (potential growth anchor)
+  {
+    const url = `https://api.worldbank.org/v2/country/all/indicator/NY.GDP.MKTP.KD.ZG?date=1995:2000&format=json&per_page=2000`;
+    const r = await fetch(url, { headers: { "User-Agent": "NewMillennium-data/0.1" } });
+    const rows = ((await r.json()) as [unknown, Row[]])[1] ?? [];
+    const acc = new Map<string, number[]>();
+    for (const row of rows) if (row.value !== null && row.countryiso3code) acc.set(row.countryiso3code, [...(acc.get(row.countryiso3code) ?? []), row.value]);
+    let n = 0;
+    for (const [iso, vals] of acc) {
+      if (vals.length < 4 || !countries[iso]) continue;
+      countries[iso]!.gdp_growth_avg_1995_2000 = vals.reduce((a, b) => a + b, 0) / vals.length;
+      n++;
+    }
+    console.log(`  gdp_growth_avg_1995_2000 (NY.GDP.MKTP.KD.ZG, mean of 1995-2000 with at least 4 years): ${n} values`);
   }
   mkdirSync(resolve(OUT, ".."), { recursive: true });
   writeFileSync(

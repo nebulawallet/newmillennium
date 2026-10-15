@@ -14,16 +14,76 @@
   "trend_growth_base": 1.2,
   "trend_growth_catch_up": 5.5,
   "defaults": {
-    "low": { "revenue_pct_gdp": 14, "expense_pct_gdp": 18, "central_gov_debt_pct_gdp": 70, "lending_rate_pct": 18, "inflation_pct": 8, "unemployment_pct": 10, "industry_pct_gdp": 20, "exports_pct_gdp": 22, "imports_pct_gdp": 32 },
-    "lower_middle": { "revenue_pct_gdp": 18, "expense_pct_gdp": 21, "central_gov_debt_pct_gdp": 60, "lending_rate_pct": 15, "inflation_pct": 7, "unemployment_pct": 9, "industry_pct_gdp": 28, "exports_pct_gdp": 30, "imports_pct_gdp": 35 },
-    "upper_middle": { "revenue_pct_gdp": 22, "expense_pct_gdp": 24, "central_gov_debt_pct_gdp": 45, "lending_rate_pct": 12, "inflation_pct": 5, "unemployment_pct": 8, "industry_pct_gdp": 30, "exports_pct_gdp": 35, "imports_pct_gdp": 35 },
-    "high": { "revenue_pct_gdp": 30, "expense_pct_gdp": 31, "central_gov_debt_pct_gdp": 50, "lending_rate_pct": 7, "inflation_pct": 2.5, "unemployment_pct": 6, "industry_pct_gdp": 26, "exports_pct_gdp": 35, "imports_pct_gdp": 33 }
+    "low": {
+      "revenue_pct_gdp": 14,
+      "expense_pct_gdp": 18,
+      "central_gov_debt_pct_gdp": 70,
+      "lending_rate_pct": 18,
+      "inflation_pct": 8,
+      "unemployment_pct": 10,
+      "industry_pct_gdp": 20,
+      "exports_pct_gdp": 22,
+      "imports_pct_gdp": 32
+    },
+    "lower_middle": {
+      "revenue_pct_gdp": 18,
+      "expense_pct_gdp": 21,
+      "central_gov_debt_pct_gdp": 60,
+      "lending_rate_pct": 15,
+      "inflation_pct": 7,
+      "unemployment_pct": 9,
+      "industry_pct_gdp": 28,
+      "exports_pct_gdp": 30,
+      "imports_pct_gdp": 35
+    },
+    "upper_middle": {
+      "revenue_pct_gdp": 22,
+      "expense_pct_gdp": 24,
+      "central_gov_debt_pct_gdp": 45,
+      "lending_rate_pct": 12,
+      "inflation_pct": 5,
+      "unemployment_pct": 8,
+      "industry_pct_gdp": 30,
+      "exports_pct_gdp": 35,
+      "imports_pct_gdp": 35
+    },
+    "high": {
+      "revenue_pct_gdp": 30,
+      "expense_pct_gdp": 31,
+      "central_gov_debt_pct_gdp": 50,
+      "lending_rate_pct": 7,
+      "inflation_pct": 2.5,
+      "unemployment_pct": 6,
+      "industry_pct_gdp": 26,
+      "exports_pct_gdp": 35,
+      "imports_pct_gdp": 33
+    }
   },
   "resources": [
-    { "id": "oil", "name": "Oil", "rent_key": "oil_rents_pct_gdp", "color": "#3a3226" },
-    { "id": "gas", "name": "Natural gas", "rent_key": "gas_rents_pct_gdp", "color": "#5f8fb0" },
-    { "id": "coal", "name": "Coal", "rent_key": "coal_rents_pct_gdp", "color": "#5a5a5a" },
-    { "id": "minerals", "name": "Metals and minerals", "rent_key": "mineral_rents_pct_gdp", "color": "#b08a4a" }
+    {
+      "id": "oil",
+      "name": "Oil",
+      "rent_key": "oil_rents_pct_gdp",
+      "color": "#d9a21b"
+    },
+    {
+      "id": "gas",
+      "name": "Natural gas",
+      "rent_key": "gas_rents_pct_gdp",
+      "color": "#4f9fd1"
+    },
+    {
+      "id": "coal",
+      "name": "Coal",
+      "rent_key": "coal_rents_pct_gdp",
+      "color": "#8f8f8f"
+    },
+    {
+      "id": "minerals",
+      "name": "Metals and minerals",
+      "rent_key": "mineral_rents_pct_gdp",
+      "color": "#c0583c"
+    }
   ],
   "price_elasticity": 0.15
 }

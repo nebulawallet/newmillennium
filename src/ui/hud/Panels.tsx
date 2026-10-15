@@ -6,6 +6,7 @@ import { formatDate } from "../../sim/date.ts";
 import { Icon } from "../icons.tsx";
 import { PoliticsPanel } from "../politics/PoliticsPanel.tsx";
 import { DecisionsPanel } from "../scripted/DecisionsPanel.tsx";
+import { ConstructionPanel, EconomyPanel, TradePanel } from "../economy/EconomyPanels.tsx";
 import { feed, panel, version, type Session } from "../session.ts";
 import { selectedProvince } from "../store.ts";
 import { TABS, type TabDef } from "../tabs.ts";
@@ -86,6 +87,12 @@ export function LeftPanel({ db, map, session }: { db: ContentDB; map: MapData; s
   version.value;
   const open = panel.value;
   const state = session.state;
+  if (open === "economy")
+    return (
+      <SidePanel title="Economy" icon="treasury" onClose={() => (panel.value = null)}>
+        <EconomyPanel db={db} session={session} />
+      </SidePanel>
+    );
   if (open && open !== "menu" && open !== "focus") {
     const tab = TABS.find((t) => t.id === open)!;
     return (
@@ -94,6 +101,10 @@ export function LeftPanel({ db, map, session }: { db: ContentDB; map: MapData; s
           <PoliticsPanel db={db} state={state} tag={state.player} session={session} />
         ) : tab.id === "decisions" ? (
           <DecisionsPanel db={db} session={session} />
+        ) : tab.id === "construction" ? (
+          <ConstructionPanel db={db} session={session} />
+        ) : tab.id === "trade" ? (
+          <TradePanel db={db} session={session} />
         ) : (
           <StubPanel tab={tab} />
         )}
@@ -134,7 +145,15 @@ export function Outliner({ db, session }: { db: ContentDB; session: Session }) {
       </details>
       <details>
         <summary class="ol-h">Construction</summary>
-        <p class="faint small ol-empty">The construction queue arrives in Phase 7.</p>
+        {(state?.player ? state.countries[state.player]?.economy?.construction ?? [] : []).length === 0 ? (
+          <p class="faint small ol-empty">Nothing under construction.</p>
+        ) : (
+          <ul class="ol-list">
+            {state!.countries[state!.player!]!.economy!.construction.slice(0, 6).map((c, i) => (
+              <li key={i}><span>{db.buildings.get(c.building)?.name}</span><span class="faint num small">{Math.round((c.progress / (db.buildings.get(c.building)?.cost ?? 1)) * 100)}%</span></li>
+            ))}
+          </ul>
+        )}
       </details>
     </aside>
   );

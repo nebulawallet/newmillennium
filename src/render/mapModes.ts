@@ -128,7 +128,7 @@ export const MAP_MODES: MapMode[] = [
     id: "infrastructure",
     name: "Infrastructure",
     available: true,
-    color: (p) => ramp((p.infrastructure - 1) / 9),
+    color: (p, ctx) => ramp((Math.min(10, p.infrastructure + (ctx.state?.provinceBuildings[String(p.id)]?.infrastructure ?? 0)) - 1) / 9),
   },
   {
     id: "control",
@@ -178,7 +178,28 @@ export const MAP_MODES: MapMode[] = [
     },
     legend: () => [0, 0.25, 0.5, 0.75, 1].map((u) => ({ color: rgbHex(heat(u)), label: u === 0 ? "calm" : u === 1 ? "civil war / rebel held" : `${Math.round(u * 100)}% unrest` })),
   },
-  { id: "resources", name: "Resources", available: false, availableIn: "Phase 7" },
+  {
+    id: "resources",
+    name: "Resources",
+    available: true,
+    // national resource rents (World Bank 2000) by country: the dominant resource, brighter where rents are a larger share of GDP
+    color: (p, ctx) => {
+      const owner = ownerOf(p, ctx);
+      const e = ctx.state?.countries[owner]?.economy;
+      const wb = ctx.db.worldBank.countries[owner];
+      let best: { color: string; share: number } | null = null;
+      for (const r of ctx.db.economyRules.resources) {
+        const share = e ? ((e.resources[r.id] ?? 0) * (ctx.state?.market.prices[r.id] ?? 1)) / Math.max(1, e.gdp) : ((wb?.[r.rent_key] as number | undefined) ?? 0) / 100;
+        if (share > (best?.share ?? 0.002)) best = { color: r.color, share };
+      }
+      if (!best) return [40, 44, 52];
+      return mix([40, 44, 52], hexToRgb(best.color), Math.min(1, 0.35 + best.share * 6));
+    },
+    legend: (ctx) => [
+      ...ctx.db.economyRules.resources.map((r) => ({ color: r.color, label: r.name })),
+      { color: "#282c34", label: "little resource income" },
+    ],
+  },
   { id: "supply", name: "Supply", available: false, availableIn: "Phase 10" },
   { id: "diplomacy", name: "Relations", available: false, availableIn: "Phase 11" },
   { id: "factions", name: "Factions", available: false, availableIn: "Phase 11" },

@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "preact/hooks";
 import type { ContentDB } from "../../content/compile.ts";
 import { formatDate } from "../../sim/date.ts";
 import { politicalPowerGain, stabilityTarget } from "../../sim/simulation.ts";
+import { factories } from "../../sim/economy/economy.ts";
 import type { CountryState } from "../../sim/state.ts";
 import { Icon, type IconName } from "../icons.tsx";
 import { panel, paused, speed, version, type Session } from "../session.ts";
@@ -12,7 +13,7 @@ const pct = (x: number) => `${Math.round(x * 100)}%`;
 const signed = (x: number, d = 2) => `${x >= 0 ? "+" : ""}${x.toFixed(d)}`;
 
 /** A top-bar readout: icon + value; flashes green/red when the value moves (the signature move). */
-function Stat({ icon, value, numeric, tipContent, pending }: { icon: IconName; value: string; numeric?: number; tipContent: () => TipContent; pending?: boolean }) {
+function Stat({ icon, value, numeric, tipContent, pending, onClick }: { icon: IconName; value: string; numeric?: number; tipContent: () => TipContent; pending?: boolean; onClick?: () => void }) {
   const last = useRef<number | undefined>(numeric);
   const [flash, setFlash] = useState<"" | "up" | "down">("");
   useEffect(() => {
@@ -25,7 +26,7 @@ function Stat({ icon, value, numeric, tipContent, pending }: { icon: IconName; v
     return () => clearTimeout(t);
   }, [numeric]);
   return (
-    <div class={`stat ${pending ? "pending" : ""} ${flash}`} tabIndex={0} {...tip(tipContent)}>
+    <div class={`stat ${pending ? "pending" : ""} ${flash} ${onClick ? "click" : ""}`} tabIndex={0} onClick={onClick} {...tip(tipContent)}>
       {Icon[icon]({ size: 20 })}
       <span class="v num">{value}</span>
     </div>
@@ -140,8 +141,29 @@ export function TopBar({ db, session }: { db: ContentDB; session: Session }) {
         <Stat icon="stability" value={pct(cs.stability)} numeric={Math.round(cs.stability * 1000)} tipContent={tips.stability} />
         <Stat icon="warSupport" value={pct(cs.warSupport)} numeric={Math.round(cs.warSupport * 1000)} tipContent={tips.war} />
         <Stat icon="manpower" value="—" pending tipContent={() => ({ title: "Manpower", note: "Arrives with recruitment in Phase 9." })} />
-        <Stat icon="factories" value="—" pending tipContent={() => ({ title: "Factories", note: "Arrives with the economy in Phase 7." })} />
-        <Stat icon="treasury" value="—" pending tipContent={() => ({ title: "Treasury", note: "Arrives with the economy in Phase 7." })} />
+        {cs.economy ? (
+          <>
+            <Stat
+              icon="factories"
+              value={`${factories(db, cs.economy).civ}/${factories(db, cs.economy).mil}`}
+              numeric={factories(db, cs.economy).civ}
+              onClick={() => (panel.value = panel.value === "construction" ? null : "construction")}
+              tipContent={() => ({ title: "Factories", rows: [["Civilian", factories(db, cs.economy!).civ], ["Military", factories(db, cs.economy!).mil], ["Under construction", cs.economy!.construction.length]], note: "Click to open Construction." })}
+            />
+            <Stat
+              icon="treasury"
+              value={`${cs.economy.growth >= 0 ? "+" : ""}${cs.economy.growth.toFixed(1)}%`}
+              numeric={Math.round(cs.economy.growth * 10)}
+              onClick={() => (panel.value = panel.value === "economy" ? null : "economy")}
+              tipContent={() => ({ title: "Economy", rows: [["GDP growth", `${cs.economy!.growth.toFixed(1)}%`], ["Unemployment", `${cs.economy!.unemployment.toFixed(1)}%`], ["Inflation", `${cs.economy!.inflation.toFixed(1)}%`], ["Debt", `${Math.round(cs.economy!.debt)}% of GDP`]], note: "Click to open the economy." })}
+            />
+          </>
+        ) : (
+          <>
+            <Stat icon="factories" value="—" pending tipContent={() => ({ title: "Factories", note: "No economy data for this country." })} />
+            <Stat icon="treasury" value="—" pending tipContent={() => ({ title: "Economy", note: "No economy data for this country." })} />
+          </>
+        )}
       </div>
 
       <div class="leader-line">

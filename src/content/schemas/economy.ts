@@ -36,9 +36,21 @@ export const EconomyRulesFile = z.strictObject({
   max_factories_per_project: n(15),
   /** Share of civilian factories producing consumer goods, by economic system law. */
   consumer_goods_share: z.record(Id, z.number().min(0).max(0.9)).default({}),
-  /** Potential growth (%/year) = base + catch_up * (1 - log10(GDP per capita) / 5), before modifiers. */
+  /** Potential growth (%/year) = base + catch_up * (1 - log10(GDP per capita) / 5), blended with real 1995-2000 average growth. */
   trend_growth_base: n(1.2),
   trend_growth_catch_up: n(5.5),
+  /** Weight of the real 1995-2000 average growth in potential growth (the rest is the catch-up formula). */
+  trend_history_weight: n(0.6),
+  /** Monthly share of the gap closed between potential growth and the catch-up formula (convergence over decades). */
+  trend_convergence: n(0.002),
+  /** Inflation the central bank aims for in the long run, by income tier; starting inflation converges to it. */
+  inflation_targets: z.partialRecord(z.enum(["low", "lower_middle", "upper_middle", "high"]), z.number()).default({ low: 6, lower_middle: 5, upper_middle: 4, high: 2 }),
+  /** Monthly share of the gap closed between the inflation anchor and its target. */
+  anchor_convergence: n(0.01),
+  /** AI governments: deficit they aim for (% of GDP) when debt is low, and how fast spending follows. */
+  ai_target_deficit: n(1.5),
+  ai_debt_ceiling: n(60),
+  ai_fiscal_adjustment: n(0.02),
   /** Monthly share of the gap to the growth target closed. */
   growth_adjustment: n(0.25),
   /** Okun coefficient: unemployment change per point of growth above trend (yearly). */

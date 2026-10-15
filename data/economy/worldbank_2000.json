@@ -4,7 +4,7 @@
   {
    "url": "https://api.worldbank.org/v2/",
    "title": "World Bank, World Development Indicators API (CC BY 4.0)",
-   "accessed": "2026-10-14"
+   "accessed": "2026-10-15"
   }
  ],
  "indicators": {
@@ -64,7 +64,8 @@
    "gas_rents_pct_gdp": 0.0258467386205443,
    "coal_rents_pct_gdp": 0.720265276798836,
    "mineral_rents_pct_gdp": 0.48306266536069,
-   "labor_force": 160532909
+   "labor_force": 160532909,
+   "gdp_growth_avg_1995_2000": 3.549829640146919
   },
   "AFW": {
    "name": "Africa Western and Central",
@@ -85,7 +86,8 @@
    "gas_rents_pct_gdp": 0.303491136149007,
    "coal_rents_pct_gdp": 0.0902573100909422,
    "mineral_rents_pct_gdp": 0.310213792724731,
-   "labor_force": 115957545
+   "labor_force": 115957545,
+   "gdp_growth_avg_1995_2000": 3.3011421815236566
   },
   "ARB": {
    "name": "Arab World",
@@ -107,7 +109,8 @@
    "gas_rents_pct_gdp": 1.39840866688866,
    "coal_rents_pct_gdp": 0.00481012752987645,
    "mineral_rents_pct_gdp": 0.0124935332454804,
-   "labor_force": 82938192
+   "labor_force": 82938192,
+   "gdp_growth_avg_1995_2000": 4.4945879045234856
   },
   "CSS": {
    "name": "Caribbean small states",
@@ -132,7 +135,8 @@
    "gas_rents_pct_gdp": 1.06641466038595,
    "coal_rents_pct_gdp": 0,
    "mineral_rents_pct_gdp": 0.293964637054318,
-   "labor_force": 1565394
+   "labor_force": 1565394,
+   "gdp_growth_avg_1995_2000": 4.541957707424371
   },
   "CEB": {
    "name": "Central Europe and the Baltics",
@@ -158,7 +162,8 @@
    "gas_rents_pct_gdp": 0.119464884582632,
    "coal_rents_pct_gdp": 0.116187824962689,
    "mineral_rents_pct_gdp": 0.0462839962081946,
-   "labor_force": 48344815
+   "labor_force": 48344815,
+   "gdp_growth_avg_1995_2000": 3.4856784849049447
   },
   "EAR": {
    "name": "Early-demographic dividend",
@@ -181,7 +186,8 @@
    "gas_rents_pct_gdp": 0.605587586504613,
    "coal_rents_pct_gdp": 0.140303215976643,
    "mineral_rents_pct_gdp": 0.187169270985264,
-   "labor_force": 948733712
+   "labor_force": 948733712,
+   "gdp_growth_avg_1995_2000": 3.6977278115977223
   },
   "EAS": {
    "name": "East Asia & Pacific",
@@ -207,7 +213,8 @@
    "gas_rents_pct_gdp": 0.17901479626922,
    "coal_rents_pct_gdp": 0.0357157464486785,
    "mineral_rents_pct_gdp": 0.102219785676685,
-   "labor_force": 1085239922
+   "labor_force": 1085239922,
+   "gdp_growth_avg_1995_2000": 4.17259855596388
   },
   "EAP": {
    "name": "East Asia & Pacific (excluding high income)",
@@ -233,7 +240,8 @@
    "gas_rents_pct_gdp": 0.6262456174324,
    "coal_rents_pct_gdp": 0.121319377992882,
    "mineral_rents_pct_gdp": 0.220769222182678,
-   "labor_force": 967103304
+   "labor_force": 967103304,
+   "gdp_growth_avg_1995_2000": 7.268611086336612
   },
   "TEA": {
    "name": "East Asia & Pacific (IDA & IBRD countries)",
@@ -259,7 +267,8 @@
    "gas_rents_pct_gdp": 0.6262456174324,
    "coal_rents_pct_gdp": 0.121319377992882,
    "mineral_rents_pct_gdp": 0.22075031867402,
-   "labor_force": 952624543
+   "labor_force": 952624543,
+   "gdp_growth_avg_1995_2000": 7.267813879816188
   },
   "EMU": {
    "name": "Euro area",
@@ -286,7 +295,8 @@
    "coal_rents_pct_gdp": 0.0058259458065311,
    "mineral_rents_pct_gdp": 0.00227920851189027,
    "reserves_usd": 351979822071.882,
-   "labor_force": 153824859
+   "labor_force": 153824859,
+   "gdp_growth_avg_1995_2000": 2.800304310055972
   },
   "ECS": {
    "name": "Europe & Central Asia",
@@ -312,7 +322,8 @@
    "gas_rents_pct_gdp": 0.198227709127633,
    "coal_rents_pct_gdp": 0.0208907431850706,
    "mineral_rents_pct_gdp": 0.0297752872176937,
-   "labor_force": 397088955
+   "labor_force": 397088955,
+   "gdp_growth_avg_1995_2000": 2.8686300506879334
   },
   "ECA": {
    "name": "Europe & Central Asia (excluding high income)",
@@ -335,7 +346,8 @@
    "gas_rents_pct_gdp": 0.656505297251423,
    "coal_rents_pct_gdp": 0.129384197923653,
    "mineral_rents_pct_gdp": 0.0809804352437972,
-   "labor_force": 90565340
+   "labor_force": 90565340,
+   "gdp_growth_avg_1995_2000": 2.9959172432543277
   },
   "TEC": {
    "name": "Europe & Central Asia (IDA & IBRD countries)",
@@ -360,7 +372,8 @@
    "gas_rents_pct_gdp": 1.53938995012138,
    "coal_rents_pct_gdp": 0.172638531677706,
    "mineral_rents_pct_gdp": 0.298552712905662,
-   "labor_force": 196028772
+   "labor_force": 196028772,
+   "gdp_growth_avg_1995_2000": 2.1729869336354084
   },
   "EUU": {
    "name": "European Union",
@@ -386,7 +399,8 @@
    "gas_rents_pct_gdp": 0.0419367980886786,
    "coal_rents_pct_gdp": 0.0116840147259979,
    "mineral_rents_pct_gdp": 0.00706568059390482,
-   "labor_force": 197119935
+   "labor_force": 197119935,
+   "gdp_growth_avg_1995_2000": 2.8740011608809084
   },
   "FCV": {
    "name": "Fragility, Conflict, and Violence (FCV) situations",
@@ -409,7 +423,8 @@
    "gas_rents_pct_gdp": 0.942305064828935,
    "coal_rents_pct_gdp": 0.0659400979559683,
    "mineral_rents_pct_gdp": 0.105717214183746,
-   "labor_force": 242664021
+   "labor_force": 242664021,
+   "gdp_growth_avg_1995_2000": 3.52554155731609
   },
   "HPC": {
    "name": "Heavily indebted poor countries (HIPC)",
@@ -432,7 +447,8 @@
    "gas_rents_pct_gdp": 0.0579643088662414,
    "coal_rents_pct_gdp": 0.0231182709849953,
    "mineral_rents_pct_gdp": 0.353435492330633,
-   "labor_force": 186217383
+   "labor_force": 186217383,
+   "gdp_growth_avg_1995_2000": 4.474483707768107
   },
   "IBD": {
    "name": "IBRD only",
@@ -458,7 +474,8 @@
    "gas_rents_pct_gdp": 0.582526701796651,
    "coal_rents_pct_gdp": 0.134803473934153,
    "mineral_rents_pct_gdp": 0.271771938657018,
-   "labor_force": 1822455997
+   "labor_force": 1822455997,
+   "gdp_growth_avg_1995_2000": 4.525970581877985
   },
   "IBT": {
    "name": "IDA & IBRD total",
@@ -484,7 +501,8 @@
    "gas_rents_pct_gdp": 0.587479756523193,
    "coal_rents_pct_gdp": 0.127580327328002,
    "mineral_rents_pct_gdp": 0.266069927994848,
-   "labor_force": 2246122392
+   "labor_force": 2246122392,
+   "gdp_growth_avg_1995_2000": 4.4660859973651705
   },
   "IDB": {
    "name": "IDA blend",
@@ -506,7 +524,8 @@
    "gas_rents_pct_gdp": 1.03275788389273,
    "coal_rents_pct_gdp": 0.0718100674633793,
    "mineral_rents_pct_gdp": 0.142285471067627,
-   "labor_force": 146299153
+   "labor_force": 146299153,
+   "gdp_growth_avg_1995_2000": 2.98060685871747
   },
   "IDX": {
    "name": "IDA only",
@@ -529,7 +548,8 @@
    "gas_rents_pct_gdp": 0.282019702168394,
    "coal_rents_pct_gdp": 0.0166401717639342,
    "mineral_rents_pct_gdp": 0.253331967527022,
-   "labor_force": 277367242
+   "labor_force": 277367242,
+   "gdp_growth_avg_1995_2000": 4.783138930754198
   },
   "IDA": {
    "name": "IDA total",
@@ -552,7 +572,8 @@
    "gas_rents_pct_gdp": 0.64530601234263,
    "coal_rents_pct_gdp": 0.0433164740442729,
    "mineral_rents_pct_gdp": 0.199634186621462,
-   "labor_force": 423666395
+   "labor_force": 423666395,
+   "gdp_growth_avg_1995_2000": 3.82860255323834
   },
   "LTE": {
    "name": "Late-demographic dividend",
@@ -578,7 +599,8 @@
    "gas_rents_pct_gdp": 0.663382369615548,
    "coal_rents_pct_gdp": 0.0901546217813163,
    "mineral_rents_pct_gdp": 0.314944846484737,
-   "labor_force": 1076217553
+   "labor_force": 1076217553,
+   "gdp_growth_avg_1995_2000": 5.170299566790927
   },
   "LCN": {
    "name": "Latin America & Caribbean",
@@ -601,7 +623,8 @@
    "gas_rents_pct_gdp": 0.118079988480472,
    "coal_rents_pct_gdp": 0.000582749292894221,
    "mineral_rents_pct_gdp": 0.324760145453547,
-   "labor_force": 223044186
+   "labor_force": 223044186,
+   "gdp_growth_avg_1995_2000": 2.899454105946162
   },
   "LAC": {
    "name": "Latin America & Caribbean (excluding high income)",
@@ -624,7 +647,8 @@
    "gas_rents_pct_gdp": 0.115212914139828,
    "coal_rents_pct_gdp": 0.000641766870606215,
    "mineral_rents_pct_gdp": 0.193109468519201,
-   "labor_force": 209741419
+   "labor_force": 209741419,
+   "gdp_growth_avg_1995_2000": 2.721623695553131
   },
   "TLA": {
    "name": "Latin America & the Caribbean (IDA & IBRD countries)",
@@ -647,7 +671,8 @@
    "gas_rents_pct_gdp": 0.123033554143194,
    "coal_rents_pct_gdp": 0.000609648389673603,
    "mineral_rents_pct_gdp": 0.329282131610998,
-   "labor_force": 216788322
+   "labor_force": 216788322,
+   "gdp_growth_avg_1995_2000": 2.8385649079618855
   },
   "LDC": {
    "name": "Least developed countries: UN classification",
@@ -670,7 +695,8 @@
    "gas_rents_pct_gdp": 0.326455223201115,
    "coal_rents_pct_gdp": 0.02000017094375,
    "mineral_rents_pct_gdp": 0.188513074856055,
-   "labor_force": 254348737
+   "labor_force": 254348737,
+   "gdp_growth_avg_1995_2000": 4.850679975382294
   },
   "LMY": {
    "name": "Low & middle income",
@@ -696,7 +722,8 @@
    "gas_rents_pct_gdp": 0.450811739095909,
    "coal_rents_pct_gdp": 0.123094601361339,
    "mineral_rents_pct_gdp": 0.197607460790693,
-   "labor_force": 2148709003
+   "labor_force": 2148709003,
+   "gdp_growth_avg_1995_2000": 4.821952248358886
   },
   "MEA": {
    "name": "Middle East, North Africa, Afghanistan & Pakistan",
@@ -719,7 +746,8 @@
    "gas_rents_pct_gdp": 1.29707688078211,
    "coal_rents_pct_gdp": 0.00307093286175713,
    "mineral_rents_pct_gdp": 0.0161096453519454,
-   "labor_force": 144270404
+   "labor_force": 144270404,
+   "gdp_growth_avg_1995_2000": 4.296901183806433
   },
   "MNA": {
    "name": "Middle East, North Africa, Afghanistan & Pakistan (excluding high income)",
@@ -742,7 +770,8 @@
    "gas_rents_pct_gdp": 1.47840528799359,
    "coal_rents_pct_gdp": 0.00585868375630009,
    "mineral_rents_pct_gdp": 0.0306925901995009,
-   "labor_force": 131972078
+   "labor_force": 131972078,
+   "gdp_growth_avg_1995_2000": 4.625834786434764
   },
   "TMN": {
    "name": "Middle East, North Africa, Afghanistan & Pakistan (IDA & IBRD)",
@@ -765,7 +794,8 @@
    "gas_rents_pct_gdp": 1.47840528799359,
    "coal_rents_pct_gdp": 0.00590304239142885,
    "mineral_rents_pct_gdp": 0.0309249771086513,
-   "labor_force": 131353894
+   "labor_force": 131353894,
+   "gdp_growth_avg_1995_2000": 4.618267773350735
   },
   "MIC": {
    "name": "Middle income",
@@ -791,7 +821,8 @@
    "gas_rents_pct_gdp": 0.4577450809952,
    "coal_rents_pct_gdp": 0.125338418151955,
    "mineral_rents_pct_gdp": 0.199334853068723,
-   "labor_force": 2000438095
+   "labor_force": 2000438095,
+   "gdp_growth_avg_1995_2000": 4.831057286505984
   },
   "NAC": {
    "name": "North America",
@@ -818,7 +849,8 @@
    "gas_rents_pct_gdp": 0.722205423997993,
    "coal_rents_pct_gdp": 0.135249397687705,
    "mineral_rents_pct_gdp": 0.024714604410221,
-   "labor_force": 163326810
+   "labor_force": 163326810,
+   "gdp_growth_avg_1995_2000": 4.023438931160357
   },
   "OED": {
    "name": "OECD members",
@@ -844,7 +876,8 @@
    "gas_rents_pct_gdp": 0.322242451422622,
    "coal_rents_pct_gdp": 0.0597534493727272,
    "mineral_rents_pct_gdp": 0.041906356634876,
-   "labor_force": 572772220
+   "labor_force": 572772220,
+   "gdp_growth_avg_1995_2000": 3.3481699350198
   },
   "OSS": {
    "name": "Other small states",
@@ -870,7 +903,8 @@
    "gas_rents_pct_gdp": 1.667263455637,
    "coal_rents_pct_gdp": 0.212351069407838,
    "mineral_rents_pct_gdp": 0.00354196762993528,
-   "labor_force": 3759047
+   "labor_force": 3759047,
+   "gdp_growth_avg_1995_2000": 4.525928662979081
   },
   "PSS": {
    "name": "Pacific island small states",
@@ -892,7 +926,8 @@
    "gas_rents_pct_gdp": 0,
    "coal_rents_pct_gdp": 0,
    "mineral_rents_pct_gdp": 0.25395975011265,
-   "labor_force": 715789
+   "labor_force": 715789,
+   "gdp_growth_avg_1995_2000": 1.708935612435295
   },
   "PST": {
    "name": "Post-demographic dividend",
@@ -918,7 +953,8 @@
    "gas_rents_pct_gdp": 0.335312866180673,
    "coal_rents_pct_gdp": 0.0623178713691322,
    "mineral_rents_pct_gdp": 0.0275870685474728,
-   "labor_force": 505253468
+   "labor_force": 505253468,
+   "gdp_growth_avg_1995_2000": 3.2645539461116244
   },
   "PRE": {
    "name": "Pre-demographic dividend",
@@ -941,7 +977,8 @@
    "gas_rents_pct_gdp": 0.212736295419818,
    "coal_rents_pct_gdp": 0.0148870115475053,
    "mineral_rents_pct_gdp": 0.138227570105808,
-   "labor_force": 221860655
+   "labor_force": 221860655,
+   "gdp_growth_avg_1995_2000": 5.274737438969123
   },
   "SST": {
    "name": "Small states",
@@ -969,7 +1006,8 @@
    "gas_rents_pct_gdp": 1.38736357444156,
    "coal_rents_pct_gdp": 0.129964806226341,
    "mineral_rents_pct_gdp": 0.112134126922826,
-   "labor_force": 6040230
+   "labor_force": 6040230,
+   "gdp_growth_avg_1995_2000": 4.36170719054065
   },
   "SAS": {
    "name": "South Asia",
@@ -996,7 +1034,8 @@
    "gas_rents_pct_gdp": 0.217656832355646,
    "coal_rents_pct_gdp": 0.42452685906077,
    "mineral_rents_pct_gdp": 0.224755534697101,
-   "labor_force": 472836407
+   "labor_force": 472836407,
+   "gdp_growth_avg_1995_2000": 6.1272516096401155
   },
   "TSA": {
    "name": "South Asia (IDA & IBRD)",
@@ -1023,7 +1062,8 @@
    "gas_rents_pct_gdp": 0.217656832355646,
    "coal_rents_pct_gdp": 0.42452685906077,
    "mineral_rents_pct_gdp": 0.224755534697101,
-   "labor_force": 472836407
+   "labor_force": 472836407,
+   "gdp_growth_avg_1995_2000": 6.1272516096401155
   },
   "SSF": {
    "name": "Sub-Saharan Africa",
@@ -1046,7 +1086,8 @@
    "gas_rents_pct_gdp": 0.119791618749489,
    "coal_rents_pct_gdp": 0.506462898370553,
    "mineral_rents_pct_gdp": 0.424403883200638,
-   "labor_force": 276490454
+   "labor_force": 276490454,
+   "gdp_growth_avg_1995_2000": 3.445795490957963
   },
   "SSA": {
    "name": "Sub-Saharan Africa (excluding high income)",
@@ -1069,7 +1110,8 @@
    "gas_rents_pct_gdp": 0.119978567126741,
    "coal_rents_pct_gdp": 0.507252093946631,
    "mineral_rents_pct_gdp": 0.425065210354454,
-   "labor_force": 276490454
+   "labor_force": 276490454,
+   "gdp_growth_avg_1995_2000": 3.443888712876673
   },
   "TSS": {
    "name": "Sub-Saharan Africa (IDA & IBRD countries)",
@@ -1092,7 +1134,8 @@
    "gas_rents_pct_gdp": 0.119791618749489,
    "coal_rents_pct_gdp": 0.506462898370553,
    "mineral_rents_pct_gdp": 0.424403883200639,
-   "labor_force": 276490454
+   "labor_force": 276490454,
+   "gdp_growth_avg_1995_2000": 3.445795490957963
   },
   "WLD": {
    "name": "World",
@@ -1120,7 +1163,8 @@
    "gas_rents_pct_gdp": 0.39472731477906,
    "coal_rents_pct_gdp": 0.0725929198444206,
    "mineral_rents_pct_gdp": 0.073675772351214,
-   "labor_force": 2762297138
+   "labor_force": 2762297138,
+   "gdp_growth_avg_1995_2000": 3.6146865440319136
   },
   "AFG": {
    "name": "Afghanistan",
@@ -1161,7 +1205,8 @@
    "coal_rents_pct_gdp": 0.00063462371627779,
    "mineral_rents_pct_gdp": 0,
    "reserves_usd": 646305676.491804,
-   "labor_force": 1329781
+   "labor_force": 1329781,
+   "gdp_growth_avg_1995_2000": 6.161783518635225
   },
   "DZA": {
    "name": "Algeria",
@@ -1186,7 +1231,8 @@
    "coal_rents_pct_gdp": 0,
    "mineral_rents_pct_gdp": 0.0216085733371284,
    "reserves_usd": 13556106802.2148,
-   "labor_force": 9070882
+   "labor_force": 9070882,
+   "gdp_growth_avg_1995_2000": 3.51666639416894
   },
   "ASM": {
    "name": "American Samoa",
@@ -1206,7 +1252,8 @@
    "manufacturing_pct_gdp": 3.83085443139985,
    "services_pct_gdp": 76.5609990393852,
    "agriculture_pct_gdp": 0.517055747893417,
-   "mineral_rents_pct_gdp": 0
+   "mineral_rents_pct_gdp": 0,
+   "gdp_growth_avg_1995_2000": 4.549524501357742
   },
   "AGO": {
    "name": "Angola",
@@ -1228,7 +1275,8 @@
    "coal_rents_pct_gdp": 0,
    "mineral_rents_pct_gdp": 0,
    "reserves_usd": 1198212373.02401,
-   "labor_force": 6813281
+   "labor_force": 6813281,
+   "gdp_growth_avg_1995_2000": 7.624317923722367
   },
   "ATG": {
    "name": "Antigua and Barbuda",
@@ -1248,7 +1296,8 @@
    "gas_rents_pct_gdp": 0,
    "coal_rents_pct_gdp": 0,
    "mineral_rents_pct_gdp": 0,
-   "reserves_usd": 63558884.5284906
+   "reserves_usd": 63558884.5284906,
+   "gdp_growth_avg_1995_2000": 3.7264988750595838
   },
   "ARG": {
    "name": "Argentina",
@@ -1274,7 +1323,8 @@
    "coal_rents_pct_gdp": 0,
    "mineral_rents_pct_gdp": 0.00202036861517756,
    "reserves_usd": 25152117244.4133,
-   "labor_force": 16658086
+   "labor_force": 16658086,
+   "gdp_growth_avg_1995_2000": 1.744708309866655
   },
   "ARM": {
    "name": "Armenia",
@@ -1301,7 +1351,8 @@
    "coal_rents_pct_gdp": 0,
    "mineral_rents_pct_gdp": 0.271357451879854,
    "reserves_usd": 314200332.802207,
-   "labor_force": 1475960
+   "labor_force": 1475960,
+   "gdp_growth_avg_1995_2000": 5.431079810175722
   },
   "ABW": {
    "name": "Aruba",
@@ -1323,7 +1374,8 @@
    "gas_rents_pct_gdp": 0,
    "coal_rents_pct_gdp": 0,
    "mineral_rents_pct_gdp": 0,
-   "reserves_usd": 235455000
+   "reserves_usd": 235455000,
+   "gdp_growth_avg_1995_2000": 3.6054590218735867
   },
   "AUS": {
    "name": "Australia",
@@ -1352,7 +1404,8 @@
    "coal_rents_pct_gdp": 0.184104025753703,
    "mineral_rents_pct_gdp": 0.944083748919392,
    "reserves_usd": 18821546023.5147,
-   "labor_force": 9542614
+   "labor_force": 9542614,
+   "gdp_growth_avg_1995_2000": 4.215816068401172
   },
   "AUT": {
    "name": "Austria",
@@ -1379,7 +1432,8 @@
    "coal_rents_pct_gdp": 0.000464061351706893,
    "mineral_rents_pct_gdp": 0.00670765421289272,
    "reserves_usd": 17649557521.9085,
-   "labor_force": 3883391
+   "labor_force": 3883391,
+   "gdp_growth_avg_1995_2000": 2.912318897729804
   },
   "AZE": {
    "name": "Azerbaijan",
@@ -1404,7 +1458,8 @@
    "coal_rents_pct_gdp": 0,
    "mineral_rents_pct_gdp": 0,
    "reserves_usd": 679605504.08201,
-   "labor_force": 4306234
+   "labor_force": 4306234,
+   "gdp_growth_avg_1995_2000": 3.9666667499119086
   },
   "BHS": {
    "name": "Bahamas, The",
@@ -1432,7 +1487,8 @@
    "coal_rents_pct_gdp": 0,
    "mineral_rents_pct_gdp": 0,
    "reserves_usd": 349644583.160698,
-   "labor_force": 173823
+   "labor_force": 173823,
+   "gdp_growth_avg_1995_2000": 4.3165595619735795
   },
   "BHR": {
    "name": "Bahrain",
@@ -1457,7 +1513,8 @@
    "coal_rents_pct_gdp": 0,
    "mineral_rents_pct_gdp": 0,
    "reserves_usd": 1605306697.72147,
-   "labor_force": 293400
+   "labor_force": 293400,
+   "gdp_growth_avg_1995_2000": 4.253844864103612
   },
   "BGD": {
    "name": "Bangladesh",
@@ -1490,7 +1547,8 @@
    "coal_rents_pct_gdp": 0,
    "mineral_rents_pct_gdp": 0,
    "reserves_usd": 1515788656.4122,
-   "labor_force": 49048139
+   "labor_force": 49048139,
+   "gdp_growth_avg_1995_2000": 4.879095262101722
   },
   "BRB": {
    "name": "Barbados",
@@ -1520,7 +1578,8 @@
    "coal_rents_pct_gdp": 0,
    "mineral_rents_pct_gdp": 0,
    "reserves_usd": 472693479.363242,
-   "labor_force": 141943
+   "labor_force": 141943,
+   "gdp_growth_avg_1995_2000": 3.2068146184851383
   },
   "BLR": {
    "name": "Belarus",
@@ -1549,7 +1608,8 @@
    "coal_rents_pct_gdp": 0,
    "mineral_rents_pct_gdp": 0,
    "reserves_usd": 350495841.300001,
-   "labor_force": 4815953
+   "labor_force": 4815953,
+   "gdp_growth_avg_1995_2000": 3.566667239536861
   },
   "BEL": {
    "name": "Belgium",
@@ -1576,7 +1636,8 @@
    "coal_rents_pct_gdp": 0,
    "mineral_rents_pct_gdp": 0,
    "reserves_usd": 12271745172.0012,
-   "labor_force": 4412646
+   "labor_force": 4412646,
+   "gdp_growth_avg_1995_2000": 2.7868527579938203
   },
   "BLZ": {
    "name": "Belize",
@@ -1606,7 +1667,8 @@
    "coal_rents_pct_gdp": 0,
    "mineral_rents_pct_gdp": 0.00121728831019178,
    "reserves_usd": 122898988.202728,
-   "labor_force": 86164
+   "labor_force": 86164,
+   "gdp_growth_avg_1995_2000": 5.27138440884642
   },
   "BEN": {
    "name": "Benin",
@@ -1630,7 +1692,8 @@
    "gas_rents_pct_gdp": 0,
    "coal_rents_pct_gdp": 0,
    "mineral_rents_pct_gdp": 0,
-   "labor_force": 2830348
+   "labor_force": 2830348,
+   "gdp_growth_avg_1995_2000": 5.21072446212498
   },
   "BMU": {
    "name": "Bermuda",
@@ -1645,7 +1708,8 @@
    "oil_rents_pct_gdp": 0,
    "gas_rents_pct_gdp": 0,
    "coal_rents_pct_gdp": 0,
-   "mineral_rents_pct_gdp": 0
+   "mineral_rents_pct_gdp": 0,
+   "gdp_growth_avg_1995_2000": 4.699904687732553
   },
   "BTN": {
    "name": "Bhutan",
@@ -1673,7 +1737,8 @@
    "coal_rents_pct_gdp": 0.0933287461203952,
    "mineral_rents_pct_gdp": 0,
    "reserves_usd": 317632400.62607,
-   "labor_force": 256106
+   "labor_force": 256106,
+   "gdp_growth_avg_1995_2000": 5.877699999466047
   },
   "BOL": {
    "name": "Bolivia",
@@ -1702,7 +1767,8 @@
    "coal_rents_pct_gdp": 0,
    "mineral_rents_pct_gdp": 0.278147845667971,
    "reserves_usd": 1184108227.67536,
-   "labor_force": 3741182
+   "labor_force": 3741182,
+   "gdp_growth_avg_1995_2000": 3.6596463752656603
   },
   "BIH": {
    "name": "Bosnia and Herzegovina",
@@ -1732,7 +1798,8 @@
    "coal_rents_pct_gdp": 0.138280003033367,
    "mineral_rents_pct_gdp": 0.0579154373195127,
    "reserves_usd": 496626475.424899,
-   "labor_force": 1760409
+   "labor_force": 1760409,
+   "gdp_growth_avg_1995_2000": 23.0601651560177
   },
   "BWA": {
    "name": "Botswana",
@@ -1757,7 +1824,8 @@
    "coal_rents_pct_gdp": 0.139274596524146,
    "mineral_rents_pct_gdp": 1.9342105987552,
    "reserves_usd": 6318214000.31791,
-   "labor_force": 605662
+   "labor_force": 605662,
+   "gdp_growth_avg_1995_2000": 5.547450211454305
   },
   "BRA": {
    "name": "Brazil",
@@ -1782,7 +1850,8 @@
    "coal_rents_pct_gdp": 0.00000698902048105947,
    "mineral_rents_pct_gdp": 0.287289488101813,
    "reserves_usd": 33015297295.6899,
-   "labor_force": 80295093
+   "labor_force": 80295093,
+   "gdp_growth_avg_1995_2000": 2.50358143089028
   },
   "VGB": {
    "name": "British Virgin Islands",
@@ -1813,7 +1882,8 @@
    "coal_rents_pct_gdp": 0,
    "mineral_rents_pct_gdp": 0,
    "reserves_usd": 408340574.417856,
-   "labor_force": 155602
+   "labor_force": 155602,
+   "gdp_growth_avg_1995_2000": 1.4570270696658205
   },
   "BGR": {
    "name": "Bulgaria",
@@ -1840,7 +1910,8 @@
    "coal_rents_pct_gdp": 0.101417887783121,
    "mineral_rents_pct_gdp": 0.04334628179999,
    "reserves_usd": 3507198891.18447,
-   "labor_force": 3441466
+   "labor_force": 3441466,
+   "gdp_growth_avg_1995_2000": -1.00455503730654
   },
   "BFA": {
    "name": "Burkina Faso",
@@ -1871,7 +1942,8 @@
    "gas_rents_pct_gdp": 0,
    "coal_rents_pct_gdp": 0,
    "mineral_rents_pct_gdp": 0.0381539913096733,
-   "labor_force": 5231474
+   "labor_force": 5231474,
+   "gdp_growth_avg_1995_2000": 6.606563965374238
   },
   "BDI": {
    "name": "Burundi",
@@ -1894,7 +1966,8 @@
    "coal_rents_pct_gdp": 0,
    "mineral_rents_pct_gdp": 0,
    "reserves_usd": 37646865.1651182,
-   "labor_force": 2766896
+   "labor_force": 2766896,
+   "gdp_growth_avg_1995_2000": -2.4378106763955167
   },
   "CPV": {
    "name": "Cabo Verde",
@@ -1924,7 +1997,8 @@
    "coal_rents_pct_gdp": 17.0506562731343,
    "mineral_rents_pct_gdp": 0,
    "reserves_usd": 28196818.8690417,
-   "labor_force": 153739
+   "labor_force": 153739,
+   "gdp_growth_avg_1995_2000": 12.450231691361966
   },
   "KHM": {
    "name": "Cambodia",
@@ -1954,7 +2028,8 @@
    "coal_rents_pct_gdp": 0,
    "mineral_rents_pct_gdp": 0,
    "reserves_usd": 611415267.593156,
-   "labor_force": 5758610
+   "labor_force": 5758610,
+   "gdp_growth_avg_1995_2000": 7.864698192014802
   },
   "CMR": {
    "name": "Cameroon",
@@ -1978,7 +2053,8 @@
    "coal_rents_pct_gdp": 0,
    "mineral_rents_pct_gdp": 0.0193819949111035,
    "reserves_usd": 220219413.043293,
-   "labor_force": 6732947
+   "labor_force": 6732947,
+   "gdp_growth_avg_1995_2000": 4.117607359486168
   },
   "CAN": {
    "name": "Canada",
@@ -2007,7 +2083,8 @@
    "coal_rents_pct_gdp": 0.0678379849881592,
    "mineral_rents_pct_gdp": 0.180010591231763,
    "reserves_usd": 32427268296.4521,
-   "labor_force": 16186923
+   "labor_force": 16186923,
+   "gdp_growth_avg_1995_2000": 3.803980925791977
   },
   "CYM": {
    "name": "Cayman Islands",
@@ -2038,7 +2115,8 @@
    "coal_rents_pct_gdp": 0,
    "mineral_rents_pct_gdp": 0.00268071275368099,
    "reserves_usd": 136311955.642756,
-   "labor_force": 1518605
+   "labor_force": 1518605,
+   "gdp_growth_avg_1995_2000": 2.3850955758265284
   },
   "TCD": {
    "name": "Chad",
@@ -2062,7 +2140,8 @@
    "coal_rents_pct_gdp": 0,
    "mineral_rents_pct_gdp": 0,
    "reserves_usd": 113752750.287429,
-   "labor_force": 3012805
+   "labor_force": 3012805,
+   "gdp_growth_avg_1995_2000": 2.415577224640488
   },
   "CHI": {
    "name": "Channel Islands",
@@ -2102,7 +2181,8 @@
    "coal_rents_pct_gdp": 0,
    "mineral_rents_pct_gdp": 4.3408550303353,
    "reserves_usd": 15055115211.0232,
-   "labor_force": 6343733
+   "labor_force": 6343733,
+   "gdp_growth_avg_1995_2000": 5.440151031692338
   },
   "CHN": {
    "name": "China",
@@ -2130,7 +2210,8 @@
    "coal_rents_pct_gdp": 0.146386681969002,
    "mineral_rents_pct_gdp": 0.143065124667862,
    "reserves_usd": 171763098225.843,
-   "labor_force": 706837950
+   "labor_force": 706837950,
+   "gdp_growth_avg_1995_2000": 9.087442166973817
   },
   "COL": {
    "name": "Colombia",
@@ -2159,7 +2240,8 @@
    "coal_rents_pct_gdp": 0.00594743270414655,
    "mineral_rents_pct_gdp": 0.389708655622565,
    "reserves_usd": 9005870484.66314,
-   "labor_force": 17848151
+   "labor_force": 17848151,
+   "gdp_growth_avg_1995_2000": 1.6632027185491778
   },
   "COM": {
    "name": "Comoros",
@@ -2181,7 +2263,8 @@
    "coal_rents_pct_gdp": 0,
    "mineral_rents_pct_gdp": 0,
    "reserves_usd": 43370718.713776,
-   "labor_force": 118516
+   "labor_force": 118516,
+   "gdp_growth_avg_1995_2000": 1.8755074126509677
   },
   "COD": {
    "name": "Congo, Dem. Rep.",
@@ -2208,7 +2291,8 @@
    "coal_rents_pct_gdp": 0,
    "mineral_rents_pct_gdp": 0.0774613162726291,
    "reserves_usd": 82500000,
-   "labor_force": 19902693
+   "labor_force": 19902693,
+   "gdp_growth_avg_1995_2000": -3.1242404339567007
   },
   "COG": {
    "name": "Congo, Rep.",
@@ -2237,7 +2321,8 @@
    "coal_rents_pct_gdp": 0,
    "mineral_rents_pct_gdp": 0.000634467059634891,
    "reserves_usd": 225059391.973169,
-   "labor_force": 1237677
+   "labor_force": 1237677,
+   "gdp_growth_avg_1995_2000": 2.7303879319149353
   },
   "CRI": {
    "name": "Costa Rica",
@@ -2266,7 +2351,8 @@
    "coal_rents_pct_gdp": 0,
    "mineral_rents_pct_gdp": 0.000646314517951147,
    "reserves_usd": 1318296304.08344,
-   "labor_force": 1596716
+   "labor_force": 1596716,
+   "gdp_growth_avg_1995_2000": 4.336498106578765
   },
   "CIV": {
    "name": "Cote d'Ivoire",
@@ -2296,7 +2382,8 @@
    "gas_rents_pct_gdp": 0.21648578432124,
    "coal_rents_pct_gdp": 0,
    "mineral_rents_pct_gdp": 0,
-   "labor_force": 6253233
+   "labor_force": 6253233,
+   "gdp_growth_avg_1995_2000": 4.944814776515716
   },
   "HRV": {
    "name": "Croatia",
@@ -2324,7 +2411,8 @@
    "coal_rents_pct_gdp": 0,
    "mineral_rents_pct_gdp": 0,
    "reserves_usd": 3524350092.11558,
-   "labor_force": 1953924
+   "labor_force": 1953924,
+   "gdp_growth_avg_1995_2000": 3.896190100029567
   },
   "CUB": {
    "name": "Cuba",
@@ -2345,7 +2433,8 @@
    "gas_rents_pct_gdp": 0.0359991017269573,
    "coal_rents_pct_gdp": 0,
    "mineral_rents_pct_gdp": 0.758448871373936,
-   "labor_force": 4697933
+   "labor_force": 4697933,
+   "gdp_growth_avg_1995_2000": 4.223672900511565
   },
   "CUW": {
    "name": "Curacao",
@@ -2384,7 +2473,8 @@
    "coal_rents_pct_gdp": 0,
    "mineral_rents_pct_gdp": 0.0168027182428898,
    "reserves_usd": 1868515473.45376,
-   "labor_force": 444571
+   "labor_force": 444571,
+   "gdp_growth_avg_1995_2000": 4.8876805158549335
   },
   "CZE": {
    "name": "Czechia",
@@ -2412,7 +2502,8 @@
    "coal_rents_pct_gdp": 0.205842193385371,
    "mineral_rents_pct_gdp": 0,
    "reserves_usd": 13141569747.9339,
-   "labor_force": 5175714
+   "labor_force": 5175714,
+   "gdp_growth_avg_1995_2000": 2.4650053132080987
   },
   "DNK": {
    "name": "Denmark",
@@ -2439,7 +2530,8 @@
    "coal_rents_pct_gdp": 0,
    "mineral_rents_pct_gdp": 0,
    "reserves_usd": 15695951232.7906,
-   "labor_force": 2861618
+   "labor_force": 2861618,
+   "gdp_growth_avg_1995_2000": 3.019978456239448
   },
   "DJI": {
    "name": "Djibouti",
@@ -2475,7 +2567,8 @@
    "gas_rents_pct_gdp": 0,
    "coal_rents_pct_gdp": 0,
    "mineral_rents_pct_gdp": 0,
-   "reserves_usd": 29372786.7374406
+   "reserves_usd": 29372786.7374406,
+   "gdp_growth_avg_1995_2000": 2.46486941449635
   },
   "DOM": {
    "name": "Dominican Republic",
@@ -2503,7 +2596,8 @@
    "coal_rents_pct_gdp": 0,
    "mineral_rents_pct_gdp": 0.317058364257036,
    "reserves_usd": 632133042.125821,
-   "labor_force": 3248886
+   "labor_force": 3248886,
+   "gdp_growth_avg_1995_2000": 6.312470924446749
   },
   "ECU": {
    "name": "Ecuador",
@@ -2527,7 +2621,8 @@
    "coal_rents_pct_gdp": 0,
    "mineral_rents_pct_gdp": 0.0312504676242629,
    "reserves_usd": 1178958455.54318,
-   "labor_force": 5202036
+   "labor_force": 5202036,
+   "gdp_growth_avg_1995_2000": 1.3218510292140433
   },
   "EGY": {
    "name": "Egypt, Arab Rep.",
@@ -2558,7 +2653,8 @@
    "coal_rents_pct_gdp": 0.000265061368549735,
    "mineral_rents_pct_gdp": 0.0130912613990578,
    "reserves_usd": 13785040867.624,
-   "labor_force": 21302020
+   "labor_force": 21302020,
+   "gdp_growth_avg_1995_2000": 5.520414026022849
   },
   "SLV": {
    "name": "El Salvador",
@@ -2586,7 +2682,8 @@
    "coal_rents_pct_gdp": 0,
    "mineral_rents_pct_gdp": 0,
    "reserves_usd": 1901335075.18711,
-   "labor_force": 2300761
+   "labor_force": 2300761,
+   "gdp_growth_avg_1995_2000": 2.4376218970703563
   },
   "GNQ": {
    "name": "Equatorial Guinea",
@@ -2603,7 +2700,8 @@
    "coal_rents_pct_gdp": 0,
    "mineral_rents_pct_gdp": 0.0978975496561164,
    "reserves_usd": 23008388.6354031,
-   "labor_force": 248504
+   "labor_force": 248504,
+   "gdp_growth_avg_1995_2000": 50.28191702831973
   },
   "ERI": {
    "name": "Eritrea",
@@ -2625,7 +2723,8 @@
    "coal_rents_pct_gdp": 0,
    "mineral_rents_pct_gdp": 0.0765427492085766,
    "reserves_usd": 36131624.5351441,
-   "labor_force": 993784
+   "labor_force": 993784,
+   "gdp_growth_avg_1995_2000": 3.1116632474492363
   },
   "EST": {
    "name": "Estonia",
@@ -2652,7 +2751,8 @@
    "coal_rents_pct_gdp": 0,
    "mineral_rents_pct_gdp": 0,
    "reserves_usd": 922839655.587259,
-   "labor_force": 677821
+   "labor_force": 677821,
+   "gdp_growth_avg_1995_2000": 6.087026195878331
   },
   "SWZ": {
    "name": "Eswatini",
@@ -2678,7 +2778,8 @@
    "coal_rents_pct_gdp": 0.189353306502732,
    "mineral_rents_pct_gdp": 0,
    "reserves_usd": 351794140.719257,
-   "labor_force": 312687
+   "labor_force": 312687,
+   "gdp_growth_avg_1995_2000": 3.180933050621345
   },
   "ETH": {
    "name": "Ethiopia",
@@ -2707,7 +2808,8 @@
    "coal_rents_pct_gdp": 0,
    "mineral_rents_pct_gdp": 0.128654580125834,
    "reserves_usd": 362554236.557216,
-   "labor_force": 28908590
+   "labor_force": 28908590,
+   "gdp_growth_avg_1995_2000": 4.910802703044868
   },
   "FRO": {
    "name": "Faroe Islands",
@@ -2756,7 +2858,8 @@
    "coal_rents_pct_gdp": 0,
    "mineral_rents_pct_gdp": 0.474080642358969,
    "reserves_usd": 412013921.196277,
-   "labor_force": 324912
+   "labor_force": 324912,
+   "gdp_growth_avg_1995_2000": 2.2500002162868733
   },
   "FIN": {
    "name": "Finland",
@@ -2783,7 +2886,8 @@
    "coal_rents_pct_gdp": 0,
    "mineral_rents_pct_gdp": 0.0229423943544132,
    "reserves_usd": 8409731733.14766,
-   "labor_force": 2601528
+   "labor_force": 2601528,
+   "gdp_growth_avg_1995_2000": 4.982002263695916
   },
   "FRA": {
    "name": "France",
@@ -2810,7 +2914,8 @@
    "coal_rents_pct_gdp": 0.000426768443912514,
    "mineral_rents_pct_gdp": 0.000414116623984834,
    "reserves_usd": 63728079967.5087,
-   "labor_force": 27313657
+   "labor_force": 27313657,
+   "gdp_growth_avg_1995_2000": 2.8703061141278035
   },
   "PYF": {
    "name": "French Polynesia",
@@ -2828,7 +2933,8 @@
    "gas_rents_pct_gdp": 0,
    "coal_rents_pct_gdp": 0,
    "mineral_rents_pct_gdp": 0,
-   "labor_force": 95603
+   "labor_force": 95603,
+   "gdp_growth_avg_1995_2000": 0.9481662615728065
   },
   "GAB": {
    "name": "Gabon",
@@ -2852,7 +2958,8 @@
    "coal_rents_pct_gdp": 0,
    "mineral_rents_pct_gdp": 0.00282179770211503,
    "reserves_usd": 193613824.335929,
-   "labor_force": 363325
+   "labor_force": 363325,
+   "gdp_growth_avg_1995_2000": 1.166584760958053
   },
   "GMB": {
    "name": "Gambia, The",
@@ -2877,7 +2984,8 @@
    "coal_rents_pct_gdp": 0,
    "mineral_rents_pct_gdp": 0,
    "reserves_usd": 109431118.885127,
-   "labor_force": 374537
+   "labor_force": 374537,
+   "gdp_growth_avg_1995_2000": 3.900898492935564
   },
   "GEO": {
    "name": "Georgia",
@@ -2907,7 +3015,8 @@
    "coal_rents_pct_gdp": 0.000301396969052128,
    "mineral_rents_pct_gdp": 0.214207470912808,
    "reserves_usd": 115965903.57973,
-   "labor_force": 2341585
+   "labor_force": 2341585,
+   "gdp_growth_avg_1995_2000": 5.354852041742782
   },
   "DEU": {
    "name": "Germany",
@@ -2934,7 +3043,8 @@
    "coal_rents_pct_gdp": 0.0156124005348027,
    "mineral_rents_pct_gdp": 0.000222783857547795,
    "reserves_usd": 87496869035.2706,
-   "labor_force": 40210993
+   "labor_force": 40210993,
+   "gdp_growth_avg_1995_2000": 1.9164828988163782
   },
   "GHA": {
    "name": "Ghana",
@@ -2964,7 +3074,8 @@
    "coal_rents_pct_gdp": 0,
    "mineral_rents_pct_gdp": 3.03211311584058,
    "reserves_usd": 308900898.386218,
-   "labor_force": 8217643
+   "labor_force": 8217643,
+   "gdp_growth_avg_1995_2000": 4.285270876474457
   },
   "GIB": {
    "name": "Gibraltar",
@@ -2997,7 +3108,8 @@
    "coal_rents_pct_gdp": 0.0197360988211045,
    "mineral_rents_pct_gdp": 0.0153684132685933,
    "reserves_usd": 14594006578.5544,
-   "labor_force": 4679182
+   "labor_force": 4679182,
+   "gdp_growth_avg_1995_2000": 2.886436964109367
   },
   "GRL": {
    "name": "Greenland",
@@ -3010,7 +3122,8 @@
    "oil_rents_pct_gdp": 0,
    "gas_rents_pct_gdp": 0,
    "coal_rents_pct_gdp": 0,
-   "mineral_rents_pct_gdp": 0
+   "mineral_rents_pct_gdp": 0,
+   "gdp_growth_avg_1995_2000": 3.8274507172149126
   },
   "GRD": {
    "name": "Grenada",
@@ -3030,7 +3143,8 @@
    "gas_rents_pct_gdp": 0,
    "coal_rents_pct_gdp": 0,
    "mineral_rents_pct_gdp": 0,
-   "reserves_usd": 57660000
+   "reserves_usd": 57660000,
+   "gdp_growth_avg_1995_2000": 5.853837006185199
   },
   "GUM": {
    "name": "Guam",
@@ -3067,7 +3181,8 @@
    "coal_rents_pct_gdp": 0,
    "mineral_rents_pct_gdp": 0.0458793875654051,
    "reserves_usd": 1805677836.93431,
-   "labor_force": 4394451
+   "labor_force": 4394451,
+   "gdp_growth_avg_1995_2000": 4.119979340957595
   },
   "GIN": {
    "name": "Guinea",
@@ -3091,7 +3206,8 @@
    "coal_rents_pct_gdp": 0,
    "mineral_rents_pct_gdp": 4.9439374279438,
    "reserves_usd": 167593505.228715,
-   "labor_force": 2983857
+   "labor_force": 2983857,
+   "gdp_growth_avg_1995_2000": 4.035006263982525
   },
   "GNB": {
    "name": "Guinea-Bissau",
@@ -3114,7 +3230,8 @@
    "gas_rents_pct_gdp": 0,
    "coal_rents_pct_gdp": 0,
    "mineral_rents_pct_gdp": 0,
-   "labor_force": 436113
+   "labor_force": 436113,
+   "gdp_growth_avg_1995_2000": 2.9949287275033485
   },
   "GUY": {
    "name": "Guyana",
@@ -3139,7 +3256,8 @@
    "coal_rents_pct_gdp": 0,
    "mineral_rents_pct_gdp": 7.51547547185132,
    "reserves_usd": 304956640.973324,
-   "labor_force": 277438
+   "labor_force": 277438,
+   "gdp_growth_avg_1995_2000": 3.1808121863612464
   },
   "HTI": {
    "name": "Haiti",
@@ -3163,7 +3281,8 @@
    "coal_rents_pct_gdp": 0,
    "mineral_rents_pct_gdp": 0,
    "reserves_usd": 182507938.09891,
-   "labor_force": 3103912
+   "labor_force": 3103912,
+   "gdp_growth_avg_1995_2000": 3.7508903911639764
   },
   "HND": {
    "name": "Honduras",
@@ -3194,7 +3313,8 @@
    "coal_rents_pct_gdp": 0,
    "mineral_rents_pct_gdp": 0,
    "reserves_usd": 1318911702.08956,
-   "labor_force": 2409908
+   "labor_force": 2409908,
+   "gdp_growth_avg_1995_2000": 17.13730736130088
   },
   "HKG": {
    "name": "Hong Kong SAR, China",
@@ -3218,7 +3338,8 @@
    "coal_rents_pct_gdp": 0,
    "mineral_rents_pct_gdp": 0,
    "reserves_usd": 107560388150,
-   "labor_force": 3358981
+   "labor_force": 3358981,
+   "gdp_growth_avg_1995_2000": 2.669921158300888
   },
   "HUN": {
    "name": "Hungary",
@@ -3247,7 +3368,8 @@
    "coal_rents_pct_gdp": 0.0191863099342225,
    "mineral_rents_pct_gdp": 0.00165012313788559,
    "reserves_usd": 11217315165.5178,
-   "labor_force": 4344023
+   "labor_force": 4344023,
+   "gdp_growth_avg_1995_2000": 2.6520300079065584
   },
   "ISL": {
    "name": "Iceland",
@@ -3276,7 +3398,8 @@
    "coal_rents_pct_gdp": 0,
    "mineral_rents_pct_gdp": 0,
    "reserves_usd": 405074266.016599,
-   "labor_force": 167968
+   "labor_force": 167968,
+   "gdp_growth_avg_1995_2000": 4.0947934120663
   },
   "IND": {
    "name": "India",
@@ -3305,7 +3428,8 @@
    "coal_rents_pct_gdp": 0.493768594747216,
    "mineral_rents_pct_gdp": 0.261484986654409,
    "reserves_usd": 41059061574.6632,
-   "labor_force": 409617771
+   "labor_force": 409617771,
+   "gdp_growth_avg_1995_2000": 6.340832912832553
   },
   "IDN": {
    "name": "Indonesia",
@@ -3338,7 +3462,8 @@
    "coal_rents_pct_gdp": 0.145482052623159,
    "mineral_rents_pct_gdp": 0.990349937041244,
    "reserves_usd": 29352929561.4767,
-   "labor_force": 101308307
+   "labor_force": 101308307,
+   "gdp_growth_avg_1995_2000": 2.2204236110468565
   },
   "IRN": {
    "name": "Iran, Islamic Rep.",
@@ -3366,7 +3491,8 @@
    "gas_rents_pct_gdp": 2.30162442963997,
    "coal_rents_pct_gdp": 0.00362533401870033,
    "mineral_rents_pct_gdp": 0.0843084131247478,
-   "labor_force": 19476868
+   "labor_force": 19476868,
+   "gdp_growth_avg_1995_2000": 3.338367555637458
   },
   "IRQ": {
    "name": "Iraq",
@@ -3391,7 +3517,8 @@
    "coal_rents_pct_gdp": 0,
    "mineral_rents_pct_gdp": 0,
    "reserves_usd": 6744700000,
-   "labor_force": 5790991
+   "labor_force": 5790991,
+   "gdp_growth_avg_1995_2000": 17.29266928469357
   },
   "IRL": {
    "name": "Ireland",
@@ -3418,7 +3545,8 @@
    "coal_rents_pct_gdp": 0,
    "mineral_rents_pct_gdp": 0.0239798475453334,
    "reserves_usd": 5407973929.95671,
-   "labor_force": 1915533
+   "labor_force": 1915533,
+   "gdp_growth_avg_1995_2000": 9.455890694902756
   },
   "IMN": {
    "name": "Isle of Man",
@@ -3428,7 +3556,8 @@
    "gdp_growth_pct": 5.30000152552805,
    "urban_population_pct": 51.8280887588444,
    "pop_growth_pct": 1.15522158904352,
-   "mineral_rents_pct_gdp": 0
+   "mineral_rents_pct_gdp": 0,
+   "gdp_growth_avg_1995_2000": 8.850000541363652
   },
   "ISR": {
    "name": "Israel",
@@ -3455,7 +3584,8 @@
    "coal_rents_pct_gdp": 0,
    "mineral_rents_pct_gdp": 0,
    "reserves_usd": 23281206067.5375,
-   "labor_force": 2766361
+   "labor_force": 2766361,
+   "gdp_growth_avg_1995_2000": 5.338987905842839
   },
   "ITA": {
    "name": "Italy",
@@ -3483,7 +3613,8 @@
    "coal_rents_pct_gdp": 9.55690660531109e-7,
    "mineral_rents_pct_gdp": 0.000138489874672659,
    "reserves_usd": 47201146787.795,
-   "labor_force": 23341777
+   "labor_force": 23341777,
+   "gdp_growth_avg_1995_2000": 2.2537677381994516
   },
   "JAM": {
    "name": "Jamaica",
@@ -3510,7 +3641,8 @@
    "coal_rents_pct_gdp": 0,
    "mineral_rents_pct_gdp": 1.36817354519982,
    "reserves_usd": 1053690047.86883,
-   "labor_force": 1160690
+   "labor_force": 1160690,
+   "gdp_growth_avg_1995_2000": 0.11459830607625687
   },
   "JPN": {
    "name": "Japan",
@@ -3536,7 +3668,8 @@
    "coal_rents_pct_gdp": 0.0000500017498872993,
    "mineral_rents_pct_gdp": 0.000539184817417449,
    "reserves_usd": 361639097011.665,
-   "labor_force": 67813478
+   "labor_force": 67813478,
+   "gdp_growth_avg_1995_2000": 1.273096574794387
   },
   "JOR": {
    "name": "Jordan",
@@ -3565,7 +3698,8 @@
    "coal_rents_pct_gdp": 0,
    "mineral_rents_pct_gdp": 0,
    "reserves_usd": 3441302675.1737,
-   "labor_force": 1272412
+   "labor_force": 1272412,
+   "gdp_growth_avg_1995_2000": 3.7072976689623434
   },
   "KAZ": {
    "name": "Kazakhstan",
@@ -3592,7 +3726,8 @@
    "coal_rents_pct_gdp": 0.763275560850573,
    "mineral_rents_pct_gdp": 0.862769121792731,
    "reserves_usd": 2098969798.52753,
-   "labor_force": 7959482
+   "labor_force": 7959482,
+   "gdp_growth_avg_1995_2000": 0.7666666668241664
   },
   "KEN": {
    "name": "Kenya",
@@ -3616,7 +3751,8 @@
    "coal_rents_pct_gdp": 0,
    "mineral_rents_pct_gdp": 0.0200362817544637,
    "reserves_usd": 897865882.02821,
-   "labor_force": 11981408
+   "labor_force": 11981408,
+   "gdp_growth_avg_1995_2000": 2.5372092372331294
   },
   "KIR": {
    "name": "Kiribati",
@@ -3635,7 +3771,8 @@
    "oil_rents_pct_gdp": 0,
    "gas_rents_pct_gdp": 0,
    "coal_rents_pct_gdp": 0,
-   "mineral_rents_pct_gdp": 0
+   "mineral_rents_pct_gdp": 0,
+   "gdp_growth_avg_1995_2000": 1.858000336721372
   },
   "PRK": {
    "name": "Korea, Dem. People's Rep.",
@@ -3671,7 +3808,8 @@
    "coal_rents_pct_gdp": 0.0010203696930801,
    "mineral_rents_pct_gdp": 0.00865486696785494,
    "reserves_usd": 96250965793.1311,
-   "labor_force": 22567537
+   "labor_force": 22567537,
+   "gdp_growth_avg_1995_2000": 6.648117971215849
   },
   "XKX": {
    "name": "Kosovo",
@@ -3705,7 +3843,8 @@
    "coal_rents_pct_gdp": 0,
    "mineral_rents_pct_gdp": 0,
    "reserves_usd": 7779055735.12478,
-   "labor_force": 910204
+   "labor_force": 910204,
+   "gdp_growth_avg_1995_2000": 2.4173951905201796
   },
   "KGZ": {
    "name": "Kyrgyz Republic",
@@ -3730,7 +3869,8 @@
    "coal_rents_pct_gdp": 0.03503197691603,
    "mineral_rents_pct_gdp": 3.15869466085072,
    "reserves_usd": 261849461.304369,
-   "labor_force": 2126902
+   "labor_force": 2126902,
+   "gdp_growth_avg_1995_2000": 3.799482614330478
   },
   "LAO": {
    "name": "Lao PDR",
@@ -3755,7 +3895,8 @@
    "coal_rents_pct_gdp": 0.0445899933144997,
    "mineral_rents_pct_gdp": 0,
    "reserves_usd": 144286276.317585,
-   "labor_force": 1904793
+   "labor_force": 1904793,
+   "gdp_growth_avg_1995_2000": 6.317405969284575
   },
   "LVA": {
    "name": "Latvia",
@@ -3782,7 +3923,8 @@
    "coal_rents_pct_gdp": 0,
    "mineral_rents_pct_gdp": 0,
    "reserves_usd": 919162856.263872,
-   "labor_force": 1094541
+   "labor_force": 1094541,
+   "gdp_growth_avg_1995_2000": 4.289351357288828
   },
   "LBN": {
    "name": "Lebanon",
@@ -3809,7 +3951,8 @@
    "coal_rents_pct_gdp": 0,
    "mineral_rents_pct_gdp": 0,
    "reserves_usd": 8474638463.32522,
-   "labor_force": 1302966
+   "labor_force": 1302966,
+   "gdp_growth_avg_1995_2000": 3.8786292872339736
   },
   "LSO": {
    "name": "Lesotho",
@@ -3835,7 +3978,8 @@
    "coal_rents_pct_gdp": 0,
    "mineral_rents_pct_gdp": 0,
    "reserves_usd": 417891096.032124,
-   "labor_force": 876334
+   "labor_force": 876334,
+   "gdp_growth_avg_1995_2000": 3.0801342232977293
   },
   "LBR": {
    "name": "Liberia",
@@ -3856,7 +4000,8 @@
    "coal_rents_pct_gdp": 0,
    "mineral_rents_pct_gdp": 0.00585816302890919,
    "reserves_usd": 267707.367815772,
-   "labor_force": 1285795
+   "labor_force": 1285795,
+   "gdp_growth_avg_1995_2000": 32.45005359503868
   },
   "LBY": {
    "name": "Libya",
@@ -3877,7 +4022,8 @@
    "coal_rents_pct_gdp": 0,
    "mineral_rents_pct_gdp": 0,
    "reserves_usd": 13729870472.1936,
-   "labor_force": 1681222
+   "labor_force": 1681222,
+   "gdp_growth_avg_1995_2000": 1.0005120306635187
   },
   "LIE": {
    "name": "Liechtenstein",
@@ -3887,7 +4033,8 @@
    "gdp_growth_pct": 3.22019308239609,
    "urban_population_pct": 14.9899997711182,
    "pop_growth_pct": 1.30732907481793,
-   "mineral_rents_pct_gdp": 0
+   "mineral_rents_pct_gdp": 0,
+   "gdp_growth_avg_1995_2000": 6.899727695807752
   },
   "LTU": {
    "name": "Lithuania",
@@ -3914,7 +4061,8 @@
    "coal_rents_pct_gdp": 0,
    "mineral_rents_pct_gdp": 0,
    "reserves_usd": 1362679200.14877,
-   "labor_force": 1685904
+   "labor_force": 1685904,
+   "gdp_growth_avg_1995_2000": 4.400367966851313
   },
   "LUX": {
    "name": "Luxembourg",
@@ -3941,7 +4089,8 @@
    "coal_rents_pct_gdp": 0,
    "mineral_rents_pct_gdp": 0,
    "reserves_usd": 97465747.9509168,
-   "labor_force": 188913
+   "labor_force": 188913,
+   "gdp_growth_avg_1995_2000": 5.006405143660041
   },
   "MAC": {
    "name": "Macao SAR, China",
@@ -3967,7 +4116,8 @@
    "coal_rents_pct_gdp": 0,
    "mineral_rents_pct_gdp": 0,
    "reserves_usd": 3323014302.25176,
-   "labor_force": 217883
+   "labor_force": 217883,
+   "gdp_growth_avg_1995_2000": 0.23578784026718871
   },
   "MDG": {
    "name": "Madagascar",
@@ -3996,7 +4146,8 @@
    "coal_rents_pct_gdp": 0,
    "mineral_rents_pct_gdp": 0.000221203767551962,
    "reserves_usd": 285182984.805488,
-   "labor_force": 7777716
+   "labor_force": 7777716,
+   "gdp_growth_avg_1995_2000": 3.433241665235872
   },
   "MWI": {
    "name": "Malawi",
@@ -4018,7 +4169,8 @@
    "coal_rents_pct_gdp": 0.0385169697693728,
    "mineral_rents_pct_gdp": 0,
    "reserves_usd": 246503870.879229,
-   "labor_force": 4924494
+   "labor_force": 4924494,
+   "gdp_growth_avg_1995_2000": 6.058587907050485
   },
   "MYS": {
    "name": "Malaysia",
@@ -4048,7 +4200,8 @@
    "coal_rents_pct_gdp": 0.00041713945272182,
    "mineral_rents_pct_gdp": 0.0117604999428554,
    "reserves_usd": 28650936563.5297,
-   "labor_force": 9003136
+   "labor_force": 9003136,
+   "gdp_growth_avg_1995_2000": 5.79859878765783
   },
   "MDV": {
    "name": "Maldives",
@@ -4070,7 +4223,8 @@
    "coal_rents_pct_gdp": 0,
    "mineral_rents_pct_gdp": 0,
    "reserves_usd": 122801161.555359,
-   "labor_force": 92425
+   "labor_force": 92425,
+   "gdp_growth_avg_1995_2000": 7.793086926946757
   },
   "MLI": {
    "name": "Mali",
@@ -4098,7 +4252,8 @@
    "gas_rents_pct_gdp": 0,
    "coal_rents_pct_gdp": 0,
    "mineral_rents_pct_gdp": 1.98597769271002,
-   "labor_force": 4338346
+   "labor_force": 4338346,
+   "gdp_growth_avg_1995_2000": 3.639808113978741
   },
   "MLT": {
    "name": "Malta",
@@ -4126,7 +4281,8 @@
    "coal_rents_pct_gdp": 0,
    "mineral_rents_pct_gdp": 0,
    "reserves_usd": 1471281813.84209,
-   "labor_force": 155461
+   "labor_force": 155461,
+   "gdp_growth_avg_1995_2000": 7.483942404868537
   },
   "MHL": {
    "name": "Marshall Islands",
@@ -4142,7 +4298,8 @@
    "agriculture_pct_gdp": 8.0499135742804,
    "exports_pct_gdp": 28.8235217283402,
    "imports_pct_gdp": 101.259594996452,
-   "mineral_rents_pct_gdp": 0
+   "mineral_rents_pct_gdp": 0,
+   "gdp_growth_avg_1995_2000": -1.3482876400483088
   },
   "MRT": {
    "name": "Mauritania",
@@ -4167,7 +4324,8 @@
    "coal_rents_pct_gdp": 2.03141338076991,
    "mineral_rents_pct_gdp": 0,
    "reserves_usd": 49402252.9554015,
-   "labor_force": 670649
+   "labor_force": 670649,
+   "gdp_growth_avg_1995_2000": 2.354481286781575
   },
   "MUS": {
    "name": "Mauritius",
@@ -4196,7 +4354,8 @@
    "coal_rents_pct_gdp": 0,
    "mineral_rents_pct_gdp": 0,
    "reserves_usd": 914366133.679955,
-   "labor_force": 519717
+   "labor_force": 519717,
+   "gdp_growth_avg_1995_2000": 5.408120364554385
   },
   "MEX": {
    "name": "Mexico",
@@ -4225,7 +4384,8 @@
    "coal_rents_pct_gdp": 0.0010126660789203,
    "mineral_rents_pct_gdp": 0.0689659453339466,
    "reserves_usd": 35577279053.6649,
-   "labor_force": 38588417
+   "labor_force": 38588417,
+   "gdp_growth_avg_1995_2000": 3.579377834262395
   },
   "FSM": {
    "name": "Micronesia, Fed. Sts.",
@@ -4245,7 +4405,8 @@
    "imports_pct_gdp": 73.6008863462952,
    "gas_rents_pct_gdp": 0,
    "mineral_rents_pct_gdp": 0,
-   "reserves_usd": 113047175.64761
+   "reserves_usd": 113047175.64761,
+   "gdp_growth_avg_1995_2000": 1.0090818586442885
   },
   "MDA": {
    "name": "Moldova",
@@ -4274,7 +4435,8 @@
    "coal_rents_pct_gdp": 0,
    "mineral_rents_pct_gdp": 0,
    "reserves_usd": 222490325.115233,
-   "labor_force": 1340815
+   "labor_force": 1340815,
+   "gdp_growth_avg_1995_2000": -2.238787542080775
   },
   "MCO": {
    "name": "Monaco",
@@ -4284,7 +4446,8 @@
    "gdp_growth_pct": 3.91022992758094,
    "urban_population_pct": 100,
    "pop_growth_pct": 0.138749733197593,
-   "mineral_rents_pct_gdp": 0
+   "mineral_rents_pct_gdp": 0,
+   "gdp_growth_avg_1995_2000": 2.696528169422427
   },
   "MNG": {
    "name": "Mongolia",
@@ -4313,7 +4476,8 @@
    "coal_rents_pct_gdp": 1.51807420998017,
    "mineral_rents_pct_gdp": 3.03510381790946,
    "reserves_usd": 202077115.561911,
-   "labor_force": 921234
+   "labor_force": 921234,
+   "gdp_growth_avg_1995_2000": 3.3441003434907253
   },
   "MNE": {
    "name": "Montenegro",
@@ -4365,7 +4529,8 @@
    "coal_rents_pct_gdp": 0.000330792270591261,
    "mineral_rents_pct_gdp": 0.126939155104646,
    "reserves_usd": 5016934754.82375,
-   "labor_force": 9622622
+   "labor_force": 9622622,
+   "gdp_growth_avg_1995_2000": 2.820753520290283
   },
   "MOZ": {
    "name": "Mozambique",
@@ -4389,7 +4554,8 @@
    "coal_rents_pct_gdp": 0.00255061991420226,
    "mineral_rents_pct_gdp": 0.0017922560594659,
    "reserves_usd": 742321151.033547,
-   "labor_force": 8468296
+   "labor_force": 8468296,
+   "gdp_growth_avg_1995_2000": 7.931034118496719
   },
   "MMR": {
    "name": "Myanmar",
@@ -4414,7 +4580,8 @@
    "coal_rents_pct_gdp": 0.0113430463493619,
    "mineral_rents_pct_gdp": 0.210015668247603,
    "reserves_usd": 286495285.090852,
-   "labor_force": 20800913
+   "labor_force": 20800913,
+   "gdp_growth_avg_1995_2000": 8.266603906390085
   },
   "NAM": {
    "name": "Namibia",
@@ -4441,7 +4608,8 @@
    "coal_rents_pct_gdp": 0,
    "mineral_rents_pct_gdp": 0.235658118768329,
    "reserves_usd": 259836317.576791,
-   "labor_force": 575679
+   "labor_force": 575679,
+   "gdp_growth_avg_1995_2000": 3.577247705803115
   },
   "NRU": {
    "name": "Naoero",
@@ -4450,7 +4618,8 @@
    "gdp_per_capita_usd": 2648.60152860938,
    "gdp_growth_pct": -6.85616110197874,
    "urban_population_pct": 100,
-   "pop_growth_pct": -0.186686372077639
+   "pop_growth_pct": -0.186686372077639,
+   "gdp_growth_avg_1995_2000": -8.991493432479707
   },
   "NPL": {
    "name": "Nepal",
@@ -4479,7 +4648,8 @@
    "coal_rents_pct_gdp": 0.00361957120700216,
    "mineral_rents_pct_gdp": 0,
    "reserves_usd": 987342047.009883,
-   "labor_force": 5995668
+   "labor_force": 5995668,
+   "gdp_growth_avg_1995_2000": 4.579051891847789
   },
   "NLD": {
    "name": "Netherlands",
@@ -4507,7 +4677,8 @@
    "coal_rents_pct_gdp": 0,
    "mineral_rents_pct_gdp": 0,
    "reserves_usd": 17688007846.9298,
-   "labor_force": 8771496
+   "labor_force": 8771496,
+   "gdp_growth_avg_1995_2000": 4.1159818404626
   },
   "NCL": {
    "name": "New Caledonia",
@@ -4528,7 +4699,8 @@
    "gas_rents_pct_gdp": 0,
    "coal_rents_pct_gdp": 0,
    "mineral_rents_pct_gdp": 12.0832116134031,
-   "labor_force": 102413
+   "labor_force": 102413,
+   "gdp_growth_avg_1995_2000": 1.3661780558522942
   },
   "NZL": {
    "name": "New Zealand",
@@ -4561,7 +4733,8 @@
    "coal_rents_pct_gdp": 0.027335482931185,
    "mineral_rents_pct_gdp": 0.0783679904071662,
    "reserves_usd": 3952081062.22381,
-   "labor_force": 1929758
+   "labor_force": 1929758,
+   "gdp_growth_avg_1995_2000": 3.25170809784805
   },
   "NIC": {
    "name": "Nicaragua",
@@ -4589,7 +4762,8 @@
    "coal_rents_pct_gdp": 0,
    "mineral_rents_pct_gdp": 0.137652458211628,
    "reserves_usd": 492485081.971073,
-   "labor_force": 1804371
+   "labor_force": 1804371,
+   "gdp_growth_avg_1995_2000": 5.178678233819014
   },
   "NER": {
    "name": "Niger",
@@ -4614,7 +4788,8 @@
    "gas_rents_pct_gdp": 0,
    "coal_rents_pct_gdp": 0.0302576124785667,
    "mineral_rents_pct_gdp": 0.0022839421705727,
-   "labor_force": 4790760
+   "labor_force": 4790760,
+   "gdp_growth_avg_1995_2000": 2.104970839100943
   },
   "NGA": {
    "name": "Nigeria",
@@ -4637,7 +4812,8 @@
    "coal_rents_pct_gdp": 0.0000402063709273317,
    "mineral_rents_pct_gdp": 0.000153345750217713,
    "reserves_usd": 10099448197.5379,
-   "labor_force": 59281872
+   "labor_force": 59281872,
+   "gdp_growth_avg_1995_2000": 2.5402790759985243
   },
   "MKD": {
    "name": "North Macedonia",
@@ -4669,7 +4845,8 @@
    "coal_rents_pct_gdp": 0.00329262426606446,
    "mineral_rents_pct_gdp": 0.158868721809393,
    "reserves_usd": 460208291.007042,
-   "labor_force": 818451
+   "labor_force": 818451,
+   "gdp_growth_avg_1995_2000": 2.296209479054504
   },
   "MNP": {
    "name": "Northern Mariana Islands",
@@ -4702,7 +4879,8 @@
    "coal_rents_pct_gdp": 0.000686832030019998,
    "mineral_rents_pct_gdp": 0.00274125387903448,
    "reserves_usd": 27922060281.566,
-   "labor_force": 2399174
+   "labor_force": 2399174,
+   "gdp_growth_avg_1995_2000": 3.761069238990688
   },
   "OMN": {
    "name": "Oman",
@@ -4726,7 +4904,8 @@
    "coal_rents_pct_gdp": 0,
    "mineral_rents_pct_gdp": 0.000155385864358047,
    "reserves_usd": 2459611528.57575,
-   "labor_force": 812951
+   "labor_force": 812951,
+   "gdp_growth_avg_1995_2000": 3.416400696226465
   },
   "PAK": {
    "name": "Pakistan",
@@ -4754,7 +4933,8 @@
    "coal_rents_pct_gdp": 0.0294023180237195,
    "mineral_rents_pct_gdp": 0.000907732162106178,
    "reserves_usd": 2087167574.18215,
-   "labor_force": 44283074
+   "labor_force": 44283074,
+   "gdp_growth_avg_1995_2000": 3.5490069154278436
   },
   "PLW": {
    "name": "Palau",
@@ -4768,7 +4948,8 @@
    "manufacturing_pct_gdp": 2.73999286407952,
    "services_pct_gdp": 75.9950330650137,
    "agriculture_pct_gdp": 3.88969726667081,
-   "mineral_rents_pct_gdp": 0
+   "mineral_rents_pct_gdp": 0,
+   "gdp_growth_avg_1995_2000": 2.9326774513102385
   },
   "PAN": {
    "name": "Panama",
@@ -4793,7 +4974,8 @@
    "coal_rents_pct_gdp": 0,
    "mineral_rents_pct_gdp": 0.0236592233139777,
    "reserves_usd": 722595056.913888,
-   "labor_force": 1282474
+   "labor_force": 1282474,
+   "gdp_growth_avg_1995_2000": 5.2247575102937835
   },
   "PNG": {
    "name": "Papua New Guinea",
@@ -4821,7 +5003,8 @@
    "coal_rents_pct_gdp": 0,
    "mineral_rents_pct_gdp": 6.70115973815214,
    "reserves_usd": 304157921.747746,
-   "labor_force": 1611797
+   "labor_force": 1611797,
+   "gdp_growth_avg_1995_2000": -0.6485906421788149
   },
   "PRY": {
    "name": "Paraguay",
@@ -4852,7 +5035,8 @@
    "coal_rents_pct_gdp": 0,
    "mineral_rents_pct_gdp": 0,
    "reserves_usd": 772414513.758737,
-   "labor_force": 2152330
+   "labor_force": 2152330,
+   "gdp_growth_avg_1995_2000": 1.5044881688752092
   },
   "PER": {
    "name": "Peru",
@@ -4880,7 +5064,8 @@
    "coal_rents_pct_gdp": 0,
    "mineral_rents_pct_gdp": 1.31664311353393,
    "reserves_usd": 8675891763.57695,
-   "labor_force": 11421931
+   "labor_force": 11421931,
+   "gdp_growth_avg_1995_2000": 3.4141561720996663
   },
   "PHL": {
    "name": "Philippines",
@@ -4909,7 +5094,8 @@
    "coal_rents_pct_gdp": 0.0075243014100572,
    "mineral_rents_pct_gdp": 0.179542055129519,
    "reserves_usd": 15074070180.8191,
-   "labor_force": 29661770
+   "labor_force": 29661770,
+   "gdp_growth_avg_1995_2000": 3.814475041395155
   },
   "POL": {
    "name": "Poland",
@@ -4936,7 +5122,8 @@
    "coal_rents_pct_gdp": 0.182328645236043,
    "mineral_rents_pct_gdp": 0.0999517476893002,
    "reserves_usd": 27469379417.1751,
-   "labor_force": 17100972
+   "labor_force": 17100972,
+   "gdp_growth_avg_1995_2000": 5.7265953411210555
   },
   "PRT": {
    "name": "Portugal",
@@ -4963,7 +5150,8 @@
    "coal_rents_pct_gdp": 0,
    "mineral_rents_pct_gdp": 0.0000929800904584882,
    "reserves_usd": 14262113156.7968,
-   "labor_force": 5230882
+   "labor_force": 5230882,
+   "gdp_growth_avg_1995_2000": 4.119768749062193
   },
   "PRI": {
    "name": "Puerto Rico (US)",
@@ -4984,7 +5172,8 @@
    "gas_rents_pct_gdp": 0,
    "coal_rents_pct_gdp": 0,
    "mineral_rents_pct_gdp": 0,
-   "labor_force": 1335977
+   "labor_force": 1335977,
+   "gdp_growth_avg_1995_2000": 4.322528803549157
   },
   "QAT": {
    "name": "Qatar",
@@ -5009,7 +5198,8 @@
    "coal_rents_pct_gdp": 0,
    "mineral_rents_pct_gdp": 0,
    "reserves_usd": 1163240534.55415,
-   "labor_force": 407864
+   "labor_force": 407864,
+   "gdp_growth_avg_1995_2000": 10.052671481390199
   },
   "ROU": {
    "name": "Romania",
@@ -5037,7 +5227,8 @@
    "coal_rents_pct_gdp": 0.0471360430458419,
    "mineral_rents_pct_gdp": 0.03351046349024,
    "reserves_usd": 3395672575.31484,
-   "labor_force": 9326339
+   "labor_force": 9326339,
+   "gdp_growth_avg_1995_2000": 0.891156780275916
   },
   "RUS": {
    "name": "Russian Federation",
@@ -5065,7 +5256,8 @@
    "coal_rents_pct_gdp": 0.267292850766668,
    "mineral_rents_pct_gdp": 0.833857339720371,
    "reserves_usd": 27656266696.1263,
-   "labor_force": 73640731
+   "labor_force": 73640731,
+   "gdp_growth_avg_1995_2000": 0.7668896400242184
   },
   "RWA": {
    "name": "Rwanda",
@@ -5090,7 +5282,8 @@
    "coal_rents_pct_gdp": 0,
    "mineral_rents_pct_gdp": 0.000990536748657988,
    "reserves_usd": 190641890.700648,
-   "labor_force": 2733475
+   "labor_force": 2733475,
+   "gdp_growth_avg_1995_2000": 13.900163384718903
   },
   "WSM": {
    "name": "Samoa",
@@ -5113,7 +5306,8 @@
    "coal_rents_pct_gdp": 0,
    "mineral_rents_pct_gdp": 0,
    "reserves_usd": 63657900.5985558,
-   "labor_force": 60878
+   "labor_force": 60878,
+   "gdp_growth_avg_1995_2000": 3.994900958822424
   },
   "SMR": {
    "name": "San Marino",
@@ -5149,7 +5343,8 @@
    "lending_rate_pct": 37,
    "lending_rate_pct_year": 2001,
    "reserves_usd": 11639663.8147925,
-   "labor_force": 19926
+   "labor_force": 19926,
+   "gdp_growth_avg_1995_2000": 1.6574476890529564
   },
   "SAU": {
    "name": "Saudi Arabia",
@@ -5173,7 +5368,8 @@
    "coal_rents_pct_gdp": 0,
    "mineral_rents_pct_gdp": 0.000106454883501944,
    "reserves_usd": 20846854711.0682,
-   "labor_force": 4891476
+   "labor_force": 4891476,
+   "gdp_growth_avg_1995_2000": 2.19204373178648
   },
   "SEN": {
    "name": "Senegal",
@@ -5198,7 +5394,8 @@
    "gas_rents_pct_gdp": 0.000126094662309987,
    "coal_rents_pct_gdp": 0,
    "mineral_rents_pct_gdp": 0.018732296161395,
-   "labor_force": 2812633
+   "labor_force": 2812633,
+   "gdp_growth_avg_1995_2000": 4.433860271293612
   },
   "SRB": {
    "name": "Serbia",
@@ -5222,7 +5419,8 @@
    "gas_rents_pct_gdp": 0.155676752650817,
    "coal_rents_pct_gdp": 0.380086161152018,
    "mineral_rents_pct_gdp": 0,
-   "labor_force": 3502798
+   "labor_force": 3502798,
+   "gdp_growth_avg_1995_2000": 3.234079970120368
   },
   "SYC": {
    "name": "Seychelles",
@@ -5248,7 +5446,8 @@
    "gas_rents_pct_gdp": 0,
    "coal_rents_pct_gdp": 0,
    "mineral_rents_pct_gdp": 0,
-   "reserves_usd": 43752074.0468577
+   "reserves_usd": 43752074.0468577,
+   "gdp_growth_avg_1995_2000": 5.211544799395134
   },
   "SLE": {
    "name": "Sierra Leone",
@@ -5271,7 +5470,8 @@
    "coal_rents_pct_gdp": 0,
    "mineral_rents_pct_gdp": 0,
    "reserves_usd": 49207274.4210529,
-   "labor_force": 1605291
+   "labor_force": 1605291,
+   "gdp_growth_avg_1995_2000": -0.9440928321688999
   },
   "SGP": {
    "name": "Singapore",
@@ -5300,7 +5500,8 @@
    "coal_rents_pct_gdp": 0,
    "mineral_rents_pct_gdp": 0,
    "reserves_usd": 81084978988.8663,
-   "labor_force": 2138100
+   "labor_force": 2138100,
+   "gdp_growth_avg_1995_2000": 5.92144569478716
   },
   "SXM": {
    "name": "Sint Maarten (Dutch part)",
@@ -5333,7 +5534,8 @@
    "coal_rents_pct_gdp": 0.0109042669454798,
    "mineral_rents_pct_gdp": 0.0140502267731677,
    "reserves_usd": 4376328677.41435,
-   "labor_force": 2581927
+   "labor_force": 2581927,
+   "gdp_growth_avg_1995_2000": 3.598497379078676
   },
   "SVN": {
    "name": "Slovenia",
@@ -5362,7 +5564,8 @@
    "coal_rents_pct_gdp": 0.0163917600364402,
    "mineral_rents_pct_gdp": 0,
    "reserves_usd": 3196099145.64647,
-   "labor_force": 962184
+   "labor_force": 962184,
+   "gdp_growth_avg_1995_2000": 4.003644539294787
   },
   "SLB": {
    "name": "Solomon Islands",
@@ -5383,7 +5586,8 @@
    "coal_rents_pct_gdp": 0,
    "mineral_rents_pct_gdp": 0.172246350023643,
    "reserves_usd": 32044869.2772408,
-   "labor_force": 211276
+   "labor_force": 211276,
+   "gdp_growth_avg_1995_2000": -0.44779550113374533
   },
   "SOM": {
    "name": "Somalia, Fed. Rep.",
@@ -5394,7 +5598,8 @@
    "unemployment_pct": 18.678,
    "urban_population_pct": 33.0596136927225,
    "pop_growth_pct": 4.00097862828906,
-   "labor_force": 1586078
+   "labor_force": 1586078,
+   "gdp_growth_avg_1995_2000": 5.705367730666956
   },
   "ZAF": {
    "name": "South Africa",
@@ -5423,7 +5628,8 @@
    "coal_rents_pct_gdp": 1.27706430854382,
    "mineral_rents_pct_gdp": 0.706162575140753,
    "reserves_usd": 7702061131.77161,
-   "labor_force": 17579103
+   "labor_force": 17579103,
+   "gdp_growth_avg_1995_2000": 2.8499999996264287
   },
   "SSD": {
    "name": "South Sudan",
@@ -5460,7 +5666,8 @@
    "coal_rents_pct_gdp": 0.00384465623039873,
    "mineral_rents_pct_gdp": 0.00693067970674643,
    "reserves_usd": 35607623344.835,
-   "labor_force": 18277062
+   "labor_force": 18277062,
+   "gdp_growth_avg_1995_2000": 3.8106148432558613
   },
   "LKA": {
    "name": "Sri Lanka",
@@ -5490,7 +5697,8 @@
    "coal_rents_pct_gdp": 0,
    "mineral_rents_pct_gdp": 0,
    "reserves_usd": 1131355289.18666,
-   "labor_force": 7826298
+   "labor_force": 7826298,
+   "gdp_growth_avg_1995_2000": 5.117408139949455
   },
   "KNA": {
    "name": "St. Kitts and Nevis",
@@ -5515,7 +5723,8 @@
    "gas_rents_pct_gdp": 0,
    "coal_rents_pct_gdp": 0,
    "mineral_rents_pct_gdp": 0,
-   "reserves_usd": 45199214.9459163
+   "reserves_usd": 45199214.9459163,
+   "gdp_growth_avg_1995_2000": 5.137649419458632
   },
   "LCA": {
    "name": "St. Lucia",
@@ -5537,7 +5746,8 @@
    "coal_rents_pct_gdp": 0,
    "mineral_rents_pct_gdp": 0,
    "reserves_usd": 78828583.5046657,
-   "labor_force": 68701
+   "labor_force": 68701,
+   "gdp_growth_avg_1995_2000": 2.163751160052246
   },
   "MAF": {
    "name": "St. Martin (French part)",
@@ -5569,7 +5779,8 @@
    "coal_rents_pct_gdp": 0,
    "mineral_rents_pct_gdp": 0,
    "reserves_usd": 55179038.1673819,
-   "labor_force": 50373
+   "labor_force": 50373,
+   "gdp_growth_avg_1995_2000": 3.4998751117490614
   },
   "SDN": {
    "name": "Sudan",
@@ -5593,7 +5804,8 @@
    "coal_rents_pct_gdp": 0,
    "mineral_rents_pct_gdp": 0.0964740807339254,
    "reserves_usd": 137814239.250022,
-   "labor_force": 7658513
+   "labor_force": 7658513,
+   "gdp_growth_avg_1995_2000": 7.331223419929948
   },
   "SUR": {
    "name": "Suriname",
@@ -5615,7 +5827,8 @@
    "coal_rents_pct_gdp": 0,
    "mineral_rents_pct_gdp": 2.29570986124248,
    "reserves_usd": 133306155.826373,
-   "labor_force": 150740
+   "labor_force": 150740,
+   "gdp_growth_avg_1995_2000": 1.6166664924350236
   },
   "SWE": {
    "name": "Sweden",
@@ -5643,7 +5856,8 @@
    "coal_rents_pct_gdp": 0,
    "mineral_rents_pct_gdp": 0.068212327043002,
    "reserves_usd": 16498728321.8884,
-   "labor_force": 4486411
+   "labor_force": 4486411,
+   "gdp_growth_avg_1995_2000": 3.6570290172012414
   },
   "CHE": {
    "name": "Switzerland",
@@ -5671,7 +5885,8 @@
    "coal_rents_pct_gdp": 0,
    "mineral_rents_pct_gdp": 0,
    "reserves_usd": 53620270122.4935,
-   "labor_force": 3994754
+   "labor_force": 3994754,
+   "gdp_growth_avg_1995_2000": 2.473596642956291
   },
   "SYR": {
    "name": "Syrian Arab Republic",
@@ -5694,7 +5909,8 @@
    "coal_rents_pct_gdp": 0,
    "mineral_rents_pct_gdp": 0,
    "reserves_usd": 354635059.439827,
-   "labor_force": 4923495
+   "labor_force": 4923495,
+   "gdp_growth_avg_1995_2000": 4.29724344975172
   },
   "TJK": {
    "name": "Tajikistan",
@@ -5722,7 +5938,8 @@
    "coal_rents_pct_gdp": 0.00294294614513765,
    "mineral_rents_pct_gdp": 0.633697728184772,
    "reserves_usd": 94280831.9251687,
-   "labor_force": 1995679
+   "labor_force": 1995679,
+   "gdp_growth_avg_1995_2000": -1.6831506100932865
   },
   "TZA": {
    "name": "Tanzania",
@@ -5747,7 +5964,8 @@
    "coal_rents_pct_gdp": 0.00549717668500516,
    "mineral_rents_pct_gdp": 0.243283021929786,
    "reserves_usd": 994821489.507031,
-   "labor_force": 16421275
+   "labor_force": 16421275,
+   "gdp_growth_avg_1995_2000": 4.12211947501583
   },
   "THA": {
    "name": "Thailand",
@@ -5776,7 +5994,8 @@
    "coal_rents_pct_gdp": 0.0396739853349757,
    "mineral_rents_pct_gdp": 0.00208046959774586,
    "reserves_usd": 32665494240.0387,
-   "labor_force": 35011504
+   "labor_force": 35011504,
+   "gdp_growth_avg_1995_2000": 2.068700694435368
   },
   "TLS": {
    "name": "Timor-Leste",
@@ -5794,7 +6013,8 @@
    "exports_pct_gdp": 10.6180757175254,
    "imports_pct_gdp": 165.030389102057,
    "mineral_rents_pct_gdp": 0,
-   "labor_force": 298005
+   "labor_force": 298005,
+   "gdp_growth_avg_1995_2000": 6.548185377246194
   },
   "TGO": {
    "name": "Togo",
@@ -5823,7 +6043,8 @@
    "gas_rents_pct_gdp": 0,
    "coal_rents_pct_gdp": 0,
    "mineral_rents_pct_gdp": 0,
-   "labor_force": 1577391
+   "labor_force": 1577391,
+   "gdp_growth_avg_1995_2000": 5.076302797282257
   },
   "TON": {
    "name": "Tonga",
@@ -5846,7 +6067,8 @@
    "coal_rents_pct_gdp": 0,
    "mineral_rents_pct_gdp": 0,
    "reserves_usd": 24642268.2072332,
-   "labor_force": 37080
+   "labor_force": 37080,
+   "gdp_growth_avg_1995_2000": 2.344946185467533
   },
   "TTO": {
    "name": "Trinidad and Tobago",
@@ -5873,7 +6095,8 @@
    "coal_rents_pct_gdp": 0,
    "mineral_rents_pct_gdp": 0,
    "reserves_usd": 1402802249.32216,
-   "labor_force": 616212
+   "labor_force": 616212,
+   "gdp_growth_avg_1995_2000": 6.919664410917666
   },
   "TUN": {
    "name": "Tunisia",
@@ -5901,7 +6124,8 @@
    "coal_rents_pct_gdp": 0,
    "mineral_rents_pct_gdp": 0.0157043017549626,
    "reserves_usd": 1871427065.05158,
-   "labor_force": 3270136
+   "labor_force": 3270136,
+   "gdp_growth_avg_1995_2000": 5.08117736513397
   },
   "TUR": {
    "name": "Turkiye",
@@ -5925,7 +6149,8 @@
    "coal_rents_pct_gdp": 0.0163299373783943,
    "mineral_rents_pct_gdp": 0.0238700694895731,
    "reserves_usd": 23514529510.3899,
-   "labor_force": 22804910
+   "labor_force": 22804910,
+   "gdp_growth_avg_1995_2000": 4.705835799389843
   },
   "TKM": {
    "name": "Turkmenistan",
@@ -5946,7 +6171,8 @@
    "gas_rents_pct_gdp": 28.8052994112694,
    "coal_rents_pct_gdp": 0,
    "mineral_rents_pct_gdp": 0,
-   "labor_force": 1532537
+   "labor_force": 1532537,
+   "gdp_growth_avg_1995_2000": 2.8615025089599726
   },
   "TCA": {
    "name": "Turks and Caicos Islands",
@@ -5970,7 +6196,8 @@
    "manufacturing_pct_gdp": 0.69737995519626,
    "agriculture_pct_gdp": 16.5501120093503,
    "gas_rents_pct_gdp": 0,
-   "mineral_rents_pct_gdp": 0
+   "mineral_rents_pct_gdp": 0,
+   "gdp_growth_avg_1995_2000": 2.0082987984944443
   },
   "UGA": {
    "name": "Uganda",
@@ -5995,7 +6222,8 @@
    "coal_rents_pct_gdp": 0,
    "mineral_rents_pct_gdp": 0.00185183596797401,
    "reserves_usd": 808042388.803331,
-   "labor_force": 8905138
+   "labor_force": 8905138,
+   "gdp_growth_avg_1995_2000": 6.966080242625638
   },
   "UKR": {
    "name": "Ukraine",
@@ -6024,7 +6252,8 @@
    "coal_rents_pct_gdp": 0.863746448384337,
    "mineral_rents_pct_gdp": 0,
    "reserves_usd": 1477202335.54994,
-   "labor_force": 23286247
+   "labor_force": 23286247,
+   "gdp_growth_avg_1995_2000": -3.5666666668602165
   },
   "ARE": {
    "name": "United Arab Emirates",
@@ -6045,7 +6274,8 @@
    "coal_rents_pct_gdp": 0,
    "mineral_rents_pct_gdp": 0,
    "reserves_usd": 13631620189.1667,
-   "labor_force": 2060609
+   "labor_force": 2060609,
+   "gdp_growth_avg_1995_2000": 5.787266776054647
   },
   "GBR": {
    "name": "United Kingdom",
@@ -6074,7 +6304,8 @@
    "coal_rents_pct_gdp": 0.00314835134288216,
    "mineral_rents_pct_gdp": 0.00000394334534740473,
    "reserves_usd": 50939389681.3509,
-   "labor_force": 29283662
+   "labor_force": 29283662,
+   "gdp_growth_avg_1995_2000": 3.623907768691875
   },
   "USA": {
    "name": "United States",
@@ -6103,7 +6334,8 @@
    "coal_rents_pct_gdp": 0.140193028838508,
    "mineral_rents_pct_gdp": 0.0134401090902058,
    "reserves_usd": 128399516602.723,
-   "labor_force": 147139887
+   "labor_force": 147139887,
+   "gdp_growth_avg_1995_2000": 4.0422459213233255
   },
   "URY": {
    "name": "Uruguay",
@@ -6133,7 +6365,8 @@
    "coal_rents_pct_gdp": 0,
    "mineral_rents_pct_gdp": 0.0185114499533399,
    "reserves_usd": 2775536525.06833,
-   "labor_force": 1486319
+   "labor_force": 1486319,
+   "gdp_growth_avg_1995_2000": 2.2910092562347932
   },
   "UZB": {
    "name": "Uzbekistan",
@@ -6154,7 +6387,8 @@
    "gas_rents_pct_gdp": 7.45483715071037,
    "coal_rents_pct_gdp": 0.0200116320320681,
    "mineral_rents_pct_gdp": 0.164238515501257,
-   "labor_force": 8934705
+   "labor_force": 8934705,
+   "gdp_growth_avg_1995_2000": 3.072499999526965
   },
   "VUT": {
    "name": "Vanuatu",
@@ -6176,7 +6410,8 @@
    "coal_rents_pct_gdp": 0,
    "mineral_rents_pct_gdp": 0,
    "reserves_usd": 38922820.4827534,
-   "labor_force": 81643
+   "labor_force": 81643,
+   "gdp_growth_avg_1995_2000": 2.6128416291967635
   },
   "VEN": {
    "name": "Venezuela, RB",
@@ -6200,7 +6435,8 @@
    "coal_rents_pct_gdp": 0,
    "mineral_rents_pct_gdp": 0.0791049284520338,
    "reserves_usd": 15898851162.5221,
-   "labor_force": 10357302
+   "labor_force": 10357302,
+   "gdp_growth_avg_1995_2000": 1.3523032921845795
   },
   "VNM": {
    "name": "Viet Nam",
@@ -6223,7 +6459,8 @@
    "coal_rents_pct_gdp": 0.0337048058208645,
    "mineral_rents_pct_gdp": 0.0281474119945084,
    "reserves_usd": 3416511105.0847,
-   "labor_force": 38790735
+   "labor_force": 38790735,
+   "gdp_growth_avg_1995_2000": 7.392990094038076
   },
   "VIR": {
    "name": "Virgin Islands (U.S.)",
@@ -6256,7 +6493,8 @@
    "oil_rents_pct_gdp": 0,
    "coal_rents_pct_gdp": 0,
    "mineral_rents_pct_gdp": 0,
-   "labor_force": 618184
+   "labor_force": 618184,
+   "gdp_growth_avg_1995_2000": 6.176527133117059
   },
   "YEM": {
    "name": "Yemen, Rep.",
@@ -6280,7 +6518,8 @@
    "coal_rents_pct_gdp": 0,
    "mineral_rents_pct_gdp": 0,
    "reserves_usd": 2913976400.77575,
-   "labor_force": 4519390
+   "labor_force": 4519390,
+   "gdp_growth_avg_1995_2000": 5.2499318945190065
   },
   "ZMB": {
    "name": "Zambia",
@@ -6310,7 +6549,8 @@
    "coal_rents_pct_gdp": 0.0485167841095833,
    "mineral_rents_pct_gdp": 0.620250874620162,
    "reserves_usd": 244824131.796944,
-   "labor_force": 3100873
+   "labor_force": 3100873,
+   "gdp_growth_avg_1995_2000": 3.5153315705910284
   },
   "ZWE": {
    "name": "Zimbabwe",
@@ -6332,7 +6572,8 @@
    "coal_rents_pct_gdp": 0.716746800797967,
    "mineral_rents_pct_gdp": 0.801847432306675,
    "reserves_usd": 321301858.310207,
-   "labor_force": 4537120
+   "labor_force": 4537120,
+   "gdp_growth_avg_1995_2000": 2.034600283528225
   }
  }
 }

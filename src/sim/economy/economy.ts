@@ -45,7 +45,10 @@ export interface EconomyState {
   unemployment: number;
   naturalUnemployment: number;
   interestRate: number;
-  neutralRate: number;
+  /** Real neutral rate; the neutral nominal rate is this plus the inflation anchor. */
+  realRate: number;
+  /** Long-run inflation target the anchor converges to. */
+  inflationTarget: number;
   /** Percent of GDP. */
   revenue: number;
   spending: number;
@@ -66,7 +69,24 @@ export interface EconomyState {
   resources: Record<string, number>;
   /** Fields that are gameplay estimates (no World Bank figure). */
   estimated: string[];
+  /** Economic modifiers in force at the start: only changes from these move the economy (2000 figures already include them). */
+  modBase: Record<string, number> | null;
 }
+
+const ECON_MODS = ["gdp_growth", "inflation", "interest_rate", "tax_efficiency", "welfare_cost", "population_growth", "construction_speed"];
+/** Economic modifiers relative to those in force when the game started. */
+function econMods(db: ContentDB, cs: CountryState): Record<string, number> {
+  const mods = countryModifiers(db, cs);
+  const e = cs.economy!;
+  e.modBase ??= Object.fromEntries(ECON_MODS.map((k) => [k, mods[k] ?? 0]));
+  return Object.fromEntries(ECON_MODS.map((k) => [k, (mods[k] ?? 0) - (e.modBase![k] ?? 0)]));
+}
+
+/** Neutral nominal interest rate. */
+export const neutralRate = (e: EconomyState) => e.realRate + e.inflationAnchor;
+/** Catch-up potential growth from income alone. */
+export const catchUpTrend = (db: ContentDB, gdppc: number) =>
+  db.economyRules.trend_growth_base + db.economyRules.trend_growth_catch_up * clamp(1 - Math.log10(Math.max(100, gdppc)) / 5, 0, 1);
 
 export interface MarketState {
   /** Price index per resource, 1 = 2000 level. */
@@ -112,7 +132,9 @@ export function initialEconomy(db: ContentDB, tag: string, mapPopulation: number
     return f.value;
   };
   const growth0 = num("gdp_growth_pct");
-  const trend = rules.trend_growth_base + rules.trend_growth_catch_up * clamp(1 - Math.log10(Math.max(100, gdppc)) / 5, 0, 1);
+  const formula = catchUpTrend(db, gdppc);
+  const avg = num("gdp_growth_avg_1995_2000");
+  const trend = clamp(avg === undefined ? formula : rules.trend_history_weight * clamp(avg, -2, 10) + (1 - rules.trend_history_weight) * formula, -1, 9);
   if (growth0 === undefined) estimated.push("growth");
   const inflation = clamp(fig("inflation_pct", "inflation"), -5, 200);
   const unemployment = clamp(fig("unemployment_pct", "unemployment"), 0.5, 60);
@@ -137,7 +159,8 @@ export function initialEconomy(db: ContentDB, tag: string, mapPopulation: number
     unemployment,
     naturalUnemployment: unemployment,
     interestRate: lending,
-    neutralRate: lending,
+    realRate: clamp(lending - inflation, 1, 10),
+    inflationTarget: rules.inflation_targets[incomeTier(gdppc)] ?? 3,
     revenue,
     spending,
     revenueTarget: revenue,
@@ -153,6 +176,7 @@ export function initialEconomy(db: ContentDB, tag: string, mapPopulation: number
     shocks: [],
     resources,
     estimated,
+    modBase: null,
   };
 }
 
@@ -169,7 +193,7 @@ export function factories(db: ContentDB, e: EconomyState): { civ: number; mil: n
 export function constructionPerDay(db: ContentDB, cs: CountryState): { factories: number; consumerShare: number; points: number } {
   const e = cs.economy!;
   const consumerShare = db.economyRules.consumer_goods_share[cs.laws.economic_system ?? ""] ?? 0.35;
-  const mods = countryModifiers(db, cs);
+  const mods = econMods(db, cs);
   const free = factories(db, e).civ * (1 - consumerShare);
   return { factories: free, consumerShare, points: free * db.economyRules.construction_per_factory * (1 + (mods.construction_speed ?? 0)) };
 }
@@ -196,12 +220,12 @@ export interface GrowthPart {
 export function growthTarget(db: ContentDB, state: GameState, cs: CountryState): { target: number; parts: GrowthPart[] } {
   const e = cs.economy!;
   const r = db.economyRules;
-  const mods = countryModifiers(db, cs);
+  const mods = econMods(db, cs);
   const shock = shockNow(e, state.day);
   const parts: GrowthPart[] = [{ label: "Potential growth", value: e.trend }];
   const fiscal = r.fiscal_multiplier * (e.spending - e.revenue - e.startDeficit);
   if (Math.abs(fiscal) >= 0.01) parts.push({ label: "Fiscal stance", value: fiscal });
-  const monetary = -r.rate_effect * (e.interestRate - e.neutralRate);
+  const monetary = -r.rate_effect * (e.interestRate - neutralRate(e));
   if (Math.abs(monetary) >= 0.01) parts.push({ label: "Interest rates", value: monetary });
   const stab = (cs.stability - 0.5) * 2;
   if (Math.abs(stab) >= 0.01) parts.push({ label: "Stability", value: stab });
@@ -227,7 +251,7 @@ function resourceIncomeEffect(db: ContentDB, state: GameState, e: EconomyState):
 export function economicMood(e: EconomyState, day: number): number {
   const shock = shockNow(e, day);
   return clamp(
-    (e.growth - e.trend) / 2.5 - (e.unemployment - e.naturalUnemployment) / 4 - Math.max(0, e.inflation - Math.max(8, e.inflationAnchor + 4)) / 15 + shock.growth / 20,
+    (e.growth - e.trend) / 4 - (e.unemployment - e.naturalUnemployment) / 6 - Math.max(0, e.inflation - Math.max(6, e.inflationAnchor + 3)) / 20 + shock.growth / 25,
     -1,
     1,
   );
@@ -237,9 +261,12 @@ function monthlyCountry(ctx: SimContext, cs: CountryState): void {
   const { db, state, rng } = ctx;
   const e = cs.economy!;
   const r = db.economyRules;
-  const mods = countryModifiers(db, cs);
+  const mods = econMods(db, cs);
   const shock = shockNow(e, state.day);
-  const g0 = e.growth;
+  // slow structural change: potential growth converges on the catch-up path, inflation on its target
+  e.trend += (catchUpTrend(db, (e.gdp * 1e9) / Math.max(1, e.population)) - e.trend) * r.trend_convergence;
+  e.inflationAnchor += (e.inflationTarget - e.inflationAnchor) * r.anchor_convergence;
+  e.realRate += (2.5 - e.realRate) * 0.005;
   const { target } = growthTarget(db, state, cs);
   e.growth = clamp(e.growth + (target - e.growth) * r.growth_adjustment + 0.25 * rng.normal(), -20, 25);
   e.gdp *= (1 + e.growth / 100) ** (1 / 12);
@@ -253,12 +280,18 @@ function monthlyCountry(ctx: SimContext, cs: CountryState): void {
     300,
   );
   // central bank: lean against inflation and the growth gap
-  const rateTarget = clamp(e.neutralRate + 1.5 * (e.inflation - e.inflationAnchor) + 0.5 * gap + (mods.interest_rate ?? 0) * 100, 0, 80);
+  const rateTarget = clamp(neutralRate(e) + 1.5 * (e.inflation - e.inflationAnchor) + 0.5 * gap + (mods.interest_rate ?? 0) * 100, 0, 80);
   e.interestRate += (rateTarget - e.interestRate) * 0.15;
   // budget: move toward targets; automatic stabilisers on spending; deficit and interest add to debt
   e.revenue += (e.revenueTarget * (1 + (mods.tax_efficiency ?? 0)) - e.revenue) * r.budget_adjustment;
   e.spending += (e.spendingTarget + (mods.welfare_cost ?? 0) * 100 + Math.max(0, e.unemployment - e.naturalUnemployment) * 0.2 - e.spending) * r.budget_adjustment;
-  const interest = (e.debt * e.interestRate * 0.6) / 100; // effective rate on the stock is below the marginal lending rate
+  // AI governments follow a simple fiscal rule: aim for a modest deficit, consolidate above the debt ceiling
+  if (cs.tag !== state.player) {
+    const goal = r.ai_target_deficit - Math.max(0, e.debt - r.ai_debt_ceiling) / 20;
+    e.spendingTarget = clamp(e.spendingTarget + (e.revenueTarget + goal - e.spendingTarget) * r.ai_fiscal_adjustment, 5, 75);
+  }
+  // the average rate on the debt stock follows the neutral rate, not the marginal lending rate
+  const interest = (e.debt * Math.max(0.5, neutralRate(e) * 0.6)) / 100;
   const deficit = e.spending - e.revenue + interest;
   const nominal = e.growth + e.inflation;
   e.debt = clamp(e.debt + deficit / 12 - (e.debt * nominal) / 1200, 0, 500);
@@ -267,7 +300,6 @@ function monthlyCountry(ctx: SimContext, cs: CountryState): void {
   // population
   e.population *= (1 + (((db.worldBank.countries[cs.tag]?.pop_growth_pct as number | undefined) ?? 1.5) + (mods.population_growth ?? 0) * 100) / 100) ** (1 / 12);
   cs.economicMood = economicMood(e, state.day);
-  void g0;
 }
 
 /** Daily construction: points go to the queue in order, each project limited to a number of factories. */
@@ -277,7 +309,7 @@ function dailyConstruction(ctx: SimContext, cs: CountryState): void {
   if (!e.construction.length) return;
   const { factories: free } = constructionPerDay(db, cs);
   let left = free;
-  const perFactory = db.economyRules.construction_per_factory * (1 + (countryModifiers(db, cs).construction_speed ?? 0));
+  const perFactory = db.economyRules.construction_per_factory * (1 + (econMods(db, cs).construction_speed ?? 0));
   for (const item of [...e.construction]) {
     if (left <= 0) break;
     const use = Math.min(left, db.economyRules.max_factories_per_project);

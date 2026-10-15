@@ -172,6 +172,16 @@
 .lp-igs { display: flex; flex-wrap: wrap; gap: 3px 8px; font-size: 11.5px; grid-column: 1; }
 .lp-ig { font-family: var(--font-cond); font-weight: 600; }
 
+/* economy */
+.stat.click { cursor: pointer; }
+.econ-hero { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; margin-top: 10px; }
+.econ-hero > div { padding: 8px 10px; background: rgba(0, 0, 0, 0.28); border: 1px solid rgba(0, 0, 0, 0.6); box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.5); }
+.econ-big { font: 700 22px/1.1 var(--font-cond); color: var(--ink); }
+.budget { display: grid; gap: 4px; padding: 0 4px; }
+.budget-row { display: flex; justify-content: space-between; align-items: center; gap: 10px; padding: 4px 6px; background: rgba(0, 0, 0, 0.18); }
+.budget-row .tile.mini { width: 26px; height: 24px; font: 700 15px var(--font-cond); }
+.cons-build { display: flex; flex-wrap: wrap; gap: 6px; padding: 0 4px; }
+
 /* scripted content: effect lists, decisions, events, focus tree */
 .fx { margin-top: 6px; display: grid; gap: 1px; }
 .fx-h { font: 700 10.5px var(--font-cond); letter-spacing: 0.12em; text-transform: uppercase; color: var(--bronze-lt); }
