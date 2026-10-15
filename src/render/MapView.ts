@@ -39,12 +39,14 @@ export class MapView {
   readonly onHover: ((x: number, y: number, e: PointerEvent) => void)[] = [];
   /** Click (pointer released without dragging). */
   readonly onClick: ((x: number, y: number, e: PointerEvent) => void)[] = [];
+  /** Right-click without dragging (orders). */
+  readonly onRightClick: ((x: number, y: number, e: PointerEvent) => void)[] = [];
   /** Frame-time samples for the benchmark (ms). */
   readonly frameTimes: number[] = [];
   private lastFrame = 0;
 
   constructor(
-    private canvas: HTMLCanvasElement,
+    readonly canvas: HTMLCanvasElement,
     private showGraticule = false,
   ) {
     this.renderer = new THREE.WebGLRenderer({ canvas, antialias: true, powerPreference: "high-performance" });
@@ -98,6 +100,17 @@ export class MapView {
     return new THREE.Vector2(this.center.x + (nx * this.viewHeight * aspect) / 2, this.center.y + (ny * this.viewHeight) / 2);
   }
 
+  /** Convert world coordinates to client (pixel) coordinates, using the world copy nearest the camera. */
+  worldToScreen(x: number, y: number): { x: number; y: number } {
+    const r = this.canvas.getBoundingClientRect();
+    const aspect = r.width / r.height;
+    const wx = x + WORLD_W * Math.round((this.center.x - x) / WORLD_W);
+    return {
+      x: r.left + ((wx - this.center.x) / ((this.viewHeight * aspect) / 2) + 1) * (r.width / 2),
+      y: r.top + (1 - (y - this.center.y) / (this.viewHeight / 2)) * (r.height / 2),
+    };
+  }
+
   /** World x wrapped into [-180, 180). */
   static wrapX(x: number): number {
     return ((((x + 180) % WORLD_W) + WORLD_W) % WORLD_W) - 180;
@@ -138,6 +151,10 @@ export class MapView {
       if (dragging && moved < 4 && e.type === "pointerup" && e.button === 0) {
         const w = this.screenToWorld(e.clientX, e.clientY);
         for (const f of this.onClick) f(MapView.wrapX(w.x), w.y, e);
+      }
+      if (dragging && moved < 4 && e.type === "pointerup" && e.button === 2) {
+        const w = this.screenToWorld(e.clientX, e.clientY);
+        for (const f of this.onRightClick) f(MapView.wrapX(w.x), w.y, e);
       }
       dragging = false;
       if (this.canvas.hasPointerCapture(e.pointerId)) this.canvas.releasePointerCapture(e.pointerId);

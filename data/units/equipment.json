@@ -1,0 +1,366 @@
+{
+  "note": "Generic equipment families. Each variant needs its technology; costs are military-factory days per unit (gameplay values).",
+  "equipment": [
+    {
+      "id": "infantry_equipment",
+      "name": "Infantry equipment",
+      "description": "Rifles, machine guns, radios and personal protection.",
+      "domain": "land",
+      "variants": [
+        {
+          "id": "infantry_equipment_1",
+          "name": "Infantry weapons (1980s)",
+          "cost": 0.5,
+          "stats": {
+            "soft_attack": 3,
+            "hard_attack": 0.5,
+            "defence": 6,
+            "piercing": 1
+          }
+        },
+        {
+          "id": "infantry_equipment_2",
+          "name": "Modernised infantry kit",
+          "cost": 0.7,
+          "stats": {
+            "soft_attack": 4,
+            "hard_attack": 0.8,
+            "defence": 8,
+            "piercing": 2
+          },
+          "requires_tech": "inf_digital_soldier"
+        },
+        {
+          "id": "infantry_equipment_3",
+          "name": "Future soldier systems",
+          "cost": 1.0,
+          "stats": {
+            "soft_attack": 5,
+            "hard_attack": 1,
+            "defence": 10,
+            "piercing": 3
+          },
+          "requires_tech": "inf_exoskeletons"
+        }
+      ]
+    },
+    {
+      "id": "support_equipment",
+      "name": "Support equipment",
+      "description": "Trucks, communications and engineering gear.",
+      "domain": "land",
+      "variants": [
+        {
+          "id": "support_equipment_1",
+          "name": "Support equipment",
+          "cost": 1.5,
+          "stats": {
+            "defence": 1
+          }
+        },
+        {
+          "id": "support_equipment_2",
+          "name": "Networked support equipment",
+          "cost": 2.0,
+          "stats": {
+            "defence": 2,
+            "soft_attack": 1
+          },
+          "requires_tech": "doc_network_centric"
+        }
+      ]
+    },
+    {
+      "id": "anti_tank_weapons",
+      "name": "Anti-tank weapons",
+      "description": "Guided and unguided anti-tank weapons.",
+      "domain": "land",
+      "variants": [
+        {
+          "id": "anti_tank_weapons_1",
+          "name": "Wire-guided anti-tank missiles",
+          "cost": 1.0,
+          "stats": {
+            "hard_attack": 4,
+            "piercing": 10,
+            "defence": 2
+          }
+        },
+        {
+          "id": "anti_tank_weapons_2",
+          "name": "Fire-and-forget anti-tank missiles",
+          "cost": 1.5,
+          "stats": {
+            "hard_attack": 7,
+            "piercing": 14,
+            "defence": 3
+          },
+          "requires_tech": "inf_atgm_fire_forget"
+        },
+        {
+          "id": "anti_tank_weapons_3",
+          "name": "Loitering anti-armour munitions",
+          "cost": 2.0,
+          "stats": {
+            "hard_attack": 10,
+            "piercing": 16,
+            "defence": 3,
+            "soft_attack": 2
+          },
+          "requires_tech": "inf_loitering_munitions"
+        }
+      ]
+    },
+    {
+      "id": "armoured_vehicle",
+      "name": "Armoured vehicles",
+      "description": "Armoured personnel carriers and infantry fighting vehicles.",
+      "domain": "land",
+      "variants": [
+        {
+          "id": "armoured_vehicle_1",
+          "name": "Armoured personnel carrier",
+          "cost": 4,
+          "stats": {
+            "soft_attack": 4,
+            "defence": 6,
+            "armour": 8,
+            "breakthrough": 2
+          }
+        },
+        {
+          "id": "armoured_vehicle_2",
+          "name": "Infantry fighting vehicle",
+          "cost": 6,
+          "stats": {
+            "soft_attack": 6,
+            "hard_attack": 2,
+            "defence": 8,
+            "armour": 12,
+            "breakthrough": 4,
+            "piercing": 8
+          },
+          "requires_tech": "arm_digital_fire_control"
+        },
+        {
+          "id": "armoured_vehicle_3",
+          "name": "Protected infantry fighting vehicle",
+          "cost": 8,
+          "stats": {
+            "soft_attack": 7,
+            "hard_attack": 3,
+            "defence": 10,
+            "armour": 16,
+            "breakthrough": 5,
+            "piercing": 10
+          },
+          "requires_tech": "arm_active_protection"
+        }
+      ]
+    },
+    {
+      "id": "main_battle_tank",
+      "name": "Main battle tanks",
+      "description": "Heavily armoured tanks with large guns.",
+      "domain": "land",
+      "variants": [
+        {
+          "id": "main_battle_tank_1",
+          "name": "Older main battle tank",
+          "cost": 7,
+          "stats": {
+            "soft_attack": 5,
+            "hard_attack": 7,
+            "defence": 3,
+            "breakthrough": 8,
+            "armour": 20,
+            "piercing": 20
+          }
+        },
+        {
+          "id": "main_battle_tank_2",
+          "name": "Third-generation main battle tank",
+          "cost": 10,
+          "stats": {
+            "soft_attack": 6,
+            "hard_attack": 10,
+            "defence": 4,
+            "breakthrough": 12,
+            "armour": 30,
+            "piercing": 30
+          },
+          "requires_tech": "arm_third_generation_mbt"
+        },
+        {
+          "id": "main_battle_tank_3",
+          "name": "Modernised main battle tank",
+          "cost": 13,
+          "stats": {
+            "soft_attack": 7,
+            "hard_attack": 12,
+            "defence": 5,
+            "breakthrough": 14,
+            "armour": 38,
+            "piercing": 36
+          },
+          "requires_tech": "arm_composite_armour"
+        },
+        {
+          "id": "main_battle_tank_4",
+          "name": "Next-generation main battle tank",
+          "cost": 16,
+          "stats": {
+            "soft_attack": 8,
+            "hard_attack": 15,
+            "defence": 6,
+            "breakthrough": 17,
+            "armour": 46,
+            "piercing": 42
+          },
+          "requires_tech": "arm_next_generation_mbt"
+        }
+      ]
+    },
+    {
+      "id": "artillery",
+      "name": "Artillery",
+      "description": "Guns and rocket launchers.",
+      "domain": "land",
+      "variants": [
+        {
+          "id": "artillery_1",
+          "name": "Towed artillery",
+          "cost": 3,
+          "stats": {
+            "soft_attack": 12,
+            "breakthrough": 2
+          }
+        },
+        {
+          "id": "artillery_2",
+          "name": "Self-propelled artillery",
+          "cost": 6,
+          "stats": {
+            "soft_attack": 16,
+            "breakthrough": 3,
+            "armour": 4
+          },
+          "requires_tech": "art_self_propelled_artillery"
+        },
+        {
+          "id": "artillery_3",
+          "name": "Precision artillery",
+          "cost": 8,
+          "stats": {
+            "soft_attack": 22,
+            "hard_attack": 3,
+            "breakthrough": 4,
+            "armour": 4
+          },
+          "requires_tech": "art_precision_shells"
+        }
+      ]
+    },
+    {
+      "id": "air_defence",
+      "name": "Air defence",
+      "description": "Anti-aircraft guns and missiles.",
+      "domain": "land",
+      "variants": [
+        {
+          "id": "air_defence_1",
+          "name": "Short-range air defence",
+          "cost": 3,
+          "stats": {
+            "air_attack": 8,
+            "hard_attack": 1
+          }
+        },
+        {
+          "id": "air_defence_2",
+          "name": "Layered air defence",
+          "cost": 6,
+          "stats": {
+            "air_attack": 16,
+            "hard_attack": 2
+          },
+          "requires_tech": "art_layered_air_defence"
+        }
+      ]
+    },
+    {
+      "id": "fighter",
+      "name": "Fighter aircraft",
+      "description": "Combat aircraft for air superiority and strike (air combat arrives in Phase 10).",
+      "domain": "air",
+      "variants": [
+        {
+          "id": "fighter_1",
+          "name": "Older jet fighter",
+          "cost": 20,
+          "stats": {
+            "air_attack": 10
+          }
+        },
+        {
+          "id": "fighter_2",
+          "name": "Fourth-generation fighter",
+          "cost": 30,
+          "stats": {
+            "air_attack": 16,
+            "soft_attack": 4
+          },
+          "requires_tech": "air_fourth_generation_fighters"
+        },
+        {
+          "id": "fighter_3",
+          "name": "Stealth fighter",
+          "cost": 60,
+          "stats": {
+            "air_attack": 28,
+            "soft_attack": 6
+          },
+          "requires_tech": "air_stealth_fighters"
+        },
+        {
+          "id": "fighter_4",
+          "name": "Sixth-generation fighter",
+          "cost": 90,
+          "stats": {
+            "air_attack": 40,
+            "soft_attack": 8
+          },
+          "requires_tech": "air_sixth_generation"
+        }
+      ]
+    },
+    {
+      "id": "combat_drone",
+      "name": "Combat drones",
+      "description": "Unmanned aircraft for reconnaissance and strike (air combat arrives in Phase 10).",
+      "domain": "air",
+      "variants": [
+        {
+          "id": "combat_drone_1",
+          "name": "Armed drone",
+          "cost": 6,
+          "stats": {
+            "soft_attack": 6,
+            "hard_attack": 3
+          },
+          "requires_tech": "air_armed_drones"
+        },
+        {
+          "id": "combat_drone_2",
+          "name": "Drone swarm",
+          "cost": 4,
+          "stats": {
+            "soft_attack": 8,
+            "hard_attack": 4
+          },
+          "requires_tech": "air_drone_swarms"
+        }
+      ]
+    }
+  ]
+}

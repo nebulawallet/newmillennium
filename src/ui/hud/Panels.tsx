@@ -2,12 +2,15 @@ import type { ContentDB } from "../../content/compile.ts";
 import { countrySummary } from "../../content/query.ts";
 import type { MapData } from "../../render/mapData.ts";
 import { TERRAIN_COLORS } from "../../render/mapModes.ts";
+import { millerY as millerYOf } from "../../render/MapView.ts";
 import { formatDate } from "../../sim/date.ts";
 import { Icon } from "../icons.tsx";
 import { PoliticsPanel } from "../politics/PoliticsPanel.tsx";
 import { DecisionsPanel } from "../scripted/DecisionsPanel.tsx";
 import { ConstructionPanel, EconomyPanel, TradePanel } from "../economy/EconomyPanels.tsx";
 import { ResearchPanel } from "../research/ResearchPanel.tsx";
+import { ProductionPanel, RecruitmentPanel } from "../units/MilitaryPanels.tsx";
+import { selectedDivisions } from "../store.ts";
 import { feed, panel, version, type Session } from "../session.ts";
 import { selectedProvince } from "../store.ts";
 import { TABS, type TabDef } from "../tabs.ts";
@@ -102,6 +105,10 @@ export function LeftPanel({ db, map, session }: { db: ContentDB; map: MapData; s
           <PoliticsPanel db={db} state={state} tag={state.player} session={session} />
         ) : tab.id === "decisions" ? (
           <DecisionsPanel db={db} session={session} />
+        ) : tab.id === "production" ? (
+          <ProductionPanel db={db} session={session} />
+        ) : tab.id === "recruitment" ? (
+          <RecruitmentPanel db={db} session={session} />
         ) : tab.id === "research" ? (
           <ResearchPanel db={db} session={session} />
         ) : tab.id === "construction" ? (
@@ -142,9 +149,27 @@ export function Outliner({ db, session }: { db: ContentDB; session: Session }) {
           </ul>
         )}
       </details>
-      <details>
+      <details open>
         <summary class="ol-h">Armies</summary>
-        <p class="faint small ol-empty">Divisions of {playerName} arrive in Phase 9.</p>
+        {(() => {
+          const mine = state?.divisions.filter((d) => d.owner === state.player) ?? [];
+          if (!mine.length) return <p class="faint small ol-empty">{playerName} has no divisions.</p>;
+          const sel = new Set(selectedDivisions.value);
+          return (
+            <ul class="ol-list">
+              {mine.slice(0, 40).map((d) => (
+                <li key={d.id} class={sel.has(d.id) ? "mine" : ""}>
+                  <button class="lnk" onClick={(e) => {
+                    selectedDivisions.value = e.shiftKey ? [...new Set([...selectedDivisions.value, d.id])] : [d.id];
+                    const p = session.map.provinces[d.province - 1];
+                    if (p) session.world.view.lookAt(p.centroid[0], millerYOf(p.centroid[1]), 14);
+                  }}>{d.name}</button>
+                  <span class="faint num small">{Math.round(d.strength * 100)}%{d.path.length ? " · moving" : ""} · {session.map.provinces[d.province - 1]?.name ?? ""}</span>
+                </li>
+              ))}
+            </ul>
+          );
+        })()}
       </details>
       <details>
         <summary class="ol-h">Construction</summary>

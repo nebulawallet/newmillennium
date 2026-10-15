@@ -1,0 +1,115 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "equipment": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[a-z0-9]+(?:_[a-z0-9]+)*$"
+          },
+          "name": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "domain": {
+            "type": "string",
+            "enum": [
+              "land",
+              "air",
+              "naval"
+            ]
+          },
+          "variants": {
+            "minItems": 1,
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "pattern": "^[a-z0-9]+(?:_[a-z0-9]+)*$"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "requires_tech": {
+                  "type": "string",
+                  "pattern": "^[a-z0-9]+(?:_[a-z0-9]+)*$"
+                },
+                "cost": {
+                  "type": "number",
+                  "exclusiveMinimum": 0
+                },
+                "stats": {
+                  "type": "object",
+                  "properties": {
+                    "soft_attack": {
+                      "default": 0,
+                      "type": "number"
+                    },
+                    "hard_attack": {
+                      "default": 0,
+                      "type": "number"
+                    },
+                    "air_attack": {
+                      "default": 0,
+                      "type": "number"
+                    },
+                    "defence": {
+                      "default": 0,
+                      "type": "number"
+                    },
+                    "breakthrough": {
+                      "default": 0,
+                      "type": "number"
+                    },
+                    "armour": {
+                      "default": 0,
+                      "type": "number"
+                    },
+                    "piercing": {
+                      "default": 0,
+                      "type": "number"
+                    },
+                    "speed": {
+                      "type": "number"
+                    }
+                  },
+                  "additionalProperties": false
+                }
+              },
+              "required": [
+                "id",
+                "name",
+                "cost",
+                "stats"
+              ],
+              "additionalProperties": false
+            }
+          }
+        },
+        "required": [
+          "id",
+          "name",
+          "description",
+          "domain",
+          "variants"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "note": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "equipment"
+  ],
+  "additionalProperties": false
+}

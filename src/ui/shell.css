@@ -172,6 +172,27 @@
 .lp-igs { display: flex; flex-wrap: wrap; gap: 3px 8px; font-size: 11.5px; grid-column: 1; }
 .lp-ig { font-family: var(--font-cond); font-weight: 600; }
 
+/* unit counters */
+.unit-layer { position: fixed; inset: 0; pointer-events: none !important; }
+.unit {
+  position: absolute; left: 0; top: 0; width: 34px; height: 20px; pointer-events: auto; cursor: pointer;
+  display: grid; place-items: center; font: 700 12px/1 var(--font-cond); color: #fff; text-shadow: 0 1px 1px #000;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.18), rgba(0, 0, 0, 0.25)), var(--c);
+  border: 1px solid #000; outline: 1px solid rgba(0, 0, 0, 0.5); box-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+}
+.unit b { position: relative; z-index: 1; }
+.unit i { position: absolute; left: 0; bottom: 0; height: 3px; background: var(--bronze-hi); }
+.unit.mine { border-color: var(--bronze-lt); }
+.unit.sel { outline: 2px solid var(--bronze-hi); outline-offset: 1px; }
+.unit.moving b::after { content: " ›"; color: var(--bronze-hi); }
+
+/* production and recruitment */
+.prod-add { display: flex; gap: 6px; padding: 6px 4px; }
+.prod-add select { flex: 1; }
+.designer { display: grid; gap: 4px; padding: 8px; margin-top: 6px; }
+.tpl-name { font: 600 14px var(--font-cond); color: var(--ink); background: rgba(0, 0, 0, 0.45); border: 1px solid var(--bronze-dk); padding: 5px 8px; outline: none; }
+.tpl-name:focus { border-color: var(--bronze-lt); }
+
 /* research */
 .res-slots { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; margin-top: 10px; }
 .res-slot { appearance: none; display: flex; flex-direction: column; gap: 4px; padding: 6px 8px; text-align: left; cursor: pointer; font: inherit; color: var(--ink-faint); background: rgba(0, 0, 0, 0.3); border: 1px dashed var(--bronze-dk); }

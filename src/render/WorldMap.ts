@@ -29,6 +29,8 @@ export class WorldMap {
   state: GameState | null = null;
   onHoverChange: (id: number) => void = () => {};
   onSelectChange: (id: number) => void = () => {};
+  /** Right-click on a province (orders). */
+  onOrder: (id: number) => void = () => {};
 
   constructor(
     readonly view: MapView,
@@ -90,6 +92,7 @@ export class WorldMap {
       }
     });
     view.onClick.push((x, y) => this.select(pick(x, y)));
+    view.onRightClick.push((x, y) => this.onOrder(pick(x, y)));
   }
 
   select(id: number): void {

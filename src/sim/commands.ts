@@ -10,6 +10,7 @@ import { regimeChange, startCivilWar } from "./politics/unrest.ts";
 import { answerEvent, setFocus, takeDecision } from "./scripting/systems.ts";
 import { canBuild } from "./economy/economy.ts";
 import { setResearch } from "./research/research.ts";
+import { addLine, moveDivision, setTemplate, trainDivision, type Template } from "./military/military.ts";
 
 export type Command =
   | { type: "change_law"; tag: string; category: string; law: string }
@@ -26,7 +27,13 @@ export type Command =
   | { type: "set_budget"; tag: string; revenue?: number; spending?: number }
   | { type: "queue_building"; tag: string; building: string; province?: number }
   | { type: "cancel_building"; tag: string; index: number }
-  | { type: "set_research"; tag: string; slot: number; tech: string | null };
+  | { type: "set_research"; tag: string; slot: number; tech: string | null }
+  | { type: "add_production_line"; tag: string; equipment: string; factories: number }
+  | { type: "set_line_factories"; tag: string; line: number; factories: number }
+  | { type: "remove_production_line"; tag: string; line: number }
+  | { type: "set_template"; tag: string; template: Template }
+  | { type: "train_division"; tag: string; template: string }
+  | { type: "move_division"; tag: string; division: number; province: number };
 
 export interface CommandResult {
   ok: boolean;
@@ -96,6 +103,26 @@ export function applyCommand(ctx: SimContext, cmd: Command): CommandResult {
     }
     case "set_research":
       return setResearch(ctx, cmd.tag, cmd.slot, cmd.tech);
+    case "add_production_line":
+      return addLine(ctx, cmd.tag, cmd.equipment, cmd.factories);
+    case "set_line_factories": {
+      const l = state.countries[cmd.tag]?.military?.lines.find((x) => x.id === cmd.line);
+      if (!l) return { ok: false, text: "No such production line." };
+      l.factories = Math.max(1, Math.min(db.militaryRules.max_factories_per_line, Math.round(cmd.factories)));
+      return { ok: true, text: `${l.factories} factories assigned.` };
+    }
+    case "remove_production_line": {
+      const m = state.countries[cmd.tag]?.military;
+      if (!m) return { ok: false, text: "No military." };
+      m.lines = m.lines.filter((x) => x.id !== cmd.line);
+      return { ok: true, text: "Production line closed." };
+    }
+    case "set_template":
+      return setTemplate(ctx, cmd.tag, cmd.template);
+    case "train_division":
+      return trainDivision(ctx, cmd.tag, cmd.template);
+    case "move_division":
+      return moveDivision(ctx, cmd.tag, cmd.division, cmd.province);
     case "force_coup": {
       const cs = state.countries[cmd.tag];
       if (!cs || !db.interestGroupTypes.has(cmd.group)) return { ok: false, text: "Unknown country or group." };

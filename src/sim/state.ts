@@ -11,8 +11,9 @@ import { igTargets } from "./politics/interestGroups.ts";
 import { seedRng, type RngState } from "./rng.ts";
 import { initialEconomy, type EconomyState, type MarketState } from "./economy/economy.ts";
 import { initialResearch, type ResearchState } from "./research/research.ts";
+import { initialMilitary, type Division, type MilitaryState } from "./military/military.ts";
 
-export const STATE_VERSION = 5;
+export const STATE_VERSION = 6;
 
 export interface GameRules {
   /** historical: real election winners are heavily weighted; dynamic: results come purely from the simulation. */
@@ -159,6 +160,16 @@ export interface CountryState {
   /** Present for countries with politics data. */
   economy?: EconomyState;
   research?: ResearchState;
+  military?: MilitaryState;
+}
+
+/** A war between two sides (combat and peace arrive in Phase 10). */
+export interface War {
+  id: number;
+  name: string;
+  attackers: string[];
+  defenders: string[];
+  startDay: number;
 }
 
 export interface LogEntry {
@@ -218,6 +229,10 @@ export interface GameState {
   market: MarketState;
   /** Buildings added during play, per province id. */
   provinceBuildings: Record<string, Record<string, number>>;
+  divisions: Division[];
+  nextDivisionId: number;
+  wars: War[];
+  nextWarId: number;
   /** Events waiting for the player's answer (AI answers at once). */
   pendingEvents: PendingEvent[];
   /** Events queued by country_event effects with a delay. */
@@ -237,6 +252,8 @@ export function createInitialState(
   const day = dayOf(GAME_START);
   const countries: Record<string, CountryState> = {};
   const rules: GameRules = { electionMode: "historical", ...opts.rules };
+  let divisionId = 1;
+  const divisions: Division[] = [];
   const mapPop = new Map<string, number>();
   for (const p of map.provinces) mapPop.set(p.owner, (mapPop.get(p.owner) ?? 0) + p.population);
 
@@ -334,6 +351,11 @@ export function createInitialState(
     if (c) {
       cs.economy = initialEconomy(db, entry.tag, mapPop.get(entry.tag) ?? 1_000_000);
       cs.research = initialResearch(db, entry.tag, cs.economy.gdp, cs.economy.population);
+      if (entry.start_status !== "releasable") {
+        const m = initialMilitary(db, cs, map.provinces, () => divisionId++);
+        cs.military = m.military;
+        divisions.push(...m.divisions);
+      }
       cs.economicMood = 0;
       cs.partyBias = calibrate(db, cs, day);
       const targets = igTargets(db, cs);
@@ -361,6 +383,10 @@ export function createInitialState(
     globalFlags: {},
     market: { prices: Object.fromEntries(db.economyRules.resources.map((r) => [r.id, 1])), demand: 1 },
     provinceBuildings: {},
+    divisions,
+    nextDivisionId: divisionId,
+    wars: [],
+    nextWarId: 1,
     pendingEvents: [],
     scheduledEvents: [],
     log: [],
@@ -393,6 +419,10 @@ export function migrateState(db: ContentDB, s: GameState): GameState {
   s.globalFlags ??= {};
   s.market ??= fresh.market;
   s.provinceBuildings ??= {};
+  s.divisions ??= fresh.divisions;
+  s.nextDivisionId ??= fresh.nextDivisionId;
+  s.wars ??= [];
+  s.nextWarId ??= 1;
   s.pendingEvents ??= [];
   s.scheduledEvents ??= [];
   for (const [tag, cs] of Object.entries(s.countries)) {
@@ -403,6 +433,7 @@ export function migrateState(db: ContentDB, s: GameState): GameState {
     cs.eventsFired ??= {};
     if (!cs.economy && fresh.countries[tag]?.economy) cs.economy = fresh.countries[tag]!.economy;
     if (!cs.research && fresh.countries[tag]?.research) cs.research = fresh.countries[tag]!.research;
+    if (!cs.military && fresh.countries[tag]?.military) cs.military = fresh.countries[tag]!.military;
   }
   s.version = STATE_VERSION;
   return s;

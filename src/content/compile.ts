@@ -8,6 +8,7 @@ import type { FileProvider } from "./files.ts";
 import { PoliticsRulesFile, type PoliticsRules } from "./schemas/rules.ts";
 import { BuildingsFile, EconomyRulesFile, WorldBankFile, type BuildingDef, type EconomyRules } from "./schemas/economy.ts";
 import { ResearchRulesFile, TechCategoryFile, type ResearchRules, type TechCategory, type TechDef } from "./schemas/research.ts";
+import { EquipmentFile, MilitaryRulesFile, SubUnitsFile, type EquipmentDef, type MilitaryRules, type SubUnitDef } from "./schemas/units.ts";
 import { DecisionsFile, EventsFile, FocusTreeFile, type DecisionDef, type EventDef, type FocusTree } from "./schemas/scripted.ts";
 import { validateEffects, validateTrigger, type ScriptIssue } from "./script/validate.ts";
 import type { RefKind } from "./script/registry.ts";
@@ -108,6 +109,9 @@ export interface ContentDB {
   focusTrees: Map<string, FocusTree & { file: string }>;
   economyRules: EconomyRules;
   researchRules: ResearchRules;
+  equipment: Map<string, EquipmentDef>;
+  subUnits: Map<string, SubUnitDef>;
+  militaryRules: MilitaryRules;
   techCategories: Map<string, Omit<TechCategory, "techs"> & { techs: string[] }>;
   /** Every technology, with its category. */
   techs: Map<string, TechDef & { category: string }>;
@@ -217,6 +221,9 @@ export function compileContent(files: FileProvider, opts: CompileOptions = {}): 
     focusTrees: new Map(),
     economyRules: load("economy/economy.json", EconomyRulesFile, false) ?? EconomyRulesFile.parse({}),
     researchRules: load("techs/rules.json", ResearchRulesFile, false) ?? ResearchRulesFile.parse({}),
+    equipment: indexBy(load("units/equipment.json", EquipmentFile, false)?.equipment ?? [], "units/equipment.json", "equipment"),
+    subUnits: indexBy(load("units/sub_units.json", SubUnitsFile, false)?.sub_units ?? [], "units/sub_units.json", "sub-unit"),
+    militaryRules: load("units/military.json", MilitaryRulesFile, false) ?? MilitaryRulesFile.parse({}),
     techCategories: new Map(),
     techs: new Map(),
     buildings: indexBy(load("economy/buildings.json", BuildingsFile, false)?.buildings ?? [], "economy/buildings.json", "building"),
@@ -337,6 +344,15 @@ export function compileContent(files: FileProvider, opts: CompileOptions = {}): 
     for (const g of t.prerequisites) for (const p of g) if (!db.techs.has(p)) err("REF", f, `${t.id}: unknown prerequisite '${p}'`);
     for (const m of Object.keys(t.effects)) if (!db.modifiers.has(m)) err("REF", f, `${t.id}: unknown modifier '${m}'`);
   }
+
+  // ---- units
+  for (const e of db.equipment.values())
+    for (const v of e.variants) if (v.requires_tech && !db.techs.has(v.requires_tech)) err("REF", "units/equipment.json", `${v.id}: unknown technology '${v.requires_tech}'`);
+  for (const s of db.subUnits.values())
+    for (const eq of Object.keys(s.equipment)) if (!db.equipment.has(eq)) err("REF", "units/sub_units.json", `${s.id}: unknown equipment '${eq}'`);
+  for (const t of db.militaryRules.templates)
+    for (const u of Object.keys(t.units)) if (!db.subUnits.has(u)) err("REF", "units/military.json", `template ${t.id}: unknown sub-unit '${u}'`);
+  for (const law of Object.keys(db.militaryRules.manpower_share)) if (!db.lawCategoryOf.has(law)) err("REF", "units/military.json", `manpower_share: unknown law '${law}'`);
 
   // ---- scripted content: events, decisions, focus trees
   const jsonIn = (dir: string) => files.listFiles(dir).filter((p) => p.endsWith(".json")).sort();

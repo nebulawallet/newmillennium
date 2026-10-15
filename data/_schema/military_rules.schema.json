@@ -1,0 +1,103 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "note": {
+      "type": "string"
+    },
+    "manpower_share": {
+      "default": {},
+      "type": "object",
+      "propertyNames": {
+        "type": "string",
+        "pattern": "^[a-z0-9]+(?:_[a-z0-9]+)*$"
+      },
+      "additionalProperties": {
+        "type": "number",
+        "minimum": 0,
+        "maximum": 0.3
+      }
+    },
+    "manpower_recovery": {
+      "default": 0.02,
+      "type": "number"
+    },
+    "base_efficiency": {
+      "default": 0.1,
+      "type": "number"
+    },
+    "efficiency_cap": {
+      "default": 0.5,
+      "type": "number"
+    },
+    "efficiency_growth": {
+      "default": 0.01,
+      "type": "number"
+    },
+    "max_factories_per_line": {
+      "default": 15,
+      "type": "number"
+    },
+    "land_share": {
+      "default": 0.6,
+      "type": "number"
+    },
+    "personnel_per_division": {
+      "default": 12000,
+      "type": "number"
+    },
+    "reserve_stockpile": {
+      "default": 0.15,
+      "type": "number"
+    },
+    "march_hours": {
+      "default": 10,
+      "type": "number"
+    },
+    "max_division_width": {
+      "default": 30,
+      "type": "number"
+    },
+    "templates": {
+      "default": [],
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[a-z0-9]+(?:_[a-z0-9]+)*$"
+          },
+          "name": {
+            "type": "string"
+          },
+          "units": {
+            "type": "object",
+            "propertyNames": {
+              "type": "string",
+              "pattern": "^[a-z0-9]+(?:_[a-z0-9]+)*$"
+            },
+            "additionalProperties": {
+              "type": "integer",
+              "exclusiveMinimum": 0,
+              "maximum": 9007199254740991
+            }
+          },
+          "modern_level": {
+            "default": 0,
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 2
+          }
+        },
+        "required": [
+          "id",
+          "name",
+          "units"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

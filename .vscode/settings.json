@@ -150,6 +150,24 @@
         "/data/techs/rules.json"
       ],
       "url": "./data/_schema/research_rules.schema.json"
+    },
+    {
+      "fileMatch": [
+        "/data/units/equipment.json"
+      ],
+      "url": "./data/_schema/equipment.schema.json"
+    },
+    {
+      "fileMatch": [
+        "/data/units/sub_units.json"
+      ],
+      "url": "./data/_schema/sub_units.schema.json"
+    },
+    {
+      "fileMatch": [
+        "/data/units/military.json"
+      ],
+      "url": "./data/_schema/military_rules.schema.json"
     }
   ]
 }

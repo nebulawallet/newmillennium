@@ -1,0 +1,58 @@
+{
+  "note": "Military rules. Starting armies come from World Bank armed forces personnel (2000); the shares and division sizes here are gameplay values.",
+  "manpower_share": {
+    "volunteer_force": 0.006,
+    "selective_conscription": 0.015,
+    "universal_conscription": 0.03,
+    "extended_service": 0.05,
+    "total_mobilisation": 0.12
+  },
+  "templates": [
+    {
+      "id": "infantry_division",
+      "name": "Infantry division",
+      "units": {
+        "infantry": 9,
+        "artillery": 2,
+        "reconnaissance": 1,
+        "engineers": 1
+      },
+      "modern_level": 0
+    },
+    {
+      "id": "motorised_division",
+      "name": "Motorised division",
+      "units": {
+        "motorised_infantry": 6,
+        "artillery": 2,
+        "anti_tank": 1,
+        "reconnaissance": 1
+      },
+      "modern_level": 1
+    },
+    {
+      "id": "mechanised_division",
+      "name": "Mechanised division",
+      "units": {
+        "mechanised_infantry": 6,
+        "armour": 2,
+        "artillery": 2,
+        "air_defence": 1,
+        "reconnaissance": 1
+      },
+      "modern_level": 2
+    },
+    {
+      "id": "armoured_division",
+      "name": "Armoured division",
+      "units": {
+        "armour": 6,
+        "mechanised_infantry": 4,
+        "artillery": 2,
+        "air_defence": 1,
+        "reconnaissance": 1
+      },
+      "modern_level": 2
+    }
+  ]
+}

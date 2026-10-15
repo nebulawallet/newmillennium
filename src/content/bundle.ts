@@ -6,6 +6,7 @@ import type { CompileResult, ContentDB, CountryContent, Issue } from "./compile.
 import { PoliticsRulesFile, type PoliticsRules } from "./schemas/rules.ts";
 import { EconomyRulesFile } from "./schemas/economy.ts";
 import { ResearchRulesFile } from "./schemas/research.ts";
+import { MilitaryRulesFile } from "./schemas/units.ts";
 
 export const BUNDLE_VERSION = 1;
 
@@ -32,6 +33,9 @@ export interface ContentBundle {
   focusTrees: unknown[];
   economyRules: ContentDB["economyRules"];
   researchRules: ContentDB["researchRules"];
+  equipment: unknown[];
+  subUnits: unknown[];
+  militaryRules: ContentDB["militaryRules"];
   techCategories: unknown[];
   techs: unknown[];
   buildings: unknown[];
@@ -70,6 +74,9 @@ export function toBundle({ db, issues }: CompileResult): ContentBundle {
     focusTrees: [...db.focusTrees.values()],
     economyRules: db.economyRules,
     researchRules: db.researchRules,
+    equipment: [...db.equipment.values()],
+    subUnits: [...db.subUnits.values()],
+    militaryRules: db.militaryRules,
     techCategories: [...db.techCategories.values()],
     techs: [...db.techs.values()],
     buildings: [...db.buildings.values()],
@@ -102,6 +109,9 @@ export function fromBundle(b: ContentBundle): ContentDB {
     focusTrees: byId(b.focusTrees ?? []),
     economyRules: b.economyRules ?? EconomyRulesFile.parse({}),
     researchRules: b.researchRules ?? ResearchRulesFile.parse({}),
+    equipment: byId(b.equipment ?? []),
+    subUnits: byId(b.subUnits ?? []),
+    militaryRules: b.militaryRules ?? MilitaryRulesFile.parse({}),
     techCategories: byId(b.techCategories ?? []),
     techs: byId(b.techs ?? []),
     buildings: byId(b.buildings ?? []),

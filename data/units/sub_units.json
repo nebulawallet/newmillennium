@@ -1,0 +1,149 @@
+{
+  "note": "Battalions and support companies. Stats are gameplay values.",
+  "sub_units": [
+    {
+      "id": "infantry",
+      "name": "Infantry battalion",
+      "description": "Foot infantry.",
+      "kind": "battalion",
+      "manpower": 1000,
+      "equipment": {
+        "infantry_equipment": 100,
+        "support_equipment": 5
+      },
+      "organisation": 60,
+      "hp": 3,
+      "width": 2,
+      "speed": 4,
+      "training_days": 90
+    },
+    {
+      "id": "motorised_infantry",
+      "name": "Motorised infantry battalion",
+      "description": "Infantry carried by trucks.",
+      "kind": "battalion",
+      "manpower": 1000,
+      "equipment": {
+        "infantry_equipment": 100,
+        "support_equipment": 30
+      },
+      "organisation": 60,
+      "hp": 3,
+      "width": 2,
+      "speed": 12,
+      "training_days": 90
+    },
+    {
+      "id": "mechanised_infantry",
+      "name": "Mechanised infantry battalion",
+      "description": "Infantry in armoured vehicles.",
+      "kind": "battalion",
+      "manpower": 900,
+      "equipment": {
+        "infantry_equipment": 80,
+        "armoured_vehicle": 40
+      },
+      "organisation": 50,
+      "hp": 3,
+      "width": 2,
+      "speed": 12,
+      "training_days": 120
+    },
+    {
+      "id": "armour",
+      "name": "Armoured battalion",
+      "description": "Main battle tanks.",
+      "kind": "battalion",
+      "manpower": 500,
+      "equipment": {
+        "main_battle_tank": 40,
+        "support_equipment": 10
+      },
+      "organisation": 30,
+      "hp": 2,
+      "width": 2,
+      "speed": 10,
+      "training_days": 150
+    },
+    {
+      "id": "artillery",
+      "name": "Artillery battalion",
+      "description": "Guns or rocket launchers.",
+      "kind": "battalion",
+      "manpower": 500,
+      "equipment": {
+        "artillery": 24,
+        "support_equipment": 5
+      },
+      "organisation": 20,
+      "hp": 0.6,
+      "width": 3,
+      "speed": 4,
+      "training_days": 90
+    },
+    {
+      "id": "air_defence",
+      "name": "Air defence battalion",
+      "description": "Air defence guns and missiles.",
+      "kind": "battalion",
+      "manpower": 400,
+      "equipment": {
+        "air_defence": 20,
+        "support_equipment": 5
+      },
+      "organisation": 20,
+      "hp": 0.6,
+      "width": 1,
+      "speed": 4,
+      "training_days": 90
+    },
+    {
+      "id": "anti_tank",
+      "name": "Anti-tank battalion",
+      "description": "Anti-tank missile teams.",
+      "kind": "battalion",
+      "manpower": 500,
+      "equipment": {
+        "anti_tank_weapons": 30,
+        "support_equipment": 5
+      },
+      "organisation": 30,
+      "hp": 1,
+      "width": 1,
+      "speed": 4,
+      "training_days": 90
+    },
+    {
+      "id": "reconnaissance",
+      "name": "Reconnaissance company",
+      "description": "Scouts that find the enemy.",
+      "kind": "support",
+      "manpower": 200,
+      "equipment": {
+        "infantry_equipment": 30,
+        "support_equipment": 20
+      },
+      "organisation": 20,
+      "hp": 0.5,
+      "width": 0,
+      "speed": 12,
+      "training_days": 60
+    },
+    {
+      "id": "engineers",
+      "name": "Engineer company",
+      "description": "Bridging, fortification and mine clearance.",
+      "kind": "support",
+      "manpower": 300,
+      "equipment": {
+        "infantry_equipment": 20,
+        "support_equipment": 30
+      },
+      "organisation": 20,
+      "hp": 0.5,
+      "width": 0,
+      "speed": 4,
+      "training_days": 60
+    }
+  ]
+}

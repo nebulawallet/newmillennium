@@ -38,6 +38,7 @@ const INDICATORS: Record<string, string> = {
   reserves_usd: "FI.RES.TOTL.CD",
   labor_force: "SL.TLF.TOTL.IN",
   rnd_pct_gdp: "GB.XPD.RSDV.GD.ZS",
+  armed_forces_personnel: "MS.MIL.TOTL.P1",
   // gdp_growth_avg_1995_2000 is derived below from NY.GDP.MKTP.KD.ZG
 };
 

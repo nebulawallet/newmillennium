@@ -26,7 +26,9 @@ import { CoalitionPanel } from "./ui/politics/CoalitionPanel.tsx";
 import { ElectionNight } from "./ui/politics/ElectionNight.tsx";
 import { EventWindow } from "./ui/scripted/EventWindow.tsx";
 import { FocusTreeView } from "./ui/scripted/FocusTree.tsx";
-import { hoveredProvince, pickedCountry, pointer, selectedProvince } from "./ui/store.ts";
+import { hoveredProvince, pickedCountry, pointer, selectedDivisions, selectedProvince } from "./ui/store.ts";
+import { UnitCounters } from "./ui/units/UnitCounters.ts";
+import { version } from "./ui/session.ts";
 
 async function loadContent(): Promise<{ db: ContentDB; bundle: ContentBundle }> {
   const res = await fetch("/content/bundle.json");
@@ -106,6 +108,16 @@ async function boot(): Promise<void> {
   selectedProvince.subscribe((id) => world.select(id));
   window.addEventListener("pointermove", (e) => (pointer.value = { x: e.clientX, y: e.clientY }));
   const session = new Session(db, map, world, bundle.hash);
+  // unit counters follow the game state; right-click orders the selected divisions to a province
+  const counters = new UnitCounters(view, map, db, () => (screen.value === "game" ? session.state : null));
+  version.subscribe((v) => counters.refresh(v));
+  selectedDivisions.subscribe(() => counters.refresh(-2 - Math.random()));
+  screen.subscribe((s) => { if (s !== "game") { counters.clear(); selectedDivisions.value = []; } });
+  world.onOrder = (id) => {
+    const st = session.state;
+    if (!id || !st?.player || !selectedDivisions.value.length) return;
+    for (const d of selectedDivisions.value) session.dispatch({ type: "move_division", tag: st.player, division: d, province: id });
+  };
   (window as unknown as { nm: unknown }).nm = { db, map, view, world, session, THREE };
   bindKeys(session);
 

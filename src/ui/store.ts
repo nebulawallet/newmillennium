@@ -7,3 +7,5 @@ export const mapMode = signal("political");
 export const pointer = signal({ x: 0, y: 0 });
 /** Country highlighted on the start screen (clicked in the list or on the map). */
 export const pickedCountry = signal<string | null>(null);
+/** The player's selected divisions (ids). */
+export const selectedDivisions = signal<number[]>([]);
