@@ -29,7 +29,8 @@ export type RefKind =
   | "government_type"
   | "trait"
   | "modifier"
-  | "tech";
+  | "tech"
+  | "bloc";
 
 interface ScriptDef {
   args: z.ZodType;
@@ -134,9 +135,11 @@ export const EFFECTS: Record<string, ScriptDef> = {
     refs: { target: "tag" },
   },
   add_opinion: {
-    args: z.strictObject({ target: z.union([Tag, z.enum(["ROOT", "FROM"])]), value: num }),
-    description: "Change this country's opinion of the target.",
+    args: z.strictObject({ target: z.union([Tag, z.enum(["ROOT", "FROM"])]), value: num, days: z.number().int().positive().optional() }),
+    description: "Change this country's opinion of the target (fading over `days`, default one year).",
   },
+  join_bloc: { args: Id, description: "The country joins a bloc.", refs: { "": "bloc" } },
+  leave_bloc: { args: Id, description: "The country leaves a bloc.", refs: { "": "bloc" } },
   release_country: { args: Tag, description: "Release a releasable country.", refs: { "": "tag" } },
   unlock_tech: { args: Id, description: "Grant a technology.", refs: { "": "tech" } },
   country_event: {
@@ -218,6 +221,12 @@ export const TRIGGERS: Record<string, ScriptDef> = {
   },
   at_war: { args: z.boolean(), description: "Country is at war." },
   at_war_with: { args: Tag, description: "At war with the tag.", refs: { "": "tag" } },
+  in_bloc: { args: Id, description: "The country is a member of the bloc.", refs: { "": "bloc" } },
+  opinion_of_above: {
+    args: z.strictObject({ target: Tag, value: num }),
+    description: "The country's opinion of the target is above value.",
+    refs: { target: "tag" },
+  },
   has_completed_focus: { args: Id, description: "Focus completed." },
   exists: { args: Tag, description: "Country exists on the map.", refs: { "": "tag" } },
   is_player: { args: z.boolean(), description: "Scoped country is the player's." },

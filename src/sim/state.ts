@@ -13,8 +13,9 @@ import { initialEconomy, type EconomyState, type MarketState } from "./economy/e
 import { initialResearch, type ResearchState } from "./research/research.ts";
 import { initialMilitary, type Division, type MilitaryState } from "./military/military.ts";
 import type { Battle } from "./military/war.ts";
+import { initialDiplomacy, tradeIndex, type DiplomacyState } from "./diplomacy/diplomacy.ts";
 
-export const STATE_VERSION = 7;
+export const STATE_VERSION = 8;
 
 export interface GameRules {
   /** historical: real election winners are heavily weighted; dynamic: results come purely from the simulation. */
@@ -240,6 +241,7 @@ export interface GameState {
   battles: Battle[];
   /** A peace conference the player won and must settle. */
   pendingPeace: { war: number; winner: "attackers" | "defenders" } | null;
+  diplomacy: DiplomacyState;
   /** Events waiting for the player's answer (AI answers at once). */
   pendingEvents: PendingEvent[];
   /** Events queued by country_event effects with a delay. */
@@ -372,7 +374,7 @@ export function createInitialState(
     countries[entry.tag] = cs;
   }
 
-  return {
+  const state: GameState = {
     version: STATE_VERSION,
     contentHash: opts.contentHash,
     seed,
@@ -397,10 +399,13 @@ export function createInitialState(
     worldTension: 0,
     battles: [],
     pendingPeace: null,
+    diplomacy: initialDiplomacy(db, day),
     pendingEvents: [],
     scheduledEvents: [],
     log: [],
   };
+  for (const cs of Object.values(countries)) if (cs.economy) cs.economy.tradeBase = tradeIndex(db, state, cs.tag);
+  return state;
 }
 
 /** The focus tree a country uses: one naming it, else the generic tree. */
@@ -436,6 +441,7 @@ export function migrateState(db: ContentDB, s: GameState): GameState {
   s.worldTension ??= 0;
   s.battles ??= [];
   s.pendingPeace ??= null;
+  s.diplomacy ??= fresh.diplomacy;
   for (const d of s.divisions) d.entrenchment ??= 0;
   s.pendingEvents ??= [];
   s.scheduledEvents ??= [];

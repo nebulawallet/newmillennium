@@ -14,7 +14,8 @@ export class FixtureFiles implements FileProvider {
       const v = this.mem[path];
       return v === undefined ? undefined : JSON.stringify(v);
     }
-    if (path.startsWith("countries/") || path === "world/countries.json") return undefined;
+    // country folders, the country list and world-wide memberships (blocs, UN) come from the fixture only
+    if (path.startsWith("countries/") || path === "world/countries.json" || path === "diplomacy/blocs.json" || path === "diplomacy/un.json") return undefined;
     return this.disk.read(path);
   }
   listFiles(dir: string): string[] {

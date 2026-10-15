@@ -9,7 +9,8 @@ import { PoliticsPanel } from "../politics/PoliticsPanel.tsx";
 import { DecisionsPanel } from "../scripted/DecisionsPanel.tsx";
 import { ConstructionPanel, EconomyPanel, TradePanel } from "../economy/EconomyPanels.tsx";
 import { ResearchPanel } from "../research/ResearchPanel.tsx";
-import { ProductionPanel, RecruitmentPanel } from "../units/MilitaryPanels.tsx";
+import { DiplomacyPanel, IntelligencePanel } from "../diplomacy/DiplomacyPanels.tsx";
+import { LogisticsPanel, ProductionPanel, RecruitmentPanel } from "../units/MilitaryPanels.tsx";
 import { selectedDivisions } from "../store.ts";
 import { WarButton, WarsOutliner } from "../units/WarUi.tsx";
 import { feed, panel, version, type Session } from "../session.ts";
@@ -55,7 +56,7 @@ function StatePanel({ db, map, id, session }: { db: ContentDB; map: MapData; id:
           <span class="tb-name">{p.terrain}</span>
           <span class="faint small num">{p.elevation_m} m · relief {p.ruggedness_m} m</span>
         </div>
-        <div class="infra" {...tip(() => ({ title: "Infrastructure", rows: [["Level", `${p.infrastructure} / 10`]], note: "Estimated from road density and national income. Construction arrives in Phase 7." }))}>
+        <div class="infra" {...tip(() => ({ title: "Infrastructure", rows: [["Level", `${p.infrastructure} / 10`]], note: `Estimated from road density and national income${session?.state?.provinceBuildings[String(id)]?.infrastructure ? `, plus ${session.state.provinceBuildings[String(id)]!.infrastructure} built` : ""}. Build more in the Construction tab.` }))}>
           <span class="faint small">Infrastructure</span>
           <span class="infra-pips">
             {Array.from({ length: 10 }, (_, i) => <i class={i < p.infrastructure ? "on" : ""} />)}
@@ -83,7 +84,7 @@ function StatePanel({ db, map, id, session }: { db: ContentDB; map: MapData; id:
       )}
       {session && <WarButton db={db} session={session} target={(session.state?.provinceOwner[id - 1]) ?? p.owner} />}
       <div class="hp-section">Resources</div>
-      <p class="faint small pad">Deposits and output arrive with the economy in Phase 7.</p>
+      <p class="faint small pad">Resources are national (World Bank rents); see the Trade tab and the Resources map mode. Province deposits are not modelled.</p>
     </SidePanel>
   );
 }
@@ -117,6 +118,12 @@ export function LeftPanel({ db, map, session }: { db: ContentDB; map: MapData; s
           <ConstructionPanel db={db} session={session} />
         ) : tab.id === "trade" ? (
           <TradePanel db={db} session={session} />
+        ) : tab.id === "diplomacy" ? (
+          <DiplomacyPanel db={db} session={session} />
+        ) : tab.id === "logistics" ? (
+          <LogisticsPanel db={db} session={session} />
+        ) : tab.id === "intelligence" ? (
+          <IntelligencePanel db={db} session={session} />
         ) : (
           <StubPanel tab={tab} />
         )}

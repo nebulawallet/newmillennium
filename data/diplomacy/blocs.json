@@ -1,0 +1,419 @@
+{
+  "note": "International blocs on 1 January 2000. Memberships are sourced; the gameplay values (opinion, growth, accession days) are estimates. Later enlargements are historical events in data/events/blocs.json.",
+  "blocs": [
+    {
+      "id": "nato",
+      "color": "#3a6fd8",
+      "name": "NATO",
+      "kind": "military",
+      "defensive": true,
+      "opinion": 20,
+      "trade_growth": 0,
+      "accession_days": 1095,
+      "rival": "cst",
+      "description": "The North Atlantic alliance: an armed attack on one member is considered an attack on all (Article 5).",
+      "join_trigger": {
+        "all": [
+          {
+            "not": {
+              "in_bloc": "cst"
+            }
+          },
+          {
+            "not": {
+              "at_war": true
+            }
+          }
+        ]
+      },
+      "members_2000": [
+        "BEL",
+        "CAN",
+        "DNK",
+        "FRA",
+        "ISL",
+        "ITA",
+        "LUX",
+        "NLD",
+        "NOR",
+        "PRT",
+        "GBR",
+        "USA",
+        "GRC",
+        "TUR",
+        "DEU",
+        "ESP",
+        "CZE",
+        "HUN",
+        "POL"
+      ],
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Member_states_of_NATO",
+          "title": "Wikipedia: Member states of NATO",
+          "accessed": "2026-10-15"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "eu",
+      "color": "#e8c547",
+      "name": "European Union",
+      "kind": "economic",
+      "defensive": false,
+      "opinion": 15,
+      "trade_growth": 0.4,
+      "accession_days": 1460,
+      "description": "Single market, customs union and common institutions of fifteen European states in 2000.",
+      "join_trigger": {
+        "all": [
+          {
+            "not": {
+              "at_war": true
+            }
+          },
+          {
+            "not": {
+              "in_bloc": "cis"
+            }
+          }
+        ]
+      },
+      "members_2000": [
+        "AUT",
+        "BEL",
+        "DNK",
+        "FIN",
+        "FRA",
+        "DEU",
+        "GRC",
+        "IRL",
+        "ITA",
+        "LUX",
+        "NLD",
+        "PRT",
+        "ESP",
+        "SWE",
+        "GBR"
+      ],
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Member_state_of_the_European_Union",
+          "title": "Wikipedia: Member state of the European Union",
+          "accessed": "2026-10-15"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "cis",
+      "color": "#b0563b",
+      "name": "Commonwealth of Independent States",
+      "kind": "political",
+      "defensive": false,
+      "opinion": 10,
+      "trade_growth": 0.1,
+      "accession_days": 365,
+      "description": "Organisation of post-Soviet states. Ukraine and Turkmenistan took part without ratifying the Charter, so they are not counted as members.",
+      "join_trigger": {
+        "not": {
+          "in_bloc": "eu"
+        }
+      },
+      "members_2000": [
+        "ARM",
+        "AZE",
+        "BLR",
+        "GEO",
+        "KAZ",
+        "KGZ",
+        "MDA",
+        "RUS",
+        "TJK",
+        "UZB"
+      ],
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Commonwealth_of_Independent_States",
+          "title": "Wikipedia: Commonwealth of Independent States",
+          "accessed": "2026-10-15"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "cst",
+      "color": "#c2302a",
+      "name": "Collective Security Treaty",
+      "kind": "military",
+      "defensive": true,
+      "opinion": 15,
+      "trade_growth": 0,
+      "accession_days": 730,
+      "rival": "nato",
+      "description": "Post-Soviet mutual defence treaty (the Tashkent Treaty); an aggression against one signatory is an aggression against all. Azerbaijan, Georgia and Uzbekistan withdrew in 1999.",
+      "join_trigger": {
+        "all": [
+          {
+            "not": {
+              "in_bloc": "nato"
+            }
+          },
+          {
+            "not": {
+              "at_war": true
+            }
+          }
+        ]
+      },
+      "members_2000": [
+        "ARM",
+        "BLR",
+        "KAZ",
+        "KGZ",
+        "RUS",
+        "TJK"
+      ],
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Collective_Security_Treaty_Organization",
+          "title": "Wikipedia: Collective Security Treaty Organization",
+          "accessed": "2026-10-15"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "asean",
+      "color": "#3fa37a",
+      "name": "ASEAN",
+      "kind": "economic",
+      "defensive": false,
+      "opinion": 10,
+      "trade_growth": 0.2,
+      "accession_days": 1095,
+      "description": "Association of Southeast Asian Nations; Cambodia became the tenth member on 30 April 1999.",
+      "members_2000": [
+        "BRN",
+        "KHM",
+        "IDN",
+        "LAO",
+        "MYS",
+        "MMR",
+        "PHL",
+        "SGP",
+        "THA",
+        "VNM"
+      ],
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/ASEAN",
+          "title": "Wikipedia: ASEAN",
+          "accessed": "2026-10-15"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "arab_league",
+      "color": "#2f8f4e",
+      "name": "Arab League",
+      "kind": "political",
+      "defensive": false,
+      "opinion": 10,
+      "trade_growth": 0.05,
+      "accession_days": 365,
+      "description": "League of Arab States: twenty-two members in 2000.",
+      "members_2000": [
+        "DZA",
+        "BHR",
+        "COM",
+        "DJI",
+        "EGY",
+        "IRQ",
+        "JOR",
+        "KWT",
+        "LBN",
+        "LBY",
+        "MRT",
+        "MAR",
+        "OMN",
+        "PSE",
+        "QAT",
+        "SAU",
+        "SOM",
+        "SDN",
+        "SYR",
+        "TUN",
+        "ARE",
+        "YEM"
+      ],
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Member_states_of_the_Arab_League",
+          "title": "Wikipedia: Member states of the Arab League",
+          "accessed": "2026-10-15"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "oau",
+      "color": "#a87b3c",
+      "name": "Organisation of African Unity",
+      "kind": "political",
+      "defensive": false,
+      "opinion": 8,
+      "trade_growth": 0.05,
+      "accession_days": 365,
+      "renamed": [
+        {
+          "date": "2002-07-09",
+          "name": "African Union",
+          "source": [
+            {
+              "url": "https://en.wikipedia.org/wiki/African_Union",
+              "title": "Wikipedia: African Union",
+              "accessed": "2026-10-15"
+            }
+          ],
+          "confidence": "verified"
+        }
+      ],
+      "description": "Fifty-three African states; Morocco left in 1984 after the admission of the Sahrawi Republic. Replaced by the African Union on 9 July 2002.",
+      "members_2000": [
+        "DZA",
+        "BDI",
+        "CMR",
+        "CAF",
+        "TCD",
+        "COG",
+        "COD",
+        "BEN",
+        "EGY",
+        "ETH",
+        "GAB",
+        "GHA",
+        "GIN",
+        "CIV",
+        "LBR",
+        "LBY",
+        "MDG",
+        "MLI",
+        "MRT",
+        "NER",
+        "NGA",
+        "RWA",
+        "SEN",
+        "SLE",
+        "SOM",
+        "SDN",
+        "TZA",
+        "TGO",
+        "TUN",
+        "UGA",
+        "BFA",
+        "KEN",
+        "MWI",
+        "ZMB",
+        "GMB",
+        "BWA",
+        "LSO",
+        "MUS",
+        "SWZ",
+        "GNQ",
+        "GNB",
+        "AGO",
+        "CPV",
+        "COM",
+        "MOZ",
+        "STP",
+        "SYC",
+        "DJI",
+        "ZWE",
+        "NAM",
+        "ERI",
+        "ZAF",
+        "ESH"
+      ],
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Organisation_of_African_Unity",
+          "title": "Wikipedia: Organisation of African Unity",
+          "accessed": "2026-10-15"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "mercosur",
+      "color": "#4ab0c9",
+      "name": "Mercosur",
+      "kind": "economic",
+      "defensive": false,
+      "opinion": 10,
+      "trade_growth": 0.25,
+      "accession_days": 1095,
+      "description": "Southern Common Market of Argentina, Brazil, Paraguay and Uruguay.",
+      "members_2000": [
+        "ARG",
+        "BRA",
+        "PRY",
+        "URY"
+      ],
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Mercosur",
+          "title": "Wikipedia: Mercosur",
+          "accessed": "2026-10-15"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "nafta",
+      "color": "#7a68d8",
+      "name": "NAFTA",
+      "kind": "economic",
+      "defensive": false,
+      "opinion": 10,
+      "trade_growth": 0.3,
+      "accession_days": 1460,
+      "description": "North American Free Trade Agreement between Canada, Mexico and the United States.",
+      "members_2000": [
+        "CAN",
+        "MEX",
+        "USA"
+      ],
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/North_American_Free_Trade_Agreement",
+          "title": "Wikipedia: North American Free Trade Agreement",
+          "accessed": "2026-10-15"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "sco",
+      "color": "#d07a3a",
+      "name": "Shanghai Cooperation Organisation",
+      "kind": "political",
+      "defensive": false,
+      "opinion": 10,
+      "trade_growth": 0.05,
+      "accession_days": 730,
+      "description": "Founded on 15 June 2001 by the Shanghai Five (China, Kazakhstan, Kyrgyzstan, Russia, Tajikistan) and Uzbekistan.",
+      "members_2000": [],
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Shanghai_Cooperation_Organisation",
+          "title": "Wikipedia: Shanghai Cooperation Organisation",
+          "accessed": "2026-10-15"
+        }
+      ],
+      "confidence": "verified"
+    }
+  ]
+}

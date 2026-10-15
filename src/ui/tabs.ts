@@ -19,12 +19,12 @@ export type TabId =
 export const TABS: TabDef[] = [
   { id: "politics", label: "Politics", key: "Q", icon: "politics", phase: null, summary: "Government, cabinet, parliament, parties, interest groups and laws." },
   { id: "research", label: "Research", key: "W", icon: "research", phase: null, summary: "Technology trees from 1995 to beyond 2035: infantry, armour, artillery and missiles, air and drones, naval, electronics and cyber, industry and energy, economy and digital, doctrines." },
-  { id: "diplomacy", label: "Diplomacy", key: "E", icon: "diplomacy", phase: "Phase 11", summary: "Relations, guarantees, military access, sanctions, blocs, the UN Security Council and foreign influence campaigns." },
+  { id: "diplomacy", label: "Diplomacy", key: "E", icon: "diplomacy", phase: null, summary: "Relations, guarantees, military access, sanctions, blocs, the UN Security Council and foreign influence campaigns." },
   { id: "trade", label: "Trade", key: "R", icon: "trade", phase: null, summary: "The international resource market: oil, gas, rare earths, steel, aluminium, uranium and trade deals." },
   { id: "construction", label: "Construction", key: "T", icon: "construction", phase: null, summary: "The construction queue: infrastructure, factories, power plants, bases and air defences." },
   { id: "production", label: "Production", key: "Y", icon: "production", phase: null, summary: "Production lines with efficiency for modern equipment, from rifles to carriers." },
   { id: "recruitment", label: "Recruitment", key: "U", icon: "recruitment", phase: null, summary: "Division templates, training and deployment, and manpower." },
-  { id: "logistics", label: "Logistics", key: "I", icon: "logistics", phase: "Phase 10", summary: "Supply, equipment stockpiles and shortfalls." },
-  { id: "intelligence", label: "Intelligence", key: "O", icon: "intelligence", phase: "Phase 11", summary: "Intelligence services, foreign influence and covert support for parties and movements." },
+  { id: "logistics", label: "Logistics", key: "I", icon: "logistics", phase: null, summary: "Supply, equipment stockpiles and shortfalls." },
+  { id: "intelligence", label: "Intelligence", key: "O", icon: "intelligence", phase: null, summary: "Intelligence services, foreign influence and covert support for parties and movements." },
   { id: "decisions", label: "Decisions", key: "P", icon: "decisions", phase: null, summary: "Player decisions with costs: election campaigns, reforms, emergencies." },
 ];

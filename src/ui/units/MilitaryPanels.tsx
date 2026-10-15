@@ -166,3 +166,70 @@ export function RecruitmentPanel({ db, session }: { db: ContentDB; session: Sess
     </div>
   );
 }
+
+/** Logistics tab (I): equipment shortfalls in the field and supply where divisions stand. */
+export function LogisticsPanel({ db, session }: { db: ContentDB; session: Session }) {
+  version.value;
+  const state = session.state;
+  const tag = state?.player;
+  const m = tag ? state?.countries[tag]?.military : undefined;
+  const map = session.simMap;
+  if (!state || !tag || !m) return <p class="dim pad">No military for this country.</p>;
+  const mine = state.divisions.filter((d) => d.owner === tag);
+  // equipment: what the divisions' templates need against what they hold
+  const need: Record<string, number> = {}, have: Record<string, number> = {};
+  for (const d of mine) {
+    for (const [f, c] of Object.entries(templateNeeds(db, d.units))) {
+      need[f] = (need[f] ?? 0) + c;
+      const ids = new Set(db.equipment.get(f)?.variants.map((v) => v.id));
+      have[f] = (have[f] ?? 0) + Object.entries(d.equipment).filter(([v]) => ids.has(v)).reduce((s, [, n]) => s + n, 0);
+    }
+  }
+  // supply: divisions per province against what the province can supply
+  const r = db.warRules;
+  const byProvince = new Map<number, number>();
+  for (const d of mine) byProvince.set(d.province, (byProvince.get(d.province) ?? 0) + 1);
+  const supply = [...byProvince.entries()].map(([p, n]) => {
+    const prov = map?.provinces[p - 1] as { name?: string; infrastructure?: number } | undefined;
+    const infra = (prov?.infrastructure ?? 3) + (state.provinceBuildings[String(p)]?.infrastructure ?? 0);
+    const own = state.provinceController[p - 1] === tag;
+    const cap = (r.supply_base + r.supply_per_infrastructure * infra) * (own ? 1 : 0.5);
+    return { p, name: prov?.name ?? `Province ${p}`, n, cap, own };
+  }).sort((a, b) => b.n / b.cap - a.n / a.cap);
+  const over = supply.filter((s) => s.n > s.cap);
+  return (
+    <div class="prod">
+      <div class="hp-section">Equipment in the field</div>
+      <table class="tbl">
+        <thead><tr><th>Equipment</th><th class="r">Needed</th><th class="r">Held</th><th class="r">Stockpile</th></tr></thead>
+        <tbody>
+          {Object.keys(need).map((f) => {
+            const short = need[f]! - (have[f] ?? 0);
+            return (
+              <tr key={f} {...tip(() => ({ title: db.equipment.get(f)?.name ?? f, rows: [["Needed by your divisions", fmt(need[f]!)], ["Held by them", fmt(have[f] ?? 0)], ["Shortfall", fmt(Math.max(0, short))], ["In the stockpile", fmt(familyStock(db, m.stockpile, f))]], note: "Divisions refit from the stockpile each month; produce more in the Production tab." }))}>
+                <td>{db.equipment.get(f)?.name ?? f}</td>
+                <td class="r num">{fmt(need[f]!)}</td>
+                <td class={`r num ${short > 0 ? "logi-over" : ""}`}>{fmt(have[f] ?? 0)}</td>
+                <td class="r num">{fmt(familyStock(db, m.stockpile, f))}</td>
+              </tr>
+            );
+          })}
+        </tbody>
+      </table>
+      <div class="hp-section">Supply</div>
+      <p class="faint small pad">A province supplies {r.supply_base} divisions plus {r.supply_per_infrastructure} per infrastructure level, half that in enemy territory. Divisions beyond it lose {(r.out_of_supply_attrition * 100).toFixed(1)}% strength a day. {over.length ? `${over.length} province${over.length === 1 ? " is" : "s are"} over the limit.` : "All your divisions are in supply."}</p>
+      <table class="tbl">
+        <thead><tr><th>Province</th><th class="r">Divisions</th><th class="r">Supplies</th></tr></thead>
+        <tbody>
+          {supply.slice(0, 30).map((s) => (
+            <tr key={s.p} {...tip(() => ({ title: s.name, rows: [["Divisions", s.n], ["Can supply", s.cap.toFixed(1)], ["Territory", s.own ? "own" : "enemy (half supply)"]] }))}>
+              <td>{s.name}</td>
+              <td class={`r num ${s.n > s.cap ? "logi-over" : ""}`}>{s.n}</td>
+              <td class="r num">{s.cap.toFixed(1)}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  );
+}

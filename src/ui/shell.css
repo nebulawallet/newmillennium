@@ -446,3 +446,13 @@ details[open] > .ol-h::before { transform: rotate(90deg) translateX(2px); }
   display: flex; gap: 12px; align-items: center; padding: 6px 8px 6px 14px;
   color: var(--warn); font-weight: 600;
 }
+
+/* Diplomacy and intelligence (Phase 11) */
+.diplo-actions { display: grid; gap: 4px; padding: 6px 4px; }
+.btn.danger { border-color: #7a2a22; color: #e08a7a; }
+.btn.danger:hover { border-color: #b04030; color: #f0a090; }
+.diplo .search { width: 100%; margin-bottom: 6px; }
+.diplo .dec-main.lnk { text-align: left; background: none; border: 0; padding: 0; cursor: pointer; color: inherit; font: inherit; }
+.diplo .dec-item.mine { border-color: var(--bronze-dk); }
+.hp-section .right { float: right; }
+.logi-over { color: var(--warn, #e0a050); }

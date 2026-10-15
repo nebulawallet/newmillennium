@@ -1,0 +1,185 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "note": {
+      "type": "string"
+    },
+    "ideology_weight": {
+      "default": 0.4,
+      "type": "number"
+    },
+    "rival_bloc_opinion": {
+      "default": -15,
+      "type": "number"
+    },
+    "at_war_opinion": {
+      "default": -100,
+      "type": "number"
+    },
+    "guarantee_opinion": {
+      "default": 25,
+      "type": "number"
+    },
+    "sanction_opinion": {
+      "default": -40,
+      "type": "number"
+    },
+    "trade_deal_opinion": {
+      "default": 10,
+      "type": "number"
+    },
+    "aggressor_opinion": {
+      "default": -30,
+      "type": "number"
+    },
+    "improve_per_month": {
+      "default": 4,
+      "type": "number"
+    },
+    "improve_cap": {
+      "default": 50,
+      "type": "number"
+    },
+    "improve_pp_monthly": {
+      "default": 3,
+      "type": "number"
+    },
+    "improve_slots": {
+      "default": 3,
+      "type": "number"
+    },
+    "access_opinion": {
+      "default": 30,
+      "type": "number"
+    },
+    "trade_opinion": {
+      "default": 0,
+      "type": "number"
+    },
+    "join_opinion": {
+      "default": 20,
+      "type": "number"
+    },
+    "guarantee_pp": {
+      "default": 25,
+      "type": "number"
+    },
+    "sanction_pp": {
+      "default": 10,
+      "type": "number"
+    },
+    "sanctions_growth": {
+      "default": 6,
+      "type": "number"
+    },
+    "trade_deal_growth": {
+      "default": 3,
+      "type": "number"
+    },
+    "trade_growth_cap": {
+      "default": 0.8,
+      "type": "number"
+    },
+    "justify_days": {
+      "default": 90,
+      "type": "number"
+    },
+    "justify_pp": {
+      "default": 30,
+      "type": "number"
+    },
+    "justification_valid_days": {
+      "default": 365,
+      "type": "number"
+    },
+    "unjustified_stability": {
+      "default": -0.1,
+      "type": "number"
+    },
+    "unjustified_tension_multiplier": {
+      "default": 2,
+      "type": "number"
+    },
+    "unsc_votes_needed": {
+      "default": 9,
+      "type": "number"
+    },
+    "veto_opinion": {
+      "default": 40,
+      "type": "number"
+    },
+    "sanctions_resolution_days": {
+      "default": 730,
+      "type": "number"
+    },
+    "influence_pp_monthly": {
+      "default": 2,
+      "type": "number"
+    },
+    "influence_popularity": {
+      "default": 0.006,
+      "type": "number"
+    },
+    "influence_detection": {
+      "default": 0.04,
+      "type": "number"
+    },
+    "influence_exposed_opinion": {
+      "default": -40,
+      "type": "number"
+    },
+    "coup_days": {
+      "default": 180,
+      "type": "number"
+    },
+    "coup_pp": {
+      "default": 50,
+      "type": "number"
+    },
+    "coup_success_bonus": {
+      "default": 0.25,
+      "type": "number"
+    },
+    "source": {
+      "minItems": 1,
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "url": {
+            "type": "string",
+            "format": "uri"
+          },
+          "title": {
+            "type": "string",
+            "minLength": 1
+          },
+          "accessed": {
+            "type": "string",
+            "format": "date",
+            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))$",
+            "description": "Calendar date, YYYY-MM-DD"
+          },
+          "note": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "url",
+          "title",
+          "accessed"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "confidence": {
+      "type": "string",
+      "enum": [
+        "verified",
+        "needs_review"
+      ]
+    }
+  },
+  "additionalProperties": false
+}

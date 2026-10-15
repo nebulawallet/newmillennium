@@ -1,0 +1,643 @@
+{
+  "note": "Bloc enlargements and withdrawals with their real dates. Accessions fire on the date while the country meets the conditions (not at war, not in a rival military bloc), whatever its politics; the British withdrawal follows the historical path only. Effects other than membership are gameplay estimates.",
+  "events": [
+    {
+      "id": "nato_enlargement_2004",
+      "title": "Accession to NATO",
+      "description": "On 29 March 2004 Bulgaria, Estonia, Latvia, Lithuania, Romania, Slovakia and Slovenia joined NATO.",
+      "countries": [
+        "BGR",
+        "EST",
+        "LVA",
+        "LTU",
+        "ROU",
+        "SVK",
+        "SVN"
+      ],
+      "trigger": {
+        "all": [
+          {
+            "not": {
+              "in_bloc": "nato"
+            }
+          },
+          {
+            "not": {
+              "at_war": true
+            }
+          },
+          {
+            "not": {
+              "in_bloc": "cst"
+            }
+          }
+        ]
+      },
+      "historical": {
+        "date": "2004-03-29",
+        "any_path": true,
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/Member_states_of_NATO",
+            "title": "Wikipedia: Member states of NATO",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified"
+      },
+      "options": [
+        {
+          "id": "join",
+          "name": "Membership takes effect",
+          "effects": [
+            {
+              "join_bloc": "nato"
+            },
+            {
+              "add_stability": 0.02
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "nato_enlargement_2009",
+      "title": "Accession to NATO",
+      "description": "On 1 April 2009 Albania and Croatia joined NATO.",
+      "countries": [
+        "ALB",
+        "HRV"
+      ],
+      "trigger": {
+        "all": [
+          {
+            "not": {
+              "in_bloc": "nato"
+            }
+          },
+          {
+            "not": {
+              "at_war": true
+            }
+          },
+          {
+            "not": {
+              "in_bloc": "cst"
+            }
+          }
+        ]
+      },
+      "historical": {
+        "date": "2009-04-01",
+        "any_path": true,
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/Member_states_of_NATO",
+            "title": "Wikipedia: Member states of NATO",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified"
+      },
+      "options": [
+        {
+          "id": "join",
+          "name": "Membership takes effect",
+          "effects": [
+            {
+              "join_bloc": "nato"
+            },
+            {
+              "add_stability": 0.02
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "nato_enlargement_2017",
+      "title": "Accession to NATO",
+      "description": "On 5 June 2017 Montenegro joined NATO.",
+      "countries": [
+        "MNE"
+      ],
+      "trigger": {
+        "all": [
+          {
+            "not": {
+              "in_bloc": "nato"
+            }
+          },
+          {
+            "not": {
+              "at_war": true
+            }
+          },
+          {
+            "not": {
+              "in_bloc": "cst"
+            }
+          }
+        ]
+      },
+      "historical": {
+        "date": "2017-06-05",
+        "any_path": true,
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/Member_states_of_NATO",
+            "title": "Wikipedia: Member states of NATO",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified"
+      },
+      "options": [
+        {
+          "id": "join",
+          "name": "Membership takes effect",
+          "effects": [
+            {
+              "join_bloc": "nato"
+            },
+            {
+              "add_stability": 0.02
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "nato_enlargement_2020",
+      "title": "Accession to NATO",
+      "description": "On 27 March 2020 North Macedonia joined NATO.",
+      "countries": [
+        "MKD"
+      ],
+      "trigger": {
+        "all": [
+          {
+            "not": {
+              "in_bloc": "nato"
+            }
+          },
+          {
+            "not": {
+              "at_war": true
+            }
+          },
+          {
+            "not": {
+              "in_bloc": "cst"
+            }
+          }
+        ]
+      },
+      "historical": {
+        "date": "2020-03-27",
+        "any_path": true,
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/Member_states_of_NATO",
+            "title": "Wikipedia: Member states of NATO",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified"
+      },
+      "options": [
+        {
+          "id": "join",
+          "name": "Membership takes effect",
+          "effects": [
+            {
+              "join_bloc": "nato"
+            },
+            {
+              "add_stability": 0.02
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "nato_enlargement_2023",
+      "title": "Accession to NATO",
+      "description": "On 4 April 2023 Finland joined NATO.",
+      "countries": [
+        "FIN"
+      ],
+      "trigger": {
+        "all": [
+          {
+            "not": {
+              "in_bloc": "nato"
+            }
+          },
+          {
+            "not": {
+              "at_war": true
+            }
+          },
+          {
+            "not": {
+              "in_bloc": "cst"
+            }
+          }
+        ]
+      },
+      "historical": {
+        "date": "2023-04-04",
+        "any_path": true,
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/Member_states_of_NATO",
+            "title": "Wikipedia: Member states of NATO",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified"
+      },
+      "options": [
+        {
+          "id": "join",
+          "name": "Membership takes effect",
+          "effects": [
+            {
+              "join_bloc": "nato"
+            },
+            {
+              "add_stability": 0.02
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "nato_enlargement_2024",
+      "title": "Accession to NATO",
+      "description": "On 7 March 2024 Sweden joined NATO.",
+      "countries": [
+        "SWE"
+      ],
+      "trigger": {
+        "all": [
+          {
+            "not": {
+              "in_bloc": "nato"
+            }
+          },
+          {
+            "not": {
+              "at_war": true
+            }
+          },
+          {
+            "not": {
+              "in_bloc": "cst"
+            }
+          }
+        ]
+      },
+      "historical": {
+        "date": "2024-03-07",
+        "any_path": true,
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/Member_states_of_NATO",
+            "title": "Wikipedia: Member states of NATO",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified"
+      },
+      "options": [
+        {
+          "id": "join",
+          "name": "Membership takes effect",
+          "effects": [
+            {
+              "join_bloc": "nato"
+            },
+            {
+              "add_stability": 0.02
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "eu_enlargement_2004",
+      "title": "Accession to the European Union",
+      "description": "On 1 May 2004 ten countries joined the European Union: Cyprus, the Czech Republic, Estonia, Hungary, Latvia, Lithuania, Malta, Poland, Slovakia and Slovenia, the largest enlargement in its history.",
+      "countries": [
+        "CYP",
+        "CZE",
+        "EST",
+        "HUN",
+        "LVA",
+        "LTU",
+        "MLT",
+        "POL",
+        "SVK",
+        "SVN"
+      ],
+      "trigger": {
+        "all": [
+          {
+            "not": {
+              "in_bloc": "eu"
+            }
+          },
+          {
+            "not": {
+              "at_war": true
+            }
+          }
+        ]
+      },
+      "historical": {
+        "date": "2004-05-01",
+        "any_path": true,
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/Member_state_of_the_European_Union",
+            "title": "Wikipedia: Member state of the European Union",
+            "accessed": "2026-10-15"
+          },
+          {
+            "url": "https://en.wikipedia.org/wiki/2004_enlargement_of_the_European_Union",
+            "title": "Wikipedia: 2004 enlargement of the European Union",
+            "accessed": "2026-10-14"
+          }
+        ],
+        "confidence": "verified"
+      },
+      "options": [
+        {
+          "id": "join",
+          "name": "Membership takes effect",
+          "effects": [
+            {
+              "join_bloc": "eu"
+            },
+            {
+              "add_interest_group_approval": {
+                "group": "business",
+                "value": 4
+              }
+            },
+            {
+              "add_interest_group_approval": {
+                "group": "urban_middle_class",
+                "value": 3
+              }
+            },
+            {
+              "add_economic_mood": 0.1
+            },
+            {
+              "set_flag": "eu_member"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "eu_enlargement_2007",
+      "title": "Accession to the European Union",
+      "description": "On 1 January 2007 Bulgaria and Romania joined the European Union.",
+      "countries": [
+        "BGR",
+        "ROU"
+      ],
+      "trigger": {
+        "all": [
+          {
+            "not": {
+              "in_bloc": "eu"
+            }
+          },
+          {
+            "not": {
+              "at_war": true
+            }
+          }
+        ]
+      },
+      "historical": {
+        "date": "2007-01-01",
+        "any_path": true,
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/Member_state_of_the_European_Union",
+            "title": "Wikipedia: Member state of the European Union",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified"
+      },
+      "options": [
+        {
+          "id": "join",
+          "name": "Membership takes effect",
+          "effects": [
+            {
+              "join_bloc": "eu"
+            },
+            {
+              "add_stability": 0.02
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "eu_enlargement_2013",
+      "title": "Accession to the European Union",
+      "description": "On 1 July 2013 Croatia joined the European Union.",
+      "countries": [
+        "HRV"
+      ],
+      "trigger": {
+        "all": [
+          {
+            "not": {
+              "in_bloc": "eu"
+            }
+          },
+          {
+            "not": {
+              "at_war": true
+            }
+          }
+        ]
+      },
+      "historical": {
+        "date": "2013-07-01",
+        "any_path": true,
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/Member_state_of_the_European_Union",
+            "title": "Wikipedia: Member state of the European Union",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified"
+      },
+      "options": [
+        {
+          "id": "join",
+          "name": "Membership takes effect",
+          "effects": [
+            {
+              "join_bloc": "eu"
+            },
+            {
+              "add_stability": 0.02
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sco_founded",
+      "title": "The Shanghai Cooperation Organisation",
+      "description": "On 15 June 2001 China, Kazakhstan, Kyrgyzstan, Russia, Tajikistan and Uzbekistan founded the Shanghai Cooperation Organisation in Shanghai.",
+      "countries": [
+        "CHN",
+        "KAZ",
+        "KGZ",
+        "RUS",
+        "TJK",
+        "UZB"
+      ],
+      "trigger": {
+        "all": [
+          {
+            "not": {
+              "in_bloc": "sco"
+            }
+          },
+          {
+            "not": {
+              "at_war": true
+            }
+          }
+        ]
+      },
+      "historical": {
+        "date": "2001-06-15",
+        "any_path": true,
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/Shanghai_Cooperation_Organisation",
+            "title": "Wikipedia: Shanghai Cooperation Organisation",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified"
+      },
+      "options": [
+        {
+          "id": "join",
+          "name": "Membership takes effect",
+          "effects": [
+            {
+              "join_bloc": "sco"
+            },
+            {
+              "add_stability": 0.02
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "asean_timor_leste",
+      "title": "Accession to ASEAN",
+      "description": "On 26 October 2025 Timor-Leste joined ASEAN as its eleventh member.",
+      "countries": [
+        "TLS"
+      ],
+      "trigger": {
+        "all": [
+          {
+            "not": {
+              "in_bloc": "asean"
+            }
+          },
+          {
+            "not": {
+              "at_war": true
+            }
+          }
+        ]
+      },
+      "historical": {
+        "date": "2025-10-26",
+        "any_path": true,
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/ASEAN",
+            "title": "Wikipedia: ASEAN",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified"
+      },
+      "options": [
+        {
+          "id": "join",
+          "name": "Membership takes effect",
+          "effects": [
+            {
+              "join_bloc": "asean"
+            },
+            {
+              "add_stability": 0.02
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "gbr_leaves_eu",
+      "title": "The United Kingdom leaves the European Union",
+      "description": "Following the referendum of June 2016, the United Kingdom ceased to be a member state of the European Union on 31 January 2020.",
+      "countries": [
+        "GBR"
+      ],
+      "trigger": {
+        "in_bloc": "eu"
+      },
+      "historical": {
+        "date": "2020-01-31",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/Member_state_of_the_European_Union",
+            "title": "Wikipedia: Member state of the European Union",
+            "accessed": "2026-10-15"
+          },
+          {
+            "url": "https://en.wikipedia.org/wiki/Brexit",
+            "title": "Wikipedia: Brexit",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified"
+      },
+      "options": [
+        {
+          "id": "leave",
+          "name": "Withdrawal takes effect",
+          "effects": [
+            {
+              "leave_bloc": "eu"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

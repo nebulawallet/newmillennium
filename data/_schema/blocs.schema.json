@@ -1,0 +1,197 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "note": {
+      "type": "string"
+    },
+    "blocs": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[a-z0-9]+(?:_[a-z0-9]+)*$"
+          },
+          "name": {
+            "type": "string",
+            "minLength": 1
+          },
+          "color": {
+            "default": "#888888",
+            "type": "string",
+            "pattern": "^#[0-9a-f]{6}$"
+          },
+          "description": {
+            "type": "string",
+            "minLength": 1
+          },
+          "kind": {
+            "type": "string",
+            "enum": [
+              "military",
+              "economic",
+              "political"
+            ]
+          },
+          "defensive": {
+            "default": false,
+            "type": "boolean"
+          },
+          "opinion": {
+            "default": 10,
+            "type": "number"
+          },
+          "trade_growth": {
+            "default": 0,
+            "type": "number",
+            "minimum": 0
+          },
+          "accession_days": {
+            "default": 730,
+            "type": "integer",
+            "exclusiveMinimum": 0,
+            "maximum": 9007199254740991
+          },
+          "rival": {
+            "type": "string",
+            "pattern": "^[a-z0-9]+(?:_[a-z0-9]+)*$"
+          },
+          "join_trigger": {},
+          "renamed": {
+            "default": [],
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "date": {
+                  "type": "string",
+                  "format": "date",
+                  "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))$",
+                  "description": "Calendar date, YYYY-MM-DD"
+                },
+                "name": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "source": {
+                  "minItems": 1,
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "url": {
+                        "type": "string",
+                        "format": "uri"
+                      },
+                      "title": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "accessed": {
+                        "type": "string",
+                        "format": "date",
+                        "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))$",
+                        "description": "Calendar date, YYYY-MM-DD"
+                      },
+                      "note": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "url",
+                      "title",
+                      "accessed"
+                    ],
+                    "additionalProperties": false
+                  }
+                },
+                "confidence": {
+                  "type": "string",
+                  "enum": [
+                    "verified",
+                    "needs_review"
+                  ]
+                },
+                "review_note": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "date",
+                "name",
+                "source",
+                "confidence"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "members_2000": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "^[A-Z]{3}$"
+            }
+          },
+          "source": {
+            "minItems": 1,
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "url": {
+                  "type": "string",
+                  "format": "uri"
+                },
+                "title": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "accessed": {
+                  "type": "string",
+                  "format": "date",
+                  "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))$",
+                  "description": "Calendar date, YYYY-MM-DD"
+                },
+                "note": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "url",
+                "title",
+                "accessed"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "verified",
+              "needs_review"
+            ]
+          },
+          "review_note": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "name",
+          "description",
+          "kind",
+          "members_2000",
+          "source",
+          "confidence"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "required": [
+    "blocs"
+  ],
+  "additionalProperties": false
+}

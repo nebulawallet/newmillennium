@@ -3,6 +3,7 @@
  * (src/content/script/registry.ts) against the game state, and describes them in plain words for
  * tooltips. Effects for systems that arrive in later phases are accepted and described as such.
  */
+import { addOpinion, atWarWith, inBloc, joinBloc, leaveBloc, opinion } from "../diplomacy/diplomacy.ts";
 import type { ContentDB } from "../../content/compile.ts";
 import { COUNTRY_SCOPE, LOGIC_KEYS, SCOPES } from "../../content/script/registry.ts";
 import { dayOf } from "../date.ts";
@@ -129,8 +130,10 @@ function trigger(ctx: SimContext, scope: Scope, k: string, v: unknown): boolean 
     case "ig_approval_below": return (cs.interestGroups[a.group as string]?.approval ?? 50) < (a.value as number);
     case "ig_approval_above": return (cs.interestGroups[a.group as string]?.approval ?? 50) > (a.value as number);
     case "ig_influence_above": return (cs.interestGroups[a.group as string]?.influence ?? 0) > (a.value as number);
-    case "at_war": return (!!cs.civilWar) === v; // interstate war arrives in Phase 10
-    case "at_war_with": return cs.civilWar?.rebel === v;
+    case "at_war": return (!!cs.civilWar || state.wars.some((w) => w.attackers.includes(scope.tag) || w.defenders.includes(scope.tag))) === v;
+    case "at_war_with": return atWarWith(state, scope.tag, v as string);
+    case "in_bloc": return inBloc(state, scope.tag, v as string);
+    case "opinion_of_above": return opinion(db, state, scope.tag, a.target as string) > (a.value as number);
     case "has_completed_focus": return cs.focus.completed.includes(v as string);
     case "exists": return !!state.countries[v as string]?.active && state.provinceOwner.includes(v as string);
     case "unrest_above": return cs.unrest > (v as number);
@@ -180,7 +183,7 @@ export function runEffects(ctx: SimContext, scope: Scope, effects: unknown[], so
 }
 
 /** Popularity change that persists: polls drift toward the model, so the calibration moves too. */
-function shiftPopularity(cs: CountryState, party: string, value: number): void {
+export function shiftPopularity(cs: CountryState, party: string, value: number): void {
   const before = cs.partyPopularity[party] ?? 0;
   const after = clamp(before + value, 0.001, 0.95);
   cs.partyPopularity[party] = after;
@@ -314,9 +317,19 @@ function effect(ctx: SimContext, scope: Scope, k: string, v: unknown, source: st
     case "add_treasury": if (cs.economy) cs.economy.treasury = Math.max(0, cs.economy.treasury + (v as number)); break;
     case "unlock_tech": grantTech(db, cs, v as string); break;
     case "add_trait":
-    case "add_opinion":
-    case "add_wargoal":
+    case "add_opinion": {
+      const target = a.target === "ROOT" ? scope.root : a.target === "FROM" ? scope.from : (a.target as string);
+      if (target) addOpinion(state, scope.tag, target, a.value as number, (a.days as number | undefined) ?? 365);
       break;
+    }
+    case "join_bloc": joinBloc(ctx, scope.tag, v as string); break;
+    case "leave_bloc": leaveBloc(ctx, scope.tag, v as string); break;
+    case "add_wargoal": {
+      const target = a.target as string;
+      state.diplomacy.justifications.push({ tag: scope.tag, target, start: state.day, done: state.day, expires: state.day + db.diplomacyRules.justification_valid_days });
+      break;
+    }
+
   }
 }
 
@@ -409,8 +422,10 @@ export function describeEffects(db: ContentDB, effects: unknown[], depth = 0): s
         break;
       }
       case "unlock_tech": line = `Technology: ${db.techs.get(v as string)?.name ?? v}`; break;
-      case "add_wargoal": line = later(`War goal against ${name.tag(a.target as string)}`, "Phase 10"); break;
-      case "add_opinion": line = later(`Opinion ${signed(a.value as number)}`, "Phase 11"); break;
+      case "add_wargoal": line = `War goal against ${name.tag(a.target as string)}`; break;
+      case "add_opinion": line = `Opinion of ${a.target === "ROOT" || a.target === "FROM" ? "them" : name.tag(a.target as string)} ${signed(a.value as number)}`; break;
+      case "join_bloc": line = `Joins the ${db.blocs.get(v as string)?.name ?? v}`; break;
+      case "leave_bloc": line = `Leaves the ${db.blocs.get(v as string)?.name ?? v}`; break;
       case "add_trait": line = `${name.person(a.person as string)} gains a trait`; break;
       default:
         if (SCOPES.has(k) || k === COUNTRY_SCOPE) {

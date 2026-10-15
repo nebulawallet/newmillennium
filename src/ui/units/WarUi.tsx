@@ -1,13 +1,14 @@
-/** War UI (Phase 10): declare war from a country's province view, the peace conference, and wars in the outliner. */
+/** War UI (Phase 10): the province view's diplomacy entry point, the peace conference, and wars in the outliner. */
 import type { ContentDB } from "../../content/compile.ts";
 import { formatDate } from "../../sim/date.ts";
 import { hostile, occupiedShare } from "../../sim/military/war.ts";
 import { countryName } from "../../sim/politics/unrest.ts";
 import { Icon } from "../icons.tsx";
-import { version, type Session } from "../session.ts";
+import { panel, version, type Session } from "../session.ts";
+import { diplomacyTarget } from "../diplomacy/DiplomacyPanels.tsx";
 import { tip } from "../tooltip.tsx";
 
-/** Declare-war control for the country owning a selected province. */
+/** Diplomacy entry point for the country owning a selected province (war is declared from the Diplomacy tab). */
 export function WarButton({ db, session, target }: { db: ContentDB; session: Session; target: string }) {
   version.value;
   const state = session.state;
@@ -20,14 +21,13 @@ export function WarButton({ db, session, target }: { db: ContentDB; session: Ses
     <div class="pad">
       <button
         class="btn"
-        onClick={() => session.dispatch({ type: "declare_war", tag: me, target, goal: "conquest" })}
-        {...tip(() => ({
-          title: `Declare war on ${countryName(db, state, target)}`,
-          rows: [["World tension", `+${Math.round(db.warRules.tension_per_war * (nuclear ? db.warRules.nuclear_tension_multiplier : 1) * 100)}%`], ["Goal", "Conquest of occupied provinces"]],
-          note: `${nuclear ? "A nuclear power: tension rises far more. " : ""}Your divisions may then enter its territory. A side capitulates when its enemies hold ${Math.round(db.warRules.capitulation_share * 100)}% of its population; after ${db.warRules.white_peace_min_months} months, a side whose war support falls to ${Math.round(db.warRules.white_peace_war_support * 100)}% makes a white peace; holding enemy territory raises war support. Alliances and justification arrive with diplomacy in Phase 11.`,
-        }))}
+        onClick={() => {
+          diplomacyTarget.value = target;
+          panel.value = "diplomacy";
+        }}
+        {...tip(() => ({ title: `Diplomacy with ${countryName(db, state, target)}`, note: `Relations, guarantees, access, trade, sanctions and war. ${nuclear ? "A nuclear power: war against it raises world tension far more." : ""}` }))}
       >
-        Declare war
+        Diplomacy
       </button>
     </div>
   );

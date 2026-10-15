@@ -12,6 +12,19 @@ import { canBuild } from "./economy/economy.ts";
 import { setResearch } from "./research/research.ts";
 import { addLine, moveDivision, setTemplate, trainDivision, type Template } from "./military/military.ts";
 import { choosePeace, declareWar, type WarGoal } from "./military/war.ts";
+import {
+  applyToBloc,
+  guarantee,
+  justifyWar,
+  leaveBlocCmd,
+  proposeResolution,
+  requestAccess,
+  sanction,
+  setImproveRelations,
+  startCampaign,
+  stopCampaign,
+  tradeDeal,
+} from "./diplomacy/diplomacy.ts";
 
 export type Command =
   | { type: "change_law"; tag: string; category: string; law: string }
@@ -36,7 +49,13 @@ export type Command =
   | { type: "train_division"; tag: string; template: string }
   | { type: "move_division"; tag: string; division: number; province: number }
   | { type: "declare_war"; tag: string; target: string; goal?: WarGoal }
-  | { type: "choose_peace"; annex: boolean };
+  | { type: "choose_peace"; annex: boolean }
+  | { type: "improve_relations" | "guarantee" | "military_access" | "trade_deal" | "sanction"; tag: string; target: string; on: boolean }
+  | { type: "justify_war"; tag: string; target: string }
+  | { type: "apply_to_bloc" | "leave_bloc"; tag: string; bloc: string }
+  | { type: "propose_resolution"; tag: string; kind: "condemn" | "sanctions"; target: string }
+  | { type: "start_influence"; tag: string; target: string; kind: "fund_party" | "back_coup"; arg: string }
+  | { type: "stop_influence"; tag: string; id: number };
 
 export interface CommandResult {
   ok: boolean;
@@ -128,6 +147,28 @@ export function applyCommand(ctx: SimContext, cmd: Command): CommandResult {
       return moveDivision(ctx, cmd.tag, cmd.division, cmd.province);
     case "declare_war":
       return declareWar(ctx, cmd.tag, cmd.target, cmd.goal);
+    case "improve_relations":
+      return setImproveRelations(ctx, cmd.tag, cmd.target, cmd.on);
+    case "guarantee":
+      return guarantee(ctx, cmd.tag, cmd.target, cmd.on);
+    case "military_access":
+      return requestAccess(ctx, cmd.tag, cmd.target, cmd.on);
+    case "trade_deal":
+      return tradeDeal(ctx, cmd.tag, cmd.target, cmd.on);
+    case "sanction":
+      return sanction(ctx, cmd.tag, cmd.target, cmd.on);
+    case "justify_war":
+      return justifyWar(ctx, cmd.tag, cmd.target);
+    case "apply_to_bloc":
+      return applyToBloc(ctx, cmd.tag, cmd.bloc);
+    case "leave_bloc":
+      return leaveBlocCmd(ctx, cmd.tag, cmd.bloc);
+    case "propose_resolution":
+      return proposeResolution(ctx, cmd.tag, cmd.kind, cmd.target);
+    case "start_influence":
+      return startCampaign(ctx, cmd.tag, cmd.target, cmd.kind, cmd.arg);
+    case "stop_influence":
+      return stopCampaign(ctx, cmd.tag, cmd.id);
     case "choose_peace":
       return choosePeace(ctx, cmd.annex);
     case "force_coup": {

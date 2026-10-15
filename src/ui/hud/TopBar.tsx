@@ -3,11 +3,14 @@ import type { ContentDB } from "../../content/compile.ts";
 import { formatDate } from "../../sim/date.ts";
 import { politicalPowerGain, stabilityTarget } from "../../sim/simulation.ts";
 import { factories } from "../../sim/economy/economy.ts";
+import { manpowerInService, manpowerPool } from "../../sim/military/military.ts";
 import type { CountryState } from "../../sim/state.ts";
 import { Icon, type IconName } from "../icons.tsx";
 import { panel, paused, speed, version, type Session } from "../session.ts";
 import { TABS } from "../tabs.ts";
 import { tip, type TipContent } from "../tooltip.tsx";
+
+const compact = (n: number) => (n >= 1e6 ? `${(n / 1e6).toFixed(n >= 1e7 ? 0 : 1)}M` : n >= 1e3 ? `${Math.round(n / 1e3)}k` : String(Math.round(n)));
 
 const pct = (x: number) => `${Math.round(x * 100)}%`;
 const signed = (x: number, d = 2) => `${x >= 0 ? "+" : ""}${x.toFixed(d)}`;
@@ -140,7 +143,25 @@ export function TopBar({ db, session }: { db: ContentDB; session: Session }) {
         <Stat icon="power" value={String(Math.round(cs.politicalPower))} numeric={Math.round(cs.politicalPower)} tipContent={tips.pp} />
         <Stat icon="stability" value={pct(cs.stability)} numeric={Math.round(cs.stability * 1000)} tipContent={tips.stability} />
         <Stat icon="warSupport" value={pct(cs.warSupport)} numeric={Math.round(cs.warSupport * 1000)} tipContent={tips.war} />
-        <Stat icon="manpower" value="—" pending tipContent={() => ({ title: "Manpower", note: "Arrives with recruitment in Phase 9." })} />
+        {cs.military ? (
+          <Stat
+            icon="manpower"
+            value={compact(cs.military.manpower)}
+            numeric={Math.round(cs.military.manpower)}
+            onClick={() => (panel.value = panel.value === "recruitment" ? null : "recruitment")}
+            tipContent={() => ({
+              title: "Manpower",
+              rows: [
+                ["Available", Math.round(cs.military!.manpower).toLocaleString("en")],
+                ["Recruitable pool", Math.round(manpowerPool(db, cs)).toLocaleString("en")],
+                ["In service", Math.round(manpowerInService(db, session.state!, cs.tag)).toLocaleString("en")],
+              ],
+              note: "The pool is a share of the population set by the conscription law. Click to open Recruitment.",
+            })}
+          />
+        ) : (
+          <Stat icon="manpower" value="—" pending tipContent={() => ({ title: "Manpower", note: "This country has no armed forces data." })} />
+        )}
         {cs.economy ? (
           <>
             <Stat

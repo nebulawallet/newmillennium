@@ -15,6 +15,7 @@ import type { ContentDB } from "../../content/compile.ts";
 import type { SimContext, System } from "../simulation.ts";
 import type { CountryState, GameState, War } from "../state.ts";
 import { clamp, countryModifiers } from "../politics/common.ts";
+import { justification, onWarDeclared } from "../diplomacy/diplomacy.ts";
 import { templateNeeds, templateStats, type Division } from "./military.ts";
 
 export interface Battle {
@@ -104,22 +105,27 @@ export function airPower(db: ContentDB, cs: CountryState): number {
 
 // ------------------------------------------------------------------ commands
 
-export function declareWar(ctx: SimContext, tag: string, target: string, goal: WarGoal = "conquest"): { ok: boolean; text: string } {
+export function declareWar(ctx: SimContext, tag: string, target: string, goal: WarGoal = "conquest", requireJustification = false): { ok: boolean; text: string } {
   const { db, state } = ctx;
   if (tag === target) return { ok: false, text: "A country cannot declare war on itself." };
   const a = state.countries[tag], b = state.countries[target];
   if (!a?.active || !b?.active) return { ok: false, text: "Unknown country." };
   if (hostile(state, tag, target)) return { ok: false, text: "Already at war." };
   const rules = db.warRules;
+  const j = justification(state, tag, target);
+  const justified = !!j && j.done <= state.day;
+  if (requireJustification && !justified) return { ok: false, text: j ? "The war goal is still being justified." : "Justify a war goal first." };
   const name = `${countryShort(db, state, tag)}–${countryShort(db, state, target)} war`;
-  state.wars.push({ id: state.nextWarId++, name, attackers: [tag], defenders: [target], startDay: state.day, goal });
+  const id = state.nextWarId++;
+  state.wars.push({ id, name, attackers: [tag], defenders: [target], startDay: state.day, goal });
   const nuclear = rules.nuclear_states_2000.includes(target) || rules.nuclear_states_2000.includes(tag);
-  state.worldTension = clamp(state.worldTension + rules.tension_per_war * (nuclear ? rules.nuclear_tension_multiplier : 1), 0, 1);
+  state.worldTension = clamp(state.worldTension + rules.tension_per_war * (nuclear ? rules.nuclear_tension_multiplier : 1) * (justified ? 1 : db.diplomacyRules.unjustified_tension_multiplier), 0, 1);
   a.warSupport = clamp(a.warSupport - 0.05, 0, 1);
   b.warSupport = clamp(Math.max(b.warSupport + 0.15, rules.defender_rally), 0, 1);
   a.followsHistory = false;
   b.followsHistory = false;
-  ctx.log(tag, "war", `Declares war on ${countryShort(db, state, target)}`);
+  ctx.log(tag, "war", `Declares war on ${countryShort(db, state, target)}${justified ? "" : " without a justification"}`);
+  onWarDeclared(ctx, id, tag, target, justified);
   ctx.emit({ type: "map_changed" });
   return { ok: true, text: `War declared on ${countryShort(db, state, target)}.` };
 }

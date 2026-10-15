@@ -2,12 +2,13 @@
  * Plain-JSON form of the compiled ContentDB, used to ship content to the browser.
  * The compiler (Node) produces it with toBundle(); the game rebuilds the maps with fromBundle().
  */
-import type { CompileResult, ContentDB, CountryContent, Issue } from "./compile.ts";
+import { EMPTY_UN, type CompileResult, type ContentDB, type CountryContent, type Issue } from "./compile.ts";
 import { PoliticsRulesFile, type PoliticsRules } from "./schemas/rules.ts";
 import { EconomyRulesFile } from "./schemas/economy.ts";
 import { ResearchRulesFile } from "./schemas/research.ts";
 import { MilitaryRulesFile } from "./schemas/units.ts";
 import { WarRulesFile } from "./schemas/war.ts";
+import { DiplomacyRulesFile, type BlocDef } from "./schemas/diplomacy.ts";
 
 export const BUNDLE_VERSION = 1;
 
@@ -38,6 +39,9 @@ export interface ContentBundle {
   subUnits: unknown[];
   militaryRules: ContentDB["militaryRules"];
   warRules: ContentDB["warRules"];
+  blocs: BlocDef[];
+  un: ContentDB["un"];
+  diplomacyRules: ContentDB["diplomacyRules"];
   techCategories: unknown[];
   techs: unknown[];
   buildings: unknown[];
@@ -80,6 +84,9 @@ export function toBundle({ db, issues }: CompileResult): ContentBundle {
     subUnits: [...db.subUnits.values()],
     militaryRules: db.militaryRules,
     warRules: db.warRules,
+    blocs: [...db.blocs.values()],
+    un: db.un,
+    diplomacyRules: db.diplomacyRules,
     techCategories: [...db.techCategories.values()],
     techs: [...db.techs.values()],
     buildings: [...db.buildings.values()],
@@ -116,6 +123,9 @@ export function fromBundle(b: ContentBundle): ContentDB {
     subUnits: byId(b.subUnits ?? []),
     militaryRules: b.militaryRules ?? MilitaryRulesFile.parse({}),
     warRules: b.warRules ?? WarRulesFile.parse({}),
+    blocs: byId(b.blocs ?? []),
+    un: b.un ?? EMPTY_UN,
+    diplomacyRules: b.diplomacyRules ?? DiplomacyRulesFile.parse({}),
     techCategories: byId(b.techCategories ?? []),
     techs: byId(b.techs ?? []),
     buildings: byId(b.buildings ?? []),

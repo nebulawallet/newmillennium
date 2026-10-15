@@ -181,7 +181,7 @@ export function PoliticsPanel({ db, state, tag, session }: { db: ContentDB; stat
           {...tip(() => ({
             title: "Economic mood",
             rows: [["Mood (−100 to +100)", Math.round(cs.economicMood * 100)]],
-            note: "Helps or hurts governing parties at elections and moves interest group approval. A placeholder cycle until the economy arrives in Phase 7.",
+            note: "Helps or hurts governing parties at elections and moves interest group approval. Driven by growth against trend, unemployment and inflation (see the Economy panel).",
           }))}
         >
           {cs.economicMood >= 0 ? "+" : ""}

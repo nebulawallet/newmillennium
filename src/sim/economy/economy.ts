@@ -11,6 +11,7 @@
  * The economic mood that elections and interest groups use is derived from these figures.
  * Values with no World Bank figure use labelled gameplay estimates by income tier.
  */
+import { tradeIndex } from "../diplomacy/diplomacy.ts";
 import type { ContentDB } from "../../content/compile.ts";
 import type { SimContext, System } from "../simulation.ts";
 import type { CountryState, GameState } from "../state.ts";
@@ -34,6 +35,8 @@ export interface ConstructionItem {
 }
 
 export interface EconomyState {
+  /** Trade and sanctions growth on 1 January 2000 (later changes are relative to it). */
+  tradeBase?: number;
   population: number;
   /** Billion US dollars (2000 prices). */
   gdp: number;
@@ -239,6 +242,8 @@ export function growthTarget(db: ContentDB, state: GameState, cs: CountryState):
   const resource = resourceIncomeEffect(db, state, e);
   if (Math.abs(resource) >= 0.01) parts.push({ label: "Resource prices", value: resource });
   if (Math.abs(shock.growth) >= 0.01) parts.push({ label: "Economic shocks", value: shock.growth });
+  const trade = tradeIndex(db, state, cs.tag) - (e.tradeBase ??= tradeIndex(db, state, cs.tag));
+  if (Math.abs(trade) >= 0.01) parts.push({ label: "Trade agreements, blocs and sanctions", value: trade });
   return { target: parts.reduce((s, p) => s + p.value, 0), parts };
 }
 

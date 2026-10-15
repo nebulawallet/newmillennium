@@ -9,6 +9,7 @@ import { PoliticsRulesFile, type PoliticsRules } from "./schemas/rules.ts";
 import { BuildingsFile, EconomyRulesFile, WorldBankFile, type BuildingDef, type EconomyRules } from "./schemas/economy.ts";
 import { ResearchRulesFile, TechCategoryFile, type ResearchRules, type TechCategory, type TechDef } from "./schemas/research.ts";
 import { WarRulesFile, type WarRules } from "./schemas/war.ts";
+import { BlocsFile, DiplomacyRulesFile, UnFile, type BlocDef, type DiplomacyRules, type UnData } from "./schemas/diplomacy.ts";
 import { EquipmentFile, MilitaryRulesFile, SubUnitsFile, type EquipmentDef, type MilitaryRules, type SubUnitDef } from "./schemas/units.ts";
 import { DecisionsFile, EventsFile, FocusTreeFile, type DecisionDef, type EventDef, type FocusTree } from "./schemas/scripted.ts";
 import { validateEffects, validateTrigger, type ScriptIssue } from "./script/validate.ts";
@@ -114,6 +115,9 @@ export interface ContentDB {
   subUnits: Map<string, SubUnitDef>;
   militaryRules: MilitaryRules;
   warRules: WarRules;
+  blocs: Map<string, BlocDef>;
+  un: UnData;
+  diplomacyRules: DiplomacyRules;
   techCategories: Map<string, Omit<TechCategory, "techs"> & { techs: string[] }>;
   /** Every technology, with its category. */
   techs: Map<string, TechDef & { category: string }>;
@@ -227,6 +231,9 @@ export function compileContent(files: FileProvider, opts: CompileOptions = {}): 
     subUnits: indexBy(load("units/sub_units.json", SubUnitsFile, false)?.sub_units ?? [], "units/sub_units.json", "sub-unit"),
     militaryRules: load("units/military.json", MilitaryRulesFile, false) ?? MilitaryRulesFile.parse({}),
     warRules: load("units/war.json", WarRulesFile, false) ?? WarRulesFile.parse({}),
+    blocs: new Map((load("diplomacy/blocs.json", BlocsFile, false)?.blocs ?? []).map((b) => [b.id, b])),
+    un: load("diplomacy/un.json", UnFile, false) ?? EMPTY_UN,
+    diplomacyRules: load("diplomacy/rules.json", DiplomacyRulesFile, false) ?? DiplomacyRulesFile.parse({}),
     techCategories: new Map(),
     techs: new Map(),
     buildings: indexBy(load("economy/buildings.json", BuildingsFile, false)?.buildings ?? [], "economy/buildings.json", "building"),
@@ -357,6 +364,25 @@ export function compileContent(files: FileProvider, opts: CompileOptions = {}): 
     for (const u of Object.keys(t.units)) if (!db.subUnits.has(u)) err("REF", "units/military.json", `template ${t.id}: unknown sub-unit '${u}'`);
   for (const law of Object.keys(db.militaryRules.manpower_share)) if (!db.lawCategoryOf.has(law)) err("REF", "units/military.json", `manpower_share: unknown law '${law}'`);
 
+  // ---- diplomacy
+  {
+    const tags = new Set(db.countryList.map((c) => c.tag));
+    const refs = refChecker(db);
+    for (const b of db.blocs.values()) {
+      for (const t of b.members_2000) if (!tags.has(t)) err("REF", "diplomacy/blocs.json", `${b.id}: unknown member '${t}'`);
+      if (b.rival && !db.blocs.has(b.rival)) err("REF", "diplomacy/blocs.json", `${b.id}: unknown rival bloc '${b.rival}'`);
+      if (b.join_trigger !== undefined) {
+        const out: ScriptIssue[] = [];
+        validateTrigger(b.join_trigger, "join_trigger", out, refs);
+        for (const i of out) err("SCRIPT", "diplomacy/blocs.json", `${b.id}: ${i.path}: ${i.message}`);
+      }
+    }
+    const un = db.un;
+    for (const t of [...un.permanent, ...Object.values(un.groups).flat(), ...un.elected.flatMap((e) => e.tags)])
+      if (!tags.has(t)) err("REF", "diplomacy/un.json", `unknown tag '${t}'`);
+    for (const g of Object.keys(un.seats)) if (!un.groups[g]) err("REF", "diplomacy/un.json", `seats: unknown group '${g}'`);
+  }
+
   // ---- scripted content: events, decisions, focus trees
   const jsonIn = (dir: string) => files.listFiles(dir).filter((p) => p.endsWith(".json")).sort();
   loadScripted(db, jsonIn, load, err);
@@ -404,6 +430,8 @@ function loadScripted(db: ContentDB, jsonIn: (dir: string) => string[], load: Lo
   checkScripted(db, err);
 }
 
+export const EMPTY_UN: UnData = { permanent: [], seats: {}, groups: {}, elected: [], source: [], confidence: "needs_review", review_note: "no UN data loaded" } as unknown as UnData;
+
 /** Does a content reference resolve? Shared by every script check. */
 export function refChecker(db: ContentDB) {
   const tags = new Set(db.countryList.map((c) => c.tag));
@@ -422,6 +450,7 @@ export function refChecker(db: ContentDB) {
       case "trait": return db.traits.has(v);
       case "modifier": return db.modifiers.has(v);
       case "tech": return db.techs.has(v);
+      case "bloc": return db.blocs.has(v);
     }
   };
 }

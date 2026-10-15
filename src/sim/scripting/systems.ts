@@ -179,7 +179,9 @@ export function createScriptedSystem(): System {
         const ev = db.events.get(id)!;
         const h = ev.historical!;
         if (state.rules.electionMode === "dynamic" && !h.dynamic_mode) continue;
-        for (const cs of actors(db, state)) {
+        // events naming their countries reach them even without politics data (e.g. bloc enlargements)
+        const pool = ev.countries ? ev.countries.map((t) => state.countries[t]).filter((c): c is NonNullable<typeof c> => !!c?.active || (!!c && state.provinceOwner.includes(c.tag))) : actors(db, state);
+        for (const cs of pool) {
           if (state.rules.electionMode === "historical" && !cs.followsHistory && !h.any_path) continue;
           if (canFire(ctx, cs, id)) fireEvent(ctx, id, cs.tag, null);
         }

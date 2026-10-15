@@ -281,3 +281,10 @@ One file per tree: `{ id, name, countries, focuses: [ { id, name, description, x
 - `data/units/sub_units.json`: battalions (`kind: battalion`) and support companies (`kind: support`, width 0) with manpower, equipment needs, organisation, hp, width, speed (km/h) and training days.
 - `data/units/military.json`: manpower share by conscription law, production efficiency, the default division templates (`modern_level` decides which countries start with them) and starting-army rules.
 - `data/units/war.json`: combat, supply, capitulation, war support, white peace and world-tension values (gameplay estimates), plus `nuclear_states_2000`, which must stay sourced.
+
+## 11. Diplomacy
+
+- `data/diplomacy/blocs.json`: blocs with `kind` (military, economic, political), `defensive` (members join wars against any member), `opinion` between members, `trade_growth`, `accession_days`, an optional `rival` bloc and `join_trigger` (a trigger scoped to the applicant), `renamed` (later names with dates) and `members_2000`. Memberships are facts: source them.
+- `data/diplomacy/un.json`: permanent members, the regional groups and their non-permanent seats, and the real elected members with their terms. Later elections are simulated.
+- `data/diplomacy/rules.json`: opinion weights, costs and thresholds (gameplay values).
+- Enlargements are events with a `historical` date, the countries that join in `countries`, and a `join_bloc` effect (`leave_bloc` for withdrawals). Triggers `in_bloc` and `opinion_of_above` and effects `add_opinion` and `add_wargoal` are available to every script.

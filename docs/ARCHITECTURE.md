@@ -35,12 +35,14 @@ src/
   sim/research/            Phase 8: research.ts (slots, speed, costs, starting technologies, AI)
   sim/military/            Phase 9: military.ts (manpower, production lines, templates, training, starting armies, movement, occupation)
                            Phase 10: war.ts (declarations, battles, supply, capitulation, peace, world tension)
+  sim/diplomacy/           Phase 11: diplomacy.ts (opinion, guarantees, access, trade, sanctions, blocs, UN Security Council,
+                           war justification, foreign influence)
   render/                  MapView (camera, wrap, input), WorldMap (layers, picking, map modes),
                            layers/ (ProvinceMesh = chosen, ProvinceTexture = alternative, Borders, Lakes, Labels),
                            mapData.ts (loads public/map), mapModes.ts, benchmark.ts (?bench)
   ui/                      Preact shell: session.ts (game session + signals), CountrySelect, hud/ (TopBar, Panels, SidePanel,
                            GameMenu), politics/ (PoliticsPanel, LawPicker, ElectionNight, CoalitionPanel),
-                           scripted/ (FocusTree, DecisionsPanel, EventWindow, fx), economy/ (Economy, Construction, Trade), research/ (ResearchPanel), units/ (UnitCounters overlay, Production and Recruitment panels, WarUi: declare war, peace conference, wars outliner), charts/ (Hemicycle, Donut), MapUi (map modes, hover),
+                           scripted/ (FocusTree, DecisionsPanel, EventWindow, fx), economy/ (Economy, Construction, Trade), research/ (ResearchPanel), units/ (UnitCounters overlay, Production and Recruitment panels, WarUi: peace conference, wars outliner; Logistics panel), diplomacy/ (Diplomacy and Intelligence panels), charts/ (Hemicycle, Donut), MapUi (map modes, hover),
                            tooltip.tsx, icons.tsx, tabs.ts, theme.css + shell.css
   main.tsx                 boot: loads content + map, builds MapView/WorldMap/Session, renders UI, key bindings
 tests/                     vitest: validator rules, scripts, real data (DEU full tier), map 2000 rules, simulation

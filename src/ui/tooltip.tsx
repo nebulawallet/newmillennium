@@ -25,6 +25,11 @@ const hide = () => {
   anchor = null;
   activeTip.value = null;
 };
+// a panel or dialog closing removes the anchor without a mouseleave: drop its tooltip too
+if (typeof MutationObserver !== "undefined" && typeof document !== "undefined")
+  new MutationObserver(() => {
+    if (anchor && !anchor.isConnected) hide();
+  }).observe(document.documentElement, { childList: true, subtree: true });
 
 /** Props that attach a tooltip to an element. Content is computed on hover so it is always current. */
 export function tip(content: () => TipContent) {

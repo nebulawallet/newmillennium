@@ -7,6 +7,7 @@
  *    equipment at the end, and move province by province along land paths.
  *  - Starting armies come from World Bank armed forces personnel (2000).
  */
+import { hasAccess } from "../diplomacy/diplomacy.ts";
 import type { ContentDB } from "../../content/compile.ts";
 import type { EquipmentDef, EquipmentVariant } from "../../content/schemas/units.ts";
 import type { SimContext, SimMap, System } from "../simulation.ts";
@@ -257,6 +258,7 @@ export function canEnter(state: GameState, owner: string, province: number): boo
   const c = state.provinceController[province - 1];
   if (!o) return false;
   if (o === owner || c === owner) return true;
+  if (hasAccess(state, owner, o) && !hostileTo(state, owner, c ?? o)) return true;
   return hostileTo(state, owner, o) || (!!c && hostileTo(state, owner, c));
 }
 

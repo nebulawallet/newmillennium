@@ -86,29 +86,6 @@
       "options": [
         { "id": "changeover", "name": "Complete the changeover", "effects": [{ "add_interest_group_approval": { "group": "business", "value": 3 } }, { "set_flag": "euro_cash" }] }
       ]
-    },
-    {
-      "id": "eu_enlargement_2004",
-      "title": "Accession to the European Union",
-      "description": "On 1 May 2004 ten countries joined the European Union: Cyprus, the Czech Republic, Estonia, Hungary, Latvia, Lithuania, Malta, Poland, Slovakia and Slovenia, the largest enlargement in its history.",
-      "countries": ["CYP", "CZE", "EST", "HUN", "LVA", "LTU", "MLT", "POL", "SVK", "SVN"],
-      "historical": {
-        "date": "2004-05-01",
-        "source": [{ "url": "https://en.wikipedia.org/wiki/2004_enlargement_of_the_European_Union", "title": "Wikipedia: 2004 enlargement of the European Union", "accessed": "2026-10-14" }],
-        "confidence": "verified"
-      },
-      "options": [
-        {
-          "id": "join",
-          "name": "Join the Union",
-          "effects": [
-            { "add_interest_group_approval": { "group": "business", "value": 4 } },
-            { "add_interest_group_approval": { "group": "urban_middle_class", "value": 3 } },
-            { "add_economic_mood": 0.1 },
-            { "set_flag": "eu_member" }
-          ]
-        }
-      ]
     }
   ]
 }

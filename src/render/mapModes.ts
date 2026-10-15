@@ -4,6 +4,7 @@
  */
 import type { ContentDB } from "../content/compile.ts";
 import type { GameState } from "../sim/state.ts";
+import { atWarWith, defensiveAllies, opinion } from "../sim/diplomacy/diplomacy.ts";
 import type { MapData, Province } from "./mapData.ts";
 
 export type RGB = [number, number, number];
@@ -200,10 +201,98 @@ export const MAP_MODES: MapMode[] = [
       { color: "#282c34", label: "little resource income" },
     ],
   },
-  { id: "supply", name: "Supply", available: false, availableIn: "Phase 10" },
-  { id: "diplomacy", name: "Relations", available: false, availableIn: "Phase 11" },
-  { id: "factions", name: "Factions", available: false, availableIn: "Phase 11" },
+  {
+    id: "supply",
+    name: "Supply",
+    available: true,
+    // divisions a province can supply (base + infrastructure, including built roads)
+    color: (p, ctx) => {
+      const r = ctx.db.warRules;
+      const infra = Math.min(10, p.infrastructure + (ctx.state?.provinceBuildings[String(p.id)]?.infrastructure ?? 0));
+      const cap = r.supply_base + r.supply_per_infrastructure * infra;
+      return supplyRamp(cap / (r.supply_base + r.supply_per_infrastructure * 10));
+    },
+    legend: (ctx) => {
+      const r = ctx.db.warRules;
+      const max = r.supply_base + r.supply_per_infrastructure * 10;
+      return [r.supply_base + r.supply_per_infrastructure, max * 0.5, max].map((c) => ({ color: rgbHex(supplyRamp(c / max)), label: `${Math.round(c)} divisions (half in enemy territory)` }));
+    },
+  },
+  {
+    id: "diplomacy",
+    name: "Relations",
+    available: true,
+    // each country's opinion of the player (green friendly, red hostile); allies blue, enemies at war deep red
+    color: (p, ctx) => {
+      const s = ctx.state;
+      const me = s?.player;
+      const owner = ownerOf(p, ctx);
+      if (!s || !me || !s.diplomacy) return [40, 44, 52];
+      if (owner === me) return [214, 182, 96];
+      return relationColor(ctx, owner, me);
+    },
+    legend: () => [
+      { color: "#d6b660", label: "your country" },
+      { color: "#3a6fd8", label: "ally (defensive bloc or guarantee)" },
+      { color: rgbHex(opinionRamp(1)), label: "opinion of you +100" },
+      { color: rgbHex(opinionRamp(0.5)), label: "neutral" },
+      { color: rgbHex(opinionRamp(0)), label: "opinion of you -100" },
+      { color: "#8c1a14", label: "at war with you" },
+    ],
+  },
+  {
+    id: "factions",
+    name: "Blocs",
+    available: true,
+    // the country's military bloc, else its economic bloc, else its political bloc
+    color: (p, ctx) => {
+      const owner = ownerOf(p, ctx);
+      const bloc = primaryBloc(ctx, owner);
+      return bloc ? hexToRgb(ctx.db.blocs.get(bloc)?.color ?? "#888888") : [40, 44, 52];
+    },
+    legend: (ctx) => [...ctx.db.blocs.values()].map((b) => ({ color: b.color, label: b.name })),
+  },
 ];
+
+const KIND_ORDER = { military: 0, economic: 1, political: 2 } as const;
+function primaryBloc(ctx: MapModeContext, tag: string): string | null {
+  const blocs = ctx.state?.diplomacy?.blocs ?? Object.fromEntries([...ctx.db.blocs.values()].map((b) => [b.id, b.members_2000]));
+  let best: string | null = null;
+  for (const [id, members] of Object.entries(blocs)) {
+    if (!members.includes(tag)) continue;
+    const k = KIND_ORDER[ctx.db.blocs.get(id)?.kind ?? "political"];
+    if (best === null || k < KIND_ORDER[ctx.db.blocs.get(best)?.kind ?? "political"]) best = id;
+  }
+  return best;
+}
+
+// opinions are cached per country for one day of one game (a full map pass asks once per province)
+let relCache: { state: GameState; key: string; colors: Map<string, RGB> } | null = null;
+function relationColor(ctx: MapModeContext, owner: string, me: string): RGB {
+  const s = ctx.state!;
+  const d = s.diplomacy;
+  const key = `${s.day}|${me}|${s.wars.length}|${d.guarantees.length}|${d.sanctions.length}|${d.tradeDeals.length}|${d.improving.length}|${Object.values(d.blocs).reduce((n, m) => n + m.length, 0)}`;
+  if (relCache?.state !== s || relCache.key !== key) relCache = { state: s, key, colors: new Map() };
+  let c = relCache.colors.get(owner);
+  if (!c) {
+    if (atWarWith(s, owner, me)) c = [140, 26, 20];
+    else if (defensiveAllies(ctx.db, s, me).includes(owner)) c = [58, 111, 216];
+    else c = opinionRamp((opinion(ctx.db, s, owner, me) + 100) / 200);
+    relCache.colors.set(owner, c);
+  }
+  return c;
+}
+
+/** Hostile red through neutral grey to friendly green. */
+function opinionRamp(t: number): RGB {
+  return t < 0.5 ? mix([176, 52, 40], [70, 74, 80], t * 2) : mix([70, 74, 80], [70, 160, 80], (t - 0.5) * 2);
+}
+
+/** Poor supply (dark red) to good supply (green). */
+function supplyRamp(t: number): RGB {
+  const x = Math.max(0, Math.min(1, t));
+  return x < 0.5 ? mix([120, 40, 30], [180, 150, 60], x * 2) : mix([180, 150, 60], [70, 150, 80], (x - 0.5) * 2);
+}
 
 /** Calm (dark steel) to red. */
 function heat(t: number): RGB {

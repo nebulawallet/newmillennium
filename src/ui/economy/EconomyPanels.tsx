@@ -9,6 +9,7 @@ import { formatDate } from "../../sim/date.ts";
 import { selectedProvince } from "../store.ts";
 import { version, type Session } from "../session.ts";
 import { tip } from "../tooltip.tsx";
+import { countryName } from "../../sim/politics/unrest.ts";
 
 const fmtBn = (bn: number) => (bn >= 1000 ? `$${(bn / 1000).toFixed(2)} tn` : bn >= 1 ? `$${bn.toFixed(1)} bn` : `$${Math.round(bn * 1000)} m`);
 const pct = (x: number, d = 1) => `${x.toFixed(d)}%`;
@@ -194,7 +195,35 @@ export function TradePanel({ db, session }: { db: ContentDB; session: Session })
         <dt>Exports</dt><dd class="num" {...tip(() => ({ title: "Exports", note: "World Bank, 2000: exports of goods and services as a share of GDP." }))}>{exp !== undefined ? pct(exp) + " of GDP (2000)" : "no figure"}</dd>
         <dt>Imports</dt><dd class="num" {...tip(() => ({ title: "Imports", note: "World Bank, 2000: imports of goods and services as a share of GDP." }))}>{imp !== undefined ? pct(imp) + " of GDP (2000)" : "no figure"}</dd>
       </dl>
-      <p class="faint small pad">Trade deals and sanctions arrive with diplomacy in Phase 11.</p>
+      <TradeRelations db={db} session={session} />
     </div>
+  );
+}
+
+/** The player's trade agreements and sanctions (set in the Diplomacy tab). */
+function TradeRelations({ db, session }: { db: ContentDB; session: Session }) {
+  const state = session.state;
+  const me = state?.player;
+  if (!state || !me || !state.diplomacy) return null;
+  const d = state.diplomacy;
+  const name = (t: string) => countryName(db, state, t);
+  const deals = d.tradeDeals.filter(([a, b]) => a === me || b === me).map(([a, b]) => (a === me ? b : a));
+  const ours = d.sanctions.filter(([a]) => a === me).map(([, b]) => b);
+  const onUs = d.sanctions.filter(([, b]) => b === me).map(([a]) => a);
+  const e = state.countries[me]?.economy;
+  const part = e ? growthTarget(db, state, state.countries[me]!).parts.find((p) => p.label.startsWith("Trade agreements")) : undefined;
+  return (
+    <>
+      <dl class="kv">
+        <dt>Trade agreements</dt><dd>{deals.length ? deals.map(name).join(", ") : "None"}</dd>
+        <dt>We sanction</dt><dd>{ours.length ? ours.map(name).join(", ") : "Nobody"}</dd>
+        <dt>Sanctioned by</dt><dd class={onUs.length ? "warn" : ""}>{onUs.length ? onUs.map(name).join(", ") : "Nobody"}</dd>
+        <dt>Effect on growth</dt>
+        <dd class="num" {...tip(() => ({ title: "Trade, blocs and sanctions", note: "Change since 1 January 2000: trade agreements and economic blocs add growth in proportion to the partners' output; sanctions cut it." }))}>
+          {part ? `${part.value >= 0 ? "+" : ""}${part.value.toFixed(2)} points` : "none since 2000"}
+        </dd>
+      </dl>
+      <p class="faint small pad">Agreements and sanctions are made in the Diplomacy tab.</p>
+    </>
   );
 }
