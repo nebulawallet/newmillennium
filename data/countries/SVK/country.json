@@ -1,0 +1,120 @@
+{
+  "tag": "SVK",
+  "name": { "en": "Slovakia", "native": "Slovensko", "official": { "en": "Slovak Republic", "native": "Slovenská republika" } },
+  "adjective": "Slovak",
+  "culture_primary": "slovak",
+  "government": {
+    "type": "parliamentary",
+    "effective_executive": "svk.prime_minister",
+    "head_of_state_office": "svk.president",
+    "head_of_government_office": "svk.prime_minister",
+    "constitution": {
+      "term_limit_amendable": true,
+      "emergency_powers": true,
+      "referendum_required_for": []
+    },
+    "note": "Parliamentary republic with a unicameral 150-seat National Council. The President has been directly elected in two rounds since 1999 (five-year term, renewable once consecutively); before that the National Council elected the president, and the office was filled by acting officials from March 1998 to June 1999. Referendums are valid only if at least 50% of voters take part; only the 2003 EU accession referendum has met that threshold."
+  },
+  "offices": [
+    {
+      "id": "svk.president",
+      "title": { "en": "President of the Slovak Republic", "native": "Prezident Slovenskej republiky" },
+      "role": "head_of_state",
+      "power_weight": 0.15,
+      "selection": "direct_election",
+      "term_years": 5,
+      "term_limit": { "max_terms": 2, "consecutive_only": true },
+      "succession": { "type": "acting_then_election" },
+      "holders": [
+        { "person": "svk.rudolf_schuster", "from": "1999-06-15", "to": "2004-06-15" },
+        { "person": "svk.ivan_gasparovic", "from": "2004-06-15", "to": "2014-06-15", "note": "Re-elected in 2009." },
+        { "person": "svk.andrej_kiska", "from": "2014-06-15", "to": "2019-06-15" },
+        { "person": "svk.zuzana_caputova", "from": "2019-06-15", "to": "2024-06-15" },
+        { "person": "svk.peter_pellegrini", "from": "2024-06-15" }
+      ],
+      "note": "First directly elected president from 15 June 1999. Between Michal Kováč's term (ended 2 March 1998) and Schuster's inauguration, presidential powers were exercised by acting office-holders (Mečiar and Gašparovič in 1998, Dzurinda and Migaš in 1998-1999).",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/List_of_presidents_of_Slovakia", "title": "Wikipedia: List of presidents of Slovakia", "accessed": "2026-10-15" },
+        { "url": "https://www.wikidata.org/wiki/Q6468838", "title": "Wikidata: President of Slovakia (position held by)", "accessed": "2026-10-15" },
+        { "url": "https://en.wikipedia.org/wiki/President_of_Slovakia", "title": "Wikipedia: President of Slovakia (term, direct election)", "accessed": "2026-10-15" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "svk.prime_minister",
+      "title": { "en": "Prime Minister of the Slovak Republic", "native": "Predseda vlády Slovenskej republiky" },
+      "role": "head_of_government",
+      "power_weight": 0.85,
+      "selection": "legislature",
+      "appointed_by": "svk.president",
+      "term_years": 4,
+      "holders": [
+        { "person": "svk.mikulas_dzurinda", "from": "1998-10-30", "to": "2006-07-04", "note": "Coalition of SDK, SDĽ, SMK and SOP from 1998; second cabinet from 2002." },
+        { "person": "svk.robert_fico", "from": "2006-07-04", "to": "2010-07-08" },
+        { "person": "svk.iveta_radicova", "from": "2010-07-08", "to": "2012-04-04" },
+        { "person": "svk.robert_fico", "from": "2012-04-04", "to": "2018-03-22" },
+        { "person": "svk.peter_pellegrini", "from": "2018-03-22", "to": "2020-03-21" },
+        { "person": "svk.igor_matovic", "from": "2020-03-21", "to": "2021-04-01" },
+        { "person": "svk.eduard_heger", "from": "2021-04-01", "to": "2023-05-15" },
+        { "person": "svk.ludovit_odor", "from": "2023-05-15", "to": "2023-10-25", "note": "Non-party caretaker government." },
+        { "person": "svk.robert_fico", "from": "2023-10-25", "note": "Smer-SD, Hlas-SD and SNS coalition." }
+      ],
+      "note": "Dates from the Wikipedia list of prime ministers. Wikidata ends Fico's second premiership on 15 March 2018 (the list: 22 March, when Pellegrini took office).",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/List_of_prime_ministers_of_Slovakia", "title": "Wikipedia: List of prime ministers of Slovakia", "accessed": "2026-10-15" },
+        { "url": "https://www.wikidata.org/wiki/Q45369", "title": "Wikidata: Prime Minister of Slovakia (position held by)", "accessed": "2026-10-15" },
+        { "url": "https://en.wikipedia.org/wiki/2023_Slovak_parliamentary_election", "title": "Wikipedia: 2023 Slovak parliamentary election (government formation)", "accessed": "2026-10-15" }
+      ],
+      "confidence": "verified"
+    }
+  ],
+  "legislature": {
+    "name": { "en": "National Council of the Slovak Republic", "native": "Národná rada Slovenskej republiky" },
+    "chambers": [
+      {
+        "id": "national_council",
+        "name": { "en": "National Council", "native": "Národná rada" },
+        "seats": 150,
+        "term_years": 4,
+        "elected": "direct",
+        "system": {
+          "type": "list_pr",
+          "formula": "droop",
+          "threshold": 0.05,
+          "note": "Open-list PR; seats allocated by the largest remainder method with the Hagenbach-Bischoff quota. Threshold 5% for single parties, 7% for two- and three-party alliances and 10% for larger alliances (current law). seats_2000 is the result of the September 1998 election; mid-term changes before 1 January 2000 were not checked."
+        },
+        "seats_2000": { "svk.hzds": 43, "svk.sdk": 42, "svk.sdl": 23, "svk.smk": 15, "svk.sns": 14, "svk.sop": 13 },
+        "confidence_chamber": true,
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/1998_Slovak_parliamentary_election", "title": "Wikipedia: 1998 Slovak parliamentary election", "accessed": "2026-10-15" },
+          { "url": "https://en.wikipedia.org/wiki/National_Council_(Slovakia)", "title": "Wikipedia: National Council (Slovakia) (electoral system)", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      }
+    ]
+  },
+  "party_system": "multi_party",
+  "start_2000": {
+    "ruling_parties": ["svk.sdk", "svk.sdl", "svk.smk", "svk.sop"],
+    "confidence_and_supply": [],
+    "ideology_support": {
+      "national_conservative": 0.361,
+      "liberal_conservative": 0.263,
+      "social_democrat": 0.147,
+      "regionalist": 0.091,
+      "third_way": 0.08,
+      "marxist_leninist": 0.028,
+      "left_populist": 0.013,
+      "big_tent": 0.017
+    },
+    "ideology_support_note": "Derived from the September 1998 National Council vote (shares computed from the vote counts): HZDS 27.0% and SNS 9.1% (national conservative), SDK 26.3% (a centre-right alliance, recorded as liberal conservative), SDĽ 14.7% (social democrat), SMK 9.1% (Hungarian minority party, recorded as regionalist), SOP 8.0% (centre-left, recorded as third_way), KSS 2.8% (communist), Union of the Workers of Slovakia 1.3% (left populist), other lists 1.7%.",
+    "stability": 0.65,
+    "war_support": 0.25
+  },
+  "claims": [],
+  "source": [
+    { "url": "https://en.wikipedia.org/wiki/1998_Slovak_parliamentary_election", "title": "Wikipedia: 1998 Slovak parliamentary election (results; Dzurinda coalition of SDK, SDĽ, SMK and SOP)", "accessed": "2026-10-15" },
+    { "url": "https://en.wikipedia.org/wiki/List_of_prime_ministers_of_Slovakia", "title": "Wikipedia: List of prime ministers of Slovakia", "accessed": "2026-10-15" }
+  ],
+  "confidence": "verified"
+}

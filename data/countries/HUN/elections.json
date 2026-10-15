@@ -1,0 +1,943 @@
+{
+  "rules": [
+    {
+      "kind": "legislative",
+      "chamber": "national_assembly",
+      "every_years": 4,
+      "anchor": "2026-04-12",
+      "snap_possible": true,
+      "note": "National Assembly elected every four years in April. Until 2010: 386 seats, two-round single-member constituencies plus regional and national lists. From 2014 (2011 electoral law): 199 seats, 106 single-member seats by first-past-the-post and 93 national list seats (5% threshold, D'Hondt) with partial compensation; one round only."
+    },
+    {
+      "kind": "indirect_presidential",
+      "office": "hun.president",
+      "every_years": 5,
+      "anchor": "2026-08-11",
+      "snap_possible": true,
+      "note": "Elected by the National Assembly: two-thirds of all members in the first ballot, otherwise a runoff between the top two (before 2012 a third ballot by majority of those voting). An early election follows a vacancy (2012, 2024, 2026)."
+    }
+  ],
+  "elections": [
+    {
+      "id": "president_2000",
+      "date": "2000-06-05",
+      "kind": "indirect_presidential",
+      "office": "hun.president",
+      "historical": {
+        "candidates": [
+          {
+            "person": "hun.ferenc_madl",
+            "votes": 243,
+            "round": 3
+          }
+        ],
+        "winner": "hun.ferenc_madl",
+        "note": "Held 5-6 June 2000 by the 386-member National Assembly; Mádl was the only candidate and was elected in the third ballot (majority of voting MPs) with 243 votes to 96 against. He took office on 4 August 2000.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2000_Hungarian_presidential_election",
+            "title": "Wikipedia: 2000 Hungarian presidential election",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "assembly_2002",
+      "date": "2002-04-07",
+      "kind": "legislative",
+      "chamber": "national_assembly",
+      "rounds": 2,
+      "historical": {
+        "candidates": [
+          {
+            "person": "hun.viktor_orban",
+            "party": "hun.fidesz",
+            "round": 1
+          },
+          {
+            "person": "hun.peter_medgyessy",
+            "party": "hun.mszp",
+            "round": 1
+          }
+        ],
+        "party_results": [
+          {
+            "party": "hun.mszp",
+            "share": 0.4205,
+            "seats": 178
+          },
+          {
+            "party": "hun.fidesz",
+            "share": 0.4107,
+            "seats": 164
+          },
+          {
+            "party": "hun.mdf",
+            "seats": 24
+          },
+          {
+            "party": "hun.szdsz",
+            "share": 0.0557,
+            "seats": 20
+          },
+          {
+            "party": "hun.miep",
+            "share": 0.0437,
+            "seats": 0
+          },
+          {
+            "party": "hun.kdnp",
+            "share": 0.039,
+            "seats": 0
+          },
+          {
+            "party": "hun.munkaspart",
+            "share": 0.0216,
+            "seats": 0
+          },
+          {
+            "party": "hun.fkgp",
+            "share": 0.0075,
+            "seats": 0
+          }
+        ],
+        "winner": "hun.mszp",
+        "turnout": 0.7053,
+        "note": "First round 7 April, second round 21 April 2002. Shares are national list votes. Fidesz and MDF ran a joint list (41.07%, recorded under Fidesz) and won 188 seats: Fidesz 164, MDF 24 (per the 2006 election article). SZDSZ's 20 includes one joint SZDSZ-MSZP constituency seat. KDNP ran with the Centre Party. MSZP and SZDSZ formed the Medgyessy coalition.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2002_Hungarian_parliamentary_election",
+            "title": "Wikipedia: 2002 Hungarian parliamentary election",
+            "accessed": "2026-10-15"
+          },
+          {
+            "url": "https://en.wikipedia.org/wiki/2006_Hungarian_parliamentary_election",
+            "title": "Wikipedia: 2006 Hungarian parliamentary election (2002 seats of Fidesz and MDF)",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "eu_referendum_2003",
+      "date": "2003-04-12",
+      "kind": "referendum",
+      "question": "Accession of Hungary to the European Union",
+      "historical": {
+        "yes_share": 0.8376,
+        "winner": "yes",
+        "turnout": 0.4559,
+        "note": "Yes 3,056,027; No 592,690; invalid 17,998; electorate 8,042,272. Yes share is of valid votes; turnout computed from all ballots.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2003_Hungarian_European_Union_membership_referendum",
+            "title": "Wikipedia: 2003 Hungarian European Union membership referendum",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "referendum_2004_hospitals",
+      "date": "2004-12-05",
+      "kind": "referendum",
+      "question": "Should public health service institutions and hospitals remain in state or local government ownership (repealing the contrary law)?",
+      "historical": {
+        "yes_share": 0.65,
+        "winner": "invalid",
+        "turnout": 0.375,
+        "note": "Question I of two. For 1,922,765 (65.0%), Against 1,034,578. Approved by voters but invalid because turnout (37.5%) was too low.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2004_Hungarian_dual_citizenship_referendum",
+            "title": "Wikipedia: 2004 Hungarian dual citizenship referendum",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "referendum_2004_citizenship",
+      "date": "2004-12-05",
+      "kind": "referendum",
+      "question": "Should Parliament pass a law allowing ethnic Hungarians living abroad to obtain Hungarian citizenship by preferential naturalisation?",
+      "historical": {
+        "yes_share": 0.516,
+        "winner": "invalid",
+        "turnout": 0.375,
+        "note": "Question II of two. For 1,521,143 (51.6%), Against 1,428,736. Approved by voters but invalid because turnout (37.5%) was too low.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2004_Hungarian_dual_citizenship_referendum",
+            "title": "Wikipedia: 2004 Hungarian dual citizenship referendum",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "president_2005",
+      "date": "2005-06-06",
+      "kind": "indirect_presidential",
+      "office": "hun.president",
+      "historical": {
+        "candidates": [
+          {
+            "person": "hun.laszlo_solyom",
+            "votes": 185,
+            "round": 3
+          },
+          {
+            "person": "hun.katalin_szili",
+            "party": "hun.mszp",
+            "votes": 182,
+            "round": 3
+          }
+        ],
+        "winner": "hun.laszlo_solyom",
+        "note": "Held 6-7 June 2005. In the third ballot (majority of the 367 MPs voting, 184 needed) Sólyom, a non-party candidate, won 185 votes to 182 for Katalin Szili (MSZP).",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2005_Hungarian_presidential_election",
+            "title": "Wikipedia: 2005 Hungarian presidential election",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "assembly_2006",
+      "date": "2006-04-09",
+      "kind": "legislative",
+      "chamber": "national_assembly",
+      "rounds": 2,
+      "historical": {
+        "candidates": [
+          {
+            "person": "hun.ferenc_gyurcsany",
+            "party": "hun.mszp",
+            "round": 1
+          },
+          {
+            "person": "hun.viktor_orban",
+            "party": "hun.fidesz",
+            "round": 1
+          }
+        ],
+        "party_results": [
+          {
+            "party": "hun.mszp",
+            "share": 0.4321,
+            "seats": 190
+          },
+          {
+            "party": "hun.fidesz",
+            "share": 0.4203,
+            "seats": 141
+          },
+          {
+            "party": "hun.kdnp",
+            "seats": 23
+          },
+          {
+            "party": "hun.szdsz",
+            "share": 0.065,
+            "seats": 20
+          },
+          {
+            "party": "hun.mdf",
+            "share": 0.0504,
+            "seats": 11
+          },
+          {
+            "party": "hun.miep",
+            "share": 0.022,
+            "seats": 0
+          },
+          {
+            "party": "hun.munkaspart",
+            "share": 0.0041,
+            "seats": 0
+          },
+          {
+            "party": "others",
+            "seats": 1
+          }
+        ],
+        "winner": "hun.mszp",
+        "turnout": 0.6783,
+        "note": "First round 9 April, second round 23 April 2006. Fidesz–KDNP joint list 42.03% (recorded under Fidesz), 164 seats: Fidesz 141, KDNP 23 (party articles). MSZP and SZDSZ totals include joint MSZP-SZDSZ constituency seats (infobox figures). MIÉP ran with Jobbik (MIÉP–Jobbik Third Way, 2.20%). The other seat went to the Association for Somogy. The MSZP-SZDSZ coalition continued under Gyurcsány.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2006_Hungarian_parliamentary_election",
+            "title": "Wikipedia: 2006 Hungarian parliamentary election",
+            "accessed": "2026-10-15"
+          },
+          {
+            "url": "https://en.wikipedia.org/wiki/Christian_Democratic_People%27s_Party_(Hungary)",
+            "title": "Wikipedia: KDNP (seats by election)",
+            "accessed": "2026-10-15"
+          },
+          {
+            "url": "https://en.wikipedia.org/wiki/Fidesz",
+            "title": "Wikipedia: Fidesz (seats by election)",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "referendum_2008",
+      "date": "2008-03-09",
+      "kind": "referendum",
+      "question": "Abolition of hospital daily fees, doctor consultation fees and higher-education tuition fees (three questions)",
+      "historical": {
+        "yes_share": 0.841,
+        "winner": "yes",
+        "turnout": 0.505,
+        "note": "Three questions, all approved: inpatient daily fees 84.1% yes (3,385,981), consultation fees 82.4% (3,321,313), tuition fees 82.2% (3,309,616). yes_share records the first question. Turnout 50.5% of 8,040,125.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2008_Hungarian_fees_abolishment_referendum",
+            "title": "Wikipedia: 2008 Hungarian fees abolishment referendum",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "assembly_2010",
+      "date": "2010-04-11",
+      "kind": "legislative",
+      "chamber": "national_assembly",
+      "rounds": 2,
+      "historical": {
+        "candidates": [
+          {
+            "person": "hun.viktor_orban",
+            "party": "hun.fidesz",
+            "round": 1
+          },
+          {
+            "person": "hun.attila_mesterhazy",
+            "party": "hun.mszp",
+            "round": 1
+          }
+        ],
+        "party_results": [
+          {
+            "party": "hun.fidesz",
+            "share": 0.5273,
+            "seats": 227
+          },
+          {
+            "party": "hun.kdnp",
+            "seats": 36
+          },
+          {
+            "party": "hun.mszp",
+            "share": 0.193,
+            "seats": 59
+          },
+          {
+            "party": "hun.jobbik",
+            "share": 0.1667,
+            "seats": 47
+          },
+          {
+            "party": "hun.lmp",
+            "share": 0.0748,
+            "seats": 16
+          },
+          {
+            "party": "hun.mdf",
+            "share": 0.0267,
+            "seats": 0
+          },
+          {
+            "party": "independents",
+            "seats": 1
+          }
+        ],
+        "winner": "hun.fidesz",
+        "turnout": 0.6438,
+        "note": "First round 11 April, second round 25 April 2010. Fidesz–KDNP joint list 52.73% (recorded under Fidesz), 263 seats including one joint constituency candidate with the Entrepreneurs' Party; KDNP won 36 (KDNP article) and Fidesz 227 (Fidesz article). Two-thirds majority.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2010_Hungarian_parliamentary_election",
+            "title": "Wikipedia: 2010 Hungarian parliamentary election",
+            "accessed": "2026-10-15"
+          },
+          {
+            "url": "https://en.wikipedia.org/wiki/Fidesz",
+            "title": "Wikipedia: Fidesz (seats by election)",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "president_2010",
+      "date": "2010-06-29",
+      "kind": "indirect_presidential",
+      "office": "hun.president",
+      "historical": {
+        "candidates": [
+          {
+            "person": "hun.pal_schmitt",
+            "party": "hun.fidesz",
+            "votes": 263,
+            "round": 1
+          },
+          {
+            "person": "hun.andras_balogh",
+            "party": "hun.mszp",
+            "votes": 59,
+            "round": 1
+          }
+        ],
+        "winner": "hun.pal_schmitt",
+        "note": "Elected in the first ballot (257 of 386 needed).",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2010_Hungarian_presidential_election",
+            "title": "Wikipedia: 2010 Hungarian presidential election",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "president_2012",
+      "date": "2012-05-02",
+      "kind": "indirect_presidential",
+      "office": "hun.president",
+      "historical": {
+        "candidates": [
+          {
+            "person": "hun.janos_ader",
+            "party": "hun.fidesz",
+            "votes": 262,
+            "round": 1
+          }
+        ],
+        "winner": "hun.janos_ader",
+        "note": "Early election after Schmitt's resignation. Áder was the only candidate: 262 votes for, 40 against.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2012_Hungarian_presidential_election",
+            "title": "Wikipedia: 2012 Hungarian presidential election",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "assembly_2014",
+      "date": "2014-04-06",
+      "kind": "legislative",
+      "chamber": "national_assembly",
+      "historical": {
+        "candidates": [
+          {
+            "person": "hun.viktor_orban",
+            "party": "hun.fidesz",
+            "round": 1
+          },
+          {
+            "person": "hun.attila_mesterhazy",
+            "party": "hun.mszp",
+            "round": 1
+          }
+        ],
+        "party_results": [
+          {
+            "party": "hun.fidesz",
+            "share": 0.4487,
+            "seats": 117
+          },
+          {
+            "party": "hun.kdnp",
+            "seats": 16
+          },
+          {
+            "party": "hun.mszp",
+            "share": 0.2557,
+            "seats": 29
+          },
+          {
+            "party": "hun.dk",
+            "seats": 4
+          },
+          {
+            "party": "hun.pm",
+            "seats": 1
+          },
+          {
+            "party": "others",
+            "seats": 4
+          },
+          {
+            "party": "hun.jobbik",
+            "share": 0.2022,
+            "seats": 23
+          },
+          {
+            "party": "hun.lmp",
+            "share": 0.0534,
+            "seats": 5
+          },
+          {
+            "party": "hun.munkaspart",
+            "share": 0.0056,
+            "seats": 0
+          }
+        ],
+        "winner": "hun.fidesz",
+        "turnout": 0.6173,
+        "note": "First election under the 2011 law (199 seats, one round). Fidesz–KDNP 44.87% (recorded under Fidesz), 133 seats: Fidesz 117, KDNP 16. The Unity alliance (MSZP, Együtt, PM, DK, MLP) won 25.57% (recorded under MSZP, which headed the list) and 38 seats: MSZP 29, DK 4 and Párbeszéd 1 per the party articles; the other 4 (Együtt and MLP) are recorded as others because the split was not in the fetched sources.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2014_Hungarian_parliamentary_election",
+            "title": "Wikipedia: 2014 Hungarian parliamentary election",
+            "accessed": "2026-10-15"
+          },
+          {
+            "url": "https://en.wikipedia.org/wiki/Hungarian_Socialist_Party",
+            "title": "Wikipedia: Hungarian Socialist Party (seats by election)",
+            "accessed": "2026-10-15"
+          },
+          {
+            "url": "https://en.wikipedia.org/wiki/Democratic_Coalition_(Hungary)",
+            "title": "Wikipedia: Democratic Coalition (seats by election)",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "referendum_2016",
+      "date": "2016-10-02",
+      "kind": "referendum",
+      "question": "Do you want to allow the European Union to mandate the resettlement of non-Hungarian citizens to Hungary without the approval of the National Assembly?",
+      "historical": {
+        "yes_share": 0.0164,
+        "winner": "invalid",
+        "turnout": 0.4404,
+        "note": "Yes 56,163; No 3,362,224; invalid 224,668; total 3,643,055 of 8,272,625. 98% of valid votes were No, but the referendum was invalid because the share of valid votes was below the required 50% of the electorate.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2016_Hungarian_migrant_quota_referendum",
+            "title": "Wikipedia: 2016 Hungarian migrant quota referendum",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "president_2017",
+      "date": "2017-03-13",
+      "kind": "indirect_presidential",
+      "office": "hun.president",
+      "historical": {
+        "candidates": [
+          {
+            "person": "hun.janos_ader",
+            "party": "hun.fidesz",
+            "votes": 131,
+            "round": 2
+          },
+          {
+            "person": "hun.laszlo_majtenyi",
+            "votes": 39,
+            "round": 2
+          }
+        ],
+        "winner": "hun.janos_ader",
+        "note": "199-member Assembly. No candidate reached 133 votes in the first ballot; Áder won the second ballot with 131 votes to 39 for László Majtényi (non-party).",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2017_Hungarian_presidential_election",
+            "title": "Wikipedia: 2017 Hungarian presidential election",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "assembly_2018",
+      "date": "2018-04-08",
+      "kind": "legislative",
+      "chamber": "national_assembly",
+      "historical": {
+        "candidates": [
+          {
+            "person": "hun.viktor_orban",
+            "party": "hun.fidesz",
+            "round": 1
+          },
+          {
+            "person": "hun.gabor_vona",
+            "party": "hun.jobbik",
+            "round": 1
+          },
+          {
+            "person": "hun.gergely_karacsony",
+            "party": "hun.pm",
+            "round": 1
+          }
+        ],
+        "party_results": [
+          {
+            "party": "hun.fidesz",
+            "share": 0.4927,
+            "seats": 117
+          },
+          {
+            "party": "hun.kdnp",
+            "seats": 16
+          },
+          {
+            "party": "hun.jobbik",
+            "share": 0.1906,
+            "seats": 26
+          },
+          {
+            "party": "hun.mszp",
+            "share": 0.1191,
+            "seats": 17
+          },
+          {
+            "party": "hun.pm",
+            "seats": 3
+          },
+          {
+            "party": "hun.dk",
+            "share": 0.0538,
+            "seats": 9
+          },
+          {
+            "party": "hun.lmp",
+            "share": 0.0706,
+            "seats": 8
+          },
+          {
+            "party": "hun.momentum",
+            "share": 0.0306,
+            "seats": 0
+          },
+          {
+            "party": "hun.egyutt",
+            "share": 0.0066,
+            "seats": 1
+          },
+          {
+            "party": "independents",
+            "seats": 1
+          },
+          {
+            "party": "others",
+            "seats": 1
+          }
+        ],
+        "winner": "hun.fidesz",
+        "turnout": 0.6973,
+        "note": "Fidesz–KDNP 49.27% (recorded under Fidesz), 133 seats: Fidesz 117, KDNP 16. MSZP–Párbeszéd joint list 11.91% (recorded under MSZP), 20 seats: MSZP 17, Párbeszéd 3 (party articles). The others seat is the German minority's preferential list seat.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2018_Hungarian_parliamentary_election",
+            "title": "Wikipedia: 2018 Hungarian parliamentary election",
+            "accessed": "2026-10-15"
+          },
+          {
+            "url": "https://en.wikipedia.org/wiki/Dialogue_%E2%80%93_The_Greens%27_Party",
+            "title": "Wikipedia: Dialogue – The Greens' Party (seats by election)",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "president_2022",
+      "date": "2022-03-10",
+      "kind": "indirect_presidential",
+      "office": "hun.president",
+      "historical": {
+        "candidates": [
+          {
+            "person": "hun.katalin_novak",
+            "party": "hun.fidesz",
+            "votes": 137,
+            "round": 1
+          },
+          {
+            "person": "hun.peter_rona",
+            "votes": 51,
+            "round": 1
+          }
+        ],
+        "winner": "hun.katalin_novak",
+        "note": "Elected in the first ballot (133 of 199 needed) against Péter Róna (non-party).",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2022_Hungarian_presidential_election",
+            "title": "Wikipedia: 2022 Hungarian presidential election",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "assembly_2022",
+      "date": "2022-04-03",
+      "kind": "legislative",
+      "chamber": "national_assembly",
+      "historical": {
+        "candidates": [
+          {
+            "person": "hun.viktor_orban",
+            "party": "hun.fidesz",
+            "round": 1
+          },
+          {
+            "person": "hun.peter_marki_zay",
+            "round": 1
+          }
+        ],
+        "party_results": [
+          {
+            "party": "hun.fidesz",
+            "share": 0.5413,
+            "seats": 117
+          },
+          {
+            "party": "hun.kdnp",
+            "seats": 18
+          },
+          {
+            "party": "hun.dk",
+            "share": 0.3444,
+            "seats": 15
+          },
+          {
+            "party": "hun.mszp",
+            "seats": 10
+          },
+          {
+            "party": "hun.momentum",
+            "seats": 10
+          },
+          {
+            "party": "hun.jobbik",
+            "seats": 10
+          },
+          {
+            "party": "hun.pm",
+            "seats": 6
+          },
+          {
+            "party": "hun.lmp",
+            "seats": 5
+          },
+          {
+            "party": "hun.mi_hazank",
+            "share": 0.0588,
+            "seats": 6
+          },
+          {
+            "party": "others",
+            "seats": 2
+          }
+        ],
+        "winner": "hun.fidesz",
+        "turnout": 0.6959,
+        "note": "Fidesz–KDNP 54.13% (recorded under Fidesz), 135 seats: Fidesz 117 (Fidesz article), KDNP 18 (the remainder). United for Hungary (DK, Jobbik, Momentum, MSZP, LMP, Párbeszéd) won 34.44% (recorded under DK, its largest member) and 57 seats: DK 15, MSZP 10, Momentum 10, Jobbik 10, Párbeszéd 6, LMP 5 per the party articles; the remaining alliance seat is recorded under others, together with the German minority seat. A four-question referendum was held the same day.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2022_Hungarian_parliamentary_election",
+            "title": "Wikipedia: 2022 Hungarian parliamentary election",
+            "accessed": "2026-10-15"
+          },
+          {
+            "url": "https://en.wikipedia.org/wiki/United_for_Hungary",
+            "title": "Wikipedia: United for Hungary",
+            "accessed": "2026-10-15"
+          },
+          {
+            "url": "https://en.wikipedia.org/wiki/Jobbik",
+            "title": "Wikipedia: Jobbik (seats by election)",
+            "accessed": "2026-10-15"
+          },
+          {
+            "url": "https://en.wikipedia.org/wiki/Momentum_Movement",
+            "title": "Wikipedia: Momentum Movement (seats by election)",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "referendum_2022",
+      "date": "2022-04-03",
+      "kind": "referendum",
+      "question": "Four questions on sexual orientation and gender-change content for minors ",
+      "historical": {
+        "yes_share": 0.0768,
+        "winner": "invalid",
+        "turnout": 0.6851,
+        "note": "Held with the parliamentary election. Yes shares of valid votes: 7.68%, 4.08%, 4.67%, 4.83%; yes_share records question 1. Invalid: no question reached valid Yes or No votes from 50% of the electorate (about 20-21% of ballots were spoiled).",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2022_Hungarian_LGBT_in_education_referendum",
+            "title": "Wikipedia: 2022 Hungarian LGBT in education referendum",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "president_2024",
+      "date": "2024-02-26",
+      "kind": "indirect_presidential",
+      "office": "hun.president",
+      "historical": {
+        "candidates": [
+          {
+            "person": "hun.tamas_sulyok",
+            "votes": 134,
+            "round": 1
+          }
+        ],
+        "winner": "hun.tamas_sulyok",
+        "note": "Early election after Novák's resignation. Sulyok, the only candidate (non-party), won 134 votes to 5 against.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2024_Hungarian_presidential_election",
+            "title": "Wikipedia: 2024 Hungarian presidential election",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "assembly_2026",
+      "date": "2026-04-12",
+      "kind": "legislative",
+      "chamber": "national_assembly",
+      "historical": {
+        "candidates": [
+          {
+            "person": "hun.peter_magyar",
+            "party": "hun.tisza",
+            "round": 1
+          },
+          {
+            "person": "hun.viktor_orban",
+            "party": "hun.fidesz",
+            "round": 1
+          }
+        ],
+        "party_results": [
+          {
+            "party": "hun.tisza",
+            "share": 0.5318,
+            "seats": 141
+          },
+          {
+            "party": "hun.fidesz",
+            "share": 0.3861,
+            "seats": 44
+          },
+          {
+            "party": "hun.kdnp",
+            "seats": 8
+          },
+          {
+            "party": "hun.mi_hazank",
+            "share": 0.0563,
+            "seats": 6
+          },
+          {
+            "party": "hun.dk",
+            "share": 0.011,
+            "seats": 0
+          }
+        ],
+        "winner": "hun.tisza",
+        "turnout": 0.7899,
+        "note": "Tisza won a two-thirds majority. Fidesz–KDNP 38.61% (recorded under Fidesz), 52 seats: Fidesz 44 (Fidesz article), KDNP 8 (the remainder). DK, LMP and the other former opposition parties won no seats. The Assembly elected Magyar prime minister on 9 May 2026.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2026_Hungarian_parliamentary_election",
+            "title": "Wikipedia: 2026 Hungarian parliamentary election",
+            "accessed": "2026-10-15"
+          },
+          {
+            "url": "https://en.wikipedia.org/wiki/Fidesz",
+            "title": "Wikipedia: Fidesz (seats by election)",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "president_2026",
+      "date": "2026-08-11",
+      "kind": "indirect_presidential",
+      "office": "hun.president",
+      "historical": {
+        "candidates": [
+          {
+            "person": "hun.andras_baka",
+            "votes": 140,
+            "round": 1
+          }
+        ],
+        "winner": "hun.andras_baka",
+        "note": "Early election after President Sulyok's mandate was ended by constitutional amendment (in force 20 July 2026). Baka, a former President of the Supreme Court nominated by Tisza, won 140 votes to 6 against (198 MPs, 133 needed). He took office on 19 August 2026.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2026_Hungarian_presidential_election",
+            "title": "Wikipedia: 2026 Hungarian presidential election",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified"
+      }
+    }
+  ],
+  "source": [
+    {
+      "url": "https://en.wikipedia.org/wiki/National_Assembly_(Hungary)",
+      "title": "Wikipedia: National Assembly (Hungary)",
+      "accessed": "2026-10-15"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/President_of_Hungary",
+      "title": "Wikipedia: President of Hungary (election procedure)",
+      "accessed": "2026-10-15"
+    }
+  ],
+  "confidence": "verified"
+}

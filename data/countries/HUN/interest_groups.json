@@ -1,0 +1,15 @@
+{
+  "note": "Influence and approval are gameplay starting values for 1 January 2000 (Fidesz-led coalition with the Smallholders and MDF), not measured data. Influence reflects institutional weight (gameplay judgements): a country preparing for EU accession (approved by referendum in 2003), an agrarian lobby represented in government by the Smallholders, and opposition-leaning trade unions.",
+  "interest_groups": [
+    { "type": "military", "influence": 0.12, "approval": 50, "note": "Conscript army (conscription suspended in November 2004)." },
+    { "type": "security_services", "influence": 0.12, "approval": 50 },
+    { "type": "business", "influence": 0.45, "approval": 50 },
+    { "type": "labour_unions", "influence": 0.25, "approval": 40, "note": "Unions are closer to the opposition Socialists." },
+    { "type": "religious_establishment", "influence": 0.15, "approval": 55 },
+    { "type": "rural", "influence": 0.3, "approval": 55, "note": "Represented in government by the Independent Smallholders." },
+    { "type": "urban_middle_class", "influence": 0.45, "approval": 45 },
+    { "type": "minorities", "influence": 0.06, "approval": 40, "note": "Includes the Roma and recognised national minorities." },
+    { "type": "youth_students", "influence": 0.15, "approval": 50 },
+    { "type": "media", "influence": 0.4, "approval": 45 }
+  ]
+}

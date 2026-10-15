@@ -48,11 +48,11 @@ Live sources sometimes report allegations or investigations involving real peopl
 
 <!-- AUTO-GENERATED BELOW: run `npm run review-report`; edits below this line are overwritten -->
 
-## Needs review: 181 of 2444 records
+## Needs review: 189 of 2573 records
 
-Countries with politics data: 27 / 212.
+Countries with politics data: 28 / 212.
 
-Countries with no data yet (185): ALB, AUT, BIH, BGR, HRV, CYP, FIN, GRC, ISL, IRL, LIE, LUX, MLT, MKD, ROU, SMR, SVK, SVN, CHE, YUG, MNE, KOS, VAT, NCY, UKR, BLR, MDA, EST, LVA, LTU, GEO, ARM, AZE, KAZ, KGZ, TJK, TKM, UZB, PMR, ABK, SOS, NKR, ICH, CAN, ATG, ARG, BHS, BRB, BLZ, BOL, BRA, CHL, COL, CRI, CUB, DMA, DOM, ECU, SLV, GRD, GTM, GUY, HTI, HND, JAM, MEX, NIC, PAN, PRY, PER, KNA, LCA, VCT, SUR, TTO, URY, VEN, FAR, DZA, BHR, EGY, IRQ, JOR, KWT, LBN, LBY, MRT, MAR, OMN, QAT, SAU, SYR, TUN, ARE, YEM, ESH, KUR, AGO, BEN, BWA, BFA, BDI, CPV, CMR, CAF, TCD, COM, COD, COG, CIV, DJI, GNQ, ERI, SWZ, ETH, GAB, GMB, GHA, GIN, GNB, KEN, LSO, LBR, MDG, MWI, MLI, MUS, MOZ, NAM, NER, NGA, RWA, STP, SEN, SYC, SLE, ZAF, SDN, TZA, TGO, UGA, ZMB, ZWE, SSD, SML, UNI, RCD, MLC, AFG, AFN, BGD, BTN, IND, MDV, NPL, PAK, LKA, TEL, PRK, MNG, BRN, KHM, IDN, LAO, MYS, MMR, PHL, SGP, THA, VNM, TLS, AUS, NZL, FJI, PNG, SLB, VUT, WSM, TON, KIR, TUV, NRU, FSM, MHL, PLW
+Countries with no data yet (184): ALB, AUT, BIH, BGR, HRV, CYP, FIN, GRC, ISL, IRL, LIE, LUX, MLT, MKD, ROU, SMR, SVN, CHE, YUG, MNE, KOS, VAT, NCY, UKR, BLR, MDA, EST, LVA, LTU, GEO, ARM, AZE, KAZ, KGZ, TJK, TKM, UZB, PMR, ABK, SOS, NKR, ICH, CAN, ATG, ARG, BHS, BRB, BLZ, BOL, BRA, CHL, COL, CRI, CUB, DMA, DOM, ECU, SLV, GRD, GTM, GUY, HTI, HND, JAM, MEX, NIC, PAN, PRY, PER, KNA, LCA, VCT, SUR, TTO, URY, VEN, FAR, DZA, BHR, EGY, IRQ, JOR, KWT, LBN, LBY, MRT, MAR, OMN, QAT, SAU, SYR, TUN, ARE, YEM, ESH, KUR, AGO, BEN, BWA, BFA, BDI, CPV, CMR, CAF, TCD, COM, COD, COG, CIV, DJI, GNQ, ERI, SWZ, ETH, GAB, GMB, GHA, GIN, GNB, KEN, LSO, LBR, MDG, MWI, MLI, MUS, MOZ, NAM, NER, NGA, RWA, STP, SEN, SYC, SLE, ZAF, SDN, TZA, TGO, UGA, ZMB, ZWE, SSD, SML, UNI, RCD, MLC, AFG, AFN, BGD, BTN, IND, MDV, NPL, PAK, LKA, TEL, PRK, MNG, BRN, KHM, IDN, LAO, MYS, MMR, PHL, SGP, THA, VNM, TLS, AUS, NZL, FJI, PNG, SLB, VUT, WSM, TON, KIR, TUV, NRU, FSM, MHL, PLW
 
 ### AND — Andorra (12)
 
@@ -332,6 +332,17 @@ Countries with no data yet (185): ALB, AUT, BIH, BGR, HRV, CYP, FIN, GRC, ISL, I
 | election | `president_2004` indirect_presidential 2004-10-10 | The source does not label the 189-79 result as the third round, although the text says he won after the second and third rounds; confirm the round number and the first- and second-round tallies. | data/countries/SOM/elections.json |
 | election | `president_2009` indirect_presidential 2009-01-30 | The article text says three rounds, but the results template shows two columns (first round and run-off). Confirm round numbering. Add Maslah Mohammed Siad Barre once his birth year is sourced. | data/countries/SOM/elections.json |
 
+### SVK — Slovakia (6)
+
+| kind | record | what to check | file |
+|---|---|---|---|
+| party | `svk.kss` Communist Party of Slovakia (KSS) | Leader history is incomplete: Ševc's tenure (recorded from 2002, the election at which he led the list) and the leader on 1 January 2000 were not checked. | data/countries/SVK/parties.json |
+| party | `svk.sdku` Slovak Democratic and Christian Union – Democratic Party (SDKÚ-DS) | Exact dates of the 2012 leadership change (Dzurinda to Frešo) were not in the fetched text; check the party history. | data/countries/SVK/parties.json |
+| party | `svk.most_hid` Most–Híd (Bridge) (Most–Híd) | Bugár's end date as chairman and later chairs are not recorded; check the party's leader list. | data/countries/SVK/parties.json |
+| party | `svk.sme_rodina` We Are Family (Sme rodina) | Kollár is the leader per the infobox; the start year 2015 (Wikidata founding year of the party in its current form) is unchecked. | data/countries/SVK/parties.json |
+| party | `svk.zl` For the People (ZĽ) | The date Remišová succeeded Kiska is not in the fetched sources; 2021 is a placeholder. | data/countries/SVK/parties.json |
+| election | `referendum_2010` referendum 2010-09-18 | The individual questions and their number were not checked; only the first question's figures were read from the source. | data/countries/SVK/elections.json |
+
 ### SWE — Sweden (2)
 
 | kind | record | what to check | file |
@@ -348,11 +359,13 @@ Countries with no data yet (185): ALB, AUT, BIH, BGR, HRV, CYP, FIN, GRC, ISL, I
 | party | `tur.saadet` Felicity Party (SAADET) | Leaders before 2016 are missing: Recai Kutan (from 2001), Numan Kurtulmus, Necmettin Erbakan (from 2010-10-18 per Wikidata) and Mustafa Kamalak (2011-2016, years only). Add them with dates from a leader list. | data/countries/TUR/parties.json |
 | party | `tur.hdp` Peoples' Democratic Party (HDP) | Co-chairs omitted for lack of person records: Yavuz Onen and Fatma Gok (2012-2013), Sebahat Tuncel and Ertugrul Kurkcu (2013-2014), Serpil Kemalbay (2017-2018), Sultan Ozcan and Cahit Kirkazak (from 2023-08-27). Wikidata also splits Demirtas's tenure (to 2017-03-09, again from 2017-05-20). | data/countries/TUR/parties.json |
 
-### TWN — Taiwan (5)
+### TWN — Taiwan (7)
 
 | kind | record | what to check | file |
 |---|---|---|---|
 | chamber | `legislative_yuan` Legislative Yuan | seats_2000 is the December 1998 election result (others: Democratic Union of Taiwan 4, Democratic Non-Partisan Alliance 3, New Nation Alliance 1, Taiwan Independence Party 1), not the composition on 1 January 2000. Check the split of district and list seats in 1998 and the list-seat threshold then in force. | data/countries/TWN/country.json |
+| person | `twn.huang_kuo_chang` Huang Kuo-chang (b. 1973) | Wikidata gives his party moves to the month only (NPP May 2015 - November 2023, TPP from November 2023); stored as years. Confirm the dates of his NPP chairmanship. | data/countries/TWN/people.json |
+| person | `twn.chang_po_ya` Chang Po-ya (b. 1942) | Her NPSU leadership dates were not found. | data/countries/TWN/people.json |
 | party | `twn.np` New Party (NP) | Leader history is empty; add the party's conveners/chairmen since 2000 with dates. | data/countries/TWN/parties.json |
 | party | `twn.tsu` Taiwan Solidarity Union (TSU) | Leader history only names Lee Teng-hui (undated Wikidata chair). Add the party's formal chairmen with dates. | data/countries/TWN/parties.json |
 | party | `twn.npsu` Non-Partisan Solidarity Union (NPSU) | Chang Po-ya is listed as leader from the founding date; confirm her leadership dates. | data/countries/TWN/parties.json |

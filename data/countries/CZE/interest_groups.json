@@ -1,0 +1,15 @@
+{
+  "note": "Influence and approval are gameplay starting values for 1 January 2000 (ČSSD minority government tolerated by ODS under the Opposition Agreement), not measured data. Influence reflects institutional weight (gameplay judgements): a NATO member since 1999 (Czech Armed Forces article) preparing for EU accession (approved by referendum in 2003), moderately strong trade unions, a weak religious establishment and a free press.",
+  "interest_groups": [
+    { "type": "military", "influence": 0.12, "approval": 50, "note": "Conscript army (conscription abolished in 2004); NATO member since 1999." },
+    { "type": "security_services", "influence": 0.1, "approval": 50 },
+    { "type": "business", "influence": 0.45, "approval": 45 },
+    { "type": "labour_unions", "influence": 0.35, "approval": 55, "note": "Unions are closer to the governing Social Democrats." },
+    { "type": "religious_establishment", "influence": 0.08, "approval": 45 },
+    { "type": "rural", "influence": 0.18, "approval": 45 },
+    { "type": "urban_middle_class", "influence": 0.45, "approval": 45 },
+    { "type": "minorities", "influence": 0.06, "approval": 40, "note": "Includes the Roma, Slovak and other minorities." },
+    { "type": "youth_students", "influence": 0.15, "approval": 45 },
+    { "type": "media", "influence": 0.4, "approval": 45 }
+  ]
+}

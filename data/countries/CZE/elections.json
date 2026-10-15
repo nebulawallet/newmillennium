@@ -1,0 +1,702 @@
+{
+  "rules": [
+    {
+      "kind": "legislative",
+      "chamber": "chamber",
+      "every_years": 4,
+      "anchor": "2025-10-03",
+      "snap_possible": true,
+      "note": "Chamber of Deputies elected every four years; the Chamber can be dissolved early (as in 1998 and 2013)."
+    },
+    {
+      "kind": "legislative_upper",
+      "chamber": "senate",
+      "every_years": 2,
+      "anchor": "2024-09-20",
+      "snap_possible": false,
+      "note": "One third of the 81 Senate seats every two years (two-round, single-member constituencies). The 2026 election's first round was held on 9-10 October 2026 and its runoff falls on 16-17 October 2026, after the data date, so it is not recorded."
+    },
+    {
+      "kind": "presidential",
+      "office": "cze.president",
+      "every_years": 5,
+      "anchor": "2023-01-13",
+      "snap_possible": true,
+      "note": "Direct two-round election since 2013 (before that, election by a joint session of Parliament, recorded as indirect_presidential). An early election follows a vacancy."
+    }
+  ],
+  "elections": [
+    {
+      "id": "senate_2000",
+      "date": "2000-11-12",
+      "kind": "legislative_upper",
+      "chamber": "senate",
+      "historical": {
+        "party_results": [
+          { "party": "cze.ctyrkoalice", "share": 0.2753, "seats": 39, "seats_won": 17 },
+          { "party": "cze.ods", "share": 0.236, "seats": 22, "seats_won": 8 },
+          { "party": "cze.kscm", "share": 0.1777, "seats": 3, "seats_won": 0 },
+          { "party": "cze.cssd", "share": 0.1766, "seats": 15, "seats_won": 1 },
+          { "party": "independents", "share": 0.0994, "seats": 2, "seats_won": 1 }
+        ],
+        "winner": "cze.ctyrkoalice",
+        "note": "27 of 81 seats contested. Shares are first-round vote shares by nominating party (computed from the vote counts); seats is the Senate composition after the election (won plus not up) as given by the source; winner is the party that won the most seats in this election.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2000_Czech_Senate_election", "title": "Wikipedia: 2000 Czech Senate election", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "chamber_2002",
+      "date": "2002-06-14",
+      "kind": "legislative",
+      "chamber": "chamber",
+      "historical": {
+        "candidates": [
+          { "person": "cze.vladimir_spidla", "party": "cze.cssd", "round": 1 },
+          { "person": "cze.vaclav_klaus", "party": "cze.ods", "round": 1 }
+        ],
+        "party_results": [
+          { "party": "cze.cssd", "share": 0.3021, "seats": 70 },
+          { "party": "cze.ods", "share": 0.2448, "seats": 58 },
+          { "party": "cze.kscm", "share": 0.1851, "seats": 41 },
+          { "party": "cze.kdu_csl", "share": 0.1428, "seats": 22 },
+          { "party": "cze.us", "seats": 9 },
+          { "party": "cze.sz", "share": 0.0237, "seats": 0 },
+          { "party": "cze.spr_rsc", "share": 0.0097, "seats": 0 }
+        ],
+        "winner": "cze.cssd",
+        "turnout": 0.5795,
+        "note": "Held 14-15 June 2002. KDU-ČSL and US-DEU ran on a joint 'Coalition' list (14.28%, 31 seats: KDU-ČSL 22, US-DEU 9 per the Four-Coalition article); the joint share is recorded under KDU-ČSL. SPR-RSČ ran as 'Republicans of Miroslav Sládek'. ČSSD formed a majority coalition with KDU-ČSL and US-DEU (101 of 200 seats).",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2002_Czech_parliamentary_election", "title": "Wikipedia: 2002 Czech parliamentary election", "accessed": "2026-10-15" },
+          { "url": "https://en.wikipedia.org/wiki/Four-Coalition", "title": "Wikipedia: Four-Coalition (2002 seat split)", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "senate_2002",
+      "date": "2002-10-25",
+      "kind": "legislative_upper",
+      "chamber": "senate",
+      "historical": {
+        "party_results": [
+          { "party": "cze.ods", "share": 0.2488, "seats": 26, "seats_won": 9 },
+          { "party": "cze.cssd", "share": 0.1837, "seats": 11, "seats_won": 7 },
+          { "party": "cze.kscm", "share": 0.1653, "seats": 3, "seats_won": 1 },
+          { "party": "cze.kdu_csl", "share": 0.0883, "seats": 1, "seats_won": 1 },
+          { "party": "cze.us", "share": 0.0733, "seats": 1, "seats_won": 1 },
+          { "party": "cze.ctyrkoalice", "seats": 30, "seats_won": 0 },
+          { "party": "independents", "share": 0.086, "seats": 4, "seats_won": 3 },
+          { "party": "others", "seats": 5, "seats_won": 5 }
+        ],
+        "winner": "cze.ods",
+        "note": "Held 25-26 October and 1-2 November 2002; 27 seats contested. Shares are first-round shares by nominating party. seats_won comes from the source; the source gives no post-election composition, so seats is derived as seats won in 1998, 2000 and 2002 by nominating party (senators elected for the Four-Coalition in 1998 and 2000 kept under that bloc).",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2002_Czech_Senate_election", "title": "Wikipedia: 2002 Czech Senate election", "accessed": "2026-10-15" },
+          { "url": "https://en.wikipedia.org/wiki/2000_Czech_Senate_election", "title": "Wikipedia: 2000 Czech Senate election", "accessed": "2026-10-15" },
+          { "url": "https://en.wikipedia.org/wiki/1998_Czech_Senate_election", "title": "Wikipedia: 1998 Czech Senate election", "accessed": "2026-10-15" }
+        ],
+        "confidence": "needs_review",
+        "review_note": "Post-election Senate composition (seats) is derived from the last three elections' seats won, not taken from a source; check the Senate composition after November 2002 (party switches and by-elections are not reflected)."
+      }
+    },
+    {
+      "id": "president_2003",
+      "date": "2003-02-28",
+      "kind": "indirect_presidential",
+      "office": "cze.president",
+      "historical": {
+        "candidates": [
+          { "person": "cze.vaclav_klaus", "party": "cze.ods", "votes": 142, "round": 3 },
+          { "person": "cze.jan_sokol", "votes": 124, "round": 3 }
+        ],
+        "winner": "cze.vaclav_klaus",
+        "note": "Joint session of Parliament (200 deputies and 81 senators). The first two ballots (15 and 24 January 2003) failed; on the third vote of the third ballot (28 February) Klaus won 142 votes, just over the 141 needed, against 124 for Jan Sokol, the joint candidate of ČSSD, KDU-ČSL and US-DEU. Earlier ballots involved other candidates (including Jaroslav Bureš, Petr Pithart and Miloš Zeman), not recorded here.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2003_Czech_presidential_election", "title": "Wikipedia: 2003 Czech presidential election", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "eu_referendum_2003",
+      "date": "2003-06-13",
+      "kind": "referendum",
+      "question": "Accession of the Czech Republic to the European Union",
+      "historical": {
+        "yes_share": 0.7733,
+        "winner": "yes",
+        "turnout": 0.5518,
+        "note": "Held 13-14 June 2003. Yes 3,446,758; No 1,010,448; invalid 100,754; electorate 8,259,525. Yes share is of valid Yes and No votes; turnout computed from all ballots cast.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2003_Czech_European_Union_membership_referendum", "title": "Wikipedia: 2003 Czech European Union membership referendum", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "senate_2004",
+      "date": "2004-11-05",
+      "kind": "legislative_upper",
+      "chamber": "senate",
+      "historical": {
+        "party_results": [
+          { "party": "cze.ods", "share": 0.3327, "seats": 35, "seats_won": 18 },
+          { "party": "cze.kscm", "share": 0.1737, "seats": 2, "seats_won": 1 },
+          { "party": "cze.kdu_csl", "share": 0.1352, "seats": 4, "seats_won": 3 },
+          { "party": "cze.cssd", "share": 0.1248, "seats": 8, "seats_won": 0 },
+          { "party": "cze.us", "share": 0.0365, "seats": 2, "seats_won": 1 },
+          { "party": "cze.sz", "share": 0.0098, "seats": 1, "seats_won": 1 },
+          { "party": "cze.ctyrkoalice", "seats": 17, "seats_won": 0 },
+          { "party": "independents", "share": 0.0779, "seats": 5, "seats_won": 1 },
+          { "party": "others", "seats": 7, "seats_won": 2 }
+        ],
+        "winner": "cze.ods",
+        "note": "Held 5-6 and 12-13 November 2004; 27 seats contested. Shares are first-round shares by nominating party. seats is derived from seats won in 2000, 2002 and 2004 (the source gives no composition). 'independents' includes the small party Independents (Nezávislí), labelled that way in the source.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2004_Czech_Senate_election", "title": "Wikipedia: 2004 Czech Senate election", "accessed": "2026-10-15" }
+        ],
+        "confidence": "needs_review",
+        "review_note": "Post-election Senate composition (seats) is derived from seats won in 2000-2004, not taken from a source; check the composition after November 2004."
+      }
+    },
+    {
+      "id": "chamber_2006",
+      "date": "2006-06-02",
+      "kind": "legislative",
+      "chamber": "chamber",
+      "historical": {
+        "candidates": [
+          { "person": "cze.mirek_topolanek", "party": "cze.ods", "round": 1 },
+          { "person": "cze.jiri_paroubek", "party": "cze.cssd", "round": 1 }
+        ],
+        "party_results": [
+          { "party": "cze.ods", "share": 0.3538, "seats": 81 },
+          { "party": "cze.cssd", "share": 0.3232, "seats": 74 },
+          { "party": "cze.kscm", "share": 0.1281, "seats": 26 },
+          { "party": "cze.kdu_csl", "share": 0.0723, "seats": 13 },
+          { "party": "cze.sz", "share": 0.0629, "seats": 6 },
+          { "party": "cze.us", "share": 0.0031, "seats": 0 }
+        ],
+        "winner": "cze.ods",
+        "turnout": 0.6442,
+        "note": "Held 2-3 June 2006. The result split the Chamber 100-100 between ODS, KDU-ČSL and the Greens on one side and ČSSD and KSČM on the other; the ODS-KDU-ČSL-Green coalition won a confidence vote on 19 January 2007.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2006_Czech_parliamentary_election", "title": "Wikipedia: 2006 Czech parliamentary election", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "senate_2006",
+      "date": "2006-10-20",
+      "kind": "legislative_upper",
+      "chamber": "senate",
+      "historical": {
+        "party_results": [
+          { "party": "cze.ods", "share": 0.3331, "seats": 41, "seats_won": 14 },
+          { "party": "cze.cssd", "share": 0.1923, "seats": 12, "seats_won": 6 },
+          { "party": "cze.kscm", "share": 0.1268, "seats": 2, "seats_won": 0 },
+          { "party": "cze.kdu_csl", "share": 0.1235, "seats": 10, "seats_won": 4 },
+          { "party": "cze.sz", "share": 0.0475, "seats": 1, "seats_won": 0 },
+          { "party": "cze.us", "share": 0.0201, "seats": 1, "seats_won": 0 },
+          { "party": "cze.stan", "share": 0.0071, "seats": 1, "seats_won": 1 },
+          { "party": "independents", "share": 0.0332, "seats": 4, "seats_won": 1 },
+          { "party": "others", "seats": 9, "seats_won": 1 }
+        ],
+        "winner": "cze.ods",
+        "note": "First round 20-21 October 2006; 27 seats contested. Shares are first-round shares by nominating party; seats is the composition (won plus not up) given by the source.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2006_Czech_Senate_election", "title": "Wikipedia: 2006 Czech Senate election", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "president_2008",
+      "date": "2008-02-15",
+      "kind": "indirect_presidential",
+      "office": "cze.president",
+      "historical": {
+        "candidates": [
+          { "person": "cze.vaclav_klaus", "party": "cze.ods", "votes": 141, "round": 3 },
+          { "person": "cze.jan_svejnar", "votes": 111, "round": 3 }
+        ],
+        "winner": "cze.vaclav_klaus",
+        "note": "Joint session of Parliament. The first ballot (8-9 February 2008) was inconclusive; Klaus was re-elected on the third round of the second ballot on 15 February with 141 votes to 111 for Jan Švejnar, a non-party economist listed under ČSSD in the election infobox.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2008_Czech_presidential_election", "title": "Wikipedia: 2008 Czech presidential election", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "senate_2008",
+      "date": "2008-10-17",
+      "kind": "legislative_upper",
+      "chamber": "senate",
+      "historical": {
+        "party_results": [
+          { "party": "cze.cssd", "share": 0.332, "seats": 29, "seats_won": 23 },
+          { "party": "cze.ods", "share": 0.2414, "seats": 35, "seats_won": 3 },
+          { "party": "cze.kscm", "share": 0.1405, "seats": 3, "seats_won": 1 },
+          { "party": "cze.kdu_csl", "share": 0.0799, "seats": 7, "seats_won": 0 },
+          { "party": "cze.sz", "share": 0.0399, "seats": 1, "seats_won": 0 },
+          { "party": "cze.us", "share": 0.0115, "seats": 1, "seats_won": 0 },
+          { "party": "cze.stan", "share": 0.0075, "seats": 1, "seats_won": 0 },
+          { "party": "independents", "share": 0.0206, "seats": 1, "seats_won": 0 },
+          { "party": "others", "seats": 3, "seats_won": 0 }
+        ],
+        "winner": "cze.cssd",
+        "note": "Held 17-18 and 24-25 October 2008; 27 seats contested. ČSSD won 23 of the 27 seats; ODS remained the largest group overall. Shares are first-round shares by nominating party; seats is the composition given by the source.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2008_Czech_Senate_election", "title": "Wikipedia: 2008 Czech Senate election", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "chamber_2010",
+      "date": "2010-05-28",
+      "kind": "legislative",
+      "chamber": "chamber",
+      "historical": {
+        "candidates": [
+          { "person": "cze.jiri_paroubek", "party": "cze.cssd", "round": 1 },
+          { "person": "cze.petr_necas", "party": "cze.ods", "round": 1 },
+          { "person": "cze.karel_schwarzenberg", "party": "cze.top09", "round": 1 }
+        ],
+        "party_results": [
+          { "party": "cze.cssd", "share": 0.2209, "seats": 56 },
+          { "party": "cze.ods", "share": 0.2022, "seats": 53 },
+          { "party": "cze.top09", "share": 0.1671, "seats": 41 },
+          { "party": "cze.kscm", "share": 0.1127, "seats": 26 },
+          { "party": "cze.vv", "share": 0.1088, "seats": 24 },
+          { "party": "cze.kdu_csl", "share": 0.0439, "seats": 0 },
+          { "party": "cze.sz", "share": 0.0244, "seats": 0 },
+          { "party": "cze.pirati", "share": 0.0081, "seats": 0 }
+        ],
+        "winner": "cze.cssd",
+        "turnout": 0.6255,
+        "note": "Held 28-29 May 2010. ODS, TOP 09 and Public Affairs formed the Nečas coalition government.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2010_Czech_parliamentary_election", "title": "Wikipedia: 2010 Czech parliamentary election", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "senate_2010",
+      "date": "2010-10-15",
+      "kind": "legislative_upper",
+      "chamber": "senate",
+      "historical": {
+        "party_results": [
+          { "party": "cze.cssd", "share": 0.2528, "seats": 41, "seats_won": 12 },
+          { "party": "cze.ods", "share": 0.2321, "seats": 25, "seats_won": 8 },
+          { "party": "cze.top09", "share": 0.1308, "seats": 1, "seats_won": 1 },
+          { "party": "cze.kscm", "share": 0.1023, "seats": 2, "seats_won": 0 },
+          { "party": "cze.kdu_csl", "share": 0.076, "seats": 6, "seats_won": 2 },
+          { "party": "cze.stan", "share": 0.0133, "seats": 3, "seats_won": 1 },
+          { "party": "others", "seats": 3, "seats_won": 3 }
+        ],
+        "winner": "cze.cssd",
+        "note": "Held 15-16 and 22-23 October 2010; 27 seats contested. Shares are first-round shares by nominating party; seats is the composition given by the source.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2010_Czech_Senate_election", "title": "Wikipedia: 2010 Czech Senate election", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "senate_2012",
+      "date": "2012-10-12",
+      "kind": "legislative_upper",
+      "chamber": "senate",
+      "historical": {
+        "party_results": [
+          { "party": "cze.cssd", "share": 0.2347, "seats": 48, "seats_won": 13 },
+          { "party": "cze.kscm", "share": 0.1744, "seats": 2, "seats_won": 1 },
+          { "party": "cze.ods", "share": 0.1728, "seats": 15, "seats_won": 4 },
+          { "party": "cze.kdu_csl", "share": 0.0838, "seats": 4, "seats_won": 2 },
+          { "party": "cze.top09", "share": 0.0534, "seats": 1, "seats_won": 0 },
+          { "party": "cze.stan", "share": 0.0386, "seats": 3, "seats_won": 2 },
+          { "party": "cze.sz", "share": 0.0209, "seats": 1, "seats_won": 1 },
+          { "party": "cze.pirati", "share": 0.009, "seats": 1, "seats_won": 1 },
+          { "party": "independents", "share": 0.0559, "seats": 2, "seats_won": 2 },
+          { "party": "others", "seats": 4, "seats_won": 1 }
+        ],
+        "winner": "cze.cssd",
+        "note": "First round 12-13 October 2012; 27 seats contested. Shares are first-round shares by nominating party. seats is derived from seats won in 2008, 2010 and 2012 (the source gives no composition).",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2012_Czech_Senate_election", "title": "Wikipedia: 2012 Czech Senate election", "accessed": "2026-10-15" }
+        ],
+        "confidence": "needs_review",
+        "review_note": "Post-election Senate composition (seats) is derived from seats won in 2008-2012, not taken from a source; check the composition after October 2012."
+      }
+    },
+    {
+      "id": "president_2013",
+      "date": "2013-01-11",
+      "kind": "presidential",
+      "office": "cze.president",
+      "rounds": 2,
+      "historical": {
+        "candidates": [
+          { "person": "cze.milos_zeman", "share": 0.2422, "votes": 1245848, "round": 1 },
+          { "person": "cze.karel_schwarzenberg", "party": "cze.top09", "share": 0.2341, "votes": 1204195, "round": 1 },
+          { "person": "cze.jan_fischer", "share": 0.1636, "votes": 841437, "round": 1 },
+          { "person": "cze.jiri_dienstbier_jr", "party": "cze.cssd", "share": 0.1612, "votes": 829297, "round": 1 },
+          { "person": "cze.vladimir_franz", "share": 0.0684, "votes": 351916, "round": 1 },
+          { "person": "cze.milos_zeman", "share": 0.548, "votes": 2717405, "round": 2 },
+          { "person": "cze.karel_schwarzenberg", "party": "cze.top09", "share": 0.452, "votes": 2241171, "round": 2 }
+        ],
+        "winner": "cze.milos_zeman",
+        "turnout": 0.6127,
+        "note": "First direct presidential election: 11-12 January (first round) and 25-26 January 2013 (runoff). Zeman stood for the Party of Civic Rights (not recorded as a party here). Candidates under 5% omitted (Zuzana Roithová 4.96%, Táňa Fischerová, Přemysl Sobotka, Jana Bobošíková). Turnout is the first round (59.08% in the runoff).",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2013_Czech_presidential_election", "title": "Wikipedia: 2013 Czech presidential election", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "chamber_2013",
+      "date": "2013-10-25",
+      "kind": "legislative",
+      "chamber": "chamber",
+      "snap": true,
+      "historical": {
+        "candidates": [
+          { "person": "cze.bohuslav_sobotka", "party": "cze.cssd", "round": 1 },
+          { "person": "cze.andrej_babis", "party": "cze.ano", "round": 1 }
+        ],
+        "party_results": [
+          { "party": "cze.cssd", "share": 0.2046, "seats": 50 },
+          { "party": "cze.ano", "share": 0.1866, "seats": 47 },
+          { "party": "cze.kscm", "share": 0.1491, "seats": 33 },
+          { "party": "cze.top09", "share": 0.12, "seats": 26 },
+          { "party": "cze.ods", "share": 0.0773, "seats": 16 },
+          { "party": "cze.usvit", "share": 0.0689, "seats": 14 },
+          { "party": "cze.kdu_csl", "share": 0.0678, "seats": 14 },
+          { "party": "cze.sz", "share": 0.032, "seats": 0 },
+          { "party": "cze.pirati", "share": 0.0266, "seats": 0 }
+        ],
+        "winner": "cze.cssd",
+        "turnout": 0.5944,
+        "note": "Early election held 25-26 October 2013, seven months before the end of the term, after the Nečas government resigned in June 2013 and the Rusnok caretaker cabinet was appointed. ČSSD, ANO and KDU-ČSL formed the Sobotka coalition.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2013_Czech_parliamentary_election", "title": "Wikipedia: 2013 Czech parliamentary election", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "senate_2014",
+      "date": "2014-10-10",
+      "kind": "legislative_upper",
+      "chamber": "senate",
+      "historical": {
+        "party_results": [
+          { "party": "cze.cssd", "share": 0.2204, "seats": 35, "seats_won": 10 },
+          { "party": "cze.ano", "share": 0.1755, "seats": 4, "seats_won": 4 },
+          { "party": "cze.ods", "share": 0.1152, "seats": 14, "seats_won": 2 },
+          { "party": "cze.kdu_csl", "share": 0.1002, "seats": 9, "seats_won": 5 },
+          { "party": "cze.kscm", "share": 0.0974, "seats": 1, "seats_won": 0 },
+          { "party": "cze.top09", "share": 0.0849, "seats": 1, "seats_won": 0 },
+          { "party": "cze.sz", "share": 0.0361, "seats": 3, "seats_won": 2 },
+          { "party": "cze.stan", "share": 0.0201, "seats": 4, "seats_won": 1 },
+          { "party": "cze.pirati", "seats": 1, "seats_won": 0 },
+          { "party": "independents", "seats": 2, "seats_won": 0 },
+          { "party": "others", "seats": 7, "seats_won": 3 }
+        ],
+        "winner": "cze.cssd",
+        "note": "Held 10-11 and 17-18 October 2014; 27 seats contested. Shares are first-round shares by nominating party. seats is derived from seats won in 2010, 2012 and 2014 (the source gives no composition).",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2014_Czech_Senate_election", "title": "Wikipedia: 2014 Czech Senate election", "accessed": "2026-10-15" }
+        ],
+        "confidence": "needs_review",
+        "review_note": "Post-election Senate composition (seats) is derived from seats won in 2010-2014, not taken from a source; check the composition after October 2014."
+      }
+    },
+    {
+      "id": "senate_2016",
+      "date": "2016-10-07",
+      "kind": "legislative_upper",
+      "chamber": "senate",
+      "historical": {
+        "party_results": [
+          { "party": "cze.ano", "share": 0.1718, "seats": 7, "seats_won": 3 },
+          { "party": "cze.cssd", "share": 0.1462, "seats": 25, "seats_won": 2 },
+          { "party": "cze.ods", "share": 0.1171, "seats": 9, "seats_won": 3 },
+          { "party": "cze.kscm", "share": 0.095, "seats": 1, "seats_won": 0 },
+          { "party": "cze.kdu_csl", "share": 0.0848, "seats": 14, "seats_won": 6 },
+          { "party": "cze.top09", "share": 0.0802, "seats": 2, "seats_won": 2 },
+          { "party": "cze.stan", "share": 0.0491, "seats": 5, "seats_won": 2 },
+          { "party": "cze.sz", "share": 0.0213, "seats": 4, "seats_won": 1 },
+          { "party": "cze.pirati", "share": 0.0083, "seats": 1, "seats_won": 0 },
+          { "party": "independents", "share": 0.0177, "seats": 2, "seats_won": 1 },
+          { "party": "others", "seats": 11, "seats_won": 7 }
+        ],
+        "winner": "cze.kdu_csl",
+        "note": "Held 7-8 and 14-15 October 2016 (the Most constituency voted again on 27-28 January 2017); 27 seats contested. Shares are first-round shares by nominating party; seats is the composition given by the source.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2016_Czech_Senate_election", "title": "Wikipedia: 2016 Czech Senate election", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "chamber_2017",
+      "date": "2017-10-20",
+      "kind": "legislative",
+      "chamber": "chamber",
+      "historical": {
+        "candidates": [
+          { "person": "cze.andrej_babis", "party": "cze.ano", "round": 1 },
+          { "person": "cze.petr_fiala", "party": "cze.ods", "round": 1 },
+          { "person": "cze.lubomir_zaoralek", "party": "cze.cssd", "round": 1 }
+        ],
+        "party_results": [
+          { "party": "cze.ano", "share": 0.2964, "seats": 78 },
+          { "party": "cze.ods", "share": 0.1132, "seats": 25 },
+          { "party": "cze.pirati", "share": 0.108, "seats": 22 },
+          { "party": "cze.spd", "share": 0.1064, "seats": 22 },
+          { "party": "cze.kscm", "share": 0.0777, "seats": 15 },
+          { "party": "cze.cssd", "share": 0.0728, "seats": 15 },
+          { "party": "cze.kdu_csl", "share": 0.058, "seats": 10 },
+          { "party": "cze.top09", "share": 0.0531, "seats": 7 },
+          { "party": "cze.stan", "share": 0.0518, "seats": 6 },
+          { "party": "cze.sz", "share": 0.0147, "seats": 0 }
+        ],
+        "winner": "cze.ano",
+        "turnout": 0.6079,
+        "note": "Held 20-21 October 2017. Babiš formed a government in December 2017.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2017_Czech_parliamentary_election", "title": "Wikipedia: 2017 Czech parliamentary election", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "president_2018",
+      "date": "2018-01-12",
+      "kind": "presidential",
+      "office": "cze.president",
+      "rounds": 2,
+      "historical": {
+        "candidates": [
+          { "person": "cze.milos_zeman", "share": 0.3857, "votes": 1985547, "round": 1 },
+          { "person": "cze.jiri_drahos", "share": 0.266, "votes": 1369601, "round": 1 },
+          { "person": "cze.pavel_fischer", "share": 0.1023, "votes": 526694, "round": 1 },
+          { "person": "cze.michal_horacek", "share": 0.0918, "votes": 472643, "round": 1 },
+          { "person": "cze.marek_hilser", "share": 0.0884, "votes": 454949, "round": 1 },
+          { "person": "cze.milos_zeman", "share": 0.5137, "votes": 2853390, "round": 2 },
+          { "person": "cze.jiri_drahos", "share": 0.4863, "votes": 2701206, "round": 2 }
+        ],
+        "winner": "cze.milos_zeman",
+        "turnout": 0.6188,
+        "note": "First round 12-13 January, runoff 26-27 January 2018. Candidates under 5% omitted (Mirek Topolánek 4.31%, Jiří Hynek, Petr Hannig, Vratislav Kulhánek). Turnout is the first round (66.57% in the runoff).",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2018_Czech_presidential_election", "title": "Wikipedia: 2018 Czech presidential election", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "senate_2018",
+      "date": "2018-10-05",
+      "kind": "legislative_upper",
+      "chamber": "senate",
+      "historical": {
+        "party_results": [
+          { "party": "cze.ods", "share": 0.1502, "seats": 16, "seats_won": 10 },
+          { "party": "cze.ano", "share": 0.1353, "seats": 7, "seats_won": 1 },
+          { "party": "cze.cssd", "share": 0.0922, "seats": 13, "seats_won": 1 },
+          { "party": "cze.kdu_csl", "share": 0.0912, "seats": 16, "seats_won": 2 },
+          { "party": "cze.kscm", "share": 0.0738, "seats": 0, "seats_won": 0 },
+          { "party": "cze.stan", "share": 0.0725, "seats": 10, "seats_won": 5 },
+          { "party": "cze.pirati", "share": 0.0608, "seats": 1, "seats_won": 1 },
+          { "party": "cze.top09", "share": 0.0385, "seats": 3, "seats_won": 1 },
+          { "party": "cze.sz", "share": 0.0017, "seats": 1, "seats_won": 0 },
+          { "party": "independents", "share": 0.0886, "seats": 4, "seats_won": 3 },
+          { "party": "others", "seats": 10, "seats_won": 3 }
+        ],
+        "winner": "cze.ods",
+        "note": "Held 5-6 and 12-13 October 2018; 27 seats contested. Shares are first-round shares by nominating party; seats is the composition given by the source.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2018_Czech_Senate_election", "title": "Wikipedia: 2018 Czech Senate election", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "senate_2020",
+      "date": "2020-10-02",
+      "kind": "legislative_upper",
+      "chamber": "senate",
+      "historical": {
+        "party_results": [
+          { "party": "cze.ods", "share": 0.1407, "seats": 18, "seats_won": 5 },
+          { "party": "cze.stan", "share": 0.1287, "seats": 18, "seats_won": 10 },
+          { "party": "cze.ano", "share": 0.1155, "seats": 5, "seats_won": 1 },
+          { "party": "cze.kdu_csl", "share": 0.0908, "seats": 12, "seats_won": 3 },
+          { "party": "cze.cssd", "share": 0.0813, "seats": 3, "seats_won": 0 },
+          { "party": "cze.pirati", "share": 0.0628, "seats": 2, "seats_won": 1 },
+          { "party": "cze.top09", "share": 0.0467, "seats": 5, "seats_won": 2 },
+          { "party": "cze.kscm", "share": 0.0424, "seats": 0, "seats_won": 0 },
+          { "party": "cze.sz", "share": 0.0113, "seats": 1, "seats_won": 0 },
+          { "party": "independents", "share": 0.0435, "seats": 4, "seats_won": 0 },
+          { "party": "others", "seats": 13, "seats_won": 5 }
+        ],
+        "winner": "cze.stan",
+        "note": "Held 2-3 and 9-10 October 2020; 27 seats contested. Shares are first-round shares by nominating party; seats is the composition given by the source.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2020_Czech_Senate_election", "title": "Wikipedia: 2020 Czech Senate election", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "chamber_2021",
+      "date": "2021-10-08",
+      "kind": "legislative",
+      "chamber": "chamber",
+      "historical": {
+        "candidates": [
+          { "person": "cze.andrej_babis", "party": "cze.ano", "round": 1 },
+          { "person": "cze.petr_fiala", "party": "cze.ods", "round": 1 },
+          { "person": "cze.ivan_bartos", "party": "cze.pirati", "round": 1 }
+        ],
+        "party_results": [
+          { "party": "cze.ano", "share": 0.2713, "seats": 72 },
+          { "party": "cze.ods", "share": 0.2779, "seats": 34 },
+          { "party": "cze.kdu_csl", "seats": 23 },
+          { "party": "cze.top09", "seats": 14 },
+          { "party": "cze.pirati", "share": 0.1562, "seats": 4 },
+          { "party": "cze.stan", "seats": 33 },
+          { "party": "cze.spd", "share": 0.0956, "seats": 20 },
+          { "party": "cze.cssd", "share": 0.0466, "seats": 0 },
+          { "party": "cze.kscm", "share": 0.0361, "seats": 0 },
+          { "party": "cze.sz", "share": 0.0099, "seats": 0 }
+        ],
+        "winner": "cze.ano",
+        "turnout": 0.6539,
+        "note": "Held 8-9 October 2021. Two joint lists: Spolu (ODS, KDU-ČSL, TOP 09) won 27.79% and 71 seats (ODS 34, KDU-ČSL 23, TOP 09 14), and Pirates and Mayors won 15.62% and 37 seats (STAN 33, Pirates 4); each joint share is recorded under the list's lead party (ODS, Pirates). ANO was the largest single party; Spolu, STAN and the Pirates formed the Fiala majority coalition. ČSSD and KSČM fell below the 5% threshold.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2021_Czech_parliamentary_election", "title": "Wikipedia: 2021 Czech parliamentary election", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "senate_2022",
+      "date": "2022-09-23",
+      "kind": "legislative_upper",
+      "chamber": "senate",
+      "historical": {
+        "party_results": [
+          { "party": "cze.ano", "share": 0.2198, "seats": 5, "seats_won": 3 },
+          { "party": "cze.ods", "share": 0.1365, "seats": 23, "seats_won": 8 },
+          { "party": "cze.kdu_csl", "share": 0.1087, "seats": 12, "seats_won": 7 },
+          { "party": "cze.stan", "share": 0.0678, "seats": 15, "seats_won": 0 },
+          { "party": "cze.top09", "share": 0.066, "seats": 6, "seats_won": 3 },
+          { "party": "cze.cssd", "share": 0.0394, "seats": 1, "seats_won": 0 },
+          { "party": "cze.pirati", "share": 0.0254, "seats": 2, "seats_won": 0 },
+          { "party": "independents", "share": 0.0518, "seats": 5, "seats_won": 2 },
+          { "party": "others", "seats": 12, "seats_won": 4 }
+        ],
+        "winner": "cze.ods",
+        "note": "Held 23-24 September and 30 September-1 October 2022; 27 seats contested. Shares are first-round shares by nominating party; seats is the composition given by the source.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2022_Czech_Senate_election", "title": "Wikipedia: 2022 Czech Senate election", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "president_2023",
+      "date": "2023-01-13",
+      "kind": "presidential",
+      "office": "cze.president",
+      "rounds": 2,
+      "historical": {
+        "candidates": [
+          { "person": "cze.petr_pavel", "share": 0.354, "votes": 1975056, "round": 1 },
+          { "person": "cze.andrej_babis", "party": "cze.ano", "share": 0.3499, "votes": 1952213, "round": 1 },
+          { "person": "cze.danuse_nerudova", "share": 0.1393, "votes": 777080, "round": 1 },
+          { "person": "cze.pavel_fischer", "share": 0.0675, "votes": 376705, "round": 1 },
+          { "person": "cze.petr_pavel", "share": 0.5833, "votes": 3359151, "round": 2 },
+          { "person": "cze.andrej_babis", "party": "cze.ano", "share": 0.4167, "votes": 2400046, "round": 2 }
+        ],
+        "winner": "cze.petr_pavel",
+        "turnout": 0.6819,
+        "note": "First round 13-14 January, runoff 27-28 January 2023. Candidates under 5% omitted (Jaroslav Bašta 4.45%, Marek Hilšer, Karel Diviš, Tomáš Zima). Turnout is the first round (70.22% in the runoff).",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2023_Czech_presidential_election", "title": "Wikipedia: 2023 Czech presidential election", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "senate_2024",
+      "date": "2024-09-20",
+      "kind": "legislative_upper",
+      "chamber": "senate",
+      "historical": {
+        "party_results": [
+          { "party": "cze.ano", "share": 0.2827, "seats": 12, "seats_won": 8 },
+          { "party": "cze.ods", "share": 0.1581, "seats": 18, "seats_won": 5 },
+          { "party": "cze.stan", "share": 0.1106, "seats": 15, "seats_won": 5 },
+          { "party": "cze.kdu_csl", "share": 0.0586, "seats": 12, "seats_won": 2 },
+          { "party": "cze.top09", "share": 0.0559, "seats": 7, "seats_won": 2 },
+          { "party": "cze.cssd", "share": 0.0402, "seats": 1, "seats_won": 1 },
+          { "party": "cze.pirati", "share": 0.0266, "seats": 1, "seats_won": 0 },
+          { "party": "independents", "share": 0.0318, "seats": 3, "seats_won": 1 },
+          { "party": "others", "seats": 12, "seats_won": 3 }
+        ],
+        "winner": "cze.ano",
+        "note": "Held 20-21 and 27-28 September 2024; 27 seats contested. Shares are first-round shares by nominating party; seats is the composition given by the source.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2024_Czech_Senate_election", "title": "Wikipedia: 2024 Czech Senate election", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "chamber_2025",
+      "date": "2025-10-03",
+      "kind": "legislative",
+      "chamber": "chamber",
+      "historical": {
+        "candidates": [
+          { "person": "cze.andrej_babis", "party": "cze.ano", "round": 1 },
+          { "person": "cze.petr_fiala", "party": "cze.ods", "round": 1 }
+        ],
+        "party_results": [
+          { "party": "cze.ano", "share": 0.3452, "seats": 80 },
+          { "party": "cze.spolu", "share": 0.2336, "seats": 52 },
+          { "party": "cze.stan", "share": 0.1123, "seats": 22 },
+          { "party": "cze.pirati", "share": 0.0897, "seats": 18 },
+          { "party": "cze.spd", "share": 0.0778, "seats": 15 },
+          { "party": "cze.auto", "share": 0.0677, "seats": 13 }
+        ],
+        "winner": "cze.ano",
+        "turnout": 0.6895,
+        "note": "Held 3-4 October 2025. Spolu (ODS, KDU-ČSL, TOP 09) ran as one list; the fetched sources do not split its 52 seats by party. SPD's list included Tricolour, Svobodní and PRO members; KSČM ran within Stačilo! (4.31%, no seats). ANO, SPD and the Motorists signed a coalition agreement on 3 November 2025.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2025_Czech_parliamentary_election", "title": "Wikipedia: 2025 Czech parliamentary election", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      }
+    }
+  ],
+  "source": [
+    { "url": "https://en.wikipedia.org/wiki/President_of_the_Czech_Republic", "title": "Wikipedia: President of the Czech Republic (election method)", "accessed": "2026-10-15" },
+    { "url": "https://en.wikipedia.org/wiki/Chamber_of_Deputies_of_the_Czech_Republic", "title": "Wikipedia: Chamber of Deputies of the Czech Republic", "accessed": "2026-10-15" }
+  ],
+  "confidence": "verified"
+}

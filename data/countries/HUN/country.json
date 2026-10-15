@@ -1,0 +1,126 @@
+{
+  "tag": "HUN",
+  "name": { "en": "Hungary", "native": "Magyarország", "official": { "en": "Republic of Hungary (Hungary since 2012)", "native": "Magyar Köztársaság (Magyarország since 2012)" } },
+  "adjective": "Hungarian",
+  "culture_primary": "hungarian",
+  "government": {
+    "type": "parliamentary",
+    "effective_executive": "hun.prime_minister",
+    "head_of_state_office": "hun.president",
+    "head_of_government_office": "hun.prime_minister",
+    "constitution": {
+      "term_limit_amendable": true,
+      "emergency_powers": true,
+      "referendum_required_for": []
+    },
+    "note": "Parliamentary republic with a unicameral National Assembly. The National Assembly elects the Prime Minister and the President (five-year term, renewable once). The Fundamental Law adopted in 2011 replaced the 1949 constitution and renamed the state 'Hungary' from 2012; constitutional changes need a two-thirds majority. In July 2026 a constitutional amendment ended President Sulyok's mandate."
+  },
+  "offices": [
+    {
+      "id": "hun.president",
+      "title": { "en": "President of Hungary", "native": "A Magyar Köztársaság elnöke / Magyarország köztársasági elnöke" },
+      "role": "head_of_state",
+      "power_weight": 0.1,
+      "selection": "legislature",
+      "term_years": 5,
+      "term_limit": { "max_terms": 2, "consecutive_only": false },
+      "succession": { "type": "acting_then_election" },
+      "holders": [
+        { "person": "hun.arpad_goncz", "from": "1990-08-03", "to": "2000-08-03" },
+        { "person": "hun.ferenc_madl", "from": "2000-08-04", "to": "2005-08-04" },
+        { "person": "hun.laszlo_solyom", "from": "2005-08-05", "to": "2010-08-05" },
+        { "person": "hun.pal_schmitt", "from": "2010-08-06", "to": "2012-04-02", "note": "Resigned." },
+        { "person": "hun.laszlo_kover", "from": "2012-04-02", "to": "2012-05-10", "acting": true, "note": "Acting as Speaker of the National Assembly." },
+        { "person": "hun.janos_ader", "from": "2012-05-10", "to": "2022-05-10", "note": "Re-elected in 2017." },
+        { "person": "hun.katalin_novak", "from": "2022-05-10", "to": "2024-02-26", "note": "Resigned." },
+        { "person": "hun.laszlo_kover", "from": "2024-02-26", "to": "2024-03-05", "acting": true, "note": "Acting as Speaker of the National Assembly." },
+        { "person": "hun.tamas_sulyok", "from": "2024-03-05", "to": "2026-07-19", "note": "Mandate ended by the 17th Amendment to the Fundamental Law. The list of heads of state gives 19 July 2026 as his last day; the 2026 presidential election article says the removal took effect on 20 July." },
+        { "person": "hun.agnes_forsthoffer", "from": "2026-07-20", "to": "2026-08-19", "acting": true, "note": "Acting as Speaker of the National Assembly." },
+        { "person": "hun.andras_baka", "from": "2026-08-19", "note": "Elected by the National Assembly on 11 August 2026." }
+      ],
+      "note": "Göncz (in office since 1990) was the incumbent on 1 January 2000. Wikidata agrees with these dates except that it ends the acting terms a day earlier (Kövér on 9 May 2012, Forsthoffer on 18 August 2026). The Speaker of the National Assembly acts during a vacancy.",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/List_of_heads_of_state_of_Hungary", "title": "Wikipedia: List of heads of state of Hungary", "accessed": "2026-10-15" },
+        { "url": "https://www.wikidata.org/wiki/Q520765", "title": "Wikidata: President of Hungary (position held by)", "accessed": "2026-10-15" },
+        { "url": "https://en.wikipedia.org/wiki/President_of_Hungary", "title": "Wikipedia: President of Hungary (term, election rules)", "accessed": "2026-10-15" },
+        { "url": "https://en.wikipedia.org/wiki/2026_Hungarian_presidential_election", "title": "Wikipedia: 2026 Hungarian presidential election", "accessed": "2026-10-15" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "hun.prime_minister",
+      "title": { "en": "Prime Minister of Hungary", "native": "Magyarország miniszterelnöke" },
+      "role": "head_of_government",
+      "power_weight": 0.9,
+      "selection": "legislature",
+      "term_years": 4,
+      "holders": [
+        { "person": "hun.viktor_orban", "from": "1998-07-06", "to": "2002-05-27", "note": "Fidesz-FKGP-MDF coalition." },
+        { "person": "hun.peter_medgyessy", "from": "2002-05-27", "to": "2004-09-29", "note": "Non-party, nominated by MSZP; MSZP-SZDSZ coalition." },
+        { "person": "hun.ferenc_gyurcsany", "from": "2004-09-29", "to": "2009-04-14" },
+        { "person": "hun.gordon_bajnai", "from": "2009-04-14", "to": "2010-05-29", "note": "Non-party." },
+        { "person": "hun.viktor_orban", "from": "2010-05-29", "to": "2026-05-09" },
+        { "person": "hun.peter_magyar", "from": "2026-05-09", "note": "Elected by the National Assembly when it convened on 9 May 2026." }
+      ],
+      "note": "Dates from the Wikipedia list of prime ministers; Wikidata gives 8 July 1998 for the start of Orbán's first term.",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/List_of_prime_ministers_of_Hungary", "title": "Wikipedia: List of prime ministers of Hungary", "accessed": "2026-10-15" },
+        { "url": "https://www.wikidata.org/wiki/Q3315094", "title": "Wikidata: Prime Minister of Hungary (position held by)", "accessed": "2026-10-15" },
+        { "url": "https://en.wikipedia.org/wiki/2026_Hungarian_parliamentary_election", "title": "Wikipedia: 2026 Hungarian parliamentary election (government formation)", "accessed": "2026-10-15" }
+      ],
+      "confidence": "verified"
+    }
+  ],
+  "legislature": {
+    "name": { "en": "National Assembly", "native": "Országgyűlés" },
+    "chambers": [
+      {
+        "id": "national_assembly",
+        "name": { "en": "National Assembly", "native": "Országgyűlés" },
+        "seats": 386,
+        "term_years": 4,
+        "elected": "direct",
+        "system": {
+          "type": "mixed_other",
+          "formula": "dhondt",
+          "threshold": 0.05,
+          "district_model": "custom",
+          "pr_share": 0.467,
+          "note": "From 1990 to 2010 the Assembly had 386 seats, filled by two-round single-member constituencies, regional party lists and national compensation lists (the 2000 start uses this size). The 2011 electoral law cut the Assembly to 199 seats from the 2014 election: 106 single-member seats by first-past-the-post and 93 national list seats (5% threshold, D'Hondt) with partial compensation through transfer votes; pr_share describes this current system. Ethnic minority self-governments can win a preferential list seat (the German minority did in 2018 and 2022). The schema cannot record the change in chamber size; elections from 2014 on record 199 seats. seats_2000 is the result of the May 1998 election; mid-term changes before 1 January 2000 were not checked."
+        },
+        "seats_2000": { "hun.fidesz": 148, "hun.mszp": 134, "hun.fkgp": 48, "hun.szdsz": 24, "hun.mdf": 17, "hun.miep": 14, "independents": 1 },
+        "confidence_chamber": true,
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/1998_Hungarian_parliamentary_election", "title": "Wikipedia: 1998 Hungarian parliamentary election", "accessed": "2026-10-15" },
+          { "url": "https://en.wikipedia.org/wiki/National_Assembly_(Hungary)", "title": "Wikipedia: National Assembly (Hungary) (electoral system, 386 seats until 2014)", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      }
+    ]
+  },
+  "party_system": "multi_party",
+  "start_2000": {
+    "ruling_parties": ["hun.fidesz", "hun.fkgp", "hun.mdf"],
+    "confidence_and_supply": [],
+    "ideology_support": {
+      "social_democrat": 0.329,
+      "liberal_conservative": 0.295,
+      "agrarian": 0.132,
+      "social_liberal": 0.076,
+      "ethno_nationalist": 0.055,
+      "marxist_leninist": 0.04,
+      "traditional_conservative": 0.028,
+      "christian_democrat": 0.037,
+      "big_tent": 0.008
+    },
+    "ideology_support_note": "Derived from the May 1998 national list vote (shares computed from the vote counts): MSZP 32.9% (social democrat), Fidesz 29.5% (described by the source as then liberal conservative), Independent Smallholders 13.2% (agrarian), SZDSZ 7.6% (liberal), MIÉP 5.5% (far right, recorded as ethno_nationalist), Workers' Party 4.0% (communist), MDF 2.8% (conservative), KDNP 2.3% and Hungarian Democratic People's Party 1.3% (Christian democrat), other lists 0.8%.",
+    "stability": 0.7,
+    "war_support": 0.25
+  },
+  "claims": [],
+  "source": [
+    { "url": "https://en.wikipedia.org/wiki/1998_Hungarian_parliamentary_election", "title": "Wikipedia: 1998 Hungarian parliamentary election (results; Fidesz-FKGP-MDF coalition)", "accessed": "2026-10-15" },
+    { "url": "https://en.wikipedia.org/wiki/List_of_prime_ministers_of_Hungary", "title": "Wikipedia: List of prime ministers of Hungary", "accessed": "2026-10-15" }
+  ],
+  "confidence": "verified"
+}

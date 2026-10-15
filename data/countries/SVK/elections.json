@@ -1,0 +1,483 @@
+{
+  "rules": [
+    {
+      "kind": "legislative",
+      "chamber": "national_council",
+      "every_years": 4,
+      "anchor": "2023-09-30",
+      "snap_possible": true,
+      "note": "National Council elected every four years; early elections were held in 2006, 2012 and 2023."
+    },
+    {
+      "kind": "presidential",
+      "office": "svk.president",
+      "every_years": 5,
+      "anchor": "2024-03-23",
+      "snap_possible": true,
+      "note": "Direct two-round election since 1999 (runoff two weeks after the first round)."
+    }
+  ],
+  "elections": [
+    {
+      "id": "referendum_2000",
+      "date": "2000-11-11",
+      "kind": "referendum",
+      "question": "Shortening the electoral period of the National Council elected in 1998 (early elections)",
+      "historical": {
+        "yes_share": 0.9507,
+        "winner": "invalid",
+        "turnout": 0.1998,
+        "note": "Yes 759,124; No 39,363; invalid 17,767; electorate 4,085,172. Invalid because turnout was below the required 50%.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2000_Slovak_early_parliamentary_elections_referendum", "title": "Wikipedia: 2000 Slovak early parliamentary elections referendum", "accessed": "2026-10-15" },
+          { "url": "https://en.wikipedia.org/wiki/Referendums_in_Slovakia", "title": "Wikipedia: Referendums in Slovakia (50% turnout rule)", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "council_2002",
+      "date": "2002-09-20",
+      "kind": "legislative",
+      "chamber": "national_council",
+      "historical": {
+        "candidates": [
+          { "person": "svk.vladimir_meciar", "party": "svk.hzds", "round": 1 },
+          { "person": "svk.mikulas_dzurinda", "party": "svk.sdku", "round": 1 },
+          { "person": "svk.robert_fico", "party": "svk.smer", "round": 1 }
+        ],
+        "party_results": [
+          { "party": "svk.hzds", "share": 0.195, "seats": 36 },
+          { "party": "svk.sdku", "share": 0.1509, "seats": 28 },
+          { "party": "svk.smer", "share": 0.1346, "seats": 25 },
+          { "party": "svk.smk", "share": 0.1117, "seats": 20 },
+          { "party": "svk.kdh", "share": 0.0825, "seats": 15 },
+          { "party": "svk.ano", "share": 0.0801, "seats": 15 },
+          { "party": "svk.kss", "share": 0.0633, "seats": 11 },
+          { "party": "svk.sns", "share": 0.0333, "seats": 0 },
+          { "party": "svk.sdl", "share": 0.0136, "seats": 0 }
+        ],
+        "winner": "svk.hzds",
+        "turnout": 0.7007,
+        "note": "Held 20-21 September 2002. Shares computed from the vote counts. Dzurinda remained prime minister (second Dzurinda government). A breakaway 'True Slovak National Party' won 3.65% and SNS 3.33%.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2002_Slovak_parliamentary_election", "title": "Wikipedia: 2002 Slovak parliamentary election", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "eu_referendum_2003",
+      "date": "2003-05-16",
+      "kind": "referendum",
+      "question": "Do you agree with the Slovak Republic becoming a member state of the European Union?",
+      "historical": {
+        "yes_share": 0.9371,
+        "winner": "yes",
+        "turnout": 0.5212,
+        "note": "Held 16-17 May 2003. Yes 2,012,870; No 135,031; invalid 27,488; electorate 4,174,097. The only Slovak referendum to meet the 50% turnout requirement.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2003_Slovak_European_Union_membership_referendum", "title": "Wikipedia: 2003 Slovak European Union membership referendum", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "president_2004",
+      "date": "2004-04-03",
+      "kind": "presidential",
+      "office": "svk.president",
+      "rounds": 2,
+      "historical": {
+        "candidates": [
+          { "person": "svk.vladimir_meciar", "party": "svk.hzds", "share": 0.3274, "votes": 650242, "round": 1 },
+          { "person": "svk.ivan_gasparovic", "share": 0.2228, "votes": 442564, "round": 1 },
+          { "person": "svk.eduard_kukan", "party": "svk.sdku", "share": 0.221, "votes": 438920, "round": 1 },
+          { "person": "svk.rudolf_schuster", "share": 0.0743, "votes": 147549, "round": 1 },
+          { "person": "svk.frantisek_miklosko", "party": "svk.kdh", "share": 0.0652, "votes": 129414, "round": 1 },
+          { "person": "svk.martin_butora", "share": 0.0651, "votes": 129387, "round": 1 },
+          { "person": "svk.ivan_gasparovic", "share": 0.5991, "votes": 1079592, "round": 2 },
+          { "person": "svk.vladimir_meciar", "party": "svk.hzds", "share": 0.4009, "votes": 722368, "round": 2 }
+        ],
+        "winner": "svk.ivan_gasparovic",
+        "turnout": 0.4794,
+        "note": "First round 3 April, runoff 17 April 2004. Gašparovič stood for the Movement for Democracy (HZD), Schuster and Bútora as independents. Turnout is the first round (43.50% in the runoff).",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2004_Slovak_presidential_election", "title": "Wikipedia: 2004 Slovak presidential election", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "referendum_2004",
+      "date": "2004-04-03",
+      "kind": "referendum",
+      "question": "Adopting a constitutional law shortening the third electoral period of the National Council (early elections)",
+      "historical": {
+        "yes_share": 0.8791,
+        "winner": "invalid",
+        "turnout": 0.3583,
+        "note": "Held with the first round of the presidential election. Yes 1,305,023; No 179,524; invalid 17,907; electorate 4,193,347. Invalid because turnout was below 50%.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2004_Slovak_early_parliamentary_elections_referendum", "title": "Wikipedia: 2004 Slovak early parliamentary elections referendum", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "council_2006",
+      "date": "2006-06-17",
+      "kind": "legislative",
+      "chamber": "national_council",
+      "snap": true,
+      "historical": {
+        "candidates": [
+          { "person": "svk.robert_fico", "party": "svk.smer", "round": 1 },
+          { "person": "svk.mikulas_dzurinda", "party": "svk.sdku", "round": 1 }
+        ],
+        "party_results": [
+          { "party": "svk.smer", "share": 0.2914, "seats": 50 },
+          { "party": "svk.sdku", "share": 0.1836, "seats": 31 },
+          { "party": "svk.sns", "share": 0.1173, "seats": 20 },
+          { "party": "svk.smk", "share": 0.1168, "seats": 20 },
+          { "party": "svk.hzds", "share": 0.0879, "seats": 15 },
+          { "party": "svk.kdh", "share": 0.0831, "seats": 14 },
+          { "party": "svk.kss", "share": 0.0388, "seats": 0 },
+          { "party": "svk.ano", "share": 0.0142, "seats": 0 }
+        ],
+        "winner": "svk.smer",
+        "turnout": 0.5467,
+        "note": "Early election called after the Christian Democratic Movement left the governing coalition in February 2006. Fico became prime minister.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2006_Slovak_parliamentary_election", "title": "Wikipedia: 2006 Slovak parliamentary election", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "president_2009",
+      "date": "2009-03-21",
+      "kind": "presidential",
+      "office": "svk.president",
+      "rounds": 2,
+      "historical": {
+        "candidates": [
+          { "person": "svk.ivan_gasparovic", "share": 0.4671, "votes": 876061, "round": 1 },
+          { "person": "svk.iveta_radicova", "party": "svk.sdku", "share": 0.3805, "votes": 713735, "round": 1 },
+          { "person": "svk.frantisek_miklosko", "share": 0.0542, "votes": 101573, "round": 1 },
+          { "person": "svk.zuzana_martinakova", "share": 0.0512, "votes": 96035, "round": 1 },
+          { "person": "svk.ivan_gasparovic", "share": 0.5553, "votes": 1234787, "round": 2 },
+          { "person": "svk.iveta_radicova", "party": "svk.sdku", "share": 0.4447, "votes": 988808, "round": 2 }
+        ],
+        "winner": "svk.ivan_gasparovic",
+        "turnout": 0.4362,
+        "note": "First round 21 March, runoff 4 April 2009. Mikloško stood for the Conservative Democrats of Slovakia and Martináková for Free Forum (parties not recorded here). Turnout is the first round (51.65% in the runoff).",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2009_Slovak_presidential_election", "title": "Wikipedia: 2009 Slovak presidential election", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "council_2010",
+      "date": "2010-06-12",
+      "kind": "legislative",
+      "chamber": "national_council",
+      "historical": {
+        "candidates": [
+          { "person": "svk.robert_fico", "party": "svk.smer", "round": 1 },
+          { "person": "svk.iveta_radicova", "party": "svk.sdku", "round": 1 }
+        ],
+        "party_results": [
+          { "party": "svk.smer", "share": 0.348, "seats": 62 },
+          { "party": "svk.sdku", "share": 0.1542, "seats": 28 },
+          { "party": "svk.sas", "share": 0.1215, "seats": 22 },
+          { "party": "svk.kdh", "share": 0.0853, "seats": 15 },
+          { "party": "svk.most_hid", "share": 0.0813, "seats": 14 },
+          { "party": "svk.sns", "share": 0.0508, "seats": 9 },
+          { "party": "svk.smk", "share": 0.0433, "seats": 0 },
+          { "party": "svk.hzds", "share": 0.0433, "seats": 0 },
+          { "party": "svk.lsns", "share": 0.0133, "seats": 0 }
+        ],
+        "winner": "svk.smer",
+        "turnout": 0.5865,
+        "note": "Smer was the largest party, but Radičová (who headed the SDKÚ-DS list while Dzurinda remained chairman) formed a centre-right coalition government.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2010_Slovak_parliamentary_election", "title": "Wikipedia: 2010 Slovak parliamentary election", "accessed": "2026-10-15" },
+          { "url": "https://en.wikipedia.org/wiki/Slovak_Democratic_and_Christian_Union_%E2%80%93_Democratic_Party", "title": "Wikipedia: SDKÚ-DS (2010 list leader)", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "referendum_2010",
+      "date": "2010-09-18",
+      "kind": "referendum",
+      "question": "Political reform (several questions initiated by petition)",
+      "historical": {
+        "yes_share": 0.9063,
+        "winner": "invalid",
+        "turnout": 0.2284,
+        "note": "Initiated by petition alongside the founding of Freedom and Solidarity. Question 1: for 870,864, against 90,058, invalid 37,220 of 4,369,553 voters; yes_share and turnout refer to it. Failed the 50% turnout threshold.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2010_Slovak_political_reform_referendum", "title": "Wikipedia: 2010 Slovak political reform referendum", "accessed": "2026-10-15" }
+        ],
+        "confidence": "needs_review",
+        "review_note": "The individual questions and their number were not checked; only the first question's figures were read from the source."
+      }
+    },
+    {
+      "id": "council_2012",
+      "date": "2012-03-10",
+      "kind": "legislative",
+      "chamber": "national_council",
+      "snap": true,
+      "historical": {
+        "candidates": [
+          { "person": "svk.robert_fico", "party": "svk.smer", "round": 1 },
+          { "person": "svk.jan_figel", "party": "svk.kdh", "round": 1 }
+        ],
+        "party_results": [
+          { "party": "svk.smer", "share": 0.4442, "seats": 83 },
+          { "party": "svk.kdh", "share": 0.0882, "seats": 16 },
+          { "party": "svk.olano", "share": 0.0856, "seats": 16 },
+          { "party": "svk.most_hid", "share": 0.069, "seats": 13 },
+          { "party": "svk.sdku", "share": 0.061, "seats": 11 },
+          { "party": "svk.sas", "share": 0.0588, "seats": 11 },
+          { "party": "svk.sns", "share": 0.0456, "seats": 0 },
+          { "party": "svk.smk", "share": 0.0429, "seats": 0 },
+          { "party": "svk.lsns", "share": 0.0158, "seats": 0 },
+          { "party": "svk.hzds", "share": 0.0093, "seats": 0 }
+        ],
+        "winner": "svk.smer",
+        "turnout": 0.589,
+        "note": "Early election: the parties agreed to shorten the electoral term during the Radičová government. Smer won an outright majority (83 of 150).",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2012_Slovak_parliamentary_election", "title": "Wikipedia: 2012 Slovak parliamentary election", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "president_2014",
+      "date": "2014-03-15",
+      "kind": "presidential",
+      "office": "svk.president",
+      "rounds": 2,
+      "historical": {
+        "candidates": [
+          { "person": "svk.robert_fico", "party": "svk.smer", "share": 0.2801, "votes": 531919, "round": 1 },
+          { "person": "svk.andrej_kiska", "share": 0.2401, "votes": 455996, "round": 1 },
+          { "person": "svk.radoslav_prochazka", "share": 0.2125, "votes": 403548, "round": 1 },
+          { "person": "svk.milan_knazko", "share": 0.1287, "votes": 244401, "round": 1 },
+          { "person": "svk.gyula_bardos", "party": "svk.smk", "share": 0.0511, "votes": 97035, "round": 1 },
+          { "person": "svk.andrej_kiska", "share": 0.5939, "votes": 1307065, "round": 2 },
+          { "person": "svk.robert_fico", "party": "svk.smer", "share": 0.4061, "votes": 893841, "round": 2 }
+        ],
+        "winner": "svk.andrej_kiska",
+        "turnout": 0.4339,
+        "note": "First round 15 March, runoff 29 March 2014. Kiska, Procházka and Kňažko stood as independents. Turnout is the first round (50.47% in the runoff).",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2014_Slovak_presidential_election", "title": "Wikipedia: 2014 Slovak presidential election", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "referendum_2015",
+      "date": "2015-02-07",
+      "kind": "referendum",
+      "question": "Three questions on marriage, adoption by same-sex couples and sex education (initiated by the Alliance for Family petition)",
+      "historical": {
+        "yes_share": 0.945,
+        "winner": "invalid",
+        "turnout": 0.2141,
+        "note": "Question 1 (marriage) 94.50% yes, question 2 (adoption) 92.43%, question 3 (sex education) 90.32%; yes_share records question 1. Invalid because turnout (21.4%) was below 50%.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2015_Slovak_same-sex_marriage_referendum", "title": "Wikipedia: 2015 Slovak same-sex marriage referendum", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "council_2016",
+      "date": "2016-03-05",
+      "kind": "legislative",
+      "chamber": "national_council",
+      "historical": {
+        "candidates": [
+          { "person": "svk.robert_fico", "party": "svk.smer", "round": 1 },
+          { "person": "svk.richard_sulik", "party": "svk.sas", "round": 1 },
+          { "person": "svk.igor_matovic", "party": "svk.olano", "round": 1 }
+        ],
+        "party_results": [
+          { "party": "svk.smer", "share": 0.2828, "seats": 49 },
+          { "party": "svk.sas", "share": 0.121, "seats": 21 },
+          { "party": "svk.olano", "share": 0.1103, "seats": 19 },
+          { "party": "svk.sns", "share": 0.0864, "seats": 15 },
+          { "party": "svk.lsns", "share": 0.0804, "seats": 14 },
+          { "party": "svk.sme_rodina", "share": 0.0663, "seats": 11 },
+          { "party": "svk.most_hid", "share": 0.065, "seats": 11 },
+          { "party": "svk.siet", "share": 0.0561, "seats": 10 },
+          { "party": "svk.kdh", "share": 0.0494, "seats": 0 },
+          { "party": "svk.smk", "share": 0.0405, "seats": 0 }
+        ],
+        "winner": "svk.smer",
+        "turnout": 0.5938,
+        "note": "OĽaNO ran as OĽaNO–NOVA. Smer formed a coalition with SNS, Most–Híd and Sieť (third Fico government).",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2016_Slovak_parliamentary_election", "title": "Wikipedia: 2016 Slovak parliamentary election", "accessed": "2026-10-15" },
+          { "url": "https://en.wikipedia.org/wiki/2020_Slovak_parliamentary_election", "title": "Wikipedia: 2020 Slovak parliamentary election (background)", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "president_2019",
+      "date": "2019-03-16",
+      "kind": "presidential",
+      "office": "svk.president",
+      "rounds": 2,
+      "historical": {
+        "candidates": [
+          { "person": "svk.zuzana_caputova", "party": "svk.ps", "share": 0.4057, "votes": 870415, "round": 1 },
+          { "person": "svk.maros_sefcovic", "share": 0.1866, "votes": 400379, "round": 1 },
+          { "person": "svk.stefan_harabin", "share": 0.1435, "votes": 307823, "round": 1 },
+          { "person": "svk.marian_kotleba", "party": "svk.lsns", "share": 0.1039, "votes": 222935, "round": 1 },
+          { "person": "svk.frantisek_miklosko", "share": 0.0573, "votes": 122916, "round": 1 },
+          { "person": "svk.zuzana_caputova", "party": "svk.ps", "share": 0.5841, "votes": 1056582, "round": 2 },
+          { "person": "svk.maros_sefcovic", "share": 0.4159, "votes": 752403, "round": 2 }
+        ],
+        "winner": "svk.zuzana_caputova",
+        "turnout": 0.4874,
+        "note": "First round 16 March, runoff 30 March 2019. Šefčovič stood as an independent backed by Smer. Turnout is the first round (41.80% in the runoff).",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2019_Slovak_presidential_election", "title": "Wikipedia: 2019 Slovak presidential election", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "council_2020",
+      "date": "2020-02-29",
+      "kind": "legislative",
+      "chamber": "national_council",
+      "historical": {
+        "candidates": [
+          { "person": "svk.igor_matovic", "party": "svk.olano", "round": 1 },
+          { "person": "svk.peter_pellegrini", "party": "svk.smer", "round": 1 }
+        ],
+        "party_results": [
+          { "party": "svk.olano", "share": 0.2503, "seats": 53 },
+          { "party": "svk.smer", "share": 0.1829, "seats": 38 },
+          { "party": "svk.sme_rodina", "share": 0.0824, "seats": 17 },
+          { "party": "svk.lsns", "share": 0.0797, "seats": 17 },
+          { "party": "svk.sas", "share": 0.0622, "seats": 13 },
+          { "party": "svk.zl", "share": 0.0577, "seats": 12 },
+          { "party": "svk.ps", "share": 0.0697, "seats": 0 },
+          { "party": "svk.kdh", "share": 0.0465, "seats": 0 },
+          { "party": "svk.sns", "share": 0.0316, "seats": 0 }
+        ],
+        "winner": "svk.olano",
+        "turnout": 0.6575,
+        "note": "OĽaNO ran as OĽaNO–NOVA–KÚ–ZZ. PS ran in the Progressive Slovakia–Together coalition (6.97%), below the 7% threshold for alliances. OĽaNO formed the Matovič coalition government.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2020_Slovak_parliamentary_election", "title": "Wikipedia: 2020 Slovak parliamentary election", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "referendum_2023",
+      "date": "2023-01-21",
+      "kind": "referendum",
+      "question": "Do you agree that the early termination of the National Council's electoral period can be carried out by a referendum or a resolution of the National Council?",
+      "historical": {
+        "yes_share": 0.9844,
+        "winner": "invalid",
+        "turnout": 0.2724,
+        "note": "Yes 1,163,586; No 18,398; invalid 10,265; electorate 4,377,565. Invalid because turnout was below 50%.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2023_Slovak_constitutional_referendum", "title": "Wikipedia: 2023 Slovak constitutional referendum", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "council_2023",
+      "date": "2023-09-30",
+      "kind": "legislative",
+      "chamber": "national_council",
+      "snap": true,
+      "historical": {
+        "candidates": [
+          { "person": "svk.robert_fico", "party": "svk.smer", "round": 1 },
+          { "person": "svk.michal_simecka", "party": "svk.ps", "round": 1 },
+          { "person": "svk.peter_pellegrini", "party": "svk.hlas", "round": 1 }
+        ],
+        "party_results": [
+          { "party": "svk.smer", "share": 0.2295, "seats": 42 },
+          { "party": "svk.ps", "share": 0.1796, "seats": 32 },
+          { "party": "svk.hlas", "share": 0.147, "seats": 27 },
+          { "party": "svk.olano", "share": 0.089, "seats": 16 },
+          { "party": "svk.kdh", "share": 0.0682, "seats": 12 },
+          { "party": "svk.sas", "share": 0.0632, "seats": 11 },
+          { "party": "svk.sns", "share": 0.0563, "seats": 10 },
+          { "party": "svk.sme_rodina", "share": 0.0221, "seats": 0 },
+          { "party": "svk.lsns", "share": 0.0084, "seats": 0 }
+        ],
+        "winner": "svk.smer",
+        "turnout": 0.685,
+        "note": "Early election after the Heger government lost a no-confidence vote; the Constitution was amended to allow it. OĽaNO ran as 'OĽaNO and Friends'. Smer-SD, Hlas-SD and SNS formed a coalition government under Fico. Republika won 4.75% and no seats.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2023_Slovak_parliamentary_election", "title": "Wikipedia: 2023 Slovak parliamentary election", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "president_2024",
+      "date": "2024-03-23",
+      "kind": "presidential",
+      "office": "svk.president",
+      "rounds": 2,
+      "historical": {
+        "candidates": [
+          { "person": "svk.ivan_korcok", "share": 0.4252, "votes": 958393, "round": 1 },
+          { "person": "svk.peter_pellegrini", "party": "svk.hlas", "share": 0.3703, "votes": 834718, "round": 1 },
+          { "person": "svk.stefan_harabin", "share": 0.1174, "votes": 264579, "round": 1 },
+          { "person": "svk.peter_pellegrini", "party": "svk.hlas", "share": 0.5312, "votes": 1409255, "round": 2 },
+          { "person": "svk.ivan_korcok", "share": 0.4688, "votes": 1243709, "round": 2 }
+        ],
+        "winner": "svk.peter_pellegrini",
+        "turnout": 0.519,
+        "note": "First round 23 March, runoff 6 April 2024. Korčok and Harabin stood as independents. Turnout is the first round (61.12% in the runoff).",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2024_Slovak_presidential_election", "title": "Wikipedia: 2024 Slovak presidential election", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "referendum_2026",
+      "date": "2026-07-04",
+      "kind": "referendum",
+      "question": "Two questions: abolishing special lifetime pensions for former senior officials, and reinstating the Special Prosecutor's Office and the National Criminal Agency",
+      "historical": {
+        "yes_share": 0.9461,
+        "winner": "invalid",
+        "turnout": 0.1614,
+        "note": "Question 1 (pensions): yes 658,937, no 37,553, invalid 8,737; question 2 (Special Prosecutor's Office): yes 650,490 (93.8%), no 42,876; electorate 4,369,989. yes_share and turnout refer to question 1. Both proposals failed because turnout was below 50%.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2026_Slovak_referendum", "title": "Wikipedia: 2026 Slovak referendum", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      }
+    }
+  ],
+  "source": [
+    { "url": "https://en.wikipedia.org/wiki/National_Council_(Slovakia)", "title": "Wikipedia: National Council (Slovakia)", "accessed": "2026-10-15" },
+    { "url": "https://en.wikipedia.org/wiki/President_of_Slovakia", "title": "Wikipedia: President of Slovakia", "accessed": "2026-10-15" }
+  ],
+  "confidence": "verified"
+}

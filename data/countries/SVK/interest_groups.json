@@ -1,0 +1,15 @@
+{
+  "note": "Influence and approval are gameplay starting values for 1 January 2000 (Dzurinda's broad coalition of SDK, SDĽ, SMK and SOP, with Mečiar's HZDS as the largest opposition party), not measured data. Influence reflects a country preparing for EU accession (approved by referendum in 2003), an influential Catholic Church, a Hungarian minority party in government and moderately strong trade unions.",
+  "interest_groups": [
+    { "type": "military", "influence": 0.12, "approval": 45, "note": "Conscript army (conscription abolished in 2006)." },
+    { "type": "security_services", "influence": 0.15, "approval": 40 },
+    { "type": "business", "influence": 0.4, "approval": 50 },
+    { "type": "labour_unions", "influence": 0.3, "approval": 45 },
+    { "type": "religious_establishment", "influence": 0.25, "approval": 55, "note": "The Catholic Church; KDH sat in the governing coalition within SDK." },
+    { "type": "rural", "influence": 0.2, "approval": 40 },
+    { "type": "urban_middle_class", "influence": 0.4, "approval": 50 },
+    { "type": "minorities", "influence": 0.15, "approval": 60, "note": "The Hungarian minority's party (SMK) was in government; also includes the Roma." },
+    { "type": "youth_students", "influence": 0.15, "approval": 50 },
+    { "type": "media", "influence": 0.35, "approval": 50 }
+  ]
+}

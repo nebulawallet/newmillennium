@@ -1,0 +1,146 @@
+{
+  "tag": "CZE",
+  "name": { "en": "Czech Republic", "native": "Česko", "official": { "en": "Czech Republic", "native": "Česká republika" } },
+  "adjective": "Czech",
+  "culture_primary": "czech",
+  "government": {
+    "type": "parliamentary",
+    "effective_executive": "cze.prime_minister",
+    "head_of_state_office": "cze.president",
+    "head_of_government_office": "cze.prime_minister",
+    "constitution": {
+      "term_limit_amendable": true,
+      "emergency_powers": true,
+      "referendum_required_for": []
+    },
+    "note": "Parliamentary republic. The Prime Minister stays in office only while the government keeps the support of a majority of the Chamber of Deputies. The President was elected by a joint session of Parliament until a 2012 constitutional amendment introduced direct two-round elections, first used in 2013. If the presidency is vacant, some of its powers pass to the Prime Minister and some to the President of the Chamber of Deputies (or of the Senate if the Chamber is dissolved). Constitutional changes need a three-fifths majority in the Chamber of Deputies."
+  },
+  "offices": [
+    {
+      "id": "cze.president",
+      "title": { "en": "President of the Czech Republic", "native": "Prezident České republiky" },
+      "role": "head_of_state",
+      "power_weight": 0.15,
+      "selection": "direct_election",
+      "term_years": 5,
+      "term_limit": { "max_terms": 2, "consecutive_only": true },
+      "succession": { "type": "acting_then_election" },
+      "holders": [
+        { "person": "cze.vaclav_havel", "from": "1993-02-02", "to": "2003-02-02" },
+        { "person": null, "from": "2003-02-02", "to": "2003-03-07", "vacant_reason": "Parliament had not elected a successor when Havel's term ended (the first two ballots in January 2003 failed). Under the constitution the presidential powers were divided between the Prime Minister (Vladimír Špidla) and the President of the Chamber of Deputies (Lubomír Zaorálek) until Václav Klaus took office." },
+        { "person": "cze.vaclav_klaus", "from": "2003-03-07", "to": "2013-03-07", "note": "Elected by Parliament on 28 February 2003 and re-elected on 15 February 2008. Wikidata gives 7 March 2003 as the start of his term; the 2003 election article says he was sworn in on 8 March." },
+        { "person": "cze.milos_zeman", "from": "2013-03-08", "to": "2023-03-08", "note": "First directly elected president (2013); re-elected in 2018." },
+        { "person": "cze.petr_pavel", "from": "2023-03-09" }
+      ],
+      "note": "Elected by a joint session of Parliament in 2003 and 2008, and directly in two rounds since 2013; selection records the current method. The term is five years, renewable once consecutively.",
+      "source": [
+        { "url": "https://www.wikidata.org/wiki/Q1819381", "title": "Wikidata: President of the Czech Republic (position held by)", "accessed": "2026-10-15" },
+        { "url": "https://en.wikipedia.org/wiki/President_of_the_Czech_Republic", "title": "Wikipedia: President of the Czech Republic (term, election method, vacancy rules)", "accessed": "2026-10-15" },
+        { "url": "https://en.wikipedia.org/wiki/2003_Czech_presidential_election", "title": "Wikipedia: 2003 Czech presidential election", "accessed": "2026-10-15" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "cze.prime_minister",
+      "title": { "en": "Prime Minister of the Czech Republic", "native": "Předseda vlády České republiky" },
+      "role": "head_of_government",
+      "power_weight": 0.85,
+      "selection": "legislature",
+      "appointed_by": "cze.president",
+      "term_years": 4,
+      "holders": [
+        { "person": "cze.milos_zeman", "from": "1998-07-22", "to": "2002-07-15", "note": "ČSSD minority government tolerated by ODS under the Opposition Agreement." },
+        { "person": "cze.vladimir_spidla", "from": "2002-07-15", "to": "2004-08-04" },
+        { "person": "cze.stanislav_gross", "from": "2004-08-04", "to": "2005-04-25" },
+        { "person": "cze.jiri_paroubek", "from": "2005-04-25", "to": "2006-09-04" },
+        { "person": "cze.mirek_topolanek", "from": "2006-09-04", "to": "2009-05-08" },
+        { "person": "cze.jan_fischer", "from": "2009-05-08", "to": "2010-07-13", "note": "Non-party caretaker government." },
+        { "person": "cze.petr_necas", "from": "2010-07-13", "to": "2013-07-10" },
+        { "person": "cze.jiri_rusnok", "from": "2013-07-10", "to": "2014-01-29", "note": "Non-party caretaker government appointed by President Zeman." },
+        { "person": "cze.bohuslav_sobotka", "from": "2014-01-29", "to": "2017-12-13" },
+        { "person": "cze.andrej_babis", "from": "2017-12-13", "to": "2021-12-17" },
+        { "person": "cze.petr_fiala", "from": "2021-12-17", "to": "2025-12-15" },
+        { "person": "cze.andrej_babis", "from": "2025-12-15", "note": "Heads an ANO, SPD and Motorists coalition (as of the data date)." }
+      ],
+      "note": "Dates follow the government terms in the Wikipedia list of prime ministers. Wikidata gives the earlier dates on which some prime ministers were appointed, before their cabinets took office: e.g. Zeman 17 July 1998, Topolánek 16 August 2006, Fischer 9 April 2009, Nečas 28 June 2010, Rusnok 25 June 2013, Sobotka 17 January 2014, Babiš 6 December 2017 and 9 December 2025. The 2021 election article says Fiala was appointed on 28 November 2021.",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/List_of_prime_ministers_of_the_Czech_Republic", "title": "Wikipedia: List of prime ministers of the Czech Republic", "accessed": "2026-10-15" },
+        { "url": "https://www.wikidata.org/wiki/Q3409229", "title": "Wikidata: Prime Minister of the Czech Republic (position held by)", "accessed": "2026-10-15" },
+        { "url": "https://en.wikipedia.org/wiki/2025_Czech_parliamentary_election", "title": "Wikipedia: 2025 Czech parliamentary election (government formation)", "accessed": "2026-10-15" }
+      ],
+      "confidence": "verified"
+    }
+  ],
+  "legislature": {
+    "name": { "en": "Parliament of the Czech Republic", "native": "Parlament České republiky" },
+    "chambers": [
+      {
+        "id": "chamber",
+        "name": { "en": "Chamber of Deputies", "native": "Poslanecká sněmovna" },
+        "seats": 200,
+        "term_years": 4,
+        "elected": "direct",
+        "system": {
+          "type": "list_pr",
+          "formula": "imperiali",
+          "threshold": 0.05,
+          "district_model": "admin1",
+          "note": "Open-list PR. Since 2002 there have been 14 constituencies matching the regions. Until 2017 seats were allocated by D'Hondt, with higher thresholds for alliances (10/15/20%). After a February 2021 Constitutional Court ruling, the current rules use the Imperiali quota in the constituencies and the Hagenbach-Bischoff quota for remaining seats, with thresholds of 5% for single parties, 8% for two-party coalitions and 11% for larger coalitions. seats_2000 is the result of the June 1998 election; mid-term changes before 1 January 2000 were not checked."
+        },
+        "seats_2000": { "cze.cssd": 74, "cze.ods": 63, "cze.kscm": 24, "cze.kdu_csl": 20, "cze.us": 19 },
+        "confidence_chamber": true,
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/1998_Czech_parliamentary_election", "title": "Wikipedia: 1998 Czech parliamentary election", "accessed": "2026-10-15" },
+          { "url": "https://en.wikipedia.org/wiki/Chamber_of_Deputies_of_the_Czech_Republic", "title": "Wikipedia: Chamber of Deputies of the Czech Republic (electoral system)", "accessed": "2026-10-15" },
+          { "url": "https://en.wikipedia.org/wiki/2021_Czech_parliamentary_election", "title": "Wikipedia: 2021 Czech parliamentary election (electoral system changes)", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      },
+      {
+        "id": "senate",
+        "name": { "en": "Senate", "native": "Senát" },
+        "seats": 81,
+        "term_years": 6,
+        "elected": "direct",
+        "system": {
+          "type": "two_round",
+          "district_model": "custom",
+          "note": "81 single-member constituencies elected by the two-round system; one third of the seats is elected every two years for six-year terms. seats_2000 is the composition after the November 1998 Senate election by nominating party. The Four-Coalition (KDU-ČSL, Freedom Union, ODA and DEU) is recorded as one bloc because the source does not split its 26 senators."
+        },
+        "seats_2000": { "cze.ods": 28, "cze.ctyrkoalice": 26, "cze.cssd": 23, "cze.kscm": 4 },
+        "confidence_chamber": false,
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/1998_Czech_Senate_election", "title": "Wikipedia: 1998 Czech Senate election (won, not up and total seats)", "accessed": "2026-10-15" },
+          { "url": "https://en.wikipedia.org/wiki/2002_Czech_Senate_election", "title": "Wikipedia: 2002 Czech Senate election (electoral system)", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      }
+    ]
+  },
+  "party_system": "multi_party",
+  "start_2000": {
+    "ruling_parties": ["cze.cssd"],
+    "confidence_and_supply": ["cze.ods"],
+    "ideology_support": {
+      "social_democrat": 0.323,
+      "liberal_conservative": 0.277,
+      "marxist_leninist": 0.11,
+      "christian_democrat": 0.09,
+      "classical_liberal": 0.086,
+      "right_populist": 0.039,
+      "centrist_liberal": 0.015,
+      "green": 0.011,
+      "regionalist": 0.004,
+      "big_tent": 0.045
+    },
+    "ideology_support_note": "Derived from the June 1998 Chamber of Deputies vote (shares computed from the vote counts): ČSSD 32.3% (social democrat), ODS 27.7% (liberal conservative), KSČM 11.0% (communist, recorded as marxist_leninist), KDU-ČSL 9.0% (Christian democrat), Freedom Union 8.6% (liberal), SPR-RSČ 3.9% (right populist), Democratic Union 1.5% (centrist liberal), Green Party 1.1%, Moravian Democratic Party 0.4% (regionalist), and Pensioners for Life Security 3.1%, Independents 0.9% and other lists 0.5% grouped as big_tent.",
+    "stability": 0.65,
+    "war_support": 0.25
+  },
+  "claims": [],
+  "source": [
+    { "url": "https://en.wikipedia.org/wiki/1998_Czech_parliamentary_election", "title": "Wikipedia: 1998 Czech parliamentary election", "accessed": "2026-10-15" },
+    { "url": "https://en.wikipedia.org/wiki/2002_Czech_parliamentary_election", "title": "Wikipedia: 2002 Czech parliamentary election (background: the Opposition Agreement between ČSSD and ODS)", "accessed": "2026-10-15" }
+  ],
+  "confidence": "verified"
+}

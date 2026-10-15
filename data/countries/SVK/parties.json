@@ -1,0 +1,427 @@
+{
+  "parties": [
+    {
+      "id": "svk.hzds",
+      "name": { "en": "People's Party – Movement for a Democratic Slovakia", "native": "Ľudová strana – Hnutie za demokratické Slovensko" },
+      "abbrev": { "en": "ĽS-HZDS", "native": "ĽS-HZDS" },
+      "color": "#1F4E9C",
+      "sub_ideology": "national_conservative",
+      "founded": "1991-04-27",
+      "dissolved": "2014-01-11",
+      "status_2000": "active",
+      "leader_history": [
+        { "person": "svk.vladimir_meciar", "from": 1991, "to": 2013 }
+      ],
+      "popularity_2000": 0.27,
+      "popularity_note": "Vote share, 1998 National Council election (as HZDS; largest party, in opposition).",
+      "note": "Movement for a Democratic Slovakia (HZDS) until it added 'People's Party' to its name. The party article lists conservatism, nationalism and populism.",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/People%27s_Party_%E2%80%93_Movement_for_a_Democratic_Slovakia", "title": "Wikipedia: People's Party – Movement for a Democratic Slovakia", "accessed": "2026-10-15" },
+        { "url": "https://en.wikipedia.org/wiki/1998_Slovak_parliamentary_election", "title": "Wikipedia: 1998 Slovak parliamentary election", "accessed": "2026-10-15" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "svk.sdk",
+      "name": { "en": "Slovak Democratic Coalition", "native": "Slovenská demokratická koalícia" },
+      "abbrev": { "en": "SDK", "native": "SDK" },
+      "color": "#0B5394",
+      "sub_ideology": "liberal_conservative",
+      "founded": "1997-07-03",
+      "dissolved": "2002-08-30",
+      "status_2000": "active",
+      "leader_history": [
+        { "person": "svk.mikulas_dzurinda", "from": "1997-07-03", "to": "2002-08-30" }
+      ],
+      "popularity_2000": 0.263,
+      "popularity_note": "Vote share, 1998 National Council election. Led the governing coalition in 2000.",
+      "lineage": { "formed_from": ["svk.kdh"] },
+      "note": "Registered as a single party for the 1998 election by the Democratic Union, the Christian Democratic Movement, the Democratic Party, the Social Democratic Party of Slovakia and the Green Party in Slovakia; SDKÚ (founded by Dzurinda in 2000) was its de facto successor.",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/Slovak_Democratic_Coalition", "title": "Wikipedia: Slovak Democratic Coalition", "accessed": "2026-10-15" },
+        { "url": "https://en.wikipedia.org/wiki/1998_Slovak_parliamentary_election", "title": "Wikipedia: 1998 Slovak parliamentary election", "accessed": "2026-10-15" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "svk.sdl",
+      "name": { "en": "Party of the Democratic Left", "native": "Strana demokratickej ľavice" },
+      "abbrev": { "en": "SDĽ", "native": "SDĽ" },
+      "color": "#E75480",
+      "sub_ideology": "social_democrat",
+      "founded": "1990-11-22",
+      "dissolved": "2004-12-31",
+      "status_2000": "active",
+      "leader_history": [
+        { "person": "svk.jozef_migas", "from": 1996, "to": 2001 },
+        { "person": "svk.pavel_koncos", "from": 2001, "to": 2002 }
+      ],
+      "popularity_2000": 0.147,
+      "popularity_note": "Vote share, 1998 National Council election. Coalition partner in 2000.",
+      "lineage": { "merged_into": "svk.smer" },
+      "note": "Successor of the Communist Party of Slovakia (1939). Ľubomír Petrák (leader 2002-2004) is not recorded as a person. Merged into Smer.",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/Party_of_the_Democratic_Left_(Slovakia)", "title": "Wikipedia: Party of the Democratic Left (Slovakia)", "accessed": "2026-10-15" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "svk.smk",
+      "name": { "en": "Party of the Hungarian Coalition (Party of the Hungarian Community)", "native": "Strana maďarskej koalície – Magyar Koalíció Pártja" },
+      "abbrev": { "en": "SMK-MKP", "native": "SMK-MKP" },
+      "color": "#C62828",
+      "sub_ideology": "regionalist",
+      "founded": "1998-05-22",
+      "status_2000": "active",
+      "leader_history": [
+        { "person": "svk.bela_bugar", "from": 1998, "to": 2007 },
+        { "person": "svk.pal_csaky", "from": 2007, "to": 2010 },
+        { "person": "svk.jozsef_berenyi", "from": 2010, "to": 2016 }
+      ],
+      "popularity_2000": 0.091,
+      "popularity_note": "Vote share, 1998 National Council election. Coalition partner in 2000.",
+      "regional_base": ["hungarian"],
+      "note": "Hungarian minority party; the party article lists Hungarian minority interests, national conservatism and pro-Europeanism. Continued as the Hungarian Alliance (Szövetség) from 2021. Later chairs (József Menyhárt 2016-2020 and others) are not recorded as people. The 1998 alliance is dated by the article's 22 May 1998 note.",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/Party_of_the_Hungarian_Community", "title": "Wikipedia: Party of the Hungarian Community / Hungarian Alliance (chairmen, foundation)", "accessed": "2026-10-15" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "svk.sns",
+      "name": { "en": "Slovak National Party", "native": "Slovenská národná strana" },
+      "abbrev": { "en": "SNS", "native": "SNS" },
+      "color": "#252E70",
+      "sub_ideology": "national_conservative",
+      "founded": "1990-03-07",
+      "status_2000": "active",
+      "leader_history": [
+        { "person": "svk.anna_belousovova", "from": 1999, "to": 2003 },
+        { "person": "svk.jan_slota", "from": 2003, "to": 2012 },
+        { "person": "svk.andrej_danko", "from": 2012 }
+      ],
+      "popularity_2000": 0.091,
+      "popularity_note": "Vote share, 1998 National Council election.",
+      "note": "Ján Slota led the party 1994-1999 and at the 1998 election. Anna Malíková is now known as Anna Belousovová. Wikidata dates Danko's chairmanship from 6 October 2012. The party article lists ultranationalism, national conservatism and right-wing populism.",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/Slovak_National_Party", "title": "Wikipedia: Slovak National Party (party leaders, foundation)", "accessed": "2026-10-15" },
+        { "url": "https://www.wikidata.org/wiki/Q221480", "title": "Wikidata: Slovak National Party", "accessed": "2026-10-15" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "svk.sop",
+      "name": { "en": "Party of Civic Understanding", "native": "Strana občianskeho porozumenia" },
+      "abbrev": { "en": "SOP", "native": "SOP" },
+      "color": "#5B8DD6",
+      "sub_ideology": "third_way",
+      "founded": "1998-02-19",
+      "dissolved": "2003-03-01",
+      "status_2000": "active",
+      "leader_history": [
+        { "person": "svk.rudolf_schuster", "from": 1998, "to": 1999 },
+        { "person": "svk.pavol_hamzik", "from": 1999, "to": 2003 }
+      ],
+      "popularity_2000": 0.08,
+      "popularity_note": "Vote share, 1998 National Council election. Coalition partner in 2000.",
+      "lineage": { "merged_into": "svk.smer" },
+      "note": "Centre-left (social democracy and social liberalism per the party article); merged into Smer in 2003. Colour is a neutral choice.",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/Party_of_Civic_Understanding", "title": "Wikipedia: Party of Civic Understanding", "accessed": "2026-10-15" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "svk.kss",
+      "name": { "en": "Communist Party of Slovakia", "native": "Komunistická strana Slovenska" },
+      "abbrev": { "en": "KSS", "native": "KSS" },
+      "color": "#CC0000",
+      "sub_ideology": "marxist_leninist",
+      "founded": "1992-08-29",
+      "status_2000": "extra_parliamentary",
+      "leader_history": [
+        { "person": "svk.jozef_sevc", "from": 2002 }
+      ],
+      "popularity_2000": 0.028,
+      "popularity_note": "Vote share, 1998 National Council election (no seats).",
+      "note": "Won 11 seats in 2002. Ševc led it at the 2002 election; current leader Jozef Hrdlička is not recorded as a person.",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/Communist_Party_of_Slovakia", "title": "Wikipedia: Communist Party of Slovakia", "accessed": "2026-10-15" },
+        { "url": "https://en.wikipedia.org/wiki/2002_Slovak_parliamentary_election", "title": "Wikipedia: 2002 Slovak parliamentary election", "accessed": "2026-10-15" }
+      ],
+      "confidence": "needs_review",
+      "review_note": "Leader history is incomplete: Ševc's tenure (recorded from 2002, the election at which he led the list) and the leader on 1 January 2000 were not checked."
+    },
+    {
+      "id": "svk.smer",
+      "name": { "en": "Direction – Social Democracy", "native": "Smer – sociálna demokracia" },
+      "abbrev": { "en": "Smer-SD", "native": "Smer-SD" },
+      "color": "#D82222",
+      "sub_ideology": "social_democrat",
+      "founded": "1999-11-08",
+      "status_2000": "extra_parliamentary",
+      "leader_history": [
+        { "person": "svk.robert_fico", "from": "1999-11-08" }
+      ],
+      "popularity_2000": 0.0,
+      "popularity_note": "Founded in November 1999 by Robert Fico (SDĽ deputy leader 1998-1999); it had not yet contested an election.",
+      "lineage": { "split_from": "svk.sdl" },
+      "note": "The party article lists social democracy, left-wing populism, left-wing nationalism and left conservatism. Absorbed SOP (2003) and SDĽ.",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/Direction_%E2%80%93_Social_Democracy", "title": "Wikipedia: Direction – Social Democracy", "accessed": "2026-10-15" },
+        { "url": "https://www.wikidata.org/wiki/Q821929", "title": "Wikidata: Direction – Social Democracy (founding date, chair)", "accessed": "2026-10-15" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "svk.sdku",
+      "name": { "en": "Slovak Democratic and Christian Union – Democratic Party", "native": "Slovenská demokratická a kresťanská únia – Demokratická strana" },
+      "abbrev": { "en": "SDKÚ-DS", "native": "SDKÚ-DS" },
+      "color": "#0B4C9C",
+      "sub_ideology": "liberal_conservative",
+      "founded": "2000-02-18",
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        { "person": "svk.mikulas_dzurinda", "from": "2000-02-18", "to": 2012 },
+        { "person": "svk.pavol_freso", "from": 2012, "to": 2016 }
+      ],
+      "popularity_2000": 0.0,
+      "popularity_note": "Founded in February 2000.",
+      "lineage": { "split_from": "svk.sdk" },
+      "note": "Founded by Dzurinda; de facto successor of SDK. Dzurinda resigned as chairman after the 2012 election; Frešo stepped down at the July 2016 congress, and the party had de facto ceased to exist by 2018.",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/Slovak_Democratic_and_Christian_Union_%E2%80%93_Democratic_Party", "title": "Wikipedia: Slovak Democratic and Christian Union – Democratic Party", "accessed": "2026-10-15" }
+      ],
+      "confidence": "needs_review",
+      "review_note": "Exact dates of the 2012 leadership change (Dzurinda to Frešo) were not in the fetched text; check the party history."
+    },
+    {
+      "id": "svk.kdh",
+      "name": { "en": "Christian Democratic Movement", "native": "Kresťanskodemokratické hnutie" },
+      "abbrev": { "en": "KDH", "native": "KDH" },
+      "color": "#E8B400",
+      "sub_ideology": "christian_democrat",
+      "founded": "1990-02-17",
+      "status_2000": "active",
+      "leader_history": [
+        { "person": "svk.jan_carnogursky", "from": 1990, "to": 2000 },
+        { "person": "svk.pavol_hrusovsky", "from": 2000, "to": 2009 },
+        { "person": "svk.jan_figel", "from": 2009, "to": 2016 },
+        { "person": "svk.alojz_hlina", "from": 2016, "to": 2020 },
+        { "person": "svk.milan_majersky", "from": 2020 }
+      ],
+      "popularity_2000": 0.0,
+      "popularity_note": "Ran within SDK in 1998, so it has no separate 1998 vote share; its 1998-2002 seats are counted under SDK.",
+      "note": "Colour is a neutral choice.",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/Christian_Democratic_Movement", "title": "Wikipedia: Christian Democratic Movement (party leaders, foundation)", "accessed": "2026-10-15" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "svk.ano",
+      "name": { "en": "Alliance of the New Citizen", "native": "Aliancia nového občana" },
+      "abbrev": { "en": "ANO", "native": "ANO" },
+      "color": "#FF6600",
+      "sub_ideology": "classical_liberal",
+      "founded": 2001,
+      "dissolved": 2017,
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        { "person": "svk.pavol_rusko", "from": 2001, "to": 2007 }
+      ],
+      "popularity_2000": 0.0,
+      "popularity_note": "Not yet founded in 2000.",
+      "note": "Won 15 seats in 2002. Later leaders (Robert Nemcsics, Eleonóra Mojsejová, Miroslav Mišánik, Miroslav Leňo) are not recorded as people. Colour is a neutral choice.",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/Alliance_of_the_New_Citizen", "title": "Wikipedia: Alliance of the New Citizen (leadership)", "accessed": "2026-10-15" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "svk.sas",
+      "name": { "en": "Freedom and Solidarity", "native": "Sloboda a Solidarita" },
+      "abbrev": { "en": "SaS", "native": "SaS" },
+      "color": "#8DC63F",
+      "sub_ideology": "classical_liberal",
+      "founded": "2009-02-28",
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        { "person": "svk.richard_sulik", "from": 2009, "to": 2024 },
+        { "person": "svk.branislav_grohling", "from": 2024 }
+      ],
+      "popularity_2000": 0.0,
+      "popularity_note": "Not yet founded in 2000.",
+      "note": "Sulík was honorary chairman 2024-2026. Colour is a neutral choice.",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/Freedom_and_Solidarity", "title": "Wikipedia: Freedom and Solidarity (party leaders)", "accessed": "2026-10-15" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "svk.most_hid",
+      "name": { "en": "Most–Híd (Bridge)", "native": "Most–Híd" },
+      "abbrev": { "en": "Most–Híd", "native": "Most–Híd" },
+      "color": "#FF8C00",
+      "sub_ideology": "liberal_conservative",
+      "founded": "2009-06-30",
+      "dissolved": "2021-10-02",
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        { "person": "svk.bela_bugar", "from": "2009-06-30" }
+      ],
+      "popularity_2000": 0.0,
+      "popularity_note": "Not yet founded in 2000.",
+      "lineage": { "split_from": "svk.smk" },
+      "note": "Founded on 30 June 2009 by Béla Bugár and others who left SMK. The article gives 2 October 2021 as the end of the first party (a 'Most–Híd 2023' later existed until 3 February 2026).",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/Most%E2%80%93H%C3%ADd", "title": "Wikipedia: Most–Híd", "accessed": "2026-10-15" }
+      ],
+      "confidence": "needs_review",
+      "review_note": "Bugár's end date as chairman and later chairs are not recorded; check the party's leader list."
+    },
+    {
+      "id": "svk.olano",
+      "name": { "en": "Slovakia Movement (Ordinary People and Independent Personalities)", "native": "Hnutie Slovensko (Obyčajní ľudia a nezávislé osobnosti)" },
+      "abbrev": { "en": "OĽaNO / Slovensko", "native": "OĽaNO / Slovensko" },
+      "color": "#BED62F",
+      "sub_ideology": "right_populist",
+      "founded": "2011-10-28",
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        { "person": "svk.igor_matovic", "from": "2011-10-28" }
+      ],
+      "popularity_2000": 0.0,
+      "popularity_note": "Not yet founded in 2000.",
+      "note": "Known as OĽaNO; now called the Slovakia Movement. The party article lists populism and national conservatism. Ran as OĽaNO–NOVA (2016), OĽaNO–NOVA–KÚ–ZZ (2020) and 'OĽaNO and Friends' (2023); those joint results are recorded under this party.",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/Slovakia_(political_party)", "title": "Wikipedia: Slovakia (political party)", "accessed": "2026-10-15" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "svk.lsns",
+      "name": { "en": "Kotlebists – People's Party Our Slovakia", "native": "Kotlebovci – Ľudová strana naše Slovensko" },
+      "abbrev": { "en": "ĽSNS", "native": "ĽSNS" },
+      "color": "#0B6623",
+      "sub_ideology": "ethno_nationalist",
+      "founded": "2010-02-22",
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        { "person": "svk.marian_kotleba", "from": 2010 }
+      ],
+      "popularity_2000": 0.0,
+      "popularity_note": "Not yet founded in 2000.",
+      "note": "The party article describes it as far-right (ultranationalism, right-wing populism). Wikidata gives founding as 18 May 2009 and Kotleba's chairmanship from 2009.",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/Kotlebists_%E2%80%93_People%27s_Party_Our_Slovakia", "title": "Wikipedia: Kotlebists – People's Party Our Slovakia", "accessed": "2026-10-15" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "svk.sme_rodina",
+      "name": { "en": "We Are Family", "native": "Sme rodina" },
+      "abbrev": { "en": "Sme rodina", "native": "Sme rodina" },
+      "color": "#0047AB",
+      "sub_ideology": "right_populist",
+      "founded": "2011-07-06",
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        { "person": "svk.boris_kollar", "from": 2015 }
+      ],
+      "popularity_2000": 0.0,
+      "popularity_note": "Not yet founded in 2000.",
+      "note": "The party article gives 6 July 2011 as founding date; Wikidata gives 10 November 2015.",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/We_Are_Family_(Slovakia)", "title": "Wikipedia: We Are Family (Slovakia)", "accessed": "2026-10-15" }
+      ],
+      "confidence": "needs_review",
+      "review_note": "Kollár is the leader per the infobox; the start year 2015 (Wikidata founding year of the party in its current form) is unchecked."
+    },
+    {
+      "id": "svk.siet",
+      "name": { "en": "Network (later Slovak Conservative Party)", "native": "#Sieť" },
+      "abbrev": { "en": "Sieť", "native": "Sieť" },
+      "color": "#6C3483",
+      "sub_ideology": "liberal_conservative",
+      "founded": 2014,
+      "dissolved": 2022,
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        { "person": "svk.radoslav_prochazka", "from": 2014 }
+      ],
+      "popularity_2000": 0.0,
+      "popularity_note": "Not yet founded in 2000.",
+      "note": "Won 10 seats in 2016 and joined Fico's third government (2020 election article). Founding and dissolution years from Wikidata; colour is a neutral choice.",
+      "source": [
+        { "url": "https://www.wikidata.org/wiki/Q17115560", "title": "Wikidata: Slovak Conservative Party (Network)", "accessed": "2026-10-15" },
+        { "url": "https://en.wikipedia.org/wiki/2016_Slovak_parliamentary_election", "title": "Wikipedia: 2016 Slovak parliamentary election", "accessed": "2026-10-15" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "svk.ps",
+      "name": { "en": "Progressive Slovakia", "native": "Progresívne Slovensko" },
+      "abbrev": { "en": "PS", "native": "PS" },
+      "color": "#00BDFF",
+      "sub_ideology": "social_liberal",
+      "founded": "2017-11-27",
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        { "person": "svk.ivan_stefunko", "from": "2018-03-19", "to": "2019-06-06" },
+        { "person": "svk.michal_truban", "from": "2019-06-06", "to": "2020-07-29" },
+        { "person": "svk.irena_bihariova", "from": "2020-07-29", "to": "2022-08-10" },
+        { "person": "svk.michal_simecka", "from": "2022-08-10" }
+      ],
+      "popularity_2000": 0.0,
+      "popularity_note": "Not yet founded in 2000.",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/Progressive_Slovakia", "title": "Wikipedia: Progressive Slovakia (chairpersons)", "accessed": "2026-10-15" },
+        { "url": "https://www.wikidata.org/wiki/Q48844389", "title": "Wikidata: Progressive Slovakia (chairpersons with dates)", "accessed": "2026-10-15" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "svk.zl",
+      "name": { "en": "For the People", "native": "Za ľudí" },
+      "abbrev": { "en": "ZĽ", "native": "ZĽ" },
+      "color": "#FFD100",
+      "sub_ideology": "liberal_conservative",
+      "founded": "2019-09-02",
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        { "person": "svk.andrej_kiska", "from": "2019-09-02" },
+        { "person": "svk.veronika_remisova", "from": 2021 }
+      ],
+      "popularity_2000": 0.0,
+      "popularity_note": "Not yet founded in 2000.",
+      "note": "Led by Andrej Kiska at the 2020 election; Veronika Remišová is the current leader.",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/For_the_People_(Slovakia)", "title": "Wikipedia: For the People (Slovakia)", "accessed": "2026-10-15" },
+        { "url": "https://en.wikipedia.org/wiki/2020_Slovak_parliamentary_election", "title": "Wikipedia: 2020 Slovak parliamentary election", "accessed": "2026-10-15" }
+      ],
+      "confidence": "needs_review",
+      "review_note": "The date Remišová succeeded Kiska is not in the fetched sources; 2021 is a placeholder."
+    },
+    {
+      "id": "svk.hlas",
+      "name": { "en": "Voice – Social Democracy", "native": "Hlas – sociálna demokracia" },
+      "abbrev": { "en": "Hlas-SD", "native": "Hlas-SD" },
+      "color": "#FA0F18",
+      "sub_ideology": "social_democrat",
+      "founded": "2020-06-29",
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        { "person": "svk.peter_pellegrini", "from": 2020, "to": 2024 },
+        { "person": "svk.matus_sutaj_estok", "from": 2024 }
+      ],
+      "popularity_2000": 0.0,
+      "popularity_note": "Not yet founded in 2000.",
+      "lineage": { "split_from": "svk.smer" },
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/Voice_%E2%80%93_Social_Democracy", "title": "Wikipedia: Voice – Social Democracy (party chairmen)", "accessed": "2026-10-15" }
+      ],
+      "confidence": "verified"
+    }
+  ]
+}
