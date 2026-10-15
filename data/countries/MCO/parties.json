@@ -1,0 +1,133 @@
+{
+  "parties": [
+    {
+      "id": "mco.und",
+      "name": { "en": "National and Democratic Union (from 2008 Rally & Issues)", "native": "Union nationale et démocratique / Rassemblement & Enjeux" },
+      "abbrev": { "en": "UND", "native": "UND" },
+      "color": "#C8102E",
+      "sub_ideology": "traditional_conservative",
+      "founded": 1962,
+      "dissolved": 2020,
+      "status_2000": "active",
+      "leader_history": [
+        { "person": "mco.jean_louis_campora", "from": 1993, "to": 2003, "title": "Leader (President of the National Council)" }
+      ],
+      "popularity_2000": 0.674,
+      "popularity_note": "First-round vote share (candidate votes under panachage), February 1998 National Council election, in which it won all 18 seats.",
+      "note": "Formed in 1962 by merging the National Union of Independents and the National Democratic Entente. Renamed Rally & Issues before the 2008 election, absorbing Rally for Monaco and Values and Issues; it was the main component of Horizon Monaco after 2013. Jean-Charles Allavena replaced Laurent Nouvion as its leader in 2013 (not recorded). Wikipedia gives its dissolution only as 'c. 2020'.",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/National_and_Democratic_Union", "title": "Wikipedia: National and Democratic Union", "accessed": "2026-10-15" },
+        { "url": "https://en.wikipedia.org/wiki/Rally_%26_Issues", "title": "Wikipedia: Rally & Issues", "accessed": "2026-10-15" },
+        { "url": "https://en.wikipedia.org/wiki/National_Council_(Monaco)", "title": "Wikipedia: National Council (Monaco) (presidents and parties)", "accessed": "2026-10-15" },
+        { "url": "https://en.wikipedia.org/wiki/2003_Monegasque_general_election", "title": "Wikipedia: 2003 Monegasque general election (list leaders)", "accessed": "2026-10-15" }
+      ],
+      "confidence": "needs_review",
+      "review_note": "Leadership is only partly documented: Campora is recorded from his presidency of the National Council (1993-2003) and as UND list leader in 2003, but no formal party-leader list was found, and Laurent Nouvion's start as Rally & Issues leader is undated. Confirm the dissolution year (Wikipedia: 'c. 2020')."
+    },
+    {
+      "id": "mco.unam",
+      "name": { "en": "National Union for the Future of Monaco", "native": "Union nationale pour l'avenir de Monaco" },
+      "abbrev": { "en": "UNAM", "native": "UNAM" },
+      "color": "#8B0000",
+      "sub_ideology": "constitutional_monarchist",
+      "founded": 1998,
+      "status_2000": "extra_parliamentary",
+      "leader_history": [],
+      "popularity_2000": 0.2338,
+      "popularity_note": "First-round vote share, February 1998 National Council election (no seats).",
+      "lineage": { "merged_into": "mco.um" },
+      "note": "Described as centrist and monarchist. Union Monégasque (2003) was formed by merging UNAM and the Rally for the Monegasque Family; in the 2003 Union for Monaco alliance UNAM held 4 of the 21 seats.",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/National_Union_for_the_Future_of_Monaco", "title": "Wikipedia: National Union for the Future of Monaco", "accessed": "2026-10-15" },
+        { "url": "https://en.wikipedia.org/wiki/1998_Monegasque_general_election", "title": "Wikipedia: 1998 Monegasque general election", "accessed": "2026-10-15" },
+        { "url": "https://en.wikipedia.org/wiki/Union_Mon%C3%A9gasque", "title": "Wikipedia: Union Monégasque", "accessed": "2026-10-15" }
+      ],
+      "confidence": "needs_review",
+      "review_note": "No leader is documented in the sources fetched, and the founding year (1998) comes only from the article's category. The UNAM article dates its merger into Union Monégasque to 2013, while the Union Monégasque article gives 2003; check both."
+    },
+    {
+      "id": "mco.um",
+      "name": { "en": "Union for Monaco / Union Monégasque", "native": "Union pour Monaco / Union monégasque" },
+      "abbrev": { "en": "UM", "native": "UM" },
+      "color": "#B71C1C",
+      "sub_ideology": "constitutional_monarchist",
+      "founded": 2003,
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        { "person": "mco.stephane_valeri", "from": 2003, "to": 2010, "title": "List leader (from the Union for the Principality component)" },
+        { "person": "mco.jean_francois_robillon", "from": 2011, "title": "Leader" }
+      ],
+      "popularity_2000": 0,
+      "lineage": { "formed_from": ["mco.unam"] },
+      "note": "Wikipedia treats the 2003 Union for Monaco alliance and Union Monégasque as one article. In 2003 the alliance's 21 seats were split among the Union for the Principality (12), UNAM (4), Promotion of the Monegasque Family (3) and Rally for Monaco (2). Valeri led the lists in 2003 and 2008 as leader of the Union for the Principality; Robillon moved from that party to Union Monégasque in 2011. Joined the Monegasque National Union list in 2023.",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/Union_Mon%C3%A9gasque", "title": "Wikipedia: Union Monégasque", "accessed": "2026-10-15" },
+        { "url": "https://en.wikipedia.org/wiki/2003_Monegasque_general_election", "title": "Wikipedia: 2003 Monegasque general election", "accessed": "2026-10-15" },
+        { "url": "https://en.wikipedia.org/wiki/Jean-Fran%C3%A7ois_Robillon", "title": "Wikipedia: Jean-François Robillon", "accessed": "2026-10-15" }
+      ],
+      "confidence": "needs_review",
+      "review_note": "Identity is ambiguous in the sources: check whether the 2003-2008 Union for Monaco alliance (led by Valeri) and the party Union Monégasque (led by Robillon from 2011) should be separate records."
+    },
+    {
+      "id": "mco.hm",
+      "name": { "en": "Horizon Monaco", "native": "Horizon Monaco" },
+      "abbrev": { "en": "HM", "native": "HM" },
+      "color": "#1F4E9A",
+      "sub_ideology": "traditional_conservative",
+      "founded": 2012,
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        { "person": "mco.laurent_nouvion", "from": 2012, "title": "Leader" }
+      ],
+      "popularity_2000": 0,
+      "lineage": { "formed_from": ["mco.und"] },
+      "note": "Coalition built mainly on Rally & Issues (the former UND) with Synergie Monegasque and the Union for the Principality. Many members left for the new majority in 2016; it ran as an electoral list in 2018 (led by Béatrice Fresko-Rolfo, not recorded) and joined the Monegasque National Union list in 2023.",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/Horizon_Monaco", "title": "Wikipedia: Horizon Monaco", "accessed": "2026-10-15" },
+        { "url": "https://en.wikipedia.org/wiki/2013_Monegasque_general_election", "title": "Wikipedia: 2013 Monegasque general election", "accessed": "2026-10-15" }
+      ],
+      "confidence": "needs_review",
+      "review_note": "Nouvion is listed as leader without dates; the 2012 start (party founding) and the absence of an end date need checking."
+    },
+    {
+      "id": "mco.renaissance",
+      "name": { "en": "Renaissance", "native": "Renaissance" },
+      "abbrev": { "en": "Renaissance", "native": "Renaissance" },
+      "color": "#E87722",
+      "sub_ideology": "big_tent",
+      "founded": 2012,
+      "status_2000": "not_yet_founded",
+      "leader_history": [],
+      "popularity_2000": 0,
+      "lineage": { "merged_into": "mco.um" },
+      "note": "Represented the interests of employees of the Société des Bains de Mer (SBM); mapped to big_tent because it has no left-right profile. Won 1 seat in 2013.",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/Renaissance_(Monaco)", "title": "Wikipedia: Renaissance (Monaco)", "accessed": "2026-10-15" },
+        { "url": "https://en.wikipedia.org/wiki/2013_Monegasque_general_election", "title": "Wikipedia: 2013 Monegasque general election", "accessed": "2026-10-15" }
+      ],
+      "confidence": "needs_review",
+      "review_note": "Leaders are not recorded: the party article names Eric Elena as leader, while the 2013 election article names Jean-Michel Rapaire as list leader. Neither gives dates."
+    },
+    {
+      "id": "mco.primo",
+      "name": { "en": "Priorité Monaco", "native": "Primo! Priorité Monaco" },
+      "abbrev": { "en": "Primo!", "native": "Primo!" },
+      "color": "#D52B1E",
+      "sub_ideology": "liberal_conservative",
+      "founded": 2017,
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        { "person": "mco.stephane_valeri", "from": 2017, "title": "Founder and leader" },
+        { "person": "mco.brigitte_boccone_pages", "from": 2022, "title": "Head of the Monegasque National Union list" }
+      ],
+      "popularity_2000": 0,
+      "note": "Founded in September 2017 by Stéphane Valeri; described as liberal, Eurosceptic and monarchist (centre-right). In 2023 it led the Monegasque National Union list (with Horizon Monaco and Union Monégasque), founded on 17 October 2022 by Brigitte Boccone-Pagès.",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/Priorit%C3%A9_Monaco", "title": "Wikipedia: Priorité Monaco", "accessed": "2026-10-15" },
+        { "url": "https://en.wikipedia.org/wiki/Monegasque_National_Union", "title": "Wikipedia: Monegasque National Union", "accessed": "2026-10-15" }
+      ],
+      "confidence": "needs_review",
+      "review_note": "No dated leader list exists in the sources: Valeri's leadership has no end date (he left the National Council presidency in October 2022), and Boccone-Pagès is recorded as head of the 2023 joint list, not as formal party leader."
+    }
+  ]
+}

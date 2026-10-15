@@ -1,0 +1,714 @@
+{
+  "parties": [
+    {
+      "id": "ita.ds",
+      "name": { "en": "Democrats of the Left", "native": "Democratici di Sinistra" },
+      "abbrev": { "en": "DS", "native": "DS" },
+      "color": "#C72837",
+      "sub_ideology": "social_democrat",
+      "founded": "1998-02-13",
+      "dissolved": "2007-10-14",
+      "status_2000": "active",
+      "leader_history": [
+        { "person": "ita.walter_veltroni", "from": 1998, "to": 2001, "title": "Secretary" },
+        { "person": "ita.piero_fassino", "from": 2001, "to": 2007, "title": "Secretary" }
+      ],
+      "popularity_2000": 0.2106,
+      "popularity_note": "Proportional-list share of its predecessor, the Democratic Party of the Left (PDS), in the 1996 Chamber election. The DS polled 17.34% in the June 1999 European Parliament election.",
+      "lineage": { "merged_into": "ita.pd" },
+      "note": "Successor of the Democratic Party of the Left (PDS). Massimo D'Alema was its first secretary in 1998 and later party president. Fassino was elected at the November 2001 congress. Merged into the Democratic Party on 14 October 2007.",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/Democrats_of_the_Left", "title": "Wikipedia: Democrats of the Left (secretaries, merger)", "accessed": "2026-10-15" },
+        { "url": "https://www.wikidata.org/wiki/Q541679", "title": "Wikidata: Democrats of the Left (founded, dissolved)", "accessed": "2026-10-15" },
+        { "url": "https://en.wikipedia.org/wiki/1996_Italian_general_election", "title": "Wikipedia: 1996 Italian general election", "accessed": "2026-10-15" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "ita.ppi",
+      "name": { "en": "Italian People's Party", "native": "Partito Popolare Italiano" },
+      "abbrev": { "en": "PPI", "native": "PPI" },
+      "color": "#7FB2E5",
+      "sub_ideology": "christian_democrat",
+      "founded": "1994-01-22",
+      "dissolved": 2002,
+      "status_2000": "active",
+      "leader_history": [
+        { "person": "ita.pierluigi_castagnetti", "from": "1999-10-02", "to": "2002-03-24", "title": "Secretary" }
+      ],
+      "popularity_2000": 0.0681,
+      "popularity_note": "1996 Chamber proportional share of the 'Populars for Prodi' list (PPI with Democratic Union, the Italian Republican Party and the SVP). The PPI alone polled 4.24% in the 1999 European Parliament election.",
+      "lineage": { "merged_into": "ita.margherita" },
+      "note": "Wikidata dates the dissolution to 24 March 2002 (founding of The Daisy); the Wikipedia infobox gives 6 December 2002.",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/Italian_People%27s_Party_(1994)", "title": "Wikipedia: Italian People's Party (1994) (secretaries)", "accessed": "2026-10-15" },
+        { "url": "https://www.wikidata.org/wiki/Q1259087", "title": "Wikidata: Italian People's Party (founded, dissolved)", "accessed": "2026-10-15" },
+        { "url": "https://en.wikipedia.org/wiki/1999_European_Parliament_election_in_Italy", "title": "Wikipedia: 1999 European Parliament election in Italy", "accessed": "2026-10-15" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "ita.democrats",
+      "name": { "en": "The Democrats", "native": "I Democratici" },
+      "abbrev": { "en": "Dem", "native": "Dem" },
+      "color": "#F28C28",
+      "sub_ideology": "social_liberal",
+      "founded": "1999-02-27",
+      "dissolved": "2002-03-23",
+      "status_2000": "active",
+      "leader_history": [
+        { "person": "ita.romano_prodi", "from": 1999, "to": 1999, "title": "President" },
+        { "person": "ita.arturo_parisi", "from": 1999, "to": 2002, "title": "President" }
+      ],
+      "popularity_2000": 0.0773,
+      "popularity_note": "June 1999 European Parliament election share (founded after the 1996 general election).",
+      "lineage": { "merged_into": "ita.margherita" },
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/The_Democrats_(Italy)", "title": "Wikipedia: The Democrats (Italy) (presidents, merger)", "accessed": "2026-10-15" },
+        { "url": "https://www.wikidata.org/wiki/Q1185894", "title": "Wikidata: The Democrats (founded, dissolved)", "accessed": "2026-10-15" },
+        { "url": "https://en.wikipedia.org/wiki/1999_European_Parliament_election_in_Italy", "title": "Wikipedia: 1999 European Parliament election in Italy", "accessed": "2026-10-15" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "ita.ri",
+      "name": { "en": "Italian Renewal", "native": "Rinnovamento Italiano" },
+      "abbrev": { "en": "RI", "native": "RI" },
+      "color": "#3A75C4",
+      "sub_ideology": "centrist_liberal",
+      "founded": "1996-02-27",
+      "dissolved": "2002-03-17",
+      "status_2000": "active",
+      "leader_history": [
+        { "person": "ita.lamberto_dini", "from": "1996-02-27", "to": "2002-03-17" }
+      ],
+      "popularity_2000": 0.0434,
+      "popularity_note": "Proportional-list share, 1996 Chamber election.",
+      "lineage": { "merged_into": "ita.margherita" },
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/Italian_Renewal", "title": "Wikipedia: Italian Renewal", "accessed": "2026-10-15" },
+        { "url": "https://www.wikidata.org/wiki/Q1960994", "title": "Wikidata: Italian Renewal (founded, dissolved)", "accessed": "2026-10-15" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "ita.udeur",
+      "name": { "en": "Union of Democrats for Europe", "native": "Unione Democratici per l'Europa" },
+      "abbrev": { "en": "UDEUR", "native": "UDEUR" },
+      "color": "#F5D000",
+      "sub_ideology": "christian_democrat",
+      "founded": "1999-05-23",
+      "dissolved": 2013,
+      "status_2000": "active",
+      "leader_history": [
+        { "person": "ita.clemente_mastella", "from": 1999, "to": 2013, "title": "Secretary" }
+      ],
+      "popularity_2000": 0.0161,
+      "popularity_note": "June 1999 European Parliament election share (founded after the 1996 general election).",
+      "note": "The Wikipedia article is inconsistent about the party's end: the infobox gives dissolution in 2013 (succeeded by Us of the Centre), while the text also describes a later revival.",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/Union_of_Democrats_for_Europe", "title": "Wikipedia: Union of Democrats for Europe", "accessed": "2026-10-15" },
+        { "url": "https://en.wikipedia.org/wiki/1999_European_Parliament_election_in_Italy", "title": "Wikipedia: 1999 European Parliament election in Italy", "accessed": "2026-10-15" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "ita.pdci",
+      "name": { "en": "Party of Italian Communists", "native": "Partito dei Comunisti Italiani" },
+      "abbrev": { "en": "PdCI", "native": "PdCI" },
+      "color": "#B22222",
+      "sub_ideology": "reformed_communist",
+      "founded": "1998-10-11",
+      "dissolved": "2014-12-11",
+      "status_2000": "active",
+      "leader_history": [
+        { "person": "ita.armando_cossutta", "from": 1998, "to": 2000, "title": "Secretary" },
+        { "person": "ita.oliviero_diliberto", "from": 2000, "to": 2013, "title": "Secretary" }
+      ],
+      "popularity_2000": 0.02,
+      "popularity_note": "June 1999 European Parliament election share (split from Communist Refoundation in 1998).",
+      "lineage": { "split_from": "ita.prc" },
+      "note": "Cesare Procaccini, secretary 2013-2014, is omitted. Became the Communist Party of Italy in December 2014. Wikidata gives dissolution as 23 November 2014; Wikipedia 11 December 2014.",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/Party_of_Italian_Communists", "title": "Wikipedia: Party of Italian Communists (secretaries)", "accessed": "2026-10-15" },
+        { "url": "https://en.wikipedia.org/wiki/1999_European_Parliament_election_in_Italy", "title": "Wikipedia: 1999 European Parliament election in Italy", "accessed": "2026-10-15" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "ita.greens",
+      "name": { "en": "Federation of the Greens", "native": "Federazione dei Verdi" },
+      "abbrev": { "en": "FdV", "native": "Verdi" },
+      "color": "#5DAA3C",
+      "sub_ideology": "green",
+      "founded": "1990-12-09",
+      "dissolved": "2021-07-10",
+      "status_2000": "active",
+      "leader_history": [
+        { "person": "ita.grazia_francescato", "from": "1999-07-25", "to": "2001-12-01", "title": "President" },
+        { "person": "ita.alfonso_pecoraro_scanio", "from": "2001-12-01", "to": "2008-07-19", "title": "President" },
+        { "person": "ita.grazia_francescato", "from": 2008, "to": 2009, "title": "Spokesperson" },
+        { "person": "ita.angelo_bonelli", "from": "2009-10-10", "to": 2015, "title": "President, then co-spokesperson" }
+      ],
+      "popularity_2000": 0.025,
+      "popularity_note": "Proportional-list share, 1996 Chamber election.",
+      "lineage": { "renamed_to": "ita.green_europe" },
+      "note": "Later spokespersons (Luana Zanella 2013-2015, Giobbe Covatta 2015-2017, Matteo Badiali and Elena Grandi 2018-2021) are omitted.",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/Federation_of_the_Greens", "title": "Wikipedia: Federation of the Greens (leaders)", "accessed": "2026-10-15" },
+        { "url": "https://www.wikidata.org/wiki/Q662502", "title": "Wikidata: Federation of the Greens (chairpersons)", "accessed": "2026-10-15" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "ita.green_europe",
+      "name": { "en": "Green Europe", "native": "Europa Verde" },
+      "abbrev": { "en": "EV", "native": "EV" },
+      "color": "#43A047",
+      "sub_ideology": "green",
+      "founded": "2021-07-10",
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        { "person": "ita.angelo_bonelli", "from": 2021, "title": "Co-spokesperson" }
+      ],
+      "popularity_2000": 0,
+      "lineage": { "renamed_from": "ita.greens" },
+      "note": "Contests elections with Italian Left in the Greens and Left Alliance (AVS). Co-spokespersons Eleonora Evi (2021-2023) and Fiorella Zabatta (from 2024) are omitted.",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/Green_Europe", "title": "Wikipedia: Green Europe", "accessed": "2026-10-15" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "ita.fi",
+      "name": { "en": "Forza Italia", "native": "Forza Italia" },
+      "abbrev": { "en": "FI", "native": "FI" },
+      "color": "#0087DC",
+      "sub_ideology": "liberal_conservative",
+      "founded": "1994-01-18",
+      "dissolved": "2009-03-27",
+      "status_2000": "active",
+      "leader_history": [
+        { "person": "ita.silvio_berlusconi", "from": "1994-01-18", "to": "2009-03-27", "title": "President" }
+      ],
+      "popularity_2000": 0.2057,
+      "popularity_note": "Proportional-list share, 1996 Chamber election (25.16% in the 1999 European Parliament election).",
+      "lineage": { "merged_into": "ita.pdl" },
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/Forza_Italia_(1994)", "title": "Wikipedia: Forza Italia (1994)", "accessed": "2026-10-15" },
+        { "url": "https://www.wikidata.org/wiki/Q215350", "title": "Wikidata: Forza Italia (founded, dissolved, chair)", "accessed": "2026-10-15" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "ita.an",
+      "name": { "en": "National Alliance", "native": "Alleanza Nazionale" },
+      "abbrev": { "en": "AN", "native": "AN" },
+      "color": "#1F3F86",
+      "sub_ideology": "national_conservative",
+      "founded": "1995-01-27",
+      "dissolved": "2009-03-22",
+      "status_2000": "active",
+      "leader_history": [
+        { "person": "ita.gianfranco_fini", "from": 1995, "to": 2008, "title": "President" },
+        { "person": "ita.ignazio_la_russa", "from": 2008, "to": 2009, "title": "Acting president" }
+      ],
+      "popularity_2000": 0.1566,
+      "popularity_note": "Proportional-list share, 1996 Chamber election.",
+      "lineage": { "merged_into": "ita.pdl" },
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/National_Alliance_(Italy)", "title": "Wikipedia: National Alliance (Italy) (leaders, founding, dissolution)", "accessed": "2026-10-15" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "ita.ccd",
+      "name": { "en": "Christian Democratic Centre", "native": "Centro Cristiano Democratico" },
+      "abbrev": { "en": "CCD", "native": "CCD" },
+      "color": "#5B9BD5",
+      "sub_ideology": "christian_democrat",
+      "founded": "1994-01-18",
+      "dissolved": "2002-12-06",
+      "status_2000": "active",
+      "leader_history": [
+        { "person": "ita.pier_ferdinando_casini", "from": 1994, "to": 2001, "title": "Secretary" },
+        { "person": "ita.marco_follini", "from": 2001, "to": 2002, "title": "Secretary" }
+      ],
+      "popularity_2000": 0.0259,
+      "popularity_note": "June 1999 European Parliament election share; in 1996 it ran in a joint list with the CDU (5.84%).",
+      "lineage": { "merged_into": "ita.udc" },
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/Christian_Democratic_Centre", "title": "Wikipedia: Christian Democratic Centre (secretaries)", "accessed": "2026-10-15" },
+        { "url": "https://en.wikipedia.org/wiki/1999_European_Parliament_election_in_Italy", "title": "Wikipedia: 1999 European Parliament election in Italy", "accessed": "2026-10-15" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "ita.cdu",
+      "name": { "en": "United Christian Democrats", "native": "Cristiani Democratici Uniti" },
+      "abbrev": { "en": "CDU", "native": "CDU" },
+      "color": "#8DB3E2",
+      "sub_ideology": "christian_democrat",
+      "founded": "1995-07-23",
+      "dissolved": "2002-12-06",
+      "status_2000": "active",
+      "leader_history": [
+        { "person": "ita.rocco_buttiglione", "from": 1995, "to": 2002 }
+      ],
+      "popularity_2000": 0.0216,
+      "popularity_note": "June 1999 European Parliament election share; in 1996 it ran in a joint list with the CCD (5.84%).",
+      "lineage": { "split_from": "ita.ppi", "merged_into": "ita.udc" },
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/United_Christian_Democrats", "title": "Wikipedia: United Christian Democrats", "accessed": "2026-10-15" },
+        { "url": "https://www.wikidata.org/wiki/Q1140350", "title": "Wikidata: United Christian Democrats (founded, dissolved)", "accessed": "2026-10-15" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "ita.lega",
+      "name": { "en": "Northern League (Lega Nord), later League", "native": "Lega Nord / Lega" },
+      "abbrev": { "en": "LN", "native": "Lega" },
+      "color": "#1C8C3C",
+      "sub_ideology": "regionalist",
+      "founded": "1991-02-10",
+      "status_2000": "active",
+      "leader_history": [
+        { "person": "ita.umberto_bossi", "from": "1989-12-04", "to": "2012-04-05", "title": "Federal Secretary" },
+        { "person": "ita.roberto_maroni", "from": "2012-07-01", "to": "2013-12-15", "title": "Federal Secretary" },
+        { "person": "ita.matteo_salvini", "from": "2013-12-15", "title": "Federal Secretary, later Secretary of Lega per Salvini Premier" }
+      ],
+      "popularity_2000": 0.1007,
+      "popularity_note": "Proportional-list share, 1996 Chamber election.",
+      "regional_base": ["Lombardy", "Veneto", "Piedmont", "Northern Italy"],
+      "note": "One record for Lega Nord and its successor Lega per Salvini Premier (founded 14 December 2017), which ran as 'Lega' from 2018 while Lega Nord became inactive. Sub-ideology reflects the federalist/regionalist party of 2000; under Salvini it repositioned as a national right-populist party. The April-July 2012 interim leadership between Bossi and Maroni is not recorded.",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/List_of_Federal_Secretaries_of_Lega_Nord", "title": "Wikipedia: List of Federal Secretaries of Lega Nord", "accessed": "2026-10-15" },
+        { "url": "https://www.wikidata.org/wiki/Q47750", "title": "Wikidata: Lega Nord (founded)", "accessed": "2026-10-15" },
+        { "url": "https://en.wikipedia.org/wiki/Lega_(political_party)", "title": "Wikipedia: Lega (political party)", "accessed": "2026-10-15" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "ita.prc",
+      "name": { "en": "Communist Refoundation Party", "native": "Partito della Rifondazione Comunista" },
+      "abbrev": { "en": "PRC", "native": "PRC" },
+      "color": "#F0001C",
+      "sub_ideology": "reformed_communist",
+      "founded": "1991-12-12",
+      "status_2000": "active",
+      "leader_history": [
+        { "person": "ita.fausto_bertinotti", "from": "1994-01-22", "to": "2006-05-06", "title": "Secretary" },
+        { "person": "ita.franco_giordano", "from": "2006-05-07", "to": "2008-07-27", "title": "Secretary" },
+        { "person": "ita.paolo_ferrero", "from": "2008-07-27", "to": "2017-04-02", "title": "Secretary" },
+        { "person": "ita.maurizio_acerbo", "from": "2017-04-02", "title": "Secretary" }
+      ],
+      "popularity_2000": 0.0427,
+      "popularity_note": "June 1999 European Parliament election share. Its 1996 Chamber share (8.57%) predates the 1998 PdCI split.",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/Communist_Refoundation_Party", "title": "Wikipedia: Communist Refoundation Party (secretaries)", "accessed": "2026-10-15" },
+        { "url": "https://www.wikidata.org/wiki/Q780997", "title": "Wikidata: Communist Refoundation Party (founded)", "accessed": "2026-10-15" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "ita.sdi",
+      "name": { "en": "Italian Democratic Socialists", "native": "Socialisti Democratici Italiani" },
+      "abbrev": { "en": "SDI", "native": "SDI" },
+      "color": "#E35E6A",
+      "sub_ideology": "social_democrat",
+      "founded": "1998-05-10",
+      "dissolved": 2007,
+      "status_2000": "active",
+      "leader_history": [
+        { "person": "ita.enrico_boselli", "from": 1998, "to": 2007, "title": "Secretary" }
+      ],
+      "popularity_2000": 0.0216,
+      "popularity_note": "June 1999 European Parliament election share (founded after the 1996 general election).",
+      "note": "Merged into the Italian Socialist Party (2007). Abstained in the confidence vote on the D'Alema II cabinet (December 1999) without joining it.",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/Italian_Democratic_Socialists", "title": "Wikipedia: Italian Democratic Socialists", "accessed": "2026-10-15" },
+        { "url": "https://en.wikipedia.org/wiki/D%27Alema_II_Cabinet", "title": "Wikipedia: D'Alema II Cabinet", "accessed": "2026-10-15" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "ita.svp",
+      "name": { "en": "South Tyrolean People's Party", "native": "Südtiroler Volkspartei" },
+      "abbrev": { "en": "SVP", "native": "SVP" },
+      "color": "#231F20",
+      "sub_ideology": "regionalist",
+      "founded": "1945-05-08",
+      "status_2000": "active",
+      "leader_history": [
+        { "person": "ita.siegfried_brugger", "from": 1992, "to": 2004, "title": "Obmann" },
+        { "person": "ita.elmar_pichler_rolle", "from": 2004, "to": 2009, "title": "Obmann" },
+        { "person": "ita.richard_theiner", "from": 2009, "to": 2014, "title": "Obmann" },
+        { "person": "ita.philipp_achammer", "from": 2014, "to": 2024, "title": "Obmann" },
+        { "person": "ita.dieter_steger", "from": 2024, "title": "Obmann" }
+      ],
+      "popularity_2000": 0.0042,
+      "popularity_note": "1996 Chamber single-member-constituency vote share (the SVP stood in the proportional part inside the Populars for Prodi list).",
+      "regional_base": ["South Tyrol", "Trentino-Alto Adige"],
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/South_Tyrolean_People%27s_Party", "title": "Wikipedia: South Tyrolean People's Party (chairmen)", "accessed": "2026-10-15" },
+        { "url": "https://en.wikipedia.org/wiki/1996_Italian_general_election", "title": "Wikipedia: 1996 Italian general election", "accessed": "2026-10-15" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "ita.ms_ft",
+      "name": { "en": "Social Movement Tricolour Flame", "native": "Movimento Sociale Fiamma Tricolore" },
+      "abbrev": { "en": "MS-FT", "native": "Fiamma Tricolore" },
+      "color": "#000000",
+      "sub_ideology": "ethno_nationalist",
+      "founded": "1995-01-27",
+      "status_2000": "active",
+      "leader_history": [
+        { "person": "ita.pino_rauti", "from": 1995, "to": 2002, "title": "National Secretary" }
+      ],
+      "popularity_2000": 0.0091,
+      "popularity_note": "Proportional-list share, 1996 Chamber election (no seats); it won 1 Senate seat in 1996.",
+      "lineage": {},
+      "note": "Later secretaries (Luca Romagnoli 2002-2013, Attilio Carelli 2013-2021, Giuseppe Manoli 2021-2022, Daniele Cerbella from 2022) are omitted; the party has not won national parliamentary seats since.",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/Tricolour_Flame", "title": "Wikipedia: Tricolour Flame (secretaries, 1996 results)", "accessed": "2026-10-15" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "ita.idv",
+      "name": { "en": "Italy of Values", "native": "Italia dei Valori" },
+      "abbrev": { "en": "IdV", "native": "IdV" },
+      "color": "#F7A600",
+      "sub_ideology": "centrist_liberal",
+      "founded": "2000-04-27",
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        { "person": "ita.antonio_di_pietro", "from": "2000-04-27", "to": 2013, "title": "President" },
+        { "person": "ita.ignazio_messina", "from": 2013, "title": "Secretary" }
+      ],
+      "popularity_2000": 0,
+      "note": "First founded on 21 March 1998 and folded into The Democrats in February 1999; re-established as an autonomous party on 27 April 2000 (Italian Wikipedia), which is used as the founding date here.",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/Italy_of_Values", "title": "Wikipedia: Italy of Values", "accessed": "2026-10-15" },
+        { "url": "https://it.wikipedia.org/wiki/Italia_dei_Valori", "title": "Wikipedia (it): Italia dei Valori (re-foundation date)", "accessed": "2026-10-15" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "ita.margherita",
+      "name": { "en": "Democracy is Freedom – The Daisy", "native": "Democrazia è Libertà – La Margherita" },
+      "abbrev": { "en": "DL", "native": "DL" },
+      "color": "#3CB371",
+      "sub_ideology": "social_liberal",
+      "founded": "2002-03-24",
+      "dissolved": "2007-10-14",
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        { "person": "ita.francesco_rutelli", "from": 2002, "to": 2007 }
+      ],
+      "popularity_2000": 0,
+      "lineage": { "formed_from": ["ita.ppi", "ita.democrats", "ita.ri"], "merged_into": "ita.pd" },
+      "note": "Contested the 2001 general election as an electoral list of the PPI, The Democrats, Italian Renewal and UDEUR before becoming a party in March 2002.",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/Democracy_is_Freedom_%E2%80%93_The_Daisy", "title": "Wikipedia: Democracy is Freedom – The Daisy", "accessed": "2026-10-15" },
+        { "url": "https://www.wikidata.org/wiki/Q1141788", "title": "Wikidata: The Daisy (founded, dissolved)", "accessed": "2026-10-15" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "ita.udc",
+      "name": { "en": "Union of the Centre", "native": "Unione di Centro" },
+      "abbrev": { "en": "UDC", "native": "UDC" },
+      "color": "#7AAFD6",
+      "sub_ideology": "christian_democrat",
+      "founded": "2002-12-06",
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        { "person": "ita.marco_follini", "from": 2002, "to": 2005, "title": "Secretary" },
+        { "person": "ita.lorenzo_cesa", "from": 2005, "to": 2025, "title": "Secretary" },
+        { "person": "ita.antonio_de_poli", "from": 2025, "title": "Secretary" }
+      ],
+      "popularity_2000": 0,
+      "lineage": { "formed_from": ["ita.ccd", "ita.cdu"] },
+      "note": "Founded as the Union of Christian and Centre Democrats. Pier Ferdinando Casini was its best-known figure and parliamentary leader without holding the secretary post.",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/Union_of_the_Centre_(2002)", "title": "Wikipedia: Union of the Centre (2002) (secretaries)", "accessed": "2026-10-15" },
+        { "url": "https://www.wikidata.org/wiki/Q47781", "title": "Wikidata: Union of the Centre (founded)", "accessed": "2026-10-15" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "ita.pd",
+      "name": { "en": "Democratic Party", "native": "Partito Democratico" },
+      "abbrev": { "en": "PD", "native": "PD" },
+      "color": "#EF1C27",
+      "sub_ideology": "social_democrat",
+      "founded": "2007-10-14",
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        { "person": "ita.walter_veltroni", "from": "2007-10-14", "to": "2009-02-21", "title": "Secretary" },
+        { "person": "ita.dario_franceschini", "from": "2009-02-21", "to": "2009-11-07", "title": "Secretary" },
+        { "person": "ita.pier_luigi_bersani", "from": "2009-11-07", "to": "2013-04-20", "title": "Secretary" },
+        { "person": "ita.guglielmo_epifani", "from": "2013-05-11", "to": "2013-12-15", "title": "Secretary" },
+        { "person": "ita.matteo_renzi", "from": "2013-12-15", "to": "2017-02-19", "title": "Secretary" },
+        { "person": "ita.matteo_orfini", "from": "2017-02-19", "to": "2017-05-07", "title": "Acting secretary" },
+        { "person": "ita.matteo_renzi", "from": "2017-05-07", "to": "2018-03-12", "title": "Secretary" },
+        { "person": "ita.maurizio_martina", "from": "2018-03-12", "to": "2018-11-17", "title": "Acting secretary, then secretary from 7 July 2018" },
+        { "person": "ita.nicola_zingaretti", "from": "2019-03-17", "to": "2021-03-14", "title": "Secretary" },
+        { "person": "ita.enrico_letta", "from": "2021-03-14", "to": "2023-03-12", "title": "Secretary" },
+        { "person": "ita.elly_schlein", "from": "2023-03-12", "title": "Secretary" }
+      ],
+      "popularity_2000": 0,
+      "lineage": { "formed_from": ["ita.ds", "ita.margherita"] },
+      "note": "The secretary post was vacant without an acting secretary from 20 April to 11 May 2013 and from 17 November 2018 to 17 March 2019.",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/Secretary_of_the_Democratic_Party_(Italy)", "title": "Wikipedia: Secretary of the Democratic Party (Italy)", "accessed": "2026-10-15" },
+        { "url": "https://www.wikidata.org/wiki/Q47729", "title": "Wikidata: Democratic Party (founded)", "accessed": "2026-10-15" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "ita.pdl",
+      "name": { "en": "The People of Freedom", "native": "Il Popolo della Libertà" },
+      "abbrev": { "en": "PdL", "native": "PdL" },
+      "color": "#0A6BE1",
+      "sub_ideology": "liberal_conservative",
+      "founded": "2009-03-29",
+      "dissolved": "2013-11-16",
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        { "person": "ita.silvio_berlusconi", "from": "2009-03-29", "to": "2013-11-16", "title": "President" },
+        { "person": "ita.angelino_alfano", "from": 2011, "to": 2013, "title": "Secretary" }
+      ],
+      "popularity_2000": 0,
+      "lineage": { "formed_from": ["ita.fi", "ita.an"], "renamed_to": "ita.fi2013" },
+      "note": "Ran as a joint FI-AN list in the April 2008 election before its formal founding in March 2009.",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/The_People_of_Freedom", "title": "Wikipedia: The People of Freedom", "accessed": "2026-10-15" },
+        { "url": "https://www.wikidata.org/wiki/Q47720", "title": "Wikidata: The People of Freedom (founded, dissolved)", "accessed": "2026-10-15" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "ita.fi2013",
+      "name": { "en": "Forza Italia", "native": "Forza Italia" },
+      "abbrev": { "en": "FI", "native": "FI" },
+      "color": "#1E90FF",
+      "sub_ideology": "liberal_conservative",
+      "founded": "2013-11-16",
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        { "person": "ita.silvio_berlusconi", "from": "2013-11-16", "to": "2023-06-12", "title": "President" },
+        { "person": "ita.antonio_tajani", "from": 2023, "title": "Secretary" }
+      ],
+      "popularity_2000": 0,
+      "lineage": { "renamed_from": "ita.pdl" },
+      "note": "Relaunched on 18 September 2013; the People of Freedom was formally dissolved into it on 16 November 2013. Tajani was elected secretary by the national council in July 2023.",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/Forza_Italia_(2013)", "title": "Wikipedia: Forza Italia (2013)", "accessed": "2026-10-15" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "ita.fdi",
+      "name": { "en": "Brothers of Italy", "native": "Fratelli d'Italia" },
+      "abbrev": { "en": "FdI", "native": "FdI" },
+      "color": "#003E7E",
+      "sub_ideology": "national_conservative",
+      "founded": "2012-12-21",
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        { "person": "ita.ignazio_la_russa", "from": "2012-12-21", "to": "2014-03-09", "title": "Co-founder and coordinator" },
+        { "person": "ita.giorgia_meloni", "from": "2014-03-09", "title": "President" }
+      ],
+      "popularity_2000": 0,
+      "lineage": { "split_from": "ita.pdl" },
+      "note": "Founded by former National Alliance members leaving the PdL. Meloni and Guido Crosetto were co-coordinators with La Russa from 21 December 2012 to April 2013 (Crosetto omitted). Wikidata gives the founding as 28 December 2012 and Meloni's presidency from 9 March 2014; her Wikipedia infobox gives 8 March 2014.",
+      "source": [
+        { "url": "https://www.wikidata.org/wiki/Q1757843", "title": "Wikidata: Brothers of Italy (founded, chairpersons)", "accessed": "2026-10-15" },
+        { "url": "https://en.wikipedia.org/wiki/Brothers_of_Italy", "title": "Wikipedia: Brothers of Italy", "accessed": "2026-10-15" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "ita.m5s",
+      "name": { "en": "Five Star Movement", "native": "Movimento 5 Stelle" },
+      "abbrev": { "en": "M5S", "native": "M5S" },
+      "color": "#FFD700",
+      "sub_ideology": "big_tent",
+      "founded": "2009-10-04",
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        { "person": "ita.beppe_grillo", "from": "2009-10-04", "to": "2017-09-23", "title": "Founder and political head" },
+        { "person": "ita.luigi_di_maio", "from": "2017-09-23", "to": "2020-01-22", "title": "Political head" },
+        { "person": "ita.vito_crimi", "from": "2020-01-22", "to": "2021-08-06", "title": "Acting political head" },
+        { "person": "ita.giuseppe_conte", "from": "2021-08-06", "title": "President" }
+      ],
+      "popularity_2000": 0,
+      "note": "Mapped to big_tent: an anti-establishment populist movement that does not fit a left-right sub-ideology. Grillo held the 'guarantor' role from 2017 until it was abolished in December 2024.",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/Five_Star_Movement", "title": "Wikipedia: Five Star Movement (leaders)", "accessed": "2026-10-15" },
+        { "url": "https://www.wikidata.org/wiki/Q47817", "title": "Wikidata: Five Star Movement (founded)", "accessed": "2026-10-15" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "ita.sel",
+      "name": { "en": "Left Ecology Freedom", "native": "Sinistra Ecologia Libertà" },
+      "abbrev": { "en": "SEL", "native": "SEL" },
+      "color": "#C80815",
+      "sub_ideology": "democratic_socialist",
+      "founded": "2009-12-20",
+      "dissolved": "2016-12-17",
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        { "person": "ita.nichi_vendola", "from": "2010-10-24", "to": "2016-12-17", "title": "President" }
+      ],
+      "popularity_2000": 0,
+      "lineage": { "merged_into": "ita.si" },
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/Left_Ecology_Freedom", "title": "Wikipedia: Left Ecology Freedom", "accessed": "2026-10-15" },
+        { "url": "https://www.wikidata.org/wiki/Q286140", "title": "Wikidata: Left Ecology Freedom (founded, dissolved, chair)", "accessed": "2026-10-15" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "ita.si",
+      "name": { "en": "Italian Left", "native": "Sinistra Italiana" },
+      "abbrev": { "en": "SI", "native": "SI" },
+      "color": "#E3001B",
+      "sub_ideology": "democratic_socialist",
+      "founded": "2015-11-07",
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        { "person": "ita.nicola_fratoianni", "from": "2017-02-19", "to": "2019-06-01", "title": "Secretary" },
+        { "person": "ita.nicola_fratoianni", "from": "2021-02-02", "title": "Secretary" }
+      ],
+      "popularity_2000": 0,
+      "note": "Founding date is Wikidata's. SEL merged into it. Contests elections with Green Europe in the Greens and Left Alliance.",
+      "source": [
+        { "url": "https://www.wikidata.org/wiki/Q21405813", "title": "Wikidata: Sinistra Italiana (founded, chair)", "accessed": "2026-10-15" },
+        { "url": "https://en.wikipedia.org/wiki/Italian_Left", "title": "Wikipedia: Italian Left", "accessed": "2026-10-15" }
+      ],
+      "confidence": "needs_review",
+      "review_note": "Confirm the founding date: Wikidata gives 7 November 2015, while Fratoianni's article dates his first term as secretary from 19 February 2017. The secretary between June 2019 and February 2021 is not recorded."
+    },
+    {
+      "id": "ita.sc",
+      "name": { "en": "Civic Choice", "native": "Scelta Civica" },
+      "abbrev": { "en": "SC", "native": "SC" },
+      "color": "#1560BD",
+      "sub_ideology": "centrist_liberal",
+      "founded": "2013-01-04",
+      "dissolved": "2019-07-24",
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        { "person": "ita.mario_monti", "from": "2013-03-16", "to": "2013-10-17", "title": "President" }
+      ],
+      "popularity_2000": 0,
+      "note": "Monti led the 'With Monti for Italy' coalition in the February 2013 election. Other presidents and secretaries (Andrea Riccardi, Alberto Bombassei, Stefania Giannini, Enrico Zanetti and others) are omitted.",
+      "source": [
+        { "url": "https://www.wikidata.org/wiki/Q2792033", "title": "Wikidata: Civic Choice (founded, dissolved, chairpersons)", "accessed": "2026-10-15" },
+        { "url": "https://en.wikipedia.org/wiki/2013_Italian_general_election", "title": "Wikipedia: 2013 Italian general election", "accessed": "2026-10-15" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "ita.leu",
+      "name": { "en": "Free and Equal", "native": "Liberi e Uguali" },
+      "abbrev": { "en": "LeU", "native": "LeU" },
+      "color": "#C21B17",
+      "sub_ideology": "democratic_socialist",
+      "founded": "2017-12-03",
+      "dissolved": "2022-10-12",
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        { "person": "ita.pietro_grasso", "from": "2017-12-03", "to": 2022 }
+      ],
+      "popularity_2000": 0,
+      "note": "Left-wing list formed for the 2018 election by Article One, Italian Left and Possible, led by Pietro Grasso.",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/Free_and_Equal_(Italy)", "title": "Wikipedia: Free and Equal (Italy)", "accessed": "2026-10-15" },
+        { "url": "https://www.wikidata.org/wiki/Q44929224", "title": "Wikidata: Free and Equal (founded, dissolved)", "accessed": "2026-10-15" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "ita.more_europe",
+      "name": { "en": "More Europe", "native": "Più Europa" },
+      "abbrev": { "en": "+E", "native": "+E" },
+      "color": "#FFD100",
+      "sub_ideology": "social_liberal",
+      "founded": "2017-11-23",
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        { "person": "ita.benedetto_della_vedova", "from": 2019, "to": 2023, "title": "Secretary" },
+        { "person": "ita.riccardo_magi", "from": 2023, "title": "Secretary" }
+      ],
+      "popularity_2000": 0,
+      "note": "No secretary is listed before 2019; Della Vedova resigned in March 2021 and was re-elected in July 2021.",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/More_Europe", "title": "Wikipedia: More Europe (secretaries)", "accessed": "2026-10-15" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "ita.iv",
+      "name": { "en": "Italia Viva", "native": "Italia Viva" },
+      "abbrev": { "en": "IV", "native": "IV" },
+      "color": "#D6007E",
+      "sub_ideology": "centrist_liberal",
+      "founded": "2019-09-18",
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        { "person": "ita.matteo_renzi", "from": "2019-09-18", "title": "President" }
+      ],
+      "popularity_2000": 0,
+      "lineage": { "split_from": "ita.pd" },
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/Italia_Viva", "title": "Wikipedia: Italia Viva", "accessed": "2026-10-15" },
+        { "url": "https://www.wikidata.org/wiki/Q67785862", "title": "Wikidata: Italia Viva (founded, chair)", "accessed": "2026-10-15" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "ita.azione",
+      "name": { "en": "Action", "native": "Azione" },
+      "abbrev": { "en": "A", "native": "Azione" },
+      "color": "#0039A6",
+      "sub_ideology": "centrist_liberal",
+      "founded": "2019-11-21",
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        { "person": "ita.carlo_calenda", "from": "2019-11-21", "title": "Secretary" }
+      ],
+      "popularity_2000": 0,
+      "lineage": { "split_from": "ita.pd" },
+      "note": "Ran with Italia Viva as the joint 'Action – Italia Viva' list in 2022.",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/Action_(Italian_political_party)", "title": "Wikipedia: Action (Italian political party)", "accessed": "2026-10-15" },
+        { "url": "https://www.wikidata.org/wiki/Q63926676", "title": "Wikidata: Action (founded)", "accessed": "2026-10-15" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "ita.nm",
+      "name": { "en": "Us Moderates", "native": "Noi Moderati" },
+      "abbrev": { "en": "NM", "native": "NM" },
+      "color": "#0D47A1",
+      "sub_ideology": "christian_democrat",
+      "founded": "2022-08-11",
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        { "person": "ita.maurizio_lupi", "from": 2022, "title": "President" }
+      ],
+      "popularity_2000": 0,
+      "note": "Founded on 11 August 2022 as an electoral list of the centre-right coalition; became a party on 21 May 2023.",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/Us_Moderates", "title": "Wikipedia: Us Moderates", "accessed": "2026-10-15" }
+      ],
+      "confidence": "verified"
+    }
+  ]
+}

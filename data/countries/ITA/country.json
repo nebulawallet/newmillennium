@@ -1,0 +1,172 @@
+{
+  "tag": "ITA",
+  "name": { "en": "Italy", "native": "Italia", "official": { "en": "Italian Republic", "native": "Repubblica Italiana" } },
+  "adjective": "Italian",
+  "culture_primary": "italian",
+  "government": {
+    "type": "parliamentary",
+    "effective_executive": "ita.prime_minister",
+    "head_of_state_office": "ita.president",
+    "head_of_government_office": "ita.prime_minister",
+    "constitution": {
+      "term_limit_amendable": true,
+      "emergency_powers": true,
+      "referendum_required_for": ["constitutional laws passed without a two-thirds majority in each chamber, on request of 500,000 voters, five regional councils or one-fifth of a chamber", "abrogative referendums on ordinary laws, on request of 500,000 voters or five regional councils (valid only with a turnout above 50%)"]
+    },
+    "note": "Parliamentary republic with symmetric bicameralism: the government must hold the confidence of both the Chamber of Deputies and the Senate. The President of the Republic is elected for seven years by Parliament in joint session plus 58 regional delegates, appoints the Prime Minister, and can dissolve Parliament; when the President is unable to act, the President of the Senate acts (Art. 86)."
+  },
+  "offices": [
+    {
+      "id": "ita.president",
+      "title": { "en": "President of the Italian Republic", "native": "Presidente della Repubblica Italiana" },
+      "role": "head_of_state",
+      "power_weight": 0.15,
+      "selection": "electoral_college",
+      "term_years": 7,
+      "succession": { "type": "acting_then_election" },
+      "holders": [
+        { "person": "ita.carlo_azeglio_ciampi", "from": "1999-05-18", "to": "2006-05-15" },
+        { "person": "ita.giorgio_napolitano", "from": "2006-05-15", "to": "2015-01-14", "note": "Re-elected in April 2013, the first President to serve a second term; resigned on 14 January 2015." },
+        { "person": "ita.pietro_grasso", "from": "2015-01-14", "to": "2015-02-03", "acting": true, "note": "Exercised the President's powers as President of the Senate (Art. 86)." },
+        { "person": "ita.sergio_mattarella", "from": "2015-02-03", "note": "Elected 31 January 2015; re-elected 29 January 2022." }
+      ],
+      "source": [
+        { "url": "https://www.wikidata.org/wiki/Q332711", "title": "Wikidata: President of Italy (position held by)", "accessed": "2026-10-15" },
+        { "url": "https://en.wikipedia.org/wiki/List_of_presidents_of_Italy", "title": "Wikipedia: List of presidents of Italy (incl. acting presidents)", "accessed": "2026-10-15" },
+        { "url": "https://en.wikipedia.org/wiki/President_of_Italy", "title": "Wikipedia: President of Italy", "accessed": "2026-10-15" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "ita.prime_minister",
+      "title": { "en": "President of the Council of Ministers (Prime Minister)", "native": "Presidente del Consiglio dei ministri" },
+      "role": "head_of_government",
+      "power_weight": 0.85,
+      "selection": "legislature",
+      "appointed_by": "ita.president",
+      "term_years": 5,
+      "holders": [
+        { "person": "ita.massimo_dalema", "from": "1998-10-21", "to": "2000-04-26", "note": "Led two cabinets (D'Alema I and II, the second from December 1999). Wikidata ends his tenure on 25 April 2000; the Wikipedia list gives 26 April." },
+        { "person": "ita.giuliano_amato", "from": "2000-04-26", "to": "2001-06-11" },
+        { "person": "ita.silvio_berlusconi", "from": "2001-06-11", "to": "2006-05-17", "note": "Led two cabinets (Berlusconi II and III, the third from April 2005)." },
+        { "person": "ita.romano_prodi", "from": "2006-05-17", "to": "2008-05-08" },
+        { "person": "ita.silvio_berlusconi", "from": "2008-05-08", "to": "2011-11-16" },
+        { "person": "ita.mario_monti", "from": "2011-11-16", "to": "2013-04-28" },
+        { "person": "ita.enrico_letta", "from": "2013-04-28", "to": "2014-02-22", "note": "Wikidata ends his tenure on 21 February 2014; the Wikipedia list gives 22 February." },
+        { "person": "ita.matteo_renzi", "from": "2014-02-22", "to": "2016-12-12" },
+        { "person": "ita.paolo_gentiloni", "from": "2016-12-12", "to": "2018-06-01" },
+        { "person": "ita.giuseppe_conte", "from": "2018-06-01", "to": "2021-02-13", "note": "Led two cabinets (Conte I and II, the second from September 2019)." },
+        { "person": "ita.mario_draghi", "from": "2021-02-13", "to": "2022-10-22" },
+        { "person": "ita.giorgia_meloni", "from": "2022-10-22", "note": "Still in office on the data date; her Wikipedia article (updated September 2026) describes her government as the longest-serving in the history of the Republic." }
+      ],
+      "source": [
+        { "url": "https://www.wikidata.org/wiki/Q796897", "title": "Wikidata: Prime Minister of Italy (position held by)", "accessed": "2026-10-15" },
+        { "url": "https://en.wikipedia.org/wiki/List_of_prime_ministers_of_Italy", "title": "Wikipedia: List of prime ministers of Italy", "accessed": "2026-10-15" },
+        { "url": "https://en.wikipedia.org/wiki/Giorgia_Meloni", "title": "Wikipedia: Giorgia Meloni (current status)", "accessed": "2026-10-15" }
+      ],
+      "confidence": "verified"
+    }
+  ],
+  "legislature": {
+    "name": { "en": "Italian Parliament", "native": "Parlamento italiano" },
+    "chambers": [
+      {
+        "id": "camera",
+        "name": { "en": "Chamber of Deputies", "native": "Camera dei deputati" },
+        "seats": 630,
+        "term_years": 5,
+        "elected": "direct",
+        "system": {
+          "type": "parallel",
+          "threshold": 0.04,
+          "district_model": "custom",
+          "pr_share": 0.25,
+          "note": "In 2000 the 1993 Mattarella law (Mattarellum) applied: 75% of seats by first-past-the-post, 25% by proportional representation with a 4% threshold and the scorporo compensation mechanism (used 1994, 1996, 2001). The 2005 law (Porcellum) introduced closed-list PR with a majority bonus of at least 340 seats for the winning coalition (used 2006, 2008, 2013). The 2017 law (Rosatellum) is a mixed system with a 3% list threshold (used 2018, 2022). The 2020 constitutional referendum cut the Chamber from 630 to 400 seats from the 2022 election (147 FPTP, 245 PR, 8 abroad). seats_2000 is the 1996 election result."
+        },
+        "seats_2000": {
+          "ita.ds": 172,
+          "ita.ppi": 69,
+          "ita.ri": 26,
+          "ita.greens": 14,
+          "ita.fi": 123,
+          "ita.an": 93,
+          "ita.ccd": 19,
+          "ita.cdu": 11,
+          "ita.lega": 59,
+          "ita.prc": 35,
+          "ita.svp": 3,
+          "others": 6
+        },
+        "confidence_chamber": true,
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/1996_Italian_general_election", "title": "Wikipedia: 1996 Italian general election (Chamber results by list, with component parties)", "accessed": "2026-10-15" }
+        ],
+        "confidence": "needs_review",
+        "review_note": "seats_2000 is the April 1996 election result, mapped to the parties existing in 2000 (PDS -> DS; the Populars for Prodi list -> PPI, incl. 5 UD and 2 PRI deputies; CCD-CDU split 19/11 as given in the source). The real group composition on 1 January 2000 differed substantially after mid-term splits (PdCI from PRC in 1998, UDEUR, The Democrats, SDI). Check the parliamentary group composition of the XIII legislature on that date. 'others' = The Network 3, Ladin Autonomist Union 1, Southern Action League 1, Aosta Valley 1."
+      },
+      {
+        "id": "senato",
+        "name": { "en": "Senate of the Republic", "native": "Senato della Repubblica" },
+        "seats": 324,
+        "term_years": 5,
+        "elected": "mixed",
+        "system": {
+          "type": "parallel",
+          "district_model": "admin1",
+          "pr_share": 0.25,
+          "note": "315 elected senators plus senators for life (former Presidents ex officio and presidential appointees). Under the 1993 law, 75% of seats were elected in single-member constituencies and 25% by a regional proportional method among losing candidates; from 2006 regional closed-list PR with regional majority bonuses (Porcellum); from 2018 the mixed Rosatellum. The 2020 constitutional referendum cut the elected Senate from 315 to 200 from the 2022 election (74 FPTP, 122 PR, 4 abroad). seats_2000 is the 1996 result plus 9 senators for life."
+        },
+        "seats_2000": {
+          "ita.ds": 102,
+          "ita.ppi": 27,
+          "ita.greens": 14,
+          "ita.ri": 11,
+          "ita.fi": 48,
+          "ita.an": 43,
+          "ita.ccd": 15,
+          "ita.cdu": 10,
+          "ita.lega": 27,
+          "ita.prc": 10,
+          "ita.ms_ft": 1,
+          "ita.svp": 2,
+          "others": 5,
+          "appointed": 9
+        },
+        "confidence_chamber": true,
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/1996_Italian_general_election", "title": "Wikipedia: 1996 Italian general election (Senate results by party)", "accessed": "2026-10-15" },
+          { "url": "https://en.wikipedia.org/wiki/Senators_for_life_in_Italy", "title": "Wikipedia: Senators for life in Italy (tenure dates)", "accessed": "2026-10-15" }
+        ],
+        "confidence": "needs_review",
+        "review_note": "The 315 elected seats are the April 1996 result mapped to 2000 parties (PDS -> DS; Progressives -> PRC; SVP-PATT -> SVP); mid-term splits before 1 January 2000 are not reflected. 'appointed' = 9 senators for life on that date (former Presidents Leone, Cossiga and Scalfaro; appointed senators Bo, Bobbio, Agnelli, Andreotti, De Martino and Taviani). 'others' = The Network, Venetian Autonomy League, Sardinian Action Party, Pannella-Sgarbi List and Aosta Valley, 1 each. Check the group composition on 1 January 2000."
+      }
+    ]
+  },
+  "party_system": "multi_party",
+  "start_2000": {
+    "ruling_parties": ["ita.ds", "ita.ppi", "ita.democrats", "ita.udeur", "ita.pdci", "ita.ri", "ita.greens"],
+    "ideology_support": {
+      "social_democrat": 0.215,
+      "liberal_conservative": 0.206,
+      "national_conservative": 0.157,
+      "christian_democrat": 0.127,
+      "regionalist": 0.107,
+      "reformed_communist": 0.086,
+      "centrist_liberal": 0.043,
+      "green": 0.025,
+      "libertarian": 0.019,
+      "ethno_nationalist": 0.009,
+      "big_tent": 0.006
+    },
+    "ideology_support_note": "Derived from the 1996 Chamber proportional-list shares: PDS 21.06% plus Socialist Party 0.40% (social democrat); Forza Italia 20.57% (liberal conservative); National Alliance 15.66% (national conservative); Populars for Prodi 6.81% plus CCD-CDU 5.84% (Christian democrat); Northern League 10.07% plus Southern Action League 0.19% and small regional lists (regionalist); Communist Refoundation 8.57% (reformed communist); Italian Renewal 4.34% (centrist liberal); Greens 2.50%; Pannella-Sgarbi List 1.88% (libertarian); Tricolour Flame 0.91% (ethno-nationalist); remaining small lists as big tent.",
+    "stability": 0.55,
+    "war_support": 0.2
+  },
+  "claims": [],
+  "source": [
+    { "url": "https://en.wikipedia.org/wiki/President_of_Italy", "title": "Wikipedia: President of Italy (Art. 86, election by Parliament and regional delegates)", "accessed": "2026-10-15" },
+    { "url": "https://en.wikipedia.org/wiki/Referendums_in_Italy", "title": "Wikipedia: Referendums in Italy", "accessed": "2026-10-15" },
+    { "url": "https://en.wikipedia.org/wiki/1996_Italian_general_election", "title": "Wikipedia: 1996 Italian general election", "accessed": "2026-10-15" }
+  ],
+  "confidence": "verified"
+}

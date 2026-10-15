@@ -48,11 +48,11 @@ Live sources sometimes report allegations or investigations involving real peopl
 
 <!-- AUTO-GENERATED BELOW: run `npm run review-report`; edits below this line are overwritten -->
 
-## Needs review: 176 of 2393 records
+## Needs review: 181 of 2444 records
 
-Countries with politics data: 26 / 212.
+Countries with politics data: 27 / 212.
 
-Countries with no data yet (186): ALB, AUT, BIH, BGR, HRV, CYP, FIN, GRC, ISL, IRL, LIE, LUX, MLT, MKD, ROU, SMR, SVK, SVN, CHE, YUG, MNE, KOS, VAT, NCY, UKR, BLR, MDA, EST, LVA, LTU, GEO, ARM, AZE, KAZ, KGZ, TJK, TKM, UZB, PMR, ABK, SOS, NKR, ICH, CAN, ATG, ARG, BHS, BRB, BLZ, BOL, BRA, CHL, COL, CRI, CUB, DMA, DOM, ECU, SLV, GRD, GTM, GUY, HTI, HND, JAM, MEX, NIC, PAN, PRY, PER, KNA, LCA, VCT, SUR, TTO, URY, VEN, FAR, DZA, BHR, EGY, IRQ, JOR, KWT, LBN, LBY, MRT, MAR, OMN, QAT, SAU, SYR, TUN, ARE, YEM, ESH, KUR, AGO, BEN, BWA, BFA, BDI, CPV, CMR, CAF, TCD, COM, COD, COG, CIV, DJI, GNQ, ERI, SWZ, ETH, GAB, GMB, GHA, GIN, GNB, KEN, LSO, LBR, MDG, MWI, MLI, MUS, MOZ, NAM, NER, NGA, RWA, STP, SEN, SYC, SLE, ZAF, SDN, TZA, TGO, UGA, ZMB, ZWE, SSD, SML, UNI, RCD, MLC, AFG, AFN, BGD, BTN, IND, MDV, NPL, PAK, LKA, TEL, PRK, MNG, TWN, BRN, KHM, IDN, LAO, MYS, MMR, PHL, SGP, THA, VNM, TLS, AUS, NZL, FJI, PNG, SLB, VUT, WSM, TON, KIR, TUV, NRU, FSM, MHL, PLW
+Countries with no data yet (185): ALB, AUT, BIH, BGR, HRV, CYP, FIN, GRC, ISL, IRL, LIE, LUX, MLT, MKD, ROU, SMR, SVK, SVN, CHE, YUG, MNE, KOS, VAT, NCY, UKR, BLR, MDA, EST, LVA, LTU, GEO, ARM, AZE, KAZ, KGZ, TJK, TKM, UZB, PMR, ABK, SOS, NKR, ICH, CAN, ATG, ARG, BHS, BRB, BLZ, BOL, BRA, CHL, COL, CRI, CUB, DMA, DOM, ECU, SLV, GRD, GTM, GUY, HTI, HND, JAM, MEX, NIC, PAN, PRY, PER, KNA, LCA, VCT, SUR, TTO, URY, VEN, FAR, DZA, BHR, EGY, IRQ, JOR, KWT, LBN, LBY, MRT, MAR, OMN, QAT, SAU, SYR, TUN, ARE, YEM, ESH, KUR, AGO, BEN, BWA, BFA, BDI, CPV, CMR, CAF, TCD, COM, COD, COG, CIV, DJI, GNQ, ERI, SWZ, ETH, GAB, GMB, GHA, GIN, GNB, KEN, LSO, LBR, MDG, MWI, MLI, MUS, MOZ, NAM, NER, NGA, RWA, STP, SEN, SYC, SLE, ZAF, SDN, TZA, TGO, UGA, ZMB, ZWE, SSD, SML, UNI, RCD, MLC, AFG, AFN, BGD, BTN, IND, MDV, NPL, PAK, LKA, TEL, PRK, MNG, BRN, KHM, IDN, LAO, MYS, MMR, PHL, SGP, THA, VNM, TLS, AUS, NZL, FJI, PNG, SLB, VUT, WSM, TON, KIR, TUV, NRU, FSM, MHL, PLW
 
 ### AND — Andorra (12)
 
@@ -347,6 +347,16 @@ Countries with no data yet (186): ALB, AUT, BIH, BGR, HRV, CYP, FIN, GRC, ISL, I
 | party | `tur.hadep` People's Democracy Party (HADEP) | Chair on 1 January 2000 is unclear: the infobox lists Ahmet Turan Demir 1999-2000 and Murat Bozlak again 2000-2003, while the text says Demir served September 1998 to November 1999. Bozlak's return is entered with the year 2000 only; Demir has no person record. | data/countries/TUR/parties.json |
 | party | `tur.saadet` Felicity Party (SAADET) | Leaders before 2016 are missing: Recai Kutan (from 2001), Numan Kurtulmus, Necmettin Erbakan (from 2010-10-18 per Wikidata) and Mustafa Kamalak (2011-2016, years only). Add them with dates from a leader list. | data/countries/TUR/parties.json |
 | party | `tur.hdp` Peoples' Democratic Party (HDP) | Co-chairs omitted for lack of person records: Yavuz Onen and Fatma Gok (2012-2013), Sebahat Tuncel and Ertugrul Kurkcu (2013-2014), Serpil Kemalbay (2017-2018), Sultan Ozcan and Cahit Kirkazak (from 2023-08-27). Wikidata also splits Demirtas's tenure (to 2017-03-09, again from 2017-05-20). | data/countries/TUR/parties.json |
+
+### TWN — Taiwan (5)
+
+| kind | record | what to check | file |
+|---|---|---|---|
+| chamber | `legislative_yuan` Legislative Yuan | seats_2000 is the December 1998 election result (others: Democratic Union of Taiwan 4, Democratic Non-Partisan Alliance 3, New Nation Alliance 1, Taiwan Independence Party 1), not the composition on 1 January 2000. Check the split of district and list seats in 1998 and the list-seat threshold then in force. | data/countries/TWN/country.json |
+| party | `twn.np` New Party (NP) | Leader history is empty; add the party's conveners/chairmen since 2000 with dates. | data/countries/TWN/parties.json |
+| party | `twn.tsu` Taiwan Solidarity Union (TSU) | Leader history only names Lee Teng-hui (undated Wikidata chair). Add the party's formal chairmen with dates. | data/countries/TWN/parties.json |
+| party | `twn.npsu` Non-Partisan Solidarity Union (NPSU) | Chang Po-ya is listed as leader from the founding date; confirm her leadership dates. | data/countries/TWN/parties.json |
+| party | `twn.npp` New Power Party (NPP) | Huang Kuo-chang's chairmanship dates are missing, as are the chairs between him and Claire Wang. | data/countries/TWN/parties.json |
 
 ### USA — United States (2)
 

@@ -1,0 +1,15 @@
+{
+  "note": "Influence and approval are gameplay starting values for 1 January 2000 (centre-left D'Alema government), not measured data. Influence reflects institutional weight: large union confederations, organised employers, an influential Catholic Church, and a civilian-controlled military.",
+  "interest_groups": [
+    { "type": "military", "influence": 0.12, "approval": 50 },
+    { "type": "security_services", "influence": 0.12, "approval": 50 },
+    { "type": "business", "influence": 0.45, "approval": 45, "note": "Employers' associations and large industrial groups under a centre-left government." },
+    { "type": "labour_unions", "influence": 0.45, "approval": 58, "note": "Large union confederations; the main left-wing confederation is close to the governing centre-left." },
+    { "type": "religious_establishment", "influence": 0.35, "approval": 48, "note": "The Catholic Church and lay Catholic associations." },
+    { "type": "rural", "influence": 0.12, "approval": 45 },
+    { "type": "urban_middle_class", "influence": 0.45, "approval": 50 },
+    { "type": "minorities", "influence": 0.06, "approval": 55, "note": "Includes the German-speaking South Tyroleans and other recognised linguistic minorities." },
+    { "type": "youth_students", "influence": 0.15, "approval": 50 },
+    { "type": "media", "influence": 0.45, "approval": 50 }
+  ]
+}

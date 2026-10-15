@@ -1,0 +1,109 @@
+{
+  "tag": "MCO",
+  "name": { "en": "Monaco", "native": "Monaco", "official": { "en": "Principality of Monaco", "native": "Principauté de Monaco" } },
+  "adjective": "Monegasque",
+  "culture_primary": "monegasque",
+  "government": {
+    "type": "constitutional_monarchy",
+    "effective_executive": "mco.prince",
+    "head_of_state_office": "mco.prince",
+    "head_of_government_office": "mco.minister_of_state",
+    "constitution": {
+      "term_limit_amendable": false,
+      "emergency_powers": false,
+      "referendum_required_for": []
+    },
+    "note": "Hereditary principality under the 1962 Constitution, described as a semi-constitutional monarchy: the Sovereign Prince holds substantial power, shares veto power with the National Council and appoints the judiciary. The Prince appoints the Minister of State, who heads the Council of Government; until a 2002 constitutional amendment the Minister had to be a French citizen proposed by France, and the Prince still consults the French Government. All legislation requires the approval of the unicameral National Council, which cannot dismiss the government."
+  },
+  "offices": [
+    {
+      "id": "mco.prince",
+      "title": { "en": "Sovereign Prince of Monaco", "native": "Prince souverain de Monaco" },
+      "role": "head_of_state",
+      "power_weight": 0.6,
+      "selection": "hereditary",
+      "succession": {
+        "type": "line",
+        "heirs": ["mco.albert_ii", "mco.caroline_princess_of_hanover"]
+      },
+      "holders": [
+        { "person": "mco.rainier_iii", "from": "1949-05-09", "to": "2005-04-06", "note": "Died in office on 6 April 2005." },
+        { "person": "mco.albert_ii", "from": "2005-03-31", "to": "2005-04-06", "acting": true, "note": "Regent from 31 March 2005, when the Prince's Palace announced he would take over his father's duties." },
+        { "person": "mco.albert_ii", "from": "2005-04-06", "note": "Succeeded on his father's death; investiture on 12 July 2005 and enthronement on 19 November 2005." }
+      ],
+      "source": [
+        { "url": "https://www.wikidata.org/wiki/Q2457774", "title": "Wikidata: Prince of Monaco (position held, via Rainier III Q185025 and Albert II Q3910)", "accessed": "2026-10-15" },
+        { "url": "https://en.wikipedia.org/wiki/Albert_II,_Prince_of_Monaco", "title": "Wikipedia: Albert II, Prince of Monaco (regency, succession, heir presumptive)", "accessed": "2026-10-15" }
+      ],
+      "confidence": "verified",
+      "note": "Heirs are as on 1 January 2000: Hereditary Prince Albert, then his elder sister Caroline as heir presumptive after him. Albert's children (born after 2000) later displaced Caroline in the line."
+    },
+    {
+      "id": "mco.minister_of_state",
+      "title": { "en": "Minister of State", "native": "Ministre d'État" },
+      "role": "head_of_government",
+      "power_weight": 0.4,
+      "selection": "appointed",
+      "appointed_by": "mco.prince",
+      "holders": [
+        { "person": "mco.michel_leveque", "from": "1997-02-03", "to": "2000-01-05" },
+        { "person": "mco.patrick_leclercq", "from": "2000-01-05", "to": "2005-06-01", "note": "English and French Wikipedia give 5 January 2000 as the start; Wikidata gives 29 March 2000." },
+        { "person": "mco.jean_paul_proust", "from": "2005-06-01", "to": "2010-03-29", "note": "French Wikipedia and Wikidata give 1 June 2005 for the handover; English Wikipedia gives 1 May 2005." },
+        { "person": "mco.michel_roger", "from": "2010-03-29", "to": "2015-12-16" },
+        { "person": "mco.gilles_tonelli", "from": "2015-12-16", "to": "2016-02-01", "acting": true },
+        { "person": "mco.serge_telle", "from": "2016-02-01", "to": "2020-08-31" },
+        { "person": "mco.pierre_dartout", "from": "2020-09-01", "to": "2024-09-02", "note": "Sources differ by a day on both ends (start 31 August or 1 September 2020; end 1 or 2 September 2024)." },
+        { "person": "mco.didier_guillaume", "from": "2024-09-02", "to": "2025-01-17", "note": "Died in office on 17 January 2025; on leave from 10 January 2025." },
+        { "person": "mco.isabelle_berro_amadei", "from": "2025-01-17", "to": "2025-07-21", "acting": true, "note": "Acting Minister of State. English Wikipedia dates her acting tenure from 10 January 2025, when Guillaume went on leave; French Wikipedia from 17 January 2025. Philippe Mettoux was named on 4 June 2025 but renounced the post on 27 June before taking office." },
+        { "person": "mco.christophe_mirmand", "from": "2025-07-21", "note": "Still in office on the data date according to his Wikipedia article." }
+      ],
+      "source": [
+        { "url": "https://www.wikidata.org/wiki/Q1655971", "title": "Wikidata: Minister of State of Monaco (position held by)", "accessed": "2026-10-15" },
+        { "url": "https://en.wikipedia.org/wiki/Minister_of_State_(Monaco)", "title": "Wikipedia: Minister of State (Monaco) (list incl. acting holders)", "accessed": "2026-10-15" },
+        { "url": "https://fr.wikipedia.org/wiki/Ministre_d%27%C3%89tat_(Monaco)", "title": "Wikipedia (fr): Ministre d'État (Monaco)", "accessed": "2026-10-15" }
+      ],
+      "confidence": "verified"
+    }
+  ],
+  "legislature": {
+    "name": { "en": "National Council", "native": "Conseil national" },
+    "chambers": [
+      {
+        "id": "conseil_national",
+        "name": { "en": "National Council", "native": "Conseil national" },
+        "seats": 18,
+        "term_years": 5,
+        "elected": "direct",
+        "system": {
+          "type": "mixed_other",
+          "district_model": "national",
+          "note": "In 1998 the 18 seats were elected by a two-round majority system with panachage in a single national constituency (a majority of valid votes needed in the first round). From the 2003 election the Council has 24 seats: 16 by plurality block voting and 8 by list proportional representation among lists above 5%. seats_2000 is the February 1998 result."
+        },
+        "seats_2000": { "mco.und": 18 },
+        "confidence_chamber": false,
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/1998_Monegasque_general_election", "title": "Wikipedia: 1998 Monegasque general election", "accessed": "2026-10-15" },
+          { "url": "https://en.wikipedia.org/wiki/National_Council_(Monaco)", "title": "Wikipedia: National Council (Monaco)", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      }
+    ]
+  },
+  "party_system": "multi_party",
+  "start_2000": {
+    "ruling_parties": [],
+    "ideology_support": {
+      "traditional_conservative": 0.674,
+      "constitutional_monarchist": 0.326
+    },
+    "ideology_support_note": "Derived from the February 1998 National Council first-round vote shares (candidate votes under panachage): National and Democratic Union 67.40% (conservative, monarchist; traditional conservative), National Union for the Future of Monaco 23.38% (centrist, monarchist) and Rally for the Monegasque Family 9.21% (both mapped to constitutional monarchist). All Monegasque parties support the monarchy.",
+    "stability": 0.9,
+    "war_support": 0.05
+  },
+  "claims": [],
+  "source": [
+    { "url": "https://en.wikipedia.org/wiki/Monaco", "title": "Wikipedia: Monaco (government, Minister of State appointment, National Council)", "accessed": "2026-10-15" },
+    { "url": "https://en.wikipedia.org/wiki/1998_Monegasque_general_election", "title": "Wikipedia: 1998 Monegasque general election", "accessed": "2026-10-15" }
+  ],
+  "confidence": "verified"
+}

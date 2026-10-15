@@ -1,0 +1,15 @@
+{
+  "note": "Influence and approval are gameplay starting values for 1 January 2000, not measured data. In a small principality with substantial princely power, business (finance, tourism, property) and the Catholic Church carry weight, while Monegasque nationals are a minority of residents.",
+  "interest_groups": [
+    { "type": "military", "influence": 0.03, "approval": 60, "note": "Only the small Compagnie des Carabiniers du Prince; France provides wider defence." },
+    { "type": "security_services", "influence": 0.1, "approval": 60 },
+    { "type": "business", "influence": 0.6, "approval": 65 },
+    { "type": "labour_unions", "influence": 0.12, "approval": 50 },
+    { "type": "religious_establishment", "influence": 0.25, "approval": 60, "note": "Catholicism is the official religion." },
+    { "type": "rural", "influence": 0.01, "approval": 50 },
+    { "type": "urban_middle_class", "influence": 0.4, "approval": 60 },
+    { "type": "minorities", "influence": 0.1, "approval": 55, "note": "Foreign residents, who outnumber Monegasque nationals." },
+    { "type": "youth_students", "influence": 0.05, "approval": 55 },
+    { "type": "media", "influence": 0.15, "approval": 55 }
+  ]
+}

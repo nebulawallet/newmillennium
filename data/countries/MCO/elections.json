@@ -1,0 +1,133 @@
+{
+  "rules": [
+    {
+      "kind": "legislative",
+      "chamber": "conseil_national",
+      "every_years": 5,
+      "anchor": "2023-02-05",
+      "snap_possible": false,
+      "note": "Five-year term; 24 seats since 2003 (16 by plurality block vote, 8 by list PR among lists above 5%). No early elections occurred in 2000-2026."
+    }
+  ],
+  "elections": [
+    {
+      "id": "conseil_national_2003",
+      "date": "2003-02-09",
+      "kind": "legislative",
+      "chamber": "conseil_national",
+      "historical": {
+        "candidates": [
+          { "person": "mco.stephane_valeri", "party": "mco.um", "round": 1 },
+          { "person": "mco.jean_louis_campora", "party": "mco.und", "round": 1 }
+        ],
+        "party_results": [
+          { "party": "mco.um", "share": 0.5845, "seats": 21 },
+          { "party": "mco.und", "share": 0.4155, "seats": 3 }
+        ],
+        "winner": "mco.um",
+        "turnout": 0.7973,
+        "note": "First election with 24 seats. Shares are of candidate votes (panachage). The Union for Monaco alliance's 21 seats were split among the Union for the Principality (12), UNAM (4), Promotion of the Monegasque Family (3) and Rally for Monaco (2). The source table gives 60,339 votes for Union for Monaco, the candidate breakdown 60,399.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2003_Monegasque_general_election", "title": "Wikipedia: 2003 Monegasque general election", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "conseil_national_2008",
+      "date": "2008-02-03",
+      "kind": "legislative",
+      "chamber": "conseil_national",
+      "historical": {
+        "candidates": [
+          { "person": "mco.stephane_valeri", "party": "mco.um", "round": 1 }
+        ],
+        "party_results": [
+          { "party": "mco.um", "share": 0.522, "seats": 21 },
+          { "party": "mco.und", "share": 0.4049, "seats": 3 }
+        ],
+        "winner": "mco.um",
+        "turnout": 0.7685,
+        "note": "The UND ran as Rally & Issues. Monaco Together (7.31%, no seats) is omitted. Shares are of candidate votes.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2008_Monegasque_general_election", "title": "Wikipedia: 2008 Monegasque general election", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "conseil_national_2013",
+      "date": "2013-02-10",
+      "kind": "legislative",
+      "chamber": "conseil_national",
+      "historical": {
+        "candidates": [
+          { "person": "mco.laurent_nouvion", "party": "mco.hm", "round": 1 },
+          { "person": "mco.jean_francois_robillon", "party": "mco.um", "round": 1 }
+        ],
+        "party_results": [
+          { "party": "mco.hm", "share": 0.5034, "seats": 20 },
+          { "party": "mco.um", "share": 0.3899, "seats": 3 },
+          { "party": "mco.renaissance", "share": 0.1067, "seats": 1 }
+        ],
+        "winner": "mco.hm",
+        "turnout": 0.7448,
+        "note": "Shares are of candidate votes.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2013_Monegasque_general_election", "title": "Wikipedia: 2013 Monegasque general election", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "conseil_national_2018",
+      "date": "2018-02-11",
+      "kind": "legislative",
+      "chamber": "conseil_national",
+      "historical": {
+        "candidates": [
+          { "person": "mco.stephane_valeri", "party": "mco.primo", "round": 1 },
+          { "person": "mco.jean_francois_robillon", "party": "mco.um", "round": 1 }
+        ],
+        "party_results": [
+          { "party": "mco.primo", "share": 0.5771, "seats": 21 },
+          { "party": "mco.hm", "share": 0.261, "seats": 2 },
+          { "party": "mco.um", "share": 0.1619, "seats": 1 }
+        ],
+        "winner": "mco.primo",
+        "turnout": 0.7024,
+        "note": "Horizon Monaco's list was led by Béatrice Fresko-Rolfo (not recorded as a person). Shares are of candidate votes.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2018_Monegasque_general_election", "title": "Wikipedia: 2018 Monegasque general election", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "conseil_national_2023",
+      "date": "2023-02-05",
+      "kind": "legislative",
+      "chamber": "conseil_national",
+      "historical": {
+        "candidates": [
+          { "person": "mco.brigitte_boccone_pages", "party": "mco.primo", "round": 1 }
+        ],
+        "party_results": [
+          { "party": "mco.primo", "share": 0.8963, "seats": 24 }
+        ],
+        "winner": "mco.primo",
+        "turnout": 0.5726,
+        "note": "The joint Monegasque National Union list (Priorité Monaco, Horizon Monaco and Union Monégasque; 13, 8 and 3 seats by component per the infobox) is recorded under Priorité Monaco, its leading party. New Ideas for Monaco (10.37%, no seats) is omitted.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2023_Monegasque_general_election", "title": "Wikipedia: 2023 Monegasque general election", "accessed": "2026-10-15" },
+          { "url": "https://en.wikipedia.org/wiki/National_Council_(Monaco)", "title": "Wikipedia: National Council (Monaco) (composition)", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      }
+    }
+  ],
+  "source": [
+    { "url": "https://en.wikipedia.org/wiki/Elections_in_Monaco", "title": "Wikipedia: Elections in Monaco", "accessed": "2026-10-15" }
+  ],
+  "confidence": "verified"
+}

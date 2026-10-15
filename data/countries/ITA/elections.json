@@ -1,0 +1,1440 @@
+{
+  "rules": [
+    {
+      "kind": "legislative",
+      "chamber": "camera",
+      "every_years": 5,
+      "anchor": "2022-09-25",
+      "snap_possible": true,
+      "note": "Five-year term; the President can dissolve Parliament early. Since 2022 the Chamber has 400 seats."
+    },
+    {
+      "kind": "legislative_upper",
+      "chamber": "senato",
+      "every_years": 5,
+      "anchor": "2022-09-25",
+      "snap_possible": true,
+      "note": "Elected on the same day as the Chamber; 200 elected senators since 2022, plus senators for life."
+    },
+    {
+      "kind": "indirect_presidential",
+      "office": "ita.president",
+      "every_years": 7,
+      "anchor": "2022-01-29",
+      "snap_possible": true,
+      "system": "legislature",
+      "note": "Parliament in joint session plus 58 regional delegates; two-thirds majority on the first three ballots, absolute majority from the fourth."
+    }
+  ],
+  "elections": [
+    {
+      "id": "referendum_2000",
+      "date": "2000-05-21",
+      "kind": "referendum",
+      "question": "Seven abrogative questions: reimbursement of election expenses; abolition of the proportional quota of the Chamber electoral law; election of the High Council of the Judiciary; separation of judges' and prosecutors' careers; judges holding outside posts; reinstatement rules for unfair dismissal in firms over 15 workers; automatic union dues.",
+      "historical": {
+        "winner": "no",
+        "turnout": 0.32,
+        "note": "Abrogative referendums are valid only with turnout above 50%. Turnout was about 32% on every question, so all seven were void and the laws stayed in force. Yes won six questions (61.8-82.0%); No won the dismissal question (66.6%).",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2000_Italian_referendum",
+            "title": "Wikipedia: 2000 Italian referendum",
+            "accessed": "2026-10-15"
+          },
+          {
+            "url": "https://en.wikipedia.org/wiki/Referendums_in_Italy",
+            "title": "Wikipedia: Referendums in Italy (results table)",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "camera_2001",
+      "date": "2001-05-13",
+      "kind": "legislative",
+      "chamber": "camera",
+      "historical": {
+        "candidates": [
+          {
+            "person": "ita.silvio_berlusconi",
+            "party": "ita.fi",
+            "round": 1
+          },
+          {
+            "person": "ita.francesco_rutelli",
+            "party": "ita.ppi",
+            "round": 1
+          }
+        ],
+        "party_results": [
+          {
+            "party": "ita.fi",
+            "share": 0.2943,
+            "seats": 194
+          },
+          {
+            "party": "ita.ds",
+            "share": 0.1657,
+            "seats": 136
+          },
+          {
+            "party": "ita.ppi",
+            "share": 0.1452,
+            "seats": 83
+          },
+          {
+            "party": "ita.an",
+            "share": 0.1202,
+            "seats": 99
+          },
+          {
+            "party": "ita.prc",
+            "share": 0.0503,
+            "seats": 11
+          },
+          {
+            "party": "ita.lega",
+            "share": 0.0394,
+            "seats": 30
+          },
+          {
+            "party": "ita.idv",
+            "share": 0.0389,
+            "seats": 0
+          },
+          {
+            "party": "ita.ccd",
+            "share": 0.0322,
+            "seats": 40
+          },
+          {
+            "party": "ita.greens",
+            "share": 0.0217,
+            "seats": 17
+          },
+          {
+            "party": "ita.pdci",
+            "share": 0.0167,
+            "seats": 10
+          },
+          {
+            "party": "ita.svp",
+            "share": 0.0054,
+            "seats": 3
+          }
+        ],
+        "winner": "ita.fi",
+        "turnout": 0.814,
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2001_Italian_general_election",
+            "title": "Wikipedia: 2001 Italian general election",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified",
+        "note": "Shares are proportional-list votes; seats include first-past-the-post seats won through the coalitions. The Daisy (DL) list of the PPI, The Democrats, Italian Renewal and UDEUR is recorded under the PPI, its largest component, because The Daisy became a party only in 2002; the White Flower (CCD-CDU) list under the CCD; the Sunflower (Greens-SDI) list under the Greens. The House of Freedoms coalition won 368 seats, the Olive Tree 250. Rutelli led the Olive Tree coalition."
+      }
+    },
+    {
+      "id": "senato_2001",
+      "date": "2001-05-13",
+      "kind": "legislative_upper",
+      "chamber": "senato",
+      "historical": {
+        "party_results": [
+          {
+            "party": "ita.fi",
+            "seats": 82
+          },
+          {
+            "party": "ita.an",
+            "seats": 45
+          },
+          {
+            "party": "ita.ccd",
+            "seats": 29
+          },
+          {
+            "party": "ita.lega",
+            "seats": 17
+          },
+          {
+            "party": "ita.ds",
+            "seats": 64
+          },
+          {
+            "party": "ita.ppi",
+            "seats": 43
+          },
+          {
+            "party": "ita.greens",
+            "seats": 8
+          },
+          {
+            "party": "ita.sdi",
+            "seats": 6
+          },
+          {
+            "party": "ita.pdci",
+            "seats": 2
+          },
+          {
+            "party": "ita.svp",
+            "seats": 3
+          },
+          {
+            "party": "ita.prc",
+            "share": 0.0504,
+            "seats": 4
+          },
+          {
+            "party": "ita.idv",
+            "share": 0.0337,
+            "seats": 1
+          },
+          {
+            "party": "others",
+            "seats": 11
+          }
+        ],
+        "winner": "ita.fi",
+        "turnout": 0.813,
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2001_Italian_general_election",
+            "title": "Wikipedia: 2001 Italian general election",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified",
+        "note": "Seats of the 315 elected senators. Coalition parties ran joint candidates, so only coalition-level shares exist (House of Freedoms 42.57%, Olive Tree 39.22%); party shares are given only for lists that ran alone. The Daisy (DL) is recorded under the PPI and the White Flower under the CCD. 'others' = independents in the Olive Tree group 4, European Democracy 2, PRI 1, New PSI 1, Tricolour Flame 1, League for Autonomy 1, Aosta Valley 1."
+      }
+    },
+    {
+      "id": "constitutional_referendum_2001",
+      "date": "2001-10-07",
+      "kind": "referendum",
+      "question": "Constitutional reform of Title V giving more powers to the regions.",
+      "historical": {
+        "yes_share": 0.6421,
+        "winner": "yes",
+        "turnout": 0.3405,
+        "note": "Approved: 10,438,419 Yes, 5,819,187 No. Constitutional referendums have no turnout quorum.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2001_Italian_constitutional_referendum",
+            "title": "Wikipedia: 2001 Italian constitutional referendum",
+            "accessed": "2026-10-15"
+          },
+          {
+            "url": "https://en.wikipedia.org/wiki/Referendums_in_Italy",
+            "title": "Wikipedia: Referendums in Italy (results table)",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "referendum_2003",
+      "date": "2003-06-15",
+      "kind": "referendum",
+      "question": "Two abrogative questions: reinstatement of unfairly dismissed workers in small firms; compulsory easements for electricity lines.",
+      "historical": {
+        "winner": "no",
+        "turnout": 0.2573,
+        "note": "Turnout about 25.7%, below the 50% quorum, so both questions were void (Yes 86.7% and 85.6%). English Wikipedia gives the date as 15 May 2003; Italian Wikipedia gives 15 June 2003, which is used here.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2003_Italian_referendum",
+            "title": "Wikipedia: 2003 Italian referendum",
+            "accessed": "2026-10-15"
+          },
+          {
+            "url": "https://it.wikipedia.org/wiki/Referendum_abrogativi_in_Italia_del_2003",
+            "title": "Wikipedia (it): Referendum abrogativi in Italia del 2003 (date)",
+            "accessed": "2026-10-15"
+          },
+          {
+            "url": "https://en.wikipedia.org/wiki/Referendums_in_Italy",
+            "title": "Wikipedia: Referendums in Italy (results table)",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "referendum_2005",
+      "date": "2005-06-12",
+      "kind": "referendum",
+      "question": "Four abrogative questions on the law on medically assisted reproduction (embryo research limits, access, legal definition of embryos, donor gametes).",
+      "historical": {
+        "winner": "no",
+        "turnout": 0.2566,
+        "note": "Turnout about 25.6%, below the 50% quorum; all four questions void (Yes 78.2-88.8%).",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2005_Italian_fertility_laws_referendum",
+            "title": "Wikipedia: 2005 Italian fertility laws referendum",
+            "accessed": "2026-10-15"
+          },
+          {
+            "url": "https://en.wikipedia.org/wiki/Referendums_in_Italy",
+            "title": "Wikipedia: Referendums in Italy (results table)",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "camera_2006",
+      "date": "2006-04-09",
+      "kind": "legislative",
+      "chamber": "camera",
+      "historical": {
+        "candidates": [
+          {
+            "person": "ita.romano_prodi",
+            "round": 1
+          },
+          {
+            "person": "ita.silvio_berlusconi",
+            "party": "ita.fi",
+            "round": 1
+          }
+        ],
+        "party_results": [
+          {
+            "party": "ita.ds",
+            "share": 0.3127,
+            "seats": 226
+          },
+          {
+            "party": "ita.fi",
+            "share": 0.2372,
+            "seats": 140
+          },
+          {
+            "party": "ita.an",
+            "share": 0.1234,
+            "seats": 72
+          },
+          {
+            "party": "ita.udc",
+            "share": 0.0676,
+            "seats": 39
+          },
+          {
+            "party": "ita.prc",
+            "share": 0.0584,
+            "seats": 41
+          },
+          {
+            "party": "ita.lega",
+            "share": 0.0458,
+            "seats": 26
+          },
+          {
+            "party": "ita.sdi",
+            "share": 0.026,
+            "seats": 18
+          },
+          {
+            "party": "ita.pdci",
+            "share": 0.0232,
+            "seats": 16
+          },
+          {
+            "party": "ita.idv",
+            "share": 0.023,
+            "seats": 17
+          },
+          {
+            "party": "ita.greens",
+            "share": 0.0206,
+            "seats": 15
+          },
+          {
+            "party": "ita.udeur",
+            "share": 0.014,
+            "seats": 10
+          },
+          {
+            "party": "ita.svp",
+            "share": 0.0048,
+            "seats": 4
+          }
+        ],
+        "winner": "ita.ds",
+        "turnout": 0.836,
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2006_Italian_general_election",
+            "title": "Wikipedia: 2006 Italian general election",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified",
+        "note": "Held on 9-10 April 2006 under the new closed-list PR law with a majority bonus; seats include the 12 abroad seats. The joint Olive Tree list (DS and The Daisy) is recorded under the DS, its larger component; Rose in the Fist (SDI and Radicals) under the SDI; Northern League-Movement for Autonomy under the Lega. Prodi's Union coalition won 348 seats, Berlusconi's House of Freedoms 281."
+      }
+    },
+    {
+      "id": "senato_2006",
+      "date": "2006-04-09",
+      "kind": "legislative_upper",
+      "chamber": "senato",
+      "historical": {
+        "party_results": [
+          {
+            "party": "ita.fi",
+            "share": 0.2401,
+            "seats": 80
+          },
+          {
+            "party": "ita.ds",
+            "share": 0.175,
+            "seats": 65
+          },
+          {
+            "party": "ita.margherita",
+            "share": 0.1073,
+            "seats": 43
+          },
+          {
+            "party": "ita.an",
+            "share": 0.124,
+            "seats": 41
+          },
+          {
+            "party": "ita.prc",
+            "share": 0.0737,
+            "seats": 27
+          },
+          {
+            "party": "ita.udc",
+            "share": 0.0676,
+            "seats": 21
+          },
+          {
+            "party": "ita.lega",
+            "share": 0.0448,
+            "seats": 14
+          },
+          {
+            "party": "ita.pdci",
+            "share": 0.0417,
+            "seats": 11
+          },
+          {
+            "party": "ita.idv",
+            "share": 0.0289,
+            "seats": 4
+          },
+          {
+            "party": "ita.udeur",
+            "share": 0.014,
+            "seats": 3
+          },
+          {
+            "party": "ita.svp",
+            "seats": 3
+          },
+          {
+            "party": "others",
+            "seats": 3
+          }
+        ],
+        "winner": "ita.fi",
+        "turnout": 0.835,
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2006_Italian_general_election",
+            "title": "Wikipedia: 2006 Italian general election",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified",
+        "note": "Seats of the 315 elected senators, including abroad seats. 'Together with the Union' (PdCI and Greens) is recorded under the PdCI; Northern League-MpA under the Lega; the DS seats include one Olive Tree seat. 'others' = Consumers' List 1, Autonomy Liberty Democracy 1, Italian Associations in South America 1. The Union won 158 seats, the House of Freedoms 156."
+      }
+    },
+    {
+      "id": "presidential_2006",
+      "date": "2006-05-10",
+      "kind": "indirect_presidential",
+      "office": "ita.president",
+      "rounds": 4,
+      "historical": {
+        "candidates": [
+          {
+            "person": "ita.giorgio_napolitano",
+            "party": "ita.ds",
+            "votes": 543,
+            "round": 4
+          },
+          {
+            "person": "ita.umberto_bossi",
+            "party": "ita.lega",
+            "votes": 42,
+            "round": 4
+          }
+        ],
+        "winner": "ita.giorgio_napolitano",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2006_Italian_presidential_election",
+            "title": "Wikipedia: 2006 Italian presidential election",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified",
+        "note": "Held 8-10 May 2006 by Parliament in joint session plus 58 regional delegates; elected on the fourth ballot (505 votes needed from the fourth ballot). The House of Freedoms cast blank votes."
+      }
+    },
+    {
+      "id": "constitutional_referendum_2006",
+      "date": "2006-06-25",
+      "kind": "referendum",
+      "question": "Constitutional reform of Part II (devolution to the regions and a stronger Prime Minister).",
+      "historical": {
+        "yes_share": 0.3871,
+        "winner": "no",
+        "turnout": 0.5246,
+        "note": "Held on 25-26 June 2006. Rejected: 9,970,513 Yes, 15,783,269 No.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2006_Italian_constitutional_referendum",
+            "title": "Wikipedia: 2006 Italian constitutional referendum",
+            "accessed": "2026-10-15"
+          },
+          {
+            "url": "https://en.wikipedia.org/wiki/Referendums_in_Italy",
+            "title": "Wikipedia: Referendums in Italy (results table)",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "camera_2008",
+      "date": "2008-04-13",
+      "kind": "legislative",
+      "chamber": "camera",
+      "snap": true,
+      "historical": {
+        "candidates": [
+          {
+            "person": "ita.silvio_berlusconi",
+            "party": "ita.fi",
+            "round": 1
+          },
+          {
+            "person": "ita.walter_veltroni",
+            "party": "ita.pd",
+            "round": 1
+          },
+          {
+            "person": "ita.pier_ferdinando_casini",
+            "party": "ita.udc",
+            "round": 1
+          }
+        ],
+        "party_results": [
+          {
+            "party": "ita.fi",
+            "share": 0.3738,
+            "seats": 276
+          },
+          {
+            "party": "ita.pd",
+            "share": 0.3318,
+            "seats": 217
+          },
+          {
+            "party": "ita.lega",
+            "share": 0.083,
+            "seats": 60
+          },
+          {
+            "party": "ita.udc",
+            "share": 0.0562,
+            "seats": 36
+          },
+          {
+            "party": "ita.idv",
+            "share": 0.0437,
+            "seats": 29
+          },
+          {
+            "party": "ita.prc",
+            "share": 0.0308,
+            "seats": 0
+          },
+          {
+            "party": "ita.svp",
+            "share": 0.0041,
+            "seats": 2
+          }
+        ],
+        "winner": "ita.fi",
+        "turnout": 0.805,
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2008_Italian_general_election",
+            "title": "Wikipedia: 2008 Italian general election",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified",
+        "note": "Held on 13-14 April 2008 after President Napolitano dissolved Parliament on 6 February 2008. The People of Freedom ran as a joint FI-AN list before its 2009 founding and is recorded under Forza Italia; The Left-The Rainbow (PRC, PdCI, Greens, Democratic Left) under the PRC. Movement for Autonomy (1.13%, 8 seats) is omitted. Berlusconi's coalition won 344 seats, Veltroni's 246."
+      }
+    },
+    {
+      "id": "senato_2008",
+      "date": "2008-04-13",
+      "kind": "legislative_upper",
+      "chamber": "senato",
+      "snap": true,
+      "historical": {
+        "party_results": [
+          {
+            "party": "ita.fi",
+            "share": 0.3817,
+            "seats": 147
+          },
+          {
+            "party": "ita.pd",
+            "share": 0.3369,
+            "seats": 118
+          },
+          {
+            "party": "ita.lega",
+            "share": 0.0806,
+            "seats": 25
+          },
+          {
+            "party": "ita.idv",
+            "share": 0.0432,
+            "seats": 14
+          },
+          {
+            "party": "ita.udc",
+            "share": 0.0569,
+            "seats": 3
+          },
+          {
+            "party": "ita.svp",
+            "seats": 4
+          },
+          {
+            "party": "others",
+            "seats": 4
+          }
+        ],
+        "winner": "ita.fi",
+        "turnout": 0.804,
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2008_Italian_general_election",
+            "title": "Wikipedia: 2008 Italian general election",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified",
+        "note": "Seats of the 315 elected senators. The People of Freedom list is recorded under Forza Italia. 'others' = Movement for Autonomy 2, Aosta Valley 1, Associative Movement of Italians Abroad 1."
+      }
+    },
+    {
+      "id": "referendum_2009",
+      "date": "2009-06-21",
+      "kind": "referendum",
+      "question": "Three abrogative questions on the electoral law: majority bonus to the single largest list instead of coalitions (Chamber and Senate) and a ban on multiple candidacies.",
+      "historical": {
+        "winner": "no",
+        "turnout": 0.235,
+        "note": "Held on 21-22 June 2009. Turnout about 23.5%, below the 50% quorum; all three questions void (Yes 77.6-87.0%).",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2009_Italian_electoral_law_referendum",
+            "title": "Wikipedia: 2009 Italian electoral law referendum",
+            "accessed": "2026-10-15"
+          },
+          {
+            "url": "https://en.wikipedia.org/wiki/Referendums_in_Italy",
+            "title": "Wikipedia: Referendums in Italy (results table)",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "referendum_2011",
+      "date": "2011-06-12",
+      "kind": "referendum",
+      "question": "Four abrogative questions: privatisation of water services; water tariffs; new nuclear power plants; 'legitimate impediment' for ministers in court.",
+      "historical": {
+        "yes_share": 0.946,
+        "winner": "yes",
+        "turnout": 0.548,
+        "note": "Held on 12-13 June 2011. Quorum reached (about 54.8% on each question per the referendums list; the article infobox gives 56.9%); all four repeals approved with 94-96% Yes.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2011_Italian_referendum",
+            "title": "Wikipedia: 2011 Italian referendum",
+            "accessed": "2026-10-15"
+          },
+          {
+            "url": "https://en.wikipedia.org/wiki/Referendums_in_Italy",
+            "title": "Wikipedia: Referendums in Italy (results table)",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "camera_2013",
+      "date": "2013-02-24",
+      "kind": "legislative",
+      "chamber": "camera",
+      "historical": {
+        "candidates": [
+          {
+            "person": "ita.pier_luigi_bersani",
+            "party": "ita.pd",
+            "round": 1
+          },
+          {
+            "person": "ita.silvio_berlusconi",
+            "party": "ita.pdl",
+            "round": 1
+          },
+          {
+            "person": "ita.beppe_grillo",
+            "party": "ita.m5s",
+            "round": 1
+          },
+          {
+            "person": "ita.mario_monti",
+            "party": "ita.sc",
+            "round": 1
+          }
+        ],
+        "party_results": [
+          {
+            "party": "ita.m5s",
+            "share": 0.2556,
+            "seats": 109
+          },
+          {
+            "party": "ita.pd",
+            "share": 0.2543,
+            "seats": 297
+          },
+          {
+            "party": "ita.pdl",
+            "share": 0.2156,
+            "seats": 98
+          },
+          {
+            "party": "ita.sc",
+            "share": 0.083,
+            "seats": 39
+          },
+          {
+            "party": "ita.lega",
+            "share": 0.0409,
+            "seats": 18
+          },
+          {
+            "party": "ita.sel",
+            "share": 0.032,
+            "seats": 37
+          },
+          {
+            "party": "ita.fdi",
+            "share": 0.0196,
+            "seats": 9
+          },
+          {
+            "party": "ita.udc",
+            "share": 0.0179,
+            "seats": 8
+          },
+          {
+            "party": "ita.svp",
+            "share": 0.0043,
+            "seats": 5
+          }
+        ],
+        "winner": "ita.pd",
+        "turnout": 0.752,
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2013_Italian_general_election",
+            "title": "Wikipedia: 2013 Italian general election",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified",
+        "note": "Held on 24-25 February 2013. Shares exclude the abroad constituency. The M5S was the most-voted single list in Italy, but the PD-led coalition took the majority bonus and the PD holds the most seats, so it is recorded as winner. The centre-left won 345 seats, the centre-right 125, M5S 109, the Monti coalition 47. The PdL's own nominee for Prime Minister was Angelino Alfano; Berlusconi led the coalition."
+      }
+    },
+    {
+      "id": "senato_2013",
+      "date": "2013-02-24",
+      "kind": "legislative_upper",
+      "chamber": "senato",
+      "historical": {
+        "party_results": [
+          {
+            "party": "ita.pd",
+            "share": 0.2743,
+            "seats": 111
+          },
+          {
+            "party": "ita.m5s",
+            "share": 0.2379,
+            "seats": 54
+          },
+          {
+            "party": "ita.pdl",
+            "share": 0.223,
+            "seats": 98
+          },
+          {
+            "party": "ita.sc",
+            "share": 0.0913,
+            "seats": 19
+          },
+          {
+            "party": "ita.lega",
+            "share": 0.0433,
+            "seats": 18
+          },
+          {
+            "party": "ita.sel",
+            "share": 0.0297,
+            "seats": 7
+          },
+          {
+            "party": "ita.svp",
+            "seats": 4
+          },
+          {
+            "party": "others",
+            "seats": 4
+          }
+        ],
+        "winner": "ita.pd",
+        "turnout": 0.751,
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2013_Italian_general_election",
+            "title": "Wikipedia: 2013 Italian general election",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified",
+        "note": "Seats of the 315 elected senators. The 'With Monti for Italy' list is recorded under Civic Choice; SVP-PATT under the SVP. 'others' = The Megaphone 1, Great South 1, MAIE 1, Aosta Valley 1."
+      }
+    },
+    {
+      "id": "presidential_2013",
+      "date": "2013-04-20",
+      "kind": "indirect_presidential",
+      "office": "ita.president",
+      "rounds": 6,
+      "historical": {
+        "candidates": [
+          {
+            "person": "ita.giorgio_napolitano",
+            "votes": 738,
+            "round": 6
+          },
+          {
+            "person": "ita.stefano_rodota",
+            "votes": 217,
+            "round": 6
+          }
+        ],
+        "winner": "ita.giorgio_napolitano",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2013_Italian_presidential_election",
+            "title": "Wikipedia: 2013 Italian presidential election",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified",
+        "note": "Held 18-20 April 2013; Napolitano was re-elected on the sixth ballot, the first President to be re-elected. Earlier centre-left candidacies (Franco Marini, Romano Prodi) are omitted. Rodota was supported by the M5S."
+      }
+    },
+    {
+      "id": "presidential_2015",
+      "date": "2015-01-31",
+      "kind": "indirect_presidential",
+      "office": "ita.president",
+      "snap": true,
+      "rounds": 4,
+      "historical": {
+        "candidates": [
+          {
+            "person": "ita.sergio_mattarella",
+            "votes": 665,
+            "round": 4
+          },
+          {
+            "person": "ita.ferdinando_imposimato",
+            "votes": 127,
+            "round": 4
+          }
+        ],
+        "winner": "ita.sergio_mattarella",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2015_Italian_presidential_election",
+            "title": "Wikipedia: 2015 Italian presidential election",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified",
+        "note": "Held 29-31 January 2015 after Napolitano's resignation; Mattarella was elected on the fourth ballot with 665 of 1,009 votes. Imposimato was supported by the M5S."
+      }
+    },
+    {
+      "id": "referendum_2016_drilling",
+      "date": "2016-04-17",
+      "kind": "referendum",
+      "question": "Abrogative question on extending offshore oil and gas drilling concessions within 12 nautical miles of the coast.",
+      "historical": {
+        "yes_share": 0.8585,
+        "winner": "no",
+        "turnout": 0.3119,
+        "note": "Turnout 31.19%, below the 50% quorum; void (13,334,607 Yes, 2,198,715 No).",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2016_Italian_oil_drilling_referendum",
+            "title": "Wikipedia: 2016 Italian oil drilling referendum",
+            "accessed": "2026-10-15"
+          },
+          {
+            "url": "https://en.wikipedia.org/wiki/Referendums_in_Italy",
+            "title": "Wikipedia: Referendums in Italy (results table)",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "constitutional_referendum_2016",
+      "date": "2016-12-04",
+      "kind": "referendum",
+      "question": "Constitutional reform of the composition and powers of Parliament.",
+      "historical": {
+        "yes_share": 0.4088,
+        "winner": "no",
+        "turnout": 0.6548,
+        "note": "Rejected: 13,431,087 Yes, 19,421,025 No. Prime Minister Renzi resigned afterwards.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2016_Italian_constitutional_referendum",
+            "title": "Wikipedia: 2016 Italian constitutional referendum",
+            "accessed": "2026-10-15"
+          },
+          {
+            "url": "https://en.wikipedia.org/wiki/Referendums_in_Italy",
+            "title": "Wikipedia: Referendums in Italy (results table)",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "camera_2018",
+      "date": "2018-03-04",
+      "kind": "legislative",
+      "chamber": "camera",
+      "historical": {
+        "candidates": [
+          {
+            "person": "ita.luigi_di_maio",
+            "party": "ita.m5s",
+            "round": 1
+          },
+          {
+            "person": "ita.matteo_salvini",
+            "party": "ita.lega",
+            "round": 1
+          },
+          {
+            "person": "ita.matteo_renzi",
+            "party": "ita.pd",
+            "round": 1
+          },
+          {
+            "person": "ita.pietro_grasso",
+            "party": "ita.leu",
+            "round": 1
+          }
+        ],
+        "party_results": [
+          {
+            "party": "ita.m5s",
+            "share": 0.3268,
+            "seats": 227
+          },
+          {
+            "party": "ita.pd",
+            "share": 0.1876,
+            "seats": 112
+          },
+          {
+            "party": "ita.lega",
+            "share": 0.1735,
+            "seats": 125
+          },
+          {
+            "party": "ita.fi2013",
+            "share": 0.14,
+            "seats": 104
+          },
+          {
+            "party": "ita.fdi",
+            "share": 0.0435,
+            "seats": 32
+          },
+          {
+            "party": "ita.leu",
+            "share": 0.0338,
+            "seats": 14
+          },
+          {
+            "party": "ita.more_europe",
+            "share": 0.0256,
+            "seats": 3
+          },
+          {
+            "party": "ita.udc",
+            "share": 0.013,
+            "seats": 4
+          },
+          {
+            "party": "ita.svp",
+            "share": 0.0041,
+            "seats": 4
+          }
+        ],
+        "winner": "ita.m5s",
+        "turnout": 0.7294,
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2018_Italian_general_election",
+            "title": "Wikipedia: 2018 Italian general election",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified",
+        "note": "First election under the 2017 Rosatellum. Shares are proportional-list votes in Italy; seats include FPTP and abroad seats. The 'Us with Italy-UDC' list is recorded under the UDC; SVP-PATT under the SVP. The centre-right coalition won 265 seats, M5S 227, the centre-left 122. Salvini became the centre-right's candidate because the Lega outpolled Forza Italia."
+      }
+    },
+    {
+      "id": "senato_2018",
+      "date": "2018-03-04",
+      "kind": "legislative_upper",
+      "chamber": "senato",
+      "historical": {
+        "party_results": [
+          {
+            "party": "ita.m5s",
+            "share": 0.3222,
+            "seats": 112
+          },
+          {
+            "party": "ita.pd",
+            "share": 0.1914,
+            "seats": 53
+          },
+          {
+            "party": "ita.lega",
+            "share": 0.1761,
+            "seats": 58
+          },
+          {
+            "party": "ita.fi2013",
+            "share": 0.1443,
+            "seats": 57
+          },
+          {
+            "party": "ita.fdi",
+            "share": 0.0426,
+            "seats": 18
+          },
+          {
+            "party": "ita.leu",
+            "share": 0.0328,
+            "seats": 4
+          },
+          {
+            "party": "ita.more_europe",
+            "share": 0.0237,
+            "seats": 1
+          },
+          {
+            "party": "ita.udc",
+            "share": 0.012,
+            "seats": 4
+          },
+          {
+            "party": "ita.svp",
+            "seats": 3
+          },
+          {
+            "party": "others",
+            "seats": 5
+          }
+        ],
+        "winner": "ita.m5s",
+        "turnout": 0.7301,
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2018_Italian_general_election",
+            "title": "Wikipedia: 2018 Italian general election",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified",
+        "note": "Seats of the 315 elected senators. 'others' = Together 1, Popular Civic List 1, Aosta Valley 1, MAIE 1, USEI 1."
+      }
+    },
+    {
+      "id": "constitutional_referendum_2020",
+      "date": "2020-09-20",
+      "kind": "referendum",
+      "question": "Constitutional reform reducing the Chamber of Deputies from 630 to 400 members and the elected Senate from 315 to 200.",
+      "historical": {
+        "yes_share": 0.6996,
+        "winner": "yes",
+        "turnout": 0.5112,
+        "note": "Held on 20-21 September 2020. Approved: 17,913,089 Yes, 7,692,007 No. The cut applied from the 2022 election.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2020_Italian_constitutional_referendum",
+            "title": "Wikipedia: 2020 Italian constitutional referendum",
+            "accessed": "2026-10-15"
+          },
+          {
+            "url": "https://en.wikipedia.org/wiki/Referendums_in_Italy",
+            "title": "Wikipedia: Referendums in Italy (results table)",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "presidential_2022",
+      "date": "2022-01-29",
+      "kind": "indirect_presidential",
+      "office": "ita.president",
+      "rounds": 8,
+      "historical": {
+        "candidates": [
+          {
+            "person": "ita.sergio_mattarella",
+            "votes": 759,
+            "round": 8
+          },
+          {
+            "person": "ita.carlo_nordio",
+            "votes": 90,
+            "round": 8
+          }
+        ],
+        "winner": "ita.sergio_mattarella",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2022_Italian_presidential_election",
+            "title": "Wikipedia: 2022 Italian presidential election",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified",
+        "note": "Held 24-29 January 2022; Mattarella, who had ruled out a second term, accepted re-election and was elected on the eighth ballot with 759 votes. Nordio was one of three names proposed by the centre-right."
+      }
+    },
+    {
+      "id": "referendum_2022",
+      "date": "2022-06-12",
+      "kind": "referendum",
+      "question": "Five abrogative questions on the justice system (Severino law, pre-trial detention, separation of careers, lay members in evaluations of magistrates, endorsements for High Council candidates).",
+      "historical": {
+        "winner": "no",
+        "turnout": 0.204,
+        "note": "Turnout about 20.4%, below the 50% quorum; all five void (Yes 54.0-74.0%).",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2022_Italian_referendum",
+            "title": "Wikipedia: 2022 Italian referendum",
+            "accessed": "2026-10-15"
+          },
+          {
+            "url": "https://en.wikipedia.org/wiki/Referendums_in_Italy",
+            "title": "Wikipedia: Referendums in Italy (results table)",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "camera_2022",
+      "date": "2022-09-25",
+      "kind": "legislative",
+      "chamber": "camera",
+      "snap": true,
+      "historical": {
+        "candidates": [
+          {
+            "person": "ita.giorgia_meloni",
+            "party": "ita.fdi",
+            "round": 1
+          },
+          {
+            "person": "ita.enrico_letta",
+            "party": "ita.pd",
+            "round": 1
+          },
+          {
+            "person": "ita.giuseppe_conte",
+            "party": "ita.m5s",
+            "round": 1
+          },
+          {
+            "person": "ita.carlo_calenda",
+            "party": "ita.azione",
+            "round": 1
+          }
+        ],
+        "party_results": [
+          {
+            "party": "ita.fdi",
+            "share": 0.26,
+            "seats": 119
+          },
+          {
+            "party": "ita.pd",
+            "share": 0.1907,
+            "seats": 69
+          },
+          {
+            "party": "ita.m5s",
+            "share": 0.1543,
+            "seats": 52
+          },
+          {
+            "party": "ita.lega",
+            "share": 0.0877,
+            "seats": 66
+          },
+          {
+            "party": "ita.fi2013",
+            "share": 0.0811,
+            "seats": 45
+          },
+          {
+            "party": "ita.azione",
+            "share": 0.0779,
+            "seats": 21
+          },
+          {
+            "party": "ita.green_europe",
+            "share": 0.0363,
+            "seats": 12
+          },
+          {
+            "party": "ita.more_europe",
+            "share": 0.0283,
+            "seats": 2
+          },
+          {
+            "party": "ita.nm",
+            "share": 0.0091,
+            "seats": 7
+          },
+          {
+            "party": "ita.svp",
+            "share": 0.0042,
+            "seats": 3
+          },
+          {
+            "party": "others",
+            "seats": 4
+          }
+        ],
+        "winner": "ita.fdi",
+        "turnout": 0.6385,
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2022_Italian_general_election",
+            "title": "Wikipedia: 2022 Italian general election",
+            "accessed": "2026-10-15"
+          },
+          {
+            "url": "https://en.wikipedia.org/wiki/Template:Results_of_the_2022_Italian_general_elections/Chamber_overall_results",
+            "title": "Wikipedia: 2022 Chamber overall results",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified",
+        "note": "Early election after the fall of the Draghi government; first election with the 400-seat Chamber. The 'Action-Italia Viva' list is recorded under Action and the Greens and Left Alliance under Green Europe. 'others' = Civic Commitment 1, South calls North 1, Aosta Valley 1, MAIE 1. The centre-right won 237 seats."
+      }
+    },
+    {
+      "id": "senato_2022",
+      "date": "2022-09-25",
+      "kind": "legislative_upper",
+      "chamber": "senato",
+      "snap": true,
+      "historical": {
+        "party_results": [
+          {
+            "party": "ita.fdi",
+            "share": 0.2601,
+            "seats": 65
+          },
+          {
+            "party": "ita.pd",
+            "share": 0.1896,
+            "seats": 39
+          },
+          {
+            "party": "ita.m5s",
+            "share": 0.1555,
+            "seats": 28
+          },
+          {
+            "party": "ita.lega",
+            "share": 0.0885,
+            "seats": 29
+          },
+          {
+            "party": "ita.fi2013",
+            "share": 0.0827,
+            "seats": 18
+          },
+          {
+            "party": "ita.azione",
+            "share": 0.0773,
+            "seats": 9
+          },
+          {
+            "party": "ita.green_europe",
+            "share": 0.0353,
+            "seats": 4
+          },
+          {
+            "party": "ita.nm",
+            "share": 0.0088,
+            "seats": 3
+          },
+          {
+            "party": "ita.svp",
+            "seats": 2
+          },
+          {
+            "party": "others",
+            "seats": 3
+          }
+        ],
+        "winner": "ita.fdi",
+        "turnout": 0.6381,
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2022_Italian_general_election",
+            "title": "Wikipedia: 2022 Italian general election",
+            "accessed": "2026-10-15"
+          },
+          {
+            "url": "https://en.wikipedia.org/wiki/Template:Results_of_the_2022_Italian_general_elections/Senate_overall_results",
+            "title": "Wikipedia: 2022 Senate overall results",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified",
+        "note": "First election with 200 elected senators. 'others' = Campobase 1, South calls North 1, MAIE 1. The centre-right won 115 seats."
+      }
+    },
+    {
+      "id": "referendum_2025",
+      "date": "2025-06-08",
+      "kind": "referendum",
+      "question": "Five abrogative questions: four on employment law (reinstatement after unlawful dismissal, limits on compensation in small firms, fixed-term contracts, subcontracting liability) and one halving the residence requirement for citizenship.",
+      "historical": {
+        "winner": "no",
+        "turnout": 0.2983,
+        "note": "Held on 8-9 June 2025. Turnout about 29.8%, below the 50% quorum; all five void (Yes 65.3-87.6%).",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2025_Italian_referendum",
+            "title": "Wikipedia: 2025 Italian referendum",
+            "accessed": "2026-10-15"
+          },
+          {
+            "url": "https://en.wikipedia.org/wiki/Referendums_in_Italy",
+            "title": "Wikipedia: Referendums in Italy (results table)",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "constitutional_referendum_2026",
+      "date": "2026-03-22",
+      "kind": "referendum",
+      "question": "Constitutional reform of the judicial system and establishment of a Disciplinary Court for judges.",
+      "historical": {
+        "yes_share": 0.4676,
+        "winner": "no",
+        "turnout": 0.5569,
+        "note": "Held on 22-23 March 2026. Rejected: 13,250,709 Yes, 15,085,410 No.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2026_Italian_constitutional_referendum",
+            "title": "Wikipedia: 2026 Italian constitutional referendum",
+            "accessed": "2026-10-15"
+          },
+          {
+            "url": "https://en.wikipedia.org/wiki/Referendums_in_Italy",
+            "title": "Wikipedia: Referendums in Italy (results table)",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified"
+      }
+    }
+  ],
+  "source": [
+    {
+      "url": "https://en.wikipedia.org/wiki/Elections_in_Italy",
+      "title": "Wikipedia: Elections in Italy",
+      "accessed": "2026-10-15"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Referendums_in_Italy",
+      "title": "Wikipedia: Referendums in Italy (results table)",
+      "accessed": "2026-10-15"
+    }
+  ],
+  "confidence": "verified"
+}
