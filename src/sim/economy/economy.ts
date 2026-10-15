@@ -11,6 +11,7 @@
  * The economic mood that elections and interest groups use is derived from these figures.
  * Values with no World Bank figure use labelled gameplay estimates by income tier.
  */
+import { monthlyDue } from "../bucket.ts";
 import { tradeIndex } from "../diplomacy/diplomacy.ts";
 import type { ContentDB } from "../../content/compile.ts";
 import type { SimContext, System } from "../simulation.ts";
@@ -376,17 +377,22 @@ function aiConstruction(ctx: SimContext, cs: CountryState): void {
 export const economySystem: System = {
   id: "economy",
   daily(ctx) {
-    for (const cs of Object.values(ctx.state.countries)) if (cs.active && cs.economy) dailyConstruction(ctx, cs);
+    const { db, state } = ctx;
+    for (const cs of Object.values(state.countries)) {
+      if (!cs.active || !cs.economy) continue;
+      dailyConstruction(ctx, cs);
+      // the monthly update runs on the country's own day of the month (spreads the load)
+      if (monthlyDue(cs.tag, state.day)) {
+        monthlyCountry(ctx, cs);
+        cs.economy.capacity = refreshCapacity(db, cs);
+        if (cs.tag !== state.player) aiConstruction(ctx, cs);
+        cs.economy.shocks = cs.economy.shocks.filter((s) => s.until > state.day);
+      }
+    }
   },
   monthly(ctx) {
     const { db, state } = ctx;
     const countries = Object.values(state.countries).filter((c) => c.active && c.economy);
-    for (const cs of countries) {
-      monthlyCountry(ctx, cs);
-      cs.economy!.capacity = refreshCapacity(db, cs);
-      if (cs.tag !== state.player) aiConstruction(ctx, cs);
-      cs.economy!.shocks = cs.economy!.shocks.filter((s) => s.until > state.day);
-    }
     // world resource market: demand follows world GDP, supply is fixed at 2000 capacity
     let worldGdp = 0, worldGdp0 = 0;
     for (const cs of countries) {

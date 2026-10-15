@@ -35,6 +35,9 @@ src/
   sim/research/            Phase 8: research.ts (slots, speed, costs, starting technologies, AI)
   sim/military/            Phase 9: military.ts (manpower, production lines, templates, training, starting armies, movement, occupation)
                            Phase 10: war.ts (declarations, battles, supply, capitulation, peace, world tension)
+  sim/ai/                  Phase 12: ai.ts (strategic, diplomatic, recruitment and military planners returning Commands)
+  sim/bucket.ts            per-country monthly slots (spreads load over the month)
+  worker/                  simWorker.ts: the simulation in a Web Worker (?soak page)
   sim/diplomacy/           Phase 11: diplomacy.ts (opinion, guarantees, access, trade, sanctions, blocs, UN Security Council,
                            war justification, foreign influence)
   render/                  MapView (camera, wrap, input), WorldMap (layers, picking, map modes),

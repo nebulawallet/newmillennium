@@ -11,6 +11,7 @@ import * as THREE from "three";
 import { fromBundle, type ContentBundle } from "./content/bundle.ts";
 import type { ContentDB } from "./content/compile.ts";
 import { runBenchmark, type BenchResult } from "./render/benchmark.ts";
+import { SoakPanel } from "./ui/SoakPanel.tsx";
 import { loadMapData, type MapData } from "./render/mapData.ts";
 import { MapView } from "./render/MapView.ts";
 import { WorldMap, type RenderApproach } from "./render/WorldMap.ts";
@@ -81,6 +82,11 @@ async function boot(): Promise<void> {
   console.info(`[map] ${map.provinces.length} provinces, loaded in ${Math.round(map.loadMs)} ms`);
 
   const canvas = document.getElementById("map") as HTMLCanvasElement;
+
+  if (params.has("soak")) {
+    render(<SoakPanel years={Number(params.get("soak")) || 10} dynamic={params.has("dynamic")} seed={Number(params.get("seed")) || 20000101} />, ui);
+    return;
+  }
 
   if (params.has("bench")) {
     render(<BenchPanel results={null} />, ui);

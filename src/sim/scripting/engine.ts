@@ -424,8 +424,8 @@ export function describeEffects(db: ContentDB, effects: unknown[], depth = 0): s
       case "unlock_tech": line = `Technology: ${db.techs.get(v as string)?.name ?? v}`; break;
       case "add_wargoal": line = `War goal against ${name.tag(a.target as string)}`; break;
       case "add_opinion": line = `Opinion of ${a.target === "ROOT" || a.target === "FROM" ? "them" : name.tag(a.target as string)} ${signed(a.value as number)}`; break;
-      case "join_bloc": line = `Joins the ${db.blocs.get(v as string)?.name ?? v}`; break;
-      case "leave_bloc": line = `Leaves the ${db.blocs.get(v as string)?.name ?? v}`; break;
+      case "join_bloc": line = `Joins ${db.blocs.get(v as string)?.article === false ? "" : "the "}${db.blocs.get(v as string)?.name ?? v}`; break;
+      case "leave_bloc": line = `Leaves ${db.blocs.get(v as string)?.article === false ? "" : "the "}${db.blocs.get(v as string)?.name ?? v}`; break;
       case "add_trait": line = `${name.person(a.person as string)} gains a trait`; break;
       default:
         if (SCOPES.has(k) || k === COUNTRY_SCOPE) {

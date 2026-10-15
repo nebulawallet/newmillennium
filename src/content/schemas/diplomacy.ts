@@ -8,6 +8,8 @@ const n = (v: number) => z.number().default(v);
 export const BlocDef = z.strictObject({
   id: Id,
   name: z.string().min(1),
+  /** Whether running text puts "the" before the name ("the European Union", but "NATO"). */
+  article: z.boolean().default(true),
   /** Colour in the blocs map mode. */
   color: z.string().regex(/^#[0-9a-f]{6}$/i).default("#888888"),
   description: z.string().min(1),

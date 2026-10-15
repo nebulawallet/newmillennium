@@ -18,6 +18,10 @@
             "type": "string",
             "minLength": 1
           },
+          "article": {
+            "default": true,
+            "type": "boolean"
+          },
           "color": {
             "default": "#888888",
             "type": "string",

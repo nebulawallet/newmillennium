@@ -1,6 +1,6 @@
 # Handoff: New Millennium
 
-Read this first when you pick up the project in a new session, with a new agent, or after a break. Last updated 15 October 2026, after the Phase 11 commit.
+Read this first when you pick up the project in a new session, with a new agent, or after a break. Last updated 15 October 2026, after the Phase 12 commit.
 
 ## What this is
 
@@ -37,7 +37,8 @@ New Millennium is a grand strategy game in the style of Hearts of Iron IV, set f
 | 9 | Production and units | **Done** (see "Phase 9 notes") |
 | 10 | Combat, supply, war and peace | **Done** (see "Phase 10 notes") |
 | 11 | Diplomacy | **Done** (see "Phase 11 notes") |
-| 12–13 | AI, content and polish | Not started. Phase 12 is next. |
+| 12 | AI | **Done** (see "Phase 12 notes") |
+| 13 | Content and polish | Not started. Phase 13 is next. |
 
 ## Where things stand right now
 
@@ -108,6 +109,17 @@ New Millennium is a grand strategy game in the style of Hearts of Iron IV, set f
 - **Stubbed:** AI diplomacy beyond answering requests and council votes (AI guarantees, sanctions, applications and declarations come with Phase 12); real 2000 sanctions regimes are not modelled; the player's council vote follows opinion automatically.
 - **GameState v8** adds `diplomacy`.
 
+### Phase 12 notes
+
+- **AI** (`src/sim/ai/ai.ts`): planners return `Command`s (the player's objects) from the state, and the AI system applies them.
+  - Strategic: once a month per country on its bucket day. It improves relations with important or neighbouring countries, signs trade deals, applies to blocs (only off the historical path, since real enlargements are events) and sanctions aggressors, lifting sanctions once the target is at peace. Major powers guarantee friends someone is justifying against. Aggressive regimes off the historical path justify and declare war on much weaker hostile neighbours (never nuclear states). Regimes with high `foreign_influence` fund like-minded parties in hostile neighbours. It also keeps production lines on every military factory and trains divisions at war, when threatened, or now and then for militaristic regimes.
+  - Weights come from the ruling sub-ideology's `ai_weights`: aggression, trade, integration, militarism, foreign_influence.
+  - Military: every third day for each AI country at war. Priorities: retake its own provinces; hold threatened front provinces; screen the rest of the front with up to half the army; then attack empty or beatable enemy provinces with rested divisions. Worn-out attackers break off.
+- **Civil wars are fought:** the army splits (divisions in rebel regions plus a share set by the rising group's influence); the war ends when a side holds none of its regions or the rebels hold 70% of the population (chance only when neither side has divisions).
+- **Performance:** monthly economy and poll updates and AI planning run per country on its own day of the month (`src/sim/bucket.ts`). The pathfinder uses a binary heap. A 10-year historical soak averages about 1.0 ms per game day, p99 3 ms, against the 30 ms speed-5 budget. A live speed-5 run showed no main-thread task over 50 ms.
+- **Worker:** `src/worker/simWorker.ts` runs the whole simulation in a Web Worker. `?soak=10[&dynamic][&seed=N]` runs 10 years there and reports tick times and errors, and `npx tsx scripts/dev/soak.ts 10 [--dynamic]` does the same in Node. Live play stays on the main thread: copying the state back every few days (690 KB now, several MB with all countries) would cost more than the sim itself.
+- **Stubbed:** AI peace terms beyond capitulation and white peace; naval and air AI (no naval or air combat yet); AI does not answer the player's UN proposals by negotiation; historical wars of 2001–2026 (Afghanistan, Iraq, Georgia, Ukraine) are content for Phase 13, so historical mode has no AI-started wars.
+
 ## How to run
 
 ```bash
@@ -128,7 +140,7 @@ In game: Space pauses, 1–5 or +/- set speed, Q–P open the tab row (Q is Poli
 ## Next steps, in order
 
 1. **Phase 2 research:** audit the uncommitted folders, then keep about six batches running. After each: `npm run validate-data -- --only <tags> --tier core`, spot-check facts with `scripts/research/wiki.ts` (anything after June 2026 yourself), `npm run review-report`, commit, update the batch table, launch the next batch.
-2. **Phases 12–13** in PLAN.md order (Phase 12 AI is next).
+2. **Phase 13** (content and polish): the other unique focus trees, more events (including the historical wars), balance, UI polish.
 4. **Phase 2, Pass B** once Pass A covers all 212 tags: `--tier full` must pass.
 
 ## Decisions already made (don't relitigate)

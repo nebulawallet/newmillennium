@@ -127,19 +127,24 @@ export function blocName(db: ContentDB, state: GameState, bloc: string): string 
   return name;
 }
 
+/** The bloc's name in running text: "the European Union", "NATO". */
+export function blocRef(db: ContentDB, state: GameState, bloc: string): string {
+  return `${db.blocs.get(bloc)?.article === false ? "" : "the "}${blocName(db, state, bloc)}`;
+}
+
 export function joinBloc(ctx: SimContext, tag: string, bloc: string): void {
   const m = (ctx.state.diplomacy.blocs[bloc] ??= []);
   if (m.includes(tag)) return;
   m.push(tag);
   ctx.state.diplomacy.applications = ctx.state.diplomacy.applications.filter((a) => !(a.tag === tag && a.bloc === bloc));
-  ctx.log(tag, "diplomacy", `Joins the ${blocName(ctx.db, ctx.state, bloc)}`);
+  ctx.log(tag, "diplomacy", `Joins ${blocRef(ctx.db, ctx.state, bloc)}`);
 }
 
 export function leaveBloc(ctx: SimContext, tag: string, bloc: string): void {
   const m = ctx.state.diplomacy.blocs[bloc];
   if (!m?.includes(tag)) return;
   ctx.state.diplomacy.blocs[bloc] = m.filter((t) => t !== tag);
-  ctx.log(tag, "diplomacy", `Leaves the ${blocName(ctx.db, ctx.state, bloc)}`);
+  ctx.log(tag, "diplomacy", `Leaves ${blocRef(ctx.db, ctx.state, bloc)}`);
 }
 
 // ------------------------------------------------------------------ opinion
@@ -174,7 +179,7 @@ export function opinionParts(db: ContentDB, state: GameState, a: string, b: stri
   const ba = blocsOf(state, a), bb = new Set(blocsOf(state, b));
   for (const id of ba) {
     const def = db.blocs.get(id);
-    if (bb.has(id)) parts.push([`Both in the ${blocName(db, state, id)}`, def?.opinion ?? 0]);
+    if (bb.has(id)) parts.push([`Both in ${blocRef(db, state, id)}`, def?.opinion ?? 0]);
     else if (def?.rival && bb.has(def.rival)) parts.push([`Rival bloc (${blocName(db, state, def.rival)})`, r.rival_bloc_opinion]);
   }
   if (atWarWith(state, a, b)) parts.push(["At war", r.at_war_opinion]);
@@ -387,7 +392,7 @@ export function applyToBloc(ctx: SimContext, tag: string, bloc: string): Result 
   const v = blocVote(db, state, tag, bloc);
   if (!v.ok) return fail(`Rejected: ${v.text}`);
   state.diplomacy.applications.push({ tag, bloc, day: state.day + def.accession_days });
-  ctx.log(tag, "diplomacy", `Application to the ${blocName(db, state, bloc)} accepted; accession in ${Math.round(def.accession_days / 365)} years`);
+  ctx.log(tag, "diplomacy", `Application to ${blocRef(db, state, bloc)} accepted; accession in ${Math.round(def.accession_days / 365)} years`);
   return { ok: true, text: "Application accepted." };
 }
 
@@ -578,7 +583,7 @@ export const diplomacySystem: System = {
       if (app.day > state.day) continue;
       d.applications = d.applications.filter((x) => x !== app);
       if (blocVote(db, state, app.tag, app.bloc).ok) joinBloc(ctx, app.tag, app.bloc);
-      else ctx.log(app.tag, "diplomacy", `Accession to the ${blocName(db, state, app.bloc)} is blocked by its members`);
+      else ctx.log(app.tag, "diplomacy", `Accession to ${blocRef(db, state, app.bloc)} is blocked by its members`);
     }
     d.justifications = d.justifications.filter((j) => j.expires > state.day);
     for (const [tag, day] of Object.entries(d.aggressors)) if (day + 730 <= state.day) delete d.aggressors[tag];

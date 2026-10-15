@@ -8,7 +8,7 @@ const { db } = compileContent(new NodeFiles(), {});
 const times = new Map<string, number>();
 const wrap = (s: System): System => {
   const t = (k: "daily" | "weekly" | "monthly" | "yearly") =>
-    s[k] && ((ctx: Parameters<NonNullable<System["daily"]>>[0]) => { const a = performance.now(); s[k]!(ctx); times.set(s.id, (times.get(s.id) ?? 0) + performance.now() - a); });
+    s[k] && ((ctx: Parameters<NonNullable<System["daily"]>>[0]) => { const a = performance.now(); s[k]!(ctx); times.set(`${s.id}.${k}`, (times.get(`${s.id}.${k}`) ?? 0) + performance.now() - a); });
   return { ...s, daily: t("daily"), weekly: t("weekly"), monthly: t("monthly"), yearly: t("yearly"), init: s.init };
 };
 const sim = new Simulation(db, createInitialState(db, { provinces: [] }, { contentHash: "p" }), defaultSystems().map(wrap));

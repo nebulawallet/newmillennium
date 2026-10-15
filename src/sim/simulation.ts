@@ -18,6 +18,7 @@ import { researchSystem } from "./research/research.ts";
 import { militarySystem } from "./military/military.ts";
 import { warSystem } from "./military/war.ts";
 import { diplomacySystem } from "./diplomacy/diplomacy.ts";
+import { aiSystem } from "./ai/ai.ts";
 import { personParty } from "./politics/common.ts";
 import type { SimProvince } from "./politics/voteModel.ts";
 import { Rng } from "./rng.ts";
@@ -279,6 +280,7 @@ export function defaultSystems(): System[] {
     militarySystem,
     warSystem,
     diplomacySystem,
+    aiSystem,
     electionSystem,
     confidenceSystem,
     interestGroupSystem,

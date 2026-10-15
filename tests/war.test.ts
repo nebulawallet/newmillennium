@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest";
 import { compileContent } from "../src/content/compile.ts";
 import { divisionStats } from "../src/sim/military/war.ts";
-import { Simulation, simMapFrom } from "../src/sim/simulation.ts";
+import { defaultSystems, Simulation, simMapFrom } from "../src/sim/simulation.ts";
 import { createInitialState } from "../src/sim/state.ts";
 import { NodeFiles } from "../scripts/lib/nodeFiles.ts";
 
@@ -18,7 +18,8 @@ for (let i = 0; i < 24; i++) {
   if (i % 6 < 5) adjacency.push([i + 1, i + 2, 1]);
   if (i + 6 < 24) adjacency.push([i + 1, i + 7, 1]);
 }
-const fresh = (player: string | null) => new Simulation(db, createInitialState(db, { provinces: provinces as never }, { contentHash: "t", player }), undefined, simMapFrom(provinces as never, adjacency));
+// combat mechanics are tested with scripted orders, so the AI (tests/ai.test.ts) stays out
+const fresh = (player: string | null) => new Simulation(db, createInitialState(db, { provinces: provinces as never }, { contentHash: "t", player }), defaultSystems().filter((s) => s.id !== "ai"), simMapFrom(provinces as never, adjacency));
 
 describe("division stats", () => {
   it("armour is hard and hits hard; infantry is soft", () => {

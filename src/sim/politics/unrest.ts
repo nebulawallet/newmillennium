@@ -4,7 +4,9 @@
  * lowers the stability target. Very unhappy armed or excluded groups may stage a coup or rise up.
  * A civil war splits the country's provinces between the government and a rebel side, chosen by
  * culture, population density (by group) and geography, as one contiguous region where possible.
- * Until combat exists (Phase 10) a civil war ends by a monthly chance weighted by each side's size.
+ * In a civil war the army splits (divisions in rebel regions, plus a share set by the rising group's
+ * influence) and the war is fought out: it ends when either side holds none of its regions, or the
+ * rebels hold most of the population. A war with no armies on either side ends by a monthly chance.
  */
 import type { ContentDB } from "../../content/compile.ts";
 import type { SimContext, System } from "../simulation.ts";
@@ -145,6 +147,7 @@ export function startCivilWar(ctx: SimContext, cs: CountryState, ig: string): st
   state.dynamicCountries[rebel] = { name: `${adjective} insurgents (${groupName})`, color: rebelColor(db.countryColors.get(cs.tag)), parent: cs.tag, kind: "rebels" };
   state.countries[rebel] = blankCountry(rebel, "insurgent_movement", state.day);
   cs.civilWar = { rebel, startDay: state.day, group: ig };
+  splitArmy(ctx, cs.tag, rebel, taken, ig === "military" ? 0.25 + 0.6 * influence : 0.1 + 0.3 * influence);
   cs.followsHistory = false;
   cs.stability = clamp(cs.stability - 0.2, 0, 1);
   cs.warSupport = clamp(cs.warSupport + 0.2, 0, 1);
@@ -153,6 +156,50 @@ export function startCivilWar(ctx: SimContext, cs: CountryState, ig: string): st
   ctx.emit({ type: "civil_war", tag: cs.tag });
   ctx.emit({ type: "map_changed" });
   return rebel;
+}
+
+/** Divisions in rebel regions defect, plus a share of the rest (moved to rebel regions). */
+function splitArmy(ctx: SimContext, gov: string, rebel: string, taken: Set<number>, share: number): void {
+  const { state, rng } = ctx;
+  const mine = state.divisions.filter((d) => d.owner === gov);
+  if (!mine.length || !taken.size) return;
+  const rebelProvinces = [...taken];
+  let want = Math.round(mine.length * clamp(share, 0, 0.7));
+  for (const d of mine) {
+    if (!taken.has(d.province)) continue;
+    d.owner = rebel;
+    d.path = [];
+    d.attacking = undefined;
+    want--;
+  }
+  for (const d of mine) {
+    if (want <= 0) break;
+    if (d.owner !== gov || !rng.chance(share)) continue;
+    d.owner = rebel;
+    d.province = rebelProvinces[rng.int(rebelProvinces.length)]!;
+    d.path = [];
+    d.attacking = undefined;
+    want--;
+  }
+}
+
+/** Monthly check of a civil war: decided on the battlefield, or by chance when nobody is fighting. */
+function civilWarProgress(ctx: SimContext, cs: CountryState): void {
+  const { db, state, rng } = ctx;
+  const cw = cs.civilWar!;
+  let rebelHeld = 0, govHeld = 0, total = 0;
+  const pop = (i: number) => ctx.map?.provinces[i]?.population ?? 1;
+  for (let i = 0; i < state.provinceOwner.length; i++) {
+    const o = state.provinceOwner[i], c = state.provinceController[i];
+    if (o !== cs.tag && o !== cw.rebel) continue;
+    total += pop(i);
+    if (c === cw.rebel) rebelHeld += pop(i);
+    else if (c === cs.tag) govHeld += pop(i);
+  }
+  if (rebelHeld === 0) return endCivilWar(ctx, cs, true);
+  if (govHeld === 0 || rebelHeld >= total * db.warRules.capitulation_share) return endCivilWar(ctx, cs, false);
+  const armies = state.divisions.some((d) => d.owner === cw.rebel) && state.divisions.some((d) => d.owner === cs.tag);
+  if (!armies && rng.chance(db.politicsRules.unrest.civil_war_end_chance)) endCivilWar(ctx, cs, rng.chance((govHeld + 1) / (govHeld + rebelHeld + 2)));
 }
 
 function rebelColor(parent: string | undefined): string {
@@ -174,8 +221,23 @@ export function endCivilWar(ctx: SimContext, cs: CountryState, governmentWins: b
       if (state.provinceOwner[i] === cw.rebel) state.provinceOwner[i] = cs.tag;
       if (state.provinceController[i] === cw.rebel) state.provinceController[i] = cs.tag;
     }
+    // a defeated rebellion's units disband; a victorious one's become the national army
+    if (governmentWins) state.divisions = state.divisions.filter((d) => d.owner !== cw.rebel);
+    else for (const d of state.divisions) if (d.owner === cw.rebel) d.owner = cs.tag;
     delete state.countries[cw.rebel];
     delete state.dynamicCountries[cw.rebel];
+  } else {
+    // the breakaway state keeps its units; each side's units leave the other's territory
+    for (let i = 0; i < state.provinceOwner.length; i++) if (state.provinceOwner[i] === cs.tag && state.provinceController[i] === cw.rebel) state.provinceController[i] = cs.tag;
+    for (let i = 0; i < state.provinceOwner.length; i++) if (state.provinceOwner[i] === cw.rebel && state.provinceController[i] === cs.tag) state.provinceController[i] = cw.rebel;
+    for (const d of state.divisions) {
+      if (d.owner !== cs.tag && d.owner !== cw.rebel) continue;
+      if (state.provinceOwner[d.province - 1] === d.owner) continue;
+      const home = state.provinceOwner.findIndex((o) => o === d.owner);
+      if (home >= 0) d.province = home + 1;
+      d.path = [];
+      d.attacking = undefined;
+    }
   }
   cs.civilWar = null;
   const groupName = db.interestGroupTypes.get(cw.group)?.name ?? cw.group;
@@ -248,11 +310,7 @@ export const unrestSystem: System = {
           }
         }
       }
-      if (cs.civilWar && rng.chance(ur.civil_war_end_chance)) {
-        const rebelPop = state.provinceOwner.filter((o) => o === cs.civilWar!.rebel).length;
-        const ownPop = state.provinceOwner.filter((o) => o === cs.tag).length;
-        endCivilWar(ctx, cs, rng.chance((ownPop + 1) / (ownPop + rebelPop + 2)));
-      }
+      if (cs.civilWar) civilWarProgress(ctx, cs);
     }
   },
 };

@@ -7,6 +7,7 @@
  *    renamed_to), or its seats pass to independents.
  *  - Polls: each month a party's support moves toward the vote model's current share.
  */
+import { monthlyDue } from "../bucket.ts";
 import type { ContentDB } from "../../content/compile.ts";
 import { dayOf } from "../date.ts";
 import type { SimContext, System } from "../simulation.ts";
@@ -100,9 +101,10 @@ export function createPartyLifecycleSystem(): System {
 /** Monthly polls: party support drifts toward the model's current share. */
 export const pollSystem: System = {
   id: "polls",
-  monthly({ db, state }) {
+  // each country is polled on its own day of the month (spreads the load)
+  daily({ db, state }) {
     for (const cs of Object.values(state.countries)) {
-      if (!cs.active || !Object.keys(cs.partyStatus).length) continue;
+      if (!cs.active || !monthlyDue(cs.tag, state.day) || !Object.keys(cs.partyStatus).length) continue;
       const m = modelShares(db, cs, state.day);
       for (const [p, v] of Object.entries(m)) cs.partyPopularity[p] = (cs.partyPopularity[p] ?? 0) * 0.7 + v * 0.3;
     }

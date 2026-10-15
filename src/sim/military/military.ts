@@ -266,15 +266,40 @@ export function canEnter(state: GameState, owner: string, province: number): boo
 export function findPath(map: SimMap, state: GameState, owner: string, from: number, to: number): number[] | null {
   if (from === to) return [];
   if (!canEnter(state, owner, to)) return null;
-  const open = new Map<number, number>([[from, 0]]);
+  // A* with a binary heap (entries may be stale; skipped when popped after closing)
+  const heap: [number, number][] = [[0, from]];
+  const push = (f: number, p: number) => {
+    heap.push([f, p]);
+    for (let i = heap.length - 1; i > 0; ) {
+      const j = (i - 1) >> 1;
+      if (heap[j]![0] <= heap[i]![0]) break;
+      [heap[i], heap[j]] = [heap[j]!, heap[i]!];
+      i = j;
+    }
+  };
+  const pop = (): [number, number] => {
+    const top = heap[0]!, last = heap.pop()!;
+    if (heap.length) {
+      heap[0] = last;
+      for (let i = 0; ; ) {
+        const l = 2 * i + 1, r = l + 1;
+        let m = i;
+        if (l < heap.length && heap[l]![0] < heap[m]![0]) m = l;
+        if (r < heap.length && heap[r]![0] < heap[m]![0]) m = r;
+        if (m === i) break;
+        [heap[i], heap[m]] = [heap[m]!, heap[i]!];
+        i = m;
+      }
+    }
+    return top;
+  };
   const g = new Map<number, number>([[from, 0]]);
   const came = new Map<number, number>();
   const h = (p: number) => provinceDistance(map, p, to);
   const closed = new Set<number>();
-  for (let iter = 0; iter < 20000 && open.size; iter++) {
-    let cur = -1, best = Infinity;
-    for (const [p, f] of open) if (f < best) { best = f; cur = p; }
-    open.delete(cur);
+  for (let iter = 0; iter < 40000 && heap.length; iter++) {
+    const cur = pop()[1];
+    if (closed.has(cur)) continue;
     if (cur === to) {
       const path = [cur];
       while (came.has(path[0]!) && came.get(path[0]!) !== from) path.unshift(came.get(path[0]!)!);
@@ -287,7 +312,7 @@ export function findPath(map: SimMap, state: GameState, owner: string, from: num
       if (cost < (g.get(n) ?? Infinity)) {
         g.set(n, cost);
         came.set(n, cur);
-        open.set(n, cost + h(n));
+        push(cost + h(n), n);
       }
     }
   }
@@ -302,6 +327,7 @@ export function moveDivision(ctx: SimContext, tag: string, id: number, province:
   if (!path) return { ok: false, text: "No route: the division can only move through your own territory or that of an enemy at war." };
   d.path = path;
   d.progress = 0;
+  d.attacking = undefined;
   return { ok: true, text: path.length ? `Moving: ${path.length} provinces.` : "Already there." };
 }
 
