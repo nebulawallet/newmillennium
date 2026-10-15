@@ -71,20 +71,50 @@ export function effectiveLeader(db: ContentDB, cs: CountryState, state?: GameSta
 }
 
 /** Sum of modifiers from the government type, laws in force, ruling sub-ideology and leader traits. */
-export function countryModifiers(db: ContentDB, cs: CountryState): Record<string, number> {
+export function countryModifiers(db: ContentDB, cs: CountryState): Readonly<Record<string, number>> {
+  // cached per country while every input is unchanged (callers must not mutate the result)
+  // signature: government, governing party, effective leader, laws (each change stamps lawChangedDay), timed modifiers, technologies
+  const tm = cs.timedModifiers ?? [];
+  let lawSig = 0;
+  for (const d of Object.values(cs.lawChangedDay)) lawSig += d;
+  let tmSig = tm.length;
+  for (const t of tm) tmSig += t.value * 7919 + t.until;
+  const leader = effectiveLeader(db, cs);
+  const key = `${cs.govType}|${cs.rulingParties[0]}|${leader}|${lawSig}|${tmSig}|${cs.research?.completed.length ?? 0}`;
+  const hit = modCache.get(cs);
+  if (hit && hit.db === db && hit.key === key) return hit.mods;
+  const sub = rulingSubIdeology(db, cs);
+  const mods = computeModifiers(db, cs, sub, leader);
+  modCache.set(cs, { db, key, mods });
+  return mods;
+}
+const modCache = new WeakMap<CountryState, { db: ContentDB; key: string; mods: Record<string, number> }>();
+
+function computeModifiers(db: ContentDB, cs: CountryState, sub: string | null, leader: string | null): Record<string, number> {
   const out: Record<string, number> = {};
   const add = (m: Record<string, number> | undefined) => {
     for (const [k, v] of Object.entries(m ?? {})) out[k] = (out[k] ?? 0) + v;
   };
   add(db.governmentTypes.get(cs.govType)?.modifiers);
   for (const [cat, law] of Object.entries(cs.laws)) add(db.lawCategories.get(cat)?.laws.find((l) => l.id === law)?.modifiers);
-  const sub = rulingSubIdeology(db, cs);
   if (sub) add(db.subIdeologies.get(sub)?.modifiers);
-  const leader = effectiveLeader(db, cs);
   for (const t of (leader ? db.people.get(leader)?.traits : undefined) ?? []) add(db.traits.get(t)?.modifiers);
   for (const tm of cs.timedModifiers ?? []) out[tm.modifier] = (out[tm.modifier] ?? 0) + tm.value;
-  for (const t of cs.research?.completed ?? []) add(db.techs.get(t)?.effects);
+  add(techModifiers(db, cs));
   return out;
+}
+
+/** Summed technology effects, cached per country while its list of completed technologies is unchanged (it only grows). */
+const techCache = new WeakMap<object, { db: ContentDB; n: number; first: string | undefined; mods: Record<string, number> }>();
+function techModifiers(db: ContentDB, cs: CountryState): Record<string, number> | undefined {
+  const done = cs.research?.completed;
+  if (!done?.length) return undefined;
+  const c = techCache.get(done);
+  if (c && c.db === db && c.n === done.length && c.first === done[0]) return c.mods;
+  const mods: Record<string, number> = {};
+  for (const t of done) for (const [k, v] of Object.entries(db.techs.get(t)?.effects ?? {})) mods[k] = (mods[k] ?? 0) + v;
+  techCache.set(done, { db, n: done.length, first: done[0], mods });
+  return mods;
 }
 
 /** Has this person died by this day? (Only real, recorded deaths: the game scripts none.) */

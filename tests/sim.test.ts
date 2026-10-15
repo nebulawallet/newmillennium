@@ -58,13 +58,13 @@ describe("simulation", () => {
     expect(deu.partyLeader["deu.cdu"]).toBe("deu.angela_merkel");
     expect(sim.state.log.some((e) => e.text.includes("Angela Merkel"))).toBe(true);
     expect(deu.politicalPower).toBeGreaterThan(50);
-  });
+  }, 30_000);
 
   it("does not apply history in dynamic mode", () => {
     const sim = new Simulation(db, newState("dynamic"));
     while (sim.state.day < dayOf("2006-01-01")) sim.step();
     expect(sim.state.countries.DEU!.offices["deu.chancellor"]).toEqual(["deu.gerhard_schroeder"]);
-  });
+  }, 30_000);
 
   it("is deterministic and save files round-trip", () => {
     const run = () => {

@@ -231,10 +231,16 @@ export function defensiveAllies(db: ContentDB, state: GameState, tag: string): s
 }
 
 const gdpOf = (state: GameState, tag: string) => state.countries[tag]?.economy?.gdp ?? 0;
+const worldGdpCache = new WeakMap<GameState, { day: number; value: number }>();
+/** World GDP, computed once per day. */
 function worldGdp(state: GameState): number {
+  const c = worldGdpCache.get(state);
+  if (c && c.day === state.day) return c.value;
   let w = 0;
   for (const cs of Object.values(state.countries)) w += cs.economy?.gdp ?? 0;
-  return Math.max(1, w);
+  const value = Math.max(1, w);
+  worldGdpCache.set(state, { day: state.day, value });
+  return value;
 }
 
 /** Growth points from trade deals and economic blocs, minus sanctions (absolute; the economy subtracts its 2000 value). */

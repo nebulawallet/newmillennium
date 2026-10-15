@@ -1,0 +1,731 @@
+{
+  "note": "Historical wars and world events of 2001-2026 for the major countries. Descriptions state documented facts only; effects are gameplay estimates. War effects act only when both countries exist and have politics data, so wars against Afghanistan, Iraq, Georgia and Ukraine begin once those countries are researched.",
+  "events": [
+    {
+      "id": "usa_war_in_afghanistan",
+      "title": "War in Afghanistan",
+      "description": "On 7 October 2001 the United States launched Operation Enduring Freedom in Afghanistan, beginning the war against the Taliban government.",
+      "countries": [
+        "USA"
+      ],
+      "major": true,
+      "historical": {
+        "date": "2001-10-07",
+        "any_path": false,
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/War_in_Afghanistan_(2001–2021)",
+            "title": "Wikipedia: War in Afghanistan (2001–2021)",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified"
+      },
+      "options": [
+        {
+          "id": "launch",
+          "name": "Launch the operation",
+          "effects": [
+            {
+              "declare_war": {
+                "target": "AFG"
+              }
+            },
+            {
+              "add_war_support": 0.05
+            },
+            {
+              "add_interest_group_approval": {
+                "group": "military",
+                "value": 4
+              }
+            },
+            {
+              "add_timed_modifier": {
+                "modifier": "intelligence_power",
+                "value": 0.05,
+                "days": 1460
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "usa_kabul_falls",
+      "title": "The fall of Kabul",
+      "description": "The Taliban took control of Kabul on 15 August 2021 as the last United States troops were being withdrawn from Afghanistan.",
+      "countries": [
+        "USA"
+      ],
+      "major": true,
+      "historical": {
+        "date": "2021-08-15",
+        "any_path": false,
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/War_in_Afghanistan_(2001–2021)",
+            "title": "Wikipedia: War in Afghanistan (2001–2021)",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified"
+      },
+      "options": [
+        {
+          "id": "withdraw",
+          "name": "Complete the withdrawal",
+          "effects": [
+            {
+              "white_peace": {
+                "with": "AFG"
+              }
+            },
+            {
+              "add_war_support": -0.05
+            },
+            {
+              "add_stability": -0.02
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "iraq_invasion",
+      "title": "Invasion of Iraq",
+      "description": "On 20 March 2003 a coalition led by the United States, with British, Australian and Polish troops, began the invasion of Iraq.",
+      "countries": [
+        "USA",
+        "GBR",
+        "POL"
+      ],
+      "major": true,
+      "historical": {
+        "date": "2003-03-20",
+        "any_path": false,
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2003_invasion_of_Iraq",
+            "title": "Wikipedia: 2003 invasion of Iraq",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified"
+      },
+      "options": [
+        {
+          "id": "invade",
+          "name": "Join the invasion",
+          "effects": [
+            {
+              "declare_war": {
+                "target": "IRQ"
+              }
+            },
+            {
+              "add_war_support": 0.03
+            },
+            {
+              "add_interest_group_approval": {
+                "group": "military",
+                "value": 3
+              }
+            },
+            {
+              "add_interest_group_approval": {
+                "group": "youth_students",
+                "value": -4
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "rus_georgia_war",
+      "title": "War in South Ossetia",
+      "description": "Russian forces entered the conflict in South Ossetia and Georgia on 8 August 2008.",
+      "countries": [
+        "RUS"
+      ],
+      "major": true,
+      "historical": {
+        "date": "2008-08-08",
+        "any_path": false,
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/Russo-Georgian_War",
+            "title": "Wikipedia: Russo-Georgian War",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified"
+      },
+      "options": [
+        {
+          "id": "intervene",
+          "name": "Intervene",
+          "effects": [
+            {
+              "declare_war": {
+                "target": "GEO",
+                "goal": "status_quo"
+              }
+            },
+            {
+              "add_war_support": 0.05
+            },
+            {
+              "add_interest_group_approval": {
+                "group": "military",
+                "value": 4
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "rus_georgia_ceasefire",
+      "title": "Ceasefire in Georgia",
+      "description": "A ceasefire agreement negotiated by President Nicolas Sarkozy of France was reached on 12 August 2008.",
+      "countries": [
+        "RUS"
+      ],
+      "historical": {
+        "date": "2008-08-12",
+        "any_path": false,
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/Russo-Georgian_War",
+            "title": "Wikipedia: Russo-Georgian War",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified"
+      },
+      "options": [
+        {
+          "id": "accept",
+          "name": "Accept the ceasefire",
+          "effects": [
+            {
+              "white_peace": {
+                "with": "GEO"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "rus_crimea",
+      "title": "Crimea",
+      "description": "Russia incorporated Crimea on 18 March 2014 as the Republic of Crimea and the federal city of Sevastopol. On 27 March the United Nations General Assembly adopted a non-binding resolution declaring the referendum and the change of status invalid, by 100 votes to 11 with 58 abstentions.",
+      "countries": [
+        "RUS"
+      ],
+      "major": true,
+      "historical": {
+        "date": "2014-03-18",
+        "any_path": false,
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/Annexation_of_Crimea_by_the_Russian_Federation",
+            "title": "Wikipedia: Annexation of Crimea by the Russian Federation",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified"
+      },
+      "options": [
+        {
+          "id": "incorporate",
+          "name": "Incorporate Crimea",
+          "effects": [
+            {
+              "transfer_provinces": {
+                "from": "UKR",
+                "adm1": [
+                  "RUS-5482",
+                  "RUS-283"
+                ]
+              }
+            },
+            {
+              "add_war_support": 0.05
+            },
+            {
+              "country": {
+                "tag": "UKR",
+                "effects": [
+                  {
+                    "add_opinion": {
+                      "target": "ROOT",
+                      "value": -60,
+                      "days": 3650
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "add_timed_modifier": {
+                "modifier": "international_opinion",
+                "value": -0.1,
+                "days": 1825
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "rus_invasion_of_ukraine",
+      "title": "Invasion of Ukraine",
+      "description": "On 24 February 2022 Russia invaded Ukraine.",
+      "countries": [
+        "RUS"
+      ],
+      "major": true,
+      "historical": {
+        "date": "2022-02-24",
+        "any_path": false,
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/Russian_invasion_of_Ukraine",
+            "title": "Wikipedia: Russian invasion of Ukraine",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified"
+      },
+      "options": [
+        {
+          "id": "invade",
+          "name": "Begin the invasion",
+          "effects": [
+            {
+              "declare_war": {
+                "target": "UKR"
+              }
+            },
+            {
+              "add_war_support": 0.05
+            },
+            {
+              "add_timed_modifier": {
+                "modifier": "international_opinion",
+                "value": -0.2,
+                "days": 3650
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "isr_lebanon_war",
+      "title": "War in Lebanon",
+      "description": "On 12 July 2006 Hezbollah attacked Israeli soldiers on the border; the war that followed lasted until a United Nations-brokered ceasefire took effect on 14 August 2006.",
+      "countries": [
+        "ISR"
+      ],
+      "historical": {
+        "date": "2006-07-12",
+        "any_path": false,
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2006_Lebanon_War",
+            "title": "Wikipedia: 2006 Lebanon War",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified"
+      },
+      "options": [
+        {
+          "id": "respond",
+          "name": "Respond militarily",
+          "effects": [
+            {
+              "add_war_support": 0.05
+            },
+            {
+              "add_interest_group_approval": {
+                "group": "military",
+                "value": 3
+              }
+            },
+            {
+              "economic_shock": {
+                "growth": -0.5,
+                "months": 3
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tur_coup_attempt_2016",
+      "title": "Coup attempt",
+      "description": "On the evening of 15 July 2016 a faction within the Turkish Armed Forces attempted a military coup. The attempt failed.",
+      "countries": [
+        "TUR"
+      ],
+      "major": true,
+      "historical": {
+        "date": "2016-07-15",
+        "any_path": false,
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2016_Turkish_coup_attempt",
+            "title": "Wikipedia: 2016 Turkish coup attempt",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified"
+      },
+      "options": [
+        {
+          "id": "restore",
+          "name": "Restore order",
+          "effects": [
+            {
+              "add_stability": -0.05
+            },
+            {
+              "add_timed_modifier": {
+                "modifier": "internal_security",
+                "value": 0.1,
+                "days": 1460
+              }
+            },
+            {
+              "add_interest_group_approval": {
+                "group": "security_services",
+                "value": 6
+              }
+            },
+            {
+              "add_interest_group_approval": {
+                "group": "military",
+                "value": -8
+              }
+            },
+            {
+              "add_timed_modifier": {
+                "modifier": "civil_liberties",
+                "value": -0.05,
+                "days": 1460
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "jpn_fukushima",
+      "title": "Fukushima nuclear accident",
+      "description": "The Tōhoku earthquake of 11 March 2011 was followed by a major nuclear accident at the Fukushima Daiichi Nuclear Power Plant.",
+      "countries": [
+        "JPN"
+      ],
+      "major": true,
+      "historical": {
+        "date": "2011-03-11",
+        "any_path": false,
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/Fukushima_nuclear_accident",
+            "title": "Wikipedia: Fukushima nuclear accident",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified"
+      },
+      "options": [
+        {
+          "id": "respond",
+          "name": "Respond to the disaster",
+          "effects": [
+            {
+              "economic_shock": {
+                "growth": -1.5,
+                "months": 12
+              }
+            },
+            {
+              "add_timed_modifier": {
+                "modifier": "nuclear_output",
+                "value": -0.4,
+                "days": 2920
+              }
+            },
+            {
+              "add_stability": -0.02
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "irn_jcpoa",
+      "title": "Joint Comprehensive Plan of Action",
+      "description": "On 14 July 2015 Iran and the P5+1 (China, France, Russia, the United Kingdom, the United States and Germany) finalised in Vienna an agreement on Iran's nuclear programme.",
+      "countries": [
+        "IRN"
+      ],
+      "major": true,
+      "historical": {
+        "date": "2015-07-14",
+        "any_path": false,
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/Joint_Comprehensive_Plan_of_Action",
+            "title": "Wikipedia: Joint Comprehensive Plan of Action",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified"
+      },
+      "options": [
+        {
+          "id": "sign",
+          "name": "Sign the agreement",
+          "effects": [
+            {
+              "add_economic_mood": 0.1
+            },
+            {
+              "add_timed_modifier": {
+                "modifier": "foreign_investment",
+                "value": 0.05,
+                "days": 1095
+              }
+            },
+            {
+              "country": {
+                "tag": "USA",
+                "effects": [
+                  {
+                    "add_opinion": {
+                      "target": "ROOT",
+                      "value": 15,
+                      "days": 1095
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "country": {
+                "tag": "GBR",
+                "effects": [
+                  {
+                    "add_opinion": {
+                      "target": "ROOT",
+                      "value": 15,
+                      "days": 1095
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "country": {
+                "tag": "FRA",
+                "effects": [
+                  {
+                    "add_opinion": {
+                      "target": "ROOT",
+                      "value": 15,
+                      "days": 1095
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "country": {
+                "tag": "DEU",
+                "effects": [
+                  {
+                    "add_opinion": {
+                      "target": "ROOT",
+                      "value": 15,
+                      "days": 1095
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "country": {
+                "tag": "CHN",
+                "effects": [
+                  {
+                    "add_opinion": {
+                      "target": "ROOT",
+                      "value": 15,
+                      "days": 1095
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "country": {
+                "tag": "RUS",
+                "effects": [
+                  {
+                    "add_opinion": {
+                      "target": "ROOT",
+                      "value": 15,
+                      "days": 1095
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "usa_leaves_jcpoa",
+      "title": "Withdrawal from the nuclear agreement",
+      "description": "On 8 May 2018 the United States announced its withdrawal from the Joint Comprehensive Plan of Action.",
+      "countries": [
+        "USA"
+      ],
+      "major": true,
+      "historical": {
+        "date": "2018-05-08",
+        "any_path": false,
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/United_States_withdrawal_from_the_Joint_Comprehensive_Plan_of_Action",
+            "title": "Wikipedia: United States withdrawal from the Joint Comprehensive Plan of Action",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified"
+      },
+      "options": [
+        {
+          "id": "withdraw",
+          "name": "Withdraw",
+          "effects": [
+            {
+              "country": {
+                "tag": "IRN",
+                "effects": [
+                  {
+                    "add_opinion": {
+                      "target": "ROOT",
+                      "value": -30,
+                      "days": 1825
+                    }
+                  },
+                  {
+                    "economic_shock": {
+                      "growth": -3,
+                      "months": 24,
+                      "inflation": 10
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "gbr_eu_referendum",
+      "title": "EU membership referendum",
+      "description": "On 23 June 2016 the United Kingdom held a referendum on its membership of the European Union; 51.9% of the votes cast were in favour of leaving.",
+      "countries": [
+        "GBR"
+      ],
+      "major": true,
+      "historical": {
+        "date": "2016-06-23",
+        "any_path": false,
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2016_United_Kingdom_European_Union_membership_referendum",
+            "title": "Wikipedia: 2016 United Kingdom European Union membership referendum",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified"
+      },
+      "options": [
+        {
+          "id": "leave",
+          "name": "The country votes to leave",
+          "effects": [
+            {
+              "add_stability": -0.03
+            },
+            {
+              "add_economic_mood": -0.1
+            },
+            {
+              "set_flag": "eu_referendum_leave"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "chn_beijing_olympics",
+      "title": "Beijing Olympics",
+      "description": "Beijing hosted the Games of the XXIX Olympiad from 8 to 24 August 2008.",
+      "countries": [
+        "CHN"
+      ],
+      "historical": {
+        "date": "2008-08-08",
+        "any_path": false,
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2008_Summer_Olympics",
+            "title": "Wikipedia: 2008 Summer Olympics",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified"
+      },
+      "options": [
+        {
+          "id": "host",
+          "name": "Host the Games",
+          "effects": [
+            {
+              "add_stability": 0.03
+            },
+            {
+              "add_timed_modifier": {
+                "modifier": "international_opinion",
+                "value": 0.05,
+                "days": 730
+              }
+            },
+            {
+              "add_timed_modifier": {
+                "modifier": "construction_speed",
+                "value": 0.05,
+                "days": 365
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

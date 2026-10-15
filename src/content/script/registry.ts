@@ -139,6 +139,17 @@ export const EFFECTS: Record<string, ScriptDef> = {
     description: "Change this country's opinion of the target (fading over `days`, default one year).",
   },
   join_bloc: { args: Id, description: "The country joins a bloc.", refs: { "": "bloc" } },
+  declare_war: {
+    args: z.strictObject({ target: Tag, goal: z.enum(["conquest", "status_quo"]).optional() }),
+    description: "Declare war on the target (historical wars; nothing happens unless both countries exist and have politics data).",
+    refs: { target: "tag" },
+  },
+  white_peace: { args: z.strictObject({ with: Tag }), description: "End the war with this country without territorial change.", refs: { with: "tag" } },
+  transfer_provinces: {
+    args: z.strictObject({ from: Tag, adm1: z.array(z.string()).min(1) }),
+    description: "Provinces of `from` in these first-level regions (map adm1 codes) pass to this country.",
+    refs: { from: "tag" },
+  },
   leave_bloc: { args: Id, description: "The country leaves a bloc.", refs: { "": "bloc" } },
   release_country: { args: Tag, description: "Release a releasable country.", refs: { "": "tag" } },
   unlock_tech: { args: Id, description: "Grant a technology.", refs: { "": "tech" } },

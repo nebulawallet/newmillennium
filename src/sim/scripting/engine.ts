@@ -3,6 +3,7 @@
  * (src/content/script/registry.ts) against the game state, and describes them in plain words for
  * tooltips. Effects for systems that arrive in later phases are accepted and described as such.
  */
+import { declareWar, makePeace, type WarGoal } from "../military/war.ts";
 import { addOpinion, atWarWith, inBloc, joinBloc, leaveBloc, opinion } from "../diplomacy/diplomacy.ts";
 import type { ContentDB } from "../../content/compile.ts";
 import { COUNTRY_SCOPE, LOGIC_KEYS, SCOPES } from "../../content/script/registry.ts";
@@ -323,6 +324,29 @@ function effect(ctx: SimContext, scope: Scope, k: string, v: unknown, source: st
       break;
     }
     case "join_bloc": joinBloc(ctx, scope.tag, v as string); break;
+    case "declare_war": {
+      const target = a.target as string;
+      if (state.countries[target]?.active && state.provinceOwner.includes(target)) declareWar(ctx, scope.tag, target, (a.goal as WarGoal | undefined) ?? "conquest", false, true);
+      break;
+    }
+    case "white_peace": {
+      const other = a.with as string;
+      const war = state.wars.find((w) => (w.attackers.includes(scope.tag) && w.defenders.includes(other)) || (w.defenders.includes(scope.tag) && w.attackers.includes(other)));
+      if (war) makePeace(ctx, war, null, false);
+      break;
+    }
+    case "transfer_provinces": {
+      const codes = new Set(a.adm1 as string[]);
+      let moved = 0;
+      ctx.map?.provinces.forEach((p, i) => {
+        if (state.provinceOwner[i] !== a.from || !p.adm1.some((c) => codes.has(c))) return;
+        state.provinceOwner[i] = scope.tag;
+        state.provinceController[i] = scope.tag;
+        moved++;
+      });
+      if (moved) ctx.emit({ type: "map_changed" });
+      break;
+    }
     case "leave_bloc": leaveBloc(ctx, scope.tag, v as string); break;
     case "add_wargoal": {
       const target = a.target as string;
@@ -424,6 +448,9 @@ export function describeEffects(db: ContentDB, effects: unknown[], depth = 0): s
       case "unlock_tech": line = `Technology: ${db.techs.get(v as string)?.name ?? v}`; break;
       case "add_wargoal": line = `War goal against ${name.tag(a.target as string)}`; break;
       case "add_opinion": line = `Opinion of ${a.target === "ROOT" || a.target === "FROM" ? "them" : name.tag(a.target as string)} ${signed(a.value as number)}`; break;
+      case "declare_war": line = `War with ${name.tag(a.target as string)}`; break;
+      case "white_peace": line = `Peace with ${name.tag(a.with as string)}`; break;
+      case "transfer_provinces": line = `Provinces of ${name.tag(a.from as string)} pass to this country`; break;
       case "join_bloc": line = `Joins ${db.blocs.get(v as string)?.article === false ? "" : "the "}${db.blocs.get(v as string)?.name ?? v}`; break;
       case "leave_bloc": line = `Leaves ${db.blocs.get(v as string)?.article === false ? "" : "the "}${db.blocs.get(v as string)?.name ?? v}`; break;
       case "add_trait": line = `${name.person(a.person as string)} gains a trait`; break;

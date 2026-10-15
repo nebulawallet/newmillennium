@@ -105,7 +105,7 @@ export function airPower(db: ContentDB, cs: CountryState): number {
 
 // ------------------------------------------------------------------ commands
 
-export function declareWar(ctx: SimContext, tag: string, target: string, goal: WarGoal = "conquest", requireJustification = false): { ok: boolean; text: string } {
+export function declareWar(ctx: SimContext, tag: string, target: string, goal: WarGoal = "conquest", requireJustification = false, scripted = false): { ok: boolean; text: string } {
   const { db, state } = ctx;
   if (tag === target) return { ok: false, text: "A country cannot declare war on itself." };
   const a = state.countries[tag], b = state.countries[target];
@@ -113,7 +113,8 @@ export function declareWar(ctx: SimContext, tag: string, target: string, goal: W
   if (hostile(state, tag, target)) return { ok: false, text: "Already at war." };
   const rules = db.warRules;
   const j = justification(state, tag, target);
-  const justified = !!j && j.done <= state.day;
+  // historical wars started by events carry no justification penalty
+  const justified = scripted || (!!j && j.done <= state.day);
   if (requireJustification && !justified) return { ok: false, text: j ? "The war goal is still being justified." : "Justify a war goal first." };
   const name = `${countryShort(db, state, tag)}–${countryShort(db, state, target)} war`;
   const id = state.nextWarId++;

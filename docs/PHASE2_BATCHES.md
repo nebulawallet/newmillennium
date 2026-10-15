@@ -30,21 +30,21 @@ See the prompts used in the pilot (git history, early October 2026) for the form
 
 DEU (Pass A and Pass B), USA, RUS, GBR, CHN, IRN, SOM, SWE, FRA, AND, ESP, NLD, JPN, NOR, POL, TUR, ISR, PSE, ITA, MCO, CZE, HUN, SVK
 
-## Running (since 15 October 2026)
+## Running (relaunched 15 October 2026, evening)
 
 | Agent | Tags |
 |---|---|
-| 2b | DNK FIN ISL (DNK had a partial elections.json) |
-| 3b | PRT BEL LUX |
-| 4b | KOR TWN PRK MNG |
-| 7 | IRL AUT CHE LIE |
-| 8 | ROU BGR GRC CYP NCY |
+| 2c | DNK FIN ISL (continues partial DNK, FIN) |
+| 3c | PRT BEL LUX (continues partial PRT, BEL) |
+| 4c | KOR TWN PRK MNG (continues partial KOR, TWN) |
+| 7b | IRL AUT CHE LIE (continues partial IRL) |
+| 8b | ROU BGR GRC CYP NCY |
+| 9 | SVN HRV MKD ALB BIH YUG MNE KOS |
 
 ## Todo batches
 
 | # | Tags | Notes |
 |---|---|---|
-| 9 | YUG MNE KOS BIH HRV SVN MKD ALB | Bosnia has a 3-member presidency plus the High Representative; Kosovo under UNMIK |
 | 2 | NOR DNK FIN ISL | Finland's 2000 presidential election fell after game start |
 | 3 | ESP NLD PRT | Spain's 2000 election was in March, so seats come from the 1996 result |
 | 4 | JPN KOR TWN PRK MNG | Taiwan's 2000 election; North Korea's nominal vs effective head of state |

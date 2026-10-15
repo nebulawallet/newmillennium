@@ -1,6 +1,7 @@
 import { describe, expect, it } from "vitest";
 import { compileContent } from "../src/content/compile.ts";
 import { divisionStats } from "../src/sim/military/war.ts";
+import { runEffects } from "../src/sim/scripting/engine.ts";
 import { defaultSystems, Simulation, simMapFrom } from "../src/sim/simulation.ts";
 import { createInitialState } from "../src/sim/state.ts";
 import { NodeFiles } from "../scripts/lib/nodeFiles.ts";
@@ -89,5 +90,22 @@ describe("war", () => {
     const sim = fresh(null);
     sim.dispatch({ type: "declare_war", tag: "DEU", target: "POL" });
     expect(sim.dispatch({ type: "declare_war", tag: "DEU", target: "POL" }).ok).toBe(false);
+  });
+});
+
+describe("scripted wars", () => {
+  it("events can start and end wars and move provinces", () => {
+    const sim = fresh(null);
+    const ctx = sim.context;
+    runEffects(ctx, { tag: "DEU", root: "DEU", from: null }, [{ declare_war: { target: "POL" } }], "test");
+    expect(sim.state.wars).toHaveLength(1);
+    // historical wars carry no aggression penalty
+    expect(sim.state.diplomacy.aggressors.DEU).toBeUndefined();
+    runEffects(ctx, { tag: "DEU", root: "DEU", from: null }, [{ white_peace: { with: "POL" } }], "test");
+    expect(sim.state.wars).toHaveLength(0);
+    runEffects(ctx, { tag: "DEU", root: "DEU", from: null }, [{ transfer_provinces: { from: "POL", adm1: ["X-5", "X-11"] } }], "test");
+    expect(sim.state.provinceOwner[5]).toBe("DEU");
+    expect(sim.state.provinceOwner[11]).toBe("DEU");
+    expect(sim.state.provinceOwner[4]).toBe("POL");
   });
 });
