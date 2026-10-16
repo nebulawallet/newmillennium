@@ -48,11 +48,11 @@ Live sources sometimes report allegations or investigations involving real peopl
 
 <!-- AUTO-GENERATED BELOW: run `npm run review-report`; edits below this line are overwritten -->
 
-## Needs review: 391 of 5051 records
+## Needs review: 396 of 5125 records
 
-Countries with politics data: 56 / 212.
+Countries with politics data: 57 / 212.
 
-Countries with no data yet (156): LIE, SMR, VAT, LVA, LTU, ARM, AZE, KAZ, KGZ, TJK, TKM, UZB, ABK, SOS, NKR, ICH, CAN, ATG, ARG, BHS, BRB, BLZ, BOL, BRA, CHL, COL, CRI, CUB, DMA, DOM, ECU, SLV, GRD, GTM, GUY, HTI, HND, JAM, MEX, NIC, PAN, PRY, PER, KNA, LCA, VCT, SUR, TTO, URY, VEN, FAR, DZA, BHR, EGY, IRQ, JOR, KWT, LBN, LBY, MRT, MAR, OMN, QAT, SAU, SYR, TUN, ARE, YEM, ESH, KUR, AGO, BEN, BWA, BFA, BDI, CPV, CMR, CAF, TCD, COM, COD, COG, CIV, DJI, GNQ, ERI, SWZ, ETH, GAB, GMB, GHA, GIN, GNB, KEN, LSO, LBR, MDG, MWI, MLI, MUS, MOZ, NAM, NER, NGA, RWA, STP, SEN, SYC, SLE, ZAF, SDN, TZA, TGO, UGA, ZMB, ZWE, SSD, SML, UNI, RCD, MLC, AFG, AFN, BGD, BTN, IND, MDV, NPL, PAK, LKA, TEL, BRN, KHM, IDN, LAO, MYS, MMR, PHL, SGP, THA, VNM, TLS, AUS, NZL, FJI, PNG, SLB, VUT, WSM, TON, KIR, TUV, NRU, FSM, MHL, PLW
+Countries with no data yet (155): SMR, VAT, LVA, LTU, ARM, AZE, KAZ, KGZ, TJK, TKM, UZB, ABK, SOS, NKR, ICH, CAN, ATG, ARG, BHS, BRB, BLZ, BOL, BRA, CHL, COL, CRI, CUB, DMA, DOM, ECU, SLV, GRD, GTM, GUY, HTI, HND, JAM, MEX, NIC, PAN, PRY, PER, KNA, LCA, VCT, SUR, TTO, URY, VEN, FAR, DZA, BHR, EGY, IRQ, JOR, KWT, LBN, LBY, MRT, MAR, OMN, QAT, SAU, SYR, TUN, ARE, YEM, ESH, KUR, AGO, BEN, BWA, BFA, BDI, CPV, CMR, CAF, TCD, COM, COD, COG, CIV, DJI, GNQ, ERI, SWZ, ETH, GAB, GMB, GHA, GIN, GNB, KEN, LSO, LBR, MDG, MWI, MLI, MUS, MOZ, NAM, NER, NGA, RWA, STP, SEN, SYC, SLE, ZAF, SDN, TZA, TGO, UGA, ZMB, ZWE, SSD, SML, UNI, RCD, MLC, AFG, AFN, BGD, BTN, IND, MDV, NPL, PAK, LKA, TEL, BRN, KHM, IDN, LAO, MYS, MMR, PHL, SGP, THA, VNM, TLS, AUS, NZL, FJI, PNG, SLB, VUT, WSM, TON, KIR, TUV, NRU, FSM, MHL, PLW
 
 ### ALB — Albania (4)
 
@@ -428,6 +428,16 @@ Countries with no data yet (156): LIE, SMR, VAT, LVA, LTU, ARM, AZE, KAZ, KGZ, T
 | party | `kos.lvv` Vetëvendosje (Self-Determination Movement) (LVV) | Kurti is recorded as leader since the 2005 foundation; check whether anyone else chaired the movement in between. | data/countries/KOS/parties.json |
 | party | `kos.sl` Serb List (SL) | Check the years Goran Rakić led the party (2017 assumed) and add Zlatan Elek if biographical data can be found. | data/countries/KOS/parties.json |
 | election | `president_2026` indirect_presidential 2026-10-06 | Very recent event (October 2026) sourced only from Wikipedia; confirm the vote count and inauguration date with an official source. | data/countries/KOS/elections.json |
+
+### LIE — Liechtenstein (5)
+
+| kind | record | what to check | file |
+|---|---|---|---|
+| party | `lie.vu` Patriotic Union (VU) | Party presidents since 2000 are not researched (the infobox names Mario Wohlwend as current president); leader_history is empty. | data/countries/LIE/parties.json |
+| party | `lie.fbp` Progressive Citizens' Party (FBP) | Party presidents since 2000 are not researched (the infobox names Alexander Batliner as current president); leader_history is empty. | data/countries/LIE/parties.json |
+| party | `lie.du` The Independents (DU) | The 2013 election article shows DU contesting the February 2013 election while the infobox gives foundation in 2013; confirm whether the group formed in 2012. Quaderer's leadership dates are not sourced (recorded as lead candidate from 2013). | data/countries/LIE/parties.json |
+| party | `lie.dpl` Democrats for Liechtenstein (DpL) | Rehak's start as leader is set to the founding date; confirm. | data/countries/LIE/parties.json |
+| election | `referendum_2009_12_06` referendum 2009-12-06 | The article text says the 2008 law was approved by 57%, but its results template is captioned 'Overturning the 2008 environmental protection law'; confirm what a 'yes' vote meant. | data/countries/LIE/elections.json |
 
 ### LUX — Luxembourg (2)
 

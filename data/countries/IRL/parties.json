@@ -1,0 +1,248 @@
+{
+  "parties": [
+    {
+      "id": "irl.fianna_fail",
+      "name": { "en": "Fianna Fáil – The Republican Party", "native": "Fianna Fáil – An Páirtí Poblachtánach" },
+      "abbrev": { "en": "FF", "native": "FF" },
+      "color": "#66BB66",
+      "sub_ideology": "christian_democrat",
+      "founded": "1926-05-16",
+      "status_2000": "active",
+      "leader_history": [
+        { "person": "irl.bertie_ahern", "from": "1994-11-19", "to": "2008-05-07" },
+        { "person": "irl.brian_cowen", "from": "2008-05-07", "to": "2011-01-22" },
+        { "person": "irl.micheal_martin", "from": "2011-01-26" }
+      ],
+      "popularity_2000": 0.393,
+      "popularity_note": "First-preference share, 1997 Dáil election.",
+      "note": "Wikipedia lists conservative liberalism, conservatism, Christian democracy and Irish republicanism (centre to centre-right); mapped to christian_democrat. Member of the Liberal International and the ALDE Party.",
+      "lineage": { "split_from": "irl.sinn_fein" },
+      "international": "Liberal International; Alliance of Liberals and Democrats for Europe Party",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/Fianna_F%C3%A1il", "title": "Wikipedia: Fianna Fáil (infobox)", "accessed": "2026-10-15" },
+        { "url": "https://www.wikidata.org/wiki/Q154550", "title": "Wikidata: Bertie Ahern (Leader of Fianna Fáil 1994-11-19..2008-05-07)", "accessed": "2026-10-15" },
+        { "url": "https://www.wikidata.org/wiki/Q185272", "title": "Wikidata: Brian Cowen (Leader of Fianna Fáil 2008-05-07..2011-01-22)", "accessed": "2026-10-15" },
+        { "url": "https://www.wikidata.org/wiki/Q920403", "title": "Wikidata: Micheál Martin (Leader of Fianna Fáil from 2011-01-26)", "accessed": "2026-10-15" },
+        { "url": "https://en.wikipedia.org/wiki/1997_Irish_general_election", "title": "Wikipedia: 1997 Irish general election", "accessed": "2026-10-15" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "irl.fine_gael",
+      "name": { "en": "Fine Gael", "native": "Fine Gael" },
+      "abbrev": { "en": "FG", "native": "FG" },
+      "color": "#6699FF",
+      "sub_ideology": "liberal_conservative",
+      "founded": "1933-09-08",
+      "status_2000": "active",
+      "leader_history": [
+        { "person": "irl.john_bruton", "from": "1990-11-21", "to": "2001-02-09" },
+        { "person": "irl.michael_noonan", "from": "2001-02-09", "to": "2002-06-05" },
+        { "person": "irl.enda_kenny", "from": "2002-06-05", "to": "2017-06-02" },
+        { "person": "irl.leo_varadkar", "from": "2017-06-02", "to": "2024-03-20" },
+        { "person": "irl.simon_harris", "from": "2024-03-24" }
+      ],
+      "popularity_2000": 0.279,
+      "popularity_note": "First-preference share, 1997 Dáil election.",
+      "note": "Wikipedia lists liberal conservatism and Christian democracy; member of the European People's Party. Leader dates from Wikidata (Harris from 24 March 2024 per the Leader of Fine Gael article).",
+      "international": "Centrist Democrat International; European People's Party",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/Fine_Gael", "title": "Wikipedia: Fine Gael (infobox)", "accessed": "2026-10-15" },
+        { "url": "https://en.wikipedia.org/wiki/Leader_of_Fine_Gael", "title": "Wikipedia: Leader of Fine Gael", "accessed": "2026-10-15" },
+        { "url": "https://www.wikidata.org/wiki/Q6508511", "title": "Wikidata: Leader of Fine Gael (via holders' position statements)", "accessed": "2026-10-15" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "irl.labour",
+      "name": { "en": "Labour Party", "native": "Páirtí an Lucht Oibre" },
+      "abbrev": { "en": "Lab", "native": "Lab" },
+      "color": "#CC0000",
+      "sub_ideology": "social_democrat",
+      "founded": "1912-05-28",
+      "status_2000": "active",
+      "leader_history": [
+        { "person": "irl.ruairi_quinn", "from": "1997-11-13", "to": "2002-10-25" },
+        { "person": "irl.pat_rabbitte", "from": "2002-10-25", "to": "2007-09-06" },
+        { "person": "irl.eamon_gilmore", "from": "2007-09-06", "to": "2014-07-04" },
+        { "person": "irl.joan_burton", "from": "2014-07-04", "to": "2016-05-20" },
+        { "person": "irl.brendan_howlin", "from": "2016-05-20", "to": "2020-04-03" },
+        { "person": "irl.alan_kelly", "from": "2020-04-03", "to": "2022-03-24" },
+        { "person": "irl.ivana_bacik", "from": "2022-03-24" }
+      ],
+      "popularity_2000": 0.129,
+      "popularity_note": "1997 first-preference shares of Labour (10.4%) and Democratic Left (2.5%), which merged into Labour in January 1999.",
+      "international": "Progressive Alliance; Socialist International; Party of European Socialists",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/Leader_of_the_Labour_Party_(Ireland)", "title": "Wikipedia: Leader of the Labour Party (Ireland)", "accessed": "2026-10-15" },
+        { "url": "https://en.wikipedia.org/wiki/Labour_Party_(Ireland)", "title": "Wikipedia: Labour Party (Ireland) (infobox)", "accessed": "2026-10-15" },
+        { "url": "https://en.wikipedia.org/wiki/28th_D%C3%A1il", "title": "Wikipedia: 28th Dáil (Democratic Left merger)", "accessed": "2026-10-15" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "irl.progressive_democrats",
+      "name": { "en": "Progressive Democrats", "native": "An Páirtí Daonlathach" },
+      "abbrev": { "en": "PD", "native": "PD" },
+      "color": "#1F3A93",
+      "sub_ideology": "classical_liberal",
+      "founded": "1985-12-21",
+      "dissolved": "2009-11-20",
+      "status_2000": "active",
+      "leader_history": [
+        { "person": "irl.mary_harney", "from": 1993, "to": "2006-09-11" },
+        { "person": "irl.michael_mcdowell", "from": "2006-09-11", "to": "2007-05-25" },
+        { "person": "irl.mary_harney", "from": 2007, "to": 2008, "title": "Interim leader" },
+        { "person": "irl.ciaran_cannon", "from": 2008, "to": 2009 },
+        { "person": "irl.noel_grealish", "from": 2009, "to": "2009-11-20" }
+      ],
+      "popularity_2000": 0.047,
+      "popularity_note": "First-preference share, 1997 Dáil election.",
+      "note": "Wikipedia describes the party as conservative liberal and economically liberal. Junior coalition partner of Fianna Fáil 1997-2009. Leader years from the party article's leader table; McDowell's dates from Wikidata.",
+      "international": "Liberal International; European Liberal Democrat and Reform Party",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/Progressive_Democrats", "title": "Wikipedia: Progressive Democrats (infobox and leaders)", "accessed": "2026-10-15" },
+        { "url": "https://www.wikidata.org/wiki/Q1928579", "title": "Wikidata: Michael McDowell (Leader of the Progressive Democrats 2006-09-11..2007-05-25)", "accessed": "2026-10-15" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "irl.green",
+      "name": { "en": "Green Party", "native": "Comhaontas Glas" },
+      "abbrev": { "en": "GP", "native": "CG" },
+      "color": "#22AC6F",
+      "sub_ideology": "green",
+      "founded": "1981-12-03",
+      "status_2000": "active",
+      "leader_history": [
+        { "person": "irl.trevor_sargent", "from": "2001-10-06", "to": "2007-07-17" },
+        { "person": "irl.john_gormley", "from": "2007-07-17", "to": "2011-05-27" },
+        { "person": "irl.eamon_ryan", "from": "2011-05-27", "to": 2024 },
+        { "person": "irl.roderic_ogorman", "from": 2024 }
+      ],
+      "popularity_2000": 0.028,
+      "popularity_note": "First-preference share, 1997 Dáil election.",
+      "note": "Founded as the Ecology Party of Ireland. The party had no national leader until October 2001.",
+      "international": "Global Greens; European Green Party",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/Green_Party_(Ireland)", "title": "Wikipedia: Green Party (Ireland) (foundation, leaders)", "accessed": "2026-10-15" },
+        { "url": "https://www.wikidata.org/wiki/Q12849", "title": "Wikidata: Trevor Sargent (Leader of the Green Party 2001-10-06..2007-07-17)", "accessed": "2026-10-15" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "irl.sinn_fein",
+      "name": { "en": "Sinn Féin", "native": "Sinn Féin" },
+      "abbrev": { "en": "SF", "native": "SF" },
+      "color": "#326760",
+      "sub_ideology": "democratic_socialist",
+      "founded": "1905-11-28",
+      "status_2000": "active",
+      "leader_history": [
+        { "person": "irl.gerry_adams", "from": "1983-11-13", "to": "2018-02-10", "title": "President of Sinn Féin" },
+        { "person": "irl.mary_lou_mcdonald", "from": "2018-02-10", "title": "President of Sinn Féin" }
+      ],
+      "popularity_2000": 0.025,
+      "popularity_note": "First-preference share, 1997 Dáil election.",
+      "note": "All-Ireland party, also organised in Northern Ireland. Wikipedia lists Irish republicanism, democratic socialism and left-wing nationalism. Founded 1905 in its original form; the current party dates from the 1970 split.",
+      "regional_base": ["irish"],
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/Sinn_F%C3%A9in", "title": "Wikipedia: Sinn Féin (infobox)", "accessed": "2026-10-15" },
+        { "url": "https://www.wikidata.org/wiki/Q467414", "title": "Wikidata: Mary Lou McDonald (Leader of Sinn Féin from 2018-02-10)", "accessed": "2026-10-15" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "irl.socialist_party",
+      "name": { "en": "Socialist Party", "native": "Páirtí Sóisialach" },
+      "abbrev": { "en": "SP", "native": "SP" },
+      "color": "#E50000",
+      "sub_ideology": "democratic_socialist",
+      "founded": 1996,
+      "status_2000": "active",
+      "leader_history": [],
+      "popularity_2000": 0.007,
+      "popularity_note": "First-preference share, 1997 Dáil election.",
+      "note": "Collective leadership; Joe Higgins was its sole TD in 2000. Contested later elections through the Anti-Austerity Alliance / Solidarity label and the joint list with People Before Profit; the Wikipedia infobox records a merger into a single organisation, Solidarity, in March 2026.",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/Socialist_Party_(Ireland)", "title": "Wikipedia: Socialist Party (Ireland) / Solidarity (infobox)", "accessed": "2026-10-15" },
+        { "url": "https://en.wikipedia.org/wiki/1997_Irish_general_election", "title": "Wikipedia: 1997 Irish general election", "accessed": "2026-10-15" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "irl.people_before_profit",
+      "name": { "en": "People Before Profit", "native": "Pobal Seachas Brabús" },
+      "abbrev": { "en": "PBP", "native": "PBP" },
+      "color": "#8E2420",
+      "sub_ideology": "democratic_socialist",
+      "founded": "2005-10-21",
+      "status_2000": "not_yet_founded",
+      "leader_history": [],
+      "popularity_2000": 0,
+      "note": "Collective leadership (the infobox names Richard Boyd Barrett). In 2016, 2020 and 2024 it ran a joint list with the Socialist Party's Anti-Austerity Alliance / Solidarity; the elections file records those joint results under this party.",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/People_Before_Profit", "title": "Wikipedia: People Before Profit (infobox)", "accessed": "2026-10-15" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "irl.social_democrats",
+      "name": { "en": "Social Democrats", "native": "Na Daonlathaithe Sóisialta" },
+      "abbrev": { "en": "SD", "native": "SD" },
+      "color": "#752F8B",
+      "sub_ideology": "social_democrat",
+      "founded": "2015-07-15",
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        { "person": "irl.catherine_murphy", "from": "2015-07-15", "to": "2023-03-01", "title": "Co-leader" },
+        { "person": "irl.roisin_shortall", "from": "2015-07-15", "to": "2023-03-01", "title": "Co-leader" },
+        { "person": "irl.stephen_donnelly", "from": "2015-07-15", "to": "2016-09-05", "title": "Co-leader" },
+        { "person": "irl.holly_cairns", "from": "2023-03-01" }
+      ],
+      "popularity_2000": 0,
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/Social_Democrats_(Ireland)", "title": "Wikipedia: Social Democrats (Ireland) (co-leadership; Cairns announced as leader 1 March 2023)", "accessed": "2026-10-15" },
+        { "url": "https://www.wikidata.org/wiki/Q13157830", "title": "Wikidata: Stephen Donnelly (Social Democrats 2015-07-15..2016-09-05)", "accessed": "2026-10-15" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "irl.aontu",
+      "name": { "en": "Aontú", "native": "Aontú" },
+      "abbrev": { "en": "Aontú", "native": "Aontú" },
+      "color": "#44532A",
+      "sub_ideology": "national_conservative",
+      "founded": "2019-01-28",
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        { "person": "irl.peadar_toibin", "from": "2019-01-28" }
+      ],
+      "popularity_2000": 0,
+      "lineage": { "split_from": "irl.sinn_fein" },
+      "note": "Wikipedia lists Irish republicanism, social conservatism, populism and Euroscepticism; mapped to national_conservative.",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/Aont%C3%BA", "title": "Wikipedia: Aontú (infobox)", "accessed": "2026-10-15" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "irl.independent_ireland",
+      "name": { "en": "Independent Ireland", "native": "Éire Neamhspleách" },
+      "abbrev": { "en": "II", "native": "II" },
+      "color": "#EF7D00",
+      "sub_ideology": "right_populist",
+      "founded": "2023-11-10",
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        { "person": "irl.michael_collins", "from": "2023-11-10" }
+      ],
+      "popularity_2000": 0,
+      "note": "Wikipedia lists conservatism and right-wing populism.",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/Independent_Ireland", "title": "Wikipedia: Independent Ireland (infobox)", "accessed": "2026-10-15" }
+      ],
+      "confidence": "verified"
+    }
+  ]
+}

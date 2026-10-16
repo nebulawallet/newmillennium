@@ -1,0 +1,15 @@
+{
+  "note": "Influence and approval are gameplay starting values for 1 January 2000 (single-party VU government, strong princely house), not measured data. Liechtenstein has no army; the military and security-services groups are given minimal weight. Influence reflects a financial-services and industrial economy, the Catholic Church as state church, and a small, closely connected political class.",
+  "interest_groups": [
+    { "type": "military", "influence": 0.01, "approval": 50, "note": "No armed forces since 1868; the Landespolizei handles security." },
+    { "type": "security_services", "influence": 0.05, "approval": 55 },
+    { "type": "business", "influence": 0.6, "approval": 65, "note": "Banking, trust and industrial firms." },
+    { "type": "labour_unions", "influence": 0.1, "approval": 50 },
+    { "type": "religious_establishment", "influence": 0.3, "approval": 60, "note": "The Catholic Church is the state church." },
+    { "type": "rural", "influence": 0.1, "approval": 55 },
+    { "type": "urban_middle_class", "influence": 0.45, "approval": 60 },
+    { "type": "minorities", "influence": 0.05, "approval": 50, "note": "Foreign residents form a large share of the population." },
+    { "type": "youth_students", "influence": 0.08, "approval": 55 },
+    { "type": "media", "influence": 0.25, "approval": 55 }
+  ]
+}

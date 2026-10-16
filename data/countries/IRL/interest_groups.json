@@ -1,0 +1,15 @@
+{
+  "note": "Influence and approval are gameplay starting values for 1 January 2000 (Fianna Fáil-Progressive Democrats minority coalition under Bertie Ahern during the economic boom), not measured data. Influence reflects institutional weight: employers and unions inside national social partnership agreements, a historically influential Catholic Church, a significant farming sector, and small civilian-controlled Defence Forces.",
+  "interest_groups": [
+    { "type": "military", "influence": 0.08, "approval": 55, "note": "Small all-volunteer Defence Forces under civilian control, with a tradition of UN peacekeeping." },
+    { "type": "security_services", "influence": 0.08, "approval": 55 },
+    { "type": "business", "influence": 0.5, "approval": 65, "note": "Employers' organisations and foreign investors during the late-1990s boom; gameplay estimate." },
+    { "type": "labour_unions", "influence": 0.35, "approval": 55, "note": "ICTU unions are parties to national social partnership agreements." },
+    { "type": "religious_establishment", "influence": 0.25, "approval": 50, "note": "The Catholic Church runs most schools and many hospitals." },
+    { "type": "rural", "influence": 0.3, "approval": 50, "note": "Farming organisations and rural constituencies, with weight under the STV system." },
+    { "type": "urban_middle_class", "influence": 0.45, "approval": 62 },
+    { "type": "minorities", "influence": 0.05, "approval": 50, "note": "Small minorities, including Travellers and recent immigrants." },
+    { "type": "youth_students", "influence": 0.15, "approval": 55 },
+    { "type": "media", "influence": 0.4, "approval": 55, "note": "RTÉ and the national press." }
+  ]
+}

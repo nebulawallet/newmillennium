@@ -1,0 +1,504 @@
+{
+  "tag": "CHE",
+  "name": {
+    "en": "Switzerland",
+    "native": "Schweiz",
+    "official": {
+      "en": "Swiss Confederation",
+      "native": "Schweizerische Eidgenossenschaft"
+    }
+  },
+  "adjective": "Swiss",
+  "culture_primary": "swiss_german",
+  "government": {
+    "type": "directorial",
+    "effective_executive": "che.federal_council",
+    "head_of_state_office": "che.federal_council",
+    "head_of_government_office": "che.federal_council",
+    "constitution": {
+      "term_limit_amendable": true,
+      "emergency_powers": true,
+      "referendum_required_for": [
+        "any amendment of the Federal Constitution (mandatory referendum, majority of people and cantons)",
+        "federal laws when 50,000 citizens sign within 100 days (optional referendum)"
+      ]
+    },
+    "note": "Directorial federal republic. The seven-member Federal Council is collectively head of state and government; its members are elected individually by the Federal Assembly (both chambers in joint session) for four-year terms after each National Council election, and by-elections fill vacancies. The President of the Confederation is a Federal Councillor elected by the Federal Assembly for one year and is first among equals. The seats were shared 2 FDP, 2 CVP, 2 SP and 1 SVP (the 'magic formula') from 1959 to 2003."
+  },
+  "offices": [
+    {
+      "id": "che.federal_council",
+      "title": {
+        "en": "Federal Council",
+        "native": "Bundesrat"
+      },
+      "role": "head_of_state_and_government",
+      "power_weight": 0.9,
+      "selection": "legislature",
+      "term_years": 4,
+      "seats": 7,
+      "succession": {
+        "type": "election"
+      },
+      "holders": [
+        {
+          "person": "che.adolf_ogi",
+          "from": "1988-01-01",
+          "to": "2001-01-01",
+          "note": "SVP. Elected 9 December 1987."
+        },
+        {
+          "person": "che.kaspar_villiger",
+          "from": "1989-02-01",
+          "to": "2004-01-01",
+          "note": "FDP."
+        },
+        {
+          "person": "che.ruth_dreifuss",
+          "from": "1993-04-01",
+          "to": "2003-01-01",
+          "note": "SP. Elected 10 March 1993."
+        },
+        {
+          "person": "che.moritz_leuenberger",
+          "from": "1995-10-01",
+          "to": "2010-11-01",
+          "note": "SP. Elected 27 September 1995."
+        },
+        {
+          "person": "che.pascal_couchepin",
+          "from": "1998-04-01",
+          "to": "2009-11-01",
+          "note": "FDP. Elected 11 March 1998."
+        },
+        {
+          "person": "che.ruth_metzler",
+          "from": "1999-04-01",
+          "to": "2004-01-01",
+          "note": "CVP. Elected 11 March 1999; not re-elected in December 2003."
+        },
+        {
+          "person": "che.joseph_deiss",
+          "from": "1999-04-01",
+          "to": "2006-08-01",
+          "note": "CVP. Elected 11 March 1999."
+        },
+        {
+          "person": "che.samuel_schmid",
+          "from": "2001-01-01",
+          "to": "2009-01-01",
+          "note": "Elected 6 December 2000 for the SVP; later BDP (Wikidata)."
+        },
+        {
+          "person": "che.micheline_calmy_rey",
+          "from": "2003-01-01",
+          "to": "2012-01-01",
+          "note": "SP. Elected 4 December 2002."
+        },
+        {
+          "person": "che.hans_rudolf_merz",
+          "from": "2004-01-01",
+          "to": "2010-11-01",
+          "note": "FDP. Elected 10 December 2003."
+        },
+        {
+          "person": "che.christoph_blocher",
+          "from": "2004-01-01",
+          "to": "2008-01-01",
+          "note": "SVP. Elected 10 December 2003; not re-elected in December 2007."
+        },
+        {
+          "person": "che.doris_leuthard",
+          "from": "2006-08-01",
+          "to": "2019-01-01",
+          "note": "CVP. Elected 14 June 2006."
+        },
+        {
+          "person": "che.eveline_widmer_schlumpf",
+          "from": "2008-01-01",
+          "to": "2016-01-01",
+          "note": "Elected 12 December 2007 as an SVP member; switched to the BDP in 2008."
+        },
+        {
+          "person": "che.ueli_maurer",
+          "from": "2009-01-01",
+          "to": "2023-01-01",
+          "note": "SVP. Elected 10 December 2008."
+        },
+        {
+          "person": "che.didier_burkhalter",
+          "from": "2009-11-01",
+          "to": "2017-11-01",
+          "note": "FDP. Elected 16 September 2009."
+        },
+        {
+          "person": "che.simonetta_sommaruga",
+          "from": "2010-11-01",
+          "to": "2023-01-01",
+          "note": "SP. Elected 22 September 2010."
+        },
+        {
+          "person": "che.johann_schneider_ammann",
+          "from": "2010-11-01",
+          "to": "2019-01-01",
+          "note": "FDP. Elected 22 September 2010."
+        },
+        {
+          "person": "che.alain_berset",
+          "from": "2012-01-01",
+          "to": "2024-01-01",
+          "note": "SP. Elected 14 December 2011."
+        },
+        {
+          "person": "che.guy_parmelin",
+          "from": "2016-01-01",
+          "note": "SVP. Elected 9 December 2015."
+        },
+        {
+          "person": "che.ignazio_cassis",
+          "from": "2017-11-01",
+          "note": "FDP. Elected 20 September 2017."
+        },
+        {
+          "person": "che.viola_amherd",
+          "from": "2019-01-01",
+          "to": "2025-04-01",
+          "note": "CVP, from 2021 The Centre. Elected 5 December 2018."
+        },
+        {
+          "person": "che.karin_keller_sutter",
+          "from": "2019-01-01",
+          "note": "FDP. Elected 5 December 2018."
+        },
+        {
+          "person": "che.albert_roesti",
+          "from": "2023-01-01",
+          "note": "SVP. Elected 7 December 2022."
+        },
+        {
+          "person": "che.elisabeth_baume_schneider",
+          "from": "2023-01-01",
+          "note": "SP. Elected 7 December 2022."
+        },
+        {
+          "person": "che.beat_jans",
+          "from": "2024-01-01",
+          "note": "SP. Elected 13 December 2023."
+        },
+        {
+          "person": "che.martin_pfister",
+          "from": "2025-04-01",
+          "note": "The Centre. Elected 12 March 2025."
+        }
+      ],
+      "note": "Start and end dates are the terms of office from Wikidata (handover to the successor); the List of members of the Swiss Federal Council gives election dates, recorded in each note. Departures on Wikidata's last day of a month are stored as the successor's first day.",
+      "source": [
+        {
+          "url": "https://www.wikidata.org/wiki/Q11811941",
+          "title": "Wikidata: Member of the Swiss Federal Council (position held by)",
+          "accessed": "2026-10-15"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/List_of_members_of_the_Swiss_Federal_Council",
+          "title": "Wikipedia: List of members of the Swiss Federal Council",
+          "accessed": "2026-10-15"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "che.president",
+      "title": {
+        "en": "President of the Swiss Confederation",
+        "native": "Bundespräsident"
+      },
+      "role": "other",
+      "power_weight": 0.1,
+      "selection": "rotation",
+      "term_years": 1,
+      "holders": [
+        {
+          "person": "che.adolf_ogi",
+          "from": "2000-01-01",
+          "to": "2001-01-01"
+        },
+        {
+          "person": "che.moritz_leuenberger",
+          "from": "2001-01-01",
+          "to": "2002-01-01"
+        },
+        {
+          "person": "che.kaspar_villiger",
+          "from": "2002-01-01",
+          "to": "2003-01-01"
+        },
+        {
+          "person": "che.pascal_couchepin",
+          "from": "2003-01-01",
+          "to": "2004-01-01"
+        },
+        {
+          "person": "che.joseph_deiss",
+          "from": "2004-01-01",
+          "to": "2005-01-01"
+        },
+        {
+          "person": "che.samuel_schmid",
+          "from": "2005-01-01",
+          "to": "2006-01-01"
+        },
+        {
+          "person": "che.moritz_leuenberger",
+          "from": "2006-01-01",
+          "to": "2007-01-01"
+        },
+        {
+          "person": "che.micheline_calmy_rey",
+          "from": "2007-01-01",
+          "to": "2008-01-01"
+        },
+        {
+          "person": "che.pascal_couchepin",
+          "from": "2008-01-01",
+          "to": "2009-01-01"
+        },
+        {
+          "person": "che.hans_rudolf_merz",
+          "from": "2009-01-01",
+          "to": "2010-01-01"
+        },
+        {
+          "person": "che.doris_leuthard",
+          "from": "2010-01-01",
+          "to": "2011-01-01"
+        },
+        {
+          "person": "che.micheline_calmy_rey",
+          "from": "2011-01-01",
+          "to": "2012-01-01"
+        },
+        {
+          "person": "che.eveline_widmer_schlumpf",
+          "from": "2012-01-01",
+          "to": "2013-01-01"
+        },
+        {
+          "person": "che.ueli_maurer",
+          "from": "2013-01-01",
+          "to": "2014-01-01"
+        },
+        {
+          "person": "che.didier_burkhalter",
+          "from": "2014-01-01",
+          "to": "2015-01-01"
+        },
+        {
+          "person": "che.simonetta_sommaruga",
+          "from": "2015-01-01",
+          "to": "2016-01-01"
+        },
+        {
+          "person": "che.johann_schneider_ammann",
+          "from": "2016-01-01",
+          "to": "2017-01-01"
+        },
+        {
+          "person": "che.doris_leuthard",
+          "from": "2017-01-01",
+          "to": "2018-01-01"
+        },
+        {
+          "person": "che.alain_berset",
+          "from": "2018-01-01",
+          "to": "2019-01-01"
+        },
+        {
+          "person": "che.ueli_maurer",
+          "from": "2019-01-01",
+          "to": "2020-01-01"
+        },
+        {
+          "person": "che.simonetta_sommaruga",
+          "from": "2020-01-01",
+          "to": "2021-01-01"
+        },
+        {
+          "person": "che.guy_parmelin",
+          "from": "2021-01-01",
+          "to": "2022-01-01"
+        },
+        {
+          "person": "che.ignazio_cassis",
+          "from": "2022-01-01",
+          "to": "2023-01-01"
+        },
+        {
+          "person": "che.alain_berset",
+          "from": "2023-01-01",
+          "to": "2024-01-01"
+        },
+        {
+          "person": "che.viola_amherd",
+          "from": "2024-01-01",
+          "to": "2025-01-01"
+        },
+        {
+          "person": "che.karin_keller_sutter",
+          "from": "2025-01-01",
+          "to": "2026-01-01"
+        },
+        {
+          "person": "che.guy_parmelin",
+          "from": "2026-01-01"
+        }
+      ],
+      "note": "Elected each December by the Federal Assembly for the following calendar year; by convention the office rotates among Federal Councillors by seniority. Chairs the Federal Council and performs representative duties; it carries no extra executive powers.",
+      "source": [
+        {
+          "url": "https://www.wikidata.org/wiki/Q688230",
+          "title": "Wikidata: President of the Swiss Confederation (position held by)",
+          "accessed": "2026-10-15"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/List_of_members_of_the_Swiss_Federal_Council",
+          "title": "Wikipedia: List of members of the Swiss Federal Council (presidency years)",
+          "accessed": "2026-10-15"
+        }
+      ],
+      "confidence": "verified"
+    }
+  ],
+  "legislature": {
+    "name": {
+      "en": "Federal Assembly",
+      "native": "Bundesversammlung"
+    },
+    "chambers": [
+      {
+        "id": "national_council",
+        "name": {
+          "en": "National Council",
+          "native": "Nationalrat"
+        },
+        "seats": 200,
+        "term_years": 4,
+        "elected": "direct",
+        "system": {
+          "type": "list_pr",
+          "formula": "dhondt",
+          "district_model": "admin1",
+          "note": "Open-list PR in the 26 cantons using the Hagenbach-Bischoff system (equivalent to D'Hondt; no national threshold); single-seat cantons elect by plurality. seats_2000 is the October 1999 result. 'others' are the Alliance of Independents, Solidarity, the Christian Social Party and the Feminist and Green Alternative Groups (1 seat each)."
+        },
+        "seats_2000": {
+          "che.sp": 51,
+          "che.svp": 44,
+          "che.fdp": 43,
+          "che.cvp": 35,
+          "che.greens": 8,
+          "che.lps": 6,
+          "che.evp": 3,
+          "che.pda": 2,
+          "che.lega": 2,
+          "che.sd": 1,
+          "che.edu": 1,
+          "others": 4
+        },
+        "confidence_chamber": false,
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/1999_Swiss_federal_election",
+            "title": "Wikipedia: 1999 Swiss federal election (National Council results)",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified"
+      },
+      {
+        "id": "council_of_states",
+        "name": {
+          "en": "Council of States",
+          "native": "Ständerat"
+        },
+        "seats": 46,
+        "term_years": 4,
+        "elected": "direct",
+        "system": {
+          "type": "two_round",
+          "district_model": "admin1",
+          "note": "Two members per full canton and one per half-canton, elected under cantonal law; all cantons except Neuchâtel and Jura (which use PR) elect by majority vote, with a second round where needed. seats_2000 is the 1999 result; 'others' is one seat listed as 'other parties' in the source."
+        },
+        "seats_2000": {
+          "che.fdp": 17,
+          "che.cvp": 15,
+          "che.svp": 7,
+          "che.sp": 6,
+          "others": 1
+        },
+        "confidence_chamber": false,
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/1999_Swiss_federal_election",
+            "title": "Wikipedia: 1999 Swiss federal election (Council of States results)",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified"
+      }
+    ]
+  },
+  "party_system": "multi_party",
+  "start_2000": {
+    "ruling_parties": [
+      "che.fdp",
+      "che.cvp",
+      "che.sp",
+      "che.svp"
+    ],
+    "confidence_and_supply": [],
+    "ideology_support": {
+      "national_conservative": 0.2256,
+      "social_democrat": 0.2248,
+      "classical_liberal": 0.2218,
+      "christian_democrat": 0.1809,
+      "green": 0.0528,
+      "right_populist": 0.0271,
+      "democratic_socialist": 0.0142,
+      "christian_conservative": 0.0125,
+      "regionalist": 0.0088,
+      "social_liberal": 0.0074,
+      "big_tent": 0.0241
+    },
+    "ideology_support_note": "Derived from 1999 National Council vote shares computed from the vote counts: SVP 22.56% (national_conservative); SP 22.48%; FDP 19.93% plus Liberal Party 2.25% (classical_liberal); CVP 15.84%, EVP 1.83% and CSP 0.42% (christian_democrat); Greens 4.96% plus Feminist and Green Alternative Groups 0.32%; Swiss Democrats 1.84% plus Freedom Party 0.87% (right_populist); Party of Labour 0.95% plus Solidarity 0.47% (democratic_socialist); EDU 1.25% (christian_conservative); Ticino League 0.88% (regionalist); Alliance of Independents 0.74% (social_liberal); other lists 2.42% (big_tent).",
+    "stability": 0.9,
+    "war_support": 0.05
+  },
+  "claims": [],
+  "source": [
+    {
+      "url": "https://en.wikipedia.org/wiki/1999_Swiss_federal_election",
+      "title": "Wikipedia: 1999 Swiss federal election",
+      "accessed": "2026-10-15"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/List_of_members_of_the_Swiss_Federal_Council",
+      "title": "Wikipedia: List of members of the Swiss Federal Council",
+      "accessed": "2026-10-15"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Politics_of_Switzerland",
+      "title": "Wikipedia: Politics of Switzerland (magic formula, optional referendum)",
+      "accessed": "2026-10-15"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/National_Council_(Switzerland)",
+      "title": "Wikipedia: National Council (Switzerland) (Hagenbach-Bischoff)",
+      "accessed": "2026-10-15"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Council_of_States_(Switzerland)",
+      "title": "Wikipedia: Council of States (Switzerland) (electoral rules)",
+      "accessed": "2026-10-15"
+    }
+  ],
+  "confidence": "verified"
+}

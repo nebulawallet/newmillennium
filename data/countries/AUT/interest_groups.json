@@ -1,0 +1,15 @@
+{
+  "note": "Influence and approval are gameplay starting values for 1 January 2000 (caretaker SPÖ-ÖVP government after the October 1999 election), not measured data. Influence reflects Austria's social partnership, in which the chambers (labour, economic and agricultural) and the trade union federation are institutionally embedded, a strong farming lobby, a significant Catholic Church, and a conscript army under civilian control.",
+  "interest_groups": [
+    { "type": "military", "influence": 0.1, "approval": 50, "note": "Conscript Bundesheer; neutral state." },
+    { "type": "security_services", "influence": 0.1, "approval": 50 },
+    { "type": "business", "influence": 0.5, "approval": 50, "note": "Economic Chamber and Federation of Industries within the social partnership." },
+    { "type": "labour_unions", "influence": 0.5, "approval": 55, "note": "ÖGB and the Chamber of Labour, closely tied to the SPÖ." },
+    { "type": "religious_establishment", "influence": 0.25, "approval": 50, "note": "Catholic Church; church tax collected by the churches." },
+    { "type": "rural", "influence": 0.3, "approval": 50, "note": "Chambers of Agriculture and the ÖVP farmers' league." },
+    { "type": "urban_middle_class", "influence": 0.45, "approval": 50 },
+    { "type": "minorities", "influence": 0.05, "approval": 45, "note": "Recognised Slovene, Croat, Hungarian, Czech, Slovak and Roma minorities, plus immigrant communities." },
+    { "type": "youth_students", "influence": 0.15, "approval": 50 },
+    { "type": "media", "influence": 0.4, "approval": 50, "note": "ORF public broadcaster and a concentrated tabloid press." }
+  ]
+}

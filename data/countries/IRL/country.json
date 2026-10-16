@@ -1,0 +1,148 @@
+{
+  "tag": "IRL",
+  "name": { "en": "Ireland", "native": "Éire", "official": { "en": "Ireland", "native": "Éire" } },
+  "adjective": "Irish",
+  "culture_primary": "irish",
+  "government": {
+    "type": "parliamentary",
+    "effective_executive": "irl.taoiseach",
+    "head_of_state_office": "irl.president",
+    "head_of_government_office": "irl.taoiseach",
+    "constitution": {
+      "term_limit_amendable": true,
+      "emergency_powers": true,
+      "referendum_required_for": ["any amendment of the Constitution (Article 46)"]
+    },
+    "note": "Parliamentary republic. The President is directly elected for seven years and is largely ceremonial. The Taoiseach is nominated by Dáil Éireann and appointed by the President. On 1 January 2000 Bertie Ahern led a Fianna Fáil-Progressive Democrats minority coalition formed after the 1997 election."
+  },
+  "offices": [
+    {
+      "id": "irl.president",
+      "title": { "en": "President of Ireland", "native": "Uachtarán na hÉireann" },
+      "role": "head_of_state",
+      "power_weight": 0.08,
+      "selection": "direct_election",
+      "term_years": 7,
+      "term_limit": { "max_terms": 2, "consecutive_only": false },
+      "succession": { "type": "acting_then_election" },
+      "holders": [
+        { "person": "irl.mary_mcaleese", "from": "1997-11-11", "to": "2011-11-11", "note": "Returned unopposed in 2004 for a second term." },
+        { "person": "irl.michael_d_higgins", "from": "2011-11-11", "to": "2025-11-11", "note": "Re-elected in 2018." },
+        { "person": "irl.catherine_connolly", "from": "2025-11-11", "note": "Elected on 24 October 2025; inaugurated 11 November 2025." }
+      ],
+      "note": "Wikidata ends each term on 10 November and starts the next on 11 November; the handover date 11 November is used here. A Presidential Commission acts during a vacancy or absence; no vacancy occurred in this period.",
+      "source": [
+        { "url": "https://www.wikidata.org/wiki/Q213702", "title": "Wikidata: President of Ireland (position held by)", "accessed": "2026-10-15" },
+        { "url": "https://en.wikipedia.org/wiki/President_of_Ireland", "title": "Wikipedia: President of Ireland (incumbent Catherine Connolly since 11 November 2025)", "accessed": "2026-10-15" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "irl.taoiseach",
+      "title": { "en": "Taoiseach", "native": "Taoiseach" },
+      "role": "head_of_government",
+      "power_weight": 0.92,
+      "selection": "legislature",
+      "appointed_by": "irl.president",
+      "term_years": 5,
+      "holders": [
+        { "person": "irl.bertie_ahern", "from": "1997-06-26", "to": "2008-05-07", "note": "FF-PD coalition 1997-2007; FF-Green-PD coalition from June 2007." },
+        { "person": "irl.brian_cowen", "from": "2008-05-07", "to": "2011-03-09" },
+        { "person": "irl.enda_kenny", "from": "2011-03-09", "to": "2017-06-14", "note": "FG-Labour coalition 2011-2016; FG-led minority government with independents from May 2016." },
+        { "person": "irl.leo_varadkar", "from": "2017-06-14", "to": "2020-06-27" },
+        { "person": "irl.micheal_martin", "from": "2020-06-27", "to": "2022-12-17", "note": "FF-FG-Green coalition with a rotating Taoiseach." },
+        { "person": "irl.leo_varadkar", "from": "2022-12-17", "to": "2024-04-09" },
+        { "person": "irl.simon_harris", "from": "2024-04-09", "to": "2025-01-23" },
+        { "person": "irl.micheal_martin", "from": "2025-01-23", "note": "FF-FG coalition supported by independents after the 2024 election." }
+      ],
+      "source": [
+        { "url": "https://www.wikidata.org/wiki/Q191827", "title": "Wikidata: Taoiseach (position held by)", "accessed": "2026-10-15" },
+        { "url": "https://en.wikipedia.org/wiki/Taoiseach", "title": "Wikipedia: Taoiseach", "accessed": "2026-10-15" }
+      ],
+      "confidence": "verified"
+    }
+  ],
+  "legislature": {
+    "name": { "en": "Oireachtas", "native": "Oireachtas" },
+    "chambers": [
+      {
+        "id": "dail",
+        "name": { "en": "Dáil Éireann", "native": "Dáil Éireann" },
+        "seats": 166,
+        "term_years": 5,
+        "elected": "direct",
+        "system": {
+          "type": "stv",
+          "formula": "droop",
+          "district_model": "custom",
+          "note": "Single transferable vote in multi-member constituencies (3-5 seats). The outgoing Ceann Comhairle is returned automatically. The Dáil had 166 seats until 2016, 158 in 2016, 160 in 2020 and 174 from 2024. seats_2000 is the 1997 result adjusted for changes up to 1 January 2000 listed in the 28th Dáil article: Democratic Left's 4 TDs joined Labour in January 1999; by-elections in 1998-1999 moved one Fianna Fáil seat to Labour; Séamus Pattison (Labour) sat as Ceann Comhairle; 'others' is Harry Blaney (Independent Fianna Fáil)."
+        },
+        "seats_2000": {
+          "irl.fianna_fail": 76,
+          "irl.fine_gael": 54,
+          "irl.labour": 21,
+          "irl.progressive_democrats": 4,
+          "irl.green": 2,
+          "irl.sinn_fein": 1,
+          "irl.socialist_party": 1,
+          "others": 1,
+          "independents": 5,
+          "speaker": 1
+        },
+        "confidence_chamber": true,
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/1997_Irish_general_election", "title": "Wikipedia: 1997 Irish general election", "accessed": "2026-10-15" },
+          { "url": "https://en.wikipedia.org/wiki/28th_D%C3%A1il", "title": "Wikipedia: 28th Dáil (composition and changes)", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      },
+      {
+        "id": "seanad",
+        "name": { "en": "Seanad Éireann", "native": "Seanad Éireann" },
+        "seats": 60,
+        "term_years": 5,
+        "elected": "mixed",
+        "system": {
+          "type": "indirect",
+          "note": "43 senators are elected by STV on five vocational panels by an electorate of TDs, outgoing senators and local councillors; 6 are elected by graduates of two university constituencies; 11 are nominated by the Taoiseach. seats_2000 is the 21st Seanad (first met 17 September 1997: FF 29, FG 16, Labour 4, PD 4, independents 7) adjusted for changes to 1 January 2000: one Labour seat lost to the Dáil and won by FF at a 1998 by-election; Brendan Ryan (independent) joined Labour in January 1999; the death of Patrick McGowan (FF) and the resignation of Pat Gallagher (Labour) in October 1999 left two seats vacant until the June 2000 by-elections."
+        },
+        "seats_2000": {
+          "irl.fianna_fail": 29,
+          "irl.fine_gael": 16,
+          "irl.labour": 3,
+          "irl.progressive_democrats": 4,
+          "independents": 6,
+          "vacant": 2
+        },
+        "confidence_chamber": false,
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/21st_Seanad", "title": "Wikipedia: 21st Seanad (composition and changes)", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      }
+    ]
+  },
+  "party_system": "multi_party",
+  "start_2000": {
+    "ruling_parties": ["irl.fianna_fail", "irl.progressive_democrats"],
+    "confidence_and_supply": [],
+    "ideology_support": {
+      "christian_democrat": 0.393,
+      "liberal_conservative": 0.279,
+      "social_democrat": 0.129,
+      "classical_liberal": 0.047,
+      "green": 0.028,
+      "democratic_socialist": 0.032,
+      "big_tent": 0.092
+    },
+    "ideology_support_note": "Derived from 1997 Dáil first-preference shares: Fianna Fáil 39.3% (christian_democrat), Fine Gael 27.9% (liberal_conservative), Labour 10.4% plus Democratic Left 2.5% (merged into Labour in January 1999; social_democrat), Progressive Democrats 4.7% (classical_liberal), Greens 2.8%, Sinn Féin 2.5% plus Socialist Party 0.7% (democratic_socialist), and independents and minor parties about 9.2% (big_tent). The minority government relied on several independent TDs.",
+    "stability": 0.8,
+    "war_support": 0.1
+  },
+  "claims": [],
+  "source": [
+    { "url": "https://en.wikipedia.org/wiki/1997_Irish_general_election", "title": "Wikipedia: 1997 Irish general election", "accessed": "2026-10-15" },
+    { "url": "https://en.wikipedia.org/wiki/President_of_Ireland", "title": "Wikipedia: President of Ireland", "accessed": "2026-10-15" }
+  ],
+  "confidence": "verified"
+}

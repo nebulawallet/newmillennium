@@ -1,0 +1,121 @@
+{
+  "tag": "LIE",
+  "name": { "en": "Liechtenstein", "native": "Liechtenstein", "official": { "en": "Principality of Liechtenstein", "native": "Fürstentum Liechtenstein" } },
+  "adjective": "Liechtensteiner",
+  "culture_primary": "liechtensteiner",
+  "government": {
+    "type": "constitutional_monarchy",
+    "effective_executive": "lie.head_of_government",
+    "head_of_state_office": "lie.prince",
+    "head_of_government_office": "lie.head_of_government",
+    "constitution": {
+      "term_limit_amendable": true,
+      "emergency_powers": true,
+      "referendum_required_for": []
+    },
+    "note": "Constitutional monarchy with strong princely powers: the Prince can veto laws (a 2012 referendum to curtail the veto over referendum results was rejected) and the 2003 referendum approved the 'Princely Initiative' constitution. The government is led by the Head of Government (Regierungschef). Hereditary Prince Alois has exercised the Prince's powers as regent since 15 August 2004 while Hans-Adam II remains head of state. Laws can be put to referendum by popular initiative (1,000 signatures for legislative initiatives)."
+  },
+  "offices": [
+    {
+      "id": "lie.prince",
+      "title": { "en": "Prince of Liechtenstein", "native": "Fürst von Liechtenstein" },
+      "role": "head_of_state",
+      "power_weight": 0.35,
+      "selection": "hereditary",
+      "succession": { "type": "line", "heirs": ["lie.alois"] },
+      "holders": [
+        { "person": "lie.hans_adam_ii", "from": "1989-11-13", "note": "Remains head of state; since 15 August 2004 his son Alois exercises the sovereign's powers as regent (see lie.regent)." }
+      ],
+      "source": [
+        { "url": "https://www.wikidata.org/wiki/Q57454", "title": "Wikidata: Hans-Adam II (Prince of Liechtenstein from 1989-11-13)", "accessed": "2026-10-15" },
+        { "url": "https://en.wikipedia.org/wiki/Hans-Adam_II_of_Liechtenstein", "title": "Wikipedia: Hans-Adam II of Liechtenstein", "accessed": "2026-10-15" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "lie.regent",
+      "title": { "en": "Regent (Stellvertreter des Fürsten)", "native": "Stellvertreter des Fürsten" },
+      "role": "deputy",
+      "power_weight": 0.3,
+      "selection": "hereditary",
+      "appointed_by": "lie.prince",
+      "holders": [
+        { "person": null, "from": "2000-01-01", "to": "2004-08-15", "vacant_reason": "No regency; Hans-Adam II exercised his powers in person." },
+        { "person": "lie.alois", "from": "2004-08-15" }
+      ],
+      "note": "The Hereditary Prince exercises the sovereign's powers as the Prince's representative while Hans-Adam II remains head of state. In gameplay the power weight is shared with lie.prince.",
+      "source": [
+        { "url": "https://www.wikidata.org/wiki/Q311308", "title": "Wikidata: Alois, Hereditary Prince of Liechtenstein (Prince regent from 2004-08-15)", "accessed": "2026-10-15" },
+        { "url": "https://en.wikipedia.org/wiki/Alois,_Hereditary_Prince_of_Liechtenstein", "title": "Wikipedia: Alois, Hereditary Prince of Liechtenstein (regent since 15 August 2004)", "accessed": "2026-10-15" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "lie.head_of_government",
+      "title": { "en": "Head of Government (Prime Minister)", "native": "Regierungschef" },
+      "role": "head_of_government",
+      "power_weight": 0.65,
+      "selection": "appointed",
+      "appointed_by": "lie.prince",
+      "term_years": 4,
+      "holders": [
+        { "person": "lie.mario_frick", "from": "1993-12-15", "to": "2001-04-05" },
+        { "person": "lie.otmar_hasler", "from": "2001-04-05", "to": "2009-03-25" },
+        { "person": "lie.klaus_tschuetscher", "from": "2009-03-25", "to": "2013-03-27" },
+        { "person": "lie.adrian_hasler", "from": "2013-03-27", "to": "2021-03-25" },
+        { "person": "lie.daniel_risch", "from": "2021-03-25", "to": "2025-04-10" },
+        { "person": "lie.brigitte_haas", "from": "2025-04-10" }
+      ],
+      "note": "Appointed by the Prince on the Landtag's proposal.",
+      "source": [
+        { "url": "https://www.wikidata.org/wiki/Q20530029", "title": "Wikidata: Head of Government of Liechtenstein (position held by)", "accessed": "2026-10-15" },
+        { "url": "https://en.wikipedia.org/wiki/List_of_prime_ministers_of_Liechtenstein", "title": "Wikipedia: List of prime ministers of Liechtenstein", "accessed": "2026-10-15" }
+      ],
+      "confidence": "verified"
+    }
+  ],
+  "legislature": {
+    "name": { "en": "Landtag", "native": "Landtag" },
+    "chambers": [
+      {
+        "id": "landtag",
+        "name": { "en": "Landtag of Liechtenstein", "native": "Landtag des Fürstentums Liechtenstein" },
+        "seats": 25,
+        "term_years": 4,
+        "elected": "direct",
+        "system": {
+          "type": "list_pr",
+          "threshold": 0.08,
+          "district_model": "custom",
+          "note": "Open-list PR in two constituencies, Oberland (15 seats) and Unterland (10 seats), each with an 8% threshold. seats_2000 is the February 1997 result."
+        },
+        "seats_2000": { "lie.vu": 13, "lie.fbp": 10, "lie.fl": 2 },
+        "confidence_chamber": true,
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/1997_Liechtenstein_general_election", "title": "Wikipedia: 1997 Liechtenstein general election", "accessed": "2026-10-15" },
+          { "url": "https://en.wikipedia.org/wiki/Landtag_of_Liechtenstein", "title": "Wikipedia: Landtag of Liechtenstein (electoral system)", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      }
+    ]
+  },
+  "party_system": "multi_party",
+  "start_2000": {
+    "ruling_parties": ["lie.vu"],
+    "confidence_and_supply": [],
+    "ideology_support": {
+      "liberal_conservative": 0.4923,
+      "national_conservative": 0.392,
+      "social_democrat": 0.1157
+    },
+    "ideology_support_note": "Derived from 1997 Landtag party-vote shares computed from the vote totals: Patriotic Union 49.23% (liberal_conservative), Progressive Citizens' Party 39.20% (national_conservative), Free List 11.57% (social_democrat).",
+    "stability": 0.9,
+    "war_support": 0.05
+  },
+  "claims": [],
+  "source": [
+    { "url": "https://en.wikipedia.org/wiki/1997_Liechtenstein_general_election", "title": "Wikipedia: 1997 Liechtenstein general election", "accessed": "2026-10-15" },
+    { "url": "https://en.wikipedia.org/wiki/Referendums_in_Liechtenstein", "title": "Wikipedia: Referendums in Liechtenstein", "accessed": "2026-10-15" }
+  ],
+  "confidence": "verified"
+}

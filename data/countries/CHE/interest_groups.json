@@ -1,0 +1,15 @@
+{
+  "note": "Influence and approval are gameplay starting values for 1 January 2000 (four-party Federal Council), not measured data. Influence reflects a strong business and banking sector, influential farmers' organisations, unions with a smaller role than in neighbouring countries, a militia army with conscription, and direct democracy that gives organised groups leverage through referendums.",
+  "interest_groups": [
+    { "type": "military", "influence": 0.15, "approval": 55, "note": "Militia army based on conscription." },
+    { "type": "security_services", "influence": 0.08, "approval": 55 },
+    { "type": "business", "influence": 0.6, "approval": 65, "note": "Business, banking and export industry associations." },
+    { "type": "labour_unions", "influence": 0.25, "approval": 50 },
+    { "type": "religious_establishment", "influence": 0.15, "approval": 55, "note": "Church-state relations are set by the cantons." },
+    { "type": "rural", "influence": 0.3, "approval": 55, "note": "Farmers' organisations." },
+    { "type": "urban_middle_class", "influence": 0.5, "approval": 60 },
+    { "type": "minorities", "influence": 0.08, "approval": 55, "note": "Linguistic communities are represented institutionally; this covers immigrant communities." },
+    { "type": "youth_students", "influence": 0.12, "approval": 55 },
+    { "type": "media", "influence": 0.35, "approval": 55 }
+  ]
+}

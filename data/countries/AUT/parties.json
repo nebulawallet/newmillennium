@@ -1,0 +1,232 @@
+{
+  "parties": [
+    {
+      "id": "aut.spoe",
+      "name": { "en": "Social Democratic Party of Austria", "native": "Sozialdemokratische Partei Österreichs" },
+      "abbrev": { "en": "SPÖ", "native": "SPÖ" },
+      "color": "#CE000C",
+      "sub_ideology": "social_democrat",
+      "founded": "1889-01-01",
+      "status_2000": "active",
+      "leader_history": [
+        { "person": "aut.viktor_klima", "from": 1997, "to": 2000 },
+        { "person": "aut.alfred_gusenbauer", "from": 2000, "to": 2008 },
+        { "person": "aut.werner_faymann", "from": 2008, "to": 2016 },
+        { "person": "aut.christian_kern", "from": 2016, "to": 2018 },
+        { "person": "aut.pamela_rendi_wagner", "from": "2018-11-24", "to": "2023-06-03" },
+        { "person": "aut.andreas_babler", "from": "2023-06-05" }
+      ],
+      "popularity_2000": 0.3315,
+      "popularity_note": "1999 National Council vote share (computed from the official vote counts).",
+      "note": "Leader years from the timeline in the party article; exact dates for Rendi-Wagner and Babler from Wikidata. Wikidata lists Hans Peter Doskozil as chairman from 3 to 5 June 2023; that two-day tenure is omitted. Wikidata gives founding as 1888-12-30, the article 1 January 1889.",
+      "international": "Socialist International; Progressive Alliance; Party of European Socialists",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/Social_Democratic_Party_of_Austria", "title": "Wikipedia: Social Democratic Party of Austria (infobox, chairpersons)", "accessed": "2026-10-15" },
+        { "url": "https://www.wikidata.org/wiki/Q179111", "title": "Wikidata: SPÖ (chairpersons)", "accessed": "2026-10-15" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "aut.oevp",
+      "name": { "en": "Austrian People's Party", "native": "Österreichische Volkspartei" },
+      "abbrev": { "en": "ÖVP", "native": "ÖVP" },
+      "color": "#1A1A1A",
+      "sub_ideology": "christian_democrat",
+      "founded": "1945-04-17",
+      "status_2000": "active",
+      "leader_history": [
+        { "person": "aut.wolfgang_schuessel", "from": 1995, "to": 2007 },
+        { "person": "aut.wilhelm_molterer", "from": 2007, "to": 2008 },
+        { "person": "aut.josef_proell", "from": 2008, "to": 2011 },
+        { "person": "aut.michael_spindelegger", "from": 2011, "to": 2014 },
+        { "person": "aut.reinhold_mitterlehner", "from": 2014, "to": 2017 },
+        { "person": "aut.sebastian_kurz", "from": "2017-05-14", "to": "2021-12-03" },
+        { "person": "aut.karl_nehammer", "from": 2021, "to": 2025 },
+        { "person": "aut.christian_stocker", "from": 2025 }
+      ],
+      "popularity_2000": 0.2691,
+      "popularity_note": "1999 National Council vote share (computed from the official vote counts; 415 votes behind the FPÖ).",
+      "note": "Leader years from the timeline in the party article; Kurz's dates from Wikidata.",
+      "international": "Centrist Democrat International; European People's Party",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/Austrian_People%27s_Party", "title": "Wikipedia: Austrian People's Party (infobox, chairpersons)", "accessed": "2026-10-15" },
+        { "url": "https://www.wikidata.org/wiki/Q2262885", "title": "Wikidata: Sebastian Kurz (ÖVP chairman 2017-05-14..2021-12-03)", "accessed": "2026-10-15" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "aut.fpoe",
+      "name": { "en": "Freedom Party of Austria", "native": "Freiheitliche Partei Österreichs" },
+      "abbrev": { "en": "FPÖ", "native": "FPÖ" },
+      "color": "#005DA8",
+      "sub_ideology": "right_populist",
+      "founded": "1956-04-07",
+      "status_2000": "active",
+      "leader_history": [
+        { "person": "aut.joerg_haider", "from": "1986-09-13", "to": "2000-05-01" },
+        { "person": "aut.susanne_riess_passer", "from": "2000-05-01", "to": "2002-09-08" },
+        { "person": "aut.herbert_haupt", "from": "2002-10-18", "to": "2004-07-03" },
+        { "person": "aut.ursula_haubner", "from": "2004-07-03", "to": "2005-04-05" },
+        { "person": "aut.hilmar_kabas", "from": "2005-04-05", "to": "2005-04-23", "title": "Acting chairman" },
+        { "person": "aut.heinz_christian_strache", "from": "2005-04-23", "to": "2019-05-19" },
+        { "person": "aut.norbert_hofer", "from": "2019-09-14", "to": "2021-06-01" },
+        { "person": "aut.herbert_kickl", "from": "2021-06-07" }
+      ],
+      "popularity_2000": 0.2691,
+      "popularity_note": "1999 National Council vote share (computed from the official vote counts).",
+      "note": "Mathias Reichhold led the party from 8 September to 18 October 2002; he is omitted because the research tool found no Wikipedia or Wikidata record with his birth data. Gaps in May-September 2019 and June 2021 are acting arrangements not listed in the source table.",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/Freedom_Party_of_Austria", "title": "Wikipedia: Freedom Party of Austria (party leaders)", "accessed": "2026-10-15" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "aut.greens",
+      "name": { "en": "The Greens – The Green Alternative", "native": "Die Grünen – Die Grüne Alternative" },
+      "abbrev": { "en": "Greens", "native": "Grüne" },
+      "color": "#88B626",
+      "sub_ideology": "green",
+      "founded": "1986-11-01",
+      "status_2000": "active",
+      "leader_history": [
+        { "person": "aut.alexander_van_der_bellen", "from": 1997, "to": 2008, "title": "Federal spokesperson" },
+        { "person": "aut.eva_glawischnig", "from": 2008, "to": 2017, "title": "Federal spokesperson" },
+        { "person": "aut.ingrid_felipe", "from": 2017, "to": 2017, "title": "Federal spokesperson" },
+        { "person": "aut.werner_kogler", "from": 2017, "to": 2025, "title": "Federal spokesperson" },
+        { "person": "aut.leonore_gewessler", "from": 2025, "title": "Federal spokesperson" }
+      ],
+      "popularity_2000": 0.074,
+      "popularity_note": "1999 National Council vote share (computed from the official vote counts).",
+      "note": "The infobox gives 1986 (merger of the United Greens and the Alternative List) and 1993 (current name); Wikidata gives 1987-02-13. Leader years from the article timeline and Wikidata (Glawischnig 2008-2017, Kogler from 2017).",
+      "international": "Global Greens; European Green Party",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/The_Greens_%E2%80%93_The_Green_Alternative", "title": "Wikipedia: The Greens – The Green Alternative (infobox, chairpersons)", "accessed": "2026-10-15" },
+        { "url": "https://www.wikidata.org/wiki/Q93870", "title": "Wikidata: Eva Glawischnig (federal spokesperson 2008..2017)", "accessed": "2026-10-15" }
+      ],
+      "confidence": "needs_review",
+      "review_note": "Founding date is a placeholder for '1986' (no day given; Wikidata says 1987-02-13). The article timeline shows Felipe from 2015 overlapping Glawischnig; confirm Felipe's 2017 tenure."
+    },
+    {
+      "id": "aut.lif",
+      "name": { "en": "Liberal Forum", "native": "Liberales Forum" },
+      "abbrev": { "en": "LIF", "native": "LIF" },
+      "color": "#F2C200",
+      "sub_ideology": "social_liberal",
+      "founded": "1993-02-04",
+      "dissolved": "2014-01-25",
+      "status_2000": "extra_parliamentary",
+      "leader_history": [
+        { "person": "aut.heide_schmidt", "from": "1993-02-04", "to": 2000 }
+      ],
+      "popularity_2000": 0.0365,
+      "popularity_note": "1999 National Council vote share; below the 4% threshold, so it lost its seats.",
+      "lineage": { "split_from": "aut.fpoe", "merged_into": "aut.neos" },
+      "note": "Heide Schmidt's end year is not in the fetched sources; 2000 is the year of the first election after the party left parliament.",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/Liberal_Forum", "title": "Wikipedia: Liberal Forum (infobox)", "accessed": "2026-10-15" }
+      ],
+      "confidence": "needs_review",
+      "review_note": "Check when Heide Schmidt stepped down as LIF leader."
+    },
+    {
+      "id": "aut.kpoe",
+      "name": { "en": "Communist Party of Austria", "native": "Kommunistische Partei Österreichs" },
+      "abbrev": { "en": "KPÖ", "native": "KPÖ" },
+      "color": "#AA0000",
+      "sub_ideology": "reformed_communist",
+      "founded": "1918-11-03",
+      "status_2000": "extra_parliamentary",
+      "leader_history": [],
+      "popularity_2000": 0.0048,
+      "popularity_note": "1999 National Council vote share.",
+      "note": "Ran as KPÖ Plus in 2019 and 2024.",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/Communist_Party_of_Austria", "title": "Wikipedia: Communist Party of Austria (infobox)", "accessed": "2026-10-15" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "aut.bzoe",
+      "name": { "en": "Alliance for the Future of Austria", "native": "Bündnis Zukunft Österreich" },
+      "abbrev": { "en": "BZÖ", "native": "BZÖ" },
+      "color": "#FF8C00",
+      "sub_ideology": "right_populist",
+      "founded": "2005-04-03",
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        { "person": "aut.joerg_haider", "from": 2005, "to": 2006 },
+        { "person": "aut.peter_westenthaler", "from": 2006, "to": 2008 },
+        { "person": "aut.joerg_haider", "from": 2008, "to": "2008-10-11" },
+        { "person": "aut.josef_bucher", "from": "2009-04-26", "to": "2013-10-02" },
+        { "person": "aut.gerald_grosz", "from": "2013-10-19", "to": "2015-03-30" }
+      ],
+      "popularity_2000": 0,
+      "lineage": { "split_from": "aut.fpoe" },
+      "note": "Split from the FPÖ. Acting chairmen Stefan Petzner (Oct-Nov 2008) and Herbert Scheibner (Nov 2008-Apr 2009) and later chairs are omitted. The infobox gives foundation on 3 April 2005; Wikidata gives 4 April 2005.",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/Alliance_for_the_Future_of_Austria", "title": "Wikipedia: Alliance for the Future of Austria (party chairmen)", "accessed": "2026-10-15" },
+        { "url": "https://www.wikidata.org/wiki/Q653833", "title": "Wikidata: BZÖ", "accessed": "2026-10-15" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "aut.team_stronach",
+      "name": { "en": "Team Stronach", "native": "Team Stronach für Österreich" },
+      "abbrev": { "en": "TS", "native": "TS" },
+      "color": "#F8D323",
+      "sub_ideology": "right_populist",
+      "founded": "2012-09-27",
+      "dissolved": 2017,
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        { "person": "aut.frank_stronach", "from": "2012-09-27" }
+      ],
+      "popularity_2000": 0,
+      "note": "Wikipedia lists economic liberalism, right-wing populism and Euroscepticism. Dissolved in August 2017.",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/Team_Stronach", "title": "Wikipedia: Team Stronach (infobox)", "accessed": "2026-10-15" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "aut.neos",
+      "name": { "en": "NEOS – The New Austria and Liberal Forum", "native": "NEOS – Das Neue Österreich und Liberales Forum" },
+      "abbrev": { "en": "NEOS", "native": "NEOS" },
+      "color": "#E84188",
+      "sub_ideology": "centrist_liberal",
+      "founded": "2012-10-27",
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        { "person": "aut.matthias_strolz", "from": "2012-10-27", "to": "2018-06-23" },
+        { "person": "aut.beate_meinl_reisinger", "from": "2018-06-23" }
+      ],
+      "popularity_2000": 0,
+      "lineage": { "formed_from": ["aut.lif"] },
+      "note": "Founded 2012; merged with the Liberal Forum on 25 January 2014.",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/NEOS_%E2%80%93_The_New_Austria_and_Liberal_Forum", "title": "Wikipedia: NEOS (infobox, leaders)", "accessed": "2026-10-15" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "aut.jetzt",
+      "name": { "en": "JETZT – Pilz List", "native": "JETZT – Liste Pilz" },
+      "abbrev": { "en": "JETZT", "native": "JETZT" },
+      "color": "#8C8C8C",
+      "sub_ideology": "green",
+      "founded": "2017-07-26",
+      "dissolved": 2020,
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        { "person": "aut.peter_pilz", "from": "2017-07-26" }
+      ],
+      "popularity_2000": 0,
+      "lineage": { "split_from": "aut.greens" },
+      "note": "Founded by Peter Pilz as the Peter Pilz List; Wikipedia lists green politics and left-wing populism.",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/JETZT_(party)", "title": "Wikipedia: JETZT (infobox)", "accessed": "2026-10-15" }
+      ],
+      "confidence": "verified"
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "note": "Laws in force on 1 January 2000 (gameplay judgement calls). volunteer_force: Liechtenstein has no army and no conscription; this is the closest category. official_religion: the constitution recognises the Catholic Church as the state church. free_trade reflects the customs union with Switzerland and EEA membership. social_insurance: compulsory health insurance (see the 2015 Health Insurance Act referendum in elections.json). restrictive_immigration reflects tight residence quotas; judgement call.",
+  "laws": {
+    "economic_system": "free_market",
+    "trade": "free_trade",
+    "conscription": "volunteer_force",
+    "press_freedom": "free_press",
+    "political_freedom": "free_elections",
+    "civil_rights": "full_civil_liberties",
+    "religion_state": "official_religion",
+    "immigration": "restrictive_immigration",
+    "energy_policy": "energy_mix",
+    "internet_surveillance": "open_internet",
+    "healthcare": "social_insurance",
+    "education": "mass_higher_education"
+  }
+}

@@ -1,0 +1,140 @@
+{
+  "tag": "AUT",
+  "name": { "en": "Austria", "native": "Österreich", "official": { "en": "Republic of Austria", "native": "Republik Österreich" } },
+  "adjective": "Austrian",
+  "culture_primary": "austrian",
+  "government": {
+    "type": "parliamentary",
+    "effective_executive": "aut.chancellor",
+    "head_of_state_office": "aut.federal_president",
+    "head_of_government_office": "aut.chancellor",
+    "constitution": {
+      "term_limit_amendable": true,
+      "emergency_powers": true,
+      "referendum_required_for": ["total revision of the Federal Constitution (B-VG Art. 44(3))"]
+    },
+    "note": "Federal parliamentary republic. The directly elected Federal President appoints the Chancellor and government, which need the confidence of the National Council. On 1 January 2000 Viktor Klima's SPÖ-ÖVP government remained in office after the October 1999 election; the ÖVP-FPÖ government of Wolfgang Schüssel was sworn in on 4 February 2000."
+  },
+  "offices": [
+    {
+      "id": "aut.federal_president",
+      "title": { "en": "Federal President", "native": "Bundespräsident" },
+      "role": "head_of_state",
+      "power_weight": 0.12,
+      "selection": "direct_election",
+      "term_years": 6,
+      "term_limit": { "max_terms": 2, "consecutive_only": true },
+      "succession": { "type": "acting_then_election" },
+      "holders": [
+        { "person": "aut.thomas_klestil", "from": "1992-07-08", "to": "2004-07-06", "note": "Died in office two days before his term ended." },
+        { "person": "aut.andreas_khol", "from": "2004-07-06", "to": "2004-07-08", "acting": true, "note": "Presidium of the National Council acting collectively (as First President)." },
+        { "person": "aut.barbara_prammer", "from": "2004-07-06", "to": "2004-07-08", "acting": true, "note": "Presidium of the National Council acting collectively (as Second President)." },
+        { "person": "aut.thomas_prinzhorn", "from": "2004-07-06", "to": "2004-07-08", "acting": true, "note": "Presidium of the National Council acting collectively (as Third President)." },
+        { "person": "aut.heinz_fischer", "from": "2004-07-08", "to": "2016-07-08" },
+        { "person": "aut.doris_bures", "from": "2016-07-08", "to": "2017-01-26", "acting": true, "note": "Presidium of the National Council acting collectively (as First President) while the annulled 2016 runoff was re-run." },
+        { "person": "aut.karlheinz_kopf", "from": "2016-07-08", "to": "2017-01-26", "acting": true, "note": "Presidium of the National Council acting collectively (as Second President)." },
+        { "person": "aut.norbert_hofer", "from": "2016-07-08", "to": "2017-01-26", "acting": true, "note": "Presidium of the National Council acting collectively (as Third President)." },
+        { "person": "aut.alexander_van_der_bellen", "from": "2017-01-26", "note": "Re-elected in 2022." }
+      ],
+      "source": [
+        { "url": "https://www.wikidata.org/wiki/Q475658", "title": "Wikidata: President of Austria (position held by)", "accessed": "2026-10-15" },
+        { "url": "https://en.wikipedia.org/wiki/List_of_presidents_of_Austria", "title": "Wikipedia: List of presidents of Austria (incl. acting Presidium 2004 and 2016-2017)", "accessed": "2026-10-15" },
+        { "url": "https://en.wikipedia.org/wiki/President_of_Austria", "title": "Wikipedia: President of Austria (vacancy rules)", "accessed": "2026-10-15" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "aut.chancellor",
+      "title": { "en": "Federal Chancellor", "native": "Bundeskanzler" },
+      "role": "head_of_government",
+      "power_weight": 0.88,
+      "selection": "appointed",
+      "appointed_by": "aut.federal_president",
+      "term_years": 5,
+      "holders": [
+        { "person": "aut.viktor_klima", "from": "1997-01-28", "to": "2000-02-04" },
+        { "person": "aut.wolfgang_schuessel", "from": "2000-02-04", "to": "2007-01-11" },
+        { "person": "aut.alfred_gusenbauer", "from": "2007-01-11", "to": "2008-12-02" },
+        { "person": "aut.werner_faymann", "from": "2008-12-02", "to": "2016-05-09", "note": "Resigned." },
+        { "person": "aut.reinhold_mitterlehner", "from": "2016-05-09", "to": "2016-05-17", "acting": true },
+        { "person": "aut.christian_kern", "from": "2016-05-17", "to": "2017-12-18" },
+        { "person": "aut.sebastian_kurz", "from": "2017-12-18", "to": "2019-05-28" },
+        { "person": "aut.hartwig_loeger", "from": "2019-05-28", "to": "2019-06-03", "acting": true },
+        { "person": "aut.brigitte_bierlein", "from": "2019-06-03", "to": "2020-01-07", "note": "Non-partisan caretaker government." },
+        { "person": "aut.sebastian_kurz", "from": "2020-01-07", "to": "2021-10-11" },
+        { "person": "aut.alexander_schallenberg", "from": "2021-10-11", "to": "2021-12-06" },
+        { "person": "aut.karl_nehammer", "from": "2021-12-06", "to": "2025-01-10" },
+        { "person": "aut.alexander_schallenberg", "from": "2025-01-10", "to": "2025-03-03", "acting": true },
+        { "person": "aut.christian_stocker", "from": "2025-03-03" }
+      ],
+      "source": [
+        { "url": "https://www.wikidata.org/wiki/Q1006398", "title": "Wikidata: Federal Chancellor of Austria (position held by)", "accessed": "2026-10-15" },
+        { "url": "https://en.wikipedia.org/wiki/List_of_chancellors_of_Austria", "title": "Wikipedia: List of chancellors of Austria (incl. acting chancellors)", "accessed": "2026-10-15" }
+      ],
+      "confidence": "verified"
+    }
+  ],
+  "legislature": {
+    "name": { "en": "Parliament of Austria", "native": "Österreichisches Parlament" },
+    "chambers": [
+      {
+        "id": "nationalrat",
+        "name": { "en": "National Council", "native": "Nationalrat" },
+        "seats": 183,
+        "term_years": 5,
+        "elected": "direct",
+        "system": {
+          "type": "list_pr",
+          "formula": "dhondt",
+          "threshold": 0.04,
+          "district_model": "custom",
+          "note": "Three-tier list PR (regional constituencies, the nine states by Hare quota, a federal D'Hondt tier); 4% national threshold or a regional constituency seat. seats_2000 is the October 1999 result; changes before 1 January 2000 were not checked."
+        },
+        "seats_2000": { "aut.spoe": 65, "aut.fpoe": 52, "aut.oevp": 52, "aut.greens": 14 },
+        "confidence_chamber": true,
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/1999_Austrian_legislative_election", "title": "Wikipedia: 1999 Austrian legislative election", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      },
+      {
+        "id": "bundesrat",
+        "name": { "en": "Federal Council", "native": "Bundesrat" },
+        "seats": 64,
+        "elected": "indirect",
+        "system": { "type": "indirect", "note": "Members are elected by the nine state parliaments in proportion to their party strength; seats per state follow population after each census. Party balance changes with state elections; it is not modelled here." },
+        "seats_2000": { "appointed": 64 },
+        "confidence_chamber": false,
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/Federal_Council_(Austria)", "title": "Wikipedia: Federal Council (Austria) (60 members today)", "accessed": "2026-10-15" },
+          { "url": "https://de.wikipedia.org/wiki/Bundesrat_(%C3%96sterreich)", "title": "Wikipedia (de): Bundesrat (Österreich) (64 members fixed in 1993, 62 in 2002)", "accessed": "2026-10-15" }
+        ],
+        "confidence": "needs_review",
+        "review_note": "The source gives 64 members from 1993 and 62 in 2002, so 64 on 1 January 2000 is inferred; confirm, and add the party breakdown (XXI. GP member list) if the chamber should carry party seats."
+      }
+    ]
+  },
+  "party_system": "multi_party",
+  "start_2000": {
+    "ruling_parties": ["aut.spoe", "aut.oevp"],
+    "confidence_and_supply": [],
+    "ideology_support": {
+      "social_democrat": 0.3315,
+      "right_populist": 0.2691,
+      "christian_democrat": 0.2691,
+      "green": 0.074,
+      "social_liberal": 0.0365,
+      "reformed_communist": 0.0048,
+      "big_tent": 0.015
+    },
+    "ideology_support_note": "Derived from 1999 National Council vote shares computed from the official vote counts: SPÖ 33.15% (social_democrat), FPÖ 26.91% (right_populist), ÖVP 26.91% (christian_democrat), Greens 7.40%, Liberal Forum 3.65% (social_liberal), KPÖ 0.48% (reformed_communist), and The Independents (1.02%) plus two minor lists (0.49%) as big_tent. The SPÖ-ÖVP government was a caretaker coalition pending the February 2000 change of government.",
+    "stability": 0.65,
+    "war_support": 0.1
+  },
+  "claims": [],
+  "source": [
+    { "url": "https://en.wikipedia.org/wiki/1999_Austrian_legislative_election", "title": "Wikipedia: 1999 Austrian legislative election", "accessed": "2026-10-15" },
+    { "url": "https://en.wikipedia.org/wiki/List_of_chancellors_of_Austria", "title": "Wikipedia: List of chancellors of Austria", "accessed": "2026-10-15" }
+  ],
+  "confidence": "verified"
+}
