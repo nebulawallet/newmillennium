@@ -28,7 +28,7 @@ See the prompts used in the pilot (git history, early October 2026) for the form
 
 ## Done (Pass A)
 
-DEU (Pass A and Pass B), USA, RUS, GBR, CHN, IRN, SOM, SWE, FRA, AND, ESP, NLD, JPN, NOR, POL, TUR, ISR, PSE, ITA, MCO, CZE, HUN, SVK, SVN, HRV, MKD, ALB, BIH, YUG, MNE, KOS, PRT, BEL, LUX, ROU, BGR, GRC, CYP, NCY, DNK, FIN, ISL
+DEU (Pass A and Pass B), USA, RUS, GBR, CHN, IRN, SOM, SWE, FRA, AND, ESP, NLD, JPN, NOR, POL, TUR, ISR, PSE, ITA, MCO, CZE, HUN, SVK, SVN, HRV, MKD, ALB, BIH, YUG, MNE, KOS, PRT, BEL, LUX, ROU, BGR, GRC, CYP, NCY, DNK, FIN, ISL, KOR, TWN, PRK, MNG
 
 ## Running (relaunched 15 October 2026, evening)
 
@@ -36,7 +36,7 @@ DEU (Pass A and Pass B), USA, RUS, GBR, CHN, IRN, SOM, SWE, FRA, AND, ESP, NLD, 
 |---|---|
 | 10 | SMR VAT MLT |
 | 12 | EST LVA LTU |
-| 4c | KOR TWN PRK MNG (continues partial KOR, TWN) |
+| 16 | BRA ARG CHL |
 | 7b | IRL AUT CHE LIE (continues partial IRL) |
 | 13 | GEO ABK SOS ARM AZE NKR ICH |
 | 11 | UKR BLR MDA PMR |
@@ -45,12 +45,8 @@ DEU (Pass A and Pass B), USA, RUS, GBR, CHN, IRN, SOM, SWE, FRA, AND, ESP, NLD, 
 
 | # | Tags | Notes |
 |---|---|---|
-| 2 | NOR DNK FIN ISL | Finland's 2000 presidential election fell after game start |
-| 3 | ESP NLD PRT | Spain's 2000 election was in March, so seats come from the 1996 result |
-| 4 | JPN KOR TWN PRK MNG | Taiwan's 2000 election; North Korea's nominal vs effective head of state |
 | 14 | KAZ KGZ TJK TKM UZB | |
 | 15 | CAN MEX CUB | Canada is a realm: monarch office `ex_officio_of: gbr.monarch` plus a Governor-General |
-| 16 | BRA ARG CHL | |
 | 17 | URY PRY BOL PER ECU | Ecuador's January 2000 coup: Mahuad replaced by Noboa |
 | 18 | COL FAR VEN GUY SUR | |
 | 19 | GTM SLV HND NIC CRI PAN BLZ | Belize is a realm |
