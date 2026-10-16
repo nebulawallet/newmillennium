@@ -1,0 +1,17 @@
+{
+  "note": "Laws in force on 1 January 2000 (gameplay mapping). The economy is centrally planned with the state owning the means of production; foreign trade is minimal and state-run. Military service is compulsory and long (extended_service). The press is wholly state-run and there is no public internet: the domestic Kwangmyong intranet is modelled as sovereign_internet. Healthcare (minimal_healthcare) is a gameplay judgement of the system's condition in 2000. Religion is constitutionally permitted but tightly controlled (strict_secularism). closed_borders reflects state control of travel abroad (gameplay mapping).",
+  "laws": {
+    "economic_system": "command_economy",
+    "trade": "closed_economy",
+    "conscription": "extended_service",
+    "press_freedom": "total_censorship",
+    "political_freedom": "single_party_elections",
+    "civil_rights": "police_state",
+    "religion_state": "strict_secularism",
+    "immigration": "closed_borders",
+    "energy_policy": "fossil_first",
+    "internet_surveillance": "sovereign_internet",
+    "healthcare": "minimal_healthcare",
+    "education": "ideological_education"
+  }
+}

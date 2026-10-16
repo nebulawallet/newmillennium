@@ -1,0 +1,373 @@
+{
+  "rules": [
+    {
+      "kind": "presidential",
+      "office": "twn.president",
+      "every_years": 4,
+      "anchor": "2024-01-13",
+      "snap_possible": false,
+      "system": "plurality",
+      "note": "President and Vice President elected on a joint ticket in a single round; most votes wins. Held together with the legislative election since 2012."
+    },
+    {
+      "kind": "legislative",
+      "chamber": "legislative_yuan",
+      "every_years": 4,
+      "anchor": "2024-01-13",
+      "snap_possible": true,
+      "note": "Three-year terms until the 2005 amendments, four-year terms from the 2008 election. The President may dissolve the Legislative Yuan after it passes a no-confidence vote against the Premier."
+    }
+  ],
+  "elections": [
+    {
+      "id": "president_2000",
+      "date": "2000-03-18",
+      "kind": "presidential",
+      "office": "twn.president",
+      "historical": {
+        "candidates": [
+          { "person": "twn.chen_shui_bian", "party": "twn.dpp", "share": 0.3930, "votes": 4977697, "round": 1 },
+          { "person": "twn.james_soong", "share": 0.3684, "votes": 4664972, "round": 1 },
+          { "person": "twn.lien_chan", "party": "twn.kmt", "share": 0.2310, "votes": 2925513, "round": 1 }
+        ],
+        "winner": "twn.chen_shui_bian",
+        "turnout": 0.8269,
+        "note": "First transfer of power from the KMT. Running mates: Annette Lu (Chen), Chang Chau-hsiung (Soong, independent), Vincent Siew (Lien).",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2000_Taiwanese_presidential_election", "title": "Wikipedia: 2000 Taiwanese presidential election", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "ly_2001",
+      "date": "2001-12-01",
+      "kind": "legislative",
+      "chamber": "legislative_yuan",
+      "historical": {
+        "party_results": [
+          { "party": "twn.dpp", "share": 0.3338, "seats": 87 },
+          { "party": "twn.kmt", "share": 0.2856, "seats": 68 },
+          { "party": "twn.pfp", "share": 0.1857, "seats": 46 },
+          { "party": "twn.tsu", "share": 0.0776, "seats": 13 },
+          { "party": "twn.np", "share": 0.0261, "seats": 1 },
+          { "party": "others", "share": 0.0042, "seats": 1 },
+          { "party": "independents", "share": 0.0871, "seats": 9 }
+        ],
+        "winner": "twn.dpp",
+        "turnout": 0.6616,
+        "note": "225 seats. Others: Taiwan Number One Party (1 seat) and minor parties. Shares computed from the results table.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2001_Taiwanese_legislative_election", "title": "Wikipedia: 2001 Taiwanese legislative election (results table)", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "president_2004",
+      "date": "2004-03-20",
+      "kind": "presidential",
+      "office": "twn.president",
+      "historical": {
+        "candidates": [
+          { "person": "twn.chen_shui_bian", "party": "twn.dpp", "share": 0.5011, "votes": 6471970, "round": 1 },
+          { "person": "twn.lien_chan", "party": "twn.kmt", "share": 0.4989, "votes": 6442452, "round": 1 }
+        ],
+        "winner": "twn.chen_shui_bian",
+        "turnout": 0.8028,
+        "note": "Lien Chan ran on a joint KMT-PFP ticket with James Soong as running mate.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2004_Taiwanese_presidential_election", "title": "Wikipedia: 2004 Taiwanese presidential election", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {"id": "referendum_2004_q1", "date": "2004-03-20", "kind": "referendum", "question": "Referendum Proposal 1 on cross-strait relations (held with the presidential election)", "historical": {"yes_share": 0.918, "turnout": 0.4517, "note": "Invalid: turnout below the 50% quorum required at the time, despite a Yes majority.", "source": [{"url": "https://en.wikipedia.org/wiki/2004_Taiwanese_cross-strait_relations_referendum", "title": "Wikipedia: 2004 Taiwanese cross-strait relations referendum (results table)", "accessed": "2026-10-15"}], "confidence": "verified"}},
+    {"id": "referendum_2004_q2", "date": "2004-03-20", "kind": "referendum", "question": "Referendum Proposal 2 on cross-strait relations (held with the presidential election)", "historical": {"yes_share": 0.9205, "turnout": 0.4512, "note": "Invalid: turnout below the 50% quorum required at the time, despite a Yes majority.", "source": [{"url": "https://en.wikipedia.org/wiki/2004_Taiwanese_cross-strait_relations_referendum", "title": "Wikipedia: 2004 Taiwanese cross-strait relations referendum (results table)", "accessed": "2026-10-15"}], "confidence": "verified"}},
+    {
+      "id": "ly_2004",
+      "date": "2004-12-11",
+      "kind": "legislative",
+      "chamber": "legislative_yuan",
+      "historical": {
+        "party_results": [
+          { "party": "twn.dpp", "share": 0.3572, "seats": 89 },
+          { "party": "twn.kmt", "share": 0.3283, "seats": 79 },
+          { "party": "twn.pfp", "share": 0.1390, "seats": 34 },
+          { "party": "twn.tsu", "share": 0.0779, "seats": 12 },
+          { "party": "twn.npsu", "share": 0.0363, "seats": 6 },
+          { "party": "twn.np", "share": 0.0012, "seats": 1 },
+          { "party": "independents", "share": 0.0594, "seats": 4 }
+        ],
+        "winner": "twn.dpp",
+        "note": "225 seats. Shares computed from the results table; minor parties without seats took about 0.06%.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2004_Taiwanese_legislative_election", "title": "Wikipedia: 2004 Taiwanese legislative election (results table)", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "national_assembly_2005",
+      "date": "2005-05-14",
+      "kind": "council",
+      "historical": {
+        "party_results": [
+          { "party": "twn.dpp", "share": 0.4252, "seats": 127 },
+          { "party": "twn.kmt", "share": 0.3892, "seats": 117 },
+          { "party": "twn.tsu", "share": 0.0705, "seats": 21 },
+          { "party": "twn.pfp", "share": 0.0611, "seats": 18 },
+          { "party": "twn.np", "share": 0.0088, "seats": 3 },
+          { "party": "twn.npsu", "share": 0.0065, "seats": 2 },
+          { "party": "others", "share": 0.0387, "seats": 12 }
+        ],
+        "winner": "twn.dpp",
+        "turnout": 0.2336,
+        "note": "Election of the 300-member ad hoc National Assembly, which ratified the 2005 constitutional amendments (halving the Legislative Yuan, abolishing the National Assembly). Proportional list vote. Others include the Chinese People's Party (3), the '150 persons union' (5) and five other lists with one seat each.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2005_Taiwanese_National_Assembly_election", "title": "Wikipedia: 2005 Taiwanese National Assembly election (results table)", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "ly_2008",
+      "date": "2008-01-12",
+      "kind": "legislative",
+      "chamber": "legislative_yuan",
+      "historical": {
+        "party_results": [
+          { "party": "twn.kmt", "share": 0.5123, "seats": 81 },
+          { "party": "twn.dpp", "share": 0.3691, "seats": 27 },
+          { "party": "twn.np", "share": 0.0395, "seats": 0 },
+          { "party": "twn.tsu", "share": 0.0353, "seats": 0 },
+          { "party": "twn.npsu", "share": 0.0070, "seats": 3 },
+          { "party": "twn.pfp", "seats": 1 },
+          { "party": "independents", "seats": 1 }
+        ],
+        "winner": "twn.kmt",
+        "turnout": 0.5850,
+        "note": "First election to the reduced 113-seat chamber. Shares are the party-list vote, computed from the results table; the PFP ran no list of its own.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2008_Taiwanese_legislative_election", "title": "Wikipedia: 2008 Taiwanese legislative election (results table)", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {"id": "referendum_2008_q3", "date": "2008-01-12", "kind": "referendum", "question": "Referendum Proposal 3: transitional justice and the treatment of contentious party properties", "historical": {"yes_share": 0.9146, "turnout": 0.2634, "note": "Invalid: turnout below the 50% quorum required at the time, despite a Yes majority.", "source": [{"url": "https://en.wikipedia.org/wiki/2008_Taiwanese_transitional_justice_referendum", "title": "Wikipedia: 2008 Taiwanese transitional justice referendum (results table)", "accessed": "2026-10-15"}], "confidence": "verified"}},
+    {"id": "referendum_2008_q4", "date": "2008-01-12", "kind": "referendum", "question": "Referendum Proposal 4 (championed by former finance minister Wang Chien-shien)", "historical": {"yes_share": 0.5817, "turnout": 0.2608, "note": "Invalid: turnout below the 50% quorum required at the time, despite a Yes majority.", "source": [{"url": "https://en.wikipedia.org/wiki/2008_Taiwanese_transitional_justice_referendum", "title": "Wikipedia: 2008 Taiwanese transitional justice referendum (results table)", "accessed": "2026-10-15"}], "confidence": "verified"}},
+    {
+      "id": "president_2008",
+      "date": "2008-03-22",
+      "kind": "presidential",
+      "office": "twn.president",
+      "historical": {
+        "candidates": [
+          { "person": "twn.ma_ying_jeou", "party": "twn.kmt", "share": 0.5845, "votes": 7659014, "round": 1 },
+          { "person": "twn.frank_hsieh", "party": "twn.dpp", "share": 0.4155, "votes": 5444949, "round": 1 }
+        ],
+        "winner": "twn.ma_ying_jeou",
+        "turnout": 0.7633,
+        "note": "Running mates: Vincent Siew (Ma), Su Tseng-chang (Hsieh).",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2008_Taiwanese_presidential_election", "title": "Wikipedia: 2008 Taiwanese presidential election", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {"id": "referendum_2008_q5", "date": "2008-03-22", "kind": "referendum", "question": "Referendum Proposal 5: applying for United Nations membership under the name \"Taiwan\"", "historical": {"yes_share": 0.9401, "turnout": 0.3582, "note": "Invalid: turnout below the 50% quorum required at the time, despite a Yes majority.", "source": [{"url": "https://en.wikipedia.org/wiki/2008_Taiwanese_United_Nations_membership_referendum", "title": "Wikipedia: 2008 Taiwanese United Nations membership referendum (results table)", "accessed": "2026-10-15"}], "confidence": "verified"}},
+    {"id": "referendum_2008_q6", "date": "2008-03-22", "kind": "referendum", "question": "Referendum Proposal 6 on United Nations membership (initiated by Vincent Siew)", "historical": {"yes_share": 0.8727, "turnout": 0.3574, "note": "Invalid: turnout below the 50% quorum required at the time, despite a Yes majority.", "source": [{"url": "https://en.wikipedia.org/wiki/2008_Taiwanese_United_Nations_membership_referendum", "title": "Wikipedia: 2008 Taiwanese United Nations membership referendum (results table)", "accessed": "2026-10-15"}], "confidence": "verified"}},
+    {
+      "id": "ly_2012",
+      "date": "2012-01-14",
+      "kind": "legislative",
+      "chamber": "legislative_yuan",
+      "historical": {
+        "party_results": [
+          { "party": "twn.kmt", "share": 0.4455, "seats": 64 },
+          { "party": "twn.dpp", "share": 0.3462, "seats": 40 },
+          { "party": "twn.tsu", "share": 0.0896, "seats": 3 },
+          { "party": "twn.pfp", "share": 0.0549, "seats": 3 },
+          { "party": "twn.np", "share": 0.0149, "seats": 0 },
+          { "party": "twn.npsu", "seats": 2 },
+          { "party": "independents", "seats": 1 }
+        ],
+        "winner": "twn.kmt",
+        "turnout": 0.7447,
+        "note": "113 seats. Shares are the party-list vote, computed from the results table.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2012_Taiwanese_legislative_election", "title": "Wikipedia: 2012 Taiwanese legislative election (results table)", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "president_2012",
+      "date": "2012-01-14",
+      "kind": "presidential",
+      "office": "twn.president",
+      "historical": {
+        "candidates": [
+          { "person": "twn.ma_ying_jeou", "party": "twn.kmt", "share": 0.5160, "votes": 6891139, "round": 1 },
+          { "person": "twn.tsai_ing_wen", "party": "twn.dpp", "share": 0.4563, "votes": 6093578, "round": 1 }
+        ],
+        "winner": "twn.ma_ying_jeou",
+        "turnout": 0.7438,
+        "note": "James Soong (PFP) also stood and took the remainder (under 5%).",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2012_Taiwanese_presidential_election", "title": "Wikipedia: 2012 Taiwanese presidential election", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "ly_2016",
+      "date": "2016-01-16",
+      "kind": "legislative",
+      "chamber": "legislative_yuan",
+      "historical": {
+        "party_results": [
+          { "party": "twn.dpp", "share": 0.4406, "seats": 68 },
+          { "party": "twn.kmt", "share": 0.2691, "seats": 35 },
+          { "party": "twn.npp", "share": 0.0611, "seats": 5 },
+          { "party": "twn.pfp", "share": 0.0652, "seats": 3 },
+          { "party": "twn.np", "share": 0.0418, "seats": 0 },
+          { "party": "twn.tsu", "share": 0.0251, "seats": 0 },
+          { "party": "twn.npsu", "share": 0.0064, "seats": 1 },
+          { "party": "independents", "seats": 1 }
+        ],
+        "winner": "twn.dpp",
+        "turnout": 0.6634,
+        "note": "113 seats. Shares are the party-list vote, computed from the results table.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2016_Taiwanese_legislative_election", "title": "Wikipedia: 2016 Taiwanese legislative election (results table)", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "president_2016",
+      "date": "2016-01-16",
+      "kind": "presidential",
+      "office": "twn.president",
+      "historical": {
+        "candidates": [
+          { "person": "twn.tsai_ing_wen", "party": "twn.dpp", "share": 0.5612, "votes": 6894744, "round": 1 },
+          { "person": "twn.eric_chu", "party": "twn.kmt", "share": 0.3104, "votes": 3813365, "round": 1 },
+          { "person": "twn.james_soong", "party": "twn.pfp", "share": 0.1284, "votes": 1576861, "round": 1 }
+        ],
+        "winner": "twn.tsai_ing_wen",
+        "turnout": 0.6627,
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2016_Taiwanese_presidential_election", "title": "Wikipedia: 2016 Taiwanese presidential election", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {"id": "referendum_2018_q7", "date": "2018-11-24", "kind": "referendum", "question": "Referendum 7: reducing output from thermal power plants", "historical": {"yes_share": 0.7904, "turnout": 0.5456, "note": "Approved.", "source": [{"url": "https://en.wikipedia.org/wiki/2018_Taiwanese_referendum", "title": "Wikipedia: 2018 Taiwanese referendum (results table)", "accessed": "2026-10-15"}], "confidence": "verified"}},
+    {"id": "referendum_2018_q8", "date": "2018-11-24", "kind": "referendum", "question": "Referendum 8: ceasing expansion of coal power plants", "historical": {"yes_share": 0.7641, "turnout": 0.5451, "note": "Approved.", "source": [{"url": "https://en.wikipedia.org/wiki/2018_Taiwanese_referendum", "title": "Wikipedia: 2018 Taiwanese referendum (results table)", "accessed": "2026-10-15"}], "confidence": "verified"}},
+    {"id": "referendum_2018_q9", "date": "2018-11-24", "kind": "referendum", "question": "Referendum 9: prohibition of food imports from the Fukushima area", "historical": {"yes_share": 0.7774, "turnout": 0.5456, "note": "Approved.", "source": [{"url": "https://en.wikipedia.org/wiki/2018_Taiwanese_referendum", "title": "Wikipedia: 2018 Taiwanese referendum (results table)", "accessed": "2026-10-15"}], "confidence": "verified"}},
+    {"id": "referendum_2018_q10", "date": "2018-11-24", "kind": "referendum", "question": "Referendum 10: restricting marriage under the Civil Code to one man and one woman", "historical": {"yes_share": 0.7248, "turnout": 0.558, "note": "Approved.", "source": [{"url": "https://en.wikipedia.org/wiki/2018_Taiwanese_referendum", "title": "Wikipedia: 2018 Taiwanese referendum (results table)", "accessed": "2026-10-15"}], "confidence": "verified"}},
+    {"id": "referendum_2018_q11", "date": "2018-11-24", "kind": "referendum", "question": "Referendum 11: not implementing the homosexual-education aspect of the Gender Equality Education Act", "historical": {"yes_share": 0.6744, "turnout": 0.5573, "note": "Approved.", "source": [{"url": "https://en.wikipedia.org/wiki/2018_Taiwanese_referendum", "title": "Wikipedia: 2018 Taiwanese referendum (results table)", "accessed": "2026-10-15"}], "confidence": "verified"}},
+    {"id": "referendum_2018_q12", "date": "2018-11-24", "kind": "referendum", "question": "Referendum 12: protecting the rights of same-sex couples outside the Civil Code", "historical": {"yes_share": 0.6112, "turnout": 0.5575, "note": "Approved.", "source": [{"url": "https://en.wikipedia.org/wiki/2018_Taiwanese_referendum", "title": "Wikipedia: 2018 Taiwanese referendum (results table)", "accessed": "2026-10-15"}], "confidence": "verified"}},
+    {"id": "referendum_2018_q13", "date": "2018-11-24", "kind": "referendum", "question": "Referendum 13: competing in international sport as \"Taiwan\"", "historical": {"yes_share": 0.452, "turnout": 0.5589, "note": "Rejected.", "source": [{"url": "https://en.wikipedia.org/wiki/2018_Taiwanese_referendum", "title": "Wikipedia: 2018 Taiwanese referendum (results table)", "accessed": "2026-10-15"}], "confidence": "verified"}},
+    {"id": "referendum_2018_q14", "date": "2018-11-24", "kind": "referendum", "question": "Referendum 14: protecting same-sex marital rights in the Civil Code", "historical": {"yes_share": 0.3274, "turnout": 0.5537, "note": "Rejected.", "source": [{"url": "https://en.wikipedia.org/wiki/2018_Taiwanese_referendum", "title": "Wikipedia: 2018 Taiwanese referendum (results table)", "accessed": "2026-10-15"}], "confidence": "verified"}},
+    {"id": "referendum_2018_q15", "date": "2018-11-24", "kind": "referendum", "question": "Referendum 15: implementing the Gender Equality Education Act", "historical": {"yes_share": 0.3401, "turnout": 0.5533, "note": "Rejected.", "source": [{"url": "https://en.wikipedia.org/wiki/2018_Taiwanese_referendum", "title": "Wikipedia: 2018 Taiwanese referendum (results table)", "accessed": "2026-10-15"}], "confidence": "verified"}},
+    {"id": "referendum_2018_q16", "date": "2018-11-24", "kind": "referendum", "question": "Referendum 16: repealing the planned end of nuclear power stations", "historical": {"yes_share": 0.5949, "turnout": 0.5483, "note": "Approved.", "source": [{"url": "https://en.wikipedia.org/wiki/2018_Taiwanese_referendum", "title": "Wikipedia: 2018 Taiwanese referendum (results table)", "accessed": "2026-10-15"}], "confidence": "verified"}},
+    {
+      "id": "ly_2020",
+      "date": "2020-01-11",
+      "kind": "legislative",
+      "chamber": "legislative_yuan",
+      "historical": {
+        "party_results": [
+          { "party": "twn.dpp", "share": 0.3398, "seats": 61 },
+          { "party": "twn.kmt", "share": 0.3336, "seats": 38 },
+          { "party": "twn.tpp", "share": 0.1122, "seats": 5 },
+          { "party": "twn.npp", "share": 0.0775, "seats": 3 },
+          { "party": "twn.pfp", "share": 0.0366, "seats": 0 },
+          { "party": "others", "share": 0.0316, "seats": 1 },
+          { "party": "independents", "seats": 5 }
+        ],
+        "winner": "twn.dpp",
+        "turnout": 0.7493,
+        "note": "113 seats. Others: Taiwan Statebuilding Party (3.16% of the list vote, 1 constituency seat). Shares are the party-list vote, computed from the results table.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2020_Taiwanese_legislative_election", "title": "Wikipedia: 2020 Taiwanese legislative election (results table)", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "president_2020",
+      "date": "2020-01-11",
+      "kind": "presidential",
+      "office": "twn.president",
+      "historical": {
+        "candidates": [
+          { "person": "twn.tsai_ing_wen", "party": "twn.dpp", "share": 0.5713, "votes": 8170231, "round": 1 },
+          { "person": "twn.han_kuo_yu", "party": "twn.kmt", "share": 0.3861, "votes": 5522119, "round": 1 }
+        ],
+        "winner": "twn.tsai_ing_wen",
+        "turnout": 0.7490,
+        "note": "Running mates: Lai Ching-te (Tsai), Chang San-cheng (Han). James Soong (PFP) took the remainder (under 5%).",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2020_Taiwanese_presidential_election", "title": "Wikipedia: 2020 Taiwanese presidential election", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {"id": "referendum_2021_q17", "date": "2021-12-18", "kind": "referendum", "question": "Referendum 17: restarting construction of the fourth nuclear power plant", "historical": {"yes_share": 0.4716, "turnout": 0.4109, "note": "Rejected.", "source": [{"url": "https://en.wikipedia.org/wiki/2021_Taiwanese_referendum", "title": "Wikipedia: 2021 Taiwanese referendum (results table)", "accessed": "2026-10-15"}], "confidence": "verified"}},
+    {"id": "referendum_2021_q18", "date": "2021-12-18", "kind": "referendum", "question": "Referendum 18: banning pork imports containing ractopamine", "historical": {"yes_share": 0.4879, "turnout": 0.4109, "note": "Rejected.", "source": [{"url": "https://en.wikipedia.org/wiki/2021_Taiwanese_referendum", "title": "Wikipedia: 2021 Taiwanese referendum (results table)", "accessed": "2026-10-15"}], "confidence": "verified"}},
+    {"id": "referendum_2021_q19", "date": "2021-12-18", "kind": "referendum", "question": "Referendum 19: holding referendums alongside nationwide elections", "historical": {"yes_share": 0.4896, "turnout": 0.4108, "note": "Rejected.", "source": [{"url": "https://en.wikipedia.org/wiki/2021_Taiwanese_referendum", "title": "Wikipedia: 2021 Taiwanese referendum (results table)", "accessed": "2026-10-15"}], "confidence": "verified"}},
+    {"id": "referendum_2021_q20", "date": "2021-12-18", "kind": "referendum", "question": "Referendum 20: keeping the third LNG terminal in Taoyuan away from the algal reefs", "historical": {"yes_share": 0.4837, "turnout": 0.4109, "note": "Rejected.", "source": [{"url": "https://en.wikipedia.org/wiki/2021_Taiwanese_referendum", "title": "Wikipedia: 2021 Taiwanese referendum (results table)", "accessed": "2026-10-15"}], "confidence": "verified"}},
+    {"id": "referendum_2022_voting_age", "date": "2022-11-26", "kind": "referendum", "question": "Constitutional amendment lowering the voting age from 20 to 18", "historical": {"yes_share": 0.5296, "note": "Yes 5,647,102, No 5,016,427 of an electorate of 19,239,392. Failed: the Yes vote fell short of the threshold for a constitutional amendment.", "source": [{"url": "https://en.wikipedia.org/wiki/2022_Taiwanese_constitutional_referendum", "title": "Wikipedia: 2022 Taiwanese constitutional referendum", "accessed": "2026-10-15"}], "confidence": "verified"}},
+    {
+      "id": "ly_2024",
+      "date": "2024-01-13",
+      "kind": "legislative",
+      "chamber": "legislative_yuan",
+      "historical": {
+        "party_results": [
+          { "party": "twn.kmt", "share": 0.3458, "seats": 52 },
+          { "party": "twn.dpp", "share": 0.3616, "seats": 51 },
+          { "party": "twn.tpp", "share": 0.2207, "seats": 8 },
+          { "party": "twn.npp", "share": 0.0257, "seats": 0 },
+          { "party": "independents", "seats": 2 }
+        ],
+        "winner": "twn.kmt",
+        "turnout": 0.7128,
+        "note": "113 seats. The DPP won the most list votes but the KMT won the most seats. Shares are the party-list vote, computed from the results table.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2024_Taiwanese_legislative_election", "title": "Wikipedia: 2024 Taiwanese legislative election (results table)", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "president_2024",
+      "date": "2024-01-13",
+      "kind": "presidential",
+      "office": "twn.president",
+      "historical": {
+        "candidates": [
+          { "person": "twn.lai_ching_te", "party": "twn.dpp", "share": 0.4005, "votes": 5586017, "round": 1 },
+          { "person": "twn.hou_yu_ih", "party": "twn.kmt", "share": 0.3349, "votes": 4671021, "round": 1 },
+          { "person": "twn.ko_wen_je", "party": "twn.tpp", "share": 0.2646, "votes": 3690466, "round": 1 }
+        ],
+        "winner": "twn.lai_ching_te",
+        "turnout": 0.7186,
+        "note": "Running mates: Hsiao Bi-khim (Lai), Jaw Shaw-kong (Hou), Cynthia Wu (Ko).",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2024_Taiwanese_presidential_election", "title": "Wikipedia: 2024 Taiwanese presidential election", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {"id": "referendum_2025_maanshan", "date": "2025-08-23", "kind": "referendum", "question": "Continued operation of the Third (Maanshan) Nuclear Power Plant, subject to a safety confirmation", "historical": {"yes_share": 0.7417, "note": "Yes 4,341,432, No 1,511,693 of an electorate of 20,002,091. Failed: Yes votes did not exceed a quarter of eligible voters, as the Referendum Act requires.", "source": [{"url": "https://en.wikipedia.org/wiki/2025_Taiwanese_referendum", "title": "Wikipedia: 2025 Taiwanese referendum", "accessed": "2026-10-15"}], "confidence": "verified"}}
+  ],
+  "source": [
+    { "url": "https://en.wikipedia.org/wiki/Referendums_in_Taiwan", "title": "Wikipedia: Referendums in Taiwan (list of national referendums)", "accessed": "2026-10-15" }
+  ],
+  "confidence": "verified"
+}

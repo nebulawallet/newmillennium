@@ -1,0 +1,606 @@
+{
+  "rules": [
+    {
+      "kind": "presidential",
+      "office": "mng.president",
+      "every_years": 6,
+      "anchor": "2021-06-09",
+      "snap_possible": true,
+      "note": "Two-round system (the default); a single six-year term since the 2019 amendments. Four-year terms applied to the 2001-2017 elections."
+    },
+    {
+      "kind": "legislative",
+      "chamber": "state_great_khural",
+      "every_years": 4,
+      "anchor": "2024-06-28",
+      "snap_possible": false,
+      "note": "Four-year term. Whether the Khural can dissolve itself early was not checked against a fetched source."
+    }
+  ],
+  "elections": [
+    {
+      "id": "khural_2000",
+      "date": "2000-07-02",
+      "kind": "legislative",
+      "chamber": "state_great_khural",
+      "historical": {
+        "party_results": [
+          {
+            "party": "mng.mpp",
+            "share": 0.5175,
+            "seats": 72
+          },
+          {
+            "party": "mng.mndp",
+            "share": 0.133,
+            "seats": 1
+          },
+          {
+            "party": "mng.motherland",
+            "share": 0.1108,
+            "seats": 1
+          },
+          {
+            "party": "mng.civil_will",
+            "share": 0.0362,
+            "seats": 1
+          },
+          {
+            "party": "independents",
+            "share": 0.0294,
+            "seats": 1
+          }
+        ],
+        "winner": "mng.mpp",
+        "turnout": 0.8244,
+        "note": "76 single-seat constituencies. The MNDP row is the Democratic Union Coalition (13.30%); the Civil Will row is the Civil Will-Green Party alliance (3.62%). The Mongolian Social Democratic Party ran separately and won no seats (91,319 votes).",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2000_Mongolian_parliamentary_election",
+            "title": "Wikipedia: 2000 Mongolian parliamentary election (infobox and results table)",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "president_2001",
+      "date": "2001-05-20",
+      "kind": "presidential",
+      "office": "mng.president",
+      "historical": {
+        "candidates": [
+          {
+            "person": "mng.natsagiin_bagabandi",
+            "party": "mng.mpp",
+            "share": 0.5919,
+            "votes": 581381,
+            "round": 1
+          },
+          {
+            "person": "mng.radnaasumbereliin_gonchigdorj",
+            "party": "mng.dp",
+            "share": 0.3718,
+            "votes": 365363,
+            "round": 1
+          }
+        ],
+        "winner": "mng.natsagiin_bagabandi",
+        "turnout": 0.8294,
+        "note": "Bagabandi re-elected. Luvsandambyn Dashnyam (Civil Will Party, 35,425 votes, under 5%) is not listed. Shares are from the infobox (blank votes count as valid in Mongolian presidential elections).",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2001_Mongolian_presidential_election",
+            "title": "Wikipedia: 2001 Mongolian presidential election (infobox and results table)",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "khural_2004",
+      "date": "2004-06-27",
+      "kind": "legislative",
+      "chamber": "state_great_khural",
+      "historical": {
+        "party_results": [
+          {
+            "party": "mng.mpp",
+            "share": 0.4887,
+            "seats": 37
+          },
+          {
+            "party": "mng.dp",
+            "share": 0.449,
+            "seats": 26
+          },
+          {
+            "party": "mng.motherland",
+            "seats": 7
+          },
+          {
+            "party": "mng.civil_will",
+            "seats": 2
+          },
+          {
+            "party": "mng.republican",
+            "share": 0.0138,
+            "seats": 1
+          },
+          {
+            "party": "independents",
+            "share": 0.0341,
+            "seats": 3
+          }
+        ],
+        "winner": "mng.mpp",
+        "turnout": 0.8184,
+        "note": "The Democratic Party, the Motherland-Mongolian Democratic New Socialist Party and the Civil Will-Republican Party ran as the Motherland Democratic Coalition (44.90%, 35 seats); the coalition's share is given on the DP row and its seats are split by member party as in the results table.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2004_Mongolian_parliamentary_election",
+            "title": "Wikipedia: 2004 Mongolian parliamentary election (infobox and results table)",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "president_2005",
+      "date": "2005-05-22",
+      "kind": "presidential",
+      "office": "mng.president",
+      "historical": {
+        "candidates": [
+          {
+            "person": "mng.nambaryn_enkhbayar",
+            "party": "mng.mpp",
+            "share": 0.5414,
+            "votes": 497491,
+            "round": 1
+          },
+          {
+            "person": "mng.mendsaikhany_enkhsaikhan",
+            "party": "mng.dp",
+            "share": 0.2031,
+            "votes": 186646,
+            "round": 1
+          },
+          {
+            "person": "mng.bazarsadyn_jargalsaikhan",
+            "party": "mng.republican",
+            "share": 0.1402,
+            "votes": 128784,
+            "round": 1
+          }
+        ],
+        "winner": "mng.nambaryn_enkhbayar",
+        "turnout": 0.7498,
+        "note": "Badarchiin Erdenebat (Motherland Party) won 11.48% (105,497 votes) but has no Wikipedia or Wikidata entry, so he has no person record and is left out; his share counts as others. Shares are from the infobox (blank votes count as valid in Mongolian presidential elections).",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2005_Mongolian_presidential_election",
+            "title": "Wikipedia: 2005 Mongolian presidential election (infobox and results table)",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "khural_2008",
+      "date": "2008-06-29",
+      "kind": "legislative",
+      "chamber": "state_great_khural",
+      "historical": {
+        "party_results": [
+          {
+            "party": "mng.mpp",
+            "share": 0.4309,
+            "seats": 45
+          },
+          {
+            "party": "mng.dp",
+            "share": 0.3924,
+            "seats": 28
+          },
+          {
+            "party": "others",
+            "share": 0.0429,
+            "seats": 1
+          },
+          {
+            "party": "mng.civil_will",
+            "share": 0.0349,
+            "seats": 1
+          },
+          {
+            "party": "independents",
+            "share": 0.0524,
+            "seats": 1
+          }
+        ],
+        "winner": "mng.mpp",
+        "turnout": 0.7646,
+        "note": "Plurality-at-large voting in multi-seat constituencies. Others: the Civic Coalition led by Dangaasürengiin Enkhbat (1 seat). Shares are from the infobox (each voter had several votes).",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2008_Mongolian_parliamentary_election",
+            "title": "Wikipedia: 2008 Mongolian parliamentary election (infobox and results table)",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "president_2009",
+      "date": "2009-05-24",
+      "kind": "presidential",
+      "office": "mng.president",
+      "historical": {
+        "candidates": [
+          {
+            "person": "mng.tsakhiagiin_elbegdorj",
+            "party": "mng.dp",
+            "share": 0.5185,
+            "votes": 562718,
+            "round": 1
+          },
+          {
+            "person": "mng.nambaryn_enkhbayar",
+            "party": "mng.mpp",
+            "share": 0.48,
+            "votes": 520948,
+            "round": 1
+          }
+        ],
+        "winner": "mng.tsakhiagiin_elbegdorj",
+        "turnout": 0.7359,
+        "note": "Shares are from the infobox (blank votes count as valid in Mongolian presidential elections).",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2009_Mongolian_presidential_election",
+            "title": "Wikipedia: 2009 Mongolian presidential election (infobox and results table)",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "khural_2012",
+      "date": "2012-06-28",
+      "kind": "legislative",
+      "chamber": "state_great_khural",
+      "historical": {
+        "party_results": [
+          {
+            "party": "mng.dp",
+            "share": 0.3532,
+            "seats": 34
+          },
+          {
+            "party": "mng.mpp",
+            "share": 0.3131,
+            "seats": 26
+          },
+          {
+            "party": "mng.mprp_2010",
+            "share": 0.2231,
+            "seats": 11
+          },
+          {
+            "party": "mng.cwgp",
+            "share": 0.0551,
+            "seats": 2
+          },
+          {
+            "party": "independents",
+            "seats": 3
+          }
+        ],
+        "winner": "mng.dp",
+        "turnout": 0.6728,
+        "note": "Parallel voting: 48 constituency seats and 28 list seats. The MPRP (2010) row is the Justice Coalition with the Mongolian National Democratic Party (2005), led by Nambaryn Enkhbayar.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2012_Mongolian_parliamentary_election",
+            "title": "Wikipedia: 2012 Mongolian parliamentary election (infobox and results table)",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "president_2013",
+      "date": "2013-06-26",
+      "kind": "presidential",
+      "office": "mng.president",
+      "historical": {
+        "candidates": [
+          {
+            "person": "mng.tsakhiagiin_elbegdorj",
+            "party": "mng.dp",
+            "share": 0.5033,
+            "votes": 622794,
+            "round": 1
+          },
+          {
+            "person": "mng.badmaanyambuugiin_bat_erdene",
+            "party": "mng.mpp",
+            "share": 0.4205,
+            "votes": 520380,
+            "round": 1
+          },
+          {
+            "person": "mng.natsagiin_udval",
+            "party": "mng.mprp_2010",
+            "share": 0.0651,
+            "votes": 80563,
+            "round": 1
+          }
+        ],
+        "winner": "mng.tsakhiagiin_elbegdorj",
+        "turnout": 0.665,
+        "note": "Shares are from the infobox (blank votes count as valid in Mongolian presidential elections).",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2013_Mongolian_presidential_election",
+            "title": "Wikipedia: 2013 Mongolian presidential election (infobox and results table)",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "khural_2016",
+      "date": "2016-06-29",
+      "kind": "legislative",
+      "chamber": "state_great_khural",
+      "historical": {
+        "party_results": [
+          {
+            "party": "mng.mpp",
+            "share": 0.4512,
+            "seats": 65
+          },
+          {
+            "party": "mng.dp",
+            "share": 0.3314,
+            "seats": 9
+          },
+          {
+            "party": "mng.mprp_2010",
+            "share": 0.08,
+            "seats": 1
+          },
+          {
+            "party": "independents",
+            "share": 0.06,
+            "seats": 1
+          }
+        ],
+        "winner": "mng.mpp",
+        "turnout": 0.7435,
+        "note": "76 single-seat constituencies.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2016_Mongolian_parliamentary_election",
+            "title": "Wikipedia: 2016 Mongolian parliamentary election (infobox and results table)",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "president_2017",
+      "date": "2017-06-26",
+      "kind": "presidential",
+      "office": "mng.president",
+      "rounds": 2,
+      "historical": {
+        "candidates": [
+          {
+            "person": "mng.khaltmaagiin_battulga",
+            "party": "mng.dp",
+            "share": 0.3811,
+            "votes": 517478,
+            "round": 1
+          },
+          {
+            "person": "mng.miyeegombyn_enkhbold",
+            "party": "mng.mpp",
+            "share": 0.3032,
+            "votes": 411748,
+            "round": 1
+          },
+          {
+            "person": "mng.sainkhuugiin_ganbaatar",
+            "party": "mng.mprp_2010",
+            "share": 0.3019,
+            "votes": 409899,
+            "round": 1
+          },
+          {
+            "person": "mng.khaltmaagiin_battulga",
+            "party": "mng.dp",
+            "share": 0.5061,
+            "votes": 611226,
+            "round": 2
+          },
+          {
+            "person": "mng.miyeegombyn_enkhbold",
+            "party": "mng.mpp",
+            "share": 0.4116,
+            "votes": 497067,
+            "round": 2
+          }
+        ],
+        "winner": "mng.khaltmaagiin_battulga",
+        "turnout": 0.6827,
+        "note": "First round 26 June, run-off 7 July 2017 (turnout 60.67%), the first presidential run-off. Shares are computed from the results table with blank votes counted as valid (first round 1,357,788 votes including 18,663 blank; second round 1,207,787 including 99,494 blank). Turnout is the first round's.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2017_Mongolian_presidential_election",
+            "title": "Wikipedia: 2017 Mongolian presidential election (infobox and results table)",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "khural_2020",
+      "date": "2020-06-24",
+      "kind": "legislative",
+      "chamber": "state_great_khural",
+      "historical": {
+        "party_results": [
+          {
+            "party": "mng.mpp",
+            "share": 0.4498,
+            "seats": 62
+          },
+          {
+            "party": "mng.dp",
+            "share": 0.2449,
+            "seats": 11
+          },
+          {
+            "party": "mng.mprp_2010",
+            "share": 0.0808,
+            "seats": 1
+          },
+          {
+            "party": "mng.hun",
+            "share": 0.0524,
+            "seats": 1
+          },
+          {
+            "party": "independents",
+            "share": 0.0879,
+            "seats": 1
+          }
+        ],
+        "winner": "mng.mpp",
+        "turnout": 0.7364,
+        "note": "The MPRP (2010) row is Our Coalition (with the Civil Will-Green Party and the Mongolian Traditional United Party, led by Enkhbayar); the HUN row is the Right Person Electorate Coalition led by the National Labour Party (now HUN), whose one seat went to Togmidyn Dorjkhand.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2020_Mongolian_parliamentary_election",
+            "title": "Wikipedia: 2020 Mongolian parliamentary election (infobox and results table)",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "president_2021",
+      "date": "2021-06-09",
+      "kind": "presidential",
+      "office": "mng.president",
+      "historical": {
+        "candidates": [
+          {
+            "person": "mng.ukhnaagiin_khurelsukh",
+            "party": "mng.mpp",
+            "share": 0.6776,
+            "votes": 823326,
+            "round": 1
+          },
+          {
+            "person": "mng.dangaasurengiin_enkhbat",
+            "share": 0.2033,
+            "votes": 246968,
+            "round": 1
+          },
+          {
+            "person": "mng.sodnomzunduin_erdene",
+            "party": "mng.dp",
+            "share": 0.0599,
+            "votes": 72832,
+            "round": 1
+          }
+        ],
+        "winner": "mng.ukhnaagiin_khurelsukh",
+        "turnout": 0.5929,
+        "note": "First election for the single six-year term. Enkhbat, an independent, ran for the Right Person Electorate Coalition (no party given here). Shares are from the infobox (blank votes count as valid in Mongolian presidential elections).",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2021_Mongolian_presidential_election",
+            "title": "Wikipedia: 2021 Mongolian presidential election (infobox and results table)",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "khural_2024",
+      "date": "2024-06-28",
+      "kind": "legislative",
+      "chamber": "state_great_khural",
+      "historical": {
+        "party_results": [
+          {
+            "party": "mng.mpp",
+            "share": 0.3501,
+            "seats": 68
+          },
+          {
+            "party": "mng.dp",
+            "share": 0.3014,
+            "seats": 42
+          },
+          {
+            "party": "mng.hun",
+            "share": 0.1038,
+            "seats": 8
+          },
+          {
+            "party": "others",
+            "share": 0.0517,
+            "seats": 4
+          },
+          {
+            "party": "mng.cwgp",
+            "share": 0.0502,
+            "seats": 4
+          }
+        ],
+        "winner": "mng.mpp",
+        "turnout": 0.6985,
+        "note": "First election to the enlarged 126-seat Khural: 78 seats by multiple non-transferable vote in multi-member constituencies and 48 by closed national lists. Others: the National Coalition (4 seats). Shares are from the infobox.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2024_Mongolian_parliamentary_election",
+            "title": "Wikipedia: 2024 Mongolian parliamentary election (infobox and results table)",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    }
+  ],
+  "source": [
+    {
+      "url": "https://en.wikipedia.org/wiki/Elections_in_Mongolia",
+      "title": "Wikipedia: Elections in Mongolia",
+      "accessed": "2026-10-16"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/State_Great_Khural",
+      "title": "Wikipedia: State Great Khural (electoral systems)",
+      "accessed": "2026-10-16"
+    }
+  ],
+  "confidence": "verified"
+}

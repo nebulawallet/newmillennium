@@ -1,0 +1,15 @@
+{
+  "note": "Influence and approval are gameplay starting values for 1 January 2000 (Kim Dae-jung's NCNP-ULD government, two years after the 1997 financial crisis), not measured data. Business influence reflects the large conglomerates (chaebol) then under government-led restructuring; unions are militant but split between two national federations; the military is under civilian control since the 1990s but remains large because of conscription and the armistice with the North.",
+  "interest_groups": [
+    { "type": "military", "influence": 0.2, "approval": 50 },
+    { "type": "security_services", "influence": 0.15, "approval": 50 },
+    { "type": "business", "influence": 0.55, "approval": 45, "note": "Chaebol under IMF-era restructuring." },
+    { "type": "labour_unions", "influence": 0.3, "approval": 40, "note": "Layoffs after the 1997-1998 crisis strained relations with the government." },
+    { "type": "religious_establishment", "influence": 0.2, "approval": 55, "note": "Protestant, Catholic and Buddhist organisations." },
+    { "type": "rural", "influence": 0.15, "approval": 45 },
+    { "type": "urban_middle_class", "influence": 0.5, "approval": 52 },
+    { "type": "minorities", "influence": 0.03, "approval": 50 },
+    { "type": "youth_students", "influence": 0.25, "approval": 58 },
+    { "type": "media", "influence": 0.4, "approval": 45, "note": "Large conservative-leaning daily newspapers." }
+  ]
+}

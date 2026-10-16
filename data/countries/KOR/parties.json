@@ -1,0 +1,493 @@
+{
+  "parties": [
+    {
+      "id": "kor.gnp",
+      "name": { "en": "Grand National Party / Saenuri Party / Liberty Korea Party", "native": "한나라당 / 새누리당 / 자유한국당" },
+      "abbrev": { "en": "GNP", "native": "한나라당" },
+      "color": "#C9151E",
+      "sub_ideology": "liberal_conservative",
+      "founded": "1997-11-21",
+      "dissolved": "2020-02-17",
+      "status_2000": "active",
+      "leader_history": [
+        { "person": "kor.lee_hoi_chang", "from": "1998-08-31", "to": "2002-04-02" },
+        { "person": "kor.suh_chung_won", "from": "2002-05-14", "to": "2003-01-30" },
+        { "person": "kor.choi_byung_ryeol", "from": "2003-06-26", "to": "2004-03-23" },
+        { "person": "kor.park_geun_hye", "from": "2004-03-23", "to": "2006-06-15" },
+        { "person": "kor.kang_jae_sup", "from": "2006-07-11", "to": "2008-07-04" },
+        { "person": "kor.park_hee_tae", "from": "2008-07-04", "to": "2009-09-07" },
+        { "person": "kor.chung_mong_joon", "from": "2009-09-07", "to": "2010-06-04" },
+        { "person": "kor.ahn_sang_soo", "from": "2010-07-14", "to": "2011-05-09" },
+        { "person": "kor.hong_joon_pyo", "from": "2011-07-04", "to": "2011-12-09" },
+        { "person": "kor.park_geun_hye", "from": "2011-12-19", "to": "2012-05-15", "title": "Head of the Emergency Response Commission" },
+        { "person": "kor.hwang_woo_yea", "from": "2012-05-15", "to": "2014-05-15" },
+        { "person": "kor.kim_moo_sung", "from": "2014-07-14", "to": "2016-04-14" },
+        { "person": "kor.lee_jung_hyun", "from": "2016-08-09", "to": "2016-12-16" },
+        { "person": "kor.hong_joon_pyo", "from": "2017-07-03", "to": "2018-06-14" },
+        { "person": "kor.kim_byong_joon", "from": "2018-07-17", "to": "2019-02-27", "title": "Head of the Emergency Response Committee" },
+        { "person": "kor.hwang_kyo_ahn", "from": "2019-02-27", "to": "2020-02-17" }
+      ],
+      "popularity_2000": 0.4575,
+      "popularity_note": "No national vote since its founding; 1996 National Assembly vote shares of its two founding parties, the New Korea Party (34.52%) and the United Democratic Party (11.23%), are summed. Lee Hoi-chang won 38.75% as its 1997 presidential candidate.",
+      "lineage": { "merged_into": "kor.ppp" },
+      "note": "One record covers the Grand National Party (1997-2012), its renaming to the Saenuri Party (2012) and to the Liberty Korea Party (2017); Wikipedia treats them as one article. It merged with the New Conservative Party and Onward for Future 4.0 on 17 February 2020 to form the United Future Party. Acting chairs and some short emergency committees (2016-2017) are omitted from leader_history.",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/Liberty_Korea_Party", "title": "Wikipedia: Liberty Korea Party (history, list of chairpersons)", "accessed": "2026-10-15" },
+        { "url": "https://www.wikidata.org/wiki/Q20916", "title": "Wikidata: Liberty Korea Party (founded 1997-11-21, dissolved 2020-02-17)", "accessed": "2026-10-15" },
+        { "url": "https://en.wikipedia.org/wiki/1996_South_Korean_legislative_election", "title": "Wikipedia: 1996 South Korean legislative election", "accessed": "2026-10-15" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "kor.ppp",
+      "name": { "en": "People Power Party", "native": "국민의힘" },
+      "abbrev": { "en": "PPP", "native": "국민의힘" },
+      "color": "#E61E2B",
+      "sub_ideology": "liberal_conservative",
+      "founded": "2020-02-17",
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        { "person": "kor.hwang_kyo_ahn", "from": "2020-02-17", "to": "2020-04-15" },
+        { "person": "kor.kim_chong_in", "from": "2020-05-27", "to": "2021-04-08", "title": "Head of the Emergency Response Committee" },
+        { "person": "kor.lee_jun_seok", "from": "2021-06-11", "to": "2022-08-09" },
+        { "person": "kor.chung_jin_suk", "from": "2022-09-08", "to": "2023-03-08", "title": "Head of the Emergency Response Committee" },
+        { "person": "kor.kim_gi_hyeon", "from": "2023-03-08", "to": "2023-12-13" },
+        { "person": "kor.han_dong_hoon", "from": "2023-12-26", "to": "2024-04-11", "title": "Head of the Emergency Response Committee" },
+        { "person": "kor.hwang_woo_yea", "from": "2024-05-02", "to": "2024-07-23", "title": "Head of the Emergency Response Committee" },
+        { "person": "kor.han_dong_hoon", "from": "2024-07-23", "to": "2024-12-16" },
+        { "person": "kor.kwon_young_se", "from": "2024-12-30", "to": "2025-05-10", "title": "Head of the Emergency Response Committee" },
+        { "person": "kor.jang_dong_hyeok", "from": "2025-08-26" }
+      ],
+      "popularity_2000": 0,
+      "lineage": { "formed_from": ["kor.gnp"] },
+      "note": "Founded on 17 February 2020 as the United Future Party (merger of the Liberty Korea Party, the New Conservative Party and Onward for Future 4.0) and later renamed. Absorbed the People Party (2020) in April 2022. Acting leaders and the short emergency committees of May-August 2025 (Kim Yong-tae, Song Eon-seok) are omitted.",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/People_Power_Party_(South_Korea)", "title": "Wikipedia: People Power Party (South Korea) (merger, list of leaders)", "accessed": "2026-10-15" },
+        { "url": "https://www.wikidata.org/wiki/Q85412437", "title": "Wikidata: People Power Party (founded 2020-02-17)", "accessed": "2026-10-15" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "kor.ncnp",
+      "name": { "en": "National Congress for New Politics", "native": "새정치국민회의" },
+      "abbrev": { "en": "NCNP", "native": "국민회의" },
+      "color": "#009B42",
+      "sub_ideology": "social_liberal",
+      "founded": "1995-09-05",
+      "dissolved": "2000-01-20",
+      "status_2000": "active",
+      "leader_history": [
+        { "person": "kor.kim_dae_jung", "from": "1995-09-05", "to": "2000-01-20" }
+      ],
+      "popularity_2000": 0.253,
+      "popularity_note": "1996 National Assembly vote share (25.30%). Kim Dae-jung won the 1997 presidential election for the party with 40.27%.",
+      "lineage": { "renamed_to": "kor.mdp" },
+      "note": "Kim Dae-jung's party, governing in coalition with the United Liberal Democrats in January 2000. On 20 January 2000 it merged with Lee In-je's New People Party and others to become the Millennium Democratic Party.",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/National_Congress_for_New_Politics", "title": "Wikipedia: National Congress for New Politics (foundation, dissolution, leader)", "accessed": "2026-10-15" },
+        { "url": "https://en.wikipedia.org/wiki/1996_South_Korean_legislative_election", "title": "Wikipedia: 1996 South Korean legislative election", "accessed": "2026-10-15" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "kor.mdp",
+      "name": { "en": "Millennium Democratic Party", "native": "새천년민주당" },
+      "abbrev": { "en": "MDP", "native": "민주당" },
+      "color": "#00AA7B",
+      "sub_ideology": "social_liberal",
+      "founded": "2000-01-20",
+      "dissolved": "2007-06-27",
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        { "person": "kor.kim_dae_jung", "from": "2000-01-20", "to": 2002, "title": "President of the party" }
+      ],
+      "popularity_2000": 0,
+      "lineage": { "formed_from": ["kor.ncnp"], "merged_into": "kor.udp" },
+      "note": "Renamed Democratic Party on 6 May 2005. Roh Moo-hyun's supporters left to form the Uri Party in 2003. In June 2007 the remaining party merged with the Central Reform United New Party into a new Democratic Party (2007), which joined the United Democratic Party in February 2008; that intermediate party is folded into this lineage.",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/Democratic_Party_(South_Korea,_2000)", "title": "Wikipedia: Democratic Party (South Korea, 2000) (foundation, rename, dissolution)", "accessed": "2026-10-15" },
+        { "url": "https://www.wikidata.org/wiki/Q488952", "title": "Wikidata: Democratic Party (founded 2000-01-20, dissolved 2007-06-27)", "accessed": "2026-10-15" }
+      ],
+      "confidence": "needs_review",
+      "review_note": "Leader history is incomplete: only Kim Dae-jung (party president until 2002) was found. Add the party's chairs 2000-2007 (e.g. Cho Soon-hyung, who led it into the 2004 election)."
+    },
+    {
+      "id": "kor.uri",
+      "name": { "en": "Uri Party", "native": "열린우리당" },
+      "abbrev": { "en": "Uri", "native": "우리당" },
+      "color": "#FFD700",
+      "sub_ideology": "social_liberal",
+      "founded": "2003-11-01",
+      "dissolved": "2007-08-20",
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        { "person": "kor.chung_dong_young", "from": 2004, "title": "Chairman" }
+      ],
+      "popularity_2000": 0,
+      "lineage": { "split_from": "kor.mdp", "merged_into": "kor.undp" },
+      "note": "Formed by supporters of President Roh Moo-hyun who left the Millennium Democratic Party; won 152 of 299 seats in 2004. Merged into the Grand Unified Democratic New Party in August 2007. Wikipedia gives foundation as 1 November 2003; Wikidata gives 11 November 2003.",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/Uri_Party", "title": "Wikipedia: Uri Party", "accessed": "2026-10-15" },
+        { "url": "https://www.wikidata.org/wiki/Q489124", "title": "Wikidata: Uri Party (founded 2003-11-11, dissolved 2007-08-20)", "accessed": "2026-10-15" },
+        { "url": "https://en.wikipedia.org/wiki/2004_South_Korean_legislative_election", "title": "Wikipedia: 2004 South Korean legislative election (party leaders)", "accessed": "2026-10-15" }
+      ],
+      "confidence": "needs_review",
+      "review_note": "Leader history is incomplete: only Chung Dong-young (chairman at the 2004 election) is recorded, without exact dates. The party had several chairs (e.g. Shin Ki-nam, who resigned on 19 August 2004); the English Wikipedia article has no dated leader list (founding date 1 November 2003 confirmed from its infobox)."
+    },
+    {
+      "id": "kor.undp",
+      "name": { "en": "Grand Unified Democratic New Party", "native": "대통합민주신당" },
+      "abbrev": { "en": "UNDP", "native": "대통합민주신당" },
+      "color": "#3B9E3B",
+      "sub_ideology": "social_liberal",
+      "founded": "2007-08-05",
+      "dissolved": "2008-02-17",
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        { "person": "kor.sohn_hak_kyu", "from": 2008, "to": "2008-02-17" }
+      ],
+      "popularity_2000": 0,
+      "lineage": { "formed_from": ["kor.uri"], "merged_into": "kor.udp" },
+      "note": "Formed from the Uri Party and its splinter groups; Chung Dong-young was its 2007 presidential candidate. Merged with the Democratic Party into the United Democratic Party on 17 February 2008. Sohn Hak-kyu was its last leader.",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/United_New_Democratic_Party", "title": "Wikipedia: Grand Unified Democratic New Party", "accessed": "2026-10-15" }
+      ],
+      "confidence": "needs_review",
+      "review_note": "Leader history is incomplete: earlier leaders (2007) are missing and Sohn Hak-kyu's start date is unknown."
+    },
+    {
+      "id": "kor.udp",
+      "name": { "en": "United Democratic Party / Democratic Party (2008)", "native": "통합민주당 / 민주당" },
+      "abbrev": { "en": "UDP", "native": "민주당" },
+      "color": "#2E8B57",
+      "sub_ideology": "social_liberal",
+      "founded": "2008-02-17",
+      "dissolved": "2011-12-15",
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        { "person": "kor.sohn_hak_kyu", "from": "2008-02-17", "to": "2008-05-29", "title": "Co-chair (with Park Sang-chun)" },
+        { "person": "kor.chung_sye_kyun", "from": "2008-05-30", "to": "2010-10-03" },
+        { "person": "kor.sohn_hak_kyu", "from": "2010-10-03", "to": "2011-12-15" }
+      ],
+      "popularity_2000": 0,
+      "lineage": { "formed_from": ["kor.undp", "kor.mdp"], "merged_into": "kor.dup" },
+      "note": "Founded on 17 February 2008 as the United Democratic Party; renamed Democratic Party on 7 May 2008. Merged with the Citizens Unity Party to form the Democratic United Party in December 2011.",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/Democratic_Party_(South_Korea,_2008)", "title": "Wikipedia: Democratic Party (South Korea, 2008) (foundation, presidents of the party)", "accessed": "2026-10-15" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "kor.dup",
+      "name": { "en": "Democratic United Party / Democratic Party (2011)", "native": "민주통합당 / 민주당" },
+      "abbrev": { "en": "DUP", "native": "민주통합당" },
+      "color": "#F6C700",
+      "sub_ideology": "social_liberal",
+      "founded": "2011-12-15",
+      "dissolved": "2014-03-26",
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        { "person": "kor.han_myeong_sook", "from": "2012-01-16", "to": "2012-04-16" },
+        { "person": "kor.lee_hae_chan", "from": "2012-06-09", "to": "2012-11-18" },
+        { "person": "kor.moon_hee_sang", "from": "2013-01-09", "to": "2013-05-04", "title": "Head of the Emergency Response Commission" },
+        { "person": "kor.kim_han_gil", "from": "2013-05-04", "to": "2014-03-26" }
+      ],
+      "popularity_2000": 0,
+      "lineage": { "formed_from": ["kor.udp"], "merged_into": "kor.dpk" },
+      "note": "Renamed Democratic Party on 4 May 2013; merged with Ahn Cheol-soo's group into the New Politics Alliance for Democracy on 26 March 2014. Interim leaders are omitted.",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/Democratic_Party_(South_Korea,_2011)", "title": "Wikipedia: Democratic Party (South Korea, 2011) (list of chairpersons)", "accessed": "2026-10-15" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "kor.dpk",
+      "name": { "en": "Democratic Party of Korea", "native": "더불어민주당" },
+      "abbrev": { "en": "DPK", "native": "민주당" },
+      "color": "#152484",
+      "sub_ideology": "social_liberal",
+      "founded": "2014-03-26",
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        { "person": "kor.kim_han_gil", "from": "2014-03-26", "to": "2014-07-31", "title": "Co-leader" },
+        { "person": "kor.ahn_cheol_soo", "from": "2014-03-26", "to": "2014-07-31", "title": "Co-leader" },
+        { "person": "kor.moon_hee_sang", "from": "2014-09-18", "to": "2015-02-09", "title": "Head of the Emergency Response Committee" },
+        { "person": "kor.moon_jae_in", "from": "2015-02-09", "to": "2016-01-27" },
+        { "person": "kor.kim_chong_in", "from": "2016-01-27", "to": "2016-08-27" },
+        { "person": "kor.choo_mi_ae", "from": "2016-08-27", "to": "2018-08-25" },
+        { "person": "kor.lee_hae_chan", "from": "2018-08-25", "to": "2020-08-29" },
+        { "person": "kor.lee_nak_yon", "from": "2020-08-29", "to": "2021-03-09" },
+        { "person": "kor.song_young_gil", "from": "2021-05-02", "to": "2022-03-10" },
+        { "person": "kor.lee_jae_myung", "from": "2022-08-28", "to": "2024-06-24" },
+        { "person": "kor.lee_jae_myung", "from": "2024-08-18", "to": "2025-04-09" },
+        { "person": "kor.jung_chung_rae", "from": "2025-08-02", "to": "2026-06-24" },
+        { "person": "kor.kim_min_seok", "from": "2026-08-17" }
+      ],
+      "popularity_2000": 0,
+      "lineage": { "formed_from": ["kor.dup"] },
+      "note": "Founded on 26 March 2014 as the New Politics Alliance for Democracy; renamed the Minjoo Party of Korea and then the Democratic Party of Korea. Interim, acting and short emergency leaderships (2014, 2021, 2022, 2024-2025, June-August 2026) are omitted. Kim Min-seok's election on 17 August 2026 is from the Wikipedia leader list and Wikidata.",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/Democratic_Party_(South_Korea,_2015)", "title": "Wikipedia: Democratic Party (South Korea, 2015) (list of leaders)", "accessed": "2026-10-15" },
+        { "url": "https://www.wikidata.org/wiki/Q15978686", "title": "Wikidata: Democratic Party of Korea (founded 2014-03-26, chairpersons)", "accessed": "2026-10-15" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "kor.uld",
+      "name": { "en": "United Liberal Democrats", "native": "자유민주연합" },
+      "abbrev": { "en": "ULD", "native": "자민련" },
+      "color": "#1E7B6E",
+      "sub_ideology": "traditional_conservative",
+      "founded": "1995-03-30",
+      "dissolved": "2006-04-07",
+      "status_2000": "active",
+      "leader_history": [
+        { "person": "kor.kim_jong_pil", "from": 1995, "title": "Founder" },
+        { "person": "kor.lee_han_dong", "from": 2000, "title": "Party president" }
+      ],
+      "popularity_2000": 0.1617,
+      "popularity_note": "1996 National Assembly vote share (16.17%).",
+      "lineage": { "merged_into": "kor.gnp" },
+      "note": "Kim Jong-pil's conservative party; junior partner in the Kim Dae-jung government in January 2000 (Prime Minister Kim Jong-pil). Lee Han-dong led it into the April 2000 election.",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/United_Liberal_Democrats", "title": "Wikipedia: United Liberal Democrats (founded 30 March 1995, dissolved 7 April 2006)", "accessed": "2026-10-15" },
+        { "url": "https://en.wikipedia.org/wiki/2000_South_Korean_legislative_election", "title": "Wikipedia: 2000 South Korean legislative election (party leaders)", "accessed": "2026-10-15" },
+        { "url": "https://www.wikidata.org/wiki/Q246167", "title": "Wikidata: Kim Jong-pil (ULD 1996-2006, then GNP)", "accessed": "2026-10-15" }
+      ],
+      "confidence": "needs_review",
+      "review_note": "Leader dates are years only and incomplete. The merger into the Grand National Party in 2006 is inferred from Kim Jong-pil's Wikidata party record; confirm it against the ULD article."
+    },
+    {
+      "id": "kor.dlp",
+      "name": { "en": "Democratic Labor Party", "native": "민주노동당" },
+      "abbrev": { "en": "DLP", "native": "민노당" },
+      "color": "#F37021",
+      "sub_ideology": "democratic_socialist",
+      "founded": "2000-01-30",
+      "dissolved": "2011-12-13",
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        { "person": "kor.kwon_young_ghil", "from": 2004 }
+      ],
+      "popularity_2000": 0,
+      "lineage": { "merged_into": "kor.upp" },
+      "note": "Won 10 seats in 2004 with 13.03% of the list vote.",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/Democratic_Labor_Party_(South_Korea)", "title": "Wikipedia: Democratic Labor Party (South Korea)", "accessed": "2026-10-15" },
+        { "url": "https://en.wikipedia.org/wiki/2004_South_Korean_legislative_election", "title": "Wikipedia: 2004 South Korean legislative election", "accessed": "2026-10-15" }
+      ],
+      "confidence": "needs_review",
+      "review_note": "Leader history is incomplete: only Kwon Young-ghil (leader at the 2004 election) is listed, with a year only."
+    },
+    {
+      "id": "kor.upp",
+      "name": { "en": "Unified Progressive Party", "native": "통합진보당" },
+      "abbrev": { "en": "UPP", "native": "통합진보당" },
+      "color": "#7B2A87",
+      "sub_ideology": "democratic_socialist",
+      "founded": "2011-12-13",
+      "dissolved": "2014-12-19",
+      "status_2000": "not_yet_founded",
+      "leader_history": [],
+      "popularity_2000": 0,
+      "lineage": { "formed_from": ["kor.dlp"] },
+      "note": "Formed by a merger including the Democratic Labor Party; won 13 seats in 2012. Dissolved by a ruling of the Constitutional Court on 19 December 2014. Its leader, Lee Jung-hee, has no person record.",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/Unified_Progressive_Party", "title": "Wikipedia: Unified Progressive Party", "accessed": "2026-10-15" }
+      ],
+      "confidence": "needs_review",
+      "review_note": "Leader history is empty; add Lee Jung-hee and other co-leaders with dates."
+    },
+    {
+      "id": "kor.justice",
+      "name": { "en": "Justice Party", "native": "정의당" },
+      "abbrev": { "en": "JP", "native": "정의당" },
+      "color": "#FFCC00",
+      "sub_ideology": "social_democrat",
+      "founded": "2012-10-21",
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        { "person": "kor.sim_sang_jung", "from": 2019 }
+      ],
+      "popularity_2000": 0,
+      "lineage": { "split_from": "kor.upp" },
+      "note": "Ran in 2024 as the Green-Justice Party and lost all its seats. Sim Sang-jung was elected leader in July 2019 (her second term) and was its 2017 and 2022 presidential candidate.",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/Justice_Party_(South_Korea)", "title": "Wikipedia: Justice Party (South Korea)", "accessed": "2026-10-15" }
+      ],
+      "confidence": "needs_review",
+      "review_note": "Leader history is incomplete: only Sim Sang-jung's 2019 election is recorded; add her end date and the party's other leaders."
+    },
+    {
+      "id": "kor.lfp",
+      "name": { "en": "Liberty Forward Party", "native": "자유선진당" },
+      "abbrev": { "en": "LFP", "native": "선진당" },
+      "color": "#0072BC",
+      "sub_ideology": "traditional_conservative",
+      "founded": "2008-02-04",
+      "dissolved": "2012-11-16",
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        { "person": "kor.lee_hoi_chang", "from": "2008-02-04" }
+      ],
+      "popularity_2000": 0,
+      "lineage": { "split_from": "kor.gnp", "merged_into": "kor.gnp" },
+      "note": "Founded by Lee Hoi-chang after his 2007 independent candidacy; renamed Advancement Unification Party in 2012 and merged into the Saenuri Party on 16 November 2012.",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/Liberty_Forward_Party", "title": "Wikipedia: Liberty Forward Party (foundation, dissolution, merger)", "accessed": "2026-10-15" },
+        { "url": "https://en.wikipedia.org/wiki/2008_South_Korean_legislative_election", "title": "Wikipedia: 2008 South Korean legislative election (party leaders)", "accessed": "2026-10-15" }
+      ],
+      "confidence": "needs_review",
+      "review_note": "Lee Hoi-chang's end date as leader and the later leaders (e.g. Lee In-je) are missing."
+    },
+    {
+      "id": "kor.pro_park",
+      "name": { "en": "Pro-Park Alliance", "native": "친박연대" },
+      "abbrev": { "en": "PPA", "native": "친박연대" },
+      "color": "#8E3A8E",
+      "sub_ideology": "liberal_conservative",
+      "founded": "2008-03-21",
+      "dissolved": "2012-02-02",
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        { "person": "kor.suh_chung_won", "from": "2008-03-21" }
+      ],
+      "popularity_2000": 0,
+      "lineage": { "split_from": "kor.gnp", "merged_into": "kor.gnp" },
+      "note": "Formed by GNP politicians close to Park Geun-hye who were not nominated for the 2008 election; later renamed Future Hope Alliance and merged into the Saenuri Party in 2012.",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/Pro-Park_Alliance", "title": "Wikipedia: Pro-Park Alliance (foundation, dissolution, merger)", "accessed": "2026-10-15" },
+        { "url": "https://en.wikipedia.org/wiki/2008_South_Korean_legislative_election", "title": "Wikipedia: 2008 South Korean legislative election (party leaders)", "accessed": "2026-10-15" }
+      ],
+      "confidence": "needs_review",
+      "review_note": "Suh Chung-won's end date as leader is missing (the infobox names Rho Cheol-rae as the last leader)."
+    },
+    {
+      "id": "kor.ckp",
+      "name": { "en": "Creative Korea Party", "native": "창조한국당" },
+      "abbrev": { "en": "CKP", "native": "창조한국당" },
+      "color": "#F7931E",
+      "sub_ideology": "centrist_liberal",
+      "founded": "2007-11-07",
+      "dissolved": "2012-04-12",
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        { "person": "kor.moon_kook_hyun", "from": "2007-11-07" }
+      ],
+      "popularity_2000": 0,
+      "note": "Moon Kook-hyun's party; won 3 seats in 2008.",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/Creative_Korea_Party", "title": "Wikipedia: Creative Korea Party", "accessed": "2026-10-15" }
+      ],
+      "confidence": "needs_review",
+      "review_note": "Moon Kook-hyun is listed as party leader from the founding date; confirm his start and end dates (the infobox names Han Myeon-hee as the last leader)."
+    },
+    {
+      "id": "kor.people_2016",
+      "name": { "en": "People Party (2016)", "native": "국민의당" },
+      "abbrev": { "en": "PP", "native": "국민의당" },
+      "color": "#006241",
+      "sub_ideology": "centrist_liberal",
+      "founded": "2016-02-02",
+      "dissolved": "2018-02-13",
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        { "person": "kor.ahn_cheol_soo", "from": "2016-02-02" }
+      ],
+      "popularity_2000": 0,
+      "lineage": { "split_from": "kor.dpk" },
+      "note": "Founded by Ahn Cheol-soo and others who left the Democratic Party; won 38 seats in 2016. Merged with the Bareun Party into the Bareunmirae Party on 13 February 2018 (not modelled).",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/People_Party_(South_Korea,_2016)", "title": "Wikipedia: People Party (South Korea, 2016)", "accessed": "2026-10-15" }
+      ],
+      "confidence": "needs_review",
+      "review_note": "Leader history is incomplete (only Ahn Cheol-soo, without an end date)."
+    },
+    {
+      "id": "kor.bareun",
+      "name": { "en": "Bareun Party", "native": "바른정당" },
+      "abbrev": { "en": "Bareun", "native": "바른정당" },
+      "color": "#00B5E2",
+      "sub_ideology": "liberal_conservative",
+      "founded": "2017-01-25",
+      "dissolved": "2018-02-13",
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        { "person": "kor.yoo_seong_min", "from": 2017 }
+      ],
+      "popularity_2000": 0,
+      "lineage": { "split_from": "kor.gnp" },
+      "note": "Split from the Saenuri Party (parliamentary group from 27 December 2016, party from 25 January 2017); Yoo Seong-min was its 2017 presidential candidate. Merged into the Bareunmirae Party on 13 February 2018 (not modelled).",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/Bareun_Party", "title": "Wikipedia: Bareun Party", "accessed": "2026-10-15" }
+      ],
+      "confidence": "needs_review",
+      "review_note": "Leader history is incomplete; the infobox lists Yoo Seong-min among its leaders without dates."
+    },
+    {
+      "id": "kor.people_2020",
+      "name": { "en": "People Party (2020)", "native": "국민의당" },
+      "abbrev": { "en": "PP", "native": "국민의당" },
+      "color": "#EA5504",
+      "sub_ideology": "centrist_liberal",
+      "founded": 2020,
+      "dissolved": "2022-04-18",
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        { "person": "kor.ahn_cheol_soo", "from": 2020, "to": "2022-04-18" }
+      ],
+      "popularity_2000": 0,
+      "lineage": { "merged_into": "kor.ppp" },
+      "note": "Ahn Cheol-soo's party; won 3 list seats in 2020 and merged into the People Power Party on 18 April 2022.",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/People_Party_(South_Korea,_2020)", "title": "Wikipedia: People Party (South Korea, 2020)", "accessed": "2026-10-15" }
+      ],
+      "confidence": "needs_review",
+      "review_note": "The infobox gives no founding date; only the year 2020 is recorded."
+    },
+    {
+      "id": "kor.rkp",
+      "name": { "en": "Rebuilding Korea Party", "native": "조국혁신당" },
+      "abbrev": { "en": "RKP", "native": "조국혁신당" },
+      "color": "#0073CF",
+      "sub_ideology": "social_liberal",
+      "founded": "2024-03-03",
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        { "person": "kor.cho_kuk", "from": "2024-03-03", "to": "2024-12-12" },
+        { "person": "kor.cho_kuk", "from": "2025-09-11", "to": "2026-06-04" },
+        { "person": "kor.shin_jang_sik", "from": "2026-07-25" }
+      ],
+      "popularity_2000": 0,
+      "lineage": { "split_from": "kor.dpk" },
+      "note": "Founded by Cho Kuk; won 12 list seats in 2024. Cho Kuk's second spell was acting from 8 September 2025 until his election on 23 November 2025 (the leader list gives 11 September 2025 as its start). Acting leaders between spells (Kim Joon-hyung, Kim Sun-min, and Shin Jang-sik from 4 June 2026) are omitted. Shin Jang-sik was elected leader on 25 July 2026 (Wikipedia, citing the Chosun Ilbo of 25 July 2026).",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/Rebuilding_Korea_Party", "title": "Wikipedia: Rebuilding Korea Party (list of leaders)", "accessed": "2026-10-15" },
+        { "url": "https://en.wikipedia.org/wiki/Shin_Jang-sik", "title": "Wikipedia: Shin Jang-sik", "accessed": "2026-10-15" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "kor.reform",
+      "name": { "en": "Reform Party", "native": "개혁신당" },
+      "abbrev": { "en": "Reform", "native": "개혁신당" },
+      "color": "#FF7210",
+      "sub_ideology": "liberal_conservative",
+      "founded": "2024-01-20",
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        { "person": "kor.lee_jun_seok", "from": "2024-01-20", "to": "2024-05-19" },
+        { "person": "kor.lee_jun_seok", "from": "2025-07-27", "to": "2026-08-26" }
+      ],
+      "popularity_2000": 0,
+      "lineage": { "split_from": "kor.ppp" },
+      "note": "Founded by Lee Jun-seok (2025 presidential candidate) after leaving the People Power Party; won 3 seats in 2024. Lee's two spells as leader are from his Wikipedia infobox. The October 2026 infobox names Lee Ki-in as head of an emergency committee.",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/Reform_Party_(South_Korea)", "title": "Wikipedia: Reform Party (South Korea)", "accessed": "2026-10-15" },
+        { "url": "https://en.wikipedia.org/wiki/Lee_Jun-seok", "title": "Wikipedia: Lee Jun-seok (offices held)", "accessed": "2026-10-15" }
+      ],
+      "confidence": "needs_review",
+      "review_note": "Leader history has gaps: the leader(s) between 19 May 2024 and 27 July 2025 and after 26 August 2026 are not recorded (the article has no dated leader list)."
+    }
+  ]
+}

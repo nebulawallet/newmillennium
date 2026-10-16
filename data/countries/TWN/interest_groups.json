@@ -1,0 +1,15 @@
+{
+  "note": "Influence and approval are gameplay starting values for 1 January 2000, at the end of KMT rule and before the March 2000 presidential election; not measured data. The military and security services were long tied to the KMT; business is export-oriented and invests heavily in mainland China; media are free and highly partisan.",
+  "interest_groups": [
+    { "type": "military", "influence": 0.25, "approval": 60 },
+    { "type": "security_services", "influence": 0.15, "approval": 58 },
+    { "type": "business", "influence": 0.5, "approval": 58 },
+    { "type": "labour_unions", "influence": 0.15, "approval": 45 },
+    { "type": "religious_establishment", "influence": 0.15, "approval": 52, "note": "Buddhist, Taoist and folk-religion organisations and the Presbyterian Church." },
+    { "type": "rural", "influence": 0.2, "approval": 52, "note": "Farmers' associations were part of the KMT's local networks." },
+    { "type": "urban_middle_class", "influence": 0.5, "approval": 48 },
+    { "type": "minorities", "influence": 0.05, "approval": 50, "note": "Indigenous peoples and Hakka." },
+    { "type": "youth_students", "influence": 0.2, "approval": 45 },
+    { "type": "media", "influence": 0.4, "approval": 50 }
+  ]
+}

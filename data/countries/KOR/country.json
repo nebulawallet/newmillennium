@@ -1,0 +1,158 @@
+{
+  "tag": "KOR",
+  "name": { "en": "South Korea", "native": "대한민국", "native_latin": "Daehan Minguk", "official": { "en": "Republic of Korea", "native": "대한민국", "native_latin": "Daehan Minguk" } },
+  "adjective": "South Korean",
+  "culture_primary": "korean",
+  "government": {
+    "type": "presidential",
+    "effective_executive": "kor.president",
+    "head_of_state_office": "kor.president",
+    "head_of_government_office": "kor.president",
+    "constitution": {
+      "term_limit_amendable": true,
+      "emergency_powers": true,
+      "referendum_required_for": ["constitutional amendments"]
+    },
+    "note": "Presidential republic under the 1987 (Sixth Republic) Constitution. The President is head of state and of government, directly elected by plurality for a single five-year term. The Prime Minister is appointed by the President with the consent of the National Assembly, directs the ministries and is first in line to act as President; when the post is vacant or the PM is suspended, a Deputy Prime Minister acts. Presidents impeached by the National Assembly are suspended until the Constitutional Court rules (Roh Moo-hyun 2004, reinstated; Park Geun-hye 2016-2017 and Yoon Suk Yeol 2024-2025, removed). A vacancy must be filled by an election within 60 days. The President can declare martial law."
+  },
+  "offices": [
+    {
+      "id": "kor.president",
+      "title": { "en": "President of the Republic of Korea", "native": "대한민국 대통령", "native_latin": "Daehan Minguk Daetongnyeong" },
+      "role": "head_of_state_and_government",
+      "power_weight": 0.9,
+      "selection": "direct_election",
+      "term_years": 5,
+      "term_limit": { "max_terms": 1, "consecutive_only": false },
+      "succession": { "type": "acting_then_election", "acting_office": "kor.prime_minister" },
+      "holders": [
+        { "person": "kor.kim_dae_jung", "from": "1998-02-25", "to": "2003-02-25" },
+        { "person": "kor.roh_moo_hyun", "from": "2003-02-25", "to": "2008-02-25", "note": "Suspended after impeachment by the National Assembly on 12 March 2004; reinstated when the Constitutional Court overturned the impeachment on 14 May 2004." },
+        { "person": "kor.goh_kun", "from": "2004-03-12", "to": "2004-05-14", "acting": true, "note": "Acting President as Prime Minister during Roh Moo-hyun's suspension." },
+        { "person": "kor.lee_myung_bak", "from": "2008-02-25", "to": "2013-02-25" },
+        { "person": "kor.park_geun_hye", "from": "2013-02-25", "to": "2017-03-10", "note": "Suspended after impeachment on 9 December 2016; removed from office by the Constitutional Court on 10 March 2017." },
+        { "person": "kor.hwang_kyo_ahn", "from": "2016-12-09", "to": "2017-05-10", "acting": true, "note": "Acting President as Prime Minister during the suspension and, after Park's removal, until the snap election winner took office." },
+        { "person": "kor.moon_jae_in", "from": "2017-05-10", "to": "2022-05-10" },
+        { "person": "kor.yoon_suk_yeol", "from": "2022-05-10", "to": "2025-04-04", "note": "Suspended after impeachment on 14 December 2024; removed from office by the Constitutional Court on 4 April 2025." },
+        { "person": "kor.han_duck_soo", "from": "2024-12-14", "to": "2024-12-27", "acting": true, "note": "Acting President as Prime Minister until his own impeachment and suspension on 27 December 2024." },
+        { "person": "kor.choi_sang_mok", "from": "2024-12-27", "to": "2025-03-24", "acting": true, "note": "Acting President as Deputy Prime Minister and Minister of Economy and Finance." },
+        { "person": "kor.han_duck_soo", "from": "2025-03-24", "to": "2025-05-01", "acting": true, "note": "Reinstated when the Constitutional Court overturned his impeachment; resigned on 1 May 2025." },
+        { "person": "kor.lee_ju_ho", "from": "2025-05-02", "to": "2025-06-04", "acting": true, "note": "Acting President as Deputy Prime Minister and Minister of Education after Han Duck-soo and Choi Sang-mok resigned." },
+        { "person": "kor.lee_jae_myung", "from": "2025-06-04" }
+      ],
+      "note": "Wikidata ends each full term on 24 February (the day before the handover); the Wikipedia list's handover dates are used here.",
+      "source": [
+        { "url": "https://www.wikidata.org/wiki/Q6296418", "title": "Wikidata: President of South Korea (position held by)", "accessed": "2026-10-15" },
+        { "url": "https://en.wikipedia.org/wiki/List_of_presidents_of_South_Korea", "title": "Wikipedia: List of presidents of South Korea (including acting presidents and suspensions)", "accessed": "2026-10-15" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "kor.prime_minister",
+      "title": { "en": "Prime Minister of the Republic of Korea", "native": "국무총리", "native_latin": "Gungmu Chongni" },
+      "role": "deputy",
+      "power_weight": 0.1,
+      "selection": "appointed",
+      "appointed_by": "kor.president",
+      "succession": { "type": "acting_then_election" },
+      "holders": [
+        { "person": "kor.kim_jong_pil", "from": "1998-03-03", "to": "2000-01-12", "note": "The Wikipedia list gives 3 March 1998; its timeline dates his full term from 18 August 1998." },
+        { "person": "kor.park_tae_joon", "from": "2000-01-13", "to": "2000-05-18" },
+        { "person": "kor.lee_hun_jai", "from": "2000-05-19", "to": "2000-05-22", "acting": true },
+        { "person": "kor.lee_han_dong", "from": "2000-05-23", "to": "2002-07-10" },
+        { "person": "kor.chang_sang", "from": "2002-07-11", "to": "2002-07-31", "acting": true },
+        { "person": "kor.jeon_yun_churl", "from": "2002-07-31", "to": "2002-08-09", "acting": true },
+        { "person": "kor.chang_dae_whan", "from": "2002-08-09", "to": "2002-09-10", "acting": true },
+        { "person": "kor.kim_suk_soo", "from": "2002-09-10", "to": "2003-02-26" },
+        { "person": "kor.goh_kun", "from": "2003-02-27", "to": "2004-07-24" },
+        { "person": "kor.lee_hun_jai", "from": "2004-07-25", "to": "2004-07-30", "acting": true },
+        { "person": "kor.lee_hae_chan", "from": "2004-07-30", "to": "2006-03-15" },
+        { "person": "kor.han_duck_soo", "from": "2006-03-16", "to": "2006-04-19", "acting": true },
+        { "person": "kor.han_myeong_sook", "from": "2006-04-20", "to": "2007-03-06" },
+        { "person": "kor.kwon_o_kyu", "from": "2007-03-07", "to": "2007-04-02", "acting": true },
+        { "person": "kor.han_duck_soo", "from": "2007-04-02", "to": "2008-02-29" },
+        { "person": "kor.han_seung_soo", "from": "2008-02-29", "to": "2009-09-28" },
+        { "person": "kor.chung_un_chan", "from": "2009-09-29", "to": "2010-08-11" },
+        { "person": "kor.yoon_jeung_hyun", "from": "2010-08-11", "to": "2010-10-01", "acting": true },
+        { "person": "kor.kim_hwang_sik", "from": "2010-10-01", "to": "2013-02-26" },
+        { "person": "kor.chung_hong_won", "from": "2013-02-26", "to": "2015-02-16" },
+        { "person": "kor.lee_wan_koo", "from": "2015-02-17", "to": "2015-04-27" },
+        { "person": "kor.choi_kyoung_hwan", "from": "2015-04-27", "to": "2015-06-18", "acting": true },
+        { "person": "kor.hwang_kyo_ahn", "from": "2015-06-18", "to": "2017-05-11" },
+        { "person": "kor.yoo_il_ho", "from": "2017-05-11", "to": "2017-05-31", "acting": true },
+        { "person": "kor.lee_nak_yon", "from": "2017-05-31", "to": "2020-01-14" },
+        { "person": "kor.chung_sye_kyun", "from": "2020-01-14", "to": "2021-04-16" },
+        { "person": "kor.hong_nam_ki", "from": "2021-04-16", "to": "2021-05-13", "acting": true },
+        { "person": "kor.kim_boo_kyum", "from": "2021-05-14", "to": "2022-05-11" },
+        { "person": "kor.choo_kyung_ho", "from": "2022-05-12", "to": "2022-05-20", "acting": true },
+        { "person": "kor.han_duck_soo", "from": "2022-05-21", "to": "2025-05-01", "note": "Suspended from 27 December 2024 to 24 March 2025 after impeachment; acting President while Yoon Suk Yeol was suspended and after his removal; resigned on 1 May 2025." },
+        { "person": "kor.choi_sang_mok", "from": "2024-12-27", "to": "2025-03-24", "acting": true, "note": "Acting Prime Minister during Han Duck-soo's suspension." },
+        { "person": "kor.lee_ju_ho", "from": "2025-05-02", "to": "2025-07-04", "acting": true },
+        { "person": "kor.kim_min_seok", "from": "2025-07-04", "to": "2026-06-30", "note": "Wikidata gives the start as 3 July 2025; Wikipedia gives 4 July 2025." },
+        { "person": "kor.han_seong_sook", "from": "2026-07-01", "note": "Confirmed by the National Assembly on 30 June 2026 (Wikipedia, citing Reuters); Wikidata also gives 1 July 2026." }
+      ],
+      "note": "Modelled as the President's deputy: the office carries little independent power but its holder acts as President during a suspension or vacancy. Wikidata lacks several acting holders; the Wikipedia list is used.",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/List_of_prime_ministers_of_South_Korea", "title": "Wikipedia: List of prime ministers of South Korea (including acting prime ministers)", "accessed": "2026-10-15" },
+        { "url": "https://www.wikidata.org/wiki/Q15407843", "title": "Wikidata: Prime Minister of South Korea (position held by)", "accessed": "2026-10-15" },
+        { "url": "https://en.wikipedia.org/wiki/Han_Seong-sook", "title": "Wikipedia: Han Seong-sook", "accessed": "2026-10-15" }
+      ],
+      "confidence": "verified"
+    }
+  ],
+  "legislature": {
+    "name": { "en": "National Assembly", "native": "국회", "native_latin": "Gukhoe" },
+    "chambers": [
+      {
+        "id": "national_assembly",
+        "name": { "en": "National Assembly", "native": "대한민국 국회", "native_latin": "Daehan Minguk Gukhoe" },
+        "seats": 299,
+        "term_years": 4,
+        "elected": "direct",
+        "system": {
+          "type": "parallel",
+          "formula": "hare",
+          "threshold": 0.03,
+          "district_model": "custom",
+          "pr_share": 0.15,
+          "note": "Single-member constituencies by FPTP plus national list seats by largest remainder. Size: 299 seats in the 15th Assembly (1996-2000), 273 in 2000, 299 in 2004 and 2008, 300 since 2012 (254 constituency + 46 list since 2024). List seats go to parties with 3% of the list vote or five constituency seats (current Public Official Election Act). A 2019 reform made part of the list allocation compensatory, which led both main parties to run satellite lists in 2020 and 2024."
+        },
+        "seats_2000": { "kor.gnp": 130, "kor.ncnp": 103, "kor.uld": 55, "independents": 11 },
+        "confidence_chamber": false,
+        "source": [
+          { "url": "https://ko.wikipedia.org/wiki/%EB%8C%80%ED%95%9C%EB%AF%BC%EA%B5%AD_%EC%A0%9C15%EB%8C%80_%EA%B5%AD%ED%9A%8C", "title": "Korean Wikipedia: 15th National Assembly of the Republic of Korea (seat-change table, row of 29 December 1999)", "accessed": "2026-10-15" },
+          { "url": "https://en.wikipedia.org/wiki/National_Assembly_(South_Korea)", "title": "Wikipedia: National Assembly (South Korea) (electoral system)", "accessed": "2026-10-15" },
+          { "url": "https://en.wikipedia.org/wiki/2000_South_Korean_legislative_election", "title": "Wikipedia: 2000 South Korean legislative election", "accessed": "2026-10-15" }
+        ],
+        "confidence": "needs_review",
+        "review_note": "seats_2000 is the last 1999 row (29 December 1999) of the Korean Wikipedia seat-change table: GNP 130, NCNP 103, ULD 55, independents 11 (total 299). The table's running totals are not fully consistent with its +/- labels; check against National Assembly records. The 3% list threshold is the current rule; confirm the threshold in force in 1996-2000."
+      }
+    ]
+  },
+  "party_system": "multi_party",
+  "start_2000": {
+    "ruling_parties": ["kor.ncnp", "kor.uld"],
+    "ideology_support": {
+      "liberal_conservative": 0.38,
+      "social_liberal": 0.33,
+      "traditional_conservative": 0.15,
+      "regionalist": 0.04,
+      "social_democrat": 0.03,
+      "democratic_socialist": 0.02,
+      "big_tent": 0.05
+    },
+    "ideology_support_note": "Derived from the 1996 National Assembly vote (New Korea Party 34.5%, NCNP 25.3%, United Liberal Democrats 16.2%, United Democratic Party 11.2%, independents 11.9%, others 0.9%), adjusted towards the December 1997 presidential result (Kim Dae-jung 40.3%, Lee Hoi-chang 38.7%, Lee In-je 19.2%). NKP and most of the UDP (merged into the GNP in 1997) count as liberal conservative; the NCNP and Lee In-je's later merger into it as social liberal; the ULD as traditional conservative. Independents are spread over regionalist and big-tent support; the small labour left (the Democratic Labor Party was founded on 30 January 2000) gets a few points.",
+    "stability": 0.65,
+    "war_support": 0.3
+  },
+  "claims": [
+    { "tag": "PRK", "note": "Article 3 of the Constitution defines the territory of the Republic of Korea as the Korean Peninsula and its adjacent islands, which includes the area governed by North Korea." }
+  ],
+  "source": [
+    { "url": "https://en.wikipedia.org/wiki/Constitution_of_South_Korea", "title": "Wikipedia: Constitution of South Korea (territory clause, referendums)", "accessed": "2026-10-15" },
+    { "url": "https://en.wikipedia.org/wiki/List_of_presidents_of_South_Korea", "title": "Wikipedia: List of presidents of South Korea", "accessed": "2026-10-15" },
+    { "url": "https://en.wikipedia.org/wiki/2025_South_Korean_presidential_election", "title": "Wikipedia: 2025 South Korean presidential election (60-day rule for snap elections)", "accessed": "2026-10-15" },
+    { "url": "https://en.wikipedia.org/wiki/1997_South_Korean_presidential_election", "title": "Wikipedia: 1997 South Korean presidential election", "accessed": "2026-10-15" }
+  ],
+  "confidence": "verified"
+}

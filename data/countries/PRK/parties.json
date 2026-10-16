@@ -1,0 +1,239 @@
+{
+  "parties": [
+    {
+      "id": "prk.wpk",
+      "name": {
+        "en": "Workers' Party of Korea",
+        "native": "조선로동당"
+      },
+      "abbrev": {
+        "en": "WPK"
+      },
+      "color": "#CE1126",
+      "sub_ideology": "marxist_leninist",
+      "founded": "1949-06-24",
+      "status_2000": "active",
+      "leader_history": [
+        {
+          "person": "prk.kim_jong_il",
+          "from": "1997-10-08",
+          "to": "2011-12-17",
+          "title": "General Secretary"
+        },
+        {
+          "person": "prk.kim_jong_un",
+          "from": "2012-04-11",
+          "to": "2016-05-09",
+          "title": "First Secretary"
+        },
+        {
+          "person": "prk.kim_jong_un",
+          "from": "2016-05-09",
+          "to": "2021-01-10",
+          "title": "Chairman"
+        },
+        {
+          "person": "prk.kim_jong_un",
+          "from": "2021-01-10",
+          "title": "General Secretary"
+        }
+      ],
+      "popularity_2000": 0.865,
+      "popularity_note": "No competitive elections. Proxy: the WPK's share of seats in the 1998 Supreme People's Assembly election (594 of 687 = 0.865). This is a gameplay estimate, not a vote share.",
+      "factions": [
+        {
+          "id": "military_leadership",
+          "name": "Military leadership (National Defence Commission and Korean People's Army)",
+          "sub_ideology": "statist",
+          "strength": 0.35,
+          "figures": [
+            "prk.jo_myong_rok"
+          ],
+          "note": "An institutional grouping, not a documented faction: the senior commanders of the Korean People's Army, whose standing rose under the military-first (Songun) policy of the late 1990s. Jo Myong-rok was First Vice Chairman of the National Defence Commission from 1998 to November 2010. Strength is a gameplay estimate."
+        },
+        {
+          "id": "party_and_state_apparatus",
+          "name": "Party and state apparatus",
+          "sub_ideology": "marxist_leninist",
+          "strength": 0.4,
+          "figures": [
+            "prk.kim_yong_nam",
+            "prk.choe_ryong_hae",
+            "prk.jo_yong_won"
+          ],
+          "note": "An institutional grouping, not a documented faction: senior WPK and Supreme People's Assembly officials. Kim Yong-nam and Choe Ryong-hae chaired the SPA Presidium/Standing Committee (1998-2019 and 2019-2026); Jo Yong-won is deputy chief of the WPK Secretariat. Strength is a gameplay estimate."
+        },
+        {
+          "id": "cabinet_economic_administrators",
+          "name": "Cabinet economic administrators",
+          "sub_ideology": "market_socialist",
+          "strength": 0.25,
+          "figures": [
+            "prk.hong_song_nam",
+            "prk.pak_pong_ju",
+            "prk.kim_tok_hun",
+            "prk.pak_thae_song"
+          ],
+          "note": "An institutional grouping, not a documented faction: the premiers who ran the Cabinet and the economy. The sub-ideology reflects the Cabinet's economic-management role, not a documented reform programme. Strength is a gameplay estimate."
+        }
+      ],
+      "note": "Founded on 24 June 1949 (Wikipedia infobox). Leader titles changed from First Secretary (2012) to Chairman (7th Congress, 9 May 2016) to General Secretary (8th Congress, 10 January 2021). Between Kim Jong Il's death and the 4th Party Conference (11 April 2012) the top party post was not filled; Kim Jong Il was later named Eternal General Secretary. Ideology officially Juche (Kimilsungism-Kimjongilism); no Juche sub-ideology exists, so marxist_leninist is used.",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Workers%27_Party_of_Korea",
+          "title": "Wikipedia: Workers' Party of Korea (infobox: founded 24 June 1949, General Secretary)",
+          "accessed": "2026-10-16"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/Supreme_Leader_(North_Korean_title)",
+          "title": "Wikipedia: Supreme Leader (North Korean title) (party posts and dates)",
+          "accessed": "2026-10-16"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/1998_North_Korean_parliamentary_election",
+          "title": "Wikipedia: 1998 North Korean parliamentary election (seats)",
+          "accessed": "2026-10-16"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/Jo_Myong-rok",
+          "title": "Wikipedia: Jo Myong-rok (First Vice Chairman of the NDC 1998-2010)",
+          "accessed": "2026-10-16"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/Module:Political_party/W",
+          "title": "Wikipedia: Module:Political party/W (party colour #CE1126)",
+          "accessed": "2026-10-16"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "prk.ksdp",
+      "name": {
+        "en": "Korean Social Democratic Party",
+        "native": "조선사회민주당"
+      },
+      "abbrev": {
+        "en": "KSDP"
+      },
+      "color": "#EC759E",
+      "sub_ideology": "social_democrat",
+      "founded": "1945-11-03",
+      "status_2000": "active",
+      "leader_history": [
+        {
+          "person": "prk.kim_yong_dae",
+          "from": 1998,
+          "to": "2019-08-30",
+          "title": "Chairman"
+        },
+        {
+          "person": "prk.pak_yong_il",
+          "from": "2019-08-30",
+          "to": "2022-09-18",
+          "title": "Chairman"
+        },
+        {
+          "person": "prk.ri_son_gwon",
+          "from": 2026,
+          "title": "Chairman"
+        }
+      ],
+      "popularity_2000": 0.077,
+      "popularity_note": "No competitive elections. Proxy: 53 of 687 SPA seats in the 1998 election (0.077); a gameplay estimate, not a vote share.",
+      "note": "Founded as the Korean Democratic Party; a subordinate allied party that accepts WPK leadership, so the social_democrat sub-ideology is nominal. Kim Yong-dae's chairmanship began in August 1998 (stored as the year). The chair between Pak Yong-il's death (18 September 2022) and February 2026 is not recorded; state media identified Ri Son-gwon as chairman in March 2026 and his infobox gives February 2026.",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Korean_Social_Democratic_Party",
+          "title": "Wikipedia: Korean Social Democratic Party (infobox, leaders)",
+          "accessed": "2026-10-16"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/Kim_Yong-dae_(politician)",
+          "title": "Wikipedia: Kim Yong-dae (KSDP chairman August 1998 - 30 August 2019)",
+          "accessed": "2026-10-16"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/Pak_Yong-il",
+          "title": "Wikipedia: Pak Yong-il (KSDP chairman 30 August 2019 - 18 September 2022)",
+          "accessed": "2026-10-16"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/Ri_Son-gwon",
+          "title": "Wikipedia: Ri Son-gwon (KSDP chairman from February 2026)",
+          "accessed": "2026-10-16"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/Module:Political_party/K",
+          "title": "Wikipedia: Module:Political party/K (party colour #ec759e)",
+          "accessed": "2026-10-16"
+        }
+      ],
+      "confidence": "needs_review",
+      "review_note": "The chairman from September 2022 to February 2026 is not known from the fetched sources."
+    },
+    {
+      "id": "prk.chondoist_chongu",
+      "name": {
+        "en": "Chondoist Chongu Party",
+        "native": "천도교청우당"
+      },
+      "abbrev": {
+        "en": "CCP"
+      },
+      "color": "#FF0000",
+      "sub_ideology": "big_tent",
+      "founded": "1946-02-08",
+      "status_2000": "active",
+      "leader_history": [],
+      "popularity_2000": 0.033,
+      "popularity_note": "No competitive elections. Proxy: 23 of 687 SPA seats in the 1998 election (0.033); a gameplay estimate, not a vote share.",
+      "note": "Subordinate allied party representing followers of the Chondogyo religion; accepts WPK leadership. Ryu Mi-yong (1921-2016) chaired it, but the fetched sources give no dates; the current infobox names Ri Myong-chol as chairman, who has no Wikipedia or Wikidata entry. No religious sub-ideology fits Chondoism, so big_tent is used. The English abbreviation 'CCP' is an editorial shorthand; the infobox gives none.",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Chondoist_Chongu_Party",
+          "title": "Wikipedia: Chondoist Chongu Party (infobox: founded 8 February 1946, chairman)",
+          "accessed": "2026-10-16"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/Ryu_Mi-yong",
+          "title": "Wikipedia: Ryu Mi-yong (chairwoman of the party)",
+          "accessed": "2026-10-16"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/Module:Political_party/C",
+          "title": "Wikipedia: Module:Political party/C (party colour #FF0000)",
+          "accessed": "2026-10-16"
+        }
+      ],
+      "confidence": "needs_review",
+      "review_note": "Leader history is empty: Ryu Mi-yong's term as chairwoman and the dates of later chairs (Ri Myong-chol) were not found."
+    },
+    {
+      "id": "prk.dfrk",
+      "name": {
+        "en": "Democratic Front for the Reunification of Korea"
+      },
+      "abbrev": {
+        "en": "DFRK"
+      },
+      "color": "#B22234",
+      "sub_ideology": "marxist_leninist",
+      "founded": "1949-06-25",
+      "dissolved": "2024-03-23",
+      "status_2000": "active",
+      "leader_history": [],
+      "popularity_2000": 0,
+      "popularity_note": "Not a party: the popular front through which all SPA candidates were nominated. Its seats are only used in elections.json where sources give no breakdown by member party (2003 and 2019).",
+      "note": "Popular front led by the WPK, uniting it with the two allied parties and mass organisations; founded 25 June 1949 and dissolved 23 March 2024 (Wikipedia infobox). Modelled as a party record only so that the 2003 and 2019 SPA results, reported as a single front total, can be stored. The colour is an editorial choice, not the front's own.",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Democratic_Front_for_the_Reunification_of_Korea",
+          "title": "Wikipedia: Democratic Front for the Reunification of Korea (infobox: established 25 June 1949, dissolved 23 March 2024)",
+          "accessed": "2026-10-16"
+        }
+      ],
+      "confidence": "verified"
+    }
+  ]
+}

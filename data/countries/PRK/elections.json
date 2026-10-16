@@ -1,0 +1,316 @@
+{
+  "rules": [
+    {
+      "kind": "legislative",
+      "chamber": "supreme_peoples_assembly",
+      "every_years": 5,
+      "anchor": "2026-03-15",
+      "snap_possible": false,
+      "note": "Five-year term, single approved candidate per constituency. The 15th SPA election was held in March 2026, about two years later than the 14th SPA's term implied."
+    },
+    {
+      "kind": "party_congress",
+      "office": "prk.supreme_leader",
+      "every_years": 5,
+      "anchor": "2026-02-22",
+      "snap_possible": false,
+      "note": "The WPK Rules call for a congress every five years (the 8th Congress article says four). Congresses were held in 2016, 2021 and 2026; party conferences in 2010 and 2012 also elected the leadership."
+    },
+    {
+      "kind": "indirect_presidential",
+      "office": "prk.spa_standing_committee_chair",
+      "every_years": 5,
+      "anchor": "2026-03-22",
+      "snap_possible": false,
+      "system": "legislature",
+      "note": "The first session of each new Supreme People's Assembly elects the chairman of its Standing Committee (formerly President of the Presidium), along with the President of the State Affairs Commission and the Cabinet."
+    }
+  ],
+  "elections": [
+    {
+      "id": "spa_2003",
+      "date": "2003-08-03",
+      "kind": "legislative",
+      "chamber": "supreme_peoples_assembly",
+      "historical": {
+        "party_results": [
+          { "party": "prk.dfrk", "seats": 687 }
+        ],
+        "winner": "prk.wpk",
+        "turnout": 0.999,
+        "note": "11th SPA. The sources report only the Democratic Front for the Reunification of Korea total (687 seats); no breakdown by member party was found. The WPK is recorded as winner as the leading party of the front.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2003_North_Korean_parliamentary_election", "title": "Wikipedia: 2003 North Korean parliamentary election (results table, after the IPU)", "accessed": "2026-10-16" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "spa_presidium_2003",
+      "date": "2003-09-03",
+      "kind": "indirect_presidential",
+      "office": "prk.spa_standing_committee_chair",
+      "historical": {
+        "candidates": [
+          { "person": "prk.kim_yong_nam", "party": "prk.wpk", "round": 1 }
+        ],
+        "winner": "prk.kim_yong_nam",
+        "note": "First session of the 11th SPA (convocation from 3 September 2003). Kim Yong-nam stayed President of the Presidium without a break from 1998 to 2019; the same session appointed Pak Pong-ju Premier.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/Supreme_People%27s_Assembly", "title": "Wikipedia: Supreme People's Assembly (convocation dates)", "accessed": "2026-10-16" },
+          { "url": "https://en.wikipedia.org/wiki/Chairman_of_the_Standing_Committee_of_the_Supreme_People%27s_Assembly", "title": "Wikipedia: Chairman of the Standing Committee of the SPA (Kim Yong-nam 1998-2019 across the 10th to 13th SPA)", "accessed": "2026-10-16" }
+        ],
+        "confidence": "needs_review",
+        "review_note": "His re-election at this session is inferred from his unbroken tenure and the convocation date; confirm with the KCNA report of the session."
+      }
+    },
+    {
+      "id": "spa_2009",
+      "date": "2009-03-08",
+      "kind": "legislative",
+      "chamber": "supreme_peoples_assembly",
+      "historical": {
+        "party_results": [
+          { "party": "prk.wpk", "seats": 606 },
+          { "party": "prk.ksdp", "seats": 50 },
+          { "party": "prk.chondoist_chongu", "seats": 22 },
+          { "party": "others", "seats": 6 },
+          { "party": "independents", "seats": 3 }
+        ],
+        "winner": "prk.wpk",
+        "turnout": 0.9998,
+        "note": "12th SPA. All candidates ran for the Democratic Front for the Reunification of Korea. Others: Chongryon (6).",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2009_North_Korean_parliamentary_election", "title": "Wikipedia: 2009 North Korean parliamentary election (results table, after the IPU)", "accessed": "2026-10-16" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "spa_presidium_2009",
+      "date": "2009-04-09",
+      "kind": "indirect_presidential",
+      "office": "prk.spa_standing_committee_chair",
+      "historical": {
+        "candidates": [
+          { "person": "prk.kim_yong_nam", "party": "prk.wpk", "round": 1 }
+        ],
+        "winner": "prk.kim_yong_nam",
+        "note": "First session of the 12th SPA (convocation from 9 April 2009).",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/Supreme_People%27s_Assembly", "title": "Wikipedia: Supreme People's Assembly (convocation dates)", "accessed": "2026-10-16" },
+          { "url": "https://en.wikipedia.org/wiki/Chairman_of_the_Standing_Committee_of_the_Supreme_People%27s_Assembly", "title": "Wikipedia: Chairman of the Standing Committee of the SPA (list of officeholders)", "accessed": "2026-10-16" }
+        ],
+        "confidence": "needs_review",
+        "review_note": "His re-election at this session is inferred from his unbroken tenure and the convocation date; confirm with the KCNA report of the session."
+      }
+    },
+    {
+      "id": "wpk_conference_3_2010",
+      "date": "2010-09-28",
+      "kind": "party_congress",
+      "office": "prk.supreme_leader",
+      "historical": {
+        "candidates": [
+          { "person": "prk.kim_jong_il", "party": "prk.wpk", "round": 1 }
+        ],
+        "winner": "prk.kim_jong_il",
+        "note": "3rd Conference of the WPK; it elected the party General Secretary (Kim Jong Il), the Central Committee and the Central Military Commission.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/3rd_Conference_of_the_Workers%27_Party_of_Korea", "title": "Wikipedia: 3rd Conference of the Workers' Party of Korea", "accessed": "2026-10-16" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "wpk_conference_4_2012",
+      "date": "2012-04-11",
+      "kind": "party_congress",
+      "office": "prk.supreme_leader",
+      "historical": {
+        "candidates": [
+          { "person": "prk.kim_jong_un", "party": "prk.wpk", "round": 1 }
+        ],
+        "winner": "prk.kim_jong_un",
+        "note": "4th Conference of the WPK; elected Kim Jong Un First Secretary of the party.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/4th_Conference_of_the_Workers%27_Party_of_Korea", "title": "Wikipedia: 4th Conference of the Workers' Party of Korea", "accessed": "2026-10-16" },
+          { "url": "https://en.wikipedia.org/wiki/Supreme_Leader_(North_Korean_title)", "title": "Wikipedia: Supreme Leader (North Korean title) (First Secretary from 11 April 2012)", "accessed": "2026-10-16" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "spa_2014",
+      "date": "2014-03-09",
+      "kind": "legislative",
+      "chamber": "supreme_peoples_assembly",
+      "historical": {
+        "party_results": [
+          { "party": "prk.wpk", "seats": 607 },
+          { "party": "prk.ksdp", "seats": 50 },
+          { "party": "prk.chondoist_chongu", "seats": 22 },
+          { "party": "others", "seats": 8 }
+        ],
+        "winner": "prk.wpk",
+        "turnout": 0.9997,
+        "note": "13th SPA. All candidates ran for the Democratic Front for the Reunification of Korea. Others: Chongryon (5) and religious associations (3).",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2014_North_Korean_parliamentary_election", "title": "Wikipedia: 2014 North Korean parliamentary election (results table, after the IPU)", "accessed": "2026-10-16" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "spa_presidium_2014",
+      "date": "2014-04-09",
+      "kind": "indirect_presidential",
+      "office": "prk.spa_standing_committee_chair",
+      "historical": {
+        "candidates": [
+          { "person": "prk.kim_yong_nam", "party": "prk.wpk", "round": 1 }
+        ],
+        "winner": "prk.kim_yong_nam",
+        "note": "First session of the 13th SPA (convocation from 9 April 2014).",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/Supreme_People%27s_Assembly", "title": "Wikipedia: Supreme People's Assembly (convocation dates)", "accessed": "2026-10-16" },
+          { "url": "https://en.wikipedia.org/wiki/Chairman_of_the_Standing_Committee_of_the_Supreme_People%27s_Assembly", "title": "Wikipedia: Chairman of the Standing Committee of the SPA (list of officeholders)", "accessed": "2026-10-16" }
+        ],
+        "confidence": "needs_review",
+        "review_note": "His re-election at this session is inferred from his unbroken tenure and the convocation date; confirm with the KCNA report of the session."
+      }
+    },
+    {
+      "id": "wpk_congress_7_2016",
+      "date": "2016-05-09",
+      "kind": "party_congress",
+      "office": "prk.supreme_leader",
+      "historical": {
+        "candidates": [
+          { "person": "prk.kim_jong_un", "party": "prk.wpk", "round": 1 }
+        ],
+        "winner": "prk.kim_jong_un",
+        "note": "7th Congress of the WPK (6-9 May 2016, 3,467 delegates); elected Kim Jong Un Chairman of the party on its last day.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/7th_Congress_of_the_Workers%27_Party_of_Korea", "title": "Wikipedia: 7th Congress of the Workers' Party of Korea", "accessed": "2026-10-16" },
+          { "url": "https://en.wikipedia.org/wiki/Supreme_Leader_(North_Korean_title)", "title": "Wikipedia: Supreme Leader (North Korean title) (Chairman from 9 May 2016)", "accessed": "2026-10-16" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "spa_2019",
+      "date": "2019-03-10",
+      "kind": "legislative",
+      "chamber": "supreme_peoples_assembly",
+      "historical": {
+        "party_results": [
+          { "party": "prk.dfrk", "seats": 682 },
+          { "party": "others", "seats": 5 }
+        ],
+        "winner": "prk.wpk",
+        "turnout": 0.9999,
+        "note": "14th SPA. The results table gives a single combined total of 682 seats for the WPK, the Korean Social Democratic Party, the Chondoist Chongu Party and independents (stored under the front), plus 5 Chongryon deputies (others). The WPK is recorded as winner as the leading party of the front.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2019_North_Korean_parliamentary_election", "title": "Wikipedia: 2019 North Korean parliamentary election (results table, after Choson Sinbo)", "accessed": "2026-10-16" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "spa_standing_committee_2019",
+      "date": "2019-04-11",
+      "kind": "indirect_presidential",
+      "office": "prk.spa_standing_committee_chair",
+      "historical": {
+        "candidates": [
+          { "person": "prk.choe_ryong_hae", "party": "prk.wpk", "round": 1 }
+        ],
+        "winner": "prk.choe_ryong_hae",
+        "note": "First session of the 14th SPA, which elected Choe Ryong-hae President of the Presidium in succession to Kim Yong-nam and Kim Jae-ryong Premier.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/Chairman_of_the_Standing_Committee_of_the_Supreme_People%27s_Assembly", "title": "Wikipedia: Chairman of the Standing Committee of the SPA (citing KCNA, First Session of 14th SPA Held, 12 April 2019)", "accessed": "2026-10-16" },
+          { "url": "https://www.wikidata.org/wiki/Q30944956", "title": "Wikidata: President of the Presidium of the Supreme People's Assembly (Choe Ryong-hae from 2019-04-11)", "accessed": "2026-10-16" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "wpk_congress_8_2021",
+      "date": "2021-01-10",
+      "kind": "party_congress",
+      "office": "prk.supreme_leader",
+      "historical": {
+        "candidates": [
+          { "person": "prk.kim_jong_un", "party": "prk.wpk", "round": 1 }
+        ],
+        "winner": "prk.kim_jong_un",
+        "note": "8th Congress of the WPK (January 2021; the article gives 5 or 6 to 12 January); re-elected Kim Jong Un as party leader with the title changed from Chairman to General Secretary, on 10 January 2021.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/8th_Congress_of_the_Workers%27_Party_of_Korea", "title": "Wikipedia: 8th Congress of the Workers' Party of Korea", "accessed": "2026-10-16" },
+          { "url": "https://en.wikipedia.org/wiki/Supreme_Leader_(North_Korean_title)", "title": "Wikipedia: Supreme Leader (North Korean title) (General Secretary from 10 January 2021)", "accessed": "2026-10-16" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "wpk_congress_9_2026",
+      "date": "2026-02-22",
+      "kind": "party_congress",
+      "office": "prk.supreme_leader",
+      "historical": {
+        "candidates": [
+          { "person": "prk.kim_jong_un", "party": "prk.wpk", "round": 1 }
+        ],
+        "winner": "prk.kim_jong_un",
+        "note": "9th Congress of the WPK, 19-25 February 2026, with 5,000 delegates. Kim Jong Un was re-elected General Secretary on the congress's fourth day, which is 22 February 2026 by count; the article cites a Chosun Ilbo report of 23 February 2026.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/9th_Congress_of_the_Workers%27_Party_of_Korea", "title": "Wikipedia: 9th Congress of the Workers' Party of Korea", "accessed": "2026-10-16" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "spa_2026",
+      "date": "2026-03-15",
+      "kind": "legislative",
+      "chamber": "supreme_peoples_assembly",
+      "historical": {
+        "party_results": [
+          { "party": "prk.wpk", "seats": 671 },
+          { "party": "others", "seats": 16 }
+        ],
+        "winner": "prk.wpk",
+        "turnout": 0.9999,
+        "note": "15th SPA, announced on 4 March 2026 after the 9th WPK Congress. Official results (KCNA, 17 March 2026): turnout 99.99%, 99.93% of votes for the registered candidates, the first reported opposing votes in an SPA election since 1957. Others: social organisations (10) and the allied parties and religious organisations together (6; the Korean Social Democratic Party and the Chondoist Chongu Party are not given separately).",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2026_North_Korean_parliamentary_election", "title": "Wikipedia: 2026 North Korean parliamentary election (results table, citing KCNA of 17 March 2026)", "accessed": "2026-10-16" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "spa_standing_committee_2026",
+      "date": "2026-03-22",
+      "kind": "indirect_presidential",
+      "office": "prk.spa_standing_committee_chair",
+      "historical": {
+        "candidates": [
+          { "person": "prk.jo_yong_won", "party": "prk.wpk", "round": 1 }
+        ],
+        "winner": "prk.jo_yong_won",
+        "note": "First session of the 15th SPA (from 22 March 2026). On its first day it elected Jo Yong-won chairman of the SPA Standing Committee and re-elected Kim Jong Un President of the State Affairs Commission.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/15th_Supreme_People%27s_Assembly", "title": "Wikipedia: 15th Supreme People's Assembly (first session)", "accessed": "2026-10-16" },
+          { "url": "https://en.wikipedia.org/wiki/Chairman_of_the_Standing_Committee_of_the_Supreme_People%27s_Assembly", "title": "Wikipedia: Chairman of the Standing Committee of the SPA (citing KCNA of 23 March 2026)", "accessed": "2026-10-16" }
+        ],
+        "confidence": "verified"
+      }
+    }
+  ],
+  "source": [
+    { "url": "https://en.wikipedia.org/wiki/Elections_in_North_Korea", "title": "Wikipedia: Elections in North Korea (list of SPA elections, no national referendums)", "accessed": "2026-10-16" },
+    { "url": "https://en.wikipedia.org/wiki/Supreme_People%27s_Assembly", "title": "Wikipedia: Supreme People's Assembly", "accessed": "2026-10-16" }
+  ],
+  "confidence": "verified"
+}

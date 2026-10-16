@@ -1,0 +1,122 @@
+{
+  "tag": "MNG",
+  "name": { "en": "Mongolia", "native": "Монгол Улс", "native_latin": "Mongol Uls" },
+  "adjective": "Mongolian",
+  "culture_primary": "mongolian",
+  "government": {
+    "type": "semi_presidential",
+    "effective_executive": "mng.prime_minister",
+    "head_of_state_office": "mng.president",
+    "head_of_government_office": "mng.prime_minister",
+    "constitution": {
+      "term_limit_amendable": true,
+      "emergency_powers": true,
+      "referendum_required_for": []
+    },
+    "note": "Unitary republic under the 1992 Constitution (amended 1999, 2000, 2019, 2022 and 2023), described as semi-presidential. The directly elected President is head of state, with powers mainly in foreign policy and national security, and can veto legislation (overridden by two thirds of the State Great Khural). The Prime Minister heads the Government and is appointed by and accountable to the State Great Khural, so the Prime Minister is treated as the effective executive. The 2019 amendments, in force from May 2020, strengthened the Prime Minister and replaced the President's two four-year terms with a single six-year term. The 2023 amendment enlarged the State Great Khural from 76 to 126 seats."
+  },
+  "offices": [
+    {
+      "id": "mng.president",
+      "title": { "en": "President of Mongolia", "native": "Монгол Улсын Ерөнхийлөгч", "native_latin": "Mongol Ulsiin Yörönkhiilögch" },
+      "role": "head_of_state",
+      "power_weight": 0.35,
+      "selection": "direct_election",
+      "term_years": 6,
+      "term_limit": { "max_terms": 1, "consecutive_only": false },
+      "succession": { "type": "acting_then_election" },
+      "holders": [
+        { "person": "mng.natsagiin_bagabandi", "from": "1997-06-20", "to": "2005-06-24" },
+        { "person": "mng.nambaryn_enkhbayar", "from": "2005-06-24", "to": "2009-06-18" },
+        { "person": "mng.tsakhiagiin_elbegdorj", "from": "2009-06-18", "to": "2017-07-10" },
+        { "person": "mng.khaltmaagiin_battulga", "from": "2017-07-10", "to": "2021-06-25" },
+        { "person": "mng.ukhnaagiin_khurelsukh", "from": "2021-06-25" }
+      ],
+      "note": "Until the 2019 amendments, two four-year terms; since the 2021 election, a single non-renewable six-year term (the values here). Elected by the two-round system; blank votes count as valid. Wikidata starts Khürelsükh's term on 10 July 2021; Wikipedia gives 25 June 2021, used here.",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/President_of_Mongolia", "title": "Wikipedia: President of Mongolia (term, election, list of presidents)", "accessed": "2026-10-16" },
+        { "url": "https://www.wikidata.org/wiki/Q756265", "title": "Wikidata: President of Mongolia (position held by)", "accessed": "2026-10-16" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "mng.prime_minister",
+      "title": { "en": "Prime Minister of Mongolia", "native": "Монгол Улсын Ерөнхий сайд", "native_latin": "Mongol Ulsiin Yörönkhii Said" },
+      "role": "head_of_government",
+      "power_weight": 0.6,
+      "selection": "legislature",
+      "term_years": 4,
+      "succession": { "type": "acting_then_election" },
+      "holders": [
+        { "person": "mng.rinchinnyamyn_amarjargal", "from": "1999-07-30", "to": "2000-07-26" },
+        { "person": "mng.nambaryn_enkhbayar", "from": "2000-07-26", "to": "2004-08-20" },
+        { "person": "mng.tsakhiagiin_elbegdorj", "from": "2004-08-20", "to": "2006-01-13" },
+        { "person": null, "from": "2006-01-13", "to": "2006-01-25", "vacant_reason": "Vacant between Elbegdorj's fall and Enkhbold's appointment (Wikipedia list)." },
+        { "person": "mng.miyeegombyn_enkhbold", "from": "2006-01-25", "to": "2007-11-22" },
+        { "person": "mng.sanjiin_bayar", "from": "2007-11-22", "to": "2009-10-29" },
+        { "person": "mng.sukhbaataryn_batbold", "from": "2009-10-29", "to": "2012-08-10" },
+        { "person": "mng.norovyn_altankhuyag", "from": "2012-08-10", "to": "2014-11-05" },
+        { "person": "mng.dendeviin_terbishdagva", "from": "2014-11-05", "to": "2014-11-21", "acting": true },
+        { "person": "mng.chimediin_saikhanbileg", "from": "2014-11-21", "to": "2016-07-07" },
+        { "person": "mng.jargaltulgyn_erdenebat", "from": "2016-07-07", "to": "2017-10-04" },
+        { "person": "mng.ukhnaagiin_khurelsukh", "from": "2017-10-04", "to": "2021-01-27" },
+        { "person": "mng.luvsannamsrain_oyun_erdene", "from": "2021-01-27", "to": "2025-06-13" },
+        { "person": "mng.gombojavyn_zandanshatar", "from": "2025-06-13", "to": "2026-03-30" },
+        { "person": "mng.nyam_osoryn_uchral", "from": "2026-03-30" }
+      ],
+      "note": "Dates follow the Wikipedia list. Wikidata differs in places: it ends Altankhuyag's term on 4 November 2014, starts Terbishdagva on 5 October or 6 November 2014, starts Erdenebat on 8 June 2016, ends Khürelsükh's term on 21 January 2021, gives Sanjiin Bayar the dates 2009-2012 that belong to Batbold, and omits Zandanshatar's start. Zandanshatar (13 June 2025 - 30 March 2026) and Uchral (from 30 March 2026) agree with their own Wikipedia infoboxes and Wikidata.",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/List_of_prime_ministers_of_Mongolia", "title": "Wikipedia: List of prime ministers of Mongolia (including acting holders and the January 2006 vacancy)", "accessed": "2026-10-16" },
+        { "url": "https://www.wikidata.org/wiki/Q903751", "title": "Wikidata: Prime Minister of Mongolia (position held by)", "accessed": "2026-10-16" },
+        { "url": "https://en.wikipedia.org/wiki/Nyam-Osoryn_Uchral", "title": "Wikipedia: Nyam-Osoryn Uchral (Prime Minister since 30 March 2026)", "accessed": "2026-10-16" }
+      ],
+      "confidence": "verified"
+    }
+  ],
+  "legislature": {
+    "name": { "en": "State Great Khural", "native": "Улсын Их Хурал", "native_latin": "Ulsiin Ikh Khural" },
+    "chambers": [
+      {
+        "id": "state_great_khural",
+        "name": { "en": "State Great Khural", "native": "Улсын Их Хурал", "native_latin": "Ulsiin Ikh Khural" },
+        "seats": 76,
+        "term_years": 4,
+        "elected": "direct",
+        "system": {
+          "type": "fptp",
+          "district_model": "custom",
+          "note": "On 1 January 2000: 76 single-seat constituencies by plurality (the 1996 and 2000 system). Later systems: plurality block voting in multi-member constituencies (2008, 2020), parallel voting with 48 constituency and 28 list seats (2012), 76 single-seat constituencies (2016), and from 2024 126 seats, 78 by multiple non-transferable vote in 13 multi-member constituencies and 48 by closed national lists (threshold 4% for parties, 5% for two-party and 7% for larger coalitions). The schema cannot express the change of size and system over time. seats_2000 is the result of the 30 June 1996 election (the last before 2000); later changes in the 1996-2000 Khural were not researched. The Democratic Union Coalition's 50 seats are split into the Mongolian National Democratic Party (34), the Mongolian Social Democratic Party (13) and non-party members (3, as independents)."
+        },
+        "seats_2000": { "mng.mpp": 25, "mng.mndp": 34, "mng.msdp": 13, "mng.mtup": 1, "independents": 3 },
+        "confidence_chamber": true,
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/1996_Mongolian_parliamentary_election", "title": "Wikipedia: 1996 Mongolian parliamentary election (results table)", "accessed": "2026-10-16" },
+          { "url": "https://en.wikipedia.org/wiki/2000_Mongolian_parliamentary_election", "title": "Wikipedia: 2000 Mongolian parliamentary election (electoral system)", "accessed": "2026-10-16" },
+          { "url": "https://en.wikipedia.org/wiki/State_Great_Khural", "title": "Wikipedia: State Great Khural (electoral systems, 2023 enlargement)", "accessed": "2026-10-16" }
+        ],
+        "confidence": "verified"
+      }
+    ]
+  },
+  "party_system": "multi_party",
+  "start_2000": {
+    "ruling_parties": ["mng.mndp", "mng.msdp"],
+    "ideology_support": {
+      "social_democrat": 0.54,
+      "liberal_conservative": 0.34,
+      "national_conservative": 0.04,
+      "classical_liberal": 0.02,
+      "big_tent": 0.06
+    },
+    "ideology_support_note": "Derived from the 30 June 1996 State Great Khural vote (shares of 1,010,193 valid votes from the results table): Democratic Union Coalition 47.1%, Mongolian People's Revolutionary Party 40.5%, Democratic State Coalition 3.1%, Mongolian National Unity Party 2.2%, Mongolian Traditional United Party 1.8%, Mongolian Bourgeois Party (later the Republican Party) 1.7%, independents 3.1%. The coalition's vote is split by its members' seats (National Democrats 34, Social Democrats 13): about 34 points liberal conservative and 13 points social democrat. The MPRP counts as social democrat, the MTUP and MNUP as national conservative, the Bourgeois Party as classical liberal, and the Democratic State Coalition and independents as big tent.",
+    "stability": 0.55,
+    "war_support": 0.15
+  },
+  "claims": [],
+  "source": [
+    { "url": "https://en.wikipedia.org/wiki/Politics_of_Mongolia", "title": "Wikipedia: Politics of Mongolia (semi-presidential system)", "accessed": "2026-10-16" },
+    { "url": "https://en.wikipedia.org/wiki/Constitution_of_Mongolia", "title": "Wikipedia: Constitution of Mongolia (amendments, 2019 changes)", "accessed": "2026-10-16" },
+    { "url": "https://en.wikipedia.org/wiki/President_of_Mongolia", "title": "Wikipedia: President of Mongolia (powers, veto)", "accessed": "2026-10-16" }
+  ],
+  "confidence": "verified"
+}

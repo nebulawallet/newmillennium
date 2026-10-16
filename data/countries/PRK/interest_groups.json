@@ -1,0 +1,15 @@
+{
+  "note": "Influence and approval are gameplay starting values for 1 January 2000 (Kim Jong Il's leadership under the military-first policy), not measured data. The military and the security apparatus carry the most weight; there is no private business, no independent union, press or religious body, and no legal opposition.",
+  "interest_groups": [
+    { "type": "military", "influence": 0.55, "approval": 70, "note": "The Korean People's Army, under the National Defence Commission chaired by Kim Jong Il." },
+    { "type": "security_services", "influence": 0.45, "approval": 70 },
+    { "type": "business", "influence": 0.03, "approval": 40, "note": "State enterprises only." },
+    { "type": "labour_unions", "influence": 0.05, "approval": 45, "note": "Only party-led trade unions exist." },
+    { "type": "religious_establishment", "influence": 0.01, "approval": 30, "note": "Small state-supervised religious federations." },
+    { "type": "rural", "influence": 0.1, "approval": 35, "note": "Cooperative farms." },
+    { "type": "urban_middle_class", "influence": 0.1, "approval": 50, "note": "Pyongyang residents and party cadres." },
+    { "type": "minorities", "influence": 0.01, "approval": 50 },
+    { "type": "youth_students", "influence": 0.05, "approval": 55, "note": "Organised through the party-led youth league." },
+    { "type": "media", "influence": 0.1, "approval": 65, "note": "State media under the WPK Propaganda and Agitation Department." }
+  ]
+}

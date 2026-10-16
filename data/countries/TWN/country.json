@@ -1,0 +1,148 @@
+{
+  "tag": "TWN",
+  "name": { "en": "Taiwan", "native": "臺灣", "native_latin": "Táiwān", "official": { "en": "Republic of China", "native": "中華民國", "native_latin": "Zhōnghuá Mínguó" } },
+  "adjective": "Taiwanese",
+  "culture_primary": "taiwanese",
+  "government": {
+    "type": "semi_presidential",
+    "effective_executive": "twn.president",
+    "head_of_state_office": "twn.president",
+    "head_of_government_office": "twn.premier",
+    "constitution": {
+      "term_limit_amendable": true,
+      "emergency_powers": true,
+      "referendum_required_for": ["constitutional amendments", "alteration of national territory"]
+    },
+    "note": "Republic of China under the 1947 Constitution and its Additional Articles. The President, directly elected by plurality since 1996, is commander-in-chief and directs foreign affairs, and appoints the Premier (President of the Executive Yuan) without the Legislative Yuan's consent. The Legislative Yuan can pass a no-confidence vote against the Premier, after which the President may dissolve it. If both the presidency and vice-presidency fall vacant, the Premier acts. On 1 January 2000 a National Assembly (elected 1996) also existed as a constitutional body; it was made an ad hoc body in 2000 and abolished by the 2005 amendments, after which constitutional amendments go to a referendum."
+  },
+  "offices": [
+    {
+      "id": "twn.president",
+      "title": { "en": "President of the Republic of China", "native": "中華民國總統", "native_latin": "Zhōnghuá Mínguó Zǒngtǒng" },
+      "role": "head_of_state",
+      "power_weight": 0.75,
+      "selection": "direct_election",
+      "term_years": 4,
+      "term_limit": { "max_terms": 2, "consecutive_only": true },
+      "succession": { "type": "vice", "acting_office": "twn.vice_president" },
+      "holders": [
+        { "person": "twn.lee_teng_hui", "from": "1988-01-13", "to": "2000-05-20" },
+        { "person": "twn.chen_shui_bian", "from": "2000-05-20", "to": "2008-05-20" },
+        { "person": "twn.ma_ying_jeou", "from": "2008-05-20", "to": "2016-05-20" },
+        { "person": "twn.tsai_ing_wen", "from": "2016-05-20", "to": "2024-05-20" },
+        { "person": "twn.lai_ching_te", "from": "2024-05-20" }
+      ],
+      "note": "Term of four years, renewable once (Wikipedia infobox). Wikidata ends Tsai Ing-wen's term on 19 May 2024; the handover date is used.",
+      "source": [
+        { "url": "https://www.wikidata.org/wiki/Q887003", "title": "Wikidata: President of the Republic of China (position held by)", "accessed": "2026-10-15" },
+        { "url": "https://en.wikipedia.org/wiki/President_of_the_Republic_of_China", "title": "Wikipedia: President of the Republic of China (term, powers, succession)", "accessed": "2026-10-15" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "twn.vice_president",
+      "title": { "en": "Vice President of the Republic of China", "native": "中華民國副總統", "native_latin": "Zhōnghuá Mínguó Fù Zǒngtǒng" },
+      "role": "deputy",
+      "power_weight": 0.02,
+      "selection": "direct_election",
+      "term_years": 4,
+      "holders": [
+        { "person": "twn.lien_chan", "from": "1996-05-20", "to": "2000-05-20" },
+        { "person": "twn.annette_lu", "from": "2000-05-20", "to": "2008-05-20" },
+        { "person": "twn.vincent_siew", "from": "2008-05-20", "to": "2012-05-20" },
+        { "person": "twn.wu_den_yih", "from": "2012-05-20", "to": "2016-05-20" },
+        { "person": "twn.chen_chien_jen", "from": "2016-05-20", "to": "2020-05-20" },
+        { "person": "twn.lai_ching_te", "from": "2020-05-20", "to": "2024-05-20" },
+        { "person": "twn.hsiao_bi_khim", "from": "2024-05-20" }
+      ],
+      "note": "Elected on a joint ticket with the President. Wikidata omits Vincent Siew (2008-2012); his term follows from his election as Ma Ying-jeou's running mate in March 2008 and Wu Den-yih's start on 20 May 2012.",
+      "source": [
+        { "url": "https://www.wikidata.org/wiki/Q707830", "title": "Wikidata: Vice President of the Republic of China (position held by)", "accessed": "2026-10-15" },
+        { "url": "https://en.wikipedia.org/wiki/2008_Taiwanese_presidential_election", "title": "Wikipedia: 2008 Taiwanese presidential election (running mates)", "accessed": "2026-10-15" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "twn.premier",
+      "title": { "en": "Premier (President of the Executive Yuan)", "native": "行政院院長", "native_latin": "Xíngzhèngyuàn Yuànzhǎng" },
+      "role": "head_of_government",
+      "power_weight": 0.25,
+      "selection": "appointed",
+      "appointed_by": "twn.president",
+      "succession": { "type": "acting_then_election" },
+      "holders": [
+        { "person": "twn.vincent_siew", "from": "1997-09-01", "to": "2000-05-20" },
+        { "person": "twn.tang_fei", "from": "2000-05-20", "to": "2000-10-06" },
+        { "person": "twn.chang_chun_hsiung", "from": "2000-10-06", "to": "2002-02-01" },
+        { "person": "twn.yu_shyi_kun", "from": "2002-02-01", "to": "2005-02-01" },
+        { "person": "twn.frank_hsieh", "from": "2005-02-01", "to": "2006-01-25" },
+        { "person": "twn.su_tseng_chang", "from": "2006-01-25", "to": "2007-05-21" },
+        { "person": "twn.chang_chun_hsiung", "from": "2007-05-21", "to": "2008-05-20" },
+        { "person": "twn.liu_chao_shiuan", "from": "2008-05-20", "to": "2009-09-10" },
+        { "person": "twn.wu_den_yih", "from": "2009-09-10", "to": "2012-02-06" },
+        { "person": "twn.sean_chen", "from": "2012-02-06", "to": "2013-02-18" },
+        { "person": "twn.jiang_yi_huah", "from": "2013-02-18", "to": "2014-12-08" },
+        { "person": "twn.mao_chi_kuo", "from": "2014-12-08", "to": "2016-02-01" },
+        { "person": "twn.chang_san_cheng", "from": "2016-02-01", "to": "2016-05-20" },
+        { "person": "twn.lin_chuan", "from": "2016-05-20", "to": "2017-09-08" },
+        { "person": "twn.lai_ching_te", "from": "2017-09-08", "to": "2019-01-14" },
+        { "person": "twn.su_tseng_chang", "from": "2019-01-14", "to": "2023-01-31" },
+        { "person": "twn.chen_chien_jen", "from": "2023-01-31", "to": "2024-05-20" },
+        { "person": "twn.cho_jung_tai", "from": "2024-05-20" }
+      ],
+      "note": "Wikidata and the Wikipedia list agree; Wikidata leaves Chen Chien-jen's term open, the Wikipedia list ends it on 20 May 2024.",
+      "source": [
+        { "url": "https://www.wikidata.org/wiki/Q702650", "title": "Wikidata: Premier of the Republic of China (position held by)", "accessed": "2026-10-15" },
+        { "url": "https://en.wikipedia.org/wiki/List_of_premiers_of_the_Republic_of_China", "title": "Wikipedia: List of premiers of the Republic of China", "accessed": "2026-10-15" }
+      ],
+      "confidence": "verified"
+    }
+  ],
+  "legislature": {
+    "name": { "en": "Legislative Yuan", "native": "立法院", "native_latin": "Lìfǎyuàn" },
+    "chambers": [
+      {
+        "id": "legislative_yuan",
+        "name": { "en": "Legislative Yuan", "native": "立法院", "native_latin": "Lìfǎyuàn" },
+        "seats": 225,
+        "term_years": 3,
+        "elected": "direct",
+        "system": {
+          "type": "sntv",
+          "district_model": "admin1",
+          "note": "On 1 January 2000: the fourth Legislative Yuan, elected in December 1998 and expanded to 225 members with three-year terms, largely by SNTV in multi-member districts plus list seats. The 2005 constitutional amendments halved the chamber to 113 seats with four-year terms from the January 2008 election (parallel voting): 73 single-member FPTP seats, 6 indigenous seats by SNTV and 34 party-list seats. The schema cannot express the change of size and system over time."
+        },
+        "seats_2000": { "twn.kmt": 123, "twn.dpp": 70, "twn.np": 11, "others": 9, "independents": 12 },
+        "confidence_chamber": true,
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/1998_Taiwanese_legislative_election", "title": "Wikipedia: 1998 Taiwanese legislative election (results table)", "accessed": "2026-10-15" },
+          { "url": "https://en.wikipedia.org/wiki/Legislative_Yuan", "title": "Wikipedia: Legislative Yuan (electoral system and 2005 reform)", "accessed": "2026-10-15" }
+        ],
+        "confidence": "needs_review",
+        "review_note": "seats_2000 is the December 1998 election result (others: Democratic Union of Taiwan 4, Democratic Non-Partisan Alliance 3, New Nation Alliance 1, Taiwan Independence Party 1), not the composition on 1 January 2000. Check the split of district and list seats in 1998 and the list-seat threshold then in force."
+      }
+    ]
+  },
+  "party_system": "multi_party",
+  "start_2000": {
+    "ruling_parties": ["twn.kmt"],
+    "ideology_support": {
+      "liberal_conservative": 0.46,
+      "social_liberal": 0.32,
+      "national_conservative": 0.07,
+      "big_tent": 0.12,
+      "centrist_liberal": 0.02,
+      "green": 0.01
+    },
+    "ideology_support_note": "Derived from the December 1998 Legislative Yuan vote: KMT 46.4%, DPP 29.6%, New Party 7.1%, Democratic Union of Taiwan 3.7%, New Nation Alliance 1.6%, Taiwan Independence Party 1.5%, Democratic Non-Partisan Alliance 0.7%, independents 9.4%. The KMT counts as liberal conservative, the DPP and the small pro-independence parties as social liberal, the New Party as national conservative; independents and non-partisan alliances go to big tent. The March 2000 presidential vote (Chen 39.3%, Soong 36.8%, Lien 23.1%) shows the KMT vote splitting after Soong's departure.",
+    "stability": 0.65,
+    "war_support": 0.35
+  },
+  "claims": [],
+  "source": [
+    { "url": "https://en.wikipedia.org/wiki/President_of_the_Republic_of_China", "title": "Wikipedia: President of the Republic of China", "accessed": "2026-10-15" },
+    { "url": "https://en.wikipedia.org/wiki/Legislative_Yuan", "title": "Wikipedia: Legislative Yuan", "accessed": "2026-10-15" },
+    { "url": "https://en.wikipedia.org/wiki/Referendums_in_Taiwan", "title": "Wikipedia: Referendums in Taiwan (constitutional referendums)", "accessed": "2026-10-15" }
+  ],
+  "confidence": "verified"
+}

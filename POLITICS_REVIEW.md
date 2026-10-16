@@ -48,11 +48,11 @@ Live sources sometimes report allegations or investigations involving real peopl
 
 <!-- AUTO-GENERATED BELOW: run `npm run review-report`; edits below this line are overwritten -->
 
-## Needs review: 299 of 4249 records
+## Needs review: 382 of 4983 records
 
-Countries with politics data: 50 / 212.
+Countries with politics data: 56 / 212.
 
-Countries with no data yet (162): LIE, MLT, SMR, VAT, MDA, EST, LVA, LTU, GEO, ARM, AZE, KAZ, KGZ, TJK, TKM, UZB, PMR, ABK, SOS, NKR, ICH, CAN, ATG, ARG, BHS, BRB, BLZ, BOL, BRA, CHL, COL, CRI, CUB, DMA, DOM, ECU, SLV, GRD, GTM, GUY, HTI, HND, JAM, MEX, NIC, PAN, PRY, PER, KNA, LCA, VCT, SUR, TTO, URY, VEN, FAR, DZA, BHR, EGY, IRQ, JOR, KWT, LBN, LBY, MRT, MAR, OMN, QAT, SAU, SYR, TUN, ARE, YEM, ESH, KUR, AGO, BEN, BWA, BFA, BDI, CPV, CMR, CAF, TCD, COM, COD, COG, CIV, DJI, GNQ, ERI, SWZ, ETH, GAB, GMB, GHA, GIN, GNB, KEN, LSO, LBR, MDG, MWI, MLI, MUS, MOZ, NAM, NER, NGA, RWA, STP, SEN, SYC, SLE, ZAF, SDN, TZA, TGO, UGA, ZMB, ZWE, SSD, SML, UNI, RCD, MLC, AFG, AFN, BGD, BTN, IND, MDV, NPL, PAK, LKA, TEL, MNG, BRN, KHM, IDN, LAO, MYS, MMR, PHL, SGP, THA, VNM, TLS, AUS, NZL, FJI, PNG, SLB, VUT, WSM, TON, KIR, TUV, NRU, FSM, MHL, PLW
+Countries with no data yet (156): LIE, SMR, VAT, LVA, LTU, ARM, AZE, KAZ, KGZ, TJK, TKM, UZB, ABK, SOS, NKR, ICH, CAN, ATG, ARG, BHS, BRB, BLZ, BOL, BRA, CHL, COL, CRI, CUB, DMA, DOM, ECU, SLV, GRD, GTM, GUY, HTI, HND, JAM, MEX, NIC, PAN, PRY, PER, KNA, LCA, VCT, SUR, TTO, URY, VEN, FAR, DZA, BHR, EGY, IRQ, JOR, KWT, LBN, LBY, MRT, MAR, OMN, QAT, SAU, SYR, TUN, ARE, YEM, ESH, KUR, AGO, BEN, BWA, BFA, BDI, CPV, CMR, CAF, TCD, COM, COD, COG, CIV, DJI, GNQ, ERI, SWZ, ETH, GAB, GMB, GHA, GIN, GNB, KEN, LSO, LBR, MDG, MWI, MLI, MUS, MOZ, NAM, NER, NGA, RWA, STP, SEN, SYC, SLE, ZAF, SDN, TZA, TGO, UGA, ZMB, ZWE, SSD, SML, UNI, RCD, MLC, AFG, AFN, BGD, BTN, IND, MDV, NPL, PAK, LKA, TEL, BRN, KHM, IDN, LAO, MYS, MMR, PHL, SGP, THA, VNM, TLS, AUS, NZL, FJI, PNG, SLB, VUT, WSM, TON, KIR, TUV, NRU, FSM, MHL, PLW
 
 ### ALB — Albania (4)
 
@@ -132,11 +132,36 @@ Countries with no data yet (162): LIE, MLT, SMR, VAT, MDA, EST, LVA, LTU, GEO, A
 | election | `presidency_serb_2026` presidential 2026-10-04 | Preliminary results; replace with the CEC's certified figures. | data/countries/BIH/elections.json |
 | election | `hor_2026` legislative 2026-10-04 | Preliminary results; replace with the CEC's certified figures. | data/countries/BIH/elections.json |
 
-### BLR — Belarus (1)
+### BLR — Belarus (13)
 
 | kind | record | what to check | file |
 |---|---|---|---|
 | chamber | `house_of_representatives` House of Representatives | The party breakdown of the 1996-2000 House (first convocation) was not found in the fetched sources, so all 110 seats are recorded as 'others'. Find the faction composition on 1 January 2000 (most deputies were non-partisan supporters of the President, with Communist and Agrarian groups). | data/countries/BLR/country.json |
+| chamber | `council_of_the_republic` Council of the Republic | Confirm that the Council had 64 members (56 elected + 8 appointed) on 1 January 2000 and record its party composition; the 56 regionally elected members are entered as 'others'. | data/countries/BLR/country.json |
+| person | `blr.stanislau_bahdankevich` Stanislau Bahdankevich (b. 1937) | Wikidata gives 1 January 1937 at day precision; confirm the birth date (a 1 January date can be a placeholder). | data/countries/BLR/people.json |
+| party | `blr.kpb` Communist Party of Belarus (KPB) | The leader in 2000 is not recorded: Wikidata lists Ihar Karpienka (no dates) and Aliaksiej Sokal from 14 May 2017. Confirm the chairs from 1996 to 2017. | data/countries/BLR/parties.json |
+| party | `blr.agrarian` Belarusian Agrarian Party (BAP) | No leader with dates was found (the infobox names Mikhail Rusy as the last leader; founder Syamyon Sharetski). Add the leader history. | data/countries/BLR/parties.json |
+| party | `blr.rpts` Republican Party of Labour and Justice (RPTS) | Wikidata lists Vasily Zadnepryany and Aliaksandr Sciapanau as earlier chairs without dates; confirm who led the party in 2000. | data/countries/BLR/parties.json |
+| party | `blr.ldpb` Liberal Democratic Party of Belarus (LDPB) | Wikidata lists Sergei Gaidukevich and Oleg Gaidukevich (the current infobox leader) as chairs without dates; the start (founding date) and the handover date need confirming. | data/countries/BLR/parties.json |
+| party | `blr.belaya_rus` Belaya Rus (PBR) | The infobox names Oleg Romanov as current chairman, which Wikidata does not record; confirm when Davydzka's chairmanship ended. | data/countries/BLR/parties.json |
+| party | `blr.bpp` Belarusian Patriotic Party (BPP) | Chairman Nikolai Ulakhovich (Wikidata, no dates; 2015 presidential candidate) and founder Anatoly Barankevich are not recorded as people; add the leader history. | data/countries/BLR/parties.json |
+| party | `blr.ucp` United Civic Party (UCP) | Bahdankevich is the founder and a Wikidata chair without dates; Lebedko 2000-2018 is from Wikidata. Confirm the 2000 handover date. Later chair Mikalai Kazlou is not recorded as a person. | data/countries/BLR/parties.json |
+| party | `blr.bpf` BPF Party (PBNF) | The leader on 1 January 2000 is not recorded (founder Zianon Pazniak left to form the Conservative Christian Party - BPF in 1999 per Wikidata); add the chairs before 2017. | data/countries/BLR/parties.json |
+| party | `blr.pkb` Belarusian Left Party "A Just World" (Party of Communists of Belarus) (PKB) | Kalyakin is the infobox leader without dates; the start shown is the 2009 renaming. Confirm when he became leader (he headed the party's faction in 1996). | data/countries/BLR/parties.json |
+| party | `blr.bsdp_h` Belarusian Social Democratic Party (Hramada) (BSDP (H)) | No leader history with dates was found; the party's presidential candidates were Alyaksandr Kazulin (2006) and Mikola Statkevich (2010), and Tatsiana Karatkevich (2015) was a member. Add chairs. | data/countries/BLR/parties.json |
+
+### CHE — Switzerland (8)
+
+| kind | record | what to check | file |
+|---|---|---|---|
+| person | `che.philipp_matthias_bregy` Philipp Matthias Bregy (b. 1978) | Confirm the date Bregy became president of The Centre, and his CVP membership years. | data/countries/CHE/people.json |
+| party | `che.fdp` FDP.The Liberals (FDP) | Add Franz Steinegger (FDP president 1989-2001) and Christiane Langenberger (2002-2004) once their birth data is sourced. | data/countries/CHE/parties.json |
+| party | `che.cvp` Christian Democratic People's Party of Switzerland (CVP) | Add Adalbert Durrer (CVP president 1997-2001) and Philipp Stähelin (2001-2004) once their birth data is sourced. | data/countries/CHE/parties.json |
+| party | `che.the_centre` The Centre (Mitte) | Gerhard Pfister's end year and Philipp Matthias Bregy's start year (2025) are not given in the fetched sources; the infobox names Bregy as the current president. | data/countries/CHE/parties.json |
+| party | `che.greens` Green Party of Switzerland (GPS) | Add Ruedi Baumann (president 1997-2001) and Patrice Mugny (co-president 2001-2004) once their birth data is sourced. | data/countries/CHE/parties.json |
+| election | `referendum_2010_03_01_1` referendum 2010-03-01 | The 2010 article lists the March topics (pension funds, animal protection, a constitutional amendment) without labelling the table rows or giving the day; confirm which question this row is (by its double majority it is a constitutional vote, likely the constitutional amendment) and the date. | data/countries/CHE/elections.json |
+| election | `referendum_2010_03_01_2` referendum 2010-03-01 | Row label inferred from the article's topic list (rejected with a cantonal vote, consistent with the animal-protection initiative); confirm the question and the date. | data/countries/CHE/elections.json |
+| election | `referendum_2010_03_01_3` referendum 2010-03-01 | Row label inferred from the article's topic list (no cantonal vote, consistent with a law); confirm the question and the date. | data/countries/CHE/elections.json |
 
 ### CHN — China (4)
 
@@ -210,6 +235,18 @@ Countries with no data yet (162): LIE, MLT, SMR, VAT, MDA, EST, LVA, LTU, GEO, A
 | election | `senate_2019_11` legislative_upper 2019-11-10 | seats should be the full Senate composition after the election; the regionally appointed senators (about 50) still need to be added by party. | data/countries/ESP/elections.json |
 | election | `senate_2023` legislative_upper 2023-07-23 | seats should be the full Senate composition after the election; the regionally appointed senators (about 50) still need to be added by party. | data/countries/ESP/elections.json |
 
+### EST — Estonia (7)
+
+| kind | record | what to check | file |
+|---|---|---|---|
+| party | `est.koonderakond` Estonian Coalition Party (KMÜ) | Find the party chairman on 1 January 2000 (Mart Siimann or Tiit Vähi) with dates. | data/countries/EST/parties.json |
+| party | `est.rahvaliit` People's Union of Estonia (ERL) | Check when Reiljan's chairmanship ended and Tuiksoo's began (Tuiksoo is listed as leader for the March 2007 election), and the leaders after her. | data/countries/EST/parties.json |
+| party | `est.eurp` Estonian United People's Party (EÜRP) | Find the party chairman on 1 January 2000. | data/countries/EST/parties.json |
+| party | `est.res_publica` Res Publica Party (RP) | Check the year Veskimägi succeeded Parts as chairman (the article says only that Veskimägi led the party at the 2006 merger). | data/countries/EST/parties.json |
+| party | `est.greens` Estonian Greens (EER) | Leader history is incomplete: confirm Lotman's dates as leader and his successors. | data/countries/EST/parties.json |
+| party | `est.ekre` Conservative People's Party of Estonia (EKRE) | Confirm the 2012-2013 chairman and the exact date Martin Helme took over in 2020. | data/countries/EST/parties.json |
+| party | `est.free_party` Estonian Free Party (EVA) | Add Herkel's end date and later chairmen. | data/countries/EST/parties.json |
+
 ### FRA — France (3)
 
 | kind | record | what to check | file |
@@ -226,6 +263,30 @@ Countries with no data yet (162): LIE, MLT, SMR, VAT, MDA, EST, LVA, LTU, GEO, A
 | party | `gbr.green` Green Party of England and Wales (Green) | Principal-speaker terms are seasonal years from a table with rowspans; confirm them. The end of the Bartley/Berry co-leadership in 2021 is unclear in the source (Bartley resigned and Berry was acting leader until 1 October 2021?): confirm the exact dates. | data/countries/GBR/parties.json |
 | party | `gbr.respect` Respect Party (Respect) | Leader history is empty: the infobox names no leader (the 2005 results table names Linda Smith). Confirm the party's leaders or national chairs 2004-2016. | data/countries/GBR/parties.json |
 | party | `gbr.your_party` Your Party (YP) | Check how many sitting MPs belong to the party and the date Corbyn became parliamentary leader (stored as the year 2025). | data/countries/GBR/parties.json |
+
+### GEO — Georgia (19)
+
+| kind | record | what to check | file |
+|---|---|---|---|
+| office | `geo.prime_minister` Prime Minister of Georgia | Check whether outgoing Prime Ministers stayed on as caretakers in the short gaps of November 2003, June 2018, September 2019 and January-February 2024 (recorded as vacancies because the sources list no holder). | data/countries/GEO/country.json |
+| person | `geo.vazha_lortkipanidze` Vazha Lortkipanidze (b. 1949) | Party taken from the colour coding of the Wikipedia list of heads of government (Union of Citizens); confirm. | data/countries/GEO/people.json |
+| person | `geo.giorgi_arsenishvili` Giorgi Arsenishvili (b. 1942) | Party membership not confirmed by a fetched source (assumed from the government he served); confirm. | data/countries/GEO/people.json |
+| person | `geo.lado_gurgenidze` Lado Gurgenidze (b. 1970) | Party affiliation not checked. | data/countries/GEO/people.json |
+| person | `geo.grigol_mgaloblishvili` Grigol Mgaloblishvili (b. 1973) | Party affiliation not checked. | data/countries/GEO/people.json |
+| person | `geo.nika_gilauri` Nika Gilauri (b. 1975) | Party affiliation not checked. | data/countries/GEO/people.json |
+| person | `geo.jumber_patiashvili` Jumber Patiashvili (b. 1940) | Birth year uncertain (Wikidata gives 1939 and 1940); 1940 recorded. | data/countries/GEO/people.json |
+| person | `geo.david_gamkrelidze` David Gamkrelidze (b. 1964) | Birth year uncertain: Wikidata holds 2 April 1964 and 2 April 1965. | data/countries/GEO/people.json |
+| person | `geo.zurab_japaridze` Zurab Japaridze (b. 1976) | Wikidata gives 1 January 1976, a common placeholder, so only the year is recorded; confirm. | data/countries/GEO/people.json |
+| party | `geo.industrialists` Industry Will Save Georgia (Industrialists) | Gogi Topadze is named as leader in the infobox; Wikidata records his death on 16 February 2025. Check when his leadership ended and who succeeded him. | data/countries/GEO/parties.json |
+| party | `geo.labour` Georgian Labour Party (Labour) | Check that Natelashvili has led the party continuously since its founding in 1995. | data/countries/GEO/parties.json |
+| party | `geo.new_rights` New Rights Party (New Rights) | Gamkrelidze is shown as leader in the 2003 and 2004 election infoboxes; check the start and end of his leadership and when Katsitadze took over. | data/countries/GEO/parties.json |
+| party | `geo.republican` Republican Party of Georgia (Republicans) | Add the chairs since 2000 with dates (Usupashvili and successors), and confirm the party ran in the National Democratic Alliance list in 1999. | data/countries/GEO/parties.json |
+| party | `geo.patriots` Alliance of Patriots of Georgia (APG) | The party has joint leaders; check Inashvili's formal title and dates, and Tarkhan-Mouravi's chairmanship. | data/countries/GEO/parties.json |
+| party | `geo.european_georgia` European Georgia (EG) | Add the end of Bakradze's chairmanship and the later chairs (Bokeria, Tsereteli) as person records. | data/countries/GEO/parties.json |
+| party | `geo.aghmashenebeli` Strategy Aghmashenebeli (SA) | Add Giorgi Vashadze (leader) as a person with fetched dates. | data/countries/GEO/parties.json |
+| party | `geo.girchi` New Political Centre – Girchi (Girchi) | PLACEHOLDER | data/countries/GEO/parties.json |
+| party | `geo.citizens` Citizens (Citizens) | PLACEHOLDER | data/countries/GEO/parties.json |
+| party | `geo.for_georgia` For Georgia (For Georgia) | PLACEHOLDER | data/countries/GEO/parties.json |
 
 ### GRC — Greece (4)
 
@@ -388,6 +449,12 @@ Countries with no data yet (162): LIE, MLT, SMR, VAT, MDA, EST, LVA, LTU, GEO, A
 | party | `mco.renaissance` Renaissance (Renaissance) | Leaders are not recorded: the party article names Eric Elena as leader, while the 2013 election article names Jean-Michel Rapaire as list leader. Neither gives dates. | data/countries/MCO/parties.json |
 | party | `mco.primo` Priorité Monaco (Primo!) | No dated leader list exists in the sources: Valeri's leadership has no end date (he left the National Council presidency in October 2022), and Boccone-Pagès is recorded as head of the 2023 joint list, not as formal party leader. | data/countries/MCO/parties.json |
 
+### MDA — Moldova (1)
+
+| kind | record | what to check | file |
+|---|---|---|---|
+| election | `presidential_2009_nov` indirect_presidential 2009-11-10 | Add Lupu's vote totals in each round (the fetched article does not give them). | data/countries/MDA/elections.json |
+
 ### MKD — Macedonia (6)
 
 | kind | record | what to check | file |
@@ -398,6 +465,12 @@ Countries with no data yet (162): LIE, MLT, SMR, VAT, MDA, EST, LVA, LTU, GEO, A
 | person | `mkd.agron_buxhaku` Agron Buxhaku (b. 1957) | No English Wikipedia article; birth date and gender are from Wikidata only and were not cross-checked. | data/countries/MKD/people.json |
 | party | `mkd.aa` Alliance for Albanians (AA) | Check when Arben Taravari became leader (2020 assumed) and the party's 2024 alliance. | data/countries/MKD/parties.json |
 | party | `mkd.vlen` VLEN Coalition (VLEN) | The article dates the conversion into a party only as 2026 (after June 2026 by the article's edit history); check the date and the member parties. | data/countries/MKD/parties.json |
+
+### MLT — Malta (1)
+
+| kind | record | what to check | file |
+|---|---|---|---|
+| party | `mlt.ad` Democratic Alternative (AD) | The chair on 1 January 2000 (Harry Vassallo) is missing from leader_history because no birth year was found for him; add him if a source gives one. Confirm whether Vassallo became chair in 1998 or 1999. | data/countries/MLT/parties.json |
 
 ### MNE — Montenegro (7)
 
@@ -410,6 +483,19 @@ Countries with no data yet (162): LIE, MLT, SMR, VAT, MDA, EST, LVA, LTU, GEO, A
 | party | `mne.df` Democratic Front (DF) | Collective leadership: list leaders are recorded as leaders; check dates. | data/countries/MNE/parties.json |
 | party | `mne.ura` United Reform Action (URA) | Check when Dritan Abazović became URA president (2017 assumed). | data/countries/MNE/parties.json |
 | party | `mne.bs` Bosniak Party (BS) | Check when Ervin Ibrahimović became party president (2023 assumed). | data/countries/MNE/parties.json |
+
+### MNG — Mongolia (8)
+
+| kind | record | what to check | file |
+|---|---|---|---|
+| person | `mng.dendeviin_terbishdagva` Dendeviin Terbishdagva (b. 1955) | Party conflict: MPRP (2010) per the Wikipedia list of prime ministers versus the Democratic Party per Wikidata. Birth year (1955) has only Wikidata as source. | data/countries/MNG/people.json |
+| party | `mng.msdp` Mongolian Social Democratic Party (MSDP) | Leader history is empty: the party's chairman in 2000 was not found in the fetched sources. | data/countries/MNG/parties.json |
+| party | `mng.mtup` Mongolian Traditional United Party (MTUP) | Leader history is empty: the party's leaders since 2000 were not found with dates. | data/countries/MNG/parties.json |
+| party | `mng.motherland` Motherland Party (Motherland) | Leader history is empty (founder Badarchiin Erdenebat has no person record). Check whether the party existed under this name in 1996 and its status on 1 January 2000; 'extra_parliamentary' is assumed. | data/countries/MNG/parties.json |
+| party | `mng.civil_will` Civil Will Party (CWP) | Oyun is the founder and is described as the party's leader, but her leadership dates are not given; the founding-to-merger span is an assumption. | data/countries/MNG/parties.json |
+| party | `mng.cwgp` Civil Will–Green Party (CWGP) | Leader history is empty: chair dates (including Batyn Batbaatar's) were not found. | data/countries/MNG/parties.json |
+| party | `mng.republican` Republican Party (MRP) | Confirm that Jargalsaikhan has chaired the party since its 2004 refounding and who led it in 2000. | data/countries/MNG/parties.json |
+| party | `mng.hun` HUN Party (HUN) | Leader history is empty: the dates of its chairs (Badrakhyn Naidalaa, then Togmidyn Dorjkhand) were not found. | data/countries/MNG/parties.json |
 
 ### NCY — Northern Cyprus (6)
 
@@ -435,6 +521,16 @@ Countries with no data yet (162): LIE, MLT, SMR, VAT, MDA, EST, LVA, LTU, GEO, A
 | kind | record | what to check | file |
 |---|---|---|---|
 | party | `nor.h` Conservative Party (H) | The leadership change from Erna Solberg to Ine Eriksen Søreide is given only as the year 2026 in the party article; confirm the exact date of the 2026 party convention. | data/countries/NOR/parties.json |
+
+### PMR — Transnistria (5)
+
+| kind | record | what to check | file |
+|---|---|---|---|
+| chamber | `supreme_council` Supreme Council | The party composition of the 1995-2000 Supreme Council was not found (there is no English Wikipedia article on the 1995 election); all 67 seats are recorded as 'others'. The chamber size also changed to 43 (December 2000) and 33 (2020), which the schema cannot express. | data/countries/PMR/country.json |
+| person | `pmr.pyotr_stepanov` Pyotr Stepanov (b. 1959) | Wikidata gives two birth dates (24 December 1959 and 2 January 1959); the Wikipedia list gives only the year 1959. Confirm the date. | data/countries/PMR/people.json |
+| party | `pmr.obnovlenie` Republican Party "Obnovlenie" (Renewal) (Obnovlenie) | Shevchuk is the founder and was leader at the 2005 election; Kaminski (2010), Burla (2015) and Korshunov (2020) are the leaders named in the election infoboxes. Exact tenures are not in the fetched sources; the infobox names Galina Antyufeeva as current chairperson. | data/countries/PMR/parties.json |
+| party | `pmr.republic` Republic (Respublika) (Respublika) | Wikipedia gives a 1990 foundation and 2007 registration and names Smirnov as leader without dates (2005 is the election at which the source shows him leading it). Confirm its status on 1 January 2000 and Smirnov's leadership dates. | data/countries/PMR/parties.json |
+| party | `pmr.proriv` Proriv (Proriv) | Soin is the infobox leader without dates; confirm he led it from founding. | data/countries/PMR/parties.json |
 
 ### POL — Poland (8)
 
@@ -557,6 +653,33 @@ Countries with no data yet (162): LIE, MLT, SMR, VAT, MDA, EST, LVA, LTU, GEO, A
 | person | `twn.shu_chin_chiang` Shu Chin-chiang (b. 1953) | His party affiliation on 1 January 2000, before he joined the TSU in 2001, was not found. | data/countries/TWN/people.json |
 | party | `twn.tsu` Taiwan Solidarity Union (TSU) | The current chair, Chou Ni-an (since 29 January 2024), has no person record because no Wikipedia or Wikidata entry was found; add one if a source is found. | data/countries/TWN/parties.json |
 | party | `twn.npsu` Non-Partisan Solidarity Union (NPSU) | The English Wikipedia article only names election leaders (Chang Po-ya for 2004-2005 and 2016, Lin Pin-kuan for later elections; the infobox names Lin Pin-kuan as current leader) and has no dated leader list. Confirm Chang Po-ya's chairmanship dates and add Lin Pin-kuan. | data/countries/TWN/parties.json |
+
+### UKR — Ukraine (22)
+
+| kind | record | what to check | file |
+|---|---|---|---|
+| person | `ukr.hennadiy_udovenko` Hennadiy Udovenko (b. 1931) | Confirm the dates of Udovenko's chairmanship of Rukh (from 1999); not in the fetched Wikidata chair list. | data/countries/UKR/people.json |
+| person | `ukr.viktor_medvedchuk` Viktor Medvedchuk (b. 1954) | Confirm the dates Medvedchuk chaired SDPU(o); the 2002 election infobox names him as its leader, the 1998 infobox names Leonid Kravchuk. | data/countries/UKR/people.json |
+| party | `ukr.kpu` Communist Party of Ukraine (KPU) | Confirm the start of Symonenko's leadership (the fetched sources show him as leader from the 1998 election through 2012). The party was banned by a court on 16 December 2015 (ban upheld 6 July 2022); the schema has no 'banned' date, so dissolved is set to the court ban. | data/countries/UKR/parties.json |
+| party | `ukr.rukh` People's Movement of Ukraine (Rukh) | Udovenko is recorded as leader from 1999 because he was Rukh's 1999 presidential candidate after the death of Viacheslav Chornovil (Rukh's leader at the 1998 election); confirm his chairmanship dates. Later leaders (Vasyl Kuybida until 2017, Viktor Kryvenko 2017-2021, Andriy Kornat) are not recorded as people in this file. | data/countries/UKR/parties.json |
+| party | `ukr.spu` Socialist Party of Ukraine (SPU) | Moroz (the founder) is recorded from 1998, the earliest fetched evidence; confirm his tenure and when it ended (Wikidata lists Mykola Rudkovsky 2013-2015 and Illia Kyva 2018-2019). The party was banned on 15 June 2022. | data/countries/UKR/parties.json |
+| party | `ukr.ndp` People's Democratic Party (NDP) | Matviyenko (founder) led the 1998 list; confirm who chaired the party on 1 January 2000 (Prime Ministers Pustovoitenko and Yushchenko are both associated with the NDP in the Wikipedia PM list). Current leader Liudmyla Suprun is not recorded as a person. | data/countries/UKR/parties.json |
+| party | `ukr.hromada` Hromada (Hromada) | Lazarenko led the 1998 list and is the infobox leader; confirm leadership dates (Wikidata gives a start of 2018). | data/countries/UKR/parties.json |
+| party | `ukr.greens` Party of Greens of Ukraine (PZU) | Kononov led the 1998 list; confirm his tenure (Wikidata dates his chairmanship from 2014, the infobox names Tetyana Bodun as current leader). | data/countries/UKR/parties.json |
+| party | `ukr.sdpuo` Social Democratic Party of Ukraine (united) (SDPU(o)) | Kravchuk headed the 1998 list and Medvedchuk is the party leader in the 2002 election infobox; confirm the chairmanship dates. | data/countries/UKR/parties.json |
+| party | `ukr.peoples_party` People's Party (Agrarian Party of Ukraine) (NP) | Lytvyn is the infobox and Wikidata leader with no dates; 2004 is an assumed start (he led the party's Lytvyn Bloc at the 2006 and 2007 elections). Confirm when he became chairman and who led the Agrarian Party in 2000. | data/countries/UKR/parties.json |
+| party | `ukr.prp` Reforms and Order Party (PRP) | Pynzenyk is listed as a chairman in Wikidata without dates; the infobox names Serhiy Sobolev as the later leader. Confirm the tenure. | data/countries/UKR/parties.json |
+| party | `ukr.regions` Party of Regions (PR) | Yanukovych led the party at the 2006 and 2007 elections and Azarov at the 2012 election (per the election infoboxes; Wikidata lists Azarov and Oleksandr Yefremov without dates). Confirm the exact chairmanship dates and who led the party in 2000. | data/countries/UKR/parties.json |
+| party | `ukr.batkivshchyna` All-Ukrainian Union "Fatherland" (Batkivshchyna) (Batkivshchyna) | Tymoshenko is the current infobox leader; confirm she has led the party continuously since its founding on 9 July 1999. | data/countries/UKR/parties.json |
+| party | `ukr.our_ukraine` Our Ukraine (NU) | Covers the Viktor Yushchenko Bloc 'Our Ukraine' (2002), the Our Ukraine bloc (2006) and the Our Ukraine-People's Self-Defense bloc (2007) as well as the Our Ukraine party founded on 5 March 2005. 2002 is used as the founding year because the bloc first contested that election; confirm the bloc's registration date. List leaders were Yuriy Yekhanurov (2006) and Yuriy Lutsenko (2007). | data/countries/UKR/parties.json |
+| party | `ukr.svoboda` All-Ukrainian Union "Svoboda" (Svoboda) | Tyahnybok is the infobox leader; 2004 is the year the party adopted the Svoboda name. Confirm when he became leader. | data/countries/UKR/parties.json |
+| party | `ukr.european_solidarity` European Solidarity (Petro Poroshenko Bloc "Solidarity") (YeS) | Lutsenko (2014-2015) and Klitschko (from 28 August 2015) are from Wikidata; Poroshenko is recorded from 2019, when he led the European Solidarity list. Confirm when Klitschko's chairmanship ended. status_2000 is not_yet_founded although Wikipedia dates the party (as Solidarity) to May 2000; it held no seats on 1 January 2000. | data/countries/UKR/parties.json |
+| party | `ukr.self_reliance` Self Reliance (Samopomich) | Sadovyi is chairman from 29 December 2012 per Wikidata (no end date); the infobox names Oksana Syroyid as current leader. Confirm when the leadership changed. | data/countries/UKR/parties.json |
+| party | `ukr.opposition_bloc` Opposition Bloc (OB) | Boyko led the 2014 list; Wikidata also lists Yevhenii Muraiev, Borys Kolesnikov and Vadym Novynskyi as chairs without dates. Confirm the leadership. | data/countries/UKR/parties.json |
+| party | `ukr.radical` Radical Party of Oleh Liashko (RPL) | Liashko is leader per Wikipedia and Wikidata (no dates); confirm whether he has led it since its founding. | data/countries/UKR/parties.json |
+| party | `ukr.opzzh` Opposition Platform - For Life (OPZZh) | Boyko headed the 2019 list; confirm his formal title and dates (the infobox lists separate leader and political-council chair posts). | data/countries/UKR/parties.json |
+| party | `ukr.servant` Servant of the People (SN) | Razumkov headed the party and its 2019 list; later chairs (including Oleksandr Korniienko, elected 17 December 2025 per the infobox) are not recorded as people here. Confirm the chair dates. | data/countries/UKR/parties.json |
+| party | `ukr.holos` Voice (Holos) (Holos) | Vakarchuk founded the party and led its 2019 list; the infobox names Kira Rudik as the current leader. Confirm when Vakarchuk stepped down. | data/countries/UKR/parties.json |
 
 ### USA — United States (2)
 

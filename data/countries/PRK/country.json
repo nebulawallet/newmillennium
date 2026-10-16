@@ -1,0 +1,133 @@
+{
+  "tag": "PRK",
+  "name": { "en": "North Korea", "native": "조선", "native_latin": "Chosŏn", "official": { "en": "Democratic People's Republic of Korea", "native": "조선민주주의인민공화국" } },
+  "adjective": "North Korean",
+  "culture_primary": "korean",
+  "government": {
+    "type": "one_party_state",
+    "effective_executive": "prk.supreme_leader",
+    "head_of_state_office": "prk.spa_standing_committee_chair",
+    "head_of_government_office": "prk.premier",
+    "constitution": {
+      "term_limit_amendable": true,
+      "emergency_powers": true,
+      "referendum_required_for": []
+    },
+    "note": "One-party state led by the Workers' Party of Korea (WPK), with two subordinate allied parties. Real power lies with the supreme leader, who heads the WPK and the top state military body (Kim Jong Il: Chairman of the National Defence Commission from 9 April 1993 and WPK General Secretary from 8 October 1997; Kim Jong Un: First Chairman of the National Defence Commission from 2012, then Chairman, later styled President, of the State Affairs Commission from 29 June 2016). From 1998 to 2019 the President of the Presidium of the Supreme People's Assembly (later translated as Chairman of its Standing Committee) was the nominal head of state; the April and August 2019 constitutional amendments transferred the head-of-state powers to the Chairman of the State Affairs Commission, and the 2026 amendment moved the remaining power to receive foreign envoys' credentials to the same office. The schema allows only one head-of-state office, so the Standing Committee chair (the nominal head of state at the game start) is used throughout and the change is recorded here. The Supreme People's Assembly elects the Premier and the Standing Committee; the Constitution was last amended on 23 March 2026, when 'Socialist' was dropped from its title."
+  },
+  "offices": [
+    {
+      "id": "prk.supreme_leader",
+      "title": { "en": "Supreme Leader", "native": "최고령도자", "native_latin": "Ch'oego Ryŏngdoja" },
+      "role": "supreme_leader",
+      "power_weight": 0.85,
+      "selection": "party_congress",
+      "succession": { "type": "council_choice" },
+      "holders": [
+        { "person": "prk.kim_jong_il", "from": "1994-07-08", "to": "2011-12-17", "note": "Leader from the death of Kim Il Sung until his own death. Chairman of the National Defence Commission from 9 April 1993 and WPK General Secretary from 8 October 1997." },
+        { "person": "prk.kim_jong_un", "from": "2011-12-17", "note": "Leader from his father's death; first reported as supreme leader on 27 December 2011. WPK First Secretary from 11 April 2012, Chairman from 9 May 2016 and General Secretary from 10 January 2021; First Chairman of the National Defence Commission from 13 April 2012 (Wikidata) and Chairman/President of the State Affairs Commission from 29 June 2016." }
+      ],
+      "note": "Informal title for the de facto leader, who holds the WPK's top post and the top state military post. It is not a constitutional office; 'party_congress' is used for selection because the WPK congresses and conferences confer the party title.",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/Supreme_Leader_(North_Korean_title)", "title": "Wikipedia: Supreme Leader (North Korean title) (list of leaders and their posts)", "accessed": "2026-10-16" },
+        { "url": "https://www.wikidata.org/wiki/Q56876342", "title": "Wikidata: Supreme Leader of North Korea (position held by)", "accessed": "2026-10-16" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "prk.spa_standing_committee_chair",
+      "title": { "en": "Chairman of the Standing Committee of the Supreme People's Assembly", "native": "최고인민회의 상임위원회 위원장", "native_latin": "Ch'oego Inmin Hoeŭi Sangim Wiwŏnhoe Wiwŏnjang" },
+      "role": "head_of_state",
+      "power_weight": 0.05,
+      "selection": "legislature",
+      "term_years": 5,
+      "succession": { "type": "council_choice" },
+      "holders": [
+        { "person": "prk.kim_yong_nam", "from": "1998-09-05", "to": "2019-04-11" },
+        { "person": "prk.choe_ryong_hae", "from": "2019-04-11", "to": "2026-03-22" },
+        { "person": "prk.jo_yong_won", "from": "2026-03-22", "to": "2026-06-20", "note": "Elected at the first session of the 15th SPA on 22 March 2026, also as Chairman of the Supreme People's Assembly; returned to the WPK Secretariat in June 2026 (Wikipedia, citing Yonhap of 23 June 2026)." },
+        { "person": null, "from": "2026-06-20", "vacant_reason": "Vacant since 20 June 2026; a new chairman is expected to be elected at a later SPA session (Wikipedia, citing Yonhap of 23 June 2026)." }
+      ],
+      "note": "Formerly translated as President of the Presidium of the Supreme People's Assembly. Nominal head of state from 1998 until the 2019 constitutional amendments (see government.note). Elected by the SPA at the first session of each convocation.",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/Chairman_of_the_Standing_Committee_of_the_Supreme_People%27s_Assembly", "title": "Wikipedia: Chairman of the Standing Committee of the Supreme People's Assembly (list of officeholders, 2019 and 2026 amendments, vacancy since 20 June 2026)", "accessed": "2026-10-16" },
+        { "url": "https://www.wikidata.org/wiki/Q30944956", "title": "Wikidata: President of the Presidium of the Supreme People's Assembly (position held by)", "accessed": "2026-10-16" },
+        { "url": "https://en.wikipedia.org/wiki/15th_Supreme_People%27s_Assembly", "title": "Wikipedia: 15th Supreme People's Assembly (first session, 22 March 2026)", "accessed": "2026-10-16" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "prk.premier",
+      "title": { "en": "Premier of the Cabinet", "native": "내각총리" },
+      "role": "head_of_government",
+      "power_weight": 0.1,
+      "selection": "legislature",
+      "term_years": 5,
+      "succession": { "type": "council_choice" },
+      "holders": [
+        { "person": "prk.hong_song_nam", "from": "1998-09-05", "to": "2003-09-03", "note": "Acting Premier from 21 February 1997; elected Premier on 5 September 1998." },
+        { "person": "prk.pak_pong_ju", "from": "2003-09-03", "to": "2007-04-11" },
+        { "person": "prk.kim_yong_il", "from": "2007-04-11", "to": "2010-06-07" },
+        { "person": "prk.choe_yong_rim", "from": "2010-06-07", "to": "2013-04-01" },
+        { "person": "prk.pak_pong_ju", "from": "2013-04-01", "to": "2019-04-11" },
+        { "person": "prk.kim_jae_ryong", "from": "2019-04-11", "to": "2020-08-13" },
+        { "person": "prk.kim_tok_hun", "from": "2020-08-13", "to": "2024-12-24" },
+        { "person": "prk.pak_thae_song", "from": "2024-12-29" }
+      ],
+      "note": "The Wikipedia list's table ends Kim Tok-hun's term and starts Pak Thae-song's on 24 December 2024, while its timeline gives 27 and 29 December and the infoboxes of the list and of Pak Thae-song give 29 December 2024 (KCNA reported the change in its 29 December release on the WPK plenary meeting). Wikidata has no end for Kim Tok-hun and omits Pak Thae-song. The table's end date is used for Kim and the infobox date for Pak, leaving a short gap. Wikidata ends Kim Yong-il's term on 7 June 2010, as does the table; the timeline gives 4 June.",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/Premier_of_North_Korea", "title": "Wikipedia: Premier of North Korea (list of premiers, citing KCNA)", "accessed": "2026-10-16" },
+        { "url": "https://www.wikidata.org/wiki/Q7240364", "title": "Wikidata: Premier of North Korea (position held by)", "accessed": "2026-10-16" },
+        { "url": "https://en.wikipedia.org/wiki/Pak_Thae-song", "title": "Wikipedia: Pak Thae-song (infobox: Premier since 29 December 2024)", "accessed": "2026-10-16" }
+      ],
+      "confidence": "needs_review",
+      "review_note": "The date of the change from Kim Tok-hun to Pak Thae-song differs within Wikipedia (24, 27 or 29 December 2024). Check the KCNA report."
+    }
+  ],
+  "legislature": {
+    "name": { "en": "Supreme People's Assembly", "native": "최고인민회의", "native_latin": "Ch'oego Inmin Hoeŭi" },
+    "chambers": [
+      {
+        "id": "supreme_peoples_assembly",
+        "name": { "en": "Supreme People's Assembly", "native": "최고인민회의", "native_latin": "Ch'oego Inmin Hoeŭi" },
+        "seats": 687,
+        "term_years": 5,
+        "elected": "direct",
+        "system": {
+          "type": "fptp",
+          "district_model": "custom",
+          "note": "687 single-member constituencies with one approved candidate on each ballot, nominated through the Democratic Front for the Reunification of Korea (dissolved 23 March 2024); official turnout is above 99%. A 2023 amendment to the election law provides for fielding more than one candidate (Yonhap, cited by Wikipedia); the 2026 SPA election still had one candidate per constituency. The 14th SPA's term ran past its five years: the 15th SPA was elected on 15 March 2026, not in 2024 as expected. seats_2000 is the result of the 26 July 1998 election (10th SPA, in office on 1 January 2000); 'others' are the 7 deputies of Chongryon, the pro-North association of Koreans in Japan."
+        },
+        "seats_2000": { "prk.wpk": 594, "prk.ksdp": 53, "prk.chondoist_chongu": 23, "others": 7, "independents": 10 },
+        "confidence_chamber": false,
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/1998_North_Korean_parliamentary_election", "title": "Wikipedia: 1998 North Korean parliamentary election (results table, after Nohlen et al. and the IPU)", "accessed": "2026-10-16" },
+          { "url": "https://en.wikipedia.org/wiki/Elections_in_North_Korea", "title": "Wikipedia: Elections in North Korea", "accessed": "2026-10-16" }
+        ],
+        "confidence": "verified"
+      }
+    ]
+  },
+  "party_system": "one_party",
+  "start_2000": {
+    "ruling_parties": ["prk.wpk"],
+    "ideology_support": {
+      "marxist_leninist": 0.75,
+      "statist": 0.15,
+      "market_socialist": 0.05,
+      "social_democrat": 0.03,
+      "big_tent": 0.02
+    },
+    "ideology_support_note": "Estimate only. North Korea has no competitive elections and single-candidate ballots, so there is no vote share to derive from. The weights are a gameplay estimate: most support goes to the WPK's official line (Juche, modelled as marxist_leninist because no Juche sub-ideology exists), a large share to the military-first (Songun) emphasis of the late 1990s (statist), and small shares to market-oriented reform sentiment and to the two subordinate allied parties (the Korean Social Democratic Party and the Chondoist Chongu Party, which together held 76 of 687 seats).",
+    "stability": 0.6,
+    "war_support": 0.6
+  },
+  "claims": [],
+  "source": [
+    { "url": "https://en.wikipedia.org/wiki/North_Korea", "title": "Wikipedia: North Korea (names)", "accessed": "2026-10-16" },
+    { "url": "https://en.wikipedia.org/wiki/Supreme_Leader_(North_Korean_title)", "title": "Wikipedia: Supreme Leader (North Korean title)", "accessed": "2026-10-16" },
+    { "url": "https://en.wikipedia.org/wiki/Constitution_of_North_Korea", "title": "Wikipedia: Constitution of North Korea (amendments to 2026; Article 2 territory)", "accessed": "2026-10-16" },
+    { "url": "https://en.wikipedia.org/wiki/Chairman_of_the_Standing_Committee_of_the_Supreme_People%27s_Assembly", "title": "Wikipedia: Chairman of the Standing Committee of the Supreme People's Assembly (head-of-state role 1948-2019)", "accessed": "2026-10-16" }
+  ],
+  "confidence": "verified"
+}

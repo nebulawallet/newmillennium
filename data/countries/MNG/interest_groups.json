@@ -1,0 +1,15 @@
+{
+  "note": "Influence and approval are gameplay starting values for 1 January 2000 (the Democratic Union Coalition government of Rinchinnyamyn Amarjargal, during the post-1990 market transition), not measured data. Herders and the rural population are a large constituency; mining and trading businesses were growing; the military is small and under civilian control.",
+  "interest_groups": [
+    { "type": "military", "influence": 0.1, "approval": 50 },
+    { "type": "security_services", "influence": 0.1, "approval": 50 },
+    { "type": "business", "influence": 0.3, "approval": 50, "note": "Newly privatised enterprises, mining and cross-border trade." },
+    { "type": "labour_unions", "influence": 0.15, "approval": 40 },
+    { "type": "religious_establishment", "influence": 0.1, "approval": 55 },
+    { "type": "rural", "influence": 0.35, "approval": 40, "note": "Herding households, a large share of the population." },
+    { "type": "urban_middle_class", "influence": 0.3, "approval": 45 },
+    { "type": "minorities", "influence": 0.05, "approval": 50 },
+    { "type": "youth_students", "influence": 0.2, "approval": 50 },
+    { "type": "media", "influence": 0.25, "approval": 45 }
+  ]
+}

@@ -1,0 +1,307 @@
+{
+  "rules": [
+    {
+      "kind": "presidential",
+      "office": "kor.president",
+      "every_years": 5,
+      "anchor": "2025-06-03",
+      "snap_possible": true,
+      "system": "plurality",
+      "note": "Single round, most votes wins; single five-year term. A vacancy (e.g. removal after impeachment) requires an election within 60 days, which resets the five-year cycle."
+    },
+    {
+      "kind": "legislative",
+      "chamber": "national_assembly",
+      "every_years": 4,
+      "anchor": "2024-04-10",
+      "snap_possible": false,
+      "note": "Fixed four-year term; the President cannot dissolve the National Assembly."
+    }
+  ],
+  "elections": [
+    {
+      "id": "na_2000",
+      "date": "2000-04-13",
+      "kind": "legislative",
+      "chamber": "national_assembly",
+      "historical": {
+        "party_results": [
+          { "party": "kor.gnp", "share": 0.3896, "seats": 133 },
+          { "party": "kor.mdp", "share": 0.3587, "seats": 115 },
+          { "party": "kor.uld", "share": 0.0984, "seats": 17 },
+          { "party": "others", "share": 0.0594, "seats": 3 },
+          { "party": "independents", "share": 0.0939, "seats": 5 }
+        ],
+        "winner": "kor.gnp",
+        "turnout": 0.5722,
+        "note": "273 seats (227 constituency, 46 list allocated by constituency vote). Others: Democratic People's Party 3.68% and 2 seats, New Korea Party of Hope 0.41% and 1 seat, and minor parties with no seats (including the Democratic Labor Party, 1.18%). Shares are computed from the votes in the results table.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2000_South_Korean_legislative_election", "title": "Wikipedia: 2000 South Korean legislative election (results table)", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "president_2002",
+      "date": "2002-12-19",
+      "kind": "presidential",
+      "office": "kor.president",
+      "historical": {
+        "candidates": [
+          { "person": "kor.roh_moo_hyun", "party": "kor.mdp", "share": 0.4891, "votes": 12014277, "round": 1 },
+          { "person": "kor.lee_hoi_chang", "party": "kor.gnp", "share": 0.4659, "votes": 11443297, "round": 1 }
+        ],
+        "winner": "kor.roh_moo_hyun",
+        "turnout": 0.7083,
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2002_South_Korean_presidential_election", "title": "Wikipedia: 2002 South Korean presidential election", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "na_2004",
+      "date": "2004-04-15",
+      "kind": "legislative",
+      "chamber": "national_assembly",
+      "historical": {
+        "party_results": [
+          { "party": "kor.uri", "share": 0.3827, "seats": 152 },
+          { "party": "kor.gnp", "share": 0.3577, "seats": 121 },
+          { "party": "kor.dlp", "share": 0.1303, "seats": 10 },
+          { "party": "kor.mdp", "share": 0.0709, "seats": 9 },
+          { "party": "kor.uld", "share": 0.0282, "seats": 4 },
+          { "party": "others", "share": 0.0302, "seats": 1 },
+          { "party": "independents", "seats": 2 }
+        ],
+        "winner": "kor.uri",
+        "turnout": 0.6063,
+        "note": "299 seats (243 constituency, 56 list). Shares are the separate party-list vote, computed from the results table. Others: National Integration 21 (1 constituency seat) and minor parties. Independents stood only in constituencies (4.56% of the constituency vote).",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2004_South_Korean_legislative_election", "title": "Wikipedia: 2004 South Korean legislative election (results table)", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "president_2007",
+      "date": "2007-12-19",
+      "kind": "presidential",
+      "office": "kor.president",
+      "historical": {
+        "candidates": [
+          { "person": "kor.lee_myung_bak", "party": "kor.gnp", "share": 0.4867, "votes": 11492389, "round": 1 },
+          { "person": "kor.chung_dong_young", "party": "kor.undp", "share": 0.2615, "votes": 6174681, "round": 1 },
+          { "person": "kor.lee_hoi_chang", "share": 0.1508, "votes": 3559963, "round": 1 },
+          { "person": "kor.moon_kook_hyun", "party": "kor.ckp", "share": 0.0583, "votes": 1375498, "round": 1 }
+        ],
+        "winner": "kor.lee_myung_bak",
+        "turnout": 0.6303,
+        "note": "Lee Hoi-chang ran as an independent.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2007_South_Korean_presidential_election", "title": "Wikipedia: 2007 South Korean presidential election", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "na_2008",
+      "date": "2008-04-09",
+      "kind": "legislative",
+      "chamber": "national_assembly",
+      "historical": {
+        "party_results": [
+          { "party": "kor.gnp", "share": 0.3748, "seats": 153 },
+          { "party": "kor.udp", "share": 0.2518, "seats": 81 },
+          { "party": "kor.pro_park", "share": 0.1318, "seats": 14 },
+          { "party": "kor.lfp", "share": 0.0685, "seats": 18 },
+          { "party": "kor.dlp", "share": 0.0568, "seats": 5 },
+          { "party": "kor.ckp", "share": 0.0381, "seats": 3 },
+          { "party": "independents", "seats": 25 }
+        ],
+        "winner": "kor.gnp",
+        "turnout": 0.4608,
+        "note": "299 seats (245 constituency, 54 list). Shares are the party-list vote, computed from the results table. Independents won 11.08% of the constituency vote.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2008_South_Korean_legislative_election", "title": "Wikipedia: 2008 South Korean legislative election (results table)", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "na_2012",
+      "date": "2012-04-11",
+      "kind": "legislative",
+      "chamber": "national_assembly",
+      "historical": {
+        "party_results": [
+          { "party": "kor.gnp", "share": 0.4280, "seats": 152 },
+          { "party": "kor.dup", "share": 0.3646, "seats": 127 },
+          { "party": "kor.upp", "share": 0.1031, "seats": 13 },
+          { "party": "kor.lfp", "share": 0.0324, "seats": 5 },
+          { "party": "independents", "seats": 3 }
+        ],
+        "winner": "kor.gnp",
+        "turnout": 0.5424,
+        "note": "300 seats. The GNP ran as the Saenuri Party. Shares are the party-list vote, computed from the results table.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2012_South_Korean_legislative_election", "title": "Wikipedia: 2012 South Korean legislative election (results table)", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "president_2012",
+      "date": "2012-12-19",
+      "kind": "presidential",
+      "office": "kor.president",
+      "historical": {
+        "candidates": [
+          { "person": "kor.park_geun_hye", "party": "kor.gnp", "share": 0.5156, "votes": 15773128, "round": 1 },
+          { "person": "kor.moon_jae_in", "party": "kor.dup", "share": 0.4802, "votes": 14692632, "round": 1 }
+        ],
+        "winner": "kor.park_geun_hye",
+        "turnout": 0.7584,
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2012_South_Korean_presidential_election", "title": "Wikipedia: 2012 South Korean presidential election", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "na_2016",
+      "date": "2016-04-13",
+      "kind": "legislative",
+      "chamber": "national_assembly",
+      "historical": {
+        "party_results": [
+          { "party": "kor.dpk", "share": 0.2555, "seats": 123 },
+          { "party": "kor.gnp", "share": 0.3350, "seats": 122 },
+          { "party": "kor.people_2016", "share": 0.2675, "seats": 38 },
+          { "party": "kor.justice", "share": 0.0724, "seats": 6 },
+          { "party": "independents", "seats": 11 }
+        ],
+        "winner": "kor.dpk",
+        "turnout": 0.5803,
+        "note": "300 seats. The GNP ran as the Saenuri Party and won the most list votes, but the Minjoo Party (kor.dpk) won the most seats. Shares are the party-list vote, computed from the results table.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2016_South_Korean_legislative_election", "title": "Wikipedia: 2016 South Korean legislative election (results table)", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "president_2017",
+      "date": "2017-05-09",
+      "kind": "presidential",
+      "office": "kor.president",
+      "snap": true,
+      "historical": {
+        "candidates": [
+          { "person": "kor.moon_jae_in", "party": "kor.dpk", "share": 0.4109, "votes": 13423800, "round": 1 },
+          { "person": "kor.hong_joon_pyo", "party": "kor.gnp", "share": 0.2404, "votes": 7852849, "round": 1 },
+          { "person": "kor.ahn_cheol_soo", "party": "kor.people_2016", "share": 0.2142, "votes": 6998342, "round": 1 },
+          { "person": "kor.yoo_seong_min", "party": "kor.bareun", "share": 0.0676, "votes": 2208771, "round": 1 },
+          { "person": "kor.sim_sang_jung", "party": "kor.justice", "share": 0.0617, "votes": 2017458, "round": 1 }
+        ],
+        "winner": "kor.moon_jae_in",
+        "turnout": 0.7723,
+        "note": "Early election after the removal of Park Geun-hye on 10 March 2017. Hong Joon-pyo ran for the Liberty Korea Party (kor.gnp).",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2017_South_Korean_presidential_election", "title": "Wikipedia: 2017 South Korean presidential election", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "na_2020",
+      "date": "2020-04-15",
+      "kind": "legislative",
+      "chamber": "national_assembly",
+      "historical": {
+        "party_results": [
+          { "party": "kor.dpk", "share": 0.3336, "seats": 180 },
+          { "party": "kor.ppp", "share": 0.3384, "seats": 103 },
+          { "party": "kor.justice", "share": 0.0967, "seats": 6 },
+          { "party": "kor.people_2020", "share": 0.0680, "seats": 3 },
+          { "party": "others", "share": 0.0542, "seats": 3 },
+          { "party": "independents", "seats": 5 }
+        ],
+        "winner": "kor.dpk",
+        "turnout": 0.6621,
+        "note": "300 seats. Both main parties ran satellite lists for the list vote: the Democratic Party with the Platform Party, and the United Future Party (kor.ppp) with the Future Korea Party; their list shares and seats are combined with the parent party, as in the results table. Others: Open Democratic Party (5.42%, 3 list seats).",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2020_South_Korean_legislative_election", "title": "Wikipedia: 2020 South Korean legislative election (results table)", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "president_2022",
+      "date": "2022-03-09",
+      "kind": "presidential",
+      "office": "kor.president",
+      "historical": {
+        "candidates": [
+          { "person": "kor.yoon_suk_yeol", "party": "kor.ppp", "share": 0.4856, "votes": 16394815, "round": 1 },
+          { "person": "kor.lee_jae_myung", "party": "kor.dpk", "share": 0.4783, "votes": 16147738, "round": 1 }
+        ],
+        "winner": "kor.yoon_suk_yeol",
+        "turnout": 0.7708,
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2022_South_Korean_presidential_election", "title": "Wikipedia: 2022 South Korean presidential election", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "na_2024",
+      "date": "2024-04-10",
+      "kind": "legislative",
+      "chamber": "national_assembly",
+      "historical": {
+        "party_results": [
+          { "party": "kor.dpk", "share": 0.2670, "seats": 169 },
+          { "party": "kor.ppp", "share": 0.3667, "seats": 108 },
+          { "party": "kor.rkp", "share": 0.2425, "seats": 12 },
+          { "party": "kor.reform", "share": 0.0362, "seats": 3 },
+          { "party": "others", "share": 0.0171, "seats": 6 },
+          { "party": "independents", "seats": 2 }
+        ],
+        "winner": "kor.dpk",
+        "turnout": 0.6699,
+        "note": "300 seats (254 constituency, 46 list). The People Power Party's list ran as the People Future Party; the Democratic Party's list ran as the Democratic Alliance of Korea (26.70%, 14 list seats shared with allies). Seats follow the results table: Democratic Party 169 (161 constituency + 8 list); others are the Progressive Party (3), the New Progressive Alliance (2) and the New Future Party (1, list share 1.71%); 2 Democratic Alliance list members sat as independents.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2024_South_Korean_legislative_election", "title": "Wikipedia: 2024 South Korean legislative election (results table)", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "president_2025",
+      "date": "2025-06-03",
+      "kind": "presidential",
+      "office": "kor.president",
+      "snap": true,
+      "historical": {
+        "candidates": [
+          { "person": "kor.lee_jae_myung", "party": "kor.dpk", "share": 0.4942, "votes": 17287513, "round": 1 },
+          { "person": "kor.kim_moon_soo", "party": "kor.ppp", "share": 0.4115, "votes": 14395639, "round": 1 },
+          { "person": "kor.lee_jun_seok", "party": "kor.reform", "share": 0.0834, "votes": 2917523, "round": 1 }
+        ],
+        "winner": "kor.lee_jae_myung",
+        "turnout": 0.7938,
+        "note": "Early election after the Constitutional Court removed Yoon Suk Yeol on 4 April 2025.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2025_South_Korean_presidential_election", "title": "Wikipedia: 2025 South Korean presidential election", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      }
+    }
+  ],
+  "source": [
+    { "url": "https://en.wikipedia.org/wiki/Elections_in_South_Korea", "title": "Wikipedia: Elections in South Korea", "accessed": "2026-10-15" },
+    { "url": "https://en.wikipedia.org/wiki/Constitution_of_South_Korea", "title": "Wikipedia: Constitution of South Korea (no referendums since 1987)", "accessed": "2026-10-15" }
+  ],
+  "confidence": "verified"
+}
