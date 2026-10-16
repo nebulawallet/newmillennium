@@ -1,0 +1,15 @@
+{
+  "note": "Influence and approval are gameplay starting values for 1 January 2000 (President Lukashenko in office since 1994, after the 1996 referendum), not measured data. Influence reflects a dominant presidential administration and security apparatus, a largely state-owned economy, state-controlled unions and media, and a small private sector.",
+  "interest_groups": [
+    { "type": "military", "influence": 0.25, "approval": 65 },
+    { "type": "security_services", "influence": 0.45, "approval": 75 },
+    { "type": "business", "influence": 0.15, "approval": 40, "note": "Small private sector; large enterprises remained state-owned." },
+    { "type": "labour_unions", "influence": 0.2, "approval": 55, "note": "Official federation of trade unions." },
+    { "type": "religious_establishment", "influence": 0.15, "approval": 60, "note": "Orthodox and Roman Catholic churches." },
+    { "type": "rural", "influence": 0.3, "approval": 70, "note": "Collective and state farms." },
+    { "type": "urban_middle_class", "influence": 0.15, "approval": 40 },
+    { "type": "minorities", "influence": 0.1, "approval": 55, "note": "Russian, Polish and Ukrainian minorities." },
+    { "type": "youth_students", "influence": 0.1, "approval": 40 },
+    { "type": "media", "influence": 0.25, "approval": 60, "note": "Mostly state-owned broadcasting." }
+  ]
+}

@@ -1,0 +1,710 @@
+{
+  "rules": [
+    {
+      "kind": "legislative",
+      "chamber": "verkhovna_rada",
+      "every_years": 5,
+      "anchor": "2019-07-21",
+      "snap_possible": true,
+      "note": "Four-year term until the 2004 constitutional amendments, five years from the 2006 election. The President may dissolve the Rada early (2007, 2014 and 2019 were early elections). The constitution bars Rada elections under martial law, in effect since 24 February 2022; no Rada election has been held since 2019."
+    },
+    {
+      "kind": "presidential",
+      "office": "ukr.president",
+      "every_years": 5,
+      "anchor": "2019-03-31",
+      "snap_possible": true,
+      "note": "Two-round direct election for a five-year term. The election scheduled for March or April 2024 was not held because martial law has been in effect since 24 February 2022 (full-scale Russian invasion) and Ukrainian law does not allow elections under martial law; the incumbent remains in office."
+    }
+  ],
+  "elections": [
+    {
+      "id": "referendum_2000",
+      "date": "2000-04-16",
+      "kind": "referendum",
+      "question": "Four constitutional amendments proposed by President Kuchma: (1) additional grounds for the President to dissolve the Verkhovna Rada; (2) limiting deputies' immunity; (3) reducing the Rada from 450 to 300 deputies; (4) creating a second chamber representing the regions.",
+      "historical": {
+        "options": [
+          {
+            "label": "Q1 Additional grounds to dissolve parliament: yes",
+            "share": 0.8592,
+            "votes": 25177984
+          },
+          {
+            "label": "Q2 Limit parliamentary immunity: yes",
+            "share": 0.9024,
+            "votes": 26461382
+          },
+          {
+            "label": "Q3 Reduce parliament to 300 deputies: yes",
+            "share": 0.9114,
+            "votes": 26730432
+          },
+          {
+            "label": "Q4 Bicameral parliament: yes",
+            "share": 0.8294,
+            "votes": 24284220
+          }
+        ],
+        "yes_share": 0.8592,
+        "turnout": 0.8108,
+        "note": "All four questions were approved (shares are 'for' votes of valid votes per question; yes_share repeats question 1). The Verkhovna Rada never implemented the amendments.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2000_Ukrainian_constitutional_referendum",
+            "title": "Wikipedia: 2000 Ukrainian constitutional referendum (Nohlen & Stover figures)",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "rada_2002",
+      "date": "2002-03-31",
+      "kind": "legislative",
+      "chamber": "verkhovna_rada",
+      "historical": {
+        "party_results": [
+          {
+            "party": "ukr.our_ukraine",
+            "share": 0.2449,
+            "seats": 113
+          },
+          {
+            "party": "ukr.za_yedu",
+            "share": 0.1223,
+            "seats": 101
+          },
+          {
+            "party": "ukr.kpu",
+            "share": 0.2076,
+            "seats": 64
+          },
+          {
+            "party": "ukr.sdpuo",
+            "share": 0.0652,
+            "seats": 24
+          },
+          {
+            "party": "ukr.spu",
+            "share": 0.0714,
+            "seats": 23
+          },
+          {
+            "party": "ukr.batkivshchyna",
+            "share": 0.0754,
+            "seats": 22
+          },
+          {
+            "party": "others",
+            "seats": 9
+          },
+          {
+            "party": "independents",
+            "seats": 94
+          }
+        ],
+        "winner": "ukr.our_ukraine",
+        "turnout": 0.6927,
+        "note": "Parallel system: 225 list seats (4% threshold) and 225 single-member districts. Shares are list votes; seats are list plus district seats. Our Ukraine and the Yulia Tymoshenko Bloc were electoral blocs, recorded here under ukr.our_ukraine and ukr.batkivshchyna (the bloc's leading party). Others: Unity 3, Democratic Party-Democratic Union 4, Ukrainian Marine Party 1, Party of National Economic Development 1.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2002_Ukrainian_parliamentary_election",
+            "title": "Wikipedia: 2002 Ukrainian parliamentary election",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "presidential_2004",
+      "date": "2004-10-31",
+      "kind": "presidential",
+      "office": "ukr.president",
+      "rounds": 2,
+      "historical": {
+        "candidates": [
+          {
+            "person": "ukr.viktor_yushchenko",
+            "party": "ukr.our_ukraine",
+            "votes": 11188675,
+            "round": 1
+          },
+          {
+            "person": "ukr.viktor_yanukovych",
+            "party": "ukr.regions",
+            "votes": 11008731,
+            "round": 1
+          },
+          {
+            "person": "ukr.oleksandr_moroz",
+            "party": "ukr.spu",
+            "votes": 1632098,
+            "round": 1
+          },
+          {
+            "person": "ukr.petro_symonenko",
+            "party": "ukr.kpu",
+            "votes": 1396135,
+            "round": 1
+          },
+          {
+            "person": "ukr.nataliya_vitrenko",
+            "party": "ukr.pspu",
+            "votes": 429794,
+            "round": 1
+          },
+          {
+            "person": "ukr.viktor_yushchenko",
+            "party": "ukr.our_ukraine",
+            "share": 0.5277,
+            "votes": 15115712,
+            "round": 2
+          },
+          {
+            "person": "ukr.viktor_yanukovych",
+            "party": "ukr.regions",
+            "share": 0.4485,
+            "votes": 12848528,
+            "round": 2
+          }
+        ],
+        "winner": "ukr.viktor_yushchenko",
+        "note": "First round 31 October 2004. The run-off of 21 November 2004 (official count: Yanukovych 15,093,691, Yushchenko 14,222,289) was declared invalid by the Supreme Court on 3 December 2004, which ordered a repeat. Round 2 here is the repeat run-off of 26 December 2004. Round-2 shares are the infobox figures for the repeat run-off. Yushchenko ran as the nominee of the Our Ukraine bloc.",
+        "turnout": 0.7728,
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2004_Ukrainian_presidential_election",
+            "title": "Wikipedia: 2004 Ukrainian presidential election (results table, all three ballots)",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "rada_2006",
+      "date": "2006-03-26",
+      "kind": "legislative",
+      "chamber": "verkhovna_rada",
+      "historical": {
+        "party_results": [
+          {
+            "party": "ukr.regions",
+            "share": 0.3278,
+            "seats": 186
+          },
+          {
+            "party": "ukr.batkivshchyna",
+            "share": 0.2275,
+            "seats": 129
+          },
+          {
+            "party": "ukr.our_ukraine",
+            "share": 0.1424,
+            "seats": 81
+          },
+          {
+            "party": "ukr.spu",
+            "share": 0.0581,
+            "seats": 33
+          },
+          {
+            "party": "ukr.kpu",
+            "share": 0.0374,
+            "seats": 21
+          }
+        ],
+        "winner": "ukr.regions",
+        "turnout": 0.6755,
+        "note": "First election with all 450 seats by closed-list PR (3% threshold). Yulia Tymoshenko Bloc recorded under ukr.batkivshchyna; Our Ukraine bloc under ukr.our_ukraine.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2006_Ukrainian_parliamentary_election",
+            "title": "Wikipedia: 2006 Ukrainian parliamentary election",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "rada_2007",
+      "date": "2007-09-30",
+      "kind": "legislative",
+      "chamber": "verkhovna_rada",
+      "snap": true,
+      "historical": {
+        "party_results": [
+          {
+            "party": "ukr.regions",
+            "share": 0.3494,
+            "seats": 175
+          },
+          {
+            "party": "ukr.batkivshchyna",
+            "share": 0.3123,
+            "seats": 156
+          },
+          {
+            "party": "ukr.our_ukraine",
+            "share": 0.1439,
+            "seats": 72
+          },
+          {
+            "party": "ukr.kpu",
+            "share": 0.0548,
+            "seats": 27
+          },
+          {
+            "party": "ukr.peoples_party",
+            "share": 0.0403,
+            "seats": 20
+          },
+          {
+            "party": "ukr.spu",
+            "seats": 0
+          }
+        ],
+        "winner": "ukr.regions",
+        "turnout": 0.6203,
+        "note": "Early election after the 2007 dissolution of the Rada. Yulia Tymoshenko Bloc under ukr.batkivshchyna; Our Ukraine-People's Self-Defense bloc under ukr.our_ukraine; Lytvyn Bloc under ukr.peoples_party (its leading party).",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2007_Ukrainian_parliamentary_election",
+            "title": "Wikipedia: 2007 Ukrainian parliamentary election",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "presidential_2010",
+      "date": "2010-01-17",
+      "kind": "presidential",
+      "office": "ukr.president",
+      "rounds": 2,
+      "historical": {
+        "candidates": [
+          {
+            "person": "ukr.viktor_yanukovych",
+            "party": "ukr.regions",
+            "votes": 8686642,
+            "round": 1
+          },
+          {
+            "person": "ukr.yulia_tymoshenko",
+            "party": "ukr.batkivshchyna",
+            "votes": 6159810,
+            "round": 1
+          },
+          {
+            "person": "ukr.serhiy_tihipko",
+            "votes": 3211198,
+            "round": 1
+          },
+          {
+            "person": "ukr.arseniy_yatsenyuk",
+            "votes": 1711737,
+            "round": 1
+          },
+          {
+            "person": "ukr.viktor_yushchenko",
+            "votes": 1341534,
+            "round": 1
+          },
+          {
+            "person": "ukr.petro_symonenko",
+            "party": "ukr.kpu",
+            "votes": 872877,
+            "round": 1
+          },
+          {
+            "person": "ukr.volodymyr_lytvyn",
+            "party": "ukr.peoples_party",
+            "votes": 578883,
+            "round": 1
+          },
+          {
+            "person": "ukr.viktor_yanukovych",
+            "party": "ukr.regions",
+            "share": 0.4955,
+            "votes": 12481266,
+            "round": 2
+          },
+          {
+            "person": "ukr.yulia_tymoshenko",
+            "party": "ukr.batkivshchyna",
+            "share": 0.4603,
+            "votes": 11593357,
+            "round": 2
+          }
+        ],
+        "winner": "ukr.viktor_yanukovych",
+        "turnout": 0.6881,
+        "note": "Run-off 7 February 2010. Shares in round 2 are of all ballots including 'against all' (infobox). Tihipko ran for Strong Ukraine; Yatsenyuk and Yushchenko ran as independents.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2010_Ukrainian_presidential_election",
+            "title": "Wikipedia: 2010 Ukrainian presidential election",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "rada_2012",
+      "date": "2012-10-28",
+      "kind": "legislative",
+      "chamber": "verkhovna_rada",
+      "historical": {
+        "party_results": [
+          {
+            "party": "ukr.regions",
+            "share": 0.3,
+            "seats": 185
+          },
+          {
+            "party": "ukr.batkivshchyna",
+            "share": 0.2555,
+            "seats": 101
+          },
+          {
+            "party": "ukr.udar",
+            "share": 0.1397,
+            "seats": 40
+          },
+          {
+            "party": "ukr.svoboda",
+            "share": 0.1045,
+            "seats": 37
+          },
+          {
+            "party": "ukr.kpu",
+            "share": 0.1318,
+            "seats": 32
+          },
+          {
+            "party": "ukr.radical",
+            "seats": 1
+          },
+          {
+            "party": "others",
+            "seats": 6
+          },
+          {
+            "party": "independents",
+            "seats": 43
+          },
+          {
+            "party": "vacant",
+            "seats": 5
+          }
+        ],
+        "winner": "ukr.regions",
+        "turnout": 0.5743,
+        "note": "Parallel system restored: 225 list seats (5% threshold) and 225 districts; five district seats were left unfilled. Others: People's Party 2, United Centre 3, Soyuz 1. Batkivshchyna ran as the joint list of the united opposition, headed by Arseniy Yatsenyuk.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2012_Ukrainian_parliamentary_election",
+            "title": "Wikipedia: 2012 Ukrainian parliamentary election",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "presidential_2014",
+      "date": "2014-05-25",
+      "kind": "presidential",
+      "office": "ukr.president",
+      "snap": true,
+      "rounds": 1,
+      "historical": {
+        "candidates": [
+          {
+            "person": "ukr.petro_poroshenko",
+            "share": 0.5546,
+            "votes": 9857308,
+            "round": 1
+          },
+          {
+            "person": "ukr.yulia_tymoshenko",
+            "party": "ukr.batkivshchyna",
+            "share": 0.13,
+            "votes": 2310050,
+            "round": 1
+          },
+          {
+            "person": "ukr.oleh_liashko",
+            "party": "ukr.radical",
+            "share": 0.0844,
+            "votes": 1500377,
+            "round": 1
+          },
+          {
+            "person": "ukr.anatoliy_hrytsenko",
+            "share": 0.0556,
+            "votes": 989029,
+            "round": 1
+          },
+          {
+            "person": "ukr.serhiy_tihipko",
+            "share": 0.0531,
+            "votes": 943430,
+            "round": 1
+          }
+        ],
+        "winner": "ukr.petro_poroshenko",
+        "turnout": 0.5988,
+        "note": "Early election after the Verkhovna Rada's 22 February 2014 resolution removing Viktor Yanukovych. Poroshenko won an absolute majority in the first round. No voting took place in Crimea, and voting was prevented in parts of Donetsk and Luhansk oblasts. Poroshenko ran as an independent backed by UDAR; Hrytsenko for Civil Position.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2014_Ukrainian_presidential_election",
+            "title": "Wikipedia: 2014 Ukrainian presidential election",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "rada_2014",
+      "date": "2014-10-26",
+      "kind": "legislative",
+      "chamber": "verkhovna_rada",
+      "snap": true,
+      "historical": {
+        "party_results": [
+          {
+            "party": "ukr.european_solidarity",
+            "share": 0.2182,
+            "seats": 131
+          },
+          {
+            "party": "ukr.peoples_front",
+            "share": 0.2214,
+            "seats": 82
+          },
+          {
+            "party": "ukr.self_reliance",
+            "share": 0.1098,
+            "seats": 33
+          },
+          {
+            "party": "ukr.opposition_bloc",
+            "share": 0.0943,
+            "seats": 29
+          },
+          {
+            "party": "ukr.radical",
+            "share": 0.0745,
+            "seats": 22
+          },
+          {
+            "party": "ukr.batkivshchyna",
+            "share": 0.0568,
+            "seats": 20
+          },
+          {
+            "party": "ukr.svoboda",
+            "share": 0.0471,
+            "seats": 6
+          },
+          {
+            "party": "ukr.kpu",
+            "seats": 0
+          },
+          {
+            "party": "others",
+            "seats": 3
+          },
+          {
+            "party": "independents",
+            "seats": 97
+          },
+          {
+            "party": "vacant",
+            "seats": 27
+          }
+        ],
+        "winner": "ukr.european_solidarity",
+        "turnout": 0.5191,
+        "note": "Early election. People's Front won the most list votes, but the Petro Poroshenko Bloc (later European Solidarity) won the most seats and is recorded as the winner. 27 seats (Crimea, Sevastopol and districts in Donetsk and Luhansk oblasts) were not filled. Others: Strong Ukraine 1, Zastup 1, Right Sector 1.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2014_Ukrainian_parliamentary_election",
+            "title": "Wikipedia: 2014 Ukrainian parliamentary election",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "presidential_2019",
+      "date": "2019-03-31",
+      "kind": "presidential",
+      "office": "ukr.president",
+      "rounds": 2,
+      "historical": {
+        "candidates": [
+          {
+            "person": "ukr.volodymyr_zelenskyy",
+            "party": "ukr.servant",
+            "votes": 5714034,
+            "round": 1
+          },
+          {
+            "person": "ukr.petro_poroshenko",
+            "party": "ukr.european_solidarity",
+            "votes": 3014609,
+            "round": 1
+          },
+          {
+            "person": "ukr.yulia_tymoshenko",
+            "party": "ukr.batkivshchyna",
+            "votes": 2532452,
+            "round": 1
+          },
+          {
+            "person": "ukr.yuriy_boyko",
+            "party": "ukr.opzzh",
+            "votes": 2206216,
+            "round": 1
+          },
+          {
+            "person": "ukr.anatoliy_hrytsenko",
+            "votes": 1306450,
+            "round": 1
+          },
+          {
+            "person": "ukr.ihor_smeshko",
+            "votes": 1141332,
+            "round": 1
+          },
+          {
+            "person": "ukr.oleh_liashko",
+            "party": "ukr.radical",
+            "votes": 1036003,
+            "round": 1
+          },
+          {
+            "person": "ukr.volodymyr_zelenskyy",
+            "party": "ukr.servant",
+            "share": 0.7496,
+            "votes": 13541528,
+            "round": 2
+          },
+          {
+            "person": "ukr.petro_poroshenko",
+            "party": "ukr.european_solidarity",
+            "share": 0.2504,
+            "votes": 4522450,
+            "round": 2
+          }
+        ],
+        "winner": "ukr.volodymyr_zelenskyy",
+        "turnout": 0.6142,
+        "note": "Run-off 21 April 2019. Poroshenko and Boyko ran as independents backed by the Petro Poroshenko Bloc and Opposition Platform-For Life respectively; Hrytsenko for Civil Position; Smeshko as an independent.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2019_Ukrainian_presidential_election",
+            "title": "Wikipedia: 2019 Ukrainian presidential election",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "rada_2019",
+      "date": "2019-07-21",
+      "kind": "legislative",
+      "chamber": "verkhovna_rada",
+      "snap": true,
+      "historical": {
+        "party_results": [
+          {
+            "party": "ukr.servant",
+            "share": 0.4316,
+            "seats": 254
+          },
+          {
+            "party": "ukr.opzzh",
+            "share": 0.1306,
+            "seats": 43
+          },
+          {
+            "party": "ukr.batkivshchyna",
+            "share": 0.0819,
+            "seats": 26
+          },
+          {
+            "party": "ukr.european_solidarity",
+            "share": 0.0811,
+            "seats": 25
+          },
+          {
+            "party": "ukr.holos",
+            "share": 0.0583,
+            "seats": 20
+          },
+          {
+            "party": "ukr.svoboda",
+            "seats": 1
+          },
+          {
+            "party": "ukr.self_reliance",
+            "seats": 1
+          },
+          {
+            "party": "ukr.radical",
+            "seats": 0
+          },
+          {
+            "party": "others",
+            "seats": 8
+          },
+          {
+            "party": "independents",
+            "seats": 46
+          },
+          {
+            "party": "vacant",
+            "seats": 26
+          }
+        ],
+        "winner": "ukr.servant",
+        "turnout": 0.4924,
+        "note": "Early election. 26 seats in occupied areas were not filled. Others: Opposition Bloc (2019) 6, United Centre 1, Bila Tserkva Together 1.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2019_Ukrainian_parliamentary_election",
+            "title": "Wikipedia: 2019 Ukrainian parliamentary election",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    }
+  ],
+  "source": [
+    {
+      "url": "https://en.wikipedia.org/wiki/Elections_in_Ukraine",
+      "title": "Wikipedia: Elections in Ukraine",
+      "accessed": "2026-10-16"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/2024_Ukrainian_presidential_election",
+      "title": "Wikipedia: 2024 Ukrainian presidential election (not held; martial law since 24 February 2022)",
+      "accessed": "2026-10-16"
+    }
+  ],
+  "confidence": "verified"
+}

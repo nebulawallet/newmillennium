@@ -1,0 +1,796 @@
+{
+  "rules": [
+    {
+      "kind": "legislative",
+      "chamber": "parliament",
+      "every_years": 4,
+      "anchor": "2025-09-28",
+      "snap_possible": true,
+      "note": "101 seats. Early elections were held in 2001, July 2009 and 2010 (after failures to elect a President or a failed referendum under the 2000-2016 system)."
+    },
+    {
+      "kind": "presidential",
+      "office": "mda.president",
+      "every_years": 4,
+      "anchor": "2024-10-20",
+      "snap_possible": true,
+      "note": "Direct two-round election since 2016, after the Constitutional Court struck down the 2000 revision; from 2001 to 2012 the President was elected by Parliament with a three-fifths (61-vote) majority."
+    }
+  ],
+  "elections": [
+    {
+      "id": "parliament_2001",
+      "date": "2001-02-25",
+      "kind": "legislative",
+      "chamber": "parliament",
+      "historical": {
+        "party_results": [
+          {
+            "party": "mda.pcrm",
+            "share": 0.5007,
+            "seats": 71
+          },
+          {
+            "party": "mda.braghis",
+            "share": 0.1336,
+            "seats": 19
+          },
+          {
+            "party": "mda.ppcd",
+            "share": 0.0824,
+            "seats": 11
+          }
+        ],
+        "winner": "mda.pcrm",
+        "turnout": 0.6752,
+        "note": "Closed-list PR in one national constituency; in 2000 the threshold was raised to 6% for parties and blocs and lowered to 3% for independents.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2001_Moldovan_parliamentary_election",
+            "title": "Wikipedia: 2001 Moldovan parliamentary election",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "presidential_2001",
+      "date": "2001-04-04",
+      "kind": "indirect_presidential",
+      "office": "mda.president",
+      "historical": {
+        "candidates": [
+          {
+            "person": "mda.vladimir_voronin",
+            "party": "mda.pcrm",
+            "votes": 71,
+            "round": 1
+          },
+          {
+            "person": "mda.dumitru_braghis",
+            "party": "mda.braghis",
+            "votes": 15,
+            "round": 1
+          }
+        ],
+        "winner": "mda.vladimir_voronin",
+        "note": "Elected by Parliament (votes are deputies' votes; 89 deputies took part, and Valerian Cristea received 3). By this time the constitution provided for election of the President by Parliament instead of by popular vote. Voronin was sworn in on 7 April 2001.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2001_Moldovan_presidential_election",
+            "title": "Wikipedia: 2001 Moldovan presidential election",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "parliament_2005",
+      "date": "2005-03-06",
+      "kind": "legislative",
+      "chamber": "parliament",
+      "historical": {
+        "party_results": [
+          {
+            "party": "mda.pcrm",
+            "share": 0.4598,
+            "seats": 56
+          },
+          {
+            "party": "mda.amn",
+            "share": 0.2853,
+            "seats": 34
+          },
+          {
+            "party": "mda.ppcd",
+            "share": 0.0907,
+            "seats": 11
+          }
+        ],
+        "winner": "mda.pcrm",
+        "turnout": 0.6884,
+        "note": "The Democratic Moldova electoral bloc, led by Serafim Urechean, is recorded under mda.amn (Our Moldova Alliance, its leading party).",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2005_Moldovan_parliamentary_election",
+            "title": "Wikipedia: 2005 Moldovan parliamentary election",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "presidential_2005",
+      "date": "2005-04-04",
+      "kind": "indirect_presidential",
+      "office": "mda.president",
+      "historical": {
+        "candidates": [
+          {
+            "person": "mda.vladimir_voronin",
+            "party": "mda.pcrm",
+            "votes": 75,
+            "round": 1
+          },
+          {
+            "person": "mda.gheorghe_duca",
+            "votes": 1,
+            "round": 1
+          }
+        ],
+        "winner": "mda.vladimir_voronin",
+        "note": "Elected by Parliament (deputies' votes).",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2005_Moldovan_presidential_election",
+            "title": "Wikipedia: 2005 Moldovan presidential election",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "parliament_2009_april",
+      "date": "2009-04-05",
+      "kind": "legislative",
+      "chamber": "parliament",
+      "historical": {
+        "party_results": [
+          {
+            "party": "mda.pcrm",
+            "share": 0.4948,
+            "seats": 60
+          },
+          {
+            "party": "mda.pl",
+            "share": 0.1313,
+            "seats": 15
+          },
+          {
+            "party": "mda.pldm",
+            "share": 0.1243,
+            "seats": 15
+          },
+          {
+            "party": "mda.amn",
+            "share": 0.0977,
+            "seats": 11
+          }
+        ],
+        "winner": "mda.pcrm",
+        "turnout": 0.5755,
+        "note": "The Party of Communists won 60 seats, one short of the 61 needed to elect a President; Parliament's failure to elect one in May-June 2009 made an early election necessary.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/April_2009_Moldovan_parliamentary_election",
+            "title": "Wikipedia: April 2009 Moldovan parliamentary election",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "presidential_2009_may",
+      "date": "2009-05-20",
+      "kind": "indirect_presidential",
+      "office": "mda.president",
+      "rounds": 2,
+      "historical": {
+        "candidates": [
+          {
+            "person": "mda.zinaida_greceanii",
+            "party": "mda.pcrm",
+            "votes": 60,
+            "round": 1
+          },
+          {
+            "person": "mda.zinaida_greceanii",
+            "party": "mda.pcrm",
+            "votes": 60,
+            "round": 2
+          }
+        ],
+        "note": "Failed: 61 votes were required. Rounds on 20 May and 3 June 2009; the opposition boycotted. Other PCRM nominees (Stanislav Groppa, Andrei Neguta) received no votes. The failure led to the early election of July 2009.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/Moldovan_presidential_election,_May–June_2009",
+            "title": "Wikipedia: Moldovan presidential election, May–June 2009",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "parliament_2009_july",
+      "date": "2009-07-29",
+      "kind": "legislative",
+      "chamber": "parliament",
+      "snap": true,
+      "historical": {
+        "party_results": [
+          {
+            "party": "mda.pcrm",
+            "share": 0.4469,
+            "seats": 48
+          },
+          {
+            "party": "mda.pldm",
+            "share": 0.1657,
+            "seats": 18
+          },
+          {
+            "party": "mda.pl",
+            "share": 0.1468,
+            "seats": 15
+          },
+          {
+            "party": "mda.pdm",
+            "share": 0.1254,
+            "seats": 13
+          },
+          {
+            "party": "mda.amn",
+            "share": 0.0735,
+            "seats": 7
+          }
+        ],
+        "winner": "mda.pcrm",
+        "turnout": 0.5877,
+        "note": "Early election. The Liberal Democratic, Liberal, Democratic and Our Moldova parties (53 seats) formed the Alliance for European Integration but lacked the votes to elect a President.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/July_2009_Moldovan_parliamentary_election",
+            "title": "Wikipedia: July 2009 Moldovan parliamentary election",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "presidential_2009_nov",
+      "date": "2009-11-10",
+      "kind": "indirect_presidential",
+      "office": "mda.president",
+      "rounds": 2,
+      "historical": {
+        "candidates": [
+          {
+            "person": "mda.marian_lupu",
+            "party": "mda.pdm",
+            "round": 1
+          }
+        ],
+        "note": "Failed: the Alliance for European Integration nominated Marian Lupu, but the Party of Communists boycotted both attempts (10 November and 7 December 2009). Vote counts were not in the fetched source.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/November–December_2009_Moldovan_presidential_election",
+            "title": "Wikipedia: November–December 2009 Moldovan presidential election",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "needs_review",
+        "review_note": "Add Lupu's vote totals in each round (the fetched article does not give them)."
+      }
+    },
+    {
+      "id": "referendum_2010",
+      "date": "2010-09-05",
+      "kind": "referendum",
+      "question": "Would you agree with the Constitutional amendment which would allow the election of the President of the Republic of Moldova by the entire population?",
+      "historical": {
+        "yes_share": 0.8783,
+        "turnout": 0.3029,
+        "note": "707,468 for and 97,999 against. The proposal failed because turnout was below the 33% required for validity; the share and turnout are computed from the official figures (12,962 invalid ballots, 2,701,918 registered voters).",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2010_Moldovan_constitutional_referendum",
+            "title": "Wikipedia: 2010 Moldovan constitutional referendum",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "parliament_2010",
+      "date": "2010-11-28",
+      "kind": "legislative",
+      "chamber": "parliament",
+      "snap": true,
+      "historical": {
+        "party_results": [
+          {
+            "party": "mda.pcrm",
+            "share": 0.3934,
+            "seats": 42
+          },
+          {
+            "party": "mda.pldm",
+            "share": 0.2942,
+            "seats": 32
+          },
+          {
+            "party": "mda.pdm",
+            "share": 0.127,
+            "seats": 15
+          },
+          {
+            "party": "mda.pl",
+            "share": 0.0996,
+            "seats": 12
+          }
+        ],
+        "winner": "mda.pcrm",
+        "turnout": 0.6164,
+        "note": "Early election held after the 2010 referendum failed.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2010_Moldovan_parliamentary_election",
+            "title": "Wikipedia: 2010 Moldovan parliamentary election",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "presidential_2012",
+      "date": "2012-03-16",
+      "kind": "indirect_presidential",
+      "office": "mda.president",
+      "historical": {
+        "candidates": [
+          {
+            "person": "mda.nicolae_timofti",
+            "votes": 62,
+            "round": 1
+          }
+        ],
+        "winner": "mda.nicolae_timofti",
+        "note": "Elected by Parliament with 62 of 101 votes; the Party of Communists boycotted the vote. Earlier attempts on 16 December 2011 (no candidate) and 15 January 2012 (annulled) failed. Acting presidents served from September 2009 to March 2012.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2011–2012_Moldovan_presidential_election",
+            "title": "Wikipedia: 2011–2012 Moldovan presidential election",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "parliament_2014",
+      "date": "2014-11-30",
+      "kind": "legislative",
+      "chamber": "parliament",
+      "historical": {
+        "party_results": [
+          {
+            "party": "mda.psrm",
+            "share": 0.2051,
+            "seats": 25
+          },
+          {
+            "party": "mda.pldm",
+            "share": 0.2016,
+            "seats": 23
+          },
+          {
+            "party": "mda.pcrm",
+            "share": 0.1748,
+            "seats": 21
+          },
+          {
+            "party": "mda.pdm",
+            "share": 0.158,
+            "seats": 19
+          },
+          {
+            "party": "mda.pl",
+            "share": 0.0967,
+            "seats": 13
+          }
+        ],
+        "winner": "mda.psrm",
+        "turnout": 0.5579,
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2014_Moldovan_parliamentary_election",
+            "title": "Wikipedia: 2014 Moldovan parliamentary election",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "presidential_2016",
+      "date": "2016-10-30",
+      "kind": "presidential",
+      "office": "mda.president",
+      "rounds": 2,
+      "historical": {
+        "candidates": [
+          {
+            "person": "mda.igor_dodon",
+            "party": "mda.psrm",
+            "votes": 680550,
+            "round": 1
+          },
+          {
+            "person": "mda.maia_sandu",
+            "party": "mda.pas",
+            "votes": 549152,
+            "round": 1
+          },
+          {
+            "person": "mda.dumitru_ciubasenco",
+            "party": "mda.pn",
+            "votes": 85466,
+            "round": 1
+          },
+          {
+            "person": "mda.igor_dodon",
+            "party": "mda.psrm",
+            "share": 0.5211,
+            "votes": 834081,
+            "round": 2
+          },
+          {
+            "person": "mda.maia_sandu",
+            "party": "mda.pas",
+            "share": 0.4789,
+            "votes": 766593,
+            "round": 2
+          }
+        ],
+        "winner": "mda.igor_dodon",
+        "turnout": 0.5345,
+        "note": "First direct presidential election since 1996, after the Constitutional Court ruled on 4 March 2016 that the 2000 revision introducing election by Parliament was unconstitutional. Run-off 13 November 2016.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2016_Moldovan_presidential_election",
+            "title": "Wikipedia: 2016 Moldovan presidential election",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "parliament_2019",
+      "date": "2019-02-24",
+      "kind": "legislative",
+      "chamber": "parliament",
+      "historical": {
+        "party_results": [
+          {
+            "party": "mda.psrm",
+            "share": 0.3115,
+            "seats": 35
+          },
+          {
+            "party": "mda.pdm",
+            "share": 0.2362,
+            "seats": 30
+          },
+          {
+            "party": "mda.pas",
+            "share": 0.2684,
+            "seats": 26
+          },
+          {
+            "party": "mda.sor",
+            "share": 0.0832,
+            "seats": 7
+          },
+          {
+            "party": "independents",
+            "seats": 3
+          }
+        ],
+        "winner": "mda.psrm",
+        "turnout": 0.4924,
+        "note": "Mixed system used only in 2019: 50 seats by national list PR and 51 in single-member districts. The ACUM bloc of the Party of Action and Solidarity and the Dignity and Truth Platform (led by Maia Sandu and Andrei Nastase) is recorded under mda.pas. Shares are list votes.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2019_Moldovan_parliamentary_election",
+            "title": "Wikipedia: 2019 Moldovan parliamentary election",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "referendum_2019",
+      "date": "2019-02-24",
+      "kind": "referendum",
+      "question": "Consultative referendum: (1) reducing the number of MPs from 101 to 61; (2) introducing the right to recall MPs.",
+      "historical": {
+        "options": [
+          {
+            "label": "Q1 Reduce Parliament to 61 seats: yes",
+            "share": 0.7366,
+            "votes": 744529
+          },
+          {
+            "label": "Q2 Right to recall MPs: yes",
+            "share": 0.7997,
+            "votes": 808266
+          }
+        ],
+        "yes_share": 0.7366,
+        "turnout": 0.3895,
+        "note": "Non-binding; held with the parliamentary election. Both questions were approved (shares of valid votes; yes_share repeats question 1).",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2019_Moldovan_referendum",
+            "title": "Wikipedia: 2019 Moldovan referendum",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "presidential_2020",
+      "date": "2020-11-01",
+      "kind": "presidential",
+      "office": "mda.president",
+      "rounds": 2,
+      "historical": {
+        "candidates": [
+          {
+            "person": "mda.maia_sandu",
+            "party": "mda.pas",
+            "votes": 487635,
+            "round": 1
+          },
+          {
+            "person": "mda.igor_dodon",
+            "party": "mda.psrm",
+            "votes": 439866,
+            "round": 1
+          },
+          {
+            "person": "mda.renato_usatii",
+            "party": "mda.pn",
+            "votes": 227939,
+            "round": 1
+          },
+          {
+            "person": "mda.violeta_ivanov",
+            "party": "mda.sor",
+            "votes": 87542,
+            "round": 1
+          },
+          {
+            "person": "mda.maia_sandu",
+            "party": "mda.pas",
+            "share": 0.5772,
+            "votes": 943006,
+            "round": 2
+          },
+          {
+            "person": "mda.igor_dodon",
+            "party": "mda.psrm",
+            "share": 0.4228,
+            "votes": 690615,
+            "round": 2
+          }
+        ],
+        "winner": "mda.maia_sandu",
+        "turnout": 0.5276,
+        "note": "Run-off 15 November 2020. Dodon ran as an independent backed by the Party of Socialists.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2020_Moldovan_presidential_election",
+            "title": "Wikipedia: 2020 Moldovan presidential election",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "parliament_2021",
+      "date": "2021-07-11",
+      "kind": "legislative",
+      "chamber": "parliament",
+      "historical": {
+        "party_results": [
+          {
+            "party": "mda.pas",
+            "share": 0.528,
+            "seats": 63
+          },
+          {
+            "party": "mda.psrm",
+            "share": 0.2717,
+            "seats": 32
+          },
+          {
+            "party": "mda.sor",
+            "share": 0.0574,
+            "seats": 6
+          }
+        ],
+        "winner": "mda.pas",
+        "turnout": 0.4841,
+        "note": "The Bloc of Communists and Socialists (BECS), headed by Vladimir Voronin, is recorded under mda.psrm.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2021_Moldovan_parliamentary_election",
+            "title": "Wikipedia: 2021 Moldovan parliamentary election",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "presidential_2024",
+      "date": "2024-10-20",
+      "kind": "presidential",
+      "office": "mda.president",
+      "rounds": 2,
+      "historical": {
+        "candidates": [
+          {
+            "person": "mda.maia_sandu",
+            "party": "mda.pas",
+            "votes": 656852,
+            "round": 1
+          },
+          {
+            "person": "mda.alexandr_stoianoglo",
+            "party": "mda.psrm",
+            "votes": 401215,
+            "round": 1
+          },
+          {
+            "person": "mda.renato_usatii",
+            "party": "mda.pn",
+            "votes": 213169,
+            "round": 1
+          },
+          {
+            "person": "mda.irina_vlah",
+            "votes": 83193,
+            "round": 1
+          },
+          {
+            "person": "mda.maia_sandu",
+            "party": "mda.pas",
+            "share": 0.5535,
+            "votes": 930139,
+            "round": 2
+          },
+          {
+            "person": "mda.alexandr_stoianoglo",
+            "party": "mda.psrm",
+            "share": 0.4465,
+            "votes": 750430,
+            "round": 2
+          }
+        ],
+        "winner": "mda.maia_sandu",
+        "turnout": 0.5429,
+        "note": "Run-off 3 November 2024. Sandu ran as an independent backed by PAS; Stoianoglo as an independent backed by the Party of Socialists; Vlah as an independent.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2024_Moldovan_presidential_election",
+            "title": "Wikipedia: 2024 Moldovan presidential election",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "referendum_2024_eu",
+      "date": "2024-10-20",
+      "kind": "referendum",
+      "question": "Do you support the amendment of the Constitution with a view to the accession of the Republic of Moldova to the European Union?",
+      "historical": {
+        "yes_share": 0.5035,
+        "note": "749,719 yes and 739,155 no (share computed of yes plus no votes); held alongside the first round of the presidential election.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2024_Moldovan_European_Union_membership_referendum",
+            "title": "Wikipedia: 2024 Moldovan European Union membership referendum",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "parliament_2025",
+      "date": "2025-09-28",
+      "kind": "legislative",
+      "chamber": "parliament",
+      "historical": {
+        "party_results": [
+          {
+            "party": "mda.pas",
+            "share": 0.502,
+            "seats": 55
+          },
+          {
+            "party": "mda.psrm",
+            "share": 0.242,
+            "seats": 26
+          },
+          {
+            "party": "mda.alternative",
+            "share": 0.0796,
+            "seats": 8
+          },
+          {
+            "party": "mda.pn",
+            "share": 0.062,
+            "seats": 6
+          },
+          {
+            "party": "mda.ppda",
+            "share": 0.0562,
+            "seats": 6
+          }
+        ],
+        "winner": "mda.pas",
+        "turnout": 0.5221,
+        "note": "The Patriotic Electoral Bloc, led by Igor Dodon, is recorded under mda.psrm.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2025_Moldovan_parliamentary_election",
+            "title": "Wikipedia: 2025 Moldovan parliamentary election",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    }
+  ],
+  "source": [
+    {
+      "url": "https://en.wikipedia.org/wiki/President_of_Moldova",
+      "title": "Wikipedia: President of Moldova",
+      "accessed": "2026-10-16"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/2010_Moldovan_constitutional_referendum",
+      "title": "Wikipedia: 2010 Moldovan constitutional referendum",
+      "accessed": "2026-10-16"
+    }
+  ],
+  "confidence": "verified"
+}

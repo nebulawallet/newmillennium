@@ -1,0 +1,107 @@
+{
+  "tag": "PMR",
+  "name": { "en": "Transnistria", "native": "Приднестровье", "native_latin": "Pridnestrovye", "official": { "en": "Pridnestrovian Moldavian Republic", "native": "Приднестровская Молдавская Республика" } },
+  "adjective": "Transnistrian",
+  "culture_primary": "transnistrian",
+  "government": {
+    "type": "presidential",
+    "effective_executive": "pmr.president",
+    "head_of_state_office": "pmr.president",
+    "head_of_government_office": "pmr.prime_minister",
+    "constitution": {
+      "term_limit_amendable": true,
+      "emergency_powers": true,
+      "referendum_required_for": []
+    },
+    "note": "Unrecognised de facto state that is de jure part of Moldova. The directly elected President (Igor Smirnov from 1991) headed both state and government in 2000; a Vice President existed until 2011. Amendments of June 2011 created the post of Prime Minister (Chairman of the Government), appointed by the President, from 1 January 2012 (first holder from 18 January 2012). The Supreme Council elected in 1995 was bicameral (67 deputies); amendments in 2000 made it a unicameral body of 43 deputies, reduced to 33 from 2020."
+  },
+  "offices": [
+    {
+      "id": "pmr.president",
+      "title": { "en": "President of the Pridnestrovian Moldavian Republic", "native": "Президент Приднестровской Молдавской Республики" },
+      "role": "head_of_state",
+      "power_weight": 0.85,
+      "selection": "direct_election",
+      "term_years": 5,
+      "succession": { "type": "acting_then_election" },
+      "holders": [
+        { "person": "pmr.igor_smirnov", "from": "1991-12-03", "to": "2011-12-30" },
+        { "person": "pmr.yevgeny_shevchuk", "from": "2011-12-30", "to": "2016-12-16" },
+        { "person": "pmr.vadim_krasnoselsky", "from": "2016-12-16" }
+      ],
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/President_of_Transnistria", "title": "Wikipedia: President of Transnistria (list of presidents)", "accessed": "2026-10-16" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "pmr.prime_minister",
+      "title": { "en": "Chairman of the Government (Prime Minister)", "native": "Председатель Правительства Приднестровской Молдавской Республики" },
+      "role": "head_of_government",
+      "power_weight": 0.15,
+      "selection": "appointed",
+      "appointed_by": "pmr.president",
+      "holders": [
+        { "person": null, "from": "1990-12-09", "to": "2012-01-18", "vacant_reason": "The office did not exist from 9 December 1990 until it was re-established under the June 2011 constitutional amendments; the President headed the government." },
+        { "person": "pmr.pyotr_stepanov", "from": "2012-01-18", "to": "2013-07-10" },
+        { "person": "pmr.tatiana_turanskaya", "from": "2013-07-10", "to": "2015-10-13" },
+        { "person": "pmr.maya_parnas", "from": "2015-10-13", "to": "2015-11-30", "acting": true },
+        { "person": "pmr.tatiana_turanskaya", "from": "2015-11-30", "to": "2015-12-02" },
+        { "person": "pmr.maya_parnas", "from": "2015-12-02", "to": "2015-12-23", "acting": true },
+        { "person": "pmr.pavel_prokudin", "from": "2015-12-23", "to": "2016-12-17" },
+        { "person": "pmr.aleksandr_martynov", "from": "2016-12-17", "to": "2022-05-26" },
+        { "person": null, "from": "2022-05-26", "to": "2022-05-30", "vacant_reason": "Stanislav Kasap (born 1983) was acting Prime Minister; he has no Wikidata item and is not recorded as a person." },
+        { "person": "pmr.aleksandr_rosenberg", "from": "2022-05-30" }
+      ],
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/Prime_Minister_of_Transnistria", "title": "Wikipedia: Prime Minister of Transnistria (list of prime ministers)", "accessed": "2026-10-16" }
+      ],
+      "confidence": "verified"
+    }
+  ],
+  "legislature": {
+    "name": { "en": "Supreme Council", "native": "Верховный Совет Приднестровской Молдавской Республики" },
+    "chambers": [
+      {
+        "id": "supreme_council",
+        "name": { "en": "Supreme Council", "native": "Верховный Совет ПМР" },
+        "seats": 67,
+        "term_years": 5,
+        "elected": "direct",
+        "system": {
+          "type": "fptp",
+          "district_model": "custom",
+          "note": "Single-member constituencies, first past the post. On 1 January 2000 the Supreme Council elected in 1995 had 67 deputies in two chambers (32 in the Chamber of Legislators, 35 in the Chamber of Representatives); from the December 2000 election it was unicameral with 43 seats, and 33 seats from 2020. The seat count here is the 2000 size because seats_2000 must match it."
+        },
+        "seats_2000": { "others": 67 },
+        "confidence_chamber": false,
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/Supreme_Council_(Transnistria)", "title": "Wikipedia: Supreme Council (Transnistria) (history and structure)", "accessed": "2026-10-16" }
+        ],
+        "confidence": "needs_review",
+        "review_note": "The party composition of the 1995-2000 Supreme Council was not found (there is no English Wikipedia article on the 1995 election); all 67 seats are recorded as 'others'. The chamber size also changed to 43 (December 2000) and 33 (2020), which the schema cannot express."
+      }
+    ]
+  },
+  "party_system": "multi_party",
+  "start_2000": {
+    "ruling_parties": [],
+    "ideology_support": {
+      "statist": 0.55,
+      "reformed_communist": 0.1,
+      "liberal_conservative": 0.1,
+      "big_tent": 0.2,
+      "national_conservative": 0.05
+    },
+    "ideology_support_note": "Estimate for a de facto state without party-list voting. Anchored on Igor Smirnov's 71.9% in the 1996 presidential election (statist, pro-presidential camp) and the predominance of independents in the Supreme Council; the remainder is spread across communist, business-oriented and other groups.",
+    "stability": 0.55,
+    "war_support": 0.3
+  },
+  "claims": [],
+  "source": [
+    { "url": "https://en.wikipedia.org/wiki/Politics_of_Transnistria", "title": "Wikipedia: Politics of Transnistria", "accessed": "2026-10-16" },
+    { "url": "https://en.wikipedia.org/wiki/1996_Transnistrian_presidential_election", "title": "Wikipedia: 1996 Transnistrian presidential election", "accessed": "2026-10-16" },
+    { "url": "https://en.wikipedia.org/wiki/Supreme_Council_(Transnistria)", "title": "Wikipedia: Supreme Council (Transnistria)", "accessed": "2026-10-16" }
+  ],
+  "confidence": "verified"
+}

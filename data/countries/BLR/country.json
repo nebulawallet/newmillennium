@@ -1,0 +1,241 @@
+{
+  "tag": "BLR",
+  "name": {
+    "en": "Belarus",
+    "native": "Беларусь",
+    "native_latin": "Bielaruś",
+    "official": {
+      "en": "Republic of Belarus",
+      "native": "Рэспубліка Беларусь"
+    }
+  },
+  "adjective": "Belarusian",
+  "culture_primary": "belarusian",
+  "government": {
+    "type": "hybrid_authoritarian",
+    "effective_executive": "blr.president",
+    "head_of_state_office": "blr.president",
+    "head_of_government_office": "blr.prime_minister",
+    "constitution": {
+      "term_limit_amendable": true,
+      "emergency_powers": true,
+      "referendum_required_for": []
+    },
+    "note": "Presidential system under the 1994 Constitution as amended by the November 1996 referendum. The President appoints the Prime Minister and can call elections and referendums and dissolve both chambers. The 1996 referendum moved the presidential election due in 1999 to 2001; the 2004 referendum removed the two-term limit; the 2022 referendum reimposed a two-term limit only for newly elected presidents, extended the parliamentary term to five years and made the All-Belarusian People's Assembly a constitutional body. After the 1996 referendum a new House of Representatives was assembled from deputies loyal to the President, while about sixty members of the former Supreme Soviet who rejected the new constitution continued to meet and were recognised by much of the international community."
+  },
+  "offices": [
+    {
+      "id": "blr.president",
+      "title": {
+        "en": "President of the Republic of Belarus",
+        "native": "Прэзідэнт Рэспублікі Беларусь",
+        "native_latin": "Prezident Respubliki Bielaruś"
+      },
+      "role": "head_of_state",
+      "power_weight": 0.9,
+      "selection": "direct_election",
+      "term_years": 5,
+      "succession": {
+        "type": "acting_then_election"
+      },
+      "holders": [
+        {
+          "person": "blr.alexander_lukashenko",
+          "from": "1994-07-20"
+        }
+      ],
+      "note": "Alexander Lukashenko is the only person to have held the office. A number of states did not recognise the result of the 2020 election.",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/President_of_Belarus",
+          "title": "Wikipedia: President of Belarus",
+          "accessed": "2026-10-16"
+        },
+        {
+          "url": "https://www.wikidata.org/wiki/Q2866",
+          "title": "Wikidata: Alexander Lukashenko",
+          "accessed": "2026-10-16"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "blr.prime_minister",
+      "title": {
+        "en": "Prime Minister of the Republic of Belarus",
+        "native": "Прэм'ер-міністр Рэспублікі Беларусь",
+        "native_latin": "Premjer-ministar Respubliki Bielaruś"
+      },
+      "role": "head_of_government",
+      "power_weight": 0.1,
+      "selection": "appointed",
+      "appointed_by": "blr.president",
+      "holders": [
+        {
+          "person": "blr.sergey_ling",
+          "from": "1996-11-18",
+          "to": "2000-02-18"
+        },
+        {
+          "person": "blr.vladimir_yermoshin",
+          "from": "2000-02-18",
+          "to": "2001-10-01"
+        },
+        {
+          "person": "blr.gennady_novitsky",
+          "from": "2001-10-01",
+          "to": "2004-07-11",
+          "note": "Wikidata gives 10 October 2001 to 10 July 2003 and starts Sidorsky's tenure on 10 July 2003; the Wikipedia list (1 October 2001 to 11 July 2004) is followed."
+        },
+        {
+          "person": "blr.sergei_sidorsky",
+          "from": "2004-07-11",
+          "to": "2010-12-28"
+        },
+        {
+          "person": "blr.mikhail_myasnikovich",
+          "from": "2010-12-28",
+          "to": "2014-12-27"
+        },
+        {
+          "person": "blr.andrei_kobyakov",
+          "from": "2014-12-27",
+          "to": "2018-08-18"
+        },
+        {
+          "person": "blr.sergei_rumas",
+          "from": "2018-08-18",
+          "to": "2020-06-03"
+        },
+        {
+          "person": "blr.roman_golovchenko",
+          "from": "2020-06-04",
+          "to": "2025-03-10"
+        },
+        {
+          "person": "blr.alexander_turchin",
+          "from": "2025-03-10"
+        }
+      ],
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/List_of_prime_ministers_of_Belarus",
+          "title": "Wikipedia: List of prime ministers of Belarus",
+          "accessed": "2026-10-16"
+        },
+        {
+          "url": "https://www.wikidata.org/wiki/Q12379704",
+          "title": "Wikidata: Prime Minister of Belarus (position held by)",
+          "accessed": "2026-10-16"
+        }
+      ],
+      "confidence": "verified"
+    }
+  ],
+  "legislature": {
+    "name": {
+      "en": "National Assembly",
+      "native": "Нацыянальны сход Рэспублікі Беларусь"
+    },
+    "chambers": [
+      {
+        "id": "house_of_representatives",
+        "name": {
+          "en": "House of Representatives",
+          "native": "Палата прадстаўнікоў"
+        },
+        "seats": 110,
+        "term_years": 4,
+        "elected": "direct",
+        "system": {
+          "type": "two_round",
+          "district_model": "custom",
+          "note": "110 deputies elected in single-member constituencies (the 2000 and 2004 elections needed further rounds in some seats). Four-year term until the 2022 amendments set five years. The House in office on 1 January 2000 was the one assembled after the November 1996 referendum from deputies of the former Supreme Soviet loyal to the President, not elected as such."
+        },
+        "seats_2000": {
+          "others": 110
+        },
+        "confidence_chamber": false,
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/House_of_Representatives_(Belarus)",
+            "title": "Wikipedia: House of Representatives (Belarus)",
+            "accessed": "2026-10-16"
+          },
+          {
+            "url": "https://en.wikipedia.org/wiki/1996_Belarusian_referendum",
+            "title": "Wikipedia: 1996 Belarusian referendum (formation of the House)",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "needs_review",
+        "review_note": "The party breakdown of the 1996-2000 House (first convocation) was not found in the fetched sources, so all 110 seats are recorded as 'others'. Find the faction composition on 1 January 2000 (most deputies were non-partisan supporters of the President, with Communist and Agrarian groups)."
+      },
+      {
+        "id": "council_of_the_republic",
+        "name": {
+          "en": "Council of the Republic",
+          "native": "Савет Рэспублікі"
+        },
+        "seats": 64,
+        "term_years": 4,
+        "elected": "indirect",
+        "system": {
+          "type": "indirect",
+          "note": "Eight members for each of the six oblasts and Minsk city, elected by deputies of the regional councils (two rounds if necessary), plus eight appointed by the President. Established after the 1996 referendum. Term follows the House (four years until the 2022 amendments). Party composition on 1 January 2000 is not recorded in the fetched sources."
+        },
+        "seats_2000": {
+          "appointed": 8,
+          "others": 56
+        },
+        "confidence_chamber": false,
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/Council_of_the_Republic_(Belarus)",
+            "title": "Wikipedia: Council of the Republic (Belarus)",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "needs_review",
+        "review_note": "Confirm that the Council had 64 members (56 elected + 8 appointed) on 1 January 2000 and record its party composition; the 56 regionally elected members are entered as 'others'."
+      }
+    ]
+  },
+  "party_system": "multi_party",
+  "start_2000": {
+    "ruling_parties": [],
+    "ideology_support": {
+      "statist": 0.56,
+      "reformed_communist": 0.1,
+      "national_conservative": 0.08,
+      "classical_liberal": 0.06,
+      "social_democrat": 0.05,
+      "big_tent": 0.06,
+      "agrarian": 0.04,
+      "right_populist": 0.03,
+      "ethno_nationalist": 0.02
+    },
+    "ideology_support_note": "Estimate for a non-competitive system, not a measured vote. Anchored on Lukashenko's 80.6% in the 1994 run-off and 77.4% in 2001 (official results) for support of the presidential camp (statist), and on the 1995 Supreme Council election, in which the Party of Communists (43 seats) and the Agrarian Party (33) were the largest parties and the United Civic Party and social democrats won a few seats. The government in 2000 was formed by the President without a party base.",
+    "stability": 0.6,
+    "war_support": 0.2
+  },
+  "claims": [],
+  "source": [
+    {
+      "url": "https://en.wikipedia.org/wiki/President_of_Belarus",
+      "title": "Wikipedia: President of Belarus",
+      "accessed": "2026-10-16"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/1995_Belarusian_parliamentary_election",
+      "title": "Wikipedia: 1995 Belarusian parliamentary election",
+      "accessed": "2026-10-16"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/1994_Belarusian_presidential_election",
+      "title": "Wikipedia: 1994 Belarusian presidential election",
+      "accessed": "2026-10-16"
+    }
+  ],
+  "confidence": "verified"
+}

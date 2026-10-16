@@ -1,0 +1,337 @@
+{
+  "tag": "MDA",
+  "name": {
+    "en": "Moldova",
+    "native": "Moldova",
+    "official": {
+      "en": "Republic of Moldova",
+      "native": "Republica Moldova"
+    }
+  },
+  "adjective": "Moldovan",
+  "culture_primary": "moldovan",
+  "government": {
+    "type": "parliamentary",
+    "effective_executive": "mda.prime_minister",
+    "head_of_state_office": "mda.president",
+    "head_of_government_office": "mda.prime_minister",
+    "constitution": {
+      "term_limit_amendable": true,
+      "emergency_powers": true,
+      "referendum_required_for": []
+    },
+    "note": "Parliamentary republic under the 1994 Constitution. On 1 January 2000 the President (Petru Lucinschi) was directly elected; the 2000 constitutional revision made the President elected by Parliament with a three-fifths (61-vote) majority, first applied in 2001. Repeated failures to reach 61 votes led to early elections (2001, July 2009, 2010) and acting presidents from September 2009 to March 2012. A 2010 referendum to restore direct election failed for low turnout; on 4 March 2016 the Constitutional Court ruled the 2000 revision unconstitutional, and direct two-round elections resumed in 2016. Transnistria (PMR) has been outside the government's control since the early 1990s."
+  },
+  "offices": [
+    {
+      "id": "mda.president",
+      "title": {
+        "en": "President of the Republic of Moldova",
+        "native": "Președintele Republicii Moldova"
+      },
+      "role": "head_of_state",
+      "power_weight": 0.3,
+      "selection": "direct_election",
+      "term_years": 4,
+      "succession": {
+        "type": "acting_then_election"
+      },
+      "holders": [
+        {
+          "person": "mda.petru_lucinschi",
+          "from": "1997-01-15",
+          "to": "2001-04-07"
+        },
+        {
+          "person": "mda.vladimir_voronin",
+          "from": "2001-04-07",
+          "to": "2009-09-11",
+          "note": "Elected by Parliament in 2001 and 2005. After the April 2009 election he remained President with interim status until his resignation in September 2009."
+        },
+        {
+          "person": "mda.mihai_ghimpu",
+          "from": "2009-09-11",
+          "to": "2010-12-28",
+          "acting": true,
+          "note": "Acting as President of Parliament (Article 91)."
+        },
+        {
+          "person": "mda.vlad_filat",
+          "from": "2010-12-28",
+          "to": "2010-12-30",
+          "acting": true
+        },
+        {
+          "person": "mda.marian_lupu",
+          "from": "2010-12-30",
+          "to": "2012-03-23",
+          "acting": true
+        },
+        {
+          "person": "mda.nicolae_timofti",
+          "from": "2012-03-23",
+          "to": "2016-12-23",
+          "note": "Wikidata starts this term on 22 March 2012; the Wikipedia list gives 23 March 2012."
+        },
+        {
+          "person": "mda.igor_dodon",
+          "from": "2016-12-23",
+          "to": "2020-12-24"
+        },
+        {
+          "person": "mda.maia_sandu",
+          "from": "2020-12-24"
+        }
+      ],
+      "note": "Selection was by Parliament from 2001 to 2012 (indirect_presidential elections in elections.json). Under Article 91 the President of Parliament, then the Prime Minister, acts on a vacancy or suspension.",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/President_of_Moldova",
+          "title": "Wikipedia: President of Moldova (list of presidents and acting presidents)",
+          "accessed": "2026-10-16"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/2011%E2%80%932012_Moldovan_presidential_election",
+          "title": "Wikipedia: 2011-2012 Moldovan presidential election (2009-2012 vacancy)",
+          "accessed": "2026-10-16"
+        },
+        {
+          "url": "https://www.wikidata.org/wiki/Q312271",
+          "title": "Wikidata: President of Moldova (position held by)",
+          "accessed": "2026-10-16"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "mda.prime_minister",
+      "title": {
+        "en": "Prime Minister of Moldova",
+        "native": "Prim-ministrul Republicii Moldova"
+      },
+      "role": "head_of_government",
+      "power_weight": 0.7,
+      "selection": "legislature",
+      "appointed_by": "mda.president",
+      "holders": [
+        {
+          "person": "mda.dumitru_braghis",
+          "from": "1999-12-21",
+          "to": "2001-04-19",
+          "note": "Wikidata ends this tenure on 19 March 2001; the Wikipedia list gives 19 April 2001."
+        },
+        {
+          "person": "mda.vasile_tarlev",
+          "from": "2001-04-19",
+          "to": "2008-03-31"
+        },
+        {
+          "person": "mda.zinaida_greceanii",
+          "from": "2008-03-31",
+          "to": "2009-09-14"
+        },
+        {
+          "person": "mda.vitalie_pirlog",
+          "from": "2009-09-14",
+          "to": "2009-09-25",
+          "acting": true
+        },
+        {
+          "person": "mda.vlad_filat",
+          "from": "2009-09-25",
+          "to": "2013-04-25",
+          "note": "Wikidata ends this tenure on 25 March 2013; the Wikipedia list gives 25 April 2013."
+        },
+        {
+          "person": "mda.iurie_leanca",
+          "from": "2013-04-25",
+          "to": "2013-05-30",
+          "acting": true
+        },
+        {
+          "person": "mda.iurie_leanca",
+          "from": "2013-05-30",
+          "to": "2015-02-18"
+        },
+        {
+          "person": "mda.chiril_gaburici",
+          "from": "2015-02-18",
+          "to": "2015-06-22"
+        },
+        {
+          "person": "mda.natalia_gherman",
+          "from": "2015-06-22",
+          "to": "2015-07-30",
+          "acting": true
+        },
+        {
+          "person": "mda.valeriu_strelet",
+          "from": "2015-07-30",
+          "to": "2015-10-30"
+        },
+        {
+          "person": "mda.gheorghe_brega",
+          "from": "2015-10-30",
+          "to": "2016-01-20",
+          "acting": true
+        },
+        {
+          "person": "mda.pavel_filip",
+          "from": "2016-01-20",
+          "to": "2019-06-08"
+        },
+        {
+          "person": "mda.maia_sandu",
+          "from": "2019-06-08",
+          "to": "2019-11-14"
+        },
+        {
+          "person": "mda.ion_chicu",
+          "from": "2019-11-14",
+          "to": "2020-12-31"
+        },
+        {
+          "person": "mda.aureliu_ciocoi",
+          "from": "2020-12-31",
+          "to": "2021-08-06",
+          "acting": true
+        },
+        {
+          "person": "mda.natalia_gavrilita",
+          "from": "2021-08-06",
+          "to": "2023-02-16"
+        },
+        {
+          "person": "mda.dorin_recean",
+          "from": "2023-02-16",
+          "to": "2025-11-01"
+        },
+        {
+          "person": "mda.alexandru_munteanu",
+          "from": "2025-11-01",
+          "to": "2026-07-08"
+        },
+        {
+          "person": "mda.eugen_osmochescu",
+          "from": "2026-07-08",
+          "to": "2026-07-22",
+          "acting": true,
+          "note": "Verified against the fetched Wikipedia list and Osmochescu's article (2026-10-16)."
+        },
+        {
+          "person": "mda.vasile_tofan",
+          "from": "2026-07-22",
+          "note": "Took office on 22 July 2026 per the fetched Wikipedia list of prime ministers and his Wikipedia article (2026-10-16)."
+        }
+      ],
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/List_of_prime_ministers_of_Moldova",
+          "title": "Wikipedia: List of prime ministers of Moldova",
+          "accessed": "2026-10-16"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/Vasile_Tofan",
+          "title": "Wikipedia: Vasile Tofan",
+          "accessed": "2026-10-16"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/Eugen_Osmochescu",
+          "title": "Wikipedia: Eugen Osmochescu",
+          "accessed": "2026-10-16"
+        },
+        {
+          "url": "https://www.wikidata.org/wiki/Q1769526",
+          "title": "Wikidata: Prime Minister of Moldova (position held by)",
+          "accessed": "2026-10-16"
+        }
+      ],
+      "confidence": "verified"
+    }
+  ],
+  "legislature": {
+    "name": {
+      "en": "Parliament of the Republic of Moldova",
+      "native": "Parlamentul Republicii Moldova"
+    },
+    "chambers": [
+      {
+        "id": "parliament",
+        "name": {
+          "en": "Parliament",
+          "native": "Parlamentul Republicii Moldova"
+        },
+        "seats": 101,
+        "term_years": 4,
+        "elected": "direct",
+        "system": {
+          "type": "list_pr",
+          "threshold": 0.04,
+          "district_model": "national",
+          "note": "Closed-list PR in a single national constituency. The threshold was 4% for parties and independents in 1998; in 2000 it was raised to 6% for parties and blocs and lowered to 3% for independents. The 2019 election alone used a mixed system (50 list seats, 51 single-member districts). seats_2000 is the result of the March 1998 election by list; parliamentary groups changed during the term."
+        },
+        "seats_2000": {
+          "mda.pcrm": 40,
+          "mda.cdm": 26,
+          "mda.pdm": 24,
+          "mda.pfd": 11
+        },
+        "confidence_chamber": true,
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/1998_Moldovan_parliamentary_election",
+            "title": "Wikipedia: 1998 Moldovan parliamentary election",
+            "accessed": "2026-10-16"
+          },
+          {
+            "url": "https://en.wikipedia.org/wiki/2001_Moldovan_parliamentary_election",
+            "title": "Wikipedia: 2001 Moldovan parliamentary election (electoral system)",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    ]
+  },
+  "party_system": "multi_party",
+  "start_2000": {
+    "ruling_parties": [],
+    "ideology_support": {
+      "reformed_communist": 0.31,
+      "christian_democrat": 0.1,
+      "national_conservative": 0.11,
+      "big_tent": 0.25,
+      "centrist_liberal": 0.12,
+      "agrarian": 0.04,
+      "social_democrat": 0.04,
+      "democratic_socialist": 0.03
+    },
+    "ideology_support_note": "Derived from the March 1998 election: Party of Communists 30.0%; Democratic Convention 19.4% (split between Christian-democratic and national-conservative components); For a Democratic and Prosperous Moldova 18.2% (centrist, pro-presidential; grouped with independents' 5.6% as big_tent); Party of Democratic Forces 8.8% and the Civic Alliance 'Ant' 3.3% (centrist_liberal); Democratic Agrarian Party 3.6%; small socialist and social-democratic lists about 7%. Shares computed from the vote counts are approximate.",
+    "stability": 0.45,
+    "war_support": 0.1
+  },
+  "claims": [
+    {
+      "tag": "PMR",
+      "note": "Moldova regards Transnistria (the Pridnestrovian Moldavian Republic) as part of its territory; the region has been outside the control of the government in Chisinau since the early 1990s."
+    }
+  ],
+  "source": [
+    {
+      "url": "https://en.wikipedia.org/wiki/1998_Moldovan_parliamentary_election",
+      "title": "Wikipedia: 1998 Moldovan parliamentary election",
+      "accessed": "2026-10-16"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/President_of_Moldova",
+      "title": "Wikipedia: President of Moldova",
+      "accessed": "2026-10-16"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/2016_Moldovan_presidential_election",
+      "title": "Wikipedia: 2016 Moldovan presidential election (2016 Constitutional Court ruling)",
+      "accessed": "2026-10-16"
+    }
+  ],
+  "confidence": "verified"
+}

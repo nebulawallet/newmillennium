@@ -48,7 +48,7 @@ Live sources sometimes report allegations or investigations involving real peopl
 
 <!-- AUTO-GENERATED BELOW: run `npm run review-report`; edits below this line are overwritten -->
 
-## Needs review: 382 of 4983 records
+## Needs review: 391 of 5051 records
 
 Countries with politics data: 56 / 212.
 
@@ -264,7 +264,7 @@ Countries with no data yet (156): LIE, SMR, VAT, LVA, LTU, ARM, AZE, KAZ, KGZ, T
 | party | `gbr.respect` Respect Party (Respect) | Leader history is empty: the infobox names no leader (the 2005 results table names Linda Smith). Confirm the party's leaders or national chairs 2004-2016. | data/countries/GBR/parties.json |
 | party | `gbr.your_party` Your Party (YP) | Check how many sitting MPs belong to the party and the date Corbyn became parliamentary leader (stored as the year 2025). | data/countries/GBR/parties.json |
 
-### GEO — Georgia (19)
+### GEO — Georgia (17)
 
 | kind | record | what to check | file |
 |---|---|---|---|
@@ -284,9 +284,7 @@ Countries with no data yet (156): LIE, SMR, VAT, LVA, LTU, ARM, AZE, KAZ, KGZ, T
 | party | `geo.patriots` Alliance of Patriots of Georgia (APG) | The party has joint leaders; check Inashvili's formal title and dates, and Tarkhan-Mouravi's chairmanship. | data/countries/GEO/parties.json |
 | party | `geo.european_georgia` European Georgia (EG) | Add the end of Bakradze's chairmanship and the later chairs (Bokeria, Tsereteli) as person records. | data/countries/GEO/parties.json |
 | party | `geo.aghmashenebeli` Strategy Aghmashenebeli (SA) | Add Giorgi Vashadze (leader) as a person with fetched dates. | data/countries/GEO/parties.json |
-| party | `geo.girchi` New Political Centre – Girchi (Girchi) | PLACEHOLDER | data/countries/GEO/parties.json |
-| party | `geo.citizens` Citizens (Citizens) | PLACEHOLDER | data/countries/GEO/parties.json |
-| party | `geo.for_georgia` For Georgia (For Georgia) | PLACEHOLDER | data/countries/GEO/parties.json |
+| party | `geo.citizens` Citizens (Citizens) | Add the leader, Aleko Elisashvili, as a person with fetched dates. | data/countries/GEO/parties.json |
 
 ### GRC — Greece (4)
 
@@ -449,10 +447,21 @@ Countries with no data yet (156): LIE, SMR, VAT, LVA, LTU, ARM, AZE, KAZ, KGZ, T
 | party | `mco.renaissance` Renaissance (Renaissance) | Leaders are not recorded: the party article names Eric Elena as leader, while the 2013 election article names Jean-Michel Rapaire as list leader. Neither gives dates. | data/countries/MCO/parties.json |
 | party | `mco.primo` Priorité Monaco (Primo!) | No dated leader list exists in the sources: Valeri's leadership has no end date (he left the National Council presidency in October 2022), and Boccone-Pagès is recorded as head of the 2023 joint list, not as formal party leader. | data/countries/MCO/parties.json |
 
-### MDA — Moldova (1)
+### MDA — Moldova (12)
 
 | kind | record | what to check | file |
 |---|---|---|---|
+| party | `mda.pcrm` Party of Communists of the Republic of Moldova (PCRM) | Voronin (the founder) is recorded from 1998, the earliest fetched evidence; confirm his start date. The handover to Diana Caraman on 6 June 2026 is from Wikidata; the fetched Wikipedia infobox confirms Caraman as party president but gives no date. | data/countries/MDA/parties.json |
+| party | `mda.cdm` Democratic Convention of Moldova (CDM) | Electoral bloc led by Mircea Snegur in 1998 (it included the Party of Rebirth and Conciliation and the Christian-Democratic People's Party). Wikidata gives 1997-1999 as its lifespan although its deputies sat until 2001; confirm when the bloc dissolved and its composition. | data/countries/MDA/parties.json |
+| party | `mda.pdm` Democratic Party of Moldova (PDM) | Diacov (founder; 1998 leader of For a Democratic and Prosperous Moldova), Lupu (leader at the 2009-2014 elections) and Plahotniuc (2019) are taken from election infoboxes; confirm the chairmanship dates. The party now operates as the European Social Democratic Party (PSDE); confirm the renaming date. | data/countries/MDA/parties.json |
+| party | `mda.pfd` Party of Democratic Forces (PFD) | Matei led the party at the 1998 election; confirm his tenure. | data/countries/MDA/parties.json |
+| party | `mda.braghis` Braghiș Alliance (BeAB) | Formed by Prime Minister Braghiș to contest the February 2001 election; the exact founding date (possibly late 2000) is not in the fetched source, so 2001 is used. Confirm. | data/countries/MDA/parties.json |
+| party | `mda.amn` Our Moldova Alliance (AMN) | Wikidata dates Urechean's chairmanship from July 2005 (month precision); he led the Democratic Moldova bloc in March 2005. Confirm the start of his leadership. | data/countries/MDA/parties.json |
+| party | `mda.pl` Liberal Party (PL) | Leader dates from Wikidata (year precision); Dorin Chirtoaca (2018-2021) is not recorded as a person. Confirm. | data/countries/MDA/parties.json |
+| party | `mda.psrm` Party of Socialists of the Republic of Moldova (PSRM) | Dodon led the 2014 list and Greceanîi the 2019 list (election infoboxes); Wikidata lists Greceanîi without dates and Dodon from 23 March 2024. Confirm the chairmanship dates. | data/countries/MDA/parties.json |
+| party | `mda.sor` Șor Party (Șor) | Wikidata: founded 13 June 1998 (contested 2005 as the Republican Movement 'Equality'), chaired by Valerii Klimenko 1998-2016 (not recorded as a person) and Ilan Shor 2016-2023; dissolved 19 June 2023. Confirm. | data/countries/MDA/parties.json |
+| party | `mda.pn` Our Party (PN) | Wikidata gives the 1994 inception (under an earlier name) and Usatii as chairman from 2015; confirm the party's 1998-2000 identity and status. | data/countries/MDA/parties.json |
+| party | `mda.ppda` Democracy at Home Party (PPDA) | Wikidata lists Costiuc as chairman without dates; 2025 is the election at which the fetched infobox names him as leader. Confirm when he became chairman. | data/countries/MDA/parties.json |
 | election | `presidential_2009_nov` indirect_presidential 2009-11-10 | Add Lupu's vote totals in each round (the fetched article does not give them). | data/countries/MDA/elections.json |
 
 ### MKD — Macedonia (6)

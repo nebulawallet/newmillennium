@@ -1,0 +1,629 @@
+{
+  "rules": [
+    {
+      "kind": "legislative",
+      "chamber": "house_of_representatives",
+      "every_years": 5,
+      "anchor": "2024-02-25",
+      "snap_possible": true,
+      "note": "Four-year term until the 2022 constitutional amendments extended it to five years."
+    },
+    {
+      "kind": "presidential",
+      "office": "blr.president",
+      "every_years": 5,
+      "anchor": "2025-01-26",
+      "snap_possible": true,
+      "note": "Two-round system; each election from 2001 to 2025 was decided in the first round according to the official results."
+    }
+  ],
+  "elections": [
+    {
+      "id": "house_2000",
+      "date": "2000-10-15",
+      "kind": "legislative",
+      "chamber": "house_of_representatives",
+      "historical": {
+        "party_results": [
+          {
+            "party": "blr.kpb",
+            "seats": 6
+          },
+          {
+            "party": "blr.agrarian",
+            "seats": 5
+          },
+          {
+            "party": "blr.rpts",
+            "seats": 2
+          },
+          {
+            "party": "blr.ldpb",
+            "seats": 1
+          },
+          {
+            "party": "others",
+            "seats": 2
+          },
+          {
+            "party": "independents",
+            "seats": 94
+          }
+        ],
+        "winner": "blr.kpb",
+        "turnout": 0.6108,
+        "note": "Further rounds were held on 29 October 2000 and 18 March and 1 April 2001. Most opposition parties called for a boycott. Others: Belarusian Social Sporting Party 1, Social Democratic Party of Popular Accord 1. Independents are the largest group; the largest party is recorded as winner.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2000_Belarusian_parliamentary_election",
+            "title": "Wikipedia: 2000 Belarusian parliamentary election",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "presidential_2001",
+      "date": "2001-09-09",
+      "kind": "presidential",
+      "office": "blr.president",
+      "rounds": 1,
+      "historical": {
+        "candidates": [
+          {
+            "person": "blr.alexander_lukashenko",
+            "share": 0.7739,
+            "votes": 4666680,
+            "round": 1
+          },
+          {
+            "person": "blr.uladzimir_hancharyk",
+            "share": 0.1601,
+            "votes": 965261,
+            "round": 1
+          },
+          {
+            "person": "blr.sergei_gaidukevich",
+            "party": "blr.ldpb",
+            "votes": 153199,
+            "round": 1
+          }
+        ],
+        "winner": "blr.alexander_lukashenko",
+        "turnout": 0.8386,
+        "note": "Lukashenko and Hancharyk ran as independents; Hancharyk was the joint candidate of the opposition. Shares as given in the infobox.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2001_Belarusian_presidential_election",
+            "title": "Wikipedia: 2001 Belarusian presidential election",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "house_2004",
+      "date": "2004-10-17",
+      "kind": "legislative",
+      "chamber": "house_of_representatives",
+      "historical": {
+        "party_results": [
+          {
+            "party": "blr.kpb",
+            "seats": 8
+          },
+          {
+            "party": "blr.agrarian",
+            "seats": 3
+          },
+          {
+            "party": "blr.ldpb",
+            "seats": 1
+          },
+          {
+            "party": "blr.ucp",
+            "seats": 0
+          },
+          {
+            "party": "blr.bpf",
+            "seats": 0
+          },
+          {
+            "party": "independents",
+            "seats": 98
+          }
+        ],
+        "winner": "blr.kpb",
+        "turnout": 0.9014,
+        "note": "Held with the 2004 referendum. Second round in two constituencies on 27 October 2004 and a third round in one on 20 March 2005. Opposition parties (including the United Civic Party in the People's Coalition 5 Plus and the BPF Party) won no seats.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2004_Belarusian_parliamentary_election",
+            "title": "Wikipedia: 2004 Belarusian parliamentary election",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "referendum_2004",
+      "date": "2004-10-17",
+      "kind": "referendum",
+      "question": "Removal of the two-term limit on the presidency (permitting Alexander Lukashenko to stand again) by amending Article 81 of the Constitution.",
+      "historical": {
+        "yes_share": 0.8891,
+        "turnout": 0.9028,
+        "note": "Approved with 88.91% of valid votes (79.42% of registered voters) according to the official result cited by Nohlen & Stover.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2004_Belarusian_referendum",
+            "title": "Wikipedia: 2004 Belarusian referendum",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "presidential_2006",
+      "date": "2006-03-19",
+      "kind": "presidential",
+      "office": "blr.president",
+      "rounds": 1,
+      "historical": {
+        "candidates": [
+          {
+            "person": "blr.alexander_lukashenko",
+            "share": 0.8444,
+            "votes": 5501249,
+            "round": 1
+          },
+          {
+            "person": "blr.alaksandar_milinkievich",
+            "share": 0.0622,
+            "votes": 405486,
+            "round": 1
+          },
+          {
+            "person": "blr.sergei_gaidukevich",
+            "party": "blr.ldpb",
+            "votes": 230664,
+            "round": 1
+          },
+          {
+            "person": "blr.alyaksandr_kazulin",
+            "party": "blr.bsdp_h",
+            "votes": 147402,
+            "round": 1
+          }
+        ],
+        "winner": "blr.alexander_lukashenko",
+        "turnout": 0.9294,
+        "note": "Milinkievich was the candidate of the United Democratic Forces of Belarus.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2006_Belarusian_presidential_election",
+            "title": "Wikipedia: 2006 Belarusian presidential election",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "house_2008",
+      "date": "2008-09-28",
+      "kind": "legislative",
+      "chamber": "house_of_representatives",
+      "historical": {
+        "party_results": [
+          {
+            "party": "blr.kpb",
+            "seats": 6
+          },
+          {
+            "party": "blr.agrarian",
+            "seats": 1
+          },
+          {
+            "party": "blr.ucp",
+            "seats": 0
+          },
+          {
+            "party": "blr.pkb",
+            "seats": 0
+          },
+          {
+            "party": "blr.bpf",
+            "seats": 0
+          },
+          {
+            "party": "independents",
+            "seats": 103
+          }
+        ],
+        "winner": "blr.kpb",
+        "turnout": 0.7674,
+        "note": "Opposition parties won no seats.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2008_Belarusian_parliamentary_election",
+            "title": "Wikipedia: 2008 Belarusian parliamentary election",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "presidential_2010",
+      "date": "2010-12-19",
+      "kind": "presidential",
+      "office": "blr.president",
+      "rounds": 1,
+      "historical": {
+        "candidates": [
+          {
+            "person": "blr.alexander_lukashenko",
+            "share": 0.8044,
+            "votes": 5130557,
+            "round": 1
+          },
+          {
+            "person": "blr.andrei_sannikov",
+            "share": 0.0245,
+            "votes": 156419,
+            "round": 1
+          }
+        ],
+        "winner": "blr.alexander_lukashenko",
+        "turnout": 0.9065,
+        "note": "Eight other candidates each received under 2.5% (official result).",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2010_Belarusian_presidential_election",
+            "title": "Wikipedia: 2010 Belarusian presidential election",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "house_2012",
+      "date": "2012-09-23",
+      "kind": "legislative",
+      "chamber": "house_of_representatives",
+      "historical": {
+        "party_results": [
+          {
+            "party": "blr.kpb",
+            "share": 0.0274,
+            "seats": 3
+          },
+          {
+            "party": "blr.rpts",
+            "share": 0.0153,
+            "seats": 1
+          },
+          {
+            "party": "blr.agrarian",
+            "share": 0.0079,
+            "seats": 1
+          },
+          {
+            "party": "blr.ldpb",
+            "seats": 0
+          },
+          {
+            "party": "independents",
+            "seats": 105
+          }
+        ],
+        "winner": "blr.kpb",
+        "turnout": 0.7461,
+        "note": "The infobox gives 105 independents (totalling 110); the results table gives 104.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2012_Belarusian_parliamentary_election",
+            "title": "Wikipedia: 2012 Belarusian parliamentary election",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "presidential_2015",
+      "date": "2015-10-11",
+      "kind": "presidential",
+      "office": "blr.president",
+      "rounds": 1,
+      "historical": {
+        "candidates": [
+          {
+            "person": "blr.alexander_lukashenko",
+            "share": 0.8414,
+            "votes": 5102478,
+            "round": 1
+          },
+          {
+            "person": "blr.tatsiana_karatkevich",
+            "share": 0.0448,
+            "votes": 271426,
+            "round": 1
+          },
+          {
+            "person": "blr.sergei_gaidukevich",
+            "party": "blr.ldpb",
+            "votes": 201945,
+            "round": 1
+          }
+        ],
+        "winner": "blr.alexander_lukashenko",
+        "turnout": 0.8722,
+        "note": "Karatkevich was nominated by the 'People's Referendum' campaign and was a member of the BSDP (Hramada).",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2015_Belarusian_presidential_election",
+            "title": "Wikipedia: 2015 Belarusian presidential election",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "house_2016",
+      "date": "2016-09-11",
+      "kind": "legislative",
+      "chamber": "house_of_representatives",
+      "historical": {
+        "party_results": [
+          {
+            "party": "blr.kpb",
+            "share": 0.074,
+            "seats": 8
+          },
+          {
+            "party": "blr.ldpb",
+            "share": 0.0424,
+            "seats": 1
+          },
+          {
+            "party": "blr.rpts",
+            "share": 0.0287,
+            "seats": 3
+          },
+          {
+            "party": "blr.ucp",
+            "share": 0.0216,
+            "seats": 1
+          },
+          {
+            "party": "blr.bpp",
+            "share": 0.0216,
+            "seats": 3
+          },
+          {
+            "party": "independents",
+            "seats": 94
+          }
+        ],
+        "winner": "blr.kpb",
+        "turnout": 0.7468,
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2016_Belarusian_parliamentary_election",
+            "title": "Wikipedia: 2016 Belarusian parliamentary election",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "house_2019",
+      "date": "2019-11-17",
+      "kind": "legislative",
+      "chamber": "house_of_representatives",
+      "historical": {
+        "party_results": [
+          {
+            "party": "blr.kpb",
+            "share": 0.1062,
+            "seats": 11
+          },
+          {
+            "party": "blr.rpts",
+            "share": 0.0675,
+            "seats": 6
+          },
+          {
+            "party": "blr.ldpb",
+            "share": 0.0533,
+            "seats": 1
+          },
+          {
+            "party": "blr.bpp",
+            "share": 0.0143,
+            "seats": 2
+          },
+          {
+            "party": "blr.agrarian",
+            "share": 0.0089,
+            "seats": 1
+          },
+          {
+            "party": "blr.ucp",
+            "seats": 0
+          },
+          {
+            "party": "independents",
+            "seats": 89
+          }
+        ],
+        "winner": "blr.kpb",
+        "turnout": 0.7731,
+        "note": "Opposition parties won no seats.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2019_Belarusian_parliamentary_election",
+            "title": "Wikipedia: 2019 Belarusian parliamentary election",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "presidential_2020",
+      "date": "2020-08-09",
+      "kind": "presidential",
+      "office": "blr.president",
+      "rounds": 1,
+      "historical": {
+        "candidates": [
+          {
+            "person": "blr.alexander_lukashenko",
+            "share": 0.8104,
+            "votes": 4661075,
+            "round": 1
+          },
+          {
+            "person": "blr.sviatlana_tsikhanouskaya",
+            "share": 0.1023,
+            "votes": 588619,
+            "round": 1
+          }
+        ],
+        "winner": "blr.alexander_lukashenko",
+        "turnout": 0.8428,
+        "note": "Official result. It was disputed by the opposition and followed by mass protests; a number of states did not recognise it.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2020_Belarusian_presidential_election",
+            "title": "Wikipedia: 2020 Belarusian presidential election",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "referendum_2022",
+      "date": "2022-02-27",
+      "kind": "referendum",
+      "question": "Adoption of amendments to the Constitution (including the All-Belarusian People's Assembly as a constitutional body, a five-year parliamentary term and a two-term presidential limit applying to newly elected presidents).",
+      "historical": {
+        "yes_share": 0.8664,
+        "note": "Official result: 4,440,830 for and 684,946 against (share computed of yes plus no votes).",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2022_Belarusian_constitutional_referendum",
+            "title": "Wikipedia: 2022 Belarusian constitutional referendum",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "house_2024",
+      "date": "2024-02-25",
+      "kind": "legislative",
+      "chamber": "house_of_representatives",
+      "historical": {
+        "party_results": [
+          {
+            "party": "blr.belaya_rus",
+            "seats": 51
+          },
+          {
+            "party": "blr.rpts",
+            "seats": 8
+          },
+          {
+            "party": "blr.kpb",
+            "seats": 7
+          },
+          {
+            "party": "blr.ldpb",
+            "seats": 4
+          },
+          {
+            "party": "independents",
+            "seats": 40
+          }
+        ],
+        "winner": "blr.belaya_rus",
+        "turnout": 0.7309,
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2024_Belarusian_parliamentary_election",
+            "title": "Wikipedia: 2024 Belarusian parliamentary election",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "presidential_2025",
+      "date": "2025-01-26",
+      "kind": "presidential",
+      "office": "blr.president",
+      "rounds": 1,
+      "historical": {
+        "candidates": [
+          {
+            "person": "blr.alexander_lukashenko",
+            "share": 0.8748,
+            "votes": 5136293,
+            "round": 1
+          },
+          {
+            "person": "blr.sergei_syrankov",
+            "party": "blr.kpb",
+            "share": 0.0323,
+            "votes": 189740,
+            "round": 1
+          },
+          {
+            "person": "blr.oleg_gaidukevich",
+            "party": "blr.ldpb",
+            "votes": 119272,
+            "round": 1
+          }
+        ],
+        "winner": "blr.alexander_lukashenko",
+        "turnout": 0.857,
+        "note": "Official result.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2025_Belarusian_presidential_election",
+            "title": "Wikipedia: 2025 Belarusian presidential election",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    }
+  ],
+  "source": [
+    {
+      "url": "https://en.wikipedia.org/wiki/House_of_Representatives_(Belarus)",
+      "title": "Wikipedia: House of Representatives (Belarus)",
+      "accessed": "2026-10-16"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/President_of_Belarus",
+      "title": "Wikipedia: President of Belarus",
+      "accessed": "2026-10-16"
+    }
+  ],
+  "confidence": "verified"
+}

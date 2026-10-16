@@ -1,0 +1,455 @@
+{
+  "rules": [
+    {
+      "kind": "legislative",
+      "chamber": "supreme_council",
+      "every_years": 5,
+      "anchor": "2025-11-30",
+      "snap_possible": false,
+      "note": "Single-member constituencies, first past the post (43 seats 2000-2015, 33 since 2020)."
+    },
+    {
+      "kind": "presidential",
+      "office": "pmr.president",
+      "every_years": 5,
+      "anchor": "2021-12-12",
+      "snap_possible": true,
+      "note": "Five-year term; a run-off is held when no candidate wins a majority (2011)."
+    }
+  ],
+  "elections": [
+    {
+      "id": "supreme_council_2000",
+      "date": "2000-12-10",
+      "kind": "legislative",
+      "chamber": "supreme_council",
+      "historical": {
+        "party_results": [
+          {
+            "party": "pmr.obnovlenie",
+            "seats": 7
+          },
+          {
+            "party": "others",
+            "seats": 10
+          },
+          {
+            "party": "independents",
+            "seats": 25
+          },
+          {
+            "party": "vacant",
+            "seats": 1
+          }
+        ],
+        "note": "First election to the unicameral 43-seat Supreme Council. Most seats went to independents; 42 deputies were elected. Others: Unity 9 (the largest group; no party record in this file) and Power to the People 1. Obnovlenie was then a political NGO. No winner is recorded because the largest group has no party record.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2000_Transnistrian_legislative_election",
+            "title": "Wikipedia: 2000 Transnistrian legislative election",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "presidential_2001",
+      "date": "2001-12-09",
+      "kind": "presidential",
+      "office": "pmr.president",
+      "rounds": 1,
+      "historical": {
+        "candidates": [
+          {
+            "person": "pmr.igor_smirnov",
+            "share": 0.8185,
+            "votes": 208617,
+            "round": 1
+          },
+          {
+            "person": "pmr.tom_zenovich",
+            "share": 0.0668,
+            "votes": 17018,
+            "round": 1
+          }
+        ],
+        "winner": "pmr.igor_smirnov",
+        "note": "Both ran as independents. Other candidates are not listed in the fetched infobox.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2001_Transnistrian_presidential_election",
+            "title": "Wikipedia: 2001 Transnistrian presidential election",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "supreme_council_2005",
+      "date": "2005-12-11",
+      "kind": "legislative",
+      "chamber": "supreme_council",
+      "historical": {
+        "party_results": [
+          {
+            "party": "pmr.obnovlenie",
+            "seats": 23
+          },
+          {
+            "party": "pmr.republic",
+            "seats": 13
+          },
+          {
+            "party": "independents",
+            "seats": 7
+          }
+        ],
+        "winner": "pmr.obnovlenie",
+        "note": "Obnovlenie, led by Yevgeny Shevchuk, won 23 seats plus 6 allied independents, defeating President Smirnov's Republic party; Shevchuk became Speaker.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2005_Transnistrian_legislative_election",
+            "title": "Wikipedia: 2005 Transnistrian legislative election",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "referendum_2006",
+      "date": "2006-09-17",
+      "kind": "referendum",
+      "question": "Two questions: (1) renouncing independence and joining the Republic of Moldova; (2) the course of independence and subsequent voluntary accession of Transnistria to the Russian Federation.",
+      "historical": {
+        "options": [
+          {
+            "label": "Q1 Renounce independence and join Moldova: yes",
+            "share": 0.0338,
+            "votes": 10308
+          },
+          {
+            "label": "Q2 Independence and accession to Russia: yes",
+            "share": 0.9808,
+            "votes": 301332
+          }
+        ],
+        "turnout": 0.7855,
+        "note": "Official figures: Q1 10,308 yes / 294,253 no; Q2 301,332 yes / 5,905 no (shares of yes plus no). Turnout computed for Q2 from 394,861 registered voters. Foreign actors criticised the conduct and wording and the result was not recognised internationally.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2006_Transnistrian_independence_referendum",
+            "title": "Wikipedia: 2006 Transnistrian independence referendum",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "presidential_2006",
+      "date": "2006-12-10",
+      "kind": "presidential",
+      "office": "pmr.president",
+      "rounds": 1,
+      "historical": {
+        "candidates": [
+          {
+            "person": "pmr.igor_smirnov",
+            "party": "pmr.republic",
+            "share": 0.839,
+            "votes": 212384,
+            "round": 1
+          },
+          {
+            "person": "pmr.nadezhda_bondarenko",
+            "party": "pmr.pcp",
+            "share": 0.0826,
+            "votes": 20902,
+            "round": 1
+          }
+        ],
+        "winner": "pmr.igor_smirnov",
+        "note": "Three other candidates registered besides Smirnov.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2006_Transnistrian_presidential_election",
+            "title": "Wikipedia: 2006 Transnistrian presidential election",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "supreme_council_2010",
+      "date": "2010-12-12",
+      "kind": "legislative",
+      "chamber": "supreme_council",
+      "historical": {
+        "party_results": [
+          {
+            "party": "pmr.obnovlenie",
+            "seats": 25
+          },
+          {
+            "party": "pmr.pcp",
+            "seats": 1
+          },
+          {
+            "party": "pmr.proriv",
+            "seats": 1
+          },
+          {
+            "party": "independents",
+            "seats": 16
+          }
+        ],
+        "winner": "pmr.obnovlenie",
+        "turnout": 0.4226,
+        "note": "43 single-member constituencies, first past the post.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2010_Transnistrian_legislative_election",
+            "title": "Wikipedia: 2010 Transnistrian legislative election",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "presidential_2011",
+      "date": "2011-12-11",
+      "kind": "presidential",
+      "office": "pmr.president",
+      "rounds": 2,
+      "historical": {
+        "candidates": [
+          {
+            "person": "pmr.yevgeny_shevchuk",
+            "votes": 95765,
+            "round": 1
+          },
+          {
+            "person": "pmr.anatoliy_kaminski",
+            "party": "pmr.obnovlenie",
+            "votes": 65330,
+            "round": 1
+          },
+          {
+            "person": "pmr.igor_smirnov",
+            "votes": 61248,
+            "round": 1
+          },
+          {
+            "person": "pmr.oleg_khorzhan",
+            "party": "pmr.pcp",
+            "votes": 12646,
+            "round": 1
+          },
+          {
+            "person": "pmr.yevgeny_shevchuk",
+            "share": 0.7538,
+            "votes": 165502,
+            "round": 2
+          },
+          {
+            "person": "pmr.anatoliy_kaminski",
+            "party": "pmr.obnovlenie",
+            "share": 0.2007,
+            "votes": 44071,
+            "round": 2
+          }
+        ],
+        "winner": "pmr.yevgeny_shevchuk",
+        "note": "Run-off 25 December 2011. Shevchuk and the incumbent Smirnov ran as independents; Kaminski was Obnovlenie's candidate.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2011_Transnistrian_presidential_election",
+            "title": "Wikipedia: 2011 Transnistrian presidential election",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "supreme_council_2015",
+      "date": "2015-11-29",
+      "kind": "legislative",
+      "chamber": "supreme_council",
+      "historical": {
+        "party_results": [
+          {
+            "party": "pmr.obnovlenie",
+            "seats": 35
+          },
+          {
+            "party": "pmr.pcp",
+            "seats": 1
+          },
+          {
+            "party": "independents",
+            "seats": 7
+          }
+        ],
+        "winner": "pmr.obnovlenie",
+        "turnout": 0.4835,
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2015_Transnistrian_legislative_election",
+            "title": "Wikipedia: 2015 Transnistrian legislative election",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "presidential_2016",
+      "date": "2016-12-11",
+      "kind": "presidential",
+      "office": "pmr.president",
+      "rounds": 1,
+      "historical": {
+        "candidates": [
+          {
+            "person": "pmr.vadim_krasnoselsky",
+            "share": 0.6352,
+            "votes": 157410,
+            "round": 1
+          },
+          {
+            "person": "pmr.yevgeny_shevchuk",
+            "share": 0.2792,
+            "votes": 69179,
+            "round": 1
+          }
+        ],
+        "winner": "pmr.vadim_krasnoselsky",
+        "turnout": 0.601,
+        "note": "Both ran as independents; Shevchuk was the incumbent.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2016_Transnistrian_presidential_election",
+            "title": "Wikipedia: 2016 Transnistrian presidential election",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "supreme_council_2020",
+      "date": "2020-11-29",
+      "kind": "legislative",
+      "chamber": "supreme_council",
+      "historical": {
+        "party_results": [
+          {
+            "party": "pmr.obnovlenie",
+            "seats": 29
+          },
+          {
+            "party": "pmr.pcp",
+            "seats": 0
+          },
+          {
+            "party": "independents",
+            "seats": 4
+          }
+        ],
+        "winner": "pmr.obnovlenie",
+        "turnout": 0.2806,
+        "note": "The Supreme Council was reduced to 33 seats, elected in single-member constituencies by first past the post.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2020_Transnistrian_parliamentary_election",
+            "title": "Wikipedia: 2020 Transnistrian parliamentary election",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "presidential_2021",
+      "date": "2021-12-12",
+      "kind": "presidential",
+      "office": "pmr.president",
+      "rounds": 1,
+      "historical": {
+        "candidates": [
+          {
+            "person": "pmr.vadim_krasnoselsky",
+            "share": 0.8704,
+            "votes": 113620,
+            "round": 1
+          },
+          {
+            "person": "pmr.sergey_pynzar",
+            "share": 0.1296,
+            "votes": 16914,
+            "round": 1
+          }
+        ],
+        "winner": "pmr.vadim_krasnoselsky",
+        "turnout": 0.353,
+        "note": "Both ran as independents.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2021_Transnistrian_presidential_election",
+            "title": "Wikipedia: 2021 Transnistrian presidential election",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "supreme_council_2025",
+      "date": "2025-11-30",
+      "kind": "legislative",
+      "chamber": "supreme_council",
+      "historical": {
+        "party_results": [
+          {
+            "party": "pmr.obnovlenie",
+            "seats": 33
+          },
+          {
+            "party": "pmr.pcp",
+            "seats": 0
+          }
+        ],
+        "winner": "pmr.obnovlenie",
+        "turnout": 0.2604,
+        "note": "Obnovlenie won all 33 seats.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2025_Transnistrian_parliamentary_election",
+            "title": "Wikipedia: 2025 Transnistrian parliamentary election",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    }
+  ],
+  "source": [
+    {
+      "url": "https://en.wikipedia.org/wiki/Supreme_Council_(Transnistria)",
+      "title": "Wikipedia: Supreme Council (Transnistria)",
+      "accessed": "2026-10-16"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/President_of_Transnistria",
+      "title": "Wikipedia: President of Transnistria",
+      "accessed": "2026-10-16"
+    }
+  ],
+  "confidence": "verified"
+}

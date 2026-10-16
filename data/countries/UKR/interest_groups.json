@@ -1,0 +1,15 @@
+{
+  "note": "Influence and approval are gameplay starting values for 1 January 2000 (President Kuchma newly re-elected, Yushchenko government just appointed), not measured data. Influence reflects large business groups formed during privatisation, a strong presidential administration and security services, weak independent unions, and a broadcast media dominated by the state and business owners.",
+  "interest_groups": [
+    { "type": "military", "influence": 0.15, "approval": 45 },
+    { "type": "security_services", "influence": 0.3, "approval": 60 },
+    { "type": "business", "influence": 0.55, "approval": 60, "note": "Regional financial-industrial groups." },
+    { "type": "labour_unions", "influence": 0.15, "approval": 35, "note": "Successor unions of the Soviet era; wage and pension arrears were common." },
+    { "type": "religious_establishment", "influence": 0.15, "approval": 50, "note": "Orthodox and Greek Catholic churches." },
+    { "type": "rural", "influence": 0.2, "approval": 35, "note": "Collective farms awaiting land reform." },
+    { "type": "urban_middle_class", "influence": 0.2, "approval": 45 },
+    { "type": "minorities", "influence": 0.2, "approval": 50, "note": "Large Russian-speaking population in the east and south, Crimean Tatars, and other minorities." },
+    { "type": "youth_students", "influence": 0.12, "approval": 45 },
+    { "type": "media", "influence": 0.3, "approval": 45 }
+  ]
+}
