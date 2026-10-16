@@ -1,0 +1,119 @@
+{
+  "tag": "NCY",
+  "name": { "en": "Northern Cyprus", "native": "Kuzey Kıbrıs", "official": { "en": "Turkish Republic of Northern Cyprus", "native": "Kuzey Kıbrıs Türk Cumhuriyeti" } },
+  "adjective": "Turkish Cypriot",
+  "culture_primary": "turkish_cypriot",
+  "government": {
+    "type": "semi_presidential",
+    "effective_executive": "ncy.prime_minister",
+    "head_of_state_office": "ncy.president",
+    "head_of_government_office": "ncy.prime_minister",
+    "constitution": {
+      "term_limit_amendable": true,
+      "emergency_powers": true,
+      "referendum_required_for": ["constitutional amendments (Article 162, as applied in 2014 and 2020)"]
+    },
+    "note": "De facto state in the north of Cyprus, recognised only by Turkey; the Republic of Cyprus claims the area. Its institutions are recorded factually: a directly elected President (two-round system, five-year term), described by the source as a non-ceremonial office in a semi-presidential system, and a Prime Minister heading the government, which rests on a majority in the 50-member Assembly of the Republic."
+  },
+  "offices": [
+    {
+      "id": "ncy.president",
+      "title": { "en": "President of the Turkish Republic of Northern Cyprus", "native": "Kuzey Kıbrıs Türk Cumhuriyeti Cumhurbaşkanı" },
+      "role": "head_of_state",
+      "power_weight": 0.4,
+      "selection": "direct_election",
+      "term_years": 5,
+      "succession": { "type": "acting_then_election" },
+      "holders": [
+        { "person": "ncy.rauf_denktas", "from": "1990-04-25", "to": "2005-04-24", "note": "President since the 1983 declaration (current term from April 1990, after a short acting presidency of Hakkı Atun); re-elected in 2000 when the runner-up withdrew before the second round." },
+        { "person": "ncy.mehmet_ali_talat", "from": "2005-04-24", "to": "2010-04-23" },
+        { "person": "ncy.dervis_eroglu", "from": "2010-04-23", "to": "2015-04-30", "note": "Wikidata ends his term on 23 April 2015." },
+        { "person": "ncy.mustafa_akinci", "from": "2015-04-30", "to": "2020-10-23" },
+        { "person": "ncy.ersin_tatar", "from": "2020-10-23", "to": "2025-10-24", "note": "Wikidata starts his term on 18 October 2020 (election day)." },
+        { "person": "ncy.tufan_erhurman", "from": "2025-10-24", "note": "Elected on 19 October 2025." }
+      ],
+      "note": "Dates from the Wikipedia article on the President of Northern Cyprus; Wikidata agrees except where noted.",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/President_of_Northern_Cyprus", "title": "Wikipedia: President of Northern Cyprus (list of presidents)", "accessed": "2026-10-15" },
+        { "url": "https://www.wikidata.org/wiki/Q2354210", "title": "Wikidata: President of Northern Cyprus (position held by)", "accessed": "2026-10-15" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "ncy.prime_minister",
+      "title": { "en": "Prime Minister of the Turkish Republic of Northern Cyprus", "native": "Kuzey Kıbrıs Türk Cumhuriyeti Başbakanı" },
+      "role": "head_of_government",
+      "power_weight": 0.6,
+      "selection": "legislature",
+      "appointed_by": "ncy.president",
+      "holders": [
+        { "person": "ncy.dervis_eroglu", "from": "1996-08-16", "to": "2004-01-13", "note": "National Unity Party." },
+        { "person": "ncy.mehmet_ali_talat", "from": "2004-01-13", "to": "2005-04-23", "note": "Republican Turkish Party; became President." },
+        { "person": "ncy.serdar_denktas", "from": "2005-04-23", "to": "2005-04-26", "acting": true },
+        { "person": "ncy.ferdi_sabit_soyer", "from": "2005-04-26", "to": "2009-05-05" },
+        { "person": "ncy.dervis_eroglu", "from": "2009-05-05", "to": "2010-04-23", "note": "Became President." },
+        { "person": "ncy.huseyin_ozgurgun", "from": "2010-04-23", "to": "2010-05-17", "acting": true },
+        { "person": "ncy.irsen_kucuk", "from": "2010-05-17", "to": "2013-06-13" },
+        { "person": "ncy.sibel_siber", "from": "2013-06-13", "to": "2013-09-02" },
+        { "person": "ncy.ozkan_yorgancioglu", "from": "2013-09-02", "to": "2015-07-16" },
+        { "person": "ncy.omer_kalyoncu", "from": "2015-07-16", "to": "2016-04-16" },
+        { "person": "ncy.huseyin_ozgurgun", "from": "2016-04-16", "to": "2018-02-02" },
+        { "person": "ncy.tufan_erhurman", "from": "2018-02-02", "to": "2019-05-22" },
+        { "person": "ncy.ersin_tatar", "from": "2019-05-22", "to": "2020-12-09", "note": "The Wikipedia list ends his premiership on 23 October 2020, when he became President, and names no Prime Minister until 9 December 2020; Wikidata continues his term to 9 December 2020, which is used here." },
+        { "person": "ncy.ersan_saner", "from": "2020-12-09", "to": "2021-11-05" },
+        { "person": "ncy.faiz_sucuoglu", "from": "2021-11-05", "to": "2022-05-12" },
+        { "person": "ncy.unal_ustel", "from": "2022-05-12", "note": "UBP-DP-YDP coalition (per the office article)." }
+      ],
+      "note": "Dates from the Wikipedia list of prime ministers of Northern Cyprus and Wikidata.",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/List_of_prime_ministers_of_Northern_Cyprus", "title": "Wikipedia: List of prime ministers of Northern Cyprus", "accessed": "2026-10-15" },
+        { "url": "https://www.wikidata.org/wiki/Q2662165", "title": "Wikidata: Prime Minister of Northern Cyprus (position held by)", "accessed": "2026-10-15" },
+        { "url": "https://en.wikipedia.org/wiki/Prime_Minister_of_Northern_Cyprus", "title": "Wikipedia: Prime Minister of Northern Cyprus", "accessed": "2026-10-15" }
+      ],
+      "confidence": "needs_review",
+      "review_note": "Who headed the government between 23 October and 9 December 2020 (Tatar's premiership is extended to 9 December per Wikidata; the Wikipedia list shows a gap)."
+    }
+  ],
+  "legislature": {
+    "name": { "en": "Assembly of the Republic", "native": "Cumhuriyet Meclisi" },
+    "chambers": [
+      {
+        "id": "assembly",
+        "name": { "en": "Assembly of the Republic", "native": "Cumhuriyet Meclisi" },
+        "seats": 50,
+        "term_years": 5,
+        "elected": "direct",
+        "system": {
+          "type": "list_pr",
+          "district_model": "custom",
+          "note": "50 members elected by party-list PR in multi-member district constituencies; voters can cast votes for several candidates, so the vote totals in the sources exceed the number of voters. The threshold and formula were not checked. seats_2000 is the result of the December 1998 election."
+        },
+        "seats_2000": { "ncy.ubp": 24, "ncy.dp": 13, "ncy.tkp": 7, "ncy.ctp": 6 },
+        "confidence_chamber": true,
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/1998_Northern_Cypriot_parliamentary_election", "title": "Wikipedia: 1998 Northern Cypriot parliamentary election", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      }
+    ]
+  },
+  "party_system": "multi_party",
+  "start_2000": {
+    "ruling_parties": ["ncy.ubp", "ncy.dp"],
+    "confidence_and_supply": [],
+    "ideology_support": {
+      "national_conservative": 0.6299,
+      "social_democrat": 0.2869,
+      "big_tent": 0.0832
+    },
+    "ideology_support_note": "Derived from the December 1998 Assembly vote (shares computed from the vote counts): National Unity Party 40.39% and Democratic Party 22.60% (recorded as national conservative, a gameplay classification), Communal Liberation Party 15.32% and Republican Turkish Party 13.37% (centre-left, recorded as social democrat), other lists 8.32% (big_tent).",
+    "stability": 0.6,
+    "war_support": 0.3
+  },
+  "claims": [],
+  "source": [
+    { "url": "https://en.wikipedia.org/wiki/President_of_Northern_Cyprus", "title": "Wikipedia: President of Northern Cyprus", "accessed": "2026-10-15" },
+    { "url": "https://en.wikipedia.org/wiki/1998_Northern_Cypriot_parliamentary_election", "title": "Wikipedia: 1998 Northern Cypriot parliamentary election", "accessed": "2026-10-15" }
+  ],
+  "confidence": "verified"
+}

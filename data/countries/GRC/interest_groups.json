@@ -1,0 +1,15 @@
+{
+  "note": "Influence and approval are gameplay starting values for 1 January 2000 (PASOK government of Costas Simitis preparing euro entry), not measured data. Influence reflects institutional weight (gameplay judgements): a conscript army shaped by tension with Turkey, an influential Orthodox Church, strong public-sector unions close to PASOK and a large rural population.",
+  "interest_groups": [
+    { "type": "military", "influence": 0.25, "approval": 55, "note": "Universal conscription." },
+    { "type": "security_services", "influence": 0.12, "approval": 50 },
+    { "type": "business", "influence": 0.4, "approval": 50 },
+    { "type": "labour_unions", "influence": 0.35, "approval": 55 },
+    { "type": "religious_establishment", "influence": 0.35, "approval": 50, "note": "Church of Greece." },
+    { "type": "rural", "influence": 0.25, "approval": 50 },
+    { "type": "urban_middle_class", "influence": 0.4, "approval": 50 },
+    { "type": "minorities", "influence": 0.05, "approval": 45, "note": "Muslim minority of Thrace and the Roma." },
+    { "type": "youth_students", "influence": 0.2, "approval": 45 },
+    { "type": "media", "influence": 0.4, "approval": 45 }
+  ]
+}

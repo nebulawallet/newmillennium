@@ -1,0 +1,15 @@
+{
+  "note": "Influence and approval are gameplay starting values for 1 January 2000 (President Clerides of the Democratic Rally, EU accession talks under way), not measured data. Influence reflects institutional weight (gameplay judgements): a conscript National Guard facing the division of the island, an influential Orthodox Church, and unions assumed to lean towards AKEL.",
+  "interest_groups": [
+    { "type": "military", "influence": 0.25, "approval": 55, "note": "Conscript National Guard." },
+    { "type": "security_services", "influence": 0.1, "approval": 50 },
+    { "type": "business", "influence": 0.45, "approval": 55 },
+    { "type": "labour_unions", "influence": 0.35, "approval": 40, "note": "Unions are assumed to lean towards the opposition AKEL (gameplay judgement)." },
+    { "type": "religious_establishment", "influence": 0.35, "approval": 55, "note": "Church of Cyprus." },
+    { "type": "rural", "influence": 0.15, "approval": 50 },
+    { "type": "urban_middle_class", "influence": 0.45, "approval": 55 },
+    { "type": "minorities", "influence": 0.03, "approval": 45, "note": "Small Armenian, Maronite and Latin communities; Turkish Cypriots live mostly in the north." },
+    { "type": "youth_students", "influence": 0.15, "approval": 50 },
+    { "type": "media", "influence": 0.35, "approval": 50 }
+  ]
+}

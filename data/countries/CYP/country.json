@@ -1,0 +1,96 @@
+{
+  "tag": "CYP",
+  "name": { "en": "Cyprus", "native": "Κύπρος / Kıbrıs", "official": { "en": "Republic of Cyprus", "native": "Κυπριακή Δημοκρατία / Kıbrıs Cumhuriyeti" } },
+  "adjective": "Cypriot",
+  "culture_primary": "greek_cypriot",
+  "government": {
+    "type": "presidential",
+    "effective_executive": "cyp.president",
+    "head_of_state_office": "cyp.president",
+    "head_of_government_office": "cyp.president",
+    "constitution": {
+      "term_limit_amendable": true,
+      "emergency_powers": true,
+      "referendum_required_for": []
+    },
+    "note": "Presidential republic: the directly elected President (two-round system, five-year term) is head of state and of government and appoints the Council of Ministers. The 1960 constitution reserves the vice-presidency and 24 of the 80 seats of the House of Representatives for Turkish Cypriots; these have not been filled since the 1963-64 crisis, so the House has 56 sitting members. The Republic's government does not control the north of the island, where the Turkish Republic of Northern Cyprus, recognised only by Turkey, exists."
+  },
+  "offices": [
+    {
+      "id": "cyp.president",
+      "title": { "en": "President of the Republic of Cyprus", "native": "Πρόεδρος της Κυπριακής Δημοκρατίας" },
+      "role": "head_of_state_and_government",
+      "power_weight": 1,
+      "selection": "direct_election",
+      "term_years": 5,
+      "term_limit": { "max_terms": 2, "consecutive_only": true },
+      "succession": { "type": "acting_then_election" },
+      "holders": [
+        { "person": "cyp.glafcos_clerides", "from": "1993-02-28", "to": "2003-02-28", "note": "Democratic Rally; two terms." },
+        { "person": "cyp.tassos_papadopoulos", "from": "2003-02-28", "to": "2008-02-28", "note": "Democratic Party." },
+        { "person": "cyp.demetris_christofias", "from": "2008-02-28", "to": "2013-02-28", "note": "AKEL." },
+        { "person": "cyp.nicos_anastasiades", "from": "2013-02-28", "to": "2023-02-28", "note": "Democratic Rally; re-elected in 2018." },
+        { "person": "cyp.nikos_christodoulides", "from": "2023-02-28", "note": "Elected as an independent backed by DIKO, EDEK, DIPA and others." }
+      ],
+      "note": "Dates from the Wikipedia article on the President of Cyprus (five-year term, renewable once consecutively, per its infobox).",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/President_of_Cyprus", "title": "Wikipedia: President of Cyprus (list of presidents, term)", "accessed": "2026-10-15" },
+        { "url": "https://en.wikipedia.org/wiki/2023_Cypriot_presidential_election", "title": "Wikipedia: 2023 Cypriot presidential election", "accessed": "2026-10-15" }
+      ],
+      "confidence": "verified"
+    }
+  ],
+  "legislature": {
+    "name": { "en": "House of Representatives", "native": "Βουλή των Αντιπροσώπων" },
+    "chambers": [
+      {
+        "id": "house",
+        "name": { "en": "House of Representatives", "native": "Βουλή των Αντιπροσώπων" },
+        "seats": 80,
+        "term_years": 5,
+        "elected": "direct",
+        "system": {
+          "type": "list_pr",
+          "formula": "hare",
+          "district_model": "custom",
+          "reserved_seats": [{ "group": "Turkish Cypriots (unfilled since 1964)", "seats": 24 }],
+          "note": "Open-list PR in six district constituencies with a Hare quota; remaining seats go to lists above a national threshold (its level is not recorded here). 56 seats are elected by Greek Cypriots; the 24 Turkish Cypriot seats have been left unfilled since 1963-64 and are recorded as 'vacant'. The House cannot dismiss the President. seats_2000 is the result of the May 1996 election."
+        },
+        "seats_2000": { "cyp.disy": 20, "cyp.akel": 19, "cyp.diko": 10, "cyp.edek": 5, "cyp.edi": 2, "vacant": 24 },
+        "confidence_chamber": false,
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/1996_Cypriot_legislative_election", "title": "Wikipedia: 1996 Cypriot legislative election", "accessed": "2026-10-15" },
+          { "url": "https://en.wikipedia.org/wiki/2026_Cypriot_legislative_election", "title": "Wikipedia: 2026 Cypriot legislative election (electoral system)", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      }
+    ]
+  },
+  "party_system": "multi_party",
+  "start_2000": {
+    "ruling_parties": ["cyp.disy"],
+    "confidence_and_supply": [],
+    "ideology_support": {
+      "christian_democrat": 0.3447,
+      "reformed_communist": 0.33,
+      "centrist_liberal": 0.1643,
+      "social_democrat": 0.0813,
+      "social_liberal": 0.0369,
+      "national_conservative": 0.0171,
+      "democratic_socialist": 0.0144,
+      "green": 0.01,
+      "big_tent": 0.0013
+    },
+    "ideology_support_note": "Derived from the May 1996 House of Representatives vote (shares computed from the vote counts): Democratic Rally 34.47% (Christian democratic and liberal-conservative), AKEL 33.00% (communist party, recorded as reformed_communist), DIKO 16.43% (centrist), EDEK 8.13% (social democrat), United Democrats 3.69% (liberal), New Horizons 1.71%, ADISOK 1.44% and the Ecological and Environmental Movement 1.00% (classifications of the small parties are gameplay judgements), others 0.13%.",
+    "stability": 0.7,
+    "war_support": 0.3
+  },
+  "claims": [
+    { "tag": "NCY", "note": "The Republic of Cyprus claims the whole island; the north is administered by the Turkish Republic of Northern Cyprus, which only Turkey recognises." }
+  ],
+  "source": [
+    { "url": "https://en.wikipedia.org/wiki/President_of_Cyprus", "title": "Wikipedia: President of Cyprus", "accessed": "2026-10-15" },
+    { "url": "https://en.wikipedia.org/wiki/2026_Cypriot_legislative_election", "title": "Wikipedia: 2026 Cypriot legislative election (Turkish Cypriot seats unfilled)", "accessed": "2026-10-15" }
+  ],
+  "confidence": "verified"
+}

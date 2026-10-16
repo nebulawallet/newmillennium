@@ -1,0 +1,303 @@
+{
+  "rules": [
+    {
+      "kind": "legislative",
+      "chamber": "house",
+      "every_years": 5,
+      "anchor": "2026-05-24",
+      "snap_possible": false,
+      "note": "House of Representatives elected every five years in May; 56 seats filled by Greek Cypriot voters, 24 Turkish Cypriot seats unfilled."
+    },
+    {
+      "kind": "presidential",
+      "office": "cyp.president",
+      "every_years": 5,
+      "anchor": "2023-02-05",
+      "snap_possible": true,
+      "note": "Two-round system; a second round between the top two if no candidate wins over 50% in the first."
+    }
+  ],
+  "elections": [
+    {
+      "id": "house_2001",
+      "date": "2001-05-27",
+      "kind": "legislative",
+      "chamber": "house",
+      "historical": {
+        "party_results": [
+          { "party": "cyp.akel", "share": 0.3471, "seats": 20 },
+          { "party": "cyp.disy", "share": 0.34, "seats": 19 },
+          { "party": "cyp.diko", "share": 0.1484, "seats": 9 },
+          { "party": "cyp.edek", "share": 0.0651, "seats": 4 },
+          { "party": "others", "seats": 1 },
+          { "party": "cyp.edi", "share": 0.0259, "seats": 1 },
+          { "party": "cyp.adik", "share": 0.0216, "seats": 1 },
+          { "party": "cyp.ecologists", "share": 0.0198, "seats": 1 },
+          { "party": "vacant", "seats": 24 }
+        ],
+        "winner": "cyp.akel",
+        "note": "'others' is the seat of New Horizons (3.00%). Shares computed from the vote counts; 24 Turkish Cypriot seats vacant.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2001_Cypriot_legislative_election", "title": "Wikipedia: 2001 Cypriot legislative election", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "president_2003",
+      "date": "2003-02-16",
+      "kind": "presidential",
+      "office": "cyp.president",
+      "rounds": 1,
+      "historical": {
+        "candidates": [
+          { "person": "cyp.tassos_papadopoulos", "party": "cyp.diko", "share": 0.5151, "votes": 213353, "round": 1 },
+          { "person": "cyp.glafcos_clerides", "party": "cyp.disy", "share": 0.388, "votes": 160724, "round": 1 },
+          { "person": "cyp.alecos_markides", "share": 0.0662, "votes": 27404, "round": 1 }
+        ],
+        "winner": "cyp.tassos_papadopoulos",
+        "note": "Papadopoulos won a majority in the first round. Candidates under 5% omitted.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2003_Cypriot_presidential_election", "title": "Wikipedia: 2003 Cypriot presidential election", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "annan_plan_referendum_2004",
+      "date": "2004-04-24",
+      "kind": "referendum",
+      "question": "Approval of the UN plan for the reunification of Cyprus (Annan Plan), Greek Cypriot vote",
+      "historical": {
+        "yes_share": 0.2462,
+        "winner": "no",
+        "turnout": 0.8918,
+        "note": "Separate simultaneous referendums: Greek Cypriots rejected the plan (75.38% against); Turkish Cypriots approved it (64.91% in favour; recorded under NCY). The plan therefore did not take effect.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/Annan_Plan", "title": "Wikipedia: Annan Plan", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "house_2006",
+      "date": "2006-05-21",
+      "kind": "legislative",
+      "chamber": "house",
+      "historical": {
+        "party_results": [
+          { "party": "cyp.akel", "share": 0.3113, "seats": 18 },
+          { "party": "cyp.disy", "share": 0.3034, "seats": 18 },
+          { "party": "cyp.diko", "share": 0.1792, "seats": 11 },
+          { "party": "cyp.edek", "share": 0.0891, "seats": 5 },
+          { "party": "cyp.evroko", "share": 0.0575, "seats": 3 },
+          { "party": "cyp.ecologists", "share": 0.0195, "seats": 1 },
+          { "party": "cyp.edi", "share": 0.0156, "seats": 0 },
+          { "party": "vacant", "seats": 24 }
+        ],
+        "winner": "cyp.akel",
+        "note": "AKEL and DISY tied on 18 seats; AKEL won more votes and is recorded as winner.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2006_Cypriot_legislative_election", "title": "Wikipedia: 2006 Cypriot legislative election", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "president_2008",
+      "date": "2008-02-17",
+      "kind": "presidential",
+      "office": "cyp.president",
+      "rounds": 2,
+      "historical": {
+        "candidates": [
+          { "person": "cyp.ioannis_kasoulidis", "party": "cyp.disy", "share": 0.3351, "votes": 150996, "round": 1 },
+          { "person": "cyp.demetris_christofias", "party": "cyp.akel", "share": 0.3329, "votes": 150016, "round": 1 },
+          { "person": "cyp.tassos_papadopoulos", "party": "cyp.diko", "share": 0.3179, "votes": 143249, "round": 1 },
+          { "person": "cyp.demetris_christofias", "party": "cyp.akel", "share": 0.5337, "votes": 240604, "round": 2 },
+          { "person": "cyp.ioannis_kasoulidis", "party": "cyp.disy", "share": 0.4663, "votes": 210195, "round": 2 }
+        ],
+        "winner": "cyp.demetris_christofias",
+        "note": "First round 17 February, runoff 24 February 2008. Candidates under 5% omitted.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2008_Cypriot_presidential_election", "title": "Wikipedia: 2008 Cypriot presidential election", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "house_2011",
+      "date": "2011-05-22",
+      "kind": "legislative",
+      "chamber": "house",
+      "historical": {
+        "party_results": [
+          { "party": "cyp.disy", "share": 0.3428, "seats": 20 },
+          { "party": "cyp.akel", "share": 0.3267, "seats": 19 },
+          { "party": "cyp.diko", "share": 0.1576, "seats": 9 },
+          { "party": "cyp.edek", "share": 0.0893, "seats": 5 },
+          { "party": "cyp.evroko", "share": 0.0388, "seats": 2 },
+          { "party": "cyp.ecologists", "share": 0.0221, "seats": 1 },
+          { "party": "cyp.elam", "share": 0.0108, "seats": 0 },
+          { "party": "vacant", "seats": 24 }
+        ],
+        "winner": "cyp.disy",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2011_Cypriot_legislative_election", "title": "Wikipedia: 2011 Cypriot legislative election", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "president_2013",
+      "date": "2013-02-17",
+      "kind": "presidential",
+      "office": "cyp.president",
+      "rounds": 2,
+      "historical": {
+        "candidates": [
+          { "person": "cyp.nicos_anastasiades", "party": "cyp.disy", "share": 0.4546, "votes": 200591, "round": 1 },
+          { "person": "cyp.stavros_malas", "share": 0.2691, "votes": 118755, "round": 1 },
+          { "person": "cyp.giorgos_lillikas", "share": 0.2493, "votes": 109996, "round": 1 },
+          { "person": "cyp.nicos_anastasiades", "party": "cyp.disy", "share": 0.5748, "votes": 236965, "round": 2 },
+          { "person": "cyp.stavros_malas", "share": 0.4252, "votes": 175267, "round": 2 }
+        ],
+        "winner": "cyp.nicos_anastasiades",
+        "note": "First round 17 February, runoff 24 February 2013. Malas was backed by AKEL and Lillikas by EDEK (as listed in the results table). Candidates under 5% omitted.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2013_Cypriot_presidential_election", "title": "Wikipedia: 2013 Cypriot presidential election", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "house_2016",
+      "date": "2016-05-22",
+      "kind": "legislative",
+      "chamber": "house",
+      "historical": {
+        "party_results": [
+          { "party": "cyp.disy", "share": 0.3069, "seats": 18 },
+          { "party": "cyp.akel", "share": 0.2567, "seats": 16 },
+          { "party": "cyp.diko", "share": 0.1449, "seats": 9 },
+          { "party": "cyp.edek", "share": 0.0618, "seats": 3 },
+          { "party": "cyp.citizens_alliance", "share": 0.0601, "seats": 3 },
+          { "party": "cyp.solidarity", "share": 0.0524, "seats": 3 },
+          { "party": "cyp.ecologists", "share": 0.0481, "seats": 2 },
+          { "party": "cyp.elam", "share": 0.0371, "seats": 2 },
+          { "party": "vacant", "seats": 24 }
+        ],
+        "winner": "cyp.disy",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2016_Cypriot_legislative_election", "title": "Wikipedia: 2016 Cypriot legislative election", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "president_2018",
+      "date": "2018-01-28",
+      "kind": "presidential",
+      "office": "cyp.president",
+      "rounds": 2,
+      "historical": {
+        "candidates": [
+          { "person": "cyp.nicos_anastasiades", "party": "cyp.disy", "share": 0.3551, "votes": 137268, "round": 1 },
+          { "person": "cyp.stavros_malas", "share": 0.3024, "votes": 116920, "round": 1 },
+          { "person": "cyp.nikolas_papadopoulos", "party": "cyp.diko", "share": 0.2574, "votes": 99508, "round": 1 },
+          { "person": "cyp.christos_christou", "party": "cyp.elam", "share": 0.0565, "votes": 21846, "round": 1 },
+          { "person": "cyp.nicos_anastasiades", "party": "cyp.disy", "share": 0.5599, "votes": 215281, "round": 2 },
+          { "person": "cyp.stavros_malas", "share": 0.4401, "votes": 169243, "round": 2 }
+        ],
+        "winner": "cyp.nicos_anastasiades",
+        "turnout": 0.7188,
+        "note": "First round 28 January, runoff 4 February 2018 (turnout 73.97%). Malas was backed by AKEL. Candidates under 5% omitted.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2018_Cypriot_presidential_election", "title": "Wikipedia: 2018 Cypriot presidential election", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "house_2021",
+      "date": "2021-05-30",
+      "kind": "legislative",
+      "chamber": "house",
+      "historical": {
+        "party_results": [
+          { "party": "cyp.disy", "share": 0.2777, "seats": 17 },
+          { "party": "cyp.akel", "share": 0.2234, "seats": 15 },
+          { "party": "cyp.diko", "share": 0.1129, "seats": 9 },
+          { "party": "cyp.elam", "share": 0.0678, "seats": 4 },
+          { "party": "cyp.edek", "share": 0.0672, "seats": 4 },
+          { "party": "cyp.dipa", "share": 0.061, "seats": 4 },
+          { "party": "cyp.ecologists", "share": 0.0441, "seats": 3 },
+          { "party": "cyp.solidarity", "share": 0.0231, "seats": 0 },
+          { "party": "vacant", "seats": 24 }
+        ],
+        "winner": "cyp.disy",
+        "turnout": 0.6572,
+        "note": "EDEK figures are the EDEK-Citizens' Alliance list.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2021_Cypriot_legislative_election", "title": "Wikipedia: 2021 Cypriot legislative election", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "president_2023",
+      "date": "2023-02-05",
+      "kind": "presidential",
+      "office": "cyp.president",
+      "rounds": 2,
+      "historical": {
+        "candidates": [
+          { "person": "cyp.nikos_christodoulides", "share": 0.3204, "votes": 127309, "round": 1 },
+          { "person": "cyp.andreas_mavroyiannis", "share": 0.2959, "votes": 117551, "round": 1 },
+          { "person": "cyp.averof_neofytou", "party": "cyp.disy", "share": 0.2611, "votes": 103748, "round": 1 },
+          { "person": "cyp.christos_christou", "party": "cyp.elam", "share": 0.0604, "votes": 23988, "round": 1 },
+          { "person": "cyp.nikos_christodoulides", "share": 0.5197, "votes": 204867, "round": 2 },
+          { "person": "cyp.andreas_mavroyiannis", "share": 0.4803, "votes": 189335, "round": 2 }
+        ],
+        "winner": "cyp.nikos_christodoulides",
+        "turnout": 0.7205,
+        "note": "First round 5 February, runoff 12 February 2023 (turnout 72.45%). Christodoulides (independent) was backed by DIKO, EDEK, DIPA, Solidarity and others; Mavroyiannis (independent) by AKEL and Generation Change. Candidates under 5% omitted.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2023_Cypriot_presidential_election", "title": "Wikipedia: 2023 Cypriot presidential election", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "house_2026",
+      "date": "2026-05-24",
+      "kind": "legislative",
+      "chamber": "house",
+      "historical": {
+        "party_results": [
+          { "party": "cyp.disy", "share": 0.2715, "seats": 17 },
+          { "party": "cyp.akel", "share": 0.2386, "seats": 15 },
+          { "party": "cyp.elam", "share": 0.109, "seats": 8 },
+          { "party": "cyp.diko", "share": 0.1, "seats": 8 },
+          { "party": "cyp.alma", "share": 0.0583, "seats": 4 },
+          { "party": "cyp.direct_democracy", "share": 0.0542, "seats": 4 },
+          { "party": "cyp.edek", "share": 0.0325, "seats": 0 },
+          { "party": "cyp.ecologists", "share": 0.0195, "seats": 0 },
+          { "party": "vacant", "seats": 24 }
+        ],
+        "winner": "cyp.disy",
+        "turnout": 0.6691,
+        "note": "Shares computed from the vote counts (the infobox rounds them to 27.2%, 23.9%, 10.9%, 10.0%, 5.8% and 5.4%).",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2026_Cypriot_legislative_election", "title": "Wikipedia: 2026 Cypriot legislative election", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      }
+    }
+  ],
+  "source": [
+    { "url": "https://en.wikipedia.org/wiki/2023_Cypriot_presidential_election", "title": "Wikipedia: 2023 Cypriot presidential election (electoral system)", "accessed": "2026-10-15" },
+    { "url": "https://en.wikipedia.org/wiki/2026_Cypriot_legislative_election", "title": "Wikipedia: 2026 Cypriot legislative election (electoral system)", "accessed": "2026-10-15" }
+  ],
+  "confidence": "verified"
+}

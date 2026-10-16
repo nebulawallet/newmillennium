@@ -1,0 +1,129 @@
+{
+  "tag": "BGR",
+  "name": { "en": "Bulgaria", "native": "България", "official": { "en": "Republic of Bulgaria", "native": "Република България" } },
+  "adjective": "Bulgarian",
+  "culture_primary": "bulgarian",
+  "government": {
+    "type": "parliamentary",
+    "effective_executive": "bgr.prime_minister",
+    "head_of_state_office": "bgr.president",
+    "head_of_government_office": "bgr.prime_minister",
+    "constitution": {
+      "term_limit_amendable": true,
+      "emergency_powers": true,
+      "referendum_required_for": []
+    },
+    "note": "Parliamentary republic with a unicameral National Assembly of 240 members. The directly elected President (two-round system, five-year term, at most two terms) is chiefly an arbiter between institutions and is not part of the executive; when the Assembly cannot form a government the President appoints a caretaker Prime Minister and calls an election, which happened repeatedly from 2013 and during the 2021-2026 political crisis (seven snap elections from April 2021 to April 2026). A Vice President, elected on the same ticket, completes the term if the President resigns: Iliana Iotova succeeded Rumen Radev on 23 January 2026, and Radev became Prime Minister after his new coalition won the April 2026 election."
+  },
+  "offices": [
+    {
+      "id": "bgr.president",
+      "title": { "en": "President of Bulgaria", "native": "Президент на Република България" },
+      "role": "head_of_state",
+      "power_weight": 0.15,
+      "selection": "direct_election",
+      "term_years": 5,
+      "term_limit": { "max_terms": 2, "consecutive_only": false },
+      "succession": { "type": "vice" },
+      "holders": [
+        { "person": "bgr.petar_stoyanov", "from": "1997-01-22", "to": "2002-01-22" },
+        { "person": "bgr.georgi_parvanov", "from": "2002-01-22", "to": "2012-01-22", "note": "Re-elected in 2006." },
+        { "person": "bgr.rosen_plevneliev", "from": "2012-01-22", "to": "2017-01-22" },
+        { "person": "bgr.rumen_radev", "from": "2017-01-22", "to": "2026-01-23", "note": "Re-elected in 2021; resigned in January 2026 (accepted by the Constitutional Court) to enter parliamentary politics." },
+        { "person": "bgr.iliana_iotova", "from": "2026-01-23", "note": "Vice President since 2017; succeeded to the presidency for the rest of the term. The next presidential election is scheduled for 25 October 2026, after the data date." }
+      ],
+      "note": "Dates from the Wikipedia article on the President of Bulgaria (list of presidents), which agrees with Wikidata. The Vice President completes the term after a death, resignation or removal.",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/President_of_Bulgaria", "title": "Wikipedia: President of Bulgaria (list of presidents, succession)", "accessed": "2026-10-15" },
+        { "url": "https://www.wikidata.org/wiki/Q14946265", "title": "Wikidata: President of Bulgaria (position held by)", "accessed": "2026-10-15" },
+        { "url": "https://en.wikipedia.org/wiki/2026_Bulgarian_parliamentary_election", "title": "Wikipedia: 2026 Bulgarian parliamentary election (Radev's resignation)", "accessed": "2026-10-15" },
+        { "url": "https://en.wikipedia.org/wiki/2026_Bulgarian_presidential_election", "title": "Wikipedia: 2026 Bulgarian presidential election (scheduled 25 October 2026)", "accessed": "2026-10-15" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "bgr.prime_minister",
+      "title": { "en": "Prime Minister of Bulgaria", "native": "Министър-председател на Република България" },
+      "role": "head_of_government",
+      "power_weight": 0.85,
+      "selection": "legislature",
+      "term_years": 4,
+      "holders": [
+        { "person": "bgr.ivan_kostov", "from": "1997-05-21", "to": "2001-07-24", "note": "SDS-DP-BZNS government (United Democratic Forces)." },
+        { "person": "bgr.simeon_sakskoburggotski", "from": "2001-07-24", "to": "2005-08-16", "note": "NDSV-DPS government. Wikidata gives 17 August 2005 as the handover." },
+        { "person": "bgr.sergei_stanishev", "from": "2005-08-16", "to": "2009-07-27", "note": "BSP-NDSV-DPS coalition." },
+        { "person": "bgr.boyko_borisov", "from": "2009-07-27", "to": "2013-03-13", "note": "GERB government; resigned, followed by a caretaker government." },
+        { "person": "bgr.marin_raykov", "from": "2013-03-13", "to": "2013-05-29", "note": "Caretaker government." },
+        { "person": "bgr.plamen_oresharski", "from": "2013-05-29", "to": "2014-08-06", "note": "Non-party; BSP-DPS government; resigned in 2014." },
+        { "person": "bgr.georgi_bliznashki", "from": "2014-08-06", "to": "2014-11-07", "note": "Caretaker government." },
+        { "person": "bgr.boyko_borisov", "from": "2014-11-07", "to": "2017-01-27", "note": "GERB-Reformist Bloc-ABV government." },
+        { "person": "bgr.ognyan_gerdzhikov", "from": "2017-01-27", "to": "2017-05-04", "note": "Caretaker government." },
+        { "person": "bgr.boyko_borisov", "from": "2017-05-04", "to": "2021-05-12", "note": "GERB-United Patriots government." },
+        { "person": "bgr.stefan_yanev", "from": "2021-05-12", "to": "2021-12-13", "note": "Two consecutive caretaker governments (Wikidata splits them on 16 September 2021)." },
+        { "person": "bgr.kiril_petkov", "from": "2021-12-13", "to": "2022-08-02", "note": "PP-BSP-ITN-DB coalition." },
+        { "person": "bgr.galab_donev", "from": "2022-08-02", "to": "2023-06-06", "note": "Two consecutive caretaker governments." },
+        { "person": "bgr.nikolai_denkov", "from": "2023-06-06", "to": "2024-04-09", "note": "PP-DB and GERB government." },
+        { "person": "bgr.dimitar_glavchev", "from": "2024-04-09", "to": "2025-01-16", "note": "Two consecutive caretaker governments." },
+        { "person": "bgr.rosen_zhelyazkov", "from": "2025-01-16", "to": "2026-02-19", "note": "GERB-BSP-ITN government; resigned on 11 December 2025 after anti-corruption protests and stayed until the caretaker government took over." },
+        { "person": "bgr.andrey_gyurov", "from": "2026-02-19", "to": "2026-05-08", "note": "Caretaker government." },
+        { "person": "bgr.rumen_radev", "from": "2026-05-08", "note": "Progressive Bulgaria government after the April 2026 election." }
+      ],
+      "note": "Dates from the Wikipedia list of prime ministers of Bulgaria (table and timeline); Wikidata agrees except where noted. Caretaker Prime Ministers are appointed by the President when the National Assembly cannot elect a government.",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/List_of_prime_ministers_of_Bulgaria", "title": "Wikipedia: List of prime ministers of Bulgaria", "accessed": "2026-10-15" },
+        { "url": "https://www.wikidata.org/wiki/Q4404583", "title": "Wikidata: Prime Minister of Bulgaria (position held by)", "accessed": "2026-10-15" },
+        { "url": "https://en.wikipedia.org/wiki/2026_Bulgarian_parliamentary_election", "title": "Wikipedia: 2026 Bulgarian parliamentary election (government formation)", "accessed": "2026-10-15" }
+      ],
+      "confidence": "verified"
+    }
+  ],
+  "legislature": {
+    "name": { "en": "National Assembly", "native": "Народно събрание" },
+    "chambers": [
+      {
+        "id": "national_assembly",
+        "name": { "en": "National Assembly", "native": "Народно събрание" },
+        "seats": 240,
+        "term_years": 4,
+        "elected": "direct",
+        "system": {
+          "type": "list_pr",
+          "formula": "hare",
+          "threshold": 0.04,
+          "district_model": "custom",
+          "note": "Open-list PR in 31 multi-member constituencies (4 to 19 seats), 4% national threshold for parties and coalitions, seats by largest remainder with a Hare quota (as described for 2026). The 2009 election used a mixed system with 31 single-member seats. seats_2000 is the result of the April 1997 election: United Democratic Forces (ODS) 137 recorded under the SDS, Democratic Left 58 under the BSP, Union for National Salvation 19 under the DPS. Mid-term changes before 1 January 2000 were not checked."
+        },
+        "seats_2000": { "bgr.sds": 137, "bgr.bsp": 58, "bgr.dps": 19, "bgr.euroleft": 14, "bgr.bbb": 12 },
+        "confidence_chamber": true,
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/1997_Bulgarian_parliamentary_election", "title": "Wikipedia: 1997 Bulgarian parliamentary election", "accessed": "2026-10-15" },
+          { "url": "https://en.wikipedia.org/wiki/2026_Bulgarian_parliamentary_election", "title": "Wikipedia: 2026 Bulgarian parliamentary election (electoral system)", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      }
+    ]
+  },
+  "party_system": "multi_party",
+  "start_2000": {
+    "ruling_parties": ["bgr.sds"],
+    "confidence_and_supply": [],
+    "ideology_support": {
+      "liberal_conservative": 0.5226,
+      "social_democrat": 0.2757,
+      "regionalist": 0.076,
+      "right_populist": 0.0493,
+      "marxist_leninist": 0.012,
+      "constitutional_monarchist": 0.011,
+      "big_tent": 0.0534
+    },
+    "ideology_support_note": "Derived from the April 1997 National Assembly vote (shares computed from the vote counts): United Democratic Forces 52.26% (SDS-led centre-right alliance, recorded as liberal conservative), Democratic Left (BSP-led) 22.07% and Bulgarian Euro-Left 5.50% (social democrat), Union for National Salvation (DPS-led) 7.60% (regionalist: the DPS represents mainly the Turkish minority), Bulgarian Business Bloc 4.93% (populist, recorded as right_populist), Communist Party of Bulgaria 1.20%, Alliance for the Tsar 1.10% (constitutional monarchist), other lists and independents 5.34% (big_tent).",
+    "stability": 0.6,
+    "war_support": 0.2
+  },
+  "claims": [],
+  "source": [
+    { "url": "https://en.wikipedia.org/wiki/1997_Bulgarian_parliamentary_election", "title": "Wikipedia: 1997 Bulgarian parliamentary election (Kostov government)", "accessed": "2026-10-15" },
+    { "url": "https://en.wikipedia.org/wiki/List_of_prime_ministers_of_Bulgaria", "title": "Wikipedia: List of prime ministers of Bulgaria", "accessed": "2026-10-15" }
+  ],
+  "confidence": "verified"
+}

@@ -1,0 +1,576 @@
+{
+  "rules": [
+    {
+      "kind": "legislative",
+      "chamber": "national_assembly",
+      "every_years": 4,
+      "anchor": "2026-04-19",
+      "snap_possible": true,
+      "note": "Four-year term; snap elections follow when no government can be formed (seven between April 2021 and April 2026)."
+    },
+    {
+      "kind": "presidential",
+      "office": "bgr.president",
+      "every_years": 5,
+      "anchor": "2021-11-14",
+      "snap_possible": false,
+      "note": "Two-round system (a runoff also if turnout is below 50%); the President and Vice President run on a joint ticket and the Vice President completes the term after a resignation, so no early election is held. A 'none of the above' option exists since 2016. The next election is scheduled for 25 October 2026, after the data date."
+    }
+  ],
+  "elections": [
+    {
+      "id": "assembly_2001",
+      "date": "2001-06-17",
+      "kind": "legislative",
+      "chamber": "national_assembly",
+      "historical": {
+        "party_results": [
+          { "party": "bgr.ndsv", "share": 0.4274, "seats": 120 },
+          { "party": "bgr.sds", "share": 0.1818, "seats": 51 },
+          { "party": "bgr.bsp", "share": 0.1715, "seats": 48 },
+          { "party": "bgr.dps", "share": 0.0745, "seats": 21 }
+        ],
+        "winner": "bgr.ndsv",
+        "turnout": 0.6663,
+        "note": "SDS figures are the United Democratic Forces (ODS); BSP figures are Coalition for Bulgaria. The NDSV, one seat short of a majority, formed a government with the DPS under Simeon Sakskoburggotski.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2001_Bulgarian_parliamentary_election", "title": "Wikipedia: 2001 Bulgarian parliamentary election", "accessed": "2026-10-15" },
+          { "url": "https://en.wikipedia.org/wiki/National_Movement_for_Stability_and_Progress", "title": "Wikipedia: National Movement for Stability and Progress", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "president_2001",
+      "date": "2001-11-11",
+      "kind": "presidential",
+      "office": "bgr.president",
+      "rounds": 2,
+      "historical": {
+        "candidates": [
+          { "person": "bgr.georgi_parvanov", "party": "bgr.bsp", "share": 0.3639, "votes": 1032665, "round": 1 },
+          { "person": "bgr.petar_stoyanov", "party": "bgr.sds", "share": 0.3495, "votes": 991680, "round": 1 },
+          { "person": "bgr.bogomil_bonev", "share": 0.1927, "votes": 546801, "round": 1 },
+          { "person": "bgr.georgi_parvanov", "party": "bgr.bsp", "share": 0.5413, "votes": 2043443, "round": 2 },
+          { "person": "bgr.petar_stoyanov", "party": "bgr.sds", "share": 0.4587, "votes": 1731676, "round": 2 }
+        ],
+        "winner": "bgr.georgi_parvanov",
+        "turnout": 0.4163,
+        "note": "First round 11 November, runoff 18 November 2001. Stoyanov ran for the United Democratic Forces, Bonev as an independent. Candidates under 5% omitted (Reneta Indzhova 4.92% and others). Shares computed from the vote counts. Turnout is the first round (54.92% in the runoff).",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2001_Bulgarian_presidential_election", "title": "Wikipedia: 2001 Bulgarian presidential election", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "assembly_2005",
+      "date": "2005-06-25",
+      "kind": "legislative",
+      "chamber": "national_assembly",
+      "historical": {
+        "party_results": [
+          { "party": "bgr.bsp", "share": 0.3095, "seats": 82 },
+          { "party": "bgr.ndsv", "share": 0.1988, "seats": 53 },
+          { "party": "bgr.dps", "share": 0.1281, "seats": 34 },
+          { "party": "bgr.ataka", "share": 0.0814, "seats": 21 },
+          { "party": "bgr.sds", "share": 0.0768, "seats": 20 },
+          { "party": "bgr.dsb", "share": 0.0644, "seats": 17 },
+          { "party": "others", "seats": 13 }
+        ],
+        "winner": "bgr.bsp",
+        "turnout": 0.5576,
+        "note": "BSP figures are Coalition for Bulgaria; SDS figures are the United Democratic Forces. 'others' are the 13 seats of the Bulgarian People's Union (5.19%, led by Anastasia Mozer). Sergei Stanishev formed a BSP-NDSV-DPS coalition.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2005_Bulgarian_parliamentary_election", "title": "Wikipedia: 2005 Bulgarian parliamentary election", "accessed": "2026-10-15" },
+          { "url": "https://en.wikipedia.org/wiki/List_of_prime_ministers_of_Bulgaria", "title": "Wikipedia: List of prime ministers of Bulgaria", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "president_2006",
+      "date": "2006-10-22",
+      "kind": "presidential",
+      "office": "bgr.president",
+      "rounds": 2,
+      "historical": {
+        "candidates": [
+          { "person": "bgr.georgi_parvanov", "party": "bgr.bsp", "share": 0.6405, "votes": 1780119, "round": 1 },
+          { "person": "bgr.volen_siderov", "party": "bgr.ataka", "share": 0.2149, "votes": 597175, "round": 1 },
+          { "person": "bgr.nedelcho_beronov", "party": "bgr.sds", "share": 0.0975, "votes": 271078, "round": 1 },
+          { "person": "bgr.georgi_parvanov", "party": "bgr.bsp", "share": 0.7595, "votes": 2050488, "round": 2 },
+          { "person": "bgr.volen_siderov", "party": "bgr.ataka", "share": 0.2405, "votes": 649387, "round": 2 }
+        ],
+        "winner": "bgr.georgi_parvanov",
+        "turnout": 0.4411,
+        "note": "First round 22 October, runoff 29 October 2006 (held because first-round turnout was below 50%). Candidates under 5% omitted. Turnout is the first round (42.62% in the runoff).",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2006_Bulgarian_presidential_election", "title": "Wikipedia: 2006 Bulgarian presidential election", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "assembly_2009",
+      "date": "2009-07-05",
+      "kind": "legislative",
+      "chamber": "national_assembly",
+      "historical": {
+        "party_results": [
+          { "party": "bgr.gerb", "share": 0.3972, "seats": 116 },
+          { "party": "bgr.bsp", "share": 0.177, "seats": 40 },
+          { "party": "bgr.dps", "share": 0.1445, "seats": 38 },
+          { "party": "bgr.ataka", "share": 0.0936, "seats": 21 },
+          { "party": "bgr.sds", "share": 0.0676, "seats": 15 },
+          { "party": "bgr.rzs", "share": 0.0413, "seats": 10 },
+          { "party": "bgr.ndsv", "share": 0.0302, "seats": 0 }
+        ],
+        "winner": "bgr.gerb",
+        "turnout": 0.6064,
+        "note": "Mixed system: 209 list seats plus 31 single-member seats (GERB won 26 of them, DPS 5). Shares are the proportional vote. SDS figures are the Blue Coalition (SDS, DSB and others; led by Martin Dimitrov and Ivan Kostov). Boyko Borisov formed a GERB government.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2009_Bulgarian_parliamentary_election", "title": "Wikipedia: 2009 Bulgarian parliamentary election", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "president_2011",
+      "date": "2011-10-23",
+      "kind": "presidential",
+      "office": "bgr.president",
+      "rounds": 2,
+      "historical": {
+        "candidates": [
+          { "person": "bgr.rosen_plevneliev", "party": "bgr.gerb", "share": 0.4011, "votes": 1349380, "round": 1 },
+          { "person": "bgr.ivailo_kalfin", "party": "bgr.bsp", "share": 0.2896, "votes": 974300, "round": 1 },
+          { "person": "bgr.meglena_kuneva", "share": 0.14, "votes": 470808, "round": 1 },
+          { "person": "bgr.rosen_plevneliev", "party": "bgr.gerb", "share": 0.5258, "votes": 1698136, "round": 2 },
+          { "person": "bgr.ivailo_kalfin", "party": "bgr.bsp", "share": 0.4742, "votes": 1531193, "round": 2 }
+        ],
+        "winner": "bgr.rosen_plevneliev",
+        "turnout": 0.5229,
+        "note": "First round 23 October, runoff 30 October 2011. Kuneva ran with an initiative committee. Candidates under 5% omitted (Volen Siderov 3.64% and others). Turnout is the first round (48.25% in the runoff).",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2011_Bulgarian_presidential_election", "title": "Wikipedia: 2011 Bulgarian presidential election", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "nuclear_referendum_2013",
+      "date": "2013-01-27",
+      "kind": "referendum",
+      "question": "Should nuclear energy be developed in Bulgaria through construction of a new nuclear power plant?",
+      "historical": {
+        "yes_share": 0.6149,
+        "winner": "invalid",
+        "turnout": 0.2021,
+        "note": "Yes 851,757; No 533,526; invalid 19,903; electorate 6,952,183. Approved but non-binding because turnout was below the required 60%.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2013_Bulgarian_nuclear_power_referendum", "title": "Wikipedia: 2013 Bulgarian nuclear power referendum", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "assembly_2013",
+      "date": "2013-05-12",
+      "kind": "legislative",
+      "chamber": "national_assembly",
+      "snap": true,
+      "historical": {
+        "party_results": [
+          { "party": "bgr.gerb", "share": 0.3055, "seats": 97 },
+          { "party": "bgr.bsp", "share": 0.2662, "seats": 84 },
+          { "party": "bgr.dps", "share": 0.1131, "seats": 36 },
+          { "party": "bgr.ataka", "share": 0.073, "seats": 23 }
+        ],
+        "winner": "bgr.gerb",
+        "turnout": 0.5247,
+        "note": "Early election after the Borisov government resigned. BSP figures are Coalition for Bulgaria. The BSP and DPS formed the Oresharski government.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2013_Bulgarian_parliamentary_election", "title": "Wikipedia: 2013 Bulgarian parliamentary election", "accessed": "2026-10-15" },
+          { "url": "https://en.wikipedia.org/wiki/List_of_prime_ministers_of_Bulgaria", "title": "Wikipedia: List of prime ministers of Bulgaria", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "assembly_2014",
+      "date": "2014-10-05",
+      "kind": "legislative",
+      "chamber": "national_assembly",
+      "snap": true,
+      "historical": {
+        "party_results": [
+          { "party": "bgr.gerb", "share": 0.3267, "seats": 84 },
+          { "party": "bgr.bsp", "share": 0.154, "seats": 39 },
+          { "party": "bgr.dps", "share": 0.1484, "seats": 38 },
+          { "party": "bgr.rb", "share": 0.0889, "seats": 23 },
+          { "party": "bgr.vmro", "share": 0.0728, "seats": 19 },
+          { "party": "others", "seats": 15 },
+          { "party": "bgr.ataka", "share": 0.0452, "seats": 11 },
+          { "party": "bgr.abv", "share": 0.0415, "seats": 11 }
+        ],
+        "winner": "bgr.gerb",
+        "turnout": 0.5105,
+        "note": "Early election after the Oresharski government resigned. BSP figures are BSP-Left Bulgaria; VMRO figures are the Patriotic Front (NFSB-VMRO, led by Karakachanov). 'others' are the 15 seats of Bulgaria Without Censorship (5.69%, Nikolay Barekov). Borisov formed a GERB-Reformist Bloc-ABV government.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2014_Bulgarian_parliamentary_election", "title": "Wikipedia: 2014 Bulgarian parliamentary election", "accessed": "2026-10-15" },
+          { "url": "https://en.wikipedia.org/wiki/List_of_prime_ministers_of_Bulgaria", "title": "Wikipedia: List of prime ministers of Bulgaria", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "evoting_referendum_2015",
+      "date": "2015-10-25",
+      "kind": "referendum",
+      "question": "Do you support being able to vote remotely electronically when conducting elections and referendums?",
+      "historical": {
+        "yes_share": 0.7279,
+        "winner": "invalid",
+        "turnout": 0.4005,
+        "note": "Yes 1,883,411; No 704,182; invalid 122,339; electorate 6,766,619. Approved but not binding because turnout was below the required threshold.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2015_Bulgarian_electoral_code_referendum", "title": "Wikipedia: 2015 Bulgarian electoral code referendum", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "president_2016",
+      "date": "2016-11-06",
+      "kind": "presidential",
+      "office": "bgr.president",
+      "rounds": 2,
+      "historical": {
+        "candidates": [
+          { "person": "bgr.rumen_radev", "share": 0.2544, "votes": 973754, "round": 1 },
+          { "person": "bgr.tsetska_tsacheva", "party": "bgr.gerb", "share": 0.2196, "votes": 840635, "round": 1 },
+          { "person": "bgr.krasimir_karakachanov", "party": "bgr.vmro", "share": 0.1497, "votes": 573016, "round": 1 },
+          { "person": "bgr.veselin_mareshki", "share": 0.1117, "votes": 427660, "round": 1 },
+          { "person": "bgr.plamen_oresharski", "share": 0.0663, "votes": 253726, "round": 1 },
+          { "person": "bgr.traycho_traykov", "share": 0.0587, "votes": 224734, "round": 1 },
+          { "person": "bgr.rumen_radev", "share": 0.5937, "votes": 2063032, "round": 2 },
+          { "person": "bgr.tsetska_tsacheva", "party": "bgr.gerb", "share": 0.3616, "votes": 1256485, "round": 2 }
+        ],
+        "winner": "bgr.rumen_radev",
+        "turnout": 0.5628,
+        "note": "First round 6 November, runoff 13 November 2016. Radev ran as an independent backed by the BSP; Karakachanov for the United Patriots; Traykov for the Reformist Bloc. Shares include 'none of the above' in the total, as in the infobox (5.6% and 4.5% of votes). Candidates under 5% omitted (Ivailo Kalfin 3.3% and others). Turnout is the first round (50.44% in the runoff).",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2016_Bulgarian_presidential_election", "title": "Wikipedia: 2016 Bulgarian presidential election", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "referendum_2016_electoral_system",
+      "date": "2016-11-06",
+      "kind": "referendum",
+      "question": "Do you support MPs being elected by a majority electoral system with an absolute majority in two rounds?",
+      "historical": {
+        "yes_share": 0.738,
+        "winner": "invalid",
+        "turnout": 0.5081,
+        "note": "Held with the presidential election. For 2,509,864; Against 560,024; none of the above 330,928. Quorum not met (fewer voters than in the 2014 parliamentary election), but over 20% of voters supported it, so the National Assembly had to debate it.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2016_Bulgarian_referendum", "title": "Wikipedia: 2016 Bulgarian referendum", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "referendum_2016_compulsory_voting",
+      "date": "2016-11-06",
+      "kind": "referendum",
+      "question": "Do you support the introduction of compulsory voting in elections and referendums?",
+      "historical": {
+        "yes_share": 0.6348,
+        "winner": "invalid",
+        "turnout": 0.5081,
+        "note": "For 2,158,929; Against 905,691; none of the above 336,180. Quorum not met.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2016_Bulgarian_referendum", "title": "Wikipedia: 2016 Bulgarian referendum", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "referendum_2016_party_funding",
+      "date": "2016-11-06",
+      "kind": "referendum",
+      "question": "Do you support the annual state subsidy to parties being one lev per vote received at the last parliamentary election?",
+      "historical": {
+        "yes_share": 0.7402,
+        "winner": "invalid",
+        "turnout": 0.5081,
+        "note": "For 2,516,791; Against 523,759; none of the above 359,778. Quorum not met.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2016_Bulgarian_referendum", "title": "Wikipedia: 2016 Bulgarian referendum", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "assembly_2017",
+      "date": "2017-03-26",
+      "kind": "legislative",
+      "chamber": "national_assembly",
+      "snap": true,
+      "historical": {
+        "party_results": [
+          { "party": "bgr.gerb", "share": 0.3265, "seats": 95 },
+          { "party": "bgr.bsp", "share": 0.2719, "seats": 80 },
+          { "party": "bgr.vmro", "share": 0.0907, "seats": 27 },
+          { "party": "bgr.dps", "share": 0.0899, "seats": 26 },
+          { "party": "bgr.volya", "share": 0.0415, "seats": 12 }
+        ],
+        "winner": "bgr.gerb",
+        "turnout": 0.5385,
+        "note": "Early election after Borisov resigned. BSP figures are BSP for Bulgaria; VMRO figures are the United Patriots (VMRO, NFSB and Ataka, led by Karakachanov). Shares as in the infobox. Borisov formed a GERB-United Patriots government.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2017_Bulgarian_parliamentary_election", "title": "Wikipedia: 2017 Bulgarian parliamentary election", "accessed": "2026-10-15" },
+          { "url": "https://en.wikipedia.org/wiki/List_of_prime_ministers_of_Bulgaria", "title": "Wikipedia: List of prime ministers of Bulgaria", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "assembly_2021_04",
+      "date": "2021-04-04",
+      "kind": "legislative",
+      "chamber": "national_assembly",
+      "historical": {
+        "party_results": [
+          { "party": "bgr.gerb", "share": 0.2618, "seats": 75 },
+          { "party": "bgr.itn", "share": 0.1766, "seats": 51 },
+          { "party": "bgr.bsp", "share": 0.1501, "seats": 43 },
+          { "party": "bgr.dps", "share": 0.1051, "seats": 30 },
+          { "party": "bgr.db", "share": 0.0945, "seats": 27 },
+          { "party": "bgr.ismv", "share": 0.0472, "seats": 14 }
+        ],
+        "winner": "bgr.gerb",
+        "turnout": 0.491,
+        "note": "GERB figures are GERB-SDS; ISMV figures are Stand Up! Mafia, Get Out!. No government could be formed and a caretaker government under Stefan Yanev was appointed.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/April_2021_Bulgarian_parliamentary_election", "title": "Wikipedia: April 2021 Bulgarian parliamentary election", "accessed": "2026-10-15" },
+          { "url": "https://en.wikipedia.org/wiki/List_of_prime_ministers_of_Bulgaria", "title": "Wikipedia: List of prime ministers of Bulgaria", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "assembly_2021_07",
+      "date": "2021-07-11",
+      "kind": "legislative",
+      "chamber": "national_assembly",
+      "snap": true,
+      "historical": {
+        "party_results": [
+          { "party": "bgr.itn", "share": 0.2408, "seats": 65 },
+          { "party": "bgr.gerb", "share": 0.2351, "seats": 63 },
+          { "party": "bgr.bsp", "share": 0.1339, "seats": 36 },
+          { "party": "bgr.db", "share": 0.1264, "seats": 34 },
+          { "party": "bgr.dps", "share": 0.1071, "seats": 29 },
+          { "party": "bgr.ismv", "share": 0.0501, "seats": 13 }
+        ],
+        "winner": "bgr.itn",
+        "turnout": 0.4163,
+        "note": "Snap election after the April assembly failed to form a government; this one also failed and the second Yanev caretaker government followed.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/July_2021_Bulgarian_parliamentary_election", "title": "Wikipedia: July 2021 Bulgarian parliamentary election", "accessed": "2026-10-15" },
+          { "url": "https://en.wikipedia.org/wiki/List_of_prime_ministers_of_Bulgaria", "title": "Wikipedia: List of prime ministers of Bulgaria", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "assembly_2021_11",
+      "date": "2021-11-14",
+      "kind": "legislative",
+      "chamber": "national_assembly",
+      "snap": true,
+      "historical": {
+        "party_results": [
+          { "party": "bgr.pp", "share": 0.2567, "seats": 67 },
+          { "party": "bgr.gerb", "share": 0.2274, "seats": 59 },
+          { "party": "bgr.dps", "share": 0.13, "seats": 34 },
+          { "party": "bgr.bsp", "share": 0.1021, "seats": 26 },
+          { "party": "bgr.itn", "share": 0.0952, "seats": 25 },
+          { "party": "bgr.db", "share": 0.0637, "seats": 16 },
+          { "party": "bgr.vazrazhdane", "share": 0.0486, "seats": 13 }
+        ],
+        "winner": "bgr.pp",
+        "turnout": 0.4004,
+        "note": "Held with the first presidential round. Kiril Petkov formed a PP-BSP-ITN-DB coalition.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2021_Bulgarian_general_election", "title": "Wikipedia: 2021 Bulgarian general election", "accessed": "2026-10-15" },
+          { "url": "https://en.wikipedia.org/wiki/List_of_prime_ministers_of_Bulgaria", "title": "Wikipedia: List of prime ministers of Bulgaria", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "president_2021",
+      "date": "2021-11-14",
+      "kind": "presidential",
+      "office": "bgr.president",
+      "rounds": 2,
+      "historical": {
+        "candidates": [
+          { "person": "bgr.rumen_radev", "share": 0.4942, "votes": 1322385, "round": 1 },
+          { "person": "bgr.anastas_gerdzhikov", "share": 0.2283, "votes": 610862, "round": 1 },
+          { "person": "bgr.mustafa_karadayi", "party": "bgr.dps", "share": 0.1157, "votes": 309681, "round": 1 },
+          { "person": "bgr.rumen_radev", "share": 0.6672, "votes": 1539650, "round": 2 },
+          { "person": "bgr.anastas_gerdzhikov", "share": 0.318, "votes": 733791, "round": 2 }
+        ],
+        "winner": "bgr.rumen_radev",
+        "turnout": 0.4047,
+        "note": "First round 14 November, runoff 21 November 2021. Radev (independent) was backed by the BSP, PP, ITN and IBG-NI; Gerdzhikov (independent) by GERB-SDS. Shares include 'none of the above' in the total (computed from the vote counts; the runoff shares match the infobox). Candidates under 5% omitted (Kostadin Kostadinov 3.9%, Lozan Panov 3.7% and others). Turnout is the first round (34.85% in the runoff).",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2021_Bulgarian_general_election", "title": "Wikipedia: 2021 Bulgarian general election", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "assembly_2022",
+      "date": "2022-10-02",
+      "kind": "legislative",
+      "chamber": "national_assembly",
+      "snap": true,
+      "historical": {
+        "party_results": [
+          { "party": "bgr.gerb", "share": 0.2448, "seats": 67 },
+          { "party": "bgr.pp", "share": 0.1952, "seats": 53 },
+          { "party": "bgr.dps", "share": 0.1329, "seats": 36 },
+          { "party": "bgr.vazrazhdane", "share": 0.0983, "seats": 27 },
+          { "party": "bgr.bsp", "share": 0.0898, "seats": 25 },
+          { "party": "bgr.db", "share": 0.0719, "seats": 20 },
+          { "party": "bgr.bv", "share": 0.0447, "seats": 12 }
+        ],
+        "winner": "bgr.gerb",
+        "turnout": 0.393,
+        "note": "Snap election after the Petkov government resigned. No government was formed; the second Donev caretaker government followed.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2022_Bulgarian_parliamentary_election", "title": "Wikipedia: 2022 Bulgarian parliamentary election", "accessed": "2026-10-15" },
+          { "url": "https://en.wikipedia.org/wiki/List_of_prime_ministers_of_Bulgaria", "title": "Wikipedia: List of prime ministers of Bulgaria", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "assembly_2023",
+      "date": "2023-04-02",
+      "kind": "legislative",
+      "chamber": "national_assembly",
+      "snap": true,
+      "historical": {
+        "party_results": [
+          { "party": "bgr.gerb", "share": 0.2539, "seats": 69 },
+          { "party": "bgr.pp", "share": 0.2354, "seats": 64 },
+          { "party": "bgr.vazrazhdane", "share": 0.1358, "seats": 37 },
+          { "party": "bgr.dps", "share": 0.1318, "seats": 36 },
+          { "party": "bgr.bsp", "share": 0.0856, "seats": 23 },
+          { "party": "bgr.itn", "share": 0.0394, "seats": 11 }
+        ],
+        "winner": "bgr.gerb",
+        "turnout": 0.4051,
+        "note": "PP figures are the PP-DB alliance. Nikolai Denkov (PP-DB) formed a government with GERB.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2023_Bulgarian_parliamentary_election", "title": "Wikipedia: 2023 Bulgarian parliamentary election", "accessed": "2026-10-15" },
+          { "url": "https://en.wikipedia.org/wiki/List_of_prime_ministers_of_Bulgaria", "title": "Wikipedia: List of prime ministers of Bulgaria", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "assembly_2024_06",
+      "date": "2024-06-09",
+      "kind": "legislative",
+      "chamber": "national_assembly",
+      "snap": true,
+      "historical": {
+        "party_results": [
+          { "party": "bgr.gerb", "share": 0.2399, "seats": 68 },
+          { "party": "bgr.dps", "share": 0.1656, "seats": 47 },
+          { "party": "bgr.pp", "share": 0.1392, "seats": 39 },
+          { "party": "bgr.vazrazhdane", "share": 0.1338, "seats": 38 },
+          { "party": "bgr.bsp", "share": 0.0685, "seats": 19 },
+          { "party": "bgr.itn", "share": 0.0579, "seats": 16 },
+          { "party": "bgr.velichie", "share": 0.0452, "seats": 13 }
+        ],
+        "winner": "bgr.gerb",
+        "turnout": 0.3443,
+        "note": "Held with the European Parliament election. PP figures are PP-DB. No government was formed; the second Glavchev caretaker government followed.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/June_2024_Bulgarian_parliamentary_election", "title": "Wikipedia: June 2024 Bulgarian parliamentary election", "accessed": "2026-10-15" },
+          { "url": "https://en.wikipedia.org/wiki/List_of_prime_ministers_of_Bulgaria", "title": "Wikipedia: List of prime ministers of Bulgaria", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "assembly_2024_10",
+      "date": "2024-10-27",
+      "kind": "legislative",
+      "chamber": "national_assembly",
+      "snap": true,
+      "historical": {
+        "party_results": [
+          { "party": "bgr.gerb", "share": 0.2552, "seats": 66 },
+          { "party": "bgr.pp", "share": 0.1375, "seats": 36 },
+          { "party": "bgr.vazrazhdane", "share": 0.1292, "seats": 33 },
+          { "party": "bgr.dps", "share": 0.1113, "seats": 29 },
+          { "party": "bgr.bsp", "share": 0.0732, "seats": 19 },
+          { "party": "bgr.aps", "share": 0.0724, "seats": 19 },
+          { "party": "bgr.itn", "share": 0.0656, "seats": 17 },
+          { "party": "bgr.mech", "share": 0.0445, "seats": 11 },
+          { "party": "bgr.velichie", "share": 0.0387, "seats": 10 }
+        ],
+        "winner": "bgr.gerb",
+        "turnout": 0.3881,
+        "note": "Seats are those after the court-ordered recalculation, which brought Velichie (initially 3.996% and no seats) into the Assembly; before it, GERB had 69, PP-DB 37, Revival 35, DPS-New Beginning 30, BSP 20, APS 19, ITN 18 and MECh 12. DPS figures are DPS-New Beginning; BSP figures are BSP-United Left; PP figures are PP-DB. Rosen Zhelyazkov (GERB) formed a GERB-BSP-ITN government in January 2025.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/October_2024_Bulgarian_parliamentary_election", "title": "Wikipedia: October 2024 Bulgarian parliamentary election", "accessed": "2026-10-15" },
+          { "url": "https://en.wikipedia.org/wiki/2026_Bulgarian_parliamentary_election", "title": "Wikipedia: 2026 Bulgarian parliamentary election", "accessed": "2026-10-15" },
+          { "url": "https://en.wikipedia.org/wiki/List_of_prime_ministers_of_Bulgaria", "title": "Wikipedia: List of prime ministers of Bulgaria", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "assembly_2026",
+      "date": "2026-04-19",
+      "kind": "legislative",
+      "chamber": "national_assembly",
+      "snap": true,
+      "historical": {
+        "party_results": [
+          { "party": "bgr.pb", "share": 0.4391, "seats": 131 },
+          { "party": "bgr.gerb", "share": 0.1318, "seats": 39 },
+          { "party": "bgr.pp", "share": 0.1242, "seats": 37 },
+          { "party": "bgr.dps", "share": 0.0701, "seats": 21 },
+          { "party": "bgr.vazrazhdane", "share": 0.0419, "seats": 12 },
+          { "party": "bgr.bsp", "share": 0.0297, "seats": 0 }
+        ],
+        "winner": "bgr.pb",
+        "turnout": 0.507,
+        "note": "Snap election after the Zhelyazkov government resigned on 11 December 2025 following anti-corruption protests. Progressive Bulgaria, formed by former President Radev, won an absolute majority; Radev became Prime Minister on 8 May 2026. GERB figures are GERB-SDS, PP figures PP-DB, BSP figures BSP-United Left (share computed from the vote counts including 'none of the above').",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2026_Bulgarian_parliamentary_election", "title": "Wikipedia: 2026 Bulgarian parliamentary election", "accessed": "2026-10-15" },
+          { "url": "https://en.wikipedia.org/wiki/List_of_prime_ministers_of_Bulgaria", "title": "Wikipedia: List of prime ministers of Bulgaria", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      }
+    }
+  ],
+  "source": [
+    { "url": "https://en.wikipedia.org/wiki/2026_Bulgarian_presidential_election", "title": "Wikipedia: 2026 Bulgarian presidential election (electoral system)", "accessed": "2026-10-15" },
+    { "url": "https://en.wikipedia.org/wiki/2026_Bulgarian_parliamentary_election", "title": "Wikipedia: 2026 Bulgarian parliamentary election (electoral system)", "accessed": "2026-10-15" }
+  ],
+  "confidence": "verified"
+}

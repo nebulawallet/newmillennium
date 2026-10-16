@@ -1,0 +1,119 @@
+{
+  "tag": "GRC",
+  "name": { "en": "Greece", "native": "Ελλάδα", "official": { "en": "Hellenic Republic", "native": "Ελληνική Δημοκρατία" } },
+  "adjective": "Greek",
+  "culture_primary": "greek",
+  "government": {
+    "type": "parliamentary",
+    "effective_executive": "grc.prime_minister",
+    "head_of_state_office": "grc.president",
+    "head_of_government_office": "grc.prime_minister",
+    "constitution": {
+      "term_limit_amendable": true,
+      "emergency_powers": true,
+      "referendum_required_for": []
+    },
+    "note": "Parliamentary republic with a unicameral Hellenic Parliament of 300 members. The President is elected by Parliament for five years: 200 votes are needed in the first two ballots and 180 in the third; under the rules described for 2020 a failed third ballot forced the dissolution of Parliament (as in December 2014, which led to the January 2015 election), while in 2025 a fourth ballot needed only an absolute majority (151). When no party can form a government, a caretaker Prime Minister is appointed until a new election, as in 2012, 2015 and 2023."
+  },
+  "offices": [
+    {
+      "id": "grc.president",
+      "title": { "en": "President of the Hellenic Republic", "native": "Πρόεδρος της Ελληνικής Δημοκρατίας" },
+      "role": "head_of_state",
+      "power_weight": 0.1,
+      "selection": "legislature",
+      "term_years": 5,
+      "term_limit": { "max_terms": 2, "consecutive_only": false },
+      "succession": { "type": "acting_then_election" },
+      "holders": [
+        { "person": "grc.konstantinos_stephanopoulos", "from": "1995-03-10", "to": "2005-03-12", "note": "Re-elected by Parliament in February 2000; non-party." },
+        { "person": "grc.karolos_papoulias", "from": "2005-03-12", "to": "2015-03-13", "note": "PASOK; re-elected in 2010." },
+        { "person": "grc.prokopis_pavlopoulos", "from": "2015-03-13", "to": "2020-03-13", "note": "New Democracy politician elected with the backing of the SYRIZA-ANEL government." },
+        { "person": "grc.katerina_sakellaropoulou", "from": "2020-03-13", "to": "2025-03-13", "note": "Non-party." },
+        { "person": "grc.konstantinos_tasoulas", "from": "2025-03-13", "note": "New Democracy; elected in the fourth ballot on 12 February 2025." }
+      ],
+      "note": "Dates from the Wikipedia list of presidents of Greece (table and timeline). Two-term limit as shown by the list (Stephanopoulos and Papoulias each served two terms). The Speaker of Parliament acts during a vacancy (none since 2000).",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/List_of_presidents_of_Greece", "title": "Wikipedia: List of presidents of Greece", "accessed": "2026-10-15" },
+        { "url": "https://en.wikipedia.org/wiki/2025_Greek_presidential_election", "title": "Wikipedia: 2025 Greek presidential election (voting rules)", "accessed": "2026-10-15" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "grc.prime_minister",
+      "title": { "en": "Prime Minister of Greece", "native": "Πρωθυπουργός της Ελλάδας" },
+      "role": "head_of_government",
+      "power_weight": 0.9,
+      "selection": "legislature",
+      "term_years": 4,
+      "holders": [
+        { "person": "grc.costas_simitis", "from": "1996-01-22", "to": "2004-03-10" },
+        { "person": "grc.kostas_karamanlis", "from": "2004-03-10", "to": "2009-10-06" },
+        { "person": "grc.george_papandreou", "from": "2009-10-06", "to": "2011-11-11" },
+        { "person": "grc.lucas_papademos", "from": "2011-11-11", "to": "2012-05-16", "note": "Non-party." },
+        { "person": "grc.panagiotis_pikrammenos", "from": "2012-05-16", "to": "2012-06-20", "note": "Caretaker government." },
+        { "person": "grc.antonis_samaras", "from": "2012-06-20", "to": "2015-01-26" },
+        { "person": "grc.alexis_tsipras", "from": "2015-01-26", "to": "2015-08-27", "note": "Resigned to call an early election." },
+        { "person": "grc.vassiliki_thanou", "from": "2015-08-27", "to": "2015-09-21", "note": "Caretaker government." },
+        { "person": "grc.alexis_tsipras", "from": "2015-09-21", "to": "2019-07-08" },
+        { "person": "grc.kyriakos_mitsotakis", "from": "2019-07-08", "to": "2023-05-24" },
+        { "person": "grc.ioannis_sarmas", "from": "2023-05-24", "to": "2023-06-26", "note": "Caretaker government. The Wikipedia table gives both 24 and 25 May 2023 for the handover; the timeline uses 24 May." },
+        { "person": "grc.kyriakos_mitsotakis", "from": "2023-06-26" }
+      ],
+      "note": "Dates from the Wikipedia list of prime ministers of Greece (table and timeline).",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/List_of_prime_ministers_of_Greece", "title": "Wikipedia: List of prime ministers of Greece", "accessed": "2026-10-15" }
+      ],
+      "confidence": "verified"
+    }
+  ],
+  "legislature": {
+    "name": { "en": "Hellenic Parliament", "native": "Βουλή των Ελλήνων" },
+    "chambers": [
+      {
+        "id": "parliament",
+        "name": { "en": "Hellenic Parliament", "native": "Βουλή των Ελλήνων" },
+        "seats": 300,
+        "term_years": 4,
+        "elected": "direct",
+        "system": {
+          "type": "mixed_other",
+          "threshold": 0.03,
+          "district_model": "custom",
+          "note": "List PR in multi-member constituencies with a 3% national threshold and, in most elections, a majority bonus for the first party. The 2016 law abolished the bonus (applied in 2019 and May 2023); the 2020 law restored it from June 2023: 20 extra seats at 25% plus one per half point above 25%, up to 50 at 40%. seats_2000 is the result of the September 1996 election; the April 2000 election fell after the game start."
+        },
+        "seats_2000": { "grc.pasok": 162, "grc.nd": 108, "grc.kke": 11, "grc.synaspismos": 10, "grc.dikki": 9 },
+        "confidence_chamber": true,
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/1996_Greek_legislative_election", "title": "Wikipedia: 1996 Greek legislative election", "accessed": "2026-10-15" },
+          { "url": "https://en.wikipedia.org/wiki/June_2023_Greek_legislative_election", "title": "Wikipedia: June 2023 Greek legislative election (electoral system)", "accessed": "2026-10-15" },
+          { "url": "https://en.wikipedia.org/wiki/May_2023_Greek_legislative_election", "title": "Wikipedia: May 2023 Greek legislative election (electoral system)", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      }
+    ]
+  },
+  "party_system": "multi_party",
+  "start_2000": {
+    "ruling_parties": ["grc.pasok"],
+    "confidence_and_supply": [],
+    "ideology_support": {
+      "social_democrat": 0.4149,
+      "liberal_conservative": 0.3812,
+      "marxist_leninist": 0.056,
+      "democratic_socialist": 0.0512,
+      "left_populist": 0.0444,
+      "national_conservative": 0.0294,
+      "big_tent": 0.0229
+    },
+    "ideology_support_note": "Derived from the September 1996 parliamentary vote (shares computed from the vote counts): PASOK 41.49% (social democrat), New Democracy 38.12% (liberal conservative), KKE 5.60% (communist), Synaspismos 5.12% (democratic socialist), DIKKI 4.43% (left-wing populist split from PASOK), Political Spring 2.94% (recorded as national conservative, a gameplay classification), other lists 2.29%.",
+    "stability": 0.7,
+    "war_support": 0.25
+  },
+  "claims": [],
+  "source": [
+    { "url": "https://en.wikipedia.org/wiki/1996_Greek_legislative_election", "title": "Wikipedia: 1996 Greek legislative election", "accessed": "2026-10-15" },
+    { "url": "https://en.wikipedia.org/wiki/List_of_prime_ministers_of_Greece", "title": "Wikipedia: List of prime ministers of Greece", "accessed": "2026-10-15" }
+  ],
+  "confidence": "verified"
+}

@@ -1,0 +1,15 @@
+{
+  "note": "Influence and approval are gameplay starting values for 1 January 2000 (CDR-USD-UDMR coalition under the non-party Prime Minister Isărescu, eleven months before an election the opposition PDSR won), not measured data. Influence reflects institutional weight (gameplay judgements): a large rural population, an influential Orthodox Church, unions closer to the opposition, and a Hungarian minority represented in government by the UDMR.",
+  "interest_groups": [
+    { "type": "military", "influence": 0.15, "approval": 50, "note": "Conscript army (conscription stopped on 1 January 2007); NATO membership came in 2004." },
+    { "type": "security_services", "influence": 0.15, "approval": 50 },
+    { "type": "business", "influence": 0.35, "approval": 45 },
+    { "type": "labour_unions", "influence": 0.3, "approval": 35, "note": "Unions are closer to the opposition social democrats." },
+    { "type": "religious_establishment", "influence": 0.3, "approval": 55, "note": "Romanian Orthodox Church." },
+    { "type": "rural", "influence": 0.3, "approval": 40 },
+    { "type": "urban_middle_class", "influence": 0.35, "approval": 45 },
+    { "type": "minorities", "influence": 0.12, "approval": 55, "note": "The Hungarian minority's UDMR was in the governing coalition; includes the Roma and other minorities with reserved seats." },
+    { "type": "youth_students", "influence": 0.15, "approval": 45 },
+    { "type": "media", "influence": 0.35, "approval": 45 }
+  ]
+}

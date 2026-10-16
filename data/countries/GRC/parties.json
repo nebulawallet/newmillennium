@@ -1,0 +1,356 @@
+{
+  "parties": [
+    {
+      "id": "grc.pasok",
+      "name": { "en": "PASOK – Movement for Change (Panhellenic Socialist Movement)", "native": "ΠΑΣΟΚ – Κίνημα Αλλαγής" },
+      "abbrev": { "en": "PASOK", "native": "ΠΑΣΟΚ" },
+      "color": "#2DB34A",
+      "sub_ideology": "social_democrat",
+      "founded": "1974-09-03",
+      "status_2000": "active",
+      "leader_history": [
+        { "person": "grc.costas_simitis", "from": "1996-06-30", "to": "2004-02-08" },
+        { "person": "grc.george_papandreou", "from": "2004-02-08", "to": "2012-03-18" },
+        { "person": "grc.evangelos_venizelos", "from": "2012-03-18", "to": "2015-06-14" },
+        { "person": "grc.fofi_gennimata", "from": "2015-06-14", "to": "2021-10-25" },
+        { "person": "grc.nikos_androulakis", "from": "2021-12-12" }
+      ],
+      "popularity_2000": 0.4149,
+      "popularity_note": "Vote share, September 1996.",
+      "note": "Governing party on 1 January 2000. Ran as the Democratic Alignment with DIMAR in September 2015, as the Movement for Change (KINAL) in 2019 and as PASOK-KINAL since 2022; the alliance became a single party in 2026, when the old PASOK formally dissolved (29 March 2026 per its article). All recorded under one id.",
+      "international": "Party of European Socialists",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/PASOK", "title": "Wikipedia: PASOK (party leaders, 2026 merger)", "accessed": "2026-10-15" },
+        { "url": "https://www.wikidata.org/wiki/Q46505372", "title": "Wikidata: PASOK – Movement for Change (chairperson)", "accessed": "2026-10-15" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "grc.nd",
+      "name": { "en": "New Democracy", "native": "Νέα Δημοκρατία" },
+      "abbrev": { "en": "ND", "native": "ΝΔ" },
+      "color": "#0F4C9A",
+      "sub_ideology": "liberal_conservative",
+      "founded": "1974-10-04",
+      "status_2000": "active",
+      "leader_history": [
+        { "person": "grc.kostas_karamanlis", "from": "1997-03-21", "to": "2009-11-30" },
+        { "person": "grc.antonis_samaras", "from": "2009-11-30", "to": "2015-07-05" },
+        { "person": "grc.vangelis_meimarakis", "from": "2015-07-05", "to": "2015-11-24", "title": "Interim leader" },
+        { "person": "grc.kyriakos_mitsotakis", "from": "2016-01-10" }
+      ],
+      "popularity_2000": 0.3812,
+      "popularity_note": "Vote share, September 1996.",
+      "note": "Main opposition party on 1 January 2000. Ioannis Plakiotakis was interim leader from 24 November 2015 to 10 January 2016 (not recorded as a person). Wikidata dates Mitsotakis's leadership from 11 January 2016.",
+      "international": "European People's Party",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/New_Democracy_(Greece)", "title": "Wikipedia: New Democracy (Greece) (party leaders)", "accessed": "2026-10-15" },
+        { "url": "https://www.wikidata.org/wiki/Q223153", "title": "Wikidata: New Democracy", "accessed": "2026-10-15" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "grc.kke",
+      "name": { "en": "Communist Party of Greece", "native": "Κομμουνιστικό Κόμμα Ελλάδας" },
+      "abbrev": { "en": "KKE", "native": "ΚΚΕ" },
+      "color": "#C90000",
+      "sub_ideology": "marxist_leninist",
+      "founded": "1918-11-17",
+      "status_2000": "active",
+      "leader_history": [
+        { "person": "grc.aleka_papariga", "from": 1991, "to": 2013, "title": "General Secretary" },
+        { "person": "grc.dimitris_koutsoumpas", "from": 2013, "title": "General Secretary" }
+      ],
+      "popularity_2000": 0.056,
+      "popularity_note": "Vote share, September 1996.",
+      "note": "Leadership changed in February 1991 and April 2013 (month only in the source, so years are recorded).",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/Communist_Party_of_Greece", "title": "Wikipedia: Communist Party of Greece (list of general secretaries)", "accessed": "2026-10-15" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "grc.synaspismos",
+      "name": { "en": "Coalition of the Left, of Movements and Ecology (Synaspismos)", "native": "Συνασπισμός της Αριστεράς, των Κινημάτων και της Οικολογίας" },
+      "abbrev": { "en": "SYN", "native": "ΣΥΝ" },
+      "color": "#E2312E",
+      "sub_ideology": "democratic_socialist",
+      "founded": 1991,
+      "dissolved": 2013,
+      "status_2000": "active",
+      "leader_history": [
+        { "person": "grc.nikos_konstantopoulos", "from": 1993, "to": 2004 },
+        { "person": "grc.alekos_alavanos", "from": 2004, "to": 2008 },
+        { "person": "grc.alexis_tsipras", "from": 2008, "to": 2013 }
+      ],
+      "popularity_2000": 0.0512,
+      "popularity_note": "Vote share, September 1996.",
+      "lineage": { "merged_into": "grc.syriza" },
+      "note": "Main component of the SYRIZA alliance from 2004; merged into SYRIZA when it became a single party in 2013. Years from Wikidata.",
+      "source": [
+        { "url": "https://www.wikidata.org/wiki/Q219573", "title": "Wikidata: Synaspismos (founding, chairpersons)", "accessed": "2026-10-15" },
+        { "url": "https://en.wikipedia.org/wiki/1996_Greek_legislative_election", "title": "Wikipedia: 1996 Greek legislative election", "accessed": "2026-10-15" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "grc.dikki",
+      "name": { "en": "Democratic Social Movement", "native": "Δημοκρατικό Κοινωνικό Κίνημα" },
+      "abbrev": { "en": "DIKKI", "native": "ΔΗΚΚΙ" },
+      "color": "#7B3F00",
+      "sub_ideology": "left_populist",
+      "founded": "1995-12-20",
+      "status_2000": "active",
+      "leader_history": [
+        { "person": "grc.dimitris_tsovolas", "from": "1995-12-20" }
+      ],
+      "popularity_2000": 0.0444,
+      "popularity_note": "Vote share, September 1996.",
+      "note": "Founded by Dimitris Tsovolas (leader in the 1996 election infobox; end of his leadership not checked). Lost its seats in 2000 (2.69%). Ideology is a gameplay classification.",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/1996_Greek_legislative_election", "title": "Wikipedia: 1996 Greek legislative election", "accessed": "2026-10-15" },
+        { "url": "https://www.wikidata.org/wiki/Q1226100", "title": "Wikidata: Democratic Social Movement", "accessed": "2026-10-15" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "grc.syriza",
+      "name": { "en": "Coalition of the Radical Left – Progressive Alliance", "native": "Συνασπισμός Ριζοσπαστικής Αριστεράς – Προοδευτική Συμμαχία" },
+      "abbrev": { "en": "SYRIZA", "native": "ΣΥΡΙΖΑ" },
+      "color": "#E3007E",
+      "sub_ideology": "democratic_socialist",
+      "founded": "2004-01-15",
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        { "person": "grc.nikos_konstantopoulos", "from": "2004-01-15", "to": "2004-12-12" },
+        { "person": "grc.alekos_alavanos", "from": "2004-12-12", "to": "2009-09-07" },
+        { "person": "grc.alexis_tsipras", "from": "2009-09-07", "to": "2023-06-29" },
+        { "person": "grc.stefanos_kasselakis", "from": "2023-09-24", "to": "2024-09-08" },
+        { "person": "grc.sokratis_famellos", "from": "2024-11-24", "to": "2026-07-09" }
+      ],
+      "popularity_2000": 0,
+      "lineage": { "formed_from": ["grc.synaspismos"] },
+      "note": "Alliance led by Synaspismos from 2004, single party from 2013; governed 2015-2019 with ANEL. Famellos resigned on 9 July 2026 and the presidency is vacant (per the party article, checked because it is after June 2026). In 2026 Alexis Tsipras launched a new party, the Greek Left Alliance (not recorded: it has not contested an election).",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/Syriza", "title": "Wikipedia: Syriza (party leaders, 2026 events)", "accessed": "2026-10-15" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "grc.laos",
+      "name": { "en": "Popular Orthodox Rally", "native": "Λαϊκός Ορθόδοξος Συναγερμός" },
+      "abbrev": { "en": "LAOS", "native": "ΛΑΟΣ" },
+      "color": "#1C3F94",
+      "sub_ideology": "national_conservative",
+      "founded": "2000-09-14",
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        { "person": "grc.georgios_karatzaferis", "from": "2000-09-14" }
+      ],
+      "popularity_2000": 0,
+      "note": "Founded by Georgios Karatzaferis; in Parliament 2007-2012. Ideology is a gameplay classification.",
+      "source": [
+        { "url": "https://www.wikidata.org/wiki/Q226085", "title": "Wikidata: Popular Orthodox Rally", "accessed": "2026-10-15" },
+        { "url": "https://en.wikipedia.org/wiki/2009_Greek_legislative_election", "title": "Wikipedia: 2009 Greek legislative election", "accessed": "2026-10-15" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "grc.anel",
+      "name": { "en": "Independent Greeks", "native": "Ανεξάρτητοι Έλληνες" },
+      "abbrev": { "en": "ANEL", "native": "ΑΝΕΛ" },
+      "color": "#2A5B8C",
+      "sub_ideology": "national_conservative",
+      "founded": "2012-02-24",
+      "dissolved": 2020,
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        { "person": "grc.panos_kammenos", "from": "2012-02-24" }
+      ],
+      "popularity_2000": 0,
+      "note": "Founded by Panos Kammenos; junior partner in the SYRIZA-led governments (2015-2019). Ideology is a gameplay classification.",
+      "source": [
+        { "url": "https://www.wikidata.org/wiki/Q529666", "title": "Wikidata: Independent Greeks", "accessed": "2026-10-15" },
+        { "url": "https://en.wikipedia.org/wiki/2014%E2%80%9315_Greek_presidential_election", "title": "Wikipedia: 2014-15 Greek presidential election (SYRIZA-ANEL government)", "accessed": "2026-10-15" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "grc.golden_dawn",
+      "name": { "en": "Golden Dawn", "native": "Χρυσή Αυγή" },
+      "abbrev": { "en": "XA", "native": "ΧΑ" },
+      "color": "#3B3B3B",
+      "sub_ideology": "ethno_nationalist",
+      "founded": 1985,
+      "status_2000": "extra_parliamentary",
+      "leader_history": [
+        { "person": "grc.nikolaos_michaloliakos", "from": 1985 }
+      ],
+      "popularity_2000": 0,
+      "popularity_note": "Negligible national vote before 2000 (not checked).",
+      "note": "Recorded as ethno_nationalist (gameplay classification); in Parliament 2012-2019 (no seats in 2019). Michaloliakos is named as leader in the 2012 and 2015 election infoboxes; his leadership is recorded from the founding year, which is not confirmed by the fetched sources. Wikidata gives 1 January 1985 (likely year precision) as the founding date.",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/May_2012_Greek_legislative_election", "title": "Wikipedia: May 2012 Greek legislative election", "accessed": "2026-10-15" },
+        { "url": "https://www.wikidata.org/wiki/Q82256", "title": "Wikidata: Golden Dawn", "accessed": "2026-10-15" }
+      ],
+      "confidence": "needs_review",
+      "review_note": "Check the start of Michaloliakos's leadership and the party's status in 2000 (recorded as extra-parliamentary)."
+    },
+    {
+      "id": "grc.dimar",
+      "name": { "en": "Democratic Left", "native": "Δημοκρατική Αριστερά" },
+      "abbrev": { "en": "DIMAR", "native": "ΔΗΜΑΡ" },
+      "color": "#F07F21",
+      "sub_ideology": "social_democrat",
+      "founded": "2010-06-27",
+      "dissolved": 2022,
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        { "person": "grc.fotis_kouvelis", "from": "2010-07-10", "to": "2015-06-07" }
+      ],
+      "popularity_2000": 0,
+      "note": "In Parliament 2012-2015; ran with PASOK in the Democratic Alignment in September 2015. Wikidata gives June 2022 as the dissolution date (year recorded). Later leaders are not recorded as people.",
+      "source": [
+        { "url": "https://www.wikidata.org/wiki/Q1128823", "title": "Wikidata: Democratic Left (Greece)", "accessed": "2026-10-15" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "grc.potami",
+      "name": { "en": "The River", "native": "Το Ποτάμι" },
+      "abbrev": { "en": "Potami", "native": "Ποτάμι" },
+      "color": "#00A0E3",
+      "sub_ideology": "centrist_liberal",
+      "founded": "2014-03-11",
+      "dissolved": "2019-11-24",
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        { "person": "grc.stavros_theodorakis", "from": "2014-03-11", "to": "2019-11-24" }
+      ],
+      "popularity_2000": 0,
+      "note": "Centrist party founded by Stavros Theodorakis; in Parliament 2015-2019. Theodorakis is named as leader in the 2015 election infoboxes. Ideology is a gameplay classification.",
+      "source": [
+        { "url": "https://www.wikidata.org/wiki/Q15920068", "title": "Wikidata: The River (Greece)", "accessed": "2026-10-15" },
+        { "url": "https://en.wikipedia.org/wiki/January_2015_Greek_legislative_election", "title": "Wikipedia: January 2015 Greek legislative election", "accessed": "2026-10-15" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "grc.ek",
+      "name": { "en": "Union of Centrists", "native": "Ένωση Κεντρώων" },
+      "abbrev": { "en": "EK", "native": "ΕΚ" },
+      "color": "#F4A51C",
+      "sub_ideology": "centrist_liberal",
+      "founded": "1992-03-02",
+      "status_2000": "extra_parliamentary",
+      "leader_history": [
+        { "person": "grc.vasilis_leventis", "from": "1992-03-02", "to": "2026-07-01" }
+      ],
+      "popularity_2000": 0,
+      "popularity_note": "Small national vote before 2000 (not checked).",
+      "note": "Founded and led by Vasilis Leventis until his death on 1 July 2026 (confirmed by his Wikipedia article); his successor is not recorded. In Parliament 2015-2019.",
+      "source": [
+        { "url": "https://www.wikidata.org/wiki/Q3567209", "title": "Wikidata: Union of Centrists", "accessed": "2026-10-15" },
+        { "url": "https://en.wikipedia.org/wiki/Vasilis_Leventis", "title": "Wikipedia: Vasilis Leventis", "accessed": "2026-10-15" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "grc.greek_solution",
+      "name": { "en": "Greek Solution", "native": "Ελληνική Λύση" },
+      "abbrev": { "en": "EL", "native": "ΕΛ" },
+      "color": "#0D3B8E",
+      "sub_ideology": "right_populist",
+      "founded": "2016-06-28",
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        { "person": "grc.kyriakos_velopoulos", "from": "2016-06-28" }
+      ],
+      "popularity_2000": 0,
+      "note": "In Parliament since 2019. Ideology is a gameplay classification.",
+      "source": [
+        { "url": "https://www.wikidata.org/wiki/Q50736163", "title": "Wikidata: Greek Solution", "accessed": "2026-10-15" },
+        { "url": "https://en.wikipedia.org/wiki/2019_Greek_legislative_election", "title": "Wikipedia: 2019 Greek legislative election", "accessed": "2026-10-15" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "grc.mera25",
+      "name": { "en": "MeRA25", "native": "Μέτωπο Ευρωπαϊκής Ρεαλιστικής Ανυπακοής" },
+      "abbrev": { "en": "MeRA25", "native": "ΜέΡΑ25" },
+      "color": "#E6312E",
+      "sub_ideology": "democratic_socialist",
+      "founded": "2018-03-26",
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        { "person": "grc.yanis_varoufakis", "from": "2018-03-26" }
+      ],
+      "popularity_2000": 0,
+      "note": "Founded by Yanis Varoufakis; in Parliament 2019-2023. Ideology is a gameplay classification.",
+      "source": [
+        { "url": "https://www.wikidata.org/wiki/Q61046702", "title": "Wikidata: MeRA25", "accessed": "2026-10-15" },
+        { "url": "https://en.wikipedia.org/wiki/2019_Greek_legislative_election", "title": "Wikipedia: 2019 Greek legislative election", "accessed": "2026-10-15" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "grc.spartans",
+      "name": { "en": "Spartans", "native": "Σπαρτιάτες" },
+      "abbrev": { "en": "Spartans", "native": "Σπαρτιάτες" },
+      "color": "#5A3E1B",
+      "sub_ideology": "ethno_nationalist",
+      "founded": "2017-12-05",
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        { "person": "grc.vasilis_stigkas", "from": "2017-12-05" }
+      ],
+      "popularity_2000": 0,
+      "note": "Won 12 seats in June 2023. Ideology is a gameplay classification.",
+      "source": [
+        { "url": "https://www.wikidata.org/wiki/Q119458066", "title": "Wikidata: Spartans (Greek political party)", "accessed": "2026-10-15" },
+        { "url": "https://en.wikipedia.org/wiki/June_2023_Greek_legislative_election", "title": "Wikipedia: June 2023 Greek legislative election", "accessed": "2026-10-15" }
+      ],
+      "confidence": "needs_review",
+      "review_note": "Check the Spartans' ideology (recorded as ethno_nationalist)."
+    },
+    {
+      "id": "grc.niki",
+      "name": { "en": "Democratic Patriotic Popular Movement \"Niki\" (Victory)", "native": "Δημοκρατικό Πατριωτικό Λαϊκό Κίνημα «Νίκη»" },
+      "abbrev": { "en": "NIKI", "native": "ΝΙΚΗ" },
+      "color": "#8E1F3A",
+      "sub_ideology": "christian_conservative",
+      "founded": "2019-06-17",
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        { "person": "grc.dimitris_natsios", "from": "2019-06-17" }
+      ],
+      "popularity_2000": 0,
+      "note": "Founded and led by Dimitris Natsios; described by its article as far-right. Won 10 seats in June 2023. Recorded as christian_conservative (gameplay classification).",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/Niki_(Greek_political_party)", "title": "Wikipedia: Niki (Greek political party)", "accessed": "2026-10-15" }
+      ],
+      "confidence": "needs_review",
+      "review_note": "Check Niki's ideology classification (christian_conservative)."
+    },
+    {
+      "id": "grc.plefsi",
+      "name": { "en": "Course of Freedom", "native": "Πλεύση Ελευθερίας" },
+      "abbrev": { "en": "Plefsi", "native": "Πλεύση" },
+      "color": "#7E2D8C",
+      "sub_ideology": "left_populist",
+      "founded": "2016-04-19",
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        { "person": "grc.zoe_konstantopoulou", "from": "2016-04-19" }
+      ],
+      "popularity_2000": 0,
+      "note": "Founded by Zoe Konstantopoulou (leader in the June 2023 infobox; leadership recorded from the founding date per Wikidata). Won 8 seats in June 2023. Ideology is a gameplay classification.",
+      "source": [
+        { "url": "https://www.wikidata.org/wiki/Q24204945", "title": "Wikidata: Course of Freedom", "accessed": "2026-10-15" },
+        { "url": "https://en.wikipedia.org/wiki/June_2023_Greek_legislative_election", "title": "Wikipedia: June 2023 Greek legislative election", "accessed": "2026-10-15" }
+      ],
+      "confidence": "needs_review",
+      "review_note": "Check Course of Freedom's ideology (recorded as left_populist)."
+    }
+  ]
+}

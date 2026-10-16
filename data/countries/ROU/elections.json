@@ -1,0 +1,681 @@
+{
+  "rules": [
+    {
+      "kind": "legislative",
+      "chamber": "chamber",
+      "every_years": 4,
+      "anchor": "2024-12-01",
+      "snap_possible": true,
+      "note": "Both chambers are elected together every four years (no early election since 1990). Party-list PR in county constituencies since 2016; a mixed system with single-member colleges was used in 2008 and 2012."
+    },
+    {
+      "kind": "legislative_upper",
+      "chamber": "senate",
+      "every_years": 4,
+      "anchor": "2024-12-01",
+      "snap_possible": true,
+      "note": "Elected on the same day as the Chamber of Deputies."
+    },
+    {
+      "kind": "presidential",
+      "office": "rou.president",
+      "every_years": 5,
+      "anchor": "2025-05-04",
+      "snap_possible": true,
+      "note": "Two-round direct election; held with the parliamentary election in 2000 and 2004 (four-year term), separately every five years since 2009. The November 2024 election was annulled by the Constitutional Court after its first round and re-run in May 2025."
+    }
+  ],
+  "elections": [
+    {
+      "id": "president_2000",
+      "date": "2000-11-26",
+      "kind": "presidential",
+      "office": "rou.president",
+      "rounds": 2,
+      "historical": {
+        "candidates": [
+          { "person": "rou.ion_iliescu", "party": "rou.psd", "share": 0.3635, "votes": 4076273, "round": 1 },
+          { "person": "rou.corneliu_vadim_tudor", "party": "rou.prm", "share": 0.2834, "votes": 3178293, "round": 1 },
+          { "person": "rou.theodor_stolojan", "party": "rou.pnl", "share": 0.1178, "votes": 1321420, "round": 1 },
+          { "person": "rou.mugur_isarescu", "share": 0.0954, "votes": 1069463, "round": 1 },
+          { "person": "rou.gyorgy_frunda", "party": "rou.udmr", "share": 0.0622, "votes": 696989, "round": 1 },
+          { "person": "rou.ion_iliescu", "party": "rou.psd", "share": 0.6683, "votes": 6696623, "round": 2 },
+          { "person": "rou.corneliu_vadim_tudor", "party": "rou.prm", "share": 0.3317, "votes": 3324247, "round": 2 }
+        ],
+        "winner": "rou.ion_iliescu",
+        "turnout": 0.6531,
+        "note": "First round 26 November, runoff 10 December 2000. Iliescu ran for the Social Democratic Pole (PDSR); Isărescu was the CDR 2000 candidate. Candidates under 5% omitted (Petre Roman 2.99%, Teodor Meleșcanu 1.91% and others). Shares computed from the vote counts. Turnout is the first round (57.50% in the runoff).",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2000_Romanian_general_election", "title": "Wikipedia: 2000 Romanian general election (presidential results)", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "chamber_2000",
+      "date": "2000-11-26",
+      "kind": "legislative",
+      "chamber": "chamber",
+      "historical": {
+        "party_results": [
+          { "party": "rou.psd", "share": 0.3661, "seats": 139 },
+          { "party": "rou.psdr", "seats": 10 },
+          { "party": "rou.pc", "seats": 6 },
+          { "party": "rou.prm", "share": 0.1948, "seats": 84 },
+          { "party": "rou.pd", "share": 0.0703, "seats": 31 },
+          { "party": "rou.pnl", "share": 0.0689, "seats": 30 },
+          { "party": "rou.udmr", "share": 0.068, "seats": 27 },
+          { "party": "rou.pntcd", "share": 0.0504, "seats": 0 },
+          { "party": "others", "seats": 18 }
+        ],
+        "winner": "rou.psd",
+        "turnout": 0.6531,
+        "note": "345 seats. The Social Democratic Pole (PDSR, PSDR and the Humanist Party PUR) won 36.61% and 155 seats: PDSR 139, PSDR 10, PUR 6 (per the election and party articles); its share is recorded under the PDSR. The PNȚCD share is the CDR 2000 list. 'others' are 18 national-minority seats. The PDSR formed a minority government under Adrian Năstase.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2000_Romanian_general_election", "title": "Wikipedia: 2000 Romanian general election (Chamber of Deputies)", "accessed": "2026-10-15" },
+          { "url": "https://en.wikipedia.org/wiki/Social_Democratic_Party_(Romania)", "title": "Wikipedia: Social Democratic Party (Romania) (electoral history)", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "senate_2000",
+      "date": "2000-11-26",
+      "kind": "legislative_upper",
+      "chamber": "senate",
+      "historical": {
+        "party_results": [
+          { "party": "rou.psd", "share": 0.3709, "seats": 59 },
+          { "party": "rou.psdr", "seats": 2 },
+          { "party": "rou.pc", "seats": 4 },
+          { "party": "rou.prm", "share": 0.2101, "seats": 37 },
+          { "party": "rou.pd", "share": 0.0758, "seats": 13 },
+          { "party": "rou.pnl", "share": 0.0748, "seats": 13 },
+          { "party": "rou.udmr", "share": 0.069, "seats": 12 },
+          { "party": "rou.pntcd", "share": 0.0529, "seats": 0 }
+        ],
+        "winner": "rou.psd",
+        "turnout": 0.6531,
+        "note": "140 seats. Social Democratic Pole 65 seats (PDSR 59, PSDR 2, PUR 4); its share is recorded under the PDSR. Shares computed from the vote counts.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2000_Romanian_general_election", "title": "Wikipedia: 2000 Romanian general election (Senate)", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "constitutional_referendum_2003",
+      "date": "2003-10-18",
+      "kind": "referendum",
+      "question": "Do you agree with the law on the revision of the Romanian Constitution in the form adopted by Parliament?",
+      "historical": {
+        "yes_share": 0.9106,
+        "winner": "yes",
+        "turnout": 0.557,
+        "note": "Held 18-19 October 2003. Yes 8,915,022; No 875,172; invalid 148,247; electorate 17,842,103.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2003_Romanian_constitutional_referendum", "title": "Wikipedia: 2003 Romanian constitutional referendum", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "president_2004",
+      "date": "2004-11-28",
+      "kind": "presidential",
+      "office": "rou.president",
+      "rounds": 2,
+      "historical": {
+        "candidates": [
+          { "person": "rou.adrian_nastase", "party": "rou.psd", "share": 0.4094, "votes": 4278864, "round": 1 },
+          { "person": "rou.traian_basescu", "party": "rou.pd", "share": 0.3392, "votes": 3545236, "round": 1 },
+          { "person": "rou.corneliu_vadim_tudor", "party": "rou.prm", "share": 0.1257, "votes": 1313714, "round": 1 },
+          { "person": "rou.bela_marko", "party": "rou.udmr", "share": 0.051, "votes": 533446, "round": 1 },
+          { "person": "rou.traian_basescu", "party": "rou.pd", "share": 0.5123, "votes": 5126794, "round": 2 },
+          { "person": "rou.adrian_nastase", "party": "rou.psd", "share": 0.4877, "votes": 4881520, "round": 2 }
+        ],
+        "winner": "rou.traian_basescu",
+        "turnout": 0.5849,
+        "note": "First round 28 November, runoff 12 December 2004. Băsescu ran for the Justice and Truth Alliance (PNL-PD), Năstase for National Union PSD+PUR. Candidates under 5% omitted (Gheorghe Ciuhandu 1.90% and others). Turnout is the first round (55.21% in the runoff).",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2004_Romanian_general_election", "title": "Wikipedia: 2004 Romanian general election (presidential results)", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "chamber_2004",
+      "date": "2004-11-28",
+      "kind": "legislative",
+      "chamber": "chamber",
+      "historical": {
+        "party_results": [
+          { "party": "rou.psd", "share": 0.3661, "seats": 113 },
+          { "party": "rou.pc", "seats": 19 },
+          { "party": "rou.pnl", "share": 0.3133, "seats": 64 },
+          { "party": "rou.pd", "seats": 48 },
+          { "party": "rou.prm", "share": 0.1292, "seats": 48 },
+          { "party": "rou.udmr", "share": 0.0617, "seats": 22 },
+          { "party": "rou.pntcd", "share": 0.0185, "seats": 0 },
+          { "party": "others", "seats": 18 }
+        ],
+        "winner": "rou.psd",
+        "turnout": 0.5847,
+        "note": "332 seats. National Union PSD+PUR 36.61% and 132 seats (PSD 113, PUR 19); Justice and Truth Alliance 31.33% and 112 seats (PNL 64, PD 48); splits from the party articles, alliance shares recorded under the leading party. 'others' are 18 national-minority seats. Călin Popescu-Tăriceanu (PNL) became Prime Minister of a DA-led government that the PUR joined.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2004_Romanian_general_election", "title": "Wikipedia: 2004 Romanian general election (Chamber of Deputies)", "accessed": "2026-10-15" },
+          { "url": "https://en.wikipedia.org/wiki/National_Liberal_Party_(Romania)", "title": "Wikipedia: National Liberal Party (Romania) (electoral history)", "accessed": "2026-10-15" },
+          { "url": "https://en.wikipedia.org/wiki/Democratic_Party_(Romania)", "title": "Wikipedia: Democratic Party (Romania) (electoral history)", "accessed": "2026-10-15" },
+          { "url": "https://en.wikipedia.org/wiki/Conservative_Party_(Romania)", "title": "Wikipedia: Conservative Party (Romania) (electoral history)", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "senate_2004",
+      "date": "2004-11-28",
+      "kind": "legislative_upper",
+      "chamber": "senate",
+      "historical": {
+        "party_results": [
+          { "party": "rou.psd", "share": 0.3713, "seats": 46 },
+          { "party": "rou.pc", "seats": 11 },
+          { "party": "rou.pnl", "share": 0.3177, "seats": 28 },
+          { "party": "rou.pd", "seats": 21 },
+          { "party": "rou.prm", "share": 0.1363, "seats": 21 },
+          { "party": "rou.udmr", "share": 0.0623, "seats": 10 },
+          { "party": "rou.pntcd", "share": 0.0192, "seats": 0 }
+        ],
+        "winner": "rou.psd",
+        "turnout": 0.5847,
+        "note": "137 seats. PSD+PUR 57 (PSD 46, PUR 11); DA 49 (PNL 28, PD 21); alliance shares recorded under the leading party.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2004_Romanian_general_election", "title": "Wikipedia: 2004 Romanian general election (Senate)", "accessed": "2026-10-15" },
+          { "url": "https://en.wikipedia.org/wiki/Social_Democratic_Party_(Romania)", "title": "Wikipedia: Social Democratic Party (Romania) (electoral history)", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "impeachment_referendum_2007",
+      "date": "2007-05-19",
+      "kind": "referendum",
+      "question": "Do you agree with the dismissal of the President of Romania, Mr. Traian Băsescu?",
+      "historical": {
+        "yes_share": 0.2494,
+        "winner": "no",
+        "turnout": 0.4445,
+        "note": "Yes 2,013,099; No 6,059,315; electorate 18,301,309. Băsescu returned to office on 23 May 2007.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2007_Romanian_presidential_impeachment_referendum", "title": "Wikipedia: 2007 Romanian presidential impeachment referendum", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "electoral_system_referendum_2007",
+      "date": "2007-11-25",
+      "kind": "referendum",
+      "question": "Should all deputies and senators be elected in single-member constituencies by a two-round majority system?",
+      "historical": {
+        "yes_share": 0.8342,
+        "winner": "invalid",
+        "turnout": 0.2652,
+        "note": "Yes 3,947,212; No 784,640; invalid 119,618; electorate 18,296,459. Invalid because turnout was below the required 50%.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2007_Romanian_electoral_system_referendum", "title": "Wikipedia: 2007 Romanian electoral system referendum", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "chamber_2008",
+      "date": "2008-11-30",
+      "kind": "legislative",
+      "chamber": "chamber",
+      "historical": {
+        "party_results": [
+          { "party": "rou.pdl", "share": 0.3236, "seats": 115 },
+          { "party": "rou.psd", "share": 0.331, "seats": 110 },
+          { "party": "rou.pc", "seats": 4 },
+          { "party": "rou.pnl", "share": 0.1857, "seats": 65 },
+          { "party": "rou.udmr", "share": 0.0617, "seats": 22 },
+          { "party": "rou.prm", "share": 0.0316, "seats": 0 },
+          { "party": "others", "seats": 18 }
+        ],
+        "winner": "rou.pdl",
+        "turnout": 0.392,
+        "note": "334 seats; first election under the mixed single-member-college system. The PSD+PC alliance won the most votes (33.10%, 114 seats: PSD 110, PC 4; share recorded under the PSD), but the PDL won the most seats. Emil Boc (PDL) formed a PDL-PSD grand coalition. 'others' are 18 national-minority seats.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2008_Romanian_parliamentary_election", "title": "Wikipedia: 2008 Romanian parliamentary election", "accessed": "2026-10-15" },
+          { "url": "https://en.wikipedia.org/wiki/Conservative_Party_(Romania)", "title": "Wikipedia: Conservative Party (Romania) (2008 seats)", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "senate_2008",
+      "date": "2008-11-30",
+      "kind": "legislative_upper",
+      "chamber": "senate",
+      "historical": {
+        "party_results": [
+          { "party": "rou.pdl", "share": 0.3357, "seats": 51 },
+          { "party": "rou.psd", "share": 0.3416, "seats": 48 },
+          { "party": "rou.pc", "seats": 1 },
+          { "party": "rou.pnl", "share": 0.1874, "seats": 28 },
+          { "party": "rou.udmr", "share": 0.0639, "seats": 9 },
+          { "party": "rou.prm", "share": 0.0357, "seats": 0 }
+        ],
+        "winner": "rou.pdl",
+        "turnout": 0.392,
+        "note": "137 seats. PSD+PC 49 seats (PSD 48, PC 1); its share is recorded under the PSD.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2008_Romanian_parliamentary_election", "title": "Wikipedia: 2008 Romanian parliamentary election (Senate)", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "president_2009",
+      "date": "2009-11-22",
+      "kind": "presidential",
+      "office": "rou.president",
+      "rounds": 2,
+      "historical": {
+        "candidates": [
+          { "person": "rou.traian_basescu", "party": "rou.pdl", "share": 0.3245, "votes": 3153640, "round": 1 },
+          { "person": "rou.mircea_geoana", "party": "rou.psd", "share": 0.3115, "votes": 3027838, "round": 1 },
+          { "person": "rou.crin_antonescu", "party": "rou.pnl", "share": 0.2002, "votes": 1945831, "round": 1 },
+          { "person": "rou.corneliu_vadim_tudor", "party": "rou.prm", "share": 0.0556, "votes": 540380, "round": 1 },
+          { "person": "rou.traian_basescu", "party": "rou.pdl", "share": 0.5033, "votes": 5275808, "round": 2 },
+          { "person": "rou.mircea_geoana", "party": "rou.psd", "share": 0.4967, "votes": 5205760, "round": 2 }
+        ],
+        "winner": "rou.traian_basescu",
+        "turnout": 0.5437,
+        "note": "First round 22 November, runoff 6 December 2009. Băsescu ran as an independent backed by the PDL. Candidates under 5% omitted (Hunor Kelemen 3.83% and others). Turnout is the first round (58.02% in the runoff).",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2009_Romanian_presidential_election", "title": "Wikipedia: 2009 Romanian presidential election", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "unicameral_referendum_2009",
+      "date": "2009-11-22",
+      "kind": "referendum",
+      "question": "Question 1: should Romania have a unicameral Parliament?",
+      "historical": {
+        "yes_share": 0.7778,
+        "winner": "yes",
+        "turnout": 0.5095,
+        "note": "Held with the first presidential round. For 6,740,213; Against 1,925,209; invalid 654,818; electorate 18,293,277. Consultative: Parliament did not implement the result.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2009_Romanian_parliamentary_reform_referendum", "title": "Wikipedia: 2009 Romanian parliamentary reform referendum", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "parliament_size_referendum_2009",
+      "date": "2009-11-22",
+      "kind": "referendum",
+      "question": "Question 2: should Parliament be reduced to at most 300 members?",
+      "historical": {
+        "yes_share": 0.8884,
+        "winner": "yes",
+        "turnout": 0.5095,
+        "note": "For 7,765,573; Against 975,252; invalid 579,415; electorate 18,293,277. Consultative: the number of members of Parliament later grew (588 in 2015, per the source).",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2009_Romanian_parliamentary_reform_referendum", "title": "Wikipedia: 2009 Romanian parliamentary reform referendum", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "impeachment_referendum_2012",
+      "date": "2012-07-29",
+      "kind": "referendum",
+      "question": "Do you agree with the dismissal of the President of Romania, Mr. Traian Băsescu?",
+      "historical": {
+        "yes_share": 0.887,
+        "winner": "invalid",
+        "turnout": 0.4624,
+        "note": "Yes 7,403,836; No 943,375; total votes 8,459,053; electorate 18,292,464. Declared invalid by the Constitutional Court because turnout was below 50%; Băsescu returned to office on 27 August 2012.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2012_Romanian_presidential_impeachment_referendum", "title": "Wikipedia: 2012 Romanian presidential impeachment referendum", "accessed": "2026-10-15" },
+          { "url": "https://en.wikipedia.org/wiki/List_of_presidents_of_Romania", "title": "Wikipedia: List of presidents of Romania (acting presidents)", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "chamber_2012",
+      "date": "2012-12-09",
+      "kind": "legislative",
+      "chamber": "chamber",
+      "historical": {
+        "party_results": [
+          { "party": "rou.psd", "share": 0.5863, "seats": 149 },
+          { "party": "rou.pnl", "seats": 100 },
+          { "party": "rou.pc", "seats": 13 },
+          { "party": "rou.unpr", "seats": 10 },
+          { "party": "rou.pdl", "share": 0.1651, "seats": 52 },
+          { "party": "rou.pntcd", "seats": 1 },
+          { "party": "rou.pp_dd", "share": 0.1399, "seats": 47 },
+          { "party": "rou.udmr", "share": 0.0514, "seats": 18 },
+          { "party": "rou.prm", "share": 0.0125, "seats": 0 },
+          { "party": "others", "seats": 22 }
+        ],
+        "winner": "rou.psd",
+        "turnout": 0.4176,
+        "note": "412 seats (including supplementary seats). The Social Liberal Union (USL) won 58.63% and 273 seats; the party articles give PSD 149, PNL 100, PC 13 and UNPR 10 (272), so one USL seat is under 'others'. The Right Romania Alliance (ARD) won 16.51% and 56 seats: PDL 52 and PNȚCD 1 per the party articles, the other 3 (Civic Force) under 'others'. 'others' also holds 18 national-minority seats. Alliance shares are recorded under the leading party. Victor Ponta (PSD) stayed Prime Minister.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2012_Romanian_parliamentary_election", "title": "Wikipedia: 2012 Romanian parliamentary election", "accessed": "2026-10-15" },
+          { "url": "https://en.wikipedia.org/wiki/Democratic_Liberal_Party_(Romania)", "title": "Wikipedia: Democratic Liberal Party (Romania) (2012 seats)", "accessed": "2026-10-15" },
+          { "url": "https://en.wikipedia.org/wiki/National_Union_for_the_Progress_of_Romania", "title": "Wikipedia: National Union for the Progress of Romania (2012 seats)", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "senate_2012",
+      "date": "2012-12-09",
+      "kind": "legislative_upper",
+      "chamber": "senate",
+      "historical": {
+        "party_results": [
+          { "party": "rou.psd", "share": 0.601, "seats": 58 },
+          { "party": "rou.pnl", "seats": 50 },
+          { "party": "rou.pc", "seats": 8 },
+          { "party": "rou.unpr", "seats": 5 },
+          { "party": "rou.pdl", "share": 0.1671, "seats": 22 },
+          { "party": "rou.pntcd", "seats": 1 },
+          { "party": "rou.pp_dd", "share": 0.1465, "seats": 21 },
+          { "party": "rou.udmr", "share": 0.0524, "seats": 9 },
+          { "party": "others", "seats": 2 }
+        ],
+        "winner": "rou.psd",
+        "turnout": 0.4176,
+        "note": "176 seats. USL 122 (PSD 58, PNL 50, PC 8, UNPR 5 per the party articles, one unattributed); ARD 24 (PDL 22, PNȚCD 1, one other). Alliance shares recorded under the leading party.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2012_Romanian_parliamentary_election", "title": "Wikipedia: 2012 Romanian parliamentary election (Senate)", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "president_2014",
+      "date": "2014-11-02",
+      "kind": "presidential",
+      "office": "rou.president",
+      "rounds": 2,
+      "historical": {
+        "candidates": [
+          { "person": "rou.victor_ponta", "party": "rou.psd", "share": 0.4044, "votes": 3836093, "round": 1 },
+          { "person": "rou.klaus_iohannis", "party": "rou.pnl", "share": 0.3038, "votes": 2881406, "round": 1 },
+          { "person": "rou.calin_popescu_tariceanu", "share": 0.0536, "votes": 508572, "round": 1 },
+          { "person": "rou.elena_udrea", "party": "rou.pmp", "share": 0.052, "votes": 493376, "round": 1 },
+          { "person": "rou.klaus_iohannis", "party": "rou.pnl", "share": 0.5443, "votes": 6288769, "round": 2 },
+          { "person": "rou.victor_ponta", "party": "rou.psd", "share": 0.4557, "votes": 5264383, "round": 2 }
+        ],
+        "winner": "rou.klaus_iohannis",
+        "turnout": 0.5318,
+        "note": "First round 2 November, runoff 16 November 2014. Iohannis ran for the Christian Liberal Alliance (PNL-PDL), Ponta for the PSD-UNPR-PC alliance, Tăriceanu as an independent. Candidates under 5% omitted (Monica Macovei 4.45%, Dan Diaconescu 4.03% and others). Turnout is the first round (64.11% in the runoff).",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2014_Romanian_presidential_election", "title": "Wikipedia: 2014 Romanian presidential election", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "chamber_2016",
+      "date": "2016-12-11",
+      "kind": "legislative",
+      "chamber": "chamber",
+      "historical": {
+        "party_results": [
+          { "party": "rou.psd", "share": 0.4548, "seats": 154 },
+          { "party": "rou.pnl", "share": 0.2004, "seats": 69 },
+          { "party": "rou.usr", "share": 0.0887, "seats": 30 },
+          { "party": "rou.udmr", "share": 0.0619, "seats": 21 },
+          { "party": "rou.alde", "share": 0.0562, "seats": 20 },
+          { "party": "rou.pmp", "share": 0.0535, "seats": 18 },
+          { "party": "rou.prm", "share": 0.0104, "seats": 0 },
+          { "party": "others", "seats": 17 }
+        ],
+        "winner": "rou.psd",
+        "turnout": 0.3946,
+        "note": "329 seats; return to party-list PR. 'others' are 17 national-minority seats. The PSD formed a government with ALDE under Sorin Grindeanu.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2016_Romanian_parliamentary_election", "title": "Wikipedia: 2016 Romanian parliamentary election", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "senate_2016",
+      "date": "2016-12-11",
+      "kind": "legislative_upper",
+      "chamber": "senate",
+      "historical": {
+        "party_results": [
+          { "party": "rou.psd", "share": 0.4568, "seats": 67 },
+          { "party": "rou.pnl", "share": 0.2042, "seats": 30 },
+          { "party": "rou.usr", "share": 0.0892, "seats": 13 },
+          { "party": "rou.udmr", "share": 0.0624, "seats": 9 },
+          { "party": "rou.alde", "share": 0.0601, "seats": 9 },
+          { "party": "rou.pmp", "share": 0.0565, "seats": 8 }
+        ],
+        "winner": "rou.psd",
+        "turnout": 0.3946,
+        "note": "136 seats. Shares computed from the vote counts.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2016_Romanian_parliamentary_election", "title": "Wikipedia: 2016 Romanian parliamentary election (Senate)", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "constitutional_referendum_2018",
+      "date": "2018-10-06",
+      "kind": "referendum",
+      "question": "Do you agree with the law on the revision of the Romanian Constitution in the form adopted by Parliament? (defining marriage as between a man and a woman)",
+      "historical": {
+        "yes_share": 0.934,
+        "winner": "invalid",
+        "turnout": 0.211,
+        "note": "Held 6-7 October 2018. Yes 3,531,732; No 249,412; invalid 76,111; electorate 18,279,011. Failed because turnout was below the required 30%.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2018_Romanian_constitutional_referendum", "title": "Wikipedia: 2018 Romanian constitutional referendum", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "justice_referendum_2019_amnesty",
+      "date": "2019-05-26",
+      "kind": "referendum",
+      "question": "Do you agree with the prohibition on amnesties and pardons for corruption offences?",
+      "historical": {
+        "yes_share": 0.8591,
+        "winner": "yes",
+        "turnout": 0.4335,
+        "note": "Consultative referendum called by President Iohannis, held with the European Parliament election. Yes 6,459,383; No 1,059,678; invalid or blank 403,530.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2019_Romanian_referendum", "title": "Wikipedia: 2019 Romanian referendum", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "justice_referendum_2019_ordinances",
+      "date": "2019-05-26",
+      "kind": "referendum",
+      "question": "Do you agree with prohibiting government emergency ordinances on offences, punishments and judicial organisation, and with the right to appeal ordinances directly to the Constitutional Court?",
+      "historical": {
+        "yes_share": 0.8618,
+        "winner": "yes",
+        "turnout": 0.4335,
+        "note": "Yes 6,477,865; No 1,038,916; invalid or blank 407,088.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2019_Romanian_referendum", "title": "Wikipedia: 2019 Romanian referendum", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "president_2019",
+      "date": "2019-11-10",
+      "kind": "presidential",
+      "office": "rou.president",
+      "rounds": 2,
+      "historical": {
+        "candidates": [
+          { "person": "rou.klaus_iohannis", "party": "rou.pnl", "share": 0.3782, "votes": 3485292, "round": 1 },
+          { "person": "rou.viorica_dancila", "party": "rou.psd", "share": 0.2226, "votes": 2051725, "round": 1 },
+          { "person": "rou.dan_barna", "party": "rou.usr", "share": 0.1502, "votes": 1384450, "round": 1 },
+          { "person": "rou.mircea_diaconu", "share": 0.0885, "votes": 815201, "round": 1 },
+          { "person": "rou.theodor_paleologu", "party": "rou.pmp", "share": 0.0572, "votes": 527098, "round": 1 },
+          { "person": "rou.klaus_iohannis", "party": "rou.pnl", "share": 0.6609, "votes": 6509135, "round": 2 },
+          { "person": "rou.viorica_dancila", "party": "rou.psd", "share": 0.3391, "votes": 3339922, "round": 2 }
+        ],
+        "winner": "rou.klaus_iohannis",
+        "turnout": 0.5118,
+        "note": "First round 10 November, runoff 24 November 2019. Barna ran for the USR-PLUS alliance, Diaconu for PRO Romania-ALDE. Candidates under 5% omitted. Turnout is the first round (54.86% in the runoff).",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2019_Romanian_presidential_election", "title": "Wikipedia: 2019 Romanian presidential election", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "chamber_2020",
+      "date": "2020-12-06",
+      "kind": "legislative",
+      "chamber": "chamber",
+      "historical": {
+        "party_results": [
+          { "party": "rou.psd", "share": 0.289, "seats": 110 },
+          { "party": "rou.pnl", "share": 0.2519, "seats": 93 },
+          { "party": "rou.usr", "share": 0.1537, "seats": 55 },
+          { "party": "rou.aur", "share": 0.0908, "seats": 33 },
+          { "party": "rou.udmr", "share": 0.0574, "seats": 21 },
+          { "party": "rou.pmp", "share": 0.0482, "seats": 0 },
+          { "party": "others", "seats": 18 }
+        ],
+        "winner": "rou.psd",
+        "turnout": 0.3195,
+        "note": "330 seats. USR ran with PLUS as the USR PLUS alliance (recorded under USR). PRO Romania 4.09% (no seats). 'others' are 18 national-minority seats. The PNL formed a PNL-USR PLUS-UDMR government under Florin Cîțu.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2020_Romanian_parliamentary_election", "title": "Wikipedia: 2020 Romanian parliamentary election", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "senate_2020",
+      "date": "2020-12-06",
+      "kind": "legislative_upper",
+      "chamber": "senate",
+      "historical": {
+        "party_results": [
+          { "party": "rou.psd", "share": 0.2932, "seats": 47 },
+          { "party": "rou.pnl", "share": 0.2558, "seats": 41 },
+          { "party": "rou.usr", "share": 0.1586, "seats": 25 },
+          { "party": "rou.aur", "share": 0.0917, "seats": 14 },
+          { "party": "rou.udmr", "share": 0.0589, "seats": 9 },
+          { "party": "rou.pmp", "share": 0.0493, "seats": 0 }
+        ],
+        "winner": "rou.psd",
+        "turnout": 0.3195,
+        "note": "136 seats. USR PLUS recorded under USR.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2020_Romanian_parliamentary_election", "title": "Wikipedia: 2020 Romanian parliamentary election (Senate)", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "chamber_2024",
+      "date": "2024-12-01",
+      "kind": "legislative",
+      "chamber": "chamber",
+      "historical": {
+        "party_results": [
+          { "party": "rou.psd", "share": 0.2196, "seats": 86 },
+          { "party": "rou.aur", "share": 0.1801, "seats": 63 },
+          { "party": "rou.pnl", "share": 0.132, "seats": 49 },
+          { "party": "rou.usr", "share": 0.124, "seats": 40 },
+          { "party": "rou.sos", "share": 0.0736, "seats": 28 },
+          { "party": "rou.pot", "share": 0.0646, "seats": 24 },
+          { "party": "rou.udmr", "share": 0.0633, "seats": 22 },
+          { "party": "others", "seats": 19 }
+        ],
+        "winner": "rou.psd",
+        "turnout": 0.525,
+        "note": "331 seats. 'others' are 19 national-minority seats (the total less the parties' seats). Held between the annulled presidential first round and its cancelled runoff. Marcel Ciolacu formed a PSD-PNL-UDMR government (Ciolacu II).",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2024_Romanian_parliamentary_election", "title": "Wikipedia: 2024 Romanian parliamentary election", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "senate_2024",
+      "date": "2024-12-01",
+      "kind": "legislative_upper",
+      "chamber": "senate",
+      "historical": {
+        "party_results": [
+          { "party": "rou.psd", "share": 0.223, "seats": 36 },
+          { "party": "rou.aur", "share": 0.183, "seats": 28 },
+          { "party": "rou.pnl", "share": 0.1428, "seats": 22 },
+          { "party": "rou.usr", "share": 0.1226, "seats": 19 },
+          { "party": "rou.sos", "share": 0.0776, "seats": 12 },
+          { "party": "rou.pot", "share": 0.0639, "seats": 7 },
+          { "party": "rou.udmr", "share": 0.0638, "seats": 10 },
+          { "party": "vacant", "seats": 2 }
+        ],
+        "winner": "rou.psd",
+        "turnout": 0.525,
+        "note": "136 seats, of which 134 were filled: two seats stayed unassigned because POT had no candidates in Giurgiu and Ialomița. Shares computed from the vote counts.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2024_Romanian_parliamentary_election", "title": "Wikipedia: 2024 Romanian parliamentary election (Senate)", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "president_2025",
+      "date": "2025-05-04",
+      "kind": "presidential",
+      "office": "rou.president",
+      "rounds": 2,
+      "snap": true,
+      "historical": {
+        "candidates": [
+          { "person": "rou.george_simion", "party": "rou.aur", "share": 0.4096, "votes": 3862761, "round": 1 },
+          { "person": "rou.nicusor_dan", "share": 0.2099, "votes": 1979767, "round": 1 },
+          { "person": "rou.crin_antonescu", "party": "rou.pnl", "share": 0.2007, "votes": 1892930, "round": 1 },
+          { "person": "rou.victor_ponta", "share": 0.1304, "votes": 1230164, "round": 1 },
+          { "person": "rou.nicusor_dan", "share": 0.536, "votes": 6168642, "round": 2 },
+          { "person": "rou.george_simion", "party": "rou.aur", "share": 0.464, "votes": 5339053, "round": 2 }
+        ],
+        "winner": "rou.nicusor_dan",
+        "turnout": 0.5321,
+        "note": "Re-run of the presidential election after the Constitutional Court annulled the 24 November 2024 first round on 6 December 2024 (that round, led by Călin Georgescu ahead of Elena Lasconi, is not recorded as an election because it produced no result; see the rules note). First round 4 May, runoff 18 May 2025. Dan and Ponta ran as independents; Antonescu was the candidate of the Romania Forward alliance (PSD-PNL-UDMR). Candidates under 5% omitted. Turnout is the first round (64.72% in the runoff).",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2025_Romanian_presidential_election", "title": "Wikipedia: 2025 Romanian presidential election", "accessed": "2026-10-15" },
+          { "url": "https://en.wikipedia.org/wiki/2024_Romanian_presidential_election", "title": "Wikipedia: 2024 Romanian presidential election (annulment)", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      }
+    }
+  ],
+  "source": [
+    { "url": "https://en.wikipedia.org/wiki/List_of_presidents_of_Romania", "title": "Wikipedia: List of presidents of Romania (election years)", "accessed": "2026-10-15" },
+    { "url": "https://en.wikipedia.org/wiki/2024_Romanian_parliamentary_election", "title": "Wikipedia: 2024 Romanian parliamentary election (electoral system)", "accessed": "2026-10-15" }
+  ],
+  "confidence": "verified"
+}

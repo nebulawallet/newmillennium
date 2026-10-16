@@ -1,0 +1,336 @@
+{
+  "rules": [
+    {
+      "kind": "legislative",
+      "chamber": "assembly",
+      "every_years": 5,
+      "anchor": "2022-01-23",
+      "snap_possible": true,
+      "note": "Assembly of the Republic; elections have been held at irregular intervals (1998, 2003, 2005, 2009, 2013, 2018, 2022). The next election is scheduled for 6 December 2026, after the data date."
+    },
+    {
+      "kind": "presidential",
+      "office": "ncy.president",
+      "every_years": 5,
+      "anchor": "2025-10-19",
+      "snap_possible": true,
+      "note": "Two-round system; a second round between the top two if no candidate wins over 50%."
+    }
+  ],
+  "elections": [
+    {
+      "id": "president_2000",
+      "date": "2000-04-15",
+      "kind": "presidential",
+      "office": "ncy.president",
+      "rounds": 1,
+      "historical": {
+        "candidates": [
+          { "person": "ncy.rauf_denktas", "share": 0.4367, "votes": 42820, "round": 1 },
+          { "person": "ncy.dervis_eroglu", "party": "ncy.ubp", "share": 0.3014, "votes": 29555, "round": 1 },
+          { "person": "ncy.mustafa_akinci", "party": "ncy.tkp", "share": 0.117, "votes": 11469, "round": 1 },
+          { "person": "ncy.mehmet_ali_talat", "party": "ncy.ctp", "share": 0.1003, "votes": 9834, "round": 1 }
+        ],
+        "winner": "ncy.rauf_denktas",
+        "note": "Denktaş (independent) led the first round without a majority; the runner-up Eroğlu withdrew and no second round was held. Candidates under 5% omitted. Shares computed from the vote counts.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2000_Northern_Cypriot_presidential_election", "title": "Wikipedia: 2000 Northern Cypriot presidential election", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "assembly_2003",
+      "date": "2003-12-15",
+      "kind": "legislative",
+      "chamber": "assembly",
+      "historical": {
+        "party_results": [
+          { "party": "ncy.ctp", "share": 0.3517, "seats": 19 },
+          { "party": "ncy.ubp", "share": 0.3291, "seats": 18 },
+          { "party": "ncy.bdh", "share": 0.1319, "seats": 6 },
+          { "party": "ncy.dp", "share": 0.1294, "seats": 7 }
+        ],
+        "winner": "ncy.ctp",
+        "note": "Shares computed from the vote counts (voters may cast several votes). CTP formed the Talat government in January 2004.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2003_Northern_Cypriot_parliamentary_election", "title": "Wikipedia: 2003 Northern Cypriot parliamentary election", "accessed": "2026-10-15" },
+          { "url": "https://en.wikipedia.org/wiki/List_of_prime_ministers_of_Northern_Cyprus", "title": "Wikipedia: List of prime ministers of Northern Cyprus", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "annan_plan_referendum_2004",
+      "date": "2004-04-24",
+      "kind": "referendum",
+      "question": "Approval of the UN plan for the reunification of Cyprus (Annan Plan), Turkish Cypriot vote",
+      "historical": {
+        "yes_share": 0.6491,
+        "winner": "yes",
+        "turnout": 0.87,
+        "note": "Turkish Cypriots approved the plan (64.91% in favour, 87% turnout), but it was rejected in the simultaneous Greek Cypriot vote (recorded under CYP) and did not take effect.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/Annan_Plan", "title": "Wikipedia: Annan Plan", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "assembly_2005",
+      "date": "2005-02-20",
+      "kind": "legislative",
+      "chamber": "assembly",
+      "historical": {
+        "party_results": [
+          { "party": "ncy.ctp", "share": 0.4451, "seats": 24 },
+          { "party": "ncy.ubp", "share": 0.3167, "seats": 19 },
+          { "party": "ncy.dp", "share": 0.1347, "seats": 6 },
+          { "party": "ncy.bdh", "share": 0.0584, "seats": 1 }
+        ],
+        "winner": "ncy.ctp",
+        "note": "Shares computed from the vote counts.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2005_Northern_Cypriot_parliamentary_election", "title": "Wikipedia: 2005 Northern Cypriot parliamentary election", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "president_2005",
+      "date": "2005-04-17",
+      "kind": "presidential",
+      "office": "ncy.president",
+      "rounds": 1,
+      "historical": {
+        "candidates": [
+          { "person": "ncy.mehmet_ali_talat", "party": "ncy.ctp", "share": 0.5559, "votes": 55945, "round": 1 },
+          { "person": "ncy.dervis_eroglu", "party": "ncy.ubp", "share": 0.2273, "votes": 22874, "round": 1 }
+        ],
+        "winner": "ncy.mehmet_ali_talat",
+        "turnout": 0.6958,
+        "note": "Talat won in the first round. Mustafa Arabacıoğlu (Democratic Party, 13.2%) is omitted because no biographical source was found for him; other candidates under 5% omitted.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2005_Northern_Cypriot_presidential_election", "title": "Wikipedia: 2005 Northern Cypriot presidential election", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "assembly_2009",
+      "date": "2009-04-19",
+      "kind": "legislative",
+      "chamber": "assembly",
+      "historical": {
+        "party_results": [
+          { "party": "ncy.ubp", "share": 0.4397, "seats": 26 },
+          { "party": "ncy.ctp", "share": 0.2934, "seats": 15 },
+          { "party": "ncy.dp", "share": 0.1064, "seats": 5 },
+          { "party": "ncy.tdp", "share": 0.0687, "seats": 2 },
+          { "party": "ncy.orp", "share": 0.062, "seats": 2 }
+        ],
+        "winner": "ncy.ubp",
+        "turnout": 0.8168,
+        "note": "Eroğlu (UBP) became Prime Minister.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2009_Northern_Cypriot_parliamentary_election", "title": "Wikipedia: 2009 Northern Cypriot parliamentary election", "accessed": "2026-10-15" },
+          { "url": "https://en.wikipedia.org/wiki/List_of_prime_ministers_of_Northern_Cyprus", "title": "Wikipedia: List of prime ministers of Northern Cyprus", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "president_2010",
+      "date": "2010-04-18",
+      "kind": "presidential",
+      "office": "ncy.president",
+      "rounds": 1,
+      "historical": {
+        "candidates": [
+          { "person": "ncy.dervis_eroglu", "party": "ncy.ubp", "share": 0.5035, "votes": 61422, "round": 1 },
+          { "person": "ncy.mehmet_ali_talat", "share": 0.4287, "votes": 52294, "round": 1 }
+        ],
+        "winner": "ncy.dervis_eroglu",
+        "turnout": 0.7637,
+        "note": "Eroğlu won in the first round; Talat ran as an independent. Candidates under 5% omitted.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2010_Northern_Cypriot_presidential_election", "title": "Wikipedia: 2010 Northern Cypriot presidential election", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "assembly_2013",
+      "date": "2013-07-28",
+      "kind": "legislative",
+      "chamber": "assembly",
+      "historical": {
+        "party_results": [
+          { "party": "ncy.ctp", "share": 0.3836, "seats": 21 },
+          { "party": "ncy.ubp", "share": 0.2732, "seats": 14 },
+          { "party": "ncy.dp", "share": 0.2315, "seats": 12 },
+          { "party": "ncy.tdp", "share": 0.074, "seats": 3 }
+        ],
+        "winner": "ncy.ctp",
+        "note": "Held after Sibel Siber's government took office in June 2013; Yorgancıoğlu (CTP) became Prime Minister.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2013_Northern_Cypriot_parliamentary_election", "title": "Wikipedia: 2013 Northern Cypriot parliamentary election", "accessed": "2026-10-15" },
+          { "url": "https://en.wikipedia.org/wiki/List_of_prime_ministers_of_Northern_Cyprus", "title": "Wikipedia: List of prime ministers of Northern Cyprus", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "constitutional_referendum_2014",
+      "date": "2014-06-29",
+      "kind": "referendum",
+      "question": "Approval of amendments to 23 articles of the constitution adopted by the Assembly on 5 June 2014",
+      "historical": {
+        "yes_share": 0.3768,
+        "winner": "no",
+        "turnout": 0.6998,
+        "note": "Yes 42,288; No 69,952; invalid 10,402; electorate 175,258. Held alongside local elections.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2014_Northern_Cypriot_constitutional_referendum", "title": "Wikipedia: 2014 Northern Cypriot constitutional referendum", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "president_2015",
+      "date": "2015-04-19",
+      "kind": "presidential",
+      "office": "ncy.president",
+      "rounds": 2,
+      "historical": {
+        "candidates": [
+          { "person": "ncy.dervis_eroglu", "share": 0.2815, "votes": 30328, "round": 1 },
+          { "person": "ncy.mustafa_akinci", "share": 0.2694, "votes": 29030, "round": 1 },
+          { "person": "ncy.sibel_siber", "party": "ncy.ctp", "share": 0.2253, "votes": 24271, "round": 1 },
+          { "person": "ncy.kudret_ozersay", "share": 0.2125, "votes": 22895, "round": 1 },
+          { "person": "ncy.mustafa_akinci", "share": 0.605, "votes": 67032, "round": 2 },
+          { "person": "ncy.dervis_eroglu", "share": 0.395, "votes": 43763, "round": 2 }
+        ],
+        "winner": "ncy.mustafa_akinci",
+        "turnout": 0.6235,
+        "note": "First round 19 April, runoff 26 April 2015 (turnout 64.12%). Eroğlu, Akıncı and Özersay ran as independents. Candidates under 5% omitted.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2015_Northern_Cypriot_presidential_election", "title": "Wikipedia: 2015 Northern Cypriot presidential election", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "assembly_2018",
+      "date": "2018-01-07",
+      "kind": "legislative",
+      "chamber": "assembly",
+      "historical": {
+        "party_results": [
+          { "party": "ncy.ubp", "share": 0.3561, "seats": 21 },
+          { "party": "ncy.ctp", "share": 0.2095, "seats": 12 },
+          { "party": "ncy.hp", "share": 0.1707, "seats": 9 },
+          { "party": "ncy.tdp", "share": 0.0865, "seats": 3 },
+          { "party": "ncy.dp", "share": 0.0782, "seats": 3 },
+          { "party": "ncy.ydp", "share": 0.0699, "seats": 2 }
+        ],
+        "winner": "ncy.ubp",
+        "note": "Tufan Erhürman (CTP) became Prime Minister in February 2018 although the UBP was the largest party.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2018_Northern_Cypriot_parliamentary_election", "title": "Wikipedia: 2018 Northern Cypriot parliamentary election", "accessed": "2026-10-15" },
+          { "url": "https://en.wikipedia.org/wiki/List_of_prime_ministers_of_Northern_Cyprus", "title": "Wikipedia: List of prime ministers of Northern Cyprus", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "constitutional_referendum_2020",
+      "date": "2020-10-11",
+      "kind": "referendum",
+      "question": "Should the Supreme Court be enlarged from eight members to a maximum of sixteen?",
+      "historical": {
+        "yes_share": 0.4987,
+        "winner": "no",
+        "turnout": 0.5829,
+        "note": "Held with the first presidential round. Yes 53,711; No 53,994 (50.13% against); invalid 8,261; electorate 198,957.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2020_Northern_Cypriot_constitutional_referendum", "title": "Wikipedia: 2020 Northern Cypriot constitutional referendum", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "president_2020",
+      "date": "2020-10-11",
+      "kind": "presidential",
+      "office": "ncy.president",
+      "rounds": 2,
+      "historical": {
+        "candidates": [
+          { "person": "ncy.ersin_tatar", "party": "ncy.ubp", "share": 0.3234, "votes": 35872, "round": 1 },
+          { "person": "ncy.mustafa_akinci", "share": 0.298, "votes": 33058, "round": 1 },
+          { "person": "ncy.tufan_erhurman", "party": "ncy.ctp", "share": 0.2171, "votes": 24075, "round": 1 },
+          { "person": "ncy.kudret_ozersay", "share": 0.0574, "votes": 6365, "round": 1 },
+          { "person": "ncy.erhan_arikli", "party": "ncy.ydp", "share": 0.0541, "votes": 5999, "round": 1 },
+          { "person": "ncy.ersin_tatar", "party": "ncy.ubp", "share": 0.5169, "votes": 67322, "round": 2 },
+          { "person": "ncy.mustafa_akinci", "share": 0.4831, "votes": 62910, "round": 2 }
+        ],
+        "winner": "ncy.ersin_tatar",
+        "turnout": 0.5831,
+        "note": "First round 11 October, runoff 18 October 2020 (turnout 67.29%). Candidates under 5% omitted.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2020_Northern_Cypriot_presidential_election", "title": "Wikipedia: 2020 Northern Cypriot presidential election", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "assembly_2022",
+      "date": "2022-01-23",
+      "kind": "legislative",
+      "chamber": "assembly",
+      "historical": {
+        "party_results": [
+          { "party": "ncy.ubp", "share": 0.3961, "seats": 24 },
+          { "party": "ncy.ctp", "share": 0.3191, "seats": 18 },
+          { "party": "ncy.dp", "share": 0.0742, "seats": 3 },
+          { "party": "ncy.hp", "share": 0.0669, "seats": 3 },
+          { "party": "ncy.ydp", "share": 0.0644, "seats": 2 },
+          { "party": "ncy.tdp", "share": 0.044, "seats": 0 }
+        ],
+        "winner": "ncy.ubp",
+        "note": "Shares computed from the vote counts. A UBP-DP-YDP coalition followed (Sucuoğlu, then Üstel from May 2022).",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2022_Northern_Cypriot_parliamentary_election", "title": "Wikipedia: 2022 Northern Cypriot parliamentary election", "accessed": "2026-10-15" },
+          { "url": "https://en.wikipedia.org/wiki/Prime_Minister_of_Northern_Cyprus", "title": "Wikipedia: Prime Minister of Northern Cyprus", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "president_2025",
+      "date": "2025-10-19",
+      "kind": "presidential",
+      "office": "ncy.president",
+      "rounds": 1,
+      "historical": {
+        "candidates": [
+          { "person": "ncy.tufan_erhurman", "party": "ncy.ctp", "share": 0.6276, "votes": 87137, "round": 1 },
+          { "person": "ncy.ersin_tatar", "share": 0.3581, "votes": 49714, "round": 1 }
+        ],
+        "winner": "ncy.tufan_erhurman",
+        "turnout": 0.6487,
+        "note": "Erhürman won in the first round; Tatar ran as an independent. Candidates under 5% omitted.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2025_Northern_Cypriot_presidential_election", "title": "Wikipedia: 2025 Northern Cypriot presidential election", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      }
+    }
+  ],
+  "source": [
+    { "url": "https://en.wikipedia.org/wiki/President_of_Northern_Cyprus", "title": "Wikipedia: President of Northern Cyprus (election rules)", "accessed": "2026-10-15" },
+    { "url": "https://en.wikipedia.org/wiki/2026_Northern_Cypriot_parliamentary_election", "title": "Wikipedia: 2026 Northern Cypriot parliamentary election (scheduled date)", "accessed": "2026-10-15" }
+  ],
+  "confidence": "verified"
+}

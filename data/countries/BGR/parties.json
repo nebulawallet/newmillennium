@@ -1,0 +1,513 @@
+{
+  "parties": [
+    {
+      "id": "bgr.sds",
+      "name": { "en": "Union of Democratic Forces", "native": "Съюз на демократичните сили" },
+      "abbrev": { "en": "SDS", "native": "СДС" },
+      "color": "#1F4E9C",
+      "sub_ideology": "liberal_conservative",
+      "founded": "1989-12-07",
+      "status_2000": "active",
+      "leader_history": [
+        { "person": "bgr.ivan_kostov", "from": 1997, "to": 2001 },
+        { "person": "bgr.nadezhda_neynsky", "from": 2002, "to": 2005 },
+        { "person": "bgr.petar_stoyanov", "from": 2005, "to": 2007 },
+        { "person": "bgr.martin_dimitrov", "from": 2008, "to": 2012 },
+        { "person": "bgr.rumen_hristov", "from": "2018-05-27", "to": "2026-07-04" }
+      ],
+      "popularity_2000": 0.5226,
+      "popularity_note": "Vote share of the United Democratic Forces (ODS, the SDS-led alliance with the Democratic Party and BZNS) in April 1997.",
+      "note": "Led the ODS alliance (1997-2005) and the Blue Coalition (2009); has run with GERB as GERB-SDS since 2014, whose results are recorded under GERB. Gaps in the leader history are leaders not recorded as people: Ekaterina Mihailova (2001-2002), Plamen Yurukov (2007-2008), Emil Kabaivanov (2012-2013) and Bozhidar Lukarski (2013-2018). Wikidata gives Iliya Lazarov as leader from 4 July 2026 (after June 2026; only Wikidata confirms it, so he is not recorded). Years only where the Wikipedia list gives years.",
+      "international": "European People's Party",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/Union_of_Democratic_Forces_(Bulgaria)", "title": "Wikipedia: Union of Democratic Forces (Bulgaria) (list of chairmen)", "accessed": "2026-10-15" },
+        { "url": "https://www.wikidata.org/wiki/Q841253", "title": "Wikidata: Union of Democratic Forces (founding, chairpersons)", "accessed": "2026-10-15" },
+        { "url": "https://en.wikipedia.org/wiki/1997_Bulgarian_parliamentary_election", "title": "Wikipedia: 1997 Bulgarian parliamentary election", "accessed": "2026-10-15" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "bgr.bsp",
+      "name": { "en": "Bulgarian Socialist Party", "native": "Българска социалистическа партия" },
+      "abbrev": { "en": "BSP", "native": "БСП" },
+      "color": "#DB0F28",
+      "sub_ideology": "social_democrat",
+      "founded": "1990-04-03",
+      "status_2000": "active",
+      "leader_history": [
+        { "person": "bgr.georgi_parvanov", "from": "1996-12-21", "to": "2001-12-05" },
+        { "person": "bgr.sergei_stanishev", "from": "2001-12-05", "to": "2014-07-27" },
+        { "person": "bgr.mihail_mikov", "from": "2014-07-27", "to": "2016-05-08" },
+        { "person": "bgr.korneliya_ninova", "from": "2016-05-08", "to": "2024-06-15" },
+        { "person": "bgr.atanas_zafirov", "from": "2024-06-15", "to": "2026-02-07", "title": "Acting chairman at first" },
+        { "person": "bgr.krum_zarkov", "from": "2026-02-07" }
+      ],
+      "popularity_2000": 0.2207,
+      "popularity_note": "Vote share of the BSP-led Democratic Left in April 1997.",
+      "note": "Successor of the Bulgarian Communist Party. Has run as Coalition for Bulgaria (2001-2013), BSP-Left Bulgaria (2014), BSP for Bulgaria (2017-2024) and BSP-United Left (from October 2024); results recorded under the BSP. Won no seats in April 2026.",
+      "international": "Party of European Socialists",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/Bulgarian_Socialist_Party", "title": "Wikipedia: Bulgarian Socialist Party (list of chairmen)", "accessed": "2026-10-15" },
+        { "url": "https://www.wikidata.org/wiki/Q752259", "title": "Wikidata: Bulgarian Socialist Party", "accessed": "2026-10-15" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "bgr.dps",
+      "name": { "en": "Movement for Rights and Freedoms", "native": "Движение за права и свободи" },
+      "abbrev": { "en": "DPS", "native": "ДПС" },
+      "color": "#0A6BB5",
+      "sub_ideology": "regionalist",
+      "founded": "1990-01-04",
+      "status_2000": "active",
+      "leader_history": [
+        { "person": "bgr.ahmed_dogan", "from": "1990-01-04", "to": "2013-01-19" },
+        { "person": "bgr.lyutvi_mestan", "from": "2013-01-19", "to": "2015-12-24" },
+        { "person": "bgr.mustafa_karadayi", "from": "2016-04-24", "to": "2023-11-07" },
+        { "person": "bgr.ahmed_dogan", "from": "2023-11-07", "to": "2024-02-24", "title": "Honorary chairman" },
+        { "person": "bgr.dzhevdet_chakarov", "from": "2024-02-24", "to": "2024-12-22", "title": "Co-chairman" },
+        { "person": "bgr.delyan_peevski", "from": "2024-02-24", "title": "Co-chairman until December 2024" }
+      ],
+      "popularity_2000": 0.076,
+      "popularity_note": "Vote share of the DPS-led Union for National Salvation in April 1997.",
+      "note": "Liberal party drawing its support mainly from the Turkish minority (recorded as regionalist). An interim council led it from 24 December 2015 to 24 April 2016. In 2024 it split: Peevski's wing ran as DPS-New Beginning (recorded as the DPS) and Dogan's supporters formed the Alliance for Rights and Freedoms.",
+      "regional_base": ["turkish"],
+      "international": "Liberal International (formerly)",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/Movement_for_Rights_and_Freedoms", "title": "Wikipedia: Movement for Rights and Freedoms (party chairmen)", "accessed": "2026-10-15" },
+        { "url": "https://en.wikipedia.org/wiki/October_2024_Bulgarian_parliamentary_election", "title": "Wikipedia: October 2024 Bulgarian parliamentary election", "accessed": "2026-10-15" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "bgr.euroleft",
+      "name": { "en": "Bulgarian Euro-Left", "native": "Българска евролевица" },
+      "abbrev": { "en": "BEL", "native": "БЕЛ" },
+      "color": "#E8743B",
+      "sub_ideology": "social_democrat",
+      "founded": 1997,
+      "dissolved": 2003,
+      "status_2000": "active",
+      "leader_history": [
+        { "person": "bgr.aleksandar_tomov", "from": 1997 }
+      ],
+      "popularity_2000": 0.055,
+      "popularity_note": "Vote share, April 1997.",
+      "note": "Founding and dissolution years from Wikidata; Tomov is named as leader in the 1997 election infobox (end of his leadership not checked).",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/1997_Bulgarian_parliamentary_election", "title": "Wikipedia: 1997 Bulgarian parliamentary election", "accessed": "2026-10-15" },
+        { "url": "https://www.wikidata.org/wiki/Q3060519", "title": "Wikidata: Bulgarian Euro-Left", "accessed": "2026-10-15" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "bgr.bbb",
+      "name": { "en": "Bulgarian Business Bloc", "native": "Български бизнес блок" },
+      "abbrev": { "en": "BBB", "native": "БББ" },
+      "color": "#8B6914",
+      "sub_ideology": "right_populist",
+      "founded": "1990-12-10",
+      "dissolved": 2001,
+      "status_2000": "active",
+      "leader_history": [
+        { "person": "bgr.george_ganchev", "from": "1990-12-10" }
+      ],
+      "popularity_2000": 0.0493,
+      "popularity_note": "Vote share, April 1997.",
+      "note": "Led by George Ganchev (1997 infobox and Wikidata). Founding date and dissolution year from Wikidata. Ideology is a gameplay classification (populist).",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/1997_Bulgarian_parliamentary_election", "title": "Wikipedia: 1997 Bulgarian parliamentary election", "accessed": "2026-10-15" },
+        { "url": "https://www.wikidata.org/wiki/Q15637437", "title": "Wikidata: Bulgarian Business Bloc", "accessed": "2026-10-15" }
+      ],
+      "confidence": "needs_review",
+      "review_note": "Check the BBB's ideology (recorded as right_populist) and whether Ganchev led it from its founding."
+    },
+    {
+      "id": "bgr.ndsv",
+      "name": { "en": "National Movement for Stability and Progress (National Movement Simeon II until 2007)", "native": "Национално движение за стабилност и възход" },
+      "abbrev": { "en": "NDSV", "native": "НДСВ" },
+      "color": "#F2C200",
+      "sub_ideology": "centrist_liberal",
+      "founded": "2001-04-06",
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        { "person": "bgr.simeon_sakskoburggotski", "from": "2001-04-06" }
+      ],
+      "popularity_2000": 0,
+      "note": "Founded in April 2001 as Simeon II's political vehicle; won 120 of 240 seats in 2001 and governed with the DPS, then joined the BSP-led coalition in 2005. Renamed in June 2007. Co-chairmen were elected in 2015 and Stanimir Ilchev became sole chairman in 2023; the end of Simeon's leadership is not given by the fetched source. Wikidata gives 6 April 2002 as the founding date; the Wikipedia infobox says 6 April 2001.",
+      "international": "Liberal International",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/National_Movement_for_Stability_and_Progress", "title": "Wikipedia: National Movement for Stability and Progress", "accessed": "2026-10-15" },
+        { "url": "https://www.wikidata.org/wiki/Q928435", "title": "Wikidata: National Movement for Stability and Progress", "accessed": "2026-10-15" }
+      ],
+      "confidence": "needs_review",
+      "review_note": "Add the date Simeon Sakskoburggotski stopped leading the NDSV (recorded as open-ended)."
+    },
+    {
+      "id": "bgr.ataka",
+      "name": { "en": "Attack", "native": "Атака" },
+      "abbrev": { "en": "Ataka", "native": "Атака" },
+      "color": "#2B2B2B",
+      "sub_ideology": "ethno_nationalist",
+      "founded": "2005-04-17",
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        { "person": "bgr.volen_siderov", "from": "2005-04-17" }
+      ],
+      "popularity_2000": 0,
+      "note": "Nationalist party founded by Volen Siderov; in Parliament 2005-2017 (part of United Patriots 2017).",
+      "source": [
+        { "url": "https://www.wikidata.org/wiki/Q178049", "title": "Wikidata: Attack (founding, chairperson)", "accessed": "2026-10-15" },
+        { "url": "https://en.wikipedia.org/wiki/2005_Bulgarian_parliamentary_election", "title": "Wikipedia: 2005 Bulgarian parliamentary election", "accessed": "2026-10-15" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "bgr.dsb",
+      "name": { "en": "Democrats for a Strong Bulgaria", "native": "Демократи за силна България" },
+      "abbrev": { "en": "DSB", "native": "ДСБ" },
+      "color": "#0B3D91",
+      "sub_ideology": "liberal_conservative",
+      "founded": "2004-05-30",
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        { "person": "bgr.ivan_kostov", "from": "2004-05-30", "to": "2013-06-13" },
+        { "person": "bgr.radan_kanev", "from": "2013-06-13", "to": "2017-06-10" },
+        { "person": "bgr.atanas_atanasov", "from": "2017-06-10", "to": "2026-07-11" },
+        { "person": "bgr.radan_kanev", "from": "2026-07-11" }
+      ],
+      "popularity_2000": 0,
+      "lineage": { "split_from": "bgr.sds" },
+      "note": "Founded by Ivan Kostov after leaving the SDS. Won 17 seats alone in 2005; later part of the Blue Coalition (2009), the Reformist Bloc (2014) and Democratic Bulgaria (from 2018). Leadership dates from Wikidata; the 11 July 2026 change back to Kanev is after June 2026 and is confirmed only by Wikidata.",
+      "source": [
+        { "url": "https://www.wikidata.org/wiki/Q127205", "title": "Wikidata: Democrats for a Strong Bulgaria (founding, chairpersons)", "accessed": "2026-10-15" },
+        { "url": "https://en.wikipedia.org/wiki/2005_Bulgarian_parliamentary_election", "title": "Wikipedia: 2005 Bulgarian parliamentary election", "accessed": "2026-10-15" }
+      ],
+      "confidence": "needs_review",
+      "review_note": "Leader dates come from Wikidata only; confirm the July 2026 return of Radan Kanev against a Wikipedia or official source."
+    },
+    {
+      "id": "bgr.gerb",
+      "name": { "en": "GERB (Citizens for European Development of Bulgaria)", "native": "ГЕРБ" },
+      "abbrev": { "en": "GERB", "native": "ГЕРБ" },
+      "color": "#0054A6",
+      "sub_ideology": "liberal_conservative",
+      "founded": "2006-12-03",
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        { "person": "bgr.tsvetan_tsvetanov", "from": "2006-12-03", "to": "2010-01-10" },
+        { "person": "bgr.boyko_borisov", "from": "2010-01-10" }
+      ],
+      "popularity_2000": 0,
+      "note": "Centre-right party founded by Boyko Borisov's supporters; largest party in every election from 2009 to October 2024. Runs with the SDS as GERB-SDS since 2014; joint results are recorded under GERB.",
+      "international": "European People's Party",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/GERB", "title": "Wikipedia: GERB (list of chairmen)", "accessed": "2026-10-15" },
+        { "url": "https://www.wikidata.org/wiki/Q133968", "title": "Wikidata: GERB", "accessed": "2026-10-15" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "bgr.rzs",
+      "name": { "en": "Order, Law and Justice", "native": "Ред, законност и справедливост" },
+      "abbrev": { "en": "RZS", "native": "РЗС" },
+      "color": "#5A2D82",
+      "sub_ideology": "national_conservative",
+      "founded": 2005,
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        { "person": "bgr.yane_yanev", "from": 2009 }
+      ],
+      "popularity_2000": 0,
+      "note": "Won 10 seats in 2009 (4.13%). Yane Yanev is named as leader in the 2009 election infobox; his leadership is recorded from then. Wikidata gives 2009 as a dissolution year, which conflicts with the 2009 result; not recorded. Ideology is a gameplay classification.",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/2009_Bulgarian_parliamentary_election", "title": "Wikipedia: 2009 Bulgarian parliamentary election", "accessed": "2026-10-15" },
+        { "url": "https://www.wikidata.org/wiki/Q1048010", "title": "Wikidata: Order, Law and Justice", "accessed": "2026-10-15" }
+      ],
+      "confidence": "needs_review",
+      "review_note": "Check RZS's ideology (recorded as national_conservative), the start of Yane Yanev's leadership and whether/when the party dissolved."
+    },
+    {
+      "id": "bgr.rb",
+      "name": { "en": "Reformist Bloc", "native": "Реформаторски блок" },
+      "abbrev": { "en": "RB", "native": "РБ" },
+      "color": "#2C6EB5",
+      "sub_ideology": "liberal_conservative",
+      "founded": "2013-12-20",
+      "dissolved": 2017,
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        { "person": "bgr.radan_kanev", "from": 2014, "title": "Lead figure of the alliance (2014 election)" }
+      ],
+      "popularity_2000": 0,
+      "note": "Centre-right alliance (including DSB); 23 seats in 2014 and partner in the second Borisov government. Kanev is named as its leader in the 2014 election infobox.",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/2014_Bulgarian_parliamentary_election", "title": "Wikipedia: 2014 Bulgarian parliamentary election", "accessed": "2026-10-15" },
+        { "url": "https://www.wikidata.org/wiki/Q15991304", "title": "Wikidata: Reformist Bloc", "accessed": "2026-10-15" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "bgr.vmro",
+      "name": { "en": "IMRO – Bulgarian National Movement", "native": "ВМРО – Българско национално движение" },
+      "abbrev": { "en": "VMRO-BND", "native": "ВМРО-БНД" },
+      "color": "#8B0000",
+      "sub_ideology": "national_conservative",
+      "founded": 1990,
+      "status_2000": "extra_parliamentary",
+      "leader_history": [
+        { "person": "bgr.krasimir_karakachanov", "from": 1999, "to": 2022 }
+      ],
+      "popularity_2000": 0,
+      "popularity_note": "No separate national vote share before 2000 was checked.",
+      "note": "Nationalist party. Led the Patriotic Front (with the NFSB) in 2014 and the United Patriots (with the NFSB and Ataka) in 2017; those alliances' results are recorded under VMRO because Karakachanov headed both lists. Karakachanov was the United Patriots' presidential candidate in 2016. Leadership years from Wikidata.",
+      "source": [
+        { "url": "https://www.wikidata.org/wiki/Q792527", "title": "Wikidata: IMRO – Bulgarian National Movement (founding, chairpersons)", "accessed": "2026-10-15" },
+        { "url": "https://en.wikipedia.org/wiki/2017_Bulgarian_parliamentary_election", "title": "Wikipedia: 2017 Bulgarian parliamentary election", "accessed": "2026-10-15" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "bgr.abv",
+      "name": { "en": "Alternative for Bulgarian Revival", "native": "Алтернатива за българско възраждане" },
+      "abbrev": { "en": "ABV", "native": "АБВ" },
+      "color": "#C8102E",
+      "sub_ideology": "social_democrat",
+      "founded": 2014,
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        { "person": "bgr.georgi_parvanov", "from": 2014 }
+      ],
+      "popularity_2000": 0,
+      "lineage": { "split_from": "bgr.bsp" },
+      "note": "Founded by former President Parvanov; 11 seats in 2014 and partner in the second Borisov government. Wikidata names Rumen Petkov as chairman from 2018 (not recorded as a person); Parvanov's entry therefore stays open.",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/2014_Bulgarian_parliamentary_election", "title": "Wikipedia: 2014 Bulgarian parliamentary election", "accessed": "2026-10-15" },
+        { "url": "https://www.wikidata.org/wiki/Q17173534", "title": "Wikidata: Alternative for Bulgarian Revival", "accessed": "2026-10-15" }
+      ],
+      "confidence": "needs_review",
+      "review_note": "Parvanov's leadership is open-ended because the end date was not found; Wikidata lists Rumen Petkov as chairman from 19 May 2018."
+    },
+    {
+      "id": "bgr.volya",
+      "name": { "en": "Volya Movement", "native": "Воля" },
+      "abbrev": { "en": "Volya", "native": "Воля" },
+      "color": "#E4007C",
+      "sub_ideology": "right_populist",
+      "founded": "2007-07-15",
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        { "person": "bgr.veselin_mareshki", "from": "2007-07-15" }
+      ],
+      "popularity_2000": 0,
+      "note": "Founded by Veselin Mareshki; 12 seats in 2017. Founding date (under an earlier name) from Wikidata. Ideology is a gameplay classification.",
+      "source": [
+        { "url": "https://www.wikidata.org/wiki/Q25485773", "title": "Wikidata: Volya Movement", "accessed": "2026-10-15" },
+        { "url": "https://en.wikipedia.org/wiki/2017_Bulgarian_parliamentary_election", "title": "Wikipedia: 2017 Bulgarian parliamentary election", "accessed": "2026-10-15" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "bgr.itn",
+      "name": { "en": "There Is Such a People", "native": "Има такъв народ" },
+      "abbrev": { "en": "ITN", "native": "ИТН" },
+      "color": "#4FB4E5",
+      "sub_ideology": "right_populist",
+      "founded": "2020-02-16",
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        { "person": "bgr.slavi_trifonov", "from": 2019 }
+      ],
+      "popularity_2000": 0,
+      "note": "Founded by Slavi Trifonov; first in July 2021. Wikidata dates his leadership from 2019 (the movement predates the party's registration). Ideology is a gameplay classification.",
+      "source": [
+        { "url": "https://www.wikidata.org/wiki/Q98098908", "title": "Wikidata: There Is Such a People", "accessed": "2026-10-15" },
+        { "url": "https://en.wikipedia.org/wiki/July_2021_Bulgarian_parliamentary_election", "title": "Wikipedia: July 2021 Bulgarian parliamentary election", "accessed": "2026-10-15" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "bgr.db",
+      "name": { "en": "Democratic Bulgaria", "native": "Демократична България" },
+      "abbrev": { "en": "DB", "native": "ДБ" },
+      "color": "#004A80",
+      "sub_ideology": "centrist_liberal",
+      "founded": "2018-04-12",
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        { "person": "bgr.atanas_atanasov", "from": 2021, "title": "Co-leader" },
+        { "person": "bgr.hristo_ivanov", "from": 2021, "title": "Co-leader" }
+      ],
+      "popularity_2000": 0,
+      "note": "Alliance of Yes, Bulgaria!, DSB and the Greens. The 2021 election infoboxes name Atanasov and Ivanov as leaders (recorded from 2021, end dates not checked). Has run with PP as PP-DB since 2023; joint results are recorded under PP.",
+      "source": [
+        { "url": "https://www.wikidata.org/wiki/Q62808154", "title": "Wikidata: Democratic Bulgaria", "accessed": "2026-10-15" },
+        { "url": "https://en.wikipedia.org/wiki/April_2021_Bulgarian_parliamentary_election", "title": "Wikipedia: April 2021 Bulgarian parliamentary election", "accessed": "2026-10-15" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "bgr.ismv",
+      "name": { "en": "Stand Up.BG! We are coming!", "native": "Изправи се БГ! Ние идваме!" },
+      "abbrev": { "en": "ISMV", "native": "ИБГ-НИ" },
+      "color": "#E30613",
+      "sub_ideology": "left_populist",
+      "founded": "2021-07-20",
+      "dissolved": "2022-08-02",
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        { "person": "bgr.maya_manolova", "from": 2021 }
+      ],
+      "popularity_2000": 0,
+      "note": "Maya Manolova's coalition, called 'Stand Up! Mafia, Get Out!' in the April and July 2021 elections (14 and 13 seats). Dates from Wikidata. Ideology is a gameplay classification.",
+      "source": [
+        { "url": "https://www.wikidata.org/wiki/Q107600303", "title": "Wikidata: Stand Up.BG! We are coming!", "accessed": "2026-10-15" },
+        { "url": "https://en.wikipedia.org/wiki/July_2021_Bulgarian_parliamentary_election", "title": "Wikipedia: July 2021 Bulgarian parliamentary election", "accessed": "2026-10-15" }
+      ],
+      "confidence": "needs_review",
+      "review_note": "Check ISMV's ideology (recorded as left_populist)."
+    },
+    {
+      "id": "bgr.pp",
+      "name": { "en": "We Continue the Change", "native": "Продължаваме промяната" },
+      "abbrev": { "en": "PP", "native": "ПП" },
+      "color": "#FFD200",
+      "sub_ideology": "centrist_liberal",
+      "founded": "2022-04-15",
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        { "person": "bgr.kiril_petkov", "from": 2021, "to": "2025-06-25", "title": "Co-chairman" },
+        { "person": "bgr.assen_vassilev", "from": 2021, "title": "Co-chairman" }
+      ],
+      "popularity_2000": 0,
+      "note": "Founded by Kiril Petkov and Assen Vassilev; won the November 2021 election as a coalition and registered as a party in 2022. Runs with Democratic Bulgaria as PP-DB since 2023 (results recorded under PP). Leadership dates from Wikidata and the 2021 election infobox.",
+      "international": "Renew Europe (European Parliament group)",
+      "source": [
+        { "url": "https://www.wikidata.org/wiki/Q108601789", "title": "Wikidata: We Continue the Change", "accessed": "2026-10-15" },
+        { "url": "https://www.wikidata.org/wiki/Q116769868", "title": "Wikidata: We Continue the Change – Democratic Bulgaria", "accessed": "2026-10-15" },
+        { "url": "https://en.wikipedia.org/wiki/2021_Bulgarian_general_election", "title": "Wikipedia: 2021 Bulgarian general election", "accessed": "2026-10-15" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "bgr.vazrazhdane",
+      "name": { "en": "Revival", "native": "Възраждане" },
+      "abbrev": { "en": "Vazrazhdane", "native": "Възраждане" },
+      "color": "#6B8E23",
+      "sub_ideology": "ethno_nationalist",
+      "founded": "2014-08-02",
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        { "person": "bgr.kostadin_kostadinov", "from": "2014-08-02" }
+      ],
+      "popularity_2000": 0,
+      "note": "Nationalist party led by Kostadin Kostadinov; in Parliament since November 2021. Ideology is a gameplay classification.",
+      "source": [
+        { "url": "https://www.wikidata.org/wiki/Q28943121", "title": "Wikidata: Revival (Bulgaria)", "accessed": "2026-10-15" },
+        { "url": "https://en.wikipedia.org/wiki/2021_Bulgarian_general_election", "title": "Wikipedia: 2021 Bulgarian general election", "accessed": "2026-10-15" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "bgr.bv",
+      "name": { "en": "Bulgarian Rise", "native": "Български възход" },
+      "abbrev": { "en": "BV", "native": "БВ" },
+      "color": "#7A1F2B",
+      "sub_ideology": "national_conservative",
+      "founded": "2022-05-05",
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        { "person": "bgr.stefan_yanev", "from": "2022-05-05" }
+      ],
+      "popularity_2000": 0,
+      "note": "Founded by former caretaker Prime Minister Stefan Yanev; 12 seats in 2022. Ideology is a gameplay classification.",
+      "source": [
+        { "url": "https://www.wikidata.org/wiki/Q111985616", "title": "Wikidata: Bulgarian Rise", "accessed": "2026-10-15" },
+        { "url": "https://en.wikipedia.org/wiki/2022_Bulgarian_parliamentary_election", "title": "Wikipedia: 2022 Bulgarian parliamentary election", "accessed": "2026-10-15" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "bgr.velichie",
+      "name": { "en": "Velichie (Greatness)", "native": "Величие" },
+      "abbrev": { "en": "Velichie", "native": "Величие" },
+      "color": "#B8860B",
+      "sub_ideology": "right_populist",
+      "founded": "2023-07-25",
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        { "person": "bgr.ivelin_mihaylov", "from": 2024 }
+      ],
+      "popularity_2000": 0,
+      "note": "Won 13 seats in June 2024 (led by Nikolay Markov, not recorded as a person) and 10 seats in October 2024 after a court-ordered recalculation, when the infobox names Ivelin Mihaylov as leader. Ideology is a gameplay classification.",
+      "source": [
+        { "url": "https://www.wikidata.org/wiki/Q126478515", "title": "Wikidata: Velichie", "accessed": "2026-10-15" },
+        { "url": "https://en.wikipedia.org/wiki/October_2024_Bulgarian_parliamentary_election", "title": "Wikipedia: October 2024 Bulgarian parliamentary election", "accessed": "2026-10-15" }
+      ],
+      "confidence": "needs_review",
+      "review_note": "Check Velichie's ideology (recorded as right_populist) and when Ivelin Mihaylov became its leader."
+    },
+    {
+      "id": "bgr.mech",
+      "name": { "en": "Morality, Unity, Honour", "native": "Морал, единство, чест" },
+      "abbrev": { "en": "MECh", "native": "МЕЧ" },
+      "color": "#5C4033",
+      "sub_ideology": "right_populist",
+      "founded": "2024-02-09",
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        { "person": "bgr.radostin_vasilev", "from": "2024-02-09" }
+      ],
+      "popularity_2000": 0,
+      "note": "Won 11 seats in October 2024. Ideology is a gameplay classification.",
+      "source": [
+        { "url": "https://www.wikidata.org/wiki/Q126688908", "title": "Wikidata: Morality, Unity, Honour", "accessed": "2026-10-15" },
+        { "url": "https://en.wikipedia.org/wiki/October_2024_Bulgarian_parliamentary_election", "title": "Wikipedia: October 2024 Bulgarian parliamentary election", "accessed": "2026-10-15" }
+      ],
+      "confidence": "needs_review",
+      "review_note": "Check MECh's ideology (recorded as right_populist)."
+    },
+    {
+      "id": "bgr.aps",
+      "name": { "en": "Alliance for Rights and Freedoms", "native": "Алианс за права и свободи" },
+      "abbrev": { "en": "APS", "native": "АПС" },
+      "color": "#3BA3D0",
+      "sub_ideology": "regionalist",
+      "founded": "2024-09-02",
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        { "person": "bgr.dzhevdet_chakarov", "from": "2024-09-02" }
+      ],
+      "popularity_2000": 0,
+      "lineage": { "split_from": "bgr.dps" },
+      "note": "Formed by Ahmed Dogan's wing of the DPS; 19 seats in October 2024. The October 2024 election infobox names Dzhevdet Chakarov as leader; Wikidata names Hayri Sadakov as chairman (conflict noted).",
+      "regional_base": ["turkish"],
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/October_2024_Bulgarian_parliamentary_election", "title": "Wikipedia: October 2024 Bulgarian parliamentary election", "accessed": "2026-10-15" },
+        { "url": "https://www.wikidata.org/wiki/Q130313846", "title": "Wikidata: Alliance for Rights and Freedoms", "accessed": "2026-10-15" }
+      ],
+      "confidence": "needs_review",
+      "review_note": "Sources disagree on APS's leader (Chakarov in the election infobox, Hayri Sadakov in Wikidata)."
+    },
+    {
+      "id": "bgr.pb",
+      "name": { "en": "Progressive Bulgaria", "native": "Прогресивна България" },
+      "abbrev": { "en": "PB", "native": "ПБ" },
+      "color": "#C2185B",
+      "sub_ideology": "left_populist",
+      "founded": "2026-03-02",
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        { "person": "bgr.galab_donev", "from": "2026-03-02", "to": "2026-05-19", "title": "Co-chairman" },
+        { "person": "bgr.rumen_radev", "from": "2026-05-19" }
+      ],
+      "popularity_2000": 0,
+      "note": "Coalition formed by Rumen Radev after he resigned as President; described as centre-left populist. Won 131 of 240 seats in April 2026 (Radev was its lead candidate and unofficial leader; Wikidata names him chairman from 19 May 2026, with Galab Donev and Dimitar Stoyanov before). Wikidata also gives 19 May 2026 as a founding date (party registration).",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/2026_Bulgarian_parliamentary_election", "title": "Wikipedia: 2026 Bulgarian parliamentary election", "accessed": "2026-10-15" },
+        { "url": "https://www.wikidata.org/wiki/Q138546752", "title": "Wikidata: Progressive Bulgaria", "accessed": "2026-10-15" }
+      ],
+      "confidence": "verified"
+    }
+  ]
+}

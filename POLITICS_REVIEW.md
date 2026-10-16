@@ -48,11 +48,11 @@ Live sources sometimes report allegations or investigations involving real peopl
 
 <!-- AUTO-GENERATED BELOW: run `npm run review-report`; edits below this line are overwritten -->
 
-## Needs review: 291 of 4097 records
+## Needs review: 299 of 4249 records
 
-Countries with politics data: 47 / 212.
+Countries with politics data: 50 / 212.
 
-Countries with no data yet (165): ISL, LIE, MLT, SMR, VAT, NCY, BLR, MDA, EST, LVA, LTU, GEO, ARM, AZE, KAZ, KGZ, TJK, TKM, UZB, PMR, ABK, SOS, NKR, ICH, CAN, ATG, ARG, BHS, BRB, BLZ, BOL, BRA, CHL, COL, CRI, CUB, DMA, DOM, ECU, SLV, GRD, GTM, GUY, HTI, HND, JAM, MEX, NIC, PAN, PRY, PER, KNA, LCA, VCT, SUR, TTO, URY, VEN, FAR, DZA, BHR, EGY, IRQ, JOR, KWT, LBN, LBY, MRT, MAR, OMN, QAT, SAU, SYR, TUN, ARE, YEM, ESH, KUR, AGO, BEN, BWA, BFA, BDI, CPV, CMR, CAF, TCD, COM, COD, COG, CIV, DJI, GNQ, ERI, SWZ, ETH, GAB, GMB, GHA, GIN, GNB, KEN, LSO, LBR, MDG, MWI, MLI, MUS, MOZ, NAM, NER, NGA, RWA, STP, SEN, SYC, SLE, ZAF, SDN, TZA, TGO, UGA, ZMB, ZWE, SSD, SML, UNI, RCD, MLC, AFG, AFN, BGD, BTN, IND, MDV, NPL, PAK, LKA, TEL, MNG, BRN, KHM, IDN, LAO, MYS, MMR, PHL, SGP, THA, VNM, TLS, AUS, NZL, FJI, PNG, SLB, VUT, WSM, TON, KIR, TUV, NRU, FSM, MHL, PLW
+Countries with no data yet (162): LIE, MLT, SMR, VAT, MDA, EST, LVA, LTU, GEO, ARM, AZE, KAZ, KGZ, TJK, TKM, UZB, PMR, ABK, SOS, NKR, ICH, CAN, ATG, ARG, BHS, BRB, BLZ, BOL, BRA, CHL, COL, CRI, CUB, DMA, DOM, ECU, SLV, GRD, GTM, GUY, HTI, HND, JAM, MEX, NIC, PAN, PRY, PER, KNA, LCA, VCT, SUR, TTO, URY, VEN, FAR, DZA, BHR, EGY, IRQ, JOR, KWT, LBN, LBY, MRT, MAR, OMN, QAT, SAU, SYR, TUN, ARE, YEM, ESH, KUR, AGO, BEN, BWA, BFA, BDI, CPV, CMR, CAF, TCD, COM, COD, COG, CIV, DJI, GNQ, ERI, SWZ, ETH, GAB, GMB, GHA, GIN, GNB, KEN, LSO, LBR, MDG, MWI, MLI, MUS, MOZ, NAM, NER, NGA, RWA, STP, SEN, SYC, SLE, ZAF, SDN, TZA, TGO, UGA, ZMB, ZWE, SSD, SML, UNI, RCD, MLC, AFG, AFN, BGD, BTN, IND, MDV, NPL, PAK, LKA, TEL, MNG, BRN, KHM, IDN, LAO, MYS, MMR, PHL, SGP, THA, VNM, TLS, AUS, NZL, FJI, PNG, SLB, VUT, WSM, TON, KIR, TUV, NRU, FSM, MHL, PLW
 
 ### ALB — Albania (4)
 
@@ -131,6 +131,12 @@ Countries with no data yet (165): ISL, LIE, MLT, SMR, VAT, NCY, BLR, MDA, EST, L
 | election | `presidency_croat_2026` presidential 2026-10-04 | Preliminary results; replace with the CEC's certified figures. | data/countries/BIH/elections.json |
 | election | `presidency_serb_2026` presidential 2026-10-04 | Preliminary results; replace with the CEC's certified figures. | data/countries/BIH/elections.json |
 | election | `hor_2026` legislative 2026-10-04 | Preliminary results; replace with the CEC's certified figures. | data/countries/BIH/elections.json |
+
+### BLR — Belarus (1)
+
+| kind | record | what to check | file |
+|---|---|---|---|
+| chamber | `house_of_representatives` House of Representatives | The party breakdown of the 1996-2000 House (first convocation) was not found in the fetched sources, so all 110 seats are recorded as 'others'. Find the faction composition on 1 January 2000 (most deputies were non-partisan supporters of the President, with Communist and Agrarian groups). | data/countries/BLR/country.json |
 
 ### CHN — China (4)
 
@@ -281,6 +287,12 @@ Countries with no data yet (165): ISL, LIE, MLT, SMR, VAT, NCY, BLR, MDA, EST, L
 | election | `majlis_2024` legislative 2024-03-01 | Check the camp assignment of the Voice of the Nation list (47 seats), which the infobox places under the reformists although its leader is usually described as an independent conservative, and whether the People's Alliance of Islamic Revolution should map to the Stability Front. | data/countries/IRN/elections.json |
 | election | `supreme_leader_2026` indirect_presidential 2026-03-08 | Vote totals were not published: the infobox gives the winner's tally only as at least 59, and lists Hassan Rouhani and Hassan Khomeini as other names considered, with unknown votes. Confirm the date and any published count. | data/countries/IRN/elections.json |
 
+### ISL — Iceland (1)
+
+| kind | record | what to check | file |
+|---|---|---|---|
+| election | `president_2000` presidential 2000-08-01 | Wikipedia gives no date for the 2000 election (only that it was scheduled and uncontested). Check the date on which Ólafur Ragnar Grímsson was declared elected; 1 August 2000 (start of term) is used as a placeholder. | data/countries/ISL/elections.json |
+
 ### ISR — Israel (7)
 
 | kind | record | what to check | file |
@@ -398,6 +410,17 @@ Countries with no data yet (165): ISL, LIE, MLT, SMR, VAT, NCY, BLR, MDA, EST, L
 | party | `mne.df` Democratic Front (DF) | Collective leadership: list leaders are recorded as leaders; check dates. | data/countries/MNE/parties.json |
 | party | `mne.ura` United Reform Action (URA) | Check when Dritan Abazović became URA president (2017 assumed). | data/countries/MNE/parties.json |
 | party | `mne.bs` Bosniak Party (BS) | Check when Ervin Ibrahimović became party president (2023 assumed). | data/countries/MNE/parties.json |
+
+### NCY — Northern Cyprus (6)
+
+| kind | record | what to check | file |
+|---|---|---|---|
+| office | `ncy.prime_minister` Prime Minister of the Turkish Republic of Northern Cyprus | Who headed the government between 23 October and 9 December 2020 (Tatar's premiership is extended to 9 December per Wikidata; the Wikipedia list shows a gap). | data/countries/NCY/country.json |
+| party | `ncy.dp` Democratic Party (DP) | Add the DP leader between 2000 and December 2002 and Serdar Denktaş's successor from 2019; check the ideology classification. | data/countries/NCY/parties.json |
+| party | `ncy.tkp` Communal Liberation Party (TKP) | Leader history empty (1998 leader Alpay Durduran has no source entry); check what became of the party in 2007. | data/countries/NCY/parties.json |
+| party | `ncy.bdh` Peace and Democracy Movement (BDH) | Check the founding date (2003 is the year of its first election) and what became of the movement in 2007. | data/countries/NCY/parties.json |
+| party | `ncy.orp` Freedom and Reform Party (ÖRP) | Check ÖRP's ideology (recorded as liberal_conservative). | data/countries/NCY/parties.json |
+| party | `ncy.ydp` Rebirth Party (YDP) | Check YDP's ideology (recorded as right_populist). | data/countries/NCY/parties.json |
 
 ### NLD — Netherlands (3)
 

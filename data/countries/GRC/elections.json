@@ -1,0 +1,1014 @@
+{
+  "rules": [
+    {
+      "kind": "legislative",
+      "chamber": "parliament",
+      "every_years": 4,
+      "anchor": "2023-06-25",
+      "snap_possible": true,
+      "note": "Four-year term; early and repeat elections are common (two in 2012, 2015 and 2023 each). A failed presidential vote forced the January 2015 election."
+    },
+    {
+      "kind": "indirect_presidential",
+      "office": "grc.president",
+      "every_years": 5,
+      "anchor": "2025-02-12",
+      "snap_possible": false,
+      "note": "Elected by Parliament: 200 votes in the first two ballots, 180 in the third; in 2025 a fourth ballot needed 151. The President takes office in March."
+    }
+  ],
+  "elections": [
+    {
+      "id": "president_2000",
+      "date": "2000-02-08",
+      "kind": "indirect_presidential",
+      "office": "grc.president",
+      "historical": {
+        "candidates": [
+          {
+            "person": "grc.konstantinos_stephanopoulos",
+            "votes": 269,
+            "round": 1
+          },
+          {
+            "person": "grc.leonidas_kyrkos",
+            "party": "grc.synaspismos",
+            "votes": 10,
+            "round": 1
+          }
+        ],
+        "winner": "grc.konstantinos_stephanopoulos",
+        "note": "Re-elected in the first ballot with 269 votes of 298, backed by PASOK and New Democracy.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2000_Greek_presidential_election",
+            "title": "Wikipedia: 2000 Greek presidential election",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "parliament_2000",
+      "date": "2000-04-09",
+      "kind": "legislative",
+      "chamber": "parliament",
+      "historical": {
+        "candidates": [
+          {
+            "person": "grc.costas_simitis",
+            "party": "grc.pasok",
+            "round": 1
+          },
+          {
+            "person": "grc.kostas_karamanlis",
+            "party": "grc.nd",
+            "round": 1
+          }
+        ],
+        "party_results": [
+          {
+            "party": "grc.pasok",
+            "share": 0.438,
+            "seats": 158
+          },
+          {
+            "party": "grc.nd",
+            "share": 0.4273,
+            "seats": 125
+          },
+          {
+            "party": "grc.kke",
+            "share": 0.0552,
+            "seats": 11
+          },
+          {
+            "party": "grc.synaspismos",
+            "share": 0.032,
+            "seats": 6
+          },
+          {
+            "party": "grc.dikki",
+            "share": 0.0269,
+            "seats": 0
+          }
+        ],
+        "winner": "grc.pasok",
+        "note": "PASOK kept its majority and Simitis stayed Prime Minister. Shares computed from the vote counts.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2000_Greek_legislative_election",
+            "title": "Wikipedia: 2000 Greek legislative election",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "parliament_2004",
+      "date": "2004-03-07",
+      "kind": "legislative",
+      "chamber": "parliament",
+      "historical": {
+        "candidates": [
+          {
+            "person": "grc.kostas_karamanlis",
+            "party": "grc.nd",
+            "round": 1
+          },
+          {
+            "person": "grc.george_papandreou",
+            "party": "grc.pasok",
+            "round": 1
+          }
+        ],
+        "party_results": [
+          {
+            "party": "grc.nd",
+            "share": 0.4536,
+            "seats": 165
+          },
+          {
+            "party": "grc.pasok",
+            "share": 0.4055,
+            "seats": 117
+          },
+          {
+            "party": "grc.kke",
+            "share": 0.059,
+            "seats": 12
+          },
+          {
+            "party": "grc.syriza",
+            "share": 0.0326,
+            "seats": 6
+          },
+          {
+            "party": "grc.laos",
+            "share": 0.0219,
+            "seats": 0
+          }
+        ],
+        "winner": "grc.nd",
+        "note": "First election for the SYRIZA alliance (led by Synaspismos). Karamanlis became Prime Minister.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2004_Greek_legislative_election",
+            "title": "Wikipedia: 2004 Greek legislative election",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "president_2005",
+      "date": "2005-02-08",
+      "kind": "indirect_presidential",
+      "office": "grc.president",
+      "historical": {
+        "candidates": [
+          {
+            "person": "grc.karolos_papoulias",
+            "party": "grc.pasok",
+            "votes": 279,
+            "round": 1
+          }
+        ],
+        "winner": "grc.karolos_papoulias",
+        "note": "Unopposed; elected in the first ballot with 279 votes (ND and PASOK MPs and two independents).",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2005_Greek_presidential_election",
+            "title": "Wikipedia: 2005 Greek presidential election",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "parliament_2007",
+      "date": "2007-09-16",
+      "kind": "legislative",
+      "chamber": "parliament",
+      "historical": {
+        "candidates": [
+          {
+            "person": "grc.kostas_karamanlis",
+            "party": "grc.nd",
+            "round": 1
+          },
+          {
+            "person": "grc.george_papandreou",
+            "party": "grc.pasok",
+            "round": 1
+          }
+        ],
+        "party_results": [
+          {
+            "party": "grc.nd",
+            "share": 0.4184,
+            "seats": 152
+          },
+          {
+            "party": "grc.pasok",
+            "share": 0.381,
+            "seats": 102
+          },
+          {
+            "party": "grc.kke",
+            "share": 0.0815,
+            "seats": 22
+          },
+          {
+            "party": "grc.syriza",
+            "share": 0.0504,
+            "seats": 14
+          },
+          {
+            "party": "grc.laos",
+            "share": 0.038,
+            "seats": 10
+          }
+        ],
+        "winner": "grc.nd",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2007_Greek_legislative_election",
+            "title": "Wikipedia: 2007 Greek legislative election",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "parliament_2009",
+      "date": "2009-10-04",
+      "kind": "legislative",
+      "chamber": "parliament",
+      "historical": {
+        "candidates": [
+          {
+            "person": "grc.george_papandreou",
+            "party": "grc.pasok",
+            "round": 1
+          },
+          {
+            "person": "grc.kostas_karamanlis",
+            "party": "grc.nd",
+            "round": 1
+          }
+        ],
+        "party_results": [
+          {
+            "party": "grc.pasok",
+            "share": 0.4392,
+            "seats": 160
+          },
+          {
+            "party": "grc.nd",
+            "share": 0.3347,
+            "seats": 91
+          },
+          {
+            "party": "grc.kke",
+            "share": 0.0754,
+            "seats": 21
+          },
+          {
+            "party": "grc.laos",
+            "share": 0.0563,
+            "seats": 15
+          },
+          {
+            "party": "grc.syriza",
+            "share": 0.046,
+            "seats": 13
+          }
+        ],
+        "winner": "grc.pasok",
+        "turnout": 0.7095,
+        "note": "Papandreou became Prime Minister.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2009_Greek_legislative_election",
+            "title": "Wikipedia: 2009 Greek legislative election",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "president_2010",
+      "date": "2010-02-03",
+      "kind": "indirect_presidential",
+      "office": "grc.president",
+      "historical": {
+        "candidates": [
+          {
+            "person": "grc.karolos_papoulias",
+            "party": "grc.pasok",
+            "votes": 266,
+            "round": 1
+          }
+        ],
+        "winner": "grc.karolos_papoulias",
+        "note": "Unopposed; re-elected in the first ballot with 266 votes.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2010_Greek_presidential_election",
+            "title": "Wikipedia: 2010 Greek presidential election",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "parliament_2012_05",
+      "date": "2012-05-06",
+      "kind": "legislative",
+      "chamber": "parliament",
+      "historical": {
+        "candidates": [
+          {
+            "person": "grc.antonis_samaras",
+            "party": "grc.nd",
+            "round": 1
+          },
+          {
+            "person": "grc.alexis_tsipras",
+            "party": "grc.syriza",
+            "round": 1
+          },
+          {
+            "person": "grc.evangelos_venizelos",
+            "party": "grc.pasok",
+            "round": 1
+          }
+        ],
+        "party_results": [
+          {
+            "party": "grc.nd",
+            "share": 0.1885,
+            "seats": 108
+          },
+          {
+            "party": "grc.syriza",
+            "share": 0.1679,
+            "seats": 52
+          },
+          {
+            "party": "grc.pasok",
+            "share": 0.1318,
+            "seats": 41
+          },
+          {
+            "party": "grc.anel",
+            "share": 0.1062,
+            "seats": 33
+          },
+          {
+            "party": "grc.kke",
+            "share": 0.0848,
+            "seats": 26
+          },
+          {
+            "party": "grc.golden_dawn",
+            "share": 0.0697,
+            "seats": 21
+          },
+          {
+            "party": "grc.dimar",
+            "share": 0.0611,
+            "seats": 19
+          },
+          {
+            "party": "grc.laos",
+            "share": 0.0289,
+            "seats": 0
+          }
+        ],
+        "winner": "grc.nd",
+        "turnout": 0.6512,
+        "note": "No government could be formed; a caretaker government under Pikrammenos called a repeat election.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/May_2012_Greek_legislative_election",
+            "title": "Wikipedia: May 2012 Greek legislative election",
+            "accessed": "2026-10-15"
+          },
+          {
+            "url": "https://en.wikipedia.org/wiki/List_of_prime_ministers_of_Greece",
+            "title": "Wikipedia: List of prime ministers of Greece",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "parliament_2012_06",
+      "date": "2012-06-17",
+      "kind": "legislative",
+      "chamber": "parliament",
+      "snap": true,
+      "historical": {
+        "candidates": [
+          {
+            "person": "grc.antonis_samaras",
+            "party": "grc.nd",
+            "round": 1
+          },
+          {
+            "person": "grc.alexis_tsipras",
+            "party": "grc.syriza",
+            "round": 1
+          }
+        ],
+        "party_results": [
+          {
+            "party": "grc.nd",
+            "share": 0.2966,
+            "seats": 129
+          },
+          {
+            "party": "grc.syriza",
+            "share": 0.2689,
+            "seats": 71
+          },
+          {
+            "party": "grc.pasok",
+            "share": 0.1228,
+            "seats": 33
+          },
+          {
+            "party": "grc.anel",
+            "share": 0.0751,
+            "seats": 20
+          },
+          {
+            "party": "grc.golden_dawn",
+            "share": 0.0692,
+            "seats": 18
+          },
+          {
+            "party": "grc.dimar",
+            "share": 0.0625,
+            "seats": 17
+          },
+          {
+            "party": "grc.kke",
+            "share": 0.045,
+            "seats": 12
+          }
+        ],
+        "winner": "grc.nd",
+        "turnout": 0.6249,
+        "note": "Samaras became Prime Minister.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/June_2012_Greek_legislative_election",
+            "title": "Wikipedia: June 2012 Greek legislative election",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "parliament_2015_01",
+      "date": "2015-01-25",
+      "kind": "legislative",
+      "chamber": "parliament",
+      "snap": true,
+      "historical": {
+        "candidates": [
+          {
+            "person": "grc.alexis_tsipras",
+            "party": "grc.syriza",
+            "round": 1
+          },
+          {
+            "person": "grc.antonis_samaras",
+            "party": "grc.nd",
+            "round": 1
+          }
+        ],
+        "party_results": [
+          {
+            "party": "grc.syriza",
+            "share": 0.3634,
+            "seats": 149
+          },
+          {
+            "party": "grc.nd",
+            "share": 0.2781,
+            "seats": 76
+          },
+          {
+            "party": "grc.golden_dawn",
+            "share": 0.0628,
+            "seats": 17
+          },
+          {
+            "party": "grc.potami",
+            "share": 0.0605,
+            "seats": 17
+          },
+          {
+            "party": "grc.kke",
+            "share": 0.0547,
+            "seats": 15
+          },
+          {
+            "party": "grc.anel",
+            "share": 0.0475,
+            "seats": 13
+          },
+          {
+            "party": "grc.pasok",
+            "share": 0.0468,
+            "seats": 13
+          }
+        ],
+        "winner": "grc.syriza",
+        "turnout": 0.6362,
+        "note": "Early election after Parliament failed to elect a President. Tsipras formed a SYRIZA-ANEL government.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/January_2015_Greek_legislative_election",
+            "title": "Wikipedia: January 2015 Greek legislative election",
+            "accessed": "2026-10-15"
+          },
+          {
+            "url": "https://en.wikipedia.org/wiki/2014%E2%80%9315_Greek_presidential_election",
+            "title": "Wikipedia: 2014–15 Greek presidential election",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "president_2015",
+      "date": "2015-02-18",
+      "kind": "indirect_presidential",
+      "office": "grc.president",
+      "historical": {
+        "candidates": [
+          {
+            "person": "grc.stavros_dimas",
+            "party": "grc.nd",
+            "votes": 160,
+            "round": 1
+          },
+          {
+            "person": "grc.stavros_dimas",
+            "party": "grc.nd",
+            "votes": 168,
+            "round": 2
+          },
+          {
+            "person": "grc.stavros_dimas",
+            "party": "grc.nd",
+            "votes": 168,
+            "round": 3
+          },
+          {
+            "person": "grc.prokopis_pavlopoulos",
+            "party": "grc.nd",
+            "votes": 233,
+            "round": 4
+          },
+          {
+            "person": "grc.nikos_alivizatos",
+            "votes": 30,
+            "round": 4
+          }
+        ],
+        "winner": "grc.prokopis_pavlopoulos",
+        "note": "In December 2014 (17, 23 and 29 December) the ND-PASOK candidate Dimas failed to reach 200 and then 180 votes, forcing the January 2015 election. The new Parliament elected Pavlopoulos (ND), backed by the SYRIZA-ANEL government, on 18 February 2015 with 233 votes to 30 for Alivizatos; the February vote is recorded as round 4.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2014%E2%80%9315_Greek_presidential_election",
+            "title": "Wikipedia: 2014–15 Greek presidential election",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "bailout_referendum_2015",
+      "date": "2015-07-05",
+      "kind": "referendum",
+      "question": "Should the agreement plan submitted by the European Commission, the European Central Bank and the International Monetary Fund to the Eurogroup of 25 June 2015 be accepted?",
+      "historical": {
+        "yes_share": 0.3869,
+        "winner": "no",
+        "turnout": 0.625,
+        "note": "Yes 2,245,537; No 3,558,450; invalid 357,153; total 6,161,140; electorate 9,858,508.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2015_Greek_bailout_referendum",
+            "title": "Wikipedia: 2015 Greek bailout referendum",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "parliament_2015_09",
+      "date": "2015-09-20",
+      "kind": "legislative",
+      "chamber": "parliament",
+      "snap": true,
+      "historical": {
+        "candidates": [
+          {
+            "person": "grc.alexis_tsipras",
+            "party": "grc.syriza",
+            "round": 1
+          },
+          {
+            "person": "grc.vangelis_meimarakis",
+            "party": "grc.nd",
+            "round": 1
+          }
+        ],
+        "party_results": [
+          {
+            "party": "grc.syriza",
+            "share": 0.3546,
+            "seats": 145
+          },
+          {
+            "party": "grc.nd",
+            "share": 0.2809,
+            "seats": 75
+          },
+          {
+            "party": "grc.golden_dawn",
+            "share": 0.0699,
+            "seats": 18
+          },
+          {
+            "party": "grc.pasok",
+            "share": 0.0629,
+            "seats": 17
+          },
+          {
+            "party": "grc.kke",
+            "share": 0.0555,
+            "seats": 15
+          },
+          {
+            "party": "grc.potami",
+            "share": 0.0409,
+            "seats": 11
+          },
+          {
+            "party": "grc.anel",
+            "share": 0.0369,
+            "seats": 10
+          },
+          {
+            "party": "grc.ek",
+            "share": 0.0344,
+            "seats": 9
+          }
+        ],
+        "winner": "grc.syriza",
+        "turnout": 0.5616,
+        "note": "Early election after Tsipras resigned. PASOK figures are the Democratic Alignment (PASOK-DIMAR).",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/September_2015_Greek_legislative_election",
+            "title": "Wikipedia: September 2015 Greek legislative election",
+            "accessed": "2026-10-15"
+          },
+          {
+            "url": "https://en.wikipedia.org/wiki/List_of_prime_ministers_of_Greece",
+            "title": "Wikipedia: List of prime ministers of Greece",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "parliament_2019",
+      "date": "2019-07-07",
+      "kind": "legislative",
+      "chamber": "parliament",
+      "historical": {
+        "candidates": [
+          {
+            "person": "grc.kyriakos_mitsotakis",
+            "party": "grc.nd",
+            "round": 1
+          },
+          {
+            "person": "grc.alexis_tsipras",
+            "party": "grc.syriza",
+            "round": 1
+          }
+        ],
+        "party_results": [
+          {
+            "party": "grc.nd",
+            "share": 0.3985,
+            "seats": 158
+          },
+          {
+            "party": "grc.syriza",
+            "share": 0.3153,
+            "seats": 86
+          },
+          {
+            "party": "grc.pasok",
+            "share": 0.081,
+            "seats": 22
+          },
+          {
+            "party": "grc.kke",
+            "share": 0.053,
+            "seats": 15
+          },
+          {
+            "party": "grc.greek_solution",
+            "share": 0.037,
+            "seats": 10
+          },
+          {
+            "party": "grc.mera25",
+            "share": 0.0344,
+            "seats": 9
+          },
+          {
+            "party": "grc.golden_dawn",
+            "share": 0.0293,
+            "seats": 0
+          }
+        ],
+        "winner": "grc.nd",
+        "turnout": 0.5778,
+        "note": "PASOK figures are the Movement for Change (KINAL). Mitsotakis became Prime Minister.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2019_Greek_legislative_election",
+            "title": "Wikipedia: 2019 Greek legislative election",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "president_2020",
+      "date": "2020-01-22",
+      "kind": "indirect_presidential",
+      "office": "grc.president",
+      "historical": {
+        "candidates": [
+          {
+            "person": "grc.katerina_sakellaropoulou",
+            "votes": 261,
+            "round": 1
+          }
+        ],
+        "winner": "grc.katerina_sakellaropoulou",
+        "note": "Elected with 261 votes.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2020_Greek_presidential_election",
+            "title": "Wikipedia: 2020 Greek presidential election",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "parliament_2023_05",
+      "date": "2023-05-21",
+      "kind": "legislative",
+      "chamber": "parliament",
+      "historical": {
+        "candidates": [
+          {
+            "person": "grc.kyriakos_mitsotakis",
+            "party": "grc.nd",
+            "round": 1
+          },
+          {
+            "person": "grc.alexis_tsipras",
+            "party": "grc.syriza",
+            "round": 1
+          }
+        ],
+        "party_results": [
+          {
+            "party": "grc.nd",
+            "share": 0.4079,
+            "seats": 146
+          },
+          {
+            "party": "grc.syriza",
+            "share": 0.2007,
+            "seats": 71
+          },
+          {
+            "party": "grc.pasok",
+            "share": 0.1146,
+            "seats": 41
+          },
+          {
+            "party": "grc.kke",
+            "share": 0.0723,
+            "seats": 26
+          },
+          {
+            "party": "grc.greek_solution",
+            "share": 0.0445,
+            "seats": 16
+          },
+          {
+            "party": "grc.niki",
+            "share": 0.0292,
+            "seats": 0
+          },
+          {
+            "party": "grc.plefsi",
+            "share": 0.0289,
+            "seats": 0
+          },
+          {
+            "party": "grc.mera25",
+            "share": 0.0263,
+            "seats": 0
+          }
+        ],
+        "winner": "grc.nd",
+        "turnout": 0.6176,
+        "note": "Held under the 2016 proportional law without a bonus; no government was formed and a caretaker government under Sarmas called a repeat election.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/May_2023_Greek_legislative_election",
+            "title": "Wikipedia: May 2023 Greek legislative election",
+            "accessed": "2026-10-15"
+          },
+          {
+            "url": "https://en.wikipedia.org/wiki/List_of_prime_ministers_of_Greece",
+            "title": "Wikipedia: List of prime ministers of Greece",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "parliament_2023_06",
+      "date": "2023-06-25",
+      "kind": "legislative",
+      "chamber": "parliament",
+      "snap": true,
+      "historical": {
+        "candidates": [
+          {
+            "person": "grc.kyriakos_mitsotakis",
+            "party": "grc.nd",
+            "round": 1
+          },
+          {
+            "person": "grc.alexis_tsipras",
+            "party": "grc.syriza",
+            "round": 1
+          }
+        ],
+        "party_results": [
+          {
+            "party": "grc.nd",
+            "share": 0.4056,
+            "seats": 158
+          },
+          {
+            "party": "grc.syriza",
+            "share": 0.1783,
+            "seats": 47
+          },
+          {
+            "party": "grc.pasok",
+            "share": 0.1184,
+            "seats": 32
+          },
+          {
+            "party": "grc.kke",
+            "share": 0.0769,
+            "seats": 21
+          },
+          {
+            "party": "grc.spartans",
+            "share": 0.0468,
+            "seats": 12
+          },
+          {
+            "party": "grc.greek_solution",
+            "share": 0.0444,
+            "seats": 12
+          },
+          {
+            "party": "grc.niki",
+            "share": 0.037,
+            "seats": 10
+          },
+          {
+            "party": "grc.plefsi",
+            "share": 0.0317,
+            "seats": 8
+          },
+          {
+            "party": "grc.mera25",
+            "share": 0.025,
+            "seats": 0
+          }
+        ],
+        "winner": "grc.nd",
+        "turnout": 0.5374,
+        "note": "Held with the majority bonus restored. Mitsotakis returned as Prime Minister.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/June_2023_Greek_legislative_election",
+            "title": "Wikipedia: June 2023 Greek legislative election",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "president_2025",
+      "date": "2025-02-12",
+      "kind": "indirect_presidential",
+      "office": "grc.president",
+      "historical": {
+        "candidates": [
+          {
+            "person": "grc.konstantinos_tasoulas",
+            "party": "grc.nd",
+            "votes": 160,
+            "round": 1
+          },
+          {
+            "person": "grc.louka_katseli",
+            "party": "grc.syriza",
+            "votes": 40,
+            "round": 1
+          },
+          {
+            "person": "grc.tasos_giannitsis",
+            "party": "grc.pasok",
+            "votes": 34,
+            "round": 1
+          },
+          {
+            "person": "grc.konstantinos_tasoulas",
+            "party": "grc.nd",
+            "votes": 160,
+            "round": 4
+          }
+        ],
+        "winner": "grc.konstantinos_tasoulas",
+        "note": "Ballots on 25 January, 31 January, 6 February (Tasoulas 156) and 12 February 2025, when Tasoulas was elected with 160 votes (151 needed). Konstantinos Kyriakou (Niki, 14 votes in the first ballot) is not recorded as a person. Dated to the deciding ballot.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2025_Greek_presidential_election",
+            "title": "Wikipedia: 2025 Greek presidential election",
+            "accessed": "2026-10-15"
+          }
+        ],
+        "confidence": "verified"
+      }
+    }
+  ],
+  "source": [
+    {
+      "url": "https://en.wikipedia.org/wiki/2025_Greek_presidential_election",
+      "title": "Wikipedia: 2025 Greek presidential election (voting rules)",
+      "accessed": "2026-10-15"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/June_2023_Greek_legislative_election",
+      "title": "Wikipedia: June 2023 Greek legislative election (electoral system)",
+      "accessed": "2026-10-15"
+    }
+  ],
+  "confidence": "verified"
+}
