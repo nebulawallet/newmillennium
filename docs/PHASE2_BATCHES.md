@@ -28,7 +28,7 @@ See the prompts used in the pilot (git history, early October 2026) for the form
 
 ## Done (Pass A)
 
-DEU (Pass A and Pass B), USA, RUS, GBR, CHN, IRN, SOM, SWE, FRA, AND, ESP, NLD, JPN, NOR, POL, TUR, ISR, PSE, ITA, MCO, CZE, HUN, SVK, SVN, HRV, MKD, ALB, BIH, YUG, MNE, KOS, PRT, BEL, LUX, ROU, BGR, GRC, CYP, NCY, DNK, FIN, ISL, KOR, TWN, PRK, MNG, UKR, BLR, MDA, PMR, IRL, AUT, CHE, LIE, EST, LVA, LTU
+DEU (Pass A and Pass B), USA, RUS, GBR, CHN, IRN, SOM, SWE, FRA, AND, ESP, NLD, JPN, NOR, POL, TUR, ISR, PSE, ITA, MCO, CZE, HUN, SVK, SVN, HRV, MKD, ALB, BIH, YUG, MNE, KOS, PRT, BEL, LUX, ROU, BGR, GRC, CYP, NCY, DNK, FIN, ISL, KOR, TWN, PRK, MNG, UKR, BLR, MDA, PMR, IRL, AUT, CHE, LIE, EST, LVA, LTU, BRA, ARG, CHL
 
 ## Running (relaunched 15 October 2026, evening)
 
@@ -36,7 +36,7 @@ DEU (Pass A and Pass B), USA, RUS, GBR, CHN, IRN, SOM, SWE, FRA, AND, ESP, NLD, 
 |---|---|
 | 10 | SMR VAT MLT |
 | 23 | IRQ KUR SAU YEM |
-| 16 | BRA ARG CHL |
+| 35 | AFG AFN NPL BTN LKA TEL MDV |
 | 34 | IND PAK BGD |
 | 13 | GEO ABK SOS ARM AZE NKR ICH |
 | 15 | CAN MEX CUB |
@@ -62,7 +62,6 @@ DEU (Pass A and Pass B), USA, RUS, GBR, CHN, IRN, SOM, SWE, FRA, AND, ESP, NLD, 
 | 31 | UGA RWA BDI TZA MWI MOZ | |
 | 32 | ZAF NAM BWA ZWE LSO SWZ | |
 | 33 | MDG MUS SYC COM | |
-| 35 | AFG AFN NPL BTN LKA TEL MDV | Afghanistan: Taliban vs United Front |
 | 36 | IDN MYS SGP BRN PHL TLS | East Timor under UNTAET |
 | 37 | THA VNM LAO KHM MMR | |
 | 38 | AUS NZL PNG FJI SLB VUT | Realms; Fiji's May 2000 coup |
