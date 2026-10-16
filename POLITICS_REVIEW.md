@@ -48,11 +48,11 @@ Live sources sometimes report allegations or investigations involving real peopl
 
 <!-- AUTO-GENERATED BELOW: run `npm run review-report`; edits below this line are overwritten -->
 
-## Needs review: 283 of 3983 records
+## Needs review: 291 of 4097 records
 
-Countries with politics data: 44 / 212.
+Countries with politics data: 47 / 212.
 
-Countries with no data yet (168): CYP, ISL, LIE, MLT, SMR, CHE, VAT, NCY, UKR, BLR, MDA, EST, LVA, LTU, GEO, ARM, AZE, KAZ, KGZ, TJK, TKM, UZB, PMR, ABK, SOS, NKR, ICH, CAN, ATG, ARG, BHS, BRB, BLZ, BOL, BRA, CHL, COL, CRI, CUB, DMA, DOM, ECU, SLV, GRD, GTM, GUY, HTI, HND, JAM, MEX, NIC, PAN, PRY, PER, KNA, LCA, VCT, SUR, TTO, URY, VEN, FAR, DZA, BHR, EGY, IRQ, JOR, KWT, LBN, LBY, MRT, MAR, OMN, QAT, SAU, SYR, TUN, ARE, YEM, ESH, KUR, AGO, BEN, BWA, BFA, BDI, CPV, CMR, CAF, TCD, COM, COD, COG, CIV, DJI, GNQ, ERI, SWZ, ETH, GAB, GMB, GHA, GIN, GNB, KEN, LSO, LBR, MDG, MWI, MLI, MUS, MOZ, NAM, NER, NGA, RWA, STP, SEN, SYC, SLE, ZAF, SDN, TZA, TGO, UGA, ZMB, ZWE, SSD, SML, UNI, RCD, MLC, AFG, AFN, BGD, BTN, IND, MDV, NPL, PAK, LKA, TEL, MNG, BRN, KHM, IDN, LAO, MYS, MMR, PHL, SGP, THA, VNM, TLS, AUS, NZL, FJI, PNG, SLB, VUT, WSM, TON, KIR, TUV, NRU, FSM, MHL, PLW
+Countries with no data yet (165): ISL, LIE, MLT, SMR, VAT, NCY, BLR, MDA, EST, LVA, LTU, GEO, ARM, AZE, KAZ, KGZ, TJK, TKM, UZB, PMR, ABK, SOS, NKR, ICH, CAN, ATG, ARG, BHS, BRB, BLZ, BOL, BRA, CHL, COL, CRI, CUB, DMA, DOM, ECU, SLV, GRD, GTM, GUY, HTI, HND, JAM, MEX, NIC, PAN, PRY, PER, KNA, LCA, VCT, SUR, TTO, URY, VEN, FAR, DZA, BHR, EGY, IRQ, JOR, KWT, LBN, LBY, MRT, MAR, OMN, QAT, SAU, SYR, TUN, ARE, YEM, ESH, KUR, AGO, BEN, BWA, BFA, BDI, CPV, CMR, CAF, TCD, COM, COD, COG, CIV, DJI, GNQ, ERI, SWZ, ETH, GAB, GMB, GHA, GIN, GNB, KEN, LSO, LBR, MDG, MWI, MLI, MUS, MOZ, NAM, NER, NGA, RWA, STP, SEN, SYC, SLE, ZAF, SDN, TZA, TGO, UGA, ZMB, ZWE, SSD, SML, UNI, RCD, MLC, AFG, AFN, BGD, BTN, IND, MDV, NPL, PAK, LKA, TEL, MNG, BRN, KHM, IDN, LAO, MYS, MMR, PHL, SGP, THA, VNM, TLS, AUS, NZL, FJI, PNG, SLB, VUT, WSM, TON, KIR, TUV, NRU, FSM, MHL, PLW
 
 ### ALB — Albania (4)
 
@@ -140,6 +140,18 @@ Countries with no data yet (168): CYP, ISL, LIE, MLT, SMR, CHE, VAT, NCY, UKR, B
 | person | `chn.sang_guowei` Sang Guowei (b. 1941) | Birth date 1941-11-11 and death date 2023-12-07 come from Wikidata only; no birth or death date was found in the Wikipedia infobox. Confirm both. | data/countries/CHN/people.json |
 | party | `chn.rcck` Revolutionary Committee of the Chinese Kuomintang (RCCK) | The Wikipedia chair table ends Wan Exiang's term on 18 March 2018 and starts Zheng Jianbang on 10 December 2022, leaving a gap; Wikidata shows Wan Exiang as chair from December 2012 with no end. Wan is recorded here until Zheng took over. Confirm who chaired the RCCK from 2018 to 2022. | data/countries/CHN/parties.json |
 | party | `chn.cdp` China Democracy Party (CDP) | The article says the party's history and founding date are unclear because several groups founded it along different paths; the infobox date (28 June 1998) is used. Leaders are left empty for Pass B. Confirm the founding date and whether to list its founders. | data/countries/CHN/parties.json |
+
+### CYP — Cyprus (7)
+
+| kind | record | what to check | file |
+|---|---|---|---|
+| party | `cyp.ecologists` Movement of Ecologists – Citizens' Cooperation (KOSP) | Leadership dates are taken from election infoboxes only; check when Perdikes, Panayiotou, Theopemptou and Papadouris led the party. | data/countries/CYP/parties.json |
+| party | `cyp.adik` Fighting Democratic Movement (ADIK) | Check ADIK's ideology (recorded as national_conservative); leader not recorded. | data/countries/CYP/parties.json |
+| party | `cyp.evroko` European Party (EVROKO) | Check EVROKO's ideology (recorded as national_conservative) and the end of Syllouris's leadership. | data/countries/CYP/parties.json |
+| party | `cyp.solidarity` Solidarity Movement (Solidarity) | Check Solidarity's ideology (recorded as national_conservative). | data/countries/CYP/parties.json |
+| party | `cyp.elam` National Popular Front (ELAM) | Check when Christos Christou became ELAM leader (recorded from 2008). | data/countries/CYP/parties.json |
+| party | `cyp.alma` ALMA – Citizens for Cyprus (ALMA) | Check ALMA's ideology (recorded as centrist_liberal). | data/countries/CYP/parties.json |
+| party | `cyp.direct_democracy` Direct Democracy Cyprus (Direct Democracy) | Check the party's ideology (recorded as big_tent) and the start of Panayiotou's leadership. | data/countries/CYP/parties.json |
 
 ### CZE — Czech Republic (7)
 
@@ -346,10 +358,11 @@ Countries with no data yet (168): CYP, ISL, LIE, MLT, SMR, CHE, VAT, NCY, UKR, B
 | party | `kos.sl` Serb List (SL) | Check the years Goran Rakić led the party (2017 assumed) and add Zlatan Elek if biographical data can be found. | data/countries/KOS/parties.json |
 | election | `president_2026` indirect_presidential 2026-10-06 | Very recent event (October 2026) sourced only from Wikipedia; confirm the vote count and inauguration date with an official source. | data/countries/KOS/elections.json |
 
-### LUX — Luxembourg (1)
+### LUX — Luxembourg (2)
 
 | kind | record | what to check | file |
 |---|---|---|---|
+| party | `lux.adr` Alternative Democratic Reform Party (ADR) | Add Jean Schoos (ADR president 2013-2022) once a birth year is documented; the list gives Fernand Kartheiser for 2013 only and no exact handover dates. | data/countries/LUX/parties.json |
 | party | `lux.greng` The Greens (Greens) | No fetched source gives a dated list of the Greens' spokespersons since 2000; add the leader history (e.g. from the party's own records). | data/countries/LUX/parties.json |
 
 ### MCO — Monaco (6)

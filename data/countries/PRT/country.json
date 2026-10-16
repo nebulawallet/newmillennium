@@ -1,0 +1,115 @@
+{
+  "tag": "PRT",
+  "name": { "en": "Portugal", "native": "Portugal", "official": { "en": "Portuguese Republic", "native": "República Portuguesa" } },
+  "adjective": "Portuguese",
+  "culture_primary": "portuguese",
+  "government": {
+    "type": "semi_presidential",
+    "effective_executive": "prt.prime_minister",
+    "head_of_state_office": "prt.president",
+    "head_of_government_office": "prt.prime_minister",
+    "constitution": {
+      "term_limit_amendable": true,
+      "emergency_powers": true,
+      "referendum_required_for": []
+    },
+    "note": "Semi-presidential republic. The President is directly elected in a two-round vote for five years (at most two consecutive terms) and can dissolve the Assembly of the Republic and call early elections at their own discretion; six of the nine Assembly elections from 2000 to 2025 (2002, 2005, 2011, 2022, 2024, 2025) were early elections. The Prime Minister leads the government and needs the tolerance of the Assembly; day-to-day executive power lies with the government, so the Prime Minister is the effective executive."
+  },
+  "offices": [
+    {
+      "id": "prt.president",
+      "title": { "en": "President of the Portuguese Republic", "native": "Presidente da República Portuguesa" },
+      "role": "head_of_state",
+      "power_weight": 0.2,
+      "selection": "direct_election",
+      "term_years": 5,
+      "term_limit": { "max_terms": 2, "consecutive_only": true },
+      "succession": { "type": "acting_then_election" },
+      "holders": [
+        { "person": "prt.jorge_sampaio", "from": "1996-03-09", "to": "2006-03-09" },
+        { "person": "prt.anibal_cavaco_silva", "from": "2006-03-09", "to": "2016-03-09" },
+        { "person": "prt.marcelo_rebelo_de_sousa", "from": "2016-03-09", "to": "2026-03-09" },
+        { "person": "prt.antonio_jose_seguro", "from": "2026-03-09", "note": "Elected in the second round on 8 February 2026; sworn in on 9 March 2026." }
+      ],
+      "note": "Two-round direct election. The 2026 election was only the second to go to a second round, after 1986. Marcelo Rebelo de Sousa could not stand again in 2026 after two consecutive terms.",
+      "source": [
+        { "url": "https://www.wikidata.org/wiki/Q322459", "title": "Wikidata: President of Portugal (position held by)", "accessed": "2026-10-15" },
+        { "url": "https://en.wikipedia.org/wiki/2026_Portuguese_presidential_election", "title": "Wikipedia: 2026 Portuguese presidential election (Seguro sworn in 9 March 2026)", "accessed": "2026-10-15" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "prt.prime_minister",
+      "title": { "en": "Prime Minister of Portugal", "native": "Primeiro-Ministro de Portugal" },
+      "role": "head_of_government",
+      "power_weight": 0.8,
+      "selection": "appointed",
+      "appointed_by": "prt.president",
+      "term_years": 4,
+      "holders": [
+        { "person": "prt.antonio_guterres", "from": "1995-10-28", "to": "2002-04-06" },
+        { "person": "prt.jose_manuel_barroso", "from": "2002-04-06", "to": "2004-07-17" },
+        { "person": "prt.pedro_santana_lopes", "from": "2004-07-17", "to": "2005-03-12" },
+        { "person": "prt.jose_socrates", "from": "2005-03-12", "to": "2011-06-21" },
+        { "person": "prt.pedro_passos_coelho", "from": "2011-06-21", "to": "2015-11-26", "note": "His second government (XX Constitutional Government, from 30 October 2015) was a minority government." },
+        { "person": "prt.antonio_costa", "from": "2015-11-26", "to": "2024-04-02" },
+        { "person": "prt.luis_montenegro", "from": "2024-04-02", "note": "Heads the XXIV (2024) and XXV (2025) Constitutional Governments, both minority governments." }
+      ],
+      "note": "Appointed by the President after consulting the parties, taking the election results into account; the government's programme must not be rejected by the Assembly.",
+      "source": [
+        { "url": "https://www.wikidata.org/wiki/Q1723031", "title": "Wikidata: Prime Minister of Portugal (position held by)", "accessed": "2026-10-15" },
+        { "url": "https://en.wikipedia.org/wiki/List_of_prime_ministers_of_Portugal", "title": "Wikipedia: List of prime ministers of Portugal", "accessed": "2026-10-15" }
+      ],
+      "confidence": "verified"
+    }
+  ],
+  "legislature": {
+    "name": { "en": "Assembly of the Republic", "native": "Assembleia da República" },
+    "chambers": [
+      {
+        "id": "assembleia",
+        "name": { "en": "Assembly of the Republic", "native": "Assembleia da República" },
+        "seats": 230,
+        "term_years": 4,
+        "elected": "direct",
+        "system": {
+          "type": "list_pr",
+          "formula": "dhondt",
+          "district_model": "custom",
+          "note": "Closed-list proportional representation by the D'Hondt method in 22 multi-member constituencies (18 mainland districts, the Azores, Madeira, and two constituencies for voters abroad). No legal threshold. seats_2000 is the result of the 10 October 1999 election, with the CDU joint list split into its PCP (15) and PEV (2) members as recorded in the March 2000 budget vote."
+        },
+        "seats_2000": { "prt.ps": 115, "prt.psd": 81, "prt.pcp": 15, "prt.pev": 2, "prt.cds_pp": 15, "prt.be": 2 },
+        "confidence_chamber": true,
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/1999_Portuguese_legislative_election", "title": "Wikipedia: 1999 Portuguese legislative election (results and 2000 budget vote by party)", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      }
+    ]
+  },
+  "party_system": "multi_party",
+  "start_2000": {
+    "ruling_parties": ["prt.ps"],
+    "ideology_support": {
+      "social_democrat": 0.30,
+      "third_way": 0.15,
+      "liberal_conservative": 0.329,
+      "marxist_leninist": 0.082,
+      "green": 0.014,
+      "christian_democrat": 0.085,
+      "democratic_socialist": 0.0258,
+      "maoist": 0.0075,
+      "constitutional_monarchist": 0.003,
+      "big_tent": 0.0037
+    },
+    "ideology_support_note": "Derived from the 10 October 1999 Assembly election (shares of all ballots cast, then rescaled to exclude 2% blank and invalid votes): PS 44.1% (split between social-democratic and Third Way currents), PSD 32.3% (liberal conservative), CDU 9.0% (PCP Marxist-Leninist, with about 1 point given to its partner PEV as green), CDS-PP 8.3% (Christian democrat), Left Bloc 2.4% (democratic socialist), PCTP/MRPP 0.7% (Maoist), Earth Party 0.4% (green), People's Monarchist Party 0.3%, and about 0.4% for other small lists.",
+    "stability": 0.72,
+    "war_support": 0.2
+  },
+  "claims": [],
+  "source": [
+    { "url": "https://en.wikipedia.org/wiki/1999_Portuguese_legislative_election", "title": "Wikipedia: 1999 Portuguese legislative election", "accessed": "2026-10-15" },
+    { "url": "https://en.wikipedia.org/wiki/2025_Portuguese_legislative_election", "title": "Wikipedia: 2025 Portuguese legislative election (dissolution powers and electoral rules)", "accessed": "2026-10-15" }
+  ],
+  "confidence": "verified"
+}

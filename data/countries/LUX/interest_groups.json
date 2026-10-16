@@ -1,0 +1,15 @@
+{
+  "note": "Influence and approval are gameplay starting values for 1 January 2000 (CSV-DP government of Jean-Claude Juncker), not measured data. Influence reflects a judgement of institutional weight in a small consensus democracy with strong social partners, a large financial sector, an influential Catholic Church and a small all-volunteer army.",
+  "interest_groups": [
+    { "type": "military", "influence": 0.05, "approval": 50 },
+    { "type": "security_services", "influence": 0.08, "approval": 50 },
+    { "type": "business", "influence": 0.5, "approval": 60, "note": "Includes the financial sector." },
+    { "type": "labour_unions", "influence": 0.4, "approval": 52 },
+    { "type": "religious_establishment", "influence": 0.25, "approval": 58, "note": "Roman Catholic Church." },
+    { "type": "rural", "influence": 0.12, "approval": 52 },
+    { "type": "urban_middle_class", "influence": 0.45, "approval": 60 },
+    { "type": "minorities", "influence": 0.12, "approval": 50, "note": "Large foreign-resident population without national voting rights." },
+    { "type": "youth_students", "influence": 0.12, "approval": 55 },
+    { "type": "media", "influence": 0.3, "approval": 55 }
+  ]
+}

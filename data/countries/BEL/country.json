@@ -1,0 +1,133 @@
+{
+  "tag": "BEL",
+  "name": { "en": "Belgium", "native": "België / Belgique / Belgien", "official": { "en": "Kingdom of Belgium", "native": "Koninkrijk België / Royaume de Belgique / Königreich Belgien" } },
+  "adjective": "Belgian",
+  "culture_primary": "flemish",
+  "government": {
+    "type": "constitutional_monarchy",
+    "effective_executive": "bel.prime_minister",
+    "head_of_state_office": "bel.monarch",
+    "head_of_government_office": "bel.prime_minister",
+    "constitution": {
+      "term_limit_amendable": true,
+      "emergency_powers": false,
+      "referendum_required_for": []
+    },
+    "note": "Federal parliamentary constitutional monarchy. The party system is split by language: almost all parties stand only in Dutch-speaking or only in French-speaking constituencies (PVDA-PTB is an exception), so federal governments are multi-party coalitions across both language groups. Government formation can take very long; the outgoing government stays in office as a caretaker meanwhile (e.g. after the 2010, 2019 and 2024 elections). Since 2014 federal elections are held every five years on the day of the European elections."
+  },
+  "offices": [
+    {
+      "id": "bel.monarch",
+      "title": { "en": "King of the Belgians", "native": "Koning der Belgen / Roi des Belges" },
+      "role": "head_of_state",
+      "power_weight": 0.05,
+      "selection": "hereditary",
+      "succession": { "type": "line", "heirs": ["bel.philippe"] },
+      "holders": [
+        { "person": "bel.albert_ii", "from": "1993-08-09", "to": "2013-07-21", "note": "Abdicated in favour of his son Philippe." },
+        { "person": "bel.philippe", "from": "2013-07-21" }
+      ],
+      "note": "Heir on 1 January 2000: Prince Philippe, Albert II's eldest son. Since Philippe's accession his daughter Elisabeth (born 2001) is first in line.",
+      "source": [
+        { "url": "https://www.wikidata.org/wiki/Q13592862", "title": "Wikidata: King of the Belgians (position held by)", "accessed": "2026-10-15" },
+        { "url": "https://en.wikipedia.org/wiki/Philippe_of_Belgium", "title": "Wikipedia: Philippe of Belgium", "accessed": "2026-10-15" },
+        { "url": "https://en.wikipedia.org/wiki/Princess_Elisabeth,_Duchess_of_Brabant", "title": "Wikipedia: Princess Elisabeth, Duchess of Brabant", "accessed": "2026-10-15" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "bel.prime_minister",
+      "title": { "en": "Prime Minister of Belgium", "native": "Eerste minister / Premier ministre" },
+      "role": "head_of_government",
+      "power_weight": 0.95,
+      "selection": "legislature",
+      "appointed_by": "bel.monarch",
+      "term_years": 5,
+      "holders": [
+        { "person": "bel.guy_verhofstadt", "from": "1999-07-12", "to": "2008-03-20", "note": "Verhofstadt I (VLD/PRL-SP/PS-Agalev/Ecolo), II (from 12 July 2003) and the interim Verhofstadt III government (from 21 December 2007)." },
+        { "person": "bel.yves_leterme", "from": "2008-03-20", "to": "2008-12-30" },
+        { "person": "bel.herman_van_rompuy", "from": "2008-12-30", "to": "2009-11-25" },
+        { "person": "bel.yves_leterme", "from": "2009-11-25", "to": "2011-12-06", "note": "Remained caretaker Prime Minister through the 2010-2011 government formation." },
+        { "person": "bel.elio_di_rupo", "from": "2011-12-06", "to": "2014-10-11" },
+        { "person": "bel.charles_michel", "from": "2014-10-11", "to": "2019-10-27", "note": "Michel II minority government from 21 December 2018, after the N-VA left the coalition." },
+        { "person": "bel.sophie_wilmes", "from": "2019-10-27", "to": "2020-10-01", "note": "Wilmès I (caretaker) and Wilmès II (from 17 March 2020)." },
+        { "person": "bel.alexander_de_croo", "from": "2020-10-01", "to": "2025-02-03" },
+        { "person": "bel.bart_de_wever", "from": "2025-02-03", "note": "De Wever government: N-VA, MR, Vooruit, CD&V and Les Engagés." }
+      ],
+      "source": [
+        { "url": "https://www.wikidata.org/wiki/Q213107", "title": "Wikidata: Prime Minister of Belgium (position held by)", "accessed": "2026-10-15" },
+        { "url": "https://en.wikipedia.org/wiki/List_of_prime_ministers_of_Belgium", "title": "Wikipedia: List of prime ministers of Belgium (governments and coalitions)", "accessed": "2026-10-15" }
+      ],
+      "confidence": "verified"
+    }
+  ],
+  "legislature": {
+    "name": { "en": "Federal Parliament", "native": "Federaal Parlement / Parlement fédéral" },
+    "chambers": [
+      {
+        "id": "chamber",
+        "name": { "en": "Chamber of Representatives", "native": "Kamer van volksvertegenwoordigers / Chambre des représentants" },
+        "seats": 150,
+        "term_years": 5,
+        "elected": "direct",
+        "system": {
+          "type": "list_pr",
+          "formula": "dhondt",
+          "threshold": 0.05,
+          "district_model": "provinces",
+          "note": "D'Hondt list PR. Since the 2003 electoral code: 11 constituencies (the ten provinces and Brussels) with a 5% threshold per constituency; the threshold was new in 2003. Voting is compulsory. Term four years until 2014, five years since. seats_2000 is the result of the 13 June 1999 election."
+        },
+        "seats_2000": { "bel.vld": 23, "bel.cvp": 22, "bel.ps": 19, "bel.prl": 18, "bel.vlaams_blok": 15, "bel.sp": 14, "bel.ecolo": 11, "bel.psc": 10, "bel.agalev": 9, "bel.vu": 8, "bel.fn": 1 },
+        "confidence_chamber": true,
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/1999_Belgian_federal_election", "title": "Wikipedia: 1999 Belgian federal election (Chamber results)", "accessed": "2026-10-15" },
+          { "url": "https://en.wikipedia.org/wiki/2003_Belgian_federal_election", "title": "Wikipedia: 2003 Belgian federal election (new electoral code, threshold)", "accessed": "2026-10-15" },
+          { "url": "https://en.wikipedia.org/wiki/2014_Belgian_federal_election", "title": "Wikipedia: 2014 Belgian federal election (electoral system)", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      },
+      {
+        "id": "senate",
+        "name": { "en": "Senate", "native": "Senaat / Sénat" },
+        "seats": 71,
+        "term_years": 4,
+        "elected": "mixed",
+        "system": {
+          "type": "mixed_other",
+          "formula": "dhondt",
+          "note": "Until 2014: 40 senators directly elected, 21 community senators and 10 co-opted senators. After the sixth state reform the Senate has not been directly elected; since 2014 it has 60 members (50 from the regional and community parliaments plus 10 co-opted). seats_2000 is the total per party after the 1999 election."
+        },
+        "seats_2000": { "bel.vld": 11, "bel.cvp": 10, "bel.ps": 10, "bel.prl": 9, "bel.vlaams_blok": 6, "bel.sp": 6, "bel.ecolo": 6, "bel.agalev": 5, "bel.psc": 5, "bel.vu": 3 },
+        "confidence_chamber": false,
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/1999_Belgian_federal_election", "title": "Wikipedia: 1999 Belgian federal election (Senate: elected, community and co-opted seats)", "accessed": "2026-10-15" },
+          { "url": "https://en.wikipedia.org/wiki/2014_Belgian_federal_election", "title": "Wikipedia: 2014 Belgian federal election (Senate no longer directly elected; 60 members)", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      }
+    ]
+  },
+  "party_system": "multi_party",
+  "start_2000": {
+    "ruling_parties": ["bel.vld", "bel.prl", "bel.sp", "bel.ps", "bel.agalev", "bel.ecolo"],
+    "ideology_support": {
+      "classical_liberal": 0.244,
+      "christian_democrat": 0.2,
+      "social_democrat": 0.197,
+      "green": 0.144,
+      "right_populist": 0.113,
+      "regionalist": 0.056,
+      "marxist_leninist": 0.008,
+      "big_tent": 0.038
+    },
+    "ideology_support_note": "Derived from 1999 Chamber vote shares (valid votes, both language groups combined): VLD 14.3% and PRL-FDF-MCC 10.1% (liberal), CVP 14.1% and PSC 5.9% (Christian democrat), PS 10.2% and SP 9.6% (social democrat), Ecolo 7.4% and Agalev 7.0% (green), Vlaams Blok 9.9% and Front National 1.5% (right populist), Volksunie 5.6% (Flemish regionalist), PVDA-PTB and the Communist Party 0.8%, and Vivant 2.1% plus about 1.8% for other lists (counted as big tent).",
+    "stability": 0.68,
+    "war_support": 0.2
+  },
+  "claims": [],
+  "source": [
+    { "url": "https://en.wikipedia.org/wiki/1999_Belgian_federal_election", "title": "Wikipedia: 1999 Belgian federal election", "accessed": "2026-10-15" },
+    { "url": "https://en.wikipedia.org/wiki/2014_Belgian_federal_election", "title": "Wikipedia: 2014 Belgian federal election (electoral system, language groups)", "accessed": "2026-10-15" }
+  ],
+  "confidence": "verified"
+}

@@ -1,0 +1,314 @@
+{
+  "rules": [
+    {
+      "kind": "legislative",
+      "chamber": "chamber",
+      "every_years": 5,
+      "anchor": "2024-06-09",
+      "snap_possible": true,
+      "note": "Four-year term until 2014; since then five years, held on the day of the European Parliament election. The 2010 election was early."
+    }
+  ],
+  "elections": [
+    {
+      "id": "chamber_2003",
+      "date": "2003-05-18",
+      "kind": "legislative",
+      "chamber": "chamber",
+      "historical": {
+        "candidates": [
+          { "person": "bel.guy_verhofstadt", "party": "bel.vld", "round": 1 },
+          { "person": "bel.elio_di_rupo", "party": "bel.ps", "round": 1 }
+        ],
+        "party_results": [
+          { "party": "bel.vld", "share": 0.1536, "seats": 25 },
+          { "party": "bel.sp_a", "share": 0.1491, "seats": 23 },
+          { "party": "bel.cd_v", "share": 0.1325, "seats": 21 },
+          { "party": "bel.ps", "share": 0.1302, "seats": 25 },
+          { "party": "bel.vlaams_blok", "share": 0.1168, "seats": 18 },
+          { "party": "bel.mr", "share": 0.114, "seats": 24 },
+          { "party": "bel.cdh", "share": 0.0547, "seats": 8 },
+          { "party": "bel.n_va", "share": 0.0306, "seats": 1 },
+          { "party": "bel.ecolo", "share": 0.0306, "seats": 4 },
+          { "party": "bel.agalev", "share": 0.0247, "seats": 0 },
+          { "party": "bel.fn", "share": 0.0198, "seats": 1 }
+        ],
+        "winner": "bel.vld",
+        "turnout": 0.9163,
+        "note": "Shares of valid votes; Dutch- and French-speaking parties are counted together nationally. sp.a ran in a joint list with Spirit (sp.a-Spirit). First election under the new electoral code with a 5% constituency threshold. The VLD won the most votes and, with the PS, the most seats.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2003_Belgian_federal_election", "title": "Wikipedia: 2003 Belgian federal election (IBZ results)", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "senate_2003",
+      "date": "2003-05-18",
+      "kind": "legislative_upper",
+      "chamber": "senate",
+      "historical": {
+        "party_results": [
+          { "party": "bel.sp_a", "share": 0.1547, "seats": 7, "seats_won": 7 },
+          { "party": "bel.vld", "share": 0.1538, "seats": 7, "seats_won": 7 },
+          { "party": "bel.ps", "share": 0.1284, "seats": 6, "seats_won": 6 },
+          { "party": "bel.cd_v", "share": 0.1271, "seats": 6, "seats_won": 6 },
+          { "party": "bel.mr", "share": 0.1215, "seats": 5, "seats_won": 5 },
+          { "party": "bel.vlaams_blok", "share": 0.1132, "seats": 5, "seats_won": 5 },
+          { "party": "bel.cdh", "share": 0.0554, "seats": 2, "seats_won": 2 },
+          { "party": "bel.ecolo", "share": 0.0319, "seats": 1, "seats_won": 1 },
+          { "party": "bel.n_va", "share": 0.0306, "seats": 0, "seats_won": 0 },
+          { "party": "bel.agalev", "share": 0.0246, "seats": 0, "seats_won": 0 },
+          { "party": "bel.fn", "share": 0.0225, "seats": 1, "seats_won": 1 }
+        ],
+        "winner": "bel.sp_a",
+        "turnout": 0.916,
+        "note": "Only the 40 directly elected seats are recorded (in both seats and seats_won); the 21 community and 10 co-opted senators appointed afterwards are not included. sp.a ran with Spirit.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2003_Belgian_federal_election", "title": "Wikipedia: 2003 Belgian federal election (Senate results)", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "chamber_2007",
+      "date": "2007-06-10",
+      "kind": "legislative",
+      "chamber": "chamber",
+      "historical": {
+        "candidates": [
+          { "person": "bel.yves_leterme", "party": "bel.cd_v", "round": 1 },
+          { "person": "bel.guy_verhofstadt", "party": "bel.open_vld", "round": 1 },
+          { "person": "bel.didier_reynders", "party": "bel.mr", "round": 1 },
+          { "person": "bel.elio_di_rupo", "party": "bel.ps", "round": 1 }
+        ],
+        "party_results": [
+          { "party": "bel.cd_v", "share": 0.1851, "seats": 25 },
+          { "party": "bel.n_va", "seats": 5 },
+          { "party": "bel.mr", "share": 0.1252, "seats": 23 },
+          { "party": "bel.vlaams_belang", "share": 0.1199, "seats": 17 },
+          { "party": "bel.open_vld", "share": 0.1183, "seats": 18 },
+          { "party": "bel.ps", "share": 0.1086, "seats": 20 },
+          { "party": "bel.sp_a", "share": 0.1026, "seats": 14 },
+          { "party": "bel.cdh", "share": 0.0606, "seats": 10 },
+          { "party": "bel.ecolo", "share": 0.051, "seats": 8 },
+          { "party": "bel.ldd", "share": 0.0403, "seats": 5 },
+          { "party": "bel.groen", "share": 0.0398, "seats": 4 },
+          { "party": "bel.fn", "share": 0.0197, "seats": 1 }
+        ],
+        "winner": "bel.cd_v",
+        "turnout": 0.9108,
+        "note": "Shares of valid votes. CD&V and N-VA ran as a joint list (cartel) headed by Yves Leterme; its 18.5% is recorded under CD&V and its 30 seats were 25 CD&V and 5 N-VA. sp.a again ran with Spirit.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2007_Belgian_federal_election", "title": "Wikipedia: 2007 Belgian federal election (IBZ results; cartel seat split)", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "senate_2007",
+      "date": "2007-06-10",
+      "kind": "legislative_upper",
+      "chamber": "senate",
+      "historical": {
+        "party_results": [
+          { "party": "bel.cd_v", "share": 0.1942, "seats": 9, "seats_won": 9 },
+          { "party": "bel.open_vld", "share": 0.124, "seats": 5, "seats_won": 5 },
+          { "party": "bel.mr", "share": 0.1231, "seats": 6, "seats_won": 6 },
+          { "party": "bel.vlaams_belang", "share": 0.1189, "seats": 5, "seats_won": 5 },
+          { "party": "bel.ps", "share": 0.1024, "seats": 4, "seats_won": 4 },
+          { "party": "bel.sp_a", "share": 0.1004, "seats": 4, "seats_won": 4 },
+          { "party": "bel.cdh", "share": 0.059, "seats": 2, "seats_won": 2 },
+          { "party": "bel.ecolo", "share": 0.0582, "seats": 2, "seats_won": 2 },
+          { "party": "bel.groen", "share": 0.0364, "seats": 1, "seats_won": 1 },
+          { "party": "bel.ldd", "share": 0.0338, "seats": 1, "seats_won": 1 },
+          { "party": "bel.fn", "share": 0.0227, "seats": 1, "seats_won": 1 }
+        ],
+        "winner": "bel.cd_v",
+        "turnout": 0.9108,
+        "note": "Only the 40 directly elected seats are recorded. The CD&V-N-VA cartel's 9 seats are recorded under CD&V (the split is not given in the source).",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2007_Belgian_federal_election", "title": "Wikipedia: 2007 Belgian federal election (Senate results)", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "chamber_2010",
+      "date": "2010-06-13",
+      "kind": "legislative",
+      "chamber": "chamber",
+      "snap": true,
+      "historical": {
+        "candidates": [
+          { "person": "bel.bart_de_wever", "party": "bel.n_va", "round": 1 },
+          { "person": "bel.elio_di_rupo", "party": "bel.ps", "round": 1 }
+        ],
+        "party_results": [
+          { "party": "bel.n_va", "share": 0.174, "seats": 27 },
+          { "party": "bel.ps", "share": 0.137, "seats": 26 },
+          { "party": "bel.cd_v", "share": 0.1085, "seats": 17 },
+          { "party": "bel.mr", "share": 0.0928, "seats": 18 },
+          { "party": "bel.sp_a", "share": 0.0924, "seats": 13 },
+          { "party": "bel.open_vld", "share": 0.0864, "seats": 13 },
+          { "party": "bel.vlaams_belang", "share": 0.0776, "seats": 12 },
+          { "party": "bel.cdh", "share": 0.0552, "seats": 9 },
+          { "party": "bel.ecolo", "share": 0.048, "seats": 8 },
+          { "party": "bel.groen", "share": 0.0438, "seats": 5 },
+          { "party": "bel.ldd", "share": 0.0231, "seats": 1 },
+          { "party": "bel.pvda", "share": 0.0155, "seats": 0 },
+          { "party": "bel.pp", "share": 0.0129, "seats": 1 }
+        ],
+        "winner": "bel.n_va",
+        "turnout": 0.8922,
+        "note": "Early election after Open VLD left the Leterme II government on 22 April 2010 and the King accepted Leterme's resignation on 26 April. Shares of valid votes. Government formation took until 6 December 2011 (Di Rupo government); Leterme II stayed in office as caretaker meanwhile.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2010_Belgian_federal_election", "title": "Wikipedia: 2010 Belgian federal election (IBZ results)", "accessed": "2026-10-15" },
+          { "url": "https://en.wikipedia.org/wiki/List_of_prime_ministers_of_Belgium", "title": "Wikipedia: List of prime ministers of Belgium", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "senate_2010",
+      "date": "2010-06-13",
+      "kind": "legislative_upper",
+      "chamber": "senate",
+      "snap": true,
+      "historical": {
+        "party_results": [
+          { "party": "bel.n_va", "share": 0.1961, "seats": 9, "seats_won": 9 },
+          { "party": "bel.ps", "share": 0.1362, "seats": 7, "seats_won": 7 },
+          { "party": "bel.cd_v", "share": 0.0999, "seats": 4, "seats_won": 4 },
+          { "party": "bel.sp_a", "share": 0.0948, "seats": 4, "seats_won": 4 },
+          { "party": "bel.mr", "share": 0.0927, "seats": 4, "seats_won": 4 },
+          { "party": "bel.open_vld", "share": 0.0824, "seats": 4, "seats_won": 4 },
+          { "party": "bel.vlaams_belang", "share": 0.076, "seats": 3, "seats_won": 3 },
+          { "party": "bel.ecolo", "share": 0.0546, "seats": 2, "seats_won": 2 },
+          { "party": "bel.cdh", "share": 0.0513, "seats": 2, "seats_won": 2 },
+          { "party": "bel.groen", "share": 0.0389, "seats": 1, "seats_won": 1 },
+          { "party": "bel.ldd", "share": 0.0202, "seats": 0, "seats_won": 0 },
+          { "party": "bel.pvda", "share": 0.0162, "seats": 0, "seats_won": 0 },
+          { "party": "bel.pp", "share": 0.0153, "seats": 0, "seats_won": 0 }
+        ],
+        "winner": "bel.n_va",
+        "turnout": 0.8921,
+        "note": "Only the 40 directly elected seats are recorded. This was the last direct election of the Senate.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2010_Belgian_federal_election", "title": "Wikipedia: 2010 Belgian federal election (Senate results)", "accessed": "2026-10-15" },
+          { "url": "https://en.wikipedia.org/wiki/2014_Belgian_federal_election", "title": "Wikipedia: 2014 Belgian federal election (Senate no longer directly elected)", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "chamber_2014",
+      "date": "2014-05-25",
+      "kind": "legislative",
+      "chamber": "chamber",
+      "historical": {
+        "candidates": [
+          { "person": "bel.bart_de_wever", "party": "bel.n_va", "round": 1 },
+          { "person": "bel.elio_di_rupo", "party": "bel.ps", "round": 1 },
+          { "person": "bel.charles_michel", "party": "bel.mr", "round": 1 }
+        ],
+        "party_results": [
+          { "party": "bel.n_va", "share": 0.2026, "seats": 33 },
+          { "party": "bel.ps", "share": 0.1167, "seats": 23 },
+          { "party": "bel.cd_v", "share": 0.1161, "seats": 18 },
+          { "party": "bel.open_vld", "share": 0.0978, "seats": 14 },
+          { "party": "bel.mr", "share": 0.0964, "seats": 20 },
+          { "party": "bel.sp_a", "share": 0.0883, "seats": 13 },
+          { "party": "bel.groen", "share": 0.0532, "seats": 6 },
+          { "party": "bel.cdh", "share": 0.0498, "seats": 9 },
+          { "party": "bel.vlaams_belang", "share": 0.0367, "seats": 3 },
+          { "party": "bel.ecolo", "share": 0.033, "seats": 6 },
+          { "party": "bel.pvda", "share": 0.0373, "seats": 2 },
+          { "party": "bel.defi", "share": 0.018, "seats": 2 },
+          { "party": "bel.pp", "share": 0.0152, "seats": 1 }
+        ],
+        "winner": "bel.n_va",
+        "turnout": 0.8937,
+        "note": "Shares of valid votes. PVDA-PTB is the sum of its French-language (PTB-GO!, 2 seats) and Dutch-language (PVDA+, no seats) lists. First election held together with the European elections; the Senate was no longer directly elected.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2014_Belgian_federal_election", "title": "Wikipedia: 2014 Belgian federal election (IBZ results)", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "chamber_2019",
+      "date": "2019-05-26",
+      "kind": "legislative",
+      "chamber": "chamber",
+      "historical": {
+        "candidates": [
+          { "person": "bel.bart_de_wever", "party": "bel.n_va", "round": 1 },
+          { "person": "bel.paul_magnette", "party": "bel.ps", "round": 1 },
+          { "person": "bel.charles_michel", "party": "bel.mr", "round": 1 }
+        ],
+        "party_results": [
+          { "party": "bel.n_va", "share": 0.1603, "seats": 25 },
+          { "party": "bel.vlaams_belang", "share": 0.1195, "seats": 18 },
+          { "party": "bel.ps", "share": 0.0946, "seats": 20 },
+          { "party": "bel.cd_v", "share": 0.0889, "seats": 12 },
+          { "party": "bel.pvda", "share": 0.0862, "seats": 12 },
+          { "party": "bel.open_vld", "share": 0.0854, "seats": 12 },
+          { "party": "bel.mr", "share": 0.0756, "seats": 14 },
+          { "party": "bel.sp_a", "share": 0.0671, "seats": 9 },
+          { "party": "bel.ecolo", "share": 0.0614, "seats": 13 },
+          { "party": "bel.groen", "share": 0.061, "seats": 8 },
+          { "party": "bel.cdh", "share": 0.037, "seats": 5 },
+          { "party": "bel.defi", "share": 0.0222, "seats": 2 }
+        ],
+        "winner": "bel.n_va",
+        "turnout": 0.8838,
+        "note": "Shares of valid votes. Government formation took until 1 October 2020 (De Croo government); the Wilmès governments served meanwhile.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2019_Belgian_federal_election", "title": "Wikipedia: 2019 Belgian federal election (IBZ results)", "accessed": "2026-10-15" },
+          { "url": "https://en.wikipedia.org/wiki/List_of_prime_ministers_of_Belgium", "title": "Wikipedia: List of prime ministers of Belgium", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "chamber_2024",
+      "date": "2024-06-09",
+      "kind": "legislative",
+      "chamber": "chamber",
+      "historical": {
+        "candidates": [
+          { "person": "bel.bart_de_wever", "party": "bel.n_va", "round": 1 },
+          { "person": "bel.tom_van_grieken", "party": "bel.vlaams_belang", "round": 1 },
+          { "person": "bel.alexander_de_croo", "party": "bel.open_vld", "round": 1 }
+        ],
+        "party_results": [
+          { "party": "bel.n_va", "share": 0.1671, "seats": 24 },
+          { "party": "bel.vlaams_belang", "share": 0.1377, "seats": 20 },
+          { "party": "bel.mr", "share": 0.1026, "seats": 20 },
+          { "party": "bel.pvda", "share": 0.0986, "seats": 15 },
+          { "party": "bel.vooruit", "share": 0.0811, "seats": 13 },
+          { "party": "bel.ps", "share": 0.0804, "seats": 16 },
+          { "party": "bel.cd_v", "share": 0.0798, "seats": 11 },
+          { "party": "bel.les_engages", "share": 0.0677, "seats": 14 },
+          { "party": "bel.open_vld", "share": 0.0545, "seats": 7 },
+          { "party": "bel.groen", "share": 0.0465, "seats": 6 },
+          { "party": "bel.ecolo", "share": 0.0293, "seats": 3 },
+          { "party": "bel.defi", "share": 0.012, "seats": 1 }
+        ],
+        "winner": "bel.n_va",
+        "turnout": 0.8845,
+        "note": "Shares of valid votes. Government formation took until 3 February 2025 (De Wever government: N-VA, MR, Vooruit, CD&V, Les Engagés); the De Croo government served as caretaker meanwhile.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2024_Belgian_federal_election", "title": "Wikipedia: 2024 Belgian federal election (results)", "accessed": "2026-10-15" },
+          { "url": "https://en.wikipedia.org/wiki/List_of_prime_ministers_of_Belgium", "title": "Wikipedia: List of prime ministers of Belgium", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      }
+    }
+  ],
+  "source": [
+    { "url": "https://en.wikipedia.org/wiki/2014_Belgian_federal_election", "title": "Wikipedia: 2014 Belgian federal election (electoral system; elections now coincide with European elections)", "accessed": "2026-10-15" }
+  ],
+  "confidence": "verified"
+}

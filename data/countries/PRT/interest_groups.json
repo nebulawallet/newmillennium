@@ -1,0 +1,15 @@
+{
+  "note": "Influence and approval are gameplay starting values for 1 January 2000 (PS minority government of António Guterres), not measured data. Influence reflects a judgement of institutional weight (unions, employers, the Catholic Church, the press) in a consolidated democracy with a civilian-controlled military.",
+  "interest_groups": [
+    { "type": "military", "influence": 0.1, "approval": 50 },
+    { "type": "security_services", "influence": 0.08, "approval": 52 },
+    { "type": "business", "influence": 0.42, "approval": 50 },
+    { "type": "labour_unions", "influence": 0.35, "approval": 52 },
+    { "type": "religious_establishment", "influence": 0.28, "approval": 50, "note": "Roman Catholic Church." },
+    { "type": "rural", "influence": 0.2, "approval": 48 },
+    { "type": "urban_middle_class", "influence": 0.42, "approval": 58 },
+    { "type": "minorities", "influence": 0.06, "approval": 55 },
+    { "type": "youth_students", "influence": 0.15, "approval": 55 },
+    { "type": "media", "influence": 0.35, "approval": 55 }
+  ]
+}

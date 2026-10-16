@@ -1,0 +1,106 @@
+{
+  "tag": "LUX",
+  "name": { "en": "Luxembourg", "native": "Lëtzebuerg", "official": { "en": "Grand Duchy of Luxembourg", "native": "Groussherzogtum Lëtzebuerg" } },
+  "adjective": "Luxembourgish",
+  "culture_primary": "luxembourgish",
+  "government": {
+    "type": "constitutional_monarchy",
+    "effective_executive": "lux.prime_minister",
+    "head_of_state_office": "lux.grand_duke",
+    "head_of_government_office": "lux.prime_minister",
+    "constitution": {
+      "term_limit_amendable": true,
+      "emergency_powers": true,
+      "referendum_required_for": []
+    },
+    "note": "Parliamentary grand duchy. Governments are coalitions formed after elections to the unicameral Chamber of Deputies; the Grand Duke's role is largely ceremonial. Since the Second World War every Prime Minister has been from the CSV except Gaston Thorn (DP, 1974-1979) and Xavier Bettel (DP, 2013-2023). National referendums were held in 2005 (European Constitution) and 2015 (three constitutional questions)."
+  },
+  "offices": [
+    {
+      "id": "lux.grand_duke",
+      "title": { "en": "Grand Duke of Luxembourg", "native": "Groussherzog vu Lëtzebuerg" },
+      "role": "head_of_state",
+      "power_weight": 0.05,
+      "selection": "hereditary",
+      "succession": { "type": "line", "heirs": ["lux.henri", "lux.guillaume_v"] },
+      "holders": [
+        { "person": "lux.jean", "from": "1964-11-12", "to": "2000-10-07", "note": "Abdicated in favour of his son Henri, who had acted for him as regent since 4 March 1998." },
+        { "person": "lux.henri", "from": "2000-10-07", "to": "2025-10-03", "note": "Abdicated in favour of his son Guillaume, who had been regent since 8 October 2024." },
+        { "person": "lux.guillaume_v", "from": "2025-10-03" }
+      ],
+      "note": "Heirs are the line of succession on 2000-01-01: Hereditary Grand Duke Henri, then his eldest son Guillaume. Since Guillaume's accession on 3 October 2025 the heir apparent is his son Prince Charles (born 2020), who is not recorded as a person because the schema accepts birth years only up to 2010. Succession was changed to absolute primogeniture in June 2011.",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/Grand_Duke_of_Luxembourg", "title": "Wikipedia: Grand Duke of Luxembourg (list of monarchs, heir apparent, succession law)", "accessed": "2026-10-16" },
+        { "url": "https://en.wikipedia.org/wiki/Henri,_Grand_Duke_of_Luxembourg", "title": "Wikipedia: Henri, Grand Duke of Luxembourg (reign 7 October 2000 - 3 October 2025; regency 1998-2000)", "accessed": "2026-10-16" },
+        { "url": "https://en.wikipedia.org/wiki/Guillaume_V,_Grand_Duke_of_Luxembourg", "title": "Wikipedia: Guillaume V, Grand Duke of Luxembourg (reign from 3 October 2025; regency from 8 October 2024)", "accessed": "2026-10-16" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "lux.prime_minister",
+      "title": { "en": "Prime Minister of Luxembourg", "native": "Premierminister vu Lëtzebuerg" },
+      "role": "head_of_government",
+      "power_weight": 0.95,
+      "selection": "legislature",
+      "appointed_by": "lux.grand_duke",
+      "term_years": 5,
+      "holders": [
+        { "person": "lux.jean_claude_juncker", "from": "1995-01-26", "to": "2013-12-04", "note": "Juncker-Poos (CSV-LSAP, from 1995), Juncker-Polfer (CSV-DP, from 7 August 1999), Juncker-Asselborn I and II (CSV-LSAP, from 31 July 2004 and 23 July 2009)." },
+        { "person": "lux.xavier_bettel", "from": "2013-12-04", "to": "2023-11-17", "note": "Bettel I and II governments (DP-LSAP-Greens)." },
+        { "person": "lux.luc_frieden", "from": "2023-11-17", "note": "Frieden-Bettel government (CSV-DP)." }
+      ],
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/List_of_prime_ministers_of_Luxembourg", "title": "Wikipedia: List of prime ministers of Luxembourg (governments and coalitions)", "accessed": "2026-10-16" },
+        { "url": "https://en.wikipedia.org/wiki/Christian_Social_People%27s_Party", "title": "Wikipedia: Christian Social People's Party (post-war prime ministers)", "accessed": "2026-10-16" }
+      ],
+      "confidence": "verified"
+    }
+  ],
+  "legislature": {
+    "name": { "en": "Chamber of Deputies", "native": "Chambre des Députés / Chamber vun den Deputéierten" },
+    "chambers": [
+      {
+        "id": "chamber",
+        "name": { "en": "Chamber of Deputies", "native": "Chambre des Députés" },
+        "seats": 60,
+        "term_years": 5,
+        "elected": "direct",
+        "system": {
+          "type": "list_pr",
+          "formula": "droop",
+          "district_model": "custom",
+          "note": "Proportional representation in four multi-member constituencies (North 9, East 7, South 23, Centre 21). Voters may vote for a list or cast as many candidate votes as there are seats (panachage). Seats are allocated by the Hagenbach-Bischoff quota. Voting is compulsory for resident citizens under 75. seats_2000 is the result of the 13 June 1999 election."
+        },
+        "seats_2000": { "lux.csv": 19, "lux.dp": 15, "lux.lsap": 13, "lux.adr": 7, "lux.greng": 5, "lux.lenk": 1 },
+        "confidence_chamber": true,
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/1999_Luxembourg_general_election", "title": "Wikipedia: 1999 Luxembourg general election (results)", "accessed": "2026-10-16" },
+          { "url": "https://en.wikipedia.org/wiki/2023_Luxembourg_general_election", "title": "Wikipedia: 2023 Luxembourg general election (electoral system)", "accessed": "2026-10-16" }
+        ],
+        "confidence": "verified"
+      }
+    ]
+  },
+  "party_system": "multi_party",
+  "start_2000": {
+    "ruling_parties": ["lux.csv", "lux.dp"],
+    "ideology_support": {
+      "christian_democrat": 0.2973,
+      "social_democrat": 0.2374,
+      "centrist_liberal": 0.2159,
+      "green": 0.1146,
+      "national_conservative": 0.091,
+      "democratic_socialist": 0.0376,
+      "big_tent": 0.0062
+    },
+    "ideology_support_note": "Derived from the 13 June 1999 Chamber election (shares of all candidate votes): CSV 29.73% (Christian democrat), LSAP 23.74% (social democrat), DP 21.59% (liberal), The Greens 10.37% plus the Green and Liberal Alliance 1.09% (green), ADR 9.10% (conservative; then still named Action Committee for Democracy and Pensions Justice), The Left 3.76% (democratic socialist), and The Taxpayer and the Party of the Third Age 0.61% together (counted as big tent).",
+    "stability": 0.8,
+    "war_support": 0.15
+  },
+  "claims": [],
+  "source": [
+    { "url": "https://en.wikipedia.org/wiki/1999_Luxembourg_general_election", "title": "Wikipedia: 1999 Luxembourg general election", "accessed": "2026-10-16" },
+    { "url": "https://en.wikipedia.org/wiki/List_of_prime_ministers_of_Luxembourg", "title": "Wikipedia: List of prime ministers of Luxembourg", "accessed": "2026-10-16" }
+  ],
+  "confidence": "verified"
+}

@@ -1,0 +1,510 @@
+{
+  "rules": [
+    {
+      "kind": "legislative",
+      "chamber": "chamber",
+      "every_years": 5,
+      "anchor": "2023-10-08",
+      "snap_possible": true,
+      "note": "Five-year term; the 2013 election was early."
+    }
+  ],
+  "elections": [
+    {
+      "id": "chamber_2004",
+      "date": "2004-06-13",
+      "kind": "legislative",
+      "chamber": "chamber",
+      "historical": {
+        "party_results": [
+          {
+            "party": "lux.csv",
+            "share": 0.3581,
+            "seats": 24
+          },
+          {
+            "party": "lux.lsap",
+            "share": 0.2543,
+            "seats": 14
+          },
+          {
+            "party": "lux.dp",
+            "share": 0.1494,
+            "seats": 10
+          },
+          {
+            "party": "lux.greng",
+            "share": 0.1154,
+            "seats": 7
+          },
+          {
+            "party": "lux.adr",
+            "share": 0.0904,
+            "seats": 5
+          },
+          {
+            "party": "lux.lenk",
+            "share": 0.0201,
+            "seats": 0
+          },
+          {
+            "party": "lux.kpl",
+            "share": 0.0115,
+            "seats": 0
+          }
+        ],
+        "candidates": [
+          {
+            "person": "lux.jean_claude_juncker",
+            "party": "lux.csv"
+          },
+          {
+            "person": "lux.jean_asselborn",
+            "party": "lux.lsap"
+          },
+          {
+            "person": "lux.lydie_polfer",
+            "party": "lux.dp"
+          }
+        ],
+        "winner": "lux.csv",
+        "turnout": 0.9192,
+        "note": "Shares of all candidate votes (each voter casts several). The Left and the Communist Party shares are computed from the vote totals in the results table. Juncker formed a CSV-LSAP government.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2004_Luxembourg_general_election",
+            "title": "Wikipedia: 2004 Luxembourg general election",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "eu_constitution_referendum_2005",
+      "date": "2005-07-10",
+      "kind": "referendum",
+      "question": "Ratification of the Treaty establishing a Constitution for Europe",
+      "historical": {
+        "yes_share": 0.5652,
+        "options": [
+          {
+            "label": "Yes",
+            "share": 0.5652,
+            "votes": 109494
+          },
+          {
+            "label": "No",
+            "share": 0.4348,
+            "votes": 84221
+          }
+        ],
+        "winner": "Yes",
+        "note": "Luxembourg's first referendum since 1937. Shares are of valid votes (5,894 invalid). Prime Minister Juncker had said he would resign if the result were No.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2005_Luxembourg_European_Constitution_referendum",
+            "title": "Wikipedia: 2005 Luxembourg European Constitution referendum",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "chamber_2009",
+      "date": "2009-06-07",
+      "kind": "legislative",
+      "chamber": "chamber",
+      "historical": {
+        "party_results": [
+          {
+            "party": "lux.csv",
+            "share": 0.3734,
+            "seats": 26
+          },
+          {
+            "party": "lux.lsap",
+            "share": 0.23,
+            "seats": 13
+          },
+          {
+            "party": "lux.dp",
+            "share": 0.1431,
+            "seats": 9
+          },
+          {
+            "party": "lux.greng",
+            "share": 0.1148,
+            "seats": 7
+          },
+          {
+            "party": "lux.adr",
+            "share": 0.0769,
+            "seats": 4
+          },
+          {
+            "party": "lux.lenk",
+            "share": 0.0361,
+            "seats": 1
+          },
+          {
+            "party": "lux.kpl",
+            "share": 0.0162,
+            "seats": 0
+          }
+        ],
+        "candidates": [
+          {
+            "person": "lux.jean_claude_juncker",
+            "party": "lux.csv"
+          },
+          {
+            "person": "lux.jean_asselborn",
+            "party": "lux.lsap"
+          },
+          {
+            "person": "lux.claude_meisch",
+            "party": "lux.dp"
+          }
+        ],
+        "winner": "lux.csv",
+        "turnout": 0.9093,
+        "note": "Shares of all candidate votes. The Communist Party share is computed from the vote total in the results table.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2009_Luxembourg_general_election",
+            "title": "Wikipedia: 2009 Luxembourg general election",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "chamber_2013",
+      "date": "2013-10-20",
+      "kind": "legislative",
+      "chamber": "chamber",
+      "snap": true,
+      "historical": {
+        "party_results": [
+          {
+            "party": "lux.csv",
+            "share": 0.3368,
+            "seats": 23
+          },
+          {
+            "party": "lux.lsap",
+            "share": 0.2028,
+            "seats": 13
+          },
+          {
+            "party": "lux.dp",
+            "share": 0.1825,
+            "seats": 13
+          },
+          {
+            "party": "lux.greng",
+            "share": 0.1013,
+            "seats": 6
+          },
+          {
+            "party": "lux.adr",
+            "share": 0.0664,
+            "seats": 3
+          },
+          {
+            "party": "lux.lenk",
+            "share": 0.0494,
+            "seats": 2
+          },
+          {
+            "party": "lux.pirates",
+            "share": 0.0294,
+            "seats": 0
+          },
+          {
+            "party": "lux.kpl",
+            "share": 0.0164,
+            "seats": 0
+          }
+        ],
+        "candidates": [
+          {
+            "person": "lux.jean_claude_juncker",
+            "party": "lux.csv"
+          },
+          {
+            "person": "lux.etienne_schneider",
+            "party": "lux.lsap"
+          },
+          {
+            "person": "lux.xavier_bettel",
+            "party": "lux.dp"
+          }
+        ],
+        "winner": "lux.csv",
+        "turnout": 0.9115,
+        "note": "Early election called after Prime Minister Juncker announced his government's resignation in July 2013. The CSV remained the largest party, but Xavier Bettel (DP) formed a DP-LSAP-Greens government. Pirate Party and Communist Party shares are computed from the vote totals in the results table.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2013_Luxembourg_general_election",
+            "title": "Wikipedia: 2013 Luxembourg general election",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "voting_age_referendum_2015",
+      "date": "2015-06-07",
+      "kind": "referendum",
+      "question": "Do you approve of the idea that Luxembourg people aged between sixteen and eighteen should have the right to optionally register on electoral lists in order to participate as voters in the elections to the Chamber of Deputies, the European elections, municipal elections and referendums?",
+      "historical": {
+        "yes_share": 0.1913,
+        "options": [
+          {
+            "label": "Yes",
+            "share": 0.1913,
+            "votes": 40102
+          },
+          {
+            "label": "No",
+            "share": 0.8087,
+            "votes": 169899
+          }
+        ],
+        "winner": "No",
+        "turnout": 0.8699,
+        "note": "First of three questions put on the same day; rejected. The governing DP, LSAP and Greens, The Left and the Pirate Party backed Yes on all three questions; the CSV and the ADR backed No.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2015_Luxembourg_constitutional_referendum",
+            "title": "Wikipedia: 2015 Luxembourg constitutional referendum (official results)",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "foreign_residents_vote_referendum_2015",
+      "date": "2015-06-07",
+      "kind": "referendum",
+      "question": "Do you approve of the idea that residents without Luxembourg nationality should have the right to optionally register on electoral lists in order to participate as voters in the elections to the Chamber of Deputies, on the double condition that they have resided at least ten years in Luxembourg and that they have previously participated in European or municipal elections in Luxembourg?",
+      "historical": {
+        "yes_share": 0.2198,
+        "options": [
+          {
+            "label": "Yes",
+            "share": 0.2198,
+            "votes": 46031
+          },
+          {
+            "label": "No",
+            "share": 0.7802,
+            "votes": 163362
+          }
+        ],
+        "winner": "No",
+        "turnout": 0.8699,
+        "note": "Second of three questions put on the same day; rejected.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2015_Luxembourg_constitutional_referendum",
+            "title": "Wikipedia: 2015 Luxembourg constitutional referendum (official results)",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "ministerial_term_limit_referendum_2015",
+      "date": "2015-06-07",
+      "kind": "referendum",
+      "question": "Do you approve of the idea of limiting to ten years the maximum period during which someone can continuously be part of the government (cabinet)?",
+      "historical": {
+        "yes_share": 0.3007,
+        "options": [
+          {
+            "label": "Yes",
+            "share": 0.3007,
+            "votes": 62835
+          },
+          {
+            "label": "No",
+            "share": 0.6993,
+            "votes": 146096
+          }
+        ],
+        "winner": "No",
+        "turnout": 0.8699,
+        "note": "Third of three questions put on the same day; rejected.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2015_Luxembourg_constitutional_referendum",
+            "title": "Wikipedia: 2015 Luxembourg constitutional referendum (official results)",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "chamber_2018",
+      "date": "2018-10-14",
+      "kind": "legislative",
+      "chamber": "chamber",
+      "historical": {
+        "party_results": [
+          {
+            "party": "lux.csv",
+            "share": 0.2831,
+            "seats": 21
+          },
+          {
+            "party": "lux.lsap",
+            "share": 0.176,
+            "seats": 10
+          },
+          {
+            "party": "lux.dp",
+            "share": 0.1691,
+            "seats": 12
+          },
+          {
+            "party": "lux.greng",
+            "share": 0.1512,
+            "seats": 9
+          },
+          {
+            "party": "lux.adr",
+            "share": 0.0828,
+            "seats": 4
+          },
+          {
+            "party": "lux.pirates",
+            "share": 0.0645,
+            "seats": 2
+          },
+          {
+            "party": "lux.lenk",
+            "share": 0.0548,
+            "seats": 2
+          },
+          {
+            "party": "lux.kpl",
+            "share": 0.0127,
+            "seats": 0
+          }
+        ],
+        "candidates": [
+          {
+            "person": "lux.claude_wiseler",
+            "party": "lux.csv"
+          },
+          {
+            "person": "lux.etienne_schneider",
+            "party": "lux.lsap"
+          },
+          {
+            "person": "lux.xavier_bettel",
+            "party": "lux.dp"
+          }
+        ],
+        "winner": "lux.csv",
+        "turnout": 0.8966,
+        "note": "The CSV remained the largest party; Bettel's DP-LSAP-Greens coalition kept its majority (31 seats) and continued. The Communist Party share is computed from the vote total in the results table.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2018_Luxembourg_general_election",
+            "title": "Wikipedia: 2018 Luxembourg general election",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "chamber_2023",
+      "date": "2023-10-08",
+      "kind": "legislative",
+      "chamber": "chamber",
+      "historical": {
+        "party_results": [
+          {
+            "party": "lux.csv",
+            "share": 0.298,
+            "seats": 21
+          },
+          {
+            "party": "lux.dp",
+            "share": 0.1913,
+            "seats": 14
+          },
+          {
+            "party": "lux.lsap",
+            "share": 0.1818,
+            "seats": 11
+          },
+          {
+            "party": "lux.adr",
+            "share": 0.0954,
+            "seats": 5
+          },
+          {
+            "party": "lux.greng",
+            "share": 0.0832,
+            "seats": 4
+          },
+          {
+            "party": "lux.pirates",
+            "share": 0.0666,
+            "seats": 3
+          },
+          {
+            "party": "lux.lenk",
+            "share": 0.0364,
+            "seats": 2
+          }
+        ],
+        "candidates": [
+          {
+            "person": "lux.luc_frieden",
+            "party": "lux.csv"
+          },
+          {
+            "person": "lux.xavier_bettel",
+            "party": "lux.dp"
+          },
+          {
+            "person": "lux.paulette_lenert",
+            "party": "lux.lsap"
+          }
+        ],
+        "winner": "lux.csv",
+        "turnout": 0.872,
+        "note": "Shares are the infobox percentages. The results table also gives raw candidate votes, in which the LSAP (711,890) is slightly ahead of the DP (703,833); the infobox shares appear to use the weighted results. Luc Frieden formed a CSV-DP government.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2023_Luxembourg_general_election",
+            "title": "Wikipedia: 2023 Luxembourg general election",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    }
+  ],
+  "source": [
+    {
+      "url": "https://en.wikipedia.org/wiki/2023_Luxembourg_general_election",
+      "title": "Wikipedia: 2023 Luxembourg general election (electoral system)",
+      "accessed": "2026-10-16"
+    }
+  ],
+  "confidence": "verified"
+}

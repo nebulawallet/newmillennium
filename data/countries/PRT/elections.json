@@ -1,0 +1,455 @@
+{
+  "rules": [
+    {
+      "kind": "legislative",
+      "chamber": "assembleia",
+      "every_years": 4,
+      "anchor": "2025-05-18",
+      "snap_possible": true,
+      "note": "Four-year legislature; regular elections fall between 14 September and 14 October of the final year. The President may dissolve the Assembly and call an early election at their discretion."
+    },
+    {
+      "kind": "presidential",
+      "office": "prt.president",
+      "every_years": 5,
+      "anchor": "2026-01-18",
+      "snap_possible": true,
+      "system": "two_round",
+      "note": "Two-round direct election; the top two meet in a second round if no candidate wins more than 50% of valid votes in the first."
+    }
+  ],
+  "elections": [
+    {
+      "id": "pres_2001",
+      "date": "2001-01-14",
+      "kind": "presidential",
+      "office": "prt.president",
+      "rounds": 1,
+      "historical": {
+        "candidates": [
+          { "person": "prt.jorge_sampaio", "party": "prt.ps", "share": 0.5555, "votes": 2401015, "round": 1 },
+          { "person": "prt.joaquim_ferreira_do_amaral", "party": "prt.psd", "share": 0.3468, "votes": 1498948, "round": 1 },
+          { "person": "prt.antonio_abreu", "party": "prt.pcp", "share": 0.0516, "votes": 223196, "round": 1 }
+        ],
+        "winner": "prt.jorge_sampaio",
+        "turnout": 0.4971,
+        "note": "Shares are of valid votes. Fernando Rosas (Left Bloc, 3.0%) and António Garcia Pereira (PCTP/MRPP, 1.6%) are omitted.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2001_Portuguese_presidential_election", "title": "Wikipedia: 2001 Portuguese presidential election (CNE results)", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "ar_2002",
+      "date": "2002-03-17",
+      "kind": "legislative",
+      "chamber": "assembleia",
+      "snap": true,
+      "historical": {
+        "candidates": [
+          { "person": "prt.jose_manuel_barroso", "party": "prt.psd", "round": 1 },
+          { "person": "prt.eduardo_ferro_rodrigues", "party": "prt.ps", "round": 1 }
+        ],
+        "party_results": [
+          { "party": "prt.psd", "share": 0.4021, "seats": 105 },
+          { "party": "prt.ps", "share": 0.378, "seats": 96 },
+          { "party": "prt.cds_pp", "share": 0.0872, "seats": 14 },
+          { "party": "prt.pcp", "share": 0.0694, "seats": 10 },
+          { "party": "prt.pev", "seats": 2 },
+          { "party": "prt.be", "share": 0.0274, "seats": 3 }
+        ],
+        "winner": "prt.psd",
+        "turnout": 0.615,
+        "note": "Early election after Guterres resigned following the December 2001 local elections. Shares are of all votes cast. The CDU joint list's share (6.9%) is recorded under the PCP; its 12 seats were 10 PCP and 2 PEV.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2002_Portuguese_legislative_election", "title": "Wikipedia: 2002 Portuguese legislative election (CNE results)", "accessed": "2026-10-15" },
+          { "url": "https://en.wikipedia.org/wiki/2005_Portuguese_legislative_election", "title": "Wikipedia: 2005 Portuguese legislative election (CDU seat split after 2002)", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "ar_2005",
+      "date": "2005-02-20",
+      "kind": "legislative",
+      "chamber": "assembleia",
+      "snap": true,
+      "historical": {
+        "candidates": [
+          { "person": "prt.jose_socrates", "party": "prt.ps", "round": 1 },
+          { "person": "prt.pedro_santana_lopes", "party": "prt.psd", "round": 1 }
+        ],
+        "party_results": [
+          { "party": "prt.ps", "share": 0.4503, "seats": 121 },
+          { "party": "prt.psd", "share": 0.2877, "seats": 75 },
+          { "party": "prt.pcp", "share": 0.0754, "seats": 12 },
+          { "party": "prt.pev", "seats": 2 },
+          { "party": "prt.cds_pp", "share": 0.0724, "seats": 12 },
+          { "party": "prt.be", "share": 0.0635, "seats": 8 }
+        ],
+        "winner": "prt.ps",
+        "turnout": 0.643,
+        "note": "Early election after President Sampaio dissolved the Assembly on 30 November 2004. First PS absolute majority. The CDU joint list's share is recorded under the PCP; its 14 seats were 12 PCP and 2 PEV.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2005_Portuguese_legislative_election", "title": "Wikipedia: 2005 Portuguese legislative election (CNE results)", "accessed": "2026-10-15" },
+          { "url": "https://en.wikipedia.org/wiki/2009_Portuguese_legislative_election", "title": "Wikipedia: 2009 Portuguese legislative election (CDU seat split after 2005)", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "pres_2006",
+      "date": "2006-01-22",
+      "kind": "presidential",
+      "office": "prt.president",
+      "rounds": 1,
+      "historical": {
+        "candidates": [
+          { "person": "prt.anibal_cavaco_silva", "party": "prt.psd", "share": 0.5054, "votes": 2773431, "round": 1 },
+          { "person": "prt.manuel_alegre", "share": 0.2074, "votes": 1138297, "round": 1 },
+          { "person": "prt.mario_soares", "party": "prt.ps", "share": 0.1431, "votes": 785355, "round": 1 },
+          { "person": "prt.jeronimo_de_sousa", "party": "prt.pcp", "share": 0.0864, "votes": 474083, "round": 1 },
+          { "person": "prt.francisco_louca", "party": "prt.be", "share": 0.0532, "votes": 292198, "round": 1 }
+        ],
+        "winner": "prt.anibal_cavaco_silva",
+        "turnout": 0.6153,
+        "note": "Shares are of valid votes. Manuel Alegre, a PS member, ran as an independent against the PS-backed Mário Soares. António Garcia Pereira (PCTP/MRPP, 0.4%) is omitted.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2006_Portuguese_presidential_election", "title": "Wikipedia: 2006 Portuguese presidential election (CNE results)", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "abortion_referendum_2007",
+      "date": "2007-02-11",
+      "kind": "referendum",
+      "question": "Are you in agreement with the decriminalization of the voluntary interruption of pregnancy, if carried out, by the woman's choice, in the first ten weeks in a legally authorized health institution?",
+      "historical": {
+        "yes_share": 0.5924,
+        "options": [
+          { "label": "Yes", "share": 0.5924, "votes": 2231529 },
+          { "label": "No", "share": 0.4076, "votes": 1534669 }
+        ],
+        "winner": "Yes",
+        "turnout": 0.4361,
+        "note": "Turnout was below 50%, so under the Constitution the result was not legally binding; Prime Minister Sócrates confirmed he would act on the majority in favour. The PS, PCP, BE and PEV backed Yes.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2007_Portuguese_abortion_referendum", "title": "Wikipedia: 2007 Portuguese abortion referendum (official results)", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "ar_2009",
+      "date": "2009-09-27",
+      "kind": "legislative",
+      "chamber": "assembleia",
+      "historical": {
+        "candidates": [
+          { "person": "prt.jose_socrates", "party": "prt.ps", "round": 1 },
+          { "person": "prt.manuela_ferreira_leite", "party": "prt.psd", "round": 1 }
+        ],
+        "party_results": [
+          { "party": "prt.ps", "share": 0.3656, "seats": 97 },
+          { "party": "prt.psd", "share": 0.2911, "seats": 81 },
+          { "party": "prt.cds_pp", "share": 0.1043, "seats": 21 },
+          { "party": "prt.be", "share": 0.0981, "seats": 16 },
+          { "party": "prt.pcp", "share": 0.0786, "seats": 13 },
+          { "party": "prt.pev", "seats": 2 }
+        ],
+        "winner": "prt.ps",
+        "turnout": 0.597,
+        "note": "The CDU joint list's share is recorded under the PCP; its 15 seats were 13 PCP and 2 PEV.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2009_Portuguese_legislative_election", "title": "Wikipedia: 2009 Portuguese legislative election (CNE results)", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "pres_2011",
+      "date": "2011-01-23",
+      "kind": "presidential",
+      "office": "prt.president",
+      "rounds": 1,
+      "historical": {
+        "candidates": [
+          { "person": "prt.anibal_cavaco_silva", "party": "prt.psd", "share": 0.5295, "votes": 2231956, "round": 1 },
+          { "person": "prt.manuel_alegre", "party": "prt.ps", "share": 0.1974, "votes": 831838, "round": 1 },
+          { "person": "prt.fernando_nobre", "share": 0.1407, "votes": 593021, "round": 1 },
+          { "person": "prt.francisco_lopes", "party": "prt.pcp", "share": 0.0714, "votes": 301017, "round": 1 }
+        ],
+        "winner": "prt.anibal_cavaco_silva",
+        "turnout": 0.4652,
+        "note": "Shares are of valid votes. José Manuel Coelho (4.5%) and Defensor Moura (1.6%) are omitted.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2011_Portuguese_presidential_election", "title": "Wikipedia: 2011 Portuguese presidential election (CNE results)", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "ar_2011",
+      "date": "2011-06-05",
+      "kind": "legislative",
+      "chamber": "assembleia",
+      "snap": true,
+      "historical": {
+        "candidates": [
+          { "person": "prt.pedro_passos_coelho", "party": "prt.psd", "round": 1 },
+          { "person": "prt.jose_socrates", "party": "prt.ps", "round": 1 }
+        ],
+        "party_results": [
+          { "party": "prt.psd", "share": 0.3866, "seats": 108 },
+          { "party": "prt.ps", "share": 0.2805, "seats": 74 },
+          { "party": "prt.cds_pp", "share": 0.1171, "seats": 24 },
+          { "party": "prt.pcp", "share": 0.079, "seats": 14 },
+          { "party": "prt.pev", "seats": 2 },
+          { "party": "prt.be", "share": 0.0517, "seats": 8 },
+          { "party": "prt.pan", "share": 0.0104, "seats": 0 }
+        ],
+        "winner": "prt.psd",
+        "turnout": 0.58,
+        "note": "Early election called on 1 April 2011 after Prime Minister Sócrates resigned. The CDU joint list's share is recorded under the PCP; its 16 seats were 14 PCP and 2 PEV.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2011_Portuguese_legislative_election", "title": "Wikipedia: 2011 Portuguese legislative election (CNE results)", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "ar_2015",
+      "date": "2015-10-04",
+      "kind": "legislative",
+      "chamber": "assembleia",
+      "historical": {
+        "candidates": [
+          { "person": "prt.pedro_passos_coelho", "party": "prt.psd", "round": 1 },
+          { "person": "prt.antonio_costa", "party": "prt.ps", "round": 1 }
+        ],
+        "party_results": [
+          { "party": "prt.psd", "share": 0.3856, "seats": 89 },
+          { "party": "prt.cds_pp", "seats": 18 },
+          { "party": "prt.ps", "share": 0.3232, "seats": 86 },
+          { "party": "prt.be", "share": 0.1019, "seats": 19 },
+          { "party": "prt.pcp", "share": 0.0825, "seats": 15 },
+          { "party": "prt.pev", "seats": 2 },
+          { "party": "prt.pan", "share": 0.0139, "seats": 1 },
+          { "party": "prt.livre", "share": 0.0073, "seats": 0 }
+        ],
+        "winner": "prt.psd",
+        "turnout": 0.558,
+        "note": "The PSD and CDS-PP ran as the joint list Portugal Ahead (PàF; separate PSD and CDS lists in the Azores and Madeira); the combined 38.6% is recorded under the PSD and the 107 seats were 89 PSD and 18 CDS-PP. Passos Coelho's minority government was brought down by a motion of rejection on 10 November 2015, after the PS reached agreements with the BE, PCP and PEV; António Costa then formed a PS government. The CDU's 17 seats were 15 PCP and 2 PEV.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2015_Portuguese_legislative_election", "title": "Wikipedia: 2015 Portuguese legislative election (results and seat splits)", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "pres_2016",
+      "date": "2016-01-24",
+      "kind": "presidential",
+      "office": "prt.president",
+      "rounds": 1,
+      "historical": {
+        "candidates": [
+          { "person": "prt.marcelo_rebelo_de_sousa", "party": "prt.psd", "share": 0.52, "votes": 2413956, "round": 1 },
+          { "person": "prt.antonio_sampaio_da_novoa", "share": 0.2288, "votes": 1062138, "round": 1 },
+          { "person": "prt.marisa_matias", "party": "prt.be", "share": 0.1012, "votes": 469814, "round": 1 }
+        ],
+        "winner": "prt.marcelo_rebelo_de_sousa",
+        "turnout": 0.4866,
+        "note": "Shares are of valid votes. Seven other candidates, each below 5%, are omitted (including Maria de Belém, 4.2%, and Edgar Silva of the PCP, 3.9%).",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2016_Portuguese_presidential_election", "title": "Wikipedia: 2016 Portuguese presidential election (CNE results)", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "ar_2019",
+      "date": "2019-10-06",
+      "kind": "legislative",
+      "chamber": "assembleia",
+      "historical": {
+        "candidates": [
+          { "person": "prt.antonio_costa", "party": "prt.ps", "round": 1 },
+          { "person": "prt.rui_rio", "party": "prt.psd", "round": 1 }
+        ],
+        "party_results": [
+          { "party": "prt.ps", "share": 0.3635, "seats": 108 },
+          { "party": "prt.psd", "share": 0.2777, "seats": 79 },
+          { "party": "prt.be", "share": 0.0952, "seats": 19 },
+          { "party": "prt.pcp", "share": 0.0634, "seats": 10 },
+          { "party": "prt.pev", "seats": 2 },
+          { "party": "prt.cds_pp", "share": 0.0422, "seats": 5 },
+          { "party": "prt.pan", "share": 0.0332, "seats": 4 },
+          { "party": "prt.chega", "share": 0.0129, "seats": 1 },
+          { "party": "prt.il", "share": 0.0129, "seats": 1 },
+          { "party": "prt.livre", "share": 0.0109, "seats": 1 }
+        ],
+        "winner": "prt.ps",
+        "turnout": 0.486,
+        "note": "The CDU joint list's share is recorded under the PCP; its 12 seats were 10 PCP and 2 PEV.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2019_Portuguese_legislative_election", "title": "Wikipedia: 2019 Portuguese legislative election (CNE results)", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "pres_2021",
+      "date": "2021-01-24",
+      "kind": "presidential",
+      "office": "prt.president",
+      "rounds": 1,
+      "historical": {
+        "candidates": [
+          { "person": "prt.marcelo_rebelo_de_sousa", "party": "prt.psd", "share": 0.6067, "votes": 2531692, "round": 1 },
+          { "person": "prt.ana_gomes", "share": 0.1296, "votes": 540823, "round": 1 },
+          { "person": "prt.andre_ventura", "party": "prt.chega", "share": 0.1193, "votes": 497746, "round": 1 }
+        ],
+        "winner": "prt.marcelo_rebelo_de_sousa",
+        "turnout": 0.3926,
+        "note": "Shares are of valid votes. Four other candidates, each below 5%, are omitted (João Ferreira, PCP, 4.3%; Marisa Matias, BE, 4.0%; Tiago Mayan Gonçalves, IL, 3.2%; Vitorino Silva, 2.9%).",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2021_Portuguese_presidential_election", "title": "Wikipedia: 2021 Portuguese presidential election (CNE results)", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "ar_2022",
+      "date": "2022-01-30",
+      "kind": "legislative",
+      "chamber": "assembleia",
+      "snap": true,
+      "historical": {
+        "candidates": [
+          { "person": "prt.antonio_costa", "party": "prt.ps", "round": 1 },
+          { "person": "prt.rui_rio", "party": "prt.psd", "round": 1 }
+        ],
+        "party_results": [
+          { "party": "prt.ps", "share": 0.4138, "seats": 120 },
+          { "party": "prt.psd", "share": 0.2908, "seats": 77 },
+          { "party": "prt.chega", "share": 0.0718, "seats": 12 },
+          { "party": "prt.il", "share": 0.0492, "seats": 8 },
+          { "party": "prt.be", "share": 0.044, "seats": 5 },
+          { "party": "prt.pcp", "share": 0.0429, "seats": 6 },
+          { "party": "prt.pev", "seats": 0 },
+          { "party": "prt.cds_pp", "share": 0.016, "seats": 0 },
+          { "party": "prt.pan", "share": 0.0158, "seats": 1 },
+          { "party": "prt.livre", "share": 0.0128, "seats": 1 }
+        ],
+        "winner": "prt.ps",
+        "turnout": 0.515,
+        "note": "Early election after the 2022 budget was rejected and President Rebelo de Sousa dissolved the Assembly. PS absolute majority. The PSD total includes its joint lists with the CDS (and PPM) in Madeira and the Azores; all 77 seats went to PSD members. The CDU's 6 seats were all PCP; the PEV lost its seats for the first time. Voting in the Europe constituency was rerun later.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2022_Portuguese_legislative_election", "title": "Wikipedia: 2022 Portuguese legislative election (CNE results)", "accessed": "2026-10-15" },
+          { "url": "https://en.wikipedia.org/wiki/2024_Portuguese_legislative_election", "title": "Wikipedia: 2024 Portuguese legislative election (2022 seats all PSD)", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "ar_2024",
+      "date": "2024-03-10",
+      "kind": "legislative",
+      "chamber": "assembleia",
+      "snap": true,
+      "historical": {
+        "candidates": [
+          { "person": "prt.luis_montenegro", "party": "prt.psd", "round": 1 },
+          { "person": "prt.pedro_nuno_santos", "party": "prt.ps", "round": 1 },
+          { "person": "prt.andre_ventura", "party": "prt.chega", "round": 1 }
+        ],
+        "party_results": [
+          { "party": "prt.psd", "share": 0.2883, "seats": 78 },
+          { "party": "prt.cds_pp", "seats": 2 },
+          { "party": "prt.ps", "share": 0.2798, "seats": 78 },
+          { "party": "prt.chega", "share": 0.1806, "seats": 50 },
+          { "party": "prt.il", "share": 0.0494, "seats": 8 },
+          { "party": "prt.be", "share": 0.0436, "seats": 5 },
+          { "party": "prt.pcp", "share": 0.0317, "seats": 4 },
+          { "party": "prt.livre", "share": 0.0316, "seats": 4 },
+          { "party": "prt.pan", "share": 0.0195, "seats": 1 }
+        ],
+        "winner": "prt.psd",
+        "turnout": 0.599,
+        "note": "Early election after Prime Minister Costa resigned in November 2023. The PSD, CDS-PP and PPM ran as the Democratic Alliance (AD; PSD/CDS 'Madeira First' list in Madeira); the combined 28.8% is recorded under the PSD and its 80 seats were 78 PSD and 2 CDS-PP. The CDU's 4 seats were all PCP. Liberal Initiative's vote is 319,877 in the results table and 319,677 in the infobox; the table figure is used.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2024_Portuguese_legislative_election", "title": "Wikipedia: 2024 Portuguese legislative election (CNE results and seat splits)", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "ar_2025",
+      "date": "2025-05-18",
+      "kind": "legislative",
+      "chamber": "assembleia",
+      "snap": true,
+      "historical": {
+        "candidates": [
+          { "person": "prt.luis_montenegro", "party": "prt.psd", "round": 1 },
+          { "person": "prt.pedro_nuno_santos", "party": "prt.ps", "round": 1 },
+          { "person": "prt.andre_ventura", "party": "prt.chega", "round": 1 }
+        ],
+        "party_results": [
+          { "party": "prt.psd", "share": 0.3178, "seats": 89 },
+          { "party": "prt.cds_pp", "seats": 2 },
+          { "party": "prt.ps", "share": 0.2283, "seats": 58 },
+          { "party": "prt.chega", "share": 0.2276, "seats": 60 },
+          { "party": "prt.il", "share": 0.0536, "seats": 9 },
+          { "party": "prt.livre", "share": 0.0407, "seats": 6 },
+          { "party": "prt.pcp", "share": 0.0291, "seats": 3 },
+          { "party": "prt.be", "share": 0.0199, "seats": 1 },
+          { "party": "prt.pan", "share": 0.0138, "seats": 1 },
+          { "party": "prt.jpp", "share": 0.0033, "seats": 1 }
+        ],
+        "winner": "prt.psd",
+        "turnout": 0.583,
+        "note": "Early election after Montenegro's government lost a confidence vote on 11 March 2025. The AD joint lists' 31.8% is recorded under the PSD; its 91 seats were 89 PSD and 2 CDS-PP. Chega overtook the PS in seats (60 to 58) with slightly fewer votes.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2025_Portuguese_legislative_election", "title": "Wikipedia: 2025 Portuguese legislative election (CNE results)", "accessed": "2026-10-15" },
+          { "url": "https://en.wikipedia.org/wiki/Social_Democratic_Party_(Portugal)", "title": "Wikipedia: Social Democratic Party (Portugal) (2025 seats: 89)", "accessed": "2026-10-15" },
+          { "url": "https://en.wikipedia.org/wiki/CDS_%E2%80%93_People%27s_Party", "title": "Wikipedia: CDS – People's Party (2025 seats: 2)", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "pres_2026",
+      "date": "2026-01-18",
+      "kind": "presidential",
+      "office": "prt.president",
+      "rounds": 2,
+      "historical": {
+        "candidates": [
+          { "person": "prt.antonio_jose_seguro", "party": "prt.ps", "share": 0.3111, "votes": 1755563, "round": 1 },
+          { "person": "prt.andre_ventura", "party": "prt.chega", "share": 0.2352, "votes": 1327021, "round": 1 },
+          { "person": "prt.joao_cotrim_de_figueiredo", "party": "prt.il", "share": 0.16, "votes": 903057, "round": 1 },
+          { "person": "prt.henrique_gouveia_e_melo", "share": 0.1232, "votes": 695377, "round": 1 },
+          { "person": "prt.luis_marques_mendes", "party": "prt.psd", "share": 0.113, "votes": 637442, "round": 1 },
+          { "person": "prt.antonio_jose_seguro", "party": "prt.ps", "share": 0.6684, "votes": 3502613, "round": 2 },
+          { "person": "prt.andre_ventura", "party": "prt.chega", "share": 0.3316, "votes": 1737950, "round": 2 }
+        ],
+        "winner": "prt.antonio_jose_seguro",
+        "turnout": 0.5239,
+        "note": "First round 18 January, second round 8 February 2026 (postponed to 15 February in a few municipalities). Shares are of valid votes; turnout is for the first round (second round 50.0%). Six candidates below 5% are omitted. Gouveia e Melo ran as an independent backed by the People's Monarchist Party; Marques Mendes suspended his PSD membership to run, with PSD and CDS-PP support.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2026_Portuguese_presidential_election", "title": "Wikipedia: 2026 Portuguese presidential election (CNE official results)", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      }
+    }
+  ],
+  "source": [
+    { "url": "https://en.wikipedia.org/wiki/2025_Portuguese_legislative_election", "title": "Wikipedia: 2025 Portuguese legislative election (election timing rules)", "accessed": "2026-10-15" },
+    { "url": "https://en.wikipedia.org/wiki/2026_Portuguese_presidential_election", "title": "Wikipedia: 2026 Portuguese presidential election (50% threshold)", "accessed": "2026-10-15" }
+  ],
+  "confidence": "verified"
+}
