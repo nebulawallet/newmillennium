@@ -1,0 +1,806 @@
+{
+  "rules": [
+    {
+      "kind": "legislative",
+      "chamber": "riigikogu",
+      "every_years": 4,
+      "anchor": "2023-03-05",
+      "snap_possible": true,
+      "note": "Riigikogu elected every four years on the first Sunday of March; no early election since 1992. Next due March 2027."
+    },
+    {
+      "kind": "indirect_presidential",
+      "office": "est.president",
+      "every_years": 5,
+      "anchor": "2026-09-02",
+      "snap_possible": true,
+      "system": "legislature",
+      "note": "Riigikogu vote with a two-thirds majority in up to three rounds; otherwise an Electoral Assembly of MPs and local-government representatives."
+    }
+  ],
+  "elections": [
+    {
+      "id": "president_2001",
+      "date": "2001-09-21",
+      "kind": "indirect_presidential",
+      "office": "est.president",
+      "rounds": 5,
+      "historical": {
+        "candidates": [
+          {
+            "person": "est.peeter_kreitzberg",
+            "party": "est.kesk",
+            "votes": 40,
+            "round": 1
+          },
+          {
+            "person": "est.andres_tarand",
+            "party": "est.sde",
+            "votes": 38,
+            "round": 1
+          },
+          {
+            "person": "est.peeter_kreitzberg",
+            "party": "est.kesk",
+            "votes": 36,
+            "round": 2
+          },
+          {
+            "person": "est.peeter_tulviste",
+            "party": "est.isamaaliit",
+            "votes": 35,
+            "round": 2
+          },
+          {
+            "person": "est.peeter_kreitzberg",
+            "party": "est.kesk",
+            "votes": 33,
+            "round": 3
+          },
+          {
+            "person": "est.peeter_tulviste",
+            "party": "est.isamaaliit",
+            "votes": 33,
+            "round": 3
+          },
+          {
+            "person": "est.arnold_ruutel",
+            "party": "est.rahvaliit",
+            "votes": 114,
+            "round": 4
+          },
+          {
+            "person": "est.toomas_savi",
+            "party": "est.reform",
+            "votes": 90,
+            "round": 4
+          },
+          {
+            "person": "est.peeter_tulviste",
+            "party": "est.isamaaliit",
+            "votes": 89,
+            "round": 4
+          },
+          {
+            "person": "est.peeter_kreitzberg",
+            "party": "est.kesk",
+            "votes": 72,
+            "round": 4
+          },
+          {
+            "person": "est.arnold_ruutel",
+            "party": "est.rahvaliit",
+            "votes": 186,
+            "round": 5
+          },
+          {
+            "person": "est.toomas_savi",
+            "party": "est.reform",
+            "votes": 155,
+            "round": 5
+          }
+        ],
+        "winner": "est.arnold_ruutel",
+        "note": "Rounds 1-3 in the Riigikogu on 27 August 2001 (two-thirds majority, 68 votes, needed; none reached it). Rounds 4-5 in the Electoral Assembly (101 MPs and 266 local-government representatives) on 21 September 2001. Round numbers 4 and 5 are the assembly's first and second rounds.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2001_Estonian_presidential_election",
+            "title": "Wikipedia: 2001 Estonian presidential election",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "riigikogu_2003",
+      "date": "2003-03-02",
+      "kind": "legislative",
+      "chamber": "riigikogu",
+      "historical": {
+        "candidates": [
+          {
+            "person": "est.edgar_savisaar",
+            "party": "est.kesk",
+            "round": 1
+          },
+          {
+            "person": "est.juhan_parts",
+            "party": "est.res_publica",
+            "round": 1
+          },
+          {
+            "person": "est.siim_kallas",
+            "party": "est.reform",
+            "round": 1
+          }
+        ],
+        "party_results": [
+          {
+            "party": "est.kesk",
+            "share": 0.254,
+            "seats": 28
+          },
+          {
+            "party": "est.res_publica",
+            "share": 0.2462,
+            "seats": 28
+          },
+          {
+            "party": "est.reform",
+            "share": 0.1769,
+            "seats": 19
+          },
+          {
+            "party": "est.rahvaliit",
+            "share": 0.1303,
+            "seats": 13
+          },
+          {
+            "party": "est.isamaaliit",
+            "share": 0.0731,
+            "seats": 7
+          },
+          {
+            "party": "est.sde",
+            "share": 0.0704,
+            "seats": 6
+          },
+          {
+            "party": "est.eurp",
+            "share": 0.0225,
+            "seats": 0
+          }
+        ],
+        "winner": "est.kesk",
+        "turnout": 0.5824,
+        "note": "Shares computed from the vote counts (Nohlen & Stöver figures in the article). Centre won the most votes; Juhan Parts (Res Publica) formed a Res Publica, Reform and People's Union government on 10 April 2003. SDE ran as the Moderate People's Party.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2003_Estonian_parliamentary_election",
+            "title": "Wikipedia: 2003 Estonian parliamentary election (results table)",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "ref_eu_2003",
+      "date": "2003-09-14",
+      "kind": "referendum",
+      "question": "Membership of the European Union and amendment of the Constitution",
+      "historical": {
+        "yes_share": 0.6683,
+        "winner": "yes",
+        "turnout": 0.6406,
+        "note": "Yes 369,657; no 183,454; invalid 2,724; electorate 867,714. Shares and turnout computed from these figures.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2003_Estonian_European_Union_membership_referendum",
+            "title": "Wikipedia: 2003 Estonian European Union membership referendum",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "president_2006",
+      "date": "2006-09-23",
+      "kind": "indirect_presidential",
+      "office": "est.president",
+      "rounds": 4,
+      "historical": {
+        "candidates": [
+          {
+            "person": "est.ene_ergma",
+            "party": "est.isamaa",
+            "votes": 65,
+            "round": 1
+          },
+          {
+            "person": "est.toomas_hendrik_ilves",
+            "party": "est.sde",
+            "votes": 64,
+            "round": 2
+          },
+          {
+            "person": "est.toomas_hendrik_ilves",
+            "party": "est.sde",
+            "votes": 64,
+            "round": 3
+          },
+          {
+            "person": "est.toomas_hendrik_ilves",
+            "party": "est.sde",
+            "votes": 174,
+            "round": 4
+          },
+          {
+            "person": "est.arnold_ruutel",
+            "votes": 162,
+            "round": 4
+          }
+        ],
+        "winner": "est.toomas_hendrik_ilves",
+        "note": "Rounds 1-3 in the Riigikogu on 28-29 August 2006 (Ergma was the only candidate in round 1, Ilves in rounds 2-3); round 4 in the Electoral Assembly on 23 September 2006, where 173 votes were needed. Ilves was nominated by Reform, SDE and IRL; the incumbent Rüütel was nominated by the People's Union and Centre.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2006_Estonian_presidential_election",
+            "title": "Wikipedia: 2006 Estonian presidential election",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "riigikogu_2007",
+      "date": "2007-03-04",
+      "kind": "legislative",
+      "chamber": "riigikogu",
+      "historical": {
+        "candidates": [
+          {
+            "person": "est.andrus_ansip",
+            "party": "est.reform",
+            "round": 1
+          },
+          {
+            "person": "est.edgar_savisaar",
+            "party": "est.kesk",
+            "round": 1
+          }
+        ],
+        "party_results": [
+          {
+            "party": "est.reform",
+            "share": 0.2782,
+            "seats": 31
+          },
+          {
+            "party": "est.kesk",
+            "share": 0.2608,
+            "seats": 29
+          },
+          {
+            "party": "est.isamaa",
+            "share": 0.1787,
+            "seats": 19
+          },
+          {
+            "party": "est.sde",
+            "share": 0.1061,
+            "seats": 10
+          },
+          {
+            "party": "est.greens",
+            "share": 0.0714,
+            "seats": 6
+          },
+          {
+            "party": "est.rahvaliit",
+            "share": 0.0713,
+            "seats": 6
+          }
+        ],
+        "winner": "est.reform",
+        "turnout": 0.6191,
+        "note": "Shares computed from the vote counts. IRL is recorded as est.isamaa (Pro Patria and Res Publica Union, later renamed Isamaa); the article gives Tõnis Lukas and Taavi Veskimägi as its joint leaders.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2007_Estonian_parliamentary_election",
+            "title": "Wikipedia: 2007 Estonian parliamentary election (results table)",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "riigikogu_2011",
+      "date": "2011-03-06",
+      "kind": "legislative",
+      "chamber": "riigikogu",
+      "historical": {
+        "candidates": [
+          {
+            "person": "est.andrus_ansip",
+            "party": "est.reform",
+            "round": 1
+          },
+          {
+            "person": "est.edgar_savisaar",
+            "party": "est.kesk",
+            "round": 1
+          }
+        ],
+        "party_results": [
+          {
+            "party": "est.reform",
+            "share": 0.2856,
+            "seats": 33
+          },
+          {
+            "party": "est.kesk",
+            "share": 0.2332,
+            "seats": 26
+          },
+          {
+            "party": "est.isamaa",
+            "share": 0.2052,
+            "seats": 23
+          },
+          {
+            "party": "est.sde",
+            "share": 0.1709,
+            "seats": 19
+          },
+          {
+            "party": "est.greens",
+            "share": 0.0379,
+            "seats": 0
+          },
+          {
+            "party": "est.rahvaliit",
+            "share": 0.0212,
+            "seats": 0
+          }
+        ],
+        "winner": "est.reform",
+        "turnout": 0.6353,
+        "note": "Shares computed from the vote counts (VVK figures in the article).",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2011_Estonian_parliamentary_election",
+            "title": "Wikipedia: 2011 Estonian parliamentary election (results table)",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "president_2011",
+      "date": "2011-08-29",
+      "kind": "indirect_presidential",
+      "office": "est.president",
+      "rounds": 1,
+      "historical": {
+        "candidates": [
+          {
+            "person": "est.toomas_hendrik_ilves",
+            "party": "est.sde",
+            "votes": 73,
+            "round": 1
+          },
+          {
+            "person": "est.indrek_tarand",
+            "votes": 25,
+            "round": 1
+          }
+        ],
+        "winner": "est.toomas_hendrik_ilves",
+        "note": "Elected in the first round in the Riigikogu. Ilves was nominated by Reform, SDE and IRL; Indrek Tarand (independent) by Centre.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2011_Estonian_presidential_election",
+            "title": "Wikipedia: 2011 Estonian presidential election",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "riigikogu_2015",
+      "date": "2015-03-01",
+      "kind": "legislative",
+      "chamber": "riigikogu",
+      "historical": {
+        "candidates": [
+          {
+            "person": "est.taavi_roivas",
+            "party": "est.reform",
+            "round": 1
+          },
+          {
+            "person": "est.edgar_savisaar",
+            "party": "est.kesk",
+            "round": 1
+          }
+        ],
+        "party_results": [
+          {
+            "party": "est.reform",
+            "share": 0.2769,
+            "seats": 30
+          },
+          {
+            "party": "est.kesk",
+            "share": 0.2481,
+            "seats": 27
+          },
+          {
+            "party": "est.sde",
+            "share": 0.1519,
+            "seats": 15
+          },
+          {
+            "party": "est.isamaa",
+            "share": 0.1371,
+            "seats": 14
+          },
+          {
+            "party": "est.free_party",
+            "share": 0.0869,
+            "seats": 8
+          },
+          {
+            "party": "est.ekre",
+            "share": 0.0815,
+            "seats": 7
+          },
+          {
+            "party": "est.greens",
+            "share": 0.009,
+            "seats": 0
+          }
+        ],
+        "winner": "est.reform",
+        "turnout": 0.6423,
+        "note": "Shares computed from the vote counts (VVK figures in the article).",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2015_Estonian_parliamentary_election",
+            "title": "Wikipedia: 2015 Estonian parliamentary election (results table)",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "president_2016",
+      "date": "2016-10-03",
+      "kind": "indirect_presidential",
+      "office": "est.president",
+      "rounds": 6,
+      "historical": {
+        "candidates": [
+          {
+            "person": "est.eiki_nestor",
+            "party": "est.sde",
+            "votes": 40,
+            "round": 1
+          },
+          {
+            "person": "est.mailis_reps",
+            "party": "est.kesk",
+            "votes": 26,
+            "round": 1
+          },
+          {
+            "person": "est.allar_joks",
+            "votes": 25,
+            "round": 1
+          },
+          {
+            "person": "est.siim_kallas",
+            "party": "est.reform",
+            "votes": 45,
+            "round": 2
+          },
+          {
+            "person": "est.mailis_reps",
+            "party": "est.kesk",
+            "votes": 32,
+            "round": 2
+          },
+          {
+            "person": "est.allar_joks",
+            "votes": 21,
+            "round": 2
+          },
+          {
+            "person": "est.siim_kallas",
+            "party": "est.reform",
+            "votes": 42,
+            "round": 3
+          },
+          {
+            "person": "est.mailis_reps",
+            "party": "est.kesk",
+            "votes": 26,
+            "round": 3
+          },
+          {
+            "person": "est.allar_joks",
+            "votes": 83,
+            "round": 4
+          },
+          {
+            "person": "est.siim_kallas",
+            "party": "est.reform",
+            "votes": 81,
+            "round": 4
+          },
+          {
+            "person": "est.mailis_reps",
+            "party": "est.kesk",
+            "votes": 79,
+            "round": 4
+          },
+          {
+            "person": "est.marina_kaljurand",
+            "votes": 75,
+            "round": 4
+          },
+          {
+            "person": "est.siim_kallas",
+            "party": "est.reform",
+            "votes": 138,
+            "round": 5
+          },
+          {
+            "person": "est.allar_joks",
+            "votes": 134,
+            "round": 5
+          },
+          {
+            "person": "est.kersti_kaljulaid",
+            "votes": 81,
+            "round": 6
+          }
+        ],
+        "winner": "est.kersti_kaljulaid",
+        "note": "Rounds 1-3 in the Riigikogu on 29-30 August 2016; rounds 4-5 in the Electoral Assembly on 24 September 2016, which failed to elect; the election returned to the Riigikogu, which elected Kersti Kaljulaid (nominated by all parliamentary parties except EKRE) on 3 October 2016. Mart Helme (EKRE) also stood in assembly round 4; his vote count was not recorded here.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2016_Estonian_presidential_election",
+            "title": "Wikipedia: 2016 Estonian presidential election",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "riigikogu_2019",
+      "date": "2019-03-03",
+      "kind": "legislative",
+      "chamber": "riigikogu",
+      "historical": {
+        "candidates": [
+          {
+            "person": "est.kaja_kallas",
+            "party": "est.reform",
+            "round": 1
+          },
+          {
+            "person": "est.juri_ratas",
+            "party": "est.kesk",
+            "round": 1
+          }
+        ],
+        "party_results": [
+          {
+            "party": "est.reform",
+            "share": 0.2893,
+            "seats": 34
+          },
+          {
+            "party": "est.kesk",
+            "share": 0.231,
+            "seats": 26
+          },
+          {
+            "party": "est.ekre",
+            "share": 0.1776,
+            "seats": 19
+          },
+          {
+            "party": "est.isamaa",
+            "share": 0.1144,
+            "seats": 12
+          },
+          {
+            "party": "est.sde",
+            "share": 0.0983,
+            "seats": 10
+          },
+          {
+            "party": "est.e200",
+            "share": 0.0436,
+            "seats": 0
+          },
+          {
+            "party": "est.greens",
+            "share": 0.0182,
+            "seats": 0
+          },
+          {
+            "party": "est.free_party",
+            "share": 0.0115,
+            "seats": 0
+          }
+        ],
+        "winner": "est.reform",
+        "turnout": 0.6367,
+        "note": "Shares computed from the vote counts. Reform won the most seats, but Jüri Ratas formed a Centre, EKRE and Isamaa government on 29 April 2019.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2019_Estonian_parliamentary_election",
+            "title": "Wikipedia: 2019 Estonian parliamentary election (results table)",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "president_2021",
+      "date": "2021-08-31",
+      "kind": "indirect_presidential",
+      "office": "est.president",
+      "rounds": 2,
+      "historical": {
+        "candidates": [
+          {
+            "person": "est.alar_karis",
+            "votes": 63,
+            "round": 1
+          },
+          {
+            "person": "est.alar_karis",
+            "votes": 72,
+            "round": 2
+          }
+        ],
+        "winner": "est.alar_karis",
+        "note": "Sole candidate, nominated by Reform and Centre; elected in the second Riigikogu round on 31 August 2021 (first round 30 August).",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2021_Estonian_presidential_election",
+            "title": "Wikipedia: 2021 Estonian presidential election",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "riigikogu_2023",
+      "date": "2023-03-05",
+      "kind": "legislative",
+      "chamber": "riigikogu",
+      "historical": {
+        "candidates": [
+          {
+            "person": "est.kaja_kallas",
+            "party": "est.reform",
+            "round": 1
+          },
+          {
+            "person": "est.martin_helme",
+            "party": "est.ekre",
+            "round": 1
+          },
+          {
+            "person": "est.juri_ratas",
+            "party": "est.kesk",
+            "round": 1
+          }
+        ],
+        "party_results": [
+          {
+            "party": "est.reform",
+            "share": 0.3124,
+            "seats": 37
+          },
+          {
+            "party": "est.ekre",
+            "share": 0.1605,
+            "seats": 17
+          },
+          {
+            "party": "est.kesk",
+            "share": 0.1528,
+            "seats": 16
+          },
+          {
+            "party": "est.e200",
+            "share": 0.1333,
+            "seats": 14
+          },
+          {
+            "party": "est.sde",
+            "share": 0.0927,
+            "seats": 9
+          },
+          {
+            "party": "est.isamaa",
+            "share": 0.0821,
+            "seats": 8
+          },
+          {
+            "party": "est.greens",
+            "share": 0.0096,
+            "seats": 0
+          }
+        ],
+        "winner": "est.reform",
+        "turnout": 0.6353,
+        "note": "Shares computed from the vote counts (National Electoral Committee figures in the article). Turnout computed from valid plus invalid votes over the electorate.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2023_Estonian_parliamentary_election",
+            "title": "Wikipedia: 2023 Estonian parliamentary election (results table)",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "president_2026",
+      "date": "2026-09-02",
+      "kind": "indirect_presidential",
+      "office": "est.president",
+      "rounds": 1,
+      "historical": {
+        "candidates": [
+          {
+            "person": "est.ulle_madise",
+            "votes": 71,
+            "round": 1
+          }
+        ],
+        "winner": "est.ulle_madise",
+        "note": "Sole candidate, nominated by Reform, SDE, Estonia 200 and Isamaa; elected in the first Riigikogu round with 71 of 101 votes (68 needed). Sworn in on 12 October 2026. Post-June-2026 event checked against the fetched Wikipedia article.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2026_Estonian_presidential_election",
+            "title": "Wikipedia: 2026 Estonian presidential election",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    }
+  ],
+  "source": [
+    {
+      "url": "https://en.wikipedia.org/wiki/Elections_in_Estonia",
+      "title": "Wikipedia: Elections in Estonia",
+      "accessed": "2026-10-16"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/President_of_Estonia",
+      "title": "Wikipedia: President of Estonia (list of presidential elections)",
+      "accessed": "2026-10-16"
+    }
+  ],
+  "confidence": "verified"
+}

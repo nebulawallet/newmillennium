@@ -1,0 +1,1015 @@
+{
+  "rules": [
+    {
+      "kind": "legislative",
+      "chamber": "saeima",
+      "every_years": 4,
+      "anchor": "2026-10-03",
+      "snap_possible": true,
+      "note": "Saeima elected every four years (October elections since 1998); early dissolution possible by referendum on the President's initiative (2011)."
+    },
+    {
+      "kind": "indirect_presidential",
+      "office": "lva.president",
+      "every_years": 4,
+      "anchor": "2023-05-31",
+      "snap_possible": true,
+      "system": "legislature",
+      "note": "Elected by the Saeima with an absolute majority (51 of 100) in repeated rounds; four-year term, at most eight consecutive years."
+    }
+  ],
+  "elections": [
+    {
+      "id": "saeima_2002",
+      "date": "2002-10-05",
+      "kind": "legislative",
+      "chamber": "saeima",
+      "historical": {
+        "candidates": [
+          {
+            "person": "lva.einars_repse",
+            "party": "lva.jl",
+            "round": 1
+          },
+          {
+            "person": "lva.janis_jurkans",
+            "party": "lva.pctvl",
+            "round": 1
+          },
+          {
+            "person": "lva.andris_skele",
+            "party": "lva.tp",
+            "round": 1
+          }
+        ],
+        "party_results": [
+          {
+            "party": "lva.jl",
+            "share": 0.2398,
+            "seats": 26
+          },
+          {
+            "party": "lva.pctvl",
+            "share": 0.1909,
+            "seats": 25
+          },
+          {
+            "party": "lva.tp",
+            "share": 0.1669,
+            "seats": 20
+          },
+          {
+            "party": "lva.lpp",
+            "share": 0.0957,
+            "seats": 10
+          },
+          {
+            "party": "lva.zzs",
+            "share": 0.0947,
+            "seats": 12
+          },
+          {
+            "party": "lva.tb_lnnk",
+            "share": 0.0539,
+            "seats": 7
+          },
+          {
+            "party": "lva.lc",
+            "share": 0.0489,
+            "seats": 0
+          },
+          {
+            "party": "lva.lsdsp",
+            "share": 0.0402,
+            "seats": 0
+          }
+        ],
+        "winner": "lva.jl",
+        "turnout": 0.7703,
+        "note": "Shares computed from the vote counts (Nohlen & Stöver figures in the article). Turnout computed from these figures. Latvian Way fell just below the 5% threshold. PCTVL was an alliance of the National Harmony Party, Equal Rights and the Socialist Party, with Jānis Jurkāns (TSP) as leader. Einars Repše (New Era) formed the government on 7 November 2002.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2002_Latvian_parliamentary_election",
+            "title": "Wikipedia: 2002 Latvian parliamentary election (results table)",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "president_2003",
+      "date": "2003-06-20",
+      "kind": "indirect_presidential",
+      "office": "lva.president",
+      "rounds": 1,
+      "historical": {
+        "candidates": [
+          {
+            "person": "lva.vaira_vike_freiberga",
+            "votes": 88,
+            "round": 1
+          }
+        ],
+        "winner": "lva.vaira_vike_freiberga",
+        "note": "Re-elected by the Saeima with 88 votes (51 needed); sole candidate.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2003_Latvian_presidential_election",
+            "title": "Wikipedia: 2003 Latvian presidential election",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "ref_eu_2003",
+      "date": "2003-09-20",
+      "kind": "referendum",
+      "question": "Membership of the European Union",
+      "historical": {
+        "yes_share": 0.6749,
+        "winner": "yes",
+        "turnout": 0.7145,
+        "note": "For 676,700; against 325,980; invalid 7,787; electorate 1,414,133. Shares and turnout computed from these figures. ",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2003_Latvian_European_Union_membership_referendum",
+            "title": "Wikipedia: 2003 Latvian European Union membership referendum",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "saeima_2006",
+      "date": "2006-10-07",
+      "kind": "legislative",
+      "chamber": "saeima",
+      "historical": {
+        "candidates": [
+          {
+            "person": "lva.andris_skele",
+            "party": "lva.tp",
+            "round": 1
+          },
+          {
+            "person": "lva.aivars_lembergs",
+            "party": "lva.zzs",
+            "round": 1
+          },
+          {
+            "person": "lva.einars_repse",
+            "party": "lva.jl",
+            "round": 1
+          }
+        ],
+        "party_results": [
+          {
+            "party": "lva.tp",
+            "share": 0.1968,
+            "seats": 23
+          },
+          {
+            "party": "lva.zzs",
+            "share": 0.1681,
+            "seats": 18
+          },
+          {
+            "party": "lva.jl",
+            "share": 0.1648,
+            "seats": 18
+          },
+          {
+            "party": "lva.harmony_centre",
+            "share": 0.1452,
+            "seats": 17
+          },
+          {
+            "party": "lva.lpp_lc",
+            "share": 0.0864,
+            "seats": 10
+          },
+          {
+            "party": "lva.tb_lnnk",
+            "share": 0.0699,
+            "seats": 8
+          },
+          {
+            "party": "lva.pctvl",
+            "share": 0.0606,
+            "seats": 6
+          },
+          {
+            "party": "lva.lsdsp",
+            "share": 0.0352,
+            "seats": 0
+          }
+        ],
+        "winner": "lva.tp",
+        "turnout": 0.6098,
+        "note": "Shares computed from the vote counts. Leaders as listed in the article infobox (Lembergs was the ZZS candidate for prime minister). Aigars Kalvītis (People's Party) continued as Prime Minister.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2006_Latvian_parliamentary_election",
+            "title": "Wikipedia: 2006 Latvian parliamentary election (results table)",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "president_2007",
+      "date": "2007-05-31",
+      "kind": "indirect_presidential",
+      "office": "lva.president",
+      "rounds": 1,
+      "historical": {
+        "candidates": [
+          {
+            "person": "lva.valdis_zatlers",
+            "votes": 58,
+            "round": 1
+          },
+          {
+            "person": "lva.aivars_endzins",
+            "votes": 39,
+            "round": 1
+          }
+        ],
+        "winner": "lva.valdis_zatlers",
+        "note": "Elected by the Saeima; Zatlers was the governing coalition's candidate.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2007_Latvian_presidential_election",
+            "title": "Wikipedia: 2007 Latvian presidential election",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "ref_security_laws_2007",
+      "date": "2007-07-07",
+      "kind": "referendum",
+      "question": "Repeal of the amendments to the National Security Law of 1 March 2007 (first of two questions)",
+      "historical": {
+        "yes_share": 0.9697,
+        "winner": "no",
+        "turnout": 0.2259,
+        "note": "For 326,479; against 10,207; invalid 1,662; electorate 1,497,946. Shares and turnout computed from these figures. The repeal won a majority of votes cast but the referendum failed because turnout was below the required quorum; the amendments had already been withdrawn. A second question on the State Security Authorities Law had 326,189 votes for.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2007_Latvian_security_laws_referendum",
+            "title": "Wikipedia: 2007 Latvian security laws referendum",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "ref_constitution_2008",
+      "date": "2008-08-02",
+      "kind": "referendum",
+      "question": "Constitutional amendment allowing one tenth of voters to initiate a referendum on dissolving the Saeima",
+      "historical": {
+        "yes_share": 0.97,
+        "winner": "no",
+        "turnout": 0.4152,
+        "note": "For 608,847; against 18,857; invalid 1,415; electorate 1,515,213. Shares and turnout computed from these figures. Failed: turnout (41.5%) was below the required 50% of the electorate, although most voters supported the amendment.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2008_Latvian_constitutional_referendum",
+            "title": "Wikipedia: 2008 Latvian constitutional referendum",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "ref_pensions_2008",
+      "date": "2008-08-23",
+      "kind": "referendum",
+      "question": "Amendments to the State Pensions Law",
+      "historical": {
+        "yes_share": 0.9638,
+        "winner": "no",
+        "turnout": 0.229,
+        "note": "For 333,799; against 12,524; invalid 859; electorate 1,516,097. Shares and turnout computed from these figures. Failed: turnout was below the required quorum. The infobox lists 794 invalid votes and the results table 859; 859 is used.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2008_Latvian_pensions_law_referendum",
+            "title": "Wikipedia: 2008 Latvian pensions law referendum",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "saeima_2010",
+      "date": "2010-10-02",
+      "kind": "legislative",
+      "chamber": "saeima",
+      "historical": {
+        "candidates": [
+          {
+            "person": "lva.valdis_dombrovskis",
+            "party": "lva.unity",
+            "round": 1
+          },
+          {
+            "person": "lva.janis_urbanovics",
+            "party": "lva.harmony_centre",
+            "round": 1
+          },
+          {
+            "person": "lva.aivars_lembergs",
+            "party": "lva.zzs",
+            "round": 1
+          }
+        ],
+        "party_results": [
+          {
+            "party": "lva.unity",
+            "share": 0.319,
+            "seats": 33
+          },
+          {
+            "party": "lva.harmony_centre",
+            "share": 0.2661,
+            "seats": 29
+          },
+          {
+            "party": "lva.zzs",
+            "share": 0.2011,
+            "seats": 22
+          },
+          {
+            "party": "lva.na",
+            "share": 0.0784,
+            "seats": 8
+          },
+          {
+            "party": "lva.tp",
+            "share": 0.0782,
+            "seats": 8
+          }
+        ],
+        "winner": "lva.unity",
+        "note": "Shares are the infobox percentages: the article's results table omits Unity's vote count. For a Good Latvia (People's Party with LPP/LC) is recorded under the People's Party. Turnout not recorded.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2010_Latvian_parliamentary_election",
+            "title": "Wikipedia: 2010 Latvian parliamentary election (infobox)",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "president_2011",
+      "date": "2011-06-02",
+      "kind": "indirect_presidential",
+      "office": "lva.president",
+      "rounds": 2,
+      "historical": {
+        "candidates": [
+          {
+            "person": "lva.andris_berzins_president",
+            "party": "lva.zzs",
+            "votes": 50,
+            "round": 1
+          },
+          {
+            "person": "lva.valdis_zatlers",
+            "votes": 43,
+            "round": 1
+          },
+          {
+            "person": "lva.andris_berzins_president",
+            "party": "lva.zzs",
+            "votes": 53,
+            "round": 2
+          },
+          {
+            "person": "lva.valdis_zatlers",
+            "votes": 44,
+            "round": 2
+          }
+        ],
+        "winner": "lva.andris_berzins_president",
+        "note": "First round: Bērziņš 50 for, Zatlers 43 for (51 needed); second round the same day: Bērziņš 53, Zatlers 44 (article text). The infobox gives Zatlers 41 in the deciding round; the text figure is used.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2011_Latvian_presidential_election",
+            "title": "Wikipedia: 2011 Latvian presidential election",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "ref_dissolution_2011",
+      "date": "2011-07-23",
+      "kind": "referendum",
+      "question": "Dissolution of the 10th Saeima (initiated by President Zatlers)",
+      "historical": {
+        "yes_share": 0.945,
+        "winner": "yes",
+        "turnout": 0.4472,
+        "note": "For 650,518; against 37,829; invalid 1,476; electorate 1,542,593. Shares and turnout computed from these figures. The Saeima was dissolved and an early election held on 17 September 2011.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2011_Latvian_parliamentary_dissolution_referendum",
+            "title": "Wikipedia: 2011 Latvian parliamentary dissolution referendum",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "saeima_2011",
+      "date": "2011-09-17",
+      "kind": "legislative",
+      "chamber": "saeima",
+      "snap": true,
+      "historical": {
+        "candidates": [
+          {
+            "person": "lva.janis_urbanovics",
+            "party": "lva.harmony_centre",
+            "round": 1
+          },
+          {
+            "person": "lva.valdis_zatlers",
+            "party": "lva.zrp",
+            "round": 1
+          },
+          {
+            "person": "lva.valdis_dombrovskis",
+            "party": "lva.unity",
+            "round": 1
+          }
+        ],
+        "party_results": [
+          {
+            "party": "lva.harmony_centre",
+            "share": 0.2862,
+            "seats": 31
+          },
+          {
+            "party": "lva.zrp",
+            "share": 0.2101,
+            "seats": 22
+          },
+          {
+            "party": "lva.unity",
+            "share": 0.19,
+            "seats": 20
+          },
+          {
+            "party": "lva.na",
+            "share": 0.1401,
+            "seats": 14
+          },
+          {
+            "party": "lva.zzs",
+            "share": 0.1233,
+            "seats": 13
+          },
+          {
+            "party": "lva.lpp_lc",
+            "share": 0.0244,
+            "seats": 0
+          },
+          {
+            "party": "lva.pctvl",
+            "share": 0.0078,
+            "seats": 0
+          }
+        ],
+        "winner": "lva.harmony_centre",
+        "turnout": 0.5941,
+        "note": "Snap election after the 2011 dissolution referendum. Shares computed from the vote counts. Harmony Centre won the most seats; Valdis Dombrovskis formed a Unity, Reform Party and National Alliance government.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2011_Latvian_parliamentary_election",
+            "title": "Wikipedia: 2011 Latvian parliamentary election (results table)",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "ref_language_2012",
+      "date": "2012-02-18",
+      "kind": "referendum",
+      "question": "Constitutional amendments making Russian the second official language",
+      "historical": {
+        "yes_share": 0.2496,
+        "winner": "no",
+        "turnout": 0.7116,
+        "note": "For 273,347; against 821,722; invalid 3,524; electorate 1,543,786. Shares and turnout computed from these figures. The infobox gives an electorate of 1,545,004 and the results table 1,543,786; the table figure is used.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2012_Latvian_constitutional_referendum",
+            "title": "Wikipedia: 2012 Latvian constitutional referendum",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "saeima_2014",
+      "date": "2014-10-04",
+      "kind": "legislative",
+      "chamber": "saeima",
+      "historical": {
+        "candidates": [
+          {
+            "person": "lva.nils_usakovs",
+            "party": "lva.harmony",
+            "round": 1
+          },
+          {
+            "person": "lva.laimdota_straujuma",
+            "party": "lva.unity",
+            "round": 1
+          },
+          {
+            "person": "lva.raivis_dzintars",
+            "party": "lva.na",
+            "round": 1
+          }
+        ],
+        "party_results": [
+          {
+            "party": "lva.harmony",
+            "share": 0.2315,
+            "seats": 24
+          },
+          {
+            "party": "lva.unity",
+            "share": 0.2201,
+            "seats": 23
+          },
+          {
+            "party": "lva.zzs",
+            "share": 0.1966,
+            "seats": 21
+          },
+          {
+            "party": "lva.na",
+            "share": 0.1672,
+            "seats": 17
+          },
+          {
+            "party": "lva.nsl",
+            "share": 0.069,
+            "seats": 7
+          },
+          {
+            "party": "lva.lra",
+            "share": 0.0671,
+            "seats": 8
+          },
+          {
+            "party": "lva.pctvl",
+            "share": 0.0159,
+            "seats": 0
+          },
+          {
+            "party": "lva.jkp",
+            "share": 0.007,
+            "seats": 0
+          }
+        ],
+        "winner": "lva.harmony",
+        "turnout": 0.5885,
+        "note": "Shares computed from the vote counts. Harmony won the most seats; Laimdota Straujuma (Unity) continued as Prime Minister. The Latvian Russian Union (former PCTVL) is recorded under lva.pctvl.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2014_Latvian_parliamentary_election",
+            "title": "Wikipedia: 2014 Latvian parliamentary election (results table)",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "president_2015",
+      "date": "2015-06-03",
+      "kind": "indirect_presidential",
+      "office": "lva.president",
+      "rounds": 4,
+      "historical": {
+        "candidates": [
+          {
+            "person": "lva.raimonds_vejonis",
+            "party": "lva.zzs",
+            "votes": 55,
+            "round": 4
+          },
+          {
+            "person": "lva.egils_levits",
+            "votes": 42,
+            "round": 4
+          }
+        ],
+        "winner": "lva.raimonds_vejonis",
+        "note": "Fourth Saeima round. Mārtiņš Bondars and Sergejs Dolgopolovs were eliminated in earlier rounds; earlier round votes are not recorded here. Vējonis (Latvian Green Party, part of ZZS) took office on 8 July 2015.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2015_Latvian_presidential_election",
+            "title": "Wikipedia: 2015 Latvian presidential election",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "saeima_2018",
+      "date": "2018-10-06",
+      "kind": "legislative",
+      "chamber": "saeima",
+      "historical": {
+        "candidates": [
+          {
+            "person": "lva.vjaceslavs_dombrovskis",
+            "party": "lva.harmony",
+            "round": 1
+          },
+          {
+            "person": "lva.aldis_gobzems",
+            "party": "lva.kpv",
+            "round": 1
+          },
+          {
+            "person": "lva.janis_bordans",
+            "party": "lva.jkp",
+            "round": 1
+          },
+          {
+            "person": "lva.arturs_krisjanis_karins",
+            "party": "lva.new_unity",
+            "round": 1
+          }
+        ],
+        "party_results": [
+          {
+            "party": "lva.harmony",
+            "share": 0.1992,
+            "seats": 23
+          },
+          {
+            "party": "lva.kpv",
+            "share": 0.1433,
+            "seats": 16
+          },
+          {
+            "party": "lva.jkp",
+            "share": 0.1367,
+            "seats": 16
+          },
+          {
+            "party": "lva.ap",
+            "share": 0.1212,
+            "seats": 13
+          },
+          {
+            "party": "lva.na",
+            "share": 0.1108,
+            "seats": 13
+          },
+          {
+            "party": "lva.zzs",
+            "share": 0.0997,
+            "seats": 11
+          },
+          {
+            "party": "lva.new_unity",
+            "share": 0.0674,
+            "seats": 8
+          },
+          {
+            "party": "lva.lra",
+            "share": 0.0417,
+            "seats": 0
+          },
+          {
+            "party": "lva.pctvl",
+            "share": 0.0322,
+            "seats": 0
+          },
+          {
+            "party": "lva.progressives",
+            "share": 0.0263,
+            "seats": 0
+          }
+        ],
+        "winner": "lva.harmony",
+        "turnout": 0.5458,
+        "note": "Shares computed from the vote counts. Harmony won the most seats; Krišjānis Kariņš (New Unity) formed a five-party government on 23 January 2019.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2018_Latvian_parliamentary_election",
+            "title": "Wikipedia: 2018 Latvian parliamentary election (results table)",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "president_2019",
+      "date": "2019-05-29",
+      "kind": "indirect_presidential",
+      "office": "lva.president",
+      "rounds": 1,
+      "historical": {
+        "candidates": [
+          {
+            "person": "lva.egils_levits",
+            "votes": 61,
+            "round": 1
+          }
+        ],
+        "winner": "lva.egils_levits",
+        "note": "Elected in the first Saeima round (51 needed); runner-up Didzis Šmits (KPV LV) received 24 votes but has no Wikipedia/Wikidata entry, so he is not recorded as a person. Levits took office on 8 July 2019.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2019_Latvian_presidential_election",
+            "title": "Wikipedia: 2019 Latvian presidential election",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "saeima_2022",
+      "date": "2022-10-01",
+      "kind": "legislative",
+      "chamber": "saeima",
+      "historical": {
+        "candidates": [
+          {
+            "person": "lva.arturs_krisjanis_karins",
+            "party": "lva.new_unity",
+            "round": 1
+          },
+          {
+            "person": "lva.aivars_lembergs",
+            "party": "lva.zzs",
+            "round": 1
+          },
+          {
+            "person": "lva.uldis_pilens",
+            "party": "lva.as",
+            "round": 1
+          }
+        ],
+        "party_results": [
+          {
+            "party": "lva.new_unity",
+            "share": 0.1919,
+            "seats": 26
+          },
+          {
+            "party": "lva.zzs",
+            "share": 0.1258,
+            "seats": 16
+          },
+          {
+            "party": "lva.as",
+            "share": 0.1114,
+            "seats": 15
+          },
+          {
+            "party": "lva.na",
+            "share": 0.094,
+            "seats": 13
+          },
+          {
+            "party": "lva.stabilitatei",
+            "share": 0.0688,
+            "seats": 11
+          },
+          {
+            "party": "lva.lpv",
+            "share": 0.0631,
+            "seats": 9
+          },
+          {
+            "party": "lva.progressives",
+            "share": 0.0623,
+            "seats": 10
+          },
+          {
+            "party": "lva.ap",
+            "share": 0.0503,
+            "seats": 0
+          },
+          {
+            "party": "lva.harmony",
+            "share": 0.0486,
+            "seats": 0
+          },
+          {
+            "party": "lva.pctvl",
+            "share": 0.0367,
+            "seats": 0
+          },
+          {
+            "party": "lva.sv",
+            "share": 0.0328,
+            "seats": 0
+          }
+        ],
+        "winner": "lva.new_unity",
+        "turnout": 0.5941,
+        "note": "Shares computed from the vote counts. Kariņš formed his second government (New Unity, National Alliance, United List) on 14 December 2022.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2022_Latvian_parliamentary_election",
+            "title": "Wikipedia: 2022 Latvian parliamentary election (results table)",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "president_2023",
+      "date": "2023-05-31",
+      "kind": "indirect_presidential",
+      "office": "lva.president",
+      "rounds": 3,
+      "historical": {
+        "candidates": [
+          {
+            "person": "lva.edgars_rinkevics",
+            "party": "lva.new_unity",
+            "votes": 42,
+            "round": 1
+          },
+          {
+            "person": "lva.uldis_pilens",
+            "party": "lva.as",
+            "votes": 25,
+            "round": 1
+          },
+          {
+            "person": "lva.edgars_rinkevics",
+            "party": "lva.new_unity",
+            "votes": 42,
+            "round": 2
+          },
+          {
+            "person": "lva.uldis_pilens",
+            "party": "lva.as",
+            "votes": 25,
+            "round": 2
+          },
+          {
+            "person": "lva.edgars_rinkevics",
+            "party": "lva.new_unity",
+            "votes": 52,
+            "round": 3
+          },
+          {
+            "person": "lva.uldis_pilens",
+            "party": "lva.as",
+            "votes": 25,
+            "round": 3
+          }
+        ],
+        "winner": "lva.edgars_rinkevics",
+        "note": "Three Saeima rounds; Elīna Pinto (the Progressives' candidate, 10 votes in rounds 1-2; no Wikipedia/Wikidata entry, so not recorded as a person) was eliminated after round 2. Incumbent Egils Levits withdrew before the vote. Rinkēvičs took office on 8 July 2023.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2023_Latvian_presidential_election",
+            "title": "Wikipedia: 2023 Latvian presidential election",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "saeima_2026",
+      "date": "2026-10-03",
+      "kind": "legislative",
+      "chamber": "saeima",
+      "historical": {
+        "candidates": [
+          {
+            "person": "lva.andris_kulbergs",
+            "party": "lva.as",
+            "round": 1
+          },
+          {
+            "person": "lva.ainars_slesers",
+            "party": "lva.lpv",
+            "round": 1
+          },
+          {
+            "person": "lva.julija_stepanenko",
+            "party": "lva.sv",
+            "round": 1
+          }
+        ],
+        "party_results": [
+          {
+            "party": "lva.as",
+            "share": 0.3576,
+            "seats": 41
+          },
+          {
+            "party": "lva.lpv",
+            "share": 0.1325,
+            "seats": 17
+          },
+          {
+            "party": "lva.sv",
+            "share": 0.1187,
+            "seats": 15
+          },
+          {
+            "party": "lva.na",
+            "share": 0.0902,
+            "seats": 10
+          },
+          {
+            "party": "lva.progressives",
+            "share": 0.0798,
+            "seats": 10
+          },
+          {
+            "party": "lva.new_unity",
+            "share": 0.0645,
+            "seats": 7
+          },
+          {
+            "party": "lva.zzs",
+            "share": 0.0446,
+            "seats": 0
+          },
+          {
+            "party": "lva.stabilitatei",
+            "share": 0.0202,
+            "seats": 0
+          },
+          {
+            "party": "lva.harmony",
+            "share": 0.0083,
+            "seats": 0
+          },
+          {
+            "party": "lva.jkp",
+            "share": 0.0033,
+            "seats": 0
+          }
+        ],
+        "winner": "lva.as",
+        "turnout": 0.5179,
+        "note": "Post-June-2026 election, checked against the fetched Wikipedia article (results table and infobox; infobox turnout 51.79%). Shares computed from the vote counts. Sovereign Power ran on a joint list with the Alliance of Young Latvians, recorded under lva.sv. Government formation was still pending in the article (Kulbergs is the incumbent Prime Minister).",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2026_Latvian_parliamentary_election",
+            "title": "Wikipedia: 2026 Latvian parliamentary election (results table)",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    }
+  ],
+  "source": [
+    {
+      "url": "https://en.wikipedia.org/wiki/Template:Latvian_elections",
+      "title": "Wikipedia: Template:Latvian elections",
+      "accessed": "2026-10-16"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/President_of_Latvia",
+      "title": "Wikipedia: President of Latvia (list of presidents and elections)",
+      "accessed": "2026-10-16"
+    }
+  ],
+  "confidence": "verified"
+}

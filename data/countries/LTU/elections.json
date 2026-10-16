@@ -1,0 +1,1155 @@
+{
+  "rules": [
+    {
+      "kind": "legislative",
+      "chamber": "seimas",
+      "every_years": 4,
+      "anchor": "2024-10-13",
+      "snap_possible": true,
+      "note": "Seimas elected every four years in October: 71 single-member seats (two rounds) and 70 nationwide list seats."
+    },
+    {
+      "kind": "presidential",
+      "office": "ltu.president",
+      "every_years": 5,
+      "anchor": "2024-05-12",
+      "snap_possible": true,
+      "note": "Direct two-round election; early election held in 2004 after the removal of the President."
+    }
+  ],
+  "elections": [
+    {
+      "id": "seimas_2000",
+      "date": "2000-10-08",
+      "kind": "legislative",
+      "chamber": "seimas",
+      "historical": {
+        "candidates": [
+          {
+            "person": "ltu.algirdas_brazauskas",
+            "party": "ltu.lddp",
+            "round": 1
+          },
+          {
+            "person": "ltu.arturas_paulauskas",
+            "party": "ltu.ns",
+            "round": 1
+          },
+          {
+            "person": "ltu.rolandas_paksas",
+            "party": "ltu.lls",
+            "round": 1
+          },
+          {
+            "person": "ltu.vytautas_landsbergis",
+            "party": "ltu.ts",
+            "round": 1
+          }
+        ],
+        "party_results": [
+          {
+            "party": "ltu.lddp",
+            "share": 0.3108,
+            "seats": 26
+          },
+          {
+            "party": "ltu.lsdp",
+            "seats": 19
+          },
+          {
+            "party": "ltu.nd",
+            "seats": 3
+          },
+          {
+            "party": "ltu.lls",
+            "share": 0.1725,
+            "seats": 34
+          },
+          {
+            "party": "ltu.ns",
+            "share": 0.1964,
+            "seats": 29
+          },
+          {
+            "party": "ltu.ts",
+            "share": 0.0862,
+            "seats": 9
+          },
+          {
+            "party": "ltu.lvzs",
+            "share": 0.0408,
+            "seats": 4
+          },
+          {
+            "party": "ltu.lkdp",
+            "share": 0.0307,
+            "seats": 2
+          },
+          {
+            "party": "ltu.lcs",
+            "share": 0.0286,
+            "seats": 2
+          },
+          {
+            "party": "ltu.awpl",
+            "share": 0.0195,
+            "seats": 2
+          },
+          {
+            "party": "others",
+            "seats": 8
+          },
+          {
+            "party": "independents",
+            "seats": 3
+          }
+        ],
+        "winner": "ltu.lddp",
+        "turnout": 0.5863,
+        "note": "Shares are the nationwide list (PR) vote percentages from the article infobox; seats are totals from both tiers (70 list seats plus 71 single-member seats). The Social-Democratic Coalition of Algirdas Brazauskas (31.08%, 51 seats) is split by member: LDDP 26 (share recorded here), LSDP 19, New Democracy 3, and the Russian Union 3 (in others). As the largest list the coalition's leading party (LDDP) is the winner, although the Liberal Union was the largest single party (34 seats) and Paksas formed the government. Others: Christian Democratic Union, Christian Conservative Social Union, Liberty Union, Young Lithuania and Modern Christian-Democratic Union (1 each) and the Russian Union (3).",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2000_Lithuanian_parliamentary_election",
+            "title": "Wikipedia: 2000 Lithuanian parliamentary election (infobox and results table)",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "president_2002",
+      "date": "2002-12-22",
+      "kind": "presidential",
+      "office": "ltu.president",
+      "rounds": 2,
+      "historical": {
+        "candidates": [
+          {
+            "person": "ltu.valdas_adamkus",
+            "share": 0.3553,
+            "votes": 514154,
+            "round": 1
+          },
+          {
+            "person": "ltu.rolandas_paksas",
+            "party": "ltu.tt",
+            "share": 0.1966,
+            "votes": 284559,
+            "round": 1
+          },
+          {
+            "person": "ltu.arturas_paulauskas",
+            "party": "ltu.ns",
+            "share": 0.0831,
+            "votes": 120238,
+            "round": 1
+          },
+          {
+            "person": "ltu.vytenis_andriukaitis",
+            "party": "ltu.lsdp",
+            "share": 0.073,
+            "votes": 105584,
+            "round": 1
+          },
+          {
+            "person": "ltu.kazimira_prunskiene",
+            "party": "ltu.lvzs",
+            "share": 0.0504,
+            "votes": 72925,
+            "round": 1
+          },
+          {
+            "person": "ltu.rolandas_paksas",
+            "party": "ltu.tt",
+            "share": 0.5471,
+            "votes": 777769,
+            "round": 2
+          },
+          {
+            "person": "ltu.valdas_adamkus",
+            "share": 0.4529,
+            "votes": 643870,
+            "round": 2
+          }
+        ],
+        "winner": "ltu.rolandas_paksas",
+        "note": "Shares computed from the vote counts in the article's results table (valid votes); candidates below 5% and without articles are counted in the total but not listed. First round 22 December 2002, runoff 5 January 2003. Paksas stood for the Liberal Democratic Party (later Order and Justice). Vytautas Šerėnas (independent, 7.8%) has no Wikipedia article and is not listed. Infobox turnout 53.92% (first round) and 52.65% (runoff).",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2002%E2%80%9303_Lithuanian_presidential_election",
+            "title": "Wikipedia: 2002–03 Lithuanian presidential election",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "ref_eu_2003",
+      "date": "2003-05-11",
+      "kind": "referendum",
+      "question": "Membership of the European Union",
+      "historical": {
+        "yes_share": 0.9107,
+        "winner": "yes",
+        "turnout": 0.6337,
+        "note": "For 1,504,264; against 147,527; invalid 20,526; electorate 2,638,886. Shares and turnout computed from these figures. Held over two days, 10-11 May 2003.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2003_Lithuanian_European_Union_membership_referendum",
+            "title": "Wikipedia: 2003 Lithuanian European Union membership referendum",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "president_2004",
+      "date": "2004-06-13",
+      "kind": "presidential",
+      "office": "ltu.president",
+      "rounds": 2,
+      "historical": {
+        "candidates": [
+          {
+            "person": "ltu.valdas_adamkus",
+            "share": 0.3114,
+            "votes": 387837,
+            "round": 1
+          },
+          {
+            "person": "ltu.kazimira_prunskiene",
+            "party": "ltu.lvzs",
+            "share": 0.2125,
+            "votes": 264681,
+            "round": 1
+          },
+          {
+            "person": "ltu.petras_austrevicius",
+            "share": 0.193,
+            "votes": 240413,
+            "round": 1
+          },
+          {
+            "person": "ltu.vilija_blinkeviciute",
+            "party": "ltu.ns",
+            "share": 0.1645,
+            "votes": 204819,
+            "round": 1
+          },
+          {
+            "person": "ltu.ceslovas_jursenas",
+            "party": "ltu.lsdp",
+            "share": 0.1185,
+            "votes": 147610,
+            "round": 1
+          },
+          {
+            "person": "ltu.valdas_adamkus",
+            "share": 0.5265,
+            "votes": 723891,
+            "round": 2
+          },
+          {
+            "person": "ltu.kazimira_prunskiene",
+            "party": "ltu.lvzs",
+            "share": 0.4735,
+            "votes": 651024,
+            "round": 2
+          }
+        ],
+        "winner": "ltu.valdas_adamkus",
+        "note": "Shares computed from the vote counts in the article's results table (valid votes); candidates below 5% and without articles are counted in the total but not listed. Early election after the removal of President Paksas. First round 13 June, runoff 27 June 2004. Infobox turnout 48.40% and 52.46%.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2004_Lithuanian_presidential_election",
+            "title": "Wikipedia: 2004 Lithuanian presidential election",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "seimas_2004",
+      "date": "2004-10-10",
+      "kind": "legislative",
+      "chamber": "seimas",
+      "historical": {
+        "candidates": [
+          {
+            "person": "ltu.viktor_uspaskich",
+            "party": "ltu.dp",
+            "round": 1
+          },
+          {
+            "person": "ltu.algirdas_brazauskas",
+            "party": "ltu.lsdp",
+            "round": 1
+          },
+          {
+            "person": "ltu.andrius_kubilius",
+            "party": "ltu.ts",
+            "round": 1
+          }
+        ],
+        "party_results": [
+          {
+            "party": "ltu.dp",
+            "share": 0.2844,
+            "seats": 39
+          },
+          {
+            "party": "ltu.lsdp",
+            "share": 0.2065,
+            "seats": 20
+          },
+          {
+            "party": "ltu.ns",
+            "seats": 11
+          },
+          {
+            "party": "ltu.ts",
+            "share": 0.1475,
+            "seats": 25
+          },
+          {
+            "party": "ltu.tt",
+            "share": 0.1136,
+            "seats": 10
+          },
+          {
+            "party": "ltu.lics",
+            "share": 0.0919,
+            "seats": 18
+          },
+          {
+            "party": "ltu.lvzs",
+            "share": 0.066,
+            "seats": 10
+          },
+          {
+            "party": "ltu.awpl",
+            "share": 0.0379,
+            "seats": 2
+          },
+          {
+            "party": "independents",
+            "seats": 6
+          }
+        ],
+        "winner": "ltu.dp",
+        "turnout": 0.4608,
+        "note": "Shares are the nationwide list (PR) vote percentages from the article infobox; seats are totals from both tiers (70 list seats plus 71 single-member seats). The LSDP and New Union ran a joint list (20.65%, recorded under LSDP) and won 20 and 11 seats respectively. Order and Justice ran as the Liberal Democratic Party. Brazauskas continued as Prime Minister at the head of an LSDP, Labour, Peasants and New Union coalition.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2004_Lithuanian_parliamentary_election",
+            "title": "Wikipedia: 2004 Lithuanian parliamentary election (infobox and results table)",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "ref_nuclear_2008",
+      "date": "2008-10-12",
+      "kind": "referendum",
+      "question": "Extending the operation of the Ignalina Nuclear Power Plant",
+      "historical": {
+        "yes_share": 0.914,
+        "winner": "no",
+        "turnout": 0.4843,
+        "note": "For 1,156,738; against 108,798; invalid 40,289; electorate 2,696,090. Shares and turnout computed from these figures. Failed: although most voters were in favour, turnout was below the 50% threshold.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2008_Lithuanian_nuclear_power_referendum",
+            "title": "Wikipedia: 2008 Lithuanian nuclear power referendum",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "seimas_2008",
+      "date": "2008-10-12",
+      "kind": "legislative",
+      "chamber": "seimas",
+      "historical": {
+        "candidates": [
+          {
+            "person": "ltu.andrius_kubilius",
+            "party": "ltu.ts",
+            "round": 1
+          },
+          {
+            "person": "ltu.arunas_valinskas",
+            "party": "ltu.tpp",
+            "round": 1
+          },
+          {
+            "person": "ltu.rolandas_paksas",
+            "party": "ltu.tt",
+            "round": 1
+          },
+          {
+            "person": "ltu.gediminas_kirkilas",
+            "party": "ltu.lsdp",
+            "round": 1
+          }
+        ],
+        "party_results": [
+          {
+            "party": "ltu.ts",
+            "share": 0.1972,
+            "seats": 45
+          },
+          {
+            "party": "ltu.tpp",
+            "share": 0.1509,
+            "seats": 16
+          },
+          {
+            "party": "ltu.tt",
+            "share": 0.1268,
+            "seats": 15
+          },
+          {
+            "party": "ltu.lsdp",
+            "share": 0.1172,
+            "seats": 25
+          },
+          {
+            "party": "ltu.dp",
+            "share": 0.0899,
+            "seats": 10
+          },
+          {
+            "party": "ltu.lrls",
+            "share": 0.0573,
+            "seats": 11
+          },
+          {
+            "party": "ltu.lics",
+            "share": 0.0534,
+            "seats": 8
+          },
+          {
+            "party": "ltu.awpl",
+            "share": 0.0479,
+            "seats": 3
+          },
+          {
+            "party": "ltu.lvzs",
+            "share": 0.0373,
+            "seats": 3
+          },
+          {
+            "party": "ltu.ns",
+            "share": 0.0364,
+            "seats": 1
+          },
+          {
+            "party": "independents",
+            "seats": 4
+          }
+        ],
+        "winner": "ltu.ts",
+        "turnout": 0.4859,
+        "note": "Shares are the nationwide list (PR) vote percentages from the article infobox; seats are totals from both tiers (70 list seats plus 71 single-member seats). Labour ran with the Youth party (recorded under Labour). Kubilius formed a TS-LKD, National Resurrection, Liberal Movement and LiCS government.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2008_Lithuanian_parliamentary_election",
+            "title": "Wikipedia: 2008 Lithuanian parliamentary election (infobox and results table)",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "president_2009",
+      "date": "2009-05-17",
+      "kind": "presidential",
+      "office": "ltu.president",
+      "rounds": 1,
+      "historical": {
+        "candidates": [
+          {
+            "person": "ltu.dalia_grybauskaite",
+            "share": 0.6909,
+            "votes": 950407,
+            "round": 1
+          },
+          {
+            "person": "ltu.algirdas_butkevicius",
+            "party": "ltu.lsdp",
+            "share": 0.1182,
+            "votes": 162665,
+            "round": 1
+          },
+          {
+            "person": "ltu.valentinas_mazuronis",
+            "party": "ltu.tt",
+            "share": 0.0615,
+            "votes": 84656,
+            "round": 1
+          },
+          {
+            "person": "ltu.waldemar_tomaszewski",
+            "party": "ltu.awpl",
+            "share": 0.0474,
+            "votes": 65255,
+            "round": 1
+          },
+          {
+            "person": "ltu.kazimira_prunskiene",
+            "party": "ltu.lvzs",
+            "share": 0.0391,
+            "votes": 53778,
+            "round": 1
+          },
+          {
+            "person": "ltu.loreta_grauziniene",
+            "party": "ltu.dp",
+            "share": 0.0361,
+            "votes": 49686,
+            "round": 1
+          }
+        ],
+        "winner": "ltu.dalia_grybauskaite",
+        "note": "Shares computed from the vote counts in the article's results table (valid votes); candidates below 5% and without articles are counted in the total but not listed. Won outright in the first round. Infobox turnout 51.76%.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2009_Lithuanian_presidential_election",
+            "title": "Wikipedia: 2009 Lithuanian presidential election",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "seimas_2012",
+      "date": "2012-10-14",
+      "kind": "legislative",
+      "chamber": "seimas",
+      "historical": {
+        "candidates": [
+          {
+            "person": "ltu.algirdas_butkevicius",
+            "party": "ltu.lsdp",
+            "round": 1
+          },
+          {
+            "person": "ltu.viktor_uspaskich",
+            "party": "ltu.dp",
+            "round": 1
+          },
+          {
+            "person": "ltu.andrius_kubilius",
+            "party": "ltu.ts",
+            "round": 1
+          }
+        ],
+        "party_results": [
+          {
+            "party": "ltu.dp",
+            "share": 0.2069,
+            "seats": 29
+          },
+          {
+            "party": "ltu.lsdp",
+            "share": 0.1918,
+            "seats": 38
+          },
+          {
+            "party": "ltu.ts",
+            "share": 0.1575,
+            "seats": 33
+          },
+          {
+            "party": "ltu.lrls",
+            "share": 0.0895,
+            "seats": 10
+          },
+          {
+            "party": "ltu.dk",
+            "share": 0.0834,
+            "seats": 7
+          },
+          {
+            "party": "ltu.tt",
+            "share": 0.0763,
+            "seats": 11
+          },
+          {
+            "party": "ltu.awpl",
+            "share": 0.0608,
+            "seats": 8
+          },
+          {
+            "party": "ltu.lvzs",
+            "share": 0.0405,
+            "seats": 1
+          },
+          {
+            "party": "independents",
+            "seats": 3
+          },
+          {
+            "party": "vacant",
+            "seats": 1
+          }
+        ],
+        "winner": "ltu.lsdp",
+        "turnout": 0.5293,
+        "note": "Shares are the nationwide list (PR) vote percentages from the article infobox; seats are totals from both tiers (70 list seats plus 71 single-member seats). Labour won the most list votes but the LSDP won the most seats and formed the government (winner recorded by seats). One seat was vacant after the election (results table).",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2012_Lithuanian_parliamentary_election",
+            "title": "Wikipedia: 2012 Lithuanian parliamentary election (infobox and results table)",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "ref_nuclear_2012",
+      "date": "2012-10-14",
+      "kind": "referendum",
+      "question": "Nuclear power plant question",
+      "historical": {
+        "yes_share": 0.3523,
+        "winner": "no",
+        "turnout": 0.5258,
+        "note": "For 463,966; against 853,163; invalid 43,953; electorate 2,588,418. Shares and turnout computed from these figures. Held with the Seimas election.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2012_Lithuanian_nuclear_power_referendum",
+            "title": "Wikipedia: 2012 Lithuanian nuclear power referendum",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "president_2014",
+      "date": "2014-05-11",
+      "kind": "presidential",
+      "office": "ltu.president",
+      "rounds": 2,
+      "historical": {
+        "candidates": [
+          {
+            "person": "ltu.dalia_grybauskaite",
+            "share": 0.4664,
+            "votes": 612485,
+            "round": 1
+          },
+          {
+            "person": "ltu.zigmantas_balcytis",
+            "party": "ltu.lsdp",
+            "share": 0.1383,
+            "votes": 181659,
+            "round": 1
+          },
+          {
+            "person": "ltu.arturas_paulauskas",
+            "party": "ltu.dp",
+            "share": 0.1219,
+            "votes": 160139,
+            "round": 1
+          },
+          {
+            "person": "ltu.naglis_puteikis",
+            "share": 0.0947,
+            "votes": 124333,
+            "round": 1
+          },
+          {
+            "person": "ltu.waldemar_tomaszewski",
+            "party": "ltu.awpl",
+            "share": 0.0835,
+            "votes": 109659,
+            "round": 1
+          },
+          {
+            "person": "ltu.arturas_zuokas",
+            "share": 0.0531,
+            "votes": 69677,
+            "round": 1
+          },
+          {
+            "person": "ltu.dalia_grybauskaite",
+            "share": 0.5908,
+            "votes": 701999,
+            "round": 2
+          },
+          {
+            "person": "ltu.zigmantas_balcytis",
+            "party": "ltu.lsdp",
+            "share": 0.4092,
+            "votes": 486214,
+            "round": 2
+          }
+        ],
+        "winner": "ltu.dalia_grybauskaite",
+        "note": "Shares computed from the vote counts in the article's results table (valid votes); candidates below 5% and without articles are counted in the total but not listed. First round 11 May, runoff 25 May 2014. Zuokas stood for the YES party (not modelled). Bronis Ropė (LVŽS, 3.9%) is not listed.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2014_Lithuanian_presidential_election",
+            "title": "Wikipedia: 2014 Lithuanian presidential election",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "ref_land_2014",
+      "date": "2014-06-29",
+      "kind": "referendum",
+      "question": "Amendment of articles 9, 47 and 147 of the Constitution",
+      "historical": {
+        "yes_share": 0.7283,
+        "winner": "no",
+        "turnout": 0.1498,
+        "note": "For 269,049; against 100,375; invalid 10,754; electorate 2,538,430. Shares and turnout computed from these figures. Failed: turnout was below the required threshold.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2014_Lithuanian_constitutional_referendum",
+            "title": "Wikipedia: 2014 Lithuanian constitutional referendum",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "seimas_2016",
+      "date": "2016-10-09",
+      "kind": "legislative",
+      "chamber": "seimas",
+      "historical": {
+        "candidates": [
+          {
+            "person": "ltu.gabrielius_landsbergis",
+            "party": "ltu.ts",
+            "round": 1
+          },
+          {
+            "person": "ltu.ramunas_karbauskis",
+            "party": "ltu.lvzs",
+            "round": 1
+          },
+          {
+            "person": "ltu.algirdas_butkevicius",
+            "party": "ltu.lsdp",
+            "round": 1
+          }
+        ],
+        "party_results": [
+          {
+            "party": "ltu.ts",
+            "share": 0.2263,
+            "seats": 31
+          },
+          {
+            "party": "ltu.lvzs",
+            "share": 0.2245,
+            "seats": 54
+          },
+          {
+            "party": "ltu.lsdp",
+            "share": 0.1504,
+            "seats": 17
+          },
+          {
+            "party": "ltu.lrls",
+            "share": 0.0945,
+            "seats": 14
+          },
+          {
+            "party": "ltu.awpl",
+            "share": 0.0572,
+            "seats": 8
+          },
+          {
+            "party": "ltu.tt",
+            "share": 0.0555,
+            "seats": 8
+          },
+          {
+            "party": "ltu.dp",
+            "share": 0.0488,
+            "seats": 2
+          },
+          {
+            "party": "others",
+            "seats": 3
+          },
+          {
+            "party": "independents",
+            "seats": 4
+          }
+        ],
+        "winner": "ltu.lvzs",
+        "turnout": 0.5061,
+        "note": "Shares are the nationwide list (PR) vote percentages from the article infobox; seats are totals from both tiers (70 list seats plus 71 single-member seats). TS-LKD won the most list votes; LVŽS won the most seats and formed the government under Saulius Skvernelis (winner recorded by seats). Others: Lithuanian Centre Party-Pensioners, Lithuanian Green Party and Lithuanian List (1 seat each).",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2016_Lithuanian_parliamentary_election",
+            "title": "Wikipedia: 2016 Lithuanian parliamentary election (infobox and results table)",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "president_2019",
+      "date": "2019-05-12",
+      "kind": "presidential",
+      "office": "ltu.president",
+      "rounds": 2,
+      "historical": {
+        "candidates": [
+          {
+            "person": "ltu.ingrida_simonyte",
+            "share": 0.3153,
+            "votes": 446719,
+            "round": 1
+          },
+          {
+            "person": "ltu.gitanas_nauseda",
+            "share": 0.3116,
+            "votes": 441396,
+            "round": 1
+          },
+          {
+            "person": "ltu.saulius_skvernelis",
+            "share": 0.1972,
+            "votes": 279413,
+            "round": 1
+          },
+          {
+            "person": "ltu.vytenis_andriukaitis",
+            "party": "ltu.lsdp",
+            "share": 0.0481,
+            "votes": 68118,
+            "round": 1
+          },
+          {
+            "person": "ltu.gitanas_nauseda",
+            "share": 0.6653,
+            "votes": 881495,
+            "round": 2
+          },
+          {
+            "person": "ltu.ingrida_simonyte",
+            "share": 0.3347,
+            "votes": 443394,
+            "round": 2
+          }
+        ],
+        "winner": "ltu.gitanas_nauseda",
+        "note": "Shares computed from the vote counts in the article's results table (valid votes); candidates below 5% and without articles are counted in the total but not listed. First round 12 May, runoff 26 May 2019. Šimonytė (supported by the Homeland Union) and Skvernelis (supported by LVŽS) stood as independents. Andriukaitis (4.9%) is listed as the LSDP candidate.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2019_Lithuanian_presidential_election",
+            "title": "Wikipedia: 2019 Lithuanian presidential election",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "ref_mps_2019",
+      "date": "2019-05-12",
+      "kind": "referendum",
+      "question": "Reducing the number of Seimas members from 141 to 121",
+      "historical": {
+        "yes_share": 0.7619,
+        "winner": "no",
+        "turnout": 0.478,
+        "note": "For 876,841; against 274,091; invalid 37,802; electorate 2,486,915. Shares and turnout computed from these figures. Failed: turnout and yes votes below the required share of the electorate. A second question on dual citizenship (956,564 for, 337,504 against) also failed.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2019_Lithuanian_constitutional_referendum",
+            "title": "Wikipedia: 2019 Lithuanian constitutional referendum",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "seimas_2020",
+      "date": "2020-10-11",
+      "kind": "legislative",
+      "chamber": "seimas",
+      "historical": {
+        "candidates": [
+          {
+            "person": "ltu.gabrielius_landsbergis",
+            "party": "ltu.ts",
+            "round": 1
+          },
+          {
+            "person": "ltu.ramunas_karbauskis",
+            "party": "ltu.lvzs",
+            "round": 1
+          },
+          {
+            "person": "ltu.ingrida_simonyte",
+            "party": "ltu.ts",
+            "round": 1
+          }
+        ],
+        "party_results": [
+          {
+            "party": "ltu.ts",
+            "share": 0.2577,
+            "seats": 50
+          },
+          {
+            "party": "ltu.lvzs",
+            "share": 0.1807,
+            "seats": 32
+          },
+          {
+            "party": "ltu.dp",
+            "share": 0.0977,
+            "seats": 10
+          },
+          {
+            "party": "ltu.lsdp",
+            "share": 0.0958,
+            "seats": 13
+          },
+          {
+            "party": "ltu.lp",
+            "share": 0.0945,
+            "seats": 11
+          },
+          {
+            "party": "ltu.lrls",
+            "share": 0.0704,
+            "seats": 13
+          },
+          {
+            "party": "ltu.awpl",
+            "share": 0.0497,
+            "seats": 3
+          },
+          {
+            "party": "others",
+            "seats": 5
+          },
+          {
+            "party": "independents",
+            "seats": 4
+          }
+        ],
+        "winner": "ltu.ts",
+        "turnout": 0.4781,
+        "note": "Shares are the nationwide list (PR) vote percentages from the article infobox; seats are totals from both tiers (70 list seats plus 71 single-member seats). Others: Social Democratic Labour Party 3 (led by Gediminas Kirkilas), Freedom and Justice 1 and Lithuanian Green Party 1. Ingrida Šimonytė formed a TS-LKD, Liberal Movement and Freedom Party government.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2020_Lithuanian_parliamentary_election",
+            "title": "Wikipedia: 2020 Lithuanian parliamentary election (infobox and results table)",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "president_2024",
+      "date": "2024-05-12",
+      "kind": "presidential",
+      "office": "ltu.president",
+      "rounds": 2,
+      "historical": {
+        "candidates": [
+          {
+            "person": "ltu.gitanas_nauseda",
+            "share": 0.443,
+            "votes": 632811,
+            "round": 1
+          },
+          {
+            "person": "ltu.ingrida_simonyte",
+            "party": "ltu.ts",
+            "share": 0.2022,
+            "votes": 288774,
+            "round": 1
+          },
+          {
+            "person": "ltu.ignas_vegele",
+            "share": 0.1245,
+            "votes": 177863,
+            "round": 1
+          },
+          {
+            "person": "ltu.remigijus_zemaitaitis",
+            "party": "ltu.nemuno_ausra",
+            "share": 0.0928,
+            "votes": 132599,
+            "round": 1
+          },
+          {
+            "person": "ltu.eduardas_vaitkus",
+            "share": 0.0737,
+            "votes": 105255,
+            "round": 1
+          },
+          {
+            "person": "ltu.gitanas_nauseda",
+            "share": 0.7529,
+            "votes": 886874,
+            "round": 2
+          },
+          {
+            "person": "ltu.ingrida_simonyte",
+            "party": "ltu.ts",
+            "share": 0.2471,
+            "votes": 291054,
+            "round": 2
+          }
+        ],
+        "winner": "ltu.gitanas_nauseda",
+        "note": "Shares computed from the vote counts in the article's results table (valid votes); candidates below 5% and without articles are counted in the total but not listed. First round 12 May, runoff 26 May 2024. Nausėda was supported by the Social Democrats and the Regions Party.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2024_Lithuanian_presidential_election",
+            "title": "Wikipedia: 2024 Lithuanian presidential election",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "ref_citizenship_2024",
+      "date": "2024-05-12",
+      "kind": "referendum",
+      "question": "Amendment of Article 12 of the Constitution (dual citizenship)",
+      "historical": {
+        "yes_share": 0.7449,
+        "winner": "no",
+        "turnout": 0.5951,
+        "note": "For 1,043,265; against 357,274; invalid 28,843; electorate 2,401,807. Shares and turnout computed from these figures. Failed: yes votes (about 43% of the electorate) fell short of the required absolute majority of registered voters.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2024_Lithuanian_constitutional_referendum",
+            "title": "Wikipedia: 2024 Lithuanian constitutional referendum",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "seimas_2024",
+      "date": "2024-10-13",
+      "kind": "legislative",
+      "chamber": "seimas",
+      "historical": {
+        "candidates": [
+          {
+            "person": "ltu.vilija_blinkeviciute",
+            "party": "ltu.lsdp",
+            "round": 1
+          },
+          {
+            "person": "ltu.gabrielius_landsbergis",
+            "party": "ltu.ts",
+            "round": 1
+          },
+          {
+            "person": "ltu.remigijus_zemaitaitis",
+            "party": "ltu.nemuno_ausra",
+            "round": 1
+          }
+        ],
+        "party_results": [
+          {
+            "party": "ltu.lsdp",
+            "share": 0.197,
+            "seats": 52
+          },
+          {
+            "party": "ltu.ts",
+            "share": 0.1835,
+            "seats": 28
+          },
+          {
+            "party": "ltu.nemuno_ausra",
+            "share": 0.1526,
+            "seats": 20
+          },
+          {
+            "party": "ltu.dsvl",
+            "share": 0.094,
+            "seats": 14
+          },
+          {
+            "party": "ltu.lrls",
+            "share": 0.0785,
+            "seats": 12
+          },
+          {
+            "party": "ltu.lvzs",
+            "share": 0.0716,
+            "seats": 8
+          },
+          {
+            "party": "ltu.awpl",
+            "share": 0.0396,
+            "seats": 3
+          },
+          {
+            "party": "others",
+            "seats": 2
+          },
+          {
+            "party": "independents",
+            "seats": 2
+          }
+        ],
+        "winner": "ltu.lsdp",
+        "turnout": 0.522,
+        "note": "Shares are the nationwide list (PR) vote percentages from the article infobox; seats are totals from both tiers (70 list seats plus 71 single-member seats). Others: National Alliance 1 and Freedom and Justice 1. Gintautas Paluckas formed an LSDP, Dawn of Nemunas and Union of Democrats government.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2024_Lithuanian_parliamentary_election",
+            "title": "Wikipedia: 2024 Lithuanian parliamentary election (infobox and results table)",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    }
+  ],
+  "source": [
+    {
+      "url": "https://en.wikipedia.org/wiki/Template:Lithuanian_elections",
+      "title": "Wikipedia: Template:Lithuanian elections",
+      "accessed": "2026-10-16"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/President_of_Lithuania",
+      "title": "Wikipedia: President of Lithuania (list of presidents)",
+      "accessed": "2026-10-16"
+    }
+  ],
+  "confidence": "verified"
+}

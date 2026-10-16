@@ -1,0 +1,126 @@
+{
+  "tag": "LTU",
+  "name": { "en": "Lithuania", "native": "Lietuva", "official": { "en": "Republic of Lithuania", "native": "Lietuvos Respublika" } },
+  "adjective": "Lithuanian",
+  "culture_primary": "lithuanian",
+  "government": {
+    "type": "semi_presidential",
+    "effective_executive": "ltu.prime_minister",
+    "head_of_state_office": "ltu.president",
+    "head_of_government_office": "ltu.prime_minister",
+    "constitution": {
+      "term_limit_amendable": true,
+      "emergency_powers": true,
+      "referendum_required_for": []
+    },
+    "note": "Semi-presidential republic under the 1992 Constitution. The directly elected President (modified two-round system, five-year term renewable once consecutively) represents the country internationally and appoints the Prime Minister with the approval of the Seimas, with more executive authority than the Estonian and Latvian presidents; the Government led by the Prime Minister needs the confidence of the 141-member Seimas. On a vacancy the Speaker of the Seimas acts as President (Artūras Paulauskas in 2004). Constitutional referendums require a majority of all registered voters, which caused the 2019 and 2024 proposals to fail."
+  },
+  "offices": [
+    {
+      "id": "ltu.president",
+      "title": { "en": "President of the Republic of Lithuania", "native": "Lietuvos Respublikos Prezidentas" },
+      "role": "head_of_state",
+      "power_weight": 0.35,
+      "selection": "direct_election",
+      "term_years": 5,
+      "term_limit": { "max_terms": 2, "consecutive_only": true },
+      "succession": { "type": "acting_then_election" },
+      "holders": [
+        { "person": "ltu.valdas_adamkus", "from": "1998-02-26", "to": "2003-02-26" },
+        { "person": "ltu.rolandas_paksas", "from": "2003-02-26", "to": "2004-04-06", "note": "Removed from office by the Seimas on 6 April 2004." },
+        { "person": "ltu.arturas_paulauskas", "from": "2004-04-06", "to": "2004-07-12", "acting": true, "note": "Acting as Speaker of the Seimas." },
+        { "person": "ltu.valdas_adamkus", "from": "2004-07-12", "to": "2009-07-12", "note": "Won the early 2004 election." },
+        { "person": "ltu.dalia_grybauskaite", "from": "2009-07-12", "to": "2019-07-12", "note": "Re-elected in 2014." },
+        { "person": "ltu.gitanas_nauseda", "from": "2019-07-12", "note": "Re-elected in 2024." }
+      ],
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/President_of_Lithuania", "title": "Wikipedia: President of Lithuania (list of presidents, acting presidents)", "accessed": "2026-10-16" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "ltu.prime_minister",
+      "title": { "en": "Prime Minister of Lithuania", "native": "Lietuvos Respublikos Ministras Pirmininkas" },
+      "role": "head_of_government",
+      "power_weight": 0.65,
+      "selection": "legislature",
+      "appointed_by": "ltu.president",
+      "term_years": 4,
+      "holders": [
+        { "person": "ltu.andrius_kubilius", "from": "1999-11-11", "to": "2000-11-09", "note": "First Kubilius cabinet: Homeland Union and Christian Democrats." },
+        { "person": "ltu.rolandas_paksas", "from": "2000-11-09", "to": "2001-06-20", "note": "Liberal Union, New Union and others." },
+        { "person": "ltu.eugenijus_gentvilas", "from": "2001-06-20", "to": "2001-07-12", "acting": true },
+        { "person": "ltu.algirdas_brazauskas", "from": "2001-07-12", "to": "2006-06-01", "note": "Two cabinets (2001, 2004)." },
+        { "person": "ltu.zigmantas_balcytis", "from": "2006-06-01", "to": "2006-07-18", "acting": true },
+        { "person": "ltu.gediminas_kirkilas", "from": "2006-07-18", "to": "2008-12-09" },
+        { "person": "ltu.andrius_kubilius", "from": "2008-12-09", "to": "2012-12-13" },
+        { "person": "ltu.algirdas_butkevicius", "from": "2012-12-13", "to": "2016-12-13" },
+        { "person": "ltu.saulius_skvernelis", "from": "2016-12-13", "to": "2020-12-11", "note": "Independent endorsed by LVŽS." },
+        { "person": "ltu.ingrida_simonyte", "from": "2020-12-11", "to": "2024-12-12" },
+        { "person": "ltu.gintautas_paluckas", "from": "2024-12-12", "to": "2025-08-04" },
+        { "person": "ltu.rimantas_sadzius", "from": "2025-08-04", "to": "2025-09-25", "acting": true },
+        { "person": "ltu.inga_ruginiene", "from": "2025-09-25", "to": "2026-07-14", "note": "Caretaker from 23 June 2026 until her successor took office." },
+        { "person": "ltu.mindaugas_sinkevicius", "from": "2026-07-14", "note": "LSDP, Union of Democrats \"For Lithuania\", LVŽS and Electoral Action of Poles cabinet. Post-June-2026 change checked against the fetched Wikipedia list and his article." }
+      ],
+      "note": "Irena Degutienė was acting Prime Minister 27 October - 11 November 1999, before the start date of this timeline.",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/Prime_Minister_of_Lithuania", "title": "Wikipedia: Prime Minister of Lithuania (list, 1990-present)", "accessed": "2026-10-16" },
+        { "url": "https://en.wikipedia.org/wiki/Mindaugas_Sinkevi%C4%8Dius", "title": "Wikipedia: Mindaugas Sinkevičius (Prime Minister from 14 July 2026)", "accessed": "2026-10-16" }
+      ],
+      "confidence": "verified"
+    }
+  ],
+  "legislature": {
+    "name": { "en": "Seimas", "native": "Seimas" },
+    "chambers": [
+      {
+        "id": "seimas",
+        "name": { "en": "Seimas", "native": "Lietuvos Respublikos Seimas" },
+        "seats": 141,
+        "term_years": 4,
+        "elected": "direct",
+        "system": {
+          "type": "parallel",
+          "formula": "hare",
+          "threshold": 0.05,
+          "district_model": "national",
+          "pr_share": 0.5,
+          "note": "Parallel voting: 71 single-member constituencies (two-round majority system, except in 2000) and 70 seats from nationwide lists allocated by largest remainder with a 5% threshold (7% for coalitions since 1996). seats_2000 is the result of the 1996 election; changes in group membership between 1996 and 1 January 2000 were not checked. Others: Young Lithuania, Christian Democratic Union, Lithuanian Citizens' Alliance, Political Prisoners and Deportees (1 each) and the Nationalist-Democratic list (3)."
+        },
+        "seats_2000": { "ltu.ts": 70, "ltu.lkdp": 16, "ltu.lcs": 14, "ltu.lddp": 12, "ltu.lsdp": 12, "ltu.awpl": 3, "ltu.nd": 1, "ltu.lls": 1, "ltu.lvzs": 1, "others": 7, "independents": 4 },
+        "confidence_chamber": true,
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/1996_Lithuanian_parliamentary_election", "title": "Wikipedia: 1996 Lithuanian parliamentary election (results, electoral system)", "accessed": "2026-10-16" },
+          { "url": "https://en.wikipedia.org/wiki/2012_Lithuanian_parliamentary_election", "title": "Wikipedia: 2012 Lithuanian parliamentary election (electoral system)", "accessed": "2026-10-16" }
+        ],
+        "confidence": "verified"
+      }
+    ]
+  },
+  "party_system": "multi_party",
+  "start_2000": {
+    "ruling_parties": ["ltu.ts", "ltu.lkdp"],
+    "confidence_and_supply": [],
+    "ideology_support": {
+      "liberal_conservative": 0.3134,
+      "christian_democrat": 0.1367,
+      "reformed_communist": 0.1001,
+      "centrist_liberal": 0.0867,
+      "social_democrat": 0.0694,
+      "national_conservative": 0.0778,
+      "regionalist": 0.0568,
+      "classical_liberal": 0.0193,
+      "agrarian": 0.0175,
+      "big_tent": 0.1223
+    },
+    "ideology_support_note": "Derived from the 1996 Seimas list vote (infobox percentages): Homeland Union 31.3% (liberal conservative), Christian Democratic Party 10.4% plus Christian Democratic Union 3.2% (Christian democrat), Democratic Labour Party 10.0% (reformed communist), Centre Union 8.7% (centrist liberal), Social Democrats 6.9% (social democrat), Young Lithuania 4.0%, Nationalist-Democratic list 2.2% and Political Prisoners 1.6% (national conservative), Electoral Action of Poles 3.1% and Citizens' Alliance 2.6% (minority parties, recorded as regionalist), Liberal Union 1.9% (classical liberal), Peasants Party 1.8% (agrarian); New Democracy (3.9%) and lists below 1.5% (about 8.4%) are assigned to big tent.",
+    "stability": 0.65,
+    "war_support": 0.2
+  },
+  "claims": [],
+  "source": [
+    { "url": "https://en.wikipedia.org/wiki/1996_Lithuanian_parliamentary_election", "title": "Wikipedia: 1996 Lithuanian parliamentary election", "accessed": "2026-10-16" },
+    { "url": "https://en.wikipedia.org/wiki/Prime_Minister_of_Lithuania", "title": "Wikipedia: Prime Minister of Lithuania (first Kubilius cabinet: TS, LKDP)", "accessed": "2026-10-16" }
+  ],
+  "confidence": "verified"
+}

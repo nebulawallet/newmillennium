@@ -1,0 +1,263 @@
+{
+  "tag": "LVA",
+  "name": {
+    "en": "Latvia",
+    "native": "Latvija",
+    "official": {
+      "en": "Republic of Latvia",
+      "native": "Latvijas Republika"
+    }
+  },
+  "adjective": "Latvian",
+  "culture_primary": "latvian",
+  "government": {
+    "type": "parliamentary",
+    "effective_executive": "lva.prime_minister",
+    "head_of_state_office": "lva.president",
+    "head_of_government_office": "lva.prime_minister",
+    "constitution": {
+      "term_limit_amendable": true,
+      "emergency_powers": true,
+      "referendum_required_for": []
+    },
+    "note": "Parliamentary republic under the restored 1922 Satversme. The Prime Minister is nominated by the President and needs the confidence of the 100-member Saeima. The President is elected by the Saeima with an absolute majority (51 votes) in repeated rounds for a four-year term and may serve at most eight consecutive years. The President can initiate a referendum on dissolving the Saeima (used in 2011)."
+  },
+  "offices": [
+    {
+      "id": "lva.president",
+      "title": {
+        "en": "President of Latvia",
+        "native": "Latvijas Valsts prezidents"
+      },
+      "role": "head_of_state",
+      "power_weight": 0.15,
+      "selection": "legislature",
+      "term_years": 4,
+      "term_limit": {
+        "max_terms": 2,
+        "consecutive_only": true
+      },
+      "succession": {
+        "type": "acting_then_election"
+      },
+      "holders": [
+        {
+          "person": "lva.vaira_vike_freiberga",
+          "from": "1999-07-08",
+          "to": "2007-07-08",
+          "note": "Elected by the Saeima in 1999; re-elected in 2003."
+        },
+        {
+          "person": "lva.valdis_zatlers",
+          "from": "2007-07-08",
+          "to": "2011-07-08"
+        },
+        {
+          "person": "lva.andris_berzins_president",
+          "from": "2011-07-08",
+          "to": "2015-07-08"
+        },
+        {
+          "person": "lva.raimonds_vejonis",
+          "from": "2015-07-08",
+          "to": "2019-07-08"
+        },
+        {
+          "person": "lva.egils_levits",
+          "from": "2019-07-08",
+          "to": "2023-07-08"
+        },
+        {
+          "person": "lva.edgars_rinkevics",
+          "from": "2023-07-08"
+        }
+      ],
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/President_of_Latvia",
+          "title": "Wikipedia: President of Latvia (list of presidents)",
+          "accessed": "2026-10-16"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "lva.prime_minister",
+      "title": {
+        "en": "Prime Minister of Latvia",
+        "native": "Ministru prezidents"
+      },
+      "role": "head_of_government",
+      "power_weight": 0.85,
+      "selection": "legislature",
+      "appointed_by": "lva.president",
+      "term_years": 4,
+      "holders": [
+        {
+          "person": "lva.andris_skele",
+          "from": "1999-07-16",
+          "to": "2000-05-05",
+          "note": "Third Šķēle cabinet: People's Party, Latvian Way and For Fatherland and Freedom/LNNK."
+        },
+        {
+          "person": "lva.andris_berzins_pm",
+          "from": "2000-05-05",
+          "to": "2002-11-07",
+          "note": "Latvian Way, People's Party, TB/LNNK and New Party coalition."
+        },
+        {
+          "person": "lva.einars_repse",
+          "from": "2002-11-07",
+          "to": "2004-03-09"
+        },
+        {
+          "person": "lva.indulis_emsis",
+          "from": "2004-03-09",
+          "to": "2004-12-02"
+        },
+        {
+          "person": "lva.aigars_kalvitis",
+          "from": "2004-12-02",
+          "to": "2007-12-20",
+          "note": "Two cabinets (2004, 2006)."
+        },
+        {
+          "person": "lva.ivars_godmanis",
+          "from": "2007-12-20",
+          "to": "2009-03-12"
+        },
+        {
+          "person": "lva.valdis_dombrovskis",
+          "from": "2009-03-12",
+          "to": "2014-01-22",
+          "note": "Three cabinets (2009, 2010, 2011)."
+        },
+        {
+          "person": "lva.laimdota_straujuma",
+          "from": "2014-01-22",
+          "to": "2016-02-11",
+          "note": "Two cabinets (2014)."
+        },
+        {
+          "person": "lva.maris_kucinskis",
+          "from": "2016-02-11",
+          "to": "2019-01-23"
+        },
+        {
+          "person": "lva.arturs_krisjanis_karins",
+          "from": "2019-01-23",
+          "to": "2023-09-15",
+          "note": "Two cabinets (2019, 2022)."
+        },
+        {
+          "person": "lva.evika_silina",
+          "from": "2023-09-15",
+          "to": "2026-05-28",
+          "note": "New Unity, Union of Greens and Farmers and Progressives cabinet; the Progressives later left."
+        },
+        {
+          "person": "lva.andris_kulbergs",
+          "from": "2026-05-28",
+          "note": "United List, New Unity, National Alliance and ZZS cabinet. Remained Prime Minister after the 3 October 2026 election, government formation pending (checked against the fetched Wikipedia articles)."
+        }
+      ],
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Prime_Minister_of_Latvia",
+          "title": "Wikipedia: Prime Minister of Latvia (list, 1990-present)",
+          "accessed": "2026-10-16"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/2026_Latvian_parliamentary_election",
+          "title": "Wikipedia: 2026 Latvian parliamentary election (incumbent Prime Minister)",
+          "accessed": "2026-10-16"
+        }
+      ],
+      "confidence": "verified"
+    }
+  ],
+  "legislature": {
+    "name": {
+      "en": "Saeima",
+      "native": "Saeima"
+    },
+    "chambers": [
+      {
+        "id": "saeima",
+        "name": {
+          "en": "Saeima",
+          "native": "Saeima"
+        },
+        "seats": 100,
+        "term_years": 4,
+        "elected": "direct",
+        "system": {
+          "type": "list_pr",
+          "formula": "sainte_lague",
+          "threshold": 0.05,
+          "district_model": "custom",
+          "note": "100 members elected by open-list PR in five multi-member constituencies based on the regions of Latvia (11 to 38 seats); Sainte-Laguë allocation and a 5% national threshold (described in the 2026 election article). seats_2000 is the result of the October 1998 election; changes in group membership between October 1998 and 1 January 2000 were not checked. The 16 seats of the National Harmony Party list (an alliance with the Socialist Party and Equal Rights) are recorded under lva.tsp, and the Latvian Social Democratic Alliance's 14 under lva.lsdsp."
+        },
+        "seats_2000": {
+          "lva.tp": 24,
+          "lva.lc": 21,
+          "lva.tb_lnnk": 17,
+          "lva.tsp": 16,
+          "lva.lsdsp": 14,
+          "lva.jp": 8
+        },
+        "confidence_chamber": true,
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/1998_Latvian_parliamentary_election",
+            "title": "Wikipedia: 1998 Latvian parliamentary election (results)",
+            "accessed": "2026-10-16"
+          },
+          {
+            "url": "https://en.wikipedia.org/wiki/2026_Latvian_parliamentary_election",
+            "title": "Wikipedia: 2026 Latvian parliamentary election (electoral system)",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    ]
+  },
+  "party_system": "multi_party",
+  "start_2000": {
+    "ruling_parties": [
+      "lva.tp",
+      "lva.lc",
+      "lva.tb_lnnk"
+    ],
+    "confidence_and_supply": [],
+    "ideology_support": {
+      "liberal_conservative": 0.213,
+      "classical_liberal": 0.1815,
+      "national_conservative": 0.1473,
+      "social_democrat": 0.2708,
+      "agrarian": 0.0248,
+      "right_populist": 0.0174,
+      "centrist_liberal": 0.0161,
+      "big_tent": 0.0556,
+      "christian_democrat": 0.0735
+    },
+    "ideology_support_note": "Derived from the October 1998 Saeima vote (shares computed from the vote counts): People's Party 21.3% (liberal conservative), Latvian Way 18.2% (classical liberal), For Fatherland and Freedom/LNNK 14.7% (national conservative), National Harmony Party list 14.2% and Social Democratic Alliance 12.9% (social democrat), New Party 7.4% (Christian democrat), Farmers' Union 2.5% (agrarian), People's Movement for Latvia 1.7% (right populist), Democratic Party 'Saimnieks' 1.6% (centrist liberal); the Workers' Party-Christian Democrats-Greens list (2.3%) and the small lists (3.2%) are assigned to big tent.",
+    "stability": 0.65,
+    "war_support": 0.2
+  },
+  "claims": [],
+  "source": [
+    {
+      "url": "https://en.wikipedia.org/wiki/1998_Latvian_parliamentary_election",
+      "title": "Wikipedia: 1998 Latvian parliamentary election",
+      "accessed": "2026-10-16"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Prime_Minister_of_Latvia",
+      "title": "Wikipedia: Prime Minister of Latvia (Šķēle III cabinet: TP, LC, TB/LNNK)",
+      "accessed": "2026-10-16"
+    }
+  ],
+  "confidence": "verified"
+}

@@ -48,11 +48,11 @@ Live sources sometimes report allegations or investigations involving real peopl
 
 <!-- AUTO-GENERATED BELOW: run `npm run review-report`; edits below this line are overwritten -->
 
-## Needs review: 396 of 5125 records
+## Needs review: 471 of 5536 records
 
-Countries with politics data: 57 / 212.
+Countries with politics data: 63 / 212.
 
-Countries with no data yet (155): SMR, VAT, LVA, LTU, ARM, AZE, KAZ, KGZ, TJK, TKM, UZB, ABK, SOS, NKR, ICH, CAN, ATG, ARG, BHS, BRB, BLZ, BOL, BRA, CHL, COL, CRI, CUB, DMA, DOM, ECU, SLV, GRD, GTM, GUY, HTI, HND, JAM, MEX, NIC, PAN, PRY, PER, KNA, LCA, VCT, SUR, TTO, URY, VEN, FAR, DZA, BHR, EGY, IRQ, JOR, KWT, LBN, LBY, MRT, MAR, OMN, QAT, SAU, SYR, TUN, ARE, YEM, ESH, KUR, AGO, BEN, BWA, BFA, BDI, CPV, CMR, CAF, TCD, COM, COD, COG, CIV, DJI, GNQ, ERI, SWZ, ETH, GAB, GMB, GHA, GIN, GNB, KEN, LSO, LBR, MDG, MWI, MLI, MUS, MOZ, NAM, NER, NGA, RWA, STP, SEN, SYC, SLE, ZAF, SDN, TZA, TGO, UGA, ZMB, ZWE, SSD, SML, UNI, RCD, MLC, AFG, AFN, BGD, BTN, IND, MDV, NPL, PAK, LKA, TEL, BRN, KHM, IDN, LAO, MYS, MMR, PHL, SGP, THA, VNM, TLS, AUS, NZL, FJI, PNG, SLB, VUT, WSM, TON, KIR, TUV, NRU, FSM, MHL, PLW
+Countries with no data yet (149): SMR, VAT, KAZ, KGZ, TJK, TKM, UZB, ABK, SOS, NKR, ICH, ATG, ARG, BHS, BRB, BLZ, BOL, CHL, COL, CRI, CUB, DMA, DOM, ECU, SLV, GRD, GTM, GUY, HTI, HND, JAM, MEX, NIC, PAN, PRY, PER, KNA, LCA, VCT, SUR, TTO, URY, VEN, FAR, DZA, BHR, EGY, IRQ, JOR, KWT, LBN, LBY, MRT, MAR, OMN, QAT, SAU, SYR, TUN, ARE, YEM, ESH, KUR, AGO, BEN, BWA, BFA, BDI, CPV, CMR, CAF, TCD, COM, COD, COG, CIV, DJI, GNQ, ERI, SWZ, ETH, GAB, GMB, GHA, GIN, GNB, KEN, LSO, LBR, MDG, MWI, MLI, MUS, MOZ, NAM, NER, NGA, RWA, STP, SEN, SYC, SLE, ZAF, SDN, TZA, TGO, UGA, ZMB, ZWE, SSD, SML, UNI, RCD, MLC, AFG, AFN, BGD, BTN, IND, MDV, NPL, PAK, LKA, TEL, BRN, KHM, IDN, LAO, MYS, MMR, PHL, SGP, THA, VNM, TLS, AUS, NZL, FJI, PNG, SLB, VUT, WSM, TON, KIR, TUV, NRU, FSM, MHL, PLW
 
 ### ALB — Albania (4)
 
@@ -80,6 +80,25 @@ Countries with no data yet (155): SMR, VAT, LVA, LTU, ARM, AZE, KAZ, KGZ, TJK, T
 | party | `and.ae` Andorra Forward (AE) | Sub-ideology (right_populist) not checked against a fetched source. | data/countries/AND/parties.json |
 | party | `and.concordia` Concord (Concòrdia) | Sub-ideology (centrist_liberal) not checked against a fetched source; Escalé's start as leader assumed from the founding date. | data/countries/AND/parties.json |
 
+### ARM — Armenia (14)
+
+| kind | record | what to check | file |
+|---|---|---|---|
+| chamber | `national_assembly` National Assembly | Seats held on 1 January 2000 may differ from the May 1999 result because of the deaths in the October 1999 shooting; the pre-2017 term length (four years) is inferred from the election cycle. | data/countries/ARM/country.json |
+| office | `arm.prime_minister` Prime Minister of Armenia | Check whether outgoing Prime Ministers acted in the short gaps of April 2008 and September 2016 (recorded as vacancies because the list names no holder), and whether Pashinyan served as acting Prime Minister between his resignations and re-appointments in 2018-2019 and 2021. | data/countries/ARM/country.json |
+| party | `arm.unity_bloc` Unity Bloc (Unity) | The founding year (1999) is taken from the election it contested, and the date the bloc dissolved (and when the two parties separated) was not found; check both. | data/countries/ARM/parties.json |
+| party | `arm.rpa` Republican Party of Armenia (RPA) | Check the start of Margaryan's chairmanship (recorded from 2000, when the article first names him as a party leader). | data/countries/ARM/parties.json |
+| party | `arm.ppa` People's Party of Armenia (HZK) | Check when Stepan Demirchyan became leader (recorded from 2000). | data/countries/ARM/parties.json |
+| party | `arm.acp` Armenian Communist Party (ACP) | Add the First Secretaries as person records if they are needed. | data/countries/ARM/parties.json |
+| party | `arm.law_unity` Law and Unity Bloc (Law and Unity) | Identify the bloc's member parties and leader, and its later fate. | data/countries/ARM/parties.json |
+| party | `arm.arf` Armenian Revolutionary Federation (ARF) | List leaders stand in for party leaders; check the Bureau and Supreme Council chairs for Armenia since 2000. | data/countries/ARM/parties.json |
+| party | `arm.ndu` National Democratic Union (NDU) | Check that Manukyan led the party throughout (recorded from its founding in 1991). | data/countries/ARM/parties.json |
+| party | `arm.national_unity` National Unity (NU) | Check its parliamentary status on 1 January 2000. | data/countries/ARM/parties.json |
+| party | `arm.bhk` Prosperous Armenia (BHK) | Check whether Tsarukyan's leadership was continuous since 2004. | data/countries/ARM/parties.json |
+| party | `arm.heritage` Heritage (Heritage) | Check that Hovannisian led the party continuously since 2002. | data/countries/ARM/parties.json |
+| party | `arm.anc` Armenian National Congress (ANC) | Check when Ter-Petrosyan's leadership ended and Zourabian's began. | data/countries/ARM/parties.json |
+| party | `arm.panm` Pan-Armenian National Movement (PANM) | Check the party's leaders since 2000. | data/countries/ARM/parties.json |
+
 ### AUT — Austria (3)
 
 | kind | record | what to check | file |
@@ -87,6 +106,19 @@ Countries with no data yet (155): SMR, VAT, LVA, LTU, ARM, AZE, KAZ, KGZ, TJK, T
 | chamber | `bundesrat` Federal Council | The source gives 64 members from 1993 and 62 in 2002, so 64 on 1 January 2000 is inferred; confirm, and add the party breakdown (XXI. GP member list) if the chamber should carry party seats. | data/countries/AUT/country.json |
 | party | `aut.greens` The Greens – The Green Alternative (Greens) | Founding date is a placeholder for '1986' (no day given; Wikidata says 1987-02-13). The article timeline shows Felipe from 2015 overlapping Glawischnig; confirm Felipe's 2017 tenure. | data/countries/AUT/parties.json |
 | party | `aut.lif` Liberal Forum (LIF) | Check when Heide Schmidt stepped down as LIF leader. | data/countries/AUT/parties.json |
+
+### AZE — Azerbaijan (8)
+
+| kind | record | what to check | file |
+|---|---|---|---|
+| chamber | `national_assembly` National Assembly | The 1995 result is used for 1 January 2000; by-elections and seat changes between 1996 and 1999 were not checked. | data/countries/AZE/country.json |
+| person | `aze.zahid_oruj` Zahid Oruj (b. 1972) | Political alignment not checked; sub_ideology (big_tent) is a placeholder. | data/countries/AZE/people.json |
+| party | `aze.apfp` Azerbaijani Popular Front Party (APFP) | Check the date Karimli became chairman after Elchibey's death in 2000 (recorded as 2000). | data/countries/AZE/parties.json |
+| party | `aze.anip` National Independence Party (ANIP) | Check whether Mammadov's leadership was continuous since 1992. | data/countries/AZE/parties.json |
+| party | `aze.musavat` Musavat Party (Musavat) | Add the chairmanship of Arif Hajili with dates. The party was re-established at its III Congress in 1992. | data/countries/AZE/parties.json |
+| party | `aze.motherland` Motherland Party (Ana Vatan) | Add Fazail Agamali as a person with fetched dates and as leader 1990-2026. | data/countries/AZE/parties.json |
+| party | `aze.communist` Azerbaijan Communist Party (AKP) | Check its parliamentary status on 1 January 2000 and its leaders. | data/countries/AZE/parties.json |
+| party | `aze.adp` Azerbaijan Democratic Party (ADP) | Jalaloglu was elected leader at the first congress and was sole leader 1994-1996; check his later chairmanship (recorded from 1991). | data/countries/AZE/parties.json |
 
 ### BEL — Belgium (2)
 
@@ -149,6 +181,30 @@ Countries with no data yet (155): SMR, VAT, LVA, LTU, ARM, AZE, KAZ, KGZ, TJK, T
 | party | `blr.bpf` BPF Party (PBNF) | The leader on 1 January 2000 is not recorded (founder Zianon Pazniak left to form the Conservative Christian Party - BPF in 1999 per Wikidata); add the chairs before 2017. | data/countries/BLR/parties.json |
 | party | `blr.pkb` Belarusian Left Party "A Just World" (Party of Communists of Belarus) (PKB) | Kalyakin is the infobox leader without dates; the start shown is the 2009 renaming. Confirm when he became leader (he headed the party's faction in 1996). | data/countries/BLR/parties.json |
 | party | `blr.bsdp_h` Belarusian Social Democratic Party (Hramada) (BSDP (H)) | No leader history with dates was found; the party's presidential candidates were Alyaksandr Kazulin (2006) and Mikola Statkevich (2010), and Tatsiana Karatkevich (2015) was a member. Add chairs. | data/countries/BLR/parties.json |
+
+### BRA — Brazil (12)
+
+| kind | record | what to check | file |
+|---|---|---|---|
+| chamber | `chamber_of_deputies` Chamber of Deputies | seats_2000 is the result of the October 1998 election, not the composition on 1 January 2000; Brazilian deputies changed party frequently in 1999. Others = Social Democratic Party (1987) 3, Party of National Mobilization 2, Social Labour Party 1. Check against the Chamber's 1999 bench records. | data/countries/BRA/country.json |
+| chamber | `federal_senate` Federal Senate | seats_2000 is the Senate composition after the October 1998 election (Election results table, 'Total' column), not a 1 January 2000 count; check for party switches during 1999. | data/countries/BRA/country.json |
+| person | `bra.jair_bolsonaro` Jair Bolsonaro (b. 1955) | Check his party on 1 January 2000 (believed to be the PPB) and the year he joined the PSL; add the documented Army career trait after checking his article. | data/countries/BRA/people.json |
+| person | `bra.hamilton_mourao` Hamilton Mourão (b. 1953) | Add his current party (believed to be Republicanos) with a sourced date, and the documented Army career trait. | data/countries/BRA/people.json |
+| person | `bra.paulo_maluf` Paulo Maluf (b. 1931) | Wikidata gives two birth dates (1931-09-03 and 1931-12-03); confirm the correct one. | data/countries/BRA/people.json |
+| party | `bra.mdb` Brazilian Democratic Movement (MDB) | Add the PMDB national president on 1 January 2000 (Jader Barbalho, start date not found) and the interim Maguito Vilela (May to September 2001). | data/countries/BRA/parties.json |
+| party | `bra.pdt` Democratic Labour Party (PDT) | Wikipedia names Brizola as founder and leader until his death but gives no start date for his presidency (1979, the founding year, is used); check. Check whether Lupi has led continuously since 2004. | data/countries/BRA/parties.json |
+| party | `bra.ptb` Brazilian Labour Party (PTB) | Sub-ideology for 2000 is a judgement (Wikipedia gives labourism historically and right-wing populism later); add dated national presidents. | data/countries/BRA/parties.json |
+| party | `bra.psb` Brazilian Socialist Party (PSB) | Add dated national presidents (none are dated in the fetched English article). | data/countries/BRA/parties.json |
+| party | `bra.uniao` Brazil Union (UNIÃO) | Leaders missing: Wikidata gives Luciano Bivar from 8 February 2022; Antônio de Rueda is president by 2025 but the handover date was not found. | data/countries/BRA/parties.json |
+| election | `chamber_2026` legislative 2026-10-04 | Recent result (4 October 2026) taken from Wikipedia only; confirm the final seat allocation against the Superior Electoral Court. | data/countries/BRA/elections.json |
+| election | `senate_2026` legislative_upper 2026-10-04 | Recent result (4 October 2026) taken from Wikipedia only; confirm the final seat allocation against the Superior Electoral Court. | data/countries/BRA/elections.json |
+
+### CAN — Canada (2)
+
+| kind | record | what to check | file |
+|---|---|---|---|
+| chamber | `house_of_commons` House of Commons | Floor crossings are dated only by year in the source. Confirm against the Library of Parliament party standings for 1 January 2000 (expected Lib 157, Reform 58, BQ 44, NDP 20, PC 19, independents 3). | data/countries/CAN/country.json |
+| chamber | `senate` Senate | These are 1997 Senate standings, not 1 January 2000. Check the Library of Parliament Senate party standings for 1 January 2000. | data/countries/CAN/country.json |
 
 ### CHE — Switzerland (8)
 
@@ -439,12 +495,61 @@ Countries with no data yet (155): SMR, VAT, LVA, LTU, ARM, AZE, KAZ, KGZ, TJK, T
 | party | `lie.dpl` Democrats for Liechtenstein (DpL) | Rehak's start as leader is set to the founding date; confirm. | data/countries/LIE/parties.json |
 | election | `referendum_2009_12_06` referendum 2009-12-06 | The article text says the 2008 law was approved by 57%, but its results template is captioned 'Overturning the 2008 environmental protection law'; confirm what a 'yes' vote meant. | data/countries/LIE/elections.json |
 
+### LTU — Lithuania (15)
+
+| kind | record | what to check | file |
+|---|---|---|---|
+| party | `ltu.lkdp` Lithuanian Christian Democratic Party (LKDP) | Find the party chairman on 1 January 2000 with dates. | data/countries/LTU/parties.json |
+| party | `ltu.lddp` Democratic Labour Party of Lithuania (LDDP) | Find the LDDP chairman on 1 January 2000 with dates. | data/countries/LTU/parties.json |
+| party | `ltu.lsdp` Social Democratic Party of Lithuania (LSDP) | Wikidata gives most chair terms by year only, and the re-establishment date is stored as 1 January 1989; confirm both. | data/countries/LTU/parties.json |
+| party | `ltu.lcs` Lithuanian Centre Union (LCS) | Confirm the party chairman on 1 January 2000. | data/countries/LTU/parties.json |
+| party | `ltu.lls` Liberal Union of Lithuania (LLS) | Find the chairman on 1 January 2000 and Paksas's chairmanship dates. | data/countries/LTU/parties.json |
+| party | `ltu.awpl` Electoral Action of Poles in Lithuania - Christian Families Alliance (LLRA-KŠS) | Confirm Tomaszewski's chairmanship start and the founding date. | data/countries/LTU/parties.json |
+| party | `ltu.nd` New Democracy Party (NDP) | Confirm the merger date and its sub-ideology. | data/countries/LTU/parties.json |
+| party | `ltu.lvzs` Lithuanian Farmers and Greens Union (LVŽS) | Add Aurelijus Veryga as current chair with dates and confirm the 2005 handover to Prunskienė (Wikidata, year precision). | data/countries/LTU/parties.json |
+| party | `ltu.ns` New Union (Social Liberals) (NS) | Confirm Paulauskas's chairmanship dates. | data/countries/LTU/parties.json |
+| party | `ltu.lics` Liberal and Centre Union (LiCS) | Add chairmen with dates (Babravičius, Zuokas). | data/countries/LTU/parties.json |
+| party | `ltu.dp` Labour Party (DP) | Leader history has gaps for chairs not modelled as people; Wikidata dates are partly year-only. | data/countries/LTU/parties.json |
+| party | `ltu.tt` Order and Justice (TT) | Add Paksas's chairmanship dates and the correct founding date. | data/countries/LTU/parties.json |
+| party | `ltu.dk` The Way of Courage (DK) | Check the sub-ideology and the chairmen with dates. | data/countries/LTU/parties.json |
+| party | `ltu.nemuno_ausra` Dawn of Nemunas (NA) | Confirm the sub-ideology from a source. | data/countries/LTU/parties.json |
+| party | `ltu.dsvl` Union of Democrats "For Lithuania" (DSVL) | Confirm the sub-ideology and the founding date (29 January vs 2 March 2022). | data/countries/LTU/parties.json |
+
 ### LUX — Luxembourg (2)
 
 | kind | record | what to check | file |
 |---|---|---|---|
 | party | `lux.adr` Alternative Democratic Reform Party (ADR) | Add Jean Schoos (ADR president 2013-2022) once a birth year is documented; the list gives Fernand Kartheiser for 2013 only and no exact handover dates. | data/countries/LUX/parties.json |
 | party | `lux.greng` The Greens (Greens) | No fetched source gives a dated list of the Greens' spokespersons since 2000; add the leader history (e.g. from the party's own records). | data/countries/LUX/parties.json |
+
+### LVA — Latvia (24)
+
+| kind | record | what to check | file |
+|---|---|---|---|
+| party | `lva.tp` People's Party (TP) | Add when Slakteris's chairmanship ended and when Šķēle returned as chairman. | data/countries/LVA/parties.json |
+| party | `lva.lc` Latvian Way (LC) | Find the Latvian Way chairman on 1 January 2000 and later chairmen with dates. | data/countries/LVA/parties.json |
+| party | `lva.tb_lnnk` For Fatherland and Freedom/LNNK (TB/LNNK) | Two conflicting chairman lists in the article; confirm who chaired the party on 1 January 2000. | data/countries/LVA/parties.json |
+| party | `lva.tsp` National Harmony Party (TSP) | Jurkāns's chairmanship dates are not given; Where only an election year is given, it is the first election at which the article infobox lists the person as the party's leader, not the date they took office. | data/countries/LVA/parties.json |
+| party | `lva.lsdsp` Latvian Social Democratic Workers' Party (LSDSP) | Find the party chairman on 1 January 2000. | data/countries/LVA/parties.json |
+| party | `lva.jp` New Party (JP) | Confirm the party chairman on 1 January 2000 (Pauls headed the 1998 list). | data/countries/LVA/parties.json |
+| party | `lva.jl` New Era Party (JL) | Confirm Repše's end date and the 2008 leadership change. | data/countries/LVA/parties.json |
+| party | `lva.pctvl` For Human Rights in United Latvia / Latvian Russian Union (PCTVL) | Leader history is approximate (Wikidata year-only data; Pliner was the 2006 list leader). | data/countries/LVA/parties.json |
+| party | `lva.lpp` Latvia's First Party (LPP) | Add the end of Jēkabsons's co-leadership. | data/countries/LVA/parties.json |
+| party | `lva.zzs` Union of Greens and Farmers (ZZS) | Leader history uses list leaders; add the alliance chairmen with dates. | data/countries/LVA/parties.json |
+| party | `lva.harmony_centre` Harmony Centre (SC) | Confirm the alliance leadership dates. | data/countries/LVA/parties.json |
+| party | `lva.harmony` Social Democratic Party "Harmony" (S) | Leader history is approximate (start years are election years; the current chairman Jānis Urbanovičs is not in the timeline because no start date was found); add exact chairmanship dates. | data/countries/LVA/parties.json |
+| party | `lva.unity` Unity (V) | Chair dates are year-only from Wikidata; add the current chairman Edmunds Jurēvics with his start date. | data/countries/LVA/parties.json |
+| party | `lva.new_unity` New Unity (JV) | Leader dates are approximate (Kariņš as 2018 and 2022 candidate, Siliņa from her 2023 premiership). | data/countries/LVA/parties.json |
+| party | `lva.na` National Alliance (NA) | Confirm the chairmen and dates (Dzintars, Gaidis Bērziņš). | data/countries/LVA/parties.json |
+| party | `lva.zrp` Zatlers' Reform Party (ZRP) | Add the end of Zatlers's chairmanship and his successors. | data/countries/LVA/parties.json |
+| party | `lva.nsl` For Latvia from the Heart (NSL) | Add the end of Sudraba's leadership. | data/countries/LVA/parties.json |
+| party | `lva.lra` Latvian Association of Regions (LRA) | Add chairmen with dates. | data/countries/LVA/parties.json |
+| party | `lva.kpv` Who Owns the State? (KPV LV) | Add the party chairmen with dates. | data/countries/LVA/parties.json |
+| party | `lva.jkp` New Conservative Party (JKP) | Add the end of Bordāns's chairmanship. | data/countries/LVA/parties.json |
+| party | `lva.ap` Development/For! (AP!) | Add chairmanship dates. | data/countries/LVA/parties.json |
+| party | `lva.progressives` The Progressives (PRO) | Resolve the co-chair conflict in the article and add chair dates. | data/countries/LVA/parties.json |
+| party | `lva.as` United List (AS) | Leader history is approximate; add the chairmen and dates. | data/countries/LVA/parties.json |
+| party | `lva.stabilitatei` For Stability! (ST!) | Add the end of Rosļikovs's leadership. | data/countries/LVA/parties.json |
 
 ### MCO — Monaco (6)
 

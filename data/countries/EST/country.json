@@ -1,0 +1,255 @@
+{
+  "tag": "EST",
+  "name": {
+    "en": "Estonia",
+    "native": "Eesti",
+    "official": {
+      "en": "Republic of Estonia",
+      "native": "Eesti Vabariik"
+    }
+  },
+  "adjective": "Estonian",
+  "culture_primary": "estonian",
+  "government": {
+    "type": "parliamentary",
+    "effective_executive": "est.prime_minister",
+    "head_of_state_office": "est.president",
+    "head_of_government_office": "est.prime_minister",
+    "constitution": {
+      "term_limit_amendable": true,
+      "emergency_powers": true,
+      "referendum_required_for": []
+    },
+    "note": "Parliamentary republic under the 1992 Constitution. Executive power is vested in the Government led by the Prime Minister, who is nominated by the President and confirmed by the Riigikogu. The President is elected by the Riigikogu with a two-thirds majority (68 of 101) in up to three rounds; failing that, an Electoral Assembly of the Riigikogu members and local-government representatives elects by majority. The President has no executive powers and suspends party membership in office."
+  },
+  "offices": [
+    {
+      "id": "est.president",
+      "title": {
+        "en": "President of the Republic of Estonia",
+        "native": "Eesti Vabariigi President"
+      },
+      "role": "head_of_state",
+      "power_weight": 0.1,
+      "selection": "electoral_college",
+      "term_years": 5,
+      "term_limit": {
+        "max_terms": 2,
+        "consecutive_only": true
+      },
+      "succession": {
+        "type": "acting_then_election"
+      },
+      "holders": [
+        {
+          "person": "est.lennart_meri",
+          "from": "1992-10-06",
+          "to": "2001-10-08",
+          "note": "Elected by the Riigikogu in 1992 and by the Electoral Assembly in 1996."
+        },
+        {
+          "person": "est.arnold_ruutel",
+          "from": "2001-10-08",
+          "to": "2006-10-09"
+        },
+        {
+          "person": "est.toomas_hendrik_ilves",
+          "from": "2006-10-09",
+          "to": "2016-10-10",
+          "note": "Re-elected by the Riigikogu in 2011."
+        },
+        {
+          "person": "est.kersti_kaljulaid",
+          "from": "2016-10-10",
+          "to": "2021-10-11"
+        },
+        {
+          "person": "est.alar_karis",
+          "from": "2021-10-11",
+          "to": "2026-10-12"
+        },
+        {
+          "person": "est.ulle_madise",
+          "from": "2026-10-12",
+          "note": "Elected by the Riigikogu on 2 September 2026; sworn in on 12 October 2026."
+        }
+      ],
+      "note": "Selection is by the Riigikogu first (two-thirds majority) and by an Electoral Assembly if the Riigikogu fails; modelled as electoral_college.",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/President_of_Estonia",
+          "title": "Wikipedia: President of Estonia (list of presidents)",
+          "accessed": "2026-10-16"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/2026_Estonian_presidential_election",
+          "title": "Wikipedia: 2026 Estonian presidential election",
+          "accessed": "2026-10-16"
+        },
+        {
+          "url": "https://www.wikidata.org/wiki/Q16407395",
+          "title": "Wikidata: Ülle Madise (President of Estonia from 2026-10-12)",
+          "accessed": "2026-10-16"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "est.prime_minister",
+      "title": {
+        "en": "Prime Minister of Estonia",
+        "native": "Eesti Vabariigi peaminister"
+      },
+      "role": "head_of_government",
+      "power_weight": 0.9,
+      "selection": "legislature",
+      "appointed_by": "est.president",
+      "term_years": 4,
+      "holders": [
+        {
+          "person": "est.mart_laar",
+          "from": "1999-03-25",
+          "to": "2002-01-28",
+          "note": "Second Laar cabinet: Pro Patria Union, Moderates and Reform Party."
+        },
+        {
+          "person": "est.siim_kallas",
+          "from": "2002-01-28",
+          "to": "2003-04-10",
+          "note": "Reform Party and Centre Party coalition."
+        },
+        {
+          "person": "est.juhan_parts",
+          "from": "2003-04-10",
+          "to": "2005-04-12",
+          "note": "Res Publica, Reform Party and People's Union coalition. The Res Publica article gives 23 March 2005 as the end of his premiership (resignation); the prime-minister list gives 12 April 2005, when Ansip took office. The list date is used."
+        },
+        {
+          "person": "est.andrus_ansip",
+          "from": "2005-04-12",
+          "to": "2014-03-26",
+          "note": "Three cabinets (2005, 2007, 2011)."
+        },
+        {
+          "person": "est.taavi_roivas",
+          "from": "2014-03-26",
+          "to": "2016-11-23"
+        },
+        {
+          "person": "est.juri_ratas",
+          "from": "2016-11-23",
+          "to": "2021-01-26"
+        },
+        {
+          "person": "est.kaja_kallas",
+          "from": "2021-01-26",
+          "to": "2024-07-23",
+          "note": "Three cabinets (2021, 2022, 2023); resigned to become EU High Representative. The list shows her first cabinet ending 14 July 2022 and the second starting 18 July 2022; she remained Prime Minister throughout."
+        },
+        {
+          "person": "est.kristen_michal",
+          "from": "2024-07-23",
+          "note": "Reform Party, Estonia 200 and Social Democratic Party cabinet."
+        }
+      ],
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/List_of_prime_ministers_of_Estonia",
+          "title": "Wikipedia: List of prime ministers of Estonia",
+          "accessed": "2026-10-16"
+        }
+      ],
+      "confidence": "verified"
+    }
+  ],
+  "legislature": {
+    "name": {
+      "en": "Riigikogu",
+      "native": "Riigikogu"
+    },
+    "chambers": [
+      {
+        "id": "riigikogu",
+        "name": {
+          "en": "Riigikogu",
+          "native": "Riigikogu"
+        },
+        "seats": 101,
+        "term_years": 4,
+        "elected": "direct",
+        "system": {
+          "type": "list_pr",
+          "formula": "dhondt",
+          "threshold": 0.05,
+          "district_model": "custom",
+          "note": "101 seats by list PR in multi-member districts with compensation seats; 5% national threshold; modified D'Hondt (divisor raised to the power 0.9). Elections on the first Sunday of March every four years. seats_2000 is the result of the March 1999 election; changes in party affiliation between March 1999 and 1 January 2000 were not checked. The Moderates' 17 seats are recorded under est.sde (the Moderate People's Party, formed 29 May 1999)."
+        },
+        "seats_2000": {
+          "est.kesk": 28,
+          "est.isamaaliit": 18,
+          "est.reform": 18,
+          "est.sde": 17,
+          "est.koonderakond": 7,
+          "est.rahvaliit": 7,
+          "est.eurp": 6
+        },
+        "confidence_chamber": true,
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/1999_Estonian_parliamentary_election",
+            "title": "Wikipedia: 1999 Estonian parliamentary election (results)",
+            "accessed": "2026-10-16"
+          },
+          {
+            "url": "https://en.wikipedia.org/wiki/Riigikogu",
+            "title": "Wikipedia: Riigikogu (electoral system)",
+            "accessed": "2026-10-16"
+          },
+          {
+            "url": "https://en.wikipedia.org/wiki/Elections_in_Estonia",
+            "title": "Wikipedia: Elections in Estonia",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    ]
+  },
+  "party_system": "multi_party",
+  "start_2000": {
+    "ruling_parties": [
+      "est.isamaaliit",
+      "est.sde",
+      "est.reform"
+    ],
+    "confidence_and_supply": [],
+    "ideology_support": {
+      "social_liberal": 0.234,
+      "national_conservative": 0.1609,
+      "classical_liberal": 0.1592,
+      "social_democrat": 0.1521,
+      "centrist_liberal": 0.0758,
+      "agrarian": 0.0777,
+      "regionalist": 0.0816,
+      "christian_democrat": 0.0243,
+      "big_tent": 0.0344
+    },
+    "ideology_support_note": "Derived from the March 1999 Riigikogu vote (shares computed from the vote counts): Centre Party 23.4% (social liberal), Pro Patria Union 16.1% (national conservative), Reform Party 15.9% (classical liberal), Moderates 15.2% (social democrat), Coalition Party 7.6% (centrist liberal), Country People's Party 7.3% plus Farmers' Assembly 0.5% (agrarian), Estonian United People's Party 6.1% plus Russian Party in Estonia 2.0% (Russian-minority parties, recorded as regionalist), Christian People's Party 2.4% (Christian democrat); the Blue Party (1.6%), Progress Party (0.4%) and independents (1.5%) are assigned to big tent.",
+    "stability": 0.7,
+    "war_support": 0.2
+  },
+  "claims": [],
+  "source": [
+    {
+      "url": "https://en.wikipedia.org/wiki/1999_Estonian_parliamentary_election",
+      "title": "Wikipedia: 1999 Estonian parliamentary election",
+      "accessed": "2026-10-16"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/List_of_prime_ministers_of_Estonia",
+      "title": "Wikipedia: List of prime ministers of Estonia (Laar II cabinet: IL, M, REF)",
+      "accessed": "2026-10-16"
+    }
+  ],
+  "confidence": "verified"
+}

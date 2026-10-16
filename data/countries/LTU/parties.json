@@ -1,0 +1,926 @@
+{
+  "parties": [
+    {
+      "id": "ltu.ts",
+      "name": {
+        "en": "Homeland Union - Lithuanian Christian Democrats",
+        "native": "Tėvynės sąjunga - Lietuvos krikščionys demokratai"
+      },
+      "abbrev": {
+        "en": "TS-LKD",
+        "native": "TS-LKD"
+      },
+      "color": "#00A5E0",
+      "sub_ideology": "liberal_conservative",
+      "founded": "1993-05-01",
+      "status_2000": "active",
+      "leader_history": [
+        {
+          "person": "ltu.vytautas_landsbergis",
+          "from": 1993,
+          "to": 2003
+        },
+        {
+          "person": "ltu.andrius_kubilius",
+          "from": 2003,
+          "to": 2015
+        },
+        {
+          "person": "ltu.gabrielius_landsbergis",
+          "from": 2015,
+          "to": 2024
+        },
+        {
+          "person": "ltu.laurynas_kasciunas",
+          "from": 2025
+        }
+      ],
+      "popularity_2000": 0.3134,
+      "popularity_note": "List vote share, 1996 Seimas election (as Homeland Union - Lithuanian Conservatives); led the governing coalition in 2000.",
+      "note": "Founded in 1993 as Homeland Union (Lithuanian Conservatives); merged with the Lithuanian Christian Democrats in 2008 (Wikidata gives 20 June 2008 as the inception of the merged party). Chairs from Wikidata (year precision).",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Homeland_Union",
+          "title": "Wikipedia: Homeland Union",
+          "accessed": "2026-10-16"
+        },
+        {
+          "url": "https://www.wikidata.org/wiki/Q81556",
+          "title": "Wikidata: Homeland Union (chairpersons with years)",
+          "accessed": "2026-10-16"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/1996_Lithuanian_parliamentary_election",
+          "title": "Wikipedia: 1996 Lithuanian parliamentary election (infobox)",
+          "accessed": "2026-10-16"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "ltu.lkdp",
+      "name": {
+        "en": "Lithuanian Christian Democratic Party",
+        "native": "Lietuvos krikščionių demokratų partija"
+      },
+      "abbrev": {
+        "en": "LKDP",
+        "native": "LKDP"
+      },
+      "color": "#2E5EAA",
+      "sub_ideology": "christian_democrat",
+      "founded": 1989,
+      "dissolved": 2001,
+      "status_2000": "active",
+      "leader_history": [
+        {
+          "person": "ltu.algirdas_saudargas",
+          "from": 1996,
+          "to": 2000,
+          "title": "List leader"
+        },
+        {
+          "person": "ltu.zigmas_zinkevicius",
+          "from": 2000,
+          "to": 2001,
+          "title": "List leader"
+        }
+      ],
+      "popularity_2000": 0.1043,
+      "popularity_note": "List vote share, 1996 Seimas election; junior partner in the Kubilius government in 2000.",
+      "lineage": {
+        "merged_into": "ltu.ts"
+      },
+      "note": "Merged in 2001 with the Christian Democratic Union into the Lithuanian Christian Democrats, which merged into the Homeland Union on 17 April 2008 (Wikidata). Where a leader is marked \"List leader\", the year is the first election at which the article infobox lists them as the party's leader, not the date they took office.",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/1996_Lithuanian_parliamentary_election",
+          "title": "Wikipedia: 1996 Lithuanian parliamentary election (infobox)",
+          "accessed": "2026-10-16"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/2000_Lithuanian_parliamentary_election",
+          "title": "Wikipedia: 2000 Lithuanian parliamentary election (leaders)",
+          "accessed": "2026-10-16"
+        },
+        {
+          "url": "https://www.wikidata.org/wiki/Q3896751",
+          "title": "Wikidata: Lithuanian Christian Democratic Party (dates)",
+          "accessed": "2026-10-16"
+        },
+        {
+          "url": "https://www.wikidata.org/wiki/Q977089",
+          "title": "Wikidata: Lithuanian Christian Democrats (dissolution date)",
+          "accessed": "2026-10-16"
+        }
+      ],
+      "confidence": "needs_review",
+      "review_note": "Find the party chairman on 1 January 2000 with dates."
+    },
+    {
+      "id": "ltu.lddp",
+      "name": {
+        "en": "Democratic Labour Party of Lithuania",
+        "native": "Lietuvos demokratinė darbo partija"
+      },
+      "abbrev": {
+        "en": "LDDP",
+        "native": "LDDP"
+      },
+      "color": "#D7263D",
+      "sub_ideology": "reformed_communist",
+      "founded": 1989,
+      "dissolved": 2001,
+      "status_2000": "active",
+      "leader_history": [
+        {
+          "person": "ltu.ceslovas_jursenas",
+          "from": 1996,
+          "to": 2000,
+          "title": "List leader"
+        },
+        {
+          "person": "ltu.algirdas_brazauskas",
+          "from": 2000,
+          "to": 2001,
+          "title": "List leader"
+        }
+      ],
+      "popularity_2000": 0.1001,
+      "popularity_note": "List vote share, 1996 Seimas election.",
+      "lineage": {
+        "merged_into": "ltu.lsdp"
+      },
+      "note": "Successor of the Communist Party of Lithuania; led the Social-Democratic Coalition of Algirdas Brazauskas in 2000 and merged into the Social Democratic Party in 2001. Wikidata lists Brazauskas as chairman. Where a leader is marked \"List leader\", the year is the first election at which the article infobox lists them as the party's leader, not the date they took office.",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/1996_Lithuanian_parliamentary_election",
+          "title": "Wikipedia: 1996 Lithuanian parliamentary election (infobox)",
+          "accessed": "2026-10-16"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/2000_Lithuanian_parliamentary_election",
+          "title": "Wikipedia: 2000 Lithuanian parliamentary election (Social-Democratic Coalition)",
+          "accessed": "2026-10-16"
+        },
+        {
+          "url": "https://www.wikidata.org/wiki/Q63755",
+          "title": "Wikidata: Democratic Labour Party of Lithuania",
+          "accessed": "2026-10-16"
+        }
+      ],
+      "confidence": "needs_review",
+      "review_note": "Find the LDDP chairman on 1 January 2000 with dates."
+    },
+    {
+      "id": "ltu.lsdp",
+      "name": {
+        "en": "Social Democratic Party of Lithuania",
+        "native": "Lietuvos socialdemokratų partija"
+      },
+      "abbrev": {
+        "en": "LSDP",
+        "native": "LSDP"
+      },
+      "color": "#E10B17",
+      "sub_ideology": "social_democrat",
+      "founded": "1989-01-01",
+      "status_2000": "active",
+      "leader_history": [
+        {
+          "person": "ltu.vytenis_andriukaitis",
+          "from": 1998,
+          "to": 2001
+        },
+        {
+          "person": "ltu.algirdas_brazauskas",
+          "from": 2001,
+          "to": 2007
+        },
+        {
+          "person": "ltu.gediminas_kirkilas",
+          "from": 2007,
+          "to": 2009
+        },
+        {
+          "person": "ltu.algirdas_butkevicius",
+          "from": 2009,
+          "to": 2017
+        },
+        {
+          "person": "ltu.gintautas_paluckas",
+          "from": 2017,
+          "to": 2021
+        },
+        {
+          "person": "ltu.vilija_blinkeviciute",
+          "from": 2021,
+          "to": "2025-05-01"
+        },
+        {
+          "person": "ltu.gintautas_paluckas",
+          "from": "2025-05-01",
+          "to": "2025-07-31"
+        },
+        {
+          "person": "ltu.mindaugas_sinkevicius",
+          "from": "2025-07-31"
+        }
+      ],
+      "popularity_2000": 0.0694,
+      "popularity_note": "List vote share, 1996 Seimas election.",
+      "lineage": {
+        "formed_from": [
+          "ltu.lddp"
+        ]
+      },
+      "note": "Historic party founded in 1896, re-established in 1989; absorbed the LDDP in 2001. Chairs from Wikidata (year precision until 2025). Founding date stored as 1989 (re-establishment).",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Social_Democratic_Party_of_Lithuania",
+          "title": "Wikipedia: Social Democratic Party of Lithuania",
+          "accessed": "2026-10-16"
+        },
+        {
+          "url": "https://www.wikidata.org/wiki/Q4362",
+          "title": "Wikidata: Social Democratic Party of Lithuania (chairpersons)",
+          "accessed": "2026-10-16"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/1996_Lithuanian_parliamentary_election",
+          "title": "Wikipedia: 1996 Lithuanian parliamentary election (infobox)",
+          "accessed": "2026-10-16"
+        }
+      ],
+      "confidence": "needs_review",
+      "review_note": "Wikidata gives most chair terms by year only, and the re-establishment date is stored as 1 January 1989; confirm both."
+    },
+    {
+      "id": "ltu.lcs",
+      "name": {
+        "en": "Lithuanian Centre Union",
+        "native": "Lietuvos centro sąjunga"
+      },
+      "abbrev": {
+        "en": "LCS",
+        "native": "LCS"
+      },
+      "color": "#F2A900",
+      "sub_ideology": "centrist_liberal",
+      "founded": 1993,
+      "dissolved": "2003-05-31",
+      "status_2000": "active",
+      "leader_history": [
+        {
+          "person": "ltu.romualdas_ozolas",
+          "from": 1996,
+          "title": "List leader"
+        }
+      ],
+      "popularity_2000": 0.0867,
+      "popularity_note": "List vote share, 1996 Seimas election.",
+      "lineage": {
+        "merged_into": "ltu.lics"
+      },
+      "note": "Merged with the Liberal Union and others into the Liberal and Centre Union on 31 May 2003 (Wikidata). Where a leader is marked \"List leader\", the year is the first election at which the article infobox lists them as the party's leader, not the date they took office.",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/1996_Lithuanian_parliamentary_election",
+          "title": "Wikipedia: 1996 Lithuanian parliamentary election (infobox)",
+          "accessed": "2026-10-16"
+        },
+        {
+          "url": "https://www.wikidata.org/wiki/Q1824385",
+          "title": "Wikidata: Lithuanian Centre Union (dates)",
+          "accessed": "2026-10-16"
+        }
+      ],
+      "confidence": "needs_review",
+      "review_note": "Confirm the party chairman on 1 January 2000."
+    },
+    {
+      "id": "ltu.lls",
+      "name": {
+        "en": "Liberal Union of Lithuania",
+        "native": "Lietuvos liberalų sąjunga"
+      },
+      "abbrev": {
+        "en": "LLS",
+        "native": "LLS"
+      },
+      "color": "#F7D117",
+      "sub_ideology": "classical_liberal",
+      "founded": 1990,
+      "dissolved": 2003,
+      "status_2000": "active",
+      "leader_history": [
+        {
+          "person": "ltu.rolandas_paksas",
+          "from": 2000,
+          "title": "List leader"
+        }
+      ],
+      "popularity_2000": 0.0193,
+      "popularity_note": "List vote share, 1996 Seimas election.",
+      "lineage": {
+        "merged_into": "ltu.lics"
+      },
+      "note": "Won 34 seats in 2000 under Rolandas Paksas, who became Prime Minister; merged into the Liberal and Centre Union in 2003. Where a leader is marked \"List leader\", the year is the first election at which the article infobox lists them as the party's leader, not the date they took office.",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/1996_Lithuanian_parliamentary_election",
+          "title": "Wikipedia: 1996 Lithuanian parliamentary election (infobox)",
+          "accessed": "2026-10-16"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/2000_Lithuanian_parliamentary_election",
+          "title": "Wikipedia: 2000 Lithuanian parliamentary election (leaders)",
+          "accessed": "2026-10-16"
+        },
+        {
+          "url": "https://www.wikidata.org/wiki/Q1824395",
+          "title": "Wikidata: Liberal Union of Lithuania (dates)",
+          "accessed": "2026-10-16"
+        }
+      ],
+      "confidence": "needs_review",
+      "review_note": "Find the chairman on 1 January 2000 and Paksas's chairmanship dates."
+    },
+    {
+      "id": "ltu.awpl",
+      "name": {
+        "en": "Electoral Action of Poles in Lithuania - Christian Families Alliance",
+        "native": "Lietuvos lenkų rinkimų akcija - Krikščioniškų šeimų sąjunga"
+      },
+      "abbrev": {
+        "en": "LLRA-KŠS",
+        "native": "LLRA-KŠS"
+      },
+      "color": "#C8102E",
+      "sub_ideology": "regionalist",
+      "founded": "1994-08-28",
+      "status_2000": "active",
+      "leader_history": [
+        {
+          "person": "ltu.waldemar_tomaszewski",
+          "from": 2000,
+          "title": "List leader"
+        }
+      ],
+      "popularity_2000": 0.0313,
+      "popularity_note": "List vote share, 1996 Seimas election.",
+      "note": "Party of the Polish minority; Wikidata lists Waldemar Tomaszewski as chair (no dates); Jan Sienkiewicz headed the 1996 list. Wikidata holds two founding dates (28 August and 21 October 1994). Recorded as regionalist because no minority-party sub-ideology exists. Where a leader is marked \"List leader\", the year is the first election at which the article infobox lists them as the party's leader, not the date they took office.",
+      "source": [
+        {
+          "url": "https://www.wikidata.org/wiki/Q1357218",
+          "title": "Wikidata: Electoral Action of Poles (chair, founding date)",
+          "accessed": "2026-10-16"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/1996_Lithuanian_parliamentary_election",
+          "title": "Wikipedia: 1996 Lithuanian parliamentary election (infobox)",
+          "accessed": "2026-10-16"
+        }
+      ],
+      "confidence": "needs_review",
+      "review_note": "Confirm Tomaszewski's chairmanship start and the founding date."
+    },
+    {
+      "id": "ltu.nd",
+      "name": {
+        "en": "New Democracy Party",
+        "native": "Naujosios demokratijos partija"
+      },
+      "abbrev": {
+        "en": "NDP",
+        "native": "NDP"
+      },
+      "color": "#9B59B6",
+      "sub_ideology": "agrarian",
+      "founded": 1993,
+      "dissolved": 2001,
+      "status_2000": "active",
+      "leader_history": [
+        {
+          "person": "ltu.kazimira_prunskiene",
+          "from": 1996,
+          "to": 2001,
+          "title": "List leader"
+        }
+      ],
+      "popularity_2000": 0.0386,
+      "popularity_note": "List vote share, 1996 Seimas election.",
+      "lineage": {
+        "merged_into": "ltu.lvzs"
+      },
+      "note": "Led by Kazimira Prunskienė; part of the 2000 Social-Democratic Coalition, then merged with the Lithuanian Peasants Party in 2001 (Wikidata dissolution year 2001; the 2002 presidential article names the Peasants and New Democratic Party Union). Recorded as agrarian after its merger partner. Where a leader is marked \"List leader\", the year is the first election at which the article infobox lists them as the party's leader, not the date they took office.",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/1996_Lithuanian_parliamentary_election",
+          "title": "Wikipedia: 1996 Lithuanian parliamentary election (infobox)",
+          "accessed": "2026-10-16"
+        },
+        {
+          "url": "https://www.wikidata.org/wiki/Q736398",
+          "title": "Wikidata: New Democracy Party (dates)",
+          "accessed": "2026-10-16"
+        }
+      ],
+      "confidence": "needs_review",
+      "review_note": "Confirm the merger date and its sub-ideology."
+    },
+    {
+      "id": "ltu.lvzs",
+      "name": {
+        "en": "Lithuanian Farmers and Greens Union",
+        "native": "Lietuvos valstiečių ir žaliųjų sąjunga"
+      },
+      "abbrev": {
+        "en": "LVŽS",
+        "native": "LVŽS"
+      },
+      "color": "#3BA935",
+      "sub_ideology": "agrarian",
+      "founded": 1990,
+      "status_2000": "active",
+      "leader_history": [
+        {
+          "person": "ltu.ramunas_karbauskis",
+          "from": 2000,
+          "to": 2005,
+          "title": "List leader"
+        },
+        {
+          "person": "ltu.kazimira_prunskiene",
+          "from": 2005,
+          "to": "2009-02-01"
+        },
+        {
+          "person": "ltu.ramunas_karbauskis",
+          "from": "2009-02-01"
+        }
+      ],
+      "popularity_2000": 0.0175,
+      "popularity_note": "List vote share of the Lithuanian Peasants Party, 1996 Seimas election.",
+      "lineage": {
+        "formed_from": [
+          "ltu.nd"
+        ]
+      },
+      "note": "Continuity of the Lithuanian Peasants Party (Karbauskis led its 2000 list), merged with New Democracy in 2001 (Peasants and New Democratic Party Union), later the Peasant Popular Union and from 2012 the Farmers and Greens Union; largest party in 2016. Wikidata gives founding years 2001/2002 for the union and lists Aurelijus Veryga as current chair. Founding year is the Wikidata inception of the Lithuanian Peasants Party (1990, year precision).",
+      "source": [
+        {
+          "url": "https://www.wikidata.org/wiki/Q285817",
+          "title": "Wikidata: Lithuanian Farmers and Greens Union (chairpersons)",
+          "accessed": "2026-10-16"
+        },
+        {
+          "url": "https://www.wikidata.org/wiki/Q2741559",
+          "title": "Wikidata: Lithuanian Peasants Party (inception 1990)",
+          "accessed": "2026-10-16"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/1996_Lithuanian_parliamentary_election",
+          "title": "Wikipedia: 1996 Lithuanian parliamentary election (infobox)",
+          "accessed": "2026-10-16"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/2000_Lithuanian_parliamentary_election",
+          "title": "Wikipedia: 2000 Lithuanian parliamentary election (leaders)",
+          "accessed": "2026-10-16"
+        }
+      ],
+      "confidence": "needs_review",
+      "review_note": "Add Aurelijus Veryga as current chair with dates and confirm the 2005 handover to Prunskienė (Wikidata, year precision)."
+    },
+    {
+      "id": "ltu.ns",
+      "name": {
+        "en": "New Union (Social Liberals)",
+        "native": "Naujoji sąjunga (socialliberalai)"
+      },
+      "abbrev": {
+        "en": "NS",
+        "native": "NS"
+      },
+      "color": "#F39C12",
+      "sub_ideology": "social_liberal",
+      "founded": 1998,
+      "dissolved": "2011-07-09",
+      "status_2000": "active",
+      "leader_history": [
+        {
+          "person": "ltu.arturas_paulauskas",
+          "from": 1998
+        }
+      ],
+      "popularity_2000": 0,
+      "popularity_note": "Founded in 1998, after the 1996 election.",
+      "lineage": {
+        "merged_into": "ltu.dp"
+      },
+      "note": "Social-liberal party led by Artūras Paulauskas (Wikidata chair, no dates); second in 2000 and in government 2001-2006; merged into the Labour Party on 9 July 2011 (Wikidata).",
+      "source": [
+        {
+          "url": "https://www.wikidata.org/wiki/Q794255",
+          "title": "Wikidata: New Union (Social Liberals) (dates, chairperson)",
+          "accessed": "2026-10-16"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/2000_Lithuanian_parliamentary_election",
+          "title": "Wikipedia: 2000 Lithuanian parliamentary election (leaders)",
+          "accessed": "2026-10-16"
+        }
+      ],
+      "confidence": "needs_review",
+      "review_note": "Confirm Paulauskas's chairmanship dates."
+    },
+    {
+      "id": "ltu.lics",
+      "name": {
+        "en": "Liberal and Centre Union",
+        "native": "Liberalų ir centro sąjunga"
+      },
+      "abbrev": {
+        "en": "LiCS",
+        "native": "LiCS"
+      },
+      "color": "#0055A4",
+      "sub_ideology": "classical_liberal",
+      "founded": "2003-05-31",
+      "dissolved": 2014,
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        {
+          "person": "ltu.arturas_zuokas",
+          "from": 2008,
+          "title": "List leader"
+        }
+      ],
+      "popularity_2000": 0,
+      "popularity_note": "Not founded until 2003.",
+      "lineage": {
+        "formed_from": [
+          "ltu.lls",
+          "ltu.lcs"
+        ]
+      },
+      "note": "Formed on 31 May 2003 from the Liberal Union, the Centre Union and the Modern Christian Democrats (Wikidata chair Gintautas Babravičius, who led the 2004 list but has no English Wikipedia article). Where a leader is marked \"List leader\", the year is the first election at which the article infobox lists them as the party's leader, not the date they took office.",
+      "source": [
+        {
+          "url": "https://www.wikidata.org/wiki/Q1357261",
+          "title": "Wikidata: Liberal and Centre Union",
+          "accessed": "2026-10-16"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/2008_Lithuanian_parliamentary_election",
+          "title": "Wikipedia: 2008 Lithuanian parliamentary election (leaders)",
+          "accessed": "2026-10-16"
+        }
+      ],
+      "confidence": "needs_review",
+      "review_note": "Add chairmen with dates (Babravičius, Zuokas)."
+    },
+    {
+      "id": "ltu.dp",
+      "name": {
+        "en": "Labour Party",
+        "native": "Darbo partija"
+      },
+      "abbrev": {
+        "en": "DP",
+        "native": "DP"
+      },
+      "color": "#1F4E9E",
+      "sub_ideology": "left_populist",
+      "founded": 2003,
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        {
+          "person": "ltu.viktor_uspaskich",
+          "from": 2003,
+          "to": 2006
+        },
+        {
+          "person": "ltu.viktor_uspaskich",
+          "from": 2007,
+          "to": 2013
+        },
+        {
+          "person": "ltu.loreta_grauziniene",
+          "from": "2013-10-01",
+          "to": "2015-03-01"
+        },
+        {
+          "person": "ltu.valentinas_mazuronis",
+          "from": "2015-05-01",
+          "to": "2016-10-01"
+        },
+        {
+          "person": "ltu.viktor_uspaskich",
+          "from": 2018,
+          "to": 2022
+        }
+      ],
+      "popularity_2000": 0,
+      "popularity_note": "Not founded until 2003.",
+      "note": "Founded by Viktor Uspaskich in 2003; largest party in 2004. Chairs from Wikidata; omitted from the timeline: Kęstutis Daukšys (2006-2007), Vytautas Gapšys (2013), Živilė Pinskuvienė (2016-2017), Šarūnas Birutis (2017-2018) and Andrius Mazuronis (2022-2024).",
+      "source": [
+        {
+          "url": "https://www.wikidata.org/wiki/Q1142007",
+          "title": "Wikidata: Labour Party (chairpersons)",
+          "accessed": "2026-10-16"
+        }
+      ],
+      "confidence": "needs_review",
+      "review_note": "Leader history has gaps for chairs not modelled as people; Wikidata dates are partly year-only."
+    },
+    {
+      "id": "ltu.tt",
+      "name": {
+        "en": "Order and Justice",
+        "native": "Tvarka ir teisingumas"
+      },
+      "abbrev": {
+        "en": "TT",
+        "native": "TT"
+      },
+      "color": "#F2C200",
+      "sub_ideology": "right_populist",
+      "founded": "2002-03-19",
+      "dissolved": "2020-06-06",
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        {
+          "person": "ltu.rolandas_paksas",
+          "from": 2004,
+          "title": "List leader"
+        }
+      ],
+      "popularity_2000": 0,
+      "popularity_note": "Not founded until 2002.",
+      "note": "Founded in 2002 as the Liberal Democratic Party, which nominated Paksas for President; renamed Order and Justice; dissolved on 6 June 2020 (Wikidata). Wikidata holds founding dates 9 and 19 March 2002. Where a leader is marked \"List leader\", the year is the first election at which the article infobox lists them as the party's leader, not the date they took office.",
+      "source": [
+        {
+          "url": "https://www.wikidata.org/wiki/Q81517",
+          "title": "Wikidata: Order and Justice (dates, chairperson)",
+          "accessed": "2026-10-16"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/2004_Lithuanian_parliamentary_election",
+          "title": "Wikipedia: 2004 Lithuanian parliamentary election (leaders)",
+          "accessed": "2026-10-16"
+        }
+      ],
+      "confidence": "needs_review",
+      "review_note": "Add Paksas's chairmanship dates and the correct founding date."
+    },
+    {
+      "id": "ltu.tpp",
+      "name": {
+        "en": "National Resurrection Party",
+        "native": "Tautos prisikėlimo partija"
+      },
+      "abbrev": {
+        "en": "TPP",
+        "native": "TPP"
+      },
+      "color": "#E4007C",
+      "sub_ideology": "big_tent",
+      "founded": "2008-06-30",
+      "dissolved": "2011-09-22",
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        {
+          "person": "ltu.arunas_valinskas",
+          "from": "2008-06-30"
+        }
+      ],
+      "popularity_2000": 0,
+      "popularity_note": "Not founded until 2008.",
+      "note": "Founded on 30 June 2008 by Arūnas Valinskas; second in 2008 and joined the second Kubilius government; dissolved on 22 September 2011 (Wikidata).",
+      "source": [
+        {
+          "url": "https://www.wikidata.org/wiki/Q1465363",
+          "title": "Wikidata: National Resurrection Party (dates, chairperson)",
+          "accessed": "2026-10-16"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/2008_Lithuanian_parliamentary_election",
+          "title": "Wikipedia: 2008 Lithuanian parliamentary election",
+          "accessed": "2026-10-16"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "ltu.lrls",
+      "name": {
+        "en": "Liberals' Movement",
+        "native": "Liberalų sąjūdis"
+      },
+      "abbrev": {
+        "en": "LS",
+        "native": "LS"
+      },
+      "color": "#F58220",
+      "sub_ideology": "classical_liberal",
+      "founded": "2006-02-25",
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        {
+          "person": "ltu.petras_austrevicius",
+          "from": "2006-02-25",
+          "to": 2008
+        },
+        {
+          "person": "ltu.eligijus_masiulis",
+          "from": "2008-02-09",
+          "to": "2016-05-12"
+        },
+        {
+          "person": "ltu.remigijus_simasius",
+          "from": "2016-06-11",
+          "to": "2017-10-20"
+        },
+        {
+          "person": "ltu.eugenijus_gentvilas",
+          "from": "2017-12-09",
+          "to": "2019-09-21"
+        },
+        {
+          "person": "ltu.viktorija_cmilyte_nielsen",
+          "from": "2019-09-21"
+        }
+      ],
+      "popularity_2000": 0,
+      "popularity_note": "Not founded until 2006.",
+      "note": "Liberal party founded in 2006 (Wikidata gives 25 February and 11 April 2006). Antanas Guoga chaired it from 12 to 18 May 2016 and is omitted.",
+      "source": [
+        {
+          "url": "https://www.wikidata.org/wiki/Q1466907",
+          "title": "Wikidata: Liberals' Movement (chairpersons with dates)",
+          "accessed": "2026-10-16"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "ltu.dk",
+      "name": {
+        "en": "The Way of Courage",
+        "native": "Drąsos kelias"
+      },
+      "abbrev": {
+        "en": "DK",
+        "native": "DK"
+      },
+      "color": "#8B0000",
+      "sub_ideology": "right_populist",
+      "founded": 2012,
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        {
+          "person": "ltu.neringa_venckiene",
+          "from": 2012,
+          "title": "List leader"
+        }
+      ],
+      "popularity_2000": 0,
+      "popularity_note": "Not founded until 2012.",
+      "note": "Won 7 seats in 2012 with Neringa Venckienė heading its list; Wikidata lists Jonas Varkala as chairman. Where a leader is marked \"List leader\", the year is the first election at which the article infobox lists them as the party's leader, not the date they took office.",
+      "source": [
+        {
+          "url": "https://www.wikidata.org/wiki/Q1261824",
+          "title": "Wikidata: The Way of Courage",
+          "accessed": "2026-10-16"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/2012_Lithuanian_parliamentary_election",
+          "title": "Wikipedia: 2012 Lithuanian parliamentary election (leaders)",
+          "accessed": "2026-10-16"
+        }
+      ],
+      "confidence": "needs_review",
+      "review_note": "Check the sub-ideology and the chairmen with dates."
+    },
+    {
+      "id": "ltu.lp",
+      "name": {
+        "en": "Freedom Party",
+        "native": "Laisvės partija"
+      },
+      "abbrev": {
+        "en": "LP",
+        "native": "LP"
+      },
+      "color": "#E6007E",
+      "sub_ideology": "social_liberal",
+      "founded": "2019-06-01",
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        {
+          "person": "ltu.ausrine_armonaite",
+          "from": "2019-06-01"
+        }
+      ],
+      "popularity_2000": 0,
+      "popularity_note": "Not founded until 2019.",
+      "note": "Liberal party founded in 2019 (Wikidata gives 1 June and 8 July 2019); partner in the Šimonytė government.",
+      "source": [
+        {
+          "url": "https://www.wikidata.org/wiki/Q64252730",
+          "title": "Wikidata: Freedom Party (chairperson)",
+          "accessed": "2026-10-16"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/2020_Lithuanian_parliamentary_election",
+          "title": "Wikipedia: 2020 Lithuanian parliamentary election",
+          "accessed": "2026-10-16"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "ltu.nemuno_ausra",
+      "name": {
+        "en": "Dawn of Nemunas",
+        "native": "Nemuno aušra"
+      },
+      "abbrev": {
+        "en": "NA",
+        "native": "NA"
+      },
+      "color": "#D4A017",
+      "sub_ideology": "right_populist",
+      "founded": "2023-11-01",
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        {
+          "person": "ltu.remigijus_zemaitaitis",
+          "from": "2023-11-01"
+        }
+      ],
+      "popularity_2000": 0,
+      "popularity_note": "Not founded until 2023.",
+      "note": "Founded by Remigijus Žemaitaitis (Wikidata inception 1 November 2023); third in 2024 and partner in the Paluckas and Ruginienė governments. Recorded as right populist; sub-ideology not taken from a fetched description.",
+      "source": [
+        {
+          "url": "https://www.wikidata.org/wiki/Q124472979",
+          "title": "Wikidata: Dawn of Nemunas (inception, chair)",
+          "accessed": "2026-10-16"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/2024_Lithuanian_parliamentary_election",
+          "title": "Wikipedia: 2024 Lithuanian parliamentary election",
+          "accessed": "2026-10-16"
+        }
+      ],
+      "confidence": "needs_review",
+      "review_note": "Confirm the sub-ideology from a source."
+    },
+    {
+      "id": "ltu.dsvl",
+      "name": {
+        "en": "Union of Democrats \"For Lithuania\"",
+        "native": "Demokratų sąjunga \"Vardan Lietuvos\""
+      },
+      "abbrev": {
+        "en": "DSVL",
+        "native": "DSVL"
+      },
+      "color": "#2A9D8F",
+      "sub_ideology": "centrist_liberal",
+      "founded": "2022-01-29",
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        {
+          "person": "ltu.saulius_skvernelis",
+          "from": "2022-01-29",
+          "to": "2026-04-10"
+        },
+        {
+          "person": "ltu.virginijus_sinkevicius",
+          "from": "2026-04-13"
+        }
+      ],
+      "popularity_2000": 0,
+      "popularity_note": "Not founded until 2022.",
+      "note": "Founded by Saulius Skvernelis (Wikidata inception 2 March 2022; his chairmanship from 29 January 2022); partner in the Paluckas and Sinkevičius governments. Sub-ideology not taken from a fetched description.",
+      "source": [
+        {
+          "url": "https://www.wikidata.org/wiki/Q110966457",
+          "title": "Wikidata: Union of Democrats \"For Lithuania\" (chairpersons)",
+          "accessed": "2026-10-16"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/Prime_Minister_of_Lithuania",
+          "title": "Wikipedia: Prime Minister of Lithuania (cabinets)",
+          "accessed": "2026-10-16"
+        }
+      ],
+      "confidence": "needs_review",
+      "review_note": "Confirm the sub-ideology and the founding date (29 January vs 2 March 2022)."
+    }
+  ]
+}
