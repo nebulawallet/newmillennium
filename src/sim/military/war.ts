@@ -27,7 +27,28 @@ export interface Battle {
   startDay: number;
 }
 
-export type WarGoal = "conquest" | "status_quo";
+/** conquest: the winner keeps what it holds; status_quo: control returns; limited: the attacker aims only at land near its border and no side capitulates. */
+export type WarGoal = "conquest" | "status_quo" | "limited";
+
+/** How far (in provinces) beyond its own border an attacker in a limited war advances. */
+export const LIMITED_WAR_DEPTH = 2;
+
+/** Provinces of the target within `depth` steps of the attacker's own territory. */
+function limitedZone(ctx: SimContext, attacker: string, target: string, depth: number): number[] {
+  const { state, map } = ctx;
+  if (!map) return [];
+  let frontier = new Set<number>();
+  state.provinceOwner.forEach((o, i) => { if (o === attacker) frontier.add(i + 1); });
+  const zone = new Set<number>();
+  for (let d = 0; d < depth; d++) {
+    const next = new Set<number>();
+    for (const p of frontier)
+      for (const n of map.neighbours.get(p) ?? [])
+        if (state.provinceOwner[n - 1] === target && !zone.has(n)) { zone.add(n); next.add(n); }
+    frontier = next;
+  }
+  return [...zone].sort((a, b) => a - b);
+}
 
 // ------------------------------------------------------------------ sides
 
@@ -118,15 +139,18 @@ export function declareWar(ctx: SimContext, tag: string, target: string, goal: W
   if (requireJustification && !justified) return { ok: false, text: j ? "The war goal is still being justified." : "Justify a war goal first." };
   const name = `${countryShort(db, state, tag)}–${countryShort(db, state, target)} war`;
   const id = state.nextWarId++;
-  state.wars.push({ id, name, attackers: [tag], defenders: [target], startDay: state.day, goal });
+  state.wars.push({ id, name, attackers: [tag], defenders: [target], startDay: state.day, goal, ...(goal === "limited" ? { zone: limitedZone(ctx, tag, target, LIMITED_WAR_DEPTH) } : {}) });
   const nuclear = rules.nuclear_states_2000.includes(target) || rules.nuclear_states_2000.includes(tag);
   state.worldTension = clamp(state.worldTension + rules.tension_per_war * (nuclear ? rules.nuclear_tension_multiplier : 1) * (justified ? 1 : db.diplomacyRules.unjustified_tension_multiplier), 0, 1);
   a.warSupport = clamp(a.warSupport - 0.05, 0, 1);
   b.warSupport = clamp(Math.max(b.warSupport + 0.15, rules.defender_rally), 0, 1);
-  a.followsHistory = false;
-  b.followsHistory = false;
+  // a war the player or AI chooses leaves history; a historical war started by an event is history
+  if (!scripted) {
+    a.followsHistory = false;
+    b.followsHistory = false;
+  }
   ctx.log(tag, "war", `Declares war on ${countryShort(db, state, target)}${justified ? "" : " without a justification"}`);
-  onWarDeclared(ctx, id, tag, target, justified);
+  onWarDeclared(ctx, id, tag, target, justified, scripted);
   ctx.emit({ type: "map_changed" });
   return { ok: true, text: `War declared on ${countryShort(db, state, target)}.` };
 }
@@ -345,7 +369,7 @@ export const warSystem: System = {
         const cs = state.countries[t];
         if (cs) cs.warSupport = clamp(cs.warSupport - rules.war_exhaustion_monthly + rules.occupation_war_support * dHeld, 0, 1);
       }
-      if (occupiedShare(ctx, dLead) >= rules.capitulation_share) {
+      if (war.goal !== "limited" && occupiedShare(ctx, dLead) >= rules.capitulation_share) {
         if (aLead === state.player) {
           state.pendingPeace = { war: war.id, winner: "attackers" };
           ctx.emit({ type: "coalition_needed", tag: aLead });
@@ -353,7 +377,7 @@ export const warSystem: System = {
         else makePeace(ctx, war, "attackers", war.goal === "conquest");
         continue;
       }
-      if (occupiedShare(ctx, aLead) >= rules.capitulation_share) {
+      if (war.goal !== "limited" && occupiedShare(ctx, aLead) >= rules.capitulation_share) {
         if (dLead === state.player) {
           state.pendingPeace = { war: war.id, winner: "defenders" };
           ctx.emit({ type: "coalition_needed", tag: dLead });

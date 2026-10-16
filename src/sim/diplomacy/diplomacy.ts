@@ -525,7 +525,7 @@ function exposeCampaign(ctx: SimContext, c: Campaign): void {
 // ------------------------------------------------------------------ war hooks
 
 /** Called by declareWar: allies of the defender join; unjustified wars brand the attacker. */
-export function onWarDeclared(ctx: SimContext, warId: number, attacker: string, target: string, justified: boolean): void {
+export function onWarDeclared(ctx: SimContext, warId: number, attacker: string, target: string, justified: boolean, scripted = false): void {
   const { db, state } = ctx;
   const war = state.wars.find((w) => w.id === warId);
   if (!war) return;
@@ -545,7 +545,7 @@ export function onWarDeclared(ctx: SimContext, warId: number, attacker: string, 
     war.defenders.push(ally);
     const cs = state.countries[ally]!;
     cs.warSupport = clamp(cs.warSupport + 0.1, 0, 1);
-    cs.followsHistory = false;
+    if (!scripted) cs.followsHistory = false;
     ctx.log(ally, "war", `Joins the ${war.name} in defence of ${nameOf(ctx, target)}`);
   }
 }

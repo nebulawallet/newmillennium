@@ -170,7 +170,7 @@
             {
               "declare_war": {
                 "target": "GEO",
-                "goal": "status_quo"
+                "goal": "limited"
               }
             },
             {
@@ -308,7 +308,8 @@
           "effects": [
             {
               "declare_war": {
-                "target": "UKR"
+                "target": "UKR",
+                "goal": "limited"
               }
             },
             {
@@ -721,6 +722,206 @@
                 "modifier": "construction_speed",
                 "value": 0.05,
                 "days": 365
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ukr_general_mobilisation",
+      "title": "General mobilisation",
+      "description": "On 24 February 2022 President Volodymyr Zelenskyy declared martial law and signed a decree on the general mobilisation of the population.",
+      "countries": [
+        "UKR"
+      ],
+      "trigger": {
+        "at_war_with": "RUS"
+      },
+      "major": true,
+      "historical": {
+        "date": "2022-02-24",
+        "any_path": true,
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/Mobilization_in_Ukraine",
+            "title": "Wikipedia: Mobilization in Ukraine",
+            "accessed": "2026-10-16"
+          },
+          {
+            "url": "https://en.wikipedia.org/wiki/Russian_invasion_of_Ukraine",
+            "title": "Wikipedia: Russian invasion of Ukraine",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      },
+      "options": [
+        {
+          "id": "mobilise",
+          "name": "Mobilise the nation",
+          "effects": [
+            {
+              "add_war_support": 0.4
+            },
+            {
+              "add_stability": 0.1
+            },
+            {
+              "add_timed_modifier": {
+                "modifier": "manpower_factor",
+                "value": 1.0,
+                "days": 1825
+              }
+            },
+            {
+              "add_equipment": {
+                "family": "infantry_equipment",
+                "amount": 8000
+              }
+            },
+            {
+              "add_divisions": {
+                "template": "infantry_division",
+                "count": 12
+              }
+            },
+            {
+              "add_interest_group_approval": {
+                "group": "military",
+                "value": 10
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ukr_defense_contact_group",
+      "title": "Ukraine Defense Contact Group",
+      "description": "The Ukraine Defense Contact Group, which coordinates military aid to Ukraine, first met on 26 April 2022; 39 of the 44 invited countries attended.",
+      "countries": [
+        "UKR"
+      ],
+      "trigger": {
+        "at_war_with": "RUS"
+      },
+      "major": true,
+      "historical": {
+        "date": "2022-04-26",
+        "any_path": true,
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/Ukraine_Defense_Contact_Group",
+            "title": "Wikipedia: Ukraine Defense Contact Group",
+            "accessed": "2026-10-16"
+          },
+          {
+            "url": "https://en.wikipedia.org/wiki/Military_aid_to_Ukraine_during_the_Russo-Ukrainian_war",
+            "title": "Wikipedia: Military aid to Ukraine during the Russo-Ukrainian war",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      },
+      "options": [
+        {
+          "id": "accept",
+          "name": "Accept the aid",
+          "effects": [
+            {
+              "add_equipment": {
+                "family": "infantry_equipment",
+                "amount": 10000
+              }
+            },
+            {
+              "add_equipment": {
+                "family": "anti_tank_weapons",
+                "amount": 2000
+              }
+            },
+            {
+              "add_equipment": {
+                "family": "artillery",
+                "amount": 600
+              }
+            },
+            {
+              "add_equipment": {
+                "family": "armoured_vehicle",
+                "amount": 800
+              }
+            },
+            {
+              "add_equipment": {
+                "family": "air_defence",
+                "amount": 200
+              }
+            },
+            {
+              "add_divisions": {
+                "template": "infantry_division",
+                "count": 8
+              }
+            },
+            {
+              "add_war_support": 0.1
+            },
+            {
+              "country": {
+                "tag": "USA",
+                "effects": [
+                  {
+                    "add_opinion": {
+                      "target": "ROOT",
+                      "value": 20,
+                      "days": 3650
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "country": {
+                "tag": "GBR",
+                "effects": [
+                  {
+                    "add_opinion": {
+                      "target": "ROOT",
+                      "value": 20,
+                      "days": 3650
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "country": {
+                "tag": "DEU",
+                "effects": [
+                  {
+                    "add_opinion": {
+                      "target": "ROOT",
+                      "value": 20,
+                      "days": 3650
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "country": {
+                "tag": "POL",
+                "effects": [
+                  {
+                    "add_opinion": {
+                      "target": "ROOT",
+                      "value": 20,
+                      "days": 3650
+                    }
+                  }
+                ]
               }
             }
           ]

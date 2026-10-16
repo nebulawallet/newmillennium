@@ -333,6 +333,34 @@ export function moveDivision(ctx: SimContext, tag: string, id: number, province:
 
 // ------------------------------------------------------------------ commands
 
+/** Equipment granted by an event (military aid): the newest variant the recipient could field, else the base model. */
+export function grantEquipment(ctx: SimContext, tag: string, family: string, amount: number): void {
+  const cs = ctx.state.countries[tag];
+  const m = cs?.military;
+  const fam = ctx.db.equipment.get(family);
+  if (!cs || !m || !fam) return;
+  const vs = availableVariants(ctx.db, cs, family);
+  const v = vs[vs.length - 1] ?? fam.variants[0];
+  if (v) m.stockpile[v.id] = (m.stockpile[v.id] ?? 0) + Math.max(0, Math.round(amount));
+}
+
+/** Divisions raised at once by an event (mobilisation), equipped from the stockpile as far as it goes. */
+export function spawnDivisions(ctx: SimContext, tag: string, templateId: string, count: number): void {
+  const { db, state, map } = ctx;
+  const m = state.countries[tag]?.military;
+  const tpl = m?.templates.find((x) => x.id === templateId) ?? m?.templates[0];
+  if (!m || !tpl) return;
+  for (let i = 0; i < count; i++) {
+    const equipment: Record<string, number> = {};
+    for (const [f, c] of Object.entries(templateNeeds(db, tpl.units))) Object.assign(equipment, mergeCounts(equipment, draw(db, m.stockpile, f, c)));
+    const n = state.divisions.filter((d) => d.owner === tag && d.template === tpl.id).length + 1;
+    state.divisions.push({
+      id: state.nextDivisionId++, owner: tag, name: `${ordinal(n)} ${tpl.name}`, template: tpl.id, units: { ...tpl.units }, equipment,
+      province: capitalProvince(state, map, tag), path: [], progress: 0, strength: fill(db, tpl.units, equipment), organisation: 0.6, entrenchment: 0,
+    });
+  }
+}
+
 export function addLine(ctx: SimContext, tag: string, family: string, factoryCount: number): { ok: boolean; text: string } {
   const cs = ctx.state.countries[tag];
   const m = cs?.military;

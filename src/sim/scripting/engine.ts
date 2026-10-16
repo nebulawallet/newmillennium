@@ -3,6 +3,7 @@
  * (src/content/script/registry.ts) against the game state, and describes them in plain words for
  * tooltips. Effects for systems that arrive in later phases are accepted and described as such.
  */
+import { grantEquipment, spawnDivisions } from "../military/military.ts";
 import { declareWar, makePeace, type WarGoal } from "../military/war.ts";
 import { addOpinion, atWarWith, inBloc, joinBloc, leaveBloc, opinion } from "../diplomacy/diplomacy.ts";
 import type { ContentDB } from "../../content/compile.ts";
@@ -329,6 +330,8 @@ function effect(ctx: SimContext, scope: Scope, k: string, v: unknown, source: st
       if (state.countries[target]?.active && state.provinceOwner.includes(target)) declareWar(ctx, scope.tag, target, (a.goal as WarGoal | undefined) ?? "conquest", false, true);
       break;
     }
+    case "add_equipment": grantEquipment(ctx, scope.tag, a.family as string, a.amount as number); break;
+    case "add_divisions": spawnDivisions(ctx, scope.tag, a.template as string, a.count as number); break;
     case "white_peace": {
       const other = a.with as string;
       const war = state.wars.find((w) => (w.attackers.includes(scope.tag) && w.defenders.includes(other)) || (w.defenders.includes(scope.tag) && w.attackers.includes(other)));
@@ -449,6 +452,8 @@ export function describeEffects(db: ContentDB, effects: unknown[], depth = 0): s
       case "add_wargoal": line = `War goal against ${name.tag(a.target as string)}`; break;
       case "add_opinion": line = `Opinion of ${a.target === "ROOT" || a.target === "FROM" ? "them" : name.tag(a.target as string)} ${signed(a.value as number)}`; break;
       case "declare_war": line = `War with ${name.tag(a.target as string)}`; break;
+      case "add_equipment": line = `+${a.amount} ${db.equipment.get(a.family as string)?.name ?? a.family}`; break;
+      case "add_divisions": line = `${a.count} new divisions`; break;
       case "white_peace": line = `Peace with ${name.tag(a.with as string)}`; break;
       case "transfer_provinces": line = `Provinces of ${name.tag(a.from as string)} pass to this country`; break;
       case "join_bloc": line = `Joins ${db.blocs.get(v as string)?.article === false ? "" : "the "}${db.blocs.get(v as string)?.name ?? v}`; break;

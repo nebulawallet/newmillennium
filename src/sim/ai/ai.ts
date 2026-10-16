@@ -263,6 +263,11 @@ export function planMilitary(ctx: SimContext, tag: string, maxOrders = 12): Comm
       if (enemyAt.get(n)) threatened.set(i + 1, Math.max(threatened.get(i + 1) ?? 0, enemyAt.get(n)!));
     }
   }
+  // in a limited war the attacker only goes for the zone near its border
+  const zone = new Set<number>();
+  let limited = false;
+  for (const w of state.wars) if (w.goal === "limited" && w.attackers.includes(tag)) { limited = true; for (const p of w.zone ?? []) zone.add(p); }
+  if (limited) for (const p of [...targets.keys()]) if (!zone.has(p) && state.provinceOwner[p - 1] !== tag) targets.delete(p);
   if (!targets.size) return out;
   const free = [...idle];
   const avg = ourPower / Math.max(1, mine.length);

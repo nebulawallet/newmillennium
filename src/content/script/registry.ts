@@ -140,9 +140,17 @@ export const EFFECTS: Record<string, ScriptDef> = {
   },
   join_bloc: { args: Id, description: "The country joins a bloc.", refs: { "": "bloc" } },
   declare_war: {
-    args: z.strictObject({ target: Tag, goal: z.enum(["conquest", "status_quo"]).optional() }),
+    args: z.strictObject({ target: Tag, goal: z.enum(["conquest", "status_quo", "limited"]).optional() }),
     description: "Declare war on the target (historical wars; nothing happens unless both countries exist and have politics data).",
     refs: { target: "tag" },
+  },
+  add_equipment: {
+    args: z.strictObject({ family: Id, amount: z.number().positive() }),
+    description: "Add equipment of a family to the stockpile (military aid).",
+  },
+  add_divisions: {
+    args: z.strictObject({ template: Id, count: z.number().int().positive().max(50) }),
+    description: "Raise divisions of a template at once (mobilisation), equipped from the stockpile.",
   },
   white_peace: { args: z.strictObject({ with: Tag }), description: "End the war with this country without territorial change.", refs: { with: "tag" } },
   transfer_provinces: {

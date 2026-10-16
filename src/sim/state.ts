@@ -172,7 +172,9 @@ export interface War {
   attackers: string[];
   defenders: string[];
   startDay: number;
-  goal: "conquest" | "status_quo";
+  goal: "conquest" | "status_quo" | "limited";
+  /** Limited wars: the defender's provinces the attackers aim for. */
+  zone?: number[];
 }
 
 export interface LogEntry {
