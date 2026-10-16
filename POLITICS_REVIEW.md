@@ -48,11 +48,11 @@ Live sources sometimes report allegations or investigations involving real peopl
 
 <!-- AUTO-GENERATED BELOW: run `npm run review-report`; edits below this line are overwritten -->
 
-## Needs review: 522 of 6033 records
+## Needs review: 532 of 6089 records
 
-Countries with politics data: 68 / 212.
+Countries with politics data: 71 / 212.
 
-Countries with no data yet (144): VAT, KAZ, KGZ, TJK, TKM, UZB, SOS, NKR, ICH, ATG, BHS, BRB, BLZ, BOL, COL, CRI, CUB, DMA, DOM, ECU, SLV, GRD, GTM, GUY, HTI, HND, JAM, MEX, NIC, PAN, PRY, PER, KNA, LCA, VCT, SUR, TTO, URY, VEN, FAR, DZA, BHR, EGY, IRQ, JOR, KWT, LBN, LBY, MRT, MAR, OMN, QAT, SAU, SYR, TUN, ARE, YEM, ESH, KUR, AGO, BEN, BWA, BFA, BDI, CPV, CMR, CAF, TCD, COM, COD, COG, CIV, DJI, GNQ, ERI, SWZ, ETH, GAB, GMB, GHA, GIN, GNB, KEN, LSO, LBR, MDG, MWI, MLI, MUS, MOZ, NAM, NER, NGA, RWA, STP, SEN, SYC, SLE, ZAF, SDN, TZA, TGO, UGA, ZMB, ZWE, SSD, SML, UNI, RCD, MLC, AFG, AFN, BGD, BTN, MDV, NPL, PAK, LKA, TEL, BRN, KHM, IDN, LAO, MYS, MMR, PHL, SGP, THA, VNM, TLS, AUS, NZL, FJI, PNG, SLB, VUT, WSM, TON, KIR, TUV, NRU, FSM, MHL, PLW
+Countries with no data yet (141): KAZ, KGZ, TJK, TKM, UZB, NKR, ICH, ATG, BHS, BRB, BLZ, BOL, COL, CRI, CUB, DMA, DOM, ECU, SLV, GRD, GTM, GUY, HTI, HND, JAM, MEX, NIC, PAN, PRY, PER, KNA, LCA, VCT, SUR, TTO, URY, VEN, FAR, DZA, BHR, EGY, IRQ, JOR, KWT, LBN, LBY, MRT, MAR, OMN, QAT, SAU, SYR, TUN, ARE, YEM, ESH, KUR, AGO, BEN, BWA, BFA, BDI, CPV, CMR, CAF, TCD, COM, COD, COG, CIV, DJI, GNQ, ERI, SWZ, ETH, GAB, GMB, GHA, GIN, GNB, KEN, LSO, LBR, MDG, MWI, MLI, MUS, MOZ, NAM, NER, NGA, RWA, STP, SEN, SYC, SLE, ZAF, SDN, TZA, TGO, UGA, ZMB, ZWE, SSD, SML, UNI, RCD, MLC, AFG, AFN, BGD, BTN, MDV, NPL, LKA, TEL, BRN, KHM, IDN, LAO, MYS, MMR, PHL, SGP, THA, VNM, TLS, AUS, NZL, FJI, PNG, SLB, VUT, WSM, TON, KIR, TUV, NRU, FSM, MHL, PLW
 
 ### ABK — Abkhazia (6)
 
@@ -711,6 +711,13 @@ Countries with no data yet (144): VAT, KAZ, KGZ, TJK, TKM, UZB, SOS, NKR, ICH, A
 |---|---|---|---|
 | party | `nor.h` Conservative Party (H) | The leadership change from Erna Solberg to Ine Eriksen Søreide is given only as the year 2026 in the party article; confirm the exact date of the 2026 party convention. | data/countries/NOR/parties.json |
 
+### PAK — Pakistan (2)
+
+| kind | record | what to check | file |
+|---|---|---|---|
+| chamber | `national_assembly` National Assembly | The 1997 results table and infobox disagree on PML(N) seats (135 vs 137). Others = PPP (Shaheed Bhutto) 1, NPP 1, Jamhoori Wattan Party 2 and the 10 minority seats. | data/countries/PAK/country.json |
+| office | `pak.president` President of Pakistan | Wikipedia's list of presidents shows a break in Musharraf's tenure between 15 October and 19 November 2007; check whether that period should be recorded differently (Wikidata has him continuously in office 2001-06-20 to 2008-08-18). | data/countries/PAK/country.json |
+
 ### PMR — Transnistria (5)
 
 | kind | record | what to check | file |
@@ -801,6 +808,19 @@ Countries with no data yet (144): VAT, KAZ, KGZ, TJK, TKM, UZB, SOS, NKR, ICH, A
 | party | `som.tayo` Tayo Political Party (TPP) | Wikipedia names Farmaajo as founder and Maryam Qasim as chairperson but gives no dates for either; confirm the leadership timeline. | data/countries/SOM/parties.json |
 | election | `president_2004` indirect_presidential 2004-10-10 | The source does not label the 189-79 result as the third round, although the text says he won after the second and third rounds; confirm the round number and the first- and second-round tallies. | data/countries/SOM/elections.json |
 | election | `president_2009` indirect_presidential 2009-01-30 | The article text says three rounds, but the results template shows two columns (first round and run-off). Confirm round numbering. Add Maslah Mohammed Siad Barre once his birth year is sourced. | data/countries/SOM/elections.json |
+
+### SOS — South Ossetia (8)
+
+| kind | record | what to check | file |
+|---|---|---|---|
+| office | `sos.prime_minister` Chairman of the Government (Prime Minister) of South Ossetia | Five transition dates are known only to the month (August 1998, December 2001, August 2003, May 2005) and are stored as the first of the month; find exact days. Check the conflict over whether Chigoyev or Shavlokhov was Prime Minister in 1999, and whether a new Prime Minister has been appointed since 30 September 2026. | data/countries/SOS/country.json |
+| person | `sos.leonid_tibilov` Leonid Tibilov (b. 1951) | Birth year differs between Wikipedia (1951) and Wikidata (1952); confirm. | data/countries/SOS/people.json |
+| person | `sos.igor_sanakoyev` Igor Sanakoyev (b. 1947) | Birth year differs between the Wikipedia list (1946) and Wikidata (1947); confirm. | data/countries/SOS/people.json |
+| person | `sos.zurab_kokoyev` Zurab Kokoyev (b. 1959) | Three sources give three birth years (1959, 1960, 1961); confirm. | data/countries/SOS/people.json |
+| person | `sos.aslanbek_bulatsev` Aslanbek Bulatsev (b. 1963) | Birth year differs between the Wikipedia list (1964) and Wikidata (1963); confirm. | data/countries/SOS/people.json |
+| person | `sos.domenty_kulumbegov` Domenty Kulumbegov (b. 1956) | Birth year differs between Wikipedia (1956) and Wikidata (1955); confirm. | data/countries/SOS/people.json |
+| party | `sos.unity` Unity Party (Unity) | Check the founding date (2003 in the infobox, but Unity-labelled Prime Ministers from 2001), the leaders and their dates (Kokoity, Bulatsev, Kokoyev). | data/countries/SOS/parties.json |
+| party | `sos.peoples_party` People's Party of South Ossetia (PP) | Founding date not given by the source. | data/countries/SOS/parties.json |
 
 ### SVK — Slovakia (6)
 

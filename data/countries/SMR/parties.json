@@ -1,0 +1,860 @@
+{
+ "parties": [
+  {
+   "id": "smr.pdcs",
+   "name": {
+    "en": "Sammarinese Christian Democratic Party",
+    "native": "Partito Democratico Cristiano Sammarinese"
+   },
+   "abbrev": {
+    "en": "PDCS",
+    "native": "PDCS"
+   },
+   "color": "#3C66B2",
+   "sub_ideology": "christian_democrat",
+   "founded": "1948-04-09",
+   "status_2000": "active",
+   "leader_history": [
+    {
+     "person": "smr.gian_carlo_venturini",
+     "from": 2017,
+     "title": "Political Secretary"
+    }
+   ],
+   "popularity_2000": 0.4085,
+   "popularity_note": "Vote share in the 31 May 1998 general election (8,907 votes; 25 of 60 seats).",
+   "international": "Centrist Democrat International",
+   "note": "Christian democratic, centre-right; the largest party in every election 2001-2024. Led joint lists with Euro-Populars for San Marino and Arengo and Freedom (2008) and with We Sammarineses (2012); those results are recorded under the PDCS. Leader history is incomplete: the article says Gian Carlo Venturini was elected Secretary at the 20th Congress (3-5 March 2017), succeeding Marco Gatti, and its infobox still lists him as Political Secretary; earlier secretaries (including the one in office on 1 January 2000) are not dated in the sources used. Alice Mina is listed as President of the Central Council.",
+   "source": [
+    {
+     "url": "https://en.wikipedia.org/wiki/Sammarinese_Christian_Democratic_Party",
+     "title": "Wikipedia: Sammarinese Christian Democratic Party (infobox: foundation, ideology, position, colours)",
+     "accessed": "2026-10-16"
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/1998_Sammarinese_general_election",
+     "title": "Wikipedia: 1998 Sammarinese general election",
+     "accessed": "2026-10-16"
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/Sammarinese_Christian_Democratic_Party",
+     "title": "Wikipedia: Sammarinese Christian Democratic Party (20th Congress, March 2017; infobox leaders)",
+     "accessed": "2026-10-16"
+    }
+   ],
+   "confidence": "needs_review",
+   "review_note": "Party secretaries before March 2017 (including the secretary on 1 January 2000) are missing; find a dated list (e.g. Italian Wikipedia or the party site)."
+  },
+  {
+   "id": "smr.pss",
+   "name": {
+    "en": "Sammarinese Socialist Party",
+    "native": "Partito Socialista Sammarinese"
+   },
+   "abbrev": {
+    "en": "PSS",
+    "native": "PSS"
+   },
+   "color": "#E2001A",
+   "sub_ideology": "social_democrat",
+   "founded": 1892,
+   "dissolved": 2005,
+   "status_2000": "active",
+   "leader_history": [],
+   "popularity_2000": 0.2323,
+   "popularity_note": "Vote share in the 31 May 1998 general election (5,064 votes; 14 of 60 seats).",
+   "lineage": {
+    "merged_into": "smr.psd"
+   },
+   "international": "Socialist International",
+   "note": "Social democratic. Merged with the Party of Democrats into the Party of Socialists and Democrats in 2005. The colour is an approximation of the infobox's 'red'. Leader history is not recorded: no dated list of party secretaries was found in the sources used.",
+   "source": [
+    {
+     "url": "https://en.wikipedia.org/wiki/Sammarinese_Socialist_Party",
+     "title": "Wikipedia: Sammarinese Socialist Party (infobox: foundation, ideology, position, colours)",
+     "accessed": "2026-10-16"
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/1998_Sammarinese_general_election",
+     "title": "Wikipedia: 1998 Sammarinese general election",
+     "accessed": "2026-10-16"
+    }
+   ],
+   "confidence": "verified"
+  },
+  {
+   "id": "smr.ppds",
+   "name": {
+    "en": "Sammarinese Democratic Progressive Party",
+    "native": "Partito Progressista Democratico Sammarinese"
+   },
+   "abbrev": {
+    "en": "PPDS",
+    "native": "PPDS"
+   },
+   "color": "#C8102E",
+   "sub_ideology": "democratic_socialist",
+   "founded": 1990,
+   "dissolved": "2001-03-25",
+   "status_2000": "active",
+   "leader_history": [],
+   "popularity_2000": 0.1864,
+   "popularity_note": "Vote share of the joint PPDS-Ideas in Motion-Democratic Convention list in the 31 May 1998 general election (4,065 votes; 11 seats).",
+   "lineage": {
+    "merged_into": "smr.pdd"
+   },
+   "note": "Successor (1990) of the Sammarinese Communist Party; post-communist and democratic socialist, left-wing. Merged with Ideas in Motion and Socialists for Reform into the Party of Democrats on 25 March 2001. The 1998 joint list with Ideas in Motion and Democratic Convention is recorded under the PPDS. Leader history is not recorded: no dated list of party secretaries was found in the sources used.",
+   "source": [
+    {
+     "url": "https://en.wikipedia.org/wiki/Sammarinese_Democratic_Progressive_Party",
+     "title": "Wikipedia: Sammarinese Democratic Progressive Party (infobox: foundation, ideology, position, colours)",
+     "accessed": "2026-10-16"
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/1998_Sammarinese_general_election",
+     "title": "Wikipedia: 1998 Sammarinese general election",
+     "accessed": "2026-10-16"
+    }
+   ],
+   "confidence": "verified"
+  },
+  {
+   "id": "smr.sr",
+   "name": {
+    "en": "Socialists for Reform",
+    "native": "Socialisti per le Riforme"
+   },
+   "abbrev": {
+    "en": "SR",
+    "native": "SR"
+   },
+   "color": "#E4572E",
+   "sub_ideology": "social_democrat",
+   "founded": 1975,
+   "dissolved": "2001-03-25",
+   "status_2000": "active",
+   "leader_history": [],
+   "popularity_2000": 0.0419,
+   "popularity_note": "Vote share in the 31 May 1998 general election (914 votes; 2 of 60 seats).",
+   "lineage": {
+    "merged_into": "smr.pdd"
+   },
+   "note": "Founded in December 1975 as the Party of Socialist Democracy (later the Sammarinese Socialist Democratic Party), renamed Socialists for Reform; merged into the Party of Democrats in 2001. The article gives no ideology infobox; social democrat follows its socialist-democratic origin and its categorisation as a social democratic party. Colour is a placeholder. Leader history is not recorded: no dated list of party secretaries was found in the sources used.",
+   "source": [
+    {
+     "url": "https://en.wikipedia.org/wiki/Socialists_for_Reform",
+     "title": "Wikipedia: Socialists for Reform (infobox: foundation, ideology, position, colours)",
+     "accessed": "2026-10-16"
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/1998_Sammarinese_general_election",
+     "title": "Wikipedia: 1998 Sammarinese general election",
+     "accessed": "2026-10-16"
+    }
+   ],
+   "confidence": "verified"
+  },
+  {
+   "id": "smr.rc",
+   "name": {
+    "en": "Sammarinese Communist Refoundation",
+    "native": "Rifondazione Comunista Sammarinese"
+   },
+   "abbrev": {
+    "en": "RCS",
+    "native": "RCS"
+   },
+   "color": "#AB2223",
+   "sub_ideology": "marxist_leninist",
+   "founded": 1992,
+   "dissolved": 2012,
+   "status_2000": "active",
+   "leader_history": [],
+   "popularity_2000": 0.0327,
+   "popularity_note": "Vote share in the 31 May 1998 general election (714 votes; 2 of 60 seats).",
+   "lineage": {
+    "split_from": "smr.ppds",
+    "merged_into": "smr.su"
+   },
+   "note": "Communist, far-left; split from the PPDS in 1992 and later merged into United Left. Mapped to the closest available sub-ideology (marxist_leninist); the infobox says only 'communism'. Leader history is not recorded: no dated list of party secretaries was found in the sources used.",
+   "source": [
+    {
+     "url": "https://en.wikipedia.org/wiki/Sammarinese_Communist_Refoundation",
+     "title": "Wikipedia: Sammarinese Communist Refoundation (infobox: foundation, ideology, position, colours)",
+     "accessed": "2026-10-16"
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/1998_Sammarinese_general_election",
+     "title": "Wikipedia: 1998 Sammarinese general election",
+     "accessed": "2026-10-16"
+    }
+   ],
+   "confidence": "verified"
+  },
+  {
+   "id": "smr.ap",
+   "name": {
+    "en": "Popular Alliance (Popular Alliance of Sammarinese Democrats for the Republic)",
+    "native": "Alleanza Popolare"
+   },
+   "abbrev": {
+    "en": "AP",
+    "native": "AP"
+   },
+   "color": "#EE7F2D",
+   "sub_ideology": "centrist_liberal",
+   "founded": "1993-01-10",
+   "dissolved": "2017-02-24",
+   "status_2000": "active",
+   "leader_history": [],
+   "popularity_2000": 0.0981,
+   "popularity_note": "Vote share in the 31 May 1998 general election (2,139 votes; 6 of 60 seats).",
+   "lineage": {
+    "merged_into": "smr.rf"
+   },
+   "note": "Liberal, centrist. Merged into Future Republic in February 2017. Leader history is not recorded: no dated list of party secretaries was found in the sources used.",
+   "source": [
+    {
+     "url": "https://en.wikipedia.org/wiki/Popular_Alliance_(San_Marino)",
+     "title": "Wikipedia: Popular Alliance (San Marino) (infobox: foundation, ideology, position, colours)",
+     "accessed": "2026-10-16"
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/1998_Sammarinese_general_election",
+     "title": "Wikipedia: 1998 Sammarinese general election",
+     "accessed": "2026-10-16"
+    }
+   ],
+   "confidence": "verified"
+  },
+  {
+   "id": "smr.pdd",
+   "name": {
+    "en": "Party of Democrats",
+    "native": "Partito dei Democratici"
+   },
+   "abbrev": {
+    "en": "PdD",
+    "native": "PdD"
+   },
+   "color": "#D2232A",
+   "sub_ideology": "social_democrat",
+   "founded": "2001-03-25",
+   "dissolved": "2005-03-25",
+   "status_2000": "not_yet_founded",
+   "leader_history": [],
+   "popularity_2000": 0,
+   "lineage": {
+    "formed_from": [
+     "smr.ppds",
+     "smr.sr"
+    ],
+    "merged_into": "smr.psd"
+   },
+   "note": "Social democratic and democratic socialist, centre-left. Formed by the PPDS, Ideas in Motion and Socialists for Reform; merged into the PSD in 2005. The infobox gives 25 March 2005 for its dissolution, while the PSD infobox gives 18 February 2005 for the PSD's foundation. Leader history is not recorded: no dated list of party secretaries was found in the sources used.",
+   "source": [
+    {
+     "url": "https://en.wikipedia.org/wiki/Party_of_Democrats",
+     "title": "Wikipedia: Party of Democrats (infobox: foundation, ideology, position, colours)",
+     "accessed": "2026-10-16"
+    }
+   ],
+   "confidence": "verified"
+  },
+  {
+   "id": "smr.ans",
+   "name": {
+    "en": "Sammarinese National Alliance",
+    "native": "Alleanza Nazionale Sammarinese"
+   },
+   "abbrev": {
+    "en": "ANS",
+    "native": "ANS"
+   },
+   "color": "#019AD3",
+   "sub_ideology": "national_conservative",
+   "founded": 2001,
+   "dissolved": 2012,
+   "status_2000": "not_yet_founded",
+   "leader_history": [],
+   "popularity_2000": 0,
+   "lineage": {
+    "merged_into": "smr.pdcs"
+   },
+   "note": "National conservative, right-wing. The original ANS (2001) merged into the PDCS in 2012; a re-founded ANS of 2012 is not recorded. Leader history is not recorded: no dated list of party secretaries was found in the sources used.",
+   "source": [
+    {
+     "url": "https://en.wikipedia.org/wiki/Sammarinese_National_Alliance",
+     "title": "Wikipedia: Sammarinese National Alliance (infobox: foundation, ideology, position, colours)",
+     "accessed": "2026-10-16"
+    }
+   ],
+   "confidence": "verified"
+  },
+  {
+   "id": "smr.psd",
+   "name": {
+    "en": "Party of Socialists and Democrats",
+    "native": "Partito dei Socialisti e dei Democratici"
+   },
+   "abbrev": {
+    "en": "PSD",
+    "native": "PSD"
+   },
+   "color": "#D7261E",
+   "sub_ideology": "social_democrat",
+   "founded": "2005-02-18",
+   "status_2000": "not_yet_founded",
+   "leader_history": [],
+   "popularity_2000": 0,
+   "lineage": {
+    "formed_from": [
+     "smr.pss",
+     "smr.pdd"
+    ]
+   },
+   "international": "Socialist International",
+   "note": "Social democratic, centre-left; merger of the PSS and the Party of Democrats. In 2024 it ran in a coalition with Libera and the Socialist Party. Leader history is not recorded: the article names Luca Lazzari as Secretary (elected at the 26-27 October 2024 congress) and Silvia Cecchetti as President, but no source with Lazzari's birth year or gender was found, and earlier secretaries are not dated.",
+   "source": [
+    {
+     "url": "https://en.wikipedia.org/wiki/Party_of_Socialists_and_Democrats",
+     "title": "Wikipedia: Party of Socialists and Democrats (infobox: foundation, ideology, position, colours)",
+     "accessed": "2026-10-16"
+    }
+   ],
+   "confidence": "verified"
+  },
+  {
+   "id": "smr.su",
+   "name": {
+    "en": "United Left",
+    "native": "Sinistra Unita"
+   },
+   "abbrev": {
+    "en": "SU",
+    "native": "SU"
+   },
+   "color": "#AB2223",
+   "sub_ideology": "democratic_socialist",
+   "founded": 2006,
+   "dissolved": "2017-11-10",
+   "status_2000": "not_yet_founded",
+   "leader_history": [],
+   "popularity_2000": 0,
+   "lineage": {
+    "formed_from": [
+     "smr.rc"
+    ],
+    "merged_into": "smr.ssd"
+   },
+   "note": "Democratic socialist, left-wing. The infobox dates it from 2 August 2006 as a coalition (and 2012 as a party), but it already contested the 4 June 2006 election as United Left; the year 2006 is used. It was formed by Communist Refoundation and the Left Party - Zona Franca (not recorded). Leader history is not recorded: no dated list of party secretaries was found in the sources used.",
+   "source": [
+    {
+     "url": "https://en.wikipedia.org/wiki/United_Left_(San_Marino)",
+     "title": "Wikipedia: United Left (San Marino) (infobox: foundation, ideology, position, colours)",
+     "accessed": "2026-10-16"
+    }
+   ],
+   "confidence": "needs_review",
+   "review_note": "Check the founding date: the infobox's 2 August 2006 falls after the 4 June 2006 election in which United Left won 5 seats."
+  },
+  {
+   "id": "smr.nps",
+   "name": {
+    "en": "New Socialist Party",
+    "native": "Nuovo Partito Socialista"
+   },
+   "abbrev": {
+    "en": "NPS",
+    "native": "NPS"
+   },
+   "color": "#0661B6",
+   "sub_ideology": "social_liberal",
+   "founded": "2005-11-18",
+   "dissolved": "2012-05-30",
+   "status_2000": "not_yet_founded",
+   "leader_history": [],
+   "popularity_2000": 0,
+   "lineage": {
+    "split_from": "smr.psd",
+    "merged_into": "smr.ps"
+   },
+   "note": "Social liberal, social democratic and Third Way. Split from the PSD; merged into the Socialist Party in 2012. Leader history is not recorded: no dated list of party secretaries was found in the sources used.",
+   "source": [
+    {
+     "url": "https://en.wikipedia.org/wiki/New_Socialist_Party_(San_Marino)",
+     "title": "Wikipedia: New Socialist Party (San Marino) (infobox: foundation, ideology, position, colours)",
+     "accessed": "2026-10-16"
+    }
+   ],
+   "confidence": "verified"
+  },
+  {
+   "id": "smr.ns",
+   "name": {
+    "en": "We Sammarineses",
+    "native": "Noi Sammarinesi"
+   },
+   "abbrev": {
+    "en": "NS",
+    "native": "NS"
+   },
+   "color": "#013978",
+   "sub_ideology": "liberal_conservative",
+   "founded": "2006-03-26",
+   "status_2000": "not_yet_founded",
+   "leader_history": [],
+   "popularity_2000": 0,
+   "note": "Liberal (described as conservative-liberal), centre to centre-right. Ran on a joint list with the PDCS in 2012 (recorded under the PDCS). Leader history is not recorded: no dated list of party secretaries was found in the sources used.",
+   "source": [
+    {
+     "url": "https://en.wikipedia.org/wiki/We_Sammarineses",
+     "title": "Wikipedia: We Sammarineses (infobox: foundation, ideology, position, colours)",
+     "accessed": "2026-10-16"
+    }
+   ],
+   "confidence": "verified"
+  },
+  {
+   "id": "smr.pops",
+   "name": {
+    "en": "Sammarinese Populars",
+    "native": "Popolari Sammarinesi"
+   },
+   "abbrev": {
+    "en": "PS",
+    "native": "PS"
+   },
+   "color": "#24C7FC",
+   "sub_ideology": "christian_democrat",
+   "founded": "2003-02-04",
+   "status_2000": "not_yet_founded",
+   "leader_history": [],
+   "popularity_2000": 0,
+   "lineage": {
+    "split_from": "smr.pdcs"
+   },
+   "note": "Christian democratic and national conservative, centre-right; split from the PDCS. Won one seat in 2006. Leader history is not recorded: no dated list of party secretaries was found in the sources used.",
+   "source": [
+    {
+     "url": "https://en.wikipedia.org/wiki/Sammarinese_Populars",
+     "title": "Wikipedia: Sammarinese Populars (infobox: foundation, ideology, position, colours)",
+     "accessed": "2026-10-16"
+    }
+   ],
+   "confidence": "verified"
+  },
+  {
+   "id": "smr.spl",
+   "name": {
+    "en": "Sammarineses for Freedom",
+    "native": "Sammarinesi per la Libertà"
+   },
+   "abbrev": {
+    "en": "SpL",
+    "native": "SpL"
+   },
+   "color": "#044996",
+   "sub_ideology": "social_liberal",
+   "founded": 2002,
+   "dissolved": 2012,
+   "status_2000": "not_yet_founded",
+   "leader_history": [],
+   "popularity_2000": 0,
+   "lineage": {
+    "split_from": "smr.pss"
+   },
+   "note": "Liberal and social liberal, centre; split from the PSS. Won one seat in 2006. Leader history is not recorded: no dated list of party secretaries was found in the sources used.",
+   "source": [
+    {
+     "url": "https://en.wikipedia.org/wiki/Sammarineses_for_Freedom",
+     "title": "Wikipedia: Sammarineses for Freedom (infobox: foundation, ideology, position, colours)",
+     "accessed": "2026-10-16"
+    }
+   ],
+   "confidence": "verified"
+  },
+  {
+   "id": "smr.ldl",
+   "name": {
+    "en": "Freedom List",
+    "native": "Lista della Libertà"
+   },
+   "abbrev": {
+    "en": "LdL",
+    "native": "LdL"
+   },
+   "color": "#0661B6",
+   "sub_ideology": "social_democrat",
+   "founded": 2008,
+   "dissolved": 2011,
+   "status_2000": "not_yet_founded",
+   "leader_history": [],
+   "popularity_2000": 0,
+   "note": "Electoral alliance for the 2008 election (social democratic per its infobox, centre to centre-left) within the Pact for San Marino; won 4 seats. The Socialist Party (2012) lists it as a predecessor. Leader history is not recorded: no dated list of party secretaries was found in the sources used.",
+   "source": [
+    {
+     "url": "https://en.wikipedia.org/wiki/Freedom_List",
+     "title": "Wikipedia: Freedom List (infobox: foundation, ideology, position, colours)",
+     "accessed": "2026-10-16"
+    }
+   ],
+   "confidence": "verified"
+  },
+  {
+   "id": "smr.ums",
+   "name": {
+    "en": "Sammarinese Union of Moderates",
+    "native": "Unione Sammarinese dei Moderati"
+   },
+   "abbrev": {
+    "en": "UdS",
+    "native": "UdS"
+   },
+   "color": "#1E5AA8",
+   "sub_ideology": "christian_democrat",
+   "founded": "2008-02-21",
+   "dissolved": "2012-11-12",
+   "status_2000": "not_yet_founded",
+   "leader_history": [],
+   "popularity_2000": 0,
+   "note": "Christian democratic and national conservative, centre-right; won 2 seats in 2008 within the Pact for San Marino. Colour is a placeholder (the infobox uses a party-colour template). Leader history is not recorded: no dated list of party secretaries was found in the sources used.",
+   "source": [
+    {
+     "url": "https://en.wikipedia.org/wiki/Sammarinese_Union_of_Moderates",
+     "title": "Wikipedia: Sammarinese Union of Moderates (infobox: foundation, ideology, position, colours)",
+     "accessed": "2026-10-16"
+    }
+   ],
+   "confidence": "verified"
+  },
+  {
+   "id": "smr.ddc",
+   "name": {
+    "en": "Centre Democrats",
+    "native": "Movimento dei Democratici di Centro"
+   },
+   "abbrev": {
+    "en": "DdC",
+    "native": "DdC"
+   },
+   "color": "#099ECF",
+   "sub_ideology": "christian_democrat",
+   "founded": "2007-03-27",
+   "dissolved": "2011-03-04",
+   "status_2000": "not_yet_founded",
+   "leader_history": [],
+   "popularity_2000": 0,
+   "lineage": {
+    "split_from": "smr.pdcs",
+    "merged_into": "smr.upr"
+   },
+   "note": "Christian left and social democratic, centre; mapped to christian_democrat as the closest id. Won 2 seats in 2008 within Reforms and Freedom. Leader history is not recorded: no dated list of party secretaries was found in the sources used.",
+   "source": [
+    {
+     "url": "https://en.wikipedia.org/wiki/Centre_Democrats_(San_Marino)",
+     "title": "Wikipedia: Centre Democrats (San Marino) (infobox: foundation, ideology, position, colours)",
+     "accessed": "2026-10-16"
+    }
+   ],
+   "confidence": "verified"
+  },
+  {
+   "id": "smr.ps",
+   "name": {
+    "en": "Socialist Party",
+    "native": "Partito Socialista"
+   },
+   "abbrev": {
+    "en": "PS",
+    "native": "PS"
+   },
+   "color": "#DB241E",
+   "sub_ideology": "social_democrat",
+   "founded": "2012-05-30",
+   "status_2000": "not_yet_founded",
+   "leader_history": [],
+   "popularity_2000": 0,
+   "lineage": {
+    "formed_from": [
+     "smr.nps"
+    ]
+   },
+   "note": "Social democratic, centre-left; merger of the New Socialist Party and the Sammarinese Reformist Socialist Party (not recorded). Ran a joint list with Libera in 2024 (recorded under Libera). Leader history is not recorded: no dated list of party secretaries was found in the sources used.",
+   "source": [
+    {
+     "url": "https://en.wikipedia.org/wiki/Socialist_Party_(San_Marino)",
+     "title": "Wikipedia: Socialist Party (San Marino) (infobox: foundation, ideology, position, colours)",
+     "accessed": "2026-10-16"
+    }
+   ],
+   "confidence": "verified"
+  },
+  {
+   "id": "smr.upr",
+   "name": {
+    "en": "Union for the Republic",
+    "native": "Unione per la Repubblica"
+   },
+   "abbrev": {
+    "en": "UpR",
+    "native": "UpR"
+   },
+   "color": "#EFBF04",
+   "sub_ideology": "christian_democrat",
+   "founded": "2011-03-04",
+   "dissolved": 2017,
+   "status_2000": "not_yet_founded",
+   "leader_history": [],
+   "popularity_2000": 0,
+   "lineage": {
+    "formed_from": [
+     "smr.ddc"
+    ],
+    "merged_into": "smr.rf"
+   },
+   "note": "Christian democratic, centre; formed by the Centre Democrats and Euro-Populars for San Marino; merged into Future Republic (infobox: February 2017). Leader history is not recorded: no dated list of party secretaries was found in the sources used.",
+   "source": [
+    {
+     "url": "https://en.wikipedia.org/wiki/Union_for_the_Republic_(San_Marino)",
+     "title": "Wikipedia: Union for the Republic (San Marino) (infobox: foundation, ideology, position, colours)",
+     "accessed": "2026-10-16"
+    }
+   ],
+   "confidence": "verified"
+  },
+  {
+   "id": "smr.c10",
+   "name": {
+    "en": "Civic 10",
+    "native": "Movimento Civico10"
+   },
+   "abbrev": {
+    "en": "Civico10",
+    "native": "Civico10"
+   },
+   "color": "#4FB3E8",
+   "sub_ideology": "social_democrat",
+   "founded": "2012-07-30",
+   "dissolved": "2020-11-14",
+   "status_2000": "not_yet_founded",
+   "leader_history": [],
+   "popularity_2000": 0,
+   "lineage": {
+    "merged_into": "smr.libera"
+   },
+   "note": "Social democratic, centre-left; described as left-leaning and populist, advocating e-democracy. Colour approximates the infobox's light blue. Leader history is not recorded: no dated list of party secretaries was found in the sources used.",
+   "source": [
+    {
+     "url": "https://en.wikipedia.org/wiki/Civic_10",
+     "title": "Wikipedia: Civic 10 (infobox: foundation, ideology, position, colours)",
+     "accessed": "2026-10-16"
+    }
+   ],
+   "confidence": "verified"
+  },
+  {
+   "id": "smr.rete",
+   "name": {
+    "en": "RETE Movement",
+    "native": "Movimento Civico RETE"
+   },
+   "abbrev": {
+    "en": "RETE",
+    "native": "RETE"
+   },
+   "color": "#275A57",
+   "sub_ideology": "social_democrat",
+   "founded": "2012-03-20",
+   "status_2000": "not_yet_founded",
+   "leader_history": [],
+   "popularity_2000": 0,
+   "note": "Social democratic, progressive and environmentalist, left-wing. Colour from the 2019 election results table. Leader history is not recorded: no dated list of party secretaries was found in the sources used.",
+   "source": [
+    {
+     "url": "https://en.wikipedia.org/wiki/RETE_Movement",
+     "title": "Wikipedia: RETE Movement (infobox: foundation, ideology, position, colours)",
+     "accessed": "2026-10-16"
+    }
+   ],
+   "confidence": "verified"
+  },
+  {
+   "id": "smr.ssd",
+   "name": {
+    "en": "Democratic Socialist Left",
+    "native": "Sinistra Socialista Democratica"
+   },
+   "abbrev": {
+    "en": "SSD",
+    "native": "SSD"
+   },
+   "color": "#C0392B",
+   "sub_ideology": "social_democrat",
+   "founded": 2016,
+   "dissolved": "2020-12-30",
+   "status_2000": "not_yet_founded",
+   "leader_history": [],
+   "popularity_2000": 0,
+   "lineage": {
+    "formed_from": [
+     "smr.su"
+    ],
+    "merged_into": "smr.libera"
+   },
+   "note": "Social democratic and democratic socialist, centre-left to left. An electoral list from November 2016 (United Left, Progressives and Reformists and Democratic Laboratory) and a party from 17 November 2017; merged into Libera. Colour is a placeholder red. Leader history is not recorded: no dated list of party secretaries was found in the sources used.",
+   "source": [
+    {
+     "url": "https://en.wikipedia.org/wiki/Democratic_Socialist_Left",
+     "title": "Wikipedia: Democratic Socialist Left (infobox: foundation, ideology, position, colours)",
+     "accessed": "2026-10-16"
+    }
+   ],
+   "confidence": "verified"
+  },
+  {
+   "id": "smr.rf",
+   "name": {
+    "en": "Future Republic",
+    "native": "Repubblica Futura"
+   },
+   "abbrev": {
+    "en": "RF",
+    "native": "RF"
+   },
+   "color": "#1F4E9C",
+   "sub_ideology": "centrist_liberal",
+   "founded": 2016,
+   "status_2000": "not_yet_founded",
+   "leader_history": [],
+   "popularity_2000": 0,
+   "lineage": {
+    "formed_from": [
+     "smr.ap",
+     "smr.upr"
+    ]
+   },
+   "note": "Liberal and pro-European, centre. An electoral list of Popular Alliance and Union for the Republic in 2016, a party from 24 February 2017. Leader history is not recorded: no dated list of party secretaries was found in the sources used.",
+   "source": [
+    {
+     "url": "https://en.wikipedia.org/wiki/Future_Republic",
+     "title": "Wikipedia: Future Republic (infobox: foundation, ideology, position, colours)",
+     "accessed": "2026-10-16"
+    }
+   ],
+   "confidence": "verified"
+  },
+  {
+   "id": "smr.dml",
+   "name": {
+    "en": "Tomorrow - Free Movement",
+    "native": "Domani - Motus Liberi"
+   },
+   "abbrev": {
+    "en": "DML",
+    "native": "DML"
+   },
+   "color": "#1D3E8C",
+   "sub_ideology": "liberal_conservative",
+   "founded": "2018-04-28",
+   "status_2000": "not_yet_founded",
+   "leader_history": [],
+   "popularity_2000": 0,
+   "note": "Conservative and liberal, soft eurosceptic, centre-right. Colour approximates the infobox's blue. Leader history is not recorded: no dated list of party secretaries was found in the sources used.",
+   "source": [
+    {
+     "url": "https://en.wikipedia.org/wiki/Domani_Motus_Liberi",
+     "title": "Wikipedia: Domani Motus Liberi (infobox: foundation, ideology, position, colours)",
+     "accessed": "2026-10-16"
+    }
+   ],
+   "confidence": "verified"
+  },
+  {
+   "id": "smr.libera",
+   "name": {
+    "en": "Free San Marino",
+    "native": "Libera San Marino"
+   },
+   "abbrev": {
+    "en": "Libera",
+    "native": "Libera"
+   },
+   "color": "#E30613",
+   "sub_ideology": "democratic_socialist",
+   "founded": "2019-10-14",
+   "status_2000": "not_yet_founded",
+   "leader_history": [],
+   "popularity_2000": 0,
+   "lineage": {
+    "formed_from": [
+     "smr.c10",
+     "smr.ssd"
+    ]
+   },
+   "note": "Democratic socialist and pro-European, centre-left. A coalition from 14 October 2019 and a party from 14 November 2020 (merging Civic 10, SSD and Reforms and Development). Ran a joint list with the Socialist Party in 2024 (recorded under Libera). Leader history is not recorded: no dated list of party secretaries was found in the sources used.",
+   "source": [
+    {
+     "url": "https://en.wikipedia.org/wiki/Libera_San_Marino",
+     "title": "Wikipedia: Libera San Marino (infobox: foundation, ideology, position, colours)",
+     "accessed": "2026-10-16"
+    }
+   ],
+   "confidence": "verified"
+  },
+  {
+   "id": "smr.npr",
+   "name": {
+    "en": "We for the Republic",
+    "native": "Noi per la Repubblica"
+   },
+   "abbrev": {
+    "en": "NplR",
+    "native": "NplR"
+   },
+   "color": "#64B8E6",
+   "sub_ideology": "social_democrat",
+   "founded": "2019-10-26",
+   "dissolved": "2024-03-14",
+   "status_2000": "not_yet_founded",
+   "leader_history": [],
+   "popularity_2000": 0,
+   "note": "Social democratic and social liberal, centre-left; won 8 seats in 2019 and joined the PDCS-led government. Leader history is not recorded: no dated list of party secretaries was found in the sources used.",
+   "source": [
+    {
+     "url": "https://en.wikipedia.org/wiki/We_for_the_Republic",
+     "title": "Wikipedia: We for the Republic (infobox: foundation, ideology, position, colours)",
+     "accessed": "2026-10-16"
+    }
+   ],
+   "confidence": "verified"
+  },
+  {
+   "id": "smr.ar",
+   "name": {
+    "en": "Reformist Alliance",
+    "native": "Alleanza Riformista"
+   },
+   "abbrev": {
+    "en": "AR",
+    "native": "AR"
+   },
+   "color": "#2A68B1",
+   "sub_ideology": "centrist_liberal",
+   "founded": 2024,
+   "status_2000": "not_yet_founded",
+   "leader_history": [],
+   "popularity_2000": 0,
+   "note": "Electoral alliance of the Socialist Ideals Movement, We Sammarineses and Ēlego for a New Republic, formed for the 2024 election; formed a coalition (Democracy and Freedom) with the PDCS on 18 April 2024 and won 4 seats (1,268 votes) in June 2024. The election infobox names Andreina Bartolini as leader; she is not recorded because no source gives her birth year or gender. Colour from the election results table.",
+   "source": [
+    {
+     "url": "https://en.wikipedia.org/wiki/2024_Sammarinese_general_election",
+     "title": "Wikipedia: 2024 Sammarinese general election (infobox: foundation, ideology, position, colours)",
+     "accessed": "2026-10-16"
+    }
+   ],
+   "confidence": "needs_review",
+   "review_note": "Confirm the founding date (2024 is inferred from 'new' in the 2024 election infobox; the alliance existed by 17 April 2024) and the ideology (an alliance of socialist, liberal-conservative (We Sammarineses) and other groups; centrist_liberal is a placeholder)."
+  }
+ ]
+}

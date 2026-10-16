@@ -1,0 +1,1093 @@
+{
+ "rules": [
+  {
+   "kind": "legislative",
+   "chamber": "council",
+   "every_years": 5,
+   "anchor": "2024-06-09",
+   "snap_possible": true,
+   "note": "Five-year term; the 2008, 2016 and 2019 elections came before the end of a full term (2008 is documented as a snap election)."
+  }
+ ],
+ "elections": [
+  {
+   "id": "council_2001",
+   "date": "2001-06-10",
+   "kind": "legislative",
+   "chamber": "council",
+   "historical": {
+    "party_results": [
+     {
+      "party": "smr.pdcs",
+      "share": 0.4145,
+      "seats": 25
+     },
+     {
+      "party": "smr.pss",
+      "share": 0.2418,
+      "seats": 15
+     },
+     {
+      "party": "smr.pdd",
+      "share": 0.2081,
+      "seats": 12
+     },
+     {
+      "party": "smr.ap",
+      "share": 0.0823,
+      "seats": 5
+     },
+     {
+      "party": "smr.rc",
+      "share": 0.0339,
+      "seats": 2
+     },
+     {
+      "party": "smr.ans",
+      "share": 0.0193,
+      "seats": 1
+     }
+    ],
+    "winner": "smr.pdcs",
+    "turnout": 0.738,
+    "note": "Shares of 21,788 valid votes. The PDCS continued its coalition with the PSS.",
+    "source": [
+     {
+      "url": "https://en.wikipedia.org/wiki/2001_Sammarinese_general_election",
+      "title": "Wikipedia: 2001 Sammarinese general election",
+      "accessed": "2026-10-16"
+     }
+    ],
+    "confidence": "verified"
+   }
+  },
+  {
+   "id": "referendum_2003_preferences",
+   "date": "2003-08-03",
+   "kind": "referendum",
+   "question": "Reduce the number of preference votes from three to one",
+   "historical": {
+    "yes_share": 0.8072,
+    "options": [
+     {
+      "label": "Yes",
+      "share": 0.8072,
+      "votes": 8755
+     },
+     {
+      "label": "No",
+      "share": 0.1928,
+      "votes": 2091
+     }
+    ],
+    "turnout": 0.3507,
+    "note": "Registered voters 31,577; 227 invalid or blank votes; turnout 35.07%. The source does not state whether the proposal passed under the quorum rules then in force, so no winner is recorded.",
+    "source": [
+     {
+      "url": "https://en.wikipedia.org/wiki/2003_San_Marino_voting_system_referendum",
+      "title": "Wikipedia: 2003 San Marino voting system referendum",
+      "accessed": "2026-10-16"
+     }
+    ],
+    "confidence": "verified"
+   }
+  },
+  {
+   "id": "referendum_2005_q1",
+   "date": "2005-07-03",
+   "kind": "referendum",
+   "question": "Allow voters to express preferences for up to two candidates on their chosen list",
+   "historical": {
+    "yes_share": 0.7587,
+    "options": [
+     {
+      "label": "Yes",
+      "share": 0.7587,
+      "votes": 5027
+     },
+     {
+      "label": "No",
+      "share": 0.2413,
+      "votes": 1599
+     }
+    ],
+    "turnout": 0.217,
+    "note": "Question 1 of four on the electoral law. Registered voters 31,695; turnout 21.7%. The source does not state the outcome under the quorum rules, so no winner is recorded.",
+    "source": [
+     {
+      "url": "https://en.wikipedia.org/wiki/2005_San_Marino_electoral_law_referendum",
+      "title": "Wikipedia: 2005 San Marino electoral law referendum",
+      "accessed": "2026-10-16"
+     }
+    ],
+    "confidence": "verified"
+   }
+  },
+  {
+   "id": "referendum_2005_q2",
+   "date": "2005-07-03",
+   "kind": "referendum",
+   "question": "Allow part of the Congress of State to be chosen from outside the Grand and General Council",
+   "historical": {
+    "yes_share": 0.6656,
+    "options": [
+     {
+      "label": "Yes",
+      "share": 0.6656,
+      "votes": 4396
+     },
+     {
+      "label": "No",
+      "share": 0.3344,
+      "votes": 2209
+     }
+    ],
+    "turnout": 0.217,
+    "note": "Question 2 of four on the electoral law. Registered voters 31,695; turnout 21.7%. The source does not state the outcome under the quorum rules, so no winner is recorded.",
+    "source": [
+     {
+      "url": "https://en.wikipedia.org/wiki/2005_San_Marino_electoral_law_referendum",
+      "title": "Wikipedia: 2005 San Marino electoral law referendum",
+      "accessed": "2026-10-16"
+     }
+    ],
+    "confidence": "verified"
+   }
+  },
+  {
+   "id": "referendum_2005_q3",
+   "date": "2005-07-03",
+   "kind": "referendum",
+   "question": "Revise the approval rule for propositive referendums (article 24 of law no. 101 of 1994)",
+   "historical": {
+    "yes_share": 0.7284,
+    "options": [
+     {
+      "label": "Yes",
+      "share": 0.7284,
+      "votes": 4762
+     },
+     {
+      "label": "No",
+      "share": 0.2716,
+      "votes": 1776
+     }
+    ],
+    "turnout": 0.217,
+    "note": "Question 3 of four on the electoral law. Registered voters 31,695; turnout 21.7%. The source does not state the outcome under the quorum rules, so no winner is recorded.",
+    "source": [
+     {
+      "url": "https://en.wikipedia.org/wiki/2005_San_Marino_electoral_law_referendum",
+      "title": "Wikipedia: 2005 San Marino electoral law referendum",
+      "accessed": "2026-10-16"
+     }
+    ],
+    "confidence": "verified"
+   }
+  },
+  {
+   "id": "referendum_2005_q4",
+   "date": "2005-07-03",
+   "kind": "referendum",
+   "question": "Revise the approval rule for confirmative referendums (article 31 of law no. 101 of 1994)",
+   "historical": {
+    "yes_share": 0.7317,
+    "options": [
+     {
+      "label": "Yes",
+      "share": 0.7317,
+      "votes": 4796
+     },
+     {
+      "label": "No",
+      "share": 0.2683,
+      "votes": 1759
+     }
+    ],
+    "turnout": 0.217,
+    "note": "Question 4 of four on the electoral law. Registered voters 31,695; turnout 21.7%. The source does not state the outcome under the quorum rules, so no winner is recorded.",
+    "source": [
+     {
+      "url": "https://en.wikipedia.org/wiki/2005_San_Marino_electoral_law_referendum",
+      "title": "Wikipedia: 2005 San Marino electoral law referendum",
+      "accessed": "2026-10-16"
+     }
+    ],
+    "confidence": "verified"
+   }
+  },
+  {
+   "id": "council_2006",
+   "date": "2006-06-04",
+   "kind": "legislative",
+   "chamber": "council",
+   "historical": {
+    "party_results": [
+     {
+      "party": "smr.pdcs",
+      "share": 0.3292,
+      "seats": 21
+     },
+     {
+      "party": "smr.psd",
+      "share": 0.3183,
+      "seats": 20
+     },
+     {
+      "party": "smr.ap",
+      "share": 0.1205,
+      "seats": 7
+     },
+     {
+      "party": "smr.su",
+      "share": 0.0867,
+      "seats": 5
+     },
+     {
+      "party": "smr.nps",
+      "share": 0.0542,
+      "seats": 3
+     },
+     {
+      "party": "smr.ns",
+      "share": 0.0253,
+      "seats": 1
+     },
+     {
+      "party": "smr.pops",
+      "share": 0.0243,
+      "seats": 1
+     },
+     {
+      "party": "smr.ans",
+      "share": 0.0232,
+      "seats": 1
+     },
+     {
+      "party": "smr.spl",
+      "share": 0.0184,
+      "seats": 1
+     }
+    ],
+    "winner": "smr.pdcs",
+    "turnout": 0.7184,
+    "note": "Shares of 22,046 valid votes. After the election the PSD formed a coalition with Popular Alliance and United Left.",
+    "source": [
+     {
+      "url": "https://en.wikipedia.org/wiki/2006_Sammarinese_general_election",
+      "title": "Wikipedia: 2006 Sammarinese general election",
+      "accessed": "2026-10-16"
+     }
+    ],
+    "confidence": "verified"
+   }
+  },
+  {
+   "id": "referendum_2008_q1",
+   "date": "2008-03-16",
+   "kind": "referendum",
+   "question": "Voting system (single preference vote)",
+   "historical": {
+    "yes_share": 0.6941,
+    "options": [
+     {
+      "label": "Yes",
+      "share": 0.6941,
+      "votes": 7584
+     },
+     {
+      "label": "No",
+      "share": 0.3059,
+      "votes": 3342
+     }
+    ],
+    "turnout": 0.3536,
+    "note": "Question 1 of four held on 16 March 2008. Registered voters 31,819; turnout 35.36%. The source excerpt used does not state the outcome under the quorum rules, so no winner is recorded.",
+    "source": [
+     {
+      "url": "https://en.wikipedia.org/wiki/2008_San_Marino_referendum",
+      "title": "Wikipedia: 2008 San Marino referendum",
+      "accessed": "2026-10-16"
+     }
+    ],
+    "confidence": "verified"
+   }
+  },
+  {
+   "id": "referendum_2008_q2",
+   "date": "2008-03-16",
+   "kind": "referendum",
+   "question": "Wages rising in line with inflation",
+   "historical": {
+    "yes_share": 0.6655,
+    "options": [
+     {
+      "label": "Yes",
+      "share": 0.6655,
+      "votes": 6922
+     },
+     {
+      "label": "No",
+      "share": 0.3345,
+      "votes": 3479
+     }
+    ],
+    "turnout": 0.3536,
+    "note": "Question 2 of four held on 16 March 2008. Registered voters 31,819; turnout 35.36%. The source excerpt used does not state the outcome under the quorum rules, so no winner is recorded.",
+    "source": [
+     {
+      "url": "https://en.wikipedia.org/wiki/2008_San_Marino_referendum",
+      "title": "Wikipedia: 2008 San Marino referendum",
+      "accessed": "2026-10-16"
+     }
+    ],
+    "confidence": "verified"
+   }
+  },
+  {
+   "id": "referendum_2008_q3",
+   "date": "2008-03-16",
+   "kind": "referendum",
+   "question": "Projects",
+   "historical": {
+    "yes_share": 0.6041,
+    "options": [
+     {
+      "label": "Yes",
+      "share": 0.6041,
+      "votes": 6370
+     },
+     {
+      "label": "No",
+      "share": 0.3959,
+      "votes": 4175
+     }
+    ],
+    "turnout": 0.3536,
+    "note": "Question 3 of four held on 16 March 2008. Registered voters 31,819; turnout 35.36%. The source excerpt used does not state the outcome under the quorum rules, so no winner is recorded.",
+    "source": [
+     {
+      "url": "https://en.wikipedia.org/wiki/2008_San_Marino_referendum",
+      "title": "Wikipedia: 2008 San Marino referendum",
+      "accessed": "2026-10-16"
+     }
+    ],
+    "confidence": "verified"
+   }
+  },
+  {
+   "id": "referendum_2008_q4",
+   "date": "2008-03-16",
+   "kind": "referendum",
+   "question": "Temporary contracts",
+   "historical": {
+    "yes_share": 0.6066,
+    "options": [
+     {
+      "label": "Yes",
+      "share": 0.6066,
+      "votes": 6426
+     },
+     {
+      "label": "No",
+      "share": 0.3934,
+      "votes": 4167
+     }
+    ],
+    "turnout": 0.3536,
+    "note": "Question 4 of four held on 16 March 2008. Registered voters 31,819; turnout 35.36%. The source excerpt used does not state the outcome under the quorum rules, so no winner is recorded.",
+    "source": [
+     {
+      "url": "https://en.wikipedia.org/wiki/2008_San_Marino_referendum",
+      "title": "Wikipedia: 2008 San Marino referendum",
+      "accessed": "2026-10-16"
+     }
+    ],
+    "confidence": "verified"
+   }
+  },
+  {
+   "id": "council_2008",
+   "date": "2008-11-09",
+   "kind": "legislative",
+   "chamber": "council",
+   "snap": true,
+   "historical": {
+    "party_results": [
+     {
+      "party": "smr.psd",
+      "share": 0.3196,
+      "seats": 18
+     },
+     {
+      "party": "smr.pdcs",
+      "share": 0.3191,
+      "seats": 22
+     },
+     {
+      "party": "smr.ap",
+      "share": 0.1152,
+      "seats": 7
+     },
+     {
+      "party": "smr.su",
+      "share": 0.0857,
+      "seats": 5
+     },
+     {
+      "party": "smr.ldl",
+      "share": 0.0628,
+      "seats": 4
+     },
+     {
+      "party": "smr.ddc",
+      "share": 0.0494,
+      "seats": 2
+     },
+     {
+      "party": "smr.ums",
+      "share": 0.0417,
+      "seats": 2
+     }
+    ],
+    "winner": "smr.pdcs",
+    "turnout": 0.6848,
+    "note": "Snap election after the centre-left government collapsed in June 2008. Shares of 20,972 valid votes as listed (including 138 coalition-only votes). The PDCS figure is its joint list with Euro-Populars for San Marino and Arengo and Freedom. The Pact for San Marino coalition (PDCS list, AP, Freedom List, Union of Moderates) won 35 seats including the majority bonus; Reforms and Freedom (PSD, SU, Centre Democrats) won 25. The PSD won slightly more votes than the PDCS list, but the PDCS won more seats and is recorded as the winner.",
+    "source": [
+     {
+      "url": "https://en.wikipedia.org/wiki/2008_Sammarinese_general_election",
+      "title": "Wikipedia: 2008 Sammarinese general election",
+      "accessed": "2026-10-16"
+     }
+    ],
+    "confidence": "verified"
+   }
+  },
+  {
+   "id": "referendum_2011_public_property",
+   "date": "2011-03-27",
+   "kind": "referendum",
+   "question": "Repeal Law no. 82 of 5 May 2010 on the sale of publicly owned land",
+   "historical": {
+    "yes_share": 0.9237,
+    "options": [
+     {
+      "label": "Yes",
+      "share": 0.9237,
+      "votes": 12166
+     },
+     {
+      "label": "No",
+      "share": 0.0763,
+      "votes": 1005
+     }
+    ],
+    "turnout": 0.4043,
+    "note": "Registered voters 32,972; 158 invalid votes; turnout 40.43%. The source excerpt used does not state the outcome under the quorum rules, so no winner is recorded.",
+    "source": [
+     {
+      "url": "https://en.wikipedia.org/wiki/2011_San_Marino_public_property_referendum",
+      "title": "Wikipedia: 2011 San Marino public property referendum",
+      "accessed": "2026-10-16"
+     }
+    ],
+    "confidence": "verified"
+   }
+  },
+  {
+   "id": "council_2012",
+   "date": "2012-11-11",
+   "kind": "legislative",
+   "chamber": "council",
+   "historical": {
+    "party_results": [
+     {
+      "party": "smr.pdcs",
+      "share": 0.2947,
+      "seats": 21
+     },
+     {
+      "party": "smr.psd",
+      "share": 0.1432,
+      "seats": 10
+     },
+     {
+      "party": "smr.ap",
+      "share": 0.0667,
+      "seats": 4
+     },
+     {
+      "party": "smr.ps",
+      "share": 0.121,
+      "seats": 7
+     },
+     {
+      "party": "smr.upr",
+      "share": 0.0835,
+      "seats": 5
+     },
+     {
+      "party": "smr.su",
+      "share": 0.0914,
+      "seats": 5
+     },
+     {
+      "party": "smr.c10",
+      "share": 0.067,
+      "seats": 4
+     },
+     {
+      "party": "smr.rete",
+      "share": 0.0629,
+      "seats": 4
+     }
+    ],
+    "winner": "smr.pdcs",
+    "turnout": 0.6385,
+    "note": "Shares of 19,778 valid votes. The PDCS figure is its joint list with We Sammarineses. San Marino Common Good (PDCS-NS, PSD, AP) won 35 seats; Agreement for the Country (PS, UpR, Moderates) 12; Active Citizenship (SU, Civic 10) 9; RETE 4.",
+    "source": [
+     {
+      "url": "https://en.wikipedia.org/wiki/2012_Sammarinese_general_election",
+      "title": "Wikipedia: 2012 Sammarinese general election",
+      "accessed": "2026-10-16"
+     }
+    ],
+    "confidence": "verified"
+   }
+  },
+  {
+   "id": "referendum_2013_wages",
+   "date": "2013-10-20",
+   "kind": "referendum",
+   "question": "Revalue salaries each 1 January in line with official inflation",
+   "historical": {
+    "yes_share": 0.5028,
+    "options": [
+     {
+      "label": "Yes",
+      "share": 0.5028,
+      "votes": 6732
+     },
+     {
+      "label": "No",
+      "share": 0.4972,
+      "votes": 6657
+     }
+    ],
+    "winner": "No (quorum not reached)",
+    "turnout": 0.4338,
+    "note": "Majority in favour, but rejected because fewer than 32% of eligible voters voted yes (turnout 43.38%; 1,059 invalid or blank).",
+    "source": [
+     {
+      "url": "https://en.wikipedia.org/wiki/2013_San_Marino_referendum",
+      "title": "Wikipedia: 2013 San Marino referendum",
+      "accessed": "2026-10-16"
+     }
+    ],
+    "confidence": "verified"
+   }
+  },
+  {
+   "id": "referendum_2013_eu",
+   "date": "2013-10-20",
+   "kind": "referendum",
+   "question": "Submit an application to join the European Union",
+   "historical": {
+    "yes_share": 0.7312,
+    "options": [
+     {
+      "label": "Yes",
+      "share": 0.7312,
+      "votes": 10025
+     },
+     {
+      "label": "No",
+      "share": 0.2688,
+      "votes": 3685
+     }
+    ],
+    "winner": "No (quorum not reached)",
+    "turnout": 0.4331,
+    "note": "Majority in favour, but rejected because fewer than 32% of eligible voters voted yes (turnout 43.31%; 712 invalid or blank).",
+    "source": [
+     {
+      "url": "https://en.wikipedia.org/wiki/2013_San_Marino_referendum",
+      "title": "Wikipedia: 2013 San Marino referendum",
+      "accessed": "2026-10-16"
+     }
+    ],
+    "confidence": "verified"
+   }
+  },
+  {
+   "id": "referendum_2014_pensions",
+   "date": "2014-05-25",
+   "kind": "referendum",
+   "question": "Repeal the pensions reform law",
+   "historical": {
+    "yes_share": 0.7948,
+    "options": [
+     {
+      "label": "Yes",
+      "share": 0.7948,
+      "votes": 11026
+     },
+     {
+      "label": "No",
+      "share": 0.2052,
+      "votes": 2847
+     }
+    ],
+    "winner": "Yes",
+    "turnout": 0.4215,
+    "note": "Approved; the quorum had been lowered to 25% of eligible voters voting yes. Registered voters 33,591; turnout 42.15%.",
+    "source": [
+     {
+      "url": "https://en.wikipedia.org/wiki/2014_San_Marino_referendum",
+      "title": "Wikipedia: 2014 San Marino referendum",
+      "accessed": "2026-10-16"
+     }
+    ],
+    "confidence": "verified"
+   }
+  },
+  {
+   "id": "referendum_2014_medical",
+   "date": "2014-05-25",
+   "kind": "referendum",
+   "question": "Repeal the medical practice law",
+   "historical": {
+    "yes_share": 0.7804,
+    "options": [
+     {
+      "label": "Yes",
+      "share": 0.7804,
+      "votes": 10881
+     },
+     {
+      "label": "No",
+      "share": 0.2196,
+      "votes": 3061
+     }
+    ],
+    "winner": "Yes",
+    "turnout": 0.4215,
+    "note": "Approved. Registered voters 33,591; turnout 42.15%.",
+    "source": [
+     {
+      "url": "https://en.wikipedia.org/wiki/2014_San_Marino_referendum",
+      "title": "Wikipedia: 2014 San Marino referendum",
+      "accessed": "2026-10-16"
+     }
+    ],
+    "confidence": "verified"
+   }
+  },
+  {
+   "id": "referendum_2016_q1",
+   "date": "2016-05-15",
+   "kind": "referendum",
+   "question": "Single preference voting",
+   "historical": {
+    "yes_share": 0.5476,
+    "options": [
+     {
+      "label": "Yes",
+      "share": 0.5476,
+      "votes": 8688
+     },
+     {
+      "label": "No",
+      "share": 0.4524,
+      "votes": 7177
+     }
+    ],
+    "winner": "Yes",
+    "turnout": 0.4752,
+    "note": "Approved; 25.63% of eligible voters voted yes. Registered voters 33,896.",
+    "source": [
+     {
+      "url": "https://en.wikipedia.org/wiki/2016_San_Marino_referendum",
+      "title": "Wikipedia: 2016 San Marino referendum",
+      "accessed": "2026-10-16"
+     }
+    ],
+    "confidence": "verified"
+   }
+  },
+  {
+   "id": "referendum_2016_q2",
+   "date": "2016-05-15",
+   "kind": "referendum",
+   "question": "Repeal law 137 on economic development",
+   "historical": {
+    "yes_share": 0.4967,
+    "options": [
+     {
+      "label": "Yes",
+      "share": 0.4967,
+      "votes": 7854
+     },
+     {
+      "label": "No",
+      "share": 0.5033,
+      "votes": 7957
+     }
+    ],
+    "winner": "No",
+    "turnout": 0.4753,
+    "note": "Rejected (No majority; 23.14% voted yes). Registered voters 33,896.",
+    "source": [
+     {
+      "url": "https://en.wikipedia.org/wiki/2016_San_Marino_referendum",
+      "title": "Wikipedia: 2016 San Marino referendum",
+      "accessed": "2026-10-16"
+     }
+    ],
+    "confidence": "verified"
+   }
+  },
+  {
+   "id": "referendum_2016_q3",
+   "date": "2016-05-15",
+   "kind": "referendum",
+   "question": "Abolish the 25% approval quorum",
+   "historical": {
+    "yes_share": 0.5858,
+    "options": [
+     {
+      "label": "Yes",
+      "share": 0.5858,
+      "votes": 9274
+     },
+     {
+      "label": "No",
+      "share": 0.4142,
+      "votes": 6558
+     }
+    ],
+    "winner": "Yes",
+    "turnout": 0.4753,
+    "note": "Approved; 27.36% voted yes. The quorum was abolished. Registered voters 33,896.",
+    "source": [
+     {
+      "url": "https://en.wikipedia.org/wiki/2016_San_Marino_referendum",
+      "title": "Wikipedia: 2016 San Marino referendum",
+      "accessed": "2026-10-16"
+     }
+    ],
+    "confidence": "verified"
+   }
+  },
+  {
+   "id": "referendum_2016_q4",
+   "date": "2016-05-15",
+   "kind": "referendum",
+   "question": "Cap public sector salaries",
+   "historical": {
+    "yes_share": 0.6363,
+    "options": [
+     {
+      "label": "Yes",
+      "share": 0.6363,
+      "votes": 10093
+     },
+     {
+      "label": "No",
+      "share": 0.3637,
+      "votes": 5770
+     }
+    ],
+    "winner": "Yes",
+    "turnout": 0.4754,
+    "note": "Approved; 29.78% voted yes. Registered voters 33,896.",
+    "source": [
+     {
+      "url": "https://en.wikipedia.org/wiki/2016_San_Marino_referendum",
+      "title": "Wikipedia: 2016 San Marino referendum",
+      "accessed": "2026-10-16"
+     }
+    ],
+    "confidence": "verified"
+   }
+  },
+  {
+   "id": "council_2016",
+   "date": "2016-11-20",
+   "kind": "legislative",
+   "chamber": "council",
+   "rounds": 2,
+   "historical": {
+    "party_results": [
+     {
+      "party": "smr.pdcs",
+      "share": 0.2446,
+      "seats": 10
+     },
+     {
+      "party": "smr.ps",
+      "share": 0.077,
+      "seats": 3
+     },
+     {
+      "party": "smr.psd",
+      "share": 0.0717,
+      "seats": 3
+     },
+     {
+      "party": "smr.ssd",
+      "share": 0.1211,
+      "seats": 14
+     },
+     {
+      "party": "smr.rf",
+      "share": 0.096,
+      "seats": 11
+     },
+     {
+      "party": "smr.c10",
+      "share": 0.0927,
+      "seats": 10
+     },
+     {
+      "party": "smr.rete",
+      "share": 0.1833,
+      "seats": 8
+     },
+     {
+      "party": "others",
+      "share": 0.0449,
+      "seats": 1
+     }
+    ],
+    "winner": "smr.ssd",
+    "turnout": 0.5966,
+    "note": "Two rounds: 20 November and 4 December 2016 (runoff turnout 50.09%). Shares are first-round shares of 19,427 valid votes (including coalition-only and minor-list votes); seats are the final allocation after the runoff, which the Adesso.sm coalition (SSD, Future Republic, Civic 10) won with 35 seats against San Marino First (PDCS, PS, PSD) with 16; Democracy in Motion (RETE 8, Democratic Movement - San Marino Together 1, under others) won 9. The winner recorded is the largest party of the winning coalition by seats.",
+    "source": [
+     {
+      "url": "https://en.wikipedia.org/wiki/2016_Sammarinese_general_election",
+      "title": "Wikipedia: 2016 Sammarinese general election",
+      "accessed": "2026-10-16"
+     }
+    ],
+    "confidence": "verified"
+   }
+  },
+  {
+   "id": "referendum_2019_electoral",
+   "date": "2019-06-02",
+   "kind": "referendum",
+   "question": "Popular initiative: runoff between the top two parties if no coalition government is formed within thirty days",
+   "historical": {
+    "yes_share": 0.6058,
+    "options": [
+     {
+      "label": "Yes",
+      "share": 0.6058,
+      "votes": 8554
+     },
+     {
+      "label": "No",
+      "share": 0.3942,
+      "votes": 5566
+     }
+    ],
+    "winner": "Yes",
+    "turnout": 0.4198,
+    "note": "Approved (no quorum since 2016). Registered voters 34,458; turnout 41.98%.",
+    "source": [
+     {
+      "url": "https://en.wikipedia.org/wiki/2019_San_Marino_referendum",
+      "title": "Wikipedia: 2019 San Marino referendum",
+      "accessed": "2026-10-16"
+     }
+    ],
+    "confidence": "verified"
+   }
+  },
+  {
+   "id": "referendum_2019_discrimination",
+   "date": "2019-06-02",
+   "kind": "referendum",
+   "question": "Prohibit discrimination based on sexual orientation",
+   "historical": {
+    "yes_share": 0.7146,
+    "options": [
+     {
+      "label": "Yes",
+      "share": 0.7146,
+      "votes": 9996
+     },
+     {
+      "label": "No",
+      "share": 0.2854,
+      "votes": 3992
+     }
+    ],
+    "winner": "Yes",
+    "turnout": 0.4191,
+    "note": "Approved. Registered voters 34,458; turnout 41.91%.",
+    "source": [
+     {
+      "url": "https://en.wikipedia.org/wiki/2019_San_Marino_referendum",
+      "title": "Wikipedia: 2019 San Marino referendum",
+      "accessed": "2026-10-16"
+     }
+    ],
+    "confidence": "verified"
+   }
+  },
+  {
+   "id": "council_2019",
+   "date": "2019-12-08",
+   "kind": "legislative",
+   "chamber": "council",
+   "historical": {
+    "party_results": [
+     {
+      "party": "smr.pdcs",
+      "share": 0.3335,
+      "seats": 21
+     },
+     {
+      "party": "smr.rete",
+      "share": 0.1823,
+      "seats": 11
+     },
+     {
+      "party": "smr.libera",
+      "share": 0.1649,
+      "seats": 10
+     },
+     {
+      "party": "smr.npr",
+      "share": 0.1313,
+      "seats": 8
+     },
+     {
+      "party": "smr.rf",
+      "share": 0.1029,
+      "seats": 6
+     },
+     {
+      "party": "smr.dml",
+      "share": 0.0619,
+      "seats": 4
+     }
+    ],
+    "winner": "smr.pdcs",
+    "turnout": 0.5573,
+    "note": "Shares of 17,972 valid votes (including 57 coalition-only votes and Elego's 361). A coalition government was formed by the PDCS, the Tomorrow in Motion alliance (RETE and DML) and We for the Republic.",
+    "source": [
+     {
+      "url": "https://en.wikipedia.org/wiki/2019_Sammarinese_general_election",
+      "title": "Wikipedia: 2019 Sammarinese general election",
+      "accessed": "2026-10-16"
+     }
+    ],
+    "confidence": "verified"
+   }
+  },
+  {
+   "id": "referendum_2021_abortion",
+   "date": "2021-09-26",
+   "kind": "referendum",
+   "question": "Allow voluntary termination of pregnancy up to the twelfth week, and later in specified circumstances",
+   "historical": {
+    "yes_share": 0.773,
+    "options": [
+     {
+      "label": "Yes",
+      "share": 0.773,
+      "votes": 11119
+     },
+     {
+      "label": "No",
+      "share": 0.227,
+      "votes": 3265
+     }
+    ],
+    "winner": "Yes",
+    "turnout": 0.4111,
+    "note": "Electorate 35,411; 175 invalid votes. A majority voted yes; no approval quorum has applied since 2016.",
+    "source": [
+     {
+      "url": "https://en.wikipedia.org/wiki/2021_San_Marino_abortion_referendum",
+      "title": "Wikipedia: 2021 San Marino abortion referendum",
+      "accessed": "2026-10-16"
+     }
+    ],
+    "confidence": "verified"
+   }
+  },
+  {
+   "id": "council_2024",
+   "date": "2024-06-09",
+   "kind": "legislative",
+   "chamber": "council",
+   "historical": {
+    "party_results": [
+     {
+      "party": "smr.pdcs",
+      "share": 0.3414,
+      "seats": 22
+     },
+     {
+      "party": "smr.libera",
+      "share": 0.1575,
+      "seats": 10
+     },
+     {
+      "party": "smr.psd",
+      "share": 0.1219,
+      "seats": 8
+     },
+     {
+      "party": "smr.rf",
+      "share": 0.1198,
+      "seats": 8
+     },
+     {
+      "party": "smr.dml",
+      "share": 0.0847,
+      "seats": 5
+     },
+     {
+      "party": "smr.ar",
+      "share": 0.0698,
+      "seats": 4
+     },
+     {
+      "party": "smr.rete",
+      "share": 0.0507,
+      "seats": 3
+     }
+    ],
+    "winner": "smr.pdcs",
+    "turnout": 0.5073,
+    "note": "Shares of 18,177 valid votes (including 133 coalition-only votes and Solidary Democracy's 852, which won no seats). The Libera figure is the joint Libera/Socialist Party list. Coalitions: Democracy and Freedom (PDCS and Reformist Alliance) and Libera/PS-PSD.",
+    "source": [
+     {
+      "url": "https://en.wikipedia.org/wiki/2024_Sammarinese_general_election",
+      "title": "Wikipedia: 2024 Sammarinese general election",
+      "accessed": "2026-10-16"
+     }
+    ],
+    "confidence": "verified"
+   }
+  }
+ ],
+ "source": [
+  {
+   "url": "https://en.wikipedia.org/wiki/Elections_in_San_Marino",
+   "title": "Wikipedia: Elections in San Marino (list of referendums)",
+   "accessed": "2026-10-16"
+  },
+  {
+   "url": "https://www.wikidata.org/wiki/Q238",
+   "title": "Wikidata: referendums with country San Marino (SPARQL query)",
+   "accessed": "2026-10-16"
+  }
+ ],
+ "confidence": "verified"
+}

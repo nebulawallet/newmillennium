@@ -1,0 +1,106 @@
+{
+  "tag": "VAT",
+  "name": {
+    "en": "Vatican City",
+    "native": "Città del Vaticano",
+    "official": { "en": "Vatican City State", "native": "Stato della Città del Vaticano" }
+  },
+  "adjective": "Vatican",
+  "culture_primary": "vatican_curia",
+  "government": {
+    "type": "absolute_monarchy",
+    "effective_executive": "vat.pope",
+    "head_of_state_office": "vat.pope",
+    "head_of_government_office": "vat.president_governorate",
+    "constitution": {
+      "term_limit_amendable": false,
+      "emergency_powers": false,
+      "referendum_required_for": []
+    },
+    "note": "Wikipedia describes the state as a unitary theocratic elective absolute monarchy. The sovereign entity is the Holy See; the Pope, elected for life by a conclave of cardinals, holds full legislative, executive and judicial power. He delegates legislation to the Pontifical Commission for Vatican City State (appointed members; laws go to the Pope through the Secretariat of State before taking effect) and day-to-day administration to the President of the Governorate, who also presides over the Commission. Modelled as 'absolute_monarchy' because no elective-monarchy type exists; succession is by conclave, not heredity. There are no political parties and no popular elections."
+  },
+  "offices": [
+    {
+      "id": "vat.pope",
+      "title": { "en": "Pope (Sovereign of Vatican City State)", "native": "Sommo Pontefice" },
+      "role": "head_of_state",
+      "power_weight": 0.7,
+      "selection": "religious_council",
+      "succession": { "type": "council_choice" },
+      "holders": [
+        { "person": "vat.john_paul_ii", "from": "1978-10-16", "to": "2005-04-02", "note": "Died in office on 2 April 2005." },
+        { "person": null, "from": "2005-04-02", "to": "2005-04-19", "vacant_reason": "Sede vacante after the death of John Paul II, until the conclave elected Benedict XVI." },
+        { "person": "vat.benedict_xvi", "from": "2005-04-19", "to": "2013-02-28", "note": "Resigned with effect from 28 February 2013; Pope emeritus until his death on 31 December 2022." },
+        { "person": null, "from": "2013-02-28", "to": "2013-03-13", "vacant_reason": "Sede vacante after the resignation of Benedict XVI, until the conclave elected Francis." },
+        { "person": "vat.francis", "from": "2013-03-13", "to": "2025-04-21", "note": "Died in office on 21 April 2025." },
+        { "person": null, "from": "2025-04-21", "to": "2025-05-08", "vacant_reason": "Sede vacante after the death of Francis, until the conclave elected Leo XIV." },
+        { "person": "vat.leo_xiv", "from": "2025-05-08" }
+      ],
+      "note": "Elected for life by the College of Cardinals in conclave (2005, 2013, 2025); holder dates are the dates of election, death or resignation from Wikidata. During a sede vacante the College of Cardinals and the Camerlengo handle limited functions; that interim administration is not modelled as a holder.",
+      "source": [
+        { "url": "https://www.wikidata.org/wiki/Q19546", "title": "Wikidata: Pope (position held by)", "accessed": "2026-10-16" },
+        { "url": "https://en.wikipedia.org/wiki/Pope_Leo_XIV", "title": "Wikipedia: Pope Leo XIV (papacy began 8 May 2025)", "accessed": "2026-10-16" },
+        { "url": "https://en.wikipedia.org/wiki/Vatican_City", "title": "Wikipedia: Vatican City (government type)", "accessed": "2026-10-16" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "vat.president_governorate",
+      "title": { "en": "President of the Governorate of Vatican City State", "native": "Presidente del Governatorato dello Stato della Città del Vaticano" },
+      "role": "head_of_government",
+      "power_weight": 0.15,
+      "selection": "appointed",
+      "appointed_by": "vat.pope",
+      "holders": [
+        { "person": "vat.edmund_szoka", "from": "1997-10-15", "to": "2006-09-15" },
+        { "person": "vat.giovanni_lajolo", "from": "2006-09-15", "to": "2011-10-01" },
+        { "person": "vat.giuseppe_bertello", "from": "2011-10-01", "to": "2021-10-01" },
+        { "person": "vat.fernando_vergez_alzaga", "from": "2021-10-01", "to": "2025-03-01" },
+        { "person": "vat.raffaella_petrini", "from": "2025-03-01", "note": "First woman to hold the office; listed as President in the Commission's membership after the changes of 15 October 2025." }
+      ],
+      "note": "The President of the Pontifical Commission for Vatican City State also serves as President of the Governorate, the de facto head of government (the Pope delegates day-to-day executive power). Under the conclave rules the President's term formally ends when the papacy falls vacant; the Wikipedia list shows Szoka's and Vérgez Alzaga's tenures continuing across the 2005 and 2025 vacancies, and this timeline follows the list.",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/President_of_the_Governorate_of_Vatican_City_State", "title": "Wikipedia: Pontifical Commission for Vatican City State / President of the Governorate (list of presidents, current members)", "accessed": "2026-10-16" },
+        { "url": "https://www.wikidata.org/wiki/Q2387238", "title": "Wikidata: President of the Pontifical Commission for the Vatican City State (position held by; incomplete)", "accessed": "2026-10-16" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "vat.secretary_of_state",
+      "title": { "en": "Cardinal Secretary of State", "native": "Segretario di Stato" },
+      "role": "other",
+      "power_weight": 0.15,
+      "selection": "appointed",
+      "appointed_by": "vat.pope",
+      "holders": [
+        { "person": "vat.angelo_sodano", "from": "1991-06-29", "to": "2006-09-15" },
+        { "person": "vat.tarcisio_bertone", "from": "2006-09-15", "to": "2013-10-15" },
+        { "person": "vat.pietro_parolin", "from": "2013-10-15", "note": "Appointed by Francis and confirmed by Leo XIV in May 2025 (Wikipedia, fetched 2026-10-16)." }
+      ],
+      "note": "Heads the Secretariat of State of the Holy See, which conducts its diplomacy and coordinates the Roman Curia. An office of the Holy See rather than of the Vatican City State, recorded because it is the most senior governing post after the Pope; laws of the Pontifical Commission reach the Pope through it.",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/Cardinal_Secretary_of_State", "title": "Wikipedia: Cardinal Secretary of State (list of secretaries)", "accessed": "2026-10-16" },
+        { "url": "https://www.wikidata.org/wiki/Q1054345", "title": "Wikidata: Cardinal Secretary of State (via holders' positions held)", "accessed": "2026-10-16" }
+      ],
+      "confidence": "verified"
+    }
+  ],
+  "legislature": null,
+  "party_system": "no_parties",
+  "no_parties_reason": "Vatican City is an elective absolute monarchy under the Pope with no political parties and no popular elections. Legislation is prepared by the Pontifical Commission for Vatican City State, whose members are cardinals and officials appointed by the Pope; it is not recorded as a legislature because no fetched source gives its composition on 1 January 2000.",
+  "start_2000": {
+    "ruling_parties": [],
+    "ideology_support": {
+      "christian_conservative": 1
+    },
+    "ideology_support_note": "Gameplay estimate, not measured data: there are no parties or elections, and the small resident population consists mainly of clergy, religious and Swiss Guards. christian_conservative is the closest existing id to the Holy See's Catholic religious governance; it is not a judgement of any individual's views.",
+    "stability": 0.9,
+    "war_support": 0.0
+  },
+  "claims": [],
+  "source": [
+    { "url": "https://en.wikipedia.org/wiki/Vatican_City", "title": "Wikipedia: Vatican City (infobox: government type, leaders, legislature)", "accessed": "2026-10-16" },
+    { "url": "https://en.wikipedia.org/wiki/President_of_the_Governorate_of_Vatican_City_State", "title": "Wikipedia: Pontifical Commission for Vatican City State", "accessed": "2026-10-16" }
+  ],
+  "confidence": "verified"
+}

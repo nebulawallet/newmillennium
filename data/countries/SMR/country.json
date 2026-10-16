@@ -1,0 +1,782 @@
+{
+ "tag": "SMR",
+ "name": {
+  "en": "San Marino",
+  "native": "San Marino",
+  "official": {
+   "en": "Republic of San Marino",
+   "native": "Repubblica di San Marino"
+  }
+ },
+ "adjective": "Sammarinese",
+ "culture_primary": "sammarinese",
+ "government": {
+  "type": "parliamentary",
+  "effective_executive": "smr.secretary_foreign",
+  "head_of_state_office": "smr.captains_regent",
+  "head_of_government_office": "smr.secretary_foreign",
+  "constitution": {
+   "term_limit_amendable": true,
+   "emergency_powers": false,
+   "referendum_required_for": []
+  },
+  "note": "Parliamentary republic with a collegial executive. Two Captains Regent, elected by the Grand and General Council every six months and invested on 1 April and 1 October, are joint heads of state. The Congress of State (government) answers to the Council; its Secretary of State for Foreign and Political Affairs is treated here as head of government. Modelled as 'parliamentary' rather than 'directorial' because the government depends on a Council majority."
+ },
+ "offices": [
+  {
+   "id": "smr.captains_regent",
+   "title": {
+    "en": "Captains Regent",
+    "native": "Capitani Reggenti"
+   },
+   "role": "head_of_state",
+   "power_weight": 0.15,
+   "selection": "legislature",
+   "term_years": 0.5,
+   "seats": 2,
+   "holders": [
+    {
+     "person": "smr.marino_bollini",
+     "from": "1999-10-01",
+     "to": "2000-04-01"
+    },
+    {
+     "person": "smr.giuseppe_arzilli",
+     "from": "1999-10-01",
+     "to": "2000-04-01"
+    },
+    {
+     "person": "smr.maria_domenica_michelotti",
+     "from": "2000-04-01",
+     "to": "2000-10-01"
+    },
+    {
+     "person": "smr.gian_marco_marcucci",
+     "from": "2000-04-01",
+     "to": "2000-10-01"
+    },
+    {
+     "person": "smr.gianfranco_terenzi",
+     "from": "2000-10-01",
+     "to": "2001-04-01"
+    },
+    {
+     "person": "smr.enzo_colombini",
+     "from": "2000-10-01",
+     "to": "2001-04-01"
+    },
+    {
+     "person": "smr.luigi_lonfernini",
+     "from": "2001-04-01",
+     "to": "2001-10-01"
+    },
+    {
+     "person": "smr.fabio_berardi",
+     "from": "2001-04-01",
+     "to": "2001-10-01"
+    },
+    {
+     "person": "smr.alberto_cecchetti",
+     "from": "2001-10-01",
+     "to": "2002-04-01"
+    },
+    {
+     "person": "smr.gino_giovagnoli",
+     "from": "2001-10-01",
+     "to": "2002-04-01"
+    },
+    {
+     "person": "smr.antonio_lazzaro_volpinari",
+     "from": "2002-04-01",
+     "to": "2002-10-01"
+    },
+    {
+     "person": "smr.giovanni_francesco_ugolini",
+     "from": "2002-04-01",
+     "to": "2002-10-01"
+    },
+    {
+     "person": "smr.mauro_chiaruzzi",
+     "from": "2002-10-01",
+     "to": "2003-04-01"
+    },
+    {
+     "person": "smr.giuseppe_maria_morganti",
+     "from": "2002-10-01",
+     "to": "2003-04-01"
+    },
+    {
+     "person": "smr.pier_marino_menicucci",
+     "from": "2003-04-01",
+     "to": "2003-10-01"
+    },
+    {
+     "person": "smr.giovanni_giannoni",
+     "from": "2003-04-01",
+     "to": "2003-10-01"
+    },
+    {
+     "person": "smr.giovanni_lonfernini",
+     "from": "2003-10-01",
+     "to": "2004-04-01"
+    },
+    {
+     "person": "smr.valeria_ciavatta",
+     "from": "2003-10-01",
+     "to": "2004-04-01"
+    },
+    {
+     "person": "smr.paolo_bollini",
+     "from": "2004-04-01",
+     "to": "2004-10-01"
+    },
+    {
+     "person": "smr.marino_riccardi",
+     "from": "2004-04-01",
+     "to": "2004-10-01"
+    },
+    {
+     "person": "smr.giuseppe_arzilli",
+     "from": "2004-10-01",
+     "to": "2005-04-01"
+    },
+    {
+     "person": "smr.roberto_raschi",
+     "from": "2004-10-01",
+     "to": "2005-04-01"
+    },
+    {
+     "person": "smr.fausta_morganti",
+     "from": "2005-04-01",
+     "to": "2005-10-01"
+    },
+    {
+     "person": "smr.cesare_gasperoni",
+     "from": "2005-04-01",
+     "to": "2005-10-01"
+    },
+    {
+     "person": "smr.claudio_muccioli",
+     "from": "2005-10-01",
+     "to": "2006-04-01"
+    },
+    {
+     "person": "smr.antonello_bacciocchi",
+     "from": "2005-10-01",
+     "to": "2006-04-01"
+    },
+    {
+     "person": "smr.gianfranco_terenzi",
+     "from": "2006-04-01",
+     "to": "2006-10-01"
+    },
+    {
+     "person": "smr.loris_francini",
+     "from": "2006-04-01",
+     "to": "2006-10-01"
+    },
+    {
+     "person": "smr.antonio_carattoni",
+     "from": "2006-10-01",
+     "to": "2007-04-01"
+    },
+    {
+     "person": "smr.roberto_giorgetti",
+     "from": "2006-10-01",
+     "to": "2007-04-01"
+    },
+    {
+     "person": "smr.alessandro_mancini",
+     "from": "2007-04-01",
+     "to": "2007-10-01"
+    },
+    {
+     "person": "smr.alessandro_rossi",
+     "from": "2007-04-01",
+     "to": "2007-10-01"
+    },
+    {
+     "person": "smr.alberto_selva",
+     "from": "2007-10-01",
+     "to": "2008-04-01"
+    },
+    {
+     "person": "smr.mirko_tomassoni",
+     "from": "2007-10-01",
+     "to": "2008-04-01"
+    },
+    {
+     "person": "smr.federico_pedini_amati",
+     "from": "2008-04-01",
+     "to": "2008-10-01"
+    },
+    {
+     "person": "smr.rosa_zafferani",
+     "from": "2008-04-01",
+     "to": "2008-10-01"
+    },
+    {
+     "person": "smr.ernesto_benedettini",
+     "from": "2008-10-01",
+     "to": "2009-04-01"
+    },
+    {
+     "person": "smr.assunta_meloni",
+     "from": "2008-10-01",
+     "to": "2009-04-01"
+    },
+    {
+     "person": "smr.massimo_cenci",
+     "from": "2009-04-01",
+     "to": "2009-10-01"
+    },
+    {
+     "person": "smr.oscar_mina",
+     "from": "2009-04-01",
+     "to": "2009-10-01"
+    },
+    {
+     "person": "smr.francesco_mussoni",
+     "from": "2009-10-01",
+     "to": "2010-04-01"
+    },
+    {
+     "person": "smr.stefano_palmieri",
+     "from": "2009-10-01",
+     "to": "2010-04-01"
+    },
+    {
+     "person": "smr.marco_conti",
+     "from": "2010-04-01",
+     "to": "2010-10-01"
+    },
+    {
+     "person": "smr.glauco_sansovini",
+     "from": "2010-04-01",
+     "to": "2010-10-01"
+    },
+    {
+     "person": "smr.giovanni_francesco_ugolini",
+     "from": "2010-10-01",
+     "to": "2011-04-01"
+    },
+    {
+     "person": "smr.andrea_zafferani",
+     "from": "2010-10-01",
+     "to": "2011-04-01"
+    },
+    {
+     "person": "smr.maria_luisa_berti",
+     "from": "2011-04-01",
+     "to": "2011-10-01"
+    },
+    {
+     "person": "smr.filippo_tamagnini",
+     "from": "2011-04-01",
+     "to": "2011-10-01"
+    },
+    {
+     "person": "smr.matteo_fiorini",
+     "from": "2011-10-01",
+     "to": "2012-04-01"
+    },
+    {
+     "person": "smr.gabriele_gatti",
+     "from": "2011-10-01",
+     "to": "2012-04-01"
+    },
+    {
+     "person": "smr.maurizio_rattini",
+     "from": "2012-04-01",
+     "to": "2012-10-01"
+    },
+    {
+     "person": "smr.italo_righi",
+     "from": "2012-04-01",
+     "to": "2012-10-01"
+    },
+    {
+     "person": "smr.denise_bronzetti",
+     "from": "2012-10-01",
+     "to": "2013-04-01"
+    },
+    {
+     "person": "smr.teodoro_lonfernini",
+     "from": "2012-10-01",
+     "to": "2013-04-01"
+    },
+    {
+     "person": "smr.denis_amici",
+     "from": "2013-04-01",
+     "to": "2013-10-01"
+    },
+    {
+     "person": "smr.antonella_mularoni",
+     "from": "2013-04-01",
+     "to": "2013-10-01"
+    },
+    {
+     "person": "smr.gian_carlo_capicchioni",
+     "from": "2013-10-01",
+     "to": "2014-04-01"
+    },
+    {
+     "person": "smr.anna_maria_muccioli",
+     "from": "2013-10-01",
+     "to": "2014-04-01"
+    },
+    {
+     "person": "smr.luca_beccari",
+     "from": "2014-04-01",
+     "to": "2014-10-01"
+    },
+    {
+     "person": "smr.valeria_ciavatta",
+     "from": "2014-04-01",
+     "to": "2014-10-01"
+    },
+    {
+     "person": "smr.gianfranco_terenzi",
+     "from": "2014-10-01",
+     "to": "2015-04-01"
+    },
+    {
+     "person": "smr.guerrino_zanotti",
+     "from": "2014-10-01",
+     "to": "2015-04-01"
+    },
+    {
+     "person": "smr.andrea_belluzzi",
+     "from": "2015-04-01",
+     "to": "2015-10-01"
+    },
+    {
+     "person": "smr.roberto_venturini",
+     "from": "2015-04-01",
+     "to": "2015-10-01"
+    },
+    {
+     "person": "smr.nicola_renzi",
+     "from": "2015-10-01",
+     "to": "2016-04-01"
+    },
+    {
+     "person": "smr.lorella_stefanelli",
+     "from": "2015-10-01",
+     "to": "2016-04-01"
+    },
+    {
+     "person": "smr.gian_nicola_berti",
+     "from": "2016-04-01",
+     "to": "2016-10-01"
+    },
+    {
+     "person": "smr.massimo_andrea_ugolini",
+     "from": "2016-04-01",
+     "to": "2016-10-01"
+    },
+    {
+     "person": "smr.fabio_berardi",
+     "from": "2016-10-01",
+     "to": "2017-04-01"
+    },
+    {
+     "person": "smr.marino_riccardi",
+     "from": "2016-10-01",
+     "to": "2017-04-01"
+    },
+    {
+     "person": "smr.vanessa_d_ambrosio",
+     "from": "2017-04-01",
+     "to": "2017-10-01"
+    },
+    {
+     "person": "smr.mimma_zavoli",
+     "from": "2017-04-01",
+     "to": "2017-10-01"
+    },
+    {
+     "person": "smr.enrico_carattoni",
+     "from": "2017-10-01",
+     "to": "2018-04-01"
+    },
+    {
+     "person": "smr.matteo_fiorini",
+     "from": "2017-10-01",
+     "to": "2018-04-01"
+    },
+    {
+     "person": "smr.matteo_ciacci",
+     "from": "2018-04-01",
+     "to": "2018-10-01"
+    },
+    {
+     "person": "smr.stefano_palmieri",
+     "from": "2018-04-01",
+     "to": "2018-10-01"
+    },
+    {
+     "person": "smr.luca_santolini",
+     "from": "2018-10-01",
+     "to": "2019-04-01"
+    },
+    {
+     "person": "smr.mirko_tomassoni",
+     "from": "2018-10-01",
+     "to": "2019-04-01"
+    },
+    {
+     "person": "smr.michele_muratori",
+     "from": "2019-04-01",
+     "to": "2019-10-01"
+    },
+    {
+     "person": "smr.nicola_selva",
+     "from": "2019-04-01",
+     "to": "2019-10-01"
+    },
+    {
+     "person": "smr.luca_boschi",
+     "from": "2019-10-01",
+     "to": "2020-04-01"
+    },
+    {
+     "person": "smr.mariella_mularoni",
+     "from": "2019-10-01",
+     "to": "2020-04-01"
+    },
+    {
+     "person": "smr.alessandro_mancini",
+     "from": "2020-04-01",
+     "to": "2020-10-01"
+    },
+    {
+     "person": "smr.grazia_zafferani",
+     "from": "2020-04-01",
+     "to": "2020-10-01"
+    },
+    {
+     "person": "smr.alessandro_cardelli",
+     "from": "2020-10-01",
+     "to": "2021-04-01"
+    },
+    {
+     "person": "smr.mirko_dolcini",
+     "from": "2020-10-01",
+     "to": "2021-04-01"
+    },
+    {
+     "person": "smr.marco_nicolini",
+     "from": "2021-04-01",
+     "to": "2021-10-01"
+    },
+    {
+     "person": "smr.gian_carlo_venturini",
+     "from": "2021-04-01",
+     "to": "2021-10-01"
+    },
+    {
+     "person": "smr.francesco_mussoni",
+     "from": "2021-10-01",
+     "to": "2022-04-01"
+    },
+    {
+     "person": "smr.giacomo_simoncini",
+     "from": "2021-10-01",
+     "to": "2022-04-01"
+    },
+    {
+     "person": "smr.oscar_mina",
+     "from": "2022-04-01",
+     "to": "2022-10-01"
+    },
+    {
+     "person": "smr.paolo_rondelli",
+     "from": "2022-04-01",
+     "to": "2022-10-01"
+    },
+    {
+     "person": "smr.maria_luisa_berti",
+     "from": "2022-10-01",
+     "to": "2023-04-01"
+    },
+    {
+     "person": "smr.manuel_ciavatta",
+     "from": "2022-10-01",
+     "to": "2023-04-01"
+    },
+    {
+     "person": "smr.alessandro_scarano",
+     "from": "2023-04-01",
+     "to": "2023-10-01"
+    },
+    {
+     "person": "smr.adele_tonnini",
+     "from": "2023-04-01",
+     "to": "2023-10-01"
+    },
+    {
+     "person": "smr.filippo_tamagnini",
+     "from": "2023-10-01",
+     "to": "2024-04-01"
+    },
+    {
+     "person": "smr.gaetano_troina",
+     "from": "2023-10-01",
+     "to": "2024-04-01"
+    },
+    {
+     "person": "smr.milena_gasperoni",
+     "from": "2024-04-01",
+     "to": "2024-10-01"
+    },
+    {
+     "person": "smr.alessandro_rossi",
+     "from": "2024-04-01",
+     "to": "2024-10-01"
+    },
+    {
+     "person": "smr.francesca_civerchia",
+     "from": "2024-10-01",
+     "to": "2025-04-01"
+    },
+    {
+     "person": "smr.dalibor_riccardi",
+     "from": "2024-10-01",
+     "to": "2025-04-01"
+    },
+    {
+     "person": "smr.denise_bronzetti",
+     "from": "2025-04-01",
+     "to": "2025-10-01"
+    },
+    {
+     "person": "smr.italo_righi",
+     "from": "2025-04-01",
+     "to": "2025-10-01"
+    },
+    {
+     "person": "smr.lorenzo_bugli",
+     "from": "2025-10-01",
+     "to": "2026-04-01"
+    },
+    {
+     "person": "smr.matteo_rossi",
+     "from": "2025-10-01",
+     "to": "2026-04-01"
+    },
+    {
+     "person": "smr.alice_mina",
+     "from": "2026-04-01",
+     "to": "2026-10-01"
+    },
+    {
+     "person": "smr.vladimiro_selva",
+     "from": "2026-04-01",
+     "to": "2026-10-01"
+    },
+    {
+     "person": "smr.gerardo_giovagnoli",
+     "from": "2026-10-01"
+    },
+    {
+     "person": "smr.william_casali",
+     "from": "2026-10-01"
+    }
+   ],
+   "note": "Two-seat office; each pair serves one six-month semester from 1 April or 1 October. Every semester from October 1999 to the pair invested on 1 October 2026 is listed; the 2026 terms were checked against the Wikipedia list fetched on 2026-10-16. The Council votes that elect each pair are not recorded in elections.json because the sources used do not date them. Regents are normally chosen from opposing parties.",
+   "source": [
+    {
+     "url": "https://en.wikipedia.org/wiki/List_of_captains_regent_of_San_Marino",
+     "title": "Wikipedia: List of captains regent of San Marino (1999-2026 semesters, election by the Grand and General Council, 1 April / 1 October investiture)",
+     "accessed": "2026-10-16"
+    },
+    {
+     "url": "https://www.wikidata.org/wiki/Q258045",
+     "title": "Wikidata: Captain Regent of San Marino (position held by)",
+     "accessed": "2026-10-16"
+    }
+   ],
+   "confidence": "verified"
+  },
+  {
+   "id": "smr.secretary_foreign",
+   "title": {
+    "en": "Secretary of State for Foreign and Political Affairs",
+    "native": "Segretario di Stato per gli Affari Esteri e Politici"
+   },
+   "role": "head_of_government",
+   "power_weight": 0.85,
+   "selection": "legislature",
+   "holders": [
+    {
+     "person": "smr.gabriele_gatti",
+     "from": "1986-07-26",
+     "to": "2002-05-21"
+    },
+    {
+     "person": "smr.romeo_morri",
+     "from": "2002-05-21",
+     "to": "2002-06-25"
+    },
+    {
+     "person": "smr.augusto_casali",
+     "from": "2002-06-25",
+     "to": "2002-12-16",
+     "note": "The Wikipedia list gives only 'June-December 2002'; the dates are those of the adjacent holders."
+    },
+    {
+     "person": "smr.fiorenzo_stolfi",
+     "from": "2002-12-16",
+     "to": "2003-12-15",
+     "note": "Wikidata ends this term on 12 December 2003; Berardi's Wikipedia infobox starts his term on 15 December 2003."
+    },
+    {
+     "person": "smr.fabio_berardi",
+     "from": "2003-12-15",
+     "to": "2006-07-27"
+    },
+    {
+     "person": "smr.fiorenzo_stolfi",
+     "from": "2006-07-27",
+     "to": "2008-12-03"
+    },
+    {
+     "person": "smr.antonella_mularoni",
+     "from": "2008-12-03",
+     "to": "2012-12-05"
+    },
+    {
+     "person": "smr.pasquale_valentini",
+     "from": "2012-12-05",
+     "to": "2016-12-27"
+    },
+    {
+     "person": "smr.nicola_renzi",
+     "from": "2016-12-27",
+     "to": "2020-01-07"
+    },
+    {
+     "person": "smr.luca_beccari",
+     "from": "2020-01-07",
+     "note": "The Wikipedia infobox gives 8 January 2020 as the start, its text and Wikidata 7 January 2020. The office was renamed (foreign affairs, political affairs, international economic cooperation and digital transition)."
+    }
+   ],
+   "note": "Members of the Congress of State are elected by the Grand and General Council. San Marino has no prime minister; this secretary is conventionally regarded as the head of government.",
+   "source": [
+    {
+     "url": "https://en.wikipedia.org/wiki/Secretary_of_State_for_Foreign_and_Political_Affairs",
+     "title": "Wikipedia: Secretary of State for Foreign and Political Affairs (San Marino) (list of holders)",
+     "accessed": "2026-10-16"
+    },
+    {
+     "url": "https://www.wikidata.org/wiki/Q3954367",
+     "title": "Wikidata: Secretary for Foreign and Political Affairs (via holders' positions held)",
+     "accessed": "2026-10-16"
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/Gabriele_Gatti",
+     "title": "Wikipedia: Gabriele Gatti (infobox dates)",
+     "accessed": "2026-10-16"
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/Romeo_Morri",
+     "title": "Wikipedia: Romeo Morri (infobox dates)",
+     "accessed": "2026-10-16"
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/Fabio_Berardi",
+     "title": "Wikipedia: Fabio Berardi (infobox dates)",
+     "accessed": "2026-10-16"
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/Antonella_Mularoni",
+     "title": "Wikipedia: Antonella Mularoni (infobox dates)",
+     "accessed": "2026-10-16"
+    }
+   ],
+   "confidence": "verified"
+  }
+ ],
+ "legislature": {
+  "name": {
+   "en": "Grand and General Council",
+   "native": "Consiglio Grande e Generale"
+  },
+  "chambers": [
+   {
+    "id": "council",
+    "name": {
+     "en": "Grand and General Council",
+     "native": "Consiglio Grande e Generale"
+    },
+    "seats": 60,
+    "term_years": 5,
+    "elected": "direct",
+    "system": {
+     "type": "list_pr",
+     "district_model": "national",
+     "note": "Sixty members elected by list proportional representation in a single national constituency. From 2008 a 3.5% threshold and a majority bonus for the winning coalition apply, with a runoff between the two leading coalitions if no coalition wins a majority (held in 2016). seats_2000 is the 31 May 1998 result; the 1998 PPDS-Ideas in Motion-Democratic Convention list is recorded under the PPDS."
+    },
+    "seats_2000": {
+     "smr.pdcs": 25,
+     "smr.pss": 14,
+     "smr.ppds": 11,
+     "smr.ap": 6,
+     "smr.sr": 2,
+     "smr.rc": 2
+    },
+    "confidence_chamber": true,
+    "source": [
+     {
+      "url": "https://en.wikipedia.org/wiki/1998_Sammarinese_general_election",
+      "title": "Wikipedia: 1998 Sammarinese general election (seats; PDCS-PSS coalition continued)",
+      "accessed": "2026-10-16"
+     },
+     {
+      "url": "https://en.wikipedia.org/wiki/2008_Sammarinese_general_election",
+      "title": "Wikipedia: 2008 Sammarinese general election (threshold and majority bonus)",
+      "accessed": "2026-10-16"
+     },
+     {
+      "url": "https://en.wikipedia.org/wiki/2019_Sammarinese_general_election",
+      "title": "Wikipedia: 2019 Sammarinese general election (runoff rule)",
+      "accessed": "2026-10-16"
+     }
+    ],
+    "confidence": "verified"
+   }
+  ]
+ },
+ "party_system": "multi_party",
+ "start_2000": {
+  "ruling_parties": [
+   "smr.pdcs",
+   "smr.pss"
+  ],
+  "ideology_support": {
+   "christian_democrat": 0.4085,
+   "social_democrat": 0.2742,
+   "democratic_socialist": 0.1864,
+   "centrist_liberal": 0.0982,
+   "marxist_leninist": 0.0327
+  },
+  "ideology_support_note": "Derived from vote shares in the 31 May 1998 general election (21,803 valid votes): PDCS 40.85% (christian democrat); PSS 23.23% and Socialists for Reform 4.19% (social democrat); PPDS-led list 18.64% (democratic socialist); Popular Alliance 9.81% (centrist liberal, rounded up so the total is 1); Communist Refoundation 3.27% (mapped to marxist_leninist as the closest communist id).",
+  "stability": 0.85,
+  "war_support": 0.05
+ },
+ "claims": [],
+ "source": [
+  {
+   "url": "https://en.wikipedia.org/wiki/1998_Sammarinese_general_election",
+   "title": "Wikipedia: 1998 Sammarinese general election",
+   "accessed": "2026-10-16"
+  },
+  {
+   "url": "https://en.wikipedia.org/wiki/List_of_captains_regent_of_San_Marino",
+   "title": "Wikipedia: List of captains regent of San Marino",
+   "accessed": "2026-10-16"
+  }
+ ],
+ "confidence": "verified"
+}

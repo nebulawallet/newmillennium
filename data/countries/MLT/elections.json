@@ -1,0 +1,225 @@
+{
+  "rules": [
+    {
+      "kind": "legislative",
+      "chamber": "house",
+      "every_years": 5,
+      "anchor": "2026-05-30",
+      "snap_possible": true,
+      "note": "Maximum five-year term; the President dissolves the House at the Prime Minister's request. The 2026 election was a snap election."
+    }
+  ],
+  "elections": [
+    {
+      "id": "eu_referendum_2003",
+      "date": "2003-03-08",
+      "kind": "referendum",
+      "question": "Membership of the European Union",
+      "historical": {
+        "yes_share": 0.5365,
+        "turnout": 0.91,
+        "options": [
+          { "label": "Yes", "share": 0.5365, "votes": 143094 },
+          { "label": "No", "share": 0.4635, "votes": 123628 }
+        ],
+        "winner": "Yes",
+        "note": "Electorate 297,881. Shares are of the 266,722 yes and no votes; turnout (91%) is as stated in the article text. The Labour Party campaigned against membership.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2003_Maltese_European_Union_membership_referendum", "title": "Wikipedia: 2003 Maltese European Union membership referendum", "accessed": "2026-10-16" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "house_2003",
+      "date": "2003-04-12",
+      "kind": "legislative",
+      "chamber": "house",
+      "historical": {
+        "candidates": [
+          { "person": "mlt.eddie_fenech_adami", "party": "mlt.pn", "round": 1 },
+          { "person": "mlt.alfred_sant", "party": "mlt.pl", "round": 1 }
+        ],
+        "party_results": [
+          { "party": "mlt.pn", "share": 0.518, "seats": 35 },
+          { "party": "mlt.pl", "share": 0.4752, "seats": 30 },
+          { "party": "mlt.ad", "share": 0.0068, "seats": 0 }
+        ],
+        "winner": "mlt.pn",
+        "turnout": 0.9695,
+        "note": "First-preference votes: PN 146,172, MLP 134,092, AD 1,929, independents 20 (shares of valid votes). House of 65 seats.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2003_Maltese_general_election", "title": "Wikipedia: 2003 Maltese general election", "accessed": "2026-10-16" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "house_2008",
+      "date": "2008-03-08",
+      "kind": "legislative",
+      "chamber": "house",
+      "historical": {
+        "candidates": [
+          { "person": "mlt.lawrence_gonzi", "party": "mlt.pn", "round": 1 },
+          { "person": "mlt.alfred_sant", "party": "mlt.pl", "round": 1 }
+        ],
+        "party_results": [
+          { "party": "mlt.pn", "share": 0.4934, "seats": 35 },
+          { "party": "mlt.pl", "share": 0.4879, "seats": 34 },
+          { "party": "mlt.ad", "share": 0.0131, "seats": 0 }
+        ],
+        "winner": "mlt.pn",
+        "turnout": 0.933,
+        "note": "First-preference votes: PN 143,468, MLP 141,888, AD 3,810, National Action 1,461 (0.50%), five minor lists and independents 172. House of 69 seats: four extra seats gave the Nationalists, who won the most first-preference votes, a working majority.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2008_Maltese_general_election", "title": "Wikipedia: 2008 Maltese general election", "accessed": "2026-10-16" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "divorce_referendum_2011",
+      "date": "2011-05-28",
+      "kind": "referendum",
+      "question": "Introduction of divorce for couples separated or living apart for at least four years, with no reasonable hope of reconciliation and with maintenance and children protected",
+      "historical": {
+        "yes_share": 0.5316,
+        "options": [
+          { "label": "Yes", "share": 0.5316, "votes": 122547 },
+          { "label": "No", "share": 0.4684, "votes": 107971 }
+        ],
+        "winner": "Yes",
+        "note": "Electorate 325,102. The infobox gives no invalid-vote count, so turnout is not recorded.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2011_Maltese_divorce_referendum", "title": "Wikipedia: 2011 Maltese divorce referendum", "accessed": "2026-10-16" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "house_2013",
+      "date": "2013-03-09",
+      "kind": "legislative",
+      "chamber": "house",
+      "historical": {
+        "candidates": [
+          { "person": "mlt.joseph_muscat", "party": "mlt.pl", "round": 1 },
+          { "person": "mlt.lawrence_gonzi", "party": "mlt.pn", "round": 1 }
+        ],
+        "party_results": [
+          { "party": "mlt.pl", "share": 0.5483, "seats": 39 },
+          { "party": "mlt.pn", "share": 0.4334, "seats": 30 },
+          { "party": "mlt.ad", "share": 0.018, "seats": 0 }
+        ],
+        "winner": "mlt.pl",
+        "turnout": 0.938,
+        "note": "First-preference votes: PL 167,533, PN 132,426, AD 5,506, minor lists and independents 91. House of 69 seats.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2013_Maltese_general_election", "title": "Wikipedia: 2013 Maltese general election", "accessed": "2026-10-16" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "spring_hunting_referendum_2015",
+      "date": "2015-04-11",
+      "kind": "referendum",
+      "question": "Should the regulations allowing a spring hunting season for turtle dove and quail (Subsidiary Legislation 504.94) continue in force?",
+      "historical": {
+        "yes_share": 0.5044,
+        "turnout": 0.748,
+        "options": [
+          { "label": "Yes (keep spring hunting)", "share": 0.5044, "votes": 126434 },
+          { "label": "No", "share": 0.4956, "votes": 124214 }
+        ],
+        "winner": "Yes",
+        "note": "Abrogative referendum; a Yes vote kept the regulations in force. Electorate 338,450; 2,509 invalid votes. Turnout is computed from these figures.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2015_Maltese_spring_hunting_referendum", "title": "Wikipedia: 2015 Maltese spring hunting referendum", "accessed": "2026-10-16" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "house_2017",
+      "date": "2017-06-03",
+      "kind": "legislative",
+      "chamber": "house",
+      "historical": {
+        "candidates": [
+          { "person": "mlt.joseph_muscat", "party": "mlt.pl", "round": 1 },
+          { "person": "mlt.simon_busuttil", "party": "mlt.pn", "round": 1 }
+        ],
+        "party_results": [
+          { "party": "mlt.pl", "share": 0.5504, "seats": 37 },
+          { "party": "mlt.pn", "share": 0.4212, "seats": 28 },
+          { "party": "mlt.pd", "share": 0.0156, "seats": 2 },
+          { "party": "mlt.ad", "share": 0.0083, "seats": 0 }
+        ],
+        "winner": "mlt.pl",
+        "turnout": 0.9206,
+        "note": "The Nationalist Party and the Democratic Party ran together as Forza Nazzjonali (135,696 votes, 43.68%, 30 seats including two at-large seats awarded to the PN). First-preference votes: PL 170,976, PN 130,850, PD 4,846, AD 2,564, Moviment Patrijotti Maltin 1,117, others 312. House of 67 seats.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2017_Maltese_general_election", "title": "Wikipedia: 2017 Maltese general election", "accessed": "2026-10-16" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "house_2022",
+      "date": "2022-03-26",
+      "kind": "legislative",
+      "chamber": "house",
+      "historical": {
+        "candidates": [
+          { "person": "mlt.robert_abela", "party": "mlt.pl", "round": 1 },
+          { "person": "mlt.bernard_grech", "party": "mlt.pn", "round": 1 }
+        ],
+        "party_results": [
+          { "party": "mlt.pl", "share": 0.5511, "seats": 44 },
+          { "party": "mlt.pn", "share": 0.4174, "seats": 35 },
+          { "party": "mlt.adpd", "share": 0.0161, "seats": 0 }
+        ],
+        "winner": "mlt.pl",
+        "turnout": 0.8563,
+        "note": "First-preference votes: PL 162,707, PN 123,233, AD+PD 4,747, People's Party 1,533, ABBA 1,364, Volt Malta 382, independents 1,282. House of 79 seats: 65 district seats, two proportionality seats for the PN and twelve gender-corrective seats (six per party).",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2022_Maltese_general_election", "title": "Wikipedia: 2022 Maltese general election", "accessed": "2026-10-16" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "house_2026",
+      "date": "2026-05-30",
+      "kind": "legislative",
+      "chamber": "house",
+      "snap": true,
+      "historical": {
+        "candidates": [
+          { "person": "mlt.robert_abela", "party": "mlt.pl", "round": 1 },
+          { "person": "mlt.alex_borg", "party": "mlt.pn", "round": 1 }
+        ],
+        "party_results": [
+          { "party": "mlt.pl", "share": 0.5177, "seats": 42 },
+          { "party": "mlt.pn", "share": 0.4468, "seats": 37 },
+          { "party": "mlt.adpd", "share": 0.0131, "seats": 0 }
+        ],
+        "winner": "mlt.pl",
+        "turnout": 0.8747,
+        "note": "Verified against a source fetched on 2026-10-16 (Wikipedia, citing the Electoral Commission, Times of Malta, MaltaToday and Euronews, which calls it a snap election). First-preference votes: PL 158,444, PN 136,723, Momentum 4,700 (1.54%), AD+PD 3,996, Aħwa Maltin 1,845, Imperium Europa 167, independents 161. Labour won 36 district seats and the PN 29; the PN received two proportionality seats and each party six gender-corrective seats, for 42 and 37 (House of 79). Labour became the first party to win four consecutive elections.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2026_Maltese_general_election", "title": "Wikipedia: 2026 Maltese general election", "accessed": "2026-10-16" },
+          { "url": "https://www.euronews.com/my-europe/2026/05/31/maltas-labour-party-wins-historic-fourth-term-preliminary-count", "title": "Euronews: Malta's Labour party wins historic fourth term in snap general election (cited by Wikipedia, not opened)", "accessed": "2026-10-16" }
+        ],
+        "confidence": "verified"
+      }
+    }
+  ],
+  "source": [
+    { "url": "https://en.wikipedia.org/wiki/Elections_in_Malta", "title": "Wikipedia: Elections in Malta (referendums)", "accessed": "2026-10-16" },
+    { "url": "https://en.wikipedia.org/wiki/President_of_Malta", "title": "Wikipedia: President of Malta (indirect election)", "accessed": "2026-10-16" }
+  ],
+  "confidence": "verified"
+}

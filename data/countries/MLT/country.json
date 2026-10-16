@@ -1,0 +1,107 @@
+{
+  "tag": "MLT",
+  "name": { "en": "Malta", "native": "Malta", "official": { "en": "Republic of Malta", "native": "Repubblika ta' Malta" } },
+  "adjective": "Maltese",
+  "culture_primary": "maltese",
+  "government": {
+    "type": "parliamentary",
+    "effective_executive": "mlt.prime_minister",
+    "head_of_state_office": "mlt.president",
+    "head_of_government_office": "mlt.prime_minister",
+    "constitution": {
+      "term_limit_amendable": true,
+      "emergency_powers": false,
+      "referendum_required_for": []
+    },
+    "note": "Parliamentary republic. The President is indirectly elected by the House of Representatives for a five-year, non-renewable term and has no legislative veto; the President dissolves the House at the Prime Minister's request or after a successful no-confidence motion. The Prime Minister leads the party with a majority in the unicameral House of Representatives."
+  },
+  "offices": [
+    {
+      "id": "mlt.president",
+      "title": { "en": "President of Malta", "native": "President ta' Malta" },
+      "role": "head_of_state",
+      "power_weight": 0.1,
+      "selection": "legislature",
+      "term_years": 5,
+      "term_limit": { "max_terms": 1, "consecutive_only": false },
+      "holders": [
+        { "person": "mlt.guido_de_marco", "from": "1999-04-04", "to": "2004-04-04" },
+        { "person": "mlt.eddie_fenech_adami", "from": "2004-04-04", "to": "2009-04-04" },
+        { "person": "mlt.george_abela", "from": "2009-04-04", "to": "2014-04-04" },
+        { "person": "mlt.marie_louise_coleiro_preca", "from": "2014-04-04", "to": "2019-04-04" },
+        { "person": "mlt.george_vella", "from": "2019-04-04", "to": "2024-04-04" },
+        { "person": "mlt.myriam_spiteri_debono", "from": "2024-04-04", "note": "Inaugurated on 4 April 2024; term ends on 4 April 2029 according to the Wikipedia list." }
+      ],
+      "note": "Presidents are appointed by resolution of the House of Representatives. These House votes (2004, 2009, 2014, 2019, 2024) are not recorded in elections.json because the sources fetched do not give the dates of the votes; the outcome is carried by this holder list. Short periods when an acting president stands in during the President's absence abroad are not listed by the sources used and are not recorded.",
+      "source": [
+        { "url": "https://www.wikidata.org/wiki/Q796593", "title": "Wikidata: President of Malta (position held by)", "accessed": "2026-10-16" },
+        { "url": "https://en.wikipedia.org/wiki/List_of_presidents_of_Malta", "title": "Wikipedia: List of presidents of Malta", "accessed": "2026-10-16" },
+        { "url": "https://en.wikipedia.org/wiki/President_of_Malta", "title": "Wikipedia: President of Malta (election by the House, term, powers)", "accessed": "2026-10-16" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "mlt.prime_minister",
+      "title": { "en": "Prime Minister of Malta", "native": "Prim Ministru ta' Malta" },
+      "role": "head_of_government",
+      "power_weight": 0.9,
+      "selection": "appointed",
+      "appointed_by": "mlt.president",
+      "holders": [
+        { "person": "mlt.eddie_fenech_adami", "from": "1998-09-06", "to": "2004-03-23" },
+        { "person": "mlt.lawrence_gonzi", "from": "2004-03-23", "to": "2013-03-11" },
+        { "person": "mlt.joseph_muscat", "from": "2013-03-11", "to": "2020-01-13", "note": "Sworn in on 11 March 2013 (English Wikipedia list, citing the Times of Malta); Wikidata gives 9 March 2013, the election day." },
+        { "person": "mlt.robert_abela", "from": "2020-01-13", "note": "Elected Labour leader on 12 January 2020 and sworn in as Prime Minister on 13 January 2020 (Reuters, cited by Wikipedia; Wikidata agrees). The Wikipedia list shows 12 January 2020 in its date column. Remained Prime Minister after the 2022 and 30 May 2026 elections." }
+      ],
+      "source": [
+        { "url": "https://www.wikidata.org/wiki/Q152814", "title": "Wikidata: Prime Minister of Malta (position held by)", "accessed": "2026-10-16" },
+        { "url": "https://en.wikipedia.org/wiki/List_of_prime_ministers_of_Malta", "title": "Wikipedia: List of prime ministers of Malta", "accessed": "2026-10-16" },
+        { "url": "https://en.wikipedia.org/wiki/2026_Maltese_general_election", "title": "Wikipedia: 2026 Maltese general election (Abela re-elected Prime Minister)", "accessed": "2026-10-16" }
+      ],
+      "confidence": "verified"
+    }
+  ],
+  "legislature": {
+    "name": { "en": "Parliament of Malta", "native": "Parlament ta' Malta" },
+    "chambers": [
+      {
+        "id": "house",
+        "name": { "en": "House of Representatives", "native": "Kamra tad-Deputati" },
+        "seats": 65,
+        "term_years": 5,
+        "elected": "direct",
+        "system": {
+          "type": "stv",
+          "district_model": "custom",
+          "note": "Single transferable vote with five members from each of thirteen districts (65 constituency seats). Extra at-large seats are added when needed so that the party with a majority of first-preference votes has a majority of seats, or to restore proportionality between the two parliamentary parties; a gender-corrective mechanism added twelve seats (six per party) in both 2022 and 2026. The House therefore varies in size (65 in 1998-2003, 69 in 2008 and 2013, 67 in 2017, 79 in 2022 and 2026); seats here is the 1998-2003 size. seats_2000 is the September 1998 result."
+        },
+        "seats_2000": { "mlt.pn": 35, "mlt.pl": 30 },
+        "confidence_chamber": true,
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/1998_Maltese_general_election", "title": "Wikipedia: 1998 Maltese general election", "accessed": "2026-10-16" },
+          { "url": "https://en.wikipedia.org/wiki/2008_Maltese_general_election", "title": "Wikipedia: 2008 Maltese general election (electoral system description)", "accessed": "2026-10-16" },
+          { "url": "https://en.wikipedia.org/wiki/2022_Maltese_general_election", "title": "Wikipedia: 2022 Maltese general election (proportionality and gender-corrective seats)", "accessed": "2026-10-16" }
+        ],
+        "confidence": "verified"
+      }
+    ]
+  },
+  "party_system": "multi_party",
+  "start_2000": {
+    "ruling_parties": ["mlt.pn"],
+    "ideology_support": {
+      "christian_democrat": 0.5182,
+      "social_democrat": 0.4697,
+      "green": 0.0121
+    },
+    "ideology_support_note": "Derived from first-preference vote shares in the 5 September 1998 general election (valid votes: PN 137,037, MLP 124,220, Democratic Alternative 3,209, independents 27): Nationalist Party 51.81% (christian democrat), Malta Labour Party 46.97% (social democrat), Democratic Alternative 1.21% (green). The independents' 0.01% is added to the largest share.",
+    "stability": 0.8,
+    "war_support": 0.1
+  },
+  "claims": [],
+  "source": [
+    { "url": "https://en.wikipedia.org/wiki/President_of_Malta", "title": "Wikipedia: President of Malta", "accessed": "2026-10-16" },
+    { "url": "https://en.wikipedia.org/wiki/1998_Maltese_general_election", "title": "Wikipedia: 1998 Maltese general election", "accessed": "2026-10-16" }
+  ],
+  "confidence": "verified"
+}

@@ -1,0 +1,15 @@
+{
+  "note": "Influence and approval are gameplay starting values for 1 January 2000, not measured data. Vatican City is a tiny state governed by the Holy See: the Roman Curia (the religious establishment) dominates, the Swiss Guard and the Gendarmerie are the only security forces, and most residents are clergy, religious or guards. Groups that barely exist there are given minimal influence.",
+  "interest_groups": [
+    { "type": "military", "influence": 0.05, "approval": 70, "note": "The Pontifical Swiss Guard (estimate)." },
+    { "type": "security_services", "influence": 0.1, "approval": 70, "note": "The Gendarmerie Corps (estimate)." },
+    { "type": "business", "influence": 0.1, "approval": 60, "note": "Vatican finances, museums and tourism (estimate)." },
+    { "type": "labour_unions", "influence": 0.03, "approval": 55, "note": "Lay employees' association (estimate)." },
+    { "type": "religious_establishment", "influence": 0.95, "approval": 80 },
+    { "type": "rural", "influence": 0.0, "approval": 50 },
+    { "type": "urban_middle_class", "influence": 0.02, "approval": 60 },
+    { "type": "minorities", "influence": 0.0, "approval": 50 },
+    { "type": "youth_students", "influence": 0.01, "approval": 60 },
+    { "type": "media", "influence": 0.1, "approval": 70, "note": "Holy See media (Vatican Radio, L'Osservatore Romano) (estimate)." }
+  ]
+}

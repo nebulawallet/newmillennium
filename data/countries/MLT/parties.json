@@ -1,0 +1,121 @@
+{
+  "parties": [
+    {
+      "id": "mlt.pn",
+      "name": { "en": "Nationalist Party", "native": "Partit Nazzjonalista" },
+      "abbrev": { "en": "PN", "native": "PN" },
+      "color": "#1F4E9C",
+      "sub_ideology": "christian_democrat",
+      "founded": "1926-01-16",
+      "status_2000": "active",
+      "leader_history": [
+        { "person": "mlt.eddie_fenech_adami", "from": 1977, "to": 2004 },
+        { "person": "mlt.lawrence_gonzi", "from": 2004, "to": 2013 },
+        { "person": "mlt.simon_busuttil", "from": 2013, "to": 2017 },
+        { "person": "mlt.adrian_delia", "from": 2017, "to": 2020 },
+        { "person": "mlt.bernard_grech", "from": 2020, "to": 2025 },
+        { "person": "mlt.alex_borg", "from": 2025 }
+      ],
+      "popularity_2000": 0.5181,
+      "popularity_note": "First-preference vote share in the 5 September 1998 general election (137,037 votes; 35 of 65 seats).",
+      "note": "Christian democratic and conservative, centre-right. The infobox gives 16 January 1926 as the foundation date; the party traces its roots to the Anti-Reform Party of the 1880s. In 2017 it ran with the Democratic Party as Forza Nazzjonali. Party colour is blue; the exact shade is an approximation.",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/Nationalist_Party_(Malta)", "title": "Wikipedia: Nationalist Party (Malta) (foundation, ideology, list of leaders)", "accessed": "2026-10-16" },
+        { "url": "https://en.wikipedia.org/wiki/1998_Maltese_general_election", "title": "Wikipedia: 1998 Maltese general election", "accessed": "2026-10-16" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "mlt.pl",
+      "name": { "en": "Labour Party (Malta Labour Party until 2008)", "native": "Partit Laburista" },
+      "abbrev": { "en": "PL", "native": "PL" },
+      "color": "#D2232A",
+      "sub_ideology": "social_democrat",
+      "founded": 1921,
+      "status_2000": "active",
+      "leader_history": [
+        { "person": "mlt.alfred_sant", "from": 1992, "to": "2008-06-05" },
+        { "person": "mlt.joseph_muscat", "from": "2008-06-06", "to": "2020-01-12" },
+        { "person": "mlt.robert_abela", "from": "2020-01-12" }
+      ],
+      "popularity_2000": 0.4697,
+      "popularity_note": "First-preference vote share of the Malta Labour Party in the 5 September 1998 general election (124,220 votes; 30 seats).",
+      "international": "Socialist International",
+      "note": "Social democratic, centre to centre-left. Founded in 1921 according to English Wikipedia (re-founded in 1949); Wikidata gives 15 October 1920. Renamed from Malta Labour Party to Partit Laburista at a November 2008 general conference. Sant's start as leader (1992) is from the article's section heading; Muscat's and Abela's dates are from Wikidata.",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/Labour_Party_(Malta)", "title": "Wikipedia: Labour Party (Malta)", "accessed": "2026-10-16" },
+        { "url": "https://www.wikidata.org/wiki/Q684886", "title": "Wikidata: Labour Party (chairpersons, founding date)", "accessed": "2026-10-16" },
+        { "url": "https://en.wikipedia.org/wiki/1998_Maltese_general_election", "title": "Wikipedia: 1998 Maltese general election", "accessed": "2026-10-16" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "mlt.ad",
+      "name": { "en": "Democratic Alternative", "native": "Alternattiva Demokratika" },
+      "abbrev": { "en": "AD", "native": "AD" },
+      "color": "#7AC143",
+      "sub_ideology": "green",
+      "founded": 1989,
+      "dissolved": "2020-10-17",
+      "status_2000": "extra_parliamentary",
+      "leader_history": [
+        { "person": "mlt.arnold_cassola", "from": 2008, "to": 2009, "title": "Chairperson" },
+        { "person": "mlt.arnold_cassola", "from": 2013, "to": 2017, "title": "Chairperson" },
+        { "person": "mlt.carmel_cacopardo", "from": 2017, "to": 2020, "title": "Chairperson" }
+      ],
+      "popularity_2000": 0.0121,
+      "popularity_note": "Vote share in the 5 September 1998 general election (3,209 votes; no seats).",
+      "lineage": { "merged_into": "mlt.adpd" },
+      "note": "Green party. Chairpersons: Wenzu Mintoff 1989-1999, Harry Vassallo 1999-2008 (his own article says 1998-2008), Arnold Cassola 2008-2009, Michael Briguglio 2009-2013, Cassola 2013-2017, Carmel Cacopardo 2017-2020. Vassallo (chair on 1 January 2000) and Briguglio are not recorded as people because no fetched source gives their birth years. Merged with the Democratic Party into AD+PD on 17 October 2020.",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/Democratic_Alternative_(Malta)", "title": "Wikipedia: Democratic Alternative (Malta) (chairpersons, results)", "accessed": "2026-10-16" },
+        { "url": "https://en.wikipedia.org/wiki/Harry_Vassallo", "title": "Wikipedia: Harry Vassallo", "accessed": "2026-10-16" },
+        { "url": "https://en.wikipedia.org/wiki/AD%2BPD", "title": "Wikipedia: AD+PD (merger)", "accessed": "2026-10-16" }
+      ],
+      "confidence": "needs_review",
+      "review_note": "The chair on 1 January 2000 (Harry Vassallo) is missing from leader_history because no birth year was found for him; add him if a source gives one. Confirm whether Vassallo became chair in 1998 or 1999."
+    },
+    {
+      "id": "mlt.pd",
+      "name": { "en": "Democratic Party", "native": "Partit Demokratiku" },
+      "abbrev": { "en": "PD", "native": "PD" },
+      "color": "#F57722",
+      "sub_ideology": "social_liberal",
+      "founded": "2016-10-21",
+      "dissolved": "2020-10-17",
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        { "person": "mlt.marlene_farrugia", "from": 2016, "to": 2017, "title": "Leader" }
+      ],
+      "popularity_2000": 0,
+      "lineage": { "merged_into": "mlt.adpd" },
+      "note": "Centre to centre-left. Founded by Marlene Farrugia after she left Labour (announced June 2016; the infobox gives 21 October 2016). Won two seats on the Forza Nazzjonali list with the Nationalist Party in 2017. Later leaders Anthony Buttigieg (2017-2018) and Timothy Alden (interim, then leader) are not recorded. Merged with Democratic Alternative into AD+PD on 17 October 2020.",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/Democratic_Party_(Malta)", "title": "Wikipedia: Democratic Party (Malta)", "accessed": "2026-10-16" },
+        { "url": "https://en.wikipedia.org/wiki/2017_Maltese_general_election", "title": "Wikipedia: 2017 Maltese general election", "accessed": "2026-10-16" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "mlt.adpd",
+      "name": { "en": "AD+PD (Democratic Alternative + Democratic Party)", "native": "Alternattiva Demokratika+Partit Demokratiku" },
+      "abbrev": { "en": "ADPD", "native": "ADPD" },
+      "color": "#7AC143",
+      "sub_ideology": "green",
+      "founded": "2020-10-17",
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        { "person": "mlt.carmel_cacopardo", "from": 2020, "to": "2023-05-27", "title": "Chairperson" },
+        { "person": "mlt.sandra_gauci", "from": "2023-05-27", "title": "Chairperson" }
+      ],
+      "popularity_2000": 0,
+      "lineage": { "formed_from": ["mlt.ad", "mlt.pd"] },
+      "note": "Green party formed by the merger of Democratic Alternative and the Democratic Party. Its colours are yellow, green and orange; the green of its predecessor is used here. No seats in the House of Representatives in 2022 or 2026.",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/AD%2BPD", "title": "Wikipedia: AD+PD", "accessed": "2026-10-16" },
+        { "url": "https://en.wikipedia.org/wiki/Sandra_Gauci", "title": "Wikipedia: Sandra Gauci (chairperson from 27 May 2023)", "accessed": "2026-10-16" }
+      ],
+      "confidence": "verified"
+    }
+  ]
+}
