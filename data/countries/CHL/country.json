@@ -1,0 +1,254 @@
+{
+  "tag": "CHL",
+  "name": {
+    "en": "Chile",
+    "native": "Chile",
+    "official": {
+      "en": "Republic of Chile",
+      "native": "República de Chile"
+    }
+  },
+  "adjective": "Chilean",
+  "culture_primary": "chilean",
+  "government": {
+    "type": "presidential",
+    "effective_executive": "chl.president",
+    "head_of_state_office": "chl.president",
+    "head_of_government_office": "chl.president",
+    "constitution": {
+      "term_limit_amendable": true,
+      "emergency_powers": true,
+      "referendum_required_for": []
+    },
+    "note": "Unitary presidential republic under the 1980 Constitution as amended. The President is head of state and of government, elected by two-round popular vote and barred from immediate re-election. The term was six years (1994 reform) until the 2005 reform cut it to four from the 2006 inauguration. There is no vice president. The National Congress has a Chamber of Deputies (120 seats until 2018, 155 since) and a Senate; until 11 March 2006 the Senate also had nine designated senators and former presidents as senators for life. Two attempts to replace the constitution were rejected in referendums in 2022 and 2023."
+  },
+  "offices": [
+    {
+      "id": "chl.president",
+      "title": {
+        "en": "President of the Republic of Chile",
+        "native": "Presidente de la República de Chile"
+      },
+      "role": "head_of_state_and_government",
+      "power_weight": 0.9,
+      "selection": "direct_election",
+      "term_years": 4,
+      "term_limit": {
+        "max_terms": 1,
+        "consecutive_only": true
+      },
+      "succession": {
+        "type": "acting_then_election"
+      },
+      "holders": [
+        {
+          "person": "chl.eduardo_frei_ruiz_tagle",
+          "from": "1994-03-11",
+          "to": "2000-03-11",
+          "note": "Six-year term."
+        },
+        {
+          "person": "chl.ricardo_lagos",
+          "from": "2000-03-11",
+          "to": "2006-03-11",
+          "note": "Six-year term; the 2005 reform cut later terms to four years."
+        },
+        {
+          "person": "chl.michelle_bachelet",
+          "from": "2006-03-11",
+          "to": "2010-03-11"
+        },
+        {
+          "person": "chl.sebastian_pinera",
+          "from": "2010-03-11",
+          "to": "2014-03-11"
+        },
+        {
+          "person": "chl.michelle_bachelet",
+          "from": "2014-03-11",
+          "to": "2018-03-11"
+        },
+        {
+          "person": "chl.sebastian_pinera",
+          "from": "2018-03-11",
+          "to": "2022-03-11"
+        },
+        {
+          "person": "chl.gabriel_boric",
+          "from": "2022-03-11",
+          "to": "2026-03-11"
+        },
+        {
+          "person": "chl.jose_antonio_kast",
+          "from": "2026-03-11"
+        }
+      ],
+      "note": "Re-election is allowed only after an intervening term (term_limit: one consecutive term). There is no permanent vice president: the Vice President of the Republic is a temporary post that fulfils the President's duties in cases of incapacity or vacancy (Wikipedia: Vice President of Chile); such temporary holders are not listed. Kast took office on 11 March 2026 and is in office on the data date (List of presidents of Chile, Wikidata).",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/List_of_presidents_of_Chile",
+          "title": "Wikipedia: List of presidents of Chile (tenures 1994-2026)",
+          "accessed": "2026-10-16"
+        },
+        {
+          "url": "https://www.wikidata.org/wiki/Q5937916",
+          "title": "Wikidata: José Antonio Kast (President of Chile since 2026-03-11)",
+          "accessed": "2026-10-16"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/Vice_President_of_Chile",
+          "title": "Wikipedia: Vice President of Chile (temporary post)",
+          "accessed": "2026-10-16"
+        }
+      ],
+      "confidence": "verified"
+    }
+  ],
+  "legislature": {
+    "name": {
+      "en": "National Congress",
+      "native": "Congreso Nacional"
+    },
+    "chambers": [
+      {
+        "id": "chamber_of_deputies",
+        "name": {
+          "en": "Chamber of Deputies",
+          "native": "Cámara de Diputadas y Diputados"
+        },
+        "seats": 120,
+        "term_years": 4,
+        "elected": "direct",
+        "system": {
+          "type": "list_pr",
+          "formula": "dhondt",
+          "district_model": "custom",
+          "note": "Binomial system until 2017: 60 two-member districts, seats by D'Hondt on open coalition lists, so a list needed twice the runner-up's vote to win both seats. The 2015 reform (first used in 2017) raised the chamber to 155 seats in 28 multi-member districts by D'Hondt (Wikipedia: Chamber of Deputies of Chile). The game's chamber size is the 2000 figure (120); historical records carry the real totals. seats_2000 is the result of the December 1997 election."
+        },
+        "seats_2000": {
+          "chl.pdc": 38,
+          "chl.rn": 23,
+          "chl.udi": 17,
+          "chl.ppd": 16,
+          "chl.ps": 11,
+          "chl.pr": 4,
+          "chl.ucc": 2,
+          "independents": 8,
+          "others": 1
+        },
+        "confidence_chamber": false,
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/1997_Chilean_parliamentary_election",
+            "title": "Wikipedia: 1997 Chilean parliamentary election (Chamber of Deputies results)",
+            "accessed": "2026-10-16"
+          },
+          {
+            "url": "https://en.wikipedia.org/wiki/2017_Chilean_general_election",
+            "title": "Wikipedia: 2017 Chilean general election (first election under the 2015 reform)",
+            "accessed": "2026-10-16"
+          },
+          {
+            "url": "https://en.wikipedia.org/wiki/Chamber_of_Deputies_of_Chile",
+            "title": "Wikipedia: Chamber of Deputies of Chile (binomial system, 2015 reform)",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "needs_review",
+        "review_note": "seats_2000 is the December 1997 result, not a count on 1 January 2000: independents = 6 elected on the Union for Chile list and 2 elected outside the main lists; others = Party of the South 1. Check party switches in 1998-1999 against the Chamber's records."
+      },
+      {
+        "id": "senate",
+        "name": {
+          "en": "Senate",
+          "native": "Senado"
+        },
+        "seats": 48,
+        "term_years": 8,
+        "elected": "mixed",
+        "system": {
+          "type": "list_pr",
+          "formula": "dhondt",
+          "district_model": "custom",
+          "note": "In 2000: 38 senators elected by the binomial system in 19 two-member constituencies (eight-year terms, about half renewed every four years), plus nine designated senators and former presidents as senators for life (recorded as appointed). The 2005 reform removed the non-elected seats from 11 March 2006 (38 seats). The 2015 reform enlarged the Senate to 43 (2018) and 50 (2022) seats, elected by D'Hondt in regional constituencies. The game's chamber size is the 2000 figure (48)."
+        },
+        "seats_2000": {
+          "chl.pdc": 14,
+          "chl.rn": 7,
+          "chl.udi": 5,
+          "chl.ps": 4,
+          "chl.ppd": 2,
+          "chl.ucc": 1,
+          "independents": 5,
+          "appointed": 10
+        },
+        "confidence_chamber": false,
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/1997_Chilean_parliamentary_election",
+            "title": "Wikipedia: 1997 Chilean parliamentary election (Senate results, total column)",
+            "accessed": "2026-10-16"
+          },
+          {
+            "url": "https://en.wikipedia.org/wiki/Senate_of_Chile",
+            "title": "Wikipedia: Senate of Chile (designated senators, senators for life, 2005 and 2015 reforms)",
+            "accessed": "2026-10-16"
+          },
+          {
+            "url": "https://en.wikipedia.org/wiki/Augusto_Pinochet",
+            "title": "Wikipedia: Augusto Pinochet (senator for life from March 1998)",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "needs_review",
+        "review_note": "seats_2000 is the Senate composition after the December 1997 election (Total column): independents = 5 elected on the Union for Chile list; appointed = 9 designated senators and 1 former president (Augusto Pinochet, a senator for life since March 1998). Eduardo Frei Ruiz-Tagle joined as a senator for life on 11 March 2000. Check against the Senate's records for 1 January 2000."
+      }
+    ]
+  },
+  "party_system": "multi_party",
+  "start_2000": {
+    "ruling_parties": [
+      "chl.pdc",
+      "chl.ps",
+      "chl.ppd",
+      "chl.pr"
+    ],
+    "ideology_support": {
+      "social_democrat": 0.267,
+      "christian_democrat": 0.238,
+      "liberal_conservative": 0.214,
+      "traditional_conservative": 0.145,
+      "marxist_leninist": 0.075,
+      "democratic_socialist": 0.029,
+      "right_populist": 0.021,
+      "regionalist": 0.011
+    },
+    "ideology_support_note": "Derived from the December 1997 Chamber of Deputies vote: PPD 12.55%, PS 11.05% and PRSD 3.13% (social democrat, 26.7%); PDC 22.98% plus Concertación independents 0.81% (Christian democrat); RN 16.77% plus Union for Chile independents 4.67% (liberal conservative); UDI 14.45% (traditional conservative); Communist Party 6.88% plus the rest of the Left list 0.61% (Marxist-Leninist); Humanist Party 2.91% (democratic socialist); the UCC's Chile 2000 list 2.14% (right populist); Party of the South 0.36% and other independents 0.69% (regionalist, an approximation). In the December 1999 first presidential round Lagos won 47.96% and Lavín 47.51%; the run-off was due on 16 January 2000.",
+    "stability": 0.7,
+    "war_support": 0.1
+  },
+  "claims": [],
+  "source": [
+    {
+      "url": "https://en.wikipedia.org/wiki/List_of_presidents_of_Chile",
+      "title": "Wikipedia: List of presidents of Chile (terms, 1994 and 2005 reforms)",
+      "accessed": "2026-10-16"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/1997_Chilean_parliamentary_election",
+      "title": "Wikipedia: 1997 Chilean parliamentary election",
+      "accessed": "2026-10-16"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/1999%E2%80%932000_Chilean_presidential_election",
+      "title": "Wikipedia: 1999-2000 Chilean presidential election",
+      "accessed": "2026-10-16"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/2023_Chilean_constitutional_referendum",
+      "title": "Wikipedia: 2023 Chilean constitutional referendum",
+      "accessed": "2026-10-16"
+    }
+  ],
+  "confidence": "verified"
+}

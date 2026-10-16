@@ -1,0 +1,15 @@
+{
+  "note": "Influence and approval are gameplay starting values for 1 January 2000 (Cardoso's second term, a year after the January 1999 devaluation of the real), not measured data. Business and agribusiness are influential within the governing coalition; organised labour is linked to the opposition PT; the military has been under civilian rule since 1985.",
+  "interest_groups": [
+    { "type": "military", "influence": 0.2, "approval": 50 },
+    { "type": "security_services", "influence": 0.15, "approval": 50 },
+    { "type": "business", "influence": 0.55, "approval": 55, "note": "Industrial and financial sectors after the 1990s privatisations." },
+    { "type": "labour_unions", "influence": 0.35, "approval": 30, "note": "Close to the PT opposition." },
+    { "type": "religious_establishment", "influence": 0.3, "approval": 50, "note": "Catholic Church and growing evangelical churches." },
+    { "type": "rural", "influence": 0.4, "approval": 50, "note": "Large landowners are well represented in Congress; landless workers' movements oppose the government." },
+    { "type": "urban_middle_class", "influence": 0.45, "approval": 45 },
+    { "type": "minorities", "influence": 0.1, "approval": 40 },
+    { "type": "youth_students", "influence": 0.2, "approval": 40 },
+    { "type": "media", "influence": 0.45, "approval": 55 }
+  ]
+}

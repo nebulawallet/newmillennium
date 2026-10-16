@@ -1,0 +1,2027 @@
+{
+  "rules": [
+    {
+      "kind": "presidential",
+      "office": "bra.president",
+      "every_years": 4,
+      "anchor": "2026-10-04",
+      "snap_possible": false,
+      "system": "two_round",
+      "note": "Two rounds: an absolute majority of valid votes on the first Sunday of October, otherwise a run-off between the top two on the last Sunday of October. Four-year term with one consecutive re-election. A vacancy is filled by the Vice President."
+    },
+    {
+      "kind": "legislative",
+      "chamber": "chamber_of_deputies",
+      "every_years": 4,
+      "anchor": "2026-10-04",
+      "snap_possible": false,
+      "note": "Fixed four-year term, elected with the first round of the presidential election; Congress cannot be dissolved."
+    },
+    {
+      "kind": "legislative_upper",
+      "chamber": "federal_senate",
+      "every_years": 4,
+      "anchor": "2026-10-04",
+      "snap_possible": false,
+      "note": "Every four years, alternately one third (27 seats; 2006, 2014, 2022) and two thirds (54 seats; 2002, 2010, 2018, 2026) of the Senate, for eight-year terms."
+    }
+  ],
+  "elections": [
+    {
+      "id": "president_2002",
+      "date": "2002-10-06",
+      "kind": "presidential",
+      "office": "bra.president",
+      "rounds": 2,
+      "historical": {
+        "candidates": [
+          {
+            "person": "bra.luiz_inacio_lula_da_silva",
+            "party": "bra.pt",
+            "share": 0.4644,
+            "votes": 39455233,
+            "round": 1
+          },
+          {
+            "person": "bra.jose_serra",
+            "party": "bra.psdb",
+            "share": 0.232,
+            "votes": 19705445,
+            "round": 1
+          },
+          {
+            "person": "bra.anthony_garotinho",
+            "party": "bra.psb",
+            "share": 0.1787,
+            "votes": 15180097,
+            "round": 1
+          },
+          {
+            "person": "bra.ciro_gomes",
+            "party": "bra.cidadania",
+            "share": 0.1197,
+            "votes": 10170882,
+            "round": 1
+          },
+          {
+            "person": "bra.luiz_inacio_lula_da_silva",
+            "party": "bra.pt",
+            "share": 0.6127,
+            "votes": 52793364,
+            "round": 2
+          },
+          {
+            "person": "bra.jose_serra",
+            "party": "bra.psdb",
+            "share": 0.3873,
+            "votes": 33370739,
+            "round": 2
+          }
+        ],
+        "winner": "bra.luiz_inacio_lula_da_silva",
+        "turnout": 0.8226,
+        "note": "Run-off held on 27 October 2002. Others: José Maria de Almeida (PSTU) 0.47%, Rui Costa Pimenta (PCO) 0.05%. Turnout 82.26% (first round), 79.53% (run-off).",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2002_Brazilian_general_election",
+            "title": "Wikipedia: 2002 Brazilian general election (presidential results table)",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "chamber_2002",
+      "date": "2002-10-06",
+      "kind": "legislative",
+      "chamber": "chamber_of_deputies",
+      "historical": {
+        "party_results": [
+          {
+            "party": "bra.pt",
+            "share": 0.184,
+            "seats": 91
+          },
+          {
+            "party": "bra.dem",
+            "share": 0.1338,
+            "seats": 84
+          },
+          {
+            "party": "bra.mdb",
+            "share": 0.1337,
+            "seats": 76
+          },
+          {
+            "party": "bra.psdb",
+            "share": 0.1426,
+            "seats": 70
+          },
+          {
+            "party": "bra.pp",
+            "share": 0.0781,
+            "seats": 48
+          },
+          {
+            "party": "bra.ptb",
+            "share": 0.0463,
+            "seats": 26
+          },
+          {
+            "party": "bra.pl_1985",
+            "share": 0.0432,
+            "seats": 26
+          },
+          {
+            "party": "bra.psb",
+            "share": 0.0528,
+            "seats": 22
+          },
+          {
+            "party": "bra.pdt",
+            "share": 0.0512,
+            "seats": 21
+          },
+          {
+            "party": "bra.cidadania",
+            "share": 0.0307,
+            "seats": 15
+          },
+          {
+            "party": "bra.pcdob",
+            "share": 0.0225,
+            "seats": 12
+          },
+          {
+            "party": "bra.prona",
+            "share": 0.0206,
+            "seats": 6
+          },
+          {
+            "party": "bra.pv",
+            "share": 0.0135,
+            "seats": 5
+          },
+          {
+            "party": "bra.psc",
+            "share": 0.0058,
+            "seats": 1
+          },
+          {
+            "party": "bra.psl",
+            "share": 0.0047,
+            "seats": 1
+          },
+          {
+            "party": "others",
+            "share": 0.0366,
+            "seats": 9
+          }
+        ],
+        "winner": "bra.pt",
+        "note": "Shares are of valid votes, computed from the results table; others include the Social Labour Party (3 seats), the Social Democratic Party of 1987 (4) and two one-seat parties.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2002_Brazilian_general_election",
+            "title": "Wikipedia: 2002 Brazilian general election (Chamber of Deputies results table)",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "senate_2002",
+      "date": "2002-10-06",
+      "kind": "legislative_upper",
+      "chamber": "federal_senate",
+      "historical": {
+        "party_results": [
+          {
+            "party": "bra.dem",
+            "share": 0.1849,
+            "seats": 19,
+            "seats_won": 14
+          },
+          {
+            "party": "bra.mdb",
+            "share": 0.164,
+            "seats": 19,
+            "seats_won": 9
+          },
+          {
+            "party": "bra.pt",
+            "share": 0.2203,
+            "seats": 14,
+            "seats_won": 10
+          },
+          {
+            "party": "bra.psdb",
+            "share": 0.139,
+            "seats": 11,
+            "seats_won": 8
+          },
+          {
+            "party": "bra.pdt",
+            "share": 0.0516,
+            "seats": 5,
+            "seats_won": 4
+          },
+          {
+            "party": "bra.psb",
+            "share": 0.0221,
+            "seats": 4,
+            "seats_won": 3
+          },
+          {
+            "party": "bra.ptb",
+            "share": 0.0338,
+            "seats": 3,
+            "seats_won": 2
+          },
+          {
+            "party": "bra.pl_1985",
+            "share": 0.0316,
+            "seats": 3,
+            "seats_won": 2
+          },
+          {
+            "party": "bra.pp",
+            "share": 0.0449,
+            "seats": 1,
+            "seats_won": 0
+          },
+          {
+            "party": "bra.cidadania",
+            "share": 0.0307,
+            "seats": 1,
+            "seats_won": 1
+          },
+          {
+            "party": "bra.pcdob",
+            "share": 0.0403,
+            "seats": 0,
+            "seats_won": 0
+          },
+          {
+            "party": "others",
+            "share": 0.0368,
+            "seats": 1,
+            "seats_won": 1
+          }
+        ],
+        "winner": "bra.dem",
+        "note": "Two thirds (54 seats) were contested. seats = Senate composition after the election (the table's 'Total' column), seats_won = seats won in this election; shares are of valid votes cast for Senate candidates, computed from the results table (each voter has two votes when two seats are contested).",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2002_Brazilian_general_election",
+            "title": "Wikipedia: 2002 Brazilian general election (Senate results table)",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "referendum_2005",
+      "date": "2005-10-23",
+      "kind": "referendum",
+      "question": "Should the commerce of firearms and ammunition be prohibited in Brazil?",
+      "historical": {
+        "yes_share": 0.3606,
+        "winner": "no",
+        "turnout": 0.7815,
+        "note": "Yes 33,333,045; No 59,109,265; 2,933,514 invalid or blank; 122,042,615 registered. The proposed ban was rejected.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2005_Brazilian_firearms_and_ammunition_referendum",
+            "title": "Wikipedia: 2005 Brazilian firearms and ammunition referendum",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "president_2006",
+      "date": "2006-10-01",
+      "kind": "presidential",
+      "office": "bra.president",
+      "rounds": 2,
+      "historical": {
+        "candidates": [
+          {
+            "person": "bra.luiz_inacio_lula_da_silva",
+            "party": "bra.pt",
+            "share": 0.4861,
+            "votes": 46662365,
+            "round": 1
+          },
+          {
+            "person": "bra.geraldo_alckmin",
+            "party": "bra.psdb",
+            "share": 0.4164,
+            "votes": 39968369,
+            "round": 1
+          },
+          {
+            "person": "bra.heloisa_helena",
+            "party": "bra.psol",
+            "share": 0.0685,
+            "votes": 6575393,
+            "round": 1
+          },
+          {
+            "person": "bra.luiz_inacio_lula_da_silva",
+            "party": "bra.pt",
+            "share": 0.6083,
+            "votes": 58295042,
+            "round": 2
+          },
+          {
+            "person": "bra.geraldo_alckmin",
+            "party": "bra.psdb",
+            "share": 0.3917,
+            "votes": 37543178,
+            "round": 2
+          }
+        ],
+        "winner": "bra.luiz_inacio_lula_da_silva",
+        "turnout": 0.8325,
+        "note": "Run-off held on 29 October 2006. Others: Cristovam Buarque (PDT) 2.64%, Ana Maria Rangel (PRP) 0.13%, José Maria Eymael (PSDC) 0.07%, Luciano Bivar (PSL) 0.06%. Turnout 83.25% / 81.01%.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2006_Brazilian_general_election",
+            "title": "Wikipedia: 2006 Brazilian general election (presidential results table)",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "chamber_2006",
+      "date": "2006-10-01",
+      "kind": "legislative",
+      "chamber": "chamber_of_deputies",
+      "historical": {
+        "party_results": [
+          {
+            "party": "bra.mdb",
+            "share": 0.1457,
+            "seats": 89
+          },
+          {
+            "party": "bra.pt",
+            "share": 0.1501,
+            "seats": 83
+          },
+          {
+            "party": "bra.psdb",
+            "share": 0.1362,
+            "seats": 65
+          },
+          {
+            "party": "bra.dem",
+            "share": 0.1093,
+            "seats": 65
+          },
+          {
+            "party": "bra.pp",
+            "share": 0.0715,
+            "seats": 42
+          },
+          {
+            "party": "bra.psb",
+            "share": 0.0615,
+            "seats": 27
+          },
+          {
+            "party": "bra.pdt",
+            "share": 0.0521,
+            "seats": 24
+          },
+          {
+            "party": "bra.pl_1985",
+            "share": 0.0437,
+            "seats": 23
+          },
+          {
+            "party": "bra.ptb",
+            "share": 0.0472,
+            "seats": 22
+          },
+          {
+            "party": "bra.cidadania",
+            "share": 0.039,
+            "seats": 21
+          },
+          {
+            "party": "bra.pv",
+            "share": 0.0361,
+            "seats": 13
+          },
+          {
+            "party": "bra.pcdob",
+            "share": 0.0213,
+            "seats": 13
+          },
+          {
+            "party": "bra.psc",
+            "share": 0.0188,
+            "seats": 9
+          },
+          {
+            "party": "bra.psol",
+            "share": 0.0123,
+            "seats": 3
+          },
+          {
+            "party": "bra.prona",
+            "share": 0.0097,
+            "seats": 2
+          },
+          {
+            "party": "bra.republicanos",
+            "share": 0.0026,
+            "seats": 1
+          },
+          {
+            "party": "others",
+            "share": 0.0428,
+            "seats": 11
+          }
+        ],
+        "winner": "bra.mdb",
+        "note": "Shares are of valid votes, computed from the results table. The Liberal Party (1985) is the later Party of the Republic.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2006_Brazilian_general_election",
+            "title": "Wikipedia: 2006 Brazilian general election (Chamber of Deputies results table)",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "senate_2006",
+      "date": "2006-10-01",
+      "kind": "legislative_upper",
+      "chamber": "federal_senate",
+      "historical": {
+        "party_results": [
+          {
+            "party": "bra.dem",
+            "share": 0.2566,
+            "seats": 18,
+            "seats_won": 6
+          },
+          {
+            "party": "bra.mdb",
+            "share": 0.1203,
+            "seats": 16,
+            "seats_won": 4
+          },
+          {
+            "party": "bra.psdb",
+            "share": 0.125,
+            "seats": 14,
+            "seats_won": 5
+          },
+          {
+            "party": "bra.pt",
+            "share": 0.1922,
+            "seats": 10,
+            "seats_won": 2
+          },
+          {
+            "party": "bra.pdt",
+            "share": 0.0595,
+            "seats": 5,
+            "seats_won": 1
+          },
+          {
+            "party": "bra.ptb",
+            "share": 0.0317,
+            "seats": 4,
+            "seats_won": 3
+          },
+          {
+            "party": "bra.psb",
+            "share": 0.0254,
+            "seats": 3,
+            "seats_won": 1
+          },
+          {
+            "party": "bra.pl_1985",
+            "share": 0.0083,
+            "seats": 3,
+            "seats_won": 1
+          },
+          {
+            "party": "bra.pcdob",
+            "share": 0.0754,
+            "seats": 2,
+            "seats_won": 1
+          },
+          {
+            "party": "bra.republicanos",
+            "share": 0.0031,
+            "seats": 2,
+            "seats_won": 0
+          },
+          {
+            "party": "bra.pp",
+            "share": 0.0501,
+            "seats": 1,
+            "seats_won": 1
+          },
+          {
+            "party": "bra.cidadania",
+            "share": 0.0146,
+            "seats": 1,
+            "seats_won": 1
+          },
+          {
+            "party": "bra.psol",
+            "share": 0.0042,
+            "seats": 1,
+            "seats_won": 0
+          },
+          {
+            "party": "bra.pv",
+            "share": 0.0169,
+            "seats": 0,
+            "seats_won": 0
+          },
+          {
+            "party": "others",
+            "share": 0.0167,
+            "seats": 1,
+            "seats_won": 1
+          }
+        ],
+        "winner": "bra.dem",
+        "note": "One third (27 seats) were contested. seats = Senate composition after the election (the table's 'Total' column), seats_won = seats won in this election; shares are of valid votes cast for Senate candidates, computed from the results table (each voter has two votes when two seats are contested).",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2006_Brazilian_general_election",
+            "title": "Wikipedia: 2006 Brazilian general election (Senate results table)",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "president_2010",
+      "date": "2010-10-03",
+      "kind": "presidential",
+      "office": "bra.president",
+      "rounds": 2,
+      "historical": {
+        "candidates": [
+          {
+            "person": "bra.dilma_rousseff",
+            "party": "bra.pt",
+            "share": 0.4691,
+            "votes": 47651434,
+            "round": 1
+          },
+          {
+            "person": "bra.jose_serra",
+            "party": "bra.psdb",
+            "share": 0.3261,
+            "votes": 33132283,
+            "round": 1
+          },
+          {
+            "person": "bra.marina_silva",
+            "party": "bra.pv",
+            "share": 0.1933,
+            "votes": 19636359,
+            "round": 1
+          },
+          {
+            "person": "bra.dilma_rousseff",
+            "party": "bra.pt",
+            "share": 0.5605,
+            "votes": 55752529,
+            "round": 2
+          },
+          {
+            "person": "bra.jose_serra",
+            "party": "bra.psdb",
+            "share": 0.4395,
+            "votes": 43711388,
+            "round": 2
+          }
+        ],
+        "winner": "bra.dilma_rousseff",
+        "turnout": 0.8188,
+        "note": "Run-off held on 31 October 2010. Others: Plínio de Arruda Sampaio (PSOL) 0.87% and five minor candidates. Turnout 81.88% / 78.50%.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2010_Brazilian_general_election",
+            "title": "Wikipedia: 2010 Brazilian general election (presidential results table)",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "chamber_2010",
+      "date": "2010-10-03",
+      "kind": "legislative",
+      "chamber": "chamber_of_deputies",
+      "historical": {
+        "party_results": [
+          {
+            "party": "bra.pt",
+            "share": 0.1687,
+            "seats": 88
+          },
+          {
+            "party": "bra.mdb",
+            "share": 0.1298,
+            "seats": 78
+          },
+          {
+            "party": "bra.psdb",
+            "share": 0.1188,
+            "seats": 54
+          },
+          {
+            "party": "bra.dem",
+            "share": 0.0756,
+            "seats": 43
+          },
+          {
+            "party": "bra.pl",
+            "share": 0.0757,
+            "seats": 42
+          },
+          {
+            "party": "bra.pp",
+            "share": 0.0655,
+            "seats": 41
+          },
+          {
+            "party": "bra.psb",
+            "share": 0.0709,
+            "seats": 34
+          },
+          {
+            "party": "bra.pdt",
+            "share": 0.0503,
+            "seats": 28
+          },
+          {
+            "party": "bra.ptb",
+            "share": 0.0418,
+            "seats": 21
+          },
+          {
+            "party": "bra.psc",
+            "share": 0.0318,
+            "seats": 17
+          },
+          {
+            "party": "bra.pv",
+            "share": 0.0384,
+            "seats": 15
+          },
+          {
+            "party": "bra.pcdob",
+            "share": 0.0285,
+            "seats": 15
+          },
+          {
+            "party": "bra.cidadania",
+            "share": 0.0263,
+            "seats": 12
+          },
+          {
+            "party": "bra.republicanos",
+            "share": 0.0169,
+            "seats": 7
+          },
+          {
+            "party": "bra.psol",
+            "share": 0.0118,
+            "seats": 3
+          },
+          {
+            "party": "bra.psl",
+            "share": 0.0052,
+            "seats": 1
+          },
+          {
+            "party": "others",
+            "share": 0.044,
+            "seats": 14
+          }
+        ],
+        "winner": "bra.pt",
+        "note": "Shares are of valid votes, computed from the results table; bra.pl is the Party of the Republic (PR).",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2010_Brazilian_general_election",
+            "title": "Wikipedia: 2010 Brazilian general election (Chamber of Deputies results table)",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "senate_2010",
+      "date": "2010-10-03",
+      "kind": "legislative_upper",
+      "chamber": "federal_senate",
+      "historical": {
+        "party_results": [
+          {
+            "party": "bra.mdb",
+            "share": 0.1408,
+            "seats": 19,
+            "seats_won": 16
+          },
+          {
+            "party": "bra.pt",
+            "share": 0.2312,
+            "seats": 15,
+            "seats_won": 11
+          },
+          {
+            "party": "bra.psdb",
+            "share": 0.1813,
+            "seats": 11,
+            "seats_won": 5
+          },
+          {
+            "party": "bra.dem",
+            "share": 0.06,
+            "seats": 6,
+            "seats_won": 2
+          },
+          {
+            "party": "bra.ptb",
+            "share": 0.0469,
+            "seats": 6,
+            "seats_won": 1
+          },
+          {
+            "party": "bra.pp",
+            "share": 0.0538,
+            "seats": 5,
+            "seats_won": 4
+          },
+          {
+            "party": "bra.pl",
+            "share": 0.0273,
+            "seats": 4,
+            "seats_won": 3
+          },
+          {
+            "party": "bra.pdt",
+            "share": 0.0143,
+            "seats": 4,
+            "seats_won": 2
+          },
+          {
+            "party": "bra.psb",
+            "share": 0.036,
+            "seats": 3,
+            "seats_won": 3
+          },
+          {
+            "party": "bra.pcdob",
+            "share": 0.0737,
+            "seats": 2,
+            "seats_won": 1
+          },
+          {
+            "party": "bra.psol",
+            "share": 0.0178,
+            "seats": 2,
+            "seats_won": 2
+          },
+          {
+            "party": "bra.cidadania",
+            "share": 0.0397,
+            "seats": 1,
+            "seats_won": 1
+          },
+          {
+            "party": "bra.republicanos",
+            "share": 0.0196,
+            "seats": 1,
+            "seats_won": 1
+          },
+          {
+            "party": "bra.psc",
+            "share": 0.0073,
+            "seats": 1,
+            "seats_won": 1
+          },
+          {
+            "party": "bra.pv",
+            "share": 0.0296,
+            "seats": 0,
+            "seats_won": 0
+          },
+          {
+            "party": "others",
+            "share": 0.0206,
+            "seats": 1,
+            "seats_won": 1
+          }
+        ],
+        "winner": "bra.mdb",
+        "note": "Two thirds (54 seats) were contested. seats = Senate composition after the election (the table's 'Total' column), seats_won = seats won in this election; shares are of valid votes cast for Senate candidates, computed from the results table (each voter has two votes when two seats are contested).",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2010_Brazilian_general_election",
+            "title": "Wikipedia: 2010 Brazilian general election (Senate results table)",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "president_2014",
+      "date": "2014-10-05",
+      "kind": "presidential",
+      "office": "bra.president",
+      "rounds": 2,
+      "historical": {
+        "candidates": [
+          {
+            "person": "bra.dilma_rousseff",
+            "party": "bra.pt",
+            "share": 0.4159,
+            "votes": 43267668,
+            "round": 1
+          },
+          {
+            "person": "bra.aecio_neves",
+            "party": "bra.psdb",
+            "share": 0.3355,
+            "votes": 34897211,
+            "round": 1
+          },
+          {
+            "person": "bra.marina_silva",
+            "party": "bra.psb",
+            "share": 0.2132,
+            "votes": 22176619,
+            "round": 1
+          },
+          {
+            "person": "bra.dilma_rousseff",
+            "party": "bra.pt",
+            "share": 0.5164,
+            "votes": 54501118,
+            "round": 2
+          },
+          {
+            "person": "bra.aecio_neves",
+            "party": "bra.psdb",
+            "share": 0.4836,
+            "votes": 51041155,
+            "round": 2
+          }
+        ],
+        "winner": "bra.dilma_rousseff",
+        "turnout": 0.8061,
+        "note": "Run-off held on 26 October 2014. Others: Luciana Genro (PSOL) 1.55%, Everaldo Pereira (PSC) 0.75%, Eduardo Jorge (PV) 0.61% and five minor candidates. Marina Silva replaced the PSB's original candidate Eduardo Campos, who died during the campaign. Turnout 80.61% / 78.90%.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2014_Brazilian_general_election",
+            "title": "Wikipedia: 2014 Brazilian general election (presidential results table)",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "chamber_2014",
+      "date": "2014-10-05",
+      "kind": "legislative",
+      "chamber": "chamber_of_deputies",
+      "historical": {
+        "party_results": [
+          {
+            "party": "bra.pt",
+            "share": 0.1394,
+            "seats": 69
+          },
+          {
+            "party": "bra.mdb",
+            "share": 0.111,
+            "seats": 66
+          },
+          {
+            "party": "bra.psdb",
+            "share": 0.1139,
+            "seats": 54
+          },
+          {
+            "party": "bra.pp",
+            "share": 0.0661,
+            "seats": 38
+          },
+          {
+            "party": "bra.psd",
+            "share": 0.0614,
+            "seats": 36
+          },
+          {
+            "party": "bra.psb",
+            "share": 0.0644,
+            "seats": 34
+          },
+          {
+            "party": "bra.pl",
+            "share": 0.0579,
+            "seats": 34
+          },
+          {
+            "party": "bra.ptb",
+            "share": 0.0402,
+            "seats": 25
+          },
+          {
+            "party": "bra.republicanos",
+            "share": 0.0455,
+            "seats": 21
+          },
+          {
+            "party": "bra.dem",
+            "share": 0.042,
+            "seats": 21
+          },
+          {
+            "party": "bra.pdt",
+            "share": 0.0357,
+            "seats": 19
+          },
+          {
+            "party": "bra.psc",
+            "share": 0.0259,
+            "seats": 13
+          },
+          {
+            "party": "bra.cidadania",
+            "share": 0.0201,
+            "seats": 10
+          },
+          {
+            "party": "bra.pcdob",
+            "share": 0.0197,
+            "seats": 10
+          },
+          {
+            "party": "bra.pv",
+            "share": 0.0206,
+            "seats": 8
+          },
+          {
+            "party": "bra.psol",
+            "share": 0.0179,
+            "seats": 5
+          },
+          {
+            "party": "bra.psl",
+            "share": 0.0083,
+            "seats": 1
+          },
+          {
+            "party": "others",
+            "share": 0.11,
+            "seats": 49
+          }
+        ],
+        "winner": "bra.pt",
+        "note": "Shares are of valid votes, computed from the results table. Others (49 seats) include Solidariedade 15, PROS 11, PHS 5, PTN 4 and smaller parties.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2014_Brazilian_general_election",
+            "title": "Wikipedia: 2014 Brazilian general election (Chamber of Deputies results table)",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "senate_2014",
+      "date": "2014-10-05",
+      "kind": "legislative_upper",
+      "chamber": "federal_senate",
+      "historical": {
+        "party_results": [
+          {
+            "party": "bra.mdb",
+            "share": 0.1358,
+            "seats": 18,
+            "seats_won": 5
+          },
+          {
+            "party": "bra.pt",
+            "share": 0.1696,
+            "seats": 12,
+            "seats_won": 2
+          },
+          {
+            "party": "bra.psdb",
+            "share": 0.2673,
+            "seats": 10,
+            "seats_won": 4
+          },
+          {
+            "party": "bra.pdt",
+            "share": 0.0404,
+            "seats": 8,
+            "seats_won": 4
+          },
+          {
+            "party": "bra.psb",
+            "share": 0.1357,
+            "seats": 7,
+            "seats_won": 3
+          },
+          {
+            "party": "bra.dem",
+            "share": 0.0393,
+            "seats": 5,
+            "seats_won": 3
+          },
+          {
+            "party": "bra.pp",
+            "share": 0.0216,
+            "seats": 5,
+            "seats_won": 1
+          },
+          {
+            "party": "bra.pl",
+            "share": 0.0078,
+            "seats": 4,
+            "seats_won": 1
+          },
+          {
+            "party": "bra.psd",
+            "share": 0.08,
+            "seats": 3,
+            "seats_won": 2
+          },
+          {
+            "party": "bra.ptb",
+            "share": 0.0314,
+            "seats": 3,
+            "seats_won": 2
+          },
+          {
+            "party": "bra.psol",
+            "share": 0.0117,
+            "seats": 1,
+            "seats_won": 0
+          },
+          {
+            "party": "bra.pcdob",
+            "share": 0.009,
+            "seats": 1,
+            "seats_won": 0
+          },
+          {
+            "party": "bra.pv",
+            "share": 0.0081,
+            "seats": 1,
+            "seats_won": 0
+          },
+          {
+            "party": "bra.republicanos",
+            "share": 0.0034,
+            "seats": 1,
+            "seats_won": 0
+          },
+          {
+            "party": "others",
+            "share": 0.039,
+            "seats": 2,
+            "seats_won": 0
+          }
+        ],
+        "winner": "bra.mdb",
+        "note": "One third (27 seats) were contested. seats = Senate composition after the election (the table's 'Total' column), seats_won = seats won in this election; shares are of valid votes cast for Senate candidates, computed from the results table (each voter has two votes when two seats are contested).",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2014_Brazilian_general_election",
+            "title": "Wikipedia: 2014 Brazilian general election (Senate results table)",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "president_2018",
+      "date": "2018-10-07",
+      "kind": "presidential",
+      "office": "bra.president",
+      "rounds": 2,
+      "historical": {
+        "candidates": [
+          {
+            "person": "bra.jair_bolsonaro",
+            "party": "bra.psl",
+            "share": 0.4603,
+            "votes": 49277010,
+            "round": 1
+          },
+          {
+            "person": "bra.fernando_haddad",
+            "party": "bra.pt",
+            "share": 0.2928,
+            "votes": 31342051,
+            "round": 1
+          },
+          {
+            "person": "bra.ciro_gomes",
+            "party": "bra.pdt",
+            "share": 0.1247,
+            "votes": 13344371,
+            "round": 1
+          },
+          {
+            "person": "bra.geraldo_alckmin",
+            "party": "bra.psdb",
+            "share": 0.0476,
+            "votes": 5096350,
+            "round": 1
+          },
+          {
+            "person": "bra.joao_amoedo",
+            "party": "bra.novo",
+            "share": 0.025,
+            "votes": 2679745,
+            "round": 1
+          },
+          {
+            "person": "bra.marina_silva",
+            "party": "bra.rede",
+            "share": 0.01,
+            "votes": 1069578,
+            "round": 1
+          },
+          {
+            "person": "bra.jair_bolsonaro",
+            "party": "bra.psl",
+            "share": 0.5513,
+            "votes": 57797847,
+            "round": 2
+          },
+          {
+            "person": "bra.fernando_haddad",
+            "party": "bra.pt",
+            "share": 0.4487,
+            "votes": 47040906,
+            "round": 2
+          }
+        ],
+        "winner": "bra.jair_bolsonaro",
+        "turnout": 0.7967,
+        "note": "Run-off held on 28 October 2018. Others: Cabo Daciolo (Patriota) 1.26%, Henrique Meirelles (MDB) 1.20%, Alvaro Dias (Podemos) 0.80%, Guilherme Boulos (PSOL) 0.58% and three minor candidates. Turnout 79.67% / 78.70%.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2018_Brazilian_general_election",
+            "title": "Wikipedia: 2018 Brazilian general election (presidential results table)",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "chamber_2018",
+      "date": "2018-10-07",
+      "kind": "legislative",
+      "chamber": "chamber_of_deputies",
+      "historical": {
+        "party_results": [
+          {
+            "party": "bra.pt",
+            "share": 0.103,
+            "seats": 56
+          },
+          {
+            "party": "bra.psl",
+            "share": 0.1165,
+            "seats": 52
+          },
+          {
+            "party": "bra.pp",
+            "share": 0.0557,
+            "seats": 37
+          },
+          {
+            "party": "bra.psd",
+            "share": 0.0585,
+            "seats": 34
+          },
+          {
+            "party": "bra.mdb",
+            "share": 0.0553,
+            "seats": 34
+          },
+          {
+            "party": "bra.pl",
+            "share": 0.0531,
+            "seats": 33
+          },
+          {
+            "party": "bra.psb",
+            "share": 0.0548,
+            "seats": 32
+          },
+          {
+            "party": "bra.republicanos",
+            "share": 0.0508,
+            "seats": 30
+          },
+          {
+            "party": "bra.psdb",
+            "share": 0.0601,
+            "seats": 29
+          },
+          {
+            "party": "bra.dem",
+            "share": 0.0466,
+            "seats": 29
+          },
+          {
+            "party": "bra.pdt",
+            "share": 0.0462,
+            "seats": 28
+          },
+          {
+            "party": "bra.podemos",
+            "share": 0.0228,
+            "seats": 11
+          },
+          {
+            "party": "bra.psol",
+            "share": 0.0283,
+            "seats": 10
+          },
+          {
+            "party": "bra.ptb",
+            "share": 0.0206,
+            "seats": 10
+          },
+          {
+            "party": "bra.pcdob",
+            "share": 0.0135,
+            "seats": 9
+          },
+          {
+            "party": "bra.novo",
+            "share": 0.0279,
+            "seats": 8
+          },
+          {
+            "party": "bra.psc",
+            "share": 0.018,
+            "seats": 8
+          },
+          {
+            "party": "bra.cidadania",
+            "share": 0.0162,
+            "seats": 8
+          },
+          {
+            "party": "bra.pv",
+            "share": 0.0162,
+            "seats": 4
+          },
+          {
+            "party": "bra.rede",
+            "share": 0.0083,
+            "seats": 1
+          },
+          {
+            "party": "others",
+            "share": 0.1277,
+            "seats": 50
+          }
+        ],
+        "winner": "bra.pt",
+        "note": "Shares are of valid votes, computed from the results table. Others (50 seats) include Solidariedade 13, PROS 8, Avante 7, PHS 6, Patriota 5 and smaller parties.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2018_Brazilian_general_election",
+            "title": "Wikipedia: 2018 Brazilian general election (Chamber of Deputies results table)",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "senate_2018",
+      "date": "2018-10-07",
+      "kind": "legislative_upper",
+      "chamber": "federal_senate",
+      "historical": {
+        "party_results": [
+          {
+            "party": "bra.mdb",
+            "share": 0.0747,
+            "seats": 12,
+            "seats_won": 7
+          },
+          {
+            "party": "bra.psdb",
+            "share": 0.1185,
+            "seats": 9,
+            "seats_won": 4
+          },
+          {
+            "party": "bra.psd",
+            "share": 0.0479,
+            "seats": 7,
+            "seats_won": 4
+          },
+          {
+            "party": "bra.pt",
+            "share": 0.1446,
+            "seats": 6,
+            "seats_won": 4
+          },
+          {
+            "party": "bra.dem",
+            "share": 0.0538,
+            "seats": 6,
+            "seats_won": 4
+          },
+          {
+            "party": "bra.pp",
+            "share": 0.0439,
+            "seats": 5,
+            "seats_won": 5
+          },
+          {
+            "party": "bra.rede",
+            "share": 0.0418,
+            "seats": 5,
+            "seats_won": 5
+          },
+          {
+            "party": "bra.podemos",
+            "share": 0.0321,
+            "seats": 5,
+            "seats_won": 1
+          },
+          {
+            "party": "bra.psl",
+            "share": 0.1133,
+            "seats": 4,
+            "seats_won": 4
+          },
+          {
+            "party": "bra.pdt",
+            "share": 0.0452,
+            "seats": 4,
+            "seats_won": 2
+          },
+          {
+            "party": "bra.ptb",
+            "share": 0.0111,
+            "seats": 3,
+            "seats_won": 2
+          },
+          {
+            "party": "bra.psb",
+            "share": 0.048,
+            "seats": 2,
+            "seats_won": 2
+          },
+          {
+            "party": "bra.pl",
+            "share": 0.0183,
+            "seats": 2,
+            "seats_won": 1
+          },
+          {
+            "party": "bra.cidadania",
+            "share": 0.0172,
+            "seats": 2,
+            "seats_won": 2
+          },
+          {
+            "party": "bra.psc",
+            "share": 0.0241,
+            "seats": 1,
+            "seats_won": 1
+          },
+          {
+            "party": "bra.republicanos",
+            "share": 0.0088,
+            "seats": 1,
+            "seats_won": 1
+          },
+          {
+            "party": "bra.psol",
+            "share": 0.0308,
+            "seats": 0,
+            "seats_won": 0
+          },
+          {
+            "party": "bra.novo",
+            "share": 0.0202,
+            "seats": 0,
+            "seats_won": 0
+          },
+          {
+            "party": "others",
+            "share": 0.1058,
+            "seats": 7,
+            "seats_won": 5
+          }
+        ],
+        "winner": "bra.mdb",
+        "note": "Two thirds (54 seats) were contested. seats = Senate composition after the election (the table's 'Total' column), seats_won = seats won in this election; shares are of valid votes cast for Senate candidates, computed from the results table (each voter has two votes when two seats are contested).",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2018_Brazilian_general_election",
+            "title": "Wikipedia: 2018 Brazilian general election (Senate results table)",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "president_2022",
+      "date": "2022-10-02",
+      "kind": "presidential",
+      "office": "bra.president",
+      "rounds": 2,
+      "historical": {
+        "candidates": [
+          {
+            "person": "bra.luiz_inacio_lula_da_silva",
+            "party": "bra.pt",
+            "share": 0.4843,
+            "votes": 57259504,
+            "round": 1
+          },
+          {
+            "person": "bra.jair_bolsonaro",
+            "party": "bra.pl",
+            "share": 0.432,
+            "votes": 51072345,
+            "round": 1
+          },
+          {
+            "person": "bra.luiz_inacio_lula_da_silva",
+            "party": "bra.pt",
+            "share": 0.509,
+            "votes": 60345999,
+            "round": 2
+          },
+          {
+            "person": "bra.jair_bolsonaro",
+            "party": "bra.pl",
+            "share": 0.491,
+            "votes": 58206354,
+            "round": 2
+          }
+        ],
+        "winner": "bra.luiz_inacio_lula_da_silva",
+        "turnout": 0.7905,
+        "note": "Run-off held on 30 October 2022. Others: Simone Tebet (MDB) 4.16%, Ciro Gomes (PDT) 3.04%, Soraya Thronicke (União) 0.51%, Luiz Felipe d'Avila (NOVO) 0.47% and five minor candidates. Turnout 79.05% / 79.41%.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2022_Brazilian_general_election",
+            "title": "Wikipedia: 2022 Brazilian general election (presidential results table)",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "chamber_2022",
+      "date": "2022-10-02",
+      "kind": "legislative",
+      "chamber": "chamber_of_deputies",
+      "historical": {
+        "party_results": [
+          {
+            "party": "bra.pl",
+            "share": 0.1664,
+            "seats": 99
+          },
+          {
+            "party": "bra.pt",
+            "share": 0.121,
+            "seats": 69
+          },
+          {
+            "party": "bra.uniao",
+            "share": 0.0934,
+            "seats": 59
+          },
+          {
+            "party": "bra.pp",
+            "share": 0.0795,
+            "seats": 47
+          },
+          {
+            "party": "bra.psd",
+            "share": 0.0758,
+            "seats": 42
+          },
+          {
+            "party": "bra.mdb",
+            "share": 0.0719,
+            "seats": 42
+          },
+          {
+            "party": "bra.republicanos",
+            "share": 0.0696,
+            "seats": 40
+          },
+          {
+            "party": "bra.pdt",
+            "share": 0.035,
+            "seats": 17
+          },
+          {
+            "party": "bra.psb",
+            "share": 0.0381,
+            "seats": 14
+          },
+          {
+            "party": "bra.psdb",
+            "share": 0.0302,
+            "seats": 13
+          },
+          {
+            "party": "bra.psol",
+            "share": 0.0352,
+            "seats": 12
+          },
+          {
+            "party": "bra.podemos",
+            "share": 0.033,
+            "seats": 12
+          },
+          {
+            "party": "bra.psc",
+            "share": 0.0178,
+            "seats": 6
+          },
+          {
+            "party": "bra.pcdob",
+            "share": 0.0106,
+            "seats": 6
+          },
+          {
+            "party": "bra.pv",
+            "share": 0.0087,
+            "seats": 6
+          },
+          {
+            "party": "bra.cidadania",
+            "share": 0.0148,
+            "seats": 5
+          },
+          {
+            "party": "bra.novo",
+            "share": 0.0124,
+            "seats": 3
+          },
+          {
+            "party": "bra.rede",
+            "share": 0.0072,
+            "seats": 2
+          },
+          {
+            "party": "bra.ptb",
+            "share": 0.013,
+            "seats": 1
+          },
+          {
+            "party": "others",
+            "share": 0.0666,
+            "seats": 18
+          }
+        ],
+        "winner": "bra.pl",
+        "note": "Shares are of valid votes, computed from the results table; parties are listed individually, including members of the federations Brazil of Hope (PT, PCdoB, PV), PSDB-Cidadania and PSOL-REDE. Others (18 seats): Avante 7, Solidarity 4, Patriota 4, PROS 3.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2022_Brazilian_general_election",
+            "title": "Wikipedia: 2022 Brazilian general election (Chamber of Deputies results table)",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "senate_2022",
+      "date": "2022-10-02",
+      "kind": "legislative_upper",
+      "chamber": "federal_senate",
+      "historical": {
+        "party_results": [
+          {
+            "party": "bra.pl",
+            "share": 0.2539,
+            "seats": 13,
+            "seats_won": 8
+          },
+          {
+            "party": "bra.uniao",
+            "share": 0.0549,
+            "seats": 12,
+            "seats_won": 5
+          },
+          {
+            "party": "bra.psd",
+            "share": 0.1136,
+            "seats": 10,
+            "seats_won": 2
+          },
+          {
+            "party": "bra.mdb",
+            "share": 0.039,
+            "seats": 10,
+            "seats_won": 1
+          },
+          {
+            "party": "bra.pt",
+            "share": 0.1208,
+            "seats": 9,
+            "seats_won": 4
+          },
+          {
+            "party": "bra.pp",
+            "share": 0.0762,
+            "seats": 7,
+            "seats_won": 3
+          },
+          {
+            "party": "bra.podemos",
+            "share": 0.0178,
+            "seats": 6,
+            "seats_won": 0
+          },
+          {
+            "party": "bra.psdb",
+            "share": 0.0139,
+            "seats": 4,
+            "seats_won": 0
+          },
+          {
+            "party": "bra.republicanos",
+            "share": 0.0428,
+            "seats": 3,
+            "seats_won": 2
+          },
+          {
+            "party": "bra.pdt",
+            "share": 0.0159,
+            "seats": 2,
+            "seats_won": 0
+          },
+          {
+            "party": "bra.psb",
+            "share": 0.1367,
+            "seats": 1,
+            "seats_won": 1
+          },
+          {
+            "party": "bra.psc",
+            "share": 0.043,
+            "seats": 1,
+            "seats_won": 1
+          },
+          {
+            "party": "bra.rede",
+            "share": 0.0001,
+            "seats": 1,
+            "seats_won": 0
+          },
+          {
+            "party": "bra.cidadania",
+            "share": 0,
+            "seats": 1,
+            "seats_won": 0
+          },
+          {
+            "party": "bra.ptb",
+            "share": 0.0205,
+            "seats": 0,
+            "seats_won": 0
+          },
+          {
+            "party": "others",
+            "share": 0.0508,
+            "seats": 1,
+            "seats_won": 0
+          }
+        ],
+        "winner": "bra.pl",
+        "note": "One third (27 seats) were contested. seats = Senate composition after the election (the table's 'Total' column), seats_won = seats won in this election; shares are of valid votes cast for Senate candidates, computed from the results table (each voter has two votes when two seats are contested).",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2022_Brazilian_general_election",
+            "title": "Wikipedia: 2022 Brazilian general election (Senate results table)",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "president_2026",
+      "date": "2026-10-04",
+      "kind": "presidential",
+      "office": "bra.president",
+      "rounds": 1,
+      "historical": {
+        "candidates": [
+          {
+            "person": "bra.flavio_bolsonaro",
+            "party": "bra.pl",
+            "share": 0.4703,
+            "votes": 56104503,
+            "round": 1
+          },
+          {
+            "person": "bra.luiz_inacio_lula_da_silva",
+            "party": "bra.pt",
+            "share": 0.4516,
+            "votes": 53879538,
+            "round": 1
+          }
+        ],
+        "turnout": 0.7892,
+        "note": "First round only: the run-off between Flávio Bolsonaro and Lula is scheduled for 25 October 2026, after the data date, so no winner is recorded. Others: Augusto Cury (Avante) 2.89%, Renan Santos (Mission Party) 2.24%, Ronaldo Caiado (PSD) 2.18%, Romeu Zema (NOVO) 0.27% and six minor candidates. Shares are of valid votes, computed from the Superior Electoral Court figures in the Wikipedia results table (the infobox gives the same 47.03% and 45.16%; Al Jazeera, with about 99% counted, reported about 47% and 44.9%). Turnout 78.92%.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2026_Brazilian_general_election",
+            "title": "Wikipedia: 2026 Brazilian general election (presidential results table)",
+            "accessed": "2026-10-16"
+          },
+          {
+            "url": "https://www.aljazeera.com/news/2026/10/5/brazils-presidential-race-three-key-takeaways-from-the-first-round",
+            "title": "Al Jazeera: Brazil's presidential race, three key takeaways from the first round (5 October 2026)",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "chamber_2026",
+      "date": "2026-10-04",
+      "kind": "legislative",
+      "chamber": "chamber_of_deputies",
+      "historical": {
+        "party_results": [
+          {
+            "party": "bra.pl",
+            "share": 0.2269,
+            "seats": 121
+          },
+          {
+            "party": "bra.pt",
+            "share": 0.13,
+            "seats": 70
+          },
+          {
+            "party": "bra.uniao",
+            "share": 0.0692,
+            "seats": 46
+          },
+          {
+            "party": "bra.psd",
+            "share": 0.0825,
+            "seats": 43
+          },
+          {
+            "party": "bra.republicanos",
+            "share": 0.0695,
+            "seats": 41
+          },
+          {
+            "party": "bra.pp",
+            "share": 0.0669,
+            "seats": 41
+          },
+          {
+            "party": "bra.mdb",
+            "share": 0.0693,
+            "seats": 36
+          },
+          {
+            "party": "bra.podemos",
+            "share": 0.0517,
+            "seats": 27
+          },
+          {
+            "party": "bra.psb",
+            "share": 0.044,
+            "seats": 15
+          },
+          {
+            "party": "bra.psol",
+            "share": 0.0467,
+            "seats": 14
+          },
+          {
+            "party": "bra.psdb",
+            "share": 0.0241,
+            "seats": 11
+          },
+          {
+            "party": "bra.pcdob",
+            "share": 0.0115,
+            "seats": 11
+          },
+          {
+            "party": "bra.novo",
+            "share": 0.0256,
+            "seats": 10
+          },
+          {
+            "party": "bra.pv",
+            "share": 0.012,
+            "seats": 7
+          },
+          {
+            "party": "bra.pdt",
+            "share": 0.0164,
+            "seats": 6
+          },
+          {
+            "party": "bra.rede",
+            "share": 0.0023,
+            "seats": 1
+          },
+          {
+            "party": "others",
+            "share": 0.0512,
+            "seats": 13
+          }
+        ],
+        "winner": "bra.pl",
+        "note": "Results of 4 October 2026 (after June 2026), taken from the Wikipedia results table citing the Superior Electoral Court and fetched on 2026-10-16. Shares are of valid votes, computed from that table; parties are listed individually, including members of the federations Brazil of Hope, Progressive Union (União and PP), PSOL-REDE, PSDB-Cidadania and Solidary Renewal. Others (13 seats): Democratic Renewal Party 5 and Solidarity 2 (the Solidary Renewal federation), Avante 5, Mission Party 1.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2026_Brazilian_general_election",
+            "title": "Wikipedia: 2026 Brazilian general election (Chamber of Deputies results table)",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "needs_review",
+        "review_note": "Recent result (4 October 2026) taken from Wikipedia only; confirm the final seat allocation against the Superior Electoral Court."
+      }
+    },
+    {
+      "id": "senate_2026",
+      "date": "2026-10-04",
+      "kind": "legislative_upper",
+      "chamber": "federal_senate",
+      "historical": {
+        "party_results": [
+          {
+            "party": "bra.pl",
+            "share": 0.2811,
+            "seats": 29,
+            "seats_won": 19
+          },
+          {
+            "party": "bra.pt",
+            "share": 0.1316,
+            "seats": 9,
+            "seats_won": 6
+          },
+          {
+            "party": "bra.mdb",
+            "share": 0.0573,
+            "seats": 8,
+            "seats_won": 7
+          },
+          {
+            "party": "bra.pp",
+            "share": 0.1065,
+            "seats": 6,
+            "seats_won": 3
+          },
+          {
+            "party": "bra.republicanos",
+            "share": 0.043,
+            "seats": 6,
+            "seats_won": 2
+          },
+          {
+            "party": "bra.psd",
+            "share": 0.0507,
+            "seats": 5,
+            "seats_won": 2
+          },
+          {
+            "party": "bra.uniao",
+            "share": 0.0384,
+            "seats": 5,
+            "seats_won": 3
+          },
+          {
+            "party": "bra.psb",
+            "share": 0.0714,
+            "seats": 4,
+            "seats_won": 3
+          },
+          {
+            "party": "bra.novo",
+            "share": 0.0534,
+            "seats": 3,
+            "seats_won": 3
+          },
+          {
+            "party": "bra.podemos",
+            "share": 0.0191,
+            "seats": 2,
+            "seats_won": 2
+          },
+          {
+            "party": "bra.psdb",
+            "share": 0.0134,
+            "seats": 2,
+            "seats_won": 2
+          },
+          {
+            "party": "bra.rede",
+            "share": 0.052,
+            "seats": 1,
+            "seats_won": 1
+          },
+          {
+            "party": "bra.pdt",
+            "share": 0.026,
+            "seats": 1,
+            "seats_won": 1
+          },
+          {
+            "party": "bra.psol",
+            "share": 0.0387,
+            "seats": 0,
+            "seats_won": 0
+          },
+          {
+            "party": "others",
+            "share": 0.0175,
+            "seats": 0,
+            "seats_won": 0
+          }
+        ],
+        "winner": "bra.pl",
+        "note": "Two thirds (54 seats) were contested. seats = Senate composition after the election (the table's 'Total' column), seats_won = seats won in this election; shares are of valid votes cast for Senate candidates, computed from the results table (each voter has two votes when two seats are contested). Results of 4 October 2026 (after June 2026), from the Wikipedia table citing the Superior Electoral Court, fetched on 2026-10-16.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2026_Brazilian_general_election",
+            "title": "Wikipedia: 2026 Brazilian general election (Senate results table)",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "needs_review",
+        "review_note": "Recent result (4 October 2026) taken from Wikipedia only; confirm the final seat allocation against the Superior Electoral Court."
+      }
+    }
+  ],
+  "source": [
+    {
+      "url": "https://en.wikipedia.org/wiki/2026_Brazilian_general_election",
+      "title": "Wikipedia: 2026 Brazilian general election (electoral system)",
+      "accessed": "2026-10-16"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/List_of_presidents_of_Brazil",
+      "title": "Wikipedia: List of presidents of Brazil",
+      "accessed": "2026-10-16"
+    }
+  ],
+  "confidence": "verified"
+}

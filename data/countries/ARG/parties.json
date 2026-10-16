@@ -1,0 +1,494 @@
+{
+  "parties": [
+    {
+      "id": "arg.pj",
+      "name": {
+        "en": "Justicialist Party",
+        "native": "Partido Justicialista"
+      },
+      "abbrev": {
+        "en": "PJ",
+        "native": "PJ"
+      },
+      "color": "#2D9CDB",
+      "sub_ideology": "big_tent",
+      "founded": "1946-07-21",
+      "status_2000": "active",
+      "leader_history": [
+        {
+          "person": "arg.carlos_menem",
+          "from": 1990,
+          "to": 2003
+        },
+        {
+          "person": "arg.eduardo_fellner",
+          "from": 2003,
+          "to": 2004
+        },
+        {
+          "person": "arg.nestor_kirchner",
+          "from": 2008,
+          "to": 2010
+        },
+        {
+          "person": "arg.daniel_scioli",
+          "from": 2010,
+          "to": 2014,
+          "title": "Interim leader"
+        },
+        {
+          "person": "arg.jose_luis_gioja",
+          "from": 2016,
+          "to": 2021
+        },
+        {
+          "person": "arg.alberto_fernandez",
+          "from": 2021,
+          "to": 2024
+        },
+        {
+          "person": "arg.cristina_fernandez_de_kirchner",
+          "from": 2024
+        }
+      ],
+      "popularity_2000": 0.3863,
+      "popularity_note": "October 1999 Chamber of Deputies vote share of the Justicialist Consensus for Change (38.63%, infobox).",
+      "note": "Peronist party. Wikipedia lists Peronism, Kirchnerism and left-wing populism today; in 2000 it was led by Carlos Menem, whose governments (1989-1999) pursued market reforms, so big_tent is used. It ran as the core of electoral fronts that are recorded under this id in elections.json: Front for Victory (2003-2015), Citizen's Unity (2017), Frente de Todos (2019-2021), Union for the Homeland (2023) and Homeland Force (2025). In 2003 three Peronists ran for president on separate fronts. Leader gaps: Rubén Marín (interim, 2001), Ramón Ruiz (2005-2008), Scioli's 2009 interim, no leader 2004-2005 and 2014-2016 per Wikipedia; Luis Barrionuevo was court-appointed controller in 2018. Wikipedia's 'Beginning' section dates its creation to November 1946.",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Justicialist_Party",
+          "title": "Wikipedia: Justicialist Party (infobox and list of leaders)",
+          "accessed": "2026-10-16"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/1999_Argentine_general_election",
+          "title": "Wikipedia: 1999 Argentine general election (Chamber of Deputies results)",
+          "accessed": "2026-10-16"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "arg.ucr",
+      "name": {
+        "en": "Radical Civic Union",
+        "native": "Unión Cívica Radical"
+      },
+      "abbrev": {
+        "en": "UCR",
+        "native": "UCR"
+      },
+      "color": "#E10019",
+      "sub_ideology": "social_liberal",
+      "founded": "1891-06-26",
+      "status_2000": "active",
+      "leader_history": [
+        {
+          "person": "arg.fernando_de_la_rua",
+          "from": 1997,
+          "to": 1999
+        },
+        {
+          "person": "arg.raul_alfonsin",
+          "from": 1999,
+          "to": 2001
+        },
+        {
+          "person": "arg.angel_rozas",
+          "from": 2001,
+          "to": 2005
+        },
+        {
+          "person": "arg.gerardo_morales",
+          "from": 2006,
+          "to": 2009
+        },
+        {
+          "person": "arg.ernesto_sanz",
+          "from": 2009,
+          "to": 2011
+        },
+        {
+          "person": "arg.ernesto_sanz",
+          "from": 2013,
+          "to": 2015
+        },
+        {
+          "person": "arg.gerardo_morales",
+          "from": 2021,
+          "to": 2023
+        },
+        {
+          "person": "arg.martin_lousteau",
+          "from": 2023,
+          "to": 2025
+        }
+      ],
+      "popularity_2000": 0,
+      "popularity_note": "Ran inside the Alianza in 1999, so no separate national vote share; see arg.alianza (45.89%).",
+      "international": "Socialist International",
+      "note": "Presidents of the National Committee not modelled: Roberto Iglesias (2005-2006), Ángel Rozas and Ernesto Sanz again briefly in 2011, Mario Barletta (2011-2013), José Manuel Corral (2015-2017), Alfredo Cornejo (2017-2021) and Leonel Chiarella (since 2025). Member of the Alianza (1997-2001) and of Cambiemos/Juntos por el Cambio (2015-2023), whose results are recorded under arg.alianza and arg.pro respectively. Led the Social and Civic Agreement (2009), the Union for Social Development (2011) and the Progressive, Civic and Social Front (2013), recorded under this id.",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Radical_Civic_Union",
+          "title": "Wikipedia: Radical Civic Union (infobox and presidents of the National Committee)",
+          "accessed": "2026-10-16"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/1999_Argentine_general_election",
+          "title": "Wikipedia: 1999 Argentine general election (Chamber of Deputies results)",
+          "accessed": "2026-10-16"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "arg.frepaso",
+      "name": {
+        "en": "Front for a Country in Solidarity",
+        "native": "Frente País Solidario"
+      },
+      "abbrev": {
+        "en": "FREPASO",
+        "native": "FREPASO"
+      },
+      "color": "#3F51B5",
+      "sub_ideology": "social_democrat",
+      "founded": 1994,
+      "dissolved": "2001-12-20",
+      "status_2000": "active",
+      "leader_history": [
+        {
+          "person": "arg.carlos_alvarez",
+          "from": 1994,
+          "to": 2001
+        }
+      ],
+      "popularity_2000": 0,
+      "popularity_note": "Ran inside the Alianza in 1999; see arg.alianza.",
+      "note": "Founded in August 1994 out of the Broad Front (Frente Grande); dissolved 20 December 2001 per the infobox.",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Front_for_a_Country_in_Solidarity",
+          "title": "Wikipedia: Front for a Country in Solidarity (infobox)",
+          "accessed": "2026-10-16"
+        }
+      ],
+      "confidence": "needs_review",
+      "review_note": "Carlos Álvarez is listed as leader without dates; the 1994-2001 span is the party's lifetime, check."
+    },
+    {
+      "id": "arg.alianza",
+      "name": {
+        "en": "Alliance for Work, Justice and Education",
+        "native": "Alianza para el Trabajo, la Justicia y la Educación"
+      },
+      "abbrev": {
+        "en": "Alianza",
+        "native": "Alianza"
+      },
+      "color": "#6EC6F0",
+      "sub_ideology": "social_liberal",
+      "founded": "1997-08-04",
+      "dissolved": "2001-12-20",
+      "status_2000": "active",
+      "leader_history": [
+        {
+          "person": "arg.fernando_de_la_rua",
+          "from": "1997-08-04",
+          "to": "2001-12-20",
+          "title": "Leader"
+        }
+      ],
+      "popularity_2000": 0.4589,
+      "popularity_note": "October 1999 Chamber of Deputies vote share (45.89%, infobox).",
+      "lineage": {
+        "formed_from": [
+          "arg.ucr",
+          "arg.frepaso"
+        ]
+      },
+      "note": "Electoral alliance of the UCR and FREPASO plus smaller provincial parties; party presidents Raúl Alfonsín (UCR) and Carlos Álvarez (FREPASO). Modelled as a party because its 1999 and 2001 lists were joint.",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Alliance_for_Work,_Justice_and_Education",
+          "title": "Wikipedia: Alliance for Work, Justice and Education (infobox)",
+          "accessed": "2026-10-16"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/1999_Argentine_general_election",
+          "title": "Wikipedia: 1999 Argentine general election (Chamber of Deputies results)",
+          "accessed": "2026-10-16"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "arg.apr",
+      "name": {
+        "en": "Action for the Republic",
+        "native": "Acción por la República"
+      },
+      "abbrev": {
+        "en": "AR",
+        "native": "AR"
+      },
+      "color": "#1F4E9C",
+      "sub_ideology": "liberal_conservative",
+      "founded": 1997,
+      "status_2000": "active",
+      "leader_history": [
+        {
+          "person": "arg.domingo_cavallo",
+          "from": 1997,
+          "title": "Founder"
+        }
+      ],
+      "popularity_2000": 0.0812,
+      "popularity_note": "October 1999 Chamber of Deputies vote share (8.12%, infobox); Cavallo won 10.22% for president.",
+      "note": "Founded by Domingo Cavallo in 1997; current president Mirta Graciela Morales (no dates). Wikipedia lists conservative and economic liberalism. Its colour is not given in the source.",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Action_for_the_Republic_(Argentina)",
+          "title": "Wikipedia: Action for the Republic (Argentina) (infobox)",
+          "accessed": "2026-10-16"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/1999_Argentine_general_election",
+          "title": "Wikipedia: 1999 Argentine general election (Chamber of Deputies results)",
+          "accessed": "2026-10-16"
+        }
+      ],
+      "confidence": "needs_review",
+      "review_note": "Cavallo's leadership dates are not given (founder from 1997 used); dissolution status unknown."
+    },
+    {
+      "id": "arg.cc_ari",
+      "name": {
+        "en": "Civic Coalition ARI",
+        "native": "Coalición Cívica ARI"
+      },
+      "abbrev": {
+        "en": "CC-ARI",
+        "native": "CC-ARI"
+      },
+      "color": "#4FC3F7",
+      "sub_ideology": "social_liberal",
+      "founded": 2002,
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        {
+          "person": "arg.elisa_carrio",
+          "from": 2002,
+          "title": "Founder and leader"
+        }
+      ],
+      "popularity_2000": 0,
+      "note": "Founded by Elisa Carrió in 2002 as Support for an Egalitarian Republic (ARI); official name Civic Coalition ARI since October 2009. Current party president Maximiliano Ferraro. Member of Cambiemos/Juntos por el Cambio 2015-2023. Wikipedia describes a centrist party with liberal, social liberal and conservative currents.",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Civic_Coalition_ARI",
+          "title": "Wikipedia: Civic Coalition ARI (infobox and history)",
+          "accessed": "2026-10-16"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "arg.recrear",
+      "name": {
+        "en": "Recreate for Growth",
+        "native": "Recrear para el Crecimiento"
+      },
+      "abbrev": {
+        "en": "Recrear",
+        "native": "Recrear"
+      },
+      "color": "#1565C0",
+      "sub_ideology": "liberal_conservative",
+      "founded": 2002,
+      "dissolved": 2009,
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        {
+          "person": "arg.ricardo_lopez_murphy",
+          "from": 2002,
+          "to": 2003
+        }
+      ],
+      "popularity_2000": 0,
+      "lineage": {
+        "merged_into": "arg.pro"
+      },
+      "note": "Founded in March 2002 and headed by Ricardo López Murphy, who stood down after the 2003 election; absorbed by Republican Proposal in August 2009. López Murphy refounded a party of the same name in August 2020.",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Recreate_for_Growth",
+          "title": "Wikipedia: Recreate for Growth (infobox)",
+          "accessed": "2026-10-16"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "arg.pro",
+      "name": {
+        "en": "Republican Proposal",
+        "native": "Propuesta Republicana"
+      },
+      "abbrev": {
+        "en": "PRO",
+        "native": "PRO"
+      },
+      "color": "#FFD600",
+      "sub_ideology": "liberal_conservative",
+      "founded": "2005-10-23",
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        {
+          "person": "arg.mauricio_macri",
+          "from": 2024
+        }
+      ],
+      "popularity_2000": 0,
+      "note": "Formed as an alliance on 23 October 2005 and as a national party on 3 June 2010. Led the Cambiemos coalition (founded 15 June 2015, renamed Juntos por el Cambio 12 June 2019, dissolved 27 December 2023, with the UCR and the Civic Coalition), whose results are recorded under this id in elections.json. Mauricio Macri has been party president since May 2024 per the article's lead; Patricia Bullrich led the party before the 2023 election, but no dates are given, so earlier leaders are not modelled.",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Republican_Proposal",
+          "title": "Wikipedia: Republican Proposal (infobox)",
+          "accessed": "2026-10-16"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/Juntos_por_el_Cambio",
+          "title": "Wikipedia: Juntos por el Cambio (infobox)",
+          "accessed": "2026-10-16"
+        }
+      ],
+      "confidence": "needs_review",
+      "review_note": "Add dated PRO presidents before 2024 (Macri as founder; Patricia Bullrich before 2024)."
+    },
+    {
+      "id": "arg.fr",
+      "name": {
+        "en": "Renewal Front",
+        "native": "Frente Renovador"
+      },
+      "abbrev": {
+        "en": "FR",
+        "native": "FR"
+      },
+      "color": "#1E3A8A",
+      "sub_ideology": "big_tent",
+      "founded": "2013-06-24",
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        {
+          "person": "arg.sergio_massa",
+          "from": "2013-06-24",
+          "title": "Founder and leader"
+        }
+      ],
+      "popularity_2000": 0,
+      "note": "Federal Peronist party founded by Sergio Massa (current president Pablo Mirolo). Its fronts United for a New Alternative (2015) and 1País (2017) are recorded under this id; it joined Frente de Todos (2019) and Union for the Homeland (2023), recorded under arg.pj.",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Renewal_Front",
+          "title": "Wikipedia: Renewal Front (infobox)",
+          "accessed": "2026-10-16"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "arg.lla",
+      "name": {
+        "en": "La Libertad Avanza",
+        "native": "La Libertad Avanza"
+      },
+      "abbrev": {
+        "en": "LLA",
+        "native": "LLA"
+      },
+      "color": "#6A1B9A",
+      "sub_ideology": "libertarian",
+      "founded": "2021-07-14",
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        {
+          "person": "arg.javier_milei",
+          "from": "2021-07-14",
+          "title": "Founder and leader"
+        }
+      ],
+      "popularity_2000": 0,
+      "note": "Coalition founded by Javier Milei and Victoria Villarruel (8 July 2021 in the infobox; formalised 14 July 2021 per the text); a party since 2024 (28 September 2024 in the infobox). Karina Milei is its party president (no dates). In 2021 its lists ran as 'Libertarians'.",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/La_Libertad_Avanza",
+          "title": "Wikipedia: La Libertad Avanza (infobox)",
+          "accessed": "2026-10-16"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "arg.fit",
+      "name": {
+        "en": "Workers' Left Front",
+        "native": "Frente de Izquierda y de los Trabajadores"
+      },
+      "abbrev": {
+        "en": "FIT",
+        "native": "FIT-U"
+      },
+      "color": "#E91E63",
+      "sub_ideology": "marxist_leninist",
+      "founded": "2011-04-14",
+      "status_2000": "not_yet_founded",
+      "leader_history": [],
+      "popularity_2000": 0,
+      "note": "Trotskyist front of the Workers' Party (PO), Socialist Workers' Party (PTS), Socialist Left (IS) and Workers' Socialist Movement (MST); marxist_leninist is the nearest available sub-ideology. Leaders Nicolás del Caño and Myriam Bregman are named without dates.",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Workers'_Left_Front",
+          "title": "Wikipedia: Workers' Left Front (infobox)",
+          "accessed": "2026-10-16"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "arg.ps",
+      "name": {
+        "en": "Socialist Party",
+        "native": "Partido Socialista"
+      },
+      "abbrev": {
+        "en": "PS",
+        "native": "PS"
+      },
+      "color": "#FF7043",
+      "sub_ideology": "social_democrat",
+      "founded": "2002-06-28",
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        {
+          "person": "arg.hermes_binner",
+          "from": 2012,
+          "to": 2016
+        }
+      ],
+      "popularity_2000": 0,
+      "international": "Progressive Alliance",
+      "note": "Refounded on 28 June 2002 when the Popular Socialist Party and the Democratic Socialist Party reunited (the original party dates from 1896). Led the Broad Progressive Front (FAP) in 2011 and Progresistas in 2015, recorded under this id. Later presidents Antonio Bonfatti (from April 2016) and Mónica Fein (from 2021) are not modelled.",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Socialist_Party_(Argentina)",
+          "title": "Wikipedia: Socialist Party (Argentina) (infobox)",
+          "accessed": "2026-10-16"
+        }
+      ],
+      "confidence": "verified"
+    }
+  ]
+}

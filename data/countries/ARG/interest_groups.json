@@ -1,0 +1,15 @@
+{
+  "note": "Influence and approval are gameplay starting values for 1 January 2000 (three weeks into Fernando de la Rúa's Alianza government, during the recession that began in 1998), not measured data. The Peronist-aligned trade unions are powerful and close to the opposition PJ; the military has been under civilian control since 1983; agricultural exporters are an important lobby.",
+  "interest_groups": [
+    { "type": "military", "influence": 0.1, "approval": 45 },
+    { "type": "security_services", "influence": 0.15, "approval": 50 },
+    { "type": "business", "influence": 0.5, "approval": 50 },
+    { "type": "labour_unions", "influence": 0.5, "approval": 35, "note": "Large Peronist union confederations." },
+    { "type": "religious_establishment", "influence": 0.3, "approval": 50, "note": "Catholic Church." },
+    { "type": "rural", "influence": 0.35, "approval": 45, "note": "Agricultural producers and exporters." },
+    { "type": "urban_middle_class", "influence": 0.45, "approval": 55, "note": "Core of the Alianza vote in 1999." },
+    { "type": "minorities", "influence": 0.05, "approval": 45 },
+    { "type": "youth_students", "influence": 0.25, "approval": 50 },
+    { "type": "media", "influence": 0.45, "approval": 50 }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "note": "Influence and approval are gameplay starting values for 1 January 2000 (end of Eduardo Frei Ruiz-Tagle's Concertación government, between the two rounds of the 1999-2000 presidential election), not measured data. The armed forces still held constitutional prerogatives such as designated senators; business and mining exporters are influential; trade unions are weaker than in Argentina; the Catholic Church is influential on social questions.",
+  "interest_groups": [
+    { "type": "military", "influence": 0.35, "approval": 45, "note": "Constitutional prerogatives under the 1980 Constitution until the 2005 reforms." },
+    { "type": "security_services", "influence": 0.15, "approval": 50 },
+    { "type": "business", "influence": 0.55, "approval": 55, "note": "Business associations and mining and export interests." },
+    { "type": "labour_unions", "influence": 0.25, "approval": 50 },
+    { "type": "religious_establishment", "influence": 0.4, "approval": 55, "note": "Catholic Church." },
+    { "type": "rural", "influence": 0.25, "approval": 45, "note": "Agricultural and forestry exporters." },
+    { "type": "urban_middle_class", "influence": 0.45, "approval": 55 },
+    { "type": "minorities", "influence": 0.05, "approval": 35, "note": "Indigenous peoples, mainly Mapuche." },
+    { "type": "youth_students", "influence": 0.2, "approval": 45 },
+    { "type": "media", "influence": 0.4, "approval": 50 }
+  ]
+}

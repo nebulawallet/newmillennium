@@ -48,11 +48,22 @@ Live sources sometimes report allegations or investigations involving real peopl
 
 <!-- AUTO-GENERATED BELOW: run `npm run review-report`; edits below this line are overwritten -->
 
-## Needs review: 471 of 5536 records
+## Needs review: 522 of 6033 records
 
-Countries with politics data: 63 / 212.
+Countries with politics data: 68 / 212.
 
-Countries with no data yet (149): SMR, VAT, KAZ, KGZ, TJK, TKM, UZB, ABK, SOS, NKR, ICH, ATG, ARG, BHS, BRB, BLZ, BOL, CHL, COL, CRI, CUB, DMA, DOM, ECU, SLV, GRD, GTM, GUY, HTI, HND, JAM, MEX, NIC, PAN, PRY, PER, KNA, LCA, VCT, SUR, TTO, URY, VEN, FAR, DZA, BHR, EGY, IRQ, JOR, KWT, LBN, LBY, MRT, MAR, OMN, QAT, SAU, SYR, TUN, ARE, YEM, ESH, KUR, AGO, BEN, BWA, BFA, BDI, CPV, CMR, CAF, TCD, COM, COD, COG, CIV, DJI, GNQ, ERI, SWZ, ETH, GAB, GMB, GHA, GIN, GNB, KEN, LSO, LBR, MDG, MWI, MLI, MUS, MOZ, NAM, NER, NGA, RWA, STP, SEN, SYC, SLE, ZAF, SDN, TZA, TGO, UGA, ZMB, ZWE, SSD, SML, UNI, RCD, MLC, AFG, AFN, BGD, BTN, IND, MDV, NPL, PAK, LKA, TEL, BRN, KHM, IDN, LAO, MYS, MMR, PHL, SGP, THA, VNM, TLS, AUS, NZL, FJI, PNG, SLB, VUT, WSM, TON, KIR, TUV, NRU, FSM, MHL, PLW
+Countries with no data yet (144): VAT, KAZ, KGZ, TJK, TKM, UZB, SOS, NKR, ICH, ATG, BHS, BRB, BLZ, BOL, COL, CRI, CUB, DMA, DOM, ECU, SLV, GRD, GTM, GUY, HTI, HND, JAM, MEX, NIC, PAN, PRY, PER, KNA, LCA, VCT, SUR, TTO, URY, VEN, FAR, DZA, BHR, EGY, IRQ, JOR, KWT, LBN, LBY, MRT, MAR, OMN, QAT, SAU, SYR, TUN, ARE, YEM, ESH, KUR, AGO, BEN, BWA, BFA, BDI, CPV, CMR, CAF, TCD, COM, COD, COG, CIV, DJI, GNQ, ERI, SWZ, ETH, GAB, GMB, GHA, GIN, GNB, KEN, LSO, LBR, MDG, MWI, MLI, MUS, MOZ, NAM, NER, NGA, RWA, STP, SEN, SYC, SLE, ZAF, SDN, TZA, TGO, UGA, ZMB, ZWE, SSD, SML, UNI, RCD, MLC, AFG, AFN, BGD, BTN, MDV, NPL, PAK, LKA, TEL, BRN, KHM, IDN, LAO, MYS, MMR, PHL, SGP, THA, VNM, TLS, AUS, NZL, FJI, PNG, SLB, VUT, WSM, TON, KIR, TUV, NRU, FSM, MHL, PLW
+
+### ABK — Abkhazia (6)
+
+| kind | record | what to check | file |
+|---|---|---|---|
+| office | `abk.prime_minister` Prime Minister of Abkhazia | Check who headed the government in the gaps of May-June 2001 and April 2003 (recorded as vacancies because the list names no holder). | data/countries/ABK/country.json |
+| person | `abk.alkhas_kvitsinia` Alkhas Kvitsinia (b. 1969) | Birth date and gender come from Wikidata only (no English Wikipedia article); confirm against another source. | data/countries/ABK/people.json |
+| party | `abk.aitaira` Aitaira (Aitaira) | Check the founding date (year only) and the leaders between 2001 and 2016. | data/countries/ABK/parties.json |
+| party | `abk.amtsakhara` Amtsakhara (Amtsakhara) | Add the chairs with dates. | data/countries/ABK/parties.json |
+| party | `abk.ppa` People's Party of Abkhazia (PPA) | Lakoba's chairmanship has no recorded end; check who led the party after his death in 2022. | data/countries/ABK/parties.json |
+| election | `president_2019` presidential 2019-08-25 | Add Oleg Arshba and Astamur Tarba if a biographical source can be found; Kvitsinia's person record rests on Wikidata alone. | data/countries/ABK/elections.json |
 
 ### ALB — Albania (4)
 
@@ -79,6 +90,35 @@ Countries with no data yet (149): SMR, VAT, KAZ, KGZ, TJK, TKM, UZB, ABK, SOS, N
 | party | `and.cc` Committed Citizens (CC) | Founding year assumed from its first election (2019); confirm the founding date and leaders. | data/countries/AND/parties.json |
 | party | `and.ae` Andorra Forward (AE) | Sub-ideology (right_populist) not checked against a fetched source. | data/countries/AND/parties.json |
 | party | `and.concordia` Concord (Concòrdia) | Sub-ideology (centrist_liberal) not checked against a fetched source; Escalé's start as leader assumed from the founding date. | data/countries/AND/parties.json |
+
+### ARG — Argentina (24)
+
+| kind | record | what to check | file |
+|---|---|---|---|
+| chamber | `senate` Senate | seats_2000 is the composition after the 1998 indirect elections (Spanish Wikipedia): PJ 39; Alianza 25 (UCR 21, FREPASO 1, Partido Bloquista 1, Cruzada Renovadora 1, Partido Renovador de Salta 1); others 6 (Neuquén People's Movement 2, Fuegian People's Movement 2, Republican Force 1, Autonomist Party of Corrientes 1); 2 vacant. Check against the Senate's records for 1 January 2000. | data/countries/ARG/country.json |
+| party | `arg.frepaso` Front for a Country in Solidarity (FREPASO) | Carlos Álvarez is listed as leader without dates; the 1994-2001 span is the party's lifetime, check. | data/countries/ARG/parties.json |
+| party | `arg.apr` Action for the Republic (AR) | Cavallo's leadership dates are not given (founder from 1997 used); dissolution status unknown. | data/countries/ARG/parties.json |
+| party | `arg.pro` Republican Proposal (PRO) | Add dated PRO presidents before 2024 (Macri as founder; Patricia Bullrich before 2024). | data/countries/ARG/parties.json |
+| election | `deputies_2007` legislative 2007-10-28 | Composition is an estimate (seats won in this and the previous election); check against the Chamber's bloc composition after the election. | data/countries/ARG/elections.json |
+| election | `senate_2007` legislative_upper 2007-10-28 | Composition is an estimate (seats won in this and the two previous elections); check against the Senate's bloc composition. | data/countries/ARG/elections.json |
+| election | `deputies_2009` legislative 2009-06-28 | Composition is an estimate (seats won in this and the previous election); check against the Chamber's bloc composition after the election. | data/countries/ARG/elections.json |
+| election | `senate_2009` legislative_upper 2009-06-28 | Composition is an estimate (seats won in this and the two previous elections); check against the Senate's bloc composition. | data/countries/ARG/elections.json |
+| election | `deputies_2011` legislative 2011-10-23 | Composition is an estimate (seats won in this and the previous election); check against the Chamber's bloc composition after the election. | data/countries/ARG/elections.json |
+| election | `senate_2011` legislative_upper 2011-10-23 | Composition is an estimate (seats won in this and the two previous elections); check against the Senate's bloc composition. | data/countries/ARG/elections.json |
+| election | `deputies_2013` legislative 2013-10-27 | Composition is an estimate (seats won in this and the previous election); check against the Chamber's bloc composition after the election. | data/countries/ARG/elections.json |
+| election | `senate_2013` legislative_upper 2013-10-27 | Composition is an estimate (seats won in this and the two previous elections); check against the Senate's bloc composition. | data/countries/ARG/elections.json |
+| election | `deputies_2015` legislative 2015-10-25 | Composition is an estimate (seats won in this and the previous election); check against the Chamber's bloc composition after the election. | data/countries/ARG/elections.json |
+| election | `senate_2015` legislative_upper 2015-10-25 | Composition is an estimate (seats won in this and the two previous elections); check against the Senate's bloc composition. | data/countries/ARG/elections.json |
+| election | `deputies_2017` legislative 2017-10-22 | Composition is an estimate (seats won in this and the previous election); check against the Chamber's bloc composition after the election. | data/countries/ARG/elections.json |
+| election | `senate_2017` legislative_upper 2017-10-22 | Composition is an estimate (seats won in this and the two previous elections); check against the Senate's bloc composition. | data/countries/ARG/elections.json |
+| election | `deputies_2019` legislative 2019-10-27 | Composition is an estimate (seats won in this and the previous election); check against the Chamber's bloc composition after the election. | data/countries/ARG/elections.json |
+| election | `senate_2019` legislative_upper 2019-10-27 | Composition is an estimate (seats won in this and the two previous elections); check against the Senate's bloc composition. | data/countries/ARG/elections.json |
+| election | `deputies_2021` legislative 2021-11-14 | Composition is an estimate (seats won in this and the previous election); check against the Chamber's bloc composition after the election. | data/countries/ARG/elections.json |
+| election | `senate_2021` legislative_upper 2021-11-14 | Composition is an estimate (seats won in this and the two previous elections); check against the Senate's bloc composition. | data/countries/ARG/elections.json |
+| election | `deputies_2023` legislative 2023-10-22 | Composition is an estimate (seats won in this and the previous election); check against the Chamber's bloc composition after the election. | data/countries/ARG/elections.json |
+| election | `senate_2023` legislative_upper 2023-10-22 | Composition is an estimate (seats won in this and the two previous elections); check against the Senate's bloc composition. | data/countries/ARG/elections.json |
+| election | `deputies_2025` legislative 2025-10-26 | Composition is an estimate (seats won in this and the previous election); check against the Chamber's bloc composition after the election. | data/countries/ARG/elections.json |
+| election | `senate_2025` legislative_upper 2025-10-26 | Composition is an estimate (seats won in this and the two previous elections); check against the Senate's bloc composition. | data/countries/ARG/elections.json |
 
 ### ARM — Armenia (14)
 
@@ -107,7 +147,7 @@ Countries with no data yet (149): SMR, VAT, KAZ, KGZ, TJK, TKM, UZB, ABK, SOS, N
 | party | `aut.greens` The Greens – The Green Alternative (Greens) | Founding date is a placeholder for '1986' (no day given; Wikidata says 1987-02-13). The article timeline shows Felipe from 2015 overlapping Glawischnig; confirm Felipe's 2017 tenure. | data/countries/AUT/parties.json |
 | party | `aut.lif` Liberal Forum (LIF) | Check when Heide Schmidt stepped down as LIF leader. | data/countries/AUT/parties.json |
 
-### AZE — Azerbaijan (8)
+### AZE — Azerbaijan (7)
 
 | kind | record | what to check | file |
 |---|---|---|---|
@@ -116,7 +156,6 @@ Countries with no data yet (149): SMR, VAT, KAZ, KGZ, TJK, TKM, UZB, ABK, SOS, N
 | party | `aze.apfp` Azerbaijani Popular Front Party (APFP) | Check the date Karimli became chairman after Elchibey's death in 2000 (recorded as 2000). | data/countries/AZE/parties.json |
 | party | `aze.anip` National Independence Party (ANIP) | Check whether Mammadov's leadership was continuous since 1992. | data/countries/AZE/parties.json |
 | party | `aze.musavat` Musavat Party (Musavat) | Add the chairmanship of Arif Hajili with dates. The party was re-established at its III Congress in 1992. | data/countries/AZE/parties.json |
-| party | `aze.motherland` Motherland Party (Ana Vatan) | Add Fazail Agamali as a person with fetched dates and as leader 1990-2026. | data/countries/AZE/parties.json |
 | party | `aze.communist` Azerbaijan Communist Party (AKP) | Check its parliamentary status on 1 January 2000 and its leaders. | data/countries/AZE/parties.json |
 | party | `aze.adp` Azerbaijan Democratic Party (ADP) | Jalaloglu was elected leader at the first congress and was sole leader 1994-1996; check his later chairmanship (recorded from 1991). | data/countries/AZE/parties.json |
 
@@ -182,14 +221,12 @@ Countries with no data yet (149): SMR, VAT, KAZ, KGZ, TJK, TKM, UZB, ABK, SOS, N
 | party | `blr.pkb` Belarusian Left Party "A Just World" (Party of Communists of Belarus) (PKB) | Kalyakin is the infobox leader without dates; the start shown is the 2009 renaming. Confirm when he became leader (he headed the party's faction in 1996). | data/countries/BLR/parties.json |
 | party | `blr.bsdp_h` Belarusian Social Democratic Party (Hramada) (BSDP (H)) | No leader history with dates was found; the party's presidential candidates were Alyaksandr Kazulin (2006) and Mikola Statkevich (2010), and Tatsiana Karatkevich (2015) was a member. Add chairs. | data/countries/BLR/parties.json |
 
-### BRA — Brazil (12)
+### BRA — Brazil (10)
 
 | kind | record | what to check | file |
 |---|---|---|---|
 | chamber | `chamber_of_deputies` Chamber of Deputies | seats_2000 is the result of the October 1998 election, not the composition on 1 January 2000; Brazilian deputies changed party frequently in 1999. Others = Social Democratic Party (1987) 3, Party of National Mobilization 2, Social Labour Party 1. Check against the Chamber's 1999 bench records. | data/countries/BRA/country.json |
 | chamber | `federal_senate` Federal Senate | seats_2000 is the Senate composition after the October 1998 election (Election results table, 'Total' column), not a 1 January 2000 count; check for party switches during 1999. | data/countries/BRA/country.json |
-| person | `bra.jair_bolsonaro` Jair Bolsonaro (b. 1955) | Check his party on 1 January 2000 (believed to be the PPB) and the year he joined the PSL; add the documented Army career trait after checking his article. | data/countries/BRA/people.json |
-| person | `bra.hamilton_mourao` Hamilton Mourão (b. 1953) | Add his current party (believed to be Republicanos) with a sourced date, and the documented Army career trait. | data/countries/BRA/people.json |
 | person | `bra.paulo_maluf` Paulo Maluf (b. 1931) | Wikidata gives two birth dates (1931-09-03 and 1931-12-03); confirm the correct one. | data/countries/BRA/people.json |
 | party | `bra.mdb` Brazilian Democratic Movement (MDB) | Add the PMDB national president on 1 January 2000 (Jader Barbalho, start date not found) and the interim Maguito Vilela (May to September 2001). | data/countries/BRA/parties.json |
 | party | `bra.pdt` Democratic Labour Party (PDT) | Wikipedia names Brizola as founder and leader until his death but gives no start date for his presidency (1979, the founding year, is used); check. Check whether Lupi has led continuously since 2004. | data/countries/BRA/parties.json |
@@ -218,6 +255,24 @@ Countries with no data yet (149): SMR, VAT, KAZ, KGZ, TJK, TKM, UZB, ABK, SOS, N
 | election | `referendum_2010_03_01_1` referendum 2010-03-01 | The 2010 article lists the March topics (pension funds, animal protection, a constitutional amendment) without labelling the table rows or giving the day; confirm which question this row is (by its double majority it is a constitutional vote, likely the constitutional amendment) and the date. | data/countries/CHE/elections.json |
 | election | `referendum_2010_03_01_2` referendum 2010-03-01 | Row label inferred from the article's topic list (rejected with a cantonal vote, consistent with the animal-protection initiative); confirm the question and the date. | data/countries/CHE/elections.json |
 | election | `referendum_2010_03_01_3` referendum 2010-03-01 | Row label inferred from the article's topic list (no cantonal vote, consistent with a law); confirm the question and the date. | data/countries/CHE/elections.json |
+
+### CHL — Chile (13)
+
+| kind | record | what to check | file |
+|---|---|---|---|
+| chamber | `chamber_of_deputies` Chamber of Deputies | seats_2000 is the December 1997 result, not a count on 1 January 2000: independents = 6 elected on the Union for Chile list and 2 elected outside the main lists; others = Party of the South 1. Check party switches in 1998-1999 against the Chamber's records. | data/countries/CHL/country.json |
+| chamber | `senate` Senate | seats_2000 is the Senate composition after the December 1997 election (Total column): independents = 5 elected on the Union for Chile list; appointed = 9 designated senators and 1 former president (Augusto Pinochet, a senator for life since March 1998). Eduardo Frei Ruiz-Tagle joined as a senator for life on 11 March 2000. Check against the Senate's records for 1 January 2000. | data/countries/CHL/country.json |
+| party | `chl.pr` Radical Party of Chile (PR) | Add dated party presidents from 2000; confirm the social_democrat mapping. | data/countries/CHL/parties.json |
+| party | `chl.ucc` Union of the Centrist Center (UCC) | Add Francisco Javier Errázuriz as leader with sourced birth data; confirm the sub-ideology. | data/countries/CHL/parties.json |
+| party | `chl.ph` Humanist Party (PH) | Add dated party presidents (Tomás Hirsch led the party in the 2000s). | data/countries/CHL/parties.json |
+| party | `chl.evopoli` Political Evolution (Evópoli) | Add dated party presidents. | data/countries/CHL/parties.json |
+| party | `chl.rd` Democratic Revolution (RD) | Add dated party presidents. | data/countries/CHL/parties.json |
+| party | `chl.cs` Social Convergence (CS) | Add the dated party presidents and confirm when Boric stopped leading the party. | data/countries/CHL/parties.json |
+| party | `chl.fa` Broad Front (FA) | Add Constanza Martínez and Gael Yeomans (from 16 August 2026, after June 2026: verify against a news source) with birth data. | data/countries/CHL/parties.json |
+| party | `chl.republicanos` Republican Party (PRCh) | Add Rojo Edwards, Ruth Hurtado and Arturo Squella with birth data to complete the leader list. | data/countries/CHL/parties.json |
+| party | `chl.pdg` Party of the People (PDG) | Confirm the sub-ideology mapping; add dated party presidents. | data/countries/CHL/parties.json |
+| party | `chl.frvs` Social Green Regionalist Federation (FRVS) | Add dated party presidents. | data/countries/CHL/parties.json |
+| party | `chl.pl` Liberal Party (PL) | Add dated party presidents. | data/countries/CHL/parties.json |
 
 ### CHN — China (4)
 
@@ -371,6 +426,16 @@ Countries with no data yet (149): SMR, VAT, KAZ, KGZ, TJK, TKM, UZB, ABK, SOS, N
 | party | `hun.egyutt` Together (Együtt) | Leaders (including Gordon Bajnai and Péter Juhász) and dates are not recorded; check the party article. | data/countries/HUN/parties.json |
 | party | `hun.dk` Democratic Coalition (DK) | When Gyurcsány stepped down and Dobrev became leader is unknown here; Dobrev's entry is dated only to 2026, the year she resigned. Check the DK leadership history. | data/countries/HUN/parties.json |
 | party | `hun.momentum` Momentum Movement (Momentum) | Fekete-Győr's term dates and later leaders are not recorded; check the party's leadership history. | data/countries/HUN/parties.json |
+
+### IND — India (5)
+
+| kind | record | what to check | file |
+|---|---|---|---|
+| chamber | `rajya_sabha` Rajya Sabha (Council of States) | Fill in the party breakdown of the Rajya Sabha on 1 January 2000 (233 elected members) from a historical source; confirm the 245-seat total applied in 2000. | data/countries/IND/country.json |
+| person | `ind.atal_bihari_vajpayee` Atal Bihari Vajpayee (b. 1924) | Birth date: Wikidata 24 December 1924, Wikipedia list of prime ministers 25 December 1924. Confirm which is correct. | data/countries/IND/people.json |
+| person | `ind.yashwant_sinha` Yashwant Sinha (b. 1937) | The 2022 election infobox lists him under the AITC; confirm the date he joined the Trinamool Congress and add it to party_history. | data/countries/IND/people.json |
+| person | `ind.sunetra_pawar` Sunetra Pawar (b. 1963) | Confirm the exact date she became NCP national president (the fetched sources name her as successor but give no start date); available.from is set to Ajit Pawar's death date as a placeholder no later than her leadership. | data/countries/IND/people.json |
+| person | `ind.chirag_paswan` Chirag Paswan (b. 1982) | available.from uses the 2014 results date as his entry into national politics; confirm against his Lok Sabha membership dates. | data/countries/IND/people.json |
 
 ### IRL — Ireland (1)
 
@@ -706,6 +771,17 @@ Countries with no data yet (149): SMR, VAT, KAZ, KGZ, TJK, TKM, UZB, ABK, SOS, N
 | chamber | `federation_council` Federation Council | The source confirms 89 subjects x 2 members and ex officio membership before the 2000 reform, but not the occupancy on 1 January 2000. Check whether Chechnya's two seats were filled on that date; if not, change 'appointed' to 176 and add 'vacant': 2. | data/countries/RUS/country.json |
 | election | `duma_2003` legislative 2003-12-07 | The infobox gives LDPR 11.35% while LDPR's list votes (6,944,322) against United Russia's (22,776,294 = 37.56%) imply about 11.45%; 11.45% is stored. Check the official CEC figure. | data/countries/RUS/elections.json |
 | election | `duma_2026` legislative 2026-09-20 | Recent article flagged for copy-editing. Confirm the seat totals and list percentages against the final CEC protocol, and settle turnout (infobox 59.58% vs text 55.66%). | data/countries/RUS/elections.json |
+
+### SMR — San Marino (6)
+
+| kind | record | what to check | file |
+|---|---|---|---|
+| person | `smr.marino_riccardi` Marino Riccardi (b. 1958) | No party found for this person in the sources used; sub_ideology big_tent is a placeholder. | data/countries/SMR/people.json |
+| person | `smr.augusto_casali` Augusto Casali (b. 1949) | No Wikipedia article; birth and gender are from Wikidata only. His party in 2002 (before the New Socialist Party was founded in 2005) is not recorded. | data/countries/SMR/people.json |
+| person | `smr.fiorenzo_stolfi` Fiorenzo Stolfi (b. 1956) | Confirm he was a Sammarinese Socialist Party member before the 2005 merger into the PSD. | data/countries/SMR/people.json |
+| party | `smr.pdcs` Sammarinese Christian Democratic Party (PDCS) | Party secretaries before March 2017 (including the secretary on 1 January 2000) are missing; find a dated list (e.g. Italian Wikipedia or the party site). | data/countries/SMR/parties.json |
+| party | `smr.su` United Left (SU) | Check the founding date: the infobox's 2 August 2006 falls after the 4 June 2006 election in which United Left won 5 seats. | data/countries/SMR/parties.json |
+| party | `smr.ar` Reformist Alliance (AR) | Confirm the founding date (2024 is inferred from 'new' in the 2024 election infobox; the alliance existed by 17 April 2024) and the ideology (an alliance of socialist, liberal-conservative (We Sammarineses) and other groups; centrist_liberal is a placeholder). | data/countries/SMR/parties.json |
 
 ### SOM — Somalia (14)
 

@@ -1,0 +1,165 @@
+{
+  "tag": "BRA",
+  "name": { "en": "Brazil", "native": "Brasil", "official": { "en": "Federative Republic of Brazil", "native": "República Federativa do Brasil" } },
+  "adjective": "Brazilian",
+  "culture_primary": "brazilian",
+  "government": {
+    "type": "presidential",
+    "effective_executive": "bra.president",
+    "head_of_state_office": "bra.president",
+    "head_of_government_office": "bra.president",
+    "constitution": {
+      "term_limit_amendable": true,
+      "emergency_powers": true,
+      "referendum_required_for": []
+    },
+    "note": "Federal presidential republic under the 1988 Constitution. The President is head of state and of government, elected with the Vice President on a joint ticket by two-round popular vote for a four-year term; a 1997 constitutional amendment allows one consecutive re-election. The National Congress has two chambers: the Chamber of Deputies (513, open-list proportional representation by state) and the Federal Senate (81, three per state and Federal District, eight-year terms renewed alternately by one third and two thirds every four years). The Vice President succeeds on a vacancy. Impeachment is authorised by the Chamber of Deputies and tried by the Senate; the President is suspended while the Senate trial runs (Dilma Rousseff, 12 May to 31 August 2016, removed)."
+  },
+  "offices": [
+    {
+      "id": "bra.president",
+      "title": { "en": "President of the Federative Republic of Brazil", "native": "Presidente da República Federativa do Brasil" },
+      "role": "head_of_state_and_government",
+      "power_weight": 0.9,
+      "selection": "direct_election",
+      "term_years": 4,
+      "term_limit": { "max_terms": 2, "consecutive_only": true },
+      "succession": { "type": "vice", "acting_office": "bra.vice_president" },
+      "holders": [
+        { "person": "bra.fernando_henrique_cardoso", "from": "1995-01-01", "to": "2003-01-01" },
+        { "person": "bra.luiz_inacio_lula_da_silva", "from": "2003-01-01", "to": "2011-01-01" },
+        { "person": "bra.dilma_rousseff", "from": "2011-01-01", "to": "2016-08-31", "note": "Suspended from 12 May 2016 while the Senate tried the impeachment authorised by the Chamber of Deputies; removed from office by the Senate on 31 August 2016." },
+        { "person": "bra.michel_temer", "from": "2016-05-12", "to": "2016-08-31", "acting": true, "note": "Acting President as Vice President during Dilma Rousseff's suspension." },
+        { "person": "bra.michel_temer", "from": "2016-08-31", "to": "2019-01-01", "note": "Succeeded to the presidency on Rousseff's removal." },
+        { "person": "bra.jair_bolsonaro", "from": "2019-01-01", "to": "2023-01-01" },
+        { "person": "bra.luiz_inacio_lula_da_silva", "from": "2023-01-01" }
+      ],
+      "note": "Wikidata splits each re-elected president's tenure into two terms and ends Rousseff's first term on 31 December 2014; the Wikipedia list's continuous tenures and handover dates are used. Wikidata does not record Temer's acting presidency; the Wikipedia list gives it (12 May to 31 August 2016).",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/List_of_presidents_of_Brazil", "title": "Wikipedia: List of presidents of Brazil (tenures, acting presidency of Michel Temer)", "accessed": "2026-10-16" },
+        { "url": "https://www.wikidata.org/wiki/Q5176750", "title": "Wikidata: President of Brazil (position held by)", "accessed": "2026-10-16" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "bra.vice_president",
+      "title": { "en": "Vice President of the Federative Republic of Brazil", "native": "Vice-Presidente da República Federativa do Brasil" },
+      "role": "deputy",
+      "power_weight": 0.1,
+      "selection": "direct_election",
+      "term_years": 4,
+      "holders": [
+        { "person": "bra.marco_maciel", "from": "1995-01-01", "to": "2003-01-01" },
+        { "person": "bra.jose_alencar", "from": "2003-01-01", "to": "2011-01-01" },
+        { "person": "bra.michel_temer", "from": "2011-01-01", "to": "2016-08-31", "note": "Acting President from 12 May 2016; became President on 31 August 2016." },
+        { "person": null, "from": "2016-08-31", "to": "2019-01-01", "vacant_reason": "The Vice President succeeded to the presidency; the Wikipedia list records the vice presidency as vacant throughout Temer's presidency." },
+        { "person": "bra.hamilton_mourao", "from": "2019-01-01", "to": "2023-01-01" },
+        { "person": "bra.geraldo_alckmin", "from": "2023-01-01" }
+      ],
+      "note": "Elected on a joint ticket with the President. Wikidata ends each term on 31 December (and Temer's on 30 August 2016) and gives Alckmin a scheduled end of 31 December 2026; the Wikipedia list's handover dates are used and Alckmin is shown as in office.",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/List_of_presidents_of_Brazil", "title": "Wikipedia: List of presidents of Brazil (vice president column)", "accessed": "2026-10-16" },
+        { "url": "https://www.wikidata.org/wiki/Q2978540", "title": "Wikidata: Vice President of Brazil (position held by)", "accessed": "2026-10-16" }
+      ],
+      "confidence": "verified"
+    }
+  ],
+  "legislature": {
+    "name": { "en": "National Congress", "native": "Congresso Nacional" },
+    "chambers": [
+      {
+        "id": "chamber_of_deputies",
+        "name": { "en": "Chamber of Deputies", "native": "Câmara dos Deputados" },
+        "seats": 513,
+        "term_years": 4,
+        "elected": "direct",
+        "system": {
+          "type": "list_pr",
+          "formula": "dhondt",
+          "district_model": "admin1",
+          "note": "Open-list proportional representation in 27 multi-member constituencies (the 26 states and the Federal District) of 8 to 70 seats; integer quotients, with remaining seats by the D'Hondt method. Party federations (since 2022) run as a single list."
+        },
+        "seats_2000": {
+          "bra.dem": 105,
+          "bra.psdb": 99,
+          "bra.mdb": 83,
+          "bra.pp": 60,
+          "bra.pt": 58,
+          "bra.ptb": 31,
+          "bra.pdt": 25,
+          "bra.psb": 19,
+          "bra.pl_1985": 12,
+          "bra.pcdob": 7,
+          "bra.cidadania": 3,
+          "bra.psc": 3,
+          "bra.prona": 1,
+          "bra.psl": 1,
+          "others": 6
+        },
+        "confidence_chamber": false,
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/1998_Brazilian_general_election", "title": "Wikipedia: 1998 Brazilian general election (Chamber of Deputies results)", "accessed": "2026-10-16" },
+          { "url": "https://en.wikipedia.org/wiki/2026_Brazilian_general_election", "title": "Wikipedia: 2026 Brazilian general election (electoral system)", "accessed": "2026-10-16" }
+        ],
+        "confidence": "needs_review",
+        "review_note": "seats_2000 is the result of the October 1998 election, not the composition on 1 January 2000; Brazilian deputies changed party frequently in 1999. Others = Social Democratic Party (1987) 3, Party of National Mobilization 2, Social Labour Party 1. Check against the Chamber's 1999 bench records."
+      },
+      {
+        "id": "federal_senate",
+        "name": { "en": "Federal Senate", "native": "Senado Federal" },
+        "seats": 81,
+        "term_years": 8,
+        "elected": "direct",
+        "system": {
+          "type": "block",
+          "district_model": "admin1",
+          "note": "Three senators per state and the Federal District for eight-year terms. Elections every four years alternately renew one third (one seat per state, plurality) and two thirds (two seats per state, plurality block vote)."
+        },
+        "seats_2000": {
+          "bra.mdb": 26,
+          "bra.dem": 20,
+          "bra.psdb": 16,
+          "bra.pt": 7,
+          "bra.pdt": 4,
+          "bra.pp": 3,
+          "bra.psb": 3,
+          "bra.ptb": 1,
+          "bra.cidadania": 1
+        },
+        "confidence_chamber": false,
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/1998_Brazilian_general_election", "title": "Wikipedia: 1998 Brazilian general election (Senate results, total seats after the election)", "accessed": "2026-10-16" }
+        ],
+        "confidence": "needs_review",
+        "review_note": "seats_2000 is the Senate composition after the October 1998 election (Election results table, 'Total' column), not a 1 January 2000 count; check for party switches during 1999."
+      }
+    ]
+  },
+  "party_system": "multi_party",
+  "start_2000": {
+    "ruling_parties": ["bra.psdb", "bra.dem", "bra.mdb", "bra.pp", "bra.ptb"],
+    "ideology_support": {
+      "liberal_conservative": 0.33,
+      "third_way": 0.18,
+      "big_tent": 0.17,
+      "social_democrat": 0.17,
+      "democratic_socialist": 0.07,
+      "marxist_leninist": 0.02,
+      "classical_liberal": 0.03,
+      "national_conservative": 0.01,
+      "christian_conservative": 0.01,
+      "green": 0.01
+    },
+    "ideology_support_note": "Derived from the October 1998 Chamber of Deputies vote: PSDB 17.54% (third way), PFL 17.30%, PPB 11.35% and PTB 5.66% (liberal conservative, 34.3%), PMDB 15.17% (big tent), PT 13.19% (split evenly between social democrat and democratic socialist, reflecting its then socialist programme), PDT 5.67%, PSB 3.41% and PPS 1.31% (social democrat), PL 2.47% and PSL 0.27% (classical liberal), PCdoB 1.30% (Marxist-Leninist), PRONA 0.89% (national conservative), PSC 0.67% (Christian conservative), PV 0.44% (green); the remaining small parties are spread over big tent and the left. Cardoso was re-elected in the first round in 1998 with 53.06% to Lula's 31.71% and Ciro Gomes's 10.97%.",
+    "stability": 0.6,
+    "war_support": 0.1
+  },
+  "claims": [],
+  "source": [
+    { "url": "https://en.wikipedia.org/wiki/List_of_presidents_of_Brazil", "title": "Wikipedia: List of presidents of Brazil (re-election amendment of 1997)", "accessed": "2026-10-16" },
+    { "url": "https://en.wikipedia.org/wiki/1998_Brazilian_general_election", "title": "Wikipedia: 1998 Brazilian general election (results; Cardoso's coalition of PSDB, PFL, PTB, PPB, PSD and PSL)", "accessed": "2026-10-16" },
+    { "url": "https://en.wikipedia.org/wiki/Fernando_Henrique_Cardoso", "title": "Wikipedia: Fernando Henrique Cardoso (the PMDB joined his governing coalition after the 1994 election, the PPB in 1996)", "accessed": "2026-10-16" },
+    { "url": "https://en.wikipedia.org/wiki/2026_Brazilian_general_election", "title": "Wikipedia: 2026 Brazilian general election (electoral system)", "accessed": "2026-10-16" }
+  ],
+  "confidence": "verified"
+}

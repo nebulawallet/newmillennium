@@ -1,0 +1,1702 @@
+{
+  "rules": [
+    {
+      "kind": "presidential",
+      "office": "arg.president",
+      "every_years": 4,
+      "anchor": "2023-10-22",
+      "snap_possible": false,
+      "system": "two_round",
+      "note": "Ballotage: a candidate wins in the first round with more than 45% of the vote, or with 40% and a lead of more than 10 points over the runner-up; otherwise the top two meet in a run-off. The game's default two-round rule uses an absolute majority, so first-round wins with between 45% and 50% (2007, 2019) rely on the historical record. One consecutive re-election."
+    },
+    {
+      "kind": "legislative",
+      "chamber": "chamber_of_deputies",
+      "every_years": 2,
+      "anchor": "2025-10-26",
+      "snap_possible": false,
+      "note": "Half of the Chamber (127 or 130 seats) is renewed every two years for four-year terms."
+    },
+    {
+      "kind": "legislative_upper",
+      "chamber": "senate",
+      "every_years": 2,
+      "anchor": "2025-10-26",
+      "snap_possible": false,
+      "note": "One third of the Senate (eight provinces, 24 seats) is renewed every two years for six-year terms; all 72 seats were elected in 2001."
+    }
+  ],
+  "elections": [
+    {
+      "id": "deputies_2001",
+      "date": "2001-10-14",
+      "kind": "legislative",
+      "chamber": "chamber_of_deputies",
+      "historical": {
+        "party_results": [
+          {
+            "party": "arg.pj",
+            "share": 0.3848,
+            "seats": 117,
+            "seats_won": 66
+          },
+          {
+            "party": "arg.alianza",
+            "share": 0.2271,
+            "seats": 97,
+            "seats_won": 35
+          },
+          {
+            "party": "arg.cc_ari",
+            "share": 0.091,
+            "seats": 8,
+            "seats_won": 8
+          },
+          {
+            "party": "others",
+            "share": 0.2971,
+            "seats": 35,
+            "seats_won": 18
+          }
+        ],
+        "winner": "arg.pj",
+        "note": "seats = chamber composition after the election from the results table's Total column; seats_won = seats won (127 contested). Shares are the infobox percentages of the blocs' lists. Fronts are recorded under their leading party: Front for Victory, Citizen's Unity, Frente de Todos, Union for the Homeland and Homeland Force under arg.pj; Social and Civic Agreement, Union for Social Development and the Progressive, Civic and Social Front under arg.ucr; Cambiemos/Juntos por el Cambio and (2009) Federal Peronism-PRO Union under arg.pro; United for a New Alternative and 1País under arg.fr; Broad Progressive Front and Progresistas under arg.ps; 'Libertarians' (2021) under arg.lla.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2001_Argentine_legislative_election",
+            "title": "Wikipedia: 2001 Argentine legislative election (Chamber of Deputies infobox and results table)",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "senate_2001",
+      "date": "2001-10-14",
+      "kind": "legislative_upper",
+      "chamber": "senate",
+      "historical": {
+        "party_results": [
+          {
+            "party": "arg.pj",
+            "share": 0.3896,
+            "seats": 42,
+            "seats_won": 42
+          },
+          {
+            "party": "arg.alianza",
+            "share": 0.2345,
+            "seats": 26,
+            "seats_won": 26
+          },
+          {
+            "party": "others",
+            "share": 0.3759,
+            "seats": 4,
+            "seats_won": 4
+          }
+        ],
+        "winner": "arg.pj",
+        "note": "First direct Senate election; all 72 seats were renewed (infobox). Shares are the infobox percentages in the provinces that voted. Fronts are recorded under their leading party as for the Chamber of Deputies.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2001_Argentine_legislative_election",
+            "title": "Wikipedia: 2001 Argentine legislative election (Senate infobox and results table)",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "president_2003",
+      "date": "2003-04-27",
+      "kind": "presidential",
+      "office": "arg.president",
+      "rounds": 1,
+      "historical": {
+        "candidates": [
+          {
+            "person": "arg.carlos_menem",
+            "party": "arg.pj",
+            "share": 0.2445,
+            "votes": 4741200,
+            "round": 1
+          },
+          {
+            "person": "arg.nestor_kirchner",
+            "party": "arg.pj",
+            "share": 0.2225,
+            "votes": 4313131,
+            "round": 1
+          },
+          {
+            "person": "arg.ricardo_lopez_murphy",
+            "party": "arg.recrear",
+            "share": 0.1637,
+            "votes": 3173584,
+            "round": 1
+          },
+          {
+            "person": "arg.adolfo_rodriguez_saa",
+            "party": "arg.pj",
+            "share": 0.1411,
+            "votes": 2736091,
+            "round": 1
+          },
+          {
+            "person": "arg.elisa_carrio",
+            "party": "arg.cc_ari",
+            "share": 0.1405,
+            "votes": 2723207,
+            "round": 1
+          }
+        ],
+        "winner": "arg.nestor_kirchner",
+        "note": "Shares of valid votes computed from the results table (alliance totals). Menem (Front for Loyalty), Kirchner (Front for Victory) and Adolfo Rodríguez Saá (Front of the Popular Movement) were all Peronists running on separate fronts. No candidate reached 45%, but Menem withdrew before the run-off scheduled for May, so Kirchner became President. Others: Leopoldo Moreau (UCR) 2.34% and minor candidates.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2003_Argentine_general_election",
+            "title": "Wikipedia: 2003 Argentine general election (presidential results table and infobox)",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "deputies_2003",
+      "date": "2003-04-27",
+      "kind": "legislative",
+      "chamber": "chamber_of_deputies",
+      "historical": {
+        "party_results": [
+          {
+            "party": "arg.pj",
+            "share": 0.3974,
+            "seats": 132,
+            "seats_won": 65
+          },
+          {
+            "party": "arg.ucr",
+            "share": 0.1348,
+            "seats": 54,
+            "seats_won": 19
+          },
+          {
+            "party": "arg.cc_ari",
+            "share": 0.0974,
+            "seats": 17,
+            "seats_won": 11
+          },
+          {
+            "party": "arg.ps",
+            "share": 0.0292,
+            "seats": 4,
+            "seats_won": 3
+          },
+          {
+            "party": "arg.recrear",
+            "share": 0.0402,
+            "seats": 3,
+            "seats_won": 2
+          },
+          {
+            "party": "others",
+            "share": 0.301,
+            "seats": 46,
+            "seats_won": 30
+          },
+          {
+            "party": "vacant",
+            "seats": 1,
+            "seats_won": 0
+          }
+        ],
+        "winner": "arg.pj",
+        "note": "seats = chamber composition after the election from the results table's Total column; seats_won = seats won (130 contested). Shares are the infobox percentages of the blocs' lists. Fronts are recorded under their leading party: Front for Victory, Citizen's Unity, Frente de Todos, Union for the Homeland and Homeland Force under arg.pj; Social and Civic Agreement, Union for Social Development and the Progressive, Civic and Social Front under arg.ucr; Cambiemos/Juntos por el Cambio and (2009) Federal Peronism-PRO Union under arg.pro; United for a New Alternative and 1País under arg.fr; Broad Progressive Front and Progresistas under arg.ps; 'Libertarians' (2021) under arg.lla. Provinces voted on different dates between 27 April and 23 November 2003; the table's totals sum to 256, the remaining seat is recorded as vacant.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2003_Argentine_general_election",
+            "title": "Wikipedia: 2003 Argentine general election (Chamber of Deputies infobox and results table)",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "senate_2003",
+      "date": "2003-04-27",
+      "kind": "legislative_upper",
+      "chamber": "senate",
+      "historical": {
+        "party_results": [
+          {
+            "party": "arg.pj",
+            "share": 0.4051,
+            "seats": 40,
+            "seats_won": 12
+          },
+          {
+            "party": "arg.ucr",
+            "share": 0.156,
+            "seats": 22,
+            "seats_won": 5
+          },
+          {
+            "party": "arg.ps",
+            "share": 0.0942,
+            "seats": 1,
+            "seats_won": 1
+          },
+          {
+            "party": "others",
+            "share": 0.3447,
+            "seats": 9,
+            "seats_won": 6
+          }
+        ],
+        "winner": "arg.pj",
+        "note": "seats = Senate composition after the election from the results table's Total column; seats_won = seats won (24 contested). Shares are the infobox percentages in the provinces that voted. Fronts are recorded under their leading party as for the Chamber of Deputies.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2003_Argentine_general_election",
+            "title": "Wikipedia: 2003 Argentine general election (Senate infobox and results table)",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "deputies_2005",
+      "date": "2005-10-23",
+      "kind": "legislative",
+      "chamber": "chamber_of_deputies",
+      "historical": {
+        "party_results": [
+          {
+            "party": "arg.pj",
+            "share": 0.3946,
+            "seats": 110,
+            "seats_won": 63
+          },
+          {
+            "party": "arg.ucr",
+            "share": 0.1024,
+            "seats": 35,
+            "seats_won": 14
+          },
+          {
+            "party": "arg.cc_ari",
+            "share": 0.08,
+            "seats": 19,
+            "seats_won": 9
+          },
+          {
+            "party": "arg.pro",
+            "share": 0.0744,
+            "seats": 14,
+            "seats_won": 10
+          },
+          {
+            "party": "others",
+            "share": 0.3486,
+            "seats": 79,
+            "seats_won": 31
+          }
+        ],
+        "winner": "arg.pj",
+        "note": "seats = chamber composition after the election from the results table's Total column; seats_won = seats won (127 contested). Shares are the infobox percentages of the blocs' lists. Fronts are recorded under their leading party: Front for Victory, Citizen's Unity, Frente de Todos, Union for the Homeland and Homeland Force under arg.pj; Social and Civic Agreement, Union for Social Development and the Progressive, Civic and Social Front under arg.ucr; Cambiemos/Juntos por el Cambio and (2009) Federal Peronism-PRO Union under arg.pro; United for a New Alternative and 1País under arg.fr; Broad Progressive Front and Progresistas under arg.ps; 'Libertarians' (2021) under arg.lla.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2005_Argentine_legislative_election",
+            "title": "Wikipedia: 2005 Argentine legislative election (Chamber of Deputies infobox and results table)",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "senate_2005",
+      "date": "2005-10-23",
+      "kind": "legislative_upper",
+      "chamber": "senate",
+      "historical": {
+        "party_results": [
+          {
+            "party": "arg.pj",
+            "share": 0.477,
+            "seats": 41,
+            "seats_won": 16
+          },
+          {
+            "party": "arg.ucr",
+            "share": 0.091,
+            "seats": 18,
+            "seats_won": 3
+          },
+          {
+            "party": "others",
+            "share": 0.432,
+            "seats": 13,
+            "seats_won": 5
+          }
+        ],
+        "winner": "arg.pj",
+        "note": "seats = Senate composition after the election from the results table's Total column; seats_won = seats won (24 contested). Shares are the infobox percentages in the provinces that voted. Fronts are recorded under their leading party as for the Chamber of Deputies.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2005_Argentine_legislative_election",
+            "title": "Wikipedia: 2005 Argentine legislative election (Senate infobox and results table)",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "president_2007",
+      "date": "2007-10-28",
+      "kind": "presidential",
+      "office": "arg.president",
+      "rounds": 1,
+      "historical": {
+        "candidates": [
+          {
+            "person": "arg.cristina_fernandez_de_kirchner",
+            "party": "arg.pj",
+            "share": 0.4528,
+            "votes": 8652293,
+            "round": 1
+          },
+          {
+            "person": "arg.elisa_carrio",
+            "party": "arg.cc_ari",
+            "share": 0.2305,
+            "votes": 4403642,
+            "round": 1
+          },
+          {
+            "person": "arg.roberto_lavagna",
+            "share": 0.1691,
+            "votes": 3230236,
+            "round": 1
+          },
+          {
+            "person": "arg.alberto_rodriguez_saa",
+            "party": "arg.pj",
+            "share": 0.0764,
+            "votes": 1459174,
+            "round": 1
+          },
+          {
+            "person": "arg.ricardo_lopez_murphy",
+            "party": "arg.recrear",
+            "share": 0.0143,
+            "votes": 273406,
+            "round": 1
+          }
+        ],
+        "winner": "arg.cristina_fernandez_de_kirchner",
+        "note": "Won in the first round (over 45%). Front for Victory (recorded under arg.pj); Carrió for the Civic Coalition; Lavagna for Consensus for an Advanced Nation (UNA); Alberto Rodríguez Saá for FREJULI. Shares computed from the results table; the infobox gives Carrió 5,168,481 votes (27.05%), which conflicts with the table (4,403,642).",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2007_Argentine_general_election",
+            "title": "Wikipedia: 2007 Argentine general election (presidential results table and infobox)",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "deputies_2007",
+      "date": "2007-10-28",
+      "kind": "legislative",
+      "chamber": "chamber_of_deputies",
+      "historical": {
+        "party_results": [
+          {
+            "party": "arg.pj",
+            "share": 0.4122,
+            "seats": 147,
+            "seats_won": 84
+          },
+          {
+            "party": "arg.cc_ari",
+            "share": 0.1647,
+            "seats": 32,
+            "seats_won": 23
+          },
+          {
+            "party": "arg.pro",
+            "share": 0.0533,
+            "seats": 16,
+            "seats_won": 6
+          },
+          {
+            "party": "arg.ucr",
+            "seats": 14,
+            "seats_won": 0
+          },
+          {
+            "party": "others",
+            "share": 0.3698,
+            "seats": 48,
+            "seats_won": 17
+          }
+        ],
+        "winner": "arg.pj",
+        "note": "seats = estimated composition after the election, computed as the seats won by each bloc in this election plus the previous one (four-year terms, half renewed every two years); it ignores defections and bloc splits. seats_won = seats won (130 contested). Shares are the infobox percentages of the blocs' lists. Fronts are recorded under their leading party: Front for Victory, Citizen's Unity, Frente de Todos, Union for the Homeland and Homeland Force under arg.pj; Social and Civic Agreement, Union for Social Development and the Progressive, Civic and Social Front under arg.ucr; Cambiemos/Juntos por el Cambio and (2009) Federal Peronism-PRO Union under arg.pro; United for a New Alternative and 1País under arg.fr; Broad Progressive Front and Progresistas under arg.ps; 'Libertarians' (2021) under arg.lla.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2007_Argentine_general_election",
+            "title": "Wikipedia: 2007 Argentine general election (Chamber of Deputies infobox and results table)",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "needs_review",
+        "review_note": "Composition is an estimate (seats won in this and the previous election); check against the Chamber's bloc composition after the election."
+      }
+    },
+    {
+      "id": "senate_2007",
+      "date": "2007-10-28",
+      "kind": "legislative_upper",
+      "chamber": "senate",
+      "historical": {
+        "party_results": [
+          {
+            "party": "arg.pj",
+            "share": 0.4533,
+            "seats": 45,
+            "seats_won": 17
+          },
+          {
+            "party": "arg.ucr",
+            "seats": 8,
+            "seats_won": 0
+          },
+          {
+            "party": "arg.cc_ari",
+            "share": 0.1974,
+            "seats": 4,
+            "seats_won": 4
+          },
+          {
+            "party": "arg.ps",
+            "seats": 1,
+            "seats_won": 0
+          },
+          {
+            "party": "others",
+            "share": 0.3493,
+            "seats": 14,
+            "seats_won": 3
+          }
+        ],
+        "winner": "arg.pj",
+        "note": "seats = estimated composition after the election, computed as the seats won by each bloc in this and the two previous elections (six-year terms, one third renewed every two years); it ignores defections. seats_won = seats won (24 contested). Shares are the infobox percentages in the provinces that voted. Fronts are recorded under their leading party as for the Chamber of Deputies.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2007_Argentine_general_election",
+            "title": "Wikipedia: 2007 Argentine general election (Senate infobox and results table)",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "needs_review",
+        "review_note": "Composition is an estimate (seats won in this and the two previous elections); check against the Senate's bloc composition."
+      }
+    },
+    {
+      "id": "deputies_2009",
+      "date": "2009-06-28",
+      "kind": "legislative",
+      "chamber": "chamber_of_deputies",
+      "historical": {
+        "party_results": [
+          {
+            "party": "arg.pj",
+            "share": 0.2989,
+            "seats": 126,
+            "seats_won": 42
+          },
+          {
+            "party": "arg.ucr",
+            "share": 0.3021,
+            "seats": 42,
+            "seats_won": 42
+          },
+          {
+            "party": "arg.pro",
+            "share": 0.2726,
+            "seats": 40,
+            "seats_won": 34
+          },
+          {
+            "party": "arg.cc_ari",
+            "seats": 23,
+            "seats_won": 0
+          },
+          {
+            "party": "others",
+            "share": 0.1264,
+            "seats": 26,
+            "seats_won": 9
+          }
+        ],
+        "winner": "arg.ucr",
+        "note": "seats = estimated composition after the election, computed as the seats won by each bloc in this election plus the previous one (four-year terms, half renewed every two years); it ignores defections and bloc splits. seats_won = seats won (127 contested). Shares are the infobox percentages of the blocs' lists. Fronts are recorded under their leading party: Front for Victory, Citizen's Unity, Frente de Todos, Union for the Homeland and Homeland Force under arg.pj; Social and Civic Agreement, Union for Social Development and the Progressive, Civic and Social Front under arg.ucr; Cambiemos/Juntos por el Cambio and (2009) Federal Peronism-PRO Union under arg.pro; United for a New Alternative and 1País under arg.fr; Broad Progressive Front and Progresistas under arg.ps; 'Libertarians' (2021) under arg.lla. Social and Civic Agreement won more votes than the Front for Victory with the same 42 seats.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2009_Argentine_legislative_election",
+            "title": "Wikipedia: 2009 Argentine legislative election (Chamber of Deputies infobox and results table)",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "needs_review",
+        "review_note": "Composition is an estimate (seats won in this and the previous election); check against the Chamber's bloc composition after the election."
+      }
+    },
+    {
+      "id": "senate_2009",
+      "date": "2009-06-28",
+      "kind": "legislative_upper",
+      "chamber": "senate",
+      "historical": {
+        "party_results": [
+          {
+            "party": "arg.pj",
+            "share": 0.2001,
+            "seats": 39,
+            "seats_won": 6
+          },
+          {
+            "party": "arg.ucr",
+            "share": 0.4509,
+            "seats": 17,
+            "seats_won": 14
+          },
+          {
+            "party": "arg.pro",
+            "share": 0.2536,
+            "seats": 4,
+            "seats_won": 4
+          },
+          {
+            "party": "arg.cc_ari",
+            "seats": 4,
+            "seats_won": 0
+          },
+          {
+            "party": "others",
+            "share": 0.0954,
+            "seats": 8,
+            "seats_won": 0
+          }
+        ],
+        "winner": "arg.ucr",
+        "note": "seats = estimated composition after the election, computed as the seats won by each bloc in this and the two previous elections (six-year terms, one third renewed every two years); it ignores defections. seats_won = seats won (24 contested). Shares are the infobox percentages in the provinces that voted. Fronts are recorded under their leading party as for the Chamber of Deputies.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2009_Argentine_legislative_election",
+            "title": "Wikipedia: 2009 Argentine legislative election (Senate infobox and results table)",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "needs_review",
+        "review_note": "Composition is an estimate (seats won in this and the two previous elections); check against the Senate's bloc composition."
+      }
+    },
+    {
+      "id": "president_2011",
+      "date": "2011-10-23",
+      "kind": "presidential",
+      "office": "arg.president",
+      "rounds": 1,
+      "historical": {
+        "candidates": [
+          {
+            "person": "arg.cristina_fernandez_de_kirchner",
+            "party": "arg.pj",
+            "share": 0.5411,
+            "votes": 11865055,
+            "round": 1
+          },
+          {
+            "person": "arg.hermes_binner",
+            "party": "arg.ps",
+            "share": 0.1681,
+            "votes": 3684970,
+            "round": 1
+          },
+          {
+            "person": "arg.ricardo_alfonsin",
+            "party": "arg.ucr",
+            "share": 0.1114,
+            "votes": 2443016,
+            "round": 1
+          },
+          {
+            "person": "arg.alberto_rodriguez_saa",
+            "party": "arg.pj",
+            "share": 0.0796,
+            "votes": 1745354,
+            "round": 1
+          },
+          {
+            "person": "arg.eduardo_duhalde",
+            "party": "arg.pj",
+            "share": 0.0586,
+            "votes": 1285830,
+            "round": 1
+          }
+        ],
+        "winner": "arg.cristina_fernandez_de_kirchner",
+        "note": "Re-elected in the first round. Binner for the Broad Progressive Front, Alfonsín for the Union for Social Development, Alberto Rodríguez Saá for Federal Commitment, Duhalde for Federal Peronism. Others: Jorge Altamira (FIT) 2.30%, Elisa Carrió 1.82%.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2011_Argentine_general_election",
+            "title": "Wikipedia: 2011 Argentine general election (presidential results table and infobox)",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "deputies_2011",
+      "date": "2011-10-23",
+      "kind": "legislative",
+      "chamber": "chamber_of_deputies",
+      "historical": {
+        "party_results": [
+          {
+            "party": "arg.pj",
+            "share": 0.5222,
+            "seats": 127,
+            "seats_won": 85
+          },
+          {
+            "party": "arg.ucr",
+            "share": 0.1355,
+            "seats": 58,
+            "seats_won": 16
+          },
+          {
+            "party": "arg.pro",
+            "share": 0.0207,
+            "seats": 37,
+            "seats_won": 3
+          },
+          {
+            "party": "arg.ps",
+            "share": 0.135,
+            "seats": 14,
+            "seats_won": 14
+          },
+          {
+            "party": "arg.cc_ari",
+            "share": 0.03,
+            "seats": 1,
+            "seats_won": 1
+          },
+          {
+            "party": "others",
+            "share": 0.1566,
+            "seats": 20,
+            "seats_won": 11
+          }
+        ],
+        "winner": "arg.pj",
+        "note": "seats = estimated composition after the election, computed as the seats won by each bloc in this election plus the previous one (four-year terms, half renewed every two years); it ignores defections and bloc splits. seats_won = seats won (130 contested). Shares are the infobox percentages of the blocs' lists. Fronts are recorded under their leading party: Front for Victory, Citizen's Unity, Frente de Todos, Union for the Homeland and Homeland Force under arg.pj; Social and Civic Agreement, Union for Social Development and the Progressive, Civic and Social Front under arg.ucr; Cambiemos/Juntos por el Cambio and (2009) Federal Peronism-PRO Union under arg.pro; United for a New Alternative and 1País under arg.fr; Broad Progressive Front and Progresistas under arg.ps; 'Libertarians' (2021) under arg.lla.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2011_Argentine_general_election",
+            "title": "Wikipedia: 2011 Argentine general election (Chamber of Deputies infobox and results table)",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "needs_review",
+        "review_note": "Composition is an estimate (seats won in this and the previous election); check against the Chamber's bloc composition after the election."
+      }
+    },
+    {
+      "id": "senate_2011",
+      "date": "2011-10-23",
+      "kind": "legislative_upper",
+      "chamber": "senate",
+      "historical": {
+        "party_results": [
+          {
+            "party": "arg.pj",
+            "share": 0.5728,
+            "seats": 38,
+            "seats_won": 15
+          },
+          {
+            "party": "arg.ucr",
+            "share": 0.1196,
+            "seats": 17,
+            "seats_won": 3
+          },
+          {
+            "party": "arg.pro",
+            "seats": 4,
+            "seats_won": 0
+          },
+          {
+            "party": "arg.cc_ari",
+            "seats": 4,
+            "seats_won": 0
+          },
+          {
+            "party": "arg.ps",
+            "share": 0.1131,
+            "seats": 1,
+            "seats_won": 1
+          },
+          {
+            "party": "others",
+            "share": 0.1945,
+            "seats": 8,
+            "seats_won": 5
+          }
+        ],
+        "winner": "arg.pj",
+        "note": "seats = estimated composition after the election, computed as the seats won by each bloc in this and the two previous elections (six-year terms, one third renewed every two years); it ignores defections. seats_won = seats won (24 contested). Shares are the infobox percentages in the provinces that voted. Fronts are recorded under their leading party as for the Chamber of Deputies.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2011_Argentine_general_election",
+            "title": "Wikipedia: 2011 Argentine general election (Senate infobox and results table)",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "needs_review",
+        "review_note": "Composition is an estimate (seats won in this and the two previous elections); check against the Senate's bloc composition."
+      }
+    },
+    {
+      "id": "deputies_2013",
+      "date": "2013-10-27",
+      "kind": "legislative",
+      "chamber": "chamber_of_deputies",
+      "historical": {
+        "party_results": [
+          {
+            "party": "arg.pj",
+            "share": 0.3305,
+            "seats": 132,
+            "seats_won": 47
+          },
+          {
+            "party": "arg.ucr",
+            "share": 0.2421,
+            "seats": 52,
+            "seats_won": 36
+          },
+          {
+            "party": "arg.fr",
+            "share": 0.1756,
+            "seats": 16,
+            "seats_won": 16
+          },
+          {
+            "party": "arg.pro",
+            "share": 0.0754,
+            "seats": 14,
+            "seats_won": 11
+          },
+          {
+            "party": "arg.ps",
+            "seats": 14,
+            "seats_won": 0
+          },
+          {
+            "party": "arg.fit",
+            "share": 0.052,
+            "seats": 3,
+            "seats_won": 3
+          },
+          {
+            "party": "arg.cc_ari",
+            "seats": 1,
+            "seats_won": 0
+          },
+          {
+            "party": "others",
+            "share": 0.1244,
+            "seats": 25,
+            "seats_won": 14
+          }
+        ],
+        "winner": "arg.pj",
+        "note": "seats = estimated composition after the election, computed as the seats won by each bloc in this election plus the previous one (four-year terms, half renewed every two years); it ignores defections and bloc splits. seats_won = seats won (127 contested). Shares are the infobox percentages of the blocs' lists. Fronts are recorded under their leading party: Front for Victory, Citizen's Unity, Frente de Todos, Union for the Homeland and Homeland Force under arg.pj; Social and Civic Agreement, Union for Social Development and the Progressive, Civic and Social Front under arg.ucr; Cambiemos/Juntos por el Cambio and (2009) Federal Peronism-PRO Union under arg.pro; United for a New Alternative and 1País under arg.fr; Broad Progressive Front and Progresistas under arg.ps; 'Libertarians' (2021) under arg.lla.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2013_Argentine_legislative_election",
+            "title": "Wikipedia: 2013 Argentine legislative election (Chamber of Deputies infobox and results table)",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "needs_review",
+        "review_note": "Composition is an estimate (seats won in this and the previous election); check against the Chamber's bloc composition after the election."
+      }
+    },
+    {
+      "id": "senate_2013",
+      "date": "2013-10-27",
+      "kind": "legislative_upper",
+      "chamber": "senate",
+      "historical": {
+        "party_results": [
+          {
+            "party": "arg.pj",
+            "share": 0.3928,
+            "seats": 35,
+            "seats_won": 14
+          },
+          {
+            "party": "arg.ucr",
+            "share": 0.2328,
+            "seats": 20,
+            "seats_won": 3
+          },
+          {
+            "party": "arg.pro",
+            "share": 0.1838,
+            "seats": 7,
+            "seats_won": 3
+          },
+          {
+            "party": "arg.ps",
+            "seats": 1,
+            "seats_won": 0
+          },
+          {
+            "party": "others",
+            "share": 0.1906,
+            "seats": 9,
+            "seats_won": 4
+          }
+        ],
+        "winner": "arg.pj",
+        "note": "seats = estimated composition after the election, computed as the seats won by each bloc in this and the two previous elections (six-year terms, one third renewed every two years); it ignores defections. seats_won = seats won (24 contested). Shares are the infobox percentages in the provinces that voted. Fronts are recorded under their leading party as for the Chamber of Deputies.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2013_Argentine_legislative_election",
+            "title": "Wikipedia: 2013 Argentine legislative election (Senate infobox and results table)",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "needs_review",
+        "review_note": "Composition is an estimate (seats won in this and the two previous elections); check against the Senate's bloc composition."
+      }
+    },
+    {
+      "id": "president_2015",
+      "date": "2015-10-25",
+      "kind": "presidential",
+      "office": "arg.president",
+      "rounds": 2,
+      "historical": {
+        "candidates": [
+          {
+            "person": "arg.daniel_scioli",
+            "party": "arg.pj",
+            "share": 0.3708,
+            "votes": 9338490,
+            "round": 1
+          },
+          {
+            "person": "arg.mauricio_macri",
+            "party": "arg.pro",
+            "share": 0.3415,
+            "votes": 8601131,
+            "round": 1
+          },
+          {
+            "person": "arg.sergio_massa",
+            "party": "arg.fr",
+            "share": 0.2139,
+            "votes": 5386977,
+            "round": 1
+          },
+          {
+            "person": "arg.nicolas_del_cano",
+            "party": "arg.fit",
+            "share": 0.0323,
+            "votes": 812530,
+            "round": 1
+          },
+          {
+            "person": "arg.adolfo_rodriguez_saa",
+            "party": "arg.pj",
+            "share": 0.0164,
+            "votes": 412578,
+            "round": 1
+          },
+          {
+            "person": "arg.mauricio_macri",
+            "party": "arg.pro",
+            "share": 0.5134,
+            "votes": 12988349,
+            "round": 2
+          },
+          {
+            "person": "arg.daniel_scioli",
+            "party": "arg.pj",
+            "share": 0.4866,
+            "votes": 12309575,
+            "round": 2
+          }
+        ],
+        "winner": "arg.mauricio_macri",
+        "note": "Run-off on 22 November 2015, the first in Argentina. Scioli for the Front for Victory, Macri for Cambiemos, Massa for United for a New Alternative. Others: Margarita Stolbizer 2.51%.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2015_Argentine_general_election",
+            "title": "Wikipedia: 2015 Argentine general election (presidential results table and infobox)",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "deputies_2015",
+      "date": "2015-10-25",
+      "kind": "legislative",
+      "chamber": "chamber_of_deputies",
+      "historical": {
+        "party_results": [
+          {
+            "party": "arg.pj",
+            "share": 0.3739,
+            "seats": 107,
+            "seats_won": 60
+          },
+          {
+            "party": "arg.pro",
+            "share": 0.3511,
+            "seats": 58,
+            "seats_won": 47
+          },
+          {
+            "party": "arg.ucr",
+            "seats": 36,
+            "seats_won": 0
+          },
+          {
+            "party": "arg.fr",
+            "share": 0.1756,
+            "seats": 33,
+            "seats_won": 17
+          },
+          {
+            "party": "arg.fit",
+            "share": 0.0419,
+            "seats": 4,
+            "seats_won": 1
+          },
+          {
+            "party": "arg.ps",
+            "share": 0.0343,
+            "seats": 2,
+            "seats_won": 2
+          },
+          {
+            "party": "others",
+            "share": 0.0232,
+            "seats": 17,
+            "seats_won": 3
+          }
+        ],
+        "winner": "arg.pj",
+        "note": "seats = estimated composition after the election, computed as the seats won by each bloc in this election plus the previous one (four-year terms, half renewed every two years); it ignores defections and bloc splits. seats_won = seats won (130 contested). Shares are the infobox percentages of the blocs' lists. Fronts are recorded under their leading party: Front for Victory, Citizen's Unity, Frente de Todos, Union for the Homeland and Homeland Force under arg.pj; Social and Civic Agreement, Union for Social Development and the Progressive, Civic and Social Front under arg.ucr; Cambiemos/Juntos por el Cambio and (2009) Federal Peronism-PRO Union under arg.pro; United for a New Alternative and 1País under arg.fr; Broad Progressive Front and Progresistas under arg.ps; 'Libertarians' (2021) under arg.lla.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2015_Argentine_general_election",
+            "title": "Wikipedia: 2015 Argentine general election (Chamber of Deputies infobox and results table)",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "needs_review",
+        "review_note": "Composition is an estimate (seats won in this and the previous election); check against the Chamber's bloc composition after the election."
+      }
+    },
+    {
+      "id": "senate_2015",
+      "date": "2015-10-25",
+      "kind": "legislative_upper",
+      "chamber": "senate",
+      "historical": {
+        "party_results": [
+          {
+            "party": "arg.pj",
+            "share": 0.3272,
+            "seats": 42,
+            "seats_won": 13
+          },
+          {
+            "party": "arg.pro",
+            "share": 0.3881,
+            "seats": 12,
+            "seats_won": 9
+          },
+          {
+            "party": "arg.ucr",
+            "seats": 6,
+            "seats_won": 0
+          },
+          {
+            "party": "arg.fr",
+            "share": 0.1686,
+            "seats": 1,
+            "seats_won": 1
+          },
+          {
+            "party": "arg.ps",
+            "seats": 1,
+            "seats_won": 0
+          },
+          {
+            "party": "others",
+            "share": 0.1161,
+            "seats": 10,
+            "seats_won": 1
+          }
+        ],
+        "winner": "arg.pj",
+        "note": "seats = estimated composition after the election, computed as the seats won by each bloc in this and the two previous elections (six-year terms, one third renewed every two years); it ignores defections. seats_won = seats won (24 contested). Shares are the infobox percentages in the provinces that voted. Fronts are recorded under their leading party as for the Chamber of Deputies.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2015_Argentine_general_election",
+            "title": "Wikipedia: 2015 Argentine general election (Senate infobox and results table)",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "needs_review",
+        "review_note": "Composition is an estimate (seats won in this and the two previous elections); check against the Senate's bloc composition."
+      }
+    },
+    {
+      "id": "deputies_2017",
+      "date": "2017-10-22",
+      "kind": "legislative",
+      "chamber": "chamber_of_deputies",
+      "historical": {
+        "party_results": [
+          {
+            "party": "arg.pro",
+            "share": 0.4175,
+            "seats": 108,
+            "seats_won": 61
+          },
+          {
+            "party": "arg.pj",
+            "share": 0.2521,
+            "seats": 92,
+            "seats_won": 32
+          },
+          {
+            "party": "arg.fr",
+            "share": 0.0597,
+            "seats": 21,
+            "seats_won": 4
+          },
+          {
+            "party": "arg.fit",
+            "share": 0.047,
+            "seats": 3,
+            "seats_won": 2
+          },
+          {
+            "party": "arg.ps",
+            "share": 0.0174,
+            "seats": 3,
+            "seats_won": 1
+          },
+          {
+            "party": "others",
+            "share": 0.2063,
+            "seats": 30,
+            "seats_won": 27
+          }
+        ],
+        "winner": "arg.pro",
+        "note": "seats = estimated composition after the election, computed as the seats won by each bloc in this election plus the previous one (four-year terms, half renewed every two years); it ignores defections and bloc splits. seats_won = seats won (127 contested). Shares are the infobox percentages of the blocs' lists. Fronts are recorded under their leading party: Front for Victory, Citizen's Unity, Frente de Todos, Union for the Homeland and Homeland Force under arg.pj; Social and Civic Agreement, Union for Social Development and the Progressive, Civic and Social Front under arg.ucr; Cambiemos/Juntos por el Cambio and (2009) Federal Peronism-PRO Union under arg.pro; United for a New Alternative and 1País under arg.fr; Broad Progressive Front and Progresistas under arg.ps; 'Libertarians' (2021) under arg.lla.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2017_Argentine_legislative_election",
+            "title": "Wikipedia: 2017 Argentine legislative election (Chamber of Deputies infobox and results table)",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "needs_review",
+        "review_note": "Composition is an estimate (seats won in this and the previous election); check against the Chamber's bloc composition after the election."
+      }
+    },
+    {
+      "id": "senate_2017",
+      "date": "2017-10-22",
+      "kind": "legislative_upper",
+      "chamber": "senate",
+      "historical": {
+        "party_results": [
+          {
+            "party": "arg.pj",
+            "share": 0.3424,
+            "seats": 33,
+            "seats_won": 6
+          },
+          {
+            "party": "arg.pro",
+            "share": 0.4101,
+            "seats": 24,
+            "seats_won": 12
+          },
+          {
+            "party": "arg.ucr",
+            "seats": 3,
+            "seats_won": 0
+          },
+          {
+            "party": "arg.fr",
+            "seats": 1,
+            "seats_won": 0
+          },
+          {
+            "party": "others",
+            "share": 0.2475,
+            "seats": 11,
+            "seats_won": 6
+          }
+        ],
+        "winner": "arg.pro",
+        "note": "seats = estimated composition after the election, computed as the seats won by each bloc in this and the two previous elections (six-year terms, one third renewed every two years); it ignores defections. seats_won = seats won (24 contested). Shares are the infobox percentages in the provinces that voted. Fronts are recorded under their leading party as for the Chamber of Deputies.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2017_Argentine_legislative_election",
+            "title": "Wikipedia: 2017 Argentine legislative election (Senate infobox and results table)",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "needs_review",
+        "review_note": "Composition is an estimate (seats won in this and the two previous elections); check against the Senate's bloc composition."
+      }
+    },
+    {
+      "id": "president_2019",
+      "date": "2019-10-27",
+      "kind": "presidential",
+      "office": "arg.president",
+      "rounds": 1,
+      "historical": {
+        "candidates": [
+          {
+            "person": "arg.alberto_fernandez",
+            "party": "arg.pj",
+            "share": 0.4824,
+            "votes": 12946037,
+            "round": 1
+          },
+          {
+            "person": "arg.mauricio_macri",
+            "party": "arg.pro",
+            "share": 0.4028,
+            "votes": 10811586,
+            "round": 1
+          },
+          {
+            "person": "arg.roberto_lavagna",
+            "share": 0.0615,
+            "votes": 1649322,
+            "round": 1
+          },
+          {
+            "person": "arg.nicolas_del_cano",
+            "party": "arg.fit",
+            "share": 0.0216,
+            "votes": 579228,
+            "round": 1
+          }
+        ],
+        "winner": "arg.alberto_fernandez",
+        "note": "Won in the first round (over 45%). Fernández for Frente de Todos, Macri for Juntos por el Cambio, Lavagna for Federal Consensus. Others: Juan José Gómez Centurión 1.71%, José Luis Espert 1.47%.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2019_Argentine_general_election",
+            "title": "Wikipedia: 2019 Argentine general election (presidential results table and infobox)",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "deputies_2019",
+      "date": "2019-10-27",
+      "kind": "legislative",
+      "chamber": "chamber_of_deputies",
+      "historical": {
+        "party_results": [
+          {
+            "party": "arg.pro",
+            "share": 0.4036,
+            "seats": 117,
+            "seats_won": 56
+          },
+          {
+            "party": "arg.pj",
+            "share": 0.4526,
+            "seats": 96,
+            "seats_won": 64
+          },
+          {
+            "party": "arg.fr",
+            "seats": 4,
+            "seats_won": 0
+          },
+          {
+            "party": "arg.fit",
+            "seats": 2,
+            "seats_won": 0
+          },
+          {
+            "party": "arg.ps",
+            "seats": 1,
+            "seats_won": 0
+          },
+          {
+            "party": "others",
+            "share": 0.1438,
+            "seats": 37,
+            "seats_won": 10
+          }
+        ],
+        "winner": "arg.pj",
+        "note": "seats = estimated composition after the election, computed as the seats won by each bloc in this election plus the previous one (four-year terms, half renewed every two years); it ignores defections and bloc splits. seats_won = seats won (130 contested). Shares are the infobox percentages of the blocs' lists. Fronts are recorded under their leading party: Front for Victory, Citizen's Unity, Frente de Todos, Union for the Homeland and Homeland Force under arg.pj; Social and Civic Agreement, Union for Social Development and the Progressive, Civic and Social Front under arg.ucr; Cambiemos/Juntos por el Cambio and (2009) Federal Peronism-PRO Union under arg.pro; United for a New Alternative and 1País under arg.fr; Broad Progressive Front and Progresistas under arg.ps; 'Libertarians' (2021) under arg.lla.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2019_Argentine_general_election",
+            "title": "Wikipedia: 2019 Argentine general election (Chamber of Deputies infobox and results table)",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "needs_review",
+        "review_note": "Composition is an estimate (seats won in this and the previous election); check against the Chamber's bloc composition after the election."
+      }
+    },
+    {
+      "id": "senate_2019",
+      "date": "2019-10-27",
+      "kind": "legislative_upper",
+      "chamber": "senate",
+      "historical": {
+        "party_results": [
+          {
+            "party": "arg.pj",
+            "share": 0.4016,
+            "seats": 32,
+            "seats_won": 13
+          },
+          {
+            "party": "arg.pro",
+            "share": 0.3922,
+            "seats": 29,
+            "seats_won": 8
+          },
+          {
+            "party": "arg.fr",
+            "seats": 1,
+            "seats_won": 0
+          },
+          {
+            "party": "others",
+            "share": 0.2062,
+            "seats": 10,
+            "seats_won": 3
+          }
+        ],
+        "winner": "arg.pj",
+        "note": "seats = estimated composition after the election, computed as the seats won by each bloc in this and the two previous elections (six-year terms, one third renewed every two years); it ignores defections. seats_won = seats won (24 contested). Shares are the infobox percentages in the provinces that voted. Fronts are recorded under their leading party as for the Chamber of Deputies.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2019_Argentine_general_election",
+            "title": "Wikipedia: 2019 Argentine general election (Senate infobox and results table)",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "needs_review",
+        "review_note": "Composition is an estimate (seats won in this and the two previous elections); check against the Senate's bloc composition."
+      }
+    },
+    {
+      "id": "deputies_2021",
+      "date": "2021-11-14",
+      "kind": "legislative",
+      "chamber": "chamber_of_deputies",
+      "historical": {
+        "party_results": [
+          {
+            "party": "arg.pro",
+            "share": 0.4213,
+            "seats": 117,
+            "seats_won": 61
+          },
+          {
+            "party": "arg.pj",
+            "share": 0.3417,
+            "seats": 114,
+            "seats_won": 50
+          },
+          {
+            "party": "arg.lla",
+            "share": 0.0723,
+            "seats": 4,
+            "seats_won": 4
+          },
+          {
+            "party": "arg.fit",
+            "share": 0.0553,
+            "seats": 4,
+            "seats_won": 4
+          },
+          {
+            "party": "others",
+            "share": 0.1094,
+            "seats": 18,
+            "seats_won": 8
+          }
+        ],
+        "winner": "arg.pro",
+        "note": "seats = estimated composition after the election, computed as the seats won by each bloc in this election plus the previous one (four-year terms, half renewed every two years); it ignores defections and bloc splits. seats_won = seats won (127 contested). Shares are the infobox percentages of the blocs' lists. Fronts are recorded under their leading party: Front for Victory, Citizen's Unity, Frente de Todos, Union for the Homeland and Homeland Force under arg.pj; Social and Civic Agreement, Union for Social Development and the Progressive, Civic and Social Front under arg.ucr; Cambiemos/Juntos por el Cambio and (2009) Federal Peronism-PRO Union under arg.pro; United for a New Alternative and 1País under arg.fr; Broad Progressive Front and Progresistas under arg.ps; 'Libertarians' (2021) under arg.lla.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2021_Argentine_legislative_election",
+            "title": "Wikipedia: 2021 Argentine legislative election (Chamber of Deputies infobox and results table)",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "needs_review",
+        "review_note": "Composition is an estimate (seats won in this and the previous election); check against the Chamber's bloc composition after the election."
+      }
+    },
+    {
+      "id": "senate_2021",
+      "date": "2021-11-14",
+      "kind": "legislative_upper",
+      "chamber": "senate",
+      "historical": {
+        "party_results": [
+          {
+            "party": "arg.pro",
+            "share": 0.4688,
+            "seats": 34,
+            "seats_won": 14
+          },
+          {
+            "party": "arg.pj",
+            "share": 0.2812,
+            "seats": 28,
+            "seats_won": 9
+          },
+          {
+            "party": "others",
+            "share": 0.25,
+            "seats": 10,
+            "seats_won": 1
+          }
+        ],
+        "winner": "arg.pro",
+        "note": "seats = estimated composition after the election, computed as the seats won by each bloc in this and the two previous elections (six-year terms, one third renewed every two years); it ignores defections. seats_won = seats won (24 contested). Shares are the infobox percentages in the provinces that voted. Fronts are recorded under their leading party as for the Chamber of Deputies.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2021_Argentine_legislative_election",
+            "title": "Wikipedia: 2021 Argentine legislative election (Senate infobox and results table)",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "needs_review",
+        "review_note": "Composition is an estimate (seats won in this and the two previous elections); check against the Senate's bloc composition."
+      }
+    },
+    {
+      "id": "president_2023",
+      "date": "2023-10-22",
+      "kind": "presidential",
+      "office": "arg.president",
+      "rounds": 2,
+      "historical": {
+        "candidates": [
+          {
+            "person": "arg.sergio_massa",
+            "party": "arg.pj",
+            "share": 0.3678,
+            "votes": 9853492,
+            "round": 1
+          },
+          {
+            "person": "arg.javier_milei",
+            "party": "arg.lla",
+            "share": 0.2999,
+            "votes": 8034990,
+            "round": 1
+          },
+          {
+            "person": "arg.patricia_bullrich",
+            "party": "arg.pro",
+            "share": 0.2381,
+            "votes": 6379023,
+            "round": 1
+          },
+          {
+            "person": "arg.juan_schiaretti",
+            "share": 0.0673,
+            "votes": 1802068,
+            "round": 1
+          },
+          {
+            "person": "arg.myriam_bregman",
+            "party": "arg.fit",
+            "share": 0.027,
+            "votes": 722061,
+            "round": 1
+          },
+          {
+            "person": "arg.javier_milei",
+            "party": "arg.lla",
+            "share": 0.5565,
+            "votes": 14554560,
+            "round": 2
+          },
+          {
+            "person": "arg.sergio_massa",
+            "party": "arg.pj",
+            "share": 0.4435,
+            "votes": 11598720,
+            "round": 2
+          }
+        ],
+        "winner": "arg.javier_milei",
+        "note": "Run-off on 19 November 2023. Massa (Renewal Front) ran for Union for the Homeland, recorded under arg.pj; Bullrich for Juntos por el Cambio; Schiaretti for Hacemos por Nuestro País.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2023_Argentine_general_election",
+            "title": "Wikipedia: 2023 Argentine general election (presidential results table and infobox)",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "deputies_2023",
+      "date": "2023-10-22",
+      "kind": "legislative",
+      "chamber": "chamber_of_deputies",
+      "historical": {
+        "party_results": [
+          {
+            "party": "arg.pj",
+            "share": 0.3854,
+            "seats": 108,
+            "seats_won": 58
+          },
+          {
+            "party": "arg.pro",
+            "share": 0.266,
+            "seats": 92,
+            "seats_won": 31
+          },
+          {
+            "party": "arg.lla",
+            "share": 0.2651,
+            "seats": 39,
+            "seats_won": 35
+          },
+          {
+            "party": "arg.fit",
+            "share": 0.0331,
+            "seats": 5,
+            "seats_won": 1
+          },
+          {
+            "party": "others",
+            "share": 0.0504,
+            "seats": 13,
+            "seats_won": 5
+          }
+        ],
+        "winner": "arg.pj",
+        "note": "seats = estimated composition after the election, computed as the seats won by each bloc in this election plus the previous one (four-year terms, half renewed every two years); it ignores defections and bloc splits. seats_won = seats won (130 contested). Shares are the infobox percentages of the blocs' lists. Fronts are recorded under their leading party: Front for Victory, Citizen's Unity, Frente de Todos, Union for the Homeland and Homeland Force under arg.pj; Social and Civic Agreement, Union for Social Development and the Progressive, Civic and Social Front under arg.ucr; Cambiemos/Juntos por el Cambio and (2009) Federal Peronism-PRO Union under arg.pro; United for a New Alternative and 1País under arg.fr; Broad Progressive Front and Progresistas under arg.ps; 'Libertarians' (2021) under arg.lla.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2023_Argentine_general_election",
+            "title": "Wikipedia: 2023 Argentine general election (Chamber of Deputies infobox and results table)",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "needs_review",
+        "review_note": "Composition is an estimate (seats won in this and the previous election); check against the Chamber's bloc composition after the election."
+      }
+    },
+    {
+      "id": "senate_2023",
+      "date": "2023-10-22",
+      "kind": "legislative_upper",
+      "chamber": "senate",
+      "historical": {
+        "party_results": [
+          {
+            "party": "arg.pj",
+            "share": 0.4366,
+            "seats": 35,
+            "seats_won": 13
+          },
+          {
+            "party": "arg.pro",
+            "share": 0.2562,
+            "seats": 24,
+            "seats_won": 2
+          },
+          {
+            "party": "arg.lla",
+            "share": 0.2593,
+            "seats": 7,
+            "seats_won": 7
+          },
+          {
+            "party": "others",
+            "share": 0.0479,
+            "seats": 6,
+            "seats_won": 2
+          }
+        ],
+        "winner": "arg.pj",
+        "note": "seats = estimated composition after the election, computed as the seats won by each bloc in this and the two previous elections (six-year terms, one third renewed every two years); it ignores defections. seats_won = seats won (24 contested). Shares are the infobox percentages in the provinces that voted. Fronts are recorded under their leading party as for the Chamber of Deputies.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2023_Argentine_general_election",
+            "title": "Wikipedia: 2023 Argentine general election (Senate infobox and results table)",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "needs_review",
+        "review_note": "Composition is an estimate (seats won in this and the two previous elections); check against the Senate's bloc composition."
+      }
+    },
+    {
+      "id": "deputies_2025",
+      "date": "2025-10-26",
+      "kind": "legislative",
+      "chamber": "chamber_of_deputies",
+      "historical": {
+        "party_results": [
+          {
+            "party": "arg.pj",
+            "share": 0.337,
+            "seats": 105,
+            "seats_won": 47
+          },
+          {
+            "party": "arg.lla",
+            "share": 0.4066,
+            "seats": 99,
+            "seats_won": 64
+          },
+          {
+            "party": "arg.pro",
+            "seats": 31,
+            "seats_won": 0
+          },
+          {
+            "party": "arg.fit",
+            "share": 0.039,
+            "seats": 4,
+            "seats_won": 3
+          },
+          {
+            "party": "others",
+            "share": 0.2174,
+            "seats": 18,
+            "seats_won": 13
+          }
+        ],
+        "winner": "arg.lla",
+        "note": "seats = estimated composition after the election, computed as the seats won by each bloc in this election plus the previous one (four-year terms, half renewed every two years); it ignores defections and bloc splits. seats_won = seats won (127 contested). Shares are the infobox percentages of the blocs' lists. Fronts are recorded under their leading party: Front for Victory, Citizen's Unity, Frente de Todos, Union for the Homeland and Homeland Force under arg.pj; Social and Civic Agreement, Union for Social Development and the Progressive, Civic and Social Front under arg.ucr; Cambiemos/Juntos por el Cambio and (2009) Federal Peronism-PRO Union under arg.pro; United for a New Alternative and 1País under arg.fr; Broad Progressive Front and Progresistas under arg.ps; 'Libertarians' (2021) under arg.lla.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2025_Argentine_legislative_election",
+            "title": "Wikipedia: 2025 Argentine legislative election (Chamber of Deputies infobox and results table)",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "needs_review",
+        "review_note": "Composition is an estimate (seats won in this and the previous election); check against the Chamber's bloc composition after the election."
+      }
+    },
+    {
+      "id": "senate_2025",
+      "date": "2025-10-26",
+      "kind": "legislative_upper",
+      "chamber": "senate",
+      "historical": {
+        "party_results": [
+          {
+            "party": "arg.pj",
+            "share": 0.3628,
+            "seats": 31,
+            "seats_won": 9
+          },
+          {
+            "party": "arg.lla",
+            "share": 0.4201,
+            "seats": 20,
+            "seats_won": 13
+          },
+          {
+            "party": "arg.pro",
+            "seats": 16,
+            "seats_won": 0
+          },
+          {
+            "party": "others",
+            "share": 0.2171,
+            "seats": 5,
+            "seats_won": 2
+          }
+        ],
+        "winner": "arg.lla",
+        "note": "seats = estimated composition after the election, computed as the seats won by each bloc in this and the two previous elections (six-year terms, one third renewed every two years); it ignores defections. seats_won = seats won (24 contested). Shares are the infobox percentages in the provinces that voted. Fronts are recorded under their leading party as for the Chamber of Deputies.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2025_Argentine_legislative_election",
+            "title": "Wikipedia: 2025 Argentine legislative election (Senate infobox and results table)",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "needs_review",
+        "review_note": "Composition is an estimate (seats won in this and the two previous elections); check against the Senate's bloc composition."
+      }
+    }
+  ],
+  "source": [
+    {
+      "url": "https://en.wikipedia.org/wiki/2023_Argentine_general_election",
+      "title": "Wikipedia: 2023 Argentine general election (electoral system)",
+      "accessed": "2026-10-16"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/List_of_heads_of_state_of_Argentina",
+      "title": "Wikipedia: List of heads of state of Argentina",
+      "accessed": "2026-10-16"
+    }
+  ],
+  "confidence": "verified"
+}

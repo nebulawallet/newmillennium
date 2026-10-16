@@ -1,0 +1,334 @@
+{
+  "tag": "ARG",
+  "name": {
+    "en": "Argentina",
+    "native": "Argentina",
+    "official": {
+      "en": "Argentine Republic",
+      "native": "República Argentina"
+    }
+  },
+  "adjective": "Argentine",
+  "culture_primary": "argentine",
+  "government": {
+    "type": "presidential",
+    "effective_executive": "arg.president",
+    "head_of_state_office": "arg.president",
+    "head_of_government_office": "arg.president",
+    "constitution": {
+      "term_limit_amendable": true,
+      "emergency_powers": true,
+      "referendum_required_for": []
+    },
+    "note": "Federal presidential republic under the Constitution as amended in 1994. The President is head of state and of government, elected with the Vice President for four years with one consecutive re-election (1994 amendment). Presidential elections use 'ballotage': a candidate wins in the first round with more than 45% of the vote, or with 40% and a lead of more than 10 percentage points; otherwise the top two meet in a run-off. When both the presidency and the vice presidency are vacant, the Provisional President of the Senate, then the President of the Chamber of Deputies, exercise the executive until Congress elects a president (December 2001). The National Congress has a Chamber of Deputies (257, half renewed every two years) and a Senate (72, one third renewed every two years; indirectly elected by provincial legislatures until the first direct election in 2001)."
+  },
+  "offices": [
+    {
+      "id": "arg.president",
+      "title": {
+        "en": "President of the Argentine Nation",
+        "native": "Presidente de la Nación Argentina"
+      },
+      "role": "head_of_state_and_government",
+      "power_weight": 0.9,
+      "selection": "direct_election",
+      "term_years": 4,
+      "term_limit": {
+        "max_terms": 2,
+        "consecutive_only": true
+      },
+      "succession": {
+        "type": "vice",
+        "acting_office": "arg.vice_president"
+      },
+      "holders": [
+        {
+          "person": "arg.fernando_de_la_rua",
+          "from": "1999-12-10",
+          "to": "2001-12-21",
+          "note": "Resigned during the December 2001 crisis. The vice presidency had been vacant since October 2000."
+        },
+        {
+          "person": "arg.ramon_puerta",
+          "from": "2001-12-21",
+          "to": "2001-12-23",
+          "acting": true,
+          "note": "Provisional President of the Senate exercising the executive power."
+        },
+        {
+          "person": "arg.adolfo_rodriguez_saa",
+          "from": "2001-12-23",
+          "to": "2001-12-30",
+          "note": "Elected by Congress for three months with instructions to call elections; resigned on 30 December 2001."
+        },
+        {
+          "person": "arg.eduardo_camano",
+          "from": "2001-12-30",
+          "to": "2002-01-02",
+          "acting": true,
+          "note": "President of the Chamber of Deputies exercising the executive power."
+        },
+        {
+          "person": "arg.eduardo_duhalde",
+          "from": "2002-01-02",
+          "to": "2003-05-25",
+          "note": "Elected by Congress to complete De la Rúa's term; called early elections for 27 April 2003."
+        },
+        {
+          "person": "arg.nestor_kirchner",
+          "from": "2003-05-25",
+          "to": "2007-12-10"
+        },
+        {
+          "person": "arg.cristina_fernandez_de_kirchner",
+          "from": "2007-12-10",
+          "to": "2015-12-10",
+          "note": "By judicial ruling her mandate ended at midnight on 9 December 2015."
+        },
+        {
+          "person": "arg.federico_pinedo",
+          "from": "2015-12-10",
+          "to": "2015-12-10",
+          "acting": true,
+          "note": "Provisional President of the Senate exercising the executive power from 00:00 until Mauricio Macri was sworn in at 11:45 on 10 December 2015."
+        },
+        {
+          "person": "arg.mauricio_macri",
+          "from": "2015-12-10",
+          "to": "2019-12-10"
+        },
+        {
+          "person": "arg.alberto_fernandez",
+          "from": "2019-12-10",
+          "to": "2023-12-10"
+        },
+        {
+          "person": "arg.javier_milei",
+          "from": "2023-12-10"
+        }
+      ],
+      "note": "Wikidata starts Camaño's tenure on 31 December 2001 (Wikipedia: 30 December), ends Cristina Fernández de Kirchner's on 9 December 2015 and omits Federico Pinedo; the Wikipedia list is used.",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/List_of_heads_of_state_of_Argentina",
+          "title": "Wikipedia: List of heads of state of Argentina (tenures, acting presidents, vice presidents)",
+          "accessed": "2026-10-16"
+        },
+        {
+          "url": "https://www.wikidata.org/wiki/Q12969145",
+          "title": "Wikidata: President of Argentina (position held by)",
+          "accessed": "2026-10-16"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "arg.vice_president",
+      "title": {
+        "en": "Vice President of the Argentine Nation",
+        "native": "Vicepresidente de la Nación Argentina"
+      },
+      "role": "deputy",
+      "power_weight": 0.1,
+      "selection": "direct_election",
+      "term_years": 4,
+      "holders": [
+        {
+          "person": "arg.carlos_alvarez",
+          "from": "1999-12-10",
+          "to": "2000-10-06",
+          "note": "Resigned on 6 October 2000."
+        },
+        {
+          "person": null,
+          "from": "2000-10-06",
+          "to": "2003-05-25",
+          "vacant_reason": "Vacant after Carlos Álvarez resigned and through the presidencies of December 2001 and of Eduardo Duhalde (Wikipedia list)."
+        },
+        {
+          "person": "arg.daniel_scioli",
+          "from": "2003-05-25",
+          "to": "2007-12-10"
+        },
+        {
+          "person": "arg.julio_cobos",
+          "from": "2007-12-10",
+          "to": "2011-12-10"
+        },
+        {
+          "person": "arg.amado_boudou",
+          "from": "2011-12-10",
+          "to": "2015-12-10",
+          "note": "Wikidata ends his term on 9 December 2015."
+        },
+        {
+          "person": "arg.gabriela_michetti",
+          "from": "2015-12-10",
+          "to": "2019-12-10"
+        },
+        {
+          "person": "arg.cristina_fernandez_de_kirchner",
+          "from": "2019-12-10",
+          "to": "2023-12-10"
+        },
+        {
+          "person": "arg.victoria_villarruel",
+          "from": "2023-12-10"
+        }
+      ],
+      "note": "The Vice President presides over the Senate and succeeds on a presidential vacancy.",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/List_of_heads_of_state_of_Argentina",
+          "title": "Wikipedia: List of heads of state of Argentina (tenures, acting presidents, vice presidents)",
+          "accessed": "2026-10-16"
+        },
+        {
+          "url": "https://www.wikidata.org/wiki/Q2914766",
+          "title": "Wikidata: Vice President of Argentina (position held by)",
+          "accessed": "2026-10-16"
+        }
+      ],
+      "confidence": "verified"
+    }
+  ],
+  "legislature": {
+    "name": {
+      "en": "Argentine National Congress",
+      "native": "Congreso de la Nación Argentina"
+    },
+    "chambers": [
+      {
+        "id": "chamber_of_deputies",
+        "name": {
+          "en": "Chamber of Deputies",
+          "native": "Cámara de Diputados de la Nación"
+        },
+        "seats": 257,
+        "term_years": 4,
+        "elected": "direct",
+        "system": {
+          "type": "list_pr",
+          "formula": "dhondt",
+          "threshold": 0.03,
+          "district_model": "admin1",
+          "note": "Proportional representation in 24 multi-member constituencies (the 23 provinces and the City of Buenos Aires), D'Hondt method with a 3% threshold. Half of the chamber (127 or 130 seats) is renewed every two years for four-year terms. Since 2011 candidacies are settled in open, simultaneous and mandatory primaries (PASO)."
+        },
+        "seats_2000": {
+          "arg.alianza": 131,
+          "arg.pj": 103,
+          "arg.apr": 12,
+          "others": 11
+        },
+        "confidence_chamber": false,
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/1999_Argentine_general_election",
+            "title": "Wikipedia: 1999 Argentine general election (Chamber of Deputies results table, Total column)",
+            "accessed": "2026-10-16"
+          },
+          {
+            "url": "https://en.wikipedia.org/wiki/2023_Argentine_general_election",
+            "title": "Wikipedia: 2023 Argentine general election (electoral system)",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      },
+      {
+        "id": "senate",
+        "name": {
+          "en": "Senate",
+          "native": "Honorable Senado de la Nación"
+        },
+        "seats": 72,
+        "term_years": 6,
+        "elected": "direct",
+        "system": {
+          "type": "mixed_other",
+          "district_model": "admin1",
+          "note": "Three senators per province and the City of Buenos Aires: the most-voted list wins two seats and the runner-up one. One third renewed every two years for six-year terms. Senators were chosen by the provincial legislatures until the first direct election in 2001, when all 72 seats were renewed."
+        },
+        "seats_2000": {
+          "arg.pj": 39,
+          "arg.alianza": 25,
+          "others": 6,
+          "vacant": 2
+        },
+        "confidence_chamber": false,
+        "source": [
+          {
+            "url": "https://es.wikipedia.org/wiki/Elecciones_al_Senado_de_Argentina_de_1998",
+            "title": "Spanish Wikipedia: Elecciones al Senado de Argentina de 1998 (composition after the 1998 indirect elections)",
+            "accessed": "2026-10-16"
+          },
+          {
+            "url": "https://en.wikipedia.org/wiki/Argentine_Senate",
+            "title": "Wikipedia: Argentine Senate (indirect election before 2001)",
+            "accessed": "2026-10-16"
+          },
+          {
+            "url": "https://en.wikipedia.org/wiki/2023_Argentine_general_election",
+            "title": "Wikipedia: 2023 Argentine general election (electoral system)",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "needs_review",
+        "review_note": "seats_2000 is the composition after the 1998 indirect elections (Spanish Wikipedia): PJ 39; Alianza 25 (UCR 21, FREPASO 1, Partido Bloquista 1, Cruzada Renovadora 1, Partido Renovador de Salta 1); others 6 (Neuquén People's Movement 2, Fuegian People's Movement 2, Republican Force 1, Autonomist Party of Corrientes 1); 2 vacant. Check against the Senate's records for 1 January 2000."
+      }
+    ]
+  },
+  "party_system": "multi_party",
+  "start_2000": {
+    "ruling_parties": [
+      "arg.alianza",
+      "arg.ucr",
+      "arg.frepaso"
+    ],
+    "ideology_support": {
+      "big_tent": 0.37,
+      "social_liberal": 0.26,
+      "social_democrat": 0.2,
+      "liberal_conservative": 0.09,
+      "regionalist": 0.06,
+      "marxist_leninist": 0.02
+    },
+    "ideology_support_note": "Derived from the October 1999 Chamber of Deputies vote: Alianza 45.89% (split as an estimate about 55/45 between the UCR, counted as social liberal, and FREPASO, social democrat), Justicialist Party 38.63% (big tent: Peronism spans left and right; under Menem it governed with market reforms), Action for the Republic 8.12% plus the Union of the Democratic Centre (liberal conservative), provincial parties such as the Neuquén People's Movement, Republican Force and the Democratic Party of Mendoza (regionalist), and the Trotskyist and communist left (United Left, Workers' Party; mapped to marxist_leninist). In the 1999 presidential election De la Rúa won 48.37%, Duhalde 38.28% and Cavallo 10.22%.",
+    "stability": 0.5,
+    "war_support": 0.1
+  },
+  "claims": [
+    {
+      "tag": "GBR",
+      "note": "Argentina claims the Falkland Islands (Islas Malvinas), South Georgia and the South Sandwich Islands, administered by the United Kingdom; the claim is written into the transitional provisions of the Constitution as amended in 1994 (Wikipedia: Falkland Islands sovereignty dispute)."
+    }
+  ],
+  "source": [
+    {
+      "url": "https://en.wikipedia.org/wiki/List_of_heads_of_state_of_Argentina",
+      "title": "Wikipedia: List of heads of state of Argentina (tenures, acting presidents, vice presidents)",
+      "accessed": "2026-10-16"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/1999_Argentine_general_election",
+      "title": "Wikipedia: 1999 Argentine general election",
+      "accessed": "2026-10-16"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/2023_Argentine_general_election",
+      "title": "Wikipedia: 2023 Argentine general election (electoral system and ballotage rule)",
+      "accessed": "2026-10-16"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Argentine_Senate",
+      "title": "Wikipedia: Argentine Senate",
+      "accessed": "2026-10-16"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Falkland_Islands_sovereignty_dispute",
+      "title": "Wikipedia: Falkland Islands sovereignty dispute",
+      "accessed": "2026-10-16"
+    }
+  ],
+  "confidence": "verified"
+}
