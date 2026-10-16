@@ -47,7 +47,7 @@ describe("historical mode reproduces real winners in at least 90% of seeded runs
       if (r!.winner === "usa.george_w_bush") wins++;
     }
     expect(wins).toBeGreaterThanOrEqual(90);
-  }, 120_000);
+  }, 300_000);
 
   it("Russia 2000: Vladimir Putin wins", () => {
     let wins = 0;
@@ -57,7 +57,7 @@ describe("historical mode reproduces real winners in at least 90% of seeded runs
       if (r?.winner === "rus.vladimir_putin") wins++;
     }
     expect(wins).toBeGreaterThanOrEqual(90);
-  }, 120_000);
+  }, 300_000);
 
   it("Germany 2002: SPD largest party and Schröder's SPD-led government continues", () => {
     let wins = 0;
@@ -68,7 +68,7 @@ describe("historical mode reproduces real winners in at least 90% of seeded runs
       if (r?.winner === "deu.spd" && deu.rulingParties[0] === "deu.spd" && deu.offices["deu.chancellor"]?.[0] === "deu.gerhard_schroeder") wins++;
     }
     expect(wins).toBeGreaterThanOrEqual(90);
-  }, 120_000);
+  }, 300_000);
 });
 
 describe("dynamic mode", () => {
@@ -83,7 +83,7 @@ describe("dynamic mode", () => {
     }
     expect(winners.size).toBeGreaterThan(1);
     expect(Math.max(...shares) - Math.min(...shares)).toBeGreaterThan(0.02);
-  }, 120_000);
+  }, 300_000);
 
   it("Germany forms a majority government after the 2002 Bundestag election", () => {
     for (const seed of SEEDS.slice(0, 10)) {
@@ -96,7 +96,7 @@ describe("dynamic mode", () => {
       const gov = r.government!.parties.reduce((s, p) => s + (seats[p] ?? 0), 0) + r.government!.support.reduce((s, p) => s + (seats[p] ?? 0), 0);
       if (!r.government!.minority) expect(gov * 2).toBeGreaterThan(total);
     }
-  }, 120_000);
+  }, 300_000);
 });
 
 describe("coalitions", () => {

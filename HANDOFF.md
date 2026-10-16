@@ -38,7 +38,7 @@ New Millennium is a grand strategy game in the style of Hearts of Iron IV, set f
 | 10 | Combat, supply, war and peace | **Done** (see "Phase 10 notes") |
 | 11 | Diplomacy | **Done** (see "Phase 11 notes") |
 | 12 | AI | **Done** (see "Phase 12 notes") |
-| 13 | Content and polish | **In progress.** National focus trees for 13 major countries (USA, RUS, DEU, GBR, FRA, CHN, JPN, ITA, ESP, TUR, IRN, POL, ISR); every other country uses the shared generic tree. Historical wars and world events of 2001-2026 (`data/events/wars_and_world.json`). |
+| 13 | Content and polish | **In progress.** National focus trees for 13 major countries (USA, RUS, DEU, GBR, FRA, CHN, JPN, ITA, ESP, TUR, IRN, POL, ISR); every other country uses the shared generic tree. Historical wars and world events of 2001-2026 (`data/events/wars_and_world.json`); 424 dated world events in `data/events/history_*.json` (pipeline: `scripts/dev/gen-events-history.py` candidates -> `scripts/research/verify-events.ts` -> build). |
 
 ## Where things stand right now
 
