@@ -28,13 +28,13 @@ See the prompts used in the pilot (git history, early October 2026) for the form
 
 ## Done (Pass A)
 
-DEU (Pass A and Pass B), USA, RUS, GBR, CHN, IRN, SOM, SWE, FRA, AND, ESP, NLD, JPN, NOR, POL, TUR, ISR, PSE, ITA, MCO, CZE, HUN, SVK, SVN, HRV, MKD, ALB, BIH, YUG, MNE, KOS, PRT, BEL, LUX, ROU, BGR, GRC, CYP, NCY, DNK, FIN, ISL, KOR, TWN, PRK, MNG, UKR, BLR, MDA, PMR, IRL, AUT, CHE, LIE, EST, LVA, LTU, BRA, ARG, CHL
+DEU (Pass A and Pass B), USA, RUS, GBR, CHN, IRN, SOM, SWE, FRA, AND, ESP, NLD, JPN, NOR, POL, TUR, ISR, PSE, ITA, MCO, CZE, HUN, SVK, SVN, HRV, MKD, ALB, BIH, YUG, MNE, KOS, PRT, BEL, LUX, ROU, BGR, GRC, CYP, NCY, DNK, FIN, ISL, KOR, TWN, PRK, MNG, UKR, BLR, MDA, PMR, IRL, AUT, CHE, LIE, EST, LVA, LTU, BRA, ARG, CHL, MLT, SMR, VAT
 
 ## Running (relaunched 15 October 2026, evening)
 
 | Agent | Tags |
 |---|---|
-| 10 | SMR VAT MLT |
+| 22 | EGY JOR LBN SYR |
 | 23 | IRQ KUR SAU YEM |
 | 35 | AFG AFN NPL BTN LKA TEL MDV |
 | 34 | IND PAK BGD |
@@ -51,7 +51,6 @@ DEU (Pass A and Pass B), USA, RUS, GBR, CHN, IRN, SOM, SWE, FRA, AND, ESP, NLD, 
 | 19 | GTM SLV HND NIC CRI PAN BLZ | Belize is a realm |
 | 20 | DOM HTI JAM TTO BHS BRB | Jamaica, the Bahamas and Barbados were realms in 2000 (Barbados until 2021) |
 | 21 | ATG DMA GRD KNA LCA VCT | Realms except Dominica |
-| 22 | EGY JOR LBN SYR | Hafez al-Assad's death on 2000-06-10 (record neutrally) |
 | 24 | KWT BHR QAT ARE OMN | `no_parties` where accurate, with a reason |
 | 25 | DZA MAR ESH TUN LBY MRT | Libya: Gaddafi held no formal office |
 | 26 | NGA GHA CIV SEN GMB GNB CPV | Côte d'Ivoire: Guéï junta after the December 1999 coup |
