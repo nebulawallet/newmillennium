@@ -28,14 +28,14 @@ See the prompts used in the pilot (git history, early October 2026) for the form
 
 ## Done (Pass A)
 
-DEU (Pass A and Pass B), USA, RUS, GBR, CHN, IRN, SOM, SWE, FRA, AND, ESP, NLD, JPN, NOR, POL, TUR, ISR, PSE, ITA, MCO, CZE, HUN, SVK, SVN, HRV, MKD, ALB, BIH, YUG, MNE, KOS
+DEU (Pass A and Pass B), USA, RUS, GBR, CHN, IRN, SOM, SWE, FRA, AND, ESP, NLD, JPN, NOR, POL, TUR, ISR, PSE, ITA, MCO, CZE, HUN, SVK, SVN, HRV, MKD, ALB, BIH, YUG, MNE, KOS, PRT, BEL, LUX
 
 ## Running (relaunched 15 October 2026, evening)
 
 | Agent | Tags |
 |---|---|
 | 2c | DNK FIN ISL (continues partial DNK, FIN) |
-| 3c | PRT BEL LUX (continues partial PRT, BEL) |
+| 12 | EST LVA LTU |
 | 4c | KOR TWN PRK MNG (continues partial KOR, TWN) |
 | 7b | IRL AUT CHE LIE (continues partial IRL) |
 | 8b | ROU BGR GRC CYP NCY |
@@ -49,7 +49,6 @@ DEU (Pass A and Pass B), USA, RUS, GBR, CHN, IRN, SOM, SWE, FRA, AND, ESP, NLD, 
 | 3 | ESP NLD PRT | Spain's 2000 election was in March, so seats come from the 1996 result |
 | 4 | JPN KOR TWN PRK MNG | Taiwan's 2000 election; North Korea's nominal vs effective head of state |
 | 10 | SMR VAT MLT | San Marino's Captains Regent rotate every 6 months |
-| 12 | EST LVA LTU | |
 | 13 | GEO ABK SOS ARM AZE NKR ICH | De facto entities and insurgents |
 | 14 | KAZ KGZ TJK TKM UZB | |
 | 15 | CAN MEX CUB | Canada is a realm: monarch office `ex_officio_of: gbr.monarch` plus a Governor-General |
