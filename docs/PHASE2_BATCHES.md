@@ -28,7 +28,7 @@ See the prompts used in the pilot (git history, early October 2026) for the form
 
 ## Done (Pass A)
 
-DEU (Pass A and Pass B), USA, RUS, GBR, CHN, IRN, SOM, SWE, FRA, AND, ESP, NLD, JPN, NOR, POL, TUR, ISR, PSE, ITA, MCO, CZE, HUN, SVK, SVN, HRV, MKD, ALB, BIH, YUG, MNE, KOS, PRT, BEL, LUX, ROU, BGR, GRC, CYP, NCY, DNK, FIN, ISL, KOR, TWN, PRK, MNG, UKR, BLR, MDA, PMR, IRL, AUT, CHE, LIE, EST, LVA, LTU, BRA, ARG, CHL, MLT, SMR, VAT
+DEU (Pass A and Pass B), USA, RUS, GBR, CHN, IRN, SOM, SWE, FRA, AND, ESP, NLD, JPN, NOR, POL, TUR, ISR, PSE, ITA, MCO, CZE, HUN, SVK, SVN, HRV, MKD, ALB, BIH, YUG, MNE, KOS, PRT, BEL, LUX, ROU, BGR, GRC, CYP, NCY, DNK, FIN, ISL, KOR, TWN, PRK, MNG, UKR, BLR, MDA, PMR, IRL, AUT, CHE, LIE, EST, LVA, LTU, BRA, ARG, CHL, MLT, SMR, VAT, GEO, ARM, AZE, ABK, SOS, NKR, ICH
 
 ## Running (relaunched 15 October 2026, evening)
 
@@ -38,14 +38,13 @@ DEU (Pass A and Pass B), USA, RUS, GBR, CHN, IRN, SOM, SWE, FRA, AND, ESP, NLD, 
 | 23 | IRQ KUR SAU YEM |
 | 35 | AFG AFN NPL BTN LKA TEL MDV |
 | 34 | IND PAK BGD |
-| 13 | GEO ABK SOS ARM AZE NKR ICH |
+| 14 | KAZ KGZ TJK TKM UZB |
 | 15 | CAN MEX CUB |
 
 ## Todo batches
 
 | # | Tags | Notes |
 |---|---|---|
-| 14 | KAZ KGZ TJK TKM UZB | |
 | 17 | URY PRY BOL PER ECU | Ecuador's January 2000 coup: Mahuad replaced by Noboa |
 | 18 | COL FAR VEN GUY SUR | |
 | 19 | GTM SLV HND NIC CRI PAN BLZ | Belize is a realm |
