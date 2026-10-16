@@ -1,0 +1,15 @@
+{
+  "note": "Influence and approval are gameplay starting values for 1 January 2000 (Independence Party-Progressive Party coalition under Davíð Oddsson), not measured data. Influence reflects institutional weight: a powerful fishing industry and employers' organisations, strong trade unions, organised farmers close to the Progressive Party, a small and influential press, and no armed forces of its own (defence through NATO membership).",
+  "interest_groups": [
+    { "type": "military", "influence": 0.02, "approval": 55, "note": "No standing army; the Coast Guard is the only armed service." },
+    { "type": "security_services", "influence": 0.04, "approval": 55 },
+    { "type": "business", "influence": 0.55, "approval": 62, "note": "Includes the fishing industry, central to the economy." },
+    { "type": "labour_unions", "influence": 0.45, "approval": 45 },
+    { "type": "religious_establishment", "influence": 0.12, "approval": 55, "note": "Evangelical Lutheran national church." },
+    { "type": "rural", "influence": 0.3, "approval": 58, "note": "Farmers and coastal communities; the Progressive Party is in government." },
+    { "type": "urban_middle_class", "influence": 0.45, "approval": 55 },
+    { "type": "minorities", "influence": 0.03, "approval": 50 },
+    { "type": "youth_students", "influence": 0.15, "approval": 50 },
+    { "type": "media", "influence": 0.35, "approval": 50 }
+  ]
+}

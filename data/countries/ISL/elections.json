@@ -1,0 +1,1039 @@
+{
+  "rules": [
+    {
+      "kind": "legislative",
+      "chamber": "althing",
+      "every_years": 4,
+      "anchor": "2024-11-30",
+      "snap_possible": true,
+      "note": "The Althing is elected for four years; the President may dissolve it on the Prime Minister's request, and early elections were held in 2009, 2016, 2017 and 2024."
+    },
+    {
+      "kind": "presidential",
+      "office": "isl.president",
+      "every_years": 4,
+      "anchor": "2024-06-01",
+      "snap_possible": false,
+      "system": "plurality",
+      "note": "Single-round plurality vote for a four-year term with no term limit; if only one candidate is nominated, that candidate is elected without a vote."
+    }
+  ],
+  "elections": [
+    {
+      "id": "president_2000",
+      "date": "2000-08-01",
+      "kind": "presidential",
+      "office": "isl.president",
+      "rounds": 1,
+      "historical": {
+        "candidates": [
+          {
+            "person": "isl.olafur_ragnar_grimsson",
+            "round": 1
+          }
+        ],
+        "winner": "isl.olafur_ragnar_grimsson",
+        "note": "Uncontested: the incumbent was the only candidate, so no vote was held and he began his second term on 1 August 2000. The date recorded is the start of the term, not a polling day.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2000_Icelandic_presidential_election",
+            "title": "Wikipedia: 2000 Icelandic presidential election",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "needs_review",
+        "review_note": "Wikipedia gives no date for the 2000 election (only that it was scheduled and uncontested). Check the date on which Ólafur Ragnar Grímsson was declared elected; 1 August 2000 (start of term) is used as a placeholder."
+      }
+    },
+    {
+      "id": "althing_2003",
+      "date": "2003-05-10",
+      "kind": "legislative",
+      "chamber": "althing",
+      "historical": {
+        "candidates": [
+          {
+            "person": "isl.david_oddsson",
+            "party": "isl.d",
+            "round": 1
+          },
+          {
+            "person": "isl.ossur_skarphedinsson",
+            "party": "isl.s",
+            "round": 1
+          },
+          {
+            "person": "isl.halldor_asgrimsson",
+            "party": "isl.b",
+            "round": 1
+          }
+        ],
+        "party_results": [
+          {
+            "party": "isl.d",
+            "share": 0.3368,
+            "seats": 22
+          },
+          {
+            "party": "isl.s",
+            "share": 0.3095,
+            "seats": 20
+          },
+          {
+            "party": "isl.b",
+            "share": 0.1773,
+            "seats": 12
+          },
+          {
+            "party": "isl.v",
+            "share": 0.088,
+            "seats": 5
+          },
+          {
+            "party": "isl.f",
+            "share": 0.0738,
+            "seats": 4
+          }
+        ],
+        "winner": "isl.d",
+        "turnout": 0.8774,
+        "note": "Shares are of valid votes (computed from the vote counts in the results table). Össur Skarphéðinsson is the party leader in the infobox; the article describes former Reykjavík mayor Ingibjörg Sólrún Gísladóttir as the Alliance's leading figure hoping to become prime minister. The Independence-Progressive coalition continued under Davíð Oddsson; Halldór Ásgrímsson succeeded him as Prime Minister on 15 September 2004.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2003_Icelandic_parliamentary_election",
+            "title": "Wikipedia: 2003 Icelandic parliamentary election",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "president_2004",
+      "date": "2004-06-26",
+      "kind": "presidential",
+      "office": "isl.president",
+      "rounds": 1,
+      "historical": {
+        "candidates": [
+          {
+            "person": "isl.olafur_ragnar_grimsson",
+            "round": 1,
+            "share": 0.856,
+            "votes": 90662
+          }
+        ],
+        "winner": "isl.olafur_ragnar_grimsson",
+        "turnout": 0.6292,
+        "note": "Shares of valid votes from the results table. The runner-up, Baldur Ágústsson (13,250 votes, 12.5%), is not modelled because no birth date or year is recorded for him in Wikipedia or Wikidata; Ástþór Magnússon won 1.9%. 28,461 invalid or blank ballots were cast.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2004_Icelandic_presidential_election",
+            "title": "Wikipedia: 2004 Icelandic presidential election",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "althing_2007",
+      "date": "2007-05-12",
+      "kind": "legislative",
+      "chamber": "althing",
+      "historical": {
+        "candidates": [
+          {
+            "person": "isl.geir_haarde",
+            "party": "isl.d",
+            "round": 1
+          },
+          {
+            "person": "isl.ingibjorg_solrun_gisladottir",
+            "party": "isl.s",
+            "round": 1
+          },
+          {
+            "person": "isl.steingrimur_j_sigfusson",
+            "party": "isl.v",
+            "round": 1
+          },
+          {
+            "person": "isl.jon_sigurdsson",
+            "party": "isl.b",
+            "round": 1
+          }
+        ],
+        "party_results": [
+          {
+            "party": "isl.d",
+            "share": 0.3664,
+            "seats": 25
+          },
+          {
+            "party": "isl.s",
+            "share": 0.2676,
+            "seats": 18
+          },
+          {
+            "party": "isl.v",
+            "share": 0.1435,
+            "seats": 9
+          },
+          {
+            "party": "isl.b",
+            "share": 0.1172,
+            "seats": 7
+          },
+          {
+            "party": "isl.f",
+            "share": 0.0726,
+            "seats": 4
+          }
+        ],
+        "winner": "isl.d",
+        "turnout": 0.8362,
+        "note": "Shares are of valid votes (computed from the vote counts in the results table). Icelandic Movement - Living Country (3.3%) won no seats. Geir Haarde formed an Independence-Social Democratic Alliance coalition.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2007_Icelandic_parliamentary_election",
+            "title": "Wikipedia: 2007 Icelandic parliamentary election",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "president_2008",
+      "date": "2008-06-28",
+      "kind": "presidential",
+      "office": "isl.president",
+      "rounds": 1,
+      "historical": {
+        "candidates": [
+          {
+            "person": "isl.olafur_ragnar_grimsson",
+            "round": 1
+          }
+        ],
+        "winner": "isl.olafur_ragnar_grimsson",
+        "note": "Uncontested: no challenger filed by the 24 May 2008 deadline, so the planned 28 June vote was not needed; Ólafur Ragnar was sworn in for a fourth term on 1 August 2008.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2008_Icelandic_presidential_election",
+            "title": "Wikipedia: 2008 Icelandic presidential election",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "althing_2009",
+      "date": "2009-04-25",
+      "kind": "legislative",
+      "chamber": "althing",
+      "snap": true,
+      "historical": {
+        "candidates": [
+          {
+            "person": "isl.johanna_sigurdardottir",
+            "party": "isl.s",
+            "round": 1
+          },
+          {
+            "person": "isl.bjarni_benediktsson",
+            "party": "isl.d",
+            "round": 1
+          },
+          {
+            "person": "isl.steingrimur_j_sigfusson",
+            "party": "isl.v",
+            "round": 1
+          },
+          {
+            "person": "isl.sigmundur_david_gunnlaugsson",
+            "party": "isl.b",
+            "round": 1
+          }
+        ],
+        "party_results": [
+          {
+            "party": "isl.s",
+            "share": 0.2979,
+            "seats": 20
+          },
+          {
+            "party": "isl.d",
+            "share": 0.237,
+            "seats": 16
+          },
+          {
+            "party": "isl.v",
+            "share": 0.2168,
+            "seats": 14
+          },
+          {
+            "party": "isl.b",
+            "share": 0.148,
+            "seats": 9
+          },
+          {
+            "party": "isl.o",
+            "share": 0.0722,
+            "seats": 4
+          },
+          {
+            "party": "isl.f",
+            "share": 0.0222,
+            "seats": 0
+          }
+        ],
+        "winner": "isl.s",
+        "turnout": 0.8514,
+        "note": "Shares are of valid votes (computed from the vote counts in the results table). Snap election after the financial crisis protests. The Social Democratic Alliance and Left-Green Movement, which had governed since February 2009, formed a majority coalition under Jóhanna Sigurðardóttir.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2009_Icelandic_parliamentary_election",
+            "title": "Wikipedia: 2009 Icelandic parliamentary election",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "icesave_referendum_2010",
+      "date": "2010-03-06",
+      "kind": "referendum",
+      "question": "Act No. 1/2010 on a state guarantee for the Icesave loan agreements with the United Kingdom and the Netherlands.",
+      "historical": {
+        "yes_share": 0.019,
+        "winner": "no",
+        "turnout": 0.6273,
+        "note": "Yes 2,599, No 134,392, invalid 7,240, electorate 229,926 (infobox). Yes share is of yes plus no votes; turnout computed from these counts.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2010_Icelandic_loan_guarantees_referendum",
+            "title": "Wikipedia: 2010 Icelandic loan guarantees referendum",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "constitutional_assembly_2010",
+      "date": "2010-11-27",
+      "kind": "council",
+      "historical": {
+        "note": "Election of a Constitutional Assembly. The Supreme Court invalidated the result on 25 January 2011; on 25 February 2011 the elected members were instead appointed to a Constitutional Council. No party results apply.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2010_Icelandic_Constitutional_Assembly_election",
+            "title": "Wikipedia: 2010 Icelandic Constitutional Assembly election",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "icesave_referendum_2011",
+      "date": "2011-04-09",
+      "kind": "referendum",
+      "question": "Act No. 13/2011 authorising ratification of the December 2010 Icesave agreements with the United Kingdom and the Netherlands.",
+      "historical": {
+        "yes_share": 0.4023,
+        "winner": "no",
+        "turnout": 0.7533,
+        "note": "Yes 69,462, No 103,207, invalid and blank 2,445, electorate 232,460 (infobox). Yes share is of yes plus no votes; turnout computed from these counts.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2011_Icelandic_loan_guarantees_referendum",
+            "title": "Wikipedia: 2011 Icelandic loan guarantees referendum",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "president_2012",
+      "date": "2012-06-30",
+      "kind": "presidential",
+      "office": "isl.president",
+      "rounds": 1,
+      "historical": {
+        "candidates": [
+          {
+            "person": "isl.olafur_ragnar_grimsson",
+            "round": 1,
+            "share": 0.5278,
+            "votes": 84036
+          },
+          {
+            "person": "isl.thora_arnorsdottir",
+            "round": 1,
+            "share": 0.3316,
+            "votes": 52795
+          },
+          {
+            "person": "isl.ari_trausti_gudmundsson",
+            "round": 1,
+            "share": 0.0864,
+            "votes": 13762
+          }
+        ],
+        "winner": "isl.olafur_ragnar_grimsson",
+        "turnout": 0.6932,
+        "note": "Shares of valid votes from the results table; three other candidates won under 3% each.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2012_Icelandic_presidential_election",
+            "title": "Wikipedia: 2012 Icelandic presidential election",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "constitutional_referendum_2012",
+      "date": "2012-10-20",
+      "kind": "referendum",
+      "question": "Non-binding referendum on six proposals for a new constitution; question 1: should the Constitutional Council's proposals form the basis of a new draft constitution?",
+      "historical": {
+        "yes_share": 0.669,
+        "winner": "yes",
+        "turnout": 0.489,
+        "options": [
+          {
+            "label": "Q1 Council's proposals as basis of new constitution: yes",
+            "share": 0.669,
+            "votes": 73509
+          },
+          {
+            "label": "Q2 Natural resources declared national property: yes",
+            "share": 0.829,
+            "votes": 84760
+          },
+          {
+            "label": "Q3 Provisions on an established church: yes",
+            "share": 0.571,
+            "votes": 58455
+          },
+          {
+            "label": "Q4 More scope to elect individual candidates: yes",
+            "share": 0.784,
+            "votes": 78451
+          },
+          {
+            "label": "Q5 Equal weight of votes across the country: yes",
+            "share": 0.665,
+            "votes": 66653
+          },
+          {
+            "label": "Q6 Referendums on demand of part of the electorate: yes",
+            "share": 0.733,
+            "votes": 72633
+          }
+        ],
+        "note": "All six questions were approved; shares are of yes plus no answers to each question (Statistics Iceland figures in the results table). Total ballots 115,890 of 236,850 registered voters. The proposals had not been implemented.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2012_Icelandic_constitutional_referendum",
+            "title": "Wikipedia: 2012 Icelandic constitutional referendum",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "althing_2013",
+      "date": "2013-04-27",
+      "kind": "legislative",
+      "chamber": "althing",
+      "historical": {
+        "candidates": [
+          {
+            "person": "isl.bjarni_benediktsson",
+            "party": "isl.d",
+            "round": 1
+          },
+          {
+            "person": "isl.sigmundur_david_gunnlaugsson",
+            "party": "isl.b",
+            "round": 1
+          },
+          {
+            "person": "isl.arni_pall_arnason",
+            "party": "isl.s",
+            "round": 1
+          },
+          {
+            "person": "isl.katrin_jakobsdottir",
+            "party": "isl.v",
+            "round": 1
+          }
+        ],
+        "party_results": [
+          {
+            "party": "isl.d",
+            "share": 0.267,
+            "seats": 19
+          },
+          {
+            "party": "isl.b",
+            "share": 0.2443,
+            "seats": 19
+          },
+          {
+            "party": "isl.s",
+            "share": 0.1285,
+            "seats": 9
+          },
+          {
+            "party": "isl.v",
+            "share": 0.1087,
+            "seats": 7
+          },
+          {
+            "party": "isl.a",
+            "share": 0.0825,
+            "seats": 6
+          },
+          {
+            "party": "isl.p",
+            "share": 0.051,
+            "seats": 3
+          }
+        ],
+        "winner": "isl.d",
+        "turnout": 0.815,
+        "note": "Shares are of valid votes (computed from the vote counts in the results table). Sigmundur Davíð Gunnlaugsson formed a Progressive-Independence coalition and became Prime Minister on 23 May 2013.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2013_Icelandic_parliamentary_election",
+            "title": "Wikipedia: 2013 Icelandic parliamentary election",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "president_2016",
+      "date": "2016-06-25",
+      "kind": "presidential",
+      "office": "isl.president",
+      "rounds": 1,
+      "historical": {
+        "candidates": [
+          {
+            "person": "isl.gudni_th_johannesson",
+            "round": 1,
+            "share": 0.3908,
+            "votes": 71356
+          },
+          {
+            "person": "isl.halla_tomasdottir",
+            "round": 1,
+            "share": 0.2793,
+            "votes": 50995
+          },
+          {
+            "person": "isl.andri_snaer_magnason",
+            "round": 1,
+            "share": 0.1426,
+            "votes": 26037
+          },
+          {
+            "person": "isl.david_oddsson",
+            "round": 1,
+            "share": 0.1375,
+            "votes": 25108
+          }
+        ],
+        "winner": "isl.gudni_th_johannesson",
+        "turnout": 0.757,
+        "note": "Shares of valid votes from the results table (Statistics Iceland); five other candidates won under 4% each. Guðni took office on 1 August 2016.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2016_Icelandic_presidential_election",
+            "title": "Wikipedia: 2016 Icelandic presidential election",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "althing_2016",
+      "date": "2016-10-29",
+      "kind": "legislative",
+      "chamber": "althing",
+      "snap": true,
+      "historical": {
+        "candidates": [
+          {
+            "person": "isl.bjarni_benediktsson",
+            "party": "isl.d",
+            "round": 1
+          },
+          {
+            "person": "isl.katrin_jakobsdottir",
+            "party": "isl.v",
+            "round": 1
+          },
+          {
+            "person": "isl.birgitta_jonsdottir",
+            "party": "isl.p",
+            "round": 1
+          },
+          {
+            "person": "isl.sigurdur_ingi_johannsson",
+            "party": "isl.b",
+            "round": 1
+          }
+        ],
+        "party_results": [
+          {
+            "party": "isl.d",
+            "share": 0.29,
+            "seats": 21
+          },
+          {
+            "party": "isl.v",
+            "share": 0.1591,
+            "seats": 10
+          },
+          {
+            "party": "isl.p",
+            "share": 0.1448,
+            "seats": 10
+          },
+          {
+            "party": "isl.b",
+            "share": 0.1149,
+            "seats": 8
+          },
+          {
+            "party": "isl.c",
+            "share": 0.1048,
+            "seats": 7
+          },
+          {
+            "party": "isl.a",
+            "share": 0.0716,
+            "seats": 4
+          },
+          {
+            "party": "isl.s",
+            "share": 0.0574,
+            "seats": 3
+          },
+          {
+            "party": "isl.flf",
+            "share": 0.0354,
+            "seats": 0
+          }
+        ],
+        "winner": "isl.d",
+        "turnout": 0.7918,
+        "note": "Shares are of valid votes (computed from the vote counts in the results table). Early election after Sigmundur Davíð Gunnlaugsson stepped aside in April 2016. Bjarni Benediktsson formed an Independence-Viðreisn-Bright Future coalition on 10-11 January 2017.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2016_Icelandic_parliamentary_election",
+            "title": "Wikipedia: 2016 Icelandic parliamentary election",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "althing_2017",
+      "date": "2017-10-28",
+      "kind": "legislative",
+      "chamber": "althing",
+      "snap": true,
+      "historical": {
+        "candidates": [
+          {
+            "person": "isl.bjarni_benediktsson",
+            "party": "isl.d",
+            "round": 1
+          },
+          {
+            "person": "isl.katrin_jakobsdottir",
+            "party": "isl.v",
+            "round": 1
+          },
+          {
+            "person": "isl.logi_mar_einarsson",
+            "party": "isl.s",
+            "round": 1
+          },
+          {
+            "person": "isl.sigmundur_david_gunnlaugsson",
+            "party": "isl.m",
+            "round": 1
+          }
+        ],
+        "party_results": [
+          {
+            "party": "isl.d",
+            "share": 0.2525,
+            "seats": 16
+          },
+          {
+            "party": "isl.v",
+            "share": 0.1689,
+            "seats": 11
+          },
+          {
+            "party": "isl.s",
+            "share": 0.1205,
+            "seats": 7
+          },
+          {
+            "party": "isl.m",
+            "share": 0.1087,
+            "seats": 7
+          },
+          {
+            "party": "isl.b",
+            "share": 0.1071,
+            "seats": 8
+          },
+          {
+            "party": "isl.p",
+            "share": 0.092,
+            "seats": 6
+          },
+          {
+            "party": "isl.flf",
+            "share": 0.0688,
+            "seats": 4
+          },
+          {
+            "party": "isl.c",
+            "share": 0.0669,
+            "seats": 4
+          },
+          {
+            "party": "isl.a",
+            "share": 0.0122,
+            "seats": 0
+          }
+        ],
+        "winner": "isl.d",
+        "turnout": 0.812,
+        "note": "Shares are of valid votes (computed from the vote counts in the results table). Snap election after Bright Future left the government in September 2017. Katrín Jakobsdóttir formed a Left-Green-Independence-Progressive coalition on 30 November 2017.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2017_Icelandic_parliamentary_election",
+            "title": "Wikipedia: 2017 Icelandic parliamentary election",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "president_2020",
+      "date": "2020-06-27",
+      "kind": "presidential",
+      "office": "isl.president",
+      "rounds": 1,
+      "historical": {
+        "candidates": [
+          {
+            "person": "isl.gudni_th_johannesson",
+            "round": 1,
+            "share": 0.9218,
+            "votes": 150913
+          },
+          {
+            "person": "isl.gudmundur_franklin_jonsson",
+            "round": 1,
+            "share": 0.0782,
+            "votes": 12797
+          }
+        ],
+        "winner": "isl.gudni_th_johannesson",
+        "turnout": 0.6695,
+        "note": "Shares of valid votes from the results table (Statistics Iceland).",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2020_Icelandic_presidential_election",
+            "title": "Wikipedia: 2020 Icelandic presidential election",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "althing_2021",
+      "date": "2021-09-25",
+      "kind": "legislative",
+      "chamber": "althing",
+      "historical": {
+        "candidates": [
+          {
+            "person": "isl.bjarni_benediktsson",
+            "party": "isl.d",
+            "round": 1
+          },
+          {
+            "person": "isl.sigurdur_ingi_johannsson",
+            "party": "isl.b",
+            "round": 1
+          },
+          {
+            "person": "isl.katrin_jakobsdottir",
+            "party": "isl.v",
+            "round": 1
+          },
+          {
+            "person": "isl.logi_mar_einarsson",
+            "party": "isl.s",
+            "round": 1
+          }
+        ],
+        "party_results": [
+          {
+            "party": "isl.d",
+            "share": 0.2439,
+            "seats": 16
+          },
+          {
+            "party": "isl.b",
+            "share": 0.1727,
+            "seats": 13
+          },
+          {
+            "party": "isl.v",
+            "share": 0.1257,
+            "seats": 8
+          },
+          {
+            "party": "isl.s",
+            "share": 0.0993,
+            "seats": 6
+          },
+          {
+            "party": "isl.flf",
+            "share": 0.0885,
+            "seats": 6
+          },
+          {
+            "party": "isl.p",
+            "share": 0.0863,
+            "seats": 6
+          },
+          {
+            "party": "isl.c",
+            "share": 0.0833,
+            "seats": 5
+          },
+          {
+            "party": "isl.m",
+            "share": 0.0545,
+            "seats": 3
+          }
+        ],
+        "winner": "isl.d",
+        "turnout": 0.8009,
+        "note": "Shares are of valid votes (computed from the vote counts in the results table). The Socialist Party (4.1%) won no seats. The Left-Green-Independence-Progressive coalition continued under Katrín Jakobsdóttir.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2021_Icelandic_parliamentary_election",
+            "title": "Wikipedia: 2021 Icelandic parliamentary election",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "president_2024",
+      "date": "2024-06-01",
+      "kind": "presidential",
+      "office": "isl.president",
+      "rounds": 1,
+      "historical": {
+        "candidates": [
+          {
+            "person": "isl.halla_tomasdottir",
+            "round": 1,
+            "share": 0.3415,
+            "votes": 73184
+          },
+          {
+            "person": "isl.katrin_jakobsdottir",
+            "round": 1,
+            "share": 0.2519,
+            "votes": 53980
+          },
+          {
+            "person": "isl.halla_hrund_logadottir",
+            "round": 1,
+            "share": 0.1568,
+            "votes": 33601
+          },
+          {
+            "person": "isl.jon_gnarr",
+            "round": 1,
+            "share": 0.1009,
+            "votes": 21634
+          },
+          {
+            "person": "isl.baldur_thorhallsson",
+            "round": 1,
+            "share": 0.0841,
+            "votes": 18030
+          },
+          {
+            "person": "isl.arnar_thor_jonsson",
+            "round": 1,
+            "share": 0.0508,
+            "votes": 10881
+          }
+        ],
+        "winner": "isl.halla_tomasdottir",
+        "turnout": 0.8078,
+        "note": "Shares of valid votes from the results table; six other candidates won under 1% each. The infobox gives Arnar Þór Jónsson 10,811 votes but the results table 10,881 (used). Halla Tómasdóttir took office on 1 August 2024.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2024_Icelandic_presidential_election",
+            "title": "Wikipedia: 2024 Icelandic presidential election",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "althing_2024",
+      "date": "2024-11-30",
+      "kind": "legislative",
+      "chamber": "althing",
+      "snap": true,
+      "historical": {
+        "candidates": [
+          {
+            "person": "isl.kristrun_frostadottir",
+            "party": "isl.s",
+            "round": 1
+          },
+          {
+            "person": "isl.bjarni_benediktsson",
+            "party": "isl.d",
+            "round": 1
+          },
+          {
+            "person": "isl.thorgerdur_katrin_gunnarsdottir",
+            "party": "isl.c",
+            "round": 1
+          },
+          {
+            "person": "isl.inga_saeland",
+            "party": "isl.flf",
+            "round": 1
+          }
+        ],
+        "party_results": [
+          {
+            "party": "isl.s",
+            "share": 0.2075,
+            "seats": 15
+          },
+          {
+            "party": "isl.d",
+            "share": 0.1936,
+            "seats": 14
+          },
+          {
+            "party": "isl.c",
+            "share": 0.1582,
+            "seats": 11
+          },
+          {
+            "party": "isl.flf",
+            "share": 0.1378,
+            "seats": 10
+          },
+          {
+            "party": "isl.m",
+            "share": 0.121,
+            "seats": 8
+          },
+          {
+            "party": "isl.b",
+            "share": 0.078,
+            "seats": 5
+          },
+          {
+            "party": "isl.p",
+            "share": 0.0302,
+            "seats": 0
+          },
+          {
+            "party": "isl.v",
+            "share": 0.0234,
+            "seats": 0
+          }
+        ],
+        "winner": "isl.s",
+        "turnout": 0.8018,
+        "note": "Shares are of valid votes (computed from the vote counts in the results table). Snap election after Bjarni Benediktsson ended the coalition on 13 October 2024. The Socialist Party (4.0%) won no seats. Kristrún Frostadóttir formed a Social Democratic Alliance-Viðreisn-People's Party coalition and became Prime Minister on 21 December 2024.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2024_Icelandic_parliamentary_election",
+            "title": "Wikipedia: 2024 Icelandic parliamentary election",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "eu_negotiations_referendum_2026",
+      "date": "2026-08-29",
+      "kind": "referendum",
+      "question": "Should Iceland resume accession negotiations with the European Union?",
+      "historical": {
+        "yes_share": 0.4716,
+        "winner": "no",
+        "turnout": 0.8257,
+        "note": "Yes 105,338, No 118,047, invalid 1,646, electorate 272,543 (infobox). Yes share is of yes plus no votes; turnout computed from these counts. Verified against the fetched Wikipedia article (accessed 16 October 2026).",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2026_Icelandic_European_Union_membership_negotiations_referendum",
+            "title": "Wikipedia: 2026 Icelandic European Union membership negotiations referendum",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    }
+  ],
+  "source": [
+    {
+      "url": "https://en.wikipedia.org/wiki/Template:Icelandic_elections",
+      "title": "Wikipedia: Template:Icelandic elections (list of elections and referendums)",
+      "accessed": "2026-10-16"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/President_of_Iceland",
+      "title": "Wikipedia: President of Iceland (term, election rules)",
+      "accessed": "2026-10-16"
+    }
+  ],
+  "confidence": "verified"
+}

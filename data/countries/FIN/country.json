@@ -1,0 +1,124 @@
+{
+  "tag": "FIN",
+  "name": { "en": "Finland", "native": "Suomi", "official": { "en": "Republic of Finland", "native": "Suomen tasavalta" } },
+  "adjective": "Finnish",
+  "culture_primary": "finnish",
+  "government": {
+    "type": "semi_presidential",
+    "effective_executive": "fin.prime_minister",
+    "head_of_state_office": "fin.president",
+    "head_of_government_office": "fin.prime_minister",
+    "constitution": {
+      "term_limit_amendable": true,
+      "emergency_powers": true,
+      "referendum_required_for": []
+    },
+    "note": "The President is directly elected for six years (two-round system, at most two consecutive terms) and conducts foreign policy together with the Government; the Prime Minister is elected by Parliament and leads the Government, which needs Parliament's confidence. The new Constitution of Finland took effect on 1 March 2000, the day Tarja Halonen took office, and reduced the President's powers in favour of the Prime Minister. On 1 January 2000 Martti Ahtisaari was President and the first round of the 2000 presidential election (16 January) had not yet been held."
+  },
+  "offices": [
+    {
+      "id": "fin.president",
+      "title": { "en": "President of the Republic of Finland", "native": "Suomen tasavallan presidentti" },
+      "role": "head_of_state",
+      "power_weight": 0.3,
+      "selection": "direct_election",
+      "term_years": 6,
+      "term_limit": { "max_terms": 2, "consecutive_only": true },
+      "succession": { "type": "acting_then_election", "acting_office": "fin.prime_minister" },
+      "holders": [
+        { "person": "fin.martti_ahtisaari", "from": "1994-03-01", "to": "2000-03-01" },
+        { "person": "fin.tarja_halonen", "from": "2000-03-01", "to": "2012-03-01" },
+        { "person": "fin.sauli_niinisto", "from": "2012-03-01", "to": "2024-03-01" },
+        { "person": "fin.alexander_stubb", "from": "2024-03-01" }
+      ],
+      "note": "The President takes office on the first day of the month after the election. The Prime Minister acts if the President is temporarily unable to serve; on a permanent vacancy a new election is held. There is no vice president.",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/President_of_Finland", "title": "Wikipedia: President of Finland (term, succession, timeline of holders)", "accessed": "2026-10-16" },
+        { "url": "https://www.wikidata.org/wiki/Q29558", "title": "Wikidata: President of Finland (holders' positions held)", "accessed": "2026-10-16" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "fin.prime_minister",
+      "title": { "en": "Prime Minister of Finland", "native": "Suomen pääministeri" },
+      "role": "head_of_government",
+      "power_weight": 0.7,
+      "selection": "legislature",
+      "term_years": 4,
+      "holders": [
+        { "person": "fin.paavo_lipponen", "from": "1995-04-13", "to": "2003-04-17" },
+        { "person": "fin.anneli_jaatteenmaki", "from": "2003-04-17", "to": "2003-06-24" },
+        { "person": "fin.matti_vanhanen", "from": "2003-06-24", "to": "2010-06-22" },
+        { "person": "fin.mari_kiviniemi", "from": "2010-06-22", "to": "2011-06-22" },
+        { "person": "fin.jyrki_katainen", "from": "2011-06-22", "to": "2014-06-24" },
+        { "person": "fin.alexander_stubb", "from": "2014-06-24", "to": "2015-05-29", "note": "Wikidata ends his term on 28 May 2015; Wikipedia's list gives 29 May 2015 as the handover." },
+        { "person": "fin.juha_sipila", "from": "2015-05-29", "to": "2019-06-06" },
+        { "person": "fin.antti_rinne", "from": "2019-06-06", "to": "2019-12-10" },
+        { "person": "fin.sanna_marin", "from": "2019-12-10", "to": "2023-06-20" },
+        { "person": "fin.petteri_orpo", "from": "2023-06-20" }
+      ],
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/List_of_prime_ministers_of_Finland", "title": "Wikipedia: List of prime ministers of Finland", "accessed": "2026-10-16" },
+        { "url": "https://www.wikidata.org/wiki/Q738695", "title": "Wikidata: Prime Minister of Finland (holders' positions held)", "accessed": "2026-10-16" }
+      ],
+      "confidence": "verified"
+    }
+  ],
+  "legislature": {
+    "name": { "en": "Parliament of Finland", "native": "Eduskunta" },
+    "chambers": [
+      {
+        "id": "eduskunta",
+        "name": { "en": "Parliament", "native": "Eduskunta" },
+        "seats": 200,
+        "term_years": 4,
+        "elected": "direct",
+        "system": {
+          "type": "list_pr",
+          "formula": "dhondt",
+          "threshold": 0,
+          "district_model": "custom",
+          "note": "Open-list PR by D'Hondt in multi-member electoral districts (15 in 1999 and 2003, 13 today) with no national threshold; Åland always elects one member. seats_2000 is the March 1999 result; the Åland seat (Liberals for Åland) is counted as others. Individual party switches before 1 January 2000 were not checked."
+        },
+        "seats_2000": {
+          "fin.sdp": 51, "fin.kesk": 48, "fin.kok": 46, "fin.vas": 20, "fin.vihr": 11, "fin.rkp": 11, "fin.kd": 10, "fin.rem": 1, "fin.ps": 1,
+          "others": 1
+        },
+        "confidence_chamber": true,
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/1999_Finnish_parliamentary_election", "title": "Wikipedia: 1999 Finnish parliamentary election", "accessed": "2026-10-16" },
+          { "url": "https://en.wikipedia.org/wiki/Parliament_of_Finland", "title": "Wikipedia: Parliament of Finland (electoral system)", "accessed": "2026-10-16" },
+          { "url": "https://en.wikipedia.org/wiki/2003_Finnish_parliamentary_election", "title": "Wikipedia: 2003 Finnish parliamentary election (fifteen electoral districts)", "accessed": "2026-10-16" }
+        ],
+        "confidence": "verified"
+      }
+    ]
+  },
+  "party_system": "multi_party",
+  "start_2000": {
+    "ruling_parties": ["fin.sdp", "fin.kok", "fin.vas", "fin.vihr", "fin.rkp"],
+    "confidence_and_supply": [],
+    "ideology_support": {
+      "social_democrat": 0.2286,
+      "agrarian": 0.224,
+      "liberal_conservative": 0.2103,
+      "democratic_socialist": 0.1088,
+      "green": 0.0727,
+      "centrist_liberal": 0.0553,
+      "christian_democrat": 0.0417,
+      "right_populist": 0.0099,
+      "marxist_leninist": 0.0089,
+      "big_tent": 0.0398
+    },
+    "ideology_support_note": "Derived from 1999 parliamentary vote shares (computed from the official vote counts): Social Democrats 22.9%, Centre 22.4% (agrarian), National Coalition 21.0% (liberal conservative), Left Alliance 10.9% (democratic socialist), Green League 7.3%, Swedish People's Party 5.1% plus the Liberals 0.2% and Liberals for Åland 0.2% (centrist liberal), Finnish Christian League 4.2%, True Finns 1.0% (right populist), Communist Party of Finland 0.8% and Communist Workers' Party 0.1% (marxist-leninist). The Reform Group (1.1%), Young Finns (1.0%) and all other small lists (together 4.0%) are grouped as big tent.",
+    "stability": 0.85,
+    "war_support": 0.2
+  },
+  "claims": [],
+  "source": [
+    { "url": "https://en.wikipedia.org/wiki/1999_Finnish_parliamentary_election", "title": "Wikipedia: 1999 Finnish parliamentary election (results; Lipponen's five-party rainbow government)", "accessed": "2026-10-16" },
+    { "url": "https://en.wikipedia.org/wiki/Lipponen_II_Cabinet", "title": "Wikipedia: Lipponen II Cabinet (15 April 1999 to 17 April 2003; SDP, National Coalition, Left Alliance, Greens until 31 May 2002, Swedish People's Party)", "accessed": "2026-10-16" },
+    { "url": "https://en.wikipedia.org/wiki/President_of_Finland", "title": "Wikipedia: President of Finland (Constitution of 2000, powers)", "accessed": "2026-10-16" }
+  ],
+  "confidence": "verified"
+}

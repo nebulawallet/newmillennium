@@ -1,0 +1,550 @@
+{
+  "parties": [
+    {
+      "id": "dnk.s",
+      "name": { "en": "Social Democrats", "native": "Socialdemokratiet" },
+      "abbrev": { "en": "S", "native": "A" },
+      "color": "#C8102E",
+      "sub_ideology": "social_democrat",
+      "founded": "1871-10-15",
+      "status_2000": "active",
+      "leader_history": [
+        { "person": "dnk.poul_nyrup_rasmussen", "from": 1992, "to": 2002 },
+        { "person": "dnk.mogens_lykketoft", "from": 2002, "to": 2005 },
+        { "person": "dnk.helle_thorning_schmidt", "from": "2005-04-12", "to": "2015-06-28" },
+        { "person": "dnk.mette_frederiksen", "from": "2015-06-28" }
+      ],
+      "popularity_2000": 0.359,
+      "popularity_note": "Vote share in Denmark proper, 1998 Folketing election.",
+      "international": "Progressive Alliance; Party of European Socialists",
+      "note": "Wikipedia gives the founding date as 15 October 1871; Wikidata gives February 1878.",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/Social_Democrats_(Denmark)", "title": "Wikipedia: Social Democrats (Denmark) (infobox)", "accessed": "2026-10-15" },
+        { "url": "https://www.wikidata.org/wiki/Q212101", "title": "Wikidata: Socialdemokratiet (chairpersons)", "accessed": "2026-10-15" },
+        { "url": "https://en.wikipedia.org/wiki/1998_Danish_general_election", "title": "Wikipedia: 1998 Danish general election", "accessed": "2026-10-15" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "dnk.v",
+      "name": { "en": "Venstre, Denmark's Liberal Party", "native": "Venstre, Danmarks Liberale Parti" },
+      "abbrev": { "en": "V", "native": "V" },
+      "color": "#004A98",
+      "sub_ideology": "classical_liberal",
+      "founded": "1870-06-30",
+      "status_2000": "active",
+      "leader_history": [
+        { "person": "dnk.anders_fogh_rasmussen", "from": "1998-04-18", "to": "2009-05-17" },
+        { "person": "dnk.lars_lokke_rasmussen", "from": "2009-05-17", "to": "2019-08-31" },
+        { "person": "dnk.jakob_ellemann_jensen", "from": "2019-09-21", "to": "2023-10-23" },
+        { "person": "dnk.troels_lund_poulsen", "from": "2023-11-18" }
+      ],
+      "popularity_2000": 0.24,
+      "popularity_note": "Vote share in Denmark proper, 1998 Folketing election. Uffe Ellemann-Jensen led the party at that election and was succeeded by Anders Fogh Rasmussen in 1998.",
+      "international": "Liberal International; ALDE Party",
+      "note": "Wikipedia lists its ideology as conservative liberalism and Nordic agrarianism; mapped to classical liberal. The party's current form dates from 1910. Wikidata's party chair list ends Fogh Rasmussen's term in April 2009, while his own record gives 17 May 2009 for the handover to Løkke Rasmussen.",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/Venstre_(Denmark)", "title": "Wikipedia: Venstre (Denmark) (infobox)", "accessed": "2026-10-15" },
+        { "url": "https://www.wikidata.org/wiki/Q217321", "title": "Wikidata: Venstre (chairpersons)", "accessed": "2026-10-15" },
+        { "url": "https://en.wikipedia.org/wiki/1998_Danish_general_election", "title": "Wikipedia: 1998 Danish general election", "accessed": "2026-10-15" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "dnk.k",
+      "name": { "en": "Conservative People's Party", "native": "Det Konservative Folkeparti" },
+      "abbrev": { "en": "K", "native": "C" },
+      "color": "#00583C",
+      "sub_ideology": "liberal_conservative",
+      "founded": "1916-02-22",
+      "status_2000": "active",
+      "leader_history": [
+        { "person": "dnk.bendt_bendtsen", "from": 1999, "to": 2008 },
+        { "person": "dnk.lene_espersen", "from": 2008, "to": 2011 },
+        { "person": "dnk.lars_barfoed", "from": "2011-01-14", "to": "2014-09-27" },
+        { "person": "dnk.soren_pape_poulsen", "from": "2014-09-27", "to": "2024-03-02" },
+        { "person": "dnk.mona_juul", "from": "2024-04-21" }
+      ],
+      "popularity_2000": 0.089,
+      "popularity_note": "Vote share in Denmark proper, 1998 Folketing election (led then by Per Stig Møller).",
+      "international": "International Democracy Union; European People's Party",
+      "note": "Leaders are the political leaders listed by Wikipedia. Wikidata's chairperson list differs for 1998-2000 (Poul Andreassen as organisational chair) and shows Finn Poulsen as chair from January to 12 March 2011 (when Barfoed became chair; Wikipedia's Lene Espersen article says he succeeded her as political leader on 14 January 2011, which is used here) and Michael Ziegler acting after Søren Pape Poulsen's death in March 2024; these interim chairs are not modelled.",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/Conservative_People%27s_Party_(Denmark)", "title": "Wikipedia: Conservative People's Party (Denmark) (list of political leaders)", "accessed": "2026-10-15" },
+        { "url": "https://www.wikidata.org/wiki/Q902619", "title": "Wikidata: Det Konservative Folkeparti (chairpersons)", "accessed": "2026-10-15" },
+        { "url": "https://en.wikipedia.org/wiki/Lene_Espersen", "title": "Wikipedia: Lene Espersen (succeeded by Barfoed on 14 January 2011)", "accessed": "2026-10-15" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "dnk.sf",
+      "name": { "en": "Green Left (Socialist People's Party)", "native": "Socialistisk Folkeparti" },
+      "abbrev": { "en": "SF", "native": "F" },
+      "color": "#E07EA8",
+      "sub_ideology": "democratic_socialist",
+      "founded": "1959-02-15",
+      "status_2000": "active",
+      "leader_history": [
+        { "person": "dnk.holger_k_nielsen", "from": 1991, "to": 2005 },
+        { "person": "dnk.villy_sovndal", "from": 2005, "to": 2012 },
+        { "person": "dnk.annette_vilhelmsen", "from": 2012, "to": 2014 },
+        { "person": "dnk.pia_olsen_dyhr", "from": 2014 }
+      ],
+      "popularity_2000": 0.076,
+      "popularity_note": "Vote share in Denmark proper, 1998 Folketing election.",
+      "international": "European Green Party",
+      "note": "Known in English as the Socialist People's Party until it adopted the English name Green Left; the Danish name is unchanged. Wikipedia lists democratic socialism and green politics. It split from the Communist Party of Denmark (not modelled) in 1959.",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/Green_Left_(Denmark)", "title": "Wikipedia: Green Left (Denmark) (infobox, list of leaders)", "accessed": "2026-10-15" },
+        { "url": "https://en.wikipedia.org/wiki/1998_Danish_general_election", "title": "Wikipedia: 1998 Danish general election", "accessed": "2026-10-15" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "dnk.df",
+      "name": { "en": "Danish People's Party", "native": "Dansk Folkeparti" },
+      "abbrev": { "en": "DF", "native": "O" },
+      "color": "#1B4D8B",
+      "sub_ideology": "right_populist",
+      "founded": "1995-10-06",
+      "status_2000": "active",
+      "leader_history": [
+        { "person": "dnk.pia_kjaersgaard", "from": "1995-10-06", "to": "2012-09-15" },
+        { "person": "dnk.kristian_thulesen_dahl", "from": "2012-09-15", "to": "2022-01-23" },
+        { "person": "dnk.morten_messerschmidt", "from": "2022-01-23" }
+      ],
+      "popularity_2000": 0.074,
+      "popularity_note": "Vote share in Denmark proper, 1998 Folketing election.",
+      "lineage": { "split_from": "dnk.frp" },
+      "international": "Patriots.eu",
+      "note": "Wikipedia lists Danish nationalism, national conservatism and right-wing populism; mapped to right populist.",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/Danish_People%27s_Party", "title": "Wikipedia: Danish People's Party (infobox)", "accessed": "2026-10-15" },
+        { "url": "https://www.wikidata.org/wiki/Q507170", "title": "Wikidata: Dansk Folkeparti (chairpersons)", "accessed": "2026-10-15" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "dnk.rv",
+      "name": { "en": "Danish Social Liberal Party", "native": "Radikale Venstre" },
+      "abbrev": { "en": "RV", "native": "B" },
+      "color": "#733280",
+      "sub_ideology": "social_liberal",
+      "founded": "1905-05-21",
+      "status_2000": "active",
+      "leader_history": [
+        { "person": "dnk.marianne_jelved", "from": 1990, "to": 2007 },
+        { "person": "dnk.margrethe_vestager", "from": 2007, "to": 2014 },
+        { "person": "dnk.morten_ostergaard", "from": 2014, "to": "2020-10-07" },
+        { "person": "dnk.sofie_carsten_nielsen", "from": "2020-10-07", "to": 2022 },
+        { "person": "dnk.martin_lidegaard", "from": 2022 }
+      ],
+      "popularity_2000": 0.039,
+      "popularity_note": "Vote share in Denmark proper, 1998 Folketing election.",
+      "lineage": { "split_from": "dnk.v" },
+      "international": "Liberal International; ALDE Party",
+      "note": "Leaders are the political leaders listed by Wikipedia; Wikidata's chairperson list gives the separate organisational chairs.",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/Danish_Social_Liberal_Party", "title": "Wikipedia: Danish Social Liberal Party (list of political leaders)", "accessed": "2026-10-15" },
+        { "url": "https://en.wikipedia.org/wiki/Sofie_Carsten_Nielsen", "title": "Wikipedia: Sofie Carsten Nielsen (leader from 7 October 2020)", "accessed": "2026-10-15" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "dnk.el",
+      "name": { "en": "Red-Green Alliance", "native": "Enhedslisten – De Rød-Grønne" },
+      "abbrev": { "en": "EL", "native": "Ø" },
+      "color": "#D0004C",
+      "sub_ideology": "democratic_socialist",
+      "founded": "1989-12-02",
+      "status_2000": "active",
+      "leader_history": [
+        { "person": "dnk.johanne_schmidt_nielsen", "from": "2009-03-20", "to": 2016, "title": "Political spokesperson" },
+        { "person": "dnk.pernille_skipper", "from": 2016, "to": 2021, "title": "Political spokesperson" },
+        { "person": "dnk.mai_villadsen", "from": "2021-02-10", "to": 2023, "title": "Political spokesperson" },
+        { "person": "dnk.pelle_dragsted", "from": "2023-08-22", "title": "Political spokesperson" }
+      ],
+      "popularity_2000": 0.027,
+      "popularity_note": "Vote share in Denmark proper, 1998 Folketing election.",
+      "note": "Formally led collectively; Wikipedia lists political spokespersons only from 2009, so no leader is recorded for 2000-2009. Wikipedia lists socialism, eco-socialism and Marxism; mapped to democratic socialist.",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/Red%E2%80%93Green_Alliance_(Denmark)", "title": "Wikipedia: Red-Green Alliance (Denmark) (infobox, list of political spokespersons)", "accessed": "2026-10-15" },
+        { "url": "https://en.wikipedia.org/wiki/Johanne_Schmidt-Nielsen", "title": "Wikipedia: Johanne Schmidt-Nielsen (spokesperson from 20 March 2009)", "accessed": "2026-10-15" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "dnk.kd",
+      "name": { "en": "Christian Democrats", "native": "Kristendemokraterne" },
+      "abbrev": { "en": "KD", "native": "KD" },
+      "color": "#F18A00",
+      "sub_ideology": "christian_democrat",
+      "founded": "1970-04-13",
+      "status_2000": "active",
+      "leader_history": [
+        { "person": "dnk.jann_sjursen", "from": 1990, "to": 2002 },
+        { "person": "dnk.marianne_karlsmose", "from": 2002, "to": 2005 },
+        { "person": "dnk.bodil_kornbek", "from": 2005, "to": 2008 },
+        { "person": "dnk.bjarne_hartung_kirkegaard", "from": 2008, "to": 2011 },
+        { "person": "dnk.per_orum_jorgensen", "from": "2011-10-29", "to": 2012 },
+        { "person": "dnk.stig_grenov", "from": "2012-10-27", "to": "2019-10-13" },
+        { "person": "dnk.isabella_arendt", "from": "2019-10-13", "to": "2022-05-17" },
+        { "person": "dnk.marianne_karlsmose", "from": "2022-05-17", "to": "2022-11-12" },
+        { "person": "dnk.jeppe_hedaa", "from": "2023-03-18" }
+      ],
+      "popularity_2000": 0.025,
+      "popularity_note": "Vote share in Denmark proper, 1998 Folketing election (as the Christian People's Party).",
+      "international": "Centrist Democrat International; European People's Party",
+      "note": "Named the Christian People's Party (Kristeligt Folkeparti) in 2000. Acting leaders in 2012 and 2022-2023 are not modelled.",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/Christian_Democrats_(Denmark)", "title": "Wikipedia: Christian Democrats (Denmark) (list of leaders)", "accessed": "2026-10-15" },
+        { "url": "https://www.wikidata.org/wiki/Q1789199", "title": "Wikidata: Christian Democrats (founding date, chairpersons)", "accessed": "2026-10-15" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "dnk.cd",
+      "name": { "en": "Centre Democrats", "native": "Centrum-Demokraterne" },
+      "abbrev": { "en": "CD", "native": "CD" },
+      "color": "#8E5BA8",
+      "sub_ideology": "centrist_liberal",
+      "founded": "1973-11-07",
+      "dissolved": "2008-01-26",
+      "status_2000": "active",
+      "leader_history": [
+        { "person": "dnk.mimi_jakobsen", "from": 1989, "to": 2005 },
+        { "person": "dnk.bjarne_mogelhoj", "from": 2005, "to": 2007 }
+      ],
+      "popularity_2000": 0.043,
+      "popularity_note": "Vote share in Denmark proper, 1998 Folketing election.",
+      "lineage": { "split_from": "dnk.s" },
+      "note": "Wikipedia describes it as a centrist party; mapped to centrist liberal. Wikipedia gives dissolution on 26 January 2008, Wikidata 1 February 2008. Wikipedia lists Ben Haddou as the last leader (2007-2008), but Wikidata records his Centre Democrat membership as ending in 2005, so he is not modelled.",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/Centre_Democrats_(Denmark)", "title": "Wikipedia: Centre Democrats (Denmark) (infobox, party leaders)", "accessed": "2026-10-15" },
+        { "url": "https://www.wikidata.org/wiki/Q1054386", "title": "Wikidata: Centre Democrats", "accessed": "2026-10-15" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "dnk.frp",
+      "name": { "en": "Progress Party", "native": "Fremskridtspartiet" },
+      "abbrev": { "en": "FrP", "native": "Z" },
+      "color": "#E6C700",
+      "sub_ideology": "right_populist",
+      "founded": "1972-08-22",
+      "status_2000": "extra_parliamentary",
+      "leader_history": [],
+      "popularity_2000": 0.024,
+      "popularity_note": "Vote share in Denmark proper, 1998 Folketing election (4 seats). Its four members left in October 1999 to form Freedom 2000, so it held no seats on 1 January 2000.",
+      "note": "Wikipedia lists Aage Brusgaard as political leader 1999-2001 (no article), so no leader is modelled. It won 0.6% and no seats in 2001 and did not stand in 2005 or 2007.",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/Progress_Party_(Denmark)", "title": "Wikipedia: Progress Party (Denmark)", "accessed": "2026-10-15" },
+        { "url": "https://da.wikipedia.org/wiki/Frihed_2000", "title": "Danish Wikipedia: Frihed 2000", "accessed": "2026-10-15" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "dnk.frihed_2000",
+      "name": { "en": "Freedom 2000", "native": "Frihed 2000" },
+      "abbrev": { "en": "F2000", "native": "F2000" },
+      "color": "#B8A400",
+      "sub_ideology": "right_populist",
+      "founded": "1999-10-12",
+      "dissolved": "2001-02-07",
+      "status_2000": "active",
+      "leader_history": [],
+      "popularity_2000": 0,
+      "popularity_note": "Parliamentary group formed during the term by the four Progress Party members (Kirsten Jacobsen, Kim Behnke, Tom Behnke, Thorkild B. Fransgaard); it never contested an election.",
+      "lineage": { "split_from": "dnk.frp" },
+      "note": "Dissolved on 7 February 2001 after Tom Behnke moved to the Conservative People's Party. No formal leader is modelled.",
+      "source": [
+        { "url": "https://da.wikipedia.org/wiki/Frihed_2000", "title": "Danish Wikipedia: Frihed 2000", "accessed": "2026-10-15" },
+        { "url": "https://en.wikipedia.org/wiki/Progress_Party_(Denmark)", "title": "Wikipedia: Progress Party (Denmark)", "accessed": "2026-10-15" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "dnk.la",
+      "name": { "en": "Liberal Alliance", "native": "Liberal Alliance" },
+      "abbrev": { "en": "LA", "native": "I" },
+      "color": "#21C4C3",
+      "sub_ideology": "libertarian",
+      "founded": "2007-05-07",
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        { "person": "dnk.naser_khader", "from": "2007-05-07", "to": "2009-01-05" },
+        { "person": "dnk.anders_samuelsen", "from": "2009-01-05", "to": "2019-06-06" },
+        { "person": "dnk.alex_vanopslagh", "from": "2019-06-09" }
+      ],
+      "popularity_2000": 0,
+      "popularity_note": "Founded in 2007 (as New Alliance).",
+      "note": "Founded as New Alliance (Ny Alliance) and contested 2007 under that name. Wikipedia lists classical liberalism and right-libertarianism.",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/Liberal_Alliance_(Denmark)", "title": "Wikipedia: Liberal Alliance (Denmark) (infobox, leaders)", "accessed": "2026-10-15" },
+        { "url": "https://www.wikidata.org/wiki/Q478180", "title": "Wikidata: Liberal Alliance (founding date)", "accessed": "2026-10-15" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "dnk.alt",
+      "name": { "en": "The Alternative", "native": "Alternativet" },
+      "abbrev": { "en": "ALT", "native": "Å" },
+      "color": "#2B8738",
+      "sub_ideology": "green",
+      "founded": "2013-11-27",
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        { "person": "dnk.uffe_elbaek", "from": "2013-11-27", "to": 2020 },
+        { "person": "dnk.josephine_fock", "from": 2020, "to": "2020-11-14" },
+        { "person": "dnk.franciska_rosenkilde", "from": "2021-02-07" }
+      ],
+      "popularity_2000": 0,
+      "popularity_note": "Founded in 2013.",
+      "note": "Launched on 27 November 2013 by Uffe Elbæk and Josephine Fock. Elbæk announced in December 2019 that he would stand down; Fock led the party until 14 November 2020. Wikipedia lists green politics and social liberalism.",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/The_Alternative_(Denmark)", "title": "Wikipedia: The Alternative (Denmark)", "accessed": "2026-10-15" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "dnk.nb",
+      "name": { "en": "New Right", "native": "Nye Borgerlige" },
+      "abbrev": { "en": "NB", "native": "NB" },
+      "color": "#127B7F",
+      "sub_ideology": "national_conservative",
+      "founded": "2015-10-19",
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        { "person": "dnk.pernille_vermund", "from": "2015-10-19", "to": "2023-02-07" },
+        { "person": "dnk.lars_boje_mathiesen", "from": "2023-02-07", "to": "2023-03-09" },
+        { "person": "dnk.pernille_vermund", "from": "2023-10-28", "to": "2024-01-10" },
+        { "person": "dnk.martin_henriksen", "from": "2024-04-16", "to": "2025-04-27" },
+        { "person": "dnk.susanne_borggaard", "from": "2025-04-27" }
+      ],
+      "popularity_2000": 0,
+      "popularity_note": "Founded in 2015.",
+      "note": "Acting leaders Jesper Hammer (March-October 2023) and Frederik Meyer Johannesen (January-April 2024) are not modelled. Wikipedia lists national conservatism, right-libertarianism and right-wing populism.",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/New_Right_(Denmark)", "title": "Wikipedia: New Right (Denmark) (leadership table)", "accessed": "2026-10-15" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "dnk.m",
+      "name": { "en": "Moderates", "native": "Moderaterne" },
+      "abbrev": { "en": "M", "native": "M" },
+      "color": "#6B2C91",
+      "sub_ideology": "centrist_liberal",
+      "founded": "2022-06-05",
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        { "person": "dnk.lars_lokke_rasmussen", "from": "2022-06-05" }
+      ],
+      "popularity_2000": 0,
+      "popularity_note": "Founded in 2022.",
+      "lineage": { "split_from": "dnk.v" },
+      "international": "Liberal International; ALDE Party",
+      "note": "Wikidata dates Løkke Rasmussen's leadership from 2021, when the movement was launched; the party itself was founded on 5 June 2022.",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/Moderates_(Denmark)", "title": "Wikipedia: Moderates (Denmark) (infobox)", "accessed": "2026-10-15" },
+        { "url": "https://www.wikidata.org/wiki/Q107110050", "title": "Wikidata: Moderate Party", "accessed": "2026-10-15" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "dnk.dd",
+      "name": { "en": "Denmark Democrats", "native": "Danmarksdemokraterne – Inger Støjberg" },
+      "abbrev": { "en": "DD", "native": "Æ" },
+      "color": "#9E292E",
+      "sub_ideology": "national_conservative",
+      "founded": "2022-06-23",
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        { "person": "dnk.inger_stojberg", "from": "2022-06-23" }
+      ],
+      "popularity_2000": 0,
+      "popularity_note": "Founded in 2022.",
+      "lineage": { "split_from": "dnk.v" },
+      "note": "Wikipedia's infobox lists it as a split from Venstre and the Danish People's Party; Venstre (Inger Støjberg's former party) is recorded. Wikipedia lists national conservatism and right-wing populism.",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/Denmark_Democrats", "title": "Wikipedia: Denmark Democrats (infobox)", "accessed": "2026-10-15" },
+        { "url": "https://www.wikidata.org/wiki/Q112677506", "title": "Wikidata: Danmarksdemokraterne", "accessed": "2026-10-15" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "dnk.bp",
+      "name": { "en": "Citizens' Party", "native": "Borgernes Parti" },
+      "abbrev": { "en": "BP", "native": "BP" },
+      "color": "#1E3A8A",
+      "sub_ideology": "right_populist",
+      "founded": "2024-08-28",
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        { "person": "dnk.lars_boje_mathiesen", "from": 2024 }
+      ],
+      "popularity_2000": 0,
+      "popularity_note": "Founded in 2024.",
+      "lineage": { "split_from": "dnk.nb" },
+      "note": "Wikipedia's infobox lists it as a split from New Right. Wikipedia gives the founding date as 28 August 2024, Wikidata 24 July 2024. Wikipedia lists right-wing populism.",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/Citizens%27_Party_(Denmark)", "title": "Wikipedia: Citizens' Party (Denmark) (infobox)", "accessed": "2026-10-15" },
+        { "url": "https://www.wikidata.org/wiki/Q131933143", "title": "Wikidata: Borgernes Parti", "accessed": "2026-10-15" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "dnk.fo_sb",
+      "name": { "en": "Union Party (Faroe Islands)", "native": "Sambandsflokkurin" },
+      "abbrev": { "en": "SB", "native": "SB" },
+      "color": "#6CA0DC",
+      "sub_ideology": "liberal_conservative",
+      "founded": "1906-08-18",
+      "status_2000": "active",
+      "leader_history": [],
+      "popularity_2000": 0.0013,
+      "popularity_note": "1998 Folketing vote in the Faroe Islands (4,510 votes, no seat) as a share of all valid votes in the Kingdom.",
+      "regional_base": ["faroese"],
+      "note": "Faroese party contesting only the two Faroe Islands Folketing seats. Wikipedia lists conservative liberalism, agrarianism and Danish unionism. Party leaders are not modelled.",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/Union_Party_(Faroe_Islands)", "title": "Wikipedia: Union Party (Faroe Islands) (infobox)", "accessed": "2026-10-15" },
+        { "url": "https://en.wikipedia.org/wiki/1998_Danish_general_election", "title": "Wikipedia: 1998 Danish general election", "accessed": "2026-10-15" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "dnk.fo_t",
+      "name": { "en": "Republic (Faroe Islands)", "native": "Tjóðveldi" },
+      "abbrev": { "en": "T", "native": "T" },
+      "color": "#1B8E3C",
+      "sub_ideology": "regionalist",
+      "founded": 1948,
+      "status_2000": "active",
+      "leader_history": [],
+      "popularity_2000": 0.0013,
+      "popularity_note": "1998 Folketing vote in the Faroe Islands (4,325 votes, no seat) as a share of all valid votes in the Kingdom.",
+      "regional_base": ["faroese"],
+      "note": "Faroese party contesting only the Faroe Islands Folketing seats. Wikipedia lists democratic socialism, left-wing nationalism and Faroese independence; mapped to regionalist. Founded 22-23 May 1948. Party leaders are not modelled.",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/Republic_(Faroe_Islands)", "title": "Wikipedia: Republic (Faroe Islands) (infobox)", "accessed": "2026-10-15" },
+        { "url": "https://en.wikipedia.org/wiki/1998_Danish_general_election", "title": "Wikipedia: 1998 Danish general election", "accessed": "2026-10-15" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "dnk.fo_ff",
+      "name": { "en": "People's Party (Faroe Islands)", "native": "Hin føroyski fólkaflokkurin" },
+      "abbrev": { "en": "FF", "native": "FF" },
+      "color": "#5E9C2F",
+      "sub_ideology": "traditional_conservative",
+      "founded": 1939,
+      "status_2000": "active",
+      "leader_history": [],
+      "popularity_2000": 0.0016,
+      "popularity_note": "1998 Folketing vote in the Faroe Islands (5,569 votes, one seat) as a share of all valid votes in the Kingdom.",
+      "regional_base": ["faroese"],
+      "note": "Faroese party contesting only the Faroe Islands Folketing seats. Wikipedia lists conservatism, social conservatism, economic liberalism and Faroese independence. Party leaders are not modelled.",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/People%27s_Party_(Faroe_Islands)", "title": "Wikipedia: People's Party (Faroe Islands) (infobox)", "accessed": "2026-10-15" },
+        { "url": "https://en.wikipedia.org/wiki/1998_Danish_general_election", "title": "Wikipedia: 1998 Danish general election", "accessed": "2026-10-15" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "dnk.fo_jf",
+      "name": { "en": "Social Democratic Party (Faroe Islands)", "native": "Javnaðarflokkurin" },
+      "abbrev": { "en": "JF", "native": "JF" },
+      "color": "#E5262A",
+      "sub_ideology": "social_democrat",
+      "founded": "1925-09-25",
+      "status_2000": "active",
+      "leader_history": [],
+      "popularity_2000": 0.0014,
+      "popularity_note": "1998 Folketing vote in the Faroe Islands (4,689 votes, one seat) as a share of all valid votes in the Kingdom.",
+      "regional_base": ["faroese"],
+      "note": "Faroese party contesting only the Faroe Islands Folketing seats. Wikipedia lists social democracy and Danish unionism. Party leaders are not modelled.",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/Social_Democratic_Party_(Faroe_Islands)", "title": "Wikipedia: Social Democratic Party (Faroe Islands) (infobox)", "accessed": "2026-10-15" },
+        { "url": "https://en.wikipedia.org/wiki/1998_Danish_general_election", "title": "Wikipedia: 1998 Danish general election", "accessed": "2026-10-15" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "dnk.gl_siu",
+      "name": { "en": "Siumut", "native": "Siumut" },
+      "abbrev": { "en": "SIU", "native": "SIU" },
+      "color": "#E30613",
+      "sub_ideology": "social_democrat",
+      "founded": "1977-07-29",
+      "status_2000": "active",
+      "leader_history": [],
+      "popularity_2000": 0.0025,
+      "popularity_note": "1998 Folketing vote in Greenland (8,646 votes, one seat) as a share of all valid votes in the Kingdom.",
+      "regional_base": ["greenlandic"],
+      "note": "Greenlandic party contesting only the two Greenland Folketing seats. Wikipedia lists social democracy and Greenlandic independence. Party leaders are not modelled.",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/Siumut", "title": "Wikipedia: Siumut (infobox)", "accessed": "2026-10-15" },
+        { "url": "https://en.wikipedia.org/wiki/1998_Danish_general_election", "title": "Wikipedia: 1998 Danish general election", "accessed": "2026-10-15" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "dnk.gl_ia",
+      "name": { "en": "Inuit Ataqatigiit", "native": "Inuit Ataqatigiit" },
+      "abbrev": { "en": "IA", "native": "IA" },
+      "color": "#B40000",
+      "sub_ideology": "democratic_socialist",
+      "founded": "1976-11-08",
+      "status_2000": "active",
+      "leader_history": [],
+      "popularity_2000": 0.0015,
+      "popularity_note": "1998 Folketing vote in Greenland (5,138 votes, no seat) as a share of all valid votes in the Kingdom.",
+      "regional_base": ["greenlandic"],
+      "note": "Greenlandic party contesting only the Greenland Folketing seats. Founded on 8 November 1976 as a political organisation (the infobox gives a later date for the party). Wikipedia lists Greenlandic independence, democratic socialism and environmentalism. Party leaders are not modelled.",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/Inuit_Ataqatigiit", "title": "Wikipedia: Inuit Ataqatigiit (infobox)", "accessed": "2026-10-15" },
+        { "url": "https://en.wikipedia.org/wiki/1998_Danish_general_election", "title": "Wikipedia: 1998 Danish general election", "accessed": "2026-10-15" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "dnk.gl_at",
+      "name": { "en": "Atassut", "native": "Atassut" },
+      "abbrev": { "en": "A", "native": "A" },
+      "color": "#2A5DB0",
+      "sub_ideology": "liberal_conservative",
+      "founded": "1978-04-29",
+      "status_2000": "active",
+      "leader_history": [],
+      "popularity_2000": 0.0025,
+      "popularity_note": "1998 Folketing vote in Greenland (8,569 votes, one seat) as a share of all valid votes in the Kingdom.",
+      "regional_base": ["greenlandic"],
+      "note": "Greenlandic party contesting only the Greenland Folketing seats. Wikipedia lists liberal conservatism and conservative liberalism. Party leaders are not modelled.",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/Atassut", "title": "Wikipedia: Atassut (infobox)", "accessed": "2026-10-15" },
+        { "url": "https://en.wikipedia.org/wiki/1998_Danish_general_election", "title": "Wikipedia: 1998 Danish general election", "accessed": "2026-10-15" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "dnk.gl_nal",
+      "name": { "en": "Naleraq", "native": "Naleraq" },
+      "abbrev": { "en": "NA", "native": "NA" },
+      "color": "#F28C28",
+      "sub_ideology": "regionalist",
+      "founded": "2014-03-08",
+      "status_2000": "not_yet_founded",
+      "leader_history": [],
+      "popularity_2000": 0,
+      "popularity_note": "Founded in 2014.",
+      "lineage": { "split_from": "dnk.gl_siu" },
+      "regional_base": ["greenlandic"],
+      "note": "Greenlandic party (originally Partii Naleraq) contesting only the Greenland Folketing seats; won one in 2026. Wikipedia lists populism and Greenlandic independence. Party leaders are not modelled.",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/Naleraq", "title": "Wikipedia: Naleraq (infobox)", "accessed": "2026-10-15" },
+        { "url": "https://en.wikipedia.org/wiki/2026_Danish_general_election", "title": "Wikipedia: 2026 Danish general election", "accessed": "2026-10-15" }
+      ],
+      "confidence": "verified"
+    }
+  ]
+}

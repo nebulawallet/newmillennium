@@ -1,0 +1,247 @@
+{
+  "parties": [
+    {
+      "id": "isl.d",
+      "name": { "en": "Independence Party", "native": "Sjálfstæðisflokkurinn" },
+      "abbrev": { "en": "D", "native": "D" },
+      "color": "#00ADEF",
+      "sub_ideology": "liberal_conservative",
+      "founded": "1929-05-25",
+      "status_2000": "active",
+      "leader_history": [
+        { "person": "isl.david_oddsson", "from": "1991-03-10", "to": "2005-10-16" },
+        { "person": "isl.geir_haarde", "from": "2005-10-16", "to": "2009-03-29" },
+        { "person": "isl.bjarni_benediktsson", "from": "2009-03-29", "to": "2025-03-02" },
+        { "person": "isl.gudrun_hafsteinsdottir", "from": "2025-03-02" }
+      ],
+      "popularity_2000": 0.4074,
+      "popularity_note": "Vote share, 1999 Althing election (67,513 of 165,727 valid votes).",
+      "international": "International Democracy Union; European People's Party (associate)",
+      "note": "Wikipedia lists conservatism and economic liberalism; mapped to liberal conservative.",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/Independence_Party_(Iceland)", "title": "Wikipedia: Independence Party (Iceland) (infobox, list of chairmen)", "accessed": "2026-10-16" },
+        { "url": "https://en.wikipedia.org/wiki/1999_Icelandic_parliamentary_election", "title": "Wikipedia: 1999 Icelandic parliamentary election", "accessed": "2026-10-16" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "isl.b",
+      "name": { "en": "Progressive Party", "native": "Framsóknarflokkurinn" },
+      "abbrev": { "en": "B", "native": "B" },
+      "color": "#00843D",
+      "sub_ideology": "agrarian",
+      "founded": "1916-12-16",
+      "status_2000": "active",
+      "leader_history": [
+        { "person": "isl.halldor_asgrimsson", "from": 1994, "to": 2006 },
+        { "person": "isl.jon_sigurdsson", "from": 2006, "to": 2007 },
+        { "person": "isl.gudni_agustsson", "from": 2007, "to": 2008 },
+        { "person": "isl.valgerdur_sverrisdottir", "from": 2008, "to": 2009 },
+        { "person": "isl.sigmundur_david_gunnlaugsson", "from": 2009, "to": 2016 },
+        { "person": "isl.sigurdur_ingi_johannsson", "from": 2016, "to": "2026-02-15" },
+        { "person": "isl.lilja_dogg_alfredsdottir", "from": "2026-02-15" }
+      ],
+      "popularity_2000": 0.1835,
+      "popularity_note": "Vote share, 1999 Althing election (30,415 of 165,727 valid votes).",
+      "international": "Liberal International",
+      "note": "Wikipedia lists agrarianism, Nordic agrarianism and liberal conservatism. Lilja Dögg Alfreðsdóttir was elected chair on 15 February 2026 (Wikipedia, fetched October 2026).",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/Progressive_Party_(Iceland)", "title": "Wikipedia: Progressive Party (Iceland) (infobox, list of chairmen)", "accessed": "2026-10-16" },
+        { "url": "https://en.wikipedia.org/wiki/1999_Icelandic_parliamentary_election", "title": "Wikipedia: 1999 Icelandic parliamentary election", "accessed": "2026-10-16" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "isl.s",
+      "name": { "en": "Social Democratic Alliance", "native": "Samfylkingin – jafnaðarflokkur Íslands" },
+      "abbrev": { "en": "S", "native": "S" },
+      "color": "#EA0038",
+      "sub_ideology": "social_democrat",
+      "founded": 1999,
+      "status_2000": "active",
+      "leader_history": [
+        { "person": "isl.margret_frimannsdottir", "from": 1999, "to": 2000 },
+        { "person": "isl.ossur_skarphedinsson", "from": 2000, "to": 2005 },
+        { "person": "isl.ingibjorg_solrun_gisladottir", "from": 2005, "to": 2009 },
+        { "person": "isl.johanna_sigurdardottir", "from": 2009, "to": "2013-02-26" },
+        { "person": "isl.arni_pall_arnason", "from": "2013-02-26", "to": "2016-06-03" },
+        { "person": "isl.oddny_g_hardardottir", "from": "2016-06-03", "to": "2016-10-31" },
+        { "person": "isl.logi_mar_einarsson", "from": "2016-10-31", "to": "2022-10-28" },
+        { "person": "isl.kristrun_frostadottir", "from": "2022-10-28" }
+      ],
+      "popularity_2000": 0.2678,
+      "popularity_note": "Vote share of the Alliance joint list, 1999 Althing election (44,378 of 165,727 valid votes).",
+      "international": "Party of European Socialists (associate)",
+      "note": "In 1999 the National Awakening, People's Alliance, Social Democratic Party and Women's List ran a joint Alliance list led by Margrét Frímannsdóttir; they formally merged into a single party on 5 May 2000, so 'founded' records the 1999 alliance. The constituent parties are not modelled separately.",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/Social_Democratic_Alliance", "title": "Wikipedia: Social Democratic Alliance (history, list of leaders)", "accessed": "2026-10-16" },
+        { "url": "https://en.wikipedia.org/wiki/1999_Icelandic_parliamentary_election", "title": "Wikipedia: 1999 Icelandic parliamentary election", "accessed": "2026-10-16" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "isl.v",
+      "name": { "en": "Left-Green Movement", "native": "Vinstrihreyfingin – grænt framboð" },
+      "abbrev": { "en": "V", "native": "V" },
+      "color": "#4C9A2A",
+      "sub_ideology": "democratic_socialist",
+      "founded": "1999-02-06",
+      "status_2000": "active",
+      "leader_history": [
+        { "person": "isl.steingrimur_j_sigfusson", "from": 1999, "to": "2013-02-24" },
+        { "person": "isl.katrin_jakobsdottir", "from": "2013-02-24", "to": "2024-04-05" },
+        { "person": "isl.gudmundur_ingi_gudbrandsson", "from": "2024-04-05", "to": 2024, "title": "Acting chairperson" },
+        { "person": "isl.svandis_svavarsdottir", "from": 2024, "to": "2026-03-08" },
+        { "person": "isl.rosa_bjork_brynjolfsdottir", "from": "2026-03-08" }
+      ],
+      "popularity_2000": 0.0912,
+      "popularity_note": "Vote share, 1999 Althing election (15,115 of 165,727 valid votes).",
+      "note": "Founded by Althing members who rejected the Alliance merger (from the People's Alliance and Women's List). Wikipedia's chair table ends with Svandís Svavarsdóttir (from October 2024), but its infobox and Wikidata give Rósa Björk Brynjólfsdóttir as chair from 8 March 2026; the end of Svandís's term is taken from that date. The party has had no Althing seats since 2024. Wikipedia lists eco-socialism and democratic socialism.",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/Left-Green_Movement", "title": "Wikipedia: Left-Green Movement (infobox, list of chairs)", "accessed": "2026-10-16" },
+        { "url": "https://www.wikidata.org/wiki/Q1130754", "title": "Wikidata: Left-Green Movement (chairpersons)", "accessed": "2026-10-16" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "isl.f",
+      "name": { "en": "Liberal Party", "native": "Frjálslyndi flokkurinn" },
+      "abbrev": { "en": "F", "native": "F" },
+      "color": "#1C3F94",
+      "sub_ideology": "classical_liberal",
+      "founded": "1998-11-28",
+      "dissolved": "2012-03-18",
+      "status_2000": "active",
+      "leader_history": [
+        { "person": "isl.sverrir_hermannsson", "from": 1998, "to": 2003 },
+        { "person": "isl.gudjon_arnar_kristjansson", "from": 2003, "to": 2010 },
+        { "person": "isl.sigurjon_thordarson", "from": 2010, "to": 2012 }
+      ],
+      "popularity_2000": 0.0417,
+      "popularity_note": "Vote share, 1999 Althing election (6,919 of 165,727 valid votes).",
+      "lineage": { "split_from": "isl.d" },
+      "note": "Merged into Dawn (not modelled) in 2012. Wikipedia lists liberalism, anti-establishment politics, Euroscepticism and coastal and fishermen's interests; mapped to classical liberal.",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/Liberal_Party_(Iceland)", "title": "Wikipedia: Liberal Party (Iceland) (infobox, list of chairmen)", "accessed": "2026-10-16" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "isl.o",
+      "name": { "en": "Citizens' Movement", "native": "Borgarahreyfingin" },
+      "abbrev": { "en": "O", "native": "O" },
+      "color": "#F28C28",
+      "sub_ideology": "big_tent",
+      "founded": 2009,
+      "dissolved": 2012,
+      "status_2000": "not_yet_founded",
+      "leader_history": [],
+      "popularity_2000": 0,
+      "popularity_note": "Founded in 2009.",
+      "note": "Founded before the 2009 election during the financial crisis; won four seats. Wikipedia lists populism; mapped to big tent. No leader is modelled.",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/Citizens%27_Movement_(Iceland)", "title": "Wikipedia: Citizens' Movement (Iceland)", "accessed": "2026-10-16" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "isl.a",
+      "name": { "en": "Bright Future", "native": "Björt framtíð" },
+      "abbrev": { "en": "A", "native": "A" },
+      "color": "#9B4F96",
+      "sub_ideology": "social_liberal",
+      "founded": "2012-02-04",
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        { "person": "isl.gudmundur_steingrimsson", "from": 2012, "to": 2015 },
+        { "person": "isl.ottarr_proppe", "from": 2015, "to": 2017 },
+        { "person": "isl.bjort_olafsdottir", "from": 2017, "to": 2018 }
+      ],
+      "popularity_2000": 0,
+      "popularity_note": "Founded in 2012.",
+      "note": "Wikipedia lists liberalism, social liberalism, green liberalism and pro-Europeanism. Theodóra Sigurlaug Þorsteinsdóttir (chair from 2018) is not modelled.",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/Bright_Future_(Iceland)", "title": "Wikipedia: Bright Future (Iceland) (infobox, list of chairs)", "accessed": "2026-10-16" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "isl.p",
+      "name": { "en": "Pirate Party", "native": "Píratar" },
+      "abbrev": { "en": "P", "native": "P" },
+      "color": "#3C3C3C",
+      "sub_ideology": "social_liberal",
+      "founded": "2012-11-24",
+      "status_2000": "not_yet_founded",
+      "leader_history": [],
+      "popularity_2000": 0,
+      "popularity_note": "Founded in 2012.",
+      "note": "Founded on 24 November 2012; it rejected a formal leader until Oktavía Hrund Guðrúnar Jóns was elected its first chair on 29 November 2025 (not modelled). Birgitta Jónsdóttir is listed as its figurehead in the 2016 election infobox. Lost all its Althing seats in 2024. Wikipedia lists Pirate politics, direct democracy and open government; mapped to social liberal.",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/Pirate_Party_(Iceland)", "title": "Wikipedia: Pirate Party (Iceland) (infobox)", "accessed": "2026-10-16" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "isl.c",
+      "name": { "en": "Viðreisn (Liberal Reform Party)", "native": "Viðreisn" },
+      "abbrev": { "en": "C", "native": "C" },
+      "color": "#FF7D14",
+      "sub_ideology": "centrist_liberal",
+      "founded": "2016-05-24",
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        { "person": "isl.benedikt_johannesson", "from": 2016, "to": 2017 },
+        { "person": "isl.thorgerdur_katrin_gunnarsdottir", "from": 2017 }
+      ],
+      "popularity_2000": 0,
+      "popularity_note": "Founded in 2016.",
+      "lineage": { "split_from": "isl.d" },
+      "international": "ALDE Party",
+      "note": "Wikipedia lists liberalism, economic liberalism, green liberalism and pro-Europeanism.",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/Vi%C3%B0reisn", "title": "Wikipedia: Viðreisn (infobox, list of chairpersons)", "accessed": "2026-10-16" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "isl.m",
+      "name": { "en": "Centre Party", "native": "Miðflokkurinn" },
+      "abbrev": { "en": "M", "native": "M" },
+      "color": "#002E5D",
+      "sub_ideology": "national_conservative",
+      "founded": "2017-09-24",
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        { "person": "isl.sigmundur_david_gunnlaugsson", "from": 2017 }
+      ],
+      "popularity_2000": 0,
+      "popularity_note": "Founded in 2017.",
+      "lineage": { "split_from": "isl.b" },
+      "note": "Founded by Sigmundur Davíð Gunnlaugsson after leaving the Progressive Party. Wikipedia lists agrarianism, conservatism and hard Euroscepticism; mapped to national conservative.",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/Centre_Party_(Iceland)", "title": "Wikipedia: Centre Party (Iceland) (infobox)", "accessed": "2026-10-16" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "isl.flf",
+      "name": { "en": "People's Party", "native": "Flokkur fólksins" },
+      "abbrev": { "en": "F", "native": "F" },
+      "color": "#FFCA3E",
+      "sub_ideology": "left_populist",
+      "founded": "2016-01-27",
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        { "person": "isl.inga_saeland", "from": "2016-01-27" }
+      ],
+      "popularity_2000": 0,
+      "popularity_note": "Founded in 2016.",
+      "note": "Founded by Inga Sæland. Wikipedia lists populism and pensioners' interests and notes it is also described as centrist and left-wing; mapped to left populist.",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/People%27s_Party_(Iceland)", "title": "Wikipedia: People's Party (Iceland) (infobox)", "accessed": "2026-10-16" }
+      ],
+      "confidence": "verified"
+    }
+  ]
+}

@@ -1,0 +1,390 @@
+{
+  "rules": [
+    {
+      "kind": "legislative",
+      "chamber": "folketing",
+      "every_years": 4,
+      "anchor": "2026-03-24",
+      "snap_possible": true,
+      "note": "The Folketing is elected for four years, but the Prime Minister may ask the monarch to call an election at any time before the term ends."
+    }
+  ],
+  "elections": [
+    {
+      "id": "euro_referendum_2000",
+      "date": "2000-09-28",
+      "kind": "referendum",
+      "question": "Danish participation in the euro (joining the eurozone).",
+      "historical": {
+        "yes_share": 0.4679,
+        "winner": "no",
+        "turnout": 0.876,
+        "note": "Yes 1,620,353, No 1,842,814, invalid 40,358, electorate 3,999,325 (infobox figures). Yes share is of yes plus no votes; turnout computed from these counts. Denmark kept its euro opt-out.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2000_Danish_euro_referendum", "title": "Wikipedia: 2000 Danish euro referendum", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "folketing_2001",
+      "date": "2001-11-20",
+      "kind": "legislative",
+      "chamber": "folketing",
+      "historical": {
+        "candidates": [
+          { "person": "dnk.anders_fogh_rasmussen", "party": "dnk.v", "round": 1 },
+          { "person": "dnk.poul_nyrup_rasmussen", "party": "dnk.s", "round": 1 },
+          { "person": "dnk.pia_kjaersgaard", "party": "dnk.df", "round": 1 }
+        ],
+        "party_results": [
+          { "party": "dnk.v", "share": 0.3125, "seats": 56 },
+          { "party": "dnk.s", "share": 0.2908, "seats": 52 },
+          { "party": "dnk.df", "share": 0.12, "seats": 22 },
+          { "party": "dnk.k", "share": 0.0907, "seats": 16 },
+          { "party": "dnk.sf", "share": 0.0637, "seats": 12 },
+          { "party": "dnk.rv", "share": 0.0519, "seats": 9 },
+          { "party": "dnk.el", "share": 0.024, "seats": 4 },
+          { "party": "dnk.kd", "share": 0.0228, "seats": 4 },
+          { "party": "dnk.cd", "share": 0.0177, "seats": 0 },
+          { "party": "dnk.frp", "share": 0.0056, "seats": 0 },
+          { "party": "dnk.fo_sb", "seats": 1 },
+          { "party": "dnk.fo_t", "seats": 1 },
+          { "party": "dnk.gl_ia", "seats": 1 },
+          { "party": "dnk.gl_siu", "seats": 1 }
+        ],
+        "winner": "dnk.v",
+        "turnout": 0.8715,
+        "note": "Shares are of valid votes in Denmark proper (computed from the vote counts in the results table); the Faroe Islands and Greenland each elect two members separately, so their parties are listed with seats only. Anders Fogh Rasmussen formed a Venstre-Conservative government (Fogh Rasmussen I).",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2001_Danish_general_election", "title": "Wikipedia: 2001 Danish general election", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "folketing_2005",
+      "date": "2005-02-08",
+      "kind": "legislative",
+      "chamber": "folketing",
+      "historical": {
+        "candidates": [
+          { "person": "dnk.anders_fogh_rasmussen", "party": "dnk.v", "round": 1 },
+          { "person": "dnk.mogens_lykketoft", "party": "dnk.s", "round": 1 },
+          { "person": "dnk.pia_kjaersgaard", "party": "dnk.df", "round": 1 }
+        ],
+        "party_results": [
+          { "party": "dnk.v", "share": 0.2903, "seats": 52 },
+          { "party": "dnk.s", "share": 0.2584, "seats": 47 },
+          { "party": "dnk.df", "share": 0.1325, "seats": 24 },
+          { "party": "dnk.k", "share": 0.1027, "seats": 18 },
+          { "party": "dnk.rv", "share": 0.0918, "seats": 17 },
+          { "party": "dnk.sf", "share": 0.0599, "seats": 11 },
+          { "party": "dnk.el", "share": 0.034, "seats": 6 },
+          { "party": "dnk.kd", "share": 0.0173, "seats": 0 },
+          { "party": "dnk.cd", "share": 0.0101, "seats": 0 },
+          { "party": "dnk.fo_t", "seats": 1 },
+          { "party": "dnk.fo_ff", "seats": 1 },
+          { "party": "dnk.gl_siu", "seats": 1 },
+          { "party": "dnk.gl_ia", "seats": 1 }
+        ],
+        "winner": "dnk.v",
+        "turnout": 0.842,
+        "note": "Shares are of valid votes in Denmark proper (computed from the vote counts in the results table); Faroese and Greenlandic parties are listed with seats only. The Venstre-Conservative government continued (Fogh Rasmussen II).",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2005_Danish_general_election", "title": "Wikipedia: 2005 Danish general election", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "folketing_2007",
+      "date": "2007-11-13",
+      "kind": "legislative",
+      "chamber": "folketing",
+      "historical": {
+        "candidates": [
+          { "person": "dnk.anders_fogh_rasmussen", "party": "dnk.v", "round": 1 },
+          { "person": "dnk.helle_thorning_schmidt", "party": "dnk.s", "round": 1 },
+          { "person": "dnk.pia_kjaersgaard", "party": "dnk.df", "round": 1 }
+        ],
+        "party_results": [
+          { "party": "dnk.v", "share": 0.2626, "seats": 46 },
+          { "party": "dnk.s", "share": 0.2547, "seats": 45 },
+          { "party": "dnk.df", "share": 0.1386, "seats": 25 },
+          { "party": "dnk.sf", "share": 0.1304, "seats": 23 },
+          { "party": "dnk.k", "share": 0.1039, "seats": 18 },
+          { "party": "dnk.rv", "share": 0.0512, "seats": 9 },
+          { "party": "dnk.la", "share": 0.0281, "seats": 5 },
+          { "party": "dnk.el", "share": 0.0217, "seats": 4 },
+          { "party": "dnk.kd", "share": 0.0087, "seats": 0 },
+          { "party": "dnk.fo_t", "seats": 1 },
+          { "party": "dnk.fo_sb", "seats": 1 },
+          { "party": "dnk.gl_ia", "seats": 1 },
+          { "party": "dnk.gl_siu", "seats": 1 }
+        ],
+        "winner": "dnk.v",
+        "turnout": 0.8659,
+        "note": "Shares are of valid votes in Denmark proper (computed from the vote counts in the results table); Faroese and Greenlandic parties are listed with seats only. Liberal Alliance stood under its original name, New Alliance. The Venstre-Conservative government continued (Fogh Rasmussen III).",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2007_Danish_general_election", "title": "Wikipedia: 2007 Danish general election", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "succession_referendum_2009",
+      "date": "2009-06-07",
+      "kind": "referendum",
+      "question": "Change to the Act of Succession introducing absolute primogeniture.",
+      "historical": {
+        "yes_share": 0.8535,
+        "winner": "yes",
+        "turnout": 0.5833,
+        "note": "Held in Denmark, the Faroe Islands and Greenland on the day of the European Parliament election. Yes 1,858,211, No 318,934, blank 206,195, invalid 16,808, electorate 4,114,789. Yes share is of yes plus no votes; turnout computed from these counts. Changes to the Act of Succession follow the constitutional amendment procedure.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2009_Danish_Act_of_Succession_referendum", "title": "Wikipedia: 2009 Danish Act of Succession referendum", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "folketing_2011",
+      "date": "2011-09-15",
+      "kind": "legislative",
+      "chamber": "folketing",
+      "historical": {
+        "candidates": [
+          { "person": "dnk.lars_lokke_rasmussen", "party": "dnk.v", "round": 1 },
+          { "person": "dnk.helle_thorning_schmidt", "party": "dnk.s", "round": 1 },
+          { "person": "dnk.pia_kjaersgaard", "party": "dnk.df", "round": 1 }
+        ],
+        "party_results": [
+          { "party": "dnk.v", "share": 0.2673, "seats": 47 },
+          { "party": "dnk.s", "share": 0.2481, "seats": 44 },
+          { "party": "dnk.df", "share": 0.1232, "seats": 22 },
+          { "party": "dnk.rv", "share": 0.095, "seats": 17 },
+          { "party": "dnk.sf", "share": 0.092, "seats": 16 },
+          { "party": "dnk.el", "share": 0.0668, "seats": 12 },
+          { "party": "dnk.la", "share": 0.0498, "seats": 9 },
+          { "party": "dnk.k", "share": 0.0494, "seats": 8 },
+          { "party": "dnk.kd", "share": 0.0079, "seats": 0 },
+          { "party": "dnk.fo_sb", "seats": 1 },
+          { "party": "dnk.fo_jf", "seats": 1 },
+          { "party": "dnk.gl_ia", "seats": 1 },
+          { "party": "dnk.gl_siu", "seats": 1 }
+        ],
+        "winner": "dnk.v",
+        "turnout": 0.8721,
+        "note": "Shares are of valid votes in Denmark proper (computed from the vote counts in the results table); Faroese and Greenlandic parties are listed with seats only. Venstre remained the largest party, but Helle Thorning-Schmidt formed a Social Democratic-Social Liberal-Socialist People's Party coalition (Thorning-Schmidt I).",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2011_Danish_general_election", "title": "Wikipedia: 2011 Danish general election", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "unified_patent_court_referendum_2014",
+      "date": "2014-05-25",
+      "kind": "referendum",
+      "question": "Danish participation in the Unified Patent Court.",
+      "historical": {
+        "yes_share": 0.6248,
+        "winner": "yes",
+        "turnout": 0.5585,
+        "note": "Held with the European Parliament election. Yes 1,386,881, No 833,023, total votes 2,303,783, electorate 4,124,696 (infobox figures). Yes share is of yes plus no votes; turnout computed from the total.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2014_Danish_Unified_Patent_Court_membership_referendum", "title": "Wikipedia: 2014 Danish Unified Patent Court membership referendum", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "folketing_2015",
+      "date": "2015-06-18",
+      "kind": "legislative",
+      "chamber": "folketing",
+      "historical": {
+        "candidates": [
+          { "person": "dnk.helle_thorning_schmidt", "party": "dnk.s", "round": 1 },
+          { "person": "dnk.lars_lokke_rasmussen", "party": "dnk.v", "round": 1 },
+          { "person": "dnk.kristian_thulesen_dahl", "party": "dnk.df", "round": 1 }
+        ],
+        "party_results": [
+          { "party": "dnk.s", "share": 0.2628, "seats": 47 },
+          { "party": "dnk.df", "share": 0.2108, "seats": 37 },
+          { "party": "dnk.v", "share": 0.1947, "seats": 34 },
+          { "party": "dnk.el", "share": 0.078, "seats": 14 },
+          { "party": "dnk.la", "share": 0.0753, "seats": 13 },
+          { "party": "dnk.alt", "share": 0.048, "seats": 9 },
+          { "party": "dnk.rv", "share": 0.0458, "seats": 8 },
+          { "party": "dnk.sf", "share": 0.0419, "seats": 7 },
+          { "party": "dnk.k", "share": 0.0335, "seats": 6 },
+          { "party": "dnk.kd", "share": 0.0083, "seats": 0 },
+          { "party": "dnk.fo_t", "seats": 1 },
+          { "party": "dnk.fo_jf", "seats": 1 },
+          { "party": "dnk.gl_ia", "seats": 1 },
+          { "party": "dnk.gl_siu", "seats": 1 }
+        ],
+        "winner": "dnk.s",
+        "turnout": 0.8589,
+        "note": "Shares are of valid votes in Denmark proper (computed from the vote counts in the results table); Faroese and Greenlandic parties are listed with seats only. The Social Democrats remained the largest party, but the blue bloc won a majority and Lars Løkke Rasmussen formed a Venstre minority government (Løkke Rasmussen II).",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2015_Danish_general_election", "title": "Wikipedia: 2015 Danish general election", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "justice_opt_out_referendum_2015",
+      "date": "2015-12-03",
+      "kind": "referendum",
+      "question": "Converting Denmark's justice and home affairs opt-out into a case-by-case opt-in.",
+      "historical": {
+        "yes_share": 0.4689,
+        "winner": "no",
+        "turnout": 0.72,
+        "note": "Yes 1,375,862, No 1,558,437, total votes 2,990,261, electorate 4,153,041 (infobox figures). Yes share is of yes plus no votes; turnout computed from the total.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2015_Danish_European_Union_opt-out_referendum", "title": "Wikipedia: 2015 Danish European Union opt-out referendum", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "folketing_2019",
+      "date": "2019-06-05",
+      "kind": "legislative",
+      "chamber": "folketing",
+      "historical": {
+        "candidates": [
+          { "person": "dnk.mette_frederiksen", "party": "dnk.s", "round": 1 },
+          { "person": "dnk.lars_lokke_rasmussen", "party": "dnk.v", "round": 1 },
+          { "person": "dnk.kristian_thulesen_dahl", "party": "dnk.df", "round": 1 }
+        ],
+        "party_results": [
+          { "party": "dnk.s", "share": 0.259, "seats": 48 },
+          { "party": "dnk.v", "share": 0.2339, "seats": 43 },
+          { "party": "dnk.df", "share": 0.0874, "seats": 16 },
+          { "party": "dnk.rv", "share": 0.0863, "seats": 16 },
+          { "party": "dnk.sf", "share": 0.0771, "seats": 14 },
+          { "party": "dnk.el", "share": 0.0694, "seats": 13 },
+          { "party": "dnk.k", "share": 0.0662, "seats": 12 },
+          { "party": "dnk.alt", "share": 0.0295, "seats": 5 },
+          { "party": "dnk.nb", "share": 0.0236, "seats": 4 },
+          { "party": "dnk.la", "share": 0.0233, "seats": 4 },
+          { "party": "dnk.kd", "share": 0.0173, "seats": 0 },
+          { "party": "dnk.fo_sb", "seats": 1 },
+          { "party": "dnk.fo_jf", "seats": 1 },
+          { "party": "dnk.gl_ia", "seats": 1 },
+          { "party": "dnk.gl_siu", "seats": 1 }
+        ],
+        "winner": "dnk.s",
+        "turnout": 0.846,
+        "note": "Shares are of valid votes in Denmark proper (computed from the vote counts in the results table); Faroese and Greenlandic parties are listed with seats only. Hard Line (1.8%) and The Citizen List (0.8%) won no seats and count as others. Mette Frederiksen formed a Social Democratic minority government (Frederiksen I).",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2019_Danish_general_election", "title": "Wikipedia: 2019 Danish general election", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "defence_opt_out_referendum_2022",
+      "date": "2022-06-01",
+      "kind": "referendum",
+      "question": "Abolishing Denmark's EU defence opt-out.",
+      "historical": {
+        "yes_share": 0.6687,
+        "winner": "yes",
+        "turnout": 0.6577,
+        "note": "Yes 1,848,242, No 915,717, invalid 38,558, electorate 4,260,944 (infobox figures). Yes share is of yes plus no votes; turnout computed from these counts.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2022_Danish_European_Union_opt-out_referendum", "title": "Wikipedia: 2022 Danish European Union opt-out referendum", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "folketing_2022",
+      "date": "2022-11-01",
+      "kind": "legislative",
+      "chamber": "folketing",
+      "historical": {
+        "candidates": [
+          { "person": "dnk.mette_frederiksen", "party": "dnk.s", "round": 1 },
+          { "person": "dnk.jakob_ellemann_jensen", "party": "dnk.v", "round": 1 },
+          { "person": "dnk.lars_lokke_rasmussen", "party": "dnk.m", "round": 1 }
+        ],
+        "party_results": [
+          { "party": "dnk.s", "share": 0.275, "seats": 50 },
+          { "party": "dnk.v", "share": 0.1332, "seats": 23 },
+          { "party": "dnk.m", "share": 0.0927, "seats": 16 },
+          { "party": "dnk.sf", "share": 0.083, "seats": 15 },
+          { "party": "dnk.dd", "share": 0.0812, "seats": 14 },
+          { "party": "dnk.la", "share": 0.0789, "seats": 14 },
+          { "party": "dnk.k", "share": 0.0551, "seats": 10 },
+          { "party": "dnk.el", "share": 0.0513, "seats": 9 },
+          { "party": "dnk.rv", "share": 0.0379, "seats": 7 },
+          { "party": "dnk.nb", "share": 0.0367, "seats": 6 },
+          { "party": "dnk.alt", "share": 0.0333, "seats": 6 },
+          { "party": "dnk.df", "share": 0.0264, "seats": 5 },
+          { "party": "dnk.kd", "share": 0.0052, "seats": 0 },
+          { "party": "dnk.fo_sb", "seats": 1 },
+          { "party": "dnk.fo_jf", "seats": 1 },
+          { "party": "dnk.gl_siu", "seats": 1 },
+          { "party": "dnk.gl_ia", "seats": 1 }
+        ],
+        "winner": "dnk.s",
+        "turnout": 0.8416,
+        "note": "Shares are of valid votes in Denmark proper (computed from the vote counts in the results table); Faroese and Greenlandic parties are listed with seats only. The Faroe Islands voted on 31 October. Independent Greens (0.9%) won no seats. Frederiksen formed a Social Democratic-Venstre-Moderates majority coalition (Frederiksen II).",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2022_Danish_general_election", "title": "Wikipedia: 2022 Danish general election", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "folketing_2026",
+      "date": "2026-03-24",
+      "kind": "legislative",
+      "chamber": "folketing",
+      "historical": {
+        "candidates": [
+          { "person": "dnk.mette_frederiksen", "party": "dnk.s", "round": 1 },
+          { "person": "dnk.troels_lund_poulsen", "party": "dnk.v", "round": 1 },
+          { "person": "dnk.pia_olsen_dyhr", "party": "dnk.sf", "round": 1 }
+        ],
+        "party_results": [
+          { "party": "dnk.s", "share": 0.2184, "seats": 38 },
+          { "party": "dnk.sf", "share": 0.1158, "seats": 20 },
+          { "party": "dnk.v", "share": 0.1014, "seats": 18 },
+          { "party": "dnk.la", "share": 0.0937, "seats": 16 },
+          { "party": "dnk.df", "share": 0.091, "seats": 16 },
+          { "party": "dnk.m", "share": 0.077, "seats": 14 },
+          { "party": "dnk.k", "share": 0.0759, "seats": 13 },
+          { "party": "dnk.el", "share": 0.0634, "seats": 11 },
+          { "party": "dnk.rv", "share": 0.0581, "seats": 10 },
+          { "party": "dnk.dd", "share": 0.0575, "seats": 10 },
+          { "party": "dnk.alt", "share": 0.0257, "seats": 5 },
+          { "party": "dnk.bp", "share": 0.0213, "seats": 4 },
+          { "party": "dnk.fo_jf", "seats": 1 },
+          { "party": "dnk.fo_sb", "seats": 1 },
+          { "party": "dnk.gl_ia", "seats": 1 },
+          { "party": "dnk.gl_nal", "seats": 1 }
+        ],
+        "winner": "dnk.s",
+        "turnout": 0.8399,
+        "note": "Shares are of valid votes in Denmark proper (computed from the vote counts in the results table; the infobox rounds slightly differently, e.g. Moderates 7.68%); Faroese and Greenlandic parties are listed with seats only. Troels Lund Poulsen declared on 26 February 2026 that he sought to lead a blue-bloc government. After talks on a centre-right government broke down in May, Frederiksen announced on 2 June 2026 a Social Democrats-Green Left-Moderates-Social Liberals minority government (Frederiksen III), supported mainly by the Red-Green Alliance and the Alternative. Two members elected for Liberal Alliance and the Citizens' Party became independents four days after the election; seats here are as elected.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2026_Danish_general_election", "title": "Wikipedia: 2026 Danish general election", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      }
+    }
+  ],
+  "source": [
+    { "url": "https://en.wikipedia.org/wiki/Folketing", "title": "Wikipedia: Folketing (179 members, four-year term, early elections)", "accessed": "2026-10-15" },
+    { "url": "https://en.wikipedia.org/wiki/Template:Danish_elections", "title": "Wikipedia: Template:Danish elections (list of referendums)", "accessed": "2026-10-15" }
+  ],
+  "confidence": "verified"
+}

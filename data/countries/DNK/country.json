@@ -1,0 +1,121 @@
+{
+  "tag": "DNK",
+  "name": { "en": "Denmark", "native": "Danmark", "official": { "en": "Kingdom of Denmark", "native": "Kongeriget Danmark" } },
+  "adjective": "Danish",
+  "culture_primary": "danish",
+  "government": {
+    "type": "constitutional_monarchy",
+    "effective_executive": "dnk.prime_minister",
+    "head_of_state_office": "dnk.monarch",
+    "head_of_government_office": "dnk.prime_minister",
+    "constitution": {
+      "term_limit_amendable": true,
+      "emergency_powers": true,
+      "referendum_required_for": ["constitutional_amendment", "transfer_of_sovereignty_without_five_sixths_majority", "bill_referred_by_one_third_of_folketing"]
+    },
+    "note": "Parliamentary constitutional monarchy with a ceremonial monarch. Governments are usually minority coalitions relying on support parties in the unicameral Folketing. A constitutional amendment must be passed by two parliaments with an election in between and then approved in a referendum; one third of the Folketing may put most passed bills to a referendum, and EU treaty changes have in practice always been put to a referendum. The Kingdom includes the self-governing Faroe Islands and Greenland, which each elect two members of the Folketing."
+  },
+  "offices": [
+    {
+      "id": "dnk.monarch",
+      "title": { "en": "Monarch of Denmark", "native": "Danmarks regent" },
+      "role": "head_of_state",
+      "power_weight": 0.03,
+      "selection": "hereditary",
+      "succession": {
+        "type": "line",
+        "heirs": ["dnk.frederik_x", "dnk.prince_joachim", "dnk.count_nikolai_of_monpezat"]
+      },
+      "holders": [
+        { "person": "dnk.margrethe_ii", "from": "1972-01-14", "to": "2024-01-14", "note": "Abdicated on 14 January 2024." },
+        { "person": "dnk.frederik_x", "from": "2024-01-14" }
+      ],
+      "note": "Heirs are the line of succession on 2000-01-01 under the 1953 Act (male-preference primogeniture): Crown Prince Frederik, Prince Joachim and Joachim's son Nikolai (born 1999). The 2009 referendum introduced absolute primogeniture; Christian became Crown Prince on 14 January 2024.",
+      "source": [
+        { "url": "https://www.wikidata.org/wiki/Q102139", "title": "Wikidata: Margrethe II (Monarch of Denmark 1972-01-14 to 2024-01-14)", "accessed": "2026-10-15" },
+        { "url": "https://www.wikidata.org/wiki/Q1004037", "title": "Wikidata: Frederik X (Monarch of Denmark from 2024-01-14)", "accessed": "2026-10-15" },
+        { "url": "https://en.wikipedia.org/wiki/Succession_to_the_Danish_throne", "title": "Wikipedia: Succession to the Danish throne", "accessed": "2026-10-15" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "dnk.prime_minister",
+      "title": { "en": "Prime Minister of Denmark", "native": "Danmarks statsminister" },
+      "role": "head_of_government",
+      "power_weight": 0.97,
+      "selection": "legislature",
+      "term_years": 4,
+      "holders": [
+        { "person": "dnk.poul_nyrup_rasmussen", "from": "1993-01-25", "to": "2001-11-27" },
+        { "person": "dnk.anders_fogh_rasmussen", "from": "2001-11-27", "to": "2009-04-05" },
+        { "person": "dnk.lars_lokke_rasmussen", "from": "2009-04-05", "to": "2011-10-03" },
+        { "person": "dnk.helle_thorning_schmidt", "from": "2011-10-03", "to": "2015-06-28", "note": "Wikipedia's list gives 28 June 2015 as the handover; Wikidata ends her term on 27 June 2015." },
+        { "person": "dnk.lars_lokke_rasmussen", "from": "2015-06-28", "to": "2019-06-27" },
+        { "person": "dnk.mette_frederiksen", "from": "2019-06-27", "note": "Remained Prime Minister after the March 2026 election and formed her third cabinet (S-SF-M-RV), announced on 2 June 2026." }
+      ],
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/List_of_prime_ministers_of_Denmark", "title": "Wikipedia: List of prime ministers of Denmark", "accessed": "2026-10-15" },
+        { "url": "https://www.wikidata.org/wiki/Q795477", "title": "Wikidata: Prime Minister of Denmark (position held by)", "accessed": "2026-10-15" },
+        { "url": "https://en.wikipedia.org/wiki/2026_Danish_general_election", "title": "Wikipedia: 2026 Danish general election (government formation)", "accessed": "2026-10-15" }
+      ],
+      "confidence": "verified"
+    }
+  ],
+  "legislature": {
+    "name": { "en": "Folketing", "native": "Folketinget" },
+    "chambers": [
+      {
+        "id": "folketing",
+        "name": { "en": "Folketing", "native": "Folketinget" },
+        "seats": 179,
+        "term_years": 4,
+        "elected": "direct",
+        "system": {
+          "type": "list_pr",
+          "formula": "dhondt",
+          "threshold": 0.02,
+          "district_model": "custom",
+          "note": "175 members are elected in Denmark proper: 135 constituency seats by D'Hondt in 10 multi-member constituencies plus 40 levelling seats (largest remainder) for parties with at least 2% nationally or a constituency seat. The Faroe Islands and Greenland each elect 2 further members separately. seats_2000 is the March 1998 result adjusted for the four Progress Party members who formed the Freedom 2000 group on 12 October 1999; other individual defections before 1 January 2000 were not checked."
+        },
+        "seats_2000": {
+          "dnk.s": 63, "dnk.v": 42, "dnk.k": 16, "dnk.sf": 13, "dnk.df": 13, "dnk.cd": 8, "dnk.rv": 7, "dnk.el": 5, "dnk.kd": 4,
+          "dnk.frihed_2000": 4,
+          "dnk.fo_ff": 1, "dnk.fo_jf": 1, "dnk.gl_siu": 1, "dnk.gl_at": 1
+        },
+        "confidence_chamber": true,
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/1998_Danish_general_election", "title": "Wikipedia: 1998 Danish general election", "accessed": "2026-10-15" },
+          { "url": "https://en.wikipedia.org/wiki/Folketing", "title": "Wikipedia: Folketing (electoral system)", "accessed": "2026-10-15" },
+          { "url": "https://da.wikipedia.org/wiki/Frihed_2000", "title": "Danish Wikipedia: Frihed 2000 (formed 12 October 1999 by the four former Progress Party members)", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      }
+    ]
+  },
+  "party_system": "multi_party",
+  "start_2000": {
+    "ruling_parties": ["dnk.s", "dnk.rv"],
+    "confidence_and_supply": ["dnk.sf", "dnk.el"],
+    "ideology_support": {
+      "social_democrat": 0.3593,
+      "classical_liberal": 0.2401,
+      "liberal_conservative": 0.0892,
+      "democratic_socialist": 0.1026,
+      "right_populist": 0.0983,
+      "centrist_liberal": 0.0431,
+      "social_liberal": 0.0385,
+      "christian_democrat": 0.0251,
+      "big_tent": 0.0038
+    },
+    "ideology_support_note": "Derived from 1998 Folketing vote shares in Denmark proper (computed from the official vote counts): Social Democrats 35.9%, Venstre 24.0% (classical liberal), Conservative People's Party 8.9% (liberal conservative), Socialist People's Party 7.6% plus Red-Green Alliance 2.7% (democratic socialist), Danish People's Party 7.4% plus Progress Party 2.4% (right populist), Centre Democrats 4.3% (centrist liberal), Social Liberals 3.9%, Christian People's Party 2.5%, Democratic Renewal and independents 0.4% (big tent). Faroese and Greenlandic votes (about 1.3% of the total) are not included.",
+    "stability": 0.85,
+    "war_support": 0.15
+  },
+  "claims": [],
+  "source": [
+    { "url": "https://en.wikipedia.org/wiki/1998_Danish_general_election", "title": "Wikipedia: 1998 Danish general election", "accessed": "2026-10-15" },
+    { "url": "https://en.wikipedia.org/wiki/Poul_Nyrup_Rasmussen_IV_Cabinet", "title": "Wikipedia: Poul Nyrup Rasmussen IV Cabinet (S-RV, supported by SF and the Red-Green Alliance)", "accessed": "2026-10-15" },
+    { "url": "https://en.wikipedia.org/wiki/Elections_in_Denmark", "title": "Wikipedia: Elections in Denmark (referendum rules)", "accessed": "2026-10-15" }
+  ],
+  "confidence": "verified"
+}

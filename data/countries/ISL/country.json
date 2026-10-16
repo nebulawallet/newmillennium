@@ -1,0 +1,114 @@
+{
+  "tag": "ISL",
+  "name": { "en": "Iceland", "native": "Ísland" },
+  "adjective": "Icelandic",
+  "culture_primary": "icelandic",
+  "government": {
+    "type": "parliamentary",
+    "effective_executive": "isl.prime_minister",
+    "head_of_state_office": "isl.president",
+    "head_of_government_office": "isl.prime_minister",
+    "constitution": {
+      "term_limit_amendable": true,
+      "emergency_powers": true,
+      "referendum_required_for": ["law_not_signed_by_president"]
+    },
+    "note": "Parliamentary republic. The directly elected President (four-year terms, no term limit) designates a party leader to form a government after elections and may refuse to sign a bill, which then takes effect but must be put to a referendum; Ólafur Ragnar Grímsson (1996-2016) is the only president to have done so, and the 2010 Icesave referendum followed his refusal to sign. The Prime Minister leads a government that needs the confidence of the unicameral Althing."
+  },
+  "offices": [
+    {
+      "id": "isl.president",
+      "title": { "en": "President of Iceland", "native": "Forseti Íslands" },
+      "role": "head_of_state",
+      "power_weight": 0.1,
+      "selection": "direct_election",
+      "term_years": 4,
+      "succession": { "type": "acting_then_election" },
+      "holders": [
+        { "person": "isl.olafur_ragnar_grimsson", "from": "1996-08-01", "to": "2016-08-01", "note": "Wikidata and Wikipedia give 31 July 2016 as his last day; the term ends at midnight on 1 August." },
+        { "person": "isl.gudni_th_johannesson", "from": "2016-08-01", "to": "2024-08-01", "note": "Last day 31 July 2024." },
+        { "person": "isl.halla_tomasdottir", "from": "2024-08-01" }
+      ],
+      "note": "Terms begin on 1 August. When the office is vacant or the President cannot act, the Prime Minister, the Speaker of the Althing and the President of the Supreme Court jointly exercise the President's powers (not modelled as an office); a vacancy leads to a new election.",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/President_of_Iceland", "title": "Wikipedia: President of Iceland (term, succession, list of presidents)", "accessed": "2026-10-16" },
+        { "url": "https://www.wikidata.org/wiki/Q19188924", "title": "Wikidata: President of Iceland (holders' positions held)", "accessed": "2026-10-16" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "isl.prime_minister",
+      "title": { "en": "Prime Minister of Iceland", "native": "Forsætisráðherra Íslands" },
+      "role": "head_of_government",
+      "power_weight": 0.9,
+      "selection": "legislature",
+      "term_years": 4,
+      "holders": [
+        { "person": "isl.david_oddsson", "from": "1991-04-30", "to": "2004-09-15" },
+        { "person": "isl.halldor_asgrimsson", "from": "2004-09-15", "to": "2006-06-15" },
+        { "person": "isl.geir_haarde", "from": "2006-06-15", "to": "2009-02-01" },
+        { "person": "isl.johanna_sigurdardottir", "from": "2009-02-01", "to": "2013-05-23" },
+        { "person": "isl.sigmundur_david_gunnlaugsson", "from": "2013-05-23", "to": "2016-04-07" },
+        { "person": "isl.sigurdur_ingi_johannsson", "from": "2016-04-07", "to": "2017-01-11" },
+        { "person": "isl.bjarni_benediktsson", "from": "2017-01-11", "to": "2017-11-30" },
+        { "person": "isl.katrin_jakobsdottir", "from": "2017-11-30", "to": "2024-04-09" },
+        { "person": "isl.bjarni_benediktsson", "from": "2024-04-09", "to": "2024-12-21" },
+        { "person": "isl.kristrun_frostadottir", "from": "2024-12-21" }
+      ],
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/List_of_prime_ministers_of_Iceland", "title": "Wikipedia: List of prime ministers of Iceland", "accessed": "2026-10-16" },
+        { "url": "https://www.wikidata.org/wiki/Q19190022", "title": "Wikidata: Prime Minister of Iceland (holders' positions held)", "accessed": "2026-10-16" }
+      ],
+      "confidence": "verified"
+    }
+  ],
+  "legislature": {
+    "name": { "en": "Althing", "native": "Alþingi" },
+    "chambers": [
+      {
+        "id": "althing",
+        "name": { "en": "Althing", "native": "Alþingi" },
+        "seats": 63,
+        "term_years": 4,
+        "elected": "direct",
+        "system": {
+          "type": "list_pr",
+          "formula": "dhondt",
+          "threshold": 0.05,
+          "district_model": "custom",
+          "note": "Open-list PR in multi-member constituencies (six since 2003; eight before) with levelling seats for parties over 5% nationally. seats_2000 is the May 1999 result; the 17 Alliance seats are assigned to the Social Democratic Alliance, which its constituent parties formally founded on 5 May 2000. Individual party switches before 1 January 2000 were not checked."
+        },
+        "seats_2000": { "isl.d": 26, "isl.s": 17, "isl.b": 12, "isl.v": 6, "isl.f": 2 },
+        "confidence_chamber": true,
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/1999_Icelandic_parliamentary_election", "title": "Wikipedia: 1999 Icelandic parliamentary election", "accessed": "2026-10-16" },
+          { "url": "https://en.wikipedia.org/wiki/Althing", "title": "Wikipedia: Althing (63 members, constituencies, 5% threshold for levelling seats)", "accessed": "2026-10-16" }
+        ],
+        "confidence": "verified"
+      }
+    ]
+  },
+  "party_system": "multi_party",
+  "start_2000": {
+    "ruling_parties": ["isl.d", "isl.b"],
+    "confidence_and_supply": [],
+    "ideology_support": {
+      "liberal_conservative": 0.4074,
+      "social_democrat": 0.2678,
+      "agrarian": 0.1835,
+      "democratic_socialist": 0.0912,
+      "classical_liberal": 0.0417,
+      "big_tent": 0.0084
+    },
+    "ideology_support_note": "Derived from 1999 Althing vote shares (computed from the vote counts): Independence Party 40.7% (liberal conservative), Alliance 26.8% (social democrat), Progressive Party 18.4% (agrarian), Left-Green Movement 9.1% (democratic socialist), Liberal Party 4.2% (classical liberal); the Humanist Party, Christian Democratic Party and Anarchists (together 0.8%) are grouped as big tent.",
+    "stability": 0.9,
+    "war_support": 0.05
+  },
+  "claims": [],
+  "source": [
+    { "url": "https://en.wikipedia.org/wiki/1999_Icelandic_parliamentary_election", "title": "Wikipedia: 1999 Icelandic parliamentary election (Independence-Progressive coalition under Davíð Oddsson continued)", "accessed": "2026-10-16" },
+    { "url": "https://en.wikipedia.org/wiki/President_of_Iceland", "title": "Wikipedia: President of Iceland (powers, veto and referendum)", "accessed": "2026-10-16" },
+    { "url": "https://en.wikipedia.org/wiki/2010_Icelandic_loan_guarantees_referendum", "title": "Wikipedia: 2010 Icelandic loan guarantees referendum", "accessed": "2026-10-16" }
+  ],
+  "confidence": "verified"
+}

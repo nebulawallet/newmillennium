@@ -1,0 +1,15 @@
+{
+  "note": "Influence and approval are gameplay starting values for 1 January 2000 (Social Democratic-Social Liberal minority government supported by the Socialist People's Party and the Red-Green Alliance), not measured data. Influence reflects institutional weight: strong trade unions linked to the Social Democrats, organised employers and farmers, a free and influential press, and a small military under civilian control within NATO.",
+  "interest_groups": [
+    { "type": "military", "influence": 0.1, "approval": 52 },
+    { "type": "security_services", "influence": 0.08, "approval": 55 },
+    { "type": "business", "influence": 0.45, "approval": 45, "note": "Employers' organisations under a centre-left government." },
+    { "type": "labour_unions", "influence": 0.55, "approval": 60, "note": "LO unions are closely tied to the Social Democrats." },
+    { "type": "religious_establishment", "influence": 0.12, "approval": 55, "note": "Established Evangelical Lutheran Church." },
+    { "type": "rural", "influence": 0.22, "approval": 42, "note": "Agricultural organisations lean towards Venstre." },
+    { "type": "urban_middle_class", "influence": 0.5, "approval": 52 },
+    { "type": "minorities", "influence": 0.08, "approval": 50, "note": "Includes immigrant communities and the German minority in South Jutland; Faroese and Greenlanders are represented through their own home-rule governments." },
+    { "type": "youth_students", "influence": 0.18, "approval": 52 },
+    { "type": "media", "influence": 0.4, "approval": 52 }
+  ]
+}

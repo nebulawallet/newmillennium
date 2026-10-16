@@ -1,0 +1,344 @@
+{
+  "rules": [
+    {
+      "kind": "legislative",
+      "chamber": "eduskunta",
+      "every_years": 4,
+      "anchor": "2023-04-02",
+      "snap_possible": true,
+      "note": "Parliament is elected for four years. Early dissolution is constitutionally possible, but none has occurred since 1975."
+    },
+    {
+      "kind": "presidential",
+      "office": "fin.president",
+      "every_years": 6,
+      "anchor": "2024-01-28",
+      "snap_possible": false,
+      "system": "two_round",
+      "note": "Direct election for a six-year term, at most two consecutive terms; a second round between the top two is held if no candidate wins a majority in the first."
+    }
+  ],
+  "elections": [
+    {
+      "id": "president_2000",
+      "date": "2000-01-16",
+      "kind": "presidential",
+      "office": "fin.president",
+      "rounds": 2,
+      "historical": {
+        "candidates": [
+          { "person": "fin.tarja_halonen", "party": "fin.sdp", "share": 0.4003, "votes": 1224431, "round": 1 },
+          { "person": "fin.esko_aho", "party": "fin.kesk", "share": 0.3436, "votes": 1051159, "round": 1 },
+          { "person": "fin.riitta_uosukainen", "party": "fin.kok", "share": 0.1283, "votes": 392305, "round": 1 },
+          { "person": "fin.elisabeth_rehn", "party": "fin.rkp", "share": 0.0791, "votes": 241877, "round": 1 },
+          { "person": "fin.tarja_halonen", "party": "fin.sdp", "share": 0.5163, "votes": 1644532, "round": 2 },
+          { "person": "fin.esko_aho", "party": "fin.kesk", "share": 0.4837, "votes": 1540803, "round": 2 }
+        ],
+        "winner": "fin.tarja_halonen",
+        "turnout": 0.7363,
+        "note": "First round 16 January, second round 6 February 2000; turnout 73.63% and 76.83%. Shares computed from the vote counts. Heidi Hautala (Greens, 3.3%) and three others below 5% are not listed. Halonen took office on 1 March 2000.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2000_Finnish_presidential_election", "title": "Wikipedia: 2000 Finnish presidential election", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "eduskunta_2003",
+      "date": "2003-03-16",
+      "kind": "legislative",
+      "chamber": "eduskunta",
+      "historical": {
+        "candidates": [
+          { "person": "fin.anneli_jaatteenmaki", "party": "fin.kesk", "round": 1 },
+          { "person": "fin.paavo_lipponen", "party": "fin.sdp", "round": 1 },
+          { "person": "fin.ville_itala", "party": "fin.kok", "round": 1 }
+        ],
+        "party_results": [
+          { "party": "fin.kesk", "share": 0.2469, "seats": 55 },
+          { "party": "fin.sdp", "share": 0.2447, "seats": 53 },
+          { "party": "fin.kok", "share": 0.1855, "seats": 40 },
+          { "party": "fin.vas", "share": 0.0993, "seats": 19 },
+          { "party": "fin.vihr", "share": 0.0801, "seats": 14 },
+          { "party": "fin.kd", "share": 0.0534, "seats": 7 },
+          { "party": "fin.rkp", "share": 0.0461, "seats": 8 },
+          { "party": "fin.ps", "share": 0.0157, "seats": 3 },
+          { "party": "others", "seats": 1 }
+        ],
+        "winner": "fin.kesk",
+        "turnout": 0.667,
+        "note": "Shares computed from the vote counts in the results table. The Åland seat (counted as others) went to the Freeminded Co-operation list (Moderates of Åland and the Non-aligned Coalition). Anneli Jäätteenmäki formed a Centre-Social Democratic-Swedish People's Party coalition.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2003_Finnish_parliamentary_election", "title": "Wikipedia: 2003 Finnish parliamentary election", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "president_2006",
+      "date": "2006-01-15",
+      "kind": "presidential",
+      "office": "fin.president",
+      "rounds": 2,
+      "historical": {
+        "candidates": [
+          { "person": "fin.tarja_halonen", "party": "fin.sdp", "share": 0.4631, "votes": 1397030, "round": 1 },
+          { "person": "fin.sauli_niinisto", "party": "fin.kok", "share": 0.2406, "votes": 725866, "round": 1 },
+          { "person": "fin.matti_vanhanen", "party": "fin.kesk", "share": 0.1863, "votes": 561990, "round": 1 },
+          { "person": "fin.tarja_halonen", "party": "fin.sdp", "share": 0.5179, "votes": 1630980, "round": 2 },
+          { "person": "fin.sauli_niinisto", "party": "fin.kok", "share": 0.4821, "votes": 1518333, "round": 2 }
+        ],
+        "winner": "fin.tarja_halonen",
+        "turnout": 0.7082,
+        "note": "First round 15 January, second round 29 January 2006; turnout 70.82% and 74.05%. Shares computed from the vote counts. Five other candidates (Hautala, Soini, Kallis, Lax, Lahti) each won under 5%.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2006_Finnish_presidential_election", "title": "Wikipedia: 2006 Finnish presidential election", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "eduskunta_2007",
+      "date": "2007-03-18",
+      "kind": "legislative",
+      "chamber": "eduskunta",
+      "historical": {
+        "candidates": [
+          { "person": "fin.matti_vanhanen", "party": "fin.kesk", "round": 1 },
+          { "person": "fin.jyrki_katainen", "party": "fin.kok", "round": 1 },
+          { "person": "fin.eero_heinaluoma", "party": "fin.sdp", "round": 1 }
+        ],
+        "party_results": [
+          { "party": "fin.kesk", "share": 0.2311, "seats": 51 },
+          { "party": "fin.kok", "share": 0.2226, "seats": 50 },
+          { "party": "fin.sdp", "share": 0.2144, "seats": 45 },
+          { "party": "fin.vas", "share": 0.0882, "seats": 17 },
+          { "party": "fin.vihr", "share": 0.0846, "seats": 15 },
+          { "party": "fin.kd", "share": 0.0486, "seats": 7 },
+          { "party": "fin.rkp", "share": 0.0457, "seats": 9 },
+          { "party": "fin.ps", "share": 0.0405, "seats": 5 },
+          { "party": "others", "seats": 1 }
+        ],
+        "winner": "fin.kesk",
+        "turnout": 0.65,
+        "note": "Shares computed from the vote counts in the results table. The Åland seat went to the Civic Alliance list (Åland Centre, Freeminded Co-operation, Liberals for Åland, Non-aligned Coalition), counted as others. Vanhanen formed a Centre-National Coalition-Green-Swedish People's Party coalition (Vanhanen II).",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2007_Finnish_parliamentary_election", "title": "Wikipedia: 2007 Finnish parliamentary election", "accessed": "2026-10-15" },
+          { "url": "https://en.wikipedia.org/wiki/List_of_prime_ministers_of_Finland", "title": "Wikipedia: List of prime ministers of Finland (cabinet compositions)", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "eduskunta_2011",
+      "date": "2011-04-17",
+      "kind": "legislative",
+      "chamber": "eduskunta",
+      "historical": {
+        "candidates": [
+          { "person": "fin.jyrki_katainen", "party": "fin.kok", "round": 1 },
+          { "person": "fin.jutta_urpilainen", "party": "fin.sdp", "round": 1 },
+          { "person": "fin.timo_soini", "party": "fin.ps", "round": 1 },
+          { "person": "fin.mari_kiviniemi", "party": "fin.kesk", "round": 1 }
+        ],
+        "party_results": [
+          { "party": "fin.kok", "share": 0.2038, "seats": 44 },
+          { "party": "fin.sdp", "share": 0.191, "seats": 42 },
+          { "party": "fin.ps", "share": 0.1905, "seats": 39 },
+          { "party": "fin.kesk", "share": 0.1576, "seats": 35 },
+          { "party": "fin.vas", "share": 0.0813, "seats": 14 },
+          { "party": "fin.vihr", "share": 0.0725, "seats": 10 },
+          { "party": "fin.rkp", "share": 0.0428, "seats": 9 },
+          { "party": "fin.kd", "share": 0.0403, "seats": 6 },
+          { "party": "others", "seats": 1 }
+        ],
+        "winner": "fin.kok",
+        "turnout": 0.705,
+        "note": "Shares computed from the vote counts in the results table. The Åland seat (counted as others) went to the Åland Coalition 2011 list. Katainen formed a six-party coalition (National Coalition, Social Democrats, Left Alliance, Greens, Swedish People's Party, Christian Democrats).",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2011_Finnish_parliamentary_election", "title": "Wikipedia: 2011 Finnish parliamentary election", "accessed": "2026-10-15" },
+          { "url": "https://en.wikipedia.org/wiki/List_of_prime_ministers_of_Finland", "title": "Wikipedia: List of prime ministers of Finland (cabinet compositions)", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "president_2012",
+      "date": "2012-01-22",
+      "kind": "presidential",
+      "office": "fin.president",
+      "rounds": 2,
+      "historical": {
+        "candidates": [
+          { "person": "fin.sauli_niinisto", "party": "fin.kok", "share": 0.3696, "votes": 1131254, "round": 1 },
+          { "person": "fin.pekka_haavisto", "party": "fin.vihr", "share": 0.1876, "votes": 574275, "round": 1 },
+          { "person": "fin.paavo_vayrynen", "party": "fin.kesk", "share": 0.1753, "votes": 536555, "round": 1 },
+          { "person": "fin.timo_soini", "party": "fin.ps", "share": 0.094, "votes": 287571, "round": 1 },
+          { "person": "fin.paavo_lipponen", "party": "fin.sdp", "share": 0.067, "votes": 205111, "round": 1 },
+          { "person": "fin.paavo_arhinmaki", "party": "fin.vas", "share": 0.0548, "votes": 167663, "round": 1 },
+          { "person": "fin.sauli_niinisto", "party": "fin.kok", "share": 0.6259, "votes": 1802328, "round": 2 },
+          { "person": "fin.pekka_haavisto", "party": "fin.vihr", "share": 0.3741, "votes": 1077425, "round": 2 }
+        ],
+        "winner": "fin.sauli_niinisto",
+        "turnout": 0.6974,
+        "note": "First round 22 January, second round 5 February 2012; turnout 69.74% and 65.98%. Shares computed from the vote counts. Eva Biaudet (RKP, 2.7%) and Sari Essayah (KD, 2.5%) are not listed.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2012_Finnish_presidential_election", "title": "Wikipedia: 2012 Finnish presidential election", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "eduskunta_2015",
+      "date": "2015-04-19",
+      "kind": "legislative",
+      "chamber": "eduskunta",
+      "historical": {
+        "candidates": [
+          { "person": "fin.juha_sipila", "party": "fin.kesk", "round": 1 },
+          { "person": "fin.alexander_stubb", "party": "fin.kok", "round": 1 },
+          { "person": "fin.timo_soini", "party": "fin.ps", "round": 1 },
+          { "person": "fin.antti_rinne", "party": "fin.sdp", "round": 1 }
+        ],
+        "party_results": [
+          { "party": "fin.kesk", "share": 0.211, "seats": 49 },
+          { "party": "fin.ps", "share": 0.1765, "seats": 38 },
+          { "party": "fin.kok", "share": 0.182, "seats": 37 },
+          { "party": "fin.sdp", "share": 0.1651, "seats": 34 },
+          { "party": "fin.vihr", "share": 0.0853, "seats": 15 },
+          { "party": "fin.vas", "share": 0.0713, "seats": 12 },
+          { "party": "fin.rkp", "share": 0.0488, "seats": 9 },
+          { "party": "fin.kd", "share": 0.0354, "seats": 5 },
+          { "party": "others", "seats": 1 }
+        ],
+        "winner": "fin.kesk",
+        "turnout": 0.701,
+        "note": "Shares computed from the vote counts in the results table. The Finns Party won more seats than the National Coalition with fewer votes. The Åland seat (counted as others) went to the Åland Coalition 2015 list. Sipilä formed a Centre-Finns-National Coalition government.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2015_Finnish_parliamentary_election", "title": "Wikipedia: 2015 Finnish parliamentary election", "accessed": "2026-10-15" },
+          { "url": "https://en.wikipedia.org/wiki/List_of_prime_ministers_of_Finland", "title": "Wikipedia: List of prime ministers of Finland (cabinet compositions)", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "president_2018",
+      "date": "2018-01-28",
+      "kind": "presidential",
+      "office": "fin.president",
+      "rounds": 1,
+      "historical": {
+        "candidates": [
+          { "person": "fin.sauli_niinisto", "share": 0.6264, "votes": 1875342, "round": 1 },
+          { "person": "fin.pekka_haavisto", "party": "fin.vihr", "share": 0.124, "votes": 371254, "round": 1 },
+          { "person": "fin.laura_huhtasaari", "party": "fin.ps", "share": 0.0693, "votes": 207337, "round": 1 },
+          { "person": "fin.paavo_vayrynen", "share": 0.0619, "votes": 185305, "round": 1 }
+        ],
+        "winner": "fin.sauli_niinisto",
+        "turnout": 0.6676,
+        "note": "Niinistö won a first-round majority, so no second round was held. Niinistö and Väyrynen are listed as independents (no party recorded). Shares computed from the vote counts; four other candidates won under 5%.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2018_Finnish_presidential_election", "title": "Wikipedia: 2018 Finnish presidential election", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "eduskunta_2019",
+      "date": "2019-04-14",
+      "kind": "legislative",
+      "chamber": "eduskunta",
+      "historical": {
+        "candidates": [
+          { "person": "fin.antti_rinne", "party": "fin.sdp", "round": 1 },
+          { "person": "fin.jussi_halla_aho", "party": "fin.ps", "round": 1 },
+          { "person": "fin.petteri_orpo", "party": "fin.kok", "round": 1 },
+          { "person": "fin.juha_sipila", "party": "fin.kesk", "round": 1 }
+        ],
+        "party_results": [
+          { "party": "fin.sdp", "share": 0.1773, "seats": 40 },
+          { "party": "fin.ps", "share": 0.1748, "seats": 39 },
+          { "party": "fin.kok", "share": 0.17, "seats": 38 },
+          { "party": "fin.kesk", "share": 0.1376, "seats": 31 },
+          { "party": "fin.vihr", "share": 0.1149, "seats": 20 },
+          { "party": "fin.vas", "share": 0.0817, "seats": 16 },
+          { "party": "fin.rkp", "share": 0.0453, "seats": 9 },
+          { "party": "fin.kd", "share": 0.039, "seats": 5 },
+          { "party": "fin.liik", "share": 0.0225, "seats": 1 },
+          { "party": "fin.sin", "share": 0.0097, "seats": 0 },
+          { "party": "others", "seats": 1 }
+        ],
+        "winner": "fin.sdp",
+        "turnout": 0.728,
+        "note": "Shares computed from the vote counts in the results table. The Åland seat (counted as others) went to the For Åland list. Blue Reform (split from the Finns Party in 2017) lost all its seats. Rinne formed a Social Democratic-Centre-Green-Left Alliance-Swedish People's Party coalition; Sanna Marin replaced him as Prime Minister in December 2019 with the same parties.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2019_Finnish_parliamentary_election", "title": "Wikipedia: 2019 Finnish parliamentary election", "accessed": "2026-10-15" },
+          { "url": "https://en.wikipedia.org/wiki/List_of_prime_ministers_of_Finland", "title": "Wikipedia: List of prime ministers of Finland (cabinet compositions)", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "eduskunta_2023",
+      "date": "2023-04-02",
+      "kind": "legislative",
+      "chamber": "eduskunta",
+      "historical": {
+        "candidates": [
+          { "person": "fin.petteri_orpo", "party": "fin.kok", "round": 1 },
+          { "person": "fin.riikka_purra", "party": "fin.ps", "round": 1 },
+          { "person": "fin.sanna_marin", "party": "fin.sdp", "round": 1 }
+        ],
+        "party_results": [
+          { "party": "fin.kok", "share": 0.2082, "seats": 48 },
+          { "party": "fin.ps", "share": 0.2006, "seats": 46 },
+          { "party": "fin.sdp", "share": 0.1995, "seats": 43 },
+          { "party": "fin.kesk", "share": 0.1129, "seats": 23 },
+          { "party": "fin.vihr", "share": 0.0704, "seats": 13 },
+          { "party": "fin.vas", "share": 0.0706, "seats": 11 },
+          { "party": "fin.rkp", "share": 0.0431, "seats": 9 },
+          { "party": "fin.kd", "share": 0.0422, "seats": 5 },
+          { "party": "fin.liik", "share": 0.0242, "seats": 1 },
+          { "party": "others", "seats": 1 }
+        ],
+        "winner": "fin.kok",
+        "turnout": 0.726,
+        "note": "Shares computed from the vote counts in the results table. The Åland seat (counted as others) went to the Åland Coalition list. Orpo formed a National Coalition-Finns-Swedish People's Party-Christian Democrat coalition, taking office on 20 June 2023.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2023_Finnish_parliamentary_election", "title": "Wikipedia: 2023 Finnish parliamentary election", "accessed": "2026-10-15" },
+          { "url": "https://en.wikipedia.org/wiki/List_of_prime_ministers_of_Finland", "title": "Wikipedia: List of prime ministers of Finland (cabinet compositions)", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "president_2024",
+      "date": "2024-01-28",
+      "kind": "presidential",
+      "office": "fin.president",
+      "rounds": 2,
+      "historical": {
+        "candidates": [
+          { "person": "fin.alexander_stubb", "party": "fin.kok", "share": 0.2721, "votes": 882388, "round": 1 },
+          { "person": "fin.pekka_haavisto", "share": 0.258, "votes": 836712, "round": 1 },
+          { "person": "fin.jussi_halla_aho", "party": "fin.ps", "share": 0.1899, "votes": 615802, "round": 1 },
+          { "person": "fin.olli_rehn", "share": 0.1532, "votes": 496759, "round": 1 },
+          { "person": "fin.alexander_stubb", "party": "fin.kok", "share": 0.5162, "votes": 1575444, "round": 2 },
+          { "person": "fin.pekka_haavisto", "share": 0.4838, "votes": 1476634, "round": 2 }
+        ],
+        "winner": "fin.alexander_stubb",
+        "turnout": 0.7155,
+        "note": "First round 28 January, second round 11 February 2024; turnout 71.55% and 67.58%. Haavisto and Olli Rehn filed as independents, endorsed by the Green League and the Centre Party respectively, so no party is recorded. Shares computed from the vote counts; five other candidates won under 5%. Stubb took office on 1 March 2024.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2024_Finnish_presidential_election", "title": "Wikipedia: 2024 Finnish presidential election", "accessed": "2026-10-15" }
+        ],
+        "confidence": "verified"
+      }
+    }
+  ],
+  "source": [
+    { "url": "https://en.wikipedia.org/wiki/Elections_in_Finland", "title": "Wikipedia: Elections in Finland (presidential and parliamentary systems)", "accessed": "2026-10-15" },
+    { "url": "https://en.wikipedia.org/wiki/Parliament_of_Finland", "title": "Wikipedia: Parliament of Finland", "accessed": "2026-10-15" }
+  ],
+  "confidence": "verified"
+}
