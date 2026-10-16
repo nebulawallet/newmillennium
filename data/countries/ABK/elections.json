@@ -1,0 +1,524 @@
+{
+  "rules": [
+    {
+      "kind": "legislative",
+      "chamber": "peoples_assembly",
+      "every_years": 5,
+      "anchor": "2022-03-12",
+      "snap_possible": false,
+      "note": "People's Assembly of 35 members, elected in two rounds; elections in 2002, 2007, 2012, 2017 and 2022."
+    },
+    {
+      "kind": "presidential",
+      "office": "abk.president",
+      "every_years": 5,
+      "anchor": "2025-02-15",
+      "snap_possible": true,
+      "note": "Two-round system; five-year term, renewable once (President of Abkhazia article). Early elections followed the 2004 crisis, the death of Bagapsh (2011), and the resignations of Ankvab (2014), Khajimba (2020) and Bzhania (2024)."
+    }
+  ],
+  "elections": [
+    {
+      "id": "assembly_2002",
+      "date": "2002-03-02",
+      "kind": "legislative",
+      "chamber": "peoples_assembly",
+      "historical": {
+        "party_results": [
+          {
+            "party": "independents",
+            "seats": 35
+          }
+        ],
+        "winner": "independents",
+        "note": "All 35 seats were won by independents and initiative groups (per the infobox).",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2002_Abkhazian_parliamentary_election",
+            "title": "Wikipedia: 2002 Abkhazian parliamentary election",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "president_2004",
+      "date": "2004-10-03",
+      "kind": "presidential",
+      "office": "abk.president",
+      "rounds": 1,
+      "historical": {
+        "candidates": [
+          {
+            "person": "abk.sergei_bagapsh",
+            "party": "abk.united_abkhazia",
+            "share": 0.5131,
+            "votes": 43336,
+            "round": 1
+          },
+          {
+            "person": "abk.raul_khajimba",
+            "share": 0.3649,
+            "votes": 30815,
+            "round": 1
+          },
+          {
+            "person": "abk.sergei_shamba",
+            "share": 0.071,
+            "votes": 5993,
+            "round": 1
+          }
+        ],
+        "winner": "abk.sergei_bagapsh",
+        "note": "Official results (the article notes Bagapsh received 50.08% of all votes cast including invalid votes). The results were annulled and Vladislav Ardzinba stayed on as interim President until a repeat election in January 2005. Khajimba is listed under the Forum for the National Unity of Abkhazia, which was founded only in February 2005, so no party is recorded for him here.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2004_Abkhazian_presidential_election",
+            "title": "Wikipedia: 2004 Abkhazian presidential election",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "president_2005",
+      "date": "2005-01-12",
+      "kind": "presidential",
+      "office": "abk.president",
+      "rounds": 1,
+      "snap": true,
+      "historical": {
+        "candidates": [
+          {
+            "person": "abk.sergei_bagapsh",
+            "party": "abk.united_abkhazia",
+            "share": 0.926,
+            "votes": 69328,
+            "round": 1
+          },
+          {
+            "person": "abk.iakub_lakoba",
+            "party": "abk.ppa",
+            "share": 0.0474,
+            "votes": 3549,
+            "round": 1
+          }
+        ],
+        "winner": "abk.sergei_bagapsh",
+        "note": "Repeat election after the 2004 crisis; Bagapsh ran with Raul Khajimba as his vice-presidential candidate under a power-sharing agreement (per the FNUA article). The runner-up was Iakub Lakoba of the People's Party (below 5%, included as runner-up); the remaining votes were 'against all'.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2005_Abkhazian_presidential_election",
+            "title": "Wikipedia: 2005 Abkhazian presidential election",
+            "accessed": "2026-10-16"
+          },
+          {
+            "url": "https://en.wikipedia.org/wiki/Forum_for_the_National_Unity_of_Abkhazia",
+            "title": "Wikipedia: Forum for the National Unity of Abkhazia",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "assembly_2007",
+      "date": "2007-03-04",
+      "kind": "legislative",
+      "chamber": "peoples_assembly",
+      "historical": {
+        "party_results": [
+          {
+            "party": "independents",
+            "seats": 35
+          }
+        ],
+        "winner": "independents",
+        "turnout": 0.4725,
+        "note": "Second round on 18 March 2007. All deputies were independents: 28 supporters of President Bagapsh and 7 supporters of Raul Khajimba (per the infobox).",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2007_Abkhazian_parliamentary_election",
+            "title": "Wikipedia: 2007 Abkhazian parliamentary election",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "president_2009",
+      "date": "2009-12-12",
+      "kind": "presidential",
+      "office": "abk.president",
+      "rounds": 1,
+      "historical": {
+        "candidates": [
+          {
+            "person": "abk.sergei_bagapsh",
+            "party": "abk.united_abkhazia",
+            "share": 0.6303,
+            "votes": 62231,
+            "round": 1
+          },
+          {
+            "person": "abk.raul_khajimba",
+            "party": "abk.fnua",
+            "share": 0.1579,
+            "votes": 15584,
+            "round": 1
+          },
+          {
+            "person": "abk.zaur_ardzinba",
+            "share": 0.0942,
+            "votes": 9296,
+            "round": 1
+          },
+          {
+            "person": "abk.beslan_butba",
+            "party": "abk.peda",
+            "share": 0.085,
+            "votes": 8395,
+            "round": 1
+          }
+        ],
+        "winner": "abk.sergei_bagapsh",
+        "note": "Shares from the infobox and results table; one other candidate under 5% omitted.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2009_Abkhazian_presidential_election",
+            "title": "Wikipedia: 2009 Abkhazian presidential election",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "president_2011",
+      "date": "2011-08-26",
+      "kind": "presidential",
+      "office": "abk.president",
+      "rounds": 1,
+      "snap": true,
+      "historical": {
+        "candidates": [
+          {
+            "person": "abk.alexander_ankvab",
+            "party": "abk.aitaira",
+            "share": 0.5623,
+            "votes": 58657,
+            "round": 1
+          },
+          {
+            "person": "abk.sergei_shamba",
+            "party": "abk.peda",
+            "share": 0.2153,
+            "votes": 22456,
+            "round": 1
+          },
+          {
+            "person": "abk.raul_khajimba",
+            "party": "abk.fnua",
+            "share": 0.203,
+            "votes": 21177,
+            "round": 1
+          }
+        ],
+        "winner": "abk.alexander_ankvab",
+        "note": "Early election after President Bagapsh's death on 29 May 2011.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2011_Abkhazian_presidential_election",
+            "title": "Wikipedia: 2011 Abkhazian presidential election",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "assembly_2012",
+      "date": "2012-03-10",
+      "kind": "legislative",
+      "chamber": "peoples_assembly",
+      "historical": {
+        "party_results": [
+          {
+            "party": "independents",
+            "seats": 35
+          }
+        ],
+        "winner": "independents",
+        "turnout": 0.445,
+        "note": "Second round on 24 March 2012. All 35 seats were won by independents and initiative groups (per the infobox).",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2012_Abkhazian_parliamentary_election",
+            "title": "Wikipedia: 2012 Abkhazian parliamentary election",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "president_2014",
+      "date": "2014-08-24",
+      "kind": "presidential",
+      "office": "abk.president",
+      "rounds": 1,
+      "snap": true,
+      "historical": {
+        "candidates": [
+          {
+            "person": "abk.raul_khajimba",
+            "party": "abk.fnua",
+            "share": 0.5156,
+            "votes": 50586,
+            "round": 1
+          },
+          {
+            "person": "abk.aslan_bzhania",
+            "share": 0.3656,
+            "votes": 35869,
+            "round": 1
+          },
+          {
+            "person": "abk.mirab_kishmaria",
+            "share": 0.0651,
+            "votes": 6390,
+            "round": 1
+          }
+        ],
+        "winner": "abk.raul_khajimba",
+        "note": "Early election after President Ankvab's resignation on 1 June 2014. Bzhania and Kishmaria ran as independents. Shares from the infobox and results table.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2014_Abkhazian_presidential_election",
+            "title": "Wikipedia: 2014 Abkhazian presidential election",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "assembly_2017",
+      "date": "2017-03-12",
+      "kind": "legislative",
+      "chamber": "peoples_assembly",
+      "historical": {
+        "party_results": [
+          {
+            "party": "abk.fnua",
+            "seats": 6
+          },
+          {
+            "party": "abk.united_abkhazia",
+            "seats": 3
+          },
+          {
+            "party": "independents",
+            "seats": 26
+          }
+        ],
+        "winner": "independents",
+        "note": "Second round on 26 March 2017. Most deputies were independents; the largest party was the Forum for the National Unity of Abkhazia (6 seats).",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2017_Abkhazian_parliamentary_election",
+            "title": "Wikipedia: 2017 Abkhazian parliamentary election",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "president_2019",
+      "date": "2019-08-25",
+      "kind": "presidential",
+      "office": "abk.president",
+      "rounds": 2,
+      "historical": {
+        "candidates": [
+          {
+            "person": "abk.raul_khajimba",
+            "party": "abk.fnua",
+            "share": 0.2633,
+            "votes": 20544,
+            "round": 1
+          },
+          {
+            "person": "abk.alkhas_kvitsinia",
+            "party": "abk.amtsakhara",
+            "share": 0.2426,
+            "votes": 18929,
+            "round": 1
+          },
+          {
+            "person": "abk.leonid_dzapshba",
+            "share": 0.0633,
+            "votes": 4935,
+            "round": 1
+          },
+          {
+            "person": "abk.raul_khajimba",
+            "party": "abk.fnua",
+            "share": 0.4868,
+            "votes": 39741,
+            "round": 2
+          },
+          {
+            "person": "abk.alkhas_kvitsinia",
+            "party": "abk.amtsakhara",
+            "share": 0.4746,
+            "votes": 38742,
+            "round": 2
+          }
+        ],
+        "winner": "abk.raul_khajimba",
+        "note": "Second round on 8 September 2019. The Supreme Court annulled the results in January 2020 after protests, and Khajimba resigned. Alkhas Kvitsinia (Amtsakhara, runner-up) is recorded from his Wikidata item. Candidates without a matching English Wikipedia or Wikidata record are omitted: Oleg Arshba (23.92%; two Wikidata items share the name) and Astamur Tarba (7.30%). Shares computed from the candidates' vote counts.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2019_Abkhazian_presidential_election",
+            "title": "Wikipedia: 2019 Abkhazian presidential election",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "needs_review",
+        "review_note": "Add Oleg Arshba and Astamur Tarba if a biographical source can be found; Kvitsinia's person record rests on Wikidata alone."
+      }
+    },
+    {
+      "id": "president_2020",
+      "date": "2020-03-22",
+      "kind": "presidential",
+      "office": "abk.president",
+      "rounds": 1,
+      "snap": true,
+      "historical": {
+        "candidates": [
+          {
+            "person": "abk.aslan_bzhania",
+            "share": 0.5892,
+            "votes": 53741,
+            "round": 1
+          },
+          {
+            "person": "abk.adgur_ardzinba",
+            "party": "abk.fnua",
+            "share": 0.3693,
+            "votes": 33686,
+            "round": 1
+          }
+        ],
+        "winner": "abk.aslan_bzhania",
+        "note": "Repeat election after the annulment of the 2019 result. Bzhania ran as an independent.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2020_Abkhazian_presidential_election",
+            "title": "Wikipedia: 2020 Abkhazian presidential election",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "assembly_2022",
+      "date": "2022-03-12",
+      "kind": "legislative",
+      "chamber": "peoples_assembly",
+      "historical": {
+        "party_results": [
+          {
+            "party": "abk.amtsakhara",
+            "seats": 5
+          },
+          {
+            "party": "abk.aitaira",
+            "seats": 1
+          },
+          {
+            "party": "independents",
+            "seats": 29
+          }
+        ],
+        "winner": "independents",
+        "turnout": 0.512,
+        "note": "Second round on 26 March 2022, reruns on 14 and 28 May 2022 (turnout 51.2% in the first round). Most deputies were independents; the largest party was Amtsakhara (5 seats).",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2022_Abkhazian_parliamentary_election",
+            "title": "Wikipedia: 2022 Abkhazian parliamentary election",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "president_2025",
+      "date": "2025-02-15",
+      "kind": "presidential",
+      "office": "abk.president",
+      "rounds": 2,
+      "snap": true,
+      "historical": {
+        "candidates": [
+          {
+            "person": "abk.badra_gunba",
+            "share": 0.4776,
+            "votes": 45817,
+            "round": 1
+          },
+          {
+            "person": "abk.adgur_ardzinba",
+            "share": 0.3803,
+            "votes": 36476,
+            "round": 1
+          },
+          {
+            "person": "abk.badra_gunba",
+            "share": 0.5566,
+            "votes": 54954,
+            "round": 2
+          },
+          {
+            "person": "abk.adgur_ardzinba",
+            "share": 0.4225,
+            "votes": 41708,
+            "round": 2
+          }
+        ],
+        "winner": "abk.badra_gunba",
+        "note": "Early election after President Bzhania's resignation on 19 November 2024; second round on 1 March 2025. Gunba ran as an independent and Adgur Ardzinba for the Abkhaz People's Movement (not recorded as a party). Robert Arshba (7.75% in the first round) is omitted because no biographical source was fetched. Shares computed from the vote counts including 'against all'.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2025_Abkhazian_presidential_election",
+            "title": "Wikipedia: 2025 Abkhazian presidential election",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    }
+  ],
+  "source": [
+    {
+      "url": "https://en.wikipedia.org/wiki/Template:Elections_in_Abkhazia",
+      "title": "Wikipedia: Template:Elections in Abkhazia",
+      "accessed": "2026-10-16"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/President_of_Abkhazia",
+      "title": "Wikipedia: President of Abkhazia",
+      "accessed": "2026-10-16"
+    }
+  ],
+  "confidence": "verified"
+}

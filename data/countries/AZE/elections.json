@@ -1,0 +1,593 @@
+{
+  "rules": [
+    {
+      "kind": "legislative",
+      "chamber": "national_assembly",
+      "every_years": 5,
+      "anchor": "2024-09-01",
+      "snap_possible": true,
+      "note": "National Assembly (Milli Majlis), 125 seats, five-year term (National Assembly article)."
+    },
+    {
+      "kind": "presidential",
+      "office": "aze.president",
+      "every_years": 7,
+      "anchor": "2024-02-07",
+      "snap_possible": true,
+      "note": "Run-off rules not checked (two-round default). The 2016 referendum extended the term from five to seven years; the 2009 referendum removed the term limit."
+    }
+  ],
+  "elections": [
+    {
+      "id": "parliament_2000",
+      "date": "2000-11-05",
+      "kind": "legislative",
+      "chamber": "national_assembly",
+      "historical": {
+        "party_results": [
+          {
+            "party": "aze.yap",
+            "share": 0.623,
+            "seats": 75
+          },
+          {
+            "party": "aze.apfp",
+            "share": 0.11,
+            "seats": 6
+          },
+          {
+            "party": "aze.csp",
+            "share": 0.064,
+            "seats": 3
+          },
+          {
+            "party": "aze.communist",
+            "share": 0.063,
+            "seats": 2
+          },
+          {
+            "party": "aze.musavat",
+            "share": 0.049,
+            "seats": 2
+          },
+          {
+            "party": "aze.anip",
+            "share": 0.039,
+            "seats": 2
+          },
+          {
+            "party": "aze.motherland",
+            "seats": 1
+          },
+          {
+            "party": "others",
+            "seats": 3
+          },
+          {
+            "party": "independents",
+            "seats": 30
+          },
+          {
+            "party": "vacant",
+            "seats": 1
+          }
+        ],
+        "winner": "aze.yap",
+        "note": "Re-run in 11 constituencies on 7 January 2001. Shares are the party-list percentages in the source; 'others' groups the single-seat parties listed in the source (Alliance Party for the Sake of Azerbaijan, Social Prosperity Party, Compatriot Party).",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2000%E2%80%9301_Azerbaijani_parliamentary_election",
+            "title": "Wikipedia: 2000–01 Azerbaijani parliamentary election",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "constitutional_referendum_2002",
+      "date": "2002-08-24",
+      "kind": "referendum",
+      "question": "39 constitutional amendments in eight questions",
+      "historical": {
+        "yes_share": 0.9707,
+        "winner": "yes",
+        "turnout": 0.8847,
+        "note": "Share for question 1 (all eight questions passed with 96.5-97.1% in favour).",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2002_Azerbaijani_constitutional_referendum",
+            "title": "Wikipedia: 2002 Azerbaijani constitutional referendum",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "president_2003",
+      "date": "2003-10-15",
+      "kind": "presidential",
+      "office": "aze.president",
+      "rounds": 1,
+      "historical": {
+        "candidates": [
+          {
+            "person": "aze.ilham_aliyev",
+            "party": "aze.yap",
+            "share": 0.7684,
+            "votes": 1860346,
+            "round": 1
+          },
+          {
+            "person": "aze.isa_gambar",
+            "party": "aze.musavat",
+            "share": 0.1397,
+            "votes": 338145,
+            "round": 1
+          }
+        ],
+        "winner": "aze.ilham_aliyev",
+        "note": "Shares computed from the candidates' vote counts; candidates under 5% omitted.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2003_Azerbaijani_presidential_election",
+            "title": "Wikipedia: 2003 Azerbaijani presidential election",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "parliament_2005",
+      "date": "2005-11-06",
+      "kind": "legislative",
+      "chamber": "national_assembly",
+      "historical": {
+        "party_results": [
+          {
+            "party": "aze.yap",
+            "seats": 61
+          },
+          {
+            "party": "aze.musavat",
+            "seats": 5
+          },
+          {
+            "party": "aze.csp",
+            "seats": 2
+          },
+          {
+            "party": "aze.motherland",
+            "seats": 2
+          },
+          {
+            "party": "aze.apfp",
+            "seats": 1
+          },
+          {
+            "party": "aze.great_order",
+            "seats": 1
+          },
+          {
+            "party": "others",
+            "seats": 6
+          },
+          {
+            "party": "independents",
+            "seats": 46
+          },
+          {
+            "party": "vacant",
+            "seats": 1
+          }
+        ],
+        "winner": "aze.yap",
+        "note": "Seats only (the source gives no vote shares); one result was annulled (recorded as vacant). 'others' groups the single-seat parties listed in the source (Hope, Social Prosperity, Justice, Democratic Reforms, Whole Azerbaijan Popular Front and Civic Unity parties).",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2005_Azerbaijani_parliamentary_election",
+            "title": "Wikipedia: 2005 Azerbaijani parliamentary election",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "president_2008",
+      "date": "2008-10-15",
+      "kind": "presidential",
+      "office": "aze.president",
+      "rounds": 1,
+      "historical": {
+        "candidates": [
+          {
+            "person": "aze.ilham_aliyev",
+            "party": "aze.yap",
+            "share": 0.8873,
+            "votes": 3232259,
+            "round": 1
+          }
+        ],
+        "winner": "aze.ilham_aliyev",
+        "note": "Shares computed from the candidates' vote counts. The runner-up, Igbal Aghazade (Party of Hope, 2.86%), is omitted because no English Wikipedia or Wikidata record was found; other candidates were under 5%.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2008_Azerbaijani_presidential_election",
+            "title": "Wikipedia: 2008 Azerbaijani presidential election",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "constitutional_referendum_2009",
+      "date": "2009-03-18",
+      "kind": "referendum",
+      "question": "29 constitutional amendments, including the abolition of presidential term limits",
+      "historical": {
+        "winner": "yes",
+        "turnout": 0.7108,
+        "note": "All measures passed, with 87.14-91.76% approval per measure (single figure not recorded).",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2009_Azerbaijani_constitutional_referendum",
+            "title": "Wikipedia: 2009 Azerbaijani constitutional referendum",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "parliament_2010",
+      "date": "2010-11-07",
+      "kind": "legislative",
+      "chamber": "national_assembly",
+      "historical": {
+        "party_results": [
+          {
+            "party": "aze.yap",
+            "share": 0.4648,
+            "seats": 71
+          },
+          {
+            "party": "aze.csp",
+            "share": 0.0195,
+            "seats": 3
+          },
+          {
+            "party": "aze.motherland",
+            "share": 0.0139,
+            "seats": 2
+          },
+          {
+            "party": "aze.great_order",
+            "share": 0.0073,
+            "seats": 1
+          },
+          {
+            "party": "others",
+            "seats": 9
+          },
+          {
+            "party": "independents",
+            "share": 0.356,
+            "seats": 39
+          }
+        ],
+        "winner": "aze.yap",
+        "note": "Shares computed from the vote counts in the source. 'others' groups the single-seat parties listed in the source (Whole Azerbaijan Popular Front, Hope, Social Prosperity, Justice, Civic Unity and Democratic Reforms parties) plus 3 deputies whose affiliation is not indicated.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2010_Azerbaijani_parliamentary_election",
+            "title": "Wikipedia: 2010 Azerbaijani parliamentary election",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "president_2013",
+      "date": "2013-10-09",
+      "kind": "presidential",
+      "office": "aze.president",
+      "rounds": 1,
+      "historical": {
+        "candidates": [
+          {
+            "person": "aze.ilham_aliyev",
+            "party": "aze.yap",
+            "share": 0.8454,
+            "votes": 3126113,
+            "round": 1
+          },
+          {
+            "person": "aze.jamil_hasanli",
+            "share": 0.0553,
+            "votes": 204642,
+            "round": 1
+          }
+        ],
+        "winner": "aze.ilham_aliyev",
+        "turnout": 0.7162,
+        "note": "Hasanli was the candidate of the National Council of Democratic Forces. Shares computed from the candidates' vote counts; candidates under 5% omitted.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2013_Azerbaijani_presidential_election",
+            "title": "Wikipedia: 2013 Azerbaijani presidential election",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "parliament_2015",
+      "date": "2015-11-01",
+      "kind": "legislative",
+      "chamber": "national_assembly",
+      "historical": {
+        "party_results": [
+          {
+            "party": "aze.yap",
+            "share": 0.472,
+            "seats": 69
+          },
+          {
+            "party": "aze.csp",
+            "share": 0.0132,
+            "seats": 2
+          },
+          {
+            "party": "aze.great_order",
+            "share": 0.012,
+            "seats": 1
+          },
+          {
+            "party": "aze.motherland",
+            "share": 0.01,
+            "seats": 1
+          },
+          {
+            "party": "others",
+            "seats": 8
+          },
+          {
+            "party": "independents",
+            "share": 0.405,
+            "seats": 43
+          },
+          {
+            "party": "vacant",
+            "seats": 1
+          }
+        ],
+        "winner": "aze.yap",
+        "turnout": 0.557,
+        "note": "Shares computed from the vote counts; one result invalidated (vacant). 'others' groups the single-seat parties listed in the source (Whole Azerbaijan Popular Front, Social Prosperity, Democratic Reforms, Unity, Civic Unity, Democratic Enlightenment, National Revival Movement and Social Democratic parties).",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2015_Azerbaijani_parliamentary_election",
+            "title": "Wikipedia: 2015 Azerbaijani parliamentary election",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "constitutional_referendum_2016",
+      "date": "2016-09-26",
+      "kind": "referendum",
+      "question": "29 constitutional amendments, including a seven-year presidential term and the office of Vice President",
+      "historical": {
+        "yes_share": 0.9068,
+        "winner": "yes",
+        "turnout": 0.697,
+        "note": "Share for amendment 1; amendments were approved by between about 89% and 95%.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2016_Azerbaijani_constitutional_referendum",
+            "title": "Wikipedia: 2016 Azerbaijani constitutional referendum",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "president_2018",
+      "date": "2018-04-11",
+      "kind": "presidential",
+      "office": "aze.president",
+      "rounds": 1,
+      "snap": true,
+      "historical": {
+        "candidates": [
+          {
+            "person": "aze.ilham_aliyev",
+            "party": "aze.yap",
+            "share": 0.8602,
+            "votes": 3394898,
+            "round": 1
+          },
+          {
+            "person": "aze.zahid_oruj",
+            "share": 0.0312,
+            "votes": 122956,
+            "round": 1
+          }
+        ],
+        "winner": "aze.ilham_aliyev",
+        "turnout": 0.7424,
+        "note": "Brought forward from October 2018 by presidential decree of 5 February 2018. Oruj (independent) was runner-up; shares computed from the candidates' vote counts.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2018_Azerbaijani_presidential_election",
+            "title": "Wikipedia: 2018 Azerbaijani presidential election",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "parliament_2020",
+      "date": "2020-02-09",
+      "kind": "legislative",
+      "chamber": "national_assembly",
+      "snap": true,
+      "historical": {
+        "party_results": [
+          {
+            "party": "aze.yap",
+            "share": 0.4184,
+            "seats": 70
+          },
+          {
+            "party": "aze.csp",
+            "share": 0.0116,
+            "seats": 3
+          },
+          {
+            "party": "aze.great_order",
+            "share": 0.0068,
+            "seats": 1
+          },
+          {
+            "party": "aze.motherland",
+            "share": 0.0054,
+            "seats": 1
+          },
+          {
+            "party": "others",
+            "seats": 5
+          },
+          {
+            "party": "independents",
+            "share": 0.4955,
+            "seats": 41
+          },
+          {
+            "party": "vacant",
+            "seats": 4
+          }
+        ],
+        "winner": "aze.yap",
+        "note": "Snap election after the dissolution of parliament. Shares computed from the vote counts; four results invalidated (vacant). 'others' groups the single-seat parties listed in the source (Whole Azerbaijan Popular Front, Civic Unity, Unity, Democratic Enlightenment and Democratic Reforms parties).",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2020_Azerbaijani_parliamentary_election",
+            "title": "Wikipedia: 2020 Azerbaijani parliamentary election",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "president_2024",
+      "date": "2024-02-07",
+      "kind": "presidential",
+      "office": "aze.president",
+      "rounds": 1,
+      "snap": true,
+      "historical": {
+        "candidates": [
+          {
+            "person": "aze.ilham_aliyev",
+            "party": "aze.yap",
+            "share": 0.9212,
+            "votes": 4567458,
+            "round": 1
+          },
+          {
+            "person": "aze.zahid_oruj",
+            "share": 0.0217,
+            "votes": 107632,
+            "round": 1
+          }
+        ],
+        "winner": "aze.ilham_aliyev",
+        "turnout": 0.7626,
+        "note": "Snap election called in December 2023. Shares computed from the candidates' vote counts.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2024_Azerbaijani_presidential_election",
+            "title": "Wikipedia: 2024 Azerbaijani presidential election",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "parliament_2024",
+      "date": "2024-09-01",
+      "kind": "legislative",
+      "chamber": "national_assembly",
+      "snap": true,
+      "historical": {
+        "party_results": [
+          {
+            "party": "aze.yap",
+            "share": 0.5042,
+            "seats": 68
+          },
+          {
+            "party": "aze.csp",
+            "share": 0.0142,
+            "seats": 3
+          },
+          {
+            "party": "aze.motherland",
+            "share": 0.0061,
+            "seats": 1
+          },
+          {
+            "party": "aze.anip",
+            "share": 0.0059,
+            "seats": 1
+          },
+          {
+            "party": "aze.great_order",
+            "share": 0.0036,
+            "seats": 1
+          },
+          {
+            "party": "others",
+            "seats": 7
+          },
+          {
+            "party": "independents",
+            "share": 0.3935,
+            "seats": 44
+          }
+        ],
+        "winner": "aze.yap",
+        "note": "Brought forward from November 2024 after parliament was dissolved in June 2024. Shares computed from the vote counts. 'others': Justice, Law, Democracy Party (2 seats) and one seat each for the Republican Alternative, Great Azerbaijan, National Front, Democratic Reforms and Democratic Enlightenment parties.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2024_Azerbaijani_parliamentary_election",
+            "title": "Wikipedia: 2024 Azerbaijani parliamentary election",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    }
+  ],
+  "source": [
+    {
+      "url": "https://en.wikipedia.org/wiki/Elections_in_Azerbaijan",
+      "title": "Wikipedia: Elections in Azerbaijan",
+      "accessed": "2026-10-16"
+    }
+  ],
+  "confidence": "verified"
+}

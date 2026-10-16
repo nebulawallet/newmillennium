@@ -1,0 +1,521 @@
+{
+  "rules": [
+    {
+      "kind": "legislative",
+      "chamber": "national_assembly",
+      "every_years": 5,
+      "anchor": "2020-03-31",
+      "snap_possible": false,
+      "note": "National Assembly elections in 2000, 2005, 2010, 2015 and 2020. The republic was to be dissolved by 1 January 2024 and held no later elections; the rule only matters if the game keeps it alive."
+    },
+    {
+      "kind": "presidential",
+      "office": "nkr.president",
+      "every_years": 5,
+      "anchor": "2020-03-31",
+      "snap_possible": true,
+      "system": "two_round",
+      "note": "Direct elections in 2002, 2007, 2012 and 2020 (two rounds in 2020). Under the 2017 transition the National Assembly elected the President in July 2017 for a three-year term, and again in September 2023 after a resignation."
+    }
+  ],
+  "elections": [
+    {
+      "id": "parliament_2000",
+      "date": "2000-06-18",
+      "kind": "legislative",
+      "chamber": "national_assembly",
+      "historical": {
+        "party_results": [
+          {
+            "party": "nkr.dpa",
+            "seats": 20
+          },
+          {
+            "party": "nkr.arf",
+            "seats": 9
+          },
+          {
+            "party": "nkr.armenakan",
+            "seats": 1
+          },
+          {
+            "party": "others",
+            "seats": 1
+          },
+          {
+            "party": "independents",
+            "seats": 2
+          }
+        ],
+        "winner": "nkr.dpa",
+        "turnout": 0.597,
+        "note": "Democratic Artsakh Union (recorded under the Democratic Party of Artsakh, its successor) 20 seats; 'others' is the Social and Democratic Party of Artsakh (1). No vote shares are given.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2000_Nagorno-Karabakh_parliamentary_election",
+            "title": "Wikipedia: 2000 Nagorno-Karabakh parliamentary election",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "president_2002",
+      "date": "2002-08-11",
+      "kind": "presidential",
+      "office": "nkr.president",
+      "rounds": 1,
+      "historical": {
+        "candidates": [
+          {
+            "person": "nkr.arkadi_ghukasyan",
+            "share": 0.8896,
+            "votes": 53746,
+            "round": 1
+          },
+          {
+            "person": "nkr.arthur_tovmasyan",
+            "share": 0.0767,
+            "votes": 4637,
+            "round": 1
+          }
+        ],
+        "winner": "nkr.arkadi_ghukasyan",
+        "note": "Both independents. Shares computed from the four candidates' votes; the article gives 89% for Ghukasyan.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2002_Nagorno-Karabakh_presidential_election",
+            "title": "Wikipedia: 2002 Nagorno-Karabakh presidential election",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "parliament_2005",
+      "date": "2005-06-19",
+      "kind": "legislative",
+      "chamber": "national_assembly",
+      "historical": {
+        "party_results": [
+          {
+            "party": "nkr.free_motherland",
+            "share": 0.1848,
+            "seats": 10
+          },
+          {
+            "party": "nkr.dpa",
+            "share": 0.1662,
+            "seats": 10
+          },
+          {
+            "party": "nkr.arf",
+            "share": 0.1736,
+            "seats": 3
+          },
+          {
+            "party": "independents",
+            "seats": 10
+          }
+        ],
+        "winner": "nkr.free_motherland",
+        "note": "Free Motherland and the Democratic Party each won 10 seats; Free Motherland had more list votes (11,258 to 10,126) and is recorded as the winner. ARF ran with Movement 88 and won 3 constituency seats. Shares as in the infobox.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2005_Nagorno-Karabakh_parliamentary_election",
+            "title": "Wikipedia: 2005 Nagorno-Karabakh parliamentary election",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "constitutional_referendum_2006",
+      "date": "2006-12-10",
+      "kind": "referendum",
+      "question": "Adoption of the constitution.",
+      "historical": {
+        "yes_share": 0.9929,
+        "winner": "yes",
+        "turnout": 0.87,
+        "note": "77,279 for, 554 against.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2006_Nagorno-Karabakh_constitutional_referendum",
+            "title": "Wikipedia: 2006 Nagorno-Karabakh constitutional referendum",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "president_2007",
+      "date": "2007-07-19",
+      "kind": "presidential",
+      "office": "nkr.president",
+      "rounds": 1,
+      "historical": {
+        "candidates": [
+          {
+            "person": "nkr.bako_sahakyan",
+            "share": 0.8512,
+            "votes": 59326,
+            "round": 1
+          },
+          {
+            "person": "nkr.masis_mayilyan",
+            "share": 0.1253,
+            "votes": 8734,
+            "round": 1
+          }
+        ],
+        "winner": "nkr.bako_sahakyan",
+        "note": "Both independents. Shares computed from the five candidates' votes.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2007_Nagorno-Karabakh_presidential_election",
+            "title": "Wikipedia: 2007 Nagorno-Karabakh presidential election",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "parliament_2010",
+      "date": "2010-05-23",
+      "kind": "legislative",
+      "chamber": "national_assembly",
+      "historical": {
+        "party_results": [
+          {
+            "party": "nkr.free_motherland",
+            "share": 0.4639,
+            "seats": 14
+          },
+          {
+            "party": "nkr.dpa",
+            "share": 0.2858,
+            "seats": 6
+          },
+          {
+            "party": "nkr.arf",
+            "share": 0.2018,
+            "seats": 6
+          },
+          {
+            "party": "independents",
+            "seats": 7
+          }
+        ],
+        "winner": "nkr.free_motherland",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2010_Nagorno-Karabakh_parliamentary_election",
+            "title": "Wikipedia: 2010 Nagorno-Karabakh parliamentary election",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "president_2012",
+      "date": "2012-07-19",
+      "kind": "presidential",
+      "office": "nkr.president",
+      "rounds": 1,
+      "historical": {
+        "candidates": [
+          {
+            "person": "nkr.bako_sahakyan",
+            "share": 0.6665,
+            "votes": 47095,
+            "round": 1
+          },
+          {
+            "person": "nkr.vitaly_balasanyan",
+            "share": 0.3251,
+            "votes": 22967,
+            "round": 1
+          }
+        ],
+        "winner": "nkr.bako_sahakyan",
+        "turnout": 0.7353,
+        "note": "Both independents.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2012_Nagorno-Karabakh_presidential_election",
+            "title": "Wikipedia: 2012 Nagorno-Karabakh presidential election",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "parliament_2015",
+      "date": "2015-05-03",
+      "kind": "legislative",
+      "chamber": "national_assembly",
+      "historical": {
+        "party_results": [
+          {
+            "party": "nkr.free_motherland",
+            "share": 0.4735,
+            "seats": 15
+          },
+          {
+            "party": "nkr.dpa",
+            "share": 0.1902,
+            "seats": 6
+          },
+          {
+            "party": "nkr.arf",
+            "share": 0.1881,
+            "seats": 7
+          },
+          {
+            "party": "others",
+            "share": 0.0693,
+            "seats": 2
+          },
+          {
+            "party": "nkr.national_revival",
+            "share": 0.0538,
+            "seats": 1
+          },
+          {
+            "party": "independents",
+            "seats": 2
+          }
+        ],
+        "winner": "nkr.free_motherland",
+        "note": "'others' is Movement 88 (Vitaly Balasanyan), which has no party record here.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2015_Nagorno-Karabakh_parliamentary_election",
+            "title": "Wikipedia: 2015 Nagorno-Karabakh parliamentary election",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "constitutional_referendum_2017",
+      "date": "2017-02-20",
+      "kind": "referendum",
+      "question": "Adoption of a new constitution (presidential system, abolition of the post of Prime Minister, official use of the name Republic of Artsakh).",
+      "historical": {
+        "yes_share": 0.9005,
+        "winner": "yes",
+        "note": "69,570 for, 7,686 against.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2017_Nagorno-Karabakh_constitutional_referendum",
+            "title": "Wikipedia: 2017 Nagorno-Karabakh constitutional referendum",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "president_2017",
+      "date": "2017-07-19",
+      "kind": "indirect_presidential",
+      "office": "nkr.president",
+      "rounds": 1,
+      "historical": {
+        "candidates": [
+          {
+            "person": "nkr.bako_sahakyan",
+            "party": "nkr.dpa",
+            "share": 0.875,
+            "votes": 28,
+            "round": 1
+          }
+        ],
+        "winner": "nkr.bako_sahakyan",
+        "note": "Elected by the National Assembly, 28 votes to 4 for Eduard Aghabekyan (Movement 88; no person record here), for a transitional three-year term.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2017_Artsakhian_presidential_election",
+            "title": "Wikipedia: 2017 Artsakhian presidential election",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "parliament_2020",
+      "date": "2020-03-31",
+      "kind": "legislative",
+      "chamber": "national_assembly",
+      "historical": {
+        "party_results": [
+          {
+            "party": "nkr.free_motherland",
+            "share": 0.408,
+            "seats": 16
+          },
+          {
+            "party": "nkr.united_motherland",
+            "share": 0.2404,
+            "seats": 9
+          },
+          {
+            "party": "nkr.justice",
+            "share": 0.0798,
+            "seats": 3
+          },
+          {
+            "party": "nkr.arf",
+            "share": 0.0647,
+            "seats": 3
+          },
+          {
+            "party": "nkr.dpa",
+            "share": 0.0586,
+            "seats": 2
+          },
+          {
+            "party": "nkr.national_revival",
+            "share": 0.0296,
+            "seats": 0
+          }
+        ],
+        "winner": "nkr.free_motherland",
+        "turnout": 0.7245,
+        "note": "Fully proportional. Free Motherland ran as the Free Motherland - UCA Alliance. Shares as in the infobox.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2020_Artsakhian_general_election",
+            "title": "Wikipedia: 2020 Artsakhian general election",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "president_2020",
+      "date": "2020-03-31",
+      "kind": "presidential",
+      "office": "nkr.president",
+      "rounds": 2,
+      "historical": {
+        "candidates": [
+          {
+            "person": "nkr.arayik_harutyunyan",
+            "party": "nkr.free_motherland",
+            "share": 0.4917,
+            "votes": 36076,
+            "round": 1
+          },
+          {
+            "person": "nkr.masis_mayilyan",
+            "share": 0.2639,
+            "votes": 19360,
+            "round": 1
+          },
+          {
+            "person": "nkr.vitaly_balasanyan",
+            "party": "nkr.justice",
+            "share": 0.1479,
+            "votes": 10855,
+            "round": 1
+          },
+          {
+            "person": "nkr.davit_ishkhanyan",
+            "party": "nkr.arf",
+            "share": 0.0255,
+            "votes": 1873,
+            "round": 1
+          },
+          {
+            "person": "nkr.ashot_ghulian",
+            "party": "nkr.dpa",
+            "share": 0.0229,
+            "votes": 1683,
+            "round": 1
+          },
+          {
+            "person": "nkr.arayik_harutyunyan",
+            "party": "nkr.free_motherland",
+            "share": 0.8801,
+            "votes": 39860,
+            "round": 2
+          },
+          {
+            "person": "nkr.masis_mayilyan",
+            "share": 0.1199,
+            "votes": 5428,
+            "round": 2
+          }
+        ],
+        "winner": "nkr.arayik_harutyunyan",
+        "note": "Second round 14 April 2020. First-round shares computed from the fourteen candidates' votes. Mayilyan ran as an independent.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2020_Artsakhian_general_election",
+            "title": "Wikipedia: 2020 Artsakhian general election",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "president_2023",
+      "date": "2023-09-09",
+      "kind": "indirect_presidential",
+      "office": "nkr.president",
+      "rounds": 1,
+      "historical": {
+        "candidates": [
+          {
+            "person": "nkr.samvel_shahramanyan",
+            "share": 0.9565,
+            "votes": 22,
+            "round": 1
+          }
+        ],
+        "winner": "nkr.samvel_shahramanyan",
+        "note": "Elected by the National Assembly after President Harutyunyan resigned (22 votes for, 1 against); nominated by Free Motherland - UCA, Justice, the ARF and the Democratic Party.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2023_Artsakhian_presidential_election",
+            "title": "Wikipedia: 2023 Artsakhian presidential election",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    }
+  ],
+  "source": [
+    {
+      "url": "https://en.wikipedia.org/wiki/Elections_in_the_Republic_of_Artsakh",
+      "title": "Wikipedia: Elections in the Republic of Artsakh",
+      "accessed": "2026-10-16"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/National_Assembly_(Artsakh)",
+      "title": "Wikipedia: National Assembly (Artsakh)",
+      "accessed": "2026-10-16"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/President_of_Artsakh",
+      "title": "Wikipedia: President of Artsakh",
+      "accessed": "2026-10-16"
+    }
+  ],
+  "confidence": "verified"
+}

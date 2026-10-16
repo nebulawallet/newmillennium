@@ -1,0 +1,769 @@
+{
+  "parties": [
+    {
+      "id": "geo.cug",
+      "name": {
+        "en": "Union of Citizens of Georgia",
+        "native": "საქართველოს მოქალაქეთა კავშირი"
+      },
+      "abbrev": {
+        "en": "CUG",
+        "native": "სმკ"
+      },
+      "color": "#231577",
+      "sub_ideology": "big_tent",
+      "founded": "1993-11-21",
+      "dissolved": "2003-11-23",
+      "status_2000": "active",
+      "leader_history": [
+        {
+          "person": "geo.eduard_shevardnadze",
+          "from": 1993,
+          "to": 2001
+        },
+        {
+          "person": "geo.avtandil_jorbenadze",
+          "from": 2002,
+          "to": 2003
+        }
+      ],
+      "popularity_2000": 0.4448,
+      "popularity_note": "Party-list vote share, October 1999.",
+      "note": "President Shevardnadze's party; ran in 2003 as the For a New Georgia bloc. Wikipedia gives the founding date 21 November 1993 and dissolution 23 November 2003; Wikidata gives founding in 1995. Zurab Zhvania was General Secretary 1993-2001. Wikipedia describes it as a big-tent party with liberal and conservative factions.",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Union_of_Citizens_of_Georgia",
+          "title": "Wikipedia: Union of Citizens of Georgia (party chairs)",
+          "accessed": "2026-10-16"
+        },
+        {
+          "url": "https://www.wikidata.org/wiki/Q639395",
+          "title": "Wikidata: Union of Citizens of Georgia",
+          "accessed": "2026-10-16"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "geo.revival",
+      "name": {
+        "en": "Democratic Union for Revival",
+        "native": "დემოკრატიული აღორძინების კავშირი"
+      },
+      "abbrev": {
+        "en": "Revival",
+        "native": "აღორძინება"
+      },
+      "color": "#1F4E9A",
+      "sub_ideology": "regionalist",
+      "founded": 1992,
+      "dissolved": 2004,
+      "status_2000": "active",
+      "leader_history": [
+        {
+          "person": "geo.aslan_abashidze",
+          "from": 1992,
+          "to": 2004,
+          "title": "Chairperson"
+        }
+      ],
+      "popularity_2000": 0.2682,
+      "popularity_note": "Party-list vote share of the Revival bloc it led, October 1999.",
+      "regional_base": [
+        "Adjara"
+      ],
+      "note": "Party of the Adjaran leadership under Aslan Abashidze, based in Batumi. Led the Revival bloc (with several smaller parties) in 1999. The leader's dates are the party's founding and dissolution years given by Wikipedia.",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Democratic_Union_for_Revival",
+          "title": "Wikipedia: Democratic Union for Revival",
+          "accessed": "2026-10-16"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "geo.industrialists",
+      "name": {
+        "en": "Industry Will Save Georgia",
+        "native": "მრეწველობა გადაარჩენს საქართველოს"
+      },
+      "abbrev": {
+        "en": "Industrialists",
+        "native": "მრეწველები"
+      },
+      "color": "#5E0B10",
+      "sub_ideology": "national_conservative",
+      "founded": 1999,
+      "status_2000": "active",
+      "leader_history": [
+        {
+          "person": "geo.gogi_topadze",
+          "from": 1999
+        }
+      ],
+      "popularity_2000": 0.0754,
+      "popularity_note": "Party-list vote share, October 1999.",
+      "note": "Wikipedia lists economic nationalism and protectionism (centre-right); national_conservative is a gameplay classification. Ran with New Rights as the Rightist Opposition in 2004 and as Industrialists-Our Fatherland in 2016 (one seat).",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Industry_Will_Save_Georgia",
+          "title": "Wikipedia: Industry Will Save Georgia",
+          "accessed": "2026-10-16"
+        }
+      ],
+      "confidence": "needs_review",
+      "review_note": "Gogi Topadze is named as leader in the infobox; Wikidata records his death on 16 February 2025. Check when his leadership ended and who succeeded him."
+    },
+    {
+      "id": "geo.labour",
+      "name": {
+        "en": "Georgian Labour Party",
+        "native": "საქართველოს ლეიბორისტული პარტია"
+      },
+      "abbrev": {
+        "en": "Labour",
+        "native": "ლეიბორისტები"
+      },
+      "color": "#E2001A",
+      "sub_ideology": "left_populist",
+      "founded": 1995,
+      "status_2000": "active",
+      "leader_history": [
+        {
+          "person": "geo.shalva_natelashvili",
+          "from": 1995,
+          "title": "Chairman"
+        }
+      ],
+      "popularity_2000": 0.0702,
+      "popularity_note": "Party-list vote share, October 1999.",
+      "note": "Founded in August 1995 (Wikipedia); Natelashvili is chairman. Wikipedia lists social democracy and left-wing populism. Only the year is stored (the schema takes a full date or a year).",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Georgian_Labour_Party",
+          "title": "Wikipedia: Georgian Labour Party",
+          "accessed": "2026-10-16"
+        }
+      ],
+      "confidence": "needs_review",
+      "review_note": "Check that Natelashvili has led the party continuously since its founding in 1995."
+    },
+    {
+      "id": "geo.unm",
+      "name": {
+        "en": "United National Movement",
+        "native": "ერთიანი ნაციონალური მოძრაობა"
+      },
+      "abbrev": {
+        "en": "UNM",
+        "native": "ენმ"
+      },
+      "color": "#BC0000",
+      "sub_ideology": "liberal_conservative",
+      "founded": 2001,
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        {
+          "person": "geo.mikheil_saakashvili",
+          "from": 2001,
+          "to": "2019-03-24"
+        },
+        {
+          "person": "geo.grigol_vashadze",
+          "from": "2019-03-24",
+          "to": 2020
+        },
+        {
+          "person": "geo.nika_melia",
+          "from": "2020-12-28",
+          "to": "2023-01-30"
+        },
+        {
+          "person": "geo.levan_khabeishvili",
+          "from": "2023-01-30",
+          "to": 2024
+        },
+        {
+          "person": "geo.tina_bokuchava",
+          "from": 2024,
+          "to": 2026
+        }
+      ],
+      "popularity_2000": 0,
+      "lineage": {
+        "formed_from": [
+          "geo.burjanadze_democrats"
+        ]
+      },
+      "note": "Founded by Saakashvili in 2001 (Wikidata: October 2001). The National Movement and the Burjanadze-Democrats ran jointly in 2004 and merged as the United National Movement. Ran as Strength is in Unity in 2018-2020 and Unity-National Movement in 2024. Chairs from the party article: Saakashvili stood down on 24 March 2019; Melia confirmed 28 December 2020; Khabeishvili elected 30 January 2023; Bokuchava replaced him in June 2024. After her term expired, a UNM congress on 5 August 2026 elected an interim governing council for six months (post-June-2026 claim, checked against the Wikipedia article fetched 2026-10-16, which cites Civil Georgia of 5 August 2026).",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/United_National_Movement_(Georgia)",
+          "title": "Wikipedia: United National Movement (Georgia) (party chairs)",
+          "accessed": "2026-10-16"
+        },
+        {
+          "url": "https://www.wikidata.org/wiki/Q1057495",
+          "title": "Wikidata: United National Movement",
+          "accessed": "2026-10-16"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "geo.burjanadze_democrats",
+      "name": {
+        "en": "Burjanadze-Democrats",
+        "native": "ბურჯანაძე-დემოკრატები"
+      },
+      "abbrev": {
+        "en": "BD",
+        "native": "ბდ"
+      },
+      "color": "#F28C28",
+      "sub_ideology": "centrist_liberal",
+      "founded": "2003-08-21",
+      "dissolved": 2004,
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        {
+          "person": "geo.nino_burjanadze",
+          "from": "2003-08-21",
+          "to": 2004
+        }
+      ],
+      "popularity_2000": 0,
+      "lineage": {
+        "split_from": "geo.cug",
+        "merged_into": "geo.unm"
+      },
+      "note": "Electoral bloc led by Zurab Zhvania and Nino Burjanadze, formed from members leaving the Union of Citizens before the 2003 election; ran jointly with the National Movement in 2004 and merged into it. Described by Wikipedia as centrist.",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Burjanadze-Democrats",
+          "title": "Wikipedia: Burjanadze-Democrats",
+          "accessed": "2026-10-16"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "geo.new_rights",
+      "name": {
+        "en": "New Rights Party",
+        "native": "ახალი მემარჯვენეები"
+      },
+      "abbrev": {
+        "en": "New Rights",
+        "native": "ახალი მემარჯვენეები"
+      },
+      "color": "#8CD309",
+      "sub_ideology": "liberal_conservative",
+      "founded": "2001-06-15",
+      "dissolved": "2019-12-22",
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        {
+          "person": "geo.david_gamkrelidze",
+          "from": 2001
+        }
+      ],
+      "popularity_2000": 0,
+      "lineage": {
+        "merged_into": "geo.lelo"
+      },
+      "note": "Centre-right (conservatism, economic liberalism). Led the Rightist Opposition list with the Industrialists in 2004. Merged into Lelo for Georgia on 22 December 2019; the infobox names Mamuka Katsitadze as its last leader.",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/New_Rights_Party",
+          "title": "Wikipedia: New Rights Party",
+          "accessed": "2026-10-16"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/2003_Georgian_parliamentary_election",
+          "title": "Wikipedia: 2003 Georgian parliamentary election (party leaders)",
+          "accessed": "2026-10-16"
+        }
+      ],
+      "confidence": "needs_review",
+      "review_note": "Gamkrelidze is shown as leader in the 2003 and 2004 election infoboxes; check the start and end of his leadership and when Katsitadze took over."
+    },
+    {
+      "id": "geo.unc",
+      "name": {
+        "en": "United National Council",
+        "native": "გაერთიანებული ეროვნული საბჭო"
+      },
+      "abbrev": {
+        "en": "UNC",
+        "native": "საბჭო"
+      },
+      "color": "#225BA8",
+      "sub_ideology": "big_tent",
+      "founded": 2007,
+      "dissolved": 2010,
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        {
+          "person": "geo.levan_gachechiladze",
+          "from": 2007,
+          "to": 2010
+        }
+      ],
+      "popularity_2000": 0,
+      "note": "Opposition coalition of ten parties (including New Rights, the Conservative Party and others) formed in October 2007; it nominated Levan Gachechiladze for the January 2008 presidential election and ran under his leadership in May 2008. The infobox names Zviad Dzidziguri and Gachechiladze as leaders. Dissolved June 2010.",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/United_National_Council",
+          "title": "Wikipedia: United National Council",
+          "accessed": "2026-10-16"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "geo.cdm",
+      "name": {
+        "en": "Christian-Democratic Movement",
+        "native": "ქრისტიანულ-დემოკრატიული მოძრაობა"
+      },
+      "abbrev": {
+        "en": "CDM",
+        "native": "ქდმ"
+      },
+      "color": "#A52A2A",
+      "sub_ideology": "christian_democrat",
+      "founded": 2008,
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        {
+          "person": "geo.giorgi_targamadze",
+          "from": 2008,
+          "to": 2014
+        }
+      ],
+      "popularity_2000": 0,
+      "note": "Christian democratic, socially conservative (centre-right). Targamadze led it until he left the party in April 2014; the infobox names Gocha Jojua as current leader.",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Christian-Democratic_Movement_(Georgia)",
+          "title": "Wikipedia: Christian-Democratic Movement (Georgia)",
+          "accessed": "2026-10-16"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "geo.republican",
+      "name": {
+        "en": "Republican Party of Georgia",
+        "native": "საქართველოს რესპუბლიკური პარტია"
+      },
+      "abbrev": {
+        "en": "Republicans",
+        "native": "რესპუბლიკელები"
+      },
+      "color": "#F6741E",
+      "sub_ideology": "social_liberal",
+      "founded": "1978-05-21",
+      "status_2000": "extra_parliamentary",
+      "leader_history": [],
+      "popularity_2000": 0.0474,
+      "popularity_note": "Vote share of the National Democratic Alliance-Third Way list (its 1999 list per the party's electoral table), October 1999.",
+      "note": "Liberal, pro-European party that began as an underground organisation in Soviet Georgia on 21 May 1978. David Usupashvili was its chairman in 2012 (when he became Speaker); the leaders' dates were not found in the fetched sources. Part of the Georgian Dream coalition in 2012 and of Strength is in Unity in 2020.",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Republican_Party_of_Georgia",
+          "title": "Wikipedia: Republican Party of Georgia",
+          "accessed": "2026-10-16"
+        }
+      ],
+      "confidence": "needs_review",
+      "review_note": "Add the chairs since 2000 with dates (Usupashvili and successors), and confirm the party ran in the National Democratic Alliance list in 1999."
+    },
+    {
+      "id": "geo.gd",
+      "name": {
+        "en": "Georgian Dream – Democratic Georgia",
+        "native": "ქართული ოცნება – დემოკრატიული საქართველო"
+      },
+      "abbrev": {
+        "en": "GD",
+        "native": "ქო"
+      },
+      "color": "#27509C",
+      "sub_ideology": "traditional_conservative",
+      "founded": "2012-04-21",
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        {
+          "person": "geo.bidzina_ivanishvili",
+          "from": 2012,
+          "to": 2013
+        },
+        {
+          "person": "geo.irakli_garibashvili",
+          "from": 2013,
+          "to": 2015
+        },
+        {
+          "person": "geo.giorgi_kvirikashvili",
+          "from": 2015,
+          "to": 2018
+        },
+        {
+          "person": "geo.bidzina_ivanishvili",
+          "from": 2018,
+          "to": 2021
+        },
+        {
+          "person": "geo.irakli_kobakhidze",
+          "from": 2021,
+          "to": 2024
+        },
+        {
+          "person": "geo.irakli_garibashvili",
+          "from": 2024,
+          "to": 2025
+        },
+        {
+          "person": "geo.irakli_kobakhidze",
+          "from": 2025
+        }
+      ],
+      "popularity_2000": 0,
+      "note": "Founded by Bidzina Ivanishvili on 21 April 2012; governing party since October 2012. Wikipedia lists populism, conservatism, left conservatism, social market economy and euroscepticism; traditional_conservative is a gameplay classification. Chairs (years only) from the party article; Ivanishvili is Honorary Chairman.",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Georgian_Dream",
+          "title": "Wikipedia: Georgian Dream (party chairs)",
+          "accessed": "2026-10-16"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "geo.patriots",
+      "name": {
+        "en": "Alliance of Patriots of Georgia",
+        "native": "საქართველოს პატრიოტთა ალიანსი"
+      },
+      "abbrev": {
+        "en": "APG",
+        "native": "პატრიოტები"
+      },
+      "color": "#E7B031",
+      "sub_ideology": "national_conservative",
+      "founded": 2012,
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        {
+          "person": "geo.irma_inashvili",
+          "from": 2012,
+          "title": "Co-founder and leader"
+        }
+      ],
+      "popularity_2000": 0,
+      "note": "Founded in December 2012; Wikipedia lists national conservatism and right-wing populism. Irma Inashvili, a founder, headed its 2016 campaign (election infobox); the party infobox names Davit Tarkhan-Mouravi as chairman.",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Alliance_of_Patriots_of_Georgia",
+          "title": "Wikipedia: Alliance of Patriots of Georgia",
+          "accessed": "2026-10-16"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/2016_Georgian_parliamentary_election",
+          "title": "Wikipedia: 2016 Georgian parliamentary election",
+          "accessed": "2026-10-16"
+        }
+      ],
+      "confidence": "needs_review",
+      "review_note": "The party has joint leaders; check Inashvili's formal title and dates, and Tarkhan-Mouravi's chairmanship."
+    },
+    {
+      "id": "geo.european_georgia",
+      "name": {
+        "en": "European Georgia",
+        "native": "ევროპული საქართველო"
+      },
+      "abbrev": {
+        "en": "EG",
+        "native": "ევროპული საქართველო"
+      },
+      "color": "#1E73BE",
+      "sub_ideology": "centrist_liberal",
+      "founded": "2017-01-13",
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        {
+          "person": "geo.davit_bakradze",
+          "from": 2017
+        }
+      ],
+      "popularity_2000": 0,
+      "lineage": {
+        "split_from": "geo.unm"
+      },
+      "note": "Formed by 21 of the 27 UNM deputies elected in 2016. First chaired by Davit Bakradze; Giga Bokeria was chairman 2021-2024 and Gigi Tsereteli is the current chairman (party article). Part of the Unity coalition in 2024.",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/European_Georgia",
+          "title": "Wikipedia: European Georgia",
+          "accessed": "2026-10-16"
+        }
+      ],
+      "confidence": "needs_review",
+      "review_note": "Add the end of Bakradze's chairmanship and the later chairs (Bokeria, Tsereteli) as person records."
+    },
+    {
+      "id": "geo.lelo",
+      "name": {
+        "en": "Lelo for Georgia",
+        "native": "ლელო საქართველოსთვის"
+      },
+      "abbrev": {
+        "en": "Lelo",
+        "native": "ლელო"
+      },
+      "color": "#EFCD10",
+      "sub_ideology": "centrist_liberal",
+      "founded": "2019-12-22",
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        {
+          "person": "geo.mamuka_khazaradze",
+          "from": "2019-12-22"
+        }
+      ],
+      "popularity_2000": 0,
+      "lineage": {
+        "formed_from": [
+          "geo.new_rights"
+        ]
+      },
+      "note": "Founded by Mamuka Khazaradze on 22 December 2019 (New Rights merged into it). Led the Strong Georgia alliance (founded 17 July 2024) in the 2024 election.",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Lelo_for_Georgia",
+          "title": "Wikipedia: Lelo for Georgia",
+          "accessed": "2026-10-16"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/Strong_Georgia",
+          "title": "Wikipedia: Strong Georgia",
+          "accessed": "2026-10-16"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "geo.aghmashenebeli",
+      "name": {
+        "en": "Strategy Aghmashenebeli",
+        "native": "სტრატეგია აღმაშენებელი"
+      },
+      "abbrev": {
+        "en": "SA",
+        "native": "აღმაშენებელი"
+      },
+      "color": "#E35205",
+      "sub_ideology": "centrist_liberal",
+      "founded": "2016-06-06",
+      "status_2000": "not_yet_founded",
+      "leader_history": [],
+      "popularity_2000": 0,
+      "lineage": {
+        "split_from": "geo.unm"
+      },
+      "note": "Liberal, pro-European party (centre) led by Giorgi Vashadze (not recorded as a person here). Part of the Coalition for Change in 2024.",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Strategy_Aghmashenebeli",
+          "title": "Wikipedia: Strategy Aghmashenebeli",
+          "accessed": "2026-10-16"
+        }
+      ],
+      "confidence": "needs_review",
+      "review_note": "Add Giorgi Vashadze (leader) as a person with fetched dates."
+    },
+    {
+      "id": "geo.girchi",
+      "name": {
+        "en": "New Political Centre – Girchi",
+        "native": "ახალი პოლიტიკური ცენტრი – გირჩი"
+      },
+      "abbrev": {
+        "en": "Girchi",
+        "native": "გირჩი"
+      },
+      "color": "#2E8B57",
+      "sub_ideology": "libertarian",
+      "founded": "2016-04-16",
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        {
+          "person": "geo.zurab_japaridze",
+          "from": 2015,
+          "to": 2020,
+          "title": "Chairman"
+        }
+      ],
+      "popularity_2000": 0,
+      "note": "Libertarian, right-wing. Origins in May 2015 when four MPs led by Zurab Japaridze left the UNM; officially founded 16 April 2016; entered Parliament in 2020 with four deputies. Japaridze led it 2015-2020 and left during the 2020-2021 political crisis to found Girchi - More Freedom (28 December 2020). Now named Party of The Free, chaired by Iago Khvichia.",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Party_of_The_Free",
+          "title": "Wikipedia: Party of The Free (formerly New Political Center – Girchi)",
+          "accessed": "2026-10-16"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/Girchi_%E2%80%93_More_Freedom",
+          "title": "Wikipedia: Girchi – More Freedom",
+          "accessed": "2026-10-16"
+        }
+      ],
+      "confidence": "verified",
+      "lineage": {
+        "split_from": "geo.unm"
+      }
+    },
+    {
+      "id": "geo.citizens",
+      "name": {
+        "en": "Citizens",
+        "native": "მოქალაქეები"
+      },
+      "abbrev": {
+        "en": "Citizens",
+        "native": "მოქალაქეები"
+      },
+      "color": "#00A0DC",
+      "sub_ideology": "centrist_liberal",
+      "founded": 2020,
+      "status_2000": "not_yet_founded",
+      "leader_history": [],
+      "popularity_2000": 0,
+      "note": "Liberal (centre to centre-left) party founded in 2020, led by Aleko Elisashvili (not recorded as a person here); won two seats in 2020.",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Citizens_(Georgia)",
+          "title": "Wikipedia: Citizens (Georgia)",
+          "accessed": "2026-10-16"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/2020_Georgian_parliamentary_election",
+          "title": "Wikipedia: 2020 Georgian parliamentary election",
+          "accessed": "2026-10-16"
+        }
+      ],
+      "confidence": "needs_review",
+      "review_note": "Add the leader, Aleko Elisashvili, as a person with fetched dates."
+    },
+    {
+      "id": "geo.for_georgia",
+      "name": {
+        "en": "For Georgia",
+        "native": "საქართველოსთვის"
+      },
+      "abbrev": {
+        "en": "For Georgia",
+        "native": "საქართველოსთვის"
+      },
+      "color": "#1C3F94",
+      "sub_ideology": "social_democrat",
+      "founded": "2021-05-29",
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        {
+          "person": "geo.giorgi_gakharia",
+          "from": "2021-05-29"
+        }
+      ],
+      "popularity_2000": 0,
+      "note": "Founded 29 May 2021 by former Prime Minister Giorgi Gakharia (split from Georgian Dream). Wikipedia lists social democracy, technocracy and pro-Europeanism (centre to centre-left). Ran as Gakharia for Georgia in 2024.",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/For_Georgia",
+          "title": "Wikipedia: For Georgia",
+          "accessed": "2026-10-16"
+        }
+      ],
+      "confidence": "verified",
+      "lineage": {
+        "split_from": "geo.gd"
+      }
+    },
+    {
+      "id": "geo.coalition_for_change",
+      "name": {
+        "en": "Coalition for Change",
+        "native": "კოალიცია ცვლილებისთვის"
+      },
+      "abbrev": {
+        "en": "CfC",
+        "native": "ცვლილებისთვის"
+      },
+      "color": "#377149",
+      "sub_ideology": "social_liberal",
+      "founded": "2024-07-09",
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        {
+          "person": "geo.nika_gvaramia",
+          "from": "2024-07-09",
+          "title": "Co-leader"
+        },
+        {
+          "person": "geo.nika_melia",
+          "from": "2024-07-09",
+          "title": "Co-leader"
+        },
+        {
+          "person": "geo.zurab_japaridze",
+          "from": "2024-07-09",
+          "title": "Co-leader"
+        }
+      ],
+      "popularity_2000": 0,
+      "note": "Electoral coalition founded 9 July 2024 (liberal, pro-European, per Wikipedia), led by Nika Gvaramia, Nika Melia, Zurab Japaridze and Elene Khoshtaria (Khoshtaria is not recorded as a person here). Its member parties included Strategy Aghmashenebeli and Girchi-More Freedom.",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Coalition_for_Change_(Georgia)",
+          "title": "Wikipedia: Coalition for Change (Georgia)",
+          "accessed": "2026-10-16"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "geo.peoples_power",
+      "name": {
+        "en": "People's Power",
+        "native": "ხალხის ძალა"
+      },
+      "abbrev": {
+        "en": "PP",
+        "native": "ხალხის ძალა"
+      },
+      "color": "#8B1A1A",
+      "sub_ideology": "national_conservative",
+      "founded": "2022-08-02",
+      "status_2000": "not_yet_founded",
+      "leader_history": [],
+      "popularity_2000": 0,
+      "lineage": {
+        "split_from": "geo.gd"
+      },
+      "note": "Founded 2 August 2022 by deputies who left Georgian Dream; Wikipedia lists national conservatism, right-wing populism, sovereigntism and euroscepticism. The infobox names Sozar Subari as chairman (not recorded as a person here). President Kavelashvili is listed under this party in the 2024 presidential election article.",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/People%27s_Power_(Georgia)",
+          "title": "Wikipedia: People's Power (Georgia)",
+          "accessed": "2026-10-16"
+        }
+      ],
+      "confidence": "verified"
+    }
+  ]
+}

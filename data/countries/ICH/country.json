@@ -1,0 +1,87 @@
+{
+  "tag": "ICH",
+  "name": { "en": "Chechen Republic of Ichkeria", "native": "Нохчийн Республика Ичкери", "native_latin": "Noxçiyn Respublika Içkeri", "official": { "en": "Chechen Republic of Ichkeria", "native": "Нохчийн Республика Ичкери" } },
+  "adjective": "Chechen",
+  "culture_primary": "chechen",
+  "government": {
+    "type": "insurgent_movement",
+    "effective_executive": "ich.president",
+    "head_of_state_office": "ich.president",
+    "head_of_government_office": "ich.president",
+    "constitution": {
+      "term_limit_amendable": true,
+      "emergency_powers": true,
+      "referendum_required_for": []
+    },
+    "note": "Unrecognised separatist government, recorded factually. On 1 January 2000 its forces were fighting Russian federal forces in the Second Chechen War (see Russia's civil_war entry). President Aslan Maskhadov, elected in January 1997, also chaired the Cabinet of Ministers from July 1998 (list of Prime Ministers of Ichkeria), so one office is used for head of state and government. From February 2000 the leadership operated as a government-in-exile (Wikipedia lists). On 31 October 2007 Dokka Umarov proclaimed the Caucasus Emirate, abolishing the republic and its presidency (President of Ichkeria article); an exile government led by Akhmed Zakayev continued to claim the republic's name."
+  },
+  "offices": [
+    {
+      "id": "ich.president",
+      "title": { "en": "President of the Chechen Republic of Ichkeria", "native": "Нохчийн Республикан Ичкерин Президент" },
+      "role": "head_of_state_and_government",
+      "power_weight": 1,
+      "selection": "direct_election",
+      "succession": { "type": "vice" },
+      "holders": [
+        { "person": "ich.aslan_maskhadov", "from": "1997-02-12", "to": "2005-03-08", "note": "Elected 27 January 1997. The list of presidents ends his term in office on 1 May 2000 and lists him as president-in-exile from February 2000 to his death on 8 March 2005." },
+        { "person": "ich.abdul_halim_sadulayev", "from": "2005-03-08", "to": "2006-06-17", "acting": true, "note": "Acting president-in-exile until his death on 17 June 2006." },
+        { "person": "ich.dokka_umarov", "from": "2006-06-17", "to": "2007-10-31", "acting": true, "note": "Acting president-in-exile until he proclaimed the Caucasus Emirate on 31 October 2007." },
+        { "person": null, "from": "2007-10-31", "vacant_reason": "On 31 October 2007 Dokka Umarov proclaimed the Caucasus Emirate, abolishing the Chechen Republic of Ichkeria and its presidency (President of Ichkeria article). A government-in-exile led by Akhmed Zakayev (Prime Minister in exile from 2007 per the list of Prime Ministers) continued to claim the republic, without a president." }
+      ],
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/President_of_the_Chechen_Republic_of_Ichkeria", "title": "Wikipedia: President of the Chechen Republic of Ichkeria (list of presidents)", "accessed": "2026-10-16" },
+        { "url": "https://en.wikipedia.org/wiki/Prime_Minister_of_the_Chechen_Republic_of_Ichkeria", "title": "Wikipedia: Prime Minister of the Chechen Republic of Ichkeria (list)", "accessed": "2026-10-16" }
+      ],
+      "confidence": "verified"
+    }
+  ],
+  "legislature": {
+    "name": { "en": "Parliament of the Chechen Republic of Ichkeria", "native": "Парламент Чеченской Республики Ичкерия" },
+    "chambers": [
+      {
+        "id": "parliament",
+        "name": { "en": "Parliament", "native": "Парламент" },
+        "seats": 63,
+        "elected": "direct",
+        "system": {
+          "type": "two_round",
+          "district_model": "custom",
+          "note": "Elected on 27 January and 15 February 1997 (63 seats). The electoral system is not given in the fetched articles; two-round constituency voting is assumed from the two polling dates. In December 1998 the Supreme Islamic Court suspended the Parliament (Ichkeria article); speakers continued to be named in exile until 2007 (Parliament article)."
+        },
+        "seats_2000": { "ich.nip": 20, "others": 7, "independents": 29, "vacant": 7 },
+        "confidence_chamber": false,
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/Parliament_of_the_Chechen_Republic_of_Ichkeria", "title": "Wikipedia: Parliament of the Chechen Republic of Ichkeria", "accessed": "2026-10-16" },
+          { "url": "https://en.wikipedia.org/wiki/1997_Chechen_general_election", "title": "Wikipedia: 1997 Chechen general election", "accessed": "2026-10-16" }
+        ],
+        "confidence": "needs_review",
+        "review_note": "Electoral system assumed (two polling dates); 'others' are the 7 seats of Islamic Order, which has no party record. Check the chamber's status after its suspension in December 1998."
+      }
+    ]
+  },
+  "party_system": "multi_party",
+  "start_2000": {
+    "ruling_parties": ["ich.nip"],
+    "confidence_and_supply": [],
+    "ideology_support": {
+      "national_conservative": 0.62,
+      "ethno_nationalist": 0.35,
+      "big_tent": 0.03
+    },
+    "ideology_support_note": "Gameplay estimate based on the January 1997 presidential vote, the last vote before 2000: Aslan Maskhadov (National Independence Party; Wikipedia lists conservatism) 61.82%, recorded as national conservative; Shamil Basayev 24.49% and Zelimkhan Yandarbiyev 10.52%, other pro-independence candidates, recorded together as ethno-nationalist; the rest as big tent. The classification of the 1997 candidates is a judgement, and wartime opinion in 2000 was not measured.",
+    "stability": 0.2,
+    "war_support": 0.7,
+    "at_war_with": [],
+    "civil_war": {
+      "sides": ["ICH", "RUS"],
+      "note": "Second Chechen War: its main phase ran from 7 August 1999 to 30 April 2000, followed by an insurgency phase until 16 April 2009 (as recorded in Russia's file). On 1 January 2000 the forces of the Chechen Republic of Ichkeria were fighting Russian federal forces."
+    }
+  },
+  "claims": [],
+  "source": [
+    { "url": "https://en.wikipedia.org/wiki/Chechen_Republic_of_Ichkeria", "title": "Wikipedia: Chechen Republic of Ichkeria", "accessed": "2026-10-16" },
+    { "url": "https://en.wikipedia.org/wiki/President_of_the_Chechen_Republic_of_Ichkeria", "title": "Wikipedia: President of the Chechen Republic of Ichkeria", "accessed": "2026-10-16" }
+  ],
+  "confidence": "verified"
+}

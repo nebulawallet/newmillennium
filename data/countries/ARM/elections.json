@@ -1,0 +1,618 @@
+{
+  "rules": [
+    {
+      "kind": "legislative",
+      "chamber": "national_assembly",
+      "every_years": 5,
+      "anchor": "2026-06-07",
+      "snap_possible": true,
+      "note": "National Assembly; regular elections 2003, 2007, 2012, 2017 and 2026, early elections in December 2018 and June 2021. Five-year term (National Assembly article)."
+    },
+    {
+      "kind": "indirect_presidential",
+      "office": "arm.president",
+      "every_years": 7,
+      "anchor": "2022-03-03",
+      "snap_possible": true,
+      "system": "legislature",
+      "note": "Since the 2015 constitution the President is elected by the National Assembly for a single seven-year term."
+    }
+  ],
+  "elections": [
+    {
+      "id": "president_2003",
+      "date": "2003-02-19",
+      "kind": "presidential",
+      "office": "arm.president",
+      "rounds": 2,
+      "historical": {
+        "candidates": [
+          {
+            "person": "arm.robert_kocharyan",
+            "share": 0.4983,
+            "votes": 710674,
+            "round": 1
+          },
+          {
+            "person": "arm.stepan_demirchyan",
+            "party": "arm.ppa",
+            "share": 0.2803,
+            "votes": 399757,
+            "round": 1
+          },
+          {
+            "person": "arm.artashes_geghamyan",
+            "party": "arm.national_unity",
+            "share": 0.1754,
+            "votes": 250145,
+            "round": 1
+          },
+          {
+            "person": "arm.robert_kocharyan",
+            "share": 0.6745,
+            "votes": 1044591,
+            "round": 2
+          },
+          {
+            "person": "arm.stepan_demirchyan",
+            "party": "arm.ppa",
+            "share": 0.3255,
+            "votes": 504011,
+            "round": 2
+          }
+        ],
+        "winner": "arm.robert_kocharyan",
+        "note": "Second round on 5 March 2003. Kocharyan ran as an independent. First-round shares computed from the candidates' vote counts; candidates under 5% omitted. The OSCE reported irregularities (per the article).",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2003_Armenian_presidential_election",
+            "title": "Wikipedia: 2003 Armenian presidential election",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "constitutional_referendum_2003",
+      "date": "2003-05-25",
+      "kind": "referendum",
+      "question": "Constitutional amendments",
+      "historical": {
+        "yes_share": 0.5033,
+        "winner": "no",
+        "turnout": 0.5172,
+        "note": "A majority of votes cast were in favour (50.33%), but the proposal failed because approval did not reach one third of registered voters. Turnout computed from the ballot counts.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2003_Armenian_constitutional_referendum",
+            "title": "Wikipedia: 2003 Armenian constitutional referendum",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "parliament_2003",
+      "date": "2003-05-25",
+      "kind": "legislative",
+      "chamber": "national_assembly",
+      "historical": {
+        "party_results": [
+          {
+            "party": "arm.rpa",
+            "share": 0.2337,
+            "seats": 33
+          },
+          {
+            "party": "arm.ppa",
+            "share": 0.136,
+            "seats": 14
+          },
+          {
+            "party": "arm.oek",
+            "share": 0.1233,
+            "seats": 19
+          },
+          {
+            "party": "arm.arf",
+            "share": 0.1136,
+            "seats": 11
+          },
+          {
+            "party": "arm.national_unity",
+            "share": 0.0879,
+            "seats": 9
+          },
+          {
+            "party": "arm.hanrapetutyun",
+            "seats": 1
+          },
+          {
+            "party": "others",
+            "share": 0.0563,
+            "seats": 7
+          },
+          {
+            "party": "independents",
+            "seats": 37
+          }
+        ],
+        "winner": "arm.rpa",
+        "note": "The Justice Alliance led by Stepan Demirchyan is recorded under his People's Party. 'others' are the United Labour Party (5.63%, 6 seats; not recorded as a party here because no founding date was fetched) and the All Armenian Labour Party (one constituency seat). Shares computed from the party-list vote counts.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2003_Armenian_parliamentary_election",
+            "title": "Wikipedia: 2003 Armenian parliamentary election",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "constitutional_referendum_2005",
+      "date": "2005-11-27",
+      "kind": "referendum",
+      "question": "Constitutional amendments",
+      "historical": {
+        "yes_share": 0.9451,
+        "winner": "yes",
+        "turnout": 0.6533,
+        "note": "Turnout computed from the ballot counts and electorate in the article; the opposition disputed the official turnout.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2005_Armenian_constitutional_referendum",
+            "title": "Wikipedia: 2005 Armenian constitutional referendum",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "parliament_2007",
+      "date": "2007-05-12",
+      "kind": "legislative",
+      "chamber": "national_assembly",
+      "historical": {
+        "party_results": [
+          {
+            "party": "arm.rpa",
+            "share": 0.3391,
+            "seats": 59
+          },
+          {
+            "party": "arm.bhk",
+            "share": 0.1513,
+            "seats": 25
+          },
+          {
+            "party": "arm.arf",
+            "share": 0.1316,
+            "seats": 16
+          },
+          {
+            "party": "arm.oek",
+            "share": 0.0705,
+            "seats": 10
+          },
+          {
+            "party": "arm.heritage",
+            "share": 0.06,
+            "seats": 7
+          },
+          {
+            "party": "others",
+            "seats": 1
+          },
+          {
+            "party": "independents",
+            "seats": 13
+          }
+        ],
+        "winner": "arm.rpa",
+        "note": "'others' is the Dashink Party's constituency seat. Shares computed from the party-list vote counts.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2007_Armenian_parliamentary_election",
+            "title": "Wikipedia: 2007 Armenian parliamentary election",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "president_2008",
+      "date": "2008-02-19",
+      "kind": "presidential",
+      "office": "arm.president",
+      "rounds": 1,
+      "historical": {
+        "candidates": [
+          {
+            "person": "arm.serzh_sargsyan",
+            "party": "arm.rpa",
+            "share": 0.5282,
+            "votes": 862369,
+            "round": 1
+          },
+          {
+            "person": "arm.levon_ter_petrosyan",
+            "share": 0.2151,
+            "votes": 351222,
+            "round": 1
+          },
+          {
+            "person": "arm.artur_baghdasaryan",
+            "party": "arm.oek",
+            "share": 0.1689,
+            "votes": 272427,
+            "round": 1
+          },
+          {
+            "person": "arm.vahan_hovhannisyan",
+            "party": "arm.arf",
+            "share": 0.0618,
+            "votes": 100966,
+            "round": 1
+          }
+        ],
+        "winner": "arm.serzh_sargsyan",
+        "note": "Ter-Petrosyan ran as an independent. Shares from the infobox; candidates under 5% omitted.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2008_Armenian_presidential_election",
+            "title": "Wikipedia: 2008 Armenian presidential election",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "parliament_2012",
+      "date": "2012-05-06",
+      "kind": "legislative",
+      "chamber": "national_assembly",
+      "historical": {
+        "party_results": [
+          {
+            "party": "arm.rpa",
+            "share": 0.4412,
+            "seats": 62
+          },
+          {
+            "party": "arm.bhk",
+            "share": 0.3019,
+            "seats": 35
+          },
+          {
+            "party": "arm.anc",
+            "share": 0.071,
+            "seats": 7
+          },
+          {
+            "party": "arm.heritage",
+            "share": 0.0578,
+            "seats": 5
+          },
+          {
+            "party": "arm.arf",
+            "share": 0.0568,
+            "seats": 5
+          },
+          {
+            "party": "arm.oek",
+            "share": 0.0552,
+            "seats": 6
+          },
+          {
+            "party": "arm.hanrapetutyun",
+            "seats": 2
+          },
+          {
+            "party": "arm.panm",
+            "seats": 1
+          },
+          {
+            "party": "independents",
+            "seats": 8
+          }
+        ],
+        "winner": "arm.rpa",
+        "note": "Hanrapetutyun and the Pan-Armenian National Movement won constituency seats only. Shares computed from the party-list vote counts.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2012_Armenian_parliamentary_election",
+            "title": "Wikipedia: 2012 Armenian parliamentary election",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "president_2013",
+      "date": "2013-02-18",
+      "kind": "presidential",
+      "office": "arm.president",
+      "rounds": 1,
+      "historical": {
+        "candidates": [
+          {
+            "person": "arm.serzh_sargsyan",
+            "party": "arm.rpa",
+            "share": 0.5864,
+            "votes": 861160,
+            "round": 1
+          },
+          {
+            "person": "arm.raffi_hovannisian",
+            "party": "arm.heritage",
+            "share": 0.3675,
+            "votes": 539672,
+            "round": 1
+          }
+        ],
+        "winner": "arm.serzh_sargsyan",
+        "note": "Candidates under 5% omitted. Last direct presidential election.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2013_Armenian_presidential_election",
+            "title": "Wikipedia: 2013 Armenian presidential election",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "constitutional_referendum_2015",
+      "date": "2015-12-06",
+      "kind": "referendum",
+      "question": "Constitutional amendments (transition to a parliamentary system)",
+      "historical": {
+        "yes_share": 0.662,
+        "winner": "yes",
+        "turnout": 0.5067,
+        "note": "Shares and turnout computed from the vote counts and electorate in the article. The new system (President elected by the National Assembly, Prime Minister as head of the executive) took effect in April 2018.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2015_Armenian_constitutional_referendum",
+            "title": "Wikipedia: 2015 Armenian constitutional referendum",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "parliament_2017",
+      "date": "2017-04-02",
+      "kind": "legislative",
+      "chamber": "national_assembly",
+      "historical": {
+        "party_results": [
+          {
+            "party": "arm.rpa",
+            "share": 0.4917,
+            "seats": 58
+          },
+          {
+            "party": "arm.bhk",
+            "share": 0.2735,
+            "seats": 31
+          },
+          {
+            "party": "arm.cc",
+            "share": 0.0778,
+            "seats": 9
+          },
+          {
+            "party": "arm.arf",
+            "share": 0.0658,
+            "seats": 7
+          }
+        ],
+        "winner": "arm.rpa",
+        "turnout": 0.6086,
+        "note": "First election under the 2015 constitution (105 seats). The Tsarukyan Alliance is recorded under Prosperous Armenia and the Way Out Alliance (Civil Contract, Bright Armenia, Hanrapetutyun) under Civil Contract. Shares computed from the vote counts.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2017_Armenian_parliamentary_election",
+            "title": "Wikipedia: 2017 Armenian parliamentary election",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "president_2018",
+      "date": "2018-03-02",
+      "kind": "indirect_presidential",
+      "office": "arm.president",
+      "historical": {
+        "candidates": [
+          {
+            "person": "arm.armen_sarkissian",
+            "share": 0.9,
+            "votes": 90,
+            "round": 1
+          }
+        ],
+        "winner": "arm.armen_sarkissian",
+        "note": "Elected by the National Assembly: 90 for, 10 against (non-partisan candidate).",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2018_Armenian_presidential_election",
+            "title": "Wikipedia: 2018 Armenian presidential election",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "parliament_2018",
+      "date": "2018-12-09",
+      "kind": "legislative",
+      "chamber": "national_assembly",
+      "snap": true,
+      "historical": {
+        "party_results": [
+          {
+            "party": "arm.cc",
+            "share": 0.7044,
+            "seats": 88
+          },
+          {
+            "party": "arm.bhk",
+            "share": 0.0826,
+            "seats": 26
+          },
+          {
+            "party": "arm.bright",
+            "share": 0.0637,
+            "seats": 18
+          }
+        ],
+        "winner": "arm.cc",
+        "turnout": 0.4862,
+        "note": "Early election after Prime Minister Pashinyan's resignation. My Step Alliance recorded under Civil Contract. Seat totals include additional seats. Shares computed from the vote counts.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2018_Armenian_parliamentary_election",
+            "title": "Wikipedia: 2018 Armenian parliamentary election",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "parliament_2021",
+      "date": "2021-06-20",
+      "kind": "legislative",
+      "chamber": "national_assembly",
+      "snap": true,
+      "historical": {
+        "party_results": [
+          {
+            "party": "arm.cc",
+            "share": 0.5395,
+            "seats": 71
+          },
+          {
+            "party": "arm.armenia_alliance",
+            "share": 0.2111,
+            "seats": 29
+          },
+          {
+            "party": "arm.rpa",
+            "share": 0.0522,
+            "seats": 7
+          }
+        ],
+        "winner": "arm.cc",
+        "turnout": 0.4937,
+        "note": "Snap election after Pashinyan's resignation. The I Have Honor Alliance (led by Artur Vanetsyan, with the Republican Party) is recorded under the Republican Party. Shares computed from the vote counts.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2021_Armenian_parliamentary_election",
+            "title": "Wikipedia: 2021 Armenian parliamentary election",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "president_2022",
+      "date": "2022-03-03",
+      "kind": "indirect_presidential",
+      "office": "arm.president",
+      "historical": {
+        "candidates": [
+          {
+            "person": "arm.vahagn_khachaturyan",
+            "votes": 69,
+            "round": 1
+          },
+          {
+            "person": "arm.vahagn_khachaturyan",
+            "votes": 71,
+            "round": 2
+          }
+        ],
+        "winner": "arm.vahagn_khachaturyan",
+        "note": "Elected by the National Assembly in the second round (71 votes; 64 needed) after falling short in the first (69 votes); sole candidate, after Armen Sarkissian resigned on 1 February 2022.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2022_Armenian_presidential_election",
+            "title": "Wikipedia: 2022 Armenian presidential election",
+            "accessed": "2026-10-16"
+          },
+          {
+            "url": "https://en.wikipedia.org/wiki/President_of_Armenia",
+            "title": "Wikipedia: President of Armenia",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "parliament_2026",
+      "date": "2026-06-07",
+      "kind": "legislative",
+      "chamber": "national_assembly",
+      "historical": {
+        "party_results": [
+          {
+            "party": "arm.cc",
+            "share": 0.4989,
+            "seats": 64
+          },
+          {
+            "party": "arm.strong_armenia",
+            "share": 0.2334,
+            "seats": 29
+          },
+          {
+            "party": "arm.armenia_alliance",
+            "share": 0.0995,
+            "seats": 12
+          }
+        ],
+        "winner": "arm.cc",
+        "turnout": 0.5876,
+        "note": "Post-June-2026 claim, checked against the Wikipedia article fetched on 2026-10-16: Civil Contract 49.89% and 64 seats, Strong Armenia (Samvel Karapetyan) 23.34% and 29, Armenia Alliance (Robert Kocharyan) 9.95% and 12. The Wikipedia list of prime ministers shows Pashinyan's fourth government from 2 August 2026.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2026_Armenian_parliamentary_election",
+            "title": "Wikipedia: 2026 Armenian parliamentary election",
+            "accessed": "2026-10-16"
+          },
+          {
+            "url": "https://en.wikipedia.org/wiki/Prime_Minister_of_Armenia",
+            "title": "Wikipedia: Prime Minister of Armenia",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    }
+  ],
+  "source": [
+    {
+      "url": "https://en.wikipedia.org/wiki/Elections_in_Armenia",
+      "title": "Wikipedia: Elections in Armenia",
+      "accessed": "2026-10-16"
+    }
+  ],
+  "confidence": "verified"
+}

@@ -1,0 +1,117 @@
+{
+  "tag": "ARM",
+  "name": { "en": "Armenia", "native": "Հայաստան", "official": { "en": "Republic of Armenia", "native": "Հայաստանի Հանրապետություն" } },
+  "adjective": "Armenian",
+  "culture_primary": "armenian",
+  "government": {
+    "type": "semi_presidential",
+    "effective_executive": "arm.president",
+    "head_of_state_office": "arm.president",
+    "head_of_government_office": "arm.prime_minister",
+    "constitution": {
+      "term_limit_amendable": true,
+      "emergency_powers": true,
+      "referendum_required_for": ["constitutional amendments (referendums held in 2003, 2005 and 2015)"]
+    },
+    "note": "Government type as on 1 January 2000: a directly elected President (five-year term) with a Prime Minister appointed by the President and dependent on the National Assembly. The constitutional amendments approved in the December 2015 referendum created a parliamentary system: since April 2018 the President is elected by the National Assembly for a single seven-year term and the Prime Minister heads the executive (per the Wikipedia articles on the President and Prime Minister of Armenia). The type and power weights are kept as in 2000."
+  },
+  "offices": [
+    {
+      "id": "arm.president",
+      "title": { "en": "President of Armenia", "native": "Հայաստանի Հանրապետության Նախագահ" },
+      "role": "head_of_state",
+      "power_weight": 0.65,
+      "selection": "direct_election",
+      "term_years": 5,
+      "succession": { "type": "acting_then_election" },
+      "holders": [
+        { "person": "arm.robert_kocharyan", "from": "1998-04-09", "to": "2008-04-09", "note": "Acting President from 3 February 1998 after Ter-Petrosyan's resignation; elected in 1998, re-elected 2003." },
+        { "person": "arm.serzh_sargsyan", "from": "2008-04-09", "to": "2018-04-09" },
+        { "person": "arm.armen_sarkissian", "from": "2018-04-09", "to": "2022-02-01", "note": "First President elected by the National Assembly; resigned." },
+        { "person": "arm.alen_simonyan", "from": "2022-02-01", "to": "2022-03-13", "acting": true },
+        { "person": "arm.vahagn_khachaturyan", "from": "2022-03-13" }
+      ],
+      "note": "Dates from the list in the Wikipedia article on the President of Armenia. Term was five years until 2018 and is now a single seven-year term.",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/President_of_Armenia", "title": "Wikipedia: President of Armenia (list of presidents)", "accessed": "2026-10-16" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "arm.prime_minister",
+      "title": { "en": "Prime Minister of Armenia", "native": "Հայաստանի Հանրապետության վարչապետ" },
+      "role": "head_of_government",
+      "power_weight": 0.35,
+      "selection": "appointed",
+      "appointed_by": "arm.president",
+      "holders": [
+        { "person": "arm.aram_sargsyan", "from": "1999-11-03", "to": "2000-05-02", "note": "Appointed after the killing of Prime Minister Vazgen Sargsyan, his brother, in the parliament shooting of 27 October 1999." },
+        { "person": "arm.andranik_margaryan", "from": "2000-05-02", "to": "2007-03-25", "note": "Died in office." },
+        { "person": "arm.serzh_sargsyan", "from": "2007-03-25", "to": "2007-04-04", "acting": true },
+        { "person": "arm.serzh_sargsyan", "from": "2007-04-04", "to": "2008-04-07", "note": "Became President on 9 April 2008." },
+        { "person": null, "from": "2008-04-07", "to": "2008-04-09", "vacant_reason": "The Wikipedia list names no holder between Serzh Sargsyan's departure on 7 April and Tigran Sargsyan's appointment on 9 April 2008." },
+        { "person": "arm.tigran_sargsyan", "from": "2008-04-09", "to": "2014-04-13" },
+        { "person": "arm.hovik_abrahamyan", "from": "2014-04-13", "to": "2016-09-08" },
+        { "person": null, "from": "2016-09-08", "to": "2016-09-13", "vacant_reason": "The Wikipedia list names no holder between Abrahamyan's departure and Karapetyan's appointment." },
+        { "person": "arm.karen_karapetyan", "from": "2016-09-13", "to": "2018-04-17" },
+        { "person": "arm.serzh_sargsyan", "from": "2018-04-17", "to": "2018-04-23", "note": "Resigned during the 2018 protests." },
+        { "person": "arm.karen_karapetyan", "from": "2018-04-23", "to": "2018-05-08", "acting": true },
+        { "person": "arm.nikol_pashinyan", "from": "2018-05-08", "note": "Fourth Pashinyan government from 2 August 2026 after the June 2026 election (post-June-2026 claim, from the Wikipedia list fetched on 2026-10-16)." }
+      ],
+      "note": "Dates from the list in the Wikipedia article on the Prime Minister of Armenia. Since April 2018 the Prime Minister is the head of the executive.",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/Prime_Minister_of_Armenia", "title": "Wikipedia: Prime Minister of Armenia (list of prime ministers)", "accessed": "2026-10-16" }
+      ],
+      "confidence": "needs_review",
+      "review_note": "Check whether outgoing Prime Ministers acted in the short gaps of April 2008 and September 2016 (recorded as vacancies because the list names no holder), and whether Pashinyan served as acting Prime Minister between his resignations and re-appointments in 2018-2019 and 2021."
+    }
+  ],
+  "legislature": {
+    "name": { "en": "National Assembly", "native": "Ազգային ժողով" },
+    "chambers": [
+      {
+        "id": "national_assembly",
+        "name": { "en": "National Assembly", "native": "Ազգային ժողով" },
+        "seats": 131,
+        "term_years": 4,
+        "elected": "direct",
+        "system": {
+          "type": "parallel",
+          "pr_share": 0.4275,
+          "district_model": "custom",
+          "note": "In 1999: 56 seats by national party-list PR and 75 in single-member constituencies (131 seats). Since 2017 the Assembly is elected by party-list PR with at least 101 seats plus additional seats (105 in 2017, 132 in 2018, 107 in 2021, 105 in 2026) and a five-year term. Threshold not checked. seats_2000 is the result of the May 1999 election, not adjusted for the deputies killed in the parliament shooting of 27 October 1999. The four-year term is inferred from the 1999-2003-2007 cycle."
+        },
+        "seats_2000": { "arm.unity_bloc": 62, "arm.acp": 10, "arm.law_unity": 7, "arm.arf": 8, "arm.oek": 6, "arm.ndu": 6, "independents": 32 },
+        "confidence_chamber": true,
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/1999_Armenian_parliamentary_election", "title": "Wikipedia: 1999 Armenian parliamentary election", "accessed": "2026-10-16" },
+          { "url": "https://en.wikipedia.org/wiki/National_Assembly_(Armenia)", "title": "Wikipedia: National Assembly (Armenia)", "accessed": "2026-10-16" }
+        ],
+        "confidence": "needs_review",
+        "review_note": "Seats held on 1 January 2000 may differ from the May 1999 result because of the deaths in the October 1999 shooting; the pre-2017 term length (four years) is inferred from the election cycle."
+      }
+    ]
+  },
+  "party_system": "multi_party",
+  "start_2000": {
+    "ruling_parties": ["arm.unity_bloc"],
+    "confidence_and_supply": [],
+    "ideology_support": {
+      "big_tent": 0.6614,
+      "marxist_leninist": 0.1452,
+      "democratic_socialist": 0.0779,
+      "liberal_conservative": 0.0525,
+      "centrist_liberal": 0.063
+    },
+    "ideology_support_note": "Derived from the May 1999 party-list vote (shares of all valid list votes): Unity Bloc 41.45% (RPA and People's Party; big tent), Law and Unity 7.93% and other lists without a seat about 16.8% (big tent); Armenian Communist Party 12.04% plus the Union of Communist and Socialist Parties 2.48% (Marxist-Leninist); ARF 7.79% (democratic socialist); Orinats Yerkir 5.25% (liberal conservative); National Democratic Union 5.14% and Pan-Armenian National Movement 1.16% (centrist liberal).",
+    "stability": 0.4,
+    "war_support": 0.4,
+    "at_war_with": []
+  },
+  "claims": [],
+  "source": [
+    { "url": "https://en.wikipedia.org/wiki/President_of_Armenia", "title": "Wikipedia: President of Armenia", "accessed": "2026-10-16" },
+    { "url": "https://en.wikipedia.org/wiki/1999_Armenian_parliamentary_election", "title": "Wikipedia: 1999 Armenian parliamentary election", "accessed": "2026-10-16" }
+  ],
+  "confidence": "verified"
+}

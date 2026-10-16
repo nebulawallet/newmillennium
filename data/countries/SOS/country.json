@@ -1,0 +1,125 @@
+{
+  "tag": "SOS",
+  "name": { "en": "South Ossetia", "native": "Хуссар Ирыстон", "native_latin": "Khussar Iryston", "official": { "en": "Republic of South Ossetia", "native": "Республикӕ Хуссар Ирыстон" } },
+  "adjective": "South Ossetian",
+  "culture_primary": "ossetian",
+  "government": {
+    "type": "semi_presidential",
+    "effective_executive": "sos.president",
+    "head_of_state_office": "sos.president",
+    "head_of_government_office": "sos.prime_minister",
+    "constitution": {
+      "term_limit_amendable": true,
+      "emergency_powers": true,
+      "referendum_required_for": []
+    },
+    "note": "De facto state in the north of Georgia; Georgia regards it as part of its territory. Its institutions are recorded factually: under the constitution of 27 November 1996 (per the article on the 1999 parliamentary election) a directly elected President with a five-year term, renewable once, who holds most political power, and a Prime Minister (Chairman of the Government) nominated by the President and appointed by Parliament (per the Wikipedia articles on the President and Prime Minister of South Ossetia and the 2026 presidential election)."
+  },
+  "offices": [
+    {
+      "id": "sos.president",
+      "title": { "en": "President of the Republic of South Ossetia", "native": "Президент Республики Южная Осетия" },
+      "role": "head_of_state",
+      "power_weight": 0.8,
+      "selection": "direct_election",
+      "term_years": 5,
+      "term_limit": { "max_terms": 2, "consecutive_only": true },
+      "succession": { "type": "acting_then_election" },
+      "holders": [
+        { "person": "sos.lyudvig_chibirov", "from": "1996-11-27", "to": "2001-12-18" },
+        { "person": "sos.eduard_kokoity", "from": "2001-12-18", "to": "2011-12-10", "note": "Resigned on 10 December 2011 after the annulled 2011 election." },
+        { "person": "sos.vadim_brovtsev", "from": "2011-12-11", "to": "2012-04-19", "acting": true },
+        { "person": "sos.leonid_tibilov", "from": "2012-04-19", "to": "2017-04-21" },
+        { "person": "sos.anatoly_bibilov", "from": "2017-04-21", "to": "2022-05-24" },
+        { "person": "sos.alan_gagloyev", "from": "2022-05-24", "to": "2026-06-23", "note": "Resigned on 23 June 2026 (post-June-2026 claim, checked against the Wikipedia list and the 2026 election article fetched on 2026-10-16)." },
+        { "person": "sos.marat_kambolov", "from": "2026-06-23", "to": "2026-09-30", "acting": true, "note": "Acting President as Prime Minister (post-June-2026 claim, checked against the Wikipedia articles fetched on 2026-10-16)." },
+        { "person": "sos.marat_kambolov", "from": "2026-09-30", "note": "Sworn in on 30 September 2026 after winning the early election of 18 September 2026 (post-June-2026 claim, checked against the Wikipedia articles fetched on 2026-10-16)." }
+      ],
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/President_of_South_Ossetia", "title": "Wikipedia: President of South Ossetia (list of presidents)", "accessed": "2026-10-16" },
+        { "url": "https://en.wikipedia.org/wiki/2026_South_Ossetian_presidential_election", "title": "Wikipedia: 2026 South Ossetian presidential election", "accessed": "2026-10-16" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "sos.prime_minister",
+      "title": { "en": "Chairman of the Government (Prime Minister) of South Ossetia", "native": "Председатель Правительства Республики Южная Осетия" },
+      "role": "head_of_government",
+      "power_weight": 0.2,
+      "selection": "legislature",
+      "appointed_by": "sos.president",
+      "holders": [
+        { "person": "sos.merab_chigoyev", "from": "1998-08-01", "to": "2001-06-06", "note": "The Wikipedia list gives only 'August 1998' for the start; the day is a placeholder. The article on the 1999 parliamentary election instead names Aleksandr Shavlokhov as Prime Minister before and after May 1999." },
+        { "person": null, "from": "2001-06-06", "to": "2001-06-14", "vacant_reason": "The Wikipedia list names no holder between Chigoyev (to 6 June) and Dmitry Sanakoyev (from 14 June 2001)." },
+        { "person": "sos.dmitry_sanakoyev", "from": "2001-06-14", "to": "2001-12-01", "note": "The list gives only 'December 2001' for the end; the day is a placeholder." },
+        { "person": "sos.gerasim_khugayev", "from": "2001-12-01", "to": "2003-08-01", "note": "The list gives only 'December 2001' and 'August 2003'; the days are placeholders." },
+        { "person": null, "from": "2003-08-01", "to": "2003-09-17", "vacant_reason": "The Wikipedia list names no holder between Khugayev (to August 2003) and Igor Sanakoyev (from 17 September 2003)." },
+        { "person": "sos.igor_sanakoyev", "from": "2003-09-17", "to": "2005-05-01", "note": "The list gives only 'May 2005' for the end; the day is a placeholder." },
+        { "person": "sos.zurab_kokoyev", "from": "2005-05-01", "to": "2005-07-05", "acting": true, "note": "The list gives only 'May 2005' for the start; the day is a placeholder." },
+        { "person": "sos.yury_morozov", "from": "2005-07-05", "to": "2008-08-17" },
+        { "person": "sos.boris_chochiyev", "from": "2008-08-17", "to": "2008-10-22", "acting": true },
+        { "person": "sos.aslanbek_bulatsev", "from": "2008-10-22", "to": "2009-08-04" },
+        { "person": "sos.vadim_brovtsev", "from": "2009-08-04", "to": "2012-04-26", "note": "The list gives 5 August 2009 as the start, its duration template 4 August." },
+        { "person": "sos.rostislav_khugayev", "from": "2012-04-26", "to": "2014-01-20" },
+        { "person": "sos.domenty_kulumbegov", "from": "2014-01-20", "to": "2017-05-16" },
+        { "person": "sos.erik_pukhayev", "from": "2017-05-16", "to": "2020-08-29" },
+        { "person": "sos.gennady_bekoyev", "from": "2020-08-29", "to": "2022-06-20" },
+        { "person": "sos.konstantin_dzhussoev", "from": "2022-06-20", "to": "2026-01-21" },
+        { "person": "sos.dzambolat_tadtayev", "from": "2026-01-21", "to": "2026-06-08" },
+        { "person": "sos.konstantin_dzhioyev", "from": "2026-06-08", "to": "2026-06-16", "acting": true },
+        { "person": "sos.marat_kambolov", "from": "2026-06-16", "to": "2026-09-30", "note": "Appointed by Parliament on 16 June 2026; left the post on becoming President (post-June-2026 claim, checked against the Wikipedia articles fetched on 2026-10-16)." },
+        { "person": null, "from": "2026-09-30", "vacant_reason": "The government resigned when Kambolov was sworn in as President on 30 September 2026; the Wikipedia article fetched on 2026-10-16 shows the post as vacant." }
+      ],
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/Prime_Minister_of_South_Ossetia", "title": "Wikipedia: Prime Minister of South Ossetia (list of officeholders)", "accessed": "2026-10-16" },
+        { "url": "https://en.wikipedia.org/wiki/2026_South_Ossetian_presidential_election", "title": "Wikipedia: 2026 South Ossetian presidential election", "accessed": "2026-10-16" }
+      ],
+      "confidence": "needs_review",
+      "review_note": "Five transition dates are known only to the month (August 1998, December 2001, August 2003, May 2005) and are stored as the first of the month; find exact days. Check the conflict over whether Chigoyev or Shavlokhov was Prime Minister in 1999, and whether a new Prime Minister has been appointed since 30 September 2026."
+    }
+  ],
+  "legislature": {
+    "name": { "en": "Parliament of South Ossetia", "native": "Парламент Южной Осетии" },
+    "chambers": [
+      {
+        "id": "parliament",
+        "name": { "en": "Parliament", "native": "Хуссар Ирыстоны Парламент" },
+        "seats": 33,
+        "term_years": 5,
+        "elected": "direct",
+        "system": {
+          "type": "parallel",
+          "pr_share": 0.5,
+          "district_model": "custom",
+          "note": "seats_2000 is the result of the May 1999 election (33 seats, four reserved for the Georgian minority and left vacant). From 2004 the Parliament has 34 seats; 15 party-list, 15 single-member and 4 reserved seats in 2004, and 17 party-list plus 17 single-member seats today (per the 2004 election and Parliament articles). The seat count here is the 2000 size because seats_2000 must match it. The 2009 election was fully party-list with a 7% threshold."
+        },
+        "seats_2000": { "sos.communist": 27, "independents": 2, "vacant": 4 },
+        "confidence_chamber": true,
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/1999_South_Ossetian_parliamentary_election", "title": "Wikipedia: 1999 South Ossetian parliamentary election", "accessed": "2026-10-16" },
+          { "url": "https://en.wikipedia.org/wiki/Parliament_of_South_Ossetia", "title": "Wikipedia: Parliament of South Ossetia", "accessed": "2026-10-16" }
+        ],
+        "confidence": "verified"
+      }
+    ]
+  },
+  "party_system": "multi_party",
+  "start_2000": {
+    "ruling_parties": [],
+    "confidence_and_supply": [],
+    "ideology_support": {
+      "marxist_leninist": 0.8,
+      "big_tent": 0.2
+    },
+    "ideology_support_note": "Derived from the May 1999 parliamentary election, for which the source gives only approximate shares: Communist Party of South Ossetia about 80%, independents about 20% (recorded as big tent). President Lyudvig Chibirov was an independent and the Communist-led Parliament was in opposition to him, so no ruling party is listed.",
+    "stability": 0.4,
+    "war_support": 0.4,
+    "at_war_with": []
+  },
+  "claims": [],
+  "source": [
+    { "url": "https://en.wikipedia.org/wiki/President_of_South_Ossetia", "title": "Wikipedia: President of South Ossetia", "accessed": "2026-10-16" },
+    { "url": "https://en.wikipedia.org/wiki/1999_South_Ossetian_parliamentary_election", "title": "Wikipedia: 1999 South Ossetian parliamentary election", "accessed": "2026-10-16" }
+  ],
+  "confidence": "verified"
+}

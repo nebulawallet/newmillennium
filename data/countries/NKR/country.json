@@ -1,0 +1,115 @@
+{
+  "tag": "NKR",
+  "name": { "en": "Nagorno-Karabakh", "native": "Արցախ", "native_latin": "Artsakh", "official": { "en": "Nagorno-Karabakh Republic (Republic of Artsakh)", "native": "Լեռնային Ղարաբաղի Հանրապետություն" } },
+  "adjective": "Karabakh Armenian",
+  "culture_primary": "nkr_armenian",
+  "government": {
+    "type": "presidential",
+    "effective_executive": "nkr.president",
+    "head_of_state_office": "nkr.president",
+    "head_of_government_office": "nkr.prime_minister",
+    "constitution": {
+      "term_limit_amendable": true,
+      "emergency_powers": true,
+      "referendum_required_for": []
+    },
+    "note": "De facto state in the south-west of Azerbaijan; Azerbaijan regards it as part of its territory. Its institutions are recorded factually: a directly elected President with a five-year term, renewable once, who appointed the Prime Minister. The February 2017 referendum abolished the post of Prime Minister (7 September 2017) and created a State Minister under a presidential system; it also adopted 'Republic of Artsakh' as a name (per the Wikipedia articles on the President, Prime Minister and State Minister of Artsakh and the 2017 referendum). After the Azerbaijani offensive of 19 September 2023, the authorities agreed on 28 September 2023 to dissolve the republic by 1 January 2024; a government-in-exile was later set up in Yerevan (President of Artsakh article). The offices here end on 1 January 2024."
+  },
+  "offices": [
+    {
+      "id": "nkr.president",
+      "title": { "en": "President of the Nagorno-Karabakh Republic (Artsakh)", "native": "Արցախի Հանրապետության նախագահ" },
+      "role": "head_of_state",
+      "power_weight": 0.85,
+      "selection": "direct_election",
+      "term_years": 5,
+      "term_limit": { "max_terms": 2, "consecutive_only": true },
+      "succession": { "type": "acting_then_election" },
+      "holders": [
+        { "person": "nkr.arkadi_ghukasyan", "from": "1997-09-08", "to": "2007-09-07" },
+        { "person": "nkr.bako_sahakyan", "from": "2007-09-07", "to": "2020-05-21" },
+        { "person": "nkr.arayik_harutyunyan", "from": "2020-05-21", "to": "2023-09-01" },
+        { "person": "nkr.davit_ishkhanyan", "from": "2023-09-01", "to": "2023-09-10", "acting": true, "note": "Acting as President of the National Assembly." },
+        { "person": "nkr.samvel_shahramanyan", "from": "2023-09-10", "to": "2024-01-01", "note": "Elected by the National Assembly on 9 September 2023; the list shows him in office from 10 September. Signed the decree of 28 September 2023 on dissolving the republic's institutions by 1 January 2024." },
+        { "person": null, "from": "2024-01-01", "vacant_reason": "The republic was to be dissolved by 1 January 2024. A government-in-exile in Yerevan continued (Shahramanyan to 21 May 2025, then Ashot Danielyan acting, per the Wikipedia list; the infobox fetched on 2026-10-16 shows the post vacant since 2 July 2026). It held no territory and is not recorded as a holder." }
+      ],
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/President_of_Artsakh", "title": "Wikipedia: President of Artsakh (list of presidents)", "accessed": "2026-10-16" }
+      ],
+      "confidence": "needs_review",
+      "review_note": "Decide how the game should treat the government-in-exile after 1 January 2024 (recorded as a vacancy). The infobox claim of a vacancy from 2 July 2026 is a post-June-2026 claim that the fetched article does not explain."
+    },
+    {
+      "id": "nkr.prime_minister",
+      "title": { "en": "Prime Minister (from 2017 State Minister) of Artsakh", "native": "Արցախի Հանրապետության վարչապետ" },
+      "role": "head_of_government",
+      "power_weight": 0.15,
+      "selection": "appointed",
+      "appointed_by": "nkr.president",
+      "holders": [
+        { "person": "nkr.anushavan_danielyan", "from": "1999-06-30", "to": "2007-09-12" },
+        { "person": null, "from": "2007-09-12", "to": "2007-09-14", "vacant_reason": "The Wikipedia list names no holder between Danielyan (to 12 September) and Harutyunyan (from 14 September 2007)." },
+        { "person": "nkr.arayik_harutyunyan", "from": "2007-09-14", "to": "2018-06-06", "note": "Prime Minister to 25 September 2017 (the post was abolished with effect from 7 September 2017 per the infobox), then the first State Minister from 25 September 2017." },
+        { "person": "nkr.grigory_martirosyan", "from": "2018-06-06", "to": "2021-06-01", "note": "State Minister." },
+        { "person": null, "from": "2021-06-01", "to": "2021-06-03", "vacant_reason": "The list names no State Minister between Martirosyan (to 1 June) and Beglaryan (from 3 June 2021)." },
+        { "person": "nkr.artak_beglaryan", "from": "2021-06-03", "to": "2022-11-03", "note": "State Minister." },
+        { "person": "nkr.ruben_vardanyan", "from": "2022-11-04", "to": "2023-02-23", "note": "State Minister." },
+        { "person": "nkr.gurgen_nersisyan", "from": "2023-02-24", "to": "2023-08-31", "note": "State Minister." },
+        { "person": "nkr.samvel_shahramanyan", "from": "2023-08-31", "to": "2023-09-10", "note": "State Minister." },
+        { "person": null, "from": "2023-09-10", "to": "2023-09-18", "vacant_reason": "The list names no State Minister between Shahramanyan becoming President and Artur Harutyunyan's appointment on 18 September 2023." },
+        { "person": "nkr.artur_harutyunyan", "from": "2023-09-18", "to": "2024-01-01", "note": "State Minister; the State Minister list continues his tenure in exile to 20 May 2025." },
+        { "person": null, "from": "2024-01-01", "vacant_reason": "The republic was to be dissolved by 1 January 2024 (see the President office)." }
+      ],
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/Prime_Minister_of_Artsakh", "title": "Wikipedia: Prime Minister of Artsakh (list of officeholders)", "accessed": "2026-10-16" },
+        { "url": "https://en.wikipedia.org/wiki/State_Minister_of_Artsakh", "title": "Wikipedia: State Minister of Artsakh", "accessed": "2026-10-16" }
+      ],
+      "confidence": "verified"
+    }
+  ],
+  "legislature": {
+    "name": { "en": "National Assembly", "native": "Արցախի Հանրապետության Ազգային ժողով" },
+    "chambers": [
+      {
+        "id": "national_assembly",
+        "name": { "en": "National Assembly", "native": "Ազգային ժողով" },
+        "seats": 33,
+        "term_years": 5,
+        "elected": "direct",
+        "system": {
+          "type": "parallel",
+          "district_model": "custom",
+          "note": "33 members. Before 2017, 22 (17 before 2015) were elected by party-list PR and the rest in single-member constituencies; the 2017 constitution made the system fully proportional (National Assembly article). seats_2000 should be the April 1995 result, but the 1995 article gives no party composition, so all 33 seats are recorded as 'others'. The election of 18 June 2000 gave the Democratic Artsakh Union 20 seats."
+        },
+        "seats_2000": { "others": 33 },
+        "confidence_chamber": false,
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/National_Assembly_(Artsakh)", "title": "Wikipedia: National Assembly (Artsakh)", "accessed": "2026-10-16" },
+          { "url": "https://en.wikipedia.org/wiki/1995_Nagorno-Karabakh_parliamentary_election", "title": "Wikipedia: 1995 Nagorno-Karabakh parliamentary election", "accessed": "2026-10-16" }
+        ],
+        "confidence": "needs_review",
+        "review_note": "The party composition of the Assembly elected in April 1995 was not found; all 33 seats are 'others'."
+      }
+    ]
+  },
+  "party_system": "multi_party",
+  "start_2000": {
+    "ruling_parties": [],
+    "confidence_and_supply": [],
+    "ideology_support": {
+      "national_conservative": 0.6,
+      "democratic_socialist": 0.25,
+      "big_tent": 0.15
+    },
+    "ideology_support_note": "Estimate: no party vote shares before 2000 were found. Anchored on the June 2000 Assembly election (after the start date), where the pro-presidential Democratic Artsakh Union won 20 of 33 seats (national conservative, as Wikipedia describes the later Democratic Party of Artsakh) and the ARF 9 (democratic socialist); independents and small parties make up the rest (big tent).",
+    "stability": 0.5,
+    "war_support": 0.6,
+    "at_war_with": []
+  },
+  "claims": [],
+  "source": [
+    { "url": "https://en.wikipedia.org/wiki/President_of_Artsakh", "title": "Wikipedia: President of Artsakh", "accessed": "2026-10-16" },
+    { "url": "https://en.wikipedia.org/wiki/National_Assembly_(Artsakh)", "title": "Wikipedia: National Assembly (Artsakh)", "accessed": "2026-10-16" }
+  ],
+  "confidence": "verified"
+}

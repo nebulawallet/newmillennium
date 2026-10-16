@@ -1,0 +1,618 @@
+{
+  "rules": [
+    {
+      "kind": "legislative",
+      "chamber": "parliament",
+      "every_years": 5,
+      "anchor": "2024-06-09",
+      "snap_possible": false,
+      "note": "Parliament elections in 1999, 2004, 2009, 2014, 2019 and 2024; next due in 2029 (elections navbox)."
+    },
+    {
+      "kind": "presidential",
+      "office": "sos.president",
+      "every_years": 5,
+      "anchor": "2026-09-18",
+      "snap_possible": true,
+      "system": "two_round",
+      "note": "Two-round system, five-year term renewable once. The 2011 election (13 and 27 November) was annulled and is not recorded as an election; it was re-run in March-April 2012. The 2026 election was early, after the President resigned."
+    }
+  ],
+  "elections": [
+    {
+      "id": "constitutional_referendum_2001",
+      "date": "2001-04-08",
+      "kind": "referendum",
+      "question": "Constitutional amendments: stricter requirements for presidential candidates and Russian as an official language alongside Ossetian.",
+      "historical": {
+        "yes_share": 0.6,
+        "note": "60% for, 40% against; 23,540 votes cast (Direct Democracy via Wikipedia).",
+        "winner": "yes",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2001_South_Ossetian_constitutional_referendum",
+            "title": "Wikipedia: 2001 South Ossetian constitutional referendum",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "president_2001",
+      "date": "2001-11-18",
+      "kind": "presidential",
+      "office": "sos.president",
+      "rounds": 2,
+      "historical": {
+        "candidates": [
+          {
+            "person": "sos.eduard_kokoity",
+            "share": 0.48,
+            "round": 1
+          },
+          {
+            "person": "sos.stanislav_kochiev",
+            "party": "sos.communist",
+            "share": 0.25,
+            "round": 1
+          },
+          {
+            "person": "sos.lyudvig_chibirov",
+            "round": 1
+          },
+          {
+            "person": "sos.eduard_kokoity",
+            "share": 0.5746,
+            "votes": 12171,
+            "round": 2
+          },
+          {
+            "person": "sos.stanislav_kochiev",
+            "party": "sos.communist",
+            "share": 0.4254,
+            "votes": 9009,
+            "round": 2
+          }
+        ],
+        "winner": "sos.eduard_kokoity",
+        "note": "First round 18 November (the results section says 19 November), second round 6 December 2001. First-round shares are the article's rounded figures (48% and 25%); incumbent Chibirov received less than 20% (no exact figure). Kokoity ran as an independent.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2001_South_Ossetian_presidential_election",
+            "title": "Wikipedia: 2001 South Ossetian presidential election",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "parliament_2004",
+      "date": "2004-05-23",
+      "kind": "legislative",
+      "chamber": "parliament",
+      "historical": {
+        "party_results": [
+          {
+            "party": "sos.unity",
+            "share": 0.546,
+            "seats": 20
+          },
+          {
+            "party": "sos.communist",
+            "share": 0.274,
+            "seats": 4
+          },
+          {
+            "party": "sos.peoples_party",
+            "share": 0.114,
+            "seats": 2
+          },
+          {
+            "party": "others",
+            "seats": 4
+          },
+          {
+            "party": "vacant",
+            "seats": 4
+          }
+        ],
+        "winner": "sos.unity",
+        "note": "34 seats: 15 party-list, 15 single-member, 4 reserved for the Georgian minority (vacant). Unity won 9 list and 11 constituency seats. The source gives only the list seats of the Communists (4) and the People's Party (2); the 4 remaining constituency seats are not attributed and are recorded as 'others'. Independents received 6.4% of the list vote.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2004_South_Ossetian_parliamentary_election",
+            "title": "Wikipedia: 2004 South Ossetian parliamentary election",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "president_2006",
+      "date": "2006-11-12",
+      "kind": "presidential",
+      "office": "sos.president",
+      "rounds": 1,
+      "historical": {
+        "candidates": [
+          {
+            "person": "sos.eduard_kokoity",
+            "party": "sos.unity",
+            "share": 0.9806,
+            "votes": 51150,
+            "round": 1
+          },
+          {
+            "person": "sos.leonid_tibilov",
+            "share": 0.0091,
+            "votes": 476,
+            "round": 1
+          }
+        ],
+        "winner": "sos.eduard_kokoity",
+        "note": "Held with the independence referendum. Shares as in the infobox. Two minor candidates (Inal Pukhayev, Oleg Gabodze) received under 0.4% each.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2006_South_Ossetian_presidential_election",
+            "title": "Wikipedia: 2006 South Ossetian presidential election",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "independence_referendum_2006",
+      "date": "2006-11-12",
+      "kind": "referendum",
+      "question": "Should the republic of South Ossetia retain its current status as an independent State, and be recognized by the international community?",
+      "historical": {
+        "yes_share": 0.9988,
+        "winner": "yes",
+        "note": "51,565 for, 60 against, 538 invalid, 55,163 registered. Georgia declared the vote illegal and it was not internationally recognised.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2006_South_Ossetian_independence_referendum",
+            "title": "Wikipedia: 2006 South Ossetian independence referendum",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "parliament_2009",
+      "date": "2009-05-31",
+      "kind": "legislative",
+      "chamber": "parliament",
+      "historical": {
+        "party_results": [
+          {
+            "party": "sos.unity",
+            "share": 0.4753,
+            "seats": 17
+          },
+          {
+            "party": "sos.peoples_party",
+            "share": 0.2314,
+            "seats": 9
+          },
+          {
+            "party": "sos.communist",
+            "share": 0.228,
+            "seats": 8
+          }
+        ],
+        "winner": "sos.unity",
+        "note": "Fully party-list election with a 7% threshold.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2009_South_Ossetian_parliamentary_election",
+            "title": "Wikipedia: 2009 South Ossetian parliamentary election",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "referendum_2011",
+      "date": "2011-11-13",
+      "kind": "referendum",
+      "question": "Do you agree Ossetian and Russian should be the national languages of South Ossetia?",
+      "historical": {
+        "yes_share": 0.8354,
+        "winner": "yes",
+        "note": "19,797 for, 3,902 against; held with the first round of the annulled 2011 presidential election.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2011_South_Ossetian_referendum",
+            "title": "Wikipedia: 2011 South Ossetian referendum",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "president_2012",
+      "date": "2012-03-25",
+      "kind": "presidential",
+      "office": "sos.president",
+      "rounds": 2,
+      "historical": {
+        "candidates": [
+          {
+            "person": "sos.leonid_tibilov",
+            "share": 0.4383,
+            "votes": 11453,
+            "round": 1
+          },
+          {
+            "person": "sos.david_sanakoev",
+            "share": 0.2536,
+            "votes": 6627,
+            "round": 1
+          },
+          {
+            "person": "sos.dmitry_medoyev",
+            "share": 0.2455,
+            "votes": 6415,
+            "round": 1
+          },
+          {
+            "person": "sos.stanislav_kochiev",
+            "party": "sos.communist",
+            "share": 0.0542,
+            "votes": 1417,
+            "round": 1
+          },
+          {
+            "person": "sos.leonid_tibilov",
+            "share": 0.5538,
+            "votes": 15786,
+            "round": 2
+          },
+          {
+            "person": "sos.david_sanakoev",
+            "share": 0.4364,
+            "votes": 12439,
+            "round": 2
+          }
+        ],
+        "winner": "sos.leonid_tibilov",
+        "note": "Repeat election after the annulment of the November 2011 election. Second round 8 April 2012. First-round shares computed from the vote counts including 'against all' (216).",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2012_South_Ossetian_presidential_election",
+            "title": "Wikipedia: 2012 South Ossetian presidential election",
+            "accessed": "2026-10-16"
+          },
+          {
+            "url": "https://en.wikipedia.org/wiki/2011_South_Ossetian_presidential_election",
+            "title": "Wikipedia: 2011 South Ossetian presidential election",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "parliament_2014",
+      "date": "2014-06-08",
+      "kind": "legislative",
+      "chamber": "parliament",
+      "historical": {
+        "party_results": [
+          {
+            "party": "sos.united_ossetia",
+            "share": 0.4497,
+            "seats": 20
+          },
+          {
+            "party": "sos.unity_of_the_people",
+            "share": 0.1381,
+            "seats": 6
+          },
+          {
+            "party": "sos.peoples_party",
+            "share": 0.0948,
+            "seats": 4
+          },
+          {
+            "party": "sos.nykhaz",
+            "share": 0.0779,
+            "seats": 4
+          },
+          {
+            "party": "sos.unity",
+            "share": 0.0604,
+            "seats": 0
+          },
+          {
+            "party": "sos.communist",
+            "share": 0.0441,
+            "seats": 0
+          }
+        ],
+        "winner": "sos.united_ossetia",
+        "note": "Shares of the four seat-winning parties from the infobox; Unity and the Communists computed from their votes over the infobox base implied by United Ossetia (9,083 votes = 44.97%).",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2014_South_Ossetian_parliamentary_election",
+            "title": "Wikipedia: 2014 South Ossetian parliamentary election",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "president_2017",
+      "date": "2017-04-09",
+      "kind": "presidential",
+      "office": "sos.president",
+      "rounds": 1,
+      "historical": {
+        "candidates": [
+          {
+            "person": "sos.anatoly_bibilov",
+            "party": "sos.united_ossetia",
+            "share": 0.548,
+            "votes": 17736,
+            "round": 1
+          },
+          {
+            "person": "sos.leonid_tibilov",
+            "share": 0.3371,
+            "votes": 10909,
+            "round": 1
+          },
+          {
+            "person": "sos.alan_gagloyev",
+            "share": 0.1017,
+            "votes": 3291,
+            "round": 1
+          }
+        ],
+        "winner": "sos.anatoly_bibilov",
+        "note": "Tibilov and Gagloyev ran as independents.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2017_South_Ossetian_presidential_election",
+            "title": "Wikipedia: 2017 South Ossetian presidential election",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "name_referendum_2017",
+      "date": "2017-04-09",
+      "kind": "referendum",
+      "question": "Amendment of part 1 of article 1 of the Constitution to rename the state the Republic of South Ossetia - the State of Alania.",
+      "historical": {
+        "yes_share": 0.7953,
+        "winner": "yes",
+        "note": "25,123 for, 6,466 against; held with the presidential election.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2017_South_Ossetian_name_change_referendum",
+            "title": "Wikipedia: 2017 South Ossetian name change referendum",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "parliament_2019",
+      "date": "2019-06-09",
+      "kind": "legislative",
+      "chamber": "parliament",
+      "historical": {
+        "party_results": [
+          {
+            "party": "sos.united_ossetia",
+            "share": 0.3496,
+            "seats": 14
+          },
+          {
+            "party": "sos.peoples_party",
+            "share": 0.2179,
+            "seats": 5
+          },
+          {
+            "party": "sos.nykhaz",
+            "share": 0.1437,
+            "seats": 4
+          },
+          {
+            "party": "sos.unity_of_the_people",
+            "share": 0.1296,
+            "seats": 3
+          },
+          {
+            "party": "sos.communist",
+            "share": 0.0729,
+            "seats": 2
+          },
+          {
+            "party": "independents",
+            "seats": 6
+          }
+        ],
+        "winner": "sos.united_ossetia",
+        "note": "Parallel system: 17 list and 17 constituency seats; shares are list-vote shares from the infobox.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2019_South_Ossetian_parliamentary_election",
+            "title": "Wikipedia: 2019 South Ossetian parliamentary election",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "president_2022",
+      "date": "2022-04-10",
+      "kind": "presidential",
+      "office": "sos.president",
+      "rounds": 2,
+      "historical": {
+        "candidates": [
+          {
+            "person": "sos.alan_gagloyev",
+            "party": "sos.nykhaz",
+            "share": 0.3855,
+            "votes": 10707,
+            "round": 1
+          },
+          {
+            "person": "sos.anatoly_bibilov",
+            "party": "sos.united_ossetia",
+            "share": 0.3495,
+            "votes": 9706,
+            "round": 1
+          },
+          {
+            "person": "sos.garry_muldarov",
+            "share": 0.0933,
+            "votes": 2592,
+            "round": 1
+          },
+          {
+            "person": "sos.alan_gagloyev",
+            "party": "sos.nykhaz",
+            "share": 0.5608,
+            "votes": 16134,
+            "round": 2
+          },
+          {
+            "person": "sos.anatoly_bibilov",
+            "party": "sos.united_ossetia",
+            "share": 0.409,
+            "votes": 11767,
+            "round": 2
+          }
+        ],
+        "winner": "sos.alan_gagloyev",
+        "turnout": 0.7397,
+        "note": "Second round 8 May 2022. First-round shares computed from the vote counts including 'none of the above'. Third place, Aleksandr Pliyev (People's Party, 3,434 votes, about 12%), has no English Wikipedia or Wikidata record and is omitted.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2022_South_Ossetian_presidential_election",
+            "title": "Wikipedia: 2022 South Ossetian presidential election",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "needs_review",
+        "review_note": "Aleksandr Pliyev (third, about 12%) is omitted because no biographical source was found."
+      }
+    },
+    {
+      "id": "parliament_2024",
+      "date": "2024-06-09",
+      "kind": "legislative",
+      "chamber": "parliament",
+      "historical": {
+        "party_results": [
+          {
+            "party": "sos.nykhaz",
+            "share": 0.3059,
+            "seats": 10
+          },
+          {
+            "party": "sos.united_ossetia",
+            "share": 0.3175,
+            "seats": 7
+          },
+          {
+            "party": "sos.peoples_party",
+            "share": 0.1607,
+            "seats": 5
+          },
+          {
+            "party": "sos.communist",
+            "share": 0.0712,
+            "seats": 3
+          },
+          {
+            "party": "independents",
+            "seats": 9
+          }
+        ],
+        "winner": "sos.nykhaz",
+        "note": "Nykhas won the most seats (10) although United Ossetia had the larger list share; shares are list-vote shares from the infobox.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2024_South_Ossetian_parliamentary_election",
+            "title": "Wikipedia: 2024 South Ossetian parliamentary election",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "president_2026",
+      "date": "2026-09-18",
+      "kind": "presidential",
+      "office": "sos.president",
+      "rounds": 1,
+      "snap": true,
+      "historical": {
+        "candidates": [
+          {
+            "person": "sos.marat_kambolov",
+            "share": 0.8697,
+            "votes": 27922,
+            "round": 1
+          },
+          {
+            "person": "sos.zurab_kokoyev",
+            "party": "sos.unity",
+            "share": 0.0152,
+            "votes": 488,
+            "round": 1
+          }
+        ],
+        "winner": "sos.marat_kambolov",
+        "turnout": 0.8265,
+        "note": "Post-June-2026 claim, checked against the Wikipedia article fetched on 2026-10-16 (citing the Central Election Commission): early election after President Gagloyev resigned on 23 June 2026; Kambolov (independent) 86.97%. Runner-up Murat Valiyev (Patriots of Alania, 3.92%) and Kazbek Kodoyev (independent, 828 votes) have no person records here; 1,610 votes were cast for none of the above.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2026_South_Ossetian_presidential_election",
+            "title": "Wikipedia: 2026 South Ossetian presidential election",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "needs_review",
+        "review_note": "Runner-up Murat Valiyev (3.92%) is omitted because no biographical source was found."
+      }
+    }
+  ],
+  "source": [
+    {
+      "url": "https://en.wikipedia.org/wiki/Elections_in_South_Ossetia",
+      "title": "Wikipedia: Elections in South Ossetia",
+      "accessed": "2026-10-16"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Parliament_of_South_Ossetia",
+      "title": "Wikipedia: Parliament of South Ossetia",
+      "accessed": "2026-10-16"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/President_of_South_Ossetia",
+      "title": "Wikipedia: President of South Ossetia",
+      "accessed": "2026-10-16"
+    }
+  ],
+  "confidence": "verified"
+}

@@ -1,0 +1,633 @@
+{
+  "parties": [
+    {
+      "id": "arm.unity_bloc",
+      "name": {
+        "en": "Unity Bloc",
+        "native": "Միասնություն"
+      },
+      "abbrev": {
+        "en": "Unity"
+      },
+      "color": "#FFA500",
+      "sub_ideology": "big_tent",
+      "founded": 1999,
+      "status_2000": "active",
+      "leader_history": [
+        {
+          "person": "arm.andranik_margaryan",
+          "from": 2000,
+          "title": "Leader of the bloc in parliament"
+        }
+      ],
+      "popularity_2000": 0.4145,
+      "popularity_note": "Party-list vote share, May 1999.",
+      "lineage": {
+        "formed_from": [
+          "arm.rpa",
+          "arm.ppa"
+        ]
+      },
+      "note": "Electoral bloc of the People's Party of Armenia (HZK) and the Republican Party of Armenia (HHK), led in 1999 by Vazgen Sargsyan (killed in the parliament shooting of 27 October 1999); largest group in the National Assembly on 1 January 2000. The RPA article names Andranik Margaryan as the bloc's leader in parliament in 2000. Big tent is a gameplay classification for a bloc of a national conservative and a left-wing party.",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/1999_Armenian_parliamentary_election",
+          "title": "Wikipedia: 1999 Armenian parliamentary election",
+          "accessed": "2026-10-16"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/Republican_Party_of_Armenia",
+          "title": "Wikipedia: Republican Party of Armenia",
+          "accessed": "2026-10-16"
+        }
+      ],
+      "confidence": "needs_review",
+      "review_note": "The founding year (1999) is taken from the election it contested, and the date the bloc dissolved (and when the two parties separated) was not found; check both."
+    },
+    {
+      "id": "arm.rpa",
+      "name": {
+        "en": "Republican Party of Armenia",
+        "native": "Հայաստանի Հանրապետական Կուսակցություն"
+      },
+      "abbrev": {
+        "en": "RPA"
+      },
+      "color": "#F28C28",
+      "sub_ideology": "national_conservative",
+      "founded": "1990-04-02",
+      "status_2000": "active",
+      "leader_history": [
+        {
+          "person": "arm.andranik_margaryan",
+          "from": 2000,
+          "to": "2007-03-25",
+          "title": "Chairman"
+        },
+        {
+          "person": "arm.serzh_sargsyan",
+          "from": "2007-03-25",
+          "title": "Chairman"
+        }
+      ],
+      "popularity_2000": 0,
+      "popularity_note": "Ran within the Unity Bloc in 1999 (see arm.unity_bloc).",
+      "note": "Proclaimed itself a national conservative party in 2006 (party article). Margaryan was RPA chairman until his death on 25 March 2007 (the article also calls him chairman of the RPA council in 2000); Serzh Sargsyan assumed the chairman's duties that day and was elected chairman on 10 November 2007. Led the I Have Honor Alliance in 2021 (results recorded under this party).",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Republican_Party_of_Armenia",
+          "title": "Wikipedia: Republican Party of Armenia",
+          "accessed": "2026-10-16"
+        }
+      ],
+      "confidence": "needs_review",
+      "review_note": "Check the start of Margaryan's chairmanship (recorded from 2000, when the article first names him as a party leader)."
+    },
+    {
+      "id": "arm.ppa",
+      "name": {
+        "en": "People's Party of Armenia",
+        "native": "Հայաստանի Ժողովրդական Կուսակցություն"
+      },
+      "abbrev": {
+        "en": "HZK"
+      },
+      "color": "#D2232A",
+      "sub_ideology": "social_democrat",
+      "founded": 1998,
+      "status_2000": "active",
+      "leader_history": [
+        {
+          "person": "arm.stepan_demirchyan",
+          "from": 2000
+        }
+      ],
+      "popularity_2000": 0,
+      "popularity_note": "Ran within the Unity Bloc in 1999 (see arm.unity_bloc).",
+      "note": "Nominated Karen Demirchyan in 1998; led by his son Stepan Demirchyan, who headed the Justice coalition in 2003 (results recorded under this party). Wikipedia lists socialism and pro-Europeanism (centre-left to left-wing).",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/People%27s_Party_of_Armenia",
+          "title": "Wikipedia: People's Party of Armenia",
+          "accessed": "2026-10-16"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/2003_Armenian_parliamentary_election",
+          "title": "Wikipedia: 2003 Armenian parliamentary election",
+          "accessed": "2026-10-16"
+        }
+      ],
+      "confidence": "needs_review",
+      "review_note": "Check when Stepan Demirchyan became leader (recorded from 2000)."
+    },
+    {
+      "id": "arm.acp",
+      "name": {
+        "en": "Armenian Communist Party",
+        "native": "Հայաստանի կոմունիստական կուսակցություն"
+      },
+      "abbrev": {
+        "en": "ACP"
+      },
+      "color": "#CC0000",
+      "sub_ideology": "marxist_leninist",
+      "founded": "1991-07-29",
+      "status_2000": "active",
+      "leader_history": [],
+      "popularity_2000": 0.1204,
+      "popularity_note": "Party-list vote share, May 1999.",
+      "note": "Registered 29 July 1991. First Secretaries per the party article: Sergey Badalyan 1991-1999 (died 25 November 1999), Vladimir Darbinyan 2000-2005, Ruben Tovmasyan 2005-2013, Tachat Sargsyan 2013-2017 (none recorded as persons here; Darbinyan has no English Wikipedia article).",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Armenian_Communist_Party",
+          "title": "Wikipedia: Armenian Communist Party",
+          "accessed": "2026-10-16"
+        }
+      ],
+      "confidence": "needs_review",
+      "review_note": "Add the First Secretaries as person records if they are needed."
+    },
+    {
+      "id": "arm.law_unity",
+      "name": {
+        "en": "Law and Unity Bloc"
+      },
+      "abbrev": {
+        "en": "Law and Unity"
+      },
+      "color": "#0000FF",
+      "sub_ideology": "big_tent",
+      "founded": 1999,
+      "status_2000": "active",
+      "leader_history": [],
+      "popularity_2000": 0.0793,
+      "popularity_note": "Party-list vote share, May 1999.",
+      "note": "Won 7 seats in 1999. No Wikipedia article exists; its composition and leader were not found in the fetched sources.",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/1999_Armenian_parliamentary_election",
+          "title": "Wikipedia: 1999 Armenian parliamentary election",
+          "accessed": "2026-10-16"
+        }
+      ],
+      "confidence": "needs_review",
+      "review_note": "Identify the bloc's member parties and leader, and its later fate."
+    },
+    {
+      "id": "arm.arf",
+      "name": {
+        "en": "Armenian Revolutionary Federation",
+        "native": "Հայ Յեղափոխական Դաշնակցություն"
+      },
+      "abbrev": {
+        "en": "ARF"
+      },
+      "color": "#CD1A30",
+      "sub_ideology": "democratic_socialist",
+      "founded": 1890,
+      "status_2000": "active",
+      "leader_history": [
+        {
+          "person": "arm.vahan_hovhannisyan",
+          "from": 2003,
+          "to": 2012,
+          "title": "List leader"
+        },
+        {
+          "person": "arm.armen_rustamyan",
+          "from": 2017,
+          "title": "List leader"
+        }
+      ],
+      "popularity_2000": 0.0779,
+      "popularity_note": "Party-list vote share, May 1999.",
+      "note": "Founded in 1890 in Tiflis. Its leadership is collective (Bureau and Supreme Council chairmen); the leaders recorded are the heads of its lists in the 2003, 2007 and 2012 (Hovhannisyan) and 2017 (Rustamyan) elections. Part of the Armenia Alliance in 2021. Wikipedia lists democratic socialism (centre-left to left-wing).",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Armenian_Revolutionary_Federation",
+          "title": "Wikipedia: Armenian Revolutionary Federation",
+          "accessed": "2026-10-16"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/2003_Armenian_parliamentary_election",
+          "title": "Wikipedia: 2003 Armenian parliamentary election",
+          "accessed": "2026-10-16"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/2017_Armenian_parliamentary_election",
+          "title": "Wikipedia: 2017 Armenian parliamentary election",
+          "accessed": "2026-10-16"
+        }
+      ],
+      "confidence": "needs_review",
+      "review_note": "List leaders stand in for party leaders; check the Bureau and Supreme Council chairs for Armenia since 2000."
+    },
+    {
+      "id": "arm.oek",
+      "name": {
+        "en": "Orinats Yerkir",
+        "native": "Օրինաց երկիր"
+      },
+      "abbrev": {
+        "en": "OEK"
+      },
+      "color": "#0071BC",
+      "sub_ideology": "liberal_conservative",
+      "founded": 1998,
+      "status_2000": "active",
+      "leader_history": [
+        {
+          "person": "arm.artur_baghdasaryan",
+          "from": 1998
+        }
+      ],
+      "popularity_2000": 0.0525,
+      "popularity_note": "Party-list vote share, May 1999.",
+      "note": "Rule of Law party, founded in 1998 by Artur Baghdasaryan, who continues to lead it; also known as Armenian Renaissance. Wikipedia lists liberal conservatism and Christian democracy (centre-right).",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Orinats_Yerkir",
+          "title": "Wikipedia: Orinats Yerkir",
+          "accessed": "2026-10-16"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "arm.ndu",
+      "name": {
+        "en": "National Democratic Union",
+        "native": "Ազգային ժողովրդավարական միություն"
+      },
+      "abbrev": {
+        "en": "NDU"
+      },
+      "color": "#4B0082",
+      "sub_ideology": "centrist_liberal",
+      "founded": 1991,
+      "status_2000": "active",
+      "leader_history": [
+        {
+          "person": "arm.vazgen_manukyan",
+          "from": 1991
+        }
+      ],
+      "popularity_2000": 0.0514,
+      "popularity_note": "Party-list vote share, May 1999.",
+      "note": "Liberal (centre) party led by Vazgen Manukyan.",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/National_Democratic_Union_(Armenia)",
+          "title": "Wikipedia: National Democratic Union (Armenia)",
+          "accessed": "2026-10-16"
+        }
+      ],
+      "confidence": "needs_review",
+      "review_note": "Check that Manukyan led the party throughout (recorded from its founding in 1991)."
+    },
+    {
+      "id": "arm.national_unity",
+      "name": {
+        "en": "National Unity",
+        "native": "Ազգային միաբանություն"
+      },
+      "abbrev": {
+        "en": "NU"
+      },
+      "color": "#003399",
+      "sub_ideology": "national_conservative",
+      "founded": 1997,
+      "status_2000": "extra_parliamentary",
+      "leader_history": [
+        {
+          "person": "arm.artashes_geghamyan",
+          "from": 1997,
+          "to": 2024
+        }
+      ],
+      "popularity_2000": 0,
+      "note": "Founded and led by Artashes Geghamyan from 1997 until his death in 2024. Wikipedia lists conservatism, russophilia and a pro-CIS stance. Whether it held seats on 1 January 2000 (for instance within the Law and Unity bloc) was not checked.",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/National_Unity_(Armenia)",
+          "title": "Wikipedia: National Unity (Armenia)",
+          "accessed": "2026-10-16"
+        }
+      ],
+      "confidence": "needs_review",
+      "review_note": "Check its parliamentary status on 1 January 2000."
+    },
+    {
+      "id": "arm.bhk",
+      "name": {
+        "en": "Prosperous Armenia",
+        "native": "Բարգավաճ Հայաստան"
+      },
+      "abbrev": {
+        "en": "BHK"
+      },
+      "color": "#1F3F95",
+      "sub_ideology": "big_tent",
+      "founded": "2004-04-30",
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        {
+          "person": "arm.gagik_tsarukyan",
+          "from": "2004-04-30"
+        }
+      ],
+      "popularity_2000": 0,
+      "note": "Founded 30 April 2004 and led by Gagik Tsarukyan; ran as the Tsarukyan Alliance in 2017. Wikipedia places it centre-right; big_tent is a gameplay classification.",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Prosperous_Armenia",
+          "title": "Wikipedia: Prosperous Armenia",
+          "accessed": "2026-10-16"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/Tsarukyan_Alliance",
+          "title": "Wikipedia: Tsarukyan Alliance",
+          "accessed": "2026-10-16"
+        }
+      ],
+      "confidence": "needs_review",
+      "review_note": "Check whether Tsarukyan's leadership was continuous since 2004."
+    },
+    {
+      "id": "arm.heritage",
+      "name": {
+        "en": "Heritage",
+        "native": "Ժառանգություն"
+      },
+      "abbrev": {
+        "en": "Heritage"
+      },
+      "color": "#E1B12C",
+      "sub_ideology": "centrist_liberal",
+      "founded": 2002,
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        {
+          "person": "arm.raffi_hovannisian",
+          "from": 2002
+        }
+      ],
+      "popularity_2000": 0,
+      "note": "Founded in 2002 and led by Raffi Hovannisian; describes itself as national liberal (centre to centre-right).",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Heritage_(Armenia)",
+          "title": "Wikipedia: Heritage (Armenia)",
+          "accessed": "2026-10-16"
+        }
+      ],
+      "confidence": "needs_review",
+      "review_note": "Check that Hovannisian led the party continuously since 2002."
+    },
+    {
+      "id": "arm.anc",
+      "name": {
+        "en": "Armenian National Congress",
+        "native": "Հայ Ազգային Կոնգրես"
+      },
+      "abbrev": {
+        "en": "ANC"
+      },
+      "color": "#F7941D",
+      "sub_ideology": "social_liberal",
+      "founded": "2008-08-01",
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        {
+          "person": "arm.levon_ter_petrosyan",
+          "from": "2008-08-01"
+        }
+      ],
+      "popularity_2000": 0,
+      "lineage": {
+        "formed_from": [
+          "arm.panm"
+        ]
+      },
+      "note": "Formed on 1 August 2008 as a coalition led by former President Levon Ter-Petrosyan, and as a party in March-April 2013; its direct predecessor was the Pan-Armenian National Movement. The infobox names Levon Zourabian as current leader.",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Armenian_National_Congress",
+          "title": "Wikipedia: Armenian National Congress",
+          "accessed": "2026-10-16"
+        }
+      ],
+      "confidence": "needs_review",
+      "review_note": "Check when Ter-Petrosyan's leadership ended and Zourabian's began."
+    },
+    {
+      "id": "arm.hanrapetutyun",
+      "name": {
+        "en": "Hanrapetutyun Party",
+        "native": "Հանրապետություն"
+      },
+      "abbrev": {
+        "en": "Republic"
+      },
+      "color": "#1E90FF",
+      "sub_ideology": "liberal_conservative",
+      "founded": "2001-04-01",
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        {
+          "person": "arm.aram_sargsyan",
+          "from": "2001-04-01"
+        }
+      ],
+      "popularity_2000": 0,
+      "lineage": {
+        "split_from": "arm.rpa"
+      },
+      "note": "Founded in 2001 by Aram Sargsyan and other former RPA members (RPA article); conservative liberal, pro-European. Part of the Way Out Alliance in 2017.",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Hanrapetutyun_Party",
+          "title": "Wikipedia: Hanrapetutyun Party",
+          "accessed": "2026-10-16"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/Republican_Party_of_Armenia",
+          "title": "Wikipedia: Republican Party of Armenia",
+          "accessed": "2026-10-16"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "arm.panm",
+      "name": {
+        "en": "Pan-Armenian National Movement",
+        "native": "Հայոց Համազգային Շարժում"
+      },
+      "abbrev": {
+        "en": "PANM"
+      },
+      "color": "#6B8E23",
+      "sub_ideology": "centrist_liberal",
+      "founded": "1988-02-20",
+      "dissolved": "2013-04-13",
+      "status_2000": "extra_parliamentary",
+      "leader_history": [],
+      "popularity_2000": 0.0116,
+      "popularity_note": "Party-list vote share, May 1999.",
+      "lineage": {
+        "merged_into": "arm.anc"
+      },
+      "note": "Former ruling party of President Ter-Petrosyan; won one constituency seat in 2012. Dissolved 13 April 2013 (the ANC is described as its direct successor). Leader in its last years per the infobox: Ararat Zurabyan (not recorded as a person).",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Pan-Armenian_National_Movement",
+          "title": "Wikipedia: Pan-Armenian National Movement",
+          "accessed": "2026-10-16"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/Armenian_National_Congress",
+          "title": "Wikipedia: Armenian National Congress",
+          "accessed": "2026-10-16"
+        }
+      ],
+      "confidence": "needs_review",
+      "review_note": "Check the party's leaders since 2000."
+    },
+    {
+      "id": "arm.cc",
+      "name": {
+        "en": "Civil Contract",
+        "native": "Քաղաքացիական Պայմանագիր"
+      },
+      "abbrev": {
+        "en": "KP"
+      },
+      "color": "#2B5C9E",
+      "sub_ideology": "centrist_liberal",
+      "founded": "2015-05-30",
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        {
+          "person": "arm.nikol_pashinyan",
+          "from": "2015-05-30"
+        }
+      ],
+      "popularity_2000": 0,
+      "note": "Founded as an NGO on 9 December 2013 and as a party on 30 May 2015; led by Nikol Pashinyan. Ran in the Way Out Alliance (2017) and the My Step Alliance (2018), recorded under this party. Wikipedia lists liberalism, reformism, populism and pro-Europeanism (centre).",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Civil_Contract_(Armenia)",
+          "title": "Wikipedia: Civil Contract (Armenia)",
+          "accessed": "2026-10-16"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/Way_Out_Alliance",
+          "title": "Wikipedia: Way Out Alliance",
+          "accessed": "2026-10-16"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/My_Step_Alliance",
+          "title": "Wikipedia: My Step Alliance",
+          "accessed": "2026-10-16"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "arm.bright",
+      "name": {
+        "en": "Bright Armenia",
+        "native": "Լուսավոր Հայաստան"
+      },
+      "abbrev": {
+        "en": "LH"
+      },
+      "color": "#F4A300",
+      "sub_ideology": "centrist_liberal",
+      "founded": "2015-12-12",
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        {
+          "person": "arm.edmon_marukyan",
+          "from": "2015-12-12"
+        }
+      ],
+      "popularity_2000": 0,
+      "note": "Led by Edmon Marukyan; centre. Part of the Way Out Alliance in 2017.",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Bright_Armenia",
+          "title": "Wikipedia: Bright Armenia",
+          "accessed": "2026-10-16"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "arm.armenia_alliance",
+      "name": {
+        "en": "Armenia Alliance",
+        "native": "Հայաստան դաշինք"
+      },
+      "abbrev": {
+        "en": "Armenia"
+      },
+      "color": "#8B0000",
+      "sub_ideology": "national_conservative",
+      "founded": "2021-05-09",
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        {
+          "person": "arm.robert_kocharyan",
+          "from": "2021-05-09"
+        }
+      ],
+      "popularity_2000": 0,
+      "note": "Alliance led by former President Robert Kocharyan, including the ARF; Wikipedia lists Armenian nationalism and russophilia and places it centre-left. national_conservative is a gameplay classification.",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Armenia_Alliance",
+          "title": "Wikipedia: Armenia Alliance",
+          "accessed": "2026-10-16"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "arm.strong_armenia",
+      "name": {
+        "en": "Strong Armenia",
+        "native": "Ուժեղ Հայաստան"
+      },
+      "abbrev": {
+        "en": "Strong Armenia"
+      },
+      "color": "#00205B",
+      "sub_ideology": "traditional_conservative",
+      "founded": "2025-12-08",
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        {
+          "person": "arm.samvel_karapetyan",
+          "from": "2025-12-08"
+        }
+      ],
+      "popularity_2000": 0,
+      "note": "Founded 8 December 2025 and led by businessman Samvel Karapetyan; Wikipedia lists conservatism (big tent). Second in the June 2026 election (post-June-2026 claim, checked against the Wikipedia articles fetched on 2026-10-16).",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Strong_Armenia",
+          "title": "Wikipedia: Strong Armenia",
+          "accessed": "2026-10-16"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/2026_Armenian_parliamentary_election",
+          "title": "Wikipedia: 2026 Armenian parliamentary election",
+          "accessed": "2026-10-16"
+        }
+      ],
+      "confidence": "verified"
+    }
+  ]
+}

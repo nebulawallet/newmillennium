@@ -1,0 +1,130 @@
+{
+  "tag": "ABK",
+  "name": { "en": "Abkhazia", "native": "Аԥсны", "official": { "en": "Republic of Abkhazia" } },
+  "adjective": "Abkhaz",
+  "culture_primary": "abkhaz",
+  "government": {
+    "type": "presidential",
+    "effective_executive": "abk.president",
+    "head_of_state_office": "abk.president",
+    "head_of_government_office": "abk.prime_minister",
+    "constitution": {
+      "term_limit_amendable": true,
+      "emergency_powers": true,
+      "referendum_required_for": []
+    },
+    "note": "De facto state in the north-west of Georgia; Georgia regards it as part of its territory. Its institutions are recorded factually: a directly elected President (five-year term, renewable once, two-round system since the first direct election in 1999) with a Vice President, a Prime Minister heading the Cabinet, and a 35-member People's Assembly (per the Wikipedia articles on the President and Prime Minister of Abkhazia)."
+  },
+  "offices": [
+    {
+      "id": "abk.president",
+      "title": { "en": "President of Abkhazia", "native": "Аԥсны Аҳәынҭқарра Ахада" },
+      "role": "head_of_state",
+      "power_weight": 0.8,
+      "selection": "direct_election",
+      "term_years": 5,
+      "term_limit": { "max_terms": 2, "consecutive_only": false },
+      "succession": { "type": "acting_then_election" },
+      "holders": [
+        { "person": "abk.vladislav_ardzinba", "from": "1994-11-26", "to": "2005-02-12", "note": "Re-elected unopposed on 3 October 1999; stayed on as interim President after the 2004 result was annulled." },
+        { "person": "abk.sergei_bagapsh", "from": "2005-02-12", "to": "2011-05-29", "note": "Died in office." },
+        { "person": "abk.alexander_ankvab", "from": "2011-05-29", "to": "2011-09-26", "acting": true },
+        { "person": "abk.alexander_ankvab", "from": "2011-09-26", "to": "2014-06-01", "note": "Resigned." },
+        { "person": "abk.valeri_bganba", "from": "2014-06-01", "to": "2014-09-25", "acting": true },
+        { "person": "abk.raul_khajimba", "from": "2014-09-25", "to": "2020-01-12", "note": "Resigned after the Supreme Court annulled the 2019 result." },
+        { "person": null, "from": "2020-01-12", "to": "2020-01-13", "vacant_reason": "The list gives Khajimba's resignation on 12 January and Bganba's acting presidency from 13 January 2020." },
+        { "person": "abk.valeri_bganba", "from": "2020-01-13", "to": "2020-04-23", "acting": true },
+        { "person": "abk.aslan_bzhania", "from": "2020-04-23", "to": "2024-11-19", "note": "Resigned." },
+        { "person": "abk.badra_gunba", "from": "2024-11-19", "to": "2025-04-02", "acting": true, "note": "Acting as Vice President." },
+        { "person": "abk.badra_gunba", "from": "2025-04-02" }
+      ],
+      "note": "Dates from the Wikipedia article on the President of Abkhazia.",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/President_of_Abkhazia", "title": "Wikipedia: President of Abkhazia (list of presidents)", "accessed": "2026-10-16" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "abk.prime_minister",
+      "title": { "en": "Prime Minister of Abkhazia" },
+      "role": "head_of_government",
+      "power_weight": 0.2,
+      "selection": "appointed",
+      "appointed_by": "abk.president",
+      "holders": [
+        { "person": "abk.viacheslav_tsugba", "from": "1999-12-20", "to": "2001-05-30" },
+        { "person": null, "from": "2001-05-30", "to": "2001-06-07", "vacant_reason": "The Wikipedia list names no holder between Tsugba (to 30 May) and Jergenia (from 7 June 2001)." },
+        { "person": "abk.anri_jergenia", "from": "2001-06-07", "to": "2002-11-29" },
+        { "person": "abk.gennady_gagulia", "from": "2002-11-29", "to": "2003-04-08" },
+        { "person": null, "from": "2003-04-08", "to": "2003-04-22", "vacant_reason": "The Wikipedia list names no holder between Gagulia (to 8 April) and Khajimba (from 22 April 2003)." },
+        { "person": "abk.raul_khajimba", "from": "2003-04-22", "to": "2004-10-06" },
+        { "person": "abk.nodar_khashba", "from": "2004-10-06", "to": "2005-02-14" },
+        { "person": "abk.alexander_ankvab", "from": "2005-02-14", "to": "2010-02-13" },
+        { "person": "abk.sergei_shamba", "from": "2010-02-13", "to": "2011-09-27" },
+        { "person": "abk.leonid_lakerbaia", "from": "2011-09-27", "to": "2014-06-02" },
+        { "person": "abk.vladimir_delba", "from": "2014-06-02", "to": "2014-09-29", "acting": true },
+        { "person": "abk.beslan_butba", "from": "2014-09-29", "to": "2015-03-17" },
+        { "person": "abk.shamil_adzynba", "from": "2015-03-17", "to": "2015-03-20", "acting": true },
+        { "person": "abk.artur_mikvabia", "from": "2015-03-20", "to": "2016-07-26" },
+        { "person": "abk.shamil_adzynba", "from": "2016-07-26", "to": "2016-08-05", "acting": true },
+        { "person": "abk.beslan_bartsits", "from": "2016-08-05", "to": "2018-04-25" },
+        { "person": "abk.gennady_gagulia", "from": "2018-04-25", "to": "2018-09-08", "note": "Died in office." },
+        { "person": "abk.daur_arshba", "from": "2018-09-08", "to": "2018-09-18", "acting": true },
+        { "person": "abk.valeri_bganba", "from": "2018-09-18", "to": "2020-04-23" },
+        { "person": "abk.alexander_ankvab", "from": "2020-04-23", "to": "2024-11-18" },
+        { "person": "abk.valeri_bganba", "from": "2024-11-18", "to": "2025-03-03", "acting": true },
+        { "person": "abk.vladimir_delba", "from": "2025-03-03" }
+      ],
+      "note": "Dates from the list in the Wikipedia article on the Prime Minister of Abkhazia.",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/Prime_Minister_of_Abkhazia", "title": "Wikipedia: Prime Minister of Abkhazia (list)", "accessed": "2026-10-16" }
+      ],
+      "confidence": "needs_review",
+      "review_note": "Check who headed the government in the gaps of May-June 2001 and April 2003 (recorded as vacancies because the list names no holder)."
+    }
+  ],
+  "legislature": {
+    "name": { "en": "People's Assembly of Abkhazia" },
+    "chambers": [
+      {
+        "id": "peoples_assembly",
+        "name": { "en": "People's Assembly" },
+        "seats": 35,
+        "term_years": 5,
+        "elected": "direct",
+        "system": {
+          "type": "two_round",
+          "district_model": "custom",
+          "note": "35 members elected in two rounds (per the election articles). seats_2000 is the result of the November-December 1996 election, in which all 35 seats went to independents and initiative groups."
+        },
+        "seats_2000": { "independents": 35 },
+        "confidence_chamber": false,
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/1996_Abkhazian_parliamentary_election", "title": "Wikipedia: 1996 Abkhazian parliamentary election", "accessed": "2026-10-16" }
+        ],
+        "confidence": "verified"
+      }
+    ]
+  },
+  "party_system": "multi_party",
+  "start_2000": {
+    "ruling_parties": [],
+    "confidence_and_supply": [],
+    "ideology_support": {
+      "national_conservative": 0.7,
+      "big_tent": 0.2,
+      "liberal_conservative": 0.05,
+      "marxist_leninist": 0.05
+    },
+    "ideology_support_note": "Estimate only: there was no party-list vote before 2000. The 1996 People's Assembly consisted entirely of independents, and President Ardzinba was re-elected unopposed in October 1999 with 99.11%. The split is a gameplay estimate: Abkhaz national movements and veterans' groups (national conservative), non-party local candidates (big tent), the People's Party (liberal conservative) and the Communist Party (Marxist-Leninist).",
+    "stability": 0.45,
+    "war_support": 0.5,
+    "at_war_with": []
+  },
+  "claims": [],
+  "source": [
+    { "url": "https://en.wikipedia.org/wiki/President_of_Abkhazia", "title": "Wikipedia: President of Abkhazia", "accessed": "2026-10-16" },
+    { "url": "https://en.wikipedia.org/wiki/1999_Abkhazian_presidential_election", "title": "Wikipedia: 1999 Abkhazian presidential election", "accessed": "2026-10-16" }
+  ],
+  "confidence": "verified"
+}

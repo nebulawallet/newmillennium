@@ -1,0 +1,363 @@
+{
+  "rules": [
+    {
+      "kind": "legislative",
+      "chamber": "parliament",
+      "every_years": 4,
+      "anchor": "2024-10-26",
+      "snap_possible": true,
+      "note": "Parliament of Georgia; elections in 1999, 2003 (proportional results annulled), 2004 (repeat proportional vote), 2008 (brought forward by the January 2008 referendum), 2012, 2016, 2020 and 2024. The 2024 election was held for 150 seats by proportional representation."
+    },
+    {
+      "kind": "indirect_presidential",
+      "office": "geo.president",
+      "every_years": 5,
+      "anchor": "2024-12-14",
+      "snap_possible": true,
+      "system": "legislature",
+      "note": "In 2024 the President was elected for the first time by a 300-member Electoral Assembly (200 votes needed). Direct elections were held in 2000, 2004, 2008, 2013 and 2018. every_years (5) is the presidential term per the President of Georgia article."
+    }
+  ],
+  "elections": [
+    {
+      "id": "president_2000",
+      "date": "2000-04-09",
+      "kind": "presidential",
+      "office": "geo.president",
+      "rounds": 1,
+      "historical": {
+        "candidates": [
+          { "person": "geo.eduard_shevardnadze", "party": "geo.cug", "share": 0.82, "votes": 1870311, "round": 1 },
+          { "person": "geo.jumber_patiashvili", "share": 0.1712, "votes": 390486, "round": 1 }
+        ],
+        "winner": "geo.eduard_shevardnadze",
+        "turnout": 0.7586,
+        "note": "Patiashvili ran as an independent. Four other candidates (each under 1%) omitted.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2000_Georgian_presidential_election", "title": "Wikipedia: 2000 Georgian presidential election", "accessed": "2026-10-16" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "constitutional_referendum_2003",
+      "date": "2003-11-02",
+      "kind": "referendum",
+      "question": "Reduction of the number of members of Parliament to 150",
+      "historical": {
+        "yes_share": 0.8961,
+        "winner": "yes",
+        "turnout": 0.6389,
+        "note": "Held alongside the parliamentary election; the reduction first applied at the 2008 parliamentary election.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2003_Georgian_constitutional_referendum", "title": "Wikipedia: 2003 Georgian constitutional referendum", "accessed": "2026-10-16" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "parliament_2003",
+      "date": "2003-11-02",
+      "kind": "legislative",
+      "chamber": "parliament",
+      "historical": {
+        "party_results": [
+          { "party": "geo.cug", "share": 0.221, "seats": 57 },
+          { "party": "geo.revival", "share": 0.1954, "seats": 39 },
+          { "party": "geo.unm", "share": 0.1874, "seats": 42 },
+          { "party": "geo.labour", "share": 0.1248, "seats": 23 },
+          { "party": "geo.burjanadze_democrats", "share": 0.0912, "seats": 19 },
+          { "party": "geo.new_rights", "share": 0.0762, "seats": 16 },
+          { "party": "geo.industrialists", "share": 0.064, "seats": 4 },
+          { "party": "others", "seats": 1 },
+          { "party": "independents", "seats": 21 },
+          { "party": "vacant", "seats": 3 }
+        ],
+        "winner": "geo.cug",
+        "turnout": 0.6006,
+        "note": "Results as announced by the Central Election Commission for the 225 contested seats (For a New Georgia bloc recorded under the Union of Citizens; 'others' is the National Movement Democrats' one constituency seat). The Supreme Court annulled the results after the Rose Revolution; the proportional seats were re-run on 28 March 2004, while the 75 single-member constituency results were not annulled (per the 2004 election article). Shares computed from the list vote counts.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2003_Georgian_parliamentary_election", "title": "Wikipedia: 2003 Georgian parliamentary election", "accessed": "2026-10-16" },
+          { "url": "https://en.wikipedia.org/wiki/2004_Georgian_parliamentary_election", "title": "Wikipedia: 2004 Georgian parliamentary election", "accessed": "2026-10-16" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "president_2004",
+      "date": "2004-01-04",
+      "kind": "presidential",
+      "office": "geo.president",
+      "rounds": 1,
+      "snap": true,
+      "historical": {
+        "candidates": [
+          { "person": "geo.mikheil_saakashvili", "party": "geo.unm", "share": 0.9694, "votes": 1890256, "round": 1 }
+        ],
+        "winner": "geo.mikheil_saakashvili",
+        "turnout": 0.8797,
+        "note": "Early election after Shevardnadze's resignation on 23 November 2003. The runner-up, Teimuraz Shashiashvili (independent, 1.87%), is omitted because no biographical source was fetched for him; four other candidates under 1% are omitted.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2004_Georgian_presidential_election", "title": "Wikipedia: 2004 Georgian presidential election", "accessed": "2026-10-16" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "parliament_2004",
+      "date": "2004-03-28",
+      "kind": "legislative",
+      "chamber": "parliament",
+      "snap": true,
+      "historical": {
+        "party_results": [
+          { "party": "geo.unm", "share": 0.6775, "seats": 153 },
+          { "party": "geo.new_rights", "share": 0.0774, "seats": 23 },
+          { "party": "geo.labour", "share": 0.0614, "seats": 4 },
+          { "party": "geo.revival", "share": 0.0395, "seats": 6 },
+          { "party": "geo.cug", "seats": 19 },
+          { "party": "independents", "seats": 20 },
+          { "party": "others", "seats": 10 }
+        ],
+        "winner": "geo.unm",
+        "note": "Repeat election for the 150 proportional seats; the 2003 constituency results stood. National Movement-Democrats joint list recorded under the UNM, the Rightist Opposition list (New Rights and Industrialists) under New Rights. The Union of Citizens' 19 seats are constituency seats from 2003; 'others' are the 10 deputies representing Abkhazia. Shares computed from the list vote counts.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2004_Georgian_parliamentary_election", "title": "Wikipedia: 2004 Georgian parliamentary election", "accessed": "2026-10-16" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "referendum_2008_early_elections",
+      "date": "2008-01-05",
+      "kind": "referendum",
+      "question": "Bringing forward the 2008 parliamentary elections from October to April/May",
+      "historical": {
+        "yes_share": 0.7974,
+        "winner": "yes",
+        "turnout": 0.5619,
+        "note": "Binding question, held alongside the presidential election.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2008_Georgian_NATO_membership_referendum", "title": "Wikipedia: 2008 Georgian referendum (NATO membership and early elections)", "accessed": "2026-10-16" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "referendum_2008_nato",
+      "date": "2008-01-05",
+      "kind": "referendum",
+      "question": "Membership of NATO (advisory)",
+      "historical": {
+        "yes_share": 0.77,
+        "winner": "yes",
+        "turnout": 0.5619,
+        "note": "Non-binding advisory question, held alongside the presidential election.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2008_Georgian_NATO_membership_referendum", "title": "Wikipedia: 2008 Georgian referendum (NATO membership and early elections)", "accessed": "2026-10-16" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "president_2008",
+      "date": "2008-01-05",
+      "kind": "presidential",
+      "office": "geo.president",
+      "rounds": 1,
+      "snap": true,
+      "historical": {
+        "candidates": [
+          { "person": "geo.mikheil_saakashvili", "party": "geo.unm", "share": 0.5473, "votes": 1060042, "round": 1 },
+          { "person": "geo.levan_gachechiladze", "party": "geo.unc", "share": 0.2629, "votes": 509234, "round": 1 },
+          { "person": "geo.badri_patarkatsishvili", "share": 0.0727, "votes": 140826, "round": 1 },
+          { "person": "geo.shalva_natelashvili", "party": "geo.labour", "share": 0.0664, "votes": 128589, "round": 1 }
+        ],
+        "winner": "geo.mikheil_saakashvili",
+        "turnout": 0.5619,
+        "note": "Early election (Saakashvili resigned in November 2007 to stand again). Patarkatsishvili ran as an independent. Candidates under 5% omitted.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2008_Georgian_presidential_election", "title": "Wikipedia: 2008 Georgian presidential election", "accessed": "2026-10-16" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "parliament_2008",
+      "date": "2008-05-21",
+      "kind": "legislative",
+      "chamber": "parliament",
+      "snap": true,
+      "historical": {
+        "party_results": [
+          { "party": "geo.unm", "share": 0.5918, "seats": 119 },
+          { "party": "geo.unc", "share": 0.1773, "seats": 17 },
+          { "party": "geo.cdm", "share": 0.0866, "seats": 6 },
+          { "party": "geo.labour", "share": 0.0744, "seats": 6 },
+          { "party": "geo.republican", "share": 0.0378, "seats": 2 }
+        ],
+        "winner": "geo.unm",
+        "turnout": 0.5282,
+        "note": "First election to the 150-seat Parliament. Shares computed from the list vote counts.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2008_Georgian_parliamentary_election", "title": "Wikipedia: 2008 Georgian parliamentary election", "accessed": "2026-10-16" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "parliament_2012",
+      "date": "2012-10-01",
+      "kind": "legislative",
+      "chamber": "parliament",
+      "historical": {
+        "party_results": [
+          { "party": "geo.gd", "share": 0.5497, "seats": 85 },
+          { "party": "geo.unm", "share": 0.4034, "seats": 65 }
+        ],
+        "winner": "geo.gd",
+        "turnout": 0.6131,
+        "note": "Georgian Dream-Democratic Georgia coalition list recorded under Georgian Dream. Shares computed from the list vote counts.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2012_Georgian_parliamentary_election", "title": "Wikipedia: 2012 Georgian parliamentary election", "accessed": "2026-10-16" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "president_2013",
+      "date": "2013-10-27",
+      "kind": "presidential",
+      "office": "geo.president",
+      "rounds": 1,
+      "historical": {
+        "candidates": [
+          { "person": "geo.giorgi_margvelashvili", "party": "geo.gd", "share": 0.6212, "votes": 1012569, "round": 1 },
+          { "person": "geo.davit_bakradze", "party": "geo.unm", "share": 0.2172, "votes": 354103, "round": 1 },
+          { "person": "geo.nino_burjanadze", "share": 0.1019, "votes": 166061, "round": 1 }
+        ],
+        "winner": "geo.giorgi_margvelashvili",
+        "turnout": 0.4695,
+        "note": "Burjanadze stood for Democratic Movement - United Georgia (not recorded as a party here: it held no seats in this period). Candidates under 5% omitted.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2013_Georgian_presidential_election", "title": "Wikipedia: 2013 Georgian presidential election", "accessed": "2026-10-16" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "parliament_2016",
+      "date": "2016-10-08",
+      "kind": "legislative",
+      "chamber": "parliament",
+      "historical": {
+        "party_results": [
+          { "party": "geo.gd", "share": 0.4868, "seats": 115 },
+          { "party": "geo.unm", "share": 0.2711, "seats": 27 },
+          { "party": "geo.patriots", "share": 0.0501, "seats": 6 },
+          { "party": "geo.industrialists", "share": 0.0078, "seats": 1 },
+          { "party": "independents", "seats": 1 }
+        ],
+        "winner": "geo.gd",
+        "turnout": 0.5194,
+        "note": "Second round in single-member constituencies on 30 October 2016. Industrialists ran as Industrialists-Our Fatherland. Shares computed from the proportional vote counts.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2016_Georgian_parliamentary_election", "title": "Wikipedia: 2016 Georgian parliamentary election", "accessed": "2026-10-16" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "president_2018",
+      "date": "2018-10-28",
+      "kind": "presidential",
+      "office": "geo.president",
+      "rounds": 2,
+      "historical": {
+        "candidates": [
+          { "person": "geo.salome_zourabichvili", "share": 0.3864, "votes": 615572, "round": 1 },
+          { "person": "geo.grigol_vashadze", "party": "geo.unm", "share": 0.3774, "votes": 601224, "round": 1 },
+          { "person": "geo.davit_bakradze", "party": "geo.european_georgia", "share": 0.1097, "votes": 174849, "round": 1 },
+          { "person": "geo.salome_zourabichvili", "share": 0.5952, "votes": 1147701, "round": 2 },
+          { "person": "geo.grigol_vashadze", "party": "geo.unm", "share": 0.4048, "votes": 780680, "round": 2 }
+        ],
+        "winner": "geo.salome_zourabichvili",
+        "turnout": 0.565,
+        "note": "Second round on 28 November 2018 (turnout 56.5%; first round 46.83%). Zourabichvili ran as an independent backed by Georgian Dream; Vashadze for the UNM-led Strength in Unity coalition. Last direct presidential election. First-round shares computed from the candidates' vote counts; candidates under 5% omitted.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2018_Georgian_presidential_election", "title": "Wikipedia: 2018 Georgian presidential election", "accessed": "2026-10-16" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "parliament_2020",
+      "date": "2020-10-31",
+      "kind": "legislative",
+      "chamber": "parliament",
+      "historical": {
+        "party_results": [
+          { "party": "geo.gd", "share": 0.4822, "seats": 90 },
+          { "party": "geo.unm", "share": 0.2718, "seats": 36 },
+          { "party": "geo.european_georgia", "share": 0.0379, "seats": 5 },
+          { "party": "geo.lelo", "share": 0.0315, "seats": 4 },
+          { "party": "geo.aghmashenebeli", "share": 0.0315, "seats": 4 },
+          { "party": "geo.patriots", "share": 0.0314, "seats": 4 },
+          { "party": "geo.girchi", "share": 0.0289, "seats": 4 },
+          { "party": "geo.citizens", "share": 0.0133, "seats": 2 },
+          { "party": "geo.labour", "share": 0.01, "seats": 1 }
+        ],
+        "winner": "geo.gd",
+        "turnout": 0.557,
+        "note": "Second round in constituencies on 21 November 2020. The UNM ran in the Strength is in Unity coalition, recorded under the UNM. Shares computed from the proportional vote counts.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2020_Georgian_parliamentary_election", "title": "Wikipedia: 2020 Georgian parliamentary election", "accessed": "2026-10-16" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "parliament_2024",
+      "date": "2024-10-26",
+      "kind": "legislative",
+      "chamber": "parliament",
+      "historical": {
+        "party_results": [
+          { "party": "geo.gd", "share": 0.5393, "seats": 89 },
+          { "party": "geo.coalition_for_change", "share": 0.1103, "seats": 19 },
+          { "party": "geo.unm", "share": 0.1017, "seats": 16 },
+          { "party": "geo.lelo", "share": 0.0881, "seats": 14 },
+          { "party": "geo.for_georgia", "share": 0.0778, "seats": 12 }
+        ],
+        "winner": "geo.gd",
+        "turnout": 0.602,
+        "note": "Official results; the opposition parties disputed them and renounced their mandates (per the 2024 presidential election article). Unity-National Movement recorded under the UNM, Strong Georgia under Lelo, Gakharia for Georgia under For Georgia. Shares computed from the vote counts.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2024_Georgian_parliamentary_election", "title": "Wikipedia: 2024 Georgian parliamentary election", "accessed": "2026-10-16" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "president_2024",
+      "date": "2024-12-14",
+      "kind": "indirect_presidential",
+      "office": "geo.president",
+      "historical": {
+        "candidates": [
+          { "person": "geo.mikheil_kavelashvili", "party": "geo.peoples_power", "share": 1, "votes": 224, "round": 1 }
+        ],
+        "winner": "geo.mikheil_kavelashvili",
+        "note": "First election by the 300-member Electoral Assembly (200 votes needed). Kavelashvili, nominated by Georgian Dream, was the only candidate; the opposition boycotted the vote.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2024_Georgian_presidential_election", "title": "Wikipedia: 2024 Georgian presidential election", "accessed": "2026-10-16" }
+        ],
+        "confidence": "verified"
+      }
+    }
+  ],
+  "source": [
+    { "url": "https://en.wikipedia.org/wiki/Elections_in_Georgia_(country)", "title": "Wikipedia: Elections in Georgia (country)", "accessed": "2026-10-16" }
+  ],
+  "confidence": "verified"
+}

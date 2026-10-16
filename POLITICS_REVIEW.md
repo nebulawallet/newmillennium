@@ -48,11 +48,11 @@ Live sources sometimes report allegations or investigations involving real peopl
 
 <!-- AUTO-GENERATED BELOW: run `npm run review-report`; edits below this line are overwritten -->
 
-## Needs review: 532 of 6089 records
+## Needs review: 544 of 6213 records
 
-Countries with politics data: 71 / 212.
+Countries with politics data: 73 / 212.
 
-Countries with no data yet (141): KAZ, KGZ, TJK, TKM, UZB, NKR, ICH, ATG, BHS, BRB, BLZ, BOL, COL, CRI, CUB, DMA, DOM, ECU, SLV, GRD, GTM, GUY, HTI, HND, JAM, MEX, NIC, PAN, PRY, PER, KNA, LCA, VCT, SUR, TTO, URY, VEN, FAR, DZA, BHR, EGY, IRQ, JOR, KWT, LBN, LBY, MRT, MAR, OMN, QAT, SAU, SYR, TUN, ARE, YEM, ESH, KUR, AGO, BEN, BWA, BFA, BDI, CPV, CMR, CAF, TCD, COM, COD, COG, CIV, DJI, GNQ, ERI, SWZ, ETH, GAB, GMB, GHA, GIN, GNB, KEN, LSO, LBR, MDG, MWI, MLI, MUS, MOZ, NAM, NER, NGA, RWA, STP, SEN, SYC, SLE, ZAF, SDN, TZA, TGO, UGA, ZMB, ZWE, SSD, SML, UNI, RCD, MLC, AFG, AFN, BGD, BTN, MDV, NPL, LKA, TEL, BRN, KHM, IDN, LAO, MYS, MMR, PHL, SGP, THA, VNM, TLS, AUS, NZL, FJI, PNG, SLB, VUT, WSM, TON, KIR, TUV, NRU, FSM, MHL, PLW
+Countries with no data yet (139): KAZ, KGZ, TJK, TKM, UZB, ATG, BHS, BRB, BLZ, BOL, COL, CRI, CUB, DMA, DOM, ECU, SLV, GRD, GTM, GUY, HTI, HND, JAM, MEX, NIC, PAN, PRY, PER, KNA, LCA, VCT, SUR, TTO, URY, VEN, FAR, DZA, BHR, EGY, IRQ, JOR, KWT, LBN, LBY, MRT, MAR, OMN, QAT, SAU, SYR, TUN, ARE, YEM, ESH, KUR, AGO, BEN, BWA, BFA, BDI, CPV, CMR, CAF, TCD, COM, COD, COG, CIV, DJI, GNQ, ERI, SWZ, ETH, GAB, GMB, GHA, GIN, GNB, KEN, LSO, LBR, MDG, MWI, MLI, MUS, MOZ, NAM, NER, NGA, RWA, STP, SEN, SYC, SLE, ZAF, SDN, TZA, TGO, UGA, ZMB, ZWE, SSD, SML, UNI, RCD, MLC, AFG, AFN, BGD, BTN, MDV, NPL, LKA, TEL, BRN, KHM, IDN, LAO, MYS, MMR, PHL, SGP, THA, VNM, TLS, AUS, NZL, FJI, PNG, SLB, VUT, WSM, TON, KIR, TUV, NRU, FSM, MHL, PLW
 
 ### ABK — Abkhazia (6)
 
@@ -236,12 +236,13 @@ Countries with no data yet (141): KAZ, KGZ, TJK, TKM, UZB, NKR, ICH, ATG, BHS, B
 | election | `chamber_2026` legislative 2026-10-04 | Recent result (4 October 2026) taken from Wikipedia only; confirm the final seat allocation against the Superior Electoral Court. | data/countries/BRA/elections.json |
 | election | `senate_2026` legislative_upper 2026-10-04 | Recent result (4 October 2026) taken from Wikipedia only; confirm the final seat allocation against the Superior Electoral Court. | data/countries/BRA/elections.json |
 
-### CAN — Canada (2)
+### CAN — Canada (3)
 
 | kind | record | what to check | file |
 |---|---|---|---|
 | chamber | `house_of_commons` House of Commons | Floor crossings are dated only by year in the source. Confirm against the Library of Parliament party standings for 1 January 2000 (expected Lib 157, Reform 58, BQ 44, NDP 20, PC 19, independents 3). | data/countries/CAN/country.json |
 | chamber | `senate` Senate | These are 1997 Senate standings, not 1 January 2000. Check the Library of Parliament Senate party standings for 1 January 2000. | data/countries/CAN/country.json |
+| person | `can.thomas_mulcair` Tom Mulcair (b. 1954) | Confirm the date of the 2007 Outremont by-election (17 September 2007) used for available.from; it was not printed by the research tool. | data/countries/CAN/people.json |
 
 ### CHE — Switzerland (8)
 
@@ -426,6 +427,13 @@ Countries with no data yet (141): KAZ, KGZ, TJK, TKM, UZB, NKR, ICH, ATG, BHS, B
 | party | `hun.egyutt` Together (Együtt) | Leaders (including Gordon Bajnai and Péter Juhász) and dates are not recorded; check the party article. | data/countries/HUN/parties.json |
 | party | `hun.dk` Democratic Coalition (DK) | When Gyurcsány stepped down and Dobrev became leader is unknown here; Dobrev's entry is dated only to 2026, the year she resigned. Check the DK leadership history. | data/countries/HUN/parties.json |
 | party | `hun.momentum` Momentum Movement (Momentum) | Fekete-Győr's term dates and later leaders are not recorded; check the party's leadership history. | data/countries/HUN/parties.json |
+
+### ICH — Chechen Republic of Ichkeria (2)
+
+| kind | record | what to check | file |
+|---|---|---|---|
+| chamber | `parliament` Parliament | Electoral system assumed (two polling dates); 'others' are the 7 seats of Islamic Order, which has no party record. Check the chamber's status after its suspension in December 1998. | data/countries/ICH/country.json |
+| party | `ich.nip` National Independence Party (PNN) | Leaders and their dates are not given by the source (Maskhadov is named as party president without dates). | data/countries/ICH/parties.json |
 
 ### IND — India (5)
 
@@ -697,6 +705,16 @@ Countries with no data yet (141): KAZ, KGZ, TJK, TKM, UZB, NKR, ICH, ATG, BHS, B
 | party | `ncy.orp` Freedom and Reform Party (ÖRP) | Check ÖRP's ideology (recorded as liberal_conservative). | data/countries/NCY/parties.json |
 | party | `ncy.ydp` Rebirth Party (YDP) | Check YDP's ideology (recorded as right_populist). | data/countries/NCY/parties.json |
 
+### NKR — Nagorno-Karabakh (5)
+
+| kind | record | what to check | file |
+|---|---|---|---|
+| chamber | `national_assembly` National Assembly | The party composition of the Assembly elected in April 1995 was not found; all 33 seats are 'others'. | data/countries/NKR/country.json |
+| office | `nkr.president` President of the Nagorno-Karabakh Republic (Artsakh) | Decide how the game should treat the government-in-exile after 1 January 2024 (recorded as a vacancy). The infobox claim of a vacancy from 2 July 2026 is a post-June-2026 claim that the fetched article does not explain. | data/countries/NKR/country.json |
+| party | `nkr.dpa` Democratic Party of Artsakh (DPA) | The 2000 founding date (as an organisation) is year-only; check whether it predates 1 January 2000 and Ghulian's leadership dates. | data/countries/NKR/parties.json |
+| party | `nkr.arf` Armenian Revolutionary Federation (Artsakh) (ARF) | The Artsakh branch's own chairs were not found; list leaders stand in for them. | data/countries/NKR/parties.json |
+| party | `nkr.free_motherland` Free Motherland (FM) | Check that Harutyunyan led the party from its founding. | data/countries/NKR/parties.json |
+
 ### NLD — Netherlands (3)
 
 | kind | record | what to check | file |
@@ -809,7 +827,7 @@ Countries with no data yet (141): KAZ, KGZ, TJK, TKM, UZB, NKR, ICH, ATG, BHS, B
 | election | `president_2004` indirect_presidential 2004-10-10 | The source does not label the 189-79 result as the third round, although the text says he won after the second and third rounds; confirm the round number and the first- and second-round tallies. | data/countries/SOM/elections.json |
 | election | `president_2009` indirect_presidential 2009-01-30 | The article text says three rounds, but the results template shows two columns (first round and run-off). Confirm round numbering. Add Maslah Mohammed Siad Barre once his birth year is sourced. | data/countries/SOM/elections.json |
 
-### SOS — South Ossetia (8)
+### SOS — South Ossetia (12)
 
 | kind | record | what to check | file |
 |---|---|---|---|
@@ -819,8 +837,12 @@ Countries with no data yet (141): KAZ, KGZ, TJK, TKM, UZB, NKR, ICH, ATG, BHS, B
 | person | `sos.zurab_kokoyev` Zurab Kokoyev (b. 1959) | Three sources give three birth years (1959, 1960, 1961); confirm. | data/countries/SOS/people.json |
 | person | `sos.aslanbek_bulatsev` Aslanbek Bulatsev (b. 1963) | Birth year differs between the Wikipedia list (1964) and Wikidata (1963); confirm. | data/countries/SOS/people.json |
 | person | `sos.domenty_kulumbegov` Domenty Kulumbegov (b. 1956) | Birth year differs between Wikipedia (1956) and Wikidata (1955); confirm. | data/countries/SOS/people.json |
-| party | `sos.unity` Unity Party (Unity) | Check the founding date (2003 in the infobox, but Unity-labelled Prime Ministers from 2001), the leaders and their dates (Kokoity, Bulatsev, Kokoyev). | data/countries/SOS/parties.json |
-| party | `sos.peoples_party` People's Party of South Ossetia (PP) | Founding date not given by the source. | data/countries/SOS/parties.json |
+| party | `sos.unity` Unity Party (Unity) | Check the founding date (2003 in the infobox, but Unity-labelled Prime Ministers from 2001) and the leaders with dates (Kokoity, Bulatsev, Kokoyev). | data/countries/SOS/parties.json |
+| party | `sos.peoples_party` People's Party of South Ossetia (PP) | Founding year (2003 or 2004) not stated by the source; leaders lack person records. | data/countries/SOS/parties.json |
+| party | `sos.united_ossetia` United Ossetia (UO) | Bibilov is recorded as leader from the founding; check that and when Alan Tadtaev took over. | data/countries/SOS/parties.json |
+| party | `sos.nykhaz` Nykhas (Nykhas) | Leader history is taken from election infoboxes (list leaders), not from a list of party chairs. | data/countries/SOS/parties.json |
+| election | `president_2022` presidential 2022-04-10 | Aleksandr Pliyev (third, about 12%) is omitted because no biographical source was found. | data/countries/SOS/elections.json |
+| election | `president_2026` presidential 2026-09-18 | Runner-up Murat Valiyev (3.92%) is omitted because no biographical source was found. | data/countries/SOS/elections.json |
 
 ### SVK — Slovakia (6)
 

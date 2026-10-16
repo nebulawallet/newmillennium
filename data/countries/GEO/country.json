@@ -1,0 +1,134 @@
+{
+  "tag": "GEO",
+  "name": { "en": "Georgia", "native": "საქართველო", "official": { "en": "Georgia", "native": "საქართველო" } },
+  "adjective": "Georgian",
+  "culture_primary": "georgian",
+  "government": {
+    "type": "presidential",
+    "effective_executive": "geo.president",
+    "head_of_state_office": "geo.president",
+    "head_of_government_office": "geo.prime_minister",
+    "constitution": {
+      "term_limit_amendable": true,
+      "emergency_powers": true,
+      "referendum_required_for": []
+    },
+    "note": "Government type as on 1 January 2000: under the 1995 constitution the directly elected President held executive power; the office of Prime Minister had been abolished and a State Minister coordinated the government (recorded here in the Prime Minister office, as in the Wikipedia list). The February 2004 constitutional amendment re-established the office of Prime Minister, appointed by the President, who kept most executive powers under Saakashvili. Amendments passed between 2012 and 2018 transferred executive power to the Prime Minister, who is accountable to Parliament, and made the presidency largely ceremonial (per the Wikipedia article on the Prime Minister of Georgia). Since 2024 the President is elected by an Electoral Assembly. The type and power weights are kept as in 2000; from the 2012-2018 reforms the system is parliamentary."
+  },
+  "offices": [
+    {
+      "id": "geo.president",
+      "title": { "en": "President of Georgia", "native": "საქართველოს პრეზიდენტი" },
+      "role": "head_of_state",
+      "power_weight": 0.8,
+      "selection": "direct_election",
+      "term_years": 5,
+      "succession": { "type": "acting_then_election" },
+      "holders": [
+        { "person": "geo.eduard_shevardnadze", "from": "1995-11-26", "to": "2003-11-23", "note": "Resigned during the Rose Revolution." },
+        { "person": "geo.nino_burjanadze", "from": "2003-11-23", "to": "2004-01-25", "acting": true, "note": "Acting as Chairperson of Parliament." },
+        { "person": "geo.mikheil_saakashvili", "from": "2004-01-25", "to": "2007-11-25", "note": "Resigned to stand in the early January 2008 election." },
+        { "person": "geo.nino_burjanadze", "from": "2007-11-25", "to": "2008-01-20", "acting": true, "note": "Acting as Chairperson of Parliament." },
+        { "person": "geo.mikheil_saakashvili", "from": "2008-01-20", "to": "2013-11-17" },
+        { "person": "geo.giorgi_margvelashvili", "from": "2013-11-17", "to": "2018-12-16" },
+        { "person": "geo.salome_zourabichvili", "from": "2018-12-16", "to": "2024-12-29" },
+        { "person": "geo.mikheil_kavelashvili", "from": "2024-12-29", "note": "Elected by the Electoral Assembly on 14 December 2024; the opposition boycotted the vote." }
+      ],
+      "note": "Holder dates from Wikidata (President of Georgia, Q843405).",
+      "source": [
+        { "url": "https://www.wikidata.org/wiki/Q843405", "title": "Wikidata: President of Georgia (position held by)", "accessed": "2026-10-16" },
+        { "url": "https://en.wikipedia.org/wiki/President_of_Georgia", "title": "Wikipedia: President of Georgia", "accessed": "2026-10-16" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "geo.prime_minister",
+      "title": { "en": "Prime Minister of Georgia", "native": "საქართველოს პრემიერ-მინისტრი" },
+      "role": "head_of_government",
+      "power_weight": 0.2,
+      "selection": "legislature",
+      "appointed_by": "geo.president",
+      "holders": [
+        { "person": "geo.vazha_lortkipanidze", "from": "1998-07-31", "to": "2000-05-11", "note": "State Minister." },
+        { "person": "geo.giorgi_arsenishvili", "from": "2000-05-11", "to": "2001-12-21", "note": "State Minister." },
+        { "person": "geo.avtandil_jorbenadze", "from": "2001-12-21", "to": "2003-11-25", "note": "State Minister." },
+        { "person": null, "from": "2003-11-25", "to": "2003-11-27", "vacant_reason": "The Wikipedia list names no State Minister between Jorbenadze's departure on 25 November and Zhvania's appointment on 27 November 2003." },
+        { "person": "geo.zurab_zhvania", "from": "2003-11-27", "to": "2005-02-03", "note": "State Minister until 17 February 2004, then Prime Minister; died in office." },
+        { "person": "geo.mikheil_saakashvili", "from": "2005-02-03", "to": "2005-02-17", "acting": true, "note": "Acting, as President." },
+        { "person": "geo.zurab_noghaideli", "from": "2005-02-17", "to": "2007-11-16" },
+        { "person": "geo.giorgi_baramidze", "from": "2007-11-16", "to": "2007-11-22", "acting": true },
+        { "person": "geo.lado_gurgenidze", "from": "2007-11-22", "to": "2008-11-01" },
+        { "person": "geo.grigol_mgaloblishvili", "from": "2008-11-01", "to": "2009-02-06" },
+        { "person": "geo.nika_gilauri", "from": "2009-02-06", "to": "2012-07-04" },
+        { "person": "geo.vano_merabishvili", "from": "2012-07-04", "to": "2012-10-25" },
+        { "person": "geo.bidzina_ivanishvili", "from": "2012-10-25", "to": "2013-11-20" },
+        { "person": "geo.irakli_garibashvili", "from": "2013-11-20", "to": "2015-12-30" },
+        { "person": "geo.giorgi_kvirikashvili", "from": "2015-12-30", "to": "2018-06-13" },
+        { "person": null, "from": "2018-06-13", "to": "2018-06-20", "vacant_reason": "Neither Wikipedia nor Wikidata lists a holder between Kvirikashvili's resignation and Bakhtadze's appointment." },
+        { "person": "geo.mamuka_bakhtadze", "from": "2018-06-20", "to": "2019-09-02" },
+        { "person": null, "from": "2019-09-02", "to": "2019-09-08", "vacant_reason": "Neither Wikipedia nor Wikidata lists a holder between Bakhtadze's resignation and Gakharia's appointment." },
+        { "person": "geo.giorgi_gakharia", "from": "2019-09-08", "to": "2021-02-18" },
+        { "person": "geo.maya_tskitishvili", "from": "2021-02-18", "to": "2021-02-22", "acting": true },
+        { "person": "geo.irakli_garibashvili", "from": "2021-02-22", "to": "2024-01-29" },
+        { "person": null, "from": "2024-01-29", "to": "2024-02-08", "vacant_reason": "Neither Wikipedia nor Wikidata lists a holder between Garibashvili's resignation and Kobakhidze's appointment." },
+        { "person": "geo.irakli_kobakhidze", "from": "2024-02-08", "note": "Georgian Dream; government approved on 8 February 2024, re-appointed after the 2024 election." }
+      ],
+      "note": "From 1995 to February 2004 the head of the government apparatus was the State Minister; the office of Prime Minister was re-established in February 2004. Dates from the Wikipedia article on the Prime Minister of Georgia (list of heads of government); Wikidata agrees from 2004 (it splits Garibashvili's first term at 23 December 2015).",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/Prime_Minister_of_Georgia", "title": "Wikipedia: Prime Minister of Georgia (list of heads of government)", "accessed": "2026-10-16" },
+        { "url": "https://www.wikidata.org/wiki/Q1975365", "title": "Wikidata: Prime Minister of Georgia (position held by)", "accessed": "2026-10-16" }
+      ],
+      "confidence": "needs_review",
+      "review_note": "Check whether outgoing Prime Ministers stayed on as caretakers in the short gaps of November 2003, June 2018, September 2019 and January-February 2024 (recorded as vacancies because the sources list no holder)."
+    }
+  ],
+  "legislature": {
+    "name": { "en": "Parliament of Georgia", "native": "საქართველოს პარლამენტი" },
+    "chambers": [
+      {
+        "id": "parliament",
+        "name": { "en": "Parliament of Georgia", "native": "საქართველოს პარლამენტი" },
+        "seats": 235,
+        "term_years": 4,
+        "elected": "direct",
+        "system": {
+          "type": "parallel",
+          "pr_share": 0.6383,
+          "district_model": "custom",
+          "note": "In 1999: 150 seats by national party-list PR and the rest in single-member constituencies, plus 12 deputies elected in 1992 for Abkhazia, who kept their seats because no election was held there. The 2003 referendum cut Parliament to 150 seats from 2008; the 2024 election was fully proportional. The threshold was not checked. seats_2000 is the result of the October-November 1999 election."
+        },
+        "seats_2000": { "geo.cug": 131, "geo.revival": 58, "geo.industrialists": 15, "geo.labour": 2, "independents": 17, "others": 12 },
+        "confidence_chamber": true,
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/1999_Georgian_parliamentary_election", "title": "Wikipedia: 1999 Georgian parliamentary election", "accessed": "2026-10-16" }
+        ],
+        "confidence": "verified"
+      }
+    ]
+  },
+  "party_system": "multi_party",
+  "start_2000": {
+    "ruling_parties": ["geo.cug"],
+    "confidence_and_supply": [],
+    "ideology_support": {
+      "big_tent": 0.5684,
+      "regionalist": 0.2682,
+      "national_conservative": 0.0754,
+      "left_populist": 0.0702,
+      "marxist_leninist": 0.0178
+    },
+    "ideology_support_note": "Derived from the October 1999 party-list vote (shares of all valid list votes): Union of Citizens of Georgia 44.48% (big tent, as Wikipedia describes it), Revival bloc 26.82% (Adjaran regionalism), Industry Will Save Georgia 7.54% (economic nationalism, recorded as national conservative), Georgian Labour Party 7.02% (left populist), communist lists 1.78% (Unified Communists, Communists-Stalinists, Revived Communists), and all other lists 12.36% (big tent).",
+    "stability": 0.45,
+    "war_support": 0.3,
+    "at_war_with": []
+  },
+  "claims": [
+    { "tag": "ABK", "note": "Georgia regards Abkhazia as part of its territory; the 1999 Parliament kept 12 deputies elected for Abkhazia in 1992 because no election could be held there." },
+    { "tag": "SOS", "note": "Georgia regards South Ossetia as part of its territory." }
+  ],
+  "source": [
+    { "url": "https://en.wikipedia.org/wiki/Prime_Minister_of_Georgia", "title": "Wikipedia: Prime Minister of Georgia", "accessed": "2026-10-16" },
+    { "url": "https://en.wikipedia.org/wiki/1999_Georgian_parliamentary_election", "title": "Wikipedia: 1999 Georgian parliamentary election", "accessed": "2026-10-16" }
+  ],
+  "confidence": "verified"
+}

@@ -1,0 +1,107 @@
+{
+  "tag": "AZE",
+  "name": { "en": "Azerbaijan", "native": "Azərbaycan", "official": { "en": "Republic of Azerbaijan", "native": "Azərbaycan Respublikası" } },
+  "adjective": "Azerbaijani",
+  "culture_primary": "azerbaijani",
+  "government": {
+    "type": "hybrid_authoritarian",
+    "effective_executive": "aze.president",
+    "head_of_state_office": "aze.president",
+    "head_of_government_office": "aze.prime_minister",
+    "constitution": {
+      "term_limit_amendable": true,
+      "emergency_powers": true,
+      "referendum_required_for": ["constitutional amendments (referendums held in 2002, 2009 and 2016)"]
+    },
+    "note": "Presidential republic with a directly elected President who appoints the Prime Minister. The 2009 referendum removed the presidential term limit and the 2016 referendum extended the term from five to seven years and created the office of Vice President (per the Wikipedia articles on the referendums and the President of Azerbaijan). The New Azerbaijan Party has been the ruling party since 1995. The government type is a gameplay classification (competitive authoritarian), as used for comparable states."
+  },
+  "offices": [
+    {
+      "id": "aze.president",
+      "title": { "en": "President of Azerbaijan", "native": "Azərbaycan Respublikasının Prezidenti" },
+      "role": "head_of_state",
+      "power_weight": 0.9,
+      "selection": "direct_election",
+      "term_years": 5,
+      "succession": { "type": "acting_then_election" },
+      "holders": [
+        { "person": "aze.heydar_aliyev", "from": "1993-10-10", "to": "2003-10-31", "note": "Acting head of state from 24 June 1993; elected in October 1993, re-elected 1998." },
+        { "person": "aze.ilham_aliyev", "from": "2003-10-31" }
+      ],
+      "note": "Dates from the list in the Wikipedia article on the President of Azerbaijan. Term five years until the 2016 referendum, seven years since.",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/President_of_Azerbaijan", "title": "Wikipedia: President of Azerbaijan (list of presidents)", "accessed": "2026-10-16" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "aze.prime_minister",
+      "title": { "en": "Prime Minister of Azerbaijan", "native": "Azərbaycan Respublikasının Baş naziri" },
+      "role": "head_of_government",
+      "power_weight": 0.1,
+      "selection": "appointed",
+      "appointed_by": "aze.president",
+      "holders": [
+        { "person": "aze.artur_rasizade", "from": "1996-07-20", "to": "2003-08-04", "note": "Acting as First Deputy Prime Minister until 26 November 1996." },
+        { "person": "aze.ilham_aliyev", "from": "2003-08-04", "to": "2003-10-31", "note": "Rasizade acted for him from 6 August 2003 until he became President." },
+        { "person": "aze.artur_rasizade", "from": "2003-10-31", "to": "2018-04-21", "note": "Acting as First Deputy Prime Minister until named Prime Minister on 4 November 2003." },
+        { "person": "aze.novruz_mammadov", "from": "2018-04-21", "to": "2019-10-08" },
+        { "person": "aze.ali_asadov", "from": "2019-10-08" }
+      ],
+      "note": "Dates from the list in the Wikipedia article on the Prime Minister of Azerbaijan.",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/Prime_Minister_of_Azerbaijan", "title": "Wikipedia: Prime Minister of Azerbaijan (list of prime ministers)", "accessed": "2026-10-16" }
+      ],
+      "confidence": "verified"
+    }
+  ],
+  "legislature": {
+    "name": { "en": "National Assembly", "native": "Milli Məclis" },
+    "chambers": [
+      {
+        "id": "national_assembly",
+        "name": { "en": "National Assembly", "native": "Milli Məclis" },
+        "seats": 125,
+        "term_years": 5,
+        "elected": "direct",
+        "system": {
+          "type": "parallel",
+          "pr_share": 0.2,
+          "district_model": "custom",
+          "note": "In 1995: 25 seats by party-list PR and 100 in single-member constituencies (per the 1995 results table); only constituency results are reported from 2005. seats_2000 is the result of the November 1995 election (one seat vacant); 'others' are the Democratic Entrepreneurs (2), Democratic Independence (2) and Democratic Enlightenment (1) parties."
+        },
+        "seats_2000": { "aze.yap": 53, "aze.apfp": 4, "aze.anip": 4, "aze.motherland": 1, "aze.musavat": 1, "aze.csp": 1, "others": 5, "independents": 55, "vacant": 1 },
+        "confidence_chamber": false,
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/1995%E2%80%931996_Azerbaijani_parliamentary_election", "title": "Wikipedia: 1995–1996 Azerbaijani parliamentary election", "accessed": "2026-10-16" },
+          { "url": "https://en.wikipedia.org/wiki/National_Assembly_(Azerbaijan)", "title": "Wikipedia: National Assembly (Azerbaijan)", "accessed": "2026-10-16" }
+        ],
+        "confidence": "needs_review",
+        "review_note": "The 1995 result is used for 1 January 2000; by-elections and seat changes between 1996 and 1999 were not checked."
+      }
+    ]
+  },
+  "party_system": "multi_party",
+  "start_2000": {
+    "ruling_parties": ["aze.yap"],
+    "confidence_and_supply": [],
+    "ideology_support": {
+      "dominant_party_developmental": 0.627,
+      "national_conservative": 0.137,
+      "liberal_conservative": 0.093,
+      "big_tent": 0.143
+    },
+    "ideology_support_note": "Estimate based on the November 1995 party-list vote (the last national list vote before 2000): New Azerbaijan Party 62.7% (dominant party), Popular Front Party 9.7% and Motherland Party 4.0% (national conservative), National Independence Party 9.3% (liberal conservative), other lists and unattributed votes 14.3% (big tent).",
+    "stability": 0.55,
+    "war_support": 0.5,
+    "at_war_with": []
+  },
+  "claims": [
+    { "tag": "NKR", "note": "Azerbaijan regards Nagorno-Karabakh, held by the unrecognised Nagorno-Karabakh Republic (Artsakh) in 2000, as part of its territory. The republic dissolved on 1 January 2024." }
+  ],
+  "source": [
+    { "url": "https://en.wikipedia.org/wiki/President_of_Azerbaijan", "title": "Wikipedia: President of Azerbaijan", "accessed": "2026-10-16" },
+    { "url": "https://en.wikipedia.org/wiki/1995%E2%80%931996_Azerbaijani_parliamentary_election", "title": "Wikipedia: 1995–1996 Azerbaijani parliamentary election", "accessed": "2026-10-16" }
+  ],
+  "confidence": "verified"
+}
