@@ -152,6 +152,7 @@ export function applyCommand(ctx: SimContext, cmd: Command): CommandResult {
     case "clear_plan":
     case "execute_plan":
     case "return_to_plan":
+    case "undo_plan":
       return applyPlanCommand(ctx, cmd);
     case "declare_war":
       return declareWar(ctx, cmd.tag, cmd.target, cmd.goal);

@@ -229,7 +229,8 @@ export type PlanCommand =
   | { type: "add_spearhead"; tag: string; army: number; path: number[] }
   | { type: "clear_plan"; tag: string; army: number }
   | { type: "execute_plan"; tag: string; army: number; on: boolean }
-  | { type: "return_to_plan"; tag: string; army: number };
+  | { type: "return_to_plan"; tag: string; army: number }
+  | { type: "undo_plan"; tag: string; army: number };
 
 export function applyPlanCommand(ctx: SimContext, c: PlanCommand): { ok: boolean; text: string } {
   const { state } = ctx;
@@ -283,7 +284,17 @@ export function applyPlanCommand(ctx: SimContext, c: PlanCommand): { ok: boolean
       army.spearheads = [];
       army.executing = false;
       return { ok: true, text: "Battle plan cleared." };
+    case "undo_plan":
+      if (army.spearheads.length) { army.spearheads.pop(); return { ok: true, text: "Last spearhead removed." }; }
+      if (army.offensive.length) { army.offensive = []; army.executing = false; return { ok: true, text: "Offensive line removed." }; }
+      return { ok: false, text: "Nothing to undo." };
     case "execute_plan":
+      if (c.on) {
+        const enemy = army.front?.enemy;
+        const atWar = enemy ? hostile(state, c.tag, enemy) : state.wars.some((w) => w.attackers.includes(c.tag) || w.defenders.includes(c.tag));
+        if (!atWar) return { ok: false, text: enemy ? `Not at war with ${state.dynamicCountries[enemy]?.name ?? ctx.db.countryList.find((x) => x.tag === enemy)?.name ?? enemy}: the plan can execute once war is declared.` : "Not at war: the plan can execute once war is declared." };
+        if (!army.offensive.length && !army.spearheads.length) return { ok: false, text: "Draw an offensive line or a spearhead first." };
+      }
       army.executing = c.on;
       if (!c.on) for (const d of state.divisions) if (army.divisions.includes(d.id) && d.attacking === undefined) d.path = d.path.slice(0, 1);
       return { ok: true, text: c.on ? `${army.name} executes its plan.` : `${army.name} stops and holds.` };

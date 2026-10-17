@@ -701,3 +701,5 @@ details[open] > .ol-h::before { transform: rotate(90deg) translateX(2px); }
 .toast { position: absolute; left: 0; right: 0; bottom: 110px; margin: 0 auto; width: fit-content; max-width: 60vw; padding: 7px 14px; zoom: var(--ui-zoom); font-weight: 600; color: var(--ink); pointer-events: none !important; animation: rise 160ms ease-out; }
 .toast.bad { color: #f0a090; border-color: var(--bad); }
 .side ~ .div-panel { left: 516px; }
+.at-mode { margin: 0; }
+.at-mode button { padding: 4px 9px; font-size: 11px; }

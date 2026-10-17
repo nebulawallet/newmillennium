@@ -34,6 +34,7 @@ import { slotsView } from "./render/mapModes.ts";
 import { UnitCounters } from "./ui/units/UnitCounters.ts";
 import { FrontOverlay } from "./ui/units/FrontOverlay.ts";
 import { ArmyBar } from "./ui/units/ArmyBar.tsx";
+import { createPlanDrawer } from "./ui/units/planDrawing.ts";
 import { DivisionPanel, Toast } from "./ui/units/DivisionPanel.tsx";
 import { version } from "./ui/session.ts";
 import { buildMsg } from "./ui/store.ts";
@@ -160,19 +161,8 @@ async function boot(): Promise<void> {
   selectedDivisions.subscribe(() => fronts.refresh(true));
   screen.subscribe((s) => { if (s !== "game") { counters.clear(); selectedDivisions.value = []; selectedArmy.value = 0; planTool.value = null; buildMode.value = null; } fronts.refresh(true); });
   // drawing an offensive line or a spearhead: a left drag collects the provinces it crosses
-  let last: [number, number] | null = null;
-  const crossed = (x: number, y: number) => {
-    // sample the stroke between pointer events so no province along it is skipped
-    const [x0, y0] = last ?? [x, y];
-    const steps = Math.max(1, Math.ceil(Math.hypot(x - x0, y - y0) / 0.15));
-    let draft = planDraft.value;
-    for (let i = 1; i <= steps; i++) {
-      const id = world.pickAt(x0 + ((x - x0) * i) / steps, y0 + ((y - y0) * i) / steps);
-      if (id && draft.at(-1) !== id) draft = [...draft.filter((p) => p !== id), id];
-    }
-    planDraft.value = draft;
-    last = [x, y];
-  };
+  // battle-plan drawing (front, offensive line, spearhead): src/ui/units/planDrawing.ts
+  const drawer = createPlanDrawer(view, world, session, () => fronts.refresh(true));
   // in game a left drag draws a selection box over your divisions (shift adds); right or middle drag pans,
   // a left click without dragging still selects the province
   const box = document.createElement("div");
@@ -218,45 +208,13 @@ async function boot(): Promise<void> {
   };
   const setCapture = () => {
     const tool = planTool.value;
-    view.capture = tool ? drawPlan : screen.value === "game" ? boxSelect : null;
-  };
-  const drawPlan = (phase: "down" | "move" | "up", x: number, y: number) => {
-    const tool = planTool.value;
-    if (!tool) return;
-    {
-      if (tool.kind === "front") {
-        // a click on the country whose border the army holds
-        if (phase !== "up") return;
-        const st = session.state, id = world.pickAt(x, y);
-        const owner = id ? st?.provinceController[id - 1] : undefined;
-        if (st?.player && owner && owner !== st.player) session.dispatch({ type: "set_front", tag: st.player, army: tool.army, enemy: owner });
-        planTool.value = null;
-        fronts.refresh(true);
-        return;
-      }
-      if (phase === "down") { last = null; planDraft.value = []; crossed(x, y); }
-      else if (phase === "move") crossed(x, y);
-      else {
-        crossed(x, y);
-        const st = session.state;
-        const drawn = planDraft.value;
-        if (st?.player && drawn.length) {
-          if (tool.kind === "offensive") {
-            const enemy = drawn.filter((p) => { const c = st.provinceController[p - 1]; return c && c !== st.player; });
-            session.dispatch({ type: "set_offensive", tag: st.player, army: tool.army, provinces: enemy.length ? enemy : drawn });
-          } else session.dispatch({ type: "add_spearhead", tag: st.player, army: tool.army, path: drawn });
-        }
-        planDraft.value = [];
-        planTool.value = null;
-        fronts.refresh(true);
-      }
-    }
+    view.capture = tool ? drawer.capture : screen.value === "game" ? boxSelect : null;
   };
   planTool.subscribe(setCapture);
   screen.subscribe(setCapture);
   // right-click: cancels a drawing tool; otherwise moves or attacks with the selected divisions
   world.onOrder = (id) => {
-    if (planTool.value) { planTool.value = null; planDraft.value = []; return; }
+    if (planTool.value) { drawer.cancel(); return; }
     const st = session.state;
     if (!st?.player || !selectedDivisions.value.length) return;
     if (!id) { toast.value = { text: "That is sea: divisions move over land only.", bad: true, at: Date.now() }; return; }
@@ -268,7 +226,7 @@ async function boot(): Promise<void> {
     fronts.refresh(true);
   };
   (window as unknown as { nm: unknown }).nm = { db, map, view, world, session, THREE };
-  bindKeys(session);
+  bindKeys(session, drawer.key);
 
   render(<Root db={db} map={map} world={world} session={session} issues={bundle.issues} />, ui);
 }
@@ -318,16 +276,16 @@ function Root({ db, map, world, session, issues }: { db: ContentDB; map: MapData
 }
 
 /** HOI4 keys: Q-P open the tab row, Space pauses, +/- or 1-5 set speed, Esc closes or opens the menu. */
-function bindKeys(session: Session): void {
+function bindKeys(session: Session, planKey: (e: KeyboardEvent) => boolean): void {
   window.addEventListener("keydown", (e) => {
     if (screen.value !== "game" || e.ctrlKey || e.metaKey || e.altKey || (e.target as HTMLElement | null)?.closest?.("input, select, textarea")) return;
+    if (planKey(e)) { e.preventDefault(); return; }
     const tab = TABS.find((t) => t.key === e.key.toUpperCase());
     if (e.code === "Space") { e.preventDefault(); session.setPaused(!paused.value); }
     else if (/^Digit[1-5]$/.test(e.code)) session.setSpeed(Number(e.code.slice(5)));
     else if (e.key === "+" || e.key === "=") session.setSpeed(speed.value + 1);
     else if (e.key === "-") session.setSpeed(speed.value - 1);
     else if (tab) { panel.value = panel.value === tab.id ? null : tab.id; activeTip.value = null; }
-    else if (e.key === "Escape" && planTool.value) { planTool.value = null; planDraft.value = []; }
     else if (e.key === "Escape" && buildMode.value) buildMode.value = null;
     else if (e.key === "Escape" && researchPick.value !== null) researchPick.value = null;
     else if (e.key === "Escape") panel.value = panel.value ? null : selectedProvince.value ? ((selectedProvince.value = 0), null) : "menu";

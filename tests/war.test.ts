@@ -132,14 +132,20 @@ describe("war", () => {
     for (let i = 0; i < 40; i++) sim.step();
     expect(army.stretch?.sort((a, b) => a - b)).toEqual([4, 10, 16, 22]);
     expect(army.status).toBe("holding");
-    // an offensive line and execution do nothing in peace
-    sim.dispatch({ type: "set_offensive", tag: "DEU", army: army.id, provinces: [6, 12, 18, 24] });
-    sim.dispatch({ type: "execute_plan", tag: "DEU", army: army.id, on: true });
+    // an offensive line can be drawn in peace, but the plan cannot execute
+    expect(sim.dispatch({ type: "set_offensive", tag: "DEU", army: army.id, provinces: [6, 12, 18, 24] }).ok).toBe(true);
+    const r = sim.dispatch({ type: "execute_plan", tag: "DEU", army: army.id, on: true });
+    expect(r.ok).toBe(false);
+    expect(r.text).toMatch(/not at war/i);
     for (let i = 0; i < 20; i++) sim.step();
     expect(s.provinceController.some((c, k) => c === "DEU" && s.provinceOwner[k] === "POL")).toBe(false);
     s.countries.DEU!.warSupport = 1;
     s.countries.POL!.warSupport = 1;
     sim.dispatch({ type: "declare_war", tag: "DEU", target: "POL" });
+    expect(sim.dispatch({ type: "execute_plan", tag: "DEU", army: army.id, on: true }).ok).toBe(true);
+    // undo removes the line; the plan stops
+    sim.dispatch({ type: "add_spearhead", tag: "DEU", army: army.id, path: [5] });
+    expect(sim.dispatch({ type: "undo_plan", tag: "DEU", army: army.id }).text).toMatch(/spearhead/);
     for (let i = 0; i < 200 && !s.pendingPeace && s.wars.length; i++) sim.step();
     expect(s.provinceController.some((c, k) => c === "DEU" && s.provinceOwner[k] === "POL")).toBe(true);
   }, 120_000);

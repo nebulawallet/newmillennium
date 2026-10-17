@@ -13,15 +13,15 @@ import { countryName } from "../../sim/politics/unrest.ts";
 import { millerY } from "../../render/MapView.ts";
 import { Icon } from "../icons.tsx";
 import { version, type Session } from "../session.ts";
-import { planDraft, planTool, selectedArmy, selectedDivisions } from "../store.ts";
+import { planDraft, planTool, selectedArmy, selectedDivisions, toast } from "../store.ts";
 import { tip } from "../tooltip.tsx";
 import { SYMBOL_NAME, symbolSvg } from "./symbols.ts";
 
 const pct = (x: number) => `${Math.round(x * 100)}%`;
 const HINT = {
   front: "Click the country whose border this army should hold.",
-  offensive: "Drag across enemy provinces to draw the offensive line.",
-  spearhead: "Drag from the front into enemy land to draw the arrow.",
+  offensive: "Drag across the provinces to take, or click them one by one (double-click or Enter to finish). Backspace undoes a point; Esc or right-click cancels.",
+  spearhead: "Drag from the front into enemy land, or click province by province (double-click or Enter to finish). Esc or right-click cancels.",
 } as const;
 
 function ArmyCard({ db, session, army }: { db: ContentDB; session: Session; army: Army }) {
@@ -81,7 +81,7 @@ function ArmyCard({ db, session, army }: { db: ContentDB; session: Session; army
         </div>
         <button class={`tile mini ac-exec ${army.executing ? "on" : ""}`} disabled={!canExecute && !army.executing}
           aria-label={army.executing ? "Stop" : "Execute"}
-          onClick={(e) => { e.stopPropagation(); session.dispatch({ type: "execute_plan", tag: army.owner, army: army.id, on: !army.executing }); }}
+          onClick={(e) => { e.stopPropagation(); const r = session.dispatch({ type: "execute_plan", tag: army.owner, army: army.id, on: !army.executing }); toast.value = { text: r.text, bad: !r.ok, at: Date.now() }; }}
           {...tip(() => ({ title: army.executing ? "Stop" : "Execute battle plan", note: canExecute || army.executing ? (army.executing ? "Divisions stop attacking and hold the front." : "Divisions attack toward the offensive line and along the spearheads.") : "Give the army a front and an offensive line or a spearhead first." }))}>
           {army.executing ? <span class="stop-sq" /> : Icon.play({ size: 12 })}
         </button>
@@ -106,7 +106,7 @@ export function ArmyBar({ db, session }: { db: ContentDB; session: Session }) {
   const unassigned = state.divisions.filter((d) => d.owner === me && !inArmy.has(d.id));
   const sel = armies.find((a) => a.id === selectedArmy.value);
   const enemies = [...new Set(state.wars.flatMap((w) => [...w.attackers, ...w.defenders]).filter((t) => hostile(state, me, t)))];
-  const run = (c: Parameters<Session["dispatch"]>[0]) => setMsg(session.dispatch(c).text);
+  const run = (c: Parameters<Session["dispatch"]>[0]) => { const r = session.dispatch(c); setMsg(r.text); toast.value = { text: r.text, bad: !r.ok, at: Date.now() }; };
   const tool = planTool.value;
   const draw = (kind: "front" | "offensive" | "spearhead") => {
     if (!sel) return;
@@ -144,6 +144,11 @@ export function ArmyBar({ db, session }: { db: ContentDB; session: Session }) {
           <button class={`btn ${tool?.kind === "offensive" ? "primary" : ""}`} onClick={() => draw("offensive")} {...tip(() => ({ title: "Offensive line", note: "Drag across the enemy provinces to push to. When executed, the army attacks the provinces between its front and the line." }))}>Offensive line</button>
           <button class={`btn ${tool?.kind === "spearhead" ? "primary" : ""}`} onClick={() => draw("spearhead")} {...tip(() => ({ title: "Spearhead", note: `Drag a path into enemy land. Its fastest divisions (about a third of the army) push along it province by province.` }))}>Spearhead</button>
           {(sel.manual ?? 0) > 0 && <button class="btn primary" onClick={() => run({ type: "return_to_plan", tag: me, army: sel.id })} {...tip(() => ({ title: "Return to plan", note: `${sel.manual} division${sel.manual! > 1 ? "s are" : " is"} under manual orders. They rejoin the battle plan.` }))}>Return {sel.manual} to plan</button>}
+          <span class="seg at-mode" role="radiogroup" aria-label="Plan">
+            <button role="radio" aria-checked={!sel.executing} class={!sel.executing ? "on" : ""} onClick={() => run({ type: "execute_plan", tag: me, army: sel.id, on: false })} {...tip(() => ({ title: "Hold", note: "Defend only: the army holds its front and does not attack." }))}>Hold</button>
+            <button role="radio" aria-checked={sel.executing} class={sel.executing ? "on" : ""} onClick={() => run({ type: "execute_plan", tag: me, army: sel.id, on: true })} {...tip(() => ({ title: "Execute", note: "Attack toward the offensive line and along the spearheads. Only at war." }))}>Execute</button>
+          </span>
+          <button class="btn" disabled={!sel.offensive.length && !sel.spearheads.length} onClick={() => run({ type: "undo_plan", tag: me, army: sel.id })} {...tip(() => ({ title: "Undo", note: "Removes the last spearhead, then the offensive line." }))}>Undo</button>
           <button class="btn" onClick={() => run({ type: "clear_plan", tag: me, army: sel.id })} {...tip(() => ({ title: "Clear plan", note: "Removes the offensive line and spearheads; the army keeps holding its front." }))}>Clear</button>
           <button class="btn" disabled={!selectedDivisions.value.some((id) => !sel.divisions.includes(id))} onClick={() => run({ type: "assign_divisions", tag: me, army: sel.id, divisions: selectedDivisions.value })} {...tip(() => ({ title: "Add selected divisions", note: "Moves the selected divisions into this army." }))}>Add selected</button>
           <button class="btn danger" onClick={() => { run({ type: "disband_army", tag: me, army: sel.id }); selectedArmy.value = 0; }} {...tip(() => ({ title: "Disband", note: "The divisions stay where they are, without orders." }))}>Disband</button>
