@@ -79,7 +79,8 @@
       "hp": 0.6,
       "width": 3,
       "speed": 4,
-      "training_days": 90
+      "training_days": 90,
+      "follows_line": true
     },
     {
       "id": "air_defence",
@@ -95,7 +96,8 @@
       "hp": 0.6,
       "width": 1,
       "speed": 4,
-      "training_days": 90
+      "training_days": 90,
+      "follows_line": true
     },
     {
       "id": "anti_tank",
@@ -111,7 +113,8 @@
       "hp": 1,
       "width": 1,
       "speed": 4,
-      "training_days": 90
+      "training_days": 90,
+      "follows_line": true
     },
     {
       "id": "reconnaissance",
@@ -127,7 +130,8 @@
       "hp": 0.5,
       "width": 0,
       "speed": 12,
-      "training_days": 60
+      "training_days": 60,
+      "follows_line": true
     },
     {
       "id": "engineers",
@@ -143,7 +147,8 @@
       "hp": 0.5,
       "width": 0,
       "speed": 4,
-      "training_days": 60
+      "training_days": 60,
+      "follows_line": true
     }
   ]
 }

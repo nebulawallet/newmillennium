@@ -298,7 +298,11 @@ One file per tree: `{ id, name, countries, focuses: [ { id, name, description, x
   - `end_armed_group` = `{ group, into?, disband_army_of? }`: without `into`, its land goes back and its divisions disband; with `into`, land and divisions pass to that country (a takeover, or an annexation). `disband_army_of` first removes a country's army (it collapsed in the takeover).
 - Wars with a group call in no allies and never end by exhaustion; they end by a script (`white_peace`, `end_armed_group`) or when the group holds nothing. While a group is at war, land changes hands with control.
 - Every date that spawns, shrinks or ends a group is a fact: give the event a `historical` date with a source.
-- Historical mode: the AI does not attack across a front with an armed group, so group land changes only by script; wars started by historical events do not end by exhaustion. Dynamic mode fights both freely.
-- Related effects: `deploy_divisions` = `{ count, in }` sends the country's strongest divisions abroad (an expeditionary force, e.g. into Kuwait in 2003); `add_divisions` takes an optional `in` too; `dissolve_country` = `{ into }` merges the scoped country into another (the United Front into Afghanistan, December 2001).
+- Historical mode: AI countries do not attack or enter armed-group land, so group land changes only by script (the player still can); wars started by historical events do not end by exhaustion. Dynamic mode fights both freely.
+- Related effects:
+  - `deploy_divisions` = `{ count, in }` sends the country's hardest-hitting divisions abroad and gets military access from the host (Kuwait 2003, Iraq 2003–2011); `recall_divisions` = `{ from }` brings them home; `add_divisions` takes an optional `in` too.
+  - `occupy_provinces` = `{ regions }`: the scoped country takes control of provinces on a real date and the owner's divisions there disband (the fall of Baghdad, 9 April 2003).
+  - `declare_war` takes an optional `zone` (regions of the target) for a limited war: the attacker aims for and may enter only those provinces (Russia 2022: Kherson, Zaporizhzhia, Mariupol).
+  - `dissolve_country` = `{ into }` merges the scoped country into another (the United Front into Afghanistan, December 2001).
 - The conflict timeline lives in `data/events/conflicts.json`. Check it with `npx tsx scripts/dev/conflict-trace.ts [YYYY-MM-DD] [--dynamic]`, which prints every war and group change from 2000.
 

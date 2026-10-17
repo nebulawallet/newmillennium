@@ -14,6 +14,7 @@ import type { CountryState, GameState } from "../state.ts";
 import { clamp, countryModifiers, effectiveLeader, hashNormal, isAvailable, personParty } from "./common.ts";
 import { igActions } from "./interestGroups.ts";
 import { countryProvinces, type SimProvince } from "./voteModel.ts";
+import { capitalProvince } from "../military/military.ts";
 
 export const REBEL_SUFFIX = "-REB";
 const ARMED = new Set(["military", "security_services"]);
@@ -233,8 +234,8 @@ export function endCivilWar(ctx: SimContext, cs: CountryState, governmentWins: b
     for (const d of state.divisions) {
       if (d.owner !== cs.tag && d.owner !== cw.rebel) continue;
       if (state.provinceOwner[d.province - 1] === d.owner) continue;
-      const home = state.provinceOwner.findIndex((o) => o === d.owner);
-      if (home >= 0) d.province = home + 1;
+      const home = capitalProvince(state, ctx.map, d.owner);
+      if (home >= 1) d.province = home;
       d.path = [];
       d.attacking = undefined;
     }

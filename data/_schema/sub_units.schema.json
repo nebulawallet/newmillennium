@@ -57,6 +57,10 @@
             "default": 4,
             "type": "number"
           },
+          "follows_line": {
+            "default": false,
+            "type": "boolean"
+          },
           "training_days": {
             "default": 90,
             "type": "number"

@@ -14,6 +14,7 @@ import type { SimContext, SimMap, System } from "../simulation.ts";
 import type { CountryState, GameState } from "../state.ts";
 import { clamp, countryModifiers } from "../politics/common.ts";
 import { factories, incomeTier } from "../economy/economy.ts";
+import { divisionStats } from "./war.ts";
 
 export interface ProductionLine {
   id: number;
@@ -96,17 +97,19 @@ export function templateNeeds(db: ContentDB, units: Record<string, number>): Rec
 }
 
 export function templateStats(db: ContentDB, units: Record<string, number>): { manpower: number; width: number; speed: number; training: number; organisation: number } {
-  let manpower = 0, width = 0, speed = Infinity, training = 0, org = 0, count = 0;
+  let manpower = 0, width = 0, speed = Infinity, lineSpeed = Infinity, training = 0, org = 0, count = 0;
   for (const [u, n] of Object.entries(units)) {
     const s = db.subUnits.get(u);
     if (!s) continue;
     manpower += s.manpower * n;
     width += s.width * n;
     speed = Math.min(speed, s.speed);
+    if (!s.follows_line) lineSpeed = Math.min(lineSpeed, s.speed);
     training = Math.max(training, s.training_days);
     org += s.organisation * n;
     count += n;
   }
+  if (lineSpeed !== Infinity) speed = lineSpeed;
   return { manpower, width, speed: speed === Infinity ? 4 : speed, training, organisation: count ? org / count : 0 };
 }
 
@@ -196,6 +199,12 @@ export function initialMilitary(db: ContentDB, cs: CountryState, provinces: { id
     const best = vs[vs.length - 1] ?? db.equipment.get(family)?.variants[0];
     if (best) military.stockpile[best.id] = Math.ceil(need * (1 + rules.reserve_stockpile));
   }
+  // starting air force, scaled from military spending (no data: none)
+  const wb = db.worldBank.countries[cs.tag];
+  const spend = typeof wb?.military_spending_pct_gdp === "number" && typeof wb.gdp_usd === "number" ? (wb.military_spending_pct_gdp / 100) * wb.gdp_usd : 0;
+  const fighters = Math.floor(spend / rules.usd_per_starting_fighter);
+  const fighter = availableVariants(db, cs, "fighter").at(-1) ?? db.equipment.get("fighter")?.variants[0];
+  if (fighters > 0 && fighter) military.stockpile[fighter.id] = fighters;
   const names = new Map<string, number>();
   plan.forEach((tid, i) => {
     const t = templates.find((x) => x.id === tid) ?? templates[0]!;
@@ -259,7 +268,28 @@ export function canEnter(state: GameState, owner: string, province: number): boo
   if (!o) return false;
   if (o === owner || c === owner) return true;
   if (hasAccess(state, owner, o) && !hostileTo(state, owner, c ?? o)) return true;
-  return hostileTo(state, owner, o) || (!!c && hostileTo(state, owner, c));
+  return (hostileTo(state, owner, o) || (!!c && hostileTo(state, owner, c))) && !outsideLimitedZone(state, owner, province);
+}
+
+/**
+ * True when every war with this province's holder keeps `owner` out of it:
+ *  - a limited war (not one against an armed group) restricts its attacker to the war's zone;
+ *  - historical mode: AI countries do not enter armed-group land (those fronts move only by script).
+ */
+export function outsideLimitedZone(state: GameState, owner: string, province: number): boolean {
+  const holder = state.provinceController[province - 1] ?? state.provinceOwner[province - 1];
+  const frozenGroups = state.rules.electionMode === "historical" && state.player !== owner;
+  let limited = false;
+  for (const w of state.wars) {
+    const att = w.attackers.includes(owner);
+    if (!att && !w.defenders.includes(owner)) continue;
+    if (!(att ? w.defenders : w.attackers).includes(holder!)) continue;
+    if (w.armedGroup && frozenGroups) { limited = true; continue; }
+    if (w.goal !== "limited" || !att || w.armedGroup) return false;
+    if (w.zone?.includes(province)) return false;
+    limited = true;
+  }
+  return limited;
 }
 
 /** Shortest land path (A*) from one province to another through provinces the owner may enter. */
@@ -366,14 +396,28 @@ export function deployDivisions(ctx: SimContext, tag: string, count: number, inT
   const { db, state, map } = ctx;
   const dest = (map?.provinces ?? []).filter((p) => state.provinceController[p.id - 1] === inTag).sort((a, b) => b.population - a.population).map((p) => p.id);
   if (!dest.length) return;
-  const score = (d: Division) => d.strength * d.organisation * (templateStats(db, d.units).width || 1);
+  const score = (d: Division) => {
+    const s = divisionStats(db, d);
+    return d.strength * d.organisation * (s.soft + s.hard + s.breakthrough);
+  };
   const best = state.divisions.filter((d) => d.owner === tag && state.provinceOwner[d.province - 1] === tag).sort((a, b) => score(b) - score(a)).slice(0, count);
+  // the host lets the force through its territory
+  if (state.diplomacy && !hasAccess(state, tag, inTag)) state.diplomacy.access.push([tag, inTag]);
   best.forEach((d, i) => {
     d.province = dest[i % dest.length]!;
     d.path = [];
     d.attacking = undefined;
     d.progress = 0;
   });
+}
+
+/** A country's divisions standing in another country's territory come home. */
+export function recallDivisions(ctx: SimContext, tag: string, from: string): void {
+  const { state, map } = ctx;
+  const home = capitalProvince(state, map, tag);
+  if (home < 1) return;
+  for (const d of state.divisions)
+    if (d.owner === tag && state.provinceOwner[d.province - 1] === from) { d.province = home; d.path = []; d.attacking = undefined; d.progress = 0; }
 }
 
 export function addLine(ctx: SimContext, tag: string, family: string, factoryCount: number): { ok: boolean; text: string } {
@@ -416,7 +460,7 @@ export function setTemplate(ctx: SimContext, tag: string, t: Template): { ok: bo
 
 // ------------------------------------------------------------------ system
 
-function capitalProvince(state: GameState, map: SimMap | undefined, tag: string): number {
+export function capitalProvince(state: GameState, map: SimMap | undefined, tag: string): number {
   let best = -1, pop = -1;
   for (const p of map?.provinces ?? []) if (state.provinceOwner[p.id - 1] === tag && p.population > pop) { pop = p.population; best = p.id; }
   return best;

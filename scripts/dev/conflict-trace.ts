@@ -42,7 +42,12 @@ while (state.day < end) {
   const y = ymdOf(state.day).year;
   if (y !== year) {
     year = y;
-    const owners = WATCH.map((t) => `${t} ${state.provinceOwner.filter((o) => o === t).length}`).join(", ");
+    const owners = WATCH.map((t) => {
+      const own = state.provinceOwner.flatMap((o, i) => (o === t ? [i] : []));
+      const lost = own.filter((i) => state.provinceController[i] !== t).length;
+      const foreign = [...new Set(state.divisions.filter((d) => state.provinceOwner[d.province - 1] === t && d.owner !== t).map((d) => d.owner))];
+      return `${t} ${own.length}${lost ? ` (${lost} occupied)` : ""}${foreign.length ? ` [troops: ${foreign.join("/")}]` : ""}`;
+    }).join(", ");
     console.log(`-- ${y}: ${holdings()} | provinces ${owners} | wars: ${state.wars.map((w) => w.name).join(", ") || "none"}`);
   }
 }

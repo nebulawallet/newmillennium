@@ -7,7 +7,7 @@ const n = (v: number) => z.number().default(v);
 export const WarRulesFile = z.strictObject({
   note: z.string().optional(),
   /** Combat width of a province battle. */
-  combat_width: n(30),
+  combat_width: n(80),
   /** Organisation and strength lost per point of effective attack (per day). */
   org_damage: n(0.02),
   strength_damage: n(0.0025),

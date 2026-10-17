@@ -276,7 +276,7 @@ export function planMilitary(ctx: SimContext, tag: string, maxOrders = 12): Comm
   for (const w of state.wars) {
     if (!w.attackers.includes(tag) && !w.defenders.includes(tag)) continue;
     const enemies = w.attackers.includes(tag) ? w.defenders : w.attackers;
-    if (w.goal === "limited" && w.attackers.includes(tag)) { for (const e of enemies) limitedEnemies.add(e); for (const p of w.zone ?? []) zone.add(p); }
+    if (w.goal === "limited" && w.attackers.includes(tag) && !w.armedGroup) { for (const e of enemies) limitedEnemies.add(e); for (const p of w.zone ?? []) zone.add(p); }
     else for (const e of enemies) openEnemies.add(e);
   }
   for (const p of [...targets.keys()]) {
@@ -294,9 +294,10 @@ export function planMilitary(ctx: SimContext, tag: string, maxOrders = 12): Comm
   const covered = new Set<number>();
   for (const d of mine) covered.add(d.path.length ? d.path[d.path.length - 1]! : d.province);
   const offensive = ourPower >= enemyPower * 0.9;
+  // attack in strength: about twice the defenders' power, at least two divisions where we have them
   const canBeat = (def: number) => {
-    const need = Math.ceil((def * 1.4) / Math.max(1, avg));
-    return need <= Math.min(free.length, 5) ? need : 0;
+    const need = Math.max(Math.min(2, free.length), Math.ceil((def * 2) / Math.max(1, avg)));
+    return need <= Math.min(free.length, 6) ? need : 0;
   };
   // 1. take back our own provinces held by the enemy
   for (const [p, def] of [...targets].filter(([p]) => state.provinceOwner[p - 1] === tag).sort((a, b) => a[1] - b[1])) {
@@ -319,7 +320,21 @@ export function planMilitary(ctx: SimContext, tag: string, maxOrders = 12): Comm
   }
   // 4. attack (rested divisions only): empty provinces first, then the weakest held ones we can beat
   for (let i = free.length - 1; i >= 0; i--) if (free[i]!.organisation < 0.6) free.splice(i, 1);
-  for (const [p, def] of [...targets].sort((a, b) => a[1] - b[1])) {
+  // weakest first, drawn toward each enemy's capital (its most populous province) so offensives drive on it
+  const capitals = new Map<string, number>();
+  const capitalOf = (c: string) => {
+    if (!capitals.has(c)) {
+      let best = 0, pop = -1;
+      for (const q of map.provinces) if (state.provinceOwner[q.id - 1] === c && q.population > pop) { pop = q.population; best = q.id; }
+      capitals.set(c, best);
+    }
+    return capitals.get(c)!;
+  };
+  const priority = (p: number, def: number) => {
+    const cap = capitalOf(ctrl[p - 1]!);
+    return def / Math.max(1, avg) + (cap ? provinceDistance(map, p, cap) / 400 : 0);
+  };
+  for (const [p, def] of [...targets].sort((a, b) => priority(a[0], a[1]) - priority(b[0], b[1]))) {
     if (!free.length || out.length >= maxOrders) break;
     if (def === 0) take(p, 1);
     else if (offensive) {

@@ -16,7 +16,7 @@ import type { SimContext, System } from "../simulation.ts";
 import type { CountryState, GameState, War } from "../state.ts";
 import { clamp, countryModifiers } from "../politics/common.ts";
 import { justification, onWarDeclared } from "../diplomacy/diplomacy.ts";
-import { templateNeeds, templateStats, type Division } from "./military.ts";
+import { capitalProvince, templateNeeds, templateStats, type Division } from "./military.ts";
 
 export interface Battle {
   province: number;
@@ -126,7 +126,7 @@ export function airPower(db: ContentDB, cs: CountryState): number {
 
 // ------------------------------------------------------------------ commands
 
-export function declareWar(ctx: SimContext, tag: string, target: string, goal: WarGoal = "conquest", requireJustification = false, scripted = false): { ok: boolean; text: string } {
+export function declareWar(ctx: SimContext, tag: string, target: string, goal: WarGoal = "conquest", requireJustification = false, scripted = false, zone?: number[]): { ok: boolean; text: string } {
   const { db, state } = ctx;
   if (tag === target) return { ok: false, text: "A country cannot declare war on itself." };
   const a = state.countries[tag], b = state.countries[target];
@@ -141,7 +141,7 @@ export function declareWar(ctx: SimContext, tag: string, target: string, goal: W
   const id = state.nextWarId++;
   // wars with an armed group (src/sim/conflicts) call in no allies and never end by exhaustion
   const group = state.dynamicCountries[tag]?.kind === "armed_group" || state.dynamicCountries[target]?.kind === "armed_group";
-  state.wars.push({ id, name, attackers: [tag], defenders: [target], startDay: state.day, goal, ...(goal === "limited" ? { zone: limitedZone(ctx, tag, target, LIMITED_WAR_DEPTH) } : {}), ...(group ? { armedGroup: true } : {}), ...(scripted ? { scripted: true } : {}) });
+  state.wars.push({ id, name, attackers: [tag], defenders: [target], startDay: state.day, goal, ...(goal === "limited" ? { zone: zone ?? limitedZone(ctx, tag, target, LIMITED_WAR_DEPTH) } : {}), ...(group ? { armedGroup: true } : {}), ...(scripted ? { scripted: true } : {}) });
   const nuclear = rules.nuclear_states_2000.includes(target) || rules.nuclear_states_2000.includes(tag);
   state.worldTension = clamp(state.worldTension + rules.tension_per_war * (nuclear ? rules.nuclear_tension_multiplier : 1) * (justified ? 1 : db.diplomacyRules.unjustified_tension_multiplier), 0, 1);
   a.warSupport = clamp(a.warSupport - 0.05, 0, 1);
@@ -192,12 +192,14 @@ export function makePeace(ctx: SimContext, war: War, winner: "attackers" | "defe
     else state.provinceController[i] = o;
   }
   // divisions left in foreign territory go home
+  const homes = new Map<string, number>();
   for (const d of state.divisions) {
     if (!sides.has(d.owner)) continue;
     const here = state.provinceOwner[d.province - 1];
     if (here && here !== d.owner) {
-      const home = state.provinceOwner.findIndex((o) => o === d.owner);
-      if (home >= 0) d.province = home + 1;
+      if (!homes.has(d.owner)) homes.set(d.owner, capitalProvince(state, ctx.map, d.owner));
+      const home = homes.get(d.owner)!;
+      if (home >= 1) d.province = home;
       d.path = [];
       d.attacking = undefined;
     }

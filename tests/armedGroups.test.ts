@@ -4,6 +4,8 @@ import { validateEffects, type ScriptIssue } from "../src/content/script/validat
 import { armedGroupLoses, endArmedGroup, spawnArmedGroup } from "../src/sim/conflicts/armedGroups.ts";
 import { declareWar, hostile } from "../src/sim/military/war.ts";
 import { planMilitary } from "../src/sim/ai/ai.ts";
+import { canEnter } from "../src/sim/military/military.ts";
+import { runEffects } from "../src/sim/scripting/engine.ts";
 import { defaultSystems, Simulation, simMapFrom } from "../src/sim/simulation.ts";
 import { createInitialState } from "../src/sim/state.ts";
 import { NodeFiles } from "../scripts/lib/nodeFiles.ts";
@@ -129,5 +131,29 @@ describe("armed groups", () => {
     endArmedGroup(sim.context, "DPR", "POL");
     expect(owner(sim, 4)).toBe("POL");
     expect(s.divisions.some((d) => d.owner === "POL" && d.province === 4)).toBe(true);
+  });
+});
+
+describe("historical war tools", () => {
+  it("a limited war with a named zone keeps the attacker inside it", () => {
+    const sim = fresh();
+    declareWar(sim.context, "DEU", "POL", "limited", false, true, [5]);
+    expect(canEnter(sim.state, "DEU", 5)).toBe(true);
+    expect(canEnter(sim.state, "DEU", 6)).toBe(false);
+    expect(canEnter(sim.state, "POL", 4)).toBe(true); // the defender is not limited
+  });
+
+  it("deploy, occupy and recall divisions by script", () => {
+    const sim = fresh();
+    const s = sim.state;
+    runEffects(sim.context, { tag: "DEU", root: "DEU", from: null }, [{ deploy_divisions: { count: 2, in: "POL" } }], "test");
+    expect(s.divisions.filter((d) => d.owner === "DEU" && s.provinceOwner[d.province - 1] === "POL")).toHaveLength(2);
+    expect(canEnter(s, "DEU", 5)).toBe(true); // the host grants access
+    runEffects(sim.context, { tag: "DEU", root: "DEU", from: null }, [{ recall_divisions: { from: "POL" } }], "test");
+    expect(s.divisions.some((d) => d.owner === "DEU" && s.provinceOwner[d.province - 1] === "POL")).toBe(false);
+    declareWar(sim.context, "DEU", "POL", "status_quo", false, true);
+    runEffects(sim.context, { tag: "DEU", root: "DEU", from: null }, [{ occupy_provinces: { regions: [{ from: "POL", provinces: ["P5", "P6"] }] } }], "test");
+    expect([s.provinceController[4], s.provinceController[5]]).toEqual(["DEU", "DEU"]);
+    expect(s.divisions.some((d) => d.owner === "POL" && [5, 6].includes(d.province))).toBe(false);
   });
 });

@@ -298,6 +298,11 @@
             "url": "https://en.wikipedia.org/wiki/Russian_invasion_of_Ukraine",
             "title": "Wikipedia: Russian invasion of Ukraine",
             "accessed": "2026-10-15"
+          },
+          {
+            "url": "https://en.wikipedia.org/wiki/Russian-occupied_territories_of_Ukraine",
+            "title": "Wikipedia: Russian-occupied territories of Ukraine (the war zone: Russia holds almost 20% of Ukraine, in the south and east)",
+            "accessed": "2026-10-17"
           }
         ],
         "confidence": "verified"
@@ -310,7 +315,17 @@
             {
               "declare_war": {
                 "target": "UKR",
-                "goal": "limited"
+                "goal": "limited",
+                "zone": [
+                  {
+                    "from": "UKR",
+                    "provinces": [
+                      "Kherson",
+                      "Zaporizhzhya",
+                      "Mariupol (Donets'k)"
+                    ]
+                  }
+                ]
               }
             },
             {

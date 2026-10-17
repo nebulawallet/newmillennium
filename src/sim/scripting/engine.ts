@@ -3,7 +3,7 @@
  * (src/content/script/registry.ts) against the game state, and describes them in plain words for
  * tooltips. Effects for systems that arrive in later phases are accepted and described as such.
  */
-import { deployDivisions, grantEquipment, spawnDivisions } from "../military/military.ts";
+import { deployDivisions, grantEquipment, recallDivisions, spawnDivisions } from "../military/military.ts";
 import { declareWar, makePeace, type WarGoal } from "../military/war.ts";
 import { addOpinion, atWarWith, inBloc, joinBloc, leaveBloc, opinion } from "../diplomacy/diplomacy.ts";
 import type { ContentDB } from "../../content/compile.ts";
@@ -18,7 +18,7 @@ import { calibrate } from "../politics/voteModel.ts";
 import { initialSchedule } from "../politics/schedule.ts";
 import { applyShock } from "../economy/economy.ts";
 import { grantTech } from "../research/research.ts";
-import { armedGroupLoses, endArmedGroup, spawnArmedGroup, type GroupRegion } from "../conflicts/armedGroups.ts";
+import { armedGroupLoses, endArmedGroup, occupyProvinces, select, spawnArmedGroup, type GroupRegion } from "../conflicts/armedGroups.ts";
 
 export interface Scope {
   /** The country the script currently acts on. */
@@ -328,11 +328,14 @@ function effect(ctx: SimContext, scope: Scope, k: string, v: unknown, source: st
     case "join_bloc": joinBloc(ctx, scope.tag, v as string); break;
     case "declare_war": {
       const target = a.target as string;
-      if (state.countries[target]?.active && state.provinceOwner.includes(target)) declareWar(ctx, scope.tag, target, (a.goal as WarGoal | undefined) ?? "conquest", false, true);
+      const zone = a.zone ? (a.zone as GroupRegion[]).flatMap((r) => select(ctx, r, (p) => state.provinceOwner[p - 1] === r.from)) : undefined;
+      if (state.countries[target]?.active && state.provinceOwner.includes(target)) declareWar(ctx, scope.tag, target, (a.goal as WarGoal | undefined) ?? "conquest", false, true, zone);
       break;
     }
     case "add_equipment": grantEquipment(ctx, scope.tag, a.family as string, a.amount as number); break;
     case "add_divisions": spawnDivisions(ctx, scope.tag, a.template as string, a.count as number, a.in as string | undefined); break;
+    case "occupy_provinces": occupyProvinces(ctx, scope.tag, a.regions as GroupRegion[]); break;
+    case "recall_divisions": recallDivisions(ctx, scope.tag, a.from as string); break;
     case "deploy_divisions": deployDivisions(ctx, scope.tag, a.count as number, a.in as string); break;
     case "dissolve_country": {
       const into = a.into as string;
@@ -476,6 +479,8 @@ export function describeEffects(db: ContentDB, effects: unknown[], depth = 0): s
       case "add_equipment": line = `+${a.amount} ${db.equipment.get(a.family as string)?.name ?? a.family}`; break;
       case "add_divisions": line = `${a.count} new divisions${a.in ? ` deployed in ${name.tag(a.in as string)}` : ""}`; break;
       case "dissolve_country": line = `Merges into ${name.tag(a.into as string)}`; break;
+      case "occupy_provinces": line = `Occupies provinces of ${[...new Set((a.regions as GroupRegion[]).map((r) => name.tag(r.from)))].join(", ")}`; break;
+      case "recall_divisions": line = `Divisions in ${name.tag(a.from as string)} come home`; break;
       case "deploy_divisions": line = `${a.count} divisions deploy to ${name.tag(a.in as string)}`; break;
       case "white_peace": line = `Peace with ${name.tag(a.with as string)}`; break;
       case "transfer_provinces": line = `Provinces of ${name.tag(a.from as string)} pass to this country`; break;

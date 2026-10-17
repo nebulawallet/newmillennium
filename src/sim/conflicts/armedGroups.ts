@@ -28,7 +28,7 @@ export const isArmedGroup = (state: GameState, tag: string): boolean => state.dy
 const homeOf = (state: GameState, id: number): string => state.armedGroups.home[String(id)] ?? state.provinceOwner[id - 1]!;
 
 /** Province ids (1-based) matching a region: held by `owner`, in the region's adm1 codes or named provinces (all if neither). */
-function select(ctx: SimContext, r: GroupRegion, test: (id: number) => boolean): number[] {
+export function select(ctx: SimContext, r: GroupRegion, test: (id: number) => boolean): number[] {
   const codes = new Set(r.adm1 ?? []);
   const names = new Set(r.provinces ?? []);
   const all = !codes.size && !names.size;
@@ -98,6 +98,25 @@ function raise(ctx: SimContext, db: ContentDB, tag: string, count: number, provi
       id: state.nextDivisionId++, owner: tag, name: `${ordinal(++n)} ${tpl.name}`, template: tpl.id, units: { ...tpl.units }, equipment: { ...equipment },
       province: byPop[i % byPop.length]!, path: [], progress: 0, strength: 1, organisation: 0.8, entrenchment: 0,
     });
+  }
+}
+
+/**
+ * The scoped country takes control (not ownership) of provinces of `from`, as in an occupation; `from`'s divisions
+ * there disband (its army collapsed). Used for dated offensives the AI cannot be relied on to reach in time.
+ */
+export function occupyProvinces(ctx: SimContext, tag: string, regions: GroupRegion[]): void {
+  const { state } = ctx;
+  let n = 0;
+  for (const r of regions)
+    for (const id of select(ctx, r, (p) => state.provinceOwner[p - 1] === r.from)) {
+      state.divisions = state.divisions.filter((d) => !(d.province === id && d.owner === r.from));
+      state.provinceController[id - 1] = tag;
+      n++;
+    }
+  if (n) {
+    ctx.log(tag, "war", `Occupies ${n} province${n === 1 ? "" : "s"}`);
+    ctx.emit({ type: "map_changed" });
   }
 }
 

@@ -57,6 +57,8 @@ export const SubUnitDef = z.strictObject({
   width: n(2),
   /** km/h when no equipment sets a speed. */
   speed: n(4),
+  /** Moves at the speed of the formation's line battalions when they are faster (self-propelled or towed by trucks). */
+  follows_line: z.boolean().default(false),
   training_days: n(90),
 });
 export type SubUnitDef = z.infer<typeof SubUnitDef>;
@@ -88,6 +90,8 @@ export const MilitaryRulesFile = z.strictObject({
   personnel_per_division: n(12000),
   /** Starting stockpile on top of what starting divisions use. */
   reserve_stockpile: n(0.15),
+  /** Starting air force: one fighter (best variant available) per this much yearly military spending in US dollars (World Bank 2000). */
+  usd_per_starting_fighter: n(150_000_000),
   /** Hours of marching per day. */
   march_hours: n(10),
   max_division_width: n(30),

@@ -206,7 +206,7 @@
     {
       "id": "usa_iraq_invasion_force",
       "title": "Invasion force in Kuwait",
-      "description": "US ground forces crossed into Iraq from Kuwait when the invasion began on 20 March 2003. The number of divisions is a gameplay value.",
+      "description": "US ground forces crossed into Iraq from Kuwait when the invasion began on 20 March 2003 and advanced rapidly on Baghdad, while Iraqi forces collapsed. The number of divisions and the size of the Iraqi penalty are gameplay values.",
       "countries": [
         "USA"
       ],
@@ -233,6 +233,34 @@
               "deploy_divisions": {
                 "count": 8,
                 "in": "KWT"
+              }
+            },
+            {
+              "country": {
+                "tag": "IRQ",
+                "effects": [
+                  {
+                    "add_timed_modifier": {
+                      "modifier": "army_defence",
+                      "value": -0.5,
+                      "days": 60
+                    }
+                  },
+                  {
+                    "add_timed_modifier": {
+                      "modifier": "army_attack",
+                      "value": -0.5,
+                      "days": 60
+                    }
+                  },
+                  {
+                    "add_timed_modifier": {
+                      "modifier": "army_org",
+                      "value": -0.5,
+                      "days": 60
+                    }
+                  }
+                ]
               }
             }
           ]
@@ -276,9 +304,53 @@
       ]
     },
     {
+      "id": "usa_fall_of_baghdad",
+      "title": "Fall of Baghdad",
+      "description": "US forces entered Baghdad in the battle of 3–9 April 2003; on 9 April the government lost control of the capital, and Iraqi forces collapsed across the country. Provinces not yet taken in play pass to coalition control.",
+      "countries": [
+        "USA"
+      ],
+      "major": true,
+      "historical": {
+        "date": "2003-04-09",
+        "any_path": true,
+        "dynamic_mode": false,
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/Battle_of_Baghdad_(2003)",
+            "title": "Wikipedia: Battle of Baghdad (2003)",
+            "accessed": "2026-10-17"
+          },
+          {
+            "url": "https://en.wikipedia.org/wiki/2003_invasion_of_Iraq",
+            "title": "Wikipedia: 2003 invasion of Iraq",
+            "accessed": "2026-10-17"
+          }
+        ],
+        "confidence": "verified"
+      },
+      "options": [
+        {
+          "id": "ok",
+          "name": "Continue",
+          "effects": [
+            {
+              "occupy_provinces": {
+                "regions": [
+                  {
+                    "from": "IRQ"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
       "id": "usa_iraq_invasion_ends",
       "title": "End of the invasion of Iraq",
-      "description": "Baghdad fell on 9 April 2003, and the invasion phase ended on 1 May 2003. The occupation and the insurgency that followed are not fought out on the map.",
+      "description": "Baghdad fell on 9 April 2003, and the invasion phase ended on 1 May 2003. Coalition forces stayed in Iraq under the Coalition Provisional Authority, which handed sovereignty to an Iraqi government on 28 June 2004.",
       "countries": [
         "USA"
       ],
@@ -310,6 +382,12 @@
               "white_peace": {
                 "with": "IRQ"
               }
+            },
+            {
+              "deploy_divisions": {
+                "count": 6,
+                "in": "IRQ"
+              }
             }
           ]
         }
@@ -318,7 +396,7 @@
     {
       "id": "gbr_iraq_invasion_ends",
       "title": "End of the invasion of Iraq",
-      "description": "Baghdad fell on 9 April 2003, and the invasion phase ended on 1 May 2003. The occupation and the insurgency that followed are not fought out on the map.",
+      "description": "Baghdad fell on 9 April 2003, and the invasion phase ended on 1 May 2003. Coalition forces stayed in Iraq under the Coalition Provisional Authority, which handed sovereignty to an Iraqi government on 28 June 2004.",
       "countries": [
         "GBR"
       ],
@@ -358,7 +436,7 @@
     {
       "id": "pol_iraq_invasion_ends",
       "title": "End of the invasion of Iraq",
-      "description": "Baghdad fell on 9 April 2003, and the invasion phase ended on 1 May 2003. The occupation and the insurgency that followed are not fought out on the map.",
+      "description": "Baghdad fell on 9 April 2003, and the invasion phase ended on 1 May 2003. Coalition forces stayed in Iraq under the Coalition Provisional Authority, which handed sovereignty to an Iraqi government on 28 June 2004.",
       "countries": [
         "POL"
       ],
@@ -389,6 +467,184 @@
             {
               "white_peace": {
                 "with": "IRQ"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "iqi_fallujah",
+      "title": "First Battle of Fallujah",
+      "description": "Insurgents held Fallujah against US Marines in the First Battle of Fallujah, 4 April – 1 May 2004, and kept control of the city until the Second Battle of Fallujah (7 November – 23 December 2004). Insurgents stayed strong in Anbar until 2006. The insurgency as a whole lasted from 9 April 2003 to 18 December 2011.",
+      "countries": [
+        "IRQ"
+      ],
+      "major": true,
+      "historical": {
+        "date": "2004-04-04",
+        "any_path": true,
+        "dynamic_mode": false,
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/First_Battle_of_Fallujah",
+            "title": "Wikipedia: First Battle of Fallujah",
+            "accessed": "2026-10-17"
+          },
+          {
+            "url": "https://en.wikipedia.org/wiki/Second_Battle_of_Fallujah",
+            "title": "Wikipedia: Second Battle of Fallujah",
+            "accessed": "2026-10-17"
+          },
+          {
+            "url": "https://en.wikipedia.org/wiki/Iraqi_insurgency_(2003–2011)",
+            "title": "Wikipedia: Iraqi insurgency (2003–2011)",
+            "accessed": "2026-10-17"
+          }
+        ],
+        "confidence": "needs_review",
+        "review_note": "Dates are sourced. The provinces are a province-level approximation on the game map (one game province can cover a whole governorate); check against the source's territorial-control maps."
+      },
+      "options": [
+        {
+          "id": "ok",
+          "name": "Continue",
+          "effects": [
+            {
+              "spawn_armed_group": {
+                "group": "IQI",
+                "regions": [
+                  {
+                    "from": "IRQ",
+                    "provinces": [
+                      "Ar Ramadi (Al-Anbar)"
+                    ]
+                  }
+                ],
+                "divisions": 3,
+                "war_with": [
+                  "IRQ"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "usa_war_with_iqi",
+      "title": "Coalition fights the insurgency",
+      "description": "The US-led Multi-National Force – Iraq fought the insurgency alongside the new Iraqi security forces.",
+      "countries": [
+        "USA"
+      ],
+      "major": false,
+      "historical": {
+        "date": "2004-04-04",
+        "any_path": true,
+        "dynamic_mode": false,
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/Iraqi_insurgency_(2003–2011)",
+            "title": "Wikipedia: Iraqi insurgency (2003–2011)",
+            "accessed": "2026-10-17"
+          }
+        ],
+        "confidence": "verified"
+      },
+      "options": [
+        {
+          "id": "ok",
+          "name": "Continue",
+          "effects": [
+            {
+              "declare_war": {
+                "target": "IQI",
+                "goal": "limited"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "iqi_ramadi_2006",
+      "title": "Battle of Ramadi",
+      "description": "Coalition and Iraqi forces retook Ramadi in a battle from 15 March to 15 November 2006. Insurgent attacks continued elsewhere until the US withdrawal, but no longer from held territory on this map.",
+      "countries": [
+        "IRQ"
+      ],
+      "major": false,
+      "historical": {
+        "date": "2006-11-15",
+        "any_path": true,
+        "dynamic_mode": false,
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/Battle_of_Ramadi_(2006)",
+            "title": "Wikipedia: Battle of Ramadi (2006)",
+            "accessed": "2026-10-17"
+          },
+          {
+            "url": "https://en.wikipedia.org/wiki/Iraqi_insurgency_(2003–2011)",
+            "title": "Wikipedia: Iraqi insurgency (2003–2011)",
+            "accessed": "2026-10-17"
+          }
+        ],
+        "confidence": "needs_review",
+        "review_note": "Dates are sourced. The provinces are a province-level approximation on the game map (one game province can cover a whole governorate); check against the source's territorial-control maps."
+      },
+      "options": [
+        {
+          "id": "ok",
+          "name": "Continue",
+          "effects": [
+            {
+              "armed_group_loses": {
+                "group": "IQI",
+                "regions": [
+                  {
+                    "from": "IRQ",
+                    "provinces": [
+                      "Ar Ramadi (Al-Anbar)"
+                    ]
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "usa_leaves_iraq_2011",
+      "title": "US forces leave Iraq",
+      "description": "The last US troops left Iraq on 18 December 2011, completing the withdrawal that began in 2007.",
+      "countries": [
+        "USA"
+      ],
+      "major": false,
+      "historical": {
+        "date": "2011-12-18",
+        "any_path": true,
+        "dynamic_mode": false,
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/Withdrawal_of_United_States_troops_from_Iraq_(2007–2011)",
+            "title": "Wikipedia: Withdrawal of United States troops from Iraq (2007–2011)",
+            "accessed": "2026-10-17"
+          }
+        ],
+        "confidence": "verified"
+      },
+      "options": [
+        {
+          "id": "ok",
+          "name": "Continue",
+          "effects": [
+            {
+              "recall_divisions": {
+                "from": "IRQ"
               }
             }
           ]

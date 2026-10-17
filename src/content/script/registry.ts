@@ -152,9 +152,14 @@ export const EFFECTS: Record<string, ScriptDef> = {
   },
   join_bloc: { args: Id, description: "The country joins a bloc.", refs: { "": "bloc" } },
   declare_war: {
-    args: z.strictObject({ target: Tag, goal: z.enum(["conquest", "status_quo", "limited"]).optional() }),
-    description: "Declare war on the target (historical wars; nothing happens unless both countries exist and have politics data).",
-    refs: { target: "tag" },
+    args: z.strictObject({
+      target: Tag,
+      goal: z.enum(["conquest", "status_quo", "limited"]).optional(),
+      /** Limited wars: the target's provinces the attacker aims for (instead of a band along the border). */
+      zone: z.array(GroupRegion).optional(),
+    }),
+    description: "Declare war on the target (historical wars). A limited war can name the provinces the attacker goes for.",
+    refs: { target: "tag", "zone.from": "tag" },
   },
   add_equipment: {
     args: z.strictObject({ family: Id, amount: z.number().positive() }),
@@ -165,9 +170,19 @@ export const EFFECTS: Record<string, ScriptDef> = {
     description: "Raise divisions of a template at once (mobilisation), equipped from the stockpile; `in` deploys them in another country's territory (an expeditionary force).",
     refs: { in: "tag" },
   },
+  occupy_provinces: {
+    args: z.strictObject({ regions: z.array(GroupRegion).min(1) }),
+    description: "This country takes control of these provinces (an occupation on a real date); the owner's divisions there disband.",
+    refs: { "regions.from": "tag" },
+  },
+  recall_divisions: {
+    args: z.strictObject({ from: Tag }),
+    description: "This country's divisions in `from`'s territory come home (the end of a deployment).",
+    refs: { from: "tag" },
+  },
   deploy_divisions: {
     args: z.strictObject({ count: z.number().int().positive().max(50), in: Tag }),
-    description: "Send this country's strongest divisions to another country's territory (an expeditionary force), spread over its provinces.",
+    description: "Send this country's strongest divisions to another country's territory (an expeditionary force), spread over its provinces; the host grants military access.",
     refs: { in: "tag" },
   },
   dissolve_country: {
