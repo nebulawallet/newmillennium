@@ -106,6 +106,7 @@ export function WarPanel({ db, session }: { db: ContentDB; session: Session }) {
                 ["Terrain", `${b.terrain ?? "?"} (+${Math.round((b.terrainBonus ?? 0) * 100)}% defence)`],
                 ["Entrenchment", `+${Math.round((b.entrenchment ?? 0) * 100)}%`],
                 ["Flanking", `+${Math.round((b.flanking ?? 0) * 100)}%`],
+                ["River", b.river ? `${b.river.name}: ${b.river.crossing} attacking across (−${Math.round(db.warRules.river_crossing_penalty * 100)}% attack)` : "none"],
                 ["Air", `${(b.air ?? 0) >= 0 ? "+" : ""}${Math.round((b.air ?? 0) * 100)}% to the attacker`],
                 ["Supply", `${Math.round((b.supply?.attacker ?? 1) * 100)}% / ${Math.round((b.supply?.defender ?? 1) * 100)}%`],
                 ["Casualties", `${fmt.format(Math.round(b.casualties?.attacker ?? 0))} / ${fmt.format(Math.round(b.casualties?.defender ?? 0))}`],

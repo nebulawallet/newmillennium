@@ -31,6 +31,13 @@ export interface SimMap {
   provinces: SimProvince[];
   /** Land neighbours per province id. */
   neighbours: Map<number, number[]>;
+  /** Rivers along province borders (public/map/rivers.json): pair key -> river name (see riverBetween). */
+  rivers?: Map<number, string>;
+}
+
+/** The river along the border between two provinces, if any (attacks across it are harder). */
+export function riverBetween(map: SimMap | undefined, a: number, b: number): string | undefined {
+  return map?.rivers?.get(Math.min(a, b) * 65536 + Math.max(a, b));
 }
 
 /** Transient notifications for the UI (not part of the saved state). */
@@ -66,13 +73,13 @@ export interface System {
 const LOG_LIMIT = 500;
 
 /** Build the simulation's map context from province records and adjacency pairs. */
-export function simMapFrom(provinces: SimProvince[], adjacency: [number, number, number][] = []): SimMap {
+export function simMapFrom(provinces: SimProvince[], adjacency: [number, number, number][] = [], rivers: [number, number, string][] = []): SimMap {
   const neighbours = new Map<number, number[]>();
   for (const [a, b] of adjacency) {
     neighbours.set(a, [...(neighbours.get(a) ?? []), b]);
     neighbours.set(b, [...(neighbours.get(b) ?? []), a]);
   }
-  return { provinces, neighbours };
+  return { provinces, neighbours, rivers: new Map(rivers.map(([a, b, n]) => [Math.min(a, b) * 65536 + Math.max(a, b), n])) };
 }
 
 export class Simulation {

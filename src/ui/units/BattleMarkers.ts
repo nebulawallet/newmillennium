@@ -70,6 +70,7 @@ export class BattleMarkers {
         ["Attacker", `${name(b.attackerTag)} (${b.attackers.length} div)`],
         ["Defender", `${name(b.defenderTag)} (${b.defenders.length} div)`],
         ["Progress", `${Math.round((b.progress ?? 0.5) * 100)}% toward the attacker`],
+        ...(b.river ? [["River crossing", b.river.name] as [string, string]] : []),
         ["Days", state.day - b.startDay],
       ],
       note: "Click for the war overview.",

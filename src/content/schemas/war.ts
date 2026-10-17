@@ -30,7 +30,7 @@ export const WarRulesFile = z.strictObject({
   /** Attack bonus per extra province the attack comes from, and its cap. */
   flanking_bonus_per_direction: n(0.1),
   max_flanking_bonus: n(0.3),
-  /** Attack penalty crossing a river (needs river data in the map; not used until it exists). */
+  /** Attack lost by divisions attacking across a river on the border (public/map/rivers.json). */
   river_crossing_penalty: n(0.2),
   /** A side capitulates when its enemies hold this share of its population. */
   capitulation_share: n(0.7),

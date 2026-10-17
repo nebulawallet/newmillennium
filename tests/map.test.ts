@@ -78,6 +78,18 @@ describe.skipIf(!built)("map of 1 January 2000", () => {
     expect(touch("GBR", "FRA")).toBe(false); // the Channel: no land link
   });
 
+  it("rivers: border rivers between neighbouring provinces, including the big ones", () => {
+    const adjacency: [number, number, number][] = JSON.parse(readFileSync(resolve(root, "public/map/adjacency.json"), "utf8"));
+    const rivers = JSON.parse(readFileSync(resolve(root, "public/map/rivers.json"), "utf8")) as { source: string; pairs: [number, number, string][] };
+    expect(rivers.source).toContain("Natural Earth");
+    const adj = new Set(adjacency.map(([a, b]) => `${a}-${b}`));
+    for (const [a, b] of rivers.pairs) expect(adj.has(`${Math.min(a, b)}-${Math.max(a, b)}`)).toBe(true);
+    const along = (x: string, y: string) => rivers.pairs.some(([a, b]) => { const o = [provinces[a - 1]!.owner, provinces[b - 1]!.owner]; return o.includes(x) && o.includes(y); });
+    expect(along("DEU", "POL")).toBe(true); // the Oder
+    expect(along("BGR", "ROU")).toBe(true); // the Danube
+    expect(along("AFG", "UZB")).toBe(true); // the Amu Darya
+  });
+
   it("names provinces uniquely within each country", () => {
     const seen = new Set<string>();
     for (const p of provinces) {

@@ -20,7 +20,7 @@ const state = createInitialState(db, { provinces }, {
   contentHash: "trace", player: null, seed: seedArg >= 0 ? Number(args[seedArg + 1]) : 20000101,
   rules: { electionMode: args.includes("--dynamic") ? "dynamic" : "historical" },
 });
-const sim = new Simulation(db, state, undefined, simMapFrom(provinces, adjacency));
+const sim = new Simulation(db, state, undefined, simMapFrom(provinces, adjacency, JSON.parse(readFileSync("public/map/rivers.json", "utf8")).pairs));
 const WATCH = ["AFG", "IRQ", "SYR", "PSE", "UKR"];
 const groups = [...db.armedGroups.keys()];
 const holdings = () => {

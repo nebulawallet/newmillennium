@@ -12,7 +12,7 @@
  *    population; exhausted sides make a white peace. Winners take what they occupy (conquest).
  */
 import type { ContentDB } from "../../content/compile.ts";
-import type { SimContext, System } from "../simulation.ts";
+import { riverBetween, type SimContext, type System } from "../simulation.ts";
 import type { CountryState, GameState, War } from "../state.ts";
 import { clamp, countryModifiers } from "../politics/common.ts";
 import { justification, onWarDeclared } from "../diplomacy/diplomacy.ts";
@@ -42,6 +42,8 @@ export interface Battle {
   supply?: { attacker: number; defender: number };
   /** Manpower lost so far by each side. */
   casualties?: { attacker: number; defender: number };
+  /** A river the attack crosses (and how many attacking divisions cross it). */
+  river?: { name: string; crossing: number };
 }
 
 /** conquest: the winner keeps what it holds; status_quo: control returns; limited: the attacker aims only at land near its border and no side capitulates. */
@@ -424,7 +426,11 @@ export const warSystem: System = {
       battle.air = rules.air_superiority_bonus * superiority;
 
       const supplyHit = (f: number) => (f - 1) * rules.out_of_supply_combat_penalty;
-      const aAttack = sideAttack(db, attackers, dHard, dArmour, rules.air_superiority_bonus * superiority + flank + supplyHit(aSupply), (d) => mods(d.owner).army_attack ?? 0);
+      // river crossings: divisions attacking across a river on the border hit less hard
+      const river = (d: Division) => riverBetween(map, d.province, province);
+      const crossing = attackers.filter((d) => river(d));
+      if (crossing.length) battle.river = { name: river(crossing[0]!)!, crossing: crossing.length };
+      const aAttack = sideAttack(db, attackers, dHard, dArmour, rules.air_superiority_bonus * superiority + flank + supplyHit(aSupply), (d) => (mods(d.owner).army_attack ?? 0) - (river(d) ? rules.river_crossing_penalty : 0));
       const dAttack = sideAttack(db, defenders, aHard, aArmour, -rules.air_superiority_bonus * superiority + supplyHit(dSupply), (d) => mods(d.owner).army_attack ?? 0);
       const dDefence = defenders.reduce((s, d, i) => s + dStats[i]!.defence * d.strength * (1 + terrain + d.entrenchment) * (1 + (mods(d.owner).army_defence ?? 0)), 0);
       const aResist = attackers.reduce((s, d, i) => s + (aStats[i]!.breakthrough + 0.4 * aStats[i]!.defence) * d.strength * (1 + (mods(d.owner).army_defence ?? 0)), 0);

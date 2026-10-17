@@ -39,7 +39,7 @@ export class Session {
     readonly world: WorldMap,
     readonly contentHash: string,
   ) {
-    this.simMap = simMapFrom(map.provinces, map.adjacency);
+    this.simMap = simMapFrom(map.provinces, map.adjacency, map.rivers);
   }
 
   get state(): GameState | null {

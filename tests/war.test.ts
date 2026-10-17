@@ -231,6 +231,29 @@ describe("war", () => {
     expect(s.wars[0]!.victories!.attackers).toBeGreaterThan(0);
   });
 
+  it("river crossings: an attack across a river on the border hits less hard", () => {
+    const run = (rivers: [number, number, string][]) => {
+      const sim = new Simulation(db, createInitialState(db, { provinces: provinces as never }, { contentHash: "t", player: "DEU" }), defaultSystems().filter((x) => x.id !== "ai"), simMapFrom(provinces as never, adjacency, rivers));
+      const s = sim.state;
+      s.countries.DEU!.warSupport = 1;
+      s.countries.POL!.warSupport = 1;
+      sim.dispatch({ type: "declare_war", tag: "DEU", target: "POL" });
+      const pol = s.divisions.filter((d) => d.owner === "POL"), ger = s.divisions.filter((d) => d.owner === "DEU");
+      for (const d of pol) d.province = 24;
+      pol[0]!.province = 11;
+      s.divisions = s.divisions.filter((d) => d.owner === "POL" || d === ger[0]);
+      ger[0]!.province = 10;
+      ger[0]!.path = [11];
+      ger[0]!.organisation = 1;
+      for (let i = 0; i < 3; i++) sim.step();
+      return { defender: pol[0]!, battle: s.battles.find((b) => b.province === 11) };
+    };
+    const dry = run([]), wet = run([[10, 11, "Test river"]]);
+    expect(wet.battle?.river?.name).toBe("Test river");
+    expect(dry.battle?.river).toBeUndefined();
+    expect(wet.defender.organisation).toBeGreaterThan(dry.defender.organisation);
+  });
+
   it("cannot declare war twice", () => {
     const sim = fresh(null);
     sim.dispatch({ type: "declare_war", tag: "DEU", target: "POL" });

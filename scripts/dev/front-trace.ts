@@ -16,7 +16,7 @@ const [me, them] = [args[0] ?? "DEU", args[1] ?? "POL"];
 const days = Number(args.find((a) => /^\d+$/.test(a)) ?? 60);
 const { db } = compileContent(new NodeFiles(), {});
 const provinces = JSON.parse(readFileSync("public/map/provinces.json", "utf8"));
-const map = simMapFrom(provinces, JSON.parse(readFileSync("public/map/adjacency.json", "utf8")));
+const map = simMapFrom(provinces, JSON.parse(readFileSync("public/map/adjacency.json", "utf8")), JSON.parse(readFileSync("public/map/rivers.json", "utf8")).pairs);
 const state = createInitialState(db, { provinces }, { contentHash: "f", player: me, rules: { electionMode: "dynamic" } });
 const sim = new Simulation(db, state, undefined, map);
 const name = (p: number) => provinces[p - 1]?.name ?? p;

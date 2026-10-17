@@ -16,7 +16,7 @@ const { db } = compileContent(new NodeFiles(), {});
 const provinces = JSON.parse(readFileSync("public/map/provinces.json", "utf8"));
 const adjacency = JSON.parse(readFileSync("public/map/adjacency.json", "utf8"));
 const state = createInitialState(db, { provinces }, { contentHash: "trial", player: null });
-const sim = new Simulation(db, state, undefined, simMapFrom(provinces, adjacency));
+const sim = new Simulation(db, state, undefined, simMapFrom(provinces, adjacency, JSON.parse(readFileSync("public/map/rivers.json", "utf8")).pairs));
 spawnArmedGroup(sim.context, group, [{ from: host, provinces: names ? names.split(",") : undefined }], Number(divs));
 
 const nameOf = (id: number) => provinces[id - 1].name as string;

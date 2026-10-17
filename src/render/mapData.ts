@@ -39,6 +39,8 @@ export interface MapData {
   lakePositions: Float32Array;
   lakeIndices: Uint32Array;
   adjacency: [number, number, number][];
+  /** Province pairs with a river along their border, and the river's name (public/map/rivers.json). */
+  rivers: [number, number, string][];
   labels: CountryLabel[];
   grid: { width: number; height: number; yTop: number; yBottom: number };
   /** Province id per pixel of the id map (0 = sea). */
@@ -71,6 +73,7 @@ export async function loadMapData(base = "/map"): Promise<MapData> {
     json<{ grid: MapData["grid"] }>(`${base}/meta.json`),
     fetch(`${base}/idmap.png`).then((r) => r.blob()),
   ]);
+  const rivers = await fetch(`${base}/rivers.json`).then((r) => (r.ok ? r.json() as Promise<{ pairs: [number, number, string][] }> : { pairs: [] })).catch(() => ({ pairs: [] as [number, number, string][] }));
 
   const h = new Uint32Array(geo, 0, 3);
   if (h[0] !== 0x4e4d4731) throw new Error("geometry.bin: bad magic");
@@ -98,7 +101,7 @@ export async function loadMapData(base = "/map"): Promise<MapData> {
   return {
     provinces, positions, provinceOfVertex, indices,
     borders: new Float32Array(borders), lakePositions, lakeIndices,
-    adjacency, labels, grid: meta.grid, idmap, idImage,
+    adjacency, rivers: rivers.pairs, labels, grid: meta.grid, idmap, idImage,
     loadMs: performance.now() - t0,
   };
 }

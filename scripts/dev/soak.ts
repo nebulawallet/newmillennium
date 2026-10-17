@@ -20,7 +20,7 @@ const { db } = compileContent(new NodeFiles(), {});
 const provinces = JSON.parse(readFileSync("public/map/provinces.json", "utf8"));
 const adjacency = JSON.parse(readFileSync("public/map/adjacency.json", "utf8"));
 const state = createInitialState(db, { provinces }, { contentHash: "soak", seed, player: null, rules: { electionMode: dynamic ? "dynamic" : "historical" } });
-const sim = new Simulation(db, state, undefined, simMapFrom(provinces, adjacency));
+const sim = new Simulation(db, state, undefined, simMapFrom(provinces, adjacency, JSON.parse(readFileSync("public/map/rivers.json", "utf8")).pairs));
 
 const days = Math.round(years * 365.25);
 const times: number[] = [];

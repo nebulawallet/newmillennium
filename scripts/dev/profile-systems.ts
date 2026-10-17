@@ -19,7 +19,7 @@ const wrap = (s: System): System => {
 const args = process.argv.slice(2);
 const useMap = args.includes("--map");
 const provinces = useMap ? JSON.parse(readFileSync("public/map/provinces.json", "utf8")) : [];
-const map = useMap ? simMapFrom(provinces, JSON.parse(readFileSync("public/map/adjacency.json", "utf8"))) : undefined;
+const map = useMap ? simMapFrom(provinces, JSON.parse(readFileSync("public/map/adjacency.json", "utf8")), JSON.parse(readFileSync("public/map/rivers.json", "utf8")).pairs) : undefined;
 const sim = new Simulation(db, createInitialState(db, { provinces }, { contentHash: "p" }), defaultSystems().map(wrap), map);
 const from = args[args.indexOf("--from") + 1];
 if (args.includes("--from") && from) { while (sim.state.day < dayOf(from)) sim.step(); times.clear(); }
