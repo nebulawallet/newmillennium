@@ -1,6 +1,6 @@
 # Handoff: New Millennium
 
-Read this first when you pick up the project in a new session, with a new agent, or after a break. Last updated 15 October 2026, after the Phase 12 commit.
+Read this first when you pick up the project in a new session, with a new agent, or after a break. Last updated 17 October 2026, after the Phase 12 commit.
 
 ## What this is
 
@@ -26,7 +26,7 @@ New Millennium is a grand strategy game in the style of Hearts of Iron IV, set f
 | # | Phase | Status |
 |---|---|---|
 | 1 | Politics schemas and `validate-data` | **Done** |
-| 2 | World politics database | **In progress.** 16 countries done (Pass A); DEU also has Pass B. Agents are running; see [docs/PHASE2_BATCHES.md](docs/PHASE2_BATCHES.md). |
+| 2 | World politics database | **Narrowed (17 Oct 2026):** 79 countries with full data; remaining work is light data for conflict countries plus a default profile for the rest (docs/CONFLICTS_PLAN.md). |
 | 3 | Map pipeline and rendering | **Done** apart from polish: 4,580 provinces on 2000 borders; mesh renderer chosen. Resources per province are stubbed until Phase 7. |
 | 4 | Time loop, top bar, save/load, politics screen | **Done** |
 | — | UI rebuild in the HOI4 layout | **Done** (`193ea02`), at the user's request |
@@ -42,11 +42,19 @@ New Millennium is a grand strategy game in the style of Hearts of Iron IV, set f
 
 ## Where things stand right now
 
-- **Research agents (relaunched 16 October 2026):** batches 10b (MLT SMR VAT), 13b (GEO ARM AZE ABK SOS NKR ICH), 34b (IND PAK BGD), 16b (BRA ARG CHL), 23b (IRQ SAU YEM KUR), 15b (CAN MEX CUB). Earlier runs were cut off by a usage limit and left partial, untracked folders that these agents re-check and finish. Agent prompts forbid blanket process kills (`taskkill /IM node.exe`).
+- **New direction (17 October 2026), read [docs/CONFLICTS_PLAN.md](docs/CONFLICTS_PLAN.md):** the game is about the major conflicts (Israel–Palestine, Russia–Ukraine, Iraq, Afghanistan, Syria/ISIS). Stop broad country research. Use three tiers:
+  - full: done for 79 countries
+  - light: conflict countries plus a few big players
+  - default: everyone else
+- **No research agents are running.** The last batches were cut off by a usage limit. Partial untracked folders: IND, PAK, BGD, IRQ, AFG, AFN, CAN, MEX, EGY (see CONFLICTS_PLAN.md for what to keep). Do not launch new batches for minor countries, and ask the user before starting agents.
 - **Audit helper:** `python -I -X utf8 scripts/dev/audit-country.py TAG` prints offices, legislature, latest elections, needs_review items and dates after June 2026.
-- `npm run check` validates only countries tracked by git (`--tracked`), so untracked folders do not block commits.
-- **Audit checklist addition (Phase 5):** direct presidential elections decided by plurality need `"system": "plurality"` on their rule (e.g. KOR, TWN, ISL, PSE in the current batches); check `winner` is the real winner.
-- **Map rebuilt** in Phase 5 with a population fix (see gotchas). Province ids changed, so saves made before this commit load with misaligned province ownership.
+- `npm run check` validates only countries tracked by git (`--tracked`), so untracked folders do not block commits. The dev start screen shows "data errors" while partial folders exist.
+- **Audit checklist:**
+  - Plurality presidencies need `"system": "plurality"`.
+  - Check every death and every claim dated after June 2026 yourself with `scripts/research/wiki.ts`.
+  - Scan for allegations and health claims.
+  - Agent prompts must forbid blanket process kills (`taskkill /IM node.exe`).
+- **Map rebuilt** in Phase 5 with a population fix (see gotchas). Province ids changed, so saves made before that commit load with misaligned province ownership.
 
 ### Phase 5 notes
 
@@ -139,9 +147,23 @@ In game: Space pauses, 1–5 or +/- set speed, Q–P open the tab row (Q is Poli
 
 ## Next steps, in order
 
-1. **Phase 2 research:** audit the uncommitted folders, then keep about six batches running. After each: `npm run validate-data -- --only <tags> --tier core`, spot-check facts with `scripts/research/wiki.ts` (anything after June 2026 yourself), `npm run review-report`, commit, update the batch table, launch the next batch.
-2. **Phase 13** (content and polish). Done so far: major focus trees; 14 events for wars and world events (Afghanistan, Iraq, Georgia, Crimea, the 2022 invasion of Ukraine, the Lebanon war, the 2016 Turkish coup attempt, Fukushima, the JCPOA and the US withdrawal, the Brexit referendum, the Beijing Olympics). New effects `declare_war`, `white_peace` and `transfer_provinces` act only when both sides exist with politics data, so these wars start once AFG, IRQ, GEO and UKR are researched; scripted wars carry no justification penalty. `countryModifiers` is cached per country by a cheap signature. Next: more events (including the historical wars), balance (fixed: a missing revenue or spending figure now keeps the income group's typical deficit next to the known one, so Japan no longer pays off its debt; Turkish and Iranian debt still fall fast through inflation and real surpluses), UI polish. Focus trees: `scripts/dev/gen-focus-trees-major.py` builds the 11 newer national trees; minor countries keep the generic tree by design (the user asked for one shared default). Add a national tree only for important countries, and only once they have politics data.
-4. **Phase 2, Pass B** once Pass A covers all 212 tags: `--tier full` must pass.
+Follow [docs/CONFLICTS_PLAN.md](docs/CONFLICTS_PLAN.md). In short:
+
+1. **Tiers.** Add a `light` validator tier and a default profile for countries without research, so the game and the checks treat them as complete.
+2. **Conflict countries.** Finish and audit IRQ, AFG and AFN (partial folders). Light research for SYR, maybe LBN and YEM. Decide with the user which other partial folders to keep (IND, PAK, CAN, MEX) and delete the rest.
+3. **Non-state actors.** Extend the rebel / civil-war mechanic so events spawn and end named armed groups on real dates and regions: ISIS, the Taliban, Hamas in Gaza, the Donbas separatists, the Syrian rebels.
+4. **Conflict scripts.** Iraq (2003 to ISIS to withdrawal), Afghanistan (2001 to 2021), Syria (2011 to 2024), Israel–Palestine (2007 split, Gaza wars, 7 October), Lebanon 2006. All with sourced dates.
+5. **Then Phase 13 polish:**
+   - Balance: Turkish and Iranian debt fall fast.
+   - UI polish.
+   - More events where useful. There are about 450 now, from `scripts/dev/gen-events-history.py` and `scripts/research/verify-events.ts`.
+
+For each research batch:
+
+- Run `npm run validate-data -- --only <tags> --tier core`.
+- Spot-check with `scripts/research/wiki.ts`, and check anything after June 2026 yourself.
+- Run `npm run review-report`.
+- Commit, then update docs/PHASE2_BATCHES.md.
 
 ## Decisions already made (don't relitigate)
 
