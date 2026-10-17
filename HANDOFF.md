@@ -108,7 +108,6 @@ New Millennium is a grand strategy game in the style of Hearts of Iron IV, set f
 4. **Drawing** (`adcb3f6`): `src/ui/units/planDrawing.ts`. Lines snap to provinces and gaps are filled along land paths. Drag or click; Enter or a double-click finishes, Backspace undoes a point, Esc or right-click cancels. Hold/Execute; execution only at war.
 5. **Combat** (`82726e4`): flanking bonus, supply in combat, retreats to the safest friendly neighbour, and destruction when encircled. Battles record progress, modifiers and casualties; wars record casualties and victories.
 6. **War clarity** (`37ac6c7`): `warStatus()` (score, casualties, territory). War overview panel (outliner or battle marker). Battle markers with progress bars.
-8. **Rivers:** `scripts/map/rivers.ts` reads Natural Earth rivers (already in `.cache/raw`; `npm run fetch-map` downloads them) and writes `public/map/rivers.json`: 1,383 neighbouring province pairs with a river along at least 35% of their border (scalerank 7 or lower). Attackers crossing one lose `river_crossing_penalty` (20%) of their attack; battles name the river. Rerun the script after a map rebuild. River names are the nearest Natural Earth line and can be off where rivers meet.
 7. **Peace** (`9748e73`): `src/sim/military/peace.ts`.
    - Capitulation at 70% occupied, or the capital plus 35%.
    - A peace conference with annex, provinces, puppet and change of ideology, all costing war score.
@@ -116,6 +115,7 @@ New Millennium is a grand strategy game in the style of Hearts of Iron IV, set f
    - Puppets (`state.subjects`, v12) follow their overlord into wars.
    - White peace offers.
    - Fronts are cleaned up after peace.
+8. **Rivers** (`3604441`): `scripts/map/rivers.ts` reads Natural Earth rivers (already in `.cache/raw`; `npm run fetch-map` downloads them) and writes `public/map/rivers.json`: 1,383 neighbouring province pairs with a river along at least 35% of their border (scalerank 7 or lower). Attackers crossing one lose `river_crossing_penalty` (20%) of their attack; battles name the river. Rerun the script after a map rebuild. River names are the nearest Natural Earth line and can be off where rivers meet.
 
 **Still stubbed in war:**
 - **Peace terms:** no reparations, demilitarisation or released nations. The terms list in `peace.ts` is open for them.
