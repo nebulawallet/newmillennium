@@ -121,6 +121,28 @@ describe("war", () => {
     expect(army.executing).toBe(false);
   }, 120_000);
 
+  it("a front can be set before a war: the army lines up on the border, then attacks once at war", () => {
+    const sim = fresh("DEU");
+    const s = sim.state;
+    const ids = s.divisions.filter((d) => d.owner === "DEU").map((d) => d.id);
+    sim.dispatch({ type: "create_army", tag: "DEU", divisions: ids });
+    const army = s.armies.find((a) => a.owner === "DEU")!;
+    expect(sim.dispatch({ type: "set_front", tag: "DEU", army: army.id, enemy: "POL" }).ok).toBe(true);
+    for (let i = 0; i < 40; i++) sim.step();
+    expect(army.stretch?.sort((a, b) => a - b)).toEqual([4, 10, 16, 22]);
+    expect(army.status).toBe("holding");
+    // an offensive line and execution do nothing in peace
+    sim.dispatch({ type: "set_offensive", tag: "DEU", army: army.id, provinces: [6, 12, 18, 24] });
+    sim.dispatch({ type: "execute_plan", tag: "DEU", army: army.id, on: true });
+    for (let i = 0; i < 20; i++) sim.step();
+    expect(s.provinceController.some((c, k) => c === "DEU" && s.provinceOwner[k] === "POL")).toBe(false);
+    s.countries.DEU!.warSupport = 1;
+    s.countries.POL!.warSupport = 1;
+    sim.dispatch({ type: "declare_war", tag: "DEU", target: "POL" });
+    for (let i = 0; i < 200 && !s.pendingPeace && s.wars.length; i++) sim.step();
+    expect(s.provinceController.some((c, k) => c === "DEU" && s.provinceOwner[k] === "POL")).toBe(true);
+  }, 120_000);
+
   it("cannot declare war twice", () => {
     const sim = fresh(null);
     sim.dispatch({ type: "declare_war", tag: "DEU", target: "POL" });

@@ -12,7 +12,7 @@ export const selectedDivisions = signal<number[]>([]);
 /** The army whose card is selected in the bottom bar (0 = none). */
 export const selectedArmy = signal(0);
 /** Battle-plan drawing tool in use: the army it draws for and what it draws. */
-export const planTool = signal<{ army: number; kind: "offensive" | "spearhead" } | null>(null);
+export const planTool = signal<{ army: number; kind: "front" | "offensive" | "spearhead" } | null>(null);
 /** Provinces crossed so far by the line or arrow being drawn. */
 export const planDraft = signal<number[]>([]);
 /** Building being placed from the Construction tab: map clicks queue it in the clicked province. */

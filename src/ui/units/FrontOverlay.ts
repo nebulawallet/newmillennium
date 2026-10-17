@@ -8,7 +8,8 @@
  */
 import { provinceAt, type MapData } from "../../render/mapData.ts";
 import { millerY, type MapView } from "../../render/MapView.ts";
-import { frontPairs } from "../../sim/military/fronts.ts";
+import { borderPairs, frontPairs } from "../../sim/military/fronts.ts";
+import { hostile } from "../../sim/military/war.ts";
 import type { SimMap } from "../../sim/simulation.ts";
 import type { GameState } from "../../sim/state.ts";
 import { planDraft, planTool, selectedArmy } from "../store.ts";
@@ -75,7 +76,7 @@ export class FrontOverlay {
   /** Rebuild the geometry (daily, or when the selection changes). */
   refresh(force = false): void {
     const state = this.getState();
-    const key = `${selectedArmy.value}:${state?.armies.length ?? 0}:${state?.armies.map((a) => a.offensive.length + a.spearheads.length * 100 + (a.executing ? 7 : 0)).join(",")}`;
+    const key = `${selectedArmy.value}:${state?.armies.find((a) => a.id === selectedArmy.value)?.front?.enemy ?? "-"}:${state?.armies.length ?? 0}:${state?.armies.map((a) => a.offensive.length + a.spearheads.length * 100 + (a.executing ? 7 : 0)).join(",")}`;
     if (!force && state?.day === this.lastDay && key === this.lastKey) return;
     this.lastDay = state?.day ?? -1;
     this.lastKey = key;
@@ -92,6 +93,9 @@ export class FrontOverlay {
       this.all.push(...segs);
       if (stretch.has(p.own)) this.army.push(...segs);
     }
+    // a front on a border we are not at war over (lined up before a declaration)
+    const peace = sel?.front?.enemy && !hostile(state, state.player, sel.front.enemy) ? sel.front.enemy : null;
+    if (peace) for (const p of borderPairs(state, sm, state.player, peace)) this.army.push(...(byPair.get(Math.min(p.own, p.enemy) * 65536 + Math.max(p.own, p.enemy)) ?? []));
     for (const a of state.armies) {
       if (a.owner !== state.player) continue;
       const isSel = a.id === sel?.id;

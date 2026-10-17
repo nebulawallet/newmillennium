@@ -222,6 +222,16 @@ async function boot(): Promise<void> {
     const tool = planTool.value;
     if (!tool) return;
     {
+      if (tool.kind === "front") {
+        // a click on the country whose border the army holds
+        if (phase !== "up") return;
+        const st = session.state, id = world.pickAt(x, y);
+        const owner = id ? st?.provinceController[id - 1] : undefined;
+        if (st?.player && owner && owner !== st.player) session.dispatch({ type: "set_front", tag: st.player, army: tool.army, enemy: owner });
+        planTool.value = null;
+        fronts.refresh(true);
+        return;
+      }
       if (phase === "down") { last = null; planDraft.value = []; crossed(x, y); }
       else if (phase === "move") crossed(x, y);
       else {

@@ -18,6 +18,11 @@ import { tip } from "../tooltip.tsx";
 import { SYMBOL_NAME, symbolSvg } from "./symbols.ts";
 
 const pct = (x: number) => `${Math.round(x * 100)}%`;
+const HINT = {
+  front: "Click the country whose border this army should hold.",
+  offensive: "Drag across enemy provinces to draw the offensive line.",
+  spearhead: "Drag from the front into enemy land to draw the arrow.",
+} as const;
 
 function ArmyCard({ db, session, army }: { db: ContentDB; session: Session; army: Army }) {
   // children skip re-rendering when their props are unchanged: subscribe to the clock directly
@@ -101,11 +106,11 @@ export function ArmyBar({ db, session }: { db: ContentDB; session: Session }) {
   const enemies = [...new Set(state.wars.flatMap((w) => [...w.attackers, ...w.defenders]).filter((t) => hostile(state, me, t)))];
   const run = (c: Parameters<Session["dispatch"]>[0]) => setMsg(session.dispatch(c).text);
   const tool = planTool.value;
-  const draw = (kind: "offensive" | "spearhead") => {
+  const draw = (kind: "front" | "offensive" | "spearhead") => {
     if (!sel) return;
     planDraft.value = [];
     planTool.value = tool?.kind === kind ? null : { army: sel.id, kind };
-    setMsg(planTool.value ? (kind === "offensive" ? "Drag across enemy provinces to draw the offensive line." : "Drag from the front into enemy land to draw the arrow.") : "");
+    setMsg("");
   };
   const newArmy = () => {
     const picked = selectedDivisions.value.filter((id) => state.divisions.some((d) => d.id === id && d.owner === me));
@@ -130,15 +135,16 @@ export function ArmyBar({ db, session }: { db: ContentDB; session: Session }) {
             }} aria-label="Front">
               <option value="">No front</option>
               <option value="*">Every enemy</option>
-              {enemies.map((t) => <option value={t} key={t}>{countryName(db, state, t)}</option>)}
+              {[...new Set([...enemies, ...(sel.front?.enemy ? [sel.front.enemy] : [])])].map((t) => <option value={t} key={t}>{countryName(db, state, t)}{enemies.includes(t) ? "" : " (not at war)"}</option>)}
             </select>
           </label>
+          <button class={`btn ${tool?.kind === "front" ? "primary" : ""}`} onClick={() => draw("front")} {...tip(() => ({ title: "Front line", note: "Click a neighbouring country on the map. The army spreads along that border and holds it; at war, it attacks when you execute an offensive line or spearhead." }))}>Front line</button>
           <button class={`btn ${tool?.kind === "offensive" ? "primary" : ""}`} onClick={() => draw("offensive")} {...tip(() => ({ title: "Offensive line", note: "Drag across the enemy provinces to push to. When executed, the army attacks the provinces between its front and the line." }))}>Offensive line</button>
           <button class={`btn ${tool?.kind === "spearhead" ? "primary" : ""}`} onClick={() => draw("spearhead")} {...tip(() => ({ title: "Spearhead", note: `Drag a path into enemy land. Its fastest divisions (about a third of the army) push along it province by province.` }))}>Spearhead</button>
           <button class="btn" onClick={() => run({ type: "clear_plan", tag: me, army: sel.id })} {...tip(() => ({ title: "Clear plan", note: "Removes the offensive line and spearheads; the army keeps holding its front." }))}>Clear</button>
           <button class="btn" disabled={!selectedDivisions.value.some((id) => !sel.divisions.includes(id))} onClick={() => run({ type: "assign_divisions", tag: me, army: sel.id, divisions: selectedDivisions.value })} {...tip(() => ({ title: "Add selected divisions", note: "Moves the selected divisions into this army." }))}>Add selected</button>
           <button class="btn danger" onClick={() => { run({ type: "disband_army", tag: me, army: sel.id }); selectedArmy.value = 0; }} {...tip(() => ({ title: "Disband", note: "The divisions stay where they are, without orders." }))}>Disband</button>
-          {msg && <span class="faint small at-msg">{msg}</span>}
+          {(tool ? HINT[tool.kind] : msg) && <span class="faint small at-msg">{tool ? HINT[tool.kind] : msg}</span>}
         </div>
       )}
       <div class="army-bar">

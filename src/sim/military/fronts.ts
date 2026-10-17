@@ -131,6 +131,20 @@ export function frozenEnemies(state: GameState, tag: string): Set<string> | unde
   return out.size ? out : undefined;
 }
 
+/**
+ * A front against a country we are not at war with (HOI4 lets you line up on a border before
+ * declaring war): our provinces next to provinces it holds.
+ */
+export function borderPairs(state: GameState, map: SimMap, tag: string, enemy: string): FrontPair[] {
+  const ctrl = state.provinceController;
+  const out: FrontPair[] = [];
+  for (let i = 0; i < ctrl.length; i++) {
+    if (ctrl[i] !== tag) continue;
+    for (const n of map.neighbours.get(i + 1) ?? []) if (ctrl[n - 1] === enemy) out.push({ own: i + 1, enemy: n, enemyTag: enemy });
+  }
+  return out;
+}
+
 /** Order provinces along the front's main axis (so armies take neighbouring stretches). */
 function orderAlong(map: SimMap, ids: number[]): number[] {
   if (ids.length < 3) return ids;
@@ -224,9 +238,11 @@ export function applyPlanCommand(ctx: SimContext, c: PlanCommand): { ok: boolean
       return { ok: true, text: `${own.length} division${own.length === 1 ? "" : "s"} joined ${army.name}.` };
     }
     case "set_front":
+      if (c.enemy === c.tag) return { ok: false, text: "Choose another country's border." };
+      if (c.enemy && !state.countries[c.enemy] && !state.provinceOwner.includes(c.enemy)) return { ok: false, text: "Unknown country." };
       if (c.enemy === false) delete army.front;
       else army.front = { enemy: c.enemy };
-      return { ok: true, text: c.enemy === false ? "Front removed." : "Front assigned." };
+      return { ok: true, text: c.enemy === false ? "Front removed." : c.enemy && !hostile(state, c.tag, c.enemy) ? "Front assigned: the army lines up on the border and attacks once you are at war and execute." : "Front assigned." };
     case "set_offensive":
       army.offensive = [...new Set(c.provinces)];
       army.front ??= { enemy: null };
@@ -308,7 +324,7 @@ export function runPlans(ctx: SimContext, owners?: Set<string>, skipFor?: (tag: 
     const [tag, enemy] = key.split(":") as [string, string];
     let pairs = cache.pairs.get(tag);
     if (!pairs) cache.pairs.set(tag, (pairs = frontPairs(state, map, tag, skipFor?.(tag))));
-    const mine = enemy === "*" ? pairs : pairs.filter((p) => p.enemyTag === enemy);
+    const mine = enemy === "*" ? pairs : hostile(state, tag, enemy) ? pairs.filter((p) => p.enemyTag === enemy) : borderPairs(state, map, tag, enemy);
     let comp = cache.comps.get(tag);
     if (!comp) cache.comps.set(tag, (comp = components(state, map, tag)));
     const live = armies.filter((a) => a.divisions.length);
