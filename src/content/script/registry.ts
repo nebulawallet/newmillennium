@@ -161,8 +161,19 @@ export const EFFECTS: Record<string, ScriptDef> = {
     description: "Add equipment of a family to the stockpile (military aid).",
   },
   add_divisions: {
-    args: z.strictObject({ template: Id, count: z.number().int().positive().max(50) }),
-    description: "Raise divisions of a template at once (mobilisation), equipped from the stockpile.",
+    args: z.strictObject({ template: Id, count: z.number().int().positive().max(50), in: Tag.optional() }),
+    description: "Raise divisions of a template at once (mobilisation), equipped from the stockpile; `in` deploys them in another country's territory (an expeditionary force).",
+    refs: { in: "tag" },
+  },
+  deploy_divisions: {
+    args: z.strictObject({ count: z.number().int().positive().max(50), in: Tag }),
+    description: "Send this country's strongest divisions to another country's territory (an expeditionary force), spread over its provinces.",
+    refs: { in: "tag" },
+  },
+  dissolve_country: {
+    args: z.strictObject({ into: Tag }),
+    description: "This country merges into another: the provinces it owns or controls and its divisions pass to `into`, and it leaves the game.",
+    refs: { into: "tag" },
   },
   white_peace: { args: z.strictObject({ with: Tag }), description: "End the war with this country without territorial change.", refs: { with: "tag" } },
   transfer_provinces: {

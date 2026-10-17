@@ -3,7 +3,7 @@
  * (src/content/script/registry.ts) against the game state, and describes them in plain words for
  * tooltips. Effects for systems that arrive in later phases are accepted and described as such.
  */
-import { grantEquipment, spawnDivisions } from "../military/military.ts";
+import { deployDivisions, grantEquipment, spawnDivisions } from "../military/military.ts";
 import { declareWar, makePeace, type WarGoal } from "../military/war.ts";
 import { addOpinion, atWarWith, inBloc, joinBloc, leaveBloc, opinion } from "../diplomacy/diplomacy.ts";
 import type { ContentDB } from "../../content/compile.ts";
@@ -332,7 +332,24 @@ function effect(ctx: SimContext, scope: Scope, k: string, v: unknown, source: st
       break;
     }
     case "add_equipment": grantEquipment(ctx, scope.tag, a.family as string, a.amount as number); break;
-    case "add_divisions": spawnDivisions(ctx, scope.tag, a.template as string, a.count as number); break;
+    case "add_divisions": spawnDivisions(ctx, scope.tag, a.template as string, a.count as number, a.in as string | undefined); break;
+    case "deploy_divisions": deployDivisions(ctx, scope.tag, a.count as number, a.in as string); break;
+    case "dissolve_country": {
+      const into = a.into as string;
+      if (!state.countries[into]?.active || into === scope.tag) break;
+      for (let i = 0; i < state.provinceOwner.length; i++) {
+        if (state.provinceOwner[i] === scope.tag) state.provinceOwner[i] = into;
+        if (state.provinceController[i] === scope.tag) state.provinceController[i] = into;
+      }
+      for (const d of state.divisions) if (d.owner === scope.tag) { d.owner = into; d.path = []; d.attacking = undefined; }
+      for (const w of state.wars) { w.attackers = w.attackers.filter((t) => t !== scope.tag); w.defenders = w.defenders.filter((t) => t !== scope.tag); }
+      state.wars = state.wars.filter((w) => w.attackers.length && w.defenders.length);
+      cs.active = false;
+      const listName = (t: string) => db.countryList.find((c) => c.tag === t)?.name ?? t;
+      ctx.log(scope.tag, "diplomacy", `${listName(scope.tag)} merges into ${listName(into)}`);
+      ctx.emit({ type: "map_changed" });
+      break;
+    }
     case "white_peace": {
       const other = a.with as string;
       const war = state.wars.find((w) => (w.attackers.includes(scope.tag) && w.defenders.includes(other)) || (w.defenders.includes(scope.tag) && w.attackers.includes(other)));
@@ -457,7 +474,9 @@ export function describeEffects(db: ContentDB, effects: unknown[], depth = 0): s
       case "add_opinion": line = `Opinion of ${a.target === "ROOT" || a.target === "FROM" ? "them" : name.tag(a.target as string)} ${signed(a.value as number)}`; break;
       case "declare_war": line = `War with ${name.tag(a.target as string)}`; break;
       case "add_equipment": line = `+${a.amount} ${db.equipment.get(a.family as string)?.name ?? a.family}`; break;
-      case "add_divisions": line = `${a.count} new divisions`; break;
+      case "add_divisions": line = `${a.count} new divisions${a.in ? ` deployed in ${name.tag(a.in as string)}` : ""}`; break;
+      case "dissolve_country": line = `Merges into ${name.tag(a.into as string)}`; break;
+      case "deploy_divisions": line = `${a.count} divisions deploy to ${name.tag(a.in as string)}`; break;
       case "white_peace": line = `Peace with ${name.tag(a.with as string)}`; break;
       case "transfer_provinces": line = `Provinces of ${name.tag(a.from as string)} pass to this country`; break;
       case "spawn_armed_group": line = `${db.armedGroups.get(a.group as string)?.name ?? a.group} takes provinces of ${[...new Set(((a.regions as GroupRegion[] | undefined) ?? []).map((r) => name.tag(r.from)))].join(", ") || "nobody"}${a.divisions ? ` with ${a.divisions} divisions` : ""}`; break;

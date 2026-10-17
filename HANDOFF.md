@@ -158,7 +158,14 @@ Follow [docs/CONFLICTS_PLAN.md](docs/CONFLICTS_PLAN.md). In short:
    - Balance is open: in a trial, 8 ISIS divisions lost four of five Iraqi provinces to 24 Iraqi divisions within two months. The scripts in step 4 need groups that hold until their real dates.
    - Lebanon is only two provinces on the map, so a Hezbollah region for 2006 would cover Beirut too.
    - AFN (United Front) only controls Badakhshan and Takhar at the start (owner AFG).
-4. **Conflict scripts.** Iraq (2003 to ISIS to withdrawal), Afghanistan (2001 to 2021), Syria (2011 to 2024), Israel–Palestine (2007 split, Gaza wars, 7 October), Lebanon 2006. All with sourced dates.
+4. **Conflict scripts.** Done (17 Oct 2026): `data/events/conflicts.json`, 42 events with dates fetched from Wikipedia.
+   - Afghanistan: Taliban rule ends 9 Dec 2001 (insurgency on two southern provinces), the United Front merges 22 Dec 2001, the offensive from 1 May 2021, and the takeover on 15 Aug 2021.
+   - Iraq: a real 2003 invasion from Kuwait (US and UK divisions deployed, `status_quo` goal) ending 1 May 2003. ISIS: Raqqa 13 Jan 2014, Mosul 10 Jun 2014, through victory on 9 Dec 2017 and Baghuz on 23 Mar 2019.
+   - Syria: the opposition from 19 Jul 2012 to the fall of Assad on 8 Dec 2024; Russia from 30 Sep 2015; the SDF from 10 Oct 2015 to its dissolution on 25 Aug 2026.
+   - Gaza: Hamas from 15 Jun 2007, the wars of 2008–09, 2014 and 2021, and 7 Oct 2023 (ongoing).
+   - Donbas: DPR 7 Apr 2014, war from 12 Apr, LPR 27 Apr, annexed by Russia 30 Sep 2022.
+   - Engine: historical mode freezes AI fronts with groups, and scripted wars do not end by exhaustion (Russia–Ukraine had been making a white peace in September 2022). `deploy_divisions` and `dissolve_country` effects. Fixed an AI bug: any limited war (for example USA–Taliban) stopped a country attacking in its other wars.
+   - Open: the 2003 invasion only takes al-Muthanna before 1 May (combat against entrenched defenders is slow); the occupation and the 2003–2011 insurgency are not on the map. Lebanon 2006 has no Hezbollah region, because the map has only two Lebanese provinces. Province choices are flagged needs_review.
 5. **Then Phase 13 polish:**
    - Balance: Turkish and Iranian debt fall fast.
    - UI polish.

@@ -254,20 +254,35 @@ export function planMilitary(ctx: SimContext, tag: string, maxOrders = 12): Comm
   const targets = new Map<number, number>();
   const threatened = new Map<number, number>();
   const ctrl = state.provinceController;
+  // historical mode: fronts with armed groups hold until scripts move them (src/sim/conflicts)
+  const frozen = new Set(state.rules.electionMode === "historical"
+    ? state.wars.filter((w) => w.armedGroup && (w.attackers.includes(tag) || w.defenders.includes(tag))).flatMap((w) => (w.attackers.includes(tag) ? w.defenders : w.attackers))
+    : []);
+  // the front runs from our provinces and from wherever our divisions stand (expeditionary forces abroad)
+  const standing = new Set(mine.map((d) => d.province));
   for (let i = 0; i < ctrl.length; i++) {
-    if (ctrl[i] !== tag) continue;
+    if (ctrl[i] !== tag && !standing.has(i + 1)) continue;
     for (const n of map.neighbours.get(i + 1) ?? []) {
       const c = ctrl[n - 1];
-      if (!c || c === tag || !atWarWith(state, tag, c)) continue;
+      if (!c || c === tag || !atWarWith(state, tag, c) || frozen.has(c)) continue;
       targets.set(n, enemyAt.get(n) ?? 0);
       if (enemyAt.get(n)) threatened.set(i + 1, Math.max(threatened.get(i + 1) ?? 0, enemyAt.get(n)!));
     }
   }
-  // in a limited war the attacker only goes for the zone near its border
+  // in a limited war the attacker only goes for the zone near its border (other wars are not limited by it)
   const zone = new Set<number>();
-  let limited = false;
-  for (const w of state.wars) if (w.goal === "limited" && w.attackers.includes(tag)) { limited = true; for (const p of w.zone ?? []) zone.add(p); }
-  if (limited) for (const p of [...targets.keys()]) if (!zone.has(p) && state.provinceOwner[p - 1] !== tag) targets.delete(p);
+  const limitedEnemies = new Set<string>();
+  const openEnemies = new Set<string>();
+  for (const w of state.wars) {
+    if (!w.attackers.includes(tag) && !w.defenders.includes(tag)) continue;
+    const enemies = w.attackers.includes(tag) ? w.defenders : w.attackers;
+    if (w.goal === "limited" && w.attackers.includes(tag)) { for (const e of enemies) limitedEnemies.add(e); for (const p of w.zone ?? []) zone.add(p); }
+    else for (const e of enemies) openEnemies.add(e);
+  }
+  for (const p of [...targets.keys()]) {
+    const c = ctrl[p - 1]!;
+    if (limitedEnemies.has(c) && !openEnemies.has(c) && !zone.has(p) && state.provinceOwner[p - 1] !== tag) targets.delete(p);
+  }
   if (!targets.size) return out;
   const free = [...idle];
   const avg = ourPower / Math.max(1, mine.length);

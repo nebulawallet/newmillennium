@@ -2,7 +2,8 @@ import { describe, expect, it } from "vitest";
 import { compileContent, refChecker } from "../src/content/compile.ts";
 import { validateEffects, type ScriptIssue } from "../src/content/script/validate.ts";
 import { armedGroupLoses, endArmedGroup, spawnArmedGroup } from "../src/sim/conflicts/armedGroups.ts";
-import { hostile } from "../src/sim/military/war.ts";
+import { declareWar, hostile } from "../src/sim/military/war.ts";
+import { planMilitary } from "../src/sim/ai/ai.ts";
 import { defaultSystems, Simulation, simMapFrom } from "../src/sim/simulation.ts";
 import { createInitialState } from "../src/sim/state.ts";
 import { NodeFiles } from "../scripts/lib/nodeFiles.ts";
@@ -99,6 +100,24 @@ describe("armed groups", () => {
     expect(s.divisions.filter((d) => d.owner === "DEU").map((d) => d.id).sort()).toEqual(talIds.sort());
     expect(s.wars).toHaveLength(0);
     expect(Object.keys(s.armedGroups.home)).toHaveLength(0);
+  });
+
+  it("hold their land against the AI in historical mode until a script moves the front", () => {
+    const sim = new Simulation(db, createInitialState(db, { provinces: provinces as never }, { contentHash: "t", player: null }), defaultSystems(), simMapFrom(provinces as never, adjacency));
+    spawnArmedGroup(sim.context, "ISG", [{ from: "DEU", provinces: ["P1", "P2"] }], 1);
+    for (let i = 0; i < 120; i++) sim.step();
+    expect([owner(sim, 1), owner(sim, 2)]).toEqual(["ISG", "ISG"]);
+  }, 60_000);
+
+  it("a limited war with a group does not stop the AI fighting its other wars", () => {
+    const sim = fresh();
+    const s = sim.state;
+    spawnArmedGroup(sim.context, "TAL", [{ from: "DEU", provinces: ["P13"] }], 1, []);
+    declareWar(sim.context, "DEU", "TAL", "limited", false, true);
+    declareWar(sim.context, "DEU", "POL", "status_quo", false, true);
+    for (const d of s.divisions) if (d.owner === "POL") d.province = 24;
+    const orders = planMilitary(sim.context, "DEU");
+    expect(orders.some((o) => o.type === "move_division" && s.provinceOwner[(o as { province: number }).province - 1] === "POL")).toBe(true);
   });
 
   it("can hold land without a war, and a group province can be annexed by a third country", () => {

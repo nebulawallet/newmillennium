@@ -139,7 +139,7 @@ export function Outliner({ db, session }: { db: ContentDB; session: Session }) {
   version.value;
   const state = session.state;
   const items = feed.value.slice(0, 8);
-  const nameOf = (tag: string | null) => (tag ? (db.countries.get(tag)?.country?.name.en ?? tag) : "World");
+  const nameOf = (tag: string | null) => (tag ? (state?.dynamicCountries[tag]?.name ?? db.countries.get(tag)?.country?.name.en ?? db.countryList.find((c) => c.tag === tag)?.name ?? tag) : "World");
   const playerName = state?.player ? nameOf(state.player) : "";
   return (
     <aside class="outliner hp" aria-label="Outliner">

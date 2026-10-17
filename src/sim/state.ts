@@ -177,6 +177,8 @@ export interface War {
   zone?: number[];
   /** A war an armed group fights (src/sim/conflicts): it never ends by exhaustion, only by script or defeat. */
   armedGroup?: boolean;
+  /** Started by a historical event: in historical mode it ends on its real date (a script), not by exhaustion. */
+  scripted?: boolean;
 }
 
 export interface LogEntry {

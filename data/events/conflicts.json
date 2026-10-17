@@ -1,0 +1,1837 @@
+{
+  "note": "Conflict scripts (docs/CONFLICTS_PLAN.md): non-state armed groups on the map, wars and their ends, on sourced dates. Province choices on the coarse game map are approximations (needs_review). Division counts are gameplay values.",
+  "events": [
+    {
+      "id": "afg_taliban_rule_ends",
+      "title": "End of Taliban rule",
+      "description": "The Taliban lost Kabul on 13–14 November 2001 and Kandahar, their last stronghold, by 9 December 2001. Their fighters withdrew to the south and east and across the border, and began an insurgency against the new government and the US-led coalition.",
+      "countries": [
+        "USA"
+      ],
+      "major": true,
+      "historical": {
+        "date": "2001-12-09",
+        "any_path": true,
+        "dynamic_mode": false,
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/Fall_of_Kandahar",
+            "title": "Wikipedia: Fall of Kandahar",
+            "accessed": "2026-10-17"
+          },
+          {
+            "url": "https://en.wikipedia.org/wiki/Fall_of_Kabul_(2001)",
+            "title": "Wikipedia: Fall of Kabul (2001)",
+            "accessed": "2026-10-17"
+          },
+          {
+            "url": "https://en.wikipedia.org/wiki/Taliban_insurgency",
+            "title": "Wikipedia: Taliban insurgency",
+            "accessed": "2026-10-17"
+          }
+        ],
+        "confidence": "needs_review",
+        "review_note": "Dates are sourced. The provinces are a province-level approximation on the game map (one game province can cover a whole governorate); check against the source's territorial-control maps."
+      },
+      "options": [
+        {
+          "id": "ok",
+          "name": "Continue",
+          "effects": [
+            {
+              "white_peace": {
+                "with": "AFG"
+              }
+            },
+            {
+              "spawn_armed_group": {
+                "group": "TAL",
+                "regions": [
+                  {
+                    "from": "AFG",
+                    "provinces": [
+                      "Uruzgan",
+                      "Zabul"
+                    ]
+                  }
+                ],
+                "divisions": 3,
+                "war_with": [
+                  "AFG"
+                ]
+              }
+            },
+            {
+              "declare_war": {
+                "target": "TAL",
+                "goal": "limited"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "afn_interim_administration",
+      "title": "Afghan Interim Administration",
+      "description": "The Afghan Interim Administration under Hamid Karzai took office on 22 December 2001, and the United Front's Islamic State of Afghanistan handed over power to it.",
+      "countries": [
+        "AFN"
+      ],
+      "major": false,
+      "historical": {
+        "date": "2001-12-22",
+        "any_path": true,
+        "dynamic_mode": false,
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/Afghan_Interim_Administration",
+            "title": "Wikipedia: Afghan Interim Administration",
+            "accessed": "2026-10-17"
+          },
+          {
+            "url": "https://en.wikipedia.org/wiki/Northern_Alliance",
+            "title": "Wikipedia: Northern Alliance",
+            "accessed": "2026-10-17"
+          }
+        ],
+        "confidence": "verified"
+      },
+      "options": [
+        {
+          "id": "ok",
+          "name": "Continue",
+          "effects": [
+            {
+              "dissolve_country": {
+                "into": "AFG"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "afg_taliban_offensive_2021",
+      "title": "Taliban offensive",
+      "description": "On 1 May 2021, as foreign troops withdrew, the Taliban began an offensive that took most rural districts and then the provincial capitals.",
+      "countries": [
+        "AFG"
+      ],
+      "major": true,
+      "historical": {
+        "date": "2021-05-01",
+        "any_path": true,
+        "dynamic_mode": false,
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2021_Taliban_offensive",
+            "title": "Wikipedia: 2021 Taliban offensive",
+            "accessed": "2026-10-17"
+          }
+        ],
+        "confidence": "needs_review",
+        "review_note": "Dates are sourced. The provinces are a province-level approximation on the game map (one game province can cover a whole governorate); check against the source's territorial-control maps."
+      },
+      "options": [
+        {
+          "id": "ok",
+          "name": "Continue",
+          "effects": [
+            {
+              "spawn_armed_group": {
+                "group": "TAL",
+                "regions": [
+                  {
+                    "from": "AFG",
+                    "provinces": [
+                      "Hilmand",
+                      "Kandahar (Kandahar)",
+                      "Kandahar (South-West)",
+                      "Ghazni",
+                      "Paktika",
+                      "Farah",
+                      "Nimroz",
+                      "Badghis",
+                      "Ghor",
+                      "Faryab",
+                      "Kunduz"
+                    ]
+                  }
+                ],
+                "divisions": 6
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "afg_fall_of_kabul_2021",
+      "title": "Fall of Kabul",
+      "description": "The Taliban entered Kabul on 15 August 2021. President Ashraf Ghani left the country, the government collapsed, and the Taliban restored the Islamic Emirate.",
+      "countries": [
+        "AFG"
+      ],
+      "major": true,
+      "historical": {
+        "date": "2021-08-15",
+        "any_path": true,
+        "dynamic_mode": false,
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/Fall_of_Kabul_(2021)",
+            "title": "Wikipedia: Fall of Kabul (2021)",
+            "accessed": "2026-10-17"
+          }
+        ],
+        "confidence": "verified"
+      },
+      "options": [
+        {
+          "id": "ok",
+          "name": "Continue",
+          "effects": [
+            {
+              "end_armed_group": {
+                "group": "TAL",
+                "into": "AFG",
+                "disband_army_of": "AFG"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "usa_iraq_invasion_force",
+      "title": "Invasion force in Kuwait",
+      "description": "US ground forces crossed into Iraq from Kuwait when the invasion began on 20 March 2003. The number of divisions is a gameplay value.",
+      "countries": [
+        "USA"
+      ],
+      "major": false,
+      "historical": {
+        "date": "2003-03-20",
+        "any_path": true,
+        "dynamic_mode": false,
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2003_invasion_of_Iraq",
+            "title": "Wikipedia: 2003 invasion of Iraq",
+            "accessed": "2026-10-17"
+          }
+        ],
+        "confidence": "verified"
+      },
+      "options": [
+        {
+          "id": "ok",
+          "name": "Continue",
+          "effects": [
+            {
+              "deploy_divisions": {
+                "count": 8,
+                "in": "KWT"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "gbr_iraq_invasion_force",
+      "title": "British forces in Kuwait",
+      "description": "British forces took part in the invasion from Kuwait from 20 March 2003, in the south around Basra. The number of divisions is a gameplay value.",
+      "countries": [
+        "GBR"
+      ],
+      "major": false,
+      "historical": {
+        "date": "2003-03-20",
+        "any_path": true,
+        "dynamic_mode": false,
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2003_invasion_of_Iraq",
+            "title": "Wikipedia: 2003 invasion of Iraq",
+            "accessed": "2026-10-17"
+          }
+        ],
+        "confidence": "verified"
+      },
+      "options": [
+        {
+          "id": "ok",
+          "name": "Continue",
+          "effects": [
+            {
+              "deploy_divisions": {
+                "count": 2,
+                "in": "KWT"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "usa_iraq_invasion_ends",
+      "title": "End of the invasion of Iraq",
+      "description": "Baghdad fell on 9 April 2003, and the invasion phase ended on 1 May 2003. The occupation and the insurgency that followed are not fought out on the map.",
+      "countries": [
+        "USA"
+      ],
+      "major": false,
+      "historical": {
+        "date": "2003-05-01",
+        "any_path": true,
+        "dynamic_mode": false,
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2003_invasion_of_Iraq",
+            "title": "Wikipedia: 2003 invasion of Iraq",
+            "accessed": "2026-10-17"
+          },
+          {
+            "url": "https://en.wikipedia.org/wiki/Battle_of_Baghdad_(2003)",
+            "title": "Wikipedia: Battle of Baghdad (2003)",
+            "accessed": "2026-10-17"
+          }
+        ],
+        "confidence": "verified"
+      },
+      "options": [
+        {
+          "id": "ok",
+          "name": "Continue",
+          "effects": [
+            {
+              "white_peace": {
+                "with": "IRQ"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "gbr_iraq_invasion_ends",
+      "title": "End of the invasion of Iraq",
+      "description": "Baghdad fell on 9 April 2003, and the invasion phase ended on 1 May 2003. The occupation and the insurgency that followed are not fought out on the map.",
+      "countries": [
+        "GBR"
+      ],
+      "major": false,
+      "historical": {
+        "date": "2003-05-01",
+        "any_path": true,
+        "dynamic_mode": false,
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2003_invasion_of_Iraq",
+            "title": "Wikipedia: 2003 invasion of Iraq",
+            "accessed": "2026-10-17"
+          },
+          {
+            "url": "https://en.wikipedia.org/wiki/Battle_of_Baghdad_(2003)",
+            "title": "Wikipedia: Battle of Baghdad (2003)",
+            "accessed": "2026-10-17"
+          }
+        ],
+        "confidence": "verified"
+      },
+      "options": [
+        {
+          "id": "ok",
+          "name": "Continue",
+          "effects": [
+            {
+              "white_peace": {
+                "with": "IRQ"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "pol_iraq_invasion_ends",
+      "title": "End of the invasion of Iraq",
+      "description": "Baghdad fell on 9 April 2003, and the invasion phase ended on 1 May 2003. The occupation and the insurgency that followed are not fought out on the map.",
+      "countries": [
+        "POL"
+      ],
+      "major": false,
+      "historical": {
+        "date": "2003-05-01",
+        "any_path": true,
+        "dynamic_mode": false,
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2003_invasion_of_Iraq",
+            "title": "Wikipedia: 2003 invasion of Iraq",
+            "accessed": "2026-10-17"
+          },
+          {
+            "url": "https://en.wikipedia.org/wiki/Battle_of_Baghdad_(2003)",
+            "title": "Wikipedia: Battle of Baghdad (2003)",
+            "accessed": "2026-10-17"
+          }
+        ],
+        "confidence": "verified"
+      },
+      "options": [
+        {
+          "id": "ok",
+          "name": "Continue",
+          "effects": [
+            {
+              "white_peace": {
+                "with": "IRQ"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "syr_battle_of_aleppo",
+      "title": "Battle of Aleppo",
+      "description": "Opposition fighters entered Aleppo on 19 July 2012. Rebels already held much of the countryside of Idlib and Aleppo. The Free Syrian Army had been formed by army defectors in July 2011.",
+      "countries": [
+        "SYR"
+      ],
+      "major": true,
+      "historical": {
+        "date": "2012-07-19",
+        "any_path": true,
+        "dynamic_mode": true,
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/Battle_of_Aleppo_(2012–2016)",
+            "title": "Wikipedia: Battle of Aleppo (2012–2016)",
+            "accessed": "2026-10-17"
+          },
+          {
+            "url": "https://en.wikipedia.org/wiki/Syrian_opposition",
+            "title": "Wikipedia: Syrian opposition",
+            "accessed": "2026-10-17"
+          }
+        ],
+        "confidence": "needs_review",
+        "review_note": "Dates are sourced. The provinces are a province-level approximation on the game map (one game province can cover a whole governorate); check against the source's territorial-control maps."
+      },
+      "options": [
+        {
+          "id": "ok",
+          "name": "Continue",
+          "effects": [
+            {
+              "spawn_armed_group": {
+                "group": "SYO",
+                "regions": [
+                  {
+                    "from": "SYR",
+                    "provinces": [
+                      "Idlib",
+                      "Aleppo"
+                    ]
+                  }
+                ],
+                "divisions": 4,
+                "war_with": [
+                  "SYR"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "syr_rebels_take_raqqa",
+      "title": "Rebels take Raqqa",
+      "description": "Opposition and Islamist rebels captured the city of Raqqa from the government on 3–6 March 2013.",
+      "countries": [
+        "SYR"
+      ],
+      "major": false,
+      "historical": {
+        "date": "2013-03-06",
+        "any_path": true,
+        "dynamic_mode": true,
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/Battle_of_Raqqa_(2013)",
+            "title": "Wikipedia: Battle of Raqqa (2013)",
+            "accessed": "2026-10-17"
+          }
+        ],
+        "confidence": "needs_review",
+        "review_note": "Dates are sourced. The provinces are a province-level approximation on the game map (one game province can cover a whole governorate); check against the source's territorial-control maps."
+      },
+      "options": [
+        {
+          "id": "ok",
+          "name": "Continue",
+          "effects": [
+            {
+              "spawn_armed_group": {
+                "group": "SYO",
+                "regions": [
+                  {
+                    "from": "SYR",
+                    "provinces": [
+                      "Ar Raqqah"
+                    ]
+                  }
+                ],
+                "divisions": 1
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "isg_takes_raqqa",
+      "title": "The Islamic State takes Raqqa",
+      "description": "After fighting other rebel groups, ISIL took complete control of Raqqa by 13 January 2014.",
+      "countries": [
+        "SYR"
+      ],
+      "major": true,
+      "historical": {
+        "date": "2014-01-13",
+        "any_path": true,
+        "dynamic_mode": true,
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/Raqqa",
+            "title": "Wikipedia: Raqqa",
+            "accessed": "2026-10-17"
+          },
+          {
+            "url": "https://en.wikipedia.org/wiki/Islamic_State",
+            "title": "Wikipedia: Islamic State",
+            "accessed": "2026-10-17"
+          }
+        ],
+        "confidence": "needs_review",
+        "review_note": "Dates are sourced. The provinces are a province-level approximation on the game map (one game province can cover a whole governorate); check against the source's territorial-control maps."
+      },
+      "options": [
+        {
+          "id": "ok",
+          "name": "Continue",
+          "effects": [
+            {
+              "spawn_armed_group": {
+                "group": "ISG",
+                "regions": [
+                  {
+                    "from": "SYO",
+                    "provinces": [
+                      "Ar Raqqah"
+                    ]
+                  }
+                ],
+                "divisions": 3,
+                "war_with": [
+                  "SYO",
+                  "SYR"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "isg_fall_of_mosul",
+      "title": "Fall of Mosul",
+      "description": "ISIL fighters captured all of Mosul on 10 June 2014 after six days of fighting and advanced south through Salah ad-Din. Fallujah and parts of Anbar had already fallen.",
+      "countries": [
+        "IRQ"
+      ],
+      "major": true,
+      "historical": {
+        "date": "2014-06-10",
+        "any_path": true,
+        "dynamic_mode": true,
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/Fall_of_Mosul",
+            "title": "Wikipedia: Fall of Mosul",
+            "accessed": "2026-10-17"
+          },
+          {
+            "url": "https://en.wikipedia.org/wiki/War_in_Iraq_(2013–2017)",
+            "title": "Wikipedia: War in Iraq (2013–2017)",
+            "accessed": "2026-10-17"
+          }
+        ],
+        "confidence": "needs_review",
+        "review_note": "Dates are sourced. The provinces are a province-level approximation on the game map (one game province can cover a whole governorate); check against the source's territorial-control maps."
+      },
+      "options": [
+        {
+          "id": "ok",
+          "name": "Continue",
+          "effects": [
+            {
+              "spawn_armed_group": {
+                "group": "ISG",
+                "regions": [
+                  {
+                    "from": "IRQ",
+                    "provinces": [
+                      "Ninawa",
+                      "Sala ad-Din",
+                      "Al-Anbar (North)",
+                      "Ar Rutbah (Al-Anbar)"
+                    ]
+                  }
+                ],
+                "divisions": 6,
+                "war_with": [
+                  "IRQ"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "usa_intervention_against_isg",
+      "title": "Intervention against the Islamic State",
+      "description": "The US-led intervention in Iraq against ISIL began on 15 June 2014, with airstrikes from August. A coalition of more than a dozen countries joined.",
+      "countries": [
+        "USA"
+      ],
+      "major": false,
+      "historical": {
+        "date": "2014-06-15",
+        "any_path": true,
+        "dynamic_mode": true,
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/American-led_intervention_in_Iraq_(2014–2021)",
+            "title": "Wikipedia: American-led intervention in Iraq (2014–2021)",
+            "accessed": "2026-10-17"
+          }
+        ],
+        "confidence": "verified"
+      },
+      "options": [
+        {
+          "id": "ok",
+          "name": "Continue",
+          "effects": [
+            {
+              "declare_war": {
+                "target": "ISG",
+                "goal": "limited"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "isg_deir_ez_zor",
+      "title": "Deir ez-Zor offensive",
+      "description": "ISIL's offensive in Deir ez-Zor Governorate, from 10 April to 14 July 2014, drove rival rebel groups out of most of the province.",
+      "countries": [
+        "SYR"
+      ],
+      "major": false,
+      "historical": {
+        "date": "2014-07-14",
+        "any_path": true,
+        "dynamic_mode": true,
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/Deir_ez-Zor_offensive_(April–July_2014)",
+            "title": "Wikipedia: Deir ez-Zor offensive (April–July 2014)",
+            "accessed": "2026-10-17"
+          }
+        ],
+        "confidence": "needs_review",
+        "review_note": "Dates are sourced. The provinces are a province-level approximation on the game map (one game province can cover a whole governorate); check against the source's territorial-control maps."
+      },
+      "options": [
+        {
+          "id": "ok",
+          "name": "Continue",
+          "effects": [
+            {
+              "spawn_armed_group": {
+                "group": "ISG",
+                "regions": [
+                  {
+                    "from": "SYR",
+                    "provinces": [
+                      "Dayr Az Zawr"
+                    ]
+                  },
+                  {
+                    "from": "SYO",
+                    "provinces": [
+                      "Dayr Az Zawr"
+                    ]
+                  }
+                ],
+                "divisions": 1
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "irq_tikrit_retaken",
+      "title": "Tikrit retaken",
+      "description": "Iraqi government forces and allied militias retook Tikrit in the Second Battle of Tikrit, 2 March – 17 April 2015.",
+      "countries": [
+        "IRQ"
+      ],
+      "major": false,
+      "historical": {
+        "date": "2015-04-17",
+        "any_path": true,
+        "dynamic_mode": false,
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/Second_Battle_of_Tikrit",
+            "title": "Wikipedia: Second Battle of Tikrit",
+            "accessed": "2026-10-17"
+          }
+        ],
+        "confidence": "needs_review",
+        "review_note": "Dates are sourced. The provinces are a province-level approximation on the game map (one game province can cover a whole governorate); check against the source's territorial-control maps."
+      },
+      "options": [
+        {
+          "id": "ok",
+          "name": "Continue",
+          "effects": [
+            {
+              "armed_group_loses": {
+                "group": "ISG",
+                "regions": [
+                  {
+                    "from": "IRQ",
+                    "provinces": [
+                      "Sala ad-Din"
+                    ]
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "isg_takes_ramadi",
+      "title": "Fall of Ramadi",
+      "description": "ISIL captured Ramadi, the capital of Anbar, on 17 May 2015.",
+      "countries": [
+        "IRQ"
+      ],
+      "major": false,
+      "historical": {
+        "date": "2015-05-17",
+        "any_path": true,
+        "dynamic_mode": true,
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/Battle_of_Ramadi_(2014–2015)",
+            "title": "Wikipedia: Battle of Ramadi (2014–2015)",
+            "accessed": "2026-10-17"
+          }
+        ],
+        "confidence": "needs_review",
+        "review_note": "Dates are sourced. The provinces are a province-level approximation on the game map (one game province can cover a whole governorate); check against the source's territorial-control maps."
+      },
+      "options": [
+        {
+          "id": "ok",
+          "name": "Continue",
+          "effects": [
+            {
+              "spawn_armed_group": {
+                "group": "ISG",
+                "regions": [
+                  {
+                    "from": "IRQ",
+                    "provinces": [
+                      "Ar Ramadi (Al-Anbar)"
+                    ]
+                  }
+                ],
+                "divisions": 1
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "rus_intervention_in_syria",
+      "title": "Russian intervention in Syria",
+      "description": "Russia began air operations in Syria on 30 September 2015 in support of the government, mainly against opposition groups and also against ISIL.",
+      "countries": [
+        "RUS"
+      ],
+      "major": false,
+      "historical": {
+        "date": "2015-09-30",
+        "any_path": true,
+        "dynamic_mode": false,
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/Russian_intervention_in_the_Syrian_civil_war",
+            "title": "Wikipedia: Russian intervention in the Syrian civil war",
+            "accessed": "2026-10-17"
+          }
+        ],
+        "confidence": "verified"
+      },
+      "options": [
+        {
+          "id": "ok",
+          "name": "Continue",
+          "effects": [
+            {
+              "declare_war": {
+                "target": "SYO",
+                "goal": "limited"
+              }
+            },
+            {
+              "declare_war": {
+                "target": "ISG",
+                "goal": "limited"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sdf_founded",
+      "title": "Syrian Democratic Forces",
+      "description": "The Kurdish-led Syrian Democratic Forces were founded on 10 October 2015 in north-eastern Syria to fight the Islamic State.",
+      "countries": [
+        "SYR"
+      ],
+      "major": false,
+      "historical": {
+        "date": "2015-10-10",
+        "any_path": true,
+        "dynamic_mode": true,
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/Syrian_Democratic_Forces",
+            "title": "Wikipedia: Syrian Democratic Forces",
+            "accessed": "2026-10-17"
+          }
+        ],
+        "confidence": "needs_review",
+        "review_note": "Dates are sourced. The provinces are a province-level approximation on the game map (one game province can cover a whole governorate); check against the source's territorial-control maps."
+      },
+      "options": [
+        {
+          "id": "ok",
+          "name": "Continue",
+          "effects": [
+            {
+              "spawn_armed_group": {
+                "group": "SDF",
+                "regions": [
+                  {
+                    "from": "SYR",
+                    "provinces": [
+                      "Hasaka (Al Haksa)"
+                    ]
+                  }
+                ],
+                "divisions": 3,
+                "war_with": [
+                  "ISG"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "irq_ramadi_retaken",
+      "title": "Ramadi retaken",
+      "description": "Iraqi forces retook Ramadi in a battle that ended on 9 February 2016.",
+      "countries": [
+        "IRQ"
+      ],
+      "major": false,
+      "historical": {
+        "date": "2016-02-09",
+        "any_path": true,
+        "dynamic_mode": false,
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/Battle_of_Ramadi_(2015–2016)",
+            "title": "Wikipedia: Battle of Ramadi (2015–2016)",
+            "accessed": "2026-10-17"
+          }
+        ],
+        "confidence": "needs_review",
+        "review_note": "Dates are sourced. The provinces are a province-level approximation on the game map (one game province can cover a whole governorate); check against the source's territorial-control maps."
+      },
+      "options": [
+        {
+          "id": "ok",
+          "name": "Continue",
+          "effects": [
+            {
+              "armed_group_loses": {
+                "group": "ISG",
+                "regions": [
+                  {
+                    "from": "IRQ",
+                    "provinces": [
+                      "Ar Ramadi (Al-Anbar)"
+                    ]
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "syr_aleppo_retaken",
+      "title": "Aleppo retaken",
+      "description": "The government retook all of Aleppo; the battle ended on 22 December 2016.",
+      "countries": [
+        "SYR"
+      ],
+      "major": true,
+      "historical": {
+        "date": "2016-12-22",
+        "any_path": true,
+        "dynamic_mode": false,
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/Battle_of_Aleppo_(2012–2016)",
+            "title": "Wikipedia: Battle of Aleppo (2012–2016)",
+            "accessed": "2026-10-17"
+          }
+        ],
+        "confidence": "needs_review",
+        "review_note": "Dates are sourced. The provinces are a province-level approximation on the game map (one game province can cover a whole governorate); check against the source's territorial-control maps."
+      },
+      "options": [
+        {
+          "id": "ok",
+          "name": "Continue",
+          "effects": [
+            {
+              "armed_group_loses": {
+                "group": "SYO",
+                "regions": [
+                  {
+                    "from": "SYR",
+                    "provinces": [
+                      "Aleppo"
+                    ]
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "irq_mosul_victory",
+      "title": "Victory in Mosul",
+      "description": "The Iraqi government formally declared victory over ISIL in Mosul on 10 July 2017, although fighting continued until 20 July.",
+      "countries": [
+        "IRQ"
+      ],
+      "major": false,
+      "historical": {
+        "date": "2017-07-10",
+        "any_path": true,
+        "dynamic_mode": false,
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/Battle_of_Mosul_(2016–2017)",
+            "title": "Wikipedia: Battle of Mosul (2016–2017)",
+            "accessed": "2026-10-17"
+          }
+        ],
+        "confidence": "needs_review",
+        "review_note": "Dates are sourced. The provinces are a province-level approximation on the game map (one game province can cover a whole governorate); check against the source's territorial-control maps."
+      },
+      "options": [
+        {
+          "id": "ok",
+          "name": "Continue",
+          "effects": [
+            {
+              "armed_group_loses": {
+                "group": "ISG",
+                "regions": [
+                  {
+                    "from": "IRQ",
+                    "provinces": [
+                      "Ninawa"
+                    ]
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sdf_takes_raqqa",
+      "title": "Raqqa captured",
+      "description": "The SDF captured Raqqa, the Islamic State's capital in Syria, on 17 October 2017 after a battle that began on 6 June.",
+      "countries": [
+        "SYR"
+      ],
+      "major": true,
+      "historical": {
+        "date": "2017-10-17",
+        "any_path": true,
+        "dynamic_mode": false,
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/Battle_of_Raqqa_(2017)",
+            "title": "Wikipedia: Battle of Raqqa (2017)",
+            "accessed": "2026-10-17"
+          },
+          {
+            "url": "https://en.wikipedia.org/wiki/Syrian_Democratic_Forces",
+            "title": "Wikipedia: Syrian Democratic Forces",
+            "accessed": "2026-10-17"
+          }
+        ],
+        "confidence": "needs_review",
+        "review_note": "Dates are sourced. The provinces are a province-level approximation on the game map (one game province can cover a whole governorate); check against the source's territorial-control maps."
+      },
+      "options": [
+        {
+          "id": "ok",
+          "name": "Continue",
+          "effects": [
+            {
+              "armed_group_loses": {
+                "group": "ISG",
+                "regions": [
+                  {
+                    "from": "SYR",
+                    "provinces": [
+                      "Ar Raqqah"
+                    ]
+                  }
+                ],
+                "to": "SDF"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "irq_victory_over_isg",
+      "title": "Iraq declares victory over the Islamic State",
+      "description": "The Iraqi government announced the defeat of ISIL in Iraq on 9 December 2017.",
+      "countries": [
+        "IRQ"
+      ],
+      "major": true,
+      "historical": {
+        "date": "2017-12-09",
+        "any_path": true,
+        "dynamic_mode": false,
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/War_in_Iraq_(2013–2017)",
+            "title": "Wikipedia: War in Iraq (2013–2017)",
+            "accessed": "2026-10-17"
+          }
+        ],
+        "confidence": "verified"
+      },
+      "options": [
+        {
+          "id": "ok",
+          "name": "Continue",
+          "effects": [
+            {
+              "armed_group_loses": {
+                "group": "ISG",
+                "regions": [
+                  {
+                    "from": "IRQ"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sdf_baghuz",
+      "title": "Battle of Baghuz",
+      "description": "The SDF took Baghuz, the Islamic State's last stronghold in Syria, on 23 March 2019, ending its territorial control there.",
+      "countries": [
+        "SYR"
+      ],
+      "major": true,
+      "historical": {
+        "date": "2019-03-23",
+        "any_path": true,
+        "dynamic_mode": false,
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/Battle_of_Baghuz_Fawqani",
+            "title": "Wikipedia: Battle of Baghuz Fawqani",
+            "accessed": "2026-10-17"
+          },
+          {
+            "url": "https://en.wikipedia.org/wiki/Syrian_Democratic_Forces",
+            "title": "Wikipedia: Syrian Democratic Forces",
+            "accessed": "2026-10-17"
+          }
+        ],
+        "confidence": "needs_review",
+        "review_note": "Dates are sourced. The provinces are a province-level approximation on the game map (one game province can cover a whole governorate); check against the source's territorial-control maps."
+      },
+      "options": [
+        {
+          "id": "ok",
+          "name": "Continue",
+          "effects": [
+            {
+              "armed_group_loses": {
+                "group": "ISG",
+                "regions": [
+                  {
+                    "from": "SYR"
+                  }
+                ],
+                "to": "SDF"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "syo_take_aleppo_2024",
+      "title": "Opposition offensive: Aleppo",
+      "description": "Opposition forces led by Hay'at Tahrir al-Sham launched an offensive on 27 November 2024 and seized Aleppo city on 30 November.",
+      "countries": [
+        "SYR"
+      ],
+      "major": true,
+      "historical": {
+        "date": "2024-11-30",
+        "any_path": true,
+        "dynamic_mode": false,
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2024_Syrian_opposition_offensives",
+            "title": "Wikipedia: 2024 Syrian opposition offensives",
+            "accessed": "2026-10-17"
+          },
+          {
+            "url": "https://en.wikipedia.org/wiki/Fall_of_Aleppo_(2024)",
+            "title": "Wikipedia: Fall of Aleppo (2024)",
+            "accessed": "2026-10-17"
+          }
+        ],
+        "confidence": "needs_review",
+        "review_note": "Dates are sourced. The provinces are a province-level approximation on the game map (one game province can cover a whole governorate); check against the source's territorial-control maps."
+      },
+      "options": [
+        {
+          "id": "ok",
+          "name": "Continue",
+          "effects": [
+            {
+              "spawn_armed_group": {
+                "group": "SYO",
+                "regions": [
+                  {
+                    "from": "SYR",
+                    "provinces": [
+                      "Aleppo"
+                    ]
+                  }
+                ],
+                "divisions": 3
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "syo_take_hama_2024",
+      "title": "Opposition offensive: Hama",
+      "description": "The opposition offensive on Hama ran from 30 November to 5 December 2024, when the city fell.",
+      "countries": [
+        "SYR"
+      ],
+      "major": false,
+      "historical": {
+        "date": "2024-12-05",
+        "any_path": true,
+        "dynamic_mode": false,
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2024_Hama_offensive",
+            "title": "Wikipedia: 2024 Hama offensive",
+            "accessed": "2026-10-17"
+          }
+        ],
+        "confidence": "needs_review",
+        "review_note": "Dates are sourced. The provinces are a province-level approximation on the game map (one game province can cover a whole governorate); check against the source's territorial-control maps."
+      },
+      "options": [
+        {
+          "id": "ok",
+          "name": "Continue",
+          "effects": [
+            {
+              "spawn_armed_group": {
+                "group": "SYO",
+                "regions": [
+                  {
+                    "from": "SYR",
+                    "provinces": [
+                      "Hamah"
+                    ]
+                  }
+                ],
+                "divisions": 2
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "syr_fall_of_assad",
+      "title": "Fall of the Assad government",
+      "description": "Opposition forces entered Damascus on 8 December 2024. Bashar al-Assad left the country and his government fell; the army dissolved.",
+      "countries": [
+        "SYR"
+      ],
+      "major": true,
+      "historical": {
+        "date": "2024-12-08",
+        "any_path": true,
+        "dynamic_mode": false,
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/Fall_of_the_Assad_regime",
+            "title": "Wikipedia: Fall of the Assad regime",
+            "accessed": "2026-10-17"
+          },
+          {
+            "url": "https://en.wikipedia.org/wiki/2024_Syrian_opposition_offensives",
+            "title": "Wikipedia: 2024 Syrian opposition offensives",
+            "accessed": "2026-10-17"
+          }
+        ],
+        "confidence": "verified"
+      },
+      "options": [
+        {
+          "id": "ok",
+          "name": "Continue",
+          "effects": [
+            {
+              "end_armed_group": {
+                "group": "SYO",
+                "into": "SYR",
+                "disband_army_of": "SYR"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sdf_ceasefire_2026",
+      "title": "SDF hands over Raqqa and Deir ez-Zor",
+      "description": "After a government offensive in January 2026, a 14-point ceasefire announced on 18 January handed the governorates of Raqqa and Deir ez-Zor to the government as the SDF began to integrate into the state.",
+      "countries": [
+        "SYR"
+      ],
+      "major": false,
+      "historical": {
+        "date": "2026-01-18",
+        "any_path": true,
+        "dynamic_mode": false,
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/Syrian_Democratic_Forces",
+            "title": "Wikipedia: Syrian Democratic Forces",
+            "accessed": "2026-10-17"
+          }
+        ],
+        "confidence": "needs_review",
+        "review_note": "Dates are sourced. The provinces are a province-level approximation on the game map (one game province can cover a whole governorate); check against the source's territorial-control maps."
+      },
+      "options": [
+        {
+          "id": "ok",
+          "name": "Continue",
+          "effects": [
+            {
+              "armed_group_loses": {
+                "group": "SDF",
+                "regions": [
+                  {
+                    "from": "SYR",
+                    "provinces": [
+                      "Ar Raqqah",
+                      "Dayr Az Zawr"
+                    ]
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sdf_dissolved",
+      "title": "SDF dissolved",
+      "description": "On 25 August 2026 SDF commander-in-chief Mazloum Abdi declared the SDF dissolved and fully integrated into the Syrian Army.",
+      "countries": [
+        "SYR"
+      ],
+      "major": false,
+      "historical": {
+        "date": "2026-08-25",
+        "any_path": true,
+        "dynamic_mode": false,
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/Syrian_Democratic_Forces",
+            "title": "Wikipedia: Syrian Democratic Forces",
+            "accessed": "2026-10-17"
+          }
+        ],
+        "confidence": "verified"
+      },
+      "options": [
+        {
+          "id": "ok",
+          "name": "Continue",
+          "effects": [
+            {
+              "end_armed_group": {
+                "group": "SDF",
+                "into": "SYR"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ham_takes_gaza",
+      "title": "Hamas takes control of Gaza",
+      "description": "After fighting between Hamas and Fatah from 7 to 15 June 2007, Hamas took control of the Gaza Strip; the Palestinian Authority kept the West Bank.",
+      "countries": [
+        "PSE"
+      ],
+      "major": true,
+      "historical": {
+        "date": "2007-06-15",
+        "any_path": true,
+        "dynamic_mode": true,
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/Battle_of_Gaza_(2007)",
+            "title": "Wikipedia: Battle of Gaza (2007)",
+            "accessed": "2026-10-17"
+          },
+          {
+            "url": "https://en.wikipedia.org/wiki/Hamas",
+            "title": "Wikipedia: Hamas",
+            "accessed": "2026-10-17"
+          }
+        ],
+        "confidence": "verified"
+      },
+      "options": [
+        {
+          "id": "ok",
+          "name": "Continue",
+          "effects": [
+            {
+              "spawn_armed_group": {
+                "group": "HAM",
+                "regions": [
+                  {
+                    "from": "PSE",
+                    "provinces": [
+                      "Gaza Strip"
+                    ]
+                  }
+                ],
+                "divisions": 2,
+                "war_with": []
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "isr_war_with_ham_2008",
+      "title": "Gaza War: fighting begins",
+      "description": "Fighting between Israel and Hamas in and around the Gaza Strip began on 27 December 2008.",
+      "countries": [
+        "ISR"
+      ],
+      "major": false,
+      "historical": {
+        "date": "2008-12-27",
+        "any_path": true,
+        "dynamic_mode": false,
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/Gaza_War_(2008–2009)",
+            "title": "Wikipedia: Gaza War (2008–2009)",
+            "accessed": "2026-10-17"
+          }
+        ],
+        "confidence": "verified"
+      },
+      "options": [
+        {
+          "id": "ok",
+          "name": "Continue",
+          "effects": [
+            {
+              "declare_war": {
+                "target": "HAM",
+                "goal": "limited"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "isr_ceasefire_with_ham_2008",
+      "title": "Gaza War: ceasefire",
+      "description": "A ceasefire took effect on 18 January 2009.",
+      "countries": [
+        "ISR"
+      ],
+      "major": false,
+      "historical": {
+        "date": "2009-01-18",
+        "any_path": true,
+        "dynamic_mode": false,
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/Gaza_War_(2008–2009)",
+            "title": "Wikipedia: Gaza War (2008–2009)",
+            "accessed": "2026-10-17"
+          }
+        ],
+        "confidence": "verified"
+      },
+      "options": [
+        {
+          "id": "ok",
+          "name": "Continue",
+          "effects": [
+            {
+              "white_peace": {
+                "with": "HAM"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "isr_war_with_ham_2014",
+      "title": "Gaza War: fighting begins",
+      "description": "Fighting between Israel and Hamas in and around the Gaza Strip began on 8 July 2014.",
+      "countries": [
+        "ISR"
+      ],
+      "major": false,
+      "historical": {
+        "date": "2014-07-08",
+        "any_path": true,
+        "dynamic_mode": false,
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2014_Gaza_War",
+            "title": "Wikipedia: 2014 Gaza War",
+            "accessed": "2026-10-17"
+          }
+        ],
+        "confidence": "verified"
+      },
+      "options": [
+        {
+          "id": "ok",
+          "name": "Continue",
+          "effects": [
+            {
+              "declare_war": {
+                "target": "HAM",
+                "goal": "limited"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "isr_ceasefire_with_ham_2014",
+      "title": "Gaza War: ceasefire",
+      "description": "A ceasefire took effect on 26 August 2014.",
+      "countries": [
+        "ISR"
+      ],
+      "major": false,
+      "historical": {
+        "date": "2014-08-26",
+        "any_path": true,
+        "dynamic_mode": false,
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2014_Gaza_War",
+            "title": "Wikipedia: 2014 Gaza War",
+            "accessed": "2026-10-17"
+          }
+        ],
+        "confidence": "verified"
+      },
+      "options": [
+        {
+          "id": "ok",
+          "name": "Continue",
+          "effects": [
+            {
+              "white_peace": {
+                "with": "HAM"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "isr_war_with_ham_2021",
+      "title": "Fighting in Gaza: fighting begins",
+      "description": "Fighting between Israel and Hamas in and around the Gaza Strip began on 10 May 2021.",
+      "countries": [
+        "ISR"
+      ],
+      "major": false,
+      "historical": {
+        "date": "2021-05-10",
+        "any_path": true,
+        "dynamic_mode": false,
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2021_Israel–Palestine_crisis",
+            "title": "Wikipedia: 2021 Israel–Palestine crisis",
+            "accessed": "2026-10-17"
+          }
+        ],
+        "confidence": "verified"
+      },
+      "options": [
+        {
+          "id": "ok",
+          "name": "Continue",
+          "effects": [
+            {
+              "declare_war": {
+                "target": "HAM",
+                "goal": "limited"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "isr_ceasefire_with_ham_2021",
+      "title": "Fighting in Gaza: ceasefire",
+      "description": "A ceasefire took effect on 21 May 2021.",
+      "countries": [
+        "ISR"
+      ],
+      "major": false,
+      "historical": {
+        "date": "2021-05-21",
+        "any_path": true,
+        "dynamic_mode": false,
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2021_Israel–Palestine_crisis",
+            "title": "Wikipedia: 2021 Israel–Palestine crisis",
+            "accessed": "2026-10-17"
+          }
+        ],
+        "confidence": "verified"
+      },
+      "options": [
+        {
+          "id": "ok",
+          "name": "Continue",
+          "effects": [
+            {
+              "white_peace": {
+                "with": "HAM"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "isr_war_with_ham_2023",
+      "title": "Gaza war",
+      "description": "After the Hamas-led attack on Israel on 7 October 2023, Israel went to war with Hamas in the Gaza Strip. Wikipedia records the war as ongoing.",
+      "countries": [
+        "ISR"
+      ],
+      "major": true,
+      "historical": {
+        "date": "2023-10-07",
+        "any_path": true,
+        "dynamic_mode": false,
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/Gaza_war",
+            "title": "Wikipedia: Gaza war",
+            "accessed": "2026-10-17"
+          }
+        ],
+        "confidence": "verified"
+      },
+      "options": [
+        {
+          "id": "ok",
+          "name": "Continue",
+          "effects": [
+            {
+              "declare_war": {
+                "target": "HAM",
+                "goal": "limited"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dpr_proclaimed",
+      "title": "Donetsk People's Republic proclaimed",
+      "description": "Separatists who had seized government buildings in Donetsk proclaimed the Donetsk People's Republic on 7 April 2014.",
+      "countries": [
+        "UKR"
+      ],
+      "major": true,
+      "historical": {
+        "date": "2014-04-07",
+        "any_path": true,
+        "dynamic_mode": true,
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/Donetsk_People's_Republic",
+            "title": "Wikipedia: Donetsk People's Republic",
+            "accessed": "2026-10-17"
+          }
+        ],
+        "confidence": "needs_review",
+        "review_note": "Dates are sourced. The provinces are a province-level approximation on the game map (one game province can cover a whole governorate); check against the source's territorial-control maps."
+      },
+      "options": [
+        {
+          "id": "ok",
+          "name": "Continue",
+          "effects": [
+            {
+              "spawn_armed_group": {
+                "group": "DPR",
+                "regions": [
+                  {
+                    "from": "UKR",
+                    "provinces": [
+                      "Donetsk (Donets'k)"
+                    ]
+                  }
+                ],
+                "divisions": 3,
+                "war_with": []
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ukr_war_in_donbas",
+      "title": "War in Donbas",
+      "description": "Fighting between Ukrainian forces and Russian-backed separatists in Donbas began on 12 April 2014.",
+      "countries": [
+        "UKR"
+      ],
+      "major": false,
+      "historical": {
+        "date": "2014-04-12",
+        "any_path": true,
+        "dynamic_mode": true,
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/War_in_Donbas_(2014–2022)",
+            "title": "Wikipedia: War in Donbas (2014–2022)",
+            "accessed": "2026-10-17"
+          }
+        ],
+        "confidence": "verified"
+      },
+      "options": [
+        {
+          "id": "ok",
+          "name": "Continue",
+          "effects": [
+            {
+              "declare_war": {
+                "target": "DPR",
+                "goal": "limited"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lpr_proclaimed",
+      "title": "Luhansk People's Republic proclaimed",
+      "description": "Pro-Russian activists proclaimed the Luhansk People's Republic on 27 April 2014.",
+      "countries": [
+        "UKR"
+      ],
+      "major": false,
+      "historical": {
+        "date": "2014-04-27",
+        "any_path": true,
+        "dynamic_mode": true,
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/Luhansk_People's_Republic",
+            "title": "Wikipedia: Luhansk People's Republic",
+            "accessed": "2026-10-17"
+          }
+        ],
+        "confidence": "needs_review",
+        "review_note": "Dates are sourced. The provinces are a province-level approximation on the game map (one game province can cover a whole governorate); check against the source's territorial-control maps."
+      },
+      "options": [
+        {
+          "id": "ok",
+          "name": "Continue",
+          "effects": [
+            {
+              "spawn_armed_group": {
+                "group": "LPR",
+                "regions": [
+                  {
+                    "from": "UKR",
+                    "provinces": [
+                      "Luhans'k"
+                    ]
+                  }
+                ],
+                "divisions": 2,
+                "war_with": [
+                  "UKR"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "rus_annexes_donbas",
+      "title": "Annexation of Donetsk and Luhansk",
+      "description": "Russia declared the annexation of the Donetsk and Luhansk People's Republics, with Kherson and Zaporizhzhia oblasts, on 30 September 2022. The United Nations General Assembly condemned it as illegal.",
+      "countries": [
+        "RUS"
+      ],
+      "major": true,
+      "historical": {
+        "date": "2022-09-30",
+        "any_path": true,
+        "dynamic_mode": false,
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/Annexation_of_southern_and_eastern_Ukraine",
+            "title": "Wikipedia: Annexation of southern and eastern Ukraine",
+            "accessed": "2026-10-17"
+          },
+          {
+            "url": "https://en.wikipedia.org/wiki/Donetsk_People's_Republic",
+            "title": "Wikipedia: Donetsk People's Republic",
+            "accessed": "2026-10-17"
+          }
+        ],
+        "confidence": "verified"
+      },
+      "options": [
+        {
+          "id": "ok",
+          "name": "Continue",
+          "effects": [
+            {
+              "end_armed_group": {
+                "group": "DPR",
+                "into": "RUS"
+              }
+            },
+            {
+              "end_armed_group": {
+                "group": "LPR",
+                "into": "RUS"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

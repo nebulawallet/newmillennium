@@ -345,20 +345,35 @@ export function grantEquipment(ctx: SimContext, tag: string, family: string, amo
 }
 
 /** Divisions raised at once by an event (mobilisation), equipped from the stockpile as far as it goes. */
-export function spawnDivisions(ctx: SimContext, tag: string, templateId: string, count: number): void {
+export function spawnDivisions(ctx: SimContext, tag: string, templateId: string, count: number, inTag?: string): void {
   const { db, state, map } = ctx;
   const m = state.countries[tag]?.military;
   const tpl = m?.templates.find((x) => x.id === templateId) ?? m?.templates[0];
-  if (!m || !tpl) return;
+  if (!m || !tpl || capitalProvince(state, map, inTag ?? tag) < 1) return;
   for (let i = 0; i < count; i++) {
     const equipment: Record<string, number> = {};
     for (const [f, c] of Object.entries(templateNeeds(db, tpl.units))) Object.assign(equipment, mergeCounts(equipment, draw(db, m.stockpile, f, c)));
     const n = state.divisions.filter((d) => d.owner === tag && d.template === tpl.id).length + 1;
     state.divisions.push({
       id: state.nextDivisionId++, owner: tag, name: `${ordinal(n)} ${tpl.name}`, template: tpl.id, units: { ...tpl.units }, equipment,
-      province: capitalProvince(state, map, tag), path: [], progress: 0, strength: fill(db, tpl.units, equipment), organisation: 0.6, entrenchment: 0,
+      province: capitalProvince(state, map, inTag ?? tag), path: [], progress: 0, strength: fill(db, tpl.units, equipment), organisation: 0.6, entrenchment: 0,
     });
   }
+}
+
+/** Move a country's strongest divisions into another country's provinces (most populous first). */
+export function deployDivisions(ctx: SimContext, tag: string, count: number, inTag: string): void {
+  const { db, state, map } = ctx;
+  const dest = (map?.provinces ?? []).filter((p) => state.provinceController[p.id - 1] === inTag).sort((a, b) => b.population - a.population).map((p) => p.id);
+  if (!dest.length) return;
+  const score = (d: Division) => d.strength * d.organisation * (templateStats(db, d.units).width || 1);
+  const best = state.divisions.filter((d) => d.owner === tag && state.provinceOwner[d.province - 1] === tag).sort((a, b) => score(b) - score(a)).slice(0, count);
+  best.forEach((d, i) => {
+    d.province = dest[i % dest.length]!;
+    d.path = [];
+    d.attacking = undefined;
+    d.progress = 0;
+  });
 }
 
 export function addLine(ctx: SimContext, tag: string, family: string, factoryCount: number): { ok: boolean; text: string } {

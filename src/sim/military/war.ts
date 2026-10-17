@@ -141,7 +141,7 @@ export function declareWar(ctx: SimContext, tag: string, target: string, goal: W
   const id = state.nextWarId++;
   // wars with an armed group (src/sim/conflicts) call in no allies and never end by exhaustion
   const group = state.dynamicCountries[tag]?.kind === "armed_group" || state.dynamicCountries[target]?.kind === "armed_group";
-  state.wars.push({ id, name, attackers: [tag], defenders: [target], startDay: state.day, goal, ...(goal === "limited" ? { zone: limitedZone(ctx, tag, target, LIMITED_WAR_DEPTH) } : {}), ...(group ? { armedGroup: true } : {}) });
+  state.wars.push({ id, name, attackers: [tag], defenders: [target], startDay: state.day, goal, ...(goal === "limited" ? { zone: limitedZone(ctx, tag, target, LIMITED_WAR_DEPTH) } : {}), ...(group ? { armedGroup: true } : {}), ...(scripted ? { scripted: true } : {}) });
   const nuclear = rules.nuclear_states_2000.includes(target) || rules.nuclear_states_2000.includes(tag);
   state.worldTension = clamp(state.worldTension + rules.tension_per_war * (nuclear ? rules.nuclear_tension_multiplier : 1) * (justified ? 1 : db.diplomacyRules.unjustified_tension_multiplier), 0, 1);
   a.warSupport = clamp(a.warSupport - 0.05, 0, 1);
@@ -389,7 +389,8 @@ export const warSystem: System = {
       }
       const aWs = state.countries[aLead]?.warSupport ?? 0, dWs = state.countries[dLead]?.warSupport ?? 0;
       const months = (state.day - war.startDay) / 30;
-      if (!war.armedGroup && months >= rules.white_peace_min_months && Math.min(aWs, dWs) <= rules.white_peace_war_support) makePeace(ctx, war, null, false);
+      const held = war.armedGroup || (war.scripted && state.rules.electionMode === "historical");
+      if (!held && months >= rules.white_peace_min_months && Math.min(aWs, dWs) <= rules.white_peace_war_support) makePeace(ctx, war, null, false);
     }
   },
 };

@@ -131,7 +131,7 @@ export function spawnArmedGroup(ctx: SimContext, tag: string, regions: GroupRegi
     if (!state.provinceOwner.includes(enemy)) continue;
     declareWar(ctx, tag, enemy, "limited", false, true);
   }
-  if (taken.length) ctx.log(tag, "civil_war", `${def.name} ${isNew ? "takes" : "gains"} ${taken.length} province${taken.length === 1 ? "" : "s"}`);
+  if (taken.length) ctx.log(tag, "civil_war", `${isNew ? "Takes" : "Gains"} ${taken.length} province${taken.length === 1 ? "" : "s"}`);
   ctx.emit({ type: "map_changed" });
   return true;
 }
@@ -149,7 +149,7 @@ export function armedGroupLoses(ctx: SimContext, tag: string, regions: GroupRegi
       lost++;
     }
   if (!lost) return;
-  ctx.log(tag, "civil_war", `${db.armedGroups.get(tag)?.name ?? tag} loses ${lost} province${lost === 1 ? "" : "s"}`);
+  ctx.log(tag, "civil_war", `Loses ${lost} province${lost === 1 ? "" : "s"}`);
   if (!state.provinceOwner.includes(tag)) endArmedGroup(ctx, tag);
   ctx.emit({ type: "map_changed" });
 }
@@ -179,7 +179,8 @@ export function endArmedGroup(ctx: SimContext, tag: string, into?: string, disba
   const name = db.armedGroups.get(tag)?.name ?? tag;
   delete state.countries[tag];
   delete state.dynamicCountries[tag];
-  ctx.log(into ?? null, "civil_war", into ? `${name} takes power` : `${name} is defeated and holds no territory`);
+  const intoName = into ? (db.countryList.find((c) => c.tag === into)?.name ?? into) : "";
+  ctx.log(into ?? null, "civil_war", !into ? `${name} is defeated and holds no territory` : disbandArmyOf === into ? `${name} takes power in ${intoName}` : `${name} merges into ${intoName}`);
   ctx.emit({ type: "map_changed" });
 }
 
