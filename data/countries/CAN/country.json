@@ -1,0 +1,145 @@
+{
+  "tag": "CAN",
+  "name": { "en": "Canada", "native": "Canada" },
+  "adjective": "Canadian",
+  "culture_primary": "anglo_canadian",
+  "government": {
+    "type": "constitutional_monarchy",
+    "effective_executive": "can.prime_minister",
+    "head_of_state_office": "can.monarch",
+    "head_of_government_office": "can.prime_minister",
+    "constitution": {
+      "term_limit_amendable": true,
+      "emergency_powers": true,
+      "referendum_required_for": []
+    },
+    "note": "Federal parliamentary constitutional monarchy and Commonwealth realm. The monarch of the United Kingdom is also King or Queen of Canada and is represented by the Governor General, appointed on the Prime Minister's advice. The Prime Minister depends on the confidence of the elected House of Commons; the Senate is appointed. No national referendum has been held since 1992."
+  },
+  "offices": [
+    {
+      "id": "can.monarch",
+      "title": { "en": "Monarch of Canada" },
+      "role": "head_of_state",
+      "power_weight": 0.03,
+      "selection": "foreign_ex_officio",
+      "ex_officio_of": "gbr.monarch",
+      "holders": [],
+      "note": "The Canadian Crown is held by the same person as the British Crown (Elizabeth II until 2022, then Charles III). Represented in Canada by the Governor General.",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/Governor_General_of_Canada", "title": "Wikipedia: Governor General of Canada (monarch shared with 14 other Commonwealth realms)", "accessed": "2026-10-16" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "can.governor_general",
+      "title": { "en": "Governor General of Canada", "native": "Gouverneur général du Canada" },
+      "role": "governor_general",
+      "power_weight": 0.05,
+      "selection": "appointed",
+      "appointed_by": "can.monarch",
+      "term_years": 5,
+      "succession": { "type": "acting_then_election" },
+      "holders": [
+        { "person": "can.adrienne_clarkson", "from": "1999-10-07", "to": "2005-09-27" },
+        { "person": "can.michaelle_jean", "from": "2005-09-27", "to": "2010-10-01" },
+        { "person": "can.david_johnston", "from": "2010-10-01", "to": "2017-10-02" },
+        { "person": "can.julie_payette", "from": "2017-10-02", "to": "2021-01-22", "note": "Resigned. Wikidata gives 21 January 2021 as the end date; the Wikipedia list gives 22 January." },
+        { "person": "can.richard_wagner", "from": "2021-01-22", "to": "2021-07-26", "acting": true, "note": "Chief Justice of Canada serving as Administrator of the Government of Canada. Wikidata gives a start of 23 January 2021." },
+        { "person": "can.mary_simon", "from": "2021-07-26", "to": "2026-06-08" },
+        { "person": "can.louise_arbour", "from": "2026-06-08", "note": "Sworn in on 8 June 2026 (Wikipedia, citing CBC News of 7 May 2026); in office on the data date." }
+      ],
+      "note": "Appointed by the monarch on the Prime Minister's advice, usually for about five years. The Chief Justice acts as Administrator during a vacancy. A three-day administratorship by Chief Justice Beverley McLachlin in July 2005 is omitted.",
+      "source": [
+        { "url": "https://www.wikidata.org/wiki/Q390776", "title": "Wikidata: Governor General of Canada (position held by)", "accessed": "2026-10-16" },
+        { "url": "https://en.wikipedia.org/wiki/List_of_governors_general_of_Canada", "title": "Wikipedia: List of governors general of Canada (incl. administrators)", "accessed": "2026-10-16" },
+        { "url": "https://en.wikipedia.org/wiki/Administrator_of_the_Government_of_Canada", "title": "Wikipedia: Administrator of the Government of Canada", "accessed": "2026-10-16" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "can.prime_minister",
+      "title": { "en": "Prime Minister of Canada", "native": "Premier ministre du Canada" },
+      "role": "head_of_government",
+      "power_weight": 0.95,
+      "selection": "legislature",
+      "appointed_by": "can.governor_general",
+      "term_years": 4,
+      "holders": [
+        { "person": "can.jean_chretien", "from": "1993-11-04", "to": "2003-12-12" },
+        { "person": "can.paul_martin", "from": "2003-12-12", "to": "2006-02-06", "note": "Minority government after the 2004 election." },
+        { "person": "can.stephen_harper", "from": "2006-02-06", "to": "2015-11-04", "note": "Minority governments 2006-2011, majority 2011-2015." },
+        { "person": "can.justin_trudeau", "from": "2015-11-04", "to": "2025-03-14", "note": "Majority 2015-2019, minority governments 2019-2025." },
+        { "person": "can.mark_carney", "from": "2025-03-14", "note": "Became Prime Minister after winning the Liberal leadership on 9 March 2025; won the 2025 election." }
+      ],
+      "source": [
+        { "url": "https://www.wikidata.org/wiki/Q839078", "title": "Wikidata: Prime Minister of Canada (position held by)", "accessed": "2026-10-16" },
+        { "url": "https://en.wikipedia.org/wiki/List_of_prime_ministers_of_Canada", "title": "Wikipedia: List of prime ministers of Canada", "accessed": "2026-10-16" }
+      ],
+      "confidence": "verified"
+    }
+  ],
+  "legislature": {
+    "name": { "en": "Parliament of Canada", "native": "Parlement du Canada" },
+    "chambers": [
+      {
+        "id": "house_of_commons",
+        "name": { "en": "House of Commons", "native": "Chambre des communes" },
+        "seats": 301,
+        "term_years": 5,
+        "elected": "direct",
+        "system": {
+          "type": "fptp",
+          "district_model": "custom",
+          "note": "Single-member ridings by first past the post: 301 seats in 2000, 308 from 2004, 338 from 2015, 343 from 2025. Maximum term five years; fixed election dates (four years) since 2007, but early elections remain possible. seats_2000 is the 1997 result (Lib 155, Ref 60, BQ 44, NDP 21, PC 20, Ind 1) adjusted for changes the Wikipedia member list dates to 1998-1999: Sherbrooke by-election 1998 (PC to BQ), Port Moody-Coquitlam by-election 1998 (Reform to Liberal), Bill Matthews (PC to Liberal, 1999), Angela Vautour (NDP to PC, 1999), Rejean Lefebvre (BQ to independent, 1999) and Jake Hoeppner (Reform to independent, 1999). These adjusted figures reconcile exactly with the standings at dissolution in October 2000 after the 2000 floor crossings. The Speaker (Gilbert Parent) is counted with the Liberals."
+        },
+        "seats_2000": { "can.liberal": 157, "can.reform": 58, "can.bq": 44, "can.ndp": 20, "can.pc": 19, "independents": 3 },
+        "confidence_chamber": true,
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/36th_Canadian_Parliament", "title": "Wikipedia: 36th Canadian Parliament (standings at election and dissolution)", "accessed": "2026-10-16" },
+          { "url": "https://en.wikipedia.org/wiki/List_of_House_members_of_the_36th_Parliament_of_Canada", "title": "Wikipedia: List of House members of the 36th Parliament of Canada (by-elections and floor crossings)", "accessed": "2026-10-16" }
+        ],
+        "confidence": "needs_review",
+        "review_note": "Floor crossings are dated only by year in the source. Confirm against the Library of Parliament party standings for 1 January 2000 (expected Lib 157, Reform 58, BQ 44, NDP 20, PC 19, independents 3)."
+      },
+      {
+        "id": "senate",
+        "name": { "en": "Senate", "native": "Sénat" },
+        "seats": 105,
+        "elected": "appointed",
+        "system": { "type": "appointed", "note": "Senators are appointed by the Governor General on the Prime Minister's advice and serve until age 75. seats_2000 uses the standings on election day 1997 (Liberal 51, PC 50, independents 3, 104 senators then) because no 1 January 2000 figure was found; one seat is entered as vacant to reach 105. By dissolution in October 2000 the Liberals held 56 and the PCs 35." },
+        "seats_2000": { "can.liberal": 51, "can.pc": 50, "independents": 3, "vacant": 1 },
+        "confidence_chamber": false,
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/36th_Canadian_Parliament", "title": "Wikipedia: 36th Canadian Parliament (Senate standings)", "accessed": "2026-10-16" }
+        ],
+        "confidence": "needs_review",
+        "review_note": "These are 1997 Senate standings, not 1 January 2000. Check the Library of Parliament Senate party standings for 1 January 2000."
+      }
+    ]
+  },
+  "party_system": "multi_party",
+  "start_2000": {
+    "ruling_parties": ["can.liberal"],
+    "ideology_support": {
+      "centrist_liberal": 0.30,
+      "social_liberal": 0.085,
+      "right_populist": 0.13,
+      "traditional_conservative": 0.065,
+      "liberal_conservative": 0.19,
+      "regionalist": 0.105,
+      "social_democrat": 0.11,
+      "green": 0.005,
+      "big_tent": 0.01
+    },
+    "ideology_support_note": "Derived from 1997 House of Commons vote shares: Liberal 38.46% (split between its centrist and social-liberal wings), Reform 19.35% (split between right-populist and traditional-conservative), Progressive Conservative 18.84%, NDP 11.05%, Bloc Quebecois 10.67% (Quebec only); Green 0.43%; the remaining ~1.2% of minor-party votes is assigned to big_tent.",
+    "stability": 0.8,
+    "war_support": 0.2
+  },
+  "claims": [],
+  "source": [
+    { "url": "https://en.wikipedia.org/wiki/Politics_of_Canada", "title": "Wikipedia: Politics of Canada", "accessed": "2026-10-16" },
+    { "url": "https://en.wikipedia.org/wiki/2000_Canadian_federal_election", "title": "Wikipedia: 2000 Canadian federal election (1997 comparison figures)", "accessed": "2026-10-16" },
+    { "url": "https://en.wikipedia.org/wiki/1997_Canadian_federal_election", "title": "Wikipedia: 1997 Canadian federal election (vote shares)", "accessed": "2026-10-16" }
+  ],
+  "confidence": "verified"
+}

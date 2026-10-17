@@ -1,0 +1,15 @@
+{
+  "note": "Influence and approval are gameplay starting values for 1 January 2000 (Liberal majority government under Jean Chretien), not measured data. Influence reflects institutional weight: strong business and resource-sector lobbies, a sizeable union movement, provincial and Quebec interests carried mainly through regional parties, and a small civilian-controlled military.",
+  "interest_groups": [
+    { "type": "military", "influence": 0.08, "approval": 45, "note": "Small all-volunteer forces after 1990s budget cuts." },
+    { "type": "security_services", "influence": 0.08, "approval": 55 },
+    { "type": "business", "influence": 0.5, "approval": 58, "note": "Business groups broadly supported the deficit reduction of the late 1990s and NAFTA." },
+    { "type": "labour_unions", "influence": 0.3, "approval": 45, "note": "The Canadian Labour Congress is affiliated with the NDP." },
+    { "type": "religious_establishment", "influence": 0.12, "approval": 50 },
+    { "type": "rural", "influence": 0.18, "approval": 40, "note": "Western and rural ridings largely voted Reform in 1997." },
+    { "type": "urban_middle_class", "influence": 0.5, "approval": 58 },
+    { "type": "minorities", "influence": 0.2, "approval": 52, "note": "Includes francophone Quebec, First Nations, Inuit and Metis, and immigrant communities." },
+    { "type": "youth_students", "influence": 0.15, "approval": 50 },
+    { "type": "media", "influence": 0.4, "approval": 52 }
+  ]
+}

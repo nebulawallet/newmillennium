@@ -1,0 +1,156 @@
+{
+  "tag": "IND",
+  "name": { "en": "India", "native": "Bharat", "official": { "en": "Republic of India", "native": "Bharat Ganarajya" } },
+  "adjective": "Indian",
+  "culture_primary": "hindustani",
+  "government": {
+    "type": "parliamentary",
+    "effective_executive": "ind.prime_minister",
+    "head_of_state_office": "ind.president",
+    "head_of_government_office": "ind.prime_minister",
+    "constitution": {
+      "term_limit_amendable": true,
+      "emergency_powers": true,
+      "referendum_required_for": []
+    },
+    "note": "Federal parliamentary republic. The President is elected by an electoral college of members of Parliament and of the state legislative assemblies; the Prime Minister is appointed by the President and must keep the confidence of the Lok Sabha. The constitution has no provision for national referendums."
+  },
+  "offices": [
+    {
+      "id": "ind.president",
+      "title": { "en": "President of India", "native": "Rashtrapati" },
+      "role": "head_of_state",
+      "power_weight": 0.1,
+      "selection": "electoral_college",
+      "term_years": 5,
+      "succession": { "type": "acting_then_election" },
+      "holders": [
+        { "person": "ind.k_r_narayanan", "from": "1997-07-25", "to": "2002-07-25" },
+        { "person": "ind.apj_abdul_kalam", "from": "2002-07-25", "to": "2007-07-25" },
+        { "person": "ind.pratibha_patil", "from": "2007-07-25", "to": "2012-07-25" },
+        { "person": "ind.pranab_mukherjee", "from": "2012-07-25", "to": "2017-07-25" },
+        { "person": "ind.ram_nath_kovind", "from": "2017-07-25", "to": "2022-07-25" },
+        { "person": "ind.droupadi_murmu", "from": "2022-07-25" }
+      ],
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/List_of_presidents_of_India", "title": "Wikipedia: List of presidents of India", "accessed": "2026-10-16" },
+        { "url": "https://www.wikidata.org/wiki/Q313383", "title": "Wikidata: President of India (position held by)", "accessed": "2026-10-16" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "ind.prime_minister",
+      "title": { "en": "Prime Minister of India", "native": "Pradhan Mantri" },
+      "role": "head_of_government",
+      "power_weight": 0.9,
+      "selection": "legislature",
+      "appointed_by": "ind.president",
+      "term_years": 5,
+      "holders": [
+        { "person": "ind.atal_bihari_vajpayee", "from": "1998-03-19", "to": "2004-05-22", "note": "Wikipedia's list gives 22 May 2004 as the handover; Wikidata gives 19 May 2004 as the end of the term." },
+        { "person": "ind.manmohan_singh", "from": "2004-05-22", "to": "2014-05-26" },
+        { "person": "ind.narendra_modi", "from": "2014-05-26" }
+      ],
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/List_of_prime_ministers_of_India", "title": "Wikipedia: List of prime ministers of India", "accessed": "2026-10-16" },
+        { "url": "https://www.wikidata.org/wiki/Q192711", "title": "Wikidata: Prime Minister of India (position held by)", "accessed": "2026-10-16" }
+      ],
+      "confidence": "verified"
+    }
+  ],
+  "legislature": {
+    "name": { "en": "Parliament of India", "native": "Sansad" },
+    "chambers": [
+      {
+        "id": "lok_sabha",
+        "name": { "en": "Lok Sabha (House of the People)", "native": "Lok Sabha" },
+        "seats": 545,
+        "term_years": 5,
+        "elected": "mixed",
+        "system": {
+          "type": "fptp",
+          "district_model": "custom",
+          "reserved_seats": [ { "group": "Anglo-Indian community (nominated by the President; abolished from 2020 by the 104th Amendment)", "seats": 2 } ],
+          "note": "543 single-member constituencies elected by first-past-the-post, some reserved for Scheduled Castes and Scheduled Tribes, plus 2 nominated Anglo-Indian members until 2020. seats_2000 is the result of the September-October 1999 election (13th Lok Sabha); by-election changes before 1 January 2000 are not modelled."
+        },
+        "seats_2000": {
+          "ind.bjp": 182,
+          "ind.inc": 114,
+          "ind.cpim": 33,
+          "ind.tdp": 29,
+          "ind.sp": 26,
+          "ind.jdu": 21,
+          "ind.shiv_sena": 15,
+          "ind.bsp": 14,
+          "ind.dmk": 12,
+          "ind.aiadmk": 10,
+          "ind.bjd": 10,
+          "ind.aitc": 8,
+          "ind.ncp": 8,
+          "ind.rjd": 7,
+          "ind.cpi": 4,
+          "ind.jknc": 4,
+          "ind.sad": 2,
+          "ind.jds": 1,
+          "others": 37,
+          "independents": 6,
+          "appointed": 2
+        },
+        "confidence_chamber": true,
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/1999_Indian_general_election", "title": "Wikipedia: 1999 Indian general election (results table)", "accessed": "2026-10-16" }
+        ],
+        "confidence": "verified"
+      },
+      {
+        "id": "rajya_sabha",
+        "name": { "en": "Rajya Sabha (Council of States)", "native": "Rajya Sabha" },
+        "seats": 245,
+        "term_years": 6,
+        "elected": "indirect",
+        "system": {
+          "type": "indirect",
+          "note": "233 members elected by the state and union-territory legislative assemblies by single transferable vote, one third every two years, plus 12 members nominated by the President. The party breakdown on 1 January 2000 was not found in a fetched source, so all elected seats are recorded as others."
+        },
+        "seats_2000": { "others": 233, "appointed": 12 },
+        "confidence_chamber": false,
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/Rajya_Sabha", "title": "Wikipedia: Rajya Sabha", "accessed": "2026-10-16" }
+        ],
+        "confidence": "needs_review",
+        "review_note": "Fill in the party breakdown of the Rajya Sabha on 1 January 2000 (233 elected members) from a historical source; confirm the 245-seat total applied in 2000."
+      }
+    ]
+  },
+  "party_system": "multi_party",
+  "start_2000": {
+    "ruling_parties": ["ind.bjp", "ind.jdu", "ind.shiv_sena", "ind.dmk", "ind.bjd", "ind.aitc", "ind.sad"],
+    "confidence_and_supply": ["ind.tdp"],
+    "ideology_support": {
+      "social_liberal": 0.283,
+      "hindu_nationalist": 0.253,
+      "regionalist": 0.148,
+      "social_democrat": 0.12,
+      "marxist_leninist": 0.08,
+      "left_populist": 0.038,
+      "big_tent": 0.036,
+      "centrist_liberal": 0.023,
+      "agrarian": 0.009,
+      "right_populist": 0.0065,
+      "islamic_democrat": 0.0035
+    },
+    "ideology_support_note": "Derived from 1999 Lok Sabha shares of valid votes: INC 28.3% (social liberal); BJP 23.75% and Shiv Sena 1.56% (Hindu nationalist); CPI(M) 5.4%, CPI 1.48%, RSP, Forward Bloc and CPI(ML) Liberation about 1.1% (Marxist-Leninist); BSP 4.16%, JD(U) 3.1%, RJD 2.79%, JD(S) 0.91% (social democrat); SP 3.76% (left populist); TDP 3.65%, Trinamool 2.57%, AIADMK 1.93%, DMK 1.73%, BJD 1.2%, SAD 0.69%, MDMK 0.44%, National Conference 0.12% (regionalist); NCP 2.27% (centrist liberal); INLD and RLD 0.92% (agrarian); PMK 0.65% (right populist); Muslim League and AIMIM 0.35% (Islamic democrat). The remaining 4.4% for small parties is split between regionalist (2.5 points) and social democrat (1 point) and big tent; independents (2.74%) are counted as big tent.",
+    "stability": 0.65,
+    "war_support": 0.45
+  },
+  "claims": [
+    { "tag": "PAK", "note": "India claims the whole of the former princely state of Jammu and Kashmir, including the areas administered by Pakistan (Azad Kashmir and Gilgit-Baltistan)." },
+    { "tag": "CHN", "note": "India claims Aksai Chin, administered by China, as part of Ladakh (Jammu and Kashmir in 2000)." }
+  ],
+  "source": [
+    { "url": "https://en.wikipedia.org/wiki/1999_Indian_general_election", "title": "Wikipedia: 1999 Indian general election", "accessed": "2026-10-16" },
+    { "url": "https://en.wikipedia.org/wiki/National_Democratic_Alliance", "title": "Wikipedia: National Democratic Alliance", "accessed": "2026-10-16" },
+    { "url": "https://en.wikipedia.org/wiki/Kashmir_conflict", "title": "Wikipedia: Kashmir conflict", "accessed": "2026-10-16" }
+  ],
+  "confidence": "verified"
+}

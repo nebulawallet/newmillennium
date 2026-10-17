@@ -48,11 +48,11 @@ Live sources sometimes report allegations or investigations involving real peopl
 
 <!-- AUTO-GENERATED BELOW: run `npm run review-report`; edits below this line are overwritten -->
 
-## Needs review: 564 of 6201 records
+## Needs review: 583 of 6450 records
 
-Countries with politics data: 73 / 212.
+Countries with politics data: 77 / 212.
 
-Countries with no data yet (139): KAZ, KGZ, TJK, TKM, UZB, CAN, ATG, BHS, BRB, BLZ, BOL, COL, CRI, CUB, DMA, DOM, ECU, SLV, GRD, GTM, GUY, HTI, HND, JAM, MEX, NIC, PAN, PRY, PER, KNA, LCA, VCT, SUR, TTO, URY, VEN, FAR, DZA, BHR, EGY, JOR, KWT, LBN, LBY, MRT, MAR, OMN, QAT, SAU, SYR, TUN, ARE, YEM, ESH, KUR, AGO, BEN, BWA, BFA, BDI, CPV, CMR, CAF, TCD, COM, COD, COG, CIV, DJI, GNQ, ERI, SWZ, ETH, GAB, GMB, GHA, GIN, GNB, KEN, LSO, LBR, MDG, MWI, MLI, MUS, MOZ, NAM, NER, NGA, RWA, STP, SEN, SYC, SLE, ZAF, SDN, TZA, TGO, UGA, ZMB, ZWE, SSD, SML, UNI, RCD, MLC, BGD, BTN, IND, MDV, NPL, PAK, LKA, TEL, BRN, KHM, IDN, LAO, MYS, MMR, PHL, SGP, THA, VNM, TLS, AUS, NZL, FJI, PNG, SLB, VUT, WSM, TON, KIR, TUV, NRU, FSM, MHL, PLW
+Countries with no data yet (135): KAZ, KGZ, TJK, TKM, UZB, ATG, BHS, BRB, BLZ, BOL, COL, CRI, CUB, DMA, DOM, ECU, SLV, GRD, GTM, GUY, HTI, HND, JAM, NIC, PAN, PRY, PER, KNA, LCA, VCT, SUR, TTO, URY, VEN, FAR, DZA, BHR, EGY, JOR, KWT, LBN, LBY, MRT, MAR, OMN, QAT, SAU, SYR, TUN, ARE, YEM, ESH, KUR, AGO, BEN, BWA, BFA, BDI, CPV, CMR, CAF, TCD, COM, COD, COG, CIV, DJI, GNQ, ERI, SWZ, ETH, GAB, GMB, GHA, GIN, GNB, KEN, LSO, LBR, MDG, MWI, MLI, MUS, MOZ, NAM, NER, NGA, RWA, STP, SEN, SYC, SLE, ZAF, SDN, TZA, TGO, UGA, ZMB, ZWE, SSD, SML, UNI, RCD, MLC, BGD, BTN, MDV, NPL, LKA, TEL, BRN, KHM, IDN, LAO, MYS, MMR, PHL, SGP, THA, VNM, TLS, AUS, NZL, FJI, PNG, SLB, VUT, WSM, TON, KIR, TUV, NRU, FSM, MHL, PLW
 
 ### ABK — Abkhazia (6)
 
@@ -255,6 +255,14 @@ Countries with no data yet (139): KAZ, KGZ, TJK, TKM, UZB, CAN, ATG, BHS, BRB, B
 | election | `chamber_2026` legislative 2026-10-04 | Recent result (4 October 2026) taken from Wikipedia only; confirm the final seat allocation against the Superior Electoral Court. | data/countries/BRA/elections.json |
 | election | `senate_2026` legislative_upper 2026-10-04 | Recent result (4 October 2026) taken from Wikipedia only; confirm the final seat allocation against the Superior Electoral Court. | data/countries/BRA/elections.json |
 
+### CAN — Canada (3)
+
+| kind | record | what to check | file |
+|---|---|---|---|
+| chamber | `house_of_commons` House of Commons | Floor crossings are dated only by year in the source. Confirm against the Library of Parliament party standings for 1 January 2000 (expected Lib 157, Reform 58, BQ 44, NDP 20, PC 19, independents 3). | data/countries/CAN/country.json |
+| chamber | `senate` Senate | These are 1997 Senate standings, not 1 January 2000. Check the Library of Parliament Senate party standings for 1 January 2000. | data/countries/CAN/country.json |
+| person | `can.thomas_mulcair` Tom Mulcair (b. 1954) | Confirm the date of the 2007 Outremont by-election (17 September 2007) used for available.from; it was not printed by the research tool. | data/countries/CAN/people.json |
+
 ### CHE — Switzerland (8)
 
 | kind | record | what to check | file |
@@ -445,6 +453,21 @@ Countries with no data yet (139): KAZ, KGZ, TJK, TKM, UZB, CAN, ATG, BHS, BRB, B
 |---|---|---|---|
 | chamber | `parliament` Parliament | Electoral system assumed (two polling dates); 'others' are the 7 seats of Islamic Order, which has no party record. Check the chamber's status after its suspension in December 1998. | data/countries/ICH/country.json |
 | party | `ich.nip` National Independence Party (PNN) | Leaders and their dates are not given by the source (Maskhadov is named as party president without dates). | data/countries/ICH/parties.json |
+
+### IND — India (10)
+
+| kind | record | what to check | file |
+|---|---|---|---|
+| chamber | `rajya_sabha` Rajya Sabha (Council of States) | Fill in the party breakdown of the Rajya Sabha on 1 January 2000 (233 elected members) from a historical source; confirm the 245-seat total applied in 2000. | data/countries/IND/country.json |
+| person | `ind.atal_bihari_vajpayee` Atal Bihari Vajpayee (b. 1924) | Birth date: Wikidata 24 December 1924, Wikipedia list of prime ministers 25 December 1924. Confirm which is correct. | data/countries/IND/people.json |
+| person | `ind.yashwant_sinha` Yashwant Sinha (b. 1937) | The 2022 election infobox lists him under the AITC; confirm the date he joined the Trinamool Congress and add it to party_history. | data/countries/IND/people.json |
+| person | `ind.sunetra_pawar` Sunetra Pawar (b. 1963) | Confirm the exact date she became NCP national president (the fetched sources name her as successor but give no start date); available.from is set to Ajit Pawar's death date as a placeholder no later than her leadership. | data/countries/IND/people.json |
+| person | `ind.chirag_paswan` Chirag Paswan (b. 1982) | available.from uses the 2014 results date as his entry into national politics; confirm against his Lok Sabha membership dates. | data/countries/IND/people.json |
+| party | `ind.jdu` Janata Dal (United) (JD(U)) | Add the 1999-2003 leader (Sharad Yadav's Janata Dal faction) and person records for R. C. P. Singh and Lalan Singh to close the leadership gaps. | data/countries/IND/parties.json |
+| party | `ind.ncp` Nationalist Congress Party (NCP) | Confirm the exact date Sunetra Pawar became national president (recorded as 2026). | data/countries/IND/parties.json |
+| party | `ind.shiv_sena` Shiv Sena (SS) | Confirm the date the Election Commission recognised Shinde's faction as the Shiv Sena (recorded as 2023) and whether Shinde's title is 'chief leader'. | data/countries/IND/parties.json |
+| party | `ind.sad` Shiromani Akali Dal (SAD) | Check the years of the Badal presidencies against the party's list of presidents. | data/countries/IND/parties.json |
+| party | `ind.ljp` Lok Janshakti Party (LJP) | Confirm when Chirag Paswan became LJP president (recorded as 2020); the fetched article does not give the date. | data/countries/IND/parties.json |
 
 ### IRL — Ireland (1)
 
@@ -679,6 +702,13 @@ Countries with no data yet (139): KAZ, KGZ, TJK, TKM, UZB, CAN, ATG, BHS, BRB, B
 | party | `mda.ppda` Democracy at Home Party (PPDA) | Wikidata lists Costiuc as chairman without dates; 2025 is the election at which the fetched infobox names him as leader. Confirm when he became chairman. | data/countries/MDA/parties.json |
 | election | `presidential_2009_nov` indirect_presidential 2009-11-10 | Add Lupu's vote totals in each round (the fetched article does not give them). | data/countries/MDA/elections.json |
 
+### MEX — Mexico (2)
+
+| kind | record | what to check | file |
+|---|---|---|---|
+| chamber | `chamber_of_deputies` Chamber of Deputies | seats_2000 uses the 1997 election result; check the parliamentary group sizes of the LVII Legislature on 1 January 2000. Also confirm the 2% PR threshold for 1997-2012. | data/countries/MEX/country.json |
+| chamber | `senate` Senate of the Republic | Composition after the 1997 partial Senate election; check the group sizes on 1 January 2000. | data/countries/MEX/country.json |
+
 ### MKD — Macedonia (6)
 
 | kind | record | what to check | file |
@@ -755,6 +785,15 @@ Countries with no data yet (139): KAZ, KGZ, TJK, TKM, UZB, CAN, ATG, BHS, BRB, B
 | kind | record | what to check | file |
 |---|---|---|---|
 | party | `nor.h` Conservative Party (H) | The leadership change from Erna Solberg to Ine Eriksen Søreide is given only as the year 2026 in the party article; confirm the exact date of the 2026 party convention. | data/countries/NOR/parties.json |
+
+### PAK — Pakistan (4)
+
+| kind | record | what to check | file |
+|---|---|---|---|
+| chamber | `national_assembly` National Assembly | The 1997 results table and infobox disagree on PML(N) seats (135 vs 137). Others = PPP (Shaheed Bhutto) 1, NPP 1, Jamhoori Wattan Party 2 and the 10 minority seats. | data/countries/PAK/country.json |
+| office | `pak.president` President of Pakistan | Wikipedia's list of presidents shows a break in Musharraf's tenure between 15 October and 19 November 2007; check whether that period should be recorded differently (Wikidata has him continuously in office 2001-06-20 to 2008-08-18). | data/countries/PAK/country.json |
+| person | `pak.zafarullah_khan_jamali` Zafarullah Khan Jamali (b. 1944) | Wikidata gives 1 January 1944 as the birth date; a 1 January date may be a placeholder. Confirm against Wikipedia. | data/countries/PAK/people.json |
+| election | `national_assembly_2024` legislative 2024-02-08 | Seat counts changed after the election as reserved seats were allocated and PTI-backed members joined the Sunni Ittehad Council; confirm the final composition and whether the 25 unallocated reserved seats should be assigned. | data/countries/PAK/elections.json |
 
 ### PMR — Transnistria (5)
 

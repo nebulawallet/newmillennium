@@ -1,0 +1,705 @@
+{
+  "rules": [
+    {
+      "kind": "legislative",
+      "chamber": "house_of_commons",
+      "every_years": 4,
+      "anchor": "2025-04-28",
+      "snap_possible": true,
+      "note": "Fixed election dates every four years since 2007 (next due on or before 15 October 2029), but the Prime Minister can still advise an early dissolution and a lost confidence vote forces one. The appointed Senate has no elections."
+    }
+  ],
+  "elections": [
+    {
+      "id": "commons_2000",
+      "date": "2000-11-27",
+      "kind": "legislative",
+      "chamber": "house_of_commons",
+      "historical": {
+        "candidates": [
+          {
+            "person": "can.jean_chretien",
+            "party": "can.liberal",
+            "round": 1
+          },
+          {
+            "person": "can.stockwell_day",
+            "party": "can.canadian_alliance",
+            "round": 1
+          },
+          {
+            "person": "can.joe_clark",
+            "party": "can.pc",
+            "round": 1
+          },
+          {
+            "person": "can.gilles_duceppe",
+            "party": "can.bq",
+            "round": 1
+          },
+          {
+            "person": "can.alexa_mcdonough",
+            "party": "can.ndp",
+            "round": 1
+          }
+        ],
+        "party_results": [
+          {
+            "party": "can.liberal",
+            "share": 0.4085,
+            "seats": 172
+          },
+          {
+            "party": "can.canadian_alliance",
+            "share": 0.2549,
+            "seats": 66
+          },
+          {
+            "party": "can.pc",
+            "share": 0.1219,
+            "seats": 12
+          },
+          {
+            "party": "can.bq",
+            "share": 0.1072,
+            "seats": 38
+          },
+          {
+            "party": "can.ndp",
+            "share": 0.0851,
+            "seats": 13
+          }
+        ],
+        "winner": "can.liberal",
+        "turnout": 0.641,
+        "note": "The Reform Party had become the Canadian Alliance in March 2000.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2000_Canadian_federal_election",
+            "title": "Wikipedia: 2000 Canadian federal election (infobox results)",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "commons_2004",
+      "date": "2004-06-28",
+      "kind": "legislative",
+      "chamber": "house_of_commons",
+      "historical": {
+        "candidates": [
+          {
+            "person": "can.paul_martin",
+            "party": "can.liberal",
+            "round": 1
+          },
+          {
+            "person": "can.stephen_harper",
+            "party": "can.conservative",
+            "round": 1
+          },
+          {
+            "person": "can.jack_layton",
+            "party": "can.ndp",
+            "round": 1
+          },
+          {
+            "person": "can.gilles_duceppe",
+            "party": "can.bq",
+            "round": 1
+          }
+        ],
+        "party_results": [
+          {
+            "party": "can.liberal",
+            "share": 0.3673,
+            "seats": 135
+          },
+          {
+            "party": "can.conservative",
+            "share": 0.2963,
+            "seats": 99
+          },
+          {
+            "party": "can.ndp",
+            "share": 0.1568,
+            "seats": 19
+          },
+          {
+            "party": "can.bq",
+            "share": 0.1239,
+            "seats": 54
+          },
+          {
+            "party": "independents",
+            "seats": 1
+          }
+        ],
+        "winner": "can.liberal",
+        "turnout": 0.609,
+        "note": "Liberal minority government. The independent seat is the remainder of the 308-seat House.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2004_Canadian_federal_election",
+            "title": "Wikipedia: 2004 Canadian federal election (infobox results)",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "commons_2006",
+      "date": "2006-01-23",
+      "kind": "legislative",
+      "chamber": "house_of_commons",
+      "snap": true,
+      "historical": {
+        "candidates": [
+          {
+            "person": "can.stephen_harper",
+            "party": "can.conservative",
+            "round": 1
+          },
+          {
+            "person": "can.paul_martin",
+            "party": "can.liberal",
+            "round": 1
+          },
+          {
+            "person": "can.jack_layton",
+            "party": "can.ndp",
+            "round": 1
+          },
+          {
+            "person": "can.gilles_duceppe",
+            "party": "can.bq",
+            "round": 1
+          }
+        ],
+        "party_results": [
+          {
+            "party": "can.conservative",
+            "share": 0.3627,
+            "seats": 124
+          },
+          {
+            "party": "can.liberal",
+            "share": 0.3023,
+            "seats": 103
+          },
+          {
+            "party": "can.ndp",
+            "share": 0.1748,
+            "seats": 29
+          },
+          {
+            "party": "can.bq",
+            "share": 0.1048,
+            "seats": 51
+          },
+          {
+            "party": "independents",
+            "seats": 1
+          }
+        ],
+        "winner": "can.conservative",
+        "turnout": 0.647,
+        "note": "Called after the government lost a confidence vote on 28 November 2005. Conservative minority government.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2006_Canadian_federal_election",
+            "title": "Wikipedia: 2006 Canadian federal election (infobox results)",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "commons_2008",
+      "date": "2008-10-14",
+      "kind": "legislative",
+      "chamber": "house_of_commons",
+      "snap": true,
+      "historical": {
+        "candidates": [
+          {
+            "person": "can.stephen_harper",
+            "party": "can.conservative",
+            "round": 1
+          },
+          {
+            "person": "can.stephane_dion",
+            "party": "can.liberal",
+            "round": 1
+          },
+          {
+            "person": "can.jack_layton",
+            "party": "can.ndp",
+            "round": 1
+          },
+          {
+            "person": "can.gilles_duceppe",
+            "party": "can.bq",
+            "round": 1
+          },
+          {
+            "person": "can.elizabeth_may",
+            "party": "can.green",
+            "round": 1
+          }
+        ],
+        "party_results": [
+          {
+            "party": "can.conservative",
+            "share": 0.3765,
+            "seats": 143
+          },
+          {
+            "party": "can.liberal",
+            "share": 0.2626,
+            "seats": 77
+          },
+          {
+            "party": "can.ndp",
+            "share": 0.1818,
+            "seats": 37
+          },
+          {
+            "party": "can.bq",
+            "share": 0.0998,
+            "seats": 49
+          },
+          {
+            "party": "can.green",
+            "share": 0.0678,
+            "seats": 0
+          },
+          {
+            "party": "independents",
+            "seats": 2
+          }
+        ],
+        "winner": "can.conservative",
+        "turnout": 0.588,
+        "note": "Early election called before the fixed date of October 2009. Conservative minority government.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2008_Canadian_federal_election",
+            "title": "Wikipedia: 2008 Canadian federal election (infobox results)",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "commons_2011",
+      "date": "2011-05-02",
+      "kind": "legislative",
+      "chamber": "house_of_commons",
+      "snap": true,
+      "historical": {
+        "candidates": [
+          {
+            "person": "can.stephen_harper",
+            "party": "can.conservative",
+            "round": 1
+          },
+          {
+            "person": "can.jack_layton",
+            "party": "can.ndp",
+            "round": 1
+          },
+          {
+            "person": "can.michael_ignatieff",
+            "party": "can.liberal",
+            "round": 1
+          },
+          {
+            "person": "can.gilles_duceppe",
+            "party": "can.bq",
+            "round": 1
+          },
+          {
+            "person": "can.elizabeth_may",
+            "party": "can.green",
+            "round": 1
+          }
+        ],
+        "party_results": [
+          {
+            "party": "can.conservative",
+            "share": 0.3962,
+            "seats": 166
+          },
+          {
+            "party": "can.ndp",
+            "share": 0.3063,
+            "seats": 103
+          },
+          {
+            "party": "can.liberal",
+            "share": 0.1891,
+            "seats": 34
+          },
+          {
+            "party": "can.bq",
+            "share": 0.0604,
+            "seats": 4
+          },
+          {
+            "party": "can.green",
+            "share": 0.0391,
+            "seats": 1
+          }
+        ],
+        "winner": "can.conservative",
+        "turnout": 0.611,
+        "note": "Called after the government was defeated in the House. Conservative majority; the NDP became the Official Opposition for the first time.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2011_Canadian_federal_election",
+            "title": "Wikipedia: 2011 Canadian federal election (infobox results)",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "commons_2015",
+      "date": "2015-10-19",
+      "kind": "legislative",
+      "chamber": "house_of_commons",
+      "historical": {
+        "candidates": [
+          {
+            "person": "can.justin_trudeau",
+            "party": "can.liberal",
+            "round": 1
+          },
+          {
+            "person": "can.stephen_harper",
+            "party": "can.conservative",
+            "round": 1
+          },
+          {
+            "person": "can.thomas_mulcair",
+            "party": "can.ndp",
+            "round": 1
+          },
+          {
+            "person": "can.gilles_duceppe",
+            "party": "can.bq",
+            "round": 1
+          },
+          {
+            "person": "can.elizabeth_may",
+            "party": "can.green",
+            "round": 1
+          }
+        ],
+        "party_results": [
+          {
+            "party": "can.liberal",
+            "share": 0.3947,
+            "seats": 184
+          },
+          {
+            "party": "can.conservative",
+            "share": 0.3191,
+            "seats": 99
+          },
+          {
+            "party": "can.ndp",
+            "share": 0.1972,
+            "seats": 44
+          },
+          {
+            "party": "can.bq",
+            "share": 0.0467,
+            "seats": 10
+          },
+          {
+            "party": "can.green",
+            "share": 0.0343,
+            "seats": 1
+          }
+        ],
+        "winner": "can.liberal",
+        "turnout": 0.683,
+        "note": "Liberal majority government. House enlarged to 338 seats.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2015_Canadian_federal_election",
+            "title": "Wikipedia: 2015 Canadian federal election (infobox results)",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "commons_2019",
+      "date": "2019-10-21",
+      "kind": "legislative",
+      "chamber": "house_of_commons",
+      "historical": {
+        "candidates": [
+          {
+            "person": "can.justin_trudeau",
+            "party": "can.liberal",
+            "round": 1
+          },
+          {
+            "person": "can.andrew_scheer",
+            "party": "can.conservative",
+            "round": 1
+          },
+          {
+            "person": "can.yves_francois_blanchet",
+            "party": "can.bq",
+            "round": 1
+          },
+          {
+            "person": "can.jagmeet_singh",
+            "party": "can.ndp",
+            "round": 1
+          },
+          {
+            "person": "can.elizabeth_may",
+            "party": "can.green",
+            "round": 1
+          },
+          {
+            "person": "can.maxime_bernier",
+            "party": "can.ppc",
+            "round": 1
+          }
+        ],
+        "party_results": [
+          {
+            "party": "can.liberal",
+            "share": 0.3312,
+            "seats": 157
+          },
+          {
+            "party": "can.conservative",
+            "share": 0.3434,
+            "seats": 121
+          },
+          {
+            "party": "can.bq",
+            "share": 0.0763,
+            "seats": 32
+          },
+          {
+            "party": "can.ndp",
+            "share": 0.1598,
+            "seats": 24
+          },
+          {
+            "party": "can.green",
+            "share": 0.0655,
+            "seats": 3
+          },
+          {
+            "party": "can.ppc",
+            "share": 0.0162,
+            "seats": 0
+          },
+          {
+            "party": "independents",
+            "seats": 1
+          }
+        ],
+        "winner": "can.liberal",
+        "turnout": 0.67,
+        "note": "Liberal minority government. The Conservatives won the most votes but fewer seats; the winner is recorded as the party with the most seats.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2019_Canadian_federal_election",
+            "title": "Wikipedia: 2019 Canadian federal election (infobox results)",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "commons_2021",
+      "date": "2021-09-20",
+      "kind": "legislative",
+      "chamber": "house_of_commons",
+      "snap": true,
+      "historical": {
+        "candidates": [
+          {
+            "person": "can.justin_trudeau",
+            "party": "can.liberal",
+            "round": 1
+          },
+          {
+            "person": "can.erin_otoole",
+            "party": "can.conservative",
+            "round": 1
+          },
+          {
+            "person": "can.yves_francois_blanchet",
+            "party": "can.bq",
+            "round": 1
+          },
+          {
+            "person": "can.jagmeet_singh",
+            "party": "can.ndp",
+            "round": 1
+          },
+          {
+            "person": "can.annamie_paul",
+            "party": "can.green",
+            "round": 1
+          },
+          {
+            "person": "can.maxime_bernier",
+            "party": "can.ppc",
+            "round": 1
+          }
+        ],
+        "party_results": [
+          {
+            "party": "can.liberal",
+            "share": 0.3262,
+            "seats": 160
+          },
+          {
+            "party": "can.conservative",
+            "share": 0.3374,
+            "seats": 119
+          },
+          {
+            "party": "can.bq",
+            "share": 0.0764,
+            "seats": 32
+          },
+          {
+            "party": "can.ndp",
+            "share": 0.1782,
+            "seats": 25
+          },
+          {
+            "party": "can.green",
+            "share": 0.0233,
+            "seats": 2
+          },
+          {
+            "party": "can.ppc",
+            "share": 0.0494,
+            "seats": 0
+          }
+        ],
+        "winner": "can.liberal",
+        "turnout": 0.623,
+        "note": "Early election. Liberal minority; the NDP supported the government under a 2022-2024 supply-and-confidence agreement. The Liberal total of 160 includes Kevin Vuong, elected on the Liberal ballot line but disavowed by the party and not seated in its caucus.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2021_Canadian_federal_election",
+            "title": "Wikipedia: 2021 Canadian federal election (infobox results)",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "commons_2025",
+      "date": "2025-04-28",
+      "kind": "legislative",
+      "chamber": "house_of_commons",
+      "snap": true,
+      "historical": {
+        "candidates": [
+          {
+            "person": "can.mark_carney",
+            "party": "can.liberal",
+            "round": 1
+          },
+          {
+            "person": "can.pierre_poilievre",
+            "party": "can.conservative",
+            "round": 1
+          },
+          {
+            "person": "can.yves_francois_blanchet",
+            "party": "can.bq",
+            "round": 1
+          },
+          {
+            "person": "can.jagmeet_singh",
+            "party": "can.ndp",
+            "round": 1
+          },
+          {
+            "person": "can.elizabeth_may",
+            "party": "can.green",
+            "round": 1
+          }
+        ],
+        "party_results": [
+          {
+            "party": "can.liberal",
+            "share": 0.4376,
+            "seats": 169
+          },
+          {
+            "party": "can.conservative",
+            "share": 0.4131,
+            "seats": 144
+          },
+          {
+            "party": "can.bq",
+            "share": 0.0629,
+            "seats": 22
+          },
+          {
+            "party": "can.ndp",
+            "share": 0.0629,
+            "seats": 7
+          },
+          {
+            "party": "can.green",
+            "share": 0.0122,
+            "seats": 1
+          }
+        ],
+        "winner": "can.liberal",
+        "turnout": 0.695,
+        "note": "Early election called by Mark Carney ahead of the fixed date of October 2025. Liberal minority. House enlarged to 343 seats. The Supreme Court annulled the Terrebonne result in February 2026 and a by-election was called (per the Wikipedia infobox note).",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2025_Canadian_federal_election",
+            "title": "Wikipedia: 2025 Canadian federal election (infobox results)",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    }
+  ],
+  "source": [
+    {
+      "url": "https://en.wikipedia.org/wiki/Elections_in_Canada",
+      "title": "Wikipedia: Elections in Canada",
+      "accessed": "2026-10-16"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Next_Canadian_federal_election",
+      "title": "Wikipedia: 46th Canadian federal election (next due by 15 October 2029; no federal election held 2026)",
+      "accessed": "2026-10-16"
+    }
+  ],
+  "confidence": "verified"
+}

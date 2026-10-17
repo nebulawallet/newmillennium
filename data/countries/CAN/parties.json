@@ -1,0 +1,235 @@
+{
+  "parties": [
+    {
+      "id": "can.liberal",
+      "name": { "en": "Liberal Party of Canada", "native": "Parti libéral du Canada" },
+      "abbrev": { "en": "LPC", "native": "PLC" },
+      "color": "#D71920",
+      "sub_ideology": "centrist_liberal",
+      "founded": "1867-07-01",
+      "status_2000": "active",
+      "leader_history": [
+        { "person": "can.jean_chretien", "from": "1990-06-23", "to": "2003-11-14" },
+        { "person": "can.paul_martin", "from": "2003-11-14", "to": "2006-03-19" },
+        { "person": "can.bill_graham", "from": "2006-03-19", "to": "2006-12-02", "title": "Interim leader" },
+        { "person": "can.stephane_dion", "from": "2006-12-02", "to": "2008-12-10" },
+        { "person": "can.michael_ignatieff", "from": "2008-12-10", "to": "2011-05-25" },
+        { "person": "can.bob_rae", "from": "2011-05-25", "to": "2013-04-14", "title": "Interim leader" },
+        { "person": "can.justin_trudeau", "from": "2013-04-14", "to": "2025-03-09" },
+        { "person": "can.mark_carney", "from": "2025-03-09" }
+      ],
+      "popularity_2000": 0.3846,
+      "popularity_note": "Vote share, 1997 federal election.",
+      "international": "Liberal International",
+      "note": "Wikipedia gives the foundation as 1 July 1867; Wikidata gives 1861. Wikipedia preferred.",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/Liberal_Party_of_Canada", "title": "Wikipedia: Liberal Party of Canada (infobox)", "accessed": "2026-10-16" },
+        { "url": "https://en.wikipedia.org/wiki/Leader_of_the_Liberal_Party_of_Canada", "title": "Wikipedia: Leader of the Liberal Party of Canada (incl. interim leaders)", "accessed": "2026-10-16" },
+        { "url": "https://www.wikidata.org/wiki/Q138345", "title": "Wikidata: Liberal Party of Canada (chairpersons)", "accessed": "2026-10-16" },
+        { "url": "https://en.wikipedia.org/wiki/1997_Canadian_federal_election", "title": "Wikipedia: 1997 Canadian federal election", "accessed": "2026-10-16" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "can.reform",
+      "name": { "en": "Reform Party of Canada", "native": "Parti réformiste du Canada" },
+      "abbrev": { "en": "Reform", "native": "Reform" },
+      "color": "#3CB371",
+      "sub_ideology": "right_populist",
+      "founded": "1987-10-30",
+      "dissolved": "2000-03-27",
+      "status_2000": "active",
+      "leader_history": [
+        { "person": "can.preston_manning", "from": 1987, "to": "2000-03-27" }
+      ],
+      "popularity_2000": 0.1935,
+      "popularity_note": "Vote share, 1997 federal election. Official Opposition on 2000-01-01.",
+      "lineage": { "renamed_to": "can.canadian_alliance" },
+      "regional_base": ["Western Canada"],
+      "note": "Became the Canadian Alliance, with the name change granted retroactive to 27 March 2000. Wikidata gives founding 31 October 1987 and dissolution 25 March 2000; Wikipedia gives 30 October 1987 and 27 March 2000. Wikipedia preferred.",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/Reform_Party_of_Canada", "title": "Wikipedia: Reform Party of Canada (infobox)", "accessed": "2026-10-16" },
+        { "url": "https://en.wikipedia.org/wiki/Canadian_Alliance", "title": "Wikipedia: Canadian Alliance (origins, name change)", "accessed": "2026-10-16" },
+        { "url": "https://www.wikidata.org/wiki/Q1680589", "title": "Wikidata: Reform Party of Canada", "accessed": "2026-10-16" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "can.canadian_alliance",
+      "name": { "en": "Canadian Reform Conservative Alliance", "native": "Alliance réformiste-conservatrice canadienne" },
+      "abbrev": { "en": "Alliance", "native": "Alliance" },
+      "color": "#5F9EA0",
+      "sub_ideology": "traditional_conservative",
+      "founded": "2000-03-27",
+      "dissolved": "2003-12-07",
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        { "person": "can.deborah_grey", "from": "2000-03-27", "to": "2000-07-08", "title": "Interim leader" },
+        { "person": "can.stockwell_day", "from": "2000-07-08", "to": "2001-12-11" },
+        { "person": "can.john_reynolds", "from": "2001-12-11", "to": "2002-03-20", "title": "Interim leader" },
+        { "person": "can.stephen_harper", "from": "2002-03-20", "to": "2003-12-07" }
+      ],
+      "popularity_2000": 0,
+      "popularity_note": "Not yet founded on 2000-01-01; it was the renamed Reform Party (19.35% in 1997).",
+      "lineage": { "renamed_from": "can.reform", "merged_into": "can.conservative" },
+      "regional_base": ["Western Canada"],
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/Canadian_Alliance", "title": "Wikipedia: Canadian Alliance (infobox, list of leaders)", "accessed": "2026-10-16" },
+        { "url": "https://www.wikidata.org/wiki/Q546881", "title": "Wikidata: Canadian Alliance (chairpersons)", "accessed": "2026-10-16" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "can.pc",
+      "name": { "en": "Progressive Conservative Party of Canada", "native": "Parti progressiste-conservateur du Canada" },
+      "abbrev": { "en": "PC", "native": "PC" },
+      "color": "#9999FF",
+      "sub_ideology": "liberal_conservative",
+      "founded": "1942-12-10",
+      "dissolved": "2003-12-07",
+      "status_2000": "active",
+      "leader_history": [
+        { "person": "can.joe_clark", "from": "1998-11-14", "to": "2003-05-31" },
+        { "person": "can.peter_mackay", "from": "2003-05-31", "to": "2003-12-07" }
+      ],
+      "popularity_2000": 0.1884,
+      "popularity_note": "Vote share, 1997 federal election.",
+      "lineage": { "merged_into": "can.conservative" },
+      "international": "International Democrat Union",
+      "note": "Merged with the Canadian Alliance on 7 December 2003; Joe Clark sat as a Progressive Conservative in the Commons until 2 February 2004.",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/Progressive_Conservative_Party_of_Canada", "title": "Wikipedia: Progressive Conservative Party of Canada (infobox, list of leaders)", "accessed": "2026-10-16" },
+        { "url": "https://en.wikipedia.org/wiki/1997_Canadian_federal_election", "title": "Wikipedia: 1997 Canadian federal election", "accessed": "2026-10-16" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "can.conservative",
+      "name": { "en": "Conservative Party of Canada", "native": "Parti conservateur du Canada" },
+      "abbrev": { "en": "CPC", "native": "PCC" },
+      "color": "#1A4782",
+      "sub_ideology": "liberal_conservative",
+      "founded": "2003-12-07",
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        { "person": "can.john_lynch_staunton", "from": "2003-12-08", "to": "2004-03-20", "title": "Interim leader" },
+        { "person": "can.stephen_harper", "from": "2004-03-20", "to": "2015-10-19" },
+        { "person": "can.rona_ambrose", "from": "2015-11-05", "to": "2017-05-27", "title": "Interim leader" },
+        { "person": "can.andrew_scheer", "from": "2017-05-27", "to": "2020-08-24" },
+        { "person": "can.erin_otoole", "from": "2020-08-24", "to": "2022-02-02" },
+        { "person": "can.candice_bergen", "from": "2022-02-02", "to": "2022-09-10", "title": "Interim leader" },
+        { "person": "can.pierre_poilievre", "from": "2022-09-10" }
+      ],
+      "popularity_2000": 0,
+      "popularity_note": "Not yet founded on 2000-01-01; formed by the merger of the Canadian Alliance and the Progressive Conservatives.",
+      "lineage": { "formed_from": ["can.canadian_alliance", "can.pc"] },
+      "international": "International Democracy Union",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/Conservative_Party_of_Canada", "title": "Wikipedia: Conservative Party of Canada (infobox)", "accessed": "2026-10-16" },
+        { "url": "https://www.wikidata.org/wiki/Q488523", "title": "Wikidata: Conservative Party of Canada (chairpersons)", "accessed": "2026-10-16" },
+        { "url": "https://www.wikidata.org/wiki/Q1840895", "title": "Wikidata: Erin O'Toole (leader of the Conservative Party)", "accessed": "2026-10-16" },
+        { "url": "https://www.wikidata.org/wiki/Q2936261", "title": "Wikidata: Candice Bergen (leader of the Conservative Party)", "accessed": "2026-10-16" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "can.ndp",
+      "name": { "en": "New Democratic Party", "native": "Nouveau Parti démocratique" },
+      "abbrev": { "en": "NDP", "native": "NPD" },
+      "color": "#F37021",
+      "sub_ideology": "social_democrat",
+      "founded": "1961-08-03",
+      "status_2000": "active",
+      "leader_history": [
+        { "person": "can.alexa_mcdonough", "from": "1995-10-14", "to": "2003-01-25" },
+        { "person": "can.jack_layton", "from": "2003-01-25", "to": "2011-08-22" },
+        { "person": "can.nycole_turmel", "from": "2011-08-22", "to": "2012-03-24", "title": "Interim leader" },
+        { "person": "can.thomas_mulcair", "from": "2012-03-24", "to": "2017-10-01" },
+        { "person": "can.jagmeet_singh", "from": "2017-10-01", "to": "2025-05-05" },
+        { "person": "can.don_davies", "from": "2025-05-05", "to": "2026-03-29", "title": "Interim leader" },
+        { "person": "can.avi_lewis", "from": "2026-03-29" }
+      ],
+      "popularity_2000": 0.1105,
+      "popularity_note": "Vote share, 1997 federal election. Turmel carried out the leader's functions from July 2011 during Layton's leave; her interim leadership is dated here from his death.",
+      "international": "Socialist International until 2013, then Progressive Alliance",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/New_Democratic_Party", "title": "Wikipedia: New Democratic Party (infobox, leadership history)", "accessed": "2026-10-16" },
+        { "url": "https://www.wikidata.org/wiki/Q130765", "title": "Wikidata: New Democratic Party (chairpersons)", "accessed": "2026-10-16" },
+        { "url": "https://www.wikidata.org/wiki/Q2604970", "title": "Wikidata: Alexa McDonough (NDP leader 1995-2003)", "accessed": "2026-10-16" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "can.bq",
+      "name": { "en": "Bloc Québécois", "native": "Bloc Québécois" },
+      "abbrev": { "en": "BQ", "native": "BQ" },
+      "color": "#33B2CC",
+      "sub_ideology": "regionalist",
+      "founded": "1991-06-15",
+      "status_2000": "active",
+      "leader_history": [
+        { "person": "can.gilles_duceppe", "from": 1997, "to": 2011 },
+        { "person": "can.daniel_paille", "from": "2011-12-11", "to": "2013-12-16" },
+        { "person": "can.mario_beaulieu", "from": 2014, "to": "2015-06-10" },
+        { "person": "can.gilles_duceppe", "from": "2015-06-10", "to": 2015 },
+        { "person": "can.martine_ouellet", "from": 2017, "to": "2018-06-11" },
+        { "person": "can.mario_beaulieu", "from": "2018-06-11", "to": "2019-01-17", "title": "Interim leader" },
+        { "person": "can.yves_francois_blanchet", "from": "2019-01-17" }
+      ],
+      "popularity_2000": 0.1067,
+      "popularity_note": "Vote share, 1997 federal election (contests Quebec seats only). Interim leaders Vivian Barbot (2011) and Rhéal Fortin (2015-2017) are omitted. Duceppe resigned after losing his seat in May 2011 and again after the October 2015 election; Beaulieu was elected in June 2014 and Ouellet acclaimed in March 2017 (Wikipedia gives month only).",
+      "regional_base": ["french_canadian", "Quebec"],
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/Bloc_Qu%C3%A9b%C3%A9cois", "title": "Wikipedia: Bloc Québécois (history and leaders)", "accessed": "2026-10-16" },
+        { "url": "https://www.wikidata.org/wiki/Q735105", "title": "Wikidata: Bloc Québécois (chairpersons)", "accessed": "2026-10-16" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "can.green",
+      "name": { "en": "Green Party of Canada", "native": "Parti vert du Canada" },
+      "abbrev": { "en": "GPC", "native": "PVC" },
+      "color": "#24B24A",
+      "sub_ideology": "green",
+      "founded": "1983-11-04",
+      "status_2000": "extra_parliamentary",
+      "leader_history": [
+        { "person": "can.joan_russow", "from": "1997-04-13", "to": 2001 },
+        { "person": "can.jim_harris", "from": "2003-02-14", "to": "2006-08-26" },
+        { "person": "can.elizabeth_may", "from": "2006-08-26", "to": "2019-11-04" },
+        { "person": "can.annamie_paul", "from": "2020-10-03", "to": "2021-11-14" },
+        { "person": "can.elizabeth_may", "from": "2022-11-19" },
+        { "person": "can.jonathan_pedneault", "from": "2025-02-04", "to": "2025-04-30", "title": "Co-leader" }
+      ],
+      "popularity_2000": 0.0043,
+      "popularity_note": "Vote share, 1997 federal election. Interim leaders (Chris Bradshaw 2001-2003 and others) are omitted. A leadership election is scheduled for 14 November 2026.",
+      "international": "Global Greens",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/Green_Party_of_Canada", "title": "Wikipedia: Green Party of Canada (infobox, leadership history)", "accessed": "2026-10-16" },
+        { "url": "https://www.wikidata.org/wiki/Q691730", "title": "Wikidata: Green Party of Canada (chairpersons)", "accessed": "2026-10-16" },
+        { "url": "https://en.wikipedia.org/wiki/1997_Canadian_federal_election", "title": "Wikipedia: 1997 Canadian federal election (Green 0.43%)", "accessed": "2026-10-16" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "can.ppc",
+      "name": { "en": "People's Party of Canada", "native": "Parti populaire du Canada" },
+      "abbrev": { "en": "PPC", "native": "PPC" },
+      "color": "#4E5180",
+      "sub_ideology": "right_populist",
+      "founded": "2018-09-14",
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        { "person": "can.maxime_bernier", "from": "2018-09-14" }
+      ],
+      "popularity_2000": 0,
+      "popularity_note": "Not yet founded on 2000-01-01. Included because it contested the 2019-2025 elections (4.94% in 2021) without winning a seat; its founder held his seat for the party from 2018 to 2019.",
+      "lineage": { "split_from": "can.conservative" },
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/People%27s_Party_of_Canada", "title": "Wikipedia: People's Party of Canada", "accessed": "2026-10-16" },
+        { "url": "https://www.wikidata.org/wiki/Q56612740", "title": "Wikidata: People's Party of Canada (founded 2018-09-14)", "accessed": "2026-10-16" }
+      ],
+      "confidence": "verified"
+    }
+  ]
+}

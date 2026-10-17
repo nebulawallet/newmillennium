@@ -1,0 +1,15 @@
+{
+  "note": "Influence and approval are gameplay starting values for 1 January 2000 (BJP-led NDA coalition under Vajpayee), not measured data. Influence reflects a civilian-controlled military, large trade-union federations tied to several parties, a very large rural electorate, caste and religious minorities organised through regional parties, and a large, plural press.",
+  "interest_groups": [
+    { "type": "military", "influence": 0.15, "approval": 60, "note": "Under firm civilian control; shortly after the 1999 Kargil conflict." },
+    { "type": "security_services", "influence": 0.15, "approval": 55 },
+    { "type": "business", "influence": 0.4, "approval": 58, "note": "Industry chambers during the post-1991 liberalisation." },
+    { "type": "labour_unions", "influence": 0.25, "approval": 40, "note": "Union federations are affiliated with different parties; mostly organised-sector workers." },
+    { "type": "religious_establishment", "influence": 0.3, "approval": 52, "note": "Plural: Hindu, Muslim, Sikh, Christian and other religious bodies." },
+    { "type": "rural", "influence": 0.45, "approval": 45, "note": "About seven in ten Indians lived in rural areas." },
+    { "type": "urban_middle_class", "influence": 0.35, "approval": 58 },
+    { "type": "minorities", "influence": 0.3, "approval": 40, "note": "Religious minorities, Scheduled Castes and Scheduled Tribes, and linguistic minorities, often represented through regional and caste-based parties." },
+    { "type": "youth_students", "influence": 0.2, "approval": 50 },
+    { "type": "media", "influence": 0.35, "approval": 50 }
+  ]
+}
