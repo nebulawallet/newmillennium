@@ -48,7 +48,7 @@ Live sources sometimes report allegations or investigations involving real peopl
 
 <!-- AUTO-GENERATED BELOW: run `npm run review-report`; edits below this line are overwritten -->
 
-## Needs review: 590 of 6505 records
+## Needs review: 605 of 6551 records
 
 Countries with politics data: 79 / 212.
 
@@ -711,12 +711,20 @@ Countries with no data yet (133): KAZ, KGZ, TJK, TKM, UZB, ATG, BHS, BRB, BLZ, B
 | party | `mda.ppda` Democracy at Home Party (PPDA) | Wikidata lists Costiuc as chairman without dates; 2025 is the election at which the fetched infobox names him as leader. Confirm when he became chairman. | data/countries/MDA/parties.json |
 | election | `presidential_2009_nov` indirect_presidential 2009-11-10 | Add Lupu's vote totals in each round (the fetched article does not give them). | data/countries/MDA/elections.json |
 
-### MEX — Mexico (2)
+### MEX — Mexico (10)
 
 | kind | record | what to check | file |
 |---|---|---|---|
 | chamber | `chamber_of_deputies` Chamber of Deputies | seats_2000 uses the 1997 election result; check the parliamentary group sizes of the LVII Legislature on 1 January 2000. Also confirm the 2% PR threshold for 1997-2012. | data/countries/MEX/country.json |
 | chamber | `senate` Senate of the Republic | Composition after the 1997 partial Senate election; check the group sizes on 1 January 2000. | data/countries/MEX/country.json |
+| person | `mex.jose_antonio_meade` José Antonio Meade (b. 1969) | Check whether Meade was a PRI member or an independent candidate of the PRI coalition. | data/countries/MEX/people.json |
+| person | `mex.xochitl_galvez` Xóchitl Gálvez (b. 1963) | Party membership not recorded; the sub-ideology is a gameplay approximation. | data/countries/MEX/people.json |
+| party | `mex.morena` National Regeneration Movement (Morena) | Leader history lists only the current president; the party's earlier presidents are omitted at the light tier. The founding date (registration 10 July 2014; the list of presidents starts 9 July 2014) should be confirmed. | data/countries/MEX/parties.json |
+| party | `mex.pvem` Ecologist Green Party of Mexico (PVEM) | Leader history left empty: the current president (Karen Castrejón Trujillo) and the 2000 leader need sourced dates and person records. | data/countries/MEX/parties.json |
+| party | `mex.pt` Labor Party (PT) | Leader history left empty: Alberto Anaya is the leader per the infobox but no start date was found. | data/countries/MEX/parties.json |
+| party | `mex.mc` Citizens' Movement (MC) | Leader history left empty: Jorge Álvarez Máynez is the leader per the infobox but no start date was found. | data/countries/MEX/parties.json |
+| party | `mex.panal` New Alliance Party (PANAL) | Leader history left empty at the light tier. | data/countries/MEX/parties.json |
+| party | `mex.pes` Social Encounter Party (PES) | Leader history left empty at the light tier. | data/countries/MEX/parties.json |
 
 ### MKD — Macedonia (6)
 
@@ -795,13 +803,20 @@ Countries with no data yet (133): KAZ, KGZ, TJK, TKM, UZB, ATG, BHS, BRB, BLZ, B
 |---|---|---|---|
 | party | `nor.h` Conservative Party (H) | The leadership change from Erna Solberg to Ine Eriksen Søreide is given only as the year 2026 in the party article; confirm the exact date of the 2026 party convention. | data/countries/NOR/parties.json |
 
-### PAK — Pakistan (4)
+### PAK — Pakistan (11)
 
 | kind | record | what to check | file |
 |---|---|---|---|
 | chamber | `national_assembly` National Assembly | The 1997 results table and infobox disagree on PML(N) seats (135 vs 137). Others = PPP (Shaheed Bhutto) 1, NPP 1, Jamhoori Wattan Party 2 and the 10 minority seats. | data/countries/PAK/country.json |
 | office | `pak.president` President of Pakistan | Wikipedia's list of presidents shows a break in Musharraf's tenure between 15 October and 19 November 2007; check whether that period should be recorded differently (Wikidata has him continuously in office 2001-06-20 to 2008-08-18). | data/countries/PAK/country.json |
-| person | `pak.zafarullah_khan_jamali` Zafarullah Khan Jamali (b. 1944) | Wikidata gives 1 January 1944 as the birth date; a 1 January date may be a placeholder. Confirm against Wikipedia. | data/countries/PAK/people.json |
+| person | `pak.zafarullah_khan_jamali` Zafarullah Khan Jamali (b. 1944) | Wikipedia and Wikidata both give 1 January 1944 as the birth date (Wikipedia cites a parliamentary record); a 1 January date may be a placeholder. Confirm. | data/countries/PAK/people.json |
+| person | `pak.gohar_ali_khan` Gohar Ali Khan (b. 1971) | Wikipedia gives 15 April 1971 as the birth date and PTI membership since 2022; the Wikidata item first matched (Q123582941) gives 10 October 1978 and PPP membership 2008-2022, so it may be a different person. Birth date taken from Wikipedia; confirm. | data/countries/PAK/people.json |
+| party | `pak.pmln` Pakistan Muslim League (Nawaz) (PML(N)) | The founding date conflicts across sources: the infobox gives 18 July 1992, the article text says 1993 and Wikidata gives 6 October 1993. The infobox date is used; confirm. | data/countries/PAK/parties.json |
+| party | `pak.pti` Pakistan Tehreek-e-Insaf (PTI) | Gohar Ali Khan's person record is flagged because Wikipedia and Wikidata disagree on his birth date; the chairmanship dates come from the Wikipedia infoboxes of Imran Khan and Gohar Ali Khan. | data/countries/PAK/parties.json |
+| party | `pak.mqm_p` Muttahida Qaumi Movement (Pakistan) (MQM-P) | Leader history left empty: Khalid Maqbool Siddiqui (leader from 13 February 2018) needs a sourced birth year before he can be added as a person. | data/countries/PAK/parties.json |
+| party | `pak.jui_f` Jamiat Ulema-e-Islam (Fazl) (JUI(F)) | The infobox gives 1945 (the founding of the original JUI); the JUI(F) faction itself formed after the 1980s split and the article's category says 1988. Confirm the date to use. | data/countries/PAK/parties.json |
+| party | `pak.bnp_m` Balochistan National Party (Mengal) (BNP(M)) | Leader history left empty: Akhtar Mengal is the current president per the infobox but no start date was found. Add him with a sourced date. | data/countries/PAK/parties.json |
+| party | `pak.mma` Muttahida Majlis-e-Amal (MMA) | Leader history left empty: the infobox names Fazl-ur-Rehman as president without dates. Add dated leaders if wanted; also confirm the 2018 revival against the 2019 dissolution date. | data/countries/PAK/parties.json |
 | election | `national_assembly_2024` legislative 2024-02-08 | Seat counts changed after the election as reserved seats were allocated and PTI-backed members joined the Sunni Ittehad Council; confirm the final composition and whether the 25 unallocated reserved seats should be assigned. | data/countries/PAK/elections.json |
 
 ### PMR — Transnistria (5)

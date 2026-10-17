@@ -24,14 +24,14 @@ Support for the tiers (done 17 October 2026): `research` on each entry in `data/
 
 | Folder | State | Plan |
 |---|---|---|
-| IND | 6 files | Keep as light if wanted |
-| PAK | 5 files | Keep as light if wanted |
-| BGD | 4 files | Drop (default) |
+| IND | 6 files | Done: light, committed |
+| PAK | 5 files | Done: light, committed (research agent, audited) |
+| BGD | 4 files | Dropped (default) |
 | IRQ | 6 files | Done: audited, committed (light) |
 | AFG, AFN | 6 files each | Done: audited, committed (light) |
-| CAN | 6 files | Optional light |
-| MEX | 4 files | Optional light |
-| EGY | 1 file | Optional |
+| CAN | 6 files | Done: light, committed |
+| MEX | 4 files | Done: light, committed (research agent, audited) |
+| EGY | 1 file | Dropped (default) |
 
 Audit each before committing (checklist in HANDOFF.md, "Next steps").
 

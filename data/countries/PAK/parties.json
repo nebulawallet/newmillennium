@@ -1,0 +1,497 @@
+{
+  "parties": [
+    {
+      "id": "pak.pmln",
+      "name": {
+        "en": "Pakistan Muslim League (Nawaz)",
+        "native": "پاکستان مسلم لیگ – نواز"
+      },
+      "abbrev": {
+        "en": "PML(N)"
+      },
+      "color": "#006600",
+      "sub_ideology": "liberal_conservative",
+      "founded": "1992-07-18",
+      "status_2000": "active",
+      "leader_history": [
+        {
+          "person": "pak.kulsoom_nawaz",
+          "from": "1999-10-12",
+          "to": 2002,
+          "title": "President"
+        },
+        {
+          "person": "pak.nawaz_sharif",
+          "from": 2024,
+          "title": "President (leader per the infobox)"
+        }
+      ],
+      "popularity_2000": 0.4488,
+      "popularity_note": "Share of the national vote in the February 1997 National Assembly election, computed from the votes in the Wikipedia results table divided by total valid votes (the PML(N)'s 8,751,793 votes being 44.88%).",
+      "regional_base": [],
+      "note": "The colour is a placeholder. Formed from the Islami Jamhuri Ittehad. Nawaz Sharif led the government until the October 1999 coup. Light tier: the party article lists the presidents Kulsoom Nawaz 1999-2001, Javed Hashmi 2001-2005, Nisar Ali Khan 2005-2009, Shehbaz Sharif 2009-2010, Javed Hashmi 2010-2011, Nawaz Sharif 2011-2017 (Sardar Yaqoob Nasar acting in 2017), Nawaz Sharif 2017-2018, Shehbaz Sharif 2018-2024 and Nawaz Sharif from 2024; intermediate leaders are not recorded here. Kulsoom Nawaz's end year follows the Wikipedia infobox (10 October 2002); the party's list gives 2001.",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Pakistan_Muslim_League_(N)",
+          "title": "Wikipedia: Pakistan Muslim League (N) (infobox and list of presidents)",
+          "accessed": "2026-10-17"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/Kulsoom_Nawaz",
+          "title": "Wikipedia: Kulsoom Nawaz",
+          "accessed": "2026-10-17"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/1997_Pakistani_general_election",
+          "title": "Wikipedia: 1997 Pakistani general election (results table)",
+          "accessed": "2026-10-17"
+        }
+      ],
+      "confidence": "needs_review",
+      "review_note": "The founding date conflicts across sources: the infobox gives 18 July 1992, the article text says 1993 and Wikidata gives 6 October 1993. The infobox date is used; confirm."
+    },
+    {
+      "id": "pak.ppp",
+      "name": {
+        "en": "Pakistan People's Party",
+        "native": "پاکستان پیپلز پارٹی"
+      },
+      "abbrev": {
+        "en": "PPP"
+      },
+      "color": "#CC0000",
+      "sub_ideology": "social_democrat",
+      "founded": "1967-11-30",
+      "status_2000": "active",
+      "leader_history": [
+        {
+          "person": "pak.benazir_bhutto",
+          "from": "1982-11-12",
+          "to": "2007-12-27",
+          "title": "Chairperson"
+        },
+        {
+          "person": "pak.bilawal_bhutto_zardari",
+          "from": "2007-12-30",
+          "title": "Chairman"
+        }
+      ],
+      "popularity_2000": 0.2129,
+      "popularity_note": "Share of the national vote in the February 1997 National Assembly election, computed from the votes in the Wikipedia results table divided by total valid votes (the PML(N)'s 8,751,793 votes being 44.88%).",
+      "regional_base": [],
+      "note": "The colour is a placeholder. Asif Ali Zardari is listed in the infobox among the historical chairpersons (no dates fetched) and is not recorded as a leader here. The party contested the 2002 election as the Pakistan Peoples Party Parliamentarians.",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Pakistan_Peoples_Party",
+          "title": "Wikipedia: Pakistan Peoples Party (infobox)",
+          "accessed": "2026-10-17"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/Benazir_Bhutto",
+          "title": "Wikipedia: Benazir Bhutto (chairperson 12 November 1982 - 27 December 2007)",
+          "accessed": "2026-10-17"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/Bilawal_Bhutto_Zardari",
+          "title": "Wikipedia: Bilawal Bhutto Zardari (chairman from 30 December 2007)",
+          "accessed": "2026-10-17"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/1997_Pakistani_general_election",
+          "title": "Wikipedia: 1997 Pakistani general election (results table)",
+          "accessed": "2026-10-17"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "pak.pti",
+      "name": {
+        "en": "Pakistan Tehreek-e-Insaf",
+        "native": "پاکستان تحريکِ انصاف"
+      },
+      "abbrev": {
+        "en": "PTI"
+      },
+      "color": "#E41E26",
+      "sub_ideology": "islamic_democrat",
+      "founded": "1996-04-25",
+      "status_2000": "extra_parliamentary",
+      "leader_history": [
+        {
+          "person": "pak.imran_khan",
+          "from": "1996-04-25",
+          "to": "2023-12-02",
+          "title": "Chairman"
+        },
+        {
+          "person": "pak.gohar_ali_khan",
+          "from": "2023-12-02",
+          "title": "Chairman"
+        }
+      ],
+      "popularity_2000": 0.0161,
+      "popularity_note": "Share of the national vote in the February 1997 National Assembly election, computed from the votes in the Wikipedia results table divided by total valid votes (the PML(N)'s 8,751,793 votes being 44.88%). The party won no seats.",
+      "regional_base": [],
+      "note": "The colour is a placeholder. Founded by Imran Khan. The party's candidates won no seats in 1997. The sub-ideology is a gameplay classification.",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Pakistan_Tehreek-e-Insaf",
+          "title": "Wikipedia: Pakistan Tehreek-e-Insaf (infobox)",
+          "accessed": "2026-10-17"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/Imran_Khan",
+          "title": "Wikipedia: Imran Khan (chairman 25 April 1996 - 2 December 2023)",
+          "accessed": "2026-10-17"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/Gohar_Ali_Khan",
+          "title": "Wikipedia: Gohar Ali Khan (chairman from 2 December 2023)",
+          "accessed": "2026-10-17"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/1997_Pakistani_general_election",
+          "title": "Wikipedia: 1997 Pakistani general election (results table)",
+          "accessed": "2026-10-17"
+        }
+      ],
+      "confidence": "needs_review",
+      "review_note": "Gohar Ali Khan's person record is flagged because Wikipedia and Wikidata disagree on his birth date; the chairmanship dates come from the Wikipedia infoboxes of Imran Khan and Gohar Ali Khan."
+    },
+    {
+      "id": "pak.pmlq",
+      "name": {
+        "en": "Pakistan Muslim League (Quaid)",
+        "native": "پاکستان مسلم لیگ – ق"
+      },
+      "abbrev": {
+        "en": "PML(Q)"
+      },
+      "color": "#32CD32",
+      "sub_ideology": "liberal_conservative",
+      "founded": "2002-07-20",
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        {
+          "person": "pak.chaudhry_shujaat_hussain",
+          "from": "2003-01-01",
+          "title": "Leader"
+        }
+      ],
+      "popularity_2000": 0,
+      "popularity_note": "Founded in 2002, after the 1997 election.",
+      "lineage": {
+        "split_from": "pak.pmln"
+      },
+      "regional_base": [],
+      "note": "The colour is a placeholder. Splinter of the PML(N) that supported Pervez Musharraf; it won the most seats in the 2002 election. Shujaat Hussain's predecessors as leader per his infobox were Mian Muhammad Azhar and Chaudhry Salik Hussain (no records). The infobox colour is 'Lime'.",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Pakistan_Muslim_League_(Q)",
+          "title": "Wikipedia: Pakistan Muslim League (Q) (infobox)",
+          "accessed": "2026-10-17"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/Chaudhry_Shujaat_Hussain",
+          "title": "Wikipedia: Chaudhry Shujaat Hussain (leader from 1 January 2003)",
+          "accessed": "2026-10-17"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "pak.mqm",
+      "name": {
+        "en": "Muttahida Qaumi Movement"
+      },
+      "abbrev": {
+        "en": "MQM"
+      },
+      "color": "#B22222",
+      "sub_ideology": "regionalist",
+      "founded": "1984-03-18",
+      "status_2000": "active",
+      "leader_history": [
+        {
+          "person": "pak.altaf_hussain",
+          "from": "1984-03-18",
+          "title": "Leader"
+        }
+      ],
+      "popularity_2000": 0.0392,
+      "popularity_note": "Share of the national vote in the February 1997 National Assembly election, computed from the votes in the Wikipedia results table divided by total valid votes (the PML(N)'s 8,751,793 votes being 44.88%).",
+      "regional_base": [],
+      "note": "The colour is a placeholder. Karachi-based party; the 1997 results table links the Muttahida Qaumi Movement to the article on the London-based MQM, whose infobox gives 18 March 1984 as the foundation and 12 August 2025 as a dissolution date. The Pakistan-based MQM-P split from it in 2016.",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Muttahida_Qaumi_Movement_%E2%80%93_London",
+          "title": "Wikipedia: Muttahida Qaumi Movement - London (infobox)",
+          "accessed": "2026-10-17"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/Altaf_Hussain_(Pakistani_politician)",
+          "title": "Wikipedia: Altaf Hussain (Pakistani politician)",
+          "accessed": "2026-10-17"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/1997_Pakistani_general_election",
+          "title": "Wikipedia: 1997 Pakistani general election (results table)",
+          "accessed": "2026-10-17"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "pak.mqm_p",
+      "name": {
+        "en": "Muttahida Qaumi Movement (Pakistan)",
+        "native": "متحدہ قومی موومنٹ(پاکستان)"
+      },
+      "abbrev": {
+        "en": "MQM-P"
+      },
+      "color": "#228B22",
+      "sub_ideology": "regionalist",
+      "founded": "2016-08-23",
+      "status_2000": "not_yet_founded",
+      "leader_history": [],
+      "popularity_2000": 0,
+      "popularity_note": "Founded in 2016, after the 1997 election.",
+      "lineage": {
+        "split_from": "pak.mqm"
+      },
+      "regional_base": [],
+      "note": "The colour is a placeholder. Split from the MQM in August 2016. The infobox names Khalid Maqbool Siddiqui as leader (party leader since 13 February 2018 per his article) and Farooq Sattar as founder; no person records are written because no birth year was found in the sources fetched.",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Muttahida_Qaumi_Movement_%E2%80%93_Pakistan",
+          "title": "Wikipedia: Muttahida Qaumi Movement - Pakistan (infobox)",
+          "accessed": "2026-10-17"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/Khalid_Maqbool_Siddiqui",
+          "title": "Wikipedia: Khalid Maqbool Siddiqui",
+          "accessed": "2026-10-17"
+        }
+      ],
+      "confidence": "needs_review",
+      "review_note": "Leader history left empty: Khalid Maqbool Siddiqui (leader from 13 February 2018) needs a sourced birth year before he can be added as a person."
+    },
+    {
+      "id": "pak.jui_f",
+      "name": {
+        "en": "Jamiat Ulema-e-Islam (Fazl)",
+        "native": "جمیعت علماءِ اسلام – فضل الرحمان"
+      },
+      "abbrev": {
+        "en": "JUI(F)"
+      },
+      "color": "#006400",
+      "sub_ideology": "islamist",
+      "founded": 1945,
+      "status_2000": "active",
+      "leader_history": [
+        {
+          "person": "pak.fazl_ur_rehman",
+          "from": 1995,
+          "title": "Emir"
+        }
+      ],
+      "popularity_2000": 0.0167,
+      "popularity_note": "Share of the national vote in the February 1997 National Assembly election, computed from the votes in the Wikipedia results table divided by total valid votes (the PML(N)'s 8,751,793 votes being 44.88%).",
+      "regional_base": [],
+      "note": "The colour is a placeholder. Religious party; the JUI(F) is the faction headed by Fazl-ur-Rehman after the split of the Jamiat Ulema-e-Islam in the 1980s (the other faction being the JUI(S)).",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Jamiat_Ulema-e-Islam_(F)",
+          "title": "Wikipedia: Jamiat Ulema-e-Islam (F) (infobox)",
+          "accessed": "2026-10-17"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/Fazal-ur-Rehman_(politician,_born_1953)",
+          "title": "Wikipedia: Fazal-ur-Rehman (politician, born 1953) (Emir of the JUI(F) from 1995)",
+          "accessed": "2026-10-17"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/1997_Pakistani_general_election",
+          "title": "Wikipedia: 1997 Pakistani general election (results table)",
+          "accessed": "2026-10-17"
+        }
+      ],
+      "confidence": "needs_review",
+      "review_note": "The infobox gives 1945 (the founding of the original JUI); the JUI(F) faction itself formed after the 1980s split and the article's category says 1988. Confirm the date to use."
+    },
+    {
+      "id": "pak.ji",
+      "name": {
+        "en": "Jamaat-e-Islami Pakistan",
+        "native": "جماعت اسلامی پاکستان"
+      },
+      "abbrev": {
+        "en": "JI"
+      },
+      "color": "#2E8B57",
+      "sub_ideology": "islamist",
+      "founded": 1947,
+      "status_2000": "extra_parliamentary",
+      "leader_history": [
+        {
+          "person": "pak.qazi_hussain_ahmad",
+          "from": 1987,
+          "to": 2008,
+          "title": "Emir"
+        },
+        {
+          "person": "pak.hafiz_naeem_ur_rehman",
+          "from": "2024-04-04",
+          "title": "Emir"
+        }
+      ],
+      "popularity_2000": 0,
+      "popularity_note": "The party does not appear in the Wikipedia results table for the February 1997 National Assembly election.",
+      "regional_base": [],
+      "note": "The colour is a placeholder. Qazi Hussain Ahmad was Emir from 1987 until 2008; the intermediate emirs Syed Munawar Hassan (from 2008) and Siraj-ul-Haq (2014-2024) are not recorded here. A member of the Muttahida Majlis-e-Amal alliance in 2002.",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Jamaat-e-Islami_Pakistan",
+          "title": "Wikipedia: Jamaat-e-Islami Pakistan (infobox and history)",
+          "accessed": "2026-10-17"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/Hafiz_Naeem_ur_Rehman",
+          "title": "Wikipedia: Hafiz Naeem ur Rehman (Emir from 4 April 2024)",
+          "accessed": "2026-10-17"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "pak.anp",
+      "name": {
+        "en": "Awami National Party",
+        "native": "عوامی نيشنل پارٹی"
+      },
+      "abbrev": {
+        "en": "ANP"
+      },
+      "color": "#C83737",
+      "sub_ideology": "regionalist",
+      "founded": "1986-07-28",
+      "status_2000": "active",
+      "leader_history": [
+        {
+          "person": "pak.asfandyar_wali_khan",
+          "from": 1999,
+          "to": 2002,
+          "title": "President"
+        },
+        {
+          "person": "pak.asfandyar_wali_khan",
+          "from": 2003,
+          "to": 2024,
+          "title": "President"
+        },
+        {
+          "person": "pak.aimal_wali_khan",
+          "from": "2024-05-05",
+          "title": "President"
+        }
+      ],
+      "popularity_2000": 0.0183,
+      "popularity_note": "Share of the national vote in the February 1997 National Assembly election, computed from the votes in the Wikipedia results table divided by total valid votes (the PML(N)'s 8,751,793 votes being 44.88%).",
+      "regional_base": [],
+      "note": "The colour is a placeholder. Pashtun nationalist party. The party's list of presidents gives Asfandyar Wali Khan 1999-2002, Ehsan Wyne 2002-2003 (no record) and Asfandyar Wali Khan again 2003-2024.",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Awami_National_Party",
+          "title": "Wikipedia: Awami National Party (infobox and list of presidents)",
+          "accessed": "2026-10-17"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/Aimal_Wali_Khan",
+          "title": "Wikipedia: Aimal Wali Khan",
+          "accessed": "2026-10-17"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/1997_Pakistani_general_election",
+          "title": "Wikipedia: 1997 Pakistani general election (results table)",
+          "accessed": "2026-10-17"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "pak.bnp_m",
+      "name": {
+        "en": "Balochistan National Party (Mengal)",
+        "native": "بلوچستان نيشنل پارٹی – مینگل"
+      },
+      "abbrev": {
+        "en": "BNP(M)"
+      },
+      "color": "#8B4513",
+      "sub_ideology": "regionalist",
+      "founded": 1996,
+      "status_2000": "active",
+      "leader_history": [],
+      "popularity_2000": 0.0064,
+      "popularity_note": "Share of the national vote in the February 1997 National Assembly election, computed from the votes in the Wikipedia results table divided by total valid votes (the PML(N)'s 8,751,793 votes being 44.88%).",
+      "regional_base": [],
+      "note": "The colour is a placeholder. Baloch nationalist party founded in 1996 by Ataullah Mengal (no record). The infobox names Akhtar Mengal as president, but the sources fetched give no start date, so no leader is recorded.",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Balochistan_National_Party_(Mengal)",
+          "title": "Wikipedia: Balochistan National Party (Mengal) (infobox)",
+          "accessed": "2026-10-17"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/Akhtar_Mengal",
+          "title": "Wikipedia: Akhtar Mengal",
+          "accessed": "2026-10-17"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/1997_Pakistani_general_election",
+          "title": "Wikipedia: 1997 Pakistani general election (results table)",
+          "accessed": "2026-10-17"
+        }
+      ],
+      "confidence": "needs_review",
+      "review_note": "Leader history left empty: Akhtar Mengal is the current president per the infobox but no start date was found. Add him with a sourced date."
+    },
+    {
+      "id": "pak.mma",
+      "name": {
+        "en": "Muttahida Majlis-e-Amal",
+        "native": "متحدہ مجلسِ عمل"
+      },
+      "abbrev": {
+        "en": "MMA"
+      },
+      "color": "#556B2F",
+      "sub_ideology": "islamist",
+      "founded": 2002,
+      "dissolved": 2019,
+      "status_2000": "not_yet_founded",
+      "leader_history": [],
+      "popularity_2000": 0,
+      "popularity_note": "Founded in 2002, after the 1997 election.",
+      "regional_base": [],
+      "note": "The colour is a placeholder. Alliance of Islamist parties founded in 2002 by Shah Ahmad Noorani (no record) and Qazi Hussain Ahmad; the infobox gives 2019 as the dissolution and names Fazl-ur-Rehman as president, with no dates. It appears in the 2002 and 2018 election results. Its members include the JUI(F) and the Jamaat-e-Islami.",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Muttahida_Majlis-e-Amal",
+          "title": "Wikipedia: Muttahida Majlis-e-Amal (infobox)",
+          "accessed": "2026-10-17"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/Fazal-ur-Rehman_(politician,_born_1953)",
+          "title": "Wikipedia: Fazal-ur-Rehman (politician, born 1953)",
+          "accessed": "2026-10-17"
+        }
+      ],
+      "confidence": "needs_review",
+      "review_note": "Leader history left empty: the infobox names Fazl-ur-Rehman as president without dates. Add dated leaders if wanted; also confirm the 2018 revival against the 2019 dissolution date."
+    }
+  ]
+}

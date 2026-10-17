@@ -1,0 +1,144 @@
+{
+  "tag": "PAK",
+  "name": { "en": "Pakistan", "native": "Pakistan", "official": { "en": "Islamic Republic of Pakistan", "native": "Islami Jumhuriya Pakistan" } },
+  "adjective": "Pakistani",
+  "culture_primary": "punjabi",
+  "government": {
+    "type": "military_junta",
+    "effective_executive": "pak.prime_minister",
+    "head_of_state_office": "pak.president",
+    "head_of_government_office": "pak.prime_minister",
+    "constitution": {
+      "term_limit_amendable": true,
+      "emergency_powers": true,
+      "referendum_required_for": []
+    },
+    "note": "On 1 January 2000 Pakistan was under the military government formed after the coup of 12 October 1999: General Pervez Musharraf held executive power as Chief Executive, the constitution was held in abeyance and the National Assembly, Senate and provincial assemblies were suspended; Rafiq Tarar remained President until 20 June 2001, when Musharraf took the presidency. A general election in October 2002 restored an elected National Assembly and prime minister. Pakistan is otherwise a federal parliamentary republic. The prime-minister office below also carries Musharraf's tenure as Chief Executive (1999-2002), when the office of prime minister was vacant, so that the head-of-government timeline is continuous."
+  },
+  "offices": [
+    {
+      "id": "pak.president",
+      "title": { "en": "President of Pakistan", "native": "Sadr-e-Pakistan" },
+      "role": "head_of_state",
+      "power_weight": 0.35,
+      "selection": "electoral_college",
+      "term_years": 5,
+      "term_limit": { "max_terms": 2, "consecutive_only": true },
+      "succession": { "type": "acting_then_election" },
+      "holders": [
+        { "person": "pak.rafiq_tarar", "from": "1998-01-01", "to": "2001-06-20" },
+        { "person": "pak.pervez_musharraf", "from": "2001-06-20", "to": "2008-08-18", "note": "Took the presidency while Chief Executive; confirmed by the April 2002 referendum, a 2004 vote of confidence and the October 2007 presidential election. Wikipedia's list splits his tenure at 15 October and 19 November 2007 around his re-election. Resigned." },
+        { "person": "pak.muhammad_mian_soomro", "from": "2008-08-18", "to": "2008-09-09", "acting": true, "note": "Acting as Chairman of the Senate." },
+        { "person": "pak.asif_ali_zardari", "from": "2008-09-09", "to": "2013-09-09" },
+        { "person": "pak.mamnoon_hussain", "from": "2013-09-09", "to": "2018-09-09", "note": "Wikidata gives 8 September 2018 as his last day." },
+        { "person": "pak.arif_alvi", "from": "2018-09-09", "to": "2024-03-10", "note": "Remained in office after his five-year term ended in September 2023 until a successor was elected." },
+        { "person": "pak.asif_ali_zardari", "from": "2024-03-10" }
+      ],
+      "note": "Elected by an electoral college of both houses of Parliament and the four provincial assemblies. Executive weight shifted over time (strong under Musharraf, reduced by the 18th Amendment in 2010); power_weight is a gameplay compromise.",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/List_of_presidents_of_Pakistan", "title": "Wikipedia: List of presidents of Pakistan", "accessed": "2026-10-16" },
+        { "url": "https://www.wikidata.org/wiki/Q473984", "title": "Wikidata: President of Pakistan (position held by)", "accessed": "2026-10-16" }
+      ],
+      "confidence": "needs_review",
+      "review_note": "Wikipedia's list of presidents shows a break in Musharraf's tenure between 15 October and 19 November 2007; check whether that period should be recorded differently (Wikidata has him continuously in office 2001-06-20 to 2008-08-18)."
+    },
+    {
+      "id": "pak.prime_minister",
+      "title": { "en": "Prime Minister of Pakistan", "native": "Wazir-e-Azam" },
+      "role": "head_of_government",
+      "power_weight": 0.65,
+      "selection": "legislature",
+      "term_years": 5,
+      "holders": [
+        { "person": "pak.pervez_musharraf", "from": "1999-10-12", "to": "2002-11-21", "note": "As Chief Executive of Pakistan after the October 1999 coup; the office of prime minister itself was vacant from 13 October 1999 to 22 November 2002." },
+        { "person": null, "from": "2002-11-21", "to": "2002-11-23", "vacant_reason": "Between the end of the Chief Executive post and the swearing-in of the prime minister elected after the 2002 general election." },
+        { "person": "pak.zafarullah_khan_jamali", "from": "2002-11-23", "to": "2004-06-26", "note": "Resigned." },
+        { "person": null, "from": "2004-06-26", "to": "2004-06-30", "vacant_reason": "Between Jamali's resignation and the election of his successor by the National Assembly." },
+        { "person": "pak.chaudhry_shujaat_hussain", "from": "2004-06-30", "to": "2004-08-23", "note": "Interim prime minister. Wikipedia's list gives 23 August 2004 as his last day; Wikidata gives 20 August 2004." },
+        { "person": null, "from": "2004-08-23", "to": "2004-08-28", "vacant_reason": "Gap in the Wikipedia list between Shujaat Hussain and Shaukat Aziz." },
+        { "person": "pak.shaukat_aziz", "from": "2004-08-28", "to": "2007-11-15", "note": "Left office at the end of the parliamentary term. Wikidata gives 20 August 2004 as his start." },
+        { "person": "pak.muhammad_mian_soomro", "from": "2007-11-15", "to": "2008-03-25", "acting": true, "note": "Caretaker prime minister (Wikidata: from 16 November 2007)." },
+        { "person": "pak.yousaf_raza_gillani", "from": "2008-03-25", "to": "2012-06-19", "note": "Left office following a Supreme Court ruling. Wikidata gives 24 March 2008 as his start." },
+        { "person": null, "from": "2012-06-19", "to": "2012-06-22", "vacant_reason": "Between Gillani's removal and the election of Raja Pervaiz Ashraf by the National Assembly." },
+        { "person": "pak.raja_pervaiz_ashraf", "from": "2012-06-22", "to": "2013-03-24" },
+        { "person": "pak.mir_hazar_khan_khoso", "from": "2013-03-24", "to": "2013-06-05", "acting": true, "note": "Caretaker prime minister (Wikidata: from 25 March 2013)." },
+        { "person": "pak.nawaz_sharif", "from": "2013-06-05", "to": "2017-07-28", "note": "Left office following a Supreme Court ruling." },
+        { "person": null, "from": "2017-07-28", "to": "2017-08-01", "vacant_reason": "Between Nawaz Sharif's removal and the election of Shahid Khaqan Abbasi by the National Assembly." },
+        { "person": "pak.shahid_khaqan_abbasi", "from": "2017-08-01", "to": "2018-05-31", "note": "Term ended with the dissolution of the National Assembly." },
+        { "person": "pak.nasirul_mulk", "from": "2018-05-31", "to": "2018-08-18", "acting": true, "note": "Caretaker prime minister (Wikidata: 1 June to 17 August 2018)." },
+        { "person": "pak.imran_khan", "from": "2018-08-18", "to": "2022-04-10", "note": "Removed by a vote of no confidence in the National Assembly." },
+        { "person": null, "from": "2022-04-10", "to": "2022-04-11", "vacant_reason": "Between the no-confidence vote and the election of Shehbaz Sharif." },
+        { "person": "pak.shehbaz_sharif", "from": "2022-04-11", "to": "2023-08-14", "note": "Term ended with the dissolution of the National Assembly." },
+        { "person": "pak.anwaar_ul_haq_kakar", "from": "2023-08-14", "to": "2024-03-04", "acting": true, "note": "Caretaker prime minister." },
+        { "person": "pak.shehbaz_sharif", "from": "2024-03-04", "note": "Wikipedia's table gives 4 March 2024; its timeline and Wikidata give 3 March 2024." }
+      ],
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/List_of_prime_ministers_of_Pakistan", "title": "Wikipedia: List of prime ministers of Pakistan", "accessed": "2026-10-16" },
+        { "url": "https://en.wikipedia.org/wiki/Chief_martial_law_administrator", "title": "Wikipedia: Chief martial law administrator (Chief Executive of Pakistan, 1999-2002)", "accessed": "2026-10-16" },
+        { "url": "https://en.wikipedia.org/wiki/Pervez_Musharraf", "title": "Wikipedia: Pervez Musharraf (infobox: Chief Executive 12 October 1999 - 21 November 2002; President from 20 June 2001)", "accessed": "2026-10-17" },
+        { "url": "https://www.wikidata.org/wiki/Q735575", "title": "Wikidata: Prime Minister of Pakistan (position held by)", "accessed": "2026-10-16" }
+      ],
+      "confidence": "verified"
+    }
+  ],
+  "legislature": {
+    "name": { "en": "Parliament of Pakistan", "native": "Majlis-e-Shoora" },
+    "chambers": [
+      {
+        "id": "national_assembly",
+        "name": { "en": "National Assembly", "native": "Qaumi Assembly" },
+        "seats": 217,
+        "term_years": 5,
+        "elected": "direct",
+        "system": {
+          "type": "fptp",
+          "district_model": "custom",
+          "reserved_seats": [ { "group": "Non-Muslim minorities (separate electorates in 1997)", "seats": 10 } ],
+          "note": "seats_2000 is the result of the February 1997 election (207 general seats by first-past-the-post plus 10 minority seats); the assembly was suspended after the October 1999 coup. From 2002 the house has 342 seats (272 general seats by first-past-the-post plus 60 reserved for women and 10 for non-Muslims, allocated proportionally to parties); 336 from 2024. The 1997 results table gives PML(N) 135 seats; the infobox gives 137."
+        },
+        "seats_2000": {
+          "pak.pmln": 135,
+          "pak.ppp": 18,
+          "pak.mqm": 12,
+          "pak.anp": 9,
+          "pak.bnp_m": 3,
+          "pak.jui_f": 2,
+          "others": 14,
+          "independents": 21,
+          "vacant": 3
+        },
+        "confidence_chamber": true,
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/1997_Pakistani_general_election", "title": "Wikipedia: 1997 Pakistani general election (results table)", "accessed": "2026-10-16" }
+        ],
+        "confidence": "needs_review",
+        "review_note": "The 1997 results table and infobox disagree on PML(N) seats (135 vs 137). Others = PPP (Shaheed Bhutto) 1, NPP 1, Jamhoori Wattan Party 2 and the 10 minority seats."
+      }
+    ]
+  },
+  "party_system": "multi_party",
+  "start_2000": {
+    "ruling_parties": [],
+    "ideology_support": {
+      "liberal_conservative": 0.43,
+      "social_democrat": 0.22,
+      "military_junta": 0.04,
+      "regionalist": 0.07,
+      "islamist": 0.05,
+      "islamic_democrat": 0.03,
+      "big_tent": 0.16
+    },
+    "ideology_support_note": "Estimate, because the elected assemblies were suspended. Based on the February 1997 National Assembly vote: PML(N) 44.9% and PML(J) 3.2% (liberal conservative, reduced to 0.43 to allow for support for the military government); PPP 21.3% and PPP (Shaheed Bhutto) 1.9% (social democrat); MQM 3.9%, ANP 1.8%, BNP, JWP and other regional parties about 1.5% (regionalist); JUI(F) 1.7% and other religious parties (Islamist, raised to 0.05 for parties that did not stand or won few votes); PTI 1.6% (Islamic democrat); independents 13.8% and minority-seat votes 2.2% (big tent). The military_junta share is a gameplay estimate of support for the military government.",
+    "stability": 0.45,
+    "war_support": 0.55
+  },
+  "claims": [
+    { "tag": "IND", "note": "Pakistan claims most of the former princely state of Jammu and Kashmir, including the Indian-administered areas." }
+  ],
+  "source": [
+    { "url": "https://en.wikipedia.org/wiki/1997_Pakistani_general_election", "title": "Wikipedia: 1997 Pakistani general election", "accessed": "2026-10-16" },
+    { "url": "https://en.wikipedia.org/wiki/List_of_prime_ministers_of_Pakistan", "title": "Wikipedia: List of prime ministers of Pakistan", "accessed": "2026-10-16" },
+    { "url": "https://en.wikipedia.org/wiki/Kashmir_conflict", "title": "Wikipedia: Kashmir conflict", "accessed": "2026-10-16" }
+  ],
+  "confidence": "verified"
+}

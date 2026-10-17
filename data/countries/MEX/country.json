@@ -1,0 +1,112 @@
+{
+  "tag": "MEX",
+  "name": { "en": "Mexico", "native": "México", "official": { "en": "United Mexican States", "native": "Estados Unidos Mexicanos" } },
+  "adjective": "Mexican",
+  "culture_primary": "mexican",
+  "government": {
+    "type": "presidential",
+    "effective_executive": "mex.president",
+    "head_of_state_office": "mex.president",
+    "head_of_government_office": "mex.president",
+    "constitution": {
+      "term_limit_amendable": true,
+      "emergency_powers": true,
+      "referendum_required_for": []
+    },
+    "note": "Federal presidential republic. The President is head of state and government, elected by plurality in a single round for one six-year term with no re-election. The bicameral Congress of the Union is elected separately. Popular consultations (2021) and a presidential recall vote (2022) were introduced under the 2019 reforms; they bind only with at least 40% turnout."
+  },
+  "offices": [
+    {
+      "id": "mex.president",
+      "title": { "en": "President of Mexico", "native": "Presidente de los Estados Unidos Mexicanos" },
+      "role": "head_of_state_and_government",
+      "power_weight": 1,
+      "selection": "direct_election",
+      "term_years": 6,
+      "term_limit": { "max_terms": 1, "consecutive_only": false },
+      "succession": { "type": "acting_then_election" },
+      "holders": [
+        { "person": "mex.ernesto_zedillo", "from": "1994-12-01", "to": "2000-12-01" },
+        { "person": "mex.vicente_fox", "from": "2000-12-01", "to": "2006-12-01" },
+        { "person": "mex.felipe_calderon", "from": "2006-12-01", "to": "2012-12-01" },
+        { "person": "mex.enrique_pena_nieto", "from": "2012-12-01", "to": "2018-12-01" },
+        { "person": "mex.andres_manuel_lopez_obrador", "from": "2018-12-01", "to": "2024-10-01", "note": "Term shortened to end on 30 September 2024 by the 2014 political reform, which moved the inauguration to 1 October." },
+        { "person": "mex.claudia_sheinbaum", "from": "2024-10-01", "note": "First woman to hold the office." }
+      ],
+      "note": "'to' is the handover date. Wikidata gives Zedillo's last day as 30 November 2000 and AMLO's as 30 September 2024. No acting presidents served in the period.",
+      "source": [
+        { "url": "https://www.wikidata.org/wiki/Q628004", "title": "Wikidata: President of Mexico (position held by)", "accessed": "2026-10-16" },
+        { "url": "https://en.wikipedia.org/wiki/2024_Mexican_general_election", "title": "Wikipedia: 2024 Mexican general election", "accessed": "2026-10-16" }
+      ],
+      "confidence": "verified"
+    }
+  ],
+  "legislature": {
+    "name": { "en": "Congress of the Union", "native": "Congreso de la Unión" },
+    "chambers": [
+      {
+        "id": "chamber_of_deputies",
+        "name": { "en": "Chamber of Deputies", "native": "Cámara de Diputados" },
+        "seats": 500,
+        "term_years": 3,
+        "elected": "direct",
+        "system": {
+          "type": "parallel",
+          "pr_share": 0.4,
+          "threshold": 0.02,
+          "district_model": "custom",
+          "note": "300 single-member districts by plurality plus 200 seats by list PR in five regional constituencies. The PR threshold was 2% in 1997-2012 and 3% from 2014 (not modelled per year). seats_2000 is the result of the 6 July 1997 election (PRI 239, PRD 125, PAN 121, PVEM 8, PT 7); later changes of group before 1 January 2000 are not tracked. Consecutive re-election of deputies has been allowed since 2021."
+        },
+        "seats_2000": { "mex.pri": 239, "mex.prd": 125, "mex.pan": 121, "mex.pvem": 8, "mex.pt": 7 },
+        "confidence_chamber": false,
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/1997_Mexican_legislative_election", "title": "Wikipedia: 1997 Mexican legislative election (Chamber of Deputies infobox)", "accessed": "2026-10-16" }
+        ],
+        "confidence": "needs_review",
+        "review_note": "seats_2000 uses the 1997 election result; check the parliamentary group sizes of the LVII Legislature on 1 January 2000. Also confirm the 2% PR threshold for 1997-2012."
+      },
+      {
+        "id": "senate",
+        "name": { "en": "Senate of the Republic", "native": "Cámara de Senadores" },
+        "seats": 128,
+        "term_years": 6,
+        "elected": "direct",
+        "system": {
+          "type": "parallel",
+          "pr_share": 0.25,
+          "district_model": "admin1",
+          "note": "Since 2000 all 128 seats are elected together every six years: three per state (two for the leading list, one for the first minority) and 32 by national list PR. In 1997 only the 32 national PR seats were contested. seats_2000 is the composition after the 1997 election per the Wikipedia infobox (PRI 76, PAN 33, PRD 14, PVEM 1, PT 1, independents 3)."
+        },
+        "seats_2000": { "mex.pri": 76, "mex.pan": 33, "mex.prd": 14, "mex.pvem": 1, "mex.pt": 1, "independents": 3 },
+        "confidence_chamber": false,
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/1997_Mexican_legislative_election", "title": "Wikipedia: 1997 Mexican legislative election (Senate infobox, total seats after the election)", "accessed": "2026-10-16" }
+        ],
+        "confidence": "needs_review",
+        "review_note": "Composition after the 1997 partial Senate election; check the group sizes on 1 January 2000."
+      }
+    ]
+  },
+  "party_system": "multi_party",
+  "start_2000": {
+    "ruling_parties": ["mex.pri"],
+    "ideology_support": {
+      "big_tent": 0.391,
+      "christian_democrat": 0.266,
+      "social_democrat": 0.257,
+      "green": 0.038,
+      "democratic_socialist": 0.026,
+      "left_populist": 0.011,
+      "christian_conservative": 0.011
+    },
+    "ideology_support_note": "Derived from the 1997 Chamber of Deputies vote shares: PRI 39.09% (big tent), PAN 26.64% (christian democrat), PRD 25.69% (social democrat), PVEM 3.81% (green), PT 2.58% (democratic socialist). The remaining ~2.2% for minor parties is split evenly between left_populist and christian_conservative as an approximation.",
+    "stability": 0.6,
+    "war_support": 0.15
+  },
+  "claims": [],
+  "source": [
+    { "url": "https://en.wikipedia.org/wiki/1997_Mexican_legislative_election", "title": "Wikipedia: 1997 Mexican legislative election", "accessed": "2026-10-16" },
+    { "url": "https://en.wikipedia.org/wiki/2022_Mexican_presidential_recall_referendum", "title": "Wikipedia: 2022 Mexican presidential recall referendum (40% turnout rule)", "accessed": "2026-10-16" }
+  ],
+  "confidence": "verified"
+}

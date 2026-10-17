@@ -1,0 +1,450 @@
+{
+  "rules": [
+    {
+      "kind": "presidential",
+      "office": "mex.president",
+      "every_years": 6,
+      "anchor": "2024-06-02",
+      "snap_possible": false,
+      "system": "plurality",
+      "note": "Single round, plurality wins; one six-year term, no re-election."
+    },
+    {
+      "kind": "legislative",
+      "chamber": "chamber_of_deputies",
+      "every_years": 3,
+      "anchor": "2024-06-02",
+      "snap_possible": false,
+      "note": "All 500 deputies every three years; no early dissolution."
+    },
+    {
+      "kind": "legislative_upper",
+      "chamber": "senate",
+      "every_years": 6,
+      "anchor": "2024-06-02",
+      "snap_possible": false,
+      "note": "All 128 senators every six years, alongside the presidential election."
+    }
+  ],
+  "elections": [
+    {
+      "id": "president_2000",
+      "date": "2000-07-02",
+      "kind": "presidential",
+      "office": "mex.president",
+      "historical": {
+        "candidates": [
+          { "person": "mex.vicente_fox", "party": "mex.pan", "share": 0.4343, "votes": 15989636, "round": 1 },
+          { "person": "mex.francisco_labastida", "party": "mex.pri", "share": 0.3689, "votes": 13579718, "round": 1 },
+          { "person": "mex.cuauhtemoc_cardenas", "party": "mex.prd", "share": 0.17, "votes": 6256780, "round": 1 }
+        ],
+        "winner": "mex.vicente_fox",
+        "turnout": 0.6397,
+        "note": "Fox ran for the Alliance for Change (PAN and PVEM), Cárdenas for the Alliance for Mexico (PRD, PT, Convergencia and two smaller parties). First defeat of the PRI in a presidential election.",
+        "source": [{ "url": "https://en.wikipedia.org/wiki/2000_Mexican_general_election", "title": "Wikipedia: 2000 Mexican general election (presidential infobox)", "accessed": "2026-10-16" }],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "deputies_2000",
+      "date": "2000-07-02",
+      "kind": "legislative",
+      "chamber": "chamber_of_deputies",
+      "historical": {
+        "party_results": [
+          { "party": "mex.pan", "share": 0.3919, "seats": 224 },
+          { "party": "mex.pri", "share": 0.3775, "seats": 211 },
+          { "party": "mex.prd", "share": 0.1912, "seats": 65 }
+        ],
+        "winner": "mex.pan",
+        "note": "Results are by alliance as reported in the source: PAN row = Alliance for Change (PAN and PVEM); PRD row = Alliance for Mexico (PRD, PT, Convergencia and allies). The per-party split of alliance seats is not recorded here.",
+        "source": [{ "url": "https://en.wikipedia.org/wiki/2000_Mexican_general_election", "title": "Wikipedia: 2000 Mexican general election (Chamber of Deputies results)", "accessed": "2026-10-16" }],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "senate_2000",
+      "date": "2000-07-02",
+      "kind": "legislative_upper",
+      "chamber": "senate",
+      "historical": {
+        "party_results": [
+          { "party": "mex.pri", "share": 0.3751, "seats": 60 },
+          { "party": "mex.pan", "share": 0.391, "seats": 51 },
+          { "party": "mex.prd", "share": 0.1929, "seats": 17 }
+        ],
+        "winner": "mex.pri",
+        "note": "By alliance: PAN row = Alliance for Change (PAN and PVEM); PRD row = Alliance for Mexico. The PRI won the most seats; the Alliance for Change won the most votes.",
+        "source": [{ "url": "https://en.wikipedia.org/wiki/2000_Mexican_general_election", "title": "Wikipedia: 2000 Mexican general election (Senate results)", "accessed": "2026-10-16" }],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "deputies_2003",
+      "date": "2003-07-06",
+      "kind": "legislative",
+      "chamber": "chamber_of_deputies",
+      "historical": {
+        "party_results": [
+          { "party": "mex.pri", "seats": 224 },
+          { "party": "mex.pan", "seats": 151 },
+          { "party": "mex.prd", "seats": 97 },
+          { "party": "mex.pvem", "seats": 17 },
+          { "party": "mex.pt", "seats": 6 },
+          { "party": "mex.mc", "seats": 5 }
+        ],
+        "winner": "mex.pri",
+        "turnout": 0.41,
+        "note": "Vote shares are omitted because the PRI and PVEM ran jointly as the Alliance for All in part of the districts, so party shares in the source are not comparable. The PAN received the most votes (30.74% per the PAN article); the PRI won the most seats.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2003_Mexican_legislative_election", "title": "Wikipedia: 2003 Mexican legislative election (results table)", "accessed": "2026-10-16" },
+          { "url": "https://en.wikipedia.org/wiki/National_Action_Party_(Mexico)", "title": "Wikipedia: National Action Party (Mexico) (2003 vote share)", "accessed": "2026-10-16" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "president_2006",
+      "date": "2006-07-02",
+      "kind": "presidential",
+      "office": "mex.president",
+      "historical": {
+        "candidates": [
+          { "person": "mex.felipe_calderon", "party": "mex.pan", "share": 0.3669, "votes": 15000284, "round": 1 },
+          { "person": "mex.andres_manuel_lopez_obrador", "party": "mex.prd", "share": 0.3609, "votes": 14756350, "round": 1 },
+          { "person": "mex.roberto_madrazo", "party": "mex.pri", "share": 0.2275, "votes": 9301441, "round": 1 }
+        ],
+        "winner": "mex.felipe_calderon",
+        "turnout": 0.5855,
+        "note": "López Obrador ran for the Coalition for the Good of All (PRD, PT, Convergencia), Madrazo for the Alliance for Mexico (PRI, PVEM).",
+        "source": [{ "url": "https://en.wikipedia.org/wiki/2006_Mexican_general_election", "title": "Wikipedia: 2006 Mexican general election (presidential infobox)", "accessed": "2026-10-16" }],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "deputies_2006",
+      "date": "2006-07-02",
+      "kind": "legislative",
+      "chamber": "chamber_of_deputies",
+      "historical": {
+        "party_results": [
+          { "party": "mex.pan", "share": 0.3427, "seats": 206 },
+          { "party": "mex.prd", "share": 0.2974, "seats": 158 },
+          { "party": "mex.pri", "share": 0.289, "seats": 123 },
+          { "party": "mex.panal", "share": 0.0466, "seats": 9 },
+          { "party": "others", "share": 0.0211, "seats": 4 }
+        ],
+        "winner": "mex.pan",
+        "note": "By alliance: PRD row = Coalition for the Good of All (PRD, PT, Convergencia); PRI row = Alliance for Mexico (PRI, PVEM). 'others' is the Social Democratic and Peasant Alternative (PASC).",
+        "source": [{ "url": "https://en.wikipedia.org/wiki/2006_Mexican_general_election", "title": "Wikipedia: 2006 Mexican general election (Chamber of Deputies infobox)", "accessed": "2026-10-16" }],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "senate_2006",
+      "date": "2006-07-02",
+      "kind": "legislative_upper",
+      "chamber": "senate",
+      "historical": {
+        "party_results": [
+          { "party": "mex.pan", "share": 0.3447, "seats": 52 },
+          { "party": "mex.pri", "share": 0.2869, "seats": 39 },
+          { "party": "mex.prd", "share": 0.3045, "seats": 36 },
+          { "party": "mex.panal", "share": 0.0415, "seats": 1 }
+        ],
+        "winner": "mex.pan",
+        "note": "By alliance: PRD row = Coalition for the Good of All; PRI row = Alliance for Mexico (PRI, PVEM).",
+        "source": [{ "url": "https://en.wikipedia.org/wiki/2006_Mexican_general_election", "title": "Wikipedia: 2006 Mexican general election (Senate infobox)", "accessed": "2026-10-16" }],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "deputies_2009",
+      "date": "2009-07-05",
+      "kind": "legislative",
+      "chamber": "chamber_of_deputies",
+      "historical": {
+        "party_results": [
+          { "party": "mex.pri", "share": 0.3905, "seats": 237 },
+          { "party": "mex.pan", "share": 0.2961, "seats": 143 },
+          { "party": "mex.prd", "share": 0.1289, "seats": 71 },
+          { "party": "mex.pvem", "share": 0.0709, "seats": 21 },
+          { "party": "mex.pt", "share": 0.0387, "seats": 13 },
+          { "party": "mex.panal", "share": 0.0362, "seats": 9 },
+          { "party": "mex.mc", "share": 0.026, "seats": 6 }
+        ],
+        "winner": "mex.pri",
+        "note": "Citizens' Movement then ran as Convergencia.",
+        "source": [{ "url": "https://en.wikipedia.org/wiki/2009_Mexican_legislative_election", "title": "Wikipedia: 2009 Mexican legislative election (infobox)", "accessed": "2026-10-16" }],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "president_2012",
+      "date": "2012-07-01",
+      "kind": "presidential",
+      "office": "mex.president",
+      "historical": {
+        "candidates": [
+          { "person": "mex.enrique_pena_nieto", "party": "mex.pri", "share": 0.3917, "votes": 19158592, "round": 1 },
+          { "person": "mex.andres_manuel_lopez_obrador", "party": "mex.prd", "share": 0.3241, "votes": 15848827, "round": 1 },
+          { "person": "mex.josefina_vazquez_mota", "party": "mex.pan", "share": 0.2603, "votes": 12732630, "round": 1 }
+        ],
+        "winner": "mex.enrique_pena_nieto",
+        "turnout": 0.6308,
+        "note": "Peña Nieto ran for Commitment to Mexico (PRI, PVEM); López Obrador for the Progressive Movement (PRD, PT, Citizens' Movement).",
+        "source": [{ "url": "https://en.wikipedia.org/wiki/2012_Mexican_general_election", "title": "Wikipedia: 2012 Mexican general election (presidential infobox)", "accessed": "2026-10-16" }],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "deputies_2012",
+      "date": "2012-07-01",
+      "kind": "legislative",
+      "chamber": "chamber_of_deputies",
+      "historical": {
+        "party_results": [
+          { "party": "mex.pri", "share": 0.3357, "seats": 207 },
+          { "party": "mex.pan", "share": 0.2726, "seats": 114 },
+          { "party": "mex.prd", "share": 0.1934, "seats": 100 },
+          { "party": "mex.pvem", "share": 0.0642, "seats": 34 },
+          { "party": "mex.pt", "share": 0.0483, "seats": 19 },
+          { "party": "mex.mc", "share": 0.0421, "seats": 16 },
+          { "party": "mex.panal", "share": 0.0429, "seats": 10 }
+        ],
+        "winner": "mex.pri",
+        "source": [{ "url": "https://en.wikipedia.org/wiki/2012_Mexican_general_election", "title": "Wikipedia: 2012 Mexican general election (Chamber of Deputies infobox)", "accessed": "2026-10-16" }],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "senate_2012",
+      "date": "2012-07-01",
+      "kind": "legislative_upper",
+      "chamber": "senate",
+      "historical": {
+        "party_results": [
+          { "party": "mex.pri", "share": 0.33, "seats": 52 },
+          { "party": "mex.pan", "share": 0.2787, "seats": 38 },
+          { "party": "mex.prd", "share": 0.1969, "seats": 22 },
+          { "party": "mex.pvem", "share": 0.0606, "seats": 9 },
+          { "party": "mex.pt", "share": 0.0492, "seats": 4 },
+          { "party": "mex.mc", "share": 0.0426, "seats": 2 },
+          { "party": "mex.panal", "share": 0.0391, "seats": 1 }
+        ],
+        "winner": "mex.pri",
+        "source": [{ "url": "https://en.wikipedia.org/wiki/2012_Mexican_general_election", "title": "Wikipedia: 2012 Mexican general election (Senate infobox)", "accessed": "2026-10-16" }],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "deputies_2015",
+      "date": "2015-06-07",
+      "kind": "legislative",
+      "chamber": "chamber_of_deputies",
+      "historical": {
+        "party_results": [
+          { "party": "mex.pri", "share": 0.3065, "seats": 203 },
+          { "party": "mex.pan", "share": 0.2207, "seats": 109 },
+          { "party": "mex.prd", "share": 0.1147, "seats": 55 },
+          { "party": "mex.pvem", "share": 0.0726, "seats": 47 },
+          { "party": "mex.morena", "share": 0.0881, "seats": 35 },
+          { "party": "mex.mc", "share": 0.064, "seats": 25 },
+          { "party": "mex.panal", "share": 0.0392, "seats": 11 },
+          { "party": "mex.pes", "share": 0.0349, "seats": 8 },
+          { "party": "mex.pt", "share": 0.0299, "seats": 6 },
+          { "party": "independents", "share": 0.0059, "seats": 1 }
+        ],
+        "winner": "mex.pri",
+        "turnout": 0.4772,
+        "source": [{ "url": "https://en.wikipedia.org/wiki/2015_Mexican_legislative_election", "title": "Wikipedia: 2015 Mexican legislative election (infobox)", "accessed": "2026-10-16" }],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "president_2018",
+      "date": "2018-07-01",
+      "kind": "presidential",
+      "office": "mex.president",
+      "historical": {
+        "candidates": [
+          { "person": "mex.andres_manuel_lopez_obrador", "party": "mex.morena", "share": 0.5471, "votes": 30113483, "round": 1 },
+          { "person": "mex.ricardo_anaya", "party": "mex.pan", "share": 0.2291, "votes": 12610120, "round": 1 },
+          { "person": "mex.jose_antonio_meade", "party": "mex.pri", "share": 0.1688, "votes": 9289853, "round": 1 },
+          { "person": "mex.jaime_rodriguez_calderon", "share": 0.0538, "votes": 2961732, "round": 1 }
+        ],
+        "winner": "mex.andres_manuel_lopez_obrador",
+        "turnout": 0.6343,
+        "note": "López Obrador ran for Juntos Haremos Historia (Morena, PT, PES); Anaya for Por México al Frente (PAN, PRD, MC); Meade for Todos por México (PRI, PVEM, PANAL); Rodríguez Calderón as an independent.",
+        "source": [{ "url": "https://en.wikipedia.org/wiki/2018_Mexican_general_election", "title": "Wikipedia: 2018 Mexican general election (presidential infobox)", "accessed": "2026-10-16" }],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "deputies_2018",
+      "date": "2018-07-01",
+      "kind": "legislative",
+      "chamber": "chamber_of_deputies",
+      "historical": {
+        "party_results": [
+          { "party": "mex.morena", "share": 0.388, "seats": 191 },
+          { "party": "mex.pan", "share": 0.1868, "seats": 81 },
+          { "party": "mex.pt", "share": 0.0409, "seats": 61 },
+          { "party": "mex.pes", "share": 0.025, "seats": 56 },
+          { "party": "mex.pri", "share": 0.1722, "seats": 45 },
+          { "party": "mex.mc", "share": 0.046, "seats": 27 },
+          { "party": "mex.prd", "share": 0.0549, "seats": 21 },
+          { "party": "mex.pvem", "share": 0.0499, "seats": 16 },
+          { "party": "mex.panal", "share": 0.0257, "seats": 2 }
+        ],
+        "winner": "mex.morena",
+        "source": [{ "url": "https://en.wikipedia.org/wiki/2018_Mexican_general_election", "title": "Wikipedia: 2018 Mexican general election (Chamber of Deputies infobox)", "accessed": "2026-10-16" }],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "senate_2018",
+      "date": "2018-07-01",
+      "kind": "legislative_upper",
+      "chamber": "senate",
+      "historical": {
+        "party_results": [
+          { "party": "mex.morena", "share": 0.3912, "seats": 55 },
+          { "party": "mex.pan", "share": 0.1835, "seats": 23 },
+          { "party": "mex.pri", "share": 0.1659, "seats": 14 },
+          { "party": "mex.pes", "share": 0.0243, "seats": 8 },
+          { "party": "mex.prd", "share": 0.0549, "seats": 8 },
+          { "party": "mex.mc", "share": 0.0489, "seats": 7 },
+          { "party": "mex.pt", "share": 0.0398, "seats": 6 },
+          { "party": "mex.pvem", "share": 0.0465, "seats": 6 },
+          { "party": "mex.panal", "share": 0.0241, "seats": 1 }
+        ],
+        "winner": "mex.morena",
+        "source": [{ "url": "https://en.wikipedia.org/wiki/2018_Mexican_general_election", "title": "Wikipedia: 2018 Mexican general election (Senate infobox)", "accessed": "2026-10-16" }],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "deputies_2021",
+      "date": "2021-06-06",
+      "kind": "legislative",
+      "chamber": "chamber_of_deputies",
+      "historical": {
+        "party_results": [
+          { "party": "mex.morena", "share": 0.353, "seats": 198 },
+          { "party": "mex.pan", "share": 0.1889, "seats": 114 },
+          { "party": "mex.pri", "share": 0.1836, "seats": 70 },
+          { "party": "mex.pvem", "share": 0.0563, "seats": 43 },
+          { "party": "mex.pt", "share": 0.0336, "seats": 37 },
+          { "party": "mex.mc", "share": 0.0727, "seats": 23 },
+          { "party": "mex.prd", "share": 0.0378, "seats": 15 }
+        ],
+        "winner": "mex.morena",
+        "turnout": 0.527,
+        "source": [{ "url": "https://en.wikipedia.org/wiki/2021_Mexican_legislative_election", "title": "Wikipedia: 2021 Mexican legislative election (infobox)", "accessed": "2026-10-16" }],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "consultation_2021",
+      "date": "2021-08-01",
+      "kind": "referendum",
+      "question": "Whether to undertake a process of clarification of political decisions taken in past years by political actors (popularly framed as a consultation on trying former presidents).",
+      "historical": {
+        "yes_share": 0.9844,
+        "options": [
+          { "label": "Yes", "votes": 6511385 },
+          { "label": "No", "votes": 102945 }
+        ],
+        "note": "Turnout was about 7% (quick count 7.07-7.74%), far below the 40% needed for the result to be binding. yes_share is of yes and no votes.",
+        "source": [{ "url": "https://en.wikipedia.org/wiki/2021_Mexican_corruption_trial_referendum", "title": "Wikipedia: 2021 Mexican corruption trial referendum", "accessed": "2026-10-16" }],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "recall_2022",
+      "date": "2022-04-10",
+      "kind": "referendum",
+      "question": "Should President Andrés Manuel López Obrador have his mandate revoked for loss of confidence, or remain in office?",
+      "historical": {
+        "yes_share": 0.0655,
+        "options": [
+          { "label": "Should have mandate revoked", "votes": 1063209 },
+          { "label": "Should continue as President", "votes": 15159323 }
+        ],
+        "turnout": 0.1778,
+        "note": "yes_share is the share for revocation among valid votes. Turnout (valid plus 280,104 invalid votes over an electorate of 92,823,216) was below the 40% needed for a binding result. The President stayed in office.",
+        "source": [{ "url": "https://en.wikipedia.org/wiki/2022_Mexican_presidential_recall_referendum", "title": "Wikipedia: 2022 Mexican presidential recall referendum (infobox)", "accessed": "2026-10-16" }],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "president_2024",
+      "date": "2024-06-02",
+      "kind": "presidential",
+      "office": "mex.president",
+      "historical": {
+        "candidates": [
+          { "person": "mex.claudia_sheinbaum", "party": "mex.morena", "share": 0.6118, "votes": 35924519, "round": 1 },
+          { "person": "mex.xochitl_galvez", "party": "mex.pan", "share": 0.2811, "votes": 16502697, "round": 1 },
+          { "person": "mex.jorge_alvarez_maynez", "party": "mex.mc", "share": 0.1057, "votes": 6204710, "round": 1 }
+        ],
+        "winner": "mex.claudia_sheinbaum",
+        "turnout": 0.6105,
+        "note": "Sheinbaum ran for Sigamos Haciendo Historia (Morena, PVEM, PT); Gálvez for Fuerza y Corazón por México (PAN, PRI, PRD), registered through the PAN quota although not a PAN member (per the source).",
+        "source": [{ "url": "https://en.wikipedia.org/wiki/2024_Mexican_general_election", "title": "Wikipedia: 2024 Mexican general election (presidential infobox)", "accessed": "2026-10-16" }],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "deputies_2024",
+      "date": "2024-06-02",
+      "kind": "legislative",
+      "chamber": "chamber_of_deputies",
+      "historical": {
+        "party_results": [
+          { "party": "mex.morena", "share": 0.424, "seats": 236 },
+          { "party": "mex.pvem", "share": 0.0872, "seats": 77 },
+          { "party": "mex.pan", "share": 0.1755, "seats": 72 },
+          { "party": "mex.pt", "share": 0.0568, "seats": 51 },
+          { "party": "mex.pri", "share": 0.1157, "seats": 35 },
+          { "party": "mex.mc", "share": 0.1134, "seats": 27 },
+          { "party": "mex.prd", "share": 0.0253, "seats": 1 },
+          { "party": "independents", "share": 0.0013, "seats": 1 }
+        ],
+        "winner": "mex.morena",
+        "note": "The PRD fell below the 3% threshold and lost its national registration; Wikipedia's PRD article gives 19 December 2024 as the dissolution at national level (an earlier version of this note said 19 September 2024, which was not confirmed).",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2024_Mexican_general_election", "title": "Wikipedia: 2024 Mexican general election (Chamber of Deputies infobox)", "accessed": "2026-10-16" },
+          { "url": "https://en.wikipedia.org/wiki/Party_of_the_Democratic_Revolution", "title": "Wikipedia: Party of the Democratic Revolution (dissolution at national level)", "accessed": "2026-10-17" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "senate_2024",
+      "date": "2024-06-02",
+      "kind": "legislative_upper",
+      "chamber": "senate",
+      "historical": {
+        "party_results": [
+          { "party": "mex.morena", "share": 0.4248, "seats": 60 },
+          { "party": "mex.pan", "share": 0.1754, "seats": 22 },
+          { "party": "mex.pri", "share": 0.1133, "seats": 16 },
+          { "party": "mex.pvem", "share": 0.093, "seats": 14 },
+          { "party": "mex.pt", "share": 0.0558, "seats": 9 },
+          { "party": "mex.mc", "share": 0.1133, "seats": 5 },
+          { "party": "mex.prd", "share": 0.0236, "seats": 2 }
+        ],
+        "winner": "mex.morena",
+        "source": [{ "url": "https://en.wikipedia.org/wiki/2024_Mexican_general_election", "title": "Wikipedia: 2024 Mexican general election (Senate infobox)", "accessed": "2026-10-16" }],
+        "confidence": "verified"
+      }
+    }
+  ],
+  "source": [
+    { "url": "https://en.wikipedia.org/wiki/2024_Mexican_general_election", "title": "Wikipedia: 2024 Mexican general election", "accessed": "2026-10-16" },
+    { "url": "https://en.wikipedia.org/wiki/2025_Mexican_judicial_elections", "title": "Wikipedia: 2025 Mexican judicial elections (1 June 2025: first popular election of federal judges; not modelled because no election kind fits judicial offices)", "accessed": "2026-10-16" }
+  ],
+  "confidence": "verified"
+}
