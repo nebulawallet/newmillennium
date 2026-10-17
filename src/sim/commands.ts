@@ -8,7 +8,7 @@ import { scheduleSnapElection } from "./politics/elections.ts";
 import { changeLaw } from "./politics/laws.ts";
 import { regimeChange, startCivilWar } from "./politics/unrest.ts";
 import { answerEvent, setFocus, takeDecision } from "./scripting/systems.ts";
-import { canBuild } from "./economy/economy.ts";
+import { moveBuilding, queueBuilding } from "./economy/construction.ts";
 import { setResearch } from "./research/research.ts";
 import { addLine, moveDivision, setTemplate, trainDivision, type Template } from "./military/military.ts";
 import { choosePeace, declareWar, type WarGoal } from "./military/war.ts";
@@ -42,6 +42,7 @@ export type Command =
   | { type: "set_budget"; tag: string; revenue?: number; spending?: number }
   | { type: "queue_building"; tag: string; building: string; province?: number }
   | { type: "cancel_building"; tag: string; index: number }
+  | { type: "move_building"; tag: string; index: number; to: number }
   | { type: "set_research"; tag: string; slot: number; tech: string | null }
   | { type: "add_production_line"; tag: string; equipment: string; factories: number }
   | { type: "set_line_factories"; tag: string; line: number; factories: number }
@@ -110,15 +111,10 @@ export function applyCommand(ctx: SimContext, cmd: Command): CommandResult {
       if (cmd.spending !== undefined) e.spendingTarget = Math.max(5, Math.min(75, cmd.spending));
       return { ok: true, text: "Budget targets set." };
     }
-    case "queue_building": {
-      const cs = state.countries[cmd.tag];
-      if (!cs?.economy) return { ok: false, text: "No economy data." };
-      const base = cmd.province ? ((ctx.map?.provinces.find((p) => p.id === cmd.province) as { infrastructure?: number } | undefined)?.infrastructure ?? 0) : 0;
-      const why = canBuild(db, state, cs, cmd.building, cmd.province, base);
-      if (why) return { ok: false, text: why };
-      cs.economy.construction.push({ building: cmd.building, province: cmd.province, progress: 0 });
-      return { ok: true, text: `${db.buildings.get(cmd.building)?.name} queued.` };
-    }
+    case "queue_building":
+      return queueBuilding(ctx, cmd.tag, cmd.building, cmd.province);
+    case "move_building":
+      return moveBuilding(ctx, cmd.tag, cmd.index, cmd.to);
     case "cancel_building": {
       const e = state.countries[cmd.tag]?.economy;
       if (!e?.construction[cmd.index]) return { ok: false, text: "Nothing to cancel." };

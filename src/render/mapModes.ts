@@ -6,6 +6,32 @@ import type { ContentDB } from "../content/compile.ts";
 import type { GameState } from "../sim/state.ts";
 import { atWarWith, defensiveAllies, opinion } from "../sim/diplomacy/diplomacy.ts";
 import type { MapData, Province } from "./mapData.ts";
+import { canBuild, infrastructureOf, slotUse } from "../sim/economy/construction.ts";
+import type { SimMap } from "../sim/simulation.ts";
+
+/** The building being placed in the Construction tab (null: the mode shows free slots only). */
+export const slotsView: { building: string | null } = { building: null };
+const simMapCache = new WeakMap<MapData, SimMap>();
+const simMapOf = (m: MapData): SimMap => {
+  let s = simMapCache.get(m);
+  if (!s) simMapCache.set(m, (s = { provinces: m.provinces, neighbours: new Map() }));
+  return s;
+};
+/** Free slots (or levels left) in a province of the player's for the building being placed; -1 = not allowed. */
+export function slotRoom(ctx: MapModeContext, p: Province): number {
+  const st = ctx.state;
+  const cs = st?.player ? st.countries[st.player] : undefined;
+  if (!st || !cs?.economy || st.provinceOwner[p.id - 1] !== cs.tag) return -1;
+  const sm = simMapOf(ctx.map);
+  const b = slotsView.building ? ctx.db.buildings.get(slotsView.building) : undefined;
+  if (b && canBuild(ctx.db, st, sm, cs, b.id, p.id)) return -1;
+  if (b?.kind === "level") {
+    const have = b.id === "infrastructure" ? infrastructureOf(st, p) : st.provinceBuildings[String(p.id)]?.[b.id] ?? 0;
+    const queued = cs.economy.construction.filter((c) => c.building === b.id && c.province === p.id).length;
+    return Math.max(0, (b.max_per_province ?? 1) - have - queued);
+  }
+  return slotUse(ctx.db, st, sm, cs, p).free;
+}
 
 export type RGB = [number, number, number];
 
@@ -251,6 +277,26 @@ export const MAP_MODES: MapMode[] = [
       return bloc ? hexToRgb(ctx.db.blocs.get(bloc)?.color ?? "#888888") : [40, 44, 52];
     },
     legend: (ctx) => [...ctx.db.blocs.values()].map((b) => ({ color: b.color, label: b.name })),
+  },
+  {
+    id: "slots",
+    name: "Building slots",
+    available: true,
+    // your provinces by free building slots (or levels left for the building being placed)
+    color: (p, ctx) => {
+      if (ctx.state?.provinceOwner[p.id - 1] !== ctx.state?.player) return [34, 38, 44];
+      const room = slotRoom(ctx, p);
+      if (room < 0) return [92, 40, 34];
+      if (room === 0) return [70, 62, 52];
+      return mix([88, 120, 70], [170, 220, 110], Math.min(1, room / 8));
+    },
+    legend: () => [
+      { color: "#aadc6e", label: "8 or more free" },
+      { color: "#78a056", label: "a few free" },
+      { color: "#463e34", label: "full" },
+      { color: "#5c2822", label: "cannot build here" },
+      { color: "#22262c", label: "not yours" },
+    ],
   },
 ];
 

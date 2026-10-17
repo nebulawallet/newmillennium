@@ -16,7 +16,7 @@ import type { Battle } from "./military/war.ts";
 import type { Army } from "./military/fronts.ts";
 import { initialDiplomacy, tradeIndex, type DiplomacyState } from "./diplomacy/diplomacy.ts";
 
-export const STATE_VERSION = 10;
+export const STATE_VERSION = 11;
 
 export interface GameRules {
   /** historical: real election winners are heavily weighted; dynamic: results come purely from the simulation. */
@@ -461,6 +461,8 @@ export function migrateState(db: ContentDB, s: GameState): GameState {
   // v10: armies and battle plans (older saves start with none; the AI forms its own at war)
   s.armies ??= [];
   s.nextArmyId ??= 1;
+  // v11: buildings stand in provinces and construction is paid for; older queue items without a
+  // province still complete (they add their factories nationally), and the new fields start empty
   s.wars ??= [];
   s.nextWarId ??= 1;
   s.worldTension ??= 0;

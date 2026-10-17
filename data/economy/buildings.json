@@ -1,8 +1,64 @@
 {
-  "note": "Construction costs are gameplay values in construction points (civilian factories produce construction points each day).",
+  "note": "Buildings, building slots and construction money. Costs, slots and effects are gameplay values. Construction points come from civilian factories; money is paid from the budget as the work progresses, scaled by the country's price level (GDP per person against the reference), and counts against the public investment the 2000 budgets already contain (investment_allowance_pct_gdp). Starting factories are derived from World Bank 2000 industry value added (economy.json factory_value_bn) and placed on provinces by population and infrastructure; starting refineries follow 2000 oil rents.",
+  "slots": {
+    "base": 1,
+    "per_infrastructure": 0.5,
+    "per_sqrt_million": 2,
+    "terrain": { "plains": 1, "forest": 0.8, "hills": 0.8, "mountains": 0.5, "desert": 0.6, "jungle": 0.6, "marsh": 0.6, "urban": 1.4, "arctic": 0.4 },
+    "max": 25
+  },
+  "investment_allowance_pct_gdp": 2,
+  "price_reference_gdppc": 10000,
+  "price_level_min": 0.2,
+  "price_level_max": 1.5,
   "buildings": [
-    { "id": "infrastructure", "name": "Infrastructure", "description": "Roads, rail and utilities in a province: better supply, movement and growth.", "cost": 1500, "level": "province", "max_per_province": 10, "adds": { "infrastructure": 1, "growth": 0.01 } },
-    { "id": "civilian_factory", "name": "Civilian factory", "description": "Industrial capacity for construction and consumer goods.", "cost": 10800, "level": "national", "adds": { "civilian_factories": 1, "growth": 0.02 } },
-    { "id": "military_factory", "name": "Military factory", "description": "Capacity for producing military equipment (production arrives in Phase 9).", "cost": 7200, "level": "national", "adds": { "military_factories": 1 } }
+    {
+      "id": "infrastructure", "name": "Infrastructure", "icon": "infrastructure",
+      "description": "Roads, rail and utilities in a province: better supply, movement and growth, and room for more buildings.",
+      "cost": 1500, "money_bn": 0.4, "kind": "level", "max_per_province": 10,
+      "adds": { "infrastructure": 1, "growth": 0.01 }
+    },
+    {
+      "id": "civilian_factory", "name": "Civilian factory", "icon": "factories",
+      "description": "Industrial capacity: builds construction projects, and makes consumer and industrial goods when it is not building.",
+      "cost": 10800, "money_bn": 1.2, "kind": "slot",
+      "adds": { "civilian_factories": 1, "growth": 0.02 }
+    },
+    {
+      "id": "military_factory", "name": "Military factory", "icon": "production",
+      "description": "Capacity for military equipment, assigned to production lines in the Production tab.",
+      "cost": 7200, "money_bn": 1.0, "kind": "slot",
+      "adds": { "military_factories": 1 }
+    },
+    {
+      "id": "refinery", "name": "Oil refinery", "icon": "resources",
+      "description": "Turns crude oil into fuel for the home market and for export. Needs oil production.",
+      "cost": 6000, "money_bn": 1.0, "kind": "slot", "requires_resource": "oil", "start_per_rent_bn": 0.1,
+      "adds": { "goods": { "fuel": 2 } }
+    },
+    {
+      "id": "renewable_plant", "name": "Renewable power plant", "icon": "industry",
+      "description": "Wind or solar parks with grid connections: cheaper, cleaner power.",
+      "cost": 5400, "money_bn": 0.9, "kind": "slot", "requires_tech": "ind_wind_and_solar",
+      "adds": {}, "modifiers": { "renewable_output": 0.02, "energy_cost": -0.003, "emissions": -0.004 }, "modifier_cap": 20
+    },
+    {
+      "id": "data_centre", "name": "Data centre", "icon": "electronics",
+      "description": "Large computing centres for business, government and research.",
+      "cost": 4800, "money_bn": 0.6, "kind": "slot", "requires_tech": "eco_cloud_computing",
+      "adds": {}, "modifiers": { "research_speed": 0.004, "private_sector_output": 0.002 }, "modifier_cap": 25
+    },
+    {
+      "id": "air_base", "name": "Air base", "icon": "air",
+      "description": "Runways, shelters and fuel for combat aircraft: a stronger air force over the front.",
+      "cost": 3000, "money_bn": 0.5, "kind": "level", "max_per_province": 5,
+      "adds": {}, "modifiers": { "air_effectiveness": 0.01 }, "modifier_cap": 30
+    },
+    {
+      "id": "port", "name": "Port", "icon": "naval",
+      "description": "Container terminals and docks: cheaper trade. Coastal provinces only.",
+      "cost": 4000, "money_bn": 0.6, "kind": "level", "max_per_province": 5, "coastal": true,
+      "adds": {}, "modifiers": { "trade_efficiency": 0.004 }, "modifier_cap": 25
+    }
   ]
 }

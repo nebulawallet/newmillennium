@@ -1,12 +1,17 @@
 /**
- * Economy UI (Phase 7): the economy overview (opened from the top-bar treasury and factory
- * readouts), the Construction tab (queue) and the Trade tab (resource market).
+ * Economy UI: the economy overview (opened from the top-bar treasury and factory readouts), the
+ * Construction tab (building cards that start placing on the map, and the queue) and the Trade tab
+ * (goods market, trade routes, resource market, agreements and sanctions).
  */
 import { useState } from "preact/hooks";
 import type { ContentDB } from "../../content/compile.ts";
 import { constructionPerDay, factories, growthTarget, neutralRate, shockNow, type EconomyState } from "../../sim/economy/economy.ts";
+import { buildingCount, moneyCost, priceLevel, queueEstimates } from "../../sim/economy/construction.ts";
+import { tradeGrowthEffect } from "../../sim/economy/market.ts";
+import { Flag } from "../Flag.tsx";
+import { Icon, type IconName } from "../icons.tsx";
 import { formatDate } from "../../sim/date.ts";
-import { selectedProvince } from "../store.ts";
+import { buildMode, buildMsg } from "../store.ts";
 import { version, type Session } from "../session.ts";
 import { tip } from "../tooltip.tsx";
 import { countryName } from "../../sim/politics/unrest.ts";
@@ -109,49 +114,89 @@ export function ConstructionPanel({ db, session }: { db: ContentDB; session: Ses
   const e = cs?.economy;
   if (!state || !tag || !cs || !e) return <p class="dim pad">No economy data for this country yet.</p>;
   const cp = constructionPerDay(db, cs);
-  const sel = selectedProvince.value;
-  const selName = sel ? session.map.provinces[sel - 1]?.name : undefined;
-  const ownSel = sel && state.provinceOwner[sel - 1] === tag;
-  const queue = (building: string, province?: number) => setMsg(session.dispatch({ type: "queue_building", tag, building, province }).text);
-  const perProject = db.economyRules.max_factories_per_project * db.economyRules.construction_per_factory;
+  const sm = session.sim?.context.map;
+  const level = priceLevel(db, e);
+  const allowance = db.buildingRules.investment_allowance_pct_gdp;
+  const inv = e.investmentPct ?? 0;
+  const eta = queueEstimates(db, e, cp.factories, cp.perFactory);
+  const picking = buildMode.value;
+  const run = (c: Parameters<Session["dispatch"]>[0]) => setMsg(session.dispatch(c).text);
   return (
     <div class="cons">
-      <dl class="kv">
-        <dt>Construction</dt>
-        <dd class="num" {...tip(() => ({ title: "Construction capacity", rows: [["Civilian factories free", Math.round(cp.factories)], ["Consumer goods share", `${Math.round(cp.consumerShare * 100)}%`], ["Points per day", Math.round(cp.points)]], note: `Each project uses at most ${db.economyRules.max_factories_per_project} factories. The economic system law sets the consumer goods share.` }))}>
-          {Math.round(cp.points)} points a day
-        </dd>
-      </dl>
+      <div class="cons-hero">
+        <div {...tip(() => ({ title: "Construction capacity", rows: [["Civilian factories", factories(db, e).civ], ["Making consumer goods", `${Math.round(cp.consumerShare * 100)}%`], ["Free for construction", Math.round(cp.factories)], ["Points per factory a day", cp.perFactory.toFixed(1)], ["Points a day in all", Math.round(cp.points)]], note: `Each project takes at most ${db.economyRules.max_factories_per_project} factories; the rest go to the next project. Factories not building make industrial goods for the market. The economic system law sets the consumer goods share.` }))}>
+          <div class="econ-big num">{Math.round(cp.factories)}</div>
+          <div class="faint small">factories for construction</div>
+        </div>
+        <div {...tip(() => ({ title: "Construction spending", rows: [["Spending now", `${inv.toFixed(2)}% of GDP a year`], ["Already in the budget", `${allowance}% of GDP`], ["Added to the deficit", `${Math.max(0, inv - allowance).toFixed(2)}% of GDP`], ["Price level", `×${level.toFixed(2)}`]], note: "Each project is paid from the budget as the work progresses, never up front. Costs scale with the country's price level (GDP per person). Spending above the public investment already in the budget adds to the deficit." }))}>
+          <div class={`econ-big num ${inv > allowance ? "warn" : ""}`}>{inv.toFixed(2)}%</div>
+          <div class="faint small">of GDP on construction</div>
+        </div>
+        <div {...tip(() => ({ title: "Queue", rows: [["Projects", e.construction.length], ["Being worked on", e.construction.filter((c) => (c.factories ?? 0) > 0).length]], note: "Projects are worked on in order. Reorder them with the arrows." }))}>
+          <div class="econ-big num">{e.construction.length}</div>
+          <div class="faint small">projects queued</div>
+        </div>
+      </div>
+
       <div class="hp-section">Build</div>
-      <div class="cons-build">
+      <div class="build-grid">
         {[...db.buildings.values()].map((b) => {
-          const needsProv = b.level === "province";
+          const locked = b.requires_tech && !cs.research?.completed.includes(b.requires_tech) ? `Needs ${db.techs.get(b.requires_tech)?.name ?? b.requires_tech}` : b.requires_resource && !((e.resources[b.requires_resource] ?? 0) > 0) ? `Needs ${db.economyRules.resources.find((r) => r.id === b.requires_resource)?.name.toLowerCase() ?? b.requires_resource} production` : null;
+          const n = buildingCount(db, state, sm, cs, b.id);
+          const icon = b.icon && b.icon in Icon ? (b.icon as IconName) : "construction";
+          const on = picking === b.id;
           return (
-            <button key={b.id} class="btn" disabled={needsProv && !ownSel} onClick={() => queue(b.id, needsProv ? sel : undefined)}
-              {...tip(() => ({ title: b.name, body: <span class="dim">{b.description}</span>, rows: [["Cost", `${b.cost} points`], ["Days at full speed", Math.ceil(b.cost / perProject)]], note: needsProv ? (ownSel ? `In ${selName}.` : "Select one of your provinces on the map first.") : undefined }))}>
-              {b.name}{needsProv && ownSel ? ` in ${selName}` : ""}
+            <button key={b.id} class={`build-card ${on ? "on" : ""} ${locked ? "locked" : ""}`} disabled={!!locked}
+              onClick={() => { buildMode.value = on ? null : b.id; setMsg(on ? "" : `Click your provinces on the map to build: ${b.name.toLowerCase()}.`); }}
+              {...tip(() => ({
+                title: b.name,
+                body: <span class="dim">{b.description}</span>,
+                rows: [
+                  ["Construction", `${b.cost.toLocaleString("en")} points`],
+                  ["Money", `${fmtBn(moneyCost(db, b, e))} (paid as it is built)`],
+                  ["Days with 15 factories", Math.ceil(b.cost / (db.economyRules.max_factories_per_project * cp.perFactory))],
+                  ["Uses", b.kind === "slot" ? "a building slot" : `its own levels, up to ${b.max_per_province} per province`],
+                  ...(b.coastal ? [["Where", "coastal provinces"] as [string, string]] : []),
+                  ["You have", b.id === "infrastructure" ? "province levels (see the map)" : `${n.organic + n.built}${n.organic ? ` (${n.organic} from the start)` : ""}`],
+                  ...Object.entries(b.modifiers).map(([m, v]) => [db.modifiers.get(m)?.name ?? m, `${v > 0 ? "+" : ""}${(v * 100).toFixed(1)}% each (up to ${b.modifier_cap ?? "∞"})`] as [string, string]),
+                  ...Object.entries(b.adds.goods ?? {}).map(([g, v]) => [db.goods.get(g)?.name ?? g, `+${v} a year`] as [string, string]),
+                ],
+                note: locked ?? (on ? "Click again or press Esc to stop placing." : "Click, then click your provinces on the map."),
+              }))}>
+              <span class="bc-ic">{Icon[icon]({ size: 22 })}</span>
+              <span class="bc-name">{b.name}</span>
+              <span class="bc-meta num">{locked ? <span class="faint">{Icon.lock({ size: 11 })}</span> : <>{b.id === "infrastructure" ? "levels" : n.organic + n.built}</>}</span>
             </button>
           );
         })}
       </div>
-      {msg && <p class="dim small pad">{msg}</p>}
+      {picking && <p class="build-hint small"><b>Placing {db.buildings.get(picking)?.name.toLowerCase()}.</b> Green provinces have room; the brighter, the more. Esc to stop.{buildMsg.value && <span class="dim"> {buildMsg.value}</span>}</p>}
+      {msg && !picking && <p class="dim small pad">{msg}</p>}
+
       <div class="hp-section">Queue</div>
       {e.construction.length === 0 ? (
-        <p class="faint small pad">Nothing under construction.</p>
+        <p class="faint small pad">Nothing under construction. Pick a building above, then click a province.</p>
       ) : (
-        <ul class="dec-list">
+        <ul class="cons-queue">
           {e.construction.map((item, i) => {
             const b = db.buildings.get(item.building);
             const p = Math.min(1, item.progress / (b?.cost ?? 1));
-            const where = item.province ? session.map.provinces[item.province - 1]?.name : null;
+            const where = item.province ? session.map.provinces[item.province - 1]?.name : "National";
+            const days = eta[i] ?? Infinity;
+            const icon = b?.icon && b.icon in Icon ? (b.icon as IconName) : "construction";
             return (
-              <li class="dec-item" key={i}>
-                <div class="dec-main">
-                  <span class="dec-name">{b?.name}{where ? ` · ${where}` : ""}</span>
+              <li class={`cq-item ${(item.factories ?? 0) > 0 ? "active" : "waiting"}`} key={i}>
+                <span class="cq-ic">{Icon[icon]({ size: 18 })}</span>
+                <div class="cq-main" {...tip(() => ({ title: `${b?.name} · ${where}`, rows: [["Progress", `${Math.round(item.progress).toLocaleString("en")} / ${b?.cost.toLocaleString("en")} points`], ["Factories working", `${item.factories ?? 0} of ${db.economyRules.max_factories_per_project}`], ["Money spent", fmtBn(item.spent ?? 0)], ["Money left", fmtBn(b ? moneyCost(db, b, e) * (1 - p) : 0)], ["Estimated finish", Number.isFinite(days) ? formatDate(state.day + days) : "not before the projects ahead"]], note: "Estimate at today's capacity; projects further down wait for factories to come free." }))}>
+                  <span class="cq-name clip">{b?.name} <span class="faint">· {where}</span></span>
                   <span class="meter"><span style={{ width: `${p * 100}%` }} /></span>
+                  <span class="cq-meta faint small num">{Math.round(p * 100)}% · {item.factories ?? 0}/{db.economyRules.max_factories_per_project} factories · {Number.isFinite(days) ? formatDate(state.day + days) : "waiting"}</span>
                 </div>
-                <span class="num faint" {...tip(() => ({ title: "Progress", rows: [["Done", `${Math.round(item.progress)} / ${b?.cost}`]] }))}>{Math.round(p * 100)}%</span>
-                <button class="btn" onClick={() => setMsg(session.dispatch({ type: "cancel_building", tag, index: i }).text)}>Cancel</button>
+                <span class="cq-act">
+                  <button class="tile mini" aria-label="Move up" disabled={i === 0} onClick={() => run({ type: "move_building", tag, index: i, to: i - 1 })} {...tip(() => ({ title: "Move up", note: "Earlier projects get factories first." }))}>▲</button>
+                  <button class="tile mini" aria-label="Move down" disabled={i === e.construction.length - 1} onClick={() => run({ type: "move_building", tag, index: i, to: i + 1 })} {...tip(() => ({ title: "Move down" }))}>▼</button>
+                  <button class="tile mini cq-x" aria-label="Cancel" onClick={() => run({ type: "cancel_building", tag, index: i })} {...tip(() => ({ title: "Cancel", note: "Progress and money spent are lost." }))}>{Icon.close({ size: 11 })}</button>
+                </span>
               </li>
             );
           })}
@@ -167,10 +212,61 @@ export function TradePanel({ db, session }: { db: ContentDB; session: Session })
   const tag = state?.player;
   const e = tag ? state?.countries[tag]?.economy : undefined;
   if (!state || !tag || !e) return <p class="dim pad">No economy data for this country yet.</p>;
-  const wb = db.worldBank.countries[tag];
-  const exp = wb?.exports_pct_gdp as number | undefined, imp = wb?.imports_pct_gdp as number | undefined;
+  const t = e.trade;
+  const goods = state.market.goods ?? {};
+  const kindLabel = { deal: "trade agreement", bloc: "economic bloc", open: "open market" } as const;
   return (
     <div class="trade">
+      <div class="econ-hero">
+        <div {...tip(() => ({ title: "Exports sold", rows: t ? [["Surplus goods sold", fmtBn(t.exports)], ["Market access", `${Math.round(t.access * 100)}%`]] : [], note: "Goods you make beyond your own demand, sold along your trade routes. Access is the share of an open world market your routes reach: agreements and economic blocs raise it, sanctions close routes." }))}>
+          <div class="econ-big num">{t ? fmtBn(t.exports) : "—"}</div>
+          <div class="faint small">exports a year</div>
+        </div>
+        <div {...tip(() => ({ title: "Imports bought", rows: t ? [["Goods bought", fmtBn(t.imports)]] : [], note: "Goods you need beyond what you make, bought at world prices." }))}>
+          <div class="econ-big num">{t ? fmtBn(t.imports) : "—"}</div>
+          <div class="faint small">imports a year</div>
+        </div>
+        <div {...tip(() => ({ title: "Trade income", rows: t ? [["Now", fmtBn(t.income)], ["On 1 January 2000", fmtBn(t.income0 ?? t.income)], ["Growth effect", `${tradeGrowthEffect(db, e) >= 0 ? "+" : ""}${tradeGrowthEffect(db, e).toFixed(2)} points`], ["To reserves", `${Math.round(db.goodsRules.treasury_share * 100)}% of income`]] : [], note: "The change since 2000 moves growth (the 2000 figures already include that year's trade)." }))}>
+          <div class={`econ-big num ${t && t.income < 0 ? "bad" : ""}`}>{t ? fmtBn(t.income) : "—"}</div>
+          <div class="faint small">net a year</div>
+        </div>
+      </div>
+      <div class="hp-section">World goods market</div>
+      {Object.keys(goods).length === 0 ? <p class="faint small pad">The market opens at the end of the first month.</p> : (
+        <table class="tbl">
+          <thead><tr><th></th><th>Good</th><th class="r">Price</th><th class="r">You make</th><th class="r">You need</th><th class="r">Balance</th></tr></thead>
+          <tbody>
+            {[...db.goods.values()].map((g) => {
+              const m = goods[g.id];
+              if (!m) return null;
+              const made = t?.production[g.id] ?? 0, need = t?.demand[g.id] ?? 0, bal = made - need;
+              return (
+                <tr key={g.id} {...tip(() => ({ title: g.name, body: <span class="dim">{g.description}</span>, rows: [["Price index (start = 100)", Math.round(m.price * 100)], ["World supply", Math.round(m.supply).toLocaleString("en")], ["World demand", Math.round(m.demand).toLocaleString("en")], ["You make", made.toFixed(1)], ["You need", need.toFixed(1)], ["Value of one unit", fmtBn(g.value_bn * m.price)]], note: "Prices move toward world demand over supply. Units are a year of one factory's output." }))}>
+                  <td><i class="sw" style={{ background: g.color }} /></td>
+                  <td>{g.name}</td>
+                  <td class={`r num ${m.price > 1.05 ? "good" : m.price < 0.95 ? "bad" : ""}`}>{Math.round(m.price * 100)}</td>
+                  <td class="r num">{made.toFixed(1)}</td>
+                  <td class="r num">{need.toFixed(1)}</td>
+                  <td class={`r num ${bal >= 0 ? "good" : "bad"}`}>{bal >= 0 ? "+" : ""}{bal.toFixed(1)}</td>
+                </tr>
+              );
+            })}
+          </tbody>
+        </table>
+      )}
+      <div class="hp-section">Trade routes</div>
+      {!t || !t.routes.length ? <p class="faint small pad">No exports to route yet.</p> : (
+        <ul class="routes">
+          {t.routes.map((r) => (
+            <li key={r.partner} class={`route k-${r.kind}`} {...tip(() => ({ title: `Route to ${countryName(db, state, r.partner)}`, rows: [["Exports a year", fmtBn(r.value)], ["Terms", kindLabel[r.kind]]], note: "Routes weigh by the partner's GDP; agreements and blocs carry more, sanctions close a route." }))}>
+              <span class="row-flag"><Flag db={db} tag={r.partner} size="xs" />{countryName(db, state, r.partner)}</span>
+              <span class="route-bar"><span style={{ width: `${Math.min(100, (r.value / Math.max(1e-9, t.routes[0]!.value)) * 100)}%` }} /></span>
+              <span class="num small">{fmtBn(r.value)}</span>
+              <span class="faint small">{kindLabel[r.kind]}</span>
+            </li>
+          ))}
+        </ul>
+      )}
       <div class="hp-section">World resource market</div>
       <table class="tbl">
         <thead><tr><th></th><th>Resource</th><th class="r">Price</th><th class="r">Your rent</th><th class="r">Share of GDP</th></tr></thead>
@@ -190,11 +286,6 @@ export function TradePanel({ db, session }: { db: ContentDB; session: Session })
           })}
         </tbody>
       </table>
-      <div class="hp-section">Trade</div>
-      <dl class="kv">
-        <dt>Exports</dt><dd class="num" {...tip(() => ({ title: "Exports", note: "World Bank, 2000: exports of goods and services as a share of GDP." }))}>{exp !== undefined ? pct(exp) + " of GDP (2000)" : "no figure"}</dd>
-        <dt>Imports</dt><dd class="num" {...tip(() => ({ title: "Imports", note: "World Bank, 2000: imports of goods and services as a share of GDP." }))}>{imp !== undefined ? pct(imp) + " of GDP (2000)" : "no figure"}</dd>
-      </dl>
       <TradeRelations db={db} session={session} />
     </div>
   );

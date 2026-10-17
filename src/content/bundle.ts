@@ -4,7 +4,7 @@
  */
 import { EMPTY_UN, type CompileResult, type ContentDB, type CountryContent, type Issue } from "./compile.ts";
 import { PoliticsRulesFile, type PoliticsRules } from "./schemas/rules.ts";
-import { EconomyRulesFile } from "./schemas/economy.ts";
+import { BuildingsFile, EconomyRulesFile, GoodsFile } from "./schemas/economy.ts";
 import { ResearchRulesFile } from "./schemas/research.ts";
 import { MilitaryRulesFile } from "./schemas/units.ts";
 import { WarRulesFile } from "./schemas/war.ts";
@@ -48,6 +48,9 @@ export interface ContentBundle {
   techCategories: unknown[];
   techs: unknown[];
   buildings: unknown[];
+  buildingRules?: ContentDB["buildingRules"];
+  goods?: unknown[];
+  goodsRules?: ContentDB["goodsRules"];
   worldBank: ContentDB["worldBank"];
   countries: CountryContent[];
 }
@@ -95,6 +98,9 @@ export function toBundle({ db, issues }: CompileResult): ContentBundle {
     techCategories: [...db.techCategories.values()],
     techs: [...db.techs.values()],
     buildings: [...db.buildings.values()],
+    buildingRules: db.buildingRules,
+    goods: [...db.goods.values()],
+    goodsRules: db.goodsRules,
     worldBank: db.worldBank,
     countries: [...db.countries.values()].filter((c) => c.country),
   };
@@ -136,6 +142,9 @@ export function fromBundle(b: ContentBundle): ContentDB {
     techCategories: byId(b.techCategories ?? []),
     techs: byId(b.techs ?? []),
     buildings: byId(b.buildings ?? []),
+    buildingRules: b.buildingRules ?? (({ buildings: _b, ...rest }) => rest)(BuildingsFile.parse({ buildings: [] })),
+    goods: byId(b.goods ?? []),
+    goodsRules: b.goodsRules ?? (({ goods: _g, ...rest }) => rest)(GoodsFile.parse({ goods: [] })),
     worldBank: b.worldBank ?? { year: 2000, source: [], countries: {} },
     people: new Map(),
     parties: new Map(),

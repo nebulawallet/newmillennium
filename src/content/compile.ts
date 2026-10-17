@@ -6,7 +6,7 @@
 import type { z } from "zod";
 import type { FileProvider } from "./files.ts";
 import { PoliticsRulesFile, type PoliticsRules } from "./schemas/rules.ts";
-import { BuildingsFile, EconomyRulesFile, WorldBankFile, type BuildingDef, type EconomyRules } from "./schemas/economy.ts";
+import { BuildingsFile, EconomyRulesFile, GoodsFile, WorldBankFile, type BuildingDef, type EconomyRules, type GoodDef, type GoodsRules } from "./schemas/economy.ts";
 import { ResearchRulesFile, TechCategoryFile, type ResearchRules, type TechCategory, type TechDef } from "./schemas/research.ts";
 import { WarRulesFile, type WarRules } from "./schemas/war.ts";
 import { BlocsFile, DiplomacyRulesFile, UnFile, type BlocDef, type DiplomacyRules, type UnData } from "./schemas/diplomacy.ts";
@@ -129,6 +129,11 @@ export interface ContentDB {
   /** Every technology, with its category. */
   techs: Map<string, TechDef & { category: string }>;
   buildings: Map<string, BuildingDef>;
+  /** Building slots, the investment allowance and price levels (data/economy/buildings.json, everything but the list). */
+  buildingRules: Omit<z.infer<typeof BuildingsFile>, "buildings">;
+  /** Goods on the world market and the market and trade-route rules (data/economy/goods.json). */
+  goods: Map<string, GoodDef>;
+  goodsRules: Omit<GoodsRules, "goods">;
   /** World Bank 2000 figures by ISO3 code (only codes that are game tags), plus the file's sources. */
   worldBank: { year: number; source: { url: string; title: string; accessed: string }[]; countries: Record<string, Record<string, number | string>> };
   people: Map<string, Person & { file: string }>;
@@ -212,6 +217,8 @@ export function compileContent(files: FileProvider, opts: CompileOptions = {}): 
   const igF = load("interest_groups.json", InterestGroupsFile);
   const culturesF = load("cultures/cultures.json", CulturesFile);
   const listF = load("world/countries.json", CountryListFile);
+  const buildingsF = load("economy/buildings.json", BuildingsFile, false);
+  const goodsF = load("economy/goods.json", GoodsFile, false);
 
   const db: ContentDB = {
     asOf: listF?.as_of ?? "2026-01-01",
@@ -245,7 +252,10 @@ export function compileContent(files: FileProvider, opts: CompileOptions = {}): 
     diplomacyRules: load("diplomacy/rules.json", DiplomacyRulesFile, false) ?? DiplomacyRulesFile.parse({}),
     techCategories: new Map(),
     techs: new Map(),
-    buildings: indexBy(load("economy/buildings.json", BuildingsFile, false)?.buildings ?? [], "economy/buildings.json", "building"),
+    buildings: indexBy(buildingsF?.buildings ?? [], "economy/buildings.json", "building"),
+    buildingRules: (({ buildings: _b, ...rest }) => rest)(buildingsF ?? BuildingsFile.parse({ buildings: [] })),
+    goods: indexBy(goodsF?.goods ?? [], "economy/goods.json", "good"),
+    goodsRules: (({ goods: _g, ...rest }) => rest)(goodsF ?? GoodsFile.parse({ goods: [] })),
     worldBank: (() => {
       const wb = load("economy/worldbank_2000.json", WorldBankFile, false);
       const tags = new Set((listF?.countries ?? []).map((c) => c.tag));
@@ -376,7 +386,14 @@ export function compileContent(files: FileProvider, opts: CompileOptions = {}): 
       else if (!db.techs.get(m)!.mutually_exclusive.includes(t.id)) err("TECH_EXCLUSIVE", f, `${t.id} excludes '${m}' but not the other way round`);
     }
   }
-  for (const b of db.buildings.values()) if (b.requires_tech && !db.techs.has(b.requires_tech)) err("REF", "economy/buildings.json", `${b.id}: unknown technology '${b.requires_tech}'`);
+  for (const b of db.buildings.values()) {
+    const f = "economy/buildings.json";
+    if (b.requires_tech && !db.techs.has(b.requires_tech)) err("REF", f, `${b.id}: unknown technology '${b.requires_tech}'`);
+    if (b.requires_resource && !db.economyRules.resources.some((r) => r.id === b.requires_resource)) err("REF", f, `${b.id}: unknown resource '${b.requires_resource}'`);
+    for (const g of Object.keys(b.adds.goods ?? {})) if (!db.goods.has(g)) err("REF", f, `${b.id}: unknown good '${g}'`);
+    for (const m of Object.keys(b.modifiers)) if (!db.modifiers.has(m)) err("REF", f, `${b.id}: unknown modifier '${m}'`);
+    if (b.kind === "level" && !b.max_per_province) err("BUILDING", f, `${b.id}: a level building needs max_per_province`);
+  }
 
   // ---- units
   for (const e of db.equipment.values())

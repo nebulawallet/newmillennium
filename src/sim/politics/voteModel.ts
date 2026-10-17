@@ -128,6 +128,9 @@ export interface SimProvince {
   name?: string;
   /** Starting infrastructure level (1-10) from the map. */
   infrastructure?: number;
+  /** Terrain type and whether it touches the sea (building slots, ports). */
+  terrain?: string;
+  coastal?: boolean;
 }
 
 /** A country's provinces at the moment (owned), or synthetic equal units when no map is loaded. */

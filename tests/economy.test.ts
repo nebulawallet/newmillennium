@@ -3,7 +3,7 @@ import { compileContent, type ContentDB } from "../src/content/compile.ts";
 import { dayOf } from "../src/sim/date.ts";
 import { factories } from "../src/sim/economy/economy.ts";
 import { modelShares } from "../src/sim/politics/voteModel.ts";
-import { Simulation } from "../src/sim/simulation.ts";
+import { Simulation, simMapFrom } from "../src/sim/simulation.ts";
 import { createInitialState } from "../src/sim/state.ts";
 import { NodeFiles } from "../scripts/lib/nodeFiles.ts";
 
@@ -41,10 +41,13 @@ describe("2000 starting figures", () => {
 
 describe("construction and budget", () => {
   it("builds a civilian factory from the queue", () => {
-    const s = sim(db);
+    // a small American map: buildings go in provinces
+    const provinces = Array.from({ length: 40 }, (_, i) => ({ id: i + 1, name: `P${i + 1}`, owner: "USA", controller: "USA", adm1: [`US-${i}`], culture: null, population: 20_000_000, area_km2: 100_000, terrain: "plains", infrastructure: 8, coastal: i === 0, centroid: [-100 + i, 40] as [number, number] }));
+    const s = new Simulation(db, createInitialState(db, { provinces: provinces as never }, { contentHash: "t", seed: 7 }), undefined, simMapFrom(provinces as never, []));
     const usa = s.state.countries.USA!;
     const before = factories(db, usa.economy!).civ;
-    expect(s.dispatch({ type: "queue_building", tag: "USA", building: "civilian_factory" }).ok).toBe(true);
+    expect(s.dispatch({ type: "queue_building", tag: "USA", building: "civilian_factory" }).ok).toBe(false); // no province
+    expect(s.dispatch({ type: "queue_building", tag: "USA", building: "civilian_factory", province: 2 }).ok).toBe(true);
     for (let i = 0; i < 200 && usa.economy!.construction.length; i++) s.step();
     expect(usa.economy!.builtCiv).toBeGreaterThanOrEqual(1);
     expect(factories(db, usa.economy!).civ).toBeGreaterThanOrEqual(before + 1);

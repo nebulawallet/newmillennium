@@ -1,0 +1,20 @@
+{
+  "note": "Goods on the world market (gameplay values). Civilian factories make consumer goods (the consumer-goods share set by the economic system law) and industrial goods (factories not busy with construction); refineries make fuel. Demand follows GDP and industry and is scaled through 2000 so world supply and demand balance at a price of 1. Prices move toward (demand / supply) ^ elasticity. Surpluses are sold along trade routes; deficits are bought. Trade income changed since 1 January 2000 moves growth, so the World Bank 2000 calibration is kept.",
+  "consumer_goods_per_factory": 1,
+  "industrial_goods_per_factory": 1,
+  "price_elasticity": 0.8,
+  "price_adjustment": 0.25,
+  "price_min": 0.3,
+  "price_max": 3,
+  "deal_access": 1.6,
+  "bloc_access": 1.4,
+  "max_access": 1.5,
+  "treasury_share": 0.2,
+  "growth_per_pct_gdp": 0.1,
+  "max_growth_effect": 1,
+  "goods": [
+    { "id": "consumer_goods", "name": "Consumer goods", "color": "#c9a56a", "description": "Clothing, electronics, cars and household goods.", "value_bn": 1, "demand_per_gdp_bn": 1 },
+    { "id": "industrial_goods", "name": "Industrial goods", "color": "#79b4d6", "description": "Machinery, steel, chemicals and components for industry and construction.", "value_bn": 1, "demand_per_industry_bn": 1 },
+    { "id": "fuel", "name": "Fuel", "color": "#d9a21b", "description": "Petrol, diesel and jet fuel from refineries.", "value_bn": 1.5, "demand_per_gdp_bn": 1 }
+  ]
+}

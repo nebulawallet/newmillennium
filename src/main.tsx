@@ -29,11 +29,13 @@ import { EventWindow } from "./ui/scripted/EventWindow.tsx";
 import { ResearchView } from "./ui/research/ResearchPanel.tsx";
 import { FocusTreeView } from "./ui/scripted/FocusTree.tsx";
 import { PeaceConference } from "./ui/units/WarUi.tsx";
-import { hoveredProvince, pickedCountry, planDraft, planTool, pointer, selectedArmy, selectedDivisions, selectedProvince } from "./ui/store.ts";
+import { buildMode, hoveredProvince, mapMode, pickedCountry, planDraft, planTool, pointer, selectedArmy, selectedDivisions, selectedProvince } from "./ui/store.ts";
+import { slotsView } from "./render/mapModes.ts";
 import { UnitCounters } from "./ui/units/UnitCounters.ts";
 import { FrontOverlay } from "./ui/units/FrontOverlay.ts";
 import { ArmyBar } from "./ui/units/ArmyBar.tsx";
 import { version } from "./ui/session.ts";
+import { buildMsg } from "./ui/store.ts";
 
 async function loadContent(): Promise<{ db: ContentDB; bundle: ContentBundle }> {
   const res = await fetch("/content/bundle.json");
@@ -112,12 +114,37 @@ async function boot(): Promise<void> {
       world.select(0);
       return;
     }
+    // placing a building: the click queues it there instead of opening the province
+    const st = session.state;
+    if (buildMode.value && id && st?.player) {
+      const r = session.dispatch({ type: "queue_building", tag: st.player, building: buildMode.value, province: id });
+      buildMsg.value = r.text;
+      world.refresh();
+      world.select(0);
+      return;
+    }
+    if (buildMode.value) return;
     selectedProvince.value = id;
     if (id) panel.value = null;
   };
   selectedProvince.subscribe((id) => world.select(id));
   window.addEventListener("pointermove", (e) => (pointer.value = { x: e.clientX, y: e.clientY }));
   const session = new Session(db, map, world, bundle.hash);
+  // building placement shows the slots map mode and returns to the previous mode afterwards
+  let modeBefore: string | null = null;
+  buildMode.subscribe((b) => {
+    slotsView.building = b;
+    if (b) {
+      if (mapMode.value !== "slots") modeBefore = mapMode.value;
+      world.setMode("slots");
+      mapMode.value = "slots";
+    } else if (modeBefore) {
+      world.setMode(modeBefore);
+      mapMode.value = modeBefore;
+      modeBefore = null;
+    } else if (mapMode.value === "slots") world.refresh();
+  });
+  panel.subscribe((p) => { if (p !== "construction" && buildMode.value) buildMode.value = null; });
   // unit counters follow the game state; right-click orders the selected divisions to a province
   const counters = new UnitCounters(view, map, db, () => (screen.value === "game" ? session.state : null));
   version.subscribe((v) => counters.refresh(v));
@@ -126,7 +153,7 @@ async function boot(): Promise<void> {
   const fronts = new FrontOverlay(view, map, () => session.sim?.context.map, () => (screen.value === "game" ? session.state : null));
   version.subscribe(() => fronts.refresh());
   selectedArmy.subscribe(() => { fronts.refresh(true); counters.refresh(-2 - Math.random()); });
-  screen.subscribe((s) => { if (s !== "game") { counters.clear(); selectedDivisions.value = []; selectedArmy.value = 0; planTool.value = null; } fronts.refresh(true); });
+  screen.subscribe((s) => { if (s !== "game") { counters.clear(); selectedDivisions.value = []; selectedArmy.value = 0; planTool.value = null; buildMode.value = null; } fronts.refresh(true); });
   // drawing an offensive line or a spearhead: a left drag collects the provinces it crosses
   let last: [number, number] | null = null;
   const crossed = (x: number, y: number) => {
@@ -200,7 +227,7 @@ function Root({ db, map, world, session, issues }: { db: ContentDB; map: MapData
       )}
       {inGame && <MapModeBar db={db} map={map} world={world} />}
       {inGame && <ArmyBar db={db} session={session} />}
-      <ProvinceTooltip db={db} map={map} />
+      <ProvinceTooltip db={db} map={map} session={inGame ? session : undefined} />
       {inGame && panel.value === "focus" && <FocusTreeView db={db} session={session} />}
       {inGame && panel.value === "research" && <ResearchView db={db} session={session} />}
       {inGame && <ElectionNight db={db} session={session} />}
@@ -225,6 +252,7 @@ function bindKeys(session: Session): void {
     else if (e.key === "-") session.setSpeed(speed.value - 1);
     else if (tab) { panel.value = panel.value === tab.id ? null : tab.id; activeTip.value = null; }
     else if (e.key === "Escape" && planTool.value) { planTool.value = null; planDraft.value = []; }
+    else if (e.key === "Escape" && buildMode.value) buildMode.value = null;
     else if (e.key === "Escape") panel.value = panel.value ? null : selectedProvince.value ? ((selectedProvince.value = 0), null) : "menu";
   });
 }

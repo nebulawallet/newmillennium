@@ -14,6 +14,7 @@ import { DiplomacyPanel, IntelligencePanel } from "../diplomacy/DiplomacyPanels.
 import { LogisticsPanel, ProductionPanel, RecruitmentPanel } from "../units/MilitaryPanels.tsx";
 import { selectedArmy, selectedDivisions } from "../store.ts";
 import { STATUS_TEXT } from "../../sim/military/fronts.ts";
+import { infrastructureOf, slotUse } from "../../sim/economy/construction.ts";
 import { WarButton, WarsOutliner } from "../units/WarUi.tsx";
 import { feed, panel, version, type Session } from "../session.ts";
 import { selectedProvince } from "../store.ts";
@@ -119,6 +120,26 @@ function StatePanel({ db, map, id, session }: { db: ContentDB; map: MapData; id:
         </>
       )}
       {session && <WarButton db={db} session={session} target={(session.state?.provinceOwner[id - 1]) ?? p.owner} />}
+      {session?.state && session.sim && (() => {
+        const st = session.state!;
+        const cs = st.countries[ownerTag];
+        if (!cs?.economy) return null;
+        const u = slotUse(db, st, session.sim!.context.map, cs, p);
+        const list = (rec: Record<string, number>) => Object.entries(rec).filter(([, n]) => n);
+        return (
+          <>
+            <div class="hp-section">Buildings</div>
+            <dl class="kv">
+              <dt>Building slots</dt>
+              <dd class="num" {...tip(() => ({ title: "Building slots", rows: [["Total", u.total], ["Used", u.used], ["Free", u.free], ["Infrastructure", infrastructureOf(st, p)]], note: "Slots come from infrastructure, population and terrain. Factories, refineries, power plants and data centres take one; infrastructure, air bases and ports have their own levels." }))}>{u.used} of {u.total} used</dd>
+              {[...list(u.organic), ...list(u.built)].length === 0 ? <><dt>Industry</dt><dd class="faint">None</dd></> : null}
+              {list(u.organic).map(([b, n]) => <><dt>{db.buildings.get(b)?.name}</dt><dd class="num" {...tip(() => ({ title: db.buildings.get(b)?.name ?? b, note: "Part of the country's starting industry (World Bank 2000), placed here by population and infrastructure." }))}>{n}{u.built[b] ? ` + ${u.built[b]} built` : ""}</dd></>)}
+              {list(u.built).filter(([b]) => !u.organic[b]).map(([b, n]) => <><dt>{db.buildings.get(b)?.name}</dt><dd class="num">{n} built</dd></>)}
+            </dl>
+            {ownerTag === st.player && <p class="faint small pad">Build here from the Construction tab (T): pick a building, then click this province.</p>}
+          </>
+        );
+      })()}
       <div class="hp-section">Resources</div>
       <p class="faint small pad">Resources are national (World Bank rents); see the Trade tab and the Resources map mode. Province deposits are not modelled.</p>
     </SidePanel>

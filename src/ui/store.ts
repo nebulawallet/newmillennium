@@ -15,3 +15,7 @@ export const selectedArmy = signal(0);
 export const planTool = signal<{ army: number; kind: "offensive" | "spearhead" } | null>(null);
 /** Provinces crossed so far by the line or arrow being drawn. */
 export const planDraft = signal<number[]>([]);
+/** Building being placed from the Construction tab: map clicks queue it in the clicked province. */
+export const buildMode = signal<string | null>(null);
+/** Result of the last placement click (shown in the Construction tab). */
+export const buildMsg = signal("");

@@ -4,7 +4,7 @@
  * (data/economy/buildings.json).
  */
 import { z } from "zod";
-import { Id, SourceRef } from "./common.ts";
+import { Id, Modifiers, SourceRef } from "./common.ts";
 
 const n = (v: number) => z.number().default(v);
 
@@ -84,20 +84,93 @@ export const BuildingDef = z.strictObject({
   id: Id,
   name: z.string(),
   description: z.string(),
+  /** Icon name from the shell's icon set (src/ui/icons.tsx). */
+  icon: z.string().optional(),
   /** Construction points. */
   cost: z.number().positive(),
-  /** province: built in a province (with a per-province maximum); national: adds to a national count. */
-  level: z.enum(["province", "national"]),
+  /** Money in billion US dollars at the reference price level, paid from the budget as the work progresses. */
+  money_bn: z.number().min(0).default(0),
+  /** slot: takes one of the province's building slots; level: its own track per province up to `max_per_province`. */
+  kind: z.enum(["slot", "level"]),
   max_per_province: z.number().int().positive().optional(),
   /** Technology needed before it can be built. */
   requires_tech: Id.optional(),
-  /** What one level adds. */
+  /** The country must have rents from this resource (World Bank 2000), e.g. oil for refineries. */
+  requires_resource: Id.optional(),
+  /** Only in coastal provinces. */
+  coastal: z.boolean().default(false),
+  /** What one building (or level) adds. */
   adds: z.strictObject({
     infrastructure: z.number().optional(),
     civilian_factories: z.number().optional(),
     military_factories: z.number().optional(),
     growth: z.number().optional(),
+    /** Goods produced per year (data/economy/goods.json units). */
+    goods: z.record(Id, z.number()).optional(),
   }),
+  /** Country modifiers per building, summed over every one built and capped at `modifier_cap` times these. */
+  modifiers: Modifiers.default({}),
+  modifier_cap: z.number().positive().optional(),
+  /** Starting buildings of this type per billion dollars of the resource's 2000 rent (placed like factories). */
+  start_per_rent_bn: z.number().min(0).optional(),
 });
 export type BuildingDef = z.infer<typeof BuildingDef>;
-export const BuildingsFile = z.strictObject({ buildings: z.array(BuildingDef), note: z.string().optional() });
+
+/** Building slots per province: (base + per infrastructure level + per square root of millions of people) × terrain, capped. */
+export const SlotRules = z.strictObject({
+  base: n(1),
+  per_infrastructure: n(0.5),
+  per_sqrt_million: n(2),
+  terrain: z.record(z.string(), z.number()).default({}),
+  max: n(25),
+});
+export type SlotRules = z.infer<typeof SlotRules>;
+
+export const BuildingsFile = z.strictObject({
+  buildings: z.array(BuildingDef),
+  slots: SlotRules.default({ base: 1, per_infrastructure: 0.5, per_sqrt_million: 2, terrain: {}, max: 25 }),
+  /** Share of GDP the 2000 budgets already spend on public investment: construction spending above it adds to the deficit. */
+  investment_allowance_pct_gdp: n(2),
+  /** Money costs scale with GDP per person (price level) relative to this reference, within the bounds. */
+  price_reference_gdppc: n(10000),
+  price_level_min: n(0.2),
+  price_level_max: n(1.5),
+  note: z.string().optional(),
+});
+
+/** A good traded on the world market. Production comes from factories and buildings; demand follows the economy. */
+export const GoodDef = z.strictObject({
+  id: Id,
+  name: z.string(),
+  description: z.string(),
+  color: z.string(),
+  /** Billion US dollars per unit at a price index of 1. */
+  value_bn: n(1),
+  /** Demand per year: per billion dollars of GDP, and per billion of industry value added. */
+  demand_per_gdp_bn: n(0),
+  demand_per_industry_bn: n(0),
+});
+export type GoodDef = z.infer<typeof GoodDef>;
+
+export const GoodsFile = z.strictObject({
+  note: z.string().optional(),
+  goods: z.array(GoodDef),
+  /** Goods each civilian factory makes per year: consumer goods (the consumer share of factories) and industrial goods (factories not busy with construction). */
+  consumer_goods_per_factory: n(1),
+  industrial_goods_per_factory: n(1),
+  /** Monthly price move toward (demand / supply) ^ elasticity, and the price bounds. */
+  price_elasticity: n(0.8),
+  price_adjustment: n(0.25),
+  price_min: n(0.3),
+  price_max: n(3),
+  /** Trade routes: partners weigh by GDP times this access: a trade agreement, a shared economic bloc; sanctions close a route. */
+  deal_access: n(1.6),
+  bloc_access: n(1.4),
+  /** Exports can reach at most this multiple of what an open world market would take. */
+  max_access: n(1.5),
+  /** Share of trade income added to reserves, and growth points per percent of GDP of trade income changed since 2000. */
+  treasury_share: n(0.2),
+  growth_per_pct_gdp: n(0.25),
+  max_growth_effect: n(2),
+});
+export type GoodsRules = z.infer<typeof GoodsFile>;

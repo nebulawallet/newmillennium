@@ -7,7 +7,8 @@
  *  - inflation follows the growth gap and drifts back to its starting anchor;
  *  - the central bank sets interest rates by a Taylor-style rule;
  *  - taxes and spending move toward the government's targets; deficits and interest add to debt;
- *  - factories scale with industry, and construction adds factories and infrastructure.
+ *  - factories scale with industry; construction (construction.ts) places buildings in provinces
+ *    and pays for them from the budget; the goods market and trade routes are in market.ts.
  * The economic mood that elections and interest groups use is derived from these figures.
  * Values with no World Bank figure use labelled gameplay estimates by income tier.
  */
@@ -17,6 +18,10 @@ import type { ContentDB } from "../../content/compile.ts";
 import type { SimContext, System } from "../simulation.ts";
 import type { CountryState, GameState } from "../state.ts";
 import { clamp, countryModifiers } from "../politics/common.ts";
+import { aiConstruction, buildDay, buildingModifiers, constructionFactories, type ConstructionItem } from "./construction.ts";
+import { tradeGrowthEffect, updateMarket, type GoodMarket, type TradeState } from "./market.ts";
+
+export type { ConstructionItem };
 
 export interface Shock {
   /** Growth effect in points (negative = recession), fading linearly to zero by `until`. */
@@ -26,13 +31,6 @@ export interface Shock {
   start: number;
   until: number;
   source: string;
-}
-
-export interface ConstructionItem {
-  building: string;
-  /** Province id for province buildings. */
-  province?: number;
-  progress: number;
 }
 
 export interface EconomyState {
@@ -77,6 +75,18 @@ export interface EconomyState {
   modBase: Record<string, number> | null;
   /** Construction capacity, refreshed monthly: free civilian factories and points per factory per day. */
   capacity?: { factories: number; perFactory: number };
+  /** Construction money paid since the last monthly update (billion USD), and the smoothed annual rate (% of GDP). */
+  investmentMonth?: number;
+  investmentPct?: number;
+  /** Civilian factories left idle by construction, summed over days since the last market update (they make industrial goods). */
+  idleSum?: number;
+  idleDays?: number;
+  /** Average idle factories over the last month. */
+  idle?: number;
+  /** Goods trade (market.ts), refreshed monthly. */
+  trade?: TradeState;
+  /** Country modifiers from buildings (air bases, ports, power plants, data centres), refreshed monthly. */
+  buildingMods?: Record<string, number>;
 }
 
 const ECON_MODS = ["gdp_growth", "inflation", "interest_rate", "tax_efficiency", "welfare_cost", "population_growth", "construction_speed"];
@@ -99,6 +109,8 @@ export interface MarketState {
   prices: Record<string, number>;
   /** World demand index (follows world GDP), 1 = 2000 level. */
   demand: number;
+  /** Goods markets (market.ts): price, world supply and demand. */
+  goods?: Record<string, GoodMarket>;
 }
 
 type Tier = "low" | "lower_middle" | "upper_middle" | "high";
@@ -205,12 +217,11 @@ export function factories(db: ContentDB, e: EconomyState): { civ: number; mil: n
 }
 
 /** Construction points per day: civilian factories not tied up making consumer goods. */
-export function constructionPerDay(db: ContentDB, cs: CountryState): { factories: number; consumerShare: number; points: number } {
+export function constructionPerDay(db: ContentDB, cs: CountryState): { factories: number; consumerShare: number; points: number; perFactory: number } {
   const e = cs.economy!;
-  const consumerShare = db.economyRules.consumer_goods_share[cs.laws.economic_system ?? ""] ?? 0.35;
-  const mods = econMods(db, cs);
-  const free = factories(db, e).civ * (1 - consumerShare);
-  return { factories: free, consumerShare, points: free * db.economyRules.construction_per_factory * (1 + (mods.construction_speed ?? 0)) };
+  const { free, consumerShare } = constructionFactories(db, cs, factories(db, e).civ);
+  const perFactory = db.economyRules.construction_per_factory * (1 + (econMods(db, cs).construction_speed ?? 0));
+  return { factories: free, consumerShare, points: free * perFactory, perFactory };
 }
 
 /** Active shock effect now (linear fade). */
@@ -254,6 +265,8 @@ export function growthTarget(db: ContentDB, state: GameState, cs: CountryState):
   if (Math.abs(shock.growth) >= 0.01) parts.push({ label: "Economic shocks", value: shock.growth });
   const trade = tradeIndex(db, state, cs.tag) - (e.tradeBase ??= tradeIndex(db, state, cs.tag));
   if (Math.abs(trade) >= 0.01) parts.push({ label: "Trade agreements, blocs and sanctions", value: trade });
+  const goods = tradeGrowthEffect(db, e);
+  if (Math.abs(goods) >= 0.01) parts.push({ label: "Goods trade since 2000", value: goods });
   return { target: parts.reduce((s, p) => s + p.value, 0), parts };
 }
 
@@ -301,7 +314,12 @@ function monthlyCountry(ctx: SimContext, cs: CountryState): void {
   e.interestRate += (rateTarget - e.interestRate) * 0.15;
   // budget: move toward targets; automatic stabilisers on spending; deficit and interest add to debt
   e.revenue += (e.revenueTarget * (1 + (mods.tax_efficiency ?? 0)) - e.revenue) * r.budget_adjustment;
-  e.spending += (e.spendingTarget + (mods.welfare_cost ?? 0) * 100 + Math.max(0, e.unemployment - e.naturalUnemployment) * 0.2 - e.spending) * r.budget_adjustment;
+  // construction money: the 2000 budgets already contain some public investment; spending above it adds to the deficit
+  const invNow = ((e.investmentMonth ?? 0) * 12 * 100) / Math.max(1, e.gdp);
+  e.investmentMonth = 0;
+  e.investmentPct = (e.investmentPct ?? invNow) + (invNow - (e.investmentPct ?? invNow)) * 0.3;
+  const extra = Math.max(0, e.investmentPct - db.buildingRules.investment_allowance_pct_gdp);
+  e.spending += (e.spendingTarget + (mods.welfare_cost ?? 0) * 100 + Math.max(0, e.unemployment - e.naturalUnemployment) * 0.2 + extra - e.spending) * r.budget_adjustment;
   // AI governments follow a simple fiscal rule: aim for a modest deficit, consolidate above the debt ceiling
   if (cs.tag !== state.player) {
     const goal = r.ai_target_deficit - Math.max(0, e.debt - r.ai_debt_ceiling) / 20;
@@ -320,69 +338,22 @@ function monthlyCountry(ctx: SimContext, cs: CountryState): void {
   cs.economicMood = economicMood(e, state.day);
 }
 
-/** Daily construction: points go to the queue in order, each project limited to a number of factories. */
+/** Daily construction: factories work through the queue; the idle ones are counted for industrial goods. */
 function dailyConstruction(ctx: SimContext, cs: CountryState): void {
-  const { db, state } = ctx;
+  const { db } = ctx;
   const e = cs.economy!;
-  if (!e.construction.length) return;
   e.capacity ??= refreshCapacity(db, cs);
-  let left = e.capacity.factories;
-  const perFactory = e.capacity.perFactory;
-  for (const item of [...e.construction]) {
-    if (left <= 0) break;
-    const use = Math.min(left, db.economyRules.max_factories_per_project);
-    left -= use;
-    item.progress += use * perFactory;
-    const b = db.buildings.get(item.building);
-    if (!b || item.progress < b.cost) continue;
-    e.construction.splice(e.construction.indexOf(item), 1);
-    if (b.level === "province" && item.province) {
-      const pb = (state.provinceBuildings[item.province] ??= {});
-      pb[b.id] = (pb[b.id] ?? 0) + 1;
-    }
-    e.builtCiv += b.adds.civilian_factories ?? 0;
-    e.builtMil += b.adds.military_factories ?? 0;
-    if (b.adds.growth) e.trend += b.adds.growth * (10 / Math.max(10, Math.sqrt(e.gdp)));
-    if (cs.tag === state.player) ctx.log(cs.tag, "construction", `${b.name} completed${item.province ? ` in ${ctx.map?.provinces.find((p) => p.id === item.province)?.name ?? "a province"}` : ""}`);
-  }
+  const idle = e.construction.length ? buildDay(ctx, cs, e.capacity.factories, e.capacity.perFactory) : e.capacity.factories;
+  e.idleSum = (e.idleSum ?? 0) + idle;
+  e.idleDays = (e.idleDays ?? 0) + 1;
 }
 
 function refreshCapacity(db: ContentDB, cs: CountryState): { factories: number; perFactory: number } {
-  return {
-    factories: constructionPerDay(db, cs).factories,
-    perFactory: db.economyRules.construction_per_factory * (1 + (econMods(db, cs).construction_speed ?? 0)),
-  };
+  const c = constructionPerDay(db, cs);
+  return { factories: c.factories, perFactory: c.perFactory };
 }
 
-/** Can this building go in this province (owned, below the maximum including queued levels)? */
-export function canBuild(db: ContentDB, state: GameState, cs: CountryState, building: string, province?: number, baseInfra = 0): string | null {
-  const b = db.buildings.get(building);
-  if (!b) return "Unknown building.";
-  if (b.level === "national") return null;
-  if (!province) return "Choose a province.";
-  if (state.provinceOwner[province - 1] !== cs.tag) return "You do not own this province.";
-  const built = state.provinceBuildings[province]?.[building] ?? 0;
-  const queued = cs.economy?.construction.filter((c) => c.building === building && c.province === province).length ?? 0;
-  const base = building === "infrastructure" ? baseInfra : 0;
-  if (b.max_per_province && base + built + queued >= b.max_per_province) return "Already at the maximum here.";
-  return null;
-}
-
-/** AI: keep a short construction queue (factories, and infrastructure in populous provinces). */
-function aiConstruction(ctx: SimContext, cs: CountryState): void {
-  const { db, state, rng } = ctx;
-  const e = cs.economy!;
-  if (e.construction.length >= 3) return;
-  const pick = rng.next();
-  if (pick < 0.45) e.construction.push({ building: "civilian_factory", progress: 0 });
-  else if (pick < 0.7) e.construction.push({ building: "military_factory", progress: 0 });
-  else {
-    const own = (ctx.map?.provinces ?? []).filter((p) => state.provinceOwner[p.id - 1] === cs.tag);
-    if (!own.length) return;
-    const p = own[rng.weighted(own.map((x) => x.population))]!;
-    if (!canBuild(db, state, cs, "infrastructure", p.id, (p as { infrastructure?: number }).infrastructure ?? 0)) e.construction.push({ building: "infrastructure", province: p.id, progress: 0 });
-  }
-}
+export { canBuild } from "./construction.ts";
 
 export const economySystem: System = {
   id: "economy",
@@ -395,6 +366,7 @@ export const economySystem: System = {
       if (monthlyDue(cs.tag, state.day)) {
         monthlyCountry(ctx, cs);
         cs.economy.capacity = refreshCapacity(db, cs);
+        cs.economy.buildingMods = buildingModifiers(db, state, cs.tag);
         if (cs.tag !== state.player) aiConstruction(ctx, cs);
         cs.economy.shocks = cs.economy.shocks.filter((s) => s.until > state.day);
       }
@@ -410,6 +382,14 @@ export const economySystem: System = {
       worldGdp0 += (db.worldBank.countries[cs.tag]?.gdp_usd as number | undefined ?? 0) / 1e9 || cs.economy!.gdp;
     }
     state.market.demand = worldGdp0 > 0 ? worldGdp / worldGdp0 : 1;
+    // goods: the average idle factories over the last month make industrial goods
+    for (const cs of countries) {
+      const e = cs.economy!;
+      e.idle = e.idleDays ? (e.idleSum ?? 0) / e.idleDays : (e.capacity?.factories ?? 0);
+      e.idleSum = 0;
+      e.idleDays = 0;
+    }
+    updateMarket(ctx, (cs) => cs.economy!.idle ?? 0, (cs) => factories(db, cs.economy!).civ);
     for (const r of db.economyRules.resources) {
       const p = state.market.prices[r.id] ?? 1;
       const pressure = state.market.demand ** 0.6 - 1;
