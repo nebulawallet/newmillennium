@@ -16,6 +16,7 @@ import { createScriptedSystem } from "./scripting/systems.ts";
 import { economySystem } from "./economy/economy.ts";
 import { researchSystem } from "./research/research.ts";
 import { militarySystem } from "./military/military.ts";
+import { frontsSystem } from "./military/fronts.ts";
 import { warSystem } from "./military/war.ts";
 import { armedGroupSystem } from "./conflicts/armedGroups.ts";
 import { diplomacySystem } from "./diplomacy/diplomacy.ts";
@@ -283,6 +284,7 @@ export function defaultSystems(): System[] {
     armedGroupSystem,
     diplomacySystem,
     aiSystem,
+    frontsSystem,
     electionSystem,
     confidenceSystem,
     interestGroupSystem,

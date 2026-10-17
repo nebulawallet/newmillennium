@@ -13,9 +13,10 @@ import { initialEconomy, type EconomyState, type MarketState } from "./economy/e
 import { initialResearch, type ResearchState } from "./research/research.ts";
 import { initialMilitary, type Division, type MilitaryState } from "./military/military.ts";
 import type { Battle } from "./military/war.ts";
+import type { Army } from "./military/fronts.ts";
 import { initialDiplomacy, tradeIndex, type DiplomacyState } from "./diplomacy/diplomacy.ts";
 
-export const STATE_VERSION = 9;
+export const STATE_VERSION = 10;
 
 export interface GameRules {
   /** historical: real election winners are heavily weighted; dynamic: results come purely from the simulation. */
@@ -242,6 +243,9 @@ export interface GameState {
   provinceBuildings: Record<string, Record<string, number>>;
   divisions: Division[];
   nextDivisionId: number;
+  /** Army groups with their fronts and battle plans (v10). */
+  armies: Army[];
+  nextArmyId: number;
   wars: War[];
   nextWarId: number;
   /** 0..1, raised by wars, fading monthly. */
@@ -409,6 +413,8 @@ export function createInitialState(
     provinceBuildings: {},
     divisions,
     nextDivisionId: divisionId,
+    armies: [],
+    nextArmyId: 1,
     wars: [],
     nextWarId: 1,
     worldTension: 0,
@@ -452,6 +458,9 @@ export function migrateState(db: ContentDB, s: GameState): GameState {
   s.provinceBuildings ??= {};
   s.divisions ??= fresh.divisions;
   s.nextDivisionId ??= fresh.nextDivisionId;
+  // v10: armies and battle plans (older saves start with none; the AI forms its own at war)
+  s.armies ??= [];
+  s.nextArmyId ??= 1;
   s.wars ??= [];
   s.nextWarId ??= 1;
   s.worldTension ??= 0;

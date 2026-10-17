@@ -5,8 +5,8 @@
  *    improve relations, trade agreements, bloc applications, sanctions on aggressors, guarantees for
  *    threatened friends, war justification and declaration for aggressive regimes off the
  *    historical path, foreign influence; recruitment and production upkeep.
- *  - Military (countries at war, every few days in buckets): attack weakly held or empty enemy
- *    provinces with enough divisions, otherwise hold the threatened parts of the front.
+ *  - Military (countries at war, every few days in buckets): armies on each enemy front with an
+ *    offensive line, through the same battle-plan commands as the player (military/fronts.ts).
  * Weights come from the ruling sub-ideology's `ai_weights` (aggression, trade, integration).
  * Political AI (laws, budget, research, focuses, decisions, events, coalitions) lives with those
  * systems; this module adds what involves other countries and armies.
@@ -26,9 +26,10 @@ import {
 import { factories } from "../economy/economy.ts";
 import { divisionStats } from "../military/war.ts";
 import { provinceDistance, templateNeeds, templateStats, type Division } from "../military/military.ts";
+import { components, frontPairs, frozenEnemies } from "../military/fronts.ts";
 import { rulingSubIdeology } from "../politics/common.ts";
 import { countryNeighbours, evalTrigger } from "../scripting/engine.ts";
-import type { SimContext, System } from "../simulation.ts";
+import type { SimContext, SimMap, System } from "../simulation.ts";
 import type { CountryState, GameState } from "../state.ts";
 
 export { bucketOf };
@@ -231,118 +232,93 @@ function planForces(ctx: SimContext, cs: CountryState, w: Weights): Command[] {
 
 // ------------------------------------------------------------------ military planner
 
-/** Orders for one AI country's idle divisions in its wars. */
-export function planMilitary(ctx: SimContext, tag: string, maxOrders = 12): Command[] {
+/**
+ * Armies and battle plans for one AI country at war, through the same commands the player uses
+ * (src/sim/military/fronts.ts carries them out):
+ *  - one army per enemy front, made of the nearest divisions that can reach it (capped by the
+ *    front's length and the enemy's strength; the rest stay home);
+ *  - an offensive line on its own provinces the enemy holds, plus the enemy capital when the army
+ *    is strong enough (or the war's zone in a limited war), executed at once.
+ */
+export function planMilitary(ctx: SimContext, tag: string): Command[] {
   const { db, state, map } = ctx;
   if (!map) return [];
-  const mine = state.divisions.filter((d) => d.owner === tag);
   const out: Command[] = [];
-  // worn-out attackers break off and rest where they stand
-  for (const d of mine) if (d.attacking && d.organisation < 0.25 && out.length < maxOrders) out.push({ type: "move_division", tag, division: d.id, province: d.province });
-  const idle = mine.filter((d) => !d.path.length && !d.attacking && d.organisation > 0.3 && d.strength > 0.25);
-  if (!idle.length) return out;
-  const enemyAt = new Map<number, number>();
-  let enemyPower = 0;
-  for (const d of state.divisions) {
-    if (!atWarWith(state, tag, d.owner)) continue;
-    const p = divisionPower(db, d);
-    enemyAt.set(d.province, (enemyAt.get(d.province) ?? 0) + p);
-    enemyPower += p;
-  }
-  const ourPower = mine.reduce((s, d) => s + divisionPower(db, d), 0);
-  // the front: enemy-held provinces next to ours, and our provinces next to them
-  const targets = new Map<number, number>();
-  const threatened = new Map<number, number>();
-  const ctrl = state.provinceController;
-  // historical mode: fronts with armed groups hold until scripts move them (src/sim/conflicts)
-  const frozen = new Set(state.rules.electionMode === "historical"
-    ? state.wars.filter((w) => w.armedGroup && (w.attackers.includes(tag) || w.defenders.includes(tag))).flatMap((w) => (w.attackers.includes(tag) ? w.defenders : w.attackers))
-    : []);
-  // the front runs from our provinces and from wherever our divisions stand (expeditionary forces abroad)
-  const standing = new Set(mine.map((d) => d.province));
-  for (let i = 0; i < ctrl.length; i++) {
-    if (ctrl[i] !== tag && !standing.has(i + 1)) continue;
-    for (const n of map.neighbours.get(i + 1) ?? []) {
-      const c = ctrl[n - 1];
-      if (!c || c === tag || !atWarWith(state, tag, c) || frozen.has(c)) continue;
-      targets.set(n, enemyAt.get(n) ?? 0);
-      if (enemyAt.get(n)) threatened.set(i + 1, Math.max(threatened.get(i + 1) ?? 0, enemyAt.get(n)!));
+  const rules = db.warRules.fronts;
+  const pairs = frontPairs(state, map, tag, frozenEnemies(state, tag));
+  const fronts = new Map<string, number[]>();
+  for (const p of pairs) fronts.set(p.enemyTag, [...(fronts.get(p.enemyTag) ?? []), p.own]);
+  const armies = state.armies.filter((a) => a.owner === tag);
+  // armies whose enemy is gone (peace, or the front closed) are disbanded; their divisions are free again
+  const gone = new Set<number>();
+  for (const a of armies) if (a.ai && (!a.front?.enemy || !fronts.has(a.front.enemy))) { out.push({ type: "disband_army", tag, army: a.id }); gone.add(a.id); }
+  const live = armies.filter((a) => !gone.has(a.id));
+  const assigned = new Set(live.flatMap((a) => a.divisions));
+  const free = state.divisions.filter((d) => d.owner === tag && !assigned.has(d.id) && d.strength > 0.2);
+  const enemyDivs = new Map<string, number>(), enemyPower = new Map<string, number>();
+  for (const d of state.divisions)
+    if (fronts.has(d.owner)) {
+      enemyDivs.set(d.owner, (enemyDivs.get(d.owner) ?? 0) + 1);
+      enemyPower.set(d.owner, (enemyPower.get(d.owner) ?? 0) + divisionPower(db, d));
     }
-  }
-  // in a limited war the attacker only goes for the zone near its border (other wars are not limited by it)
-  const zone = new Set<number>();
-  const limitedEnemies = new Set<string>();
-  const openEnemies = new Set<string>();
-  for (const w of state.wars) {
-    if (!w.attackers.includes(tag) && !w.defenders.includes(tag)) continue;
-    const enemies = w.attackers.includes(tag) ? w.defenders : w.attackers;
-    if (w.goal === "limited" && w.attackers.includes(tag) && !w.armedGroup) { for (const e of enemies) limitedEnemies.add(e); for (const p of w.zone ?? []) zone.add(p); }
-    else for (const e of enemies) openEnemies.add(e);
-  }
-  for (const p of [...targets.keys()]) {
-    const c = ctrl[p - 1]!;
-    if (limitedEnemies.has(c) && !openEnemies.has(c) && !zone.has(p) && state.provinceOwner[p - 1] !== tag) targets.delete(p);
-  }
-  if (!targets.size) return out;
-  const free = [...idle];
-  const avg = ourPower / Math.max(1, mine.length);
-  const take = (to: number, n: number) => {
-    free.sort((a, b) => provinceDistance(map, a.province, to) - provinceDistance(map, b.province, to));
-    for (const d of free.splice(0, n)) if (out.length < maxOrders) out.push({ type: "move_division", tag, division: d.id, province: to });
-  };
-  // provinces already held or being reached by one of ours
-  const covered = new Set<number>();
-  for (const d of mine) covered.add(d.path.length ? d.path[d.path.length - 1]! : d.province);
-  const offensive = ourPower >= enemyPower * 0.9;
-  // attack in strength: about twice the defenders' power, at least two divisions where we have them
-  const canBeat = (def: number) => {
-    const need = Math.max(Math.min(2, free.length), Math.ceil((def * 2) / Math.max(1, avg)));
-    return need <= Math.min(free.length, 6) ? need : 0;
-  };
-  // 1. take back our own provinces held by the enemy
-  for (const [p, def] of [...targets].filter(([p]) => state.provinceOwner[p - 1] === tag).sort((a, b) => a[1] - b[1])) {
-    if (!free.length || out.length >= maxOrders) break;
-    const n = def === 0 ? 1 : canBeat(def);
-    if (n) take(p, n);
-  }
-  // 2. hold the threatened front, most threatened first
-  for (const [p] of [...threatened].sort((a, b) => b[1] - a[1])) {
-    if (!free.length || out.length >= maxOrders) break;
-    if (!covered.has(p)) { take(p, 1); covered.add(p); }
-  }
-  // 3. keep a screen on the rest of the front (up to half the army) so the enemy cannot walk in
-  const front = new Set<number>();
-  for (let i = 0; i < ctrl.length; i++) if (ctrl[i] === tag && (map.neighbours.get(i + 1) ?? []).some((n) => targets.has(n))) front.add(i + 1);
-  let screen = Math.floor(mine.length / 2) - [...front].filter((p) => covered.has(p)).length;
-  for (const p of front) {
-    if (screen <= 0 || !free.length || out.length >= maxOrders) break;
-    if (!covered.has(p)) { take(p, 1); covered.add(p); screen--; }
-  }
-  // 4. attack (rested divisions only): empty provinces first, then the weakest held ones we can beat
-  for (let i = free.length - 1; i >= 0; i--) if (free[i]!.organisation < 0.6) free.splice(i, 1);
-  // weakest first, drawn toward each enemy's capital (its most populous province) so offensives drive on it
-  const capitals = new Map<string, number>();
-  const capitalOf = (c: string) => {
-    if (!capitals.has(c)) {
-      let best = 0, pop = -1;
-      for (const q of map.provinces) if (state.provinceOwner[q.id - 1] === c && q.population > pop) { pop = q.population; best = q.id; }
-      capitals.set(c, best);
+  const comp = components(state, map, tag);
+  const reachable = (d: Division, targets: number[]) => targets.some((t) => comp.get(t) !== undefined && comp.get(t) === comp.get(d.province));
+  for (const [enemy, own] of fronts) {
+    const provinces = [...new Set(own)];
+    let army = live.find((a) => a.ai && a.front?.enemy === enemy);
+    const size = army?.divisions.length ?? 0;
+    const cap = Math.max(4, Math.ceil(provinces.length * 2), Math.ceil((enemyDivs.get(enemy) ?? 0) * 1.5));
+    if (size < cap && free.length) {
+      // nearest free divisions first, if they can get there
+      free.sort((x, y) => nearest(map, x.province, provinces) - nearest(map, y.province, provinces));
+      const take: number[] = [];
+      for (let i = 0; i < free.length && size + take.length < cap; ) {
+        const d = free[i]!;
+        if (reachable(d, provinces)) { take.push(d.id); free.splice(i, 1); } else i++;
+      }
+      if (take.length) {
+        if (army) out.push({ type: "assign_divisions", tag, army: army.id, divisions: take });
+        else out.push({ type: "create_army", tag, divisions: take, front: enemy, ai: true });
+      }
     }
-    return capitals.get(c)!;
-  };
-  const priority = (p: number, def: number) => {
-    const cap = capitalOf(ctrl[p - 1]!);
-    return def / Math.max(1, avg) + (cap ? provinceDistance(map, p, cap) / 400 : 0);
-  };
-  for (const [p, def] of [...targets].sort((a, b) => priority(a[0], a[1]) - priority(b[0], b[1]))) {
-    if (!free.length || out.length >= maxOrders) break;
-    if (def === 0) take(p, 1);
-    else if (offensive) {
-      const n = canBeat(def);
-      if (n) take(p, n);
+    // the battle plan
+    const lost = provinceIdsWhere(state, (i) => state.provinceOwner[i] === tag && state.provinceController[i] === enemy);
+    const limited = state.wars.find((w) => w.goal === "limited" && w.attackers.includes(tag) && w.defenders.includes(enemy) && !w.armedGroup);
+    const byId = new Map(state.divisions.map((d) => [d.id, d]));
+    const ours = (army?.divisions ?? []).reduce((s, id) => { const d = byId.get(id); return d ? s + divisionPower(db, d) : s; }, 0) || armyPower(db, state, tag);
+    let targets = lost;
+    if (limited) targets = [...lost, ...(limited.zone ?? []).filter((p) => state.provinceController[p - 1] === enemy)];
+    else if (ours >= (enemyPower.get(enemy) ?? 0) * rules.ai_offensive_ratio) {
+      const cap2 = capitalHeldBy(map, state, enemy);
+      if (cap2) targets = [...lost, cap2];
+    }
+    if (army) {
+      const same = army.offensive.length === targets.length && targets.every((t) => army!.offensive.includes(t));
+      if (!same) out.push({ type: "set_offensive", tag, army: army.id, provinces: targets });
+      if (army.executing !== targets.length > 0) out.push({ type: "execute_plan", tag, army: army.id, on: targets.length > 0 });
+    } else {
+      const created = out.find((c) => c.type === "create_army" && c.front === enemy);
+      if (created && created.type === "create_army") { created.offensive = targets; created.execute = targets.length > 0; }
     }
   }
   return out;
+}
+
+const nearest = (map: SimMap, from: number, to: number[]) => Math.min(...to.map((t) => provinceDistance(map, from, t)));
+
+function provinceIdsWhere(state: GameState, f: (i: number) => boolean): number[] {
+  const out: number[] = [];
+  for (let i = 0; i < state.provinceOwner.length; i++) if (f(i)) out.push(i + 1);
+  return out;
+}
+
+/** The enemy's most populous province it still holds (where offensives drive). */
+function capitalHeldBy(map: SimMap, state: GameState, tag: string): number {
+  let best = 0, pop = -1;
+  for (const q of map.provinces) if (state.provinceController[q.id - 1] === tag && state.provinceOwner[q.id - 1] === tag && q.population > pop) { pop = q.population; best = q.id; }
+  if (best) return best;
+  for (const q of map.provinces) if (state.provinceController[q.id - 1] === tag && q.population > pop) { pop = q.population; best = q.id; }
+  return best;
 }
 
 // ------------------------------------------------------------------ system
@@ -362,12 +338,17 @@ export const aiSystem: System = {
       apply(ctx, planStrategic(ctx, cs));
     }
     // armies at war: every third day per country
-    if (!state.wars.length && !Object.values(state.countries).some((c) => c.civilWar)) return;
+    if (!state.wars.length && !Object.values(state.countries).some((c) => c.civilWar)) {
+      if (state.day % 30 === 0) for (const a of [...state.armies]) if (a.ai) applyCommand(ctx, { type: "disband_army", tag: a.owner, army: a.id });
+      return;
+    }
     // historical mode: wars with armed groups are frozen (src/sim/conflicts), so they need no planning
     const frozen = state.rules.electionMode === "historical";
     const fighting = new Set<string>();
     for (const w of state.wars) if (!(frozen && w.armedGroup)) for (const t of [...w.attackers, ...w.defenders]) fighting.add(t);
     for (const cs of Object.values(state.countries)) if (cs.civilWar) { fighting.add(cs.tag); fighting.add(cs.civilWar.rebel); }
     for (const tag of fighting) if (isAi(state, tag) && bucketOf(tag, 3) === state.day % 3) apply(ctx, planMilitary(ctx, tag));
+    // AI armies left from a war that ended stand down
+    if (state.day % 30 === 0) for (const a of [...state.armies]) if (a.ai && !fighting.has(a.owner)) applyCommand(ctx, { type: "disband_army", tag: a.owner, army: a.id });
   },
 };

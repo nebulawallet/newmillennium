@@ -39,6 +39,11 @@ export class MapView {
   readonly onHover: ((x: number, y: number, e: PointerEvent) => void)[] = [];
   /** Click (pointer released without dragging). */
   readonly onClick: ((x: number, y: number, e: PointerEvent) => void)[] = [];
+  /**
+   * Drawing tools (battle plans): while set, a left drag goes to this handler instead of panning.
+   * Coordinates are world x (wrapped) and y.
+   */
+  capture: ((phase: "down" | "move" | "up", x: number, y: number, e: PointerEvent) => void) | null = null;
   /** Right-click without dragging (orders). */
   readonly onRightClick: ((x: number, y: number, e: PointerEvent) => void)[] = [];
   /** Frame-time samples for the benchmark (ms). */
@@ -125,8 +130,16 @@ export class MapView {
     let last = { x: 0, y: 0 };
     let downAt = { x: 0, y: 0 };
     let moved = 0;
+    let capturing = false;
     this.canvas.addEventListener("pointerdown", (e) => {
       if (e.button !== 0 && e.button !== 1 && e.button !== 2) return;
+      if (this.capture && e.button === 0) {
+        capturing = true;
+        const w = this.screenToWorld(e.clientX, e.clientY);
+        this.capture("down", MapView.wrapX(w.x), w.y, e);
+        this.canvas.setPointerCapture(e.pointerId);
+        return;
+      }
       dragging = true;
       moved = 0;
       last = { x: e.clientX, y: e.clientY };
@@ -134,6 +147,11 @@ export class MapView {
       this.canvas.setPointerCapture(e.pointerId);
     });
     this.canvas.addEventListener("pointermove", (e) => {
+      if (capturing && this.capture) {
+        const w = this.screenToWorld(e.clientX, e.clientY);
+        this.capture("move", MapView.wrapX(w.x), w.y, e);
+        return;
+      }
       if (!dragging) {
         const w = this.screenToWorld(e.clientX, e.clientY);
         for (const f of this.onHover) f(MapView.wrapX(w.x), w.y, e);
@@ -148,6 +166,13 @@ export class MapView {
       this.clampCenter();
     });
     const stop = (e: PointerEvent) => {
+      if (capturing) {
+        capturing = false;
+        const w = this.screenToWorld(e.clientX, e.clientY);
+        this.capture?.("up", MapView.wrapX(w.x), w.y, e);
+        if (this.canvas.hasPointerCapture(e.pointerId)) this.canvas.releasePointerCapture(e.pointerId);
+        return;
+      }
       if (dragging && moved < 4 && e.type === "pointerup" && e.button === 0) {
         const w = this.screenToWorld(e.clientX, e.clientY);
         for (const f of this.onClick) f(MapView.wrapX(w.x), w.y, e);

@@ -59,6 +59,8 @@ export const SubUnitDef = z.strictObject({
   speed: n(4),
   /** Moves at the speed of the formation's line battalions when they are faster (self-propelled or towed by trucks). */
   follows_line: z.boolean().default(false),
+  /** NATO-style map symbol for divisions built mainly from this battalion (line battalions only). */
+  map_symbol: z.enum(["infantry", "motorised", "mechanised", "armour"]).optional(),
   training_days: n(90),
 });
 export type SubUnitDef = z.infer<typeof SubUnitDef>;

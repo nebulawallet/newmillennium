@@ -39,6 +39,7 @@ function currentTarget(state: GameState): string | null {
 }
 
 function OpinionValue({ db, state, a, b, label }: { db: ContentDB; state: GameState; a: string; b: string; label: string }) {
+  version.value; // follow the clock (unchanged props skip re-rendering)
   const o = opinionParts(db, state, a, b);
   return (
     <>
@@ -59,6 +60,7 @@ function OpinionValue({ db, state, a, b, label }: { db: ContentDB; state: GameSt
 
 /** Country list sorted by opinion of the player, filtered by name. */
 function CountryPicker({ db, state, me }: { db: ContentDB; state: GameState; me: string }) {
+  version.value; // follow the clock (unchanged props skip re-rendering)
   const [q, setQ] = useState("");
   const rows = db.countryList
     .filter((c) => c.tag !== me && state.provinceOwner.includes(c.tag) && (!q || c.name.toLowerCase().includes(q.toLowerCase())))
@@ -144,6 +146,7 @@ export function DiplomacyPanel({ db, session }: { db: ContentDB; session: Sessio
 }
 
 function TargetView({ db, state, me, t, run, pairHas }: { db: ContentDB; state: GameState; me: string; t: string; run: (c: Parameters<Session["dispatch"]>[0]) => void; pairHas: (l: [string, string][], a: string, b: string) => boolean }) {
+  version.value; // follow the clock (unchanged props skip re-rendering)
   const d = state.diplomacy;
   const r = db.diplomacyRules;
   const cs = state.countries[me]!;
@@ -223,6 +226,7 @@ function TargetView({ db, state, me, t, run, pairHas }: { db: ContentDB; state: 
 }
 
 function UnSection({ db, state, me, t, run }: { db: ContentDB; state: GameState; me: string; t: string | null; run: (c: Parameters<Session["dispatch"]>[0]) => void }) {
+  version.value; // follow the clock (unchanged props skip re-rendering)
   const council = councilMembers(db, state);
   const onCouncil = council.includes(me);
   const elected = new Map(state.diplomacy.unsc.elected.map((e) => [e.tag, e.until]));

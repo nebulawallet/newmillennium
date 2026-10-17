@@ -57,6 +57,7 @@ function layout(techs: (TechDef & { category: string })[]) {
 }
 
 function Slots({ db, session, cs, speed }: { db: ContentDB; session: Session; cs: CountryState; speed: number }) {
+  version.value; // unchanged props skip re-rendering: follow the clock directly
   const r = cs.research!;
   const state = session.state!;
   return (

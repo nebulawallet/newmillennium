@@ -1,6 +1,7 @@
 /**
- * Unit counters on the map (HOI4 style): one counter per country per province, showing the number
- * of divisions and their average strength. Plain DOM positioned every frame (Preact would re-render
+ * Unit counters on the map (HOI4 style): one small counter per country per province, with the
+ * NATO-style symbol of the stack's main division type in the country colour, the division count,
+ * and strength and organisation bars. Plain DOM positioned every frame (Preact would re-render
  * hundreds of nodes per frame). Click a counter to select your divisions there (shift adds);
  * right-click a province to move the selection.
  */
@@ -9,7 +10,9 @@ import type { MapData } from "../../render/mapData.ts";
 import { millerY, type MapView } from "../../render/MapView.ts";
 import type { Division } from "../../sim/military/military.ts";
 import type { GameState } from "../../sim/state.ts";
-import { selectedDivisions } from "../store.ts";
+import { divisionSymbol, STATUS_TEXT, type MapSymbol } from "../../sim/military/fronts.ts";
+import { selectedArmy, selectedDivisions } from "../store.ts";
+import { SYMBOL_NAME, symbolSvg } from "./symbols.ts";
 import { activeTip } from "../tooltip.tsx";
 
 interface Group {
@@ -69,16 +72,33 @@ export class UnitCounters {
       }
       const color = state?.dynamicCountries[g.owner]?.color ?? this.db.countryColors.get(g.owner) ?? "#666";
       const strength = g.divisions.reduce((s, d) => s + d.strength, 0) / g.divisions.length;
-      const moving = g.divisions.some((d) => d.path.length);
+      const org = g.divisions.reduce((s, d) => s + d.organisation, 0) / g.divisions.length;
+      const moving = g.divisions.some((d) => d.path.length && !d.attacking);
       const mine = g.owner === state?.player;
+      const army = selectedArmy.value ? state?.armies.find((a) => a.id === selectedArmy.value) : undefined;
       n.style.setProperty("--c", color);
       n.classList.toggle("mine", mine);
       n.classList.toggle("sel", g.divisions.some((d) => sel.has(d.id)));
+      n.classList.toggle("in-army", !!army && g.divisions.some((d) => army.divisions.includes(d.id)));
       n.classList.toggle("moving", moving);
       n.classList.toggle("fight", g.divisions.some((d) => fighting.has(d.id)));
-      n.innerHTML = `<b>${g.divisions.length}</b><i style="width:${Math.round(strength * 100)}%"></i>`;
+      const sym = this.mainSymbol(g.divisions);
+      const html = `${symbolSvg(sym, color)}<b>${g.divisions.length}</b><span class="ub"><i class="s" style="width:${Math.round(strength * 100)}%"></i></span><span class="ub"><i class="o" style="width:${Math.round(org * 100)}%"></i></span>`;
+      if (n.dataset.h !== html) { n.innerHTML = html; n.dataset.h = html; }
     }
     this.position();
+  }
+
+  /** The symbol most divisions in the stack carry (armour first on ties). */
+  private mainSymbol(ds: Division[]): MapSymbol {
+    const n = new Map<MapSymbol, number>();
+    for (const d of ds) {
+      const s = divisionSymbol(this.db, d.units);
+      n.set(s, (n.get(s) ?? 0) + 1);
+    }
+    let best: MapSymbol = "infantry", bn = 0;
+    for (const s of ["armour", "mechanised", "motorised", "infantry"] as MapSymbol[]) if ((n.get(s) ?? 0) > bn) { best = s; bn = n.get(s)!; }
+    return best;
   }
 
   private group(key: string): Group | undefined {
@@ -100,10 +120,15 @@ export class UnitCounters {
     const state = this.getState();
     const owner = state?.dynamicCountries[g.owner]?.name ?? this.db.countries.get(g.owner)?.country?.name.en ?? g.owner;
     const prov = this.map.provinces[g.province - 1]?.name ?? "";
+    const armies = (state?.armies ?? []).filter((a) => a.owner === g.owner && g.divisions.some((d) => a.divisions.includes(d.id)));
     activeTip.value = {
       title: `${owner}: ${g.divisions.length} division${g.divisions.length > 1 ? "s" : ""}`,
-      rows: g.divisions.slice(0, 8).map((d) => [d.name, `${Math.round(d.strength * 100)}%${d.path.length ? " · moving" : ""}`] as [string, string]),
-      note: `${prov}${g.owner === state?.player ? ". Click to select (shift adds), then right-click a province to move." : ""}`,
+      rows: [
+        ...g.divisions.slice(0, 8).map((d) => [d.name, `${SYMBOL_NAME[divisionSymbol(this.db, d.units)]} · str ${Math.round(d.strength * 100)}% · org ${Math.round(d.organisation * 100)}%${d.attacking ? " · attacking" : d.path.length ? " · moving" : ""}`] as [string, string]),
+        ...(g.divisions.length > 8 ? [["…", `${g.divisions.length - 8} more`] as [string, string]] : []),
+        ...armies.map((a) => [a.name, STATUS_TEXT[a.status]] as [string, string]),
+      ],
+      note: `${prov}. Bars: strength (top) and organisation.${g.owner === state?.player ? " Click to select (shift adds), then right-click a province to move." : ""}`,
     };
   }
 
@@ -120,7 +145,7 @@ export class UnitCounters {
       const s = this.view.worldToScreen(p.centroid[0], millerY(p.centroid[1]));
       if (s.x < r.left - 40 || s.x > r.right + 40 || s.y < r.top - 20 || s.y > r.bottom + 20) { n.style.display = "none"; continue; }
       n.style.display = "";
-      n.style.transform = `translate(${Math.round(s.x - 17)}px, ${Math.round(s.y - 10)}px)`;
+      n.style.transform = `translate(${Math.round(s.x - 15)}px, ${Math.round(s.y - 9)}px)`;
     }
   }
 

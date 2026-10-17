@@ -29,8 +29,10 @@ import { EventWindow } from "./ui/scripted/EventWindow.tsx";
 import { ResearchView } from "./ui/research/ResearchPanel.tsx";
 import { FocusTreeView } from "./ui/scripted/FocusTree.tsx";
 import { PeaceConference } from "./ui/units/WarUi.tsx";
-import { hoveredProvince, pickedCountry, pointer, selectedDivisions, selectedProvince } from "./ui/store.ts";
+import { hoveredProvince, pickedCountry, planDraft, planTool, pointer, selectedArmy, selectedDivisions, selectedProvince } from "./ui/store.ts";
 import { UnitCounters } from "./ui/units/UnitCounters.ts";
+import { FrontOverlay } from "./ui/units/FrontOverlay.ts";
+import { ArmyBar } from "./ui/units/ArmyBar.tsx";
 import { version } from "./ui/session.ts";
 
 async function loadContent(): Promise<{ db: ContentDB; bundle: ContentBundle }> {
@@ -120,7 +122,45 @@ async function boot(): Promise<void> {
   const counters = new UnitCounters(view, map, db, () => (screen.value === "game" ? session.state : null));
   version.subscribe((v) => counters.refresh(v));
   selectedDivisions.subscribe(() => counters.refresh(-2 - Math.random()));
-  screen.subscribe((s) => { if (s !== "game") { counters.clear(); selectedDivisions.value = []; } });
+  // fronts and battle plans drawn on the map
+  const fronts = new FrontOverlay(view, map, () => session.sim?.context.map, () => (screen.value === "game" ? session.state : null));
+  version.subscribe(() => fronts.refresh());
+  selectedArmy.subscribe(() => { fronts.refresh(true); counters.refresh(-2 - Math.random()); });
+  screen.subscribe((s) => { if (s !== "game") { counters.clear(); selectedDivisions.value = []; selectedArmy.value = 0; planTool.value = null; } fronts.refresh(true); });
+  // drawing an offensive line or a spearhead: a left drag collects the provinces it crosses
+  let last: [number, number] | null = null;
+  const crossed = (x: number, y: number) => {
+    // sample the stroke between pointer events so no province along it is skipped
+    const [x0, y0] = last ?? [x, y];
+    const steps = Math.max(1, Math.ceil(Math.hypot(x - x0, y - y0) / 0.15));
+    let draft = planDraft.value;
+    for (let i = 1; i <= steps; i++) {
+      const id = world.pickAt(x0 + ((x - x0) * i) / steps, y0 + ((y - y0) * i) / steps);
+      if (id && draft.at(-1) !== id) draft = [...draft.filter((p) => p !== id), id];
+    }
+    planDraft.value = draft;
+    last = [x, y];
+  };
+  planTool.subscribe((tool) => {
+    view.capture = !tool ? null : (phase, x, y) => {
+      if (phase === "down") { last = null; planDraft.value = []; crossed(x, y); }
+      else if (phase === "move") crossed(x, y);
+      else {
+        crossed(x, y);
+        const st = session.state;
+        const drawn = planDraft.value;
+        if (st?.player && drawn.length) {
+          if (tool.kind === "offensive") {
+            const enemy = drawn.filter((p) => { const c = st.provinceController[p - 1]; return c && c !== st.player; });
+            session.dispatch({ type: "set_offensive", tag: st.player, army: tool.army, provinces: enemy.length ? enemy : drawn });
+          } else session.dispatch({ type: "add_spearhead", tag: st.player, army: tool.army, path: drawn });
+        }
+        planDraft.value = [];
+        planTool.value = null;
+        fronts.refresh(true);
+      }
+    };
+  });
   world.onOrder = (id) => {
     const st = session.state;
     if (!id || !st?.player || !selectedDivisions.value.length) return;
@@ -159,6 +199,7 @@ function Root({ db, map, world, session, issues }: { db: ContentDB; map: MapData
         <CountrySelect db={db} session={session} issues={issues} />
       )}
       {inGame && <MapModeBar db={db} map={map} world={world} />}
+      {inGame && <ArmyBar db={db} session={session} />}
       <ProvinceTooltip db={db} map={map} />
       {inGame && panel.value === "focus" && <FocusTreeView db={db} session={session} />}
       {inGame && panel.value === "research" && <ResearchView db={db} session={session} />}
@@ -183,6 +224,7 @@ function bindKeys(session: Session): void {
     else if (e.key === "+" || e.key === "=") session.setSpeed(speed.value + 1);
     else if (e.key === "-") session.setSpeed(speed.value - 1);
     else if (tab) { panel.value = panel.value === tab.id ? null : tab.id; activeTip.value = null; }
+    else if (e.key === "Escape" && planTool.value) { planTool.value = null; planDraft.value = []; }
     else if (e.key === "Escape") panel.value = panel.value ? null : selectedProvince.value ? ((selectedProvince.value = 0), null) : "menu";
   });
 }

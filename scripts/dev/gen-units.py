@@ -52,21 +52,26 @@ json.dump({"note": "Generic equipment families. Each variant needs its technolog
           open("data/units/equipment.json", "w", encoding="utf8", newline="\n"), indent=2, ensure_ascii=False)
 
 
-def S(id, name, desc, kind, mp, eqp, org, hp, width, speed, days=90):
-    return {"id": id, "name": name, "description": desc, "kind": kind, "manpower": mp, "equipment": eqp,
-            "organisation": org, "hp": hp, "width": width, "speed": speed, "training_days": days}
+def S(id, name, desc, kind, mp, eqp, org, hp, width, speed, days=90, follows_line=False, symbol=None):
+    out = {"id": id, "name": name, "description": desc, "kind": kind, "manpower": mp, "equipment": eqp,
+           "organisation": org, "hp": hp, "width": width, "speed": speed, "training_days": days}
+    if follows_line:
+        out["follows_line"] = True
+    if symbol:
+        out["map_symbol"] = symbol
+    return out
 
 
 su = [
-    S("infantry", "Infantry battalion", "Foot infantry.", "battalion", 1000, {"infantry_equipment": 100, "support_equipment": 5}, 60, 3, 2, 4),
-    S("motorised_infantry", "Motorised infantry battalion", "Infantry carried by trucks.", "battalion", 1000, {"infantry_equipment": 100, "support_equipment": 30}, 60, 3, 2, 12),
-    S("mechanised_infantry", "Mechanised infantry battalion", "Infantry in armoured vehicles.", "battalion", 900, {"infantry_equipment": 80, "armoured_vehicle": 40}, 50, 3, 2, 12, 120),
-    S("armour", "Armoured battalion", "Main battle tanks.", "battalion", 500, {"main_battle_tank": 40, "support_equipment": 10}, 30, 2, 2, 10, 150),
-    S("artillery", "Artillery battalion", "Guns or rocket launchers.", "battalion", 500, {"artillery": 24, "support_equipment": 5}, 20, 0.6, 3, 4),
-    S("air_defence", "Air defence battalion", "Air defence guns and missiles.", "battalion", 400, {"air_defence": 20, "support_equipment": 5}, 20, 0.6, 1, 4),
-    S("anti_tank", "Anti-tank battalion", "Anti-tank missile teams.", "battalion", 500, {"anti_tank_weapons": 30, "support_equipment": 5}, 30, 1, 1, 4),
-    S("reconnaissance", "Reconnaissance company", "Scouts that find the enemy.", "support", 200, {"infantry_equipment": 30, "support_equipment": 20}, 20, 0.5, 0, 12, 60),
-    S("engineers", "Engineer company", "Bridging, fortification and mine clearance.", "support", 300, {"infantry_equipment": 20, "support_equipment": 30}, 20, 0.5, 0, 4, 60),
+    S("infantry", "Infantry battalion", "Foot infantry.", "battalion", 1000, {"infantry_equipment": 100, "support_equipment": 5}, 60, 3, 2, 4, symbol="infantry"),
+    S("motorised_infantry", "Motorised infantry battalion", "Infantry carried by trucks.", "battalion", 1000, {"infantry_equipment": 100, "support_equipment": 30}, 60, 3, 2, 12, symbol="motorised"),
+    S("mechanised_infantry", "Mechanised infantry battalion", "Infantry in armoured vehicles.", "battalion", 900, {"infantry_equipment": 80, "armoured_vehicle": 40}, 50, 3, 2, 12, 120, symbol="mechanised"),
+    S("armour", "Armoured battalion", "Main battle tanks.", "battalion", 500, {"main_battle_tank": 40, "support_equipment": 10}, 30, 2, 2, 10, 150, symbol="armour"),
+    S("artillery", "Artillery battalion", "Guns or rocket launchers.", "battalion", 500, {"artillery": 24, "support_equipment": 5}, 20, 0.6, 3, 4, follows_line=True),
+    S("air_defence", "Air defence battalion", "Air defence guns and missiles.", "battalion", 400, {"air_defence": 20, "support_equipment": 5}, 20, 0.6, 1, 4, follows_line=True),
+    S("anti_tank", "Anti-tank battalion", "Anti-tank missile teams.", "battalion", 500, {"anti_tank_weapons": 30, "support_equipment": 5}, 30, 1, 1, 4, follows_line=True),
+    S("reconnaissance", "Reconnaissance company", "Scouts that find the enemy.", "support", 200, {"infantry_equipment": 30, "support_equipment": 20}, 20, 0.5, 0, 12, 60, follows_line=True),
+    S("engineers", "Engineer company", "Bridging, fortification and mine clearance.", "support", 300, {"infantry_equipment": 20, "support_equipment": 30}, 20, 0.5, 0, 4, 60, follows_line=True),
 ]
 json.dump({"note": "Battalions and support companies. Stats are gameplay values.", "sub_units": su},
           open("data/units/sub_units.json", "w", encoding="utf8", newline="\n"), indent=2, ensure_ascii=False)

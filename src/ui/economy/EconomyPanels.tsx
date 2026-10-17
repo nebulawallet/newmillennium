@@ -202,6 +202,7 @@ export function TradePanel({ db, session }: { db: ContentDB; session: Session })
 
 /** The player's trade agreements and sanctions (set in the Diplomacy tab). */
 function TradeRelations({ db, session }: { db: ContentDB; session: Session }) {
+  version.value; // follow the clock (unchanged props skip re-rendering)
   const state = session.state;
   const me = state?.player;
   if (!state || !me || !state.diplomacy) return null;

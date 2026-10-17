@@ -119,7 +119,8 @@ describe("armed groups", () => {
     declareWar(sim.context, "DEU", "POL", "status_quo", false, true);
     for (const d of s.divisions) if (d.owner === "POL") d.province = 24;
     const orders = planMilitary(sim.context, "DEU");
-    expect(orders.some((o) => o.type === "move_division" && s.provinceOwner[(o as { province: number }).province - 1] === "POL")).toBe(true);
+    // an army on the Polish front, with an offensive into Poland under way
+    expect(orders.some((o) => o.type === "create_army" && o.front === "POL" && o.execute && (o.offensive ?? []).some((p) => s.provinceOwner[p - 1] === "POL"))).toBe(true);
   });
 
   it("can hold land without a war, and a group province can be annexed by a third country", () => {

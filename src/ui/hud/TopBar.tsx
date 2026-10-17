@@ -67,6 +67,7 @@ function statTips(db: ContentDB, cs: CountryState) {
 
 /** National focus tile (HOI4: beside the flag): current focus and its progress. */
 function FocusTile({ db, session }: { db: ContentDB; session: Session }) {
+  version.value; // unchanged props skip re-rendering: follow the clock directly
   const state = session.state!;
   const cs = state.countries[state.player!]!;
   const f = cs.focus.current ? db.focusTrees.get(cs.focus.tree)?.focuses.find((x) => x.id === cs.focus.current) : undefined;

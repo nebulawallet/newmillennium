@@ -15,7 +15,8 @@
       "hp": 3,
       "width": 2,
       "speed": 4,
-      "training_days": 90
+      "training_days": 90,
+      "map_symbol": "infantry"
     },
     {
       "id": "motorised_infantry",
@@ -31,7 +32,8 @@
       "hp": 3,
       "width": 2,
       "speed": 12,
-      "training_days": 90
+      "training_days": 90,
+      "map_symbol": "motorised"
     },
     {
       "id": "mechanised_infantry",
@@ -47,7 +49,8 @@
       "hp": 3,
       "width": 2,
       "speed": 12,
-      "training_days": 120
+      "training_days": 120,
+      "map_symbol": "mechanised"
     },
     {
       "id": "armour",
@@ -63,7 +66,8 @@
       "hp": 2,
       "width": 2,
       "speed": 10,
-      "training_days": 150
+      "training_days": 150,
+      "map_symbol": "armour"
     },
     {
       "id": "artillery",

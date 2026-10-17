@@ -86,6 +86,41 @@ describe("war", () => {
     expect(s.provinceOwner.filter((o) => o === "DEU").length).toBeGreaterThan(16);
   }, 120_000);
 
+  it("battle plans: an army holds its front, then executes an offensive line and a spearhead", () => {
+    const sim = fresh("DEU");
+    const s = sim.state;
+    s.countries.DEU!.warSupport = 1;
+    s.countries.POL!.warSupport = 1;
+    sim.dispatch({ type: "declare_war", tag: "DEU", target: "POL" });
+    const ids = s.divisions.filter((d) => d.owner === "DEU").map((d) => d.id);
+    expect(sim.dispatch({ type: "create_army", tag: "DEU", divisions: ids }).ok).toBe(true);
+    const army = s.armies.find((a) => a.owner === "DEU")!;
+    expect(army.commander).toBeNull();
+    sim.dispatch({ type: "set_front", tag: "DEU", army: army.id, enemy: "POL" });
+    for (let i = 0; i < 40; i++) sim.step();
+    // the front is the German column next to Poland; the army spreads over all of it and holds
+    const front = [4, 10, 16, 22];
+    expect(army.stretch?.sort((a, b) => a - b)).toEqual(front);
+    const at = new Set(s.divisions.filter((d) => army.divisions.includes(d.id)).map((d) => d.province));
+    for (const p of front) expect(at.has(p)).toBe(true);
+    expect(army.status).toBe("holding");
+    expect(s.provinceController.some((c, k) => c === "DEU" && s.provinceOwner[k] === "POL")).toBe(false);
+    // the offensive line is the far edge of Poland; a spearhead runs along the top row
+    sim.dispatch({ type: "set_offensive", tag: "DEU", army: army.id, provinces: [6, 12, 18, 24] });
+    sim.dispatch({ type: "add_spearhead", tag: "DEU", army: army.id, path: [5, 6] });
+    sim.dispatch({ type: "execute_plan", tag: "DEU", army: army.id, on: true });
+    let advanced = false;
+    for (let i = 0; i < 400 && !s.pendingPeace && s.wars.length; i++) {
+      sim.step();
+      advanced ||= army.status === "advancing";
+    }
+    expect(advanced).toBe(true);
+    expect(s.provinceController.filter((c, k) => c === "DEU" && s.provinceOwner[k] === "POL").length).toBeGreaterThan(4);
+    // stopping holds the line
+    sim.dispatch({ type: "execute_plan", tag: "DEU", army: army.id, on: false });
+    expect(army.executing).toBe(false);
+  }, 120_000);
+
   it("cannot declare war twice", () => {
     const sim = fresh(null);
     sim.dispatch({ type: "declare_war", tag: "DEU", target: "POL" });

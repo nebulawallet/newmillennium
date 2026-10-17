@@ -12,6 +12,7 @@ import { canBuild } from "./economy/economy.ts";
 import { setResearch } from "./research/research.ts";
 import { addLine, moveDivision, setTemplate, trainDivision, type Template } from "./military/military.ts";
 import { choosePeace, declareWar, type WarGoal } from "./military/war.ts";
+import { applyPlanCommand, type PlanCommand } from "./military/fronts.ts";
 import {
   applyToBloc,
   guarantee,
@@ -48,6 +49,7 @@ export type Command =
   | { type: "set_template"; tag: string; template: Template }
   | { type: "train_division"; tag: string; template: string }
   | { type: "move_division"; tag: string; division: number; province: number }
+  | PlanCommand
   | { type: "declare_war"; tag: string; target: string; goal?: WarGoal }
   | { type: "choose_peace"; annex: boolean }
   | { type: "improve_relations" | "guarantee" | "military_access" | "trade_deal" | "sanction"; tag: string; target: string; on: boolean }
@@ -145,6 +147,15 @@ export function applyCommand(ctx: SimContext, cmd: Command): CommandResult {
       return trainDivision(ctx, cmd.tag, cmd.template);
     case "move_division":
       return moveDivision(ctx, cmd.tag, cmd.division, cmd.province);
+    case "create_army":
+    case "disband_army":
+    case "assign_divisions":
+    case "set_front":
+    case "set_offensive":
+    case "add_spearhead":
+    case "clear_plan":
+    case "execute_plan":
+      return applyPlanCommand(ctx, cmd);
     case "declare_war":
       return declareWar(ctx, cmd.tag, cmd.target, cmd.goal);
     case "improve_relations":

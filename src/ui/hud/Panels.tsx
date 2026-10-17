@@ -12,7 +12,8 @@ import { DecisionsPanel } from "../scripted/DecisionsPanel.tsx";
 import { ConstructionPanel, EconomyPanel, TradePanel } from "../economy/EconomyPanels.tsx";
 import { DiplomacyPanel, IntelligencePanel } from "../diplomacy/DiplomacyPanels.tsx";
 import { LogisticsPanel, ProductionPanel, RecruitmentPanel } from "../units/MilitaryPanels.tsx";
-import { selectedDivisions } from "../store.ts";
+import { selectedArmy, selectedDivisions } from "../store.ts";
+import { STATUS_TEXT } from "../../sim/military/fronts.ts";
 import { WarButton, WarsOutliner } from "../units/WarUi.tsx";
 import { feed, panel, version, type Session } from "../session.ts";
 import { selectedProvince } from "../store.ts";
@@ -57,6 +58,7 @@ function liveSummary(db: ContentDB, state: GameState | null | undefined, tag: st
 
 /** HOI4 "state view": the selected province, shown in the left panel slot when no tab is open. */
 function StatePanel({ db, map, id, session }: { db: ContentDB; map: MapData; id: number; session?: Session }) {
+  version.value; // follow the clock (unchanged props skip re-rendering)
   const p = map.provinces[id - 1];
   if (!p) return null;
   const state = session?.state;
@@ -195,19 +197,28 @@ export function Outliner({ db, session }: { db: ContentDB; session: Session }) {
         {(() => {
           const mine = state?.divisions.filter((d) => d.owner === state.player) ?? [];
           if (!mine.length) return <p class="faint small ol-empty">{playerName} has no divisions.</p>;
-          const sel = new Set(selectedDivisions.value);
+          const armies = state!.armies.filter((a) => a.owner === state!.player);
+          const inArmy = new Set(armies.flatMap((a) => a.divisions));
+          const free = mine.filter((d) => !inArmy.has(d.id));
+          const look = (id: number) => {
+            const d = state!.divisions.find((x) => x.id === id);
+            const p = d ? session.map.provinces[d.province - 1] : undefined;
+            if (p) session.world.view.lookAt(p.centroid[0], millerYOf(p.centroid[1]), 14);
+          };
           return (
             <ul class="ol-list">
-              {mine.slice(0, 40).map((d) => (
-                <li key={d.id} class={sel.has(d.id) ? "mine" : ""}>
-                  <button class="lnk" onClick={(e) => {
-                    selectedDivisions.value = e.shiftKey ? [...new Set([...selectedDivisions.value, d.id])] : [d.id];
-                    const p = session.map.provinces[d.province - 1];
-                    if (p) session.world.view.lookAt(p.centroid[0], millerYOf(p.centroid[1]), 14);
-                  }}>{d.name}</button>
-                  <span class="faint num small">{Math.round(d.strength * 100)}%{d.path.length ? " · moving" : ""} · {session.map.provinces[d.province - 1]?.name ?? ""}</span>
+              {armies.map((a) => (
+                <li key={a.id} class={selectedArmy.value === a.id ? "mine" : ""}>
+                  <button class="lnk" onClick={() => { selectedArmy.value = a.id; selectedDivisions.value = a.divisions; look(a.divisions[0]!); }}>{a.name}</button>
+                  <span class="faint num small">{a.divisions.length} divisions · {STATUS_TEXT[a.status]}{a.executing ? " · executing" : ""}</span>
                 </li>
               ))}
+              {free.length > 0 && (
+                <li {...tip(() => ({ title: "Unassigned divisions", rows: free.slice(0, 10).map((d) => [d.name, `${Math.round(d.strength * 100)}% · ${session.map.provinces[d.province - 1]?.name ?? ""}`] as [string, string]), note: "Click to select them all, then form an army with New army in the bottom bar." }))}>
+                  <button class="lnk" onClick={() => { selectedArmy.value = 0; selectedDivisions.value = free.map((d) => d.id); look(free[0]!.id); }}>Unassigned divisions</button>
+                  <span class="faint num small">{free.length} not in an army</span>
+                </li>
+              )}
             </ul>
           );
         })()}

@@ -28,6 +28,8 @@ export class WorldMap {
   /** Live game state for map modes (ownership, governments, results); null on the start screen. */
   state: GameState | null = null;
   onHoverChange: (id: number) => void = () => {};
+  /** Province id at a world point (0 = sea). */
+  pickAt: (x: number, y: number) => number = () => 0;
   onSelectChange: (id: number) => void = () => {};
   /** Right-click on a province (orders). */
   onOrder: (id: number) => void = () => {};
@@ -78,11 +80,11 @@ export class WorldMap {
     });
     // microstates are smaller than one id-map pixel: snap to them when the cursor is close
     const tiny = map.provinces.filter((p) => p.area_km2 < 60).map((p) => ({ id: p.id, x: p.centroid[0], y: millerY(p.centroid[1]) }));
-    const pick = (x: number, y: number) => {
+    const pick = (this.pickAt = (x: number, y: number) => {
       const r = 8 * view.worldPerPx;
       for (const t of tiny) if (Math.abs(t.x - x) < r && Math.abs(t.y - y) < r) return t.id;
       return provinceAt(map, x, y);
-    };
+    });
     view.onHover.push((x, y) => {
       const id = pick(x, y);
       if (id !== this.hovered) {

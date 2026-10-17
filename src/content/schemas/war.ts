@@ -42,6 +42,20 @@ export const WarRulesFile = z.strictObject({
   /** Countries with nuclear weapons in 2000 (sourced): wars against them raise world tension far more. */
   nuclear_states_2000: z.array(Tag).default([]),
   nuclear_tension_multiplier: n(2.5),
+  /** Fronts and battle plans (src/sim/military/fronts.ts), shared by the player and the AI. */
+  fronts: z.strictObject({
+    /** Plans are carried out every this many days. */
+    plan_interval_days: n(2),
+    /** A defended province is attacked when the divisions next to it have this much more power than its defenders. */
+    attack_ratio: n(1.3),
+    /** Divisions attack only with at least this organisation, and break off below `break_off_organisation`. */
+    attack_organisation: n(0.6),
+    break_off_organisation: n(0.25),
+    /** Share of an army (its fastest divisions) that follows a spearhead arrow. */
+    spearhead_share: n(0.34),
+    /** The AI goes on the offensive against an enemy when its army has this share of the enemy's power. */
+    ai_offensive_ratio: n(0.9),
+  }).default({ plan_interval_days: 2, attack_ratio: 1.3, attack_organisation: 0.6, break_off_organisation: 0.25, spearhead_share: 0.34, ai_offensive_ratio: 0.9 }),
   ...{ source: sourced.source.optional(), confidence: sourced.confidence.optional() },
 });
 export type WarRules = z.infer<typeof WarRulesFile>;

@@ -1,6 +1,28 @@
 {
   "note": "War rules. Combat, supply and peace values are gameplay estimates. nuclear_states_2000 lists the states that had openly tested nuclear weapons by 2000; Israel, which has never acknowledged an arsenal, is not listed.",
-  "nuclear_states_2000": ["USA", "RUS", "GBR", "FRA", "CHN", "IND", "PAK"],
-  "source": [{ "url": "https://en.wikipedia.org/wiki/List_of_states_with_nuclear_weapons", "title": "Wikipedia: List of states with nuclear weapons (first tests)", "accessed": "2026-10-15" }],
+  "nuclear_states_2000": [
+    "USA",
+    "RUS",
+    "GBR",
+    "FRA",
+    "CHN",
+    "IND",
+    "PAK"
+  ],
+  "fronts": {
+    "plan_interval_days": 2,
+    "attack_ratio": 1.3,
+    "attack_organisation": 0.6,
+    "break_off_organisation": 0.25,
+    "spearhead_share": 0.34,
+    "ai_offensive_ratio": 0.9
+  },
+  "source": [
+    {
+      "url": "https://en.wikipedia.org/wiki/List_of_states_with_nuclear_weapons",
+      "title": "Wikipedia: List of states with nuclear weapons (first tests)",
+      "accessed": "2026-10-15"
+    }
+  ],
   "confidence": "verified"
 }

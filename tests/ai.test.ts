@@ -31,13 +31,23 @@ describe("buckets", () => {
 });
 
 describe("military AI", () => {
-  it("issues move orders against the enemy only in war", () => {
+  it("forms armies with battle plans against the enemy only in war", () => {
     const sim = fresh();
     expect(planMilitary(sim.context, "DEU")).toHaveLength(0);
     sim.dispatch({ type: "declare_war", tag: "DEU", target: "POL" });
     const orders = planMilitary(sim.context, "DEU");
     expect(orders.length).toBeGreaterThan(0);
-    for (const o of orders) expect(o.type).toBe("move_division");
+    for (const o of orders) expect(o.type).toBe("create_army");
+    for (const o of orders) sim.dispatch(o);
+    const army = sim.state.armies.find((a) => a.owner === "DEU")!;
+    expect(army.front).toEqual({ enemy: "POL" });
+    expect(army.ai).toBe(true);
+    // the plan moves divisions onto the front: German provinces bordering Poland
+    sim.step();
+    sim.step();
+    const front = new Set([4, 10, 16, 22]);
+    const divs = sim.state.divisions.filter((d) => army.divisions.includes(d.id));
+    expect(divs.every((d) => front.has(d.province) || d.path.length > 0 || d.attacking)).toBe(true);
   });
 
   it("fights an AI war to a result without a player", () => {
