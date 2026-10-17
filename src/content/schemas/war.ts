@@ -25,6 +25,13 @@ export const WarRulesFile = z.strictObject({
   supply_per_infrastructure: n(1.2),
   /** Daily strength loss for divisions over the supply limit. */
   out_of_supply_attrition: n(0.002),
+  /** Attack lost at zero supply (scaled by how far a division is over its province's supply). */
+  out_of_supply_combat_penalty: n(0.5),
+  /** Attack bonus per extra province the attack comes from, and its cap. */
+  flanking_bonus_per_direction: n(0.1),
+  max_flanking_bonus: n(0.3),
+  /** Attack penalty crossing a river (needs river data in the map; not used until it exists). */
+  river_crossing_penalty: n(0.2),
   /** A side capitulates when its enemies hold this share of its population. */
   capitulation_share: n(0.7),
   /** War support lost each month of war, and the level at which a side accepts a white peace. */

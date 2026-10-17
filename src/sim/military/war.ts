@@ -25,6 +25,22 @@ export interface Battle {
   attackerTag: string;
   defenderTag: string;
   startDay: number;
+  /** 0..1: how far the attackers are toward winning (0.5 = even), from both sides' organisation. */
+  progress?: number;
+  /** Average organisation of each side when the battle began. */
+  attackerOrg0?: number;
+  defenderOrg0?: number;
+  /** Provinces the attack comes from (more than one: a flanking bonus). */
+  directions?: number;
+  /** The day's modifiers, for the tooltip. */
+  terrain?: string;
+  terrainBonus?: number;
+  entrenchment?: number;
+  flanking?: number;
+  air?: number;
+  supply?: { attacker: number; defender: number };
+  /** Manpower lost so far by each side. */
+  casualties?: { attacker: number; defender: number };
 }
 
 /** conquest: the winner keeps what it holds; status_quo: control returns; limited: the attacker aims only at land near its border and no side capitulates. */
@@ -249,20 +265,46 @@ function sideAttack(db: ContentDB, ds: Division[], targetHardness: number, targe
   return total * (1 + bonus);
 }
 
-/** Retreat a beaten division to a friendly neighbouring province, or destroy it if it has none. */
+/**
+ * Retreat a beaten division to a friendly neighbouring province (the one least exposed to the
+ * enemy), or destroy it if it has none (encircled).
+ */
 function retreat(ctx: SimContext, d: Division, from: number): boolean {
   const { state, map } = ctx;
-  const options = (map?.neighbours.get(from) ?? []).filter((p) => {
-    const c = state.provinceController[p - 1];
-    return c === d.owner && !state.divisions.some((x) => x.province === p && hostile(state, x.owner, d.owner));
-  });
+  const friendly = (c: string | undefined) => !!c && (c === d.owner || (!hostile(state, d.owner, c) && state.wars.some((w) => (w.attackers.includes(d.owner) && w.attackers.includes(c)) || (w.defenders.includes(d.owner) && w.defenders.includes(c)))));
+  const options = (map?.neighbours.get(from) ?? []).filter((p) => friendly(state.provinceController[p - 1]) && !state.divisions.some((x) => x.province === p && hostile(state, x.owner, d.owner)));
   d.path = [];
   d.attacking = undefined;
   d.progress = 0;
   d.entrenchment = 0;
   if (!options.length) return false;
-  d.province = options[0]!;
+  const exposure = (p: number) => (map?.neighbours.get(p) ?? []).filter((n) => { const c = state.provinceController[n - 1]; return !!c && hostile(state, d.owner, c); }).length;
+  d.province = options.sort((a, b) => exposure(a) - exposure(b))[0]!;
   return true;
+}
+
+/** Divisions of `owner` in a province against what it can supply (1 = in supply, below = short). */
+function supplyFactor(ctx: SimContext, province: number, owner: string, count: number): number {
+  const r = ctx.db.warRules;
+  const p = ctx.map?.provinces[province - 1] as { infrastructure?: number } | undefined;
+  const infra = (p?.infrastructure ?? 3) + (ctx.state.provinceBuildings[String(province)]?.infrastructure ?? 0);
+  const own = ctx.state.provinceController[province - 1] === owner;
+  const cap = (r.supply_base + r.supply_per_infrastructure * infra) * (own ? 1 : 0.5);
+  return count <= cap ? 1 : Math.max(0.3, cap / count);
+}
+
+/** Manpower of a division at full strength. */
+function divisionManpower(db: ContentDB, d: Division): number {
+  return templateStats(db, d.units).manpower;
+}
+
+/** The war in which two countries face each other, and which side `tag` is on. */
+function warBetween(state: GameState, tag: string, other: string): { war: War; side: "attackers" | "defenders" } | null {
+  for (const w of state.wars) {
+    if (w.attackers.includes(tag) && w.defenders.includes(other)) return { war: w, side: "attackers" };
+    if (w.defenders.includes(tag) && w.attackers.includes(other)) return { war: w, side: "defenders" };
+  }
+  return null;
 }
 
 export const warSystem: System = {
@@ -291,6 +333,8 @@ export const warSystem: System = {
     const byTarget = new Map<number, Division[]>();
     for (const d of state.divisions) if (d.attacking) byTarget.set(d.attacking, [...(byTarget.get(d.attacking) ?? []), d]);
     const battles: Battle[] = [];
+    const stackCount = new Map<string, number>();
+    if (byTarget.size) for (const d of state.divisions) stackCount.set(`${d.province}:${d.owner}`, (stackCount.get(`${d.province}:${d.owner}`) ?? 0) + 1);
     for (const [province, attackersAll] of byTarget) {
       const attackerTag = attackersAll[0]!.owner;
       const defendersAll = state.divisions.filter((d) => d.province === province && hostile(state, d.owner, attackerTag));
@@ -303,7 +347,23 @@ export const warSystem: System = {
       const defenders = frontline(db, defendersAll, rules.combat_width);
       const defenderTag = defenders[0]!.owner;
       const prev = state.battles.find((b) => b.province === province);
-      battles.push({ province, attackers: attackers.map((d) => d.id), defenders: defenders.map((d) => d.id), attackerTag, defenderTag, startDay: prev?.startDay ?? state.day });
+      const avgOrg = (ds: Division[]) => ds.reduce((s, d) => s + d.organisation, 0) / Math.max(1, ds.length);
+      // flanking: attacking from more provinces at once spreads the defence
+      const directions = new Set(attackers.map((d) => d.province)).size;
+      const flank = Math.min(rules.max_flanking_bonus, (directions - 1) * rules.flanking_bonus_per_direction);
+      // supply: divisions over what their province supplies fight worse (as well as losing strength)
+      const countAt = (p: number, tag: string) => stackCount.get(`${p}:${tag}`) ?? 0;
+      const supplyOf = (d: Division) => supplyFactor(ctx, d.province, d.owner, countAt(d.province, d.owner));
+      const aSupply = attackers.reduce((s, d) => s + supplyOf(d), 0) / attackers.length;
+      const dSupply = defenders.reduce((s, d) => s + supplyOf(d), 0) / defenders.length;
+      const battle: Battle = {
+        province, attackers: attackers.map((d) => d.id), defenders: defenders.map((d) => d.id), attackerTag, defenderTag,
+        startDay: prev?.startDay ?? state.day,
+        attackerOrg0: prev?.attackerOrg0 ?? avgOrg(attackers), defenderOrg0: prev?.defenderOrg0 ?? avgOrg(defenders),
+        directions, flanking: flank, supply: { attacker: aSupply, defender: dSupply },
+        casualties: { attacker: prev?.casualties?.attacker ?? 0, defender: prev?.casualties?.defender ?? 0 },
+      };
+      battles.push(battle);
 
       const aStats = attackers.map((d) => divisionStats(db, d));
       const dStats = defenders.map((d) => divisionStats(db, d));
@@ -313,25 +373,51 @@ export const warSystem: System = {
       const ap = air(attackerTag), dp = air(defenderTag);
       const superiority = ap + dp > 0 ? (ap - dp) / (ap + dp) : 0;
       const terrain = rules.terrain_defence[terrainOf(ctx, province)] ?? 0;
+      battle.terrain = terrainOf(ctx, province);
+      battle.terrainBonus = terrain;
+      battle.entrenchment = defenders.reduce((s, d) => s + d.entrenchment, 0) / defenders.length;
+      battle.air = rules.air_superiority_bonus * superiority;
 
-      const aAttack = sideAttack(db, attackers, dHard, dArmour, rules.air_superiority_bonus * superiority, (d) => mods(d.owner).army_attack ?? 0);
-      const dAttack = sideAttack(db, defenders, aHard, aArmour, -rules.air_superiority_bonus * superiority, (d) => mods(d.owner).army_attack ?? 0);
+      const supplyHit = (f: number) => (f - 1) * rules.out_of_supply_combat_penalty;
+      const aAttack = sideAttack(db, attackers, dHard, dArmour, rules.air_superiority_bonus * superiority + flank + supplyHit(aSupply), (d) => mods(d.owner).army_attack ?? 0);
+      const dAttack = sideAttack(db, defenders, aHard, aArmour, -rules.air_superiority_bonus * superiority + supplyHit(dSupply), (d) => mods(d.owner).army_attack ?? 0);
       const dDefence = defenders.reduce((s, d, i) => s + dStats[i]!.defence * d.strength * (1 + terrain + d.entrenchment) * (1 + (mods(d.owner).army_defence ?? 0)), 0);
       const aResist = attackers.reduce((s, d, i) => s + (aStats[i]!.breakthrough + 0.4 * aStats[i]!.defence) * d.strength * (1 + (mods(d.owner).army_defence ?? 0)), 0);
       const rD = aAttack / Math.max(1, dDefence), rA = dAttack / Math.max(1, aResist);
       for (const d of [...attackers, ...defenders]) d.lastCombat = state.day;
+      let aLost = 0, dLost = 0;
       for (const d of defenders) {
         const j = 0.8 + 0.4 * rng.next();
         d.organisation = clamp(d.organisation - rules.org_damage * 5 * rD * j, 0, 1);
+        const before = d.strength;
         d.strength = clamp(d.strength - rules.strength_damage * 5 * rD * j, 0, 1);
+        dLost += (before - d.strength) * divisionManpower(db, d);
       }
       for (const d of attackers) {
         const j = 0.8 + 0.4 * rng.next();
         d.organisation = clamp(d.organisation - rules.org_damage * 5 * rA * j, 0, 1);
+        const before = d.strength;
         d.strength = clamp(d.strength - rules.strength_damage * 5 * rA * j, 0, 1);
+        aLost += (before - d.strength) * divisionManpower(db, d);
       }
+      battle.casualties!.attacker += aLost;
+      battle.casualties!.defender += dLost;
+      const wb = warBetween(state, attackerTag, defenderTag);
+      if (wb) {
+        const c = (wb.war.casualties ??= { attackers: 0, defenders: 0 });
+        c[wb.side] += aLost;
+        c[wb.side === "attackers" ? "defenders" : "attackers"] += dLost;
+      }
+      // progress: each side's organisation left against where it began
+      const aLeft = avgOrg(attackers) / Math.max(0.01, battle.attackerOrg0!), dLeft = avgOrg(defenders) / Math.max(0.01, battle.defenderOrg0!);
+      battle.progress = clamp(0.5 + (aLeft - dLeft) / 2, 0, 1);
       // collapse: defenders retreat or are destroyed; attackers break off
-      for (const d of defenders.filter((x) => x.organisation < 0.05 || x.strength < 0.05)) {
+      const beaten = defenders.filter((x) => x.organisation < 0.05 || x.strength < 0.05);
+      if (wb && beaten.length === defenders.length && defendersAll.length === defenders.length) {
+        const v = (wb.war.victories ??= { attackers: 0, defenders: 0 });
+        v[wb.side]++;
+      }
+      for (const d of beaten) {
         if (!retreat(ctx, d, province)) {
           state.divisions = state.divisions.filter((x) => x.id !== d.id);
           ctx.log(d.owner, "war", `${d.name} destroyed`);

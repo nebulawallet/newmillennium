@@ -180,6 +180,10 @@ export interface War {
   armedGroup?: boolean;
   /** Started by a historical event: in historical mode it ends on its real date (a script), not by exhaustion. */
   scripted?: boolean;
+  /** Manpower each side has lost in battle. */
+  casualties?: { attackers: number; defenders: number };
+  /** Battles each side has won (the enemy retreated or was destroyed). */
+  victories?: { attackers: number; defenders: number };
 }
 
 export interface LogEntry {

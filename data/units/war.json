@@ -1,5 +1,5 @@
 {
-  "note": "War rules. Combat, supply and peace values are gameplay estimates. nuclear_states_2000 lists the states that had openly tested nuclear weapons by 2000; Israel, which has never acknowledged an arsenal, is not listed.",
+  "note": "War rules. Combat, supply and peace values are gameplay estimates. nuclear_states_2000 lists the states that had openly tested nuclear weapons by 2000; Israel, which has never acknowledged an arsenal, is not listed. Combat also weighs flanking (attacks from several provinces), supply (divisions over a province's supply fight worse) and terrain and entrenchment. river_crossing_penalty waits for river data in the map.",
   "nuclear_states_2000": [
     "USA",
     "RUS",
@@ -9,6 +9,10 @@
     "IND",
     "PAK"
   ],
+  "out_of_supply_combat_penalty": 0.5,
+  "flanking_bonus_per_direction": 0.1,
+  "max_flanking_bonus": 0.3,
+  "river_crossing_penalty": 0.2,
   "fronts": {
     "plan_interval_days": 2,
     "attack_ratio": 1.3,

@@ -189,6 +189,48 @@ describe("war", () => {
     expect([4, 10, 16, 22]).toContain(d.province);
   });
 
+  it("combat: battles take days, record progress and casualties, flanking helps, the encircled are destroyed", () => {
+    const run = (from: number[]) => {
+      const sim = fresh("DEU");
+      const s = sim.state;
+      s.countries.DEU!.warSupport = 1;
+      s.countries.POL!.warSupport = 1;
+      sim.dispatch({ type: "declare_war", tag: "DEU", target: "POL" });
+      const pol = s.divisions.filter((d) => d.owner === "POL");
+      const ger = s.divisions.filter((d) => d.owner === "DEU");
+      // one Polish division in P11; two German ones attack it from the given provinces
+      for (const d of pol) d.province = 24;
+      pol[0]!.province = 11;
+      s.divisions = s.divisions.filter((d) => d.owner === "POL" || d === ger[0] || d === ger[1]);
+      ger[0]!.province = from[0]!;
+      ger[1]!.province = from[1]!;
+      for (const d of [ger[0]!, ger[1]!]) { d.path = [11]; d.organisation = 1; }
+      sim.step();
+      sim.step();
+      const b = s.battles.find((x) => x.province === 11)!;
+      return { sim, s, b, defender: pol[0]! };
+    };
+    const one = run([10, 10]), two = run([10, 5]);
+    expect(one.b.directions).toBe(1);
+    expect(two.b.directions).toBe(2);
+    expect(two.b.flanking).toBeGreaterThan(0);
+    // the same attackers do more damage from two directions
+    expect(two.defender.organisation).toBeLessThan(one.defender.organisation);
+    // battles last days and keep their start, progress and casualties
+    expect(two.b.progress).toBeGreaterThan(0.5);
+    expect(two.b.casualties!.defender).toBeGreaterThan(0);
+    expect(two.s.wars[0]!.casualties!.defenders).toBeGreaterThan(0);
+    // the defender is cut off (every neighbour German): beaten, it is destroyed, and the province changes hands only when taken
+    const { sim, s, defender } = two;
+    for (const n of [5, 12, 17]) { s.provinceController[n - 1] = "DEU"; s.provinceOwner[n - 1] = s.provinceOwner[n - 1]!; }
+    expect(s.provinceController[10]).toBe("POL");
+    for (let i = 0; i < 60 && s.divisions.includes(defender); i++) sim.step();
+    expect(s.divisions.includes(defender)).toBe(false);
+    for (let i = 0; i < 30 && s.provinceController[10] !== "DEU"; i++) sim.step();
+    expect(s.provinceController[10]).toBe("DEU");
+    expect(s.wars[0]!.victories!.attackers).toBeGreaterThan(0);
+  });
+
   it("cannot declare war twice", () => {
     const sim = fresh(null);
     sim.dispatch({ type: "declare_war", tag: "DEU", target: "POL" });
