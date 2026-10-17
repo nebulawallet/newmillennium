@@ -1,0 +1,148 @@
+{
+  "tag": "AFG",
+  "name": { "en": "Afghanistan", "native": "Afghanistan", "official": { "en": "Islamic Emirate of Afghanistan" } },
+  "adjective": "Afghan",
+  "culture_primary": "pashtun",
+  "government": {
+    "type": "failed_contested",
+    "effective_executive": "afg.supreme_leader",
+    "head_of_state_office": "afg.supreme_leader",
+    "head_of_government_office": "afg.prime_minister",
+    "constitution": {
+      "term_limit_amendable": true,
+      "emergency_powers": true,
+      "referendum_required_for": []
+    },
+    "note": "On 1 January 2000 the Taliban's Islamic Emirate of Afghanistan held Kabul and about 90% of the country, ruled by its Supreme Leader (Amir al-Mu'minin) Mullah Mohammed Omar with a Council of Ministers; there was no legislature and no political parties were permitted. Only Pakistan, Saudi Arabia and the UAE recognised it; the UN seat was held by the rival Islamic State of Afghanistan (AFN). Stages since then: the Taliban lost Kabul on 13 November 2001; the Afghan Interim Administration under Hamid Karzai took office on 22 December 2001 (Bonn Agreement); the Emergency Loya Jirga elected Karzai head of the Transitional Islamic State on 13 June 2002 (in office 19 June 2002); the Islamic Republic of Afghanistan was established under the 2004 constitution, with a directly elected President and the National Assembly (Wolesi Jirga and Meshrano Jirga); and on 15 August 2021 the Taliban took Kabul and restored the Islamic Emirate, whose Supreme Leader is Hibatullah Akhundzada. Russia recognised the Islamic Emirate on 3 July 2025 (Reuters, cited by Wikipedia). The government type describes the situation in 2000; the 'constitution' flags are rough approximations."
+  },
+  "offices": [
+    {
+      "id": "afg.supreme_leader",
+      "title": { "en": "Supreme Leader of Afghanistan", "native": "Amir al-Mu'minin" },
+      "role": "supreme_leader",
+      "power_weight": 0.75,
+      "selection": "religious_council",
+      "succession": { "type": "council_choice" },
+      "holders": [
+        { "person": "afg.mullah_omar", "from": "1996-09-27", "to": "2001-11-13", "note": "Head of state of the Islamic Emirate from the capture of Kabul. His followers had proclaimed him Amir al-Mu'minin on 4 April 1996 (Wikidata gives 3 April). He continued to lead the Taliban insurgency until his death on 23 April 2013." },
+        { "person": null, "from": "2001-11-13", "to": "2021-08-15", "vacant_reason": "The Islamic Emirate lost Kabul on 13 November 2001 and ceased to govern. The Taliban leaders (Mullah Omar until 2013, Akhtar Mansour 2013/2015-2016, Hibatullah Akhundzada from 2016) claimed the title during the insurgency; the state was headed by the Presidents of the Interim and Transitional Administrations and of the Islamic Republic (afg.president)." },
+        { "person": "afg.hibatullah_akhundzada", "from": "2021-08-15", "note": "Taliban leader since 25 May 2016; de facto head of state since the Taliban took Kabul on 15 August 2021." }
+      ],
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/List_of_heads_of_state_of_Afghanistan", "title": "Wikipedia: List of heads of state of Afghanistan (Islamic Emirate 1996-2001 and 2021-present)", "accessed": "2026-10-16" },
+        { "url": "https://en.wikipedia.org/wiki/Supreme_Leader_of_Afghanistan", "title": "Wikipedia: Supreme Leader of Afghanistan", "accessed": "2026-10-16" },
+        { "url": "https://en.wikipedia.org/wiki/Mullah_Omar", "title": "Wikipedia: Mullah Omar (infobox: terms of office)", "accessed": "2026-10-16" },
+        { "url": "https://www.wikidata.org/wiki/Q24237654", "title": "Wikidata: Hibatullah Akhundzada (Supreme Leader since 2021-08-15)", "accessed": "2026-10-16" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "afg.prime_minister",
+      "title": { "en": "Prime Minister of Afghanistan", "native": "Ra'is al-Wuzara" },
+      "role": "head_of_government",
+      "power_weight": 0.25,
+      "selection": "appointed",
+      "appointed_by": "afg.supreme_leader",
+      "succession": { "type": "acting_then_election" },
+      "holders": [
+        { "person": "afg.mohammad_rabbani", "from": "1996-09-27", "to": "2001-04-16", "note": "Chairman of the Taliban's Supreme Council (Council of Ministers), usually called Prime Minister. Died in office on 16 April 2001. The Prime Minister of Afghanistan list gives 13 April 2001 as the end of his term; his own article gives 16 April." },
+        { "person": "afg.abdul_kabir", "from": "2001-04-16", "to": "2001-11-13", "acting": true },
+        { "person": null, "from": "2001-11-13", "to": "2021-09-07", "vacant_reason": "Post abolished from the fall of Kabul on 13 November 2001 until 7 September 2021. The Islamic Republic had no Prime Minister; Abdullah Abdullah held the separate post of Chief Executive Officer from 29 September 2014 (Wikidata)." },
+        { "person": "afg.hasan_akhund", "from": "2021-09-07", "note": "Served in an acting capacity until 15 August 2025, then as Prime Minister." },
+        { "person": "afg.abdul_kabir", "from": "2023-05-17", "to": "2023-07-17", "acting": true, "note": "Carried out the duties of acting Prime Minister pro tempore." }
+      ],
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/Prime_Minister_of_Afghanistan", "title": "Wikipedia: Prime Minister of Afghanistan (list of prime ministers; post abolished 2001-2021)", "accessed": "2026-10-16" },
+        { "url": "https://en.wikipedia.org/wiki/Mohammad_Rabbani", "title": "Wikipedia: Mohammad Rabbani (term end and death 16 April 2001)", "accessed": "2026-10-16" },
+        { "url": "https://en.wikipedia.org/wiki/Hasan_Akhund", "title": "Wikipedia: Hasan Akhund (infobox: acting 7 September 2021 - 15 August 2025)", "accessed": "2026-10-16" },
+        { "url": "https://www.wikidata.org/wiki/Q4665452", "title": "Wikidata: Abdul Kabir (Prime Minister 2001-04-16 to 2001-11-13; 2023-05-17 to 2023-07-17)", "accessed": "2026-10-16" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "afg.president",
+      "title": { "en": "President of Afghanistan", "native": "Ra'is-e Jomhur" },
+      "role": "head_of_state_and_government",
+      "power_weight": 0.9,
+      "selection": "direct_election",
+      "term_years": 5,
+      "term_limit": { "max_terms": 2, "consecutive_only": false },
+      "succession": { "type": "vice" },
+      "holders": [
+        { "person": "afg.hamid_karzai", "from": "2001-12-22", "to": "2002-06-19", "note": "Chairman of the Afghan Interim Administration, appointed under the Bonn Agreement; took over from Burhanuddin Rabbani (AFN)." },
+        { "person": "afg.hamid_karzai", "from": "2002-06-19", "to": "2004-12-07", "note": "President of the Transitional Islamic State, elected by the Emergency Loya Jirga on 13 June 2002." },
+        { "person": "afg.hamid_karzai", "from": "2004-12-07", "to": "2014-09-29", "note": "Elected in 2004 and re-elected in 2009." },
+        { "person": "afg.ashraf_ghani", "from": "2014-09-29", "to": "2021-08-15", "note": "Left the country on 15 August 2021 as the Taliban entered Kabul." },
+        { "person": null, "from": "2021-08-15", "vacant_reason": "The Islamic Republic ended when the Taliban took Kabul on 15 August 2021; the restored Islamic Emirate is headed by its Supreme Leader (afg.supreme_leader)." }
+      ],
+      "note": "Before 22 December 2001 the presidency was held by Burhanuddin Rabbani of the rival Islamic State of Afghanistan (afn.president). The two-term limit is that of the 2004 constitution, which the government's notes do not otherwise model.",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/List_of_heads_of_state_of_Afghanistan", "title": "Wikipedia: List of heads of state of Afghanistan", "accessed": "2026-10-16" },
+        { "url": "https://www.wikidata.org/wiki/Q43944", "title": "Wikidata: Hamid Karzai (President 2004-12-07 to 2014-09-29)", "accessed": "2026-10-16" },
+        { "url": "https://www.wikidata.org/wiki/Q172388", "title": "Wikidata: Ashraf Ghani (President 2014-09-29 to 2021-08-15)", "accessed": "2026-10-16" },
+        { "url": "https://en.wikipedia.org/wiki/2014_Afghan_presidential_election", "title": "Wikipedia: 2014 Afghan presidential election (Karzai not eligible due to term limits)", "accessed": "2026-10-16" }
+      ],
+      "confidence": "needs_review",
+      "review_note": "The five-year term and two-term limit come from the 2004 constitution as summarised in the 2014 election article ('not eligible to run due to term limits'); the term length itself was not read from a fetched source. Confirm both."
+    }
+  ],
+  "legislature": {
+    "name": { "en": "National Assembly", "native": "Shura-ye Melli" },
+    "chambers": [
+      {
+        "id": "wolesi_jirga",
+        "name": { "en": "House of the People", "native": "Wolesi Jirga" },
+        "seats": 250,
+        "elected": "direct",
+        "system": {
+          "type": "sntv",
+          "district_model": "provinces",
+          "reserved_seats": [
+            { "group": "Women (minimum)", "seats": 68 },
+            { "group": "Kuchi nomads", "seats": 10 },
+            { "group": "Sikhs and Hindus (from 2018)", "seats": 1 }
+          ],
+          "note": "The chamber did not exist on 1 January 2000: the Taliban's Islamic Emirate had no legislature. It was created by the 2004 constitution, first elected in 2005 (249 seats; 250 from 2018), and stopped functioning after 15 August 2021. All seats are therefore recorded as vacant for 2000. Members were elected by single non-transferable vote in provincial constituencies, mostly as independents without party lists. The 102-member Meshrano Jirga (upper house) was chosen indirectly and by appointment and is not modelled."
+        },
+        "seats_2000": { "vacant": 250 },
+        "confidence_chamber": false,
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/House_of_the_People_(Afghanistan)", "title": "Wikipedia: House of the People (Afghanistan) (250 members)", "accessed": "2026-10-16" },
+          { "url": "https://en.wikipedia.org/wiki/2005_Afghan_parliamentary_election", "title": "Wikipedia: 2005 Afghan parliamentary election (SNTV, 249 seats, 68 reserved for women, 10 for Kuchis)", "accessed": "2026-10-16" },
+          { "url": "https://en.wikipedia.org/wiki/2018_Afghan_parliamentary_election", "title": "Wikipedia: 2018 Afghan parliamentary election (250 seats incl. the Sikh and Hindu seat)", "accessed": "2026-10-16" }
+        ],
+        "confidence": "verified"
+      }
+    ]
+  },
+  "party_system": "no_parties",
+  "no_parties_reason": "The Taliban's Islamic Emirate permitted no political parties in 2000. The Taliban themselves are a movement rather than a party; they are recorded as afg.taliban so that their leaders can be referenced. Parties registered under the Islamic Republic (2004-2021) are recorded as not yet founded, or cross-referenced from AFN for the United Front parties.",
+  "start_2000": {
+    "ruling_parties": ["afg.taliban"],
+    "ideology_support": {
+      "islamist": 0.45,
+      "tribal_traditional": 0.2,
+      "regionalist": 0.1,
+      "islamic_democrat": 0.1,
+      "constitutional_monarchist": 0.05,
+      "technocratic": 0.05,
+      "reformed_communist": 0.05
+    },
+    "ideology_support_note": "Estimate only: no national vote had been held since the 1980s. The split reflects 2000 conditions in Taliban-held territory: the Taliban movement (islamist), Pashtun tribal structures and local notables (tribal_traditional), ethnic regional parties surviving outside the front line (regionalist), moderate Islamic politics later represented by the Bonn process (islamic_democrat), supporters of the exiled former king Zahir Shah's Rome process (constitutional_monarchist), the professional and returnee class (technocratic) and former PDPA supporters (reformed_communist).",
+    "stability": 0.15,
+    "war_support": 0.6,
+    "civil_war": {
+      "sides": ["AFG", "AFN"],
+      "note": "Afghan Civil War (1996-2001): on 1 January 2000 the Taliban's Islamic Emirate was fighting the United Front (Northern Alliance) forces of the Islamic State of Afghanistan in the north-east."
+    }
+  },
+  "claims": [
+    { "tag": "AFN", "note": "The Islamic Emirate claimed all of Afghanistan, including the north-eastern territory held by the Islamic State of Afghanistan (United Front)." }
+  ],
+  "source": [
+    { "url": "https://en.wikipedia.org/wiki/List_of_heads_of_state_of_Afghanistan", "title": "Wikipedia: List of heads of state of Afghanistan (stages, recognition notes)", "accessed": "2026-10-16" },
+    { "url": "https://en.wikipedia.org/wiki/Taliban", "title": "Wikipedia: Taliban", "accessed": "2026-10-16" },
+    { "url": "https://en.wikipedia.org/wiki/2002_loya_jirga", "title": "Wikipedia: 2002 loya jirga", "accessed": "2026-10-16" }
+  ],
+  "confidence": "verified"
+}

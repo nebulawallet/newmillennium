@@ -48,11 +48,11 @@ Live sources sometimes report allegations or investigations involving real peopl
 
 <!-- AUTO-GENERATED BELOW: run `npm run review-report`; edits below this line are overwritten -->
 
-## Needs review: 544 of 6213 records
+## Needs review: 564 of 6201 records
 
 Countries with politics data: 73 / 212.
 
-Countries with no data yet (139): KAZ, KGZ, TJK, TKM, UZB, ATG, BHS, BRB, BLZ, BOL, COL, CRI, CUB, DMA, DOM, ECU, SLV, GRD, GTM, GUY, HTI, HND, JAM, MEX, NIC, PAN, PRY, PER, KNA, LCA, VCT, SUR, TTO, URY, VEN, FAR, DZA, BHR, EGY, IRQ, JOR, KWT, LBN, LBY, MRT, MAR, OMN, QAT, SAU, SYR, TUN, ARE, YEM, ESH, KUR, AGO, BEN, BWA, BFA, BDI, CPV, CMR, CAF, TCD, COM, COD, COG, CIV, DJI, GNQ, ERI, SWZ, ETH, GAB, GMB, GHA, GIN, GNB, KEN, LSO, LBR, MDG, MWI, MLI, MUS, MOZ, NAM, NER, NGA, RWA, STP, SEN, SYC, SLE, ZAF, SDN, TZA, TGO, UGA, ZMB, ZWE, SSD, SML, UNI, RCD, MLC, AFG, AFN, BGD, BTN, MDV, NPL, LKA, TEL, BRN, KHM, IDN, LAO, MYS, MMR, PHL, SGP, THA, VNM, TLS, AUS, NZL, FJI, PNG, SLB, VUT, WSM, TON, KIR, TUV, NRU, FSM, MHL, PLW
+Countries with no data yet (139): KAZ, KGZ, TJK, TKM, UZB, CAN, ATG, BHS, BRB, BLZ, BOL, COL, CRI, CUB, DMA, DOM, ECU, SLV, GRD, GTM, GUY, HTI, HND, JAM, MEX, NIC, PAN, PRY, PER, KNA, LCA, VCT, SUR, TTO, URY, VEN, FAR, DZA, BHR, EGY, JOR, KWT, LBN, LBY, MRT, MAR, OMN, QAT, SAU, SYR, TUN, ARE, YEM, ESH, KUR, AGO, BEN, BWA, BFA, BDI, CPV, CMR, CAF, TCD, COM, COD, COG, CIV, DJI, GNQ, ERI, SWZ, ETH, GAB, GMB, GHA, GIN, GNB, KEN, LSO, LBR, MDG, MWI, MLI, MUS, MOZ, NAM, NER, NGA, RWA, STP, SEN, SYC, SLE, ZAF, SDN, TZA, TGO, UGA, ZMB, ZWE, SSD, SML, UNI, RCD, MLC, BGD, BTN, IND, MDV, NPL, PAK, LKA, TEL, BRN, KHM, IDN, LAO, MYS, MMR, PHL, SGP, THA, VNM, TLS, AUS, NZL, FJI, PNG, SLB, VUT, WSM, TON, KIR, TUV, NRU, FSM, MHL, PLW
 
 ### ABK — Abkhazia (6)
 
@@ -64,6 +64,25 @@ Countries with no data yet (139): KAZ, KGZ, TJK, TKM, UZB, ATG, BHS, BRB, BLZ, B
 | party | `abk.amtsakhara` Amtsakhara (Amtsakhara) | Add the chairs with dates. | data/countries/ABK/parties.json |
 | party | `abk.ppa` People's Party of Abkhazia (PPA) | Lakoba's chairmanship has no recorded end; check who led the party after his death in 2022. | data/countries/ABK/parties.json |
 | election | `president_2019` presidential 2019-08-25 | Add Oleg Arshba and Astamur Tarba if a biographical source can be found; Kvitsinia's person record rests on Wikidata alone. | data/countries/ABK/elections.json |
+
+### AFG — Afghanistan (6)
+
+| kind | record | what to check | file |
+|---|---|---|---|
+| office | `afg.president` President of Afghanistan | The five-year term and two-term limit come from the 2004 constitution as summarised in the 2014 election article ('not eligible to run due to term limits'); the term length itself was not read from a fetched source. Confirm both. | data/countries/AFG/country.json |
+| person | `afg.mullah_omar` Mohammed Omar (b. 1960) | Birth year is uncertain: Wikipedia gives c. 1950 to 1962, the UN sanctions list between 1953 and 1966; 1960 is Wikidata's value. | data/countries/AFG/people.json |
+| person | `afg.akhtar_mansour` Akhtar Mansour (b. 1959) | Birth year conflict: Wikipedia c. 1959, Wikidata 1968. 1959 (Wikipedia) is used. | data/countries/AFG/people.json |
+| person | `afg.hasan_akhund` Hasan Akhund (b. 1945) | Birth year unknown: Wikipedia gives c. 1945-1958 (UN sanctions list) and Wikidata only a century. 1945, the lower bound, is a placeholder. | data/countries/AFG/people.json |
+| person | `afg.mohammad_mohaqiq` Mohammad Mohaqiq (b. 1955) | The start of his Wahdat membership is set to the party's founding year (1989) as a placeholder; confirm when he joined. | data/countries/AFG/people.json |
+| election | `president_2009` presidential 2009-08-20 | The fetched excerpts confirm the certified totals but not the exact date Karzai was declared the winner after Abdullah's withdrawal (early November 2009); add it to the note. | data/countries/AFG/elections.json |
+
+### AFN — Islamic State of Afghanistan (3)
+
+| kind | record | what to check | file |
+|---|---|---|---|
+| party | `afn.junbish` National Islamic Movement of Afghanistan (Junbish) | Check when Batur Dostum became party president (the infobox lists him without a date) and add him to the leader history. | data/countries/AFN/parties.json |
+| party | `afn.wahdat` Islamic Unity Party of Afghanistan (Wahdat) | The year Khalili became leader (1995, after Mazari's death) is inferred; the fetched article only says he was widely recognised as leader after the fall of the Taliban. Confirm the start year. | data/countries/AFN/parties.json |
+| party | `afn.dawah` Islamic Dawah Organisation of Afghanistan (Dawah) | The source gives only 'the early 1980s' (category: 1980s establishments); 1980 is a placeholder year for the founding and for the start of Sayyaf's leadership. Find the exact year. | data/countries/AFN/parties.json |
 
 ### ALB — Albania (4)
 
@@ -235,14 +254,6 @@ Countries with no data yet (139): KAZ, KGZ, TJK, TKM, UZB, ATG, BHS, BRB, BLZ, B
 | party | `bra.uniao` Brazil Union (UNIÃO) | Leaders missing: Wikidata gives Luciano Bivar from 8 February 2022; Antônio de Rueda is president by 2025 but the handover date was not found. | data/countries/BRA/parties.json |
 | election | `chamber_2026` legislative 2026-10-04 | Recent result (4 October 2026) taken from Wikipedia only; confirm the final seat allocation against the Superior Electoral Court. | data/countries/BRA/elections.json |
 | election | `senate_2026` legislative_upper 2026-10-04 | Recent result (4 October 2026) taken from Wikipedia only; confirm the final seat allocation against the Superior Electoral Court. | data/countries/BRA/elections.json |
-
-### CAN — Canada (3)
-
-| kind | record | what to check | file |
-|---|---|---|---|
-| chamber | `house_of_commons` House of Commons | Floor crossings are dated only by year in the source. Confirm against the Library of Parliament party standings for 1 January 2000 (expected Lib 157, Reform 58, BQ 44, NDP 20, PC 19, independents 3). | data/countries/CAN/country.json |
-| chamber | `senate` Senate | These are 1997 Senate standings, not 1 January 2000. Check the Library of Parliament Senate party standings for 1 January 2000. | data/countries/CAN/country.json |
-| person | `can.thomas_mulcair` Tom Mulcair (b. 1954) | Confirm the date of the 2007 Outremont by-election (17 September 2007) used for available.from; it was not printed by the research tool. | data/countries/CAN/people.json |
 
 ### CHE — Switzerland (8)
 
@@ -435,16 +446,6 @@ Countries with no data yet (139): KAZ, KGZ, TJK, TKM, UZB, ATG, BHS, BRB, BLZ, B
 | chamber | `parliament` Parliament | Electoral system assumed (two polling dates); 'others' are the 7 seats of Islamic Order, which has no party record. Check the chamber's status after its suspension in December 1998. | data/countries/ICH/country.json |
 | party | `ich.nip` National Independence Party (PNN) | Leaders and their dates are not given by the source (Maskhadov is named as party president without dates). | data/countries/ICH/parties.json |
 
-### IND — India (5)
-
-| kind | record | what to check | file |
-|---|---|---|---|
-| chamber | `rajya_sabha` Rajya Sabha (Council of States) | Fill in the party breakdown of the Rajya Sabha on 1 January 2000 (233 elected members) from a historical source; confirm the 245-seat total applied in 2000. | data/countries/IND/country.json |
-| person | `ind.atal_bihari_vajpayee` Atal Bihari Vajpayee (b. 1924) | Birth date: Wikidata 24 December 1924, Wikipedia list of prime ministers 25 December 1924. Confirm which is correct. | data/countries/IND/people.json |
-| person | `ind.yashwant_sinha` Yashwant Sinha (b. 1937) | The 2022 election infobox lists him under the AITC; confirm the date he joined the Trinamool Congress and add it to party_history. | data/countries/IND/people.json |
-| person | `ind.sunetra_pawar` Sunetra Pawar (b. 1963) | Confirm the exact date she became NCP national president (the fetched sources name her as successor but give no start date); available.from is set to Ajit Pawar's death date as a placeholder no later than her leadership. | data/countries/IND/people.json |
-| person | `ind.chirag_paswan` Chirag Paswan (b. 1982) | available.from uses the 2014 results date as his entry into national politics; confirm against his Lok Sabha membership dates. | data/countries/IND/people.json |
-
 ### IRL — Ireland (1)
 
 | kind | record | what to check | file |
@@ -474,6 +475,32 @@ Countries with no data yet (139): KAZ, KGZ, TJK, TKM, UZB, ATG, BHS, BRB, BLZ, B
 | election | `majlis_2020` legislative 2020-02-21 | The source counts only seats decided after the first round (279 of 290); the 11 runoff seats of 11 September 2020 are not allocated to camps. It is also unclear whether the five minority seats are inside the 'independents' figure. | data/countries/IRN/elections.json |
 | election | `majlis_2024` legislative 2024-03-01 | Check the camp assignment of the Voice of the Nation list (47 seats), which the infobox places under the reformists although its leader is usually described as an independent conservative, and whether the People's Alliance of Islamic Revolution should map to the Stability Front. | data/countries/IRN/elections.json |
 | election | `supreme_leader_2026` indirect_presidential 2026-03-08 | Vote totals were not published: the infobox gives the winner's tally only as at least 59, and lists Hassan Rouhani and Hassan Khomeini as other names considered, with unknown votes. Confirm the date and any published count. | data/countries/IRN/elections.json |
+
+### IRQ — Iraq (21)
+
+| kind | record | what to check | file |
+|---|---|---|---|
+| chamber | `council_of_representatives` National Assembly (from 2006 the Council of Representatives) | The 1996 table gives Ba'ath 161, a 'Kurdistan Democratic Party' 3 (linked to Barzani's KDP, but probably a Baghdad-aligned group; recorded under others), Kurdistan Revolutionary Party 2, a Communist Party 1 and independents 83, totalling 250, while the text says 30 members were appointed for Kurdistan; it is unclear whether the appointees are counted among the independents. | data/countries/IRQ/country.json |
+| person | `irq.abdul_latif_rashid` Abdul Latif Rashid (b. 1944) | Check the engineer trait (not confirmed in the fetched data; remove it if unsupported). | data/countries/IRQ/people.json |
+| person | `irq.ayad_allawi` Ayad Allawi (b. 1944) | Check the physician trait against the Wikipedia biography (not confirmed in the fetched lines). | data/countries/IRQ/people.json |
+| person | `irq.adil_abdul_mahdi` Adil Abdul-Mahdi (b. 1942) | Check the economist trait against the Wikipedia biography (not confirmed in the fetched lines). | data/countries/IRQ/people.json |
+| person | `irq.mohammad_bahr_al_uloom` Mohammad Bahr al-Uloom (b. 1927) | Check the religious_scholar trait against the Wikipedia biography (the list of prime ministers gives only 'Independent'). | data/countries/IRQ/people.json |
+| person | `irq.abdul_aziz_al_hakim` Abdul Aziz al-Hakim (b. 1953) | Birth year conflict: Wikidata gives 1 January 1953, the Wikipedia list of prime ministers gives 1952. Also check the religious_scholar trait. | data/countries/IRQ/people.json |
+| person | `irq.hamid_majid_mousa` Hamid Majid Mousa (b. 1941) | Wikidata gives a death date of 28 February 2026, but the English Wikipedia infobox (fetched 17 October 2026) still shows him as living, so no death is recorded. Re-check before adding one. Wikipedia gives his years as ICP secretary as 1993 to 2016. | data/countries/IRQ/people.json |
+| person | `irq.shaswar_abdulwahid` Shaswar Abdulwahid Qadir (b. 1979) | Check the business_executive trait against the Wikipedia biography (not confirmed in the fetched data). | data/countries/IRQ/people.json |
+| party | `irq.baath` Arab Socialist Ba'ath Party - Iraq Region (Ba'ath) | Founding year: sources say late 1940s or early 1950s; 1951 (Wikidata, and the year al-Rikabi began leading it) is stored. The colour is a choice, not sourced. | data/countries/IRQ/parties.json |
+| party | `irq.dawa` Islamic Dawa Party (Dawa) | Leader history before 2019 is missing (Maliki was 're-elected' in 2019); add the earlier secretaries-general from a fetched source. | data/countries/IRQ/parties.json |
+| party | `irq.icp` Iraqi Communist Party (ICP) | Add Raid Fahmi (secretary from 2016) as a person and leader. Status in 2000 recorded as banned: confirm (the party was active in the Kurdish north outside Baghdad's control). | data/countries/IRQ/parties.json |
+| party | `irq.iip` Iraqi Islamic Party (IIP) | Add leader tenures (Mohsen Abdel Hamid, Tariq al-Hashimi and successors) from a fetched source. | data/countries/IRQ/parties.json |
+| party | `irq.kiu` Kurdistan Islamic Union (KIU) | Confirm that Salahaddin Bahaaddin has led the party since its founding in 1994 (the infobox names him as leader; the start year was not checked). | data/countries/IRQ/parties.json |
+| party | `irq.iraqiya` Iraqi National List / al-Iraqiya / al-Wataniya (Iraqiya) | Composite record of several successive Allawi lists; founded is set to 2005, the year the Iraqi List first stood (it may have been formed in late 2004). | data/countries/IRQ/parties.json |
+| party | `irq.mutahidoon` Muttahidoon (United for Reform) (Muttahidoon) | Founding date known only to December 2012; the day is a placeholder (schema needs a full date or a year). | data/countries/IRQ/parties.json |
+| party | `irq.badr` Badr Organization (Badr) | Confirm the start of Hadi al-Amiri's leadership (set to 2003). | data/countries/IRQ/parties.json |
+| party | `irq.azem` Azem Alliance (Azem) | Founding date conflict (9 December 2021 vs a list in the 10 October 2021 election); add its leaders when person records are found. | data/countries/IRQ/parties.json |
+| party | `irq.emtidad` Emtidad Movement (Extension Movement) (Emtidad) | Ideology entries in Wikipedia are uncited; the sub-ideology is a best fit. | data/countries/IRQ/parties.json |
+| election | `presidential_referendum_2002` referendum 2002-10-15 | Date conflict: the infobox start date is 16 October 2002; 15 October 2002 is the commonly cited date. Confirm which day the vote was held. | data/countries/IRQ/elections.json |
+| election | `indirect_presidential_2010` indirect_presidential 2010-11-11 | The fetched text dates the government-formation agreement to 11 November 2010 and says Talabani would remain President; confirm the date of the parliamentary vote and the vote count. | data/countries/IRQ/elections.json |
+| election | `council_of_representatives_2021` legislative 2021-10-10 | Check that the 2021 election counts as early/snap (the parliament elected in 2018 would have served to 2022); this was not confirmed in the fetched infobox lines. | data/countries/IRQ/elections.json |
 
 ### ISL — Iceland (1)
 
@@ -728,13 +755,6 @@ Countries with no data yet (139): KAZ, KGZ, TJK, TKM, UZB, ATG, BHS, BRB, BLZ, B
 | kind | record | what to check | file |
 |---|---|---|---|
 | party | `nor.h` Conservative Party (H) | The leadership change from Erna Solberg to Ine Eriksen Søreide is given only as the year 2026 in the party article; confirm the exact date of the 2026 party convention. | data/countries/NOR/parties.json |
-
-### PAK — Pakistan (2)
-
-| kind | record | what to check | file |
-|---|---|---|---|
-| chamber | `national_assembly` National Assembly | The 1997 results table and infobox disagree on PML(N) seats (135 vs 137). Others = PPP (Shaheed Bhutto) 1, NPP 1, Jamhoori Wattan Party 2 and the 10 minority seats. | data/countries/PAK/country.json |
-| office | `pak.president` President of Pakistan | Wikipedia's list of presidents shows a break in Musharraf's tenure between 15 October and 19 November 2007; check whether that period should be recorded differently (Wikidata has him continuously in office 2001-06-20 to 2008-08-18). | data/countries/PAK/country.json |
 
 ### PMR — Transnistria (5)
 

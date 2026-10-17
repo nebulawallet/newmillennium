@@ -1,0 +1,949 @@
+{
+  "rules": [
+    {
+      "kind": "legislative",
+      "chamber": "council_of_representatives",
+      "every_years": 4,
+      "anchor": "2025-11-11",
+      "snap_possible": true,
+      "note": "Council of Representatives elected for four years by list PR (the 2021 election was held early, in October 2021). The Council elects the President, and the President charges the largest bloc's nominee with forming a government."
+    },
+    {
+      "kind": "indirect_presidential",
+      "office": "irq.president",
+      "every_years": 4,
+      "anchor": "2026-04-11",
+      "snap_possible": false,
+      "system": "legislature",
+      "note": "The President is elected by the Council of Representatives after each legislative election; the 2022 and 2026 elections went to a second round."
+    }
+  ],
+  "elections": [
+    {
+      "id": "national_assembly_2000",
+      "date": "2000-03-27",
+      "kind": "legislative",
+      "chamber": "council_of_representatives",
+      "historical": {
+        "party_results": [
+          {
+            "party": "irq.baath",
+            "seats": 165
+          },
+          {
+            "party": "independents",
+            "seats": 55
+          },
+          {
+            "party": "appointed",
+            "seats": 30
+          }
+        ],
+        "winner": "irq.baath",
+        "note": "250-seat National Assembly. Of the 85 seats not won by the Ba'ath Party, 55 went to independents and 30 were appointed by the government to represent the Kurdish governorates of Sulaymaniyah, Erbil and Dohuk. No vote shares were published; candidates were pre-approved.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2000_Iraqi_parliamentary_election",
+            "title": "Wikipedia: 2000 Iraqi parliamentary election (IPU figures)",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "presidential_referendum_2002",
+      "date": "2002-10-15",
+      "kind": "referendum",
+      "question": "Approval of Saddam Hussein for a further seven-year term as President",
+      "historical": {
+        "yes_share": 1,
+        "winner": "yes",
+        "turnout": 1,
+        "note": "Single-candidate referendum; the official result was 11,445,638 votes (100%) for Saddam Hussein with a reported turnout of 100%. The election infobox gives the date as 16 October 2002 while the article and the list of presidents use 15 October 2002.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2002_Iraqi_presidential_referendum",
+            "title": "Wikipedia: 2002 Iraqi presidential referendum",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "needs_review",
+        "review_note": "Date conflict: the infobox start date is 16 October 2002; 15 October 2002 is the commonly cited date. Confirm which day the vote was held."
+      }
+    },
+    {
+      "id": "transitional_national_assembly_2005",
+      "date": "2005-01-30",
+      "kind": "legislative",
+      "chamber": "council_of_representatives",
+      "historical": {
+        "candidates": [
+          {
+            "person": "irq.ibrahim_al_jaafari",
+            "party": "irq.uia",
+            "round": 1
+          },
+          {
+            "person": "irq.jalal_talabani",
+            "party": "irq.kurdistan_alliance",
+            "round": 1
+          },
+          {
+            "person": "irq.ayad_allawi",
+            "party": "irq.iraqiya",
+            "round": 1
+          }
+        ],
+        "party_results": [
+          {
+            "party": "irq.uia",
+            "share": 0.4819,
+            "seats": 140
+          },
+          {
+            "party": "irq.kurdistan_alliance",
+            "share": 0.2573,
+            "seats": 75
+          },
+          {
+            "party": "irq.iraqiya",
+            "share": 0.1382,
+            "seats": 40
+          },
+          {
+            "party": "irq.icp",
+            "share": 0.0083,
+            "seats": 2
+          },
+          {
+            "party": "others",
+            "seats": 18
+          }
+        ],
+        "winner": "irq.uia",
+        "note": "Election to the 275-seat Transitional National Assembly, by national list PR. The Iraqi Communist Party ran as the People's Union list. 'Others' are The Iraqis (al-Yawer, 1.78%, 5 seats), the Iraqi Turkmen Front (3), National Independent Cadres and Elites (3), the Kurdistan Islamic Group (2), the Islamic Action Organisation (2) and three single-seat lists. Ibrahim al-Jaafari became Prime Minister on 3 May 2005.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/January_2005_Iraqi_parliamentary_election",
+            "title": "Wikipedia: January 2005 Iraqi parliamentary election",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "indirect_presidential_2005",
+      "date": "2005-04-06",
+      "kind": "indirect_presidential",
+      "office": "irq.president",
+      "historical": {
+        "candidates": [
+          {
+            "person": "irq.jalal_talabani",
+            "party": "irq.puk",
+            "round": 1
+          }
+        ],
+        "winner": "irq.jalal_talabani",
+        "note": "Elected by the Transitional National Assembly on 6 April 2005 (head of a three-member Presidency Council) and sworn in the following day. Vote counts were not fetched.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/Jalal_Talabani",
+            "title": "Wikipedia: Jalal Talabani",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "constitutional_referendum_2005",
+      "date": "2005-10-15",
+      "kind": "referendum",
+      "question": "Approval of the Constitution of Iraq",
+      "historical": {
+        "yes_share": 0.7859,
+        "winner": "yes",
+        "note": "Yes 7,742,796, No 2,109,495 (share computed from these counts).",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2005_Iraqi_constitutional_referendum",
+            "title": "Wikipedia: 2005 Iraqi constitutional referendum",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "council_of_representatives_2005",
+      "date": "2005-12-15",
+      "kind": "legislative",
+      "chamber": "council_of_representatives",
+      "historical": {
+        "candidates": [
+          {
+            "person": "irq.ibrahim_al_jaafari",
+            "party": "irq.uia",
+            "round": 1
+          },
+          {
+            "person": "irq.masoud_barzani",
+            "party": "irq.kurdistan_alliance",
+            "round": 1
+          },
+          {
+            "person": "irq.tariq_al_hashimi",
+            "party": "irq.tawafuq",
+            "round": 1
+          },
+          {
+            "person": "irq.ayad_allawi",
+            "party": "irq.iraqiya",
+            "round": 1
+          },
+          {
+            "person": "irq.saleh_al_mutlaq",
+            "party": "irq.dialogue_front",
+            "round": 1
+          }
+        ],
+        "party_results": [
+          {
+            "party": "irq.uia",
+            "share": 0.4119,
+            "seats": 128
+          },
+          {
+            "party": "irq.kurdistan_alliance",
+            "share": 0.2167,
+            "seats": 53
+          },
+          {
+            "party": "irq.tawafuq",
+            "share": 0.1509,
+            "seats": 44
+          },
+          {
+            "party": "irq.iraqiya",
+            "share": 0.0802,
+            "seats": 25
+          },
+          {
+            "party": "irq.dialogue_front",
+            "share": 0.041,
+            "seats": 11
+          },
+          {
+            "party": "irq.kiu",
+            "share": 0.0129,
+            "seats": 5
+          },
+          {
+            "party": "others",
+            "seats": 9
+          }
+        ],
+        "winner": "irq.uia",
+        "note": "First election to the 275-seat Council of Representatives under the new constitution. 'Others': Risalyun (2), Reconciliation and Liberation Bloc (3), Iraqi Turkmen Front (1), Rafidain List (1), Mithal al-Alusi List (1), Yazidi Movement for Reform and Progress (1). Nouri al-Maliki (UIA) became Prime Minister on 20 May 2006.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/December_2005_Iraqi_parliamentary_election",
+            "title": "Wikipedia: December 2005 Iraqi parliamentary election",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "indirect_presidential_2006",
+      "date": "2006-04-22",
+      "kind": "indirect_presidential",
+      "office": "irq.president",
+      "historical": {
+        "candidates": [
+          {
+            "person": "irq.jalal_talabani",
+            "party": "irq.puk",
+            "round": 1
+          }
+        ],
+        "winner": "irq.jalal_talabani",
+        "note": "Talabani began his second term on 22 April 2006, the first President elected under the new constitution. Vote counts were not fetched.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/Jalal_Talabani",
+            "title": "Wikipedia: Jalal Talabani",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "council_of_representatives_2010",
+      "date": "2010-03-07",
+      "kind": "legislative",
+      "chamber": "council_of_representatives",
+      "historical": {
+        "candidates": [
+          {
+            "person": "irq.ayad_allawi",
+            "party": "irq.iraqiya",
+            "round": 1
+          },
+          {
+            "person": "irq.nouri_al_maliki",
+            "party": "irq.state_of_law",
+            "round": 1
+          },
+          {
+            "person": "irq.ibrahim_al_jaafari",
+            "party": "irq.uia",
+            "round": 1
+          },
+          {
+            "person": "irq.barham_salih",
+            "party": "irq.kurdistan_alliance",
+            "round": 1
+          }
+        ],
+        "party_results": [
+          {
+            "party": "irq.iraqiya",
+            "share": 0.2472,
+            "seats": 91
+          },
+          {
+            "party": "irq.state_of_law",
+            "share": 0.2422,
+            "seats": 89
+          },
+          {
+            "party": "irq.uia",
+            "share": 0.1815,
+            "seats": 70
+          },
+          {
+            "party": "irq.kurdistan_alliance",
+            "share": 0.1459,
+            "seats": 43
+          },
+          {
+            "party": "irq.gorran",
+            "share": 0.0413,
+            "seats": 8
+          },
+          {
+            "party": "irq.tawafuq",
+            "share": 0.0259,
+            "seats": 6
+          },
+          {
+            "party": "irq.kiu",
+            "share": 0.0211,
+            "seats": 4
+          },
+          {
+            "party": "others",
+            "seats": 14
+          }
+        ],
+        "winner": "irq.iraqiya",
+        "note": "325 seats. The National Iraqi Alliance (successor of the UIA) is recorded under irq.uia, and the Kurdistan List under irq.kurdistan_alliance. 'Others': Unity Alliance of Iraq (4), Islamic Group of Kurdistan (2) and 8 minority seats. Al-Iraqiya won the most seats, but Nouri al-Maliki remained Prime Minister after a government-formation agreement on 11 November 2010.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2010_Iraqi_parliamentary_election",
+            "title": "Wikipedia: 2010 Iraqi parliamentary election",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "indirect_presidential_2010",
+      "date": "2010-11-11",
+      "kind": "indirect_presidential",
+      "office": "irq.president",
+      "historical": {
+        "candidates": [
+          {
+            "person": "irq.jalal_talabani",
+            "party": "irq.puk",
+            "round": 1
+          }
+        ],
+        "winner": "irq.jalal_talabani",
+        "note": "Talabani was re-elected as part of the government-formation agreement reached on 11 November 2010.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2010_Iraqi_parliamentary_election",
+            "title": "Wikipedia: 2010 Iraqi parliamentary election (government formation)",
+            "accessed": "2026-10-16"
+          },
+          {
+            "url": "https://en.wikipedia.org/wiki/List_of_presidents_of_Iraq",
+            "title": "Wikipedia: List of presidents of Iraq (2010 election link)",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "needs_review",
+        "review_note": "The fetched text dates the government-formation agreement to 11 November 2010 and says Talabani would remain President; confirm the date of the parliamentary vote and the vote count."
+      }
+    },
+    {
+      "id": "council_of_representatives_2014",
+      "date": "2014-04-30",
+      "kind": "legislative",
+      "chamber": "council_of_representatives",
+      "historical": {
+        "candidates": [
+          {
+            "person": "irq.nouri_al_maliki",
+            "party": "irq.state_of_law",
+            "round": 1
+          },
+          {
+            "person": "irq.muqtada_al_sadr",
+            "party": "irq.sadrists",
+            "round": 1
+          },
+          {
+            "person": "irq.ammar_al_hakim",
+            "party": "irq.sciri",
+            "round": 1
+          },
+          {
+            "person": "irq.osama_al_nujaifi",
+            "party": "irq.mutahidoon",
+            "round": 1
+          },
+          {
+            "person": "irq.ayad_allawi",
+            "party": "irq.iraqiya",
+            "round": 1
+          }
+        ],
+        "party_results": [
+          {
+            "party": "irq.state_of_law",
+            "share": 0.2414,
+            "seats": 92
+          },
+          {
+            "party": "irq.sadrists",
+            "share": 0.0705,
+            "seats": 34
+          },
+          {
+            "party": "irq.sciri",
+            "share": 0.0755,
+            "seats": 29
+          },
+          {
+            "party": "irq.kdp",
+            "share": 0.0798,
+            "seats": 25
+          },
+          {
+            "party": "irq.mutahidoon",
+            "share": 0.0523,
+            "seats": 23
+          },
+          {
+            "party": "irq.iraqiya",
+            "share": 0.0527,
+            "seats": 21
+          },
+          {
+            "party": "irq.puk",
+            "share": 0.0607,
+            "seats": 21
+          },
+          {
+            "party": "irq.gorran",
+            "share": 0.0347,
+            "seats": 9
+          },
+          {
+            "party": "others",
+            "seats": 74
+          }
+        ],
+        "winner": "irq.state_of_law",
+        "turnout": 0.62,
+        "note": "328 seats. The Sadrists ran as the al-Ahrar Bloc; ISCI under Ammar al-Hakim as al-Muwatin; Allawi's list as al-Wataniya. 'Others' include al-Arabiya (Saleh al-Mutlaq, 10 seats) and many smaller lists. Haider al-Abadi (State of Law / Dawa) became Prime Minister on 8 September 2014.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2014_Iraqi_parliamentary_election",
+            "title": "Wikipedia: 2014 Iraqi parliamentary election",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "indirect_presidential_2014",
+      "date": "2014-07-24",
+      "kind": "indirect_presidential",
+      "office": "irq.president",
+      "historical": {
+        "candidates": [
+          {
+            "person": "irq.fuad_masum",
+            "party": "irq.puk",
+            "votes": 211,
+            "share": 0.9286,
+            "round": 1
+          }
+        ],
+        "winner": "irq.fuad_masum",
+        "note": "Infobox vote: Fuad Masum 211, Hussein al-Moussawi (independent, not modelled) 17. The round of this vote is not stated in the fetched infobox.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2014_Iraqi_presidential_election",
+            "title": "Wikipedia: 2014 Iraqi presidential election",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "council_of_representatives_2018",
+      "date": "2018-05-12",
+      "kind": "legislative",
+      "chamber": "council_of_representatives",
+      "historical": {
+        "candidates": [
+          {
+            "person": "irq.muqtada_al_sadr",
+            "party": "irq.sadrists",
+            "round": 1
+          },
+          {
+            "person": "irq.hadi_al_amiri",
+            "party": "irq.fatah",
+            "round": 1
+          },
+          {
+            "person": "irq.haider_al_abadi",
+            "party": "irq.victory",
+            "round": 1
+          },
+          {
+            "person": "irq.nouri_al_maliki",
+            "party": "irq.state_of_law",
+            "round": 1
+          }
+        ],
+        "party_results": [
+          {
+            "party": "irq.sadrists",
+            "share": 0.1447,
+            "seats": 54
+          },
+          {
+            "party": "irq.fatah",
+            "share": 0.1318,
+            "seats": 48
+          },
+          {
+            "party": "irq.victory",
+            "share": 0.1095,
+            "seats": 42
+          },
+          {
+            "party": "irq.kdp",
+            "share": 0.0852,
+            "seats": 25
+          },
+          {
+            "party": "irq.state_of_law",
+            "share": 0.0699,
+            "seats": 25
+          },
+          {
+            "party": "irq.iraqiya",
+            "share": 0.0604,
+            "seats": 21
+          },
+          {
+            "party": "irq.puk",
+            "share": 0.0597,
+            "seats": 18
+          },
+          {
+            "party": "irq.hikma",
+            "share": 0.0556,
+            "seats": 19
+          },
+          {
+            "party": "irq.mutahidoon",
+            "share": 0.0355,
+            "seats": 14
+          },
+          {
+            "party": "irq.gorran",
+            "share": 0.0194,
+            "seats": 5
+          },
+          {
+            "party": "irq.new_generation",
+            "share": 0.0179,
+            "seats": 4
+          },
+          {
+            "party": "irq.kiu",
+            "share": 0.01,
+            "seats": 2
+          },
+          {
+            "party": "independents",
+            "seats": 3
+          },
+          {
+            "party": "others",
+            "seats": 49
+          }
+        ],
+        "winner": "irq.sadrists",
+        "note": "329 seats. The Sadrists led the Sairoon (Alliance Towards Reforms) list; Allawi's list ran as al-Wataniya; Nujaifi's as the Iraqi Decision Alliance. Adil Abdul-Mahdi (independent) became Prime Minister on 25 October 2018.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2018_Iraqi_parliamentary_election",
+            "title": "Wikipedia: 2018 Iraqi parliamentary election",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "indirect_presidential_2018",
+      "date": "2018-10-02",
+      "kind": "indirect_presidential",
+      "office": "irq.president",
+      "historical": {
+        "candidates": [
+          {
+            "person": "irq.barham_salih",
+            "party": "irq.puk",
+            "votes": 219,
+            "share": 0.9087,
+            "round": 1
+          },
+          {
+            "person": "irq.fuad_hussein",
+            "party": "irq.kdp",
+            "votes": 22,
+            "share": 0.0913,
+            "round": 1
+          }
+        ],
+        "winner": "irq.barham_salih",
+        "note": "Infobox vote (the round is not stated in the fetched infobox). Seven of 31 applicants were approved to run.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2018_Iraqi_presidential_election",
+            "title": "Wikipedia: 2018 Iraqi presidential election",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "council_of_representatives_2021",
+      "date": "2021-10-10",
+      "kind": "legislative",
+      "chamber": "council_of_representatives",
+      "snap": true,
+      "historical": {
+        "candidates": [
+          {
+            "person": "irq.muqtada_al_sadr",
+            "party": "irq.sadrists",
+            "round": 1
+          },
+          {
+            "person": "irq.masoud_barzani",
+            "party": "irq.kdp",
+            "round": 1
+          },
+          {
+            "person": "irq.mohamed_al_halbousi",
+            "party": "irq.taqaddum",
+            "round": 1
+          },
+          {
+            "person": "irq.nouri_al_maliki",
+            "party": "irq.state_of_law",
+            "round": 1
+          }
+        ],
+        "party_results": [
+          {
+            "party": "irq.sadrists",
+            "share": 0.1,
+            "seats": 73
+          },
+          {
+            "party": "irq.kdp",
+            "share": 0.0883,
+            "seats": 31
+          },
+          {
+            "party": "irq.taqaddum",
+            "share": 0.072,
+            "seats": 37
+          },
+          {
+            "party": "irq.state_of_law",
+            "share": 0.0567,
+            "seats": 33
+          },
+          {
+            "party": "irq.fatah",
+            "share": 0.0523,
+            "seats": 17
+          },
+          {
+            "party": "irq.azem",
+            "share": 0.0476,
+            "seats": 14
+          },
+          {
+            "party": "irq.puk",
+            "share": 0.0416,
+            "seats": 17
+          },
+          {
+            "party": "irq.nsf",
+            "share": 0.0406,
+            "seats": 4
+          },
+          {
+            "party": "irq.emtidad",
+            "share": 0.0338,
+            "seats": 9
+          },
+          {
+            "party": "irq.new_generation",
+            "share": 0.0264,
+            "seats": 9
+          },
+          {
+            "party": "independents",
+            "share": 0.1905,
+            "seats": 43
+          },
+          {
+            "party": "others",
+            "seats": 42
+          }
+        ],
+        "winner": "irq.sadrists",
+        "turnout": 0.433,
+        "note": "329 seats; an early election (the previous parliament's term ran to 2022). The PUK-led Kurdistan Coalition (Qubad Talabani) is recorded under irq.puk. Mohammed Shia' al-Sudani (Coordination Framework) became Prime Minister on 27 October 2022.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2021_Iraqi_parliamentary_election",
+            "title": "Wikipedia: 2021 Iraqi parliamentary election",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "needs_review",
+        "review_note": "Check that the 2021 election counts as early/snap (the parliament elected in 2018 would have served to 2022); this was not confirmed in the fetched infobox lines."
+      }
+    },
+    {
+      "id": "indirect_presidential_2022",
+      "date": "2022-10-13",
+      "kind": "indirect_presidential",
+      "office": "irq.president",
+      "historical": {
+        "candidates": [
+          {
+            "person": "irq.abdul_latif_rashid",
+            "party": "irq.puk",
+            "votes": 162,
+            "share": 0.6207,
+            "round": 2
+          },
+          {
+            "person": "irq.barham_salih",
+            "party": "irq.puk",
+            "votes": 99,
+            "share": 0.3793,
+            "round": 2
+          }
+        ],
+        "winner": "irq.abdul_latif_rashid",
+        "note": "Incumbent Barham Salih was beaten in the second round; first-round counts were not fetched.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2022_Iraqi_presidential_election",
+            "title": "Wikipedia: 2022 Iraqi presidential election",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "council_of_representatives_2025",
+      "date": "2025-11-11",
+      "kind": "legislative",
+      "chamber": "council_of_representatives",
+      "historical": {
+        "candidates": [
+          {
+            "person": "irq.mohammed_shia_al_sudani",
+            "party": "irq.rdc",
+            "round": 1
+          },
+          {
+            "person": "irq.masoud_barzani",
+            "party": "irq.kdp",
+            "round": 1
+          },
+          {
+            "person": "irq.mohamed_al_halbousi",
+            "party": "irq.taqaddum",
+            "round": 1
+          },
+          {
+            "person": "irq.nouri_al_maliki",
+            "party": "irq.state_of_law",
+            "round": 1
+          }
+        ],
+        "party_results": [
+          {
+            "party": "irq.rdc",
+            "share": 0.1174,
+            "seats": 46
+          },
+          {
+            "party": "irq.kdp",
+            "share": 0.0981,
+            "seats": 26
+          },
+          {
+            "party": "irq.taqaddum",
+            "share": 0.0837,
+            "seats": 27
+          },
+          {
+            "party": "irq.state_of_law",
+            "share": 0.0649,
+            "seats": 29
+          },
+          {
+            "party": "irq.sadiqoun",
+            "share": 0.0612,
+            "seats": 27
+          },
+          {
+            "party": "irq.badr",
+            "share": 0.0496,
+            "seats": 18
+          },
+          {
+            "party": "irq.puk",
+            "share": 0.0489,
+            "seats": 18
+          },
+          {
+            "party": "irq.nsf",
+            "share": 0.0457,
+            "seats": 18
+          },
+          {
+            "party": "irq.azem",
+            "share": 0.0431,
+            "seats": 15
+          },
+          {
+            "party": "irq.kiu",
+            "share": 0.0149,
+            "seats": 4
+          },
+          {
+            "party": "irq.new_generation",
+            "share": 0.0124,
+            "seats": 3
+          },
+          {
+            "party": "others",
+            "seats": 98
+          }
+        ],
+        "winner": "irq.rdc",
+        "turnout": 0.5604,
+        "note": "329 seats. 'Others' include Halbousi's allied lists al-Anbar Is Our Identity (3) and Qimam (3), the National Sovereignty Alliance (9), al-Asas (8), Ishraqat Kanoon (8), the Rights Movement (6), Tasmim (6), 9 minority seats and many small lists. Prime Minister al-Sudani remained in office until Ali al-Zaidi, nominated by the Coordination Framework, took office on 14 May 2026.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2025_Iraqi_parliamentary_election",
+            "title": "Wikipedia: 2025 Iraqi parliamentary election",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "indirect_presidential_2026",
+      "date": "2026-04-11",
+      "kind": "indirect_presidential",
+      "office": "irq.president",
+      "historical": {
+        "candidates": [
+          {
+            "person": "irq.nizar_amidi",
+            "party": "irq.puk",
+            "votes": 227,
+            "share": 0.9008,
+            "round": 2
+          },
+          {
+            "person": "irq.muthanna_amin",
+            "party": "irq.kiu",
+            "votes": 15,
+            "share": 0.0595,
+            "round": 2
+          }
+        ],
+        "winner": "irq.nizar_amidi",
+        "note": "Held five months after the November 2025 election, delayed by disagreement within the Coordination Framework over the choice of prime minister. Amidi was elected in the second round. Checked after June 2026 against the fetched Wikipedia article.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2026_Iraqi_presidential_election",
+            "title": "Wikipedia: 2026 Iraqi presidential election",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "verified"
+      }
+    }
+  ],
+  "source": [
+    {
+      "url": "https://en.wikipedia.org/wiki/List_of_presidents_of_Iraq",
+      "title": "Wikipedia: List of presidents of Iraq (presidential elections)",
+      "accessed": "2026-10-16"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/2025_Iraqi_parliamentary_election",
+      "title": "Wikipedia: 2025 Iraqi parliamentary election",
+      "accessed": "2026-10-16"
+    }
+  ],
+  "confidence": "verified"
+}

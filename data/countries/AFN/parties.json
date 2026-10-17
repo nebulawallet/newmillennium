@@ -1,0 +1,88 @@
+{
+  "parties": [
+    {
+      "id": "afn.jamiat",
+      "name": { "en": "Islamic Society of Afghanistan", "native": "Jamiat-e Islami-ye Afghanestan" },
+      "abbrev": { "en": "Jamiat", "native": "جمعیت" },
+      "color": "#03913D",
+      "sub_ideology": "islamist",
+      "founded": 1972,
+      "status_2000": "active",
+      "leader_history": [
+        { "person": "afn.burhanuddin_rabbani", "from": 1972, "to": "2011-09-20" },
+        { "person": "afg.salahuddin_rabbani", "from": 2011, "title": "Chairman of the Political Bureau" }
+      ],
+      "popularity_2000": 0.25,
+      "popularity_note": "Estimate: no national vote had been held. Jamiat was the leading party of the Islamic State and of the United Front.",
+      "regional_base": ["tajik"],
+      "note": "Leading party of the United Front (Northern Alliance). After 2001 it continued in the Islamic Republic: 22 seats in 2005 and 17 in 2010 by the Wikipedia affiliation tables. Salahuddin Rabbani was chosen as leader after his father's death on 20 September 2011. Founded in 1972 according to Wikipedia, which adds that it may date from the 1960s. Colour from the party's infobox.",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/Jamiat-e_Islami", "title": "Wikipedia: Jamiat-e Islami (foundation 1972, colours, leaders)", "accessed": "2026-10-16" },
+        { "url": "https://en.wikipedia.org/wiki/Salahuddin_Rabbani", "title": "Wikipedia: Salahuddin Rabbani (selected as Jamiat leader after 20 September 2011)", "accessed": "2026-10-16" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "afn.junbish",
+      "name": { "en": "National Islamic Movement of Afghanistan", "native": "Junbish-i-Milli Islami Afghanistan" },
+      "abbrev": { "en": "Junbish", "native": "جنبش" },
+      "color": "#4B8BBE",
+      "sub_ideology": "regionalist",
+      "founded": 1992,
+      "status_2000": "active",
+      "leader_history": [
+        { "person": "afn.abdul_rashid_dostum", "from": 1992 }
+      ],
+      "popularity_2000": 0.12,
+      "popularity_note": "Estimate: no national vote had been held. Junbish's base is mostly Uzbek and in the north.",
+      "regional_base": ["uzbek"],
+      "note": "Founded by Abdul Rashid Dostum in 1992; part of the United Front. Largest party by affiliation in the 2005 Wolesi Jirga (33 seats). Its infobox also lists Batur Dostum as president. The colour is a placeholder; no party colour was found in the source.",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/National_Islamic_Movement_of_Afghanistan", "title": "Wikipedia: National Islamic Movement of Afghanistan (founded 1992 by Dostum)", "accessed": "2026-10-16" }
+      ],
+      "confidence": "needs_review",
+      "review_note": "Check when Batur Dostum became party president (the infobox lists him without a date) and add him to the leader history."
+    },
+    {
+      "id": "afn.wahdat",
+      "name": { "en": "Islamic Unity Party of Afghanistan", "native": "Hizb-i Wahdat-i Islami-yi Afghanistan" },
+      "abbrev": { "en": "Wahdat", "native": "وحدت" },
+      "color": "#000000",
+      "sub_ideology": "regionalist",
+      "founded": 1989,
+      "status_2000": "active",
+      "leader_history": [
+        { "person": "afn.karim_khalili", "from": 1995 }
+      ],
+      "popularity_2000": 0.1,
+      "popularity_note": "Estimate: no national vote had been held. Hezb-e Wahdat is the main Hazara (Shia) party.",
+      "regional_base": ["hazara"],
+      "note": "Founded in 1989 (founder Abdul Ali Mazari, who died in March 1995). Part of the United Front. Muhammad Mohaqiq left it in 2004 to found the People's Islamic Unity Party (afg.wahdat_mardom). Colours per its infobox are black, red and green.",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/Hezbe_Wahdat", "title": "Wikipedia: Hezbe Wahdat (foundation 1989, founder, Khalili as leader after 2001)", "accessed": "2026-10-16" }
+      ],
+      "confidence": "needs_review",
+      "review_note": "The year Khalili became leader (1995, after Mazari's death) is inferred; the fetched article only says he was widely recognised as leader after the fall of the Taliban. Confirm the start year."
+    },
+    {
+      "id": "afn.dawah",
+      "name": { "en": "Islamic Dawah Organisation of Afghanistan", "native": "Tanzim-e Da'wat-e Islami-ye Afghanistan" },
+      "abbrev": { "en": "Dawah", "native": "دعوت" },
+      "color": "#2E7D32",
+      "sub_ideology": "islamist",
+      "founded": 1980,
+      "status_2000": "active",
+      "leader_history": [
+        { "person": "afn.abdul_rasul_sayyaf", "from": 1980 }
+      ],
+      "popularity_2000": 0.05,
+      "popularity_note": "Estimate: no national vote had been held.",
+      "note": "Founded in the early 1980s as Ittihad-e Islami (Islamic Union for the Liberation of Afghanistan) under Sayyaf; registered as the Islamic Dawah Organisation in 2005. Part of the United Front. The colour is a placeholder.",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/Islamic_Dawah_Organisation_of_Afghanistan", "title": "Wikipedia: Islamic Dawah Organisation of Afghanistan (founded early 1980s; foundation 2005 as a party)", "accessed": "2026-10-16" }
+      ],
+      "confidence": "needs_review",
+      "review_note": "The source gives only 'the early 1980s' (category: 1980s establishments); 1980 is a placeholder year for the founding and for the start of Sayyaf's leadership. Find the exact year."
+    }
+  ]
+}

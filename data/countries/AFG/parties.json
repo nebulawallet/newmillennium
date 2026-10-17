@@ -1,0 +1,106 @@
+{
+  "parties": [
+    {
+      "id": "afg.taliban",
+      "name": { "en": "Taliban", "native": "طالبان" },
+      "abbrev": { "en": "Taliban", "native": "طالبان" },
+      "color": "#E8E8E8",
+      "sub_ideology": "islamist",
+      "founded": 1994,
+      "status_2000": "active",
+      "leader_history": [
+        { "person": "afg.mullah_omar", "from": 1994, "to": "2013-04-23" },
+        { "person": "afg.akhtar_mansour", "from": "2013-04-23", "to": "2016-05-21", "title": "Acting leader until 29 July 2015 (Mullah Omar's death was concealed), then leader" },
+        { "person": "afg.hibatullah_akhundzada", "from": "2016-05-25" }
+      ],
+      "popularity_2000": 0.4,
+      "popularity_note": "Estimate: no vote was held. The Taliban governed about 90% of the country.",
+      "regional_base": ["pashtun"],
+      "note": "A movement rather than a registered party; it emerged in 1994 in the civil war and ruled as the Islamic Emirate from 1996 to 2001 and again since 15 August 2021, after an insurgency against the Islamic Republic. Exiled leaders formed the Leadership Council in May 2002. The colour (white, from its flag) is a gameplay choice.",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/Taliban", "title": "Wikipedia: Taliban (emerged 1994; Supreme Leaders)", "accessed": "2026-10-16" },
+        { "url": "https://en.wikipedia.org/wiki/Akhtar_Mansur", "title": "Wikipedia: Akhtar Mansur (acting 23 April 2013 - 29 July 2015; leader until 21 May 2016)", "accessed": "2026-10-16" },
+        { "url": "https://www.wikidata.org/wiki/Q24237654", "title": "Wikidata: Hibatullah Akhundzada (Amir al-Mu'minin of the Taliban since 2016-05-25)", "accessed": "2026-10-16" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "afg.hezb_e_islami",
+      "name": { "en": "Islamic Party of Afghanistan (Hekmatyar)", "native": "Hizb-i Islami Afghanistan" },
+      "abbrev": { "en": "HIG", "native": "حزب اسلامی" },
+      "color": "#1B5E20",
+      "sub_ideology": "islamist",
+      "founded": 1976,
+      "status_2000": "extra_parliamentary",
+      "leader_history": [
+        { "person": "afg.gulbuddin_hekmatyar", "from": 1976 }
+      ],
+      "popularity_2000": 0.04,
+      "popularity_note": "Estimate: no vote was held. The party had been expelled from Kabul by the Taliban in September 1996.",
+      "regional_base": ["pashtun"],
+      "note": "Founded by Gulbuddin Hekmatyar in June 1976 (some sources cited in the article give 1977 for the Gulbuddin faction). Fought the Islamic Republic until a peace agreement signed on 29 September 2016. Distinct from the registered Hezb-e Islami Afghanistan that won seats in 2005 (counted under 'others'). The colour is a placeholder.",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/Hezb-e_Islami_Gulbuddin", "title": "Wikipedia: Hezb-e Islami Gulbuddin (founded June 1976; 2016 peace deal)", "accessed": "2026-10-16" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "afg.new_afghanistan",
+      "name": { "en": "New Afghanistan Party", "native": "Hezb-e Afghanistan Naween" },
+      "abbrev": { "en": "Naween", "native": "افغانستان نوین" },
+      "color": "#0D47A1",
+      "sub_ideology": "islamic_democrat",
+      "founded": 2004,
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        { "person": "afg.yunus_qanuni", "from": 2004 }
+      ],
+      "popularity_2000": 0,
+      "regional_base": ["tajik"],
+      "note": "Founded in 2004 by Yunus Qanuni, who stood for president that year. In December 2005 Qanuni reached an agreement with Burhanuddin Rabbani. 13 seats in 2005 and 1 in 2010 by the Wikipedia affiliation tables. The colour is a placeholder.",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/New_Afghanistan_Party", "title": "Wikipedia: New Afghanistan Party (founded 2004, led by Qanuni)", "accessed": "2026-10-16" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "afg.wahdat_mardom",
+      "name": { "en": "People's Islamic Unity Party of Afghanistan", "native": "Hezb-e Wahdat-e Islami-ye Mardom-e Afghanistan" },
+      "abbrev": { "en": "PIUPA", "native": "وحدت مردم" },
+      "color": "#C62828",
+      "sub_ideology": "regionalist",
+      "founded": 2004,
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        { "person": "afg.mohammad_mohaqiq", "from": 2004 }
+      ],
+      "popularity_2000": 0,
+      "lineage": { "split_from": "afn.wahdat" },
+      "regional_base": ["hazara"],
+      "note": "Founded in 2004 by Mohammad Mohaqiq after he left Hezb-e Wahdat and the government. Party colours are red and blue (infobox).",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/People%27s_Islamic_Unity_Party_of_Afghanistan", "title": "Wikipedia: People's Islamic Unity Party of Afghanistan (foundation 2004, split from Hezbe Wahdat)", "accessed": "2026-10-16" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "afg.national_coalition",
+      "name": { "en": "National Coalition of Afghanistan", "native": "Etelaf-e Milli" },
+      "abbrev": { "en": "NCA", "native": "ائتلاف ملی" },
+      "color": "#F9A825",
+      "sub_ideology": "big_tent",
+      "founded": "2010-03-18",
+      "dissolved": "2021-08-15",
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        { "person": "afg.abdullah_abdullah", "from": "2010-03-18", "to": "2021-08-15" }
+      ],
+      "popularity_2000": 0,
+      "note": "Opposition coalition led by Abdullah Abdullah; founded 18 March 2010 and dissolved 15 August 2021 (infobox). The colour is a placeholder.",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/National_Coalition_of_Afghanistan", "title": "Wikipedia: National Coalition of Afghanistan (foundation 18 March 2010, dissolved 15 August 2021)", "accessed": "2026-10-16" }
+      ],
+      "confidence": "verified"
+    }
+  ]
+}

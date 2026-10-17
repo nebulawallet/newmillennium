@@ -1,0 +1,15 @@
+{
+  "note": "Influence and approval are gameplay starting values for 1 January 2000, not measured data. The Islamic State of Afghanistan was a wartime coalition of armed parties; power lay with commanders of the United Front ('military'), local notables and rural communities ('rural') and clerics ('religious_establishment').",
+  "interest_groups": [
+    { "type": "military", "influence": 0.6, "approval": 60, "note": "United Front commanders and militias." },
+    { "type": "security_services", "influence": 0.1, "approval": 50 },
+    { "type": "business", "influence": 0.1, "approval": 40, "note": "Traders in the north-east and cross-border commerce with Tajikistan." },
+    { "type": "labour_unions", "influence": 0.01, "approval": 40 },
+    { "type": "religious_establishment", "influence": 0.25, "approval": 55 },
+    { "type": "rural", "influence": 0.4, "approval": 45 },
+    { "type": "urban_middle_class", "influence": 0.05, "approval": 45 },
+    { "type": "minorities", "influence": 0.2, "approval": 55, "note": "Tajik, Uzbek and Hazara communities formed the base of the United Front parties." },
+    { "type": "youth_students", "influence": 0.03, "approval": 40 },
+    { "type": "media", "influence": 0.02, "approval": 40 }
+  ]
+}

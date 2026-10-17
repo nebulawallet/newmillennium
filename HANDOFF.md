@@ -153,7 +153,7 @@ Follow [docs/CONFLICTS_PLAN.md](docs/CONFLICTS_PLAN.md). In short:
    - The validator runs core checks on full and light countries, `--tier full` depth only on full ones, and light adds a current-leader check (`LIGHT_CURRENT`) and a 3-party warning. `npm run validate-data` (whole world) now passes.
    - Default countries need no folder; any folder they have is ignored with a `DEFAULT_FOLDER` warning.
    - The default profile (`default_profile` in `data/rules/politics.json`, government type `default_government`) makes them active with an economy, research and an army, but no named people, parties or elections. They are not playable. Soak: 209 acting countries, about 4.5 ms per day (was 1.0 with ~70).
-2. **Conflict countries.** Finish and audit IRQ, AFG and AFN (partial folders). Light research for SYR, maybe LBN and YEM. Decide with the user which other partial folders to keep (IND, PAK, CAN, MEX) and delete the rest.
+2. **Conflict countries.** IRQ, AFG and AFN are audited and committed (light tier; IRQ is close to full depth). Hamid Majid Mousa's Wikidata-only death (28 February 2026) was removed because English Wikipedia still lists him as living. Light research for SYR, maybe LBN and YEM. Decide with the user which other partial folders to keep (IND, PAK, CAN, MEX) and delete the rest.
 3. **Non-state actors.** Extend the rebel / civil-war mechanic so events spawn and end named armed groups on real dates and regions: ISIS, the Taliban, Hamas in Gaza, the Donbas separatists, the Syrian rebels.
 4. **Conflict scripts.** Iraq (2003 to ISIS to withdrawal), Afghanistan (2001 to 2021), Syria (2011 to 2024), Israel–Palestine (2007 split, Gaza wars, 7 October), Lebanon 2006. All with sourced dates.
 5. **Then Phase 13 polish:**

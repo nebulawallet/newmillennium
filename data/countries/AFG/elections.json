@@ -1,0 +1,175 @@
+{
+  "rules": [],
+  "no_elections_reason": "The Taliban's Islamic Emirate held no elections in 1996-2001 and has held none since it returned to power on 15 August 2021. The elections of the Interim and Transitional Administrations and the Islamic Republic (2002-2019) are recorded below; the Islamic Republic's five-year presidential and Wolesi Jirga terms ended with its fall.",
+  "elections": [
+    {
+      "id": "loya_jirga_2002",
+      "date": "2002-06-13",
+      "kind": "indirect_presidential",
+      "office": "afg.president",
+      "historical": {
+        "candidates": [
+          { "person": "afg.hamid_karzai", "votes": 1295, "round": 1 }
+        ],
+        "winner": "afg.hamid_karzai",
+        "note": "The Emergency Loya Jirga (Kabul, 11-19 June 2002) elected the head of the Transitional Administration by secret ballot on 13 June; Karzai won about 83%. The two other candidates, Masooda Jalal and Mahfoz Nadai, are not stored. Karzai was sworn in on 19 June.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2002_loya_jirga", "title": "Wikipedia: 2002 loya jirga (results table)", "accessed": "2026-10-16" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "president_2004",
+      "date": "2004-10-09",
+      "kind": "presidential",
+      "office": "afg.president",
+      "historical": {
+        "candidates": [
+          { "person": "afg.hamid_karzai", "share": 0.5537, "votes": 4443029, "round": 1 },
+          { "person": "afg.yunus_qanuni", "party": "afg.new_afghanistan", "share": 0.1628, "votes": 1306503, "round": 1 },
+          { "person": "afg.mohammad_mohaqiq", "party": "afg.wahdat_mardom", "share": 0.1166, "votes": 935325, "round": 1 },
+          { "person": "afn.abdul_rashid_dostum", "party": "afn.junbish", "share": 0.1003, "votes": 804861, "round": 1 }
+        ],
+        "winner": "afg.hamid_karzai",
+        "note": "Eighteen candidates; Karzai won in the first round. Mohaqiq and Dostum are listed as independents backed by their parties.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2004_Afghan_presidential_election", "title": "Wikipedia: 2004 Afghan presidential election (infobox and results table)", "accessed": "2026-10-16" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "wolesi_jirga_2005",
+      "date": "2005-09-18",
+      "kind": "legislative",
+      "chamber": "wolesi_jirga",
+      "historical": {
+        "party_results": [
+          { "party": "afn.junbish", "seats": 33 },
+          { "party": "afn.jamiat", "seats": 22 },
+          { "party": "afg.new_afghanistan", "seats": 13 },
+          { "party": "afn.dawah", "seats": 9 },
+          { "party": "afg.wahdat_mardom", "seats": 9 },
+          { "party": "afn.wahdat", "seats": 3 },
+          { "party": "others", "seats": 50 },
+          { "party": "independents", "seats": 110 }
+        ],
+        "winner": "afn.junbish",
+        "note": "All candidates stood as individuals under single non-transferable vote (official result: 249 independents). Seats by party are the Wikipedia affiliation table. 'Others' are Hezbe Eqtedar Milli 12, Hezb-e Islami (registered party) 12, National United Party 8, Afghan Mellat 8, National Islamic Front 3, Islamic Movement 3, National Solidarity Movement 3 and National Solidarity Party 1. Turnout was estimated at 50%.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2005_Afghan_parliamentary_election", "title": "Wikipedia: 2005 Afghan parliamentary election (infobox and affiliation table)", "accessed": "2026-10-16" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "president_2009",
+      "date": "2009-08-20",
+      "kind": "presidential",
+      "office": "afg.president",
+      "historical": {
+        "candidates": [
+          { "person": "afg.hamid_karzai", "share": 0.4967, "votes": 2283907, "round": 1 },
+          { "person": "afg.abdullah_abdullah", "share": 0.3059, "votes": 1406242, "round": 1 },
+          { "person": "afg.ramazan_bashardost", "votes": 481072, "round": 1 },
+          { "person": "afg.ashraf_ghani", "votes": 135106, "round": 1 }
+        ],
+        "winner": "afg.hamid_karzai",
+        "note": "Certified final result of 21 October 2009: 4,597,727 valid votes after the Electoral Complaints Commission invalidated about 1.07 million ballots. No candidate reached 50%; the run-off was not held because Abdullah withdrew, and Karzai was declared the winner. Abdullah's party label is omitted (the National Coalition was founded in 2010).",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2009_Afghan_presidential_election", "title": "Wikipedia: 2009 Afghan presidential election (infobox and results table)", "accessed": "2026-10-16" }
+        ],
+        "confidence": "needs_review",
+        "review_note": "The fetched excerpts confirm the certified totals but not the exact date Karzai was declared the winner after Abdullah's withdrawal (early November 2009); add it to the note."
+      }
+    },
+    {
+      "id": "wolesi_jirga_2010",
+      "date": "2010-09-18",
+      "kind": "legislative",
+      "chamber": "wolesi_jirga",
+      "historical": {
+        "party_results": [
+          { "party": "afn.jamiat", "seats": 17 },
+          { "party": "afg.wahdat_mardom", "seats": 11 },
+          { "party": "afn.junbish", "seats": 10 },
+          { "party": "afn.wahdat", "seats": 7 },
+          { "party": "afn.dawah", "seats": 4 },
+          { "party": "afg.new_afghanistan", "seats": 1 },
+          { "party": "others", "seats": 35 },
+          { "party": "independents", "seats": 164 }
+        ],
+        "winner": "afn.jamiat",
+        "note": "Official result: 249 seats won by individual candidates (239 general and 10 Kuchi seats). Seats by party follow the Wikipedia affiliation table; 'others' (Jamhori 9, National Islamic Front 6, Afghan Mellat 4, National Solidarity Party 4, Islamic Movement 4 and nine parties with 1 each) and 'independents' (the remainder, 164) are derived from it. Turnout was about 3.6 million of more than 10 million eligible voters.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2010_Afghan_parliamentary_election", "title": "Wikipedia: 2010 Afghan parliamentary election (infobox and affiliation table)", "accessed": "2026-10-16" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "president_2014",
+      "date": "2014-04-05",
+      "kind": "presidential",
+      "office": "afg.president",
+      "rounds": 2,
+      "historical": {
+        "candidates": [
+          { "person": "afg.abdullah_abdullah", "party": "afg.national_coalition", "share": 0.45, "votes": 2972141, "round": 1 },
+          { "person": "afg.ashraf_ghani", "share": 0.3156, "votes": 2084547, "round": 1 },
+          { "person": "afg.zalmai_rassoul", "votes": 750997, "round": 1 },
+          { "person": "afn.abdul_rasul_sayyaf", "party": "afn.dawah", "votes": 465207, "round": 1 },
+          { "person": "afg.ashraf_ghani", "share": 0.5527, "votes": 3935567, "round": 2 },
+          { "person": "afg.abdullah_abdullah", "party": "afg.national_coalition", "share": 0.4473, "votes": 3185018, "round": 2 }
+        ],
+        "winner": "afg.ashraf_ghani",
+        "note": "First round 5 April, second round 14 June 2014. After a UN-supervised audit the second-round valid votes fell from 7,972,727 to 7,120,585; the Independent Election Commission announced Ghani as the winner on 19 September 2014. Karzai could not stand because of term limits.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2014_Afghan_presidential_election", "title": "Wikipedia: 2014 Afghan presidential election (infobox and results table)", "accessed": "2026-10-16" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "wolesi_jirga_2018",
+      "date": "2018-10-20",
+      "kind": "legislative",
+      "chamber": "wolesi_jirga",
+      "historical": {
+        "party_results": [
+          { "party": "independents", "seats": 244 },
+          { "party": "vacant", "seats": 6 }
+        ],
+        "note": "Voting took place on 20 and 27 October 2018. All 244 filled seats (233 general, 10 Kuchi, 1 Sikh and Hindu) went to candidates standing as individuals; 6 seats stayed vacant. No party breakdown is given by the source, so no winning party is recorded.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2018_Afghan_parliamentary_election", "title": "Wikipedia: 2018 Afghan parliamentary election (results table)", "accessed": "2026-10-16" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "president_2019",
+      "date": "2019-09-28",
+      "kind": "presidential",
+      "office": "afg.president",
+      "historical": {
+        "candidates": [
+          { "person": "afg.ashraf_ghani", "share": 0.5064, "votes": 923592, "round": 1 },
+          { "person": "afg.abdullah_abdullah", "party": "afg.national_coalition", "share": 0.3952, "votes": 720841, "round": 1 },
+          { "person": "afg.gulbuddin_hekmatyar", "party": "afg.hezb_e_islami", "votes": 70241, "round": 1 }
+        ],
+        "winner": "afg.ashraf_ghani",
+        "note": "Fourteen candidates; registered electorate 9,665,745. Ghani won in the first round. Abdullah rejected the result and announced a parallel government.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2019_Afghan_presidential_election", "title": "Wikipedia: 2019 Afghan presidential election (infobox and results table)", "accessed": "2026-10-16" }
+        ],
+        "confidence": "verified"
+      }
+    }
+  ],
+  "source": [
+    { "url": "https://en.wikipedia.org/wiki/List_of_heads_of_state_of_Afghanistan", "title": "Wikipedia: List of heads of state of Afghanistan", "accessed": "2026-10-16" }
+  ],
+  "confidence": "verified"
+}

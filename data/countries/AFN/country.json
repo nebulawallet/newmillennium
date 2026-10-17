@@ -1,0 +1,84 @@
+{
+  "tag": "AFN",
+  "name": { "en": "Islamic State of Afghanistan", "native": "Dawlat-e Eslami-ye Afghanestan", "official": { "en": "Islamic State of Afghanistan" } },
+  "adjective": "Afghan",
+  "culture_primary": "tajik",
+  "government": {
+    "type": "failed_contested",
+    "effective_executive": "afn.president",
+    "head_of_state_office": "afn.president",
+    "head_of_government_office": "afn.president",
+    "constitution": {
+      "term_limit_amendable": true,
+      "emergency_powers": true,
+      "referendum_required_for": []
+    },
+    "note": "The Islamic State of Afghanistan was established on 24 April 1992 after the Peshawar Accords. After the Taliban took Kabul on 27 September 1996 it remained the internationally recognised government and held the UN seat, but controlled only the north-east (seat at Taloqan 1996-2000 and Fayzabad 2000-2001). Its armed forces fought as the United Islamic Front (Northern Alliance), founded in September 1996. President Burhanuddin Rabbani handed power to Hamid Karzai's Interim Administration on 22 December 2001 under the Bonn Agreement; the state was succeeded by the Transitional Islamic State of Afghanistan (19 June 2002). The post of Prime Minister was abolished after Abdul Rahim Ghafoorzai's term ended on 21 August 1997, so the President is treated as both head of state and head of government. No legislature functioned. The 'constitution' flags are rough approximations. United Front figures who later served the Islamic Republic (for example Abdul Rashid Dostum and Karim Khalili) are recorded here, and the post-2001 Afghan files (AFG) reference them and their parties."
+  },
+  "offices": [
+    {
+      "id": "afn.president",
+      "title": { "en": "President of the Islamic State of Afghanistan" },
+      "role": "head_of_state_and_government",
+      "power_weight": 0.6,
+      "selection": "council",
+      "succession": { "type": "council_choice" },
+      "holders": [
+        { "person": "afn.burhanuddin_rabbani", "from": "1992-06-28", "to": "2001-12-22", "note": "Handed power to Hamid Karzai, Chairman of the Interim Administration, on 22 December 2001 (see AFG)." }
+      ],
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/List_of_heads_of_state_of_Afghanistan", "title": "Wikipedia: List of heads of state of Afghanistan (Islamic State of Afghanistan, 1992-2001)", "accessed": "2026-10-16" },
+        { "url": "https://en.wikipedia.org/wiki/Islamic_State_of_Afghanistan", "title": "Wikipedia: Islamic State of Afghanistan (infobox)", "accessed": "2026-10-16" },
+        { "url": "https://www.wikidata.org/wiki/Q188667", "title": "Wikidata: Burhanuddin Rabbani (President of Afghanistan 1992-06-28 to 2001-12-22)", "accessed": "2026-10-16" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "afn.defence_minister",
+      "title": { "en": "Minister of Defence" },
+      "role": "minister",
+      "portfolio": "defence",
+      "power_weight": 0.4,
+      "selection": "appointed",
+      "appointed_by": "afn.president",
+      "holders": [
+        { "person": "afn.ahmad_shah_massoud", "from": "1992-04-28", "to": "2001-09-09", "note": "Also the military leader of the United Front. Died on 9 September 2001." },
+        { "person": "afn.mohammed_fahim", "from": "2001-09-09", "to": "2001-12-22", "note": "Remained Minister of Defence in the Interim and Transitional Administrations until 23 December 2004 (Wikidata)." }
+      ],
+      "note": "Recorded here because the Defence Minister commanded the forces that held the Islamic State's territory in 2000.",
+      "source": [
+        { "url": "https://www.wikidata.org/wiki/Q200029", "title": "Wikidata: Ahmad Shah Massoud (Minister of Defence 1992-04-28 to 2001-09-09)", "accessed": "2026-10-16" },
+        { "url": "https://www.wikidata.org/wiki/Q167526", "title": "Wikidata: Muhammad Fahim (Minister of Defence 2001-09-09 to 2004-12-23)", "accessed": "2026-10-16" }
+      ],
+      "confidence": "verified"
+    }
+  ],
+  "legislature": null,
+  "party_system": "multi_party",
+  "start_2000": {
+    "ruling_parties": ["afn.jamiat", "afn.junbish", "afn.wahdat", "afn.dawah"],
+    "ideology_support": {
+      "islamist": 0.4,
+      "regionalist": 0.35,
+      "islamic_democrat": 0.1,
+      "tribal_traditional": 0.1,
+      "technocratic": 0.05
+    },
+    "ideology_support_note": "Estimate only: no national vote had been held. The split reflects the parties of the United Front in 2000: Jamiat-e Islami and the Islamic Dawah Organisation (islamist), the Uzbek-based Junbish and the Hazara-based Hezb-e Wahdat (regionalist), plus local commanders and notables (tribal_traditional) and moderate and technocratic supporters of the Rome and Bonn processes (islamic_democrat, technocratic).",
+    "stability": 0.15,
+    "war_support": 0.7,
+    "civil_war": {
+      "sides": ["AFN", "AFG"],
+      "note": "Afghan Civil War (1996-2001): on 1 January 2000 the forces of the Islamic State of Afghanistan (United Front) were fighting the Taliban's Islamic Emirate, which held Kabul and about 90% of the country."
+    }
+  },
+  "claims": [
+    { "tag": "AFG", "note": "The Islamic State of Afghanistan, recognised by the UN, claimed to be the government of all Afghanistan, including the territory held by the Taliban's Islamic Emirate." }
+  ],
+  "source": [
+    { "url": "https://en.wikipedia.org/wiki/Islamic_State_of_Afghanistan", "title": "Wikipedia: Islamic State of Afghanistan", "accessed": "2026-10-16" },
+    { "url": "https://en.wikipedia.org/wiki/Northern_Alliance", "title": "Wikipedia: Northern Alliance (founded September 1996; leaders)", "accessed": "2026-10-16" },
+    { "url": "https://en.wikipedia.org/wiki/Prime_Minister_of_Afghanistan", "title": "Wikipedia: Prime Minister of Afghanistan (post in the Islamic State abolished after August 1997)", "accessed": "2026-10-16" }
+  ],
+  "confidence": "verified"
+}

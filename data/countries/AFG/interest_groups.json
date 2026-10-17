@@ -1,0 +1,15 @@
+{
+  "note": "Influence and approval are gameplay starting values for 1 January 2000 in Taliban-held Afghanistan, not measured data. Power lay with the Taliban leadership and its clerical networks ('religious_establishment'), its fighters ('military'), and Pashtun tribal and rural communities ('rural'). Approval is of the Islamic Emirate's order.",
+  "interest_groups": [
+    { "type": "military", "influence": 0.55, "approval": 65, "note": "Taliban fighters and allied local commanders." },
+    { "type": "security_services", "influence": 0.2, "approval": 60, "note": "Including the religious police (Ministry for the Promotion of Virtue and Prevention of Vice)." },
+    { "type": "business", "influence": 0.1, "approval": 40, "note": "Transit and cross-border traders." },
+    { "type": "labour_unions", "influence": 0.0, "approval": 30 },
+    { "type": "religious_establishment", "influence": 0.6, "approval": 70 },
+    { "type": "rural", "influence": 0.35, "approval": 45 },
+    { "type": "urban_middle_class", "influence": 0.03, "approval": 20 },
+    { "type": "minorities", "influence": 0.03, "approval": 15, "note": "Hazara, Tajik and Uzbek communities in Taliban-held areas." },
+    { "type": "youth_students", "influence": 0.05, "approval": 35, "note": "Madrasa students formed part of the movement's base." },
+    { "type": "media", "influence": 0.01, "approval": 20, "note": "Media were limited to the state radio (Voice of Sharia)." }
+  ]
+}

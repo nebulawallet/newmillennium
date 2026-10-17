@@ -1,0 +1,458 @@
+{
+  "tag": "IRQ",
+  "name": {
+    "en": "Iraq",
+    "native": "العراق",
+    "native_latin": "al-Iraq",
+    "official": {
+      "en": "Republic of Iraq",
+      "native": "جمهورية العراق",
+      "native_latin": "Jumhuriyat al-Iraq"
+    }
+  },
+  "adjective": "Iraqi",
+  "culture_primary": "iraqi_arab",
+  "government": {
+    "type": "one_party_state",
+    "effective_executive": "irq.president",
+    "head_of_state_office": "irq.president",
+    "head_of_government_office": "irq.prime_minister",
+    "constitution": {
+      "term_limit_amendable": true,
+      "emergency_powers": true,
+      "referendum_required_for": [
+        "constitution"
+      ]
+    },
+    "note": "Government type as on 1 January 2000: Ba'athist Iraq. Saddam Hussein was President (since 16 July 1979), Chairman of the Revolutionary Command Council, Prime Minister (since 29 May 1994) and Regional Secretary of the Ba'ath Party, which led the National Progressive Front. Candidates for the National Assembly were approved in advance. The Kurdish north (KUR) had been outside Baghdad's control since 1991. Stages after 2000, as dated facts: the government fell when US forces took Baghdad on 9 April 2003; Jay Garner directed the Office for Reconstruction and Humanitarian Assistance from 21 April 2003; Paul Bremer headed the Coalition Provisional Authority from 12 May 2003 to 28 June 2004; an appointed Iraqi Governing Council sat from 13 July 2003 to 1 June 2004 under a monthly rotating presidency; the Iraqi Interim Government (President Ghazi al-Yawer, Prime Minister Ayad Allawi) took office on 1 June 2004 and sovereignty was transferred on 28 June 2004; a Transitional National Assembly was elected on 30 January 2005 and the Transitional Government of Ibrahim al-Jaafari took office on 3 May 2005; the permanent constitution was approved by referendum on 15 October 2005 and the first Council of Representatives was elected on 15 December 2005. Under the 2005 constitution Iraq is a federal parliamentary republic: the Council of Representatives elects the President, who charges the nominee of the largest bloc with forming a government. The type field keeps the 2000 value; from 2004-2005 the Prime Minister is the effective executive and the presidency is largely ceremonial."
+  },
+  "offices": [
+    {
+      "id": "irq.president",
+      "title": {
+        "en": "President of the Republic of Iraq",
+        "native": "رئيس جمهورية العراق",
+        "native_latin": "Ra'is Jumhuriyat al-Iraq"
+      },
+      "role": "head_of_state",
+      "power_weight": 0.6,
+      "selection": "legislature",
+      "term_years": 4,
+      "succession": {
+        "type": "acting_then_election"
+      },
+      "holders": [
+        {
+          "person": "irq.saddam_hussein",
+          "from": "1979-07-16",
+          "to": "2003-04-09",
+          "note": "Also Chairman of the Revolutionary Command Council. Confirmed in office by referendum on 15 October 2002. Deposed when US forces took Baghdad."
+        },
+        {
+          "person": null,
+          "from": "2003-04-09",
+          "to": "2004-06-28",
+          "vacant_reason": "No Iraqi head of state after the fall of the Ba'athist government; authority rested with the occupying powers (ORHA, then the Coalition Provisional Authority, see irq.cpa_administrator), with an appointed Iraqi Governing Council from 13 July 2003."
+        },
+        {
+          "person": "irq.ghazi_al_yawer",
+          "from": "2004-06-28",
+          "to": "2005-04-07",
+          "note": "Interim President; appointed on 1 June 2004 with the Interim Government and took office on the transfer of sovereignty."
+        },
+        {
+          "person": "irq.jalal_talabani",
+          "from": "2005-04-07",
+          "to": "2014-07-24",
+          "note": "Elected by the Transitional National Assembly on 6 April 2005 as head of a three-member Presidency Council; re-elected by the Council of Representatives on 22 April 2006 and in November 2010."
+        },
+        {
+          "person": "irq.fuad_masum",
+          "from": "2014-07-24",
+          "to": "2018-10-02"
+        },
+        {
+          "person": "irq.barham_salih",
+          "from": "2018-10-02",
+          "to": "2022-10-17",
+          "note": "Wikidata ends the tenure on 13 October 2022 (election day); the Wikipedia list gives 17 October 2022."
+        },
+        {
+          "person": "irq.abdul_latif_rashid",
+          "from": "2022-10-17",
+          "to": "2026-04-12",
+          "note": "Elected on 13 October 2022. Wikidata gives 13 October 2022 to 11 April 2026; the Wikipedia list gives 17 October 2022 to 12 April 2026."
+        },
+        {
+          "person": "irq.nizar_amidi",
+          "from": "2026-04-12",
+          "note": "Elected by the Council of Representatives on 11 April 2026 (second round, 227 votes). Checked after June 2026 against the fetched Wikipedia articles and Wikidata."
+        }
+      ],
+      "note": "Before 2003 the President, as Chairman of the Revolutionary Command Council, held supreme executive power (power_weight reflects 2000). Under the 2005 constitution the presidency is primarily symbolic and the President is elected by the Council of Representatives for a four-year term; by the informal muhasasa convention it is held by a Kurd, and every President since 2005 has come from the PUK.",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/List_of_presidents_of_Iraq",
+          "title": "Wikipedia: List of presidents of Iraq",
+          "accessed": "2026-10-16"
+        },
+        {
+          "url": "https://www.wikidata.org/wiki/Q889817",
+          "title": "Wikidata: President of Iraq (position held by)",
+          "accessed": "2026-10-16"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/President_of_Iraq",
+          "title": "Wikipedia: President of Iraq",
+          "accessed": "2026-10-16"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/2026_Iraqi_presidential_election",
+          "title": "Wikipedia: 2026 Iraqi presidential election",
+          "accessed": "2026-10-16"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "irq.prime_minister",
+      "title": {
+        "en": "Prime Minister of Iraq",
+        "native": "رئيس مجلس الوزراء",
+        "native_latin": "Ra'is Majlis al-Wuzara"
+      },
+      "role": "head_of_government",
+      "power_weight": 0.4,
+      "selection": "legislature",
+      "appointed_by": "irq.president",
+      "term_years": 4,
+      "succession": {
+        "type": "acting_then_election"
+      },
+      "holders": [
+        {
+          "person": "irq.saddam_hussein",
+          "from": "1994-05-29",
+          "to": "2003-04-09",
+          "note": "Second tenure (also 1979-1991)."
+        },
+        {
+          "person": null,
+          "from": "2003-04-09",
+          "to": "2004-06-01",
+          "vacant_reason": "No Iraqi government after the fall of Baghdad; the Coalition Provisional Authority governed. The Wikipedia list and Wikidata record the rotating presidents of the Governing Council (13 July 2003 to 1 June 2004) in this list; they are recorded separately in irq.governing_council_president."
+        },
+        {
+          "person": "irq.ayad_allawi",
+          "from": "2004-06-01",
+          "to": "2005-05-03",
+          "note": "Interim Government."
+        },
+        {
+          "person": "irq.ibrahim_al_jaafari",
+          "from": "2005-05-03",
+          "to": "2006-05-20",
+          "note": "Transitional Government."
+        },
+        {
+          "person": "irq.nouri_al_maliki",
+          "from": "2006-05-20",
+          "to": "2014-09-08",
+          "note": "Wikidata gives the start as 20 May 2007, an error; the Wikipedia list gives 20 May 2006."
+        },
+        {
+          "person": "irq.haider_al_abadi",
+          "from": "2014-09-08",
+          "to": "2018-10-25"
+        },
+        {
+          "person": "irq.adil_abdul_mahdi",
+          "from": "2018-10-25",
+          "to": "2020-05-07"
+        },
+        {
+          "person": "irq.mustafa_al_kadhimi",
+          "from": "2020-05-07",
+          "to": "2022-10-27",
+          "note": "Wikidata gives 6 May 2020 to 14 October 2022; the Wikipedia list gives 7 May 2020 to 27 October 2022."
+        },
+        {
+          "person": "irq.mohammed_shia_al_sudani",
+          "from": "2022-10-27",
+          "to": "2026-05-14",
+          "note": "Wikidata gives the start as 14 October 2022 (designation); the Wikipedia list gives 27 October 2022. Continued until his successor took office after the November 2025 election."
+        },
+        {
+          "person": "irq.ali_al_zaidi",
+          "from": "2026-05-14",
+          "note": "Named by the Coordination Framework and tasked with forming a government on 27 April 2026 (the date Wikidata uses as his start); took office on 14 May 2026 according to Wikipedia. Checked after June 2026 against the fetched articles."
+        }
+      ],
+      "note": "Under the 2005 constitution the Prime Minister is the direct executive authority and commander-in-chief. By the informal muhasasa convention the office is held by a Shia Arab.",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/List_of_prime_ministers_of_Iraq",
+          "title": "Wikipedia: List of prime ministers of Iraq",
+          "accessed": "2026-10-16"
+        },
+        {
+          "url": "https://www.wikidata.org/wiki/Q1476165",
+          "title": "Wikidata: Prime Minister of Iraq (position held by)",
+          "accessed": "2026-10-16"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/Prime_Minister_of_Iraq",
+          "title": "Wikipedia: Prime Minister of Iraq",
+          "accessed": "2026-10-16"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/Ali_al-Zaidi",
+          "title": "Wikipedia: Ali al-Zaidi",
+          "accessed": "2026-10-16"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "irq.cpa_administrator",
+      "title": {
+        "en": "Administrator of the Coalition Provisional Authority"
+      },
+      "role": "transitional_administrator",
+      "power_weight": 0.9,
+      "selection": "external_appointment",
+      "holders": [
+        {
+          "person": null,
+          "from": "2003-04-09",
+          "to": "2003-04-21",
+          "vacant_reason": "Between the fall of Baghdad and the arrival of the Office for Reconstruction and Humanitarian Assistance (ORHA) in Baghdad, no civil administrator is listed."
+        },
+        {
+          "person": "irq.jay_garner",
+          "from": "2003-04-21",
+          "to": "2003-05-12",
+          "note": "Director of the Office for Reconstruction and Humanitarian Assistance, the predecessor of the CPA."
+        },
+        {
+          "person": "irq.paul_bremer",
+          "from": "2003-05-12",
+          "to": "2004-06-28",
+          "note": "The CPA was dissolved when sovereignty passed to the Iraqi Interim Government."
+        }
+      ],
+      "note": "US-led occupation administration, 2003-2004. Appointed by the United States government.",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/List_of_presidents_of_Iraq",
+          "title": "Wikipedia: List of presidents of Iraq (Coalition Provisional Authority section)",
+          "accessed": "2026-10-16"
+        },
+        {
+          "url": "https://www.wikidata.org/wiki/Q489037",
+          "title": "Wikidata: Jay Garner (positions held)",
+          "accessed": "2026-10-16"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "irq.governing_council_president",
+      "title": {
+        "en": "President of the Iraqi Governing Council",
+        "native": "رئيس مجلس الحكم"
+      },
+      "role": "other",
+      "power_weight": 0.05,
+      "selection": "rotation",
+      "holders": [
+        {
+          "person": "irq.mohammad_bahr_al_uloom",
+          "from": "2003-07-13",
+          "to": "2003-07-31"
+        },
+        {
+          "person": "irq.ibrahim_al_jaafari",
+          "from": "2003-08-01",
+          "to": "2003-08-31"
+        },
+        {
+          "person": "irq.ahmed_chalabi",
+          "from": "2003-09-01",
+          "to": "2003-09-30"
+        },
+        {
+          "person": "irq.ayad_allawi",
+          "from": "2003-10-01",
+          "to": "2003-10-31"
+        },
+        {
+          "person": "irq.jalal_talabani",
+          "from": "2003-11-01",
+          "to": "2003-11-30"
+        },
+        {
+          "person": "irq.abdul_aziz_al_hakim",
+          "from": "2003-12-01",
+          "to": "2003-12-31"
+        },
+        {
+          "person": "irq.adnan_pachachi",
+          "from": "2004-01-01",
+          "to": "2004-01-31"
+        },
+        {
+          "person": "irq.mohsen_abdel_hamid",
+          "from": "2004-02-01",
+          "to": "2004-02-29"
+        },
+        {
+          "person": "irq.mohammad_bahr_al_uloom",
+          "from": "2004-03-01",
+          "to": "2004-03-31"
+        },
+        {
+          "person": "irq.masoud_barzani",
+          "from": "2004-04-01",
+          "to": "2004-04-30"
+        },
+        {
+          "person": "irq.ezzedine_salim",
+          "from": "2004-05-01",
+          "to": "2004-05-17",
+          "note": "Killed in office."
+        },
+        {
+          "person": "irq.ghazi_al_yawer",
+          "from": "2004-05-17",
+          "to": "2004-06-01"
+        }
+      ],
+      "note": "The appointed Governing Council served under the Coalition Provisional Authority; its presidency rotated monthly among nine members. The Wikipedia list of prime ministers and Wikidata record these presidents as prime ministers (Bahr al-Uloom as acting Prime Minister).",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/List_of_prime_ministers_of_Iraq",
+          "title": "Wikipedia: List of prime ministers of Iraq (Governing Council section)",
+          "accessed": "2026-10-16"
+        },
+        {
+          "url": "https://www.wikidata.org/wiki/Q1476165",
+          "title": "Wikidata: Prime Minister of Iraq (position held by)",
+          "accessed": "2026-10-16"
+        }
+      ],
+      "confidence": "verified"
+    }
+  ],
+  "legislature": {
+    "name": {
+      "en": "Council of Representatives of Iraq (National Assembly before 2005)",
+      "native": "مجلس النواب العراقي",
+      "native_latin": "Majlis al-Nuwwab al-Iraqi"
+    },
+    "chambers": [
+      {
+        "id": "council_of_representatives",
+        "name": {
+          "en": "National Assembly (from 2006 the Council of Representatives)",
+          "native": "المجلس الوطني",
+          "native_latin": "al-Majlis al-Watani"
+        },
+        "seats": 250,
+        "term_years": 4,
+        "elected": "mixed",
+        "system": {
+          "type": "list_pr",
+          "district_model": "provinces",
+          "reserved_seats": [
+            {
+              "group": "Minorities (Christian, Yazidi and other minority seats)",
+              "seats": 9
+            }
+          ],
+          "note": "2000: the National Assembly had 250 seats; candidates were approved beforehand by a committee chaired by the Justice Minister, and 30 members were appointed by the government to represent the Kurdish governorates outside its control. seats_2000 is the result of the 24 March 1996 election (the 27 March 2000 election gave the Ba'ath Party 165, independents 55 and 30 appointees). From 2005 the chamber was elected by list PR: 275 seats in 2005, 325 in 2010, 328 in 2014 and 329 from 2018. The 2025 infobox records 9 minority seats (also 9 in 2021). The seat count here is the 2000 figure; election records give the later sizes. District arrangements changed between elections and are not modelled."
+        },
+        "seats_2000": {
+          "irq.baath": 161,
+          "independents": 83,
+          "others": 6
+        },
+        "confidence_chamber": false,
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/1996_Iraqi_parliamentary_election",
+            "title": "Wikipedia: 1996 Iraqi parliamentary election (IPU figures)",
+            "accessed": "2026-10-16"
+          },
+          {
+            "url": "https://en.wikipedia.org/wiki/2000_Iraqi_parliamentary_election",
+            "title": "Wikipedia: 2000 Iraqi parliamentary election",
+            "accessed": "2026-10-16"
+          },
+          {
+            "url": "https://en.wikipedia.org/wiki/2018_Iraqi_parliamentary_election",
+            "title": "Wikipedia: 2018 Iraqi parliamentary election (329 seats)",
+            "accessed": "2026-10-16"
+          }
+        ],
+        "confidence": "needs_review",
+        "review_note": "The 1996 table gives Ba'ath 161, a 'Kurdistan Democratic Party' 3 (linked to Barzani's KDP, but probably a Baghdad-aligned group; recorded under others), Kurdistan Revolutionary Party 2, a Communist Party 1 and independents 83, totalling 250, while the text says 30 members were appointed for Kurdistan; it is unclear whether the appointees are counted among the independents."
+      }
+    ]
+  },
+  "party_system": "one_party",
+  "start_2000": {
+    "ruling_parties": [
+      "irq.baath"
+    ],
+    "ideology_support": {
+      "baathist": 0.47,
+      "islamist": 0.22,
+      "shia_theocratic": 0.03,
+      "islamic_democrat": 0.03,
+      "regionalist": 0.12,
+      "social_democrat": 0.03,
+      "marxist_leninist": 0.03,
+      "centrist_liberal": 0.02,
+      "classical_liberal": 0.01,
+      "tribal_traditional": 0.04
+    },
+    "ideology_support_note": "Estimate only: Ba'athist Iraq held no competitive elections (all 1996 and 2000 candidates were pre-approved, and the 2002 referendum reported 100% for Saddam Hussein), so there is no vote share to derive from. Weights are a gameplay estimate informed by the first free election, January 2005 (United Iraqi Alliance of Shia Islamist parties 48.2%, Kurdish alliance 25.7%, Allawi's secular Iraqi List 13.8%), adjusted for the 2000 situation, in which the Kurdish north (KUR) is a separate tag and the Ba'ath Party controlled public life: baathist = Ba'ath Party and its National Progressive Front partners; islamist = Shia Islamist opposition (Dawa, SCIRI) and Sunni Islamist currents; shia_theocratic = supporters of clerical rule; islamic_democrat = Iraqi Islamic Party; regionalist and social_democrat = Kurdish parties (KDP, PUK) among Kurds under Baghdad's control; marxist_leninist = Iraqi Communist Party; centrist_liberal / classical_liberal = Iraqi National Accord and Iraqi National Congress (exile opposition); tribal_traditional = tribal networks.",
+    "stability": 0.45,
+    "war_support": 0.5
+  },
+  "claims": [
+    {
+      "tag": "KUR",
+      "note": "Iraq regards the Kurdish governorates (Erbil, Dohuk, Sulaymaniyah) as part of its territory; they had been outside the central government's control since 1991. The 2005 constitution recognises the Kurdistan Region as a federal region of Iraq."
+    }
+  ],
+  "source": [
+    {
+      "url": "https://en.wikipedia.org/wiki/List_of_presidents_of_Iraq",
+      "title": "Wikipedia: List of presidents of Iraq",
+      "accessed": "2026-10-16"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/List_of_prime_ministers_of_Iraq",
+      "title": "Wikipedia: List of prime ministers of Iraq",
+      "accessed": "2026-10-16"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/President_of_Iraq",
+      "title": "Wikipedia: President of Iraq",
+      "accessed": "2026-10-16"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Prime_Minister_of_Iraq",
+      "title": "Wikipedia: Prime Minister of Iraq",
+      "accessed": "2026-10-16"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/2005_Iraqi_constitutional_referendum",
+      "title": "Wikipedia: 2005 Iraqi constitutional referendum",
+      "accessed": "2026-10-16"
+    }
+  ],
+  "confidence": "verified"
+}

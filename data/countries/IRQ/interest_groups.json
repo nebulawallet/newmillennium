@@ -1,0 +1,15 @@
+{
+  "note": "Influence and approval are gameplay starting values for 1 January 2000 (Ba'athist Iraq under Saddam Hussein, under UN sanctions), not measured data. Influence reflects institutional weight: the security services and Republican Guard, the Ba'ath Party apparatus, tribal networks courted by the government in the 1990s, and the state-controlled economy.",
+  "interest_groups": [
+    { "type": "military", "influence": 0.55, "approval": 55, "note": "Regular army and Republican Guard." },
+    { "type": "security_services", "influence": 0.7, "approval": 70 },
+    { "type": "business", "influence": 0.15, "approval": 40, "note": "Largely state-run economy under sanctions; trading networks tied to the government." },
+    { "type": "labour_unions", "influence": 0.05, "approval": 40, "note": "Unions were organised under the party." },
+    { "type": "religious_establishment", "influence": 0.2, "approval": 30, "note": "Includes the Shia clerical establishment in Najaf and Karbala, largely estranged from the government." },
+    { "type": "rural", "influence": 0.3, "approval": 45, "note": "Tribal networks." },
+    { "type": "urban_middle_class", "influence": 0.15, "approval": 30 },
+    { "type": "minorities", "influence": 0.05, "approval": 20, "note": "Kurds under Baghdad's control, Turkmen, Assyrians, Yazidis." },
+    { "type": "youth_students", "influence": 0.1, "approval": 40 },
+    { "type": "media", "influence": 0.1, "approval": 60, "note": "State-controlled." }
+  ]
+}

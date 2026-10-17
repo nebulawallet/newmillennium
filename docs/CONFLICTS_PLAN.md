@@ -27,8 +27,8 @@ Support for the tiers (done 17 October 2026): `research` on each entry in `data/
 | IND | 6 files | Keep as light if wanted |
 | PAK | 5 files | Keep as light if wanted |
 | BGD | 4 files | Drop (default) |
-| IRQ | 6 files | **Needed**: finish and audit |
-| AFG, AFN | 6 files each | **Needed**: finish and audit |
+| IRQ | 6 files | Done: audited, committed (light) |
+| AFG, AFN | 6 files each | Done: audited, committed (light) |
 | CAN | 6 files | Optional light |
 | MEX | 4 files | Optional light |
 | EGY | 1 file | Optional |

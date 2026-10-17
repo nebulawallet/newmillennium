@@ -1,0 +1,1183 @@
+{
+  "parties": [
+    {
+      "id": "irq.baath",
+      "name": {
+        "en": "Arab Socialist Ba'ath Party - Iraq Region",
+        "native": "حزب البعث العربي الاشتراكي في العراق",
+        "native_latin": "Hizb al-Ba'th al-'Arabi al-Ishtiraki fi al-'Iraq"
+      },
+      "abbrev": {
+        "en": "Ba'ath",
+        "native": "البعث"
+      },
+      "color": "#1B7F3B",
+      "sub_ideology": "baathist",
+      "founded": 1951,
+      "dissolved": "2003-05-01",
+      "status_2000": "active",
+      "leader_history": [
+        {
+          "person": "irq.saddam_hussein",
+          "from": "1989-06-23",
+          "to": "2006-12-30",
+          "title": "Regional Secretary"
+        },
+        {
+          "person": "irq.izzat_ibrahim_al_douri",
+          "from": "2007-01-03",
+          "to": 2020,
+          "title": "Regional Secretary"
+        }
+      ],
+      "popularity_2000": 0.64,
+      "popularity_note": "No vote shares were published for the 1996 or 2000 elections, in which all candidates were pre-approved. 0.64 is the Ba'ath share of seats in 1996 (161 of 250), used as a proxy; in March 2000 it won 165 of 250.",
+      "factions": [
+        {
+          "id": "presidential_family_and_security",
+          "name": "Presidential circle and security apparatus",
+          "sub_ideology": "personalist_authoritarian",
+          "strength": 0.45,
+          "figures": [
+            "irq.saddam_hussein"
+          ],
+          "note": "An institutional grouping, not a documented faction: the President's office, the Revolutionary Command Council leadership and the security and Republican Guard establishment around the President. Strength is a gameplay estimate."
+        },
+        {
+          "id": "party_apparatus",
+          "name": "Party apparatus (Regional Command)",
+          "sub_ideology": "baathist",
+          "strength": 0.35,
+          "figures": [
+            "irq.izzat_ibrahim_al_douri",
+            "irq.taha_yassin_ramadan"
+          ],
+          "note": "An institutional grouping, not a documented faction: senior members of the Ba'ath Regional Command; al-Douri and Ramadan were Vice Presidents until 2003. Strength is a gameplay estimate."
+        },
+        {
+          "id": "state_administration",
+          "name": "Government and diplomatic administration",
+          "sub_ideology": "statist",
+          "strength": 0.2,
+          "figures": [
+            "irq.tariq_aziz"
+          ],
+          "note": "An institutional grouping, not a documented faction: ministers and officials running the government and foreign relations; Tariq Aziz was Deputy Prime Minister 1979-2003. Strength is a gameplay estimate."
+        }
+      ],
+      "note": "Led the National Progressive Front. Banned after 2003 (Wikidata gives dissolution as 1 May 2003; the CPA's de-Ba'athification order followed in May 2003). Founding: Wikipedia says the Iraqi branch was founded in the late 1940s or early 1950s and was led from 1951 by Fuad al-Rikabi; Wikidata gives 1951. Al-Douri led the banned party from January 2007 until his death in October 2020.",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Arab_Socialist_Ba%27ath_Party_%E2%80%93_Iraq_Region",
+          "title": "Wikipedia: Arab Socialist Ba'ath Party - Iraq Region",
+          "accessed": "2026-10-16"
+        },
+        {
+          "url": "https://www.wikidata.org/wiki/Q1878844",
+          "title": "Wikidata: Arab Socialist Ba'ath Party - Iraq Region (founded, dissolved)",
+          "accessed": "2026-10-16"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/1996_Iraqi_parliamentary_election",
+          "title": "Wikipedia: 1996 Iraqi parliamentary election",
+          "accessed": "2026-10-16"
+        }
+      ],
+      "confidence": "needs_review",
+      "review_note": "Founding year: sources say late 1940s or early 1950s; 1951 (Wikidata, and the year al-Rikabi began leading it) is stored. The colour is a choice, not sourced."
+    },
+    {
+      "id": "irq.sciri",
+      "name": {
+        "en": "Islamic Supreme Council of Iraq (SCIRI until 2007)",
+        "native": "المجلس الأعلى الإسلامي العراقي",
+        "native_latin": "al-Majlis al-A'la al-Islami al-'Iraqi"
+      },
+      "abbrev": {
+        "en": "ISCI",
+        "native": "المجلس الأعلى"
+      },
+      "color": "#2E8B57",
+      "sub_ideology": "islamist",
+      "founded": 1982,
+      "status_2000": "exiled",
+      "leader_history": [
+        {
+          "person": "irq.mohammad_baqir_al_hakim",
+          "from": 1982,
+          "to": "2003-08-29"
+        },
+        {
+          "person": "irq.abdul_aziz_al_hakim",
+          "from": "2003-08-29",
+          "to": "2009-08-26"
+        },
+        {
+          "person": "irq.ammar_al_hakim",
+          "from": 2009,
+          "to": 2017
+        }
+      ],
+      "popularity_2000": 0,
+      "popularity_note": "Exiled opposition in 2000 (based in Iran); no vote. From 2005 it ran within the United Iraqi Alliance.",
+      "note": "Founded in 1982 as the Supreme Council for the Islamic Revolution in Iraq by Mohammad Baqir al-Hakim. Wikipedia: led by his brother Abdul Aziz al-Hakim after his assassination in August 2003, and by Ammar al-Hakim after Abdul Aziz's death in 2009; Ammar left to found the National Wisdom Movement in July 2017. Humam Hamoudi is listed as leader as of 2025 (not modelled). Its armed wing became the Badr Organization.",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Islamic_Supreme_Council_of_Iraq",
+          "title": "Wikipedia: Islamic Supreme Council of Iraq",
+          "accessed": "2026-10-16"
+        },
+        {
+          "url": "https://www.wikidata.org/wiki/Q718723",
+          "title": "Wikidata: Islamic Supreme Council of Iraq (founded, chairs)",
+          "accessed": "2026-10-16"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "irq.dawa",
+      "name": {
+        "en": "Islamic Dawa Party",
+        "native": "حزب الدعوة الإسلامية",
+        "native_latin": "Hizb al-Da'wa al-Islamiyya"
+      },
+      "abbrev": {
+        "en": "Dawa",
+        "native": "الدعوة"
+      },
+      "color": "#007A3D",
+      "sub_ideology": "islamist",
+      "founded": 1957,
+      "status_2000": "banned",
+      "leader_history": [
+        {
+          "person": "irq.nouri_al_maliki",
+          "from": 2019,
+          "title": "Secretary-General"
+        }
+      ],
+      "popularity_2000": 0,
+      "popularity_note": "Banned in Ba'athist Iraq; most of its leaders were in exile until 2003. No vote.",
+      "note": "Founded in July 1957 according to Wikipedia; Wikidata gives 1958. Ibrahim al-Jaafari (Prime Minister 2005-2006), Nouri al-Maliki (2006-2014) and Haider al-Abadi (2014-2018) came from the party. Wikipedia records Maliki's re-election as Secretary-General in July 2019; the start of his leadership and earlier leaders were not fetched.",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Islamic_Dawa_Party",
+          "title": "Wikipedia: Islamic Dawa Party",
+          "accessed": "2026-10-16"
+        },
+        {
+          "url": "https://www.wikidata.org/wiki/Q1048242",
+          "title": "Wikidata: Islamic Dawa Party (founded, chairs)",
+          "accessed": "2026-10-16"
+        }
+      ],
+      "confidence": "needs_review",
+      "review_note": "Leader history before 2019 is missing (Maliki was 're-elected' in 2019); add the earlier secretaries-general from a fetched source."
+    },
+    {
+      "id": "irq.inc",
+      "name": {
+        "en": "Iraqi National Congress",
+        "native": "المؤتمر الوطني العراقي",
+        "native_latin": "al-Mu'tamar al-Watani al-'Iraqi"
+      },
+      "abbrev": {
+        "en": "INC",
+        "native": "المؤتمر"
+      },
+      "color": "#4A6FA5",
+      "sub_ideology": "classical_liberal",
+      "founded": 1992,
+      "status_2000": "exiled",
+      "leader_history": [
+        {
+          "person": "irq.ahmed_chalabi",
+          "from": 1992,
+          "to": "2015-11-03"
+        }
+      ],
+      "popularity_2000": 0,
+      "popularity_note": "Exiled opposition umbrella in 2000; no vote.",
+      "note": "Wikipedia lists Iraqi nationalism and classical liberalism, centre. Led by Ahmed Chalabi until 2015, then Aras Habib (not modelled).",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Iraqi_National_Congress",
+          "title": "Wikipedia: Iraqi National Congress",
+          "accessed": "2026-10-16"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "irq.ina",
+      "name": {
+        "en": "Iraqi National Accord",
+        "native": "الوفاق الوطني العراقي",
+        "native_latin": "al-Wifaq al-Watani al-'Iraqi"
+      },
+      "abbrev": {
+        "en": "INA",
+        "native": "الوفاق"
+      },
+      "color": "#00009F",
+      "sub_ideology": "centrist_liberal",
+      "founded": 1991,
+      "status_2000": "exiled",
+      "leader_history": [
+        {
+          "person": "irq.ayad_allawi",
+          "from": 1991
+        }
+      ],
+      "popularity_2000": 0,
+      "popularity_note": "Exiled opposition in 2000; no vote.",
+      "note": "Founded in 1991 by Ayad Allawi, Tahsin Muallah and Salah Omar al-Ali as a secular opposition group; Wikipedia gives a centre-left position. From 2005 it contested elections inside Allawi's lists (irq.iraqiya).",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Iraqi_National_Accord",
+          "title": "Wikipedia: Iraqi National Accord",
+          "accessed": "2026-10-16"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "irq.icp",
+      "name": {
+        "en": "Iraqi Communist Party",
+        "native": "الحزب الشيوعي العراقي",
+        "native_latin": "al-Hizb al-Shuyu'i al-'Iraqi"
+      },
+      "abbrev": {
+        "en": "ICP",
+        "native": "حشع"
+      },
+      "color": "#CC0000",
+      "sub_ideology": "marxist_leninist",
+      "founded": "1934-03-31",
+      "status_2000": "banned",
+      "leader_history": [
+        {
+          "person": "irq.hamid_majid_mousa",
+          "from": 1993,
+          "to": 2016
+        }
+      ],
+      "popularity_2000": 0,
+      "popularity_note": "Opposition party outside the government's control in 2000; no vote. Led the People's Union list in January 2005 (0.83%, 2 seats) and joined the Sadrist-led Sairoon alliance in 2018.",
+      "note": "Hamid Majid Mousa was Secretary 1993-2016 (Wikipedia infobox, fetched 17 October 2026); Raid Fahmi succeeded him (no person record yet).",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Iraqi_Communist_Party",
+          "title": "Wikipedia: Iraqi Communist Party",
+          "accessed": "2026-10-16"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/January_2005_Iraqi_parliamentary_election",
+          "title": "Wikipedia: January 2005 Iraqi parliamentary election",
+          "accessed": "2026-10-16"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/Hamid_Majid_Mousa",
+          "title": "Wikipedia: Hamid Majid Mousa",
+          "accessed": "2026-10-17"
+        }
+      ],
+      "confidence": "needs_review",
+      "review_note": "Add Raid Fahmi (secretary from 2016) as a person and leader. Status in 2000 recorded as banned: confirm (the party was active in the Kurdish north outside Baghdad's control)."
+    },
+    {
+      "id": "irq.iip",
+      "name": {
+        "en": "Iraqi Islamic Party",
+        "native": "الحزب الإسلامي العراقي",
+        "native_latin": "al-Hizb al-Islami al-'Iraqi"
+      },
+      "abbrev": {
+        "en": "IIP",
+        "native": "الحزب الإسلامي"
+      },
+      "color": "#6B8E23",
+      "sub_ideology": "islamic_democrat",
+      "founded": "1960-04-26",
+      "status_2000": "banned",
+      "leader_history": [],
+      "popularity_2000": 0,
+      "popularity_note": "Banned in Ba'athist Iraq; no vote. Led the Iraqi Accord Front in December 2005.",
+      "note": "Sunni Islamist party (Wikipedia: Sunni Islamism, Islamic democracy, centre-right). Tariq al-Hashimi led it (Wikidata) and Mohsen Abdel Hamid was a member of the Governing Council; current leader per Wikipedia is Rashid al-Azzawi. Tenure dates were not fetched.",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Iraqi_Islamic_Party",
+          "title": "Wikipedia: Iraqi Islamic Party",
+          "accessed": "2026-10-16"
+        },
+        {
+          "url": "https://www.wikidata.org/wiki/Q2618800",
+          "title": "Wikidata: Iraqi Islamic Party (founded, chairs)",
+          "accessed": "2026-10-16"
+        }
+      ],
+      "confidence": "needs_review",
+      "review_note": "Add leader tenures (Mohsen Abdel Hamid, Tariq al-Hashimi and successors) from a fetched source."
+    },
+    {
+      "id": "irq.kdp",
+      "name": {
+        "en": "Kurdistan Democratic Party",
+        "native": "پارتی دیموکراتی کوردستان",
+        "native_latin": "Partiya Demokrat a Kurdistane"
+      },
+      "abbrev": {
+        "en": "KDP",
+        "native": "پارتی"
+      },
+      "color": "#FFD700",
+      "sub_ideology": "regionalist",
+      "founded": "1946-08-16",
+      "status_2000": "extra_parliamentary",
+      "leader_history": [
+        {
+          "person": "irq.masoud_barzani",
+          "from": 1979,
+          "title": "President"
+        }
+      ],
+      "popularity_2000": 0,
+      "popularity_note": "Did not take part in Baghdad's elections in 2000; it governed the Erbil-Dohuk part of the Kurdish Region (see KUR, where it won 45.3% in 1992).",
+      "regional_base": [
+        "kurdish"
+      ],
+      "note": "Kurdish nationalist party (Wikipedia: big tent). Ran within the Kurdish alliance lists in 2005 and 2010 and alone from 2014. Also recorded in KUR as kur.kdp.",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Kurdistan_Democratic_Party",
+          "title": "Wikipedia: Kurdistan Democratic Party",
+          "accessed": "2026-10-16"
+        },
+        {
+          "url": "https://www.wikidata.org/wiki/Q781221",
+          "title": "Wikidata: Kurdistan Democratic Party (founded, chairs)",
+          "accessed": "2026-10-16"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "irq.puk",
+      "name": {
+        "en": "Patriotic Union of Kurdistan",
+        "native": "یەکێتیی نیشتمانیی کوردستان",
+        "native_latin": "Yekêtîy Nîştimanîy Kurdistan"
+      },
+      "abbrev": {
+        "en": "PUK",
+        "native": "یەکێتی"
+      },
+      "color": "#3CB371",
+      "sub_ideology": "social_democrat",
+      "founded": "1975-06-01",
+      "status_2000": "extra_parliamentary",
+      "leader_history": [
+        {
+          "person": "irq.jalal_talabani",
+          "from": "1975-06-01",
+          "to": "2017-10-03",
+          "title": "Secretary-General"
+        },
+        {
+          "person": "irq.bafel_talabani",
+          "from": 2020,
+          "title": "President"
+        }
+      ],
+      "popularity_2000": 0,
+      "popularity_note": "Did not take part in Baghdad's elections in 2000; it governed the Sulaymaniyah part of the Kurdish Region (see KUR, where it won 43.6% in 1992).",
+      "regional_base": [
+        "kurdish"
+      ],
+      "note": "Wikipedia: centre-left to left-wing. Every President of Iraq since 2005 has come from the PUK. Leadership between Talabani's death in 2017 and Bafel Talabani's election in 2020 is not modelled (Wikidata also lists Kosrat Rasul Ali among its chairs, without dates).",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Patriotic_Union_of_Kurdistan",
+          "title": "Wikipedia: Patriotic Union of Kurdistan",
+          "accessed": "2026-10-16"
+        },
+        {
+          "url": "https://www.wikidata.org/wiki/Q677505",
+          "title": "Wikidata: Patriotic Union of Kurdistan (founded, chairs)",
+          "accessed": "2026-10-16"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "irq.kiu",
+      "name": {
+        "en": "Kurdistan Islamic Union",
+        "native": "یەکگرتووی ئیسلامیی کوردستان",
+        "native_latin": "Yekgirtûy Islamîy Kurdistan"
+      },
+      "abbrev": {
+        "en": "KIU",
+        "native": "یەکگرتوو"
+      },
+      "color": "#8B4513",
+      "sub_ideology": "islamic_democrat",
+      "founded": 1994,
+      "status_2000": "extra_parliamentary",
+      "leader_history": [
+        {
+          "person": "irq.salahaddin_bahaaddin",
+          "from": 1994,
+          "title": "Secretary-General"
+        }
+      ],
+      "popularity_2000": 0,
+      "popularity_note": "Active only in the Kurdish Region in 2000; no national vote.",
+      "regional_base": [
+        "kurdish"
+      ],
+      "note": "Wikipedia gives a right-wing position; leader Salahaddin Bahaaddin led its lists in 2005, 2010 and 2025. His start as leader is set to the founding year; confirm.",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Kurdistan_Islamic_Union",
+          "title": "Wikipedia: Kurdistan Islamic Union",
+          "accessed": "2026-10-16"
+        }
+      ],
+      "confidence": "needs_review",
+      "review_note": "Confirm that Salahaddin Bahaaddin has led the party since its founding in 1994 (the infobox names him as leader; the start year was not checked)."
+    },
+    {
+      "id": "irq.uia",
+      "name": {
+        "en": "United Iraqi Alliance / National Iraqi Alliance",
+        "native": "الائتلاف العراقي الموحد",
+        "native_latin": "al-I'tilaf al-'Iraqi al-Muwahhad"
+      },
+      "abbrev": {
+        "en": "UIA",
+        "native": "الائتلاف"
+      },
+      "color": "#00A651",
+      "sub_ideology": "islamist",
+      "founded": 2005,
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        {
+          "person": "irq.abdul_aziz_al_hakim",
+          "from": 2005,
+          "to": "2009-08-26"
+        },
+        {
+          "person": "irq.ammar_al_hakim",
+          "from": 2009
+        }
+      ],
+      "popularity_2000": 0,
+      "lineage": {
+        "formed_from": [
+          "irq.sciri",
+          "irq.dawa"
+        ]
+      },
+      "note": "Electoral alliance of mainly Shia Islamist parties (SCIRI, Dawa and others). Won the January and December 2005 elections; relaunched as the National Iraqi Alliance in August 2009 for the 2010 election, without Maliki's State of Law. Wikipedia's article (founded 2005) treats the two as one; leader per the infobox is Ammar al-Hakim, and Abdul Aziz al-Hakim led the UIA 2003-2009 according to the ISCI article. The 2005 election infoboxes name Ibrahim al-Jaafari as the list's leading candidate.",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/National_Iraqi_Alliance",
+          "title": "Wikipedia: National Iraqi Alliance (incl. United Iraqi Alliance)",
+          "accessed": "2026-10-16"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/Islamic_Supreme_Council_of_Iraq",
+          "title": "Wikipedia: Islamic Supreme Council of Iraq",
+          "accessed": "2026-10-16"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "irq.kurdistan_alliance",
+      "name": {
+        "en": "Democratic Patriotic Alliance of Kurdistan / Kurdistan List",
+        "native": "هاوپەیمانی کوردستان"
+      },
+      "abbrev": {
+        "en": "DPAK",
+        "native": "هاوپەیمانی"
+      },
+      "color": "#CCFF33",
+      "sub_ideology": "regionalist",
+      "founded": 2005,
+      "status_2000": "not_yet_founded",
+      "leader_history": [],
+      "popularity_2000": 0,
+      "lineage": {
+        "formed_from": [
+          "irq.kdp",
+          "irq.puk"
+        ]
+      },
+      "regional_base": [
+        "kurdish"
+      ],
+      "note": "Joint Kurdish list first presented in January 2005 (KDP, PUK, the Kurdistan Islamic Union in January 2005, and smaller parties); succeeded by the Kurdistan List in 2009-2010. From 2014 the KDP and PUK ran separately. Election leaders: Jalal Talabani (January 2005), Masoud Barzani (December 2005), Barham Salih (2010).",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Democratic_Patriotic_Alliance_of_Kurdistan",
+          "title": "Wikipedia: Democratic Patriotic Alliance of Kurdistan",
+          "accessed": "2026-10-16"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "irq.iraqiya",
+      "name": {
+        "en": "Iraqi National List / al-Iraqiya / al-Wataniya",
+        "native": "القائمة العراقية الوطنية",
+        "native_latin": "al-Qa'ima al-'Iraqiyya al-Wataniyya"
+      },
+      "abbrev": {
+        "en": "Iraqiya",
+        "native": "العراقية"
+      },
+      "color": "#1F3F8F",
+      "sub_ideology": "centrist_liberal",
+      "founded": 2005,
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        {
+          "person": "irq.ayad_allawi",
+          "from": 2005
+        }
+      ],
+      "popularity_2000": 0,
+      "lineage": {
+        "formed_from": [
+          "irq.ina"
+        ]
+      },
+      "note": "Ayad Allawi's secular, cross-sectarian lists, modelled as one party: the Iraqi List (January 2005), the Iraqi National List (December 2005), al-Iraqiya / Iraqi National Movement (formed October 2009, won most seats in 2010, dissolved December 2012), and al-Wataniya (2014, 2018). Wikipedia gives a centre-right position for al-Iraqiya; the INA itself is described as centre-left.",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Iraqi_National_Movement",
+          "title": "Wikipedia: Iraqi National Movement (al-Iraqiya)",
+          "accessed": "2026-10-16"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/January_2005_Iraqi_parliamentary_election",
+          "title": "Wikipedia: January 2005 Iraqi parliamentary election",
+          "accessed": "2026-10-16"
+        }
+      ],
+      "confidence": "needs_review",
+      "review_note": "Composite record of several successive Allawi lists; founded is set to 2005, the year the Iraqi List first stood (it may have been formed in late 2004)."
+    },
+    {
+      "id": "irq.tawafuq",
+      "name": {
+        "en": "Iraqi Accord Front",
+        "native": "جبهة التوافق العراقية",
+        "native_latin": "Jabhat al-Tawafuq al-'Iraqiyya"
+      },
+      "abbrev": {
+        "en": "Tawafuq",
+        "native": "التوافق"
+      },
+      "color": "#8FBC8F",
+      "sub_ideology": "islamic_democrat",
+      "founded": 2005,
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        {
+          "person": "irq.tariq_al_hashimi",
+          "from": 2005
+        }
+      ],
+      "popularity_2000": 0,
+      "lineage": {
+        "formed_from": [
+          "irq.iip"
+        ]
+      },
+      "note": "Sunni Arab coalition led by the Iraqi Islamic Party; third in December 2005 (44 seats). Led by Adnan al-Dulaimi in 2010 (not modelled).",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Iraqi_Accord_Front",
+          "title": "Wikipedia: Iraqi Accord Front",
+          "accessed": "2026-10-16"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/December_2005_Iraqi_parliamentary_election",
+          "title": "Wikipedia: December 2005 Iraqi parliamentary election",
+          "accessed": "2026-10-16"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "irq.dialogue_front",
+      "name": {
+        "en": "Iraqi National Dialogue Front",
+        "native": "الجبهة العراقية للحوار الوطني",
+        "native_latin": "al-Jabha al-'Iraqiyya lil-Hiwar al-Watani"
+      },
+      "abbrev": {
+        "en": "INDF",
+        "native": "الحوار"
+      },
+      "color": "#A0522D",
+      "sub_ideology": "national_conservative",
+      "founded": 2005,
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        {
+          "person": "irq.saleh_al_mutlaq",
+          "from": 2005
+        }
+      ],
+      "popularity_2000": 0,
+      "note": "Wikipedia: Iraqi nationalism, national conservatism, right-wing. Mutlaq later led the al-Arabiya Coalition (2014).",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Iraqi_National_Dialogue_Front",
+          "title": "Wikipedia: Iraqi National Dialogue Front",
+          "accessed": "2026-10-16"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "irq.sadrists",
+      "name": {
+        "en": "Sadrist Movement",
+        "native": "التيار الصدري",
+        "native_latin": "al-Tayyar al-Sadri"
+      },
+      "abbrev": {
+        "en": "Sadrists",
+        "native": "الصدريون"
+      },
+      "color": "#008B8B",
+      "sub_ideology": "islamist",
+      "founded": 2003,
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        {
+          "person": "irq.muqtada_al_sadr",
+          "from": 2003
+        }
+      ],
+      "popularity_2000": 0,
+      "note": "Led by Muqtada al-Sadr; the Wikipedia infobox now names it the National Shiite Movement. Its electoral vehicles were the al-Ahrar Bloc (2014), the Sairoon / Alliance Towards Reforms alliance with the Iraqi Communist Party and others (founded 25 January 2018, first in 2018 with 54 seats), and the Sadrist bloc (first in 2021, 73 seats). It is not among the lists in the 2025 results infobox.",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Sadrist_Movement",
+          "title": "Wikipedia: Sadrist Movement",
+          "accessed": "2026-10-16"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/Saairun",
+          "title": "Wikipedia: Alliance Towards Reforms (Sairoon)",
+          "accessed": "2026-10-16"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "irq.state_of_law",
+      "name": {
+        "en": "State of Law Coalition",
+        "native": "ائتلاف دولة القانون",
+        "native_latin": "I'tilaf Dawlat al-Qanun"
+      },
+      "abbrev": {
+        "en": "SLC",
+        "native": "دولة القانون"
+      },
+      "color": "#2E7D32",
+      "sub_ideology": "islamist",
+      "founded": 2009,
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        {
+          "person": "irq.nouri_al_maliki",
+          "from": 2009
+        }
+      ],
+      "popularity_2000": 0,
+      "lineage": {
+        "split_from": "irq.uia"
+      },
+      "note": "Nouri al-Maliki's coalition, built around the Dawa Party. Wikipedia: Shia Islamism, syncretic. Largest list in 2014 (92 seats).",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/State_of_Law_Coalition",
+          "title": "Wikipedia: State of Law Coalition",
+          "accessed": "2026-10-16"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "irq.gorran",
+      "name": {
+        "en": "Gorran Movement (Movement for Change)",
+        "native": "بزووتنەوەی گۆڕان",
+        "native_latin": "Bizutnewey Goran"
+      },
+      "abbrev": {
+        "en": "Gorran",
+        "native": "گۆڕان"
+      },
+      "color": "#4169E1",
+      "sub_ideology": "centrist_liberal",
+      "founded": 2009,
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        {
+          "person": "irq.nawshirwan_mustafa",
+          "from": 2009,
+          "to": "2017-05-19"
+        }
+      ],
+      "popularity_2000": 0,
+      "lineage": {
+        "split_from": "irq.puk"
+      },
+      "regional_base": [
+        "kurdish"
+      ],
+      "note": "Founded by Nawshirwan Mustafa in 2009 as a split from the PUK; Wikipedia: centre to centre-left. Led by Omar Said Ali in 2018 and Dana Ahmed Majid currently (not modelled). Also recorded in KUR as kur.gorran.",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Gorran_Movement",
+          "title": "Wikipedia: Gorran Movement",
+          "accessed": "2026-10-16"
+        },
+        {
+          "url": "https://www.wikidata.org/wiki/Q1145192",
+          "title": "Wikidata: Nawshirwan Mustafa (death date)",
+          "accessed": "2026-10-16"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "irq.mutahidoon",
+      "name": {
+        "en": "Muttahidoon (United for Reform)",
+        "native": "ائتلاف متحدون للإصلاح",
+        "native_latin": "I'tilaf Muttahidun lil-Islah"
+      },
+      "abbrev": {
+        "en": "Muttahidoon",
+        "native": "متحدون"
+      },
+      "color": "#1E90FF",
+      "sub_ideology": "islamic_democrat",
+      "founded": "2012-12-01",
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        {
+          "person": "irq.osama_al_nujaifi",
+          "from": 2012
+        }
+      ],
+      "popularity_2000": 0,
+      "lineage": {
+        "split_from": "irq.iraqiya"
+      },
+      "note": "Founded in December 2012 (month precision in Wikipedia; the first of the month is a placeholder). Wikipedia: regionalism, Islamic democracy, populism. Ran as the Iraqi Decision Alliance in 2018.",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Muttahidoon",
+          "title": "Wikipedia: Muttahidoon",
+          "accessed": "2026-10-16"
+        }
+      ],
+      "confidence": "needs_review",
+      "review_note": "Founding date known only to December 2012; the day is a placeholder (schema needs a full date or a year)."
+    },
+    {
+      "id": "irq.hikma",
+      "name": {
+        "en": "National Wisdom Movement",
+        "native": "تيار الحكمة الوطني",
+        "native_latin": "Tayyar al-Hikma al-Watani"
+      },
+      "abbrev": {
+        "en": "Hikma",
+        "native": "الحكمة"
+      },
+      "color": "#5D8AA8",
+      "sub_ideology": "islamist",
+      "founded": "2017-07-24",
+      "dissolved": "2021-01-15",
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        {
+          "person": "irq.ammar_al_hakim",
+          "from": "2017-07-24"
+        }
+      ],
+      "popularity_2000": 0,
+      "lineage": {
+        "split_from": "irq.sciri",
+        "merged_into": "irq.nsf"
+      },
+      "note": "Founded by Ammar al-Hakim after leaving ISCI; Wikipedia: catch-all, Islamism, nonsectarianism. The 2014 al-Muwatin list (Hakim, then ISCI) is recorded under this party in the 2014 results. Joined the Alliance of National State Forces in January 2021.",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/National_Wisdom_Movement",
+          "title": "Wikipedia: National Wisdom Movement",
+          "accessed": "2026-10-16"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "irq.victory",
+      "name": {
+        "en": "Victory Alliance",
+        "native": "ائتلاف النصر",
+        "native_latin": "I'tilaf al-Nasr"
+      },
+      "abbrev": {
+        "en": "Nasr",
+        "native": "النصر"
+      },
+      "color": "#0B6E4F",
+      "sub_ideology": "islamic_democrat",
+      "founded": "2017-12-14",
+      "dissolved": "2021-01-05",
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        {
+          "person": "irq.haider_al_abadi",
+          "from": "2017-12-14"
+        }
+      ],
+      "popularity_2000": 0,
+      "lineage": {
+        "split_from": "irq.state_of_law",
+        "merged_into": "irq.nsf"
+      },
+      "note": "Haider al-Abadi's list; Wikipedia: moderation, nonsectarianism, centre. No closer sub-ideology exists than islamic_democrat for a moderate Islamic-rooted cross-sectarian list.",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Victory_Alliance",
+          "title": "Wikipedia: Victory Alliance",
+          "accessed": "2026-10-16"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "irq.fatah",
+      "name": {
+        "en": "Fatah Alliance",
+        "native": "ائتلاف الفتح",
+        "native_latin": "I'tilaf al-Fath"
+      },
+      "abbrev": {
+        "en": "Fatah",
+        "native": "الفتح"
+      },
+      "color": "#006400",
+      "sub_ideology": "islamist",
+      "founded": 2018,
+      "dissolved": 2025,
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        {
+          "person": "irq.hadi_al_amiri",
+          "from": 2018,
+          "to": 2025
+        }
+      ],
+      "popularity_2000": 0,
+      "note": "Alliance of Shia Islamist groups linked to the Popular Mobilization Forces, led by Hadi al-Amiri of the Badr Organization (Wikipedia: Shia Islamism). Second in 2018 (48 seats). In 2025 its components ran separately (Badr, al-Sadiqoun).",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Fatah_Alliance",
+          "title": "Wikipedia: Fatah Alliance",
+          "accessed": "2026-10-16"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "irq.badr",
+      "name": {
+        "en": "Badr Organization",
+        "native": "منظمة بدر",
+        "native_latin": "Munazzamat Badr"
+      },
+      "abbrev": {
+        "en": "Badr",
+        "native": "بدر"
+      },
+      "color": "#556B2F",
+      "sub_ideology": "islamist",
+      "founded": 1982,
+      "status_2000": "exiled",
+      "leader_history": [
+        {
+          "person": "irq.hadi_al_amiri",
+          "from": 2003
+        }
+      ],
+      "popularity_2000": 0,
+      "popularity_note": "In 2000 the armed wing of SCIRI in exile; no separate vote.",
+      "note": "Founded in 1982 as the military wing of SCIRI; a political movement from 2003 (Wikipedia: Shia Islamism, right-wing). Ran on its own list in 2025 (18 seats). Al-Amiri's start as leader is set to 2003, when it became a political movement; confirm.",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Badr_Organization",
+          "title": "Wikipedia: Badr Organization",
+          "accessed": "2026-10-16"
+        }
+      ],
+      "confidence": "needs_review",
+      "review_note": "Confirm the start of Hadi al-Amiri's leadership (set to 2003)."
+    },
+    {
+      "id": "irq.sadiqoun",
+      "name": {
+        "en": "Al-Sadiqoun Bloc",
+        "native": "كتلة الصادقون",
+        "native_latin": "Kutlat al-Sadiqun"
+      },
+      "abbrev": {
+        "en": "Sadiqoun",
+        "native": "الصادقون"
+      },
+      "color": "#7B3F00",
+      "sub_ideology": "islamist",
+      "founded": 2014,
+      "status_2000": "not_yet_founded",
+      "leader_history": [],
+      "popularity_2000": 0,
+      "note": "Political wing associated with Asa'ib Ahl al-Haq; Wikipedia: political Islam, religious conservatism, right-wing; political leader Adnan Fayhan Moussa Cheri (not modelled). Fifth in 2025 (27 seats).",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Al-Sadiqoun_Bloc",
+          "title": "Wikipedia: Al-Sadiqoun Bloc",
+          "accessed": "2026-10-16"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "irq.taqaddum",
+      "name": {
+        "en": "Progress Party (Taqaddum)",
+        "native": "حزب تقدم",
+        "native_latin": "Hizb Taqaddum"
+      },
+      "abbrev": {
+        "en": "Taqaddum",
+        "native": "تقدم"
+      },
+      "color": "#FF8C00",
+      "sub_ideology": "big_tent",
+      "founded": "2019-06-01",
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        {
+          "person": "irq.mohamed_al_halbousi",
+          "from": "2019-06-01"
+        }
+      ],
+      "popularity_2000": 0,
+      "note": "Mainly Sunni Arab party led by Mohamed al-Halbousi; Wikipedia: big tent. Third in votes in 2021 (37 seats) and 2025 (27 seats).",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Progress_Party_(Iraq)",
+          "title": "Wikipedia: Progress Party (Iraq)",
+          "accessed": "2026-10-16"
+        },
+        {
+          "url": "https://www.wikidata.org/wiki/Q47008930",
+          "title": "Wikidata: Mohamed al-Halbousi (party leader from 1 June 2019)",
+          "accessed": "2026-10-16"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "irq.azem",
+      "name": {
+        "en": "Azem Alliance",
+        "native": "تحالف عزم",
+        "native_latin": "Tahaluf 'Azm"
+      },
+      "abbrev": {
+        "en": "Azem",
+        "native": "عزم"
+      },
+      "color": "#3A9D23",
+      "sub_ideology": "islamic_democrat",
+      "founded": 2021,
+      "status_2000": "not_yet_founded",
+      "leader_history": [],
+      "popularity_2000": 0,
+      "note": "Sunni Arab alliance founded by Khamis al-Khanjar and led by Muthanna al-Samarrai according to Wikipedia (neither has a Wikipedia/Wikidata person record that the research tool could find, so neither is modelled). Wikipedia gives a founding date of 9 December 2021, after the October 2021 election in which an Azem list is credited with 14 seats, so only the year is stored.",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Azem_Alliance",
+          "title": "Wikipedia: Azem Alliance",
+          "accessed": "2026-10-16"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/2021_Iraqi_parliamentary_election",
+          "title": "Wikipedia: 2021 Iraqi parliamentary election",
+          "accessed": "2026-10-16"
+        }
+      ],
+      "confidence": "needs_review",
+      "review_note": "Founding date conflict (9 December 2021 vs a list in the 10 October 2021 election); add its leaders when person records are found."
+    },
+    {
+      "id": "irq.nsf",
+      "name": {
+        "en": "Alliance of National State Forces",
+        "native": "تحالف قوى الدولة الوطنية",
+        "native_latin": "Tahaluf Quwa al-Dawla al-Wataniyya"
+      },
+      "abbrev": {
+        "en": "NSF",
+        "native": "قوى الدولة"
+      },
+      "color": "#4682B4",
+      "sub_ideology": "islamic_democrat",
+      "founded": "2021-01-05",
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        {
+          "person": "irq.ammar_al_hakim",
+          "from": "2021-01-05"
+        }
+      ],
+      "popularity_2000": 0,
+      "lineage": {
+        "formed_from": [
+          "irq.victory",
+          "irq.hikma"
+        ]
+      },
+      "note": "Merger of Abadi's Victory Alliance and Hakim's National Wisdom Movement, led jointly by Ammar al-Hakim and Haider al-Abadi (Wikipedia: centre).",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Alliance_of_Nation_State_Forces",
+          "title": "Wikipedia: Alliance of National State Forces",
+          "accessed": "2026-10-16"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "irq.new_generation",
+      "name": {
+        "en": "New Generation Movement",
+        "native": "جوڵانەوەی نەوەی نوێ",
+        "native_latin": "Julanewey Newey Nwê"
+      },
+      "abbrev": {
+        "en": "New Generation",
+        "native": "نەوەی نوێ"
+      },
+      "color": "#E4007C",
+      "sub_ideology": "centrist_liberal",
+      "founded": "2017-09-28",
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        {
+          "person": "irq.shaswar_abdulwahid",
+          "from": "2017-09-28"
+        }
+      ],
+      "popularity_2000": 0,
+      "regional_base": [
+        "kurdish"
+      ],
+      "note": "Kurdish opposition party founded and led by Shaswar Abdulwahid Qadir; Wikipedia: liberal democracy. Also recorded in KUR as kur.new_generation.",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/New_Generation_Movement",
+          "title": "Wikipedia: New Generation Movement",
+          "accessed": "2026-10-16"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "irq.emtidad",
+      "name": {
+        "en": "Emtidad Movement (Extension Movement)",
+        "native": "حركة امتداد",
+        "native_latin": "Harakat Imtidad"
+      },
+      "abbrev": {
+        "en": "Emtidad",
+        "native": "امتداد"
+      },
+      "color": "#FF4500",
+      "sub_ideology": "centrist_liberal",
+      "founded": "2020-12-01",
+      "status_2000": "not_yet_founded",
+      "leader_history": [],
+      "popularity_2000": 0,
+      "note": "Led by Alaa al-Rikabi (not modelled); won 9 seats in 2021. Wikipedia gives moderation, liberalism, secularism and a centre position, all marked as needing citations.",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Emtidad_Movement",
+          "title": "Wikipedia: Emtidad Movement",
+          "accessed": "2026-10-16"
+        }
+      ],
+      "confidence": "needs_review",
+      "review_note": "Ideology entries in Wikipedia are uncited; the sub-ideology is a best fit."
+    },
+    {
+      "id": "irq.rdc",
+      "name": {
+        "en": "Reconstruction and Development Coalition",
+        "native": "ائتلاف الإعمار والتنمية",
+        "native_latin": "I'tilaf al-I'mar wa al-Tanmiya"
+      },
+      "abbrev": {
+        "en": "RDC",
+        "native": "الإعمار والتنمية"
+      },
+      "color": "#0077B6",
+      "sub_ideology": "technocratic",
+      "founded": "2025-05-20",
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        {
+          "person": "irq.mohammed_shia_al_sudani",
+          "from": "2025-05-20",
+          "title": "Founder and list leader"
+        }
+      ],
+      "popularity_2000": 0,
+      "note": "Founded by Prime Minister Mohammed Shia' al-Sudani; largest list in November 2025 (11.74%, 46 seats). Wikipedia: Iraqi nationalism, pragmatism, reformism, centre; it names Baha Araji as leader.",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Reconstruction_and_Development_Coalition",
+          "title": "Wikipedia: Reconstruction and Development Coalition",
+          "accessed": "2026-10-16"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/2025_Iraqi_parliamentary_election",
+          "title": "Wikipedia: 2025 Iraqi parliamentary election",
+          "accessed": "2026-10-16"
+        }
+      ],
+      "confidence": "verified"
+    }
+  ]
+}
