@@ -106,6 +106,54 @@
               "dissolve_country": {
                 "into": "AFG"
               }
+            },
+            {
+              "country": {
+                "tag": "AFG",
+                "effects": [
+                  {
+                    "set_historical_government_type": "transitional_administration"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "afg_islamic_republic",
+      "title": "Islamic Republic of Afghanistan",
+      "description": "Hamid Karzai took office as President on 7 December 2004 under the 2004 Constitution, which made Afghanistan an Islamic republic with a presidential system.",
+      "countries": [
+        "AFG"
+      ],
+      "major": false,
+      "historical": {
+        "date": "2004-12-07",
+        "any_path": true,
+        "dynamic_mode": false,
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2004_Constitution_of_Afghanistan",
+            "title": "Wikipedia: 2004 Constitution of Afghanistan",
+            "accessed": "2026-10-17"
+          },
+          {
+            "url": "https://en.wikipedia.org/wiki/Constitution_of_Afghanistan",
+            "title": "Wikipedia: Constitution of Afghanistan",
+            "accessed": "2026-10-17"
+          }
+        ],
+        "confidence": "verified"
+      },
+      "options": [
+        {
+          "id": "ok",
+          "name": "Continue",
+          "effects": [
+            {
+              "set_historical_government_type": "presidential"
             }
           ]
         }
@@ -198,6 +246,9 @@
                 "into": "AFG",
                 "disband_army_of": "AFG"
               }
+            },
+            {
+              "set_historical_government_type": "theocracy"
             }
           ]
         }
@@ -342,6 +393,49 @@
                   }
                 ]
               }
+            },
+            {
+              "country": {
+                "tag": "IRQ",
+                "effects": [
+                  {
+                    "set_historical_government_type": "transitional_administration"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "irq_constitution_2005",
+      "title": "Constitution of Iraq",
+      "description": "Iraq's current constitution, establishing a federal parliamentary republic, was approved in a referendum on 15 October 2005.",
+      "countries": [
+        "IRQ"
+      ],
+      "major": false,
+      "historical": {
+        "date": "2005-10-15",
+        "any_path": true,
+        "dynamic_mode": false,
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/Constitution_of_Iraq",
+            "title": "Wikipedia: Constitution of Iraq",
+            "accessed": "2026-10-17"
+          }
+        ],
+        "confidence": "verified"
+      },
+      "options": [
+        {
+          "id": "ok",
+          "name": "Continue",
+          "effects": [
+            {
+              "set_historical_government_type": "parliamentary"
             }
           ]
         }
@@ -1527,6 +1621,9 @@
                 "into": "SYR",
                 "disband_army_of": "SYR"
               }
+            },
+            {
+              "set_historical_government_type": "transitional_administration"
             }
           ]
         }

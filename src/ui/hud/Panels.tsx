@@ -4,6 +4,8 @@ import type { MapData } from "../../render/mapData.ts";
 import { TERRAIN_COLORS } from "../../render/mapModes.ts";
 import { millerY as millerYOf } from "../../render/MapView.ts";
 import { formatDate } from "../../sim/date.ts";
+import { countryColor, countryName } from "../../sim/politics/unrest.ts";
+import type { GameState } from "../../sim/state.ts";
 import { Icon } from "../icons.tsx";
 import { PoliticsPanel } from "../politics/PoliticsPanel.tsx";
 import { DecisionsPanel } from "../scripted/DecisionsPanel.tsx";
@@ -32,17 +34,44 @@ function StubPanel({ tab }: { tab: TabDef }) {
   );
 }
 
+/** The owner's government as it stands in the running game (2000 data on the start screen). */
+function liveSummary(db: ContentDB, state: GameState | null | undefined, tag: string) {
+  const cs = state?.countries[tag];
+  if (!state || !cs) return countrySummary(db, tag);
+  const c = db.countries.get(tag)?.country;
+  const people = (office: string | undefined) => {
+    const ids = office ? (cs.offices[office] ?? []) : [];
+    const ns = ids.map((id) => (id ? (db.people.get(id)?.name.en ?? id) : "Vacant"));
+    return ns.length ? ns.join(", ") : "—";
+  };
+  const lead = cs.rulingParties[0];
+  const party = lead ? db.parties.get(lead) : undefined;
+  return {
+    govType: db.governmentTypes.get(cs.govType)?.name ?? cs.govType,
+    headOfState: c ? people(c.government.head_of_state_office) : "—",
+    headOfGovernment: c ? people(c.government.head_of_government_office) : "—",
+    rulingParty: party ? `${party.name.en} (${party.abbrev.en})` : "—",
+    rulingPartyColor: party?.color ?? countryColor(db, state, tag) ?? "#555",
+  };
+}
+
 /** HOI4 "state view": the selected province, shown in the left panel slot when no tab is open. */
 function StatePanel({ db, map, id, session }: { db: ContentDB; map: MapData; id: number; session?: Session }) {
   const p = map.provinces[id - 1];
   if (!p) return null;
-  const owner = countrySummary(db, p.owner);
-  const ownerName = db.countries.get(p.owner)?.country?.name.en ?? db.countryList.find((c) => c.tag === p.owner)?.name ?? p.owner;
-  const ctrlName = db.countries.get(p.controller)?.country?.name.en ?? db.countryList.find((c) => c.tag === p.controller)?.name ?? p.controller;
+  const state = session?.state;
+  // the running game's owner and controller (armed groups, occupations), else the 2000 map
+  const ownerTag = state?.provinceOwner[id - 1] ?? p.owner;
+  const ctrlTag = state?.provinceController[id - 1] ?? p.controller;
+  const owner = liveSummary(db, state, ownerTag);
+  const ownerName = countryName(db, state, ownerTag);
+  const ctrlName = countryName(db, state, ctrlTag);
+  const home = state?.armedGroups.home[String(id)];
   const culture = p.culture ? (db.cultures.get(p.culture)?.name ?? p.culture) : null;
   const rows: [string, string, string?][] = [
     ["Owner", ownerName],
-    ...(p.controller !== p.owner ? [["Controlled by", ctrlName, "warn"] as [string, string, string]] : []),
+    ...(home && home !== ownerTag ? [["Part of", countryName(db, state, home)] as [string, string]] : []),
+    ...(ctrlTag !== ownerTag ? [["Controlled by", ctrlName, "warn"] as [string, string, string]] : []),
     ["Population", fmt.format(p.population)],
     ["Area", `${fmt.format(p.area_km2)} km²`],
     ["Density", `${fmt.format(Math.round(p.population / Math.max(1, p.area_km2)))} per km²`],
@@ -71,7 +100,12 @@ function StatePanel({ db, map, id, session }: { db: ContentDB; map: MapData; id:
           </>
         ))}
       </dl>
-      {owner && (
+      {db.armedGroups.has(ownerTag) ? (
+        <>
+          <div class="hp-section">{ownerName}</div>
+          <p class="small pad">{db.armedGroups.get(ownerTag)!.description}</p>
+        </>
+      ) : owner && (
         <>
           <div class="hp-section">{ownerName}</div>
           <dl class="kv">

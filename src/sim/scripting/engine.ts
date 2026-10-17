@@ -284,14 +284,15 @@ function effect(ctx: SimContext, scope: Scope, k: string, v: unknown, source: st
       break;
     }
     case "rename_party": cs.partyStatus[a.to as string] = "active"; mergeParty(db, cs, a.party as string, a.to as string); break;
-    case "set_government_type": {
+    case "set_government_type":
+    case "set_historical_government_type": {
       const gov = db.governmentTypes.get(v as string);
       if (!gov) break;
       cs.govType = gov.id;
       for (const [cat, law] of Object.entries(cs.laws)) if (gov.forbidden_laws.includes(law)) cs.laws[cat] = gov.default_laws[cat] ?? law;
       if (!gov.holds_elections) cs.schedule = [];
       else if (!cs.schedule.length) cs.schedule = initialSchedule(db, cs.tag, state.day);
-      cs.followsHistory = false;
+      if (k === "set_government_type") cs.followsHistory = false;
       break;
     }
     case "release_country": {
@@ -453,7 +454,8 @@ export function describeEffects(db: ContentDB, effects: unknown[], depth = 0): s
       case "split_party": line = `${name.party(a.into as string)} splits from ${name.party(a.party as string)}`; break;
       case "merge_parties": line = `Parties merge into ${name.party(a.into as string)}`; break;
       case "rename_party": line = `${name.party(a.party as string)} becomes ${name.party(a.to as string)}`; break;
-      case "set_government_type": line = `Government becomes: ${db.governmentTypes.get(v as string)?.name ?? v}`; break;
+      case "set_government_type":
+      case "set_historical_government_type": line = `Government becomes: ${db.governmentTypes.get(v as string)?.name ?? v}`; break;
       case "release_country": line = `${name.tag(v as string)} is released`; break;
       case "country_event": line = `Leads to: ${(db.events.get(a.id as string)?.title) ?? a.id}`; break;
       case "person_leaves_office": line = `${name.person(a.person as string)} leaves office`; break;

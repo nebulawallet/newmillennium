@@ -141,6 +141,11 @@ export const EFFECTS: Record<string, ScriptDef> = {
     refs: { party: "party", to: "party" },
   },
   set_government_type: { args: Id, description: "Change the government type.", refs: { "": "government_type" } },
+  set_historical_government_type: {
+    args: Id,
+    description: "Change the government type on its real date (historical events): the country stays on the historical path.",
+    refs: { "": "government_type" },
+  },
   add_wargoal: {
     args: z.strictObject({ target: Tag, type: Id }),
     description: "Gain a war goal against a country.",

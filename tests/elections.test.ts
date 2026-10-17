@@ -108,3 +108,16 @@ describe("coalitions", () => {
     expect(opts[0]!.minority).toBe(false);
   });
 });
+
+describe("historical track through regime change", () => {
+  const { db: dbIrq } = compileContent(new NodeFiles(), { only: new Set(["IRQ"]) });
+  it("Iraq's January 2005 election follows the record (parties banned in 2000 stand legally)", () => {
+    const state = createInitialState(dbIrq, { provinces: [] }, { contentHash: "t", seed: 1000, player: null, rules: { electionMode: "historical" } });
+    const sim = new Simulation(dbIrq, state);
+    while (sim.state.day < dayOf("2005-02-15")) sim.step();
+    const r = resultOf(sim.state, "IRQ", (x) => x.chamber === "council_of_representatives" && x.day >= dayOf("2005-01-01"));
+    expect(r?.winner).toBe("irq.uia");
+    expect(sim.state.countries.IRQ!.partyStatus["irq.icp"]).toBe("active");
+    expect(sim.state.countries.IRQ!.followsHistory).toBe(true);
+  }, 120_000);
+});

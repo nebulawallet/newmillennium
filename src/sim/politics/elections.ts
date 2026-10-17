@@ -341,6 +341,14 @@ export function runElection(ctx: SimContext, cs: CountryState, s: ScheduledElect
   const r = db.politicsRules.elections;
   const historical = state.rules.electionMode === "historical" && cs.followsHistory;
   const rec = historical ? recordFor(db, cs.tag, s.key, state.day) : undefined;
+  // a party that stood in the real election existed and was legal by then: banned, exiled or insurgent in 2000, or
+  // merged into an electoral alliance (formed_from) that it later left again
+  if (rec) for (const pr of rec.historical.party_results ?? [])
+    if (pr.seats > 0 && ["banned", "exiled", "insurgent", "dissolved"].includes(cs.partyStatus[pr.party] ?? "")) {
+      cs.partyStatus[pr.party] = "active";
+      cs.partyPopularity[pr.party] ??= 0;
+      cs.partyBias[pr.party] ??= 1;
+    }
   const matches = !!rec && pathMatches(ctx, cs, rec);
   const onTrack = matches && rng.chance(r.historical_adherence);
   const pull = matches && !onTrack ? r.historical_pull : 0;
