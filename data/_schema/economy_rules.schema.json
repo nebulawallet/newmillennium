@@ -79,6 +79,14 @@
       "default": 60,
       "type": "number"
     },
+    "debt_rate_policy_weight": {
+      "default": 0.3,
+      "type": "number"
+    },
+    "debt_rate_scale": {
+      "default": 0.75,
+      "type": "number"
+    },
     "ai_fiscal_adjustment": {
       "default": 0.02,
       "type": "number"

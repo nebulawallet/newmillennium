@@ -50,6 +50,13 @@ export const EconomyRulesFile = z.strictObject({
   /** AI governments: deficit they aim for (% of GDP) when debt is low, and how fast spending follows. */
   ai_target_deficit: n(1.5),
   ai_debt_ceiling: n(60),
+  /**
+   * Average interest rate on the debt stock: a blend of the neutral rate and the current policy rate (weight
+   * debt_rate_policy_weight), times debt_rate_scale. High-inflation countries pay high rates, so inflation does not
+   * simply melt their debt.
+   */
+  debt_rate_policy_weight: n(0.3),
+  debt_rate_scale: n(0.75),
   ai_fiscal_adjustment: n(0.02),
   /** Monthly share of the gap to the growth target closed. */
   growth_adjustment: n(0.25),

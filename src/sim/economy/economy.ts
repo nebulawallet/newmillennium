@@ -307,8 +307,9 @@ function monthlyCountry(ctx: SimContext, cs: CountryState): void {
     const goal = r.ai_target_deficit - Math.max(0, e.debt - r.ai_debt_ceiling) / 20;
     e.spendingTarget = clamp(e.spendingTarget + (e.revenueTarget + goal - e.spendingTarget) * r.ai_fiscal_adjustment, 5, 75);
   }
-  // the average rate on the debt stock follows the neutral rate, not the marginal lending rate
-  const interest = (e.debt * Math.max(0.5, neutralRate(e) * 0.6)) / 100;
+  // the average rate on the debt stock: between the neutral rate and today's policy rate (old debt reprices slowly)
+  const w = r.debt_rate_policy_weight;
+  const interest = (e.debt * Math.max(0.5, ((1 - w) * neutralRate(e) + w * e.interestRate) * r.debt_rate_scale)) / 100;
   const deficit = e.spending - e.revenue + interest;
   const nominal = e.growth + e.inflation;
   e.debt = clamp(e.debt + deficit / 12 - (e.debt * nominal) / 1200, 0, 500);
