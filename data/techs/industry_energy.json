@@ -14,7 +14,18 @@
       "effects": {
         "nuclear_output": 0.1
       },
-      "cost": 500
+      "cost": 100
+    },
+    {
+      "id": "ind_computer_aided_design",
+      "name": "Computer-aided design and manufacturing",
+      "description": "Factories run from digital drawings.",
+      "year": 1990,
+      "x": 0,
+      "effects": {
+        "production_efficiency": 0.02
+      },
+      "cost": 100
     },
     {
       "id": "ind_lean_manufacturing",
@@ -23,12 +34,12 @@
       "year": 1997,
       "x": 0,
       "effects": {
-        "production_efficiency": 0.05
+        "production_efficiency": 0.03
       },
-      "cost": 700,
+      "cost": 100,
       "prerequisites": [
         [
-          "ind_nuclear_power"
+          "ind_computer_aided_design"
         ]
       ]
     },
@@ -39,13 +50,94 @@
       "year": 1998,
       "x": 1,
       "effects": {
-        "energy_cost": -0.03,
-        "fossil_output": 0.05
+        "energy_cost": -0.02,
+        "fossil_output": 0.03
       },
-      "cost": 700,
       "prerequisites": [
         [
-          "ind_nuclear_power"
+          "ind_computer_aided_design"
+        ]
+      ],
+      "cost": 100
+    },
+    {
+      "id": "ind_precast_construction",
+      "name": "Precast and modular construction",
+      "description": "Building parts made in factories and assembled on site.",
+      "year": 2000,
+      "x": 4,
+      "effects": {
+        "construction_speed": 0.03
+      },
+      "prerequisites": [
+        [
+          "ind_computer_aided_design"
+        ]
+      ],
+      "cost": 118
+    },
+    {
+      "id": "ind_deepwater_drilling",
+      "name": "Deepwater drilling",
+      "description": "Oil and gas from fields under deep water.",
+      "year": 2001,
+      "x": 1,
+      "effects": {
+        "fossil_output": 0.04
+      },
+      "cost": 119,
+      "prerequisites": [
+        [
+          "ind_combined_cycle_gas"
+        ]
+      ]
+    },
+    {
+      "id": "ind_supply_chain_software",
+      "name": "Supply-chain software",
+      "description": "Planning systems that link suppliers and factories.",
+      "year": 2002,
+      "x": 0,
+      "effects": {
+        "production_efficiency": 0.02
+      },
+      "cost": 121,
+      "prerequisites": [
+        [
+          "ind_lean_manufacturing"
+        ]
+      ]
+    },
+    {
+      "id": "ind_onshore_wind",
+      "name": "Modern onshore wind turbines",
+      "description": "Larger, more reliable wind turbines.",
+      "year": 2003,
+      "x": 2,
+      "effects": {
+        "renewable_output": 0.06
+      },
+      "prerequisites": [
+        [
+          "ind_computer_aided_design"
+        ]
+      ],
+      "cost": 122
+    },
+    {
+      "id": "ind_high_speed_rail",
+      "name": "High-speed rail construction",
+      "description": "Dedicated lines for trains above 250 km/h.",
+      "year": 2004,
+      "x": 4,
+      "effects": {
+        "construction_speed": 0.02,
+        "trade_efficiency": 0.01
+      },
+      "cost": 124,
+      "prerequisites": [
+        [
+          "ind_precast_construction"
         ]
       ]
     },
@@ -56,32 +148,49 @@
       "year": 2005,
       "x": 0,
       "effects": {
-        "production_efficiency": 0.05,
-        "construction_speed": 0.03
+        "production_efficiency": 0.03,
+        "construction_speed": 0.01
       },
+      "cost": 125,
       "prerequisites": [
         [
-          "ind_lean_manufacturing"
+          "ind_supply_chain_software"
         ]
-      ],
-      "cost": 850
+      ]
     },
     {
-      "id": "ind_horizontal_drilling",
-      "name": "Horizontal drilling and fracking",
-      "description": "Extracting oil and gas from shale.",
-      "year": 2008,
+      "id": "ind_ultra_supercritical_coal",
+      "name": "Ultra-supercritical coal plants",
+      "description": "Coal plants that burn less coal for each unit of power.",
+      "year": 2006,
       "x": 1,
       "effects": {
-        "fossil_output": 0.1,
-        "energy_cost": -0.03
+        "energy_cost": -0.02,
+        "fossil_output": 0.02
       },
+      "cost": 126,
       "prerequisites": [
         [
-          "ind_combined_cycle_gas"
+          "ind_deepwater_drilling"
         ]
-      ],
-      "cost": 850
+      ]
+    },
+    {
+      "id": "ind_lng_trade",
+      "name": "Liquefied gas shipping",
+      "description": "Gas shipped worldwide as a liquid.",
+      "year": 2007,
+      "x": 1,
+      "effects": {
+        "energy_cost": -0.01,
+        "trade_efficiency": 0.01
+      },
+      "cost": 128,
+      "prerequisites": [
+        [
+          "ind_ultra_supercritical_coal"
+        ]
+      ]
     },
     {
       "id": "ind_wind_and_solar",
@@ -90,13 +199,111 @@
       "year": 2008,
       "x": 2,
       "effects": {
-        "renewable_output": 0.15,
-        "emissions": -0.05
+        "renewable_output": 0.1,
+        "emissions": -0.03
       },
-      "cost": 850,
+      "cost": 129,
       "prerequisites": [
         [
-          "ind_nuclear_power"
+          "ind_onshore_wind"
+        ]
+      ]
+    },
+    {
+      "id": "ind_horizontal_drilling",
+      "name": "Horizontal drilling and fracking",
+      "description": "Extracting oil and gas from shale.",
+      "year": 2008,
+      "x": 3,
+      "effects": {
+        "fossil_output": 0.06,
+        "energy_cost": -0.02
+      },
+      "prerequisites": [
+        [
+          "ind_deepwater_drilling"
+        ]
+      ],
+      "cost": 129
+    },
+    {
+      "id": "ind_led_lighting",
+      "name": "LED lighting",
+      "description": "Lighting that uses a fraction of the power.",
+      "year": 2009,
+      "x": 4,
+      "effects": {
+        "energy_cost": -0.01
+      },
+      "cost": 131,
+      "prerequisites": [
+        [
+          "ind_high_speed_rail"
+        ]
+      ]
+    },
+    {
+      "id": "ind_smart_grids",
+      "name": "Smart grids",
+      "description": "Power grids with digital metering and control.",
+      "year": 2010,
+      "x": 2,
+      "effects": {
+        "energy_cost": -0.01
+      },
+      "cost": 132,
+      "prerequisites": [
+        [
+          "ind_wind_and_solar"
+        ]
+      ]
+    },
+    {
+      "id": "ind_offshore_wind",
+      "name": "Offshore wind farms",
+      "description": "Large turbines at sea.",
+      "year": 2011,
+      "x": 2,
+      "effects": {
+        "renewable_output": 0.06
+      },
+      "cost": 134,
+      "prerequisites": [
+        [
+          "ind_smart_grids"
+        ]
+      ]
+    },
+    {
+      "id": "ind_automated_warehouses",
+      "name": "Automated warehouses",
+      "description": "Robots that store and pick goods.",
+      "year": 2012,
+      "x": 0,
+      "effects": {
+        "production_efficiency": 0.02,
+        "trade_efficiency": 0.01
+      },
+      "cost": 135,
+      "prerequisites": [
+        [
+          "ind_industrial_robotics"
+        ]
+      ]
+    },
+    {
+      "id": "ind_carbon_fibre",
+      "name": "Carbon-fibre composites",
+      "description": "Light, strong materials for vehicles and aircraft.",
+      "year": 2013,
+      "x": 4,
+      "effects": {
+        "production_efficiency": 0.01
+      },
+      "cost": 136,
+      "prerequisites": [
+        [
+          "ind_led_lighting"
         ]
       ]
     },
@@ -107,14 +314,64 @@
       "year": 2014,
       "x": 0,
       "effects": {
-        "production_efficiency": 0.04
+        "production_efficiency": 0.02
       },
       "prerequisites": [
         [
           "ind_industrial_robotics"
         ]
       ],
-      "cost": 850
+      "cost": 138
+    },
+    {
+      "id": "ind_cheap_solar",
+      "name": "Low-cost solar panels",
+      "description": "Solar power cheaper than new coal in sunny places.",
+      "year": 2015,
+      "x": 2,
+      "effects": {
+        "renewable_output": 0.08,
+        "energy_cost": -0.01
+      },
+      "cost": 139,
+      "prerequisites": [
+        [
+          "ind_offshore_wind"
+        ]
+      ]
+    },
+    {
+      "id": "ind_industry_4",
+      "name": "Connected factories",
+      "description": "Machines that report their state and schedule maintenance themselves.",
+      "year": 2016,
+      "x": 0,
+      "effects": {
+        "production_efficiency": 0.02
+      },
+      "cost": 141,
+      "prerequisites": [
+        [
+          "ind_additive_manufacturing"
+        ]
+      ]
+    },
+    {
+      "id": "ind_electric_vehicles",
+      "name": "Mass-market electric vehicles",
+      "description": "Affordable battery cars.",
+      "year": 2017,
+      "x": 4,
+      "effects": {
+        "emissions": -0.02,
+        "energy_cost": -0.01
+      },
+      "cost": 142,
+      "prerequisites": [
+        [
+          "ind_carbon_fibre"
+        ]
+      ]
     },
     {
       "id": "ind_grid_storage",
@@ -123,30 +380,218 @@
       "year": 2018,
       "x": 2,
       "effects": {
-        "renewable_output": 0.1,
-        "energy_cost": -0.02
+        "renewable_output": 0.05,
+        "energy_cost": -0.01
       },
       "prerequisites": [
         [
-          "ind_wind_and_solar"
+          "ind_cheap_solar"
+        ],
+        [
+          "ind_smart_grids"
         ]
       ],
-      "cost": 1000
+      "cost": 143
     },
     {
-      "id": "ind_small_modular_reactors",
-      "name": "Small modular reactors",
-      "description": "Factory-built nuclear reactors.",
-      "year": 2030,
+      "id": "ind_coal_phase_out",
+      "name": "Coal phase-out plans",
+      "description": "Closing coal plants on a schedule and replacing them.",
+      "year": 2019,
       "x": 1,
       "effects": {
-        "nuclear_output": 0.2,
-        "emissions": -0.05
+        "emissions": -0.05,
+        "energy_cost": 0.01
       },
-      "cost": 1200,
+      "mutually_exclusive": [
+        "ind_fossil_expansion"
+      ],
+      "cost": 145,
       "prerequisites": [
         [
-          "ind_nuclear_power"
+          "ind_lng_trade"
+        ]
+      ]
+    },
+    {
+      "id": "ind_fossil_expansion",
+      "name": "Fossil fuel expansion",
+      "description": "New pipelines, terminals and fields to sell more oil and gas.",
+      "year": 2019,
+      "x": 3,
+      "effects": {
+        "fossil_output": 0.06
+      },
+      "prerequisites": [
+        [
+          "ind_horizontal_drilling"
+        ]
+      ],
+      "mutually_exclusive": [
+        "ind_coal_phase_out"
+      ],
+      "cost": 145
+    },
+    {
+      "id": "ind_heat_pumps",
+      "name": "Heat pumps",
+      "description": "Electric heating several times more efficient than boilers.",
+      "year": 2020,
+      "x": 4,
+      "effects": {
+        "energy_cost": -0.01,
+        "emissions": -0.01
+      },
+      "cost": 146,
+      "prerequisites": [
+        [
+          "ind_electric_vehicles"
+        ]
+      ]
+    },
+    {
+      "id": "ind_nuclear_life_extension",
+      "name": "Nuclear plant life extension",
+      "description": "Running existing reactors for 60 to 80 years.",
+      "year": 2021,
+      "x": 3,
+      "effects": {
+        "nuclear_output": 0.05
+      },
+      "cost": 148,
+      "prerequisites": [
+        [
+          "ind_horizontal_drilling"
+        ]
+      ]
+    },
+    {
+      "id": "ind_battery_gigafactories",
+      "name": "Battery gigafactories",
+      "description": "Huge plants that make batteries cheaply.",
+      "year": 2022,
+      "x": 0,
+      "effects": {
+        "production_efficiency": 0.01,
+        "energy_cost": -0.01
+      },
+      "cost": 149,
+      "prerequisites": [
+        [
+          "ind_industry_4"
+        ]
+      ]
+    },
+    {
+      "id": "ind_long_duration_storage",
+      "name": "Long-duration energy storage",
+      "description": "Storage that covers days, not hours.",
+      "year": 2023,
+      "x": 2,
+      "effects": {
+        "renewable_output": 0.04
+      },
+      "cost": 151,
+      "prerequisites": [
+        [
+          "ind_grid_storage"
+        ]
+      ]
+    },
+    {
+      "id": "ind_carbon_capture",
+      "name": "Carbon capture",
+      "description": "Capturing carbon dioxide from power plants and factories.",
+      "year": 2024,
+      "x": 1,
+      "effects": {
+        "emissions": -0.03
+      },
+      "cost": 152,
+      "prerequisites": [
+        [
+          "ind_lng_trade"
+        ]
+      ]
+    },
+    {
+      "id": "ind_humanoid_robots",
+      "name": "General-purpose robots",
+      "description": "Robots that do many factory tasks without reprogramming.",
+      "year": 2025,
+      "x": 0,
+      "effects": {
+        "production_efficiency": 0.02
+      },
+      "cost": 153,
+      "prerequisites": [
+        [
+          "ind_battery_gigafactories"
+        ]
+      ]
+    },
+    {
+      "id": "ind_advanced_geothermal",
+      "name": "Advanced geothermal",
+      "description": "Deep wells that draw heat almost anywhere.",
+      "year": 2026,
+      "x": 2,
+      "effects": {
+        "renewable_output": 0.04
+      },
+      "cost": 155,
+      "prerequisites": [
+        [
+          "ind_long_duration_storage"
+        ]
+      ]
+    },
+    {
+      "id": "ind_sodium_batteries",
+      "name": "Sodium-ion batteries",
+      "description": "Cheap batteries without lithium.",
+      "year": 2027,
+      "x": 4,
+      "effects": {
+        "energy_cost": -0.01
+      },
+      "cost": 156,
+      "prerequisites": [
+        [
+          "ind_heat_pumps"
+        ]
+      ]
+    },
+    {
+      "id": "ind_ai_factories",
+      "name": "Lights-out factories",
+      "description": "Factories that run with almost no workers on the floor.",
+      "year": 2028,
+      "x": 0,
+      "effects": {
+        "production_efficiency": 0.02,
+        "construction_speed": 0.02
+      },
+      "cost": 158,
+      "prerequisites": [
+        [
+          "ind_humanoid_robots"
+        ]
+      ]
+    },
+    {
+      "id": "ind_next_gen_nuclear",
+      "name": "Advanced reactor designs",
+      "description": "Reactors cooled by gas, salt or metal.",
+      "year": 2029,
+      "x": 3,
+      "effects": {
+        "nuclear_output": 0.05
+      },
+      "cost": 159,
+      "prerequisites": [
+        [
+          "ind_nuclear_life_extension"
         ]
       ]
     },
@@ -157,15 +602,48 @@
       "year": 2030,
       "x": 2,
       "effects": {
-        "emissions": -0.08,
-        "renewable_output": 0.05
+        "emissions": -0.05,
+        "renewable_output": 0.03
       },
       "prerequisites": [
         [
-          "ind_grid_storage"
+          "ind_long_duration_storage"
         ]
       ],
-      "cost": 1200
+      "cost": 160
+    },
+    {
+      "id": "ind_small_modular_reactors",
+      "name": "Small modular reactors",
+      "description": "Factory-built nuclear reactors.",
+      "year": 2030,
+      "x": 3,
+      "effects": {
+        "nuclear_output": 0.1,
+        "emissions": -0.03
+      },
+      "cost": 160,
+      "prerequisites": [
+        [
+          "ind_next_gen_nuclear"
+        ]
+      ]
+    },
+    {
+      "id": "ind_fusion_pilot",
+      "name": "Fusion pilot plants",
+      "description": "The first fusion reactors that put power on a grid.",
+      "year": 2036,
+      "x": 3,
+      "effects": {
+        "nuclear_output": 0.1
+      },
+      "prerequisites": [
+        [
+          "ind_small_modular_reactors"
+        ]
+      ],
+      "cost": 169
     }
   ]
 }

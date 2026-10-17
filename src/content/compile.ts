@@ -371,7 +371,12 @@ export function compileContent(files: FileProvider, opts: CompileOptions = {}): 
     const f = `techs/${t.category}.json`;
     for (const g of t.prerequisites) for (const p of g) if (!db.techs.has(p)) err("REF", f, `${t.id}: unknown prerequisite '${p}'`);
     for (const m of Object.keys(t.effects)) if (!db.modifiers.has(m)) err("REF", f, `${t.id}: unknown modifier '${m}'`);
+    for (const m of t.mutually_exclusive) {
+      if (!db.techs.has(m)) err("REF", f, `${t.id}: unknown mutually exclusive technology '${m}'`);
+      else if (!db.techs.get(m)!.mutually_exclusive.includes(t.id)) err("TECH_EXCLUSIVE", f, `${t.id} excludes '${m}' but not the other way round`);
+    }
   }
+  for (const b of db.buildings.values()) if (b.requires_tech && !db.techs.has(b.requires_tech)) err("REF", "economy/buildings.json", `${b.id}: unknown technology '${b.requires_tech}'`);
 
   // ---- units
   for (const e of db.equipment.values())

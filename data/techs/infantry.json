@@ -1,7 +1,7 @@
 {
   "id": "infantry",
   "name": "Infantry",
-  "description": "Equipment and protection for infantry.",
+  "description": "Equipment, protection and sensors for infantry.",
   "icon": "infantry",
   "military": true,
   "techs": [
@@ -10,11 +10,27 @@
       "name": "Modern assault rifles and radios",
       "description": "Standard rifles, radios and helmets for a modern army.",
       "year": 1985,
-      "x": 3,
+      "x": 1,
       "effects": {
         "army_attack": 0.02
       },
-      "cost": 500
+      "cost": 100
+    },
+    {
+      "id": "inf_handheld_gps",
+      "name": "Handheld satellite navigation",
+      "description": "Satellite navigation receivers issued to small units.",
+      "year": 1994,
+      "x": 2,
+      "effects": {
+        "army_org": 0.01
+      },
+      "prerequisites": [
+        [
+          "inf_modern_rifles"
+        ]
+      ],
+      "cost": 100
     },
     {
       "id": "inf_body_armour",
@@ -23,28 +39,79 @@
       "year": 1998,
       "x": 0,
       "effects": {
-        "army_defence": 0.03
+        "army_defence": 0.02
       },
-      "cost": 700,
       "prerequisites": [
         [
           "inf_modern_rifles"
         ]
-      ]
+      ],
+      "cost": 100
     },
     {
       "id": "inf_night_vision",
       "name": "Night vision for all units",
       "description": "Image-intensifier and thermal sights issued down to squad level.",
       "year": 2000,
-      "x": 1,
+      "x": 2,
       "effects": {
         "army_attack": 0.02
       },
-      "cost": 700,
+      "cost": 118,
+      "prerequisites": [
+        [
+          "inf_handheld_gps"
+        ]
+      ]
+    },
+    {
+      "id": "inf_modular_load_carriage",
+      "name": "Modular load-carrying equipment",
+      "description": "Vests and packs that carry ammunition, water and radios more evenly.",
+      "year": 2001,
+      "x": 0,
+      "effects": {
+        "army_org": 0.01
+      },
+      "cost": 119,
+      "prerequisites": [
+        [
+          "inf_body_armour"
+        ]
+      ]
+    },
+    {
+      "id": "inf_thermal_weapon_sights",
+      "name": "Thermal weapon sights",
+      "description": "Rifle and machine-gun sights that see heat through smoke and darkness.",
+      "year": 2002,
+      "x": 1,
+      "effects": {
+        "army_attack": 0.01
+      },
       "prerequisites": [
         [
           "inf_modern_rifles"
+        ],
+        [
+          "inf_night_vision"
+        ]
+      ],
+      "cost": 121
+    },
+    {
+      "id": "inf_tactical_radios",
+      "name": "Software-defined tactical radios",
+      "description": "Radios that carry voice and data on several waveforms.",
+      "year": 2003,
+      "x": 2,
+      "effects": {
+        "army_org": 0.01
+      },
+      "cost": 122,
+      "prerequisites": [
+        [
+          "inf_night_vision"
         ]
       ]
     },
@@ -53,74 +120,327 @@
       "name": "Fire-and-forget anti-tank missiles",
       "description": "Portable guided missiles that do not need guiding to the target.",
       "year": 2004,
-      "x": 2,
+      "x": 1,
       "effects": {
-        "army_attack": 0.04
+        "army_attack": 0.02
       },
-      "cost": 700,
+      "cost": 124,
       "prerequisites": [
         [
-          "inf_modern_rifles"
+          "inf_thermal_weapon_sights"
         ]
       ]
     },
     {
-      "id": "inf_digital_soldier",
-      "name": "Digitised infantry",
-      "description": "Radios, displays and positioning for every squad.",
-      "year": 2006,
-      "x": 0,
+      "id": "inf_ied_countermeasures",
+      "name": "Counter-IED equipment",
+      "description": "Jammers, detectors and route-clearance kits against roadside bombs.",
+      "year": 2005,
+      "x": 3,
       "effects": {
-        "army_org": 0.03
+        "army_defence": 0.02
       },
       "prerequisites": [
         [
           "inf_body_armour"
         ]
       ],
-      "cost": 850
+      "cost": 125
+    },
+    {
+      "id": "inf_digital_soldier",
+      "name": "Digitised infantry",
+      "description": "Radios, displays and positioning for every squad.",
+      "year": 2006,
+      "x": 2,
+      "effects": {
+        "army_org": 0.02
+      },
+      "cost": 126,
+      "prerequisites": [
+        [
+          "inf_tactical_radios"
+        ]
+      ]
     },
     {
       "id": "inf_mrap",
       "name": "Mine-resistant vehicles",
       "description": "Protected vehicles against mines and roadside bombs.",
       "year": 2007,
-      "x": 1,
+      "x": 0,
       "effects": {
-        "army_defence": 0.04
+        "army_defence": 0.02
       },
       "prerequisites": [
         [
-          "inf_night_vision"
+          "inf_modular_load_carriage"
+        ],
+        [
+          "inf_ied_countermeasures"
         ]
       ],
-      "cost": 850
+      "cost": 128
+    },
+    {
+      "id": "inf_combat_casualty_care",
+      "name": "Tactical combat casualty care",
+      "description": "Tourniquets, haemostatic dressings and medics trained to treat wounds under fire.",
+      "year": 2008,
+      "x": 3,
+      "effects": {
+        "army_defence": 0.01,
+        "army_org": 0.01
+      },
+      "cost": 129,
+      "prerequisites": [
+        [
+          "inf_ied_countermeasures"
+        ]
+      ]
+    },
+    {
+      "id": "inf_designated_marksmen",
+      "name": "Designated marksman rifles",
+      "description": "Accurate semi-automatic rifles for one marksman in each squad.",
+      "year": 2009,
+      "x": 1,
+      "effects": {
+        "army_attack": 0.01
+      },
+      "cost": 131,
+      "prerequisites": [
+        [
+          "inf_atgm_fire_forget"
+        ]
+      ]
+    },
+    {
+      "id": "inf_blue_force_tracking",
+      "name": "Blue-force tracking",
+      "description": "Every friendly unit shown on a shared digital map.",
+      "year": 2010,
+      "x": 2,
+      "effects": {
+        "army_org": 0.01
+      },
+      "cost": 132,
+      "prerequisites": [
+        [
+          "inf_digital_soldier"
+        ]
+      ]
+    },
+    {
+      "id": "inf_lightweight_mortars",
+      "name": "Lightweight precision mortars",
+      "description": "Light mortars with guided bombs for small units.",
+      "year": 2011,
+      "x": 1,
+      "effects": {
+        "army_attack": 0.01
+      },
+      "cost": 134,
+      "prerequisites": [
+        [
+          "inf_designated_marksmen"
+        ]
+      ]
+    },
+    {
+      "id": "inf_rugged_tablets",
+      "name": "Rugged battlefield tablets",
+      "description": "Hardened tablets for maps, orders and fire requests.",
+      "year": 2012,
+      "x": 2,
+      "effects": {
+        "army_org": 0.01
+      },
+      "cost": 135,
+      "prerequisites": [
+        [
+          "inf_blue_force_tracking"
+        ]
+      ]
+    },
+    {
+      "id": "inf_lightweight_plates",
+      "name": "Lightweight plate carriers",
+      "description": "Thinner, lighter armour plates that cover more of the body.",
+      "year": 2013,
+      "x": 0,
+      "effects": {
+        "army_defence": 0.01
+      },
+      "cost": 136,
+      "prerequisites": [
+        [
+          "inf_mrap"
+        ]
+      ]
+    },
+    {
+      "id": "inf_counter_drone_jammers",
+      "name": "Hand-held counter-drone jammers",
+      "description": "Portable jammers that break the link between a drone and its operator.",
+      "year": 2014,
+      "x": 3,
+      "effects": {
+        "army_defence": 0.01
+      },
+      "cost": 138,
+      "prerequisites": [
+        [
+          "inf_combat_casualty_care"
+        ]
+      ]
     },
     {
       "id": "inf_squad_drones",
       "name": "Squad reconnaissance drones",
       "description": "Small drones for scouting at platoon and squad level.",
       "year": 2015,
+      "x": 2,
+      "effects": {
+        "army_attack": 0.02
+      },
+      "prerequisites": [
+        [
+          "inf_rugged_tablets"
+        ]
+      ],
+      "cost": 139
+    },
+    {
+      "id": "inf_suppressed_weapons",
+      "name": "Suppressed small arms",
+      "description": "Rifles and machine guns fitted with suppressors as standard.",
+      "year": 2016,
+      "x": 1,
+      "effects": {
+        "army_attack": 0.01
+      },
+      "cost": 141,
+      "prerequisites": [
+        [
+          "inf_lightweight_mortars"
+        ]
+      ]
+    },
+    {
+      "id": "inf_light_tactical_vehicles",
+      "name": "Light tactical vehicles",
+      "description": "Fast, lightly protected vehicles for moving infantry.",
+      "year": 2017,
+      "x": 0,
+      "effects": {
+        "army_org": 0.01
+      },
+      "prerequisites": [
+        [
+          "inf_mrap"
+        ]
+      ],
+      "cost": 142
+    },
+    {
+      "id": "inf_mesh_networks",
+      "name": "Mobile mesh networks",
+      "description": "Radios that pass data from soldier to soldier without a base station.",
+      "year": 2018,
+      "x": 2,
+      "effects": {
+        "army_org": 0.01
+      },
+      "cost": 143,
+      "prerequisites": [
+        [
+          "inf_squad_drones"
+        ]
+      ]
+    },
+    {
+      "id": "inf_next_gen_squad_weapons",
+      "name": "Next-generation squad weapons",
+      "description": "A new rifle and light machine gun in a more powerful calibre.",
+      "year": 2019,
       "x": 1,
       "effects": {
         "army_attack": 0.03
       },
+      "mutually_exclusive": [
+        "inf_rifle_modernisation"
+      ],
+      "cost": 175,
       "prerequisites": [
         [
-          "inf_digital_soldier",
-          "inf_mrap"
+          "inf_suppressed_weapons"
+        ]
+      ]
+    },
+    {
+      "id": "inf_rifle_modernisation",
+      "name": "Rifle modernisation programme",
+      "description": "Better optics, rails and ammunition for the rifles already in service.",
+      "year": 2019,
+      "x": 3,
+      "effects": {
+        "army_attack": 0.015,
+        "army_defence": 0.005
+      },
+      "prerequisites": [
+        [
+          "inf_suppressed_weapons"
         ]
       ],
-      "cost": 1000
+      "mutually_exclusive": [
+        "inf_next_gen_squad_weapons"
+      ],
+      "cost": 145
+    },
+    {
+      "id": "inf_fpv_drones",
+      "name": "First-person-view attack drones",
+      "description": "Cheap racing drones carrying explosives, flown by video link.",
+      "year": 2020,
+      "x": 3,
+      "effects": {
+        "army_attack": 0.02
+      },
+      "prerequisites": [
+        [
+          "inf_squad_drones"
+        ],
+        [
+          "inf_counter_drone_jammers"
+        ]
+      ],
+      "cost": 146
+    },
+    {
+      "id": "inf_augmented_reality_sights",
+      "name": "Augmented-reality sights",
+      "description": "Head-mounted displays that overlay targets and routes.",
+      "year": 2021,
+      "x": 2,
+      "effects": {
+        "army_attack": 0.01
+      },
+      "cost": 148,
+      "prerequisites": [
+        [
+          "inf_mesh_networks"
+        ]
+      ]
     },
     {
       "id": "inf_loitering_munitions",
       "name": "Portable loitering munitions",
       "description": "Man-portable drones that strike targets they find.",
       "year": 2022,
-      "x": 2,
+      "x": 1,
       "effects": {
-        "army_attack": 0.05
+        "army_attack": 0.02
       },
       "prerequisites": [
         [
@@ -130,7 +450,161 @@
           "inf_squad_drones"
         ]
       ],
-      "cost": 1000
+      "cost": 149
+    },
+    {
+      "id": "inf_drone_jamming_packs",
+      "name": "Man-portable electronic warfare",
+      "description": "Backpack jammers and detectors against drones and radios.",
+      "year": 2023,
+      "x": 3,
+      "effects": {
+        "army_defence": 0.02
+      },
+      "prerequisites": [
+        [
+          "inf_fpv_drones"
+        ]
+      ],
+      "cost": 151
+    },
+    {
+      "id": "inf_signature_management",
+      "name": "Thermal signature suppression",
+      "description": "Clothing and nets that hide soldiers from thermal cameras.",
+      "year": 2024,
+      "x": 0,
+      "effects": {
+        "army_defence": 0.02
+      },
+      "prerequisites": [
+        [
+          "inf_lightweight_plates"
+        ]
+      ],
+      "cost": 152
+    },
+    {
+      "id": "inf_robotic_mules",
+      "name": "Robotic load carriers",
+      "description": "Small unmanned vehicles that carry supplies and casualties.",
+      "year": 2025,
+      "x": 0,
+      "effects": {
+        "army_org": 0.01
+      },
+      "prerequisites": [
+        [
+          "inf_light_tactical_vehicles"
+        ]
+      ],
+      "cost": 153
+    },
+    {
+      "id": "inf_ai_fire_control",
+      "name": "AI-assisted fire control",
+      "description": "Sights that track targets and calculate the shot.",
+      "year": 2026,
+      "x": 1,
+      "effects": {
+        "army_attack": 0.02
+      },
+      "cost": 155,
+      "prerequisites": [
+        [
+          "inf_loitering_munitions"
+        ]
+      ]
+    },
+    {
+      "id": "inf_tactical_cloud",
+      "name": "Tactical battlefield cloud",
+      "description": "Shared data and computing carried by vehicles at the front.",
+      "year": 2027,
+      "x": 2,
+      "effects": {
+        "army_org": 0.02
+      },
+      "cost": 156,
+      "prerequisites": [
+        [
+          "inf_augmented_reality_sights"
+        ]
+      ]
+    },
+    {
+      "id": "inf_airburst_munitions",
+      "name": "Programmable airburst munitions",
+      "description": "Grenades and rounds set to burst above a target in cover.",
+      "year": 2028,
+      "x": 1,
+      "effects": {
+        "army_attack": 0.02
+      },
+      "cost": 158,
+      "prerequisites": [
+        [
+          "inf_ai_fire_control"
+        ]
+      ]
+    },
+    {
+      "id": "inf_personal_counter_drone",
+      "name": "Personal counter-drone protection",
+      "description": "Detectors and interceptors carried by every squad.",
+      "year": 2029,
+      "x": 0,
+      "effects": {
+        "army_defence": 0.02
+      },
+      "prerequisites": [
+        [
+          "inf_signature_management"
+        ],
+        [
+          "inf_drone_jamming_packs"
+        ]
+      ],
+      "cost": 159
+    },
+    {
+      "id": "inf_human_machine_teaming",
+      "name": "Human-machine teaming",
+      "description": "Squads that fight alongside robots and drones under their control.",
+      "year": 2030,
+      "x": 2,
+      "effects": {
+        "army_org": 0.02,
+        "army_attack": 0.01
+      },
+      "mutually_exclusive": [
+        "inf_autonomous_drone_squads"
+      ],
+      "cost": 160,
+      "prerequisites": [
+        [
+          "inf_tactical_cloud"
+        ]
+      ]
+    },
+    {
+      "id": "inf_autonomous_drone_squads",
+      "name": "Autonomous drone squads",
+      "description": "Drone teams that search and strike with little human input.",
+      "year": 2030,
+      "x": 3,
+      "effects": {
+        "army_attack": 0.03
+      },
+      "prerequisites": [
+        [
+          "inf_drone_jamming_packs"
+        ]
+      ],
+      "mutually_exclusive": [
+        "inf_human_machine_teaming"
+      ],
+      "cost": 160
     },
     {
       "id": "inf_exoskeletons",
@@ -139,14 +613,14 @@
       "year": 2032,
       "x": 0,
       "effects": {
-        "army_org": 0.03
+        "army_org": 0.02
       },
       "prerequisites": [
         [
-          "inf_squad_drones"
+          "inf_robotic_mules"
         ]
       ],
-      "cost": 1200
+      "cost": 163
     }
   ]
 }

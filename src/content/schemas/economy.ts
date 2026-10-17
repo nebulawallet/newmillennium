@@ -89,6 +89,8 @@ export const BuildingDef = z.strictObject({
   /** province: built in a province (with a per-province maximum); national: adds to a national count. */
   level: z.enum(["province", "national"]),
   max_per_province: z.number().int().positive().optional(),
+  /** Technology needed before it can be built. */
+  requires_tech: Id.optional(),
   /** What one level adds. */
   adds: z.strictObject({
     infrastructure: z.number().optional(),

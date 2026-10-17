@@ -1,5 +1,14 @@
 """Generator for data/techs/*.json (kept for reference; edit the JSON directly afterwards).
-Technologies are generic gameplay abstractions placed in the year they became broadly available.
+
+Technologies are generic, real-world-plausible gameplay abstractions placed in the year they became
+broadly available (no brand names). Every category has at least one technology in every year from
+2000 to 2030, a few roots from before 2000 (so starting lags matter), and a few beyond 2030.
+
+Layout: each technology sits in a lane (the column of its tree view). Unless it names its own
+prerequisites, a technology requires the previous one in its lane. `mx` names mutually exclusive
+alternatives (the relation is made symmetric). Costs are research days at normal speed and grow
+slowly with the year (see COST).
+
 Run from the project root: python -I scripts/dev/gen-techs.py
 """
 import json
@@ -7,151 +16,424 @@ import json
 CATS = {}
 
 
-def cat(id, name, desc, military):
-    CATS[id] = {"id": id, "name": name, "description": desc, "military": military, "techs": []}
+def cat(id, name, desc, military, icon):
+    CATS[id] = {"id": id, "name": name, "description": desc, "icon": icon, "military": military, "techs": []}
     return lambda *a, **k: tech(id, *a, **k)
 
 
-def tech(c, id, name, desc, year, x, effects, pre=None, cost=None):
-    t = {"id": id, "name": name, "description": desc, "year": year, "x": x, "effects": effects}
-    if pre:
-        t["prerequisites"] = pre
-    t["cost"] = cost or (500 if year < 1996 else 700 if year < 2005 else 850 if year < 2015 else 1000 if year < 2025 else 1200)
+def COST(year):
+    # roots before 2000 are cheap to catch up on; later technologies cost a little more each year
+    if year < 2000:
+        return 100
+    return round(118 * (1 + 0.012 * (year - 2000)))
+
+
+def tech(c, id, year, lane, name, desc, effects, pre=None, mx=None, cost=None):
+    t = {"id": id, "name": name, "description": desc, "year": year, "x": lane, "effects": effects}
+    if pre is not None:
+        t["prerequisites"] = [g if isinstance(g, list) else [g] for g in pre]
+    if mx:
+        t["mutually_exclusive"] = list(mx)
+    t["cost"] = cost or COST(year)
     CATS[c]["techs"].append(t)
 
 
-t = cat("infantry", "Infantry", "Equipment and protection for infantry.", True)
-t("inf_body_armour", "Improved body armour", "Lighter ceramic plates and helmets for every soldier.", 1998, 0, {"army_defence": 0.03})
-t("inf_night_vision", "Night vision for all units", "Image-intensifier and thermal sights issued down to squad level.", 2000, 1, {"army_attack": 0.02})
-t("inf_atgm_fire_forget", "Fire-and-forget anti-tank missiles", "Portable guided missiles that do not need guiding to the target.", 2004, 2, {"army_attack": 0.04})
-t("inf_digital_soldier", "Digitised infantry", "Radios, displays and positioning for every squad.", 2006, 0, {"army_org": 0.03}, [["inf_body_armour"]])
-t("inf_mrap", "Mine-resistant vehicles", "Protected vehicles against mines and roadside bombs.", 2007, 1, {"army_defence": 0.04}, [["inf_night_vision"]])
-t("inf_squad_drones", "Squad reconnaissance drones", "Small drones for scouting at platoon and squad level.", 2015, 1, {"army_attack": 0.03}, [["inf_digital_soldier", "inf_mrap"]])
-t("inf_loitering_munitions", "Portable loitering munitions", "Man-portable drones that strike targets they find.", 2022, 2, {"army_attack": 0.05}, [["inf_atgm_fire_forget"], ["inf_squad_drones"]])
-t("inf_exoskeletons", "Load-bearing exoskeletons", "Powered frames that let soldiers carry more for longer.", 2032, 0, {"army_org": 0.03}, [["inf_squad_drones"]])
+A, D, O = "army_attack", "army_defence", "army_org"
 
-t = cat("armour", "Armour", "Tanks and armoured vehicles.", True)
-t("arm_mbt_modernisation", "Main battle tank modernisation", "New sights, guns and armour for existing tanks.", 1998, 0, {"army_attack": 0.03})
-t("arm_digital_fire_control", "Digital fire control", "Hunter-killer sights and ballistic computers.", 2003, 1, {"army_attack": 0.02})
-t("arm_composite_armour", "Advanced composite armour", "Layered armour against modern anti-tank weapons.", 2005, 0, {"army_defence": 0.04}, [["arm_mbt_modernisation"]])
-t("arm_active_protection", "Active protection systems", "Systems that intercept incoming missiles and rockets.", 2012, 1, {"army_defence": 0.05}, [["arm_composite_armour"]])
-t("arm_networked_brigade", "Networked armoured brigade", "Vehicles that share targets and positions automatically.", 2016, 0, {"army_org": 0.04}, [["arm_composite_armour"], ["arm_digital_fire_control"]])
-t("arm_next_generation_mbt", "Next-generation main battle tank", "A new tank design with a smaller crew and better protection.", 2028, 1, {"army_attack": 0.05, "army_defence": 0.03}, [["arm_active_protection"]])
-t("arm_unmanned_ground_vehicles", "Unmanned ground vehicles", "Remotely operated and autonomous combat vehicles.", 2032, 2, {"army_attack": 0.03}, [["arm_networked_brigade"]])
+# ------------------------------------------------------------------ infantry
+t = cat("infantry", "Infantry", "Equipment, protection and sensors for infantry.", True, "infantry")
+t("inf_modern_rifles", 1985, 1, "Modern assault rifles and radios", "Standard rifles, radios and helmets for a modern army.", {A: 0.02}, pre=[])
+t("inf_handheld_gps", 1994, 2, "Handheld satellite navigation", "Satellite navigation receivers issued to small units.", {O: 0.01}, pre=["inf_modern_rifles"])
+t("inf_body_armour", 1998, 0, "Improved body armour", "Lighter ceramic plates and helmets for every soldier.", {D: 0.02}, pre=["inf_modern_rifles"])
+t("inf_night_vision", 2000, 2, "Night vision for all units", "Image-intensifier and thermal sights issued down to squad level.", {A: 0.02})
+t("inf_modular_load_carriage", 2001, 0, "Modular load-carrying equipment", "Vests and packs that carry ammunition, water and radios more evenly.", {O: 0.01})
+t("inf_thermal_weapon_sights", 2002, 1, "Thermal weapon sights", "Rifle and machine-gun sights that see heat through smoke and darkness.", {A: 0.01}, pre=["inf_modern_rifles", "inf_night_vision"])
+t("inf_tactical_radios", 2003, 2, "Software-defined tactical radios", "Radios that carry voice and data on several waveforms.", {O: 0.01})
+t("inf_atgm_fire_forget", 2004, 1, "Fire-and-forget anti-tank missiles", "Portable guided missiles that do not need guiding to the target.", {A: 0.02})
+t("inf_ied_countermeasures", 2005, 3, "Counter-IED equipment", "Jammers, detectors and route-clearance kits against roadside bombs.", {D: 0.02}, pre=["inf_body_armour"])
+t("inf_digital_soldier", 2006, 2, "Digitised infantry", "Radios, displays and positioning for every squad.", {O: 0.02})
+t("inf_mrap", 2007, 0, "Mine-resistant vehicles", "Protected vehicles against mines and roadside bombs.", {D: 0.02}, pre=["inf_modular_load_carriage", "inf_ied_countermeasures"])
+t("inf_combat_casualty_care", 2008, 3, "Tactical combat casualty care", "Tourniquets, haemostatic dressings and medics trained to treat wounds under fire.", {D: 0.01, O: 0.01})
+t("inf_designated_marksmen", 2009, 1, "Designated marksman rifles", "Accurate semi-automatic rifles for one marksman in each squad.", {A: 0.01})
+t("inf_blue_force_tracking", 2010, 2, "Blue-force tracking", "Every friendly unit shown on a shared digital map.", {O: 0.01})
+t("inf_lightweight_mortars", 2011, 1, "Lightweight precision mortars", "Light mortars with guided bombs for small units.", {A: 0.01})
+t("inf_rugged_tablets", 2012, 2, "Rugged battlefield tablets", "Hardened tablets for maps, orders and fire requests.", {O: 0.01})
+t("inf_lightweight_plates", 2013, 0, "Lightweight plate carriers", "Thinner, lighter armour plates that cover more of the body.", {D: 0.01})
+t("inf_counter_drone_jammers", 2014, 3, "Hand-held counter-drone jammers", "Portable jammers that break the link between a drone and its operator.", {D: 0.01})
+t("inf_squad_drones", 2015, 2, "Squad reconnaissance drones", "Small drones for scouting at platoon and squad level.", {A: 0.02}, pre=["inf_rugged_tablets"])
+t("inf_suppressed_weapons", 2016, 1, "Suppressed small arms", "Rifles and machine guns fitted with suppressors as standard.", {A: 0.01})
+t("inf_light_tactical_vehicles", 2017, 0, "Light tactical vehicles", "Fast, lightly protected vehicles for moving infantry.", {O: 0.01}, pre=["inf_mrap"])
+t("inf_mesh_networks", 2018, 2, "Mobile mesh networks", "Radios that pass data from soldier to soldier without a base station.", {O: 0.01})
+t("inf_next_gen_squad_weapons", 2019, 1, "Next-generation squad weapons", "A new rifle and light machine gun in a more powerful calibre.", {A: 0.03}, mx=["inf_rifle_modernisation"], cost=COST(2019) + 30)
+t("inf_rifle_modernisation", 2019, 3, "Rifle modernisation programme", "Better optics, rails and ammunition for the rifles already in service.", {A: 0.015, D: 0.005}, pre=["inf_suppressed_weapons"], mx=["inf_next_gen_squad_weapons"])
+t("inf_fpv_drones", 2020, 3, "First-person-view attack drones", "Cheap racing drones carrying explosives, flown by video link.", {A: 0.02}, pre=["inf_squad_drones", "inf_counter_drone_jammers"])
+t("inf_augmented_reality_sights", 2021, 2, "Augmented-reality sights", "Head-mounted displays that overlay targets and routes.", {A: 0.01})
+t("inf_loitering_munitions", 2022, 1, "Portable loitering munitions", "Man-portable drones that strike targets they find.", {A: 0.02}, pre=["inf_atgm_fire_forget", "inf_squad_drones"])
+t("inf_drone_jamming_packs", 2023, 3, "Man-portable electronic warfare", "Backpack jammers and detectors against drones and radios.", {D: 0.02}, pre=["inf_fpv_drones"])
+t("inf_signature_management", 2024, 0, "Thermal signature suppression", "Clothing and nets that hide soldiers from thermal cameras.", {D: 0.02}, pre=["inf_lightweight_plates"])
+t("inf_robotic_mules", 2025, 0, "Robotic load carriers", "Small unmanned vehicles that carry supplies and casualties.", {O: 0.01}, pre=["inf_light_tactical_vehicles"])
+t("inf_ai_fire_control", 2026, 1, "AI-assisted fire control", "Sights that track targets and calculate the shot.", {A: 0.02})
+t("inf_tactical_cloud", 2027, 2, "Tactical battlefield cloud", "Shared data and computing carried by vehicles at the front.", {O: 0.02})
+t("inf_airburst_munitions", 2028, 1, "Programmable airburst munitions", "Grenades and rounds set to burst above a target in cover.", {A: 0.02})
+t("inf_personal_counter_drone", 2029, 0, "Personal counter-drone protection", "Detectors and interceptors carried by every squad.", {D: 0.02}, pre=["inf_signature_management", "inf_drone_jamming_packs"])
+t("inf_human_machine_teaming", 2030, 2, "Human-machine teaming", "Squads that fight alongside robots and drones under their control.", {O: 0.02, A: 0.01}, mx=["inf_autonomous_drone_squads"])
+t("inf_autonomous_drone_squads", 2030, 3, "Autonomous drone squads", "Drone teams that search and strike with little human input.", {A: 0.03}, pre=["inf_drone_jamming_packs"], mx=["inf_human_machine_teaming"])
+t("inf_exoskeletons", 2032, 0, "Load-bearing exoskeletons", "Powered frames that let soldiers carry more for longer.", {O: 0.02}, pre=["inf_robotic_mules"])
 
-t = cat("artillery_missiles", "Artillery and missiles", "Artillery, rockets, missiles and air defence.", True)
-t("art_guided_rockets", "Guided multiple rocket launchers", "Rocket artillery with satellite-guided rounds.", 2000, 0, {"army_attack": 0.03})
-t("art_counter_battery_radar", "Counter-battery radar", "Radars that locate enemy guns from their shells.", 1999, 2, {"army_defence": 0.03})
-t("art_precision_shells", "Precision-guided shells", "Artillery shells that steer to their target.", 2004, 1, {"army_attack": 0.03})
-t("art_cruise_missiles", "Long-range cruise missiles", "Ground- and air-launched missiles with ranges over 1,000 km.", 2002, 0, {"army_attack": 0.03}, [["art_guided_rockets"]])
-t("art_layered_air_defence", "Layered air defence", "Short-, medium- and long-range air defence working as one network.", 2010, 2, {"air_effectiveness": 0.03, "army_defence": 0.02}, [["art_counter_battery_radar"]])
-t("art_hypersonic_missiles", "Hypersonic missiles", "Manoeuvring missiles faster than five times the speed of sound.", 2024, 0, {"army_attack": 0.05}, [["art_cruise_missiles"]])
-t("art_directed_energy", "Directed-energy air defence", "Lasers that destroy drones and rockets.", 2034, 2, {"air_effectiveness": 0.05}, [["art_layered_air_defence"]])
+# ------------------------------------------------------------------ armour
+t = cat("armour", "Armour", "Tanks, armoured vehicles and their protection.", True, "armour")
+t("arm_third_generation_mbt", 1985, 1, "Third-generation main battle tank", "Tanks with composite armour and stabilised guns.", {D: 0.02}, pre=[])
+t("arm_tracked_ifv", 1990, 2, "Tracked infantry fighting vehicles", "Armoured vehicles that carry infantry and fight alongside tanks.", {A: 0.01}, pre=["arm_third_generation_mbt"])
+t("arm_mbt_modernisation", 1998, 0, "Main battle tank modernisation", "New sights, guns and armour for existing tanks.", {A: 0.02}, pre=["arm_third_generation_mbt"])
+t("arm_wheeled_apcs", 2000, 2, "Wheeled armoured personnel carriers", "Eight-wheeled carriers that move fast on roads.", {O: 0.01})
+t("arm_explosive_reactive_armour", 2001, 0, "Explosive reactive armour", "Armour blocks that disrupt shaped charges.", {D: 0.01})
+t("arm_tank_thermal_imaging", 2002, 1, "Second-generation tank thermal sights", "Sharper thermal sights for tank gunners and commanders.", {A: 0.01})
+t("arm_digital_fire_control", 2003, 1, "Digital fire control", "Hunter-killer sights and ballistic computers.", {A: 0.01})
+t("arm_remote_weapon_stations", 2004, 2, "Remote weapon stations", "Machine guns aimed from inside the vehicle.", {D: 0.01})
+t("arm_composite_armour", 2005, 0, "Advanced composite armour", "Layered armour against modern anti-tank weapons.", {D: 0.02}, pre=["arm_mbt_modernisation", "arm_explosive_reactive_armour"])
+t("arm_urban_survival_kits", 2006, 3, "Urban survival kits", "Extra armour, cameras and shields for tanks fighting in cities.", {D: 0.01}, pre=["arm_remote_weapon_stations"])
+t("arm_battlefield_management", 2007, 2, "Battlefield management systems", "Vehicle computers that share positions and targets.", {O: 0.01})
+t("arm_v_hull_vehicles", 2008, 3, "V-hulled armoured vehicles", "Hull shapes that deflect mine blasts.", {D: 0.01})
+t("arm_gun_launched_missiles", 2009, 1, "Gun-launched guided missiles", "Anti-tank missiles fired through the main gun.", {A: 0.01})
+t("arm_tracked_ifv_upgrades", 2010, 2, "Infantry fighting vehicle upgrades", "New turrets, missiles and armour for infantry vehicles.", {A: 0.01, D: 0.01})
+t("arm_slat_armour", 2011, 3, "Slat and net armour", "Cages and nets that stop rocket-propelled grenades.", {D: 0.01})
+t("arm_active_protection", 2012, 0, "Active protection systems", "Systems that intercept incoming missiles and rockets.", {D: 0.03}, pre=["arm_composite_armour"])
+t("arm_modular_vehicle_families", 2013, 2, "Modular vehicle families", "One chassis built as carrier, command post, ambulance or mortar.", {O: 0.01})
+t("arm_120mm_smoothbore_upgrades", 2014, 1, "Improved tank ammunition", "Longer penetrators and programmable high-explosive rounds.", {A: 0.02})
+t("arm_hybrid_drives", 2015, 3, "Hybrid electric drives", "Quieter vehicles that use less fuel.", {O: 0.01})
+t("arm_networked_brigade", 2016, 2, "Networked armoured brigade", "Vehicles that share targets and positions automatically.", {O: 0.02}, pre=["arm_battlefield_management", "arm_digital_fire_control"])
+t("arm_unmanned_turrets", 2017, 1, "Unmanned turrets", "Turrets operated by a crew sitting in the armoured hull.", {D: 0.01, A: 0.01})
+t("arm_360_situational_awareness", 2018, 0, "All-round camera systems", "Cameras and sensors that let crews see all around the vehicle.", {D: 0.01})
+t("arm_light_tanks", 2019, 1, "Mobile protected firepower", "Lighter tanks for airborne and light divisions.", {A: 0.02}, mx=["arm_heavy_mbt_upgrade"])
+t("arm_heavy_mbt_upgrade", 2019, 0, "Heavy tank upgrade programme", "More armour and a stronger engine for the main battle tank.", {D: 0.02}, mx=["arm_light_tanks"])
+t("arm_vehicle_mounted_drones", 2020, 3, "Vehicle-launched drones", "Reconnaissance drones launched from armoured vehicles.", {A: 0.01})
+t("arm_counter_drone_screens", 2021, 3, "Counter-drone screens", "Overhead cages and jammers against attack drones.", {D: 0.02})
+t("arm_electric_armour", 2022, 0, "Next-generation reactive armour", "Lighter reactive armour against tandem warheads.", {D: 0.01}, pre=["arm_active_protection"])
+t("arm_optionally_crewed_vehicles", 2023, 2, "Optionally crewed combat vehicles", "Vehicles that can fight with or without a crew aboard.", {O: 0.01})
+t("arm_130mm_guns", 2024, 1, "Larger tank guns", "New guns with more energy against future armour.", {A: 0.02})
+t("arm_hard_kill_aps", 2025, 0, "Hard-kill protection against top attack", "Active protection that also covers the roof.", {D: 0.02}, pre=["arm_electric_armour"])
+t("arm_ai_target_recognition", 2026, 1, "Automatic target recognition", "Sights that find and classify targets for the gunner.", {A: 0.02})
+t("arm_robotic_wingmen", 2027, 3, "Robotic wingmen", "Unmanned combat vehicles that follow a crewed tank.", {A: 0.01, D: 0.01})
+t("arm_next_generation_mbt", 2028, 1, "Next-generation main battle tank", "A new tank design with a smaller crew and better protection.", {A: 0.03, D: 0.02}, pre=["arm_130mm_guns", "arm_hard_kill_aps"])
+t("arm_laser_dazzlers", 2029, 0, "Vehicle laser countermeasures", "Lasers that blind the seekers of incoming missiles.", {D: 0.02})
+t("arm_electric_combat_vehicles", 2030, 2, "Electric combat vehicles", "Armoured vehicles driven by batteries and generators.", {O: 0.02})
+t("arm_unmanned_ground_vehicles", 2032, 3, "Unmanned ground vehicles", "Remotely operated and autonomous combat vehicles.", {A: 0.02}, pre=["arm_robotic_wingmen", "arm_networked_brigade"])
 
-t = cat("air_drones", "Air and drones", "Combat aircraft, munitions and unmanned aircraft.", True)
-t("air_fighter_upgrades", "Fourth-generation fighter upgrades", "Radar, weapons and engine upgrades for existing fighters.", 1998, 0, {"air_effectiveness": 0.03})
-t("air_precision_bombs", "Precision-guided bombs", "Laser- and satellite-guided bombs for all strike aircraft.", 1999, 1, {"air_effectiveness": 0.03, "army_attack": 0.01})
-t("air_reconnaissance_drones", "Medium-altitude reconnaissance drones", "Long-endurance unmanned aircraft for surveillance.", 2002, 2, {"intelligence_power": 0.05})
-t("air_aesa_radar", "AESA radar", "Electronically scanned radar for fighters.", 2006, 1, {"air_effectiveness": 0.03}, [["air_precision_bombs"]])
-t("air_armed_drones", "Armed drones", "Unmanned aircraft that carry missiles and bombs.", 2008, 2, {"air_effectiveness": 0.03, "army_attack": 0.02}, [["air_reconnaissance_drones"]])
-t("air_stealth_fighters", "Fifth-generation stealth fighters", "Fighters designed to evade radar.", 2010, 0, {"air_effectiveness": 0.06}, [["air_fighter_upgrades"]])
-t("air_drone_swarms", "Drone swarms", "Large numbers of cheap drones coordinated automatically.", 2025, 2, {"air_effectiveness": 0.05}, [["air_armed_drones"]])
-t("air_sixth_generation", "Sixth-generation combat aircraft", "Crewed fighters that command unmanned wingmen.", 2035, 0, {"air_effectiveness": 0.08}, [["air_stealth_fighters"], ["air_aesa_radar"]])
+# ------------------------------------------------------------------ artillery and missiles
+t = cat("artillery_missiles", "Artillery and missiles", "Artillery, rockets, missiles and air defence.", True, "artillery")
+t("art_self_propelled_artillery", 1985, 1, "Self-propelled artillery", "Armoured guns that move with the army.", {A: 0.02}, pre=[])
+t("art_mlrs", 1990, 0, "Multiple rocket launchers", "Tracked launchers firing salvoes of rockets.", {A: 0.01}, pre=["art_self_propelled_artillery"])
+t("art_counter_battery_radar", 1999, 2, "Counter-battery radar", "Radars that locate enemy guns from their shells.", {D: 0.02}, pre=["art_self_propelled_artillery"])
+t("art_guided_rockets", 2000, 0, "Guided multiple rocket launchers", "Rocket artillery with satellite-guided rounds.", {A: 0.02})
+t("art_digital_fire_direction", 2001, 1, "Digital fire direction", "Computers that turn a target report into firing data in seconds.", {A: 0.01})
+t("art_cruise_missiles", 2002, 3, "Long-range cruise missiles", "Ground- and air-launched missiles with ranges over 1,000 km.", {A: 0.02}, pre=["art_guided_rockets"])
+t("art_mobile_sam", 2003, 2, "Mobile surface-to-air missiles", "Air defence missiles on vehicles that move with the army.", {D: 0.01, "air_effectiveness": 0.01})
+t("art_precision_shells", 2004, 1, "Precision-guided shells", "Artillery shells that steer to their target.", {A: 0.02}, pre=["art_digital_fire_direction"])
+t("art_wheeled_howitzers", 2005, 1, "Truck-mounted howitzers", "Guns on wheeled chassis that fire and move away quickly.", {O: 0.01})
+t("art_rocket_artillery_upgrades", 2006, 0, "Extended-range rockets", "Rockets that reach twice as far.", {A: 0.01})
+t("art_c_ram", 2007, 2, "Counter-rocket and mortar defence", "Fast guns and radars that shoot down incoming rounds.", {D: 0.02})
+t("art_tactical_ballistic_missiles", 2008, 3, "Precision tactical ballistic missiles", "Short-range ballistic missiles accurate to tens of metres.", {A: 0.02}, pre=["art_cruise_missiles"])
+t("art_shoot_and_scoot", 2009, 1, "Shoot-and-scoot tactics", "Guns that fire within a minute of stopping and leave before the reply.", {D: 0.01})
+t("art_layered_air_defence", 2010, 2, "Layered air defence", "Short-, medium- and long-range air defence working as one network.", {"air_effectiveness": 0.02, D: 0.01}, pre=["art_mobile_sam", "art_counter_battery_radar"])
+t("art_artillery_drones", 2011, 1, "Artillery spotting drones", "Small drones that find targets and correct fire.", {A: 0.01})
+t("art_anti_ship_missiles_coastal", 2012, 3, "Coastal anti-ship missiles", "Mobile launchers that defend the coast against warships.", {"naval_effectiveness": 0.02})
+t("art_sensor_fused_munitions", 2013, 0, "Sensor-fused munitions", "Submunitions that find vehicles by their heat and shape.", {A: 0.01})
+t("art_long_range_sam", 2014, 2, "Long-range air defence systems", "Missiles that engage aircraft and missiles hundreds of kilometres away.", {"air_effectiveness": 0.02})
+t("art_extended_range_cannons", 2015, 1, "Extended-range cannons", "Longer gun barrels that reach 70 km.", {A: 0.02})
+t("art_air_defence_networks", 2016, 2, "Integrated air defence networks", "Radars and missile batteries linked into one picture.", {"air_effectiveness": 0.01, D: 0.01})
+t("art_loitering_artillery", 2017, 3, "Long-range loitering munitions", "Larger drones that hunt targets far behind the front.", {A: 0.02}, pre=["art_tactical_ballistic_missiles"])
+t("art_precision_strike_missiles", 2018, 0, "Precision strike missiles", "Rocket-launched missiles reaching 500 km.", {A: 0.02}, mx=["art_mass_rocket_artillery"])
+t("art_mass_rocket_artillery", 2018, 1, "Massed rocket artillery", "Large numbers of cheap unguided rockets for saturation fire.", {A: 0.015, D: 0.005}, mx=["art_precision_strike_missiles"])
+t("art_counter_uas", 2019, 2, "Counter-drone air defence", "Guns, missiles and jammers dedicated to drones.", {D: 0.02})
+t("art_automated_howitzers", 2020, 1, "Automated howitzers", "Self-loading guns that fire several rounds to land at once.", {A: 0.01})
+t("art_cheap_interceptors", 2021, 2, "Low-cost interceptors", "Cheaper missiles to shoot down drones and rockets.", {D: 0.01, "air_effectiveness": 0.01})
+t("art_glide_bombs", 2022, 0, "Guided glide bombs", "Old bombs fitted with wings and guidance kits.", {A: 0.02})
+t("art_one_way_attack_drones", 2023, 3, "Long-range one-way attack drones", "Cheap propeller drones that strike targets over 1,000 km away.", {A: 0.02}, pre=["art_loitering_artillery"])
+t("art_hypersonic_missiles", 2024, 3, "Hypersonic missiles", "Manoeuvring missiles faster than five times the speed of sound.", {A: 0.03}, pre=["art_cruise_missiles", "art_tactical_ballistic_missiles"])
+t("art_missile_defence_upgrades", 2025, 2, "Missile defence upgrades", "Air defence that can intercept manoeuvring missiles.", {"air_effectiveness": 0.02})
+t("art_ai_targeting", 2026, 1, "AI-assisted targeting", "Software that turns sensor data into firing lists.", {A: 0.02})
+t("art_ramjet_shells", 2027, 1, "Ramjet artillery shells", "Shells with an air-breathing motor for much longer range.", {A: 0.02})
+t("art_high_power_microwave", 2028, 2, "High-power microwave defence", "Microwave weapons that disable swarms of drones.", {D: 0.02})
+t("art_autonomous_launchers", 2029, 0, "Autonomous rocket launchers", "Uncrewed launchers that move, fire and hide.", {A: 0.01, D: 0.01})
+t("art_space_targeting", 2030, 3, "Satellite targeting networks", "Constellations of small satellites that guide long-range fires.", {A: 0.02})
+t("art_directed_energy", 2034, 2, "Directed-energy air defence", "Lasers that destroy drones and rockets.", {"air_effectiveness": 0.03}, pre=["art_high_power_microwave"])
 
-t = cat("naval", "Naval", "Warships, submarines and naval systems.", True)
-t("nav_integrated_combat_systems", "Integrated combat systems", "Ship-wide radar and weapons control.", 1998, 0, {"naval_effectiveness": 0.03})
-t("nav_aip_submarines", "Air-independent propulsion", "Conventional submarines that stay submerged for weeks.", 2002, 1, {"naval_effectiveness": 0.04})
-t("nav_littoral_ships", "Littoral combat ships", "Fast, modular ships for coastal waters.", 2008, 2, {"naval_effectiveness": 0.02})
-t("nav_modern_carriers", "Modern aircraft carriers", "Large carriers with modern launch and recovery systems.", 2010, 0, {"naval_effectiveness": 0.05}, [["nav_integrated_combat_systems"]])
-t("nav_sea_missile_defence", "Sea-based missile defence", "Warships that intercept ballistic missiles.", 2012, 1, {"naval_effectiveness": 0.03, "air_effectiveness": 0.02}, [["nav_integrated_combat_systems"]])
-t("nav_unmanned_surface_vessels", "Unmanned surface vessels", "Remotely operated and autonomous boats.", 2020, 2, {"naval_effectiveness": 0.03}, [["nav_littoral_ships"]])
-t("nav_large_underwater_drones", "Large underwater drones", "Autonomous submarines for patrol and mine warfare.", 2030, 1, {"naval_effectiveness": 0.05}, [["nav_aip_submarines"]])
+# ------------------------------------------------------------------ air and drones
+t = cat("air_drones", "Air and drones", "Combat aircraft, munitions and unmanned aircraft.", True, "air")
+AE = "air_effectiveness"
+t("air_fourth_generation_fighters", 1985, 0, "Fourth-generation fighters", "Agile multirole fighters with modern radar.", {AE: 0.02}, pre=[])
+t("air_fighter_upgrades", 1998, 0, "Fourth-generation fighter upgrades", "Radar, weapons and engine upgrades for existing fighters.", {AE: 0.02})
+t("air_precision_bombs", 1999, 1, "Precision-guided bombs", "Laser- and satellite-guided bombs for all strike aircraft.", {AE: 0.02, A: 0.01}, pre=["air_fourth_generation_fighters"])
+t("air_targeting_pods", 2000, 1, "Targeting pods", "Pods that let any fighter find and designate ground targets.", {AE: 0.01})
+t("air_beyond_visual_range", 2001, 0, "Active-radar air-to-air missiles", "Missiles that guide themselves after launch.", {AE: 0.02})
+t("air_reconnaissance_drones", 2002, 2, "Medium-altitude reconnaissance drones", "Long-endurance unmanned aircraft for surveillance.", {"intelligence_power": 0.03}, pre=["air_fourth_generation_fighters"])
+t("air_helmet_cueing", 2003, 0, "Helmet-mounted cueing", "Pilots aim missiles by looking at the target.", {AE: 0.01})
+t("air_satellite_guided_bombs", 2004, 1, "All-weather satellite-guided bombs", "Bomb kits that hit coordinates through cloud and dust.", {AE: 0.01, A: 0.01}, pre=["air_targeting_pods"])
+t("air_tanker_refuelling", 2005, 3, "Expanded air refuelling", "Tanker fleets that extend the reach of strike aircraft.", {AE: 0.01}, pre=["air_fourth_generation_fighters"])
+t("air_aesa_radar", 2006, 0, "AESA radar", "Electronically scanned radar for fighters.", {AE: 0.02}, pre=["air_helmet_cueing"])
+t("air_tactical_drones", 2007, 2, "Tactical reconnaissance drones", "Small drones launched by brigades and battalions.", {A: 0.01})
+t("air_armed_drones", 2008, 2, "Armed drones", "Unmanned aircraft that carry missiles and bombs.", {AE: 0.02, A: 0.01}, pre=["air_reconnaissance_drones"])
+t("air_small_diameter_bombs", 2009, 1, "Small-diameter bombs", "Light precision bombs so one aircraft can hit many targets.", {AE: 0.01})
+t("air_stealth_fighters", 2010, 0, "Fifth-generation stealth fighters", "Fighters designed to evade radar.", {AE: 0.04}, pre=["air_aesa_radar"])
+t("air_electronic_attack", 2011, 3, "Airborne electronic attack", "Aircraft that jam radars and communications.", {AE: 0.02})
+t("air_combat_helicopter_upgrades", 2012, 1, "Attack helicopter upgrades", "Mast radars and longer-range missiles for attack helicopters.", {A: 0.01})
+t("air_male_drone_fleets", 2013, 2, "Long-endurance armed drone fleets", "Large fleets of armed drones flying round the clock.", {A: 0.01, "intelligence_power": 0.02})
+t("air_standoff_missiles", 2014, 1, "Stand-off air-launched missiles", "Missiles launched from outside enemy air defences.", {AE: 0.02})
+t("air_cheap_tactical_drones", 2015, 2, "Low-cost tactical drones", "Mass-produced drones from commercial parts.", {A: 0.01})
+t("air_sensor_fusion", 2016, 0, "Sensor fusion", "Cockpits that merge radar, infrared and data-link tracks into one picture.", {AE: 0.02})
+t("air_long_range_aam", 2017, 0, "Very-long-range air-to-air missiles", "Missiles that hit tankers and radar planes far away.", {AE: 0.01})
+t("air_drone_carriers", 2018, 2, "Drone-launching aircraft", "Transport aircraft that release swarms of small drones.", {AE: 0.01}, mx=["air_light_attack_aircraft"])
+t("air_light_attack_aircraft", 2018, 1, "Light attack aircraft", "Cheap turboprop aircraft for counter-insurgency.", {A: 0.01, "internal_security": 0.01}, mx=["air_drone_carriers"])
+t("air_kamikaze_drones", 2019, 2, "Long-range kamikaze drones", "One-way attack drones that dive onto their targets.", {A: 0.02})
+t("air_fighter_drone_teaming", 2020, 0, "Loyal wingman drones", "Unmanned jets that fly with and for a crewed fighter.", {AE: 0.02})
+t("air_counter_air_defence", 2021, 3, "Suppression of air defences", "Decoys and anti-radiation missiles that blind enemy air defence.", {AE: 0.02}, pre=["air_electronic_attack"])
+t("air_drone_mothership", 2022, 2, "Drone motherships", "Large drones that launch smaller ones near the target.", {A: 0.01})
+t("air_hypersonic_aam", 2023, 1, "Hypersonic air-launched missiles", "Air-launched missiles faster than Mach 5.", {AE: 0.02})
+t("air_ai_pilots", 2024, 0, "AI combat pilots", "Software that flies and fights an aircraft in simulated combat.", {AE: 0.02})
+t("air_drone_swarms", 2025, 2, "Drone swarms", "Large numbers of cheap drones coordinated automatically.", {AE: 0.03}, pre=["air_drone_mothership", "air_armed_drones"])
+t("air_adaptive_engines", 2026, 3, "Adaptive-cycle engines", "Jet engines that switch between range and thrust.", {AE: 0.02})
+t("air_space_based_sensors", 2027, 3, "Space-based air tracking", "Satellites that track aircraft and missiles from orbit.", {AE: 0.02})
+t("air_cca_squadrons", 2028, 0, "Collaborative combat aircraft squadrons", "Whole squadrons of unmanned jets controlled from crewed fighters.", {AE: 0.03})
+t("air_autonomous_strike", 2029, 2, "Autonomous strike drones", "Drones that find and strike targets without a data link.", {A: 0.02})
+t("air_directed_energy_pods", 2030, 1, "Airborne laser pods", "Lasers that defend aircraft against missiles.", {AE: 0.02})
+t("air_sixth_generation", 2035, 0, "Sixth-generation combat aircraft", "Crewed fighters that command unmanned wingmen.", {AE: 0.05}, pre=["air_cca_squadrons", "air_adaptive_engines"])
 
-t = cat("electronics_cyber", "Electronics and cyber", "Computing, communications and cyber capabilities.", False)
-t("ele_broadband", "Broadband internet", "Always-on internet access in homes and businesses.", 1999, 0, {"research_speed": 0.03, "private_sector_output": 0.01})
-t("ele_civil_gps", "Precision civil GPS", "Accurate satellite positioning for civilian use.", 2000, 1, {"trade_efficiency": 0.02})
-t("ele_mobile_3g", "3G mobile networks", "Mobile data networks.", 2002, 0, {"private_sector_output": 0.02}, [["ele_broadband"]])
-t("ele_smartphones", "Smartphones", "Pocket computers with internet access.", 2007, 1, {"education_quality": 0.02, "private_sector_output": 0.02}, [["ele_mobile_3g"]])
-t("ele_cyber_defence", "National cyber defence", "Agencies and systems that protect government and infrastructure networks.", 2008, 2, {"intelligence_power": 0.05, "internal_security": 0.03})
-t("ele_mobile_4g", "4G mobile networks", "Fast mobile broadband.", 2010, 0, {"gdp_growth": 0.002}, [["ele_mobile_3g"]])
-t("ele_cyber_operations", "Offensive cyber capabilities", "Units able to disrupt foreign networks.", 2012, 2, {"intelligence_power": 0.08, "foreign_influence_power": 0.05}, [["ele_cyber_defence"]])
-t("ele_machine_learning", "Machine learning", "Systems that learn from data at scale.", 2016, 1, {"research_speed": 0.05}, [["ele_smartphones"]])
-t("ele_mobile_5g", "5G mobile networks", "High-capacity, low-latency mobile networks.", 2019, 0, {"gdp_growth": 0.002, "private_sector_output": 0.02}, [["ele_mobile_4g"]])
-t("ele_generative_ai", "Generative AI", "Large models that write, code and design.", 2023, 1, {"research_speed": 0.05, "private_sector_output": 0.03}, [["ele_machine_learning"]])
-t("ele_quantum_computing", "Quantum computing", "Practical quantum computers for science and cryptography.", 2032, 2, {"intelligence_power": 0.05, "research_speed": 0.05}, [["ele_generative_ai"]])
+# ------------------------------------------------------------------ naval
+t = cat("naval", "Naval", "Warships, submarines and naval systems.", True, "naval")
+NE = "naval_effectiveness"
+t("nav_guided_missile_ships", 1985, 1, "Guided-missile warships", "Frigates and destroyers armed with anti-ship and air-defence missiles.", {NE: 0.02}, pre=[])
+t("nav_vertical_launch", 1992, 1, "Vertical launch systems", "Missile cells in the deck that fire many kinds of missile.", {NE: 0.01}, pre=["nav_guided_missile_ships"])
+t("nav_integrated_combat_systems", 1998, 0, "Integrated combat systems", "Ship-wide radar and weapons control.", {NE: 0.02}, pre=["nav_guided_missile_ships"])
+t("nav_stealth_hulls", 2000, 1, "Stealthy hull designs", "Angled hulls and hidden fittings that shrink a ship's radar echo.", {NE: 0.01})
+t("nav_maritime_patrol_aircraft", 2001, 3, "Maritime patrol upgrades", "Aircraft that hunt submarines and watch shipping lanes.", {NE: 0.01}, pre=["nav_guided_missile_ships"])
+t("nav_aip_submarines", 2002, 2, "Air-independent propulsion", "Conventional submarines that stay submerged for weeks.", {NE: 0.02}, pre=["nav_guided_missile_ships"])
+t("nav_cooperative_engagement", 2003, 0, "Cooperative engagement", "Ships that fire missiles at targets tracked by other ships.", {NE: 0.01})
+t("nav_mine_countermeasure_drones", 2004, 3, "Mine-hunting drones", "Remote vehicles that find and destroy sea mines.", {NE: 0.01})
+t("nav_amphibious_assault_ships", 2005, 1, "Amphibious assault ships", "Large ships that land troops by helicopter and landing craft.", {NE: 0.01})
+t("nav_land_attack_missiles", 2006, 1, "Ship-launched land attack missiles", "Cruise missiles fired from warships at targets ashore.", {NE: 0.01, A: 0.01})
+t("nav_anti_piracy_operations", 2007, 3, "Maritime security operations", "Boarding teams, patrol boats and shared watch over sea lanes.", {NE: 0.01, "trade_efficiency": 0.01})
+t("nav_littoral_ships", 2008, 1, "Littoral combat ships", "Fast, modular ships for coastal waters.", {NE: 0.01})
+t("nav_lithium_submarines", 2009, 2, "Long-endurance submarine batteries", "Better batteries for quieter, longer patrols.", {NE: 0.01})
+t("nav_modern_carriers", 2010, 0, "Modern aircraft carriers", "Large carriers with modern launch and recovery systems.", {NE: 0.03}, pre=["nav_integrated_combat_systems"])
+t("nav_towed_array_sonar", 2011, 2, "Towed-array sonar", "Long sonar arrays towed behind frigates to hear distant submarines.", {NE: 0.01})
+t("nav_sea_missile_defence", 2012, 0, "Sea-based missile defence", "Warships that intercept ballistic missiles.", {NE: 0.02, AE: 0.01}, pre=["nav_cooperative_engagement"])
+t("nav_supersonic_anti_ship", 2013, 1, "Supersonic anti-ship missiles", "Missiles that cross the last miles to a ship at high speed.", {NE: 0.02})
+t("nav_modular_frigates", 2014, 1, "Modular frigates", "General-purpose frigates with mission bays.", {NE: 0.01})
+t("nav_unmanned_aircraft_ships", 2015, 3, "Ship-based drones", "Drones launched and recovered by warships.", {NE: 0.01})
+t("nav_large_destroyers", 2016, 0, "Large air-defence destroyers", "Destroyers with powerful radars and over 100 missile cells.", {NE: 0.02})
+t("nav_quiet_submarines", 2017, 2, "Quieter attack submarines", "Submarines with improved hull coatings and pump-jet propulsion.", {NE: 0.02})
+t("nav_naval_strike_networks", 2018, 0, "Naval strike networks", "Ships, aircraft and satellites sharing targets at sea.", {NE: 0.01})
+t("nav_long_range_anti_ship", 2019, 1, "Long-range anti-ship missiles", "Stealthy missiles that find ships far over the horizon.", {NE: 0.02})
+t("nav_unmanned_surface_vessels", 2020, 3, "Unmanned surface vessels", "Remotely operated and autonomous boats.", {NE: 0.01}, pre=["nav_mine_countermeasure_drones"])
+t("nav_light_carriers", 2021, 0, "Light carriers and drone carriers", "Smaller carriers that operate short-take-off jets or drones.", {NE: 0.02}, mx=["nav_submarine_force"])
+t("nav_submarine_force", 2021, 2, "Expanded submarine force", "Money spent on more submarines instead of surface ships.", {NE: 0.02}, mx=["nav_light_carriers"])
+t("nav_explosive_drone_boats", 2022, 3, "Explosive drone boats", "Small fast drone boats that ram ships.", {NE: 0.02})
+t("nav_naval_lasers", 2023, 0, "Shipboard lasers", "Lasers that destroy drones and small boats.", {NE: 0.01})
+t("nav_extra_large_uuv", 2024, 2, "Extra-large unmanned submarines", "Large autonomous submarines for patrol and mine laying.", {NE: 0.01})
+t("nav_hypersonic_naval", 2025, 1, "Ship-launched hypersonic missiles", "Hypersonic weapons for warships and submarines.", {NE: 0.02})
+t("nav_distributed_fleet", 2026, 0, "Distributed fleet operations", "Many smaller ships and drones spread out instead of a few large ones.", {NE: 0.02})
+t("nav_seabed_warfare", 2027, 2, "Seabed warfare", "Vehicles that watch and protect undersea cables and pipelines.", {NE: 0.01})
+t("nav_autonomous_escorts", 2028, 3, "Autonomous escort ships", "Uncrewed corvettes that protect convoys.", {NE: 0.02})
+t("nav_electric_propulsion", 2029, 0, "Integrated electric propulsion", "Ships that share power between engines, radars and weapons.", {NE: 0.01})
+t("nav_large_underwater_drones", 2030, 2, "Large underwater drone fleets", "Autonomous submarines for patrol and mine warfare.", {NE: 0.03}, pre=["nav_extra_large_uuv"])
+t("nav_railgun", 2033, 1, "Electromagnetic guns", "Guns that fire projectiles with magnets instead of propellant.", {NE: 0.02}, pre=["nav_electric_propulsion"])
 
-t = cat("industry_energy", "Industry and energy", "Manufacturing methods and power generation.", False)
-t("ind_lean_manufacturing", "Lean manufacturing", "Just-in-time production with less waste.", 1997, 0, {"production_efficiency": 0.05})
-t("ind_combined_cycle_gas", "Combined-cycle gas power", "Efficient gas power stations.", 1998, 1, {"energy_cost": -0.03, "fossil_output": 0.05})
-t("ind_industrial_robotics", "Industrial robotics", "Robots on assembly lines.", 2005, 0, {"production_efficiency": 0.05, "construction_speed": 0.03}, [["ind_lean_manufacturing"]])
-t("ind_wind_and_solar", "Utility-scale wind and solar", "Large wind farms and solar parks.", 2008, 2, {"renewable_output": 0.15, "emissions": -0.05})
-t("ind_horizontal_drilling", "Horizontal drilling and fracking", "Extracting oil and gas from shale.", 2008, 1, {"fossil_output": 0.1, "energy_cost": -0.03}, [["ind_combined_cycle_gas"]])
-t("ind_additive_manufacturing", "Additive manufacturing", "Industrial 3D printing.", 2014, 0, {"production_efficiency": 0.04}, [["ind_industrial_robotics"]])
-t("ind_grid_storage", "Grid-scale batteries", "Batteries that store renewable power for the grid.", 2018, 2, {"renewable_output": 0.1, "energy_cost": -0.02}, [["ind_wind_and_solar"]])
-t("ind_small_modular_reactors", "Small modular reactors", "Factory-built nuclear reactors.", 2030, 1, {"nuclear_output": 0.2, "emissions": -0.05})
-t("ind_green_hydrogen", "Green hydrogen", "Hydrogen made with renewable power for industry.", 2030, 2, {"emissions": -0.08, "renewable_output": 0.05}, [["ind_grid_storage"]])
+# ------------------------------------------------------------------ electronics and cyber
+t = cat("electronics_cyber", "Electronics and cyber", "Computing, communications and cyber capabilities.", False, "electronics")
+RS, PSO, IP, IS = "research_speed", "private_sector_output", "intelligence_power", "internal_security"
+t("ele_personal_computers", 1985, 1, "Personal computers", "Computers in offices and homes.", {RS: 0.01}, pre=[])
+t("ele_mobile_2g", 1993, 0, "2G mobile phones", "Digital mobile phone networks.", {PSO: 0.005}, pre=["ele_personal_computers"])
+t("ele_internet", 1994, 1, "The internet", "A public worldwide computer network.", {RS: 0.01})
+t("ele_broadband", 1999, 1, "Broadband internet", "Always-on internet access in homes and businesses.", {RS: 0.01, PSO: 0.005})
+t("ele_civil_gps", 2000, 2, "Precision civil GPS", "Accurate satellite positioning for civilian use.", {"trade_efficiency": 0.01}, pre=["ele_personal_computers"])
+t("ele_wifi", 2001, 1, "Wireless local networks", "Wi-Fi in homes, offices and public places.", {PSO: 0.005})
+t("ele_mobile_3g", 2002, 0, "3G mobile networks", "Mobile data networks.", {PSO: 0.01}, pre=["ele_mobile_2g", "ele_broadband"])
+t("ele_flat_screens", 2003, 2, "Flat-panel displays", "Cheap flat screens for computers and televisions.", {"consumer_goods_factor": -0.005})
+t("ele_multicore_processors", 2004, 1, "Multi-core processors", "Chips with several processors on one die.", {RS: 0.01})
+t("ele_social_media", 2005, 3, "Social media", "Online networks where people share news and opinions.", {"propaganda_efficiency": 0.02}, pre=["ele_broadband"])
+t("ele_fibre_networks", 2006, 1, "Fibre-to-the-home", "Optical fibre all the way to homes and businesses.", {PSO: 0.005})
+t("ele_smartphones", 2007, 0, "Smartphones", "Pocket computers with internet access.", {"education_quality": 0.01, PSO: 0.01}, pre=["ele_mobile_3g"])
+t("ele_cyber_defence", 2008, 2, "National cyber defence", "Agencies and systems that protect government and infrastructure networks.", {IP: 0.03, IS: 0.02}, pre=["ele_civil_gps"])
+t("ele_gpu_computing", 2009, 1, "General-purpose GPU computing", "Graphics chips used for science and data processing.", {RS: 0.01})
+t("ele_mobile_4g", 2010, 0, "4G mobile networks", "Fast mobile broadband.", {"gdp_growth": 0.001}, pre=["ele_smartphones"])
+t("ele_big_data", 2011, 1, "Big data analytics", "Tools that analyse huge datasets across many machines.", {RS: 0.005, "tax_efficiency": 0.005})
+t("ele_cyber_operations", 2012, 2, "Offensive cyber capabilities", "Units able to disrupt foreign networks.", {IP: 0.05, "foreign_influence_power": 0.03}, pre=["ele_cyber_defence"])
+t("ele_internet_of_things", 2013, 0, "Internet of things", "Sensors and devices connected to the internet.", {PSO: 0.005})
+t("ele_mass_surveillance", 2014, 3, "Digital mass surveillance", "Systems that collect and search communications at national scale.", {IS: 0.03, "civil_liberties": -0.02}, pre=["ele_social_media"], mx=["ele_end_to_end_encryption"])
+t("ele_end_to_end_encryption", 2014, 4, "Strong encryption standards", "Encryption by default in messaging and the web.", {"civil_liberties": 0.01, "foreign_influence_resistance": 0.02}, pre=["ele_social_media"], mx=["ele_mass_surveillance"])
+t("ele_deep_learning", 2015, 1, "Deep learning", "Neural networks trained on large datasets.", {RS: 0.01}, pre=["ele_gpu_computing"])
+t("ele_machine_learning", 2016, 1, "Machine learning at scale", "Systems that learn from data across the economy.", {RS: 0.01, PSO: 0.005})
+t("ele_satellite_internet", 2017, 2, "Small-satellite constellations", "Hundreds of small satellites for imaging and communications.", {IP: 0.02})
+t("ele_7nm_chips", 2018, 4, "Advanced chip manufacturing", "Transistors a few nanometres across.", {RS: 0.01, "production_efficiency": 0.01})
+t("ele_mobile_5g", 2019, 0, "5G mobile networks", "High-capacity, low-latency mobile networks.", {"gdp_growth": 0.001, PSO: 0.005}, pre=["ele_mobile_4g", "ele_internet_of_things"])
+t("ele_satellite_broadband", 2020, 2, "Satellite broadband", "Low-orbit constellations that bring internet anywhere.", {PSO: 0.005, IP: 0.01})
+t("ele_zero_trust", 2021, 3, "Zero-trust security", "Networks that check every user and device every time.", {IS: 0.02, "foreign_influence_resistance": 0.02}, pre=["ele_cyber_defence"])
+t("ele_semiconductor_sovereignty", 2022, 4, "Domestic chip supply chains", "National programmes to make advanced chips at home.", {"production_efficiency": 0.01})
+t("ele_generative_ai", 2023, 1, "Generative AI", "Large models that write, code and design.", {RS: 0.01, PSO: 0.01}, pre=["ele_machine_learning", "ele_deep_learning"])
+t("ele_ai_cyber_defence", 2024, 3, "AI-driven cyber defence", "Systems that detect and answer intrusions automatically.", {IS: 0.02, IP: 0.02})
+t("ele_ai_agents", 2025, 1, "AI agents", "AI systems that carry out multi-step tasks on their own.", {PSO: 0.01})
+t("ele_6g_research", 2026, 0, "6G networks", "The next generation of mobile networks.", {PSO: 0.005})
+t("ele_post_quantum_crypto", 2027, 3, "Post-quantum cryptography", "Encryption that resists quantum computers.", {"foreign_influence_resistance": 0.02, IS: 0.01})
+t("ele_neuromorphic_chips", 2028, 4, "Neuromorphic chips", "Chips modelled on the brain that run AI with little power.", {RS: 0.01})
+t("ele_ai_research_assistants", 2029, 1, "AI research assistants", "AI systems that run experiments and write papers.", {RS: 0.01})
+t("ele_brain_computer_interfaces", 2030, 2, "Brain-computer interfaces", "Implants that let people control devices by thought.", {"health_outcomes": 0.01})
+t("ele_quantum_computing", 2032, 1, "Quantum computing", "Practical quantum computers for science and cryptography.", {IP: 0.03, RS: 0.01}, pre=["ele_ai_research_assistants"])
 
-t = cat("economy_digital", "Economy and digital", "Commerce, government services and finance.", False)
-t("eco_e_commerce", "E-commerce", "Buying and selling online.", 1999, 0, {"trade_efficiency": 0.03, "private_sector_output": 0.01})
-t("eco_container_logistics", "Global container logistics", "Integrated shipping and supply chains.", 2000, 2, {"trade_efficiency": 0.04})
-t("eco_online_banking", "Online banking", "Banking services over the internet.", 2002, 0, {"private_sector_output": 0.02}, [["eco_e_commerce"]])
-t("eco_e_government", "E-government", "Public services and tax filing online.", 2003, 1, {"tax_efficiency": 0.03, "corruption": -0.02})
-t("eco_cloud_computing", "Cloud computing", "Computing rented as a service.", 2010, 1, {"research_speed": 0.03, "private_sector_output": 0.02}, [["eco_e_government"]])
-t("eco_mobile_payments", "Mobile payments", "Payments by phone.", 2012, 0, {"tax_efficiency": 0.02, "private_sector_output": 0.02}, [["eco_online_banking"]])
-t("eco_platform_economy", "Platform economy", "Online marketplaces for services and work.", 2015, 2, {"gdp_growth": 0.002}, [["eco_cloud_computing"], ["eco_mobile_payments"]])
-t("eco_service_automation", "Service automation", "Automated customer service and back offices.", 2027, 1, {"production_efficiency": 0.03, "private_sector_output": 0.03}, [["eco_platform_economy"]])
+# ------------------------------------------------------------------ industry and energy
+t = cat("industry_energy", "Industry and energy", "Manufacturing methods and power generation.", False, "industry")
+PE, EC, FO, RO, NO, EM, CS = "production_efficiency", "energy_cost", "fossil_output", "renewable_output", "nuclear_output", "emissions", "construction_speed"
+t("ind_nuclear_power", 1980, 3, "Nuclear power", "Large nuclear power stations.", {NO: 0.1}, pre=[])
+t("ind_computer_aided_design", 1990, 0, "Computer-aided design and manufacturing", "Factories run from digital drawings.", {PE: 0.02}, pre=[])
+t("ind_lean_manufacturing", 1997, 0, "Lean manufacturing", "Just-in-time production with less waste.", {PE: 0.03})
+t("ind_combined_cycle_gas", 1998, 1, "Combined-cycle gas power", "Efficient gas power stations.", {EC: -0.02, FO: 0.03}, pre=["ind_computer_aided_design"])
+t("ind_precast_construction", 2000, 4, "Precast and modular construction", "Building parts made in factories and assembled on site.", {CS: 0.03}, pre=["ind_computer_aided_design"])
+t("ind_deepwater_drilling", 2001, 1, "Deepwater drilling", "Oil and gas from fields under deep water.", {FO: 0.04})
+t("ind_supply_chain_software", 2002, 0, "Supply-chain software", "Planning systems that link suppliers and factories.", {PE: 0.02})
+t("ind_onshore_wind", 2003, 2, "Modern onshore wind turbines", "Larger, more reliable wind turbines.", {RO: 0.06}, pre=["ind_computer_aided_design"])
+t("ind_high_speed_rail", 2004, 4, "High-speed rail construction", "Dedicated lines for trains above 250 km/h.", {CS: 0.02, "trade_efficiency": 0.01})
+t("ind_industrial_robotics", 2005, 0, "Industrial robotics", "Robots on assembly lines.", {PE: 0.03, CS: 0.01})
+t("ind_ultra_supercritical_coal", 2006, 1, "Ultra-supercritical coal plants", "Coal plants that burn less coal for each unit of power.", {EC: -0.02, FO: 0.02})
+t("ind_lng_trade", 2007, 1, "Liquefied gas shipping", "Gas shipped worldwide as a liquid.", {EC: -0.01, "trade_efficiency": 0.01})
+t("ind_wind_and_solar", 2008, 2, "Utility-scale wind and solar", "Large wind farms and solar parks.", {RO: 0.1, EM: -0.03})
+t("ind_horizontal_drilling", 2008, 3, "Horizontal drilling and fracking", "Extracting oil and gas from shale.", {FO: 0.06, EC: -0.02}, pre=["ind_deepwater_drilling"])
+t("ind_led_lighting", 2009, 4, "LED lighting", "Lighting that uses a fraction of the power.", {EC: -0.01})
+t("ind_smart_grids", 2010, 2, "Smart grids", "Power grids with digital metering and control.", {EC: -0.01})
+t("ind_offshore_wind", 2011, 2, "Offshore wind farms", "Large turbines at sea.", {RO: 0.06})
+t("ind_automated_warehouses", 2012, 0, "Automated warehouses", "Robots that store and pick goods.", {PE: 0.02, "trade_efficiency": 0.01})
+t("ind_carbon_fibre", 2013, 4, "Carbon-fibre composites", "Light, strong materials for vehicles and aircraft.", {PE: 0.01})
+t("ind_additive_manufacturing", 2014, 0, "Additive manufacturing", "Industrial 3D printing.", {PE: 0.02}, pre=["ind_industrial_robotics"])
+t("ind_cheap_solar", 2015, 2, "Low-cost solar panels", "Solar power cheaper than new coal in sunny places.", {RO: 0.08, EC: -0.01})
+t("ind_industry_4", 2016, 0, "Connected factories", "Machines that report their state and schedule maintenance themselves.", {PE: 0.02})
+t("ind_electric_vehicles", 2017, 4, "Mass-market electric vehicles", "Affordable battery cars.", {EM: -0.02, EC: -0.01})
+t("ind_grid_storage", 2018, 2, "Grid-scale batteries", "Batteries that store renewable power for the grid.", {RO: 0.05, EC: -0.01}, pre=["ind_cheap_solar", "ind_smart_grids"])
+t("ind_coal_phase_out", 2019, 1, "Coal phase-out plans", "Closing coal plants on a schedule and replacing them.", {EM: -0.05, EC: 0.01}, mx=["ind_fossil_expansion"])
+t("ind_fossil_expansion", 2019, 3, "Fossil fuel expansion", "New pipelines, terminals and fields to sell more oil and gas.", {FO: 0.06}, pre=["ind_horizontal_drilling"], mx=["ind_coal_phase_out"])
+t("ind_heat_pumps", 2020, 4, "Heat pumps", "Electric heating several times more efficient than boilers.", {EC: -0.01, EM: -0.01})
+t("ind_nuclear_life_extension", 2021, 3, "Nuclear plant life extension", "Running existing reactors for 60 to 80 years.", {NO: 0.05})
+t("ind_battery_gigafactories", 2022, 0, "Battery gigafactories", "Huge plants that make batteries cheaply.", {PE: 0.01, EC: -0.01})
+t("ind_long_duration_storage", 2023, 2, "Long-duration energy storage", "Storage that covers days, not hours.", {RO: 0.04})
+t("ind_carbon_capture", 2024, 1, "Carbon capture", "Capturing carbon dioxide from power plants and factories.", {EM: -0.03})
+t("ind_humanoid_robots", 2025, 0, "General-purpose robots", "Robots that do many factory tasks without reprogramming.", {PE: 0.02})
+t("ind_advanced_geothermal", 2026, 2, "Advanced geothermal", "Deep wells that draw heat almost anywhere.", {RO: 0.04})
+t("ind_sodium_batteries", 2027, 4, "Sodium-ion batteries", "Cheap batteries without lithium.", {EC: -0.01})
+t("ind_ai_factories", 2028, 0, "Lights-out factories", "Factories that run with almost no workers on the floor.", {PE: 0.02, CS: 0.02})
+t("ind_next_gen_nuclear", 2029, 3, "Advanced reactor designs", "Reactors cooled by gas, salt or metal.", {NO: 0.05})
+t("ind_small_modular_reactors", 2030, 3, "Small modular reactors", "Factory-built nuclear reactors.", {NO: 0.1, EM: -0.03})
+t("ind_green_hydrogen", 2030, 2, "Green hydrogen", "Hydrogen made with renewable power for industry.", {EM: -0.05, RO: 0.03}, pre=["ind_long_duration_storage"])
+t("ind_fusion_pilot", 2036, 3, "Fusion pilot plants", "The first fusion reactors that put power on a grid.", {NO: 0.1}, pre=["ind_small_modular_reactors"])
 
-t = cat("doctrine", "Doctrine", "How the armed forces organise and fight.", True)
-t("doc_rapid_reaction", "Rapid reaction forces", "Units ready to deploy within days.", 1999, 0, {"army_org": 0.03})
-t("doc_network_centric", "Network-centric warfare", "Sharing information across all units in real time.", 2003, 1, {"army_org": 0.03, "air_effectiveness": 0.02})
-t("doc_counterinsurgency", "Counter-insurgency doctrine", "Securing populations and working with local forces.", 2006, 0, {"internal_security": 0.05}, [["doc_rapid_reaction"]])
-t("doc_territorial_defence", "Total territorial defence", "Reservists and local units trained to defend their regions.", 2015, 2, {"manpower_factor": 0.1, "army_defence": 0.03})
-t("doc_multi_domain", "Multi-domain operations", "Land, sea, air, space and cyber forces planned as one.", 2018, 1, {"army_org": 0.04, "naval_effectiveness": 0.02, "air_effectiveness": 0.02}, [["doc_network_centric"]])
-t("doc_drone_warfare", "Drone-centric warfare", "Organising units around large numbers of drones.", 2024, 1, {"army_attack": 0.05}, [["doc_multi_domain"]])
+# ------------------------------------------------------------------ economy and digital
+t = cat("economy_digital", "Economy and digital", "Commerce, finance and public services.", False, "digital")
+TE, TX, CO = "trade_efficiency", "tax_efficiency", "corruption"
+t("eco_electronic_banking", 1988, 0, "Electronic banking and card payments", "Computerised banks, cash machines and payment cards.", {PSO: 0.005}, pre=[])
+t("eco_containerisation", 1990, 2, "Containerised shipping", "Standard containers moved by ship, rail and truck.", {TE: 0.02}, pre=[])
+t("eco_e_commerce", 1999, 0, "E-commerce", "Buying and selling online.", {TE: 0.01, PSO: 0.005}, pre=["eco_electronic_banking", "ele_internet"])
+t("eco_container_logistics", 2000, 2, "Global container logistics", "Integrated shipping and supply chains.", {TE: 0.02})
+t("eco_inflation_targeting", 2001, 3, "Inflation targeting", "Central banks that publish and pursue an inflation target.", {"inflation": -0.002}, pre=[])
+t("eco_online_banking", 2002, 0, "Online banking", "Banking services over the internet.", {PSO: 0.005}, pre=["eco_e_commerce"])
+t("eco_e_government", 2003, 1, "E-government", "Public services and tax filing online.", {TX: 0.01, CO: -0.01}, pre=["eco_electronic_banking"])
+t("eco_electronic_customs", 2004, 2, "Electronic customs", "Customs declarations and clearance online.", {TE: 0.01, CO: -0.005})
+t("eco_microfinance", 2005, 3, "Microfinance", "Small loans for people without access to banks.", {PSO: 0.005})
+t("eco_digital_id", 2006, 1, "Digital identity", "Secure electronic identity cards and online sign-in for citizens.", {TX: 0.01})
+t("eco_mobile_money", 2007, 3, "Mobile money", "Payments and savings by text message without a bank account.", {PSO: 0.005}, pre=["eco_microfinance"])
+t("eco_algorithmic_trading", 2008, 0, "Algorithmic trading", "Computers that trade securities in fractions of a second.", {"foreign_investment": 0.01})
+t("eco_bank_stress_tests", 2009, 4, "Bank stress testing", "Regular tests of whether banks survive a crisis.", {"interest_rate": -0.002}, mx=["eco_light_regulation"])
+t("eco_light_regulation", 2009, 3, "Light-touch financial regulation", "Fewer rules so finance can grow faster.", {"foreign_investment": 0.02}, pre=["eco_microfinance"], mx=["eco_bank_stress_tests"])
+t("eco_cloud_computing", 2010, 1, "Cloud computing", "Computing rented as a service.", {RS: 0.005, PSO: 0.005}, pre=["eco_e_government"])
+t("eco_open_data", 2011, 1, "Open government data", "Public datasets published for anyone to use.", {CO: -0.01})
+t("eco_mobile_payments", 2012, 0, "Mobile payments", "Payments by phone.", {TX: 0.005, PSO: 0.005}, pre=["eco_online_banking"])
+t("eco_sharing_economy", 2013, 3, "Sharing economy", "Apps for sharing rides, rooms and tools.", {PSO: 0.005})
+t("eco_real_time_payments", 2014, 0, "Instant payment systems", "Bank transfers that arrive in seconds, day and night.", {PSO: 0.005})
+t("eco_platform_economy", 2015, 2, "Platform economy", "Online marketplaces for services and work.", {"gdp_growth": 0.001}, pre=["eco_cloud_computing", "eco_mobile_payments"])
+t("eco_e_invoicing", 2016, 1, "Electronic invoicing", "Invoices sent straight to the tax authority.", {TX: 0.01})
+t("eco_fintech", 2017, 0, "Financial technology firms", "Online lenders, brokers and banks.", {"foreign_investment": 0.01})
+t("eco_contactless_payments", 2018, 0, "Contactless payments", "Cards and phones tapped to pay.", {PSO: 0.005})
+t("eco_digital_trade_rules", 2019, 2, "Digital trade agreements", "Common rules for data, e-commerce and online services.", {TE: 0.01, "bloc_integration": 0.02})
+t("eco_remote_work", 2020, 1, "Remote work infrastructure", "Video calls and collaboration tools for working from home.", {PSO: 0.005})
+t("eco_supply_chain_mapping", 2021, 2, "Supply-chain resilience", "Mapping and stockpiling critical supplies.", {TE: 0.005, PE: 0.005})
+t("eco_central_bank_digital", 2022, 4, "Central bank digital currency", "Money issued by the central bank in digital form.", {TX: 0.01}, mx=["eco_open_crypto"])
+t("eco_open_crypto", 2022, 3, "Regulated crypto-asset markets", "Licensed exchanges and rules for crypto assets.", {"foreign_investment": 0.01}, mx=["eco_central_bank_digital"])
+t("eco_ai_public_services", 2023, 1, "AI in public services", "AI that answers citizens and processes applications.", {TX: 0.01, CO: -0.005})
+t("eco_reshoring", 2024, 2, "Reshoring and friend-shoring", "Moving production home or to friendly countries.", {PE: 0.005, TE: -0.005})
+t("eco_ai_finance", 2025, 0, "AI-driven finance", "AI that assesses credit and manages investments.", {"foreign_investment": 0.01})
+t("eco_digital_customs_unions", 2026, 2, "Paperless trade corridors", "Trade documents exchanged digitally across borders.", {TE: 0.01})
+t("eco_service_automation", 2027, 1, "Service automation", "Automated customer service and back offices.", {PE: 0.01, PSO: 0.01}, pre=["eco_ai_public_services"])
+t("eco_tokenised_assets", 2028, 0, "Tokenised securities", "Shares and bonds recorded and settled on shared ledgers.", {"foreign_investment": 0.01})
+t("eco_predictive_government", 2029, 1, "Predictive public services", "Services offered before citizens apply for them.", {TX: 0.01})
+t("eco_universal_digital_trade", 2030, 2, "Seamless digital trade", "Goods cleared at borders by data alone.", {TE: 0.01, "gdp_growth": 0.001})
 
-# ---- older root technologies most countries already have in 2000
-cat_ref = {k: (lambda k: (lambda *a, **kw: tech(k, *a, **kw)))(k) for k in CATS}
-t = cat_ref["infantry"]
-t("inf_modern_rifles", "Modern assault rifles and radios", "Standard rifles, radios and helmets for a modern army.", 1985, 3, {'army_attack': 0.02})
-t = cat_ref["armour"]
-t("arm_third_generation_mbt", "Third-generation main battle tank", "Tanks with composite armour and stabilised guns.", 1985, 2, {'army_defence': 0.02})
-t = cat_ref["artillery_missiles"]
-t("art_self_propelled_artillery", "Self-propelled artillery", "Armoured guns that move with the army.", 1985, 1, {'army_attack': 0.02})
-t = cat_ref["air_drones"]
-t("air_fourth_generation_fighters", "Fourth-generation fighters", "Agile multirole fighters with modern radar.", 1985, 1, {'air_effectiveness': 0.03})
-t = cat_ref["naval"]
-t("nav_guided_missile_ships", "Guided-missile warships", "Frigates and destroyers armed with anti-ship and air-defence missiles.", 1985, 2, {'naval_effectiveness': 0.03})
-t = cat_ref["electronics_cyber"]
-t("ele_personal_computers", "Personal computers", "Computers in offices and homes.", 1985, 3, {'research_speed': 0.02})
-t = cat_ref["industry_energy"]
-t("ind_nuclear_power", "Nuclear power", "Large nuclear power stations.", 1980, 3, {'nuclear_output': 0.1})
-t = cat_ref["economy_digital"]
-t("eco_electronic_banking", "Electronic banking and card payments", "Computerised banks, cash machines and payment cards.", 1988, 3, {'private_sector_output': 0.01})
-t = cat_ref["doctrine"]
-t("doc_combined_arms", "Combined-arms manoeuvre", "Infantry, armour, artillery and air power fighting together.", 1985, 3, {'army_org': 0.02})
-t = cat_ref["electronics_cyber"]
-t("ele_mobile_2g", "2G mobile phones", "Digital mobile phone networks.", 1993, 3, {"private_sector_output": 0.01}, [["ele_personal_computers"]])
-t("ele_internet", "The internet", "A public worldwide computer network.", 1994, 2, {"research_speed": 0.02}, [["ele_personal_computers"]])
-# first technologies of each category build on the roots
-ROOT_OF = {"infantry": "inf_modern_rifles", "armour": "arm_third_generation_mbt", "artillery_missiles": "art_self_propelled_artillery", "air_drones": "air_fourth_generation_fighters", "naval": "nav_guided_missile_ships", "electronics_cyber": "ele_personal_computers", "industry_energy": "ind_nuclear_power", "economy_digital": "eco_electronic_banking", "doctrine": "doc_combined_arms"}
-FIRST_EXTRA = {"ele_broadband": "ele_internet", "ele_mobile_3g": "ele_mobile_2g", "eco_e_commerce": "ele_internet"}
+# ------------------------------------------------------------------ doctrine
+t = cat("doctrine", "Doctrine", "How the armed forces organise and fight.", True, "doctrine")
+t("doc_combined_arms", 1985, 1, "Combined-arms manoeuvre", "Infantry, armour, artillery and air power fighting together.", {O: 0.02}, pre=[])
+t("doc_peacekeeping", 1995, 3, "Peace support operations", "Doctrine for keeping the peace between former enemies.", {"diplomatic_reputation": 0.02}, pre=["doc_combined_arms"])
+t("doc_rapid_reaction", 1999, 0, "Rapid reaction forces", "Units ready to deploy within days.", {O: 0.02}, pre=["doc_combined_arms"])
+t("doc_jointness", 2000, 1, "Joint operations", "Army, navy and air force planning and fighting under one command.", {O: 0.01})
+t("doc_special_forces", 2001, 2, "Expanded special forces", "More special operations units for raids and training partners.", {A: 0.01, IS: 0.01}, pre=["doc_combined_arms"])
+t("doc_professional_army", 2002, 0, "All-volunteer professional army", "Ending conscription for a smaller, better-trained army.", {O: 0.02, "training_time": -0.05}, mx=["doc_mass_conscription"])
+t("doc_mass_conscription", 2002, 4, "Mass conscript army", "Keeping universal service for a large trained reserve.", {"manpower_factor": 0.05}, pre=["doc_combined_arms"], mx=["doc_professional_army"])
+t("doc_network_centric", 2003, 1, "Network-centric warfare", "Sharing information across all units in real time.", {O: 0.02, AE: 0.01})
+t("doc_expeditionary_logistics", 2004, 0, "Expeditionary logistics", "Supplying forces far from home for long periods.", {O: 0.01})
+t("doc_effects_based", 2005, 1, "Effects-based operations", "Planning strikes by the effect wanted on the enemy system.", {A: 0.01})
+t("doc_counterinsurgency", 2006, 3, "Counter-insurgency doctrine", "Securing populations and working with local forces.", {IS: 0.03}, pre=["doc_peacekeeping"])
+t("doc_security_force_assistance", 2007, 3, "Security force assistance", "Training and advising the forces of partner countries.", {"diplomatic_reputation": 0.01, IS: 0.01})
+t("doc_hybrid_warfare", 2008, 2, "Hybrid warfare", "Mixing regular forces, proxies, cyber attacks and information campaigns.", {"foreign_influence_power": 0.03}, pre=["doc_special_forces"])
+t("doc_modular_brigades", 2009, 0, "Modular brigades", "Self-contained brigades that can deploy on their own.", {O: 0.02})
+t("doc_cyber_command", 2010, 2, "Cyber commands", "Military commands for defending and attacking networks.", {IP: 0.02})
+t("doc_targeted_killing", 2011, 2, "Drone-led counter-terrorism", "Finding and striking militant leaders with drones and raids.", {IS: 0.02})
+t("doc_civil_military", 2012, 3, "Civil-military cooperation", "Armed forces working with aid agencies and local government.", {"stability_factor": 0.01})
+t("doc_reconnaissance_strike", 2013, 1, "Reconnaissance-strike complex", "Linking drones and sensors directly to artillery and missiles.", {A: 0.02})
+t("doc_anti_access", 2014, 4, "Anti-access and area denial", "Keeping an enemy's forces at a distance with missiles and sensors.", {D: 0.02, NE: 0.01})
+t("doc_territorial_defence", 2015, 4, "Total territorial defence", "Reservists and local units trained to defend their regions.", {"manpower_factor": 0.05, D: 0.02})
+t("doc_information_operations", 2016, 2, "Information operations", "Shaping what the enemy and the public believe.", {"propaganda_efficiency": 0.02})
+t("doc_battalion_tactical_groups", 2017, 0, "Battalion tactical groups", "Small combined-arms groups formed from battalions for each operation.", {O: 0.01, A: 0.01}, mx=["doc_division_centric"])
+t("doc_division_centric", 2017, 1, "Division-centric warfighting", "Returning to divisions and corps as the units that fight large wars.", {O: 0.02}, mx=["doc_battalion_tactical_groups"])
+t("doc_multi_domain", 2018, 1, "Multi-domain operations", "Land, sea, air, space and cyber forces planned as one.", {O: 0.02, NE: 0.01, AE: 0.01}, pre=["doc_network_centric", "doc_cyber_command"])
+t("doc_space_command", 2019, 2, "Space commands", "Military commands for satellites and space defence.", {IP: 0.02})
+t("doc_mission_command", 2020, 0, "Mission command", "Junior leaders given intent and freedom to act.", {O: 0.02})
+t("doc_dispersed_operations", 2021, 4, "Dispersed operations", "Small, spread-out units that are hard to target.", {D: 0.02})
+t("doc_attritional_warfare", 2022, 4, "Attritional warfare", "Mass artillery, mobilisation and industry for a long war.", {"manpower_factor": 0.03, PE: 0.01}, mx=["doc_manoeuvre_warfare"])
+t("doc_manoeuvre_warfare", 2022, 0, "Manoeuvre warfare revival", "Fast armoured thrusts to break the enemy's front.", {A: 0.02}, mx=["doc_attritional_warfare"])
+t("doc_reserve_mobilisation", 2023, 3, "Reserve mobilisation systems", "Calling up and equipping reservists quickly.", {"manpower_factor": 0.03, "training_time": -0.05})
+t("doc_drone_warfare", 2024, 1, "Drone-centric warfare", "Organising units around large numbers of drones.", {A: 0.03}, pre=["doc_multi_domain"])
+t("doc_electronic_warfare_doctrine", 2025, 2, "Electromagnetic spectrum operations", "Fighting for control of radio and radar frequencies.", {D: 0.01, AE: 0.01})
+t("doc_ai_decision_support", 2026, 1, "AI decision support", "AI tools that help commanders plan and decide.", {O: 0.02})
+t("doc_cognitive_warfare", 2027, 2, "Cognitive warfare", "Campaigns aimed at how a society thinks and decides.", {"propaganda_efficiency": 0.02, "foreign_influence_power": 0.02})
+t("doc_autonomous_systems", 2028, 1, "Autonomous systems doctrine", "Rules and tactics for robots that fight alongside soldiers.", {A: 0.02})
+t("doc_whole_of_society_defence", 2029, 4, "Whole-of-society defence", "Civil defence, industry and citizens prepared for war.", {"manpower_factor": 0.03, "stability_factor": 0.01})
+t("doc_algorithmic_warfare", 2030, 1, "Algorithmic warfare", "Fighting at the speed of machines with humans overseeing.", {A: 0.02, O: 0.02})
+
+# ------------------------------------------------------------------ cross-category links and mutual exclusion
 for c in CATS.values():
-    ids = {t["id"] for t in c["techs"]}
+    by_id = {t["id"]: t for t in c["techs"]}
+    lanes = {}
+    for t in sorted(c["techs"], key=lambda t: (t["year"], t["x"])):
+        if "prerequisites" not in t:
+            prev = lanes.get(t["x"])
+            t["prerequisites"] = [[prev["id"]]] if prev else []
+        # an alternative in a mutually exclusive pair does not become the next technology's prerequisite
+        if not t.get("mutually_exclusive") or t["x"] not in lanes:
+            lanes[t["x"]] = t
     for t in c["techs"]:
-        if t["id"] == ROOT_OF[c["id"]] or t["id"] in ("ele_mobile_2g", "ele_internet"):
-            continue
-        if not t.get("prerequisites") and t["year"] >= 1996:
-            t["prerequisites"] = [[ROOT_OF[c["id"]]]]
-for c in CATS.values():
-    for t in c["techs"]:
-        if t["id"] in FIRST_EXTRA:
-            t.setdefault("prerequisites", []).append([FIRST_EXTRA[t["id"]]])
+        if not t["prerequisites"]:
+            del t["prerequisites"]
+ALL = {t["id"]: t for c in CATS.values() for t in c["techs"]}
+for t in ALL.values():
+    for m in t.get("mutually_exclusive", []):
+        o = ALL[m]
+        if t["id"] not in o.setdefault("mutually_exclusive", []):
+            o["mutually_exclusive"].append(t["id"])
 for c in CATS.values():
     c["techs"].sort(key=lambda t: (t["year"], t["x"]))
+    years = {t["year"] for t in c["techs"]}
+    missing = [y for y in range(2000, 2031) if y not in years]
+    assert not missing, (c["id"], missing)
+    for t in c["techs"]:
+        for g in t.get("prerequisites", []):
+            for p in g:
+                assert p in ALL, (t["id"], p)
+                assert ALL[p]["year"] <= t["year"], (t["id"], p)
 
 for c in CATS.values():
     json.dump(c, open(f"data/techs/{c['id']}.json", "w", encoding="utf8", newline="\n"), indent=2, ensure_ascii=False)
-json.dump(
-    {"note": "Research rules. Starting technologies are derived from real 2000 figures (income tier, R&D and military spending from the World Bank); the lags are gameplay estimates."},
-    open("data/techs/rules.json", "w", encoding="utf8", newline="\n"), indent=2)
+    open(f"data/techs/{c['id']}.json", "a", encoding="utf8", newline="\n").write("\n")
 print(sum(len(c["techs"]) for c in CATS.values()), "techs in", len(CATS), "categories")

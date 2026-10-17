@@ -45,6 +45,7 @@ export function initialResearch(db: ContentDB, tag: string, gdp: number, populat
   for (const t of techs) {
     const military = db.techCategories.get(t.category)?.military;
     if (t.year > 2000 - (military ? lag.military : lag.civil)) continue;
+    if (t.mutually_exclusive.some((m) => completed.has(m))) continue;
     if (t.prerequisites.every((g) => g.some((p) => completed.has(p)))) completed.add(t.id);
   }
   return { slots: Array.from({ length: researchSlots(db, gdp) }, () => null), progress: {}, completed: [...completed] };
@@ -78,13 +79,21 @@ export function researchSpeed(db: ContentDB, cs: CountryState): { total: number;
   return { total: Math.max(0.2, 1 + rndBonus + mod), parts };
 }
 
-/** Days needed for a technology now, with the ahead-of-time penalty or catch-up bonus. */
-export function techCost(db: ContentDB, t: TechDef, day: number): { cost: number; factor: number } {
+/**
+ * Days needed for a technology now (HOI4 style). Before its year the cost grows with every year
+ * ahead (linear plus a squared part, so researching far ahead gets steep); after it, catching up
+ * is cheaper, capped. The base cost itself grows slowly with the technology's year (data).
+ */
+export function techCost(db: ContentDB, t: TechDef, day: number): { cost: number; factor: number; yearsAhead: number } {
   const r = db.researchRules;
-  const year = ymdOf(day).year;
-  const diff = t.year - year;
-  const factor = diff > 0 ? 1 + diff * r.ahead_penalty_per_year : 1 - Math.min(r.max_behind_bonus, -diff * r.behind_bonus_per_year);
-  return { cost: t.cost * factor, factor };
+  const ymd = ymdOf(day);
+  // fractional years, so the penalty eases off through the year rather than dropping on 1 January
+  const now = ymd.year + (ymd.month - 1) / 12;
+  const diff = t.year - now;
+  const factor = diff > 0
+    ? 1 + diff * r.ahead_penalty_per_year + diff * diff * r.ahead_penalty_growth
+    : 1 - Math.min(r.max_behind_bonus, -diff * r.behind_bonus_per_year);
+  return { cost: t.cost * factor, factor, yearsAhead: Math.max(0, Math.ceil(diff)) };
 }
 
 export function setResearch(ctx: SimContext, tag: string, slot: number, tech: string | null): { ok: boolean; text: string } {

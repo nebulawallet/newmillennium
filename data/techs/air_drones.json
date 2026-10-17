@@ -10,11 +10,11 @@
       "name": "Fourth-generation fighters",
       "description": "Agile multirole fighters with modern radar.",
       "year": 1985,
-      "x": 1,
+      "x": 0,
       "effects": {
-        "air_effectiveness": 0.03
+        "air_effectiveness": 0.02
       },
-      "cost": 500
+      "cost": 100
     },
     {
       "id": "air_fighter_upgrades",
@@ -23,9 +23,9 @@
       "year": 1998,
       "x": 0,
       "effects": {
-        "air_effectiveness": 0.03
+        "air_effectiveness": 0.02
       },
-      "cost": 700,
+      "cost": 100,
       "prerequisites": [
         [
           "air_fourth_generation_fighters"
@@ -39,13 +39,45 @@
       "year": 1999,
       "x": 1,
       "effects": {
-        "air_effectiveness": 0.03,
+        "air_effectiveness": 0.02,
         "army_attack": 0.01
       },
-      "cost": 700,
       "prerequisites": [
         [
           "air_fourth_generation_fighters"
+        ]
+      ],
+      "cost": 100
+    },
+    {
+      "id": "air_targeting_pods",
+      "name": "Targeting pods",
+      "description": "Pods that let any fighter find and designate ground targets.",
+      "year": 2000,
+      "x": 1,
+      "effects": {
+        "air_effectiveness": 0.01
+      },
+      "cost": 118,
+      "prerequisites": [
+        [
+          "air_precision_bombs"
+        ]
+      ]
+    },
+    {
+      "id": "air_beyond_visual_range",
+      "name": "Active-radar air-to-air missiles",
+      "description": "Missiles that guide themselves after launch.",
+      "year": 2001,
+      "x": 0,
+      "effects": {
+        "air_effectiveness": 0.02
+      },
+      "cost": 119,
+      "prerequisites": [
+        [
+          "air_fighter_upgrades"
         ]
       ]
     },
@@ -56,30 +88,95 @@
       "year": 2002,
       "x": 2,
       "effects": {
-        "intelligence_power": 0.05
+        "intelligence_power": 0.03
       },
-      "cost": 700,
       "prerequisites": [
         [
           "air_fourth_generation_fighters"
         ]
+      ],
+      "cost": 121
+    },
+    {
+      "id": "air_helmet_cueing",
+      "name": "Helmet-mounted cueing",
+      "description": "Pilots aim missiles by looking at the target.",
+      "year": 2003,
+      "x": 0,
+      "effects": {
+        "air_effectiveness": 0.01
+      },
+      "cost": 122,
+      "prerequisites": [
+        [
+          "air_beyond_visual_range"
+        ]
       ]
+    },
+    {
+      "id": "air_satellite_guided_bombs",
+      "name": "All-weather satellite-guided bombs",
+      "description": "Bomb kits that hit coordinates through cloud and dust.",
+      "year": 2004,
+      "x": 1,
+      "effects": {
+        "air_effectiveness": 0.01,
+        "army_attack": 0.01
+      },
+      "prerequisites": [
+        [
+          "air_targeting_pods"
+        ]
+      ],
+      "cost": 124
+    },
+    {
+      "id": "air_tanker_refuelling",
+      "name": "Expanded air refuelling",
+      "description": "Tanker fleets that extend the reach of strike aircraft.",
+      "year": 2005,
+      "x": 3,
+      "effects": {
+        "air_effectiveness": 0.01
+      },
+      "prerequisites": [
+        [
+          "air_fourth_generation_fighters"
+        ]
+      ],
+      "cost": 125
     },
     {
       "id": "air_aesa_radar",
       "name": "AESA radar",
       "description": "Electronically scanned radar for fighters.",
       "year": 2006,
-      "x": 1,
+      "x": 0,
       "effects": {
-        "air_effectiveness": 0.03
+        "air_effectiveness": 0.02
       },
       "prerequisites": [
         [
-          "air_precision_bombs"
+          "air_helmet_cueing"
         ]
       ],
-      "cost": 850
+      "cost": 126
+    },
+    {
+      "id": "air_tactical_drones",
+      "name": "Tactical reconnaissance drones",
+      "description": "Small drones launched by brigades and battalions.",
+      "year": 2007,
+      "x": 2,
+      "effects": {
+        "army_attack": 0.01
+      },
+      "cost": 128,
+      "prerequisites": [
+        [
+          "air_reconnaissance_drones"
+        ]
+      ]
     },
     {
       "id": "air_armed_drones",
@@ -88,15 +185,31 @@
       "year": 2008,
       "x": 2,
       "effects": {
-        "air_effectiveness": 0.03,
-        "army_attack": 0.02
+        "air_effectiveness": 0.02,
+        "army_attack": 0.01
       },
       "prerequisites": [
         [
           "air_reconnaissance_drones"
         ]
       ],
-      "cost": 850
+      "cost": 129
+    },
+    {
+      "id": "air_small_diameter_bombs",
+      "name": "Small-diameter bombs",
+      "description": "Light precision bombs so one aircraft can hit many targets.",
+      "year": 2009,
+      "x": 1,
+      "effects": {
+        "air_effectiveness": 0.01
+      },
+      "cost": 131,
+      "prerequisites": [
+        [
+          "air_satellite_guided_bombs"
+        ]
+      ]
     },
     {
       "id": "air_stealth_fighters",
@@ -105,14 +218,262 @@
       "year": 2010,
       "x": 0,
       "effects": {
-        "air_effectiveness": 0.06
+        "air_effectiveness": 0.04
       },
       "prerequisites": [
         [
-          "air_fighter_upgrades"
+          "air_aesa_radar"
         ]
       ],
-      "cost": 850
+      "cost": 132
+    },
+    {
+      "id": "air_electronic_attack",
+      "name": "Airborne electronic attack",
+      "description": "Aircraft that jam radars and communications.",
+      "year": 2011,
+      "x": 3,
+      "effects": {
+        "air_effectiveness": 0.02
+      },
+      "cost": 134,
+      "prerequisites": [
+        [
+          "air_tanker_refuelling"
+        ]
+      ]
+    },
+    {
+      "id": "air_combat_helicopter_upgrades",
+      "name": "Attack helicopter upgrades",
+      "description": "Mast radars and longer-range missiles for attack helicopters.",
+      "year": 2012,
+      "x": 1,
+      "effects": {
+        "army_attack": 0.01
+      },
+      "cost": 135,
+      "prerequisites": [
+        [
+          "air_small_diameter_bombs"
+        ]
+      ]
+    },
+    {
+      "id": "air_male_drone_fleets",
+      "name": "Long-endurance armed drone fleets",
+      "description": "Large fleets of armed drones flying round the clock.",
+      "year": 2013,
+      "x": 2,
+      "effects": {
+        "army_attack": 0.01,
+        "intelligence_power": 0.02
+      },
+      "cost": 136,
+      "prerequisites": [
+        [
+          "air_armed_drones"
+        ]
+      ]
+    },
+    {
+      "id": "air_standoff_missiles",
+      "name": "Stand-off air-launched missiles",
+      "description": "Missiles launched from outside enemy air defences.",
+      "year": 2014,
+      "x": 1,
+      "effects": {
+        "air_effectiveness": 0.02
+      },
+      "cost": 138,
+      "prerequisites": [
+        [
+          "air_combat_helicopter_upgrades"
+        ]
+      ]
+    },
+    {
+      "id": "air_cheap_tactical_drones",
+      "name": "Low-cost tactical drones",
+      "description": "Mass-produced drones from commercial parts.",
+      "year": 2015,
+      "x": 2,
+      "effects": {
+        "army_attack": 0.01
+      },
+      "cost": 139,
+      "prerequisites": [
+        [
+          "air_male_drone_fleets"
+        ]
+      ]
+    },
+    {
+      "id": "air_sensor_fusion",
+      "name": "Sensor fusion",
+      "description": "Cockpits that merge radar, infrared and data-link tracks into one picture.",
+      "year": 2016,
+      "x": 0,
+      "effects": {
+        "air_effectiveness": 0.02
+      },
+      "cost": 141,
+      "prerequisites": [
+        [
+          "air_stealth_fighters"
+        ]
+      ]
+    },
+    {
+      "id": "air_long_range_aam",
+      "name": "Very-long-range air-to-air missiles",
+      "description": "Missiles that hit tankers and radar planes far away.",
+      "year": 2017,
+      "x": 0,
+      "effects": {
+        "air_effectiveness": 0.01
+      },
+      "cost": 142,
+      "prerequisites": [
+        [
+          "air_sensor_fusion"
+        ]
+      ]
+    },
+    {
+      "id": "air_light_attack_aircraft",
+      "name": "Light attack aircraft",
+      "description": "Cheap turboprop aircraft for counter-insurgency.",
+      "year": 2018,
+      "x": 1,
+      "effects": {
+        "army_attack": 0.01,
+        "internal_security": 0.01
+      },
+      "mutually_exclusive": [
+        "air_drone_carriers"
+      ],
+      "cost": 143,
+      "prerequisites": [
+        [
+          "air_standoff_missiles"
+        ]
+      ]
+    },
+    {
+      "id": "air_drone_carriers",
+      "name": "Drone-launching aircraft",
+      "description": "Transport aircraft that release swarms of small drones.",
+      "year": 2018,
+      "x": 2,
+      "effects": {
+        "air_effectiveness": 0.01
+      },
+      "mutually_exclusive": [
+        "air_light_attack_aircraft"
+      ],
+      "cost": 143,
+      "prerequisites": [
+        [
+          "air_cheap_tactical_drones"
+        ]
+      ]
+    },
+    {
+      "id": "air_kamikaze_drones",
+      "name": "Long-range kamikaze drones",
+      "description": "One-way attack drones that dive onto their targets.",
+      "year": 2019,
+      "x": 2,
+      "effects": {
+        "army_attack": 0.02
+      },
+      "cost": 145,
+      "prerequisites": [
+        [
+          "air_cheap_tactical_drones"
+        ]
+      ]
+    },
+    {
+      "id": "air_fighter_drone_teaming",
+      "name": "Loyal wingman drones",
+      "description": "Unmanned jets that fly with and for a crewed fighter.",
+      "year": 2020,
+      "x": 0,
+      "effects": {
+        "air_effectiveness": 0.02
+      },
+      "cost": 146,
+      "prerequisites": [
+        [
+          "air_long_range_aam"
+        ]
+      ]
+    },
+    {
+      "id": "air_counter_air_defence",
+      "name": "Suppression of air defences",
+      "description": "Decoys and anti-radiation missiles that blind enemy air defence.",
+      "year": 2021,
+      "x": 3,
+      "effects": {
+        "air_effectiveness": 0.02
+      },
+      "prerequisites": [
+        [
+          "air_electronic_attack"
+        ]
+      ],
+      "cost": 148
+    },
+    {
+      "id": "air_drone_mothership",
+      "name": "Drone motherships",
+      "description": "Large drones that launch smaller ones near the target.",
+      "year": 2022,
+      "x": 2,
+      "effects": {
+        "army_attack": 0.01
+      },
+      "cost": 149,
+      "prerequisites": [
+        [
+          "air_kamikaze_drones"
+        ]
+      ]
+    },
+    {
+      "id": "air_hypersonic_aam",
+      "name": "Hypersonic air-launched missiles",
+      "description": "Air-launched missiles faster than Mach 5.",
+      "year": 2023,
+      "x": 1,
+      "effects": {
+        "air_effectiveness": 0.02
+      },
+      "cost": 151,
+      "prerequisites": [
+        [
+          "air_standoff_missiles"
+        ]
+      ]
+    },
+    {
+      "id": "air_ai_pilots",
+      "name": "AI combat pilots",
+      "description": "Software that flies and fights an aircraft in simulated combat.",
+      "year": 2024,
+      "x": 0,
+      "effects": {
+        "air_effectiveness": 0.02
+      },
+      "cost": 152,
+      "prerequisites": [
+        [
+          "air_fighter_drone_teaming"
+        ]
+      ]
     },
     {
       "id": "air_drone_swarms",
@@ -121,14 +482,97 @@
       "year": 2025,
       "x": 2,
       "effects": {
-        "air_effectiveness": 0.05
+        "air_effectiveness": 0.03
       },
       "prerequisites": [
+        [
+          "air_drone_mothership"
+        ],
         [
           "air_armed_drones"
         ]
       ],
-      "cost": 1200
+      "cost": 153
+    },
+    {
+      "id": "air_adaptive_engines",
+      "name": "Adaptive-cycle engines",
+      "description": "Jet engines that switch between range and thrust.",
+      "year": 2026,
+      "x": 3,
+      "effects": {
+        "air_effectiveness": 0.02
+      },
+      "cost": 155,
+      "prerequisites": [
+        [
+          "air_counter_air_defence"
+        ]
+      ]
+    },
+    {
+      "id": "air_space_based_sensors",
+      "name": "Space-based air tracking",
+      "description": "Satellites that track aircraft and missiles from orbit.",
+      "year": 2027,
+      "x": 3,
+      "effects": {
+        "air_effectiveness": 0.02
+      },
+      "cost": 156,
+      "prerequisites": [
+        [
+          "air_adaptive_engines"
+        ]
+      ]
+    },
+    {
+      "id": "air_cca_squadrons",
+      "name": "Collaborative combat aircraft squadrons",
+      "description": "Whole squadrons of unmanned jets controlled from crewed fighters.",
+      "year": 2028,
+      "x": 0,
+      "effects": {
+        "air_effectiveness": 0.03
+      },
+      "cost": 158,
+      "prerequisites": [
+        [
+          "air_ai_pilots"
+        ]
+      ]
+    },
+    {
+      "id": "air_autonomous_strike",
+      "name": "Autonomous strike drones",
+      "description": "Drones that find and strike targets without a data link.",
+      "year": 2029,
+      "x": 2,
+      "effects": {
+        "army_attack": 0.02
+      },
+      "cost": 159,
+      "prerequisites": [
+        [
+          "air_drone_swarms"
+        ]
+      ]
+    },
+    {
+      "id": "air_directed_energy_pods",
+      "name": "Airborne laser pods",
+      "description": "Lasers that defend aircraft against missiles.",
+      "year": 2030,
+      "x": 1,
+      "effects": {
+        "air_effectiveness": 0.02
+      },
+      "cost": 160,
+      "prerequisites": [
+        [
+          "air_hypersonic_aam"
+        ]
+      ]
     },
     {
       "id": "air_sixth_generation",
@@ -137,17 +581,17 @@
       "year": 2035,
       "x": 0,
       "effects": {
-        "air_effectiveness": 0.08
+        "air_effectiveness": 0.05
       },
       "prerequisites": [
         [
-          "air_stealth_fighters"
+          "air_cca_squadrons"
         ],
         [
-          "air_aesa_radar"
+          "air_adaptive_engines"
         ]
       ],
-      "cost": 1200
+      "cost": 168
     }
   ]
 }

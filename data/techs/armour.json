@@ -1,7 +1,7 @@
 {
   "id": "armour",
   "name": "Armour",
-  "description": "Tanks and armoured vehicles.",
+  "description": "Tanks, armoured vehicles and their protection.",
   "icon": "armour",
   "military": true,
   "techs": [
@@ -10,11 +10,27 @@
       "name": "Third-generation main battle tank",
       "description": "Tanks with composite armour and stabilised guns.",
       "year": 1985,
-      "x": 2,
+      "x": 1,
       "effects": {
         "army_defence": 0.02
       },
-      "cost": 500
+      "cost": 100
+    },
+    {
+      "id": "arm_tracked_ifv",
+      "name": "Tracked infantry fighting vehicles",
+      "description": "Armoured vehicles that carry infantry and fight alongside tanks.",
+      "year": 1990,
+      "x": 2,
+      "effects": {
+        "army_attack": 0.01
+      },
+      "prerequisites": [
+        [
+          "arm_third_generation_mbt"
+        ]
+      ],
+      "cost": 100
     },
     {
       "id": "arm_mbt_modernisation",
@@ -23,9 +39,57 @@
       "year": 1998,
       "x": 0,
       "effects": {
-        "army_attack": 0.03
+        "army_attack": 0.02
       },
-      "cost": 700,
+      "prerequisites": [
+        [
+          "arm_third_generation_mbt"
+        ]
+      ],
+      "cost": 100
+    },
+    {
+      "id": "arm_wheeled_apcs",
+      "name": "Wheeled armoured personnel carriers",
+      "description": "Eight-wheeled carriers that move fast on roads.",
+      "year": 2000,
+      "x": 2,
+      "effects": {
+        "army_org": 0.01
+      },
+      "cost": 118,
+      "prerequisites": [
+        [
+          "arm_tracked_ifv"
+        ]
+      ]
+    },
+    {
+      "id": "arm_explosive_reactive_armour",
+      "name": "Explosive reactive armour",
+      "description": "Armour blocks that disrupt shaped charges.",
+      "year": 2001,
+      "x": 0,
+      "effects": {
+        "army_defence": 0.01
+      },
+      "cost": 119,
+      "prerequisites": [
+        [
+          "arm_mbt_modernisation"
+        ]
+      ]
+    },
+    {
+      "id": "arm_tank_thermal_imaging",
+      "name": "Second-generation tank thermal sights",
+      "description": "Sharper thermal sights for tank gunners and commanders.",
+      "year": 2002,
+      "x": 1,
+      "effects": {
+        "army_attack": 0.01
+      },
+      "cost": 121,
       "prerequisites": [
         [
           "arm_third_generation_mbt"
@@ -39,12 +103,28 @@
       "year": 2003,
       "x": 1,
       "effects": {
-        "army_attack": 0.02
+        "army_attack": 0.01
       },
-      "cost": 700,
+      "cost": 122,
       "prerequisites": [
         [
-          "arm_third_generation_mbt"
+          "arm_tank_thermal_imaging"
+        ]
+      ]
+    },
+    {
+      "id": "arm_remote_weapon_stations",
+      "name": "Remote weapon stations",
+      "description": "Machine guns aimed from inside the vehicle.",
+      "year": 2004,
+      "x": 2,
+      "effects": {
+        "army_defence": 0.01
+      },
+      "cost": 124,
+      "prerequisites": [
+        [
+          "arm_wheeled_apcs"
         ]
       ]
     },
@@ -55,49 +135,397 @@
       "year": 2005,
       "x": 0,
       "effects": {
-        "army_defence": 0.04
+        "army_defence": 0.02
       },
       "prerequisites": [
         [
           "arm_mbt_modernisation"
+        ],
+        [
+          "arm_explosive_reactive_armour"
         ]
       ],
-      "cost": 850
+      "cost": 125
+    },
+    {
+      "id": "arm_urban_survival_kits",
+      "name": "Urban survival kits",
+      "description": "Extra armour, cameras and shields for tanks fighting in cities.",
+      "year": 2006,
+      "x": 3,
+      "effects": {
+        "army_defence": 0.01
+      },
+      "prerequisites": [
+        [
+          "arm_remote_weapon_stations"
+        ]
+      ],
+      "cost": 126
+    },
+    {
+      "id": "arm_battlefield_management",
+      "name": "Battlefield management systems",
+      "description": "Vehicle computers that share positions and targets.",
+      "year": 2007,
+      "x": 2,
+      "effects": {
+        "army_org": 0.01
+      },
+      "cost": 128,
+      "prerequisites": [
+        [
+          "arm_remote_weapon_stations"
+        ]
+      ]
+    },
+    {
+      "id": "arm_v_hull_vehicles",
+      "name": "V-hulled armoured vehicles",
+      "description": "Hull shapes that deflect mine blasts.",
+      "year": 2008,
+      "x": 3,
+      "effects": {
+        "army_defence": 0.01
+      },
+      "cost": 129,
+      "prerequisites": [
+        [
+          "arm_urban_survival_kits"
+        ]
+      ]
+    },
+    {
+      "id": "arm_gun_launched_missiles",
+      "name": "Gun-launched guided missiles",
+      "description": "Anti-tank missiles fired through the main gun.",
+      "year": 2009,
+      "x": 1,
+      "effects": {
+        "army_attack": 0.01
+      },
+      "cost": 131,
+      "prerequisites": [
+        [
+          "arm_digital_fire_control"
+        ]
+      ]
+    },
+    {
+      "id": "arm_tracked_ifv_upgrades",
+      "name": "Infantry fighting vehicle upgrades",
+      "description": "New turrets, missiles and armour for infantry vehicles.",
+      "year": 2010,
+      "x": 2,
+      "effects": {
+        "army_attack": 0.01,
+        "army_defence": 0.01
+      },
+      "cost": 132,
+      "prerequisites": [
+        [
+          "arm_battlefield_management"
+        ]
+      ]
+    },
+    {
+      "id": "arm_slat_armour",
+      "name": "Slat and net armour",
+      "description": "Cages and nets that stop rocket-propelled grenades.",
+      "year": 2011,
+      "x": 3,
+      "effects": {
+        "army_defence": 0.01
+      },
+      "cost": 134,
+      "prerequisites": [
+        [
+          "arm_v_hull_vehicles"
+        ]
+      ]
     },
     {
       "id": "arm_active_protection",
       "name": "Active protection systems",
       "description": "Systems that intercept incoming missiles and rockets.",
       "year": 2012,
-      "x": 1,
+      "x": 0,
       "effects": {
-        "army_defence": 0.05
+        "army_defence": 0.03
       },
       "prerequisites": [
         [
           "arm_composite_armour"
         ]
       ],
-      "cost": 850
+      "cost": 135
+    },
+    {
+      "id": "arm_modular_vehicle_families",
+      "name": "Modular vehicle families",
+      "description": "One chassis built as carrier, command post, ambulance or mortar.",
+      "year": 2013,
+      "x": 2,
+      "effects": {
+        "army_org": 0.01
+      },
+      "cost": 136,
+      "prerequisites": [
+        [
+          "arm_tracked_ifv_upgrades"
+        ]
+      ]
+    },
+    {
+      "id": "arm_120mm_smoothbore_upgrades",
+      "name": "Improved tank ammunition",
+      "description": "Longer penetrators and programmable high-explosive rounds.",
+      "year": 2014,
+      "x": 1,
+      "effects": {
+        "army_attack": 0.02
+      },
+      "cost": 138,
+      "prerequisites": [
+        [
+          "arm_gun_launched_missiles"
+        ]
+      ]
+    },
+    {
+      "id": "arm_hybrid_drives",
+      "name": "Hybrid electric drives",
+      "description": "Quieter vehicles that use less fuel.",
+      "year": 2015,
+      "x": 3,
+      "effects": {
+        "army_org": 0.01
+      },
+      "cost": 139,
+      "prerequisites": [
+        [
+          "arm_slat_armour"
+        ]
+      ]
     },
     {
       "id": "arm_networked_brigade",
       "name": "Networked armoured brigade",
       "description": "Vehicles that share targets and positions automatically.",
       "year": 2016,
-      "x": 0,
+      "x": 2,
       "effects": {
-        "army_org": 0.04
+        "army_org": 0.02
       },
       "prerequisites": [
         [
-          "arm_composite_armour"
+          "arm_battlefield_management"
         ],
         [
           "arm_digital_fire_control"
         ]
       ],
-      "cost": 1000
+      "cost": 141
+    },
+    {
+      "id": "arm_unmanned_turrets",
+      "name": "Unmanned turrets",
+      "description": "Turrets operated by a crew sitting in the armoured hull.",
+      "year": 2017,
+      "x": 1,
+      "effects": {
+        "army_defence": 0.01,
+        "army_attack": 0.01
+      },
+      "cost": 142,
+      "prerequisites": [
+        [
+          "arm_120mm_smoothbore_upgrades"
+        ]
+      ]
+    },
+    {
+      "id": "arm_360_situational_awareness",
+      "name": "All-round camera systems",
+      "description": "Cameras and sensors that let crews see all around the vehicle.",
+      "year": 2018,
+      "x": 0,
+      "effects": {
+        "army_defence": 0.01
+      },
+      "cost": 143,
+      "prerequisites": [
+        [
+          "arm_active_protection"
+        ]
+      ]
+    },
+    {
+      "id": "arm_heavy_mbt_upgrade",
+      "name": "Heavy tank upgrade programme",
+      "description": "More armour and a stronger engine for the main battle tank.",
+      "year": 2019,
+      "x": 0,
+      "effects": {
+        "army_defence": 0.02
+      },
+      "mutually_exclusive": [
+        "arm_light_tanks"
+      ],
+      "cost": 145,
+      "prerequisites": [
+        [
+          "arm_360_situational_awareness"
+        ]
+      ]
+    },
+    {
+      "id": "arm_light_tanks",
+      "name": "Mobile protected firepower",
+      "description": "Lighter tanks for airborne and light divisions.",
+      "year": 2019,
+      "x": 1,
+      "effects": {
+        "army_attack": 0.02
+      },
+      "mutually_exclusive": [
+        "arm_heavy_mbt_upgrade"
+      ],
+      "cost": 145,
+      "prerequisites": [
+        [
+          "arm_unmanned_turrets"
+        ]
+      ]
+    },
+    {
+      "id": "arm_vehicle_mounted_drones",
+      "name": "Vehicle-launched drones",
+      "description": "Reconnaissance drones launched from armoured vehicles.",
+      "year": 2020,
+      "x": 3,
+      "effects": {
+        "army_attack": 0.01
+      },
+      "cost": 146,
+      "prerequisites": [
+        [
+          "arm_hybrid_drives"
+        ]
+      ]
+    },
+    {
+      "id": "arm_counter_drone_screens",
+      "name": "Counter-drone screens",
+      "description": "Overhead cages and jammers against attack drones.",
+      "year": 2021,
+      "x": 3,
+      "effects": {
+        "army_defence": 0.02
+      },
+      "cost": 148,
+      "prerequisites": [
+        [
+          "arm_vehicle_mounted_drones"
+        ]
+      ]
+    },
+    {
+      "id": "arm_electric_armour",
+      "name": "Next-generation reactive armour",
+      "description": "Lighter reactive armour against tandem warheads.",
+      "year": 2022,
+      "x": 0,
+      "effects": {
+        "army_defence": 0.01
+      },
+      "prerequisites": [
+        [
+          "arm_active_protection"
+        ]
+      ],
+      "cost": 149
+    },
+    {
+      "id": "arm_optionally_crewed_vehicles",
+      "name": "Optionally crewed combat vehicles",
+      "description": "Vehicles that can fight with or without a crew aboard.",
+      "year": 2023,
+      "x": 2,
+      "effects": {
+        "army_org": 0.01
+      },
+      "cost": 151,
+      "prerequisites": [
+        [
+          "arm_networked_brigade"
+        ]
+      ]
+    },
+    {
+      "id": "arm_130mm_guns",
+      "name": "Larger tank guns",
+      "description": "New guns with more energy against future armour.",
+      "year": 2024,
+      "x": 1,
+      "effects": {
+        "army_attack": 0.02
+      },
+      "cost": 152,
+      "prerequisites": [
+        [
+          "arm_unmanned_turrets"
+        ]
+      ]
+    },
+    {
+      "id": "arm_hard_kill_aps",
+      "name": "Hard-kill protection against top attack",
+      "description": "Active protection that also covers the roof.",
+      "year": 2025,
+      "x": 0,
+      "effects": {
+        "army_defence": 0.02
+      },
+      "prerequisites": [
+        [
+          "arm_electric_armour"
+        ]
+      ],
+      "cost": 153
+    },
+    {
+      "id": "arm_ai_target_recognition",
+      "name": "Automatic target recognition",
+      "description": "Sights that find and classify targets for the gunner.",
+      "year": 2026,
+      "x": 1,
+      "effects": {
+        "army_attack": 0.02
+      },
+      "cost": 155,
+      "prerequisites": [
+        [
+          "arm_130mm_guns"
+        ]
+      ]
+    },
+    {
+      "id": "arm_robotic_wingmen",
+      "name": "Robotic wingmen",
+      "description": "Unmanned combat vehicles that follow a crewed tank.",
+      "year": 2027,
+      "x": 3,
+      "effects": {
+        "army_attack": 0.01,
+        "army_defence": 0.01
+      },
+      "cost": 156,
+      "prerequisites": [
+        [
+          "arm_counter_drone_screens"
+        ]
+      ]
     },
     {
       "id": "arm_next_generation_mbt",
@@ -106,31 +534,69 @@
       "year": 2028,
       "x": 1,
       "effects": {
-        "army_attack": 0.05,
-        "army_defence": 0.03
+        "army_attack": 0.03,
+        "army_defence": 0.02
       },
       "prerequisites": [
         [
-          "arm_active_protection"
+          "arm_130mm_guns"
+        ],
+        [
+          "arm_hard_kill_aps"
         ]
       ],
-      "cost": 1200
+      "cost": 158
+    },
+    {
+      "id": "arm_laser_dazzlers",
+      "name": "Vehicle laser countermeasures",
+      "description": "Lasers that blind the seekers of incoming missiles.",
+      "year": 2029,
+      "x": 0,
+      "effects": {
+        "army_defence": 0.02
+      },
+      "cost": 159,
+      "prerequisites": [
+        [
+          "arm_hard_kill_aps"
+        ]
+      ]
+    },
+    {
+      "id": "arm_electric_combat_vehicles",
+      "name": "Electric combat vehicles",
+      "description": "Armoured vehicles driven by batteries and generators.",
+      "year": 2030,
+      "x": 2,
+      "effects": {
+        "army_org": 0.02
+      },
+      "cost": 160,
+      "prerequisites": [
+        [
+          "arm_optionally_crewed_vehicles"
+        ]
+      ]
     },
     {
       "id": "arm_unmanned_ground_vehicles",
       "name": "Unmanned ground vehicles",
       "description": "Remotely operated and autonomous combat vehicles.",
       "year": 2032,
-      "x": 2,
+      "x": 3,
       "effects": {
-        "army_attack": 0.03
+        "army_attack": 0.02
       },
       "prerequisites": [
+        [
+          "arm_robotic_wingmen"
+        ],
         [
           "arm_networked_brigade"
         ]
       ],
-      "cost": 1200
+      "cost": 163
     }
   ]
 }

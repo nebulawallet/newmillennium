@@ -34,6 +34,14 @@ function effectRows(db: ContentDB, effects: Record<string, number>): [string, st
   });
 }
 
+/** Equipment variants and buildings a technology unlocks. */
+function unlocks(db: ContentDB, id: string): string[] {
+  const out: string[] = [];
+  for (const f of db.equipment.values()) for (const v of f.variants) if (v.requires_tech === id) out.push(`${v.name} (${f.name.toLowerCase()})`);
+  for (const b of db.buildings.values()) if (b.requires_tech === id) out.push(`${b.name} (building)`);
+  return out;
+}
+
 const iconOf = (db: ContentDB, t: TechDef & { category: string }): IconName => {
   const name = t.icon ?? db.techCategories.get(t.category)?.icon;
   return name && name in Icon ? (name as IconName) : "research";
@@ -151,7 +159,7 @@ export function ResearchView({ db, session }: { db: ContentDB; session: Session 
       <header class="hp-head">
         <span class="side-ic">{Icon.research({ size: 18 })}</span>
         <h2 class="hp-title">Research</h2>
-        <span class="rv-speed dim small num" {...tip(() => ({ title: "Research speed", rows: [["Speed", `×${speed.total.toFixed(2)}`], ...speed.parts.map(([k, v]) => [k, pct(v)] as [string, string]), ["Researched", `${r.completed.length} of ${db.techs.size}`]], note: `Each technology has a year. Researching one early costs ${Math.round(db.researchRules.ahead_penalty_per_year * 100)}% more per year ahead; older ones are cheaper to catch up on.` }))}>
+        <span class="rv-speed dim small num" {...tip(() => ({ title: "Research speed", rows: [["Speed", `×${speed.total.toFixed(2)}`], ...speed.parts.map(([k, v]) => [k, pct(v)] as [string, string]), ["Researched", `${r.completed.length} of ${db.techs.size}`]], note: `Each technology has a year. Researching one early costs more, and each year ahead adds more than the last (${[1, 2, 3].map((n) => `+${Math.round((n * db.researchRules.ahead_penalty_per_year + n * n * db.researchRules.ahead_penalty_growth) * 100)}%`).join(", ")} for 1, 2, 3 years). Older ones are up to ${Math.round(db.researchRules.max_behind_bonus * 100)}% cheaper to catch up on.` }))}>
           Speed ×{speed.total.toFixed(2)} · {r.completed.length}/{db.techs.size}
         </span>
         {msg && <span class="faint small rv-msg">{msg}</span>}
@@ -187,7 +195,7 @@ export function ResearchView({ db, session }: { db: ContentDB; session: Session 
             const p = L.pos.get(t.id)!;
             const st = techStatus(cs, t);
             const cost = techCost(db, t, state.day);
-            const ahead = Math.max(0, t.year - year);
+            const ahead = cost.yearsAhead;
             const prog = st === "researching" ? Math.min(100, ((r.progress[t.id] ?? 0) / cost.cost) * 100) : st === "completed" ? 100 : 0;
             const prereq = t.prerequisites.map((g) => g.map((q) => db.techs.get(q)?.name ?? q).join(" or "));
             return (
@@ -204,6 +212,7 @@ export function ResearchView({ db, session }: { db: ContentDB; session: Session 
                     ...effectRows(db, t.effects),
                     ...prereq.map((q) => ["Requires", q] as [string, string]),
                     ...t.mutually_exclusive.map((m) => ["Excludes", db.techs.get(m)?.name ?? m] as [string, string]),
+                    ...unlocks(db, t.id).map((u) => ["Unlocks", u] as [string, string]),
                   ],
                   note: st === "available" ? "Click to research." : st === "locked" ? "Research the required technologies first." : undefined,
                 }))}>
@@ -213,6 +222,7 @@ export function ResearchView({ db, session }: { db: ContentDB; session: Session 
                   <span class="rv-meta num">
                     <span>{t.year}</span>
                     <span>{Math.round(cost.cost)}d</span>
+                    {unlocks(db, t.id).length > 0 && <span class="rv-unlock" aria-label="Unlocks equipment or a building">{Icon.production({ size: 11 })}</span>}
                     {ahead > 0 && st !== "completed" && <span class="rv-ahead">+{ahead}y</span>}
                   </span>
                 </span>

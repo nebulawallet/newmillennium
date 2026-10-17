@@ -10,11 +10,27 @@
       "name": "Combined-arms manoeuvre",
       "description": "Infantry, armour, artillery and air power fighting together.",
       "year": 1985,
-      "x": 3,
+      "x": 1,
       "effects": {
         "army_org": 0.02
       },
-      "cost": 500
+      "cost": 100
+    },
+    {
+      "id": "doc_peacekeeping",
+      "name": "Peace support operations",
+      "description": "Doctrine for keeping the peace between former enemies.",
+      "year": 1995,
+      "x": 3,
+      "effects": {
+        "diplomatic_reputation": 0.02
+      },
+      "prerequisites": [
+        [
+          "doc_combined_arms"
+        ]
+      ],
+      "cost": 100
     },
     {
       "id": "doc_rapid_reaction",
@@ -23,14 +39,86 @@
       "year": 1999,
       "x": 0,
       "effects": {
-        "army_org": 0.03
+        "army_org": 0.02
       },
-      "cost": 700,
+      "prerequisites": [
+        [
+          "doc_combined_arms"
+        ]
+      ],
+      "cost": 100
+    },
+    {
+      "id": "doc_jointness",
+      "name": "Joint operations",
+      "description": "Army, navy and air force planning and fighting under one command.",
+      "year": 2000,
+      "x": 1,
+      "effects": {
+        "army_org": 0.01
+      },
+      "cost": 118,
       "prerequisites": [
         [
           "doc_combined_arms"
         ]
       ]
+    },
+    {
+      "id": "doc_special_forces",
+      "name": "Expanded special forces",
+      "description": "More special operations units for raids and training partners.",
+      "year": 2001,
+      "x": 2,
+      "effects": {
+        "army_attack": 0.01,
+        "internal_security": 0.01
+      },
+      "prerequisites": [
+        [
+          "doc_combined_arms"
+        ]
+      ],
+      "cost": 119
+    },
+    {
+      "id": "doc_professional_army",
+      "name": "All-volunteer professional army",
+      "description": "Ending conscription for a smaller, better-trained army.",
+      "year": 2002,
+      "x": 0,
+      "effects": {
+        "army_org": 0.02,
+        "training_time": -0.05
+      },
+      "mutually_exclusive": [
+        "doc_mass_conscription"
+      ],
+      "cost": 121,
+      "prerequisites": [
+        [
+          "doc_rapid_reaction"
+        ]
+      ]
+    },
+    {
+      "id": "doc_mass_conscription",
+      "name": "Mass conscript army",
+      "description": "Keeping universal service for a large trained reserve.",
+      "year": 2002,
+      "x": 4,
+      "effects": {
+        "manpower_factor": 0.05
+      },
+      "prerequisites": [
+        [
+          "doc_combined_arms"
+        ]
+      ],
+      "mutually_exclusive": [
+        "doc_professional_army"
+      ],
+      "cost": 121
     },
     {
       "id": "doc_network_centric",
@@ -39,13 +127,45 @@
       "year": 2003,
       "x": 1,
       "effects": {
-        "army_org": 0.03,
-        "air_effectiveness": 0.02
+        "army_org": 0.02,
+        "air_effectiveness": 0.01
       },
-      "cost": 700,
+      "cost": 122,
       "prerequisites": [
         [
-          "doc_combined_arms"
+          "doc_jointness"
+        ]
+      ]
+    },
+    {
+      "id": "doc_expeditionary_logistics",
+      "name": "Expeditionary logistics",
+      "description": "Supplying forces far from home for long periods.",
+      "year": 2004,
+      "x": 0,
+      "effects": {
+        "army_org": 0.01
+      },
+      "cost": 124,
+      "prerequisites": [
+        [
+          "doc_rapid_reaction"
+        ]
+      ]
+    },
+    {
+      "id": "doc_effects_based",
+      "name": "Effects-based operations",
+      "description": "Planning strikes by the effect wanted on the enemy system.",
+      "year": 2005,
+      "x": 1,
+      "effects": {
+        "army_attack": 0.01
+      },
+      "cost": 125,
+      "prerequisites": [
+        [
+          "doc_network_centric"
         ]
       ]
     },
@@ -54,31 +174,216 @@
       "name": "Counter-insurgency doctrine",
       "description": "Securing populations and working with local forces.",
       "year": 2006,
-      "x": 0,
+      "x": 3,
       "effects": {
-        "internal_security": 0.05
+        "internal_security": 0.03
       },
       "prerequisites": [
         [
-          "doc_rapid_reaction"
+          "doc_peacekeeping"
         ]
       ],
-      "cost": 850
+      "cost": 126
+    },
+    {
+      "id": "doc_security_force_assistance",
+      "name": "Security force assistance",
+      "description": "Training and advising the forces of partner countries.",
+      "year": 2007,
+      "x": 3,
+      "effects": {
+        "diplomatic_reputation": 0.01,
+        "internal_security": 0.01
+      },
+      "cost": 128,
+      "prerequisites": [
+        [
+          "doc_counterinsurgency"
+        ]
+      ]
+    },
+    {
+      "id": "doc_hybrid_warfare",
+      "name": "Hybrid warfare",
+      "description": "Mixing regular forces, proxies, cyber attacks and information campaigns.",
+      "year": 2008,
+      "x": 2,
+      "effects": {
+        "foreign_influence_power": 0.03
+      },
+      "prerequisites": [
+        [
+          "doc_special_forces"
+        ]
+      ],
+      "cost": 129
+    },
+    {
+      "id": "doc_modular_brigades",
+      "name": "Modular brigades",
+      "description": "Self-contained brigades that can deploy on their own.",
+      "year": 2009,
+      "x": 0,
+      "effects": {
+        "army_org": 0.02
+      },
+      "cost": 131,
+      "prerequisites": [
+        [
+          "doc_expeditionary_logistics"
+        ]
+      ]
+    },
+    {
+      "id": "doc_cyber_command",
+      "name": "Cyber commands",
+      "description": "Military commands for defending and attacking networks.",
+      "year": 2010,
+      "x": 2,
+      "effects": {
+        "intelligence_power": 0.02
+      },
+      "cost": 132,
+      "prerequisites": [
+        [
+          "doc_hybrid_warfare"
+        ]
+      ]
+    },
+    {
+      "id": "doc_targeted_killing",
+      "name": "Drone-led counter-terrorism",
+      "description": "Finding and striking militant leaders with drones and raids.",
+      "year": 2011,
+      "x": 2,
+      "effects": {
+        "internal_security": 0.02
+      },
+      "cost": 134,
+      "prerequisites": [
+        [
+          "doc_cyber_command"
+        ]
+      ]
+    },
+    {
+      "id": "doc_civil_military",
+      "name": "Civil-military cooperation",
+      "description": "Armed forces working with aid agencies and local government.",
+      "year": 2012,
+      "x": 3,
+      "effects": {
+        "stability_factor": 0.01
+      },
+      "cost": 135,
+      "prerequisites": [
+        [
+          "doc_security_force_assistance"
+        ]
+      ]
+    },
+    {
+      "id": "doc_reconnaissance_strike",
+      "name": "Reconnaissance-strike complex",
+      "description": "Linking drones and sensors directly to artillery and missiles.",
+      "year": 2013,
+      "x": 1,
+      "effects": {
+        "army_attack": 0.02
+      },
+      "cost": 136,
+      "prerequisites": [
+        [
+          "doc_effects_based"
+        ]
+      ]
+    },
+    {
+      "id": "doc_anti_access",
+      "name": "Anti-access and area denial",
+      "description": "Keeping an enemy's forces at a distance with missiles and sensors.",
+      "year": 2014,
+      "x": 4,
+      "effects": {
+        "army_defence": 0.02,
+        "naval_effectiveness": 0.01
+      },
+      "cost": 138,
+      "prerequisites": [
+        [
+          "doc_mass_conscription"
+        ]
+      ]
     },
     {
       "id": "doc_territorial_defence",
       "name": "Total territorial defence",
       "description": "Reservists and local units trained to defend their regions.",
       "year": 2015,
-      "x": 2,
+      "x": 4,
       "effects": {
-        "manpower_factor": 0.1,
-        "army_defence": 0.03
+        "manpower_factor": 0.05,
+        "army_defence": 0.02
       },
-      "cost": 1000,
+      "cost": 139,
       "prerequisites": [
         [
-          "doc_combined_arms"
+          "doc_anti_access"
+        ]
+      ]
+    },
+    {
+      "id": "doc_information_operations",
+      "name": "Information operations",
+      "description": "Shaping what the enemy and the public believe.",
+      "year": 2016,
+      "x": 2,
+      "effects": {
+        "propaganda_efficiency": 0.02
+      },
+      "cost": 141,
+      "prerequisites": [
+        [
+          "doc_targeted_killing"
+        ]
+      ]
+    },
+    {
+      "id": "doc_battalion_tactical_groups",
+      "name": "Battalion tactical groups",
+      "description": "Small combined-arms groups formed from battalions for each operation.",
+      "year": 2017,
+      "x": 0,
+      "effects": {
+        "army_org": 0.01,
+        "army_attack": 0.01
+      },
+      "mutually_exclusive": [
+        "doc_division_centric"
+      ],
+      "cost": 142,
+      "prerequisites": [
+        [
+          "doc_modular_brigades"
+        ]
+      ]
+    },
+    {
+      "id": "doc_division_centric",
+      "name": "Division-centric warfighting",
+      "description": "Returning to divisions and corps as the units that fight large wars.",
+      "year": 2017,
+      "x": 1,
+      "effects": {
+        "army_org": 0.02
+      },
+      "mutually_exclusive": [
+        "doc_battalion_tactical_groups"
+      ],
+      "cost": 142,
+      "prerequisites": [
+        [
+          "doc_reconnaissance_strike"
         ]
       ]
     },
@@ -89,16 +394,123 @@
       "year": 2018,
       "x": 1,
       "effects": {
-        "army_org": 0.04,
-        "naval_effectiveness": 0.02,
-        "air_effectiveness": 0.02
+        "army_org": 0.02,
+        "naval_effectiveness": 0.01,
+        "air_effectiveness": 0.01
       },
       "prerequisites": [
         [
           "doc_network_centric"
+        ],
+        [
+          "doc_cyber_command"
         ]
       ],
-      "cost": 1000
+      "cost": 143
+    },
+    {
+      "id": "doc_space_command",
+      "name": "Space commands",
+      "description": "Military commands for satellites and space defence.",
+      "year": 2019,
+      "x": 2,
+      "effects": {
+        "intelligence_power": 0.02
+      },
+      "cost": 145,
+      "prerequisites": [
+        [
+          "doc_information_operations"
+        ]
+      ]
+    },
+    {
+      "id": "doc_mission_command",
+      "name": "Mission command",
+      "description": "Junior leaders given intent and freedom to act.",
+      "year": 2020,
+      "x": 0,
+      "effects": {
+        "army_org": 0.02
+      },
+      "cost": 146,
+      "prerequisites": [
+        [
+          "doc_modular_brigades"
+        ]
+      ]
+    },
+    {
+      "id": "doc_dispersed_operations",
+      "name": "Dispersed operations",
+      "description": "Small, spread-out units that are hard to target.",
+      "year": 2021,
+      "x": 4,
+      "effects": {
+        "army_defence": 0.02
+      },
+      "cost": 148,
+      "prerequisites": [
+        [
+          "doc_territorial_defence"
+        ]
+      ]
+    },
+    {
+      "id": "doc_manoeuvre_warfare",
+      "name": "Manoeuvre warfare revival",
+      "description": "Fast armoured thrusts to break the enemy's front.",
+      "year": 2022,
+      "x": 0,
+      "effects": {
+        "army_attack": 0.02
+      },
+      "mutually_exclusive": [
+        "doc_attritional_warfare"
+      ],
+      "cost": 149,
+      "prerequisites": [
+        [
+          "doc_mission_command"
+        ]
+      ]
+    },
+    {
+      "id": "doc_attritional_warfare",
+      "name": "Attritional warfare",
+      "description": "Mass artillery, mobilisation and industry for a long war.",
+      "year": 2022,
+      "x": 4,
+      "effects": {
+        "manpower_factor": 0.03,
+        "production_efficiency": 0.01
+      },
+      "mutually_exclusive": [
+        "doc_manoeuvre_warfare"
+      ],
+      "cost": 149,
+      "prerequisites": [
+        [
+          "doc_dispersed_operations"
+        ]
+      ]
+    },
+    {
+      "id": "doc_reserve_mobilisation",
+      "name": "Reserve mobilisation systems",
+      "description": "Calling up and equipping reservists quickly.",
+      "year": 2023,
+      "x": 3,
+      "effects": {
+        "manpower_factor": 0.03,
+        "training_time": -0.05
+      },
+      "cost": 151,
+      "prerequisites": [
+        [
+          "doc_civil_military"
+        ]
+      ]
     },
     {
       "id": "doc_drone_warfare",
@@ -107,14 +519,114 @@
       "year": 2024,
       "x": 1,
       "effects": {
-        "army_attack": 0.05
+        "army_attack": 0.03
       },
       "prerequisites": [
         [
           "doc_multi_domain"
         ]
       ],
-      "cost": 1000
+      "cost": 152
+    },
+    {
+      "id": "doc_electronic_warfare_doctrine",
+      "name": "Electromagnetic spectrum operations",
+      "description": "Fighting for control of radio and radar frequencies.",
+      "year": 2025,
+      "x": 2,
+      "effects": {
+        "army_defence": 0.01,
+        "air_effectiveness": 0.01
+      },
+      "cost": 153,
+      "prerequisites": [
+        [
+          "doc_space_command"
+        ]
+      ]
+    },
+    {
+      "id": "doc_ai_decision_support",
+      "name": "AI decision support",
+      "description": "AI tools that help commanders plan and decide.",
+      "year": 2026,
+      "x": 1,
+      "effects": {
+        "army_org": 0.02
+      },
+      "cost": 155,
+      "prerequisites": [
+        [
+          "doc_drone_warfare"
+        ]
+      ]
+    },
+    {
+      "id": "doc_cognitive_warfare",
+      "name": "Cognitive warfare",
+      "description": "Campaigns aimed at how a society thinks and decides.",
+      "year": 2027,
+      "x": 2,
+      "effects": {
+        "propaganda_efficiency": 0.02,
+        "foreign_influence_power": 0.02
+      },
+      "cost": 156,
+      "prerequisites": [
+        [
+          "doc_electronic_warfare_doctrine"
+        ]
+      ]
+    },
+    {
+      "id": "doc_autonomous_systems",
+      "name": "Autonomous systems doctrine",
+      "description": "Rules and tactics for robots that fight alongside soldiers.",
+      "year": 2028,
+      "x": 1,
+      "effects": {
+        "army_attack": 0.02
+      },
+      "cost": 158,
+      "prerequisites": [
+        [
+          "doc_ai_decision_support"
+        ]
+      ]
+    },
+    {
+      "id": "doc_whole_of_society_defence",
+      "name": "Whole-of-society defence",
+      "description": "Civil defence, industry and citizens prepared for war.",
+      "year": 2029,
+      "x": 4,
+      "effects": {
+        "manpower_factor": 0.03,
+        "stability_factor": 0.01
+      },
+      "cost": 159,
+      "prerequisites": [
+        [
+          "doc_dispersed_operations"
+        ]
+      ]
+    },
+    {
+      "id": "doc_algorithmic_warfare",
+      "name": "Algorithmic warfare",
+      "description": "Fighting at the speed of machines with humans overseeing.",
+      "year": 2030,
+      "x": 1,
+      "effects": {
+        "army_attack": 0.02,
+        "army_org": 0.02
+      },
+      "cost": 160,
+      "prerequisites": [
+        [
+          "doc_autonomous_systems"
+        ]
+      ]
     }
   ]
 }

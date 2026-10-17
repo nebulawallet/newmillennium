@@ -14,7 +14,23 @@
       "effects": {
         "army_attack": 0.02
       },
-      "cost": 500
+      "cost": 100
+    },
+    {
+      "id": "art_mlrs",
+      "name": "Multiple rocket launchers",
+      "description": "Tracked launchers firing salvoes of rockets.",
+      "year": 1990,
+      "x": 0,
+      "effects": {
+        "army_attack": 0.01
+      },
+      "prerequisites": [
+        [
+          "art_self_propelled_artillery"
+        ]
+      ],
+      "cost": 100
     },
     {
       "id": "art_counter_battery_radar",
@@ -23,14 +39,14 @@
       "year": 1999,
       "x": 2,
       "effects": {
-        "army_defence": 0.03
+        "army_defence": 0.02
       },
-      "cost": 700,
       "prerequisites": [
         [
           "art_self_propelled_artillery"
         ]
-      ]
+      ],
+      "cost": 100
     },
     {
       "id": "art_guided_rockets",
@@ -39,9 +55,25 @@
       "year": 2000,
       "x": 0,
       "effects": {
-        "army_attack": 0.03
+        "army_attack": 0.02
       },
-      "cost": 700,
+      "cost": 118,
+      "prerequisites": [
+        [
+          "art_mlrs"
+        ]
+      ]
+    },
+    {
+      "id": "art_digital_fire_direction",
+      "name": "Digital fire direction",
+      "description": "Computers that turn a target report into firing data in seconds.",
+      "year": 2001,
+      "x": 1,
+      "effects": {
+        "army_attack": 0.01
+      },
+      "cost": 119,
       "prerequisites": [
         [
           "art_self_propelled_artillery"
@@ -53,16 +85,33 @@
       "name": "Long-range cruise missiles",
       "description": "Ground- and air-launched missiles with ranges over 1,000 km.",
       "year": 2002,
-      "x": 0,
+      "x": 3,
       "effects": {
-        "army_attack": 0.03
+        "army_attack": 0.02
       },
       "prerequisites": [
         [
           "art_guided_rockets"
         ]
       ],
-      "cost": 700
+      "cost": 121
+    },
+    {
+      "id": "art_mobile_sam",
+      "name": "Mobile surface-to-air missiles",
+      "description": "Air defence missiles on vehicles that move with the army.",
+      "year": 2003,
+      "x": 2,
+      "effects": {
+        "army_defence": 0.01,
+        "air_effectiveness": 0.01
+      },
+      "cost": 122,
+      "prerequisites": [
+        [
+          "art_counter_battery_radar"
+        ]
+      ]
     },
     {
       "id": "art_precision_shells",
@@ -71,12 +120,92 @@
       "year": 2004,
       "x": 1,
       "effects": {
-        "army_attack": 0.03
+        "army_attack": 0.02
       },
-      "cost": 700,
       "prerequisites": [
         [
-          "art_self_propelled_artillery"
+          "art_digital_fire_direction"
+        ]
+      ],
+      "cost": 124
+    },
+    {
+      "id": "art_wheeled_howitzers",
+      "name": "Truck-mounted howitzers",
+      "description": "Guns on wheeled chassis that fire and move away quickly.",
+      "year": 2005,
+      "x": 1,
+      "effects": {
+        "army_org": 0.01
+      },
+      "cost": 125,
+      "prerequisites": [
+        [
+          "art_precision_shells"
+        ]
+      ]
+    },
+    {
+      "id": "art_rocket_artillery_upgrades",
+      "name": "Extended-range rockets",
+      "description": "Rockets that reach twice as far.",
+      "year": 2006,
+      "x": 0,
+      "effects": {
+        "army_attack": 0.01
+      },
+      "cost": 126,
+      "prerequisites": [
+        [
+          "art_guided_rockets"
+        ]
+      ]
+    },
+    {
+      "id": "art_c_ram",
+      "name": "Counter-rocket and mortar defence",
+      "description": "Fast guns and radars that shoot down incoming rounds.",
+      "year": 2007,
+      "x": 2,
+      "effects": {
+        "army_defence": 0.02
+      },
+      "cost": 128,
+      "prerequisites": [
+        [
+          "art_mobile_sam"
+        ]
+      ]
+    },
+    {
+      "id": "art_tactical_ballistic_missiles",
+      "name": "Precision tactical ballistic missiles",
+      "description": "Short-range ballistic missiles accurate to tens of metres.",
+      "year": 2008,
+      "x": 3,
+      "effects": {
+        "army_attack": 0.02
+      },
+      "prerequisites": [
+        [
+          "art_cruise_missiles"
+        ]
+      ],
+      "cost": 129
+    },
+    {
+      "id": "art_shoot_and_scoot",
+      "name": "Shoot-and-scoot tactics",
+      "description": "Guns that fire within a minute of stopping and leave before the reply.",
+      "year": 2009,
+      "x": 1,
+      "effects": {
+        "army_defence": 0.01
+      },
+      "cost": 131,
+      "prerequisites": [
+        [
+          "art_wheeled_howitzers"
         ]
       ]
     },
@@ -87,31 +216,367 @@
       "year": 2010,
       "x": 2,
       "effects": {
-        "air_effectiveness": 0.03,
-        "army_defence": 0.02
+        "air_effectiveness": 0.02,
+        "army_defence": 0.01
       },
       "prerequisites": [
+        [
+          "art_mobile_sam"
+        ],
         [
           "art_counter_battery_radar"
         ]
       ],
-      "cost": 850
+      "cost": 132
+    },
+    {
+      "id": "art_artillery_drones",
+      "name": "Artillery spotting drones",
+      "description": "Small drones that find targets and correct fire.",
+      "year": 2011,
+      "x": 1,
+      "effects": {
+        "army_attack": 0.01
+      },
+      "cost": 134,
+      "prerequisites": [
+        [
+          "art_shoot_and_scoot"
+        ]
+      ]
+    },
+    {
+      "id": "art_anti_ship_missiles_coastal",
+      "name": "Coastal anti-ship missiles",
+      "description": "Mobile launchers that defend the coast against warships.",
+      "year": 2012,
+      "x": 3,
+      "effects": {
+        "naval_effectiveness": 0.02
+      },
+      "cost": 135,
+      "prerequisites": [
+        [
+          "art_tactical_ballistic_missiles"
+        ]
+      ]
+    },
+    {
+      "id": "art_sensor_fused_munitions",
+      "name": "Sensor-fused munitions",
+      "description": "Submunitions that find vehicles by their heat and shape.",
+      "year": 2013,
+      "x": 0,
+      "effects": {
+        "army_attack": 0.01
+      },
+      "cost": 136,
+      "prerequisites": [
+        [
+          "art_rocket_artillery_upgrades"
+        ]
+      ]
+    },
+    {
+      "id": "art_long_range_sam",
+      "name": "Long-range air defence systems",
+      "description": "Missiles that engage aircraft and missiles hundreds of kilometres away.",
+      "year": 2014,
+      "x": 2,
+      "effects": {
+        "air_effectiveness": 0.02
+      },
+      "cost": 138,
+      "prerequisites": [
+        [
+          "art_layered_air_defence"
+        ]
+      ]
+    },
+    {
+      "id": "art_extended_range_cannons",
+      "name": "Extended-range cannons",
+      "description": "Longer gun barrels that reach 70 km.",
+      "year": 2015,
+      "x": 1,
+      "effects": {
+        "army_attack": 0.02
+      },
+      "cost": 139,
+      "prerequisites": [
+        [
+          "art_artillery_drones"
+        ]
+      ]
+    },
+    {
+      "id": "art_air_defence_networks",
+      "name": "Integrated air defence networks",
+      "description": "Radars and missile batteries linked into one picture.",
+      "year": 2016,
+      "x": 2,
+      "effects": {
+        "air_effectiveness": 0.01,
+        "army_defence": 0.01
+      },
+      "cost": 141,
+      "prerequisites": [
+        [
+          "art_long_range_sam"
+        ]
+      ]
+    },
+    {
+      "id": "art_loitering_artillery",
+      "name": "Long-range loitering munitions",
+      "description": "Larger drones that hunt targets far behind the front.",
+      "year": 2017,
+      "x": 3,
+      "effects": {
+        "army_attack": 0.02
+      },
+      "prerequisites": [
+        [
+          "art_tactical_ballistic_missiles"
+        ]
+      ],
+      "cost": 142
+    },
+    {
+      "id": "art_precision_strike_missiles",
+      "name": "Precision strike missiles",
+      "description": "Rocket-launched missiles reaching 500 km.",
+      "year": 2018,
+      "x": 0,
+      "effects": {
+        "army_attack": 0.02
+      },
+      "mutually_exclusive": [
+        "art_mass_rocket_artillery"
+      ],
+      "cost": 143,
+      "prerequisites": [
+        [
+          "art_sensor_fused_munitions"
+        ]
+      ]
+    },
+    {
+      "id": "art_mass_rocket_artillery",
+      "name": "Massed rocket artillery",
+      "description": "Large numbers of cheap unguided rockets for saturation fire.",
+      "year": 2018,
+      "x": 1,
+      "effects": {
+        "army_attack": 0.015,
+        "army_defence": 0.005
+      },
+      "mutually_exclusive": [
+        "art_precision_strike_missiles"
+      ],
+      "cost": 143,
+      "prerequisites": [
+        [
+          "art_extended_range_cannons"
+        ]
+      ]
+    },
+    {
+      "id": "art_counter_uas",
+      "name": "Counter-drone air defence",
+      "description": "Guns, missiles and jammers dedicated to drones.",
+      "year": 2019,
+      "x": 2,
+      "effects": {
+        "army_defence": 0.02
+      },
+      "cost": 145,
+      "prerequisites": [
+        [
+          "art_air_defence_networks"
+        ]
+      ]
+    },
+    {
+      "id": "art_automated_howitzers",
+      "name": "Automated howitzers",
+      "description": "Self-loading guns that fire several rounds to land at once.",
+      "year": 2020,
+      "x": 1,
+      "effects": {
+        "army_attack": 0.01
+      },
+      "cost": 146,
+      "prerequisites": [
+        [
+          "art_extended_range_cannons"
+        ]
+      ]
+    },
+    {
+      "id": "art_cheap_interceptors",
+      "name": "Low-cost interceptors",
+      "description": "Cheaper missiles to shoot down drones and rockets.",
+      "year": 2021,
+      "x": 2,
+      "effects": {
+        "army_defence": 0.01,
+        "air_effectiveness": 0.01
+      },
+      "cost": 148,
+      "prerequisites": [
+        [
+          "art_counter_uas"
+        ]
+      ]
+    },
+    {
+      "id": "art_glide_bombs",
+      "name": "Guided glide bombs",
+      "description": "Old bombs fitted with wings and guidance kits.",
+      "year": 2022,
+      "x": 0,
+      "effects": {
+        "army_attack": 0.02
+      },
+      "cost": 149,
+      "prerequisites": [
+        [
+          "art_sensor_fused_munitions"
+        ]
+      ]
+    },
+    {
+      "id": "art_one_way_attack_drones",
+      "name": "Long-range one-way attack drones",
+      "description": "Cheap propeller drones that strike targets over 1,000 km away.",
+      "year": 2023,
+      "x": 3,
+      "effects": {
+        "army_attack": 0.02
+      },
+      "prerequisites": [
+        [
+          "art_loitering_artillery"
+        ]
+      ],
+      "cost": 151
     },
     {
       "id": "art_hypersonic_missiles",
       "name": "Hypersonic missiles",
       "description": "Manoeuvring missiles faster than five times the speed of sound.",
       "year": 2024,
-      "x": 0,
+      "x": 3,
       "effects": {
-        "army_attack": 0.05
+        "army_attack": 0.03
       },
       "prerequisites": [
         [
           "art_cruise_missiles"
+        ],
+        [
+          "art_tactical_ballistic_missiles"
         ]
       ],
-      "cost": 1000
+      "cost": 152
+    },
+    {
+      "id": "art_missile_defence_upgrades",
+      "name": "Missile defence upgrades",
+      "description": "Air defence that can intercept manoeuvring missiles.",
+      "year": 2025,
+      "x": 2,
+      "effects": {
+        "air_effectiveness": 0.02
+      },
+      "cost": 153,
+      "prerequisites": [
+        [
+          "art_cheap_interceptors"
+        ]
+      ]
+    },
+    {
+      "id": "art_ai_targeting",
+      "name": "AI-assisted targeting",
+      "description": "Software that turns sensor data into firing lists.",
+      "year": 2026,
+      "x": 1,
+      "effects": {
+        "army_attack": 0.02
+      },
+      "cost": 155,
+      "prerequisites": [
+        [
+          "art_automated_howitzers"
+        ]
+      ]
+    },
+    {
+      "id": "art_ramjet_shells",
+      "name": "Ramjet artillery shells",
+      "description": "Shells with an air-breathing motor for much longer range.",
+      "year": 2027,
+      "x": 1,
+      "effects": {
+        "army_attack": 0.02
+      },
+      "cost": 156,
+      "prerequisites": [
+        [
+          "art_ai_targeting"
+        ]
+      ]
+    },
+    {
+      "id": "art_high_power_microwave",
+      "name": "High-power microwave defence",
+      "description": "Microwave weapons that disable swarms of drones.",
+      "year": 2028,
+      "x": 2,
+      "effects": {
+        "army_defence": 0.02
+      },
+      "cost": 158,
+      "prerequisites": [
+        [
+          "art_missile_defence_upgrades"
+        ]
+      ]
+    },
+    {
+      "id": "art_autonomous_launchers",
+      "name": "Autonomous rocket launchers",
+      "description": "Uncrewed launchers that move, fire and hide.",
+      "year": 2029,
+      "x": 0,
+      "effects": {
+        "army_attack": 0.01,
+        "army_defence": 0.01
+      },
+      "cost": 159,
+      "prerequisites": [
+        [
+          "art_glide_bombs"
+        ]
+      ]
+    },
+    {
+      "id": "art_space_targeting",
+      "name": "Satellite targeting networks",
+      "description": "Constellations of small satellites that guide long-range fires.",
+      "year": 2030,
+      "x": 3,
+      "effects": {
+        "army_attack": 0.02
+      },
+      "cost": 160,
+      "prerequisites": [
+        [
+          "art_hypersonic_missiles"
+        ]
+      ]
     },
     {
       "id": "art_directed_energy",
@@ -120,14 +585,14 @@
       "year": 2034,
       "x": 2,
       "effects": {
-        "air_effectiveness": 0.05
+        "air_effectiveness": 0.03
       },
       "prerequisites": [
         [
-          "art_layered_air_defence"
+          "art_high_power_microwave"
         ]
       ],
-      "cost": 1200
+      "cost": 166
     }
   ]
 }

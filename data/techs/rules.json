@@ -1,3 +1,17 @@
 {
-  "note": "Research rules. Starting technologies are derived from real 2000 figures (income tier, R&D and military spending from the World Bank); the lags are gameplay estimates."
+  "note": "Research rules. Starting technologies are derived from real 2000 figures (income tier, R&D and military spending from the World Bank); the lags are gameplay estimates. Costs and penalties are tuned so an average country (three slots, R&D near 1% of GDP) finishes about one year of technologies each year (tests/research.test.ts).",
+  "base_slots": 3,
+  "slot_gdp_thresholds": [500, 2000, 8000],
+  "max_slots": 6,
+  "ahead_penalty_per_year": 0.3,
+  "ahead_penalty_growth": 0.08,
+  "behind_bonus_per_year": 0.08,
+  "max_behind_bonus": 0.5,
+  "rnd_speed_per_point": 0.12,
+  "rnd_baseline": 1,
+  "start_lag_years": { "high": 0, "upper_middle": 3, "lower_middle": 6, "low": 10 },
+  "military_lag_per_point": 1.5,
+  "max_military_lag_reduction": 6,
+  "rnd_lag_per_point": 1.5,
+  "max_rnd_lag_reduction": 3
 }

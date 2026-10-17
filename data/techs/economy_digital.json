@@ -1,7 +1,7 @@
 {
   "id": "economy_digital",
   "name": "Economy and digital",
-  "description": "Commerce, government services and finance.",
+  "description": "Commerce, finance and public services.",
   "icon": "digital",
   "military": false,
   "techs": [
@@ -10,11 +10,22 @@
       "name": "Electronic banking and card payments",
       "description": "Computerised banks, cash machines and payment cards.",
       "year": 1988,
-      "x": 3,
+      "x": 0,
       "effects": {
-        "private_sector_output": 0.01
+        "private_sector_output": 0.005
       },
-      "cost": 500
+      "cost": 100
+    },
+    {
+      "id": "eco_containerisation",
+      "name": "Containerised shipping",
+      "description": "Standard containers moved by ship, rail and truck.",
+      "year": 1990,
+      "x": 2,
+      "effects": {
+        "trade_efficiency": 0.02
+      },
+      "cost": 100
     },
     {
       "id": "eco_e_commerce",
@@ -23,10 +34,9 @@
       "year": 1999,
       "x": 0,
       "effects": {
-        "trade_efficiency": 0.03,
-        "private_sector_output": 0.01
+        "trade_efficiency": 0.01,
+        "private_sector_output": 0.005
       },
-      "cost": 700,
       "prerequisites": [
         [
           "eco_electronic_banking"
@@ -34,7 +44,8 @@
         [
           "ele_internet"
         ]
-      ]
+      ],
+      "cost": 100
     },
     {
       "id": "eco_container_logistics",
@@ -43,14 +54,25 @@
       "year": 2000,
       "x": 2,
       "effects": {
-        "trade_efficiency": 0.04
+        "trade_efficiency": 0.02
       },
-      "cost": 700,
+      "cost": 118,
       "prerequisites": [
         [
-          "eco_electronic_banking"
+          "eco_containerisation"
         ]
       ]
+    },
+    {
+      "id": "eco_inflation_targeting",
+      "name": "Inflation targeting",
+      "description": "Central banks that publish and pursue an inflation target.",
+      "year": 2001,
+      "x": 3,
+      "effects": {
+        "inflation": -0.002
+      },
+      "cost": 119
     },
     {
       "id": "eco_online_banking",
@@ -59,14 +81,14 @@
       "year": 2002,
       "x": 0,
       "effects": {
-        "private_sector_output": 0.02
+        "private_sector_output": 0.005
       },
       "prerequisites": [
         [
           "eco_e_commerce"
         ]
       ],
-      "cost": 700
+      "cost": 121
     },
     {
       "id": "eco_e_government",
@@ -75,15 +97,129 @@
       "year": 2003,
       "x": 1,
       "effects": {
-        "tax_efficiency": 0.03,
-        "corruption": -0.02
+        "tax_efficiency": 0.01,
+        "corruption": -0.01
       },
-      "cost": 700,
       "prerequisites": [
         [
           "eco_electronic_banking"
         ]
+      ],
+      "cost": 122
+    },
+    {
+      "id": "eco_electronic_customs",
+      "name": "Electronic customs",
+      "description": "Customs declarations and clearance online.",
+      "year": 2004,
+      "x": 2,
+      "effects": {
+        "trade_efficiency": 0.01,
+        "corruption": -0.005
+      },
+      "cost": 124,
+      "prerequisites": [
+        [
+          "eco_container_logistics"
+        ]
       ]
+    },
+    {
+      "id": "eco_microfinance",
+      "name": "Microfinance",
+      "description": "Small loans for people without access to banks.",
+      "year": 2005,
+      "x": 3,
+      "effects": {
+        "private_sector_output": 0.005
+      },
+      "cost": 125,
+      "prerequisites": [
+        [
+          "eco_inflation_targeting"
+        ]
+      ]
+    },
+    {
+      "id": "eco_digital_id",
+      "name": "Digital identity",
+      "description": "Secure electronic identity cards and online sign-in for citizens.",
+      "year": 2006,
+      "x": 1,
+      "effects": {
+        "tax_efficiency": 0.01
+      },
+      "cost": 126,
+      "prerequisites": [
+        [
+          "eco_e_government"
+        ]
+      ]
+    },
+    {
+      "id": "eco_mobile_money",
+      "name": "Mobile money",
+      "description": "Payments and savings by text message without a bank account.",
+      "year": 2007,
+      "x": 3,
+      "effects": {
+        "private_sector_output": 0.005
+      },
+      "prerequisites": [
+        [
+          "eco_microfinance"
+        ]
+      ],
+      "cost": 128
+    },
+    {
+      "id": "eco_algorithmic_trading",
+      "name": "Algorithmic trading",
+      "description": "Computers that trade securities in fractions of a second.",
+      "year": 2008,
+      "x": 0,
+      "effects": {
+        "foreign_investment": 0.01
+      },
+      "cost": 129,
+      "prerequisites": [
+        [
+          "eco_online_banking"
+        ]
+      ]
+    },
+    {
+      "id": "eco_light_regulation",
+      "name": "Light-touch financial regulation",
+      "description": "Fewer rules so finance can grow faster.",
+      "year": 2009,
+      "x": 3,
+      "effects": {
+        "foreign_investment": 0.02
+      },
+      "prerequisites": [
+        [
+          "eco_microfinance"
+        ]
+      ],
+      "mutually_exclusive": [
+        "eco_bank_stress_tests"
+      ],
+      "cost": 131
+    },
+    {
+      "id": "eco_bank_stress_tests",
+      "name": "Bank stress testing",
+      "description": "Regular tests of whether banks survive a crisis.",
+      "year": 2009,
+      "x": 4,
+      "effects": {
+        "interest_rate": -0.002
+      },
+      "mutually_exclusive": [
+        "eco_light_regulation"
+      ],
+      "cost": 131
     },
     {
       "id": "eco_cloud_computing",
@@ -92,15 +228,31 @@
       "year": 2010,
       "x": 1,
       "effects": {
-        "research_speed": 0.03,
-        "private_sector_output": 0.02
+        "research_speed": 0.005,
+        "private_sector_output": 0.005
       },
       "prerequisites": [
         [
           "eco_e_government"
         ]
       ],
-      "cost": 850
+      "cost": 132
+    },
+    {
+      "id": "eco_open_data",
+      "name": "Open government data",
+      "description": "Public datasets published for anyone to use.",
+      "year": 2011,
+      "x": 1,
+      "effects": {
+        "corruption": -0.01
+      },
+      "cost": 134,
+      "prerequisites": [
+        [
+          "eco_cloud_computing"
+        ]
+      ]
     },
     {
       "id": "eco_mobile_payments",
@@ -109,15 +261,47 @@
       "year": 2012,
       "x": 0,
       "effects": {
-        "tax_efficiency": 0.02,
-        "private_sector_output": 0.02
+        "tax_efficiency": 0.005,
+        "private_sector_output": 0.005
       },
       "prerequisites": [
         [
           "eco_online_banking"
         ]
       ],
-      "cost": 850
+      "cost": 135
+    },
+    {
+      "id": "eco_sharing_economy",
+      "name": "Sharing economy",
+      "description": "Apps for sharing rides, rooms and tools.",
+      "year": 2013,
+      "x": 3,
+      "effects": {
+        "private_sector_output": 0.005
+      },
+      "cost": 136,
+      "prerequisites": [
+        [
+          "eco_mobile_money"
+        ]
+      ]
+    },
+    {
+      "id": "eco_real_time_payments",
+      "name": "Instant payment systems",
+      "description": "Bank transfers that arrive in seconds, day and night.",
+      "year": 2014,
+      "x": 0,
+      "effects": {
+        "private_sector_output": 0.005
+      },
+      "cost": 138,
+      "prerequisites": [
+        [
+          "eco_mobile_payments"
+        ]
+      ]
     },
     {
       "id": "eco_platform_economy",
@@ -126,7 +310,7 @@
       "year": 2015,
       "x": 2,
       "effects": {
-        "gdp_growth": 0.002
+        "gdp_growth": 0.001
       },
       "prerequisites": [
         [
@@ -136,7 +320,209 @@
           "eco_mobile_payments"
         ]
       ],
-      "cost": 1000
+      "cost": 139
+    },
+    {
+      "id": "eco_e_invoicing",
+      "name": "Electronic invoicing",
+      "description": "Invoices sent straight to the tax authority.",
+      "year": 2016,
+      "x": 1,
+      "effects": {
+        "tax_efficiency": 0.01
+      },
+      "cost": 141,
+      "prerequisites": [
+        [
+          "eco_open_data"
+        ]
+      ]
+    },
+    {
+      "id": "eco_fintech",
+      "name": "Financial technology firms",
+      "description": "Online lenders, brokers and banks.",
+      "year": 2017,
+      "x": 0,
+      "effects": {
+        "foreign_investment": 0.01
+      },
+      "cost": 142,
+      "prerequisites": [
+        [
+          "eco_real_time_payments"
+        ]
+      ]
+    },
+    {
+      "id": "eco_contactless_payments",
+      "name": "Contactless payments",
+      "description": "Cards and phones tapped to pay.",
+      "year": 2018,
+      "x": 0,
+      "effects": {
+        "private_sector_output": 0.005
+      },
+      "cost": 143,
+      "prerequisites": [
+        [
+          "eco_fintech"
+        ]
+      ]
+    },
+    {
+      "id": "eco_digital_trade_rules",
+      "name": "Digital trade agreements",
+      "description": "Common rules for data, e-commerce and online services.",
+      "year": 2019,
+      "x": 2,
+      "effects": {
+        "trade_efficiency": 0.01,
+        "bloc_integration": 0.02
+      },
+      "cost": 145,
+      "prerequisites": [
+        [
+          "eco_platform_economy"
+        ]
+      ]
+    },
+    {
+      "id": "eco_remote_work",
+      "name": "Remote work infrastructure",
+      "description": "Video calls and collaboration tools for working from home.",
+      "year": 2020,
+      "x": 1,
+      "effects": {
+        "private_sector_output": 0.005
+      },
+      "cost": 146,
+      "prerequisites": [
+        [
+          "eco_e_invoicing"
+        ]
+      ]
+    },
+    {
+      "id": "eco_supply_chain_mapping",
+      "name": "Supply-chain resilience",
+      "description": "Mapping and stockpiling critical supplies.",
+      "year": 2021,
+      "x": 2,
+      "effects": {
+        "trade_efficiency": 0.005,
+        "production_efficiency": 0.005
+      },
+      "cost": 148,
+      "prerequisites": [
+        [
+          "eco_digital_trade_rules"
+        ]
+      ]
+    },
+    {
+      "id": "eco_open_crypto",
+      "name": "Regulated crypto-asset markets",
+      "description": "Licensed exchanges and rules for crypto assets.",
+      "year": 2022,
+      "x": 3,
+      "effects": {
+        "foreign_investment": 0.01
+      },
+      "mutually_exclusive": [
+        "eco_central_bank_digital"
+      ],
+      "cost": 149,
+      "prerequisites": [
+        [
+          "eco_sharing_economy"
+        ]
+      ]
+    },
+    {
+      "id": "eco_central_bank_digital",
+      "name": "Central bank digital currency",
+      "description": "Money issued by the central bank in digital form.",
+      "year": 2022,
+      "x": 4,
+      "effects": {
+        "tax_efficiency": 0.01
+      },
+      "mutually_exclusive": [
+        "eco_open_crypto"
+      ],
+      "cost": 149,
+      "prerequisites": [
+        [
+          "eco_bank_stress_tests"
+        ]
+      ]
+    },
+    {
+      "id": "eco_ai_public_services",
+      "name": "AI in public services",
+      "description": "AI that answers citizens and processes applications.",
+      "year": 2023,
+      "x": 1,
+      "effects": {
+        "tax_efficiency": 0.01,
+        "corruption": -0.005
+      },
+      "cost": 151,
+      "prerequisites": [
+        [
+          "eco_remote_work"
+        ]
+      ]
+    },
+    {
+      "id": "eco_reshoring",
+      "name": "Reshoring and friend-shoring",
+      "description": "Moving production home or to friendly countries.",
+      "year": 2024,
+      "x": 2,
+      "effects": {
+        "production_efficiency": 0.005,
+        "trade_efficiency": -0.005
+      },
+      "cost": 152,
+      "prerequisites": [
+        [
+          "eco_supply_chain_mapping"
+        ]
+      ]
+    },
+    {
+      "id": "eco_ai_finance",
+      "name": "AI-driven finance",
+      "description": "AI that assesses credit and manages investments.",
+      "year": 2025,
+      "x": 0,
+      "effects": {
+        "foreign_investment": 0.01
+      },
+      "cost": 153,
+      "prerequisites": [
+        [
+          "eco_contactless_payments"
+        ]
+      ]
+    },
+    {
+      "id": "eco_digital_customs_unions",
+      "name": "Paperless trade corridors",
+      "description": "Trade documents exchanged digitally across borders.",
+      "year": 2026,
+      "x": 2,
+      "effects": {
+        "trade_efficiency": 0.01
+      },
+      "cost": 155,
+      "prerequisites": [
+        [
+          "eco_reshoring"
+        ]
+      ]
     },
     {
       "id": "eco_service_automation",
@@ -145,15 +531,64 @@
       "year": 2027,
       "x": 1,
       "effects": {
-        "production_efficiency": 0.03,
-        "private_sector_output": 0.03
+        "production_efficiency": 0.01,
+        "private_sector_output": 0.01
       },
       "prerequisites": [
         [
-          "eco_platform_economy"
+          "eco_ai_public_services"
         ]
       ],
-      "cost": 1200
+      "cost": 156
+    },
+    {
+      "id": "eco_tokenised_assets",
+      "name": "Tokenised securities",
+      "description": "Shares and bonds recorded and settled on shared ledgers.",
+      "year": 2028,
+      "x": 0,
+      "effects": {
+        "foreign_investment": 0.01
+      },
+      "cost": 158,
+      "prerequisites": [
+        [
+          "eco_ai_finance"
+        ]
+      ]
+    },
+    {
+      "id": "eco_predictive_government",
+      "name": "Predictive public services",
+      "description": "Services offered before citizens apply for them.",
+      "year": 2029,
+      "x": 1,
+      "effects": {
+        "tax_efficiency": 0.01
+      },
+      "cost": 159,
+      "prerequisites": [
+        [
+          "eco_service_automation"
+        ]
+      ]
+    },
+    {
+      "id": "eco_universal_digital_trade",
+      "name": "Seamless digital trade",
+      "description": "Goods cleared at borders by data alone.",
+      "year": 2030,
+      "x": 2,
+      "effects": {
+        "trade_efficiency": 0.01,
+        "gdp_growth": 0.001
+      },
+      "cost": 160,
+      "prerequisites": [
+        [
+          "eco_digital_customs_unions"
+        ]
+      ]
     }
   ]
 }

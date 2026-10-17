@@ -10,11 +10,27 @@
       "name": "Guided-missile warships",
       "description": "Frigates and destroyers armed with anti-ship and air-defence missiles.",
       "year": 1985,
-      "x": 2,
+      "x": 1,
       "effects": {
-        "naval_effectiveness": 0.03
+        "naval_effectiveness": 0.02
       },
-      "cost": 500
+      "cost": 100
+    },
+    {
+      "id": "nav_vertical_launch",
+      "name": "Vertical launch systems",
+      "description": "Missile cells in the deck that fire many kinds of missile.",
+      "year": 1992,
+      "x": 1,
+      "effects": {
+        "naval_effectiveness": 0.01
+      },
+      "prerequisites": [
+        [
+          "nav_guided_missile_ships"
+        ]
+      ],
+      "cost": 100
     },
     {
       "id": "nav_integrated_combat_systems",
@@ -23,28 +39,142 @@
       "year": 1998,
       "x": 0,
       "effects": {
-        "naval_effectiveness": 0.03
+        "naval_effectiveness": 0.02
       },
-      "cost": 700,
       "prerequisites": [
         [
           "nav_guided_missile_ships"
         ]
+      ],
+      "cost": 100
+    },
+    {
+      "id": "nav_stealth_hulls",
+      "name": "Stealthy hull designs",
+      "description": "Angled hulls and hidden fittings that shrink a ship's radar echo.",
+      "year": 2000,
+      "x": 1,
+      "effects": {
+        "naval_effectiveness": 0.01
+      },
+      "cost": 118,
+      "prerequisites": [
+        [
+          "nav_vertical_launch"
+        ]
       ]
+    },
+    {
+      "id": "nav_maritime_patrol_aircraft",
+      "name": "Maritime patrol upgrades",
+      "description": "Aircraft that hunt submarines and watch shipping lanes.",
+      "year": 2001,
+      "x": 3,
+      "effects": {
+        "naval_effectiveness": 0.01
+      },
+      "prerequisites": [
+        [
+          "nav_guided_missile_ships"
+        ]
+      ],
+      "cost": 119
     },
     {
       "id": "nav_aip_submarines",
       "name": "Air-independent propulsion",
       "description": "Conventional submarines that stay submerged for weeks.",
       "year": 2002,
-      "x": 1,
+      "x": 2,
       "effects": {
-        "naval_effectiveness": 0.04
+        "naval_effectiveness": 0.02
       },
-      "cost": 700,
       "prerequisites": [
         [
           "nav_guided_missile_ships"
+        ]
+      ],
+      "cost": 121
+    },
+    {
+      "id": "nav_cooperative_engagement",
+      "name": "Cooperative engagement",
+      "description": "Ships that fire missiles at targets tracked by other ships.",
+      "year": 2003,
+      "x": 0,
+      "effects": {
+        "naval_effectiveness": 0.01
+      },
+      "cost": 122,
+      "prerequisites": [
+        [
+          "nav_integrated_combat_systems"
+        ]
+      ]
+    },
+    {
+      "id": "nav_mine_countermeasure_drones",
+      "name": "Mine-hunting drones",
+      "description": "Remote vehicles that find and destroy sea mines.",
+      "year": 2004,
+      "x": 3,
+      "effects": {
+        "naval_effectiveness": 0.01
+      },
+      "cost": 124,
+      "prerequisites": [
+        [
+          "nav_maritime_patrol_aircraft"
+        ]
+      ]
+    },
+    {
+      "id": "nav_amphibious_assault_ships",
+      "name": "Amphibious assault ships",
+      "description": "Large ships that land troops by helicopter and landing craft.",
+      "year": 2005,
+      "x": 1,
+      "effects": {
+        "naval_effectiveness": 0.01
+      },
+      "cost": 125,
+      "prerequisites": [
+        [
+          "nav_stealth_hulls"
+        ]
+      ]
+    },
+    {
+      "id": "nav_land_attack_missiles",
+      "name": "Ship-launched land attack missiles",
+      "description": "Cruise missiles fired from warships at targets ashore.",
+      "year": 2006,
+      "x": 1,
+      "effects": {
+        "naval_effectiveness": 0.01,
+        "army_attack": 0.01
+      },
+      "cost": 126,
+      "prerequisites": [
+        [
+          "nav_amphibious_assault_ships"
+        ]
+      ]
+    },
+    {
+      "id": "nav_anti_piracy_operations",
+      "name": "Maritime security operations",
+      "description": "Boarding teams, patrol boats and shared watch over sea lanes.",
+      "year": 2007,
+      "x": 3,
+      "effects": {
+        "naval_effectiveness": 0.01,
+        "trade_efficiency": 0.01
+      },
+      "cost": 128,
+      "prerequisites": [
+        [
+          "nav_mine_countermeasure_drones"
         ]
       ]
     },
@@ -53,14 +183,30 @@
       "name": "Littoral combat ships",
       "description": "Fast, modular ships for coastal waters.",
       "year": 2008,
-      "x": 2,
+      "x": 1,
       "effects": {
-        "naval_effectiveness": 0.02
+        "naval_effectiveness": 0.01
       },
-      "cost": 850,
+      "cost": 129,
       "prerequisites": [
         [
-          "nav_guided_missile_ships"
+          "nav_land_attack_missiles"
+        ]
+      ]
+    },
+    {
+      "id": "nav_lithium_submarines",
+      "name": "Long-endurance submarine batteries",
+      "description": "Better batteries for quieter, longer patrols.",
+      "year": 2009,
+      "x": 2,
+      "effects": {
+        "naval_effectiveness": 0.01
+      },
+      "cost": 131,
+      "prerequisites": [
+        [
+          "nav_aip_submarines"
         ]
       ]
     },
@@ -71,63 +217,373 @@
       "year": 2010,
       "x": 0,
       "effects": {
-        "naval_effectiveness": 0.05
+        "naval_effectiveness": 0.03
       },
       "prerequisites": [
         [
           "nav_integrated_combat_systems"
         ]
       ],
-      "cost": 850
+      "cost": 132
+    },
+    {
+      "id": "nav_towed_array_sonar",
+      "name": "Towed-array sonar",
+      "description": "Long sonar arrays towed behind frigates to hear distant submarines.",
+      "year": 2011,
+      "x": 2,
+      "effects": {
+        "naval_effectiveness": 0.01
+      },
+      "cost": 134,
+      "prerequisites": [
+        [
+          "nav_lithium_submarines"
+        ]
+      ]
     },
     {
       "id": "nav_sea_missile_defence",
       "name": "Sea-based missile defence",
       "description": "Warships that intercept ballistic missiles.",
       "year": 2012,
-      "x": 1,
+      "x": 0,
       "effects": {
-        "naval_effectiveness": 0.03,
-        "air_effectiveness": 0.02
+        "naval_effectiveness": 0.02,
+        "air_effectiveness": 0.01
       },
       "prerequisites": [
         [
-          "nav_integrated_combat_systems"
+          "nav_cooperative_engagement"
         ]
       ],
-      "cost": 850
+      "cost": 135
+    },
+    {
+      "id": "nav_supersonic_anti_ship",
+      "name": "Supersonic anti-ship missiles",
+      "description": "Missiles that cross the last miles to a ship at high speed.",
+      "year": 2013,
+      "x": 1,
+      "effects": {
+        "naval_effectiveness": 0.02
+      },
+      "cost": 136,
+      "prerequisites": [
+        [
+          "nav_littoral_ships"
+        ]
+      ]
+    },
+    {
+      "id": "nav_modular_frigates",
+      "name": "Modular frigates",
+      "description": "General-purpose frigates with mission bays.",
+      "year": 2014,
+      "x": 1,
+      "effects": {
+        "naval_effectiveness": 0.01
+      },
+      "cost": 138,
+      "prerequisites": [
+        [
+          "nav_supersonic_anti_ship"
+        ]
+      ]
+    },
+    {
+      "id": "nav_unmanned_aircraft_ships",
+      "name": "Ship-based drones",
+      "description": "Drones launched and recovered by warships.",
+      "year": 2015,
+      "x": 3,
+      "effects": {
+        "naval_effectiveness": 0.01
+      },
+      "cost": 139,
+      "prerequisites": [
+        [
+          "nav_anti_piracy_operations"
+        ]
+      ]
+    },
+    {
+      "id": "nav_large_destroyers",
+      "name": "Large air-defence destroyers",
+      "description": "Destroyers with powerful radars and over 100 missile cells.",
+      "year": 2016,
+      "x": 0,
+      "effects": {
+        "naval_effectiveness": 0.02
+      },
+      "cost": 141,
+      "prerequisites": [
+        [
+          "nav_sea_missile_defence"
+        ]
+      ]
+    },
+    {
+      "id": "nav_quiet_submarines",
+      "name": "Quieter attack submarines",
+      "description": "Submarines with improved hull coatings and pump-jet propulsion.",
+      "year": 2017,
+      "x": 2,
+      "effects": {
+        "naval_effectiveness": 0.02
+      },
+      "cost": 142,
+      "prerequisites": [
+        [
+          "nav_towed_array_sonar"
+        ]
+      ]
+    },
+    {
+      "id": "nav_naval_strike_networks",
+      "name": "Naval strike networks",
+      "description": "Ships, aircraft and satellites sharing targets at sea.",
+      "year": 2018,
+      "x": 0,
+      "effects": {
+        "naval_effectiveness": 0.01
+      },
+      "cost": 143,
+      "prerequisites": [
+        [
+          "nav_large_destroyers"
+        ]
+      ]
+    },
+    {
+      "id": "nav_long_range_anti_ship",
+      "name": "Long-range anti-ship missiles",
+      "description": "Stealthy missiles that find ships far over the horizon.",
+      "year": 2019,
+      "x": 1,
+      "effects": {
+        "naval_effectiveness": 0.02
+      },
+      "cost": 145,
+      "prerequisites": [
+        [
+          "nav_modular_frigates"
+        ]
+      ]
     },
     {
       "id": "nav_unmanned_surface_vessels",
       "name": "Unmanned surface vessels",
       "description": "Remotely operated and autonomous boats.",
       "year": 2020,
+      "x": 3,
+      "effects": {
+        "naval_effectiveness": 0.01
+      },
+      "prerequisites": [
+        [
+          "nav_mine_countermeasure_drones"
+        ]
+      ],
+      "cost": 146
+    },
+    {
+      "id": "nav_light_carriers",
+      "name": "Light carriers and drone carriers",
+      "description": "Smaller carriers that operate short-take-off jets or drones.",
+      "year": 2021,
+      "x": 0,
+      "effects": {
+        "naval_effectiveness": 0.02
+      },
+      "mutually_exclusive": [
+        "nav_submarine_force"
+      ],
+      "cost": 148,
+      "prerequisites": [
+        [
+          "nav_naval_strike_networks"
+        ]
+      ]
+    },
+    {
+      "id": "nav_submarine_force",
+      "name": "Expanded submarine force",
+      "description": "Money spent on more submarines instead of surface ships.",
+      "year": 2021,
+      "x": 2,
+      "effects": {
+        "naval_effectiveness": 0.02
+      },
+      "mutually_exclusive": [
+        "nav_light_carriers"
+      ],
+      "cost": 148,
+      "prerequisites": [
+        [
+          "nav_quiet_submarines"
+        ]
+      ]
+    },
+    {
+      "id": "nav_explosive_drone_boats",
+      "name": "Explosive drone boats",
+      "description": "Small fast drone boats that ram ships.",
+      "year": 2022,
+      "x": 3,
+      "effects": {
+        "naval_effectiveness": 0.02
+      },
+      "cost": 149,
+      "prerequisites": [
+        [
+          "nav_unmanned_surface_vessels"
+        ]
+      ]
+    },
+    {
+      "id": "nav_naval_lasers",
+      "name": "Shipboard lasers",
+      "description": "Lasers that destroy drones and small boats.",
+      "year": 2023,
+      "x": 0,
+      "effects": {
+        "naval_effectiveness": 0.01
+      },
+      "cost": 151,
+      "prerequisites": [
+        [
+          "nav_naval_strike_networks"
+        ]
+      ]
+    },
+    {
+      "id": "nav_extra_large_uuv",
+      "name": "Extra-large unmanned submarines",
+      "description": "Large autonomous submarines for patrol and mine laying.",
+      "year": 2024,
+      "x": 2,
+      "effects": {
+        "naval_effectiveness": 0.01
+      },
+      "cost": 152,
+      "prerequisites": [
+        [
+          "nav_quiet_submarines"
+        ]
+      ]
+    },
+    {
+      "id": "nav_hypersonic_naval",
+      "name": "Ship-launched hypersonic missiles",
+      "description": "Hypersonic weapons for warships and submarines.",
+      "year": 2025,
+      "x": 1,
+      "effects": {
+        "naval_effectiveness": 0.02
+      },
+      "cost": 153,
+      "prerequisites": [
+        [
+          "nav_long_range_anti_ship"
+        ]
+      ]
+    },
+    {
+      "id": "nav_distributed_fleet",
+      "name": "Distributed fleet operations",
+      "description": "Many smaller ships and drones spread out instead of a few large ones.",
+      "year": 2026,
+      "x": 0,
+      "effects": {
+        "naval_effectiveness": 0.02
+      },
+      "cost": 155,
+      "prerequisites": [
+        [
+          "nav_naval_lasers"
+        ]
+      ]
+    },
+    {
+      "id": "nav_seabed_warfare",
+      "name": "Seabed warfare",
+      "description": "Vehicles that watch and protect undersea cables and pipelines.",
+      "year": 2027,
+      "x": 2,
+      "effects": {
+        "naval_effectiveness": 0.01
+      },
+      "cost": 156,
+      "prerequisites": [
+        [
+          "nav_extra_large_uuv"
+        ]
+      ]
+    },
+    {
+      "id": "nav_autonomous_escorts",
+      "name": "Autonomous escort ships",
+      "description": "Uncrewed corvettes that protect convoys.",
+      "year": 2028,
+      "x": 3,
+      "effects": {
+        "naval_effectiveness": 0.02
+      },
+      "cost": 158,
+      "prerequisites": [
+        [
+          "nav_explosive_drone_boats"
+        ]
+      ]
+    },
+    {
+      "id": "nav_electric_propulsion",
+      "name": "Integrated electric propulsion",
+      "description": "Ships that share power between engines, radars and weapons.",
+      "year": 2029,
+      "x": 0,
+      "effects": {
+        "naval_effectiveness": 0.01
+      },
+      "cost": 159,
+      "prerequisites": [
+        [
+          "nav_distributed_fleet"
+        ]
+      ]
+    },
+    {
+      "id": "nav_large_underwater_drones",
+      "name": "Large underwater drone fleets",
+      "description": "Autonomous submarines for patrol and mine warfare.",
+      "year": 2030,
       "x": 2,
       "effects": {
         "naval_effectiveness": 0.03
       },
       "prerequisites": [
         [
-          "nav_littoral_ships"
+          "nav_extra_large_uuv"
         ]
       ],
-      "cost": 1000
+      "cost": 160
     },
     {
-      "id": "nav_large_underwater_drones",
-      "name": "Large underwater drones",
-      "description": "Autonomous submarines for patrol and mine warfare.",
-      "year": 2030,
+      "id": "nav_railgun",
+      "name": "Electromagnetic guns",
+      "description": "Guns that fire projectiles with magnets instead of propellant.",
+      "year": 2033,
       "x": 1,
       "effects": {
-        "naval_effectiveness": 0.05
+        "naval_effectiveness": 0.02
       },
       "prerequisites": [
         [
-          "nav_aip_submarines"
+          "nav_electric_propulsion"
         ]
       ],
-      "cost": 1200
+      "cost": 165
     }
   ]
 }

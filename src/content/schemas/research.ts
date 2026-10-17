@@ -47,10 +47,11 @@ export const ResearchRulesFile = z.strictObject({
   /** Extra research slots for economies above these GDP thresholds (billion USD). */
   slot_gdp_thresholds: z.array(z.number()).default([500, 2000, 8000]),
   max_slots: n(6),
-  /** Extra cost per year a technology is researched before its year. */
-  ahead_penalty_per_year: n(0.25),
+  /** Extra cost per year a technology is researched before its year, plus a part that grows with the square of the years ahead. */
+  ahead_penalty_per_year: n(0.3),
+  ahead_penalty_growth: n(0.08),
   /** Cost reduction per year a technology is behind the current year (catching up is easier), capped. */
-  behind_bonus_per_year: n(0.06),
+  behind_bonus_per_year: n(0.08),
   max_behind_bonus: n(0.5),
   /** Speed bonus per point of R&D spending (% of GDP) above `rnd_baseline`. */
   rnd_speed_per_point: n(0.12),

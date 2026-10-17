@@ -10,59 +10,56 @@
       "name": "Personal computers",
       "description": "Computers in offices and homes.",
       "year": 1985,
-      "x": 3,
+      "x": 1,
       "effects": {
-        "research_speed": 0.02
+        "research_speed": 0.01
       },
-      "cost": 500
+      "cost": 100
     },
     {
       "id": "ele_mobile_2g",
       "name": "2G mobile phones",
       "description": "Digital mobile phone networks.",
       "year": 1993,
-      "x": 3,
+      "x": 0,
       "effects": {
-        "private_sector_output": 0.01
+        "private_sector_output": 0.005
       },
       "prerequisites": [
         [
           "ele_personal_computers"
         ]
       ],
-      "cost": 500
+      "cost": 100
     },
     {
       "id": "ele_internet",
       "name": "The internet",
       "description": "A public worldwide computer network.",
       "year": 1994,
-      "x": 2,
+      "x": 1,
       "effects": {
-        "research_speed": 0.02
+        "research_speed": 0.01
       },
+      "cost": 100,
       "prerequisites": [
         [
           "ele_personal_computers"
         ]
-      ],
-      "cost": 500
+      ]
     },
     {
       "id": "ele_broadband",
       "name": "Broadband internet",
       "description": "Always-on internet access in homes and businesses.",
       "year": 1999,
-      "x": 0,
+      "x": 1,
       "effects": {
-        "research_speed": 0.03,
-        "private_sector_output": 0.01
+        "research_speed": 0.01,
+        "private_sector_output": 0.005
       },
-      "cost": 700,
+      "cost": 100,
       "prerequisites": [
-        [
-          "ele_personal_computers"
-        ],
         [
           "ele_internet"
         ]
@@ -73,14 +70,30 @@
       "name": "Precision civil GPS",
       "description": "Accurate satellite positioning for civilian use.",
       "year": 2000,
-      "x": 1,
+      "x": 2,
       "effects": {
-        "trade_efficiency": 0.02
+        "trade_efficiency": 0.01
       },
-      "cost": 700,
       "prerequisites": [
         [
           "ele_personal_computers"
+        ]
+      ],
+      "cost": 118
+    },
+    {
+      "id": "ele_wifi",
+      "name": "Wireless local networks",
+      "description": "Wi-Fi in homes, offices and public places.",
+      "year": 2001,
+      "x": 1,
+      "effects": {
+        "private_sector_output": 0.005
+      },
+      "cost": 119,
+      "prerequisites": [
+        [
+          "ele_broadband"
         ]
       ]
     },
@@ -91,34 +104,98 @@
       "year": 2002,
       "x": 0,
       "effects": {
-        "private_sector_output": 0.02
+        "private_sector_output": 0.01
+      },
+      "prerequisites": [
+        [
+          "ele_mobile_2g"
+        ],
+        [
+          "ele_broadband"
+        ]
+      ],
+      "cost": 121
+    },
+    {
+      "id": "ele_flat_screens",
+      "name": "Flat-panel displays",
+      "description": "Cheap flat screens for computers and televisions.",
+      "year": 2003,
+      "x": 2,
+      "effects": {
+        "consumer_goods_factor": -0.005
+      },
+      "cost": 122,
+      "prerequisites": [
+        [
+          "ele_civil_gps"
+        ]
+      ]
+    },
+    {
+      "id": "ele_multicore_processors",
+      "name": "Multi-core processors",
+      "description": "Chips with several processors on one die.",
+      "year": 2004,
+      "x": 1,
+      "effects": {
+        "research_speed": 0.01
+      },
+      "cost": 124,
+      "prerequisites": [
+        [
+          "ele_wifi"
+        ]
+      ]
+    },
+    {
+      "id": "ele_social_media",
+      "name": "Social media",
+      "description": "Online networks where people share news and opinions.",
+      "year": 2005,
+      "x": 3,
+      "effects": {
+        "propaganda_efficiency": 0.02
       },
       "prerequisites": [
         [
           "ele_broadband"
-        ],
-        [
-          "ele_mobile_2g"
         ]
       ],
-      "cost": 700
+      "cost": 125
+    },
+    {
+      "id": "ele_fibre_networks",
+      "name": "Fibre-to-the-home",
+      "description": "Optical fibre all the way to homes and businesses.",
+      "year": 2006,
+      "x": 1,
+      "effects": {
+        "private_sector_output": 0.005
+      },
+      "cost": 126,
+      "prerequisites": [
+        [
+          "ele_multicore_processors"
+        ]
+      ]
     },
     {
       "id": "ele_smartphones",
       "name": "Smartphones",
       "description": "Pocket computers with internet access.",
       "year": 2007,
-      "x": 1,
+      "x": 0,
       "effects": {
-        "education_quality": 0.02,
-        "private_sector_output": 0.02
+        "education_quality": 0.01,
+        "private_sector_output": 0.01
       },
       "prerequisites": [
         [
           "ele_mobile_3g"
         ]
       ],
-      "cost": 850
+      "cost": 128
     },
     {
       "id": "ele_cyber_defence",
@@ -127,13 +204,29 @@
       "year": 2008,
       "x": 2,
       "effects": {
-        "intelligence_power": 0.05,
-        "internal_security": 0.03
+        "intelligence_power": 0.03,
+        "internal_security": 0.02
       },
-      "cost": 850,
       "prerequisites": [
         [
-          "ele_personal_computers"
+          "ele_civil_gps"
+        ]
+      ],
+      "cost": 129
+    },
+    {
+      "id": "ele_gpu_computing",
+      "name": "General-purpose GPU computing",
+      "description": "Graphics chips used for science and data processing.",
+      "year": 2009,
+      "x": 1,
+      "effects": {
+        "research_speed": 0.01
+      },
+      "cost": 131,
+      "prerequisites": [
+        [
+          "ele_fibre_networks"
         ]
       ]
     },
@@ -144,14 +237,31 @@
       "year": 2010,
       "x": 0,
       "effects": {
-        "gdp_growth": 0.002
+        "gdp_growth": 0.001
       },
       "prerequisites": [
         [
-          "ele_mobile_3g"
+          "ele_smartphones"
         ]
       ],
-      "cost": 850
+      "cost": 132
+    },
+    {
+      "id": "ele_big_data",
+      "name": "Big data analytics",
+      "description": "Tools that analyse huge datasets across many machines.",
+      "year": 2011,
+      "x": 1,
+      "effects": {
+        "research_speed": 0.005,
+        "tax_efficiency": 0.005
+      },
+      "cost": 134,
+      "prerequisites": [
+        [
+          "ele_gpu_computing"
+        ]
+      ]
     },
     {
       "id": "ele_cyber_operations",
@@ -160,31 +270,137 @@
       "year": 2012,
       "x": 2,
       "effects": {
-        "intelligence_power": 0.08,
-        "foreign_influence_power": 0.05
+        "intelligence_power": 0.05,
+        "foreign_influence_power": 0.03
       },
       "prerequisites": [
         [
           "ele_cyber_defence"
         ]
       ],
-      "cost": 850
+      "cost": 135
     },
     {
-      "id": "ele_machine_learning",
-      "name": "Machine learning",
-      "description": "Systems that learn from data at scale.",
-      "year": 2016,
-      "x": 1,
+      "id": "ele_internet_of_things",
+      "name": "Internet of things",
+      "description": "Sensors and devices connected to the internet.",
+      "year": 2013,
+      "x": 0,
       "effects": {
-        "research_speed": 0.05
+        "private_sector_output": 0.005
+      },
+      "cost": 136,
+      "prerequisites": [
+        [
+          "ele_mobile_4g"
+        ]
+      ]
+    },
+    {
+      "id": "ele_mass_surveillance",
+      "name": "Digital mass surveillance",
+      "description": "Systems that collect and search communications at national scale.",
+      "year": 2014,
+      "x": 3,
+      "effects": {
+        "internal_security": 0.03,
+        "civil_liberties": -0.02
       },
       "prerequisites": [
         [
-          "ele_smartphones"
+          "ele_social_media"
         ]
       ],
-      "cost": 1000
+      "mutually_exclusive": [
+        "ele_end_to_end_encryption"
+      ],
+      "cost": 138
+    },
+    {
+      "id": "ele_end_to_end_encryption",
+      "name": "Strong encryption standards",
+      "description": "Encryption by default in messaging and the web.",
+      "year": 2014,
+      "x": 4,
+      "effects": {
+        "civil_liberties": 0.01,
+        "foreign_influence_resistance": 0.02
+      },
+      "prerequisites": [
+        [
+          "ele_social_media"
+        ]
+      ],
+      "mutually_exclusive": [
+        "ele_mass_surveillance"
+      ],
+      "cost": 138
+    },
+    {
+      "id": "ele_deep_learning",
+      "name": "Deep learning",
+      "description": "Neural networks trained on large datasets.",
+      "year": 2015,
+      "x": 1,
+      "effects": {
+        "research_speed": 0.01
+      },
+      "prerequisites": [
+        [
+          "ele_gpu_computing"
+        ]
+      ],
+      "cost": 139
+    },
+    {
+      "id": "ele_machine_learning",
+      "name": "Machine learning at scale",
+      "description": "Systems that learn from data across the economy.",
+      "year": 2016,
+      "x": 1,
+      "effects": {
+        "research_speed": 0.01,
+        "private_sector_output": 0.005
+      },
+      "cost": 141,
+      "prerequisites": [
+        [
+          "ele_deep_learning"
+        ]
+      ]
+    },
+    {
+      "id": "ele_satellite_internet",
+      "name": "Small-satellite constellations",
+      "description": "Hundreds of small satellites for imaging and communications.",
+      "year": 2017,
+      "x": 2,
+      "effects": {
+        "intelligence_power": 0.02
+      },
+      "cost": 142,
+      "prerequisites": [
+        [
+          "ele_cyber_operations"
+        ]
+      ]
+    },
+    {
+      "id": "ele_7nm_chips",
+      "name": "Advanced chip manufacturing",
+      "description": "Transistors a few nanometres across.",
+      "year": 2018,
+      "x": 4,
+      "effects": {
+        "research_speed": 0.01,
+        "production_efficiency": 0.01
+      },
+      "cost": 143,
+      "prerequisites": [
+        [
+          "ele_end_to_end_encryption"
+        ]
+      ]
     },
     {
       "id": "ele_mobile_5g",
@@ -193,15 +409,68 @@
       "year": 2019,
       "x": 0,
       "effects": {
-        "gdp_growth": 0.002,
-        "private_sector_output": 0.02
+        "gdp_growth": 0.001,
+        "private_sector_output": 0.005
       },
       "prerequisites": [
         [
           "ele_mobile_4g"
+        ],
+        [
+          "ele_internet_of_things"
         ]
       ],
-      "cost": 1000
+      "cost": 145
+    },
+    {
+      "id": "ele_satellite_broadband",
+      "name": "Satellite broadband",
+      "description": "Low-orbit constellations that bring internet anywhere.",
+      "year": 2020,
+      "x": 2,
+      "effects": {
+        "private_sector_output": 0.005,
+        "intelligence_power": 0.01
+      },
+      "cost": 146,
+      "prerequisites": [
+        [
+          "ele_satellite_internet"
+        ]
+      ]
+    },
+    {
+      "id": "ele_zero_trust",
+      "name": "Zero-trust security",
+      "description": "Networks that check every user and device every time.",
+      "year": 2021,
+      "x": 3,
+      "effects": {
+        "internal_security": 0.02,
+        "foreign_influence_resistance": 0.02
+      },
+      "prerequisites": [
+        [
+          "ele_cyber_defence"
+        ]
+      ],
+      "cost": 148
+    },
+    {
+      "id": "ele_semiconductor_sovereignty",
+      "name": "Domestic chip supply chains",
+      "description": "National programmes to make advanced chips at home.",
+      "year": 2022,
+      "x": 4,
+      "effects": {
+        "production_efficiency": 0.01
+      },
+      "cost": 149,
+      "prerequisites": [
+        [
+          "ele_7nm_chips"
+        ]
+      ]
     },
     {
       "id": "ele_generative_ai",
@@ -210,32 +479,149 @@
       "year": 2023,
       "x": 1,
       "effects": {
-        "research_speed": 0.05,
-        "private_sector_output": 0.03
+        "research_speed": 0.01,
+        "private_sector_output": 0.01
       },
       "prerequisites": [
         [
           "ele_machine_learning"
+        ],
+        [
+          "ele_deep_learning"
         ]
       ],
-      "cost": 1000
+      "cost": 151
+    },
+    {
+      "id": "ele_ai_cyber_defence",
+      "name": "AI-driven cyber defence",
+      "description": "Systems that detect and answer intrusions automatically.",
+      "year": 2024,
+      "x": 3,
+      "effects": {
+        "internal_security": 0.02,
+        "intelligence_power": 0.02
+      },
+      "cost": 152,
+      "prerequisites": [
+        [
+          "ele_zero_trust"
+        ]
+      ]
+    },
+    {
+      "id": "ele_ai_agents",
+      "name": "AI agents",
+      "description": "AI systems that carry out multi-step tasks on their own.",
+      "year": 2025,
+      "x": 1,
+      "effects": {
+        "private_sector_output": 0.01
+      },
+      "cost": 153,
+      "prerequisites": [
+        [
+          "ele_generative_ai"
+        ]
+      ]
+    },
+    {
+      "id": "ele_6g_research",
+      "name": "6G networks",
+      "description": "The next generation of mobile networks.",
+      "year": 2026,
+      "x": 0,
+      "effects": {
+        "private_sector_output": 0.005
+      },
+      "cost": 155,
+      "prerequisites": [
+        [
+          "ele_mobile_5g"
+        ]
+      ]
+    },
+    {
+      "id": "ele_post_quantum_crypto",
+      "name": "Post-quantum cryptography",
+      "description": "Encryption that resists quantum computers.",
+      "year": 2027,
+      "x": 3,
+      "effects": {
+        "foreign_influence_resistance": 0.02,
+        "internal_security": 0.01
+      },
+      "cost": 156,
+      "prerequisites": [
+        [
+          "ele_ai_cyber_defence"
+        ]
+      ]
+    },
+    {
+      "id": "ele_neuromorphic_chips",
+      "name": "Neuromorphic chips",
+      "description": "Chips modelled on the brain that run AI with little power.",
+      "year": 2028,
+      "x": 4,
+      "effects": {
+        "research_speed": 0.01
+      },
+      "cost": 158,
+      "prerequisites": [
+        [
+          "ele_semiconductor_sovereignty"
+        ]
+      ]
+    },
+    {
+      "id": "ele_ai_research_assistants",
+      "name": "AI research assistants",
+      "description": "AI systems that run experiments and write papers.",
+      "year": 2029,
+      "x": 1,
+      "effects": {
+        "research_speed": 0.01
+      },
+      "cost": 159,
+      "prerequisites": [
+        [
+          "ele_ai_agents"
+        ]
+      ]
+    },
+    {
+      "id": "ele_brain_computer_interfaces",
+      "name": "Brain-computer interfaces",
+      "description": "Implants that let people control devices by thought.",
+      "year": 2030,
+      "x": 2,
+      "effects": {
+        "health_outcomes": 0.01
+      },
+      "cost": 160,
+      "prerequisites": [
+        [
+          "ele_satellite_broadband"
+        ]
+      ]
     },
     {
       "id": "ele_quantum_computing",
       "name": "Quantum computing",
       "description": "Practical quantum computers for science and cryptography.",
       "year": 2032,
-      "x": 2,
+      "x": 1,
       "effects": {
-        "intelligence_power": 0.05,
-        "research_speed": 0.05
+        "intelligence_power": 0.03,
+        "research_speed": 0.01
       },
       "prerequisites": [
         [
-          "ele_generative_ai"
+          "ele_ai_research_assistants"
         ]
       ],
-      "cost": 1200
+      "cost": 163
     }
   ]
 }
