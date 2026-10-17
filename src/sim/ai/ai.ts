@@ -357,14 +357,16 @@ export const aiSystem: System = {
     const { state } = ctx;
     // strategic planning: each country once a month, on its bucket day (1st-28th)
     for (const cs of Object.values(state.countries)) {
-      if (!cs.active || !isAi(state, cs.tag) || !state.provinceOwner.includes(cs.tag)) continue;
-      if (!monthlyDue(cs.tag, state.day)) continue;
+      // cheap checks first: owning land is a scan over every province
+      if (!cs.active || !monthlyDue(cs.tag, state.day) || !isAi(state, cs.tag) || !state.provinceOwner.includes(cs.tag)) continue;
       apply(ctx, planStrategic(ctx, cs));
     }
     // armies at war: every third day per country
     if (!state.wars.length && !Object.values(state.countries).some((c) => c.civilWar)) return;
+    // historical mode: wars with armed groups are frozen (src/sim/conflicts), so they need no planning
+    const frozen = state.rules.electionMode === "historical";
     const fighting = new Set<string>();
-    for (const w of state.wars) for (const t of [...w.attackers, ...w.defenders]) fighting.add(t);
+    for (const w of state.wars) if (!(frozen && w.armedGroup)) for (const t of [...w.attackers, ...w.defenders]) fighting.add(t);
     for (const cs of Object.values(state.countries)) if (cs.civilWar) { fighting.add(cs.tag); fighting.add(cs.civilWar.rebel); }
     for (const tag of fighting) if (isAi(state, tag) && bucketOf(tag, 3) === state.day % 3) apply(ctx, planMilitary(ctx, tag));
   },

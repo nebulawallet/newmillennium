@@ -1,7 +1,12 @@
-/** Dev: time spent per system over N simulated days (npx tsx scripts/dev/profile-systems.ts 730). */
+/**
+ * Dev: time spent per system over N simulated days.
+ *   npx tsx scripts/dev/profile-systems.ts 730 [--map] [--from YYYY-MM-DD]
+ * --map uses the real map (wars, AI movement, armed groups); --from fast-forwards first (not timed).
+ */
+import { readFileSync } from "node:fs";
 import { compileContent } from "../../src/content/compile.ts";
-import { ymdOf } from "../../src/sim/date.ts";
-import { defaultSystems, Simulation, type System } from "../../src/sim/simulation.ts";
+import { dayOf, ymdOf } from "../../src/sim/date.ts";
+import { defaultSystems, Simulation, simMapFrom, type System } from "../../src/sim/simulation.ts";
 import { createInitialState } from "../../src/sim/state.ts";
 import { NodeFiles } from "../lib/nodeFiles.ts";
 const { db } = compileContent(new NodeFiles(), {});
@@ -11,8 +16,14 @@ const wrap = (s: System): System => {
     s[k] && ((ctx: Parameters<NonNullable<System["daily"]>>[0]) => { const a = performance.now(); s[k]!(ctx); times.set(`${s.id}.${k}`, (times.get(`${s.id}.${k}`) ?? 0) + performance.now() - a); });
   return { ...s, daily: t("daily"), weekly: t("weekly"), monthly: t("monthly"), yearly: t("yearly"), init: s.init };
 };
-const sim = new Simulation(db, createInitialState(db, { provinces: [] }, { contentHash: "p" }), defaultSystems().map(wrap));
-const n = Number(process.argv[2] ?? 730);
+const args = process.argv.slice(2);
+const useMap = args.includes("--map");
+const provinces = useMap ? JSON.parse(readFileSync("public/map/provinces.json", "utf8")) : [];
+const map = useMap ? simMapFrom(provinces, JSON.parse(readFileSync("public/map/adjacency.json", "utf8"))) : undefined;
+const sim = new Simulation(db, createInitialState(db, { provinces }, { contentHash: "p" }), defaultSystems().map(wrap), map);
+const from = args[args.indexOf("--from") + 1];
+if (args.includes("--from") && from) { while (sim.state.day < dayOf(from)) sim.step(); times.clear(); }
+const n = Number(args.find((a) => /^\d+$/.test(a)) ?? 730);
 const t0 = performance.now();
 for (let i = 0; i < n; i++) sim.step();
 const total = performance.now() - t0;
