@@ -57,6 +57,27 @@ describe.skipIf(!built)("map of 1 January 2000", () => {
     expect(total).toBeLessThan(6.3e9);
   });
 
+  it("adjacency: valid pairs, land enclaves reachable, real borders present", () => {
+    const adjacency: [number, number, number][] = JSON.parse(readFileSync(resolve(root, "public/map/adjacency.json"), "utf8"));
+    const seen = new Set<string>();
+    const nb = new Map<number, Set<number>>();
+    for (const [a, b, n] of adjacency) {
+      expect(a).toBeLessThan(b);
+      expect(n).toBeGreaterThanOrEqual(2);
+      expect(seen.has(`${a}-${b}`)).toBe(false);
+      seen.add(`${a}-${b}`);
+      (nb.get(a) ?? nb.set(a, new Set()).get(a)!).add(b);
+      (nb.get(b) ?? nb.set(b, new Set()).get(b)!).add(a);
+    }
+    const id = (name: string, owner: string) => provinces.find((p) => p.name === name && p.owner === owner)!.id;
+    // sub-pixel enclaves (data/map/adjacency_overrides.json) have a land neighbour
+    for (const [n, o] of [["Macau", "CHN"], ["Gibraltar", "GBR"], ["Melilla", "ESP"], ["Vatican", "VAT"]]) expect(nb.get(id(n!, o!))?.size ?? 0, n).toBeGreaterThan(0);
+    // countries that share a land border have provinces that touch
+    const touch = (x: string, y: string) => provinces.some((p) => p.owner === x && [...(nb.get(p.id) ?? [])].some((q) => provinces[q - 1]!.owner === y));
+    for (const [x, y] of [["DEU", "POL"], ["RUS", "UKR"], ["IRQ", "IRN"], ["ISR", "LBN"], ["SYR", "TUR"], ["AFG", "PAK"], ["FRA", "ESP"]]) expect(touch(x!, y!), `${x}-${y}`).toBe(true);
+    expect(touch("GBR", "FRA")).toBe(false); // the Channel: no land link
+  });
+
   it("names provinces uniquely within each country", () => {
     const seen = new Set<string>();
     for (const p of provinces) {

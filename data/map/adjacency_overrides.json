@@ -1,0 +1,9 @@
+{
+  "note": "Land enclaves smaller than one pixel of the id map own no pixel, so the raster gives them no neighbours and units could never enter or leave. Each listed province (by map name) is linked to the nearest land province around it. Islands are not listed: they have no land border.",
+  "enclaves": [
+    { "province": "Macau", "owner": "CHN", "why": "Land border with Zhuhai, Guangdong" },
+    { "province": "Gibraltar", "owner": "GBR", "why": "Land border with the province of Cádiz, Spain" },
+    { "province": "Melilla", "owner": "ESP", "why": "Land border with Morocco's Oriental region" },
+    { "province": "Vatican", "owner": "VAT", "why": "Enclave in Rome" }
+  ]
+}

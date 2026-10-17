@@ -12,6 +12,7 @@
  *
  * Requires `npm run fetch-map` first. Manual corrections go in data/map/province_overrides.json.
  */
+import { linkEnclaves, readEnclaves } from "./lib/enclaves.ts";
 import { execFileSync } from "node:child_process";
 import { existsSync, mkdirSync, readFileSync, readdirSync, writeFileSync } from "node:fs";
 import { join, resolve } from "node:path";
@@ -507,6 +508,12 @@ async function main(): Promise<void> {
   writeIdPng(grid, ids);
   const adjacency: [number, number, number][] = [];
   for (const [key, count] of adj) if (count >= 2) adjacency.push([Math.floor(key / 65536), key % 65536, count]);
+  // sub-pixel enclaves (Macau, Gibraltar, Melilla, the Vatican) get a link to the land around them
+  const linked = linkEnclaves(adjacency, provinces, readEnclaves(), (id) => {
+    const p = provinces[id - 1]!;
+    return grid.toPx(p.centroid[0], p.centroid[1]) as [number, number];
+  }, (x, y) => (y < 0 || y >= grid.height ? 0 : ids[y * W + ((x % W) + W) % W]!));
+  log(`enclaves linked: ${linked.map((l) => `${provinces[l.id - 1]!.name} -> ${provinces[l.to - 1]!.name}`).join(", ") || "none"}`);
   writeFileSync(join(OUT, "adjacency.json"), JSON.stringify(adjacency));
   writeFileSync(join(OUT, "provinces.json"), JSON.stringify(provinces));
   writeFileSync(join(OUT, "labels.json"), JSON.stringify(countryLabels(provinces, adjacency)));
