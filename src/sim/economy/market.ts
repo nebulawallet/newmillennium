@@ -16,7 +16,7 @@ import type { SimContext } from "../simulation.ts";
 import type { CountryState, GameState } from "../state.ts";
 import { clamp } from "../politics/common.ts";
 import type { EconomyState } from "./economy.ts";
-import { constructionFactories, organicTotals } from "./construction.ts";
+import { builtByOwner, constructionFactories, organicTotals } from "./construction.ts";
 
 /** Market calibration period from 1 January 2000 (days). */
 export const CALIBRATION_DAYS = 365;
@@ -54,10 +54,7 @@ export function production(db: ContentDB, state: GameState, cs: CountryState, ci
   if (db.goods.has("consumer_goods")) out.consumer_goods = civ * consumerShare * r.consumer_goods_per_factory;
   if (db.goods.has("industrial_goods")) out.industrial_goods = idle * r.industrial_goods_per_factory;
   const counts: Record<string, number> = cs.economy ? { ...organicTotals(db, cs.economy) } : {};
-  for (const [pid, rec] of Object.entries(state.provinceBuildings)) {
-    if (state.provinceOwner[Number(pid) - 1] !== cs.tag) continue;
-    for (const [b, n] of Object.entries(rec)) counts[b] = (counts[b] ?? 0) + n;
-  }
+  for (const [b, n] of Object.entries(builtByOwner(state).get(cs.tag) ?? {})) counts[b] = (counts[b] ?? 0) + n;
   for (const [b, n] of Object.entries(counts))
     for (const [g, k] of Object.entries(db.buildings.get(b)?.adds.goods ?? {})) out[g] = (out[g] ?? 0) + n * k;
   return out;
@@ -108,10 +105,24 @@ export function updateMarket(ctx: SimContext, idleOf: (cs: CountryState) => numb
   }
   // trade routes: partners by GDP and access
   const d = state.diplomacy;
-  const sanctions = new Set((d?.sanctions ?? []).map(([a, b]) => `${a}>${b}`));
-  const deals = new Set((d?.tradeDeals ?? []).flatMap(([a, b]) => [`${a}|${b}`, `${b}|${a}`]));
+  // partner sets per country: sanctions either way close a route, agreements and blocs widen it
+  const pairs = (list: [string, string][] | undefined) => {
+    const m = new Map<string, Set<string>>();
+    for (const [a, b] of list ?? []) {
+      (m.get(a) ?? m.set(a, new Set()).get(a)!).add(b);
+      (m.get(b) ?? m.set(b, new Set()).get(b)!).add(a);
+    }
+    return m;
+  };
+  const sanctions = pairs(d?.sanctions), deals = pairs(d?.tradeDeals);
   const unSanctioned = new Set((d?.unsc.resolutions ?? []).filter((x) => x.kind === "sanctions" && x.passed && (x.until ?? 0) > state.day).map((x) => x.target));
-  const blocs = new Map(countries.map((c) => [c.tag, economicBlocs(db, state, c.tag)]));
+  const blocs = new Map(countries.map((c) => [c.tag, [...economicBlocs(db, state, c.tag)]]));
+  const blocMembers = new Map<string, string[]>();
+  for (const [id, members] of Object.entries(state.diplomacy?.blocs ?? {})) if (db.blocs.get(id)?.kind === "economic") blocMembers.set(id, members);
+  const byTag = new Map(countries.map((c) => [c.tag, c]));
+  const largest = [...countries].sort((x, y) => y.economy!.gdp - x.economy!.gdp);
+  const worldGdp = countries.reduce((sum, c) => sum + c.economy!.gdp, 0);
+  const NONE = new Set<string>();
   for (const cs of countries) {
     const e = cs.economy!;
     const p = prod.get(cs.tag)!, dr = dem.get(cs.tag)!;
@@ -125,24 +136,38 @@ export function updateMarket(ctx: SimContext, idleOf: (cs: CountryState) => numb
       if (net > 0) exp += net * m.price * value;
       else imp += -net * m.price * value;
     }
+    // access: the open world market, adjusted only for the partners with special terms
+    const mySanctions = sanctions.get(cs.tag) ?? NONE, myDeals = deals.get(cs.tag) ?? NONE;
     const mine = blocs.get(cs.tag)!;
-    const routes: TradeState["routes"] = [];
-    let reach = 0, open = 0;
-    for (const o of countries) {
-      if (o === cs) continue;
-      const g = o.economy!.gdp;
-      open += g;
+    const accOf = (o: CountryState): [number, "deal" | "bloc" | "open"] => {
       let acc = 1, kind: "deal" | "bloc" | "open" = "open";
-      if (sanctions.has(`${cs.tag}>${o.tag}`) || sanctions.has(`${o.tag}>${cs.tag}`)) acc = 0;
-      else if (deals.has(`${cs.tag}|${o.tag}`)) { acc = r.deal_access; kind = "deal"; }
-      else if ([...mine].some((b) => blocs.get(o.tag)?.has(b))) { acc = r.bloc_access; kind = "bloc"; }
-      if (unSanctioned.has(cs.tag) || unSanctioned.has(o.tag)) acc *= 0.3;
-      reach += g * acc;
-      if (acc > 0) routes.push({ partner: o.tag, value: g * acc, kind });
+      if (mySanctions.has(o.tag)) acc = 0;
+      else if (myDeals.has(o.tag)) { acc = r.deal_access; kind = "deal"; }
+      else if (mine.length && blocs.get(o.tag)!.some((x) => mine.includes(x))) { acc = r.bloc_access; kind = "bloc"; }
+      if (unSanctioned.has(o.tag)) acc *= 0.3;
+      return [acc, kind];
+    };
+    const special = new Set<CountryState>();
+    for (const t of mySanctions) { const o = byTag.get(t); if (o) special.add(o); }
+    for (const t of myDeals) { const o = byTag.get(t); if (o) special.add(o); }
+    for (const x of mine) for (const t of blocMembers.get(x) ?? []) { const o = byTag.get(t); if (o) special.add(o); }
+    for (const t of unSanctioned) { const o = byTag.get(t); if (o) special.add(o); }
+    special.delete(cs);
+    const open = worldGdp - e.gdp;
+    let reach = open;
+    for (const o of special) reach += o.economy!.gdp * (accOf(o)[0] - 1);
+    if (unSanctioned.has(cs.tag)) reach *= 0.3;
+    // the largest routes: among the biggest economies and the special partners
+    const candidates = new Set<CountryState>(special);
+    for (const o of largest) { if (candidates.size >= special.size + 12) break; if (o !== cs) candidates.add(o); }
+    const routes: TradeState["routes"] = [];
+    for (const o of candidates) {
+      const [acc, kind] = accOf(o);
+      if (acc > 0) routes.push({ partner: o.tag, value: o.economy!.gdp * acc * (unSanctioned.has(cs.tag) ? 0.3 : 1), kind });
     }
     const access = open > 0 ? Math.min(r.max_access, reach / open) : 0;
     const sold = exp * access;
-    const total = routes.reduce((s, x) => s + x.value, 0) || 1;
+    const total = Math.max(1e-9, reach);
     routes.sort((a, b) => b.value - a.value);
     const top = routes.slice(0, 8).map((x) => ({ ...x, value: (sold * x.value) / total }));
     const income = sold - imp;

@@ -48,6 +48,26 @@ export function moneyCost(db: ContentDB, b: BuildingDef, e: EconomyState): numbe
 
 const builtIn = (state: GameState, id: number, b: string) => state.provinceBuildings[String(id)]?.[b] ?? 0;
 
+const ownCache = new WeakMap<GameState, { day: number; byOwner: Map<string, SimProvince[]> }>();
+/**
+ * Each country's populated provinces, indexed once a month (scanning 4,580 provinces per call adds
+ * up). Ownership rarely changes within a month, and canBuild checks the owner itself.
+ */
+export function provincesOf(state: GameState, map: SimMap | undefined, tag: string): SimProvince[] {
+  if (!map) return [];
+  let hit = ownCache.get(state);
+  if (!hit || Math.floor(hit.day / 30) !== Math.floor(state.day / 30)) {
+    const byOwner = new Map<string, SimProvince[]>();
+    for (const p of map.provinces) {
+      const o = state.provinceOwner[p.id - 1];
+      if (!o || p.population <= 0) continue;
+      (byOwner.get(o) ?? byOwner.set(o, []).get(o)!).push(p);
+    }
+    ownCache.set(state, (hit = { day: state.day, byOwner }));
+  }
+  return hit.byOwner.get(tag) ?? [];
+}
+
 /** Infrastructure level of a province: the map's estimate plus levels built, capped at 10. */
 export function infrastructureOf(state: GameState, p: SimProvince): number {
   return Math.min(10, (p.infrastructure ?? 3) + builtIn(state, p.id, "infrastructure"));
@@ -76,12 +96,16 @@ const placementCache = new WeakMap<GameState, Map<string, { key: string; p: Plac
  * population and infrastructure, filling free slots (largest remainder, then the next province).
  */
 export function placement(db: ContentDB, state: GameState, map: SimMap | undefined, tag: string, totals: Record<string, number>): Placement {
-  const key = `${Math.floor(state.day / 30)}|${Object.entries(totals).map(([k, v]) => `${k}${v}`).join(",")}`;
+  // recomputed only when what it depends on changes: the totals, buildings built and the provinces held
+  const own = provincesOf(state, map, tag);
+  let builtSig = 0;
+  for (const [b, n] of Object.entries(builtByOwner(state).get(tag) ?? {})) builtSig += n * (b.length + 1);
+  const key = `${own.length}|${own[0]?.id ?? 0}|${builtSig}|${Object.entries(totals).map(([k, v]) => `${k}${v}`).join(",")}`;
   let byTag = placementCache.get(state);
   if (!byTag) placementCache.set(state, (byTag = new Map()));
   const hit = byTag.get(tag);
   if (hit && hit.key === key) return hit.p;
-  const provinces = (map?.provinces ?? []).filter((p) => state.provinceOwner[p.id - 1] === tag && p.population > 0);
+  const provinces = [...provincesOf(state, map, tag)];
   const weight = (p: SimProvince) => p.population * (0.5 + infrastructureOf(state, p) / 10);
   provinces.sort((a, b) => weight(b) - weight(a));
   const organic = new Map<number, Record<string, number>>();
@@ -272,13 +296,27 @@ export function queueEstimates(db: ContentDB, e: EconomyState, free: number, per
 
 // ------------------------------------------------------------------ building effects
 
+const countsCache = new WeakMap<GameState, { day: number; size: number; byOwner: Map<string, Record<string, number>> }>();
+/** Buildings built during play, summed per owner (cached for the day). */
+export function builtByOwner(state: GameState): Map<string, Record<string, number>> {
+  const keys = Object.keys(state.provinceBuildings);
+  const hit = countsCache.get(state);
+  if (hit && hit.day === state.day && hit.size === keys.length) return hit.byOwner;
+  const byOwner = new Map<string, Record<string, number>>();
+  for (const pid of keys) {
+    const owner = state.provinceOwner[Number(pid) - 1];
+    if (!owner) continue;
+    let rec = byOwner.get(owner);
+    if (!rec) byOwner.set(owner, (rec = {}));
+    for (const [b, n] of Object.entries(state.provinceBuildings[pid]!)) rec[b] = (rec[b] ?? 0) + n;
+  }
+  countsCache.set(state, { day: state.day, size: keys.length, byOwner });
+  return byOwner;
+}
+
 /** Country modifiers from buildings (refreshed monthly; read by countryModifiers). */
 export function buildingModifiers(db: ContentDB, state: GameState, tag: string): Record<string, number> {
-  const count: Record<string, number> = {};
-  for (const [pid, rec] of Object.entries(state.provinceBuildings)) {
-    if (state.provinceOwner[Number(pid) - 1] !== tag) continue;
-    for (const [b, n] of Object.entries(rec)) count[b] = (count[b] ?? 0) + n;
-  }
+  const count = builtByOwner(state).get(tag) ?? {};
   const out: Record<string, number> = {};
   for (const [id, n] of Object.entries(count)) {
     const b = db.buildings.get(id);
@@ -291,8 +329,7 @@ export function buildingModifiers(db: ContentDB, state: GameState, tag: string):
 
 /** Buildings of one type a country has (built plus starting ones). */
 export function buildingCount(db: ContentDB, state: GameState, map: SimMap | undefined, cs: CountryState, building: string): { built: number; organic: number } {
-  let built = 0;
-  for (const [pid, rec] of Object.entries(state.provinceBuildings)) if (state.provinceOwner[Number(pid) - 1] === cs.tag) built += rec[building] ?? 0;
+  const built = builtByOwner(state).get(cs.tag)?.[building] ?? 0;
   const organic = cs.economy ? organicTotals(db, cs.economy)[building] ?? 0 : 0;
   return { built, organic };
 }
@@ -306,7 +343,7 @@ export function aiConstruction(ctx: SimContext, cs: CountryState): void {
   const { db, state, rng, map } = ctx;
   const e = cs.economy!;
   if (e.construction.length >= 3 || !map) return;
-  const own = map.provinces.filter((p) => state.provinceOwner[p.id - 1] === cs.tag && state.provinceController[p.id - 1] === cs.tag && p.population > 0);
+  const own = provincesOf(state, map, cs.tag).filter((p) => state.provinceController[p.id - 1] === cs.tag);
   if (!own.length) return;
   const roll = rng.next();
   const atWar = state.wars.some((w) => w.attackers.includes(cs.tag) || w.defenders.includes(cs.tag));
@@ -327,8 +364,9 @@ export function aiConstruction(ctx: SimContext, cs: CountryState): void {
   const b = db.buildings.get(pick);
   if (!b || moneyCost(db, b, e) > e.gdp * AI_MAX_COST_SHARE) return;
   // a few tries at populous provinces where it is allowed
+  const weights = own.map((q) => q.population);
   for (let i = 0; i < 6; i++) {
-    const p = own[rng.weighted(own.map((q) => q.population))]!;
+    const p = own[rng.weighted(weights)]!;
     if (!canBuild(db, state, map, cs, pick, p.id)) { e.construction.push({ building: pick, province: p.id, progress: 0, spent: 0 }); return; }
   }
 }

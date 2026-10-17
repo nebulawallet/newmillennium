@@ -127,7 +127,14 @@ export function grantTech(db: ContentDB, cs: CountryState, tech: string): void {
 
 function aiPick(ctx: SimContext, cs: CountryState): string | null {
   const r = cs.research!;
-  const options = [...ctx.db.techs.values()].filter((t) => techStatus(cs, t) === "available");
+  // the same test as techStatus, with sets (this runs often over 330 technologies)
+  const done = new Set(r.completed), busy = new Set(r.slots);
+  const options: TechDef[] = [];
+  for (const t of ctx.db.techs.values()) {
+    if (done.has(t.id) || busy.has(t.id)) continue;
+    if (t.mutually_exclusive.some((m) => done.has(m) || busy.has(m))) continue;
+    if (t.prerequisites.every((g) => g.some((p) => done.has(p)))) options.push(t);
+  }
   if (!options.length) return null;
   // prefer cheap, current technologies; a little randomness keeps countries apart
   const year = ymdOf(ctx.state.day).year;

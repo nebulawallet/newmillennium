@@ -1,6 +1,6 @@
 # Handoff: New Millennium
 
-Read this first when you pick up the project in a new session, with a new agent, or after a break. Last updated 17 October 2026, after commit `d1f3c7a` (conflicts, tiers, armed groups, Lebanon, balance pass).
+Read this first when you pick up the project in a new session, with a new agent, or after a break. Last updated 17 October 2026, after the four reworks (UI, war, research, construction and market: commits `72b3f71`, `004fa25`, `043b56f`, `c81a5fc`).
 
 ## What this is
 
@@ -39,6 +39,7 @@ New Millennium is a grand strategy game in the style of Hearts of Iron IV, set f
 | 11 | Diplomacy | **Done** (see "Phase 11 notes") |
 | 12 | AI | **Done** (see "Phase 12 notes") |
 | — | Major conflicts 2000–2026 | **Done (17 Oct 2026):** armed groups and 57 dated conflict events (see "Conflicts notes") |
+| — | Reworks: UI, war, research, construction and market | **Done (17 Oct 2026),** at the user's request (see "Reworks notes") |
 | 13 | Content and polish | **In progress.** National focus trees for 13 major countries (USA, RUS, DEU, GBR, FRA, CHN, JPN, ITA, ESP, TUR, IRN, POL, ISR); every other country uses the shared generic tree. Historical wars and world events of 2001-2026 (`data/events/wars_and_world.json`); 424 dated world events in `data/events/history_*.json` (pipeline: `scripts/dev/gen-events-history.py` candidates -> `scripts/research/verify-events.ts` -> build). |
 
 ## Where things stand right now
@@ -46,15 +47,58 @@ New Millennium is a grand strategy game in the style of Hearts of Iron IV, set f
 - **Direction (17 October 2026):** the game is about the major conflicts of 2000–2026 (Israel–Palestine, Russia–Ukraine, Iraq, Afghanistan, Syria/ISIS, Lebanon). See [docs/CONFLICTS_PLAN.md](docs/CONFLICTS_PLAN.md) and CLAUDE.md "Scope and cost".
 - **All of them are scripted** on sourced dates in `data/events/conflicts.json`, with non-state armed groups on the map (see "Conflicts notes" below). `npx tsx scripts/dev/conflict-trace.ts` prints the whole 2000–2026 timeline in about two minutes; run it after any change to wars, the AI or the conflict data.
 - **Research tiers:** 70 full, 9 light, 133 default. No partial folders remain and nothing is untracked. **No research agents are running.** Ask the user before starting one (Sonnet, medium effort, at most 2–3).
-- **Every check passes:** `npm run check` (127 tests) and the whole-world `npm run validate-data`. The start screen shows no data errors.
-- **Speed:** about 2.4 ms per game day over a 10-year soak (p99 11 ms; a few isolated days reach 30–48 ms).
-- **Saves:** the Lebanon map rebuild (`64ec430`) renumbered about 1,400 province ids, so saves from before it load misaligned. GameState is v9.
+- **Every check passes:** `npm run check` (141 tests) and the whole-world `npm run validate-data`. The start screen shows no data errors.
+- **Speed:** about 3.5 ms per game day over a 10-year soak (median 2.6 ms, p99 21 ms, worst 37 ms) after the reworks; it was 2.4 ms before. The extra comes from the bigger tech tree, the goods market (monthly) and AI construction placement. Profile with `scripts/dev/profile-systems.ts`.
+- **Saves:** the Lebanon map rebuild (`64ec430`) renumbered about 1,400 province ids, so saves from before it load misaligned. GameState is v11 (v10 armies, v11 construction money and the goods market; both migrate).
+- **Dev server:** another worktree may hold port 5173; `.claude/launch.json` has `dev-alt` on 5181.
 - **Audit helper:** `python -I -X utf8 scripts/dev/audit-country.py TAG` prints offices, legislature, latest elections, needs_review items and dates after June 2026.
 - **Audit checklist for research results:**
   - Plurality presidencies need `"system": "plurality"`.
   - Check every death and every claim dated after June 2026 yourself with `scripts/research/wiki.ts`; remove a death that only Wikidata gives.
   - Scan for allegations, convictions, health claims and loaded words.
   - Agent prompts must forbid blanket process kills (`taskkill /IM node.exe`).
+
+### Reworks notes (17 October 2026)
+
+**Part 1, UI** (`72b3f71`):
+- Slim 48px top bar with the national flag hanging below it.
+- Flags: flag-icons 7.6.0 (MIT) in `public/flags`, mapped by `data/world/flags.json` (`scripts/dev/gen-flags.ts`, codes from Natural Earth). They show in the top bar, country select, diplomacy, news, wars and trade routes. Tags with no ISO flag keep the placeholder. The flags are today's flags: those that changed after 2000 (Afghanistan, Iraq, Libya...) are not dated (the file is `needs_review`).
+- Panels: a faint data grid and bronze corner ticks.
+- Focus tree and research screen: pan/zoom canvas views (`src/ui/panzoom.ts`).
+- DESIGN.md has the new components.
+
+**Part 2, war** (`004fa25`):
+- `src/sim/military/fronts.ts`: armies with a front, an offensive line, spearheads, execute/stop, an empty commander slot and a plan status. Rules are in `data/units/war.json` `fronts`.
+- The AI forms its own armies and plans through the same commands.
+- UI: army cards in the bottom bar, drawing tools on the map (`MapView.capture`), frontlines traced on the real border segments, APP-6 unit counters.
+- The conflict trace matches the earlier version, except that Russia now takes all three limited-war targets in 2022.
+
+**Part 3, research** (`043b56f`):
+- 330 technologies, with every category covering every year 2000–2030, and 13 mutually exclusive pairs.
+- Researching ahead costs `1 + 0.3n + 0.08n²` (n years ahead); catching up is up to 50% cheaper.
+- A pacing test checks that an average country keeps up with each year's technologies (`scripts/dev/research-balance.ts`).
+
+**Part 4, construction and market** (`c81a5fc`):
+- Every building stands in a province, with slots from infrastructure, population and terrain.
+- Starting factories are derived from World Bank industry and placed by population, not stored.
+- The queue can be reordered and cancelled, shows estimated finish dates, and takes at most 15 factories per project.
+- Money is paid over time; spending above 2% of GDP adds to the deficit.
+- Goods market and trade routes (`src/sim/economy/market.ts`); the Trade tab shows them.
+- `scripts/dev/economy-check.ts` compares debt, growth and factories over 10 years.
+
+**Still stubbed after the reworks:**
+- **Commanders:** the army card's commander slot is always empty. Generated (fictional, after 2026 only) or sourced commanders are Phase 13 content.
+- **Naval and air war:**
+  - Air bases only raise air effectiveness, and ports only raise trade efficiency.
+  - No naval combat, invasions or air missions (Phase 10/12 stubs).
+  - Spearheads and offensive lines are land-only.
+- **Fronts:**
+  - Fronts form only where land borders meet: no fronts across the sea.
+  - Armies split a front by order along its main axis, not by geography the player chooses: there is no front-line editing beyond choosing the enemy.
+- **Market:** only three goods (consumer, industrial, fuel). Raw resources keep their separate price index. Imports are not limited by routes or sanctions; only exports are.
+- **Flags:** not dated (see above); de facto states, insurgent governments and armed groups use the placeholder.
+- **Research:** technology effects are modifiers only. Equipment variants still need `requires_tech` in `units/equipment.json` for any new equipment; only 18 technologies unlock equipment today.
+- **Construction:** the AI picks building types by fixed weights, not by need (for example, it does not build refineries for its fuel deficit).
 
 ### Conflicts notes (17 October 2026)
 
@@ -109,7 +153,7 @@ New Millennium is a grand strategy game in the style of Hearts of Iron IV, set f
 
 ### Phase 8 notes
 
-- **Data:** `data/techs/<category>.json`, nine categories, 82 technologies from the 1980s to the 2030s (generic abstractions placed in the year they became broadly available; generated by `scripts/dev/gen-techs.py`, edit the JSON afterwards), and `data/techs/rules.json`.
+- **Data (superseded by the research rework, see "Reworks notes"):** `data/techs/<category>.json`, nine categories, 82 technologies from the 1980s to the 2030s (generic abstractions placed in the year they became broadly available; generated by `scripts/dev/gen-techs.py`, edit the JSON afterwards), and `data/techs/rules.json`.
 - **Model** (`src/sim/research/research.ts`): 3–6 slots by GDP; speed from World Bank R&D spending and modifiers; researching ahead of a technology's year costs 25% more per year, older ones are cheaper to catch up on. Starting technologies: everything up to 2000 minus a lag by income tier, shortened by R&D (civilian) or military spending (military categories). Effects are permanent modifiers. `unlock_tech` and `has_tech` work in scripts. AI fills its slots.
 - **UI:** Research tab (W): slots, categories, technologies by year.
 - **Next:** Phase 9 equipment should reference technologies (`requires_tech`) rather than technologies listing equipment.
@@ -170,6 +214,9 @@ npx tsx scripts/dev/conflict-trace.ts [YYYY-MM-DD] [--dynamic]          # every 
 npx tsx scripts/dev/group-trial.ts ISG IRQ "Ninawa,Sala ad-Din" 6 365   # one group against the AI on the real map
 npx tsx scripts/dev/profile-systems.ts 1500 --map --from 2014-01-01     # time per system
 npx tsx scripts/dev/soak.ts 10 [--dynamic]                              # 10-year speed and error soak
+npx tsx scripts/dev/research-balance.ts [TAG ...]                       # research pacing 2000-2025
+npx tsx scripts/dev/economy-check.ts [years] [TAG ...]                  # debt, growth, construction money, trade
+npx tsx scripts/dev/gen-flags.ts <ne_10m_admin_0_countries.shp>         # rebuilds data/world/flags.json and public/flags
 ```
 
 In game: Space pauses, 1–5 or +/- set speed, Q–P open the tab row (Q is Politics), Esc opens the menu.
@@ -183,7 +230,12 @@ In game: Space pauses, 1–5 or +/- set speed, Q–P open the tab row (Q is Poli
    - The 2003 invasion takes only four provinces before the scripted fall of Baghdad.
    - Default-profile countries are not playable.
 4. **Map polish:** armed groups have no map labels. Isolated slow days (30–48 ms) remain on the US Electoral College day and the busiest invasion days.
-5. **Phase 13 polish:**
+5. **After the reworks:**
+   - Dated flags for countries whose flag changed after 2000 (needs sourced dates and openly licensed SVGs).
+   - Commanders: decide with the user whether to source real commanders (Phase 2 rules apply) or leave the slot empty.
+   - AI construction by need (refineries for fuel deficits, factories where goods prices are high).
+   - Fronts across the sea and naval invasions.
+6. **Phase 13 polish:**
    - UI: a first pass is done (live province panel, group names in the news).
    - More events where useful: about 500 now; pipeline `scripts/dev/gen-events-history.py` → `scripts/research/verify-events.ts`.
    - Focus trees for conflict countries: IRQ, AFG, SYR, UKR and PSE use the generic tree.
@@ -237,4 +289,7 @@ For each research batch:
 - **The game log keeps only 500 entries.** For long traces, collect entries with `sim.onLog` (see `scripts/dev/conflict-trace.ts`).
 - **A map rebuild renumbers provinces** (about 1,400 ids in the Lebanon rebuild). Scripts select provinces by name or adm1 code, never by id. After a rebuild, check that every province name used in `data/events` still exists.
 - **The harness blocks `rm` on a shell-variable path** (`rm "$D"/*`); use a literal path or `"${D:?}"`.
+- **Preact skips re-rendering a child whose props are unchanged.** The game state is mutated in place, so any child component that reads live state must read `version.value` itself (army cards, focus tile, research slots and others were stale until fixed).
+- **The browser pane's synthetic drags** send only the start and end points; the plan-drawing tool samples between pointer events, so real and synthetic drags both work.
+- **The goods market calibrates through 2000:** demand scales and the trade-income baseline are set over the first year, while AI queues fill up. Prices stay at 1 until 2001.
 - **Simulation speed:** profile on the real map with `npx tsx scripts/dev/profile-systems.ts 1500 --map --from 2014-01-01`. Do cheap checks before scanning `state.provinceOwner` (4,580 entries) per country per day.
