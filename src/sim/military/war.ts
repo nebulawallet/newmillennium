@@ -195,6 +195,47 @@ export function occupiedShare(ctx: SimContext, tag: string): number {
   return own ? lost / own : 0;
 }
 
+export interface SideStatus {
+  /** 0..100: occupation of the other side (60%), its share of the casualties (20%) and battles won (20%). */
+  score: number;
+  /** Enemy provinces and population this side holds. */
+  provinces: number;
+  population: number;
+  casualties: number;
+  victories: number;
+  /** Share of the side leader's own population the enemy holds. */
+  occupied: number;
+}
+
+/** Where a war stands, for each side. */
+export function warStatus(ctx: SimContext, war: War): { attackers: SideStatus; defenders: SideStatus } {
+  const { state } = ctx;
+  const held = (side: string[], other: string[]) => {
+    let provinces = 0, population = 0;
+    for (let i = 0; i < state.provinceOwner.length; i++) {
+      const o = state.provinceOwner[i]!, c = state.provinceController[i]!;
+      if (other.includes(o) && side.includes(c)) { provinces++; population += provincePopulation(ctx, i + 1); }
+    }
+    return { provinces, population };
+  };
+  const pop = (side: string[]) => {
+    let p = 0;
+    for (let i = 0; i < state.provinceOwner.length; i++) if (side.includes(state.provinceOwner[i]!)) p += provincePopulation(ctx, i + 1);
+    return Math.max(1, p);
+  };
+  const cas = war.casualties ?? { attackers: 0, defenders: 0 };
+  const vic = war.victories ?? { attackers: 0, defenders: 0 };
+  const side = (me: "attackers" | "defenders"): SideStatus => {
+    const them = me === "attackers" ? "defenders" : "attackers";
+    const h = held(war[me], war[them]);
+    const occ = h.population / pop(war[them]);
+    const casShare = cas[me] + cas[them] > 0 ? cas[them] / (cas[me] + cas[them]) : 0.5;
+    const vicShare = vic[me] + vic[them] > 0 ? vic[me] / (vic[me] + vic[them]) : 0.5;
+    return { score: Math.round(Math.min(1, occ / ctx.db.warRules.capitulation_share) * 60 + casShare * 20 + vicShare * 20), ...h, casualties: cas[me], victories: vic[me], occupied: occupiedShare(ctx, war[me][0]!) };
+  };
+  return { attackers: side("attackers"), defenders: side("defenders") };
+}
+
 /** End a war. `winner` takes the provinces its side occupies when the goal is conquest; otherwise control returns. */
 export function makePeace(ctx: SimContext, war: War, winner: "attackers" | "defenders" | null, annex: boolean): void {
   const { state } = ctx;

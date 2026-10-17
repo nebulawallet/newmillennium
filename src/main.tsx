@@ -29,11 +29,13 @@ import { EventWindow } from "./ui/scripted/EventWindow.tsx";
 import { researchPick, ResearchView } from "./ui/research/ResearchPanel.tsx";
 import { FocusTreeView } from "./ui/scripted/FocusTree.tsx";
 import { PeaceConference } from "./ui/units/WarUi.tsx";
-import { buildMode, hoveredProvince, mapMode, toast, pickedCountry, planDraft, planTool, pointer, selectedArmy, selectedDivisions, selectedProvince } from "./ui/store.ts";
+import { buildMode, hoveredProvince, mapMode, openWar, toast, pickedCountry, planDraft, planTool, pointer, selectedArmy, selectedDivisions, selectedProvince } from "./ui/store.ts";
 import { slotsView } from "./render/mapModes.ts";
 import { UnitCounters } from "./ui/units/UnitCounters.ts";
 import { FrontOverlay } from "./ui/units/FrontOverlay.ts";
 import { ArmyBar } from "./ui/units/ArmyBar.tsx";
+import { BattleMarkers } from "./ui/units/BattleMarkers.ts";
+import { WarPanel } from "./ui/units/WarPanel.tsx";
 import { createPlanDrawer } from "./ui/units/planDrawing.ts";
 import { DivisionPanel, Toast } from "./ui/units/DivisionPanel.tsx";
 import { version } from "./ui/session.ts";
@@ -157,9 +159,11 @@ async function boot(): Promise<void> {
   // fronts and battle plans drawn on the map
   const fronts = new FrontOverlay(view, map, db, () => session.sim?.context.map, () => (screen.value === "game" ? session.state : null));
   version.subscribe(() => fronts.refresh());
+  const battles = new BattleMarkers(view, map, db, () => (screen.value === "game" ? session.state : null));
+  version.subscribe(() => battles.refresh());
   selectedArmy.subscribe(() => { fronts.refresh(true); counters.refresh(-2 - Math.random()); });
   selectedDivisions.subscribe(() => fronts.refresh(true));
-  screen.subscribe((s) => { if (s !== "game") { counters.clear(); selectedDivisions.value = []; selectedArmy.value = 0; planTool.value = null; buildMode.value = null; } fronts.refresh(true); });
+  screen.subscribe((s) => { if (s !== "game") { counters.clear(); battles.clear(); openWar.value = null; selectedDivisions.value = []; selectedArmy.value = 0; planTool.value = null; buildMode.value = null; } fronts.refresh(true); });
   // drawing an offensive line or a spearhead: a left drag collects the provinces it crosses
   // battle-plan drawing (front, offensive line, spearhead): src/ui/units/planDrawing.ts
   const drawer = createPlanDrawer(view, world, session, () => fronts.refresh(true));
@@ -260,6 +264,7 @@ function Root({ db, map, world, session, issues }: { db: ContentDB; map: MapData
       {inGame && <MapModeBar db={db} map={map} world={world} />}
       {inGame && <ArmyBar db={db} session={session} />}
       {inGame && <DivisionPanel db={db} session={session} />}
+      {inGame && <WarPanel db={db} session={session} />}
       <Toast />
       <ProvinceTooltip db={db} map={map} session={inGame ? session : undefined} />
       {inGame && panel.value === "focus" && <FocusTreeView db={db} session={session} />}

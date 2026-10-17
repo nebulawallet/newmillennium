@@ -703,3 +703,30 @@ details[open] > .ol-h::before { transform: rotate(90deg) translateX(2px); }
 .side ~ .div-panel { left: 516px; }
 .at-mode { margin: 0; }
 .at-mode button { padding: 4px 9px; font-size: 11px; }
+
+/* war overview */
+.war-panel { position: absolute; top: 60px; left: 0; right: 0; margin: 0 auto; width: 640px; max-height: calc(100vh / var(--ui-zoom) - 200px); overflow: auto; zoom: var(--ui-zoom); display: flex; flex-direction: column; animation: rise 180ms ease-out; }
+.wp-meta { display: flex; gap: 8px; flex-wrap: wrap; padding: 8px 12px 2px; font-size: 12.5px; }
+.wp-score { display: grid; grid-template-columns: 32px 1fr 32px; gap: 8px; align-items: center; padding: 6px 12px; font: 700 15px var(--font-cond); }
+.wp-score .num:last-child { text-align: right; }
+.wp-bar { display: flex; height: 10px; background: rgba(0, 0, 0, 0.6); border: 1px solid #000; overflow: hidden; }
+.wp-bar.small { height: 6px; }
+.wp-bar i { display: block; height: 100%; }
+.wp-sides { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; padding: 0 10px; }
+.wp-side { padding: 8px; background: rgba(0, 0, 0, 0.25); border: 1px solid rgba(0, 0, 0, 0.6); }
+.wp-side.mine { border-color: var(--bronze); }
+.wp-lead { display: flex; gap: 8px; align-items: center; }
+.wp-name { font: 700 17px/1.1 var(--font-cond); color: var(--ink); }
+.wp-allies { display: flex; flex-wrap: wrap; gap: 4px 10px; margin-top: 6px; font-size: 12px; }
+.wp-kv { grid-template-columns: 110px 1fr; margin: 8px 0 0; font-size: 12.5px; gap: 3px 8px; }
+.wp-battles { list-style: none; margin: 0; padding: 0 10px 10px; display: grid; gap: 3px; }
+.wp-battles li { display: grid; grid-template-columns: 70px 1fr 120px 36px; gap: 8px; align-items: center; padding: 4px 6px; cursor: pointer; background: rgba(0, 0, 0, 0.2); }
+.wp-battles li:hover { background: rgba(201, 165, 106, 0.1); }
+.war-row { cursor: pointer; }
+.war-row:hover b { color: var(--bronze-hi); }
+
+/* battle markers */
+.battle-layer { position: fixed; inset: 0; pointer-events: none !important; }
+.battle { position: absolute; left: 0; top: 0; pointer-events: auto; cursor: pointer; display: grid; justify-items: center; gap: 1px; padding: 2px 3px; color: #f6d9a0; background: rgba(40, 10, 8, 0.85); border: 1px solid var(--bad); box-shadow: 0 0 6px rgba(229, 96, 79, 0.6); }
+.battle .bb { display: flex; width: 22px; height: 3px; background: #000; }
+.battle .bb i { display: block; height: 100%; }

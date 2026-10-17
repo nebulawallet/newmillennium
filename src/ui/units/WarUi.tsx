@@ -7,6 +7,7 @@ import { Icon } from "../icons.tsx";
 import { panel, version, type Session } from "../session.ts";
 import { diplomacyTarget } from "../diplomacy/DiplomacyPanels.tsx";
 import { Flag } from "../Flag.tsx";
+import { openWar } from "../store.ts";
 import { tip } from "../tooltip.tsx";
 
 /** Diplomacy entry point for the country owning a selected province (war is declared from the Diplomacy tab). */
@@ -80,14 +81,14 @@ export function WarsOutliner({ db, session }: { db: ContentDB; session: Session 
       ) : (
         <ul class="ol-list">
           {state.wars.map((w) => (
-            <li key={w.id} class={mine.includes(w) ? "mine" : ""} {...tip(() => ({
+            <li key={w.id} class={`war-row ${mine.includes(w) ? "mine" : ""}`} onClick={() => (openWar.value = openWar.value === w.id ? null : w.id)} {...tip(() => ({
               title: w.name,
               rows: ctx ? [
                 [`${countryName(db, state, w.attackers[0]!)} occupied`, `${Math.round(occupiedShare(ctx, w.attackers[0]!) * 100)}%`],
                 [`${countryName(db, state, w.defenders[0]!)} occupied`, `${Math.round(occupiedShare(ctx, w.defenders[0]!) * 100)}%`],
                 ["War support", `${Math.round((state.countries[w.attackers[0]!]?.warSupport ?? 0) * 100)}% / ${Math.round((state.countries[w.defenders[0]!]?.warSupport ?? 0) * 100)}%`],
               ] : [],
-              note: `Since ${formatDate(w.startDay)}. ${state.battles.length} battle${state.battles.length === 1 ? "" : "s"} under way worldwide.`,
+              note: `Since ${formatDate(w.startDay)}. Click for the war overview.`,
             }))}>
               <span class="row-flag war-sides"><Flag db={db} tag={w.attackers[0]!} size="xs" /><span class="faint">vs</span><Flag db={db} tag={w.defenders[0]!} size="xs" /><b>{w.name}</b></span>
               <span class="faint num small">since {formatDate(w.startDay)}</span>

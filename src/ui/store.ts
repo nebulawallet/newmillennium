@@ -21,3 +21,5 @@ export const buildMode = signal<string | null>(null);
 export const buildMsg = signal("");
 /** A short message near the bottom of the screen (orders refused, plans set). */
 export const toast = signal<{ text: string; bad?: boolean; at: number } | null>(null);
+/** The war shown in the war overview (null: closed). */
+export const openWar = signal<number | null>(null);
