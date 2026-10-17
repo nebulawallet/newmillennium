@@ -1,6 +1,6 @@
 # Handoff: New Millennium
 
-Read this first when you pick up the project in a new session, with a new agent, or after a break. Last updated 17 October 2026, after the Phase 12 commit.
+Read this first when you pick up the project in a new session, with a new agent, or after a break. Last updated 17 October 2026, after commit `d1f3c7a` (conflicts, tiers, armed groups, Lebanon, balance pass).
 
 ## What this is
 
@@ -26,7 +26,7 @@ New Millennium is a grand strategy game in the style of Hearts of Iron IV, set f
 | # | Phase | Status |
 |---|---|---|
 | 1 | Politics schemas and `validate-data` | **Done** |
-| 2 | World politics database | **Narrowed (17 Oct 2026):** 70 countries with full data (`"research": "full"` in `data/world/countries.json`); light tier for conflict countries; every other country uses the default profile (docs/CONFLICTS_PLAN.md). |
+| 2 | World politics database | **Narrowed (17 Oct 2026):** 70 countries full, 9 light (IRQ, AFG, AFN, SYR, LBN, IND, PAK, CAN, MEX), 133 on the default profile (`research` in `data/world/countries.json`; docs/CONFLICTS_PLAN.md). |
 | 3 | Map pipeline and rendering | **Done** apart from polish: 4,580 provinces on 2000 borders; mesh renderer chosen. Resources per province are stubbed until Phase 7. |
 | 4 | Time loop, top bar, save/load, politics screen | **Done** |
 | — | UI rebuild in the HOI4 layout | **Done** (`193ea02`), at the user's request |
@@ -38,23 +38,48 @@ New Millennium is a grand strategy game in the style of Hearts of Iron IV, set f
 | 10 | Combat, supply, war and peace | **Done** (see "Phase 10 notes") |
 | 11 | Diplomacy | **Done** (see "Phase 11 notes") |
 | 12 | AI | **Done** (see "Phase 12 notes") |
+| — | Major conflicts 2000–2026 | **Done (17 Oct 2026):** armed groups and 57 dated conflict events (see "Conflicts notes") |
 | 13 | Content and polish | **In progress.** National focus trees for 13 major countries (USA, RUS, DEU, GBR, FRA, CHN, JPN, ITA, ESP, TUR, IRN, POL, ISR); every other country uses the shared generic tree. Historical wars and world events of 2001-2026 (`data/events/wars_and_world.json`); 424 dated world events in `data/events/history_*.json` (pipeline: `scripts/dev/gen-events-history.py` candidates -> `scripts/research/verify-events.ts` -> build). |
 
 ## Where things stand right now
 
-- **New direction (17 October 2026), read [docs/CONFLICTS_PLAN.md](docs/CONFLICTS_PLAN.md):** the game is about the major conflicts (Israel–Palestine, Russia–Ukraine, Iraq, Afghanistan, Syria/ISIS). Stop broad country research. Use three tiers:
-  - full: done for 70 countries
-  - light: conflict countries plus a few big players
-  - default: everyone else
-- **No research agents are running.** The last batches were cut off by a usage limit. Partial untracked folders: IND, PAK, BGD, IRQ, AFG, AFN, CAN, MEX, EGY (see CONFLICTS_PLAN.md for what to keep). Do not launch new batches for minor countries, and ask the user before starting agents.
+- **Direction (17 October 2026):** the game is about the major conflicts of 2000–2026 (Israel–Palestine, Russia–Ukraine, Iraq, Afghanistan, Syria/ISIS, Lebanon). See [docs/CONFLICTS_PLAN.md](docs/CONFLICTS_PLAN.md) and CLAUDE.md "Scope and cost".
+- **All of them are scripted** on sourced dates in `data/events/conflicts.json`, with non-state armed groups on the map (see "Conflicts notes" below). `npx tsx scripts/dev/conflict-trace.ts` prints the whole 2000–2026 timeline in about two minutes; run it after any change to wars, the AI or the conflict data.
+- **Research tiers:** 70 full, 9 light, 133 default. No partial folders remain and nothing is untracked. **No research agents are running.** Ask the user before starting one (Sonnet, medium effort, at most 2–3).
+- **Every check passes:** `npm run check` (127 tests) and the whole-world `npm run validate-data`. The start screen shows no data errors.
+- **Speed:** about 2.4 ms per game day over a 10-year soak (p99 11 ms; a few isolated days reach 30–48 ms).
+- **Saves:** the Lebanon map rebuild (`64ec430`) renumbered about 1,400 province ids, so saves from before it load misaligned. GameState is v9.
 - **Audit helper:** `python -I -X utf8 scripts/dev/audit-country.py TAG` prints offices, legislature, latest elections, needs_review items and dates after June 2026.
-- `npm run check` validates only countries tracked by git (`--tracked`), so untracked folders do not block commits. The dev start screen shows "data errors" while partial folders exist.
-- **Audit checklist:**
+- **Audit checklist for research results:**
   - Plurality presidencies need `"system": "plurality"`.
-  - Check every death and every claim dated after June 2026 yourself with `scripts/research/wiki.ts`.
-  - Scan for allegations and health claims.
+  - Check every death and every claim dated after June 2026 yourself with `scripts/research/wiki.ts`; remove a death that only Wikidata gives.
+  - Scan for allegations, convictions, health claims and loaded words.
   - Agent prompts must forbid blanket process kills (`taskkill /IM node.exe`).
-- **Map rebuilt** in Phase 5 with a population fix (see gotchas). Province ids changed, so saves made before that commit load with misaligned province ownership.
+
+### Conflicts notes (17 October 2026)
+
+- **Armed groups** (`data/conflicts/armed_groups.json`, `src/sim/conflicts/armedGroups.ts`): ISG (Islamic State), IQI (Iraqi insurgency), TAL, HAM, DPR, LPR, SYO (Syrian opposition), HEZ, SDF.
+  - Groups own the land they hold, and each province remembers its original country (`state.armedGroups.home`).
+  - Effects: `spawn_armed_group`, `armed_group_loses`, `end_armed_group` (defeat, or merge `into` a country for a takeover or annexation).
+  - Group wars call in no allies and never end by exhaustion. In dynamic mode land follows control.
+  - **Historical mode:** AI countries neither attack nor enter armed-group land, so these fronts move only on scripted dates (the player still can). Scripted wars between countries do not end by exhaustion either.
+- **Other war effects:** `deploy_divisions` / `recall_divisions` (expeditionary forces; the host grants access), `occupy_provinces`, `dissolve_country`, `declare_war` with a `zone` (a limited war's target provinces), and `set_historical_government_type`. All are in CONTENT_GUIDE §12.
+- **Timeline** (dates from Wikipedia):
+  - **Afghanistan:** Taliban rule ends 9 Dec 2001 (insurgency on Uruzgan and Zabul); the United Front merges 22 Dec 2001; presidential from 7 Dec 2004; offensive 1 May 2021; takeover 15 Aug 2021.
+  - **Iraq:** invasion from 20 Mar 2003, fought from Kuwait (8 US and 2 UK divisions, a 60-day "Iraqi forces collapsed" penalty). The fall of Baghdad on 9 Apr 2003 puts the rest under coalition control. 6 US divisions stay until 18 Dec 2011. The insurgency holds Ramadi/Fallujah from 4 Apr 2004 to 15 Nov 2006. Parliamentary from 15 Oct 2005.
+  - **ISIS:** Raqqa 13 Jan 2014, Mosul 10 Jun 2014, Iraq's victory 9 Dec 2017, Baghuz 23 Mar 2019.
+  - **Syria:** the opposition from 19 Jul 2012; Russia from 30 Sep 2015; the SDF from 10 Oct 2015 (Raqqa 17 Oct 2017; hands over Raqqa and Deir ez-Zor 18 Jan 2026; dissolved 25 Aug 2026); the fall of Assad 8 Dec 2024.
+  - **Gaza:** Hamas from 15 Jun 2007; wars 2008–09, 2014 and 2021; the Gaza war from 7 Oct 2023 (ongoing per Wikipedia).
+  - **Lebanon:** Hezbollah holds the new "South Lebanon" province from 12 Jul 2006 (war until 14 Aug 2006); war from 8 Oct 2023; withdraws under the 27 Nov 2024 ceasefire; the 2026 war from 2 Mar 2026 (ongoing).
+  - **Donbas and Ukraine:** DPR 7 Apr 2014, war from 12 Apr, LPR 27 Apr. Russia's 2022 limited war targets Kherson, Zaporizhzhia and Mariupol. DPR and LPR are annexed on 30 Sep 2022. About 11% of Ukraine's remaining population is occupied, plus Crimea and the annexed DPR and LPR.
+- **Province choices** on the coarse map (one province can cover a whole governorate) are flagged `needs_review` in each event.
+- **Combat and AI changes** (they affect every war):
+  - Combat width is 80.
+  - Starting fighters come from World Bank military spending, and stock quality from spending per soldier.
+  - Support units move at the line battalions' speed.
+  - The AI attacks in strength, toward the enemy capital, and also from wherever its divisions stand.
+  - Limited-war attackers stay in their zone.
+  - Divisions sent home after a peace go to the capital.
 
 ### Phase 5 notes
 
@@ -134,56 +159,42 @@ New Millennium is a grand strategy game in the style of Hearts of Iron IV, set f
 npm install
 npm run dev              # http://localhost:5173 (?bench runs the renderer benchmark)
 npm run check            # typecheck + tests + validate existing countries (core tier)
-npm run validate-data    # full world check; fails until all 212 countries have data (expected)
+npm run validate-data    # whole-world check (passes: default-tier countries need no data)
 npm run validate-data -- --only DEU --tier full --report
 npm run review-report    # regenerates POLITICS_REVIEW.md
 npm run fetch-map        # downloads ~60 MB of map sources into .cache/raw (gitignored)
-npm run build-map        # rebuilds public/map from .cache/raw (about 15 s); set MAP_SKIP_PREPARE=1 to reuse simplified sources
+npm run build-map        # rebuilds public/map from .cache/raw (about 15 s); MAP_SKIP_PREPARE=1 reuses simplified sources. Renumbers provinces: see gotchas
 npm run fetch-worldbank  # refreshes data/economy/worldbank_2000.json
 npm run gen-schemas      # JSON Schemas for editor autocomplete
+npx tsx scripts/dev/conflict-trace.ts [YYYY-MM-DD] [--dynamic]          # every war and armed-group change from 2000 (~2 min)
+npx tsx scripts/dev/group-trial.ts ISG IRQ "Ninawa,Sala ad-Din" 6 365   # one group against the AI on the real map
+npx tsx scripts/dev/profile-systems.ts 1500 --map --from 2014-01-01     # time per system
+npx tsx scripts/dev/soak.ts 10 [--dynamic]                              # 10-year speed and error soak
 ```
 
 In game: Space pauses, 1–5 or +/- set speed, Q–P open the tab row (Q is Politics), Esc opens the menu.
 
 ## Next steps, in order
 
-Follow [docs/CONFLICTS_PLAN.md](docs/CONFLICTS_PLAN.md). In short:
-
-1. **Tiers.** Done (17 Oct 2026): every entry in `data/world/countries.json` has `research` (`full` / `light` / `default`).
-   - The validator runs core checks on full and light countries, `--tier full` depth only on full ones, and light adds a current-leader check (`LIGHT_CURRENT`) and a 3-party warning. `npm run validate-data` (whole world) now passes.
-   - Default countries need no folder; any folder they have is ignored with a `DEFAULT_FOLDER` warning.
-   - The default profile (`default_profile` in `data/rules/politics.json`, government type `default_government`) makes them active with an economy, research and an army, but no named people, parties or elections. They are not playable. Soak: 209 acting countries, about 4.5 ms per day (was 1.0 with ~70).
-2. **Conflict countries.** IRQ, AFG and AFN are audited and committed (light tier; IRQ is close to full depth). Hamid Majid Mousa's Wikidata-only death (28 February 2026) was removed because English Wikipedia still lists him as living. Light research for SYR, maybe LBN and YEM. Decide with the user which other partial folders to keep (IND, PAK, CAN, MEX) and delete the rest.
-3. **Non-state actors.** Done (17 Oct 2026): `data/conflicts/armed_groups.json` (ISG, TAL, HAM, DPR, LPR, SYO, HEZ) and `src/sim/conflicts/armedGroups.ts`. Effects `spawn_armed_group`, `armed_group_loses`, `end_armed_group` (CONTENT_GUIDE §12). GameState v9 adds `armedGroups.home`. `npx tsx scripts/dev/group-trial.ts GROUP HOST "Province,..." [divisions] [days]` runs a group against the AI on the real map.
-   - Balance is open: in a trial, 8 ISIS divisions lost four of five Iraqi provinces to 24 Iraqi divisions within two months. The scripts in step 4 need groups that hold until their real dates.
-   - Lebanon is only two provinces on the map, so a Hezbollah region for 2006 would cover Beirut too.
-   - AFN (United Front) only controls Badakhshan and Takhar at the start (owner AFG).
-4. **Conflict scripts.** Done (17 Oct 2026): `data/events/conflicts.json`, 42 events with dates fetched from Wikipedia.
-   - Afghanistan: Taliban rule ends 9 Dec 2001 (insurgency on two southern provinces), the United Front merges 22 Dec 2001, the offensive from 1 May 2021, and the takeover on 15 Aug 2021.
-   - Iraq: a real 2003 invasion from Kuwait (US and UK divisions deployed, `status_quo` goal) ending 1 May 2003. ISIS: Raqqa 13 Jan 2014, Mosul 10 Jun 2014, through victory on 9 Dec 2017 and Baghuz on 23 Mar 2019.
-   - Syria: the opposition from 19 Jul 2012 to the fall of Assad on 8 Dec 2024; Russia from 30 Sep 2015; the SDF from 10 Oct 2015 to its dissolution on 25 Aug 2026.
-   - Gaza: Hamas from 15 Jun 2007, the wars of 2008–09, 2014 and 2021, and 7 Oct 2023 (ongoing).
-   - Donbas: DPR 7 Apr 2014, war from 12 Apr, LPR 27 Apr, annexed by Russia 30 Sep 2022.
-   - Engine: historical mode freezes AI fronts with groups, and scripted wars do not end by exhaustion (Russia–Ukraine had been making a white peace in September 2022). `deploy_divisions` and `dissolve_country` effects. Fixed an AI bug: any limited war (for example USA–Taliban) stopped a country attacking in its other wars.
-   - Iraq 2003–2011 (follow-up, 17 Oct 2026): the invasion is fought from Kuwait (8 US and 2 UK divisions, an Iraqi "forces collapsed" penalty for 60 days) and reaches Wasit and Diyala; `usa_fall_of_baghdad` (9 Apr 2003) puts the rest under coalition control; 6 US divisions stay in Iraq from 1 May 2003 until `usa_leaves_iraq_2011` (18 Dec 2011). The Iraqi insurgency (IQI) holds the Ramadi/Fallujah province from 4 Apr 2004 to 15 Nov 2006 and then continues off the map.
-   - Combat and AI changes (affect every war): combat width 80 (was 30, so only one division fought per side); starting fighters from World Bank military spending (`usd_per_starting_fighter`); artillery, air defence, anti-tank, engineers and recon follow the line battalions' speed (`follows_line`); the AI attacks with at least two divisions and about twice the defenders' power, drawn toward the enemy capital, and attacks from wherever its divisions stand; limited-war attackers may only enter their zone; returning divisions go to the capital, not the first province in the list.
-   - Russia 2022 is a limited war with a named zone (Kherson, Zaporizhzhia, Mariupol): about 11% of Ukraine's remaining population is occupied, plus the annexed DPR, LPR and Crimea. Before the zone, the stronger AI took over half of Ukraine.
-   - Soak: about 2.4 ms per day over 10 years (p99 11 ms) after two AI fixes: no military planning for frozen group wars, and the monthly-due check before the province scan. Isolated days still reach 30–48 ms (the US Electoral College on 7 November 2000, the busiest invasion days in April 2003). `npx tsx scripts/dev/profile-systems.ts 730 --map --from 2014-01-01` profiles on the real map.
-   - Lebanon (17 Oct 2026): the map now has a "South Lebanon" province (South Lebanon and An Nabatiyah, `merge_only_within` in data/map/province_overrides.json) and "Beirut" for the rest. Hezbollah holds the south from 12 Jul 2006 (war to 14 Aug 2006), fights again from 8 Oct 2023, withdraws under the 27 Nov 2024 ceasefire, and returns in the 2026 war (from 2 Mar 2026, ongoing). The rebuild renumbered about 1,400 province ids, so saves from before commit "Lebanon: south province" load misaligned. Province choices are flagged needs_review. Starting stock quality (17 Oct 2026): the share of each family in its newest variant is World Bank military spending per soldier over `usd_per_soldier_fully_modern` (GDP per head stands in without data); the rest is the previous variant. US and UK stocks are fully modern; Iraqi, Iranian and Afghan divisions have almost no armour or piercing; Russia and Ukraine are close to parity.
-5. **Then Phase 13 polish:**
-   - Balance: Turkish and Iranian debt fell fast because the rate on the debt stock ignored inflation (0.6 × neutral rate). It is now a blend of the neutral and policy rates (`debt_rate_policy_weight` 0.3, `debt_rate_scale` 0.75 in economy rules). By 2010 Turkey is at 29% (was 20%; real about 40%) and Iran at 24%. Brazil and Argentina now rise to about 72% (were 60%), partly because Brazil's starting policy rate (57%) is too high: check the Taylor-rule start.
-   - UI polish (17 Oct 2026, first pass): the province panel shows the running game's owner, controller, government, office holders and ruling party (it showed 1 January 2000 data, e.g. Saddam Hussein in 2015), "Part of" for group-held land and the group's description; the news names groups and default countries.
-   - Dated government types: `set_historical_government_type` (keeps the historical path): Iraq transitional 9 Apr 2003 and parliamentary 15 Oct 2005; Afghanistan transitional 22 Dec 2001, presidential 7 Dec 2004, theocracy 15 Aug 2021; Syria transitional 8 Dec 2024.
-   - Elections fix: a party in a real election's results is restored if it was banned, exiled, insurgent or merged into an alliance (formed_from). Iraq now follows history to 2025 (it left at the January 2005 election because the ICP was still "banned", then in 2014 because the KDP, PUK and SCIRI had merged into the 2005 alliances).
-   - Open: `effective_executive` is static content, so post-2005 Iraq still treats the President as the effective executive (coalitions form around the PUK). A dated executive switch would need a state field read by effectiveLeader and coalition code.
-   - More events where useful. There are about 450 now, from `scripts/dev/gen-events-history.py` and `scripts/research/verify-events.ts`.
+1. **Dated effective executive.** `effective_executive` is static content, so post-2005 Iraq still treats the President as the executive and coalitions form around the PUK. Add a state field, set by an effect on a real date, that `effectiveLeader`, the coalition code and the UI read.
+2. **Yemen: light research?** YEM is the only conflict country still on the default profile (CONFLICTS_PLAN lists it as "maybe"). Ask the user before starting an agent.
+3. **Balance:**
+   - Brazil's and Argentina's debt rise to about 72% by 2010, partly because Brazil's starting interest rate (57%) is the World Bank lending rate, not the policy rate.
+   - The 2003 invasion takes only four provinces before the scripted fall of Baghdad.
+   - Default-profile countries are not playable.
+4. **Map polish:** armed groups have no map labels. Isolated slow days (30–48 ms) remain on the US Electoral College day and the busiest invasion days.
+5. **Phase 13 polish:**
+   - UI: a first pass is done (live province panel, group names in the news).
+   - More events where useful: about 500 now; pipeline `scripts/dev/gen-events-history.py` → `scripts/research/verify-events.ts`.
+   - Focus trees for conflict countries: IRQ, AFG, SYR, UKR and PSE use the generic tree.
 
 For each research batch:
 
-- Run `npm run validate-data -- --only <tags> --tier core`.
+- Set the country's `research` to `light` (or `full`) in `data/world/countries.json` first; default-tier folders are ignored.
+- Run `npm run validate-data -- --only <tags>`.
 - Spot-check with `scripts/research/wiki.ts`, and check anything after June 2026 yourself.
 - Run `npm run review-report`.
-- Commit, then update docs/PHASE2_BATCHES.md.
+- Stage the folder, run `npm run check`, then commit.
 
 ## Decisions already made (don't relitigate)
 
@@ -194,11 +205,16 @@ For each research batch:
 - **Renderer:** the mesh renderer (approach A) was chosen; approach B is kept behind `?renderer=texture`.
 - **UI:** the HOI4 layout with original art only, desktop only. Every HOI4 tab is shown now; tabs for systems not yet built show which phase adds them.
 - **Map data** comes from Natural Earth 10m, AWS terrain tiles and World Bank 2000 figures. GeoEPR was not downloaded (non-commercial licence); regional cultures are hand-curated in `data/map/regional_cultures.json`.
+- **Research tiers** (user decisions, 17 Oct 2026): full for the 70 committed countries; light for IRQ, AFG, AFN, SYR, LBN, IND, PAK, CAN and MEX; the default profile for the rest. The BGD and EGY partial folders were dropped.
+- **Historical mode holds armed-group fronts** until their scripted dates; dynamic mode fights them freely (user decision, 17 Oct 2026). Where the AI cannot be relied on to reach a real milestone (Baghdad, 9 April 2003), a sourced event moves the front.
 - **Real-world facts after June 2026** were verified directly on Wikidata and Wikipedia and recorded neutrally:
   - Khamenei died on 2026-02-28; Mojtaba Khamenei has been Supreme Leader since 2026-03-08.
   - Andy Burnham has been UK Prime Minister since 2026-07-20.
   - Zhu Rongji died on 2026-08-12.
   - Hastert died on 2026-10-03.
+  - Iraq: Nizar Amidi has been President since 2026-04-12 and Ali al-Zaidi Prime Minister since 2026-05-14. Hamid Majid Mousa is recorded as living (his death appears in Wikidata only).
+  - Canada: Louise Arbour has been Governor General since 2026-06-08. Joan Russow died on 2026-07-30; Ajit Pawar (India) died on 2026-01-28.
+  - Syria: the SDF dissolved on 2026-08-25; the People's Assembly first sat on 2026-07-12. Lebanon: the 2026 war began on 2026-03-02.
 
 ## Gotchas learned the hard way
 
@@ -213,5 +229,12 @@ For each research batch:
 - **The committed map is not byte-reproducible** from the current `.cache` (a plain rebuild renumbers about a third of the provinces). Province populations now come from a final pass (places assigned to the nearest province of their country, small latitude-scaled area term); before that, Alaska had 19 million people and Manhattan's population was lost.
 - **In-game synthetic key events** dispatched on `window` have no element target; the key handler guards for it.
 - **Commit only on a passing check:** gate commits on the exit code (`npm run check > log && git commit`), not on grepping the output. A Phase 8 commit slipped through with a timed-out test that way.
-- **Simulation speed:** about 0.9 ms per day with ~20 countries (`npx tsx scripts/dev/profile-systems.ts 730`). Cache anything derived from `countryModifiers` monthly rather than computing it daily.
+- **Cache** anything derived from `countryModifiers` monthly rather than computing it daily.
 - **`npm run check` uses `--tracked`:** stage a newly audited country folder before running it, or it will not be validated.
+- **Tests compile every folder on disk, tracked or not.** A research agent writing files while tests run changes random draws, and seed-dependent election tests can fail. Set the country's tier to `default` during the check, or wait for the agent.
+- **Vitest ignores `.claude/**`:** other sessions' git worktrees live in `.claude/worktrees` and doubled the test files before the exclude.
+- **`scripts/research/wiki.ts --grep` takes a JavaScript regex:** use `a|b`, not `a\|b`.
+- **The game log keeps only 500 entries.** For long traces, collect entries with `sim.onLog` (see `scripts/dev/conflict-trace.ts`).
+- **A map rebuild renumbers provinces** (about 1,400 ids in the Lebanon rebuild). Scripts select provinces by name or adm1 code, never by id. After a rebuild, check that every province name used in `data/events` still exists.
+- **The harness blocks `rm` on a shell-variable path** (`rm "$D"/*`); use a literal path or `"${D:?}"`.
+- **Simulation speed:** profile on the real map with `npx tsx scripts/dev/profile-systems.ts 1500 --map --from 2014-01-01`. Do cheap checks before scanning `state.provinceOwner` (4,580 entries) per country per day.
