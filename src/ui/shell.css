@@ -210,7 +210,13 @@
 
 /* fronts and battle plans */
 .front-layer { position: fixed; inset: 0; width: 100vw; height: 100vh; pointer-events: none !important; overflow: visible; }
-.fr-all { fill: none; stroke: #c94a3a; stroke-width: 3; stroke-linecap: round; opacity: 0.8; filter: drop-shadow(0 0 1px #000); }
+.fr-base { fill: none; stroke: rgba(8, 8, 8, 0.9); stroke-width: 10; stroke-linecap: round; stroke-linejoin: round; }
+.fr-own, .fr-enemy { fill: none; stroke-width: 3.5; stroke-linecap: round; }
+.fr-peace { fill: none; stroke: var(--bronze-lt); stroke-width: 2.5; stroke-dasharray: 7 5; stroke-linecap: round; opacity: 0.9; filter: drop-shadow(0 0 1px #000); }
+.fr-mark rect { fill: rgba(10, 13, 12, 0.88); stroke: var(--bronze); stroke-width: 1; }
+.fr-mark text { fill: var(--ink); font: 700 10.5px var(--font-cond); text-anchor: middle; letter-spacing: 0.03em; }
+.fr-mark.war rect { stroke: var(--bad); }
+.fr-mark.sel rect { stroke: var(--bronze-hi); stroke-width: 1.5; }
 .fr-army { fill: none; stroke: var(--bronze-hi); stroke-width: 4; stroke-linecap: round; filter: drop-shadow(0 0 2px #000); }
 .fr-off { fill: none; stroke: rgba(229, 96, 79, 0.55); stroke-width: 2.5; stroke-dasharray: 8 5; stroke-linejoin: round; }
 .fr-off.sel { stroke: #f07a62; stroke-width: 3.5; stroke-dasharray: 10 5; filter: drop-shadow(0 0 2px #000); }

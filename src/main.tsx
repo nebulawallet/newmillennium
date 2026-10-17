@@ -153,7 +153,7 @@ async function boot(): Promise<void> {
   version.subscribe((v) => counters.refresh(v));
   selectedDivisions.subscribe(() => counters.refresh(-2 - Math.random()));
   // fronts and battle plans drawn on the map
-  const fronts = new FrontOverlay(view, map, () => session.sim?.context.map, () => (screen.value === "game" ? session.state : null));
+  const fronts = new FrontOverlay(view, map, db, () => session.sim?.context.map, () => (screen.value === "game" ? session.state : null));
   version.subscribe(() => fronts.refresh());
   selectedArmy.subscribe(() => { fronts.refresh(true); counters.refresh(-2 - Math.random()); });
   screen.subscribe((s) => { if (s !== "game") { counters.clear(); selectedDivisions.value = []; selectedArmy.value = 0; planTool.value = null; buildMode.value = null; } fronts.refresh(true); });

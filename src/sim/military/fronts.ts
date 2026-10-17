@@ -41,6 +41,10 @@ export interface Army {
   status: ArmyStatus;
   /** The stretch of front this army holds (friendly provinces), from the last plan run. */
   stretch?: number[];
+  /** Divisions waiting behind the line because the front provinces cannot supply more. */
+  reserves?: number;
+  /** Divisions that cannot reach the front (another landmass, no route). */
+  unreachable?: number;
 }
 
 export const STATUS_TEXT: Record<ArmyStatus, string> = {
@@ -141,6 +145,18 @@ export function borderPairs(state: GameState, map: SimMap, tag: string, enemy: s
   for (let i = 0; i < ctrl.length; i++) {
     if (ctrl[i] !== tag) continue;
     for (const n of map.neighbours.get(i + 1) ?? []) if (ctrl[n - 1] === enemy) out.push({ own: i + 1, enemy: n, enemyTag: enemy });
+  }
+  return out;
+}
+
+/** An enemy and its co-belligerents in the wars it fights against `tag`. */
+export function enemySide(state: GameState, tag: string, enemy: string): Set<string> {
+  const out = new Set([enemy]);
+  for (const w of state.wars) {
+    const mine = w.attackers.includes(tag) ? w.attackers : w.defenders.includes(tag) ? w.defenders : null;
+    if (!mine) continue;
+    const theirs = mine === w.attackers ? w.defenders : w.attackers;
+    if (theirs.includes(enemy)) for (const t of theirs) out.add(t);
   }
   return out;
 }
@@ -264,6 +280,65 @@ export function applyPlanCommand(ctx: SimContext, c: PlanCommand): { ok: boolean
   }
 }
 
+// ------------------------------------------------------------------ distribution
+
+/** Terrain worth holding more strongly (cities, high ground). */
+const KEY_TERRAIN: Record<string, number> = { urban: 1.5, mountains: 1.25, hills: 1.15 };
+
+/** Divisions a province can supply (war.json supply rules): more beyond that lose strength. */
+export function supplyCap(ctx: SimContext, province: number, owner: string): number {
+  const r = ctx.db.warRules;
+  const p = ctx.map?.provinces[province - 1] as { infrastructure?: number } | undefined;
+  const infra = (p?.infrastructure ?? 3) + (ctx.state.provinceBuildings[String(province)]?.infrastructure ?? 0);
+  const own = ctx.state.provinceController[province - 1] === owner;
+  return Math.max(1, Math.floor((r.supply_base + r.supply_per_infrastructure * infra) * (own ? 1 : 0.5)));
+}
+
+/** Friendly provinces right behind a stretch of front (for reserves). */
+function reserveProvinces(ctx: SimContext, owner: string, stretch: number[]): number[] {
+  const on = new Set(stretch), out = new Set<number>();
+  for (const p of stretch)
+    for (const n of ctx.map?.neighbours.get(p) ?? [])
+      if (!on.has(n) && ctx.state.provinceController[n - 1] === owner) out.add(n);
+  return [...out];
+}
+
+/**
+ * Where `k` divisions stand on a front (HOI4 style): with fewer divisions than provinces, the
+ * heaviest provinces first (frontage, threat, key terrain); with more, one each and the rest by
+ * weight, never past a province's supply cap. What does not fit goes to the reserve provinces.
+ */
+export function allocate(k: number, front: number[], weight: (p: number) => number, cap: (p: number) => number, reserves: number[]): { slots: number[]; reserve: number } {
+  const slots: number[] = [];
+  if (!front.length || k <= 0) return { slots, reserve: 0 };
+  const byWeight = [...front].sort((x, y) => weight(y) - weight(x));
+  if (k <= front.length) return { slots: byWeight.slice(0, k), reserve: 0 };
+  const count = new Map(front.map((p) => [p, 1]));
+  let left = k - front.length;
+  // the rest by weight (largest remainder), each province up to its cap
+  while (left > 0) {
+    const open = front.filter((p) => count.get(p)! < cap(p));
+    if (!open.length) break;
+    const total = open.reduce((sum, p) => sum + weight(p), 0) || 1;
+    const share = open.map((p) => ({ p, x: (left * weight(p)) / total }));
+    let given = 0;
+    for (const sh of share) {
+      const g = Math.min(Math.floor(sh.x), cap(sh.p) - count.get(sh.p)!);
+      if (g > 0) { count.set(sh.p, count.get(sh.p)! + g); given += g; }
+    }
+    if (!given) {
+      share.sort((x, y) => (y.x % 1) - (x.x % 1) || weight(y.p) - weight(x.p));
+      for (const sh of share) if (given < left && count.get(sh.p)! < cap(sh.p)) { count.set(sh.p, count.get(sh.p)! + 1); given++; }
+    }
+    left -= given;
+  }
+  for (const [p, n] of count) for (let i = 0; i < n; i++) slots.push(p);
+  // overflow: reserves behind the line, spread evenly; with none, the front takes them anyway
+  const reserve = left;
+  for (let i = 0; i < left; i++) slots.push(reserves.length ? reserves[i % reserves.length]! : byWeight[i % byWeight.length]!);
+  return { slots, reserve };
+}
+
 // ------------------------------------------------------------------ executor
 
 interface RunCache {
@@ -324,7 +399,9 @@ export function runPlans(ctx: SimContext, owners?: Set<string>, skipFor?: (tag: 
     const [tag, enemy] = key.split(":") as [string, string];
     let pairs = cache.pairs.get(tag);
     if (!pairs) cache.pairs.set(tag, (pairs = frontPairs(state, map, tag, skipFor?.(tag))));
-    const mine = enemy === "*" ? pairs : hostile(state, tag, enemy) ? pairs.filter((p) => p.enemyTag === enemy) : borderPairs(state, map, tag, enemy);
+    // at war the front also covers the enemy's allies in that war; in peace it is the border alone
+    const side = enemy === "*" ? null : hostile(state, tag, enemy) ? enemySide(state, tag, enemy) : null;
+    const mine = enemy === "*" ? pairs : side ? pairs.filter((p) => side.has(p.enemyTag)) : borderPairs(state, map, tag, enemy);
     let comp = cache.comps.get(tag);
     if (!comp) cache.comps.set(tag, (comp = components(state, map, tag)));
     const live = armies.filter((a) => a.divisions.length);
@@ -384,12 +461,26 @@ function runArmy(
     const distToLine = (p: number) => Math.min(...targetsLeft.map((t) => provinceDistance(m, p, t)));
     // candidate attacks: for each ready division on the front, the enemy neighbour nearest the line
     const plans = new Map<number, Division[]>();
+    // keep the line together: from a province that already sticks out (more enemy than friendly
+    // neighbours) only attack provinces that friendly land also touches, so no thin salients run ahead
+    const friendly = (p: number) => {
+      const c = state.provinceController[p - 1];
+      return c === a.owner || (!!c && !hostile(state, a.owner, c) && state.divisions.some((x) => x.province === p && x.owner === a.owner));
+    };
+    const around = (p: number) => {
+      let f = 0, e = 0;
+      for (const n of m.neighbours.get(p) ?? []) { if (friendly(n)) f++; else if (hostile(state, a.owner, state.provinceController[n - 1] ?? "")) e++; }
+      return { f, e };
+    };
     for (const d of holders) {
       if (d.path.length || d.attacking || d.organisation < rules.attack_organisation || !onFront.has(d.province)) continue;
       const here = distToLine(d.province);
+      const origin = around(d.province);
+      const exposed = origin.e > origin.f;
       let best = 0, bestDist = Infinity;
       for (const p of pairs) {
         if (p.own !== d.province || !canEnter(state, d.owner, p.enemy)) continue;
+        if (exposed && around(p.enemy).f <= 1 && !targetsLeft.includes(p.enemy)) continue;
         const dist = distToLine(p.enemy);
         if (dist < bestDist && (dist < here || targetsLeft.includes(p.enemy))) { bestDist = dist; best = p.enemy; }
       }
@@ -406,23 +497,24 @@ function runArmy(
     }
   }
 
-  // hold: spread the rest evenly along the stretch, keeping divisions that already stand on a slot
-  const free = holders.filter((d) => !d.attacking && !(d.path.length && !stretch.includes(d.path[d.path.length - 1]!)) && frontComps.has(comp.get(d.province) ?? -1));
-  // threatened provinces (enemy divisions next door) are covered first, then the rest evenly
+  // hold: every front province gets its share by frontage, threat and key terrain, up to what it
+  // can supply; the overflow waits as a reserve in the provinces just behind the line
   const enemyPow = enemyPowerAt(ctx, cache, a.owner);
-  const threat = new Map<number, number>();
+  const avgPow = Math.max(1, reach.reduce((sum, d) => sum + power(db, cache, d), 0) / reach.length);
+  const frontage = new Map<number, number>(), threat = new Map<number, number>();
   for (const p of pairs) {
-    const e = enemyPow.get(p.enemy) ?? 0;
-    if (e > 0) threat.set(p.own, Math.max(threat.get(p.own) ?? 0, e));
+    if (!stretch.includes(p.own)) continue;
+    frontage.set(p.own, (frontage.get(p.own) ?? 0) + 1);
+    threat.set(p.own, (threat.get(p.own) ?? 0) + (enemyPow.get(p.enemy) ?? 0) / avgPow);
   }
-  const threatened = stretch.filter((p) => threat.has(p)).sort((x, y) => threat.get(y)! - threat.get(x)!);
-  const slots: number[] = threatened.slice(0, free.length);
-  const rest = stretch.filter((p) => !slots.includes(p));
-  const spread = Math.min(rest.length, free.length - slots.length);
-  for (let i = 0; i < spread; i++) slots.push(rest[Math.floor(((i + 0.5) * rest.length) / spread)]!);
-  // more divisions than provinces: the extras reinforce the most threatened, else spread again
-  const extra = threatened.length ? threatened : stretch;
-  for (let i = 0; slots.length < free.length; i++) slots.push(extra[i % extra.length]!);
+  const weight = (p: number) => (frontage.get(p) ?? 1) * (1 + (threat.get(p) ?? 0)) * (KEY_TERRAIN[(m.provinces[p - 1] as { terrain?: string } | undefined)?.terrain ?? ""] ?? 1);
+  const capOf = (p: number) => supplyCap(ctx, p, a.owner);
+  const reserves = reserveProvinces(ctx, a.owner, stretch);
+  const slotSet = new Set([...stretch, ...reserves]);
+  const free = holders.filter((d) => !d.attacking && !(d.path.length && !slotSet.has(d.path[d.path.length - 1]!)) && frontComps.has(comp.get(d.province) ?? -1));
+  const { slots, reserve } = allocate(free.length, stretch, weight, capOf, reserves);
+  a.reserves = reserve;
+  a.unreachable = divs.length - reach.length;
   const need = new Map<number, number>();
   for (const s of slots) need.set(s, (need.get(s) ?? 0) + 1);
   const unplaced: Division[] = [];

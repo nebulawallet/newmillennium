@@ -60,6 +60,8 @@ function ArmyCard({ db, session, army }: { db: ContentDB; session: Session; army
           ["Organisation", pct(org)],
           ["Front", army.front ? (army.front.enemy ? countryName(db, state, army.front.enemy) : "Every enemy") : "None"],
           ["Front provinces held", army.stretch?.length ?? 0],
+          ["In reserve behind the line", army.reserves ?? 0],
+          ["Cannot reach the front", army.unreachable ?? 0],
           ["Offensive line", army.offensive.length ? `${army.offensive.length} provinces` : "None"],
           ["Spearheads", army.spearheads.length],
           ["Plan", army.executing ? "Executing" : "Holding"],
@@ -88,7 +90,7 @@ function ArmyCard({ db, session, army }: { db: ContentDB; session: Session; army
         <span class="ub"><i class="s" style={{ width: pct(str) }} /></span>
         <span class="ub"><i class="o" style={{ width: pct(org) }} /></span>
       </div>
-      <div class="ac-status small">{STATUS_TEXT[army.status]}</div>
+      <div class="ac-status small">{STATUS_TEXT[army.status]}{army.reserves ? ` · ${army.reserves} in reserve` : ""}{army.unreachable ? ` · ${army.unreachable} cut off` : ""}</div>
     </div>
   );
 }

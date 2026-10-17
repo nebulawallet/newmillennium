@@ -1,6 +1,7 @@
 import { describe, expect, it } from "vitest";
 import { compileContent } from "../src/content/compile.ts";
 import { divisionStats } from "../src/sim/military/war.ts";
+import { allocate } from "../src/sim/military/fronts.ts";
 import { runEffects } from "../src/sim/scripting/engine.ts";
 import { defaultSystems, Simulation, simMapFrom } from "../src/sim/simulation.ts";
 import { createInitialState } from "../src/sim/state.ts";
@@ -142,6 +143,22 @@ describe("war", () => {
     for (let i = 0; i < 200 && !s.pendingPeace && s.wars.length; i++) sim.step();
     expect(s.provinceController.some((c, k) => c === "DEU" && s.provinceOwner[k] === "POL")).toBe(true);
   }, 120_000);
+
+  it("front distribution: weighted when short, one each then by weight up to supply, overflow to reserves", () => {
+    const w = (p: number) => ({ 1: 1, 2: 5, 3: 2, 4: 1 })[p] ?? 1;
+    // fewer divisions than provinces: the heaviest first
+    expect(allocate(2, [1, 2, 3, 4], w, () => 9, []).slots.sort()).toEqual([2, 3]);
+    // more: one each, the rest by weight
+    const many = allocate(8, [1, 2, 3, 4], w, () => 9, []).slots;
+    for (const p of [1, 2, 3, 4]) expect(many).toContain(p);
+    const n = (p: number) => many.filter((x) => x === p).length;
+    expect(n(2)).toBeGreaterThan(n(1));
+    // supply caps: what does not fit stands in reserve
+    const capped = allocate(12, [1, 2], w, () => 3, [7, 8]);
+    expect(capped.slots.filter((x) => x === 1 || x === 2)).toHaveLength(6);
+    expect(capped.reserve).toBe(6);
+    expect(capped.slots.filter((x) => x === 7).length).toBe(3);
+  });
 
   it("cannot declare war twice", () => {
     const sim = fresh(null);
