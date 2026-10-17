@@ -19,3 +19,5 @@ export const planDraft = signal<number[]>([]);
 export const buildMode = signal<string | null>(null);
 /** Result of the last placement click (shown in the Construction tab). */
 export const buildMsg = signal("");
+/** A short message near the bottom of the screen (orders refused, plans set). */
+export const toast = signal<{ text: string; bad?: boolean; at: number } | null>(null);

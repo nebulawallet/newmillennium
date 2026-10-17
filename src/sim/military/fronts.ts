@@ -45,6 +45,8 @@ export interface Army {
   reserves?: number;
   /** Divisions that cannot reach the front (another landmass, no route). */
   unreachable?: number;
+  /** Divisions under manual orders (off the plan). */
+  manual?: number;
 }
 
 export const STATUS_TEXT: Record<ArmyStatus, string> = {
@@ -226,13 +228,15 @@ export type PlanCommand =
   | { type: "set_offensive"; tag: string; army: number; provinces: number[] }
   | { type: "add_spearhead"; tag: string; army: number; path: number[] }
   | { type: "clear_plan"; tag: string; army: number }
-  | { type: "execute_plan"; tag: string; army: number; on: boolean };
+  | { type: "execute_plan"; tag: string; army: number; on: boolean }
+  | { type: "return_to_plan"; tag: string; army: number };
 
 export function applyPlanCommand(ctx: SimContext, c: PlanCommand): { ok: boolean; text: string } {
   const { state } = ctx;
   if (c.type === "create_army") {
     const own = c.divisions.filter((id) => state.divisions.some((d) => d.id === id && d.owner === c.tag));
     if (!own.length) return { ok: false, text: "Select divisions first." };
+    for (const d of state.divisions) if (own.includes(d.id)) d.manual = false;
     const a = createArmy(state, c.tag, own, c.name, c.ai);
     if (c.front !== undefined) a.front = { enemy: c.front };
     if (c.offensive) a.offensive = [...c.offensive];
@@ -248,6 +252,7 @@ export function applyPlanCommand(ctx: SimContext, c: PlanCommand): { ok: boolean
       return { ok: true, text: `${army.name} disbanded.` };
     case "assign_divisions": {
       const own = c.divisions.filter((id) => state.divisions.some((d) => d.id === id && d.owner === c.tag));
+      for (const d of state.divisions) if (own.includes(d.id)) d.manual = false;
       for (const a of state.armies) if (a.owner === c.tag && a !== army) a.divisions = a.divisions.filter((d) => !own.includes(d));
       army.divisions = [...new Set([...army.divisions, ...own])];
       dropEmpty(state, c.tag);
@@ -268,6 +273,11 @@ export function applyPlanCommand(ctx: SimContext, c: PlanCommand): { ok: boolean
       army.spearheads.push(c.path);
       army.front ??= { enemy: null };
       return { ok: true, text: "Spearhead added." };
+    case "return_to_plan": {
+      let n = 0;
+      for (const d of state.divisions) if (army.divisions.includes(d.id) && d.manual) { d.manual = false; d.path = []; n++; }
+      return { ok: true, text: n ? `${n} division${n > 1 ? "s" : ""} back on ${army.name}'s plan.` : "No divisions were under manual orders." };
+    }
     case "clear_plan":
       army.offensive = [];
       army.spearheads = [];
@@ -425,7 +435,9 @@ function runArmy(
   const { state, map, db } = ctx;
   const m = map!;
   a.stretch = stretch;
-  const divs = a.divisions.map((id) => alive.get(id)!).filter(Boolean);
+  // divisions under manual orders are left alone until returned to the plan
+  const divs = a.divisions.map((id) => alive.get(id)!).filter((d) => d && !d.manual);
+  a.manual = a.divisions.length - divs.length;
   // worn-out attackers break off
   for (const d of divs) if (d.attacking && d.organisation < rules.break_off_organisation) { d.attacking = undefined; d.path = []; }
   // divisions that cannot reach the front (another landmass, no route) are left alone

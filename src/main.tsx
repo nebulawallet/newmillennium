@@ -29,11 +29,12 @@ import { EventWindow } from "./ui/scripted/EventWindow.tsx";
 import { researchPick, ResearchView } from "./ui/research/ResearchPanel.tsx";
 import { FocusTreeView } from "./ui/scripted/FocusTree.tsx";
 import { PeaceConference } from "./ui/units/WarUi.tsx";
-import { buildMode, hoveredProvince, mapMode, pickedCountry, planDraft, planTool, pointer, selectedArmy, selectedDivisions, selectedProvince } from "./ui/store.ts";
+import { buildMode, hoveredProvince, mapMode, toast, pickedCountry, planDraft, planTool, pointer, selectedArmy, selectedDivisions, selectedProvince } from "./ui/store.ts";
 import { slotsView } from "./render/mapModes.ts";
 import { UnitCounters } from "./ui/units/UnitCounters.ts";
 import { FrontOverlay } from "./ui/units/FrontOverlay.ts";
 import { ArmyBar } from "./ui/units/ArmyBar.tsx";
+import { DivisionPanel, Toast } from "./ui/units/DivisionPanel.tsx";
 import { version } from "./ui/session.ts";
 import { buildMsg } from "./ui/store.ts";
 
@@ -156,6 +157,7 @@ async function boot(): Promise<void> {
   const fronts = new FrontOverlay(view, map, db, () => session.sim?.context.map, () => (screen.value === "game" ? session.state : null));
   version.subscribe(() => fronts.refresh());
   selectedArmy.subscribe(() => { fronts.refresh(true); counters.refresh(-2 - Math.random()); });
+  selectedDivisions.subscribe(() => fronts.refresh(true));
   screen.subscribe((s) => { if (s !== "game") { counters.clear(); selectedDivisions.value = []; selectedArmy.value = 0; planTool.value = null; buildMode.value = null; } fronts.refresh(true); });
   // drawing an offensive line or a spearhead: a left drag collects the provinces it crosses
   let last: [number, number] | null = null;
@@ -252,10 +254,18 @@ async function boot(): Promise<void> {
   };
   planTool.subscribe(setCapture);
   screen.subscribe(setCapture);
+  // right-click: cancels a drawing tool; otherwise moves or attacks with the selected divisions
   world.onOrder = (id) => {
+    if (planTool.value) { planTool.value = null; planDraft.value = []; return; }
     const st = session.state;
-    if (!id || !st?.player || !selectedDivisions.value.length) return;
-    for (const d of selectedDivisions.value) session.dispatch({ type: "move_division", tag: st.player, division: d, province: id });
+    if (!st?.player || !selectedDivisions.value.length) return;
+    if (!id) { toast.value = { text: "That is sea: divisions move over land only.", bad: true, at: Date.now() }; return; }
+    const results = selectedDivisions.value.map((d) => session.dispatch({ type: "move_division", tag: st.player!, division: d, province: id }));
+    const ok = results.filter((r) => r.ok);
+    toast.value = ok.length
+      ? { text: `${ok.length > 1 ? `${ok.length} divisions: ` : ""}${ok[0]!.text}${ok.length < results.length ? ` (${results.length - ok.length} cannot get there)` : ""}`, at: Date.now() }
+      : { text: results[0]!.text, bad: true, at: Date.now() };
+    fronts.refresh(true);
   };
   (window as unknown as { nm: unknown }).nm = { db, map, view, world, session, THREE };
   bindKeys(session);
@@ -291,6 +301,8 @@ function Root({ db, map, world, session, issues }: { db: ContentDB; map: MapData
       )}
       {inGame && <MapModeBar db={db} map={map} world={world} />}
       {inGame && <ArmyBar db={db} session={session} />}
+      {inGame && <DivisionPanel db={db} session={session} />}
+      <Toast />
       <ProvinceTooltip db={db} map={map} session={inGame ? session : undefined} />
       {inGame && panel.value === "focus" && <FocusTreeView db={db} session={session} />}
       {inGame && panel.value === "research" && researchPick.value !== null && <ResearchView db={db} session={session} />}

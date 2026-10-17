@@ -70,6 +70,8 @@ export interface Division {
   attacking?: number;
   /** Last day it fought (no organisation recovery for a few days after). */
   lastCombat?: number;
+  /** Under a manual order: its army's battle plan leaves it alone until it is returned to the plan. */
+  manual?: boolean;
 }
 
 // ------------------------------------------------------------------ equipment
@@ -363,16 +365,32 @@ export function findPath(map: SimMap, state: GameState, owner: string, from: num
   return null;
 }
 
+/** Why a division of `owner` may not enter a province, in words for the player (null: it may). */
+export function entryBlock(state: GameState, owner: string, province: number, nameOf: (tag: string) => string): string | null {
+  if (canEnter(state, owner, province)) return null;
+  const holder = state.provinceController[province - 1] ?? state.provinceOwner[province - 1];
+  if (!holder) return "That is sea: divisions move over land only.";
+  if (hostileTo(state, owner, holder) || hostileTo(state, owner, state.provinceOwner[province - 1] ?? "")) return "That province is outside the war's zone.";
+  return `You are not at war with ${nameOf(holder)}. Declare war, or ask for military access, to enter.`;
+}
+
 export function moveDivision(ctx: SimContext, tag: string, id: number, province: number): { ok: boolean; text: string } {
   const d = ctx.state.divisions.find((x) => x.id === id && x.owner === tag);
   if (!d) return { ok: false, text: "No such division." };
   if (!ctx.map) return { ok: false, text: "No map." };
+  const nameOf = (t: string) => ctx.state.dynamicCountries[t]?.name ?? ctx.db.countryList.find((c) => c.tag === t)?.short_name ?? ctx.db.countryList.find((c) => c.tag === t)?.name ?? t;
+  const block = entryBlock(ctx.state, tag, province, nameOf);
+  if (block) return { ok: false, text: block };
   const path = findPath(ctx.map, ctx.state, tag, d.province, province);
-  if (!path) return { ok: false, text: "No route: the division can only move through your own territory or that of an enemy at war." };
+  if (!path) return { ok: false, text: "No land route there: the way is blocked by sea or by countries you may not enter." };
   d.path = path;
   d.progress = 0;
   d.attacking = undefined;
-  return { ok: true, text: path.length ? `Moving: ${path.length} provinces.` : "Already there." };
+  // a manual order takes the division off its army's plan until it is returned
+  if (ctx.state.armies.some((a) => a.divisions.includes(d.id))) d.manual = true;
+  const target = ctx.state.provinceController[province - 1];
+  const verb = target && hostileTo(ctx.state, tag, target) ? "Attacking" : "Moving";
+  return { ok: true, text: path.length ? `${verb}: ${path.length} province${path.length > 1 ? "s" : ""} to go.` : "Already there." };
 }
 
 // ------------------------------------------------------------------ commands

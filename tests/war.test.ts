@@ -160,6 +160,29 @@ describe("war", () => {
     expect(capped.slots.filter((x) => x === 7).length).toBe(3);
   });
 
+  it("manual orders: refused into a country at peace, take a division off its plan until returned", () => {
+    const sim = fresh("DEU");
+    const s = sim.state;
+    const ids = s.divisions.filter((d) => d.owner === "DEU").map((d) => d.id);
+    sim.dispatch({ type: "create_army", tag: "DEU", divisions: ids });
+    const army = s.armies.find((a) => a.owner === "DEU")!;
+    sim.dispatch({ type: "set_front", tag: "DEU", army: army.id, enemy: "POL" });
+    const r = sim.dispatch({ type: "move_division", tag: "DEU", division: ids[0]!, province: 5 });
+    expect(r.ok).toBe(false);
+    expect(r.text).toMatch(/not at war/i);
+    // a manual move inside Germany: the plan leaves that division alone
+    expect(sim.dispatch({ type: "move_division", tag: "DEU", division: ids[0]!, province: 1 }).ok).toBe(true);
+    const d = s.divisions.find((x) => x.id === ids[0])!;
+    expect(d.manual).toBe(true);
+    for (let i = 0; i < 40; i++) sim.step();
+    expect(d.province).toBe(1);
+    expect(army.manual).toBe(1);
+    expect(sim.dispatch({ type: "return_to_plan", tag: "DEU", army: army.id }).ok).toBe(true);
+    expect(d.manual).toBe(false);
+    for (let i = 0; i < 40; i++) sim.step();
+    expect([4, 10, 16, 22]).toContain(d.province);
+  });
+
   it("cannot declare war twice", () => {
     const sim = fresh(null);
     sim.dispatch({ type: "declare_war", tag: "DEU", target: "POL" });

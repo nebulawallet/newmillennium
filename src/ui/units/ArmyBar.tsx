@@ -90,7 +90,7 @@ function ArmyCard({ db, session, army }: { db: ContentDB; session: Session; army
         <span class="ub"><i class="s" style={{ width: pct(str) }} /></span>
         <span class="ub"><i class="o" style={{ width: pct(org) }} /></span>
       </div>
-      <div class="ac-status small">{STATUS_TEXT[army.status]}{army.reserves ? ` · ${army.reserves} in reserve` : ""}{army.unreachable ? ` · ${army.unreachable} cut off` : ""}</div>
+      <div class="ac-status small">{STATUS_TEXT[army.status]}{army.reserves ? ` · ${army.reserves} in reserve` : ""}{army.unreachable ? ` · ${army.unreachable} cut off` : ""}{army.manual ? ` · ${army.manual} manual` : ""}</div>
     </div>
   );
 }
@@ -143,6 +143,7 @@ export function ArmyBar({ db, session }: { db: ContentDB; session: Session }) {
           <button class={`btn ${tool?.kind === "front" ? "primary" : ""}`} onClick={() => draw("front")} {...tip(() => ({ title: "Front line", note: "Click a neighbouring country on the map. The army spreads along that border and holds it; at war, it attacks when you execute an offensive line or spearhead." }))}>Front line</button>
           <button class={`btn ${tool?.kind === "offensive" ? "primary" : ""}`} onClick={() => draw("offensive")} {...tip(() => ({ title: "Offensive line", note: "Drag across the enemy provinces to push to. When executed, the army attacks the provinces between its front and the line." }))}>Offensive line</button>
           <button class={`btn ${tool?.kind === "spearhead" ? "primary" : ""}`} onClick={() => draw("spearhead")} {...tip(() => ({ title: "Spearhead", note: `Drag a path into enemy land. Its fastest divisions (about a third of the army) push along it province by province.` }))}>Spearhead</button>
+          {(sel.manual ?? 0) > 0 && <button class="btn primary" onClick={() => run({ type: "return_to_plan", tag: me, army: sel.id })} {...tip(() => ({ title: "Return to plan", note: `${sel.manual} division${sel.manual! > 1 ? "s are" : " is"} under manual orders. They rejoin the battle plan.` }))}>Return {sel.manual} to plan</button>}
           <button class="btn" onClick={() => run({ type: "clear_plan", tag: me, army: sel.id })} {...tip(() => ({ title: "Clear plan", note: "Removes the offensive line and spearheads; the army keeps holding its front." }))}>Clear</button>
           <button class="btn" disabled={!selectedDivisions.value.some((id) => !sel.divisions.includes(id))} onClick={() => run({ type: "assign_divisions", tag: me, army: sel.id, divisions: selectedDivisions.value })} {...tip(() => ({ title: "Add selected divisions", note: "Moves the selected divisions into this army." }))}>Add selected</button>
           <button class="btn danger" onClick={() => { run({ type: "disband_army", tag: me, army: sel.id }); selectedArmy.value = 0; }} {...tip(() => ({ title: "Disband", note: "The divisions stay where they are, without orders." }))}>Disband</button>
