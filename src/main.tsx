@@ -13,7 +13,7 @@ import type { ContentDB } from "./content/compile.ts";
 import { runBenchmark, type BenchResult } from "./render/benchmark.ts";
 import { SoakPanel } from "./ui/SoakPanel.tsx";
 import { loadMapData, type MapData } from "./render/mapData.ts";
-import { MapView } from "./render/MapView.ts";
+import { MapView, millerY as millerYOf } from "./render/MapView.ts";
 import { WorldMap, type RenderApproach } from "./render/WorldMap.ts";
 import { CountrySelect } from "./ui/CountrySelect.tsx";
 import { GameMenu } from "./ui/hud/GameMenu.tsx";
@@ -26,7 +26,7 @@ import { MapModeBar, ProvinceTooltip } from "./ui/MapUi.tsx";
 import { CoalitionPanel } from "./ui/politics/CoalitionPanel.tsx";
 import { ElectionNight } from "./ui/politics/ElectionNight.tsx";
 import { EventWindow } from "./ui/scripted/EventWindow.tsx";
-import { ResearchView } from "./ui/research/ResearchPanel.tsx";
+import { researchPick, ResearchView } from "./ui/research/ResearchPanel.tsx";
 import { FocusTreeView } from "./ui/scripted/FocusTree.tsx";
 import { PeaceConference } from "./ui/units/WarUi.tsx";
 import { buildMode, hoveredProvince, mapMode, pickedCountry, planDraft, planTool, pointer, selectedArmy, selectedDivisions, selectedProvince } from "./ui/store.ts";
@@ -144,7 +144,10 @@ async function boot(): Promise<void> {
       modeBefore = null;
     } else if (mapMode.value === "slots") world.refresh();
   });
-  panel.subscribe((p) => { if (p !== "construction" && buildMode.value) buildMode.value = null; });
+  panel.subscribe((p) => {
+    if (p !== "construction" && buildMode.value) buildMode.value = null;
+    if (p !== "research") researchPick.value = null;
+  });
   // unit counters follow the game state; right-click orders the selected divisions to a province
   const counters = new UnitCounters(view, map, db, () => (screen.value === "game" ? session.state : null));
   version.subscribe((v) => counters.refresh(v));
@@ -168,8 +171,57 @@ async function boot(): Promise<void> {
     planDraft.value = draft;
     last = [x, y];
   };
-  planTool.subscribe((tool) => {
-    view.capture = !tool ? null : (phase, x, y) => {
+  // in game a left drag draws a selection box over your divisions (shift adds); right or middle drag pans,
+  // a left click without dragging still selects the province
+  const box = document.createElement("div");
+  box.className = "sel-box";
+  ui.appendChild(box);
+  let boxFrom: { sx: number; sy: number; wx: number; wy: number } | null = null;
+  const boxSelect = (phase: "down" | "move" | "up", x: number, y: number, e: PointerEvent) => {
+    if (phase === "down") {
+      boxFrom = { sx: e.clientX, sy: e.clientY, wx: x, wy: y };
+      return;
+    }
+    if (!boxFrom) return;
+    const moved = Math.hypot(e.clientX - boxFrom.sx, e.clientY - boxFrom.sy) >= 5;
+    if (phase === "move") {
+      box.style.display = moved ? "block" : "none";
+      box.style.left = `${Math.min(boxFrom.sx, e.clientX)}px`;
+      box.style.top = `${Math.min(boxFrom.sy, e.clientY)}px`;
+      box.style.width = `${Math.abs(e.clientX - boxFrom.sx)}px`;
+      box.style.height = `${Math.abs(e.clientY - boxFrom.sy)}px`;
+      return;
+    }
+    box.style.display = "none";
+    const from = boxFrom;
+    boxFrom = null;
+    const st = session.state;
+    if (!moved) {
+      // a plain click: clear the division selection and select the province (or place a building)
+      if (!e.shiftKey && !buildMode.value) { selectedDivisions.value = []; selectedArmy.value = 0; }
+      world.select(world.pickAt(x, y));
+      return;
+    }
+    if (!st?.player) return;
+    const [x0, x1] = [Math.min(from.wx, x), Math.max(from.wx, x)], [y0, y1] = [Math.min(from.wy, y), Math.max(from.wy, y)];
+    const inside = st.divisions.filter((d) => {
+      if (d.owner !== st.player) return false;
+      const p = map.provinces[d.province - 1];
+      if (!p) return false;
+      const px = p.centroid[0], py = millerYOf(p.centroid[1]);
+      return px >= x0 && px <= x1 && py >= y0 && py <= y1;
+    }).map((d) => d.id);
+    selectedArmy.value = 0;
+    selectedDivisions.value = e.shiftKey ? [...new Set([...selectedDivisions.value, ...inside])] : inside;
+  };
+  const setCapture = () => {
+    const tool = planTool.value;
+    view.capture = tool ? drawPlan : screen.value === "game" ? boxSelect : null;
+  };
+  const drawPlan = (phase: "down" | "move" | "up", x: number, y: number) => {
+    const tool = planTool.value;
+    if (!tool) return;
+    {
       if (phase === "down") { last = null; planDraft.value = []; crossed(x, y); }
       else if (phase === "move") crossed(x, y);
       else {
@@ -186,8 +238,10 @@ async function boot(): Promise<void> {
         planTool.value = null;
         fronts.refresh(true);
       }
-    };
-  });
+    }
+  };
+  planTool.subscribe(setCapture);
+  screen.subscribe(setCapture);
   world.onOrder = (id) => {
     const st = session.state;
     if (!id || !st?.player || !selectedDivisions.value.length) return;
@@ -229,7 +283,7 @@ function Root({ db, map, world, session, issues }: { db: ContentDB; map: MapData
       {inGame && <ArmyBar db={db} session={session} />}
       <ProvinceTooltip db={db} map={map} session={inGame ? session : undefined} />
       {inGame && panel.value === "focus" && <FocusTreeView db={db} session={session} />}
-      {inGame && panel.value === "research" && <ResearchView db={db} session={session} />}
+      {inGame && panel.value === "research" && researchPick.value !== null && <ResearchView db={db} session={session} />}
       {inGame && <ElectionNight db={db} session={session} />}
       {inGame && <EventWindow db={db} session={session} />}
       {inGame && <PeaceConference db={db} session={session} />}
@@ -253,6 +307,7 @@ function bindKeys(session: Session): void {
     else if (tab) { panel.value = panel.value === tab.id ? null : tab.id; activeTip.value = null; }
     else if (e.key === "Escape" && planTool.value) { planTool.value = null; planDraft.value = []; }
     else if (e.key === "Escape" && buildMode.value) buildMode.value = null;
+    else if (e.key === "Escape" && researchPick.value !== null) researchPick.value = null;
     else if (e.key === "Escape") panel.value = panel.value ? null : selectedProvince.value ? ((selectedProvince.value = 0), null) : "menu";
   });
 }

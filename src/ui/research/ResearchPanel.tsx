@@ -1,14 +1,15 @@
 /**
- * Research screen (HOI4 position: a large view opened from the W tab). Research slots run along
- * the top, one tab per category below them, and the category's tree fills the rest: one row per
- * year, connector lines from prerequisites to what they unlock, red double arrows between
- * mutually exclusive technologies. Drag to pan, wheel to zoom. Click an available technology to
- * put it in a free slot; click a busy slot to stop it (progress is kept).
+ * Research (HOI4 flow): the W tab opens the slots in the left panel. Clicking a slot opens the
+ * technology tree beside it: one tab per category, one row per year, connector lines from
+ * prerequisites to what they unlock, red double arrows between mutually exclusive technologies.
+ * Drag to pan, wheel to zoom. Clicking an available technology puts it in that slot and closes
+ * the tree.
  */
+import { signal } from "@preact/signals";
 import { useState } from "preact/hooks";
 import type { ContentDB } from "../../content/compile.ts";
 import type { TechDef } from "../../content/schemas/research.ts";
-import { ymdOf } from "../../sim/date.ts";
+import { formatDate, ymdOf } from "../../sim/date.ts";
 import { researchSpeed, techCost, techStatus, type TechStatus } from "../../sim/research/research.ts";
 import type { CountryState } from "../../sim/state.ts";
 import { Icon, type IconName } from "../icons.tsx";
@@ -64,31 +65,64 @@ function layout(techs: (TechDef & { category: string })[]) {
   return { years, pos, width: GUTTER + PAD * 2 + cols * COL - (COL - CARD_W), height: PAD * 2 + years.length * ROW - (ROW - CARD_H) };
 }
 
-function Slots({ db, session, cs, speed }: { db: ContentDB; session: Session; cs: CountryState; speed: number }) {
-  version.value; // unchanged props skip re-rendering: follow the clock directly
-  const r = cs.research!;
-  const state = session.state!;
+/** The research slot being filled: the tree opens beside the slots panel while it is set (HOI4 flow). */
+export const researchPick = signal<number | null>(null);
+
+/** Research tab (left panel): the slots. Click one to open the tree and choose what it researches. */
+export function ResearchSlotsPanel({ db, session }: { db: ContentDB; session: Session }) {
+  version.value;
+  const state = session.state;
+  const cs = state?.player ? state.countries[state.player] : undefined;
+  const r = cs?.research;
+  if (!state || !cs || !r) return <p class="dim pad">No research for this country.</p>;
+  const speed = researchSpeed(db, cs);
+  const pick = researchPick.value;
+  const year = ymdOf(state.day).year;
+  const due = [...db.techs.values()].filter((t) => t.year <= year);
   return (
-    <div class="rv-slots">
-      {r.slots.map((id, i) => {
-        const t = id ? db.techs.get(id) : undefined;
-        const cost = t ? techCost(db, t, state.day) : null;
-        const p = t && cost ? Math.min(1, (r.progress[t.id] ?? 0) / cost.cost) : 0;
-        const daysLeft = t && cost ? Math.ceil((cost.cost - (r.progress[t.id] ?? 0)) / speed) : 0;
-        return (
-          <button key={i} class={`rv-slot ${t ? "busy" : ""}`} onClick={() => t && session.dispatch({ type: "set_research", tag: cs.tag, slot: i, tech: null })}
-            {...tip(() => t
-              ? { title: t.name, rows: [["Progress", `${Math.round(p * 100)}%`], ["Days left", daysLeft], ["Cost", `${Math.round(cost!.cost)} days`], ["Year", t.year]], note: "Click to stop (progress is kept)." }
-              : { title: `Research slot ${i + 1}`, note: "Empty. Click an available technology to start it." })}>
-            <span class="rv-slot-ic">{t ? Icon[iconOf(db, t)]({ size: 20 }) : <span class="num">{i + 1}</span>}</span>
-            <span class="rv-slot-txt">
-              <span class="clip">{t?.name ?? "Empty slot"}</span>
-              <span class="faint small num">{t ? `${daysLeft} days` : "Idle"}</span>
-            </span>
-            <span class="meter"><span style={{ width: `${p * 100}%` }} /></span>
-          </button>
-        );
-      })}
+    <div class="rs-panel">
+      <div class="cons-hero rs-hero">
+        <div {...tip(() => ({ title: "Research speed", rows: [["Speed", `×${speed.total.toFixed(2)}`], ...speed.parts.map(([k, v]) => [k, pct(v)] as [string, string])], note: "R&D spending (World Bank 2000), policies and technologies." }))}>
+          <div class="econ-big num">×{speed.total.toFixed(2)}</div>
+          <div class="faint small">research speed</div>
+        </div>
+        <div {...tip(() => ({ title: "Researched", rows: [["Technologies", `${r.completed.length} of ${db.techs.size}`], [`Dated ${year} or earlier`, `${due.filter((t) => r.completed.includes(t.id)).length} of ${due.length}`]] }))}>
+          <div class="econ-big num">{r.completed.length}</div>
+          <div class="faint small">of {db.techs.size} researched</div>
+        </div>
+        <div {...tip(() => ({ title: "Research slots", rows: [["Slots", r.slots.length], ["Busy", r.slots.filter(Boolean).length]], note: "Bigger economies get more slots (GDP thresholds in data/techs/rules.json)." }))}>
+          <div class={`econ-big num ${r.slots.some((x) => !x) ? "warn" : ""}`}>{r.slots.filter(Boolean).length}/{r.slots.length}</div>
+          <div class="faint small">slots busy</div>
+        </div>
+      </div>
+      <div class="hp-section">Research slots</div>
+      <div class="rs-list">
+        {r.slots.map((id, i) => {
+          const t = id ? db.techs.get(id) : undefined;
+          const cost = t ? techCost(db, t, state.day) : null;
+          const p = t && cost ? Math.min(1, (r.progress[t.id] ?? 0) / cost.cost) : 0;
+          const daysLeft = t && cost ? Math.ceil((cost.cost - (r.progress[t.id] ?? 0)) / speed.total) : 0;
+          return (
+            <div key={i} class={`rs-slot ${t ? "busy" : "empty"} ${pick === i ? "on" : ""}`} role="button" tabIndex={0}
+              onClick={() => (researchPick.value = pick === i ? null : i)}
+              {...tip(() => t
+                ? { title: t.name, body: <span class="dim">{t.description}</span>, rows: [["Progress", `${Math.round(p * 100)}%`], ["Days left", daysLeft], ["Finishes about", formatDate(state.day + daysLeft)], ["Cost now", `${Math.round(cost!.cost)} days`], ["Year", t.year]], note: "Click to choose a different technology for this slot (progress is kept)." }
+                : { title: `Research slot ${i + 1}`, note: "Empty. Click to choose a technology." })}>
+              <span class="rs-ic">{t ? Icon[iconOf(db, t)]({ size: 26 }) : Icon.plus({ size: 20 })}</span>
+              <span class="rs-txt">
+                <span class="rs-name">{t?.name ?? "Choose research"}</span>
+                <span class="faint small num">{t ? `${db.techCategories.get(t.category)?.name} · ${t.year} · ${daysLeft} days left` : `Slot ${i + 1} is idle`}</span>
+                <span class="meter"><span style={{ width: `${p * 100}%` }} /></span>
+              </span>
+              {t && (
+                <button class="tile mini rs-stop" aria-label="Stop" onClick={(e) => { e.stopPropagation(); session.dispatch({ type: "set_research", tag: cs.tag, slot: i, tech: null }); }}
+                  {...tip(() => ({ title: "Stop", note: "Empties the slot; progress is kept for later." }))}>{Icon.close({ size: 11 })}</button>
+              )}
+            </div>
+          );
+        })}
+      </div>
+      <p class="faint small pad">Click a slot to open the technology tree and choose what it researches.</p>
     </div>
   );
 }
@@ -112,10 +146,11 @@ export function ResearchView({ db, session }: { db: ContentDB; session: Session 
   const pz = usePanZoom(L.width, L.height, fp ? [fp.x + CARD_W / 2, fp.y + CARD_H / 2] : null, catId);
   if (!state || !tag || !cs || !r || !cat) return null;
   const speed = researchSpeed(db, cs);
+  const slot = researchPick.value ?? 0;
   const assign = (id: string) => {
-    const free = r.slots.indexOf(null);
-    if (free < 0) return setMsg("All research slots are busy. Stop one first.");
-    setMsg(session.dispatch({ type: "set_research", tag, slot: free, tech: id }).text);
+    const res = session.dispatch({ type: "set_research", tag, slot, tech: id });
+    if (res.ok) researchPick.value = null;
+    else setMsg(res.text);
   };
   const done = (c: string) => db.techCategories.get(c)!.techs.filter((id) => r.completed.includes(id)).length;
 
@@ -158,7 +193,7 @@ export function ResearchView({ db, session }: { db: ContentDB; session: Session 
     <section class="research-view hp" aria-label="Research">
       <header class="hp-head">
         <span class="side-ic">{Icon.research({ size: 18 })}</span>
-        <h2 class="hp-title">Research</h2>
+        <h2 class="hp-title">Research slot {slot + 1}: choose a technology</h2>
         <span class="rv-speed dim small num" {...tip(() => ({ title: "Research speed", rows: [["Speed", `×${speed.total.toFixed(2)}`], ...speed.parts.map(([k, v]) => [k, pct(v)] as [string, string]), ["Researched", `${r.completed.length} of ${db.techs.size}`]], note: `Each technology has a year. Researching one early costs more, and each year ahead adds more than the last (${[1, 2, 3].map((n) => `+${Math.round((n * db.researchRules.ahead_penalty_per_year + n * n * db.researchRules.ahead_penalty_growth) * 100)}%`).join(", ")} for 1, 2, 3 years). Older ones are up to ${Math.round(db.researchRules.max_behind_bonus * 100)}% cheaper to catch up on.` }))}>
           Speed ×{speed.total.toFixed(2)} · {r.completed.length}/{db.techs.size}
         </span>
@@ -167,9 +202,8 @@ export function ResearchView({ db, session }: { db: ContentDB; session: Session 
           <button class="tile mini" aria-label="Zoom out" onClick={() => pz.zoomBy(0.8)} {...tip(() => ({ title: "Zoom out", note: "Or use the mouse wheel." }))}>{Icon.minus({ size: 12 })}</button>
           <button class="tile mini" aria-label="Zoom in" onClick={() => pz.zoomBy(1.25)} {...tip(() => ({ title: "Zoom in", note: "Or use the mouse wheel." }))}>{Icon.plus({ size: 12 })}</button>
         </div>
-        <button class="x" onClick={() => (panel.value = null)} aria-label="Close">{Icon.close({ size: 14 })}</button>
+        <button class="x" onClick={() => (researchPick.value = null)} aria-label="Close">{Icon.close({ size: 14 })}</button>
       </header>
-      <Slots db={db} session={session} cs={cs} speed={speed.total} />
       <nav class="rv-tabs" role="tablist">
         {cats.map((c) => {
           const ic = c.icon && c.icon in Icon ? (c.icon as IconName) : "research";
@@ -214,7 +248,7 @@ export function ResearchView({ db, session }: { db: ContentDB; session: Session 
                     ...t.mutually_exclusive.map((m) => ["Excludes", db.techs.get(m)?.name ?? m] as [string, string]),
                     ...unlocks(db, t.id).map((u) => ["Unlocks", u] as [string, string]),
                   ],
-                  note: st === "available" ? "Click to research." : st === "locked" ? "Research the required technologies first." : undefined,
+                  note: st === "available" ? `Click to research in slot ${slot + 1}.` : st === "locked" ? "Research the required technologies first." : undefined,
                 }))}>
                 <span class="rv-ic">{Icon[iconOf(db, t)]({ size: 24 })}</span>
                 <span class="rv-body">

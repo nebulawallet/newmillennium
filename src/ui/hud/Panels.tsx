@@ -20,6 +20,7 @@ import { feed, panel, version, type Session } from "../session.ts";
 import { selectedProvince } from "../store.ts";
 import { TABS, type TabDef } from "../tabs.ts";
 import { Flag } from "../Flag.tsx";
+import { ResearchSlotsPanel } from "../research/ResearchPanel.tsx";
 import { tip } from "../tooltip.tsx";
 import { SidePanel } from "./SidePanel.tsx";
 
@@ -157,7 +158,7 @@ export function LeftPanel({ db, map, session }: { db: ContentDB; map: MapData; s
         <EconomyPanel db={db} session={session} />
       </SidePanel>
     );
-  if (open && open !== "menu" && open !== "focus" && open !== "research") {
+  if (open && open !== "menu" && open !== "focus") {
     const tab = TABS.find((t) => t.id === open)!;
     return (
       <SidePanel title={tab.label} icon={tab.icon} onClose={() => (panel.value = null)}>
@@ -169,6 +170,8 @@ export function LeftPanel({ db, map, session }: { db: ContentDB; map: MapData; s
           <ProductionPanel db={db} session={session} />
         ) : tab.id === "recruitment" ? (
           <RecruitmentPanel db={db} session={session} />
+        ) : tab.id === "research" ? (
+          <ResearchSlotsPanel db={db} session={session} />
         ) : tab.id === "construction" ? (
           <ConstructionPanel db={db} session={session} />
         ) : tab.id === "trade" ? (

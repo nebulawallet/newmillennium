@@ -4,18 +4,18 @@
 /* HOI4 top bar: a slim 48px strip; the flag hangs below it in a bronze frame at the far left */
 .topbar {
   position: absolute; top: 0; left: 0; right: 0; height: 48px;
-  display: flex; align-items: center; gap: 8px; padding: 0 6px 0 128px;
+  display: flex; align-items: center; gap: 8px; padding: 0 6px 0 74px;
   background: var(--grain), linear-gradient(180deg, #27302c 0%, #19201d 55%, #111715 100%);
   border-bottom: 1px solid var(--bronze);
   box-shadow: 0 1px 0 #000, 0 6px 16px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(232, 207, 152, 0.1);
 }
 .flag-tile {
-  appearance: none; position: absolute; left: 6px; top: 5px; z-index: 2; padding: 3px; margin: 0; cursor: pointer;
+  appearance: none; position: absolute; left: 6px; top: 1px; z-index: 2; padding: 2px; margin: 0; cursor: pointer;
   background: linear-gradient(180deg, var(--bronze-hi), var(--bronze) 45%, var(--bronze-dk));
   border: 1px solid #000; box-shadow: 0 3px 8px rgba(0, 0, 0, 0.75);
 }
 .flag-tile:hover { filter: brightness(1.1); }
-.flag-tile .flag { width: 108px; height: 72px; }
+.flag-tile .flag, .flag-tile .flag.f-lg { width: 60px; height: 40px; }
 .flag {
   position: relative; display: grid; place-items: center; overflow: hidden; flex: none;
   width: 72px; height: 48px;
@@ -81,7 +81,7 @@
 
 /* ================= side panel (left) ================= */
 .side {
-  position: absolute; top: 90px; left: 8px; bottom: 8px; width: 500px;
+  position: absolute; top: 56px; left: 8px; bottom: 8px; width: 500px;
   display: flex; flex-direction: column;
   animation: slide-in 220ms cubic-bezier(0.16, 1, 0.3, 1);
 }
@@ -220,7 +220,7 @@
 .fr-draft { fill: none; stroke: var(--bronze-hi); stroke-width: 3; stroke-dasharray: 6 4; stroke-linejoin: round; filter: drop-shadow(0 0 2px #000); }
 
 /* army cards (bottom bar) */
-.army-dock { position: absolute; left: 50%; bottom: 8px; transform: translateX(-50%); max-width: calc(100vw - 640px); display: flex; flex-direction: column; align-items: center; gap: 4px; }
+.army-dock { position: absolute; left: 0; right: 0; bottom: 8px; margin: 0 auto; width: fit-content; max-width: calc(100vw / var(--ui-zoom) - 640px); display: flex; flex-direction: column; align-items: center; gap: 4px; }
 .army-bar { display: flex; gap: 3px; max-width: 100%; overflow-x: auto; padding: 3px; background: rgba(8, 11, 10, 0.72); border: 1px solid var(--bronze-dk); box-shadow: var(--lift); }
 .army-bar::-webkit-scrollbar { height: 5px; }
 .army-card {
@@ -349,7 +349,7 @@
 .fx-excl g path { stroke: #f0a090; stroke-width: 1.6; stroke-dasharray: none; }
 
 /* focus tree */
-.focus-view { position: absolute; top: 90px; left: 8px; right: 306px; bottom: 8px; display: flex; flex-direction: column; animation: rise 200ms cubic-bezier(0.16, 1, 0.3, 1); }
+.focus-view { position: absolute; top: calc(56px * var(--ui-zoom)); left: 8px; right: calc(306px * var(--ui-zoom)); bottom: 8px; display: flex; flex-direction: column; animation: rise 200ms cubic-bezier(0.16, 1, 0.3, 1); }
 .fv-status { margin-left: 10px; font-size: 12.5px; }
 .fv-status b { color: var(--bronze-hi); }
 .fv-count { margin-left: 8px; }
@@ -389,7 +389,7 @@
 .fnode.s-excluded .fn-name { text-decoration: line-through; text-decoration-color: rgba(229, 96, 79, 0.7); }
 
 /* research */
-.research-view { position: absolute; top: 90px; left: 8px; right: 306px; bottom: 8px; display: flex; flex-direction: column; animation: rise 200ms cubic-bezier(0.16, 1, 0.3, 1); }
+.research-view { position: absolute; top: calc(56px * var(--ui-zoom)); left: calc(516px * var(--ui-zoom)); right: calc(306px * var(--ui-zoom)); bottom: 8px; display: flex; flex-direction: column; animation: rise 200ms cubic-bezier(0.16, 1, 0.3, 1); }
 .rv-speed { margin-left: 10px; }
 .rv-msg { margin-left: 10px; }
 .rv-slots { display: flex; gap: 4px; padding: 6px 8px; border-bottom: 1px solid var(--bronze-dk); background: rgba(0, 0, 0, 0.25); }
@@ -635,3 +635,36 @@ details[open] > .ol-h::before { transform: rotate(90deg) translateX(2px); }
 .diplo .dec-item.mine { border-color: var(--bronze-dk); }
 .hp-section .right { float: right; }
 .logi-over { color: var(--warn, #e0a050); }
+
+/* ================= UI scale ================= */
+/* The HUD grows on large screens (one zoom for every docked panel); the map overlays (unit
+   counters, fronts) and tooltips stay at screen pixels because they are positioned from the map. */
+:root { --ui-zoom: 1.1; }
+@media (max-width: 1400px) { :root { --ui-zoom: 1; } }
+@media (min-width: 1700px) { :root { --ui-zoom: 1.2; } }
+@media (min-width: 2200px) { :root { --ui-zoom: 1.35; } }
+@media (min-width: 2900px) { :root { --ui-zoom: 1.6; } }
+.topbar, .side, .outliner, .modes-dock, .army-dock, .event, .game-menu, .content-banner,
+.bookmark, .nations, .load-btn, .load-panel { zoom: var(--ui-zoom); }
+.focus-view .hp-head, .research-view .hp-head, .research-view .rv-tabs { zoom: var(--ui-zoom); }
+.tt { font-size: 13.5px; max-width: 380px; }
+
+/* research slots panel (left) */
+.rs-hero { margin-top: 10px; }
+.rs-list { display: grid; gap: 5px; }
+.rs-slot {
+  position: relative; display: grid; grid-template-columns: 46px 1fr; gap: 10px; align-items: center; padding: 7px 8px; cursor: pointer;
+  background: linear-gradient(180deg, rgba(255, 236, 196, 0.03), rgba(0, 0, 0, 0.3)); border: 1px solid rgba(0, 0, 0, 0.65);
+}
+.rs-slot:hover { border-color: var(--bronze); }
+.rs-slot.on { border-color: var(--bronze-hi); box-shadow: 0 0 10px rgba(232, 207, 152, 0.3); background: linear-gradient(180deg, #3d3423, #1e1910); }
+.rs-slot.empty { border-style: dashed; border-color: var(--bronze-dk); }
+.rs-slot.empty .rs-name { color: var(--warn); }
+.rs-ic { display: grid; place-items: center; width: 46px; height: 46px; color: var(--bronze-lt); background: rgba(0, 0, 0, 0.4); border: 1px solid rgba(0, 0, 0, 0.7); }
+.rs-txt { display: grid; gap: 3px; min-width: 0; padding-right: 26px; }
+.rs-name { font: 700 14px/1.15 var(--font-cond); color: var(--ink); }
+.rs-stop { position: absolute; right: 6px; top: 6px; width: 22px; height: 22px; }
+.rs-stop:hover { color: var(--bad); border-color: var(--bad); }
+
+/* selection box (left drag on the map) */
+.sel-box { position: fixed; display: none; pointer-events: none !important; border: 1px solid var(--bronze-hi); background: rgba(232, 207, 152, 0.1); box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.6); z-index: 5; }

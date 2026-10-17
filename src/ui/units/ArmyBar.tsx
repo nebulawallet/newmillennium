@@ -41,6 +41,11 @@ function ArmyCard({ db, session, army }: { db: ContentDB; session: Session; army
   const canExecute = !!army.front && (army.offensive.length > 0 || army.spearheads.length > 0);
   return (
     <div class={`army-card ${sel ? "on" : ""} st-${army.status}`} role="button" tabIndex={0} onClick={pick}
+      onContextMenu={(e) => {
+        e.preventDefault();
+        const ids = selectedDivisions.value.filter((id) => !army.divisions.includes(id));
+        if (ids.length) session.dispatch({ type: "assign_divisions", tag: army.owner, army: army.id, divisions: ids });
+      }}
       {...tip(() => ({
         title: army.name,
         rows: [
@@ -55,7 +60,7 @@ function ArmyCard({ db, session, army }: { db: ContentDB; session: Session; army
           ["Plan", army.executing ? "Executing" : "Holding"],
           ["Status", STATUS_TEXT[army.status]],
         ],
-        note: "Click to select its divisions; double-click to find it on the map.",
+        note: "Click to select its divisions; double-click to find it on the map. Right-click to move the selected divisions into this army.",
       }))}>
       <div class="ac-top">
         <span class="ac-cmd" {...tip(() => ({ title: "Commander", note: "No commander assigned. Commanders are not modelled yet." }))}>{Icon.recruitment({ size: 18 })}</span>
@@ -113,7 +118,7 @@ export function ArmyBar({ db, session }: { db: ContentDB; session: Session }) {
   if (!armies.length && !state.divisions.some((d) => d.owner === me)) return null;
 
   return (
-    <div class="army-dock">
+    <div class="army-dock" onContextMenu={(e) => e.preventDefault()}>
       {sel && (
         <div class="army-tools hp">
           <span class="at-name">{sel.name}</span>
