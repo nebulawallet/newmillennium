@@ -10,6 +10,7 @@ data/                    ALL game content (JSON), validated by src/content/compi
   countries/<TAG>/         country, people, parties, elections (+ cabinet, military, interest_groups, laws)
   map/                     border_overrides_2000, province_overrides, regional_cultures, population_overrides
   economy/worldbank_2000.json
+  conflicts/armed_groups.json  non-state armed groups (ISIS, Taliban, Hamas, DPR/LPR, Syrian opposition, Hezbollah)
   _schema/                 generated JSON Schemas (npm run gen-schemas)
 public/map/              generated map assets (geometry.bin, borders.bin, idmap.png, provinces.json, ...)
 scripts/
@@ -38,6 +39,7 @@ src/
   sim/ai/                  Phase 12: ai.ts (strategic, diplomatic, recruitment and military planners returning Commands)
   sim/bucket.ts            per-country monthly slots (spreads load over the month)
   worker/                  simWorker.ts: the simulation in a Web Worker (?soak page)
+  sim/conflicts/           armedGroups.ts: non-state armed groups (spawn on regions, land follows control, shrink, defeat, takeover)
   sim/diplomacy/           Phase 11: diplomacy.ts (opinion, guarantees, access, trade, sanctions, blocs, UN Security Council,
                            war justification, foreign influence)
   render/                  MapView (camera, wrap, input), WorldMap (layers, picking, map modes),

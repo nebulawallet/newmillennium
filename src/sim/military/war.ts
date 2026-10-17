@@ -139,7 +139,9 @@ export function declareWar(ctx: SimContext, tag: string, target: string, goal: W
   if (requireJustification && !justified) return { ok: false, text: j ? "The war goal is still being justified." : "Justify a war goal first." };
   const name = `${countryShort(db, state, tag)}–${countryShort(db, state, target)} war`;
   const id = state.nextWarId++;
-  state.wars.push({ id, name, attackers: [tag], defenders: [target], startDay: state.day, goal, ...(goal === "limited" ? { zone: limitedZone(ctx, tag, target, LIMITED_WAR_DEPTH) } : {}) });
+  // wars with an armed group (src/sim/conflicts) call in no allies and never end by exhaustion
+  const group = state.dynamicCountries[tag]?.kind === "armed_group" || state.dynamicCountries[target]?.kind === "armed_group";
+  state.wars.push({ id, name, attackers: [tag], defenders: [target], startDay: state.day, goal, ...(goal === "limited" ? { zone: limitedZone(ctx, tag, target, LIMITED_WAR_DEPTH) } : {}), ...(group ? { armedGroup: true } : {}) });
   const nuclear = rules.nuclear_states_2000.includes(target) || rules.nuclear_states_2000.includes(tag);
   state.worldTension = clamp(state.worldTension + rules.tension_per_war * (nuclear ? rules.nuclear_tension_multiplier : 1) * (justified ? 1 : db.diplomacyRules.unjustified_tension_multiplier), 0, 1);
   a.warSupport = clamp(a.warSupport - 0.05, 0, 1);
@@ -150,13 +152,13 @@ export function declareWar(ctx: SimContext, tag: string, target: string, goal: W
     b.followsHistory = false;
   }
   ctx.log(tag, "war", `Declares war on ${countryShort(db, state, target)}${justified ? "" : " without a justification"}`);
-  onWarDeclared(ctx, id, tag, target, justified, scripted);
+  if (!group) onWarDeclared(ctx, id, tag, target, justified, scripted);
   ctx.emit({ type: "map_changed" });
   return { ok: true, text: `War declared on ${countryShort(db, state, target)}.` };
 }
 
 const countryShort = (db: ContentDB, state: GameState, tag: string) =>
-  state.dynamicCountries[tag]?.name ?? db.countryList.find((c) => c.tag === tag)?.short_name ?? db.countries.get(tag)?.country?.name.en ?? tag;
+  state.dynamicCountries[tag]?.name ?? db.countryList.find((c) => c.tag === tag)?.short_name ?? db.countries.get(tag)?.country?.name.en ?? db.countryList.find((c) => c.tag === tag)?.name ?? tag;
 
 // ------------------------------------------------------------------ peace
 
@@ -387,7 +389,7 @@ export const warSystem: System = {
       }
       const aWs = state.countries[aLead]?.warSupport ?? 0, dWs = state.countries[dLead]?.warSupport ?? 0;
       const months = (state.day - war.startDay) / 30;
-      if (months >= rules.white_peace_min_months && Math.min(aWs, dWs) <= rules.white_peace_war_support) makePeace(ctx, war, null, false);
+      if (!war.armedGroup && months >= rules.white_peace_min_months && Math.min(aWs, dWs) <= rules.white_peace_war_support) makePeace(ctx, war, null, false);
     }
   },
 };

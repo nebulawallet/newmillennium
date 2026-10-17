@@ -17,6 +17,7 @@ import { economySystem } from "./economy/economy.ts";
 import { researchSystem } from "./research/research.ts";
 import { militarySystem } from "./military/military.ts";
 import { warSystem } from "./military/war.ts";
+import { armedGroupSystem } from "./conflicts/armedGroups.ts";
 import { diplomacySystem } from "./diplomacy/diplomacy.ts";
 import { aiSystem } from "./ai/ai.ts";
 import { personParty } from "./politics/common.ts";
@@ -279,6 +280,7 @@ export function defaultSystems(): System[] {
     researchSystem,
     militarySystem,
     warSystem,
+    armedGroupSystem,
     diplomacySystem,
     aiSystem,
     electionSystem,

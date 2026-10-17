@@ -15,6 +15,17 @@
 import { z } from "zod";
 import { Id, IsoDate, ScopedId, Share, Tag } from "../schemas/common.ts";
 
+/**
+ * Provinces of one country for armed-group effects: whole first-level regions (map adm1 codes, see
+ * public/map/provinces.json) and/or single provinces by their map name. `from` is the country (or group) that
+ * holds them when the effect runs; for armed_group_loses it is the group's original host.
+ */
+const GroupRegion = z.strictObject({
+  from: Tag,
+  adm1: z.array(z.string()).optional(),
+  provinces: z.array(z.string()).optional(),
+});
+
 /** What kind of content id an argument refers to; checked against the content database. */
 export type RefKind =
   | "tag"
@@ -30,7 +41,8 @@ export type RefKind =
   | "trait"
   | "modifier"
   | "tech"
-  | "bloc";
+  | "bloc"
+  | "armed_group";
 
 interface ScriptDef {
   args: z.ZodType;
@@ -157,6 +169,33 @@ export const EFFECTS: Record<string, ScriptDef> = {
     args: z.strictObject({ from: Tag, adm1: z.array(z.string()).min(1) }),
     description: "Provinces of `from` in these first-level regions (map adm1 codes) pass to this country.",
     refs: { from: "tag" },
+  },
+  spawn_armed_group: {
+    args: z.strictObject({
+      group: Tag,
+      regions: z.array(GroupRegion).default([]),
+      divisions: z.number().int().min(0).max(50).default(0),
+      /** Countries the group fights; default: every country it takes provinces from. */
+      war_with: z.array(Tag).optional(),
+    }),
+    description: "Put an armed group on the map (or extend it): it takes these provinces and fields divisions there.",
+    refs: { group: "armed_group", "regions.from": "tag", war_with: "tag" },
+  },
+  armed_group_loses: {
+    args: z.strictObject({ group: Tag, regions: z.array(GroupRegion).min(1), to: Tag.optional() }),
+    description: "An armed group loses these provinces: they go back to the country they were taken from (or to `to`).",
+    refs: { group: "armed_group", "regions.from": "tag", to: "tag" },
+  },
+  end_armed_group: {
+    args: z.strictObject({
+      group: Tag,
+      /** The group's provinces and divisions pass to this country (a takeover or an annexation); otherwise its provinces go back and its divisions disband. */
+      into: Tag.optional(),
+      /** Disband this country's divisions first (its army collapsed in the takeover). */
+      disband_army_of: Tag.optional(),
+    }),
+    description: "End an armed group: defeated, or merged into a country.",
+    refs: { group: "armed_group", into: "tag", disband_army_of: "tag" },
   },
   leave_bloc: { args: Id, description: "The country leaves a bloc.", refs: { "": "bloc" } },
   release_country: { args: Tag, description: "Release a releasable country.", refs: { "": "tag" } },

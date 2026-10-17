@@ -52,7 +52,7 @@ Audit each before committing (checklist in HANDOFF.md, "Next steps").
 
 **Missing (do these):**
 
-1. **Non-state actors as sides.** Extend the civil-war / rebel mechanic so an event can spawn a named armed group on given regions, with divisions:
+1. **Non-state actors as sides.** (Mechanic done 17 October 2026; see CONTENT_GUIDE §12.) Extend the civil-war / rebel mechanic so an event can spawn a named armed group on given regions, with divisions:
    - ISIS in Iraq and Syria, June 2014
    - the Taliban insurgency from 2001
    - Hamas controlling Gaza from June 2007

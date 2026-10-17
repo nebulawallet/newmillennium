@@ -288,3 +288,14 @@ One file per tree: `{ id, name, countries, focuses: [ { id, name, description, x
 - `data/diplomacy/un.json`: permanent members, the regional groups and their non-permanent seats, and the real elected members with their terms. Later elections are simulated.
 - `data/diplomacy/rules.json`: opinion weights, costs and thresholds (gameplay values).
 - Enlargements are events with a `historical` date, the countries that join in `countries`, and a `join_bloc` effect (`leave_bloc` for withdrawals). Triggers `in_bloc` and `opinion_of_above` and effects `add_opinion` and `add_wargoal` are available to every script.
+
+## 12. Armed groups (non-state sides)
+
+- `data/conflicts/armed_groups.json`: groups that events put on the map. Each one has a three-letter `tag` (not a country tag), `name`, `color`, `kind` (`insurgency`, `militant_group`, `separatist`, `rebel_coalition`), a division `template`, a neutral `description`, `source` and `confidence`.
+- Groups are not on the map at the start. Three effects run them; any event can use them:
+  - `spawn_armed_group` = `{ group, regions: [{ from, adm1?, provinces? }], divisions, war_with? }`: the group takes the provinces of `from` in those regions (map adm1 codes, or province names from `public/map/provinces.json`; neither means all of them), raises divisions there, and fights every `from` country in a limited war, unless `war_with` lists others (`[]` for none). Running it again on an existing group extends it.
+  - `armed_group_loses` = `{ group, regions, to? }`: the group's provinces whose original country is `from` go back to it, or to `to`. A group left with no land is defeated.
+  - `end_armed_group` = `{ group, into?, disband_army_of? }`: without `into`, its land goes back and its divisions disband; with `into`, land and divisions pass to that country (a takeover, or an annexation). `disband_army_of` first removes a country's army (it collapsed in the takeover).
+- Wars with a group call in no allies and never end by exhaustion; they end by a script (`white_peace`, `end_armed_group`) or when the group holds nothing. While a group is at war, land changes hands with control.
+- Every date that spawns, shrinks or ends a group is a fact: give the event a `historical` date with a source.
+

@@ -15,7 +15,7 @@ import { initialMilitary, type Division, type MilitaryState } from "./military/m
 import type { Battle } from "./military/war.ts";
 import { initialDiplomacy, tradeIndex, type DiplomacyState } from "./diplomacy/diplomacy.ts";
 
-export const STATE_VERSION = 8;
+export const STATE_VERSION = 9;
 
 export interface GameRules {
   /** historical: real election winners are heavily weighted; dynamic: results come purely from the simulation. */
@@ -175,6 +175,8 @@ export interface War {
   goal: "conquest" | "status_quo" | "limited";
   /** Limited wars: the defender's provinces the attackers aim for. */
   zone?: number[];
+  /** A war an armed group fights (src/sim/conflicts): it never ends by exhaustion, only by script or defeat. */
+  armedGroup?: boolean;
 }
 
 export interface LogEntry {
@@ -209,7 +211,7 @@ export interface DynamicCountry {
   name: string;
   color: string;
   parent: string;
-  kind: "rebels";
+  kind: "rebels" | "armed_group";
 }
 
 export interface GameState {
@@ -230,6 +232,8 @@ export interface GameState {
   mapResults: Record<string, Record<string, string>>;
   pendingCoalition: PendingCoalition | null;
   dynamicCountries: Record<string, DynamicCountry>;
+  /** Armed groups on the map: each group-held province's original country, by province id. */
+  armedGroups: { home: Record<string, string> };
   globalFlags: Record<string, number>;
   market: MarketState;
   /** Buildings added during play, per province id. */
@@ -271,8 +275,9 @@ export function createInitialState(
   for (const entry of db.countryList) {
     const cc = db.countries.get(entry.tag);
     const c = cc?.country;
-    // research "default": no politics data, the default profile (data/rules/politics.json) supplies a generic government
-    const dp = !c && entry.research === "default" ? db.politicsRules.default_profile : undefined;
+    // no politics data (research "default", or a folder not written yet): the default profile (data/rules/politics.json)
+    // supplies a generic government
+    const dp = !c ? db.politicsRules.default_profile : undefined;
     const govType = c?.government.type ?? (dp ? (entry.start_status === "insurgent" ? dp.insurgent_government_type : dp.government_type) : "failed_contested");
     const gov = db.governmentTypes.get(govType);
 
@@ -396,6 +401,7 @@ export function createInitialState(
     mapResults: {},
     pendingCoalition: null,
     dynamicCountries: {},
+    armedGroups: { home: {} },
     globalFlags: {},
     market: { prices: Object.fromEntries(db.economyRules.resources.map((r) => [r.id, 1])), demand: 1 },
     provinceBuildings: {},
@@ -438,6 +444,7 @@ export function migrateState(db: ContentDB, s: GameState): GameState {
   s.mapResults ??= {};
   s.pendingCoalition ??= null;
   s.dynamicCountries ??= {};
+  s.armedGroups ??= { home: {} };
   s.globalFlags ??= {};
   s.market ??= fresh.market;
   s.provinceBuildings ??= {};

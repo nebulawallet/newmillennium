@@ -25,9 +25,13 @@ function single(node: unknown, path: string, out: ScriptIssue[]): [string, unkno
   return [k, (node as Record<string, unknown>)[k]];
 }
 
-function getPath(obj: unknown, path: string): unknown {
-  if (path === "") return obj;
-  return path.split(".").reduce<unknown>((o, p) => (o && typeof o === "object" ? (o as Record<string, unknown>)[p] : undefined), obj);
+/** Every value at a dot-separated path; arrays along the way (and at the end) are flattened. */
+function valuesAt(obj: unknown, path: string): unknown[] {
+  let cur: unknown[] = [obj];
+  for (const p of path === "" ? [] : path.split(".")) {
+    cur = cur.flatMap((o) => (Array.isArray(o) ? o : [o])).map((o) => (o && typeof o === "object" ? (o as Record<string, unknown>)[p] : undefined));
+  }
+  return cur.flatMap((o) => (Array.isArray(o) ? o : [o]));
 }
 
 function checkArgs(
@@ -46,8 +50,8 @@ function checkArgs(
   }
   if (refs && def.refs) {
     for (const [p, kind] of Object.entries(def.refs)) {
-      const v = getPath(args, p);
-      if (typeof v === "string" && !refs(kind, v)) out.push({ path: `${path}.${key}${p ? "." + p : ""}`, message: `unknown ${kind} '${v}'` });
+      for (const v of valuesAt(args, p))
+        if (typeof v === "string" && !refs(kind, v)) out.push({ path: `${path}.${key}${p ? "." + p : ""}`, message: `unknown ${kind} '${v}'` });
     }
   }
 }

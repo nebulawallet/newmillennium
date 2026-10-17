@@ -18,6 +18,7 @@ import { calibrate } from "../politics/voteModel.ts";
 import { initialSchedule } from "../politics/schedule.ts";
 import { applyShock } from "../economy/economy.ts";
 import { grantTech } from "../research/research.ts";
+import { armedGroupLoses, endArmedGroup, spawnArmedGroup, type GroupRegion } from "../conflicts/armedGroups.ts";
 
 export interface Scope {
   /** The country the script currently acts on. */
@@ -350,6 +351,9 @@ function effect(ctx: SimContext, scope: Scope, k: string, v: unknown, source: st
       if (moved) ctx.emit({ type: "map_changed" });
       break;
     }
+    case "spawn_armed_group": spawnArmedGroup(ctx, a.group as string, (a.regions as GroupRegion[] | undefined) ?? [], (a.divisions as number | undefined) ?? 0, a.war_with as string[] | undefined); break;
+    case "armed_group_loses": armedGroupLoses(ctx, a.group as string, a.regions as GroupRegion[], a.to as string | undefined); break;
+    case "end_armed_group": endArmedGroup(ctx, a.group as string, a.into as string | undefined, a.disband_army_of as string | undefined); break;
     case "leave_bloc": leaveBloc(ctx, scope.tag, v as string); break;
     case "add_wargoal": {
       const target = a.target as string;
@@ -374,7 +378,7 @@ export function describeEffects(db: ContentDB, effects: unknown[], depth = 0): s
     ig: (id: string) => db.interestGroupTypes.get(id)?.name ?? id,
     sub: (id: string) => db.subIdeologies.get(id)?.name ?? id,
     law: (id: string) => db.lawCategories.get(db.lawCategoryOf.get(id) ?? "")?.laws.find((l) => l.id === id)?.name ?? id,
-    tag: (t: string) => db.countries.get(t)?.country?.name.en ?? db.countryList.find((c) => c.tag === t)?.name ?? t,
+    tag: (t: string) => db.countries.get(t)?.country?.name.en ?? db.countryList.find((c) => c.tag === t)?.name ?? db.armedGroups.get(t)?.name ?? t,
   };
   for (const node of effects) {
     const [k, v] = entry(node);
@@ -456,6 +460,9 @@ export function describeEffects(db: ContentDB, effects: unknown[], depth = 0): s
       case "add_divisions": line = `${a.count} new divisions`; break;
       case "white_peace": line = `Peace with ${name.tag(a.with as string)}`; break;
       case "transfer_provinces": line = `Provinces of ${name.tag(a.from as string)} pass to this country`; break;
+      case "spawn_armed_group": line = `${db.armedGroups.get(a.group as string)?.name ?? a.group} takes provinces of ${[...new Set(((a.regions as GroupRegion[] | undefined) ?? []).map((r) => name.tag(r.from)))].join(", ") || "nobody"}${a.divisions ? ` with ${a.divisions} divisions` : ""}`; break;
+      case "armed_group_loses": line = `${db.armedGroups.get(a.group as string)?.name ?? a.group} loses provinces${a.to ? ` to ${name.tag(a.to as string)}` : ""}`; break;
+      case "end_armed_group": line = a.into ? `${db.armedGroups.get(a.group as string)?.name ?? a.group} merges into ${name.tag(a.into as string)}` : `${db.armedGroups.get(a.group as string)?.name ?? a.group} is defeated`; break;
       case "join_bloc": line = `Joins ${db.blocs.get(v as string)?.article === false ? "" : "the "}${db.blocs.get(v as string)?.name ?? v}`; break;
       case "leave_bloc": line = `Leaves ${db.blocs.get(v as string)?.article === false ? "" : "the "}${db.blocs.get(v as string)?.name ?? v}`; break;
       case "add_trait": line = `${name.person(a.person as string)} gains a trait`; break;

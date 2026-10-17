@@ -1,0 +1,124 @@
+{
+  "note": "Non-state armed groups that historical events put on the map (docs/CONFLICTS_PLAN.md). Tags are three letters and must not be country tags. Colours and templates are gameplay choices, not facts.",
+  "groups": [
+    {
+      "tag": "ISG",
+      "name": "Islamic State",
+      "short_name": "Islamic State",
+      "color": "#2B2B2B",
+      "kind": "militant_group",
+      "template": "infantry_division",
+      "description": "Salafi jihadist militant organisation, also known as ISIL, ISIS or Da'esh. It held large parts of Iraq and Syria from 2014, proclaimed a caliphate that year, and lost its territory there by 2019.",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Islamic_State",
+          "title": "Wikipedia: Islamic State",
+          "accessed": "2026-10-17"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "tag": "TAL",
+      "name": "Taliban",
+      "short_name": "Taliban",
+      "color": "#C9C2A8",
+      "kind": "insurgency",
+      "template": "infantry_division",
+      "description": "The Taliban insurgency began after the movement lost power in the 2001 war in Afghanistan. It fought the Afghan governments of Hamid Karzai and Ashraf Ghani and a US-led coalition; its 2021 offensive ended with the collapse of the Ghani government.",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Taliban_insurgency",
+          "title": "Wikipedia: Taliban insurgency",
+          "accessed": "2026-10-17"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "tag": "HAM",
+      "name": "Hamas",
+      "short_name": "Hamas",
+      "color": "#3E7D3A",
+      "kind": "militant_group",
+      "template": "infantry_division",
+      "description": "The Islamic Resistance Movement, a Sunni Islamist Palestinian nationalist organisation with a military wing, the al-Qassam Brigades. Founded in 1987; it has governed the Gaza Strip since 2007.",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Hamas",
+          "title": "Wikipedia: Hamas",
+          "accessed": "2026-10-17"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "tag": "DPR",
+      "name": "Donetsk People's Republic",
+      "short_name": "Donetsk PR",
+      "color": "#5A6E8C",
+      "kind": "separatist",
+      "template": "infantry_division",
+      "description": "Proclaimed in 2014 by Russian-backed separatists who took control of part of Donetsk Oblast, starting the war in Donbas. It declared independence and was annexed by Russia in 2022.",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Donetsk_People's_Republic",
+          "title": "Wikipedia: Donetsk People's Republic",
+          "accessed": "2026-10-17"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "tag": "LPR",
+      "name": "Luhansk People's Republic",
+      "short_name": "Luhansk PR",
+      "color": "#6E5A8C",
+      "kind": "separatist",
+      "template": "infantry_division",
+      "description": "Proclaimed in 2014 by Russian-backed separatists who took control of part of Luhansk Oblast. It declared independence and was annexed by Russia in 2022.",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Luhansk_People's_Republic",
+          "title": "Wikipedia: Luhansk People's Republic",
+          "accessed": "2026-10-17"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "tag": "SYO",
+      "name": "Syrian opposition",
+      "short_name": "Syrian opposition",
+      "color": "#3F8F5B",
+      "kind": "rebel_coalition",
+      "template": "infantry_division",
+      "description": "Umbrella term for the groups that opposed the Ba'athist government in the Syrian civil war. Army defectors formed the Free Syrian Army in July 2011; by 2021 Hay'at Tahrir al-Sham was the strongest faction. Modelled here as one side.",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Syrian_opposition",
+          "title": "Wikipedia: Syrian opposition",
+          "accessed": "2026-10-17"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "tag": "HEZ",
+      "name": "Hezbollah",
+      "short_name": "Hezbollah",
+      "color": "#D4B13A",
+      "kind": "militant_group",
+      "template": "infantry_division",
+      "description": "Lebanese Shia Islamist political party with a paramilitary wing, founded in 1982. Its armed wing fought Israel in the 2006 Lebanon war.",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Hezbollah",
+          "title": "Wikipedia: Hezbollah",
+          "accessed": "2026-10-17"
+        }
+      ],
+      "confidence": "verified"
+    }
+  ]
+}

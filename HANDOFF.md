@@ -154,7 +154,10 @@ Follow [docs/CONFLICTS_PLAN.md](docs/CONFLICTS_PLAN.md). In short:
    - Default countries need no folder; any folder they have is ignored with a `DEFAULT_FOLDER` warning.
    - The default profile (`default_profile` in `data/rules/politics.json`, government type `default_government`) makes them active with an economy, research and an army, but no named people, parties or elections. They are not playable. Soak: 209 acting countries, about 4.5 ms per day (was 1.0 with ~70).
 2. **Conflict countries.** IRQ, AFG and AFN are audited and committed (light tier; IRQ is close to full depth). Hamid Majid Mousa's Wikidata-only death (28 February 2026) was removed because English Wikipedia still lists him as living. Light research for SYR, maybe LBN and YEM. Decide with the user which other partial folders to keep (IND, PAK, CAN, MEX) and delete the rest.
-3. **Non-state actors.** Extend the rebel / civil-war mechanic so events spawn and end named armed groups on real dates and regions: ISIS, the Taliban, Hamas in Gaza, the Donbas separatists, the Syrian rebels.
+3. **Non-state actors.** Done (17 Oct 2026): `data/conflicts/armed_groups.json` (ISG, TAL, HAM, DPR, LPR, SYO, HEZ) and `src/sim/conflicts/armedGroups.ts`. Effects `spawn_armed_group`, `armed_group_loses`, `end_armed_group` (CONTENT_GUIDE §12). GameState v9 adds `armedGroups.home`. `npx tsx scripts/dev/group-trial.ts GROUP HOST "Province,..." [divisions] [days]` runs a group against the AI on the real map.
+   - Balance is open: in a trial, 8 ISIS divisions lost four of five Iraqi provinces to 24 Iraqi divisions within two months. The scripts in step 4 need groups that hold until their real dates.
+   - Lebanon is only two provinces on the map, so a Hezbollah region for 2006 would cover Beirut too.
+   - AFN (United Front) only controls Badakhshan and Takhar at the start (owner AFG).
 4. **Conflict scripts.** Iraq (2003 to ISIS to withdrawal), Afghanistan (2001 to 2021), Syria (2011 to 2024), Israel–Palestine (2007 split, Gaza wars, 7 October), Lebanon 2006. All with sourced dates.
 5. **Then Phase 13 polish:**
    - Balance: Turkish and Iranian debt fall fast.

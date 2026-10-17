@@ -45,6 +45,8 @@ import {
   type Person,
 } from "./schemas/country.ts";
 
+import { ArmedGroupsFile, type ArmedGroup } from "./schemas/conflicts.ts";
+
 export const GAME_START = "2000-01-01";
 /** Key in a law's ideology_support_drift meaning "the ruling party's sub-ideology". */
 export const RULING_IDEOLOGY = "ruling";
@@ -116,6 +118,8 @@ export interface ContentDB {
   militaryRules: MilitaryRules;
   warRules: WarRules;
   blocs: Map<string, BlocDef>;
+  /** Non-state armed groups that events can put on the map (data/conflicts/armed_groups.json). */
+  armedGroups: Map<string, ArmedGroup>;
   un: UnData;
   diplomacyRules: DiplomacyRules;
   techCategories: Map<string, Omit<TechCategory, "techs"> & { techs: string[] }>;
@@ -232,6 +236,7 @@ export function compileContent(files: FileProvider, opts: CompileOptions = {}): 
     militaryRules: load("units/military.json", MilitaryRulesFile, false) ?? MilitaryRulesFile.parse({}),
     warRules: load("units/war.json", WarRulesFile, false) ?? WarRulesFile.parse({}),
     blocs: new Map((load("diplomacy/blocs.json", BlocsFile, false)?.blocs ?? []).map((b) => [b.id, b])),
+    armedGroups: new Map((load("conflicts/armed_groups.json", ArmedGroupsFile, false)?.groups ?? []).map((g) => [g.tag, g])),
     un: load("diplomacy/un.json", UnFile, false) ?? EMPTY_UN,
     diplomacyRules: load("diplomacy/rules.json", DiplomacyRulesFile, false) ?? DiplomacyRulesFile.parse({}),
     techCategories: new Map(),
@@ -373,6 +378,18 @@ export function compileContent(files: FileProvider, opts: CompileOptions = {}): 
     for (const u of Object.keys(t.units)) if (!db.subUnits.has(u)) err("REF", "units/military.json", `template ${t.id}: unknown sub-unit '${u}'`);
   for (const law of Object.keys(db.militaryRules.manpower_share)) if (!db.lawCategoryOf.has(law)) err("REF", "units/military.json", `manpower_share: unknown law '${law}'`);
 
+  // ---- armed groups
+  {
+    const f = "conflicts/armed_groups.json";
+    const tags = new Set(db.countryList.map((c) => c.tag));
+    const templates = new Set(db.militaryRules.templates.map((t) => t.id));
+    for (const g of db.armedGroups.values()) {
+      if (tags.has(g.tag)) err("DUP_ID", f, `${g.tag}: armed group tag is also a country tag`);
+      if (!templates.has(g.template)) err("REF", f, `${g.tag}: unknown template '${g.template}'`);
+      if (g.confidence === "needs_review" && !g.review_note) warn("REVIEW_NOTE", f, `${g.tag} is needs_review without review_note`);
+    }
+  }
+
   // ---- diplomacy
   {
     const tags = new Set(db.countryList.map((c) => c.tag));
@@ -443,10 +460,11 @@ export const EMPTY_UN: UnData = { permanent: [], seats: {}, groups: {}, elected:
 
 /** Does a content reference resolve? Shared by every script check. */
 export function refChecker(db: ContentDB) {
-  const tags = new Set(db.countryList.map((c) => c.tag));
+  const tags = new Set([...db.countryList.map((c) => c.tag), ...db.armedGroups.keys()]);
   return (kind: RefKind, v: string): boolean => {
     switch (kind) {
       case "tag": return tags.has(v);
+      case "armed_group": return db.armedGroups.has(v);
       case "person": return db.people.has(v);
       case "party": return db.parties.has(v);
       case "office": return db.offices.has(v);

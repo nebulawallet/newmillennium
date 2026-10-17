@@ -30,7 +30,7 @@ export function countryColor(db: ContentDB, state: GameState | null | undefined,
   return state?.dynamicCountries[tag]?.color ?? db.countryColors.get(tag);
 }
 
-function blankCountry(tag: string, govType: string, day: number): CountryState {
+export function blankCountry(tag: string, govType: string, day: number): CountryState {
   return {
     tag, active: true, govType, politicalPower: 0, stability: 0.5, warSupport: 0.8, rulingParties: [], confidenceAndSupply: [],
     govSinceDay: day, offices: {}, officeSince: {}, historicalOffices: {}, followsHistory: false, partyPopularity: {}, partyStatus: {},
