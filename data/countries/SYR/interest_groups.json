@@ -1,0 +1,15 @@
+{
+  "note": "Influence and approval are gameplay starting values for 1 January 2000 (Ba'athist Syria under President Hafez al-Assad), not measured data. Influence reflects institutional weight: the armed forces and security services around the presidency, the Ba'ath Party apparatus, state-linked business and the rural base of the party.",
+  "interest_groups": [
+    { "type": "military", "influence": 0.6, "approval": 65, "note": "Armed forces." },
+    { "type": "security_services", "influence": 0.65, "approval": 65, "note": "Intelligence and security branches." },
+    { "type": "business", "influence": 0.2, "approval": 45, "note": "State-linked trading and merchant networks under a largely state-run economy." },
+    { "type": "labour_unions", "influence": 0.1, "approval": 50, "note": "Unions were organised within the front's structures." },
+    { "type": "religious_establishment", "influence": 0.2, "approval": 40, "note": "State-supervised religious institutions of the main communities." },
+    { "type": "rural", "influence": 0.3, "approval": 55, "note": "A core support base of the Ba'ath Party." },
+    { "type": "urban_middle_class", "influence": 0.15, "approval": 40 },
+    { "type": "minorities", "influence": 0.15, "approval": 45, "note": "Kurdish, Christian, Druze and other communities." },
+    { "type": "youth_students", "influence": 0.1, "approval": 45, "note": "Organised in party-linked youth and student unions." },
+    { "type": "media", "influence": 0.05, "approval": 50, "note": "State-controlled." }
+  ]
+}

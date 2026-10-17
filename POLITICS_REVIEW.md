@@ -48,11 +48,11 @@ Live sources sometimes report allegations or investigations involving real peopl
 
 <!-- AUTO-GENERATED BELOW: run `npm run review-report`; edits below this line are overwritten -->
 
-## Needs review: 583 of 6450 records
+## Needs review: 584 of 6433 records
 
 Countries with politics data: 77 / 212.
 
-Countries with no data yet (135): KAZ, KGZ, TJK, TKM, UZB, ATG, BHS, BRB, BLZ, BOL, COL, CRI, CUB, DMA, DOM, ECU, SLV, GRD, GTM, GUY, HTI, HND, JAM, NIC, PAN, PRY, PER, KNA, LCA, VCT, SUR, TTO, URY, VEN, FAR, DZA, BHR, EGY, JOR, KWT, LBN, LBY, MRT, MAR, OMN, QAT, SAU, SYR, TUN, ARE, YEM, ESH, KUR, AGO, BEN, BWA, BFA, BDI, CPV, CMR, CAF, TCD, COM, COD, COG, CIV, DJI, GNQ, ERI, SWZ, ETH, GAB, GMB, GHA, GIN, GNB, KEN, LSO, LBR, MDG, MWI, MLI, MUS, MOZ, NAM, NER, NGA, RWA, STP, SEN, SYC, SLE, ZAF, SDN, TZA, TGO, UGA, ZMB, ZWE, SSD, SML, UNI, RCD, MLC, BGD, BTN, MDV, NPL, LKA, TEL, BRN, KHM, IDN, LAO, MYS, MMR, PHL, SGP, THA, VNM, TLS, AUS, NZL, FJI, PNG, SLB, VUT, WSM, TON, KIR, TUV, NRU, FSM, MHL, PLW
+Countries with no data yet (135): KAZ, KGZ, TJK, TKM, UZB, ATG, BHS, BRB, BLZ, BOL, COL, CRI, CUB, DMA, DOM, ECU, SLV, GRD, GTM, GUY, HTI, HND, JAM, MEX, NIC, PAN, PRY, PER, KNA, LCA, VCT, SUR, TTO, URY, VEN, FAR, DZA, BHR, EGY, JOR, KWT, LBY, MRT, MAR, OMN, QAT, SAU, TUN, ARE, YEM, ESH, KUR, AGO, BEN, BWA, BFA, BDI, CPV, CMR, CAF, TCD, COM, COD, COG, CIV, DJI, GNQ, ERI, SWZ, ETH, GAB, GMB, GHA, GIN, GNB, KEN, LSO, LBR, MDG, MWI, MLI, MUS, MOZ, NAM, NER, NGA, RWA, STP, SEN, SYC, SLE, ZAF, SDN, TZA, TGO, UGA, ZMB, ZWE, SSD, SML, UNI, RCD, MLC, BGD, BTN, MDV, NPL, PAK, LKA, TEL, BRN, KHM, IDN, LAO, MYS, MMR, PHL, SGP, THA, VNM, TLS, AUS, NZL, FJI, PNG, SLB, VUT, WSM, TON, KIR, TUV, NRU, FSM, MHL, PLW
 
 ### ABK — Abkhazia (6)
 
@@ -608,6 +608,15 @@ Countries with no data yet (135): KAZ, KGZ, TJK, TKM, UZB, ATG, BHS, BRB, BLZ, B
 | party | `kos.sl` Serb List (SL) | Check the years Goran Rakić led the party (2017 assumed) and add Zlatan Elek if biographical data can be found. | data/countries/KOS/parties.json |
 | election | `president_2026` indirect_presidential 2026-10-06 | Very recent event (October 2026) sourced only from Wikipedia; confirm the vote count and inauguration date with an official source. | data/countries/KOS/elections.json |
 
+### LBN — Lebanon (4)
+
+| kind | record | what to check | file |
+|---|---|---|---|
+| chamber | `parliament` Parliament | seats_2000 uses the 1996 result without the by-elections that followed the May 1997 judicial review (four seats were lost); confirm the composition on 1 January 2000. The sect allocation is from the 2022 article. | data/countries/LBN/country.json |
+| person | `lbn.michel_aoun` Michel Aoun (b. 1935) | Birth date conflict between Wikipedia (1935-02-18) and Wikidata (1933-09-30); confirm against an independent source. | data/countries/LBN/people.json |
+| person | `lbn.hassan_nasrallah` Hassan Nasrallah (b. 1960) | Birth date conflict between Wikipedia (1960-08-31) and Wikidata (1959-11-28); confirm against an independent source. | data/countries/LBN/people.json |
+| party | `lbn.future` Future Movement (Future) | The founding year of the Future Movement is disputed between sources (1995 as the Hariri Bloc, 2007 officially, 2009 declared); the year 2007 is used. Confirm which date the game should use. | data/countries/LBN/parties.json |
+
 ### LIE — Liechtenstein (5)
 
 | kind | record | what to check | file |
@@ -702,13 +711,6 @@ Countries with no data yet (135): KAZ, KGZ, TJK, TKM, UZB, ATG, BHS, BRB, BLZ, B
 | party | `mda.ppda` Democracy at Home Party (PPDA) | Wikidata lists Costiuc as chairman without dates; 2025 is the election at which the fetched infobox names him as leader. Confirm when he became chairman. | data/countries/MDA/parties.json |
 | election | `presidential_2009_nov` indirect_presidential 2009-11-10 | Add Lupu's vote totals in each round (the fetched article does not give them). | data/countries/MDA/elections.json |
 
-### MEX — Mexico (2)
-
-| kind | record | what to check | file |
-|---|---|---|---|
-| chamber | `chamber_of_deputies` Chamber of Deputies | seats_2000 uses the 1997 election result; check the parliamentary group sizes of the LVII Legislature on 1 January 2000. Also confirm the 2% PR threshold for 1997-2012. | data/countries/MEX/country.json |
-| chamber | `senate` Senate of the Republic | Composition after the 1997 partial Senate election; check the group sizes on 1 January 2000. | data/countries/MEX/country.json |
-
 ### MKD — Macedonia (6)
 
 | kind | record | what to check | file |
@@ -785,15 +787,6 @@ Countries with no data yet (135): KAZ, KGZ, TJK, TKM, UZB, ATG, BHS, BRB, BLZ, B
 | kind | record | what to check | file |
 |---|---|---|---|
 | party | `nor.h` Conservative Party (H) | The leadership change from Erna Solberg to Ine Eriksen Søreide is given only as the year 2026 in the party article; confirm the exact date of the 2026 party convention. | data/countries/NOR/parties.json |
-
-### PAK — Pakistan (4)
-
-| kind | record | what to check | file |
-|---|---|---|---|
-| chamber | `national_assembly` National Assembly | The 1997 results table and infobox disagree on PML(N) seats (135 vs 137). Others = PPP (Shaheed Bhutto) 1, NPP 1, Jamhoori Wattan Party 2 and the 10 minority seats. | data/countries/PAK/country.json |
-| office | `pak.president` President of Pakistan | Wikipedia's list of presidents shows a break in Musharraf's tenure between 15 October and 19 November 2007; check whether that period should be recorded differently (Wikidata has him continuously in office 2001-06-20 to 2008-08-18). | data/countries/PAK/country.json |
-| person | `pak.zafarullah_khan_jamali` Zafarullah Khan Jamali (b. 1944) | Wikidata gives 1 January 1944 as the birth date; a 1 January date may be a placeholder. Confirm against Wikipedia. | data/countries/PAK/people.json |
-| election | `national_assembly_2024` legislative 2024-02-08 | Seat counts changed after the election as reserved seats were allocated and PTI-backed members joined the Sunni Ittehad Council; confirm the final composition and whether the 25 unallocated reserved seats should be assigned. | data/countries/PAK/elections.json |
 
 ### PMR — Transnistria (5)
 
@@ -935,6 +928,14 @@ Countries with no data yet (135): KAZ, KGZ, TJK, TKM, UZB, ATG, BHS, BRB, BLZ, B
 |---|---|---|---|
 | party | `swe.fp` Liberals (Liberal People's Party until 2015) (L) | Confirm the exact date of the rename from Folkpartiet liberalerna to Liberalerna (2015); the research sources only show the change of name between the 2014 and 2018 elections. | data/countries/SWE/parties.json |
 | election | `riksdag_2026` legislative 2026-09-13 | Recent election: results were still described as subject to formal certification by the Election Authority. Re-check final vote counts and the outcome of government formation. | data/countries/SWE/elections.json |
+
+### SYR — Syria (3)
+
+| kind | record | what to check | file |
+|---|---|---|---|
+| chamber | `people_council` People's Council | The electoral system type for the 1998 People's Council (shown as block voting in multi-member constituencies) is inferred from the Wikipedia statement about multi-member constituencies; confirm it and how seats were reserved for the front. | data/countries/SYR/country.json |
+| party | `syr.arab_socialist_union` Arab Socialist Union Party of Syria (ASU) | Founding is given as 1973 in the infobox; confirm the exact date. The 1998 election table names the party 'Arab Socialist Union Party' and Safwan al-Qudsi's start as leader is 1983 (Wikidata/infobox) or 1984 (article text). | data/countries/SYR/parties.json |
+| election | `people_assembly_2025` legislative 2025-10-05 | The seat breakdown mixes elected and appointed members and the Wikipedia table and diagram disagree on vacant seats (4 or 5). Confirm the party split once the assembly's composition is settled. The appointments (1 July 2026) and first session (12 July 2026) are after June 2026 and rest on the Wikipedia articles only. | data/countries/SYR/elections.json |
 
 ### TUR — Turkey (4)
 

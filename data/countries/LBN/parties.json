@@ -1,0 +1,118 @@
+{
+  "parties": [
+    {
+      "id": "lbn.amal",
+      "name": { "en": "Amal Movement", "native": "حركة أمل" },
+      "abbrev": { "en": "Amal", "native": "أمل" },
+      "color": "#008000",
+      "sub_ideology": "big_tent",
+      "founded": "1974-07-06",
+      "status_2000": "active",
+      "leader_history": [
+        { "person": "lbn.nabih_berri", "from": 1980, "title": "President of the movement" }
+      ],
+      "popularity_2000": 0.0625,
+      "popularity_note": "No national vote shares were published for the 1996 election. 0.0625 is Amal's share of seats (8 of 128) in the 1996 election, used as a proxy; the Berri bloc also had 13 independents (Wikipedia: 1996 Lebanese general election).",
+      "regional_base": [],
+      "note": "Shia-affiliated party and former militia founded by Musa al-Sadr. Wikipedia's infobox gives 6 July 1974; Wikidata gives 1975. Nabih Berri has led it since 1980 and has been Speaker of Parliament since 20 October 1992. The sub-ideology (big_tent) is a gameplay approximation because no closer id exists. The colour is the party colour used by Wikipedia.",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/Amal_Movement", "title": "Wikipedia: Amal Movement (infobox)", "accessed": "2026-10-17" },
+        { "url": "https://en.wikipedia.org/wiki/Nabih_Berri", "title": "Wikipedia: Nabih Berri (President of the Amal Movement from 1980)", "accessed": "2026-10-17" },
+        { "url": "https://en.wikipedia.org/wiki/1996_Lebanese_general_election", "title": "Wikipedia: 1996 Lebanese general election (8 seats)", "accessed": "2026-10-17" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "lbn.hezbollah",
+      "name": { "en": "Hezbollah", "native": "حزب الله" },
+      "abbrev": { "en": "Hezbollah", "native": "حزب الله" },
+      "color": "#F7DF19",
+      "sub_ideology": "islamist",
+      "founded": 1982,
+      "status_2000": "active",
+      "leader_history": [
+        { "person": "lbn.hassan_nasrallah", "from": "1992-02-16", "to": "2024-09-27", "title": "Secretary-General" },
+        { "person": "lbn.naim_qassem", "from": "2024-09-27", "title": "Secretary-General (acting until 29 October 2024)" }
+      ],
+      "popularity_2000": 0.0547,
+      "popularity_note": "No national vote shares were published for the 1996 election. 0.0547 is Hezbollah's share of seats (7 of 128) in the 1996 election, used as a proxy; its bloc also had 2 independents.",
+      "regional_base": [],
+      "note": "Shia Islamist party and armed movement. The infobox gives its foundation as 1982 (initially) and 16 February 1985 (officially). Hassan Nasrallah led it from 16 February 1992 until his death on 27 September 2024; Naim Qassem became Secretary-General on that date (Wikipedia infobox: acting until 29 October 2024). In 2000 it was fighting the Israeli forces and the South Lebanon Army in the south until the Israeli withdrawal on 25 May 2000 (Wikipedia: South Lebanon conflict).",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/Hezbollah", "title": "Wikipedia: Hezbollah (infobox)", "accessed": "2026-10-17" },
+        { "url": "https://en.wikipedia.org/wiki/Hassan_Nasrallah", "title": "Wikipedia: Hassan Nasrallah (Secretary-General 1992-2024)", "accessed": "2026-10-17" },
+        { "url": "https://en.wikipedia.org/wiki/Naim_Qassem", "title": "Wikipedia: Naim Qassem (Secretary-General from 27 September 2024)", "accessed": "2026-10-17" },
+        { "url": "https://en.wikipedia.org/wiki/1996_Lebanese_general_election", "title": "Wikipedia: 1996 Lebanese general election (7 seats)", "accessed": "2026-10-17" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "lbn.future",
+      "name": { "en": "Future Movement", "native": "تيار المستقبل" },
+      "abbrev": { "en": "Future", "native": "المستقبل" },
+      "color": "#007FFF",
+      "sub_ideology": "liberal_conservative",
+      "founded": 2007,
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        { "person": "lbn.saad_hariri", "from": "2005-04-20", "title": "Leader" }
+      ],
+      "popularity_2000": 0,
+      "regional_base": [],
+      "note": "Sunni-affiliated party. Wikipedia describes it as founded as a coalition in 1995 led by Rafic Hariri (the Hariri Bloc, 25 members of the 1996 parliament), officially founded in August 2007 and declared on 5 April 2009 (Wikidata gives 5 April 2009). The 2007 year is used. Saad Hariri has led it since 20 April 2005 (infobox of his article), after Rafic Hariri's death on 14 February 2005. Hariri announced the suspension of his political role on 24 January 2022, and the party did not take part in the 2022 election; on 14 February 2025 he announced its return to politics. The sub-ideology is a gameplay classification.",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/Future_Movement", "title": "Wikipedia: Future Movement (infobox and history)", "accessed": "2026-10-17" },
+        { "url": "https://www.wikidata.org/wiki/Q228720", "title": "Wikidata: Future Movement (founded 2009-04-05)", "accessed": "2026-10-17" },
+        { "url": "https://en.wikipedia.org/wiki/Saad_Hariri", "title": "Wikipedia: Saad Hariri (Leader of the Future Movement from 20 April 2005)", "accessed": "2026-10-17" },
+        { "url": "https://en.wikipedia.org/wiki/1996_Lebanese_general_election", "title": "Wikipedia: 1996 Lebanese general election (Hariri bloc)", "accessed": "2026-10-17" }
+      ],
+      "confidence": "needs_review",
+      "review_note": "The founding year of the Future Movement is disputed between sources (1995 as the Hariri Bloc, 2007 officially, 2009 declared); the year 2007 is used. Confirm which date the game should use."
+    },
+    {
+      "id": "lbn.fpm",
+      "name": { "en": "Free Patriotic Movement", "native": "التيار الوطني الحر" },
+      "abbrev": { "en": "FPM", "native": "التيار" },
+      "color": "#ED9121",
+      "sub_ideology": "big_tent",
+      "founded": "1994-07-14",
+      "status_2000": "exiled",
+      "leader_history": [
+        { "person": "lbn.michel_aoun", "from": "1994-07-14", "to": 2015, "title": "Founder and leader" },
+        { "person": "lbn.gebran_bassil", "from": 2015, "title": "Leader" }
+      ],
+      "popularity_2000": 0,
+      "popularity_note": "The movement won no seats in the 1996 election (it does not appear in the results table).",
+      "regional_base": [],
+      "note": "Founded by Michel Aoun, who established it on 14 July 1994 while in exile in Paris and returned to Lebanon on 7 May 2005 (Wikipedia). Wikidata gives 2003 for the foundation. Gebran Bassil has led it since 2015 (the article gives the year only). The sub-ideology (big_tent) is a gameplay approximation because no closer id exists.",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/Free_Patriotic_Movement", "title": "Wikipedia: Free Patriotic Movement (infobox and history)", "accessed": "2026-10-17" },
+        { "url": "https://www.wikidata.org/wiki/Q1454007", "title": "Wikidata: Free Patriotic Movement (founded 2003)", "accessed": "2026-10-17" },
+        { "url": "https://en.wikipedia.org/wiki/1996_Lebanese_general_election", "title": "Wikipedia: 1996 Lebanese general election (results)", "accessed": "2026-10-17" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "lbn.lebanese_forces",
+      "name": { "en": "Lebanese Forces", "native": "القوات اللبنانية" },
+      "abbrev": { "en": "LF", "native": "القوات" },
+      "color": "#E4002B",
+      "sub_ideology": "national_conservative",
+      "founded": 1976,
+      "status_2000": "banned",
+      "leader_history": [
+        { "person": "lbn.samir_geagea", "from": "1986-01-15", "title": "Executive Chairman" }
+      ],
+      "popularity_2000": 0,
+      "popularity_note": "The party was banned in 1994 and does not appear in the 1996 results table.",
+      "regional_base": [],
+      "note": "Christian-based party created in 1976 during the civil war; the Lebanese Forces Party was banned in 1994, while Syrian forces were present in Lebanon, and returned to political activity after the 2005 Cedar Revolution (Wikipedia). It won 19 seats in the 2022 election, the most of any party. Samir Geagea has been Executive Chairman since 15 January 1986. The sub-ideology is a gameplay classification. The colour is a placeholder.",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/Lebanese_Forces", "title": "Wikipedia: Lebanese Forces (infobox and history)", "accessed": "2026-10-17" },
+        { "url": "https://en.wikipedia.org/wiki/Samir_Geagea", "title": "Wikipedia: Samir Geagea (Executive Chairman from 15 January 1986)", "accessed": "2026-10-17" },
+        { "url": "https://en.wikipedia.org/wiki/2022_Lebanese_general_election", "title": "Wikipedia: 2022 Lebanese general election (19 seats)", "accessed": "2026-10-17" }
+      ],
+      "confidence": "verified"
+    }
+  ]
+}

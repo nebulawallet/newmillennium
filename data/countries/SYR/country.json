@@ -1,0 +1,132 @@
+{
+  "tag": "SYR",
+  "name": {
+    "en": "Syria",
+    "native": "سوريا",
+    "native_latin": "Suriya",
+    "official": { "en": "Syrian Arab Republic", "native": "الجمهورية العربية السورية", "native_latin": "al-Jumhuriyya al-'Arabiyya as-Suriyya" }
+  },
+  "adjective": "Syrian",
+  "culture_primary": "syrian",
+  "government": {
+    "type": "one_party_state",
+    "effective_executive": "syr.president",
+    "head_of_state_office": "syr.president",
+    "head_of_government_office": "syr.prime_minister",
+    "constitution": {
+      "term_limit_amendable": true,
+      "emergency_powers": true,
+      "referendum_required_for": []
+    },
+    "note": "Government type as on 1 January 2000: Ba'athist Syria. President Hafez al-Assad (in office since 12 March 1971) led the Ba'ath Party (Syria Region), which headed the National Progressive Front of partner parties; the People's Council (250 seats) was elected on 30 November - 1 December 1998 with 135 seats for the Ba'ath Party, 32 for its front partners and 83 for independents. Stages after 2000, as dated facts (Wikipedia, List of heads of state of Syria and List of prime ministers of Syria): Hafez al-Assad died on 10 June 2000; Vice President Abdul Halim Khaddam was Acting President until 17 July 2000, when his son Bashar al-Assad took office. The Syrian civil war followed the 2011 uprising. Bashar al-Assad was deposed on 8 December 2024 (the fall of the Assad government). Ahmed al-Sharaa, leader of Hay'at Tahrir al-Sham, was de facto leader of Syria from 8 December 2024 and was appointed President of Syria for the transitional period by the Syrian General Command on 29 January 2025; on that date the 2024 People's Assembly was dissolved and replaced by an interim legislative council, and the Ba'ath Party and the National Progressive Front parties were dissolved. A caretaker government under Prime Minister Mohammed al-Bashir ran from 10 December 2024 to 29 March 2025, when the transitional government was formed and the post of Prime Minister was abolished. The Constitutional Declaration of March 2025 re-established the People's Assembly; its 140 elected members were chosen by electoral colleges from 5 October 2025 and 70 members were appointed by the President (announced 1 July 2026), and it first met on 12 July 2026. Presidential referendums (for example in 2000) are not modelled in the light tier. The type field keeps the 2000 value."
+  },
+  "offices": [
+    {
+      "id": "syr.president",
+      "title": { "en": "President of Syria", "native": "رئيس الجمهورية العربية السورية", "native_latin": "Ra'is al-Jumhuriyya" },
+      "role": "head_of_state",
+      "power_weight": 0.9,
+      "selection": "direct_election",
+      "succession": { "type": "vice" },
+      "holders": [
+        { "person": "syr.hafez_al_assad", "from": "1971-03-12", "to": "2000-06-10", "note": "Died in office on 10 June 2000." },
+        { "person": "syr.abdul_halim_khaddam", "from": "2000-06-10", "to": "2000-07-17", "acting": true, "note": "Vice President, Acting President until Bashar al-Assad took office." },
+        { "person": "syr.bashar_al_assad", "from": "2000-07-17", "to": "2024-12-08", "note": "Deposed on 8 December 2024 (the fall of the Assad government)." },
+        { "person": "syr.ahmed_al_sharaa", "from": "2024-12-08", "to": "2025-01-29", "note": "De facto leader of Syria (as emir of Hay'at Tahrir al-Sham; called Commander of Military Operations in this period). The Wikipedia list gives the title 'De facto Leader' for 8 December 2024 - 29 January 2025." },
+        { "person": "syr.ahmed_al_sharaa", "from": "2025-01-29", "note": "Appointed President of Syria for the transitional period by the Syrian General Command; Wikipedia lists the office as 'President' (Independent) from 29 January 2025. The People's Assembly is chaired by a Speaker; no Vice President is in office (Wikipedia infobox)." }
+      ],
+      "note": "Under the 1973 constitution the President was nominated by the People's Council and confirmed in a referendum (not fetched; see the light-tier note). Since 29 January 2025 the office is held under the transitional arrangements and the Constitutional Declaration.",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/List_of_heads_of_state_of_Syria", "title": "Wikipedia: List of heads of state of Syria", "accessed": "2026-10-17" },
+        { "url": "https://en.wikipedia.org/wiki/Ahmed_al-Sharaa", "title": "Wikipedia: Ahmed al-Sharaa (infobox: de facto leader and President)", "accessed": "2026-10-17" },
+        { "url": "https://www.wikidata.org/wiki/Q648464", "title": "Wikidata: President of Syria (position held by)", "accessed": "2026-10-17" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "syr.prime_minister",
+      "title": { "en": "Prime Minister of Syria", "native": "رئيس مجلس الوزراء", "native_latin": "Ra'is Majlis al-Wuzara" },
+      "role": "head_of_government",
+      "power_weight": 0.1,
+      "selection": "appointed",
+      "appointed_by": "syr.president",
+      "holders": [
+        { "person": "syr.mahmoud_al_zoubi", "from": "1987-11-01", "to": "2000-03-07", "note": "Died on 21 May 2000, after leaving office." },
+        { "person": "syr.mustafa_mero", "from": "2000-03-07", "to": "2003-09-10" },
+        { "person": "syr.naji_al_otari", "from": "2003-09-10", "to": "2011-04-14", "note": "Wikidata gives the start as 2003 without a day in one record and 2003-09-10 in another." },
+        { "person": "syr.adel_safar", "from": "2011-04-14", "to": "2012-06-23" },
+        { "person": "syr.riyad_hijab", "from": "2012-06-23", "to": "2012-08-06", "note": "Defected to the opposition." },
+        { "person": "syr.omar_ghalawanji", "from": "2012-08-06", "to": "2012-08-09", "acting": true, "note": "Acting Prime Minister; no cabinet." },
+        { "person": "syr.wael_al_halqi", "from": "2012-08-09", "to": "2016-07-03" },
+        { "person": "syr.imad_khamis", "from": "2016-07-03", "to": "2020-06-11", "note": "Wikidata gives the start as 13 July 2016; the Wikipedia list gives 3 July 2016." },
+        { "person": "syr.hussein_arnous", "from": "2020-06-11", "to": "2024-09-14" },
+        { "person": "syr.mohammad_ghazi_al_jalali", "from": "2024-09-14", "to": "2024-12-08", "note": "Wikidata gives the start as 23 September 2024; the Wikipedia list gives 14 September 2024." },
+        { "person": "syr.mohammad_ghazi_al_jalali", "from": "2024-12-08", "to": "2024-12-10", "acting": true, "note": "Acting (caretaker) Prime Minister until Mohammed al-Bashir assumed power." },
+        { "person": "syr.mohammed_al_bashir", "from": "2024-12-10", "to": "2025-03-29", "note": "Head of the Syrian caretaker government; Wikidata gives the start as 9 December 2024." },
+        { "person": null, "from": "2025-03-29", "vacant_reason": "Wikipedia's list records the position of Prime Minister as abolished from 29 March 2025, when President al-Sharaa announced the transitional government; the President heads the government." }
+      ],
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/List_of_prime_ministers_of_Syria", "title": "Wikipedia: List of prime ministers of Syria", "accessed": "2026-10-17" },
+        { "url": "https://www.wikidata.org/wiki/Q7243302", "title": "Wikidata: Prime Minister of Syria (position held by)", "accessed": "2026-10-17" },
+        { "url": "https://en.wikipedia.org/wiki/Ahmed_al-Sharaa", "title": "Wikipedia: Ahmed al-Sharaa (note on the abolition of the Prime Minister post)", "accessed": "2026-10-17" }
+      ],
+      "confidence": "verified"
+    }
+  ],
+  "legislature": {
+    "name": { "en": "People's Council (People's Assembly from 2025)", "native": "مجلس الشعب", "native_latin": "Majlis ash-Sha'b" },
+    "chambers": [
+      {
+        "id": "people_council",
+        "name": { "en": "People's Council", "native": "مجلس الشعب", "native_latin": "Majlis ash-Sha'b" },
+        "seats": 250,
+        "elected": "direct",
+        "system": {
+          "type": "block",
+          "district_model": "provinces",
+          "note": "2000: 250 seats elected on 30 November - 1 December 1998 in multi-member constituencies (Wikipedia: the assembly was previously elected by direct popular vote in multi-member constituencies; the Ba'ath Party and its allies held about two thirds of the seats). seats_2000 is that result: Ba'ath 135, Arab Socialist Union Party 7, Socialist Unionist Party 7 and other front partners 18 (Syrian Communist Party 8, Arab Socialist Movement 4, Democratic Socialist Unionist Party 4, Arab Democratic Union Party 2), independents 83. Since 2025 the chamber is the 210-seat People's Assembly: 140 members chosen by electoral colleges from 5 October 2025 (indirect, hierarchical voting) and 70 appointed by the President, with a 30-month term; the 2025 election is recorded in elections.json."
+        },
+        "seats_2000": {
+          "syr.baath": 135,
+          "syr.arab_socialist_union": 7,
+          "others": 25,
+          "independents": 83
+        },
+        "confidence_chamber": false,
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/1998_Syrian_parliamentary_election", "title": "Wikipedia: 1998 Syrian parliamentary election (results table)", "accessed": "2026-10-17" },
+          { "url": "https://en.wikipedia.org/wiki/People%27s_Assembly_of_Syria", "title": "Wikipedia: People's Assembly of Syria (210 members, first session 12 July 2026)", "accessed": "2026-10-17" },
+          { "url": "https://en.wikipedia.org/wiki/2025_Syrian_parliamentary_election", "title": "Wikipedia: 2025 Syrian parliamentary election (electoral college, 140 elected and 70 appointed)", "accessed": "2026-10-17" }
+        ],
+        "confidence": "needs_review",
+        "review_note": "The electoral system type for the 1998 People's Council (shown as block voting in multi-member constituencies) is inferred from the Wikipedia statement about multi-member constituencies; confirm it and how seats were reserved for the front."
+      }
+    ]
+  },
+  "party_system": "dominant_party",
+  "start_2000": {
+    "ruling_parties": ["syr.baath"],
+    "ideology_support": {
+      "baathist": 0.45,
+      "islamist": 0.15,
+      "islamic_democrat": 0.1,
+      "regionalist": 0.08,
+      "statist": 0.06,
+      "marxist_leninist": 0.04,
+      "tribal_traditional": 0.05,
+      "centrist_liberal": 0.04,
+      "big_tent": 0.03
+    },
+    "ideology_support_note": "Estimate only: no competitive national vote had been held, and no vote shares were published for the 1998 election (135 of 250 seats went to the Ba'ath Party, 32 to National Progressive Front partners and 83 to independents). The weights are a gameplay estimate: baathist = Ba'ath Party and its supporters in the state, army and administration; statist = Nasserist and other front partners; marxist_leninist = the communist partners; islamist and islamic_democrat = religious-conservative and moderate Islamic currents outside the legal party system; regionalist = Kurdish communities; tribal_traditional = tribal and rural notables; centrist_liberal and big_tent = urban professionals and independents.",
+    "stability": 0.65,
+    "war_support": 0.35
+  },
+  "claims": [],
+  "source": [
+    { "url": "https://en.wikipedia.org/wiki/List_of_heads_of_state_of_Syria", "title": "Wikipedia: List of heads of state of Syria", "accessed": "2026-10-17" },
+    { "url": "https://en.wikipedia.org/wiki/List_of_prime_ministers_of_Syria", "title": "Wikipedia: List of prime ministers of Syria", "accessed": "2026-10-17" },
+    { "url": "https://en.wikipedia.org/wiki/National_Progressive_Front_(Syria)", "title": "Wikipedia: National Progressive Front (Syria)", "accessed": "2026-10-17" },
+    { "url": "https://en.wikipedia.org/wiki/2025_Syrian_parliamentary_election", "title": "Wikipedia: 2025 Syrian parliamentary election", "accessed": "2026-10-17" }
+  ],
+  "confidence": "verified"
+}

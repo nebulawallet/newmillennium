@@ -1,0 +1,17 @@
+{
+  "note": "Gameplay approximations of the laws in force in Lebanon on 1 January 2000; choices are judgements, not checked line by line against a fetched source. Elections: competitive confessional elections under an electoral law that favoured established blocs (restricted_elections). Economy: a largely private, trade-oriented economy (free_market). Trade: open trade (free_trade). Conscription: compulsory military service of limited scope (selective_conscription; the scope was not checked). Religion: confessional personal-status law with no state religion (religious_law_partial). Press: privately owned media with state oversight (regulated_press).",
+  "laws": {
+    "economic_system": "free_market",
+    "trade": "free_trade",
+    "conscription": "selective_conscription",
+    "press_freedom": "regulated_press",
+    "political_freedom": "restricted_elections",
+    "civil_rights": "limited_civil_liberties",
+    "religion_state": "religious_law_partial",
+    "immigration": "managed_immigration",
+    "energy_policy": "fossil_first",
+    "internet_surveillance": "regulated_internet",
+    "healthcare": "private_insurance",
+    "education": "public_schooling"
+  }
+}

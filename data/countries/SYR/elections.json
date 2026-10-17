@@ -1,0 +1,64 @@
+{
+  "rules": [
+    {
+      "kind": "legislative",
+      "chamber": "people_council",
+      "every_years": 2.5,
+      "anchor": "2025-10-05",
+      "snap_possible": false,
+      "note": "The Constitutional Declaration sets the People's Assembly term at 30 months (Wikipedia: 2025 Syrian parliamentary election). Before 2025 elections were held about every four years (1998, 2003, 2007 ...). The anchor is the first election day of the 2025-2026 indirect process."
+    }
+  ],
+  "elections": [
+    {
+      "id": "people_assembly_2025",
+      "date": "2025-10-05",
+      "kind": "legislative",
+      "chamber": "people_council",
+      "historical": {
+        "party_results": [
+          {
+            "party": "independents",
+            "seats": 171
+          },
+          {
+            "party": "others",
+            "seats": 34
+          },
+          {
+            "party": "vacant",
+            "seats": 5
+          }
+        ],
+        "note": "Indirect election by electoral colleges (6,817 electors) of 140 of the 210 members, held on 5 October 2025 (119 members), with further rounds on 23 October 2025, 17 March 2026 and 24 May 2026; the other 70 members were appointed by President Ahmed al-Sharaa (list announced 1 July 2026; the assembly first met on 12 July 2026 and elected Abdul Hamid al-Awak Speaker). Seats by the Wikipedia diagram of the assembly in July 2026: independents 171; 'others' 34 = 25 members reported to have ties to the Muslim Brotherhood in Syria, Kurdistan Democratic Party of Syria 4, Syrian Turkmen Assembly 1, Kurdistan Democratic Unity Party 1, Kurdish Democratic Equality Party in Syria 1, Assyrian Democratic Organization 1, Movement for Justice and Development in Syria 1; vacant 5 (three Suwayda seats not filled and two vacancies). Parties were not formally registered, so no winning party is recorded. The article's results table gives 4 vacant seats where its diagram gives 5.",
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2025_Syrian_parliamentary_election",
+            "title": "Wikipedia: 2025 Syrian parliamentary election (infobox, results, appointed members, first session)",
+            "accessed": "2026-10-17"
+          },
+          {
+            "url": "https://en.wikipedia.org/wiki/People%27s_Assembly_of_Syria",
+            "title": "Wikipedia: People's Assembly of Syria (composition, speaker elected 12 July 2026)",
+            "accessed": "2026-10-17"
+          }
+        ],
+        "confidence": "needs_review",
+        "review_note": "The seat breakdown mixes elected and appointed members and the Wikipedia table and diagram disagree on vacant seats (4 or 5). Confirm the party split once the assembly's composition is settled. The appointments (1 July 2026) and first session (12 July 2026) are after June 2026 and rest on the Wikipedia articles only."
+      }
+    }
+  ],
+  "source": [
+    {
+      "url": "https://en.wikipedia.org/wiki/2025_Syrian_parliamentary_election",
+      "title": "Wikipedia: 2025 Syrian parliamentary election",
+      "accessed": "2026-10-17"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/1998_Syrian_parliamentary_election",
+      "title": "Wikipedia: 1998 Syrian parliamentary election",
+      "accessed": "2026-10-17"
+    }
+  ],
+  "confidence": "verified"
+}

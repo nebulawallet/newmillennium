@@ -1,0 +1,15 @@
+{
+  "note": "Influence and approval are gameplay starting values for 1 January 2000 (Lebanon under President Émile Lahoud, with Syrian forces present and Israeli forces in the south until May 2000), not measured data. Influence reflects confessional communities, party militias and their leaders, the business community and the armed forces.",
+  "interest_groups": [
+    { "type": "military", "influence": 0.3, "approval": 55, "note": "Lebanese Armed Forces." },
+    { "type": "security_services", "influence": 0.35, "approval": 50, "note": "Security services, with Syrian forces also present in the country." },
+    { "type": "business", "influence": 0.35, "approval": 50, "note": "Commercial and banking elites." },
+    { "type": "labour_unions", "influence": 0.1, "approval": 40 },
+    { "type": "religious_establishment", "influence": 0.45, "approval": 55, "note": "The sectarian religious authorities of the main communities." },
+    { "type": "rural", "influence": 0.2, "approval": 45, "note": "Including the largely Shia south, where Hezbollah and Amal were strong." },
+    { "type": "urban_middle_class", "influence": 0.25, "approval": 45 },
+    { "type": "minorities", "influence": 0.2, "approval": 45, "note": "Smaller communities such as Armenians, Alawites and Protestants." },
+    { "type": "youth_students", "influence": 0.1, "approval": 45 },
+    { "type": "media", "influence": 0.25, "approval": 50, "note": "Privately owned outlets, many linked to political leaders." }
+  ]
+}

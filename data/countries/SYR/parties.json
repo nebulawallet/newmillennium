@@ -1,0 +1,74 @@
+{
+  "parties": [
+    {
+      "id": "syr.baath",
+      "name": { "en": "Arab Socialist Ba'ath Party - Syria Region", "native": "حزب البعث العربي الاشتراكي - قطر سوريا" },
+      "abbrev": { "en": "Ba'ath", "native": "البعث" },
+      "color": "#1A6647",
+      "sub_ideology": "baathist",
+      "founded": "1947-04-07",
+      "dissolved": "2025-01-29",
+      "status_2000": "active",
+      "leader_history": [
+        { "person": "syr.hafez_al_assad", "from": "1970-11-18", "to": "2000-06-10", "title": "Regional Secretary" },
+        { "person": "syr.bashar_al_assad", "from": "2000-06-24", "to": "2024-12-08", "title": "General Secretary" }
+      ],
+      "popularity_2000": 0.54,
+      "popularity_note": "No vote shares were published for the 1998 election. 0.54 is the party's share of seats (135 of 250) in the People's Council elected on 30 November - 1 December 1998, used as a proxy.",
+      "note": "The ruling party and leader of the National Progressive Front; its 'leading role' was accepted by the front's partner parties (Wikipedia: National Progressive Front). Infobox: founded 7 April 1947 (the founding of the Ba'ath movement; the Syria Region branch is the party that governed from 1963); dissolved 29 January 2025 (Wikidata gives 11 December 2024; Wikipedia's National Progressive Front article records that the Ba'ath Party halted all activities after the fall of the Assad government in December 2024 and that the transitional authorities dissolved the front's parties on 29 January 2025). Hafez al-Assad's term as Regional Secretary is 18 November 1970 - 10 June 2000 and Bashar al-Assad's as General Secretary starts 24 June 2000 (infoboxes of the two articles). Factions are not recorded in the light tier.",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/Arab_Socialist_Ba%27ath_Party_%E2%80%93_Syria_Region", "title": "Wikipedia: Arab Socialist Ba'ath Party - Syria Region (infobox)", "accessed": "2026-10-17" },
+        { "url": "https://en.wikipedia.org/wiki/1998_Syrian_parliamentary_election", "title": "Wikipedia: 1998 Syrian parliamentary election (135 of 250 seats)", "accessed": "2026-10-17" },
+        { "url": "https://en.wikipedia.org/wiki/Hafez_al-Assad", "title": "Wikipedia: Hafez al-Assad (Regional Secretary 1970-2000)", "accessed": "2026-10-17" },
+        { "url": "https://en.wikipedia.org/wiki/Bashar_al-Assad", "title": "Wikipedia: Bashar al-Assad (General Secretary from 24 June 2000)", "accessed": "2026-10-17" },
+        { "url": "https://en.wikipedia.org/wiki/National_Progressive_Front_(Syria)", "title": "Wikipedia: National Progressive Front (Syria)", "accessed": "2026-10-17" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "syr.arab_socialist_union",
+      "name": { "en": "Arab Socialist Union Party of Syria", "native": "حزب الاتحاد الاشتراكي العربي في سورية" },
+      "abbrev": { "en": "ASU", "native": "الاتحاد الاشتراكي" },
+      "color": "#B71C1C",
+      "sub_ideology": "statist",
+      "founded": 1973,
+      "dissolved": "2025-01-29",
+      "status_2000": "active",
+      "leader_history": [
+        { "person": "syr.safwan_al_qudsi", "from": 1983, "to": "2022-10-28", "title": "Secretary General" }
+      ],
+      "popularity_2000": 0.028,
+      "popularity_note": "No vote shares were published for the 1998 election. 0.028 is the party's share of seats (7 of 250), used as a proxy.",
+      "regional_base": [],
+      "note": "A Nasserist member of the National Progressive Front formed in 1973 (the faction that accepted the 1973 constitution kept the name and the front membership). Dissolved by the transitional authorities on 29 January 2025. Safwan al-Qudsi led it from 1983 (infobox and Wikidata; the article text says 1984) until his death; the article says he was succeeded by Baria al-Qudsi in February 2023, who has no Wikipedia or Wikidata record with a birth year and is therefore not stored. The party is recorded as representing the front's smaller partner parties, which together held 32 seats in 1998; the other partners are counted under 'others' in seats_2000.",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/Arab_Socialist_Union_Party_(Syria)", "title": "Wikipedia: Arab Socialist Union Party (Syria) (infobox, history)", "accessed": "2026-10-17" },
+        { "url": "https://en.wikipedia.org/wiki/Safwan_al-Qudsi", "title": "Wikipedia: Safwan al-Qudsi", "accessed": "2026-10-17" },
+        { "url": "https://en.wikipedia.org/wiki/1998_Syrian_parliamentary_election", "title": "Wikipedia: 1998 Syrian parliamentary election (7 seats)", "accessed": "2026-10-17" }
+      ],
+      "confidence": "needs_review",
+      "review_note": "Founding is given as 1973 in the infobox; confirm the exact date. The 1998 election table names the party 'Arab Socialist Union Party' and Safwan al-Qudsi's start as leader is 1983 (Wikidata/infobox) or 1984 (article text)."
+    },
+    {
+      "id": "syr.hts",
+      "name": { "en": "Hay'at Tahrir al-Sham", "native": "هيئة تحرير الشام" },
+      "abbrev": { "en": "HTS", "native": "هيئة تحرير الشام" },
+      "color": "#2E7D32",
+      "sub_ideology": "islamist",
+      "founded": "2017-01-28",
+      "dissolved": "2025-01-29",
+      "status_2000": "not_yet_founded",
+      "leader_history": [
+        { "person": "syr.ahmed_al_sharaa", "from": "2017-10-01", "to": "2025-01-29", "title": "Emir" }
+      ],
+      "popularity_2000": 0,
+      "note": "Sunni Islamist political and paramilitary group formed on 28 January 2017 (Wikidata; Wikipedia lists Abu Jaber Sheikh as nominal emir until October 2017, and Ahmed al-Sharaa as emir from 1 October 2017). It led the opposition offensive that ended Bashar al-Assad's rule on 8 December 2024 and its leader became the transitional authorities' head. The Wikipedia infobox status is that it was dissolved, merged into the Ministry of Defense and the Ministry of Interior (29 January 2025). Ahmed al-Sharaa has been listed as an independent since 2025. The colour is a placeholder.",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/Hay%27at_Tahrir_al-Sham", "title": "Wikipedia: Hay'at Tahrir al-Sham (infobox)", "accessed": "2026-10-17" },
+        { "url": "https://www.wikidata.org/wiki/Q28540613", "title": "Wikidata: Hay'at Tahrir al-Sham (founded 2017-01-28, dissolved 2025-01-29)", "accessed": "2026-10-17" },
+        { "url": "https://en.wikipedia.org/wiki/Ahmed_al-Sharaa", "title": "Wikipedia: Ahmed al-Sharaa (Emir of HTS from 1 October 2017)", "accessed": "2026-10-17" }
+      ],
+      "confidence": "verified"
+    }
+  ]
+}

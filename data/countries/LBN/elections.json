@@ -1,0 +1,69 @@
+{
+  "rules": [
+    {
+      "kind": "legislative",
+      "chamber": "parliament",
+      "every_years": 4,
+      "anchor": "2022-05-15",
+      "snap_possible": true,
+      "note": "Four-year term. The election due in May 2026 was postponed: on 9 March 2026 Parliament extended its own mandate by two years because of the 2026 Lebanon war, so the next election is scheduled for May 2028 (Wikipedia: 2028 Lebanese general election). A decree of 2 February 2026 had set 1-10 May 2026."
+    },
+    {
+      "kind": "indirect_presidential",
+      "office": "lbn.president",
+      "every_years": 6,
+      "anchor": "2025-01-09",
+      "snap_possible": false,
+      "system": "legislature",
+      "note": "The President is elected by Parliament: two thirds of the members in the first round, an absolute majority (65) in later rounds (Wikipedia: 2022-2025 Lebanese presidential election). The presidency was vacant for long periods after the 2007, 2014 and 2022 terms."
+    }
+  ],
+  "elections": [
+    {
+      "id": "parliament_2022",
+      "date": "2022-05-15",
+      "kind": "legislative",
+      "chamber": "parliament",
+      "historical": {
+        "party_results": [
+          { "party": "lbn.lebanese_forces", "seats": 19 },
+          { "party": "lbn.fpm", "seats": 17 },
+          { "party": "lbn.hezbollah", "seats": 15 },
+          { "party": "lbn.amal", "seats": 15 },
+          { "party": "others", "seats": 62 }
+        ],
+        "winner": "lbn.lebanese_forces",
+        "turnout": 0.4919,
+        "note": "All 128 seats. Seat counts for the four parties are those in the Wikipedia infobox; 'others' is the remainder (Progressive Socialist Party 8, Kataeb 4, Armenian Revolutionary Federation 3, Marada Movement 2, Independence Movement 2 per the infobox, with independents and other lists, including members of the Hezbollah, Amal, FPM and LF blocs who are not party members). The Future Movement did not take part: Saad Hariri announced on 24 January 2022 that he was suspending his role, and former Future politicians held 8 seats (Wikipedia). Hezbollah and its allies lost their parliamentary majority but the Speaker, Nabih Berri, was re-elected. Turnout 49.19%.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2022_Lebanese_general_election", "title": "Wikipedia: 2022 Lebanese general election (infobox)", "accessed": "2026-10-17" }
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "id": "president_2025",
+      "date": "2025-01-09",
+      "kind": "indirect_presidential",
+      "office": "lbn.president",
+      "rounds": 2,
+      "historical": {
+        "candidates": [
+          { "person": "lbn.joseph_aoun", "votes": 71, "round": 1 },
+          { "person": "lbn.joseph_aoun", "share": 0.7734, "votes": 99, "round": 2 }
+        ],
+        "winner": "lbn.joseph_aoun",
+        "note": "Parliament elected Joseph Aoun, the Commander of the Lebanese Armed Forces, on 9 January 2025 after the presidency had been vacant since 31 October 2022 and eleven earlier sessions in which no candidate was elected. First round: Aoun 71 votes (the 86 needed was not reached); the infobox gives 99 votes (77.34%) for Aoun and 2 for Chibli Mallat. Shares are of 128 members.",
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/2022%E2%80%932025_Lebanese_presidential_election", "title": "Wikipedia: 2022-2025 Lebanese presidential election (infobox and January 2025 session)", "accessed": "2026-10-17" }
+        ],
+        "confidence": "verified"
+      }
+    }
+  ],
+  "source": [
+    { "url": "https://en.wikipedia.org/wiki/2022_Lebanese_general_election", "title": "Wikipedia: 2022 Lebanese general election", "accessed": "2026-10-17" },
+    { "url": "https://en.wikipedia.org/wiki/2026_Lebanese_general_election", "title": "Wikipedia: 2028 Lebanese general election (postponement)", "accessed": "2026-10-17" }
+  ],
+  "confidence": "verified"
+}

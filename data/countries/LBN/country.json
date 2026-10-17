@@ -1,0 +1,154 @@
+{
+  "tag": "LBN",
+  "name": {
+    "en": "Lebanon",
+    "native": "لبنان",
+    "native_latin": "Lubnan",
+    "official": { "en": "Lebanese Republic", "native": "الجمهورية اللبنانية", "native_latin": "al-Jumhuriyya al-Lubnaniyya" }
+  },
+  "adjective": "Lebanese",
+  "culture_primary": "lebanese",
+  "government": {
+    "type": "parliamentary",
+    "effective_executive": "lbn.prime_minister",
+    "head_of_state_office": "lbn.president",
+    "head_of_government_office": "lbn.prime_minister",
+    "constitution": {
+      "term_limit_amendable": true,
+      "emergency_powers": true,
+      "referendum_required_for": []
+    },
+    "note": "Confessional parliamentary republic. By custom the President is a Maronite Christian, the Prime Minister a Sunni Muslim and the Speaker of Parliament a Shia Muslim (Wikipedia: President of Lebanon); the 128 parliamentary seats are divided equally between Christians and Muslims and allocated among sects (see the chamber note). The 1990 Taif arrangements reduced the President's powers and increased those of the Council of Ministers (Wikipedia: President of Lebanon). On 1 January 2000 President Émile Lahoud (since 24 November 1998) and Prime Minister Selim Hoss (since December 1998) were in office; Israel occupied a 'security zone' in the south with the South Lebanon Army until its unilateral withdrawal on 25 May 2000, and Syrian forces were present in Lebanon from 1976 until their withdrawal completed on 30 April 2005 (Wikipedia: South Lebanon conflict; Syrian occupation of Lebanon). Stages after 2000, as dated facts: Rafic Hariri was assassinated on 14 February 2005; the presidency was vacant 24 November 2007 - 25 May 2008, 25 May 2014 - 31 October 2016 and 31 October 2022 - 9 January 2025 (Wikipedia list of presidents); Joseph Aoun was elected President on 9 January 2025 and nominated Nawaf Salam as Prime Minister; the legislative election due in May 2026 was postponed by two years, and the Parliament voted on 9 March 2026 to extend its mandate, so the next election is scheduled for May 2028 (Wikipedia: 2028 Lebanese general election)."
+  },
+  "offices": [
+    {
+      "id": "lbn.president",
+      "title": { "en": "President of Lebanon", "native": "رئيس الجمهورية اللبنانية", "native_latin": "Ra'is al-Jumhuriyya" },
+      "role": "head_of_state",
+      "power_weight": 0.4,
+      "selection": "legislature",
+      "term_years": 6,
+      "succession": { "type": "election" },
+      "holders": [
+        { "person": "lbn.emile_lahoud", "from": "1998-11-24", "to": "2007-11-24", "note": "Elected in 1998 after a constitutional amendment allowed the army commander to stand." },
+        { "person": null, "from": "2007-11-24", "to": "2008-05-25", "vacant_reason": "Lahoud's term ended without a successor; the Wikipedia list records the office as vacant until Michel Suleiman took office." },
+        { "person": "lbn.michel_suleiman", "from": "2008-05-25", "to": "2014-05-25", "note": "Wikidata gives the end as 24 May 2014." },
+        { "person": null, "from": "2014-05-25", "to": "2016-10-31", "vacant_reason": "Parliament could not obtain the majority required to elect a successor for almost two and a half years, with more than 30 votes held (Wikipedia: President of Lebanon). Wikidata lists Prime Minister Tammam Salam under this office for the period." },
+        { "person": "lbn.michel_aoun", "from": "2016-10-31", "to": "2022-10-31", "note": "The Wikipedia list gives 31 October 2022; the presidency article and Wikidata give 30 October 2022." },
+        { "person": null, "from": "2022-10-31", "to": "2025-01-09", "vacant_reason": "Parliament failed to elect a successor in repeated sessions from 29 September 2022; the election article lists Prime Minister Najib Mikati (caretaker) as the outgoing acting office-holder." },
+        { "person": "lbn.joseph_aoun", "from": "2025-01-09", "note": "Elected by Parliament on 9 January 2025 (second round, 99 votes)." }
+      ],
+      "note": "Elected by Parliament; two thirds of the members are needed in the first round and an absolute majority in the second (Wikipedia: 2022-2025 Lebanese presidential election). The six-year term follows the recent terms (2008-2014, 2016-2022) and the election article's next-election year of 2031; Lahoud held office from 24 November 1998 to 24 November 2007 (nine years), and the reason for the longer term was not covered by the fetched sources.",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/List_of_presidents_of_Lebanon", "title": "Wikipedia: List of presidents of Lebanon", "accessed": "2026-10-17" },
+        { "url": "https://en.wikipedia.org/wiki/President_of_Lebanon", "title": "Wikipedia: President of Lebanon", "accessed": "2026-10-17" },
+        { "url": "https://en.wikipedia.org/wiki/2022%E2%80%932025_Lebanese_presidential_election", "title": "Wikipedia: 2022-2025 Lebanese presidential election", "accessed": "2026-10-17" },
+        { "url": "https://www.wikidata.org/wiki/Q22001564", "title": "Wikidata: President of Lebanon (position held by)", "accessed": "2026-10-17" }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "lbn.prime_minister",
+      "title": { "en": "Prime Minister of Lebanon", "native": "رئيس مجلس الوزراء", "native_latin": "Ra'is Majlis al-Wuzara" },
+      "role": "head_of_government",
+      "power_weight": 0.6,
+      "selection": "appointed",
+      "appointed_by": "lbn.president",
+      "holders": [
+        { "person": "lbn.selim_hoss", "from": "1998-12-04", "to": "2000-10-26", "note": "The Wikipedia list gives 4 December 1998 - 26 October 2000; his own article's infobox gives 6 December 1998 - 23 October 2000." },
+        { "person": "lbn.rafic_hariri", "from": "2000-10-26", "to": "2004-10-26", "note": "Wikidata gives 23 October 2000 - 21 October 2004." },
+        { "person": "lbn.omar_karami", "from": "2004-10-26", "to": "2005-04-19" },
+        { "person": "lbn.najib_mikati", "from": "2005-04-19", "to": "2005-07-19" },
+        { "person": "lbn.fouad_siniora", "from": "2005-07-19", "to": "2009-11-09", "note": "Wikidata gives the start as 18 July 2005." },
+        { "person": "lbn.saad_hariri", "from": "2009-11-09", "to": "2011-06-13" },
+        { "person": "lbn.najib_mikati", "from": "2011-06-13", "to": "2014-02-15" },
+        { "person": "lbn.tammam_salam", "from": "2014-02-15", "to": "2016-12-18" },
+        { "person": "lbn.saad_hariri", "from": "2016-12-18", "to": "2020-01-21" },
+        { "person": "lbn.hassan_diab", "from": "2020-01-21", "to": "2021-09-10", "note": "Wikidata records the tenure from 19 December 2019 and splits it on 10 August 2020." },
+        { "person": "lbn.najib_mikati", "from": "2021-09-10", "to": "2025-02-08" },
+        { "person": "lbn.nawaf_salam", "from": "2025-02-08" }
+      ],
+      "note": "By custom a Sunni Muslim. Dates follow the Wikipedia list of prime ministers of Lebanon; caretaker periods after resignations are not separated.",
+      "source": [
+        { "url": "https://en.wikipedia.org/wiki/List_of_prime_ministers_of_Lebanon", "title": "Wikipedia: List of prime ministers of Lebanon", "accessed": "2026-10-17" },
+        { "url": "https://www.wikidata.org/wiki/Q14915225", "title": "Wikidata: Prime Minister of Lebanon (position held by)", "accessed": "2026-10-17" },
+        { "url": "https://en.wikipedia.org/wiki/Salim_Al-Huss", "title": "Wikipedia: Salim Al-Huss (infobox: term 6 December 1998 - 23 October 2000)", "accessed": "2026-10-17" }
+      ],
+      "confidence": "verified"
+    }
+  ],
+  "legislature": {
+    "name": { "en": "Parliament of Lebanon", "native": "مجلس النواب اللبناني", "native_latin": "Majlis an-Nuwwab" },
+    "chambers": [
+      {
+        "id": "parliament",
+        "name": { "en": "Parliament", "native": "مجلس النواب", "native_latin": "Majlis an-Nuwwab" },
+        "seats": 128,
+        "term_years": 4,
+        "elected": "direct",
+        "system": {
+          "type": "list_pr",
+          "district_model": "custom",
+          "reserved_seats": [
+            { "group": "Maronite", "seats": 34 },
+            { "group": "Sunni", "seats": 27 },
+            { "group": "Shia", "seats": 27 },
+            { "group": "Greek Orthodox", "seats": 14 },
+            { "group": "Druze", "seats": 8 },
+            { "group": "Greek Catholic", "seats": 8 },
+            { "group": "Armenian Orthodox", "seats": 5 },
+            { "group": "Alawite", "seats": 2 },
+            { "group": "Armenian Catholic", "seats": 1 },
+            { "group": "Evangelical", "seats": 1 },
+            { "group": "Minorities", "seats": 1 }
+          ],
+          "note": "Confessional seat allocation: 64 Christian and 64 Muslim seats, distributed among sects and districts (the allocation shown is that of the 2022 election article under the 2017 election law; the 1996 allocation by sect and district was not fetched). The 2017 law uses proportional lists in 15 districts with a preferential vote; the 1996 election was held under a different law in five rounds between 18 August and 15 September 1996. seats_2000 is the result of the 1996 election (the 2000 election was held in August-September 2000, after the start date): Amal 8, Hezbollah 7, others 19 (Syrian Social Nationalist Party 5, Progressive Socialist Party 5, Ba'ath Party 2, Islamic Group, Toilers League, Popular Nasserist Organization, Promise Party, Armenian Revolutionary Federation, Hunchakian Party and Armenian Democratic Liberal Party 1 each) and 94 independents, of whom 66 belonged to blocs such as the 25-member Hariri bloc. Four members lost their seats after a judicial review in May 1997 (by-elections not recorded)."
+        },
+        "seats_2000": {
+          "lbn.amal": 8,
+          "lbn.hezbollah": 7,
+          "others": 19,
+          "independents": 94
+        },
+        "confidence_chamber": true,
+        "source": [
+          { "url": "https://en.wikipedia.org/wiki/1996_Lebanese_general_election", "title": "Wikipedia: 1996 Lebanese general election (results table, bloc breakdown)", "accessed": "2026-10-17" },
+          { "url": "https://en.wikipedia.org/wiki/2022_Lebanese_general_election", "title": "Wikipedia: 2022 Lebanese general election (confessional seat allocation by district)", "accessed": "2026-10-17" }
+        ],
+        "confidence": "needs_review",
+        "review_note": "seats_2000 uses the 1996 result without the by-elections that followed the May 1997 judicial review (four seats were lost); confirm the composition on 1 January 2000. The sect allocation is from the 2022 article."
+      }
+    ]
+  },
+  "party_system": "multi_party",
+  "start_2000": {
+    "ruling_parties": [],
+    "ideology_support": {
+      "big_tent": 0.28,
+      "liberal_conservative": 0.17,
+      "islamist": 0.12,
+      "national_conservative": 0.12,
+      "regionalist": 0.08,
+      "tribal_traditional": 0.06,
+      "social_democrat": 0.05,
+      "islamic_democrat": 0.04,
+      "christian_conservative": 0.03,
+      "baathist": 0.03,
+      "marxist_leninist": 0.02
+    },
+    "ideology_support_note": "Estimate only: no vote shares by party were published for the 1996 election (independents won 94 of 128 seats, 66 of them in blocs: Hariri 25, Berri 13, and others). The weights are a gameplay estimate: liberal_conservative = the Hariri bloc (later the Future Movement); islamist = Hezbollah and the Islamic Group; big_tent = Amal, the Berri bloc and other leader-centred blocs; regionalist, social_democrat and tribal_traditional = Druze, left-leaning and family-based politics (Progressive Socialist Party and others); national_conservative and christian_conservative = Christian parties and independents; baathist and marxist_leninist = the Ba'ath Party and the smaller left; islamic_democrat = moderate Islamic currents.",
+    "stability": 0.5,
+    "war_support": 0.4
+  },
+  "claims": [
+    { "tag": "ISR", "note": "The Lebanese government and Hezbollah consider Israel's May 2000 withdrawal incomplete until Israel withdraws from the Shebaa Farms (Wikipedia: South Lebanon conflict)." }
+  ],
+  "source": [
+    { "url": "https://en.wikipedia.org/wiki/List_of_presidents_of_Lebanon", "title": "Wikipedia: List of presidents of Lebanon", "accessed": "2026-10-17" },
+    { "url": "https://en.wikipedia.org/wiki/List_of_prime_ministers_of_Lebanon", "title": "Wikipedia: List of prime ministers of Lebanon", "accessed": "2026-10-17" },
+    { "url": "https://en.wikipedia.org/wiki/South_Lebanon_conflict_(1985%E2%80%932000)", "title": "Wikipedia: South Lebanon conflict (1985-2000)", "accessed": "2026-10-17" },
+    { "url": "https://en.wikipedia.org/wiki/Syrian_occupation_of_Lebanon", "title": "Wikipedia: Syrian occupation of Lebanon", "accessed": "2026-10-17" },
+    { "url": "https://en.wikipedia.org/wiki/2026_Lebanese_general_election", "title": "Wikipedia: 2028 Lebanese general election (postponed from May 2026)", "accessed": "2026-10-17" }
+  ],
+  "confidence": "verified"
+}
