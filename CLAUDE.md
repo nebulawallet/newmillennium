@@ -29,7 +29,23 @@ Start every session by reading [HANDOFF.md](HANDOFF.md). It holds the current st
   - No eyebrows or labels above headings.
   - Unbuilt systems say which phase adds them.
 - **Commits:** one per phase or batch, with a clear message, ending with the Co-Authored-By line the harness provides.
-- **Research agents** follow [scripts/research/AGENT_BRIEF.md](scripts/research/AGENT_BRIEF.md). Run at most about 6 at once, and audit each result before committing.
+- **Research agents** follow [scripts/research/AGENT_BRIEF.md](scripts/research/AGENT_BRIEF.md). Audit each result before committing. See "Scope and cost" below for when and how to run them.
+
+## Scope and cost (since 17 October 2026)
+
+- **Focus:** the game is about the major conflicts of 2000–2026: Israel–Palestine, Russia–Ukraine, Iraq, Afghanistan, and the Syrian civil war with ISIS. Put effort there before breadth. The plan is in [docs/CONFLICTS_PLAN.md](docs/CONFLICTS_PLAN.md).
+- **Research tiers:**
+  - **Full:** the 79 countries already committed. Do not extend this tier.
+  - **Light:** only countries the conflicts need (IRQ, AFG, AFN, SYR, maybe LBN, YEM) and a few big players the user approves. See "Light tier" in AGENT_BRIEF.md.
+  - **Default:** everyone else. No research at all.
+- **Ask the user before spawning any agent**, and before any other expensive step.
+- **Agent models:**
+  - Research agents run on **Sonnet at medium effort**: pass `model: "sonnet"` and `effort: "medium"` to the Agent tool.
+  - Simple bulk jobs (reformatting, templated data) run on Sonnet at low effort.
+  - Run at most 2–3 agents at once.
+  - Engine and conflict-mechanics work stays in the main session.
+- **Agent prompts must say:** never kill processes you did not start (no `taskkill /IM node.exe`).
+- **Minor countries:** one shared generic focus tree, and the default politics profile once it exists. No per-country content for them.
 
 ## Where things live
 

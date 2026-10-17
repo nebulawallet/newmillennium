@@ -126,6 +126,36 @@ For each person:
 - `interest_groups.json`: 2000 influence (0–1) and approval (0–100) for all 10 interest group types. These are gameplay estimates; say so in `note`.
 - `laws.json`: the law in force on 2000-01-01 for each of the 12 categories, with a short `note` on the non-obvious choices.
 
+## Light tier (use when your task says "light")
+
+Most countries now get light research only. Produce the same six files, but cover only the following.
+
+**What to cover**
+
+- **country.json:**
+  - government type and constitution notes
+  - the offices: head of state, head of government, effective executive
+  - holders on 1 January 2000 and the current holders, with dates
+  - holders in between only where the task asks for them (conflict countries may need key transitions)
+  - legislature with its 1 January 2000 seats
+- **people.json:** only the people above, plus the leaders of the 3–5 main parties, each sourced.
+- **parties.json:** the 3–5 main parties (those holding most seats in 2000, plus any later major party the task names), with their leaders in 2000 and now.
+- **elections.json:**
+  - the election rules
+  - the last national election before 2000, so seats and support are right
+  - the most recent election
+  - No full 2000–2026 history: the game simulates the rest.
+- **interest_groups.json and laws.json:** as in Pass A. These are gameplay judgements, noted as such.
+
+**What to skip**
+
+- full election histories
+- every party leader change
+- minor parties
+- referendums, unless the task names them
+
+All hard rules still apply. Every fact comes from a fetched source, no invented dates, and anything uncertain is marked needs_review.
+
 ## Definition of done
 
 1. This command returns **0 errors**:
