@@ -32,6 +32,9 @@
   --font-cond: "Barlow Semi Condensed", "Barlow", "Segoe UI", sans-serif;
 
   --grain: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .9 0 0 0 0 .85 0 0 0 0 .7 0 0 0 .07 0'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E");
+  /* command-centre overlay: a faint 12px data grid over steel, and corner ticks on slabs */
+  --grid: repeating-linear-gradient(0deg, rgba(170, 200, 190, 0.035) 0 1px, transparent 1px 12px), repeating-linear-gradient(90deg, rgba(170, 200, 190, 0.035) 0 1px, transparent 1px 12px);
+  --hair: rgba(201, 165, 106, 0.22);
   --bevel: inset 0 1px 0 rgba(255, 236, 196, 0.07), inset 0 -1px 0 rgba(0, 0, 0, 0.55);
   --lift: 0 6px 18px rgba(0, 0, 0, 0.55), 0 1px 2px rgba(0, 0, 0, 0.7);
 
@@ -71,32 +74,45 @@ html, body {
 
 /* ---------- panel: dark steel slab with bronze hairline ---------- */
 .hp {
-  background: var(--grain), linear-gradient(180deg, var(--steel-3), var(--steel-2) 40%, var(--steel-1));
+  position: relative;
+  background: var(--grain), var(--grid), linear-gradient(180deg, rgba(35, 45, 41, 0.97), rgba(27, 35, 32, 0.97) 40%, rgba(17, 23, 21, 0.98));
   border: 1px solid var(--bronze-dk);
   outline: 1px solid rgba(0, 0, 0, 0.7);
   box-shadow: var(--bevel), var(--lift);
 }
+/* corner ticks: bronze brackets on the four corners of every slab */
+.hp::after {
+  content: ""; position: absolute; inset: -1px; pointer-events: none;
+  background:
+    linear-gradient(var(--bronze-lt), var(--bronze-lt)) left top / 9px 1px no-repeat,
+    linear-gradient(var(--bronze-lt), var(--bronze-lt)) left top / 1px 9px no-repeat,
+    linear-gradient(var(--bronze-lt), var(--bronze-lt)) right top / 9px 1px no-repeat,
+    linear-gradient(var(--bronze-lt), var(--bronze-lt)) right top / 1px 9px no-repeat,
+    linear-gradient(var(--bronze-lt), var(--bronze-lt)) left bottom / 9px 1px no-repeat,
+    linear-gradient(var(--bronze-lt), var(--bronze-lt)) left bottom / 1px 9px no-repeat,
+    linear-gradient(var(--bronze-lt), var(--bronze-lt)) right bottom / 9px 1px no-repeat,
+    linear-gradient(var(--bronze-lt), var(--bronze-lt)) right bottom / 1px 9px no-repeat;
+}
 .hp-head {
   display: flex; align-items: center; gap: 10px;
-  min-height: 38px; padding: 0 8px 0 14px;
-  background: linear-gradient(180deg, #2b2416, #17130c);
+  min-height: 34px; padding: 0 6px 0 12px;
+  background: linear-gradient(180deg, #282115, #15110b);
   border-bottom: 1px solid var(--bronze);
-  box-shadow: inset 0 1px 0 rgba(232, 207, 152, 0.18);
+  box-shadow: inset 0 1px 0 rgba(232, 207, 152, 0.14);
 }
 .hp-title {
   margin: 0;
-  font: 700 15px/1 var(--font-cond);
-  letter-spacing: 0.1em; text-transform: uppercase;
+  font: 700 14px/1 var(--font-cond);
+  letter-spacing: 0.08em; text-transform: uppercase;
   color: var(--bronze-hi);
-  text-shadow: 0 1px 0 #000;
 }
 .hp-section {
-  margin: 12px 0 6px; padding: 4px 8px;
-  font: 700 11.5px/1.2 var(--font-cond); letter-spacing: 0.12em; text-transform: uppercase;
+  display: flex; align-items: center; gap: 8px;
+  margin: 12px 0 6px; padding: 3px 0 3px 2px;
+  font: 700 11px/1.2 var(--font-cond); letter-spacing: 0.1em; text-transform: uppercase;
   color: var(--bronze-lt);
-  background: linear-gradient(90deg, rgba(138, 109, 67, 0.28), rgba(138, 109, 67, 0) 85%);
-  border-top: 1px solid rgba(201, 165, 106, 0.35);
 }
+.hp-section::after { content: ""; flex: 1; height: 1px; background: linear-gradient(90deg, var(--hair), transparent); }
 .hp-well {
   background: rgba(0, 0, 0, 0.32);
   border: 1px solid rgba(0, 0, 0, 0.6);
@@ -107,7 +123,7 @@ html, body {
 .tile {
   appearance: none; position: relative;
   display: grid; place-items: center;
-  width: 40px; height: 40px; padding: 0;
+  width: 36px; height: 36px; padding: 0;
   color: var(--ink-dim);
   background: linear-gradient(180deg, var(--steel-4), var(--steel-2));
   border: 1px solid var(--bronze-dk);
@@ -134,8 +150,8 @@ html, body {
 .btn {
   appearance: none;
   display: inline-flex; align-items: center; justify-content: center; gap: 6px;
-  min-height: 30px; padding: 0 14px;
-  font: 700 13px/1 var(--font-cond); letter-spacing: 0.08em; text-transform: uppercase;
+  min-height: 28px; padding: 0 12px;
+  font: 700 12.5px/1 var(--font-cond); letter-spacing: 0.06em; text-transform: uppercase;
   color: var(--ink);
   background: linear-gradient(180deg, var(--steel-5), var(--steel-3));
   border: 1px solid var(--bronze);
@@ -156,7 +172,7 @@ html, body {
 .lnk { appearance: none; background: none; border: 0; padding: 0; color: var(--bronze-lt); font: inherit; cursor: pointer; text-align: left; }
 .lnk:hover { color: var(--bronze-hi); text-decoration: underline; text-underline-offset: 2px; }
 .x {
-  appearance: none; width: 26px; height: 26px; display: grid; place-items: center; padding: 0;
+  appearance: none; width: 24px; height: 24px; display: grid; place-items: center; padding: 0;
   margin-left: auto; color: var(--ink-dim); background: rgba(0, 0, 0, 0.3); border: 1px solid var(--bronze-dk); cursor: pointer;
 }
 .x:hover { color: var(--bad); border-color: var(--bad); }
@@ -180,7 +196,7 @@ input::placeholder { color: var(--ink-mute); }
   font-size: 12.5px;
 }
 .tt-h {
-  padding: 6px 10px; font: 700 13px/1.2 var(--font-cond); letter-spacing: 0.06em; text-transform: uppercase;
+  padding: 5px 10px; font: 700 12.5px/1.2 var(--font-cond); letter-spacing: 0.06em; text-transform: uppercase;
   color: var(--bronze-hi); background: rgba(0, 0, 0, 0.35); border-bottom: 1px solid var(--bronze-dk);
 }
 .tt-b { padding: 7px 10px 8px; display: grid; gap: 3px; }

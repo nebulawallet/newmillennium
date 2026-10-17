@@ -54,6 +54,21 @@ export const Icon = {
   menu: (p?: P) => svg(<><path d="M4 6.5h16M4 12h16M4 17.5h16" stroke-width="1.8" /></>, p),
   chevron: (p?: P) => svg(<><path d="m9 6 6 6-6 6" stroke-width="2" /></>, p),
   search: (p?: P) => svg(<><circle cx="10.5" cy="10.5" r="6" /><path d="m15 15 5 5" /></>, p),
+  lock: (p?: P) => svg(<><path d="M6 11h12v9H6z" /><path d="M8.5 11V8a3.5 3.5 0 0 1 7 0v3" /></>, p),
+  check: (p?: P) => svg(<><path d="m5 12.5 4.5 4.5L19 7.5" stroke-width="2.2" /></>, p),
+  exclusive: (p?: P) => svg(<><path d="M3 12h18" /><path d="m7 8-4 4 4 4M17 8l4 4-4 4" /><path d="M12 7v10" stroke-width="2.2" /></>, p),
+  centre: (p?: P) => svg(<><circle cx="12" cy="12" r="3" /><path d="M12 2v5M12 17v5M2 12h5M17 12h5" /></>, p),
+  // ---- research categories and technologies
+  infantry: (p?: P) => svg(<><path d="M5 18 19 4M5 4l14 14" /><path d="M3 20h4M17 20h4" /></>, p),
+  armour: (p?: P) => svg(<><rect x="3" y="12" width="18" height="6" rx="3" /><path d="M7 12V9h8l2 3" /><path d="M15 10.5h6" /></>, p),
+  artillery: (p?: P) => svg(<><path d="M4 18 18 6" /><path d="m16 4 4 4" /><circle cx="7" cy="18" r="2.5" /><path d="M10 18h8" /></>, p),
+  air: (p?: P) => svg(<><path d="M12 3v18" /><path d="M3 13l9-4 9 4" /><path d="M8 20l4-2 4 2" /></>, p),
+  naval: (p?: P) => svg(<><path d="M3 15h18l-3 5H6Z" /><path d="M8 15V9h6l2 6" /><path d="M11 9V5" /></>, p),
+  doctrine: (p?: P) => svg(<><path d="M4 5h6a2 2 0 0 1 2 2v13a2 2 0 0 0-2-2H4Z" /><path d="M20 5h-6a2 2 0 0 0-2 2v13a2 2 0 0 1 2-2h6Z" /></>, p),
+  electronics: (p?: P) => svg(<><rect x="7" y="7" width="10" height="10" /><path d="M10 3v4M14 3v4M10 17v4M14 17v4M3 10h4M3 14h4M17 10h4M17 14h4" /></>, p),
+  industry: (p?: P) => svg(<><path d="M13 2 5 13h6l-1 9 8-11h-6Z" /></>, p),
+  digital: (p?: P) => svg(<><circle cx="12" cy="12" r="8.5" /><path d="M3.5 12h17M12 3.5c2.5 2.6 3.5 5.4 3.5 8.5s-1 5.9-3.5 8.5c-2.5-2.6-3.5-5.4-3.5-8.5s1-5.9 3.5-8.5Z" /></>, p),
+  missile: (p?: P) => svg(<><path d="M14 4h6v6L9 21l-6-6Z" /><path d="m6 12 6 6M3 21l3-3" /></>, p),
 };
 
 export type IconName = keyof typeof Icon;

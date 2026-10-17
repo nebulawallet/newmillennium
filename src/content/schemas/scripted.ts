@@ -85,6 +85,8 @@ export const FocusDef = z.strictObject({
   /** Grid position in the tree view. */
   x: z.number().int(),
   y: z.number().int().min(0),
+  /** Icon name from the shell's icon set (src/ui/icons.tsx); derived from the effects when absent. */
+  icon: z.string().optional(),
   days: z.number().int().positive().default(70),
   /** All groups must be satisfied; within a group any one completed focus is enough. */
   prerequisites: z.array(z.array(Id).min(1)).default([]),

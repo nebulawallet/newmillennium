@@ -23,6 +23,7 @@ import { countryName } from "../../sim/politics/unrest.ts";
 import type { GameState } from "../../sim/state.ts";
 import { version, type Session } from "../session.ts";
 import { selectedProvince } from "../store.ts";
+import { Flag } from "../Flag.tsx";
 import { tip } from "../tooltip.tsx";
 
 /** Country picked in the diplomacy list (used when no province is selected). */
@@ -71,7 +72,7 @@ function CountryPicker({ db, state, me }: { db: ContentDB; state: GameState; me:
         {rows.map((r) => (
           <li class="dec-item" key={r.tag}>
             <button class="dec-main lnk" onClick={() => { selectedProvince.value = 0; diplomacyTarget.value = r.tag; }} {...tip(() => ({ title: r.name, rows: [["Opinion of you", signed(r.op)]] }))}>
-              <span class="dec-name">{r.name}</span>
+              <span class="dec-name row-flag"><Flag db={db} tag={r.tag} size="xs" />{r.name}</span>
             </button>
             <b class={`num ${r.op < 0 ? "warn" : ""}`}>{signed(r.op)}</b>
           </li>
@@ -160,8 +161,9 @@ function TargetView({ db, state, me, t, run, pairHas }: { db: ContentDB; state: 
   const theirBlocs = blocsOf(state, t);
   return (
     <>
-      <div class="hp-section">
-        {name}
+      <div class="dp-target">
+        <Flag db={db} tag={t} size="md" />
+        <h3 class="dp-name">{name}</h3>
         <button class="tile mini right" aria-label="Choose another country" onClick={() => { selectedProvince.value = 0; diplomacyTarget.value = null; }}>×</button>
       </div>
       <dl class="kv">

@@ -5,6 +5,7 @@ import { politicalPowerGain, stabilityTarget } from "../../sim/simulation.ts";
 import { factories } from "../../sim/economy/economy.ts";
 import { manpowerInService, manpowerPool } from "../../sim/military/military.ts";
 import type { CountryState } from "../../sim/state.ts";
+import { Flag } from "../Flag.tsx";
 import { Icon, type IconName } from "../icons.tsx";
 import { panel, paused, speed, version, type Session } from "../session.ts";
 import { TABS } from "../tabs.ts";
@@ -113,12 +114,10 @@ export function TopBar({ db, session }: { db: ContentDB; session: Session }) {
             ["Ruling party", party ? `${party.name.en} (${party.abbrev.en})` : "—"],
             ["Government", db.governmentTypes.get(c?.government.type ?? "")?.name ?? "—"],
           ],
-          note: "Flags are placeholders. Click to open Politics.",
+          note: "Click to open Politics.",
         }))}
       >
-        <span class="flag" style={{ "--flag": color }}>
-          <span class="flag-tag">{tag}</span>
-        </span>
+        <Flag db={db} tag={tag} color={color} size="lg" />
       </button>
 
       <FocusTile db={db} session={session} />

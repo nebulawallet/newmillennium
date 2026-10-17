@@ -10,7 +10,6 @@ import { Icon } from "../icons.tsx";
 import { PoliticsPanel } from "../politics/PoliticsPanel.tsx";
 import { DecisionsPanel } from "../scripted/DecisionsPanel.tsx";
 import { ConstructionPanel, EconomyPanel, TradePanel } from "../economy/EconomyPanels.tsx";
-import { ResearchPanel } from "../research/ResearchPanel.tsx";
 import { DiplomacyPanel, IntelligencePanel } from "../diplomacy/DiplomacyPanels.tsx";
 import { LogisticsPanel, ProductionPanel, RecruitmentPanel } from "../units/MilitaryPanels.tsx";
 import { selectedDivisions } from "../store.ts";
@@ -18,6 +17,7 @@ import { WarButton, WarsOutliner } from "../units/WarUi.tsx";
 import { feed, panel, version, type Session } from "../session.ts";
 import { selectedProvince } from "../store.ts";
 import { TABS, type TabDef } from "../tabs.ts";
+import { Flag } from "../Flag.tsx";
 import { tip } from "../tooltip.tsx";
 import { SidePanel } from "./SidePanel.tsx";
 
@@ -134,7 +134,7 @@ export function LeftPanel({ db, map, session }: { db: ContentDB; map: MapData; s
         <EconomyPanel db={db} session={session} />
       </SidePanel>
     );
-  if (open && open !== "menu" && open !== "focus") {
+  if (open && open !== "menu" && open !== "focus" && open !== "research") {
     const tab = TABS.find((t) => t.id === open)!;
     return (
       <SidePanel title={tab.label} icon={tab.icon} onClose={() => (panel.value = null)}>
@@ -146,8 +146,6 @@ export function LeftPanel({ db, map, session }: { db: ContentDB; map: MapData; s
           <ProductionPanel db={db} session={session} />
         ) : tab.id === "recruitment" ? (
           <RecruitmentPanel db={db} session={session} />
-        ) : tab.id === "research" ? (
-          <ResearchPanel db={db} session={session} />
         ) : tab.id === "construction" ? (
           <ConstructionPanel db={db} session={session} />
         ) : tab.id === "trade" ? (
@@ -186,7 +184,7 @@ export function Outliner({ db, session }: { db: ContentDB; session: Session }) {
             {items.map((e, i) => (
               <li key={`${e.day}-${i}`} class={e.tag === state?.player ? "mine" : ""}>
                 <span class="faint num small">{formatDate(e.day)}</span>
-                <span>{e.tag && <><b>{nameOf(e.tag)}</b> </>}{e.text}</span>
+                <span class="row-flag">{e.tag && <Flag db={db} tag={e.tag} size="xs" />}<span>{e.tag && <><b>{nameOf(e.tag)}</b> </>}{e.text}</span></span>
               </li>
             ))}
           </ul>

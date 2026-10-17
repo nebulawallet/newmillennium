@@ -26,6 +26,7 @@ import { MapModeBar, ProvinceTooltip } from "./ui/MapUi.tsx";
 import { CoalitionPanel } from "./ui/politics/CoalitionPanel.tsx";
 import { ElectionNight } from "./ui/politics/ElectionNight.tsx";
 import { EventWindow } from "./ui/scripted/EventWindow.tsx";
+import { ResearchView } from "./ui/research/ResearchPanel.tsx";
 import { FocusTreeView } from "./ui/scripted/FocusTree.tsx";
 import { PeaceConference } from "./ui/units/WarUi.tsx";
 import { hoveredProvince, pickedCountry, pointer, selectedDivisions, selectedProvince } from "./ui/store.ts";
@@ -160,6 +161,7 @@ function Root({ db, map, world, session, issues }: { db: ContentDB; map: MapData
       {inGame && <MapModeBar db={db} map={map} world={world} />}
       <ProvinceTooltip db={db} map={map} />
       {inGame && panel.value === "focus" && <FocusTreeView db={db} session={session} />}
+      {inGame && panel.value === "research" && <ResearchView db={db} session={session} />}
       {inGame && <ElectionNight db={db} session={session} />}
       {inGame && <EventWindow db={db} session={session} />}
       {inGame && <PeaceConference db={db} session={session} />}

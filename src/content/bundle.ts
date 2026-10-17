@@ -29,6 +29,7 @@ export interface ContentBundle {
   cultures: unknown[];
   countryList: unknown[];
   countryColors: Record<string, string>;
+  flags?: Record<string, string>;
   politicsRules: PoliticsRules;
   events: unknown[];
   decisions: unknown[];
@@ -75,6 +76,7 @@ export function toBundle({ db, issues }: CompileResult): ContentBundle {
     cultures: [...db.cultures.values()],
     countryList: db.countryList,
     countryColors: Object.fromEntries(db.countryColors),
+    flags: Object.fromEntries(db.flags),
     politicsRules: db.politicsRules,
     events: [...db.events.values()],
     decisions: [...db.decisions.values()],
@@ -114,6 +116,7 @@ export function fromBundle(b: ContentBundle): ContentDB {
     cultures: byId(b.cultures),
     countryList: b.countryList as ContentDB["countryList"],
     countryColors: new Map(Object.entries(b.countryColors ?? {})),
+    flags: new Map(Object.entries(b.flags ?? {})),
     countries: new Map(),
     politicsRules: b.politicsRules ?? PoliticsRulesFile.parse({}),
     events: byId(b.events ?? []),

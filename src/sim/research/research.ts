@@ -55,12 +55,13 @@ export function researchSlots(db: ContentDB, gdp: number): number {
   return Math.min(r.max_slots, r.base_slots + r.slot_gdp_thresholds.filter((t) => gdp >= t).length);
 }
 
-export type TechStatus = "completed" | "researching" | "available" | "locked";
+export type TechStatus = "completed" | "researching" | "available" | "locked" | "excluded";
 
 export function techStatus(cs: CountryState, t: TechDef): TechStatus {
   const r = cs.research!;
   if (r.completed.includes(t.id)) return "completed";
   if (r.slots.includes(t.id)) return "researching";
+  if (t.mutually_exclusive.some((m) => r.completed.includes(m) || r.slots.includes(m))) return "excluded";
   return t.prerequisites.every((g) => g.some((p) => r.completed.includes(p))) ? "available" : "locked";
 }
 
@@ -101,6 +102,7 @@ export function setResearch(ctx: SimContext, tag: string, slot: number, tech: st
   if (st === "completed") return { ok: false, text: "Already researched." };
   if (st === "researching") return { ok: false, text: "Already being researched." };
   if (st === "locked") return { ok: false, text: "Research its prerequisites first." };
+  if (st === "excluded") return { ok: false, text: "A mutually exclusive technology was chosen instead." };
   r.slots[slot] = tech;
   return { ok: true, text: `Researching ${t.name}.` };
 }

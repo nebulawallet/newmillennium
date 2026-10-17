@@ -18,6 +18,10 @@ export const TechDef = z.strictObject({
   cost: z.number().positive().default(180),
   /** All groups must be met; within a group any one researched technology is enough. */
   prerequisites: z.array(z.array(Id).min(1)).default([]),
+  /** Researching one of these closes this technology (and the other way round). */
+  mutually_exclusive: z.array(Id).default([]),
+  /** Icon name from the shell's icon set (src/ui/icons.tsx); the category's icon when absent. */
+  icon: z.string().optional(),
   /** Column within the category's tree view. */
   x: z.number().int().min(0),
   /** Permanent modifiers once researched. */
@@ -29,6 +33,8 @@ export const TechCategoryFile = z.strictObject({
   id: Id,
   name: z.string(),
   description: z.string(),
+  /** Icon name from the shell's icon set (src/ui/icons.tsx). */
+  icon: z.string().optional(),
   /** Military categories start from military spending rather than income. */
   military: z.boolean().default(false),
   techs: z.array(TechDef).min(1),

@@ -6,6 +6,7 @@ import { countryName } from "../../sim/politics/unrest.ts";
 import { Icon } from "../icons.tsx";
 import { panel, version, type Session } from "../session.ts";
 import { diplomacyTarget } from "../diplomacy/DiplomacyPanels.tsx";
+import { Flag } from "../Flag.tsx";
 import { tip } from "../tooltip.tsx";
 
 /** Diplomacy entry point for the country owning a selected province (war is declared from the Diplomacy tab). */
@@ -88,7 +89,7 @@ export function WarsOutliner({ db, session }: { db: ContentDB; session: Session 
               ] : [],
               note: `Since ${formatDate(w.startDay)}. ${state.battles.length} battle${state.battles.length === 1 ? "" : "s"} under way worldwide.`,
             }))}>
-              <b>{w.name}</b>
+              <span class="row-flag war-sides"><Flag db={db} tag={w.attackers[0]!} size="xs" /><span class="faint">vs</span><Flag db={db} tag={w.defenders[0]!} size="xs" /><b>{w.name}</b></span>
               <span class="faint num small">since {formatDate(w.startDay)}</span>
             </li>
           ))}

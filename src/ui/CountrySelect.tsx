@@ -4,6 +4,7 @@ import { countrySummary } from "../content/query.ts";
 import { REGIONS } from "../content/schemas/definitions.ts";
 import { SaveList } from "./hud/GameMenu.tsx";
 import { Portrait } from "./hud/SidePanel.tsx";
+import { Flag } from "./Flag.tsx";
 import { Icon } from "./icons.tsx";
 import type { Session } from "./session.ts";
 import { pickedCountry } from "./store.ts";
@@ -15,13 +16,6 @@ const REGION_NAMES: Record<string, string> = {
   east_se_asia: "East & Southeast Asia", oceania: "Oceania",
 };
 
-function Flag({ color, tag, size = "md" }: { color: string; tag: string; size?: "sm" | "md" | "lg" }) {
-  return (
-    <span class={`flag f-${size}`} style={{ "--flag": color }}>
-      <span class="flag-tag">{tag}</span>
-    </span>
-  );
-}
 
 /** HOI4-style country selection: bookmark plaque, featured nations, map picking, nation card. */
 export function CountrySelect({ db, session, issues }: { db: ContentDB; session: Session; issues: Issue[] }) {
@@ -42,7 +36,6 @@ export function CountrySelect({ db, session, issues }: { db: ContentDB; session:
   const errors = issues.filter((i) => i.severity === "error").length;
   const sel = selected ? rows.find((r) => r.entry.tag === selected) : null;
   const playable = !!sel?.summary && sel.entry.start_status !== "releasable";
-  const color = (tag: string) => db.countryColors.get(tag) ?? "#555";
 
   const pick = (tag: string) => {
     pickedCountry.value = tag;
@@ -74,7 +67,7 @@ export function CountrySelect({ db, session, issues }: { db: ContentDB; session:
         <div class="featured">
           {featured.map(({ entry }) => (
             <button key={entry.tag} class={`feat ${entry.tag === selected ? "on" : ""}`} onClick={() => pick(entry.tag)} {...tip(() => ({ title: entry.name, note: "Click to select, or click any country on the map." }))}>
-              <Flag color={color(entry.tag)} tag={entry.tag} size="sm" />
+              <Flag db={db} tag={entry.tag} size="sm" />
               <span>{entry.short_name ?? entry.name}</span>
             </button>
           ))}
@@ -94,7 +87,7 @@ export function CountrySelect({ db, session, issues }: { db: ContentDB; session:
           {list.map(({ entry, summary }) => (
             <li key={entry.tag}>
               <button class={`nrow ${entry.tag === selected ? "on" : ""} ${summary ? "" : "nodata"}`} onClick={() => pick(entry.tag)}>
-                <Flag color={color(entry.tag)} tag={entry.tag} size="sm" />
+                <Flag db={db} tag={entry.tag} size="sm" />
                 <span class="nname">{entry.short_name ?? entry.name}</span>
                 <span class="nlead">{summary ? summary.headOfGovernment : "being researched"}</span>
               </button>
@@ -116,7 +109,7 @@ export function CountrySelect({ db, session, issues }: { db: ContentDB; session:
 
       {sel && (
         <section class="nation-card hp" aria-label={sel.entry.name}>
-          <div class="nc-flag"><Flag color={color(sel.entry.tag)} tag={sel.entry.tag} size="lg" /></div>
+          <div class="nc-flag"><Flag db={db} tag={sel.entry.tag} size="lg" /></div>
           <div class="nc-main">
             <h2 class="nc-name">{sel.entry.name}</h2>
             {sel.summary ? (
