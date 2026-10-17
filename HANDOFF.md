@@ -47,9 +47,9 @@ New Millennium is a grand strategy game in the style of Hearts of Iron IV, set f
 - **Direction (17 October 2026):** the game is about the major conflicts of 2000–2026 (Israel–Palestine, Russia–Ukraine, Iraq, Afghanistan, Syria/ISIS, Lebanon). See [docs/CONFLICTS_PLAN.md](docs/CONFLICTS_PLAN.md) and CLAUDE.md "Scope and cost".
 - **All of them are scripted** on sourced dates in `data/events/conflicts.json`, with non-state armed groups on the map (see "Conflicts notes" below). `npx tsx scripts/dev/conflict-trace.ts` prints the whole 2000–2026 timeline in about two minutes; run it after any change to wars, the AI or the conflict data.
 - **Research tiers:** 70 full, 9 light, 133 default. No partial folders remain and nothing is untracked. **No research agents are running.** Ask the user before starting one (Sonnet, medium effort, at most 2–3).
-- **Every check passes:** `npm run check` (141 tests) and the whole-world `npm run validate-data`. The start screen shows no data errors.
+- **Every check passes:** `npm run check` (151 tests) and the whole-world `npm run validate-data`. The start screen shows no data errors.
 - **Speed:** about 3.5 ms per game day over a 10-year soak (median 2.6 ms, p99 21 ms, worst 37 ms) after the reworks; it was 2.4 ms before. The extra comes from the bigger tech tree, the goods market (monthly) and AI construction placement. Profile with `scripts/dev/profile-systems.ts`.
-- **Saves:** the Lebanon map rebuild (`64ec430`) renumbered about 1,400 province ids, so saves from before it load misaligned. GameState is v11 (v10 armies, v11 construction money and the goods market; both migrate).
+- **Saves:** the Lebanon map rebuild (`64ec430`) renumbered about 1,400 province ids, so saves from before it load misaligned. GameState is v12 (v10 armies, v11 construction money and the goods market, v12 puppets; all migrate).
 - **Dev server:** another worktree may hold port 5173; `.claude/launch.json` has `dev-alt` on 5181.
 - **Audit helper:** `python -I -X utf8 scripts/dev/audit-country.py TAG` prints offices, legislature, latest elections, needs_review items and dates after June 2026.
 - **Audit checklist for research results:**
@@ -99,6 +99,30 @@ New Millennium is a grand strategy game in the style of Hearts of Iron IV, set f
 - **Flags:** not dated (see above); de facto states, insurgent governments and armed groups use the placeholder.
 - **Research:** technology effects are modifiers only. Equipment variants still need `requires_tech` in `units/equipment.json` for any new equipment; only 18 technologies unlock equipment today.
 - **Construction:** the AI picks building types by fixed weights, not by need (for example, it does not build refineries for its fuel deficit).
+
+### War rework notes (17 October 2026, seven phases)
+
+1. **Adjacency** (`08a0433`): `scripts/dev/adjacency-audit.ts` checks `adjacency.json` against the id map and the border segments (they agree). Sub-pixel land enclaves (Macau, Gibraltar, Melilla, the Vatican; `data/map/adjacency_overrides.json`) are linked in the map build.
+2. **Fronts** (`08ec32f`): `allocate()` spreads divisions by frontage, threat and key terrain up to each province's supply cap, with the overflow in reserve behind the line. At war a front covers the enemy's allies. No thin salients. Wartime fronts are two-coloured, peacetime fronts dashed, and each army has a marker. `scripts/dev/front-trace.ts` shows a front on the real map.
+3. **Manual control** (`e74c321`): right-click moves or attacks, with refusals in words ("You are not at war with X"), route lines and a division panel. A manual order takes a division off its plan until it is returned (`Division.manual`, `return_to_plan`).
+4. **Drawing** (`adcb3f6`): `src/ui/units/planDrawing.ts`. Lines snap to provinces and gaps are filled along land paths. Drag or click; Enter or a double-click finishes, Backspace undoes a point, Esc or right-click cancels. Hold/Execute; execution only at war.
+5. **Combat** (`82726e4`): flanking bonus, supply in combat, retreats to the safest friendly neighbour, and destruction when encircled. Battles record progress, modifiers and casualties; wars record casualties and victories.
+6. **War clarity** (`37ac6c7`): `warStatus()` (score, casualties, territory). War overview panel (outliner or battle marker). Battle markers with progress bars.
+7. **Peace** (`9748e73`): `src/sim/military/peace.ts`.
+   - Capitulation at 70% occupied, or the capital plus 35%.
+   - A peace conference with annex, provinces, puppet and change of ideology, all costing war score.
+   - AI terms on the player, with a notice.
+   - Puppets (`state.subjects`, v12) follow their overlord into wars.
+   - White peace offers.
+   - Fronts are cleaned up after peace.
+
+**Still stubbed in war:**
+- **River crossings:** the penalty is in `war.json`, but the map has no river data. Natural Earth rivers (public domain) would need a download; ask first.
+- **Peace terms:** no reparations, demilitarisation or released nations. The terms list in `peace.ts` is open for them.
+- **AI peace terms:** AI-versus-AI wars still end with the winner keeping the land it holds; AI terms are used only against the player.
+- **Puppets:** no subject management (release, integrate, autonomy).
+- **Peace offers:** the AI does not send white peace offers to the player.
+- **Combat:** no naval or air combat, as before.
 
 ### Conflicts notes (17 October 2026)
 

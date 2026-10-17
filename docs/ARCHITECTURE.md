@@ -50,6 +50,7 @@ src/
   sim/military/            Phase 9: military.ts (manpower, production lines, templates, training, starting armies, movement, occupation)
                            Phase 10: war.ts (declarations, battles, supply, capitulation, peace, world tension)
                            fronts.ts (armies, fronts, offensive lines, spearheads, plan execution; shared by player and AI)
+                           peace.ts (capitulation, peace terms and their war-score cost, AI terms, white peace, puppets)
   sim/ai/                  Phase 12: ai.ts (strategic, diplomatic, recruitment planners; the military planner forms
                            armies and battle plans through the same commands as the player)
   sim/bucket.ts            per-country monthly slots (spreads load over the month)
@@ -67,7 +68,8 @@ src/
                            economy/ (Economy, Construction with placement, Trade with goods and routes),
                            research/ (ResearchView: the research screen), units/ (UnitCounters: APP-6 counters,
                            symbols.ts, FrontOverlay: frontlines and battle plans on the map, ArmyBar: army cards and plan
-                           tools, Production and Recruitment panels, WarUi, Logistics), diplomacy/, charts/,
+                           tools, planDrawing.ts (drawing lines and arrows), DivisionPanel (+ toasts), WarPanel (war
+                           overview), BattleMarkers, PeaceScreen (peace conference, imposed terms), Production and Recruitment panels, WarUi, Logistics), diplomacy/, charts/,
                            MapUi (map modes, hover), tooltip.tsx, icons.tsx, tabs.ts, theme.css + shell.css
   main.tsx                 boot: loads content + map, builds MapView/WorldMap/Session, renders UI, key bindings
 tests/                     vitest: validator rules, scripts, real data (DEU full tier), map 2000 rules, simulation
