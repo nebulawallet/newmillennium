@@ -90,6 +90,14 @@ export const MilitaryRulesFile = z.strictObject({
   personnel_per_division: n(12000),
   /** Starting stockpile on top of what starting divisions use. */
   reserve_stockpile: n(0.15),
+  /**
+   * Starting stock quality: the share of each equipment family in its newest available variant is military spending
+   * per soldier (World Bank 2000) over this; the rest is the previous variant. Without spending data, GDP per head
+   * over `gdp_per_capita_fully_modern` stands in.
+   */
+  usd_per_soldier_fully_modern: n(150_000),
+  gdp_per_capita_fully_modern: n(30_000),
+  min_modern_share: n(0.1),
   /** Starting air force: one fighter (best variant available) per this much yearly military spending in US dollars (World Bank 2000). */
   usd_per_starting_fighter: n(150_000_000),
   /** Hours of marching per day. */

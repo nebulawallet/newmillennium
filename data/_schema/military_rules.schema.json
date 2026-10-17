@@ -50,6 +50,18 @@
       "default": 0.15,
       "type": "number"
     },
+    "usd_per_soldier_fully_modern": {
+      "default": 150000,
+      "type": "number"
+    },
+    "gdp_per_capita_fully_modern": {
+      "default": 30000,
+      "type": "number"
+    },
+    "min_modern_share": {
+      "default": 0.1,
+      "type": "number"
+    },
     "usd_per_starting_fighter": {
       "default": 150000000,
       "type": "number"

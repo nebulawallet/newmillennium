@@ -194,10 +194,24 @@ export function initialMilitary(db: ContentDB, cs: CountryState, provinces: { id
     if (!t) continue;
     for (const [f, c] of Object.entries(templateNeeds(db, t.units))) needAll[f] = (needAll[f] ?? 0) + c;
   }
+  // stock quality: well-funded armies field the newest variants, the rest a mix with the previous generation
+  const wbq = db.worldBank.countries[cs.tag];
+  const num = (k: string) => (typeof wbq?.[k] === "number" ? (wbq[k] as number) : undefined);
+  const spendQ = num("military_spending_pct_gdp") !== undefined && num("gdp_usd") !== undefined ? (num("military_spending_pct_gdp")! / 100) * num("gdp_usd")! : undefined;
+  const soldiers = num("armed_forces_personnel");
+  const modernShare = clamp(
+    spendQ !== undefined && soldiers ? spendQ / soldiers / rules.usd_per_soldier_fully_modern : (num("gdp_per_capita_usd") ?? 0) / rules.gdp_per_capita_fully_modern,
+    rules.min_modern_share, 1,
+  );
   for (const [family, need] of Object.entries(needAll)) {
     const vs = availableVariants(db, cs, family);
     const best = vs[vs.length - 1] ?? db.equipment.get(family)?.variants[0];
-    if (best) military.stockpile[best.id] = Math.ceil(need * (1 + rules.reserve_stockpile));
+    const prev = vs.length >= 2 ? vs[vs.length - 2] : undefined;
+    const total = Math.ceil(need * (1 + rules.reserve_stockpile));
+    if (!best) continue;
+    const modern = prev ? Math.round(total * modernShare) : total;
+    military.stockpile[best.id] = modern;
+    if (prev && total > modern) military.stockpile[prev.id] = total - modern;
   }
   // starting air force, scaled from military spending (no data: none)
   const wb = db.worldBank.countries[cs.tag];

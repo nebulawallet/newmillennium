@@ -48,6 +48,23 @@ describe("starting forces", () => {
     expect(deu.every((d) => d.strength === 1 && sim.state.provinceOwner[d.province - 1] === "DEU")).toBe(true);
     expect(sim.state.countries.DEU!.military!.manpower).toBeGreaterThan(0);
   });
+
+  it("are more modern where military spending per soldier is higher, and start with an air force", () => {
+    const state = createInitialState(db, { provinces: [] }, { contentHash: "t" });
+    // average generation (variant index) of the artillery stock
+    const generation = (tag: string) => {
+      const st = state.countries[tag]!.military!.stockpile;
+      const vs = db.equipment.get("artillery")?.variants ?? [];
+      let n = 0, sum = 0;
+      vs.forEach((v, i) => { n += st[v.id] ?? 0; sum += (st[v.id] ?? 0) * i; });
+      return n ? sum / n : 0;
+    };
+    expect(generation("USA")).toBe(1);
+    expect(generation("IRQ")).toBeLessThan(0.5);
+    const fighters = (tag: string) => Object.entries(state.countries[tag]!.military!.stockpile).filter(([id]) => id.startsWith("fighter_")).reduce((s, [, n]) => s + n, 0);
+    expect(fighters("USA")).toBeGreaterThan(fighters("DEU"));
+    expect(fighters("DEU")).toBeGreaterThan(0);
+  });
 });
 
 describe("build a division and move it", () => {
