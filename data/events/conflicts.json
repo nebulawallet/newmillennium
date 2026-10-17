@@ -1913,6 +1913,335 @@
       ]
     },
     {
+      "id": "hez_holds_south_lebanon_2006",
+      "title": "Hezbollah in southern Lebanon",
+      "description": "Hezbollah's cross-border raid on 12 July 2006 began the 2006 Lebanon War, fought mainly in southern Lebanon. Hezbollah's armed presence there is shown as its own side.",
+      "countries": [
+        "LBN"
+      ],
+      "major": true,
+      "historical": {
+        "date": "2006-07-12",
+        "any_path": true,
+        "dynamic_mode": true,
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2006_Lebanon_War",
+            "title": "Wikipedia: 2006 Lebanon War",
+            "accessed": "2026-10-17"
+          },
+          {
+            "url": "https://en.wikipedia.org/wiki/Hezbollah",
+            "title": "Wikipedia: Hezbollah",
+            "accessed": "2026-10-17"
+          }
+        ],
+        "confidence": "needs_review",
+        "review_note": "Dates are sourced. The provinces are a province-level approximation on the game map (one game province can cover a whole governorate); check against the source's territorial-control maps."
+      },
+      "options": [
+        {
+          "id": "ok",
+          "name": "Continue",
+          "effects": [
+            {
+              "spawn_armed_group": {
+                "group": "HEZ",
+                "regions": [
+                  {
+                    "from": "LBN",
+                    "provinces": [
+                      "South Lebanon"
+                    ]
+                  }
+                ],
+                "divisions": 3,
+                "war_with": []
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "isr_war_with_hez_2006",
+      "title": "2006 Lebanon War",
+      "description": "Israel went to war with Hezbollah on 12 July 2006, with air strikes across Lebanon and a ground campaign in the south.",
+      "countries": [
+        "ISR"
+      ],
+      "major": false,
+      "historical": {
+        "date": "2006-07-12",
+        "any_path": true,
+        "dynamic_mode": true,
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2006_Lebanon_War",
+            "title": "Wikipedia: 2006 Lebanon War",
+            "accessed": "2026-10-17"
+          }
+        ],
+        "confidence": "verified"
+      },
+      "options": [
+        {
+          "id": "ok",
+          "name": "Continue",
+          "effects": [
+            {
+              "declare_war": {
+                "target": "HEZ",
+                "goal": "limited"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "isr_ceasefire_with_hez_2006",
+      "title": "2006 Lebanon War: ceasefire",
+      "description": "A ceasefire took effect on 14 August 2006.",
+      "countries": [
+        "ISR"
+      ],
+      "major": false,
+      "historical": {
+        "date": "2006-08-14",
+        "any_path": true,
+        "dynamic_mode": false,
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2006_Lebanon_War",
+            "title": "Wikipedia: 2006 Lebanon War",
+            "accessed": "2026-10-17"
+          }
+        ],
+        "confidence": "verified"
+      },
+      "options": [
+        {
+          "id": "ok",
+          "name": "Continue",
+          "effects": [
+            {
+              "white_peace": {
+                "with": "HEZ"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "isr_war_with_hez_2023",
+      "title": "Israel–Hezbollah conflict",
+      "description": "Hezbollah attacked Israel on 8 October 2023, the day after the Hamas-led attack, starting a year of cross-border fighting; Israel invaded southern Lebanon on 1 October 2024.",
+      "countries": [
+        "ISR"
+      ],
+      "major": false,
+      "historical": {
+        "date": "2023-10-08",
+        "any_path": true,
+        "dynamic_mode": false,
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2024_Israel–Lebanon_ceasefire_agreement",
+            "title": "Wikipedia: 2024 Israel–Lebanon ceasefire agreement",
+            "accessed": "2026-10-17"
+          },
+          {
+            "url": "https://en.wikipedia.org/wiki/2026_Lebanon_war",
+            "title": "Wikipedia: 2026 Lebanon war",
+            "accessed": "2026-10-17"
+          }
+        ],
+        "confidence": "verified"
+      },
+      "options": [
+        {
+          "id": "ok",
+          "name": "Continue",
+          "effects": [
+            {
+              "declare_war": {
+                "target": "HEZ",
+                "goal": "limited"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "isr_ceasefire_with_hez_2024",
+      "title": "Israel–Lebanon ceasefire",
+      "description": "Under the ceasefire signed on 27 November 2024, Hezbollah was to withdraw its forces north of the Litani River and 5,000 Lebanese troops were to deploy in the south.",
+      "countries": [
+        "ISR"
+      ],
+      "major": false,
+      "historical": {
+        "date": "2024-11-27",
+        "any_path": true,
+        "dynamic_mode": false,
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2024_Israel–Lebanon_ceasefire_agreement",
+            "title": "Wikipedia: 2024 Israel–Lebanon ceasefire agreement",
+            "accessed": "2026-10-17"
+          },
+          {
+            "url": "https://en.wikipedia.org/wiki/2024_Israeli_invasion_of_Lebanon",
+            "title": "Wikipedia: 2024 Israeli invasion of Lebanon",
+            "accessed": "2026-10-17"
+          }
+        ],
+        "confidence": "verified"
+      },
+      "options": [
+        {
+          "id": "ok",
+          "name": "Continue",
+          "effects": [
+            {
+              "white_peace": {
+                "with": "HEZ"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hez_leaves_south_2024",
+      "title": "Hezbollah withdraws north of the Litani",
+      "description": "The ceasefire of 27 November 2024 required Hezbollah to withdraw north of the Litani River and the Lebanese Army to deploy in the south.",
+      "countries": [
+        "LBN"
+      ],
+      "major": false,
+      "historical": {
+        "date": "2024-11-27",
+        "any_path": true,
+        "dynamic_mode": false,
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2024_Israel–Lebanon_ceasefire_agreement",
+            "title": "Wikipedia: 2024 Israel–Lebanon ceasefire agreement",
+            "accessed": "2026-10-17"
+          }
+        ],
+        "confidence": "needs_review",
+        "review_note": "Dates are sourced. The provinces are a province-level approximation on the game map (one game province can cover a whole governorate); check against the source's territorial-control maps."
+      },
+      "options": [
+        {
+          "id": "ok",
+          "name": "Continue",
+          "effects": [
+            {
+              "armed_group_loses": {
+                "group": "HEZ",
+                "regions": [
+                  {
+                    "from": "LBN",
+                    "provinces": [
+                      "South Lebanon"
+                    ]
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hez_2026_war",
+      "title": "2026 Lebanon war",
+      "description": "Hezbollah launched strikes on Israel on 2 March 2026; Israel resumed large-scale air strikes and began ground operations in southern Lebanon on 16 March. Wikipedia records the war as ongoing.",
+      "countries": [
+        "LBN"
+      ],
+      "major": true,
+      "historical": {
+        "date": "2026-03-02",
+        "any_path": true,
+        "dynamic_mode": true,
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2026_Lebanon_war",
+            "title": "Wikipedia: 2026 Lebanon war",
+            "accessed": "2026-10-17"
+          }
+        ],
+        "confidence": "needs_review",
+        "review_note": "Dates are sourced. The provinces are a province-level approximation on the game map (one game province can cover a whole governorate); check against the source's territorial-control maps."
+      },
+      "options": [
+        {
+          "id": "ok",
+          "name": "Continue",
+          "effects": [
+            {
+              "spawn_armed_group": {
+                "group": "HEZ",
+                "regions": [
+                  {
+                    "from": "LBN",
+                    "provinces": [
+                      "South Lebanon"
+                    ]
+                  }
+                ],
+                "divisions": 3,
+                "war_with": []
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "isr_war_with_hez_2026",
+      "title": "2026 Lebanon war: Israel",
+      "description": "Israel went to war with Hezbollah again from 2 March 2026.",
+      "countries": [
+        "ISR"
+      ],
+      "major": false,
+      "historical": {
+        "date": "2026-03-02",
+        "any_path": true,
+        "dynamic_mode": true,
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2026_Lebanon_war",
+            "title": "Wikipedia: 2026 Lebanon war",
+            "accessed": "2026-10-17"
+          }
+        ],
+        "confidence": "verified"
+      },
+      "options": [
+        {
+          "id": "ok",
+          "name": "Continue",
+          "effects": [
+            {
+              "declare_war": {
+                "target": "HEZ",
+                "goal": "limited"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
       "id": "dpr_proclaimed",
       "title": "Donetsk People's Republic proclaimed",
       "description": "Separatists who had seized government buildings in Donetsk proclaimed the Donetsk People's Republic on 7 April 2014.",

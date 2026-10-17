@@ -199,7 +199,7 @@ export function endArmedGroup(ctx: SimContext, tag: string, into?: string, disba
   delete state.countries[tag];
   delete state.dynamicCountries[tag];
   const intoName = into ? (db.countryList.find((c) => c.tag === into)?.name ?? into) : "";
-  ctx.log(into ?? null, "civil_war", !into ? `${name} is defeated and holds no territory` : disbandArmyOf === into ? `${name} takes power in ${intoName}` : `${name} merges into ${intoName}`);
+  ctx.log(into ?? null, "civil_war", !into ? `${name} no longer holds territory` : disbandArmyOf === into ? `${name} takes power in ${intoName}` : `${name} merges into ${intoName}`);
   ctx.emit({ type: "map_changed" });
 }
 

@@ -60,7 +60,7 @@ Audit each before committing (checklist in HANDOFF.md, "Next steps").
    - Syrian rebels, 2011
 
    It also needs a way to end or shrink them on real dates: Mosul July 2017, Raqqa October 2017, Baghuz March 2019, Kabul 15 August 2021, the fall of Assad on 8 December 2024.
-Status 17 October 2026: items 1–5 are scripted in `data/events/conflicts.json` except Lebanon 2006 (see HANDOFF.md, step 4).
+Status 17 October 2026: items 1–5 are scripted in `data/events/conflicts.json`, including Lebanon 2006, 2023–24 and 2026 (see HANDOFF.md, step 4).
 
 2. **Iraq:** finish light IRQ data. The 2003 invasion becomes a real war, followed by occupation and a dated insurgency, ISIS in 2014 and the US withdrawal (18 December 2011).
 3. **Afghanistan:** finish AFG/AFN light data. Then the 2001 war, the Taliban insurgency, and the Taliban return in 2021 (a real takeover, not only a text event).

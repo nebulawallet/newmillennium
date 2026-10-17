@@ -231,6 +231,10 @@ async function main(): Promise<void> {
   const byOwner = new Map<string, Unit[]>();
   for (const u of units) byOwner.set(u.owner, [...(byOwner.get(u.owner) ?? []), u]);
 
+  // admin-1 codes that may merge only with each other (data/map/province_overrides.json, merge_only_within)
+  const groupOf = new Map<string, number>();
+  ((provOverrides.merge_only_within ?? []) as string[][]).forEach((g, i) => { for (const c of g) groupOf.set(c, i); });
+  const groupKey = (u: Unit) => { const gs = new Set(u.adm1.map((c) => groupOf.get(c) ?? -1)); return gs.size === 1 ? [...gs][0]! : -2; };
   let merges = 0;
   for (const [, list] of byOwner) {
     const keys = new Map<Unit, Set<string>>(list.map((u) => [u, vertexKeys(u)]));
@@ -238,6 +242,7 @@ async function main(): Promise<void> {
       const ku = keys.get(u)!;
       return list.filter((v) => {
         if (v === u || v.controller !== u.controller || v.adm0 !== u.adm0) return false;
+        if (groupOf.size && (groupKey(u) !== -1 || groupKey(v) !== -1) && groupKey(u) !== groupKey(v)) return false;
         let shared = 0;
         for (const k of keys.get(v)!) if (ku.has(k) && ++shared >= 2) return true;
         return false;

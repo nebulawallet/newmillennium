@@ -3,6 +3,19 @@
   "provinces": {
     "AZE-1735": {
       "name": "Laçın"
+    },
+    "LBN-3024": {
+      "name": "Beirut"
+    },
+    "LBN-3059": {
+      "name": "South Lebanon"
     }
-  }
+  },
+  "merge_only_within": [
+    [
+      "LBN-3059",
+      "LBN-3060"
+    ]
+  ],
+  "merge_only_within_note": "South Lebanon and An Nabatiyah form one province of their own (the 2006 Lebanon war was fought there); without this, the build merges them with Beirut and Mount Lebanon."
 }
