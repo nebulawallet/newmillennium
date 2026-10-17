@@ -17,6 +17,7 @@ import type { CountryState, GameState, War } from "../state.ts";
 import { clamp, countryModifiers } from "../politics/common.ts";
 import { justification, onWarDeclared } from "../diplomacy/diplomacy.ts";
 import { capitalProvince, templateNeeds, templateStats, type Division } from "./military.ts";
+import { afterPeace, aiTerms, capitulated, concludePeace, type PeaceTerm } from "./peace.ts";
 
 export interface Battle {
   province: number;
@@ -148,6 +149,7 @@ export function declareWar(ctx: SimContext, tag: string, target: string, goal: W
   const a = state.countries[tag], b = state.countries[target];
   if (!a?.active || !b?.active) return { ok: false, text: "Unknown country." };
   if (hostile(state, tag, target)) return { ok: false, text: "Already at war." };
+  if (state.subjects[tag] === target || state.subjects[target] === tag) return { ok: false, text: "A puppet and its overlord cannot go to war with each other." };
   const rules = db.warRules;
   const j = justification(state, tag, target);
   // historical wars started by events carry no justification penalty
@@ -157,7 +159,9 @@ export function declareWar(ctx: SimContext, tag: string, target: string, goal: W
   const id = state.nextWarId++;
   // wars with an armed group (src/sim/conflicts) call in no allies and never end by exhaustion
   const group = state.dynamicCountries[tag]?.kind === "armed_group" || state.dynamicCountries[target]?.kind === "armed_group";
-  state.wars.push({ id, name, attackers: [tag], defenders: [target], startDay: state.day, goal, ...(goal === "limited" ? { zone: zone ?? limitedZone(ctx, tag, target, LIMITED_WAR_DEPTH) } : {}), ...(group ? { armedGroup: true } : {}), ...(scripted ? { scripted: true } : {}) });
+  // puppets follow their overlords into the war
+  const puppets = (t: string) => Object.entries(state.subjects ?? {}).filter(([s, o]) => o === t && state.countries[s]?.active).map(([s]) => s);
+  state.wars.push({ id, name, attackers: [tag, ...puppets(tag)], defenders: [target, ...puppets(target)], startDay: state.day, goal, ...(goal === "limited" ? { zone: zone ?? limitedZone(ctx, tag, target, LIMITED_WAR_DEPTH) } : {}), ...(group ? { armedGroup: true } : {}), ...(scripted ? { scripted: true } : {}) });
   const nuclear = rules.nuclear_states_2000.includes(target) || rules.nuclear_states_2000.includes(tag);
   state.worldTension = clamp(state.worldTension + rules.tension_per_war * (nuclear ? rules.nuclear_tension_multiplier : 1) * (justified ? 1 : db.diplomacyRules.unjustified_tension_multiplier), 0, 1);
   a.warSupport = clamp(a.warSupport - 0.05, 0, 1);
@@ -500,37 +504,53 @@ export const warSystem: System = {
         const cs = state.countries[t];
         if (cs) cs.warSupport = clamp(cs.warSupport - rules.war_exhaustion_monthly + rules.occupation_war_support * dHeld, 0, 1);
       }
-      if (war.goal !== "limited" && occupiedShare(ctx, dLead) >= rules.capitulation_share) {
-        if (aLead === state.player) {
-          state.pendingPeace = { war: war.id, winner: "attackers" };
-          ctx.emit({ type: "coalition_needed", tag: aLead });
+      // capitulation: the player's side picks terms at a conference; the AI imposes terms on the
+      // player; AI wars among themselves end as before (conquest keeps what is held)
+      const loser = capitulated(ctx, war, "defenders") ? "defenders" : capitulated(ctx, war, "attackers") ? "attackers" : null;
+      if (loser) {
+        const winner = loser === "defenders" ? "attackers" : "defenders";
+        const p = state.player ?? "";
+        if (war[winner].includes(p)) {
+          state.pendingPeace = { war: war.id, winner };
+          ctx.emit({ type: "coalition_needed", tag: p });
+        } else if (war[loser].includes(p)) {
+          const r = concludePeace(ctx, war, winner, aiTerms(ctx, war, winner), war[winner][0]!);
+          ctx.emit({ type: "peace", tag: p, title: `${war.name}: your side capitulated`, lines: r.lines.length ? r.lines : ["Peace without territorial change."] });
+        } else {
+          makePeace(ctx, war, winner, war.goal === "conquest" && winner === "attackers");
+          afterPeace(ctx);
         }
-        else makePeace(ctx, war, "attackers", war.goal === "conquest");
-        continue;
-      }
-      if (war.goal !== "limited" && occupiedShare(ctx, aLead) >= rules.capitulation_share) {
-        if (dLead === state.player) {
-          state.pendingPeace = { war: war.id, winner: "defenders" };
-          ctx.emit({ type: "coalition_needed", tag: dLead });
-        }
-        else makePeace(ctx, war, "defenders", false);
         continue;
       }
       const aWs = state.countries[aLead]?.warSupport ?? 0, dWs = state.countries[dLead]?.warSupport ?? 0;
       const months = (state.day - war.startDay) / 30;
       const held = war.armedGroup || (war.scripted && state.rules.electionMode === "historical");
-      if (!held && months >= rules.white_peace_min_months && Math.min(aWs, dWs) <= rules.white_peace_war_support) makePeace(ctx, war, null, false);
+      if (!held && months >= rules.white_peace_min_months && Math.min(aWs, dWs) <= rules.white_peace_war_support) {
+        makePeace(ctx, war, null, false);
+        afterPeace(ctx);
+      }
     }
   },
 };
 
-/** The player's choice at a peace conference they won. */
+/** The player's choice at a peace conference they won (annex = take the land they hold). */
 export function choosePeace(ctx: SimContext, annex: boolean): { ok: boolean; text: string } {
   const p = ctx.state.pendingPeace;
   const war = p ? ctx.state.wars.find((w) => w.id === p.war) : undefined;
   if (!p || !war) return { ok: false, text: "No peace conference is open." };
   makePeace(ctx, war, p.winner, annex);
+  afterPeace(ctx);
   return { ok: true, text: annex ? "The occupied provinces are annexed." : "Peace signed; occupied provinces are returned." };
+}
+
+/** The player's terms at a peace conference they won. */
+export function signPeace(ctx: SimContext, terms: PeaceTerm[]): { ok: boolean; text: string } {
+  const p = ctx.state.pendingPeace;
+  const war = p ? ctx.state.wars.find((w) => w.id === p.war) : undefined;
+  if (!p || !war || !ctx.state.player) return { ok: false, text: "No peace conference is open." };
+  const r = concludePeace(ctx, war, p.winner, terms, ctx.state.player);
+  if (r.ok) ctx.state.pendingPeace = null;
+  return { ok: r.ok, text: r.text };
 }
 
 export { warsOf as wars };

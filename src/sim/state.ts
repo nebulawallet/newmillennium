@@ -16,7 +16,7 @@ import type { Battle } from "./military/war.ts";
 import type { Army } from "./military/fronts.ts";
 import { initialDiplomacy, tradeIndex, type DiplomacyState } from "./diplomacy/diplomacy.ts";
 
-export const STATE_VERSION = 11;
+export const STATE_VERSION = 12;
 
 export interface GameRules {
   /** historical: real election winners are heavily weighted; dynamic: results come purely from the simulation. */
@@ -247,6 +247,8 @@ export interface GameState {
   provinceBuildings: Record<string, Record<string, number>>;
   divisions: Division[];
   nextDivisionId: number;
+  /** Puppets: subject tag -> overlord tag (v12). */
+  subjects: Record<string, string>;
   /** Army groups with their fronts and battle plans (v10). */
   armies: Army[];
   nextArmyId: number;
@@ -417,6 +419,7 @@ export function createInitialState(
     provinceBuildings: {},
     divisions,
     nextDivisionId: divisionId,
+    subjects: {},
     armies: [],
     nextArmyId: 1,
     wars: [],
@@ -465,6 +468,8 @@ export function migrateState(db: ContentDB, s: GameState): GameState {
   // v10: armies and battle plans (older saves start with none; the AI forms its own at war)
   s.armies ??= [];
   s.nextArmyId ??= 1;
+  // v12: puppets
+  s.subjects ??= {};
   // v11: buildings stand in provinces and construction is paid for; older queue items without a
   // province still complete (they add their factories nationally), and the new fields start empty
   s.wars ??= [];

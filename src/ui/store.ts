@@ -23,3 +23,9 @@ export const buildMsg = signal("");
 export const toast = signal<{ text: string; bad?: boolean; at: number } | null>(null);
 /** The war shown in the war overview (null: closed). */
 export const openWar = signal<number | null>(null);
+/** Peace conference: the defeated country whose provinces map clicks add or remove (null: off). */
+export const peacePick = signal<string | null>(null);
+/** A peace imposed on the player (shown until dismissed). */
+export const peaceNotice = signal<{ title: string; lines: string[] } | null>(null);
+/** Peace conference drafts: per defeated country, the kind of term, picked provinces and ideology. */
+export const draftTerms = signal<Record<string, { kind: "none" | "annex" | "provinces" | "puppet"; provinces: number[]; ideology: string | null }>>({});

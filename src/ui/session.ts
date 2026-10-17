@@ -3,6 +3,7 @@
  * from. UI components never mutate GameState directly (later phases route actions through
  * simulation commands).
  */
+import { peaceNotice } from "./store.ts";
 import { signal } from "@preact/signals";
 import type { ContentDB } from "../content/compile.ts";
 import type { MapData } from "../render/mapData.ts";
@@ -84,6 +85,9 @@ export class Session {
     if (e.type !== "coalition_needed") this.mapDirty = true;
     if (e.type === "election" && e.result.tag === st.player) {
       electionNight.value = e.result;
+      this.setPaused(true);
+    } else if (e.type === "peace" && e.tag === st.player) {
+      peaceNotice.value = { title: e.title, lines: e.lines };
       this.setPaused(true);
     } else if ((e.type === "coalition_needed" || e.type === "event") && e.tag === st.player) {
       this.setPaused(true);

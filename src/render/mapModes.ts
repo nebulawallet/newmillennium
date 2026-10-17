@@ -108,7 +108,9 @@ export const MAP_MODES: MapMode[] = [
     available: true,
     color: (p, ctx) => {
       const owner = ownerOf(p, ctx), ctrl = controllerOf(p, ctx);
-      const own = ownerColor(owner, ctx);
+      // puppets wear their overlord's colour, a little lighter
+      const over = ctx.state?.subjects?.[owner];
+      const own = over ? mix(ownerColor(over, ctx), [235, 225, 205], 0.25) : ownerColor(owner, ctx);
       return ctrl === owner ? own : mix(own, ownerColor(ctrl, ctx), 0.55);
     },
   },

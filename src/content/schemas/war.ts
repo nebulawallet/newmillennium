@@ -49,6 +49,19 @@ export const WarRulesFile = z.strictObject({
   /** Countries with nuclear weapons in 2000 (sourced): wars against them raise world tension far more. */
   nuclear_states_2000: z.array(Tag).default([]),
   nuclear_tension_multiplier: n(2.5),
+  /** Peace conferences (src/sim/military/peace.ts): capitulation and the war-score cost of terms. */
+  peace: z.strictObject({
+    /** A side's leader also capitulates when its capital is held and this share of its population. */
+    capitulation_with_capital: n(0.35),
+    /** Annexing a country costs base + per_size x its population share of winners plus it (capped at 100). */
+    annex_base: n(30),
+    annex_per_size: n(70),
+    /** Taking provinces: this much per province plus their population share as above. */
+    province_base: n(3),
+    /** A puppet costs this share of annexing. */
+    puppet_share: n(0.5),
+    ideology_cost: n(25),
+  }).default({ capitulation_with_capital: 0.35, annex_base: 30, annex_per_size: 70, province_base: 3, puppet_share: 0.5, ideology_cost: 25 }),
   /** Fronts and battle plans (src/sim/military/fronts.ts), shared by the player and the AI. */
   fronts: z.strictObject({
     /** Plans are carried out every this many days. */

@@ -11,7 +11,8 @@ import { answerEvent, setFocus, takeDecision } from "./scripting/systems.ts";
 import { moveBuilding, queueBuilding } from "./economy/construction.ts";
 import { setResearch } from "./research/research.ts";
 import { addLine, moveDivision, setTemplate, trainDivision, type Template } from "./military/military.ts";
-import { choosePeace, declareWar, type WarGoal } from "./military/war.ts";
+import { choosePeace, declareWar, signPeace, type WarGoal } from "./military/war.ts";
+import { offerPeace, type PeaceTerm } from "./military/peace.ts";
 import { applyPlanCommand, type PlanCommand } from "./military/fronts.ts";
 import {
   applyToBloc,
@@ -53,6 +54,8 @@ export type Command =
   | PlanCommand
   | { type: "declare_war"; tag: string; target: string; goal?: WarGoal }
   | { type: "choose_peace"; annex: boolean }
+  | { type: "sign_peace"; terms: PeaceTerm[] }
+  | { type: "offer_peace"; tag: string; war: number }
   | { type: "improve_relations" | "guarantee" | "military_access" | "trade_deal" | "sanction"; tag: string; target: string; on: boolean }
   | { type: "justify_war"; tag: string; target: string }
   | { type: "apply_to_bloc" | "leave_bloc"; tag: string; bloc: string }
@@ -180,6 +183,10 @@ export function applyCommand(ctx: SimContext, cmd: Command): CommandResult {
       return stopCampaign(ctx, cmd.tag, cmd.id);
     case "choose_peace":
       return choosePeace(ctx, cmd.annex);
+    case "sign_peace":
+      return signPeace(ctx, cmd.terms);
+    case "offer_peace":
+      return offerPeace(ctx, cmd.tag, cmd.war);
     case "force_coup": {
       const cs = state.countries[cmd.tag];
       if (!cs || !db.interestGroupTypes.has(cmd.group)) return { ok: false, text: "Unknown country or group." };

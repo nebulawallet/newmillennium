@@ -14,7 +14,7 @@ import { hostile } from "../../sim/military/war.ts";
 import type { SimMap } from "../../sim/simulation.ts";
 import type { GameState } from "../../sim/state.ts";
 import type { ContentDB } from "../../content/compile.ts";
-import { planDraft, planTool, selectedArmy, selectedDivisions } from "../store.ts";
+import { draftTerms, peacePick, planDraft, planTool, selectedArmy, selectedDivisions } from "../store.ts";
 
 type Seg = [number, number, number, number];
 /** A border segment with the unit direction (world) from the enemy side toward ours. */
@@ -23,7 +23,7 @@ const NS = "http://www.w3.org/2000/svg";
 
 export class FrontOverlay {
   private svg: SVGSVGElement;
-  private paths: Record<"base" | "own" | "peace" | "army" | "off" | "offSel" | "spear" | "spearSel" | "draft" | "move" | "attack", SVGPathElement>;
+  private paths: Record<"base" | "own" | "peace" | "army" | "off" | "offSel" | "spear" | "spearSel" | "draft" | "move" | "attack" | "pick", SVGPathElement>;
   private enemyPaths = new Map<string, SVGPathElement>();
   private markerLayer: SVGGElement;
   private own: SideSeg[] = [];
@@ -51,12 +51,14 @@ export class FrontOverlay {
       this.svg.appendChild(p);
       return p;
     };
-    this.paths = { base: mk("fr-base"), own: mk("fr-own"), peace: mk("fr-peace"), army: mk("fr-army"), off: mk("fr-off"), offSel: mk("fr-off sel"), spear: mk("fr-spear", true), spearSel: mk("fr-spear sel", true), draft: mk("fr-draft"), move: mk("fr-move", true), attack: mk("fr-attack", true) };
+    this.paths = { base: mk("fr-base"), own: mk("fr-own"), peace: mk("fr-peace"), army: mk("fr-army"), off: mk("fr-off"), offSel: mk("fr-off sel"), spear: mk("fr-spear", true), spearSel: mk("fr-spear sel", true), draft: mk("fr-draft"), move: mk("fr-move", true), attack: mk("fr-attack", true), pick: mk("fr-pick") };
     this.markerLayer = document.createElementNS(NS, "g");
     this.svg.appendChild(this.markerLayer);
     document.getElementById("ui")!.prepend(this.svg);
     view.onFrame.push(() => this.position());
     planDraft.subscribe(() => this.position());
+    draftTerms.subscribe(() => this.position());
+    peacePick.subscribe(() => this.position());
   }
 
   private c(id: number): [number, number] | null {
@@ -90,6 +92,16 @@ export class FrontOverlay {
     return (this.byPair = m);
   }
 
+  private byProvince: Map<number, Seg[]> | null = null;
+  /** Every border segment around a province (for outlines). */
+  private outline(id: number): Seg[] {
+    if (!this.byProvince) {
+      this.byProvince = new Map();
+      for (const [key, segs] of this.pairs()) for (const p of [Math.floor(key / 65536), key % 65536]) (this.byProvince.get(p) ?? this.byProvince.set(p, []).get(p)!).push(...segs);
+    }
+    return this.byProvince.get(id) ?? [];
+  }
+
   private segsOf(own: number, enemy: number): Seg[] {
     return this.pairs().get(Math.min(own, enemy) * 65536 + Math.max(own, enemy)) ?? [];
   }
@@ -97,7 +109,7 @@ export class FrontOverlay {
   /** Rebuild the geometry (daily, or when the selection or plans change). */
   refresh(force = false): void {
     const state = this.getState();
-    const key = `${selectedDivisions.value.length}:${selectedArmy.value}:${state?.armies.map((a) => `${a.id}${a.front?.enemy ?? "-"}${a.offensive.length}${a.spearheads.length}${a.executing ? 1 : 0}${a.divisions.length}`).join(",")}`;
+    const key = `${state?.wars.map((w) => w.id).join(".")}:${state?.provinceOwner.length ?? 0}:${selectedDivisions.value.length}:${selectedArmy.value}:${state?.armies.map((a) => `${a.id}${a.front?.enemy ?? "-"}${a.offensive.length}${a.spearheads.length}${a.executing ? 1 : 0}${a.divisions.length}`).join(",")}`;
     if (!force && state?.day === this.lastDay && key === this.lastKey) return;
     this.lastDay = state?.day ?? -1;
     this.lastKey = key;
@@ -211,6 +223,8 @@ export class FrontOverlay {
     this.paths.spear.setAttribute("d", this.lines.filter((l) => l.arrow && !l.sel).map((l) => poly(l.pts)).join(""));
     this.paths.spearSel.setAttribute("d", this.lines.filter((l) => l.arrow && l.sel).map((l) => poly(l.pts)).join(""));
     const draft = planDraft.value.map((id) => this.c(id)).filter((x): x is [number, number] => !!x);
+    const picked = peacePick.value ? draftTerms.value[peacePick.value]?.provinces ?? [] : [];
+    this.paths.pick.setAttribute("d", segs(picked.flatMap((id) => this.outline(id))));
     this.paths.move.setAttribute("d", this.orders.filter((o) => !o.attack).map((o) => poly(o.pts)).join(""));
     this.paths.attack.setAttribute("d", this.orders.filter((o) => o.attack).map((o) => poly(o.pts)).join(""));
     this.paths.draft.setAttribute("d", planTool.value && planTool.value.kind !== "front" ? poly(draft) : "");

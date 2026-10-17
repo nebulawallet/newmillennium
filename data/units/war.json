@@ -13,6 +13,14 @@
   "flanking_bonus_per_direction": 0.1,
   "max_flanking_bonus": 0.3,
   "river_crossing_penalty": 0.2,
+  "peace": {
+    "capitulation_with_capital": 0.35,
+    "annex_base": 30,
+    "annex_per_size": 70,
+    "province_base": 3,
+    "puppet_share": 0.5,
+    "ideology_cost": 25
+  },
   "fronts": {
     "plan_interval_days": 2,
     "attack_ratio": 1.3,

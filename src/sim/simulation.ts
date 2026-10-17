@@ -40,7 +40,9 @@ export type SimEvent =
   | { type: "coup"; tag: string }
   | { type: "civil_war"; tag: string }
   | { type: "event"; tag: string; event: string }
-  | { type: "map_changed" };
+  | { type: "map_changed" }
+  /** A peace the AI imposed on the player (or a peace the player's side signed). */
+  | { type: "peace"; tag: string; title: string; lines: string[] };
 
 export interface SimContext {
   db: ContentDB;

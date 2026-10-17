@@ -28,8 +28,8 @@ import { ElectionNight } from "./ui/politics/ElectionNight.tsx";
 import { EventWindow } from "./ui/scripted/EventWindow.tsx";
 import { researchPick, ResearchView } from "./ui/research/ResearchPanel.tsx";
 import { FocusTreeView } from "./ui/scripted/FocusTree.tsx";
-import { PeaceConference } from "./ui/units/WarUi.tsx";
-import { buildMode, hoveredProvince, mapMode, openWar, toast, pickedCountry, planDraft, planTool, pointer, selectedArmy, selectedDivisions, selectedProvince } from "./ui/store.ts";
+import { PeaceNotice, PeaceScreen } from "./ui/units/PeaceScreen.tsx";
+import { buildMode, draftTerms, hoveredProvince, mapMode, openWar, peacePick, toast, pickedCountry, planDraft, planTool, pointer, selectedArmy, selectedDivisions, selectedProvince } from "./ui/store.ts";
 import { slotsView } from "./render/mapModes.ts";
 import { UnitCounters } from "./ui/units/UnitCounters.ts";
 import { FrontOverlay } from "./ui/units/FrontOverlay.ts";
@@ -118,8 +118,19 @@ async function boot(): Promise<void> {
       world.select(0);
       return;
     }
-    // placing a building: the click queues it there instead of opening the province
+    // peace conference: clicks add or remove the defeated country's provinces
     const st = session.state;
+    if (peacePick.value && id && st?.pendingPeace) {
+      const t = peacePick.value;
+      if (st.provinceOwner[id - 1] === t) {
+        const d = draftTerms.value[t] ?? { kind: "provinces" as const, provinces: [], ideology: null };
+        const provinces = d.provinces.includes(id) ? d.provinces.filter((x) => x !== id) : [...d.provinces, id];
+        draftTerms.value = { ...draftTerms.value, [t]: { ...d, kind: "provinces", provinces } };
+        fronts.refresh(true);
+      }
+      world.select(0);
+      return;
+    }
     if (buildMode.value && id && st?.player) {
       const r = session.dispatch({ type: "queue_building", tag: st.player, building: buildMode.value, province: id });
       buildMsg.value = r.text;
@@ -271,7 +282,8 @@ function Root({ db, map, world, session, issues }: { db: ContentDB; map: MapData
       {inGame && panel.value === "research" && researchPick.value !== null && <ResearchView db={db} session={session} />}
       {inGame && <ElectionNight db={db} session={session} />}
       {inGame && <EventWindow db={db} session={session} />}
-      {inGame && <PeaceConference db={db} session={session} />}
+      {inGame && <PeaceScreen db={db} session={session} />}
+      {inGame && <PeaceNotice />}
       {inGame && <CoalitionPanel db={db} session={session} />}
       {inGame && panel.value === "menu" && <GameMenu session={session} />}
       <TooltipLayer />

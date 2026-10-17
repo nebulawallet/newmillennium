@@ -12,7 +12,7 @@ import type { War } from "../../sim/state.ts";
 import { Flag } from "../Flag.tsx";
 import { Icon } from "../icons.tsx";
 import { version, type Session } from "../session.ts";
-import { openWar } from "../store.ts";
+import { openWar, toast } from "../store.ts";
 import { tip } from "../tooltip.tsx";
 
 const fmt = new Intl.NumberFormat("en");
@@ -79,6 +79,10 @@ export function WarPanel({ db, session }: { db: ContentDB; session: Session }) {
         <span {...tip(() => ({ title: GOAL[war.goal][0], note: GOAL[war.goal][1] }))}><b>{GOAL[war.goal][0]}</b></span>
         <span class="faint">since {formatDate(war.startDay)} · {days >= 365 ? `${(days / 365).toFixed(1)} years` : `${days} days`}</span>
         {war.armedGroup && <span class="faint">· against an armed group</span>}
+        {(war.attackers.includes(me) || war.defenders.includes(me)) && (
+          <button class="btn wp-peace" onClick={() => { const r = session.dispatch({ type: "offer_peace", tag: me, war: war.id }); toast.value = { text: r.text, bad: !r.ok, at: Date.now() }; if (r.ok) openWar.value = null; }}
+            {...tip(() => ({ title: "Offer white peace", note: "Both sides keep their own land. The enemy accepts when it is not winning, is worn out, or after a long, even war." }))}>Offer white peace</button>
+        )}
       </div>
       <div class="wp-score" {...tip(() => ({ title: "War score", rows: [["Attackers", st.attackers.score], ["Defenders", st.defenders.score]], note: "The bar shows who is winning." }))}>
         <span class="num">{st.attackers.score}</span>
