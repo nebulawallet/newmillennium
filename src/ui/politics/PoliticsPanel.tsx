@@ -38,7 +38,22 @@ export function PoliticsPanel({ db, state, tag, session }: { db: ContentDB; stat
   const cc = db.countries.get(tag);
   const c = cc?.country;
   const cs = state.countries[tag];
-  if (!cc || !c || !cs) return <p class="dim pad">No politics data for this country yet.</p>;
+  if (!cc || !c || !cs) {
+    const g = cs ? db.governmentTypes.get(cs.govType) : undefined;
+    return (
+      <div class="pad">
+        <h3 class="hp-title">{g?.name ?? "No politics data"}</h3>
+        <p class="dim small">{g?.description ?? "No politics data for this country yet."}</p>
+        {cs?.active && (
+          <p class="faint small">
+            <span {...tip(() => ({ title: "Stability", note: "Default profile starting value (data/rules/politics.json); events and wars change it." }))}>Stability {Math.round(cs.stability * 100)}%</span>
+            {" · "}
+            <span {...tip(() => ({ title: "War support", note: "Default profile starting value; wars and events change it." }))}>war support {Math.round(cs.warSupport * 100)}%</span>
+          </p>
+        )}
+      </div>
+    );
+  }
   if (lawCat) return <LawPicker db={db} session={session} state={state} cs={cs} category={lawCat} onClose={() => setLawCat(null)} />;
 
   const gov = db.governmentTypes.get(cs.govType);

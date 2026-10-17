@@ -287,10 +287,16 @@ export function compileContent(files: FileProvider, opts: CompileOptions = {}): 
   // ---- load every country folder (all of them, so cross-country references resolve)
   for (const entry of db.countryList) {
     const dir = `countries/${entry.tag}`;
-    const required = !opts.only || opts.only.has(entry.tag);
+    const required = (!opts.only || opts.only.has(entry.tag)) && entry.research !== "default";
     const exists = files.read(`${dir}/country.json`) !== undefined;
     const cc: CountryContent = { entry, people: [], parties: [], cabinet: [], military: [] };
     db.countries.set(entry.tag, cc);
+    if (entry.research === "default") {
+      // default profile: any folder on disk (e.g. an interrupted research batch) is ignored
+      if (exists && (!opts.only || opts.only.has(entry.tag)))
+        warn("DEFAULT_FOLDER", `${dir}/country.json`, `${entry.tag} has research "default", so this folder is ignored (set "light" or "full" in world/countries.json to use it)`, { tag: entry.tag });
+      continue;
+    }
     if (!exists) {
       if (required) err("MISSING_COUNTRY", `${dir}/country.json`, `${entry.tag} (${entry.name}) has no politics data yet`, { tag: entry.tag });
       continue;
@@ -335,8 +341,11 @@ export function compileContent(files: FileProvider, opts: CompileOptions = {}): 
   for (const [tag, cc] of db.countries) {
     if (!cc.country) continue;
     if (opts.only && !opts.only.has(tag)) continue;
-    checkCountry(db, cc, tier, err, warn);
+    checkCountry(db, cc, tier === "full" && cc.entry.research === "full" ? "full" : "core", err, warn);
+    if (cc.entry.research === "light") checkLight(db, cc, err, warn);
   }
+  for (const g of [db.politicsRules.default_profile.government_type, db.politicsRules.default_profile.insurgent_government_type])
+    if (!db.governmentTypes.has(g)) err("REF", "rules/politics.json", `default_profile: unknown government type '${g}'`);
 
   // ---- technologies
   for (const f of files.listFiles("techs").filter((p) => p.endsWith(".json") && !p.endsWith("/rules.json")).sort()) {
@@ -740,6 +749,23 @@ function checkCountry(db: ContentDB, cc: CountryContent, tier: Tier, err: Report
 
   // full-tier depth requirements
   if (tier === "full") checkDepth(db, cc, err, warn);
+}
+
+/** Light tier: core checks plus current leaders and the main parties (docs/CONFLICTS_PLAN.md). */
+function checkLight(db: ContentDB, cc: CountryContent, err: Report, warn: Report): void {
+  const c = cc.country!;
+  const tag = cc.entry.tag;
+  const cf = `countries/${tag}/country.json`;
+  const x = { tag };
+  // insurgent and rival-government tags may have dissolved (they then have no current leader)
+  if (cc.entry.start_status !== "insurgent" && cc.entry.start_status !== "rival_government") for (const id of new Set([c.government.head_of_state_office, c.government.head_of_government_office])) {
+    const o = db.offices.get(id);
+    if (!o || o.ex_officio_of) continue;
+    if (!o.holders.some((h) => h.from <= db.asOf && (h.to === undefined || h.to > db.asOf)))
+      err("LIGHT_CURRENT", cf, `${id}: no holder (or documented vacancy) on the data date ${db.asOf}`, x);
+  }
+  if (c.party_system !== "no_parties" && cc.parties.length < 3)
+    warn("LIGHT_PARTIES", `countries/${tag}/parties.json`, `${cc.parties.length} parties; the light tier expects the 3–5 main ones`, x);
 }
 
 function checkOffice(db: ContentDB, o: Office, file: string, tag: string, err: Report, warn: Report): void {

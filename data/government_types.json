@@ -595,6 +595,46 @@
         "media": 0.1
       },
       "modifiers": {}
+    },
+    {
+      "id": "default_government",
+      "name": "Government (default profile)",
+      "description": "Politics not researched for this country: no named leaders, parties or elections. The state has an economy, an army and diplomacy, and its government stays as it is unless events change it.",
+      "holds_elections": false,
+      "needs_majority": false,
+      "legislature_required": false,
+      "parties_required": false,
+      "coup_base_risk": 0.0,
+      "political_power_gain": 1.5,
+      "succession_model": "none",
+      "forbidden_laws": [],
+      "default_laws": {
+        "economic_system": "mixed_economy",
+        "trade": "managed_trade",
+        "conscription": "selective_conscription",
+        "press_freedom": "regulated_press",
+        "political_freedom": "restricted_elections",
+        "civil_rights": "limited_civil_liberties",
+        "religion_state": "pluralist_secularism",
+        "immigration": "managed_immigration",
+        "energy_policy": "energy_mix",
+        "internet_surveillance": "regulated_internet",
+        "healthcare": "social_insurance",
+        "education": "public_schooling"
+      },
+      "default_ig_influence": {
+        "military": 0.2,
+        "security_services": 0.2,
+        "business": 0.2,
+        "labour_unions": 0.2,
+        "religious_establishment": 0.2,
+        "rural": 0.2,
+        "urban_middle_class": 0.2,
+        "minorities": 0.2,
+        "youth_students": 0.2,
+        "media": 0.2
+      },
+      "modifiers": {}
     }
   ]
 }

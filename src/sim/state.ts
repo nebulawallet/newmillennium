@@ -271,7 +271,10 @@ export function createInitialState(
   for (const entry of db.countryList) {
     const cc = db.countries.get(entry.tag);
     const c = cc?.country;
-    const gov = c ? db.governmentTypes.get(c.government.type) : undefined;
+    // research "default": no politics data, the default profile (data/rules/politics.json) supplies a generic government
+    const dp = !c && entry.research === "default" ? db.politicsRules.default_profile : undefined;
+    const govType = c?.government.type ?? (dp ? (entry.start_status === "insurgent" ? dp.insurgent_government_type : dp.government_type) : "failed_contested");
+    const gov = db.governmentTypes.get(govType);
 
     const offices: Record<string, (string | null)[]> = {};
     const officeSince: Record<string, number> = {};
@@ -317,11 +320,11 @@ export function createInitialState(
 
     const cs: CountryState = {
       tag: entry.tag,
-      active: !!c && entry.start_status !== "releasable",
-      govType: c?.government.type ?? "failed_contested",
+      active: (!!c || !!dp) && entry.start_status !== "releasable",
+      govType,
       politicalPower: 50,
-      stability: clamp01(c?.start_2000.stability ?? 0.5),
-      warSupport: clamp01(c?.start_2000.war_support ?? 0.2),
+      stability: clamp01(c?.start_2000.stability ?? dp?.stability ?? 0.5),
+      warSupport: clamp01(c?.start_2000.war_support ?? dp?.war_support ?? 0.2),
       rulingParties: [...(c?.start_2000.ruling_parties ?? [])],
       confidenceAndSupply: [...(c?.start_2000.confidence_and_supply ?? [])],
       govSinceDay: execParty && execParty === lead && execSince !== undefined ? execSince : day,
@@ -359,7 +362,7 @@ export function createInitialState(
       }
       for (const o of cc?.cabinet ?? []) if (needsMajority) cs.historicalOffices[o.id] = false;
     }
-    if (c) {
+    if (c || dp) {
       cs.economy = initialEconomy(db, entry.tag, mapPop.get(entry.tag) ?? 1_000_000);
       cs.research = initialResearch(db, entry.tag, cs.economy.gdp, cs.economy.population);
       if (entry.start_status !== "releasable") {
@@ -368,9 +371,11 @@ export function createInitialState(
         divisions.push(...m.divisions);
       }
       cs.economicMood = 0;
-      cs.partyBias = calibrate(db, cs, day);
       const targets = igTargets(db, cs);
       for (const [ig, s] of Object.entries(interestGroups)) cs.igBase[ig] = s.approval - (targets[ig] ?? 50);
+    }
+    if (c) {
+      cs.partyBias = calibrate(db, cs, day);
       cs.schedule = initialSchedule(db, entry.tag, day);
     }
     countries[entry.tag] = cs;
@@ -456,6 +461,11 @@ export function migrateState(db: ContentDB, s: GameState): GameState {
     if (!cs.economy && fresh.countries[tag]?.economy) cs.economy = fresh.countries[tag]!.economy;
     if (!cs.research && fresh.countries[tag]?.research) cs.research = fresh.countries[tag]!.research;
     if (!cs.military && fresh.countries[tag]?.military) cs.military = fresh.countries[tag]!.military;
+    // saves from before the default profile: unresearched countries were inactive
+    const f = fresh.countries[tag];
+    if (!cs.active && f?.active && !db.countries.get(tag)?.country) {
+      Object.assign(cs, { active: true, govType: f.govType, stability: f.stability, warSupport: f.warSupport, laws: f.laws, interestGroups: f.interestGroups, igBase: f.igBase });
+    }
   }
   s.version = STATE_VERSION;
   return s;

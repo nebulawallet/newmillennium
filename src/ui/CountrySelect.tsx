@@ -62,7 +62,9 @@ export function CountrySelect({ db, session, issues }: { db: ContentDB; session:
         <h1 class="bm-name">New Millennium</h1>
         <div class="bm-date">1 January 2000</div>
         <div class="bm-sub faint small">
-          {withData} of {db.countryList.length} nations researched
+          <span {...tip(() => ({ title: "Research tiers", rows: [["Full history", String(db.countryList.filter((e) => e.research === "full").length)], ["Light", String(db.countryList.filter((e) => e.research === "light").length)], ["Default profile", String(db.countryList.filter((e) => e.research === "default").length)]], note: "Default-profile countries have an economy, an army and diplomacy but no named politics; they are not playable." }))}>
+            {withData} of {db.countryList.length} nations researched
+          </span>
           {errors > 0 && <span class="warn"> · {errors} data errors (see console)</span>}
         </div>
       </div>

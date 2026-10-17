@@ -223,6 +223,29 @@
       },
       "additionalProperties": false
     },
+    "default_profile": {
+      "default": {},
+      "type": "object",
+      "properties": {
+        "government_type": {
+          "default": "default_government",
+          "type": "string"
+        },
+        "insurgent_government_type": {
+          "default": "insurgent_movement",
+          "type": "string"
+        },
+        "stability": {
+          "default": 0.5,
+          "type": "number"
+        },
+        "war_support": {
+          "default": 0.2,
+          "type": "number"
+        }
+      },
+      "additionalProperties": false
+    },
     "note": {
       "type": "string"
     }

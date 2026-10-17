@@ -17,10 +17,28 @@ describe("validate-data rules", () => {
   it("fails when a listed country has no data", () => {
     const errs = run((d) => {
       d["world/countries.json"].countries.push({
-        tag: "XXB", name: "Nowhere", region: "europe", start_status: "independent", un_member_2000: true, un_member_today: true, detail_tier: 3,
+        tag: "XXB", name: "Nowhere", region: "europe", start_status: "independent", un_member_2000: true, un_member_today: true, detail_tier: 3, research: "full",
       });
     });
     expect(codes(errs)).toContain("MISSING_COUNTRY");
+  });
+
+  it("needs no data for a default-tier country and ignores its folder", () => {
+    const errs = run((d) => {
+      d["world/countries.json"].countries.push({
+        tag: "XXB", name: "Nowhere", region: "europe", start_status: "independent", un_member_2000: true, un_member_today: true, detail_tier: 3, research: "default",
+      });
+    });
+    expect(errs).toEqual([]);
+  });
+
+  it("light tier needs a current head of state", () => {
+    const errs = run((d) => {
+      d["world/countries.json"].countries[0].research = "light";
+      d["countries/XXA/country.json"].offices[0].holders[0].to = "2010-01-01";
+    });
+    expect(codes(errs)).toContain("LIGHT_CURRENT");
+    expect(codes(errs)).not.toContain("NO_HOS_2000");
   });
 
   it("fails without a head of state on 2000-01-01", () => {

@@ -113,12 +113,26 @@ export const LawRules = z.strictObject({
   stability_hit: n(0.01),
 });
 
+/**
+ * Countries with research "default" (data/world/countries.json) have no politics folder. They still play: the
+ * profile gives them a generic government, so they have an economy, an army and diplomacy. No named people.
+ */
+export const DefaultProfileRules = z.strictObject({
+  /** Government type for independent and de facto states. */
+  government_type: z.string().default("default_government"),
+  /** Government type for insurgent tags (start_status "insurgent"). */
+  insurgent_government_type: z.string().default("insurgent_movement"),
+  stability: n(0.5),
+  war_support: n(0.2),
+});
+
 export const PoliticsRulesFile = z.strictObject({
   elections: ElectionRules.prefault({}),
   coalitions: CoalitionRules.prefault({}),
   interest_groups: InterestGroupRules.prefault({}),
   unrest: UnrestRules.prefault({}),
   laws: LawRules.prefault({}),
+  default_profile: DefaultProfileRules.prefault({}),
   note: z.string().optional(),
 });
 export type PoliticsRules = z.infer<typeof PoliticsRulesFile>;

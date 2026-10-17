@@ -35,7 +35,7 @@ Start every session by reading [HANDOFF.md](HANDOFF.md). It holds the current st
 
 - **Focus:** the game is about the major conflicts of 2000–2026: Israel–Palestine, Russia–Ukraine, Iraq, Afghanistan, and the Syrian civil war with ISIS. Put effort there before breadth. The plan is in [docs/CONFLICTS_PLAN.md](docs/CONFLICTS_PLAN.md).
 - **Research tiers:**
-  - **Full:** the 79 countries already committed. Do not extend this tier.
+  - **Full:** the 70 countries already committed (`"research": "full"`). Do not extend this tier.
   - **Light:** only countries the conflicts need (IRQ, AFG, AFN, SYR, maybe LBN, YEM) and a few big players the user approves. See "Light tier" in AGENT_BRIEF.md.
   - **Default:** everyone else. No research at all.
 - **Ask the user before spawning any agent**, and before any other expensive step.

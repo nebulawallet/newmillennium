@@ -69,6 +69,15 @@
               }
             ]
           },
+          "research": {
+            "default": "default",
+            "type": "string",
+            "enum": [
+              "full",
+              "light",
+              "default"
+            ]
+          },
           "parent": {
             "type": "string",
             "pattern": "^[A-Z]{3}$"

@@ -205,6 +205,12 @@ export const CountryListEntry = z.strictObject({
   un_member_today: z.boolean(),
   /** 1 = full cabinet/advisors and deep content, 2 = mid, 3 = small state with generic advisor slots. */
   detail_tier: z.union([z.literal(1), z.literal(2), z.literal(3)]),
+  /**
+   * How much politics research the country gets (docs/CONFLICTS_PLAN.md):
+   * full = 2000–2026 history; light = leaders on 1 January 2000, main parties, last election before 2000, current
+   * leaders; default = no research, the default profile in data/rules/politics.json (any folder is ignored).
+   */
+  research: z.enum(["full", "light", "default"]).default("default"),
   /** Country whose territory this entity occupies at start (de facto, insurgent, releasable). */
   parent: Tag.optional(),
   note: z.string().optional(),

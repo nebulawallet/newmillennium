@@ -35,7 +35,7 @@ export function validCountry(): Record<string, any> {
     "world/countries.json": {
       as_of: "2026-10-14",
       countries: [
-        { tag: "XXA", name: "Testland", region: "europe", start_status: "independent", un_member_2000: true, un_member_today: true, detail_tier: 3 },
+        { tag: "XXA", name: "Testland", region: "europe", start_status: "independent", un_member_2000: true, un_member_today: true, detail_tier: 3, research: "full" },
       ],
     },
     "countries/XXA/country.json": {

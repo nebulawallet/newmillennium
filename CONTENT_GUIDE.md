@@ -71,7 +71,7 @@ Wikidata has errors and gaps. Cross-check against the Wikipedia article (or an o
 
 | What | Where |
 |---|---|
-| Master country list (every tag on the map) | `data/world/countries.json` |
+| Master country list (every tag on the map; `research` = `full`, `light` or `default`) | `data/world/countries.json` |
 | Ideology groups / sub-ideologies | `data/ideologies/groups.json`, `sub_ideologies.json` |
 | Government types | `data/government_types.json` |
 | Interest group types | `data/interest_groups.json` |

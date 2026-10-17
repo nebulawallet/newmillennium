@@ -14,14 +14,11 @@ Effort goes there first. Breadth (every country, full histories) comes last.
 
 | Tier | Who | What |
 |---|---|---|
-| **Full** | Major powers already done (USA, RUS, CHN, DEU, GBR, FRA, JPN, ITA, ESP, TUR, IRN, ISR, PSE, POL, UKR, KOR, …; 79 countries are committed) | Full 2000–2026 history: offices, parties, elections |
+| **Full** | Major powers already done (USA, RUS, CHN, DEU, GBR, FRA, JPN, ITA, ESP, TUR, IRN, ISR, PSE, POL, UKR, KOR, …; 70 countries are committed) | Full 2000–2026 history: offices, parties, elections |
 | **Light** | Countries the conflicts need, plus a few big players: IRQ, AFG (and AFN), SYR, maybe LBN, YEM; optionally IND, PAK, SAU, EGY, MEX, CAN, IDN, AUS, ZAF, NGA, VEN | Leaders on 1 January 2000, 3–5 main parties with their leaders, the last election before 2000, current leaders. No full history: the game simulates their politics from 2000 |
 | **Default** | Everyone else | No research. A generic government built from data already in the repo (countries.json, World Bank, government type). No named people before 2026 (CLAUDE.md forbids invented real-world people; generated leaders only after 2026) |
 
-Work needed to support the tiers:
-
-- A `light` level in `scripts/validate-data.ts`, with tier marked in the country data, so light countries pass.
-- A default profile so default countries count as complete. That also clears the start screen's "data errors" caused by partial folders.
+Support for the tiers (done 17 October 2026): `research` on each entry in `data/world/countries.json`; light checks in `src/content/compile.ts` (`checkLight`); the default profile in `data/rules/politics.json` (`default_profile`) and `src/sim/state.ts`. To move a country up a tier, change its `research` value and add its folder.
 
 ## Partial research folders on disk (untracked, from interrupted agents)
 

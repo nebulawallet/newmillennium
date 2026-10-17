@@ -26,7 +26,7 @@ New Millennium is a grand strategy game in the style of Hearts of Iron IV, set f
 | # | Phase | Status |
 |---|---|---|
 | 1 | Politics schemas and `validate-data` | **Done** |
-| 2 | World politics database | **Narrowed (17 Oct 2026):** 79 countries with full data; remaining work is light data for conflict countries plus a default profile for the rest (docs/CONFLICTS_PLAN.md). |
+| 2 | World politics database | **Narrowed (17 Oct 2026):** 70 countries with full data (`"research": "full"` in `data/world/countries.json`); light tier for conflict countries; every other country uses the default profile (docs/CONFLICTS_PLAN.md). |
 | 3 | Map pipeline and rendering | **Done** apart from polish: 4,580 provinces on 2000 borders; mesh renderer chosen. Resources per province are stubbed until Phase 7. |
 | 4 | Time loop, top bar, save/load, politics screen | **Done** |
 | — | UI rebuild in the HOI4 layout | **Done** (`193ea02`), at the user's request |
@@ -43,7 +43,7 @@ New Millennium is a grand strategy game in the style of Hearts of Iron IV, set f
 ## Where things stand right now
 
 - **New direction (17 October 2026), read [docs/CONFLICTS_PLAN.md](docs/CONFLICTS_PLAN.md):** the game is about the major conflicts (Israel–Palestine, Russia–Ukraine, Iraq, Afghanistan, Syria/ISIS). Stop broad country research. Use three tiers:
-  - full: done for 79 countries
+  - full: done for 70 countries
   - light: conflict countries plus a few big players
   - default: everyone else
 - **No research agents are running.** The last batches were cut off by a usage limit. Partial untracked folders: IND, PAK, BGD, IRQ, AFG, AFN, CAN, MEX, EGY (see CONFLICTS_PLAN.md for what to keep). Do not launch new batches for minor countries, and ask the user before starting agents.
@@ -149,7 +149,10 @@ In game: Space pauses, 1–5 or +/- set speed, Q–P open the tab row (Q is Poli
 
 Follow [docs/CONFLICTS_PLAN.md](docs/CONFLICTS_PLAN.md). In short:
 
-1. **Tiers.** Add a `light` validator tier and a default profile for countries without research, so the game and the checks treat them as complete.
+1. **Tiers.** Done (17 Oct 2026): every entry in `data/world/countries.json` has `research` (`full` / `light` / `default`).
+   - The validator runs core checks on full and light countries, `--tier full` depth only on full ones, and light adds a current-leader check (`LIGHT_CURRENT`) and a 3-party warning. `npm run validate-data` (whole world) now passes.
+   - Default countries need no folder; any folder they have is ignored with a `DEFAULT_FOLDER` warning.
+   - The default profile (`default_profile` in `data/rules/politics.json`, government type `default_government`) makes them active with an economy, research and an army, but no named people, parties or elections. They are not playable. Soak: 209 acting countries, about 4.5 ms per day (was 1.0 with ~70).
 2. **Conflict countries.** Finish and audit IRQ, AFG and AFN (partial folders). Light research for SYR, maybe LBN and YEM. Decide with the user which other partial folders to keep (IND, PAK, CAN, MEX) and delete the rest.
 3. **Non-state actors.** Extend the rebel / civil-war mechanic so events spawn and end named armed groups on real dates and regions: ISIS, the Taliban, Hamas in Gaza, the Donbas separatists, the Syrian rebels.
 4. **Conflict scripts.** Iraq (2003 to ISIS to withdrawal), Afghanistan (2001 to 2021), Syria (2011 to 2024), Israel–Palestine (2007 split, Gaza wars, 7 October), Lebanon 2006. All with sourced dates.

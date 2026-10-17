@@ -169,7 +169,7 @@ function TargetView({ db, state, me, t, run, pairHas }: { db: ContentDB; state: 
         <OpinionValue db={db} state={state} a={me} b={t} label="Our opinion of them" />
         <dt>Blocs</dt>
         <dd>{theirBlocs.length ? theirBlocs.map((b) => blocName(db, state, b)).join(", ") : "None"}</dd>
-        {!state.countries[t]?.active && (<><dt>Politics</dt><dd class="faint">No politics data yet; it answers by opinion only.</dd></>)}
+        {!db.countries.get(t)?.country && (<><dt>Politics</dt><dd class="faint">Default profile (politics not researched); it answers by opinion only.</dd></>)}
       </dl>
       {war ? (
         <p class="warn small pad">At war with {name}.</p>
@@ -303,8 +303,8 @@ export function IntelligencePanel({ db, session }: { db: ContentDB; session: Ses
       <div class="hp-section">New operation</div>
       {!t ? (
         <p class="faint small pad">Select a country on the map, or pick one in the Diplomacy tab.</p>
-      ) : !tcs?.active ? (
-        <p class="faint small pad">{countryName(db, state, t)} has no politics data yet, so there is nothing to influence.</p>
+      ) : !tcs?.active || !db.countries.get(t)?.country ? (
+        <p class="faint small pad">{countryName(db, state, t)} uses the default profile (politics not researched), so it has no parties or interest groups to influence.</p>
       ) : (
         <div class="pad">
           <p class="small">Target: <b>{countryName(db, state, t)}</b></p>
