@@ -11,7 +11,7 @@ import { Flag } from "./Flag.tsx";
 import { Icon } from "./icons.tsx";
 import { plateFit, shortName } from "./Placard.tsx";
 import type { Session } from "./session.ts";
-import { bookmark, pickedCountry, scenarioWorld } from "./store.ts";
+import { bookmark, flagDay, pickedCountry, scenarioWorld } from "./store.ts";
 import { tip } from "./tooltip.tsx";
 
 const REGION_NAMES: Record<string, string> = {
@@ -39,6 +39,7 @@ export function CountrySelect({ db, session, issues }: { db: ContentDB; session:
   useEffect(() => {
     session.world.setOwners(world);
   }, [world]);
+  flagDay.value = dayOf(bm.date);
 
   const choose = async (id: string) => {
     const b = db.bookmarks.find((x) => x.id === id);

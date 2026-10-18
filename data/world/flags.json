@@ -6,7 +6,7 @@
     "codes": "Natural Earth 10m admin-0 countries (ADM0_A3 -> ISO_A2_EH), public domain"
   },
   "confidence": "needs_review",
-  "review_note": "flag-icons draws today's flags. Countries whose flag changed after 2000 (for example Afghanistan, Iraq and Libya) show the modern flag; dated flags are not modelled.",
+  "review_note": "flag-icons draws today's flags. Countries whose flag changed after 2000 (for example Afghanistan, Iraq and Libya) show the modern flag; dated flags are not modelled. Dated flags (`dated`) cover Afghanistan's Islamic Emirate flag (1997-2001 and from 2021).",
   "no_flag": [
     "YUG",
     "NCY",
@@ -23,7 +23,8 @@
     "RCD",
     "MLC",
     "AFN",
-    "TEL"
+    "TEL",
+    "ISG"
   ],
   "flags": {
     "TAL": "x-taliban",
@@ -223,5 +224,19 @@
     "FSM": "fm",
     "MHL": "mh",
     "PLW": "pw"
+  },
+  "dated": {
+    "AFG": [
+      {
+        "code": "x-taliban",
+        "to": "2001-12-22",
+        "note": "Flag of the Islamic Emirate, adopted 27 October 1997; the Interim Administration took office on 22 December 2001 (Wikipedia: Flag of Afghanistan)."
+      },
+      {
+        "code": "x-taliban",
+        "from": "2021-08-15",
+        "note": "Reinstated when the Taliban took Kabul on 15 August 2021 (Wikipedia: Flag of Afghanistan)."
+      }
+    ]
   }
 }

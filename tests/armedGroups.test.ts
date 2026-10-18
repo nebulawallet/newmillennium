@@ -86,7 +86,8 @@ describe("armed groups", () => {
     expect(s.countries.ISG).toBeDefined();
     armedGroupLoses(sim.context, "ISG", [{ from: "DEU" }]);
     expect(owner(sim, 2)).toBe("DEU");
-    expect(s.countries.ISG).toBeUndefined();
+    // the Islamic State has a country record: it goes dormant rather than disappearing
+    expect(s.countries.ISG?.active ?? false).toBe(false);
     expect(s.dynamicCountries.ISG).toBeUndefined();
     expect(s.divisions.some((d) => d.owner === "ISG")).toBe(false);
     expect(s.wars.some((w) => w.attackers.includes("ISG"))).toBe(false);

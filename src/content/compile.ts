@@ -109,6 +109,8 @@ export interface ContentDB {
   countryColors: Map<string, string>;
   /** Flag SVG code per tag (data/world/flags.json; public/flags/<code>.svg). Tags without one use the placeholder. */
   flags: Map<string, string>;
+  /** Flags used only for part of the period (data/world/flags.json `dated`). */
+  datedFlags: Map<string, { code: string; from?: string; to?: string }[]>;
   countries: Map<string, CountryContent>;
   /** Tuning constants for elections, coalitions, interest groups, unrest and laws. */
   politicsRules: PoliticsRules;
@@ -240,6 +242,7 @@ export function compileContent(files: FileProvider, opts: CompileOptions = {}): 
     countryList: listF?.countries ?? [],
     countryColors: new Map(Object.entries(load("world/colors.json", CountryColorsFile, false)?.colors ?? {})),
     flags: new Map(Object.entries(load("world/flags.json", FlagsFile, false)?.flags ?? {})),
+    datedFlags: new Map(Object.entries(load("world/flags.json", FlagsFile, false)?.dated ?? {})),
     countries: new Map(),
     politicsRules: load("rules/politics.json", PoliticsRulesFile, false) ?? PoliticsRulesFile.parse({}),
     events: new Map(),

@@ -1,0 +1,143 @@
+{
+  "tag": "ISG",
+  "name": {
+    "en": "Islamic State",
+    "native": "ad-Dawla al-Islamiyya",
+    "official": {
+      "en": "Islamic State"
+    }
+  },
+  "adjective": "Islamic State",
+  "culture_primary": "iraqi_arab",
+  "government": {
+    "type": "insurgent_movement",
+    "effective_executive": "isg.leader",
+    "head_of_state_office": "isg.leader",
+    "head_of_government_office": "isg.leader",
+    "constitution": {
+      "term_limit_amendable": true,
+      "emergency_powers": true,
+      "referendum_required_for": []
+    },
+    "note": "The Islamic State as a side in the game: it appears in Iraq and Syria through the conflict events of 2014 (data/events/conflicts.json) and can be played while it holds land. It lost its last territory at Baghuz in March 2019. The 'constitution' flags are rough approximations."
+  },
+  "offices": [
+    {
+      "id": "isg.leader",
+      "title": {
+        "en": "Leader of the Islamic State",
+        "native": "Khalifa"
+      },
+      "role": "head_of_state_and_government",
+      "power_weight": 0.95,
+      "selection": "religious_council",
+      "succession": {
+        "type": "council_choice"
+      },
+      "holders": [
+        {
+          "person": null,
+          "from": "1999-12-31",
+          "to": "2010-05-16",
+          "vacant_reason": "Before 16 May 2010 the group (al-Qaeda in Iraq, then the Islamic State of Iraq) had other leaders and held no territory in the game; it is not on the map until 2014."
+        },
+        {
+          "person": "isg.abu_bakr_al_baghdadi",
+          "from": "2010-05-16",
+          "to": "2019-10-27",
+          "note": "Announced as leader of the Islamic State of Iraq on 16 May 2010; caliph of the Islamic State from late June 2014."
+        },
+        {
+          "person": null,
+          "from": "2019-10-27",
+          "to": "2019-10-31",
+          "vacant_reason": "Between al-Baghdadi's death and the announcement of his successor."
+        },
+        {
+          "person": "isg.abu_ibrahim_al_hashimi_al_qurashi",
+          "from": "2019-10-31",
+          "to": "2022-02-03"
+        },
+        {
+          "person": "isg.abu_al_hasan_al_hashimi_al_qurashi",
+          "from": "2022-02-04",
+          "to": "2022-10-15"
+        },
+        {
+          "person": null,
+          "from": "2022-10-15",
+          "to": "2022-11-30",
+          "vacant_reason": "Between Abu al-Hasan's death and the announcement of his successor."
+        },
+        {
+          "person": "isg.abu_al_hussein_al_husseini_al_qurashi",
+          "from": "2022-11-30",
+          "to": "2023-04-29"
+        },
+        {
+          "person": null,
+          "from": "2023-04-29",
+          "to": "2023-08-03",
+          "vacant_reason": "Between Abu al-Hussein's death and the announcement of his successor."
+        },
+        {
+          "person": "isg.abu_hafs_al_hashimi_al_qurashi",
+          "from": "2023-08-03"
+        }
+      ],
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Islamic_State",
+          "title": "Wikipedia: Islamic State",
+          "accessed": "2026-10-18"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/Abu_Bakr_al-Baghdadi",
+          "title": "Wikipedia: Abu Bakr al-Baghdadi",
+          "accessed": "2026-10-18"
+        },
+        {
+          "url": "https://www.wikidata.org/wiki/Q139854214",
+          "title": "Wikidata: Caliph of the Islamic State (birth, death, positions)",
+          "accessed": "2026-10-18"
+        }
+      ],
+      "confidence": "verified"
+    }
+  ],
+  "legislature": null,
+  "party_system": "no_parties",
+  "no_parties_reason": "A militant organisation, not a party system; it held no elections.",
+  "start_2000": {
+    "ruling_parties": [],
+    "ideology_support": {
+      "islamist": 1.0
+    },
+    "ideology_support_note": "A militant organisation with no elections; the whole base is counted as islamist.",
+    "stability": 0.5,
+    "war_support": 0.95
+  },
+  "claims": [
+    {
+      "tag": "IRQ",
+      "note": "Claimed Iraq and Syria (and beyond) for its declared caliphate."
+    },
+    {
+      "tag": "SYR",
+      "note": "Claimed Syria for its declared caliphate."
+    }
+  ],
+  "source": [
+    {
+      "url": "https://en.wikipedia.org/wiki/Islamic_State",
+      "title": "Wikipedia: Islamic State",
+      "accessed": "2026-10-18"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Abu_Bakr_al-Baghdadi",
+      "title": "Wikipedia: Abu Bakr al-Baghdadi",
+      "accessed": "2026-10-18"
+    }
+  ],
+  "confidence": "verified"
+}

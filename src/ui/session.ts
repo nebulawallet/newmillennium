@@ -3,7 +3,7 @@
  * from. UI components never mutate GameState directly (later phases route actions through
  * simulation commands).
  */
-import { peaceNotice } from "./store.ts";
+import { flagDay, peaceNotice } from "./store.ts";
 import { signal } from "@preact/signals";
 import type { ContentDB } from "../content/compile.ts";
 import type { MapData } from "../render/mapData.ts";
@@ -69,8 +69,10 @@ export class Session {
     this.sim.onEvent((e) => this.onSimEvent(e));
     this.world.setOwners(this.sim.state);
     feed.value = [...state.log].reverse().slice(0, 40);
+    flagDay.value = this.sim.state.day;
     this.clock = new Clock(this.sim, () => {
       version.value += 1;
+      if (this.sim) flagDay.value = this.sim.state.day;
       if (this.mapDirty) {
         this.mapDirty = false;
         this.world.refresh();

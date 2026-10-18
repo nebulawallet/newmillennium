@@ -235,6 +235,13 @@ export const FlagsFile = z.strictObject({
   review_note: z.string().optional(),
   no_flag: z.array(Tag).default([]),
   flags: z.record(Tag, z.string().regex(/^([a-z]{2}|x-[a-z-]+)$/)),
+  /** Flags in use only for part of the period: the first entry covering the game's date wins over `flags`. */
+  dated: z.record(Tag, z.array(z.strictObject({
+    code: z.string().regex(/^([a-z]{2}|x-[a-z-]+)$/),
+    from: IsoDate.optional(),
+    to: IsoDate.optional(),
+    note: z.string().optional(),
+  }))).default({}),
 });
 
 /** Start dates offered on the start screen (data/scenarios/bookmarks.json). The first is the game's own start. */
