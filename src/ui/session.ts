@@ -11,6 +11,7 @@ import type { WorldMap } from "../render/WorldMap.ts";
 import type { TabId } from "./tabs.ts";
 import { Clock } from "../sim/clock.ts";
 import { Simulation, simMapFrom, type SimEvent, type SimMap } from "../sim/simulation.ts";
+import { playScenario } from "../sim/scenario.ts";
 import { createInitialState, migrateState, type ElectionResult, type GameRules, type GameState, type LogEntry } from "../sim/state.ts";
 
 export type Screen = "select" | "game";
@@ -49,6 +50,11 @@ export class Session {
   newGame(player: string, rules: Partial<GameRules>): void {
     const state = createInitialState(this.db, this.map, { contentHash: this.contentHash, player, rules });
     this.start(state);
+  }
+
+  /** Start from a later bookmark's world (src/sim/scenario.ts) as this country. */
+  startScenario(snapshot: GameState, player: string, rules: Partial<GameRules>): void {
+    this.start(playScenario(this.db, structuredClone(snapshot), player, rules));
   }
 
   /** Start (or resume) from a state, e.g. a loaded save. */

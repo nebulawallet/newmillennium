@@ -289,7 +289,7 @@ export function choosePendingCoalition(ctx: SimContext, index: number): { ok: bo
   state.pendingCoalition = null;
   const onTrack = !!res?.followedHistory;
   applyGovernment(ctx, cs, opt, res, onTrack);
-  if (onTrack && cs.rulingParties.join() !== opt.parties.join()) cs.followsHistory = false;
+  if (onTrack && cs.rulingParties.join() !== opt.parties.join() && !state.rules.strictHistory) cs.followsHistory = false;
   return { ok: true, text: "Government formed." };
 }
 

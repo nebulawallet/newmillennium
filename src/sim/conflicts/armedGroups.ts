@@ -125,10 +125,12 @@ export function spawnArmedGroup(ctx: SimContext, tag: string, regions: GroupRegi
   const { db, state } = ctx;
   const def = db.armedGroups.get(tag);
   if (!def) return false;
-  const isNew = !state.countries[tag];
+  // a group with a country record wakes its dormant country (leaders, flag); others get a blank one
+  const record = state.countries[tag];
+  const isNew = !record || !record.active;
   if (isNew) {
-    const cs = blankCountry(tag, "insurgent_movement", state.day);
-    state.countries[tag] = cs;
+    if (record) record.active = true;
+    else state.countries[tag] = blankCountry(tag, "insurgent_movement", state.day);
     state.dynamicCountries[tag] = { name: def.short_name ?? def.name, color: def.color, parent: regions[0]?.from ?? "", kind: "armed_group" };
   }
   const taken: number[] = [];
@@ -142,7 +144,7 @@ export function spawnArmedGroup(ctx: SimContext, tag: string, regions: GroupRegi
   raise(ctx, db, tag, divisions, taken.length ? taken : held);
   if (!held.length && !state.divisions.some((d) => d.owner === tag)) {
     // nothing to stand on: the group does not appear
-    if (isNew) { delete state.countries[tag]; delete state.dynamicCountries[tag]; }
+    if (isNew) { if (def.country_record) state.countries[tag]!.active = false; else delete state.countries[tag]; delete state.dynamicCountries[tag]; }
     return true;
   }
   for (const enemy of new Set(warWith ?? regions.map((r) => r.from))) {
@@ -196,7 +198,9 @@ export function endArmedGroup(ctx: SimContext, tag: string, into?: string, disba
   state.wars = state.wars.filter((w) => w.attackers.length && w.defenders.length);
   state.battles = state.battles.filter((b) => b.attackerTag !== tag && b.defenderTag !== tag);
   const name = db.armedGroups.get(tag)?.name ?? tag;
-  delete state.countries[tag];
+  // a group with a country record goes dormant (a later event may wake it); others are gone
+  if (db.armedGroups.get(tag)?.country_record) state.countries[tag]!.active = false;
+  else delete state.countries[tag];
   delete state.dynamicCountries[tag];
   const intoName = into ? (db.countryList.find((c) => c.tag === into)?.name ?? into) : "";
   ctx.log(into ?? null, "civil_war", !into ? `${name} no longer holds territory` : disbandArmyOf === into ? `${name} takes power in ${intoName}` : `${name} merges into ${intoName}`);

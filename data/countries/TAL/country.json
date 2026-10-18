@@ -1,0 +1,119 @@
+{
+  "tag": "TAL",
+  "name": {
+    "en": "Taliban",
+    "native": "Taliban",
+    "official": {
+      "en": "Islamic Emirate of Afghanistan (Taliban insurgency)"
+    }
+  },
+  "adjective": "Taliban",
+  "culture_primary": "pashtun",
+  "government": {
+    "type": "insurgent_movement",
+    "effective_executive": "tal.leader",
+    "head_of_state_office": "tal.leader",
+    "head_of_government_office": "tal.leader",
+    "constitution": {
+      "term_limit_amendable": true,
+      "emergency_powers": true,
+      "referendum_required_for": []
+    },
+    "note": "The Taliban as an insurgency, from the loss of Kabul on 13 November 2001 until they took Kabul again on 15 August 2021 (from then on they govern AFG). In 2000 the Taliban are the Islamic Emirate itself (AFG). This record exists so the insurgency can be played while it holds land; it appears on the map through the conflict events (data/events/conflicts.json). The 'constitution' flags are rough approximations."
+  },
+  "offices": [
+    {
+      "id": "tal.leader",
+      "title": {
+        "en": "Leader of the Taliban",
+        "native": "Amir al-Mu'minin"
+      },
+      "role": "head_of_state_and_government",
+      "power_weight": 0.9,
+      "selection": "religious_council",
+      "succession": {
+        "type": "council_choice"
+      },
+      "holders": [
+        {
+          "person": null,
+          "from": "1999-12-31",
+          "to": "2001-11-13",
+          "vacant_reason": "Until the loss of Kabul the Taliban governed Afghanistan as the Islamic Emirate (AFG); the insurgency did not exist yet."
+        },
+        {
+          "person": "afg.mullah_omar",
+          "from": "2001-11-13",
+          "to": "2013-04-23",
+          "note": "Led the insurgency after the loss of Kabul until his death on 23 April 2013, which the Taliban concealed until 29 July 2015."
+        },
+        {
+          "person": "afg.akhtar_mansour",
+          "from": "2013-04-23",
+          "to": "2016-05-21",
+          "note": "Acting leader while Mullah Omar's death was concealed (23 April 2013 to 29 July 2015), then leader until he was killed on 21 May 2016."
+        },
+        {
+          "person": "afg.hibatullah_akhundzada",
+          "from": "2016-05-21",
+          "to": "2021-08-15",
+          "note": "Acting from 21 May 2016, leader from 25 May 2016; Supreme Leader of the restored Islamic Emirate from 15 August 2021 (see AFG)."
+        }
+      ],
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Taliban_insurgency",
+          "title": "Wikipedia: Taliban insurgency",
+          "accessed": "2026-10-18"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/Akhtar_Mansour",
+          "title": "Wikipedia: Akhtar Mansour",
+          "accessed": "2026-10-18"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/Hibatullah_Akhundzada",
+          "title": "Wikipedia: Hibatullah Akhundzada",
+          "accessed": "2026-10-18"
+        }
+      ],
+      "confidence": "verified"
+    }
+  ],
+  "legislature": null,
+  "party_system": "no_parties",
+  "start_2000": {
+    "ruling_parties": [],
+    "ideology_support": {
+      "islamist": 1.0
+    },
+    "ideology_support_note": "A militant movement with no elections; the whole base is counted as islamist.",
+    "stability": 0.5,
+    "war_support": 0.9
+  },
+  "claims": [
+    {
+      "tag": "AFG",
+      "note": "The Taliban claimed to be the government of Afghanistan (the Islamic Emirate) throughout the insurgency."
+    }
+  ],
+  "source": [
+    {
+      "url": "https://en.wikipedia.org/wiki/Taliban_insurgency",
+      "title": "Wikipedia: Taliban insurgency",
+      "accessed": "2026-10-18"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Akhtar_Mansour",
+      "title": "Wikipedia: Akhtar Mansour",
+      "accessed": "2026-10-18"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Hibatullah_Akhundzada",
+      "title": "Wikipedia: Hibatullah Akhundzada",
+      "accessed": "2026-10-18"
+    }
+  ],
+  "confidence": "verified",
+  "no_parties_reason": "The Taliban insurgency was a militant movement, not a party system; it held no elections."
+}

@@ -21,6 +21,9 @@ export const STATE_VERSION = 12;
 export interface GameRules {
   /** historical: real election winners are heavily weighted; dynamic: results come purely from the simulation. */
   electionMode: "historical" | "dynamic";
+  /** Used while a later start date is generated: countries on the historical path follow it exactly (every
+   * election goes the real way, no coups, civil wars or impeachments). Cleared when the scenario is played. */
+  strictHistory?: boolean;
 }
 
 export interface InterestGroupState {
@@ -256,6 +259,8 @@ export interface GameState {
   nextWarId: number;
   /** The wars and armed groups under way on 1 January 2000 have been opened (data/conflicts/wars_2000.json). */
   startConflicts?: boolean;
+  /** The bookmark this game started from, when it was not 1 January 2000 (data/scenarios/bookmarks.json). */
+  scenario?: string;
   /** 0..1, raised by wars, fading monthly. */
   worldTension: number;
   battles: Battle[];
@@ -337,9 +342,11 @@ export function createInitialState(
     const execParty = exec ? db.people.get(exec)?.party : undefined;
     const lead = c?.start_2000.ruling_parties[0];
 
+    // an armed group with a country record (the Taliban insurgency) is out of play until an event spawns it
+    const dormantGroup = db.armedGroups.has(entry.tag);
     const cs: CountryState = {
       tag: entry.tag,
-      active: (!!c || !!dp) && entry.start_status !== "releasable",
+      active: (!!c || !!dp) && entry.start_status !== "releasable" && !dormantGroup,
       govType,
       politicalPower: 50,
       stability: clamp01(c?.start_2000.stability ?? dp?.stability ?? 0.5),
@@ -372,19 +379,11 @@ export function createInitialState(
       activeDecisions: [],
       eventsFired: {},
     };
-    if (c && rules.electionMode === "dynamic") {
-      const needsMajority = !!gov?.needs_majority;
-      for (const o of c.offices) {
-        const elected = o.selection === "direct_election" || o.selection === "electoral_college" || o.selection === "legislature";
-        const formed = needsMajority && o.id === c.government.head_of_government_office;
-        if (elected || formed) cs.historicalOffices[o.id] = false;
-      }
-      for (const o of cc?.cabinet ?? []) if (needsMajority) cs.historicalOffices[o.id] = false;
-    }
+    if (rules.electionMode === "dynamic") dynamicOffices(db, cs);
     if (c || dp) {
       cs.economy = initialEconomy(db, entry.tag, mapPop.get(entry.tag) ?? 1_000_000);
       cs.research = initialResearch(db, entry.tag, cs.economy.gdp, cs.economy.population);
-      if (entry.start_status !== "releasable") {
+      if (entry.start_status !== "releasable" && !dormantGroup) {
         const m = initialMilitary(db, cs, map.provinces, () => divisionId++);
         cs.military = m.military;
         divisions.push(...m.divisions);
@@ -436,6 +435,20 @@ export function createInitialState(
   };
   for (const cs of Object.values(countries)) if (cs.economy) cs.economy.tradeBase = tradeIndex(db, state, cs.tag);
   return state;
+}
+
+/** Dynamic elections: elected offices (and governments that need a majority) stop following the record. */
+export function dynamicOffices(db: ContentDB, cs: CountryState): void {
+  const cc = db.countries.get(cs.tag);
+  const c = cc?.country;
+  if (!c) return;
+  const needsMajority = !!db.governmentTypes.get(cs.govType)?.needs_majority;
+  for (const o of c.offices) {
+    const elected = o.selection === "direct_election" || o.selection === "electoral_college" || o.selection === "legislature";
+    const formed = needsMajority && o.id === c.government.head_of_government_office;
+    if (elected || formed) cs.historicalOffices[o.id] = false;
+  }
+  for (const o of cc?.cabinet ?? []) if (needsMajority) cs.historicalOffices[o.id] = false;
 }
 
 /** The focus tree a country uses: one naming it, else the generic tree. */

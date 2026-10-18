@@ -1,14 +1,17 @@
-import { useMemo, useState } from "preact/hooks";
+import { useEffect, useMemo, useState } from "preact/hooks";
 import type { ContentDB, Issue } from "../content/compile.ts";
 import { countrySummary } from "../content/query.ts";
 import { REGIONS } from "../content/schemas/definitions.ts";
+import { formatDate, dayOf } from "../sim/date.ts";
+import type { GameState } from "../sim/state.ts";
 import { SaveList } from "./hud/GameMenu.tsx";
+import { liveSummary } from "./hud/Panels.tsx";
 import { Portrait } from "./hud/SidePanel.tsx";
 import { Flag } from "./Flag.tsx";
 import { Icon } from "./icons.tsx";
-import { plateFit } from "./Placard.tsx";
+import { plateFit, shortName } from "./Placard.tsx";
 import type { Session } from "./session.ts";
-import { pickedCountry } from "./store.ts";
+import { bookmark, pickedCountry, scenarioWorld } from "./store.ts";
 import { tip } from "./tooltip.tsx";
 
 const REGION_NAMES: Record<string, string> = {
@@ -17,16 +20,61 @@ const REGION_NAMES: Record<string, string> = {
   east_se_asia: "East & Southeast Asia", oceania: "Oceania",
 };
 
+const BASE = (import.meta as { env?: { BASE_URL?: string } }).env?.BASE_URL ?? "/";
+/** Loaded later start dates, kept for the session (each is a few MB of game state). */
+const loaded = new Map<string, GameState>();
 
-/** HOI4-style country selection: bookmark plaque, featured nations, map picking, nation card. */
+/** HOI4-style country selection: bookmarks, featured nations, map picking, nation card. */
 export function CountrySelect({ db, session, issues }: { db: ContentDB; session: Session; issues: Issue[] }) {
   const [q, setQ] = useState("");
   const [region, setRegion] = useState("all");
   const [mode, setMode] = useState<"historical" | "dynamic">("historical");
   const [showLoad, setShowLoad] = useState(false);
+  const [busy, setBusy] = useState("");
   const selected = pickedCountry.value;
+  const bm = db.bookmarks.find((b) => b.id === bookmark.value) ?? db.bookmarks[0]!;
+  const world = scenarioWorld.value;
 
-  const rows = useMemo(() => db.countryList.map((e) => ({ entry: e, summary: countrySummary(db, e.tag) })), [db]);
+  // the map shows the chosen date's borders
+  useEffect(() => {
+    session.world.setOwners(world);
+  }, [world]);
+
+  const choose = async (id: string) => {
+    const b = db.bookmarks.find((x) => x.id === id);
+    if (!b || id === bookmark.value) return;
+    pickedCountry.value = null;
+    if (b.date <= "2000-01-01") { bookmark.value = id; scenarioWorld.value = null; return; }
+    let s = loaded.get(id);
+    if (!s) {
+      setBusy(`Preparing ${formatDate(dayOf(b.date))}…`);
+      try {
+        const res = await fetch(`${BASE}scenarios/${id}.json`);
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        s = (await res.json()) as GameState;
+        loaded.set(id, s);
+      } catch (e) {
+        setBusy(`Could not load this start date (${(e as Error).message}).`);
+        return;
+      }
+      setBusy("");
+    }
+    bookmark.value = id;
+    scenarioWorld.value = s;
+  };
+
+  type Row = { entry: (typeof db.countryList)[number]; summary: ReturnType<typeof countrySummary> };
+  const rows = useMemo<Row[]>(() => {
+    if (!world) return db.countryList.map((e) => ({ entry: e, summary: countrySummary(db, e.tag) }));
+    // a later date: the countries in play then, as the running game has them
+    const holds = new Set([...world.provinceOwner, ...world.provinceController]);
+    return db.countryList
+      .filter((e) => world.countries[e.tag]?.active && holds.has(e.tag))
+      .map((e) => {
+        const s = db.countries.get(e.tag)?.country ? liveSummary(db, world, e.tag) : null;
+        return { entry: e, summary: s ? { tag: e.tag, name: e.name, region: e.region, status: e.start_status, ...s } : null };
+      });
+  }, [db, world]);
   const featured = rows.filter((r) => r.summary && r.entry.detail_tier === 1 && r.entry.start_status === "independent");
   const list = rows.filter(
     (r) =>
@@ -43,37 +91,59 @@ export function CountrySelect({ db, session, issues }: { db: ContentDB; session:
     const l = session.map.labels.find((x) => x.tag === tag);
     if (l) session.world.view.lookAt(l.x, l.y - Math.max(4, l.extent * 0.35), Math.max(14, Math.min(80, l.extent * 2.6)));
   };
+  const play = () => {
+    if (!sel) return;
+    if (world) session.startScenario(world, sel.entry.tag, { electionMode: mode });
+    else session.newGame(sel.entry.tag, { electionMode: mode });
+  };
 
   // leader of the selected country, for the portrait card
   const cc = sel ? db.countries.get(sel.entry.tag) : undefined;
-  const execId = cc?.country ? cc.country.offices.find((o) => o.id === cc.country!.government.effective_executive)?.holders.find((h) => h.from <= "2000-01-01" && (!h.to || h.to > "2000-01-01"))?.person : undefined;
+  const execOffice = cc?.country?.government.effective_executive;
+  const execId = !execOffice ? undefined
+    : world ? world.countries[sel!.entry.tag]?.offices[execOffice]?.[0] ?? undefined
+    : cc!.country!.offices.find((o) => o.id === execOffice)?.holders.find((h) => h.from <= "2000-01-01" && (!h.to || h.to > "2000-01-01"))?.person ?? undefined;
   const exec = execId ? db.people.get(execId) : undefined;
-  const execTitle = cc?.country ? db.offices.get(cc.country.government.effective_executive)?.title.en : undefined;
+  const execTitle = execOffice ? db.offices.get(execOffice)?.title.en : undefined;
 
   return (
     <>
       <div class="bookmark">
-        <h1 class="bm-name">New Millennium</h1>
+        <h1 class="bm-name" style={{ "--fit": plateFit(bm.name) }}>{bm.name}</h1>
         <div class="bm-meta">
-        <span class="bm-date">1 January 2000</span>
-        <span class="bm-sub small">
-          <span {...tip(() => ({ title: "Research tiers", rows: [["Full history", String(db.countryList.filter((e) => e.research === "full").length)], ["Light", String(db.countryList.filter((e) => e.research === "light").length)], ["Default profile", String(db.countryList.filter((e) => e.research === "default").length)]], note: "Default-profile countries have an economy, an army and diplomacy but no named politics; they are not playable." }))}>
-            {withData} of {db.countryList.length} nations researched
+          <span class="bm-date">{formatDate(dayOf(bm.date))}</span>
+          <span class="bm-sub small">
+            {busy ? <span class="warn">{busy}</span> : (
+              <span {...tip(() => ({ title: "Research tiers", rows: [["Full history", String(db.countryList.filter((e) => e.research === "full").length)], ["Light", String(db.countryList.filter((e) => e.research === "light").length)], ["Default profile", String(db.countryList.filter((e) => e.research === "default").length)]], note: "Default-profile countries have an economy, an army and diplomacy but no named politics; they are not playable." }))}>
+                {withData} of {rows.length} nations researched
+              </span>
+            )}
+            {errors > 0 && <span class="warn"> · {errors} data errors (see console)</span>}
           </span>
-          {errors > 0 && <span class="warn"> · {errors} data errors (see console)</span>}
-        </span>
         </div>
+        <nav class="bm-list" aria-label="Start date">
+          {db.bookmarks.map((b) => (
+            <button key={b.id} class={`bm-pick ${b.id === bm.id ? "on" : ""}`} aria-pressed={b.id === bm.id} disabled={!!busy && b.id !== bm.id} onClick={() => void choose(b.id)}
+              {...tip(() => ({ title: b.name, body: <span class="dim">{b.description}</span>, rows: [["Start", formatDate(dayOf(b.date))]], note: b.date > "2000-01-01" ? "The world as history left it on that day: real leaders, borders and wars." : undefined }))}>
+              <span class="bm-pick-name">{b.name}</span>
+              <span class="bm-pick-date num">{b.date.slice(0, 4)}</span>
+            </button>
+          ))}
+        </nav>
       </div>
 
       <aside class="nations hp" aria-label="Choose a nation">
         <header class="hp-head"><h2 class="hp-title">Featured nations</h2></header>
         <div class="featured">
-          {featured.map(({ entry }) => (
-            <button key={entry.tag} class={`feat ${entry.tag === selected ? "on" : ""}`} style={{ "--fit": plateFit(entry.short_name ?? entry.name) }} onClick={() => pick(entry.tag)} {...tip(() => ({ title: entry.name, note: "Click to select, or click any country on the map." }))}>
-              <Flag db={db} tag={entry.tag} size="sm" />
-              <span>{entry.short_name ?? entry.name}</span>
-            </button>
-          ))}
+          {featured.map(({ entry }) => {
+            const n = shortName(db, world, entry.tag);
+            return (
+              <button key={entry.tag} class={`feat ${entry.tag === selected ? "on" : ""}`} style={{ "--fit": plateFit(n) }} onClick={() => pick(entry.tag)} {...tip(() => ({ title: entry.name, note: "Click to select, or click any country on the map." }))}>
+                <Flag db={db} tag={entry.tag} size="sm" />
+                <span>{n}</span>
+              </button>
+            );
+          })}
         </div>
         <div class="hp-section">All nations</div>
         <div class="filters">
@@ -114,7 +184,7 @@ export function CountrySelect({ db, session, issues }: { db: ContentDB; session:
         <section class="nation-card hp" aria-label={sel.entry.name}>
           <div class="nc-flag"><Flag db={db} tag={sel.entry.tag} size="lg" /></div>
           <div class="nc-main">
-            <h2 class="nc-name">{sel.entry.name}</h2>
+            <h2 class="nc-name">{world ? shortName(db, world, sel.entry.tag) : sel.entry.name}</h2>
             {sel.summary ? (
               <dl class="kv nc-kv">
                 <dt>Government</dt><dd>{sel.summary.govType}</dd>
@@ -139,7 +209,7 @@ export function CountrySelect({ db, session, issues }: { db: ContentDB; session:
               <button role="radio" aria-checked={mode === "dynamic"} class={mode === "dynamic" ? "on" : ""} onClick={() => setMode("dynamic")}
                 {...tip(() => ({ title: "Dynamic elections", body: <span class="dim">Outcomes come purely from the simulation.</span> }))}>Dynamic</button>
             </div>
-            <button class="btn primary wide" disabled={!playable} onClick={() => session.newGame(sel.entry.tag, { electionMode: mode })}>
+            <button class="btn primary wide" disabled={!playable} onClick={play}>
               {playable ? "Play" : sel.entry.start_status === "releasable" ? "Releasable later" : "Not yet playable"}
             </button>
           </div>

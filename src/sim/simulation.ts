@@ -237,13 +237,18 @@ export function createHistoricalTimelineSystem(): System {
       const today = isoOf(state.day);
       for (const ch of officeChanges.get(state.day) ?? []) {
         const c: CountryState | undefined = state.countries[ch.tag];
-        if (!c?.historicalOffices[ch.officeId]) continue;
+        if (!c) continue;
+        // generating a later start date: the record wins over an office a simulated government filled
+        if (!c.historicalOffices[ch.officeId]) {
+          if (!(state.rules.strictHistory && c.followsHistory)) continue;
+          c.historicalOffices[ch.officeId] = true;
+        }
         const office = db.offices.get(ch.officeId)!;
         const before = c.offices[ch.officeId] ?? [];
         // only continue history from where history was: the current holder must be the real predecessor
         // (looking back a few days, across a skipped one-day gap between holders)
         const pred = [1, 2, 3, 4].map((k) => JSON.stringify(holdersOn(office, isoOf(state.day - k)).map((h) => h.person)));
-        if (!pred.includes(JSON.stringify(before))) continue;
+        if (!pred.includes(JSON.stringify(before)) && !state.rules.strictHistory) continue;
         const after = holdersOn(office, today).map((h) => h.person);
         if (JSON.stringify(before) === JSON.stringify(after)) continue;
         // `to` may be the last day in office: don't report a one-day vacancy before a successor starts

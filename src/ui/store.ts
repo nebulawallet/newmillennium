@@ -5,6 +5,9 @@ export const hoveredProvince = signal(0);
 export const selectedProvince = signal(0);
 export const mapMode = signal("political");
 export const pointer = signal({ x: 0, y: 0 });
+/** The start date chosen on the start screen (a data/scenarios/bookmarks.json id) and its loaded world (null: 2000). */
+export const bookmark = signal<string>("new_millennium");
+export const scenarioWorld = signal<import("../sim/state.ts").GameState | null>(null);
 /** Country highlighted on the start screen (clicked in the list or on the map). */
 export const pickedCountry = signal<string | null>(null);
 /** The player's selected divisions (ids). */

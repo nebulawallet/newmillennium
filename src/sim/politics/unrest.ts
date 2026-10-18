@@ -293,11 +293,12 @@ export const unrestSystem: System = {
       if (!cs.economy) cs.economicMood = clamp(cs.economicMood * 0.9, -1, 1);
       cs.unrest = clamp(cs.unrest * (1 - ur.monthly_decay), 0, 1);
       const actions = igActions(ctx, cs);
-      if (actions.some((a) => a.startsWith("impeachment:"))) tryImpeachment(ctx, cs);
+      const strict = !!state.rules.strictHistory && cs.followsHistory;
+      if (!strict && actions.some((a) => a.startsWith("impeachment:"))) tryImpeachment(ctx, cs);
 
       const gov = db.governmentTypes.get(cs.govType);
       const mods = countryModifiers(db, cs);
-      const histFactor = state.rules.electionMode === "historical" && cs.followsHistory ? ur.historical_factor : 1;
+      const histFactor = strict ? 0 : state.rules.electionMode === "historical" && cs.followsHistory ? ur.historical_factor : 1;
       for (const [ig, s] of Object.entries(cs.interestGroups)) {
         const def = db.interestGroupTypes.get(ig);
         for (const a of def?.actions ?? []) {

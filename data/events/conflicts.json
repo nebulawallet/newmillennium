@@ -3086,6 +3086,52 @@
           ]
         }
       ]
+    },
+    {
+      "id": "tal_takes_helmand_2015",
+      "title": "Taliban offensive in Helmand",
+      "description": "In 2015 the Taliban took over much of Helmand Province; Sangin district fell to them on 21 December 2015 after fierce fighting. By July 2016 about a fifth of Afghanistan was under Taliban control, with Helmand a major stronghold.",
+      "countries": [
+        "AFG"
+      ],
+      "major": false,
+      "historical": {
+        "date": "2015-12-21",
+        "any_path": true,
+        "dynamic_mode": false,
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/War_in_Afghanistan_(2001%E2%80%932021)",
+            "title": "Wikipedia: War in Afghanistan (2001–2021)",
+            "accessed": "2026-10-18"
+          }
+        ],
+        "confidence": "needs_review",
+        "review_note": "The date is sourced (fall of Sangin). The whole Helmand province of the map goes to the Taliban, a province-level approximation: the government held Lashkar Gah and some districts."
+      },
+      "options": [
+        {
+          "id": "ok",
+          "name": "Continue",
+          "effects": [
+            {
+              "spawn_armed_group": {
+                "group": "TAL",
+                "regions": [
+                  {
+                    "from": "AFG",
+                    "provinces": [
+                      "Hilmand"
+                    ]
+                  }
+                ],
+                "divisions": 2,
+                "war_with": []
+              }
+            }
+          ]
+        }
+      ]
     }
   ]
 }

@@ -15,6 +15,9 @@ export const ArmedGroup = z.strictObject({
   kind: z.enum(["insurgency", "militant_group", "separatist", "rebel_coalition"]),
   /** Division template the group fields (data/units/military.json), equipped with the oldest variants. */
   template: Id.default("infantry_division"),
+  /** The group also has a country record (world/countries.json and data/countries/<tag>): leaders, flag, politics.
+   * It is out of play until an event puts it on the map, and can be played while it holds land. */
+  country_record: z.boolean().optional(),
   description: z.string(),
   ...sourced,
 });

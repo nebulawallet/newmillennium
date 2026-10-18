@@ -15,6 +15,7 @@ import { DecisionsFile, EventsFile, FocusTreeFile, type DecisionDef, type EventD
 import { validateEffects, validateTrigger, type ScriptIssue } from "./script/validate.ts";
 import type { RefKind } from "./script/registry.ts";
 import {
+  BookmarksFile,
   CountryColorsFile,
   FlagsFile,
   CountryListFile,
@@ -26,6 +27,7 @@ import {
   ModifiersFile,
   SubIdeologiesFile,
   TraitsFile,
+  type Bookmark,
   type CountryListEntry,
 } from "./schemas/definitions.ts";
 import {
@@ -125,6 +127,8 @@ export interface ContentDB {
   armedGroups: Map<string, ArmedGroup>;
   /** Wars and armed groups already active on 1 January 2000 (data/conflicts/wars_2000.json). */
   startConflicts: { wars: StartWar[]; groups: StartGroup[] };
+  /** Start dates on the start screen (data/scenarios/bookmarks.json). */
+  bookmarks: Bookmark[];
   un: UnData;
   diplomacyRules: DiplomacyRules;
   techCategories: Map<string, Omit<TechCategory, "techs"> & { techs: string[] }>;
@@ -250,6 +254,7 @@ export function compileContent(files: FileProvider, opts: CompileOptions = {}): 
     warRules: load("units/war.json", WarRulesFile, false) ?? WarRulesFile.parse({}),
     blocs: new Map((load("diplomacy/blocs.json", BlocsFile, false)?.blocs ?? []).map((b) => [b.id, b])),
     armedGroups: new Map((load("conflicts/armed_groups.json", ArmedGroupsFile, false)?.groups ?? []).map((g) => [g.tag, g])),
+    bookmarks: load("scenarios/bookmarks.json", BookmarksFile, false)?.bookmarks ?? [{ id: "new_millennium", name: "New Millennium", date: GAME_START, description: "", source: [], confidence: "verified" as const }],
     startConflicts: (({ wars, groups }) => ({ wars, groups }))(load("conflicts/wars_2000.json", StartConflictsFile, false) ?? { wars: [], groups: [] }),
     un: load("diplomacy/un.json", UnFile, false) ?? EMPTY_UN,
     diplomacyRules: load("diplomacy/rules.json", DiplomacyRulesFile, false) ?? DiplomacyRulesFile.parse({}),
@@ -413,7 +418,8 @@ export function compileContent(files: FileProvider, opts: CompileOptions = {}): 
     const tags = new Set(db.countryList.map((c) => c.tag));
     const templates = new Set(db.militaryRules.templates.map((t) => t.id));
     for (const g of db.armedGroups.values()) {
-      if (tags.has(g.tag)) err("DUP_ID", f, `${g.tag}: armed group tag is also a country tag`);
+      if (tags.has(g.tag) && !g.country_record) err("DUP_ID", f, `${g.tag}: armed group tag is also a country tag (set country_record if it should be)`);
+      if (g.country_record && !tags.has(g.tag)) warn("REF", f, `${g.tag}: country_record set but world/countries.json has no such tag`);
       if (!templates.has(g.template)) err("REF", f, `${g.tag}: unknown template '${g.template}'`);
       if (g.confidence === "needs_review" && !g.review_note) warn("REVIEW_NOTE", f, `${g.tag} is needs_review without review_note`);
     }

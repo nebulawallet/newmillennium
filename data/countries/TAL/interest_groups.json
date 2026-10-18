@@ -1,0 +1,30 @@
+{
+  "note": "Influence and approval are gameplay values, not measured data. The insurgency rested on its fighters and commanders ('military'), clerics ('religious_establishment') and rural Pashtun communities ('rural').",
+  "interest_groups": [
+    {
+      "type": "military",
+      "influence": 0.7,
+      "approval": 65
+    },
+    {
+      "type": "religious_establishment",
+      "influence": 0.5,
+      "approval": 70
+    },
+    {
+      "type": "rural",
+      "influence": 0.4,
+      "approval": 50
+    },
+    {
+      "type": "business",
+      "influence": 0.05,
+      "approval": 40
+    },
+    {
+      "type": "minorities",
+      "influence": 0.02,
+      "approval": 30
+    }
+  ]
+}

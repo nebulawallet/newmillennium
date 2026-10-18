@@ -27,10 +27,10 @@ const fresh = () => new Simulation(db, createInitialState(db, { provinces: provi
 const owner = (sim: Simulation, id: number) => sim.state.provinceOwner[id - 1];
 
 describe("armed groups", () => {
-  it("are defined in data with tags distinct from countries", () => {
+  it("are defined in data with tags distinct from countries, unless they carry a country record", () => {
     for (const t of ["ISG", "TAL", "HAM", "DPR", "LPR", "SYO"]) expect(db.armedGroups.has(t)).toBe(true);
     const tags = new Set(db.countryList.map((c) => c.tag));
-    for (const t of db.armedGroups.keys()) expect(tags.has(t)).toBe(false);
+    for (const g of db.armedGroups.values()) expect(tags.has(g.tag)).toBe(!!g.country_record);
   });
 
   it("scripts are checked: unknown groups and countries in regions are errors", () => {

@@ -35,7 +35,7 @@ import { WarPanel } from "./ui/units/WarPanel.tsx";
 import { createPlanDrawer } from "./ui/units/planDrawing.ts";
 import { DivisionPanel, Toast } from "./ui/units/DivisionPanel.tsx";
 import { version } from "./ui/session.ts";
-import { buildMsg } from "./ui/store.ts";
+import { buildMsg, scenarioWorld } from "./ui/store.ts";
 
 async function loadContent(): Promise<{ db: ContentDB; bundle: ContentBundle }> {
   const res = await fetch(`${import.meta.env.BASE_URL}content/bundle.json`);
@@ -109,7 +109,7 @@ async function boot(): Promise<void> {
     // start screen: clicking the map picks that province's country; in game it opens the state view
     if (screen.value === "select") {
       if (!id) return; // world.select(0) below re-enters here
-      const owner = map.provinces[id - 1]?.owner;
+      const owner = scenarioWorld.value?.provinceOwner[id - 1] ?? map.provinces[id - 1]?.owner;
       if (owner) pickedCountry.value = owner;
       world.select(0);
       return;

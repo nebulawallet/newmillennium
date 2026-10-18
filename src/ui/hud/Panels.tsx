@@ -38,7 +38,7 @@ function StubPanel({ tab }: { tab: TabDef }) {
 }
 
 /** The owner's government as it stands in the running game (2000 data on the start screen). */
-function liveSummary(db: ContentDB, state: GameState | null | undefined, tag: string) {
+export function liveSummary(db: ContentDB, state: GameState | null | undefined, tag: string) {
   const cs = state?.countries[tag];
   if (!state || !cs) return countrySummary(db, tag);
   const c = db.countries.get(tag)?.country;

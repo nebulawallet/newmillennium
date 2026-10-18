@@ -341,6 +341,8 @@ export function runElection(ctx: SimContext, cs: CountryState, s: ScheduledElect
   const r = db.politicsRules.elections;
   const historical = state.rules.electionMode === "historical" && cs.followsHistory;
   const rec = historical ? recordFor(db, cs.tag, s.key, state.day) : undefined;
+  // generating a later start date: an election the record does not have did not happen (Palestine, 2009)
+  if (historical && state.rules.strictHistory && !rec) return null;
   // a party that stood in the real election existed and was legal by then: banned, exiled or insurgent in 2000, or
   // merged into an electoral alliance (formed_from) that it later left again
   if (rec) for (const pr of rec.historical.party_results ?? [])
@@ -350,7 +352,7 @@ export function runElection(ctx: SimContext, cs: CountryState, s: ScheduledElect
       cs.partyBias[pr.party] ??= 1;
     }
   const matches = !!rec && pathMatches(ctx, cs, rec);
-  const onTrack = matches && rng.chance(r.historical_adherence);
+  const onTrack = matches && (!!state.rules.strictHistory || rng.chance(r.historical_adherence));
   const pull = matches && !onTrack ? r.historical_pull : 0;
 
   let res: ElectionResult | null;
@@ -362,7 +364,7 @@ export function runElection(ctx: SimContext, cs: CountryState, s: ScheduledElect
 
   // a result that leaves the record ends the historical path for this country
   const recWinner = rec?.historical.winner;
-  if (rec && recWinner && res.winner !== recWinner && res.winnerParty !== recWinner) {
+  if (rec && recWinner && res.winner !== recWinner && res.winnerParty !== recWinner && !state.rules.strictHistory) {
     cs.followsHistory = false;
   }
   pushResult(ctx, res);

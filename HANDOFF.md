@@ -58,6 +58,21 @@ New Millennium is a grand strategy game in the style of Hearts of Iron IV, set f
   - Scan for allegations, convictions, health claims and loaded words.
   - Agent prompts must forbid blanket process kills (`taskkill /IM node.exe`).
 
+### Start dates and the Taliban (18 October 2026)
+
+- **Bookmarks** (`data/scenarios/bookmarks.json`): New Millennium (1 January 2000), Rise of the Caliphate (1 July 2014), American Dream (20 January 2017). The start screen has a picker under the title plate.
+- **How a later date is made** (`src/sim/scenario.ts`): the historical game runs from 2000 to the date with `rules.strictHistory`. While it runs:
+  - every recorded election goes the real way, and elections the record lacks are skipped;
+  - there are no coups, civil wars or impeachments on the historical path;
+  - the real office holders override anything a simulated government set.
+- **Where snapshots come from:** `scripts/vite/contentPlugin.ts` emits `scenarios/<id>.json` at build time (about 30 s) and serves them lazily in dev. `npx tsx scripts/dev/scenario-check.ts` checks every leader on each date (75 of 75 match on both).
+- **Taliban:** TAL is now a country record (`data/countries/TAL`, light tier) as well as an armed group (`country_record: true`):
+  - It stays dormant until the 9 December 2001 event spawns it, and it can be played while it holds land.
+  - Its leaders are Mullah Omar, Akhtar Mansour and Hibatullah Akhundzada.
+  - Its flag is drawn for the game (`public/flags/x-taliban.svg`; flag codes may be `x-<name>`).
+  - It takes Helmand on 21 December 2015 (fall of Sangin).
+- **Not done:** Afghanistan in 2000 still shows today's flag rather than the Islamic Emirate's (flags are not dated). The Islamic State is not playable (it has no country record).
+
 ### Wars of 2000 (18 October 2026)
 
 The user pointed out that the wars already under way in 2000 were missing. They are now opened when a new game starts, from `data/conflicts/wars_2000.json` (`src/sim/conflicts/startWars.ts`), and each ends on its real date through an event in `data/events/conflicts.json`. Dates come from Wikipedia via `scripts/research/wiki.ts`.

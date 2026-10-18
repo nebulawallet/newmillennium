@@ -44,6 +44,7 @@ export interface ContentBundle {
   blocs: BlocDef[];
   armedGroups: unknown[];
   startConflicts?: ContentDB["startConflicts"];
+  bookmarks?: ContentDB["bookmarks"];
   un: ContentDB["un"];
   diplomacyRules: ContentDB["diplomacyRules"];
   techCategories: unknown[];
@@ -95,6 +96,7 @@ export function toBundle({ db, issues }: CompileResult): ContentBundle {
     blocs: [...db.blocs.values()],
     armedGroups: [...db.armedGroups.values()],
     startConflicts: db.startConflicts,
+    bookmarks: db.bookmarks,
     un: db.un,
     diplomacyRules: db.diplomacyRules,
     techCategories: [...db.techCategories.values()],
@@ -140,6 +142,7 @@ export function fromBundle(b: ContentBundle): ContentDB {
     blocs: byId(b.blocs ?? []),
     armedGroups: new Map(((b.armedGroups ?? []) as ArmedGroup[]).map((g) => [g.tag, g])),
     startConflicts: b.startConflicts ?? { wars: [], groups: [] },
+    bookmarks: b.bookmarks ?? [],
     un: b.un ?? EMPTY_UN,
     diplomacyRules: b.diplomacyRules ?? DiplomacyRulesFile.parse({}),
     techCategories: byId(b.techCategories ?? []),
