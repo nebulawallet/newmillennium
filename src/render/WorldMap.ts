@@ -56,12 +56,12 @@ export class WorldMap {
       view.addToWorld(this.borders.mesh);
       view.addToWorld(this.borders.provinceMesh);
     }
-    const nameOf = (tag: string) => {
+    const nameOf = (this.nameOf = (tag: string) => {
       const dyn = this.state?.dynamicCountries[tag]?.name;
       if (dyn) return dyn;
       const entry = db.countryList.find((c) => c.tag === tag);
       return entry?.short_name ?? db.countries.get(tag)?.country?.name.en ?? entry?.name ?? tag;
-    };
+    });
     this.labels = new Labels(map.labels, nameOf);
     view.scene.add(this.labels.group);
 
@@ -98,6 +98,7 @@ export class WorldMap {
     });
     view.onClick.push((x, y) => this.select(pick(x, y)));
     view.onRightClick.push((x, y) => this.onOrder(pick(x, y)));
+    this.followOwnership();
   }
 
   select(id: number): void {
@@ -133,6 +134,7 @@ export class WorldMap {
     this.followOwnership();
   }
 
+  private nameOf: (tag: string) => string = (t) => t;
   private ownerSig = "";
   private neighbours: Map<number, number[]> | null = null;
   /**
@@ -150,7 +152,7 @@ export class WorldMap {
       if (c === undefined) codes.set(t, (c = codes.size + 1));
       h = (Math.imul(h, 31) + c * (i + 1)) | 0;
     }
-    const sig = owners ? `${owners.length}:${h}:${codes.size}` : "start";
+    const sig = owners ? `${owners.length}:${h}:${codes.size}` : "start-map";
     if (sig === this.ownerSig) return;
     this.ownerSig = sig;
     const ownerOf = (id: number) => owners?.[id - 1] ?? this.map.provinces[id - 1]?.owner;
@@ -162,7 +164,15 @@ export class WorldMap {
         (this.neighbours.get(b) ?? this.neighbours.set(b, []).get(b)!).push(a);
       }
     }
-    this.labels.rebuild(owners ? countryLabels(this.map.provinces, this.neighbours, (p) => ownerOf(p.id)) : this.map.labels);
+    // labels are fitted to each country's real shape (point test on the province id map)
+    const fit = {
+      ownerAt: (x: number, y: number) => {
+        const id = provinceAt(this.map, x, y);
+        return id ? ownerOf(id) : undefined;
+      },
+      nameLength: (tag: string) => this.nameOf(tag).length,
+    };
+    this.labels.rebuild(countryLabels(this.map.provinces, this.neighbours, (p) => ownerOf(p.id), fit));
   }
 
   /** Rough GPU memory estimate for the benchmark (bytes). */

@@ -16,7 +16,8 @@ interface TroikaText extends THREE.Mesh {
   outlineOpacity: number;
   fillOpacity: number;
   letterSpacing: number;
-  sync(): void;
+  sync(callback?: () => void): void;
+  textRenderInfo?: { blockBounds: [number, number, number, number] };
   dispose(): void;
 }
 
@@ -59,7 +60,17 @@ export class Labels {
     it.text.position.set(l.x, l.y, 0.5);
     it.text.userData.baseX = l.x; // WorldMap moves labels to the world copy nearest the camera from here
     it.text.rotation.z = l.angle;
-    it.text.sync();
+    // the width estimate is a guess about the face: once laid out, shrink text that runs past 70% of the extent
+    const target = l.extent * 0.7;
+    it.text.sync(() => {
+      const b = it.text.textRenderInfo?.blockBounds;
+      const w = b ? b[2] - b[0] : 0;
+      if (it.label !== l || !(w > target)) return;
+      const k = target / w;
+      it.worldSize *= k;
+      it.text.fontSize = it.worldSize;
+      it.text.sync();
+    });
   }
 
   /** Place labels for these anchors: new countries get one, gone ones lose theirs, the rest move. */
