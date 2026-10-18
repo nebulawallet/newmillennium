@@ -27,13 +27,13 @@ self.onmessage = async (e: MessageEvent<SoakRequest>) => {
   let sim: Simulation | null = null;
   try {
     const [bundle, provinces, adjacency] = await Promise.all([
-      fetch("/content/bundle.json").then((r) => r.json() as Promise<ContentBundle>),
-      fetch("/map/provinces.json").then((r) => r.json()),
-      fetch("/map/adjacency.json").then((r) => r.json()),
+      fetch(`${import.meta.env.BASE_URL}content/bundle.json`).then((r) => r.json() as Promise<ContentBundle>),
+      fetch(`${import.meta.env.BASE_URL}map/provinces.json`).then((r) => r.json()),
+      fetch(`${import.meta.env.BASE_URL}map/adjacency.json`).then((r) => r.json()),
     ]);
     const db = fromBundle(bundle);
     const state = createInitialState(db, { provinces }, { contentHash: bundle.hash, seed, player: null, rules: { electionMode: dynamic ? "dynamic" : "historical" } });
-    const rivers = await fetch("/map/rivers.json").then((r) => (r.ok ? r.json() : { pairs: [] })).catch(() => ({ pairs: [] }));
+    const rivers = await fetch(`${import.meta.env.BASE_URL}map/rivers.json`).then((r) => (r.ok ? r.json() : { pairs: [] })).catch(() => ({ pairs: [] }));
     sim = new Simulation(db, state, undefined, simMapFrom(provinces, adjacency, rivers.pairs));
     let civilWars = 0;
     sim.onEvent((ev) => { if (ev.type === "civil_war") civilWars++; });

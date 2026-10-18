@@ -38,7 +38,7 @@ import { version } from "./ui/session.ts";
 import { buildMsg } from "./ui/store.ts";
 
 async function loadContent(): Promise<{ db: ContentDB; bundle: ContentBundle }> {
-  const res = await fetch("/content/bundle.json");
+  const res = await fetch(`${import.meta.env.BASE_URL}content/bundle.json`);
   if (!res.ok) throw new Error(`content bundle: HTTP ${res.status}`);
   const bundle = (await res.json()) as ContentBundle;
   return { db: fromBundle(bundle), bundle };

@@ -61,7 +61,7 @@ async function json<T>(url: string): Promise<T> {
   return r.json() as Promise<T>;
 }
 
-export async function loadMapData(base = "/map"): Promise<MapData> {
+export async function loadMapData(base = `${import.meta.env.BASE_URL}map`): Promise<MapData> {
   const t0 = performance.now();
   const [geo, borders, lakes, provinces, adjacency, labels, meta, idBlob] = await Promise.all([
     bin(`${base}/geometry.bin`),
