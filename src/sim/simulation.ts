@@ -19,6 +19,7 @@ import { militarySystem } from "./military/military.ts";
 import { frontsSystem } from "./military/fronts.ts";
 import { warSystem } from "./military/war.ts";
 import { armedGroupSystem } from "./conflicts/armedGroups.ts";
+import { startConflictsSystem } from "./conflicts/startWars.ts";
 import { diplomacySystem } from "./diplomacy/diplomacy.ts";
 import { aiSystem } from "./ai/ai.ts";
 import { personParty } from "./politics/common.ts";
@@ -291,6 +292,7 @@ export function defaultSystems(): System[] {
     militarySystem,
     warSystem,
     armedGroupSystem,
+    startConflictsSystem,
     diplomacySystem,
     aiSystem,
     frontsSystem,

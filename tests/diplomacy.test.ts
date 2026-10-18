@@ -69,7 +69,7 @@ describe("alliances and war", () => {
   it("NATO members defend an attacked member; the aggressor is sanctioned unless it vetoes", () => {
     const sim = fresh();
     expect(sim.dispatch({ type: "declare_war", tag: "RUS", target: "POL" }).ok).toBe(true);
-    const war = sim.state.wars[0]!;
+    const war = sim.state.wars.find((w) => w.defenders.includes("POL"))!;
     expect(war.defenders).toEqual(expect.arrayContaining(["POL", "DEU", "USA", "FRA"]));
     expect(sim.state.diplomacy.aggressors.RUS).toBeDefined();
     // the council votes within a month; Russia vetoes
@@ -85,7 +85,7 @@ describe("alliances and war", () => {
     expect(sim.dispatch({ type: "justify_war", tag: "DEU", target: "POL" }).ok).toBe(true);
     for (let i = 0; i < 100; i++) sim.step();
     expect(sim.dispatch({ type: "declare_war", tag: "DEU", target: "POL" }).ok).toBe(true);
-    const war = sim.state.wars[0]!;
+    const war = sim.state.wars.find((w) => w.defenders.includes("POL"))!;
     expect(war.defenders).toContain("RUS");
     // fellow NATO members do not defend Poland against Germany
     expect(war.defenders).not.toContain("USA");

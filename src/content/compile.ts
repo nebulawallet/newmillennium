@@ -46,7 +46,7 @@ import {
   type Person,
 } from "./schemas/country.ts";
 
-import { ArmedGroupsFile, type ArmedGroup } from "./schemas/conflicts.ts";
+import { ArmedGroupsFile, StartConflictsFile, type ArmedGroup, type StartGroup, type StartWar } from "./schemas/conflicts.ts";
 
 export const GAME_START = "2000-01-01";
 /** Key in a law's ideology_support_drift meaning "the ruling party's sub-ideology". */
@@ -123,6 +123,8 @@ export interface ContentDB {
   blocs: Map<string, BlocDef>;
   /** Non-state armed groups that events can put on the map (data/conflicts/armed_groups.json). */
   armedGroups: Map<string, ArmedGroup>;
+  /** Wars and armed groups already active on 1 January 2000 (data/conflicts/wars_2000.json). */
+  startConflicts: { wars: StartWar[]; groups: StartGroup[] };
   un: UnData;
   diplomacyRules: DiplomacyRules;
   techCategories: Map<string, Omit<TechCategory, "techs"> & { techs: string[] }>;
@@ -248,6 +250,7 @@ export function compileContent(files: FileProvider, opts: CompileOptions = {}): 
     warRules: load("units/war.json", WarRulesFile, false) ?? WarRulesFile.parse({}),
     blocs: new Map((load("diplomacy/blocs.json", BlocsFile, false)?.blocs ?? []).map((b) => [b.id, b])),
     armedGroups: new Map((load("conflicts/armed_groups.json", ArmedGroupsFile, false)?.groups ?? []).map((g) => [g.tag, g])),
+    startConflicts: (({ wars, groups }) => ({ wars, groups }))(load("conflicts/wars_2000.json", StartConflictsFile, false) ?? { wars: [], groups: [] }),
     un: load("diplomacy/un.json", UnFile, false) ?? EMPTY_UN,
     diplomacyRules: load("diplomacy/rules.json", DiplomacyRulesFile, false) ?? DiplomacyRulesFile.parse({}),
     techCategories: new Map(),
@@ -413,6 +416,17 @@ export function compileContent(files: FileProvider, opts: CompileOptions = {}): 
       if (tags.has(g.tag)) err("DUP_ID", f, `${g.tag}: armed group tag is also a country tag`);
       if (!templates.has(g.template)) err("REF", f, `${g.tag}: unknown template '${g.template}'`);
       if (g.confidence === "needs_review" && !g.review_note) warn("REVIEW_NOTE", f, `${g.tag} is needs_review without review_note`);
+    }
+    const sf = "conflicts/wars_2000.json";
+    for (const w of db.startConflicts.wars) {
+      // a country missing from this country list (a partial content set) only skips the war at runtime
+      for (const t of [w.attacker, w.defender]) if (!tags.has(t)) warn("REF", sf, `${w.id}: unknown country '${t}'`);
+      if (w.confidence === "needs_review" && !w.review_note) warn("REVIEW_NOTE", sf, `${w.id} is needs_review without review_note`);
+    }
+    for (const g of db.startConflicts.groups) {
+      if (!db.armedGroups.has(g.group)) err("REF", sf, `unknown armed group '${g.group}'`);
+      for (const r of g.regions) if (!tags.has(r.from)) warn("REF", sf, `${g.group}: unknown country '${r.from}'`);
+      if (g.confidence === "needs_review" && !g.review_note) warn("REVIEW_NOTE", sf, `${g.group} is needs_review without review_note`);
     }
   }
 

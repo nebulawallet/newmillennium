@@ -58,6 +58,28 @@ New Millennium is a grand strategy game in the style of Hearts of Iron IV, set f
   - Scan for allegations, convictions, health claims and loaded words.
   - Agent prompts must forbid blanket process kills (`taskkill /IM node.exe`).
 
+### Wars of 2000 (18 October 2026)
+
+The user pointed out that the wars already under way in 2000 were missing. They are now opened when a new game starts, from `data/conflicts/wars_2000.json` (`src/sim/conflicts/startWars.ts`), and each ends on its real date through an event in `data/events/conflicts.json`. Dates come from Wikipedia via `scripts/research/wiki.ts`.
+
+| War | Ends |
+|---|---|
+| Eritrean–Ethiopian War | 18 June 2000 |
+| Second Chechen War | Ichkeria merges into Russia, 30 April 2000 |
+| Afghan Civil War (Taliban vs United Front) | 9 December 2001 |
+| Second Congo War: Rwanda | 30 July 2002 |
+| Second Congo War: Uganda | 6 September 2002 |
+| Second Congo War: RCD and MLC | Merge into DR Congo, 18 July 2003 |
+| Angolan Civil War | UNITA merges, 4 April 2002 |
+| Second Sudanese Civil War | Comprehensive Peace Agreement, 9 January 2005; SSD takes the southern states |
+| Sri Lankan Civil War | 18 May 2009; the 2002–2006 ceasefire is not modelled |
+| Moro conflict (MILF, Maguindanao) | 9 July 2000 |
+| Sierra Leone Civil War (RUF, Eastern Province) | 18 January 2002 |
+| Insurgency in Aceh (GAM) | 15 August 2005 |
+| Second Intifada (Israel vs the Palestinian Authority, a limited war) | 28 September 2000 to 8 February 2005 |
+
+Not modelled, because they held no province on the map or were not open wars in 2000: India–Pakistan (Kargil ended in 1999), Colombia (FARC; FAR holds no land), Somalia, Turkey (PKK ceasefire), the Moluccas, Nigeria, and the Chechen insurgency after April 2000. `declareWar` takes a new `callAllies` flag (false for these wars, so treaty allies do not join).
+
 ### UI redesign notes (18 October 2026)
 
 The user asked for a complete UI revamp in blue ("it looks trash and vibecoded"; "i want a blue design"). It was built with the impeccable skill. The direction is recorded in `.impeccable/surfaces/src-ui.md`, and DESIGN.md describes the result.

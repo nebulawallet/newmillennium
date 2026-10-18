@@ -145,7 +145,7 @@ export function airPower(db: ContentDB, cs: CountryState): number {
 
 // ------------------------------------------------------------------ commands
 
-export function declareWar(ctx: SimContext, tag: string, target: string, goal: WarGoal = "conquest", requireJustification = false, scripted = false, zone?: number[]): { ok: boolean; text: string } {
+export function declareWar(ctx: SimContext, tag: string, target: string, goal: WarGoal = "conquest", requireJustification = false, scripted = false, zone?: number[], callAllies = true): { ok: boolean; text: string } {
   const { db, state } = ctx;
   if (tag === target) return { ok: false, text: "A country cannot declare war on itself." };
   const a = state.countries[tag], b = state.countries[target];
@@ -174,7 +174,7 @@ export function declareWar(ctx: SimContext, tag: string, target: string, goal: W
     b.followsHistory = false;
   }
   ctx.log(tag, "war", `Declares war on ${countryShort(db, state, target)}${justified ? "" : " without a justification"}`);
-  if (!group) onWarDeclared(ctx, id, tag, target, justified, scripted);
+  if (!group) onWarDeclared(ctx, id, tag, target, justified, scripted, callAllies);
   ctx.emit({ type: "map_changed" });
   return { ok: true, text: `War declared on ${countryShort(db, state, target)}.` };
 }

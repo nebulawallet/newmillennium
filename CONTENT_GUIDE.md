@@ -304,5 +304,9 @@ One file per tree: `{ id, name, countries, focuses: [ { id, name, description, x
   - `occupy_provinces` = `{ regions }`: the scoped country takes control of provinces on a real date and the owner's divisions there disband (the fall of Baghdad, 9 April 2003).
   - `declare_war` takes an optional `zone` (regions of the target) for a limited war: the attacker aims for and may enter only those provinces (Russia 2022: Kherson, Zaporizhzhia, Mariupol).
   - `dissolve_country` = `{ into }` merges the scoped country into another (the United Front into Afghanistan, December 2001).
+- Wars already under way on 1 January 2000 live in `data/conflicts/wars_2000.json`. A new game opens them before the first day (`src/sim/conflicts/startWars.ts`):
+  - `wars`: `{ id, name, attacker, defender, began, goal? }`, limited by default and scripted. No allies are called in.
+  - `groups`: `{ group, regions, divisions, war_name?, began? }` puts an armed group on the map at the start.
+  - Each war ends through a dated event in `data/events/conflicts.json`. Use `white_peace` for wars between states; use `dissolve_country` for insurgent countries such as ICH, RCD, MLC, UNI and TEL; use `end_armed_group` for armed groups.
 - The conflict timeline lives in `data/events/conflicts.json`. Check it with `npx tsx scripts/dev/conflict-trace.ts [YYYY-MM-DD] [--dynamic]`, which prints every war and group change from 2000.
 

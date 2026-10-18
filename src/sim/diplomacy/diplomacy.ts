@@ -525,7 +525,7 @@ function exposeCampaign(ctx: SimContext, c: Campaign): void {
 // ------------------------------------------------------------------ war hooks
 
 /** Called by declareWar: allies of the defender join; unjustified wars brand the attacker. */
-export function onWarDeclared(ctx: SimContext, warId: number, attacker: string, target: string, justified: boolean, scripted = false): void {
+export function onWarDeclared(ctx: SimContext, warId: number, attacker: string, target: string, justified: boolean, scripted = false, callAllies = true): void {
   const { db, state } = ctx;
   const war = state.wars.find((w) => w.id === warId);
   if (!war) return;
@@ -537,6 +537,7 @@ export function onWarDeclared(ctx: SimContext, warId: number, attacker: string, 
   state.diplomacy.justifications = state.diplomacy.justifications.filter((j) => !(j.tag === attacker && j.target === target));
   state.diplomacy.access = state.diplomacy.access.filter(([u, h]) => !(u === target && h === attacker) && !(u === attacker && h === target));
   state.diplomacy.tradeDeals = state.diplomacy.tradeDeals.filter(([x, y]) => !((x === attacker && y === target) || (x === target && y === attacker)));
+  if (!callAllies) return;
   // allies of the attacker do not defend the target against it
   const attackerAllies = new Set(defensiveAllies(db, state, attacker));
   for (const ally of defensiveAllies(db, state, target)) {

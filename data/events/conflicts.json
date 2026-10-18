@@ -2514,6 +2514,578 @@
           ]
         }
       ]
+    },
+    {
+      "id": "eri_eth_ceasefire_2000",
+      "title": "Eritrean–Ethiopian War: ceasefire",
+      "description": "Eritrea and Ethiopia signed an Agreement on Cessation of Hostilities on 18 June 2000; the Algiers Agreement of 12 December 2000 formally ended the war.",
+      "countries": [
+        "ERI"
+      ],
+      "major": true,
+      "historical": {
+        "date": "2000-06-18",
+        "any_path": true,
+        "dynamic_mode": false,
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/Eritrean–Ethiopian_War",
+            "title": "Wikipedia: Eritrean–Ethiopian War",
+            "accessed": "2026-10-18"
+          },
+          {
+            "url": "https://en.wikipedia.org/wiki/Algiers_Agreement_(2000)",
+            "title": "Wikipedia: Algiers Agreement (2000)",
+            "accessed": "2026-10-18"
+          }
+        ],
+        "confidence": "verified"
+      },
+      "options": [
+        {
+          "id": "ok",
+          "name": "Continue",
+          "effects": [
+            {
+              "white_peace": {
+                "with": "ETH"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ich_main_phase_ends_2000",
+      "title": "Second Chechen War: Russia takes Chechnya",
+      "description": "Russian forces took Grozny after a siege that ended on 6 February 2000, and the main phase of the war ended on 30 April 2000. Russia established direct rule in May; an insurgency went on until the counter-terrorist operation was declared over on 16 April 2009.",
+      "countries": [
+        "ICH"
+      ],
+      "major": true,
+      "historical": {
+        "date": "2000-04-30",
+        "any_path": true,
+        "dynamic_mode": false,
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/Second_Chechen_War",
+            "title": "Wikipedia: Second Chechen War",
+            "accessed": "2026-10-18"
+          },
+          {
+            "url": "https://en.wikipedia.org/wiki/Battle_of_Grozny_(1999–2000)",
+            "title": "Wikipedia: Battle of Grozny (1999–2000)",
+            "accessed": "2026-10-18"
+          }
+        ],
+        "confidence": "needs_review",
+        "review_note": "The insurgency phase (to 16 April 2009) has no territory and is not modelled."
+      },
+      "options": [
+        {
+          "id": "ok",
+          "name": "Continue",
+          "effects": [
+            {
+              "dissolve_country": {
+                "into": "RUS"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mif_camp_abubakar_2000",
+      "title": "Fall of Camp Abubakar",
+      "description": "The Philippine Army took Camp Abubakar, the main base of the Moro Islamic Liberation Front, on 9 July 2000, ending the government's 2000 campaign. The MILF fought on; a permanent ceasefire came in 2014.",
+      "countries": [
+        "PHL"
+      ],
+      "major": false,
+      "historical": {
+        "date": "2000-07-09",
+        "any_path": true,
+        "dynamic_mode": false,
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2000_Philippine_campaign_against_the_Moro_Islamic_Liberation_Front",
+            "title": "Wikipedia: 2000 Philippine campaign against the Moro Islamic Liberation Front",
+            "accessed": "2026-10-18"
+          },
+          {
+            "url": "https://en.wikipedia.org/wiki/Moro_Islamic_Liberation_Front",
+            "title": "Wikipedia: Moro Islamic Liberation Front",
+            "accessed": "2026-10-18"
+          }
+        ],
+        "confidence": "needs_review",
+        "review_note": "The MILF's later insurgency (to the 27 March 2014 agreement) holds no province and is not modelled."
+      },
+      "options": [
+        {
+          "id": "ok",
+          "name": "Continue",
+          "effects": [
+            {
+              "end_armed_group": {
+                "group": "MIF"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "isr_war_with_pse_2000",
+      "title": "Second Intifada",
+      "description": "The Second Intifada, a Palestinian uprising against the Israeli occupation, began on 28 September 2000.",
+      "countries": [
+        "ISR"
+      ],
+      "major": false,
+      "historical": {
+        "date": "2000-09-28",
+        "any_path": true,
+        "dynamic_mode": false,
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/Second_Intifada",
+            "title": "Wikipedia: Second Intifada",
+            "accessed": "2026-10-18"
+          }
+        ],
+        "confidence": "needs_review",
+        "review_note": "An uprising is modelled as a limited war between Israel and the Palestinian Authority, so the fighting can reach the self-rule areas (Israel re-entered them in 2002)."
+      },
+      "options": [
+        {
+          "id": "ok",
+          "name": "Continue",
+          "effects": [
+            {
+              "declare_war": {
+                "target": "PSE",
+                "goal": "limited"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "afn_war_ends_2001",
+      "title": "Afghan Civil War ends",
+      "description": "With the fall of Kandahar on 9 December 2001 the Taliban lost their last stronghold, and the civil war between the Islamic Emirate and the United Front ended.",
+      "countries": [
+        "AFN"
+      ],
+      "major": false,
+      "historical": {
+        "date": "2001-12-09",
+        "any_path": true,
+        "dynamic_mode": false,
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/Afghan_Civil_War_(1996–2001)",
+            "title": "Wikipedia: Afghan Civil War (1996–2001)",
+            "accessed": "2026-10-18"
+          },
+          {
+            "url": "https://en.wikipedia.org/wiki/Fall_of_Kandahar",
+            "title": "Wikipedia: Fall of Kandahar",
+            "accessed": "2026-10-18"
+          }
+        ],
+        "confidence": "verified"
+      },
+      "options": [
+        {
+          "id": "ok",
+          "name": "Continue",
+          "effects": [
+            {
+              "white_peace": {
+                "with": "AFG"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ruf_war_over_2002",
+      "title": "Sierra Leone Civil War ends",
+      "description": "President Ahmad Tejan Kabbah declared the eleven-year Sierra Leone Civil War officially over on 18 January 2002.",
+      "countries": [
+        "SLE"
+      ],
+      "major": true,
+      "historical": {
+        "date": "2002-01-18",
+        "any_path": true,
+        "dynamic_mode": false,
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/Sierra_Leone_Civil_War",
+            "title": "Wikipedia: Sierra Leone Civil War",
+            "accessed": "2026-10-18"
+          }
+        ],
+        "confidence": "verified"
+      },
+      "options": [
+        {
+          "id": "ok",
+          "name": "Continue",
+          "effects": [
+            {
+              "end_armed_group": {
+                "group": "RUF"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "uni_luena_2002",
+      "title": "Angolan Civil War ends",
+      "description": "The Angolan Civil War ended on 4 April 2002, when UNITA and the government signed a ceasefire memorandum in Luena after the death of Jonas Savimbi.",
+      "countries": [
+        "UNI"
+      ],
+      "major": true,
+      "historical": {
+        "date": "2002-04-04",
+        "any_path": true,
+        "dynamic_mode": false,
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/Angolan_Civil_War",
+            "title": "Wikipedia: Angolan Civil War",
+            "accessed": "2026-10-18"
+          }
+        ],
+        "confidence": "verified"
+      },
+      "options": [
+        {
+          "id": "ok",
+          "name": "Continue",
+          "effects": [
+            {
+              "dissolve_country": {
+                "into": "AGO"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "rwa_pretoria_accord_2002",
+      "title": "Pretoria Accord",
+      "description": "Rwanda and the Democratic Republic of the Congo signed the Pretoria Accord on 30 July 2002; Rwanda completed the withdrawal of its troops on 5 October 2002.",
+      "countries": [
+        "RWA"
+      ],
+      "major": false,
+      "historical": {
+        "date": "2002-07-30",
+        "any_path": true,
+        "dynamic_mode": false,
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/Second_Congo_War",
+            "title": "Wikipedia: Second Congo War",
+            "accessed": "2026-10-18"
+          }
+        ],
+        "confidence": "verified"
+      },
+      "options": [
+        {
+          "id": "ok",
+          "name": "Continue",
+          "effects": [
+            {
+              "white_peace": {
+                "with": "COD"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "uga_luanda_agreement_2002",
+      "title": "Luanda Agreement",
+      "description": "Uganda and the Democratic Republic of the Congo signed the Luanda Agreement on 6 September 2002 on the withdrawal of Ugandan troops.",
+      "countries": [
+        "UGA"
+      ],
+      "major": false,
+      "historical": {
+        "date": "2002-09-06",
+        "any_path": true,
+        "dynamic_mode": false,
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/Second_Congo_War",
+            "title": "Wikipedia: Second Congo War",
+            "accessed": "2026-10-18"
+          }
+        ],
+        "confidence": "verified"
+      },
+      "options": [
+        {
+          "id": "ok",
+          "name": "Continue",
+          "effects": [
+            {
+              "white_peace": {
+                "with": "COD"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "rcd_transition_2003",
+      "title": "Second Congo War ends",
+      "description": "The war officially ended on 18 July 2003 with the establishment of the Transitional Government of the Democratic Republic of the Congo, which the rebel movements joined.",
+      "countries": [
+        "RCD"
+      ],
+      "major": true,
+      "historical": {
+        "date": "2003-07-18",
+        "any_path": true,
+        "dynamic_mode": false,
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/Second_Congo_War",
+            "title": "Wikipedia: Second Congo War",
+            "accessed": "2026-10-18"
+          }
+        ],
+        "confidence": "verified"
+      },
+      "options": [
+        {
+          "id": "ok",
+          "name": "Continue",
+          "effects": [
+            {
+              "dissolve_country": {
+                "into": "COD"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mlc_transition_2003",
+      "title": "MLC joins the transitional government",
+      "description": "The Movement for the Liberation of the Congo joined the Transitional Government of the Democratic Republic of the Congo, established on 18 July 2003.",
+      "countries": [
+        "MLC"
+      ],
+      "major": false,
+      "historical": {
+        "date": "2003-07-18",
+        "any_path": true,
+        "dynamic_mode": false,
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/Second_Congo_War",
+            "title": "Wikipedia: Second Congo War",
+            "accessed": "2026-10-18"
+          }
+        ],
+        "confidence": "verified"
+      },
+      "options": [
+        {
+          "id": "ok",
+          "name": "Continue",
+          "effects": [
+            {
+              "dissolve_country": {
+                "into": "COD"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ssd_comprehensive_peace_2005",
+      "title": "Comprehensive Peace Agreement",
+      "description": "The Comprehensive Peace Agreement, signed in Nairobi on 9 January 2005, ended the Second Sudanese Civil War and gave Southern Sudan autonomy, with a referendum on independence after six years.",
+      "countries": [
+        "SSD"
+      ],
+      "major": true,
+      "historical": {
+        "date": "2005-01-09",
+        "any_path": true,
+        "dynamic_mode": false,
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/Second_Sudanese_Civil_War",
+            "title": "Wikipedia: Second Sudanese Civil War",
+            "accessed": "2026-10-18"
+          },
+          {
+            "url": "https://en.wikipedia.org/wiki/Comprehensive_Peace_Agreement",
+            "title": "Wikipedia: Comprehensive Peace Agreement",
+            "accessed": "2026-10-18"
+          }
+        ],
+        "confidence": "needs_review",
+        "review_note": "The autonomous Government of Southern Sudan is modelled as SSD holding the ten southern states (map adm1 codes SDS-*) until independence on 9 July 2011."
+      },
+      "options": [
+        {
+          "id": "ok",
+          "name": "Continue",
+          "effects": [
+            {
+              "transfer_provinces": {
+                "from": "SDN",
+                "adm1": [
+                  "SDS-147",
+                  "SDS-872",
+                  "SDS-863",
+                  "SDS-864",
+                  "SDS-892",
+                  "SDS-869",
+                  "SDS-871",
+                  "SDS-873",
+                  "SDS-870",
+                  "SDS-865"
+                ]
+              }
+            },
+            {
+              "white_peace": {
+                "with": "SDN"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "isr_pse_sharm_2005",
+      "title": "Second Intifada ends",
+      "description": "The Sharm el-Sheikh summit of 8 February 2005 is generally taken as the end of the Second Intifada.",
+      "countries": [
+        "ISR"
+      ],
+      "major": false,
+      "historical": {
+        "date": "2005-02-08",
+        "any_path": true,
+        "dynamic_mode": false,
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/Second_Intifada",
+            "title": "Wikipedia: Second Intifada",
+            "accessed": "2026-10-18"
+          }
+        ],
+        "confidence": "verified"
+      },
+      "options": [
+        {
+          "id": "ok",
+          "name": "Continue",
+          "effects": [
+            {
+              "white_peace": {
+                "with": "PSE"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "gam_helsinki_2005",
+      "title": "Helsinki agreement on Aceh",
+      "description": "The Indonesian government and the Free Aceh Movement signed the Helsinki Memorandum of Understanding on 15 August 2005, ending the insurgency in Aceh.",
+      "countries": [
+        "IDN"
+      ],
+      "major": true,
+      "historical": {
+        "date": "2005-08-15",
+        "any_path": true,
+        "dynamic_mode": false,
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/Insurgency_in_Aceh",
+            "title": "Wikipedia: Insurgency in Aceh",
+            "accessed": "2026-10-18"
+          }
+        ],
+        "confidence": "verified"
+      },
+      "options": [
+        {
+          "id": "ok",
+          "name": "Continue",
+          "effects": [
+            {
+              "end_armed_group": {
+                "group": "GAM"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tel_defeated_2009",
+      "title": "Sri Lankan Civil War ends",
+      "description": "The Sri Lankan government declared the Liberation Tigers of Tamil Eelam defeated on 18 May 2009, ending the civil war.",
+      "countries": [
+        "TEL"
+      ],
+      "major": true,
+      "historical": {
+        "date": "2009-05-18",
+        "any_path": true,
+        "dynamic_mode": false,
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/Sri_Lankan_civil_war",
+            "title": "Wikipedia: Sri Lankan civil war",
+            "accessed": "2026-10-18"
+          }
+        ],
+        "confidence": "verified"
+      },
+      "options": [
+        {
+          "id": "ok",
+          "name": "Continue",
+          "effects": [
+            {
+              "dissolve_country": {
+                "into": "LKA"
+              }
+            }
+          ]
+        }
+      ]
     }
   ]
 }

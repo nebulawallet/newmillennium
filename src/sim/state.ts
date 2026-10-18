@@ -254,6 +254,8 @@ export interface GameState {
   nextArmyId: number;
   wars: War[];
   nextWarId: number;
+  /** The wars and armed groups under way on 1 January 2000 have been opened (data/conflicts/wars_2000.json). */
+  startConflicts?: boolean;
   /** 0..1, raised by wars, fading monthly. */
   worldTension: number;
   battles: Battle[];

@@ -1,0 +1,238 @@
+{
+  "note": "Wars and armed groups already under way on 1 January 2000. A new game opens them before the first day (src/sim/conflicts/startWars.ts); each one ends through a dated event in data/events/conflicts.json. Insurgent countries (ICH, RCD, MLC, UNI, SSD, TEL, AFN) hold their land from the map build; the groups here are put on the map at the start.",
+  "wars": [
+    {
+      "id": "eritrea_ethiopia",
+      "name": "Eritrean–Ethiopian War",
+      "attacker": "ERI",
+      "defender": "ETH",
+      "began": "1998-05-06",
+      "goal": "limited",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Eritrean–Ethiopian_War",
+          "title": "Wikipedia: Eritrean–Ethiopian War",
+          "accessed": "2026-10-18"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "afghan_civil_war",
+      "name": "Afghan Civil War",
+      "attacker": "AFG",
+      "defender": "AFN",
+      "began": "1996-09-27",
+      "goal": "limited",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Afghan_Civil_War_(1996–2001)",
+          "title": "Wikipedia: Afghan Civil War (1996–2001)",
+          "accessed": "2026-10-18"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "second_chechen_war",
+      "name": "Second Chechen War",
+      "attacker": "RUS",
+      "defender": "ICH",
+      "began": "1999-08-07",
+      "goal": "limited",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Second_Chechen_War",
+          "title": "Wikipedia: Second Chechen War",
+          "accessed": "2026-10-18"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "congo_rcd",
+      "name": "Second Congo War",
+      "attacker": "COD",
+      "defender": "RCD",
+      "began": "1998-08-02",
+      "goal": "limited",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Second_Congo_War",
+          "title": "Wikipedia: Second Congo War",
+          "accessed": "2026-10-18"
+        }
+      ],
+      "confidence": "needs_review",
+      "review_note": "The war's start date is sourced. Which side is the attacker is a game choice (it decides nothing but labels). The RCD was backed by Rwanda and Uganda; it is modelled as a separate side."
+    },
+    {
+      "id": "congo_mlc",
+      "name": "Second Congo War",
+      "attacker": "COD",
+      "defender": "MLC",
+      "began": "1998-08-02",
+      "goal": "limited",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Second_Congo_War",
+          "title": "Wikipedia: Second Congo War",
+          "accessed": "2026-10-18"
+        }
+      ],
+      "confidence": "needs_review",
+      "review_note": "The MLC appeared in November 1998, inside the war that began on 2 August 1998; the war's date is used."
+    },
+    {
+      "id": "congo_rwanda",
+      "name": "Second Congo War",
+      "attacker": "RWA",
+      "defender": "COD",
+      "began": "1998-08-02",
+      "goal": "limited",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Second_Congo_War",
+          "title": "Wikipedia: Second Congo War",
+          "accessed": "2026-10-18"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "congo_uganda",
+      "name": "Second Congo War",
+      "attacker": "UGA",
+      "defender": "COD",
+      "began": "1998-08-02",
+      "goal": "limited",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Second_Congo_War",
+          "title": "Wikipedia: Second Congo War",
+          "accessed": "2026-10-18"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "angolan_civil_war",
+      "name": "Angolan Civil War",
+      "attacker": "AGO",
+      "defender": "UNI",
+      "began": "1975-11-11",
+      "goal": "limited",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Angolan_Civil_War",
+          "title": "Wikipedia: Angolan Civil War",
+          "accessed": "2026-10-18"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "second_sudanese_civil_war",
+      "name": "Second Sudanese Civil War",
+      "attacker": "SDN",
+      "defender": "SSD",
+      "began": "1983-06-05",
+      "goal": "limited",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Second_Sudanese_Civil_War",
+          "title": "Wikipedia: Second Sudanese Civil War",
+          "accessed": "2026-10-18"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "sri_lankan_civil_war",
+      "name": "Sri Lankan Civil War",
+      "attacker": "LKA",
+      "defender": "TEL",
+      "began": "1983-07-23",
+      "goal": "limited",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Sri_Lankan_civil_war",
+          "title": "Wikipedia: Sri Lankan civil war",
+          "accessed": "2026-10-18"
+        }
+      ],
+      "confidence": "needs_review",
+      "review_note": "The 22 February 2002 ceasefire and the return to war in 2006 are not modelled: a ceasefire as a white peace would hand back the Tigers' land, which they kept until 2009. The war runs from 2000 to 18 May 2009."
+    }
+  ],
+  "groups": [
+    {
+      "group": "MIF",
+      "regions": [
+        {
+          "from": "PHL",
+          "provinces": [
+            "Maguindanao"
+          ]
+        }
+      ],
+      "divisions": 2,
+      "war_name": "Moro conflict",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/2000_Philippine_campaign_against_the_Moro_Islamic_Liberation_Front",
+          "title": "Wikipedia: 2000 Philippine campaign against the Moro Islamic Liberation Front",
+          "accessed": "2026-10-18"
+        }
+      ],
+      "confidence": "needs_review",
+      "review_note": "Dates are sourced. The provinces are a province-level approximation on the game map (one game province can cover a whole region); check against the source's territorial-control maps. The MILF's camps, Camp Abubakar the largest, were in Maguindanao and Lanao del Sur."
+    },
+    {
+      "group": "RUF",
+      "regions": [
+        {
+          "from": "SLE",
+          "provinces": [
+            "Eastern"
+          ]
+        }
+      ],
+      "divisions": 2,
+      "war_name": "Sierra Leone Civil War",
+      "began": "1991-03-23",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Sierra_Leone_Civil_War",
+          "title": "Wikipedia: Sierra Leone Civil War",
+          "accessed": "2026-10-18"
+        }
+      ],
+      "confidence": "needs_review",
+      "review_note": "Dates are sourced. The provinces are a province-level approximation on the game map (one game province can cover a whole region); check against the source's territorial-control maps. The RUF also held much of the Northern Province in 2000; only the Eastern Province (Kailahun and Kono) is given, because the map's Northern Province may include the capital."
+    },
+    {
+      "group": "GAM",
+      "regions": [
+        {
+          "from": "IDN",
+          "provinces": [
+            "Lhokseumawe (Aceh)"
+          ]
+        }
+      ],
+      "divisions": 2,
+      "war_name": "Insurgency in Aceh",
+      "began": "1976-12-04",
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Insurgency_in_Aceh",
+          "title": "Wikipedia: Insurgency in Aceh",
+          "accessed": "2026-10-18"
+        }
+      ],
+      "confidence": "needs_review",
+      "review_note": "Dates are sourced. The provinces are a province-level approximation on the game map (one game province can cover a whole region); check against the source's territorial-control maps. GAM was strongest in Pidie, North and East Aceh; only the Lhokseumawe province of the map is given."
+    }
+  ]
+}
