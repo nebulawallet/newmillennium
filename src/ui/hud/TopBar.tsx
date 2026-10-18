@@ -115,7 +115,7 @@ export function TopBar({ db, session }: { db: ContentDB; session: Session }) {
             ["Ruling party", party ? `${party.name.en} (${party.abbrev.en})` : "—"],
             ["Government", db.governmentTypes.get(c?.government.type ?? "")?.name ?? "—"],
           ],
-          note: "Click to open Politics.",
+          note: "Click to open the country menu (Politics).",
         }))}
       >
         <Flag db={db} tag={tag} color={color} size="lg" />
@@ -134,7 +134,6 @@ export function TopBar({ db, session }: { db: ContentDB; session: Session }) {
             {...tip(() => ({ title: `${t.label} (${t.key})`, body: <span class="dim">{t.summary}</span>, note: t.phase ? `Arrives in ${t.phase}.` : undefined }))}
           >
             {Icon[t.icon]({ size: 22 })}
-            <span class="key">{t.key}</span>
           </button>
         ))}
       </nav>
@@ -187,17 +186,7 @@ export function TopBar({ db, session }: { db: ContentDB; session: Session }) {
         )}
       </div>
 
-      <div class="leader-line">
-        <span class="lname">{leader?.name.en ?? "—"}</span>
-        {party && (
-          <span class="lparty">
-            <i class="sw" style={{ background: party.color }} />
-            {party.abbrev.en}
-          </span>
-        )}
-      </div>
-
-      <div class="clock hp-well">
+      <div class="clock">
         <button class="tile clk-play" aria-label={paused.value ? "Resume (Space)" : "Pause (Space)"} onClick={() => session.setPaused(!paused.value)} {...tip(() => ({ title: paused.value ? "Resume" : "Pause", note: "Space" }))}>
           {paused.value ? Icon.play({ size: 16 }) : Icon.pause({ size: 16 })}
         </button>

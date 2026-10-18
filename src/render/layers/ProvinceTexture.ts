@@ -63,7 +63,7 @@ export class ProvinceTexture {
           float pid = idAt(vUv);
           if (pid < 0.5) discard;
           vec4 look = texture2D(uColors, provinceUv(pid));
-          vec3 c = look.rgb;
+          vec3 c = atlasTone(look.rgb);
           if (abs(pid - uSelected) < 0.5) c = mix(c, vec3(1.0), 0.35);
           else if (abs(pid - uHover) < 0.5) c = mix(c, vec3(1.0), 0.18);
           // borders: compare with the 4 neighbouring texels

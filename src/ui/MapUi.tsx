@@ -5,7 +5,7 @@ import type { WorldMap } from "../render/WorldMap.ts";
 import { Icon, type IconName } from "./icons.tsx";
 import { hoveredProvince, mapMode, pointer } from "./store.ts";
 import { activeTip, tip, TipBox } from "./tooltip.tsx";
-import type { Session } from "./session.ts";
+import { panel, type Session } from "./session.ts";
 import { infrastructureOf, slotUse } from "../sim/economy/construction.ts";
 
 /** Building slots of one of the player's provinces (shown in the Building slots map mode). */
@@ -81,10 +81,14 @@ export function MapModeBar({ db, map, world }: { db: ContentDB; map: MapData; wo
 /** Map hover tooltip (only when no UI tooltip is showing). */
 export function ProvinceTooltip({ db, map, session }: { db: ContentDB; map: MapData; session?: Session }) {
   const id = hoveredProvince.value;
+  panel.value; // re-check when a panel or the menu opens under a still pointer
   if (!id || activeTip.value) return null;
   const p = map.provinces[id - 1];
   if (!p) return null;
   const { x, y } = pointer.value;
+  // the map keeps its last hover when the pointer moves onto a panel: only show over the map
+  const over = document.elementFromPoint(x, y);
+  if (over && over.id !== "map" && !over.closest(".unit-layer, .battle-layer")) return null;
   return (
     <TipBox
       x={x}

@@ -9,7 +9,7 @@ import type { ContentDB } from "../../content/compile.ts";
 import { formatDate } from "../../sim/date.ts";
 import { partiesOfGroup, peaceBudget, provincesOf, termBlock, termCost, type PeaceTerm } from "../../sim/military/peace.ts";
 import { countryName } from "../../sim/politics/unrest.ts";
-import { Flag } from "../Flag.tsx";
+import { Placard } from "../Placard.tsx";
 import { Icon } from "../icons.tsx";
 import { version, type Session } from "../session.ts";
 import { draftTerms, peaceNotice, peacePick, toast } from "../store.ts";
@@ -65,17 +65,14 @@ export function PeaceScreen({ db, session }: { db: ContentDB; session: Session }
           const held = own.filter((id) => winners.includes(state.provinceController[id - 1]!));
           const cost = (term: PeaceTerm) => termCost(ctx, war, p.winner, term);
           const opt = (kind: "none" | "annex" | "provinces" | "puppet", label: string, term: PeaceTerm | null, note: string) => (
-            <button class={`btn ${d.kind === kind ? "primary" : ""}`} onClick={() => { set(t, { kind, provinces: kind === "provinces" && !d.provinces.length ? held : d.provinces }); if (kind === "provinces") peacePick.value = t; }}
+            <button class={`btn ${d.kind === kind ? "on" : ""}`} onClick={() => { set(t, { kind, provinces: kind === "provinces" && !d.provinces.length ? held : d.provinces }); if (kind === "provinces") peacePick.value = t; }}
               {...tip(() => ({ title: label, rows: term ? [["Cost", cost(term)]] : [], note }))}>{label}{term ? ` (${cost(term)})` : ""}</button>
           );
           return (
             <div class="pc-country" key={t}>
               <div class="pc-head">
-                <Flag db={db} tag={t} size="md" />
-                <div>
-                  <div class="wp-name">{countryName(db, state, t)}</div>
-                  <div class="faint small">{own.length} provinces; you hold {held.length}</div>
-                </div>
+                <Placard db={db} state={state} tag={t} size="md" />
+                <span class="faint small">{own.length} provinces; you hold {held.length}</span>
               </div>
               <div class="pc-opts">
                 {opt("none", "Leave", null, "No land or government change for this country.")}

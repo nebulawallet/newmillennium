@@ -7,6 +7,7 @@ import type { ContentDB } from "../../content/compile.ts";
 import { factories } from "../../sim/economy/economy.ts";
 import { availableVariants, manpowerPool, templateNeeds, templateStats, variantOf, type Template } from "../../sim/military/military.ts";
 import { version, type Session } from "../session.ts";
+import { Icon } from "../icons.tsx";
 import { tip } from "../tooltip.tsx";
 
 const fmt = (n: number) => Math.round(n).toLocaleString("en");
@@ -49,9 +50,9 @@ export function ProductionPanel({ db, session }: { db: ContentDB; session: Sessi
                 <span class="faint small num">{perMonth.toFixed(1)} a month · efficiency {Math.round(l.efficiency * 100)}%</span>
               </div>
               <span class="row-act">
-                <button class="tile mini" aria-label="Fewer factories" onClick={() => session.dispatch({ type: "set_line_factories", tag, line: l.id, factories: l.factories - 1 })}>−</button>
+                <button class="tile mini" aria-label="Fewer factories" onClick={() => session.dispatch({ type: "set_line_factories", tag, line: l.id, factories: l.factories - 1 })}>{Icon.minus({ size: 12 })}</button>
                 <b class="num">{l.factories}</b>
-                <button class="tile mini" aria-label="More factories" onClick={() => session.dispatch({ type: "set_line_factories", tag, line: l.id, factories: l.factories + 1 })}>+</button>
+                <button class="tile mini" aria-label="More factories" onClick={() => session.dispatch({ type: "set_line_factories", tag, line: l.id, factories: l.factories + 1 })}>{Icon.plus({ size: 12 })}</button>
               </span>
               <button class="btn" onClick={() => session.dispatch({ type: "remove_production_line", tag, line: l.id })}>Close</button>
             </li>
@@ -150,9 +151,9 @@ export function RecruitmentPanel({ db, session }: { db: ContentDB; session: Sess
             <div class="budget-row" key={s.id} {...tip(() => ({ title: s.name, body: <span class="dim">{s.description}</span>, rows: [["Manpower", s.manpower], ["Width", s.width], ["Speed", `${s.speed} km/h`], ...Object.entries(s.equipment).map(([f, c]) => [db.equipment.get(f)?.name ?? f, c] as [string, number])] }))}>
               <span>{s.name}</span>
               <span class="row-act">
-                <button class="tile mini" onClick={() => bump(s.id, -1)}>−</button>
+                <button class="tile mini" onClick={() => bump(s.id, -1)}>{Icon.minus({ size: 12 })}</button>
                 <b class="num">{draft.units[s.id] ?? 0}</b>
-                <button class="tile mini" onClick={() => bump(s.id, 1)}>+</button>
+                <button class="tile mini" onClick={() => bump(s.id, 1)}>{Icon.plus({ size: 12 })}</button>
               </span>
             </div>
           ))}

@@ -1,7 +1,7 @@
 import * as THREE from "three";
 // @ts-expect-error troika-three-text ships without type declarations
 import { Text } from "troika-three-text";
-import fontUrl from "@fontsource/barlow-semi-condensed/files/barlow-semi-condensed-latin-600-normal.woff?url";
+import fontUrl from "@fontsource/archivo/files/archivo-latin-700-normal.woff?url";
 import type { CountryLabel } from "../mapData.ts";
 
 interface TroikaText extends THREE.Mesh {
@@ -40,7 +40,7 @@ export class Labels {
     t.color = 0xf2f4f7;
     t.letterSpacing = 0.12;
     t.outlineWidth = "8%";
-    t.outlineColor = 0x05070a;
+    t.outlineColor = 0x061127;
     t.outlineOpacity = 0.6;
     t.renderOrder = 5;
     t.frustumCulled = false; // bounds are unknown until the SDF glyphs are generated

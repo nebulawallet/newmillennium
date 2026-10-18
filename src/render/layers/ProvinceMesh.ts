@@ -41,7 +41,7 @@ export class ProvinceMesh {
         ${ProvinceColors.GLSL}
         void main() {
           float pid = floor(vPid + 0.5);
-          vec3 c = texture2D(uColors, provinceUv(pid)).rgb;
+          vec3 c = atlasTone(texture2D(uColors, provinceUv(pid)).rgb);
           if (abs(pid - uSelected) < 0.5) c = mix(c, vec3(1.0), 0.35);
           else if (abs(pid - uHover) < 0.5) c = mix(c, vec3(1.0), 0.18);
           gl_FragColor = vec4(c, 1.0);

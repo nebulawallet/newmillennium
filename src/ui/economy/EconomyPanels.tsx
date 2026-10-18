@@ -94,8 +94,8 @@ export function EconomyPanel({ db, session }: { db: ContentDB; session: Session 
                 {field === "revenue" ? "Taxes" : "Spending"} <b class="num">{pct(now)}</b> <span class="faint small">target {pct(target)}</span>
               </span>
               <span class="row-act">
-                <button class="tile mini" aria-label={`Lower ${field}`} onClick={() => budget(field, -1)}>−</button>
-                <button class="tile mini" aria-label={`Raise ${field}`} onClick={() => budget(field, 1)}>+</button>
+                <button class="tile mini" aria-label={`Lower ${field}`} onClick={() => budget(field, -1)}>{Icon.minus({ size: 12 })}</button>
+                <button class="tile mini" aria-label={`Raise ${field}`} onClick={() => budget(field, 1)}>{Icon.plus({ size: 12 })}</button>
               </span>
             </div>
           );
@@ -193,8 +193,8 @@ export function ConstructionPanel({ db, session }: { db: ContentDB; session: Ses
                   <span class="cq-meta faint small num">{Math.round(p * 100)}% · {item.factories ?? 0}/{db.economyRules.max_factories_per_project} factories · {Number.isFinite(days) ? formatDate(state.day + days) : "waiting"}</span>
                 </div>
                 <span class="cq-act">
-                  <button class="tile mini" aria-label="Move up" disabled={i === 0} onClick={() => run({ type: "move_building", tag, index: i, to: i - 1 })} {...tip(() => ({ title: "Move up", note: "Earlier projects get factories first." }))}>▲</button>
-                  <button class="tile mini" aria-label="Move down" disabled={i === e.construction.length - 1} onClick={() => run({ type: "move_building", tag, index: i, to: i + 1 })} {...tip(() => ({ title: "Move down" }))}>▼</button>
+                  <button class="tile mini" aria-label="Move up" disabled={i === 0} onClick={() => run({ type: "move_building", tag, index: i, to: i - 1 })} {...tip(() => ({ title: "Move up", note: "Earlier projects get factories first." }))}>{Icon.up({ size: 12 })}</button>
+                  <button class="tile mini" aria-label="Move down" disabled={i === e.construction.length - 1} onClick={() => run({ type: "move_building", tag, index: i, to: i + 1 })} {...tip(() => ({ title: "Move down" }))}>{Icon.down({ size: 12 })}</button>
                   <button class="tile mini cq-x" aria-label="Cancel" onClick={() => run({ type: "cancel_building", tag, index: i })} {...tip(() => ({ title: "Cancel", note: "Progress and money spent are lost." }))}>{Icon.close({ size: 11 })}</button>
                 </span>
               </li>

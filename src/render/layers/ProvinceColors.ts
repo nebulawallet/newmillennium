@@ -41,6 +41,13 @@ export class ProvinceColors {
       float y = floor(pid / 256.0);
       return vec2((x + 0.5) / 256.0, (y + 0.5) / 256.0);
     }
+    // atlas tone: map colours a little less saturated and settled toward the sea's navy, so the
+    // political map reads as print under the HUD (presentation only; the data colours are unchanged)
+    vec3 atlasTone(vec3 c) {
+      float l = dot(c, vec3(0.299, 0.587, 0.114));
+      c = mix(vec3(l), c, 0.74);
+      return mix(c, vec3(0.09, 0.16, 0.29), 0.14);
+    }
   `;
 }
 

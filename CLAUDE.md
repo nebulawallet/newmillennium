@@ -25,7 +25,8 @@ Start every session by reading [HANDOFF.md](HANDOFF.md). It holds the current st
 - **The UI follows [DESIGN.md](DESIGN.md):**
   - HOI4 positions for every system.
   - Original art only; no Paradox-owned assets.
-  - Square corners, bronze hairlines, a tooltip on every number.
+  - Square corners, 1px blue hairlines, a tooltip on every number.
+  - Countries in an actor role sit on placards (nameplates); resolution blue means selected, white means holding the floor.
   - No eyebrows or labels above headings.
   - Unbuilt systems say which phase adds them.
 - **Commits:** one per phase or batch, with a clear message, ending with the Co-Authored-By line the harness provides.

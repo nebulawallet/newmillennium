@@ -55,7 +55,7 @@ export function Hemicycle({ groups, total, title }: { groups: SeatGroup[]; total
         {seats.map((s, i) => {
           const g = owner[i];
           return (
-            <circle cx={s.x} cy={-s.y} r={dot} fill={g?.color ?? "var(--border-strong)"}>
+            <circle cx={s.x} cy={-s.y} r={dot} fill={g?.color ?? "var(--line-2)"}>
               <title>{g ? `${g.label}: ${g.seats} seats` : "vacant"}</title>
             </circle>
           );

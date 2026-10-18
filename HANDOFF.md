@@ -1,6 +1,6 @@
 # Handoff: New Millennium
 
-Read this first when you pick up the project in a new session, with a new agent, or after a break. Last updated 17 October 2026, after the four reworks (UI, war, research, construction and market: commits `72b3f71`, `004fa25`, `043b56f`, `c81a5fc`).
+Read this first when you pick up the project in a new session, with a new agent, or after a break. Last updated 18 October 2026 (UI redesign in blue), after the four reworks (UI, war, research, construction and market: commits `72b3f71`, `004fa25`, `043b56f`, `c81a5fc`).
 
 ## What this is
 
@@ -14,7 +14,7 @@ New Millennium is a grand strategy game in the style of Hearts of Iron IV, set f
 | [PLAN.md](PLAN.md) | The approved architecture and the 13-phase plan. |
 | [CONTENT_GUIDE.md](CONTENT_GUIDE.md) | How to add people, parties and countries by editing data. |
 | [PRODUCT.md](PRODUCT.md) | Product truth: users, constraints, principles. |
-| [DESIGN.md](DESIGN.md) | The UI design system (HOI4 layout, original steel-and-bronze art). |
+| [DESIGN.md](DESIGN.md) | The UI design system: HOI4 layout in the "Council Chamber" world (council navy, resolution blue, placards). |
 | [CLAUDE.md](CLAUDE.md) | Standing rules for any agent working in this repo. |
 | [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) | Code map. |
 | [docs/PHASE2_BATCHES.md](docs/PHASE2_BATCHES.md) | The research queue for the politics database. |
@@ -58,12 +58,34 @@ New Millennium is a grand strategy game in the style of Hearts of Iron IV, set f
   - Scan for allegations, convictions, health claims and loaded words.
   - Agent prompts must forbid blanket process kills (`taskkill /IM node.exe`).
 
+### UI redesign notes (18 October 2026)
+
+The user asked for a complete UI revamp in blue ("it looks trash and vibecoded"; "i want a blue design"). It was built with the impeccable skill. The direction is recorded in `.impeccable/surfaces/src-ui.md`, and DESIGN.md describes the result.
+- **World, "The Council Chamber":**
+  - Panels are opaque council navy on 1px blue hairlines.
+  - Resolution blue marks selection, progress and the active tab.
+  - Placard white marks a country holding the floor, finished work and the primary action.
+  - There is no grain, bevel, gradient, glow or corner tick.
+- **Type:** Archivo, variable with a width axis: wide caps for titles, condensed tabular figures for data. Source Serif 4 carries event and description text. Both are self-hosted through `@fontsource-variable`; Barlow is gone.
+- **Placards (`src/ui/Placard.tsx`):**
+  - A country in an actor role sits on a nameplate. States: seated (navy), turned up (white: the player, the selection or the winner), and absent (outline: a country out of play).
+  - Long names narrow on the width axis.
+  - Placards appear in the outliner's wars, the war overview, the peace conference, the diplomacy header and the country menu.
+- **Top bar:** the flag sits inside the 48px bar and opens the country menu (Politics), which starts with the player's placard and the leader. At the user's request nothing hangs under the bar. The bar fits from 1280px wide.
+- **Map:**
+  - The sea is chart blue (`MapView`), and borders and labels are navy-tinted (labels set in Archivo bold).
+  - Province fills pass through a uniform `atlasTone` in the shared GLSL (`ProvinceColors.GLSL`). This is presentation only; the data colours are unchanged.
+- **Full views:** the focus tree, the research tree and the war overview drop a navy veil over the map (`.veil` in `main.tsx`).
+- **Research tabs:** each shows its icon and count; the open category widens to show its name.
+- **Diplomacy:** each Security Council resolution has a vote board, one lamp per member (green for, red against, white-ringed red for a veto).
+- **Glyph icons:** ▲ ▼ − + × were replaced by drawn icons (`Icon.up`, `Icon.down`, `Icon.minus`, `Icon.plus`, `Icon.close`).
+
 ### Reworks notes (17 October 2026)
 
 **Part 1, UI** (`72b3f71`):
 - Slim 48px top bar with the national flag hanging below it.
 - Flags: flag-icons 7.6.0 (MIT) in `public/flags`, mapped by `data/world/flags.json` (`scripts/dev/gen-flags.ts`, codes from Natural Earth). They show in the top bar, country select, diplomacy, news, wars and trade routes. Tags with no ISO flag keep the placeholder. The flags are today's flags: those that changed after 2000 (Afghanistan, Iraq, Libya...) are not dated (the file is `needs_review`).
-- Panels: a faint data grid and bronze corner ticks.
+- Panels: a faint data grid and bronze corner ticks (replaced by the 18 October redesign).
 - Focus tree and research screen: pan/zoom canvas views (`src/ui/panzoom.ts`).
 - DESIGN.md has the new components.
 

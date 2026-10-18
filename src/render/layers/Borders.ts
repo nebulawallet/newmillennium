@@ -129,9 +129,9 @@ export class Borders {
         varying float vType;
         void main() {
           if (vType > 2.5) discard;
-          if (vType < 0.5) gl_FragColor = vec4(0.04, 0.05, 0.07, uProvinceAlpha);
-          else if (vType < 1.5) gl_FragColor = vec4(0.02, 0.02, 0.03, 0.9);
-          else gl_FragColor = vec4(0.10, 0.16, 0.22, 0.75);
+          if (vType < 0.5) gl_FragColor = vec4(0.03, 0.06, 0.14, uProvinceAlpha);
+          else if (vType < 1.5) gl_FragColor = vec4(0.02, 0.04, 0.10, 0.9);
+          else gl_FragColor = vec4(0.04, 0.10, 0.20, 0.8);
         }
       `,
     });

@@ -15,7 +15,7 @@ export function Donut({ slices, minShare = 0.03, size = 150 }: { slices: Slice[]
   const sorted = [...slices].sort((a, b) => b.value - a.value);
   const main = sorted.filter((s) => s.value / total >= minShare);
   const rest = sorted.filter((s) => s.value / total < minShare);
-  const shown = rest.length ? [...main, { key: "other", label: `Other (${rest.length})`, color: "#5b6270", value: rest.reduce((s, x) => s + x.value, 0) }] : main;
+  const shown = rest.length ? [...main, { key: "other", label: `Other (${rest.length})`, color: "#5b6b86", value: rest.reduce((s, x) => s + x.value, 0) }] : main;
 
   const R = 1, r = 0.62;
   let a0 = -Math.PI / 2;
@@ -34,7 +34,7 @@ export function Donut({ slices, minShare = 0.03, size = 150 }: { slices: Slice[]
     <div class="donut">
       <svg viewBox="-1.05 -1.05 2.1 2.1" width={size} height={size} role="img" aria-label="Popular support by sub-ideology">
         {paths.map(({ s, d }) => (
-          <path d={d} fill={s.color} stroke="var(--panel-solid)" stroke-width="0.03" fill-rule="evenodd">
+          <path d={d} fill={s.color} stroke="var(--s0)" stroke-width="0.03" fill-rule="evenodd">
             <title>{`${s.label}: ${pct(s.value)}`}</title>
           </path>
         ))}

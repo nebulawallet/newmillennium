@@ -33,7 +33,7 @@ export class FrontOverlay {
   private markers: { x: number; y: number; label: string; sel: boolean; war: boolean }[] = [];
   private lines: { pts: [number, number][]; sel: boolean; arrow: boolean }[] = [];
   private orders: { pts: [number, number][]; attack: boolean }[] = [];
-  private ownColor = "#c9a56a";
+  private ownColor = "#9cc7ff";
   private lastDay = -1;
   private lastKey = "";
   private byPair: Map<number, Seg[]> | null = null;

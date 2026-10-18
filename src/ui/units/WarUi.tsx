@@ -6,7 +6,7 @@ import { countryName } from "../../sim/politics/unrest.ts";
 import { Icon } from "../icons.tsx";
 import { panel, version, type Session } from "../session.ts";
 import { diplomacyTarget } from "../diplomacy/DiplomacyPanels.tsx";
-import { Flag } from "../Flag.tsx";
+import { Placard } from "../Placard.tsx";
 import { openWar } from "../store.ts";
 import { tip } from "../tooltip.tsx";
 
@@ -90,8 +90,12 @@ export function WarsOutliner({ db, session }: { db: ContentDB; session: Session 
               ] : [],
               note: `Since ${formatDate(w.startDay)}. Click for the war overview.`,
             }))}>
-              <span class="row-flag war-sides"><Flag db={db} tag={w.attackers[0]!} size="xs" /><span class="faint">vs</span><Flag db={db} tag={w.defenders[0]!} size="xs" /><b>{w.name}</b></span>
-              <span class="faint num small">since {formatDate(w.startDay)}</span>
+              <span class="war-sides">
+                <Placard db={db} state={state} tag={w.attackers[0]!} up={w.attackers.includes(state.player ?? "")} />
+                <span class="vs">vs</span>
+                <Placard db={db} state={state} tag={w.defenders[0]!} up={w.defenders.includes(state.player ?? "")} />
+              </span>
+              <span class="small"><span class="war-name">{w.name}</span> <span class="faint num">· since {formatDate(w.startDay)}</span></span>
             </li>
           ))}
         </ul>

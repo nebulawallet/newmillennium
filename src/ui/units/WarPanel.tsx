@@ -11,6 +11,7 @@ import { millerY } from "../../render/MapView.ts";
 import type { War } from "../../sim/state.ts";
 import { Flag } from "../Flag.tsx";
 import { Icon } from "../icons.tsx";
+import { Placard } from "../Placard.tsx";
 import { version, type Session } from "../session.ts";
 import { openWar, toast } from "../store.ts";
 import { tip } from "../tooltip.tsx";
@@ -28,15 +29,12 @@ function Side({ db, session, war, side, st, mine }: { db: ContentDB; session: Se
   return (
     <div class={`wp-side ${mine ? "mine" : ""}`}>
       <div class="wp-lead">
-        <Flag db={db} tag={tags[0]!} size="md" />
-        <div>
-          <div class="wp-name">{countryName(db, state, tags[0]!)}</div>
-          <div class="faint small">{side === "attackers" ? "Attacker" : "Defender"}{tags.length > 1 ? `, with ${tags.length - 1} all${tags.length > 2 ? "ies" : "y"}` : ""}</div>
-        </div>
+        <Placard db={db} state={state} tag={tags[0]!} up={mine} size="md" />
+        <span class="wp-role">{side === "attackers" ? "Attacker" : "Defender"}{tags.length > 1 ? `, with ${tags.length - 1} all${tags.length > 2 ? "ies" : "y"}` : ""}</span>
       </div>
       {tags.length > 1 && (
         <div class="wp-allies">
-          {tags.slice(1).map((t) => <span key={t} class="row-flag" {...tip(() => ({ title: countryName(db, state, t), note: "Fights on this side." }))}><Flag db={db} tag={t} size="xs" />{countryName(db, state, t)}</span>)}
+          {tags.slice(1).map((t) => <span key={t} {...tip(() => ({ title: countryName(db, state, t), note: "Fights on this side." }))}><Placard db={db} state={state} tag={t} up={mine && t === state.player} /></span>)}
         </div>
       )}
       <dl class="kv wp-kv">

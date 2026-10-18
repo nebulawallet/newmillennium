@@ -6,6 +6,7 @@ import { SaveList } from "./hud/GameMenu.tsx";
 import { Portrait } from "./hud/SidePanel.tsx";
 import { Flag } from "./Flag.tsx";
 import { Icon } from "./icons.tsx";
+import { plateFit } from "./Placard.tsx";
 import type { Session } from "./session.ts";
 import { pickedCountry } from "./store.ts";
 import { tip } from "./tooltip.tsx";
@@ -51,14 +52,16 @@ export function CountrySelect({ db, session, issues }: { db: ContentDB; session:
 
   return (
     <>
-      <div class="bookmark hp">
+      <div class="bookmark">
         <h1 class="bm-name">New Millennium</h1>
-        <div class="bm-date">1 January 2000</div>
-        <div class="bm-sub faint small">
+        <div class="bm-meta">
+        <span class="bm-date">1 January 2000</span>
+        <span class="bm-sub small">
           <span {...tip(() => ({ title: "Research tiers", rows: [["Full history", String(db.countryList.filter((e) => e.research === "full").length)], ["Light", String(db.countryList.filter((e) => e.research === "light").length)], ["Default profile", String(db.countryList.filter((e) => e.research === "default").length)]], note: "Default-profile countries have an economy, an army and diplomacy but no named politics; they are not playable." }))}>
             {withData} of {db.countryList.length} nations researched
           </span>
           {errors > 0 && <span class="warn"> · {errors} data errors (see console)</span>}
+        </span>
         </div>
       </div>
 
@@ -66,7 +69,7 @@ export function CountrySelect({ db, session, issues }: { db: ContentDB; session:
         <header class="hp-head"><h2 class="hp-title">Featured nations</h2></header>
         <div class="featured">
           {featured.map(({ entry }) => (
-            <button key={entry.tag} class={`feat ${entry.tag === selected ? "on" : ""}`} onClick={() => pick(entry.tag)} {...tip(() => ({ title: entry.name, note: "Click to select, or click any country on the map." }))}>
+            <button key={entry.tag} class={`feat ${entry.tag === selected ? "on" : ""}`} style={{ "--fit": plateFit(entry.short_name ?? entry.name) }} onClick={() => pick(entry.tag)} {...tip(() => ({ title: entry.name, note: "Click to select, or click any country on the map." }))}>
               <Flag db={db} tag={entry.tag} size="sm" />
               <span>{entry.short_name ?? entry.name}</span>
             </button>
@@ -126,8 +129,8 @@ export function CountrySelect({ db, session, issues }: { db: ContentDB; session:
           </div>
           <div class="nc-leader">
             <div class="pframe" style={{ "--tint": sel.summary?.rulingPartyColor ?? "#555" }}><Portrait size="lg" /></div>
-            <div class="small faint">{execTitle ?? ""}</div>
             <div class="nc-lname">{exec?.name.en ?? "—"}</div>
+            <div class="small faint">{execTitle ?? ""}</div>
           </div>
           <div class="nc-actions">
             <div class="seg" role="radiogroup" aria-label="Elections">

@@ -24,6 +24,8 @@ import type { GameState } from "../../sim/state.ts";
 import { version, type Session } from "../session.ts";
 import { selectedProvince } from "../store.ts";
 import { Flag } from "../Flag.tsx";
+import { Placard } from "../Placard.tsx";
+import { Icon } from "../icons.tsx";
 import { tip } from "../tooltip.tsx";
 
 /** Country picked in the diplomacy list (used when no province is selected). */
@@ -165,9 +167,8 @@ function TargetView({ db, state, me, t, run, pairHas }: { db: ContentDB; state: 
   return (
     <>
       <div class="dp-target">
-        <Flag db={db} tag={t} size="md" />
-        <h3 class="dp-name">{name}</h3>
-        <button class="tile mini right" aria-label="Choose another country" onClick={() => { selectedProvince.value = 0; diplomacyTarget.value = null; }}>×</button>
+        <h3 class="dp-name"><Placard db={db} state={state} tag={t} size="md" name={name} /></h3>
+        <button class="tile mini right" aria-label="Choose another country" onClick={() => { selectedProvince.value = 0; diplomacyTarget.value = null; }}>{Icon.close({ size: 12 })}</button>
       </div>
       <dl class="kv">
         <OpinionValue db={db} state={state} a={t} b={me} label="Their opinion of us" />
@@ -259,6 +260,11 @@ function UnSection({ db, state, me, t, run }: { db: ContentDB; state: GameState;
                   <span class="dec-name">{res.kind === "sanctions" ? "Sanctions on" : "Condemning"} {countryName(db, state, res.target)}</span>
                   <span class={`small num ${res.passed ? "" : "faint"}`}>{formatDate(res.day)} · {res.passed ? "adopted" : vetoes.length ? `vetoed by ${vetoes.join(", ")}` : "rejected"} · {yes} in favour</span>
                 </div>
+                <span class="vote-board" aria-label={`${yes} of ${Object.keys(res.votes).length} in favour`}>
+                  {Object.entries(res.votes).map(([k, v]) => (
+                    <i key={k} class={`vb-${v}`} {...tip(() => ({ title: countryName(db, state, k), rows: [["Vote", v === "yes" ? "In favour" : v === "veto" ? "Veto" : "Against"]], note: db.un.permanent.includes(k) ? "Permanent member." : undefined }))} />
+                  ))}
+                </span>
               </li>
             );
           })}

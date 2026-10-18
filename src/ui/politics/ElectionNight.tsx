@@ -15,11 +15,11 @@ import { tip } from "../tooltip.tsx";
 const pct = (x: number) => `${(x * 100).toFixed(1)}%`;
 const signed = (x: number, d = 1) => `${x > 0 ? "+" : x < 0 ? "−" : "±"}${Math.abs(x).toFixed(d)}`;
 const SPECIAL: Record<string, { label: string; color: string }> = {
-  independents: { label: "Independents", color: "#8a8f84" },
-  others: { label: "Others", color: "#6b6f66" },
-  appointed: { label: "Appointed", color: "#4f534c" },
-  vacant: { label: "Vacant", color: "#2a2d29" },
-  speaker: { label: "Speaker", color: "#a49d86" },
+  independents: { label: "Independents", color: "#8d9ab0" },
+  others: { label: "Others", color: "#6c7a92" },
+  appointed: { label: "Appointed", color: "#4f5d78" },
+  vacant: { label: "Vacant", color: "#24324c" },
+  speaker: { label: "Speaker", color: "#b3bed0" },
 };
 
 /** The previous result for the same election (same chamber or office) in this game. */

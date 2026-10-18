@@ -53,6 +53,8 @@ export const Icon = {
   close: (p?: P) => svg(<><path d="m6 6 12 12M18 6 6 18" stroke-width="2" /></>, p),
   menu: (p?: P) => svg(<><path d="M4 6.5h16M4 12h16M4 17.5h16" stroke-width="1.8" /></>, p),
   chevron: (p?: P) => svg(<><path d="m9 6 6 6-6 6" stroke-width="2" /></>, p),
+  up: (p?: P) => svg(<><path d="m6 15 6-6 6 6" stroke-width="2" /></>, p),
+  down: (p?: P) => svg(<><path d="m6 9 6 6 6-6" stroke-width="2" /></>, p),
   search: (p?: P) => svg(<><circle cx="10.5" cy="10.5" r="6" /><path d="m15 15 5 5" /></>, p),
   lock: (p?: P) => svg(<><path d="M6 11h12v9H6z" /><path d="M8.5 11V8a3.5 3.5 0 0 1 7 0v3" /></>, p),
   check: (p?: P) => svg(<><path d="m5 12.5 4.5 4.5L19 7.5" stroke-width="2.2" /></>, p),

@@ -56,7 +56,7 @@ export class MapView {
   ) {
     this.renderer = new THREE.WebGLRenderer({ canvas, antialias: true, powerPreference: "high-performance" });
     this.renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-    this.renderer.setClearColor(new THREE.Color("#0f1a1d"));
+    this.renderer.setClearColor(new THREE.Color("#0b1f3a"));
     this.camera = new THREE.OrthographicCamera(-1, 1, 1, -1, -10, 10);
     this.scene.add(this.worldCopies);
     for (const g of this.copyGroups) this.worldCopies.add(g);
@@ -77,7 +77,7 @@ export class MapView {
     const yMax = millerY(LAT_MAX);
     const ocean = new THREE.Mesh(
       new THREE.PlaneGeometry(WORLD_W, yMax - yMin),
-      new THREE.MeshBasicMaterial({ color: new THREE.Color("#1a3038") }),
+      new THREE.MeshBasicMaterial({ color: new THREE.Color("#173a5e") }),
     );
     ocean.position.set(0, (yMin + yMax) / 2, -1);
     this.addToWorld(ocean);

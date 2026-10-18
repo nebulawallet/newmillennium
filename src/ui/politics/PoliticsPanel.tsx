@@ -10,17 +10,18 @@ import type { CountryState, GameState } from "../../sim/state.ts";
 import { Donut } from "../charts/Donut.tsx";
 import { Hemicycle, type SeatGroup } from "../charts/Hemicycle.tsx";
 import { Portrait } from "../hud/SidePanel.tsx";
+import { Placard } from "../Placard.tsx";
 import { electionNight, version, type Session } from "../session.ts";
 import { tip } from "../tooltip.tsx";
 import { LawPicker } from "./LawPicker.tsx";
 
 const pct = (x: number) => `${(x * 100).toFixed(1)}%`;
 const SPECIAL: Record<string, { label: string; color: string }> = {
-  independents: { label: "Independents", color: "#8a8f84" },
-  others: { label: "Others", color: "#6b6f66" },
-  appointed: { label: "Appointed", color: "#4f534c" },
-  vacant: { label: "Vacant", color: "#2a2d29" },
-  speaker: { label: "Speaker", color: "#a49d86" },
+  independents: { label: "Independents", color: "#8d9ab0" },
+  others: { label: "Others", color: "#6c7a92" },
+  appointed: { label: "Appointed", color: "#4f5d78" },
+  vacant: { label: "Vacant", color: "#24324c" },
+  speaker: { label: "Speaker", color: "#b3bed0" },
 };
 
 function holders(db: ContentDB, cs: CountryState, officeId: string): (Person | null)[] {
@@ -111,6 +112,7 @@ export function PoliticsPanel({ db, state, tag, session }: { db: ContentDB; stat
 
   return (
     <div class="pol">
+      <div class="pol-nation"><Placard db={db} state={state} tag={tag} up size="md" /></div>
       {/* ---- leader block (HOI4 government header) */}
       <div class="pol-leader">
         <div class="pframe" style={{ "--tint": leaderParty?.color ?? "#555" }}>

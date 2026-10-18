@@ -1,102 +1,144 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-10-14T06:00:00Z",
+  "generatedAt": "2026-10-18T12:00:00Z",
   "title": "Design System: New Millennium",
   "extensions": {
     "colorMeta": {
-      "bronze": { "role": "primary", "displayName": "Bronze Trim", "canonical": "#8a6d43", "tonalRamp": ["#2a2116", "#4a3b26", "#6a5435", "#8a6d43", "#a98a59", "#c9a56a", "#e8cf98", "#f6ead0"] },
-      "steel-3": { "role": "neutral", "displayName": "Olive Steel", "canonical": "#232d29", "tonalRamp": ["#0b0f0e", "#141a18", "#1b2320", "#232d29", "#2e3a35", "#3c4a44", "#55635d", "#76837d"] },
-      "ink": { "role": "neutral", "displayName": "Cream Ink", "canonical": "#ece4cf", "tonalRamp": ["#3e3b33", "#5b5a50", "#7f7a69", "#9a947f", "#b3ab95", "#cfc7b0", "#ece4cf", "#f8f4ea"] },
-      "ocean": { "role": "neutral", "displayName": "Deep Teal Sea", "canonical": "#1a3038", "tonalRamp": ["#0b1518", "#0f1a1d", "#14252b", "#1a3038", "#24414b", "#30545f", "#456c78", "#628993"] }
+      "s1": { "role": "neutral", "displayName": "Council Navy", "canonical": "#0b1b38", "tonalRamp": ["#030a18", "#061127", "#0b1b38", "#10244a", "#16305e", "#1d3c72", "#2e5288", "#4069a6"] },
+      "line": { "role": "neutral", "displayName": "Hairline Blue", "canonical": "#213f6d", "tonalRamp": ["#0e1d36", "#16294a", "#213f6d", "#2e5288", "#4069a6", "#5a83bd", "#7d9fd0", "#a7c0e3"] },
+      "accent": { "role": "primary", "displayName": "Resolution Blue", "canonical": "#4e97ec", "tonalRamp": ["#0f2a52", "#173f7a", "#2257a0", "#2d6fc4", "#4e97ec", "#78b2f3", "#9cc7ff", "#d3e6ff"] },
+      "plate": { "role": "secondary", "displayName": "Placard White", "canonical": "#eef3fa", "tonalRamp": ["#0a1a36", "#3c5276", "#7f93b3", "#b3c3da", "#d5e0ef", "#e3eaf5", "#eef3fa", "#ffffff"] },
+      "ink": { "role": "neutral", "displayName": "Ink on Navy", "canonical": "#e9eff8", "tonalRamp": ["#2c3d5c", "#4e6690", "#6c84ac", "#839ac1", "#a3b5d0", "#c6d3e5", "#e9eff8", "#f7f9fd"] },
+      "good": { "role": "neutral", "displayName": "Vote Green", "canonical": "#5dcb8e", "tonalRamp": ["#0d3321", "#165434", "#21764a", "#2f9a62", "#44b878", "#5dcb8e", "#93dfb4", "#d0f2df"] },
+      "bad": { "role": "neutral", "displayName": "Vote Red", "canonical": "#f2645c", "tonalRamp": ["#3a1424", "#5e1d2a", "#8a2935", "#b83a3f", "#de4f4b", "#f2645c", "#ff9b93", "#ffd9d5"] },
+      "warn": { "role": "neutral", "displayName": "Vote Amber", "canonical": "#f4b942", "tonalRamp": ["#3d2a06", "#62440c", "#8a6014", "#b27d1c", "#d99a2a", "#f4b942", "#f8d27f", "#fcebc4"] },
+      "sea": { "role": "neutral", "displayName": "Chart Sea", "canonical": "#173a5e", "tonalRamp": ["#08172a", "#0b1f3a", "#11304f", "#173a5e", "#1a4168", "#245380", "#3a6d9c", "#5a8aba"] }
     },
     "typographyMeta": {
-      "headline": { "displayName": "Headline", "purpose": "Leader and nation names." },
-      "title": { "displayName": "Panel title", "purpose": "Uppercase bronze text in panel header bands." },
-      "label": { "displayName": "Section label", "purpose": "Section bands, outliner and legend headers." },
-      "numeral": { "displayName": "Numeral", "purpose": "Stat values and the date; tabular figures." },
-      "body": { "displayName": "Body", "purpose": "Tables, descriptions, tooltips." }
+      "display": { "displayName": "Display", "purpose": "The nation name on the start screen; the scenario nameplate at 800 weight, 125% width." },
+      "headline": { "displayName": "Headline", "purpose": "Leader names, event titles, law picker titles, summary figures." },
+      "title": { "displayName": "Title", "purpose": "Panel headers and medium placards: wide uppercase." },
+      "label": { "displayName": "Label", "purpose": "Section heads, outliner and legend headers, table headers, small placards." },
+      "numeral": { "displayName": "Numeral", "purpose": "Top-bar values, the date, war score: condensed tabular figures." },
+      "body": { "displayName": "Body", "purpose": "Tables, lists, tooltips." },
+      "document": { "displayName": "Document", "purpose": "Event text, unbuilt-tab text and tooltip descriptions in the serif voice." }
     },
     "shadows": [
-      { "name": "bevel", "value": "inset 0 1px 0 rgba(255,236,196,0.07), inset 0 -1px 0 rgba(0,0,0,0.55)", "purpose": "Every steel slab's edge highlight and bottom shade." },
-      { "name": "lift", "value": "0 6px 18px rgba(0,0,0,0.55), 0 1px 2px rgba(0,0,0,0.7)", "purpose": "Slabs floating over the map." },
-      { "name": "well", "value": "inset 0 1px 3px rgba(0,0,0,0.6)", "purpose": "Recessed readouts, inputs and chart frames." },
-      { "name": "active-glow", "value": "inset 0 0 0 1px rgba(232,207,152,0.25), inset 0 2px 6px rgba(0,0,0,0.5), 0 0 10px rgba(201,165,106,0.25)", "purpose": "Active tile." }
+      { "name": "panel", "value": "0 12px 32px rgba(2, 8, 22, 0.55), 0 2px 6px rgba(2, 8, 22, 0.4)", "purpose": "Every panel, dialog and tooltip: one soft, offset shadow." },
+      { "name": "small", "value": "0 4px 12px rgba(2, 8, 22, 0.5)", "purpose": "Small strips over the map." },
+      { "name": "veil", "value": "rgba(4, 10, 24, 0.5)", "purpose": "Navy veil over the map behind a full view (focus, research, war overview)." }
     ],
     "motion": [
-      { "name": "panel-slide", "value": "220ms cubic-bezier(0.16, 1, 0.3, 1)", "purpose": "Left panel entering from 14px left." },
-      { "name": "stat-flash", "value": "650ms", "purpose": "Green or red flash when a stat moves." },
-      { "name": "hover", "value": "120ms ease-out", "purpose": "Tile and border hover transitions." }
+      { "name": "ease", "value": "cubic-bezier(0.16, 1, 0.3, 1)", "purpose": "Panels and views arriving: a short exponential ease-out from an already-visible start (200 to 240ms)." },
+      { "name": "state", "value": "120ms ease-out", "purpose": "Hover and state colour changes on tiles and buttons." },
+      { "name": "flash", "value": "650ms", "purpose": "Stat readouts flash green or red when their value moves." }
     ],
-    "breakpoints": [ { "name": "desktop-min", "value": "1366px" } ]
+    "breakpoints": [
+      { "name": "zoom-1", "value": "max-width: 1400px" },
+      { "name": "zoom-1.1", "value": "1401px to 1699px" },
+      { "name": "zoom-1.2", "value": "min-width: 1700px" },
+      { "name": "zoom-1.35", "value": "min-width: 2200px" },
+      { "name": "zoom-1.6", "value": "min-width: 2900px" }
+    ]
   },
   "components": [
     {
-      "name": "Tile",
-      "kind": "nav",
-      "refersTo": "tile",
-      "description": "40px square icon tile used for the tab row and map modes.",
-      "html": "<button class=\"ds-tile\" aria-label=\"Politics\"><svg width=\"22\" height=\"22\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M4 20h16\"/><path d=\"M5 17h14\"/><path d=\"M6 17V9M10 17V9M14 17V9M18 17V9\"/><path d=\"M3.5 8.5 12 4l8.5 4.5\"/></svg></button><button class=\"ds-tile ds-on\" aria-label=\"Research\"><svg width=\"22\" height=\"22\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M9.5 3h5\"/><path d=\"M10.5 3v5.2L5.4 17.4A2 2 0 0 0 7.2 20.4h9.6a2 2 0 0 0 1.8-3L13.5 8.2V3\"/><path d=\"M7.6 14h8.8\"/></svg></button>",
-      "css": ".ds-tile{display:inline-grid;place-items:center;width:40px;height:40px;margin-right:3px;padding:0;color:#b3ab95;background:linear-gradient(180deg,#2e3a35,#1b2320);border:1px solid #4a3b26;box-shadow:inset 0 1px 0 rgba(255,236,196,.12),inset 0 -2px 0 rgba(0,0,0,.45),0 1px 2px rgba(0,0,0,.8);cursor:pointer;transition:color 120ms ease-out,border-color 120ms ease-out}.ds-tile:hover{color:#e8cf98;border-color:#8a6d43}.ds-tile:focus-visible{outline:1px solid #e8cf98;outline-offset:1px}.ds-tile.ds-on{color:#e8cf98;border-color:#c9a56a;background:linear-gradient(180deg,#3d3423,#241e14);box-shadow:inset 0 0 0 1px rgba(232,207,152,.25),inset 0 2px 6px rgba(0,0,0,.5),0 0 10px rgba(201,165,106,.25)}"
+      "name": "Placard, turned up",
+      "kind": "custom",
+      "refersTo": "placard-up",
+      "description": "The signature: a country holding the floor (the player, the selection, the winner) on a white nameplate.",
+      "html": "<span class=\"ds-placard ds-up\"><span class=\"ds-flag\"></span><span>United Kingdom</span></span>",
+      "css": ".ds-placard { display: inline-flex; align-items: center; gap: 6px; height: 22px; padding: 0 8px 0 3px; font: 700 11px/1 var(--font, 'Archivo Variable', sans-serif); font-stretch: 84%; letter-spacing: 0.08em; text-transform: uppercase; color: #eef3fa; background: #16305e; border: 1px solid #2e5288; } .ds-placard.ds-up { color: #0a1a36; background: #eef3fa; border-color: #eef3fa; } .ds-flag { width: 21px; height: 14px; background: linear-gradient(#012169, #012169); box-shadow: 0 0 0 1px rgba(10, 26, 54, 0.35); }"
     },
     {
-      "name": "Primary Button",
+      "name": "Placard, seated",
+      "kind": "custom",
+      "refersTo": "placard",
+      "description": "Any other country in an actor role: navy plate, white wide capitals.",
+      "html": "<span class=\"ds-placard\"><span class=\"ds-flag\"></span><span>Iraq</span></span>",
+      "css": ".ds-placard { display: inline-flex; align-items: center; gap: 6px; height: 22px; padding: 0 8px 0 3px; font: 700 11px/1 var(--font, 'Archivo Variable', sans-serif); font-stretch: 118%; letter-spacing: 0.08em; text-transform: uppercase; color: #eef3fa; background: #16305e; border: 1px solid #2e5288; } .ds-flag { width: 21px; height: 14px; background: #007a3d; box-shadow: 0 0 0 1px rgba(2, 8, 22, 0.45); }"
+    },
+    {
+      "name": "Primary button",
       "kind": "button",
       "refersTo": "button-primary",
-      "description": "Bronze action button (Play, Resume).",
-      "html": "<button class=\"ds-btn ds-btn-primary\">Play</button>",
-      "css": ".ds-btn{min-height:38px;padding:0 18px;font:700 15px/1 'Barlow Semi Condensed',sans-serif;letter-spacing:.08em;text-transform:uppercase;border:1px solid #3a2c17;cursor:pointer;box-shadow:inset 0 1px 0 rgba(255,236,196,.16),inset 0 -2px 0 rgba(0,0,0,.4),0 1px 2px rgba(0,0,0,.8)}.ds-btn-primary{color:#1a140a;background:linear-gradient(180deg,#e8cf98,#c9a56a 45%,#8a6d43)}.ds-btn-primary:hover{filter:brightness(1.06)}.ds-btn:active{box-shadow:inset 0 2px 5px rgba(0,0,0,.7)}.ds-btn:focus-visible{outline:1px solid #e8cf98;outline-offset:1px}"
+      "description": "The primary action is a placard turned up: Resume, Play, Sign the peace.",
+      "html": "<button class=\"ds-btn ds-primary\">Resume</button>",
+      "css": ".ds-btn { display: inline-flex; align-items: center; justify-content: center; min-height: 28px; padding: 0 12px; font: 600 12px/1 'Archivo Variable', sans-serif; font-stretch: 112%; letter-spacing: 0.05em; text-transform: uppercase; color: #e9eff8; background: #10244a; border: 1px solid #2e5288; border-radius: 0; cursor: pointer; transition: background-color 120ms ease-out, border-color 120ms ease-out; } .ds-btn.ds-primary { color: #0a1a36; background: #eef3fa; border-color: #eef3fa; } .ds-btn.ds-primary:hover { background: #fff; border-color: #fff; } .ds-btn:focus-visible { outline: 2px solid #4e97ec; outline-offset: 1px; }"
     },
     {
       "name": "Button",
       "kind": "button",
       "refersTo": "button",
-      "description": "Standard steel button.",
-      "html": "<button class=\"ds-btn2\">Save game</button>",
-      "css": ".ds-btn2{min-height:30px;padding:0 14px;font:700 13px/1 'Barlow Semi Condensed',sans-serif;letter-spacing:.08em;text-transform:uppercase;color:#ece4cf;background:linear-gradient(180deg,#3c4a44,#232d29);border:1px solid #8a6d43;cursor:pointer;box-shadow:inset 0 1px 0 rgba(255,236,196,.16),inset 0 -2px 0 rgba(0,0,0,.4)}.ds-btn2:hover{border-color:#c9a56a;color:#e8cf98}.ds-btn2:focus-visible{outline:1px solid #e8cf98;outline-offset:1px}"
+      "description": "Standard action on a navy plate.",
+      "html": "<button class=\"ds-btn\">Call early election</button>",
+      "css": ".ds-btn { display: inline-flex; align-items: center; justify-content: center; min-height: 28px; padding: 0 12px; font: 600 12px/1 'Archivo Variable', sans-serif; font-stretch: 112%; letter-spacing: 0.05em; text-transform: uppercase; color: #e9eff8; background: #10244a; border: 1px solid #2e5288; border-radius: 0; cursor: pointer; transition: background-color 120ms ease-out, border-color 120ms ease-out; } .ds-btn:hover { background: #16305e; border-color: #4069a6; } .ds-btn:active { background: #061127; } .ds-btn:focus-visible { outline: 2px solid #4e97ec; outline-offset: 1px; }"
     },
     {
-      "name": "Stat readout",
-      "kind": "custom",
-      "refersTo": "numeral",
-      "description": "Top-bar value in a recessed well; flashes green or red when it moves.",
-      "html": "<div class=\"ds-stat\"><svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\"><path d=\"M12 3 5 7v2h14V7Z\"/><path d=\"M7 9v8M12 9v8M17 9v8\"/><path d=\"M4 20h16M5 17h14\"/></svg><span>278</span></div><div class=\"ds-stat ds-up\"><svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\"><path d=\"M5 21V4\"/><path d=\"M5 4h11l-2.5 3.5L16 11H5\"/></svg><span>56%</span></div>",
-      "css": ".ds-stat{display:inline-flex;align-items:center;gap:6px;height:38px;margin-right:4px;padding:0 10px 0 8px;color:#c9a56a;background:rgba(0,0,0,.28);border:1px solid rgba(0,0,0,.55);box-shadow:inset 0 1px 2px rgba(0,0,0,.5)}.ds-stat span{font:600 16px/1 'Barlow Semi Condensed',sans-serif;color:#ece4cf;font-variant-numeric:tabular-nums}.ds-stat:hover{border-color:#8a6d43}.ds-stat.ds-up{background:rgba(143,207,111,.18)}.ds-stat.ds-up span{color:#8fcf6f}"
+      "name": "Selected option",
+      "kind": "button",
+      "refersTo": "button-selected",
+      "description": "A chosen option or active tool in resolution blue (Hold or Execute, drawing tools, peace terms).",
+      "html": "<span class=\"ds-seg\"><button class=\"ds-on\">Hold</button><button>Execute</button></span>",
+      "css": ".ds-seg { display: inline-flex; border: 1px solid #2e5288; } .ds-seg button { padding: 7px 12px; font: 600 11px/1 'Archivo Variable', sans-serif; font-stretch: 112%; letter-spacing: 0.06em; text-transform: uppercase; color: #a3b5d0; background: #0b1b38; border: 0; border-right: 1px solid #2e5288; cursor: pointer; } .ds-seg button:last-child { border-right: 0; } .ds-seg button:hover { color: #e9eff8; background: #10244a; } .ds-seg button.ds-on { color: #fff; background: #2d6fc4; }"
+    },
+    {
+      "name": "Tab tile",
+      "kind": "nav",
+      "refersTo": "tile-active",
+      "description": "Top-bar tab tiles: transparent at rest, the open tab on s3 with a resolution-blue underline.",
+      "html": "<nav class=\"ds-tabs\"><button class=\"ds-tile ds-on\" aria-label=\"Politics\"><svg width=\"22\" height=\"22\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\"><path d=\"M4 20h16M5 17h14M6 17V9M10 17V9M14 17V9M18 17V9M3.5 8.5 12 4l8.5 4.5\"/></svg></button><button class=\"ds-tile\" aria-label=\"Research\"><svg width=\"22\" height=\"22\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\"><path d=\"M9.5 3h5M10.5 3v5.2L5.4 17.4A2 2 0 0 0 7.2 20.4h9.6a2 2 0 0 0 1.8-3L13.5 8.2V3M7.6 14h8.8\"/></svg></button></nav>",
+      "css": ".ds-tabs { display: flex; gap: 2px; padding: 6px 8px; background: #0b1b38; } .ds-tile { display: grid; place-items: center; width: 34px; height: 36px; padding: 0; color: #a3b5d0; background: transparent; border: 1px solid transparent; cursor: pointer; transition: color 120ms ease-out, background-color 120ms ease-out; } .ds-tile:hover { color: #e9eff8; background: #10244a; border-color: #2e5288; } .ds-tile.ds-on { color: #eef3fa; background: #16305e; border-color: #2e5288; box-shadow: inset 0 -2px 0 #4e97ec; }"
+    },
+    {
+      "name": "Tooltip",
+      "kind": "card",
+      "refersTo": "tooltip",
+      "description": "The floating ply: title band, a serif description, key and value rows, a note.",
+      "html": "<div class=\"ds-tt\"><div class=\"ds-tt-h\">Stability</div><div class=\"ds-tt-b\"><div class=\"ds-row\"><span>Current</span><b>80%</b></div><div class=\"ds-row\"><span>Drifting toward</span><b class=\"ds-good\">82%</b></div><div class=\"ds-note\">Moves 3% of the gap each week.</div></div></div>",
+      "css": ".ds-tt { width: 300px; background: #10244a; border: 1px solid #2e5288; box-shadow: 0 12px 32px rgba(2, 8, 22, 0.55); font: 400 13px/1.4 'Archivo Variable', sans-serif; color: #e9eff8; } .ds-tt-h { padding: 8px 12px 7px; font: 700 12px/1.25 'Archivo Variable', sans-serif; font-stretch: 112%; letter-spacing: 0.06em; text-transform: uppercase; color: #eef3fa; border-bottom: 1px solid #213f6d; } .ds-tt-b { display: grid; gap: 4px; padding: 8px 12px 10px; } .ds-row { display: flex; justify-content: space-between; } .ds-row span { color: #a3b5d0; } .ds-row b { font-weight: 600; font-variant-numeric: tabular-nums; } .ds-good { color: #5dcb8e; } .ds-note { margin-top: 4px; padding-top: 7px; border-top: 1px solid #213f6d; color: #839ac1; font-size: 12px; }"
     },
     {
       "name": "Search field",
       "kind": "input",
-      "refersTo": "body",
-      "description": "Recessed input.",
-      "html": "<input class=\"ds-input\" type=\"search\" placeholder=\"Nation or leader\">",
-      "css": ".ds-input{font:500 13px 'Barlow',sans-serif;color:#ece4cf;background:rgba(0,0,0,.45);border:1px solid #4a3b26;box-shadow:inset 0 1px 3px rgba(0,0,0,.7);padding:6px 8px;outline:none}.ds-input:focus{border-color:#c9a56a}.ds-input::placeholder{color:#5b5a50}"
+      "refersTo": "input",
+      "description": "Inputs sit in the deepest well with a line-2 edge; focus turns the edge resolution blue.",
+      "html": "<input class=\"ds-input\" type=\"search\" placeholder=\"Nation or leader\" />",
+      "css": ".ds-input { min-height: 28px; padding: 5px 8px; font: 400 13px 'Archivo Variable', sans-serif; color: #e9eff8; background: #061127; border: 1px solid #2e5288; border-radius: 0; outline: none; caret-color: #4e97ec; } .ds-input::placeholder { color: #839ac1; } .ds-input:focus { border-color: #4e97ec; }"
     }
   ],
   "narrative": {
-    "northStar": "The Steel Cabinet",
-    "overview": "The interface is a cabinet of dark, slightly olive steel slabs trimmed with thin bronze, laid over a full-screen map. It follows Hearts of Iron IV's topology exactly, because the players already know it: top bar, left slide-out panels, outliner on the right, map modes at the bottom right. All art is original. Density is high: numbers are read at a glance, and every element explains itself through a rich tooltip.",
+    "northStar": "The Council Chamber",
+    "overview": "Every conflict of 2000 to 2026 passes through one room: the UN Security Council. The shell borrows that room's world and nothing of its branding. The map is the table. The HUD is the chamber's deep council blue. Every country that acts in the game sits behind a delegate's nameplate, its placard. The topology is Hearts of Iron IV's, exactly, because the players already know it. The world supplies type, palette, density and one signature move, the placard, and never the layout. Hierarchy comes from size, weight and the font's width axis alone. There is no grain, bevel, gradient, glow or corner tick anywhere. The map is printed in an atlas tone (country colours slightly desaturated and settled toward navy) on a chart-blue sea, so the white placards and the resolution blue stay the brightest things on screen during long evening sessions.",
     "keyCharacteristics": [
-      "Square corners everywhere; no radius.",
-      "Bronze hairline borders, with brighter bronze for active state.",
-      "Condensed caps for headers and labels, condensed tabular numerals for values.",
-      "Cream ink on steel; green, red and amber only where they carry meaning.",
-      "Rich tooltips (title band plus rows) on every readout, tile and table row."
+      "Opaque council-navy panels on 1px blue hairlines; square corners everywhere.",
+      "Resolution blue marks selection, progress, the active tab and focus. Placard white marks a country holding the floor, finished work and the primary action.",
+      "Wide capitals for titles and placards; condensed tabular figures for numbers; a serif document voice for narrative text.",
+      "Green, red and amber appear only on values that are good, bad or at risk.",
+      "A rich tooltip on every number, tile and row."
     ],
     "rules": [
-      { "name": "The Meaningful Colour Rule", "body": "Green (good), red (bad) and amber (warn) appear only on values that are actually improving, worsening or in a warning state, such as stat flashes and interest group approval. Never use them as decoration.", "section": "colors" },
-      { "name": "The Data Colour Rule", "body": "Party, ideology and country colours come from the game data. The shell never recolours them; it frames them in black hairlines so they read on steel.", "section": "colors" },
-      { "name": "The Heading-First Rule", "body": "A name or heading leads, and its role or date follows beneath it. No small label sits above a heading.", "section": "typography" },
-      { "name": "The Bevel-Not-Card Rule", "body": "Containers are bevelled steel slabs with hairline edges, never rounded cards with soft shadows, and never nested cards.", "section": "elevation" }
+      { "name": "The Vote Board Rule", "body": "Green (good), red (bad) and amber (warn) appear only on values that are actually improving, worsening or at risk, such as stat flashes, approval, and Security Council votes. Never as decoration.", "section": "colors" },
+      { "name": "The Data Colour Rule", "body": "Party, ideology and country colours come from the game data. Swatches, flags, war-score bars and unit symbols show them as they are. The map alone renders them through the uniform atlas tone, a presentation step that never changes the data.", "section": "colors" },
+      { "name": "The One Accent Rule", "body": "Blue means \"selected or in progress\" and white means \"holding the floor or done\". Do not use either for emphasis that carries neither meaning.", "section": "colors" },
+      { "name": "The Heading-First Rule", "body": "A name or heading leads, and its role, office or date follows beneath it. No small label sits above a heading.", "section": "typography" },
+      { "name": "The Fit Rule", "body": "A long country name narrows on the width axis to fit its plate (from 118% down to 75%) instead of being cut.", "section": "typography" },
+      { "name": "The No-Ornament Rule", "body": "No grain, bevels, gradients, glows, corner ticks or textures. A surface is flat navy or a flat plate; the only line is a 1px hairline.", "section": "elevation" }
     ],
     "dos": [
       "Do put every new system in its HOI4 position: its tab in the top row, its panel on the left, lists in the outliner, map overlays in the map-mode cluster.",
       "Do give every number a tooltip that explains where it comes from.",
       "Do show unbuilt systems honestly, with the phase that adds them.",
-      "Do use the authored icon set (24px grid, 1.6 stroke) for any new icon."
+      "Do use the authored icon set (24px grid, 1.6 stroke) for any new icon, including steppers and arrows.",
+      "Do set a country in an actor role on a placard; turn it up only for the player's country, the selection or the winner.",
+      "Do keep the top bar fitting from 1280px wide; nothing hangs below it.",
+      "Do make child components that read live game state subscribe to the clock (`version.value`)."
     ],
     "donts": [
-      "Don't round corners or use glass, gradients on text, or soft floating cards.",
-      "Don't place small labels or eyebrows above headings, or coloured side stripes on list items.",
-      "Don't use Paradox-owned art, icons, fonts or textures.",
+      "Don't round corners, or add grain, bevels, gradients, glows, glass, or gradient text.",
+      "Don't place small labels or eyebrows above headings, or coloured side stripes on cards and list items.",
+      "Don't use Unicode glyphs (▲ ▼ × + −) as icons.",
+      "Don't use Paradox-owned art, icons, fonts or textures, or the UN's emblem and name as decoration.",
       "Don't decorate with loaded political or military symbols."
     ]
   }

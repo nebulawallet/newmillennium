@@ -1,9 +1,5 @@
-import "@fontsource/barlow/400.css";
-import "@fontsource/barlow/500.css";
-import "@fontsource/barlow/600.css";
-import "@fontsource/barlow-semi-condensed/500.css";
-import "@fontsource/barlow-semi-condensed/600.css";
-import "@fontsource/barlow-semi-condensed/700.css";
+import "@fontsource-variable/archivo/wdth.css";
+import "@fontsource-variable/source-serif-4/opsz.css";
 import "./ui/shell.css";
 import { render } from "preact";
 import { useEffect, useState } from "preact/hooks";
@@ -261,8 +257,10 @@ function ContentChangedBanner() {
 
 function Root({ db, map, world, session, issues }: { db: ContentDB; map: MapData; world: WorldMap; session: Session; issues: ContentBundle["issues"] }) {
   const inGame = screen.value === "game" && !!session.state;
+  const fullView = inGame && (panel.value === "focus" || (panel.value === "research" && researchPick.value !== null) || openWar.value !== null);
   return (
     <>
+      {fullView && <div class="veil" aria-hidden="true" />}
       {inGame ? (
         <>
           <TopBar db={db} session={session} />
