@@ -411,7 +411,7 @@ export function runPlans(ctx: SimContext, owners?: Set<string>, skipFor?: (tag: 
   for (const a of state.armies) {
     a.divisions = a.divisions.filter((id) => alive.get(id)?.owner === a.owner);
     if (owners && !owners.has(a.owner)) continue;
-    if (!a.front) { a.status = "idle"; continue; }
+    if (!a.front) { a.status = "idle"; a.stretch = []; continue; }
     const key = `${a.owner}:${a.front.enemy ?? "*"}`;
     byFront.set(key, [...(byFront.get(key) ?? []), a]);
   }

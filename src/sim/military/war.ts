@@ -268,6 +268,14 @@ export function makePeace(ctx: SimContext, war: War, winner: "attackers" | "defe
     }
   }
   state.wars = state.wars.filter((w) => w.id !== war.id);
+  // battles of this war end; nobody keeps attacking an enemy that is no longer one
+  state.battles = state.battles.filter((b) => !(sides.has(b.attackerTag) && sides.has(b.defenderTag)));
+  for (const d of state.divisions) {
+    if (!sides.has(d.owner)) continue;
+    const target = d.attacking ?? d.path[d.path.length - 1];
+    const holder = target ? state.provinceController[target - 1] : undefined;
+    if (holder && holder !== d.owner && sides.has(holder) && !hostile(state, d.owner, holder)) { d.attacking = undefined; d.path = []; d.progress = 0; }
+  }
   for (const t of sides) {
     const cs = state.countries[t];
     if (!cs) continue;

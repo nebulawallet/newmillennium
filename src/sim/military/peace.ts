@@ -193,9 +193,18 @@ export function afterPeace(ctx: SimContext): void {
   const { state } = ctx;
   for (const a of state.armies) {
     const enemy = a.front?.enemy;
-    if (enemy && (!state.countries[enemy]?.active || !state.provinceOwner.includes(enemy))) delete a.front;
+    if (enemy && (!state.countries[enemy]?.active || !state.provinceOwner.includes(enemy))) {
+      delete a.front;
+      a.stretch = [];
+      a.status = "idle";
+    }
     const atWar = enemy ? hostile(state, a.owner, enemy) : state.wars.some((w) => w.attackers.includes(a.owner) || w.defenders.includes(a.owner));
-    if (!atWar) a.executing = false;
+    if (!atWar) {
+      // battle plans end with the war (HOI4 clears them on peace); the front stays as a peacetime front
+      a.executing = false;
+      a.offensive = [];
+      a.spearheads = [];
+    }
   }
 }
 

@@ -79,6 +79,10 @@ describe("capitulation and the peace conference", () => {
     for (const p of POL) expect(s.provinceOwner[p - 1]).toBe("DEU");
     expect(s.divisions.some((d) => d.owner === "POL")).toBe(false);
     expect(s.armies[0]!.front).toBeUndefined();
+    // nothing of the war is left on the map: no stretch, plan or battle
+    expect(s.armies[0]!.stretch ?? []).toEqual([]);
+    expect(s.armies[0]!.offensive).toEqual([]);
+    expect(s.battles.some((b) => b.attackerTag === "POL" || b.defenderTag === "POL")).toBe(false);
   }, 60_000);
 
   it("change of ideology installs a party of that ideology", () => {

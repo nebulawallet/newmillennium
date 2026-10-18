@@ -13,6 +13,7 @@
  * Requires `npm run fetch-map` first. Manual corrections go in data/map/province_overrides.json.
  */
 import { linkEnclaves, readEnclaves } from "./lib/enclaves.ts";
+import { countryLabels as sharedCountryLabels } from "../../src/render/countryLabels.ts";
 import { execFileSync } from "node:child_process";
 import { existsSync, mkdirSync, readFileSync, readdirSync, writeFileSync } from "node:fs";
 import { join, resolve } from "node:path";
@@ -675,51 +676,7 @@ function countryLabels(provinces: ProvLite[], adjacency: [number, number, number
     nb.set(a, [...(nb.get(a) ?? []), b]);
     nb.set(b, [...(nb.get(b) ?? []), a]);
   }
-  const byId = new Map(provinces.map((p) => [p.id, p]));
-  const owners = new Map<string, ProvLite[]>();
-  for (const p of provinces) owners.set(p.owner, [...(owners.get(p.owner) ?? []), p]);
-  const labels: { tag: string; x: number; y: number; angle: number; extent: number; area: number }[] = [];
-  for (const [tag, list] of owners) {
-    // connected components within the owner
-    const seen = new Set<number>();
-    let best: ProvLite[] = [];
-    let bestArea = -1;
-    for (const p of list) {
-      if (seen.has(p.id)) continue;
-      const comp: ProvLite[] = [];
-      const stack = [p.id];
-      seen.add(p.id);
-      while (stack.length) {
-        const id = stack.pop()!;
-        const q = byId.get(id)!;
-        comp.push(q);
-        for (const m of nb.get(id) ?? []) {
-          const r = byId.get(m);
-          if (r && r.owner === tag && !seen.has(m)) { seen.add(m); stack.push(m); }
-        }
-      }
-      // most populous block (so Denmark is labelled on Denmark, not Greenland); area breaks ties
-      const score = comp.reduce((s, q) => s + q.population, 0) + comp.reduce((s, q) => s + q.area_km2, 0) * 1e-3;
-      if (score > bestArea) { bestArea = score; best = comp; }
-    }
-    // weighted centroid and PCA in projected space (x = lon, y = Miller y)
-    let sw = 0, mx = 0, my = 0;
-    const pts = best.map((q) => ({ x: q.centroid[0], y: millerY(q.centroid[1]), w: q.area_km2 }));
-    for (const p of pts) { sw += p.w; mx += p.x * p.w; my += p.y * p.w; }
-    mx /= sw; my /= sw;
-    let sxx = 0, syy = 0, sxy = 0;
-    for (const p of pts) { sxx += p.w * (p.x - mx) ** 2; syy += p.w * (p.y - my) ** 2; sxy += p.w * (p.x - mx) * (p.y - my); }
-    let angle = 0.5 * Math.atan2(2 * sxy, sxx - syy);
-    angle = Math.max(-0.6, Math.min(0.6, angle));
-    // extent along the axis: used to size the text
-    const ux = Math.cos(angle), uy = Math.sin(angle);
-    let lo = 0, hi = 0;
-    for (const p of pts) { const t = (p.x - mx) * ux + (p.y - my) * uy; lo = Math.min(lo, t); hi = Math.max(hi, t); }
-    const blockArea = best.reduce((s, q) => s + q.area_km2, 0);
-    const extent = Math.max(hi - lo, Math.sqrt(blockArea) / 111);
-    labels.push({ tag, x: Math.round(mx * 1000) / 1000, y: Math.round(my * 1000) / 1000, angle: Math.round(angle * 1000) / 1000, extent: Math.round(extent * 100) / 100, area: Math.round(blockArea) });
-  }
-  return labels;
+  return sharedCountryLabels(provinces, nb, (p) => p.owner);
 }
 
 /**

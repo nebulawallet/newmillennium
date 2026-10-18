@@ -7,6 +7,7 @@ import { ProvinceColors } from "./layers/ProvinceColors.ts";
 import { ProvinceMesh } from "./layers/ProvinceMesh.ts";
 import { ProvinceTexture } from "./layers/ProvinceTexture.ts";
 import { MAP_MODES, type MapModeContext } from "./mapModes.ts";
+import { countryLabels } from "./countryLabels.ts";
 import { provinceAt, type MapData } from "./mapData.ts";
 import { millerY, type MapView } from "./MapView.ts";
 import type { GameState } from "../sim/state.ts";
@@ -56,6 +57,8 @@ export class WorldMap {
       view.addToWorld(this.borders.provinceMesh);
     }
     const nameOf = (tag: string) => {
+      const dyn = this.state?.dynamicCountries[tag]?.name;
+      if (dyn) return dyn;
       const entry = db.countryList.find((c) => c.tag === tag);
       return entry?.short_name ?? db.countries.get(tag)?.country?.name.en ?? entry?.name ?? tag;
     };
@@ -127,6 +130,39 @@ export class WorldMap {
   /** Recolour the current map mode (after ownership, government or election changes). */
   refresh(): void {
     this.setMode(this.mode);
+    this.followOwnership();
+  }
+
+  private ownerSig = "";
+  private neighbours: Map<number, number[]> | null = null;
+  /**
+   * Labels and country borders follow ownership (annexations, takeovers, new countries): rebuilt
+   * only when the owners actually changed since the last time.
+   */
+  private followOwnership(): void {
+    const owners = this.state?.provinceOwner;
+    // a cheap signature of who owns what
+    let h = 0;
+    const codes = new Map<string, number>();
+    for (let i = 0; owners && i < owners.length; i++) {
+      const t = owners[i]!;
+      let c = codes.get(t);
+      if (c === undefined) codes.set(t, (c = codes.size + 1));
+      h = (Math.imul(h, 31) + c * (i + 1)) | 0;
+    }
+    const sig = owners ? `${owners.length}:${h}:${codes.size}` : "start";
+    if (sig === this.ownerSig) return;
+    this.ownerSig = sig;
+    const ownerOf = (id: number) => owners?.[id - 1] ?? this.map.provinces[id - 1]?.owner;
+    this.borders?.setOwners(ownerOf);
+    if (!this.neighbours) {
+      this.neighbours = new Map();
+      for (const [a, b] of this.map.adjacency) {
+        (this.neighbours.get(a) ?? this.neighbours.set(a, []).get(a)!).push(b);
+        (this.neighbours.get(b) ?? this.neighbours.set(b, []).get(b)!).push(a);
+      }
+    }
+    this.labels.rebuild(owners ? countryLabels(this.map.provinces, this.neighbours, (p) => ownerOf(p.id)) : this.map.labels);
   }
 
   /** Rough GPU memory estimate for the benchmark (bytes). */
