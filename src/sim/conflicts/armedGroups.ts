@@ -14,7 +14,9 @@ import type { ContentDB } from "../../content/compile.ts";
 import type { SimContext, System } from "../simulation.ts";
 import type { GameState } from "../state.ts";
 import { declareWar, hostile } from "../military/war.ts";
-import { ordinal, templateNeeds } from "../military/military.ts";
+import { groupMilitary, ordinal, templateNeeds } from "../military/military.ts";
+import { initialEconomy } from "../economy/economy.ts";
+import { initialResearch } from "../research/research.ts";
 import { blankCountry } from "../politics/unrest.ts";
 
 export interface GroupRegion {
@@ -142,6 +144,24 @@ export function spawnArmedGroup(ctx: SimContext, tag: string, regions: GroupRegi
     }
   const held = state.provinceOwner.flatMap((o, i) => (o === tag ? [i + 1] : []));
   raise(ctx, db, tag, divisions, taken.length ? taken : held);
+  // forces and an economy, so the group can recruit and produce (and be played) like a country
+  const cs = state.countries[tag]!;
+  const pop = held.reduce((s, id) => s + (ctx.map?.provinces[id - 1]?.population ?? 0), 0);
+  const takenPop = taken.reduce((s, id) => s + (ctx.map?.provinces[id - 1]?.population ?? 0), 0);
+  const fresh = !cs.military;
+  if (!cs.military) cs.military = groupMilitary(db, pop, def.template, state.divisions.filter((d) => d.owner === tag).length);
+  else {
+    cs.military.targetDivisions = Math.max(cs.military.targetDivisions ?? 0, state.divisions.filter((d) => d.owner === tag).length);
+    // new land brings recruits and people (the fall of Mosul)
+    cs.military.manpower += Math.round(takenPop * db.militaryRules.group_manpower_per_capita);
+  }
+  if (cs.economy && !fresh) cs.economy.population += takenPop;
+  if (!cs.economy) {
+    cs.economy = initialEconomy(db, tag, Math.max(1, pop));
+    cs.research ??= initialResearch(db, tag, cs.economy.gdp, cs.economy.population);
+  }
+  // armed groups ran their own arms workshops (gameplay: one military factory, so the group can produce)
+  cs.economy.builtMil = Math.max(cs.economy.builtMil, 1);
   if (!held.length && !state.divisions.some((d) => d.owner === tag)) {
     // nothing to stand on: the group does not appear
     if (isNew) { if (def.country_record) state.countries[tag]!.active = false; else delete state.countries[tag]; delete state.dynamicCountries[tag]; }

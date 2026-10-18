@@ -213,17 +213,31 @@ function planForces(ctx: SimContext, cs: CountryState, w: Weights): Command[] {
   if (mil > used && m.lines.length) {
     const line = [...m.lines].sort((a, b) => a.factories - b.factories)[0]!;
     out.push({ type: "set_line_factories", tag: me, line: line.id, factories: Math.min(db.militaryRules.max_factories_per_line, line.factories + (mil - used)) });
+  } else if (mil > m.lines.length) {
+    // a factory free and equipment the basic division needs with no line (an army rebuilt from nothing, an armed
+    // group): open a line for the scarcest of it
+    const basic = m.templates[0];
+    const stockOf = (f: string) => (db.equipment.get(f)?.variants ?? []).reduce((s, v) => s + (m.stockpile[v.id] ?? 0), 0);
+    const short = basic ? Object.entries(templateNeeds(db, basic.units)).filter(([f]) => !m.lines.some((l) => l.equipment === f)).sort((a, b) => stockOf(a[0]) / a[1] - stockOf(b[0]) / b[1])[0] : undefined;
+    if (short) out.push({ type: "add_production_line", tag: me, equipment: short[0], factories: 1 });
   }
   // train when at war, threatened, or under a modest peacetime army
   const atWar = state.wars.some((w) => w.attackers.includes(me) || w.defenders.includes(me)) || !!cs.civilWar;
   // militaristic regimes also build up in peacetime, now and then
   const threatened = state.diplomacy.justifications.some((j) => j.target === me) || state.worldTension > 0.5 || (w.militarism >= 1.4 && rng.chance(0.15));
   const divisions = state.divisions.filter((d) => d.owner === me).length;
-  if ((atWar || threatened) && m.training.length < (atWar ? 3 : 1)) {
+  // an army below its usual size (lost in a war, disbanded by an occupation) is rebuilt in peacetime too
+  const rebuilding = divisions + m.training.length < (m.targetDivisions ?? 0);
+  const target = m.targetDivisions ?? 0;
+  const slots = atWar ? 3 : rebuilding && divisions < target / 2 ? 2 : 1;
+  if ((atWar || threatened || rebuilding) && m.training.length < slots) {
     const tpl = [...m.templates].reverse().find((t) => {
       const needs = templateNeeds(db, t.units);
       const stock = (f: string) => (db.equipment.get(f)?.variants ?? []).reduce((s, v) => s + (m.stockpile[v.id] ?? 0), 0);
-      return m.manpower >= templateStats(db, t.units).manpower && Object.entries(needs).every(([f, n]) => stock(f) >= n * 0.5);
+      // at war a division goes out at least half equipped; a peacetime rebuild may start at a quarter and fill up
+      // a country with no army at all raises one division with whatever it has (it fills up later)
+      const share = divisions === 0 && !m.training.length ? 0 : atWar || threatened ? 0.5 : 0.25;
+      return m.manpower >= templateStats(db, t.units).manpower && Object.entries(needs).every(([f, n]) => stock(f) >= n * share);
     });
     if (tpl && divisions < 400) out.push({ type: "train_division", tag: me, template: tpl.id });
   }

@@ -58,6 +58,14 @@ New Millennium is a grand strategy game in the style of Hearts of Iron IV, set f
   - Scan for allegations, convictions, health claims and loaded words.
   - Agent prompts must forbid blanket process kills (`taskkill /IM node.exe`).
 
+### Armies everywhere (18 October 2026)
+
+The user found that ISIS and many countries could not recruit or produce, and that Iraq had no army.
+- **Starting armies:** at least one division for 1,000 or more personnel. With no World Bank figure (Taiwan, Yugoslavia, rebels, de facto states), personnel is a gameplay estimate of 0.3% of the population (`fallback_personnel_per_capita`). Rebel sides are placed in the provinces they hold.
+- **AI rebuilding:** `targetDivisions` is the starting army size, and the AI rebuilds toward it in peacetime. A rebuild may start from a quarter of the equipment, and a country with no army raises one division with whatever it has. It also opens production lines for the equipment it lacks. Iraq goes from 0 divisions to 5 (2014) and 8 or more (2017).
+- **Armed groups:** they get forces, an economy and one military factory when they appear (`groupMilitary`). New land adds manpower.
+- **Check:** `npx tsx scripts/dev/army-check.ts`. Only microstates without armies are left.
+
 ### Start dates and the Taliban (18 October 2026)
 
 - **Bookmarks** (`data/scenarios/bookmarks.json`): New Millennium (1 January 2000), Rise of the Caliphate (1 July 2014), American Dream (20 January 2017). The start screen has a picker under the title plate.

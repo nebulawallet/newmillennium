@@ -46,6 +46,8 @@ export interface MilitaryState {
   templates: Template[];
   training: TrainingItem[];
   nextLineId: number;
+  /** The army the AI rebuilds toward in peacetime (its starting size). */
+  targetDivisions?: number;
 }
 
 export interface Division {
@@ -173,16 +175,24 @@ function modernLevel(db: ContentDB, cs: CountryState): number {
 }
 
 /** Build the starting military of a country (called from createInitialState). */
-export function initialMilitary(db: ContentDB, cs: CountryState, provinces: { id: number; owner: string; population: number }[], nextId: () => number): { military: MilitaryState; divisions: Division[] } {
+export function initialMilitary(db: ContentDB, cs: CountryState, provinces: { id: number; owner: string; controller?: string; population: number }[], nextId: () => number): { military: MilitaryState; divisions: Division[] } {
   const rules = db.militaryRules;
   const level = modernLevel(db, cs);
   const templates: Template[] = rules.templates.filter((t) => t.modern_level <= level).map((t) => ({ id: t.id, name: t.name, units: { ...t.units } }));
   const military: MilitaryState = { manpower: 0, stockpile: {}, lines: [], templates, training: [], nextLineId: 1 };
-  const personnel = (db.worldBank.countries[cs.tag]?.armed_forces_personnel as number | undefined) ?? 0;
-  const count = Math.min(300, Math.round((personnel * rules.land_share) / rules.personnel_per_division));
+  // the land it stands on: owned provinces, or for a rebel side the provinces it holds
+  const owned = provinces.filter((p) => p.owner === cs.tag);
+  const heldLand = owned.length ? owned : provinces.filter((p) => p.controller === cs.tag);
+  const wbPeople = db.worldBank.countries[cs.tag]?.population as number | undefined;
+  const people = wbPeople ?? heldLand.reduce((s, p) => s + p.population, 0);
+  // no World Bank figure: a gameplay estimate from population (rules.fallback_personnel_per_capita)
+  const personnel = (db.worldBank.countries[cs.tag]?.armed_forces_personnel as number | undefined) ?? Math.round(people * rules.fallback_personnel_per_capita);
+  const raw = Math.round((personnel * rules.land_share) / rules.personnel_per_division);
+  const count = Math.min(300, personnel >= rules.min_personnel_for_division ? Math.max(1, raw) : 0);
   // starting mix: modern armies field some mechanised and armoured divisions
   const mix: [string, number][] = level === 2 ? [["infantry_division", 0.4], ["mechanised_division", 0.4], ["armoured_division", 0.2]] : level === 1 ? [["infantry_division", 0.5], ["motorised_division", 0.5]] : [["infantry_division", 1]];
-  const own = provinces.filter((p) => p.owner === cs.tag).sort((a, b) => b.population - a.population);
+  const own = [...heldLand].sort((a, b) => b.population - a.population);
+  military.targetDivisions = count;
   const divisions: Division[] = [];
   // the stockpile starts with the best variants this country can build, enough for its divisions plus a reserve
   const needAll: Record<string, number> = {};
@@ -636,3 +646,20 @@ export const militarySystem: System = {
     }
   },
 };
+
+/**
+ * Forces for an armed group as it appears on the map: the oldest templates, manpower from the population it holds,
+ * and a little stock of the oldest equipment, so it can recruit and produce like a country.
+ */
+export function groupMilitary(db: ContentDB, heldPopulation: number, template: string, divisions: number): MilitaryState {
+  const rules = db.militaryRules;
+  const templates: Template[] = rules.templates.filter((t) => t.modern_level === 0 || t.id === template).map((t) => ({ id: t.id, name: t.name, units: { ...t.units } }));
+  const stockpile: Record<string, number> = {};
+  const tpl = rules.templates.find((t) => t.id === template) ?? rules.templates[0];
+  if (tpl)
+    for (const [family, n] of Object.entries(templateNeeds(db, tpl.units))) {
+      const v = db.equipment.get(family)?.variants[0];
+      if (v) stockpile[v.id] = Math.ceil(n * 2);
+    }
+  return { manpower: Math.round(heldPopulation * rules.group_manpower_per_capita), stockpile, lines: [], templates, training: [], nextLineId: 1, targetDivisions: Math.max(divisions, 2) };
+}

@@ -90,6 +90,15 @@ export const MilitaryRulesFile = z.strictObject({
   /** Starting armies: share of armed forces personnel serving in land divisions, and personnel per division. */
   land_share: n(0.6),
   personnel_per_division: n(12000),
+  /** A country with at least this many armed forces personnel fields at least one division. */
+  min_personnel_for_division: n(1000),
+  /**
+   * No World Bank personnel figure (Taiwan, de facto states, rebel movements): a gameplay estimate of armed forces
+   * personnel per head of population, so such a side is not left without an army. Not a measured number.
+   */
+  fallback_personnel_per_capita: n(0.003),
+  /** Armed groups when they appear: manpower per head of the population they hold. */
+  group_manpower_per_capita: n(0.01),
   /** Starting stockpile on top of what starting divisions use. */
   reserve_stockpile: n(0.15),
   /**
