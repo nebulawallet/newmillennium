@@ -39,6 +39,7 @@ E.f("navy_and_air", "Navy and air force", "Frigates, an amphibious ship and new 
 E.f("latin_america", "Ties with Latin America", "Investment and diplomacy in Latin America.", x2 + 3, 2, [OPN("MEX", 10), OPN("ARG", 10), MOD("foreign_influence_power", 0.03, 2920)], pre=["catalan_question|state"])
 E.f("mediterranean", "The Mediterranean", "Cooperation with Morocco on migration and trade.", x2 + 3, 3, [OPN("MAR", 10), MOD("trade_efficiency", 0.02, 2920)], pre=["latin_america"])
 society_branch(E, max(f["x"] for f in E.F) + 2)
+industry_branch(E, max(f["x"] for f in E.F) + 2)
 E.write("Spain", "Spain in the style of the Russian model tree: democratic government as the historical path and alternatives led by real parties of the data; economy (the AVE, the property crash, the 2012 bank rescue and Sareb, renewables, Next Generation EU), state and regions (the end of ETA, the Catalan question, a professional army) and foreign policy. Sourced starting spirits in data/spirits/esp.json. Alternatives are a counterfactual.",
         ["Conscription in Spain", "Same-sex marriage in Spain", "ETA (separatist group)", "High-speed rail in Spain", "Unemployment in Spain", "Spanish property bubble", "Economy of Spain", "Sareb", "2017 Catalan independence referendum", "Wind power in Spain", "Next Generation EU"])
 
@@ -84,5 +85,6 @@ P.f("us_partnership", "US partnership", "US troops and bases in Poland.", x3 + 3
 P.f("three_seas", "The Three Seas", "Infrastructure between the Baltic, the Adriatic and the Black Sea.", x3 + 2, 2, [MOD("trade_efficiency", 0.02, 2920), OPN("CZE", 5), OPN("ROU", 5)], pre=["weimar_triangle|us_partnership"], avail=AFTER("2016-01-01"))
 P.f("help_ukraine", "Help Ukraine", "Weapons, transit and shelter for refugees.", x3 + 2, 3, [OPN("UKR", 25), OPN("RUS", -20), TREAS(-1)], pre=["three_seas|us_partnership"], avail=AFTER("2022-02-24"))
 society_branch(P, max(f["x"] for f in P.F) + 2)
+industry_branch(P, max(f["x"] for f in P.F) + 2)
 P.write("Poland", "Poland in the style of the Russian model tree: democratic government as the historical path and alternatives led by real parties of the data; economy (EU accession, motorways, avoiding recession in 2009, Baltic Pipe, leaving coal), defence (the Homeland Defence Act) and foreign policy. Sourced starting spirits in data/spirits/pol.json. Alternatives are a counterfactual.",
         ["Jerzy Buzek", "2003 Polish European Union membership referendum", "Military service", "Poland–NATO relations", "Accession of Poland to the European Union", "Economy of Poland", "Energy in Poland", "Baltic Pipe", "Homeland Defence Act"])

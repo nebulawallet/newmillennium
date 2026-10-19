@@ -53,6 +53,7 @@ J.f("quad", "The Quad", "A security dialogue with the United States, India and A
 J.f("korea_relations", "Relations with South Korea", "Mend relations with South Korea.", x4 + 3, 2, [OPN("KOR", 15)], pre=["china_trade"])
 J.f("asean_aid", "Aid to South-East Asia", "Development aid and infrastructure in South-East Asia.", x4 + 2, 3, [MOD("foreign_influence_power", 0.05, 2920), TREAS(-1)], pre=["quad|korea_relations"])
 society_branch(J, max(f["x"] for f in J.F) + 2)
+industry_branch(J, max(f["x"] for f in J.F) + 2)
 J.write("Japan", "Japan in the style of the Russian model tree: democratic government as the historical path and alternatives led by real parties of the data; economy (cleaning up the banks, postal privatisation, Abenomics), energy (Fukushima, restarts, LNG, solar), defence (the National Security Council, collective self-defence, missile defence) and foreign policy. Sourced starting spirits in data/spirits/jpn.json. Alternatives are a counterfactual.",
         ["Junichiro Koizumi", "Japan Post Holdings", "Lost Decade (Japan)", "Demographics of Japan", "Article 9 of the Japanese Constitution", "Treaty of Mutual Cooperation and Security between the United States and Japan",
          "Abenomics", "2011 Tōhoku earthquake and tsunami", "Fukushima nuclear accident", "2015 Japanese military legislation", "Comprehensive and Progressive Agreement for Trans-Pacific Partnership", "Defense policy of Japan"])
@@ -94,5 +95,6 @@ I.f("eu_core", "At the core of Europe", "Keep Italy at the core of the EU and th
 I.f("libya_energy", "Energy from North Africa", "Gas pipelines from Libya and Algeria.", x3 + 3, 1, [MOD("energy_cost", -0.02, 2920), OPN("LBY", 5), OPN("DZA", 10)], pre=["foreign_policy"])
 I.f("mediterranean_plan", "A Mediterranean plan", "Investment in North Africa to slow migration.", x3 + 2, 2, [MOD("foreign_influence_power", 0.05, 2920), TREAS(-0.5)], pre=["eu_core|libya_energy"], avail=AFTER("2023-01-01"))
 society_branch(I, max(f["x"] for f in I.F) + 2)
+industry_branch(I, max(f["x"] for f in I.F) + 2)
 I.write("Italy", "Italy in the style of the Russian model tree: democratic government as the historical path and alternatives led by real parties of the data; economy (the Monti government, the Jobs Act, the citizens' income, the recovery plan, the south, the Messina Bridge), defence (Mare Nostrum) and foreign policy. Sourced starting spirits in data/spirits/ita.json. Alternatives are a counterfactual.",
         ["Contract with the Italians", "Military service", "Economy of Italy", "Mario Monti", "Jobs Act (Italy)", "Reddito di cittadinanza", "Next Generation EU", "Operation Mare Nostrum", "Strait of Messina Bridge"])

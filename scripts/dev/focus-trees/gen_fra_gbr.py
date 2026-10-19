@@ -45,6 +45,7 @@ F.f("africa_partners", "Partners in Africa", "Aid and security partnerships in A
 F.f("nato_role", "France in NATO", "A full role in NATO's command, which France left in 1966.", x3 + 2, 2, [OPN("USA", 10), OPN("GBR", 5)], pre=["european_defence|africa_partners"], avail=AFTER("2009-01-01"))
 F.f("indo_pacific", "The Indo-Pacific", "France's territories and partners in the Indo-Pacific.", x3 + 3, 2, [OPN("IND", 10), OPN("AUS", 5)], pre=["africa_partners"])
 society_branch(F, max(f["x"] for f in F.F) + 2)
+industry_branch(F, max(f["x"] for f in F.F) + 2)
 F.write("France", "France in the style of the Russian model tree: democratic government as the historical path and alternatives led by real parties of the data; economy (the euro, the TGV, Grand Paris Express, pension and labour reforms, new nuclear reactors), defence (a professional army, the deterrent, the Sahel) and foreign policy. Sourced starting spirits in data/spirits/fra.json. Alternatives are a counterfactual.",
         ["35-hour workweek", "Conscription in France", "Nuclear power in France", "Force de dissuasion", "Euro", "2023 French pension reform protests", "Grand Paris Express", "France and NATO", "Operation Serval", "Operation Barkhane", "Yellow vests movement"])
 
@@ -91,5 +92,6 @@ B.f("aukus", "AUKUS", "A security pact with Australia and the United States, ann
 B.f("support_ukraine", "Support for Ukraine", "Training and weapons for Ukraine.", x3 + 1, 3, [OPN("UKR", 20), OPN("RUS", -20), TREAS(-1)], pre=["sdsr_2010|expeditionary_forces"], avail=AFTER("2022-02-24"))
 B.f("defence_industry", "Defence industry", "Combat aircraft, warships and munitions.", x3 + 2, 4, [B.BUILD("military_factory", 2), EQUIP(800)], pre=["aukus|support_ukraine"])
 society_branch(B, max(f["x"] for f in B.F) + 2)
+industry_branch(B, max(f["x"] for f in B.F) + 2)
 B.write("United Kingdom", "The United Kingdom in the style of the Russian model tree: democratic government as the historical path and alternatives led by real parties of the data; economy (public services, the bank rescue, austerity, HS2, offshore wind), the union and the constitution (Northern Ireland, the Scottish referendum, leaving the EU), defence (the 2010 review, Trident, AUKUS). Sourced starting spirits in data/spirits/gbr.json. Alternatives are a counterfactual.",
         ["Five economic tests", "Premiership of Tony Blair", "Bank of England", "Scotland Act 1998", "Good Friday Agreement", "Northern Rock", "2014 Scottish independence referendum", "Brexit", "High Speed 2", "AUKUS", "Strategic Defence and Security Review 2010"])

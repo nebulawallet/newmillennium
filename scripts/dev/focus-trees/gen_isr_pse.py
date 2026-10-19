@@ -200,5 +200,6 @@ P.f("ceasefire", "A lasting ceasefire", "Seek a lasting ceasefire for Gaza.", 19
 P.f("international_conference", "An international conference", "A peace conference under international sponsorship.", 21, 4, [MOD("diplomatic_reputation", 0.03, 2920)], pre=["global_recognition|ceasefire"])
 P.f("full_membership", "Full UN membership", "Apply for full membership of the United Nations.", 20, 5, [MOD("diplomatic_reputation", 0.05, 3650), PP(30)], pre=["international_conference"], avail=AFTER("2024-01-01"))
 
+society_branch(P, max(f["x"] for f in P.F) + 2)
 P.write("Palestine", "Palestine in the style of the Russian model tree: the Palestinian Authority under Fatah as the historical path and alternatives led by real movements of the data (Islamist, left fronts, liberal reformers); state-building, economy and diplomacy branches; sourced starting spirits in data/spirits/pse.json. Alternatives are a counterfactual, not a claim about the movements.",
         ["Palestinian National Authority", "State of Palestine", "Oslo Accords", "Battle of Gaza (2007)", "Blockade of the Gaza Strip"])

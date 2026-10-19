@@ -149,6 +149,7 @@ A.f("foreign_policy", "Foreign policy", "Afghanistan among its neighbours.", 25,
 A.f("central_asia_ties", "Central Asian neighbours", "Power and rail from Uzbekistan and Turkmenistan.", 25, 2, [OPN("UZB", 10), OPN("TKM", 10), MOD("energy_cost", -0.02, 2920)], pre=["pakistan_relations|india_ties"])
 A.f("regional_conference", "A regional conference", "Host a regional conference on trade and security.", 25, 3, [MOD("diplomatic_reputation", 0.03, 2920)], pre=["central_asia_ties"])
 
+society_branch(A, max(f["x"] for f in A.F) + 2)
 A.write("Afghanistan", "Afghanistan in the style of the Russian model tree: the government of the day as the historical path (the Emirate, the Islamic Republic from 2001, the Emirate again from 2021), a broad-coalition alternative and a junta; branches for each period and for the economy (roads, irrigation, alternative crops). Sourced starting spirits in data/spirits/afg.json. Wars stay in the scripted conflict events.",
         ["Taliban government (1996–2001)", "Northern Alliance", "United Nations Security Council Resolution 1267", "Opium production in Afghanistan", "2001 United States invasion of Afghanistan", "Bonn Agreement (Afghanistan)", "Afghan National Army", "International Security Assistance Force", "Fall of Kabul (2021)", "Doha Agreement (2020)"])
 

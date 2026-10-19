@@ -222,3 +222,19 @@ def society_branch(T, x0):
     f("digital_state", "A digital state", "Public services online.", x0 + 2, 4, [T.SPIRIT("digital_government")], pre=["broadband"])
     f("biotech", "Biotechnology", "Vaccines and medicines made at home.", x0 + 4, 4, [T.BUILD("civilian_factory", 1), MOD("health_outcomes", 0.02, 3650)], pre=["space_and_satellites"])
     f("climate_adaptation", "Climate adaptation", "Flood defences and water management.", x0 + 2, 5, [T.BUILD("infrastructure", 1), STAB(0.01)], pre=["public_transport|digital_state|biotech"], avail=AFTER("2010-01-01"))
+
+
+def industry_branch(T, x0):
+    """A generic industry, energy and regions branch (no named real policies) for the majors."""
+    f = T.f
+    f("industry", "Industry and regions", "Factories, energy and the regions.", x0 + 2, 0, [PP(20)], ai=3)
+    f("industrial_parks", "Industrial parks", "Serviced land and tax breaks for new factories.", x0, 1, [T.BUILD("civilian_factory", 2), MOD("foreign_investment", 0.03, 2920)], pre=["industry"])
+    f("energy_grid", "A modern grid", "Power lines, storage and interconnectors.", x0 + 2, 1, [MOD("energy_cost", -0.03, 3650), T.BUILD("renewable_plant", 1)], pre=["industry"])
+    f("ports_and_logistics", "Ports and logistics", "Container terminals and logistics hubs.", x0 + 4, 1, [T.BUILD("port", 1), MOD("trade_efficiency", 0.03, 2920)], pre=["industry"])
+    f("advanced_manufacturing", "Advanced manufacturing", "Robots and automation in the factories.", x0, 2, [MOD("production_efficiency", 0.03, 3650), RB("industry_energy", 0.15, 1)], pre=["industrial_parks"])
+    f("clean_energy", "Clean energy", "Wind and solar parks.", x0 + 2, 2, [T.BUILD("renewable_plant", 2), MOD("renewable_output", 0.05, 3650)], pre=["energy_grid"])
+    f("farm_modernisation", "Modern farming", "Machinery, irrigation and credit for farmers.", x0 + 4, 2, [IG("rural", 4), MOD("gdp_growth", 0.001, 2920)], pre=["ports_and_logistics"])
+    f("regional_development", "Regional development", "Roads and jobs for the poorer regions.", x0, 3, [T.BUILD("infrastructure", 3), IG("rural", 3), TREAS(-1)], pre=["advanced_manufacturing"], avail=CASH(1))
+    f("defence_procurement", "Defence procurement", "Modern equipment for the armed forces.", x0 + 2, 3, [T.BUILD("military_factory", 1), EQUIP(600)], pre=["clean_energy|advanced_manufacturing"])
+    f("tourism_promotion", "Tourism", "Promote the country to visitors.", x0 + 4, 3, [MOD("gdp_growth", 0.001, 2920), T.BUILD("air_base", 1)], pre=["farm_modernisation"])
+    f("export_credit", "Export credit", "Loans and guarantees for exporters.", x0 + 2, 4, [MOD("trade_efficiency", 0.02, 2920), T.BUILD("civilian_factory", 1)], pre=["regional_development|defence_procurement|tourism_promotion"])

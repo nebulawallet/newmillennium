@@ -2000,6 +2000,308 @@
           "add_stability": 0.01
         }
       ]
+    },
+    {
+      "id": "gbr_industry",
+      "name": "Industry and regions",
+      "description": "Factories, energy and the regions.",
+      "x": 35,
+      "y": 0,
+      "days": 70,
+      "effects": [
+        {
+          "add_political_power": 20
+        }
+      ],
+      "ai_weight": 3
+    },
+    {
+      "id": "gbr_industrial_parks",
+      "name": "Industrial parks",
+      "description": "Serviced land and tax breaks for new factories.",
+      "x": 33,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "gbr_industry"
+        ]
+      ],
+      "effects": [
+        {
+          "add_buildings": {
+            "building": "civilian_factory",
+            "count": 2
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "foreign_investment",
+            "value": 0.03,
+            "days": 2920
+          }
+        }
+      ]
+    },
+    {
+      "id": "gbr_energy_grid",
+      "name": "A modern grid",
+      "description": "Power lines, storage and interconnectors.",
+      "x": 35,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "gbr_industry"
+        ]
+      ],
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "energy_cost",
+            "value": -0.03,
+            "days": 3650
+          }
+        },
+        {
+          "add_buildings": {
+            "building": "renewable_plant",
+            "count": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "gbr_ports_and_logistics",
+      "name": "Ports and logistics",
+      "description": "Container terminals and logistics hubs.",
+      "x": 37,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "gbr_industry"
+        ]
+      ],
+      "effects": [
+        {
+          "add_buildings": {
+            "building": "port",
+            "count": 1
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "trade_efficiency",
+            "value": 0.03,
+            "days": 2920
+          }
+        }
+      ]
+    },
+    {
+      "id": "gbr_advanced_manufacturing",
+      "name": "Advanced manufacturing",
+      "description": "Robots and automation in the factories.",
+      "x": 33,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "gbr_industrial_parks"
+        ]
+      ],
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "production_efficiency",
+            "value": 0.03,
+            "days": 3650
+          }
+        },
+        {
+          "add_research_bonus": {
+            "category": "industry_energy",
+            "value": 0.15,
+            "uses": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "gbr_clean_energy",
+      "name": "Clean energy",
+      "description": "Wind and solar parks.",
+      "x": 35,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "gbr_energy_grid"
+        ]
+      ],
+      "effects": [
+        {
+          "add_buildings": {
+            "building": "renewable_plant",
+            "count": 2
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "renewable_output",
+            "value": 0.05,
+            "days": 3650
+          }
+        }
+      ]
+    },
+    {
+      "id": "gbr_farm_modernisation",
+      "name": "Modern farming",
+      "description": "Machinery, irrigation and credit for farmers.",
+      "x": 37,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "gbr_ports_and_logistics"
+        ]
+      ],
+      "effects": [
+        {
+          "add_interest_group_approval": {
+            "group": "rural",
+            "value": 4
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "gdp_growth",
+            "value": 0.001,
+            "days": 2920
+          }
+        }
+      ]
+    },
+    {
+      "id": "gbr_regional_development",
+      "name": "Regional development",
+      "description": "Roads and jobs for the poorer regions.",
+      "x": 33,
+      "y": 3,
+      "days": 70,
+      "prerequisites": [
+        [
+          "gbr_advanced_manufacturing"
+        ]
+      ],
+      "available": {
+        "treasury_above": 1
+      },
+      "effects": [
+        {
+          "add_buildings": {
+            "building": "infrastructure",
+            "count": 3
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "rural",
+            "value": 3
+          }
+        },
+        {
+          "add_treasury": -1
+        }
+      ]
+    },
+    {
+      "id": "gbr_defence_procurement",
+      "name": "Defence procurement",
+      "description": "Modern equipment for the armed forces.",
+      "x": 35,
+      "y": 3,
+      "days": 70,
+      "prerequisites": [
+        [
+          "gbr_clean_energy",
+          "gbr_advanced_manufacturing"
+        ]
+      ],
+      "effects": [
+        {
+          "add_buildings": {
+            "building": "military_factory",
+            "count": 1
+          }
+        },
+        {
+          "add_equipment": {
+            "family": "infantry_equipment",
+            "amount": 600
+          }
+        }
+      ]
+    },
+    {
+      "id": "gbr_tourism_promotion",
+      "name": "Tourism",
+      "description": "Promote the country to visitors.",
+      "x": 37,
+      "y": 3,
+      "days": 70,
+      "prerequisites": [
+        [
+          "gbr_farm_modernisation"
+        ]
+      ],
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "gdp_growth",
+            "value": 0.001,
+            "days": 2920
+          }
+        },
+        {
+          "add_buildings": {
+            "building": "air_base",
+            "count": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "gbr_export_credit",
+      "name": "Export credit",
+      "description": "Loans and guarantees for exporters.",
+      "x": 35,
+      "y": 4,
+      "days": 70,
+      "prerequisites": [
+        [
+          "gbr_regional_development",
+          "gbr_defence_procurement",
+          "gbr_tourism_promotion"
+        ]
+      ],
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "trade_efficiency",
+            "value": 0.02,
+            "days": 2920
+          }
+        },
+        {
+          "add_buildings": {
+            "building": "civilian_factory",
+            "count": 1
+          }
+        }
+      ]
     }
   ]
 }
