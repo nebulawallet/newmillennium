@@ -437,6 +437,42 @@
       "modifiers": {},
       "ai_weights": {},
       "ig_affinity": { "rural": 8, "religious_establishment": 4, "urban_middle_class": -4 }
+    },
+    {
+      "id": "fascist", "group": "fascist", "name": "Fascist", "color": "#3d2a14",
+      "description": "Ultranationalist, anti-democratic politics aiming at a single-party state under a leader.",
+      "policy": { "economy": 0.2, "social": 0.9, "authority": 1.0, "sovereignty": 1.0, "religion": 0.3, "environment": -0.4 },
+      "laws": {
+        "preferred": { "political_freedom": ["no_elections"], "press_freedom": ["state_controlled_media"], "civil_rights": ["police_state", "security_state"], "immigration": ["closed_borders"], "conscription": ["universal_conscription", "extended_service"], "trade": ["protectionism"] },
+        "forbidden": ["free_elections", "open_immigration"]
+      },
+      "modifiers": { "war_support_factor": 0.05 },
+      "ai_weights": { "aggression": 1.8, "militarism": 1.8, "trade": 0.5, "integration": 0.1 },
+      "ig_affinity": { "military": 8, "security_services": 8, "minorities": -20, "media": -15, "urban_middle_class": -10, "labour_unions": -10 }
+    },
+    {
+      "id": "national_socialist", "group": "fascist", "name": "National socialist (neo-Nazi)", "color": "#2b1d0e",
+      "description": "Movements that claim the legacy of German National Socialism: racial nationalism and a single-party state.",
+      "policy": { "economy": 0.1, "social": 1.0, "authority": 1.0, "sovereignty": 1.0, "religion": 0.1, "environment": -0.3 },
+      "laws": {
+        "preferred": { "political_freedom": ["no_elections"], "press_freedom": ["state_controlled_media"], "civil_rights": ["police_state", "security_state"], "immigration": ["closed_borders"], "conscription": ["universal_conscription", "extended_service"], "trade": ["protectionism"] },
+        "forbidden": ["free_elections", "open_immigration"]
+      },
+      "modifiers": { "war_support_factor": 0.05 },
+      "ai_weights": { "aggression": 1.8, "militarism": 1.8, "trade": 0.5, "integration": 0.1 },
+      "ig_affinity": { "military": 8, "security_services": 8, "minorities": -20, "media": -15, "urban_middle_class": -10, "labour_unions": -10 }
+    },
+    {
+      "id": "ultranationalist", "group": "fascist", "name": "Ultranationalist authoritarian", "color": "#5a3a1a",
+      "description": "Extreme nationalism with authoritarian rule, irredentist claims and militarised politics.",
+      "policy": { "economy": 0.1, "social": 0.8, "authority": 0.9, "sovereignty": 1.0, "religion": 0.4, "environment": -0.4 },
+      "laws": {
+        "preferred": { "political_freedom": ["no_elections"], "press_freedom": ["state_controlled_media"], "civil_rights": ["police_state", "security_state"], "immigration": ["closed_borders"], "conscription": ["universal_conscription", "extended_service"], "trade": ["protectionism"] },
+        "forbidden": ["free_elections", "open_immigration"]
+      },
+      "modifiers": { "war_support_factor": 0.05 },
+      "ai_weights": { "aggression": 1.8, "militarism": 1.8, "trade": 0.5, "integration": 0.1 },
+      "ig_affinity": { "military": 8, "security_services": 8, "minorities": -20, "media": -15, "urban_middle_class": -10, "labour_unions": -10 }
     }
   ]
 }

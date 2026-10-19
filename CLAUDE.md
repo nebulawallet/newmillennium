@@ -11,6 +11,7 @@ Start every session by reading [HANDOFF.md](HANDOFF.md). It holds the current st
 - **Neutrality.** No satire, no allegations or scandals about real people, no health speculation. Traits record only factual background or documented stances.
 - **No scripted deaths.** Never script the death of a living person. `died` is only for people who have actually died.
 - **Fictional leaders** are allowed only after 2026, with `generated: true`.
+- **Alternative political paths** (focus trees) bring to power only real parties already in the data whose sourced ideology fits, led by their real leader of the day or an unnamed council. A country without such a party has no such path. A real party is classified in an ideology (including `fascist`) only where a fetched source supports it. Decided by the user, 19 October 2026.
 - **Year-only dates stay years.** Wikidata often stores only a year; never invent a day.
 
 ## Engineering rules

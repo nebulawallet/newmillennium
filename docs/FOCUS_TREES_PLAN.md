@@ -33,23 +33,18 @@ Format: CONTENT_GUIDE §7. Each focus has `{ id, name, description, x, y, days, 
 
 ## Part 1: Political paths (engine and content model first)
 
-### 1a. Decisions for the user (settle these before building)
+### 1a. Decisions (made by the user, 19 October 2026)
 
-1. **A fascist ideology.** Add a group `fascist` (name "Fascist / ultranationalist authoritarian") with sub-ideologies such as `fascist`, `national_socialist`, `clerical_fascist` and `ultranationalist`, each with a map colour, policy axes and default laws.
-   - Real parties go in it only where a fetched source describes them that way (for example, Golden Dawn in Greece). Otherwise they keep their current classification.
-   - Recommendation: yes, add it.
-2. **Who takes power on an alternative path.** CLAUDE.md forbids invented parties and people before 2026, so pick one of:
-   - **(a) Real parties only.** The path brings to power a real party already in the data whose sourced ideology fits (the country's ethno-nationalist party, its communist party, and so on). A country without one has no such path.
-   - **(b) Real parties, plus movements the path creates** where no real party fits. They would use a generic name built from the ideology and the country (for example, "Russian National Front"), carry `generated: true`, have no named leader (a "ruling council"), and be clearly marked as fiction. This needs a written exception in CLAUDE.md.
-   - Recommendation: (b), with (a) preferred wherever a real party fits.
-3. **Leaders of alternative regimes.** Use real people only: the real party's leader from the data, or an unnamed council. Never name an invented person before 2026 (the rule stays).
+1. **There is a fascist ideology.** The group `fascist` ("Fascist / ultranationalist authoritarian") has the sub-ideologies `fascist`, `national_socialist` and `ultranationalist`, each with policy axes, preferred and forbidden laws, AI weights (aggression and militarism 1.8) and interest-group affinities. Diplomacy affinities are set both ways. It is in `data/ideologies/` and validated.
+   - No party is classified in it yet. A real party moves to it only where a fetched source describes it that way (for example, Golden Dawn in Greece or the NPD in Germany, if they are in the data). That reclassification is research, done per country with sources.
+2. **Real parties only.** An alternative path brings to power a real party already in the data whose sourced ideology fits. A country without such a party has no such path. Nothing is invented: no generated movements and no invented leaders (CLAUDE.md is unchanged on this and now says so for focus paths).
+3. **Leaders of alternative regimes:** the real party's leader from the data on that date, or an unnamed council if the party has none.
 
 ### 1b. Engine work (main session; pure TypeScript in `src/sim`, validated and tested)
 
-- **`install_government`** `{ party?, ideology?, government_type, leader? }`: a party (or a movement, if decision 2b is taken) takes power. It sets the government type, the ruling party, the executive from the party leader (or a council), and the default laws of the new ideology. This works like the peace conference's "change ideology" term (`partiesOfGroup` in `src/sim/military/peace.ts`), which already installs a party of a chosen ideology.
+- **`install_government`** `{ party?, ideology?, government_type, leader? }`: a real party of the data takes power (named, or the most popular one of an ideology group in that country). It sets the government type, the ruling party, the executive from the party leader (or a council), and the default laws of the new ideology. This works like the peace conference's "change ideology" term (`partiesOfGroup` in `src/sim/military/peace.ts`), which already installs a party of a chosen ideology.
 - **Shifting support:** extend `add_ideology_support` to take a group (fascist, communist, and so on) and spread the change over its sub-ideologies.
-- **`set_party_ideology`** (optional): a real party radicalises. Only on alternative paths, never as a claim about history.
-- **`found_movement`** (only if decision 2b is taken): creates a generated party of a given sub-ideology for this country. It is flagged, the UI shows it as fictional, and it has a council and no named leader.
+- **A helper for paths:** `partiesOfGroup` (peace.ts) already finds a country's real parties of an ideology. Path focuses use it through an `available` trigger, such as a new `has_party_of_group`, so a path only shows where a fitting real party exists.
 - **Ideology drives the AI:** a fascist or communist regime gets higher aggression and militarism weights (`src/sim/ai/ai.ts` `weights`), claims on neighbours, worse relations with liberal democracies, and the bloc changes that follow (leaving NATO or the EU). The country leaves the historical path (`followsHistory = false`) as soon as an alternative political focus completes.
 - **Map and UI:** add the colour of the new ideology to the ideology map mode, and a tooltip on every political focus that shows which government it will install.
 
@@ -115,7 +110,7 @@ Every conflict country and every major gets a real tree:
 
 ## Done when
 
-- The user's decisions in 1a are recorded in CLAUDE.md and this plan.
+- The decisions in 1a are recorded (done: here and in CLAUDE.md).
 - The engine effects are built and tested.
 - Every country in "Order" has a tree of the target size with a political branch.
 - History is unchanged under the trace.
