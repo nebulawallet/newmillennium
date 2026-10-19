@@ -137,7 +137,8 @@ describe("political paths", () => {
   it("has_party_of_group sees only real live parties of the group", () => {
     const ctx = ctxOf(fresh());
     expect(evalTrigger(ctx, scope("RUS"), { has_party_of_group: "socialist_communist" })).toBe(true);
-    expect(evalTrigger(ctx, scope("RUS"), { has_party_of_group: "fascist" })).toBe(false);
+    expect(evalTrigger(ctx, scope("RUS"), { has_party_of_group: "fascist" })).toBe(true);
+    expect(evalTrigger(ctx, scope("DEU"), { has_party_of_group: "fascist" })).toBe(false);
   });
 
   it("install_government brings a real party to power with its leader, government type and laws", () => {
@@ -158,11 +159,11 @@ describe("political paths", () => {
 
   it("install_government does nothing without a fitting party", () => {
     const state = fresh();
-    const rus = state.countries.RUS!;
-    const ruling = [...rus.rulingParties];
-    runEffects(ctxOf(state), scope("RUS"), [{ install_government: { ideology: "fascist", government_type: "one_party_state" } }], "test");
-    expect(rus.rulingParties).toEqual(ruling);
-    expect(describeEffects(db, [{ install_government: { ideology: "fascist", government_type: "one_party_state" } }], 0, { state, tag: "RUS" })[0]).toContain("nothing changes");
+    const deu = state.countries.DEU!;
+    const ruling = [...deu.rulingParties];
+    runEffects(ctxOf(state), scope("DEU"), [{ install_government: { ideology: "fascist", government_type: "one_party_state" } }], "test");
+    expect(deu.rulingParties).toEqual(ruling);
+    expect(describeEffects(db, [{ install_government: { ideology: "fascist", government_type: "one_party_state" } }], 0, { state, tag: "DEU" })[0]).toContain("nothing changes");
   });
 
   it("a government of an incompatible ideology leaves the bloc", () => {
@@ -205,7 +206,7 @@ describe("political paths", () => {
 });
 
 describe("Russian political branch", () => {
-  it("history takes the power vertical; the player can take a real party's path; no fascist path without a fascist party", () => {
+  it("history takes the power vertical; the player can take a real party's path; a path needs a party that exists", () => {
     const state = createInitialState(db, { provinces: [] }, { contentHash: "t", player: "RUS" });
     const ctx = ctxOf(state);
     const rus = state.countries.RUS!;
@@ -214,10 +215,11 @@ describe("Russian political branch", () => {
     expect(st("rus_power_vertical")).toBe("available");
     rus.stability = 0.3;
     rus.warSupport = 0.6;
-    expect(st("rus_ultranationalist_turn")).toBe("unavailable");
-    expect(st("rus_national_revival")).toBe("available");
+    // the LDPR (ultranationalist) exists in 2000; Rodina (national-populist) is founded only in 2003
+    expect(st("rus_ultranationalist_turn")).toBe("available");
+    expect(st("rus_national_revival")).toBe("unavailable");
     // an AI Russia on the historical path never leaves it
     state.player = "DEU";
-    expect(st("rus_national_revival")).toBe("unavailable");
+    expect(st("rus_ultranationalist_turn")).toBe("unavailable");
   });
 });
