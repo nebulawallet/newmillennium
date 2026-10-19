@@ -11,7 +11,7 @@
       "modifiers": { "election_fairness": -0.2, "incumbent_advantage": 0.2, "international_opinion": -10 } },
     { "id": "single_party_elections", "name": "Single-party elections", "description": "Only the ruling party or its approved candidates may stand.", "pp_cost": 150, "requires_vote": false,
       "modifiers": { "election_fairness": -0.4, "incumbent_advantage": 0.4, "international_opinion": -15 } },
-    { "id": "no_elections", "name": "No national elections", "description": "No elected national bodies.", "pp_cost": 200, "requires_vote": false,
+    { "id": "no_elections", "name": "No national elections", "description": "No elected national bodies.", "pp_cost": 200, "requires_vote": false, "suspends_elections": true,
       "modifiers": { "election_fairness": -0.5, "international_opinion": -20 } }
   ]
 }

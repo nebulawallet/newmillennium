@@ -223,3 +223,17 @@ describe("Russian political branch", () => {
     expect(st("rus_ultranationalist_turn")).toBe("unavailable");
   });
 });
+
+describe("suspended elections", () => {
+  it("a law that suspends elections skips the vote but keeps the calendar", () => {
+    const sim = new Simulation(db, createInitialState(db, { provinces: [] }, { contentHash: "t", player: "DEU" }));
+    const rus = sim.state.countries.RUS!;
+    rus.laws.political_freedom = "no_elections";
+    const n = rus.schedule.length;
+    rus.schedule[0]!.day = sim.state.day + 1;
+    for (let i = 0; i < 3; i++) sim.step();
+    expect(sim.state.elections.filter((e) => e.tag === "RUS")).toHaveLength(0);
+    expect(rus.schedule).toHaveLength(n);
+    expect(rus.schedule[0]!.day).toBeGreaterThan(sim.state.day);
+  });
+});

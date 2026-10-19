@@ -681,12 +681,14 @@ export const electionSystem: System = {
     for (const cs of Object.values(state.countries)) {
       if (!cs.active || !cs.schedule.length || cs.schedule[0]!.day > state.day) continue;
       const gov = db.governmentTypes.get(cs.govType);
+      // a law such as "No national elections" skips the vote but keeps the calendar
+      const suspended = Object.values(cs.laws).some((l) => db.lawCategories.get(db.lawCategoryOf.get(l) ?? "")?.laws.find((x) => x.id === l)?.suspends_elections);
       const due = cs.schedule.filter((e) => e.day <= state.day);
       cs.schedule = cs.schedule.filter((e) => e.day > state.day);
       for (const s of due) {
         if (gov && !gov.holds_elections) continue; // e.g. after a coup: the calendar lapses
         const followed = state.rules.electionMode === "historical" && cs.followsHistory;
-        runElection(ctx, cs, s);
+        if (!suspended) runElection(ctx, cs, s);
         const next = nextElectionDay(db, cs.tag, s, state.day, followed && cs.followsHistory);
         cs.schedule.push({ ...s, day: next, snap: false });
       }

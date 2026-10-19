@@ -150,6 +150,8 @@ export const Law = z.strictObject({
   modifiers: Modifiers.default({}),
   /** Weekly drift in popular support for sub-ideologies while in force. */
   ideology_support_drift: z.record(Id, z.number()).default({}),
+  /** While in force, scheduled national elections do not take place (the calendar keeps its dates). */
+  suspends_elections: z.boolean().default(false),
 });
 export const LawCategory = z.strictObject({
   id: Id,

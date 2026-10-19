@@ -63,6 +63,10 @@
             "additionalProperties": {
               "type": "number"
             }
+          },
+          "suspends_elections": {
+            "default": false,
+            "type": "boolean"
           }
         },
         "required": [
