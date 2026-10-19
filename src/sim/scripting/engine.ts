@@ -76,6 +76,13 @@ function scopeTargets(ctx: SimContext, scope: Scope, key: string, block: Node): 
   }
 }
 
+/** The neighbour a country likes least (generic claims and war goals), or null. */
+export function rivalNeighbour(ctx: SimContext, tag: string): string | null {
+  const nb = countryNeighbours(ctx, tag);
+  if (!nb.length) return null;
+  return nb.reduce((best, t) => (opinion(ctx.db, ctx.state, tag, t) < opinion(ctx.db, ctx.state, tag, best) ? t : best));
+}
+
 // ------------------------------------------------------------------ triggers
 
 export function evalTrigger(ctx: SimContext, scope: Scope, node: unknown): boolean {
@@ -268,6 +275,26 @@ function effect(ctx: SimContext, scope: Scope, k: string, v: unknown, source: st
       const have = new Set(cs.claims);
       for (const r of a.regions as GroupRegion[]) for (const p of select(ctx, r, (id) => state.provinceOwner[id - 1] === r.from)) have.add(p);
       cs.claims = [...have];
+      break;
+    }
+    case "claim_rival_border": {
+      const rival = rivalNeighbour(ctx, scope.tag);
+      const nb = ctx.map?.neighbours;
+      if (!rival || !nb) break;
+      const have = new Set(cs.claims);
+      let added = 0;
+      for (let i = 0; i < state.provinceOwner.length && added < (a.count as number); i++) {
+        if (state.provinceOwner[i] !== rival || have.has(i + 1)) continue;
+        if (!(nb.get(i + 1) ?? []).some((n) => state.provinceOwner[n - 1] === scope.tag)) continue;
+        have.add(i + 1);
+        added++;
+      }
+      cs.claims = [...have];
+      break;
+    }
+    case "wargoal_on_rival": {
+      const rival = rivalNeighbour(ctx, scope.tag);
+      if (rival) state.diplomacy.justifications.push({ tag: scope.tag, target: rival, start: state.day, done: state.day, expires: state.day + db.diplomacyRules.justification_valid_days });
       break;
     }
     case "add_buildings": {
@@ -520,6 +547,8 @@ export function describeEffects(db: ContentDB, effects: unknown[], depth = 0, li
         break;
       }
       case "add_buildings": line = `Builds ${a.count}× ${db.buildings.get(a.building as string)?.name ?? String(a.building)} at once${a.regions ? ` in ${[...new Set((a.regions as GroupRegion[]).flatMap((r) => [...(r.adm1 ?? []).map((c) => live?.regions?.get(c) ?? c), ...(r.provinces ?? [])]))].join(", ") || "the named regions"}` : ""}`; break;
+      case "claim_rival_border": line = `Claims up to ${a.count} border provinces of the least friendly neighbour: half the war score at the peace conference`; break;
+      case "wargoal_on_rival": line = "War goal against the least friendly neighbour"; break;
       case "add_research_bonus": line = `${db.techCategories.get(a.category as string)?.name ?? a.category} research ${signed(a.value as number, true)} for the next ${a.uses} technolog${(a.uses as number) > 1 ? "ies" : "y"}`; break;
       case "hold_election": line = "An early election is held"; break;
       case "change_law": line = `Enact ${name.law(a.law as string)}`; break;

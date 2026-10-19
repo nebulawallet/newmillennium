@@ -116,6 +116,14 @@ export const EFFECTS: Record<string, ScriptDef> = {
     description: "Claim provinces of another country: they cost half the war score at the peace conference.",
     refs: { "regions.from": "tag" },
   },
+  claim_rival_border: {
+    args: z.strictObject({ count: z.number().int().positive().max(20) }),
+    description: "Claim up to `count` provinces of the neighbour this country likes least, along their shared border (generic trees).",
+  },
+  wargoal_on_rival: {
+    args: z.literal(true),
+    description: "A war goal against the neighbour this country likes least (generic trees).",
+  },
   add_buildings: {
     args: z.strictObject({
       building: Id,

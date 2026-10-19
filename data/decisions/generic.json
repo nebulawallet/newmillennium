@@ -1,8 +1,25 @@
 {
   "categories": [
-    { "id": "campaign", "name": "Elections", "description": "Campaigning before national elections." },
-    { "id": "domestic", "name": "Domestic politics", "description": "Managing interest groups and public opinion." },
-    { "id": "security", "name": "Internal security", "description": "Responses to unrest. Each has a cost in public trust." }
+    {
+      "id": "campaign",
+      "name": "Elections",
+      "description": "Campaigning before national elections."
+    },
+    {
+      "id": "domestic",
+      "name": "Domestic politics",
+      "description": "Managing interest groups and public opinion."
+    },
+    {
+      "id": "security",
+      "name": "Internal security",
+      "description": "Responses to unrest. Each has a cost in public trust."
+    },
+    {
+      "id": "projects",
+      "name": "National projects",
+      "description": "Projects that the national focuses open up."
+    }
   ],
   "decisions": [
     {
@@ -10,10 +27,20 @@
       "name": "National election campaign",
       "description": "Put the government's record before the voters in the months before an election.",
       "category": "campaign",
-      "visible": { "election_within_days": 240 },
-      "available": { "election_within_days": 180 },
-      "cost": { "political_power": 75 },
-      "effects": [{ "add_ruling_party_popularity": 0.02 }],
+      "visible": {
+        "election_within_days": 240
+      },
+      "available": {
+        "election_within_days": 180
+      },
+      "cost": {
+        "political_power": 75
+      },
+      "effects": [
+        {
+          "add_ruling_party_popularity": 0.02
+        }
+      ],
       "cooldown_days": 300,
       "ai_weight": 2
     },
@@ -22,9 +49,20 @@
       "name": "Appeal for national unity",
       "description": "The head of government addresses the nation and calls for calm and common purpose.",
       "category": "domestic",
-      "available": { "unrest_above": 0.05 },
-      "cost": { "political_power": 50 },
-      "effects": [{ "add_unrest": -0.05 }, { "add_stability": 0.02 }],
+      "available": {
+        "unrest_above": 0.05
+      },
+      "cost": {
+        "political_power": 50
+      },
+      "effects": [
+        {
+          "add_unrest": -0.05
+        },
+        {
+          "add_stability": 0.02
+        }
+      ],
       "cooldown_days": 365,
       "ai_weight": 1
     },
@@ -33,12 +71,34 @@
       "name": "Negotiate with the unions",
       "description": "Open talks with organised labour on wages and conditions.",
       "category": "domestic",
-      "visible": { "ig_influence_above": { "group": "labour_unions", "value": 0.05 } },
-      "available": { "ig_approval_below": { "group": "labour_unions", "value": 45 } },
-      "cost": { "political_power": 60 },
+      "visible": {
+        "ig_influence_above": {
+          "group": "labour_unions",
+          "value": 0.05
+        }
+      },
+      "available": {
+        "ig_approval_below": {
+          "group": "labour_unions",
+          "value": 45
+        }
+      },
+      "cost": {
+        "political_power": 60
+      },
       "effects": [
-        { "add_interest_group_approval": { "group": "labour_unions", "value": 8 } },
-        { "add_interest_group_approval": { "group": "business", "value": -3 } }
+        {
+          "add_interest_group_approval": {
+            "group": "labour_unions",
+            "value": 8
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "business",
+            "value": -3
+          }
+        }
       ],
       "cooldown_days": 540,
       "ai_weight": 1
@@ -48,12 +108,34 @@
       "name": "Business confidence package",
       "description": "Consult employers and promise a stable regulatory climate.",
       "category": "domestic",
-      "visible": { "ig_influence_above": { "group": "business", "value": 0.05 } },
-      "available": { "ig_approval_below": { "group": "business", "value": 45 } },
-      "cost": { "political_power": 60 },
+      "visible": {
+        "ig_influence_above": {
+          "group": "business",
+          "value": 0.05
+        }
+      },
+      "available": {
+        "ig_approval_below": {
+          "group": "business",
+          "value": 45
+        }
+      },
+      "cost": {
+        "political_power": 60
+      },
       "effects": [
-        { "add_interest_group_approval": { "group": "business", "value": 8 } },
-        { "add_interest_group_approval": { "group": "labour_unions", "value": -3 } }
+        {
+          "add_interest_group_approval": {
+            "group": "business",
+            "value": 8
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "labour_unions",
+            "value": -3
+          }
+        }
       ],
       "cooldown_days": 540,
       "ai_weight": 1
@@ -63,10 +145,32 @@
       "name": "Outreach to minority communities",
       "description": "Meet community representatives and fund local programmes.",
       "category": "domestic",
-      "visible": { "ig_influence_above": { "group": "minorities", "value": 0.05 } },
-      "available": { "ig_approval_below": { "group": "minorities", "value": 45 } },
-      "cost": { "political_power": 50 },
-      "effects": [{ "add_interest_group_approval": { "group": "minorities", "value": 8 } }, { "add_unrest": -0.02 }],
+      "visible": {
+        "ig_influence_above": {
+          "group": "minorities",
+          "value": 0.05
+        }
+      },
+      "available": {
+        "ig_approval_below": {
+          "group": "minorities",
+          "value": 45
+        }
+      },
+      "cost": {
+        "political_power": 50
+      },
+      "effects": [
+        {
+          "add_interest_group_approval": {
+            "group": "minorities",
+            "value": 8
+          }
+        },
+        {
+          "add_unrest": -0.02
+        }
+      ],
       "cooldown_days": 540,
       "ai_weight": 1
     },
@@ -75,10 +179,35 @@
       "name": "Rural support programme",
       "description": "Fund farm support and rural infrastructure.",
       "category": "domestic",
-      "visible": { "ig_influence_above": { "group": "rural", "value": 0.05 } },
-      "available": { "ig_approval_below": { "group": "rural", "value": 45 } },
-      "cost": { "political_power": 50 },
-      "effects": [{ "add_interest_group_approval": { "group": "rural", "value": 7 } }, { "add_interest_group_approval": { "group": "urban_middle_class", "value": -2 } }],
+      "visible": {
+        "ig_influence_above": {
+          "group": "rural",
+          "value": 0.05
+        }
+      },
+      "available": {
+        "ig_approval_below": {
+          "group": "rural",
+          "value": 45
+        }
+      },
+      "cost": {
+        "political_power": 50
+      },
+      "effects": [
+        {
+          "add_interest_group_approval": {
+            "group": "rural",
+            "value": 7
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "urban_middle_class",
+            "value": -2
+          }
+        }
+      ],
       "cooldown_days": 540,
       "ai_weight": 1
     },
@@ -87,15 +216,43 @@
       "name": "Deploy riot police",
       "description": "Use police units to clear protests and restore order.",
       "category": "security",
-      "visible": { "unrest_above": 0.05 },
-      "available": { "unrest_above": 0.12 },
-      "cost": { "political_power": 40 },
+      "visible": {
+        "unrest_above": 0.05
+      },
+      "available": {
+        "unrest_above": 0.12
+      },
+      "cost": {
+        "political_power": 40
+      },
       "effects": [
-        { "add_unrest": -0.1 },
-        { "add_interest_group_approval": { "group": "security_services", "value": 3 } },
-        { "add_interest_group_approval": { "group": "youth_students", "value": -5 } },
-        { "add_interest_group_approval": { "group": "urban_middle_class", "value": -3 } },
-        { "add_interest_group_approval": { "group": "media", "value": -3 } }
+        {
+          "add_unrest": -0.1
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "security_services",
+            "value": 3
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "youth_students",
+            "value": -5
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "urban_middle_class",
+            "value": -3
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "media",
+            "value": -3
+          }
+        }
       ],
       "cooldown_days": 180,
       "ai_weight": 1
@@ -105,21 +262,255 @@
       "name": "Declare a state of emergency",
       "description": "Invoke the constitution's emergency powers for six months.",
       "category": "security",
-      "visible": { "all": [{ "has_emergency_powers": true }, { "unrest_above": 0.2 }] },
-      "available": { "unrest_above": 0.35 },
-      "cost": { "political_power": 100 },
+      "visible": {
+        "all": [
+          {
+            "has_emergency_powers": true
+          },
+          {
+            "unrest_above": 0.2
+          }
+        ]
+      },
+      "available": {
+        "unrest_above": 0.35
+      },
+      "cost": {
+        "political_power": 100
+      },
       "effects": [
-        { "add_unrest": -0.2 },
-        { "add_stability": 0.05 },
-        { "add_timed_modifier": { "modifier": "civil_liberties", "value": -0.2, "days": 180 } },
-        { "add_interest_group_approval": { "group": "media", "value": -8 } },
-        { "add_interest_group_approval": { "group": "urban_middle_class", "value": -6 } },
-        { "add_interest_group_approval": { "group": "security_services", "value": 5 } }
+        {
+          "add_unrest": -0.2
+        },
+        {
+          "add_stability": 0.05
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "civil_liberties",
+            "value": -0.2,
+            "days": 180
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "media",
+            "value": -8
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "urban_middle_class",
+            "value": -6
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "security_services",
+            "value": 5
+          }
+        }
       ],
       "days": 180,
-      "complete_effects": [{ "add_stability": -0.02 }],
+      "complete_effects": [
+        {
+          "add_stability": -0.02
+        }
+      ],
       "cooldown_days": 720,
       "ai_weight": 0.5
+    },
+    {
+      "id": "public_works",
+      "name": "Public works",
+      "description": "A year of road, rail and port building.",
+      "category": "projects",
+      "visible": {
+        "has_completed_focus": "eco_infrastructure"
+      },
+      "available": {
+        "treasury_above": 1.5
+      },
+      "cost": {
+        "political_power": 30
+      },
+      "effects": [
+        {
+          "add_treasury": -1.5
+        },
+        {
+          "add_buildings": {
+            "building": "infrastructure",
+            "count": 2
+          }
+        }
+      ],
+      "cooldown_days": 365,
+      "ai_weight": 2
+    },
+    {
+      "id": "industrial_subsidies",
+      "name": "Industrial subsidies",
+      "description": "Subsidise a new factory.",
+      "category": "projects",
+      "visible": {
+        "has_completed_focus": "eco_industrial_parks"
+      },
+      "available": {
+        "treasury_above": 1.5
+      },
+      "cost": {
+        "political_power": 30
+      },
+      "effects": [
+        {
+          "add_treasury": -1.5
+        },
+        {
+          "add_buildings": {
+            "building": "civilian_factory",
+            "count": 1
+          }
+        }
+      ],
+      "cooldown_days": 365,
+      "ai_weight": 2
+    },
+    {
+      "id": "arms_order",
+      "name": "Arms order",
+      "description": "An order for the defence industry.",
+      "category": "projects",
+      "visible": {
+        "has_completed_focus": "mil_defence_industry"
+      },
+      "available": {
+        "treasury_above": 1
+      },
+      "cost": {
+        "political_power": 30
+      },
+      "effects": [
+        {
+          "add_treasury": -1
+        },
+        {
+          "add_equipment": {
+            "family": "infantry_equipment",
+            "amount": 500
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "military",
+            "value": 2
+          }
+        }
+      ],
+      "cooldown_days": 365,
+      "ai_weight": 2
+    },
+    {
+      "id": "mobilise_reserves",
+      "name": "Mobilise the reserves",
+      "description": "Call up reservists into new divisions.",
+      "category": "projects",
+      "visible": {
+        "has_completed_focus": "mil_mass_reserve"
+      },
+      "available": {
+        "at_war": true
+      },
+      "cost": {
+        "political_power": 50
+      },
+      "effects": [
+        {
+          "add_divisions": {
+            "template": "infantry_division",
+            "count": 2
+          }
+        },
+        {
+          "add_stability": -0.02
+        },
+        {
+          "add_war_support": 0.02
+        }
+      ],
+      "cooldown_days": 730,
+      "ai_weight": 1
+    },
+    {
+      "id": "anti_corruption_audit",
+      "name": "Anti-corruption audit",
+      "description": "Audit a ministry's contracts.",
+      "category": "projects",
+      "visible": {
+        "has_completed_focus": "pol_anti_corruption"
+      },
+      "cost": {
+        "political_power": 25
+      },
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "corruption",
+            "value": -0.02,
+            "days": 730
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "business",
+            "value": -2
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "media",
+            "value": 2
+          }
+        }
+      ],
+      "cooldown_days": 365,
+      "ai_weight": 2
+    },
+    {
+      "id": "research_grants_generic",
+      "name": "Research grants",
+      "description": "A round of state research grants.",
+      "category": "projects",
+      "visible": {
+        "has_completed_focus": "soc_universities"
+      },
+      "available": {
+        "treasury_above": 1
+      },
+      "cost": {
+        "political_power": 30
+      },
+      "effects": [
+        {
+          "add_treasury": -1
+        },
+        {
+          "add_research_bonus": {
+            "category": "industry_energy",
+            "value": 0.2,
+            "uses": 1
+          }
+        },
+        {
+          "add_research_bonus": {
+            "category": "economy_digital",
+            "value": 0.2,
+            "uses": 1
+          }
+        }
+      ],
+      "cooldown_days": 365,
+      "ai_weight": 2
     }
   ]
 }

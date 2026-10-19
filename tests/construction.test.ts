@@ -187,3 +187,14 @@ describe("focus effects: buildings and claims", () => {
     expect(evalTrigger(ctx, { tag: "DEU", root: "DEU", from: null }, { has_claim_on: "POL" })).toBe(true);
   });
 });
+
+describe("generic war tools", () => {
+  it("claim_rival_border claims border provinces of the least liked neighbour, wargoal_on_rival targets it", () => {
+    const sim = fresh();
+    const ctx = sim.context;
+    runEffects(ctx, { tag: "DEU", root: "DEU", from: null }, [{ claim_rival_border: { count: 3 } }, { wargoal_on_rival: true }], "test");
+    // only province 9 of Poland borders Germany on this map
+    expect(sim.state.countries.DEU!.claims).toEqual([9]);
+    expect(sim.state.diplomacy.justifications.some((j) => j.tag === "DEU" && j.target === "POL")).toBe(true);
+  });
+});

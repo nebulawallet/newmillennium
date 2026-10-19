@@ -6,35 +6,207 @@
       "name": "Endemic corruption",
       "description": "Bribes and kickbacks are part of everyday dealings with the state.",
       "kind": "problem",
-      "modifiers": { "corruption": 0.05, "tax_efficiency": -0.05, "foreign_investment": -0.05 }
+      "modifiers": {
+        "corruption": 0.05,
+        "tax_efficiency": -0.05,
+        "foreign_investment": -0.05
+      }
     },
     {
       "id": "anti_corruption_campaign",
       "name": "Anti-corruption campaign",
       "description": "Audits, prosecutions and new oversight bodies take on corruption, at the price of friction inside the state.",
       "kind": "policy",
-      "modifiers": { "corruption": -0.04, "political_power_gain": -0.05 }
+      "modifiers": {
+        "corruption": -0.04,
+        "political_power_gain": -0.05
+      }
     },
     {
       "id": "brain_drain",
       "name": "Brain drain",
       "description": "Engineers, doctors and scientists leave for better pay abroad.",
       "kind": "problem",
-      "modifiers": { "research_speed": -0.05, "emigration": 0.05 }
+      "modifiers": {
+        "research_speed": -0.05,
+        "emigration": 0.05
+      }
     },
     {
       "id": "war_economy",
       "name": "War economy",
       "description": "Industry and the budget are put on a war footing.",
       "kind": "policy",
-      "modifiers": { "production_efficiency": 0.05, "stability_factor": -0.03 }
+      "modifiers": {
+        "production_efficiency": 0.05,
+        "stability_factor": -0.03
+      }
     },
     {
       "id": "reconstruction_effort",
       "name": "Reconstruction effort",
       "description": "A national programme rebuilds housing, power and transport.",
       "kind": "policy",
-      "modifiers": { "construction_speed": 0.1 }
+      "modifiers": {
+        "construction_speed": 0.1
+      }
+    },
+    {
+      "id": "professional_civil_service",
+      "name": "Professional civil service",
+      "description": "Officials are hired and promoted on merit.",
+      "kind": "strength",
+      "modifiers": {
+        "corruption": -0.03,
+        "tax_efficiency": 0.03
+      }
+    },
+    {
+      "id": "digital_government",
+      "name": "Digital government",
+      "description": "Taxes, permits and records are handled online.",
+      "kind": "strength",
+      "modifiers": {
+        "tax_efficiency": 0.03,
+        "corruption": -0.02
+      }
+    },
+    {
+      "id": "austerity",
+      "name": "Austerity",
+      "description": "Spending cuts to balance the budget.",
+      "kind": "policy",
+      "modifiers": {
+        "welfare_cost": -0.01,
+        "stability_factor": -0.03
+      }
+    },
+    {
+      "id": "stimulus",
+      "name": "Economic stimulus",
+      "description": "Borrowing to fund public investment.",
+      "kind": "policy",
+      "modifiers": {
+        "gdp_growth": 0.003,
+        "inflation": 0.01,
+        "construction_speed": 0.05
+      }
+    },
+    {
+      "id": "balanced_budget",
+      "name": "Balanced budget",
+      "description": "The public finances are in order and borrowing is cheap.",
+      "kind": "strength",
+      "modifiers": {
+        "interest_rate": -0.005,
+        "foreign_investment": 0.05
+      }
+    },
+    {
+      "id": "export_led_growth",
+      "name": "Export-led growth",
+      "description": "Manufacturing for export markets drives growth.",
+      "kind": "policy",
+      "modifiers": {
+        "trade_efficiency": 0.05,
+        "private_sector_output": 0.03
+      }
+    },
+    {
+      "id": "sovereign_wealth_fund",
+      "name": "Sovereign wealth fund",
+      "description": "Resource revenue is saved for future generations.",
+      "kind": "strength",
+      "modifiers": {
+        "inflation": -0.005,
+        "interest_rate": -0.003
+      }
+    },
+    {
+      "id": "state_planning",
+      "name": "State planning",
+      "description": "Investment is directed by state plans.",
+      "kind": "policy",
+      "modifiers": {
+        "state_industry_output": 0.08,
+        "private_sector_output": -0.08,
+        "foreign_investment": -0.1
+      }
+    },
+    {
+      "id": "open_society",
+      "name": "Open society",
+      "description": "Independent courts, a free press and competitive elections.",
+      "kind": "strength",
+      "modifiers": {
+        "corruption": -0.03,
+        "foreign_investment": 0.08,
+        "civil_liberties": 0.1,
+        "international_opinion": 10
+      }
+    },
+    {
+      "id": "mobilised_nation",
+      "name": "Mobilised nation",
+      "description": "Universal military training and a war economy under a one-party state.",
+      "kind": "policy",
+      "modifiers": {
+        "manpower_factor": 0.08,
+        "war_support_factor": 0.05,
+        "international_opinion": -15
+      }
+    },
+    {
+      "id": "military_rule",
+      "name": "Military rule",
+      "description": "Officers run the ministries and the security services.",
+      "kind": "policy",
+      "modifiers": {
+        "internal_security": 0.1,
+        "political_power_gain": 0.1,
+        "civil_liberties": -0.15,
+        "international_opinion": -10
+      }
+    },
+    {
+      "id": "religious_revival",
+      "name": "Religious revival",
+      "description": "Faith shapes law, schools and public life.",
+      "kind": "policy",
+      "modifiers": {
+        "stability_factor": 0.03,
+        "education_quality": -0.02
+      }
+    },
+    {
+      "id": "armed_neutrality",
+      "name": "Armed neutrality",
+      "description": "Strong defences and no alliances.",
+      "kind": "policy",
+      "modifiers": {
+        "army_defence": 0.05,
+        "foreign_influence_resistance": 0.1
+      }
+    },
+    {
+      "id": "science_drive",
+      "name": "Science drive",
+      "description": "Grants and new research universities.",
+      "kind": "policy",
+      "modifiers": {
+        "research_speed": 0.05,
+        "education_quality": 0.03
+      }
+    },
+    {
+      "id": "universal_healthcare",
+      "name": "Universal healthcare",
+      "description": "Everyone is covered by public health care.",
+      "kind": "strength",
+      "modifiers": {
+        "health_outcomes": 0.05,
+        "welfare_cost": 0.005
+      }
     }
   ]
 }

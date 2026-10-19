@@ -2,7 +2,7 @@
   "id": "generic",
   "name": "National priorities",
   "countries": [],
-  "note": "The generic focus tree for every country without its own. The political branch has a steady course (the historical path) and six mutually exclusive alternatives; each brings to power only a real party of the country's data (install_government) and shows only where one exists, except the military junta, which needs none. Alternatives are a counterfactual, not a claim about the parties. Effects are gameplay estimates.",
+  "note": "The generic focus tree for every country without its own, in the style of the Russian model tree: focuses build, grant and swap national spirits (data/spirits/generic.json), unlock the project decisions, cost money and grant research. The political branch has a steady course (the historical path) and six mutually exclusive alternatives; each brings to power only a real party of the country's data and shows only where one exists, except the military junta. It names no real place, so claims and war goals on the nationalist paths target the least friendly neighbour. Alternatives are a counterfactual, not a claim about the parties. Effects are gameplay estimates.",
   "focuses": [
     {
       "id": "path_question_of_power",
@@ -50,6 +50,28 @@
         }
       ],
       "ai_weight": 20
+    },
+    {
+      "id": "path_institutional_continuity",
+      "name": "Institutional continuity",
+      "description": "Keep the civil service and the courts out of party politics.",
+      "x": 1,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "path_steady_course"
+        ]
+      ],
+      "effects": [
+        {
+          "add_spirit": "professional_civil_service"
+        },
+        {
+          "add_political_power": -20
+        }
+      ],
+      "ai_weight": 3
     },
     {
       "id": "path_liberal_opening",
@@ -202,7 +224,7 @@
     {
       "id": "path_rule_of_law",
       "name": "Rule of law",
-      "description": "Independent courts and full civil liberties.",
+      "description": "Independent courts, full civil liberties and an anti-corruption drive.",
       "x": 3,
       "y": 4,
       "days": 70,
@@ -219,11 +241,10 @@
           }
         },
         {
-          "add_timed_modifier": {
-            "modifier": "corruption",
-            "value": -0.05,
-            "days": 2920
-          }
+          "add_spirit": "open_society"
+        },
+        {
+          "remove_spirit": "endemic_corruption"
         },
         {
           "add_interest_group_approval": {
@@ -388,7 +409,7 @@
     {
       "id": "path_public_ownership",
       "name": "Public ownership",
-      "description": "Bring the large industries and the banks into public ownership.",
+      "description": "Bring the large industries and the banks into public ownership and plan investment.",
       "x": 5,
       "y": 4,
       "days": 70,
@@ -405,10 +426,18 @@
           }
         },
         {
-          "add_timed_modifier": {
-            "modifier": "state_industry_output",
-            "value": 0.08,
-            "days": 2920
+          "add_spirit": "state_planning"
+        },
+        {
+          "add_buildings": {
+            "building": "civilian_factory",
+            "count": 2
+          }
+        },
+        {
+          "add_buildings": {
+            "building": "military_factory",
+            "count": 1
           }
         },
         {
@@ -556,7 +585,7 @@
     {
       "id": "path_national_sovereignty",
       "name": "National sovereignty first",
-      "description": "Restrict immigration and limit foreign influence.",
+      "description": "Restrict immigration, limit foreign influence and raise new divisions.",
       "x": 7,
       "y": 4,
       "days": 70,
@@ -580,10 +609,39 @@
           }
         },
         {
+          "add_divisions": {
+            "template": "infantry_division",
+            "count": 2
+          }
+        },
+        {
           "add_interest_group_approval": {
             "group": "minorities",
             "value": -6
           }
+        }
+      ]
+    },
+    {
+      "id": "path_border_claims",
+      "name": "Claims on the border",
+      "description": "Claim border provinces of the least friendly neighbour.",
+      "x": 7,
+      "y": 5,
+      "days": 70,
+      "prerequisites": [
+        [
+          "path_national_sovereignty"
+        ]
+      ],
+      "effects": [
+        {
+          "claim_rival_border": {
+            "count": 3
+          }
+        },
+        {
+          "add_war_support": 0.05
         }
       ]
     },
@@ -741,20 +799,45 @@
           }
         },
         {
-          "change_law": {
-            "category": "conscription",
-            "law": "extended_service"
+          "add_spirit": "mobilised_nation"
+        },
+        {
+          "add_spirit": "war_economy"
+        },
+        {
+          "add_divisions": {
+            "template": "infantry_division",
+            "count": 4
           }
         },
         {
-          "add_timed_modifier": {
-            "modifier": "manpower_factor",
-            "value": 0.1,
-            "days": 2920
+          "add_equipment": {
+            "family": "infantry_equipment",
+            "amount": 1500
+          }
+        }
+      ]
+    },
+    {
+      "id": "path_lost_territories",
+      "name": "The lost territories",
+      "description": "Claim the border lands of the least friendly neighbour and prepare for war.",
+      "x": 9,
+      "y": 5,
+      "days": 70,
+      "prerequisites": [
+        [
+          "path_national_mobilisation"
+        ]
+      ],
+      "effects": [
+        {
+          "claim_rival_border": {
+            "count": 6
           }
         },
         {
-          "add_war_support": 0.08
+          "wargoal_on_rival": true
         },
         {
           "every_neighbor": {
@@ -927,6 +1010,9 @@
           }
         },
         {
+          "add_spirit": "religious_revival"
+        },
+        {
           "add_interest_group_approval": {
             "group": "religious_establishment",
             "value": 8
@@ -1053,11 +1139,7 @@
           }
         },
         {
-          "add_timed_modifier": {
-            "modifier": "internal_security",
-            "value": 0.1,
-            "days": 1460
-          }
+          "add_spirit": "military_rule"
         },
         {
           "add_unrest": -0.08
@@ -1066,6 +1148,42 @@
           "add_interest_group_approval": {
             "group": "youth_students",
             "value": -6
+          }
+        }
+      ]
+    },
+    {
+      "id": "path_officers_economy",
+      "name": "Officers in the economy",
+      "description": "Army-run companies and a larger defence industry.",
+      "x": 12,
+      "y": 4,
+      "days": 70,
+      "prerequisites": [
+        [
+          "path_martial_order"
+        ]
+      ],
+      "available": {
+        "government_type": "military_junta"
+      },
+      "effects": [
+        {
+          "add_buildings": {
+            "building": "military_factory",
+            "count": 2
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "business",
+            "value": -4
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "military",
+            "value": 4
           }
         }
       ]
@@ -1096,6 +1214,9 @@
           }
         },
         {
+          "remove_spirit": "military_rule"
+        },
+        {
           "add_stability": 0.05
         },
         {
@@ -1118,7 +1239,8 @@
         {
           "add_political_power": 40
         }
-      ]
+      ],
+      "ai_weight": 4
     },
     {
       "id": "pol_institutions",
@@ -1127,22 +1249,22 @@
       "x": 16,
       "y": 1,
       "days": 70,
-      "effects": [
-        {
-          "add_stability": 0.05
-        },
-        {
-          "add_timed_modifier": {
-            "modifier": "corruption",
-            "value": -0.03,
-            "days": 3650
-          }
-        }
-      ],
       "prerequisites": [
         [
           "pol_national_agenda"
         ]
+      ],
+      "effects": [
+        {
+          "add_stability": 0.04
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "corruption",
+            "value": -0.02,
+            "days": 2920
+          }
+        }
       ]
     },
     {
@@ -1152,6 +1274,11 @@
       "x": 18,
       "y": 1,
       "days": 70,
+      "prerequisites": [
+        [
+          "pol_national_agenda"
+        ]
+      ],
       "effects": [
         {
           "add_ruling_party_popularity": 0.02
@@ -1162,26 +1289,25 @@
             "value": 3
           }
         }
-      ],
-      "prerequisites": [
-        [
-          "pol_national_agenda"
-        ]
       ]
     },
     {
       "id": "pol_anti_corruption",
       "name": "Anti-corruption drive",
-      "description": "Audit public contracts and strengthen oversight bodies.",
+      "description": "Audit public contracts and strengthen oversight bodies. Unlocks anti-corruption audits.",
       "x": 16,
       "y": 2,
       "days": 70,
+      "prerequisites": [
+        [
+          "pol_institutions"
+        ]
+      ],
       "effects": [
         {
-          "add_timed_modifier": {
-            "modifier": "corruption",
-            "value": -0.05,
-            "days": 3650
+          "swap_spirit": {
+            "from": "endemic_corruption",
+            "to": "anti_corruption_campaign"
           }
         },
         {
@@ -1196,11 +1322,6 @@
             "value": 3
           }
         }
-      ],
-      "prerequisites": [
-        [
-          "pol_institutions"
-        ]
       ]
     },
     {
@@ -1210,11 +1331,16 @@
       "x": 18,
       "y": 2,
       "days": 70,
+      "prerequisites": [
+        [
+          "pol_public_outreach"
+        ]
+      ],
       "effects": [
         {
           "add_timed_modifier": {
             "modifier": "education_quality",
-            "value": 0.05,
+            "value": 0.03,
             "days": 3650
           }
         },
@@ -1224,20 +1350,112 @@
             "value": 5
           }
         }
-      ],
+      ]
+    },
+    {
+      "id": "pol_civil_service_reform",
+      "name": "Civil service reform",
+      "description": "Hire and promote officials on merit.",
+      "x": 16,
+      "y": 3,
+      "days": 105,
       "prerequisites": [
         [
-          "pol_public_outreach"
+          "pol_anti_corruption"
         ]
+      ],
+      "effects": [
+        {
+          "remove_spirit": "anti_corruption_campaign"
+        },
+        {
+          "add_spirit": "professional_civil_service"
+        },
+        {
+          "add_political_power": -20
+        }
+      ]
+    },
+    {
+      "id": "pol_e_government",
+      "name": "E-government",
+      "description": "Taxes, permits and records online.",
+      "x": 17,
+      "y": 4,
+      "days": 70,
+      "prerequisites": [
+        [
+          "pol_civil_service_reform",
+          "pol_civic_education"
+        ]
+      ],
+      "available": {
+        "treasury_above": 1
+      },
+      "effects": [
+        {
+          "add_spirit": "digital_government"
+        },
+        {
+          "add_buildings": {
+            "building": "data_centre",
+            "count": 1
+          }
+        },
+        {
+          "add_treasury": -1
+        }
+      ]
+    },
+    {
+      "id": "pol_regional_development",
+      "name": "Regional development",
+      "description": "Roads, schools and clinics for the poorer regions.",
+      "x": 19,
+      "y": 3,
+      "days": 70,
+      "prerequisites": [
+        [
+          "pol_civic_education"
+        ]
+      ],
+      "available": {
+        "treasury_above": 1.5
+      },
+      "effects": [
+        {
+          "add_buildings": {
+            "building": "infrastructure",
+            "count": 2
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "rural",
+            "value": 4
+          }
+        },
+        {
+          "add_treasury": -1.5
+        }
       ]
     },
     {
       "id": "pol_reconciliation",
       "name": "National reconciliation",
       "description": "Bring regions and communities into the political settlement.",
-      "x": 17,
-      "y": 3,
+      "x": 18,
+      "y": 4,
       "days": 105,
+      "prerequisites": [
+        [
+          "pol_civic_education"
+        ],
+        [
+          "pol_regional_development",
+          "pol_anti_corruption"
+        ]
+      ],
       "effects": [
         {
           "add_unrest": -0.1
@@ -1251,19 +1469,13 @@
             "value": 5
           }
         }
-      ],
-      "prerequisites": [
-        [
-          "pol_anti_corruption",
-          "pol_civic_education"
-        ]
       ]
     },
     {
       "id": "eco_economic_council",
       "name": "Economic council",
       "description": "Convene ministers, employers and unions on the economy.",
-      "x": 23,
+      "x": 24,
       "y": 0,
       "days": 70,
       "effects": [
@@ -1276,7 +1488,8 @@
             "value": 3
           }
         }
-      ]
+      ],
+      "ai_weight": 4
     },
     {
       "id": "eco_fiscal_review",
@@ -1285,37 +1498,44 @@
       "x": 22,
       "y": 1,
       "days": 70,
-      "effects": [
-        {
-          "add_economic_mood": 0.05
-        },
-        {
-          "add_timed_modifier": {
-            "modifier": "tax_efficiency",
-            "value": 0.05,
-            "days": 1825
-          }
-        }
-      ],
       "prerequisites": [
         [
           "eco_economic_council"
         ]
+      ],
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "tax_efficiency",
+            "value": 0.04,
+            "days": 2920
+          }
+        },
+        {
+          "add_economic_mood": 0.03
+        }
       ]
     },
     {
       "id": "eco_infrastructure",
       "name": "Infrastructure programme",
-      "description": "Build and repair roads, rail and ports.",
-      "x": 24,
+      "description": "Build and repair roads, rail and ports. Unlocks public works.",
+      "x": 25,
       "y": 1,
       "days": 70,
+      "prerequisites": [
+        [
+          "eco_economic_council"
+        ]
+      ],
+      "available": {
+        "treasury_above": 2
+      },
       "effects": [
         {
-          "add_timed_modifier": {
-            "modifier": "construction_speed",
-            "value": 0.1,
-            "days": 1825
+          "add_buildings": {
+            "building": "infrastructure",
+            "count": 3
           }
         },
         {
@@ -1323,12 +1543,89 @@
             "group": "rural",
             "value": 4
           }
+        },
+        {
+          "add_treasury": -2
         }
-      ],
+      ]
+    },
+    {
+      "id": "eco_austerity",
+      "name": "Austerity",
+      "description": "Cut spending to balance the budget.",
+      "x": 21,
+      "y": 2,
+      "days": 70,
       "prerequisites": [
         [
-          "eco_economic_council"
+          "eco_fiscal_review"
         ]
+      ],
+      "mutually_exclusive": [
+        "eco_stimulus"
+      ],
+      "effects": [
+        {
+          "add_spirit": "austerity"
+        },
+        {
+          "add_treasury": 3
+        }
+      ]
+    },
+    {
+      "id": "eco_stimulus",
+      "name": "Stimulus",
+      "description": "Borrow to fund public investment.",
+      "x": 23,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "eco_fiscal_review"
+        ]
+      ],
+      "mutually_exclusive": [
+        "eco_austerity"
+      ],
+      "effects": [
+        {
+          "add_spirit": "stimulus"
+        },
+        {
+          "add_buildings": {
+            "building": "civilian_factory",
+            "count": 1
+          }
+        },
+        {
+          "add_treasury": -2
+        }
+      ]
+    },
+    {
+      "id": "eco_balanced_budget",
+      "name": "A balanced budget",
+      "description": "The deficit is closed and borrowing becomes cheaper.",
+      "x": 22,
+      "y": 3,
+      "days": 105,
+      "prerequisites": [
+        [
+          "eco_austerity",
+          "eco_stimulus"
+        ]
+      ],
+      "effects": [
+        {
+          "swap_spirit": {
+            "from": "austerity",
+            "to": "balanced_budget"
+          }
+        },
+        {
+          "remove_spirit": "stimulus"
+        }
       ]
     },
     {
@@ -1336,8 +1633,16 @@
       "name": "Market reform",
       "description": "Open sectors to competition and private investment.",
       "x": 21,
-      "y": 2,
+      "y": 4,
       "days": 70,
+      "prerequisites": [
+        [
+          "eco_balanced_budget"
+        ]
+      ],
+      "mutually_exclusive": [
+        "eco_state_led"
+      ],
       "effects": [
         {
           "add_interest_group_approval": {
@@ -1357,15 +1662,14 @@
             "value": 0.05,
             "days": 3650
           }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "foreign_investment",
+            "value": 0.05,
+            "days": 2920
+          }
         }
-      ],
-      "prerequisites": [
-        [
-          "eco_fiscal_review"
-        ]
-      ],
-      "mutually_exclusive": [
-        "eco_state_led"
       ]
     },
     {
@@ -1373,8 +1677,16 @@
       "name": "State-led development",
       "description": "Direct investment through state enterprises and development banks.",
       "x": 23,
-      "y": 2,
+      "y": 4,
       "days": 70,
+      "prerequisites": [
+        [
+          "eco_balanced_budget"
+        ]
+      ],
+      "mutually_exclusive": [
+        "eco_market_reform"
+      ],
       "effects": [
         {
           "add_interest_group_approval": {
@@ -1394,30 +1706,217 @@
             "value": 0.05,
             "days": 3650
           }
+        },
+        {
+          "add_buildings": {
+            "building": "civilian_factory",
+            "count": 1
+          }
         }
-      ],
+      ]
+    },
+    {
+      "id": "eco_industrial_parks",
+      "name": "Industrial parks",
+      "description": "Serviced land and tax breaks for new factories.",
+      "x": 25,
+      "y": 2,
+      "days": 70,
       "prerequisites": [
         [
-          "eco_fiscal_review"
+          "eco_infrastructure"
         ]
       ],
-      "mutually_exclusive": [
-        "eco_market_reform"
+      "available": {
+        "treasury_above": 2
+      },
+      "effects": [
+        {
+          "add_buildings": {
+            "building": "civilian_factory",
+            "count": 2
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "foreign_investment",
+            "value": 0.03,
+            "days": 2920
+          }
+        },
+        {
+          "add_treasury": -2
+        }
+      ]
+    },
+    {
+      "id": "eco_ports_and_airports",
+      "name": "Ports and airports",
+      "description": "Modern ports and airports for trade.",
+      "x": 27,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "eco_infrastructure"
+        ]
+      ],
+      "effects": [
+        {
+          "add_buildings": {
+            "building": "port",
+            "count": 1
+          }
+        },
+        {
+          "add_buildings": {
+            "building": "air_base",
+            "count": 1
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "trade_efficiency",
+            "value": 0.03,
+            "days": 2920
+          }
+        }
+      ]
+    },
+    {
+      "id": "eco_export_drive",
+      "name": "Export drive",
+      "description": "Manufacturing for export markets.",
+      "x": 25,
+      "y": 3,
+      "days": 70,
+      "prerequisites": [
+        [
+          "eco_industrial_parks"
+        ]
+      ],
+      "effects": [
+        {
+          "add_spirit": "export_led_growth"
+        },
+        {
+          "add_buildings": {
+            "building": "civilian_factory",
+            "count": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "eco_energy_security",
+      "name": "Energy security",
+      "description": "Diversify energy supplies and build new power plants.",
+      "x": 27,
+      "y": 3,
+      "days": 70,
+      "prerequisites": [
+        [
+          "eco_ports_and_airports"
+        ]
+      ],
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "energy_cost",
+            "value": -0.04,
+            "days": 3650
+          }
+        },
+        {
+          "add_buildings": {
+            "building": "renewable_plant",
+            "count": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "eco_refining",
+      "name": "Fuel refining",
+      "description": "Refine fuel at home instead of importing it.",
+      "x": 26,
+      "y": 4,
+      "days": 70,
+      "prerequisites": [
+        [
+          "eco_energy_security",
+          "eco_export_drive"
+        ]
+      ],
+      "effects": [
+        {
+          "add_buildings": {
+            "building": "refinery",
+            "count": 1
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "energy_cost",
+            "value": -0.02,
+            "days": 3650
+          }
+        }
+      ]
+    },
+    {
+      "id": "eco_agriculture",
+      "name": "Modern agriculture",
+      "description": "Credit, irrigation and machinery for farmers.",
+      "x": 24,
+      "y": 4,
+      "days": 70,
+      "prerequisites": [
+        [
+          "eco_export_drive",
+          "eco_balanced_budget"
+        ]
+      ],
+      "effects": [
+        {
+          "add_interest_group_approval": {
+            "group": "rural",
+            "value": 6
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "gdp_growth",
+            "value": 0.002,
+            "days": 2920
+          }
+        }
       ]
     },
     {
       "id": "eco_innovation",
       "name": "Innovation agenda",
       "description": "Fund research and new industries.",
-      "x": 25,
-      "y": 2,
+      "x": 27,
+      "y": 5,
       "days": 70,
+      "prerequisites": [
+        [
+          "eco_refining"
+        ]
+      ],
       "effects": [
         {
-          "add_timed_modifier": {
-            "modifier": "research_speed",
-            "value": 0.05,
-            "days": 3650
+          "add_research_bonus": {
+            "category": "economy_digital",
+            "value": 0.2,
+            "uses": 2
+          }
+        },
+        {
+          "add_buildings": {
+            "building": "data_centre",
+            "count": 1
           }
         },
         {
@@ -1426,33 +1925,31 @@
             "value": 3
           }
         }
-      ],
-      "prerequisites": [
-        [
-          "eco_infrastructure"
-        ]
       ]
     },
     {
-      "id": "eco_energy_security",
-      "name": "Energy security",
-      "description": "Diversify energy supplies and storage.",
-      "x": 24,
-      "y": 3,
+      "id": "eco_sovereign_fund",
+      "name": "Sovereign wealth fund",
+      "description": "Save resource revenue for future generations.",
+      "x": 25,
+      "y": 5,
       "days": 70,
-      "effects": [
-        {
-          "add_timed_modifier": {
-            "modifier": "energy_cost",
-            "value": -0.05,
-            "days": 3650
-          }
-        }
-      ],
       "prerequisites": [
         [
-          "eco_infrastructure"
+          "eco_agriculture",
+          "eco_refining"
         ]
+      ],
+      "available": {
+        "treasury_above": 3
+      },
+      "effects": [
+        {
+          "add_spirit": "sovereign_wealth_fund"
+        },
+        {
+          "add_treasury": -3
+        }
       ]
     },
     {
@@ -1460,8 +1957,14 @@
       "name": "Long-term growth plan",
       "description": "Commit to a ten-year plan for growth.",
       "x": 22,
-      "y": 3,
+      "y": 5,
       "days": 105,
+      "prerequisites": [
+        [
+          "eco_market_reform",
+          "eco_state_led"
+        ]
+      ],
       "effects": [
         {
           "add_economic_mood": 0.1
@@ -1469,23 +1972,23 @@
         {
           "add_timed_modifier": {
             "modifier": "gdp_growth",
-            "value": 0.005,
+            "value": 0.003,
             "days": 3650
           }
+        },
+        {
+          "add_buildings": {
+            "building": "civilian_factory",
+            "count": 2
+          }
         }
-      ],
-      "prerequisites": [
-        [
-          "eco_market_reform",
-          "eco_state_led"
-        ]
       ]
     },
     {
       "id": "mil_defence_review",
       "name": "Defence review",
       "description": "Review threats, forces and budgets.",
-      "x": 28,
+      "x": 31,
       "y": 0,
       "days": 70,
       "effects": [
@@ -1498,15 +2001,24 @@
             "value": 3
           }
         }
-      ]
+      ],
+      "ai_weight": 4
     },
     {
       "id": "mil_professional_forces",
       "name": "Professional forces",
       "description": "Move to an all-volunteer professional military.",
-      "x": 27,
+      "x": 29,
       "y": 1,
       "days": 70,
+      "prerequisites": [
+        [
+          "mil_defence_review"
+        ]
+      ],
+      "mutually_exclusive": [
+        "mil_mass_reserve"
+      ],
       "effects": [
         {
           "change_law": {
@@ -1527,23 +2039,23 @@
             "value": 5
           }
         }
-      ],
+      ]
+    },
+    {
+      "id": "mil_mass_reserve",
+      "name": "Mass reserve",
+      "description": "Keep universal service and a large trained reserve. Unlocks mobilisation of the reserves.",
+      "x": 31,
+      "y": 1,
+      "days": 70,
       "prerequisites": [
         [
           "mil_defence_review"
         ]
       ],
       "mutually_exclusive": [
-        "mil_mass_reserve"
-      ]
-    },
-    {
-      "id": "mil_mass_reserve",
-      "name": "Mass reserve",
-      "description": "Keep universal service and a large trained reserve.",
-      "x": 29,
-      "y": 1,
-      "days": 70,
+        "mil_professional_forces"
+      ],
       "effects": [
         {
           "change_law": {
@@ -1554,7 +2066,7 @@
         {
           "add_timed_modifier": {
             "modifier": "manpower_factor",
-            "value": 0.1,
+            "value": 0.08,
             "days": 3650
           }
         },
@@ -1570,46 +2082,20 @@
             "value": -5
           }
         }
-      ],
-      "prerequisites": [
-        [
-          "mil_defence_review"
-        ]
-      ],
-      "mutually_exclusive": [
-        "mil_professional_forces"
-      ]
-    },
-    {
-      "id": "mil_modernisation",
-      "name": "Force modernisation",
-      "description": "Replace ageing equipment.",
-      "x": 28,
-      "y": 2,
-      "days": 70,
-      "effects": [
-        {
-          "add_timed_modifier": {
-            "modifier": "army_attack",
-            "value": 0.05,
-            "days": 3650
-          }
-        }
-      ],
-      "prerequisites": [
-        [
-          "mil_professional_forces",
-          "mil_mass_reserve"
-        ]
       ]
     },
     {
       "id": "mil_intelligence",
       "name": "Intelligence reform",
       "description": "Reorganise and fund the intelligence services.",
-      "x": 30,
-      "y": 2,
+      "x": 33,
+      "y": 1,
       "days": 70,
+      "prerequisites": [
+        [
+          "mil_defence_review"
+        ]
+      ],
       "effects": [
         {
           "add_timed_modifier": {
@@ -1624,20 +2110,77 @@
             "value": 5
           }
         }
-      ],
+      ]
+    },
+    {
+      "id": "mil_modernisation",
+      "name": "Force modernisation",
+      "description": "Replace ageing equipment.",
+      "x": 30,
+      "y": 2,
+      "days": 70,
       "prerequisites": [
         [
-          "mil_defence_review"
+          "mil_professional_forces",
+          "mil_mass_reserve"
         ]
+      ],
+      "available": {
+        "treasury_above": 1.5
+      },
+      "effects": [
+        {
+          "add_equipment": {
+            "family": "infantry_equipment",
+            "amount": 800
+          }
+        },
+        {
+          "add_research_bonus": {
+            "category": "infantry",
+            "value": 0.2,
+            "uses": 2
+          }
+        },
+        {
+          "add_treasury": -1.5
+        }
+      ]
+    },
+    {
+      "id": "mil_defence_industry",
+      "name": "Defence industry",
+      "description": "Build arms and ammunition at home. Unlocks arms orders.",
+      "x": 32,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "mil_professional_forces",
+          "mil_mass_reserve"
+        ]
+      ],
+      "effects": [
+        {
+          "add_buildings": {
+            "building": "military_factory",
+            "count": 2
+          }
+        }
       ]
     },
     {
       "id": "mil_border_security",
       "name": "Border security",
       "description": "Tighten control of borders and ports.",
-      "x": 30,
-      "y": 3,
+      "x": 34,
+      "y": 2,
       "days": 70,
+      "prerequisites": [
+        [
+          "mil_intelligence"
+        ]
+      ],
       "effects": [
         {
           "add_timed_modifier": {
@@ -1648,39 +2191,248 @@
         },
         {
           "add_unrest": -0.03
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "army_defence",
+            "value": 0.02,
+            "days": 2920
+          }
         }
-      ],
+      ]
+    },
+    {
+      "id": "mil_air_force",
+      "name": "Air force",
+      "description": "New aircraft and air bases.",
+      "x": 29,
+      "y": 3,
+      "days": 70,
       "prerequisites": [
         [
-          "mil_intelligence"
+          "mil_modernisation"
         ]
+      ],
+      "effects": [
+        {
+          "add_buildings": {
+            "building": "air_base",
+            "count": 1
+          }
+        },
+        {
+          "add_research_bonus": {
+            "category": "air_drones",
+            "value": 0.2,
+            "uses": 2
+          }
+        }
+      ]
+    },
+    {
+      "id": "mil_armour",
+      "name": "Armoured units",
+      "description": "Tanks and armoured vehicles.",
+      "x": 31,
+      "y": 3,
+      "days": 70,
+      "prerequisites": [
+        [
+          "mil_modernisation",
+          "mil_defence_industry"
+        ]
+      ],
+      "effects": [
+        {
+          "add_research_bonus": {
+            "category": "armour",
+            "value": 0.2,
+            "uses": 2
+          }
+        },
+        {
+          "add_divisions": {
+            "template": "motorised_division",
+            "count": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "mil_navy",
+      "name": "Coastal navy",
+      "description": "Patrol boats and a naval base.",
+      "x": 33,
+      "y": 3,
+      "days": 70,
+      "prerequisites": [
+        [
+          "mil_defence_industry",
+          "mil_border_security"
+        ]
+      ],
+      "effects": [
+        {
+          "add_buildings": {
+            "building": "port",
+            "count": 1
+          }
+        },
+        {
+          "add_research_bonus": {
+            "category": "naval",
+            "value": 0.2,
+            "uses": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "mil_special_forces",
+      "name": "Special forces",
+      "description": "A special operations command.",
+      "x": 30,
+      "y": 4,
+      "days": 70,
+      "prerequisites": [
+        [
+          "mil_air_force",
+          "mil_armour"
+        ]
+      ],
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "army_attack",
+            "value": 0.03,
+            "days": 2920
+          }
+        },
+        {
+          "add_divisions": {
+            "template": "infantry_division",
+            "count": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "mil_doctrine",
+      "name": "A new doctrine",
+      "description": "Rewrite the doctrine for modern war.",
+      "x": 32,
+      "y": 4,
+      "days": 70,
+      "prerequisites": [
+        [
+          "mil_armour",
+          "mil_navy"
+        ]
+      ],
+      "effects": [
+        {
+          "add_research_bonus": {
+            "category": "doctrine",
+            "value": 0.25,
+            "uses": 2
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "army_org",
+            "value": 0.03,
+            "days": 2920
+          }
+        }
+      ]
+    },
+    {
+      "id": "mil_armed_neutrality",
+      "name": "Armed neutrality",
+      "description": "Strong defences and no alliances.",
+      "x": 34,
+      "y": 4,
+      "days": 70,
+      "prerequisites": [
+        [
+          "mil_navy",
+          "mil_border_security"
+        ]
+      ],
+      "mutually_exclusive": [
+        "dip_regional_cooperation"
+      ],
+      "effects": [
+        {
+          "add_spirit": "armed_neutrality"
+        }
+      ]
+    },
+    {
+      "id": "mil_peacekeepers",
+      "name": "Peacekeepers",
+      "description": "Send units on UN peacekeeping missions for experience and standing.",
+      "x": 31,
+      "y": 5,
+      "days": 70,
+      "prerequisites": [
+        [
+          "mil_special_forces",
+          "mil_doctrine"
+        ]
+      ],
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "army_org",
+            "value": 0.02,
+            "days": 2920
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "diplomatic_reputation",
+            "value": 0.03,
+            "days": 2920
+          }
+        }
       ]
     },
     {
       "id": "dip_foreign_policy_review",
       "name": "Foreign policy review",
       "description": "Define the country's place in the world.",
-      "x": 33,
+      "x": 38,
       "y": 0,
       "days": 70,
       "effects": [
         {
           "add_political_power": 30
         }
-      ]
+      ],
+      "ai_weight": 4
     },
     {
       "id": "dip_regional_cooperation",
       "name": "Regional cooperation",
       "description": "Seek closer ties and trade with neighbours.",
-      "x": 32,
+      "x": 37,
       "y": 1,
       "days": 70,
+      "prerequisites": [
+        [
+          "dip_foreign_policy_review"
+        ]
+      ],
+      "mutually_exclusive": [
+        "dip_independent_course",
+        "mil_armed_neutrality"
+      ],
       "effects": [
         {
           "add_timed_modifier": {
             "modifier": "trade_efficiency",
-            "value": 0.05,
+            "value": 0.04,
             "days": 3650
           }
         },
@@ -1689,24 +2441,37 @@
             "group": "business",
             "value": 3
           }
+        },
+        {
+          "every_neighbor": {
+            "effects": [
+              {
+                "add_opinion": {
+                  "target": "ROOT",
+                  "value": 10,
+                  "days": 1825
+                }
+              }
+            ]
+          }
         }
-      ],
-      "prerequisites": [
-        [
-          "dip_foreign_policy_review"
-        ]
-      ],
-      "mutually_exclusive": [
-        "dip_independent_course"
       ]
     },
     {
       "id": "dip_independent_course",
       "name": "Independent course",
       "description": "Keep freedom of action and limit foreign influence.",
-      "x": 34,
+      "x": 39,
       "y": 1,
       "days": 70,
+      "prerequisites": [
+        [
+          "dip_foreign_policy_review"
+        ]
+      ],
+      "mutually_exclusive": [
+        "dip_regional_cooperation"
+      ],
       "effects": [
         {
           "add_timed_modifier": {
@@ -1721,37 +2486,377 @@
             "value": 3
           }
         }
-      ],
+      ]
+    },
+    {
+      "id": "dip_trade_agreements",
+      "name": "Trade agreements",
+      "description": "Free-trade agreements with the main partners.",
+      "x": 36,
+      "y": 2,
+      "days": 70,
       "prerequisites": [
         [
-          "dip_foreign_policy_review"
+          "dip_regional_cooperation"
         ]
       ],
-      "mutually_exclusive": [
-        "dip_regional_cooperation"
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "trade_efficiency",
+            "value": 0.04,
+            "days": 3650
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "foreign_investment",
+            "value": 0.04,
+            "days": 2920
+          }
+        }
       ]
     },
     {
       "id": "dip_international_standing",
       "name": "International standing",
       "description": "Raise the country's profile in international bodies.",
-      "x": 33,
+      "x": 38,
       "y": 2,
       "days": 70,
-      "effects": [
-        {
-          "add_timed_modifier": {
-            "modifier": "international_opinion",
-            "value": 5,
-            "days": 3650
-          }
-        }
-      ],
       "prerequisites": [
         [
           "dip_regional_cooperation",
           "dip_independent_course"
         ]
+      ],
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "diplomatic_reputation",
+            "value": 0.05,
+            "days": 3650
+          }
+        }
+      ]
+    },
+    {
+      "id": "dip_arms_purchases",
+      "name": "Arms purchases abroad",
+      "description": "Buy modern equipment from foreign suppliers.",
+      "x": 40,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "dip_independent_course"
+        ]
+      ],
+      "available": {
+        "treasury_above": 2
+      },
+      "effects": [
+        {
+          "add_equipment": {
+            "family": "infantry_equipment",
+            "amount": 1000
+          }
+        },
+        {
+          "add_treasury": -2
+        }
+      ]
+    },
+    {
+      "id": "dip_development_aid",
+      "name": "Development aid",
+      "description": "Attract loans and grants for development.",
+      "x": 37,
+      "y": 3,
+      "days": 70,
+      "prerequisites": [
+        [
+          "dip_trade_agreements",
+          "dip_international_standing"
+        ]
+      ],
+      "effects": [
+        {
+          "add_treasury": 3
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "foreign_influence_resistance",
+            "value": -0.05,
+            "days": 2920
+          }
+        }
+      ]
+    },
+    {
+      "id": "dip_diaspora",
+      "name": "The diaspora",
+      "description": "Courting citizens abroad for investment and remittances.",
+      "x": 39,
+      "y": 3,
+      "days": 70,
+      "prerequisites": [
+        [
+          "dip_international_standing",
+          "dip_arms_purchases"
+        ]
+      ],
+      "effects": [
+        {
+          "add_treasury": 1.5
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "foreign_investment",
+            "value": 0.03,
+            "days": 2920
+          }
+        }
+      ]
+    },
+    {
+      "id": "dip_regional_leadership",
+      "name": "Regional leadership",
+      "description": "Lead the region's diplomacy and mediate its disputes.",
+      "x": 38,
+      "y": 4,
+      "days": 70,
+      "prerequisites": [
+        [
+          "dip_development_aid",
+          "dip_diaspora"
+        ]
+      ],
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "diplomatic_reputation",
+            "value": 0.05,
+            "days": 3650
+          }
+        },
+        {
+          "add_political_power": 40
+        }
+      ]
+    },
+    {
+      "id": "soc_social_policy",
+      "name": "Social policy",
+      "description": "Set the government's priorities for health, schools and science.",
+      "x": 43,
+      "y": 0,
+      "days": 70,
+      "effects": [
+        {
+          "add_political_power": 20
+        }
+      ],
+      "ai_weight": 3
+    },
+    {
+      "id": "soc_public_health",
+      "name": "Public health",
+      "description": "Clinics, vaccination and clean water.",
+      "x": 42,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "soc_social_policy"
+        ]
+      ],
+      "available": {
+        "treasury_above": 1
+      },
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "health_outcomes",
+            "value": 0.04,
+            "days": 3650
+          }
+        },
+        {
+          "add_treasury": -1
+        }
+      ]
+    },
+    {
+      "id": "soc_schools",
+      "name": "Schools for all",
+      "description": "More schools and teachers.",
+      "x": 44,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "soc_social_policy"
+        ]
+      ],
+      "available": {
+        "treasury_above": 1
+      },
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "education_quality",
+            "value": 0.04,
+            "days": 3650
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "youth_students",
+            "value": 3
+          }
+        },
+        {
+          "add_treasury": -1
+        }
+      ]
+    },
+    {
+      "id": "soc_universal_healthcare",
+      "name": "Universal healthcare",
+      "description": "Public health insurance for everyone.",
+      "x": 42,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "soc_public_health"
+        ]
+      ],
+      "effects": [
+        {
+          "add_spirit": "universal_healthcare"
+        },
+        {
+          "change_law": {
+            "category": "healthcare",
+            "law": "social_insurance"
+          }
+        }
+      ]
+    },
+    {
+      "id": "soc_universities",
+      "name": "Research universities",
+      "description": "Fund universities and laboratories. Unlocks research grants.",
+      "x": 44,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "soc_schools"
+        ]
+      ],
+      "effects": [
+        {
+          "add_spirit": "science_drive"
+        },
+        {
+          "add_research_bonus": {
+            "category": "industry_energy",
+            "value": 0.2,
+            "uses": 2
+          }
+        }
+      ]
+    },
+    {
+      "id": "soc_housing",
+      "name": "Housing programme",
+      "description": "Affordable housing in the growing cities.",
+      "x": 43,
+      "y": 3,
+      "days": 70,
+      "prerequisites": [
+        [
+          "soc_universal_healthcare",
+          "soc_universities"
+        ]
+      ],
+      "available": {
+        "treasury_above": 1.5
+      },
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "construction_speed",
+            "value": 0.05,
+            "days": 2920
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "urban_middle_class",
+            "value": 4
+          }
+        },
+        {
+          "add_treasury": -1.5
+        }
+      ]
+    },
+    {
+      "id": "soc_keep_talent",
+      "name": "Keep the talent",
+      "description": "Better pay for researchers and doctors so they stay.",
+      "x": 45,
+      "y": 3,
+      "days": 70,
+      "prerequisites": [
+        [
+          "soc_universities"
+        ]
+      ],
+      "effects": [
+        {
+          "remove_spirit": "brain_drain"
+        },
+        {
+          "add_research_bonus": {
+            "category": "electronics_cyber",
+            "value": 0.2,
+            "uses": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "soc_digital_society",
+      "name": "Digital society",
+      "description": "Broadband and digital skills across the country.",
+      "x": 44,
+      "y": 4,
+      "days": 70,
+      "prerequisites": [
+        [
+          "soc_housing",
+          "soc_keep_talent"
+        ]
+      ],
+      "effects": [
+        {
+          "add_buildings": {
+            "building": "data_centre",
+            "count": 1
+          }
+        },
+        {
+          "add_research_bonus": {
+            "category": "economy_digital",
+            "value": 0.2,
+            "uses": 1
+          }
+        }
       ]
     }
   ]
