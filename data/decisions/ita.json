@@ -1,0 +1,42 @@
+{
+  "categories": [
+    {
+      "id": "ita_projects",
+      "name": "Italian state projects",
+      "description": "Projects that the national focuses open up."
+    }
+  ],
+  "decisions": [
+    {
+      "id": "ita_southern_investment",
+      "name": "Investment in the south",
+      "description": "Funds for a southern region.",
+      "category": "ita_projects",
+      "countries": [
+        "ITA"
+      ],
+      "visible": {
+        "has_completed_focus": "ita_southern_development"
+      },
+      "available": {
+        "treasury_above": 1
+      },
+      "cost": {
+        "political_power": 30
+      },
+      "effects": [
+        {
+          "add_treasury": -1
+        },
+        {
+          "add_buildings": {
+            "building": "civilian_factory",
+            "count": 1
+          }
+        }
+      ],
+      "cooldown_days": 365,
+      "ai_weight": 2
+    }
+  ]
+}

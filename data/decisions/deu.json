@@ -1,0 +1,73 @@
+{
+  "categories": [
+    {
+      "id": "deu_projects",
+      "name": "German federal projects",
+      "description": "Projects that the national focuses open up."
+    }
+  ],
+  "decisions": [
+    {
+      "id": "deu_wind_farm",
+      "name": "Offshore wind farm",
+      "description": "Fund an offshore wind farm in the North Sea.",
+      "category": "deu_projects",
+      "countries": [
+        "DEU"
+      ],
+      "visible": {
+        "has_completed_focus": "deu_energiewende"
+      },
+      "available": {
+        "treasury_above": 1
+      },
+      "cost": {
+        "political_power": 30
+      },
+      "effects": [
+        {
+          "add_treasury": -1
+        },
+        {
+          "add_buildings": {
+            "building": "renewable_plant",
+            "count": 1
+          }
+        }
+      ],
+      "cooldown_days": 365,
+      "ai_weight": 2
+    },
+    {
+      "id": "deu_procurement",
+      "name": "Bundeswehr procurement",
+      "description": "A large order from the special fund.",
+      "category": "deu_projects",
+      "countries": [
+        "DEU"
+      ],
+      "visible": {
+        "has_completed_focus": "deu_zeitenwende"
+      },
+      "available": {
+        "treasury_above": 2
+      },
+      "cost": {
+        "political_power": 30
+      },
+      "effects": [
+        {
+          "add_treasury": -2
+        },
+        {
+          "add_equipment": {
+            "family": "infantry_equipment",
+            "amount": 1000
+          }
+        }
+      ],
+      "cooldown_days": 365,
+      "ai_weight": 2
+    }
+  ]
+}

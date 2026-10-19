@@ -1,0 +1,74 @@
+{
+  "categories": [
+    {
+      "id": "gbr_projects",
+      "name": "British state projects",
+      "description": "Projects that the national focuses open up."
+    }
+  ],
+  "decisions": [
+    {
+      "id": "gbr_offshore_wind",
+      "name": "Offshore wind farm",
+      "description": "Fund an offshore wind farm in the North Sea.",
+      "category": "gbr_projects",
+      "countries": [
+        "GBR"
+      ],
+      "visible": {
+        "has_completed_focus": "gbr_offshore_wind_programme"
+      },
+      "available": {
+        "treasury_above": 1
+      },
+      "cost": {
+        "political_power": 30
+      },
+      "effects": [
+        {
+          "add_treasury": -1
+        },
+        {
+          "add_buildings": {
+            "building": "renewable_plant",
+            "count": 1
+          }
+        }
+      ],
+      "cooldown_days": 365,
+      "ai_weight": 2
+    },
+    {
+      "id": "gbr_frigate_order",
+      "name": "Order frigates",
+      "description": "Order new frigates for the Royal Navy.",
+      "category": "gbr_projects",
+      "countries": [
+        "GBR"
+      ],
+      "visible": {
+        "has_completed_focus": "gbr_royal_navy"
+      },
+      "available": {
+        "treasury_above": 1
+      },
+      "cost": {
+        "political_power": 30
+      },
+      "effects": [
+        {
+          "add_treasury": -1
+        },
+        {
+          "add_research_bonus": {
+            "category": "naval",
+            "value": 0.15,
+            "uses": 1
+          }
+        }
+      ],
+      "cooldown_days": 540,
+      "ai_weight": 2
+    }
+  ]
+}

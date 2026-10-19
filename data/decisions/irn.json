@@ -1,0 +1,71 @@
+{
+  "categories": [
+    {
+      "id": "irn_projects",
+      "name": "Iranian state projects",
+      "description": "Projects that the national focuses open up."
+    }
+  ],
+  "decisions": [
+    {
+      "id": "irn_south_pars_phase",
+      "name": "Open a South Pars phase",
+      "description": "Bring another phase of the gas field into production.",
+      "category": "irn_projects",
+      "countries": [
+        "IRN"
+      ],
+      "visible": {
+        "has_completed_focus": "irn_south_pars"
+      },
+      "available": {
+        "treasury_above": 1
+      },
+      "cost": {
+        "political_power": 30
+      },
+      "effects": [
+        {
+          "add_treasury": -1
+        },
+        {
+          "add_buildings": {
+            "building": "refinery",
+            "count": 1
+          }
+        }
+      ],
+      "cooldown_days": 365,
+      "ai_weight": 2
+    },
+    {
+      "id": "irn_missile_test",
+      "name": "Missile test",
+      "description": "Test a new missile.",
+      "category": "irn_projects",
+      "countries": [
+        "IRN"
+      ],
+      "visible": {
+        "has_completed_focus": "irn_missile_forces"
+      },
+      "cost": {
+        "political_power": 25
+      },
+      "effects": [
+        {
+          "add_war_support": 0.02
+        },
+        {
+          "add_research_bonus": {
+            "category": "artillery_missiles",
+            "value": 0.15,
+            "uses": 1
+          }
+        }
+      ],
+      "cooldown_days": 365,
+      "ai_weight": 2
+    }
+  ]
+}

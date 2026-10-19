@@ -1,0 +1,67 @@
+{
+  "categories": [
+    {
+      "id": "esp_projects",
+      "name": "Spanish state projects",
+      "description": "Projects that the national focuses open up."
+    }
+  ],
+  "decisions": [
+    {
+      "id": "esp_new_ave_line",
+      "name": "Open a high-speed line",
+      "description": "A new AVE line to another region.",
+      "category": "esp_projects",
+      "countries": [
+        "ESP"
+      ],
+      "visible": {
+        "has_completed_focus": "esp_ave_network"
+      },
+      "available": {
+        "treasury_above": 1
+      },
+      "cost": {
+        "political_power": 30
+      },
+      "effects": [
+        {
+          "add_treasury": -1
+        },
+        {
+          "add_buildings": {
+            "building": "infrastructure",
+            "count": 2
+          }
+        }
+      ],
+      "cooldown_days": 365,
+      "ai_weight": 2
+    },
+    {
+      "id": "esp_solar_auction",
+      "name": "Solar and wind auction",
+      "description": "Auction new renewable capacity.",
+      "category": "esp_projects",
+      "countries": [
+        "ESP"
+      ],
+      "visible": {
+        "has_completed_focus": "esp_renewables"
+      },
+      "cost": {
+        "political_power": 25
+      },
+      "effects": [
+        {
+          "add_buildings": {
+            "building": "renewable_plant",
+            "count": 1
+          }
+        }
+      ],
+      "cooldown_days": 365,
+      "ai_weight": 2
+    }
+  ]
+}

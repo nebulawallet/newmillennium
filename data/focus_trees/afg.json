@@ -1,0 +1,1501 @@
+{
+  "id": "afg",
+  "name": "Afghanistan",
+  "countries": [
+    "AFG"
+  ],
+  "note": "Afghanistan in the style of the Russian model tree: the government of the day as the historical path (the Emirate, the Islamic Republic from 2001, the Emirate again from 2021), a broad-coalition alternative and a junta; branches for each period and for the economy (roads, irrigation, alternative crops). Sourced starting spirits in data/spirits/afg.json. Wars stay in the scripted conflict events.",
+  "source": [
+    {
+      "url": "https://en.wikipedia.org/wiki/Taliban_government_(1996–2001)",
+      "title": "Wikipedia: Taliban government (1996–2001)",
+      "accessed": "2026-10-19"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Northern_Alliance",
+      "title": "Wikipedia: Northern Alliance",
+      "accessed": "2026-10-19"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/United_Nations_Security_Council_Resolution_1267",
+      "title": "Wikipedia: United Nations Security Council Resolution 1267",
+      "accessed": "2026-10-19"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Opium_production_in_Afghanistan",
+      "title": "Wikipedia: Opium production in Afghanistan",
+      "accessed": "2026-10-19"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/2001_United_States_invasion_of_Afghanistan",
+      "title": "Wikipedia: 2001 United States invasion of Afghanistan",
+      "accessed": "2026-10-19"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Bonn_Agreement_(Afghanistan)",
+      "title": "Wikipedia: Bonn Agreement (Afghanistan)",
+      "accessed": "2026-10-19"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Afghan_National_Army",
+      "title": "Wikipedia: Afghan National Army",
+      "accessed": "2026-10-19"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/International_Security_Assistance_Force",
+      "title": "Wikipedia: International Security Assistance Force",
+      "accessed": "2026-10-19"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Fall_of_Kabul_(2021)",
+      "title": "Wikipedia: Fall of Kabul (2021)",
+      "accessed": "2026-10-19"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Doha_Agreement_(2020)",
+      "title": "Wikipedia: Doha Agreement (2020)",
+      "accessed": "2026-10-19"
+    }
+  ],
+  "confidence": "verified",
+  "focuses": [
+    {
+      "id": "afg_question_of_power",
+      "name": "Who rules Afghanistan",
+      "description": "Which force governs Afghanistan.",
+      "x": 3,
+      "y": 0,
+      "days": 70,
+      "effects": [
+        {
+          "add_political_power": 30
+        }
+      ],
+      "ai_weight": 5
+    },
+    {
+      "id": "afg_steady_course",
+      "name": "The government of the day",
+      "description": "Afghanistan is governed as it historically was in each period: the Islamic Emirate until 2001, the Islamic Republic until 2021, then the Emirate again.",
+      "x": 0,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "afg_question_of_power"
+        ]
+      ],
+      "mutually_exclusive": [
+        "afg_broad_coalition",
+        "afg_army_steps_in"
+      ],
+      "available": {
+        "follows_history": true
+      },
+      "effects": [
+        {
+          "add_stability": 0.04
+        },
+        {
+          "add_political_power": 40
+        }
+      ],
+      "ai_weight": 20
+    },
+    {
+      "id": "afg_broad_coalition",
+      "name": "A broad coalition",
+      "description": "Regional and ethnic parties form a broad coalition.",
+      "x": 2,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "afg_question_of_power"
+        ]
+      ],
+      "mutually_exclusive": [
+        "afg_steady_course",
+        "afg_army_steps_in"
+      ],
+      "available": {
+        "all": [
+          {
+            "any": [
+              {
+                "follows_history": false
+              },
+              {
+                "is_player": true
+              }
+            ]
+          },
+          {
+            "has_party_of_group": "non_aligned"
+          },
+          {
+            "not": {
+              "ruling_ideology_group": "non_aligned"
+            }
+          },
+          {
+            "any": [
+              {
+                "stability_below": 0.4
+              },
+              {
+                "unrest_above": 0.3
+              }
+            ]
+          }
+        ]
+      },
+      "effects": [
+        {
+          "leave_history": true
+        },
+        {
+          "add_ideology_support": {
+            "group": "non_aligned",
+            "value": 0.04
+          }
+        }
+      ],
+      "ai_weight": 0.3
+    },
+    {
+      "id": "afg_broad_coalition_build",
+      "name": "Regional leaders",
+      "description": "Leaders of the regions join the coalition.",
+      "x": 2,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "afg_broad_coalition"
+        ]
+      ],
+      "effects": [
+        {
+          "add_ideology_support": {
+            "group": "non_aligned",
+            "value": 0.05
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "minorities",
+            "value": 6
+          }
+        }
+      ]
+    },
+    {
+      "id": "afg_broad_coalition_government",
+      "name": "A coalition government",
+      "description": "The most popular non-aligned party leads the government.",
+      "x": 2,
+      "y": 3,
+      "days": 105,
+      "prerequisites": [
+        [
+          "afg_broad_coalition_build"
+        ]
+      ],
+      "available": {
+        "ideology_group_support_above": {
+          "group": "non_aligned",
+          "value": 0.15
+        }
+      },
+      "effects": [
+        {
+          "install_government": {
+            "ideology": "non_aligned"
+          }
+        },
+        {
+          "add_stability": -0.05
+        }
+      ]
+    },
+    {
+      "id": "afg_army_steps_in",
+      "name": "The army steps in",
+      "description": "With the state in crisis, the generals prepare to take over.",
+      "x": 4,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "afg_question_of_power"
+        ]
+      ],
+      "mutually_exclusive": [
+        "afg_steady_course",
+        "afg_broad_coalition"
+      ],
+      "available": {
+        "all": [
+          {
+            "any": [
+              {
+                "follows_history": false
+              },
+              {
+                "is_player": true
+              }
+            ]
+          },
+          {
+            "stability_below": 0.3
+          },
+          {
+            "any": [
+              {
+                "unrest_above": 0.4
+              },
+              {
+                "ig_approval_below": {
+                  "group": "military",
+                  "value": 35
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "effects": [
+        {
+          "leave_history": true
+        },
+        {
+          "add_interest_group_influence": {
+            "group": "military",
+            "value": 0.08
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "military",
+            "value": 5
+          }
+        }
+      ],
+      "ai_weight": 0.2
+    },
+    {
+      "id": "afg_military_council",
+      "name": "Military council",
+      "description": "The armed forces remove the government. The coup may fail.",
+      "x": 4,
+      "y": 2,
+      "days": 35,
+      "prerequisites": [
+        [
+          "afg_army_steps_in"
+        ]
+      ],
+      "effects": [
+        {
+          "trigger_coup": {
+            "by": "military",
+            "success_chance": 0.6
+          }
+        }
+      ]
+    },
+    {
+      "id": "afg_martial_order",
+      "name": "Martial order",
+      "description": "A state of emergency, a curfew and military courts.",
+      "x": 4,
+      "y": 3,
+      "days": 70,
+      "prerequisites": [
+        [
+          "afg_military_council"
+        ]
+      ],
+      "available": {
+        "government_type": "military_junta"
+      },
+      "effects": [
+        {
+          "change_law": {
+            "category": "civil_rights",
+            "law": "security_state"
+          }
+        },
+        {
+          "add_spirit": "military_rule"
+        },
+        {
+          "add_unrest": -0.08
+        }
+      ]
+    },
+    {
+      "id": "afg_return_to_barracks",
+      "name": "Return to the barracks",
+      "description": "The council hands power to an elected government.",
+      "x": 4,
+      "y": 4,
+      "days": 140,
+      "prerequisites": [
+        [
+          "afg_martial_order"
+        ]
+      ],
+      "available": {
+        "government_type": "military_junta"
+      },
+      "effects": [
+        {
+          "set_government_type": "transitional_administration"
+        },
+        {
+          "change_law": {
+            "category": "political_freedom",
+            "law": "free_elections"
+          }
+        },
+        {
+          "remove_spirit": "military_rule"
+        },
+        {
+          "add_stability": 0.05
+        }
+      ],
+      "ai_weight": 0.5
+    },
+    {
+      "id": "afg_emirate",
+      "name": "The Emirate",
+      "description": "Run the state of the Islamic Emirate.",
+      "x": 7,
+      "y": 0,
+      "days": 70,
+      "available": {
+        "date_before": "2001-12-07"
+      },
+      "effects": [
+        {
+          "add_political_power": 20
+        }
+      ],
+      "ai_weight": 5
+    },
+    {
+      "id": "afg_emirate_courts",
+      "name": "Religious courts",
+      "description": "Religious courts across the provinces.",
+      "x": 6,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "afg_emirate"
+        ]
+      ],
+      "available": {
+        "date_before": "2001-12-07"
+      },
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "internal_security",
+            "value": 0.05,
+            "days": 1460
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "religious_establishment",
+            "value": 5
+          }
+        }
+      ]
+    },
+    {
+      "id": "afg_northern_offensive",
+      "name": "Offensive in the north",
+      "description": "Press the Northern Alliance in the north-east.",
+      "x": 8,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "afg_emirate"
+        ]
+      ],
+      "available": {
+        "date_before": "2001-12-07"
+      },
+      "effects": [
+        {
+          "add_war_support": 0.05
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "army_attack",
+            "value": 0.02,
+            "days": 730
+          }
+        }
+      ]
+    },
+    {
+      "id": "afg_poppy_ban",
+      "name": "Ban the poppy",
+      "description": "Ban opium poppy cultivation.",
+      "x": 7,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "afg_emirate_courts",
+          "afg_northern_offensive"
+        ]
+      ],
+      "available": {
+        "date_before": "2001-12-07"
+      },
+      "effects": [
+        {
+          "swap_spirit": {
+            "from": "afg_opium_economy",
+            "to": "afg_legal_economy"
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "rural",
+            "value": -8
+          }
+        }
+      ]
+    },
+    {
+      "id": "afg_new_state",
+      "name": "A new state",
+      "description": "Build the state after the fall of the Emirate and the Bonn Agreement of 5 December 2001.",
+      "x": 11,
+      "y": 0,
+      "days": 70,
+      "available": {
+        "date_after": "2001-12-22"
+      },
+      "effects": [
+        {
+          "remove_spirit": "afg_un_sanctions"
+        },
+        {
+          "remove_spirit": "afg_divided_country"
+        },
+        {
+          "add_spirit": "afg_international_aid"
+        },
+        {
+          "add_political_power": 40
+        }
+      ],
+      "ai_weight": 6
+    },
+    {
+      "id": "afg_loya_jirga",
+      "name": "Grand assembly",
+      "description": "A grand assembly chooses the transitional government.",
+      "x": 10,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "afg_new_state"
+        ]
+      ],
+      "effects": [
+        {
+          "add_stability": 0.03
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "minorities",
+            "value": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "afg_donor_support",
+      "name": "Donor support",
+      "description": "Aid from the international donors. Unlocks donor conferences.",
+      "x": 12,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "afg_new_state"
+        ]
+      ],
+      "effects": [
+        {
+          "add_treasury": 2
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "construction_speed",
+            "value": 0.05,
+            "days": 2920
+          }
+        }
+      ]
+    },
+    {
+      "id": "afg_new_constitution",
+      "name": "A new constitution",
+      "description": "An Islamic republic with an elected president.",
+      "x": 10,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "afg_loya_jirga"
+        ]
+      ],
+      "available": {
+        "date_after": "2004-01-01"
+      },
+      "effects": [
+        {
+          "change_law": {
+            "category": "political_freedom",
+            "law": "free_elections"
+          }
+        },
+        {
+          "add_stability": 0.02
+        }
+      ]
+    },
+    {
+      "id": "afg_national_army",
+      "name": "The Afghan National Army",
+      "description": "Recruit and train a new national army.",
+      "x": 12,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "afg_donor_support"
+        ]
+      ],
+      "available": {
+        "date_after": "2002-01-01"
+      },
+      "effects": [
+        {
+          "add_divisions": {
+            "template": "infantry_division",
+            "count": 2
+          }
+        },
+        {
+          "add_equipment": {
+            "family": "infantry_equipment",
+            "amount": 500
+          }
+        }
+      ]
+    },
+    {
+      "id": "afg_counter_insurgency",
+      "name": "Counter-insurgency",
+      "description": "Fight the insurgency in the south and east.",
+      "x": 11,
+      "y": 3,
+      "days": 70,
+      "prerequisites": [
+        [
+          "afg_national_army",
+          "afg_new_constitution"
+        ]
+      ],
+      "available": {
+        "date_after": "2005-01-01"
+      },
+      "effects": [
+        {
+          "add_spirit": "afg_insurgency"
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "internal_security",
+            "value": 0.05,
+            "days": 1460
+          }
+        },
+        {
+          "add_war_support": 0.03
+        }
+      ]
+    },
+    {
+      "id": "afg_security_handover",
+      "name": "Security handover",
+      "description": "Take over security from international forces as they leave by 2014.",
+      "x": 12,
+      "y": 4,
+      "days": 70,
+      "prerequisites": [
+        [
+          "afg_counter_insurgency"
+        ]
+      ],
+      "available": {
+        "date_after": "2014-01-01"
+      },
+      "effects": [
+        {
+          "add_divisions": {
+            "template": "infantry_division",
+            "count": 2
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "army_org",
+            "value": 0.02,
+            "days": 1460
+          }
+        },
+        {
+          "remove_spirit": "afg_international_aid"
+        }
+      ]
+    },
+    {
+      "id": "afg_peace_talks",
+      "name": "Peace talks",
+      "description": "Talks with the Taliban after the Doha agreement of 29 February 2020.",
+      "x": 10,
+      "y": 4,
+      "days": 70,
+      "prerequisites": [
+        [
+          "afg_counter_insurgency"
+        ]
+      ],
+      "available": {
+        "date_after": "2020-02-29"
+      },
+      "effects": [
+        {
+          "remove_spirit": "afg_insurgency"
+        },
+        {
+          "add_stability": 0.02
+        },
+        {
+          "add_war_support": -0.05
+        }
+      ]
+    },
+    {
+      "id": "afg_emirate_restored",
+      "name": "The Emirate restored",
+      "description": "The Taliban govern again after taking Kabul on 15 August 2021.",
+      "x": 16,
+      "y": 0,
+      "days": 70,
+      "available": {
+        "date_after": "2021-08-15"
+      },
+      "effects": [
+        {
+          "add_political_power": 40
+        },
+        {
+          "remove_spirit": "afg_international_aid"
+        }
+      ],
+      "ai_weight": 5
+    },
+    {
+      "id": "afg_emirate_economy",
+      "name": "An economy under isolation",
+      "description": "Run the economy without foreign aid.",
+      "x": 15,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "afg_emirate_restored"
+        ]
+      ],
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "tax_efficiency",
+            "value": 0.04,
+            "days": 2920
+          }
+        },
+        {
+          "add_treasury": 0.3
+        }
+      ]
+    },
+    {
+      "id": "afg_mines_and_minerals",
+      "name": "Mines and minerals",
+      "description": "Contracts for copper, lithium and coal.",
+      "x": 17,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "afg_emirate_restored"
+        ]
+      ],
+      "effects": [
+        {
+          "add_buildings": {
+            "building": "civilian_factory",
+            "count": 1
+          }
+        },
+        {
+          "add_treasury": 0.5
+        },
+        {
+          "add_opinion": {
+            "target": "CHN",
+            "value": 10,
+            "days": 1825
+          }
+        }
+      ]
+    },
+    {
+      "id": "afg_regional_trade",
+      "name": "Trade with neighbours",
+      "description": "Trade routes to Central Asia and Pakistan.",
+      "x": 16,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "afg_emirate_economy",
+          "afg_mines_and_minerals"
+        ]
+      ],
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "trade_efficiency",
+            "value": 0.03,
+            "days": 2920
+          }
+        },
+        {
+          "add_opinion": {
+            "target": "UZB",
+            "value": 10,
+            "days": 1825
+          }
+        },
+        {
+          "add_opinion": {
+            "target": "PAK",
+            "value": 5,
+            "days": 1825
+          }
+        }
+      ]
+    },
+    {
+      "id": "afg_recognition",
+      "name": "Seek recognition",
+      "description": "Seek recognition from other states.",
+      "x": 16,
+      "y": 3,
+      "days": 70,
+      "prerequisites": [
+        [
+          "afg_regional_trade"
+        ]
+      ],
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "diplomatic_reputation",
+            "value": 0.03,
+            "days": 2920
+          }
+        }
+      ]
+    },
+    {
+      "id": "afg_economy_plan",
+      "name": "Rebuild the economy",
+      "description": "Roads, power and farms.",
+      "x": 20,
+      "y": 0,
+      "days": 70,
+      "effects": [
+        {
+          "add_political_power": 20
+        }
+      ],
+      "ai_weight": 4
+    },
+    {
+      "id": "afg_ring_road",
+      "name": "The ring road",
+      "description": "Rebuild the ring road between the cities.",
+      "x": 19,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "afg_economy_plan"
+        ]
+      ],
+      "available": {
+        "treasury_above": 0.5
+      },
+      "effects": [
+        {
+          "add_buildings": {
+            "building": "infrastructure",
+            "count": 3
+          }
+        },
+        {
+          "add_treasury": -0.5
+        }
+      ]
+    },
+    {
+      "id": "afg_irrigation",
+      "name": "Irrigation",
+      "description": "Repair canals and build dams. Unlocks irrigation projects.",
+      "x": 21,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "afg_economy_plan"
+        ]
+      ],
+      "effects": [
+        {
+          "add_interest_group_approval": {
+            "group": "rural",
+            "value": 5
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "gdp_growth",
+            "value": 0.002,
+            "days": 2920
+          }
+        }
+      ]
+    },
+    {
+      "id": "afg_alternative_crops",
+      "name": "Alternative crops",
+      "description": "Help farmers grow other crops instead of poppy.",
+      "x": 20,
+      "y": 2,
+      "days": 140,
+      "prerequisites": [
+        [
+          "afg_irrigation"
+        ]
+      ],
+      "available": {
+        "has_spirit": "afg_opium_economy"
+      },
+      "effects": [
+        {
+          "swap_spirit": {
+            "from": "afg_opium_economy",
+            "to": "afg_legal_economy"
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "rural",
+            "value": -3
+          }
+        }
+      ]
+    },
+    {
+      "id": "afg_power_imports",
+      "name": "Power from the north",
+      "description": "Power lines from Central Asia.",
+      "x": 19,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "afg_ring_road"
+        ]
+      ],
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "energy_cost",
+            "value": -0.03,
+            "days": 2920
+          }
+        },
+        {
+          "add_buildings": {
+            "building": "renewable_plant",
+            "count": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "afg_kabul_growth",
+      "name": "A growing capital",
+      "description": "Housing and services for Kabul.",
+      "x": 19,
+      "y": 3,
+      "days": 70,
+      "prerequisites": [
+        [
+          "afg_power_imports"
+        ]
+      ],
+      "effects": [
+        {
+          "add_buildings": {
+            "building": "infrastructure",
+            "count": 1,
+            "regions": [
+              {
+                "from": "AFG",
+                "adm1": [
+                  "AFG-1762"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "add_buildings": {
+            "building": "civilian_factory",
+            "count": 1,
+            "regions": [
+              {
+                "from": "AFG",
+                "adm1": [
+                  "AFG-1762"
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "afg_telecoms",
+      "name": "Mobile networks",
+      "description": "Mobile phone networks across the country.",
+      "x": 21,
+      "y": 3,
+      "days": 70,
+      "prerequisites": [
+        [
+          "afg_alternative_crops",
+          "afg_power_imports"
+        ]
+      ],
+      "effects": [
+        {
+          "add_buildings": {
+            "building": "data_centre",
+            "count": 1
+          }
+        },
+        {
+          "add_research_bonus": {
+            "category": "economy_digital",
+            "value": 0.15,
+            "uses": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "afg_schools",
+      "name": "Schools",
+      "description": "Schools in every district.",
+      "x": 20,
+      "y": 4,
+      "days": 70,
+      "prerequisites": [
+        [
+          "afg_kabul_growth",
+          "afg_telecoms"
+        ]
+      ],
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "education_quality",
+            "value": 0.04,
+            "days": 3650
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "youth_students",
+            "value": 4
+          }
+        }
+      ]
+    },
+    {
+      "id": "afg_police",
+      "name": "A national police",
+      "description": "Train a national police force.",
+      "x": 13,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "afg_donor_support"
+        ]
+      ],
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "internal_security",
+            "value": 0.05,
+            "days": 2920
+          }
+        }
+      ]
+    },
+    {
+      "id": "afg_air_force",
+      "name": "An air force",
+      "description": "Helicopters and light attack aircraft.",
+      "x": 13,
+      "y": 3,
+      "days": 70,
+      "prerequisites": [
+        [
+          "afg_national_army",
+          "afg_police"
+        ]
+      ],
+      "effects": [
+        {
+          "add_buildings": {
+            "building": "air_base",
+            "count": 1
+          }
+        },
+        {
+          "add_research_bonus": {
+            "category": "air_drones",
+            "value": 0.15,
+            "uses": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "afg_special_forces",
+      "name": "Commandos",
+      "description": "Commando battalions.",
+      "x": 13,
+      "y": 4,
+      "days": 70,
+      "prerequisites": [
+        [
+          "afg_air_force"
+        ]
+      ],
+      "effects": [
+        {
+          "add_divisions": {
+            "template": "motorised_division",
+            "count": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "afg_elections",
+      "name": "Elections",
+      "description": "Presidential and parliamentary elections.",
+      "x": 9,
+      "y": 3,
+      "days": 70,
+      "prerequisites": [
+        [
+          "afg_new_constitution"
+        ]
+      ],
+      "available": {
+        "date_after": "2004-06-01"
+      },
+      "effects": [
+        {
+          "add_stability": 0.02
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "youth_students",
+            "value": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "afg_provincial_councils",
+      "name": "Provincial councils",
+      "description": "Elected councils in the provinces.",
+      "x": 9,
+      "y": 4,
+      "days": 70,
+      "prerequisites": [
+        [
+          "afg_elections"
+        ]
+      ],
+      "effects": [
+        {
+          "add_interest_group_approval": {
+            "group": "minorities",
+            "value": 3
+          }
+        },
+        {
+          "add_stability": 0.01
+        }
+      ]
+    },
+    {
+      "id": "afg_anti_corruption",
+      "name": "Anti-corruption office",
+      "description": "An office to fight corruption.",
+      "x": 10,
+      "y": 5,
+      "days": 70,
+      "prerequisites": [
+        [
+          "afg_provincial_councils",
+          "afg_peace_talks"
+        ]
+      ],
+      "effects": [
+        {
+          "add_spirit": "anti_corruption_campaign"
+        }
+      ]
+    },
+    {
+      "id": "afg_women_education",
+      "name": "Girls' schools",
+      "description": "Schools for girls across the country.",
+      "x": 21,
+      "y": 4,
+      "days": 70,
+      "prerequisites": [
+        [
+          "afg_telecoms"
+        ]
+      ],
+      "available": {
+        "all": [
+          {
+            "date_after": "2002-01-01"
+          },
+          {
+            "date_before": "2021-08-15"
+          }
+        ]
+      },
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "education_quality",
+            "value": 0.03,
+            "days": 3650
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "youth_students",
+            "value": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "afg_health_clinics",
+      "name": "Health clinics",
+      "description": "Clinics in every district.",
+      "x": 19,
+      "y": 4,
+      "days": 70,
+      "prerequisites": [
+        [
+          "afg_kabul_growth"
+        ]
+      ],
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "health_outcomes",
+            "value": 0.04,
+            "days": 3650
+          }
+        },
+        {
+          "add_treasury": -0.2
+        }
+      ]
+    },
+    {
+      "id": "afg_mining",
+      "name": "Mines",
+      "description": "Copper and iron mines.",
+      "x": 22,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "afg_irrigation"
+        ]
+      ],
+      "effects": [
+        {
+          "add_buildings": {
+            "building": "civilian_factory",
+            "count": 1
+          }
+        },
+        {
+          "add_treasury": 0.3
+        }
+      ]
+    },
+    {
+      "id": "afg_dams",
+      "name": "Dams",
+      "description": "Dams for power and irrigation.",
+      "x": 22,
+      "y": 3,
+      "days": 70,
+      "prerequisites": [
+        [
+          "afg_mining"
+        ]
+      ],
+      "effects": [
+        {
+          "add_buildings": {
+            "building": "renewable_plant",
+            "count": 1
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "rural",
+            "value": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "afg_airports",
+      "name": "Airports",
+      "description": "Rebuild the airports of Kabul, Kandahar and Herat.",
+      "x": 18,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "afg_ring_road"
+        ]
+      ],
+      "effects": [
+        {
+          "add_buildings": {
+            "building": "air_base",
+            "count": 1
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "trade_efficiency",
+            "value": 0.02,
+            "days": 2920
+          }
+        }
+      ]
+    },
+    {
+      "id": "afg_trade_corridors",
+      "name": "Trade corridors",
+      "description": "Routes to Iran's ports and Central Asia.",
+      "x": 18,
+      "y": 3,
+      "days": 70,
+      "prerequisites": [
+        [
+          "afg_airports"
+        ]
+      ],
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "trade_efficiency",
+            "value": 0.03,
+            "days": 2920
+          }
+        },
+        {
+          "add_opinion": {
+            "target": "IRN",
+            "value": 5,
+            "days": 1825
+          }
+        }
+      ]
+    },
+    {
+      "id": "afg_pakistan_relations",
+      "name": "Relations with Pakistan",
+      "description": "Trade and the border with Pakistan.",
+      "x": 24,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "afg_foreign_policy"
+        ]
+      ],
+      "effects": [
+        {
+          "add_opinion": {
+            "target": "PAK",
+            "value": 10,
+            "days": 1825
+          }
+        }
+      ]
+    },
+    {
+      "id": "afg_india_ties",
+      "name": "Ties with India",
+      "description": "Aid and trade with India.",
+      "x": 26,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "afg_foreign_policy"
+        ]
+      ],
+      "effects": [
+        {
+          "add_opinion": {
+            "target": "IND",
+            "value": 10,
+            "days": 1825
+          }
+        },
+        {
+          "add_treasury": 0.2
+        }
+      ]
+    },
+    {
+      "id": "afg_foreign_policy",
+      "name": "Foreign policy",
+      "description": "Afghanistan among its neighbours.",
+      "x": 25,
+      "y": 0,
+      "days": 70,
+      "effects": [
+        {
+          "add_political_power": 20
+        }
+      ],
+      "ai_weight": 4
+    },
+    {
+      "id": "afg_central_asia_ties",
+      "name": "Central Asian neighbours",
+      "description": "Power and rail from Uzbekistan and Turkmenistan.",
+      "x": 25,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "afg_pakistan_relations",
+          "afg_india_ties"
+        ]
+      ],
+      "effects": [
+        {
+          "add_opinion": {
+            "target": "UZB",
+            "value": 10,
+            "days": 1825
+          }
+        },
+        {
+          "add_opinion": {
+            "target": "TKM",
+            "value": 10,
+            "days": 1825
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "energy_cost",
+            "value": -0.02,
+            "days": 2920
+          }
+        }
+      ]
+    },
+    {
+      "id": "afg_regional_conference",
+      "name": "A regional conference",
+      "description": "Host a regional conference on trade and security.",
+      "x": 25,
+      "y": 3,
+      "days": 70,
+      "prerequisites": [
+        [
+          "afg_central_asia_ties"
+        ]
+      ],
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "diplomatic_reputation",
+            "value": 0.03,
+            "days": 2920
+          }
+        }
+      ]
+    }
+  ]
+}

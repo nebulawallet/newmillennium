@@ -1,0 +1,109 @@
+{
+  "note": "Spain's national spirits. The ones with `start` describe the situation on 1 January 2000 and cite sources. Values are gameplay estimates.",
+  "spirits": [
+    {
+      "id": "esp_eta",
+      "name": "ETA",
+      "description": "ETA, an armed Basque separatist group active since 1959, has not ended its armed activity.",
+      "kind": "problem",
+      "modifiers": {
+        "unrest": 0.02,
+        "stability_factor": -0.02
+      },
+      "start": [
+        "ESP"
+      ],
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/ETA_(separatist_group)",
+          "title": "Wikipedia: ETA (separatist group)",
+          "accessed": "2026-10-19"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "esp_property_boom",
+      "name": "Property boom",
+      "description": "House prices have risen since 1996, driving a construction boom.",
+      "kind": "policy",
+      "modifiers": {
+        "construction_speed": 0.05,
+        "gdp_growth": 0.002
+      },
+      "start": [
+        "ESP"
+      ],
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Spanish_property_bubble",
+          "title": "Wikipedia: Spanish property bubble",
+          "accessed": "2026-10-19"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "esp_unemployment",
+      "name": "High unemployment",
+      "description": "Spain has had the highest unemployment rate in the EU from the early 2000s.",
+      "kind": "problem",
+      "modifiers": {
+        "stability_factor": -0.02,
+        "welfare_cost": 0.003
+      },
+      "start": [
+        "ESP"
+      ],
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Unemployment_in_Spain",
+          "title": "Wikipedia: Unemployment in Spain",
+          "accessed": "2026-10-19"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "esp_high_speed_rail",
+      "name": "High-speed rail",
+      "description": "The first high-speed line, Madrid-Córdoba-Seville, opened in 1992.",
+      "kind": "strength",
+      "modifiers": {
+        "trade_efficiency": 0.02
+      },
+      "start": [
+        "ESP"
+      ],
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/High-speed_rail_in_Spain",
+          "title": "Wikipedia: High-speed rail in Spain",
+          "accessed": "2026-10-19"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "esp_property_crash",
+      "name": "Property crash",
+      "description": "House prices fall and the banks carry bad loans.",
+      "kind": "problem",
+      "modifiers": {
+        "gdp_growth": -0.01,
+        "construction_speed": -0.05,
+        "interest_rate": 0.01
+      }
+    },
+    {
+      "id": "esp_renewable_leader",
+      "name": "Renewable leader",
+      "description": "Wind and solar make up a large share of the electricity.",
+      "kind": "strength",
+      "modifiers": {
+        "energy_cost": -0.04,
+        "renewable_output": 0.15
+      }
+    }
+  ]
+}

@@ -1,0 +1,138 @@
+{
+  "note": "China's national spirits. The ones with `start` describe the situation on 1 January 2000 and cite sources. Values are gameplay estimates.",
+  "spirits": [
+    {
+      "id": "chn_one_child_policy",
+      "name": "One-child policy",
+      "description": "Most families have been limited to one child since 1979.",
+      "kind": "policy",
+      "modifiers": {
+        "population_growth": -0.004,
+        "manpower_factor": -0.02
+      },
+      "start": [
+        "CHN"
+      ],
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/One-child_policy",
+          "title": "Wikipedia: One-child policy",
+          "accessed": "2026-10-19"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "chn_hukou",
+      "name": "Household registration",
+      "description": "The hukou system ties residence and public services to a registered home.",
+      "kind": "problem",
+      "modifiers": {
+        "production_efficiency": -0.02,
+        "unrest": 0.01
+      },
+      "start": [
+        "CHN"
+      ],
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Hukou_system",
+          "title": "Wikipedia: Hukou system",
+          "accessed": "2026-10-19"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "chn_socialist_market_economy",
+      "name": "Socialist market economy",
+      "description": "State-owned enterprises sit alongside a large private sector.",
+      "kind": "strength",
+      "modifiers": {
+        "state_industry_output": 0.05,
+        "private_sector_output": 0.03
+      },
+      "start": [
+        "CHN"
+      ],
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Economy_of_China",
+          "title": "Wikipedia: Economy of China",
+          "accessed": "2026-10-19"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "chn_worlds_factory",
+      "name": "The world's factory",
+      "description": "Cheap labour makes China a producer of low-cost manufactured goods for the world.",
+      "kind": "strength",
+      "modifiers": {
+        "production_efficiency": 0.05,
+        "trade_efficiency": 0.05
+      },
+      "start": [
+        "CHN"
+      ],
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Made_in_China_2025",
+          "title": "Wikipedia: Made in China 2025",
+          "accessed": "2026-10-19"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "chn_wto_member",
+      "name": "WTO member",
+      "description": "Membership of the World Trade Organization opens export markets.",
+      "kind": "strength",
+      "modifiers": {
+        "trade_efficiency": 0.08,
+        "foreign_investment": 0.08
+      }
+    },
+    {
+      "id": "chn_high_tech_industry",
+      "name": "High-tech industry",
+      "description": "Chips, electric cars and batteries made at home.",
+      "kind": "strength",
+      "modifiers": {
+        "production_efficiency": 0.05,
+        "research_speed": 0.05
+      }
+    },
+    {
+      "id": "chn_two_child_policy",
+      "name": "Two-child policy",
+      "description": "Families may have two children.",
+      "kind": "policy",
+      "modifiers": {
+        "population_growth": -0.001
+      }
+    },
+    {
+      "id": "chn_belt_and_road",
+      "name": "Belt and Road",
+      "description": "Infrastructure loans and projects across Asia, Africa and Europe.",
+      "kind": "policy",
+      "modifiers": {
+        "foreign_influence_power": 0.1,
+        "trade_efficiency": 0.03
+      }
+    },
+    {
+      "id": "chn_debt_overhang",
+      "name": "Local government debt",
+      "description": "Borrowing by local governments and developers after the stimulus.",
+      "kind": "problem",
+      "modifiers": {
+        "interest_rate": 0.005,
+        "construction_speed": 0.05
+      }
+    }
+  ]
+}

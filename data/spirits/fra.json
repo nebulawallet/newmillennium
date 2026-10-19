@@ -1,0 +1,98 @@
+{
+  "note": "France's national spirits. The ones with `start` describe the situation on 1 January 2000 and cite sources. Values are gameplay estimates.",
+  "spirits": [
+    {
+      "id": "fra_nuclear_fleet",
+      "name": "Nuclear electricity",
+      "description": "Nuclear power has been the largest source of French electricity since the mid-1980s; EDF is state-owned.",
+      "kind": "strength",
+      "modifiers": {
+        "energy_cost": -0.05,
+        "nuclear_output": 0.15
+      },
+      "start": [
+        "FRA"
+      ],
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Nuclear_power_in_France",
+          "title": "Wikipedia: Nuclear power in France",
+          "accessed": "2026-10-19"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "fra_force_de_frappe",
+      "name": "Force de frappe",
+      "description": "France's own nuclear deterrent, operational since 1964.",
+      "kind": "strength",
+      "modifiers": {
+        "diplomatic_reputation": 0.05,
+        "foreign_influence_resistance": 0.05
+      },
+      "start": [
+        "FRA"
+      ],
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Force_de_dissuasion",
+          "title": "Wikipedia: Force de dissuasion",
+          "accessed": "2026-10-19"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "fra_35_hour_week",
+      "name": "The 35-hour week",
+      "description": "The legal working week is cut to 35 hours.",
+      "kind": "policy",
+      "modifiers": {
+        "production_efficiency": -0.02,
+        "stability_factor": 0.01
+      },
+      "start": [
+        "FRA"
+      ],
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/35-hour_workweek",
+          "title": "Wikipedia: 35-hour workweek",
+          "accessed": "2026-10-19"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "fra_pension_reform",
+      "name": "Pension reform",
+      "description": "A later retirement age keeps the pension system solvent.",
+      "kind": "policy",
+      "modifiers": {
+        "welfare_cost": -0.005,
+        "stability_factor": -0.02
+      }
+    },
+    {
+      "id": "fra_sahel_operations",
+      "name": "Operations in the Sahel",
+      "description": "French troops fight Islamist groups in the Sahel.",
+      "kind": "policy",
+      "modifiers": {
+        "army_org": 0.02,
+        "welfare_cost": 0.001
+      }
+    },
+    {
+      "id": "fra_reindustrialisation",
+      "name": "Reindustrialisation",
+      "description": "Investment in new factories, nuclear reactors and green industry.",
+      "kind": "policy",
+      "modifiers": {
+        "private_sector_output": 0.03,
+        "research_speed": 0.03
+      }
+    }
+  ]
+}

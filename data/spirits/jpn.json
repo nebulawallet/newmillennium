@@ -1,0 +1,123 @@
+{
+  "note": "Japan's national spirits. The ones with `start` describe the situation on 1 January 2000 and cite sources. Values are gameplay estimates.",
+  "spirits": [
+    {
+      "id": "jpn_lost_decade",
+      "name": "The Lost Decade",
+      "description": "The economy has stagnated since the asset price bubble collapsed in 1990, and public debt keeps rising.",
+      "kind": "problem",
+      "modifiers": {
+        "gdp_growth": -0.005,
+        "interest_rate": -0.005,
+        "inflation": -0.01
+      },
+      "start": [
+        "JPN"
+      ],
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Lost_Decade_(Japan)",
+          "title": "Wikipedia: Lost Decade (Japan)",
+          "accessed": "2026-10-19"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "jpn_ageing_society",
+      "name": "An ageing society",
+      "description": "The population is ageing faster than in any other nation.",
+      "kind": "problem",
+      "modifiers": {
+        "population_growth": -0.003,
+        "welfare_cost": 0.005,
+        "manpower_factor": -0.03
+      },
+      "start": [
+        "JPN"
+      ],
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Demographics_of_Japan",
+          "title": "Wikipedia: Demographics of Japan",
+          "accessed": "2026-10-19"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "jpn_article_9",
+      "name": "Article 9",
+      "description": "The constitution renounces war as a means of settling international disputes.",
+      "kind": "policy",
+      "modifiers": {
+        "war_support_factor": -0.05,
+        "army_attack": -0.05,
+        "diplomatic_reputation": 0.03
+      },
+      "start": [
+        "JPN"
+      ],
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Article_9_of_the_Japanese_Constitution",
+          "title": "Wikipedia: Article 9 of the Japanese Constitution",
+          "accessed": "2026-10-19"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "jpn_us_alliance",
+      "name": "The US alliance",
+      "description": "The security treaty with the United States has been in effect since 23 June 1960.",
+      "kind": "strength",
+      "modifiers": {
+        "army_defence": 0.03,
+        "foreign_influence_resistance": -0.03
+      },
+      "start": [
+        "JPN"
+      ],
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Treaty_of_Mutual_Cooperation_and_Security_between_the_United_States_and_Japan",
+          "title": "Wikipedia: Treaty of Mutual Cooperation and Security between the United States and Japan",
+          "accessed": "2026-10-19"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "jpn_abenomics",
+      "name": "Abenomics",
+      "description": "Monetary easing, fiscal stimulus and structural reform.",
+      "kind": "policy",
+      "modifiers": {
+        "gdp_growth": 0.003,
+        "inflation": 0.005,
+        "interest_rate": -0.003
+      }
+    },
+    {
+      "id": "jpn_collective_self_defence",
+      "name": "Collective self-defence",
+      "description": "The forces may defend allies in certain situations.",
+      "kind": "policy",
+      "modifiers": {
+        "army_attack": 0.03,
+        "war_support_factor": 0.02
+      }
+    },
+    {
+      "id": "jpn_fukushima_recovery",
+      "name": "After Fukushima",
+      "description": "Most reactors are shut and the disaster zone is being rebuilt.",
+      "kind": "problem",
+      "modifiers": {
+        "energy_cost": 0.05,
+        "nuclear_output": -0.2
+      }
+    }
+  ]
+}

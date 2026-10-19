@@ -1,0 +1,74 @@
+{
+  "categories": [
+    {
+      "id": "fra_projects",
+      "name": "French state projects",
+      "description": "Projects that the national focuses open up."
+    }
+  ],
+  "decisions": [
+    {
+      "id": "fra_new_reactor",
+      "name": "Order a new reactor",
+      "description": "Order a new EPR reactor.",
+      "category": "fra_projects",
+      "countries": [
+        "FRA"
+      ],
+      "visible": {
+        "has_completed_focus": "fra_new_nuclear"
+      },
+      "available": {
+        "treasury_above": 2
+      },
+      "cost": {
+        "political_power": 30
+      },
+      "effects": [
+        {
+          "add_treasury": -2
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "nuclear_output",
+            "value": 0.03,
+            "days": 3650
+          }
+        }
+      ],
+      "cooldown_days": 540,
+      "ai_weight": 2
+    },
+    {
+      "id": "fra_metro_line",
+      "name": "Open a Grand Paris line",
+      "description": "Open a new line of the Grand Paris Express.",
+      "category": "fra_projects",
+      "countries": [
+        "FRA"
+      ],
+      "visible": {
+        "has_completed_focus": "fra_grand_paris"
+      },
+      "available": {
+        "treasury_above": 1
+      },
+      "cost": {
+        "political_power": 30
+      },
+      "effects": [
+        {
+          "add_treasury": -1
+        },
+        {
+          "add_buildings": {
+            "building": "infrastructure",
+            "count": 2
+          }
+        }
+      ],
+      "cooldown_days": 365,
+      "ai_weight": 2
+    }
+  ]
+}

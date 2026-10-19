@@ -1,0 +1,226 @@
+{
+  "id": "isg",
+  "name": "Islamic State",
+  "countries": [
+    "ISG"
+  ],
+  "note": "A short tree for the Islamic State while it holds territory (2014-2019): administration, resources and forces. Neutral and descriptive; the group's history is scripted in the conflict events.",
+  "source": [
+    {
+      "url": "https://en.wikipedia.org/wiki/Islamic_State",
+      "title": "Wikipedia: Islamic State",
+      "accessed": "2026-10-19"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Battle_of_Mosul_(2016–2017)",
+      "title": "Wikipedia: Battle of Mosul (2016–2017)",
+      "accessed": "2026-10-19"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Raqqa_campaign_(2016–2017)",
+      "title": "Wikipedia: Raqqa campaign (2016–2017)",
+      "accessed": "2026-10-19"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Battle_of_Baghuz_Fawqani",
+      "title": "Wikipedia: Battle of Baghuz Fawqani",
+      "accessed": "2026-10-19"
+    }
+  ],
+  "confidence": "verified",
+  "focuses": [
+    {
+      "id": "isg_proto_state",
+      "name": "A proto-state",
+      "description": "Organise an administration in the towns the group holds.",
+      "x": 2,
+      "y": 0,
+      "days": 70,
+      "effects": [
+        {
+          "add_political_power": 30
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "internal_security",
+            "value": 0.05,
+            "days": 1460
+          }
+        }
+      ],
+      "ai_weight": 5
+    },
+    {
+      "id": "isg_provincial_councils",
+      "name": "Provincial councils",
+      "description": "Councils run the towns.",
+      "x": 1,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "isg_proto_state"
+        ]
+      ],
+      "effects": [
+        {
+          "add_stability": 0.03
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "tax_efficiency",
+            "value": 0.05,
+            "days": 1460
+          }
+        }
+      ]
+    },
+    {
+      "id": "isg_oil_fields",
+      "name": "Seize the oil fields",
+      "description": "Run the oil fields in the territory.",
+      "x": 3,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "isg_proto_state"
+        ]
+      ],
+      "effects": [
+        {
+          "add_treasury": 0.5
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "fossil_output",
+            "value": 0.05,
+            "days": 1460
+          }
+        }
+      ]
+    },
+    {
+      "id": "isg_recruitment",
+      "name": "Recruitment",
+      "description": "Recruit fighters at home and abroad.",
+      "x": 1,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "isg_provincial_councils"
+        ]
+      ],
+      "effects": [
+        {
+          "add_divisions": {
+            "template": "infantry_division",
+            "count": 2
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "manpower_factor",
+            "value": 0.05,
+            "days": 1460
+          }
+        }
+      ]
+    },
+    {
+      "id": "isg_captured_arsenals",
+      "name": "Captured arsenals",
+      "description": "Use weapons taken from army depots.",
+      "x": 3,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "isg_oil_fields"
+        ]
+      ],
+      "effects": [
+        {
+          "add_equipment": {
+            "family": "infantry_equipment",
+            "amount": 1000
+          }
+        }
+      ]
+    },
+    {
+      "id": "isg_mobile_columns",
+      "name": "Mobile columns",
+      "description": "Fast columns of light vehicles.",
+      "x": 2,
+      "y": 3,
+      "days": 70,
+      "prerequisites": [
+        [
+          "isg_recruitment",
+          "isg_captured_arsenals"
+        ]
+      ],
+      "effects": [
+        {
+          "add_divisions": {
+            "template": "motorised_division",
+            "count": 1
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "army_attack",
+            "value": 0.03,
+            "days": 1460
+          }
+        }
+      ]
+    },
+    {
+      "id": "isg_defend_the_cities",
+      "name": "Defend the cities",
+      "description": "Fortify the cities against offensives.",
+      "x": 2,
+      "y": 4,
+      "days": 70,
+      "prerequisites": [
+        [
+          "isg_mobile_columns"
+        ]
+      ],
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "army_defence",
+            "value": 0.05,
+            "days": 1460
+          }
+        }
+      ]
+    },
+    {
+      "id": "isg_underground",
+      "name": "Go underground",
+      "description": "Prepare cells for an insurgency if the territory falls.",
+      "x": 2,
+      "y": 5,
+      "days": 70,
+      "prerequisites": [
+        [
+          "isg_defend_the_cities"
+        ]
+      ],
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "internal_security",
+            "value": 0.03,
+            "days": 1460
+          }
+        }
+      ]
+    }
+  ]
+}

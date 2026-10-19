@@ -1,0 +1,98 @@
+{
+  "note": "Afghanistan's national spirits. The ones with `start` describe the situation on 1 January 2000 and cite sources. Values are gameplay estimates.",
+  "spirits": [
+    {
+      "id": "afg_un_sanctions",
+      "name": "UN sanctions",
+      "description": "Security Council Resolution 1267, adopted on 15 October 1999, put sanctions on the Taliban and al-Qaida.",
+      "kind": "problem",
+      "modifiers": {
+        "trade_efficiency": -0.15,
+        "foreign_investment": -0.15
+      },
+      "start": [
+        "AFG"
+      ],
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/United_Nations_Security_Council_Resolution_1267",
+          "title": "Wikipedia: United Nations Security Council Resolution 1267",
+          "accessed": "2026-10-19"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "afg_divided_country",
+      "name": "A divided country",
+      "description": "The Taliban rule most of the country; the Northern Alliance holds the north-east and keeps the UN seat.",
+      "kind": "problem",
+      "modifiers": {
+        "stability_factor": -0.05,
+        "political_power_gain": -0.05
+      },
+      "start": [
+        "AFG"
+      ],
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Taliban_government_(1996–2001)",
+          "title": "Wikipedia: Taliban government (1996–2001)",
+          "accessed": "2026-10-19"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "afg_opium_economy",
+      "name": "Opium economy",
+      "description": "Afghanistan produces most of the world's illicit opium.",
+      "kind": "problem",
+      "modifiers": {
+        "corruption": 0.05,
+        "tax_efficiency": -0.05
+      },
+      "start": [
+        "AFG"
+      ],
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Opium_production_in_Afghanistan",
+          "title": "Wikipedia: Opium production in Afghanistan",
+          "accessed": "2026-10-19"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "afg_international_aid",
+      "name": "International aid",
+      "description": "Donors pay for much of the state budget and the army.",
+      "kind": "policy",
+      "modifiers": {
+        "welfare_cost": -0.01,
+        "foreign_influence_resistance": -0.1
+      }
+    },
+    {
+      "id": "afg_insurgency",
+      "name": "Insurgency",
+      "description": "An insurgency fights the government in the south and east.",
+      "kind": "problem",
+      "modifiers": {
+        "stability_factor": -0.04,
+        "unrest": 0.03
+      }
+    },
+    {
+      "id": "afg_legal_economy",
+      "name": "A legal economy",
+      "description": "Farmers grow other crops and the state collects taxes.",
+      "kind": "strength",
+      "modifiers": {
+        "tax_efficiency": 0.04,
+        "corruption": -0.02
+      }
+    }
+  ]
+}

@@ -1,0 +1,106 @@
+{
+  "categories": [
+    {
+      "id": "tur_projects",
+      "name": "Turkish state projects",
+      "description": "Projects that the national focuses open up."
+    }
+  ],
+  "decisions": [
+    {
+      "id": "tur_city_hospital",
+      "name": "Open a city hospital",
+      "description": "A large public-private hospital.",
+      "category": "tur_projects",
+      "countries": [
+        "TUR"
+      ],
+      "visible": {
+        "has_completed_focus": "tur_health_transformation"
+      },
+      "available": {
+        "treasury_above": 0.5
+      },
+      "cost": {
+        "political_power": 30
+      },
+      "effects": [
+        {
+          "add_treasury": -0.5
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "health_outcomes",
+            "value": 0.02,
+            "days": 1460
+          }
+        }
+      ],
+      "cooldown_days": 365,
+      "ai_weight": 2
+    },
+    {
+      "id": "tur_drone_order",
+      "name": "Order drones",
+      "description": "An order of armed drones for the forces.",
+      "category": "tur_projects",
+      "countries": [
+        "TUR"
+      ],
+      "visible": {
+        "has_completed_focus": "tur_drones"
+      },
+      "available": {
+        "treasury_above": 0.5
+      },
+      "cost": {
+        "political_power": 30
+      },
+      "effects": [
+        {
+          "add_treasury": -0.5
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "air_effectiveness",
+            "value": 0.02,
+            "days": 1460
+          }
+        }
+      ],
+      "cooldown_days": 365,
+      "ai_weight": 2
+    },
+    {
+      "id": "tur_rebuild_homes",
+      "name": "Rebuild homes",
+      "description": "Rebuild homes in the earthquake zone.",
+      "category": "tur_projects",
+      "countries": [
+        "TUR"
+      ],
+      "visible": {
+        "has_completed_focus": "tur_earthquake_recovery"
+      },
+      "available": {
+        "treasury_above": 1
+      },
+      "cost": {
+        "political_power": 30
+      },
+      "effects": [
+        {
+          "add_treasury": -1
+        },
+        {
+          "add_buildings": {
+            "building": "infrastructure",
+            "count": 2
+          }
+        }
+      ],
+      "cooldown_days": 180,
+      "ai_weight": 2
+    }
+  ]
+}

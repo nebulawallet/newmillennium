@@ -4,460 +4,370 @@
   "countries": [
     "TUR"
   ],
-  "note": "Branches depend on the governing parties and office holders. Policies named after real reforms are cited; effects are gameplay estimates.",
+  "note": "Turkey in the style of the Russian model tree: democratic government as the historical path and alternatives led by real parties of the data (left, conservative, nationalist, religious) plus a junta; economy (the programme after the 2001 crisis, the new lira, Marmaray, TurkStream), state and constitution (EU reforms, the 2010 and 2017 referendums, the 2016 coup attempt, the 2023 earthquakes), defence industry and drones, foreign policy. Sourced starting spirits in data/spirits/tur.json. Alternatives are a counterfactual.",
+  "source": [
+    {
+      "url": "https://en.wikipedia.org/wiki/2001_Turkish_economic_crisis",
+      "title": "Wikipedia: 2001 Turkish economic crisis",
+      "accessed": "2026-10-19"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Kemal_Derviş",
+      "title": "Wikipedia: Kemal Derviş",
+      "accessed": "2026-10-19"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Accession_of_Turkey_to_the_European_Union",
+      "title": "Wikipedia: Accession of Turkey to the European Union",
+      "accessed": "2026-10-19"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Kurdistan_Workers'_Party",
+      "title": "Wikipedia: Kurdistan Workers' Party",
+      "accessed": "2026-10-19"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Conscription_in_Turkey",
+      "title": "Wikipedia: Conscription in Turkey",
+      "accessed": "2026-10-19"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Turkish_lira",
+      "title": "Wikipedia: Turkish lira",
+      "accessed": "2026-10-19"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/2010_Turkish_constitutional_referendum",
+      "title": "Wikipedia: 2010 Turkish constitutional referendum",
+      "accessed": "2026-10-19"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/2017_Turkish_constitutional_referendum",
+      "title": "Wikipedia: 2017 Turkish constitutional referendum",
+      "accessed": "2026-10-19"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Marmaray",
+      "title": "Wikipedia: Marmaray",
+      "accessed": "2026-10-19"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/2016_Turkish_coup_attempt",
+      "title": "Wikipedia: 2016 Turkish coup attempt",
+      "accessed": "2026-10-19"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Bayraktar_TB2",
+      "title": "Wikipedia: Bayraktar TB2",
+      "accessed": "2026-10-19"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/TurkStream",
+      "title": "Wikipedia: TurkStream",
+      "accessed": "2026-10-19"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/2023_Turkey–Syria_earthquakes",
+      "title": "Wikipedia: 2023 Turkey–Syria earthquakes",
+      "accessed": "2026-10-19"
+    }
+  ],
+  "confidence": "verified",
   "focuses": [
     {
-      "id": "tur_national_programme",
-      "name": "A stronger Turkey",
-      "description": "Set the priorities of the government.",
-      "x": 8,
+      "id": "tur_question_of_power",
+      "name": "The direction of the country",
+      "description": "Which camp governs the country.",
+      "x": 6,
       "y": 0,
       "days": 70,
       "effects": [
         {
-          "add_political_power": 50
-        },
-        {
-          "add_stability": 0.02
+          "add_political_power": 30
         }
-      ]
+      ],
+      "ai_weight": 5
     },
     {
-      "id": "tur_defence_review",
-      "name": "Defence review",
-      "description": "Review strategy, forces and budgets for the new decade.",
-      "x": 11,
+      "id": "tur_steady_course",
+      "name": "Democratic government",
+      "description": "Parties alternate in power through elections, as they historically did.",
+      "x": 0,
       "y": 1,
       "days": 70,
-      "effects": [
-        {
-          "add_war_support": 0.02
-        },
-        {
-          "add_interest_group_approval": {
-            "group": "military",
-            "value": 4
-          }
-        }
-      ],
       "prerequisites": [
         [
-          "tur_national_programme"
-        ]
-      ]
-    },
-    {
-      "id": "tur_modern_forces",
-      "name": "Modern forces",
-      "description": "Equip the armed forces with modern communications and precision weapons.",
-      "x": 11,
-      "y": 3,
-      "days": 105,
-      "effects": [
-        {
-          "add_timed_modifier": {
-            "modifier": "army_attack",
-            "value": 0.05,
-            "days": 3650
-          }
-        },
-        {
-          "add_timed_modifier": {
-            "modifier": "air_effectiveness",
-            "value": 0.05,
-            "days": 3650
-          }
-        },
-        {
-          "add_interest_group_approval": {
-            "group": "military",
-            "value": 3
-          }
-        }
-      ],
-      "prerequisites": [
-        [
-          "tur_defence_review"
-        ]
-      ]
-    },
-    {
-      "id": "tur_intelligence_services",
-      "name": "Intelligence services",
-      "description": "Expand the foreign and domestic intelligence services.",
-      "x": 12,
-      "y": 2,
-      "days": 70,
-      "effects": [
-        {
-          "add_timed_modifier": {
-            "modifier": "intelligence_power",
-            "value": 0.1,
-            "days": 3650
-          }
-        },
-        {
-          "add_interest_group_approval": {
-            "group": "security_services",
-            "value": 4
-          }
-        }
-      ],
-      "prerequisites": [
-        [
-          "tur_defence_review"
-        ]
-      ]
-    },
-    {
-      "id": "tur_foreign_policy",
-      "name": "Foreign policy priorities",
-      "description": "Set the course of foreign policy.",
-      "x": 14,
-      "y": 1,
-      "days": 70,
-      "effects": [
-        {
-          "add_timed_modifier": {
-            "modifier": "diplomatic_reputation",
-            "value": 0.05,
-            "days": 3650
-          }
-        },
-        {
-          "add_political_power": 20
-        }
-      ],
-      "prerequisites": [
-        [
-          "tur_national_programme"
-        ]
-      ]
-    },
-    {
-      "id": "tur_partners",
-      "name": "Closer ties with Europe and our neighbours",
-      "description": "Deepen political and economic ties with Europe and our neighbours.",
-      "x": 14,
-      "y": 2,
-      "days": 70,
-      "effects": [
-        {
-          "add_timed_modifier": {
-            "modifier": "bloc_integration",
-            "value": 0.1,
-            "days": 3650
-          }
-        },
-        {
-          "add_timed_modifier": {
-            "modifier": "trade_efficiency",
-            "value": 0.03,
-            "days": 3650
-          }
-        },
-        {
-          "country": {
-            "tag": "DEU",
-            "effects": [
-              {
-                "add_opinion": {
-                  "target": "ROOT",
-                  "value": 15,
-                  "days": 3650
-                }
-              }
-            ]
-          }
-        },
-        {
-          "country": {
-            "tag": "USA",
-            "effects": [
-              {
-                "add_opinion": {
-                  "target": "ROOT",
-                  "value": 15,
-                  "days": 3650
-                }
-              }
-            ]
-          }
-        },
-        {
-          "country": {
-            "tag": "AZE",
-            "effects": [
-              {
-                "add_opinion": {
-                  "target": "ROOT",
-                  "value": 15,
-                  "days": 3650
-                }
-              }
-            ]
-          }
-        }
-      ],
-      "prerequisites": [
-        [
-          "tur_foreign_policy"
-        ]
-      ]
-    },
-    {
-      "id": "tur_international_standing",
-      "name": "International standing",
-      "description": "Raise the country's profile in international institutions and summits.",
-      "x": 15,
-      "y": 3,
-      "days": 70,
-      "effects": [
-        {
-          "add_timed_modifier": {
-            "modifier": "diplomatic_reputation",
-            "value": 0.1,
-            "days": 3650
-          }
-        },
-        {
-          "add_timed_modifier": {
-            "modifier": "international_opinion",
-            "value": 0.05,
-            "days": 3650
-          }
-        }
-      ],
-      "prerequisites": [
-        [
-          "tur_partners",
-          "tur_own_course"
-        ]
-      ]
-    },
-    {
-      "id": "tur_own_course",
-      "name": "An independent course",
-      "description": "Keep a free hand in foreign policy and trade.",
-      "x": 16,
-      "y": 2,
-      "days": 70,
-      "effects": [
-        {
-          "add_timed_modifier": {
-            "modifier": "foreign_influence_resistance",
-            "value": 0.1,
-            "days": 3650
-          }
-        },
-        {
-          "add_war_support": 0.02
-        }
-      ],
-      "prerequisites": [
-        [
-          "tur_foreign_policy"
+          "tur_question_of_power"
         ]
       ],
       "mutually_exclusive": [
-        "tur_partners"
+        "tur_left_turn",
+        "tur_conservative_turn",
+        "tur_populist_turn",
+        "tur_religious_turn",
+        "tur_army_steps_in"
       ],
-      "ai_weight": 0.5
-    },
-    {
-      "id": "tur_economic_council",
-      "name": "Economic council",
-      "description": "Bring ministries, employers and unions together on economic priorities.",
-      "x": 5,
-      "y": 1,
-      "days": 70,
+      "available": {
+        "follows_history": true
+      },
       "effects": [
         {
-          "add_economic_mood": 0.03
+          "add_stability": 0.04
         },
         {
-          "add_political_power": 15
+          "add_political_power": 40
         }
       ],
+      "ai_weight": 20
+    },
+    {
+      "id": "tur_left_turn",
+      "name": "A turn to the left",
+      "description": "Parties of the left (the DSP and the CHP) gain on wages, welfare and public services.",
+      "x": 2,
+      "y": 1,
+      "days": 70,
       "prerequisites": [
         [
-          "tur_national_programme"
+          "tur_question_of_power"
         ]
+      ],
+      "mutually_exclusive": [
+        "tur_steady_course",
+        "tur_conservative_turn",
+        "tur_populist_turn",
+        "tur_religious_turn",
+        "tur_army_steps_in"
+      ],
+      "available": {
+        "all": [
+          {
+            "any": [
+              {
+                "follows_history": false
+              },
+              {
+                "is_player": true
+              }
+            ]
+          },
+          {
+            "has_party_of_group": "social_democratic"
+          },
+          {
+            "not": {
+              "ruling_ideology_group": "social_democratic"
+            }
+          },
+          {
+            "any": [
+              {
+                "gdp_growth_below": 1.5
+              },
+              {
+                "unrest_above": 0.15
+              },
+              {
+                "ig_approval_below": {
+                  "group": "labour_unions",
+                  "value": 45
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "effects": [
+        {
+          "leave_history": true
+        },
+        {
+          "add_ideology_support": {
+            "group": "social_democratic",
+            "value": 0.04
+          }
+        }
+      ],
+      "ai_weight": 0.3
+    },
+    {
+      "id": "tur_left_turn_build",
+      "name": "Unions and voters",
+      "description": "Unions and young voters rally to the left.",
+      "x": 2,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "tur_left_turn"
+        ]
+      ],
+      "effects": [
+        {
+          "add_ideology_support": {
+            "group": "social_democratic",
+            "value": 0.05
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "labour_unions",
+            "value": 5
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "youth_students",
+            "value": 3
+          }
+        }
       ]
     },
     {
-      "id": "tur_infrastructure",
-      "name": "Infrastructure programme",
-      "description": "Invest in transport, power grids and communications.",
-      "x": 5,
+      "id": "tur_left_turn_government",
+      "name": "A left-wing government",
+      "description": "The most popular party of the democratic left leads the government.",
+      "x": 2,
       "y": 3,
       "days": 105,
+      "prerequisites": [
+        [
+          "tur_left_turn_build"
+        ]
+      ],
+      "available": {
+        "ideology_group_support_above": {
+          "group": "social_democratic",
+          "value": 0.2
+        }
+      },
       "effects": [
         {
-          "add_timed_modifier": {
-            "modifier": "construction_speed",
-            "value": 0.1,
-            "days": 3650
+          "install_government": {
+            "ideology": "social_democratic"
           }
         },
         {
-          "add_economic_mood": 0.02
+          "add_stability": -0.05
         }
-      ],
-      "prerequisites": [
-        [
-          "tur_economic_council"
-        ]
       ]
     },
     {
-      "id": "tur_research_programme",
-      "name": "Research and innovation",
-      "description": "Fund universities, research institutes and new industries.",
-      "x": 6,
+      "id": "tur_welfare_expansion",
+      "name": "Expand the welfare state",
+      "description": "Public health care and higher pensions.",
+      "x": 2,
       "y": 4,
-      "days": 105,
+      "days": 70,
+      "prerequisites": [
+        [
+          "tur_left_turn_government"
+        ]
+      ],
       "effects": [
         {
-          "add_timed_modifier": {
-            "modifier": "research_speed",
-            "value": 0.05,
-            "days": 3650
+          "add_spirit": "universal_healthcare"
+        },
+        {
+          "set_budget": {
+            "spending": 1
           }
         },
         {
-          "add_timed_modifier": {
-            "modifier": "education_quality",
-            "value": 0.02,
-            "days": 3650
+          "add_interest_group_approval": {
+            "group": "labour_unions",
+            "value": 4
           }
         }
-      ],
-      "prerequisites": [
-        [
-          "tur_infrastructure"
-        ]
       ]
     },
     {
-      "id": "tur_economic_programme",
-      "name": "Economic stabilisation",
-      "description": "Bring in an economic manager to stabilise the economy. Kemal Derviş returned from the World Bank and became Minister of State for Economic Affairs on 13 March 2001, under Prime Minister Bülent Ecevit.",
-      "x": 1,
+      "id": "tur_conservative_turn",
+      "name": "A conservative turn",
+      "description": "Conservative parties (ANAP, the DYP and later the İYİ Party) gain on order, tax cuts and tradition.",
+      "x": 4,
       "y": 1,
       "days": 70,
+      "prerequisites": [
+        [
+          "tur_question_of_power"
+        ]
+      ],
+      "mutually_exclusive": [
+        "tur_steady_course",
+        "tur_left_turn",
+        "tur_populist_turn",
+        "tur_religious_turn",
+        "tur_army_steps_in"
+      ],
+      "available": {
+        "all": [
+          {
+            "any": [
+              {
+                "follows_history": false
+              },
+              {
+                "is_player": true
+              }
+            ]
+          },
+          {
+            "has_party_of_group": "conservative"
+          },
+          {
+            "not": {
+              "ruling_ideology_group": "conservative"
+            }
+          },
+          {
+            "any": [
+              {
+                "stability_below": 0.6
+              },
+              {
+                "gdp_growth_below": 1.5
+              }
+            ]
+          }
+        ]
+      },
       "effects": [
         {
-          "add_timed_modifier": {
-            "modifier": "inflation",
-            "value": -0.03,
-            "days": 3650
-          }
+          "leave_history": true
         },
         {
-          "add_economic_mood": 0.03
+          "add_ideology_support": {
+            "group": "conservative",
+            "value": 0.04
+          }
+        }
+      ],
+      "ai_weight": 0.3
+    },
+    {
+      "id": "tur_conservative_turn_build",
+      "name": "Business and the countryside",
+      "description": "Business and rural voters rally to the right.",
+      "x": 4,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "tur_conservative_turn"
+        ]
+      ],
+      "effects": [
+        {
+          "add_ideology_support": {
+            "group": "conservative",
+            "value": 0.05
+          }
         },
         {
           "add_interest_group_approval": {
             "group": "business",
             "value": 4
-          }
-        }
-      ],
-      "prerequisites": [
-        [
-          "tur_national_programme"
-        ]
-      ],
-      "available": {
-        "holds_office": {
-          "person": "tur.bulent_ecevit",
-          "office": "tur.prime_minister"
-        }
-      },
-      "ai_weight": 3
-    },
-    {
-      "id": "tur_eu_harmonisation",
-      "name": "EU harmonisation",
-      "description": "Align laws with the European Union. Turkey was recognised as a candidate for membership at the Helsinki summit on 12 December 1999.",
-      "x": 0,
-      "y": 2,
-      "days": 70,
-      "effects": [
-        {
-          "add_timed_modifier": {
-            "modifier": "civil_liberties",
-            "value": 0.04,
-            "days": 3650
-          }
-        },
-        {
-          "add_timed_modifier": {
-            "modifier": "bloc_integration",
-            "value": 0.1,
-            "days": 3650
-          }
-        },
-        {
-          "add_interest_group_approval": {
-            "group": "minorities",
-            "value": 4
-          }
-        },
-        {
-          "add_interest_group_approval": {
-            "group": "military",
-            "value": -3
-          }
-        }
-      ],
-      "prerequisites": [
-        [
-          "tur_economic_programme",
-          "tur_new_government"
-        ]
-      ],
-      "ai_weight": 2
-    },
-    {
-      "id": "tur_new_government",
-      "name": "A new governing programme",
-      "description": "Govern with a programme of growth, services and reform.",
-      "x": 3,
-      "y": 1,
-      "days": 70,
-      "effects": [
-        {
-          "add_ruling_party_popularity": 0.02
-        },
-        {
-          "add_political_power": 25
-        }
-      ],
-      "prerequisites": [
-        [
-          "tur_national_programme"
-        ]
-      ],
-      "available": {
-        "ruling_party": "tur.akp"
-      },
-      "ai_weight": 2
-    },
-    {
-      "id": "tur_anatolian_growth",
-      "name": "Anatolian growth",
-      "description": "Support businesses in the cities of Anatolia.",
-      "x": 2,
-      "y": 2,
-      "days": 70,
-      "effects": [
-        {
-          "add_timed_modifier": {
-            "modifier": "private_sector_output",
-            "value": 0.03,
-            "days": 3650
           }
         },
         {
@@ -465,6 +375,557 @@
             "group": "rural",
             "value": 3
           }
+        }
+      ]
+    },
+    {
+      "id": "tur_conservative_turn_government",
+      "name": "A conservative government",
+      "description": "The most popular conservative party leads the government.",
+      "x": 4,
+      "y": 3,
+      "days": 105,
+      "prerequisites": [
+        [
+          "tur_conservative_turn_build"
+        ]
+      ],
+      "available": {
+        "ideology_group_support_above": {
+          "group": "conservative",
+          "value": 0.2
+        }
+      },
+      "effects": [
+        {
+          "install_government": {
+            "ideology": "conservative"
+          }
+        },
+        {
+          "add_stability": -0.05
+        }
+      ]
+    },
+    {
+      "id": "tur_fiscal_discipline",
+      "name": "Fiscal discipline",
+      "description": "Cut spending and taxes to balance the budget.",
+      "x": 4,
+      "y": 4,
+      "days": 70,
+      "prerequisites": [
+        [
+          "tur_conservative_turn_government"
+        ]
+      ],
+      "effects": [
+        {
+          "add_spirit": "balanced_budget"
+        },
+        {
+          "set_budget": {
+            "spending": -1,
+            "revenue": -0.5
+          }
+        }
+      ]
+    },
+    {
+      "id": "tur_populist_turn",
+      "name": "A populist wave",
+      "description": "National-populist parties (the MHP) gain on immigration and sovereignty.",
+      "x": 6,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "tur_question_of_power"
+        ]
+      ],
+      "mutually_exclusive": [
+        "tur_steady_course",
+        "tur_left_turn",
+        "tur_conservative_turn",
+        "tur_religious_turn",
+        "tur_army_steps_in"
+      ],
+      "available": {
+        "all": [
+          {
+            "any": [
+              {
+                "follows_history": false
+              },
+              {
+                "is_player": true
+              }
+            ]
+          },
+          {
+            "has_party_of_group": "nationalist_populist"
+          },
+          {
+            "not": {
+              "ruling_ideology_group": "nationalist_populist"
+            }
+          },
+          {
+            "any": [
+              {
+                "stability_below": 0.5
+              },
+              {
+                "unrest_above": 0.15
+              }
+            ]
+          }
+        ]
+      },
+      "effects": [
+        {
+          "leave_history": true
+        },
+        {
+          "add_ideology_support": {
+            "group": "nationalist_populist",
+            "value": 0.04
+          }
+        }
+      ],
+      "ai_weight": 0.3
+    },
+    {
+      "id": "tur_populist_turn_build",
+      "name": "Rallies and referendums",
+      "description": "Mass rallies and calls for referendums.",
+      "x": 6,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "tur_populist_turn"
+        ]
+      ],
+      "effects": [
+        {
+          "add_ideology_support": {
+            "group": "nationalist_populist",
+            "value": 0.05
+          }
+        },
+        {
+          "add_war_support": 0.03
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "minorities",
+            "value": -4
+          }
+        }
+      ]
+    },
+    {
+      "id": "tur_populist_turn_government",
+      "name": "A national-populist government",
+      "description": "The most popular national-populist party leads the government.",
+      "x": 6,
+      "y": 3,
+      "days": 105,
+      "prerequisites": [
+        [
+          "tur_populist_turn_build"
+        ]
+      ],
+      "available": {
+        "ideology_group_support_above": {
+          "group": "nationalist_populist",
+          "value": 0.2
+        }
+      },
+      "effects": [
+        {
+          "install_government": {
+            "ideology": "nationalist_populist"
+          }
+        },
+        {
+          "add_stability": -0.05
+        }
+      ]
+    },
+    {
+      "id": "tur_sovereignty_first",
+      "name": "Sovereignty first",
+      "description": "Restrict immigration and limit the power of international bodies.",
+      "x": 6,
+      "y": 4,
+      "days": 70,
+      "prerequisites": [
+        [
+          "tur_populist_turn_government"
+        ]
+      ],
+      "effects": [
+        {
+          "change_law": {
+            "category": "immigration",
+            "law": "restrictive_immigration"
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "foreign_influence_resistance",
+            "value": 0.1,
+            "days": 2920
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "minorities",
+            "value": -6
+          }
+        }
+      ]
+    },
+    {
+      "id": "tur_religious_turn",
+      "name": "A religious turn",
+      "description": "Religious parties (the Virtue Party, later the AKP and the Felicity Party) gain as faith returns to politics.",
+      "x": 8,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "tur_question_of_power"
+        ]
+      ],
+      "mutually_exclusive": [
+        "tur_steady_course",
+        "tur_left_turn",
+        "tur_conservative_turn",
+        "tur_populist_turn",
+        "tur_army_steps_in"
+      ],
+      "available": {
+        "all": [
+          {
+            "any": [
+              {
+                "follows_history": false
+              },
+              {
+                "is_player": true
+              }
+            ]
+          },
+          {
+            "has_party_of_group": "religious"
+          },
+          {
+            "not": {
+              "ruling_ideology_group": "religious"
+            }
+          },
+          {
+            "any": [
+              {
+                "stability_below": 0.5
+              },
+              {
+                "ig_influence_above": {
+                  "group": "religious_establishment",
+                  "value": 0.15
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "effects": [
+        {
+          "leave_history": true
+        },
+        {
+          "add_ideology_support": {
+            "group": "religious",
+            "value": 0.04
+          }
+        }
+      ],
+      "ai_weight": 0.3
+    },
+    {
+      "id": "tur_religious_turn_build",
+      "name": "Faith networks",
+      "description": "Congregations and charities organise.",
+      "x": 8,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "tur_religious_turn"
+        ]
+      ],
+      "effects": [
+        {
+          "add_ideology_support": {
+            "group": "religious",
+            "value": 0.05
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "religious_establishment",
+            "value": 6
+          }
+        }
+      ]
+    },
+    {
+      "id": "tur_religious_turn_government",
+      "name": "A religious government",
+      "description": "The most popular religious party leads the government.",
+      "x": 8,
+      "y": 3,
+      "days": 105,
+      "prerequisites": [
+        [
+          "tur_religious_turn_build"
+        ]
+      ],
+      "available": {
+        "ideology_group_support_above": {
+          "group": "religious",
+          "value": 0.2
+        }
+      },
+      "effects": [
+        {
+          "install_government": {
+            "ideology": "religious"
+          }
+        },
+        {
+          "add_stability": -0.05
+        }
+      ]
+    },
+    {
+      "id": "tur_faith_in_public_life",
+      "name": "Faith in public life",
+      "description": "Religious education and an official religion.",
+      "x": 8,
+      "y": 4,
+      "days": 70,
+      "prerequisites": [
+        [
+          "tur_religious_turn_government"
+        ]
+      ],
+      "effects": [
+        {
+          "change_law": {
+            "category": "religion_state",
+            "law": "official_religion"
+          }
+        },
+        {
+          "add_spirit": "religious_revival"
+        }
+      ]
+    },
+    {
+      "id": "tur_army_steps_in",
+      "name": "The army steps in",
+      "description": "With the state in crisis, the generals prepare to take over.",
+      "x": 10,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "tur_question_of_power"
+        ]
+      ],
+      "mutually_exclusive": [
+        "tur_steady_course",
+        "tur_left_turn",
+        "tur_conservative_turn",
+        "tur_populist_turn",
+        "tur_religious_turn"
+      ],
+      "available": {
+        "all": [
+          {
+            "any": [
+              {
+                "follows_history": false
+              },
+              {
+                "is_player": true
+              }
+            ]
+          },
+          {
+            "stability_below": 0.3
+          },
+          {
+            "any": [
+              {
+                "unrest_above": 0.4
+              },
+              {
+                "ig_approval_below": {
+                  "group": "military",
+                  "value": 35
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "effects": [
+        {
+          "leave_history": true
+        },
+        {
+          "add_interest_group_influence": {
+            "group": "military",
+            "value": 0.08
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "military",
+            "value": 5
+          }
+        }
+      ],
+      "ai_weight": 0.2
+    },
+    {
+      "id": "tur_military_council",
+      "name": "Military council",
+      "description": "The armed forces remove the government. The coup may fail.",
+      "x": 10,
+      "y": 2,
+      "days": 35,
+      "prerequisites": [
+        [
+          "tur_army_steps_in"
+        ]
+      ],
+      "effects": [
+        {
+          "trigger_coup": {
+            "by": "military",
+            "success_chance": 0.6
+          }
+        }
+      ]
+    },
+    {
+      "id": "tur_martial_order",
+      "name": "Martial order",
+      "description": "A state of emergency, a curfew and military courts.",
+      "x": 10,
+      "y": 3,
+      "days": 70,
+      "prerequisites": [
+        [
+          "tur_military_council"
+        ]
+      ],
+      "available": {
+        "government_type": "military_junta"
+      },
+      "effects": [
+        {
+          "change_law": {
+            "category": "civil_rights",
+            "law": "security_state"
+          }
+        },
+        {
+          "add_spirit": "military_rule"
+        },
+        {
+          "add_unrest": -0.08
+        }
+      ]
+    },
+    {
+      "id": "tur_return_to_barracks",
+      "name": "Return to the barracks",
+      "description": "The council hands power to an elected government.",
+      "x": 10,
+      "y": 4,
+      "days": 140,
+      "prerequisites": [
+        [
+          "tur_martial_order"
+        ]
+      ],
+      "available": {
+        "government_type": "military_junta"
+      },
+      "effects": [
+        {
+          "set_government_type": "transitional_administration"
+        },
+        {
+          "change_law": {
+            "category": "political_freedom",
+            "law": "free_elections"
+          }
+        },
+        {
+          "remove_spirit": "military_rule"
+        },
+        {
+          "add_stability": 0.05
+        }
+      ],
+      "ai_weight": 0.5
+    },
+    {
+      "id": "tur_economic_programme",
+      "name": "An economic programme",
+      "description": "A stabilisation programme with the IMF after the crisis of February 2001.",
+      "x": 14,
+      "y": 0,
+      "days": 70,
+      "available": {
+        "date_after": "2001-02-21"
+      },
+      "effects": [
+        {
+          "add_political_power": 30
+        },
+        {
+          "add_treasury": 3
+        }
+      ],
+      "ai_weight": 6
+    },
+    {
+      "id": "tur_bank_restructuring",
+      "name": "Restructure the banks",
+      "description": "Close failed banks and set up an independent bank regulator.",
+      "x": 13,
+      "y": 1,
+      "days": 105,
+      "prerequisites": [
+        [
+          "tur_economic_programme"
+        ]
+      ],
+      "effects": [
+        {
+          "swap_spirit": {
+            "from": "tur_fiscal_fragility",
+            "to": "balanced_budget"
+          }
         },
         {
           "add_interest_group_approval": {
@@ -473,20 +934,230 @@
           }
         }
       ],
+      "ai_weight": 5
+    },
+    {
+      "id": "tur_central_bank_independence",
+      "name": "An independent central bank",
+      "description": "Let the central bank target inflation.",
+      "x": 15,
+      "y": 1,
+      "days": 70,
       "prerequisites": [
         [
-          "tur_new_government",
           "tur_economic_programme"
         ]
+      ],
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "inflation",
+            "value": -0.02,
+            "days": 2920
+          }
+        }
       ]
     },
     {
-      "id": "tur_energy_corridor",
-      "name": "Energy corridor",
-      "description": "Bring oil and gas pipelines from the Caspian through Turkey.",
-      "x": 7,
+      "id": "tur_new_lira",
+      "name": "The new Turkish lira",
+      "description": "Replace the old lira with a new lira, as Turkey did in 2005.",
+      "x": 14,
       "y": 2,
       "days": 70,
+      "prerequisites": [
+        [
+          "tur_bank_restructuring"
+        ],
+        [
+          "tur_central_bank_independence"
+        ]
+      ],
+      "available": {
+        "date_after": "2005-01-01"
+      },
+      "effects": [
+        {
+          "add_spirit": "tur_stable_lira"
+        },
+        {
+          "add_stability": 0.02
+        }
+      ],
+      "ai_weight": 4
+    },
+    {
+      "id": "tur_privatisation",
+      "name": "Privatisation",
+      "description": "Sell telecoms, refineries and state banks.",
+      "x": 13,
+      "y": 3,
+      "days": 70,
+      "prerequisites": [
+        [
+          "tur_new_lira"
+        ]
+      ],
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "private_sector_output",
+            "value": 0.04,
+            "days": 2920
+          }
+        },
+        {
+          "add_treasury": 3
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "labour_unions",
+            "value": -4
+          }
+        }
+      ]
+    },
+    {
+      "id": "tur_anatolian_tigers",
+      "name": "Anatolian tigers",
+      "description": "Support the export industries of the Anatolian cities.",
+      "x": 15,
+      "y": 3,
+      "days": 70,
+      "prerequisites": [
+        [
+          "tur_new_lira"
+        ]
+      ],
+      "effects": [
+        {
+          "add_buildings": {
+            "building": "civilian_factory",
+            "count": 4
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "trade_efficiency",
+            "value": 0.03,
+            "days": 2920
+          }
+        }
+      ]
+    },
+    {
+      "id": "tur_construction_boom",
+      "name": "Construction boom",
+      "description": "Housing, airports and bridges.",
+      "x": 14,
+      "y": 4,
+      "days": 70,
+      "prerequisites": [
+        [
+          "tur_privatisation",
+          "tur_anatolian_tigers"
+        ]
+      ],
+      "effects": [
+        {
+          "add_buildings": {
+            "building": "infrastructure",
+            "count": 4
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "construction_speed",
+            "value": 0.05,
+            "days": 2920
+          }
+        },
+        {
+          "add_buildings": {
+            "building": "air_base",
+            "count": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "tur_energy_hub",
+      "name": "An energy hub",
+      "description": "Pipelines across Turkey from the Caspian and Russia to Europe.",
+      "x": 16,
+      "y": 4,
+      "days": 70,
+      "prerequisites": [
+        [
+          "tur_anatolian_tigers"
+        ]
+      ],
+      "effects": [
+        {
+          "add_buildings": {
+            "building": "refinery",
+            "count": 1
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "trade_efficiency",
+            "value": 0.03,
+            "days": 2920
+          }
+        },
+        {
+          "add_treasury": 1
+        }
+      ]
+    },
+    {
+      "id": "tur_marmaray",
+      "name": "Marmaray",
+      "description": "A rail tunnel under the Bosporus, opened on 29 October 2013.",
+      "x": 13,
+      "y": 5,
+      "days": 70,
+      "prerequisites": [
+        [
+          "tur_construction_boom"
+        ]
+      ],
+      "available": {
+        "date_after": "2013-10-29"
+      },
+      "effects": [
+        {
+          "add_buildings": {
+            "building": "infrastructure",
+            "count": 3
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "trade_efficiency",
+            "value": 0.02,
+            "days": 3650
+          }
+        }
+      ],
+      "ai_weight": 4
+    },
+    {
+      "id": "tur_turkstream",
+      "name": "TurkStream",
+      "description": "A gas pipeline from Russia under the Black Sea, announced on 1 December 2014.",
+      "x": 16,
+      "y": 5,
+      "days": 70,
+      "prerequisites": [
+        [
+          "tur_energy_hub"
+        ]
+      ],
+      "available": {
+        "date_after": "2016-01-01"
+      },
       "effects": [
         {
           "add_timed_modifier": {
@@ -496,60 +1167,1216 @@
           }
         },
         {
-          "add_timed_modifier": {
-            "modifier": "trade_efficiency",
-            "value": 0.03,
-            "days": 3650
+          "add_opinion": {
+            "target": "RUS",
+            "value": 10,
+            "days": 1825
           }
         }
-      ],
-      "prerequisites": [
-        [
-          "tur_economic_council"
-        ]
       ]
     },
     {
-      "id": "tur_defence_industry",
-      "name": "National defence industry",
-      "description": "Build armoured vehicles, ships and drones at home.",
-      "x": 10,
-      "y": 2,
-      "days": 105,
+      "id": "tur_nuclear_plant",
+      "name": "A nuclear power plant",
+      "description": "Turkey's first nuclear plant on the Mediterranean.",
+      "x": 15,
+      "y": 5,
+      "days": 70,
+      "prerequisites": [
+        [
+          "tur_energy_hub",
+          "tur_construction_boom"
+        ]
+      ],
+      "available": {
+        "date_after": "2010-01-01"
+      },
       "effects": [
         {
           "add_timed_modifier": {
-            "modifier": "production_efficiency",
-            "value": 0.03,
+            "modifier": "nuclear_output",
+            "value": 0.08,
             "days": 3650
+          }
+        },
+        {
+          "add_opinion": {
+            "target": "RUS",
+            "value": 5,
+            "days": 1825
+          }
+        }
+      ]
+    },
+    {
+      "id": "tur_black_sea_gas",
+      "name": "Black Sea gas",
+      "description": "Develop the gas found in the Black Sea.",
+      "x": 14,
+      "y": 6,
+      "days": 70,
+      "prerequisites": [
+        [
+          "tur_marmaray",
+          "tur_turkstream",
+          "tur_nuclear_plant"
+        ]
+      ],
+      "available": {
+        "date_after": "2020-08-01"
+      },
+      "effects": [
+        {
+          "add_buildings": {
+            "building": "refinery",
+            "count": 1
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "energy_cost",
+            "value": -0.02,
+            "days": 3650
+          }
+        }
+      ]
+    },
+    {
+      "id": "tur_institutions",
+      "name": "State and constitution",
+      "description": "Reform of the state and its constitution.",
+      "x": 21,
+      "y": 0,
+      "days": 70,
+      "effects": [
+        {
+          "add_political_power": 20
+        }
+      ],
+      "ai_weight": 4
+    },
+    {
+      "id": "tur_eu_reforms",
+      "name": "EU harmonisation packages",
+      "description": "Laws that bring Turkey's rules into line with the European Union.",
+      "x": 20,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "tur_institutions"
+        ]
+      ],
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "civil_liberties",
+            "value": 0.05,
+            "days": 2920
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "minorities",
+            "value": 4
+          }
+        },
+        {
+          "add_opinion": {
+            "target": "DEU",
+            "value": 5,
+            "days": 1825
+          }
+        }
+      ]
+    },
+    {
+      "id": "tur_eu_negotiations",
+      "name": "Accession negotiations",
+      "description": "Membership negotiations with the European Union, opened on 3 October 2005.",
+      "x": 20,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "tur_eu_reforms"
+        ]
+      ],
+      "available": {
+        "all": [
+          {
+            "follows_history": true
+          },
+          {
+            "date_after": "2005-10-03"
+          }
+        ]
+      },
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "foreign_investment",
+            "value": 0.05,
+            "days": 2920
+          }
+        },
+        {
+          "add_opinion": {
+            "target": "DEU",
+            "value": 5,
+            "days": 1825
+          }
+        },
+        {
+          "add_opinion": {
+            "target": "FRA",
+            "value": 5,
+            "days": 1825
+          }
+        }
+      ],
+      "ai_weight": 4
+    },
+    {
+      "id": "tur_referendum_2010",
+      "name": "The 2010 constitutional referendum",
+      "description": "Amendments approved on 12 September 2010 with 58 percent.",
+      "x": 22,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "tur_institutions"
+        ]
+      ],
+      "available": {
+        "all": [
+          {
+            "follows_history": true
+          },
+          {
+            "date_after": "2010-09-12"
+          }
+        ]
+      },
+      "effects": [
+        {
+          "add_political_power": 40
+        },
+        {
+          "add_stability": 0.01
+        }
+      ],
+      "ai_weight": 4
+    },
+    {
+      "id": "tur_kurdish_peace",
+      "name": "A peace process",
+      "description": "Talks with the PKK and reforms for Kurdish citizens.",
+      "x": 21,
+      "y": 2,
+      "days": 140,
+      "prerequisites": [
+        [
+          "tur_eu_reforms",
+          "tur_referendum_2010"
+        ]
+      ],
+      "available": {
+        "has_spirit": "tur_pkk_insurgency"
+      },
+      "effects": [
+        {
+          "remove_spirit": "tur_pkk_insurgency"
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "minorities",
+            "value": 8
+          }
+        },
+        {
+          "add_stability": 0.03
+        }
+      ],
+      "ai_weight": 2
+    },
+    {
+      "id": "tur_after_the_coup",
+      "name": "After the coup attempt",
+      "description": "Purge the coup plotters after the failed attempt of 15 July 2016.",
+      "x": 22,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "tur_referendum_2010"
+        ]
+      ],
+      "available": {
+        "all": [
+          {
+            "follows_history": true
+          },
+          {
+            "date_after": "2016-07-16"
+          }
+        ]
+      },
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "internal_security",
+            "value": 0.08,
+            "days": 2920
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "military",
+            "value": -6
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "security_services",
+            "value": 5
+          }
+        },
+        {
+          "add_political_power": 40
+        }
+      ],
+      "ai_weight": 4
+    },
+    {
+      "id": "tur_presidential_system",
+      "name": "An executive presidency",
+      "description": "Amendments approved on 16 April 2017 abolish the post of prime minister.",
+      "x": 22,
+      "y": 3,
+      "days": 70,
+      "prerequisites": [
+        [
+          "tur_after_the_coup"
+        ]
+      ],
+      "available": {
+        "all": [
+          {
+            "follows_history": true
+          },
+          {
+            "date_after": "2017-04-16"
+          }
+        ]
+      },
+      "effects": [
+        {
+          "add_spirit": "tur_presidential_system"
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "urban_middle_class",
+            "value": -4
+          }
+        }
+      ],
+      "ai_weight": 4
+    },
+    {
+      "id": "tur_earthquake_recovery",
+      "name": "After the earthquakes",
+      "description": "Rebuild the south-east after the earthquakes of 6 February 2023. Unlocks rebuilding homes.",
+      "x": 21,
+      "y": 4,
+      "days": 70,
+      "prerequisites": [
+        [
+          "tur_presidential_system",
+          "tur_kurdish_peace",
+          "tur_eu_negotiations"
+        ]
+      ],
+      "available": {
+        "date_after": "2023-02-06"
+      },
+      "effects": [
+        {
+          "add_spirit": "tur_earthquake_damage"
+        },
+        {
+          "add_spirit": "reconstruction_effort"
+        },
+        {
+          "add_buildings": {
+            "building": "infrastructure",
+            "count": 3
+          }
+        }
+      ],
+      "ai_weight": 4
+    },
+    {
+      "id": "tur_health_transformation",
+      "name": "Health transformation",
+      "description": "Universal health insurance and new hospitals. Unlocks city hospitals.",
+      "x": 20,
+      "y": 3,
+      "days": 70,
+      "prerequisites": [
+        [
+          "tur_eu_negotiations",
+          "tur_kurdish_peace"
+        ]
+      ],
+      "effects": [
+        {
+          "add_spirit": "universal_healthcare"
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "rural",
+            "value": 4
+          }
+        }
+      ]
+    },
+    {
+      "id": "tur_education_push",
+      "name": "Schools and universities",
+      "description": "A university in every province.",
+      "x": 20,
+      "y": 4,
+      "days": 70,
+      "prerequisites": [
+        [
+          "tur_health_transformation"
+        ]
+      ],
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "education_quality",
+            "value": 0.04,
+            "days": 3650
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "youth_students",
+            "value": 4
+          }
+        }
+      ]
+    },
+    {
+      "id": "tur_defence_review",
+      "name": "Defence review",
+      "description": "Strategy and forces for the new century.",
+      "x": 27,
+      "y": 0,
+      "days": 70,
+      "effects": [
+        {
+          "add_interest_group_approval": {
+            "group": "military",
+            "value": 3
+          }
+        }
+      ],
+      "ai_weight": 4
+    },
+    {
+      "id": "tur_defence_industry",
+      "name": "A national defence industry",
+      "description": "Make warships, armoured vehicles and missiles at home.",
+      "x": 26,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "tur_defence_review"
+        ]
+      ],
+      "effects": [
+        {
+          "add_spirit": "tur_defence_industry"
+        },
+        {
+          "add_buildings": {
+            "building": "military_factory",
+            "count": 2
+          }
+        }
+      ]
+    },
+    {
+      "id": "tur_drones",
+      "name": "Armed drones",
+      "description": "Develop armed drones such as the Bayraktar TB2. Unlocks drone orders.",
+      "x": 28,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "tur_defence_review"
+        ]
+      ],
+      "available": {
+        "date_after": "2012-01-01"
+      },
+      "effects": [
+        {
+          "add_research_bonus": {
+            "category": "air_drones",
+            "value": 0.3,
+            "uses": 2
+          }
+        },
+        {
+          "add_buildings": {
+            "building": "military_factory",
+            "count": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "tur_navy",
+      "name": "A blue-homeland navy",
+      "description": "Frigates, submarines and a light aircraft carrier.",
+      "x": 26,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "tur_defence_industry"
+        ]
+      ],
+      "effects": [
+        {
+          "add_buildings": {
+            "building": "port",
+            "count": 1
+          }
+        },
+        {
+          "add_research_bonus": {
+            "category": "naval",
+            "value": 0.25,
+            "uses": 2
+          }
+        }
+      ]
+    },
+    {
+      "id": "tur_tanks",
+      "name": "A national tank",
+      "description": "Develop a national main battle tank.",
+      "x": 27,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "tur_defence_industry",
+          "tur_drones"
+        ]
+      ],
+      "effects": [
+        {
+          "add_research_bonus": {
+            "category": "armour",
+            "value": 0.2,
+            "uses": 2
+          }
+        },
+        {
+          "add_divisions": {
+            "template": "mechanised_division",
+            "count": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "tur_air_defence",
+      "name": "Air defence",
+      "description": "Long-range air defence.",
+      "x": 28,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "tur_drones"
+        ]
+      ],
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "army_defence",
+            "value": 0.03,
+            "days": 2920
+          }
+        },
+        {
+          "add_research_bonus": {
+            "category": "artillery_missiles",
+            "value": 0.2,
+            "uses": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "tur_commandos",
+      "name": "Commando brigades",
+      "description": "Commandos for the south-east and cross-border operations.",
+      "x": 27,
+      "y": 3,
+      "days": 70,
+      "prerequisites": [
+        [
+          "tur_tanks",
+          "tur_air_defence"
+        ]
+      ],
+      "effects": [
+        {
+          "add_divisions": {
+            "template": "motorised_division",
+            "count": 2
           }
         },
         {
           "add_timed_modifier": {
             "modifier": "army_attack",
+            "value": 0.02,
+            "days": 2920
+          }
+        }
+      ]
+    },
+    {
+      "id": "tur_fighter_jet",
+      "name": "A national fighter",
+      "description": "Develop a fifth-generation fighter.",
+      "x": 28,
+      "y": 3,
+      "days": 70,
+      "prerequisites": [
+        [
+          "tur_air_defence"
+        ]
+      ],
+      "available": {
+        "date_after": "2016-01-01"
+      },
+      "effects": [
+        {
+          "add_research_bonus": {
+            "category": "air_drones",
+            "value": 0.25,
+            "uses": 2
+          }
+        },
+        {
+          "add_buildings": {
+            "building": "air_base",
+            "count": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "tur_cross_border",
+      "name": "Cross-border operations",
+      "description": "Operations against PKK bases in northern Iraq and Syria.",
+      "x": 26,
+      "y": 3,
+      "days": 70,
+      "prerequisites": [
+        [
+          "tur_navy",
+          "tur_tanks"
+        ]
+      ],
+      "available": {
+        "date_after": "2015-01-01"
+      },
+      "effects": [
+        {
+          "add_war_support": 0.03
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "army_attack",
+            "value": 0.02,
+            "days": 1460
+          }
+        }
+      ]
+    },
+    {
+      "id": "tur_foreign_policy",
+      "name": "Foreign policy",
+      "description": "Turkey between Europe, Russia and the Middle East.",
+      "x": 32,
+      "y": 0,
+      "days": 70,
+      "effects": [
+        {
+          "add_political_power": 20
+        }
+      ],
+      "ai_weight": 4
+    },
+    {
+      "id": "tur_nato_ally",
+      "name": "A NATO ally",
+      "description": "Keep Turkey's role in NATO.",
+      "x": 31,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "tur_foreign_policy"
+        ]
+      ],
+      "effects": [
+        {
+          "add_opinion": {
+            "target": "USA",
+            "value": 10,
+            "days": 1825
+          }
+        },
+        {
+          "add_opinion": {
+            "target": "GBR",
+            "value": 5,
+            "days": 1825
+          }
+        }
+      ]
+    },
+    {
+      "id": "tur_zero_problems",
+      "name": "Zero problems with neighbours",
+      "description": "Better relations and trade with every neighbour.",
+      "x": 33,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "tur_foreign_policy"
+        ]
+      ],
+      "effects": [
+        {
+          "add_opinion": {
+            "target": "SYR",
+            "value": 10,
+            "days": 1825
+          }
+        },
+        {
+          "add_opinion": {
+            "target": "IRN",
+            "value": 10,
+            "days": 1825
+          }
+        },
+        {
+          "add_opinion": {
+            "target": "GRC",
+            "value": 10,
+            "days": 1825
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "trade_efficiency",
+            "value": 0.02,
+            "days": 2920
+          }
+        }
+      ]
+    },
+    {
+      "id": "tur_turkic_states",
+      "name": "The Turkic states",
+      "description": "Closer ties with Azerbaijan and Central Asia.",
+      "x": 31,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "tur_nato_ally",
+          "tur_zero_problems"
+        ]
+      ],
+      "effects": [
+        {
+          "add_opinion": {
+            "target": "AZE",
+            "value": 15,
+            "days": 1825
+          }
+        },
+        {
+          "add_opinion": {
+            "target": "KAZ",
+            "value": 10,
+            "days": 1825
+          }
+        },
+        {
+          "add_opinion": {
+            "target": "UZB",
+            "value": 10,
+            "days": 1825
+          }
+        }
+      ]
+    },
+    {
+      "id": "tur_africa_opening",
+      "name": "Opening to Africa",
+      "description": "Embassies, flights and trade across Africa.",
+      "x": 33,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "tur_zero_problems"
+        ]
+      ],
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "foreign_influence_power",
+            "value": 0.05,
+            "days": 2920
+          }
+        }
+      ]
+    },
+    {
+      "id": "tur_mediation",
+      "name": "A mediator",
+      "description": "Mediate between Russia and Ukraine and in other conflicts.",
+      "x": 32,
+      "y": 3,
+      "days": 70,
+      "prerequisites": [
+        [
+          "tur_turkic_states",
+          "tur_africa_opening"
+        ]
+      ],
+      "available": {
+        "date_after": "2022-02-24"
+      },
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "diplomatic_reputation",
+            "value": 0.05,
+            "days": 2920
+          }
+        },
+        {
+          "add_opinion": {
+            "target": "UKR",
+            "value": 5,
+            "days": 1825
+          }
+        },
+        {
+          "add_opinion": {
+            "target": "RUS",
+            "value": 5,
+            "days": 1825
+          }
+        }
+      ]
+    },
+    {
+      "id": "tur_society",
+      "name": "Society and science",
+      "description": "Health, schools, research and the infrastructure of everyday life.",
+      "x": 37,
+      "y": 0,
+      "days": 70,
+      "effects": [
+        {
+          "add_political_power": 20
+        }
+      ],
+      "ai_weight": 3
+    },
+    {
+      "id": "tur_health_investment",
+      "name": "Invest in hospitals",
+      "description": "New hospitals and more doctors.",
+      "x": 35,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "tur_society"
+        ]
+      ],
+      "available": {
+        "treasury_above": 1
+      },
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "health_outcomes",
+            "value": 0.04,
+            "days": 3650
+          }
+        },
+        {
+          "add_treasury": -1
+        }
+      ]
+    },
+    {
+      "id": "tur_schools_investment",
+      "name": "Invest in schools",
+      "description": "Smaller classes and better-paid teachers.",
+      "x": 37,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "tur_society"
+        ]
+      ],
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "education_quality",
+            "value": 0.04,
+            "days": 3650
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "youth_students",
+            "value": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "tur_research_agency",
+      "name": "A research agency",
+      "description": "Grants for breakthrough research.",
+      "x": 39,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "tur_society"
+        ]
+      ],
+      "effects": [
+        {
+          "add_spirit": "science_drive"
+        },
+        {
+          "add_research_bonus": {
+            "category": "industry_energy",
+            "value": 0.2,
+            "uses": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "tur_elderly_care",
+      "name": "Care for the elderly",
+      "description": "Care homes and home care for an ageing population.",
+      "x": 35,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "tur_health_investment"
+        ]
+      ],
+      "effects": [
+        {
+          "set_budget": {
+            "spending": 0.3
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "rural",
+            "value": 2
+          }
+        },
+        {
+          "add_stability": 0.01
+        }
+      ]
+    },
+    {
+      "id": "tur_universities",
+      "name": "Leading universities",
+      "description": "Funding for the top universities.",
+      "x": 37,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "tur_schools_investment",
+          "tur_research_agency"
+        ]
+      ],
+      "effects": [
+        {
+          "add_research_bonus": {
+            "category": "economy_digital",
+            "value": 0.2,
+            "uses": 2
+          }
+        }
+      ]
+    },
+    {
+      "id": "tur_ai_and_computing",
+      "name": "Artificial intelligence and computing",
+      "description": "Supercomputers and data centres.",
+      "x": 39,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "tur_research_agency"
+        ]
+      ],
+      "available": {
+        "date_after": "2015-01-01"
+      },
+      "effects": [
+        {
+          "add_buildings": {
+            "building": "data_centre",
+            "count": 2
+          }
+        },
+        {
+          "add_research_bonus": {
+            "category": "electronics_cyber",
+            "value": 0.2,
+            "uses": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "tur_affordable_housing",
+      "name": "Affordable housing",
+      "description": "Build homes the young can afford.",
+      "x": 35,
+      "y": 3,
+      "days": 70,
+      "prerequisites": [
+        [
+          "tur_elderly_care"
+        ]
+      ],
+      "available": {
+        "treasury_above": 1
+      },
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "construction_speed",
+            "value": 0.05,
+            "days": 2920
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "youth_students",
+            "value": 3
+          }
+        },
+        {
+          "add_treasury": -1
+        }
+      ]
+    },
+    {
+      "id": "tur_broadband",
+      "name": "Broadband everywhere",
+      "description": "Fast internet in every town and village.",
+      "x": 37,
+      "y": 3,
+      "days": 70,
+      "prerequisites": [
+        [
+          "tur_universities"
+        ]
+      ],
+      "effects": [
+        {
+          "add_buildings": {
+            "building": "data_centre",
+            "count": 1
+          }
+        },
+        {
+          "add_buildings": {
+            "building": "infrastructure",
+            "count": 1
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "rural",
+            "value": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "tur_space_and_satellites",
+      "name": "Space and satellites",
+      "description": "Satellites for navigation and observation.",
+      "x": 39,
+      "y": 3,
+      "days": 70,
+      "prerequisites": [
+        [
+          "tur_ai_and_computing"
+        ]
+      ],
+      "effects": [
+        {
+          "add_research_bonus": {
+            "category": "air_drones",
+            "value": 0.15,
+            "uses": 1
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "intelligence_power",
             "value": 0.03,
             "days": 3650
           }
         }
-      ],
-      "prerequisites": [
-        [
-          "tur_defence_review"
-        ]
       ]
-    }
-  ],
-  "source": [
-    {
-      "url": "https://en.wikipedia.org/wiki/Kemal_Derviş",
-      "title": "Wikipedia: Kemal Derviş",
-      "accessed": "2026-10-15"
     },
     {
-      "url": "https://en.wikipedia.org/wiki/Accession_of_Turkey_to_the_European_Union",
-      "title": "Wikipedia: Accession of Turkey to the European Union",
-      "accessed": "2026-10-15"
+      "id": "tur_public_transport",
+      "name": "Public transport",
+      "description": "Trams, metros and regional trains.",
+      "x": 35,
+      "y": 4,
+      "days": 70,
+      "prerequisites": [
+        [
+          "tur_affordable_housing"
+        ]
+      ],
+      "effects": [
+        {
+          "add_buildings": {
+            "building": "infrastructure",
+            "count": 2
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "urban_middle_class",
+            "value": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "tur_digital_state",
+      "name": "A digital state",
+      "description": "Public services online.",
+      "x": 37,
+      "y": 4,
+      "days": 70,
+      "prerequisites": [
+        [
+          "tur_broadband"
+        ]
+      ],
+      "effects": [
+        {
+          "add_spirit": "digital_government"
+        }
+      ]
+    },
+    {
+      "id": "tur_biotech",
+      "name": "Biotechnology",
+      "description": "Vaccines and medicines made at home.",
+      "x": 39,
+      "y": 4,
+      "days": 70,
+      "prerequisites": [
+        [
+          "tur_space_and_satellites"
+        ]
+      ],
+      "effects": [
+        {
+          "add_buildings": {
+            "building": "civilian_factory",
+            "count": 1
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "health_outcomes",
+            "value": 0.02,
+            "days": 3650
+          }
+        }
+      ]
+    },
+    {
+      "id": "tur_climate_adaptation",
+      "name": "Climate adaptation",
+      "description": "Flood defences and water management.",
+      "x": 37,
+      "y": 5,
+      "days": 70,
+      "prerequisites": [
+        [
+          "tur_public_transport",
+          "tur_digital_state",
+          "tur_biotech"
+        ]
+      ],
+      "available": {
+        "date_after": "2010-01-01"
+      },
+      "effects": [
+        {
+          "add_buildings": {
+            "building": "infrastructure",
+            "count": 1
+          }
+        },
+        {
+          "add_stability": 0.01
+        }
+      ]
     }
-  ],
-  "confidence": "verified"
+  ]
 }

@@ -1,0 +1,1866 @@
+{
+  "id": "syr",
+  "name": "Syria",
+  "countries": [
+    "SYR"
+  ],
+  "note": "Syria in the style of the Russian model tree: the Ba'athist state as the historical path until 2024, an Islamist alternative led by a real party of the data and a junta; branches for the early 2000s (the Damascus Spring, leaving Lebanon), the civil war from 2011, the transition and reconstruction from 2025, the army and foreign policy. Sourced starting spirits in data/spirits/syr.json. Wars stay in the scripted conflict events. Alternatives are a counterfactual, not a claim about the parties.",
+  "source": [
+    {
+      "url": "https://en.wikipedia.org/wiki/Ba'athist_Syria",
+      "title": "Wikipedia: Ba'athist Syria",
+      "accessed": "2026-10-19"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Damascus_Spring",
+      "title": "Wikipedia: Damascus Spring",
+      "accessed": "2026-10-19"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Syrian_occupation_of_Lebanon",
+      "title": "Wikipedia: Syrian occupation of Lebanon",
+      "accessed": "2026-10-19"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Golan_Heights",
+      "title": "Wikipedia: Golan Heights",
+      "accessed": "2026-10-19"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Death_and_state_funeral_of_Hafez_al-Assad",
+      "title": "Wikipedia: Death and state funeral of Hafez al-Assad",
+      "accessed": "2026-10-19"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Syrian_civil_war",
+      "title": "Wikipedia: Syrian civil war",
+      "accessed": "2026-10-19"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Russian_military_intervention_in_the_Syrian_civil_war",
+      "title": "Wikipedia: Russian military intervention in the Syrian civil war",
+      "accessed": "2026-10-19"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Fall_of_the_Assad_regime",
+      "title": "Wikipedia: Fall of the Assad regime",
+      "accessed": "2026-10-19"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Syrian_transitional_government",
+      "title": "Wikipedia: Syrian transitional government",
+      "accessed": "2026-10-19"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Hay'at_Tahrir_al-Sham",
+      "title": "Wikipedia: Hay'at Tahrir al-Sham",
+      "accessed": "2026-10-19"
+    }
+  ],
+  "confidence": "verified",
+  "focuses": [
+    {
+      "id": "syr_question_of_power",
+      "name": "Who rules Syria",
+      "description": "Whether the Ba'ath Party keeps power or another force takes over.",
+      "x": 3,
+      "y": 0,
+      "days": 70,
+      "effects": [
+        {
+          "add_political_power": 30
+        }
+      ],
+      "ai_weight": 5
+    },
+    {
+      "id": "syr_steady_course",
+      "name": "The Ba'athist state",
+      "description": "The Ba'ath Party rules, as it did from 1963 to 2024.",
+      "x": 0,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "syr_question_of_power"
+        ]
+      ],
+      "mutually_exclusive": [
+        "syr_islamist_movement",
+        "syr_army_steps_in"
+      ],
+      "available": {
+        "follows_history": true
+      },
+      "effects": [
+        {
+          "add_stability": 0.04
+        },
+        {
+          "add_political_power": 40
+        }
+      ],
+      "ai_weight": 20
+    },
+    {
+      "id": "syr_islamist_movement",
+      "name": "The Islamist opposition",
+      "description": "Islamist groups gain followers in the provinces.",
+      "x": 2,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "syr_question_of_power"
+        ]
+      ],
+      "mutually_exclusive": [
+        "syr_steady_course",
+        "syr_army_steps_in"
+      ],
+      "available": {
+        "all": [
+          {
+            "any": [
+              {
+                "follows_history": false
+              },
+              {
+                "is_player": true
+              }
+            ]
+          },
+          {
+            "has_party_of_group": "religious"
+          },
+          {
+            "not": {
+              "ruling_ideology_group": "religious"
+            }
+          },
+          {
+            "any": [
+              {
+                "stability_below": 0.4
+              },
+              {
+                "has_civil_war": true
+              }
+            ]
+          }
+        ]
+      },
+      "effects": [
+        {
+          "leave_history": true
+        },
+        {
+          "add_ideology_support": {
+            "group": "religious",
+            "value": 0.04
+          }
+        }
+      ],
+      "ai_weight": 0.3
+    },
+    {
+      "id": "syr_islamist_movement_build",
+      "name": "Mosque networks",
+      "description": "Preachers and charities organise support.",
+      "x": 2,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "syr_islamist_movement"
+        ]
+      ],
+      "effects": [
+        {
+          "add_ideology_support": {
+            "group": "religious",
+            "value": 0.05
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "religious_establishment",
+            "value": 6
+          }
+        }
+      ]
+    },
+    {
+      "id": "syr_islamist_movement_government",
+      "name": "An Islamist government",
+      "description": "The most popular Islamist movement forms the government.",
+      "x": 2,
+      "y": 3,
+      "days": 105,
+      "prerequisites": [
+        [
+          "syr_islamist_movement_build"
+        ]
+      ],
+      "available": {
+        "ideology_group_support_above": {
+          "group": "religious",
+          "value": 0.2
+        }
+      },
+      "effects": [
+        {
+          "install_government": {
+            "ideology": "religious"
+          }
+        },
+        {
+          "add_stability": -0.05
+        }
+      ]
+    },
+    {
+      "id": "syr_islamic_law",
+      "name": "Religious law",
+      "description": "Religious law in public life.",
+      "x": 2,
+      "y": 4,
+      "days": 70,
+      "prerequisites": [
+        [
+          "syr_islamist_movement_government"
+        ]
+      ],
+      "effects": [
+        {
+          "change_law": {
+            "category": "religion_state",
+            "law": "religious_law_partial"
+          }
+        },
+        {
+          "add_spirit": "religious_revival"
+        }
+      ]
+    },
+    {
+      "id": "syr_army_steps_in",
+      "name": "The army steps in",
+      "description": "With the state in crisis, the generals prepare to take over.",
+      "x": 4,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "syr_question_of_power"
+        ]
+      ],
+      "mutually_exclusive": [
+        "syr_steady_course",
+        "syr_islamist_movement"
+      ],
+      "available": {
+        "all": [
+          {
+            "any": [
+              {
+                "follows_history": false
+              },
+              {
+                "is_player": true
+              }
+            ]
+          },
+          {
+            "stability_below": 0.3
+          },
+          {
+            "any": [
+              {
+                "unrest_above": 0.4
+              },
+              {
+                "ig_approval_below": {
+                  "group": "military",
+                  "value": 35
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "effects": [
+        {
+          "leave_history": true
+        },
+        {
+          "add_interest_group_influence": {
+            "group": "military",
+            "value": 0.08
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "military",
+            "value": 5
+          }
+        }
+      ],
+      "ai_weight": 0.2
+    },
+    {
+      "id": "syr_military_council",
+      "name": "Military council",
+      "description": "The armed forces remove the government. The coup may fail.",
+      "x": 4,
+      "y": 2,
+      "days": 35,
+      "prerequisites": [
+        [
+          "syr_army_steps_in"
+        ]
+      ],
+      "effects": [
+        {
+          "trigger_coup": {
+            "by": "military",
+            "success_chance": 0.6
+          }
+        }
+      ]
+    },
+    {
+      "id": "syr_martial_order",
+      "name": "Martial order",
+      "description": "A state of emergency, a curfew and military courts.",
+      "x": 4,
+      "y": 3,
+      "days": 70,
+      "prerequisites": [
+        [
+          "syr_military_council"
+        ]
+      ],
+      "available": {
+        "government_type": "military_junta"
+      },
+      "effects": [
+        {
+          "change_law": {
+            "category": "civil_rights",
+            "law": "security_state"
+          }
+        },
+        {
+          "add_spirit": "military_rule"
+        },
+        {
+          "add_unrest": -0.08
+        }
+      ]
+    },
+    {
+      "id": "syr_return_to_barracks",
+      "name": "Return to the barracks",
+      "description": "The council hands power to an elected government.",
+      "x": 4,
+      "y": 4,
+      "days": 140,
+      "prerequisites": [
+        [
+          "syr_martial_order"
+        ]
+      ],
+      "available": {
+        "government_type": "military_junta"
+      },
+      "effects": [
+        {
+          "set_government_type": "transitional_administration"
+        },
+        {
+          "change_law": {
+            "category": "political_freedom",
+            "law": "free_elections"
+          }
+        },
+        {
+          "remove_spirit": "military_rule"
+        },
+        {
+          "add_stability": 0.05
+        }
+      ],
+      "ai_weight": 0.5
+    },
+    {
+      "id": "syr_damascus_spring",
+      "name": "Damascus Spring",
+      "description": "Allow political forums and debate, as in the year after June 2000.",
+      "x": 9,
+      "y": 0,
+      "days": 70,
+      "available": {
+        "all": [
+          {
+            "date_after": "2000-06-10"
+          },
+          {
+            "date_before": "2002-01-01"
+          }
+        ]
+      },
+      "effects": [
+        {
+          "add_interest_group_approval": {
+            "group": "urban_middle_class",
+            "value": 5
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "security_services",
+            "value": -4
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "civil_liberties",
+            "value": 0.05,
+            "days": 730
+          }
+        }
+      ],
+      "ai_weight": 3
+    },
+    {
+      "id": "syr_economic_opening",
+      "name": "Economic opening",
+      "description": "Private banks and a social market economy.",
+      "x": 10,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "syr_damascus_spring",
+          "syr_national_programme"
+        ]
+      ],
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "private_sector_output",
+            "value": 0.04,
+            "days": 2920
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "business",
+            "value": 5
+          }
+        }
+      ]
+    },
+    {
+      "id": "syr_national_programme",
+      "name": "The new president's programme",
+      "description": "The priorities of the government after the succession of 2000.",
+      "x": 11,
+      "y": 0,
+      "days": 70,
+      "effects": [
+        {
+          "add_political_power": 30
+        }
+      ],
+      "ai_weight": 5
+    },
+    {
+      "id": "syr_leave_lebanon",
+      "name": "Leave Lebanon",
+      "description": "Withdraw from Lebanon, as Syria did on 30 April 2005.",
+      "x": 12,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "syr_national_programme"
+        ]
+      ],
+      "available": {
+        "date_after": "2005-03-01"
+      },
+      "effects": [
+        {
+          "remove_spirit": "syr_troops_in_lebanon"
+        },
+        {
+          "add_opinion": {
+            "target": "LBN",
+            "value": 10,
+            "days": 1825
+          }
+        },
+        {
+          "add_opinion": {
+            "target": "FRA",
+            "value": 5,
+            "days": 1825
+          }
+        }
+      ],
+      "ai_weight": 4
+    },
+    {
+      "id": "syr_oil_fields",
+      "name": "The eastern oil fields",
+      "description": "Develop the oil fields of Deir ez-Zor and Hasakah.",
+      "x": 9,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "syr_economic_opening"
+        ]
+      ],
+      "effects": [
+        {
+          "add_buildings": {
+            "building": "refinery",
+            "count": 1
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "fossil_output",
+            "value": 0.05,
+            "days": 2920
+          }
+        }
+      ]
+    },
+    {
+      "id": "syr_agriculture",
+      "name": "Wheat and cotton",
+      "description": "Irrigation for wheat and cotton in the north-east.",
+      "x": 11,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "syr_economic_opening"
+        ]
+      ],
+      "effects": [
+        {
+          "add_interest_group_approval": {
+            "group": "rural",
+            "value": 5
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "gdp_growth",
+            "value": 0.002,
+            "days": 2920
+          }
+        }
+      ]
+    },
+    {
+      "id": "syr_tourism",
+      "name": "Tourism",
+      "description": "Hotels at the ancient sites.",
+      "x": 13,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "syr_leave_lebanon"
+        ]
+      ],
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "gdp_growth",
+            "value": 0.001,
+            "days": 2920
+          }
+        },
+        {
+          "add_buildings": {
+            "building": "infrastructure",
+            "count": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "syr_five_seas",
+      "name": "A trade crossroads",
+      "description": "Make Syria a corridor for trade and pipelines.",
+      "x": 10,
+      "y": 3,
+      "days": 70,
+      "prerequisites": [
+        [
+          "syr_oil_fields",
+          "syr_agriculture"
+        ]
+      ],
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "trade_efficiency",
+            "value": 0.03,
+            "days": 2920
+          }
+        },
+        {
+          "add_opinion": {
+            "target": "TUR",
+            "value": 10,
+            "days": 1825
+          }
+        }
+      ]
+    },
+    {
+      "id": "syr_drought_relief",
+      "name": "Drought relief",
+      "description": "Help farmers and the displaced during droughts.",
+      "x": 12,
+      "y": 3,
+      "days": 70,
+      "prerequisites": [
+        [
+          "syr_agriculture",
+          "syr_tourism"
+        ]
+      ],
+      "effects": [
+        {
+          "add_interest_group_approval": {
+            "group": "rural",
+            "value": 4
+          }
+        },
+        {
+          "add_treasury": -0.3
+        },
+        {
+          "add_unrest": -0.02
+        }
+      ]
+    },
+    {
+      "id": "syr_uprising",
+      "name": "The uprising",
+      "description": "Answer the protests that began in March 2011.",
+      "x": 16,
+      "y": 0,
+      "days": 70,
+      "available": {
+        "date_after": "2011-03-15"
+      },
+      "effects": [
+        {
+          "remove_spirit": "syr_state_of_emergency"
+        },
+        {
+          "add_war_support": 0.05
+        }
+      ],
+      "ai_weight": 6
+    },
+    {
+      "id": "syr_security_crackdown",
+      "name": "A security campaign",
+      "description": "The army and security services move against the armed opposition.",
+      "x": 15,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "syr_uprising"
+        ]
+      ],
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "internal_security",
+            "value": 0.08,
+            "days": 1460
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "youth_students",
+            "value": -6
+          }
+        }
+      ]
+    },
+    {
+      "id": "syr_reform_package",
+      "name": "A reform package",
+      "description": "A new constitution and the end of the state of emergency.",
+      "x": 17,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "syr_uprising"
+        ]
+      ],
+      "effects": [
+        {
+          "add_stability": 0.02
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "urban_middle_class",
+            "value": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "syr_national_defence_forces",
+      "name": "National Defence Forces",
+      "description": "Local militias support the army.",
+      "x": 15,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "syr_security_crackdown"
+        ]
+      ],
+      "available": {
+        "has_civil_war": true
+      },
+      "effects": [
+        {
+          "add_divisions": {
+            "template": "infantry_division",
+            "count": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "syr_reconciliation_committees",
+      "name": "Reconciliation committees",
+      "description": "Local deals with towns and armed groups. Unlocks local truces.",
+      "x": 17,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "syr_reform_package"
+        ]
+      ],
+      "effects": [
+        {
+          "add_unrest": -0.03
+        }
+      ]
+    },
+    {
+      "id": "syr_russian_intervention",
+      "name": "Russian intervention",
+      "description": "Ask Russia for military help, as the government did in September 2015.",
+      "x": 15,
+      "y": 3,
+      "days": 70,
+      "prerequisites": [
+        [
+          "syr_national_defence_forces"
+        ]
+      ],
+      "available": {
+        "date_after": "2015-09-01"
+      },
+      "effects": [
+        {
+          "add_spirit": "syr_russian_support"
+        },
+        {
+          "add_opinion": {
+            "target": "RUS",
+            "value": 20,
+            "days": 1825
+          }
+        },
+        {
+          "add_equipment": {
+            "family": "infantry_equipment",
+            "amount": 1000
+          }
+        }
+      ],
+      "ai_weight": 4
+    },
+    {
+      "id": "syr_iranian_advisers",
+      "name": "Iranian advisers",
+      "description": "Advisers and volunteers from Iran.",
+      "x": 17,
+      "y": 3,
+      "days": 70,
+      "prerequisites": [
+        [
+          "syr_reconciliation_committees",
+          "syr_national_defence_forces"
+        ]
+      ],
+      "available": {
+        "date_after": "2012-01-01"
+      },
+      "effects": [
+        {
+          "add_opinion": {
+            "target": "IRN",
+            "value": 15,
+            "days": 1825
+          }
+        },
+        {
+          "add_divisions": {
+            "template": "infantry_division",
+            "count": 2
+          }
+        }
+      ]
+    },
+    {
+      "id": "syr_retake_aleppo",
+      "name": "Retake Aleppo",
+      "description": "The offensive on Aleppo.",
+      "x": 16,
+      "y": 4,
+      "days": 70,
+      "prerequisites": [
+        [
+          "syr_russian_intervention",
+          "syr_iranian_advisers"
+        ]
+      ],
+      "available": {
+        "has_civil_war": true
+      },
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "army_attack",
+            "value": 0.03,
+            "days": 730
+          }
+        },
+        {
+          "add_war_support": 0.03
+        }
+      ]
+    },
+    {
+      "id": "syr_war_damage",
+      "name": "Count the damage",
+      "description": "Survey the destruction of cities and industry.",
+      "x": 16,
+      "y": 5,
+      "days": 70,
+      "prerequisites": [
+        [
+          "syr_retake_aleppo",
+          "syr_iranian_advisers"
+        ]
+      ],
+      "available": {
+        "date_after": "2012-06-01"
+      },
+      "effects": [
+        {
+          "add_spirit": "syr_civil_war_damage"
+        },
+        {
+          "add_spirit": "syr_sanctions"
+        },
+        {
+          "add_political_power": 20
+        }
+      ]
+    },
+    {
+      "id": "syr_transition",
+      "name": "The transitional government",
+      "description": "A transitional government under a constitutional declaration, established on 29 March 2025.",
+      "x": 20,
+      "y": 0,
+      "days": 70,
+      "available": {
+        "date_after": "2025-03-29"
+      },
+      "effects": [
+        {
+          "add_spirit": "syr_transition"
+        },
+        {
+          "add_political_power": 40
+        }
+      ],
+      "ai_weight": 5
+    },
+    {
+      "id": "syr_sanctions_relief",
+      "name": "Sanctions relief",
+      "description": "Seek the lifting of sanctions.",
+      "x": 19,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "syr_transition"
+        ]
+      ],
+      "effects": [
+        {
+          "remove_spirit": "syr_sanctions"
+        },
+        {
+          "add_opinion": {
+            "target": "USA",
+            "value": 10,
+            "days": 1825
+          }
+        },
+        {
+          "add_opinion": {
+            "target": "DEU",
+            "value": 5,
+            "days": 1825
+          }
+        }
+      ],
+      "ai_weight": 4
+    },
+    {
+      "id": "syr_unified_army",
+      "name": "A unified army",
+      "description": "Merge the armed factions into one army.",
+      "x": 21,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "syr_transition"
+        ]
+      ],
+      "effects": [
+        {
+          "add_divisions": {
+            "template": "infantry_division",
+            "count": 2
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "army_org",
+            "value": 0.03,
+            "days": 1460
+          }
+        }
+      ]
+    },
+    {
+      "id": "syr_reconstruction",
+      "name": "Reconstruction",
+      "description": "Rebuild housing, water and power. Unlocks city rebuilding.",
+      "x": 19,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "syr_sanctions_relief",
+          "syr_war_damage"
+        ]
+      ],
+      "available": {
+        "date_after": "2017-01-01"
+      },
+      "effects": [
+        {
+          "swap_spirit": {
+            "from": "syr_civil_war_damage",
+            "to": "reconstruction_effort"
+          }
+        },
+        {
+          "add_buildings": {
+            "building": "infrastructure",
+            "count": 3
+          }
+        },
+        {
+          "add_treasury": -1
+        }
+      ]
+    },
+    {
+      "id": "syr_refugee_return",
+      "name": "The return of refugees",
+      "description": "Help refugees return home.",
+      "x": 21,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "syr_unified_army",
+          "syr_sanctions_relief"
+        ]
+      ],
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "population_growth",
+            "value": 0.002,
+            "days": 2920
+          }
+        },
+        {
+          "add_stability": 0.02
+        }
+      ]
+    },
+    {
+      "id": "syr_new_constitution",
+      "name": "A permanent constitution",
+      "description": "Draft a permanent constitution.",
+      "x": 20,
+      "y": 3,
+      "days": 140,
+      "prerequisites": [
+        [
+          "syr_reconstruction",
+          "syr_refugee_return"
+        ]
+      ],
+      "effects": [
+        {
+          "remove_spirit": "syr_transition"
+        },
+        {
+          "add_stability": 0.03
+        },
+        {
+          "add_political_power": 30
+        }
+      ]
+    },
+    {
+      "id": "syr_power_and_water",
+      "name": "Power and water",
+      "description": "Repair power plants and water networks.",
+      "x": 19,
+      "y": 3,
+      "days": 70,
+      "prerequisites": [
+        [
+          "syr_reconstruction"
+        ]
+      ],
+      "effects": [
+        {
+          "add_buildings": {
+            "building": "renewable_plant",
+            "count": 1
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "health_outcomes",
+            "value": 0.02,
+            "days": 2920
+          }
+        }
+      ]
+    },
+    {
+      "id": "syr_industry_restart",
+      "name": "Restart industry",
+      "description": "Reopen the factories of Aleppo and Homs.",
+      "x": 21,
+      "y": 3,
+      "days": 70,
+      "prerequisites": [
+        [
+          "syr_refugee_return",
+          "syr_reconstruction"
+        ]
+      ],
+      "effects": [
+        {
+          "add_buildings": {
+            "building": "civilian_factory",
+            "count": 2
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "labour_unions",
+            "value": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "syr_army_reform",
+      "name": "Army reform",
+      "description": "Modernise the army.",
+      "x": 24,
+      "y": 0,
+      "days": 70,
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "army_org",
+            "value": 0.02,
+            "days": 1460
+          }
+        }
+      ],
+      "ai_weight": 4
+    },
+    {
+      "id": "syr_air_defence",
+      "name": "Air defence",
+      "description": "Modern air defences.",
+      "x": 23,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "syr_army_reform"
+        ]
+      ],
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "army_defence",
+            "value": 0.02,
+            "days": 2920
+          }
+        },
+        {
+          "add_research_bonus": {
+            "category": "artillery_missiles",
+            "value": 0.15,
+            "uses": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "syr_armour",
+      "name": "Armour",
+      "description": "Tanks and mechanised units.",
+      "x": 25,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "syr_army_reform"
+        ]
+      ],
+      "effects": [
+        {
+          "add_divisions": {
+            "template": "mechanised_division",
+            "count": 1
+          }
+        },
+        {
+          "add_research_bonus": {
+            "category": "armour",
+            "value": 0.15,
+            "uses": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "syr_missiles",
+      "name": "Missile forces",
+      "description": "Expand the missile forces.",
+      "x": 24,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "syr_air_defence",
+          "syr_armour"
+        ]
+      ],
+      "effects": [
+        {
+          "add_research_bonus": {
+            "category": "artillery_missiles",
+            "value": 0.2,
+            "uses": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "syr_foreign_policy",
+      "name": "Foreign policy",
+      "description": "Syria among its neighbours.",
+      "x": 28,
+      "y": 0,
+      "days": 70,
+      "effects": [
+        {
+          "add_political_power": 20
+        }
+      ],
+      "ai_weight": 4
+    },
+    {
+      "id": "syr_russia_ties",
+      "name": "Ties with Russia",
+      "description": "Arms and diplomatic support from Russia.",
+      "x": 27,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "syr_foreign_policy"
+        ]
+      ],
+      "effects": [
+        {
+          "add_opinion": {
+            "target": "RUS",
+            "value": 15,
+            "days": 1825
+          }
+        }
+      ]
+    },
+    {
+      "id": "syr_iran_ties",
+      "name": "Alliance with Iran",
+      "description": "A strategic alliance with Iran.",
+      "x": 29,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "syr_foreign_policy"
+        ]
+      ],
+      "effects": [
+        {
+          "add_opinion": {
+            "target": "IRN",
+            "value": 15,
+            "days": 1825
+          }
+        }
+      ]
+    },
+    {
+      "id": "syr_arab_league_return",
+      "name": "Return to the Arab League",
+      "description": "Restore ties with the Arab states.",
+      "x": 28,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "syr_russia_ties",
+          "syr_iran_ties"
+        ]
+      ],
+      "available": {
+        "date_after": "2023-01-01"
+      },
+      "effects": [
+        {
+          "add_opinion": {
+            "target": "SAU",
+            "value": 15,
+            "days": 1825
+          }
+        },
+        {
+          "add_opinion": {
+            "target": "ARE",
+            "value": 10,
+            "days": 1825
+          }
+        },
+        {
+          "add_treasury": 0.5
+        }
+      ]
+    },
+    {
+      "id": "syr_turkey_ties",
+      "name": "Relations with Turkey",
+      "description": "Trade and borders with Turkey.",
+      "x": 27,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "syr_russia_ties"
+        ]
+      ],
+      "effects": [
+        {
+          "add_opinion": {
+            "target": "TUR",
+            "value": 10,
+            "days": 1825
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "trade_efficiency",
+            "value": 0.02,
+            "days": 2920
+          }
+        }
+      ]
+    },
+    {
+      "id": "syr_golan_diplomacy",
+      "name": "The Golan question",
+      "description": "Seek the return of the Golan through diplomacy.",
+      "x": 29,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "syr_iran_ties"
+        ]
+      ],
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "diplomatic_reputation",
+            "value": 0.02,
+            "days": 2920
+          }
+        },
+        {
+          "add_opinion": {
+            "target": "ISR",
+            "value": 5,
+            "days": 1825
+          }
+        }
+      ]
+    },
+    {
+      "id": "syr_phosphates",
+      "name": "Phosphate mines",
+      "description": "Expand the phosphate mines near Palmyra.",
+      "x": 8,
+      "y": 3,
+      "days": 70,
+      "prerequisites": [
+        [
+          "syr_oil_fields"
+        ]
+      ],
+      "effects": [
+        {
+          "add_buildings": {
+            "building": "civilian_factory",
+            "count": 1
+          }
+        },
+        {
+          "add_treasury": 0.3
+        }
+      ]
+    },
+    {
+      "id": "syr_textiles",
+      "name": "Textile industry",
+      "description": "Cotton mills in Aleppo.",
+      "x": 11,
+      "y": 4,
+      "days": 70,
+      "prerequisites": [
+        [
+          "syr_five_seas",
+          "syr_drought_relief"
+        ]
+      ],
+      "effects": [
+        {
+          "add_buildings": {
+            "building": "civilian_factory",
+            "count": 1
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "labour_unions",
+            "value": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "syr_banking_reform",
+      "name": "Private banks",
+      "description": "License private banks and a stock exchange.",
+      "x": 9,
+      "y": 4,
+      "days": 70,
+      "prerequisites": [
+        [
+          "syr_five_seas"
+        ]
+      ],
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "foreign_investment",
+            "value": 0.04,
+            "days": 2920
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "interest_rate",
+            "value": -0.003,
+            "days": 2920
+          }
+        }
+      ]
+    },
+    {
+      "id": "syr_power_plants",
+      "name": "Power plants",
+      "description": "Gas power plants for the cities.",
+      "x": 13,
+      "y": 3,
+      "days": 70,
+      "prerequisites": [
+        [
+          "syr_tourism"
+        ]
+      ],
+      "effects": [
+        {
+          "add_buildings": {
+            "building": "renewable_plant",
+            "count": 1
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "energy_cost",
+            "value": -0.02,
+            "days": 2920
+          }
+        }
+      ]
+    },
+    {
+      "id": "syr_republican_guard",
+      "name": "The Republican Guard",
+      "description": "Expand the elite units around the capital.",
+      "x": 14,
+      "y": 3,
+      "days": 70,
+      "prerequisites": [
+        [
+          "syr_security_crackdown"
+        ]
+      ],
+      "effects": [
+        {
+          "add_divisions": {
+            "template": "mechanised_division",
+            "count": 1
+          }
+        },
+        {
+          "add_equipment": {
+            "family": "infantry_equipment",
+            "amount": 400
+          }
+        }
+      ]
+    },
+    {
+      "id": "syr_air_campaign",
+      "name": "Air campaign",
+      "description": "Use the air force against the armed opposition.",
+      "x": 14,
+      "y": 4,
+      "days": 70,
+      "prerequisites": [
+        [
+          "syr_republican_guard",
+          "syr_russian_intervention"
+        ]
+      ],
+      "available": {
+        "has_civil_war": true
+      },
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "air_effectiveness",
+            "value": 0.04,
+            "days": 1460
+          }
+        },
+        {
+          "add_war_support": 0.02
+        }
+      ]
+    },
+    {
+      "id": "syr_hold_damascus",
+      "name": "Hold Damascus",
+      "description": "Secure the capital and its suburbs.",
+      "x": 18,
+      "y": 4,
+      "days": 70,
+      "prerequisites": [
+        [
+          "syr_iranian_advisers",
+          "syr_reconciliation_committees"
+        ]
+      ],
+      "available": {
+        "has_civil_war": true
+      },
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "army_defence",
+            "value": 0.04,
+            "days": 1460
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "internal_security",
+            "value": 0.03,
+            "days": 1460
+          }
+        }
+      ]
+    },
+    {
+      "id": "syr_fight_isis",
+      "name": "Fight the Islamic State",
+      "description": "Offensives against the Islamic State in the desert and the east.",
+      "x": 17,
+      "y": 5,
+      "days": 70,
+      "prerequisites": [
+        [
+          "syr_retake_aleppo",
+          "syr_hold_damascus"
+        ]
+      ],
+      "available": {
+        "exists": "ISG"
+      },
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "army_attack",
+            "value": 0.02,
+            "days": 1460
+          }
+        },
+        {
+          "add_war_support": 0.02
+        }
+      ]
+    },
+    {
+      "id": "syr_amnesty",
+      "name": "Amnesty",
+      "description": "Amnesties for fighters who lay down their arms.",
+      "x": 18,
+      "y": 5,
+      "days": 70,
+      "prerequisites": [
+        [
+          "syr_hold_damascus"
+        ]
+      ],
+      "effects": [
+        {
+          "add_unrest": -0.03
+        },
+        {
+          "add_stability": 0.01
+        }
+      ]
+    },
+    {
+      "id": "syr_transitional_justice",
+      "name": "Transitional justice",
+      "description": "Commissions on the missing and on war crimes.",
+      "x": 22,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "syr_unified_army"
+        ]
+      ],
+      "effects": [
+        {
+          "add_stability": 0.02
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "diplomatic_reputation",
+            "value": 0.03,
+            "days": 2920
+          }
+        }
+      ]
+    },
+    {
+      "id": "syr_kurdish_integration",
+      "name": "Integrate the north-east",
+      "description": "Agreements to bring the north-east into the state.",
+      "x": 22,
+      "y": 3,
+      "days": 70,
+      "prerequisites": [
+        [
+          "syr_transitional_justice",
+          "syr_industry_restart"
+        ]
+      ],
+      "effects": [
+        {
+          "add_interest_group_approval": {
+            "group": "minorities",
+            "value": 6
+          }
+        },
+        {
+          "add_stability": 0.02
+        }
+      ]
+    },
+    {
+      "id": "syr_oil_recovery",
+      "name": "Recover the oil fields",
+      "description": "Restart oil production in the east.",
+      "x": 20,
+      "y": 4,
+      "days": 70,
+      "prerequisites": [
+        [
+          "syr_power_and_water",
+          "syr_kurdish_integration"
+        ]
+      ],
+      "effects": [
+        {
+          "add_buildings": {
+            "building": "refinery",
+            "count": 1
+          }
+        },
+        {
+          "add_treasury": 0.5
+        }
+      ]
+    },
+    {
+      "id": "syr_investment_conference",
+      "name": "Investment conference",
+      "description": "Invite Gulf and Turkish investors.",
+      "x": 21,
+      "y": 4,
+      "days": 70,
+      "prerequisites": [
+        [
+          "syr_industry_restart",
+          "syr_new_constitution"
+        ]
+      ],
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "foreign_investment",
+            "value": 0.08,
+            "days": 2920
+          }
+        },
+        {
+          "add_opinion": {
+            "target": "SAU",
+            "value": 5,
+            "days": 1825
+          }
+        },
+        {
+          "add_opinion": {
+            "target": "TUR",
+            "value": 5,
+            "days": 1825
+          }
+        }
+      ]
+    },
+    {
+      "id": "syr_navy",
+      "name": "Coastal defence",
+      "description": "Coastal defence at Latakia and Tartus.",
+      "x": 25,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "syr_armour"
+        ]
+      ],
+      "effects": [
+        {
+          "add_buildings": {
+            "building": "port",
+            "count": 1
+          }
+        },
+        {
+          "add_research_bonus": {
+            "category": "naval",
+            "value": 0.15,
+            "uses": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "syr_chemical_disarmament",
+      "name": "Disarmament of chemical weapons",
+      "description": "Hand over chemical weapons for destruction under international supervision.",
+      "x": 23,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "syr_air_defence"
+        ]
+      ],
+      "available": {
+        "date_after": "2013-09-01"
+      },
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "diplomatic_reputation",
+            "value": 0.03,
+            "days": 2920
+          }
+        },
+        {
+          "add_opinion": {
+            "target": "USA",
+            "value": 5,
+            "days": 1825
+          }
+        }
+      ]
+    },
+    {
+      "id": "syr_china_ties",
+      "name": "Ties with China",
+      "description": "Trade and reconstruction loans from China.",
+      "x": 28,
+      "y": 3,
+      "days": 70,
+      "prerequisites": [
+        [
+          "syr_arab_league_return",
+          "syr_turkey_ties",
+          "syr_golan_diplomacy"
+        ]
+      ],
+      "effects": [
+        {
+          "add_opinion": {
+            "target": "CHN",
+            "value": 10,
+            "days": 1825
+          }
+        },
+        {
+          "add_treasury": 0.3
+        }
+      ]
+    },
+    {
+      "id": "syr_lebanon_relations",
+      "name": "Relations with Lebanon",
+      "description": "Borders, trade and refugees with Lebanon.",
+      "x": 30,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "syr_foreign_policy"
+        ]
+      ],
+      "effects": [
+        {
+          "add_opinion": {
+            "target": "LBN",
+            "value": 10,
+            "days": 1825
+          }
+        }
+      ]
+    },
+    {
+      "id": "syr_jordan_trade",
+      "name": "Trade with Jordan",
+      "description": "Reopen the border crossing with Jordan.",
+      "x": 30,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "syr_lebanon_relations"
+        ]
+      ],
+      "effects": [
+        {
+          "add_opinion": {
+            "target": "JOR",
+            "value": 10,
+            "days": 1825
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "trade_efficiency",
+            "value": 0.02,
+            "days": 2920
+          }
+        }
+      ]
+    }
+  ]
+}

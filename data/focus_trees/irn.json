@@ -4,358 +4,105 @@
   "countries": [
     "IRN"
   ],
-  "note": "Branches depend on the governing parties and office holders. Policies named after real reforms are cited; effects are gameplay estimates.",
+  "note": "Iran in the style of the Russian model tree: the Islamic Republic with elections between camps as the historical path; reformist and principlist turns that install real parties of the data, and a Guards takeover; nuclear programme and sanctions (the JCPOA), oil and gas (South Pars), military and foreign policy branches. Sourced starting spirits in data/spirits/irn.json. Alternatives are a counterfactual.",
+  "source": [
+    {
+      "url": "https://en.wikipedia.org/wiki/Dialogue_Among_Civilizations",
+      "title": "Wikipedia: Dialogue Among Civilizations",
+      "accessed": "2026-10-19"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Economy_of_Iran",
+      "title": "Wikipedia: Economy of Iran",
+      "accessed": "2026-10-19"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Iran–Iraq_War",
+      "title": "Wikipedia: Iran–Iraq War",
+      "accessed": "2026-10-19"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Mohammad_Khatami",
+      "title": "Wikipedia: Mohammad Khatami",
+      "accessed": "2026-10-19"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Joint_Comprehensive_Plan_of_Action",
+      "title": "Wikipedia: Joint Comprehensive Plan of Action",
+      "accessed": "2026-10-19"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Iran_and_weapons_of_mass_destruction",
+      "title": "Wikipedia: Iran and weapons of mass destruction",
+      "accessed": "2026-10-19"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/South_Pars/North_Dome_Gas-Condensate_field",
+      "title": "Wikipedia: South Pars/North Dome Gas-Condensate field",
+      "accessed": "2026-10-19"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Islamic_Revolutionary_Guard_Corps",
+      "title": "Wikipedia: Islamic Revolutionary Guard Corps",
+      "accessed": "2026-10-19"
+    }
+  ],
+  "confidence": "verified",
   "focuses": [
     {
-      "id": "irn_national_programme",
-      "name": "The Islamic Republic in the new century",
-      "description": "Set the priorities of the government.",
-      "x": 8,
+      "id": "irn_question_of_power",
+      "name": "The direction of the Islamic Republic",
+      "description": "Which camp leads the government within the Islamic Republic.",
+      "x": 4,
       "y": 0,
       "days": 70,
       "effects": [
         {
-          "add_political_power": 50
-        },
-        {
-          "add_stability": 0.02
+          "add_political_power": 30
         }
-      ]
+      ],
+      "ai_weight": 5
     },
     {
-      "id": "irn_defence_review",
-      "name": "Defence review",
-      "description": "Review strategy, forces and budgets for the new decade.",
-      "x": 11,
+      "id": "irn_steady_course",
+      "name": "The Islamic Republic",
+      "description": "The government changes hands between the camps through elections, as it historically did.",
+      "x": 1,
       "y": 1,
       "days": 70,
-      "effects": [
-        {
-          "add_war_support": 0.02
-        },
-        {
-          "add_interest_group_approval": {
-            "group": "military",
-            "value": 4
-          }
-        }
-      ],
       "prerequisites": [
         [
-          "irn_national_programme"
-        ]
-      ]
-    },
-    {
-      "id": "irn_modern_forces",
-      "name": "Modern forces",
-      "description": "Equip the armed forces with modern communications and precision weapons.",
-      "x": 11,
-      "y": 3,
-      "days": 105,
-      "effects": [
-        {
-          "add_timed_modifier": {
-            "modifier": "army_attack",
-            "value": 0.05,
-            "days": 3650
-          }
-        },
-        {
-          "add_timed_modifier": {
-            "modifier": "air_effectiveness",
-            "value": 0.05,
-            "days": 3650
-          }
-        },
-        {
-          "add_interest_group_approval": {
-            "group": "military",
-            "value": 3
-          }
-        }
-      ],
-      "prerequisites": [
-        [
-          "irn_defence_review"
-        ]
-      ]
-    },
-    {
-      "id": "irn_intelligence_services",
-      "name": "Intelligence services",
-      "description": "Expand the foreign and domestic intelligence services.",
-      "x": 12,
-      "y": 2,
-      "days": 70,
-      "effects": [
-        {
-          "add_timed_modifier": {
-            "modifier": "intelligence_power",
-            "value": 0.1,
-            "days": 3650
-          }
-        },
-        {
-          "add_interest_group_approval": {
-            "group": "security_services",
-            "value": 4
-          }
-        }
-      ],
-      "prerequisites": [
-        [
-          "irn_defence_review"
-        ]
-      ]
-    },
-    {
-      "id": "irn_foreign_policy",
-      "name": "Foreign policy priorities",
-      "description": "Set the course of foreign policy.",
-      "x": 14,
-      "y": 1,
-      "days": 70,
-      "effects": [
-        {
-          "add_timed_modifier": {
-            "modifier": "diplomatic_reputation",
-            "value": 0.05,
-            "days": 3650
-          }
-        },
-        {
-          "add_political_power": 20
-        }
-      ],
-      "prerequisites": [
-        [
-          "irn_national_programme"
-        ]
-      ]
-    },
-    {
-      "id": "irn_partners",
-      "name": "Closer ties with friendly states",
-      "description": "Deepen political and economic ties with friendly states.",
-      "x": 14,
-      "y": 2,
-      "days": 70,
-      "effects": [
-        {
-          "add_timed_modifier": {
-            "modifier": "bloc_integration",
-            "value": 0.1,
-            "days": 3650
-          }
-        },
-        {
-          "add_timed_modifier": {
-            "modifier": "trade_efficiency",
-            "value": 0.03,
-            "days": 3650
-          }
-        },
-        {
-          "country": {
-            "tag": "RUS",
-            "effects": [
-              {
-                "add_opinion": {
-                  "target": "ROOT",
-                  "value": 15,
-                  "days": 3650
-                }
-              }
-            ]
-          }
-        },
-        {
-          "country": {
-            "tag": "CHN",
-            "effects": [
-              {
-                "add_opinion": {
-                  "target": "ROOT",
-                  "value": 15,
-                  "days": 3650
-                }
-              }
-            ]
-          }
-        }
-      ],
-      "prerequisites": [
-        [
-          "irn_foreign_policy"
-        ]
-      ]
-    },
-    {
-      "id": "irn_international_standing",
-      "name": "International standing",
-      "description": "Raise the country's profile in international institutions and summits.",
-      "x": 15,
-      "y": 3,
-      "days": 70,
-      "effects": [
-        {
-          "add_timed_modifier": {
-            "modifier": "diplomatic_reputation",
-            "value": 0.1,
-            "days": 3650
-          }
-        },
-        {
-          "add_timed_modifier": {
-            "modifier": "international_opinion",
-            "value": 0.05,
-            "days": 3650
-          }
-        }
-      ],
-      "prerequisites": [
-        [
-          "irn_partners",
-          "irn_own_course"
-        ]
-      ]
-    },
-    {
-      "id": "irn_own_course",
-      "name": "An independent course",
-      "description": "Keep a free hand in foreign policy and trade.",
-      "x": 16,
-      "y": 2,
-      "days": 70,
-      "effects": [
-        {
-          "add_timed_modifier": {
-            "modifier": "foreign_influence_resistance",
-            "value": 0.1,
-            "days": 3650
-          }
-        },
-        {
-          "add_war_support": 0.02
-        }
-      ],
-      "prerequisites": [
-        [
-          "irn_foreign_policy"
+          "irn_question_of_power"
         ]
       ],
       "mutually_exclusive": [
-        "irn_partners"
+        "irn_reformist_turn",
+        "irn_principlist_turn",
+        "irn_army_steps_in"
       ],
-      "ai_weight": 0.5
-    },
-    {
-      "id": "irn_economic_council",
-      "name": "Economic council",
-      "description": "Bring ministries, employers and unions together on economic priorities.",
-      "x": 5,
-      "y": 1,
-      "days": 70,
+      "available": {
+        "follows_history": true
+      },
       "effects": [
         {
-          "add_economic_mood": 0.03
+          "add_stability": 0.04
         },
         {
-          "add_political_power": 15
+          "add_political_power": 40
         }
       ],
-      "prerequisites": [
-        [
-          "irn_national_programme"
-        ]
-      ]
-    },
-    {
-      "id": "irn_infrastructure",
-      "name": "Infrastructure programme",
-      "description": "Invest in transport, power grids and communications.",
-      "x": 5,
-      "y": 3,
-      "days": 105,
-      "effects": [
-        {
-          "add_timed_modifier": {
-            "modifier": "construction_speed",
-            "value": 0.1,
-            "days": 3650
-          }
-        },
-        {
-          "add_economic_mood": 0.02
-        }
-      ],
-      "prerequisites": [
-        [
-          "irn_economic_council"
-        ]
-      ]
-    },
-    {
-      "id": "irn_research_programme",
-      "name": "Research and innovation",
-      "description": "Fund universities, research institutes and new industries.",
-      "x": 6,
-      "y": 4,
-      "days": 105,
-      "effects": [
-        {
-          "add_timed_modifier": {
-            "modifier": "research_speed",
-            "value": 0.05,
-            "days": 3650
-          }
-        },
-        {
-          "add_timed_modifier": {
-            "modifier": "education_quality",
-            "value": 0.02,
-            "days": 3650
-          }
-        }
-      ],
-      "prerequisites": [
-        [
-          "irn_infrastructure"
-        ]
-      ]
+      "ai_weight": 20
     },
     {
       "id": "irn_dialogue_among_civilizations",
       "name": "Dialogue Among Civilizations",
       "description": "Promote dialogue with other cultures, the idea President Mohammad Khatami put forward.",
-      "x": 1,
-      "y": 1,
+      "x": 0,
+      "y": 2,
       "days": 70,
-      "effects": [
-        {
-          "add_timed_modifier": {
-            "modifier": "international_opinion",
-            "value": 0.05,
-            "days": 3650
-          }
-        },
-        {
-          "add_interest_group_approval": {
-            "group": "youth_students",
-            "value": 4
-          }
-        },
-        {
-          "add_interest_group_approval": {
-            "group": "religious_establishment",
-            "value": -2
-          }
-        }
-      ],
       "prerequisites": [
         [
-          "irn_national_programme"
+          "irn_steady_course"
         ]
       ],
       "available": {
@@ -364,56 +111,222 @@
           "office": "irn.president"
         }
       },
-      "ai_weight": 3
-    },
-    {
-      "id": "irn_civil_society",
-      "name": "Civil society",
-      "description": "Allow more room for newspapers and associations.",
-      "x": 0,
-      "y": 2,
-      "days": 70,
       "effects": [
         {
           "add_timed_modifier": {
-            "modifier": "press_freedom",
-            "value": 0.05,
-            "days": 3650
+            "modifier": "diplomatic_reputation",
+            "value": 0.04,
+            "days": 2920
           }
         },
         {
-          "add_interest_group_approval": {
-            "group": "media",
-            "value": 5
+          "add_opinion": {
+            "target": "FRA",
+            "value": 5,
+            "days": 1825
           }
         },
         {
-          "add_interest_group_approval": {
-            "group": "security_services",
-            "value": -4
+          "add_opinion": {
+            "target": "DEU",
+            "value": 5,
+            "days": 1825
           }
         }
       ],
-      "prerequisites": [
-        [
-          "irn_dialogue_among_civilizations"
-        ]
-      ],
-      "available": {
-        "ruling_party": "irn.reformists"
-      },
-      "ai_weight": 2
+      "ai_weight": 4
     },
     {
       "id": "irn_revolutionary_values",
       "name": "Revolutionary values",
       "description": "Reassert the values of the revolution.",
-      "x": 3,
-      "y": 1,
+      "x": 2,
+      "y": 2,
       "days": 70,
+      "prerequisites": [
+        [
+          "irn_steady_course"
+        ]
+      ],
+      "available": {
+        "ruling_party": "irn.principlists"
+      },
       "effects": [
         {
-          "add_stability": 0.03
+          "add_interest_group_approval": {
+            "group": "religious_establishment",
+            "value": 5
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "internal_security",
+            "value": 0.03,
+            "days": 2920
+          }
+        }
+      ]
+    },
+    {
+      "id": "irn_reformist_turn",
+      "name": "A reformist turn",
+      "description": "The reformist camp presses for more freedom and openness.",
+      "x": 4,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "irn_question_of_power"
+        ]
+      ],
+      "mutually_exclusive": [
+        "irn_steady_course",
+        "irn_principlist_turn",
+        "irn_army_steps_in"
+      ],
+      "available": {
+        "all": [
+          {
+            "any": [
+              {
+                "follows_history": false
+              },
+              {
+                "is_player": true
+              }
+            ]
+          },
+          {
+            "party_exists": "irn.reformists"
+          },
+          {
+            "not": {
+              "ruling_party": "irn.reformists"
+            }
+          }
+        ]
+      },
+      "effects": [
+        {
+          "leave_history": true
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "urban_middle_class",
+            "value": 5
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "youth_students",
+            "value": 5
+          }
+        }
+      ],
+      "ai_weight": 0.3
+    },
+    {
+      "id": "irn_reformist_government",
+      "name": "A reformist government",
+      "description": "The reformists form the government.",
+      "x": 4,
+      "y": 2,
+      "days": 105,
+      "prerequisites": [
+        [
+          "irn_reformist_turn"
+        ]
+      ],
+      "available": {
+        "party_popularity_above": {
+          "party": "irn.reformists",
+          "value": 0.25
+        }
+      },
+      "effects": [
+        {
+          "install_government": {
+            "party": "irn.reformists"
+          }
+        },
+        {
+          "change_law": {
+            "category": "press_freedom",
+            "law": "regulated_press"
+          }
+        }
+      ]
+    },
+    {
+      "id": "irn_civil_society",
+      "name": "Civil society",
+      "description": "More room for newspapers and associations.",
+      "x": 4,
+      "y": 3,
+      "days": 70,
+      "prerequisites": [
+        [
+          "irn_reformist_government"
+        ]
+      ],
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "civil_liberties",
+            "value": 0.08,
+            "days": 2920
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "media",
+            "value": 6
+          }
+        }
+      ]
+    },
+    {
+      "id": "irn_principlist_turn",
+      "name": "A principlist turn",
+      "description": "The principlist camp presses for revolutionary values and self-reliance.",
+      "x": 6,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "irn_question_of_power"
+        ]
+      ],
+      "mutually_exclusive": [
+        "irn_steady_course",
+        "irn_reformist_turn",
+        "irn_army_steps_in"
+      ],
+      "available": {
+        "all": [
+          {
+            "any": [
+              {
+                "follows_history": false
+              },
+              {
+                "is_player": true
+              }
+            ]
+          },
+          {
+            "party_exists": "irn.principlists"
+          },
+          {
+            "not": {
+              "ruling_party": "irn.principlists"
+            }
+          }
+        ]
+      },
+      "effects": [
+        {
+          "leave_history": true
         },
         {
           "add_interest_group_approval": {
@@ -423,59 +336,1372 @@
         },
         {
           "add_interest_group_approval": {
-            "group": "youth_students",
-            "value": -3
+            "group": "security_services",
+            "value": 4
           }
         }
       ],
+      "ai_weight": 0.3
+    },
+    {
+      "id": "irn_principlist_government",
+      "name": "A principlist government",
+      "description": "The principlists form the government.",
+      "x": 6,
+      "y": 2,
+      "days": 105,
       "prerequisites": [
         [
-          "irn_national_programme"
+          "irn_principlist_turn"
         ]
       ],
       "available": {
-        "ruling_party": "irn.principlists"
+        "party_popularity_above": {
+          "party": "irn.principlists",
+          "value": 0.25
+        }
       },
-      "ai_weight": 2
-    },
-    {
-      "id": "irn_oil_revenue",
-      "name": "Oil revenue",
-      "description": "Raise oil and gas output and manage the revenue.",
-      "x": 7,
-      "y": 2,
-      "days": 70,
       "effects": [
         {
-          "add_timed_modifier": {
-            "modifier": "fossil_output",
-            "value": 0.08,
-            "days": 3650
+          "install_government": {
+            "party": "irn.principlists"
           }
         },
         {
-          "add_economic_mood": 0.02
+          "change_law": {
+            "category": "press_freedom",
+            "law": "state_controlled_media"
+          }
         }
-      ],
-      "prerequisites": [
-        [
-          "irn_economic_council"
-        ]
       ]
     },
     {
-      "id": "irn_self_sufficiency",
-      "name": "Self-sufficiency",
-      "description": "Reduce dependence on imports under sanctions.",
-      "x": 8,
+      "id": "irn_guards_in_economy",
+      "name": "The Guards in the economy",
+      "description": "Revolutionary Guards companies take large state contracts.",
+      "x": 6,
       "y": 3,
       "days": 70,
+      "prerequisites": [
+        [
+          "irn_principlist_government"
+        ]
+      ],
       "effects": [
         {
           "add_timed_modifier": {
             "modifier": "state_industry_output",
             "value": 0.04,
+            "days": 2920
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "military",
+            "value": 4
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "business",
+            "value": -3
+          }
+        }
+      ]
+    },
+    {
+      "id": "irn_army_steps_in",
+      "name": "The Guards step in",
+      "description": "In a crisis the Revolutionary Guards prepare to take over.",
+      "x": 8,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "irn_question_of_power"
+        ]
+      ],
+      "mutually_exclusive": [
+        "irn_steady_course",
+        "irn_reformist_turn",
+        "irn_principlist_turn"
+      ],
+      "available": {
+        "all": [
+          {
+            "any": [
+              {
+                "follows_history": false
+              },
+              {
+                "is_player": true
+              }
+            ]
+          },
+          {
+            "stability_below": 0.25
+          },
+          {
+            "unrest_above": 0.4
+          }
+        ]
+      },
+      "effects": [
+        {
+          "leave_history": true
+        },
+        {
+          "add_interest_group_influence": {
+            "group": "military",
+            "value": 0.08
+          }
+        }
+      ],
+      "ai_weight": 0.1
+    },
+    {
+      "id": "irn_military_council",
+      "name": "Military council",
+      "description": "The Guards remove the government. The coup may fail.",
+      "x": 8,
+      "y": 2,
+      "days": 35,
+      "prerequisites": [
+        [
+          "irn_army_steps_in"
+        ]
+      ],
+      "effects": [
+        {
+          "trigger_coup": {
+            "by": "military",
+            "success_chance": 0.5
+          }
+        }
+      ]
+    },
+    {
+      "id": "irn_martial_order",
+      "name": "Martial order",
+      "description": "Military rule and a state of emergency.",
+      "x": 8,
+      "y": 3,
+      "days": 70,
+      "prerequisites": [
+        [
+          "irn_military_council"
+        ]
+      ],
+      "available": {
+        "government_type": "military_junta"
+      },
+      "effects": [
+        {
+          "add_spirit": "military_rule"
+        },
+        {
+          "add_unrest": -0.08
+        }
+      ]
+    },
+    {
+      "id": "irn_nuclear_programme",
+      "name": "The nuclear programme",
+      "description": "Expand enrichment for a civilian programme; the IAEA board found Iran in non-compliance with its obligations, and sanctions followed.",
+      "x": 12,
+      "y": 0,
+      "days": 70,
+      "available": {
+        "date_after": "2003-01-01"
+      },
+      "effects": [
+        {
+          "add_spirit": "irn_nuclear_sanctions"
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "nuclear_output",
+            "value": 0.05,
             "days": 3650
+          }
+        },
+        {
+          "add_research_bonus": {
+            "category": "industry_energy",
+            "value": 0.2,
+            "uses": 2
+          }
+        }
+      ],
+      "ai_weight": 3
+    },
+    {
+      "id": "irn_resistance_economy",
+      "name": "A resistance economy",
+      "description": "Self-reliance in industry and finance under sanctions.",
+      "x": 11,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "irn_nuclear_programme"
+        ]
+      ],
+      "effects": [
+        {
+          "add_spirit": "irn_resistance_economy"
+        },
+        {
+          "add_buildings": {
+            "building": "civilian_factory",
+            "count": 2
+          }
+        }
+      ]
+    },
+    {
+      "id": "irn_nuclear_deal",
+      "name": "The nuclear deal",
+      "description": "Limit the nuclear programme in return for sanctions relief: the Joint Comprehensive Plan of Action, finalised in Vienna on 14 July 2015.",
+      "x": 13,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "irn_nuclear_programme"
+        ]
+      ],
+      "available": {
+        "all": [
+          {
+            "date_after": "2015-07-14"
+          },
+          {
+            "has_spirit": "irn_nuclear_sanctions"
+          }
+        ]
+      },
+      "effects": [
+        {
+          "remove_spirit": "irn_nuclear_sanctions"
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "foreign_investment",
+            "value": 0.05,
+            "days": 2920
+          }
+        },
+        {
+          "add_opinion": {
+            "target": "FRA",
+            "value": 10,
+            "days": 1825
+          }
+        },
+        {
+          "add_opinion": {
+            "target": "DEU",
+            "value": 10,
+            "days": 1825
+          }
+        }
+      ],
+      "ai_weight": 4
+    },
+    {
+      "id": "irn_sanctions_evasion",
+      "name": "Trade with the East",
+      "description": "Sell oil to Asian buyers despite sanctions.",
+      "x": 11,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "irn_resistance_economy"
+        ]
+      ],
+      "effects": [
+        {
+          "add_treasury": 1
+        },
+        {
+          "add_opinion": {
+            "target": "CHN",
+            "value": 10,
+            "days": 1825
+          }
+        }
+      ]
+    },
+    {
+      "id": "irn_deal_economy",
+      "name": "Open to investment",
+      "description": "Invite European and Asian companies after the deal.",
+      "x": 13,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "irn_nuclear_deal"
+        ]
+      ],
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "foreign_investment",
+            "value": 0.05,
+            "days": 2920
+          }
+        },
+        {
+          "add_buildings": {
+            "building": "civilian_factory",
+            "count": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "irn_oil_ministry",
+      "name": "Oil and gas",
+      "description": "Raise oil and gas output and manage the revenue.",
+      "x": 17,
+      "y": 0,
+      "days": 70,
+      "effects": [
+        {
+          "add_political_power": 20
+        }
+      ],
+      "ai_weight": 4
+    },
+    {
+      "id": "irn_south_pars",
+      "name": "South Pars",
+      "description": "Develop Iran's share of South Pars, the world's largest gas field. Unlocks new phases.",
+      "x": 16,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "irn_oil_ministry"
+        ]
+      ],
+      "effects": [
+        {
+          "add_spirit": "irn_gas_exporter"
+        },
+        {
+          "add_buildings": {
+            "building": "refinery",
+            "count": 2
+          }
+        }
+      ],
+      "ai_weight": 4
+    },
+    {
+      "id": "irn_refineries",
+      "name": "Refineries at home",
+      "description": "Refine petrol at home instead of importing it.",
+      "x": 18,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "irn_oil_ministry"
+        ]
+      ],
+      "effects": [
+        {
+          "add_buildings": {
+            "building": "refinery",
+            "count": 2
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "energy_cost",
+            "value": -0.02,
+            "days": 3650
+          }
+        }
+      ]
+    },
+    {
+      "id": "irn_petrochemicals",
+      "name": "Petrochemicals",
+      "description": "Petrochemical plants on the Gulf coast.",
+      "x": 16,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "irn_south_pars"
+        ]
+      ],
+      "effects": [
+        {
+          "add_buildings": {
+            "building": "civilian_factory",
+            "count": 2
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "trade_efficiency",
+            "value": 0.02,
+            "days": 2920
+          }
+        }
+      ]
+    },
+    {
+      "id": "irn_subsidy_reform",
+      "name": "Cash for subsidies",
+      "description": "Replace fuel subsidies with cash payments.",
+      "x": 18,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "irn_refineries"
+        ]
+      ],
+      "available": {
+        "date_after": "2010-01-01"
+      },
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "welfare_cost",
+            "value": -0.01,
+            "days": 3650
+          }
+        },
+        {
+          "add_unrest": 0.02
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "rural",
+            "value": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "irn_car_industry",
+      "name": "Car industry",
+      "description": "Expand the car makers.",
+      "x": 17,
+      "y": 3,
+      "days": 70,
+      "prerequisites": [
+        [
+          "irn_petrochemicals",
+          "irn_subsidy_reform"
+        ]
+      ],
+      "effects": [
+        {
+          "add_buildings": {
+            "building": "civilian_factory",
+            "count": 2
+          }
+        }
+      ]
+    },
+    {
+      "id": "irn_privatisation",
+      "name": "Privatisation",
+      "description": "Sell state companies.",
+      "x": 18,
+      "y": 3,
+      "days": 105,
+      "prerequisites": [
+        [
+          "irn_subsidy_reform"
+        ]
+      ],
+      "effects": [
+        {
+          "swap_spirit": {
+            "from": "irn_public_sector",
+            "to": "export_led_growth"
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "business",
+            "value": 5
+          }
+        }
+      ]
+    },
+    {
+      "id": "irn_tehran_metro",
+      "name": "Metro and rail",
+      "description": "Metro lines and railways.",
+      "x": 16,
+      "y": 3,
+      "days": 70,
+      "prerequisites": [
+        [
+          "irn_petrochemicals"
+        ]
+      ],
+      "available": {
+        "treasury_above": 1
+      },
+      "effects": [
+        {
+          "add_buildings": {
+            "building": "infrastructure",
+            "count": 3
+          }
+        },
+        {
+          "add_treasury": -1
+        }
+      ]
+    },
+    {
+      "id": "irn_knowledge_economy",
+      "name": "Knowledge-based companies",
+      "description": "Tax breaks for technology start-ups.",
+      "x": 17,
+      "y": 4,
+      "days": 70,
+      "prerequisites": [
+        [
+          "irn_car_industry",
+          "irn_tehran_metro",
+          "irn_privatisation"
+        ]
+      ],
+      "effects": [
+        {
+          "add_research_bonus": {
+            "category": "economy_digital",
+            "value": 0.2,
+            "uses": 2
+          }
+        },
+        {
+          "add_buildings": {
+            "building": "data_centre",
+            "count": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "irn_defence_review",
+      "name": "Defence review",
+      "description": "Strategy, forces and budgets.",
+      "x": 22,
+      "y": 0,
+      "days": 70,
+      "effects": [
+        {
+          "add_interest_group_approval": {
+            "group": "military",
+            "value": 3
+          }
+        }
+      ],
+      "ai_weight": 4
+    },
+    {
+      "id": "irn_missile_forces",
+      "name": "Missile forces",
+      "description": "Expand the missile forces. Unlocks missile tests.",
+      "x": 21,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "irn_defence_review"
+        ]
+      ],
+      "effects": [
+        {
+          "add_research_bonus": {
+            "category": "artillery_missiles",
+            "value": 0.3,
+            "uses": 2
+          }
+        },
+        {
+          "add_buildings": {
+            "building": "military_factory",
+            "count": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "irn_drones",
+      "name": "Drones",
+      "description": "Develop and build drones.",
+      "x": 23,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "irn_defence_review"
+        ]
+      ],
+      "effects": [
+        {
+          "add_research_bonus": {
+            "category": "air_drones",
+            "value": 0.25,
+            "uses": 2
+          }
+        },
+        {
+          "add_buildings": {
+            "building": "military_factory",
+            "count": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "irn_naval_forces",
+      "name": "Naval forces in the Gulf",
+      "description": "Fast boats and coastal missiles.",
+      "x": 21,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "irn_missile_forces"
+        ]
+      ],
+      "effects": [
+        {
+          "add_research_bonus": {
+            "category": "naval",
+            "value": 0.2,
+            "uses": 1
+          }
+        },
+        {
+          "add_buildings": {
+            "building": "port",
+            "count": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "irn_basij",
+      "name": "The Basij",
+      "description": "Train the volunteer militia.",
+      "x": 23,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "irn_drones"
+        ]
+      ],
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "manpower_factor",
+            "value": 0.04,
+            "days": 2920
+          }
+        },
+        {
+          "add_divisions": {
+            "template": "infantry_division",
+            "count": 2
+          }
+        }
+      ]
+    },
+    {
+      "id": "irn_air_defence",
+      "name": "Air defence",
+      "description": "Air defence around nuclear sites and cities.",
+      "x": 22,
+      "y": 3,
+      "days": 70,
+      "prerequisites": [
+        [
+          "irn_naval_forces",
+          "irn_basij"
+        ]
+      ],
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "army_defence",
+            "value": 0.03,
+            "days": 2920
+          }
+        }
+      ]
+    },
+    {
+      "id": "irn_arms_industry",
+      "name": "Self-sufficiency in arms",
+      "description": "Domestic tanks, aircraft and munitions.",
+      "x": 22,
+      "y": 4,
+      "days": 70,
+      "prerequisites": [
+        [
+          "irn_air_defence"
+        ]
+      ],
+      "effects": [
+        {
+          "add_buildings": {
+            "building": "military_factory",
+            "count": 2
+          }
+        },
+        {
+          "add_equipment": {
+            "family": "infantry_equipment",
+            "amount": 1000
+          }
+        }
+      ]
+    },
+    {
+      "id": "irn_foreign_policy",
+      "name": "Foreign policy",
+      "description": "Iran among its neighbours and the powers.",
+      "x": 27,
+      "y": 0,
+      "days": 70,
+      "effects": [
+        {
+          "add_political_power": 20
+        }
+      ],
+      "ai_weight": 4
+    },
+    {
+      "id": "irn_iraq_ties",
+      "name": "Ties with Iraq",
+      "description": "Trade, gas and pilgrims with the new Iraq.",
+      "x": 25,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "irn_foreign_policy"
+        ]
+      ],
+      "available": {
+        "date_after": "2004-01-01"
+      },
+      "effects": [
+        {
+          "add_opinion": {
+            "target": "IRQ",
+            "value": 15,
+            "days": 1825
+          }
+        }
+      ]
+    },
+    {
+      "id": "irn_syria_alliance",
+      "name": "Alliance with Syria",
+      "description": "A strategic alliance with Damascus.",
+      "x": 27,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "irn_foreign_policy"
+        ]
+      ],
+      "effects": [
+        {
+          "add_opinion": {
+            "target": "SYR",
+            "value": 15,
+            "days": 1825
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "foreign_influence_power",
+            "value": 0.05,
+            "days": 2920
+          }
+        }
+      ]
+    },
+    {
+      "id": "irn_lebanon_ties",
+      "name": "Ties in Lebanon",
+      "description": "Support for allies in Lebanon.",
+      "x": 29,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "irn_foreign_policy"
+        ]
+      ],
+      "effects": [
+        {
+          "add_opinion": {
+            "target": "LBN",
+            "value": 10,
+            "days": 1825
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "foreign_influence_power",
+            "value": 0.05,
+            "days": 2920
+          }
+        }
+      ]
+    },
+    {
+      "id": "irn_look_east",
+      "name": "Look East",
+      "description": "Close ties with Russia and China.",
+      "x": 26,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "irn_iraq_ties",
+          "irn_syria_alliance"
+        ]
+      ],
+      "effects": [
+        {
+          "add_opinion": {
+            "target": "RUS",
+            "value": 15,
+            "days": 1825
+          }
+        },
+        {
+          "add_opinion": {
+            "target": "CHN",
+            "value": 15,
+            "days": 1825
+          }
+        }
+      ]
+    },
+    {
+      "id": "irn_gulf_detente",
+      "name": "Detente with the Gulf",
+      "description": "Restore relations with Saudi Arabia.",
+      "x": 28,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "irn_syria_alliance",
+          "irn_lebanon_ties"
+        ]
+      ],
+      "available": {
+        "date_after": "2023-01-01"
+      },
+      "effects": [
+        {
+          "add_opinion": {
+            "target": "SAU",
+            "value": 20,
+            "days": 1825
+          }
+        },
+        {
+          "add_stability": 0.01
+        }
+      ]
+    },
+    {
+      "id": "irn_sco_brics",
+      "name": "Join the eastern blocs",
+      "description": "Membership of the Shanghai Cooperation Organisation.",
+      "x": 27,
+      "y": 3,
+      "days": 70,
+      "prerequisites": [
+        [
+          "irn_look_east",
+          "irn_gulf_detente"
+        ]
+      ],
+      "available": {
+        "date_after": "2021-01-01"
+      },
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "diplomatic_reputation",
+            "value": 0.03,
+            "days": 2920
+          }
+        },
+        {
+          "add_opinion": {
+            "target": "CHN",
+            "value": 5,
+            "days": 1825
+          }
+        }
+      ]
+    },
+    {
+      "id": "irn_electricity",
+      "name": "Power plants",
+      "description": "Gas power plants and grid expansion.",
+      "x": 18,
+      "y": 4,
+      "days": 70,
+      "prerequisites": [
+        [
+          "irn_car_industry",
+          "irn_privatisation"
+        ]
+      ],
+      "effects": [
+        {
+          "add_buildings": {
+            "building": "renewable_plant",
+            "count": 1
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "energy_cost",
+            "value": -0.02,
+            "days": 3650
+          }
+        }
+      ]
+    },
+    {
+      "id": "irn_water_crisis",
+      "name": "Save the water",
+      "description": "Dams, canals and limits on wells against drought.",
+      "x": 16,
+      "y": 4,
+      "days": 70,
+      "prerequisites": [
+        [
+          "irn_tehran_metro"
+        ]
+      ],
+      "available": {
+        "treasury_above": 0.5
+      },
+      "effects": [
+        {
+          "add_interest_group_approval": {
+            "group": "rural",
+            "value": 4
+          }
+        },
+        {
+          "add_treasury": -0.5
+        }
+      ]
+    },
+    {
+      "id": "irn_agriculture",
+      "name": "Self-sufficiency in wheat",
+      "description": "Support wheat farmers.",
+      "x": 15,
+      "y": 4,
+      "days": 70,
+      "prerequisites": [
+        [
+          "irn_water_crisis"
+        ]
+      ],
+      "effects": [
+        {
+          "add_interest_group_approval": {
+            "group": "rural",
+            "value": 5
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "gdp_growth",
+            "value": 0.001,
+            "days": 3650
+          }
+        }
+      ]
+    },
+    {
+      "id": "irn_steel",
+      "name": "Steel industry",
+      "description": "Steel mills in Isfahan and the south.",
+      "x": 18,
+      "y": 5,
+      "days": 70,
+      "prerequisites": [
+        [
+          "irn_electricity"
+        ]
+      ],
+      "effects": [
+        {
+          "add_buildings": {
+            "building": "civilian_factory",
+            "count": 2
+          }
+        }
+      ]
+    },
+    {
+      "id": "irn_free_zones",
+      "name": "Free trade zones",
+      "description": "Kish, Qeshm and Chabahar as free zones.",
+      "x": 16,
+      "y": 5,
+      "days": 70,
+      "prerequisites": [
+        [
+          "irn_agriculture",
+          "irn_knowledge_economy"
+        ]
+      ],
+      "effects": [
+        {
+          "add_buildings": {
+            "building": "port",
+            "count": 1
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "trade_efficiency",
+            "value": 0.03,
+            "days": 2920
+          }
+        }
+      ]
+    },
+    {
+      "id": "irn_north_south_corridor",
+      "name": "The north-south corridor",
+      "description": "A trade route from India through Iran to Russia.",
+      "x": 17,
+      "y": 6,
+      "days": 70,
+      "prerequisites": [
+        [
+          "irn_free_zones",
+          "irn_steel"
+        ]
+      ],
+      "effects": [
+        {
+          "add_buildings": {
+            "building": "infrastructure",
+            "count": 3
+          }
+        },
+        {
+          "add_opinion": {
+            "target": "IND",
+            "value": 10,
+            "days": 1825
+          }
+        },
+        {
+          "add_opinion": {
+            "target": "RUS",
+            "value": 5,
+            "days": 1825
+          }
+        }
+      ]
+    },
+    {
+      "id": "irn_tourism",
+      "name": "Tourism",
+      "description": "Hotels for visitors to the historic cities.",
+      "x": 15,
+      "y": 5,
+      "days": 70,
+      "prerequisites": [
+        [
+          "irn_agriculture"
+        ]
+      ],
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "gdp_growth",
+            "value": 0.001,
+            "days": 2920
+          }
+        }
+      ]
+    },
+    {
+      "id": "irn_space_programme",
+      "name": "Space programme",
+      "description": "Satellites and launchers.",
+      "x": 21,
+      "y": 3,
+      "days": 70,
+      "prerequisites": [
+        [
+          "irn_missile_forces",
+          "irn_naval_forces"
+        ]
+      ],
+      "effects": [
+        {
+          "add_research_bonus": {
+            "category": "air_drones",
+            "value": 0.2,
+            "uses": 1
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "diplomatic_reputation",
+            "value": 0.02,
+            "days": 2920
+          }
+        }
+      ]
+    },
+    {
+      "id": "irn_cyber_army",
+      "name": "Cyber forces",
+      "description": "A cyber command.",
+      "x": 23,
+      "y": 3,
+      "days": 70,
+      "prerequisites": [
+        [
+          "irn_basij"
+        ]
+      ],
+      "effects": [
+        {
+          "add_research_bonus": {
+            "category": "electronics_cyber",
+            "value": 0.25,
+            "uses": 2
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "intelligence_power",
+            "value": 0.05,
+            "days": 3650
+          }
+        }
+      ]
+    },
+    {
+      "id": "irn_ground_forces",
+      "name": "Ground forces",
+      "description": "Modernise the army's ground forces.",
+      "x": 21,
+      "y": 4,
+      "days": 70,
+      "prerequisites": [
+        [
+          "irn_space_programme",
+          "irn_air_defence"
+        ]
+      ],
+      "effects": [
+        {
+          "add_divisions": {
+            "template": "mechanised_division",
+            "count": 1
+          }
+        },
+        {
+          "add_research_bonus": {
+            "category": "armour",
+            "value": 0.2,
+            "uses": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "irn_quds_force",
+      "name": "Regional allies",
+      "description": "Train and arm allied groups abroad.",
+      "x": 23,
+      "y": 4,
+      "days": 70,
+      "prerequisites": [
+        [
+          "irn_cyber_army",
+          "irn_air_defence"
+        ]
+      ],
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "foreign_influence_power",
+            "value": 0.08,
+            "days": 2920
+          }
+        },
+        {
+          "add_treasury": -0.5
+        }
+      ]
+    },
+    {
+      "id": "irn_deterrence",
+      "name": "Deterrence doctrine",
+      "description": "A doctrine of deterrence through missiles and allies.",
+      "x": 22,
+      "y": 5,
+      "days": 70,
+      "prerequisites": [
+        [
+          "irn_arms_industry",
+          "irn_quds_force",
+          "irn_ground_forces"
+        ]
+      ],
+      "effects": [
+        {
+          "add_war_support": 0.03
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "army_defence",
+            "value": 0.02,
+            "days": 2920
+          }
+        }
+      ]
+    },
+    {
+      "id": "irn_health_network",
+      "name": "Rural health houses",
+      "description": "Health houses in every village.",
+      "x": 11,
+      "y": 3,
+      "days": 70,
+      "prerequisites": [
+        [
+          "irn_sanctions_evasion"
+        ]
+      ],
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "health_outcomes",
+            "value": 0.03,
+            "days": 3650
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "rural",
+            "value": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "irn_universities",
+      "name": "Universities",
+      "description": "More universities and research centres.",
+      "x": 13,
+      "y": 3,
+      "days": 70,
+      "prerequisites": [
+        [
+          "irn_deal_economy"
+        ]
+      ],
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "education_quality",
+            "value": 0.04,
+            "days": 3650
+          }
+        },
+        {
+          "add_research_bonus": {
+            "category": "economy_digital",
+            "value": 0.2,
+            "uses": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "irn_nanotechnology",
+      "name": "Nanotechnology and biotech",
+      "description": "Research in nanotechnology and medicine.",
+      "x": 12,
+      "y": 4,
+      "days": 70,
+      "prerequisites": [
+        [
+          "irn_health_network",
+          "irn_universities"
+        ]
+      ],
+      "effects": [
+        {
+          "add_research_bonus": {
+            "category": "electronics_cyber",
+            "value": 0.2,
+            "uses": 1
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "research_speed",
+            "value": 0.03,
+            "days": 2920
+          }
+        }
+      ]
+    },
+    {
+      "id": "irn_internet",
+      "name": "The national internet",
+      "description": "A national information network.",
+      "x": 12,
+      "y": 5,
+      "days": 70,
+      "prerequisites": [
+        [
+          "irn_nanotechnology"
+        ]
+      ],
+      "effects": [
+        {
+          "change_law": {
+            "category": "internet_surveillance",
+            "law": "filtered_internet"
           }
         },
         {
@@ -484,52 +1710,175 @@
             "value": 0.05,
             "days": 3650
           }
-        }
-      ],
-      "prerequisites": [
-        [
-          "irn_oil_revenue"
-        ]
-      ]
-    },
-    {
-      "id": "irn_missile_forces",
-      "name": "Missile forces",
-      "description": "Expand the missile forces.",
-      "x": 10,
-      "y": 2,
-      "days": 70,
-      "effects": [
-        {
-          "add_timed_modifier": {
-            "modifier": "army_attack",
-            "value": 0.03,
-            "days": 3650
-          }
-        },
-        {
-          "add_war_support": 0.03
         },
         {
           "add_interest_group_approval": {
-            "group": "military",
-            "value": 3
+            "group": "youth_students",
+            "value": -5
           }
         }
-      ],
+      ]
+    },
+    {
+      "id": "irn_protests_response",
+      "name": "Answer the protests",
+      "description": "Respond to the protests that began on 16 September 2022.",
+      "x": 10,
+      "y": 4,
+      "days": 70,
       "prerequisites": [
         [
-          "irn_defence_review"
+          "irn_civil_society",
+          "irn_guards_in_economy",
+          "irn_steady_course"
         ]
+      ],
+      "available": {
+        "date_after": "2022-09-16"
+      },
+      "effects": [
+        {
+          "add_unrest": -0.04
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "youth_students",
+            "value": -4
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "security_services",
+            "value": 4
+          }
+        }
+      ]
+    },
+    {
+      "id": "irn_caspian",
+      "name": "The Caspian",
+      "description": "Oil, gas and ports on the Caspian Sea.",
+      "x": 25,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "irn_look_east"
+        ]
+      ],
+      "effects": [
+        {
+          "add_buildings": {
+            "building": "port",
+            "count": 1
+          }
+        },
+        {
+          "add_opinion": {
+            "target": "RUS",
+            "value": 5,
+            "days": 1825
+          }
+        },
+        {
+          "add_opinion": {
+            "target": "KAZ",
+            "value": 5,
+            "days": 1825
+          }
+        }
+      ]
+    },
+    {
+      "id": "irn_afghan_border",
+      "name": "The eastern border",
+      "description": "Water, trade and refugees on the Afghan border.",
+      "x": 25,
+      "y": 3,
+      "days": 70,
+      "prerequisites": [
+        [
+          "irn_caspian"
+        ]
+      ],
+      "effects": [
+        {
+          "add_opinion": {
+            "target": "AFG",
+            "value": 10,
+            "days": 1825
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "internal_security",
+            "value": 0.02,
+            "days": 2920
+          }
+        }
+      ]
+    },
+    {
+      "id": "irn_turkey_trade",
+      "name": "Trade with Turkey",
+      "description": "Gas and trade with Turkey.",
+      "x": 29,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "irn_lebanon_ties"
+        ]
+      ],
+      "effects": [
+        {
+          "add_opinion": {
+            "target": "TUR",
+            "value": 10,
+            "days": 1825
+          }
+        },
+        {
+          "add_treasury": 0.5
+        }
+      ]
+    },
+    {
+      "id": "irn_europe_talks",
+      "name": "Talks with Europe",
+      "description": "Diplomacy with the European powers.",
+      "x": 29,
+      "y": 3,
+      "days": 70,
+      "prerequisites": [
+        [
+          "irn_turkey_trade",
+          "irn_gulf_detente"
+        ]
+      ],
+      "effects": [
+        {
+          "add_opinion": {
+            "target": "FRA",
+            "value": 5,
+            "days": 1825
+          }
+        },
+        {
+          "add_opinion": {
+            "target": "DEU",
+            "value": 5,
+            "days": 1825
+          }
+        },
+        {
+          "add_opinion": {
+            "target": "GBR",
+            "value": 5,
+            "days": 1825
+          }
+        }
       ]
     }
-  ],
-  "source": [
-    {
-      "url": "https://en.wikipedia.org/wiki/Dialogue_Among_Civilizations",
-      "title": "Wikipedia: Dialogue Among Civilizations",
-      "accessed": "2026-10-15"
-    }
-  ],
-  "confidence": "verified"
+  ]
 }

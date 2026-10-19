@@ -1,0 +1,3018 @@
+{
+  "id": "irq",
+  "name": "Iraq",
+  "countries": [
+    "IRQ"
+  ],
+  "note": "Iraq in the style of the Russian model tree: the established order in each period (the Ba'athist state under sanctions until 2003, then the new constitutional state) as the historical path, and alternatives led by real parties of the data (Islamist, liberal, communist, Kurdish regionalist, social-democratic) plus a junta; branches for the sanctions era, the new state, the war with the Islamic State from 2014, oil and economy, the army and foreign policy. Sourced starting spirits in data/spirits/irq.json, decisions in data/decisions/irq.json. Wars stay in the scripted conflict events. Alternatives are a counterfactual, not a claim about the parties.",
+  "source": [
+    {
+      "url": "https://en.wikipedia.org/wiki/Sanctions_against_Iraq",
+      "title": "Wikipedia: Sanctions against Iraq",
+      "accessed": "2026-10-19"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Oil-for-Food_Programme",
+      "title": "Wikipedia: Oil-for-Food Programme",
+      "accessed": "2026-10-19"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Iraqi_no-fly_zones",
+      "title": "Wikipedia: Iraqi no-fly zones",
+      "accessed": "2026-10-19"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Petroleum_industry_in_Iraq",
+      "title": "Wikipedia: Petroleum industry in Iraq",
+      "accessed": "2026-10-19"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Economy_of_Iraq",
+      "title": "Wikipedia: Economy of Iraq",
+      "accessed": "2026-10-19"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Coalition_Provisional_Authority",
+      "title": "Wikipedia: Coalition Provisional Authority",
+      "accessed": "2026-10-19"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/De-Ba'athification",
+      "title": "Wikipedia: De-Ba'athification",
+      "accessed": "2026-10-19"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/2005_Iraqi_constitutional_referendum",
+      "title": "Wikipedia: 2005 Iraqi constitutional referendum",
+      "accessed": "2026-10-19"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/December_2005_Iraqi_parliamentary_election",
+      "title": "Wikipedia: December 2005 Iraqi parliamentary election",
+      "accessed": "2026-10-19"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Sons_of_Iraq",
+      "title": "Wikipedia: Sons of Iraq",
+      "accessed": "2026-10-19"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Fall_of_Mosul",
+      "title": "Wikipedia: Fall of Mosul",
+      "accessed": "2026-10-19"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Popular_Mobilization_Forces",
+      "title": "Wikipedia: Popular Mobilization Forces",
+      "accessed": "2026-10-19"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Battle_of_Mosul_(2016–2017)",
+      "title": "Wikipedia: Battle of Mosul (2016–2017)",
+      "accessed": "2026-10-19"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/2017_Kurdistan_Region_independence_referendum",
+      "title": "Wikipedia: 2017 Kurdistan Region independence referendum",
+      "accessed": "2026-10-19"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/2019–2021_Iraqi_protests",
+      "title": "Wikipedia: 2019–2021 Iraqi protests",
+      "accessed": "2026-10-19"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Electricity_sector_in_Iraq",
+      "title": "Wikipedia: Electricity sector in Iraq",
+      "accessed": "2026-10-19"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Islamic_Dawa_Party",
+      "title": "Wikipedia: Islamic Dawa Party",
+      "accessed": "2026-10-19"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Iraqi_Communist_Party",
+      "title": "Wikipedia: Iraqi Communist Party",
+      "accessed": "2026-10-19"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Kurdistan_Democratic_Party",
+      "title": "Wikipedia: Kurdistan Democratic Party",
+      "accessed": "2026-10-19"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Patriotic_Union_of_Kurdistan",
+      "title": "Wikipedia: Patriotic Union of Kurdistan",
+      "accessed": "2026-10-19"
+    }
+  ],
+  "confidence": "verified",
+  "focuses": [
+    {
+      "id": "irq_question_of_power",
+      "name": "Who rules Iraq",
+      "description": "Which force leads Iraq: the ruling party, or one of the movements of the opposition.",
+      "x": 6,
+      "y": 0,
+      "days": 70,
+      "effects": [
+        {
+          "add_political_power": 30
+        }
+      ],
+      "ai_weight": 5
+    },
+    {
+      "id": "irq_steady_course",
+      "name": "The established order",
+      "description": "Iraq is governed as it historically was in each period: by the Ba'ath Party until 2003, then by the coalitions of the new constitution.",
+      "x": 0,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "irq_question_of_power"
+        ]
+      ],
+      "mutually_exclusive": [
+        "irq_islamist_movement",
+        "irq_liberal_opposition",
+        "irq_workers_front",
+        "irq_social_democrats",
+        "irq_army_steps_in"
+      ],
+      "available": {
+        "follows_history": true
+      },
+      "effects": [
+        {
+          "add_stability": 0.04
+        },
+        {
+          "add_political_power": 40
+        }
+      ],
+      "ai_weight": 20
+    },
+    {
+      "id": "irq_islamist_movement",
+      "name": "The Islamist opposition",
+      "description": "Shia Islamist parties such as Dawa and the Supreme Council organise for power.",
+      "x": 2,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "irq_question_of_power"
+        ]
+      ],
+      "mutually_exclusive": [
+        "irq_steady_course",
+        "irq_liberal_opposition",
+        "irq_workers_front",
+        "irq_social_democrats",
+        "irq_army_steps_in"
+      ],
+      "available": {
+        "all": [
+          {
+            "any": [
+              {
+                "follows_history": false
+              },
+              {
+                "is_player": true
+              }
+            ]
+          },
+          {
+            "has_party_of_group": "religious"
+          },
+          {
+            "not": {
+              "ruling_ideology_group": "religious"
+            }
+          },
+          {
+            "any": [
+              {
+                "stability_below": 0.5
+              },
+              {
+                "unrest_above": 0.2
+              }
+            ]
+          }
+        ]
+      },
+      "effects": [
+        {
+          "leave_history": true
+        },
+        {
+          "add_ideology_support": {
+            "group": "religious",
+            "value": 0.04
+          }
+        }
+      ],
+      "ai_weight": 0.3
+    },
+    {
+      "id": "irq_islamist_movement_build",
+      "name": "Mosques and charities",
+      "description": "Religious networks build support across the south.",
+      "x": 2,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "irq_islamist_movement"
+        ]
+      ],
+      "effects": [
+        {
+          "add_ideology_support": {
+            "group": "religious",
+            "value": 0.05
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "religious_establishment",
+            "value": 6
+          }
+        }
+      ]
+    },
+    {
+      "id": "irq_islamist_movement_government",
+      "name": "An Islamist government",
+      "description": "The most popular Islamist party forms the government.",
+      "x": 2,
+      "y": 3,
+      "days": 105,
+      "prerequisites": [
+        [
+          "irq_islamist_movement_build"
+        ]
+      ],
+      "available": {
+        "ideology_group_support_above": {
+          "group": "religious",
+          "value": 0.2
+        }
+      },
+      "effects": [
+        {
+          "install_government": {
+            "ideology": "religious"
+          }
+        },
+        {
+          "add_stability": -0.05
+        }
+      ]
+    },
+    {
+      "id": "irq_religious_law",
+      "name": "Religious law",
+      "description": "Religious law in family and public life.",
+      "x": 2,
+      "y": 4,
+      "days": 70,
+      "prerequisites": [
+        [
+          "irq_islamist_movement_government"
+        ]
+      ],
+      "effects": [
+        {
+          "change_law": {
+            "category": "religion_state",
+            "law": "religious_law_partial"
+          }
+        },
+        {
+          "add_spirit": "religious_revival"
+        }
+      ]
+    },
+    {
+      "id": "irq_shia_alliance",
+      "name": "Alliance with Tehran",
+      "description": "Close ties with Iran.",
+      "x": 2,
+      "y": 5,
+      "days": 70,
+      "prerequisites": [
+        [
+          "irq_religious_law"
+        ]
+      ],
+      "effects": [
+        {
+          "add_opinion": {
+            "target": "IRN",
+            "value": 25,
+            "days": 1825
+          }
+        },
+        {
+          "add_opinion": {
+            "target": "USA",
+            "value": -10,
+            "days": 1825
+          }
+        }
+      ]
+    },
+    {
+      "id": "irq_liberal_opposition",
+      "name": "The liberal opposition",
+      "description": "Secular exile parties such as the Iraqi National Congress and the Iraqi National Accord press for a democratic Iraq.",
+      "x": 4,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "irq_question_of_power"
+        ]
+      ],
+      "mutually_exclusive": [
+        "irq_steady_course",
+        "irq_islamist_movement",
+        "irq_workers_front",
+        "irq_social_democrats",
+        "irq_army_steps_in"
+      ],
+      "available": {
+        "all": [
+          {
+            "any": [
+              {
+                "follows_history": false
+              },
+              {
+                "is_player": true
+              }
+            ]
+          },
+          {
+            "has_party_of_group": "liberal_democratic"
+          },
+          {
+            "not": {
+              "ruling_ideology_group": "liberal_democratic"
+            }
+          },
+          {
+            "any": [
+              {
+                "stability_below": 0.5
+              },
+              {
+                "ig_approval_below": {
+                  "group": "urban_middle_class",
+                  "value": 45
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "effects": [
+        {
+          "leave_history": true
+        },
+        {
+          "add_ideology_support": {
+            "group": "liberal_democratic",
+            "value": 0.04
+          }
+        }
+      ],
+      "ai_weight": 0.3
+    },
+    {
+      "id": "irq_liberal_opposition_build",
+      "name": "Exiles return",
+      "description": "Exiled politicians build a base at home.",
+      "x": 4,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "irq_liberal_opposition"
+        ]
+      ],
+      "effects": [
+        {
+          "add_ideology_support": {
+            "group": "liberal_democratic",
+            "value": 0.05
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "urban_middle_class",
+            "value": 5
+          }
+        }
+      ]
+    },
+    {
+      "id": "irq_liberal_opposition_government",
+      "name": "A liberal government",
+      "description": "The most popular liberal party forms the government and calls free elections.",
+      "x": 4,
+      "y": 3,
+      "days": 105,
+      "prerequisites": [
+        [
+          "irq_liberal_opposition_build"
+        ]
+      ],
+      "available": {
+        "ideology_group_support_above": {
+          "group": "liberal_democratic",
+          "value": 0.2
+        }
+      },
+      "effects": [
+        {
+          "install_government": {
+            "ideology": "liberal_democratic"
+          }
+        },
+        {
+          "add_stability": -0.05
+        },
+        {
+          "change_law": {
+            "category": "political_freedom",
+            "law": "free_elections"
+          }
+        }
+      ]
+    },
+    {
+      "id": "irq_open_economy",
+      "name": "Open the economy",
+      "description": "Open trade and invite foreign investment.",
+      "x": 4,
+      "y": 4,
+      "days": 70,
+      "prerequisites": [
+        [
+          "irq_liberal_opposition_government"
+        ]
+      ],
+      "effects": [
+        {
+          "change_law": {
+            "category": "trade",
+            "law": "free_trade"
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "foreign_investment",
+            "value": 0.1,
+            "days": 2920
+          }
+        }
+      ]
+    },
+    {
+      "id": "irq_workers_front",
+      "name": "The workers' front",
+      "description": "The Iraqi Communist Party, one of the oldest parties of the country, organises workers.",
+      "x": 6,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "irq_question_of_power"
+        ]
+      ],
+      "mutually_exclusive": [
+        "irq_steady_course",
+        "irq_islamist_movement",
+        "irq_liberal_opposition",
+        "irq_social_democrats",
+        "irq_army_steps_in"
+      ],
+      "available": {
+        "all": [
+          {
+            "any": [
+              {
+                "follows_history": false
+              },
+              {
+                "is_player": true
+              }
+            ]
+          },
+          {
+            "has_party_of_group": "socialist_communist"
+          },
+          {
+            "not": {
+              "ruling_ideology_group": "socialist_communist"
+            }
+          },
+          {
+            "any": [
+              {
+                "gdp_growth_below": 1
+              },
+              {
+                "unrest_above": 0.25
+              }
+            ]
+          }
+        ]
+      },
+      "effects": [
+        {
+          "leave_history": true
+        },
+        {
+          "add_ideology_support": {
+            "group": "socialist_communist",
+            "value": 0.04
+          }
+        }
+      ],
+      "ai_weight": 0.3
+    },
+    {
+      "id": "irq_workers_front_build",
+      "name": "Unions in the oil fields",
+      "description": "Unions among oil and port workers.",
+      "x": 6,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "irq_workers_front"
+        ]
+      ],
+      "effects": [
+        {
+          "add_ideology_support": {
+            "group": "socialist_communist",
+            "value": 0.05
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "labour_unions",
+            "value": 6
+          }
+        }
+      ]
+    },
+    {
+      "id": "irq_workers_front_government",
+      "name": "A government of the left",
+      "description": "The most popular party of the left takes power.",
+      "x": 6,
+      "y": 3,
+      "days": 105,
+      "prerequisites": [
+        [
+          "irq_workers_front_build"
+        ]
+      ],
+      "available": {
+        "ideology_group_support_above": {
+          "group": "socialist_communist",
+          "value": 0.2
+        }
+      },
+      "effects": [
+        {
+          "install_government": {
+            "ideology": "socialist_communist",
+            "government_type": "one_party_state"
+          }
+        },
+        {
+          "add_stability": -0.05
+        }
+      ]
+    },
+    {
+      "id": "irq_public_oil",
+      "name": "Oil for the people",
+      "description": "Oil revenue for wages, pensions and services.",
+      "x": 6,
+      "y": 4,
+      "days": 70,
+      "prerequisites": [
+        [
+          "irq_workers_front_government"
+        ]
+      ],
+      "effects": [
+        {
+          "set_budget": {
+            "spending": 2
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "labour_unions",
+            "value": 5
+          }
+        }
+      ]
+    },
+    {
+      "id": "irq_social_democrats",
+      "name": "The social democrats",
+      "description": "Centre-left parties such as the Patriotic Union of Kurdistan campaign for a federal, secular Iraq.",
+      "x": 8,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "irq_question_of_power"
+        ]
+      ],
+      "mutually_exclusive": [
+        "irq_steady_course",
+        "irq_islamist_movement",
+        "irq_liberal_opposition",
+        "irq_workers_front",
+        "irq_army_steps_in"
+      ],
+      "available": {
+        "all": [
+          {
+            "any": [
+              {
+                "follows_history": false
+              },
+              {
+                "is_player": true
+              }
+            ]
+          },
+          {
+            "has_party_of_group": "social_democratic"
+          },
+          {
+            "not": {
+              "ruling_ideology_group": "social_democratic"
+            }
+          },
+          {
+            "any": [
+              {
+                "stability_below": 0.5
+              },
+              {
+                "gdp_growth_below": 2
+              }
+            ]
+          }
+        ]
+      },
+      "effects": [
+        {
+          "leave_history": true
+        },
+        {
+          "add_ideology_support": {
+            "group": "social_democratic",
+            "value": 0.04
+          }
+        }
+      ],
+      "ai_weight": 0.3
+    },
+    {
+      "id": "irq_social_democrats_build",
+      "name": "A federal programme",
+      "description": "A programme for federalism and public services.",
+      "x": 8,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "irq_social_democrats"
+        ]
+      ],
+      "effects": [
+        {
+          "add_ideology_support": {
+            "group": "social_democratic",
+            "value": 0.05
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "minorities",
+            "value": 3
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "labour_unions",
+            "value": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "irq_social_democrats_government",
+      "name": "A social-democratic government",
+      "description": "The most popular social-democratic party forms the government.",
+      "x": 8,
+      "y": 3,
+      "days": 105,
+      "prerequisites": [
+        [
+          "irq_social_democrats_build"
+        ]
+      ],
+      "available": {
+        "ideology_group_support_above": {
+          "group": "social_democratic",
+          "value": 0.15
+        }
+      },
+      "effects": [
+        {
+          "install_government": {
+            "ideology": "social_democratic"
+          }
+        },
+        {
+          "add_stability": -0.05
+        }
+      ]
+    },
+    {
+      "id": "irq_army_steps_in",
+      "name": "The army steps in",
+      "description": "With the state in crisis, the generals prepare to take over.",
+      "x": 10,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "irq_question_of_power"
+        ]
+      ],
+      "mutually_exclusive": [
+        "irq_steady_course",
+        "irq_islamist_movement",
+        "irq_liberal_opposition",
+        "irq_workers_front",
+        "irq_social_democrats"
+      ],
+      "available": {
+        "all": [
+          {
+            "any": [
+              {
+                "follows_history": false
+              },
+              {
+                "is_player": true
+              }
+            ]
+          },
+          {
+            "stability_below": 0.3
+          },
+          {
+            "any": [
+              {
+                "unrest_above": 0.4
+              },
+              {
+                "ig_approval_below": {
+                  "group": "military",
+                  "value": 35
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "effects": [
+        {
+          "leave_history": true
+        },
+        {
+          "add_interest_group_influence": {
+            "group": "military",
+            "value": 0.08
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "military",
+            "value": 5
+          }
+        }
+      ],
+      "ai_weight": 0.2
+    },
+    {
+      "id": "irq_military_council",
+      "name": "Military council",
+      "description": "The armed forces remove the government. The coup may fail.",
+      "x": 10,
+      "y": 2,
+      "days": 35,
+      "prerequisites": [
+        [
+          "irq_army_steps_in"
+        ]
+      ],
+      "effects": [
+        {
+          "trigger_coup": {
+            "by": "military",
+            "success_chance": 0.6
+          }
+        }
+      ]
+    },
+    {
+      "id": "irq_martial_order",
+      "name": "Martial order",
+      "description": "A state of emergency, a curfew and military courts.",
+      "x": 10,
+      "y": 3,
+      "days": 70,
+      "prerequisites": [
+        [
+          "irq_military_council"
+        ]
+      ],
+      "available": {
+        "government_type": "military_junta"
+      },
+      "effects": [
+        {
+          "change_law": {
+            "category": "civil_rights",
+            "law": "security_state"
+          }
+        },
+        {
+          "add_spirit": "military_rule"
+        },
+        {
+          "add_unrest": -0.08
+        }
+      ]
+    },
+    {
+      "id": "irq_return_to_barracks",
+      "name": "Return to the barracks",
+      "description": "The council hands power to an elected government.",
+      "x": 10,
+      "y": 4,
+      "days": 140,
+      "prerequisites": [
+        [
+          "irq_martial_order"
+        ]
+      ],
+      "available": {
+        "government_type": "military_junta"
+      },
+      "effects": [
+        {
+          "set_government_type": "transitional_administration"
+        },
+        {
+          "change_law": {
+            "category": "political_freedom",
+            "law": "free_elections"
+          }
+        },
+        {
+          "remove_spirit": "military_rule"
+        },
+        {
+          "add_stability": 0.05
+        }
+      ],
+      "ai_weight": 0.5
+    },
+    {
+      "id": "irq_sanctions_era",
+      "name": "Survive the sanctions",
+      "description": "Run the state under the UN embargo.",
+      "x": 15,
+      "y": 0,
+      "days": 70,
+      "available": {
+        "date_before": "2003-03-20"
+      },
+      "effects": [
+        {
+          "add_political_power": 20
+        },
+        {
+          "add_stability": 0.02
+        }
+      ],
+      "ai_weight": 5
+    },
+    {
+      "id": "irq_oil_for_food_expansion",
+      "name": "More oil for food",
+      "description": "Press for higher oil sales under the UN programme.",
+      "x": 14,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "irq_sanctions_era"
+        ]
+      ],
+      "available": {
+        "date_before": "2003-03-20"
+      },
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "health_outcomes",
+            "value": 0.02,
+            "days": 1460
+          }
+        },
+        {
+          "add_treasury": 0.5
+        }
+      ]
+    },
+    {
+      "id": "irq_air_defence_network",
+      "name": "Air defence network",
+      "description": "Rebuild the air defences under the no-fly zones.",
+      "x": 16,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "irq_sanctions_era"
+        ]
+      ],
+      "available": {
+        "date_before": "2003-03-20"
+      },
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "army_defence",
+            "value": 0.02,
+            "days": 1460
+          }
+        },
+        {
+          "add_research_bonus": {
+            "category": "artillery_missiles",
+            "value": 0.15,
+            "uses": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "irq_rebuild_baghdad",
+      "name": "Rebuild the capital",
+      "description": "Repair roads, bridges and power stations in Baghdad.",
+      "x": 14,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "irq_oil_for_food_expansion"
+        ]
+      ],
+      "available": {
+        "all": [
+          {
+            "date_before": "2003-03-20"
+          },
+          {
+            "treasury_above": 0.5
+          }
+        ]
+      },
+      "effects": [
+        {
+          "add_buildings": {
+            "building": "infrastructure",
+            "count": 2,
+            "regions": [
+              {
+                "from": "IRQ",
+                "adm1": [
+                  "IRQ-3062"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "add_treasury": -0.5
+        }
+      ]
+    },
+    {
+      "id": "irq_arab_ties",
+      "name": "Ties with Arab neighbours",
+      "description": "Restore trade with Syria, Jordan and Egypt.",
+      "x": 16,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "irq_air_defence_network"
+        ]
+      ],
+      "available": {
+        "date_before": "2003-03-20"
+      },
+      "effects": [
+        {
+          "add_opinion": {
+            "target": "SYR",
+            "value": 10,
+            "days": 1825
+          }
+        },
+        {
+          "add_opinion": {
+            "target": "JOR",
+            "value": 10,
+            "days": 1825
+          }
+        },
+        {
+          "add_opinion": {
+            "target": "EGY",
+            "value": 5,
+            "days": 1825
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "trade_efficiency",
+            "value": 0.02,
+            "days": 1460
+          }
+        }
+      ]
+    },
+    {
+      "id": "irq_republican_guard",
+      "name": "The Republican Guard",
+      "description": "Equip the elite divisions.",
+      "x": 15,
+      "y": 3,
+      "days": 70,
+      "prerequisites": [
+        [
+          "irq_rebuild_baghdad",
+          "irq_arab_ties"
+        ]
+      ],
+      "available": {
+        "date_before": "2003-03-20"
+      },
+      "effects": [
+        {
+          "add_equipment": {
+            "family": "infantry_equipment",
+            "amount": 400
+          }
+        },
+        {
+          "add_divisions": {
+            "template": "mechanised_division",
+            "count": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "irq_new_iraq",
+      "name": "A new Iraq",
+      "description": "Build the institutions of the state after the invasion of March 2003.",
+      "x": 21,
+      "y": 0,
+      "days": 70,
+      "available": {
+        "date_after": "2003-04-21"
+      },
+      "effects": [
+        {
+          "add_political_power": 40
+        }
+      ],
+      "ai_weight": 5
+    },
+    {
+      "id": "irq_end_of_sanctions",
+      "name": "The end of the sanctions",
+      "description": "The UN lifts the sanctions in May 2003 and the no-fly zones end.",
+      "x": 19,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "irq_new_iraq"
+        ]
+      ],
+      "available": {
+        "date_after": "2003-05-22"
+      },
+      "effects": [
+        {
+          "remove_spirit": "irq_un_sanctions"
+        },
+        {
+          "remove_spirit": "irq_no_fly_zones"
+        },
+        {
+          "remove_spirit": "irq_oil_for_food"
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "trade_efficiency",
+            "value": 0.05,
+            "days": 1460
+          }
+        }
+      ],
+      "ai_weight": 8
+    },
+    {
+      "id": "irq_de_baathification",
+      "name": "De-Ba'athification",
+      "description": "Remove members of the Ba'ath Party from public posts, as the occupation authority ordered in May 2003.",
+      "x": 21,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "irq_new_iraq"
+        ]
+      ],
+      "available": {
+        "all": [
+          {
+            "follows_history": true
+          },
+          {
+            "date_after": "2003-05-16"
+          }
+        ]
+      },
+      "effects": [
+        {
+          "add_spirit": "irq_sectarian_divide"
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "minorities",
+            "value": -6
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "security_services",
+            "value": -5
+          }
+        },
+        {
+          "add_political_power": 30
+        }
+      ],
+      "ai_weight": 5
+    },
+    {
+      "id": "irq_transfer_of_sovereignty",
+      "name": "Return of sovereignty",
+      "description": "The occupation authority hands power to an Iraqi government at the end of June 2004.",
+      "x": 23,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "irq_new_iraq"
+        ]
+      ],
+      "available": {
+        "date_after": "2004-06-28"
+      },
+      "effects": [
+        {
+          "add_stability": 0.03
+        },
+        {
+          "add_political_power": 30
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "foreign_influence_resistance",
+            "value": 0.05,
+            "days": 1460
+          }
+        }
+      ],
+      "ai_weight": 5
+    },
+    {
+      "id": "irq_constitution_2005",
+      "name": "The 2005 constitution",
+      "description": "A federal constitution approved in the referendum of 15 October 2005.",
+      "x": 21,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "irq_de_baathification",
+          "irq_transfer_of_sovereignty"
+        ]
+      ],
+      "available": {
+        "date_after": "2005-10-15"
+      },
+      "effects": [
+        {
+          "add_stability": 0.03
+        },
+        {
+          "change_law": {
+            "category": "political_freedom",
+            "law": "free_elections"
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "minorities",
+            "value": 3
+          }
+        }
+      ],
+      "ai_weight": 5
+    },
+    {
+      "id": "irq_first_parliament",
+      "name": "An elected parliament",
+      "description": "Elect the Council of Representatives, as Iraq did on 15 December 2005.",
+      "x": 23,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "irq_transfer_of_sovereignty"
+        ]
+      ],
+      "available": {
+        "date_after": "2005-12-15"
+      },
+      "effects": [
+        {
+          "add_stability": 0.02
+        },
+        {
+          "add_ruling_party_popularity": 0.02
+        }
+      ],
+      "ai_weight": 4
+    },
+    {
+      "id": "irq_awakening",
+      "name": "The Awakening",
+      "description": "Pay and arm the Sunni tribes of Anbar who turned against al-Qaeda in Iraq. Unlocks tribal outreach.",
+      "x": 19,
+      "y": 3,
+      "days": 70,
+      "prerequisites": [
+        [
+          "irq_constitution_2005"
+        ]
+      ],
+      "available": {
+        "date_after": "2006-01-01"
+      },
+      "effects": [
+        {
+          "add_unrest": -0.05
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "minorities",
+            "value": 6
+          }
+        },
+        {
+          "add_divisions": {
+            "template": "infantry_division",
+            "count": 1
+          }
+        }
+      ],
+      "ai_weight": 4
+    },
+    {
+      "id": "irq_national_reconciliation",
+      "name": "National reconciliation",
+      "description": "Amnesties, power sharing and the return of former officers.",
+      "x": 21,
+      "y": 3,
+      "days": 105,
+      "prerequisites": [
+        [
+          "irq_awakening",
+          "irq_first_parliament"
+        ]
+      ],
+      "available": {
+        "has_spirit": "irq_sectarian_divide"
+      },
+      "effects": [
+        {
+          "swap_spirit": {
+            "from": "irq_sectarian_divide",
+            "to": "irq_national_reconciliation"
+          }
+        },
+        {
+          "add_political_power": -30
+        }
+      ],
+      "ai_weight": 3
+    },
+    {
+      "id": "irq_full_sovereignty",
+      "name": "Full sovereignty",
+      "description": "Agree the withdrawal of foreign troops, completed at the end of 2011.",
+      "x": 23,
+      "y": 3,
+      "days": 70,
+      "prerequisites": [
+        [
+          "irq_first_parliament"
+        ]
+      ],
+      "available": {
+        "date_after": "2011-12-31"
+      },
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "foreign_influence_resistance",
+            "value": 0.08,
+            "days": 2920
+          }
+        },
+        {
+          "add_stability": 0.02
+        },
+        {
+          "add_opinion": {
+            "target": "USA",
+            "value": -5,
+            "days": 1825
+          }
+        }
+      ],
+      "ai_weight": 4
+    },
+    {
+      "id": "irq_kurdistan_relations",
+      "name": "Relations with Kurdistan",
+      "description": "Settle budgets, oil and disputed territories with the Kurdistan Region.",
+      "x": 22,
+      "y": 4,
+      "days": 70,
+      "prerequisites": [
+        [
+          "irq_national_reconciliation",
+          "irq_full_sovereignty"
+        ]
+      ],
+      "effects": [
+        {
+          "add_interest_group_approval": {
+            "group": "minorities",
+            "value": 5
+          }
+        },
+        {
+          "add_stability": 0.02
+        }
+      ]
+    },
+    {
+      "id": "irq_referendum_response",
+      "name": "After the Kurdish referendum",
+      "description": "Restore federal control of the disputed territories after the independence referendum of 25 September 2017.",
+      "x": 24,
+      "y": 4,
+      "days": 70,
+      "prerequisites": [
+        [
+          "irq_full_sovereignty"
+        ]
+      ],
+      "available": {
+        "all": [
+          {
+            "follows_history": true
+          },
+          {
+            "date_after": "2017-09-25"
+          }
+        ]
+      },
+      "effects": [
+        {
+          "add_stability": 0.02
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "military",
+            "value": 3
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "minorities",
+            "value": -5
+          }
+        }
+      ],
+      "ai_weight": 3
+    },
+    {
+      "id": "irq_tishreen",
+      "name": "Answer the protests",
+      "description": "Respond to the protests that began on 1 October 2019 over jobs, services and corruption.",
+      "x": 20,
+      "y": 5,
+      "days": 70,
+      "prerequisites": [
+        [
+          "irq_kurdistan_relations",
+          "irq_national_reconciliation"
+        ]
+      ],
+      "available": {
+        "date_after": "2019-10-01"
+      },
+      "effects": [
+        {
+          "add_spirit": "anti_corruption_campaign"
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "youth_students",
+            "value": 6
+          }
+        },
+        {
+          "add_stability": 0.02
+        }
+      ],
+      "ai_weight": 3
+    },
+    {
+      "id": "irq_early_elections",
+      "name": "Early elections",
+      "description": "A new electoral law and early elections.",
+      "x": 22,
+      "y": 5,
+      "days": 70,
+      "prerequisites": [
+        [
+          "irq_tishreen"
+        ]
+      ],
+      "available": {
+        "date_after": "2020-06-01"
+      },
+      "effects": [
+        {
+          "add_stability": 0.02
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "youth_students",
+            "value": 3
+          }
+        },
+        {
+          "hold_election": {
+            "kind": "legislative"
+          }
+        }
+      ],
+      "ai_weight": 2
+    },
+    {
+      "id": "irq_integrate_pmf",
+      "name": "Integrate the PMF",
+      "description": "Bring the Popular Mobilization Forces fully under state command.",
+      "x": 24,
+      "y": 5,
+      "days": 70,
+      "prerequisites": [
+        [
+          "irq_referendum_response"
+        ]
+      ],
+      "available": {
+        "has_spirit": "irq_pmf"
+      },
+      "effects": [
+        {
+          "remove_spirit": "irq_pmf"
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "internal_security",
+            "value": 0.03,
+            "days": 2920
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "military",
+            "value": 4
+          }
+        }
+      ],
+      "ai_weight": 2
+    },
+    {
+      "id": "irq_fall_of_mosul",
+      "name": "After the fall of Mosul",
+      "description": "Rebuild the army after the Islamic State took Mosul in June 2014.",
+      "x": 28,
+      "y": 0,
+      "days": 70,
+      "available": {
+        "date_after": "2014-06-10"
+      },
+      "effects": [
+        {
+          "add_war_support": 0.08
+        },
+        {
+          "add_stability": -0.02
+        },
+        {
+          "add_political_power": 30
+        }
+      ],
+      "ai_weight": 6
+    },
+    {
+      "id": "irq_popular_mobilization",
+      "name": "Popular Mobilization Forces",
+      "description": "Volunteer factions join the fight against the Islamic State.",
+      "x": 26,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "irq_fall_of_mosul"
+        ]
+      ],
+      "effects": [
+        {
+          "add_spirit": "irq_pmf"
+        },
+        {
+          "add_divisions": {
+            "template": "infantry_division",
+            "count": 3
+          }
+        }
+      ],
+      "ai_weight": 5
+    },
+    {
+      "id": "irq_counter_terrorism_service",
+      "name": "Counter-Terrorism Service",
+      "description": "Expand the elite counter-terrorism units.",
+      "x": 28,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "irq_fall_of_mosul"
+        ]
+      ],
+      "effects": [
+        {
+          "add_divisions": {
+            "template": "motorised_division",
+            "count": 2
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "army_attack",
+            "value": 0.02,
+            "days": 1460
+          }
+        }
+      ],
+      "ai_weight": 5
+    },
+    {
+      "id": "irq_coalition_support",
+      "name": "Coalition support",
+      "description": "Air support, training and advisers from the international coalition.",
+      "x": 30,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "irq_fall_of_mosul"
+        ]
+      ],
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "air_effectiveness",
+            "value": 0.05,
+            "days": 1460
+          }
+        },
+        {
+          "add_equipment": {
+            "family": "infantry_equipment",
+            "amount": 800
+          }
+        },
+        {
+          "add_opinion": {
+            "target": "USA",
+            "value": 10,
+            "days": 1825
+          }
+        }
+      ],
+      "ai_weight": 5
+    },
+    {
+      "id": "irq_retake_anbar",
+      "name": "Retake Anbar",
+      "description": "Retake Ramadi and Fallujah.",
+      "x": 27,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "irq_popular_mobilization",
+          "irq_counter_terrorism_service"
+        ]
+      ],
+      "available": {
+        "at_war_with": "ISG"
+      },
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "army_attack",
+            "value": 0.02,
+            "days": 1460
+          }
+        },
+        {
+          "add_war_support": 0.03
+        }
+      ]
+    },
+    {
+      "id": "irq_liberate_mosul",
+      "name": "Liberate Mosul",
+      "description": "The offensive to retake Mosul that began on 16 October 2016. Unlocks the rebuilding of liberated cities.",
+      "x": 29,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "irq_counter_terrorism_service",
+          "irq_coalition_support"
+        ]
+      ],
+      "available": {
+        "date_after": "2016-10-16"
+      },
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "army_attack",
+            "value": 0.03,
+            "days": 730
+          }
+        },
+        {
+          "add_war_support": 0.03
+        },
+        {
+          "add_divisions": {
+            "template": "infantry_division",
+            "count": 1
+          }
+        }
+      ],
+      "ai_weight": 5
+    },
+    {
+      "id": "irq_victory_over_isis",
+      "name": "Victory over the Islamic State",
+      "description": "Declare the end of the war after the last towns are retaken.",
+      "x": 28,
+      "y": 3,
+      "days": 70,
+      "prerequisites": [
+        [
+          "irq_retake_anbar"
+        ],
+        [
+          "irq_liberate_mosul"
+        ]
+      ],
+      "available": {
+        "not": {
+          "exists": "ISG"
+        }
+      },
+      "effects": [
+        {
+          "add_stability": 0.05
+        },
+        {
+          "add_war_support": -0.05
+        },
+        {
+          "add_political_power": 50
+        }
+      ],
+      "ai_weight": 5
+    },
+    {
+      "id": "irq_rebuild_the_north",
+      "name": "Rebuild the north",
+      "description": "Rebuild Mosul and the towns of Nineveh and Anbar.",
+      "x": 28,
+      "y": 4,
+      "days": 70,
+      "prerequisites": [
+        [
+          "irq_victory_over_isis"
+        ]
+      ],
+      "available": {
+        "treasury_above": 2
+      },
+      "effects": [
+        {
+          "add_spirit": "reconstruction_effort"
+        },
+        {
+          "add_buildings": {
+            "building": "infrastructure",
+            "count": 3,
+            "regions": [
+              {
+                "from": "IRQ",
+                "adm1": [
+                  "IRQ-3051"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "add_treasury": -2
+        }
+      ]
+    },
+    {
+      "id": "irq_border_with_syria",
+      "name": "Secure the Syrian border",
+      "description": "Fortify the western border.",
+      "x": 30,
+      "y": 3,
+      "days": 70,
+      "prerequisites": [
+        [
+          "irq_liberate_mosul"
+        ]
+      ],
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "army_defence",
+            "value": 0.03,
+            "days": 2920
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "internal_security",
+            "value": 0.03,
+            "days": 2920
+          }
+        }
+      ]
+    },
+    {
+      "id": "irq_oil_ministry",
+      "name": "The oil ministry",
+      "description": "Plan the future of the oil industry.",
+      "x": 35,
+      "y": 0,
+      "days": 70,
+      "effects": [
+        {
+          "add_political_power": 20
+        }
+      ],
+      "ai_weight": 4
+    },
+    {
+      "id": "irq_southern_fields",
+      "name": "The southern fields",
+      "description": "Repair wells and pipelines around Basra.",
+      "x": 33,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "irq_oil_ministry"
+        ]
+      ],
+      "effects": [
+        {
+          "add_buildings": {
+            "building": "refinery",
+            "count": 1,
+            "regions": [
+              {
+                "from": "IRQ",
+                "adm1": [
+                  "IRQ-3222"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "fossil_output",
+            "value": 0.05,
+            "days": 2920
+          }
+        }
+      ]
+    },
+    {
+      "id": "irq_kirkuk_fields",
+      "name": "The Kirkuk fields",
+      "description": "Restore output at Kirkuk.",
+      "x": 35,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "irq_oil_ministry"
+        ]
+      ],
+      "effects": [
+        {
+          "add_buildings": {
+            "building": "refinery",
+            "count": 1,
+            "regions": [
+              {
+                "from": "IRQ",
+                "adm1": [
+                  "IRQ-3049"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "fossil_output",
+            "value": 0.03,
+            "days": 2920
+          }
+        }
+      ]
+    },
+    {
+      "id": "irq_basra_port",
+      "name": "The port of Basra",
+      "description": "Rebuild the oil terminals and the port of Umm Qasr.",
+      "x": 37,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "irq_oil_ministry"
+        ]
+      ],
+      "effects": [
+        {
+          "add_buildings": {
+            "building": "port",
+            "count": 1,
+            "regions": [
+              {
+                "from": "IRQ",
+                "adm1": [
+                  "IRQ-3222"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "trade_efficiency",
+            "value": 0.03,
+            "days": 2920
+          }
+        }
+      ]
+    },
+    {
+      "id": "irq_oil_licensing",
+      "name": "Oil licensing rounds",
+      "description": "Award service contracts for the giant fields to foreign companies. Unlocks oil contracts.",
+      "x": 33,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "irq_southern_fields"
+        ]
+      ],
+      "available": {
+        "all": [
+          {
+            "date_after": "2009-01-01"
+          },
+          {
+            "not": {
+              "has_spirit": "irq_un_sanctions"
+            }
+          }
+        ]
+      },
+      "effects": [
+        {
+          "add_spirit": "irq_oil_boom"
+        },
+        {
+          "add_treasury": 3
+        }
+      ],
+      "ai_weight": 4
+    },
+    {
+      "id": "irq_gas_capture",
+      "name": "Capture the flared gas",
+      "description": "Capture associated gas for power instead of flaring it.",
+      "x": 35,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "irq_kirkuk_fields",
+          "irq_southern_fields"
+        ]
+      ],
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "energy_cost",
+            "value": -0.03,
+            "days": 3650
+          }
+        },
+        {
+          "add_buildings": {
+            "building": "refinery",
+            "count": 1,
+            "regions": [
+              {
+                "from": "IRQ",
+                "adm1": [
+                  "IRQ-3222"
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "irq_electricity_plan",
+      "name": "An electricity plan",
+      "description": "New power plants for the summer peak. Unlocks plant building.",
+      "x": 37,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "irq_basra_port"
+        ]
+      ],
+      "available": {
+        "not": {
+          "has_spirit": "irq_un_sanctions"
+        }
+      },
+      "effects": [
+        {
+          "add_spirit": "irq_power_shortage"
+        },
+        {
+          "add_buildings": {
+            "building": "renewable_plant",
+            "count": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "irq_reliable_power",
+      "name": "Reliable power",
+      "description": "Enough power for the summer at last.",
+      "x": 37,
+      "y": 3,
+      "days": 140,
+      "prerequisites": [
+        [
+          "irq_electricity_plan"
+        ],
+        [
+          "irq_gas_capture"
+        ]
+      ],
+      "effects": [
+        {
+          "swap_spirit": {
+            "from": "irq_power_shortage",
+            "to": "irq_reliable_power"
+          }
+        }
+      ],
+      "ai_weight": 3
+    },
+    {
+      "id": "irq_rebuild_industry",
+      "name": "Rebuild industry",
+      "description": "Restart the state factories and attract private investors.",
+      "x": 34,
+      "y": 3,
+      "days": 70,
+      "prerequisites": [
+        [
+          "irq_gas_capture",
+          "irq_oil_licensing"
+        ]
+      ],
+      "available": {
+        "all": [
+          {
+            "not": {
+              "has_spirit": "irq_un_sanctions"
+            }
+          },
+          {
+            "treasury_above": 1
+          }
+        ]
+      },
+      "effects": [
+        {
+          "swap_spirit": {
+            "from": "irq_war_damage",
+            "to": "reconstruction_effort"
+          }
+        },
+        {
+          "add_buildings": {
+            "building": "civilian_factory",
+            "count": 2
+          }
+        },
+        {
+          "add_treasury": -1
+        }
+      ],
+      "ai_weight": 3
+    },
+    {
+      "id": "irq_agriculture",
+      "name": "Farms of the two rivers",
+      "description": "Irrigation and credit for farmers along the Tigris and Euphrates.",
+      "x": 32,
+      "y": 3,
+      "days": 70,
+      "prerequisites": [
+        [
+          "irq_oil_licensing"
+        ]
+      ],
+      "effects": [
+        {
+          "add_interest_group_approval": {
+            "group": "rural",
+            "value": 5
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "gdp_growth",
+            "value": 0.002,
+            "days": 2920
+          }
+        }
+      ]
+    },
+    {
+      "id": "irq_development_road",
+      "name": "The development road",
+      "description": "A road and rail corridor from Basra to Turkey.",
+      "x": 36,
+      "y": 4,
+      "days": 70,
+      "prerequisites": [
+        [
+          "irq_reliable_power",
+          "irq_rebuild_industry"
+        ]
+      ],
+      "available": {
+        "date_after": "2023-01-01"
+      },
+      "effects": [
+        {
+          "add_buildings": {
+            "building": "infrastructure",
+            "count": 3
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "trade_efficiency",
+            "value": 0.03,
+            "days": 3650
+          }
+        },
+        {
+          "add_opinion": {
+            "target": "TUR",
+            "value": 5,
+            "days": 1825
+          }
+        }
+      ]
+    },
+    {
+      "id": "irq_sovereign_fund",
+      "name": "A development fund",
+      "description": "Save oil revenue for development.",
+      "x": 33,
+      "y": 4,
+      "days": 70,
+      "prerequisites": [
+        [
+          "irq_agriculture",
+          "irq_rebuild_industry"
+        ]
+      ],
+      "available": {
+        "treasury_above": 2
+      },
+      "effects": [
+        {
+          "add_spirit": "sovereign_wealth_fund"
+        },
+        {
+          "add_treasury": -2
+        }
+      ]
+    },
+    {
+      "id": "irq_private_sector",
+      "name": "A private sector",
+      "description": "Banking reform and loans for small firms.",
+      "x": 34,
+      "y": 5,
+      "days": 70,
+      "prerequisites": [
+        [
+          "irq_sovereign_fund",
+          "irq_development_road"
+        ]
+      ],
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "private_sector_output",
+            "value": 0.05,
+            "days": 2920
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "interest_rate",
+            "value": -0.003,
+            "days": 2920
+          }
+        }
+      ]
+    },
+    {
+      "id": "irq_army_rebuilding",
+      "name": "Rebuild the army",
+      "description": "Build a new army and police.",
+      "x": 42,
+      "y": 0,
+      "days": 70,
+      "available": {
+        "date_after": "2003-06-01"
+      },
+      "effects": [
+        {
+          "add_political_power": 10
+        }
+      ],
+      "ai_weight": 4
+    },
+    {
+      "id": "irq_army_divisions",
+      "name": "New army divisions",
+      "description": "Recruit and train new divisions.",
+      "x": 40,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "irq_army_rebuilding"
+        ]
+      ],
+      "effects": [
+        {
+          "add_divisions": {
+            "template": "infantry_division",
+            "count": 2
+          }
+        },
+        {
+          "add_equipment": {
+            "family": "infantry_equipment",
+            "amount": 500
+          }
+        }
+      ]
+    },
+    {
+      "id": "irq_federal_police",
+      "name": "Federal police",
+      "description": "A national police for the cities.",
+      "x": 42,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "irq_army_rebuilding"
+        ]
+      ],
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "internal_security",
+            "value": 0.05,
+            "days": 2920
+          }
+        }
+      ]
+    },
+    {
+      "id": "irq_air_force",
+      "name": "Rebuild the air force",
+      "description": "Buy fighters and helicopters.",
+      "x": 44,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "irq_army_rebuilding"
+        ]
+      ],
+      "effects": [
+        {
+          "add_buildings": {
+            "building": "air_base",
+            "count": 1
+          }
+        },
+        {
+          "add_research_bonus": {
+            "category": "air_drones",
+            "value": 0.2,
+            "uses": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "irq_armour",
+      "name": "Armoured divisions",
+      "description": "Tanks and armoured vehicles.",
+      "x": 40,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "irq_army_divisions"
+        ]
+      ],
+      "effects": [
+        {
+          "add_divisions": {
+            "template": "mechanised_division",
+            "count": 1
+          }
+        },
+        {
+          "add_research_bonus": {
+            "category": "armour",
+            "value": 0.2,
+            "uses": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "irq_intelligence",
+      "name": "Intelligence services",
+      "description": "A new intelligence service.",
+      "x": 42,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "irq_federal_police"
+        ]
+      ],
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "intelligence_power",
+            "value": 0.05,
+            "days": 2920
+          }
+        }
+      ]
+    },
+    {
+      "id": "irq_arms_purchases",
+      "name": "Arms purchases",
+      "description": "Buy weapons from the United States, Russia and others.",
+      "x": 44,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "irq_air_force"
+        ]
+      ],
+      "available": {
+        "treasury_above": 1
+      },
+      "effects": [
+        {
+          "add_equipment": {
+            "family": "infantry_equipment",
+            "amount": 800
+          }
+        },
+        {
+          "add_treasury": -1
+        }
+      ]
+    },
+    {
+      "id": "irq_officer_academies",
+      "name": "Officer academies",
+      "description": "Train a new officer corps.",
+      "x": 41,
+      "y": 3,
+      "days": 70,
+      "prerequisites": [
+        [
+          "irq_armour",
+          "irq_intelligence"
+        ]
+      ],
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "army_org",
+            "value": 0.03,
+            "days": 2920
+          }
+        },
+        {
+          "add_research_bonus": {
+            "category": "doctrine",
+            "value": 0.15,
+            "uses": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "irq_border_guard",
+      "name": "Border guard",
+      "description": "Guard the borders with Syria and Iran.",
+      "x": 43,
+      "y": 3,
+      "days": 70,
+      "prerequisites": [
+        [
+          "irq_arms_purchases",
+          "irq_intelligence"
+        ]
+      ],
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "army_defence",
+            "value": 0.02,
+            "days": 2920
+          }
+        }
+      ]
+    },
+    {
+      "id": "irq_foreign_policy",
+      "name": "Foreign policy",
+      "description": "Iraq's place among its neighbours.",
+      "x": 48,
+      "y": 0,
+      "days": 70,
+      "effects": [
+        {
+          "add_political_power": 20
+        }
+      ],
+      "ai_weight": 4
+    },
+    {
+      "id": "irq_iran_relations",
+      "name": "Relations with Iran",
+      "description": "Trade, gas and pilgrims.",
+      "x": 46,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "irq_foreign_policy"
+        ]
+      ],
+      "effects": [
+        {
+          "add_opinion": {
+            "target": "IRN",
+            "value": 15,
+            "days": 1825
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "energy_cost",
+            "value": -0.02,
+            "days": 2920
+          }
+        }
+      ]
+    },
+    {
+      "id": "irq_us_relations",
+      "name": "Relations with the United States",
+      "description": "A strategic framework with the United States.",
+      "x": 48,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "irq_foreign_policy"
+        ]
+      ],
+      "available": {
+        "date_after": "2003-06-01"
+      },
+      "effects": [
+        {
+          "add_opinion": {
+            "target": "USA",
+            "value": 10,
+            "days": 1825
+          }
+        },
+        {
+          "add_equipment": {
+            "family": "infantry_equipment",
+            "amount": 300
+          }
+        }
+      ]
+    },
+    {
+      "id": "irq_arab_return",
+      "name": "Return to the Arab fold",
+      "description": "Restore ties with Saudi Arabia and the Gulf.",
+      "x": 50,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "irq_foreign_policy"
+        ]
+      ],
+      "available": {
+        "date_after": "2004-01-01"
+      },
+      "effects": [
+        {
+          "add_opinion": {
+            "target": "SAU",
+            "value": 15,
+            "days": 1825
+          }
+        },
+        {
+          "add_opinion": {
+            "target": "KWT",
+            "value": 10,
+            "days": 1825
+          }
+        },
+        {
+          "add_treasury": 0.5
+        }
+      ]
+    },
+    {
+      "id": "irq_turkey_relations",
+      "name": "Relations with Turkey",
+      "description": "Water, trade and the pipeline to Ceyhan.",
+      "x": 47,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "irq_iran_relations",
+          "irq_us_relations"
+        ]
+      ],
+      "effects": [
+        {
+          "add_opinion": {
+            "target": "TUR",
+            "value": 10,
+            "days": 1825
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "trade_efficiency",
+            "value": 0.02,
+            "days": 2920
+          }
+        }
+      ]
+    },
+    {
+      "id": "irq_regional_mediator",
+      "name": "A regional mediator",
+      "description": "Host talks between rival neighbours.",
+      "x": 49,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "irq_us_relations",
+          "irq_arab_return"
+        ]
+      ],
+      "available": {
+        "date_after": "2018-01-01"
+      },
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "diplomatic_reputation",
+            "value": 0.05,
+            "days": 2920
+          }
+        }
+      ]
+    },
+    {
+      "id": "irq_china_deals",
+      "name": "Deals with China",
+      "description": "Oil-for-construction deals with Chinese firms.",
+      "x": 48,
+      "y": 3,
+      "days": 70,
+      "prerequisites": [
+        [
+          "irq_turkey_relations",
+          "irq_regional_mediator"
+        ]
+      ],
+      "available": {
+        "date_after": "2015-01-01"
+      },
+      "effects": [
+        {
+          "add_opinion": {
+            "target": "CHN",
+            "value": 10,
+            "days": 1825
+          }
+        },
+        {
+          "add_buildings": {
+            "building": "infrastructure",
+            "count": 2
+          }
+        }
+      ]
+    },
+    {
+      "id": "irq_marshes",
+      "name": "Restore the marshes",
+      "description": "Restore the southern marshes.",
+      "x": 32,
+      "y": 4,
+      "days": 70,
+      "prerequisites": [
+        [
+          "irq_agriculture"
+        ]
+      ],
+      "effects": [
+        {
+          "add_interest_group_approval": {
+            "group": "rural",
+            "value": 4
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "health_outcomes",
+            "value": 0.01,
+            "days": 2920
+          }
+        }
+      ]
+    },
+    {
+      "id": "irq_dates_and_wheat",
+      "name": "Dates and wheat",
+      "description": "Revive date palms and wheat farms.",
+      "x": 32,
+      "y": 5,
+      "days": 70,
+      "prerequisites": [
+        [
+          "irq_marshes"
+        ]
+      ],
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "gdp_growth",
+            "value": 0.001,
+            "days": 2920
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "rural",
+            "value": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "irq_faw_port",
+      "name": "The Grand Faw Port",
+      "description": "A new deep-water port on the Gulf.",
+      "x": 37,
+      "y": 4,
+      "days": 70,
+      "prerequisites": [
+        [
+          "irq_reliable_power",
+          "irq_basra_port"
+        ]
+      ],
+      "available": {
+        "date_after": "2010-01-01"
+      },
+      "effects": [
+        {
+          "add_buildings": {
+            "building": "port",
+            "count": 1,
+            "regions": [
+              {
+                "from": "IRQ",
+                "adm1": [
+                  "IRQ-3222"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "trade_efficiency",
+            "value": 0.03,
+            "days": 3650
+          }
+        }
+      ]
+    },
+    {
+      "id": "irq_refinery_karbala",
+      "name": "New refineries",
+      "description": "New refineries to end fuel imports.",
+      "x": 36,
+      "y": 5,
+      "days": 70,
+      "prerequisites": [
+        [
+          "irq_development_road",
+          "irq_faw_port"
+        ]
+      ],
+      "effects": [
+        {
+          "add_buildings": {
+            "building": "refinery",
+            "count": 2
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "energy_cost",
+            "value": -0.02,
+            "days": 3650
+          }
+        }
+      ]
+    },
+    {
+      "id": "irq_housing",
+      "name": "Housing programme",
+      "description": "Housing for the growing cities.",
+      "x": 35,
+      "y": 5,
+      "days": 70,
+      "prerequisites": [
+        [
+          "irq_private_sector",
+          "irq_development_road"
+        ]
+      ],
+      "available": {
+        "treasury_above": 1
+      },
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "construction_speed",
+            "value": 0.05,
+            "days": 2920
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "urban_middle_class",
+            "value": 3
+          }
+        },
+        {
+          "add_treasury": -1
+        }
+      ]
+    },
+    {
+      "id": "irq_anti_corruption_commission",
+      "name": "Integrity commission",
+      "description": "Strengthen the commission against corruption.",
+      "x": 22,
+      "y": 6,
+      "days": 70,
+      "prerequisites": [
+        [
+          "irq_early_elections",
+          "irq_tishreen"
+        ]
+      ],
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "corruption",
+            "value": -0.03,
+            "days": 3650
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "youth_students",
+            "value": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "irq_special_forces",
+      "name": "Special forces",
+      "description": "Expand the special forces.",
+      "x": 44,
+      "y": 3,
+      "days": 70,
+      "prerequisites": [
+        [
+          "irq_arms_purchases"
+        ]
+      ],
+      "effects": [
+        {
+          "add_divisions": {
+            "template": "motorised_division",
+            "count": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "irq_river_patrol",
+      "name": "River and coast guard",
+      "description": "Patrol boats for the rivers and the Gulf.",
+      "x": 44,
+      "y": 4,
+      "days": 70,
+      "prerequisites": [
+        [
+          "irq_special_forces"
+        ]
+      ],
+      "effects": [
+        {
+          "add_buildings": {
+            "building": "port",
+            "count": 1
+          }
+        },
+        {
+          "add_research_bonus": {
+            "category": "naval",
+            "value": 0.1,
+            "uses": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "irq_army_aviation",
+      "name": "Army aviation",
+      "description": "Helicopters for the army.",
+      "x": 42,
+      "y": 4,
+      "days": 70,
+      "prerequisites": [
+        [
+          "irq_officer_academies",
+          "irq_border_guard"
+        ]
+      ],
+      "effects": [
+        {
+          "add_research_bonus": {
+            "category": "air_drones",
+            "value": 0.15,
+            "uses": 1
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "air_effectiveness",
+            "value": 0.02,
+            "days": 2920
+          }
+        }
+      ]
+    },
+    {
+      "id": "irq_jordan_egypt",
+      "name": "Iraq, Jordan and Egypt",
+      "description": "Economic cooperation with Jordan and Egypt.",
+      "x": 50,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "irq_arab_return"
+        ]
+      ],
+      "effects": [
+        {
+          "add_opinion": {
+            "target": "JOR",
+            "value": 10,
+            "days": 1825
+          }
+        },
+        {
+          "add_opinion": {
+            "target": "EGY",
+            "value": 10,
+            "days": 1825
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "trade_efficiency",
+            "value": 0.02,
+            "days": 2920
+          }
+        }
+      ]
+    },
+    {
+      "id": "irq_water_talks",
+      "name": "Water talks",
+      "description": "Talks with Turkey and Iran on the rivers.",
+      "x": 47,
+      "y": 3,
+      "days": 70,
+      "prerequisites": [
+        [
+          "irq_turkey_relations"
+        ]
+      ],
+      "effects": [
+        {
+          "add_opinion": {
+            "target": "TUR",
+            "value": 5,
+            "days": 1825
+          }
+        },
+        {
+          "add_opinion": {
+            "target": "IRN",
+            "value": 5,
+            "days": 1825
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "rural",
+            "value": 3
+          }
+        }
+      ]
+    }
+  ]
+}

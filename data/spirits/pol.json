@@ -1,0 +1,80 @@
+{
+  "note": "Poland's national spirits. The ones with `start` describe the situation on 1 January 2000 and cite sources. Values are gameplay estimates.",
+  "spirits": [
+    {
+      "id": "pol_nato_member",
+      "name": "NATO member",
+      "description": "Poland joined NATO on 12 March 1999.",
+      "kind": "strength",
+      "modifiers": {
+        "army_defence": 0.03,
+        "foreign_influence_resistance": 0.05
+      },
+      "start": [
+        "POL"
+      ],
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Poland–NATO_relations",
+          "title": "Wikipedia: Poland–NATO relations",
+          "accessed": "2026-10-19"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "pol_coal_power",
+      "name": "Coal power",
+      "description": "Coal dominates Poland's energy.",
+      "kind": "policy",
+      "modifiers": {
+        "energy_cost": -0.02,
+        "fossil_output": 0.05,
+        "health_outcomes": -0.02
+      },
+      "start": [
+        "POL"
+      ],
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Energy_in_Poland",
+          "title": "Wikipedia: Energy in Poland",
+          "accessed": "2026-10-19"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "pol_eu_member",
+      "name": "EU member",
+      "description": "Membership of the European Union brings funds and an open market.",
+      "kind": "strength",
+      "modifiers": {
+        "trade_efficiency": 0.05,
+        "foreign_investment": 0.08,
+        "construction_speed": 0.05
+      }
+    },
+    {
+      "id": "pol_homeland_defence",
+      "name": "Homeland defence",
+      "description": "A larger army and defence spending of 3 percent of GDP.",
+      "kind": "policy",
+      "modifiers": {
+        "manpower_factor": 0.04,
+        "army_org": 0.03,
+        "welfare_cost": 0.002
+      }
+    },
+    {
+      "id": "pol_energy_diversified",
+      "name": "Diversified energy",
+      "description": "Gas from Norway and LNG; less coal.",
+      "kind": "strength",
+      "modifiers": {
+        "foreign_influence_resistance": 0.05,
+        "energy_cost": -0.01
+      }
+    }
+  ]
+}

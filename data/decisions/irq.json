@@ -1,0 +1,139 @@
+{
+  "categories": [
+    {
+      "id": "irq_projects",
+      "name": "Iraqi state projects",
+      "description": "Projects that the national focuses open up."
+    }
+  ],
+  "decisions": [
+    {
+      "id": "irq_oil_contract",
+      "name": "Sign an oil service contract",
+      "description": "A service contract with a foreign oil company for a southern field.",
+      "category": "irq_projects",
+      "countries": [
+        "IRQ"
+      ],
+      "visible": {
+        "has_completed_focus": "irq_oil_licensing"
+      },
+      "cost": {
+        "political_power": 30
+      },
+      "effects": [
+        {
+          "add_treasury": 2
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "fossil_output",
+            "value": 0.03,
+            "days": 1460
+          }
+        }
+      ],
+      "cooldown_days": 365,
+      "ai_weight": 2
+    },
+    {
+      "id": "irq_power_plant",
+      "name": "Build a power plant",
+      "description": "A new plant for the summer peak.",
+      "category": "irq_projects",
+      "countries": [
+        "IRQ"
+      ],
+      "visible": {
+        "has_completed_focus": "irq_electricity_plan"
+      },
+      "available": {
+        "treasury_above": 1
+      },
+      "cost": {
+        "political_power": 30
+      },
+      "effects": [
+        {
+          "add_treasury": -1
+        },
+        {
+          "add_buildings": {
+            "building": "renewable_plant",
+            "count": 1
+          }
+        },
+        {
+          "add_stability": 0.01
+        }
+      ],
+      "cooldown_days": 365,
+      "ai_weight": 2
+    },
+    {
+      "id": "irq_tribal_outreach",
+      "name": "Outreach to the tribes",
+      "description": "Money and jobs for tribal leaders in the west.",
+      "category": "irq_projects",
+      "countries": [
+        "IRQ"
+      ],
+      "visible": {
+        "has_completed_focus": "irq_awakening"
+      },
+      "cost": {
+        "political_power": 30
+      },
+      "effects": [
+        {
+          "add_unrest": -0.03
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "minorities",
+            "value": 3
+          }
+        },
+        {
+          "add_treasury": -0.3
+        }
+      ],
+      "cooldown_days": 365,
+      "ai_weight": 2
+    },
+    {
+      "id": "irq_rebuild_a_city",
+      "name": "Rebuild a liberated city",
+      "description": "Housing, water and power for a city retaken from the Islamic State.",
+      "category": "irq_projects",
+      "countries": [
+        "IRQ"
+      ],
+      "visible": {
+        "has_completed_focus": "irq_liberate_mosul"
+      },
+      "available": {
+        "treasury_above": 1
+      },
+      "cost": {
+        "political_power": 30
+      },
+      "effects": [
+        {
+          "add_treasury": -1
+        },
+        {
+          "add_buildings": {
+            "building": "infrastructure",
+            "count": 2
+          }
+        },
+        {
+          "add_stability": 0.01
+        }
+      ],
+      "cooldown_days": 180,
+      "ai_weight": 2
+    }
+  ]
+}

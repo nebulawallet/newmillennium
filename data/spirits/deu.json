@@ -1,0 +1,87 @@
+{
+  "note": "Germany's national spirits. The ones with `start` describe the situation on 1 January 2000 and cite sources. Values are gameplay estimates.",
+  "spirits": [
+    {
+      "id": "deu_conscription",
+      "name": "Conscription",
+      "description": "Military service has been compulsory since 1956.",
+      "kind": "policy",
+      "modifiers": {
+        "manpower_factor": 0.03,
+        "welfare_cost": 0.001
+      },
+      "start": [
+        "DEU"
+      ],
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Conscription_in_Germany",
+          "title": "Wikipedia: Conscription in Germany",
+          "accessed": "2026-10-19"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "deu_nuclear_power",
+      "name": "Nuclear power",
+      "description": "Nuclear power plants provide a large share of the electricity.",
+      "kind": "strength",
+      "modifiers": {
+        "energy_cost": -0.03,
+        "nuclear_output": 0.1
+      },
+      "start": [
+        "DEU"
+      ],
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Nuclear_power_in_Germany",
+          "title": "Wikipedia: Nuclear power in Germany",
+          "accessed": "2026-10-19"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "deu_labour_market_reform",
+      "name": "Labour market reform",
+      "description": "Welfare and unemployment benefits tied to work, from the Agenda 2010.",
+      "kind": "policy",
+      "modifiers": {
+        "private_sector_output": 0.04,
+        "welfare_cost": -0.005
+      }
+    },
+    {
+      "id": "deu_debt_brake",
+      "name": "Debt brake",
+      "description": "The constitution limits the federal structural deficit to 0.35 percent of GDP.",
+      "kind": "policy",
+      "modifiers": {
+        "interest_rate": -0.005,
+        "construction_speed": -0.03
+      }
+    },
+    {
+      "id": "deu_energiewende",
+      "name": "Energy transition",
+      "description": "Renewables replace nuclear power and coal.",
+      "kind": "policy",
+      "modifiers": {
+        "renewable_output": 0.15,
+        "energy_cost": 0.03
+      }
+    },
+    {
+      "id": "deu_bundeswehr_fund",
+      "name": "Special fund for the armed forces",
+      "description": "A €100 billion fund for the Bundeswehr outside the normal budget.",
+      "kind": "policy",
+      "modifiers": {
+        "production_efficiency": 0.03,
+        "army_org": 0.03
+      }
+    }
+  ]
+}

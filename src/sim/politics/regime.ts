@@ -10,8 +10,8 @@ import { leaveBloc } from "../diplomacy/diplomacy.ts";
 import { initialSchedule } from "./schedule.ts";
 import { clamp, isAvailable } from "./common.ts";
 
-/** Party statuses from which a party can take power (a banned party can, a dissolved one cannot). */
-const LIVE = new Set(["active", "extra_parliamentary", "banned"]);
+/** Party statuses from which a party can take power (a banned or exiled party can, a dissolved one cannot). */
+const LIVE = new Set(["active", "extra_parliamentary", "banned", "exiled"]);
 
 /** A country's live parties of an ideology group, most popular first. */
 export function partiesOfGroup(db: ContentDB, state: GameState, tag: string, group: string): string[] {

@@ -1,0 +1,110 @@
+{
+  "note": "Syria's national spirits. The ones with `start` describe the situation on 1 January 2000 and cite sources. Values are gameplay estimates.",
+  "spirits": [
+    {
+      "id": "syr_state_of_emergency",
+      "name": "State of emergency",
+      "description": "A state of emergency has been in force since 1963.",
+      "kind": "policy",
+      "modifiers": {
+        "internal_security": 0.1,
+        "civil_liberties": -0.1,
+        "foreign_investment": -0.05
+      },
+      "start": [
+        "SYR"
+      ],
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Damascus_Spring",
+          "title": "Wikipedia: Damascus Spring",
+          "accessed": "2026-10-19"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "syr_troops_in_lebanon",
+      "name": "Troops in Lebanon",
+      "description": "Syrian forces have been in Lebanon since 1976.",
+      "kind": "policy",
+      "modifiers": {
+        "foreign_influence_power": 0.05,
+        "manpower_factor": -0.02
+      },
+      "start": [
+        "SYR"
+      ],
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Syrian_occupation_of_Lebanon",
+          "title": "Wikipedia: Syrian occupation of Lebanon",
+          "accessed": "2026-10-19"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "syr_golan_occupied",
+      "name": "The occupied Golan",
+      "description": "Most of the Golan Heights has been occupied by Israel since 1967.",
+      "kind": "problem",
+      "modifiers": {
+        "war_support_factor": 0.03,
+        "stability_factor": -0.01
+      },
+      "start": [
+        "SYR"
+      ],
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Golan_Heights",
+          "title": "Wikipedia: Golan Heights",
+          "accessed": "2026-10-19"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "syr_civil_war_damage",
+      "name": "War-torn country",
+      "description": "Years of civil war have destroyed cities, industry and power.",
+      "kind": "problem",
+      "modifiers": {
+        "production_efficiency": -0.1,
+        "construction_speed": -0.05,
+        "stability_factor": -0.03
+      }
+    },
+    {
+      "id": "syr_russian_support",
+      "name": "Russian support",
+      "description": "Russian air power and advisers back the government.",
+      "kind": "policy",
+      "modifiers": {
+        "air_effectiveness": 0.05,
+        "foreign_influence_resistance": -0.05
+      }
+    },
+    {
+      "id": "syr_sanctions",
+      "name": "Western sanctions",
+      "description": "Sanctions on trade, banking and oil.",
+      "kind": "problem",
+      "modifiers": {
+        "trade_efficiency": -0.1,
+        "foreign_investment": -0.1
+      }
+    },
+    {
+      "id": "syr_transition",
+      "name": "Transitional period",
+      "description": "A transitional government under a constitutional declaration.",
+      "kind": "policy",
+      "modifiers": {
+        "stability_factor": -0.02,
+        "political_power_gain": 0.05
+      }
+    }
+  ]
+}

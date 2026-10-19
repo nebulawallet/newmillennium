@@ -1,0 +1,77 @@
+{
+  "note": "Italy's national spirits. The ones with `start` describe the situation on 1 January 2000 and cite sources. Values are gameplay estimates.",
+  "spirits": [
+    {
+      "id": "ita_public_debt",
+      "name": "High public debt",
+      "description": "Heavy spending from the 1980s produced a severe rise in public debt.",
+      "kind": "problem",
+      "modifiers": {
+        "interest_rate": 0.01,
+        "welfare_cost": 0.003
+      },
+      "start": [
+        "ITA"
+      ],
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Economy_of_Italy",
+          "title": "Wikipedia: Economy of Italy",
+          "accessed": "2026-10-19"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "ita_north_south_divide",
+      "name": "North-south divide",
+      "description": "Income per person in the south is far below the north.",
+      "kind": "problem",
+      "modifiers": {
+        "production_efficiency": -0.02,
+        "unrest": 0.01
+      },
+      "start": [
+        "ITA"
+      ],
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Economy_of_Italy",
+          "title": "Wikipedia: Economy of Italy",
+          "accessed": "2026-10-19"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "ita_technocratic_austerity",
+      "name": "Technocratic austerity",
+      "description": "A technocratic government cuts spending and raises taxes in the debt crisis.",
+      "kind": "policy",
+      "modifiers": {
+        "interest_rate": -0.005,
+        "stability_factor": -0.03
+      }
+    },
+    {
+      "id": "ita_citizens_income",
+      "name": "Citizens' income",
+      "description": "A conditional minimum income.",
+      "kind": "policy",
+      "modifiers": {
+        "welfare_cost": 0.003,
+        "stability_factor": 0.01
+      }
+    },
+    {
+      "id": "ita_recovery_plan",
+      "name": "Recovery plan",
+      "description": "EU recovery funds for green and digital investment.",
+      "kind": "policy",
+      "modifiers": {
+        "construction_speed": 0.05,
+        "research_speed": 0.03
+      }
+    }
+  ]
+}

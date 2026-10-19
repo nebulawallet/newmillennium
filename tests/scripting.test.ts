@@ -11,7 +11,7 @@ import { Rng, seedRng } from "../src/sim/rng.ts";
 import { NodeFiles } from "../scripts/lib/nodeFiles.ts";
 import { FixtureFiles, validCountry } from "./fixtures.ts";
 
-const { db, issues } = compileContent(new NodeFiles(), { only: new Set(["USA", "RUS", "DEU", "UKR", "ISR", "PSE"]) });
+const { db, issues } = compileContent(new NodeFiles(), { only: new Set(["USA", "RUS", "DEU", "UKR", "ISR", "PSE", "IRQ", "SYR", "AFG", "CHN", "IRN", "TUR"]) });
 const ctxOf = (state: GameState): SimContext => ({ db, state, rng: new Rng(seedRng(1)), log() {}, emit() {} });
 const scope = (tag: string) => ({ tag, root: tag, from: null });
 
@@ -273,9 +273,10 @@ describe("gameplay effects", () => {
     expect(evalTrigger(ctx, scope("DEU"), { has_spirit: "endemic_corruption" })).toBe(true);
     expect(countryModifiers(db, deu).corruption).toBeCloseTo(before + 0.05);
     runEffects(ctx, scope("DEU"), [{ swap_spirit: { from: "endemic_corruption", to: "anti_corruption_campaign" } }], "test");
-    expect(deu.spirits).toEqual(["anti_corruption_campaign"]);
+    expect(deu.spirits).toContain("anti_corruption_campaign");
+    expect(deu.spirits).not.toContain("endemic_corruption");
     runEffects(ctx, scope("DEU"), [{ remove_spirit: "anti_corruption_campaign" }], "test");
-    expect(deu.spirits).toEqual([]);
+    expect(deu.spirits).not.toContain("anti_corruption_campaign");
     expect(describeEffects(db, [{ add_spirit: "war_economy" }])[0]).toContain("War economy (");
   });
 
@@ -367,5 +368,31 @@ describe("Israel and Palestine trees", () => {
     expect(state.countries.PSE!.spirits).toEqual(expect.arrayContaining(["pse_limited_self_rule", "pse_occupation"]));
     expect(decisionsUnlockedBy(db, "isr_iron_dome")).toEqual(["Deploy an Iron Dome battery"]);
     expect(focusOf(db, state.countries.PSE!, "pse_unity_talks")).toBeDefined();
+  });
+});
+
+describe("Iraq, Syria and Afghanistan trees", () => {
+  it("start with sourced spirits; an exiled party can take power", () => {
+    const state = createInitialState(db, { provinces: [] }, { contentHash: "t", player: "IRQ" });
+    expect(state.countries.IRQ!.spirits).toEqual(expect.arrayContaining(["irq_un_sanctions", "irq_oil_reserves"]));
+    expect(state.countries.SYR!.spirits).toContain("syr_state_of_emergency");
+    expect(state.countries.AFG!.spirits).toContain("afg_un_sanctions");
+    // the Iraqi National Congress is in exile in 2000 and can still be installed
+    runEffects(ctxOf(state), scope("IRQ"), [{ install_government: { party: "irq.inc" } }], "test");
+    expect(state.countries.IRQ!.rulingParties).toEqual(["irq.inc"]);
+  });
+});
+
+describe("China, Iran, Turkey and Germany trees", () => {
+  it("start with sourced spirits and their fix chains work", () => {
+    const state = createInitialState(db, { provinces: [] }, { contentHash: "t", player: "CHN" });
+    const ctx = ctxOf(state);
+    expect(state.countries.CHN!.spirits).toEqual(expect.arrayContaining(["chn_one_child_policy", "chn_worlds_factory"]));
+    expect(state.countries.IRN!.spirits).toContain("irn_energy_reserves");
+    expect(state.countries.TUR!.spirits).toContain("tur_fiscal_fragility");
+    expect(state.countries.DEU!.spirits).toContain("deu_conscription");
+    runEffects(ctx, scope("CHN"), focusOf(db, state.countries.CHN!, "chn_two_child_policy")!.effects, "test");
+    expect(state.countries.CHN!.spirits).toContain("chn_two_child_policy");
+    expect(state.countries.CHN!.spirits).not.toContain("chn_one_child_policy");
   });
 });

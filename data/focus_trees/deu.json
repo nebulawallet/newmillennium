@@ -4,403 +4,925 @@
   "countries": [
     "DEU"
   ],
-  "note": "Branches depend on the governing parties and office holders. Policies named after real reforms are cited; effects are gameplay estimates.",
+  "note": "Germany in the style of the Russian model tree: democratic government as the historical path and alternatives led by real parties of the data (left, conservative, liberal, national-populist, left-populist); economy (Agenda 2010, the Hartz reforms, the debt brake), energy (nuclear phase-out, the energy transition, Nord Stream, LNG), the Bundeswehr (end of conscription, the Zeitenwende) and foreign policy. Sourced starting spirits in data/spirits/deu.json. Alternatives are a counterfactual.",
+  "source": [
+    {
+      "url": "https://en.wikipedia.org/wiki/Agenda_2010",
+      "title": "Wikipedia: Agenda 2010",
+      "accessed": "2026-10-19"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Hartz_concept",
+      "title": "Wikipedia: Hartz concept",
+      "accessed": "2026-10-19"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Nuclear_power_in_Germany",
+      "title": "Wikipedia: Nuclear power in Germany",
+      "accessed": "2026-10-19"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Conscription_in_Germany",
+      "title": "Wikipedia: Conscription in Germany",
+      "accessed": "2026-10-19"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Energiewende",
+      "title": "Wikipedia: Energiewende",
+      "accessed": "2026-10-19"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Debt_brake_(Germany)",
+      "title": "Wikipedia: Debt brake (Germany)",
+      "accessed": "2026-10-19"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Nord_Stream",
+      "title": "Wikipedia: Nord Stream",
+      "accessed": "2026-10-19"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/European_migrant_crisis",
+      "title": "Wikipedia: European migrant crisis",
+      "accessed": "2026-10-19"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Zeitenwende_speech",
+      "title": "Wikipedia: Zeitenwende speech",
+      "accessed": "2026-10-19"
+    }
+  ],
+  "confidence": "verified",
   "focuses": [
     {
-      "id": "deu_national_programme",
-      "name": "Germany in the new century",
-      "description": "Set the priorities of the federal government.",
-      "x": 8,
+      "id": "deu_question_of_power",
+      "name": "The direction of the country",
+      "description": "Which camp governs the country.",
+      "x": 6,
       "y": 0,
       "days": 70,
       "effects": [
         {
-          "add_political_power": 50
-        },
-        {
-          "add_stability": 0.02
+          "add_political_power": 30
         }
-      ]
+      ],
+      "ai_weight": 5
     },
     {
-      "id": "deu_defence_review",
-      "name": "Defence review",
-      "description": "Review strategy, forces and budgets for the new decade.",
-      "x": 11,
+      "id": "deu_steady_course",
+      "name": "Democratic government",
+      "description": "Parties alternate in power through elections, as they historically did.",
+      "x": 0,
       "y": 1,
       "days": 70,
-      "effects": [
-        {
-          "add_war_support": 0.02
-        },
-        {
-          "add_interest_group_approval": {
-            "group": "military",
-            "value": 4
-          }
-        }
-      ],
       "prerequisites": [
         [
-          "deu_national_programme"
-        ]
-      ]
-    },
-    {
-      "id": "deu_modern_forces",
-      "name": "Modern forces",
-      "description": "Equip the armed forces with modern communications and precision weapons.",
-      "x": 11,
-      "y": 3,
-      "days": 105,
-      "effects": [
-        {
-          "add_timed_modifier": {
-            "modifier": "army_attack",
-            "value": 0.05,
-            "days": 3650
-          }
-        },
-        {
-          "add_timed_modifier": {
-            "modifier": "air_effectiveness",
-            "value": 0.05,
-            "days": 3650
-          }
-        },
-        {
-          "add_interest_group_approval": {
-            "group": "military",
-            "value": 3
-          }
-        }
-      ],
-      "prerequisites": [
-        [
-          "deu_defence_review"
-        ]
-      ]
-    },
-    {
-      "id": "deu_intelligence_services",
-      "name": "Intelligence services",
-      "description": "Expand the foreign and domestic intelligence services.",
-      "x": 12,
-      "y": 2,
-      "days": 70,
-      "effects": [
-        {
-          "add_timed_modifier": {
-            "modifier": "intelligence_power",
-            "value": 0.1,
-            "days": 3650
-          }
-        },
-        {
-          "add_interest_group_approval": {
-            "group": "security_services",
-            "value": 4
-          }
-        }
-      ],
-      "prerequisites": [
-        [
-          "deu_defence_review"
-        ]
-      ]
-    },
-    {
-      "id": "deu_foreign_policy",
-      "name": "Foreign policy priorities",
-      "description": "Set the course of foreign policy.",
-      "x": 14,
-      "y": 1,
-      "days": 70,
-      "effects": [
-        {
-          "add_timed_modifier": {
-            "modifier": "diplomatic_reputation",
-            "value": 0.05,
-            "days": 3650
-          }
-        },
-        {
-          "add_political_power": 20
-        }
-      ],
-      "prerequisites": [
-        [
-          "deu_national_programme"
-        ]
-      ]
-    },
-    {
-      "id": "deu_partners",
-      "name": "Closer ties with our European neighbours",
-      "description": "Deepen political and economic ties with our European neighbours.",
-      "x": 14,
-      "y": 2,
-      "days": 70,
-      "effects": [
-        {
-          "add_timed_modifier": {
-            "modifier": "bloc_integration",
-            "value": 0.1,
-            "days": 3650
-          }
-        },
-        {
-          "add_timed_modifier": {
-            "modifier": "trade_efficiency",
-            "value": 0.03,
-            "days": 3650
-          }
-        },
-        {
-          "country": {
-            "tag": "FRA",
-            "effects": [
-              {
-                "add_opinion": {
-                  "target": "ROOT",
-                  "value": 15,
-                  "days": 3650
-                }
-              }
-            ]
-          }
-        },
-        {
-          "country": {
-            "tag": "POL",
-            "effects": [
-              {
-                "add_opinion": {
-                  "target": "ROOT",
-                  "value": 15,
-                  "days": 3650
-                }
-              }
-            ]
-          }
-        },
-        {
-          "country": {
-            "tag": "NLD",
-            "effects": [
-              {
-                "add_opinion": {
-                  "target": "ROOT",
-                  "value": 15,
-                  "days": 3650
-                }
-              }
-            ]
-          }
-        }
-      ],
-      "prerequisites": [
-        [
-          "deu_foreign_policy"
-        ]
-      ]
-    },
-    {
-      "id": "deu_international_standing",
-      "name": "International standing",
-      "description": "Raise the country's profile in international institutions and summits.",
-      "x": 15,
-      "y": 3,
-      "days": 70,
-      "effects": [
-        {
-          "add_timed_modifier": {
-            "modifier": "diplomatic_reputation",
-            "value": 0.1,
-            "days": 3650
-          }
-        },
-        {
-          "add_timed_modifier": {
-            "modifier": "international_opinion",
-            "value": 0.05,
-            "days": 3650
-          }
-        }
-      ],
-      "prerequisites": [
-        [
-          "deu_partners",
-          "deu_own_course"
-        ]
-      ]
-    },
-    {
-      "id": "deu_own_course",
-      "name": "An independent course",
-      "description": "Keep a free hand in foreign policy and trade.",
-      "x": 16,
-      "y": 2,
-      "days": 70,
-      "effects": [
-        {
-          "add_timed_modifier": {
-            "modifier": "foreign_influence_resistance",
-            "value": 0.1,
-            "days": 3650
-          }
-        },
-        {
-          "add_war_support": 0.02
-        }
-      ],
-      "prerequisites": [
-        [
-          "deu_foreign_policy"
+          "deu_question_of_power"
         ]
       ],
       "mutually_exclusive": [
-        "deu_partners"
+        "deu_left_turn",
+        "deu_conservative_turn",
+        "deu_liberal_turn",
+        "deu_populist_turn",
+        "deu_socialist_turn"
       ],
-      "ai_weight": 0.5
+      "available": {
+        "follows_history": true
+      },
+      "effects": [
+        {
+          "add_stability": 0.04
+        },
+        {
+          "add_political_power": 40
+        }
+      ],
+      "ai_weight": 20
     },
     {
-      "id": "deu_economic_council",
-      "name": "Economic council",
-      "description": "Bring ministries, employers and unions together on economic priorities.",
-      "x": 5,
+      "id": "deu_left_turn",
+      "name": "A turn to the left",
+      "description": "Parties of the left (the SPD, the Greens and later Die Linke) gain on wages, welfare and public services.",
+      "x": 2,
       "y": 1,
       "days": 70,
-      "effects": [
-        {
-          "add_economic_mood": 0.03
-        },
-        {
-          "add_political_power": 15
-        }
-      ],
       "prerequisites": [
         [
-          "deu_national_programme"
+          "deu_question_of_power"
         ]
-      ]
-    },
-    {
-      "id": "deu_infrastructure",
-      "name": "Infrastructure programme",
-      "description": "Invest in transport, power grids and communications.",
-      "x": 5,
-      "y": 3,
-      "days": 105,
+      ],
+      "mutually_exclusive": [
+        "deu_steady_course",
+        "deu_conservative_turn",
+        "deu_liberal_turn",
+        "deu_populist_turn",
+        "deu_socialist_turn"
+      ],
+      "available": {
+        "all": [
+          {
+            "any": [
+              {
+                "follows_history": false
+              },
+              {
+                "is_player": true
+              }
+            ]
+          },
+          {
+            "has_party_of_group": "social_democratic"
+          },
+          {
+            "not": {
+              "ruling_ideology_group": "social_democratic"
+            }
+          },
+          {
+            "any": [
+              {
+                "gdp_growth_below": 1.5
+              },
+              {
+                "unrest_above": 0.15
+              },
+              {
+                "ig_approval_below": {
+                  "group": "labour_unions",
+                  "value": 45
+                }
+              }
+            ]
+          }
+        ]
+      },
       "effects": [
         {
-          "add_timed_modifier": {
-            "modifier": "construction_speed",
-            "value": 0.1,
-            "days": 3650
-          }
+          "leave_history": true
         },
         {
-          "add_economic_mood": 0.02
-        }
-      ],
-      "prerequisites": [
-        [
-          "deu_economic_council"
-        ]
-      ]
-    },
-    {
-      "id": "deu_research_programme",
-      "name": "Research and innovation",
-      "description": "Fund universities, research institutes and new industries.",
-      "x": 6,
-      "y": 4,
-      "days": 105,
-      "effects": [
-        {
-          "add_timed_modifier": {
-            "modifier": "research_speed",
-            "value": 0.05,
-            "days": 3650
-          }
-        },
-        {
-          "add_timed_modifier": {
-            "modifier": "education_quality",
-            "value": 0.02,
-            "days": 3650
+          "add_ideology_support": {
+            "group": "social_democratic",
+            "value": 0.04
           }
         }
       ],
-      "prerequisites": [
-        [
-          "deu_infrastructure"
-        ]
-      ]
+      "ai_weight": 0.3
     },
     {
-      "id": "deu_agenda_2010",
-      "name": "Agenda 2010",
-      "description": "Reform the welfare state and labour market. Chancellor Gerhard Schröder outlined the Agenda 2010 reforms to the Bundestag on 14 March 2003.",
-      "x": 1,
-      "y": 1,
+      "id": "deu_left_turn_build",
+      "name": "Unions and voters",
+      "description": "Unions and young voters rally to the left.",
+      "x": 2,
+      "y": 2,
       "days": 70,
+      "prerequisites": [
+        [
+          "deu_left_turn"
+        ]
+      ],
       "effects": [
         {
-          "add_timed_modifier": {
-            "modifier": "welfare_cost",
-            "value": -0.015,
-            "days": 3650
-          }
-        },
-        {
-          "add_timed_modifier": {
-            "modifier": "private_sector_output",
-            "value": 0.02,
-            "days": 3650
-          }
-        },
-        {
-          "add_interest_group_approval": {
-            "group": "business",
-            "value": 6
+          "add_ideology_support": {
+            "group": "social_democratic",
+            "value": 0.05
           }
         },
         {
           "add_interest_group_approval": {
             "group": "labour_unions",
-            "value": -8
-          }
-        }
-      ],
-      "prerequisites": [
-        [
-          "deu_national_programme"
-        ]
-      ],
-      "available": {
-        "ruling_party": "deu.spd"
-      },
-      "ai_weight": 3
-    },
-    {
-      "id": "deu_hartz_reforms",
-      "name": "Hartz reforms",
-      "description": "Restructure unemployment benefits and job placement. The Hartz I to III measures took effect from 2003, and Hartz IV on 1 January 2005.",
-      "x": 0,
-      "y": 2,
-      "days": 70,
-      "effects": [
-        {
-          "add_timed_modifier": {
-            "modifier": "welfare_cost",
-            "value": -0.01,
-            "days": 3650
+            "value": 5
           }
         },
         {
-          "add_economic_mood": 0.02
+          "add_interest_group_approval": {
+            "group": "youth_students",
+            "value": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "deu_left_turn_government",
+      "name": "A left-wing government",
+      "description": "The most popular party of the democratic left leads the government.",
+      "x": 2,
+      "y": 3,
+      "days": 105,
+      "prerequisites": [
+        [
+          "deu_left_turn_build"
+        ]
+      ],
+      "available": {
+        "ideology_group_support_above": {
+          "group": "social_democratic",
+          "value": 0.2
+        }
+      },
+      "effects": [
+        {
+          "install_government": {
+            "ideology": "social_democratic"
+          }
+        },
+        {
+          "add_stability": -0.05
+        }
+      ]
+    },
+    {
+      "id": "deu_welfare_expansion",
+      "name": "Expand the welfare state",
+      "description": "Public health care and higher pensions.",
+      "x": 2,
+      "y": 4,
+      "days": 70,
+      "prerequisites": [
+        [
+          "deu_left_turn_government"
+        ]
+      ],
+      "effects": [
+        {
+          "add_spirit": "universal_healthcare"
+        },
+        {
+          "set_budget": {
+            "spending": 1
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "labour_unions",
+            "value": 4
+          }
+        }
+      ]
+    },
+    {
+      "id": "deu_conservative_turn",
+      "name": "A conservative turn",
+      "description": "Conservative parties (the CDU and the CSU) gain on order, tax cuts and tradition.",
+      "x": 4,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "deu_question_of_power"
+        ]
+      ],
+      "mutually_exclusive": [
+        "deu_steady_course",
+        "deu_left_turn",
+        "deu_liberal_turn",
+        "deu_populist_turn",
+        "deu_socialist_turn"
+      ],
+      "available": {
+        "all": [
+          {
+            "any": [
+              {
+                "follows_history": false
+              },
+              {
+                "is_player": true
+              }
+            ]
+          },
+          {
+            "has_party_of_group": "conservative"
+          },
+          {
+            "not": {
+              "ruling_ideology_group": "conservative"
+            }
+          },
+          {
+            "any": [
+              {
+                "stability_below": 0.6
+              },
+              {
+                "gdp_growth_below": 1.5
+              }
+            ]
+          }
+        ]
+      },
+      "effects": [
+        {
+          "leave_history": true
+        },
+        {
+          "add_ideology_support": {
+            "group": "conservative",
+            "value": 0.04
+          }
+        }
+      ],
+      "ai_weight": 0.3
+    },
+    {
+      "id": "deu_conservative_turn_build",
+      "name": "Business and the countryside",
+      "description": "Business and rural voters rally to the right.",
+      "x": 4,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "deu_conservative_turn"
+        ]
+      ],
+      "effects": [
+        {
+          "add_ideology_support": {
+            "group": "conservative",
+            "value": 0.05
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "business",
+            "value": 4
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "rural",
+            "value": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "deu_conservative_turn_government",
+      "name": "A conservative government",
+      "description": "The most popular conservative party leads the government.",
+      "x": 4,
+      "y": 3,
+      "days": 105,
+      "prerequisites": [
+        [
+          "deu_conservative_turn_build"
+        ]
+      ],
+      "available": {
+        "ideology_group_support_above": {
+          "group": "conservative",
+          "value": 0.2
+        }
+      },
+      "effects": [
+        {
+          "install_government": {
+            "ideology": "conservative"
+          }
+        },
+        {
+          "add_stability": -0.05
+        }
+      ]
+    },
+    {
+      "id": "deu_fiscal_discipline",
+      "name": "Fiscal discipline",
+      "description": "Cut spending and taxes to balance the budget.",
+      "x": 4,
+      "y": 4,
+      "days": 70,
+      "prerequisites": [
+        [
+          "deu_conservative_turn_government"
+        ]
+      ],
+      "effects": [
+        {
+          "add_spirit": "balanced_budget"
+        },
+        {
+          "set_budget": {
+            "spending": -1,
+            "revenue": -0.5
+          }
+        }
+      ]
+    },
+    {
+      "id": "deu_liberal_turn",
+      "name": "A liberal turn",
+      "description": "Liberal parties (the FDP) gain ground on reform and civil liberties.",
+      "x": 6,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "deu_question_of_power"
+        ]
+      ],
+      "mutually_exclusive": [
+        "deu_steady_course",
+        "deu_left_turn",
+        "deu_conservative_turn",
+        "deu_populist_turn",
+        "deu_socialist_turn"
+      ],
+      "available": {
+        "all": [
+          {
+            "any": [
+              {
+                "follows_history": false
+              },
+              {
+                "is_player": true
+              }
+            ]
+          },
+          {
+            "has_party_of_group": "liberal_democratic"
+          },
+          {
+            "not": {
+              "ruling_ideology_group": "liberal_democratic"
+            }
+          },
+          {
+            "any": [
+              {
+                "stability_below": 0.6
+              },
+              {
+                "ig_approval_below": {
+                  "group": "urban_middle_class",
+                  "value": 45
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "effects": [
+        {
+          "leave_history": true
+        },
+        {
+          "add_ideology_support": {
+            "group": "liberal_democratic",
+            "value": 0.04
+          }
+        }
+      ],
+      "ai_weight": 0.3
+    },
+    {
+      "id": "deu_liberal_turn_build",
+      "name": "Reform agenda",
+      "description": "A programme of deregulation and civil liberties.",
+      "x": 6,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "deu_liberal_turn"
+        ]
+      ],
+      "effects": [
+        {
+          "add_ideology_support": {
+            "group": "liberal_democratic",
+            "value": 0.05
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "urban_middle_class",
+            "value": 4
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "business",
+            "value": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "deu_liberal_turn_government",
+      "name": "A liberal government",
+      "description": "The most popular liberal party leads the government.",
+      "x": 6,
+      "y": 3,
+      "days": 105,
+      "prerequisites": [
+        [
+          "deu_liberal_turn_build"
+        ]
+      ],
+      "available": {
+        "ideology_group_support_above": {
+          "group": "liberal_democratic",
+          "value": 0.2
+        }
+      },
+      "effects": [
+        {
+          "install_government": {
+            "ideology": "liberal_democratic"
+          }
+        },
+        {
+          "add_stability": -0.05
+        }
+      ]
+    },
+    {
+      "id": "deu_liberal_reforms",
+      "name": "Liberal reforms",
+      "description": "Cut red tape and open markets.",
+      "x": 6,
+      "y": 4,
+      "days": 70,
+      "prerequisites": [
+        [
+          "deu_liberal_turn_government"
+        ]
+      ],
+      "effects": [
+        {
+          "change_law": {
+            "category": "trade",
+            "law": "free_trade"
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "private_sector_output",
+            "value": 0.05,
+            "days": 2920
+          }
+        },
+        {
+          "add_spirit": "open_society"
+        }
+      ]
+    },
+    {
+      "id": "deu_populist_turn",
+      "name": "A populist wave",
+      "description": "National-populist parties (the Republicans, the NPD and later the AfD) gain on immigration and sovereignty.",
+      "x": 8,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "deu_question_of_power"
+        ]
+      ],
+      "mutually_exclusive": [
+        "deu_steady_course",
+        "deu_left_turn",
+        "deu_conservative_turn",
+        "deu_liberal_turn",
+        "deu_socialist_turn"
+      ],
+      "available": {
+        "all": [
+          {
+            "any": [
+              {
+                "follows_history": false
+              },
+              {
+                "is_player": true
+              }
+            ]
+          },
+          {
+            "has_party_of_group": "nationalist_populist"
+          },
+          {
+            "not": {
+              "ruling_ideology_group": "nationalist_populist"
+            }
+          },
+          {
+            "any": [
+              {
+                "stability_below": 0.5
+              },
+              {
+                "unrest_above": 0.15
+              }
+            ]
+          }
+        ]
+      },
+      "effects": [
+        {
+          "leave_history": true
+        },
+        {
+          "add_ideology_support": {
+            "group": "nationalist_populist",
+            "value": 0.04
+          }
+        }
+      ],
+      "ai_weight": 0.3
+    },
+    {
+      "id": "deu_populist_turn_build",
+      "name": "Rallies and referendums",
+      "description": "Mass rallies and calls for referendums.",
+      "x": 8,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "deu_populist_turn"
+        ]
+      ],
+      "effects": [
+        {
+          "add_ideology_support": {
+            "group": "nationalist_populist",
+            "value": 0.05
+          }
+        },
+        {
+          "add_war_support": 0.03
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "minorities",
+            "value": -4
+          }
+        }
+      ]
+    },
+    {
+      "id": "deu_populist_turn_government",
+      "name": "A national-populist government",
+      "description": "The most popular national-populist party leads the government.",
+      "x": 8,
+      "y": 3,
+      "days": 105,
+      "prerequisites": [
+        [
+          "deu_populist_turn_build"
+        ]
+      ],
+      "available": {
+        "ideology_group_support_above": {
+          "group": "nationalist_populist",
+          "value": 0.2
+        }
+      },
+      "effects": [
+        {
+          "install_government": {
+            "ideology": "nationalist_populist"
+          }
+        },
+        {
+          "add_stability": -0.05
+        }
+      ]
+    },
+    {
+      "id": "deu_sovereignty_first",
+      "name": "Sovereignty first",
+      "description": "Restrict immigration and limit the power of international bodies.",
+      "x": 8,
+      "y": 4,
+      "days": 70,
+      "prerequisites": [
+        [
+          "deu_populist_turn_government"
+        ]
+      ],
+      "effects": [
+        {
+          "change_law": {
+            "category": "immigration",
+            "law": "restrictive_immigration"
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "foreign_influence_resistance",
+            "value": 0.1,
+            "days": 2920
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "minorities",
+            "value": -6
+          }
+        }
+      ]
+    },
+    {
+      "id": "deu_socialist_turn",
+      "name": "A socialist turn",
+      "description": "Socialist and communist parties (later the BSW) gain in a crisis.",
+      "x": 10,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "deu_question_of_power"
+        ]
+      ],
+      "mutually_exclusive": [
+        "deu_steady_course",
+        "deu_left_turn",
+        "deu_conservative_turn",
+        "deu_liberal_turn",
+        "deu_populist_turn"
+      ],
+      "available": {
+        "all": [
+          {
+            "any": [
+              {
+                "follows_history": false
+              },
+              {
+                "is_player": true
+              }
+            ]
+          },
+          {
+            "has_party_of_group": "socialist_communist"
+          },
+          {
+            "not": {
+              "ruling_ideology_group": "socialist_communist"
+            }
+          },
+          {
+            "any": [
+              {
+                "gdp_growth_below": 0.5
+              },
+              {
+                "unrest_above": 0.25
+              }
+            ]
+          }
+        ]
+      },
+      "effects": [
+        {
+          "leave_history": true
+        },
+        {
+          "add_ideology_support": {
+            "group": "socialist_communist",
+            "value": 0.04
+          }
+        }
+      ],
+      "ai_weight": 0.3
+    },
+    {
+      "id": "deu_socialist_turn_build",
+      "name": "Strikes and occupations",
+      "description": "Strikes and workplace occupations.",
+      "x": 10,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "deu_socialist_turn"
+        ]
+      ],
+      "effects": [
+        {
+          "add_ideology_support": {
+            "group": "socialist_communist",
+            "value": 0.05
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "labour_unions",
+            "value": 6
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "business",
+            "value": -4
+          }
+        }
+      ]
+    },
+    {
+      "id": "deu_socialist_turn_government",
+      "name": "A socialist government",
+      "description": "The most popular socialist party leads the government.",
+      "x": 10,
+      "y": 3,
+      "days": 105,
+      "prerequisites": [
+        [
+          "deu_socialist_turn_build"
+        ]
+      ],
+      "available": {
+        "ideology_group_support_above": {
+          "group": "socialist_communist",
+          "value": 0.25
+        }
+      },
+      "effects": [
+        {
+          "install_government": {
+            "ideology": "socialist_communist"
+          }
+        },
+        {
+          "add_stability": -0.05
+        }
+      ]
+    },
+    {
+      "id": "deu_public_ownership",
+      "name": "Public ownership",
+      "description": "Nationalise the banks and the largest companies.",
+      "x": 10,
+      "y": 4,
+      "days": 70,
+      "prerequisites": [
+        [
+          "deu_socialist_turn_government"
+        ]
+      ],
+      "effects": [
+        {
+          "change_law": {
+            "category": "economic_system",
+            "law": "state_capitalism"
+          }
+        },
+        {
+          "add_spirit": "state_planning"
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "business",
+            "value": -10
+          }
+        }
+      ]
+    },
+    {
+      "id": "deu_economic_reform",
+      "name": "Economic reform",
+      "description": "Make the economy and the welfare state fit for the new century.",
+      "x": 14,
+      "y": 0,
+      "days": 70,
+      "effects": [
+        {
+          "add_political_power": 20
+        }
+      ],
+      "ai_weight": 5
+    },
+    {
+      "id": "deu_agenda_2010",
+      "name": "Agenda 2010",
+      "description": "Reform the welfare state and the labour market, as Chancellor Schröder announced on 14 March 2003.",
+      "x": 13,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "deu_economic_reform"
+        ]
+      ],
+      "available": {
+        "all": [
+          {
+            "follows_history": true
+          },
+          {
+            "date_after": "2003-03-14"
+          }
+        ]
+      },
+      "effects": [
+        {
+          "add_spirit": "deu_labour_market_reform"
         },
         {
           "add_interest_group_approval": {
@@ -409,44 +931,207 @@
           }
         },
         {
-          "add_ruling_party_popularity": -0.02
+          "add_interest_group_approval": {
+            "group": "business",
+            "value": 5
+          }
         }
       ],
+      "ai_weight": 5
+    },
+    {
+      "id": "deu_hartz_reforms",
+      "name": "The Hartz reforms",
+      "description": "Reform the job centres and unemployment benefits; the first laws took force on 1 January 2003.",
+      "x": 13,
+      "y": 2,
+      "days": 70,
       "prerequisites": [
         [
           "deu_agenda_2010"
         ]
       ],
       "available": {
-        "ruling_party": "deu.spd"
+        "date_after": "2003-01-01"
       },
-      "ai_weight": 2
-    },
-    {
-      "id": "deu_nuclear_phaseout",
-      "name": "Nuclear phase-out",
-      "description": "Wind down nuclear power. Germany decided in 2002 to phase out nuclear power.",
-      "x": 2,
-      "y": 2,
-      "days": 70,
       "effects": [
         {
-          "change_law": {
-            "category": "energy_policy",
-            "law": "nuclear_phaseout"
+          "add_timed_modifier": {
+            "modifier": "private_sector_output",
+            "value": 0.03,
+            "days": 2920
+          }
+        },
+        {
+          "add_ruling_party_popularity": -0.02
+        }
+      ]
+    },
+    {
+      "id": "deu_mittelstand",
+      "name": "The Mittelstand",
+      "description": "Support the family firms that make machines for export.",
+      "x": 15,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "deu_economic_reform"
+        ]
+      ],
+      "effects": [
+        {
+          "add_buildings": {
+            "building": "civilian_factory",
+            "count": 3
           }
         },
         {
           "add_timed_modifier": {
-            "modifier": "renewable_output",
-            "value": 0.1,
-            "days": 3650
+            "modifier": "trade_efficiency",
+            "value": 0.03,
+            "days": 2920
+          }
+        }
+      ]
+    },
+    {
+      "id": "deu_debt_brake",
+      "name": "The debt brake",
+      "description": "Limit the federal structural deficit, as the constitution has done since 2009.",
+      "x": 14,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "deu_agenda_2010",
+          "deu_mittelstand"
+        ]
+      ],
+      "available": {
+        "date_after": "2009-01-01"
+      },
+      "effects": [
+        {
+          "add_spirit": "deu_debt_brake"
+        },
+        {
+          "add_stability": 0.01
+        }
+      ],
+      "ai_weight": 4
+    },
+    {
+      "id": "deu_export_champions",
+      "name": "Export champions",
+      "description": "Cars, chemicals and machines for world markets.",
+      "x": 15,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "deu_mittelstand"
+        ]
+      ],
+      "effects": [
+        {
+          "add_spirit": "export_led_growth"
+        },
+        {
+          "add_buildings": {
+            "building": "civilian_factory",
+            "count": 2
           }
         },
         {
+          "add_buildings": {
+            "building": "port",
+            "count": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "deu_industry_40",
+      "name": "Industry 4.0",
+      "description": "Digital factories and robots.",
+      "x": 15,
+      "y": 3,
+      "days": 70,
+      "prerequisites": [
+        [
+          "deu_export_champions"
+        ]
+      ],
+      "available": {
+        "date_after": "2011-01-01"
+      },
+      "effects": [
+        {
+          "add_research_bonus": {
+            "category": "economy_digital",
+            "value": 0.25,
+            "uses": 2
+          }
+        },
+        {
+          "add_buildings": {
+            "building": "data_centre",
+            "count": 2
+          }
+        }
+      ]
+    },
+    {
+      "id": "deu_short_time_work",
+      "name": "Short-time work",
+      "description": "Pay firms to keep workers in a recession.",
+      "x": 13,
+      "y": 3,
+      "days": 70,
+      "prerequisites": [
+        [
+          "deu_hartz_reforms"
+        ]
+      ],
+      "available": {
+        "date_after": "2008-10-01"
+      },
+      "effects": [
+        {
+          "add_stability": 0.02
+        },
+        {
           "add_interest_group_approval": {
-            "group": "youth_students",
+            "group": "labour_unions",
             "value": 4
+          }
+        },
+        {
+          "add_treasury": -2
+        }
+      ]
+    },
+    {
+      "id": "deu_minimum_wage",
+      "name": "A minimum wage",
+      "description": "A national minimum wage.",
+      "x": 13,
+      "y": 4,
+      "days": 70,
+      "prerequisites": [
+        [
+          "deu_short_time_work"
+        ]
+      ],
+      "available": {
+        "date_after": "2014-01-01"
+      },
+      "effects": [
+        {
+          "add_interest_group_approval": {
+            "group": "labour_unions",
+            "value": 6
           }
         },
         {
@@ -455,118 +1140,392 @@
             "value": -3
           }
         }
-      ],
+      ]
+    },
+    {
+      "id": "deu_infrastructure_fund",
+      "name": "Rebuild infrastructure",
+      "description": "Bridges, railways and broadband.",
+      "x": 14,
+      "y": 4,
+      "days": 70,
       "prerequisites": [
         [
-          "deu_agenda_2010",
-          "deu_social_market_renewal"
+          "deu_debt_brake",
+          "deu_industry_40"
         ]
       ],
       "available": {
-        "any": [
-          {
-            "party_in_government": "deu.greens"
-          },
-          {
-            "party_in_government": "deu.spd"
-          }
-        ]
+        "treasury_above": 3
       },
-      "ai_weight": 2
+      "effects": [
+        {
+          "add_buildings": {
+            "building": "infrastructure",
+            "count": 4
+          }
+        },
+        {
+          "add_treasury": -3
+        }
+      ]
     },
     {
-      "id": "deu_social_market_renewal",
-      "name": "Renew the social market economy",
-      "description": "Lower taxes and labour costs while keeping social partnership.",
-      "x": 3,
-      "y": 1,
+      "id": "deu_electric_cars",
+      "name": "Electric cars",
+      "description": "Turn the car industry to electric cars.",
+      "x": 15,
+      "y": 4,
+      "days": 70,
+      "prerequisites": [
+        [
+          "deu_industry_40"
+        ]
+      ],
+      "available": {
+        "date_after": "2015-01-01"
+      },
+      "effects": [
+        {
+          "add_buildings": {
+            "building": "civilian_factory",
+            "count": 2
+          }
+        },
+        {
+          "add_research_bonus": {
+            "category": "industry_energy",
+            "value": 0.2,
+            "uses": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "deu_chip_fabs",
+      "name": "Chip factories",
+      "description": "Subsidise new chip factories.",
+      "x": 15,
+      "y": 5,
+      "days": 70,
+      "prerequisites": [
+        [
+          "deu_electric_cars"
+        ]
+      ],
+      "available": {
+        "date_after": "2021-01-01"
+      },
+      "effects": [
+        {
+          "add_buildings": {
+            "building": "civilian_factory",
+            "count": 2
+          }
+        },
+        {
+          "add_research_bonus": {
+            "category": "electronics_cyber",
+            "value": 0.25,
+            "uses": 2
+          }
+        }
+      ]
+    },
+    {
+      "id": "deu_skilled_immigration",
+      "name": "Skilled immigration",
+      "description": "Bring in skilled workers from abroad.",
+      "x": 13,
+      "y": 5,
+      "days": 70,
+      "prerequisites": [
+        [
+          "deu_minimum_wage",
+          "deu_infrastructure_fund"
+        ]
+      ],
+      "effects": [
+        {
+          "change_law": {
+            "category": "immigration",
+            "law": "managed_immigration"
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "population_growth",
+            "value": 0.001,
+            "days": 3650
+          }
+        }
+      ]
+    },
+    {
+      "id": "deu_energy_policy",
+      "name": "Energy policy",
+      "description": "The energy mix for the coming decades.",
+      "x": 19,
+      "y": 0,
       "days": 70,
       "effects": [
         {
+          "add_political_power": 10
+        }
+      ],
+      "ai_weight": 4
+    },
+    {
+      "id": "deu_nuclear_phase_out",
+      "name": "Nuclear phase-out",
+      "description": "Close the nuclear plants: the government decided after Fukushima in 2011, and the last plants closed in April 2023.",
+      "x": 18,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "deu_energy_policy"
+        ]
+      ],
+      "available": {
+        "all": [
+          {
+            "follows_history": true
+          },
+          {
+            "date_after": "2011-03-15"
+          }
+        ]
+      },
+      "effects": [
+        {
+          "remove_spirit": "deu_nuclear_power"
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "youth_students",
+            "value": 4
+          }
+        }
+      ],
+      "ai_weight": 4
+    },
+    {
+      "id": "deu_energiewende",
+      "name": "The energy transition",
+      "description": "Wind and solar replace nuclear and coal. Unlocks offshore wind farms.",
+      "x": 19,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "deu_energy_policy"
+        ]
+      ],
+      "available": {
+        "date_after": "2010-09-01"
+      },
+      "effects": [
+        {
+          "add_spirit": "deu_energiewende"
+        },
+        {
+          "add_buildings": {
+            "building": "renewable_plant",
+            "count": 3
+          }
+        }
+      ],
+      "ai_weight": 4
+    },
+    {
+      "id": "deu_nord_stream",
+      "name": "Nord Stream",
+      "description": "A gas pipeline from Russia under the Baltic, in service from 2011.",
+      "x": 20,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "deu_energy_policy"
+        ]
+      ],
+      "available": {
+        "all": [
+          {
+            "follows_history": true
+          },
+          {
+            "date_after": "2011-11-01"
+          }
+        ]
+      },
+      "effects": [
+        {
           "add_timed_modifier": {
-            "modifier": "private_sector_output",
-            "value": 0.04,
+            "modifier": "energy_cost",
+            "value": -0.03,
+            "days": 3650
+          }
+        },
+        {
+          "add_opinion": {
+            "target": "RUS",
+            "value": 10,
+            "days": 1825
+          }
+        }
+      ],
+      "ai_weight": 3
+    },
+    {
+      "id": "deu_coal_exit",
+      "name": "Exit from coal",
+      "description": "End coal power by 2038 at the latest.",
+      "x": 19,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "deu_energiewende"
+        ]
+      ],
+      "available": {
+        "date_after": "2019-01-01"
+      },
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "energy_cost",
+            "value": 0.02,
             "days": 3650
           }
         },
         {
           "add_interest_group_approval": {
-            "group": "business",
-            "value": 5
+            "group": "labour_unions",
+            "value": -3
           }
         },
         {
+          "add_buildings": {
+            "building": "renewable_plant",
+            "count": 2
+          }
+        }
+      ]
+    },
+    {
+      "id": "deu_lng_terminals",
+      "name": "LNG terminals",
+      "description": "Terminals for liquefied gas after Russian gas stopped in 2022.",
+      "x": 20,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "deu_nord_stream"
+        ]
+      ],
+      "available": {
+        "date_after": "2022-08-31"
+      },
+      "effects": [
+        {
+          "add_buildings": {
+            "building": "port",
+            "count": 1
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "energy_cost",
+            "value": -0.02,
+            "days": 2920
+          }
+        },
+        {
+          "add_opinion": {
+            "target": "RUS",
+            "value": -10,
+            "days": 1825
+          }
+        }
+      ]
+    },
+    {
+      "id": "deu_hydrogen",
+      "name": "Hydrogen",
+      "description": "A national hydrogen strategy.",
+      "x": 19,
+      "y": 3,
+      "days": 70,
+      "prerequisites": [
+        [
+          "deu_coal_exit",
+          "deu_lng_terminals"
+        ]
+      ],
+      "available": {
+        "date_after": "2020-01-01"
+      },
+      "effects": [
+        {
+          "add_research_bonus": {
+            "category": "industry_energy",
+            "value": 0.25,
+            "uses": 2
+          }
+        }
+      ]
+    },
+    {
+      "id": "deu_bundeswehr",
+      "name": "The Bundeswehr",
+      "description": "Reform the armed forces.",
+      "x": 24,
+      "y": 0,
+      "days": 70,
+      "effects": [
+        {
           "add_interest_group_approval": {
-            "group": "rural",
+            "group": "military",
             "value": 2
           }
         }
       ],
+      "ai_weight": 4
+    },
+    {
+      "id": "deu_end_conscription",
+      "name": "Suspend conscription",
+      "description": "Suspend conscription, as Germany did on 1 July 2011.",
+      "x": 23,
+      "y": 1,
+      "days": 70,
       "prerequisites": [
         [
-          "deu_national_programme"
+          "deu_bundeswehr"
         ]
       ],
       "available": {
-        "any": [
+        "all": [
           {
-            "party_in_government": "deu.cdu"
+            "follows_history": true
           },
           {
-            "party_in_government": "deu.csu"
-          },
-          {
-            "party_in_government": "deu.fdp"
+            "date_after": "2011-07-01"
           }
         ]
       },
-      "ai_weight": 2
-    },
-    {
-      "id": "deu_federalism_reform",
-      "name": "Federalism reform",
-      "description": "Clarify the division of powers between the federation and the states.",
-      "x": 2,
-      "y": 3,
-      "days": 70,
       "effects": [
         {
-          "add_stability": 0.03
-        },
-        {
-          "add_timed_modifier": {
-            "modifier": "law_change_cost",
-            "value": -0.1,
-            "days": 3650
-          }
-        }
-      ],
-      "prerequisites": [
-        [
-          "deu_hartz_reforms",
-          "deu_nuclear_phaseout",
-          "deu_social_market_renewal"
-        ]
-      ]
-    },
-    {
-      "id": "deu_suspend_conscription",
-      "name": "Suspend conscription",
-      "description": "Move to an all-volunteer Bundeswehr. Germany put conscription into abeyance on 1 July 2011.",
-      "x": 10,
-      "y": 2,
-      "days": 70,
-      "effects": [
-        {
-          "change_law": {
-            "category": "conscription",
-            "law": "volunteer_force"
-          }
+          "remove_spirit": "deu_conscription"
         },
         {
           "add_timed_modifier": {
             "modifier": "army_org",
-            "value": 0.05,
+            "value": 0.03,
             "days": 3650
           }
         },
@@ -575,108 +1534,758 @@
             "group": "youth_students",
             "value": 5
           }
-        },
-        {
-          "add_interest_group_approval": {
-            "group": "military",
-            "value": -2
-          }
         }
       ],
-      "prerequisites": [
-        [
-          "deu_defence_review"
-        ]
-      ],
-      "ai_weight": 1.5
+      "ai_weight": 4
     },
     {
-      "id": "deu_export_industry",
-      "name": "Export industry",
-      "description": "Support the engineering and car industries on world markets.",
-      "x": 7,
-      "y": 2,
+      "id": "deu_missions_abroad",
+      "name": "Missions abroad",
+      "description": "Deploy to Kosovo, Afghanistan and Mali.",
+      "x": 25,
+      "y": 1,
       "days": 70,
+      "prerequisites": [
+        [
+          "deu_bundeswehr"
+        ]
+      ],
       "effects": [
         {
           "add_timed_modifier": {
-            "modifier": "trade_efficiency",
-            "value": 0.05,
+            "modifier": "army_org",
+            "value": 0.02,
+            "days": 2920
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "diplomatic_reputation",
+            "value": 0.02,
+            "days": 2920
+          }
+        }
+      ]
+    },
+    {
+      "id": "deu_zeitenwende",
+      "name": "Zeitenwende",
+      "description": "Announce a €100 billion fund for the armed forces, as Chancellor Scholz did on 27 February 2022. Unlocks procurement.",
+      "x": 24,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "deu_end_conscription",
+          "deu_missions_abroad"
+        ]
+      ],
+      "available": {
+        "date_after": "2022-02-27"
+      },
+      "effects": [
+        {
+          "add_spirit": "deu_bundeswehr_fund"
+        },
+        {
+          "add_buildings": {
+            "building": "military_factory",
+            "count": 3
+          }
+        },
+        {
+          "add_treasury": -5
+        }
+      ],
+      "ai_weight": 5
+    },
+    {
+      "id": "deu_air_defence",
+      "name": "Air defence for Europe",
+      "description": "A European air-defence shield.",
+      "x": 23,
+      "y": 3,
+      "days": 70,
+      "prerequisites": [
+        [
+          "deu_zeitenwende"
+        ]
+      ],
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "army_defence",
+            "value": 0.03,
             "days": 3650
           }
         },
         {
+          "add_research_bonus": {
+            "category": "artillery_missiles",
+            "value": 0.2,
+            "uses": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "deu_brigade_lithuania",
+      "name": "A brigade in Lithuania",
+      "description": "Station a brigade permanently in Lithuania.",
+      "x": 25,
+      "y": 3,
+      "days": 70,
+      "prerequisites": [
+        [
+          "deu_zeitenwende"
+        ]
+      ],
+      "available": {
+        "date_after": "2023-06-01"
+      },
+      "effects": [
+        {
+          "add_divisions": {
+            "template": "mechanised_division",
+            "count": 1
+          }
+        },
+        {
+          "add_opinion": {
+            "target": "LTU",
+            "value": 15,
+            "days": 1825
+          }
+        }
+      ]
+    },
+    {
+      "id": "deu_defence_industry",
+      "name": "Ammunition and tanks",
+      "description": "Expand ammunition and tank production.",
+      "x": 24,
+      "y": 4,
+      "days": 70,
+      "prerequisites": [
+        [
+          "deu_air_defence",
+          "deu_brigade_lithuania"
+        ]
+      ],
+      "effects": [
+        {
+          "add_buildings": {
+            "building": "military_factory",
+            "count": 2
+          }
+        },
+        {
+          "add_research_bonus": {
+            "category": "armour",
+            "value": 0.2,
+            "uses": 2
+          }
+        },
+        {
+          "add_equipment": {
+            "family": "infantry_equipment",
+            "amount": 1500
+          }
+        }
+      ]
+    },
+    {
+      "id": "deu_foreign_policy",
+      "name": "Foreign policy",
+      "description": "Germany in Europe and the world.",
+      "x": 29,
+      "y": 0,
+      "days": 70,
+      "effects": [
+        {
+          "add_political_power": 20
+        }
+      ],
+      "ai_weight": 4
+    },
+    {
+      "id": "deu_eu_enlargement",
+      "name": "EU enlargement",
+      "description": "Support the entry of Central and Eastern Europe into the EU.",
+      "x": 28,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "deu_foreign_policy"
+        ]
+      ],
+      "effects": [
+        {
+          "add_opinion": {
+            "target": "POL",
+            "value": 10,
+            "days": 1825
+          }
+        },
+        {
+          "add_opinion": {
+            "target": "CZE",
+            "value": 10,
+            "days": 1825
+          }
+        },
+        {
           "add_timed_modifier": {
-            "modifier": "production_efficiency",
+            "modifier": "trade_efficiency",
+            "value": 0.03,
+            "days": 2920
+          }
+        }
+      ]
+    },
+    {
+      "id": "deu_franco_german",
+      "name": "The Franco-German engine",
+      "description": "Lead the EU together with France.",
+      "x": 30,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "deu_foreign_policy"
+        ]
+      ],
+      "effects": [
+        {
+          "add_opinion": {
+            "target": "FRA",
+            "value": 15,
+            "days": 1825
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "diplomatic_reputation",
+            "value": 0.03,
+            "days": 2920
+          }
+        }
+      ]
+    },
+    {
+      "id": "deu_eurozone_rescue",
+      "name": "Rescue the eurozone",
+      "description": "Rescue funds for Greece and others in the debt crisis.",
+      "x": 29,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "deu_eu_enlargement",
+          "deu_franco_german"
+        ]
+      ],
+      "available": {
+        "date_after": "2010-05-01"
+      },
+      "effects": [
+        {
+          "add_treasury": -3
+        },
+        {
+          "add_opinion": {
+            "target": "GRC",
+            "value": -5,
+            "days": 1825
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "diplomatic_reputation",
+            "value": 0.03,
+            "days": 2920
+          }
+        }
+      ]
+    },
+    {
+      "id": "deu_refugees",
+      "name": "Take in refugees",
+      "description": "Take in refugees in the crisis of 2015, when about 1.3 million people applied for asylum in Europe.",
+      "x": 28,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "deu_eu_enlargement"
+        ]
+      ],
+      "available": {
+        "date_after": "2015-08-01"
+      },
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "population_growth",
+            "value": 0.002,
+            "days": 2920
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "minorities",
+            "value": 5
+          }
+        },
+        {
+          "add_ideology_support": {
+            "group": "nationalist_populist",
+            "value": 0.02
+          }
+        }
+      ]
+    },
+    {
+      "id": "deu_support_ukraine",
+      "name": "Support for Ukraine",
+      "description": "Weapons and money for Ukraine.",
+      "x": 30,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "deu_franco_german"
+        ]
+      ],
+      "available": {
+        "date_after": "2022-02-24"
+      },
+      "effects": [
+        {
+          "add_opinion": {
+            "target": "UKR",
+            "value": 20,
+            "days": 1825
+          }
+        },
+        {
+          "add_opinion": {
+            "target": "RUS",
+            "value": -20,
+            "days": 1825
+          }
+        },
+        {
+          "add_treasury": -1
+        }
+      ]
+    },
+    {
+      "id": "deu_china_trade",
+      "name": "Trade with China",
+      "description": "Cars and machines for China.",
+      "x": 29,
+      "y": 3,
+      "days": 70,
+      "prerequisites": [
+        [
+          "deu_eurozone_rescue",
+          "deu_support_ukraine"
+        ]
+      ],
+      "effects": [
+        {
+          "add_opinion": {
+            "target": "CHN",
+            "value": 10,
+            "days": 1825
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "trade_efficiency",
+            "value": 0.02,
+            "days": 2920
+          }
+        }
+      ]
+    },
+    {
+      "id": "deu_society",
+      "name": "Society and science",
+      "description": "Health, schools, research and the infrastructure of everyday life.",
+      "x": 34,
+      "y": 0,
+      "days": 70,
+      "effects": [
+        {
+          "add_political_power": 20
+        }
+      ],
+      "ai_weight": 3
+    },
+    {
+      "id": "deu_health_investment",
+      "name": "Invest in hospitals",
+      "description": "New hospitals and more doctors.",
+      "x": 32,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "deu_society"
+        ]
+      ],
+      "available": {
+        "treasury_above": 1
+      },
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "health_outcomes",
+            "value": 0.04,
+            "days": 3650
+          }
+        },
+        {
+          "add_treasury": -1
+        }
+      ]
+    },
+    {
+      "id": "deu_schools_investment",
+      "name": "Invest in schools",
+      "description": "Smaller classes and better-paid teachers.",
+      "x": 34,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "deu_society"
+        ]
+      ],
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "education_quality",
+            "value": 0.04,
+            "days": 3650
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "youth_students",
+            "value": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "deu_research_agency",
+      "name": "A research agency",
+      "description": "Grants for breakthrough research.",
+      "x": 36,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "deu_society"
+        ]
+      ],
+      "effects": [
+        {
+          "add_spirit": "science_drive"
+        },
+        {
+          "add_research_bonus": {
+            "category": "industry_energy",
+            "value": 0.2,
+            "uses": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "deu_elderly_care",
+      "name": "Care for the elderly",
+      "description": "Care homes and home care for an ageing population.",
+      "x": 32,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "deu_health_investment"
+        ]
+      ],
+      "effects": [
+        {
+          "set_budget": {
+            "spending": 0.3
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "rural",
+            "value": 2
+          }
+        },
+        {
+          "add_stability": 0.01
+        }
+      ]
+    },
+    {
+      "id": "deu_universities",
+      "name": "Leading universities",
+      "description": "Funding for the top universities.",
+      "x": 34,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "deu_schools_investment",
+          "deu_research_agency"
+        ]
+      ],
+      "effects": [
+        {
+          "add_research_bonus": {
+            "category": "economy_digital",
+            "value": 0.2,
+            "uses": 2
+          }
+        }
+      ]
+    },
+    {
+      "id": "deu_ai_and_computing",
+      "name": "Artificial intelligence and computing",
+      "description": "Supercomputers and data centres.",
+      "x": 36,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "deu_research_agency"
+        ]
+      ],
+      "available": {
+        "date_after": "2015-01-01"
+      },
+      "effects": [
+        {
+          "add_buildings": {
+            "building": "data_centre",
+            "count": 2
+          }
+        },
+        {
+          "add_research_bonus": {
+            "category": "electronics_cyber",
+            "value": 0.2,
+            "uses": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "deu_affordable_housing",
+      "name": "Affordable housing",
+      "description": "Build homes the young can afford.",
+      "x": 32,
+      "y": 3,
+      "days": 70,
+      "prerequisites": [
+        [
+          "deu_elderly_care"
+        ]
+      ],
+      "available": {
+        "treasury_above": 1
+      },
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "construction_speed",
+            "value": 0.05,
+            "days": 2920
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "youth_students",
+            "value": 3
+          }
+        },
+        {
+          "add_treasury": -1
+        }
+      ]
+    },
+    {
+      "id": "deu_broadband",
+      "name": "Broadband everywhere",
+      "description": "Fast internet in every town and village.",
+      "x": 34,
+      "y": 3,
+      "days": 70,
+      "prerequisites": [
+        [
+          "deu_universities"
+        ]
+      ],
+      "effects": [
+        {
+          "add_buildings": {
+            "building": "data_centre",
+            "count": 1
+          }
+        },
+        {
+          "add_buildings": {
+            "building": "infrastructure",
+            "count": 1
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "rural",
+            "value": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "deu_space_and_satellites",
+      "name": "Space and satellites",
+      "description": "Satellites for navigation and observation.",
+      "x": 36,
+      "y": 3,
+      "days": 70,
+      "prerequisites": [
+        [
+          "deu_ai_and_computing"
+        ]
+      ],
+      "effects": [
+        {
+          "add_research_bonus": {
+            "category": "air_drones",
+            "value": 0.15,
+            "uses": 1
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "intelligence_power",
             "value": 0.03,
             "days": 3650
           }
         }
-      ],
-      "prerequisites": [
-        [
-          "deu_economic_council"
-        ]
       ]
     },
     {
-      "id": "deu_energy_transition",
-      "name": "Energy transition",
-      "description": "Expand wind and solar power and modernise the grid.",
-      "x": 8,
-      "y": 3,
-      "days": 105,
+      "id": "deu_public_transport",
+      "name": "Public transport",
+      "description": "Trams, metros and regional trains.",
+      "x": 32,
+      "y": 4,
+      "days": 70,
+      "prerequisites": [
+        [
+          "deu_affordable_housing"
+        ]
+      ],
       "effects": [
         {
-          "add_timed_modifier": {
-            "modifier": "renewable_output",
-            "value": 0.15,
-            "days": 3650
+          "add_buildings": {
+            "building": "infrastructure",
+            "count": 2
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "urban_middle_class",
+            "value": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "deu_digital_state",
+      "name": "A digital state",
+      "description": "Public services online.",
+      "x": 34,
+      "y": 4,
+      "days": 70,
+      "prerequisites": [
+        [
+          "deu_broadband"
+        ]
+      ],
+      "effects": [
+        {
+          "add_spirit": "digital_government"
+        }
+      ]
+    },
+    {
+      "id": "deu_biotech",
+      "name": "Biotechnology",
+      "description": "Vaccines and medicines made at home.",
+      "x": 36,
+      "y": 4,
+      "days": 70,
+      "prerequisites": [
+        [
+          "deu_space_and_satellites"
+        ]
+      ],
+      "effects": [
+        {
+          "add_buildings": {
+            "building": "civilian_factory",
+            "count": 1
           }
         },
         {
           "add_timed_modifier": {
-            "modifier": "emissions",
-            "value": -0.05,
-            "days": 3650
-          }
-        },
-        {
-          "add_timed_modifier": {
-            "modifier": "energy_cost",
+            "modifier": "health_outcomes",
             "value": 0.02,
             "days": 3650
           }
         }
-      ],
+      ]
+    },
+    {
+      "id": "deu_climate_adaptation",
+      "name": "Climate adaptation",
+      "description": "Flood defences and water management.",
+      "x": 34,
+      "y": 5,
+      "days": 70,
       "prerequisites": [
         [
-          "deu_export_industry"
+          "deu_public_transport",
+          "deu_digital_state",
+          "deu_biotech"
         ]
+      ],
+      "available": {
+        "date_after": "2010-01-01"
+      },
+      "effects": [
+        {
+          "add_buildings": {
+            "building": "infrastructure",
+            "count": 1
+          }
+        },
+        {
+          "add_stability": 0.01
+        }
       ]
     }
-  ],
-  "source": [
-    {
-      "url": "https://en.wikipedia.org/wiki/Agenda_2010",
-      "title": "Wikipedia: Agenda 2010",
-      "accessed": "2026-10-15"
-    },
-    {
-      "url": "https://en.wikipedia.org/wiki/Hartz_concept",
-      "title": "Wikipedia: Hartz concept",
-      "accessed": "2026-10-15"
-    },
-    {
-      "url": "https://en.wikipedia.org/wiki/Nuclear_power_in_Germany",
-      "title": "Wikipedia: Nuclear power in Germany",
-      "accessed": "2026-10-15"
-    },
-    {
-      "url": "https://en.wikipedia.org/wiki/Conscription_in_Germany",
-      "title": "Wikipedia: Conscription in Germany",
-      "accessed": "2026-10-15"
-    }
-  ],
-  "confidence": "verified"
+  ]
 }

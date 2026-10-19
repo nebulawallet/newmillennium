@@ -1,0 +1,170 @@
+{
+  "note": "Iraq's national spirits. The ones with `start` describe the situation on 1 January 2000 and cite sources; the others are granted by focuses and decisions. Values are gameplay estimates.",
+  "spirits": [
+    {
+      "id": "irq_un_sanctions",
+      "name": "UN sanctions",
+      "description": "A comprehensive UN embargo has been in force since August 1990 and stays tied to disarmament.",
+      "kind": "problem",
+      "modifiers": {
+        "trade_efficiency": -0.2,
+        "foreign_investment": -0.2,
+        "gdp_growth": -0.01
+      },
+      "start": [
+        "IRQ"
+      ],
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Sanctions_against_Iraq",
+          "title": "Wikipedia: Sanctions against Iraq",
+          "accessed": "2026-10-19"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "irq_oil_for_food",
+      "name": "Oil-for-Food",
+      "description": "Under a UN programme set up in 1995, Iraq sells oil in controlled quantities for food, medicine and humanitarian goods.",
+      "kind": "policy",
+      "modifiers": {
+        "health_outcomes": 0.02,
+        "fossil_output": -0.1
+      },
+      "start": [
+        "IRQ"
+      ],
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Oil-for-Food_Programme",
+          "title": "Wikipedia: Oil-for-Food Programme",
+          "accessed": "2026-10-19"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "irq_no_fly_zones",
+      "name": "No-fly zones",
+      "description": "The United States and the United Kingdom enforce no-fly zones over the north and south, proclaimed after the 1991 war.",
+      "kind": "problem",
+      "modifiers": {
+        "air_effectiveness": -0.2,
+        "foreign_influence_resistance": -0.05
+      },
+      "start": [
+        "IRQ"
+      ],
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Iraqi_no-fly_zones",
+          "title": "Wikipedia: Iraqi no-fly zones",
+          "accessed": "2026-10-19"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "irq_oil_reserves",
+      "name": "Vast oil reserves",
+      "description": "Iraq holds the world's fifth largest proven oil reserves.",
+      "kind": "strength",
+      "modifiers": {
+        "fossil_output": 0.15
+      },
+      "start": [
+        "IRQ"
+      ],
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Petroleum_industry_in_Iraq",
+          "title": "Wikipedia: Petroleum industry in Iraq",
+          "accessed": "2026-10-19"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "irq_war_damage",
+      "name": "War-damaged economy",
+      "description": "The Iran-Iraq War damaged the infrastructure, and the 1991 war and the sanctions hit the economy further.",
+      "kind": "problem",
+      "modifiers": {
+        "production_efficiency": -0.08,
+        "construction_speed": -0.05
+      },
+      "start": [
+        "IRQ"
+      ],
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Economy_of_Iraq",
+          "title": "Wikipedia: Economy of Iraq",
+          "accessed": "2026-10-19"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "irq_sectarian_divide",
+      "name": "Sectarian divide",
+      "description": "Distrust between Shia, Sunni and Kurdish communities shapes politics and security.",
+      "kind": "problem",
+      "modifiers": {
+        "stability_factor": -0.04,
+        "unrest": 0.03
+      }
+    },
+    {
+      "id": "irq_national_reconciliation",
+      "name": "National reconciliation",
+      "description": "Power sharing and amnesties narrow the divides between communities.",
+      "kind": "strength",
+      "modifiers": {
+        "stability_factor": 0.03,
+        "unrest": -0.02
+      }
+    },
+    {
+      "id": "irq_power_shortage",
+      "name": "Power shortages",
+      "description": "Generation cannot meet demand at the summer peak.",
+      "kind": "problem",
+      "modifiers": {
+        "stability_factor": -0.02,
+        "production_efficiency": -0.03
+      }
+    },
+    {
+      "id": "irq_reliable_power",
+      "name": "Reliable power",
+      "description": "New plants and gas capture keep the lights on.",
+      "kind": "strength",
+      "modifiers": {
+        "production_efficiency": 0.03
+      }
+    },
+    {
+      "id": "irq_oil_boom",
+      "name": "Oil boom",
+      "description": "Contracts with foreign companies raise production and exports.",
+      "kind": "strength",
+      "modifiers": {
+        "fossil_output": 0.15,
+        "foreign_investment": 0.05
+      }
+    },
+    {
+      "id": "irq_pmf",
+      "name": "Popular Mobilization Forces",
+      "description": "Paramilitary factions formally part of the armed forces under the prime minister.",
+      "kind": "policy",
+      "modifiers": {
+        "manpower_factor": 0.05,
+        "internal_security": 0.03,
+        "political_power_gain": -0.05
+      }
+    }
+  ]
+}

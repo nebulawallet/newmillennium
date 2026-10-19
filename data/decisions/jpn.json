@@ -1,0 +1,77 @@
+{
+  "categories": [
+    {
+      "id": "jpn_projects",
+      "name": "Japanese state projects",
+      "description": "Projects that the national focuses open up."
+    }
+  ],
+  "decisions": [
+    {
+      "id": "jpn_restart_reactor",
+      "name": "Restart a reactor",
+      "description": "Restart a reactor that passed the new safety checks.",
+      "category": "jpn_projects",
+      "countries": [
+        "JPN"
+      ],
+      "visible": {
+        "has_completed_focus": "jpn_reactor_restarts"
+      },
+      "cost": {
+        "political_power": 30
+      },
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "energy_cost",
+            "value": -0.01,
+            "days": 3650
+          }
+        },
+        {
+          "add_unrest": 0.01
+        }
+      ],
+      "cooldown_days": 365,
+      "ai_weight": 2
+    },
+    {
+      "id": "jpn_regional_revitalisation",
+      "name": "Revitalise a region",
+      "description": "Funds for a rural prefecture.",
+      "category": "jpn_projects",
+      "countries": [
+        "JPN"
+      ],
+      "visible": {
+        "has_completed_focus": "jpn_regional_revitalisation"
+      },
+      "available": {
+        "treasury_above": 0.5
+      },
+      "cost": {
+        "political_power": 25
+      },
+      "effects": [
+        {
+          "add_treasury": -0.5
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "rural",
+            "value": 3
+          }
+        },
+        {
+          "add_buildings": {
+            "building": "infrastructure",
+            "count": 1
+          }
+        }
+      ],
+      "cooldown_days": 365,
+      "ai_weight": 2
+    }
+  ]
+}

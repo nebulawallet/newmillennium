@@ -1,0 +1,97 @@
+{
+  "note": "The United Kingdom's national spirits. The ones with `start` describe the situation on 1 January 2000 and cite sources. Values are gameplay estimates.",
+  "spirits": [
+    {
+      "id": "gbr_independent_central_bank",
+      "name": "An independent central bank",
+      "description": "The Bank of England became an independent public organisation in 1998.",
+      "kind": "strength",
+      "modifiers": {
+        "inflation": -0.01,
+        "interest_rate": -0.003
+      },
+      "start": [
+        "GBR"
+      ],
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Bank_of_England",
+          "title": "Wikipedia: Bank of England",
+          "accessed": "2026-10-19"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "gbr_devolution",
+      "name": "Devolution",
+      "description": "The Scotland Act 1998 set up a Scottish Parliament and government.",
+      "kind": "policy",
+      "modifiers": {
+        "unrest": -0.01,
+        "political_power_gain": -0.03
+      },
+      "start": [
+        "GBR"
+      ],
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Scotland_Act_1998",
+          "title": "Wikipedia: Scotland Act 1998",
+          "accessed": "2026-10-19"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "gbr_good_friday",
+      "name": "The Good Friday Agreement",
+      "description": "The agreement signed on 10 April 1998 ended most of the violence of the Troubles.",
+      "kind": "strength",
+      "modifiers": {
+        "stability_factor": 0.02
+      },
+      "start": [
+        "GBR"
+      ],
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Good_Friday_Agreement",
+          "title": "Wikipedia: Good Friday Agreement",
+          "accessed": "2026-10-19"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "gbr_austerity",
+      "name": "Austerity",
+      "description": "Spending cuts to close the deficit.",
+      "kind": "policy",
+      "modifiers": {
+        "welfare_cost": -0.01,
+        "stability_factor": -0.02
+      }
+    },
+    {
+      "id": "gbr_outside_the_eu",
+      "name": "Outside the European Union",
+      "description": "The United Kingdom has left the European Union.",
+      "kind": "policy",
+      "modifiers": {
+        "trade_efficiency": -0.04,
+        "foreign_influence_resistance": 0.05
+      }
+    },
+    {
+      "id": "gbr_bank_rescue",
+      "name": "Bank rescue",
+      "description": "The state has rescued failing banks.",
+      "kind": "policy",
+      "modifiers": {
+        "interest_rate": -0.003,
+        "gdp_growth": -0.002
+      }
+    }
+  ]
+}

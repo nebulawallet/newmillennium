@@ -1,0 +1,129 @@
+{
+  "note": "Turkey's national spirits. The ones with `start` describe the situation on 1 January 2000 and cite sources. Values are gameplay estimates.",
+  "spirits": [
+    {
+      "id": "tur_fiscal_fragility",
+      "name": "Fragile public finances",
+      "description": "Large budget deficits are financed by high-interest bonds held by the banks; the IMF lends to Turkey in late 2000 and a crisis breaks out in February 2001.",
+      "kind": "problem",
+      "modifiers": {
+        "interest_rate": 0.02,
+        "inflation": 0.03,
+        "foreign_investment": -0.05
+      },
+      "start": [
+        "TUR"
+      ],
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/2001_Turkish_economic_crisis",
+          "title": "Wikipedia: 2001 Turkish economic crisis",
+          "accessed": "2026-10-19"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "tur_eu_candidate",
+      "name": "EU candidate",
+      "description": "The European Union recognised Turkey as a candidate on 12 December 1999 at Helsinki.",
+      "kind": "strength",
+      "modifiers": {
+        "foreign_investment": 0.03,
+        "trade_efficiency": 0.02
+      },
+      "start": [
+        "TUR"
+      ],
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Accession_of_Turkey_to_the_European_Union",
+          "title": "Wikipedia: Accession of Turkey to the European Union",
+          "accessed": "2026-10-19"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "tur_pkk_insurgency",
+      "name": "PKK insurgency",
+      "description": "An insurgency by the Kurdistan Workers' Party in the south-east, with ceasefires from time to time.",
+      "kind": "problem",
+      "modifiers": {
+        "unrest": 0.02,
+        "stability_factor": -0.02
+      },
+      "start": [
+        "TUR"
+      ],
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Kurdistan_Workers'_Party",
+          "title": "Wikipedia: Kurdistan Workers' Party",
+          "accessed": "2026-10-19"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "tur_conscription",
+      "name": "Conscription",
+      "description": "Military service is compulsory for male citizens.",
+      "kind": "strength",
+      "modifiers": {
+        "manpower_factor": 0.05
+      },
+      "start": [
+        "TUR"
+      ],
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Conscription_in_Turkey",
+          "title": "Wikipedia: Conscription in Turkey",
+          "accessed": "2026-10-19"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "tur_stable_lira",
+      "name": "A stable lira",
+      "description": "Inflation is down and a new lira has replaced the old one.",
+      "kind": "strength",
+      "modifiers": {
+        "inflation": -0.01,
+        "foreign_investment": 0.05
+      }
+    },
+    {
+      "id": "tur_defence_industry",
+      "name": "National defence industry",
+      "description": "Drones, warships and armoured vehicles made at home.",
+      "kind": "strength",
+      "modifiers": {
+        "production_efficiency": 0.04,
+        "foreign_influence_resistance": 0.05
+      }
+    },
+    {
+      "id": "tur_presidential_system",
+      "name": "Presidential system",
+      "description": "An executive presidency without a prime minister.",
+      "kind": "policy",
+      "modifiers": {
+        "political_power_gain": 0.1,
+        "civil_liberties": -0.05
+      }
+    },
+    {
+      "id": "tur_earthquake_damage",
+      "name": "Earthquake damage",
+      "description": "Cities in the south-east were destroyed by the earthquakes of February 2023.",
+      "kind": "problem",
+      "modifiers": {
+        "production_efficiency": -0.03,
+        "stability_factor": -0.02
+      }
+    }
+  ]
+}

@@ -1,0 +1,73 @@
+{
+  "categories": [
+    {
+      "id": "pol_projects",
+      "name": "Polish state projects",
+      "description": "Projects that the national focuses open up."
+    }
+  ],
+  "decisions": [
+    {
+      "id": "pol_motorway_section",
+      "name": "Build a motorway section",
+      "description": "A new section of motorway with EU funds.",
+      "category": "pol_projects",
+      "countries": [
+        "POL"
+      ],
+      "visible": {
+        "has_completed_focus": "pol_motorways"
+      },
+      "available": {
+        "treasury_above": 0.5
+      },
+      "cost": {
+        "political_power": 25
+      },
+      "effects": [
+        {
+          "add_treasury": -0.5
+        },
+        {
+          "add_buildings": {
+            "building": "infrastructure",
+            "count": 2
+          }
+        }
+      ],
+      "cooldown_days": 365,
+      "ai_weight": 2
+    },
+    {
+      "id": "pol_arms_purchase",
+      "name": "Arms purchase",
+      "description": "Buy tanks, howitzers or aircraft.",
+      "category": "pol_projects",
+      "countries": [
+        "POL"
+      ],
+      "visible": {
+        "has_completed_focus": "pol_homeland_defence"
+      },
+      "available": {
+        "treasury_above": 1
+      },
+      "cost": {
+        "political_power": 30
+      },
+      "effects": [
+        {
+          "add_treasury": -1
+        },
+        {
+          "add_equipment": {
+            "family": "infantry_equipment",
+            "amount": 600
+          }
+        }
+      ],
+      "cooldown_days": 365,
+      "ai_weight": 2
+    }
+  ]
+}

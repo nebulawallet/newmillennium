@@ -4,340 +4,198 @@
   "countries": [
     "JPN"
   ],
-  "note": "Branches depend on the governing parties and office holders. Policies named after real reforms are cited; effects are gameplay estimates.",
+  "note": "Japan in the style of the Russian model tree: democratic government as the historical path and alternatives led by real parties of the data; economy (cleaning up the banks, postal privatisation, Abenomics), energy (Fukushima, restarts, LNG, solar), defence (the National Security Council, collective self-defence, missile defence) and foreign policy. Sourced starting spirits in data/spirits/jpn.json. Alternatives are a counterfactual.",
+  "source": [
+    {
+      "url": "https://en.wikipedia.org/wiki/Junichiro_Koizumi",
+      "title": "Wikipedia: Junichiro Koizumi",
+      "accessed": "2026-10-19"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Japan_Post_Holdings",
+      "title": "Wikipedia: Japan Post Holdings",
+      "accessed": "2026-10-19"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Lost_Decade_(Japan)",
+      "title": "Wikipedia: Lost Decade (Japan)",
+      "accessed": "2026-10-19"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Demographics_of_Japan",
+      "title": "Wikipedia: Demographics of Japan",
+      "accessed": "2026-10-19"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Article_9_of_the_Japanese_Constitution",
+      "title": "Wikipedia: Article 9 of the Japanese Constitution",
+      "accessed": "2026-10-19"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Treaty_of_Mutual_Cooperation_and_Security_between_the_United_States_and_Japan",
+      "title": "Wikipedia: Treaty of Mutual Cooperation and Security between the United States and Japan",
+      "accessed": "2026-10-19"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Abenomics",
+      "title": "Wikipedia: Abenomics",
+      "accessed": "2026-10-19"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/2011_Tōhoku_earthquake_and_tsunami",
+      "title": "Wikipedia: 2011 Tōhoku earthquake and tsunami",
+      "accessed": "2026-10-19"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Fukushima_nuclear_accident",
+      "title": "Wikipedia: Fukushima nuclear accident",
+      "accessed": "2026-10-19"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/2015_Japanese_military_legislation",
+      "title": "Wikipedia: 2015 Japanese military legislation",
+      "accessed": "2026-10-19"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Comprehensive_and_Progressive_Agreement_for_Trans-Pacific_Partnership",
+      "title": "Wikipedia: Comprehensive and Progressive Agreement for Trans-Pacific Partnership",
+      "accessed": "2026-10-19"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Defense_policy_of_Japan",
+      "title": "Wikipedia: Defense policy of Japan",
+      "accessed": "2026-10-19"
+    }
+  ],
+  "confidence": "verified",
   "focuses": [
     {
-      "id": "jpn_national_programme",
-      "name": "Revive the economy",
-      "description": "Lead Japan out of the long slowdown of the 1990s.",
-      "x": 8,
+      "id": "jpn_question_of_power",
+      "name": "The direction of the country",
+      "description": "Which camp governs the country.",
+      "x": 6,
       "y": 0,
       "days": 70,
       "effects": [
         {
-          "add_political_power": 50
-        },
-        {
-          "add_stability": 0.02
+          "add_political_power": 30
         }
-      ]
+      ],
+      "ai_weight": 5
     },
     {
-      "id": "jpn_defence_review",
-      "name": "Defence review",
-      "description": "Review strategy, forces and budgets for the new decade.",
-      "x": 11,
+      "id": "jpn_steady_course",
+      "name": "Democratic government",
+      "description": "Parties alternate in power through elections, as they historically did.",
+      "x": 0,
       "y": 1,
       "days": 70,
-      "effects": [
-        {
-          "add_war_support": 0.02
-        },
-        {
-          "add_interest_group_approval": {
-            "group": "military",
-            "value": 4
-          }
-        }
-      ],
       "prerequisites": [
         [
-          "jpn_national_programme"
-        ]
-      ]
-    },
-    {
-      "id": "jpn_modern_forces",
-      "name": "Modern forces",
-      "description": "Equip the armed forces with modern communications and precision weapons.",
-      "x": 11,
-      "y": 3,
-      "days": 105,
-      "effects": [
-        {
-          "add_timed_modifier": {
-            "modifier": "army_attack",
-            "value": 0.05,
-            "days": 3650
-          }
-        },
-        {
-          "add_timed_modifier": {
-            "modifier": "air_effectiveness",
-            "value": 0.05,
-            "days": 3650
-          }
-        },
-        {
-          "add_interest_group_approval": {
-            "group": "military",
-            "value": 3
-          }
-        }
-      ],
-      "prerequisites": [
-        [
-          "jpn_defence_review"
-        ]
-      ]
-    },
-    {
-      "id": "jpn_intelligence_services",
-      "name": "Intelligence services",
-      "description": "Expand the foreign and domestic intelligence services.",
-      "x": 12,
-      "y": 2,
-      "days": 70,
-      "effects": [
-        {
-          "add_timed_modifier": {
-            "modifier": "intelligence_power",
-            "value": 0.1,
-            "days": 3650
-          }
-        },
-        {
-          "add_interest_group_approval": {
-            "group": "security_services",
-            "value": 4
-          }
-        }
-      ],
-      "prerequisites": [
-        [
-          "jpn_defence_review"
-        ]
-      ]
-    },
-    {
-      "id": "jpn_foreign_policy",
-      "name": "Foreign policy priorities",
-      "description": "Set the course of foreign policy.",
-      "x": 14,
-      "y": 1,
-      "days": 70,
-      "effects": [
-        {
-          "add_timed_modifier": {
-            "modifier": "diplomatic_reputation",
-            "value": 0.05,
-            "days": 3650
-          }
-        },
-        {
-          "add_political_power": 20
-        }
-      ],
-      "prerequisites": [
-        [
-          "jpn_national_programme"
-        ]
-      ]
-    },
-    {
-      "id": "jpn_partners",
-      "name": "Closer ties with the United States and Asian neighbours",
-      "description": "Deepen political and economic ties with the United States and Asian neighbours.",
-      "x": 14,
-      "y": 2,
-      "days": 70,
-      "effects": [
-        {
-          "add_timed_modifier": {
-            "modifier": "bloc_integration",
-            "value": 0.1,
-            "days": 3650
-          }
-        },
-        {
-          "add_timed_modifier": {
-            "modifier": "trade_efficiency",
-            "value": 0.03,
-            "days": 3650
-          }
-        },
-        {
-          "country": {
-            "tag": "USA",
-            "effects": [
-              {
-                "add_opinion": {
-                  "target": "ROOT",
-                  "value": 15,
-                  "days": 3650
-                }
-              }
-            ]
-          }
-        },
-        {
-          "country": {
-            "tag": "KOR",
-            "effects": [
-              {
-                "add_opinion": {
-                  "target": "ROOT",
-                  "value": 15,
-                  "days": 3650
-                }
-              }
-            ]
-          }
-        }
-      ],
-      "prerequisites": [
-        [
-          "jpn_foreign_policy"
-        ]
-      ]
-    },
-    {
-      "id": "jpn_international_standing",
-      "name": "International standing",
-      "description": "Raise the country's profile in international institutions and summits.",
-      "x": 15,
-      "y": 3,
-      "days": 70,
-      "effects": [
-        {
-          "add_timed_modifier": {
-            "modifier": "diplomatic_reputation",
-            "value": 0.1,
-            "days": 3650
-          }
-        },
-        {
-          "add_timed_modifier": {
-            "modifier": "international_opinion",
-            "value": 0.05,
-            "days": 3650
-          }
-        }
-      ],
-      "prerequisites": [
-        [
-          "jpn_partners",
-          "jpn_own_course"
-        ]
-      ]
-    },
-    {
-      "id": "jpn_own_course",
-      "name": "An independent course",
-      "description": "Keep a free hand in foreign policy and trade.",
-      "x": 16,
-      "y": 2,
-      "days": 70,
-      "effects": [
-        {
-          "add_timed_modifier": {
-            "modifier": "foreign_influence_resistance",
-            "value": 0.1,
-            "days": 3650
-          }
-        },
-        {
-          "add_war_support": 0.02
-        }
-      ],
-      "prerequisites": [
-        [
-          "jpn_foreign_policy"
+          "jpn_question_of_power"
         ]
       ],
       "mutually_exclusive": [
-        "jpn_partners"
+        "jpn_conservative_turn",
+        "jpn_liberal_turn",
+        "jpn_left_turn",
+        "jpn_populist_turn",
+        "jpn_socialist_turn"
       ],
-      "ai_weight": 0.5
+      "available": {
+        "follows_history": true
+      },
+      "effects": [
+        {
+          "add_stability": 0.04
+        },
+        {
+          "add_political_power": 40
+        }
+      ],
+      "ai_weight": 20
     },
     {
-      "id": "jpn_economic_council",
-      "name": "Economic council",
-      "description": "Bring ministries, employers and unions together on economic priorities.",
-      "x": 5,
+      "id": "jpn_conservative_turn",
+      "name": "A conservative turn",
+      "description": "Conservative parties (the Liberal Democratic Party) gain on order, tax cuts and tradition.",
+      "x": 2,
       "y": 1,
       "days": 70,
-      "effects": [
-        {
-          "add_economic_mood": 0.03
-        },
-        {
-          "add_political_power": 15
-        }
-      ],
       "prerequisites": [
         [
-          "jpn_national_programme"
+          "jpn_question_of_power"
         ]
-      ]
-    },
-    {
-      "id": "jpn_infrastructure",
-      "name": "Infrastructure programme",
-      "description": "Invest in transport, power grids and communications.",
-      "x": 5,
-      "y": 3,
-      "days": 105,
-      "effects": [
-        {
-          "add_timed_modifier": {
-            "modifier": "construction_speed",
-            "value": 0.1,
-            "days": 3650
-          }
-        },
-        {
-          "add_economic_mood": 0.02
-        }
       ],
-      "prerequisites": [
-        [
-          "jpn_economic_council"
+      "mutually_exclusive": [
+        "jpn_steady_course",
+        "jpn_liberal_turn",
+        "jpn_left_turn",
+        "jpn_populist_turn",
+        "jpn_socialist_turn"
+      ],
+      "available": {
+        "all": [
+          {
+            "any": [
+              {
+                "follows_history": false
+              },
+              {
+                "is_player": true
+              }
+            ]
+          },
+          {
+            "has_party_of_group": "conservative"
+          },
+          {
+            "not": {
+              "ruling_ideology_group": "conservative"
+            }
+          },
+          {
+            "any": [
+              {
+                "stability_below": 0.6
+              },
+              {
+                "gdp_growth_below": 1.5
+              }
+            ]
+          }
         ]
-      ]
-    },
-    {
-      "id": "jpn_research_programme",
-      "name": "Research and innovation",
-      "description": "Fund universities, research institutes and new industries.",
-      "x": 6,
-      "y": 4,
-      "days": 105,
+      },
       "effects": [
         {
-          "add_timed_modifier": {
-            "modifier": "research_speed",
-            "value": 0.05,
-            "days": 3650
-          }
+          "leave_history": true
         },
         {
-          "add_timed_modifier": {
-            "modifier": "education_quality",
-            "value": 0.02,
-            "days": 3650
+          "add_ideology_support": {
+            "group": "conservative",
+            "value": 0.04
           }
         }
       ],
-      "prerequisites": [
-        [
-          "jpn_infrastructure"
-        ]
-      ]
+      "ai_weight": 0.3
     },
     {
-      "id": "jpn_structural_reform",
-      "name": "Structural reform",
-      "description": "Deal with bad bank debts and reform the public sector, as Prime Minister Junichiro Koizumi set out to do.",
-      "x": 1,
-      "y": 1,
+      "id": "jpn_conservative_turn_build",
+      "name": "Business and the countryside",
+      "description": "Business and rural voters rally to the right.",
+      "x": 2,
+      "y": 2,
       "days": 70,
+      "prerequisites": [
+        [
+          "jpn_conservative_turn"
+        ]
+      ],
       "effects": [
         {
-          "add_timed_modifier": {
-            "modifier": "private_sector_output",
-            "value": 0.03,
-            "days": 3650
+          "add_ideology_support": {
+            "group": "conservative",
+            "value": 0.05
           }
         },
         {
@@ -349,44 +207,778 @@
         {
           "add_interest_group_approval": {
             "group": "rural",
-            "value": -3
+            "value": 3
           }
         }
-      ],
+      ]
+    },
+    {
+      "id": "jpn_conservative_turn_government",
+      "name": "A conservative government",
+      "description": "The most popular conservative party leads the government.",
+      "x": 2,
+      "y": 3,
+      "days": 105,
       "prerequisites": [
         [
-          "jpn_national_programme"
+          "jpn_conservative_turn_build"
         ]
       ],
       "available": {
-        "holds_office": {
-          "person": "jpn.junichiro_koizumi",
-          "office": "jpn.prime_minister"
+        "ideology_group_support_above": {
+          "group": "conservative",
+          "value": 0.2
         }
       },
-      "ai_weight": 3
-    },
-    {
-      "id": "jpn_postal_privatisation",
-      "name": "Postal privatisation",
-      "description": "Privatise the postal savings system. Japan Post Holdings was founded in January 2006 and took over Japan Post's functions in October 2007.",
-      "x": 0,
-      "y": 2,
-      "days": 70,
       "effects": [
         {
-          "add_timed_modifier": {
-            "modifier": "foreign_investment",
-            "value": 0.03,
-            "days": 3650
+          "install_government": {
+            "ideology": "conservative"
+          }
+        },
+        {
+          "add_stability": -0.05
+        }
+      ]
+    },
+    {
+      "id": "jpn_fiscal_discipline",
+      "name": "Fiscal discipline",
+      "description": "Cut spending and taxes to balance the budget.",
+      "x": 2,
+      "y": 4,
+      "days": 70,
+      "prerequisites": [
+        [
+          "jpn_conservative_turn_government"
+        ]
+      ],
+      "effects": [
+        {
+          "add_spirit": "balanced_budget"
+        },
+        {
+          "set_budget": {
+            "spending": -1,
+            "revenue": -0.5
+          }
+        }
+      ]
+    },
+    {
+      "id": "jpn_liberal_turn",
+      "name": "A liberal turn",
+      "description": "Liberal parties (the Democratic Party of Japan and later the CDP and the DPFP) gain ground on reform and civil liberties.",
+      "x": 4,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "jpn_question_of_power"
+        ]
+      ],
+      "mutually_exclusive": [
+        "jpn_steady_course",
+        "jpn_conservative_turn",
+        "jpn_left_turn",
+        "jpn_populist_turn",
+        "jpn_socialist_turn"
+      ],
+      "available": {
+        "all": [
+          {
+            "any": [
+              {
+                "follows_history": false
+              },
+              {
+                "is_player": true
+              }
+            ]
+          },
+          {
+            "has_party_of_group": "liberal_democratic"
+          },
+          {
+            "not": {
+              "ruling_ideology_group": "liberal_democratic"
+            }
+          },
+          {
+            "any": [
+              {
+                "stability_below": 0.6
+              },
+              {
+                "ig_approval_below": {
+                  "group": "urban_middle_class",
+                  "value": 45
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "effects": [
+        {
+          "leave_history": true
+        },
+        {
+          "add_ideology_support": {
+            "group": "liberal_democratic",
+            "value": 0.04
+          }
+        }
+      ],
+      "ai_weight": 0.3
+    },
+    {
+      "id": "jpn_liberal_turn_build",
+      "name": "Reform agenda",
+      "description": "A programme of deregulation and civil liberties.",
+      "x": 4,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "jpn_liberal_turn"
+        ]
+      ],
+      "effects": [
+        {
+          "add_ideology_support": {
+            "group": "liberal_democratic",
+            "value": 0.05
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "urban_middle_class",
+            "value": 4
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "business",
+            "value": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "jpn_liberal_turn_government",
+      "name": "A liberal government",
+      "description": "The most popular liberal party leads the government.",
+      "x": 4,
+      "y": 3,
+      "days": 105,
+      "prerequisites": [
+        [
+          "jpn_liberal_turn_build"
+        ]
+      ],
+      "available": {
+        "ideology_group_support_above": {
+          "group": "liberal_democratic",
+          "value": 0.2
+        }
+      },
+      "effects": [
+        {
+          "install_government": {
+            "ideology": "liberal_democratic"
+          }
+        },
+        {
+          "add_stability": -0.05
+        }
+      ]
+    },
+    {
+      "id": "jpn_liberal_reforms",
+      "name": "Liberal reforms",
+      "description": "Cut red tape and open markets.",
+      "x": 4,
+      "y": 4,
+      "days": 70,
+      "prerequisites": [
+        [
+          "jpn_liberal_turn_government"
+        ]
+      ],
+      "effects": [
+        {
+          "change_law": {
+            "category": "trade",
+            "law": "free_trade"
           }
         },
         {
           "add_timed_modifier": {
             "modifier": "private_sector_output",
-            "value": 0.02,
-            "days": 3650
+            "value": 0.05,
+            "days": 2920
           }
+        },
+        {
+          "add_spirit": "open_society"
+        }
+      ]
+    },
+    {
+      "id": "jpn_left_turn",
+      "name": "A turn to the left",
+      "description": "Parties of the left (the Social Democratic Party) gain on wages, welfare and public services.",
+      "x": 6,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "jpn_question_of_power"
+        ]
+      ],
+      "mutually_exclusive": [
+        "jpn_steady_course",
+        "jpn_conservative_turn",
+        "jpn_liberal_turn",
+        "jpn_populist_turn",
+        "jpn_socialist_turn"
+      ],
+      "available": {
+        "all": [
+          {
+            "any": [
+              {
+                "follows_history": false
+              },
+              {
+                "is_player": true
+              }
+            ]
+          },
+          {
+            "has_party_of_group": "social_democratic"
+          },
+          {
+            "not": {
+              "ruling_ideology_group": "social_democratic"
+            }
+          },
+          {
+            "any": [
+              {
+                "gdp_growth_below": 1.5
+              },
+              {
+                "unrest_above": 0.15
+              },
+              {
+                "ig_approval_below": {
+                  "group": "labour_unions",
+                  "value": 45
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "effects": [
+        {
+          "leave_history": true
+        },
+        {
+          "add_ideology_support": {
+            "group": "social_democratic",
+            "value": 0.04
+          }
+        }
+      ],
+      "ai_weight": 0.3
+    },
+    {
+      "id": "jpn_left_turn_build",
+      "name": "Unions and voters",
+      "description": "Unions and young voters rally to the left.",
+      "x": 6,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "jpn_left_turn"
+        ]
+      ],
+      "effects": [
+        {
+          "add_ideology_support": {
+            "group": "social_democratic",
+            "value": 0.05
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "labour_unions",
+            "value": 5
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "youth_students",
+            "value": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "jpn_left_turn_government",
+      "name": "A left-wing government",
+      "description": "The most popular party of the democratic left leads the government.",
+      "x": 6,
+      "y": 3,
+      "days": 105,
+      "prerequisites": [
+        [
+          "jpn_left_turn_build"
+        ]
+      ],
+      "available": {
+        "ideology_group_support_above": {
+          "group": "social_democratic",
+          "value": 0.2
+        }
+      },
+      "effects": [
+        {
+          "install_government": {
+            "ideology": "social_democratic"
+          }
+        },
+        {
+          "add_stability": -0.05
+        }
+      ]
+    },
+    {
+      "id": "jpn_welfare_expansion",
+      "name": "Expand the welfare state",
+      "description": "Public health care and higher pensions.",
+      "x": 6,
+      "y": 4,
+      "days": 70,
+      "prerequisites": [
+        [
+          "jpn_left_turn_government"
+        ]
+      ],
+      "effects": [
+        {
+          "add_spirit": "universal_healthcare"
+        },
+        {
+          "set_budget": {
+            "spending": 1
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "labour_unions",
+            "value": 4
+          }
+        }
+      ]
+    },
+    {
+      "id": "jpn_populist_turn",
+      "name": "A populist wave",
+      "description": "National-populist parties (Nippon Ishin and Sanseito) gain on immigration and sovereignty.",
+      "x": 8,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "jpn_question_of_power"
+        ]
+      ],
+      "mutually_exclusive": [
+        "jpn_steady_course",
+        "jpn_conservative_turn",
+        "jpn_liberal_turn",
+        "jpn_left_turn",
+        "jpn_socialist_turn"
+      ],
+      "available": {
+        "all": [
+          {
+            "any": [
+              {
+                "follows_history": false
+              },
+              {
+                "is_player": true
+              }
+            ]
+          },
+          {
+            "has_party_of_group": "nationalist_populist"
+          },
+          {
+            "not": {
+              "ruling_ideology_group": "nationalist_populist"
+            }
+          },
+          {
+            "any": [
+              {
+                "stability_below": 0.5
+              },
+              {
+                "unrest_above": 0.15
+              }
+            ]
+          }
+        ]
+      },
+      "effects": [
+        {
+          "leave_history": true
+        },
+        {
+          "add_ideology_support": {
+            "group": "nationalist_populist",
+            "value": 0.04
+          }
+        }
+      ],
+      "ai_weight": 0.3
+    },
+    {
+      "id": "jpn_populist_turn_build",
+      "name": "Rallies and referendums",
+      "description": "Mass rallies and calls for referendums.",
+      "x": 8,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "jpn_populist_turn"
+        ]
+      ],
+      "effects": [
+        {
+          "add_ideology_support": {
+            "group": "nationalist_populist",
+            "value": 0.05
+          }
+        },
+        {
+          "add_war_support": 0.03
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "minorities",
+            "value": -4
+          }
+        }
+      ]
+    },
+    {
+      "id": "jpn_populist_turn_government",
+      "name": "A national-populist government",
+      "description": "The most popular national-populist party leads the government.",
+      "x": 8,
+      "y": 3,
+      "days": 105,
+      "prerequisites": [
+        [
+          "jpn_populist_turn_build"
+        ]
+      ],
+      "available": {
+        "ideology_group_support_above": {
+          "group": "nationalist_populist",
+          "value": 0.2
+        }
+      },
+      "effects": [
+        {
+          "install_government": {
+            "ideology": "nationalist_populist"
+          }
+        },
+        {
+          "add_stability": -0.05
+        }
+      ]
+    },
+    {
+      "id": "jpn_sovereignty_first",
+      "name": "Sovereignty first",
+      "description": "Restrict immigration and limit the power of international bodies.",
+      "x": 8,
+      "y": 4,
+      "days": 70,
+      "prerequisites": [
+        [
+          "jpn_populist_turn_government"
+        ]
+      ],
+      "effects": [
+        {
+          "change_law": {
+            "category": "immigration",
+            "law": "restrictive_immigration"
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "foreign_influence_resistance",
+            "value": 0.1,
+            "days": 2920
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "minorities",
+            "value": -6
+          }
+        }
+      ]
+    },
+    {
+      "id": "jpn_socialist_turn",
+      "name": "A socialist turn",
+      "description": "Socialist and communist parties (the Communist Party and Reiwa Shinsengumi) gain in a crisis.",
+      "x": 10,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "jpn_question_of_power"
+        ]
+      ],
+      "mutually_exclusive": [
+        "jpn_steady_course",
+        "jpn_conservative_turn",
+        "jpn_liberal_turn",
+        "jpn_left_turn",
+        "jpn_populist_turn"
+      ],
+      "available": {
+        "all": [
+          {
+            "any": [
+              {
+                "follows_history": false
+              },
+              {
+                "is_player": true
+              }
+            ]
+          },
+          {
+            "has_party_of_group": "socialist_communist"
+          },
+          {
+            "not": {
+              "ruling_ideology_group": "socialist_communist"
+            }
+          },
+          {
+            "any": [
+              {
+                "gdp_growth_below": 0.5
+              },
+              {
+                "unrest_above": 0.25
+              }
+            ]
+          }
+        ]
+      },
+      "effects": [
+        {
+          "leave_history": true
+        },
+        {
+          "add_ideology_support": {
+            "group": "socialist_communist",
+            "value": 0.04
+          }
+        }
+      ],
+      "ai_weight": 0.3
+    },
+    {
+      "id": "jpn_socialist_turn_build",
+      "name": "Strikes and occupations",
+      "description": "Strikes and workplace occupations.",
+      "x": 10,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "jpn_socialist_turn"
+        ]
+      ],
+      "effects": [
+        {
+          "add_ideology_support": {
+            "group": "socialist_communist",
+            "value": 0.05
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "labour_unions",
+            "value": 6
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "business",
+            "value": -4
+          }
+        }
+      ]
+    },
+    {
+      "id": "jpn_socialist_turn_government",
+      "name": "A socialist government",
+      "description": "The most popular socialist party leads the government.",
+      "x": 10,
+      "y": 3,
+      "days": 105,
+      "prerequisites": [
+        [
+          "jpn_socialist_turn_build"
+        ]
+      ],
+      "available": {
+        "ideology_group_support_above": {
+          "group": "socialist_communist",
+          "value": 0.25
+        }
+      },
+      "effects": [
+        {
+          "install_government": {
+            "ideology": "socialist_communist"
+          }
+        },
+        {
+          "add_stability": -0.05
+        }
+      ]
+    },
+    {
+      "id": "jpn_public_ownership",
+      "name": "Public ownership",
+      "description": "Nationalise the banks and the largest companies.",
+      "x": 10,
+      "y": 4,
+      "days": 70,
+      "prerequisites": [
+        [
+          "jpn_socialist_turn_government"
+        ]
+      ],
+      "effects": [
+        {
+          "change_law": {
+            "category": "economic_system",
+            "law": "state_capitalism"
+          }
+        },
+        {
+          "add_spirit": "state_planning"
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "business",
+            "value": -10
+          }
+        }
+      ]
+    },
+    {
+      "id": "jpn_economy",
+      "name": "Economic agenda",
+      "description": "Priorities for the Japanese economy.",
+      "x": 14,
+      "y": 0,
+      "days": 70,
+      "effects": [
+        {
+          "add_political_power": 20
+        }
+      ],
+      "ai_weight": 5
+    },
+    {
+      "id": "jpn_bank_cleanup",
+      "name": "Clean up the banks",
+      "description": "Write off bad loans left by the bubble.",
+      "x": 13,
+      "y": 1,
+      "days": 140,
+      "prerequisites": [
+        [
+          "jpn_economy"
+        ]
+      ],
+      "available": {
+        "treasury_above": 3
+      },
+      "effects": [
+        {
+          "swap_spirit": {
+            "from": "jpn_lost_decade",
+            "to": "balanced_budget"
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "business",
+            "value": 3
+          }
+        },
+        {
+          "add_treasury": -3
+        }
+      ],
+      "ai_weight": 4
+    },
+    {
+      "id": "jpn_postal_privatisation",
+      "name": "Postal privatisation",
+      "description": "Privatise the postal savings system; Japan Post Holdings was founded on 23 January 2006 and took over in October 2007.",
+      "x": 15,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "jpn_economy"
+        ]
+      ],
+      "available": {
+        "all": [
+          {
+            "follows_history": true
+          },
+          {
+            "date_after": "2006-01-23"
+          }
+        ]
+      },
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "private_sector_output",
+            "value": 0.03,
+            "days": 2920
+          }
+        },
+        {
+          "add_treasury": 5
         },
         {
           "add_interest_group_approval": {
@@ -395,186 +987,1128 @@
           }
         }
       ],
+      "ai_weight": 4
+    },
+    {
+      "id": "jpn_abenomics",
+      "name": "Abenomics",
+      "description": "Monetary easing, fiscal stimulus and structural reform from 2012.",
+      "x": 14,
+      "y": 2,
+      "days": 70,
       "prerequisites": [
         [
-          "jpn_structural_reform"
+          "jpn_bank_cleanup",
+          "jpn_postal_privatisation"
         ]
       ],
       "available": {
-        "holds_office": {
-          "person": "jpn.junichiro_koizumi",
-          "office": "jpn.prime_minister"
-        }
+        "all": [
+          {
+            "follows_history": true
+          },
+          {
+            "date_after": "2012-12-26"
+          }
+        ]
       },
-      "ai_weight": 2
+      "effects": [
+        {
+          "add_spirit": "jpn_abenomics"
+        },
+        {
+          "remove_spirit": "jpn_lost_decade"
+        }
+      ],
+      "ai_weight": 4
     },
     {
-      "id": "jpn_public_works",
-      "name": "Public works stimulus",
-      "description": "Spend on public works to support demand.",
-      "x": 3,
-      "y": 1,
+      "id": "jpn_womenomics",
+      "name": "Women at work",
+      "description": "Childcare places and support for working mothers.",
+      "x": 13,
+      "y": 3,
       "days": 70,
+      "prerequisites": [
+        [
+          "jpn_abenomics"
+        ]
+      ],
       "effects": [
         {
           "add_timed_modifier": {
-            "modifier": "construction_speed",
-            "value": 0.1,
+            "modifier": "population_growth",
+            "value": 0.001,
             "days": 3650
           }
         },
         {
-          "add_economic_mood": 0.03
+          "add_timed_modifier": {
+            "modifier": "manpower_factor",
+            "value": 0.01,
+            "days": 3650
+          }
+        }
+      ]
+    },
+    {
+      "id": "jpn_robotics",
+      "name": "Robots",
+      "description": "Robots for factories and care homes.",
+      "x": 15,
+      "y": 3,
+      "days": 70,
+      "prerequisites": [
+        [
+          "jpn_abenomics"
+        ]
+      ],
+      "effects": [
+        {
+          "add_research_bonus": {
+            "category": "electronics_cyber",
+            "value": 0.2,
+            "uses": 2
+          }
         },
+        {
+          "add_buildings": {
+            "building": "civilian_factory",
+            "count": 2
+          }
+        }
+      ]
+    },
+    {
+      "id": "jpn_tpp",
+      "name": "The Pacific trade agreement",
+      "description": "Join the trans-Pacific trade agreement signed on 4 February 2016.",
+      "x": 14,
+      "y": 3,
+      "days": 70,
+      "prerequisites": [
+        [
+          "jpn_abenomics"
+        ]
+      ],
+      "available": {
+        "date_after": "2016-02-04"
+      },
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "trade_efficiency",
+            "value": 0.04,
+            "days": 3650
+          }
+        },
+        {
+          "add_opinion": {
+            "target": "AUS",
+            "value": 5,
+            "days": 1825
+          }
+        },
+        {
+          "add_opinion": {
+            "target": "VNM",
+            "value": 5,
+            "days": 1825
+          }
+        }
+      ]
+    },
+    {
+      "id": "jpn_regional_revitalisation",
+      "name": "Revive the regions",
+      "description": "Money and jobs for the shrinking countryside. Unlocks regional projects.",
+      "x": 13,
+      "y": 4,
+      "days": 70,
+      "prerequisites": [
+        [
+          "jpn_womenomics"
+        ]
+      ],
+      "effects": [
         {
           "add_interest_group_approval": {
             "group": "rural",
             "value": 4
           }
-        }
-      ],
-      "prerequisites": [
-        [
-          "jpn_national_programme"
-        ]
-      ],
-      "available": {
-        "ruling_party": "jpn.ldp"
-      },
-      "ai_weight": 2
-    },
-    {
-      "id": "jpn_bank_cleanup",
-      "name": "Clean up the banks",
-      "description": "Force banks to write off bad loans.",
-      "x": 2,
-      "y": 2,
-      "days": 70,
-      "effects": [
-        {
-          "add_economic_mood": 0.03
         },
         {
-          "add_timed_modifier": {
-            "modifier": "interest_rate",
-            "value": -0.005,
-            "days": 3650
+          "add_buildings": {
+            "building": "infrastructure",
+            "count": 2
           }
         }
-      ],
-      "prerequisites": [
-        [
-          "jpn_structural_reform",
-          "jpn_public_works"
-        ]
       ]
     },
     {
-      "id": "jpn_electronics",
-      "name": "Electronics and robotics",
-      "description": "Lead in electronics, robotics and cars.",
-      "x": 7,
-      "y": 2,
+      "id": "jpn_chips",
+      "name": "Chip plants",
+      "description": "New semiconductor plants with foreign partners.",
+      "x": 15,
+      "y": 4,
+      "days": 70,
+      "prerequisites": [
+        [
+          "jpn_robotics"
+        ]
+      ],
+      "available": {
+        "date_after": "2021-01-01"
+      },
+      "effects": [
+        {
+          "add_buildings": {
+            "building": "civilian_factory",
+            "count": 2
+          }
+        },
+        {
+          "add_research_bonus": {
+            "category": "electronics_cyber",
+            "value": 0.25,
+            "uses": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "jpn_immigration_workers",
+      "name": "Foreign workers",
+      "description": "A visa programme for foreign workers.",
+      "x": 14,
+      "y": 4,
+      "days": 70,
+      "prerequisites": [
+        [
+          "jpn_tpp",
+          "jpn_womenomics"
+        ]
+      ],
+      "available": {
+        "date_after": "2019-04-01"
+      },
+      "effects": [
+        {
+          "change_law": {
+            "category": "immigration",
+            "law": "managed_immigration"
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "manpower_factor",
+            "value": 0.02,
+            "days": 3650
+          }
+        }
+      ]
+    },
+    {
+      "id": "jpn_energy",
+      "name": "Energy policy",
+      "description": "Japan's energy after the oil shocks and Fukushima.",
+      "x": 19,
+      "y": 0,
       "days": 70,
       "effects": [
         {
+          "add_political_power": 10
+        }
+      ],
+      "ai_weight": 4
+    },
+    {
+      "id": "jpn_fukushima",
+      "name": "After Fukushima",
+      "description": "Respond to the earthquake and tsunami of 11 March 2011 and the Fukushima Daiichi accident.",
+      "x": 18,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "jpn_energy"
+        ]
+      ],
+      "available": {
+        "date_after": "2011-03-11"
+      },
+      "effects": [
+        {
+          "add_spirit": "jpn_fukushima_recovery"
+        },
+        {
+          "add_spirit": "reconstruction_effort"
+        },
+        {
+          "add_buildings": {
+            "building": "infrastructure",
+            "count": 3
+          }
+        },
+        {
+          "add_treasury": -5
+        }
+      ],
+      "ai_weight": 6
+    },
+    {
+      "id": "jpn_reactor_restarts",
+      "name": "Restart the reactors",
+      "description": "Restart reactors that pass new safety checks. Unlocks restarts.",
+      "x": 18,
+      "y": 2,
+      "days": 140,
+      "prerequisites": [
+        [
+          "jpn_fukushima"
+        ]
+      ],
+      "available": {
+        "date_after": "2015-01-01"
+      },
+      "effects": [
+        {
+          "remove_spirit": "jpn_fukushima_recovery"
+        },
+        {
+          "add_unrest": 0.01
+        }
+      ]
+    },
+    {
+      "id": "jpn_lng_imports",
+      "name": "LNG imports",
+      "description": "Liquefied gas from Australia, Qatar and the United States.",
+      "x": 20,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "jpn_energy"
+        ]
+      ],
+      "effects": [
+        {
+          "add_buildings": {
+            "building": "port",
+            "count": 1
+          }
+        },
+        {
           "add_timed_modifier": {
-            "modifier": "research_speed",
+            "modifier": "energy_cost",
+            "value": -0.02,
+            "days": 2920
+          }
+        }
+      ]
+    },
+    {
+      "id": "jpn_solar_power",
+      "name": "Solar power",
+      "description": "Feed-in tariffs for solar power.",
+      "x": 19,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "jpn_fukushima",
+          "jpn_lng_imports"
+        ]
+      ],
+      "effects": [
+        {
+          "add_buildings": {
+            "building": "renewable_plant",
+            "count": 2
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "renewable_output",
+            "value": 0.1,
+            "days": 3650
+          }
+        }
+      ]
+    },
+    {
+      "id": "jpn_hydrogen",
+      "name": "Hydrogen society",
+      "description": "Hydrogen for cars and power.",
+      "x": 19,
+      "y": 3,
+      "days": 70,
+      "prerequisites": [
+        [
+          "jpn_solar_power",
+          "jpn_reactor_restarts"
+        ]
+      ],
+      "effects": [
+        {
+          "add_research_bonus": {
+            "category": "industry_energy",
+            "value": 0.25,
+            "uses": 2
+          }
+        }
+      ]
+    },
+    {
+      "id": "jpn_defence",
+      "name": "Defence policy",
+      "description": "The Self-Defense Forces and the alliance.",
+      "x": 24,
+      "y": 0,
+      "days": 70,
+      "effects": [
+        {
+          "add_interest_group_approval": {
+            "group": "military",
+            "value": 2
+          }
+        }
+      ],
+      "ai_weight": 4
+    },
+    {
+      "id": "jpn_security_council",
+      "name": "A National Security Council",
+      "description": "Set up a National Security Council, as Japan did on 4 December 2013.",
+      "x": 23,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "jpn_defence"
+        ]
+      ],
+      "available": {
+        "date_after": "2013-12-04"
+      },
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "intelligence_power",
+            "value": 0.05,
+            "days": 3650
+          }
+        },
+        {
+          "add_political_power": 20
+        }
+      ]
+    },
+    {
+      "id": "jpn_missile_defence",
+      "name": "Missile defence",
+      "description": "Missile defence against ballistic missiles.",
+      "x": 25,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "jpn_defence"
+        ]
+      ],
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "army_defence",
+            "value": 0.03,
+            "days": 3650
+          }
+        },
+        {
+          "add_research_bonus": {
+            "category": "artillery_missiles",
+            "value": 0.2,
+            "uses": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "jpn_security_legislation",
+      "name": "Collective self-defence",
+      "description": "Laws that allow collective self-defence in certain situations, in effect from March 2016.",
+      "x": 23,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "jpn_security_council"
+        ]
+      ],
+      "available": {
+        "all": [
+          {
+            "follows_history": true
+          },
+          {
+            "date_after": "2015-09-19"
+          }
+        ]
+      },
+      "effects": [
+        {
+          "swap_spirit": {
+            "from": "jpn_article_9",
+            "to": "jpn_collective_self_defence"
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "youth_students",
+            "value": -4
+          }
+        }
+      ],
+      "ai_weight": 4
+    },
+    {
+      "id": "jpn_southwest_islands",
+      "name": "Defend the south-west islands",
+      "description": "Bases and missiles on the islands near Taiwan.",
+      "x": 24,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "jpn_missile_defence",
+          "jpn_security_council"
+        ]
+      ],
+      "available": {
+        "date_after": "2016-01-01"
+      },
+      "effects": [
+        {
+          "add_buildings": {
+            "building": "air_base",
+            "count": 1
+          }
+        },
+        {
+          "add_buildings": {
+            "building": "port",
+            "count": 1
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "army_defence",
+            "value": 0.02,
+            "days": 3650
+          }
+        }
+      ]
+    },
+    {
+      "id": "jpn_cyber_defence",
+      "name": "Cyber defence",
+      "description": "A cyber defence command.",
+      "x": 25,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "jpn_missile_defence"
+        ]
+      ],
+      "available": {
+        "date_after": "2019-01-01"
+      },
+      "effects": [
+        {
+          "add_research_bonus": {
+            "category": "electronics_cyber",
+            "value": 0.2,
+            "uses": 2
+          }
+        }
+      ]
+    },
+    {
+      "id": "jpn_counterstrike",
+      "name": "Counterstrike capability",
+      "description": "Long-range missiles and a larger defence budget.",
+      "x": 24,
+      "y": 3,
+      "days": 70,
+      "prerequisites": [
+        [
+          "jpn_security_legislation",
+          "jpn_southwest_islands"
+        ]
+      ],
+      "available": {
+        "date_after": "2022-12-01"
+      },
+      "effects": [
+        {
+          "add_research_bonus": {
+            "category": "artillery_missiles",
+            "value": 0.25,
+            "uses": 2
+          }
+        },
+        {
+          "add_buildings": {
+            "building": "military_factory",
+            "count": 2
+          }
+        }
+      ]
+    },
+    {
+      "id": "jpn_defence_exports",
+      "name": "Defence exports",
+      "description": "Allow arms exports to partners.",
+      "x": 23,
+      "y": 3,
+      "days": 70,
+      "prerequisites": [
+        [
+          "jpn_security_legislation"
+        ]
+      ],
+      "effects": [
+        {
+          "add_treasury": 1
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "foreign_influence_power",
+            "value": 0.03,
+            "days": 2920
+          }
+        }
+      ]
+    },
+    {
+      "id": "jpn_foreign_policy",
+      "name": "Foreign policy",
+      "description": "Japan in Asia and the world.",
+      "x": 29,
+      "y": 0,
+      "days": 70,
+      "effects": [
+        {
+          "add_political_power": 20
+        }
+      ],
+      "ai_weight": 4
+    },
+    {
+      "id": "jpn_us_alliance",
+      "name": "Strengthen the alliance",
+      "description": "Closer cooperation with the United States.",
+      "x": 28,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "jpn_foreign_policy"
+        ]
+      ],
+      "effects": [
+        {
+          "add_opinion": {
+            "target": "USA",
+            "value": 15,
+            "days": 1825
+          }
+        }
+      ]
+    },
+    {
+      "id": "jpn_china_trade",
+      "name": "Trade with China",
+      "description": "Trade and investment with China.",
+      "x": 30,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "jpn_foreign_policy"
+        ]
+      ],
+      "effects": [
+        {
+          "add_opinion": {
+            "target": "CHN",
+            "value": 10,
+            "days": 1825
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "trade_efficiency",
+            "value": 0.02,
+            "days": 2920
+          }
+        }
+      ]
+    },
+    {
+      "id": "jpn_quad",
+      "name": "The Quad",
+      "description": "A security dialogue with the United States, India and Australia.",
+      "x": 28,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "jpn_us_alliance"
+        ]
+      ],
+      "effects": [
+        {
+          "add_opinion": {
+            "target": "IND",
+            "value": 10,
+            "days": 1825
+          }
+        },
+        {
+          "add_opinion": {
+            "target": "AUS",
+            "value": 10,
+            "days": 1825
+          }
+        }
+      ]
+    },
+    {
+      "id": "jpn_korea_relations",
+      "name": "Relations with South Korea",
+      "description": "Mend relations with South Korea.",
+      "x": 30,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "jpn_china_trade"
+        ]
+      ],
+      "effects": [
+        {
+          "add_opinion": {
+            "target": "KOR",
+            "value": 15,
+            "days": 1825
+          }
+        }
+      ]
+    },
+    {
+      "id": "jpn_asean_aid",
+      "name": "Aid to South-East Asia",
+      "description": "Development aid and infrastructure in South-East Asia.",
+      "x": 29,
+      "y": 3,
+      "days": 70,
+      "prerequisites": [
+        [
+          "jpn_quad",
+          "jpn_korea_relations"
+        ]
+      ],
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "foreign_influence_power",
+            "value": 0.05,
+            "days": 2920
+          }
+        },
+        {
+          "add_treasury": -1
+        }
+      ]
+    },
+    {
+      "id": "jpn_society",
+      "name": "Society and science",
+      "description": "Health, schools, research and the infrastructure of everyday life.",
+      "x": 34,
+      "y": 0,
+      "days": 70,
+      "effects": [
+        {
+          "add_political_power": 20
+        }
+      ],
+      "ai_weight": 3
+    },
+    {
+      "id": "jpn_health_investment",
+      "name": "Invest in hospitals",
+      "description": "New hospitals and more doctors.",
+      "x": 32,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "jpn_society"
+        ]
+      ],
+      "available": {
+        "treasury_above": 1
+      },
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "health_outcomes",
             "value": 0.04,
             "days": 3650
           }
         },
         {
+          "add_treasury": -1
+        }
+      ]
+    },
+    {
+      "id": "jpn_schools_investment",
+      "name": "Invest in schools",
+      "description": "Smaller classes and better-paid teachers.",
+      "x": 34,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "jpn_society"
+        ]
+      ],
+      "effects": [
+        {
           "add_timed_modifier": {
-            "modifier": "production_efficiency",
+            "modifier": "education_quality",
+            "value": 0.04,
+            "days": 3650
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "youth_students",
+            "value": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "jpn_research_agency",
+      "name": "A research agency",
+      "description": "Grants for breakthrough research.",
+      "x": 36,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "jpn_society"
+        ]
+      ],
+      "effects": [
+        {
+          "add_spirit": "science_drive"
+        },
+        {
+          "add_research_bonus": {
+            "category": "industry_energy",
+            "value": 0.2,
+            "uses": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "jpn_elderly_care",
+      "name": "Care for the elderly",
+      "description": "Care homes and home care for an ageing population.",
+      "x": 32,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "jpn_health_investment"
+        ]
+      ],
+      "effects": [
+        {
+          "set_budget": {
+            "spending": 0.3
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "rural",
+            "value": 2
+          }
+        },
+        {
+          "add_stability": 0.01
+        }
+      ]
+    },
+    {
+      "id": "jpn_universities",
+      "name": "Leading universities",
+      "description": "Funding for the top universities.",
+      "x": 34,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "jpn_schools_investment",
+          "jpn_research_agency"
+        ]
+      ],
+      "effects": [
+        {
+          "add_research_bonus": {
+            "category": "economy_digital",
+            "value": 0.2,
+            "uses": 2
+          }
+        }
+      ]
+    },
+    {
+      "id": "jpn_ai_and_computing",
+      "name": "Artificial intelligence and computing",
+      "description": "Supercomputers and data centres.",
+      "x": 36,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "jpn_research_agency"
+        ]
+      ],
+      "available": {
+        "date_after": "2015-01-01"
+      },
+      "effects": [
+        {
+          "add_buildings": {
+            "building": "data_centre",
+            "count": 2
+          }
+        },
+        {
+          "add_research_bonus": {
+            "category": "electronics_cyber",
+            "value": 0.2,
+            "uses": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "jpn_affordable_housing",
+      "name": "Affordable housing",
+      "description": "Build homes the young can afford.",
+      "x": 32,
+      "y": 3,
+      "days": 70,
+      "prerequisites": [
+        [
+          "jpn_elderly_care"
+        ]
+      ],
+      "available": {
+        "treasury_above": 1
+      },
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "construction_speed",
+            "value": 0.05,
+            "days": 2920
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "youth_students",
+            "value": 3
+          }
+        },
+        {
+          "add_treasury": -1
+        }
+      ]
+    },
+    {
+      "id": "jpn_broadband",
+      "name": "Broadband everywhere",
+      "description": "Fast internet in every town and village.",
+      "x": 34,
+      "y": 3,
+      "days": 70,
+      "prerequisites": [
+        [
+          "jpn_universities"
+        ]
+      ],
+      "effects": [
+        {
+          "add_buildings": {
+            "building": "data_centre",
+            "count": 1
+          }
+        },
+        {
+          "add_buildings": {
+            "building": "infrastructure",
+            "count": 1
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "rural",
+            "value": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "jpn_space_and_satellites",
+      "name": "Space and satellites",
+      "description": "Satellites for navigation and observation.",
+      "x": 36,
+      "y": 3,
+      "days": 70,
+      "prerequisites": [
+        [
+          "jpn_ai_and_computing"
+        ]
+      ],
+      "effects": [
+        {
+          "add_research_bonus": {
+            "category": "air_drones",
+            "value": 0.15,
+            "uses": 1
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "intelligence_power",
             "value": 0.03,
             "days": 3650
           }
         }
-      ],
-      "prerequisites": [
-        [
-          "jpn_economic_council"
-        ]
       ]
     },
     {
-      "id": "jpn_ageing_society",
-      "name": "An ageing society",
-      "description": "Prepare pensions and care for an ageing population.",
-      "x": 8,
-      "y": 3,
+      "id": "jpn_public_transport",
+      "name": "Public transport",
+      "description": "Trams, metros and regional trains.",
+      "x": 32,
+      "y": 4,
       "days": 70,
+      "prerequisites": [
+        [
+          "jpn_affordable_housing"
+        ]
+      ],
       "effects": [
         {
-          "add_timed_modifier": {
-            "modifier": "welfare_cost",
-            "value": 0.02,
-            "days": 3650
+          "add_buildings": {
+            "building": "infrastructure",
+            "count": 2
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "urban_middle_class",
+            "value": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "jpn_digital_state",
+      "name": "A digital state",
+      "description": "Public services online.",
+      "x": 34,
+      "y": 4,
+      "days": 70,
+      "prerequisites": [
+        [
+          "jpn_broadband"
+        ]
+      ],
+      "effects": [
+        {
+          "add_spirit": "digital_government"
+        }
+      ]
+    },
+    {
+      "id": "jpn_biotech",
+      "name": "Biotechnology",
+      "description": "Vaccines and medicines made at home.",
+      "x": 36,
+      "y": 4,
+      "days": 70,
+      "prerequisites": [
+        [
+          "jpn_space_and_satellites"
+        ]
+      ],
+      "effects": [
+        {
+          "add_buildings": {
+            "building": "civilian_factory",
+            "count": 1
           }
         },
         {
           "add_timed_modifier": {
             "modifier": "health_outcomes",
-            "value": 0.03,
-            "days": 3650
-          }
-        },
-        {
-          "add_timed_modifier": {
-            "modifier": "immigration",
             "value": 0.02,
             "days": 3650
           }
         }
-      ],
-      "prerequisites": [
-        [
-          "jpn_electronics"
-        ]
       ]
     },
     {
-      "id": "jpn_self_defence_forces",
-      "name": "Self-Defense Forces",
-      "description": "Modernise the Self-Defense Forces within the constitution.",
-      "x": 10,
-      "y": 2,
+      "id": "jpn_climate_adaptation",
+      "name": "Climate adaptation",
+      "description": "Flood defences and water management.",
+      "x": 34,
+      "y": 5,
       "days": 70,
+      "prerequisites": [
+        [
+          "jpn_public_transport",
+          "jpn_digital_state",
+          "jpn_biotech"
+        ]
+      ],
+      "available": {
+        "date_after": "2010-01-01"
+      },
       "effects": [
         {
-          "add_timed_modifier": {
-            "modifier": "air_effectiveness",
-            "value": 0.04,
-            "days": 3650
+          "add_buildings": {
+            "building": "infrastructure",
+            "count": 1
           }
         },
         {
-          "add_timed_modifier": {
-            "modifier": "naval_effectiveness",
-            "value": 0.04,
-            "days": 3650
-          }
+          "add_stability": 0.01
         }
-      ],
-      "prerequisites": [
-        [
-          "jpn_defence_review"
-        ]
       ]
     }
-  ],
-  "source": [
-    {
-      "url": "https://en.wikipedia.org/wiki/Junichiro_Koizumi",
-      "title": "Wikipedia: Junichiro Koizumi",
-      "accessed": "2026-10-15"
-    },
-    {
-      "url": "https://en.wikipedia.org/wiki/Japan_Post_Holdings",
-      "title": "Wikipedia: Japan Post Holdings",
-      "accessed": "2026-10-15"
-    }
-  ],
-  "confidence": "verified"
+  ]
 }

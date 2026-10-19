@@ -1,0 +1,222 @@
+{
+  "id": "tal",
+  "name": "Taliban",
+  "countries": [
+    "TAL"
+  ],
+  "note": "A short tree for the Taliban insurgency (2002-2021): organisation, forces and negotiations. Neutral and descriptive; the history is scripted in the conflict events.",
+  "source": [
+    {
+      "url": "https://en.wikipedia.org/wiki/Taliban",
+      "title": "Wikipedia: Taliban",
+      "accessed": "2026-10-19"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Islamic_Emirate_of_Afghanistan",
+      "title": "Wikipedia: Islamic Emirate of Afghanistan",
+      "accessed": "2026-10-19"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Doha_Agreement_(2020)",
+      "title": "Wikipedia: Doha Agreement (2020)",
+      "accessed": "2026-10-19"
+    }
+  ],
+  "confidence": "verified",
+  "focuses": [
+    {
+      "id": "tal_regroup",
+      "name": "Regroup",
+      "description": "Rebuild the movement's leadership and networks after 2001.",
+      "x": 2,
+      "y": 0,
+      "days": 70,
+      "effects": [
+        {
+          "add_political_power": 30
+        }
+      ],
+      "ai_weight": 5
+    },
+    {
+      "id": "tal_shadow_government",
+      "name": "Shadow governors",
+      "description": "Shadow governors and courts in the provinces.",
+      "x": 1,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "tal_regroup"
+        ]
+      ],
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "tax_efficiency",
+            "value": 0.05,
+            "days": 1460
+          }
+        },
+        {
+          "add_stability": 0.02
+        }
+      ]
+    },
+    {
+      "id": "tal_rural_base",
+      "name": "A rural base",
+      "description": "Win support in the villages of the south and east.",
+      "x": 3,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "tal_regroup"
+        ]
+      ],
+      "effects": [
+        {
+          "add_divisions": {
+            "template": "infantry_division",
+            "count": 1
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "rural",
+            "value": 5
+          }
+        }
+      ]
+    },
+    {
+      "id": "tal_fighters",
+      "name": "Recruit fighters",
+      "description": "Recruit and train fighters.",
+      "x": 1,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "tal_shadow_government"
+        ]
+      ],
+      "effects": [
+        {
+          "add_divisions": {
+            "template": "infantry_division",
+            "count": 2
+          }
+        }
+      ]
+    },
+    {
+      "id": "tal_weapons",
+      "name": "Weapons",
+      "description": "Acquire weapons and explosives.",
+      "x": 3,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "tal_rural_base"
+        ]
+      ],
+      "effects": [
+        {
+          "add_equipment": {
+            "family": "infantry_equipment",
+            "amount": 500
+          }
+        }
+      ]
+    },
+    {
+      "id": "tal_spring_offensives",
+      "name": "Spring offensives",
+      "description": "Yearly offensives against district centres.",
+      "x": 2,
+      "y": 3,
+      "days": 70,
+      "prerequisites": [
+        [
+          "tal_fighters",
+          "tal_weapons"
+        ]
+      ],
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "army_attack",
+            "value": 0.03,
+            "days": 1460
+          }
+        },
+        {
+          "add_war_support": 0.05
+        }
+      ]
+    },
+    {
+      "id": "tal_doha_office",
+      "name": "The Doha office",
+      "description": "A political office in Qatar for talks.",
+      "x": 2,
+      "y": 4,
+      "days": 70,
+      "prerequisites": [
+        [
+          "tal_spring_offensives"
+        ]
+      ],
+      "available": {
+        "date_after": "2013-01-01"
+      },
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "diplomatic_reputation",
+            "value": 0.05,
+            "days": 1460
+          }
+        },
+        {
+          "add_opinion": {
+            "target": "QAT",
+            "value": 10,
+            "days": 1825
+          }
+        }
+      ]
+    },
+    {
+      "id": "tal_doha_agreement",
+      "name": "The Doha Agreement",
+      "description": "An agreement with the United States, signed on 29 February 2020, on the withdrawal of foreign troops.",
+      "x": 2,
+      "y": 5,
+      "days": 70,
+      "prerequisites": [
+        [
+          "tal_doha_office"
+        ]
+      ],
+      "available": {
+        "date_after": "2020-02-29"
+      },
+      "effects": [
+        {
+          "add_opinion": {
+            "target": "USA",
+            "value": 10,
+            "days": 1825
+          }
+        },
+        {
+          "add_war_support": 0.05
+        }
+      ]
+    }
+  ]
+}

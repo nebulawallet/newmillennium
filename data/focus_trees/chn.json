@@ -4,97 +4,177 @@
   "countries": [
     "CHN"
   ],
-  "note": "Branches depend on the governing parties and office holders. Policies named after real reforms are cited; effects are gameplay estimates.",
+  "note": "China in the style of the Russian model tree: Party leadership as the historical path, a democratic transition led by a real party of the data (the China Democracy Party) and a junta as alternatives; economy (WTO, Western Development, the 2008 stimulus, high-speed rail, Made in China 2025), society (the one-, two- and three-child policies, hukou reform), military and foreign policy (Belt and Road). Sourced starting spirits in data/spirits/chn.json. Alternatives are a counterfactual.",
+  "source": [
+    {
+      "url": "https://en.wikipedia.org/wiki/Three_Represents",
+      "title": "Wikipedia: Three Represents",
+      "accessed": "2026-10-19"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/China_Western_Development",
+      "title": "Wikipedia: China Western Development",
+      "accessed": "2026-10-19"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Go_Out_policy",
+      "title": "Wikipedia: Go Out policy",
+      "accessed": "2026-10-19"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/One-child_policy",
+      "title": "Wikipedia: One-child policy",
+      "accessed": "2026-10-19"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Hukou_system",
+      "title": "Wikipedia: Hukou system",
+      "accessed": "2026-10-19"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Economy_of_China",
+      "title": "Wikipedia: Economy of China",
+      "accessed": "2026-10-19"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Made_in_China_2025",
+      "title": "Wikipedia: Made in China 2025",
+      "accessed": "2026-10-19"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/China_and_the_World_Trade_Organization",
+      "title": "Wikipedia: China and the World Trade Organization",
+      "accessed": "2026-10-19"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Three_Gorges_Dam",
+      "title": "Wikipedia: Three Gorges Dam",
+      "accessed": "2026-10-19"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/2008_Chinese_economic_stimulus_plan",
+      "title": "Wikipedia: 2008 Chinese economic stimulus plan",
+      "accessed": "2026-10-19"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/High-speed_rail_in_China",
+      "title": "Wikipedia: High-speed rail in China",
+      "accessed": "2026-10-19"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/2008_Summer_Olympics",
+      "title": "Wikipedia: 2008 Summer Olympics",
+      "accessed": "2026-10-19"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Belt_and_Road_Initiative",
+      "title": "Wikipedia: Belt and Road Initiative",
+      "accessed": "2026-10-19"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Two-child_policy",
+      "title": "Wikipedia: Two-child policy",
+      "accessed": "2026-10-19"
+    }
+  ],
+  "confidence": "verified",
   "focuses": [
     {
-      "id": "chn_national_programme",
-      "name": "Reform and opening up",
-      "description": "Continue the policy of reform and opening up.",
-      "x": 8,
+      "id": "chn_question_of_power",
+      "name": "The leading role of the Party",
+      "description": "Whether the Party's rule continues as it is or changes.",
+      "x": 4,
       "y": 0,
       "days": 70,
       "effects": [
         {
-          "add_political_power": 50
-        },
-        {
-          "add_stability": 0.02
+          "add_political_power": 30
         }
-      ]
+      ],
+      "ai_weight": 5
     },
     {
-      "id": "chn_defence_review",
-      "name": "Defence review",
-      "description": "Review strategy, forces and budgets for the new decade.",
-      "x": 11,
+      "id": "chn_steady_course",
+      "name": "Party leadership",
+      "description": "The Communist Party leads the state, as it historically did.",
+      "x": 1,
       "y": 1,
       "days": 70,
-      "effects": [
-        {
-          "add_war_support": 0.02
-        },
-        {
-          "add_interest_group_approval": {
-            "group": "military",
-            "value": 4
-          }
-        }
-      ],
       "prerequisites": [
         [
-          "chn_national_programme"
+          "chn_question_of_power"
         ]
-      ]
-    },
-    {
-      "id": "chn_modern_forces",
-      "name": "Modern forces",
-      "description": "Equip the armed forces with modern communications and precision weapons.",
-      "x": 11,
-      "y": 3,
-      "days": 105,
+      ],
+      "mutually_exclusive": [
+        "chn_democracy_movement",
+        "chn_army_steps_in"
+      ],
+      "available": {
+        "follows_history": true
+      },
       "effects": [
         {
-          "add_timed_modifier": {
-            "modifier": "army_attack",
-            "value": 0.05,
-            "days": 3650
-          }
+          "add_stability": 0.04
         },
         {
-          "add_timed_modifier": {
-            "modifier": "air_effectiveness",
-            "value": 0.05,
-            "days": 3650
-          }
-        },
-        {
-          "add_interest_group_approval": {
-            "group": "military",
-            "value": 3
-          }
+          "add_political_power": 40
         }
       ],
-      "prerequisites": [
-        [
-          "chn_defence_review"
-        ]
-      ]
+      "ai_weight": 20
     },
     {
-      "id": "chn_intelligence_services",
-      "name": "Intelligence services",
-      "description": "Expand the foreign and domestic intelligence services.",
-      "x": 12,
+      "id": "chn_three_represents",
+      "name": "The Three Represents",
+      "description": "Admit new social groups to the Party. Jiang Zemin introduced the Three Represents on 25 February 2000.",
+      "x": 0,
       "y": 2,
       "days": 70,
+      "prerequisites": [
+        [
+          "chn_steady_course"
+        ]
+      ],
+      "available": {
+        "all": [
+          {
+            "follows_history": true
+          },
+          {
+            "date_after": "2000-02-25"
+          }
+        ]
+      },
       "effects": [
         {
-          "add_timed_modifier": {
-            "modifier": "intelligence_power",
-            "value": 0.1,
-            "days": 3650
+          "add_interest_group_approval": {
+            "group": "business",
+            "value": 6
           }
+        },
+        {
+          "add_political_power": 20
+        }
+      ],
+      "ai_weight": 4
+    },
+    {
+      "id": "chn_anti_corruption",
+      "name": "Discipline in the Party",
+      "description": "A campaign against corruption among officials.",
+      "x": 2,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "chn_steady_course"
+        ]
+      ],
+      "available": {
+        "date_after": "2012-11-15"
+      },
+      "effects": [
+        {
+          "add_spirit": "anti_corruption_campaign"
         },
         {
           "add_interest_group_approval": {
@@ -103,224 +183,331 @@
           }
         }
       ],
-      "prerequisites": [
-        [
-          "chn_defence_review"
-        ]
-      ]
+      "ai_weight": 3
     },
     {
-      "id": "chn_foreign_policy",
-      "name": "Foreign policy priorities",
-      "description": "Set the course of foreign policy.",
-      "x": 14,
-      "y": 1,
+      "id": "chn_social_credit",
+      "name": "Credit records",
+      "description": "National credit records for companies and people.",
+      "x": 1,
+      "y": 3,
       "days": 70,
+      "prerequisites": [
+        [
+          "chn_three_represents",
+          "chn_anti_corruption"
+        ]
+      ],
+      "available": {
+        "date_after": "2014-01-01"
+      },
       "effects": [
         {
           "add_timed_modifier": {
-            "modifier": "diplomatic_reputation",
+            "modifier": "internal_security",
             "value": 0.05,
             "days": 3650
           }
         },
         {
-          "add_political_power": 20
-        }
-      ],
-      "prerequisites": [
-        [
-          "chn_national_programme"
-        ]
-      ]
-    },
-    {
-      "id": "chn_partners",
-      "name": "Closer ties with our neighbours",
-      "description": "Deepen political and economic ties with our neighbours.",
-      "x": 14,
-      "y": 2,
-      "days": 70,
-      "effects": [
-        {
           "add_timed_modifier": {
-            "modifier": "bloc_integration",
-            "value": 0.1,
-            "days": 3650
-          }
-        },
-        {
-          "add_timed_modifier": {
-            "modifier": "trade_efficiency",
+            "modifier": "tax_efficiency",
             "value": 0.03,
             "days": 3650
           }
         },
         {
-          "country": {
-            "tag": "RUS",
-            "effects": [
-              {
-                "add_opinion": {
-                  "target": "ROOT",
-                  "value": 15,
-                  "days": 3650
-                }
-              }
-            ]
+          "add_interest_group_approval": {
+            "group": "youth_students",
+            "value": -3
           }
         }
-      ],
-      "prerequisites": [
-        [
-          "chn_foreign_policy"
-        ]
       ]
     },
     {
-      "id": "chn_international_standing",
-      "name": "International standing",
-      "description": "Raise the country's profile in international institutions and summits.",
-      "x": 15,
-      "y": 3,
+      "id": "chn_democracy_movement",
+      "name": "A democracy movement",
+      "description": "Liberal dissidents such as the China Democracy Party win a following in a crisis.",
+      "x": 4,
+      "y": 1,
       "days": 70,
-      "effects": [
-        {
-          "add_timed_modifier": {
-            "modifier": "diplomatic_reputation",
-            "value": 0.1,
-            "days": 3650
-          }
-        },
-        {
-          "add_timed_modifier": {
-            "modifier": "international_opinion",
-            "value": 0.05,
-            "days": 3650
-          }
-        }
-      ],
       "prerequisites": [
         [
-          "chn_partners",
-          "chn_own_course"
-        ]
-      ]
-    },
-    {
-      "id": "chn_own_course",
-      "name": "An independent course",
-      "description": "Keep a free hand in foreign policy and trade.",
-      "x": 16,
-      "y": 2,
-      "days": 70,
-      "effects": [
-        {
-          "add_timed_modifier": {
-            "modifier": "foreign_influence_resistance",
-            "value": 0.1,
-            "days": 3650
-          }
-        },
-        {
-          "add_war_support": 0.02
-        }
-      ],
-      "prerequisites": [
-        [
-          "chn_foreign_policy"
+          "chn_question_of_power"
         ]
       ],
       "mutually_exclusive": [
-        "chn_partners"
+        "chn_steady_course",
+        "chn_army_steps_in"
       ],
-      "ai_weight": 0.5
+      "available": {
+        "all": [
+          {
+            "any": [
+              {
+                "follows_history": false
+              },
+              {
+                "is_player": true
+              }
+            ]
+          },
+          {
+            "has_party_of_group": "liberal_democratic"
+          },
+          {
+            "stability_below": 0.3
+          }
+        ]
+      },
+      "effects": [
+        {
+          "leave_history": true
+        },
+        {
+          "add_ideology_support": {
+            "group": "liberal_democratic",
+            "value": 0.04
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "youth_students",
+            "value": 5
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "security_services",
+            "value": -8
+          }
+        }
+      ],
+      "ai_weight": 0.1
     },
     {
-      "id": "chn_economic_council",
-      "name": "Economic council",
-      "description": "Bring ministries, employers and unions together on economic priorities.",
-      "x": 5,
+      "id": "chn_democracy_wall",
+      "name": "Free speech",
+      "description": "Allow open debate and independent newspapers.",
+      "x": 4,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "chn_democracy_movement"
+        ]
+      ],
+      "effects": [
+        {
+          "add_ideology_support": {
+            "group": "liberal_democratic",
+            "value": 0.06
+          }
+        },
+        {
+          "change_law": {
+            "category": "press_freedom",
+            "law": "regulated_press"
+          }
+        }
+      ]
+    },
+    {
+      "id": "chn_democratic_transition",
+      "name": "A democratic transition",
+      "description": "The most popular liberal party forms a transitional government and calls free elections.",
+      "x": 4,
+      "y": 3,
+      "days": 140,
+      "prerequisites": [
+        [
+          "chn_democracy_wall"
+        ]
+      ],
+      "available": {
+        "ideology_group_support_above": {
+          "group": "liberal_democratic",
+          "value": 0.2
+        }
+      },
+      "effects": [
+        {
+          "install_government": {
+            "ideology": "liberal_democratic",
+            "government_type": "transitional_administration"
+          }
+        },
+        {
+          "change_law": {
+            "category": "political_freedom",
+            "law": "free_elections"
+          }
+        },
+        {
+          "add_stability": -0.08
+        }
+      ]
+    },
+    {
+      "id": "chn_federal_china",
+      "name": "A federal China",
+      "description": "Autonomy for the provinces and regions.",
+      "x": 4,
+      "y": 4,
+      "days": 70,
+      "prerequisites": [
+        [
+          "chn_democratic_transition"
+        ]
+      ],
+      "effects": [
+        {
+          "add_spirit": "open_society"
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "minorities",
+            "value": 8
+          }
+        }
+      ]
+    },
+    {
+      "id": "chn_army_steps_in",
+      "name": "The army steps in",
+      "description": "In a crisis the generals prepare to take over.",
+      "x": 6,
       "y": 1,
       "days": 70,
+      "prerequisites": [
+        [
+          "chn_question_of_power"
+        ]
+      ],
+      "mutually_exclusive": [
+        "chn_steady_course",
+        "chn_democracy_movement"
+      ],
+      "available": {
+        "all": [
+          {
+            "any": [
+              {
+                "follows_history": false
+              },
+              {
+                "is_player": true
+              }
+            ]
+          },
+          {
+            "stability_below": 0.2
+          },
+          {
+            "unrest_above": 0.5
+          }
+        ]
+      },
       "effects": [
+        {
+          "leave_history": true
+        },
+        {
+          "add_interest_group_influence": {
+            "group": "military",
+            "value": 0.08
+          }
+        }
+      ],
+      "ai_weight": 0.05
+    },
+    {
+      "id": "chn_military_council",
+      "name": "Military council",
+      "description": "The army removes the government. The coup may fail.",
+      "x": 6,
+      "y": 2,
+      "days": 35,
+      "prerequisites": [
+        [
+          "chn_army_steps_in"
+        ]
+      ],
+      "effects": [
+        {
+          "trigger_coup": {
+            "by": "military",
+            "success_chance": 0.5
+          }
+        }
+      ]
+    },
+    {
+      "id": "chn_martial_order",
+      "name": "Martial order",
+      "description": "A state of emergency and military rule.",
+      "x": 6,
+      "y": 3,
+      "days": 70,
+      "prerequisites": [
+        [
+          "chn_military_council"
+        ]
+      ],
+      "available": {
+        "government_type": "military_junta"
+      },
+      "effects": [
+        {
+          "add_spirit": "military_rule"
+        },
+        {
+          "add_unrest": -0.08
+        }
+      ]
+    },
+    {
+      "id": "chn_reform_and_opening",
+      "name": "Reform and opening up",
+      "description": "Continue the policy of reform and opening up.",
+      "x": 10,
+      "y": 0,
+      "days": 70,
+      "effects": [
+        {
+          "add_political_power": 30
+        },
         {
           "add_economic_mood": 0.03
-        },
-        {
-          "add_political_power": 15
         }
       ],
-      "prerequisites": [
-        [
-          "chn_national_programme"
-        ]
-      ]
+      "ai_weight": 5
     },
     {
-      "id": "chn_infrastructure",
-      "name": "Infrastructure programme",
-      "description": "Invest in transport, power grids and communications.",
-      "x": 5,
-      "y": 3,
-      "days": 105,
-      "effects": [
-        {
-          "add_timed_modifier": {
-            "modifier": "construction_speed",
-            "value": 0.1,
-            "days": 3650
-          }
-        },
-        {
-          "add_economic_mood": 0.02
-        }
-      ],
-      "prerequisites": [
-        [
-          "chn_economic_council"
-        ]
-      ]
-    },
-    {
-      "id": "chn_research_programme",
-      "name": "Research and innovation",
-      "description": "Fund universities, research institutes and new industries.",
-      "x": 6,
-      "y": 4,
-      "days": 105,
-      "effects": [
-        {
-          "add_timed_modifier": {
-            "modifier": "research_speed",
-            "value": 0.05,
-            "days": 3650
-          }
-        },
-        {
-          "add_timed_modifier": {
-            "modifier": "education_quality",
-            "value": 0.02,
-            "days": 3650
-          }
-        }
-      ],
-      "prerequisites": [
-        [
-          "chn_infrastructure"
-        ]
-      ]
-    },
-    {
-      "id": "chn_three_represents",
-      "name": "The Three Represents",
-      "description": "Admit new social groups to the Party. Jiang Zemin introduced the Three Represents on 25 February 2000.",
-      "x": 1,
+      "id": "chn_wto_entry",
+      "name": "Join the World Trade Organization",
+      "description": "China joined the WTO on 11 December 2001 after lengthy negotiations.",
+      "x": 8,
       "y": 1,
       "days": 70,
+      "prerequisites": [
+        [
+          "chn_reform_and_opening"
+        ]
+      ],
+      "available": {
+        "all": [
+          {
+            "follows_history": true
+          },
+          {
+            "date_after": "2001-12-11"
+          }
+        ]
+      },
       "effects": [
         {
-          "add_political_power": 40
+          "add_spirit": "chn_wto_member"
         },
         {
           "add_interest_group_approval": {
@@ -329,38 +516,1681 @@
           }
         },
         {
-          "add_stability": 0.02
+          "add_interest_group_approval": {
+            "group": "rural",
+            "value": -3
+          }
         }
       ],
+      "ai_weight": 6
+    },
+    {
+      "id": "chn_state_enterprise_reform",
+      "name": "State enterprise reform",
+      "description": "Restructure loss-making state enterprises.",
+      "x": 10,
+      "y": 1,
+      "days": 70,
       "prerequisites": [
         [
-          "chn_national_programme"
+          "chn_reform_and_opening"
         ]
       ],
-      "available": {
-        "ruling_party": "chn.ccp"
-      },
-      "ai_weight": 3
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "state_industry_output",
+            "value": 0.04,
+            "days": 2920
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "labour_unions",
+            "value": -5
+          }
+        },
+        {
+          "add_buildings": {
+            "building": "civilian_factory",
+            "count": 2
+          }
+        }
+      ]
     },
     {
       "id": "chn_western_development",
       "name": "Western Development",
-      "description": "Invest in the western provinces. The State Council set up a leading group for Western China development in January 2000.",
-      "x": 0,
-      "y": 2,
-      "days": 105,
+      "description": "Invest in the western provinces and regions to reduce the gap with the coast.",
+      "x": 12,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "chn_reform_and_opening"
+        ]
+      ],
       "effects": [
         {
-          "add_timed_modifier": {
-            "modifier": "construction_speed",
-            "value": 0.1,
-            "days": 3650
+          "add_buildings": {
+            "building": "infrastructure",
+            "count": 4
+          }
+        },
+        {
+          "add_buildings": {
+            "building": "civilian_factory",
+            "count": 2
           }
         },
         {
           "add_interest_group_approval": {
             "group": "minorities",
-            "value": 2
+            "value": 3
+          }
+        }
+      ],
+      "ai_weight": 4
+    },
+    {
+      "id": "chn_export_zones",
+      "name": "Coastal export zones",
+      "description": "Expand export manufacturing on the coast.",
+      "x": 8,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "chn_wto_entry"
+        ]
+      ],
+      "effects": [
+        {
+          "add_buildings": {
+            "building": "civilian_factory",
+            "count": 4
+          }
+        },
+        {
+          "add_buildings": {
+            "building": "port",
+            "count": 2
+          }
+        }
+      ]
+    },
+    {
+      "id": "chn_go_out",
+      "name": "Go Out",
+      "description": "Encourage Chinese companies to invest abroad.",
+      "x": 10,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "chn_state_enterprise_reform"
+        ]
+      ],
+      "available": {
+        "treasury_above": 2
+      },
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "foreign_influence_power",
+            "value": 0.05,
+            "days": 2920
+          }
+        },
+        {
+          "add_treasury": -2
+        }
+      ]
+    },
+    {
+      "id": "chn_three_gorges",
+      "name": "Three Gorges Dam",
+      "description": "Finish the dam on the Yangtze, the largest power station in the world; the dam body was completed in 2006.",
+      "x": 12,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "chn_western_development"
+        ]
+      ],
+      "available": {
+        "date_after": "2006-01-01"
+      },
+      "effects": [
+        {
+          "add_buildings": {
+            "building": "renewable_plant",
+            "count": 3
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "energy_cost",
+            "value": -0.04,
+            "days": 3650
+          }
+        }
+      ],
+      "ai_weight": 4
+    },
+    {
+      "id": "chn_stimulus_2008",
+      "name": "The 2008 stimulus",
+      "description": "A stimulus of 4 trillion yuan against the global recession, announced on 9 November 2008.",
+      "x": 9,
+      "y": 3,
+      "days": 70,
+      "prerequisites": [
+        [
+          "chn_export_zones",
+          "chn_go_out"
+        ]
+      ],
+      "available": {
+        "all": [
+          {
+            "date_after": "2008-11-09"
+          },
+          {
+            "treasury_above": 10
+          }
+        ]
+      },
+      "effects": [
+        {
+          "add_buildings": {
+            "building": "infrastructure",
+            "count": 6
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "gdp_growth",
+            "value": 0.01,
+            "days": 1095
+          }
+        },
+        {
+          "add_spirit": "chn_debt_overhang"
+        },
+        {
+          "add_treasury": -10
+        }
+      ],
+      "ai_weight": 4
+    },
+    {
+      "id": "chn_high_speed_rail",
+      "name": "High-speed rail",
+      "description": "Build the world's longest high-speed rail network. Unlocks new lines.",
+      "x": 11,
+      "y": 3,
+      "days": 70,
+      "prerequisites": [
+        [
+          "chn_three_gorges",
+          "chn_go_out"
+        ]
+      ],
+      "available": {
+        "date_after": "2007-01-01"
+      },
+      "effects": [
+        {
+          "add_buildings": {
+            "building": "infrastructure",
+            "count": 5
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "trade_efficiency",
+            "value": 0.03,
+            "days": 3650
+          }
+        }
+      ]
+    },
+    {
+      "id": "chn_deleveraging",
+      "name": "Control local debt",
+      "description": "Rein in borrowing by local governments.",
+      "x": 9,
+      "y": 4,
+      "days": 140,
+      "prerequisites": [
+        [
+          "chn_stimulus_2008"
+        ]
+      ],
+      "available": {
+        "has_spirit": "chn_debt_overhang"
+      },
+      "effects": [
+        {
+          "remove_spirit": "chn_debt_overhang"
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "gdp_growth",
+            "value": -0.002,
+            "days": 1095
+          }
+        }
+      ],
+      "ai_weight": 3
+    },
+    {
+      "id": "chn_made_in_china_2025",
+      "name": "Made in China 2025",
+      "description": "An industrial plan, signed in May 2015, to move up from cheap manufacturing to high technology. Unlocks a state technology fund.",
+      "x": 11,
+      "y": 4,
+      "days": 70,
+      "prerequisites": [
+        [
+          "chn_high_speed_rail"
+        ]
+      ],
+      "available": {
+        "date_after": "2015-05-01"
+      },
+      "effects": [
+        {
+          "swap_spirit": {
+            "from": "chn_worlds_factory",
+            "to": "chn_high_tech_industry"
+          }
+        },
+        {
+          "add_research_bonus": {
+            "category": "electronics_cyber",
+            "value": 0.25,
+            "uses": 2
+          }
+        },
+        {
+          "add_buildings": {
+            "building": "data_centre",
+            "count": 2
+          }
+        }
+      ],
+      "ai_weight": 4
+    },
+    {
+      "id": "chn_electric_vehicles",
+      "name": "Electric vehicles",
+      "description": "Subsidies for electric cars and batteries.",
+      "x": 10,
+      "y": 5,
+      "days": 70,
+      "prerequisites": [
+        [
+          "chn_made_in_china_2025",
+          "chn_deleveraging"
+        ]
+      ],
+      "effects": [
+        {
+          "add_buildings": {
+            "building": "civilian_factory",
+            "count": 3
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "renewable_output",
+            "value": 0.1,
+            "days": 3650
+          }
+        }
+      ]
+    },
+    {
+      "id": "chn_domestic_demand",
+      "name": "Domestic demand first",
+      "description": "Rely more on domestic consumption and self-reliance.",
+      "x": 12,
+      "y": 5,
+      "days": 70,
+      "prerequisites": [
+        [
+          "chn_made_in_china_2025"
+        ]
+      ],
+      "available": {
+        "date_after": "2020-01-01"
+      },
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "foreign_influence_resistance",
+            "value": 0.08,
+            "days": 3650
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "private_sector_output",
+            "value": 0.03,
+            "days": 2920
+          }
+        }
+      ]
+    },
+    {
+      "id": "chn_solar_and_wind",
+      "name": "Solar and wind",
+      "description": "The largest solar and wind build-out in the world.",
+      "x": 11,
+      "y": 6,
+      "days": 70,
+      "prerequisites": [
+        [
+          "chn_electric_vehicles",
+          "chn_domestic_demand"
+        ]
+      ],
+      "effects": [
+        {
+          "add_buildings": {
+            "building": "renewable_plant",
+            "count": 4
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "energy_cost",
+            "value": -0.03,
+            "days": 3650
+          }
+        }
+      ]
+    },
+    {
+      "id": "chn_social_policy",
+      "name": "A moderately prosperous society",
+      "description": "Health, schools and pensions for everyone.",
+      "x": 16,
+      "y": 0,
+      "days": 70,
+      "effects": [
+        {
+          "add_political_power": 20
+        }
+      ],
+      "ai_weight": 4
+    },
+    {
+      "id": "chn_rural_health",
+      "name": "Rural health insurance",
+      "description": "Health insurance for the countryside.",
+      "x": 15,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "chn_social_policy"
+        ]
+      ],
+      "available": {
+        "treasury_above": 1
+      },
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "health_outcomes",
+            "value": 0.04,
+            "days": 3650
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "rural",
+            "value": 5
+          }
+        },
+        {
+          "add_treasury": -1
+        }
+      ]
+    },
+    {
+      "id": "chn_hukou_reform",
+      "name": "Hukou reform",
+      "description": "Let migrant workers register in the cities where they work.",
+      "x": 17,
+      "y": 1,
+      "days": 140,
+      "prerequisites": [
+        [
+          "chn_social_policy"
+        ]
+      ],
+      "available": {
+        "date_after": "2014-01-01"
+      },
+      "effects": [
+        {
+          "remove_spirit": "chn_hukou"
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "urban_middle_class",
+            "value": 3
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "rural",
+            "value": 4
+          }
+        }
+      ],
+      "ai_weight": 3
+    },
+    {
+      "id": "chn_two_child_policy",
+      "name": "Two-child policy",
+      "description": "Allow two children per family, as from 2016.",
+      "x": 15,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "chn_rural_health"
+        ]
+      ],
+      "available": {
+        "date_after": "2016-01-01"
+      },
+      "effects": [
+        {
+          "swap_spirit": {
+            "from": "chn_one_child_policy",
+            "to": "chn_two_child_policy"
+          }
+        }
+      ],
+      "ai_weight": 4
+    },
+    {
+      "id": "chn_three_child_policy",
+      "name": "Three-child policy",
+      "description": "Allow three children per family, as from 2021.",
+      "x": 15,
+      "y": 3,
+      "days": 70,
+      "prerequisites": [
+        [
+          "chn_two_child_policy"
+        ]
+      ],
+      "available": {
+        "date_after": "2021-01-01"
+      },
+      "effects": [
+        {
+          "remove_spirit": "chn_two_child_policy"
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "population_growth",
+            "value": 0.001,
+            "days": 3650
+          }
+        }
+      ],
+      "ai_weight": 3
+    },
+    {
+      "id": "chn_universities",
+      "name": "World-class universities",
+      "description": "Fund leading universities.",
+      "x": 17,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "chn_hukou_reform",
+          "chn_social_policy"
+        ]
+      ],
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "education_quality",
+            "value": 0.04,
+            "days": 3650
+          }
+        },
+        {
+          "add_research_bonus": {
+            "category": "economy_digital",
+            "value": 0.2,
+            "uses": 2
+          }
+        }
+      ]
+    },
+    {
+      "id": "chn_beijing_olympics",
+      "name": "The Beijing Olympics",
+      "description": "Host the Olympic Games in Beijing, 8 to 24 August 2008.",
+      "x": 16,
+      "y": 3,
+      "days": 70,
+      "prerequisites": [
+        [
+          "chn_universities",
+          "chn_rural_health"
+        ]
+      ],
+      "available": {
+        "all": [
+          {
+            "date_after": "2008-08-08"
+          },
+          {
+            "date_before": "2009-06-01"
+          }
+        ]
+      },
+      "effects": [
+        {
+          "add_stability": 0.03
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "diplomatic_reputation",
+            "value": 0.05,
+            "days": 1460
+          }
+        },
+        {
+          "add_buildings": {
+            "building": "infrastructure",
+            "count": 2
+          }
+        }
+      ],
+      "ai_weight": 4
+    },
+    {
+      "id": "chn_space_programme",
+      "name": "Space programme",
+      "description": "Crewed flights, a space station and lunar probes.",
+      "x": 17,
+      "y": 3,
+      "days": 70,
+      "prerequisites": [
+        [
+          "chn_universities"
+        ]
+      ],
+      "effects": [
+        {
+          "add_research_bonus": {
+            "category": "air_drones",
+            "value": 0.2,
+            "uses": 2
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "diplomatic_reputation",
+            "value": 0.03,
+            "days": 2920
+          }
+        }
+      ]
+    },
+    {
+      "id": "chn_pensions",
+      "name": "Pensions for all",
+      "description": "A basic pension for rural and urban residents.",
+      "x": 16,
+      "y": 4,
+      "days": 70,
+      "prerequisites": [
+        [
+          "chn_beijing_olympics",
+          "chn_three_child_policy"
+        ]
+      ],
+      "effects": [
+        {
+          "add_interest_group_approval": {
+            "group": "rural",
+            "value": 4
+          }
+        },
+        {
+          "set_budget": {
+            "spending": 0.5
+          }
+        }
+      ]
+    },
+    {
+      "id": "chn_military_modernisation",
+      "name": "Military modernisation",
+      "description": "Shift the armed forces from numbers to technology.",
+      "x": 21,
+      "y": 0,
+      "days": 70,
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "army_org",
+            "value": 0.03,
+            "days": 2920
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "military",
+            "value": 4
+          }
+        }
+      ],
+      "ai_weight": 4
+    },
+    {
+      "id": "chn_navy",
+      "name": "A blue-water navy",
+      "description": "Aircraft carriers, destroyers and submarines.",
+      "x": 19,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "chn_military_modernisation"
+        ]
+      ],
+      "effects": [
+        {
+          "add_buildings": {
+            "building": "port",
+            "count": 2
+          }
+        },
+        {
+          "add_research_bonus": {
+            "category": "naval",
+            "value": 0.25,
+            "uses": 2
+          }
+        },
+        {
+          "add_buildings": {
+            "building": "military_factory",
+            "count": 2
+          }
+        }
+      ]
+    },
+    {
+      "id": "chn_rocket_force",
+      "name": "Missile forces",
+      "description": "Expand the missile forces.",
+      "x": 21,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "chn_military_modernisation"
+        ]
+      ],
+      "effects": [
+        {
+          "add_research_bonus": {
+            "category": "artillery_missiles",
+            "value": 0.25,
+            "uses": 2
+          }
+        }
+      ]
+    },
+    {
+      "id": "chn_air_force",
+      "name": "A modern air force",
+      "description": "Stealth fighters and modern air bases.",
+      "x": 23,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "chn_military_modernisation"
+        ]
+      ],
+      "effects": [
+        {
+          "add_buildings": {
+            "building": "air_base",
+            "count": 2
+          }
+        },
+        {
+          "add_research_bonus": {
+            "category": "air_drones",
+            "value": 0.2,
+            "uses": 2
+          }
+        }
+      ]
+    },
+    {
+      "id": "chn_defence_industry",
+      "name": "Defence industry",
+      "description": "Large state defence corporations.",
+      "x": 21,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "chn_navy",
+          "chn_rocket_force",
+          "chn_air_force"
+        ]
+      ],
+      "effects": [
+        {
+          "add_buildings": {
+            "building": "military_factory",
+            "count": 4
+          }
+        },
+        {
+          "add_equipment": {
+            "family": "infantry_equipment",
+            "amount": 3000
+          }
+        }
+      ]
+    },
+    {
+      "id": "chn_army_reform",
+      "name": "Theatre commands",
+      "description": "Reorganise the army into joint theatre commands.",
+      "x": 19,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "chn_navy"
+        ]
+      ],
+      "available": {
+        "date_after": "2015-01-01"
+      },
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "army_org",
+            "value": 0.04,
+            "days": 3650
+          }
+        },
+        {
+          "add_research_bonus": {
+            "category": "doctrine",
+            "value": 0.25,
+            "uses": 2
+          }
+        }
+      ]
+    },
+    {
+      "id": "chn_cyber_force",
+      "name": "Cyber and space forces",
+      "description": "A force for cyber, space and electronic warfare.",
+      "x": 23,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "chn_air_force"
+        ]
+      ],
+      "available": {
+        "date_after": "2015-01-01"
+      },
+      "effects": [
+        {
+          "add_research_bonus": {
+            "category": "electronics_cyber",
+            "value": 0.25,
+            "uses": 2
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "intelligence_power",
+            "value": 0.05,
+            "days": 3650
+          }
+        }
+      ]
+    },
+    {
+      "id": "chn_south_china_sea",
+      "name": "Bases in the South China Sea",
+      "description": "Build up reefs into bases.",
+      "x": 20,
+      "y": 3,
+      "days": 70,
+      "prerequisites": [
+        [
+          "chn_army_reform",
+          "chn_defence_industry"
+        ]
+      ],
+      "available": {
+        "date_after": "2013-01-01"
+      },
+      "effects": [
+        {
+          "add_buildings": {
+            "building": "air_base",
+            "count": 1
+          }
+        },
+        {
+          "add_buildings": {
+            "building": "port",
+            "count": 1
+          }
+        },
+        {
+          "add_opinion": {
+            "target": "VNM",
+            "value": -15,
+            "days": 1825
+          }
+        },
+        {
+          "add_opinion": {
+            "target": "PHL",
+            "value": -15,
+            "days": 1825
+          }
+        }
+      ]
+    },
+    {
+      "id": "chn_overseas_base",
+      "name": "An overseas base",
+      "description": "A support base abroad for the navy.",
+      "x": 22,
+      "y": 3,
+      "days": 70,
+      "prerequisites": [
+        [
+          "chn_defence_industry",
+          "chn_cyber_force"
+        ]
+      ],
+      "available": {
+        "date_after": "2016-01-01"
+      },
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "foreign_influence_power",
+            "value": 0.05,
+            "days": 3650
+          }
+        }
+      ]
+    },
+    {
+      "id": "chn_reunification_drills",
+      "name": "Pressure on Taiwan",
+      "description": "Large exercises around Taiwan and a claim on the island.",
+      "x": 21,
+      "y": 4,
+      "days": 70,
+      "prerequisites": [
+        [
+          "chn_south_china_sea",
+          "chn_overseas_base"
+        ]
+      ],
+      "available": {
+        "date_after": "2016-01-01"
+      },
+      "effects": [
+        {
+          "add_claim": {
+            "regions": [
+              {
+                "from": "TWN"
+              }
+            ]
+          }
+        },
+        {
+          "add_opinion": {
+            "target": "TWN",
+            "value": -20,
+            "days": 1825
+          }
+        },
+        {
+          "add_opinion": {
+            "target": "USA",
+            "value": -10,
+            "days": 1825
+          }
+        },
+        {
+          "add_war_support": 0.05
+        }
+      ]
+    },
+    {
+      "id": "chn_foreign_policy",
+      "name": "Foreign policy",
+      "description": "China's place in the world.",
+      "x": 27,
+      "y": 0,
+      "days": 70,
+      "effects": [
+        {
+          "add_political_power": 20
+        }
+      ],
+      "ai_weight": 4
+    },
+    {
+      "id": "chn_good_neighbours",
+      "name": "Good neighbours",
+      "description": "Settle borders and expand trade with the neighbours.",
+      "x": 25,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "chn_foreign_policy"
+        ]
+      ],
+      "effects": [
+        {
+          "add_opinion": {
+            "target": "RUS",
+            "value": 10,
+            "days": 1825
+          }
+        },
+        {
+          "add_opinion": {
+            "target": "KAZ",
+            "value": 10,
+            "days": 1825
+          }
+        },
+        {
+          "add_opinion": {
+            "target": "VNM",
+            "value": 5,
+            "days": 1825
+          }
+        }
+      ]
+    },
+    {
+      "id": "chn_sco",
+      "name": "Shanghai Cooperation Organisation",
+      "description": "Security cooperation with Russia and Central Asia.",
+      "x": 27,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "chn_foreign_policy"
+        ]
+      ],
+      "effects": [
+        {
+          "add_opinion": {
+            "target": "RUS",
+            "value": 10,
+            "days": 1825
+          }
+        },
+        {
+          "add_opinion": {
+            "target": "UZB",
+            "value": 10,
+            "days": 1825
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "bloc_integration",
+            "value": 0.05,
+            "days": 2920
+          }
+        }
+      ]
+    },
+    {
+      "id": "chn_africa_ties",
+      "name": "China and Africa",
+      "description": "Loans, trade and infrastructure in Africa.",
+      "x": 29,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "chn_foreign_policy"
+        ]
+      ],
+      "available": {
+        "treasury_above": 1
+      },
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "foreign_influence_power",
+            "value": 0.05,
+            "days": 2920
+          }
+        },
+        {
+          "add_treasury": -1
+        }
+      ]
+    },
+    {
+      "id": "chn_belt_and_road",
+      "name": "Belt and Road Initiative",
+      "description": "Infrastructure across Asia, Africa and Europe, announced in 2013. Unlocks overseas projects.",
+      "x": 27,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "chn_good_neighbours",
+          "chn_sco",
+          "chn_africa_ties"
+        ]
+      ],
+      "available": {
+        "all": [
+          {
+            "date_after": "2013-09-01"
+          },
+          {
+            "treasury_above": 3
+          }
+        ]
+      },
+      "effects": [
+        {
+          "add_spirit": "chn_belt_and_road"
+        },
+        {
+          "add_treasury": -3
+        }
+      ],
+      "ai_weight": 4
+    },
+    {
+      "id": "chn_russia_partnership",
+      "name": "Partnership with Russia",
+      "description": "Energy, arms and diplomacy with Russia.",
+      "x": 25,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "chn_good_neighbours",
+          "chn_sco"
+        ]
+      ],
+      "effects": [
+        {
+          "add_opinion": {
+            "target": "RUS",
+            "value": 15,
+            "days": 1825
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "energy_cost",
+            "value": -0.02,
+            "days": 2920
+          }
+        }
+      ]
+    },
+    {
+      "id": "chn_asian_bank",
+      "name": "An Asian development bank",
+      "description": "A new development bank for Asia's infrastructure.",
+      "x": 29,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "chn_africa_ties"
+        ]
+      ],
+      "available": {
+        "date_after": "2015-01-01"
+      },
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "diplomatic_reputation",
+            "value": 0.04,
+            "days": 3650
+          }
+        },
+        {
+          "add_treasury": -1
+        }
+      ]
+    },
+    {
+      "id": "chn_global_development",
+      "name": "Global initiatives",
+      "description": "Development and security initiatives for the Global South.",
+      "x": 27,
+      "y": 3,
+      "days": 70,
+      "prerequisites": [
+        [
+          "chn_belt_and_road",
+          "chn_asian_bank"
+        ]
+      ],
+      "available": {
+        "date_after": "2021-01-01"
+      },
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "foreign_influence_power",
+            "value": 0.05,
+            "days": 3650
+          }
+        }
+      ]
+    },
+    {
+      "id": "chn_trade_war",
+      "name": "Answer the trade war",
+      "description": "Tariffs and controls in response to US tariffs.",
+      "x": 25,
+      "y": 3,
+      "days": 70,
+      "prerequisites": [
+        [
+          "chn_russia_partnership"
+        ]
+      ],
+      "available": {
+        "date_after": "2018-06-01"
+      },
+      "effects": [
+        {
+          "add_opinion": {
+            "target": "USA",
+            "value": -15,
+            "days": 1825
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "foreign_influence_resistance",
+            "value": 0.05,
+            "days": 2920
+          }
+        }
+      ]
+    },
+    {
+      "id": "chn_pearl_river_delta",
+      "name": "The Pearl River Delta",
+      "description": "Factories and ports around Guangzhou and Shenzhen.",
+      "x": 7,
+      "y": 3,
+      "days": 70,
+      "prerequisites": [
+        [
+          "chn_export_zones"
+        ]
+      ],
+      "effects": [
+        {
+          "add_buildings": {
+            "building": "civilian_factory",
+            "count": 3
+          }
+        },
+        {
+          "add_buildings": {
+            "building": "port",
+            "count": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "chn_yangtze_delta",
+      "name": "The Yangtze Delta",
+      "description": "Industry and finance around Shanghai.",
+      "x": 7,
+      "y": 4,
+      "days": 70,
+      "prerequisites": [
+        [
+          "chn_pearl_river_delta"
+        ]
+      ],
+      "effects": [
+        {
+          "add_buildings": {
+            "building": "civilian_factory",
+            "count": 3
+          }
+        },
+        {
+          "add_buildings": {
+            "building": "data_centre",
+            "count": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "chn_northeast_revival",
+      "name": "Revive the north-east",
+      "description": "Restructure the old industrial base of the north-east.",
+      "x": 13,
+      "y": 3,
+      "days": 70,
+      "prerequisites": [
+        [
+          "chn_western_development"
+        ]
+      ],
+      "available": {
+        "date_after": "2003-01-01"
+      },
+      "effects": [
+        {
+          "add_buildings": {
+            "building": "civilian_factory",
+            "count": 2
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "labour_unions",
+            "value": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "chn_rise_of_central_china",
+      "name": "The rise of central China",
+      "description": "Investment in the central provinces.",
+      "x": 13,
+      "y": 4,
+      "days": 70,
+      "prerequisites": [
+        [
+          "chn_northeast_revival",
+          "chn_high_speed_rail"
+        ]
+      ],
+      "available": {
+        "date_after": "2004-01-01"
+      },
+      "effects": [
+        {
+          "add_buildings": {
+            "building": "infrastructure",
+            "count": 3
+          }
+        },
+        {
+          "add_buildings": {
+            "building": "civilian_factory",
+            "count": 2
+          }
+        }
+      ]
+    },
+    {
+      "id": "chn_coal_power",
+      "name": "Coal power",
+      "description": "Build coal power plants to meet demand.",
+      "x": 8,
+      "y": 5,
+      "days": 70,
+      "prerequisites": [
+        [
+          "chn_stimulus_2008",
+          "chn_export_zones"
+        ]
+      ],
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "energy_cost",
+            "value": -0.03,
+            "days": 3650
+          }
+        },
+        {
+          "add_buildings": {
+            "building": "refinery",
+            "count": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "chn_nuclear_power",
+      "name": "Nuclear power",
+      "description": "A large programme of nuclear reactors.",
+      "x": 12,
+      "y": 7,
+      "days": 70,
+      "prerequisites": [
+        [
+          "chn_solar_and_wind"
+        ]
+      ],
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "nuclear_output",
+            "value": 0.1,
+            "days": 3650
+          }
+        },
+        {
+          "add_research_bonus": {
+            "category": "industry_energy",
+            "value": 0.2,
+            "uses": 2
+          }
+        }
+      ]
+    },
+    {
+      "id": "chn_semiconductors",
+      "name": "Semiconductors",
+      "description": "A national effort to make advanced chips.",
+      "x": 13,
+      "y": 6,
+      "days": 70,
+      "prerequisites": [
+        [
+          "chn_domestic_demand"
+        ]
+      ],
+      "available": {
+        "date_after": "2014-01-01"
+      },
+      "effects": [
+        {
+          "add_buildings": {
+            "building": "civilian_factory",
+            "count": 2
+          }
+        },
+        {
+          "add_research_bonus": {
+            "category": "electronics_cyber",
+            "value": 0.3,
+            "uses": 2
+          }
+        }
+      ]
+    },
+    {
+      "id": "chn_artificial_intelligence",
+      "name": "Artificial intelligence",
+      "description": "A national plan for artificial intelligence.",
+      "x": 13,
+      "y": 7,
+      "days": 70,
+      "prerequisites": [
+        [
+          "chn_semiconductors"
+        ]
+      ],
+      "available": {
+        "date_after": "2017-01-01"
+      },
+      "effects": [
+        {
+          "add_buildings": {
+            "building": "data_centre",
+            "count": 3
+          }
+        },
+        {
+          "add_research_bonus": {
+            "category": "economy_digital",
+            "value": 0.3,
+            "uses": 2
+          }
+        }
+      ]
+    },
+    {
+      "id": "chn_digital_payments",
+      "name": "Digital payments",
+      "description": "Mobile payments and a digital currency.",
+      "x": 9,
+      "y": 6,
+      "days": 70,
+      "prerequisites": [
+        [
+          "chn_electric_vehicles"
+        ]
+      ],
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "tax_efficiency",
+            "value": 0.03,
+            "days": 3650
+          }
+        },
+        {
+          "add_buildings": {
+            "building": "data_centre",
+            "count": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "chn_financial_reform",
+      "name": "Financial reform",
+      "description": "Open the capital markets step by step.",
+      "x": 9,
+      "y": 5,
+      "days": 70,
+      "prerequisites": [
+        [
+          "chn_deleveraging",
+          "chn_stimulus_2008"
+        ]
+      ],
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "foreign_investment",
+            "value": 0.05,
+            "days": 2920
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "interest_rate",
+            "value": -0.003,
+            "days": 2920
+          }
+        }
+      ]
+    },
+    {
+      "id": "chn_grain_security",
+      "name": "Grain security",
+      "description": "Protect farmland and grain output.",
+      "x": 14,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "chn_social_policy",
+          "chn_western_development"
+        ]
+      ],
+      "effects": [
+        {
+          "add_interest_group_approval": {
+            "group": "rural",
+            "value": 5
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "gdp_growth",
+            "value": 0.001,
+            "days": 3650
+          }
+        }
+      ]
+    },
+    {
+      "id": "chn_poverty_alleviation",
+      "name": "End extreme poverty",
+      "description": "Targeted programmes to lift the poorest villages out of poverty.",
+      "x": 14,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "chn_grain_security"
+        ]
+      ],
+      "available": {
+        "date_after": "2013-01-01"
+      },
+      "effects": [
+        {
+          "add_interest_group_approval": {
+            "group": "rural",
+            "value": 6
+          }
+        },
+        {
+          "set_budget": {
+            "spending": 0.5
+          }
+        },
+        {
+          "add_stability": 0.02
+        }
+      ]
+    },
+    {
+      "id": "chn_urbanisation",
+      "name": "New urbanisation",
+      "description": "Move hundreds of millions to the cities.",
+      "x": 14,
+      "y": 3,
+      "days": 70,
+      "prerequisites": [
+        [
+          "chn_poverty_alleviation",
+          "chn_hukou_reform"
+        ]
+      ],
+      "effects": [
+        {
+          "add_buildings": {
+            "building": "infrastructure",
+            "count": 3
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "construction_speed",
+            "value": 0.05,
+            "days": 2920
+          }
+        }
+      ]
+    },
+    {
+      "id": "chn_clean_air",
+      "name": "Clean air",
+      "description": "Cut coal use and pollution in the cities.",
+      "x": 14,
+      "y": 4,
+      "days": 70,
+      "prerequisites": [
+        [
+          "chn_urbanisation"
+        ]
+      ],
+      "available": {
+        "date_after": "2013-01-01"
+      },
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "health_outcomes",
+            "value": 0.03,
+            "days": 3650
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "energy_cost",
+            "value": 0.02,
+            "days": 2920
+          }
+        }
+      ]
+    },
+    {
+      "id": "chn_ageing_society",
+      "name": "An ageing society",
+      "description": "Pensions and care for the elderly.",
+      "x": 15,
+      "y": 4,
+      "days": 70,
+      "prerequisites": [
+        [
+          "chn_three_child_policy"
+        ]
+      ],
+      "effects": [
+        {
+          "set_budget": {
+            "spending": 0.5
           }
         },
         {
@@ -369,196 +2199,382 @@
             "value": 3
           }
         }
-      ],
-      "prerequisites": [
-        [
-          "chn_three_represents"
-        ]
-      ],
-      "available": {
-        "ruling_party": "chn.ccp"
-      },
-      "ai_weight": 3
+      ]
     },
     {
-      "id": "chn_go_out",
-      "name": "Go Out",
-      "description": "Encourage Chinese companies to invest abroad. Jiang Zemin announced the Go Out policy as a national strategy in March 2000.",
-      "x": 2,
-      "y": 2,
+      "id": "chn_hong_kong_macau",
+      "name": "Hong Kong and Macau",
+      "description": "Integrate Hong Kong and Macau with the Greater Bay Area.",
+      "x": 17,
+      "y": 4,
       "days": 70,
+      "prerequisites": [
+        [
+          "chn_space_programme"
+        ]
+      ],
       "effects": [
-        {
-          "add_timed_modifier": {
-            "modifier": "foreign_investment",
-            "value": 0.04,
-            "days": 3650
-          }
-        },
         {
           "add_timed_modifier": {
             "modifier": "trade_efficiency",
-            "value": 0.04,
-            "days": 3650
+            "value": 0.03,
+            "days": 2920
           }
         },
         {
-          "add_interest_group_approval": {
-            "group": "business",
-            "value": 3
+          "add_buildings": {
+            "building": "infrastructure",
+            "count": 1
           }
         }
-      ],
-      "prerequisites": [
-        [
-          "chn_three_represents"
-        ]
-      ],
-      "available": {
-        "ruling_party": "chn.ccp"
-      },
-      "ai_weight": 3
+      ]
     },
     {
-      "id": "chn_state_enterprise_reform",
-      "name": "State enterprise reform",
-      "description": "Restructure loss-making state enterprises.",
-      "x": 1,
-      "y": 3,
+      "id": "chn_tibet_xinjiang",
+      "name": "Development of the western regions",
+      "description": "Railways and investment in Tibet and Xinjiang.",
+      "x": 17,
+      "y": 5,
       "days": 70,
+      "prerequisites": [
+        [
+          "chn_hong_kong_macau",
+          "chn_pensions"
+        ]
+      ],
       "effects": [
         {
+          "add_buildings": {
+            "building": "infrastructure",
+            "count": 2
+          }
+        },
+        {
           "add_timed_modifier": {
-            "modifier": "state_industry_output",
-            "value": 0.05,
-            "days": 3650
+            "modifier": "internal_security",
+            "value": 0.03,
+            "days": 2920
           }
         },
         {
           "add_interest_group_approval": {
-            "group": "labour_unions",
+            "group": "minorities",
             "value": -3
           }
         }
-      ],
-      "prerequisites": [
-        [
-          "chn_western_development",
-          "chn_go_out"
-        ]
       ]
     },
     {
-      "id": "chn_manufacturing",
-      "name": "Workshop of the world",
-      "description": "Expand export manufacturing on the coast.",
-      "x": 7,
-      "y": 2,
+      "id": "chn_carriers",
+      "name": "Aircraft carriers",
+      "description": "Build aircraft carriers at home.",
+      "x": 19,
+      "y": 3,
       "days": 70,
+      "prerequisites": [
+        [
+          "chn_army_reform",
+          "chn_defence_industry"
+        ]
+      ],
+      "available": {
+        "date_after": "2012-01-01"
+      },
+      "effects": [
+        {
+          "add_research_bonus": {
+            "category": "naval",
+            "value": 0.3,
+            "uses": 2
+          }
+        },
+        {
+          "add_buildings": {
+            "building": "port",
+            "count": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "chn_amphibious",
+      "name": "Amphibious forces",
+      "description": "Landing ships and marines.",
+      "x": 19,
+      "y": 4,
+      "days": 70,
+      "prerequisites": [
+        [
+          "chn_carriers"
+        ]
+      ],
+      "effects": [
+        {
+          "add_divisions": {
+            "template": "motorised_division",
+            "count": 2
+          }
+        },
+        {
+          "add_research_bonus": {
+            "category": "naval",
+            "value": 0.2,
+            "uses": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "chn_hypersonic",
+      "name": "Hypersonic missiles",
+      "description": "Hypersonic glide vehicles.",
+      "x": 23,
+      "y": 3,
+      "days": 70,
+      "prerequisites": [
+        [
+          "chn_cyber_force"
+        ]
+      ],
+      "available": {
+        "date_after": "2017-01-01"
+      },
+      "effects": [
+        {
+          "add_research_bonus": {
+            "category": "artillery_missiles",
+            "value": 0.3,
+            "uses": 2
+          }
+        }
+      ]
+    },
+    {
+      "id": "chn_drones",
+      "name": "Military drones",
+      "description": "Drones for all services.",
+      "x": 23,
+      "y": 4,
+      "days": 70,
+      "prerequisites": [
+        [
+          "chn_hypersonic"
+        ]
+      ],
+      "effects": [
+        {
+          "add_research_bonus": {
+            "category": "air_drones",
+            "value": 0.3,
+            "uses": 2
+          }
+        }
+      ]
+    },
+    {
+      "id": "chn_pla_professional",
+      "name": "A professional army",
+      "description": "Cut the army and raise its training.",
+      "x": 20,
+      "y": 5,
+      "days": 70,
+      "prerequisites": [
+        [
+          "chn_amphibious",
+          "chn_reunification_drills"
+        ]
+      ],
       "effects": [
         {
           "add_timed_modifier": {
-            "modifier": "production_efficiency",
-            "value": 0.05,
+            "modifier": "army_org",
+            "value": 0.04,
             "days": 3650
           }
         },
+        {
+          "add_timed_modifier": {
+            "modifier": "training_time",
+            "value": -0.1,
+            "days": 3650
+          }
+        }
+      ]
+    },
+    {
+      "id": "chn_europe_trade",
+      "name": "Trade with Europe",
+      "description": "Freight trains and investment in Europe.",
+      "x": 29,
+      "y": 3,
+      "days": 70,
+      "prerequisites": [
+        [
+          "chn_asian_bank"
+        ]
+      ],
+      "effects": [
+        {
+          "add_opinion": {
+            "target": "DEU",
+            "value": 10,
+            "days": 1825
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "trade_efficiency",
+            "value": 0.03,
+            "days": 2920
+          }
+        }
+      ]
+    },
+    {
+      "id": "chn_latin_america",
+      "name": "Partners in Latin America",
+      "description": "Trade and loans in Latin America.",
+      "x": 29,
+      "y": 4,
+      "days": 70,
+      "prerequisites": [
+        [
+          "chn_europe_trade",
+          "chn_global_development"
+        ]
+      ],
+      "effects": [
+        {
+          "add_opinion": {
+            "target": "BRA",
+            "value": 10,
+            "days": 1825
+          }
+        },
+        {
+          "add_opinion": {
+            "target": "ARG",
+            "value": 10,
+            "days": 1825
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "foreign_influence_power",
+            "value": 0.03,
+            "days": 2920
+          }
+        }
+      ]
+    },
+    {
+      "id": "chn_brics",
+      "name": "Emerging economies",
+      "description": "Cooperation with Brazil, Russia, India and South Africa.",
+      "x": 26,
+      "y": 4,
+      "days": 70,
+      "prerequisites": [
+        [
+          "chn_trade_war",
+          "chn_global_development"
+        ]
+      ],
+      "available": {
+        "date_after": "2009-01-01"
+      },
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "diplomatic_reputation",
+            "value": 0.03,
+            "days": 2920
+          }
+        },
+        {
+          "add_opinion": {
+            "target": "IND",
+            "value": 5,
+            "days": 1825
+          }
+        }
+      ]
+    },
+    {
+      "id": "chn_middle_east_mediation",
+      "name": "Mediation in the Middle East",
+      "description": "Broker talks between Saudi Arabia and Iran.",
+      "x": 28,
+      "y": 4,
+      "days": 70,
+      "prerequisites": [
+        [
+          "chn_global_development"
+        ]
+      ],
+      "available": {
+        "date_after": "2023-01-01"
+      },
+      "effects": [
+        {
+          "add_opinion": {
+            "target": "SAU",
+            "value": 10,
+            "days": 1825
+          }
+        },
+        {
+          "add_opinion": {
+            "target": "IRN",
+            "value": 10,
+            "days": 1825
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "diplomatic_reputation",
+            "value": 0.03,
+            "days": 2920
+          }
+        }
+      ]
+    },
+    {
+      "id": "chn_asean_trade",
+      "name": "Free trade with ASEAN",
+      "description": "A free-trade area with South-East Asia.",
+      "x": 25,
+      "y": 4,
+      "days": 70,
+      "prerequisites": [
+        [
+          "chn_russia_partnership",
+          "chn_trade_war"
+        ]
+      ],
+      "effects": [
         {
           "add_timed_modifier": {
             "modifier": "trade_efficiency",
             "value": 0.04,
             "days": 3650
           }
-        }
-      ],
-      "prerequisites": [
-        [
-          "chn_economic_council"
-        ]
-      ]
-    },
-    {
-      "id": "chn_power_grid",
-      "name": "Power for growth",
-      "description": "Build coal, hydro and nuclear plants to meet demand.",
-      "x": 8,
-      "y": 3,
-      "days": 105,
-      "effects": [
+        },
         {
-          "add_timed_modifier": {
-            "modifier": "fossil_output",
-            "value": 0.08,
-            "days": 3650
+          "add_opinion": {
+            "target": "VNM",
+            "value": 5,
+            "days": 1825
           }
         },
         {
-          "add_timed_modifier": {
-            "modifier": "nuclear_output",
-            "value": 0.05,
-            "days": 3650
-          }
-        },
-        {
-          "add_timed_modifier": {
-            "modifier": "emissions",
-            "value": 0.03,
-            "days": 3650
+          "add_opinion": {
+            "target": "IDN",
+            "value": 10,
+            "days": 1825
           }
         }
-      ],
-      "prerequisites": [
-        [
-          "chn_manufacturing"
-        ]
-      ]
-    },
-    {
-      "id": "chn_military_modernisation",
-      "name": "Military modernisation",
-      "description": "Shift the armed forces from numbers to technology.",
-      "x": 10,
-      "y": 2,
-      "days": 105,
-      "effects": [
-        {
-          "add_timed_modifier": {
-            "modifier": "army_attack",
-            "value": 0.05,
-            "days": 3650
-          }
-        },
-        {
-          "add_timed_modifier": {
-            "modifier": "naval_effectiveness",
-            "value": 0.05,
-            "days": 3650
-          }
-        }
-      ],
-      "prerequisites": [
-        [
-          "chn_defence_review"
-        ]
       ]
     }
-  ],
-  "source": [
-    {
-      "url": "https://en.wikipedia.org/wiki/China_Western_Development",
-      "title": "Wikipedia: China Western Development",
-      "accessed": "2026-10-15"
-    },
-    {
-      "url": "https://en.wikipedia.org/wiki/Three_Represents",
-      "title": "Wikipedia: Three Represents",
-      "accessed": "2026-10-15"
-    },
-    {
-      "url": "https://en.wikipedia.org/wiki/Go_Out_policy",
-      "title": "Wikipedia: Go Out policy",
-      "accessed": "2026-10-15"
-    }
-  ],
-  "confidence": "verified"
+  ]
 }

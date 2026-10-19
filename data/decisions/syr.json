@@ -1,0 +1,73 @@
+{
+  "categories": [
+    {
+      "id": "syr_projects",
+      "name": "Syrian state projects",
+      "description": "Projects that the national focuses open up."
+    }
+  ],
+  "decisions": [
+    {
+      "id": "syr_rebuild_a_city",
+      "name": "Rebuild a city",
+      "description": "Housing, water and power for a city damaged by the war.",
+      "category": "syr_projects",
+      "countries": [
+        "SYR"
+      ],
+      "visible": {
+        "has_completed_focus": "syr_reconstruction"
+      },
+      "available": {
+        "treasury_above": 0.5
+      },
+      "cost": {
+        "political_power": 30
+      },
+      "effects": [
+        {
+          "add_treasury": -0.5
+        },
+        {
+          "add_buildings": {
+            "building": "infrastructure",
+            "count": 2
+          }
+        },
+        {
+          "add_stability": 0.01
+        }
+      ],
+      "cooldown_days": 180,
+      "ai_weight": 2
+    },
+    {
+      "id": "syr_local_truce",
+      "name": "Local truce",
+      "description": "Negotiate a local truce with an armed group.",
+      "category": "syr_projects",
+      "countries": [
+        "SYR"
+      ],
+      "visible": {
+        "has_completed_focus": "syr_reconciliation_committees"
+      },
+      "available": {
+        "has_civil_war": true
+      },
+      "cost": {
+        "political_power": 30
+      },
+      "effects": [
+        {
+          "add_unrest": -0.03
+        },
+        {
+          "add_war_support": -0.02
+        }
+      ],
+      "cooldown_days": 180,
+      "ai_weight": 2
+    }
+  ]
+}

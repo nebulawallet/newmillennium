@@ -4,492 +4,1660 @@
   "countries": [
     "POL"
   ],
-  "note": "Branches depend on the governing parties and office holders. Policies named after real reforms are cited; effects are gameplay estimates.",
+  "note": "Poland in the style of the Russian model tree: democratic government as the historical path and alternatives led by real parties of the data; economy (EU accession, motorways, avoiding recession in 2009, Baltic Pipe, leaving coal), defence (the Homeland Defence Act) and foreign policy. Sourced starting spirits in data/spirits/pol.json. Alternatives are a counterfactual.",
+  "source": [
+    {
+      "url": "https://en.wikipedia.org/wiki/Jerzy_Buzek",
+      "title": "Wikipedia: Jerzy Buzek",
+      "accessed": "2026-10-19"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/2003_Polish_European_Union_membership_referendum",
+      "title": "Wikipedia: 2003 Polish European Union membership referendum",
+      "accessed": "2026-10-19"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Military_service",
+      "title": "Wikipedia: Military service",
+      "accessed": "2026-10-19"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Poland–NATO_relations",
+      "title": "Wikipedia: Poland–NATO relations",
+      "accessed": "2026-10-19"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Accession_of_Poland_to_the_European_Union",
+      "title": "Wikipedia: Accession of Poland to the European Union",
+      "accessed": "2026-10-19"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Economy_of_Poland",
+      "title": "Wikipedia: Economy of Poland",
+      "accessed": "2026-10-19"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Energy_in_Poland",
+      "title": "Wikipedia: Energy in Poland",
+      "accessed": "2026-10-19"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Baltic_Pipe",
+      "title": "Wikipedia: Baltic Pipe",
+      "accessed": "2026-10-19"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Homeland_Defence_Act",
+      "title": "Wikipedia: Homeland Defence Act",
+      "accessed": "2026-10-19"
+    }
+  ],
+  "confidence": "verified",
   "focuses": [
     {
-      "id": "pol_national_programme",
-      "name": "Poland's return to Europe",
-      "description": "Set the priorities of the government.",
-      "x": 8,
+      "id": "pol_question_of_power",
+      "name": "The direction of the country",
+      "description": "Which camp governs the country.",
+      "x": 6,
       "y": 0,
       "days": 70,
       "effects": [
         {
-          "add_political_power": 50
-        },
-        {
-          "add_stability": 0.02
+          "add_political_power": 30
         }
-      ]
+      ],
+      "ai_weight": 5
     },
     {
-      "id": "pol_defence_review",
-      "name": "Defence review",
-      "description": "Review strategy, forces and budgets for the new decade.",
-      "x": 11,
+      "id": "pol_steady_course",
+      "name": "Democratic government",
+      "description": "Parties alternate in power through elections, as they historically did.",
+      "x": 0,
       "y": 1,
       "days": 70,
-      "effects": [
-        {
-          "add_war_support": 0.02
-        },
-        {
-          "add_interest_group_approval": {
-            "group": "military",
-            "value": 4
-          }
-        }
-      ],
       "prerequisites": [
         [
-          "pol_national_programme"
-        ]
-      ]
-    },
-    {
-      "id": "pol_modern_forces",
-      "name": "Modern forces",
-      "description": "Equip the armed forces with modern communications and precision weapons.",
-      "x": 11,
-      "y": 3,
-      "days": 105,
-      "effects": [
-        {
-          "add_timed_modifier": {
-            "modifier": "army_attack",
-            "value": 0.05,
-            "days": 3650
-          }
-        },
-        {
-          "add_timed_modifier": {
-            "modifier": "air_effectiveness",
-            "value": 0.05,
-            "days": 3650
-          }
-        },
-        {
-          "add_interest_group_approval": {
-            "group": "military",
-            "value": 3
-          }
-        }
-      ],
-      "prerequisites": [
-        [
-          "pol_defence_review"
-        ]
-      ]
-    },
-    {
-      "id": "pol_intelligence_services",
-      "name": "Intelligence services",
-      "description": "Expand the foreign and domestic intelligence services.",
-      "x": 12,
-      "y": 2,
-      "days": 70,
-      "effects": [
-        {
-          "add_timed_modifier": {
-            "modifier": "intelligence_power",
-            "value": 0.1,
-            "days": 3650
-          }
-        },
-        {
-          "add_interest_group_approval": {
-            "group": "security_services",
-            "value": 4
-          }
-        }
-      ],
-      "prerequisites": [
-        [
-          "pol_defence_review"
-        ]
-      ]
-    },
-    {
-      "id": "pol_foreign_policy",
-      "name": "Foreign policy priorities",
-      "description": "Set the course of foreign policy.",
-      "x": 14,
-      "y": 1,
-      "days": 70,
-      "effects": [
-        {
-          "add_timed_modifier": {
-            "modifier": "diplomatic_reputation",
-            "value": 0.05,
-            "days": 3650
-          }
-        },
-        {
-          "add_political_power": 20
-        }
-      ],
-      "prerequisites": [
-        [
-          "pol_national_programme"
-        ]
-      ]
-    },
-    {
-      "id": "pol_partners",
-      "name": "Closer ties with our allies and neighbours",
-      "description": "Deepen political and economic ties with our allies and neighbours.",
-      "x": 14,
-      "y": 2,
-      "days": 70,
-      "effects": [
-        {
-          "add_timed_modifier": {
-            "modifier": "bloc_integration",
-            "value": 0.1,
-            "days": 3650
-          }
-        },
-        {
-          "add_timed_modifier": {
-            "modifier": "trade_efficiency",
-            "value": 0.03,
-            "days": 3650
-          }
-        },
-        {
-          "country": {
-            "tag": "DEU",
-            "effects": [
-              {
-                "add_opinion": {
-                  "target": "ROOT",
-                  "value": 15,
-                  "days": 3650
-                }
-              }
-            ]
-          }
-        },
-        {
-          "country": {
-            "tag": "USA",
-            "effects": [
-              {
-                "add_opinion": {
-                  "target": "ROOT",
-                  "value": 15,
-                  "days": 3650
-                }
-              }
-            ]
-          }
-        },
-        {
-          "country": {
-            "tag": "LTU",
-            "effects": [
-              {
-                "add_opinion": {
-                  "target": "ROOT",
-                  "value": 15,
-                  "days": 3650
-                }
-              }
-            ]
-          }
-        }
-      ],
-      "prerequisites": [
-        [
-          "pol_foreign_policy"
-        ]
-      ]
-    },
-    {
-      "id": "pol_international_standing",
-      "name": "International standing",
-      "description": "Raise the country's profile in international institutions and summits.",
-      "x": 15,
-      "y": 3,
-      "days": 70,
-      "effects": [
-        {
-          "add_timed_modifier": {
-            "modifier": "diplomatic_reputation",
-            "value": 0.1,
-            "days": 3650
-          }
-        },
-        {
-          "add_timed_modifier": {
-            "modifier": "international_opinion",
-            "value": 0.05,
-            "days": 3650
-          }
-        }
-      ],
-      "prerequisites": [
-        [
-          "pol_partners",
-          "pol_own_course"
-        ]
-      ]
-    },
-    {
-      "id": "pol_own_course",
-      "name": "An independent course",
-      "description": "Keep a free hand in foreign policy and trade.",
-      "x": 16,
-      "y": 2,
-      "days": 70,
-      "effects": [
-        {
-          "add_timed_modifier": {
-            "modifier": "foreign_influence_resistance",
-            "value": 0.1,
-            "days": 3650
-          }
-        },
-        {
-          "add_war_support": 0.02
-        }
-      ],
-      "prerequisites": [
-        [
-          "pol_foreign_policy"
+          "pol_question_of_power"
         ]
       ],
       "mutually_exclusive": [
-        "pol_partners"
+        "pol_conservative_turn",
+        "pol_left_turn",
+        "pol_liberal_turn",
+        "pol_populist_turn",
+        "pol_socialist_turn"
       ],
-      "ai_weight": 0.5
-    },
-    {
-      "id": "pol_economic_council",
-      "name": "Economic council",
-      "description": "Bring ministries, employers and unions together on economic priorities.",
-      "x": 5,
-      "y": 1,
-      "days": 70,
+      "available": {
+        "follows_history": true
+      },
       "effects": [
         {
-          "add_economic_mood": 0.03
+          "add_stability": 0.04
         },
         {
-          "add_political_power": 15
+          "add_political_power": 40
         }
       ],
+      "ai_weight": 20
+    },
+    {
+      "id": "pol_conservative_turn",
+      "name": "A conservative turn",
+      "description": "Conservative parties (AWS, Civic Platform and the PSL) gain on order, tax cuts and tradition.",
+      "x": 2,
+      "y": 1,
+      "days": 70,
       "prerequisites": [
         [
-          "pol_national_programme"
+          "pol_question_of_power"
         ]
+      ],
+      "mutually_exclusive": [
+        "pol_steady_course",
+        "pol_left_turn",
+        "pol_liberal_turn",
+        "pol_populist_turn",
+        "pol_socialist_turn"
+      ],
+      "available": {
+        "all": [
+          {
+            "any": [
+              {
+                "follows_history": false
+              },
+              {
+                "is_player": true
+              }
+            ]
+          },
+          {
+            "has_party_of_group": "conservative"
+          },
+          {
+            "not": {
+              "ruling_ideology_group": "conservative"
+            }
+          },
+          {
+            "any": [
+              {
+                "stability_below": 0.6
+              },
+              {
+                "gdp_growth_below": 1.5
+              }
+            ]
+          }
+        ]
+      },
+      "effects": [
+        {
+          "leave_history": true
+        },
+        {
+          "add_ideology_support": {
+            "group": "conservative",
+            "value": 0.04
+          }
+        }
+      ],
+      "ai_weight": 0.3
+    },
+    {
+      "id": "pol_conservative_turn_build",
+      "name": "Business and the countryside",
+      "description": "Business and rural voters rally to the right.",
+      "x": 2,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "pol_conservative_turn"
+        ]
+      ],
+      "effects": [
+        {
+          "add_ideology_support": {
+            "group": "conservative",
+            "value": 0.05
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "business",
+            "value": 4
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "rural",
+            "value": 3
+          }
+        }
       ]
     },
     {
-      "id": "pol_infrastructure",
-      "name": "Infrastructure programme",
-      "description": "Invest in transport, power grids and communications.",
-      "x": 5,
+      "id": "pol_conservative_turn_government",
+      "name": "A conservative government",
+      "description": "The most popular conservative party leads the government.",
+      "x": 2,
       "y": 3,
       "days": 105,
+      "prerequisites": [
+        [
+          "pol_conservative_turn_build"
+        ]
+      ],
+      "available": {
+        "ideology_group_support_above": {
+          "group": "conservative",
+          "value": 0.2
+        }
+      },
       "effects": [
         {
-          "add_timed_modifier": {
-            "modifier": "construction_speed",
-            "value": 0.1,
-            "days": 3650
+          "install_government": {
+            "ideology": "conservative"
           }
         },
         {
-          "add_economic_mood": 0.02
+          "add_stability": -0.05
         }
-      ],
-      "prerequisites": [
-        [
-          "pol_economic_council"
-        ]
       ]
     },
     {
-      "id": "pol_research_programme",
-      "name": "Research and innovation",
-      "description": "Fund universities, research institutes and new industries.",
-      "x": 6,
+      "id": "pol_fiscal_discipline",
+      "name": "Fiscal discipline",
+      "description": "Cut spending and taxes to balance the budget.",
+      "x": 2,
       "y": 4,
-      "days": 105,
-      "effects": [
-        {
-          "add_timed_modifier": {
-            "modifier": "research_speed",
-            "value": 0.05,
-            "days": 3650
-          }
-        },
-        {
-          "add_timed_modifier": {
-            "modifier": "education_quality",
-            "value": 0.02,
-            "days": 3650
-          }
-        }
-      ],
+      "days": 70,
       "prerequisites": [
         [
-          "pol_infrastructure"
+          "pol_conservative_turn_government"
         ]
+      ],
+      "effects": [
+        {
+          "add_spirit": "balanced_budget"
+        },
+        {
+          "set_budget": {
+            "spending": -1,
+            "revenue": -0.5
+          }
+        }
       ]
     },
     {
-      "id": "pol_four_reforms",
-      "name": "The four reforms",
-      "description": "Carry through the reforms of local government, pensions, education and health care that Jerzy Buzek's cabinet introduced.",
-      "x": 1,
+      "id": "pol_left_turn",
+      "name": "A turn to the left",
+      "description": "Parties of the left (the SLD and Razem) gain on wages, welfare and public services.",
+      "x": 4,
       "y": 1,
       "days": 70,
+      "prerequisites": [
+        [
+          "pol_question_of_power"
+        ]
+      ],
+      "mutually_exclusive": [
+        "pol_steady_course",
+        "pol_conservative_turn",
+        "pol_liberal_turn",
+        "pol_populist_turn",
+        "pol_socialist_turn"
+      ],
+      "available": {
+        "all": [
+          {
+            "any": [
+              {
+                "follows_history": false
+              },
+              {
+                "is_player": true
+              }
+            ]
+          },
+          {
+            "has_party_of_group": "social_democratic"
+          },
+          {
+            "not": {
+              "ruling_ideology_group": "social_democratic"
+            }
+          },
+          {
+            "any": [
+              {
+                "gdp_growth_below": 1.5
+              },
+              {
+                "unrest_above": 0.15
+              },
+              {
+                "ig_approval_below": {
+                  "group": "labour_unions",
+                  "value": 45
+                }
+              }
+            ]
+          }
+        ]
+      },
       "effects": [
         {
-          "add_timed_modifier": {
-            "modifier": "tax_efficiency",
-            "value": 0.03,
-            "days": 3650
-          }
+          "leave_history": true
         },
         {
-          "add_timed_modifier": {
-            "modifier": "education_quality",
-            "value": 0.02,
-            "days": 3650
+          "add_ideology_support": {
+            "group": "social_democratic",
+            "value": 0.04
           }
-        },
+        }
+      ],
+      "ai_weight": 0.3
+    },
+    {
+      "id": "pol_left_turn_build",
+      "name": "Unions and voters",
+      "description": "Unions and young voters rally to the left.",
+      "x": 4,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "pol_left_turn"
+        ]
+      ],
+      "effects": [
         {
-          "add_timed_modifier": {
-            "modifier": "welfare_cost",
-            "value": -0.02,
-            "days": 3650
+          "add_ideology_support": {
+            "group": "social_democratic",
+            "value": 0.05
           }
         },
         {
           "add_interest_group_approval": {
             "group": "labour_unions",
-            "value": -3
+            "value": 5
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "youth_students",
+            "value": 3
           }
         }
-      ],
+      ]
+    },
+    {
+      "id": "pol_left_turn_government",
+      "name": "A left-wing government",
+      "description": "The most popular party of the democratic left leads the government.",
+      "x": 4,
+      "y": 3,
+      "days": 105,
       "prerequisites": [
         [
-          "pol_national_programme"
+          "pol_left_turn_build"
         ]
       ],
       "available": {
-        "holds_office": {
-          "person": "pol.jerzy_buzek",
-          "office": "pol.prime_minister"
+        "ideology_group_support_above": {
+          "group": "social_democratic",
+          "value": 0.2
         }
       },
-      "ai_weight": 3
+      "effects": [
+        {
+          "install_government": {
+            "ideology": "social_democratic"
+          }
+        },
+        {
+          "add_stability": -0.05
+        }
+      ]
     },
     {
-      "id": "pol_eu_referendum",
-      "name": "The road to the Union",
-      "description": "Prepare the country for membership of the European Union. Poland held its referendum on joining on 7 and 8 June 2003.",
-      "x": 2,
+      "id": "pol_welfare_expansion",
+      "name": "Expand the welfare state",
+      "description": "Public health care and higher pensions.",
+      "x": 4,
+      "y": 4,
+      "days": 70,
+      "prerequisites": [
+        [
+          "pol_left_turn_government"
+        ]
+      ],
+      "effects": [
+        {
+          "add_spirit": "universal_healthcare"
+        },
+        {
+          "set_budget": {
+            "spending": 1
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "labour_unions",
+            "value": 4
+          }
+        }
+      ]
+    },
+    {
+      "id": "pol_liberal_turn",
+      "name": "A liberal turn",
+      "description": "Liberal parties (the Freedom Union and later Modern) gain ground on reform and civil liberties.",
+      "x": 6,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "pol_question_of_power"
+        ]
+      ],
+      "mutually_exclusive": [
+        "pol_steady_course",
+        "pol_conservative_turn",
+        "pol_left_turn",
+        "pol_populist_turn",
+        "pol_socialist_turn"
+      ],
+      "available": {
+        "all": [
+          {
+            "any": [
+              {
+                "follows_history": false
+              },
+              {
+                "is_player": true
+              }
+            ]
+          },
+          {
+            "has_party_of_group": "liberal_democratic"
+          },
+          {
+            "not": {
+              "ruling_ideology_group": "liberal_democratic"
+            }
+          },
+          {
+            "any": [
+              {
+                "stability_below": 0.6
+              },
+              {
+                "ig_approval_below": {
+                  "group": "urban_middle_class",
+                  "value": 45
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "effects": [
+        {
+          "leave_history": true
+        },
+        {
+          "add_ideology_support": {
+            "group": "liberal_democratic",
+            "value": 0.04
+          }
+        }
+      ],
+      "ai_weight": 0.3
+    },
+    {
+      "id": "pol_liberal_turn_build",
+      "name": "Reform agenda",
+      "description": "A programme of deregulation and civil liberties.",
+      "x": 6,
       "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "pol_liberal_turn"
+        ]
+      ],
+      "effects": [
+        {
+          "add_ideology_support": {
+            "group": "liberal_democratic",
+            "value": 0.05
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "urban_middle_class",
+            "value": 4
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "business",
+            "value": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "pol_liberal_turn_government",
+      "name": "A liberal government",
+      "description": "The most popular liberal party leads the government.",
+      "x": 6,
+      "y": 3,
+      "days": 105,
+      "prerequisites": [
+        [
+          "pol_liberal_turn_build"
+        ]
+      ],
+      "available": {
+        "ideology_group_support_above": {
+          "group": "liberal_democratic",
+          "value": 0.2
+        }
+      },
+      "effects": [
+        {
+          "install_government": {
+            "ideology": "liberal_democratic"
+          }
+        },
+        {
+          "add_stability": -0.05
+        }
+      ]
+    },
+    {
+      "id": "pol_liberal_reforms",
+      "name": "Liberal reforms",
+      "description": "Cut red tape and open markets.",
+      "x": 6,
+      "y": 4,
+      "days": 70,
+      "prerequisites": [
+        [
+          "pol_liberal_turn_government"
+        ]
+      ],
+      "effects": [
+        {
+          "change_law": {
+            "category": "trade",
+            "law": "free_trade"
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "private_sector_output",
+            "value": 0.05,
+            "days": 2920
+          }
+        },
+        {
+          "add_spirit": "open_society"
+        }
+      ]
+    },
+    {
+      "id": "pol_populist_turn",
+      "name": "A populist wave",
+      "description": "National-populist parties (Law and Justice, the LPR and later Konfederacja) gain on immigration and sovereignty.",
+      "x": 8,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "pol_question_of_power"
+        ]
+      ],
+      "mutually_exclusive": [
+        "pol_steady_course",
+        "pol_conservative_turn",
+        "pol_left_turn",
+        "pol_liberal_turn",
+        "pol_socialist_turn"
+      ],
+      "available": {
+        "all": [
+          {
+            "any": [
+              {
+                "follows_history": false
+              },
+              {
+                "is_player": true
+              }
+            ]
+          },
+          {
+            "has_party_of_group": "nationalist_populist"
+          },
+          {
+            "not": {
+              "ruling_ideology_group": "nationalist_populist"
+            }
+          },
+          {
+            "any": [
+              {
+                "stability_below": 0.5
+              },
+              {
+                "unrest_above": 0.15
+              }
+            ]
+          }
+        ]
+      },
+      "effects": [
+        {
+          "leave_history": true
+        },
+        {
+          "add_ideology_support": {
+            "group": "nationalist_populist",
+            "value": 0.04
+          }
+        }
+      ],
+      "ai_weight": 0.3
+    },
+    {
+      "id": "pol_populist_turn_build",
+      "name": "Rallies and referendums",
+      "description": "Mass rallies and calls for referendums.",
+      "x": 8,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "pol_populist_turn"
+        ]
+      ],
+      "effects": [
+        {
+          "add_ideology_support": {
+            "group": "nationalist_populist",
+            "value": 0.05
+          }
+        },
+        {
+          "add_war_support": 0.03
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "minorities",
+            "value": -4
+          }
+        }
+      ]
+    },
+    {
+      "id": "pol_populist_turn_government",
+      "name": "A national-populist government",
+      "description": "The most popular national-populist party leads the government.",
+      "x": 8,
+      "y": 3,
+      "days": 105,
+      "prerequisites": [
+        [
+          "pol_populist_turn_build"
+        ]
+      ],
+      "available": {
+        "ideology_group_support_above": {
+          "group": "nationalist_populist",
+          "value": 0.2
+        }
+      },
+      "effects": [
+        {
+          "install_government": {
+            "ideology": "nationalist_populist"
+          }
+        },
+        {
+          "add_stability": -0.05
+        }
+      ]
+    },
+    {
+      "id": "pol_sovereignty_first",
+      "name": "Sovereignty first",
+      "description": "Restrict immigration and limit the power of international bodies.",
+      "x": 8,
+      "y": 4,
+      "days": 70,
+      "prerequisites": [
+        [
+          "pol_populist_turn_government"
+        ]
+      ],
+      "effects": [
+        {
+          "change_law": {
+            "category": "immigration",
+            "law": "restrictive_immigration"
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "foreign_influence_resistance",
+            "value": 0.1,
+            "days": 2920
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "minorities",
+            "value": -6
+          }
+        }
+      ]
+    },
+    {
+      "id": "pol_socialist_turn",
+      "name": "A socialist turn",
+      "description": "Socialist and communist parties (Self-Defence) gain in a crisis.",
+      "x": 10,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "pol_question_of_power"
+        ]
+      ],
+      "mutually_exclusive": [
+        "pol_steady_course",
+        "pol_conservative_turn",
+        "pol_left_turn",
+        "pol_liberal_turn",
+        "pol_populist_turn"
+      ],
+      "available": {
+        "all": [
+          {
+            "any": [
+              {
+                "follows_history": false
+              },
+              {
+                "is_player": true
+              }
+            ]
+          },
+          {
+            "has_party_of_group": "socialist_communist"
+          },
+          {
+            "not": {
+              "ruling_ideology_group": "socialist_communist"
+            }
+          },
+          {
+            "any": [
+              {
+                "gdp_growth_below": 0.5
+              },
+              {
+                "unrest_above": 0.25
+              }
+            ]
+          }
+        ]
+      },
+      "effects": [
+        {
+          "leave_history": true
+        },
+        {
+          "add_ideology_support": {
+            "group": "socialist_communist",
+            "value": 0.04
+          }
+        }
+      ],
+      "ai_weight": 0.3
+    },
+    {
+      "id": "pol_socialist_turn_build",
+      "name": "Strikes and occupations",
+      "description": "Strikes and workplace occupations.",
+      "x": 10,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "pol_socialist_turn"
+        ]
+      ],
+      "effects": [
+        {
+          "add_ideology_support": {
+            "group": "socialist_communist",
+            "value": 0.05
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "labour_unions",
+            "value": 6
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "business",
+            "value": -4
+          }
+        }
+      ]
+    },
+    {
+      "id": "pol_socialist_turn_government",
+      "name": "A socialist government",
+      "description": "The most popular socialist party leads the government.",
+      "x": 10,
+      "y": 3,
+      "days": 105,
+      "prerequisites": [
+        [
+          "pol_socialist_turn_build"
+        ]
+      ],
+      "available": {
+        "ideology_group_support_above": {
+          "group": "socialist_communist",
+          "value": 0.25
+        }
+      },
+      "effects": [
+        {
+          "install_government": {
+            "ideology": "socialist_communist"
+          }
+        },
+        {
+          "add_stability": -0.05
+        }
+      ]
+    },
+    {
+      "id": "pol_public_ownership",
+      "name": "Public ownership",
+      "description": "Nationalise the banks and the largest companies.",
+      "x": 10,
+      "y": 4,
+      "days": 70,
+      "prerequisites": [
+        [
+          "pol_socialist_turn_government"
+        ]
+      ],
+      "effects": [
+        {
+          "change_law": {
+            "category": "economic_system",
+            "law": "state_capitalism"
+          }
+        },
+        {
+          "add_spirit": "state_planning"
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "business",
+            "value": -10
+          }
+        }
+      ]
+    },
+    {
+      "id": "pol_economy",
+      "name": "Economic agenda",
+      "description": "Priorities for the Polish economy.",
+      "x": 14,
+      "y": 0,
       "days": 70,
       "effects": [
         {
+          "add_political_power": 20
+        }
+      ],
+      "ai_weight": 5
+    },
+    {
+      "id": "pol_eu_accession",
+      "name": "Join the European Union",
+      "description": "The referendum of June 2003 approved entry, and Poland joined the EU on 1 May 2004.",
+      "x": 13,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "pol_economy"
+        ]
+      ],
+      "available": {
+        "all": [
+          {
+            "follows_history": true
+          },
+          {
+            "date_after": "2004-05-01"
+          }
+        ]
+      },
+      "effects": [
+        {
+          "add_spirit": "pol_eu_member"
+        },
+        {
+          "add_opinion": {
+            "target": "DEU",
+            "value": 10,
+            "days": 1825
+          }
+        }
+      ],
+      "ai_weight": 6
+    },
+    {
+      "id": "pol_privatisation",
+      "name": "Privatisation",
+      "description": "Finish the sale of state companies.",
+      "x": 15,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "pol_economy"
+        ]
+      ],
+      "effects": [
+        {
           "add_timed_modifier": {
-            "modifier": "bloc_integration",
-            "value": 0.1,
-            "days": 3650
+            "modifier": "private_sector_output",
+            "value": 0.04,
+            "days": 2920
+          }
+        },
+        {
+          "add_treasury": 2
+        }
+      ]
+    },
+    {
+      "id": "pol_motorways",
+      "name": "Motorways",
+      "description": "Build a motorway network with EU funds. Unlocks motorway sections.",
+      "x": 13,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "pol_eu_accession"
+        ]
+      ],
+      "effects": [
+        {
+          "add_buildings": {
+            "building": "infrastructure",
+            "count": 4
+          }
+        }
+      ]
+    },
+    {
+      "id": "pol_no_recession",
+      "name": "Through the crisis",
+      "description": "Poland was the only EU economy to avoid recession in the 2008 crisis.",
+      "x": 14,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "pol_eu_accession",
+          "pol_privatisation"
+        ]
+      ],
+      "available": {
+        "date_after": "2009-01-01"
+      },
+      "effects": [
+        {
+          "add_stability": 0.02
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "gdp_growth",
+            "value": 0.003,
+            "days": 1460
+          }
+        }
+      ]
+    },
+    {
+      "id": "pol_special_zones",
+      "name": "Special economic zones",
+      "description": "Tax breaks for investors.",
+      "x": 15,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "pol_privatisation"
+        ]
+      ],
+      "effects": [
+        {
+          "add_buildings": {
+            "building": "civilian_factory",
+            "count": 3
           }
         },
         {
           "add_timed_modifier": {
             "modifier": "foreign_investment",
-            "value": 0.04,
+            "value": 0.05,
+            "days": 2920
+          }
+        }
+      ]
+    },
+    {
+      "id": "pol_family_benefits",
+      "name": "Family benefits",
+      "description": "A monthly child benefit for families.",
+      "x": 13,
+      "y": 3,
+      "days": 70,
+      "prerequisites": [
+        [
+          "pol_motorways",
+          "pol_no_recession"
+        ]
+      ],
+      "available": {
+        "date_after": "2016-01-01"
+      },
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "population_growth",
+            "value": 0.001,
             "days": 3650
+          }
+        },
+        {
+          "set_budget": {
+            "spending": 1
           }
         },
         {
           "add_interest_group_approval": {
             "group": "rural",
-            "value": -2
+            "value": 4
+          }
+        }
+      ]
+    },
+    {
+      "id": "pol_baltic_pipe",
+      "name": "Baltic Pipe",
+      "description": "A gas pipeline from Norway, operational from 27 September 2022.",
+      "x": 14,
+      "y": 3,
+      "days": 70,
+      "prerequisites": [
+        [
+          "pol_no_recession",
+          "pol_special_zones"
+        ]
+      ],
+      "available": {
+        "date_after": "2022-09-27"
+      },
+      "effects": [
+        {
+          "add_spirit": "pol_energy_diversified"
+        },
+        {
+          "add_opinion": {
+            "target": "RUS",
+            "value": -5,
+            "days": 1825
+          }
+        },
+        {
+          "add_opinion": {
+            "target": "NOR",
+            "value": 10,
+            "days": 1825
           }
         }
       ],
-      "prerequisites": [
-        [
-          "pol_four_reforms",
-          "pol_social_programme"
-        ]
-      ],
-      "ai_weight": 2
+      "ai_weight": 4
     },
     {
-      "id": "pol_social_programme",
-      "name": "A social programme",
-      "description": "Protect those who lost out in the transition.",
-      "x": 3,
-      "y": 1,
+      "id": "pol_lng_terminal",
+      "name": "An LNG terminal",
+      "description": "A terminal for liquefied gas on the Baltic.",
+      "x": 15,
+      "y": 3,
       "days": 70,
+      "prerequisites": [
+        [
+          "pol_special_zones"
+        ]
+      ],
+      "available": {
+        "date_after": "2015-01-01"
+      },
       "effects": [
         {
+          "add_buildings": {
+            "building": "port",
+            "count": 1
+          }
+        },
+        {
           "add_timed_modifier": {
-            "modifier": "welfare_cost",
-            "value": 0.02,
+            "modifier": "energy_cost",
+            "value": -0.01,
             "days": 3650
+          }
+        }
+      ]
+    },
+    {
+      "id": "pol_leave_coal",
+      "name": "Leave coal",
+      "description": "Replace coal with wind, solar and nuclear.",
+      "x": 14,
+      "y": 4,
+      "days": 140,
+      "prerequisites": [
+        [
+          "pol_baltic_pipe",
+          "pol_lng_terminal"
+        ]
+      ],
+      "effects": [
+        {
+          "remove_spirit": "pol_coal_power"
+        },
+        {
+          "add_buildings": {
+            "building": "renewable_plant",
+            "count": 3
           }
         },
         {
           "add_interest_group_approval": {
             "group": "labour_unions",
-            "value": 4
-          }
-        },
-        {
-          "add_interest_group_approval": {
-            "group": "rural",
-            "value": 3
+            "value": -5
           }
         }
       ],
+      "ai_weight": 3
+    },
+    {
+      "id": "pol_nuclear_plant",
+      "name": "A nuclear power plant",
+      "description": "Poland's first nuclear power plant.",
+      "x": 15,
+      "y": 4,
+      "days": 70,
       "prerequisites": [
         [
-          "pol_national_programme"
+          "pol_lng_terminal"
         ]
       ],
       "available": {
-        "any": [
+        "date_after": "2020-01-01"
+      },
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "nuclear_output",
+            "value": 0.05,
+            "days": 3650
+          }
+        },
+        {
+          "add_research_bonus": {
+            "category": "industry_energy",
+            "value": 0.2,
+            "uses": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "pol_central_airport",
+      "name": "A central airport",
+      "description": "A new central airport and rail hub.",
+      "x": 13,
+      "y": 4,
+      "days": 70,
+      "prerequisites": [
+        [
+          "pol_family_benefits"
+        ]
+      ],
+      "available": {
+        "all": [
           {
-            "party_in_government": "pol.sld"
+            "date_after": "2018-01-01"
           },
           {
-            "party_in_government": "pol.psl"
-          },
-          {
-            "party_in_government": "pol.up"
+            "treasury_above": 1
           }
         ]
       },
-      "ai_weight": 2
+      "effects": [
+        {
+          "add_buildings": {
+            "building": "air_base",
+            "count": 1
+          }
+        },
+        {
+          "add_buildings": {
+            "building": "infrastructure",
+            "count": 2
+          }
+        },
+        {
+          "add_treasury": -1
+        }
+      ]
     },
     {
-      "id": "pol_professional_army",
-      "name": "Professional army",
-      "description": "Move to an all-volunteer army. Poland suspended compulsory military service on 5 December 2008.",
-      "x": 10,
-      "y": 2,
+      "id": "pol_defence",
+      "name": "Defence policy",
+      "description": "Poland's forces in NATO.",
+      "x": 19,
+      "y": 0,
       "days": 70,
       "effects": [
         {
-          "change_law": {
-            "category": "conscription",
-            "law": "volunteer_force"
+          "add_interest_group_approval": {
+            "group": "military",
+            "value": 2
+          }
+        }
+      ],
+      "ai_weight": 4
+    },
+    {
+      "id": "pol_professional_army",
+      "name": "A professional army",
+      "description": "End conscription and build a professional army.",
+      "x": 18,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "pol_defence"
+        ]
+      ],
+      "available": {
+        "date_after": "2008-01-01"
+      },
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "army_org",
+            "value": 0.03,
+            "days": 3650
+          }
+        }
+      ]
+    },
+    {
+      "id": "pol_missions",
+      "name": "Missions abroad",
+      "description": "Deploy to Iraq and Afghanistan with the allies.",
+      "x": 20,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "pol_defence"
+        ]
+      ],
+      "available": {
+        "date_after": "2003-01-01"
+      },
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "army_org",
+            "value": 0.02,
+            "days": 2920
+          }
+        },
+        {
+          "add_opinion": {
+            "target": "USA",
+            "value": 10,
+            "days": 1825
+          }
+        }
+      ]
+    },
+    {
+      "id": "pol_homeland_defence",
+      "name": "Homeland Defence Act",
+      "description": "A law of 11 March 2022: 300,000 soldiers and defence spending of 3 percent of GDP. Unlocks arms purchases.",
+      "x": 19,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "pol_professional_army",
+          "pol_missions"
+        ]
+      ],
+      "available": {
+        "all": [
+          {
+            "follows_history": true
+          },
+          {
+            "date_after": "2022-03-11"
+          }
+        ]
+      },
+      "effects": [
+        {
+          "add_spirit": "pol_homeland_defence"
+        },
+        {
+          "add_divisions": {
+            "template": "mechanised_division",
+            "count": 2
+          }
+        },
+        {
+          "add_buildings": {
+            "building": "military_factory",
+            "count": 2
+          }
+        }
+      ],
+      "ai_weight": 5
+    },
+    {
+      "id": "pol_territorial_defence",
+      "name": "Territorial defence",
+      "description": "A territorial defence force of volunteers.",
+      "x": 18,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "pol_professional_army"
+        ]
+      ],
+      "available": {
+        "date_after": "2017-01-01"
+      },
+      "effects": [
+        {
+          "add_divisions": {
+            "template": "infantry_division",
+            "count": 2
           }
         },
         {
           "add_timed_modifier": {
-            "modifier": "army_org",
+            "modifier": "army_defence",
+            "value": 0.02,
+            "days": 3650
+          }
+        }
+      ]
+    },
+    {
+      "id": "pol_air_defence",
+      "name": "Air and missile defence",
+      "description": "Patriot batteries and air defence.",
+      "x": 20,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "pol_missions"
+        ]
+      ],
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "army_defence",
+            "value": 0.03,
+            "days": 3650
+          }
+        },
+        {
+          "add_research_bonus": {
+            "category": "artillery_missiles",
+            "value": 0.2,
+            "uses": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "pol_armour",
+      "name": "Tanks and howitzers",
+      "description": "Hundreds of new tanks and howitzers.",
+      "x": 19,
+      "y": 3,
+      "days": 70,
+      "prerequisites": [
+        [
+          "pol_homeland_defence",
+          "pol_territorial_defence",
+          "pol_air_defence"
+        ]
+      ],
+      "effects": [
+        {
+          "add_research_bonus": {
+            "category": "armour",
+            "value": 0.25,
+            "uses": 2
+          }
+        },
+        {
+          "add_equipment": {
+            "family": "infantry_equipment",
+            "amount": 1500
+          }
+        }
+      ]
+    },
+    {
+      "id": "pol_foreign_policy",
+      "name": "Foreign policy",
+      "description": "Poland in Europe and NATO.",
+      "x": 24,
+      "y": 0,
+      "days": 70,
+      "effects": [
+        {
+          "add_political_power": 20
+        }
+      ],
+      "ai_weight": 4
+    },
+    {
+      "id": "pol_weimar_triangle",
+      "name": "The Weimar Triangle",
+      "description": "Cooperation with Germany and France.",
+      "x": 23,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "pol_foreign_policy"
+        ]
+      ],
+      "effects": [
+        {
+          "add_opinion": {
+            "target": "DEU",
+            "value": 10,
+            "days": 1825
+          }
+        },
+        {
+          "add_opinion": {
+            "target": "FRA",
+            "value": 10,
+            "days": 1825
+          }
+        }
+      ]
+    },
+    {
+      "id": "pol_us_partnership",
+      "name": "US partnership",
+      "description": "US troops and bases in Poland.",
+      "x": 25,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "pol_foreign_policy"
+        ]
+      ],
+      "effects": [
+        {
+          "add_opinion": {
+            "target": "USA",
+            "value": 15,
+            "days": 1825
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "army_defence",
+            "value": 0.02,
+            "days": 2920
+          }
+        }
+      ]
+    },
+    {
+      "id": "pol_three_seas",
+      "name": "The Three Seas",
+      "description": "Infrastructure between the Baltic, the Adriatic and the Black Sea.",
+      "x": 24,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "pol_weimar_triangle",
+          "pol_us_partnership"
+        ]
+      ],
+      "available": {
+        "date_after": "2016-01-01"
+      },
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "trade_efficiency",
+            "value": 0.02,
+            "days": 2920
+          }
+        },
+        {
+          "add_opinion": {
+            "target": "CZE",
+            "value": 5,
+            "days": 1825
+          }
+        },
+        {
+          "add_opinion": {
+            "target": "ROU",
+            "value": 5,
+            "days": 1825
+          }
+        }
+      ]
+    },
+    {
+      "id": "pol_help_ukraine",
+      "name": "Help Ukraine",
+      "description": "Weapons, transit and shelter for refugees.",
+      "x": 24,
+      "y": 3,
+      "days": 70,
+      "prerequisites": [
+        [
+          "pol_three_seas",
+          "pol_us_partnership"
+        ]
+      ],
+      "available": {
+        "date_after": "2022-02-24"
+      },
+      "effects": [
+        {
+          "add_opinion": {
+            "target": "UKR",
+            "value": 25,
+            "days": 1825
+          }
+        },
+        {
+          "add_opinion": {
+            "target": "RUS",
+            "value": -20,
+            "days": 1825
+          }
+        },
+        {
+          "add_treasury": -1
+        }
+      ]
+    },
+    {
+      "id": "pol_society",
+      "name": "Society and science",
+      "description": "Health, schools, research and the infrastructure of everyday life.",
+      "x": 29,
+      "y": 0,
+      "days": 70,
+      "effects": [
+        {
+          "add_political_power": 20
+        }
+      ],
+      "ai_weight": 3
+    },
+    {
+      "id": "pol_health_investment",
+      "name": "Invest in hospitals",
+      "description": "New hospitals and more doctors.",
+      "x": 27,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "pol_society"
+        ]
+      ],
+      "available": {
+        "treasury_above": 1
+      },
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "health_outcomes",
+            "value": 0.04,
+            "days": 3650
+          }
+        },
+        {
+          "add_treasury": -1
+        }
+      ]
+    },
+    {
+      "id": "pol_schools_investment",
+      "name": "Invest in schools",
+      "description": "Smaller classes and better-paid teachers.",
+      "x": 29,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "pol_society"
+        ]
+      ],
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "education_quality",
             "value": 0.04,
             "days": 3650
           }
@@ -497,88 +1665,316 @@
         {
           "add_interest_group_approval": {
             "group": "youth_students",
-            "value": 4
+            "value": 3
           }
         }
-      ],
-      "prerequisites": [
-        [
-          "pol_defence_review"
-        ]
-      ],
-      "ai_weight": 1.5
+      ]
     },
     {
-      "id": "pol_motorways",
-      "name": "Motorways",
-      "description": "Build a national motorway network.",
-      "x": 7,
+      "id": "pol_research_agency",
+      "name": "A research agency",
+      "description": "Grants for breakthrough research.",
+      "x": 31,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "pol_society"
+        ]
+      ],
+      "effects": [
+        {
+          "add_spirit": "science_drive"
+        },
+        {
+          "add_research_bonus": {
+            "category": "industry_energy",
+            "value": 0.2,
+            "uses": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "pol_elderly_care",
+      "name": "Care for the elderly",
+      "description": "Care homes and home care for an ageing population.",
+      "x": 27,
       "y": 2,
       "days": 70,
+      "prerequisites": [
+        [
+          "pol_health_investment"
+        ]
+      ],
+      "effects": [
+        {
+          "set_budget": {
+            "spending": 0.3
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "rural",
+            "value": 2
+          }
+        },
+        {
+          "add_stability": 0.01
+        }
+      ]
+    },
+    {
+      "id": "pol_universities",
+      "name": "Leading universities",
+      "description": "Funding for the top universities.",
+      "x": 29,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "pol_schools_investment",
+          "pol_research_agency"
+        ]
+      ],
+      "effects": [
+        {
+          "add_research_bonus": {
+            "category": "economy_digital",
+            "value": 0.2,
+            "uses": 2
+          }
+        }
+      ]
+    },
+    {
+      "id": "pol_ai_and_computing",
+      "name": "Artificial intelligence and computing",
+      "description": "Supercomputers and data centres.",
+      "x": 31,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "pol_research_agency"
+        ]
+      ],
+      "available": {
+        "date_after": "2015-01-01"
+      },
+      "effects": [
+        {
+          "add_buildings": {
+            "building": "data_centre",
+            "count": 2
+          }
+        },
+        {
+          "add_research_bonus": {
+            "category": "electronics_cyber",
+            "value": 0.2,
+            "uses": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "pol_affordable_housing",
+      "name": "Affordable housing",
+      "description": "Build homes the young can afford.",
+      "x": 27,
+      "y": 3,
+      "days": 70,
+      "prerequisites": [
+        [
+          "pol_elderly_care"
+        ]
+      ],
+      "available": {
+        "treasury_above": 1
+      },
       "effects": [
         {
           "add_timed_modifier": {
             "modifier": "construction_speed",
-            "value": 0.08,
-            "days": 3650
+            "value": 0.05,
+            "days": 2920
           }
         },
         {
-          "add_economic_mood": 0.02
+          "add_interest_group_approval": {
+            "group": "youth_students",
+            "value": 3
+          }
+        },
+        {
+          "add_treasury": -1
         }
-      ],
-      "prerequisites": [
-        [
-          "pol_economic_council"
-        ]
       ]
     },
     {
-      "id": "pol_coal_and_energy",
-      "name": "Coal and energy security",
-      "description": "Keep coal mining while diversifying gas supply.",
-      "x": 8,
+      "id": "pol_broadband",
+      "name": "Broadband everywhere",
+      "description": "Fast internet in every town and village.",
+      "x": 29,
       "y": 3,
       "days": 70,
+      "prerequisites": [
+        [
+          "pol_universities"
+        ]
+      ],
       "effects": [
         {
-          "add_timed_modifier": {
-            "modifier": "fossil_output",
-            "value": 0.05,
-            "days": 3650
+          "add_buildings": {
+            "building": "data_centre",
+            "count": 1
+          }
+        },
+        {
+          "add_buildings": {
+            "building": "infrastructure",
+            "count": 1
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "rural",
+            "value": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "pol_space_and_satellites",
+      "name": "Space and satellites",
+      "description": "Satellites for navigation and observation.",
+      "x": 31,
+      "y": 3,
+      "days": 70,
+      "prerequisites": [
+        [
+          "pol_ai_and_computing"
+        ]
+      ],
+      "effects": [
+        {
+          "add_research_bonus": {
+            "category": "air_drones",
+            "value": 0.15,
+            "uses": 1
           }
         },
         {
           "add_timed_modifier": {
-            "modifier": "foreign_influence_resistance",
-            "value": 0.04,
+            "modifier": "intelligence_power",
+            "value": 0.03,
             "days": 3650
           }
         }
-      ],
+      ]
+    },
+    {
+      "id": "pol_public_transport",
+      "name": "Public transport",
+      "description": "Trams, metros and regional trains.",
+      "x": 27,
+      "y": 4,
+      "days": 70,
       "prerequisites": [
         [
-          "pol_motorways"
+          "pol_affordable_housing"
         ]
+      ],
+      "effects": [
+        {
+          "add_buildings": {
+            "building": "infrastructure",
+            "count": 2
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "urban_middle_class",
+            "value": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "pol_digital_state",
+      "name": "A digital state",
+      "description": "Public services online.",
+      "x": 29,
+      "y": 4,
+      "days": 70,
+      "prerequisites": [
+        [
+          "pol_broadband"
+        ]
+      ],
+      "effects": [
+        {
+          "add_spirit": "digital_government"
+        }
+      ]
+    },
+    {
+      "id": "pol_biotech",
+      "name": "Biotechnology",
+      "description": "Vaccines and medicines made at home.",
+      "x": 31,
+      "y": 4,
+      "days": 70,
+      "prerequisites": [
+        [
+          "pol_space_and_satellites"
+        ]
+      ],
+      "effects": [
+        {
+          "add_buildings": {
+            "building": "civilian_factory",
+            "count": 1
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "health_outcomes",
+            "value": 0.02,
+            "days": 3650
+          }
+        }
+      ]
+    },
+    {
+      "id": "pol_climate_adaptation",
+      "name": "Climate adaptation",
+      "description": "Flood defences and water management.",
+      "x": 29,
+      "y": 5,
+      "days": 70,
+      "prerequisites": [
+        [
+          "pol_public_transport",
+          "pol_digital_state",
+          "pol_biotech"
+        ]
+      ],
+      "available": {
+        "date_after": "2010-01-01"
+      },
+      "effects": [
+        {
+          "add_buildings": {
+            "building": "infrastructure",
+            "count": 1
+          }
+        },
+        {
+          "add_stability": 0.01
+        }
       ]
     }
-  ],
-  "source": [
-    {
-      "url": "https://en.wikipedia.org/wiki/Jerzy_Buzek",
-      "title": "Wikipedia: Jerzy Buzek",
-      "accessed": "2026-10-15"
-    },
-    {
-      "url": "https://en.wikipedia.org/wiki/2003_Polish_European_Union_membership_referendum",
-      "title": "Wikipedia: 2003 Polish European Union membership referendum",
-      "accessed": "2026-10-15"
-    },
-    {
-      "url": "https://en.wikipedia.org/wiki/Military_service",
-      "title": "Wikipedia: Military service",
-      "accessed": "2026-10-15"
-    }
-  ],
-  "confidence": "verified"
+  ]
 }

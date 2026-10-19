@@ -1,0 +1,99 @@
+{
+  "note": "Iran's national spirits. The ones with `start` describe the situation on 1 January 2000 and cite sources. Values are gameplay estimates.",
+  "spirits": [
+    {
+      "id": "irn_energy_reserves",
+      "name": "Oil and gas reserves",
+      "description": "Iran holds about a tenth of the world's proven oil reserves and about a seventh of its gas reserves.",
+      "kind": "strength",
+      "modifiers": {
+        "fossil_output": 0.15
+      },
+      "start": [
+        "IRN"
+      ],
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Economy_of_Iran",
+          "title": "Wikipedia: Economy of Iran",
+          "accessed": "2026-10-19"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "irn_public_sector",
+      "name": "A large public sector",
+      "description": "The economy is mixed, with a large public sector.",
+      "kind": "policy",
+      "modifiers": {
+        "state_industry_output": 0.05,
+        "private_sector_output": -0.03
+      },
+      "start": [
+        "IRN"
+      ],
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Economy_of_Iran",
+          "title": "Wikipedia: Economy of Iran",
+          "accessed": "2026-10-19"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "irn_war_legacy",
+      "name": "Legacy of the war with Iraq",
+      "description": "The war with Iraq from 1980 to 1988 left deep losses and a culture of self-reliance in defence.",
+      "kind": "policy",
+      "modifiers": {
+        "war_support_factor": 0.03,
+        "foreign_influence_resistance": 0.05
+      },
+      "start": [
+        "IRN"
+      ],
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Iran–Iraq_War",
+          "title": "Wikipedia: Iran–Iraq War",
+          "accessed": "2026-10-19"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "irn_nuclear_sanctions",
+      "name": "Nuclear sanctions",
+      "description": "International sanctions over the nuclear programme.",
+      "kind": "problem",
+      "modifiers": {
+        "trade_efficiency": -0.15,
+        "foreign_investment": -0.15,
+        "fossil_output": -0.1
+      }
+    },
+    {
+      "id": "irn_resistance_economy",
+      "name": "Resistance economy",
+      "description": "Self-reliance in industry and finance under sanctions.",
+      "kind": "policy",
+      "modifiers": {
+        "state_industry_output": 0.04,
+        "foreign_influence_resistance": 0.08,
+        "trade_efficiency": -0.03
+      }
+    },
+    {
+      "id": "irn_gas_exporter",
+      "name": "South Pars gas",
+      "description": "Gas from the world's largest gas field for power and exports.",
+      "kind": "strength",
+      "modifiers": {
+        "energy_cost": -0.04,
+        "fossil_output": 0.1
+      }
+    }
+  ]
+}

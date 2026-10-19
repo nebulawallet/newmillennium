@@ -1,0 +1,106 @@
+{
+  "categories": [
+    {
+      "id": "chn_projects",
+      "name": "Chinese state projects",
+      "description": "Projects that the national focuses open up."
+    }
+  ],
+  "decisions": [
+    {
+      "id": "chn_rail_line",
+      "name": "Open a high-speed line",
+      "description": "A new high-speed railway between two provinces.",
+      "category": "chn_projects",
+      "countries": [
+        "CHN"
+      ],
+      "visible": {
+        "has_completed_focus": "chn_high_speed_rail"
+      },
+      "available": {
+        "treasury_above": 3
+      },
+      "cost": {
+        "political_power": 30
+      },
+      "effects": [
+        {
+          "add_treasury": -3
+        },
+        {
+          "add_buildings": {
+            "building": "infrastructure",
+            "count": 3
+          }
+        }
+      ],
+      "cooldown_days": 365,
+      "ai_weight": 2
+    },
+    {
+      "id": "chn_brl_project",
+      "name": "A Belt and Road project",
+      "description": "Finance a port, railway or power plant abroad.",
+      "category": "chn_projects",
+      "countries": [
+        "CHN"
+      ],
+      "visible": {
+        "has_completed_focus": "chn_belt_and_road"
+      },
+      "available": {
+        "treasury_above": 2
+      },
+      "cost": {
+        "political_power": 30
+      },
+      "effects": [
+        {
+          "add_treasury": -2
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "foreign_influence_power",
+            "value": 0.03,
+            "days": 1460
+          }
+        }
+      ],
+      "cooldown_days": 365,
+      "ai_weight": 2
+    },
+    {
+      "id": "chn_tech_fund",
+      "name": "State technology fund",
+      "description": "A fund for chips and new industries.",
+      "category": "chn_projects",
+      "countries": [
+        "CHN"
+      ],
+      "visible": {
+        "has_completed_focus": "chn_made_in_china_2025"
+      },
+      "available": {
+        "treasury_above": 2
+      },
+      "cost": {
+        "political_power": 30
+      },
+      "effects": [
+        {
+          "add_treasury": -2
+        },
+        {
+          "add_research_bonus": {
+            "category": "electronics_cyber",
+            "value": 0.25,
+            "uses": 1
+          }
+        }
+      ],
+      "cooldown_days": 365,
+      "ai_weight": 2
+    }
+  ]
+}

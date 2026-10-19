@@ -4,18 +4,1293 @@
   "countries": [
     "ESP"
   ],
-  "note": "Branches depend on the governing parties and office holders. Policies named after real reforms are cited; effects are gameplay estimates.",
+  "note": "Spain in the style of the Russian model tree: democratic government as the historical path and alternatives led by real parties of the data; economy (the AVE, the property crash, the 2012 bank rescue and Sareb, renewables, Next Generation EU), state and regions (the end of ETA, the Catalan question, a professional army) and foreign policy. Sourced starting spirits in data/spirits/esp.json. Alternatives are a counterfactual.",
+  "source": [
+    {
+      "url": "https://en.wikipedia.org/wiki/Conscription_in_Spain",
+      "title": "Wikipedia: Conscription in Spain",
+      "accessed": "2026-10-19"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Same-sex_marriage_in_Spain",
+      "title": "Wikipedia: Same-sex marriage in Spain",
+      "accessed": "2026-10-19"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/ETA_(separatist_group)",
+      "title": "Wikipedia: ETA (separatist group)",
+      "accessed": "2026-10-19"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/High-speed_rail_in_Spain",
+      "title": "Wikipedia: High-speed rail in Spain",
+      "accessed": "2026-10-19"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Unemployment_in_Spain",
+      "title": "Wikipedia: Unemployment in Spain",
+      "accessed": "2026-10-19"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Spanish_property_bubble",
+      "title": "Wikipedia: Spanish property bubble",
+      "accessed": "2026-10-19"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Economy_of_Spain",
+      "title": "Wikipedia: Economy of Spain",
+      "accessed": "2026-10-19"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Sareb",
+      "title": "Wikipedia: Sareb",
+      "accessed": "2026-10-19"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/2017_Catalan_independence_referendum",
+      "title": "Wikipedia: 2017 Catalan independence referendum",
+      "accessed": "2026-10-19"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Wind_power_in_Spain",
+      "title": "Wikipedia: Wind power in Spain",
+      "accessed": "2026-10-19"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Next_Generation_EU",
+      "title": "Wikipedia: Next Generation EU",
+      "accessed": "2026-10-19"
+    }
+  ],
+  "confidence": "verified",
   "focuses": [
     {
-      "id": "esp_national_programme",
-      "name": "Spain in Europe",
-      "description": "Set the priorities of the government.",
-      "x": 8,
+      "id": "esp_question_of_power",
+      "name": "The direction of the country",
+      "description": "Which camp governs the country.",
+      "x": 6,
       "y": 0,
       "days": 70,
       "effects": [
         {
-          "add_political_power": 50
+          "add_political_power": 30
+        }
+      ],
+      "ai_weight": 5
+    },
+    {
+      "id": "esp_steady_course",
+      "name": "Democratic government",
+      "description": "Parties alternate in power through elections, as they historically did.",
+      "x": 0,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "esp_question_of_power"
+        ]
+      ],
+      "mutually_exclusive": [
+        "esp_left_turn",
+        "esp_conservative_turn",
+        "esp_liberal_turn",
+        "esp_populist_turn",
+        "esp_socialist_turn"
+      ],
+      "available": {
+        "follows_history": true
+      },
+      "effects": [
+        {
+          "add_stability": 0.04
+        },
+        {
+          "add_political_power": 40
+        }
+      ],
+      "ai_weight": 20
+    },
+    {
+      "id": "esp_left_turn",
+      "name": "A turn to the left",
+      "description": "Parties of the left (the PSOE and United Left) gain on wages, welfare and public services.",
+      "x": 2,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "esp_question_of_power"
+        ]
+      ],
+      "mutually_exclusive": [
+        "esp_steady_course",
+        "esp_conservative_turn",
+        "esp_liberal_turn",
+        "esp_populist_turn",
+        "esp_socialist_turn"
+      ],
+      "available": {
+        "all": [
+          {
+            "any": [
+              {
+                "follows_history": false
+              },
+              {
+                "is_player": true
+              }
+            ]
+          },
+          {
+            "has_party_of_group": "social_democratic"
+          },
+          {
+            "not": {
+              "ruling_ideology_group": "social_democratic"
+            }
+          },
+          {
+            "any": [
+              {
+                "gdp_growth_below": 1.5
+              },
+              {
+                "unrest_above": 0.15
+              },
+              {
+                "ig_approval_below": {
+                  "group": "labour_unions",
+                  "value": 45
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "effects": [
+        {
+          "leave_history": true
+        },
+        {
+          "add_ideology_support": {
+            "group": "social_democratic",
+            "value": 0.04
+          }
+        }
+      ],
+      "ai_weight": 0.3
+    },
+    {
+      "id": "esp_left_turn_build",
+      "name": "Unions and voters",
+      "description": "Unions and young voters rally to the left.",
+      "x": 2,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "esp_left_turn"
+        ]
+      ],
+      "effects": [
+        {
+          "add_ideology_support": {
+            "group": "social_democratic",
+            "value": 0.05
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "labour_unions",
+            "value": 5
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "youth_students",
+            "value": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "esp_left_turn_government",
+      "name": "A left-wing government",
+      "description": "The most popular party of the democratic left leads the government.",
+      "x": 2,
+      "y": 3,
+      "days": 105,
+      "prerequisites": [
+        [
+          "esp_left_turn_build"
+        ]
+      ],
+      "available": {
+        "ideology_group_support_above": {
+          "group": "social_democratic",
+          "value": 0.2
+        }
+      },
+      "effects": [
+        {
+          "install_government": {
+            "ideology": "social_democratic"
+          }
+        },
+        {
+          "add_stability": -0.05
+        }
+      ]
+    },
+    {
+      "id": "esp_welfare_expansion",
+      "name": "Expand the welfare state",
+      "description": "Public health care and higher pensions.",
+      "x": 2,
+      "y": 4,
+      "days": 70,
+      "prerequisites": [
+        [
+          "esp_left_turn_government"
+        ]
+      ],
+      "effects": [
+        {
+          "add_spirit": "universal_healthcare"
+        },
+        {
+          "set_budget": {
+            "spending": 1
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "labour_unions",
+            "value": 4
+          }
+        }
+      ]
+    },
+    {
+      "id": "esp_conservative_turn",
+      "name": "A conservative turn",
+      "description": "Conservative parties (the People's Party) gain on order, tax cuts and tradition.",
+      "x": 4,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "esp_question_of_power"
+        ]
+      ],
+      "mutually_exclusive": [
+        "esp_steady_course",
+        "esp_left_turn",
+        "esp_liberal_turn",
+        "esp_populist_turn",
+        "esp_socialist_turn"
+      ],
+      "available": {
+        "all": [
+          {
+            "any": [
+              {
+                "follows_history": false
+              },
+              {
+                "is_player": true
+              }
+            ]
+          },
+          {
+            "has_party_of_group": "conservative"
+          },
+          {
+            "not": {
+              "ruling_ideology_group": "conservative"
+            }
+          },
+          {
+            "any": [
+              {
+                "stability_below": 0.6
+              },
+              {
+                "gdp_growth_below": 1.5
+              }
+            ]
+          }
+        ]
+      },
+      "effects": [
+        {
+          "leave_history": true
+        },
+        {
+          "add_ideology_support": {
+            "group": "conservative",
+            "value": 0.04
+          }
+        }
+      ],
+      "ai_weight": 0.3
+    },
+    {
+      "id": "esp_conservative_turn_build",
+      "name": "Business and the countryside",
+      "description": "Business and rural voters rally to the right.",
+      "x": 4,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "esp_conservative_turn"
+        ]
+      ],
+      "effects": [
+        {
+          "add_ideology_support": {
+            "group": "conservative",
+            "value": 0.05
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "business",
+            "value": 4
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "rural",
+            "value": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "esp_conservative_turn_government",
+      "name": "A conservative government",
+      "description": "The most popular conservative party leads the government.",
+      "x": 4,
+      "y": 3,
+      "days": 105,
+      "prerequisites": [
+        [
+          "esp_conservative_turn_build"
+        ]
+      ],
+      "available": {
+        "ideology_group_support_above": {
+          "group": "conservative",
+          "value": 0.2
+        }
+      },
+      "effects": [
+        {
+          "install_government": {
+            "ideology": "conservative"
+          }
+        },
+        {
+          "add_stability": -0.05
+        }
+      ]
+    },
+    {
+      "id": "esp_fiscal_discipline",
+      "name": "Fiscal discipline",
+      "description": "Cut spending and taxes to balance the budget.",
+      "x": 4,
+      "y": 4,
+      "days": 70,
+      "prerequisites": [
+        [
+          "esp_conservative_turn_government"
+        ]
+      ],
+      "effects": [
+        {
+          "add_spirit": "balanced_budget"
+        },
+        {
+          "set_budget": {
+            "spending": -1,
+            "revenue": -0.5
+          }
+        }
+      ]
+    },
+    {
+      "id": "esp_liberal_turn",
+      "name": "A liberal turn",
+      "description": "Liberal parties (Ciudadanos and UPyD) gain ground on reform and civil liberties.",
+      "x": 6,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "esp_question_of_power"
+        ]
+      ],
+      "mutually_exclusive": [
+        "esp_steady_course",
+        "esp_left_turn",
+        "esp_conservative_turn",
+        "esp_populist_turn",
+        "esp_socialist_turn"
+      ],
+      "available": {
+        "all": [
+          {
+            "any": [
+              {
+                "follows_history": false
+              },
+              {
+                "is_player": true
+              }
+            ]
+          },
+          {
+            "has_party_of_group": "liberal_democratic"
+          },
+          {
+            "not": {
+              "ruling_ideology_group": "liberal_democratic"
+            }
+          },
+          {
+            "any": [
+              {
+                "stability_below": 0.6
+              },
+              {
+                "ig_approval_below": {
+                  "group": "urban_middle_class",
+                  "value": 45
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "effects": [
+        {
+          "leave_history": true
+        },
+        {
+          "add_ideology_support": {
+            "group": "liberal_democratic",
+            "value": 0.04
+          }
+        }
+      ],
+      "ai_weight": 0.3
+    },
+    {
+      "id": "esp_liberal_turn_build",
+      "name": "Reform agenda",
+      "description": "A programme of deregulation and civil liberties.",
+      "x": 6,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "esp_liberal_turn"
+        ]
+      ],
+      "effects": [
+        {
+          "add_ideology_support": {
+            "group": "liberal_democratic",
+            "value": 0.05
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "urban_middle_class",
+            "value": 4
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "business",
+            "value": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "esp_liberal_turn_government",
+      "name": "A liberal government",
+      "description": "The most popular liberal party leads the government.",
+      "x": 6,
+      "y": 3,
+      "days": 105,
+      "prerequisites": [
+        [
+          "esp_liberal_turn_build"
+        ]
+      ],
+      "available": {
+        "ideology_group_support_above": {
+          "group": "liberal_democratic",
+          "value": 0.2
+        }
+      },
+      "effects": [
+        {
+          "install_government": {
+            "ideology": "liberal_democratic"
+          }
+        },
+        {
+          "add_stability": -0.05
+        }
+      ]
+    },
+    {
+      "id": "esp_liberal_reforms",
+      "name": "Liberal reforms",
+      "description": "Cut red tape and open markets.",
+      "x": 6,
+      "y": 4,
+      "days": 70,
+      "prerequisites": [
+        [
+          "esp_liberal_turn_government"
+        ]
+      ],
+      "effects": [
+        {
+          "change_law": {
+            "category": "trade",
+            "law": "free_trade"
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "private_sector_output",
+            "value": 0.05,
+            "days": 2920
+          }
+        },
+        {
+          "add_spirit": "open_society"
+        }
+      ]
+    },
+    {
+      "id": "esp_populist_turn",
+      "name": "A populist wave",
+      "description": "National-populist parties (Vox) gain on immigration and sovereignty.",
+      "x": 8,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "esp_question_of_power"
+        ]
+      ],
+      "mutually_exclusive": [
+        "esp_steady_course",
+        "esp_left_turn",
+        "esp_conservative_turn",
+        "esp_liberal_turn",
+        "esp_socialist_turn"
+      ],
+      "available": {
+        "all": [
+          {
+            "any": [
+              {
+                "follows_history": false
+              },
+              {
+                "is_player": true
+              }
+            ]
+          },
+          {
+            "has_party_of_group": "nationalist_populist"
+          },
+          {
+            "not": {
+              "ruling_ideology_group": "nationalist_populist"
+            }
+          },
+          {
+            "any": [
+              {
+                "stability_below": 0.5
+              },
+              {
+                "unrest_above": 0.15
+              }
+            ]
+          }
+        ]
+      },
+      "effects": [
+        {
+          "leave_history": true
+        },
+        {
+          "add_ideology_support": {
+            "group": "nationalist_populist",
+            "value": 0.04
+          }
+        }
+      ],
+      "ai_weight": 0.3
+    },
+    {
+      "id": "esp_populist_turn_build",
+      "name": "Rallies and referendums",
+      "description": "Mass rallies and calls for referendums.",
+      "x": 8,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "esp_populist_turn"
+        ]
+      ],
+      "effects": [
+        {
+          "add_ideology_support": {
+            "group": "nationalist_populist",
+            "value": 0.05
+          }
+        },
+        {
+          "add_war_support": 0.03
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "minorities",
+            "value": -4
+          }
+        }
+      ]
+    },
+    {
+      "id": "esp_populist_turn_government",
+      "name": "A national-populist government",
+      "description": "The most popular national-populist party leads the government.",
+      "x": 8,
+      "y": 3,
+      "days": 105,
+      "prerequisites": [
+        [
+          "esp_populist_turn_build"
+        ]
+      ],
+      "available": {
+        "ideology_group_support_above": {
+          "group": "nationalist_populist",
+          "value": 0.2
+        }
+      },
+      "effects": [
+        {
+          "install_government": {
+            "ideology": "nationalist_populist"
+          }
+        },
+        {
+          "add_stability": -0.05
+        }
+      ]
+    },
+    {
+      "id": "esp_sovereignty_first",
+      "name": "Sovereignty first",
+      "description": "Restrict immigration and limit the power of international bodies.",
+      "x": 8,
+      "y": 4,
+      "days": 70,
+      "prerequisites": [
+        [
+          "esp_populist_turn_government"
+        ]
+      ],
+      "effects": [
+        {
+          "change_law": {
+            "category": "immigration",
+            "law": "restrictive_immigration"
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "foreign_influence_resistance",
+            "value": 0.1,
+            "days": 2920
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "minorities",
+            "value": -6
+          }
+        }
+      ]
+    },
+    {
+      "id": "esp_socialist_turn",
+      "name": "A socialist turn",
+      "description": "Socialist and communist parties (Podemos) gain in a crisis.",
+      "x": 10,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "esp_question_of_power"
+        ]
+      ],
+      "mutually_exclusive": [
+        "esp_steady_course",
+        "esp_left_turn",
+        "esp_conservative_turn",
+        "esp_liberal_turn",
+        "esp_populist_turn"
+      ],
+      "available": {
+        "all": [
+          {
+            "any": [
+              {
+                "follows_history": false
+              },
+              {
+                "is_player": true
+              }
+            ]
+          },
+          {
+            "has_party_of_group": "socialist_communist"
+          },
+          {
+            "not": {
+              "ruling_ideology_group": "socialist_communist"
+            }
+          },
+          {
+            "any": [
+              {
+                "gdp_growth_below": 0.5
+              },
+              {
+                "unrest_above": 0.25
+              }
+            ]
+          }
+        ]
+      },
+      "effects": [
+        {
+          "leave_history": true
+        },
+        {
+          "add_ideology_support": {
+            "group": "socialist_communist",
+            "value": 0.04
+          }
+        }
+      ],
+      "ai_weight": 0.3
+    },
+    {
+      "id": "esp_socialist_turn_build",
+      "name": "Strikes and occupations",
+      "description": "Strikes and workplace occupations.",
+      "x": 10,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "esp_socialist_turn"
+        ]
+      ],
+      "effects": [
+        {
+          "add_ideology_support": {
+            "group": "socialist_communist",
+            "value": 0.05
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "labour_unions",
+            "value": 6
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "business",
+            "value": -4
+          }
+        }
+      ]
+    },
+    {
+      "id": "esp_socialist_turn_government",
+      "name": "A socialist government",
+      "description": "The most popular socialist party leads the government.",
+      "x": 10,
+      "y": 3,
+      "days": 105,
+      "prerequisites": [
+        [
+          "esp_socialist_turn_build"
+        ]
+      ],
+      "available": {
+        "ideology_group_support_above": {
+          "group": "socialist_communist",
+          "value": 0.25
+        }
+      },
+      "effects": [
+        {
+          "install_government": {
+            "ideology": "socialist_communist"
+          }
+        },
+        {
+          "add_stability": -0.05
+        }
+      ]
+    },
+    {
+      "id": "esp_public_ownership",
+      "name": "Public ownership",
+      "description": "Nationalise the banks and the largest companies.",
+      "x": 10,
+      "y": 4,
+      "days": 70,
+      "prerequisites": [
+        [
+          "esp_socialist_turn_government"
+        ]
+      ],
+      "effects": [
+        {
+          "change_law": {
+            "category": "economic_system",
+            "law": "state_capitalism"
+          }
+        },
+        {
+          "add_spirit": "state_planning"
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "business",
+            "value": -10
+          }
+        }
+      ]
+    },
+    {
+      "id": "esp_economy",
+      "name": "Economic agenda",
+      "description": "Priorities for the Spanish economy.",
+      "x": 14,
+      "y": 0,
+      "days": 70,
+      "effects": [
+        {
+          "add_political_power": 20
+        }
+      ],
+      "ai_weight": 5
+    },
+    {
+      "id": "esp_ave_network",
+      "name": "Extend the AVE",
+      "description": "High-speed lines to Barcelona, Valencia and Galicia. Unlocks new lines.",
+      "x": 13,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "esp_economy"
+        ]
+      ],
+      "available": {
+        "treasury_above": 2
+      },
+      "effects": [
+        {
+          "add_buildings": {
+            "building": "infrastructure",
+            "count": 4
+          }
+        },
+        {
+          "add_treasury": -2
+        }
+      ]
+    },
+    {
+      "id": "esp_tourism",
+      "name": "Tourism",
+      "description": "Hotels, airports and marketing.",
+      "x": 15,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "esp_economy"
+        ]
+      ],
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "gdp_growth",
+            "value": 0.002,
+            "days": 2920
+          }
+        },
+        {
+          "add_buildings": {
+            "building": "air_base",
+            "count": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "esp_property_crash",
+      "name": "The property crash",
+      "description": "House prices fall after 2008 and the construction boom ends.",
+      "x": 14,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "esp_economy"
+        ]
+      ],
+      "available": {
+        "all": [
+          {
+            "follows_history": true
+          },
+          {
+            "date_after": "2008-09-15"
+          }
+        ]
+      },
+      "effects": [
+        {
+          "swap_spirit": {
+            "from": "esp_property_boom",
+            "to": "esp_property_crash"
+          }
+        }
+      ],
+      "ai_weight": 6
+    },
+    {
+      "id": "esp_bank_rescue",
+      "name": "Rescue the banks",
+      "description": "A European Stability Mechanism credit for the banks in 2012; Spain drew €41 billion.",
+      "x": 13,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "esp_property_crash"
+        ]
+      ],
+      "available": {
+        "all": [
+          {
+            "follows_history": true
+          },
+          {
+            "date_after": "2012-06-01"
+          }
+        ]
+      },
+      "effects": [
+        {
+          "add_treasury": 5
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "business",
+            "value": 3
+          }
+        }
+      ],
+      "ai_weight": 4
+    },
+    {
+      "id": "esp_bad_bank",
+      "name": "A bad bank",
+      "description": "Sareb, created on 31 August 2012, takes over the banks' property assets.",
+      "x": 14,
+      "y": 2,
+      "days": 105,
+      "prerequisites": [
+        [
+          "esp_bank_rescue"
+        ]
+      ],
+      "available": {
+        "date_after": "2012-08-31"
+      },
+      "effects": [
+        {
+          "remove_spirit": "esp_property_crash"
+        },
+        {
+          "add_stability": 0.02
+        }
+      ],
+      "ai_weight": 4
+    },
+    {
+      "id": "esp_labour_reform",
+      "name": "Labour reform",
+      "description": "Make contracts more flexible to cut unemployment.",
+      "x": 15,
+      "y": 2,
+      "days": 140,
+      "prerequisites": [
+        [
+          "esp_tourism",
+          "esp_property_crash"
+        ]
+      ],
+      "effects": [
+        {
+          "remove_spirit": "esp_unemployment"
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "labour_unions",
+            "value": -6
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "private_sector_output",
+            "value": 0.03,
+            "days": 2920
+          }
+        }
+      ],
+      "ai_weight": 3
+    },
+    {
+      "id": "esp_renewables",
+      "name": "Wind and solar",
+      "description": "Spain was the first country where wind was the main source of electricity, in 2013. Unlocks auctions.",
+      "x": 15,
+      "y": 3,
+      "days": 70,
+      "prerequisites": [
+        [
+          "esp_labour_reform",
+          "esp_tourism"
+        ]
+      ],
+      "available": {
+        "date_after": "2005-01-01"
+      },
+      "effects": [
+        {
+          "add_spirit": "esp_renewable_leader"
+        },
+        {
+          "add_buildings": {
+            "building": "renewable_plant",
+            "count": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "esp_car_industry",
+      "name": "Car industry",
+      "description": "Car plants and electric vehicle batteries.",
+      "x": 13,
+      "y": 3,
+      "days": 70,
+      "prerequisites": [
+        [
+          "esp_bad_bank",
+          "esp_ave_network"
+        ]
+      ],
+      "effects": [
+        {
+          "add_buildings": {
+            "building": "civilian_factory",
+            "count": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "esp_next_generation",
+      "name": "Next Generation EU funds",
+      "description": "Spend the EU recovery funds agreed on 21 July 2020.",
+      "x": 14,
+      "y": 3,
+      "days": 70,
+      "prerequisites": [
+        [
+          "esp_bad_bank",
+          "esp_labour_reform"
+        ]
+      ],
+      "available": {
+        "date_after": "2021-01-01"
+      },
+      "effects": [
+        {
+          "add_spirit": "stimulus"
+        },
+        {
+          "add_buildings": {
+            "building": "data_centre",
+            "count": 1
+          }
+        },
+        {
+          "add_buildings": {
+            "building": "infrastructure",
+            "count": 2
+          }
+        }
+      ]
+    },
+    {
+      "id": "esp_green_hydrogen",
+      "name": "Green hydrogen",
+      "description": "Hydrogen from solar power.",
+      "x": 15,
+      "y": 4,
+      "days": 70,
+      "prerequisites": [
+        [
+          "esp_renewables",
+          "esp_next_generation"
+        ]
+      ],
+      "effects": [
+        {
+          "add_research_bonus": {
+            "category": "industry_energy",
+            "value": 0.25,
+            "uses": 2
+          }
+        }
+      ]
+    },
+    {
+      "id": "esp_state",
+      "name": "State and regions",
+      "description": "Spain's state and its autonomous communities.",
+      "x": 19,
+      "y": 0,
+      "days": 70,
+      "effects": [
+        {
+          "add_political_power": 20
+        }
+      ],
+      "ai_weight": 4
+    },
+    {
+      "id": "esp_against_eta",
+      "name": "End ETA's violence",
+      "description": "Police cooperation with France against ETA; ETA announced the end of its armed activity in 2011 and dissolved in 2018.",
+      "x": 18,
+      "y": 1,
+      "days": 105,
+      "prerequisites": [
+        [
+          "esp_state"
+        ]
+      ],
+      "available": {
+        "date_after": "2011-10-01"
+      },
+      "effects": [
+        {
+          "remove_spirit": "esp_eta"
+        },
+        {
+          "add_stability": 0.03
+        }
+      ],
+      "ai_weight": 5
+    },
+    {
+      "id": "esp_catalan_question",
+      "name": "The Catalan question",
+      "description": "Answer the independence referendum of 1 October 2017, which the Constitutional Court had suspended.",
+      "x": 20,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "esp_state"
+        ]
+      ],
+      "available": {
+        "all": [
+          {
+            "follows_history": true
+          },
+          {
+            "date_after": "2017-10-01"
+          }
+        ]
+      },
+      "effects": [
+        {
+          "add_stability": -0.02
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "minorities",
+            "value": -3
+          }
+        },
+        {
+          "add_political_power": 30
+        }
+      ],
+      "ai_weight": 3
+    },
+    {
+      "id": "esp_regional_financing",
+      "name": "Regional financing",
+      "description": "A new deal on money for the regions.",
+      "x": 19,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "esp_against_eta",
+          "esp_catalan_question"
+        ]
+      ],
+      "effects": [
+        {
+          "add_interest_group_approval": {
+            "group": "minorities",
+            "value": 5
+          }
         },
         {
           "add_stability": 0.02
@@ -23,527 +1298,513 @@
       ]
     },
     {
-      "id": "esp_defence_review",
-      "name": "Defence review",
-      "description": "Review strategy, forces and budgets for the new decade.",
-      "x": 11,
-      "y": 1,
-      "days": 70,
-      "effects": [
-        {
-          "add_war_support": 0.02
-        },
-        {
-          "add_interest_group_approval": {
-            "group": "military",
-            "value": 4
-          }
-        }
-      ],
-      "prerequisites": [
-        [
-          "esp_national_programme"
-        ]
-      ]
-    },
-    {
-      "id": "esp_modern_forces",
-      "name": "Modern forces",
-      "description": "Equip the armed forces with modern communications and precision weapons.",
-      "x": 11,
-      "y": 3,
-      "days": 105,
-      "effects": [
-        {
-          "add_timed_modifier": {
-            "modifier": "army_attack",
-            "value": 0.05,
-            "days": 3650
-          }
-        },
-        {
-          "add_timed_modifier": {
-            "modifier": "air_effectiveness",
-            "value": 0.05,
-            "days": 3650
-          }
-        },
-        {
-          "add_interest_group_approval": {
-            "group": "military",
-            "value": 3
-          }
-        }
-      ],
-      "prerequisites": [
-        [
-          "esp_defence_review"
-        ]
-      ]
-    },
-    {
-      "id": "esp_intelligence_services",
-      "name": "Intelligence services",
-      "description": "Expand the foreign and domestic intelligence services.",
-      "x": 12,
-      "y": 2,
-      "days": 70,
-      "effects": [
-        {
-          "add_timed_modifier": {
-            "modifier": "intelligence_power",
-            "value": 0.1,
-            "days": 3650
-          }
-        },
-        {
-          "add_interest_group_approval": {
-            "group": "security_services",
-            "value": 4
-          }
-        }
-      ],
-      "prerequisites": [
-        [
-          "esp_defence_review"
-        ]
-      ]
-    },
-    {
-      "id": "esp_foreign_policy",
-      "name": "Foreign policy priorities",
-      "description": "Set the course of foreign policy.",
-      "x": 14,
-      "y": 1,
-      "days": 70,
-      "effects": [
-        {
-          "add_timed_modifier": {
-            "modifier": "diplomatic_reputation",
-            "value": 0.05,
-            "days": 3650
-          }
-        },
-        {
-          "add_political_power": 20
-        }
-      ],
-      "prerequisites": [
-        [
-          "esp_national_programme"
-        ]
-      ]
-    },
-    {
-      "id": "esp_partners",
-      "name": "Closer ties with the European Union",
-      "description": "Deepen political and economic ties with the European Union.",
-      "x": 14,
-      "y": 2,
-      "days": 70,
-      "effects": [
-        {
-          "add_timed_modifier": {
-            "modifier": "bloc_integration",
-            "value": 0.1,
-            "days": 3650
-          }
-        },
-        {
-          "add_timed_modifier": {
-            "modifier": "trade_efficiency",
-            "value": 0.03,
-            "days": 3650
-          }
-        },
-        {
-          "country": {
-            "tag": "FRA",
-            "effects": [
-              {
-                "add_opinion": {
-                  "target": "ROOT",
-                  "value": 15,
-                  "days": 3650
-                }
-              }
-            ]
-          }
-        },
-        {
-          "country": {
-            "tag": "PRT",
-            "effects": [
-              {
-                "add_opinion": {
-                  "target": "ROOT",
-                  "value": 15,
-                  "days": 3650
-                }
-              }
-            ]
-          }
-        },
-        {
-          "country": {
-            "tag": "DEU",
-            "effects": [
-              {
-                "add_opinion": {
-                  "target": "ROOT",
-                  "value": 15,
-                  "days": 3650
-                }
-              }
-            ]
-          }
-        }
-      ],
-      "prerequisites": [
-        [
-          "esp_foreign_policy"
-        ]
-      ]
-    },
-    {
-      "id": "esp_international_standing",
-      "name": "International standing",
-      "description": "Raise the country's profile in international institutions and summits.",
-      "x": 15,
-      "y": 3,
-      "days": 70,
-      "effects": [
-        {
-          "add_timed_modifier": {
-            "modifier": "diplomatic_reputation",
-            "value": 0.1,
-            "days": 3650
-          }
-        },
-        {
-          "add_timed_modifier": {
-            "modifier": "international_opinion",
-            "value": 0.05,
-            "days": 3650
-          }
-        }
-      ],
-      "prerequisites": [
-        [
-          "esp_partners",
-          "esp_own_course"
-        ]
-      ]
-    },
-    {
-      "id": "esp_own_course",
-      "name": "An independent course",
-      "description": "Keep a free hand in foreign policy and trade.",
-      "x": 16,
-      "y": 2,
-      "days": 70,
-      "effects": [
-        {
-          "add_timed_modifier": {
-            "modifier": "foreign_influence_resistance",
-            "value": 0.1,
-            "days": 3650
-          }
-        },
-        {
-          "add_war_support": 0.02
-        }
-      ],
-      "prerequisites": [
-        [
-          "esp_foreign_policy"
-        ]
-      ],
-      "mutually_exclusive": [
-        "esp_partners"
-      ],
-      "ai_weight": 0.5
-    },
-    {
-      "id": "esp_economic_council",
-      "name": "Economic council",
-      "description": "Bring ministries, employers and unions together on economic priorities.",
-      "x": 5,
-      "y": 1,
-      "days": 70,
-      "effects": [
-        {
-          "add_economic_mood": 0.03
-        },
-        {
-          "add_political_power": 15
-        }
-      ],
-      "prerequisites": [
-        [
-          "esp_national_programme"
-        ]
-      ]
-    },
-    {
-      "id": "esp_infrastructure",
-      "name": "Infrastructure programme",
-      "description": "Invest in transport, power grids and communications.",
-      "x": 5,
-      "y": 3,
-      "days": 105,
-      "effects": [
-        {
-          "add_timed_modifier": {
-            "modifier": "construction_speed",
-            "value": 0.1,
-            "days": 3650
-          }
-        },
-        {
-          "add_economic_mood": 0.02
-        }
-      ],
-      "prerequisites": [
-        [
-          "esp_economic_council"
-        ]
-      ]
-    },
-    {
-      "id": "esp_research_programme",
-      "name": "Research and innovation",
-      "description": "Fund universities, research institutes and new industries.",
-      "x": 6,
-      "y": 4,
-      "days": 105,
-      "effects": [
-        {
-          "add_timed_modifier": {
-            "modifier": "research_speed",
-            "value": 0.05,
-            "days": 3650
-          }
-        },
-        {
-          "add_timed_modifier": {
-            "modifier": "education_quality",
-            "value": 0.02,
-            "days": 3650
-          }
-        }
-      ],
-      "prerequisites": [
-        [
-          "esp_infrastructure"
-        ]
-      ]
-    },
-    {
       "id": "esp_end_conscription",
-      "name": "End the mili",
-      "description": "Abolish compulsory military service. José María Aznar brought its end forward to 2001; conscription ended in December 2001.",
-      "x": 10,
+      "name": "A professional army",
+      "description": "End conscription, as Spain did in December 2001.",
+      "x": 18,
       "y": 2,
       "days": 70,
+      "prerequisites": [
+        [
+          "esp_state"
+        ]
+      ],
+      "available": {
+        "date_after": "2001-12-01"
+      },
       "effects": [
-        {
-          "change_law": {
-            "category": "conscription",
-            "law": "volunteer_force"
-          }
-        },
-        {
-          "add_interest_group_approval": {
-            "group": "youth_students",
-            "value": 6
-          }
-        },
         {
           "add_timed_modifier": {
             "modifier": "army_org",
             "value": 0.03,
             "days": 3650
           }
-        }
-      ],
-      "prerequisites": [
-        [
-          "esp_defence_review"
-        ]
-      ],
-      "available": {
-        "holds_office": {
-          "person": "esp.jose_maria_aznar",
-          "office": "esp.prime_minister"
-        }
-      },
-      "ai_weight": 3
-    },
-    {
-      "id": "esp_balanced_budget",
-      "name": "Balanced budget",
-      "description": "Eliminate the budget deficit and cut taxes.",
-      "x": 3,
-      "y": 1,
-      "days": 70,
-      "effects": [
-        {
-          "add_timed_modifier": {
-            "modifier": "interest_rate",
-            "value": -0.005,
-            "days": 3650
-          }
-        },
-        {
-          "add_interest_group_approval": {
-            "group": "business",
-            "value": 5
-          }
-        },
-        {
-          "add_timed_modifier": {
-            "modifier": "welfare_cost",
-            "value": -0.02,
-            "days": 3650
-          }
-        }
-      ],
-      "prerequisites": [
-        [
-          "esp_national_programme"
-        ]
-      ],
-      "available": {
-        "ruling_party": "esp.pp"
-      },
-      "ai_weight": 3
-    },
-    {
-      "id": "esp_social_rights",
-      "name": "Extend civil rights",
-      "description": "Widen civil rights. Under José Luis Rodríguez Zapatero, same-sex marriage became legal in Spain on 3 July 2005.",
-      "x": 1,
-      "y": 1,
-      "days": 70,
-      "effects": [
-        {
-          "add_timed_modifier": {
-            "modifier": "civil_liberties",
-            "value": 0.05,
-            "days": 3650
-          }
         },
         {
           "add_interest_group_approval": {
             "group": "youth_students",
             "value": 5
           }
-        },
-        {
-          "add_interest_group_approval": {
-            "group": "religious_establishment",
-            "value": -6
-          }
         }
       ],
-      "prerequisites": [
-        [
-          "esp_national_programme"
-        ]
-      ],
-      "available": {
-        "ruling_party": "esp.psoe"
-      },
-      "ai_weight": 2
+      "ai_weight": 4
     },
     {
-      "id": "esp_autonomies",
-      "name": "The autonomous communities",
-      "description": "Negotiate powers and funding with the autonomous communities.",
-      "x": 2,
-      "y": 2,
+      "id": "esp_navy_and_air",
+      "name": "Navy and air force",
+      "description": "Frigates, an amphibious ship and new fighters.",
+      "x": 18,
+      "y": 3,
       "days": 70,
-      "effects": [
-        {
-          "add_stability": 0.02
-        },
-        {
-          "add_interest_group_approval": {
-            "group": "minorities",
-            "value": 4
-          }
-        }
-      ],
       "prerequisites": [
         [
-          "esp_social_rights",
-          "esp_balanced_budget"
+          "esp_end_conscription"
         ]
+      ],
+      "effects": [
+        {
+          "add_buildings": {
+            "building": "port",
+            "count": 1
+          }
+        },
+        {
+          "add_research_bonus": {
+            "category": "naval",
+            "value": 0.15,
+            "uses": 1
+          }
+        },
+        {
+          "add_research_bonus": {
+            "category": "air_drones",
+            "value": 0.15,
+            "uses": 1
+          }
+        }
       ]
     },
     {
-      "id": "esp_construction_boom",
-      "name": "Housing and transport",
-      "description": "Build housing, motorways and high-speed rail.",
-      "x": 7,
+      "id": "esp_latin_america",
+      "name": "Ties with Latin America",
+      "description": "Investment and diplomacy in Latin America.",
+      "x": 20,
       "y": 2,
       "days": 70,
+      "prerequisites": [
+        [
+          "esp_catalan_question",
+          "esp_state"
+        ]
+      ],
+      "effects": [
+        {
+          "add_opinion": {
+            "target": "MEX",
+            "value": 10,
+            "days": 1825
+          }
+        },
+        {
+          "add_opinion": {
+            "target": "ARG",
+            "value": 10,
+            "days": 1825
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "foreign_influence_power",
+            "value": 0.03,
+            "days": 2920
+          }
+        }
+      ]
+    },
+    {
+      "id": "esp_mediterranean",
+      "name": "The Mediterranean",
+      "description": "Cooperation with Morocco on migration and trade.",
+      "x": 20,
+      "y": 3,
+      "days": 70,
+      "prerequisites": [
+        [
+          "esp_latin_america"
+        ]
+      ],
+      "effects": [
+        {
+          "add_opinion": {
+            "target": "MAR",
+            "value": 10,
+            "days": 1825
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "trade_efficiency",
+            "value": 0.02,
+            "days": 2920
+          }
+        }
+      ]
+    },
+    {
+      "id": "esp_society",
+      "name": "Society and science",
+      "description": "Health, schools, research and the infrastructure of everyday life.",
+      "x": 24,
+      "y": 0,
+      "days": 70,
+      "effects": [
+        {
+          "add_political_power": 20
+        }
+      ],
+      "ai_weight": 3
+    },
+    {
+      "id": "esp_health_investment",
+      "name": "Invest in hospitals",
+      "description": "New hospitals and more doctors.",
+      "x": 22,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "esp_society"
+        ]
+      ],
+      "available": {
+        "treasury_above": 1
+      },
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "health_outcomes",
+            "value": 0.04,
+            "days": 3650
+          }
+        },
+        {
+          "add_treasury": -1
+        }
+      ]
+    },
+    {
+      "id": "esp_schools_investment",
+      "name": "Invest in schools",
+      "description": "Smaller classes and better-paid teachers.",
+      "x": 24,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "esp_society"
+        ]
+      ],
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "education_quality",
+            "value": 0.04,
+            "days": 3650
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "youth_students",
+            "value": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "esp_research_agency",
+      "name": "A research agency",
+      "description": "Grants for breakthrough research.",
+      "x": 26,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "esp_society"
+        ]
+      ],
+      "effects": [
+        {
+          "add_spirit": "science_drive"
+        },
+        {
+          "add_research_bonus": {
+            "category": "industry_energy",
+            "value": 0.2,
+            "uses": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "esp_elderly_care",
+      "name": "Care for the elderly",
+      "description": "Care homes and home care for an ageing population.",
+      "x": 22,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "esp_health_investment"
+        ]
+      ],
+      "effects": [
+        {
+          "set_budget": {
+            "spending": 0.3
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "rural",
+            "value": 2
+          }
+        },
+        {
+          "add_stability": 0.01
+        }
+      ]
+    },
+    {
+      "id": "esp_universities",
+      "name": "Leading universities",
+      "description": "Funding for the top universities.",
+      "x": 24,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "esp_schools_investment",
+          "esp_research_agency"
+        ]
+      ],
+      "effects": [
+        {
+          "add_research_bonus": {
+            "category": "economy_digital",
+            "value": 0.2,
+            "uses": 2
+          }
+        }
+      ]
+    },
+    {
+      "id": "esp_ai_and_computing",
+      "name": "Artificial intelligence and computing",
+      "description": "Supercomputers and data centres.",
+      "x": 26,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "esp_research_agency"
+        ]
+      ],
+      "available": {
+        "date_after": "2015-01-01"
+      },
+      "effects": [
+        {
+          "add_buildings": {
+            "building": "data_centre",
+            "count": 2
+          }
+        },
+        {
+          "add_research_bonus": {
+            "category": "electronics_cyber",
+            "value": 0.2,
+            "uses": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "esp_affordable_housing",
+      "name": "Affordable housing",
+      "description": "Build homes the young can afford.",
+      "x": 22,
+      "y": 3,
+      "days": 70,
+      "prerequisites": [
+        [
+          "esp_elderly_care"
+        ]
+      ],
+      "available": {
+        "treasury_above": 1
+      },
       "effects": [
         {
           "add_timed_modifier": {
             "modifier": "construction_speed",
-            "value": 0.1,
-            "days": 3650
+            "value": 0.05,
+            "days": 2920
           }
         },
         {
-          "add_economic_mood": 0.03
+          "add_interest_group_approval": {
+            "group": "youth_students",
+            "value": 3
+          }
+        },
+        {
+          "add_treasury": -1
         }
-      ],
-      "prerequisites": [
-        [
-          "esp_economic_council"
-        ]
       ]
     },
     {
-      "id": "esp_tourism",
-      "name": "Tourism",
-      "description": "Expand tourism.",
-      "x": 8,
+      "id": "esp_broadband",
+      "name": "Broadband everywhere",
+      "description": "Fast internet in every town and village.",
+      "x": 24,
       "y": 3,
       "days": 70,
+      "prerequisites": [
+        [
+          "esp_universities"
+        ]
+      ],
       "effects": [
         {
+          "add_buildings": {
+            "building": "data_centre",
+            "count": 1
+          }
+        },
+        {
+          "add_buildings": {
+            "building": "infrastructure",
+            "count": 1
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "rural",
+            "value": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "esp_space_and_satellites",
+      "name": "Space and satellites",
+      "description": "Satellites for navigation and observation.",
+      "x": 26,
+      "y": 3,
+      "days": 70,
+      "prerequisites": [
+        [
+          "esp_ai_and_computing"
+        ]
+      ],
+      "effects": [
+        {
+          "add_research_bonus": {
+            "category": "air_drones",
+            "value": 0.15,
+            "uses": 1
+          }
+        },
+        {
           "add_timed_modifier": {
-            "modifier": "foreign_investment",
+            "modifier": "intelligence_power",
             "value": 0.03,
             "days": 3650
           }
-        },
-        {
-          "add_economic_mood": 0.02
         }
-      ],
-      "prerequisites": [
-        [
-          "esp_construction_boom"
-        ]
       ]
-    }
-  ],
-  "source": [
-    {
-      "url": "https://en.wikipedia.org/wiki/Conscription_in_Spain",
-      "title": "Wikipedia: Conscription in Spain",
-      "accessed": "2026-10-15"
     },
     {
-      "url": "https://en.wikipedia.org/wiki/Same-sex_marriage_in_Spain",
-      "title": "Wikipedia: Same-sex marriage in Spain",
-      "accessed": "2026-10-15"
+      "id": "esp_public_transport",
+      "name": "Public transport",
+      "description": "Trams, metros and regional trains.",
+      "x": 22,
+      "y": 4,
+      "days": 70,
+      "prerequisites": [
+        [
+          "esp_affordable_housing"
+        ]
+      ],
+      "effects": [
+        {
+          "add_buildings": {
+            "building": "infrastructure",
+            "count": 2
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "urban_middle_class",
+            "value": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "esp_digital_state",
+      "name": "A digital state",
+      "description": "Public services online.",
+      "x": 24,
+      "y": 4,
+      "days": 70,
+      "prerequisites": [
+        [
+          "esp_broadband"
+        ]
+      ],
+      "effects": [
+        {
+          "add_spirit": "digital_government"
+        }
+      ]
+    },
+    {
+      "id": "esp_biotech",
+      "name": "Biotechnology",
+      "description": "Vaccines and medicines made at home.",
+      "x": 26,
+      "y": 4,
+      "days": 70,
+      "prerequisites": [
+        [
+          "esp_space_and_satellites"
+        ]
+      ],
+      "effects": [
+        {
+          "add_buildings": {
+            "building": "civilian_factory",
+            "count": 1
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "health_outcomes",
+            "value": 0.02,
+            "days": 3650
+          }
+        }
+      ]
+    },
+    {
+      "id": "esp_climate_adaptation",
+      "name": "Climate adaptation",
+      "description": "Flood defences and water management.",
+      "x": 24,
+      "y": 5,
+      "days": 70,
+      "prerequisites": [
+        [
+          "esp_public_transport",
+          "esp_digital_state",
+          "esp_biotech"
+        ]
+      ],
+      "available": {
+        "date_after": "2010-01-01"
+      },
+      "effects": [
+        {
+          "add_buildings": {
+            "building": "infrastructure",
+            "count": 1
+          }
+        },
+        {
+          "add_stability": 0.01
+        }
+      ]
     }
-  ],
-  "confidence": "verified"
+  ]
 }
