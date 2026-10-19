@@ -51,6 +51,7 @@ src/
                            Phase 10: war.ts (declarations, battles, supply, capitulation, peace, world tension)
                            fronts.ts (armies, fronts, offensive lines, spearheads, plan execution; shared by player and AI)
                            peace.ts (capitulation, peace terms and their war-score cost, AI terms, white peace, puppets)
+                           visibility.ts (fog of war: which foreign divisions the player sees; radar coverage)
   sim/ai/                  Phase 12: ai.ts (strategic, diplomatic, recruitment planners; the military planner forms
                            armies and battle plans through the same commands as the player)
   sim/bucket.ts            per-country monthly slots (spreads load over the month)

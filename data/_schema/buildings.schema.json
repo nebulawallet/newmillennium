@@ -96,6 +96,10 @@
             "type": "number",
             "exclusiveMinimum": 0
           },
+          "detection_radius_km": {
+            "type": "number",
+            "exclusiveMinimum": 0
+          },
           "start_per_rent_bn": {
             "type": "number",
             "minimum": 0

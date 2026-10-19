@@ -11,7 +11,8 @@ import { millerY, type MapView } from "../../render/MapView.ts";
 import type { Division } from "../../sim/military/military.ts";
 import type { GameState } from "../../sim/state.ts";
 import { divisionSymbol, STATUS_TEXT, type MapSymbol } from "../../sim/military/fronts.ts";
-import { selectedArmy, selectedDivisions } from "../store.ts";
+import { selectedArmy, selectedDivisions, showAlliedDivisions } from "../store.ts";
+import { divisionVisibility } from "../../sim/military/visibility.ts";
 import { SYMBOL_NAME, symbolSvg } from "./symbols.ts";
 import { activeTip } from "../tooltip.tsx";
 
@@ -27,6 +28,7 @@ export class UnitCounters {
   private nodes = new Map<string, HTMLDivElement>();
   private groups: Group[] = [];
   private lastVersion = -1;
+  private lastAllies = showAlliedDivisions.value;
 
   constructor(
     private view: MapView,
@@ -42,12 +44,15 @@ export class UnitCounters {
 
   /** Rebuild the groups (call when the game state changes). */
   refresh(version: number): void {
-    if (version === this.lastVersion) return;
+    if (version === this.lastVersion && this.lastAllies === showAlliedDivisions.value) return;
     this.lastVersion = version;
+    this.lastAllies = showAlliedDivisions.value;
     const state = this.getState();
     const byKey = new Map<string, Group>();
+    // fog of war: foreign divisions show only when allied (toggle), at war with you, in your land or under your radar
+    const seen = state ? divisionVisibility(this.db, state, this.map, state.player, { showAllies: showAlliedDivisions.value }) : () => true;
     for (const d of state?.divisions ?? []) {
-      if (d.province < 1) continue;
+      if (d.province < 1 || !seen(d)) continue;
       const key = `${d.owner}:${d.province}`;
       const g = byKey.get(key) ?? { key, owner: d.owner, province: d.province, divisions: [] };
       g.divisions.push(d);

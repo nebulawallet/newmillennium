@@ -3,7 +3,7 @@ import type { MapData } from "../render/mapData.ts";
 import { MAP_MODES } from "../render/mapModes.ts";
 import type { WorldMap } from "../render/WorldMap.ts";
 import { Icon, type IconName } from "./icons.tsx";
-import { hoveredProvince, mapMode, pointer } from "./store.ts";
+import { hoveredProvince, mapMode, pointer, showAlliedDivisions } from "./store.ts";
 import { activeTip, tip, TipBox } from "./tooltip.tsx";
 import { panel, type Session } from "./session.ts";
 import { infrastructureOf, slotUse } from "../sim/economy/construction.ts";
@@ -73,6 +73,21 @@ export function MapModeBar({ db, map, world }: { db: ContentDB; map: MapData; wo
             </button>
           );
         })}
+        <button
+          class={`tile ${showAlliedDivisions.value ? "on" : ""}`}
+          aria-label="Allied divisions"
+          aria-pressed={showAlliedDivisions.value}
+          onClick={() => {
+            showAlliedDivisions.value = !showAlliedDivisions.value;
+            try { localStorage.setItem("nm.showAllies", showAlliedDivisions.value ? "1" : "0"); } catch { /* storage unavailable */ }
+          }}
+          {...tip(() => ({
+            title: showAlliedDivisions.value ? "Hide allied divisions" : "Show allied divisions",
+            note: "Foreign divisions show only when allied (this toggle), at war with you, in your territory or within range of your radar stations.",
+          }))}
+        >
+          {Icon.factions({ size: 20 })}
+        </button>
       </div>
     </div>
   );

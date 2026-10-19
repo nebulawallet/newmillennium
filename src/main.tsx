@@ -25,7 +25,7 @@ import { EventWindow } from "./ui/scripted/EventWindow.tsx";
 import { researchPick, ResearchView } from "./ui/research/ResearchPanel.tsx";
 import { FocusTreeView } from "./ui/scripted/FocusTree.tsx";
 import { PeaceNotice, PeaceScreen } from "./ui/units/PeaceScreen.tsx";
-import { buildMode, draftTerms, hoveredProvince, mapMode, openWar, peacePick, toast, pickedCountry, planDraft, planTool, pointer, selectedArmy, selectedDivisions, selectedProvince } from "./ui/store.ts";
+import { buildMode, draftTerms, hoveredProvince, mapMode, openWar, peacePick, toast, pickedCountry, planDraft, planTool, pointer, selectedArmy, selectedDivisions, selectedProvince, showAlliedDivisions } from "./ui/store.ts";
 import { slotsView } from "./render/mapModes.ts";
 import { UnitCounters } from "./ui/units/UnitCounters.ts";
 import { FrontOverlay } from "./ui/units/FrontOverlay.ts";
@@ -163,6 +163,7 @@ async function boot(): Promise<void> {
   const counters = new UnitCounters(view, map, db, () => (screen.value === "game" ? session.state : null));
   version.subscribe((v) => counters.refresh(v));
   selectedDivisions.subscribe(() => counters.refresh(-2 - Math.random()));
+  showAlliedDivisions.subscribe(() => counters.refresh(-2 - Math.random()));
   // fronts and battle plans drawn on the map
   const fronts = new FrontOverlay(view, map, db, () => session.sim?.context.map, () => (screen.value === "game" ? session.state : null));
   version.subscribe(() => fronts.refresh());

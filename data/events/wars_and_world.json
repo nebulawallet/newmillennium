@@ -11,7 +11,7 @@
       "major": true,
       "historical": {
         "date": "2001-10-07",
-        "any_path": false,
+        "any_path": true,
         "source": [
           {
             "url": "https://en.wikipedia.org/wiki/War_in_Afghanistan_(2001–2021)",
@@ -48,6 +48,12 @@
               }
             }
           ]
+        },
+        {
+          "id": "stay_out",
+          "name": "Do not go to war",
+          "effects": [],
+          "ai_weight": 0
         }
       ]
     },
@@ -103,7 +109,7 @@
       "major": true,
       "historical": {
         "date": "2003-03-20",
-        "any_path": false,
+        "any_path": true,
         "source": [
           {
             "url": "https://en.wikipedia.org/wiki/2003_invasion_of_Iraq",
@@ -140,6 +146,12 @@
               }
             }
           ]
+        },
+        {
+          "id": "stay_out",
+          "name": "Stay out of the war",
+          "effects": [],
+          "ai_weight": 0
         }
       ]
     },
@@ -153,7 +165,7 @@
       "major": true,
       "historical": {
         "date": "2008-08-08",
-        "any_path": false,
+        "any_path": true,
         "source": [
           {
             "url": "https://en.wikipedia.org/wiki/Russo-Georgian_War",
@@ -184,6 +196,12 @@
               }
             }
           ]
+        },
+        {
+          "id": "stay_out",
+          "name": "Do not intervene",
+          "effects": [],
+          "ai_weight": 0
         }
       ]
     },
@@ -292,7 +310,7 @@
       "major": true,
       "historical": {
         "date": "2022-02-24",
-        "any_path": false,
+        "any_path": true,
         "source": [
           {
             "url": "https://en.wikipedia.org/wiki/Russian_invasion_of_Ukraine",
@@ -339,6 +357,12 @@
               }
             }
           ]
+        },
+        {
+          "id": "stay_out",
+          "name": "Do not invade",
+          "effects": [],
+          "ai_weight": 0
         }
       ]
     },

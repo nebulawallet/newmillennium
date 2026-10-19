@@ -14,6 +14,8 @@ export const flagDay = signal(0);
 export const pickedCountry = signal<string | null>(null);
 /** The player's selected divisions (ids). */
 export const selectedDivisions = signal<number[]>([]);
+/** Show allied divisions on the map (a map toggle, remembered in this browser). */
+export const showAlliedDivisions = signal<boolean>((() => { try { return localStorage.getItem("nm.showAllies") !== "0"; } catch { return true; } })());
 /** The army whose card is selected in the bottom bar (0 = none). */
 export const selectedArmy = signal(0);
 /** Battle-plan drawing tool in use: the army it draws for and what it draws. */

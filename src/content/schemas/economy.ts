@@ -111,6 +111,8 @@ export const BuildingDef = z.strictObject({
   /** Country modifiers per building, summed over every one built and capped at `modifier_cap` times these. */
   modifiers: Modifiers.default({}),
   modifier_cap: z.number().positive().optional(),
+  /** Radar: the owner sees foreign divisions within this many km of the province (fog of war on the map). */
+  detection_radius_km: z.number().positive().optional(),
   /** Starting buildings of this type per billion dollars of the resource's 2000 rent (placed like factories). */
   start_per_rent_bn: z.number().min(0).optional(),
 });

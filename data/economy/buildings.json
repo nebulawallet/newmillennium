@@ -59,6 +59,12 @@
       "description": "Container terminals and docks: cheaper trade. Coastal provinces only.",
       "cost": 4000, "money_bn": 0.6, "kind": "level", "max_per_province": 5, "coastal": true,
       "adds": {}, "modifiers": { "trade_efficiency": 0.004 }, "modifier_cap": 25
+    },
+    {
+      "id": "radar", "name": "Radar station", "icon": "electronics",
+      "description": "Long-range radar and signals intelligence: you see foreign divisions within 600 km. Your own territory and the countries you are at war with are always visible.",
+      "cost": 2400, "money_bn": 0.3, "kind": "level", "max_per_province": 1, "detection_radius_km": 600,
+      "adds": {}, "modifiers": { "intelligence_power": 0.01 }, "modifier_cap": 10
     }
   ]
 }
