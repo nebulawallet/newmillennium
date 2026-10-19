@@ -350,3 +350,12 @@ describe("Ukrainian model tree", () => {
     expect(decisionsUnlockedBy(db, "ukr_defence_industry")).toEqual(["Defence order"]);
   });
 });
+
+describe("United States model tree", () => {
+  it("the US starts with its sourced spirits; focuses unlock federal projects", () => {
+    const state = createInitialState(db, { provinces: [] }, { contentHash: "t", player: "USA" });
+    const usa = state.countries.USA!;
+    expect(usa.spirits).toEqual(expect.arrayContaining(["usa_largest_economy", "usa_reserve_currency", "usa_dotcom_bubble"]));
+    expect(decisionsUnlockedBy(db, "usa_infrastructure_act")).toEqual(["Highway bill"]);
+  });
+});

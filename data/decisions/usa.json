@@ -1,0 +1,188 @@
+{
+  "categories": [
+    {
+      "id": "usa_projects",
+      "name": "American federal projects",
+      "description": "Projects that the US national focuses open up."
+    }
+  ],
+  "decisions": [
+    {
+      "id": "usa_highway_bill",
+      "name": "Highway bill",
+      "description": "A federal highway and transit bill.",
+      "category": "usa_projects",
+      "countries": [
+        "USA"
+      ],
+      "visible": {
+        "has_completed_focus": "usa_infrastructure_act"
+      },
+      "available": {
+        "treasury_above": 2
+      },
+      "cost": {
+        "political_power": 30
+      },
+      "effects": [
+        {
+          "add_treasury": -2
+        },
+        {
+          "add_buildings": {
+            "building": "infrastructure",
+            "count": 3
+          }
+        }
+      ],
+      "cooldown_days": 365,
+      "ai_weight": 2
+    },
+    {
+      "id": "usa_defence_appropriation",
+      "name": "Defence supplemental",
+      "description": "Extra money for procurement.",
+      "category": "usa_projects",
+      "countries": [
+        "USA"
+      ],
+      "visible": {
+        "has_completed_focus": "usa_arsenal_of_democracy"
+      },
+      "available": {
+        "treasury_above": 3
+      },
+      "cost": {
+        "political_power": 30
+      },
+      "effects": [
+        {
+          "add_treasury": -3
+        },
+        {
+          "add_equipment": {
+            "family": "infantry_equipment",
+            "amount": 1500
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "military",
+            "value": 2
+          }
+        }
+      ],
+      "cooldown_days": 365,
+      "ai_weight": 2
+    },
+    {
+      "id": "usa_strategic_petroleum_release",
+      "name": "Release from the Strategic Petroleum Reserve",
+      "description": "Sell oil from the reserve to calm prices.",
+      "category": "usa_projects",
+      "countries": [
+        "USA"
+      ],
+      "visible": {
+        "has_completed_focus": "usa_energy_policy"
+      },
+      "cost": {
+        "political_power": 30
+      },
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "energy_cost",
+            "value": -0.03,
+            "days": 365
+          }
+        },
+        {
+          "add_treasury": 1
+        }
+      ],
+      "cooldown_days": 730,
+      "ai_weight": 1
+    },
+    {
+      "id": "usa_research_grants",
+      "name": "National research grants",
+      "description": "A round of grants from the national science agencies.",
+      "category": "usa_projects",
+      "countries": [
+        "USA"
+      ],
+      "visible": {
+        "has_completed_focus": "usa_research_funding"
+      },
+      "available": {
+        "treasury_above": 1
+      },
+      "cost": {
+        "political_power": 25
+      },
+      "effects": [
+        {
+          "add_treasury": -1
+        },
+        {
+          "add_research_bonus": {
+            "category": "economy_digital",
+            "value": 0.2,
+            "uses": 1
+          }
+        },
+        {
+          "add_research_bonus": {
+            "category": "industry_energy",
+            "value": 0.2,
+            "uses": 1
+          }
+        }
+      ],
+      "cooldown_days": 365,
+      "ai_weight": 2
+    },
+    {
+      "id": "usa_fab_subsidy",
+      "name": "Subsidise a chip plant",
+      "description": "Federal money for a new semiconductor plant.",
+      "category": "usa_projects",
+      "countries": [
+        "USA"
+      ],
+      "visible": {
+        "has_completed_focus": "usa_semiconductors"
+      },
+      "available": {
+        "treasury_above": 2
+      },
+      "cost": {
+        "political_power": 30
+      },
+      "effects": [
+        {
+          "add_treasury": -2
+        },
+        {
+          "add_buildings": {
+            "building": "civilian_factory",
+            "count": 1,
+            "regions": [
+              {
+                "from": "USA",
+                "adm1": [
+                  "USA-3520",
+                  "USA-3536",
+                  "USA-3550"
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "cooldown_days": 365,
+      "ai_weight": 2
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "note": "The United States' national spirits. The ones with `start` describe the situation on 1 January 2000 and cite sources; the others are granted by the US focuses and decisions. Values are gameplay estimates.",
+  "spirits": [
+    {
+      "id": "usa_largest_economy",
+      "name": "The world's largest economy",
+      "description": "The United States has been the world's largest national economy since around 1890, with the world's largest stock exchanges and high spending on research.",
+      "kind": "strength",
+      "modifiers": { "foreign_investment": 0.05, "research_speed": 0.03 },
+      "start": ["USA"],
+      "source": [{ "url": "https://en.wikipedia.org/wiki/Economy_of_the_United_States", "title": "Wikipedia: Economy of the United States", "accessed": "2026-10-19" }],
+      "confidence": "verified"
+    },
+    {
+      "id": "usa_reserve_currency",
+      "name": "The reserve currency",
+      "description": "The US dollar is the world's foremost reserve currency.",
+      "kind": "strength",
+      "modifiers": { "interest_rate": -0.005, "foreign_influence_power": 0.05 },
+      "start": ["USA"],
+      "source": [{ "url": "https://en.wikipedia.org/wiki/Economy_of_the_United_States", "title": "Wikipedia: Economy of the United States", "accessed": "2026-10-19" }],
+      "confidence": "verified"
+    },
+    {
+      "id": "usa_military_superpower",
+      "name": "Military superpower",
+      "description": "The US armed forces have the highest military expenditure in the world and global reach.",
+      "kind": "strength",
+      "modifiers": { "army_org": 0.03, "diplomatic_reputation": 0.05 },
+      "start": ["USA"],
+      "source": [{ "url": "https://en.wikipedia.org/wiki/United_States_Armed_Forces", "title": "Wikipedia: United States Armed Forces", "accessed": "2026-10-19" }],
+      "confidence": "needs_review",
+      "review_note": "The source gives the 2025 expenditure (the world's highest); confirm that US military spending was also the world's highest in 2000."
+    },
+    {
+      "id": "usa_dotcom_bubble",
+      "name": "The dot-com bubble",
+      "description": "A stock-market bubble in internet companies built up in the late 1990s and peaked on 10 March 2000.",
+      "kind": "problem",
+      "modifiers": { "gdp_growth": -0.002, "foreign_investment": -0.02 },
+      "start": ["USA"],
+      "source": [{ "url": "https://en.wikipedia.org/wiki/Dot-com_bubble", "title": "Wikipedia: Dot-com bubble", "accessed": "2026-10-19" }],
+      "confidence": "verified"
+    },
+    { "id": "usa_homeland_security_state", "name": "Homeland security", "description": "A cabinet department and new surveillance powers for domestic security.", "kind": "policy", "modifiers": { "internal_security": 0.1, "civil_liberties": -0.05 } },
+    { "id": "usa_financial_crisis", "name": "Financial crisis", "description": "Banks fail, credit dries up and unemployment rises.", "kind": "problem", "modifiers": { "gdp_growth": -0.01, "foreign_investment": -0.05, "stability_factor": -0.03 } },
+    { "id": "usa_bank_rescue", "name": "Bank rescue", "description": "Public money recapitalises the banks while the economy recovers.", "kind": "policy", "modifiers": { "gdp_growth": -0.002, "interest_rate": -0.005 } },
+    { "id": "usa_financial_regulation", "name": "Financial regulation", "description": "New rules and regulators for banks and consumer finance.", "kind": "policy", "modifiers": { "interest_rate": -0.002, "private_sector_output": -0.01, "stability_factor": 0.01 } },
+    { "id": "usa_shale_boom", "name": "Shale boom", "description": "Horizontal drilling and fracking raise oil and gas output.", "kind": "strength", "modifiers": { "fossil_output": 0.15, "energy_cost": -0.05 } },
+    { "id": "usa_industrial_policy", "name": "Industrial policy", "description": "Federal money for chips, clean energy and factories at home.", "kind": "policy", "modifiers": { "private_sector_output": 0.03, "renewable_output": 0.1, "welfare_cost": 0.002 } },
+    { "id": "usa_coverage_expansion", "name": "Expanded health coverage", "description": "Subsidised insurance and a wider Medicaid cover millions more people.", "kind": "policy", "modifiers": { "health_outcomes": 0.03, "welfare_cost": 0.004 } },
+    { "id": "usa_third_party_surge", "name": "Third-party surge", "description": "A third party breaks the hold of the two major parties.", "kind": "policy", "modifiers": { "stability_factor": -0.02, "political_power_gain": -0.05 } }
+  ]
+}

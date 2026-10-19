@@ -4,7 +4,160 @@
   "countries": [
     "USA"
   ],
-  "note": "Branches depend on the governing party and on who is President. Policies named after real laws or campaign proposals are cited; effects are gameplay estimates.",
+  "note": "The United States in the style of the Russian model tree. The administrations branch follows the real laws of 2001-2022 on their dates; the political branch has the two-party system (the historical path) and third-party turns that bring to power only real parties of the data (Libertarian, Green, Reform, Constitution) plus a military junta; alternatives are a counterfactual, not a claim about the parties. Economy, military, foreign policy and society branches build, fix the starting spirits (data/spirits/usa.json), unlock decisions (data/decisions/usa.json) and grant research. Policies named after real laws are cited; effects are gameplay estimates. Wars stay in the scripted conflict events.",
+  "source": [
+    {
+      "url": "https://en.wikipedia.org/wiki/Presidency_of_George_W._Bush",
+      "title": "Wikipedia: Presidency of George W. Bush",
+      "accessed": "2026-10-19"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Al_Gore_2000_presidential_campaign",
+      "title": "Wikipedia: Al Gore 2000 presidential campaign",
+      "accessed": "2026-10-19"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Economic_Growth_and_Tax_Relief_Reconciliation_Act_of_2001",
+      "title": "Wikipedia: Economic Growth and Tax Relief Reconciliation Act of 2001",
+      "accessed": "2026-10-19"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/No_Child_Left_Behind_Act",
+      "title": "Wikipedia: No Child Left Behind Act",
+      "accessed": "2026-10-19"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/USA_PATRIOT_Act",
+      "title": "Wikipedia: USA PATRIOT Act",
+      "accessed": "2026-10-19"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Homeland_Security_Act",
+      "title": "Wikipedia: Homeland Security Act",
+      "accessed": "2026-10-19"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Medicare_Prescription_Drug,_Improvement,_and_Modernization_Act",
+      "title": "Wikipedia: Medicare Prescription Drug, Improvement, and Modernization Act",
+      "accessed": "2026-10-19"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Emergency_Economic_Stabilization_Act_of_2008",
+      "title": "Wikipedia: Emergency Economic Stabilization Act of 2008",
+      "accessed": "2026-10-19"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/American_Recovery_and_Reinvestment_Act_of_2009",
+      "title": "Wikipedia: American Recovery and Reinvestment Act of 2009",
+      "accessed": "2026-10-19"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Affordable_Care_Act",
+      "title": "Wikipedia: Affordable Care Act",
+      "accessed": "2026-10-19"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Dodd–Frank_Wall_Street_Reform_and_Consumer_Protection_Act",
+      "title": "Wikipedia: Dodd–Frank Wall Street Reform and Consumer Protection Act",
+      "accessed": "2026-10-19"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/New_START",
+      "title": "Wikipedia: New START",
+      "accessed": "2026-10-19"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Iraq_War_troop_surge_of_2007",
+      "title": "Wikipedia: Iraq War troop surge of 2007",
+      "accessed": "2026-10-19"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Withdrawal_of_United_States_troops_from_Iraq_(2007–2011)",
+      "title": "Wikipedia: Withdrawal of United States troops from Iraq (2007–2011)",
+      "accessed": "2026-10-19"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/2020–2021_U.S._troop_withdrawal_from_Afghanistan",
+      "title": "Wikipedia: 2020–2021 U.S. troop withdrawal from Afghanistan",
+      "accessed": "2026-10-19"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Tax_Cuts_and_Jobs_Act",
+      "title": "Wikipedia: Tax Cuts and Jobs Act",
+      "accessed": "2026-10-19"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/United_States–Mexico–Canada_Agreement",
+      "title": "Wikipedia: United States–Mexico–Canada Agreement",
+      "accessed": "2026-10-19"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/CHIPS_and_Science_Act",
+      "title": "Wikipedia: CHIPS and Science Act",
+      "accessed": "2026-10-19"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Inflation_Reduction_Act",
+      "title": "Wikipedia: Inflation Reduction Act",
+      "accessed": "2026-10-19"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Infrastructure_Investment_and_Jobs_Act",
+      "title": "Wikipedia: Infrastructure Investment and Jobs Act",
+      "accessed": "2026-10-19"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/United_States_Space_Force",
+      "title": "Wikipedia: United States Space Force",
+      "accessed": "2026-10-19"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Operation_Inherent_Resolve",
+      "title": "Wikipedia: Operation Inherent Resolve",
+      "accessed": "2026-10-19"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Ukraine_Security_Assistance_Initiative",
+      "title": "Wikipedia: Ukraine Security Assistance Initiative",
+      "accessed": "2026-10-19"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Economy_of_the_United_States",
+      "title": "Wikipedia: Economy of the United States",
+      "accessed": "2026-10-19"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Dot-com_bubble",
+      "title": "Wikipedia: Dot-com bubble",
+      "accessed": "2026-10-19"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/United_States_Armed_Forces",
+      "title": "Wikipedia: United States Armed Forces",
+      "accessed": "2026-10-19"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Libertarian_Party_(United_States)",
+      "title": "Wikipedia: Libertarian Party (United States)",
+      "accessed": "2026-10-19"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Green_Party_of_the_United_States",
+      "title": "Wikipedia: Green Party of the United States",
+      "accessed": "2026-10-19"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Constitution_Party_(United_States)",
+      "title": "Wikipedia: Constitution Party (United States)",
+      "accessed": "2026-10-19"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Reform_Party_of_the_United_States_of_America",
+      "title": "Wikipedia: Reform Party of the United States of America",
+      "accessed": "2026-10-19"
+    }
+  ],
+  "confidence": "verified",
   "focuses": [
     {
       "id": "usa_new_administration",
@@ -17,15 +170,27 @@
         {
           "add_political_power": 50
         }
-      ]
+      ],
+      "ai_weight": 5
     },
     {
       "id": "usa_bush_tax_cuts",
       "name": "Economic growth and tax relief",
-      "description": "Pass the tax cuts the President campaigned on. In the historical timeline the Economic Growth and Tax Relief Reconciliation Act became law in June 2001.",
+      "description": "Pass the tax cuts the President campaigned on. The Economic Growth and Tax Relief Reconciliation Act was signed on 7 June 2001.",
       "x": 1,
       "y": 1,
       "days": 70,
+      "prerequisites": [
+        [
+          "usa_new_administration"
+        ]
+      ],
+      "available": {
+        "holds_office": {
+          "person": "usa.george_w_bush",
+          "office": "usa.president"
+        }
+      },
       "effects": [
         {
           "add_interest_group_approval": {
@@ -48,11 +213,25 @@
             "value": 0.03,
             "days": 3650
           }
+        },
+        {
+          "set_budget": {
+            "revenue": -1
+          }
         }
       ],
+      "ai_weight": 10
+    },
+    {
+      "id": "usa_bush_education",
+      "name": "No Child Left Behind",
+      "description": "Pass a national education bill that ties federal school funding to state standards and testing. The No Child Left Behind Act became law in 2002.",
+      "x": 0,
+      "y": 2,
+      "days": 70,
       "prerequisites": [
         [
-          "usa_new_administration"
+          "usa_bush_tax_cuts"
         ]
       ],
       "available": {
@@ -61,15 +240,6 @@
           "office": "usa.president"
         }
       },
-      "ai_weight": 3
-    },
-    {
-      "id": "usa_bush_education",
-      "name": "No Child Left Behind",
-      "description": "Pass a national education bill. In the historical timeline the No Child Left Behind Act became law in 2002.",
-      "x": 0,
-      "y": 2,
-      "days": 70,
       "effects": [
         {
           "add_timed_modifier": {
@@ -85,6 +255,15 @@
           }
         }
       ],
+      "ai_weight": 2
+    },
+    {
+      "id": "usa_bush_medicare",
+      "name": "Medicare prescription drug benefit",
+      "description": "Add prescription drug cover to Medicare. The Medicare Prescription Drug, Improvement, and Modernization Act was signed on 8 December 2003.",
+      "x": 2,
+      "y": 2,
+      "days": 70,
       "prerequisites": [
         [
           "usa_bush_tax_cuts"
@@ -96,15 +275,6 @@
           "office": "usa.president"
         }
       },
-      "ai_weight": 2
-    },
-    {
-      "id": "usa_bush_medicare",
-      "name": "Medicare prescription drug benefit",
-      "description": "Add prescription drug cover to Medicare. In the historical timeline the Medicare Prescription Drug, Improvement, and Modernization Act of 2003 created Medicare Part D.",
-      "x": 2,
-      "y": 2,
-      "days": 70,
       "effects": [
         {
           "add_timed_modifier": {
@@ -116,7 +286,7 @@
         {
           "add_timed_modifier": {
             "modifier": "welfare_cost",
-            "value": 0.02,
+            "value": 0.004,
             "days": 3650
           }
         },
@@ -124,33 +294,67 @@
           "add_ruling_party_popularity": 0.01
         }
       ],
+      "ai_weight": 2
+    },
+    {
+      "id": "usa_patriot_act",
+      "name": "The PATRIOT Act",
+      "description": "Expand surveillance powers and information sharing between agencies after the September 11 attacks, as the USA PATRIOT Act did in 2001.",
+      "x": 0,
+      "y": 3,
+      "days": 70,
       "prerequisites": [
         [
-          "usa_bush_tax_cuts"
+          "usa_bush_education",
+          "usa_bush_medicare"
         ]
       ],
       "available": {
-        "holds_office": {
-          "person": "usa.george_w_bush",
-          "office": "usa.president"
-        }
+        "has_global_flag": "september_11"
       },
-      "ai_weight": 2
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "intelligence_power",
+            "value": 0.1,
+            "days": 3650
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "security_services",
+            "value": 5
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "media",
+            "value": -3
+          }
+        }
+      ],
+      "ai_weight": 3
     },
     {
       "id": "usa_homeland_security",
       "name": "Department of Homeland Security",
-      "description": "Create a cabinet department for domestic security. Congress created the Department of Homeland Security after the September 11 attacks.",
+      "description": "Create a cabinet department for domestic security. The Homeland Security Act was enacted on 25 November 2002.",
       "x": 1,
-      "y": 3,
+      "y": 4,
       "days": 70,
+      "prerequisites": [
+        [
+          "usa_patriot_act",
+          "usa_bush_education",
+          "usa_bush_medicare"
+        ]
+      ],
+      "available": {
+        "has_global_flag": "september_11"
+      },
       "effects": [
         {
-          "add_timed_modifier": {
-            "modifier": "internal_security",
-            "value": 0.1,
-            "days": 3650
-          }
+          "add_spirit": "usa_homeland_security_state"
         },
         {
           "add_interest_group_approval": {
@@ -165,16 +369,55 @@
           }
         }
       ],
+      "ai_weight": 3
+    },
+    {
+      "id": "usa_bank_rescue",
+      "name": "Rescue the banks",
+      "description": "The Emergency Economic Stabilization Act of 3 October 2008 creates the $700 billion Troubled Asset Relief Program.",
+      "x": 2,
+      "y": 3,
+      "days": 70,
       "prerequisites": [
         [
-          "usa_bush_education",
-          "usa_bush_medicare"
+          "usa_bush_medicare",
+          "usa_bipartisan_compromise"
         ]
       ],
       "available": {
-        "has_global_flag": "september_11"
+        "all": [
+          {
+            "follows_history": true
+          },
+          {
+            "date_after": "2008-10-03"
+          },
+          {
+            "treasury_above": 10
+          }
+        ]
       },
-      "ai_weight": 3
+      "effects": [
+        {
+          "remove_spirit": "usa_financial_crisis"
+        },
+        {
+          "add_spirit": "usa_bank_rescue"
+        },
+        {
+          "add_treasury": -10
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "business",
+            "value": 4
+          }
+        },
+        {
+          "add_ruling_party_popularity": -0.02
+        }
+      ],
+      "ai_weight": 5
     },
     {
       "id": "usa_gore_surplus",
@@ -183,6 +426,17 @@
       "x": 9,
       "y": 1,
       "days": 70,
+      "prerequisites": [
+        [
+          "usa_new_administration"
+        ]
+      ],
+      "available": {
+        "holds_office": {
+          "person": "usa.al_gore",
+          "office": "usa.president"
+        }
+      },
       "effects": [
         {
           "add_economic_mood": 0.03
@@ -201,18 +455,7 @@
           }
         }
       ],
-      "prerequisites": [
-        [
-          "usa_new_administration"
-        ]
-      ],
-      "available": {
-        "holds_office": {
-          "person": "usa.al_gore",
-          "office": "usa.president"
-        }
-      },
-      "ai_weight": 3
+      "ai_weight": 10
     },
     {
       "id": "usa_gore_targeted_tax_cuts",
@@ -221,17 +464,6 @@
       "x": 8,
       "y": 2,
       "days": 70,
-      "effects": [
-        {
-          "add_interest_group_approval": {
-            "group": "urban_middle_class",
-            "value": 5
-          }
-        },
-        {
-          "add_ruling_party_popularity": 0.01
-        }
-      ],
       "prerequisites": [
         [
           "usa_gore_surplus"
@@ -243,6 +475,17 @@
           "office": "usa.president"
         }
       },
+      "effects": [
+        {
+          "add_interest_group_approval": {
+            "group": "urban_middle_class",
+            "value": 5
+          }
+        },
+        {
+          "add_ruling_party_popularity": 0.01
+        }
+      ],
       "ai_weight": 2
     },
     {
@@ -252,6 +495,17 @@
       "x": 10,
       "y": 2,
       "days": 70,
+      "prerequisites": [
+        [
+          "usa_gore_surplus"
+        ]
+      ],
+      "available": {
+        "holds_office": {
+          "person": "usa.al_gore",
+          "office": "usa.president"
+        }
+      },
       "effects": [
         {
           "add_timed_modifier": {
@@ -268,10 +522,9 @@
           }
         },
         {
-          "add_timed_modifier": {
-            "modifier": "renewable_output",
-            "value": 0.05,
-            "days": 3650
+          "add_buildings": {
+            "building": "renewable_plant",
+            "count": 2
           }
         },
         {
@@ -281,17 +534,6 @@
           }
         }
       ],
-      "prerequisites": [
-        [
-          "usa_gore_surplus"
-        ]
-      ],
-      "available": {
-        "holds_office": {
-          "person": "usa.al_gore",
-          "office": "usa.president"
-        }
-      },
       "ai_weight": 2
     },
     {
@@ -301,6 +543,14 @@
       "x": 4,
       "y": 1,
       "days": 70,
+      "prerequisites": [
+        [
+          "usa_new_administration"
+        ]
+      ],
+      "available": {
+        "ruling_party": "usa.republican"
+      },
       "effects": [
         {
           "add_political_power": 40
@@ -312,14 +562,6 @@
           }
         }
       ],
-      "prerequisites": [
-        [
-          "usa_new_administration"
-        ]
-      ],
-      "available": {
-        "ruling_party": "usa.republican"
-      },
       "ai_weight": 2
     },
     {
@@ -329,6 +571,14 @@
       "x": 6,
       "y": 1,
       "days": 70,
+      "prerequisites": [
+        [
+          "usa_new_administration"
+        ]
+      ],
+      "available": {
+        "ruling_party": "usa.democratic"
+      },
       "effects": [
         {
           "add_political_power": 40
@@ -340,14 +590,6 @@
           }
         }
       ],
-      "prerequisites": [
-        [
-          "usa_new_administration"
-        ]
-      ],
-      "available": {
-        "ruling_party": "usa.democratic"
-      },
       "ai_weight": 2
     },
     {
@@ -357,6 +599,12 @@
       "x": 5,
       "y": 2,
       "days": 70,
+      "prerequisites": [
+        [
+          "usa_republican_agenda",
+          "usa_democratic_agenda"
+        ]
+      ],
       "effects": [
         {
           "add_stability": 0.03
@@ -364,20 +612,1663 @@
         {
           "add_unrest": -0.03
         }
-      ],
+      ]
+    },
+    {
+      "id": "usa_recovery_act",
+      "name": "American Recovery and Reinvestment Act",
+      "description": "A stimulus of about $787 billion against the Great Recession, signed in February 2009.",
+      "x": 4,
+      "y": 3,
+      "days": 70,
       "prerequisites": [
         [
-          "usa_republican_agenda",
+          "usa_bipartisan_compromise",
           "usa_democratic_agenda"
         ]
+      ],
+      "available": {
+        "all": [
+          {
+            "holds_office": {
+              "person": "usa.barack_obama",
+              "office": "usa.president"
+            }
+          },
+          {
+            "date_after": "2009-03-01"
+          }
+        ]
+      },
+      "effects": [
+        {
+          "add_treasury": -8
+        },
+        {
+          "add_buildings": {
+            "building": "infrastructure",
+            "count": 4
+          }
+        },
+        {
+          "add_buildings": {
+            "building": "renewable_plant",
+            "count": 1
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "gdp_growth",
+            "value": 0.004,
+            "days": 1460
+          }
+        }
+      ],
+      "ai_weight": 4
+    },
+    {
+      "id": "usa_affordable_care_act",
+      "name": "Affordable Care Act",
+      "description": "Expand health coverage with subsidised insurance, signed on 23 March 2010; its major provisions took effect in 2014.",
+      "x": 6,
+      "y": 3,
+      "days": 70,
+      "prerequisites": [
+        [
+          "usa_democratic_agenda",
+          "usa_bipartisan_compromise"
+        ]
+      ],
+      "available": {
+        "all": [
+          {
+            "holds_office": {
+              "person": "usa.barack_obama",
+              "office": "usa.president"
+            }
+          },
+          {
+            "date_after": "2010-03-23"
+          }
+        ]
+      },
+      "effects": [
+        {
+          "add_spirit": "usa_coverage_expansion"
+        },
+        {
+          "change_law": {
+            "category": "healthcare",
+            "law": "private_insurance"
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "labour_unions",
+            "value": 3
+          }
+        },
+        {
+          "add_ruling_party_popularity": -0.02
+        }
+      ],
+      "ai_weight": 4
+    },
+    {
+      "id": "usa_dodd_frank",
+      "name": "Dodd–Frank financial reform",
+      "description": "New rules for Wall Street and a Consumer Financial Protection Bureau, signed on 21 July 2010.",
+      "x": 5,
+      "y": 4,
+      "days": 70,
+      "prerequisites": [
+        [
+          "usa_recovery_act",
+          "usa_affordable_care_act",
+          "usa_bank_rescue"
+        ]
+      ],
+      "available": {
+        "all": [
+          {
+            "follows_history": true
+          },
+          {
+            "date_after": "2010-07-21"
+          }
+        ]
+      },
+      "effects": [
+        {
+          "swap_spirit": {
+            "from": "usa_bank_rescue",
+            "to": "usa_financial_regulation"
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "business",
+            "value": -4
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "urban_middle_class",
+            "value": 3
+          }
+        }
+      ],
+      "ai_weight": 4
+    },
+    {
+      "id": "usa_tax_cuts_and_jobs_act",
+      "name": "Tax Cuts and Jobs Act",
+      "description": "Cut corporate and individual tax rates and raise the standard deduction, signed on 22 December 2017.",
+      "x": 3,
+      "y": 5,
+      "days": 70,
+      "prerequisites": [
+        [
+          "usa_dodd_frank",
+          "usa_bipartisan_compromise"
+        ]
+      ],
+      "available": {
+        "all": [
+          {
+            "holds_office": {
+              "person": "usa.donald_trump",
+              "office": "usa.president"
+            }
+          },
+          {
+            "date_after": "2017-12-22"
+          }
+        ]
+      },
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "private_sector_output",
+            "value": 0.04,
+            "days": 2920
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "foreign_investment",
+            "value": 0.05,
+            "days": 2920
+          }
+        },
+        {
+          "set_budget": {
+            "revenue": -1
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "business",
+            "value": 6
+          }
+        }
+      ],
+      "ai_weight": 4
+    },
+    {
+      "id": "usa_infrastructure_act",
+      "name": "Infrastructure Investment and Jobs Act",
+      "description": "Federal money for roads, bridges, transit and rail, signed on 15 November 2021.",
+      "x": 5,
+      "y": 6,
+      "days": 70,
+      "prerequisites": [
+        [
+          "usa_tax_cuts_and_jobs_act",
+          "usa_dodd_frank"
+        ]
+      ],
+      "available": {
+        "all": [
+          {
+            "holds_office": {
+              "person": "usa.joe_biden",
+              "office": "usa.president"
+            }
+          },
+          {
+            "date_after": "2021-11-15"
+          }
+        ]
+      },
+      "effects": [
+        {
+          "add_buildings": {
+            "building": "infrastructure",
+            "count": 5
+          }
+        },
+        {
+          "add_treasury": -5
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "construction_speed",
+            "value": 0.05,
+            "days": 2920
+          }
+        }
+      ],
+      "ai_weight": 4
+    },
+    {
+      "id": "usa_chips_act",
+      "name": "CHIPS and Science Act",
+      "description": "About $52.7 billion for semiconductor plants and research, signed on 9 August 2022.",
+      "x": 4,
+      "y": 7,
+      "days": 70,
+      "prerequisites": [
+        [
+          "usa_infrastructure_act"
+        ]
+      ],
+      "available": {
+        "all": [
+          {
+            "holds_office": {
+              "person": "usa.joe_biden",
+              "office": "usa.president"
+            }
+          },
+          {
+            "date_after": "2022-08-09"
+          }
+        ]
+      },
+      "effects": [
+        {
+          "add_spirit": "usa_industrial_policy"
+        },
+        {
+          "add_buildings": {
+            "building": "data_centre",
+            "count": 2,
+            "regions": [
+              {
+                "from": "USA",
+                "adm1": [
+                  "USA-3520",
+                  "USA-3550"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "add_buildings": {
+            "building": "civilian_factory",
+            "count": 2,
+            "regions": [
+              {
+                "from": "USA",
+                "adm1": [
+                  "USA-3520",
+                  "USA-3550"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "add_research_bonus": {
+            "category": "electronics_cyber",
+            "value": 0.25,
+            "uses": 2
+          }
+        }
+      ],
+      "ai_weight": 4
+    },
+    {
+      "id": "usa_inflation_reduction_act",
+      "name": "Inflation Reduction Act",
+      "description": "Energy investment, lower drug prices and deficit reduction, signed on 16 August 2022.",
+      "x": 6,
+      "y": 7,
+      "days": 70,
+      "prerequisites": [
+        [
+          "usa_infrastructure_act"
+        ]
+      ],
+      "available": {
+        "all": [
+          {
+            "holds_office": {
+              "person": "usa.joe_biden",
+              "office": "usa.president"
+            }
+          },
+          {
+            "date_after": "2022-08-16"
+          }
+        ]
+      },
+      "effects": [
+        {
+          "add_buildings": {
+            "building": "renewable_plant",
+            "count": 3
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "inflation",
+            "value": -0.005,
+            "days": 1460
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "energy_cost",
+            "value": -0.03,
+            "days": 2920
+          }
+        }
+      ],
+      "ai_weight": 4
+    },
+    {
+      "id": "usa_question_of_power",
+      "name": "The future of American politics",
+      "description": "Whether the two-party system holds or a third force breaks through.",
+      "x": 15,
+      "y": 0,
+      "days": 70,
+      "effects": [
+        {
+          "add_political_power": 20
+        }
+      ],
+      "ai_weight": 3
+    },
+    {
+      "id": "usa_two_party_system",
+      "name": "The two-party system",
+      "description": "Democrats and Republicans alternate in power. This is the path the United States took.",
+      "x": 12,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "usa_question_of_power"
+        ]
+      ],
+      "mutually_exclusive": [
+        "usa_libertarian_moment",
+        "usa_green_wave",
+        "usa_populist_revolt",
+        "usa_religious_right",
+        "usa_army_steps_in"
+      ],
+      "effects": [
+        {
+          "add_stability": 0.03
+        },
+        {
+          "add_political_power": 30
+        }
+      ],
+      "ai_weight": 20
+    },
+    {
+      "id": "usa_libertarian_moment",
+      "name": "A libertarian moment",
+      "description": "Voters tired of both parties turn to the Libertarian Party.",
+      "x": 13,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "usa_question_of_power"
+        ]
+      ],
+      "mutually_exclusive": [
+        "usa_two_party_system",
+        "usa_green_wave",
+        "usa_populist_revolt",
+        "usa_religious_right",
+        "usa_army_steps_in"
+      ],
+      "available": {
+        "all": [
+          {
+            "any": [
+              {
+                "follows_history": false
+              },
+              {
+                "is_player": true
+              }
+            ]
+          },
+          {
+            "party_exists": "usa.libertarian"
+          },
+          {
+            "stability_below": 0.5
+          }
+        ]
+      },
+      "effects": [
+        {
+          "leave_history": true
+        },
+        {
+          "add_spirit": "usa_third_party_surge"
+        },
+        {
+          "add_party_popularity": {
+            "party": "usa.libertarian",
+            "value": 0.06
+          }
+        }
+      ],
+      "ai_weight": 0.2
+    },
+    {
+      "id": "usa_libertarian_government",
+      "name": "A Libertarian administration",
+      "description": "The Libertarian Party takes the White House.",
+      "x": 13,
+      "y": 2,
+      "days": 105,
+      "prerequisites": [
+        [
+          "usa_libertarian_moment"
+        ]
+      ],
+      "available": {
+        "party_popularity_above": {
+          "party": "usa.libertarian",
+          "value": 0.2
+        }
+      },
+      "effects": [
+        {
+          "install_government": {
+            "party": "usa.libertarian"
+          }
+        },
+        {
+          "change_law": {
+            "category": "economic_system",
+            "law": "laissez_faire"
+          }
+        },
+        {
+          "set_budget": {
+            "spending": -3,
+            "revenue": -3
+          }
+        }
+      ]
+    },
+    {
+      "id": "usa_small_government",
+      "name": "Small government",
+      "description": "Cut agencies and regulations; bring troops home.",
+      "x": 13,
+      "y": 3,
+      "days": 70,
+      "prerequisites": [
+        [
+          "usa_libertarian_government"
+        ]
+      ],
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "private_sector_output",
+            "value": 0.06,
+            "days": 2920
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "foreign_influence_power",
+            "value": -0.1,
+            "days": 2920
+          }
+        },
+        {
+          "remove_spirit": "usa_homeland_security_state"
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "military",
+            "value": -6
+          }
+        }
+      ]
+    },
+    {
+      "id": "usa_green_wave",
+      "name": "A green wave",
+      "description": "Climate and inequality bring voters to the Greens.",
+      "x": 14,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "usa_question_of_power"
+        ]
+      ],
+      "mutually_exclusive": [
+        "usa_two_party_system",
+        "usa_libertarian_moment",
+        "usa_populist_revolt",
+        "usa_religious_right",
+        "usa_army_steps_in"
+      ],
+      "available": {
+        "all": [
+          {
+            "any": [
+              {
+                "follows_history": false
+              },
+              {
+                "is_player": true
+              }
+            ]
+          },
+          {
+            "has_party_of_group": "social_democratic"
+          },
+          {
+            "stability_below": 0.5
+          }
+        ]
+      },
+      "effects": [
+        {
+          "leave_history": true
+        },
+        {
+          "add_spirit": "usa_third_party_surge"
+        },
+        {
+          "add_ideology_support": {
+            "group": "social_democratic",
+            "value": 0.05
+          }
+        }
+      ],
+      "ai_weight": 0.2
+    },
+    {
+      "id": "usa_green_government",
+      "name": "A Green administration",
+      "description": "The Green Party takes the White House.",
+      "x": 14,
+      "y": 2,
+      "days": 105,
+      "prerequisites": [
+        [
+          "usa_green_wave"
+        ]
+      ],
+      "available": {
+        "ideology_group_support_above": {
+          "group": "social_democratic",
+          "value": 0.2
+        }
+      },
+      "effects": [
+        {
+          "install_government": {
+            "ideology": "social_democratic"
+          }
+        },
+        {
+          "change_law": {
+            "category": "energy_policy",
+            "law": "green_transition"
+          }
+        },
+        {
+          "change_law": {
+            "category": "healthcare",
+            "law": "national_health_service"
+          }
+        }
+      ]
+    },
+    {
+      "id": "usa_green_new_deal",
+      "name": "A green industrial programme",
+      "description": "Wind, solar and rail across the country.",
+      "x": 14,
+      "y": 3,
+      "days": 70,
+      "prerequisites": [
+        [
+          "usa_green_government"
+        ]
+      ],
+      "effects": [
+        {
+          "add_buildings": {
+            "building": "renewable_plant",
+            "count": 5
+          }
+        },
+        {
+          "add_buildings": {
+            "building": "infrastructure",
+            "count": 3
+          }
+        },
+        {
+          "add_treasury": -6
+        }
+      ]
+    },
+    {
+      "id": "usa_populist_revolt",
+      "name": "A populist revolt",
+      "description": "Anger at trade deals and elites lifts the Reform Party.",
+      "x": 15,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "usa_question_of_power"
+        ]
+      ],
+      "mutually_exclusive": [
+        "usa_two_party_system",
+        "usa_libertarian_moment",
+        "usa_green_wave",
+        "usa_religious_right",
+        "usa_army_steps_in"
+      ],
+      "available": {
+        "all": [
+          {
+            "any": [
+              {
+                "follows_history": false
+              },
+              {
+                "is_player": true
+              }
+            ]
+          },
+          {
+            "has_party_of_group": "nationalist_populist"
+          },
+          {
+            "stability_below": 0.5
+          }
+        ]
+      },
+      "effects": [
+        {
+          "leave_history": true
+        },
+        {
+          "add_spirit": "usa_third_party_surge"
+        },
+        {
+          "add_ideology_support": {
+            "group": "nationalist_populist",
+            "value": 0.05
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "labour_unions",
+            "value": 3
+          }
+        }
+      ],
+      "ai_weight": 0.2
+    },
+    {
+      "id": "usa_populist_government",
+      "name": "A Reform administration",
+      "description": "The most popular nationalist party takes the White House.",
+      "x": 15,
+      "y": 2,
+      "days": 105,
+      "prerequisites": [
+        [
+          "usa_populist_revolt"
+        ]
+      ],
+      "available": {
+        "ideology_group_support_above": {
+          "group": "nationalist_populist",
+          "value": 0.2
+        }
+      },
+      "effects": [
+        {
+          "install_government": {
+            "ideology": "nationalist_populist"
+          }
+        },
+        {
+          "change_law": {
+            "category": "trade",
+            "law": "protectionism"
+          }
+        },
+        {
+          "change_law": {
+            "category": "immigration",
+            "law": "restrictive_immigration"
+          }
+        }
+      ]
+    },
+    {
+      "id": "usa_tariff_wall",
+      "name": "A tariff wall",
+      "description": "High tariffs to bring factories home.",
+      "x": 15,
+      "y": 3,
+      "days": 70,
+      "prerequisites": [
+        [
+          "usa_populist_government"
+        ]
+      ],
+      "effects": [
+        {
+          "add_buildings": {
+            "building": "civilian_factory",
+            "count": 4,
+            "regions": [
+              {
+                "from": "USA",
+                "adm1": [
+                  "USA-3550",
+                  "USA-3562",
+                  "USA-3560"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "trade_efficiency",
+            "value": -0.06,
+            "days": 2920
+          }
+        },
+        {
+          "add_opinion": {
+            "target": "CHN",
+            "value": -20,
+            "days": 1825
+          }
+        },
+        {
+          "add_opinion": {
+            "target": "MEX",
+            "value": -10,
+            "days": 1825
+          }
+        }
+      ]
+    },
+    {
+      "id": "usa_religious_right",
+      "name": "A religious right",
+      "description": "Christian conservatives leave the Republicans for the Constitution Party.",
+      "x": 16,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "usa_question_of_power"
+        ]
+      ],
+      "mutually_exclusive": [
+        "usa_two_party_system",
+        "usa_libertarian_moment",
+        "usa_green_wave",
+        "usa_populist_revolt",
+        "usa_army_steps_in"
+      ],
+      "available": {
+        "all": [
+          {
+            "any": [
+              {
+                "follows_history": false
+              },
+              {
+                "is_player": true
+              }
+            ]
+          },
+          {
+            "has_party_of_group": "religious"
+          },
+          {
+            "stability_below": 0.5
+          }
+        ]
+      },
+      "effects": [
+        {
+          "leave_history": true
+        },
+        {
+          "add_spirit": "usa_third_party_surge"
+        },
+        {
+          "add_ideology_support": {
+            "group": "religious",
+            "value": 0.05
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "religious_establishment",
+            "value": 5
+          }
+        }
+      ],
+      "ai_weight": 0.2
+    },
+    {
+      "id": "usa_religious_government",
+      "name": "A Constitution Party administration",
+      "description": "The most popular religious party takes the White House.",
+      "x": 16,
+      "y": 2,
+      "days": 105,
+      "prerequisites": [
+        [
+          "usa_religious_right"
+        ]
+      ],
+      "available": {
+        "ideology_group_support_above": {
+          "group": "religious",
+          "value": 0.2
+        }
+      },
+      "effects": [
+        {
+          "install_government": {
+            "ideology": "religious"
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "religious_establishment",
+            "value": 8
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "youth_students",
+            "value": -5
+          }
+        }
+      ]
+    },
+    {
+      "id": "usa_army_steps_in",
+      "name": "The army steps in",
+      "description": "With the republic in crisis, the generals prepare to take over.",
+      "x": 17,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "usa_question_of_power"
+        ]
+      ],
+      "mutually_exclusive": [
+        "usa_two_party_system",
+        "usa_libertarian_moment",
+        "usa_green_wave",
+        "usa_populist_revolt",
+        "usa_religious_right"
+      ],
+      "available": {
+        "all": [
+          {
+            "any": [
+              {
+                "follows_history": false
+              },
+              {
+                "is_player": true
+              }
+            ]
+          },
+          {
+            "stability_below": 0.2
+          },
+          {
+            "unrest_above": 0.5
+          }
+        ]
+      },
+      "effects": [
+        {
+          "leave_history": true
+        },
+        {
+          "add_interest_group_influence": {
+            "group": "military",
+            "value": 0.08
+          }
+        }
+      ],
+      "ai_weight": 0.05
+    },
+    {
+      "id": "usa_military_council",
+      "name": "Military council",
+      "description": "The armed forces remove the government. The coup may fail.",
+      "x": 17,
+      "y": 2,
+      "days": 35,
+      "prerequisites": [
+        [
+          "usa_army_steps_in"
+        ]
+      ],
+      "effects": [
+        {
+          "trigger_coup": {
+            "by": "military",
+            "success_chance": 0.4
+          }
+        }
+      ]
+    },
+    {
+      "id": "usa_return_to_barracks",
+      "name": "Return to the barracks",
+      "description": "The council hands power back to an elected government.",
+      "x": 17,
+      "y": 3,
+      "days": 140,
+      "prerequisites": [
+        [
+          "usa_military_council"
+        ]
+      ],
+      "available": {
+        "government_type": "military_junta"
+      },
+      "effects": [
+        {
+          "set_government_type": "presidential"
+        },
+        {
+          "change_law": {
+            "category": "political_freedom",
+            "law": "free_elections"
+          }
+        },
+        {
+          "hold_election": {
+            "kind": "presidential"
+          }
+        },
+        {
+          "add_stability": 0.05
+        }
+      ],
+      "ai_weight": 0.5
+    },
+    {
+      "id": "usa_economic_agenda",
+      "name": "Economic agenda",
+      "description": "Set the economic priorities of the administration.",
+      "x": 22,
+      "y": 0,
+      "days": 70,
+      "effects": [
+        {
+          "add_political_power": 20
+        },
+        {
+          "add_economic_mood": 0.02
+        }
+      ],
+      "ai_weight": 4
+    },
+    {
+      "id": "usa_dotcom_crash",
+      "name": "After the dot-com crash",
+      "description": "Let the bubble deflate and support the recovery.",
+      "x": 19,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "usa_economic_agenda"
+        ]
+      ],
+      "available": {
+        "all": [
+          {
+            "has_spirit": "usa_dotcom_bubble"
+          },
+          {
+            "date_after": "2001-06-01"
+          }
+        ]
+      },
+      "effects": [
+        {
+          "remove_spirit": "usa_dotcom_bubble"
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "interest_rate",
+            "value": -0.005,
+            "days": 1460
+          }
+        }
+      ],
+      "ai_weight": 4
+    },
+    {
+      "id": "usa_trade_agenda",
+      "name": "Trade agenda",
+      "description": "Negotiate new trade agreements.",
+      "x": 21,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "usa_economic_agenda"
+        ]
+      ],
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "trade_efficiency",
+            "value": 0.04,
+            "days": 3650
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "business",
+            "value": 3
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "labour_unions",
+            "value": -2
+          }
+        }
+      ]
+    },
+    {
+      "id": "usa_energy_policy",
+      "name": "National energy policy",
+      "description": "Set a national energy strategy.",
+      "x": 23,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "usa_economic_agenda"
+        ]
+      ],
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "energy_cost",
+            "value": -0.03,
+            "days": 3650
+          }
+        },
+        {
+          "add_buildings": {
+            "building": "refinery",
+            "count": 1,
+            "regions": [
+              {
+                "from": "USA",
+                "adm1": [
+                  "USA-3536"
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "usa_housing_market",
+      "name": "Homeownership",
+      "description": "Encourage home buying with cheap credit.",
+      "x": 25,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "usa_economic_agenda"
+        ]
+      ],
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "construction_speed",
+            "value": 0.05,
+            "days": 2920
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "gdp_growth",
+            "value": 0.002,
+            "days": 1460
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "urban_middle_class",
+            "value": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "usa_tech_sector",
+      "name": "Silicon Valley",
+      "description": "Support for software, cloud and the internet economy.",
+      "x": 19,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "usa_dotcom_crash",
+          "usa_trade_agenda"
+        ]
+      ],
+      "effects": [
+        {
+          "add_buildings": {
+            "building": "data_centre",
+            "count": 2,
+            "regions": [
+              {
+                "from": "USA",
+                "adm1": [
+                  "USA-3521",
+                  "USA-3519"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "add_research_bonus": {
+            "category": "economy_digital",
+            "value": 0.2,
+            "uses": 2
+          }
+        }
+      ]
+    },
+    {
+      "id": "usa_shale_revolution",
+      "name": "Shale oil and gas",
+      "description": "Horizontal drilling and fracking open new fields in Texas, North Dakota and Pennsylvania.",
+      "x": 23,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "usa_energy_policy"
+        ]
+      ],
+      "available": {
+        "date_after": "2008-01-01"
+      },
+      "effects": [
+        {
+          "add_spirit": "usa_shale_boom"
+        },
+        {
+          "add_buildings": {
+            "building": "refinery",
+            "count": 2,
+            "regions": [
+              {
+                "from": "USA",
+                "adm1": [
+                  "USA-3536",
+                  "USA-3560"
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "ai_weight": 3
+    },
+    {
+      "id": "usa_gulf_refining",
+      "name": "Gulf Coast refining",
+      "description": "Expand the refineries and petrochemical plants of the Gulf Coast.",
+      "x": 24,
+      "y": 3,
+      "days": 70,
+      "prerequisites": [
+        [
+          "usa_shale_revolution"
+        ]
+      ],
+      "effects": [
+        {
+          "add_buildings": {
+            "building": "refinery",
+            "count": 2,
+            "regions": [
+              {
+                "from": "USA",
+                "adm1": [
+                  "USA-3536",
+                  "USA-3535"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "add_buildings": {
+            "building": "port",
+            "count": 1,
+            "regions": [
+              {
+                "from": "USA",
+                "adm1": [
+                  "USA-3536"
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "usa_lng_exports",
+      "name": "Gas exports",
+      "description": "Liquefied gas terminals for exports to Europe and Asia.",
+      "x": 22,
+      "y": 3,
+      "days": 70,
+      "prerequisites": [
+        [
+          "usa_shale_revolution"
+        ]
+      ],
+      "available": {
+        "date_after": "2016-01-01"
+      },
+      "effects": [
+        {
+          "add_buildings": {
+            "building": "port",
+            "count": 1,
+            "regions": [
+              {
+                "from": "USA",
+                "adm1": [
+                  "USA-3535"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "trade_efficiency",
+            "value": 0.03,
+            "days": 2920
+          }
+        },
+        {
+          "add_treasury": 3
+        }
+      ]
+    },
+    {
+      "id": "usa_usmca",
+      "name": "United States–Mexico–Canada Agreement",
+      "description": "A new trade agreement replacing NAFTA, in force from 1 July 2020.",
+      "x": 21,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "usa_trade_agenda"
+        ]
+      ],
+      "available": {
+        "all": [
+          {
+            "follows_history": true
+          },
+          {
+            "date_after": "2020-07-01"
+          }
+        ]
+      },
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "trade_efficiency",
+            "value": 0.03,
+            "days": 3650
+          }
+        },
+        {
+          "add_opinion": {
+            "target": "MEX",
+            "value": 10,
+            "days": 1825
+          }
+        },
+        {
+          "add_opinion": {
+            "target": "CAN",
+            "value": 10,
+            "days": 1825
+          }
+        },
+        {
+          "add_buildings": {
+            "building": "civilian_factory",
+            "count": 1,
+            "regions": [
+              {
+                "from": "USA",
+                "adm1": [
+                  "USA-3562"
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "ai_weight": 3
+    },
+    {
+      "id": "usa_manufacturing_renewal",
+      "name": "Manufacturing renewal",
+      "description": "Bring factories back to the Midwest.",
+      "x": 20,
+      "y": 3,
+      "days": 70,
+      "prerequisites": [
+        [
+          "usa_usmca",
+          "usa_trade_agenda"
+        ]
+      ],
+      "effects": [
+        {
+          "add_buildings": {
+            "building": "civilian_factory",
+            "count": 3,
+            "regions": [
+              {
+                "from": "USA",
+                "adm1": [
+                  "USA-3550",
+                  "USA-3562",
+                  "USA-3546"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "labour_unions",
+            "value": 4
+          }
+        }
+      ]
+    },
+    {
+      "id": "usa_housing_bubble",
+      "name": "Housing finance",
+      "description": "Mortgage lending and home building grow fast.",
+      "x": 25,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "usa_housing_market"
+        ]
+      ],
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "construction_speed",
+            "value": 0.03,
+            "days": 1460
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "gdp_growth",
+            "value": 0.001,
+            "days": 1460
+          }
+        }
+      ]
+    },
+    {
+      "id": "usa_space_industry",
+      "name": "Commercial space",
+      "description": "Contracts for private launch companies.",
+      "x": 19,
+      "y": 3,
+      "days": 70,
+      "prerequisites": [
+        [
+          "usa_tech_sector"
+        ]
+      ],
+      "effects": [
+        {
+          "add_buildings": {
+            "building": "data_centre",
+            "count": 1,
+            "regions": [
+              {
+                "from": "USA",
+                "adm1": [
+                  "USA-3542"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "add_research_bonus": {
+            "category": "air_drones",
+            "value": 0.15,
+            "uses": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "usa_clean_energy",
+      "name": "Clean energy",
+      "description": "Tax credits for wind, solar and batteries.",
+      "x": 23,
+      "y": 4,
+      "days": 70,
+      "prerequisites": [
+        [
+          "usa_gulf_refining",
+          "usa_lng_exports"
+        ]
+      ],
+      "effects": [
+        {
+          "add_buildings": {
+            "building": "renewable_plant",
+            "count": 3,
+            "regions": [
+              {
+                "from": "USA",
+                "adm1": [
+                  "USA-3521",
+                  "USA-3536"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "renewable_output",
+            "value": 0.1,
+            "days": 3650
+          }
+        }
+      ]
+    },
+    {
+      "id": "usa_semiconductors",
+      "name": "Semiconductors",
+      "description": "New chip plants at home.",
+      "x": 20,
+      "y": 4,
+      "days": 70,
+      "prerequisites": [
+        [
+          "usa_manufacturing_renewal",
+          "usa_space_industry"
+        ]
+      ],
+      "effects": [
+        {
+          "add_buildings": {
+            "building": "civilian_factory",
+            "count": 2,
+            "regions": [
+              {
+                "from": "USA",
+                "adm1": [
+                  "USA-3520",
+                  "USA-3536"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "add_research_bonus": {
+            "category": "electronics_cyber",
+            "value": 0.2,
+            "uses": 2
+          }
+        }
+      ]
+    },
+    {
+      "id": "usa_ai_research",
+      "name": "Artificial intelligence",
+      "description": "Data centres and research for artificial intelligence.",
+      "x": 21,
+      "y": 5,
+      "days": 70,
+      "prerequisites": [
+        [
+          "usa_semiconductors"
+        ]
+      ],
+      "available": {
+        "date_after": "2016-01-01"
+      },
+      "effects": [
+        {
+          "add_buildings": {
+            "building": "data_centre",
+            "count": 3,
+            "regions": [
+              {
+                "from": "USA",
+                "adm1": [
+                  "USA-3552",
+                  "USA-3521",
+                  "USA-3536"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "add_research_bonus": {
+            "category": "economy_digital",
+            "value": 0.25,
+            "uses": 2
+          }
+        }
+      ]
+    },
+    {
+      "id": "usa_grid_modernisation",
+      "name": "Modernise the grid",
+      "description": "Transmission lines and storage for a modern grid.",
+      "x": 24,
+      "y": 5,
+      "days": 70,
+      "prerequisites": [
+        [
+          "usa_clean_energy"
+        ]
+      ],
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "energy_cost",
+            "value": -0.03,
+            "days": 3650
+          }
+        },
+        {
+          "add_buildings": {
+            "building": "infrastructure",
+            "count": 2
+          }
+        }
       ]
     },
     {
       "id": "usa_defence_review",
       "name": "Quadrennial defence review",
       "description": "Review strategy, forces and budgets.",
-      "x": 13,
-      "y": 1,
+      "x": 30,
+      "y": 0,
       "days": 70,
       "effects": [
         {
@@ -390,19 +2281,20 @@
           }
         }
       ],
-      "prerequisites": [
-        [
-          "usa_new_administration"
-        ]
-      ]
+      "ai_weight": 4
     },
     {
       "id": "usa_missile_defence",
       "name": "Missile defence",
       "description": "Fund national missile defence programmes.",
-      "x": 12,
-      "y": 2,
+      "x": 28,
+      "y": 1,
       "days": 70,
+      "prerequisites": [
+        [
+          "usa_defence_review"
+        ]
+      ],
       "effects": [
         {
           "add_timed_modifier": {
@@ -412,53 +2304,1641 @@
           }
         },
         {
+          "add_research_bonus": {
+            "category": "artillery_missiles",
+            "value": 0.2,
+            "uses": 2
+          }
+        },
+        {
           "add_interest_group_approval": {
             "group": "military",
             "value": 3
           }
         }
-      ],
-      "prerequisites": [
-        [
-          "usa_defence_review"
-        ]
       ]
     },
     {
       "id": "usa_force_transformation",
       "name": "Force transformation",
       "description": "Restructure the armed forces around lighter, networked units.",
-      "x": 14,
-      "y": 2,
+      "x": 30,
+      "y": 1,
       "days": 70,
+      "prerequisites": [
+        [
+          "usa_defence_review"
+        ]
+      ],
       "effects": [
         {
           "add_timed_modifier": {
             "modifier": "army_org",
+            "value": 0.04,
+            "days": 3650
+          }
+        },
+        {
+          "add_research_bonus": {
+            "category": "doctrine",
+            "value": 0.2,
+            "uses": 2
+          }
+        }
+      ]
+    },
+    {
+      "id": "usa_carrier_fleet",
+      "name": "Carrier fleet",
+      "description": "New aircraft carriers and naval bases.",
+      "x": 32,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "usa_defence_review"
+        ]
+      ],
+      "effects": [
+        {
+          "add_buildings": {
+            "building": "port",
+            "count": 2,
+            "regions": [
+              {
+                "from": "USA",
+                "adm1": [
+                  "USA-3552",
+                  "USA-3521"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "add_research_bonus": {
+            "category": "naval",
+            "value": 0.25,
+            "uses": 2
+          }
+        }
+      ]
+    },
+    {
+      "id": "usa_special_operations",
+      "name": "Special operations",
+      "description": "Expand Special Operations Command for counter-terrorism.",
+      "x": 28,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "usa_force_transformation"
+        ]
+      ],
+      "available": {
+        "has_global_flag": "september_11"
+      },
+      "effects": [
+        {
+          "add_divisions": {
+            "template": "motorised_division",
+            "count": 2
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "army_attack",
+            "value": 0.02,
+            "days": 2920
+          }
+        }
+      ]
+    },
+    {
+      "id": "usa_drone_programme",
+      "name": "Armed drones",
+      "description": "Armed drones for surveillance and strikes.",
+      "x": 30,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "usa_force_transformation",
+          "usa_missile_defence"
+        ]
+      ],
+      "effects": [
+        {
+          "add_research_bonus": {
+            "category": "air_drones",
+            "value": 0.25,
+            "uses": 2
+          }
+        },
+        {
+          "add_buildings": {
+            "building": "air_base",
+            "count": 1,
+            "regions": [
+              {
+                "from": "USA",
+                "adm1": [
+                  "USA-3520"
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "usa_arsenal_of_democracy",
+      "name": "Defence industry",
+      "description": "Expand the arms plants and ammunition production.",
+      "x": 32,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "usa_carrier_fleet"
+        ]
+      ],
+      "effects": [
+        {
+          "add_buildings": {
+            "building": "military_factory",
+            "count": 3,
+            "regions": [
+              {
+                "from": "USA",
+                "adm1": [
+                  "USA-3560",
+                  "USA-3536",
+                  "USA-3541"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "add_equipment": {
+            "family": "infantry_equipment",
+            "amount": 3000
+          }
+        }
+      ]
+    },
+    {
+      "id": "usa_iraq_surge",
+      "name": "The surge in Iraq",
+      "description": "More than 20,000 additional troops, mostly to Baghdad, announced in January 2007.",
+      "x": 28,
+      "y": 3,
+      "days": 70,
+      "prerequisites": [
+        [
+          "usa_special_operations"
+        ]
+      ],
+      "available": {
+        "all": [
+          {
+            "follows_history": true
+          },
+          {
+            "date_after": "2007-01-10"
+          }
+        ]
+      },
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "army_attack",
+            "value": 0.02,
+            "days": 1460
+          }
+        },
+        {
+          "add_war_support": -0.02
+        },
+        {
+          "add_ruling_party_popularity": -0.02
+        }
+      ],
+      "ai_weight": 4
+    },
+    {
+      "id": "usa_cyber_command",
+      "name": "Cyber command",
+      "description": "A command for cyber operations.",
+      "x": 30,
+      "y": 3,
+      "days": 70,
+      "prerequisites": [
+        [
+          "usa_drone_programme"
+        ]
+      ],
+      "effects": [
+        {
+          "add_research_bonus": {
+            "category": "electronics_cyber",
+            "value": 0.25,
+            "uses": 2
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "intelligence_power",
+            "value": 0.05,
+            "days": 3650
+          }
+        }
+      ]
+    },
+    {
+      "id": "usa_global_bases",
+      "name": "Global basing",
+      "description": "Air bases and ports for global reach.",
+      "x": 32,
+      "y": 3,
+      "days": 70,
+      "prerequisites": [
+        [
+          "usa_arsenal_of_democracy"
+        ]
+      ],
+      "effects": [
+        {
+          "add_buildings": {
+            "building": "air_base",
+            "count": 2,
+            "regions": [
+              {
+                "from": "USA",
+                "adm1": [
+                  "USA-3517",
+                  "USA-3542"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "foreign_influence_power",
+            "value": 0.05,
+            "days": 3650
+          }
+        }
+      ]
+    },
+    {
+      "id": "usa_leave_iraq",
+      "name": "Withdrawal from Iraq",
+      "description": "Bring the troops home from Iraq; the withdrawal was mostly completed by December 2011.",
+      "x": 28,
+      "y": 4,
+      "days": 70,
+      "prerequisites": [
+        [
+          "usa_iraq_surge"
+        ]
+      ],
+      "available": {
+        "all": [
+          {
+            "follows_history": true
+          },
+          {
+            "date_after": "2011-12-01"
+          }
+        ]
+      },
+      "effects": [
+        {
+          "add_war_support": 0.02
+        },
+        {
+          "add_stability": 0.02
+        },
+        {
+          "add_treasury": 3
+        }
+      ],
+      "ai_weight": 4
+    },
+    {
+      "id": "usa_inherent_resolve",
+      "name": "Operation Inherent Resolve",
+      "description": "Lead the international coalition against the Islamic State in Iraq and Syria from 15 June 2014.",
+      "x": 30,
+      "y": 4,
+      "days": 70,
+      "prerequisites": [
+        [
+          "usa_cyber_command",
+          "usa_leave_iraq"
+        ]
+      ],
+      "available": {
+        "date_after": "2014-06-15"
+      },
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "air_effectiveness",
+            "value": 0.03,
+            "days": 2920
+          }
+        },
+        {
+          "add_opinion": {
+            "target": "IRQ",
+            "value": 10,
+            "days": 1825
+          }
+        },
+        {
+          "add_war_support": 0.02
+        }
+      ],
+      "ai_weight": 4
+    },
+    {
+      "id": "usa_space_force",
+      "name": "United States Space Force",
+      "description": "A space service branch of the armed forces, established on 20 December 2019.",
+      "x": 32,
+      "y": 4,
+      "days": 70,
+      "prerequisites": [
+        [
+          "usa_global_bases",
+          "usa_cyber_command"
+        ]
+      ],
+      "available": {
+        "date_after": "2019-12-20"
+      },
+      "effects": [
+        {
+          "add_research_bonus": {
+            "category": "air_drones",
+            "value": 0.2,
+            "uses": 1
+          }
+        },
+        {
+          "add_research_bonus": {
+            "category": "electronics_cyber",
+            "value": 0.2,
+            "uses": 1
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "intelligence_power",
             "value": 0.05,
             "days": 3650
           }
         }
       ],
+      "ai_weight": 3
+    },
+    {
+      "id": "usa_leave_afghanistan",
+      "name": "Withdrawal from Afghanistan",
+      "description": "Withdraw from Afghanistan; the Department of Defense completed the withdrawal on 30 August 2021.",
+      "x": 29,
+      "y": 5,
+      "days": 70,
       "prerequisites": [
         [
-          "usa_defence_review"
+          "usa_inherent_resolve"
         ]
+      ],
+      "available": {
+        "all": [
+          {
+            "follows_history": true
+          },
+          {
+            "date_after": "2021-08-30"
+          }
+        ]
+      },
+      "effects": [
+        {
+          "add_stability": 0.01
+        },
+        {
+          "add_treasury": 2
+        },
+        {
+          "add_war_support": -0.02
+        }
+      ],
+      "ai_weight": 3
+    },
+    {
+      "id": "usa_great_power_competition",
+      "name": "Great-power competition",
+      "description": "Rebuild forces for competition with China and Russia.",
+      "x": 31,
+      "y": 5,
+      "days": 70,
+      "prerequisites": [
+        [
+          "usa_inherent_resolve",
+          "usa_space_force"
+        ]
+      ],
+      "available": {
+        "date_after": "2017-01-01"
+      },
+      "effects": [
+        {
+          "add_buildings": {
+            "building": "military_factory",
+            "count": 2,
+            "regions": [
+              {
+                "from": "USA",
+                "adm1": [
+                  "USA-3550",
+                  "USA-3543"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "army_org",
+            "value": 0.02,
+            "days": 2920
+          }
+        }
       ]
     },
     {
-      "id": "usa_trade_agenda",
-      "name": "Trade agenda",
-      "description": "Negotiate new trade agreements.",
-      "x": 16,
+      "id": "usa_foreign_policy",
+      "name": "Foreign policy priorities",
+      "description": "Set the course of American foreign policy.",
+      "x": 37,
+      "y": 0,
+      "days": 70,
+      "effects": [
+        {
+          "add_political_power": 30
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "diplomatic_reputation",
+            "value": 0.03,
+            "days": 1825
+          }
+        }
+      ],
+      "ai_weight": 4
+    },
+    {
+      "id": "usa_war_on_terror_coalition",
+      "name": "A coalition against terrorism",
+      "description": "Build an international coalition after the September 11 attacks.",
+      "x": 35,
       "y": 1,
       "days": 70,
+      "prerequisites": [
+        [
+          "usa_foreign_policy"
+        ]
+      ],
+      "available": {
+        "has_global_flag": "september_11"
+      },
+      "effects": [
+        {
+          "add_opinion": {
+            "target": "GBR",
+            "value": 10,
+            "days": 1825
+          }
+        },
+        {
+          "add_opinion": {
+            "target": "PAK",
+            "value": 10,
+            "days": 1825
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "diplomatic_reputation",
+            "value": 0.03,
+            "days": 2920
+          }
+        }
+      ],
+      "ai_weight": 3
+    },
+    {
+      "id": "usa_nato_enlargement",
+      "name": "NATO enlargement",
+      "description": "Support NATO membership for the democracies of Central and Eastern Europe.",
+      "x": 37,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "usa_foreign_policy"
+        ]
+      ],
+      "effects": [
+        {
+          "add_opinion": {
+            "target": "POL",
+            "value": 10,
+            "days": 1825
+          }
+        },
+        {
+          "add_opinion": {
+            "target": "RUS",
+            "value": -10,
+            "days": 1825
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "foreign_influence_power",
+            "value": 0.05,
+            "days": 2920
+          }
+        }
+      ]
+    },
+    {
+      "id": "usa_free_trade_partners",
+      "name": "Free trade partners",
+      "description": "Trade agreements with allies in Asia and the Americas.",
+      "x": 39,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "usa_foreign_policy"
+        ]
+      ],
       "effects": [
         {
           "add_timed_modifier": {
             "modifier": "trade_efficiency",
+            "value": 0.03,
+            "days": 3650
+          }
+        },
+        {
+          "add_opinion": {
+            "target": "KOR",
+            "value": 10,
+            "days": 1825
+          }
+        },
+        {
+          "add_opinion": {
+            "target": "AUS",
+            "value": 10,
+            "days": 1825
+          }
+        }
+      ]
+    },
+    {
+      "id": "usa_new_start",
+      "name": "New START",
+      "description": "A strategic arms treaty with Russia, signed in Prague on 8 April 2010 and in force from 5 February 2011.",
+      "x": 36,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "usa_nato_enlargement"
+        ]
+      ],
+      "available": {
+        "all": [
+          {
+            "follows_history": true
+          },
+          {
+            "date_after": "2010-04-08"
+          }
+        ]
+      },
+      "effects": [
+        {
+          "add_opinion": {
+            "target": "RUS",
+            "value": 15,
+            "days": 1825
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "diplomatic_reputation",
+            "value": 0.03,
+            "days": 2920
+          }
+        },
+        {
+          "add_treasury": 1
+        }
+      ],
+      "ai_weight": 3
+    },
+    {
+      "id": "usa_israel_partnership",
+      "name": "Partnership with Israel",
+      "description": "Military aid and diplomatic support for Israel.",
+      "x": 35,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "usa_war_on_terror_coalition"
+        ]
+      ],
+      "effects": [
+        {
+          "add_opinion": {
+            "target": "ISR",
+            "value": 20,
+            "days": 1825
+          }
+        },
+        {
+          "add_opinion": {
+            "target": "IRN",
+            "value": -10,
+            "days": 1825
+          }
+        }
+      ]
+    },
+    {
+      "id": "usa_pivot_to_asia",
+      "name": "Pivot to Asia",
+      "description": "Shift forces and diplomacy toward the Asia-Pacific.",
+      "x": 39,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "usa_free_trade_partners"
+        ]
+      ],
+      "effects": [
+        {
+          "add_opinion": {
+            "target": "JPN",
+            "value": 10,
+            "days": 1825
+          }
+        },
+        {
+          "add_opinion": {
+            "target": "CHN",
+            "value": -5,
+            "days": 1825
+          }
+        },
+        {
+          "add_buildings": {
+            "building": "port",
+            "count": 1,
+            "regions": [
+              {
+                "from": "USA",
+                "adm1": [
+                  "USA-3517"
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "usa_sanctions_on_russia",
+      "name": "Sanctions on Russia",
+      "description": "Sanctions on Russia after the annexation of Crimea in 2014.",
+      "x": 37,
+      "y": 3,
+      "days": 70,
+      "prerequisites": [
+        [
+          "usa_new_start",
+          "usa_nato_enlargement"
+        ]
+      ],
+      "available": {
+        "date_after": "2014-03-18"
+      },
+      "effects": [
+        {
+          "add_opinion": {
+            "target": "RUS",
+            "value": -20,
+            "days": 1825
+          }
+        },
+        {
+          "add_opinion": {
+            "target": "UKR",
+            "value": 15,
+            "days": 1825
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "foreign_influence_power",
+            "value": 0.03,
+            "days": 2920
+          }
+        }
+      ]
+    },
+    {
+      "id": "usa_indo_pacific",
+      "name": "Indo-Pacific partners",
+      "description": "Closer ties with India, Japan and Australia.",
+      "x": 39,
+      "y": 3,
+      "days": 70,
+      "prerequisites": [
+        [
+          "usa_pivot_to_asia"
+        ]
+      ],
+      "effects": [
+        {
+          "add_opinion": {
+            "target": "IND",
+            "value": 15,
+            "days": 1825
+          }
+        },
+        {
+          "add_opinion": {
+            "target": "AUS",
+            "value": 10,
+            "days": 1825
+          }
+        },
+        {
+          "add_opinion": {
+            "target": "JPN",
+            "value": 10,
+            "days": 1825
+          }
+        }
+      ]
+    },
+    {
+      "id": "usa_ukraine_aid",
+      "name": "Security assistance for Ukraine",
+      "description": "Training, equipment and advisers for Ukraine's defence.",
+      "x": 37,
+      "y": 4,
+      "days": 70,
+      "prerequisites": [
+        [
+          "usa_sanctions_on_russia"
+        ]
+      ],
+      "available": {
+        "all": [
+          {
+            "date_after": "2022-02-24"
+          },
+          {
+            "treasury_above": 3
+          }
+        ]
+      },
+      "effects": [
+        {
+          "add_opinion": {
+            "target": "UKR",
+            "value": 20,
+            "days": 1825
+          }
+        },
+        {
+          "add_treasury": -3
+        },
+        {
+          "country": {
+            "tag": "UKR",
+            "effects": [
+              {
+                "add_equipment": {
+                  "family": "infantry_equipment",
+                  "amount": 1500
+                }
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "usa_rally_allies",
+      "name": "Rally the allies",
+      "description": "Unite NATO and the G7 behind common aims.",
+      "x": 35,
+      "y": 3,
+      "days": 70,
+      "prerequisites": [
+        [
+          "usa_israel_partnership",
+          "usa_new_start"
+        ]
+      ],
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "diplomatic_reputation",
+            "value": 0.05,
+            "days": 2920
+          }
+        },
+        {
+          "add_opinion": {
+            "target": "DEU",
+            "value": 10,
+            "days": 1825
+          }
+        },
+        {
+          "add_opinion": {
+            "target": "FRA",
+            "value": 10,
+            "days": 1825
+          }
+        }
+      ]
+    },
+    {
+      "id": "usa_tech_controls",
+      "name": "Technology export controls",
+      "description": "Restrict exports of advanced chips to rivals.",
+      "x": 39,
+      "y": 4,
+      "days": 70,
+      "prerequisites": [
+        [
+          "usa_indo_pacific"
+        ]
+      ],
+      "available": {
+        "date_after": "2018-01-01"
+      },
+      "effects": [
+        {
+          "add_opinion": {
+            "target": "CHN",
+            "value": -15,
+            "days": 1825
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "foreign_influence_resistance",
             "value": 0.05,
             "days": 3650
+          }
+        }
+      ]
+    },
+    {
+      "id": "usa_domestic_agenda",
+      "name": "Domestic agenda",
+      "description": "Priorities at home: schools, health and science.",
+      "x": 43,
+      "y": 0,
+      "days": 70,
+      "effects": [
+        {
+          "add_political_power": 20
+        }
+      ],
+      "ai_weight": 3
+    },
+    {
+      "id": "usa_research_funding",
+      "name": "Federal research funding",
+      "description": "More money for national laboratories and universities.",
+      "x": 42,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "usa_domestic_agenda"
+        ]
+      ],
+      "effects": [
+        {
+          "add_research_bonus": {
+            "category": "industry_energy",
+            "value": 0.2,
+            "uses": 2
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "research_speed",
+            "value": 0.03,
+            "days": 2920
+          }
+        }
+      ]
+    },
+    {
+      "id": "usa_community_colleges",
+      "name": "Community colleges",
+      "description": "Job training at community colleges.",
+      "x": 44,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "usa_domestic_agenda"
+        ]
+      ],
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "education_quality",
+            "value": 0.03,
+            "days": 3650
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "labour_unions",
+            "value": 2
+          }
+        }
+      ]
+    },
+    {
+      "id": "usa_broadband",
+      "name": "Broadband for rural America",
+      "description": "High-speed internet in the countryside.",
+      "x": 43,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "usa_research_funding",
+          "usa_community_colleges"
+        ]
+      ],
+      "effects": [
+        {
+          "add_buildings": {
+            "building": "data_centre",
+            "count": 1
+          }
+        },
+        {
+          "add_buildings": {
+            "building": "infrastructure",
+            "count": 2
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "rural",
+            "value": 4
+          }
+        }
+      ]
+    },
+    {
+      "id": "usa_medical_research",
+      "name": "Medical research",
+      "description": "Double funding for medical research.",
+      "x": 42,
+      "y": 3,
+      "days": 70,
+      "prerequisites": [
+        [
+          "usa_broadband"
+        ]
+      ],
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "health_outcomes",
+            "value": 0.03,
+            "days": 3650
+          }
+        },
+        {
+          "add_research_bonus": {
+            "category": "economy_digital",
+            "value": 0.15,
+            "uses": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "usa_infrastructure_bank",
+      "name": "Water and transit",
+      "description": "Replace old water pipes and expand transit.",
+      "x": 44,
+      "y": 3,
+      "days": 70,
+      "prerequisites": [
+        [
+          "usa_broadband"
+        ]
+      ],
+      "available": {
+        "treasury_above": 1
+      },
+      "effects": [
+        {
+          "add_buildings": {
+            "building": "infrastructure",
+            "count": 2
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "health_outcomes",
+            "value": 0.01,
+            "days": 3650
+          }
+        },
+        {
+          "add_treasury": -1
+        }
+      ]
+    },
+    {
+      "id": "usa_army_modernisation",
+      "name": "Army modernisation",
+      "description": "New armoured vehicles, helicopters and networks for the Army.",
+      "x": 27,
+      "y": 3,
+      "days": 70,
+      "prerequisites": [
+        [
+          "usa_special_operations",
+          "usa_drone_programme"
+        ]
+      ],
+      "effects": [
+        {
+          "add_research_bonus": {
+            "category": "armour",
+            "value": 0.2,
+            "uses": 2
+          }
+        },
+        {
+          "add_equipment": {
+            "family": "infantry_equipment",
+            "amount": 1000
+          }
+        }
+      ]
+    },
+    {
+      "id": "usa_stryker_brigades",
+      "name": "Medium brigades",
+      "description": "Wheeled brigades that deploy faster than heavy armour.",
+      "x": 27,
+      "y": 4,
+      "days": 70,
+      "prerequisites": [
+        [
+          "usa_army_modernisation"
+        ]
+      ],
+      "effects": [
+        {
+          "add_divisions": {
+            "template": "motorised_division",
+            "count": 2
+          }
+        }
+      ]
+    },
+    {
+      "id": "usa_national_guard",
+      "name": "The National Guard",
+      "description": "Train and equip the National Guard for deployments abroad and disasters at home.",
+      "x": 33,
+      "y": 3,
+      "days": 70,
+      "prerequisites": [
+        [
+          "usa_arsenal_of_democracy"
+        ]
+      ],
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "manpower_factor",
+            "value": 0.03,
+            "days": 2920
+          }
+        },
+        {
+          "add_divisions": {
+            "template": "infantry_division",
+            "count": 2
+          }
+        }
+      ]
+    },
+    {
+      "id": "usa_fifth_generation_fighters",
+      "name": "Fifth-generation fighters",
+      "description": "New stealth fighters for the Air Force, Navy and Marines.",
+      "x": 33,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "usa_carrier_fleet"
+        ]
+      ],
+      "effects": [
+        {
+          "add_research_bonus": {
+            "category": "air_drones",
+            "value": 0.25,
+            "uses": 2
+          }
+        },
+        {
+          "add_buildings": {
+            "building": "air_base",
+            "count": 1,
+            "regions": [
+              {
+                "from": "USA",
+                "adm1": [
+                  "USA-3536"
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "usa_hypersonics",
+      "name": "Hypersonic weapons",
+      "description": "Research into hypersonic missiles and defences.",
+      "x": 33,
+      "y": 5,
+      "days": 70,
+      "prerequisites": [
+        [
+          "usa_space_force",
+          "usa_global_bases"
+        ]
+      ],
+      "available": {
+        "date_after": "2018-01-01"
+      },
+      "effects": [
+        {
+          "add_research_bonus": {
+            "category": "artillery_missiles",
+            "value": 0.25,
+            "uses": 2
+          }
+        }
+      ]
+    },
+    {
+      "id": "usa_shipbuilding",
+      "name": "Shipbuilding",
+      "description": "Expand the naval shipyards.",
+      "x": 33,
+      "y": 4,
+      "days": 70,
+      "prerequisites": [
+        [
+          "usa_global_bases",
+          "usa_national_guard"
+        ]
+      ],
+      "effects": [
+        {
+          "add_buildings": {
+            "building": "military_factory",
+            "count": 1,
+            "regions": [
+              {
+                "from": "USA",
+                "adm1": [
+                  "USA-3552"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "add_buildings": {
+            "building": "port",
+            "count": 1,
+            "regions": [
+              {
+                "from": "USA",
+                "adm1": [
+                  "USA-3519"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "add_research_bonus": {
+            "category": "naval",
+            "value": 0.2,
+            "uses": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "usa_africa_partners",
+      "name": "Partners in Africa",
+      "description": "A command for Africa, training and aid for partner states.",
+      "x": 35,
+      "y": 4,
+      "days": 70,
+      "prerequisites": [
+        [
+          "usa_rally_allies"
+        ]
+      ],
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "foreign_influence_power",
+            "value": 0.05,
+            "days": 2920
+          }
+        },
+        {
+          "add_treasury": -1
+        }
+      ]
+    },
+    {
+      "id": "usa_americas_partners",
+      "name": "Partners in the Americas",
+      "description": "Trade, aid and security cooperation in Latin America.",
+      "x": 36,
+      "y": 5,
+      "days": 70,
+      "prerequisites": [
+        [
+          "usa_rally_allies",
+          "usa_sanctions_on_russia"
+        ]
+      ],
+      "effects": [
+        {
+          "add_opinion": {
+            "target": "MEX",
+            "value": 10,
+            "days": 1825
+          }
+        },
+        {
+          "add_opinion": {
+            "target": "COL",
+            "value": 15,
+            "days": 1825
+          }
+        },
+        {
+          "add_opinion": {
+            "target": "BRA",
+            "value": 10,
+            "days": 1825
+          }
+        }
+      ]
+    },
+    {
+      "id": "usa_g20_summits",
+      "name": "G20 leaders' summits",
+      "description": "Coordinate the response to economic crises with the largest economies.",
+      "x": 38,
+      "y": 5,
+      "days": 70,
+      "prerequisites": [
+        [
+          "usa_ukraine_aid",
+          "usa_indo_pacific",
+          "usa_sanctions_on_russia"
+        ]
+      ],
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "diplomatic_reputation",
+            "value": 0.04,
+            "days": 2920
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "trade_efficiency",
+            "value": 0.02,
+            "days": 2920
+          }
+        }
+      ]
+    },
+    {
+      "id": "usa_iran_pressure",
+      "name": "Pressure on Iran",
+      "description": "Sanctions and diplomacy over Iran's nuclear programme.",
+      "x": 34,
+      "y": 3,
+      "days": 70,
+      "prerequisites": [
+        [
+          "usa_israel_partnership"
+        ]
+      ],
+      "effects": [
+        {
+          "add_opinion": {
+            "target": "IRN",
+            "value": -15,
+            "days": 1825
+          }
+        },
+        {
+          "add_opinion": {
+            "target": "ISR",
+            "value": 5,
+            "days": 1825
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "foreign_influence_power",
+            "value": 0.03,
+            "days": 2920
+          }
+        }
+      ]
+    },
+    {
+      "id": "usa_korea_diplomacy",
+      "name": "Diplomacy on Korea",
+      "description": "Talks and deterrence on the Korean peninsula.",
+      "x": 40,
+      "y": 3,
+      "days": 70,
+      "prerequisites": [
+        [
+          "usa_pivot_to_asia"
+        ]
+      ],
+      "effects": [
+        {
+          "add_opinion": {
+            "target": "KOR",
+            "value": 10,
+            "days": 1825
+          }
+        },
+        {
+          "add_opinion": {
+            "target": "JPN",
+            "value": 5,
+            "days": 1825
+          }
+        }
+      ]
+    },
+    {
+      "id": "usa_climate_diplomacy",
+      "name": "Climate diplomacy",
+      "description": "International agreements on emissions.",
+      "x": 40,
+      "y": 4,
+      "days": 70,
+      "prerequisites": [
+        [
+          "usa_korea_diplomacy",
+          "usa_indo_pacific"
+        ]
+      ],
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "diplomatic_reputation",
+            "value": 0.03,
+            "days": 2920
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "renewable_output",
+            "value": 0.05,
+            "days": 2920
+          }
+        }
+      ]
+    },
+    {
+      "id": "usa_farm_exports",
+      "name": "Farm exports",
+      "description": "Open markets for American grain, soy and meat.",
+      "x": 25,
+      "y": 3,
+      "days": 70,
+      "prerequisites": [
+        [
+          "usa_housing_bubble",
+          "usa_trade_agenda"
+        ]
+      ],
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "trade_efficiency",
+            "value": 0.02,
+            "days": 2920
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "rural",
+            "value": 5
+          }
+        },
+        {
+          "add_buildings": {
+            "building": "port",
+            "count": 1,
+            "regions": [
+              {
+                "from": "USA",
+                "adm1": [
+                  "USA-3535"
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "usa_auto_industry",
+      "name": "The car industry",
+      "description": "Help the car makers through the recession and into electric cars.",
+      "x": 22,
+      "y": 4,
+      "days": 70,
+      "prerequisites": [
+        [
+          "usa_manufacturing_renewal",
+          "usa_lng_exports"
+        ]
+      ],
+      "available": {
+        "treasury_above": 2
+      },
+      "effects": [
+        {
+          "add_buildings": {
+            "building": "civilian_factory",
+            "count": 2,
+            "regions": [
+              {
+                "from": "USA",
+                "adm1": [
+                  "USA-3562",
+                  "USA-3550"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "labour_unions",
+            "value": 4
+          }
+        },
+        {
+          "add_treasury": -2
+        }
+      ]
+    },
+    {
+      "id": "usa_rail_freight",
+      "name": "Rail and freight",
+      "description": "Faster freight rail and new intermodal terminals.",
+      "x": 25,
+      "y": 4,
+      "days": 70,
+      "prerequisites": [
+        [
+          "usa_farm_exports"
+        ]
+      ],
+      "effects": [
+        {
+          "add_buildings": {
+            "building": "infrastructure",
+            "count": 3
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "trade_efficiency",
+            "value": 0.02,
+            "days": 2920
+          }
+        }
+      ]
+    },
+    {
+      "id": "usa_nuclear_power",
+      "name": "Nuclear power",
+      "description": "Extend the life of reactors and build new ones.",
+      "x": 25,
+      "y": 5,
+      "days": 70,
+      "prerequisites": [
+        [
+          "usa_rail_freight",
+          "usa_clean_energy"
+        ]
+      ],
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "nuclear_output",
+            "value": 0.08,
+            "days": 3650
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "energy_cost",
+            "value": -0.02,
+            "days": 3650
+          }
+        }
+      ]
+    },
+    {
+      "id": "usa_immigration_reform",
+      "name": "Immigration reform",
+      "description": "Border security and new rules for workers and students.",
+      "x": 45,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "usa_domestic_agenda"
+        ]
+      ],
+      "effects": [
+        {
+          "change_law": {
+            "category": "immigration",
+            "law": "managed_immigration"
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "population_growth",
+            "value": 0.001,
+            "days": 2920
           }
         },
         {
@@ -466,54 +3946,169 @@
             "group": "business",
             "value": 3
           }
-        },
-        {
-          "add_interest_group_approval": {
-            "group": "labour_unions",
-            "value": -2
-          }
         }
-      ],
-      "prerequisites": [
-        [
-          "usa_new_administration"
-        ]
       ]
     },
     {
-      "id": "usa_energy_policy",
-      "name": "National energy policy",
-      "description": "Set a national energy strategy.",
-      "x": 16,
+      "id": "usa_border_security",
+      "name": "Border security",
+      "description": "More agents, barriers and technology on the southern border.",
+      "x": 45,
       "y": 2,
       "days": 70,
+      "prerequisites": [
+        [
+          "usa_immigration_reform"
+        ]
+      ],
+      "available": {
+        "treasury_above": 1
+      },
       "effects": [
         {
           "add_timed_modifier": {
-            "modifier": "energy_cost",
-            "value": -0.03,
-            "days": 3650
+            "modifier": "internal_security",
+            "value": 0.03,
+            "days": 2920
+          }
+        },
+        {
+          "add_treasury": -1
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "rural",
+            "value": 2
           }
         }
-      ],
-      "prerequisites": [
-        [
-          "usa_trade_agenda"
-        ]
       ]
-    }
-  ],
-  "source": [
-    {
-      "url": "https://en.wikipedia.org/wiki/Presidency_of_George_W._Bush",
-      "title": "Wikipedia: Presidency of George W. Bush",
-      "accessed": "2026-10-14"
     },
     {
-      "url": "https://en.wikipedia.org/wiki/Al_Gore_2000_presidential_campaign",
-      "title": "Wikipedia: Al Gore 2000 presidential campaign",
-      "accessed": "2026-10-14"
+      "id": "usa_student_aid",
+      "name": "Student aid",
+      "description": "Grants and loans for college students.",
+      "x": 44,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "usa_community_colleges"
+        ]
+      ],
+      "available": {
+        "treasury_above": 1
+      },
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "education_quality",
+            "value": 0.03,
+            "days": 3650
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "youth_students",
+            "value": 4
+          }
+        },
+        {
+          "add_treasury": -1
+        }
+      ]
+    },
+    {
+      "id": "usa_veterans_affairs",
+      "name": "Care for veterans",
+      "description": "Health care and benefits for veterans of the wars in Iraq and Afghanistan.",
+      "x": 45,
+      "y": 3,
+      "days": 70,
+      "prerequisites": [
+        [
+          "usa_border_security",
+          "usa_student_aid"
+        ]
+      ],
+      "available": {
+        "date_after": "2004-01-01"
+      },
+      "effects": [
+        {
+          "add_stability": 0.02
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "military",
+            "value": 4
+          }
+        },
+        {
+          "add_treasury": -1
+        }
+      ]
+    },
+    {
+      "id": "usa_opportunity_zones",
+      "name": "Investment in poorer areas",
+      "description": "Tax breaks for investment in struggling towns and neighbourhoods.",
+      "x": 43,
+      "y": 4,
+      "days": 70,
+      "prerequisites": [
+        [
+          "usa_medical_research",
+          "usa_infrastructure_bank"
+        ]
+      ],
+      "effects": [
+        {
+          "add_buildings": {
+            "building": "civilian_factory",
+            "count": 1
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "private_sector_output",
+            "value": 0.02,
+            "days": 2920
+          }
+        }
+      ]
+    },
+    {
+      "id": "usa_disaster_resilience",
+      "name": "Disaster resilience",
+      "description": "Levees, building codes and an emergency agency ready for hurricanes and fires.",
+      "x": 44,
+      "y": 4,
+      "days": 70,
+      "prerequisites": [
+        [
+          "usa_infrastructure_bank"
+        ]
+      ],
+      "effects": [
+        {
+          "add_buildings": {
+            "building": "infrastructure",
+            "count": 1,
+            "regions": [
+              {
+                "from": "USA",
+                "adm1": [
+                  "USA-3535",
+                  "USA-3542"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "add_stability": 0.01
+        }
+      ]
     }
-  ],
-  "confidence": "verified"
+  ]
 }
