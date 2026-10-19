@@ -434,11 +434,19 @@ function effect(ctx: SimContext, scope: Scope, k: string, v: unknown, source: st
 
 // ------------------------------------------------------------------ descriptions
 
-const signed = (x: number, pct = false) => `${x >= 0 ? "+" : "−"}${pct ? Math.round(Math.abs(x) * 100) + "%" : Math.abs(x)}`;
+const signed = (x: number, pct = false) => {
+  const p = Math.abs(x) * 100;
+  return `${x >= 0 ? "+" : "−"}${pct ? (p > 0 && p < 1 ? p.toFixed(1) : Math.round(p)) + "%" : Math.abs(x)}`;
+};
 const later = (what: string, phase: string) => `${what} (arrives in ${phase})`;
 
 /** The live country a description is for: install_government then names the party and leader it would bring in today. */
-export interface DescribeFor { state: GameState; tag: string }
+export interface DescribeFor {
+  state: GameState;
+  tag: string;
+  /** First-level region names by map adm1 code, for building and claim effects. */
+  regions?: Map<string, string>;
+}
 
 export function describeEffects(db: ContentDB, effects: unknown[], depth = 0, live?: DescribeFor): string[] {
   const out: string[] = [];
@@ -506,8 +514,12 @@ export function describeEffects(db: ContentDB, effects: unknown[], depth = 0, li
       case "add_spirit": out.push(`${pad}Gains the national spirit ${name.spirit(v as string)}${spiritSummary(db, v as string)}`); continue;
       case "remove_spirit": line = `Removes the national spirit ${name.spirit(v as string)}`; break;
       case "swap_spirit": out.push(`${pad}${name.spirit(a.from as string)} becomes ${name.spirit(a.to as string)}${spiritSummary(db, a.to as string)}`); continue;
-      case "add_claim": line = `Claims provinces of ${[...new Set((a.regions as GroupRegion[]).map((r) => name.tag(r.from)))].join(", ")} (half the war score at the peace conference)`; break;
-      case "add_buildings": line = `Builds ${a.count}× ${db.buildings.get(a.building as string)?.name ?? String(a.building)} at once${a.regions ? ` in ${[...new Set((a.regions as GroupRegion[]).flatMap((r) => [...(r.adm1 ?? []), ...(r.provinces ?? [])]))].join(", ") || "the named regions"}` : ""}`; break;
+      case "add_claim": {
+        const where = (a.regions as GroupRegion[]).map((r) => `${name.tag(r.from)}${live?.regions && r.adm1?.length ? ` (${[...new Set(r.adm1.map((c) => live.regions!.get(c) ?? c))].join(", ")})` : ""}`);
+        line = `Claims ${where.join(" and ")}: half the war score at the peace conference`;
+        break;
+      }
+      case "add_buildings": line = `Builds ${a.count}× ${db.buildings.get(a.building as string)?.name ?? String(a.building)} at once${a.regions ? ` in ${[...new Set((a.regions as GroupRegion[]).flatMap((r) => [...(r.adm1 ?? []).map((c) => live?.regions?.get(c) ?? c), ...(r.provinces ?? [])]))].join(", ") || "the named regions"}` : ""}`; break;
       case "add_research_bonus": line = `${db.techCategories.get(a.category as string)?.name ?? a.category} research ${signed(a.value as number, true)} for the next ${a.uses} technolog${(a.uses as number) > 1 ? "ies" : "y"}`; break;
       case "hold_election": line = "An early election is held"; break;
       case "change_law": line = `Enact ${name.law(a.law as string)}`; break;
@@ -573,6 +585,21 @@ export function describeEffects(db: ContentDB, effects: unknown[], depth = 0, li
     if (line) out.push(pad + line);
   }
   return out;
+}
+
+/** First-level region names by adm1 code: the region in a province's "City (Region)" name, else the province's name. */
+const regionCache = new WeakMap<object, Map<string, string>>();
+export function regionNames(provinces: readonly { name?: string; adm1: string[] }[]): Map<string, string> {
+  let m = regionCache.get(provinces);
+  if (m) return m;
+  m = new Map();
+  for (const p of provinces) {
+    if (!p.name) continue;
+    const region = /\(([^)]+)\)\s*$/.exec(p.name)?.[1] ?? p.name;
+    for (const c of p.adm1) if (!m.has(c)) m.set(c, region);
+  }
+  regionCache.set(provinces, m);
+  return m;
 }
 
 /** Modifier values in words ("Stability +5%"), for spirits and tooltips. */
