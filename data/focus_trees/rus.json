@@ -4,7 +4,7 @@
   "countries": [
     "RUS"
   ],
-  "note": "Russia pilot (FOCUS_TREES_PLAN.md). The political branch has the historical path (the power vertical) and five mutually exclusive alternatives: liberal, communist, national-populist, ultranationalist and military. Each alternative brings to power only a real party of the data (install_government), and shows only where one exists; the ultranationalist path needs a party of the fascist group, which Russia does not have in the data. Alternatives are a counterfactual, not a claim about the parties. Policies named after real reforms are cited; effects are gameplay estimates.",
+  "note": "Russia pilot (FOCUS_TREES_PLAN.md). The political branch has the historical path (the power vertical) and five mutually exclusive alternatives: liberal, communist, national-populist, ultranationalist and military. Each alternative brings to power only a real party of the data (install_government), and shows only where one exists; the ultranationalist path uses the LDPR, classified ultranationalist from its Wikipedia infobox (user decision, 19 October 2026). Alternatives are a counterfactual, not a claim about the parties. Policies named after real reforms are cited; effects are gameplay estimates.",
   "source": [
     {
       "url": "https://en.wikipedia.org/wiki/Presidency_of_Vladimir_Putin",
@@ -1506,7 +1506,7 @@
     {
       "id": "rus_national_revival",
       "name": "National revival",
-      "description": "Nationalist parties such as the Liberal Democratic Party of Russia and Rodina gain from a mood of national grievance.",
+      "description": "Nationalist parties such as Rodina gain from a mood of national grievance.",
       "x": 10,
       "y": 1,
       "days": 70,
@@ -1838,7 +1838,7 @@
     {
       "id": "rus_ultranationalist_turn",
       "name": "Ultranationalist turn",
-      "description": "In a deep crisis, an ultranationalist party seeking an authoritarian state gains a mass following. Available only where such a party exists in the data.",
+      "description": "In a deep crisis, an ultranationalist party gains a mass following and seeks an authoritarian state. This is a counterfactual, not a claim about the party's aims.",
       "x": 13,
       "y": 1,
       "days": 70,
