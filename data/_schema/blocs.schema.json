@@ -63,6 +63,14 @@
             "pattern": "^[a-z0-9]+(?:_[a-z0-9]+)*$"
           },
           "join_trigger": {},
+          "incompatible_groups": {
+            "default": [],
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "^[a-z0-9]+(?:_[a-z0-9]+)*$"
+            }
+          },
           "renamed": {
             "default": [],
             "type": "array",

@@ -61,6 +61,15 @@
             "default": false,
             "type": "boolean"
           },
+          "map_symbol": {
+            "type": "string",
+            "enum": [
+              "infantry",
+              "motorised",
+              "mechanised",
+              "armour"
+            ]
+          },
           "training_days": {
             "default": 90,
             "type": "number"

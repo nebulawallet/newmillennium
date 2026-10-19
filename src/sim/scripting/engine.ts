@@ -10,10 +10,11 @@ import type { ContentDB } from "../../content/compile.ts";
 import { COUNTRY_SCOPE, LOGIC_KEYS, SCOPES } from "../../content/script/registry.ts";
 import { dayOf } from "../date.ts";
 import type { SimContext } from "../simulation.ts";
-import type { CountryState } from "../state.ts";
+import type { CountryState, GameState } from "../state.ts";
 import { regimeChange, startCivilWar } from "../politics/unrest.ts";
 import { clamp, effectiveLeader, isAvailable, normalise, rulingSubIdeology } from "../politics/common.ts";
 import { mergeParty } from "../politics/parties.ts";
+import { installGovernment, installParty, partiesOfGroup, type InstallSpec } from "../politics/regime.ts";
 import { calibrate } from "../politics/voteModel.ts";
 import { initialSchedule } from "../politics/schedule.ts";
 import { applyShock } from "../economy/economy.ts";
@@ -127,6 +128,8 @@ function trigger(ctx: SimContext, scope: Scope, k: string, v: unknown): boolean 
     case "party_exists": return cs.partyStatus[v as string] === "active" || cs.partyStatus[v as string] === "extra_parliamentary";
     case "party_popularity_above": return (cs.partyPopularity[a.party as string] ?? 0) > (a.value as number);
     case "ideology_support_above": return (cs.ideologySupport[a.sub_ideology as string] ?? 0) > (a.value as number);
+    case "ideology_group_support_above": return groupSupport(db, cs, a.group as string) > (a.value as number);
+    case "has_party_of_group": return partiesOfGroup(db, state, scope.tag, v as string).length > 0;
     case "stability_above": return cs.stability > (v as number);
     case "stability_below": return cs.stability < (v as number);
     case "war_support_above": return cs.warSupport > (v as number);
@@ -185,6 +188,13 @@ export function runEffects(ctx: SimContext, scope: Scope, effects: unknown[], so
   }
 }
 
+/** Popular support for all sub-ideologies of a group. */
+export function groupSupport(db: ContentDB, cs: CountryState, group: string): number {
+  let t = 0;
+  for (const [sub, v] of Object.entries(cs.ideologySupport)) if (db.subIdeologies.get(sub)?.group === group) t += v;
+  return t;
+}
+
 /** Popularity change that persists: polls drift toward the model, so the calibration moves too. */
 export function shiftPopularity(cs: CountryState, party: string, value: number): void {
   const before = cs.partyPopularity[party] ?? 0;
@@ -231,9 +241,25 @@ function effect(ctx: SimContext, scope: Scope, k: string, v: unknown, source: st
     case "add_party_popularity": shiftPopularity(cs, a.party as string, a.value as number); break;
     case "add_ruling_party_popularity": if (cs.rulingParties[0]) shiftPopularity(cs, cs.rulingParties[0], v as number); break;
     case "set_party_leader": cs.partyLeader[a.party as string] = a.person as string; break;
-    case "add_ideology_support":
-      cs.ideologySupport[a.sub_ideology as string] = Math.max(0, (cs.ideologySupport[a.sub_ideology as string] ?? 0) + (a.value as number));
+    case "add_ideology_support": {
+      // a group's change is spread over its sub-ideologies by their current support (evenly if none)
+      const subs = a.group ? [...db.subIdeologies.values()].filter((x) => x.group === a.group).map((x) => x.id) : [a.sub_ideology as string];
+      const base = subs.reduce((t, x) => t + (cs.ideologySupport[x] ?? 0), 0);
+      for (const x of subs) {
+        const part = base > 0 ? (cs.ideologySupport[x] ?? 0) / base : 1 / subs.length;
+        cs.ideologySupport[x] = Math.max(0, (cs.ideologySupport[x] ?? 0) + (a.value as number) * part);
+      }
       cs.ideologySupport = normalise(cs.ideologySupport);
+      break;
+    }
+    case "install_government": {
+      const spec: InstallSpec = { party: a.party as string | undefined, group: a.ideology as string | undefined, government_type: a.government_type as string, leader: a.leader as string | undefined };
+      installGovernment(ctx, cs, spec);
+      break;
+    }
+    case "leave_history":
+      cs.followsHistory = false;
+      for (const k of Object.keys(cs.historicalOffices)) cs.historicalOffices[k] = false;
       break;
     case "hold_election": {
       const s = cs.schedule.find((e) => (a.chamber ? e.chamber === a.chamber : e.kind === a.kind));
@@ -390,7 +416,10 @@ function effect(ctx: SimContext, scope: Scope, k: string, v: unknown, source: st
 const signed = (x: number, pct = false) => `${x >= 0 ? "+" : "−"}${pct ? Math.round(Math.abs(x) * 100) + "%" : Math.abs(x)}`;
 const later = (what: string, phase: string) => `${what} (arrives in ${phase})`;
 
-export function describeEffects(db: ContentDB, effects: unknown[], depth = 0): string[] {
+/** The live country a description is for: install_government then names the party and leader it would bring in today. */
+export interface DescribeFor { state: GameState; tag: string }
+
+export function describeEffects(db: ContentDB, effects: unknown[], depth = 0, live?: DescribeFor): string[] {
   const out: string[] = [];
   const pad = "  ".repeat(depth);
   const name = {
@@ -409,8 +438,8 @@ export function describeEffects(db: ContentDB, effects: unknown[], depth = 0): s
       case "if": {
         const b = v as { limit: unknown; then: unknown[]; else?: unknown[] };
         out.push(`${pad}If ${describeTrigger(db, b.limit).join("; ")}:`);
-        out.push(...describeEffects(db, b.then, depth + 1));
-        if (b.else) { out.push(`${pad}Otherwise:`); out.push(...describeEffects(db, b.else, depth + 1)); }
+        out.push(...describeEffects(db, b.then, depth + 1, live));
+        if (b.else) { out.push(`${pad}Otherwise:`); out.push(...describeEffects(db, b.else, depth + 1, live)); }
         continue;
       }
       case "random_list": {
@@ -419,7 +448,7 @@ export function describeEffects(db: ContentDB, effects: unknown[], depth = 0): s
         out.push(`${pad}One of:`);
         for (const x of list) {
           out.push(`${pad}  ${Math.round((x.weight / total) * 100)}% chance:`);
-          out.push(...describeEffects(db, x.effects, depth + 2));
+          out.push(...describeEffects(db, x.effects, depth + 2, live));
         }
         continue;
       }
@@ -440,7 +469,18 @@ export function describeEffects(db: ContentDB, effects: unknown[], depth = 0): s
       case "add_party_popularity": line = `${name.party(a.party as string)} support ${signed(a.value as number, true)}`; break;
       case "add_ruling_party_popularity": line = `Governing party support ${signed(v as number, true)}`; break;
       case "set_party_leader": line = `${name.person(a.person as string)} leads ${name.party(a.party as string)}`; break;
-      case "add_ideology_support": line = `${name.sub(a.sub_ideology as string)} support ${signed(a.value as number, true)}`; break;
+      case "add_ideology_support": line = `${a.group ? `${db.ideologyGroups.get(a.group as string)?.name ?? a.group} (all)` : name.sub(a.sub_ideology as string)} support ${signed(a.value as number, true)}`; break;
+      case "install_government": {
+        const gov = db.governmentTypes.get(a.government_type as string)?.name ?? a.government_type;
+        const party = live ? installParty(db, live.state, live.tag, { party: a.party as string | undefined, group: a.ideology as string | undefined }) : null;
+        if (live && !party) { line = "No party that could take power: nothing changes"; break; }
+        const who = party ? name.party(party) : a.party ? name.party(a.party as string) : `The most popular ${db.ideologyGroups.get(a.ideology as string)?.name ?? a.ideology} party`;
+        const head = a.leader ? (a.leader as string) : party ? live!.state.countries[live!.tag]?.partyLeader[party] : null;
+        const lead = head ? `, led by ${name.person(head)}` : party ? ", led by a party council" : ", led by its leader of the day";
+        line = `${who} takes power${lead}. Government becomes: ${gov}; laws follow its ideology`;
+        break;
+      }
+      case "leave_history": line = "The country leaves the historical path"; break;
       case "hold_election": line = "An early election is held"; break;
       case "change_law": line = `Enact ${name.law(a.law as string)}`; break;
       case "add_interest_group_approval": line = `${name.ig(a.group as string)} approval ${signed(a.value as number)}`; break;
@@ -526,6 +566,8 @@ export function describeTrigger(db: ContentDB, node: unknown): string[] {
     case "government_type": return [`government is ${db.governmentTypes.get(v as string)?.name ?? v}`];
     case "has_law": return [`${db.lawCategories.get(db.lawCategoryOf.get(v as string) ?? "")?.laws.find((l) => l.id === v)?.name ?? v} in force`];
     case "holds_office": return [`${db.people.get(a.person as string)?.name.en ?? a.person} holds ${a.office ? db.offices.get(a.office as string)?.title.en : "office"}`];
+    case "ideology_group_support_above": return [`${db.ideologyGroups.get(a.group as string)?.name ?? a.group} support above ${Math.round((a.value as number) * 100)}%`];
+    case "has_party_of_group": return [`has a ${db.ideologyGroups.get(v as string)?.name ?? v} party`];
     case "stability_above": return [`stability above ${Math.round((v as number) * 100)}%`];
     case "stability_below": return [`stability below ${Math.round((v as number) * 100)}%`];
     case "unrest_above": return [`unrest above ${Math.round((v as number) * 100)}%`];

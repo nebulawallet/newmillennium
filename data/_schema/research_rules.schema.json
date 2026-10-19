@@ -25,11 +25,15 @@
       "type": "number"
     },
     "ahead_penalty_per_year": {
-      "default": 0.25,
+      "default": 0.3,
+      "type": "number"
+    },
+    "ahead_penalty_growth": {
+      "default": 0.08,
       "type": "number"
     },
     "behind_bonus_per_year": {
-      "default": 0.06,
+      "default": 0.08,
       "type": "number"
     },
     "max_behind_bonus": {

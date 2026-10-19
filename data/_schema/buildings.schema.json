@@ -17,21 +17,41 @@
           "description": {
             "type": "string"
           },
+          "icon": {
+            "type": "string"
+          },
           "cost": {
             "type": "number",
             "exclusiveMinimum": 0
           },
-          "level": {
+          "money_bn": {
+            "default": 0,
+            "type": "number",
+            "minimum": 0
+          },
+          "kind": {
             "type": "string",
             "enum": [
-              "province",
-              "national"
+              "slot",
+              "level"
             ]
           },
           "max_per_province": {
             "type": "integer",
             "exclusiveMinimum": 0,
             "maximum": 9007199254740991
+          },
+          "requires_tech": {
+            "type": "string",
+            "pattern": "^[a-z0-9]+(?:_[a-z0-9]+)*$"
+          },
+          "requires_resource": {
+            "type": "string",
+            "pattern": "^[a-z0-9]+(?:_[a-z0-9]+)*$"
+          },
+          "coastal": {
+            "default": false,
+            "type": "boolean"
           },
           "adds": {
             "type": "object",
@@ -47,9 +67,38 @@
               },
               "growth": {
                 "type": "number"
+              },
+              "goods": {
+                "type": "object",
+                "propertyNames": {
+                  "type": "string",
+                  "pattern": "^[a-z0-9]+(?:_[a-z0-9]+)*$"
+                },
+                "additionalProperties": {
+                  "type": "number"
+                }
               }
             },
             "additionalProperties": false
+          },
+          "modifiers": {
+            "default": {},
+            "type": "object",
+            "propertyNames": {
+              "type": "string",
+              "pattern": "^[a-z0-9]+(?:_[a-z0-9]+)*$"
+            },
+            "additionalProperties": {
+              "type": "number"
+            }
+          },
+          "modifier_cap": {
+            "type": "number",
+            "exclusiveMinimum": 0
+          },
+          "start_per_rent_bn": {
+            "type": "number",
+            "minimum": 0
           }
         },
         "required": [
@@ -57,11 +106,66 @@
           "name",
           "description",
           "cost",
-          "level",
+          "kind",
           "adds"
         ],
         "additionalProperties": false
       }
+    },
+    "slots": {
+      "default": {
+        "base": 1,
+        "per_infrastructure": 0.5,
+        "per_sqrt_million": 2,
+        "terrain": {},
+        "max": 25
+      },
+      "type": "object",
+      "properties": {
+        "base": {
+          "default": 1,
+          "type": "number"
+        },
+        "per_infrastructure": {
+          "default": 0.5,
+          "type": "number"
+        },
+        "per_sqrt_million": {
+          "default": 2,
+          "type": "number"
+        },
+        "terrain": {
+          "default": {},
+          "type": "object",
+          "propertyNames": {
+            "type": "string"
+          },
+          "additionalProperties": {
+            "type": "number"
+          }
+        },
+        "max": {
+          "default": 25,
+          "type": "number"
+        }
+      },
+      "additionalProperties": false
+    },
+    "investment_allowance_pct_gdp": {
+      "default": 2,
+      "type": "number"
+    },
+    "price_reference_gdppc": {
+      "default": 10000,
+      "type": "number"
+    },
+    "price_level_min": {
+      "default": 0.2,
+      "type": "number"
+    },
+    "price_level_max": {
+      "default": 1.5,
+      "type": "number"
     },
     "note": {
       "type": "string"

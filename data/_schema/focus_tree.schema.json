@@ -46,6 +46,9 @@
             "minimum": 0,
             "maximum": 9007199254740991
           },
+          "icon": {
+            "type": "string"
+          },
           "days": {
             "default": 70,
             "type": "integer",

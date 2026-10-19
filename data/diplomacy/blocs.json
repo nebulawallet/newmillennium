@@ -24,9 +24,17 @@
             "not": {
               "at_war": true
             }
+          },
+          {
+            "not": {
+              "ruling_ideology_group": "fascist"
+            }
           }
         ]
       },
+      "incompatible_groups": [
+        "fascist"
+      ],
       "members_2000": [
         "BEL",
         "CAN",
@@ -78,9 +86,17 @@
             "not": {
               "in_bloc": "cis"
             }
+          },
+          {
+            "not": {
+              "ruling_ideology_group": "fascist"
+            }
           }
         ]
       },
+      "incompatible_groups": [
+        "fascist"
+      ],
       "members_2000": [
         "AUT",
         "BEL",

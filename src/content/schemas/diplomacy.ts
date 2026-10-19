@@ -26,6 +26,8 @@ export const BlocDef = z.strictObject({
   rival: Id.optional(),
   /** Applicants must meet this (scoped to the applicant). */
   join_trigger: Trigger.optional(),
+  /** Ideology groups whose governments leave the bloc on taking power (install_government). */
+  incompatible_groups: z.array(Id).default([]),
   /** Later names (e.g. the OAU becoming the African Union). */
   renamed: z.array(z.strictObject({ date: IsoDate, name: z.string().min(1), ...sourced })).default([]),
   members_2000: z.array(Tag),

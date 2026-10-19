@@ -88,9 +88,22 @@ export const EFFECTS: Record<string, ScriptDef> = {
     refs: { party: "party", person: "person" },
   },
   add_ideology_support: {
-    args: z.strictObject({ sub_ideology: Id, value: num }),
-    description: "Shift popular support toward (or away from) a sub-ideology.",
-    refs: { sub_ideology: "sub_ideology" },
+    args: z
+      .strictObject({ sub_ideology: Id.optional(), group: Id.optional(), value: num })
+      .refine((a) => !!a.sub_ideology !== !!a.group, "give either sub_ideology or group"),
+    description: "Shift popular support toward (or away from) a sub-ideology, or a whole ideology group (spread over its sub-ideologies).",
+    refs: { sub_ideology: "sub_ideology", group: "ideology_group" },
+  },
+  install_government: {
+    args: z
+      .strictObject({ party: ScopedId.optional(), ideology: Id.optional(), government_type: Id, leader: ScopedId.optional() })
+      .refine((a) => !!a.party !== !!a.ideology, "give either party or ideology"),
+    description: "A real party takes power (the named one, or the most popular of an ideology group): it rules alone, its leader of the day (or a council) takes the executive, the government type changes and the laws follow the new ideology.",
+    refs: { party: "party", ideology: "ideology_group", government_type: "government_type", leader: "person" },
+  },
+  leave_history: {
+    args: z.literal(true),
+    description: "The country leaves the historical path: history no longer sets its offices, parties and elections.",
   },
   hold_election: {
     args: z.strictObject({ kind: z.enum(["presidential", "legislative", "referendum"]), chamber: Id.optional() }),
@@ -289,6 +302,16 @@ export const TRIGGERS: Record<string, ScriptDef> = {
     args: z.strictObject({ sub_ideology: Id, value: Share }),
     description: "Popular support for a sub-ideology above value.",
     refs: { sub_ideology: "sub_ideology" },
+  },
+  ideology_group_support_above: {
+    args: z.strictObject({ group: Id, value: Share }),
+    description: "Popular support for an ideology group (all its sub-ideologies) above value.",
+    refs: { group: "ideology_group" },
+  },
+  has_party_of_group: {
+    args: Id,
+    description: "The country has a live real party of this ideology group (one that install_government could bring to power).",
+    refs: { "": "ideology_group" },
   },
   stability_above: { args: Share, description: "Stability above value." },
   stability_below: { args: Share, description: "Stability below value." },

@@ -130,3 +130,76 @@ describe("events and decisions", () => {
     expect(sim.dispatch({ type: "take_decision", tag: "USA", decision: d.id }).ok).toBe(false);
   });
 });
+
+describe("political paths", () => {
+  const fresh = () => createInitialState(db, { provinces: [] }, { contentHash: "t", player: "DEU" });
+
+  it("has_party_of_group sees only real live parties of the group", () => {
+    const ctx = ctxOf(fresh());
+    expect(evalTrigger(ctx, scope("RUS"), { has_party_of_group: "socialist_communist" })).toBe(true);
+    expect(evalTrigger(ctx, scope("RUS"), { has_party_of_group: "fascist" })).toBe(false);
+  });
+
+  it("install_government brings a real party to power with its leader, government type and laws", () => {
+    const state = fresh();
+    const ctx = ctxOf(state);
+    const rus = state.countries.RUS!;
+    runEffects(ctx, scope("RUS"), [{ install_government: { ideology: "socialist_communist", government_type: "one_party_state" } }], "test");
+    expect(rus.rulingParties).toEqual(["rus.cprf"]);
+    expect(rus.govType).toBe("one_party_state");
+    expect(rus.offices["rus.president"]).toEqual(["rus.gennady_zyuganov"]);
+    expect(rus.followsHistory).toBe(false);
+    expect(Object.values(rus.laws)).not.toContain("free_elections");
+    expect(evalTrigger(ctx, scope("RUS"), { ruling_ideology_group: "socialist_communist" })).toBe(true);
+    // the tooltip names the party and leader it would bring in today
+    const before = fresh();
+    expect(describeEffects(db, [{ install_government: { ideology: "socialist_communist", government_type: "one_party_state" } }], 0, { state: before, tag: "RUS" })[0]).toContain("Communist Party of the Russian Federation takes power, led by Gennady Zyuganov");
+  });
+
+  it("install_government does nothing without a fitting party", () => {
+    const state = fresh();
+    const rus = state.countries.RUS!;
+    const ruling = [...rus.rulingParties];
+    runEffects(ctxOf(state), scope("RUS"), [{ install_government: { ideology: "fascist", government_type: "one_party_state" } }], "test");
+    expect(rus.rulingParties).toEqual(ruling);
+    expect(describeEffects(db, [{ install_government: { ideology: "fascist", government_type: "one_party_state" } }], 0, { state, tag: "RUS" })[0]).toContain("nothing changes");
+  });
+
+  it("a government of an incompatible ideology leaves the bloc", () => {
+    const state = fresh();
+    const nato = db.blocs.get("nato")!;
+    const saved = nato.incompatible_groups;
+    nato.incompatible_groups = ["nationalist_populist"];
+    try {
+      runEffects(ctxOf(state), scope("DEU"), [{ install_government: { party: "deu.npd", government_type: "hybrid_authoritarian" } }], "test");
+    } finally { nato.incompatible_groups = saved; }
+    expect(state.countries.DEU!.rulingParties).toEqual(["deu.npd"]);
+    expect(evalTrigger(ctxOf(state), scope("DEU"), { in_bloc: "nato" })).toBe(false);
+  });
+
+  it("add_ideology_support spreads a group change over its sub-ideologies", () => {
+    const state = fresh();
+    const ctx = ctxOf(state);
+    const share = (s: GameState) => Object.entries(s.countries.RUS!.ideologySupport).filter(([k]) => db.subIdeologies.get(k)?.group === "socialist_communist").reduce((t, [, v]) => t + v, 0);
+    const s0 = share(state);
+    runEffects(ctx, scope("RUS"), [{ add_ideology_support: { group: "socialist_communist", value: 0.1 } }], "test");
+    expect(share(state)).toBeGreaterThan(s0 + 0.05);
+    expect(evalTrigger(ctx, scope("RUS"), { ideology_group_support_above: { group: "socialist_communist", value: s0 + 0.05 } })).toBe(true);
+  });
+
+  it("leave_history takes the country off the historical path", () => {
+    const state = fresh();
+    runEffects(ctxOf(state), scope("RUS"), [{ leave_history: true }], "test");
+    expect(state.countries.RUS!.followsHistory).toBe(false);
+  });
+
+  it("the validator rejects an install with neither party nor ideology", () => {
+    const files = new FixtureFiles({
+      ...validCountry(),
+      "events/test.json": { events: [{ id: "bad", title: "Bad", description: "x", triggered_only: true, options: [{ id: "a", name: "A", effects: [{ install_government: { government_type: "one_party_state" } }, { add_ideology_support: { group: "nope", value: 0.1 } }] }] }] },
+    });
+    const msgs = compileContent(files, {}).issues.filter((i) => i.file === "events/test.json").map((i) => i.message);
+    expect(msgs.some((m) => m.includes("party or ideology"))).toBe(true);
+    expect(msgs.some((m) => m.includes("unknown ideology_group 'nope'"))).toBe(true);
+  });
+});

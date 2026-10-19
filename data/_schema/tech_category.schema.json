@@ -12,6 +12,9 @@
     "description": {
       "type": "string"
     },
+    "icon": {
+      "type": "string"
+    },
     "military": {
       "default": false,
       "type": "boolean"
@@ -55,6 +58,17 @@
                 "pattern": "^[a-z0-9]+(?:_[a-z0-9]+)*$"
               }
             }
+          },
+          "mutually_exclusive": {
+            "default": [],
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "^[a-z0-9]+(?:_[a-z0-9]+)*$"
+            }
+          },
+          "icon": {
+            "type": "string"
           },
           "x": {
             "type": "integer",

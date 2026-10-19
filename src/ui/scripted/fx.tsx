@@ -1,9 +1,9 @@
 /** Effect and condition lists for tooltips (every scripted effect is explained before it is taken). */
 import type { ContentDB } from "../../content/compile.ts";
-import { describeEffects, describeTrigger } from "../../sim/scripting/engine.ts";
+import { describeEffects, describeTrigger, type DescribeFor } from "../../sim/scripting/engine.ts";
 
-export function EffectList({ db, effects, title = "Effects" }: { db: ContentDB; effects: unknown[]; title?: string }) {
-  const lines = describeEffects(db, effects);
+export function EffectList({ db, effects, title = "Effects", live }: { db: ContentDB; effects: unknown[]; title?: string; live?: DescribeFor }) {
+  const lines = describeEffects(db, effects, 0, live);
   if (!lines.length) return null;
   return (
     <div class="fx">

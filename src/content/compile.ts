@@ -446,6 +446,7 @@ export function compileContent(files: FileProvider, opts: CompileOptions = {}): 
     for (const b of db.blocs.values()) {
       for (const t of b.members_2000) if (!tags.has(t)) err("REF", "diplomacy/blocs.json", `${b.id}: unknown member '${t}'`);
       if (b.rival && !db.blocs.has(b.rival)) err("REF", "diplomacy/blocs.json", `${b.id}: unknown rival bloc '${b.rival}'`);
+      for (const g of b.incompatible_groups) if (!db.ideologyGroups.has(g)) err("REF", "diplomacy/blocs.json", `${b.id}: unknown ideology group '${g}'`);
       if (b.join_trigger !== undefined) {
         const out: ScriptIssue[] = [];
         validateTrigger(b.join_trigger, "join_trigger", out, refs);

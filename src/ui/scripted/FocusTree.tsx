@@ -148,7 +148,7 @@ export function FocusTreeView({ db, session }: { db: ContentDB; session: Session
                   body: (
                     <>
                       <span class="dim">{f.description}</span>
-                      <EffectList db={db} effects={f.effects} />
+                      <EffectList db={db} effects={f.effects} live={{ state, tag }} />
                       {f.prerequisites.length > 0 && (
                         <div class="fx"><div class="fx-h">Requires</div>{f.prerequisites.map((g, i) => <div class="fx-l" key={i}>{g.map((p) => byId.get(p)?.name ?? p).join(" or ")}</div>)}</div>
                       )}

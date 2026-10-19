@@ -16,6 +16,9 @@ import type { ContentDB } from "../../content/compile.ts";
 import type { SimContext } from "../simulation.ts";
 import type { GameState, War } from "../state.ts";
 import { clamp } from "../politics/common.ts";
+import { installGovernment, partiesOfGroup } from "../politics/regime.ts";
+
+export { partiesOfGroup };
 import { capitalProvince } from "./military.ts";
 import { hostile, makePeace, occupiedShare, warStatus } from "./war.ts";
 
@@ -75,16 +78,6 @@ export const provincesOf = (state: GameState, tag: string): number[] => {
   return out;
 };
 
-/** The defeated side's parties of an ideology group, most popular first (for "change ideology"). */
-export function partiesOfGroup(db: ContentDB, state: GameState, tag: string, group: string): string[] {
-  const cs = state.countries[tag];
-  const parties = db.countries.get(tag)?.parties ?? [];
-  return parties
-    .filter((p) => db.subIdeologies.get(p.sub_ideology)?.group === group && (!p.dissolved || String(p.dissolved) > "2000"))
-    .sort((a, b) => (cs?.partyPopularity[b.id] ?? 0) - (cs?.partyPopularity[a.id] ?? 0))
-    .map((p) => p.id);
-}
-
 /** Why a term cannot be taken (or null). */
 export function termBlock(ctx: SimContext, t: PeaceTerm): string | null {
   const { state, db } = ctx;
@@ -120,31 +113,14 @@ function annex(ctx: SimContext, target: string, to: string): void {
 
 /** A forced change of government: the most popular party of the chosen ideology, led by its leader of the day. */
 function changeIdeology(ctx: SimContext, target: string, group: string): string | null {
-  const { db, state } = ctx;
-  const cs = state.countries[target];
-  const party = partiesOfGroup(db, state, target, group)[0];
-  if (!cs || !party) return null;
-  const p = db.parties.get(party)!;
-  const c = db.countries.get(target)?.country;
-  const day = state.day;
-  const year = (v: string | number) => String(v).slice(0, 10);
-  const today = new Date(Date.UTC(2000, 0, 1) + day * 86400000).toISOString().slice(0, 10);
-  const lead = p.leader_history.find((l) => year(l.from) <= today && (l.to === undefined || year(l.to) > today))?.person ?? null;
+  const cs = ctx.state.countries[target];
+  if (!cs) return null;
   // non-democratic groups get a fitting government type; democratic ones a transition to elections
-  const gov: Record<string, string> = { socialist_communist: "one_party_state", autocratic: "hybrid_authoritarian", religious: "theocracy", nationalist_populist: "hybrid_authoritarian" };
-  const holds = db.governmentTypes.get(cs.govType)?.holds_elections;
-  cs.govType = gov[group] ?? (holds ? cs.govType : "transitional_administration");
-  cs.rulingParties = [party];
-  cs.confidenceAndSupply = [];
-  cs.govSinceDay = day;
-  if (c && lead) {
-    const exec = c.government.effective_executive;
-    if (!db.offices.get(exec)?.ex_officio_of) { cs.offices[exec] = [lead]; cs.officeSince[exec] = day; }
-  }
-  for (const k of Object.keys(cs.historicalOffices)) cs.historicalOffices[k] = false;
-  cs.followsHistory = false;
-  cs.stability = clamp(cs.stability - 0.15, 0, 1);
-  return p.name.en;
+  const gov: Record<string, string> = { socialist_communist: "one_party_state", autocratic: "hybrid_authoritarian", religious: "theocracy", nationalist_populist: "hybrid_authoritarian", fascist: "one_party_state" };
+  const holds = ctx.db.governmentTypes.get(cs.govType)?.holds_elections;
+  const party = installGovernment(ctx, cs, { group, government_type: gov[group] ?? (holds ? cs.govType : "transitional_administration") });
+  if (party) cs.stability = clamp(cs.stability - 0.05, 0, 1);
+  return party ? ctx.db.parties.get(party)!.name.en : null;
 }
 
 /** Describe a term for the news and the notice. */

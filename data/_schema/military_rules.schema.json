@@ -46,6 +46,18 @@
       "default": 12000,
       "type": "number"
     },
+    "min_personnel_for_division": {
+      "default": 1000,
+      "type": "number"
+    },
+    "fallback_personnel_per_capita": {
+      "default": 0.003,
+      "type": "number"
+    },
+    "group_manpower_per_capita": {
+      "default": 0.01,
+      "type": "number"
+    },
     "reserve_stockpile": {
       "default": 0.15,
       "type": "number"
