@@ -203,3 +203,21 @@ describe("political paths", () => {
     expect(msgs.some((m) => m.includes("unknown ideology_group 'nope'"))).toBe(true);
   });
 });
+
+describe("Russian political branch", () => {
+  it("history takes the power vertical; the player can take a real party's path; no fascist path without a fascist party", () => {
+    const state = createInitialState(db, { provinces: [] }, { contentHash: "t", player: "RUS" });
+    const ctx = ctxOf(state);
+    const rus = state.countries.RUS!;
+    const st = (id: string) => focusStatus(ctx, rus, focusOf(db, rus, id)!);
+    rus.focus.completed.push("rus_federal_centre");
+    expect(st("rus_power_vertical")).toBe("available");
+    rus.stability = 0.3;
+    rus.warSupport = 0.6;
+    expect(st("rus_ultranationalist_turn")).toBe("unavailable");
+    expect(st("rus_national_revival")).toBe("available");
+    // an AI Russia on the historical path never leaves it
+    state.player = "DEU";
+    expect(st("rus_national_revival")).toBe("unavailable");
+  });
+});
