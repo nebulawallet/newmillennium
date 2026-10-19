@@ -1287,6 +1287,12 @@
           }
         },
         {
+          "change_law": {
+            "category": "political_freedom",
+            "law": "single_party_elections"
+          }
+        },
+        {
           "add_stability": -0.05
         }
       ]
@@ -1300,8 +1306,7 @@
       "days": 70,
       "prerequisites": [
         [
-          "rus_red_government",
-          "rus_federal_centre"
+          "rus_red_government"
         ]
       ],
       "available": {
@@ -1345,8 +1350,7 @@
       "days": 70,
       "prerequisites": [
         [
-          "rus_red_government",
-          "rus_federal_centre"
+          "rus_red_government"
         ]
       ],
       "available": {

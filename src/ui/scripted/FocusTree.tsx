@@ -152,7 +152,7 @@ export function FocusTreeView({ db, session }: { db: ContentDB; session: Session
                       {f.prerequisites.length > 0 && (
                         <div class="fx"><div class="fx-h">Requires</div>{f.prerequisites.map((g, i) => <div class="fx-l" key={i}>{g.map((p) => byId.get(p)?.name ?? p).join(" or ")}</div>)}</div>
                       )}
-                      <ConditionList db={db} trigger={f.available} />
+                      <ConditionList db={db} trigger={f.available} title="Conditions" />
                       {f.mutually_exclusive.length > 0 && (
                         <div class="fx"><div class="fx-h">Excludes</div>{f.mutually_exclusive.map((m) => <div class="fx-l" key={m}>{byId.get(m)?.name ?? m}</div>)}</div>
                       )}
