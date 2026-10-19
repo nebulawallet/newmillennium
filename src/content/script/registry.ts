@@ -42,7 +42,10 @@ export type RefKind =
   | "modifier"
   | "tech"
   | "bloc"
-  | "armed_group";
+  | "armed_group"
+  | "spirit"
+  | "tech_category"
+  | "building";
 
 interface ScriptDef {
   args: z.ZodType;
@@ -100,6 +103,33 @@ export const EFFECTS: Record<string, ScriptDef> = {
       .refine((a) => !!a.party !== !!a.ideology, "give either party or ideology"),
     description: "A real party takes power (the named one, or the most popular of an ideology group): it rules alone, its leader of the day (or a council) takes the executive, the government type changes (or stays, if it holds elections and none is given) and the laws follow the new ideology.",
     refs: { party: "party", ideology: "ideology_group", government_type: "government_type", leader: "person" },
+  },
+  add_spirit: { args: Id, description: "The country gains a national spirit.", refs: { "": "spirit" } },
+  remove_spirit: { args: Id, description: "The country loses a national spirit.", refs: { "": "spirit" } },
+  swap_spirit: {
+    args: z.strictObject({ from: Id, to: Id }),
+    description: "Replace one national spirit with another (the new one is added even if the old one is gone).",
+    refs: { from: "spirit", to: "spirit" },
+  },
+  add_claim: {
+    args: z.strictObject({ regions: z.array(GroupRegion).min(1) }),
+    description: "Claim provinces of another country: they cost half the war score at the peace conference.",
+    refs: { "regions.from": "tag" },
+  },
+  add_buildings: {
+    args: z.strictObject({
+      building: Id,
+      count: z.number().int().positive().max(50),
+      /** Where: these regions of this country; otherwise the most populous provinces with room. */
+      regions: z.array(GroupRegion).optional(),
+    }),
+    description: "Build at once (no cost, no technology needed) in the country's provinces that have room.",
+    refs: { building: "building", "regions.from": "tag" },
+  },
+  add_research_bonus: {
+    args: z.strictObject({ category: Id, value: z.number().positive().max(2), uses: z.number().int().positive().max(10) }),
+    description: "Research in a technology category goes faster by `value` for the next `uses` technologies.",
+    refs: { category: "tech_category" },
   },
   leave_history: {
     args: z.literal(true),
@@ -313,6 +343,9 @@ export const TRIGGERS: Record<string, ScriptDef> = {
     description: "The country has a live real party of this ideology group (one that install_government could bring to power).",
     refs: { "": "ideology_group" },
   },
+  has_spirit: { args: Id, description: "The country has this national spirit.", refs: { "": "spirit" } },
+  has_claim_on: { args: Tag, description: "The country claims provinces this country owns.", refs: { "": "tag" } },
+  treasury_above: { args: z.number(), description: "Reserves above this many billion USD." },
   stability_above: { args: Share, description: "Stability above value." },
   stability_below: { args: Share, description: "Stability below value." },
   war_support_above: { args: Share, description: "War support above value." },

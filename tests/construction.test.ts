@@ -1,6 +1,7 @@
 import { describe, expect, it } from "vitest";
 import { compileContent } from "../src/content/compile.ts";
 import { canBuild, moneyCost, organicTotals, placement, provinceSlots, queueEstimates, slotUse } from "../src/sim/economy/construction.ts";
+import { evalTrigger, runEffects } from "../src/sim/scripting/engine.ts";
 import { constructionPerDay, factories } from "../src/sim/economy/economy.ts";
 import { Simulation, simMapFrom } from "../src/sim/simulation.ts";
 import { createInitialState } from "../src/sim/state.ts";
@@ -160,5 +161,28 @@ describe("goods market and trade routes", () => {
     const after = sim.state.countries.DEU!.economy!.trade!;
     expect(after.routes.some((r) => r.partner === "POL")).toBe(false);
     expect(after.access).toBeLessThan(before.access);
+  });
+});
+
+describe("focus effects: buildings and claims", () => {
+  it("add_buildings builds at once in the provinces with room, with no cost and no technology", () => {
+    const sim = fresh();
+    const deu = sim.state.countries.DEU!;
+    const civ = deu.economy!.builtCiv;
+    runEffects(sim.context, { tag: "DEU", root: "DEU", from: null }, [{ add_buildings: { building: "civilian_factory", count: 2 } }], "test");
+    expect(deu.economy!.builtCiv).toBe(civ + 2 * (db.buildings.get("civilian_factory")!.adds.civilian_factories ?? 0));
+    expect(Object.values(sim.state.provinceBuildings).reduce((s, b) => s + (b.civilian_factory ?? 0), 0)).toBe(2);
+    expect(deu.economy!.construction).toHaveLength(0);
+    // a named region
+    runEffects(sim.context, { tag: "DEU", root: "DEU", from: null }, [{ add_buildings: { building: "infrastructure", count: 1, regions: [{ from: "DEU", adm1: ["DE-5"] }] } }], "test");
+    expect(sim.state.provinceBuildings["6"]?.infrastructure).toBe(1);
+  });
+
+  it("add_claim claims another country's provinces", () => {
+    const sim = fresh();
+    const ctx = sim.context;
+    runEffects(ctx, { tag: "DEU", root: "DEU", from: null }, [{ add_claim: { regions: [{ from: "POL", adm1: ["PL-0", "PL-1"] }] } }], "test");
+    expect([...sim.state.countries.DEU!.claims].sort((a, b) => a - b)).toEqual([9, 10]);
+    expect(evalTrigger(ctx, { tag: "DEU", root: "DEU", from: null }, { has_claim_on: "POL" })).toBe(true);
   });
 });

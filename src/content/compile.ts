@@ -25,10 +25,12 @@ import {
   InterestGroupsFile,
   LawCategory,
   ModifiersFile,
+  SpiritsFile,
   SubIdeologiesFile,
   TraitsFile,
   type Bookmark,
   type CountryListEntry,
+  type SpiritDef,
 } from "./schemas/definitions.ts";
 import {
   Country,
@@ -137,6 +139,8 @@ export interface ContentDB {
   /** Every technology, with its category. */
   techs: Map<string, TechDef & { category: string }>;
   buildings: Map<string, BuildingDef>;
+  /** National spirits (data/spirits/*.json). */
+  spirits: Map<string, SpiritDef & { file: string }>;
   /** Building slots, the investment allowance and price levels (data/economy/buildings.json, everything but the list). */
   buildingRules: Omit<z.infer<typeof BuildingsFile>, "buildings">;
   /** Goods on the world market and the market and trade-route rules (data/economy/goods.json). */
@@ -263,6 +267,7 @@ export function compileContent(files: FileProvider, opts: CompileOptions = {}): 
     diplomacyRules: load("diplomacy/rules.json", DiplomacyRulesFile, false) ?? DiplomacyRulesFile.parse({}),
     techCategories: new Map(),
     techs: new Map(),
+    spirits: new Map(),
     buildings: indexBy(buildingsF?.buildings ?? [], "economy/buildings.json", "building"),
     buildingRules: (({ buildings: _b, ...rest }) => rest)(buildingsF ?? BuildingsFile.parse({ buildings: [] })),
     goods: indexBy(goodsF?.goods ?? [], "economy/goods.json", "good"),
@@ -376,6 +381,22 @@ export function compileContent(files: FileProvider, opts: CompileOptions = {}): 
   }
   for (const g of [db.politicsRules.default_profile.government_type, db.politicsRules.default_profile.insurgent_government_type])
     if (!db.governmentTypes.has(g)) err("REF", "rules/politics.json", `default_profile: unknown government type '${g}'`);
+
+  // ---- national spirits
+  for (const f of files.listFiles("spirits").filter((p) => p.endsWith(".json")).sort()) {
+    for (const s of load(f, SpiritsFile)?.spirits ?? []) {
+      if (db.spirits.has(s.id)) err("DUP_ID", f, `duplicate spirit id '${s.id}'`);
+      db.spirits.set(s.id, { ...s, file: f });
+    }
+  }
+  {
+    const tags = new Set(db.countryList.map((c) => c.tag));
+    for (const s of db.spirits.values()) {
+      for (const m of Object.keys(s.modifiers)) if (!db.modifiers.has(m)) err("REF", s.file, `${s.id}: unknown modifier '${m}'`);
+      for (const t of s.start) if (!tags.has(t)) err("REF", s.file, `${s.id}: unknown country '${t}'`);
+      if (s.start.length && (!s.source?.length || !s.confidence)) err("SOURCE", s.file, `${s.id}: a spirit countries start with describes a real situation and needs source and confidence`);
+    }
+  }
 
   // ---- technologies
   for (const f of files.listFiles("techs").filter((p) => p.endsWith(".json") && !p.endsWith("/rules.json")).sort()) {
@@ -528,6 +549,9 @@ export function refChecker(db: ContentDB) {
       case "modifier": return db.modifiers.has(v);
       case "tech": return db.techs.has(v);
       case "bloc": return db.blocs.has(v);
+      case "spirit": return db.spirits.has(v);
+      case "tech_category": return db.techCategories.has(v);
+      case "building": return db.buildings.has(v);
     }
   };
 }

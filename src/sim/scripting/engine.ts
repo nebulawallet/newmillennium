@@ -19,6 +19,7 @@ import { calibrate } from "../politics/voteModel.ts";
 import { initialSchedule } from "../politics/schedule.ts";
 import { applyShock } from "../economy/economy.ts";
 import { grantTech } from "../research/research.ts";
+import { grantBuildings } from "../economy/construction.ts";
 import { armedGroupLoses, endArmedGroup, occupyProvinces, select, spawnArmedGroup, type GroupRegion } from "../conflicts/armedGroups.ts";
 
 export interface Scope {
@@ -128,6 +129,9 @@ function trigger(ctx: SimContext, scope: Scope, k: string, v: unknown): boolean 
     case "party_exists": return cs.partyStatus[v as string] === "active" || cs.partyStatus[v as string] === "extra_parliamentary";
     case "party_popularity_above": return (cs.partyPopularity[a.party as string] ?? 0) > (a.value as number);
     case "ideology_support_above": return (cs.ideologySupport[a.sub_ideology as string] ?? 0) > (a.value as number);
+    case "has_spirit": return cs.spirits.includes(v as string);
+    case "has_claim_on": return cs.claims.some((p) => state.provinceOwner[p - 1] === v);
+    case "treasury_above": return !!cs.economy && cs.economy.treasury > (v as number);
     case "ideology_group_support_above": return groupSupport(db, cs, a.group as string) > (a.value as number);
     case "has_party_of_group": return partiesOfGroup(db, state, scope.tag, v as string).length > 0;
     case "stability_above": return cs.stability > (v as number);
@@ -257,6 +261,23 @@ function effect(ctx: SimContext, scope: Scope, k: string, v: unknown, source: st
       installGovernment(ctx, cs, spec);
       break;
     }
+    case "add_spirit": if (!cs.spirits.includes(v as string)) cs.spirits = [...cs.spirits, v as string]; break;
+    case "remove_spirit": cs.spirits = cs.spirits.filter((s) => s !== v); break;
+    case "swap_spirit": cs.spirits = [...cs.spirits.filter((s) => s !== a.from && s !== a.to), a.to as string]; break;
+    case "add_claim": {
+      const have = new Set(cs.claims);
+      for (const r of a.regions as GroupRegion[]) for (const p of select(ctx, r, (id) => state.provinceOwner[id - 1] === r.from)) have.add(p);
+      cs.claims = [...have];
+      break;
+    }
+    case "add_buildings": {
+      const where = a.regions ? (a.regions as GroupRegion[]).flatMap((r) => select(ctx, r, (id) => state.provinceOwner[id - 1] === scope.tag)) : undefined;
+      grantBuildings(ctx, cs, a.building as string, a.count as number, where);
+      break;
+    }
+    case "add_research_bonus":
+      if (cs.research) (cs.research.bonuses ??= []).push({ category: a.category as string, value: a.value as number, uses: a.uses as number });
+      break;
     case "leave_history":
       cs.followsHistory = false;
       for (const k of Object.keys(cs.historicalOffices)) cs.historicalOffices[k] = false;
@@ -428,6 +449,7 @@ export function describeEffects(db: ContentDB, effects: unknown[], depth = 0, li
     ig: (id: string) => db.interestGroupTypes.get(id)?.name ?? id,
     sub: (id: string) => db.subIdeologies.get(id)?.name ?? id,
     law: (id: string) => db.lawCategories.get(db.lawCategoryOf.get(id) ?? "")?.laws.find((l) => l.id === id)?.name ?? id,
+    spirit: (id: string) => db.spirits.get(id)?.name ?? id,
     tag: (t: string) => db.countries.get(t)?.country?.name.en ?? db.countryList.find((c) => c.tag === t)?.name ?? db.armedGroups.get(t)?.name ?? t,
   };
   for (const node of effects) {
@@ -481,6 +503,12 @@ export function describeEffects(db: ContentDB, effects: unknown[], depth = 0, li
         break;
       }
       case "leave_history": line = "The country leaves the historical path"; break;
+      case "add_spirit": out.push(`${pad}Gains the national spirit ${name.spirit(v as string)}${spiritSummary(db, v as string)}`); continue;
+      case "remove_spirit": line = `Removes the national spirit ${name.spirit(v as string)}`; break;
+      case "swap_spirit": out.push(`${pad}${name.spirit(a.from as string)} becomes ${name.spirit(a.to as string)}${spiritSummary(db, a.to as string)}`); continue;
+      case "add_claim": line = `Claims provinces of ${[...new Set((a.regions as GroupRegion[]).map((r) => name.tag(r.from)))].join(", ")} (half the war score at the peace conference)`; break;
+      case "add_buildings": line = `Builds ${a.count}× ${db.buildings.get(a.building as string)?.name ?? String(a.building)} at once${a.regions ? ` in ${[...new Set((a.regions as GroupRegion[]).flatMap((r) => [...(r.adm1 ?? []), ...(r.provinces ?? [])]))].join(", ") || "the named regions"}` : ""}`; break;
+      case "add_research_bonus": line = `${db.techCategories.get(a.category as string)?.name ?? a.category} research ${signed(a.value as number, true)} for the next ${a.uses} technolog${(a.uses as number) > 1 ? "ies" : "y"}`; break;
       case "hold_election": line = "An early election is held"; break;
       case "change_law": line = `Enact ${name.law(a.law as string)}`; break;
       case "add_interest_group_approval": line = `${name.ig(a.group as string)} approval ${signed(a.value as number)}`; break;
@@ -547,6 +575,34 @@ export function describeEffects(db: ContentDB, effects: unknown[], depth = 0, li
   return out;
 }
 
+/** Modifier values in words ("Stability +5%"), for spirits and tooltips. */
+export function describeModifiers(db: ContentDB, mods: Record<string, number>): string[] {
+  return Object.entries(mods).map(([k, v]) => {
+    const m = db.modifiers.get(k);
+    return `${m?.name ?? k} ${m?.display === "percent" ? signed(v, true) : signed(Math.round(v * 100) / 100)}`;
+  });
+}
+
+const spiritSummary = (db: ContentDB, id: string) => {
+  const mods = describeModifiers(db, db.spirits.get(id)?.modifiers ?? {});
+  return mods.length ? ` (${mods.join(", ")})` : "";
+};
+
+/** Decisions whose `visible` or `available` names this focus (shown as "Unlocks" on the focus). */
+const unlockCache = new WeakMap<ContentDB, Map<string, string[]>>();
+export function decisionsUnlockedBy(db: ContentDB, focusId: string): string[] {
+  let m = unlockCache.get(db);
+  if (!m) {
+    m = new Map();
+    for (const d of db.decisions.values()) {
+      const text = JSON.stringify([d.visible ?? null, d.available ?? null]);
+      for (const hit of text.matchAll(/"has_completed_focus":"([^"]+)"/g)) (m.get(hit[1]!) ?? m.set(hit[1]!, []).get(hit[1]!)!).push(d.name);
+    }
+    unlockCache.set(db, m);
+  }
+  return m.get(focusId) ?? [];
+}
+
 export function describeTrigger(db: ContentDB, node: unknown): string[] {
   if (node === undefined) return [];
   const [k, v] = entry(node);
@@ -566,6 +622,9 @@ export function describeTrigger(db: ContentDB, node: unknown): string[] {
     case "government_type": return [`government is ${db.governmentTypes.get(v as string)?.name ?? v}`];
     case "has_law": return [`${db.lawCategories.get(db.lawCategoryOf.get(v as string) ?? "")?.laws.find((l) => l.id === v)?.name ?? v} in force`];
     case "holds_office": return [`${db.people.get(a.person as string)?.name.en ?? a.person} holds ${a.office ? db.offices.get(a.office as string)?.title.en : "office"}`];
+    case "has_spirit": return [`national spirit: ${db.spirits.get(v as string)?.name ?? v}`];
+    case "has_claim_on": return [`claims provinces of ${db.countries.get(v as string)?.country?.name.en ?? v}`];
+    case "treasury_above": return [`reserves above ${v} billion USD`];
     case "ideology_group_support_above": return [`${db.ideologyGroups.get(a.group as string)?.name ?? a.group} support above ${Math.round((a.value as number) * 100)}%`];
     case "has_party_of_group": return [`has a ${db.ideologyGroups.get(v as string)?.name ?? v} party`];
     case "stability_above": return [`stability above ${Math.round((v as number) * 100)}%`];

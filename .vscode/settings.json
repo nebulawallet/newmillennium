@@ -8,6 +8,12 @@
     },
     {
       "fileMatch": [
+        "/data/spirits/*.json"
+      ],
+      "url": "./data/_schema/spirits.schema.json"
+    },
+    {
+      "fileMatch": [
         "/data/ideologies/groups.json"
       ],
       "url": "./data/_schema/ideology_groups.schema.json"

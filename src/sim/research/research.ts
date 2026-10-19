@@ -21,6 +21,8 @@ export interface ResearchState {
   completed: string[];
   /** Research speed, refreshed monthly (modifiers change with laws, technologies and events). */
   speed?: number;
+  /** Faster research in a category for the next `uses` technologies (focuses, events). */
+  bonuses?: { category: string; value: number; uses: number }[];
 }
 
 /** Lag in years behind the frontier at the start, for civilian and military categories. */
@@ -158,9 +160,11 @@ export const researchSystem: System = {
         }
         const t = db.techs.get(id);
         if (!t) return void (r.slots[i] = null);
-        r.progress[id] = (r.progress[id] ?? 0) + speed;
+        const bonus = r.bonuses?.find((b) => b.category === t.category);
+        r.progress[id] = (r.progress[id] ?? 0) + speed * (1 + (bonus?.value ?? 0));
         if (r.progress[id]! >= techCost(db, t, state.day).cost) {
           grantTech(db, cs, id);
+          if (bonus && --bonus.uses <= 0) r.bonuses = r.bonuses!.filter((b) => b !== bonus);
           if (cs.tag === state.player) ctx.log(cs.tag, "research", `Researched ${t.name}`);
         }
       });

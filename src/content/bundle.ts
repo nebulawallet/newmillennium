@@ -51,6 +51,7 @@ export interface ContentBundle {
   techCategories: unknown[];
   techs: unknown[];
   buildings: unknown[];
+  spirits?: unknown[];
   buildingRules?: ContentDB["buildingRules"];
   goods?: unknown[];
   goodsRules?: ContentDB["goodsRules"];
@@ -104,6 +105,7 @@ export function toBundle({ db, issues }: CompileResult): ContentBundle {
     techCategories: [...db.techCategories.values()],
     techs: [...db.techs.values()],
     buildings: [...db.buildings.values()],
+    spirits: [...db.spirits.values()],
     buildingRules: db.buildingRules,
     goods: [...db.goods.values()],
     goodsRules: db.goodsRules,
@@ -151,6 +153,7 @@ export function fromBundle(b: ContentBundle): ContentDB {
     techCategories: byId(b.techCategories ?? []),
     techs: byId(b.techs ?? []),
     buildings: byId(b.buildings ?? []),
+    spirits: byId(b.spirits ?? []),
     buildingRules: b.buildingRules ?? (({ buildings: _b, ...rest }) => rest)(BuildingsFile.parse({ buildings: [] })),
     goods: byId(b.goods ?? []),
     goodsRules: b.goodsRules ?? (({ goods: _g, ...rest }) => rest)(GoodsFile.parse({ goods: [] })),

@@ -47,6 +47,12 @@ describe("capitulation and the peace conference", () => {
     const annex = termCost(sim.context, war, "attackers", { kind: "annex", target: "POL" });
     const puppet = termCost(sim.context, war, "attackers", { kind: "puppet", target: "POL" });
     expect(puppet).toBeLessThan(annex);
+    // claimed provinces cost half
+    const take = { kind: "provinces" as const, target: "POL", provinces: [5, 6] };
+    const full = termCost(sim.context, war, "attackers", take);
+    s.countries.DEU!.claims = [5, 6];
+    expect(termCost(sim.context, war, "attackers", take)).toBe(Math.round(full / 2));
+    s.countries.DEU!.claims = [];
     // too much is refused
     const big = sim.dispatch({ type: "sign_peace", terms: [{ kind: "annex", target: "POL" }, { kind: "ideology", target: "POL", group: "liberal_democratic" }, { kind: "puppet", target: "POL" }] });
     if (annex + puppet + 25 > budget) expect(big.ok).toBe(false);

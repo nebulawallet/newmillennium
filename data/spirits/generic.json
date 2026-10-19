@@ -1,0 +1,40 @@
+{
+  "note": "National spirits any focus tree, event or decision can use. No country starts with these; spirits for real starting situations live in per-country files with sources. Values are gameplay estimates.",
+  "spirits": [
+    {
+      "id": "endemic_corruption",
+      "name": "Endemic corruption",
+      "description": "Bribes and kickbacks are part of everyday dealings with the state.",
+      "kind": "problem",
+      "modifiers": { "corruption": 0.05, "tax_efficiency": -0.05, "foreign_investment": -0.05 }
+    },
+    {
+      "id": "anti_corruption_campaign",
+      "name": "Anti-corruption campaign",
+      "description": "Audits, prosecutions and new oversight bodies take on corruption, at the price of friction inside the state.",
+      "kind": "policy",
+      "modifiers": { "corruption": -0.04, "political_power_gain": -0.05 }
+    },
+    {
+      "id": "brain_drain",
+      "name": "Brain drain",
+      "description": "Engineers, doctors and scientists leave for better pay abroad.",
+      "kind": "problem",
+      "modifiers": { "research_speed": -0.05, "emigration": 0.05 }
+    },
+    {
+      "id": "war_economy",
+      "name": "War economy",
+      "description": "Industry and the budget are put on a war footing.",
+      "kind": "policy",
+      "modifiers": { "production_efficiency": 0.05, "stability_factor": -0.03 }
+    },
+    {
+      "id": "reconstruction_effort",
+      "name": "Reconstruction effort",
+      "description": "A national programme rebuilds housing, power and transport.",
+      "kind": "policy",
+      "modifiers": { "construction_speed": 0.1 }
+    }
+  ]
+}

@@ -82,7 +82,7 @@ export function countryModifiers(db: ContentDB, cs: CountryState): Readonly<Reco
   const leader = effectiveLeader(db, cs);
   let bSig = 0;
   for (const v of Object.values(cs.economy?.buildingMods ?? {})) bSig += v;
-  const key = `${cs.govType}|${cs.rulingParties[0]}|${leader}|${lawSig}|${tmSig}|${cs.research?.completed.length ?? 0}|${bSig}`;
+  const key = `${cs.govType}|${cs.rulingParties[0]}|${leader}|${lawSig}|${tmSig}|${cs.research?.completed.length ?? 0}|${bSig}|${cs.spirits?.join(",") ?? ""}`;
   const hit = modCache.get(cs);
   if (hit && hit.db === db && hit.key === key) return hit.mods;
   const sub = rulingSubIdeology(db, cs);
@@ -102,6 +102,7 @@ function computeModifiers(db: ContentDB, cs: CountryState, sub: string | null, l
   if (sub) add(db.subIdeologies.get(sub)?.modifiers);
   for (const t of (leader ? db.people.get(leader)?.traits : undefined) ?? []) add(db.traits.get(t)?.modifiers);
   for (const tm of cs.timedModifiers ?? []) out[tm.modifier] = (out[tm.modifier] ?? 0) + tm.value;
+  for (const s of cs.spirits ?? []) add(db.spirits.get(s)?.modifiers);
   add(techModifiers(db, cs));
   // buildings: air bases, ports, power plants, data centres (refreshed monthly by the economy)
   add(cs.economy?.buildingMods);

@@ -1,4 +1,5 @@
 import { focusTreeFor } from "../src/sim/state.ts";
+import { countryModifiers } from "../src/sim/politics/common.ts";
 import { describe, expect, it } from "vitest";
 import { compileContent } from "../src/content/compile.ts";
 import { dayOf } from "../src/sim/date.ts";
@@ -10,7 +11,7 @@ import { Rng, seedRng } from "../src/sim/rng.ts";
 import { NodeFiles } from "../scripts/lib/nodeFiles.ts";
 import { FixtureFiles, validCountry } from "./fixtures.ts";
 
-const { db, issues } = compileContent(new NodeFiles(), { only: new Set(["USA", "RUS", "DEU"]) });
+const { db, issues } = compileContent(new NodeFiles(), { only: new Set(["USA", "RUS", "DEU", "UKR"]) });
 const ctxOf = (state: GameState): SimContext => ({ db, state, rng: new Rng(seedRng(1)), log() {}, emit() {} });
 const scope = (tag: string) => ({ tag, root: tag, from: null });
 
@@ -257,5 +258,50 @@ describe("generic political branch", () => {
     runEffects(ctx, scope("DEU"), [{ install_government: { ideology: "liberal_democratic" } }], "test");
     expect(deu.rulingParties).toEqual(["deu.fdp"]);
     expect(deu.govType).toBe(gov);
+  });
+});
+
+describe("gameplay effects", () => {
+  const fresh = () => createInitialState(db, { provinces: [] }, { contentHash: "t", player: "DEU" });
+
+  it("national spirits add their modifiers and can be swapped and removed", () => {
+    const state = fresh();
+    const ctx = ctxOf(state);
+    const deu = state.countries.DEU!;
+    const before = countryModifiers(db, deu).corruption ?? 0;
+    runEffects(ctx, scope("DEU"), [{ add_spirit: "endemic_corruption" }], "test");
+    expect(evalTrigger(ctx, scope("DEU"), { has_spirit: "endemic_corruption" })).toBe(true);
+    expect(countryModifiers(db, deu).corruption).toBeCloseTo(before + 0.05);
+    runEffects(ctx, scope("DEU"), [{ swap_spirit: { from: "endemic_corruption", to: "anti_corruption_campaign" } }], "test");
+    expect(deu.spirits).toEqual(["anti_corruption_campaign"]);
+    runEffects(ctx, scope("DEU"), [{ remove_spirit: "anti_corruption_campaign" }], "test");
+    expect(deu.spirits).toEqual([]);
+    expect(describeEffects(db, [{ add_spirit: "war_economy" }])[0]).toContain("War economy (");
+  });
+
+  it("research bonuses speed up a category and run out", () => {
+    const state = fresh();
+    const deu = state.countries.DEU!;
+    const cat = [...db.techCategories.keys()][0]!;
+    runEffects(ctxOf(state), scope("DEU"), [{ add_research_bonus: { category: cat, value: 0.5, uses: 1 } }], "test");
+    expect(deu.research!.bonuses).toEqual([{ category: cat, value: 0.5, uses: 1 }]);
+  });
+
+  it("treasury_above reads the reserves", () => {
+    const state = fresh();
+    const deu = state.countries.DEU!;
+    deu.economy!.treasury = 10;
+    expect(evalTrigger(ctxOf(state), scope("DEU"), { treasury_above: 5 })).toBe(true);
+    expect(evalTrigger(ctxOf(state), scope("DEU"), { treasury_above: 15 })).toBe(false);
+  });
+
+  it("the validator wants sources for a spirit countries start with", () => {
+    const files = new FixtureFiles({
+      ...validCountry(),
+      "spirits/test.json": { spirits: [{ id: "x", name: "X", description: "x", start: ["DEU"], modifiers: { nope: 1 } }] },
+    });
+    const msgs = compileContent(files, {}).issues.filter((i) => i.file === "spirits/test.json").map((i) => i.message);
+    expect(msgs.some((m) => m.includes("needs source and confidence"))).toBe(true);
+    expect(msgs.some((m) => m.includes("unknown modifier 'nope'"))).toBe(true);
   });
 });

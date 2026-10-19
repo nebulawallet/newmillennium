@@ -3,7 +3,7 @@
  * interest group types, laws, traits and the master country list.
  */
 import { z } from "zod";
-import { Color, Id, IsoDate, Modifiers, sourced, Tag } from "./common.ts";
+import { Color, Confidence, Id, IsoDate, Modifiers, SourceRef, sourced, Tag } from "./common.ts";
 
 // ---------------------------------------------------------------- modifiers
 
@@ -17,6 +17,27 @@ export const ModifierDef = z.strictObject({
   positive_is_good: z.boolean().default(true),
 });
 export const ModifiersFile = z.strictObject({ modifiers: z.array(ModifierDef) });
+
+// ---------------------------------------------------------------- national spirits
+
+/**
+ * A national spirit (HOI4 "idea"): a lasting problem, strength or policy with modifiers. Countries
+ * start with the ones that list them in `start`; focuses, events and decisions add, swap and remove them.
+ */
+export const SpiritDef = z.strictObject({
+  id: Id,
+  name: z.string().min(1),
+  description: z.string().min(1),
+  kind: z.enum(["problem", "strength", "policy"]).default("policy"),
+  modifiers: Modifiers.default({}),
+  /** Countries that have it on 1 January 2000. A real situation needs `source` and `confidence`. */
+  start: z.array(Tag).default([]),
+  source: z.array(SourceRef).optional(),
+  confidence: Confidence.optional(),
+  review_note: z.string().optional(),
+});
+export type SpiritDef = z.infer<typeof SpiritDef>;
+export const SpiritsFile = z.strictObject({ note: z.string().optional(), spirits: z.array(SpiritDef) });
 
 // ---------------------------------------------------------------- ideologies
 

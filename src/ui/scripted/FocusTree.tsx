@@ -12,6 +12,7 @@ import { Icon, type IconName } from "../icons.tsx";
 import { usePanZoom } from "../panzoom.ts";
 import { panel, version, type Session } from "../session.ts";
 import { tip } from "../tooltip.tsx";
+import { decisionsUnlockedBy } from "../../sim/scripting/engine.ts";
 import { ConditionList, EffectList } from "./fx.tsx";
 
 /** Grid cell, and the node box inside it (icon 52 + name plate + bar). */
@@ -149,6 +150,9 @@ export function FocusTreeView({ db, session }: { db: ContentDB; session: Session
                     <>
                       <span class="dim">{f.description}</span>
                       <EffectList db={db} effects={f.effects} live={{ state, tag }} />
+                      {decisionsUnlockedBy(db, f.id).length > 0 && (
+                        <div class="fx"><div class="fx-h">Unlocks decisions</div>{decisionsUnlockedBy(db, f.id).map((d) => <div class="fx-l" key={d}>{d}</div>)}</div>
+                      )}
                       {f.prerequisites.length > 0 && (
                         <div class="fx"><div class="fx-h">Requires</div>{f.prerequisites.map((g, i) => <div class="fx-l" key={i}>{g.map((p) => byId.get(p)?.name ?? p).join(" or ")}</div>)}</div>
                       )}

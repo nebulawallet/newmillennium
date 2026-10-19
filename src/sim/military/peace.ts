@@ -66,7 +66,12 @@ export function termCost(ctx: SimContext, war: War, winner: "attackers" | "defen
   const all = provincesOf(ctx.state, t.target);
   switch (t.kind) {
     case "annex": return Math.round(clamp(r.annex_base + r.annex_per_size * size(all), r.annex_base, 100));
-    case "provinces": return Math.round(t.provinces.length * r.province_base + r.annex_per_size * size(t.provinces));
+    case "provinces": {
+      // provinces a winner claims cost half
+      const claimed = new Set(winners.flatMap((w) => ctx.state.countries[w]?.claims ?? []));
+      const n = t.provinces.reduce((s, p) => s + (claimed.has(p) ? 0.5 : 1), 0);
+      return Math.round((n / Math.max(1, t.provinces.length)) * (t.provinces.length * r.province_base + r.annex_per_size * size(t.provinces)));
+    }
     case "puppet": return Math.round(clamp(r.puppet_share * (r.annex_base + r.annex_per_size * size(all)), 10, 100));
     case "ideology": return r.ideology_cost;
   }

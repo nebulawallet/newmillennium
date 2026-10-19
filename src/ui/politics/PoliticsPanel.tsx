@@ -13,6 +13,7 @@ import { Portrait } from "../hud/SidePanel.tsx";
 import { Placard } from "../Placard.tsx";
 import { electionNight, version, type Session } from "../session.ts";
 import { tip } from "../tooltip.tsx";
+import { describeModifiers } from "../../sim/scripting/engine.ts";
 import { LawPicker } from "./LawPicker.tsx";
 
 const pct = (x: number) => `${(x * 100).toFixed(1)}%`;
@@ -222,6 +223,29 @@ export function PoliticsPanel({ db, state, tag, session }: { db: ContentDB; stat
           {msg && <span class="dim small">{msg}</span>}
         </div>
       )}
+
+      <div class="hp-section">National spirits</div>
+      <div class="chips">
+        {cs.spirits.map((id) => {
+          const sp = db.spirits.get(id);
+          if (!sp) return null;
+          return (
+            <span
+              class={`chip spirit ${sp.kind}`}
+              key={id}
+              {...tip(() => ({
+                title: sp.name,
+                body: <span class="dim">{sp.description}</span>,
+                rows: describeModifiers(db, sp.modifiers).map((l) => [l, ""] as [string, string]),
+                note: sp.kind === "problem" ? "A national problem: focuses, decisions and events can remove it." : undefined,
+              }))}
+            >
+              {sp.name}
+            </span>
+          );
+        })}
+        {cs.spirits.length === 0 && <span class="faint">None</span>}
+      </div>
 
       <div class="hp-section">Cabinet and high command</div>
       {cabinet.length === 0 ? (

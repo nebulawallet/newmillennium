@@ -179,12 +179,13 @@ export function slotUse(db: ContentDB, state: GameState, map: SimMap | undefined
 }
 
 /** Why this building cannot go in this province now, or null. */
-export function canBuild(db: ContentDB, state: GameState, map: SimMap | undefined, cs: CountryState, building: string, province?: number): string | null {
+export function canBuild(db: ContentDB, state: GameState, map: SimMap | undefined, cs: CountryState, building: string, province?: number, grant = false): string | null {
   const b = db.buildings.get(building);
   if (!b) return "Unknown building.";
   if (!cs.economy) return "No economy data.";
-  if (b.requires_tech && !cs.research?.completed.includes(b.requires_tech)) return `Needs the technology ${db.techs.get(b.requires_tech)?.name ?? b.requires_tech}.`;
-  if (b.requires_resource && !((cs.economy.resources[b.requires_resource] ?? 0) > 0)) return `Needs ${db.economyRules.resources.find((r) => r.id === b.requires_resource)?.name.toLowerCase() ?? b.requires_resource} production.`;
+  // focus and event grants skip the technology and resource requirements
+  if (!grant && b.requires_tech && !cs.research?.completed.includes(b.requires_tech)) return `Needs the technology ${db.techs.get(b.requires_tech)?.name ?? b.requires_tech}.`;
+  if (!grant && b.requires_resource && !((cs.economy.resources[b.requires_resource] ?? 0) > 0)) return `Needs ${db.economyRules.resources.find((r) => r.id === b.requires_resource)?.name.toLowerCase() ?? b.requires_resource} production.`;
   if (!province) return "Choose a province.";
   if (state.provinceOwner[province - 1] !== cs.tag) return "You do not own this province.";
   if (state.provinceController[province - 1] !== cs.tag) return "The province is occupied.";
@@ -199,6 +200,38 @@ export function canBuild(db: ContentDB, state: GameState, map: SimMap | undefine
   }
   if (slotUse(db, state, map, cs, p).free <= 0) return "No free building slots here.";
   return null;
+}
+
+/** A building stands: it counts in its province and adds its factories and growth. */
+function finishBuilding(state: GameState, cs: CountryState, b: BuildingDef, province: number | undefined): void {
+  const e = cs.economy!;
+  if (province) {
+    const pb = (state.provinceBuildings[String(province)] ??= {});
+    pb[b.id] = (pb[b.id] ?? 0) + 1;
+  }
+  e.builtCiv += b.adds.civilian_factories ?? 0;
+  e.builtMil += b.adds.military_factories ?? 0;
+  if (b.adds.growth) e.trend += b.adds.growth * (10 / Math.max(10, Math.sqrt(e.gdp)));
+}
+
+/**
+ * Build at once, without cost or technology (focuses, events): in the given provinces, otherwise in
+ * the country's most populous provinces that have room. Returns how many were built.
+ */
+export function grantBuildings(ctx: SimContext, cs: CountryState, building: string, count: number, provinces?: number[]): number {
+  const { db, state, map } = ctx;
+  const b = db.buildings.get(building);
+  if (!b || !cs.economy) return 0;
+  const where = provinces ?? [...provincesOf(state, map, cs.tag)].sort((x, y) => y.population - x.population).map((p) => p.id);
+  let built = 0;
+  for (let i = 0; i < count; i++) {
+    const p = where.find((id) => canBuild(db, state, map, cs, building, id, true) === null);
+    if (p === undefined) break;
+    finishBuilding(state, cs, b, p);
+    built++;
+  }
+  if (built) ctx.emit({ type: "map_changed" });
+  return built;
 }
 
 // ------------------------------------------------------------------ queue
@@ -252,13 +285,7 @@ export function buildDay(ctx: SimContext, cs: CountryState, free: number, perFac
     e.investmentMonth = (e.investmentMonth ?? 0) + money;
     if (item.progress < b.cost - 1e-6) continue;
     e.construction.splice(e.construction.indexOf(item), 1);
-    if (item.province) {
-      const pb = (state.provinceBuildings[String(item.province)] ??= {});
-      pb[b.id] = (pb[b.id] ?? 0) + 1;
-    }
-    e.builtCiv += b.adds.civilian_factories ?? 0;
-    e.builtMil += b.adds.military_factories ?? 0;
-    if (b.adds.growth) e.trend += b.adds.growth * (10 / Math.max(10, Math.sqrt(e.gdp)));
+    finishBuilding(state, cs, b, item.province);
     if (cs.tag === state.player) ctx.log(cs.tag, "construction", `${b.name} completed${item.province ? ` in ${ctx.map?.provinces[item.province - 1]?.name ?? "a province"}` : ""}`);
   }
   return Math.max(0, left);

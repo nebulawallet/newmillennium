@@ -237,6 +237,13 @@ Focuses, events and decisions share one scripting format. The registry is `src/c
   - `{ "install_government": { "ideology": "socialist_communist", "government_type": "one_party_state" } }` brings the most popular live party of that group to power; `"party": "rus.cprf"` names one instead, and `"leader"` names a person. Without `government_type` the constitution stays if it holds elections (otherwise a transitional administration). The party's leader of the day (or a council) takes the executive, laws follow the ideology, blocs with that group in `incompatible_groups` are left, and the country leaves history. Nothing happens if no party fits.
   - Gate a path with the trigger `{ "has_party_of_group": "fascist" }`, so it only shows where a fitting real party exists. `ideology_group_support_above` checks a whole group's support.
   - `add_ideology_support` takes `group` instead of `sub_ideology` to shift a whole group. `{ "leave_history": true }` takes the country off the historical path (use it on the first focus of an alternative path).
+- **Gameplay effects for focuses** (so a focus does something, not just a modifier):
+  - National spirits (`data/spirits/*.json`: `{ id, name, description, kind: problem|strength|policy, modifiers, start? }`; a spirit with `start` countries is a real situation and needs `source` and `confidence`). Effects `add_spirit`, `remove_spirit`, `swap_spirit { from, to }`; trigger `has_spirit`. They show under "National spirits" on the politics screen.
+  - `add_buildings { building, count, regions? }` builds at once, free, in the most populous provinces with room (or the named regions).
+  - `add_claim { regions: [{ from, adm1 }] }`: claimed provinces cost half the war score at the peace conference; trigger `has_claim_on`.
+  - `add_research_bonus { category, value, uses }`: faster research in a category for the next technologies.
+  - `add_treasury` (negative = a cost) with the trigger `treasury_above`.
+  - Decisions whose `visible` or `available` use `has_completed_focus` are listed as "Unlocks decisions" on that focus.
 - **Adding a new effect or trigger** is an engine change: add it to the registry with an argument schema, then implement its handler.
 
 ## 7. Events, decisions and national focus trees

@@ -22,6 +22,7 @@ mkdirSync(out, { recursive: true });
 
 const schemas: [string, z.ZodType, string[]][] = [
   ["modifiers", defs.ModifiersFile, ["data/modifiers.json"]],
+  ["spirits", defs.SpiritsFile, ["data/spirits/*.json"]],
   ["ideology_groups", defs.IdeologyGroupsFile, ["data/ideologies/groups.json"]],
   ["sub_ideologies", defs.SubIdeologiesFile, ["data/ideologies/sub_ideologies.json"]],
   ["government_types", defs.GovernmentTypesFile, ["data/government_types.json"]],

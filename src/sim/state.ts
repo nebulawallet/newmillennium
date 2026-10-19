@@ -16,7 +16,7 @@ import type { Battle } from "./military/war.ts";
 import type { Army } from "./military/fronts.ts";
 import { initialDiplomacy, tradeIndex, type DiplomacyState } from "./diplomacy/diplomacy.ts";
 
-export const STATE_VERSION = 12;
+export const STATE_VERSION = 13;
 
 export interface GameRules {
   /** historical: real election winners are heavily weighted; dynamic: results come purely from the simulation. */
@@ -157,6 +157,10 @@ export interface CountryState {
   civilWar: CivilWarState | null;
   flags: Record<string, number>;
   timedModifiers: TimedModifier[];
+  /** National spirits in force (data/spirits). */
+  spirits: string[];
+  /** Provinces this country claims (cheaper at the peace conference). */
+  claims: number[];
   focus: FocusState;
   /** Decision id -> day it can be taken again; `active` decisions finish on `until`. */
   decisionCooldowns: Record<string, number>;
@@ -374,6 +378,8 @@ export function createInitialState(
       civilWar: null,
       flags: {},
       timedModifiers: [],
+      spirits: [...db.spirits.values()].filter((s) => s.start.includes(entry.tag)).map((s) => s.id),
+      claims: [],
       focus: { tree: focusTreeFor(db, entry.tag), current: null, progress: 0, completed: [] },
       decisionCooldowns: {},
       activeDecisions: [],
@@ -498,6 +504,9 @@ export function migrateState(db: ContentDB, s: GameState): GameState {
   s.scheduledEvents ??= [];
   for (const [tag, cs] of Object.entries(s.countries)) {
     cs.timedModifiers ??= [];
+    // v13: national spirits and claims
+    cs.spirits ??= [...(fresh.countries[tag]?.spirits ?? [])];
+    cs.claims ??= [];
     cs.focus ??= { tree: focusTreeFor(db, tag), current: null, progress: 0, completed: [] };
     cs.decisionCooldowns ??= {};
     cs.activeDecisions ??= [];

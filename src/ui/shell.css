@@ -138,6 +138,9 @@
 .chips { display: flex; flex-wrap: wrap; gap: 6px; }
 .chip { display: inline-flex; align-items: center; gap: 7px; padding: 4px 9px; font-size: 12px; font-weight: 600; color: var(--ink); background: var(--s2); border: 1px solid var(--line); }
 .chip.faint { color: var(--ink-faint); }
+.chip.spirit { cursor: default; border-left: 3px solid var(--line-3); }
+.chip.spirit.problem { border-left-color: var(--bad); }
+.chip.spirit.strength { border-left-color: var(--good); }
 
 .slots { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
 .slot { display: flex; align-items: center; gap: 10px; min-width: 0; padding: 5px; background: var(--s2); border: 1px solid transparent; }
