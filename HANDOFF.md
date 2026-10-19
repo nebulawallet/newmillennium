@@ -18,6 +18,7 @@ New Millennium is a grand strategy game in the style of Hearts of Iron IV, set f
 | [CLAUDE.md](CLAUDE.md) | Standing rules for any agent working in this repo. |
 | [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) | Code map. |
 | [docs/PHASE2_BATCHES.md](docs/PHASE2_BATCHES.md) | The research queue for the politics database. |
+| [docs/FOCUS_TREES_PLAN.md](docs/FOCUS_TREES_PLAN.md) | The focus tree expansion plan (next job). |
 | [docs/MAP_RENDERING.md](docs/MAP_RENDERING.md) | Renderer benchmark and the decision it led to. |
 | [POLITICS_REVIEW.md](POLITICS_REVIEW.md) | Every data record marked `needs_review` (regenerated). |
 
@@ -323,24 +324,28 @@ In game: Space pauses, 1–5 or +/- set speed, Q–P open the tab row (Q is Poli
 
 ## Next steps, in order
 
-1. **User's latest feedback to keep in mind:**
+1. **Focus trees (the user's chosen next job):** follow [docs/FOCUS_TREES_PLAN.md](docs/FOCUS_TREES_PLAN.md).
+   - Today the national trees have only 13–19 focuses (smaller than the 24-focus generic tree), and the conflict countries have none.
+   - Start with the Russian pilot of about 70–100 focuses, written in the main session and shown to the user.
+   - Then the conflict countries, then the other majors. Agents only with the user's approval.
+2. **User's latest feedback to keep in mind:**
    - The UI must stay HOI4-like: the flag sits inside the top bar and nothing hangs under it.
    - The user wants historical accuracy over squeamishness: real flags, ISIS included.
    - The user expects every important side to be playable and able to recruit and produce.
    - Possible next asks: make more armed groups playable (Hamas, Hezbollah, the Donbas republics, the Syrian opposition and the SDF still have no country record); give the Iraqi army a sourced size in 2014 (the AI rebuild gives only 5 divisions); build a Rise of the Caliphate focus tree.
-2. **Dated effective executive.** `effective_executive` is static content, so post-2005 Iraq still treats the President as the executive and coalitions form around the PUK. Add a state field, set by an effect on a real date, that `effectiveLeader`, the coalition code and the UI read.
-3. **Yemen: light research?** YEM is the only conflict country still on the default profile (CONFLICTS_PLAN lists it as "maybe"). Ask the user before starting an agent.
-4. **Balance:**
+3. **Dated effective executive.** `effective_executive` is static content, so post-2005 Iraq still treats the President as the executive and coalitions form around the PUK. Add a state field, set by an effect on a real date, that `effectiveLeader`, the coalition code and the UI read.
+4. **Yemen: light research?** YEM is the only conflict country still on the default profile (CONFLICTS_PLAN lists it as "maybe"). Ask the user before starting an agent.
+5. **Balance:**
    - Brazil's and Argentina's debt rise to about 72% by 2010, partly because Brazil's starting interest rate (57%) is the World Bank lending rate, not the policy rate.
    - The 2003 invasion takes only four provinces before the scripted fall of Baghdad.
    - Default-profile countries are not playable.
-5. **Map polish:** armed groups have no map labels. Isolated slow days (30–48 ms) remain on the US Electoral College day and the busiest invasion days.
-6. **After the reworks:**
+6. **Map polish:** armed groups have no map labels. Isolated slow days (30–48 ms) remain on the US Electoral College day and the busiest invasion days.
+7. **After the reworks:**
    - Dated flags: the mechanism exists (`dated` in `data/world/flags.json`, used for Afghanistan). Iraq (2004, 2008) and Libya (2011) still show today's flag. Use openly licensed SVGs from Wikimedia Commons; the user approved downloading real flags rather than drawing them.
    - Commanders: decide with the user whether to source real commanders (Phase 2 rules apply) or leave the slot empty.
    - AI construction by need (refineries for fuel deficits, factories where goods prices are high).
    - Fronts across the sea and naval invasions.
-7. **Phase 13 polish:**
+8. **Phase 13 polish:**
    - UI: a first pass is done (live province panel, group names in the news).
    - More events where useful: about 500 now; pipeline `scripts/dev/gen-events-history.py` → `scripts/research/verify-events.ts`.
    - Focus trees for conflict countries: IRQ, AFG, SYR, UKR and PSE use the generic tree.
