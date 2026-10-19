@@ -324,10 +324,10 @@ In game: Space pauses, 1–5 or +/- set speed, Q–P open the tab row (Q is Poli
 
 ## Next steps, in order
 
-1. **Focus trees (the user's chosen next job):** follow [docs/FOCUS_TREES_PLAN.md](docs/FOCUS_TREES_PLAN.md).
-   - Today the national trees have only 13–19 focuses (smaller than the 24-focus generic tree), and the conflict countries have none.
-   - Start with the Russian pilot of about 70–100 focuses, written in the main session and shown to the user.
-   - Then the conflict countries, then the other majors. Agents only with the user's approval.
+1. **Focus trees with political paths (the user's chosen next job):** follow [docs/FOCUS_TREES_PLAN.md](docs/FOCUS_TREES_PLAN.md).
+   - The user wants countries to be able to "go fascist and stuff". There is no fascist ideology yet, and no focus can change the government.
+   - First settle the decisions in the plan's section 1a with the user: add a fascist ideology group, and choose who takes power on alternative paths (real parties only, or also generated movements, which needs a CLAUDE.md exception).
+   - Then build the engine effects (`install_government` and the rest), then the Russian pilot of 70–100 focuses with a full political branch, then the generic tree, the conflict countries and the majors.
 2. **User's latest feedback to keep in mind:**
    - The UI must stay HOI4-like: the flag sits inside the top bar and nothing hangs under it.
    - The user wants historical accuracy over squeamishness: real flags, ISIS included.
