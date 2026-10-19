@@ -1,0 +1,191 @@
+{
+  "note": "Russia's national spirits. The ones with `start` describe the situation on 1 January 2000 and cite sources; the others are granted by Russia's focuses, decisions and events. Values are gameplay estimates.",
+  "spirits": [
+    {
+      "id": "rus_chechen_war",
+      "name": "War in Chechnya",
+      "description": "The Second Chechen War, begun in August 1999, ties down federal forces in the North Caucasus.",
+      "kind": "problem",
+      "modifiers": { "stability_factor": -0.03, "unrest": 0.02, "political_power_gain": -0.05 },
+      "start": ["RUS"],
+      "source": [{ "url": "https://en.wikipedia.org/wiki/Second_Chechen_War", "title": "Wikipedia: Second Chechen War", "accessed": "2026-10-19" }],
+      "confidence": "verified"
+    },
+    {
+      "id": "rus_crisis_1998",
+      "name": "Aftermath of the 1998 crisis",
+      "description": "The ruble devaluation and the debt default that began on 17 August 1998 left the banks weak and savings lost.",
+      "kind": "problem",
+      "modifiers": { "foreign_investment": -0.1, "inflation": 0.02, "interest_rate": 0.02 },
+      "start": ["RUS"],
+      "source": [{ "url": "https://en.wikipedia.org/wiki/1998_Russian_financial_crisis", "title": "Wikipedia: 1998 Russian financial crisis", "accessed": "2026-10-19" }],
+      "confidence": "verified"
+    },
+    {
+      "id": "rus_demographic_decline",
+      "name": "Demographic decline",
+      "description": "Deaths have exceeded births every year since 1992 and the population is falling.",
+      "kind": "problem",
+      "modifiers": { "population_growth": -0.004, "manpower_factor": -0.05 },
+      "start": ["RUS"],
+      "source": [{ "url": "https://en.wikipedia.org/wiki/Demographics_of_Russia", "title": "Wikipedia: Demographics of Russia", "accessed": "2026-10-19" }],
+      "confidence": "verified"
+    },
+    {
+      "id": "rus_soviet_industry",
+      "name": "Soviet-era industry",
+      "description": "Much of the industry built for the planned economy is old and uncompetitive after the transition to a market economy.",
+      "kind": "problem",
+      "modifiers": { "production_efficiency": -0.05, "private_sector_output": -0.05 },
+      "start": ["RUS"],
+      "source": [{ "url": "https://en.wikipedia.org/wiki/Economy_of_Russia", "title": "Wikipedia: Economy of Russia", "accessed": "2026-10-19" }],
+      "confidence": "verified"
+    },
+    {
+      "id": "rus_energy_superpower",
+      "name": "Energy exporter",
+      "description": "Russia holds the world's largest natural gas reserves and is one of the largest exporters of oil and gas.",
+      "kind": "strength",
+      "modifiers": { "fossil_output": 0.1, "foreign_influence_power": 0.05 },
+      "start": ["RUS"],
+      "source": [{ "url": "https://en.wikipedia.org/wiki/Economy_of_Russia", "title": "Wikipedia: Economy of Russia", "accessed": "2026-10-19" }],
+      "confidence": "verified"
+    },
+    {
+      "id": "rus_nuclear_power_status",
+      "name": "Nuclear weapon state",
+      "description": "Russia inherited the Soviet nuclear arsenal, the world's largest, and is one of the five nuclear-weapon states recognised by the Non-Proliferation Treaty.",
+      "kind": "strength",
+      "modifiers": { "diplomatic_reputation": 0.05, "foreign_influence_resistance": 0.05 },
+      "start": ["RUS"],
+      "source": [{ "url": "https://en.wikipedia.org/wiki/Russia_and_weapons_of_mass_destruction", "title": "Wikipedia: Russia and weapons of mass destruction", "accessed": "2026-10-19" }],
+      "confidence": "verified"
+    },
+    {
+      "id": "rus_north_caucasus_insurgency",
+      "name": "Insurgency in the North Caucasus",
+      "description": "Major fighting is over, but attacks continue across the North Caucasus.",
+      "kind": "problem",
+      "modifiers": { "stability_factor": -0.015, "unrest": 0.01 }
+    },
+    {
+      "id": "rus_crisis_recovery",
+      "name": "Fragile recovery",
+      "description": "Growth has returned, but the banks and the public finances are still fragile.",
+      "kind": "problem",
+      "modifiers": { "foreign_investment": -0.05, "interest_rate": 0.01 }
+    },
+    {
+      "id": "rus_power_vertical",
+      "name": "The power vertical",
+      "description": "A chain of command from the Kremlin through the federal districts to the regions.",
+      "kind": "policy",
+      "modifiers": { "political_power_gain": 0.1, "stability_factor": 0.02, "civil_liberties": -0.05 }
+    },
+    {
+      "id": "rus_flat_tax",
+      "name": "Flat income tax",
+      "description": "A single income tax rate, simpler to collect and harder to avoid.",
+      "kind": "policy",
+      "modifiers": { "tax_efficiency": 0.06, "corruption": -0.01 }
+    },
+    {
+      "id": "rus_stabilization_fund",
+      "name": "Stabilization fund",
+      "description": "Part of the oil revenue is saved in a fund that balances the budget when prices fall.",
+      "kind": "policy",
+      "modifiers": { "inflation": -0.01 }
+    },
+    {
+      "id": "rus_sovereign_funds",
+      "name": "Sovereign wealth funds",
+      "description": "A reserve fund for the budget and a national welfare fund for pensions.",
+      "kind": "strength",
+      "modifiers": { "inflation": -0.01, "interest_rate": -0.005, "welfare_cost": -0.002 }
+    },
+    {
+      "id": "rus_state_champions",
+      "name": "State champions",
+      "description": "Large state-controlled companies lead energy, arms and transport.",
+      "kind": "policy",
+      "modifiers": { "state_industry_output": 0.06, "private_sector_output": -0.02, "corruption": 0.01 }
+    },
+    {
+      "id": "rus_special_economic_zones",
+      "name": "Special economic zones",
+      "description": "Tax breaks and simpler customs for investors in designated zones.",
+      "kind": "policy",
+      "modifiers": { "foreign_investment": 0.08, "tax_efficiency": -0.01 }
+    },
+    {
+      "id": "rus_import_substitution",
+      "name": "Import substitution",
+      "description": "Domestic producers replace imported goods behind trade barriers.",
+      "kind": "policy",
+      "modifiers": { "state_industry_output": 0.04, "trade_efficiency": -0.04 }
+    },
+    {
+      "id": "rus_modern_industry",
+      "name": "Modernised industry",
+      "description": "New plants and machinery have replaced much of the Soviet-era industry.",
+      "kind": "strength",
+      "modifiers": { "production_efficiency": 0.03, "private_sector_output": 0.03 }
+    },
+    {
+      "id": "rus_contract_army",
+      "name": "Contract army",
+      "description": "Professional soldiers serve alongside a shorter conscription.",
+      "kind": "policy",
+      "modifiers": { "army_org": 0.05, "training_time": -0.05, "manpower_factor": -0.02 }
+    },
+    {
+      "id": "rus_rearmament",
+      "name": "Rearmament programme",
+      "description": "A ten-year programme replaces Soviet-era equipment.",
+      "kind": "policy",
+      "modifiers": { "production_efficiency": 0.04, "welfare_cost": 0.003 }
+    },
+    {
+      "id": "rus_family_support",
+      "name": "Family support",
+      "description": "Payments for families with a second child, housing help and longer parental leave.",
+      "kind": "policy",
+      "modifiers": { "population_growth": 0.002, "welfare_cost": 0.002 }
+    },
+    {
+      "id": "rus_healthy_nation",
+      "name": "A healthier nation",
+      "description": "Better hospitals and campaigns against smoking and alcohol raise life expectancy.",
+      "kind": "strength",
+      "modifiers": { "health_outcomes": 0.05, "population_growth": 0.001 }
+    },
+    {
+      "id": "rus_science_drive",
+      "name": "Science drive",
+      "description": "Grants, new research universities and labs bring researchers home.",
+      "kind": "policy",
+      "modifiers": { "research_speed": 0.05, "education_quality": 0.03 }
+    },
+    {
+      "id": "rus_planned_economy",
+      "name": "State planning",
+      "description": "Investment is directed by state plans for heavy industry and defence.",
+      "kind": "policy",
+      "modifiers": { "state_industry_output": 0.08, "private_sector_output": -0.08, "foreign_investment": -0.1 }
+    },
+    {
+      "id": "rus_mobilised_nation",
+      "name": "Mobilised nation",
+      "description": "Universal military training and a war economy under a one-party state.",
+      "kind": "policy",
+      "modifiers": { "manpower_factor": 0.08, "war_support_factor": 0.05, "consumer_goods_factor": 0.05, "international_opinion": -15 }
+    },
+    {
+      "id": "rus_open_society",
+      "name": "Open society",
+      "description": "Independent courts, a free press and competitive elections.",
+      "kind": "strength",
+      "modifiers": { "corruption": -0.03, "foreign_investment": 0.08, "civil_liberties": 0.1, "international_opinion": 10 }
+    }
+  ]
+}

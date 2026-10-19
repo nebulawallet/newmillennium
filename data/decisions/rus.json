@@ -1,0 +1,109 @@
+{
+  "categories": [
+    { "id": "rus_projects", "name": "Russian state projects", "description": "Projects that Russia's national focuses open up." }
+  ],
+  "decisions": [
+    {
+      "id": "rus_build_export_pipeline",
+      "name": "Build an export pipeline",
+      "description": "Fund a new oil or gas pipeline and its refinery.",
+      "category": "rus_projects",
+      "countries": ["RUS"],
+      "visible": { "has_completed_focus": "rus_pipelines" },
+      "available": { "treasury_above": 6 },
+      "cost": { "political_power": 40 },
+      "effects": [{ "add_treasury": -5 }, { "add_buildings": { "building": "refinery", "count": 1, "regions": [{ "from": "RUS", "adm1": ["RUS-2396", "RUS-2398"] }] } }, { "add_timed_modifier": { "modifier": "trade_efficiency", "value": 0.02, "days": 1460 } }],
+      "cooldown_days": 540,
+      "ai_weight": 2
+    },
+    {
+      "id": "rus_far_east_subsidies",
+      "name": "Far East investment programme",
+      "description": "Subsidise new plants in Primorye and Khabarovsk.",
+      "category": "rus_projects",
+      "countries": ["RUS"],
+      "visible": { "has_completed_focus": "rus_far_east" },
+      "available": { "treasury_above": 4 },
+      "cost": { "political_power": 30 },
+      "effects": [{ "add_treasury": -3 }, { "add_buildings": { "building": "civilian_factory", "count": 1, "regions": [{ "from": "RUS", "adm1": ["RUS-2611", "RUS-2614"] }] } }],
+      "cooldown_days": 365,
+      "ai_weight": 2
+    },
+    {
+      "id": "rus_state_defence_order",
+      "name": "State defence order",
+      "description": "A large order for the arms industry.",
+      "category": "rus_projects",
+      "countries": ["RUS"],
+      "visible": { "has_completed_focus": "rus_defence_industry" },
+      "available": { "treasury_above": 5 },
+      "cost": { "political_power": 40 },
+      "effects": [{ "add_treasury": -4 }, { "add_equipment": { "family": "infantry_equipment", "amount": 800 } }, { "add_interest_group_approval": { "group": "military", "value": 3 } }],
+      "cooldown_days": 365,
+      "ai_weight": 2
+    },
+    {
+      "id": "rus_snap_exercises",
+      "name": "Snap readiness exercise",
+      "description": "An unannounced exercise in one of the military districts.",
+      "category": "rus_projects",
+      "countries": ["RUS"],
+      "visible": { "has_completed_focus": "rus_readiness_exercises" },
+      "cost": { "political_power": 25 },
+      "effects": [{ "add_timed_modifier": { "modifier": "army_org", "value": 0.03, "days": 365 } }, { "add_war_support": 0.02 }],
+      "cooldown_days": 365,
+      "ai_weight": 1
+    },
+    {
+      "id": "rus_counter_terror_sweep",
+      "name": "Counter-terrorism operation",
+      "description": "A security operation in the North Caucasus.",
+      "category": "rus_projects",
+      "countries": ["RUS"],
+      "visible": { "all": [{ "has_completed_focus": "rus_chechnya" }, { "any": [{ "has_spirit": "rus_chechen_war" }, { "has_spirit": "rus_north_caucasus_insurgency" }] }] },
+      "cost": { "political_power": 30 },
+      "effects": [{ "add_unrest": -0.03 }, { "add_interest_group_approval": { "group": "security_services", "value": 3 } }, { "add_interest_group_approval": { "group": "minorities", "value": -3 } }],
+      "cooldown_days": 180,
+      "ai_weight": 2
+    },
+    {
+      "id": "rus_national_project_funding",
+      "name": "Fund the national projects",
+      "description": "Extra money for health, education, housing and agriculture this year.",
+      "category": "rus_projects",
+      "countries": ["RUS"],
+      "visible": { "has_completed_focus": "rus_national_projects" },
+      "available": { "treasury_above": 4 },
+      "cost": { "political_power": 30 },
+      "effects": [{ "add_treasury": -3 }, { "add_timed_modifier": { "modifier": "health_outcomes", "value": 0.02, "days": 730 } }, { "add_timed_modifier": { "modifier": "education_quality", "value": 0.02, "days": 730 } }, { "add_ruling_party_popularity": 0.01 }],
+      "cooldown_days": 365,
+      "ai_weight": 2
+    },
+    {
+      "id": "rus_research_grants",
+      "name": "Research grants",
+      "description": "A round of state grants for laboratories and universities.",
+      "category": "rus_projects",
+      "countries": ["RUS"],
+      "visible": { "has_completed_focus": "rus_science_drive" },
+      "available": { "treasury_above": 2 },
+      "cost": { "political_power": 30 },
+      "effects": [{ "add_treasury": -1.5 }, { "add_research_bonus": { "category": "economy_digital", "value": 0.25, "uses": 1 } }, { "add_research_bonus": { "category": "electronics_cyber", "value": 0.25, "uses": 1 } }],
+      "cooldown_days": 365,
+      "ai_weight": 1
+    },
+    {
+      "id": "rus_road_programme",
+      "name": "Regional road programme",
+      "description": "Pave and widen roads in the regions.",
+      "category": "rus_projects",
+      "countries": ["RUS"],
+      "visible": { "has_completed_focus": "rus_roads_and_rail" },
+      "available": { "treasury_above": 3 },
+      "cost": { "political_power": 25 },
+      "effects": [{ "add_treasury": -2 }, { "add_buildings": { "building": "infrastructure", "count": 2 } }],
+      "cooldown_days": 365,
+      "ai_weight": 2
+    }
+  ]
+}

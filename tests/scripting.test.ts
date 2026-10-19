@@ -3,7 +3,7 @@ import { countryModifiers } from "../src/sim/politics/common.ts";
 import { describe, expect, it } from "vitest";
 import { compileContent } from "../src/content/compile.ts";
 import { dayOf } from "../src/sim/date.ts";
-import { evalTrigger, runEffects, describeEffects } from "../src/sim/scripting/engine.ts";
+import { evalTrigger, runEffects, describeEffects, decisionsUnlockedBy } from "../src/sim/scripting/engine.ts";
 import { decisionStatus, focusOf, focusStatus } from "../src/sim/scripting/systems.ts";
 import { Simulation, type SimContext } from "../src/sim/simulation.ts";
 import { createInitialState, type GameState } from "../src/sim/state.ts";
@@ -303,5 +303,19 @@ describe("gameplay effects", () => {
     const msgs = compileContent(files, {}).issues.filter((i) => i.file === "spirits/test.json").map((i) => i.message);
     expect(msgs.some((m) => m.includes("needs source and confidence"))).toBe(true);
     expect(msgs.some((m) => m.includes("unknown modifier 'nope'"))).toBe(true);
+  });
+});
+
+describe("Russian model tree", () => {
+  it("Russia starts with its sourced problems and a focus chain fixes one", () => {
+    const state = createInitialState(db, { provinces: [] }, { contentHash: "t", player: "RUS" });
+    const ctx = ctxOf(state);
+    const rus = state.countries.RUS!;
+    expect(rus.spirits).toEqual(expect.arrayContaining(["rus_chechen_war", "rus_crisis_1998", "rus_demographic_decline"]));
+    runEffects(ctx, scope("RUS"), focusOf(db, rus, "rus_debt_restructuring")!.effects, "test");
+    expect(rus.spirits).toContain("rus_crisis_recovery");
+    expect(rus.spirits).not.toContain("rus_crisis_1998");
+    // the pipeline focus unlocks a decision
+    expect(decisionsUnlockedBy(db, "rus_pipelines")).toEqual(["Build an export pipeline"]);
   });
 });

@@ -152,7 +152,8 @@ describe("goods market and trade routes", () => {
   });
 
   it("sanctions close a trade route", () => {
-    const sim = fresh();
+    // Poland is the player, so the AI cannot lift its sanction during the test
+    const sim = fresh("POL");
     for (let i = 0; i < 40; i++) sim.step();
     const before = sim.state.countries.DEU!.economy!.trade!;
     expect(before.routes.some((r) => r.partner === "POL")).toBe(true);

@@ -4,7 +4,7 @@
   "countries": [
     "RUS"
   ],
-  "note": "Russia pilot (FOCUS_TREES_PLAN.md). The political branch has the historical path (the power vertical) and five mutually exclusive alternatives: liberal, communist, national-populist, ultranationalist and military. Each alternative brings to power only a real party of the data (install_government), and shows only where one exists; the ultranationalist path uses the LDPR, classified ultranationalist from its Wikipedia infobox (user decision, 19 October 2026). Alternatives are a counterfactual, not a claim about the parties. Policies named after real reforms are cited; effects are gameplay estimates.",
+  "note": "Russia model tree. Politics: the historical path (the power vertical) and five mutually exclusive alternatives (liberal, communist, national-populist, ultranationalist with the LDPR, military), each bringing to power only a real party of the data; alternatives are a counterfactual, not a claim about the parties. Economy, industry, military, foreign policy and society branches build, fix Russia's starting national spirits (data/spirits/rus.json), unlock decisions (data/decisions/rus.json), grant research bonuses and, on alternative paths only, claim land and go to war. Policies named after real reforms are cited; effects are gameplay estimates.",
   "source": [
     {
       "url": "https://en.wikipedia.org/wiki/Presidency_of_Vladimir_Putin",
@@ -79,6 +79,16 @@
     {
       "url": "https://en.wikipedia.org/wiki/Rosneft",
       "title": "Wikipedia: Rosneft",
+      "accessed": "2026-10-19"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/1998_Russian_financial_crisis",
+      "title": "Wikipedia: 1998 Russian financial crisis",
+      "accessed": "2026-10-19"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Economy_of_Russia",
+      "title": "Wikipedia: Economy of Russia",
       "accessed": "2026-10-19"
     },
     {
@@ -169,10 +179,7 @@
       },
       "effects": [
         {
-          "add_political_power": 40
-        },
-        {
-          "add_stability": 0.03
+          "add_spirit": "rus_power_vertical"
         },
         {
           "add_interest_group_approval": {
@@ -203,7 +210,7 @@
       },
       "effects": [
         {
-          "add_stability": 0.04
+          "add_stability": 0.03
         },
         {
           "add_unrest": -0.03
@@ -256,15 +263,44 @@
       "ai_weight": 4
     },
     {
-      "id": "rus_appointed_governors",
-      "name": "Appointed governors",
-      "description": "Regional governors are appointed by regional legislatures on the President's recommendation instead of being elected directly, as from 2005 to 2012.",
+      "id": "rus_harmonise_regional_law",
+      "name": "One law for all regions",
+      "description": "Bring regional constitutions and laws into line with federal law.",
       "x": 0,
       "y": 3,
       "days": 70,
       "prerequisites": [
         [
           "rus_federal_districts"
+        ]
+      ],
+      "effects": [
+        {
+          "add_stability": 0.02
+        },
+        {
+          "add_political_power": 30
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "minorities",
+            "value": -3
+          }
+        }
+      ],
+      "ai_weight": 3
+    },
+    {
+      "id": "rus_appointed_governors",
+      "name": "Appointed governors",
+      "description": "Regional governors are appointed by regional legislatures on the President's recommendation instead of being elected directly, as from 2005 to 2012.",
+      "x": 1,
+      "y": 4,
+      "days": 70,
+      "prerequisites": [
+        [
+          "rus_harmonise_regional_law",
+          "rus_party_of_power"
         ]
       ],
       "available": {
@@ -282,7 +318,7 @@
       },
       "effects": [
         {
-          "add_political_power": 40
+          "add_political_power": 50
         },
         {
           "add_stability": 0.03
@@ -357,13 +393,12 @@
     {
       "id": "rus_national_projects",
       "name": "Priority national projects",
-      "description": "Spend oil revenue on four national projects: health, education, housing and agriculture, set out in September 2005.",
-      "x": 1,
+      "description": "Spend oil revenue on four national projects: health, education, housing and agriculture, set out in September 2005. Unlocks yearly funding rounds.",
+      "x": 3,
       "y": 4,
       "days": 70,
       "prerequisites": [
         [
-          "rus_appointed_governors",
           "rus_dominant_party"
         ]
       ],
@@ -424,8 +459,9 @@
           }
         },
         {
-          "set_budget": {
-            "spending": 0.5
+          "add_buildings": {
+            "building": "infrastructure",
+            "count": 2
           }
         }
       ],
@@ -440,7 +476,7 @@
       "days": 70,
       "prerequisites": [
         [
-          "rus_national_projects"
+          "rus_appointed_governors"
         ]
       ],
       "available": {
@@ -495,6 +531,7 @@
       "days": 70,
       "prerequisites": [
         [
+          "rus_appointed_governors",
           "rus_national_projects"
         ]
       ],
@@ -1113,17 +1150,34 @@
           }
         },
         {
-          "add_timed_modifier": {
-            "modifier": "international_opinion",
-            "value": 0.1,
-            "days": 2920
-          }
-        },
-        {
           "add_interest_group_approval": {
             "group": "military",
             "value": -5
           }
+        }
+      ]
+    },
+    {
+      "id": "rus_open_society",
+      "name": "An open society",
+      "description": "Courts, press and elections that hold the government to account.",
+      "x": 4,
+      "y": 6,
+      "days": 70,
+      "prerequisites": [
+        [
+          "rus_open_markets"
+        ],
+        [
+          "rus_european_course"
+        ]
+      ],
+      "effects": [
+        {
+          "add_spirit": "rus_open_society"
+        },
+        {
+          "remove_spirit": "rus_power_vertical"
         }
       ]
     },
@@ -1332,11 +1386,10 @@
           }
         },
         {
-          "add_timed_modifier": {
-            "modifier": "state_industry_output",
-            "value": 0.08,
-            "days": 2920
-          }
+          "add_spirit": "rus_state_champions"
+        },
+        {
+          "add_treasury": 10
         }
       ],
       "ai_weight": 3
@@ -1367,6 +1420,13 @@
           "add_interest_group_approval": {
             "group": "business",
             "value": -3
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "gdp_growth",
+            "value": 0.002,
+            "days": 1825
           }
         }
       ],
@@ -1424,17 +1484,38 @@
           }
         },
         {
-          "add_timed_modifier": {
-            "modifier": "state_industry_output",
-            "value": 0.1,
-            "days": 2920
+          "add_spirit": "rus_planned_economy"
+        },
+        {
+          "add_buildings": {
+            "building": "military_factory",
+            "count": 3,
+            "regions": [
+              {
+                "from": "RUS",
+                "adm1": [
+                  "RUS-2379",
+                  "RUS-2386",
+                  "RUS-3200"
+                ]
+              }
+            ]
           }
         },
         {
-          "add_timed_modifier": {
-            "modifier": "private_sector_output",
-            "value": -0.1,
-            "days": 2920
+          "add_buildings": {
+            "building": "civilian_factory",
+            "count": 2,
+            "regions": [
+              {
+                "from": "RUS",
+                "adm1": [
+                  "RUS-2392",
+                  "RUS-2394",
+                  "RUS-2357"
+                ]
+              }
+            ]
           }
         },
         {
@@ -1500,6 +1581,53 @@
             "value": -15,
             "days": 1825
           }
+        }
+      ]
+    },
+    {
+      "id": "rus_union_reunification",
+      "name": "Reunite with Belarus",
+      "description": "If Belarus agrees, the two states merge into one.",
+      "x": 7,
+      "y": 7,
+      "days": 140,
+      "prerequisites": [
+        [
+          "rus_union_state"
+        ]
+      ],
+      "available": {
+        "country": {
+          "tag": "BLR",
+          "trigger": {
+            "opinion_of_above": {
+              "target": "RUS",
+              "value": 60
+            }
+          }
+        }
+      },
+      "effects": [
+        {
+          "country": {
+            "tag": "BLR",
+            "limit": {
+              "opinion_of_above": {
+                "target": "RUS",
+                "value": 60
+              }
+            },
+            "effects": [
+              {
+                "dissolve_country": {
+                  "into": "RUS"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "add_political_power": 50
         }
       ]
     },
@@ -1631,6 +1759,9 @@
             "group": "labour_unions",
             "value": 3
           }
+        },
+        {
+          "add_treasury": 5
         }
       ]
     },
@@ -1670,7 +1801,7 @@
     {
       "id": "rus_compatriots_abroad",
       "name": "Compatriots abroad",
-      "description": "Make the Russian-speaking population of the neighbouring states a priority of foreign policy.",
+      "description": "Make the Russian-speaking population of the neighbouring states a priority of foreign policy, and claim Crimea.",
       "x": 9,
       "y": 4,
       "days": 70,
@@ -1684,16 +1815,22 @@
           "add_war_support": 0.05
         },
         {
-          "add_opinion": {
-            "target": "UKR",
-            "value": -15,
-            "days": 1825
+          "add_claim": {
+            "regions": [
+              {
+                "from": "UKR",
+                "adm1": [
+                  "RUS-283",
+                  "RUS-5482"
+                ]
+              }
+            ]
           }
         },
         {
           "add_opinion": {
-            "target": "GEO",
-            "value": -10,
+            "target": "UKR",
+            "value": -20,
             "days": 1825
           }
         },
@@ -1742,7 +1879,7 @@
     {
       "id": "rus_great_power_army",
       "name": "An army for a great power",
-      "description": "Raise defence spending and lengthen service.",
+      "description": "Raise defence spending, lengthen service and raise new divisions.",
       "x": 9,
       "y": 5,
       "days": 70,
@@ -1759,10 +1896,9 @@
           }
         },
         {
-          "add_timed_modifier": {
-            "modifier": "army_org",
-            "value": 0.05,
-            "days": 2920
+          "add_divisions": {
+            "template": "motorised_division",
+            "count": 4
           }
         },
         {
@@ -1832,6 +1968,39 @@
             "value": 0.1,
             "days": 2920
           }
+        },
+        {
+          "add_spirit": "rus_import_substitution"
+        }
+      ]
+    },
+    {
+      "id": "rus_crimean_question",
+      "name": "The Crimean question",
+      "description": "Press the claim on Crimea: a war goal against Ukraine.",
+      "x": 10,
+      "y": 6,
+      "days": 70,
+      "prerequisites": [
+        [
+          "rus_great_power_army"
+        ],
+        [
+          "rus_break_with_west"
+        ]
+      ],
+      "available": {
+        "has_claim_on": "UKR"
+      },
+      "effects": [
+        {
+          "add_wargoal": {
+            "target": "UKR",
+            "type": "claim"
+          }
+        },
+        {
+          "add_war_support": 0.05
         }
       ]
     },
@@ -2041,7 +2210,7 @@
     {
       "id": "rus_national_mobilisation",
       "name": "National mobilisation",
-      "description": "Universal military training and a war economy.",
+      "description": "Universal military training, a war economy and new divisions.",
       "x": 14,
       "y": 4,
       "days": 70,
@@ -2052,34 +2221,29 @@
       ],
       "effects": [
         {
-          "change_law": {
-            "category": "conscription",
-            "law": "extended_service"
+          "add_spirit": "rus_mobilised_nation"
+        },
+        {
+          "add_spirit": "war_economy"
+        },
+        {
+          "add_divisions": {
+            "template": "infantry_division",
+            "count": 6
           }
         },
         {
-          "add_timed_modifier": {
-            "modifier": "manpower_factor",
-            "value": 0.1,
-            "days": 2920
+          "add_equipment": {
+            "family": "infantry_equipment",
+            "amount": 3000
           }
-        },
-        {
-          "add_timed_modifier": {
-            "modifier": "army_attack",
-            "value": 0.05,
-            "days": 2920
-          }
-        },
-        {
-          "add_war_support": 0.08
         }
       ]
     },
     {
       "id": "rus_revanchist_doctrine",
       "name": "Revanchist doctrine",
-      "description": "A doctrine that treats the former Soviet borders as Russia's sphere. The neighbours and the West regard Russia as a threat.",
+      "description": "A doctrine that treats the former Soviet borders as Russia's sphere: claims on Crimea, the Donbas and northern Kazakhstan. The neighbours and the West regard Russia as a threat.",
       "x": 13,
       "y": 5,
       "days": 70,
@@ -2090,6 +2254,35 @@
         ]
       ],
       "effects": [
+        {
+          "add_claim": {
+            "regions": [
+              {
+                "from": "UKR",
+                "adm1": [
+                  "RUS-283",
+                  "RUS-5482",
+                  "UKR-327",
+                  "UKR-329"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "add_claim": {
+            "regions": [
+              {
+                "from": "KAZ",
+                "adm1": [
+                  "KAZ-3204",
+                  "KAZ-3205",
+                  "KAZ-3206"
+                ]
+              }
+            ]
+          }
+        },
         {
           "add_opinion": {
             "target": "USA",
@@ -2133,6 +2326,80 @@
         },
         {
           "add_war_support": 0.05
+        }
+      ]
+    },
+    {
+      "id": "rus_war_for_the_lost_lands",
+      "name": "War for the lost lands",
+      "description": "Go to war with Ukraine for the claimed regions.",
+      "x": 12,
+      "y": 6,
+      "days": 35,
+      "prerequisites": [
+        [
+          "rus_revanchist_doctrine"
+        ]
+      ],
+      "available": {
+        "all": [
+          {
+            "has_claim_on": "UKR"
+          },
+          {
+            "at_war": false
+          }
+        ]
+      },
+      "effects": [
+        {
+          "declare_war": {
+            "target": "UKR",
+            "goal": "limited",
+            "zone": [
+              {
+                "from": "UKR",
+                "adm1": [
+                  "RUS-283",
+                  "RUS-5482",
+                  "UKR-327",
+                  "UKR-329"
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "ai_weight": 0.5
+    },
+    {
+      "id": "rus_steppe_claims",
+      "name": "Pressure on Kazakhstan",
+      "description": "A war goal against Kazakhstan over its northern regions.",
+      "x": 14,
+      "y": 6,
+      "days": 70,
+      "prerequisites": [
+        [
+          "rus_revanchist_doctrine"
+        ]
+      ],
+      "available": {
+        "has_claim_on": "KAZ"
+      },
+      "effects": [
+        {
+          "add_wargoal": {
+            "target": "KAZ",
+            "type": "claim"
+          }
+        },
+        {
+          "add_opinion": {
+            "target": "KAZ",
+            "value": -30,
+            "days": 1825
+          }
         }
       ]
     },
@@ -2287,10 +2554,22 @@
           }
         },
         {
-          "add_timed_modifier": {
-            "modifier": "army_org",
-            "value": 0.05,
-            "days": 2920
+          "add_spirit": "rus_rearmament"
+        },
+        {
+          "add_buildings": {
+            "building": "military_factory",
+            "count": 2,
+            "regions": [
+              {
+                "from": "RUS",
+                "adm1": [
+                  "RUS-2379",
+                  "RUS-2386",
+                  "RUS-3200"
+                ]
+              }
+            ]
           }
         },
         {
@@ -2368,10 +2647,38 @@
       "ai_weight": 5
     },
     {
+      "id": "rus_debt_restructuring",
+      "name": "Restructure the debt",
+      "description": "Agree new terms with creditors for the debt left by the 1998 default.",
+      "x": 19,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "rus_economic_recovery"
+        ]
+      ],
+      "available": {
+        "has_spirit": "rus_crisis_1998"
+      },
+      "effects": [
+        {
+          "swap_spirit": {
+            "from": "rus_crisis_1998",
+            "to": "rus_crisis_recovery"
+          }
+        },
+        {
+          "add_political_power": -20
+        }
+      ],
+      "ai_weight": 4
+    },
+    {
       "id": "rus_flat_tax",
       "name": "13 percent flat income tax",
       "description": "Replace the progressive income tax with a single 13 percent rate, introduced in 2001.",
-      "x": 19,
+      "x": 21,
       "y": 1,
       "days": 70,
       "prerequisites": [
@@ -2403,54 +2710,21 @@
       },
       "effects": [
         {
+          "add_spirit": "rus_flat_tax"
+        },
+        {
           "add_interest_group_approval": {
             "group": "business",
             "value": 6
           }
-        },
-        {
-          "add_timed_modifier": {
-            "modifier": "tax_efficiency",
-            "value": 0.05,
-            "days": 3650
-          }
-        },
-        {
-          "add_economic_mood": 0.04
         }
       ],
       "ai_weight": 4
     },
     {
-      "id": "rus_stabilization_fund",
-      "name": "Stabilization fund",
-      "description": "Save part of the oil revenue in a fund that balances the budget when prices fall. The real fund was established on 1 January 2004.",
-      "x": 21,
-      "y": 1,
-      "days": 70,
-      "prerequisites": [
-        [
-          "rus_economic_recovery"
-        ]
-      ],
-      "effects": [
-        {
-          "add_timed_modifier": {
-            "modifier": "inflation",
-            "value": -0.02,
-            "days": 3650
-          }
-        },
-        {
-          "add_economic_mood": 0.03
-        }
-      ],
-      "ai_weight": 3
-    },
-    {
-      "id": "rus_energy_exports",
-      "name": "Energy exports",
-      "description": "Expand oil and gas export capacity.",
+      "id": "rus_bank_recapitalisation",
+      "name": "Recapitalise the banks",
+      "description": "Close insolvent banks and recapitalise the sound ones.",
       "x": 23,
       "y": 1,
       "days": 70,
@@ -2459,25 +2733,75 @@
           "rus_economic_recovery"
         ]
       ],
+      "available": {
+        "treasury_above": 3
+      },
       "effects": [
         {
+          "add_treasury": -3
+        },
+        {
           "add_timed_modifier": {
-            "modifier": "fossil_output",
-            "value": 0.1,
-            "days": 3650
+            "modifier": "interest_rate",
+            "value": -0.005,
+            "days": 1825
           }
         },
         {
-          "add_economic_mood": 0.05
+          "add_interest_group_approval": {
+            "group": "business",
+            "value": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "rus_repay_foreign_debt",
+      "name": "Repay the foreign debt early",
+      "description": "Use oil revenue to pay off the debt to foreign creditors ahead of schedule.",
+      "x": 19,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "rus_debt_restructuring"
+        ],
+        [
+          "rus_stabilization_fund"
+        ]
+      ],
+      "available": {
+        "all": [
+          {
+            "has_spirit": "rus_crisis_recovery"
+          },
+          {
+            "treasury_above": 16
+          }
+        ]
+      },
+      "effects": [
+        {
+          "add_treasury": -15
+        },
+        {
+          "remove_spirit": "rus_crisis_recovery"
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "foreign_investment",
+            "value": 0.05,
+            "days": 2920
+          }
         }
       ],
-      "ai_weight": 3
+      "ai_weight": 4
     },
     {
       "id": "rus_tax_collection",
-      "name": "Tax collection",
-      "description": "A single tax service and fewer exemptions.",
-      "x": 19,
+      "name": "A single tax service",
+      "description": "One federal tax service and fewer exemptions.",
+      "x": 21,
       "y": 2,
       "days": 70,
       "prerequisites": [
@@ -2509,11 +2833,34 @@
       ]
     },
     {
+      "id": "rus_stabilization_fund",
+      "name": "Stabilization fund",
+      "description": "Save part of the oil revenue in a fund that balances the budget when prices fall. The real fund was established on 1 January 2004.",
+      "x": 23,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "rus_bank_recapitalisation",
+          "rus_flat_tax"
+        ]
+      ],
+      "effects": [
+        {
+          "add_spirit": "rus_stabilization_fund"
+        },
+        {
+          "add_treasury": 5
+        }
+      ],
+      "ai_weight": 3
+    },
+    {
       "id": "rus_sovereign_funds",
       "name": "Reserve Fund and National Welfare Fund",
       "description": "Split the stabilization fund into a Reserve Fund for the budget and a National Welfare Fund for pensions, as Russia did in February 2008.",
-      "x": 21,
-      "y": 2,
+      "x": 23,
+      "y": 3,
       "days": 70,
       "prerequisites": [
         [
@@ -2521,16 +2868,415 @@
         ]
       ],
       "available": {
-        "date_after": "2008-02-01"
+        "all": [
+          {
+            "date_after": "2008-02-01"
+          },
+          {
+            "has_spirit": "rus_stabilization_fund"
+          }
+        ]
       },
       "effects": [
         {
-          "add_treasury": 20
+          "swap_spirit": {
+            "from": "rus_stabilization_fund",
+            "to": "rus_sovereign_funds"
+          }
+        },
+        {
+          "add_treasury": 15
+        }
+      ],
+      "ai_weight": 3
+    },
+    {
+      "id": "rus_central_bank_targeting",
+      "name": "Inflation targeting",
+      "description": "The central bank targets inflation and lets the ruble float.",
+      "x": 21,
+      "y": 3,
+      "days": 70,
+      "prerequisites": [
+        [
+          "rus_tax_collection"
+        ]
+      ],
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "inflation",
+            "value": -0.02,
+            "days": 2920
+          }
         },
         {
           "add_timed_modifier": {
             "modifier": "interest_rate",
             "value": -0.005,
+            "days": 2920
+          }
+        }
+      ]
+    },
+    {
+      "id": "rus_special_economic_zones",
+      "name": "Special economic zones",
+      "description": "Tax breaks and simpler customs for investors in chosen regions.",
+      "x": 19,
+      "y": 3,
+      "days": 70,
+      "prerequisites": [
+        [
+          "rus_repay_foreign_debt",
+          "rus_tax_collection"
+        ]
+      ],
+      "effects": [
+        {
+          "add_spirit": "rus_special_economic_zones"
+        },
+        {
+          "add_buildings": {
+            "building": "civilian_factory",
+            "count": 1,
+            "regions": [
+              {
+                "from": "RUS",
+                "adm1": [
+                  "RUS-2394"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "add_buildings": {
+            "building": "civilian_factory",
+            "count": 1,
+            "regions": [
+              {
+                "from": "RUS",
+                "adm1": [
+                  "RUS-2324"
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "rus_financial_centre",
+      "name": "A financial centre in Moscow",
+      "description": "Make Moscow a regional financial centre.",
+      "x": 19,
+      "y": 4,
+      "days": 70,
+      "prerequisites": [
+        [
+          "rus_special_economic_zones"
+        ]
+      ],
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "foreign_investment",
+            "value": 0.05,
+            "days": 2920
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "trade_efficiency",
+            "value": 0.02,
+            "days": 2920
+          }
+        },
+        {
+          "add_buildings": {
+            "building": "data_centre",
+            "count": 1,
+            "regions": [
+              {
+                "from": "RUS",
+                "adm1": [
+                  "RUS-2365"
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "rus_pension_reform",
+      "name": "Pension reform",
+      "description": "Raise the retirement age step by step to keep the pension system solvent.",
+      "x": 21,
+      "y": 4,
+      "days": 70,
+      "prerequisites": [
+        [
+          "rus_central_bank_targeting"
+        ]
+      ],
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "welfare_cost",
+            "value": -0.005,
+            "days": 3650
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "labour_unions",
+            "value": -6
+          }
+        },
+        {
+          "add_ruling_party_popularity": -0.02
+        },
+        {
+          "add_stability": -0.02
+        }
+      ]
+    },
+    {
+      "id": "rus_national_payment_system",
+      "name": "A national payment system",
+      "description": "A domestic card network and payment system.",
+      "x": 23,
+      "y": 4,
+      "days": 70,
+      "prerequisites": [
+        [
+          "rus_sovereign_funds",
+          "rus_central_bank_targeting"
+        ]
+      ],
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "foreign_influence_resistance",
+            "value": 0.05,
+            "days": 3650
+          }
+        },
+        {
+          "add_buildings": {
+            "building": "data_centre",
+            "count": 1,
+            "regions": [
+              {
+                "from": "RUS",
+                "adm1": [
+                  "RUS-2364"
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "rus_import_substitution",
+      "name": "Import substitution",
+      "description": "Replace imported goods with domestic production behind trade barriers.",
+      "x": 22,
+      "y": 5,
+      "days": 70,
+      "prerequisites": [
+        [
+          "rus_national_payment_system",
+          "rus_pension_reform"
+        ]
+      ],
+      "effects": [
+        {
+          "add_spirit": "rus_import_substitution"
+        },
+        {
+          "add_buildings": {
+            "building": "civilian_factory",
+            "count": 2,
+            "regions": [
+              {
+                "from": "RUS",
+                "adm1": [
+                  "RUS-2392",
+                  "RUS-2394",
+                  "RUS-2357"
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "rus_diversification",
+      "name": "Economic diversification",
+      "description": "Reduce the economy's dependence on oil and gas.",
+      "x": 20,
+      "y": 5,
+      "days": 70,
+      "prerequisites": [
+        [
+          "rus_financial_centre",
+          "rus_pension_reform"
+        ]
+      ],
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "gdp_growth",
+            "value": 0.004,
+            "days": 2920
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "private_sector_output",
+            "value": 0.05,
+            "days": 2920
+          }
+        },
+        {
+          "add_buildings": {
+            "building": "civilian_factory",
+            "count": 2
+          }
+        }
+      ]
+    },
+    {
+      "id": "rus_industrial_base",
+      "name": "Rebuild the industrial base",
+      "description": "Bring the factories of the Soviet era back to work.",
+      "x": 28,
+      "y": 0,
+      "days": 70,
+      "effects": [
+        {
+          "add_political_power": 20
+        },
+        {
+          "add_buildings": {
+            "building": "civilian_factory",
+            "count": 1
+          }
+        }
+      ],
+      "ai_weight": 5
+    },
+    {
+      "id": "rus_energy_exports",
+      "name": "Energy exports",
+      "description": "Expand oil and gas production in Western Siberia.",
+      "x": 25,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "rus_industrial_base"
+        ]
+      ],
+      "effects": [
+        {
+          "add_buildings": {
+            "building": "refinery",
+            "count": 2,
+            "regions": [
+              {
+                "from": "RUS",
+                "adm1": [
+                  "RUS-2396",
+                  "RUS-2398"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "fossil_output",
+            "value": 0.05,
+            "days": 2920
+          }
+        }
+      ],
+      "ai_weight": 3
+    },
+    {
+      "id": "rus_modernise_soviet_industry",
+      "name": "Modernise Soviet-era industry",
+      "description": "Replace worn-out machinery in the old industrial cities.",
+      "x": 28,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "rus_industrial_base"
+        ]
+      ],
+      "available": {
+        "treasury_above": 3
+      },
+      "effects": [
+        {
+          "add_treasury": -3
+        },
+        {
+          "add_buildings": {
+            "building": "civilian_factory",
+            "count": 2,
+            "regions": [
+              {
+                "from": "RUS",
+                "adm1": [
+                  "RUS-2379",
+                  "RUS-2386",
+                  "RUS-3200"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "production_efficiency",
+            "value": 0.02,
+            "days": 2920
+          }
+        }
+      ],
+      "ai_weight": 3
+    },
+    {
+      "id": "rus_roads_and_rail",
+      "name": "Roads and railways",
+      "description": "A federal programme for roads and railways. Unlocks a yearly regional road programme.",
+      "x": 30,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "rus_industrial_base"
+        ]
+      ],
+      "effects": [
+        {
+          "add_buildings": {
+            "building": "infrastructure",
+            "count": 3
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "construction_speed",
+            "value": 0.05,
             "days": 2920
           }
         }
@@ -2541,7 +3287,7 @@
       "id": "rus_state_energy_majors",
       "name": "State energy majors",
       "description": "Bring the largest oil and gas producers under state ownership.",
-      "x": 23,
+      "x": 25,
       "y": 2,
       "days": 70,
       "prerequisites": [
@@ -2551,11 +3297,7 @@
       ],
       "effects": [
         {
-          "add_timed_modifier": {
-            "modifier": "state_industry_output",
-            "value": 0.05,
-            "days": 3650
-          }
+          "add_spirit": "rus_state_champions"
         },
         {
           "add_interest_group_approval": {
@@ -2576,7 +3318,7 @@
       "id": "rus_rosneft_expansion",
       "name": "Expansion of Rosneft",
       "description": "The state oil company Rosneft acquires Yuganskneftegaz, the main production unit of Yukos, sold at auction in December 2004.",
-      "x": 24,
+      "x": 25,
       "y": 3,
       "days": 70,
       "prerequisites": [
@@ -2615,10 +3357,17 @@
       },
       "effects": [
         {
-          "add_timed_modifier": {
-            "modifier": "fossil_output",
-            "value": 0.05,
-            "days": 3650
+          "add_buildings": {
+            "building": "refinery",
+            "count": 1,
+            "regions": [
+              {
+                "from": "RUS",
+                "adm1": [
+                  "RUS-2396"
+                ]
+              }
+            ]
           }
         },
         {
@@ -2634,38 +3383,10 @@
       "ai_weight": 3
     },
     {
-      "id": "rus_infrastructure",
-      "name": "Roads and railways",
-      "description": "A federal programme for roads, railways and ports.",
-      "x": 20,
-      "y": 3,
-      "days": 70,
-      "prerequisites": [
-        [
-          "rus_tax_collection",
-          "rus_sovereign_funds"
-        ]
-      ],
-      "effects": [
-        {
-          "add_timed_modifier": {
-            "modifier": "construction_speed",
-            "value": 0.08,
-            "days": 2920
-          }
-        },
-        {
-          "set_budget": {
-            "spending": 0.5
-          }
-        }
-      ]
-    },
-    {
       "id": "rus_pipelines",
       "name": "New export pipelines",
-      "description": "Pipelines to Europe and to Asia that diversify export routes.",
-      "x": 22,
+      "description": "Pipelines to Europe and to Asia that diversify export routes. Unlocks pipeline projects.",
+      "x": 26,
       "y": 3,
       "days": 70,
       "prerequisites": [
@@ -2682,76 +3403,255 @@
           }
         },
         {
+          "add_buildings": {
+            "building": "infrastructure",
+            "count": 1,
+            "regions": [
+              {
+                "from": "RUS",
+                "adm1": [
+                  "RUS-2398"
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "rus_automotive_industry",
+      "name": "Automotive industry",
+      "description": "Joint ventures with foreign car makers in the Volga region.",
+      "x": 27,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "rus_modernise_soviet_industry"
+        ]
+      ],
+      "effects": [
+        {
+          "add_buildings": {
+            "building": "civilian_factory",
+            "count": 2,
+            "regions": [
+              {
+                "from": "RUS",
+                "adm1": [
+                  "RUS-2392",
+                  "RUS-2394"
+                ]
+              }
+            ]
+          }
+        },
+        {
           "add_timed_modifier": {
-            "modifier": "fossil_output",
-            "value": 0.05,
+            "modifier": "foreign_investment",
+            "value": 0.03,
             "days": 2920
           }
         }
       ]
     },
     {
-      "id": "rus_skolkovo",
-      "name": "Skolkovo innovation centre",
-      "description": "A technology park near Moscow with its own tax and legal regime, announced in November 2009 and set up by law in September 2010.",
-      "x": 19,
-      "y": 4,
+      "id": "rus_metallurgy",
+      "name": "Steel and metals",
+      "description": "Modernise the steel works and smelters of the Urals and Siberia.",
+      "x": 29,
+      "y": 2,
       "days": 70,
       "prerequisites": [
         [
-          "rus_infrastructure"
+          "rus_modernise_soviet_industry"
         ]
       ],
-      "available": {
-        "date_after": "2009-11-12"
-      },
       "effects": [
         {
+          "add_buildings": {
+            "building": "civilian_factory",
+            "count": 1,
+            "regions": [
+              {
+                "from": "RUS",
+                "adm1": [
+                  "RUS-2379"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "add_buildings": {
+            "building": "civilian_factory",
+            "count": 1,
+            "regions": [
+              {
+                "from": "RUS",
+                "adm1": [
+                  "RUS-2603"
+                ]
+              }
+            ]
+          }
+        },
+        {
           "add_timed_modifier": {
-            "modifier": "research_speed",
-            "value": 0.05,
+            "modifier": "private_sector_output",
+            "value": 0.03,
             "days": 2920
           }
-        },
-        {
-          "add_interest_group_approval": {
-            "group": "urban_middle_class",
-            "value": 3
-          }
-        },
-        {
-          "add_interest_group_approval": {
-            "group": "youth_students",
-            "value": 3
-          }
         }
-      ],
-      "ai_weight": 3
+      ]
     },
     {
-      "id": "rus_agriculture",
-      "name": "Agricultural revival",
-      "description": "Credit and subsidies for farms.",
-      "x": 21,
-      "y": 4,
+      "id": "rus_trans_siberian",
+      "name": "Upgrade the Trans-Siberian railway",
+      "description": "Double tracks and electrify the line across Siberia.",
+      "x": 31,
+      "y": 2,
       "days": 70,
       "prerequisites": [
         [
-          "rus_infrastructure"
+          "rus_roads_and_rail"
         ]
       ],
       "effects": [
         {
-          "add_interest_group_approval": {
-            "group": "rural",
-            "value": 5
+          "add_buildings": {
+            "building": "infrastructure",
+            "count": 4,
+            "regions": [
+              {
+                "from": "RUS",
+                "adm1": [
+                  "RUS-2403",
+                  "RUS-2603",
+                  "RUS-2602",
+                  "RUS-2397"
+                ]
+              }
+            ]
           }
         },
         {
           "add_timed_modifier": {
-            "modifier": "gdp_growth",
-            "value": 0.003,
-            "days": 1825
+            "modifier": "trade_efficiency",
+            "value": 0.02,
+            "days": 2920
+          }
+        }
+      ]
+    },
+    {
+      "id": "rus_aviation_industry",
+      "name": "Aviation industry",
+      "description": "Merge the aircraft makers into one corporation and build a new airliner.",
+      "x": 28,
+      "y": 3,
+      "days": 70,
+      "prerequisites": [
+        [
+          "rus_automotive_industry",
+          "rus_metallurgy"
+        ]
+      ],
+      "effects": [
+        {
+          "add_buildings": {
+            "building": "military_factory",
+            "count": 1,
+            "regions": [
+              {
+                "from": "RUS",
+                "adm1": [
+                  "RUS-2392"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "add_buildings": {
+            "building": "civilian_factory",
+            "count": 1,
+            "regions": [
+              {
+                "from": "RUS",
+                "adm1": [
+                  "RUS-2364"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "add_research_bonus": {
+            "category": "air_drones",
+            "value": 0.2,
+            "uses": 2
+          }
+        }
+      ]
+    },
+    {
+      "id": "rus_far_east",
+      "name": "Develop the Far East",
+      "description": "Ports, plants and roads in Primorye, Khabarovsk and Amur. Unlocks a Far East investment programme.",
+      "x": 30,
+      "y": 3,
+      "days": 70,
+      "prerequisites": [
+        [
+          "rus_trans_siberian"
+        ]
+      ],
+      "effects": [
+        {
+          "add_buildings": {
+            "building": "civilian_factory",
+            "count": 2,
+            "regions": [
+              {
+                "from": "RUS",
+                "adm1": [
+                  "RUS-2611",
+                  "RUS-2614",
+                  "RUS-2609"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "add_buildings": {
+            "building": "infrastructure",
+            "count": 2,
+            "regions": [
+              {
+                "from": "RUS",
+                "adm1": [
+                  "RUS-2611",
+                  "RUS-2614",
+                  "RUS-2609"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "add_buildings": {
+            "building": "port",
+            "count": 1,
+            "regions": [
+              {
+                "from": "RUS",
+                "adm1": [
+                  "RUS-2611"
+                ]
+              }
+            ]
           }
         }
       ]
@@ -2760,12 +3660,13 @@
       "id": "rus_nuclear_power",
       "name": "Nuclear power",
       "description": "Build new reactors at home and for export.",
-      "x": 23,
+      "x": 26,
       "y": 4,
       "days": 70,
       "prerequisites": [
         [
-          "rus_pipelines"
+          "rus_pipelines",
+          "rus_rosneft_expansion"
         ]
       ],
       "effects": [
@@ -2782,70 +3683,111 @@
             "value": -0.03,
             "days": 3650
           }
+        },
+        {
+          "add_research_bonus": {
+            "category": "industry_energy",
+            "value": 0.2,
+            "uses": 2
+          }
         }
       ]
     },
     {
-      "id": "rus_import_substitution",
-      "name": "Import substitution",
-      "description": "Replace imported goods with domestic production.",
-      "x": 20,
-      "y": 5,
+      "id": "rus_shipbuilding",
+      "name": "Shipbuilding",
+      "description": "Modernise the shipyards of St Petersburg and the Far East.",
+      "x": 28,
+      "y": 4,
       "days": 70,
       "prerequisites": [
         [
-          "rus_skolkovo",
-          "rus_agriculture"
+          "rus_aviation_industry"
         ]
       ],
       "effects": [
         {
+          "add_buildings": {
+            "building": "military_factory",
+            "count": 1,
+            "regions": [
+              {
+                "from": "RUS",
+                "adm1": [
+                  "RUS-2337"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "add_buildings": {
+            "building": "port",
+            "count": 1,
+            "regions": [
+              {
+                "from": "RUS",
+                "adm1": [
+                  "RUS-2337"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "add_research_bonus": {
+            "category": "naval",
+            "value": 0.2,
+            "uses": 2
+          }
+        }
+      ]
+    },
+    {
+      "id": "rus_sakhalin_projects",
+      "name": "Sakhalin oil and gas",
+      "description": "Offshore oil and gas around Sakhalin with liquefied gas for Asia.",
+      "x": 30,
+      "y": 4,
+      "days": 70,
+      "prerequisites": [
+        [
+          "rus_far_east"
+        ]
+      ],
+      "effects": [
+        {
+          "add_buildings": {
+            "building": "refinery",
+            "count": 1,
+            "regions": [
+              {
+                "from": "RUS",
+                "adm1": [
+                  "RUS-2616"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "add_buildings": {
+            "building": "port",
+            "count": 1,
+            "regions": [
+              {
+                "from": "RUS",
+                "adm1": [
+                  "RUS-2616"
+                ]
+              }
+            ]
+          }
+        },
+        {
           "add_timed_modifier": {
-            "modifier": "state_industry_output",
+            "modifier": "fossil_output",
             "value": 0.04,
-            "days": 2920
-          }
-        },
-        {
-          "add_timed_modifier": {
-            "modifier": "trade_efficiency",
-            "value": -0.03,
-            "days": 2920
-          }
-        },
-        {
-          "add_interest_group_approval": {
-            "group": "business",
-            "value": 2
-          }
-        }
-      ]
-    },
-    {
-      "id": "rus_diversification",
-      "name": "Economic diversification",
-      "description": "Reduce the economy's dependence on oil and gas.",
-      "x": 22,
-      "y": 5,
-      "days": 70,
-      "prerequisites": [
-        [
-          "rus_agriculture",
-          "rus_nuclear_power"
-        ]
-      ],
-      "effects": [
-        {
-          "add_timed_modifier": {
-            "modifier": "gdp_growth",
-            "value": 0.004,
-            "days": 2920
-          }
-        },
-        {
-          "add_timed_modifier": {
-            "modifier": "private_sector_output",
-            "value": 0.05,
             "days": 2920
           }
         }
@@ -2854,28 +3796,165 @@
     {
       "id": "rus_arctic_development",
       "name": "Arctic development",
-      "description": "Develop Arctic oil, gas and shipping.",
-      "x": 24,
+      "description": "Develop Arctic oil, gas and shipping along the northern sea route.",
+      "x": 27,
       "y": 5,
       "days": 70,
       "prerequisites": [
         [
-          "rus_nuclear_power"
+          "rus_nuclear_power",
+          "rus_shipbuilding"
+        ]
+      ],
+      "effects": [
+        {
+          "add_buildings": {
+            "building": "port",
+            "count": 1,
+            "regions": [
+              {
+                "from": "RUS",
+                "adm1": [
+                  "RUS-2333"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "add_buildings": {
+            "building": "infrastructure",
+            "count": 2,
+            "regions": [
+              {
+                "from": "RUS",
+                "adm1": [
+                  "RUS-2333",
+                  "RUS-2354"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "fossil_output",
+            "value": 0.04,
+            "days": 3650
+          }
+        }
+      ]
+    },
+    {
+      "id": "rus_power_grid",
+      "name": "A national power grid",
+      "description": "New power lines and plants for the growing cities.",
+      "x": 29,
+      "y": 5,
+      "days": 70,
+      "prerequisites": [
+        [
+          "rus_shipbuilding",
+          "rus_sakhalin_projects"
         ]
       ],
       "effects": [
         {
           "add_timed_modifier": {
-            "modifier": "fossil_output",
-            "value": 0.05,
+            "modifier": "energy_cost",
+            "value": -0.04,
             "days": 3650
           }
         },
         {
+          "add_buildings": {
+            "building": "renewable_plant",
+            "count": 1,
+            "regions": [
+              {
+                "from": "RUS",
+                "adm1": [
+                  "RUS-2602"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "add_buildings": {
+            "building": "infrastructure",
+            "count": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "rus_modern_industry",
+      "name": "Modernised industry",
+      "description": "The last of the Soviet-era plants are rebuilt or closed.",
+      "x": 28,
+      "y": 6,
+      "days": 105,
+      "prerequisites": [
+        [
+          "rus_arctic_development",
+          "rus_power_grid"
+        ],
+        [
+          "rus_diversification",
+          "rus_import_substitution"
+        ]
+      ],
+      "available": {
+        "has_spirit": "rus_soviet_industry"
+      },
+      "effects": [
+        {
+          "swap_spirit": {
+            "from": "rus_soviet_industry",
+            "to": "rus_modern_industry"
+          }
+        },
+        {
+          "add_buildings": {
+            "building": "civilian_factory",
+            "count": 2
+          }
+        }
+      ],
+      "ai_weight": 3
+    },
+    {
+      "id": "rus_agricultural_revival",
+      "name": "Agricultural revival",
+      "description": "Credit and subsidies for farms; Russia becomes a large grain exporter.",
+      "x": 31,
+      "y": 5,
+      "days": 70,
+      "prerequisites": [
+        [
+          "rus_power_grid"
+        ]
+      ],
+      "effects": [
+        {
+          "add_interest_group_approval": {
+            "group": "rural",
+            "value": 6
+          }
+        },
+        {
           "add_timed_modifier": {
-            "modifier": "naval_effectiveness",
-            "value": 0.03,
-            "days": 3650
+            "modifier": "gdp_growth",
+            "value": 0.002,
+            "days": 2920
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "trade_efficiency",
+            "value": 0.02,
+            "days": 2920
           }
         }
       ]
@@ -2884,15 +3963,15 @@
       "id": "rus_military_reform",
       "name": "Military reform",
       "description": "Reorganise the armed forces and their command.",
-      "x": 28,
+      "x": 36,
       "y": 0,
       "days": 70,
       "effects": [
         {
           "add_timed_modifier": {
             "modifier": "army_org",
-            "value": 0.05,
-            "days": 3650
+            "value": 0.03,
+            "days": 1460
           }
         },
         {
@@ -2907,8 +3986,8 @@
     {
       "id": "rus_chechnya",
       "name": "Counter-terrorism in Chechnya",
-      "description": "Federal forces fight the insurgency in Chechnya. Russia declared the counter-terrorism operation there over in April 2009.",
-      "x": 26,
+      "description": "Federal forces fight the insurgency in Chechnya. Unlocks counter-terrorism operations.",
+      "x": 33,
       "y": 1,
       "days": 70,
       "prerequisites": [
@@ -2921,7 +4000,7 @@
           "add_timed_modifier": {
             "modifier": "internal_security",
             "value": 0.05,
-            "days": 2920
+            "days": 1825
           }
         },
         {
@@ -2937,13 +4016,174 @@
           }
         }
       ],
+      "ai_weight": 4
+    },
+    {
+      "id": "rus_chechen_administration",
+      "name": "A pro-federal administration in Chechnya",
+      "description": "Hand the running of Chechnya to a local administration loyal to Moscow.",
+      "x": 33,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "rus_chechnya"
+        ]
+      ],
+      "available": {
+        "all": [
+          {
+            "has_spirit": "rus_chechen_war"
+          },
+          {
+            "date_after": "2003-01-01"
+          }
+        ]
+      },
+      "effects": [
+        {
+          "swap_spirit": {
+            "from": "rus_chechen_war",
+            "to": "rus_north_caucasus_insurgency"
+          }
+        },
+        {
+          "add_stability": 0.02
+        }
+      ],
+      "ai_weight": 4
+    },
+    {
+      "id": "rus_chechnya_reconstruction",
+      "name": "Rebuild Grozny",
+      "description": "Federal funds for the reconstruction of Chechnya after the counter-terrorism operation ended in April 2009.",
+      "x": 33,
+      "y": 3,
+      "days": 70,
+      "prerequisites": [
+        [
+          "rus_chechen_administration"
+        ]
+      ],
+      "available": {
+        "all": [
+          {
+            "date_after": "2009-05-01"
+          },
+          {
+            "treasury_above": 3
+          }
+        ]
+      },
+      "effects": [
+        {
+          "add_treasury": -3
+        },
+        {
+          "add_buildings": {
+            "building": "infrastructure",
+            "count": 2,
+            "regions": [
+              {
+                "from": "RUS",
+                "adm1": [
+                  "RUS-2416"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "add_buildings": {
+            "building": "civilian_factory",
+            "count": 1,
+            "regions": [
+              {
+                "from": "RUS",
+                "adm1": [
+                  "RUS-2416"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "add_unrest": -0.03
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "minorities",
+            "value": 4
+          }
+        }
+      ],
+      "ai_weight": 3
+    },
+    {
+      "id": "rus_caucasus_development",
+      "name": "Develop the North Caucasus",
+      "description": "Jobs, roads and resorts to end the insurgency's recruitment.",
+      "x": 33,
+      "y": 4,
+      "days": 105,
+      "prerequisites": [
+        [
+          "rus_chechnya_reconstruction"
+        ]
+      ],
+      "available": {
+        "all": [
+          {
+            "has_spirit": "rus_north_caucasus_insurgency"
+          },
+          {
+            "treasury_above": 2
+          },
+          {
+            "date_after": "2011-01-01"
+          }
+        ]
+      },
+      "effects": [
+        {
+          "remove_spirit": "rus_north_caucasus_insurgency"
+        },
+        {
+          "add_buildings": {
+            "building": "infrastructure",
+            "count": 1,
+            "regions": [
+              {
+                "from": "RUS",
+                "adm1": [
+                  "RUS-2417"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "add_buildings": {
+            "building": "civilian_factory",
+            "count": 1,
+            "regions": [
+              {
+                "from": "RUS",
+                "adm1": [
+                  "RUS-2417"
+                ]
+              }
+            ]
+          }
+        }
+      ],
       "ai_weight": 3
     },
     {
       "id": "rus_contract_service",
       "name": "Contract service",
       "description": "Expand contract soldiers alongside conscripts.",
-      "x": 28,
+      "x": 35,
       "y": 1,
       "days": 70,
       "prerequisites": [
@@ -2953,11 +4193,7 @@
       ],
       "effects": [
         {
-          "add_timed_modifier": {
-            "modifier": "army_org",
-            "value": 0.03,
-            "days": 3650
-          }
+          "add_spirit": "rus_contract_army"
         },
         {
           "add_interest_group_approval": {
@@ -2971,7 +4207,7 @@
       "id": "rus_strategic_forces",
       "name": "Strategic forces",
       "description": "Maintain and modernise strategic forces.",
-      "x": 30,
+      "x": 37,
       "y": 1,
       "days": 70,
       "prerequisites": [
@@ -2981,7 +4217,14 @@
       ],
       "effects": [
         {
-          "add_war_support": 0.03
+          "add_war_support": 0.02
+        },
+        {
+          "add_research_bonus": {
+            "category": "artillery_missiles",
+            "value": 0.2,
+            "uses": 2
+          }
         },
         {
           "add_interest_group_approval": {
@@ -2992,43 +4235,38 @@
       ]
     },
     {
-      "id": "rus_chechnya_reconstruction",
-      "name": "Rebuild Grozny",
-      "description": "Federal funds for the reconstruction of Chechnya.",
-      "x": 26,
-      "y": 2,
+      "id": "rus_air_force",
+      "name": "A new air force",
+      "description": "New fighters and helicopters, and modern air bases.",
+      "x": 39,
+      "y": 1,
       "days": 70,
       "prerequisites": [
         [
-          "rus_chechnya"
+          "rus_military_reform"
         ]
       ],
-      "available": {
-        "date_after": "2009-05-01"
-      },
       "effects": [
         {
-          "add_unrest": -0.03
-        },
-        {
-          "add_interest_group_approval": {
-            "group": "minorities",
-            "value": 4
+          "add_buildings": {
+            "building": "air_base",
+            "count": 2
           }
         },
         {
-          "set_budget": {
-            "spending": 0.3
+          "add_research_bonus": {
+            "category": "air_drones",
+            "value": 0.2,
+            "uses": 2
           }
         }
-      ],
-      "ai_weight": 2
+      ]
     },
     {
       "id": "rus_new_look",
       "name": "The 2008 reform",
       "description": "Cut the officer corps and turn divisions into brigades, as the reform announced in October 2008 did.",
-      "x": 28,
+      "x": 35,
       "y": 2,
       "days": 70,
       "prerequisites": [
@@ -3043,15 +4281,22 @@
         {
           "add_timed_modifier": {
             "modifier": "army_org",
-            "value": 0.05,
-            "days": 3650
+            "value": 0.04,
+            "days": 2920
           }
         },
         {
           "add_timed_modifier": {
             "modifier": "training_time",
             "value": -0.1,
-            "days": 3650
+            "days": 2920
+          }
+        },
+        {
+          "add_research_bonus": {
+            "category": "doctrine",
+            "value": 0.25,
+            "uses": 2
           }
         },
         {
@@ -3067,7 +4312,7 @@
       "id": "rus_missile_defence",
       "name": "Air and missile defence",
       "description": "New air-defence systems around the capital and the bases.",
-      "x": 30,
+      "x": 37,
       "y": 2,
       "days": 70,
       "prerequisites": [
@@ -3079,15 +4324,51 @@
         {
           "add_timed_modifier": {
             "modifier": "army_defence",
-            "value": 0.05,
-            "days": 3650
+            "value": 0.03,
+            "days": 2920
+          }
+        },
+        {
+          "add_research_bonus": {
+            "category": "artillery_missiles",
+            "value": 0.2,
+            "uses": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "rus_long_range_aviation",
+      "name": "Long-range aviation",
+      "description": "Modernise the strategic bombers and their bases.",
+      "x": 39,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "rus_air_force"
+        ]
+      ],
+      "effects": [
+        {
+          "add_buildings": {
+            "building": "air_base",
+            "count": 1,
+            "regions": [
+              {
+                "from": "RUS",
+                "adm1": [
+                  "RUS-2333"
+                ]
+              }
+            ]
           }
         },
         {
           "add_timed_modifier": {
             "modifier": "air_effectiveness",
             "value": 0.03,
-            "days": 3650
+            "days": 2920
           }
         }
       ]
@@ -3096,7 +4377,7 @@
       "id": "rus_rearmament",
       "name": "Rearmament programme",
       "description": "A ten-year programme to replace Soviet-era equipment.",
-      "x": 27,
+      "x": 35,
       "y": 3,
       "days": 70,
       "prerequisites": [
@@ -3104,13 +4385,12 @@
           "rus_new_look"
         ]
       ],
+      "available": {
+        "treasury_above": 4
+      },
       "effects": [
         {
-          "add_timed_modifier": {
-            "modifier": "production_efficiency",
-            "value": 0.05,
-            "days": 3650
-          }
+          "add_spirit": "rus_rearmament"
         },
         {
           "add_equipment": {
@@ -3119,58 +4399,60 @@
           }
         },
         {
-          "set_budget": {
-            "spending": 0.5
-          }
-        }
-      ]
-    },
-    {
-      "id": "rus_airborne_forces",
-      "name": "Airborne and special forces",
-      "description": "Expand the airborne troops and special forces as a rapid-reaction force.",
-      "x": 29,
-      "y": 3,
-      "days": 70,
-      "prerequisites": [
-        [
-          "rus_new_look"
-        ]
-      ],
-      "effects": [
-        {
-          "add_timed_modifier": {
-            "modifier": "army_attack",
-            "value": 0.04,
-            "days": 3650
+          "add_buildings": {
+            "building": "military_factory",
+            "count": 2,
+            "regions": [
+              {
+                "from": "RUS",
+                "adm1": [
+                  "RUS-2379",
+                  "RUS-2386",
+                  "RUS-3200"
+                ]
+              }
+            ]
           }
         },
         {
-          "add_interest_group_approval": {
-            "group": "military",
-            "value": 2
-          }
+          "add_treasury": -4
         }
       ]
     },
     {
-      "id": "rus_air_force",
-      "name": "A new air force",
-      "description": "New fighters and helicopters.",
-      "x": 31,
+      "id": "rus_defence_industry",
+      "name": "Defence industry",
+      "description": "Merge the defence plants into state corporations. Unlocks state defence orders.",
+      "x": 37,
       "y": 3,
       "days": 70,
       "prerequisites": [
         [
+          "rus_new_look",
           "rus_missile_defence"
         ]
       ],
       "effects": [
         {
-          "add_timed_modifier": {
-            "modifier": "air_effectiveness",
-            "value": 0.06,
-            "days": 3650
+          "add_buildings": {
+            "building": "military_factory",
+            "count": 2,
+            "regions": [
+              {
+                "from": "RUS",
+                "adm1": [
+                  "RUS-2368",
+                  "RUS-2357"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "add_research_bonus": {
+            "category": "armour",
+            "value": 0.2,
+            "uses": 2
           }
         }
       ]
@@ -3179,7 +4461,50 @@
       "id": "rus_navy",
       "name": "Rebuild the navy",
       "description": "New submarines and frigates for the Northern and Pacific fleets.",
-      "x": 26,
+      "x": 39,
+      "y": 3,
+      "days": 70,
+      "prerequisites": [
+        [
+          "rus_long_range_aviation"
+        ]
+      ],
+      "effects": [
+        {
+          "add_buildings": {
+            "building": "port",
+            "count": 1,
+            "regions": [
+              {
+                "from": "RUS",
+                "adm1": [
+                  "RUS-2611"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "add_research_bonus": {
+            "category": "naval",
+            "value": 0.25,
+            "uses": 2
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "naval_effectiveness",
+            "value": 0.04,
+            "days": 2920
+          }
+        }
+      ]
+    },
+    {
+      "id": "rus_airborne_forces",
+      "name": "Airborne and special forces",
+      "description": "Expand the airborne troops and special forces as a rapid-reaction force.",
+      "x": 34,
       "y": 4,
       "days": 70,
       "prerequisites": [
@@ -3189,62 +4514,75 @@
       ],
       "effects": [
         {
+          "add_divisions": {
+            "template": "motorised_division",
+            "count": 2
+          }
+        },
+        {
           "add_timed_modifier": {
-            "modifier": "naval_effectiveness",
-            "value": 0.06,
-            "days": 3650
+            "modifier": "army_attack",
+            "value": 0.02,
+            "days": 2920
           }
         }
       ]
     },
     {
-      "id": "rus_defence_industry",
-      "name": "Defence industry",
-      "description": "Merge the defence plants into state corporations.",
-      "x": 28,
+      "id": "rus_armoured_forces",
+      "name": "New armoured vehicles",
+      "description": "A new generation of tanks and infantry fighting vehicles.",
+      "x": 36,
       "y": 4,
       "days": 70,
       "prerequisites": [
         [
           "rus_rearmament",
-          "rus_airborne_forces"
+          "rus_defence_industry"
         ]
       ],
       "effects": [
         {
-          "add_timed_modifier": {
-            "modifier": "production_efficiency",
-            "value": 0.05,
-            "days": 3650
+          "add_research_bonus": {
+            "category": "armour",
+            "value": 0.25,
+            "uses": 2
           }
         },
         {
-          "add_interest_group_approval": {
-            "group": "labour_unions",
-            "value": 2
+          "add_equipment": {
+            "family": "infantry_equipment",
+            "amount": 1000
           }
         }
       ]
     },
     {
-      "id": "rus_reserve_system",
-      "name": "A reserve system",
-      "description": "A trained reserve that can be mobilised quickly.",
-      "x": 30,
+      "id": "rus_drones_and_electronic_warfare",
+      "name": "Drones and electronic warfare",
+      "description": "Reconnaissance drones and electronic warfare units.",
+      "x": 38,
       "y": 4,
       "days": 70,
       "prerequisites": [
         [
-          "rus_airborne_forces",
-          "rus_air_force"
+          "rus_defence_industry",
+          "rus_navy"
         ]
       ],
       "effects": [
         {
-          "add_timed_modifier": {
-            "modifier": "manpower_factor",
-            "value": 0.05,
-            "days": 3650
+          "add_research_bonus": {
+            "category": "air_drones",
+            "value": 0.25,
+            "uses": 2
+          }
+        },
+        {
+          "add_research_bonus": {
+            "category": "electronics_cyber",
+            "value": 0.2,
+            "uses": 1
           }
         }
       ]
@@ -3252,20 +4590,21 @@
     {
       "id": "rus_readiness_exercises",
       "name": "Snap readiness exercises",
-      "description": "Large unannounced exercises across the military districts.",
-      "x": 28,
+      "description": "Large unannounced exercises across the military districts. Unlocks exercises as a decision.",
+      "x": 35,
       "y": 5,
       "days": 70,
       "prerequisites": [
         [
-          "rus_defence_industry"
+          "rus_airborne_forces",
+          "rus_armoured_forces"
         ]
       ],
       "effects": [
         {
           "add_timed_modifier": {
             "modifier": "army_org",
-            "value": 0.04,
+            "value": 0.03,
             "days": 1825
           }
         },
@@ -3275,10 +4614,119 @@
       ]
     },
     {
+      "id": "rus_reserve_system",
+      "name": "A reserve system",
+      "description": "A trained reserve that can be mobilised quickly.",
+      "x": 37,
+      "y": 5,
+      "days": 70,
+      "prerequisites": [
+        [
+          "rus_armoured_forces",
+          "rus_drones_and_electronic_warfare"
+        ]
+      ],
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "manpower_factor",
+            "value": 0.04,
+            "days": 2920
+          }
+        },
+        {
+          "add_divisions": {
+            "template": "infantry_division",
+            "count": 2
+          }
+        }
+      ]
+    },
+    {
+      "id": "rus_kaliningrad_garrison",
+      "name": "Garrison Kaliningrad",
+      "description": "Reinforce the exclave on the Baltic.",
+      "x": 39,
+      "y": 5,
+      "days": 70,
+      "prerequisites": [
+        [
+          "rus_drones_and_electronic_warfare"
+        ]
+      ],
+      "effects": [
+        {
+          "add_buildings": {
+            "building": "air_base",
+            "count": 1,
+            "regions": [
+              {
+                "from": "RUS",
+                "adm1": [
+                  "RUS-2324"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "add_buildings": {
+            "building": "port",
+            "count": 1,
+            "regions": [
+              {
+                "from": "RUS",
+                "adm1": [
+                  "RUS-2324"
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "rus_arctic_brigades",
+      "name": "Arctic brigades",
+      "description": "Units and bases for the Arctic coast.",
+      "x": 36,
+      "y": 6,
+      "days": 70,
+      "prerequisites": [
+        [
+          "rus_readiness_exercises",
+          "rus_reserve_system"
+        ]
+      ],
+      "effects": [
+        {
+          "add_buildings": {
+            "building": "air_base",
+            "count": 1,
+            "regions": [
+              {
+                "from": "RUS",
+                "adm1": [
+                  "RUS-2354"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "army_defence",
+            "value": 0.02,
+            "days": 2920
+          }
+        }
+      ]
+    },
+    {
       "id": "rus_foreign_policy",
       "name": "Foreign policy concept",
       "description": "Set the priorities of Russian foreign policy for the new decade.",
-      "x": 35,
+      "x": 44,
       "y": 0,
       "days": 70,
       "effects": [
@@ -3299,7 +4747,7 @@
       "id": "rus_cis_integration",
       "name": "The Commonwealth of Independent States",
       "description": "Make the CIS the frame for relations with the former Soviet republics.",
-      "x": 33,
+      "x": 41,
       "y": 1,
       "days": 70,
       "prerequisites": [
@@ -3335,7 +4783,7 @@
       "id": "rus_strategic_partnership_china",
       "name": "Partnership with China",
       "description": "Settle the remaining border questions and expand trade with China.",
-      "x": 35,
+      "x": 43,
       "y": 1,
       "days": 70,
       "prerequisites": [
@@ -3364,7 +4812,7 @@
       "id": "rus_partnership_europe",
       "name": "Partnership with Europe",
       "description": "Expand trade and energy ties with the European Union.",
-      "x": 37,
+      "x": 45,
       "y": 1,
       "days": 70,
       "prerequisites": [
@@ -3397,10 +4845,39 @@
       ]
     },
     {
+      "id": "rus_cooperation_with_us",
+      "name": "Cooperation with the United States",
+      "description": "Work with the United States on terrorism and arms control.",
+      "x": 47,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "rus_foreign_policy"
+        ]
+      ],
+      "effects": [
+        {
+          "add_opinion": {
+            "target": "USA",
+            "value": 15,
+            "days": 1825
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "international_opinion",
+            "value": 5,
+            "days": 1825
+          }
+        }
+      ]
+    },
+    {
       "id": "rus_csto",
       "name": "Collective Security Treaty Organization",
       "description": "Turn the Collective Security Treaty into a regional organisation with a charter, as its members did in 2002.",
-      "x": 33,
+      "x": 41,
       "y": 2,
       "days": 70,
       "prerequisites": [
@@ -3451,10 +4928,35 @@
       "ai_weight": 3
     },
     {
+      "id": "rus_union_state_belarus",
+      "name": "Union State with Belarus",
+      "description": "Deepen the Union State with Belarus: cheap gas for close ties.",
+      "x": 42,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "rus_cis_integration"
+        ]
+      ],
+      "effects": [
+        {
+          "add_opinion": {
+            "target": "BLR",
+            "value": 25,
+            "days": 1825
+          }
+        },
+        {
+          "add_treasury": -1
+        }
+      ]
+    },
+    {
       "id": "rus_energy_diplomacy",
       "name": "Energy diplomacy",
       "description": "Long-term gas contracts as a tool of foreign policy.",
-      "x": 36,
+      "x": 44,
       "y": 2,
       "days": 70,
       "prerequisites": [
@@ -3477,15 +4979,48 @@
       ]
     },
     {
+      "id": "rus_arms_exports",
+      "name": "Arms exports",
+      "description": "Sell aircraft, air defences and tanks abroad.",
+      "x": 46,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "rus_partnership_europe",
+          "rus_cooperation_with_us"
+        ]
+      ],
+      "effects": [
+        {
+          "add_treasury": 4
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "foreign_influence_power",
+            "value": 0.05,
+            "days": 2920
+          }
+        },
+        {
+          "add_buildings": {
+            "building": "military_factory",
+            "count": 1
+          }
+        }
+      ]
+    },
+    {
       "id": "rus_eurasian_union",
       "name": "Eurasian Economic Union",
       "description": "A single market with Belarus and Kazakhstan, founded by treaty on 29 May 2014.",
-      "x": 33,
+      "x": 41,
       "y": 3,
       "days": 70,
       "prerequisites": [
         [
-          "rus_csto"
+          "rus_csto",
+          "rus_union_state_belarus"
         ]
       ],
       "available": {
@@ -3538,6 +5073,20 @@
             "value": 15,
             "days": 1825
           }
+        },
+        {
+          "add_opinion": {
+            "target": "ARM",
+            "value": 10,
+            "days": 1825
+          }
+        },
+        {
+          "add_opinion": {
+            "target": "KGZ",
+            "value": 10,
+            "days": 1825
+          }
         }
       ],
       "ai_weight": 3
@@ -3546,7 +5095,7 @@
       "id": "rus_security_council",
       "name": "A voice in the Security Council",
       "description": "Use the permanent seat on the UN Security Council to shape crises.",
-      "x": 35,
+      "x": 43,
       "y": 3,
       "days": 70,
       "prerequisites": [
@@ -3563,11 +5112,7 @@
           }
         },
         {
-          "add_timed_modifier": {
-            "modifier": "international_opinion",
-            "value": 0.03,
-            "days": 2920
-          }
+          "add_political_power": 40
         }
       ]
     },
@@ -3575,12 +5120,13 @@
       "id": "rus_visa_dialogue",
       "name": "Visa dialogue with the EU",
       "description": "Negotiate easier travel with the European Union.",
-      "x": 37,
+      "x": 45,
       "y": 3,
       "days": 70,
       "prerequisites": [
         [
-          "rus_partnership_europe"
+          "rus_energy_diplomacy",
+          "rus_arms_exports"
         ]
       ],
       "effects": [
@@ -3613,10 +5159,46 @@
       ]
     },
     {
+      "id": "rus_middle_east_policy",
+      "name": "A Middle East policy",
+      "description": "Ties with Syria, Iran and the Gulf states.",
+      "x": 47,
+      "y": 3,
+      "days": 70,
+      "prerequisites": [
+        [
+          "rus_arms_exports"
+        ]
+      ],
+      "effects": [
+        {
+          "add_opinion": {
+            "target": "SYR",
+            "value": 20,
+            "days": 1825
+          }
+        },
+        {
+          "add_opinion": {
+            "target": "IRN",
+            "value": 15,
+            "days": 1825
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "foreign_influence_power",
+            "value": 0.05,
+            "days": 2920
+          }
+        }
+      ]
+    },
+    {
       "id": "rus_central_asia",
       "name": "Central Asia",
       "description": "Bases, migrant labour and gas routes in Central Asia.",
-      "x": 33,
+      "x": 41,
       "y": 4,
       "days": 70,
       "prerequisites": [
@@ -3646,6 +5228,12 @@
             "value": 0.05,
             "days": 2920
           }
+        },
+        {
+          "add_buildings": {
+            "building": "air_base",
+            "count": 1
+          }
         }
       ]
     },
@@ -3653,7 +5241,7 @@
       "id": "rus_asian_pivot",
       "name": "Turn to Asia",
       "description": "Shift trade and pipelines toward China and the Pacific.",
-      "x": 35,
+      "x": 43,
       "y": 4,
       "days": 70,
       "prerequisites": [
@@ -3675,6 +5263,20 @@
             "value": 0.03,
             "days": 2920
           }
+        },
+        {
+          "add_buildings": {
+            "building": "port",
+            "count": 1,
+            "regions": [
+              {
+                "from": "RUS",
+                "adm1": [
+                  "RUS-2611"
+                ]
+              }
+            ]
+          }
         }
       ]
     },
@@ -3682,7 +5284,7 @@
       "id": "rus_international_media",
       "name": "International broadcasting",
       "description": "State-funded broadcasting abroad in many languages.",
-      "x": 37,
+      "x": 45,
       "y": 4,
       "days": 70,
       "prerequisites": [
@@ -3709,17 +5311,82 @@
       ]
     },
     {
+      "id": "rus_syria_alliance",
+      "name": "Alliance with Damascus",
+      "description": "Military advisers, a naval base at Tartus and arms for the Syrian government.",
+      "x": 47,
+      "y": 4,
+      "days": 70,
+      "prerequisites": [
+        [
+          "rus_middle_east_policy"
+        ]
+      ],
+      "effects": [
+        {
+          "add_opinion": {
+            "target": "SYR",
+            "value": 25,
+            "days": 1825
+          }
+        },
+        {
+          "add_treasury": -1
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "naval_effectiveness",
+            "value": 0.02,
+            "days": 2920
+          }
+        }
+      ]
+    },
+    {
+      "id": "rus_sanctions_resilience",
+      "name": "Resilience to sanctions",
+      "description": "Reserves, domestic payments and new trade partners to withstand Western sanctions.",
+      "x": 42,
+      "y": 5,
+      "days": 70,
+      "prerequisites": [
+        [
+          "rus_central_asia",
+          "rus_asian_pivot"
+        ]
+      ],
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "foreign_influence_resistance",
+            "value": 0.1,
+            "days": 3650
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "trade_efficiency",
+            "value": 0.02,
+            "days": 3650
+          }
+        },
+        {
+          "add_treasury": 3
+        }
+      ]
+    },
+    {
       "id": "rus_multipolar_world",
       "name": "A multipolar world",
       "description": "Present Russia as one of several centres of a multipolar world order.",
-      "x": 35,
+      "x": 44,
       "y": 5,
       "days": 70,
       "prerequisites": [
         [
           "rus_asian_pivot",
           "rus_international_media",
-          "rus_central_asia"
+          "rus_syria_alliance"
         ]
       ],
       "effects": [
@@ -3735,6 +5402,980 @@
         },
         {
           "add_war_support": 0.02
+        }
+      ]
+    },
+    {
+      "id": "rus_global_south",
+      "name": "Partners in the Global South",
+      "description": "Trade and arms deals with India, Africa and Latin America.",
+      "x": 46,
+      "y": 5,
+      "days": 70,
+      "prerequisites": [
+        [
+          "rus_international_media",
+          "rus_syria_alliance"
+        ]
+      ],
+      "effects": [
+        {
+          "add_opinion": {
+            "target": "IND",
+            "value": 15,
+            "days": 1825
+          }
+        },
+        {
+          "add_treasury": 3
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "foreign_influence_power",
+            "value": 0.05,
+            "days": 2920
+          }
+        }
+      ]
+    },
+    {
+      "id": "rus_social_policy",
+      "name": "Social policy",
+      "description": "Set out the government's priorities for health, families and science.",
+      "x": 51,
+      "y": 0,
+      "days": 70,
+      "effects": [
+        {
+          "add_political_power": 20
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "urban_middle_class",
+            "value": 2
+          }
+        }
+      ],
+      "ai_weight": 4
+    },
+    {
+      "id": "rus_healthcare_modernisation",
+      "name": "Modernise healthcare",
+      "description": "New equipment for hospitals and clinics.",
+      "x": 49,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "rus_social_policy"
+        ]
+      ],
+      "available": {
+        "treasury_above": 2
+      },
+      "effects": [
+        {
+          "add_treasury": -2
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "health_outcomes",
+            "value": 0.04,
+            "days": 2920
+          }
+        },
+        {
+          "add_buildings": {
+            "building": "infrastructure",
+            "count": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "rus_family_support",
+      "name": "Support for families",
+      "description": "Payments for families with a second child, housing help and longer parental leave.",
+      "x": 51,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "rus_social_policy"
+        ]
+      ],
+      "effects": [
+        {
+          "add_spirit": "rus_family_support"
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "rural",
+            "value": 3
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "urban_middle_class",
+            "value": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "rus_education_reform",
+      "name": "Education reform",
+      "description": "A national school-leaving exam and new research universities.",
+      "x": 53,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "rus_social_policy"
+        ]
+      ],
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "education_quality",
+            "value": 0.04,
+            "days": 3650
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "youth_students",
+            "value": 3
+          }
+        },
+        {
+          "add_research_bonus": {
+            "category": "economy_digital",
+            "value": 0.15,
+            "uses": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "rus_anti_alcohol_campaign",
+      "name": "Campaign against alcohol and smoking",
+      "description": "Higher excise taxes, sales limits and public campaigns.",
+      "x": 49,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "rus_healthcare_modernisation"
+        ]
+      ],
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "health_outcomes",
+            "value": 0.03,
+            "days": 3650
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "tax_efficiency",
+            "value": 0.01,
+            "days": 3650
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "rural",
+            "value": -2
+          }
+        }
+      ]
+    },
+    {
+      "id": "rus_housing_programme",
+      "name": "Affordable housing",
+      "description": "Mortgage subsidies and new housing estates.",
+      "x": 51,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "rus_family_support"
+        ]
+      ],
+      "available": {
+        "treasury_above": 2
+      },
+      "effects": [
+        {
+          "add_treasury": -2
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "construction_speed",
+            "value": 0.05,
+            "days": 2920
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "population_growth",
+            "value": 0.001,
+            "days": 2920
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "urban_middle_class",
+            "value": 4
+          }
+        }
+      ]
+    },
+    {
+      "id": "rus_science_drive",
+      "name": "Science drive",
+      "description": "Grants, research universities and labs that bring researchers home. Unlocks research grants.",
+      "x": 53,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "rus_education_reform"
+        ]
+      ],
+      "effects": [
+        {
+          "add_spirit": "rus_science_drive"
+        },
+        {
+          "add_research_bonus": {
+            "category": "economy_digital",
+            "value": 0.2,
+            "uses": 2
+          }
+        }
+      ]
+    },
+    {
+      "id": "rus_healthy_nation",
+      "name": "A healthier nation",
+      "description": "Life expectancy rises and the population decline slows.",
+      "x": 50,
+      "y": 3,
+      "days": 70,
+      "prerequisites": [
+        [
+          "rus_anti_alcohol_campaign"
+        ],
+        [
+          "rus_housing_programme"
+        ]
+      ],
+      "effects": [
+        {
+          "add_spirit": "rus_healthy_nation"
+        }
+      ]
+    },
+    {
+      "id": "rus_demographic_turnaround",
+      "name": "Demographic turnaround",
+      "description": "Births catch up with deaths at last.",
+      "x": 50,
+      "y": 4,
+      "days": 140,
+      "prerequisites": [
+        [
+          "rus_healthy_nation"
+        ]
+      ],
+      "available": {
+        "all": [
+          {
+            "has_spirit": "rus_demographic_decline"
+          },
+          {
+            "date_after": "2009-01-01"
+          }
+        ]
+      },
+      "effects": [
+        {
+          "remove_spirit": "rus_demographic_decline"
+        },
+        {
+          "add_stability": 0.02
+        }
+      ],
+      "ai_weight": 3
+    },
+    {
+      "id": "rus_skolkovo",
+      "name": "Skolkovo innovation centre",
+      "description": "A technology park near Moscow with its own tax and legal regime, announced in November 2009 and set up by law in September 2010.",
+      "x": 53,
+      "y": 3,
+      "days": 70,
+      "prerequisites": [
+        [
+          "rus_science_drive"
+        ]
+      ],
+      "available": {
+        "date_after": "2009-11-12"
+      },
+      "effects": [
+        {
+          "add_buildings": {
+            "building": "data_centre",
+            "count": 1,
+            "regions": [
+              {
+                "from": "RUS",
+                "adm1": [
+                  "RUS-2364"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "add_research_bonus": {
+            "category": "electronics_cyber",
+            "value": 0.25,
+            "uses": 2
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "youth_students",
+            "value": 3
+          }
+        }
+      ],
+      "ai_weight": 3
+    },
+    {
+      "id": "rus_space_programme",
+      "name": "Space programme",
+      "description": "A new launch site in the Far East and new launch vehicles.",
+      "x": 52,
+      "y": 4,
+      "days": 70,
+      "prerequisites": [
+        [
+          "rus_skolkovo",
+          "rus_science_drive"
+        ]
+      ],
+      "effects": [
+        {
+          "add_buildings": {
+            "building": "infrastructure",
+            "count": 1,
+            "regions": [
+              {
+                "from": "RUS",
+                "adm1": [
+                  "RUS-2609"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "add_research_bonus": {
+            "category": "air_drones",
+            "value": 0.15,
+            "uses": 1
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "diplomatic_reputation",
+            "value": 0.02,
+            "days": 2920
+          }
+        }
+      ]
+    },
+    {
+      "id": "rus_digital_economy",
+      "name": "Digital economy",
+      "description": "Broadband, e-government and data centres across the country.",
+      "x": 54,
+      "y": 4,
+      "days": 70,
+      "prerequisites": [
+        [
+          "rus_skolkovo"
+        ]
+      ],
+      "effects": [
+        {
+          "add_buildings": {
+            "building": "data_centre",
+            "count": 2
+          }
+        },
+        {
+          "add_research_bonus": {
+            "category": "economy_digital",
+            "value": 0.2,
+            "uses": 2
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "tax_efficiency",
+            "value": 0.02,
+            "days": 2920
+          }
+        }
+      ]
+    },
+    {
+      "id": "rus_sovereign_internet",
+      "name": "A sovereign internet",
+      "description": "Infrastructure to run the Russian internet separately from the global network.",
+      "x": 54,
+      "y": 5,
+      "days": 70,
+      "prerequisites": [
+        [
+          "rus_digital_economy"
+        ]
+      ],
+      "available": {
+        "all": [
+          {
+            "any": [
+              {
+                "ruling_party": "rus.unity"
+              },
+              {
+                "ruling_party": "rus.united_russia"
+              },
+              {
+                "holds_office": {
+                  "person": "rus.vladimir_putin",
+                  "office": "rus.president"
+                }
+              },
+              {
+                "holds_office": {
+                  "person": "rus.dmitry_medvedev",
+                  "office": "rus.president"
+                }
+              }
+            ]
+          },
+          {
+            "date_after": "2019-05-01"
+          }
+        ]
+      },
+      "effects": [
+        {
+          "change_law": {
+            "category": "internet_surveillance",
+            "law": "sovereign_internet"
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "foreign_influence_resistance",
+            "value": 0.1,
+            "days": 3650
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "youth_students",
+            "value": -5
+          }
+        }
+      ],
+      "ai_weight": 2
+    },
+    {
+      "id": "rus_brain_gain",
+      "name": "Bring the researchers home",
+      "description": "Grants and laboratories for scientists who return from abroad.",
+      "x": 52,
+      "y": 5,
+      "days": 70,
+      "prerequisites": [
+        [
+          "rus_space_programme",
+          "rus_digital_economy"
+        ]
+      ],
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "research_speed",
+            "value": 0.03,
+            "days": 2920
+          }
+        },
+        {
+          "add_research_bonus": {
+            "category": "electronics_cyber",
+            "value": 0.15,
+            "uses": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "rus_mining_and_fertilisers",
+      "name": "Mining and fertilisers",
+      "description": "Expand nickel, potash and fertiliser production.",
+      "x": 24,
+      "y": 5,
+      "days": 70,
+      "prerequisites": [
+        [
+          "rus_import_substitution",
+          "rus_national_payment_system"
+        ]
+      ],
+      "effects": [
+        {
+          "add_buildings": {
+            "building": "civilian_factory",
+            "count": 1,
+            "regions": [
+              {
+                "from": "RUS",
+                "adm1": [
+                  "RUS-2603"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "add_buildings": {
+            "building": "civilian_factory",
+            "count": 1,
+            "regions": [
+              {
+                "from": "RUS",
+                "adm1": [
+                  "RUS-3200"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "trade_efficiency",
+            "value": 0.02,
+            "days": 2920
+          }
+        }
+      ]
+    },
+    {
+      "id": "rus_black_sea_resorts",
+      "name": "Black Sea resorts",
+      "description": "Roads, airports and hotels on the Black Sea coast.",
+      "x": 31,
+      "y": 6,
+      "days": 70,
+      "prerequisites": [
+        [
+          "rus_agricultural_revival"
+        ]
+      ],
+      "effects": [
+        {
+          "add_buildings": {
+            "building": "infrastructure",
+            "count": 2,
+            "regions": [
+              {
+                "from": "RUS",
+                "adm1": [
+                  "RUS-2371"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "add_buildings": {
+            "building": "air_base",
+            "count": 1,
+            "regions": [
+              {
+                "from": "RUS",
+                "adm1": [
+                  "RUS-2371"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "gdp_growth",
+            "value": 0.001,
+            "days": 2920
+          }
+        }
+      ]
+    },
+    {
+      "id": "rus_timber_and_pulp",
+      "name": "Timber and pulp",
+      "description": "Process timber at home instead of exporting logs.",
+      "x": 26,
+      "y": 6,
+      "days": 70,
+      "prerequisites": [
+        [
+          "rus_arctic_development"
+        ]
+      ],
+      "effects": [
+        {
+          "add_buildings": {
+            "building": "civilian_factory",
+            "count": 1,
+            "regions": [
+              {
+                "from": "RUS",
+                "adm1": [
+                  "RUS-2354"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "add_buildings": {
+            "building": "civilian_factory",
+            "count": 1,
+            "regions": [
+              {
+                "from": "RUS",
+                "adm1": [
+                  "RUS-2602"
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "rus_black_sea_fleet",
+      "name": "Black Sea Fleet",
+      "description": "New ships and a new base at Novorossiysk.",
+      "x": 38,
+      "y": 6,
+      "days": 70,
+      "prerequisites": [
+        [
+          "rus_reserve_system",
+          "rus_kaliningrad_garrison"
+        ]
+      ],
+      "effects": [
+        {
+          "add_buildings": {
+            "building": "port",
+            "count": 1,
+            "regions": [
+              {
+                "from": "RUS",
+                "adm1": [
+                  "RUS-2371"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "naval_effectiveness",
+            "value": 0.03,
+            "days": 2920
+          }
+        }
+      ]
+    },
+    {
+      "id": "rus_cyber_command",
+      "name": "Information operations troops",
+      "description": "A command for cyber defence and information operations.",
+      "x": 34,
+      "y": 6,
+      "days": 70,
+      "prerequisites": [
+        [
+          "rus_readiness_exercises"
+        ]
+      ],
+      "effects": [
+        {
+          "add_research_bonus": {
+            "category": "electronics_cyber",
+            "value": 0.25,
+            "uses": 2
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "intelligence_power",
+            "value": 0.05,
+            "days": 2920
+          }
+        }
+      ]
+    },
+    {
+      "id": "rus_military_space",
+      "name": "Aerospace forces",
+      "description": "Merge the air force and the space troops into one service.",
+      "x": 37,
+      "y": 7,
+      "days": 70,
+      "prerequisites": [
+        [
+          "rus_arctic_brigades",
+          "rus_black_sea_fleet"
+        ]
+      ],
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "air_effectiveness",
+            "value": 0.03,
+            "days": 2920
+          }
+        },
+        {
+          "add_research_bonus": {
+            "category": "air_drones",
+            "value": 0.15,
+            "uses": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "rus_japan_dialogue",
+      "name": "Dialogue with Japan",
+      "description": "Talks on the Kuril Islands and Japanese investment in the Far East.",
+      "x": 47,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "rus_cooperation_with_us"
+        ]
+      ],
+      "effects": [
+        {
+          "add_opinion": {
+            "target": "JPN",
+            "value": 15,
+            "days": 1825
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "foreign_investment",
+            "value": 0.03,
+            "days": 2920
+          }
+        }
+      ]
+    },
+    {
+      "id": "rus_turkish_gas_route",
+      "name": "A gas route through Turkey",
+      "description": "A pipeline under the Black Sea to Turkey.",
+      "x": 46,
+      "y": 6,
+      "days": 70,
+      "prerequisites": [
+        [
+          "rus_global_south",
+          "rus_multipolar_world"
+        ]
+      ],
+      "effects": [
+        {
+          "add_opinion": {
+            "target": "TUR",
+            "value": 15,
+            "days": 1825
+          }
+        },
+        {
+          "add_treasury": 3
+        },
+        {
+          "add_buildings": {
+            "building": "refinery",
+            "count": 1,
+            "regions": [
+              {
+                "from": "RUS",
+                "adm1": [
+                  "RUS-2371"
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "rus_balkan_ties",
+      "name": "Ties in the Balkans",
+      "description": "Close ties with Serbia.",
+      "x": 41,
+      "y": 5,
+      "days": 70,
+      "prerequisites": [
+        [
+          "rus_central_asia"
+        ]
+      ],
+      "effects": [
+        {
+          "add_opinion": {
+            "target": "SRB",
+            "value": 20,
+            "days": 1825
+          }
+        }
+      ]
+    },
+    {
+      "id": "rus_arctic_claims",
+      "name": "The Arctic shelf",
+      "description": "Submit a claim to the Arctic seabed to the UN commission.",
+      "x": 43,
+      "y": 6,
+      "days": 70,
+      "prerequisites": [
+        [
+          "rus_multipolar_world",
+          "rus_sanctions_resilience"
+        ]
+      ],
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "fossil_output",
+            "value": 0.02,
+            "days": 3650
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "diplomatic_reputation",
+            "value": 0.02,
+            "days": 2920
+          }
+        }
+      ]
+    },
+    {
+      "id": "rus_regional_universities",
+      "name": "Federal universities",
+      "description": "Large federal universities in the regions.",
+      "x": 53,
+      "y": 5,
+      "days": 70,
+      "prerequisites": [
+        [
+          "rus_space_programme",
+          "rus_science_drive"
+        ]
+      ],
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "education_quality",
+            "value": 0.03,
+            "days": 3650
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "youth_students",
+            "value": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "rus_pension_indexation",
+      "name": "Index pensions",
+      "description": "Raise pensions with prices every year.",
+      "x": 49,
+      "y": 3,
+      "days": 70,
+      "prerequisites": [
+        [
+          "rus_anti_alcohol_campaign",
+          "rus_housing_programme"
+        ]
+      ],
+      "effects": [
+        {
+          "set_budget": {
+            "spending": 0.5
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "rural",
+            "value": 4
+          }
+        },
+        {
+          "add_ruling_party_popularity": 0.02
+        }
+      ]
+    },
+    {
+      "id": "rus_volunteer_movement",
+      "name": "Volunteer and youth movement",
+      "description": "State support for volunteer groups and youth organisations.",
+      "x": 51,
+      "y": 4,
+      "days": 70,
+      "prerequisites": [
+        [
+          "rus_healthy_nation",
+          "rus_housing_programme"
+        ]
+      ],
+      "effects": [
+        {
+          "add_interest_group_approval": {
+            "group": "youth_students",
+            "value": 4
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "propaganda_efficiency",
+            "value": 0.03,
+            "days": 1825
+          }
         }
       ]
     }
