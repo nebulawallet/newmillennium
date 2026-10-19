@@ -326,8 +326,10 @@ In game: Space pauses, 1–5 or +/- set speed, Q–P open the tab row (Q is Poli
 
 1. **Focus trees with political paths (the user's chosen next job):** follow [docs/FOCUS_TREES_PLAN.md](docs/FOCUS_TREES_PLAN.md).
    - The user wants countries to be able to "go fascist and stuff". There is no fascist ideology yet, and no focus can change the government.
-   - Decided (19 October 2026): the fascist ideology group exists in `data/ideologies` (sub-ideologies fascist, national_socialist and ultranationalist; no parties in it yet). Alternative paths use real parties only (CLAUDE.md).
-   - Next, build the engine effects (`install_government` and the rest), then the Russian pilot of 70–100 focuses with a full political branch, then the generic tree, the conflict countries and the majors.
+   - Decided (19 October 2026): the fascist ideology group exists in `data/ideologies` (sub-ideologies fascist, national_socialist and ultranationalist). Alternative paths use real parties only (CLAUDE.md).
+   - **Done (19 October 2026):** the engine (`install_government`, `has_party_of_group`, `ideology_group_support_above`, group `add_ideology_support`, `leave_history`, bloc `incompatible_groups`, law `suspends_elections`; CONTENT_GUIDE §6), and the Russian pilot (`data/focus_trees/rus.json`, 93 focuses: the historical power vertical plus liberal, communist, national-populist, ultranationalist and junta paths). The LDPR is classified ultranationalist from its Wikipedia infobox (user decision), so it is the only party in the fascist group so far. Rodina (2003–2006) is Russia's only national-populist party, so that path exists only in those years.
+   - **Next:** wait for the user to approve the pilot after playing it, then the generic tree (about 40 focuses with the political branch), the conflict countries and the majors. The tree generator used for Russia was a scratch script; write later trees as JSON directly, or add a generator under `scripts/dev/`.
+   - Gotcha: `npm run check | grep` hides a failing exit code. Check `$?` before committing.
 2. **User's latest feedback to keep in mind:**
    - The UI must stay HOI4-like: the flag sits inside the top bar and nothing hangs under it.
    - The user wants historical accuracy over squeamishness: real flags, ISIS included.
