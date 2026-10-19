@@ -1,0 +1,71 @@
+{
+  "categories": [
+    { "id": "ukr_projects", "name": "Ukrainian state projects", "description": "Projects that Ukraine's national focuses open up." }
+  ],
+  "decisions": [
+    {
+      "id": "ukr_defence_order",
+      "name": "Defence order",
+      "description": "An order for armoured vehicles, missiles and ammunition from Ukrainian plants.",
+      "category": "ukr_projects",
+      "countries": ["UKR"],
+      "visible": { "has_completed_focus": "ukr_defence_industry" },
+      "available": { "treasury_above": 2 },
+      "cost": { "political_power": 30 },
+      "effects": [{ "add_treasury": -1.5 }, { "add_equipment": { "family": "infantry_equipment", "amount": 500 } }, { "add_interest_group_approval": { "group": "military", "value": 2 } }],
+      "cooldown_days": 365,
+      "ai_weight": 2
+    },
+    {
+      "id": "ukr_grain_export_deals",
+      "name": "Grain export deals",
+      "description": "Long-term grain contracts with importers in the Middle East, Africa and Asia.",
+      "category": "ukr_projects",
+      "countries": ["UKR"],
+      "visible": { "has_completed_focus": "ukr_agricultural_exports" },
+      "cost": { "political_power": 25 },
+      "effects": [{ "add_treasury": 1 }, { "add_timed_modifier": { "modifier": "trade_efficiency", "value": 0.02, "days": 730 } }],
+      "cooldown_days": 365,
+      "ai_weight": 2
+    },
+    {
+      "id": "ukr_rebuild_a_city",
+      "name": "Rebuild a city",
+      "description": "Housing, power and water for a city damaged by the war.",
+      "category": "ukr_projects",
+      "countries": ["UKR"],
+      "visible": { "has_completed_focus": "ukr_reconstruction" },
+      "available": { "treasury_above": 1.5 },
+      "cost": { "political_power": 30 },
+      "effects": [{ "add_treasury": -1 }, { "add_buildings": { "building": "infrastructure", "count": 2 } }, { "add_stability": 0.01 }],
+      "cooldown_days": 180,
+      "ai_weight": 2
+    },
+    {
+      "id": "ukr_mobilisation_wave",
+      "name": "Mobilisation wave",
+      "description": "Call up a new wave of reservists into the territorial defence.",
+      "category": "ukr_projects",
+      "countries": ["UKR"],
+      "visible": { "has_completed_focus": "ukr_territorial_defence" },
+      "available": { "at_war_with": "RUS" },
+      "cost": { "political_power": 50 },
+      "effects": [{ "add_divisions": { "template": "infantry_division", "count": 2 } }, { "add_stability": -0.02 }],
+      "cooldown_days": 365,
+      "ai_weight": 1
+    },
+    {
+      "id": "ukr_partner_aid_package",
+      "name": "Ask partners for an aid package",
+      "description": "A new package of weapons and money from Ukraine's partners.",
+      "category": "ukr_projects",
+      "countries": ["UKR"],
+      "visible": { "has_completed_focus": "ukr_western_aid" },
+      "available": { "at_war_with": "RUS" },
+      "cost": { "political_power": 40 },
+      "effects": [{ "add_equipment": { "family": "infantry_equipment", "amount": 400 } }, { "add_treasury": 1 }],
+      "cooldown_days": 365,
+      "ai_weight": 2
+    }
+  ]
+}

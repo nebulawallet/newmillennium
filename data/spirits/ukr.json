@@ -1,0 +1,54 @@
+{
+  "note": "Ukraine's national spirits. The ones with `start` describe the situation on 1 January 2000 and cite sources; the others are granted by Ukraine's focuses and decisions. Values are gameplay estimates.",
+  "spirits": [
+    {
+      "id": "ukr_post_soviet_depression",
+      "name": "Post-Soviet depression",
+      "description": "Through the 1990s the economy was in depression with hyperinflation, and output fell to about half that of the Ukrainian SSR.",
+      "kind": "problem",
+      "modifiers": { "foreign_investment": -0.08, "production_efficiency": -0.05, "inflation": 0.02 },
+      "start": ["UKR"],
+      "source": [{ "url": "https://en.wikipedia.org/wiki/Economy_of_Ukraine", "title": "Wikipedia: Economy of Ukraine", "accessed": "2026-10-19" }],
+      "confidence": "verified"
+    },
+    {
+      "id": "ukr_gas_dependence",
+      "name": "Dependence on Russian gas",
+      "description": "Ukraine buys its gas from Russia and carries most of Russia's gas exports to the European Union; Naftogaz and Gazprom dispute prices, transit fees and debts.",
+      "kind": "problem",
+      "modifiers": { "energy_cost": 0.05, "foreign_influence_resistance": -0.05, "trade_efficiency": 0.02 },
+      "start": ["UKR"],
+      "source": [{ "url": "https://en.wikipedia.org/wiki/Russia%E2%80%93Ukraine_gas_disputes", "title": "Wikipedia: Russia–Ukraine gas disputes", "accessed": "2026-10-19" }],
+      "confidence": "verified"
+    },
+    {
+      "id": "ukr_fleet_in_sevastopol",
+      "name": "A foreign fleet in Sevastopol",
+      "description": "Under the 1997 partition treaty, the Russian Black Sea Fleet leases bases in Sevastopol until 2017.",
+      "kind": "problem",
+      "modifiers": { "foreign_influence_resistance": -0.05, "naval_effectiveness": -0.03 },
+      "start": ["UKR"],
+      "source": [{ "url": "https://en.wikipedia.org/wiki/Kharkiv_Pact", "title": "Wikipedia: Kharkiv Pact", "accessed": "2026-10-19" }],
+      "confidence": "verified"
+    },
+    {
+      "id": "ukr_breadbasket",
+      "name": "Breadbasket",
+      "description": "Rich black-earth soils have long made Ukraine a breadbasket, and mineral resources industrialised the Donbas.",
+      "kind": "strength",
+      "modifiers": { "trade_efficiency": 0.03, "gdp_growth": 0.002 },
+      "start": ["UKR"],
+      "source": [{ "url": "https://en.wikipedia.org/wiki/Economy_of_Ukraine", "title": "Wikipedia: Economy of Ukraine", "accessed": "2026-10-19" }],
+      "confidence": "verified"
+    },
+    { "id": "ukr_fragile_recovery", "name": "Fragile recovery", "description": "Growth has returned, but the hryvnia and the banks are still fragile.", "kind": "problem", "modifiers": { "foreign_investment": -0.03, "inflation": 0.01 } },
+    { "id": "ukr_gas_diversified", "name": "Diversified gas supply", "description": "Gas comes from domestic fields and from the west through reverse flows.", "kind": "strength", "modifiers": { "foreign_influence_resistance": 0.05, "energy_cost": -0.02 } },
+    { "id": "ukr_navy_rebuilt", "name": "A navy of its own", "description": "Ukraine's navy and coastal defences are rebuilt.", "kind": "strength", "modifiers": { "naval_effectiveness": 0.03 } },
+    { "id": "ukr_decentralised", "name": "Decentralised state", "description": "Amalgamated communities run their own budgets.", "kind": "strength", "modifiers": { "tax_efficiency": 0.03, "unrest": -0.01 } },
+    { "id": "ukr_anti_corruption_institutions", "name": "Anti-corruption institutions", "description": "An independent bureau, a prosecutor and open procurement fight corruption.", "kind": "strength", "modifiers": { "corruption": -0.04, "foreign_investment": 0.04 } },
+    { "id": "ukr_european_integration", "name": "European integration", "description": "Free trade and close ties with the European Union.", "kind": "policy", "modifiers": { "trade_efficiency": 0.04, "foreign_investment": 0.05 } },
+    { "id": "ukr_eurasian_integration", "name": "Eurasian integration", "description": "Close economic ties with Russia and its partners.", "kind": "policy", "modifiers": { "energy_cost": -0.04, "trade_efficiency": 0.02, "foreign_influence_resistance": -0.05 } },
+    { "id": "ukr_nation_in_arms", "name": "A nation in arms", "description": "Volunteers, territorial defence and a society organised for its defence.", "kind": "strength", "modifiers": { "manpower_factor": 0.05, "army_defence": 0.03, "war_support_factor": 0.05 } },
+    { "id": "ukr_drone_industry", "name": "Drone industry", "description": "Dozens of firms and volunteer groups build drones for the army.", "kind": "strength", "modifiers": { "air_effectiveness": 0.03, "production_efficiency": 0.02 } }
+  ]
+}

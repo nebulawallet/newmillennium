@@ -319,3 +319,34 @@ describe("Russian model tree", () => {
     expect(decisionsUnlockedBy(db, "rus_pipelines")).toEqual(["Build an export pipeline"]);
   });
 });
+
+describe("Ukrainian political branch", () => {
+  it("the player can take the eastern course to a Party of Regions government; AI Ukraine stays on history", () => {
+    const state = createInitialState(db, { provinces: [] }, { contentHash: "t", player: "UKR" });
+    const ctx = ctxOf(state);
+    const ukr = state.countries.UKR!;
+    const st = (id: string) => focusStatus(ctx, ukr, focusOf(db, ukr, id)!);
+    ukr.focus.completed.push("ukr_independent_state");
+    expect(st("ukr_balancing_act")).toBe("available");
+    expect(st("ukr_eastern_course")).toBe("available");
+    expect(st("ukr_ultranationalist_turn")).toBe("unavailable");
+    runEffects(ctx, scope("UKR"), focusOf(db, ukr, "ukr_regions_government")!.effects, "test");
+    expect(ukr.rulingParties).toEqual(["ukr.regions"]);
+    state.player = "DEU";
+    const fresh = createInitialState(db, { provinces: [] }, { contentHash: "t", player: "DEU" }).countries.UKR!;
+    fresh.focus.completed.push("ukr_independent_state");
+    expect(focusStatus(ctxOf(state), fresh, focusOf(db, fresh, "ukr_eastern_course")!)).toBe("unavailable");
+  });
+});
+
+describe("Ukrainian model tree", () => {
+  it("Ukraine starts with its sourced spirits and reverse gas flows fix the gas dependence", () => {
+    const state = createInitialState(db, { provinces: [] }, { contentHash: "t", player: "UKR" });
+    const ukr = state.countries.UKR!;
+    expect(ukr.spirits).toEqual(expect.arrayContaining(["ukr_post_soviet_depression", "ukr_gas_dependence", "ukr_fleet_in_sevastopol", "ukr_breadbasket"]));
+    runEffects(ctxOf(state), scope("UKR"), focusOf(db, ukr, "ukr_reverse_gas_flows")!.effects, "test");
+    expect(ukr.spirits).toContain("ukr_gas_diversified");
+    expect(ukr.spirits).not.toContain("ukr_gas_dependence");
+    expect(decisionsUnlockedBy(db, "ukr_defence_industry")).toEqual(["Defence order"]);
+  });
+});

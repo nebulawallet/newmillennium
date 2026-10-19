@@ -1,0 +1,5004 @@
+{
+  "id": "ukr",
+  "name": "Ukraine",
+  "countries": [
+    "UKR"
+  ],
+  "note": "Ukraine, in the style of the Russian model tree: economy, energy, military, war, foreign policy and society branches build, fix Ukraine's sourced starting spirits (data/spirits/ukr.json), unlock decisions (data/decisions/ukr.json), claim the occupied regions and grant research. The political branch has the historical path (between East and West, then the reforms after 2014) and six mutually exclusive alternatives: an eastern course (the Party of Regions), liberal, left, national, ultranationalist (needs a party of the fascist group, which Ukraine does not have in the data) and a military junta. Each alternative brings to power only a real party of the data. Alternatives are a counterfactual, not a claim about the parties. Policies named after real reforms are cited; effects are gameplay estimates. Wars stay in data/events/conflicts.json; no focus declares one.",
+  "source": [
+    {
+      "url": "https://en.wikipedia.org/wiki/Orange_Revolution",
+      "title": "Wikipedia: Orange Revolution",
+      "accessed": "2026-10-19"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Constitution_of_Ukraine",
+      "title": "Wikipedia: Constitution of Ukraine",
+      "accessed": "2026-10-19"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Kharkiv_Pact",
+      "title": "Wikipedia: Kharkiv Pact",
+      "accessed": "2026-10-19"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Euromaidan",
+      "title": "Wikipedia: Euromaidan",
+      "accessed": "2026-10-19"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Ukraine–European_Union_Association_Agreement",
+      "title": "Wikipedia: Ukraine–European Union Association Agreement",
+      "accessed": "2026-10-19"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/2008_Bucharest_summit",
+      "title": "Wikipedia: 2008 Bucharest summit",
+      "accessed": "2026-10-19"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Decentralization_in_Ukraine",
+      "title": "Wikipedia: Decentralization in Ukraine",
+      "accessed": "2026-10-19"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/National_Anti-Corruption_Bureau_of_Ukraine",
+      "title": "Wikipedia: National Anti-Corruption Bureau of Ukraine",
+      "accessed": "2026-10-19"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Prozorro",
+      "title": "Wikipedia: Prozorro",
+      "accessed": "2026-10-19"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/National_Police_of_Ukraine",
+      "title": "Wikipedia: National Police of Ukraine",
+      "accessed": "2026-10-19"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Minsk_agreements",
+      "title": "Wikipedia: Minsk agreements",
+      "accessed": "2026-10-19"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Territorial_Defense_Forces_(Ukraine)",
+      "title": "Wikipedia: Territorial Defense Forces (Ukraine)",
+      "accessed": "2026-10-19"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Ukraine–European_Union_relations",
+      "title": "Wikipedia: Ukraine–European Union relations",
+      "accessed": "2026-10-19"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Annexation_of_Crimea_by_the_Russian_Federation",
+      "title": "Wikipedia: Annexation of Crimea by the Russian Federation",
+      "accessed": "2026-10-19"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/War_in_Donbas",
+      "title": "Wikipedia: War in Donbas",
+      "accessed": "2026-10-19"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Economy_of_Ukraine",
+      "title": "Wikipedia: Economy of Ukraine",
+      "accessed": "2026-10-19"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Russia–Ukraine_gas_disputes",
+      "title": "Wikipedia: Russia–Ukraine gas disputes",
+      "accessed": "2026-10-19"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Communist_Party_of_Ukraine",
+      "title": "Wikipedia: Communist Party of Ukraine",
+      "accessed": "2026-10-19"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Party_of_Regions",
+      "title": "Wikipedia: Party of Regions",
+      "accessed": "2026-10-19"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/People's_Movement_of_Ukraine",
+      "title": "Wikipedia: People's Movement of Ukraine",
+      "accessed": "2026-10-19"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Svoboda_(political_party)",
+      "title": "Wikipedia: Svoboda (political party)",
+      "accessed": "2026-10-19"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Servant_of_the_People_(political_party)",
+      "title": "Wikipedia: Servant of the People (political party)",
+      "accessed": "2026-10-19"
+    }
+  ],
+  "confidence": "verified",
+  "focuses": [
+    {
+      "id": "ukr_independent_state",
+      "name": "An independent state",
+      "description": "Consolidate the institutions of an independent Ukraine.",
+      "x": 9,
+      "y": 0,
+      "days": 70,
+      "effects": [
+        {
+          "add_political_power": 50
+        },
+        {
+          "add_stability": 0.02
+        }
+      ],
+      "ai_weight": 5
+    },
+    {
+      "id": "ukr_balancing_act",
+      "name": "Between East and West",
+      "description": "Balance relations with Russia and the West while the institutions of the new state settle. This is the path Ukraine took.",
+      "x": 1,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "ukr_independent_state"
+        ]
+      ],
+      "mutually_exclusive": [
+        "ukr_eastern_course",
+        "ukr_liberal_breakthrough",
+        "ukr_red_revival",
+        "ukr_national_awakening",
+        "ukr_ultranationalist_turn",
+        "ukr_army_steps_in"
+      ],
+      "available": {
+        "any": [
+          {
+            "holds_office": {
+              "person": "ukr.leonid_kuchma",
+              "office": "ukr.president"
+            }
+          },
+          {
+            "holds_office": {
+              "person": "ukr.viktor_yushchenko",
+              "office": "ukr.president"
+            }
+          },
+          {
+            "holds_office": {
+              "person": "ukr.viktor_yanukovych",
+              "office": "ukr.president"
+            }
+          },
+          {
+            "holds_office": {
+              "person": "ukr.oleksandr_turchynov",
+              "office": "ukr.president"
+            }
+          },
+          {
+            "holds_office": {
+              "person": "ukr.petro_poroshenko",
+              "office": "ukr.president"
+            }
+          },
+          {
+            "holds_office": {
+              "person": "ukr.volodymyr_zelenskyy",
+              "office": "ukr.president"
+            }
+          }
+        ]
+      },
+      "effects": [
+        {
+          "add_political_power": 40
+        },
+        {
+          "add_stability": 0.03
+        }
+      ],
+      "ai_weight": 20
+    },
+    {
+      "id": "ukr_parliamentary_presidential",
+      "name": "A parliamentary-presidential republic",
+      "description": "Constitutional amendments of 2004 move powers from the President to the Verkhovna Rada and the government. They took force on 1 January 2006.",
+      "x": 0,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "ukr_balancing_act"
+        ]
+      ],
+      "available": {
+        "all": [
+          {
+            "any": [
+              {
+                "holds_office": {
+                  "person": "ukr.leonid_kuchma",
+                  "office": "ukr.president"
+                }
+              },
+              {
+                "holds_office": {
+                  "person": "ukr.viktor_yushchenko",
+                  "office": "ukr.president"
+                }
+              },
+              {
+                "holds_office": {
+                  "person": "ukr.viktor_yanukovych",
+                  "office": "ukr.president"
+                }
+              },
+              {
+                "holds_office": {
+                  "person": "ukr.oleksandr_turchynov",
+                  "office": "ukr.president"
+                }
+              },
+              {
+                "holds_office": {
+                  "person": "ukr.petro_poroshenko",
+                  "office": "ukr.president"
+                }
+              },
+              {
+                "holds_office": {
+                  "person": "ukr.volodymyr_zelenskyy",
+                  "office": "ukr.president"
+                }
+              }
+            ]
+          },
+          {
+            "date_after": "2006-01-01"
+          }
+        ]
+      },
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "political_power_gain",
+            "value": -0.1,
+            "days": 1825
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "urban_middle_class",
+            "value": 4
+          }
+        },
+        {
+          "add_stability": 0.02
+        }
+      ],
+      "ai_weight": 4
+    },
+    {
+      "id": "ukr_presidential_powers_restored",
+      "name": "Presidential powers restored",
+      "description": "The Constitutional Court overturns the 2004 amendments in 2010, restoring the earlier presidential powers.",
+      "x": 0,
+      "y": 3,
+      "days": 70,
+      "prerequisites": [
+        [
+          "ukr_parliamentary_presidential"
+        ]
+      ],
+      "available": {
+        "all": [
+          {
+            "holds_office": {
+              "person": "ukr.viktor_yanukovych",
+              "office": "ukr.president"
+            }
+          },
+          {
+            "date_after": "2010-10-01"
+          }
+        ]
+      },
+      "effects": [
+        {
+          "add_political_power": 60
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "political_power_gain",
+            "value": 0.1,
+            "days": 1825
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "urban_middle_class",
+            "value": -4
+          }
+        }
+      ],
+      "ai_weight": 4
+    },
+    {
+      "id": "ukr_civil_society",
+      "name": "Civil society",
+      "description": "Independent media, election monitors and civic groups grow after the protests of 2004.",
+      "x": 2,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "ukr_balancing_act"
+        ]
+      ],
+      "available": {
+        "all": [
+          {
+            "any": [
+              {
+                "holds_office": {
+                  "person": "ukr.leonid_kuchma",
+                  "office": "ukr.president"
+                }
+              },
+              {
+                "holds_office": {
+                  "person": "ukr.viktor_yushchenko",
+                  "office": "ukr.president"
+                }
+              },
+              {
+                "holds_office": {
+                  "person": "ukr.viktor_yanukovych",
+                  "office": "ukr.president"
+                }
+              },
+              {
+                "holds_office": {
+                  "person": "ukr.oleksandr_turchynov",
+                  "office": "ukr.president"
+                }
+              },
+              {
+                "holds_office": {
+                  "person": "ukr.petro_poroshenko",
+                  "office": "ukr.president"
+                }
+              },
+              {
+                "holds_office": {
+                  "person": "ukr.volodymyr_zelenskyy",
+                  "office": "ukr.president"
+                }
+              }
+            ]
+          },
+          {
+            "date_after": "2005-01-23"
+          }
+        ]
+      },
+      "effects": [
+        {
+          "add_interest_group_approval": {
+            "group": "media",
+            "value": 5
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "youth_students",
+            "value": 4
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "press_freedom",
+            "value": 0.05,
+            "days": 2920
+          }
+        }
+      ],
+      "ai_weight": 3
+    },
+    {
+      "id": "ukr_revolution_of_dignity",
+      "name": "After the Revolution of Dignity",
+      "description": "A new government forms after the protests that began on the Maidan on 21 November 2013 and the President's removal in February 2014.",
+      "x": 2,
+      "y": 3,
+      "days": 70,
+      "prerequisites": [
+        [
+          "ukr_civil_society",
+          "ukr_presidential_powers_restored"
+        ]
+      ],
+      "available": {
+        "all": [
+          {
+            "any": [
+              {
+                "holds_office": {
+                  "person": "ukr.leonid_kuchma",
+                  "office": "ukr.president"
+                }
+              },
+              {
+                "holds_office": {
+                  "person": "ukr.viktor_yushchenko",
+                  "office": "ukr.president"
+                }
+              },
+              {
+                "holds_office": {
+                  "person": "ukr.viktor_yanukovych",
+                  "office": "ukr.president"
+                }
+              },
+              {
+                "holds_office": {
+                  "person": "ukr.oleksandr_turchynov",
+                  "office": "ukr.president"
+                }
+              },
+              {
+                "holds_office": {
+                  "person": "ukr.petro_poroshenko",
+                  "office": "ukr.president"
+                }
+              },
+              {
+                "holds_office": {
+                  "person": "ukr.volodymyr_zelenskyy",
+                  "office": "ukr.president"
+                }
+              }
+            ]
+          },
+          {
+            "date_after": "2014-02-22"
+          }
+        ]
+      },
+      "effects": [
+        {
+          "add_stability": 0.03
+        },
+        {
+          "add_political_power": 50
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "urban_middle_class",
+            "value": 6
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "youth_students",
+            "value": 5
+          }
+        },
+        {
+          "add_war_support": 0.05
+        }
+      ],
+      "ai_weight": 5
+    },
+    {
+      "id": "ukr_decentralisation",
+      "name": "Decentralisation",
+      "description": "Give amalgamated communities (hromadas) their own budgets and powers, a reform launched on 1 April 2014.",
+      "x": 0,
+      "y": 4,
+      "days": 70,
+      "prerequisites": [
+        [
+          "ukr_revolution_of_dignity"
+        ]
+      ],
+      "available": {
+        "all": [
+          {
+            "any": [
+              {
+                "holds_office": {
+                  "person": "ukr.leonid_kuchma",
+                  "office": "ukr.president"
+                }
+              },
+              {
+                "holds_office": {
+                  "person": "ukr.viktor_yushchenko",
+                  "office": "ukr.president"
+                }
+              },
+              {
+                "holds_office": {
+                  "person": "ukr.viktor_yanukovych",
+                  "office": "ukr.president"
+                }
+              },
+              {
+                "holds_office": {
+                  "person": "ukr.oleksandr_turchynov",
+                  "office": "ukr.president"
+                }
+              },
+              {
+                "holds_office": {
+                  "person": "ukr.petro_poroshenko",
+                  "office": "ukr.president"
+                }
+              },
+              {
+                "holds_office": {
+                  "person": "ukr.volodymyr_zelenskyy",
+                  "office": "ukr.president"
+                }
+              }
+            ]
+          },
+          {
+            "date_after": "2014-04-01"
+          }
+        ]
+      },
+      "effects": [
+        {
+          "add_spirit": "ukr_decentralised"
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "rural",
+            "value": 5
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "minorities",
+            "value": 3
+          }
+        }
+      ],
+      "ai_weight": 4
+    },
+    {
+      "id": "ukr_national_police",
+      "name": "A new national police",
+      "description": "Replace the militsiya with the National Police, formed on 3 July 2015.",
+      "x": 1,
+      "y": 5,
+      "days": 70,
+      "prerequisites": [
+        [
+          "ukr_decentralisation",
+          "ukr_anti_corruption_bureau"
+        ]
+      ],
+      "available": {
+        "all": [
+          {
+            "any": [
+              {
+                "holds_office": {
+                  "person": "ukr.leonid_kuchma",
+                  "office": "ukr.president"
+                }
+              },
+              {
+                "holds_office": {
+                  "person": "ukr.viktor_yushchenko",
+                  "office": "ukr.president"
+                }
+              },
+              {
+                "holds_office": {
+                  "person": "ukr.viktor_yanukovych",
+                  "office": "ukr.president"
+                }
+              },
+              {
+                "holds_office": {
+                  "person": "ukr.oleksandr_turchynov",
+                  "office": "ukr.president"
+                }
+              },
+              {
+                "holds_office": {
+                  "person": "ukr.petro_poroshenko",
+                  "office": "ukr.president"
+                }
+              },
+              {
+                "holds_office": {
+                  "person": "ukr.volodymyr_zelenskyy",
+                  "office": "ukr.president"
+                }
+              }
+            ]
+          },
+          {
+            "date_after": "2015-07-03"
+          }
+        ]
+      },
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "internal_security",
+            "value": 0.05,
+            "days": 2920
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "corruption",
+            "value": -0.02,
+            "days": 2920
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "urban_middle_class",
+            "value": 4
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "security_services",
+            "value": -2
+          }
+        }
+      ],
+      "ai_weight": 4
+    },
+    {
+      "id": "ukr_anti_corruption_bureau",
+      "name": "National Anti-Corruption Bureau",
+      "description": "An independent bureau that investigates corruption among officials; its first detectives started work on 1 October 2015.",
+      "x": 2,
+      "y": 4,
+      "days": 70,
+      "prerequisites": [
+        [
+          "ukr_revolution_of_dignity"
+        ]
+      ],
+      "available": {
+        "all": [
+          {
+            "any": [
+              {
+                "holds_office": {
+                  "person": "ukr.leonid_kuchma",
+                  "office": "ukr.president"
+                }
+              },
+              {
+                "holds_office": {
+                  "person": "ukr.viktor_yushchenko",
+                  "office": "ukr.president"
+                }
+              },
+              {
+                "holds_office": {
+                  "person": "ukr.viktor_yanukovych",
+                  "office": "ukr.president"
+                }
+              },
+              {
+                "holds_office": {
+                  "person": "ukr.oleksandr_turchynov",
+                  "office": "ukr.president"
+                }
+              },
+              {
+                "holds_office": {
+                  "person": "ukr.petro_poroshenko",
+                  "office": "ukr.president"
+                }
+              },
+              {
+                "holds_office": {
+                  "person": "ukr.volodymyr_zelenskyy",
+                  "office": "ukr.president"
+                }
+              }
+            ]
+          },
+          {
+            "date_after": "2015-10-01"
+          }
+        ]
+      },
+      "effects": [
+        {
+          "add_spirit": "ukr_anti_corruption_institutions"
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "business",
+            "value": 3
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "media",
+            "value": 3
+          }
+        },
+        {
+          "add_political_power": -20
+        }
+      ],
+      "ai_weight": 4
+    },
+    {
+      "id": "ukr_prozorro",
+      "name": "ProZorro public procurement",
+      "description": "An open electronic system for public procurement, developed with civil society and business.",
+      "x": 3,
+      "y": 5,
+      "days": 70,
+      "prerequisites": [
+        [
+          "ukr_anti_corruption_bureau"
+        ]
+      ],
+      "available": {
+        "all": [
+          {
+            "any": [
+              {
+                "holds_office": {
+                  "person": "ukr.leonid_kuchma",
+                  "office": "ukr.president"
+                }
+              },
+              {
+                "holds_office": {
+                  "person": "ukr.viktor_yushchenko",
+                  "office": "ukr.president"
+                }
+              },
+              {
+                "holds_office": {
+                  "person": "ukr.viktor_yanukovych",
+                  "office": "ukr.president"
+                }
+              },
+              {
+                "holds_office": {
+                  "person": "ukr.oleksandr_turchynov",
+                  "office": "ukr.president"
+                }
+              },
+              {
+                "holds_office": {
+                  "person": "ukr.petro_poroshenko",
+                  "office": "ukr.president"
+                }
+              },
+              {
+                "holds_office": {
+                  "person": "ukr.volodymyr_zelenskyy",
+                  "office": "ukr.president"
+                }
+              }
+            ]
+          },
+          {
+            "date_after": "2015-06-01"
+          }
+        ]
+      },
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "corruption",
+            "value": -0.04,
+            "days": 3650
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "tax_efficiency",
+            "value": 0.02,
+            "days": 3650
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "business",
+            "value": 4
+          }
+        }
+      ],
+      "ai_weight": 3
+    },
+    {
+      "id": "ukr_euro_atlantic_constitution",
+      "name": "The Euro-Atlantic course in the constitution",
+      "description": "The Verkhovna Rada amends the constitution on 7 February 2019 to name membership of the EU and NATO as strategic goals.",
+      "x": 2,
+      "y": 6,
+      "days": 70,
+      "prerequisites": [
+        [
+          "ukr_national_police",
+          "ukr_prozorro"
+        ]
+      ],
+      "available": {
+        "all": [
+          {
+            "any": [
+              {
+                "holds_office": {
+                  "person": "ukr.leonid_kuchma",
+                  "office": "ukr.president"
+                }
+              },
+              {
+                "holds_office": {
+                  "person": "ukr.viktor_yushchenko",
+                  "office": "ukr.president"
+                }
+              },
+              {
+                "holds_office": {
+                  "person": "ukr.viktor_yanukovych",
+                  "office": "ukr.president"
+                }
+              },
+              {
+                "holds_office": {
+                  "person": "ukr.oleksandr_turchynov",
+                  "office": "ukr.president"
+                }
+              },
+              {
+                "holds_office": {
+                  "person": "ukr.petro_poroshenko",
+                  "office": "ukr.president"
+                }
+              },
+              {
+                "holds_office": {
+                  "person": "ukr.volodymyr_zelenskyy",
+                  "office": "ukr.president"
+                }
+              }
+            ]
+          },
+          {
+            "date_after": "2019-02-07"
+          }
+        ]
+      },
+      "effects": [
+        {
+          "add_political_power": 40
+        },
+        {
+          "add_stability": 0.02
+        },
+        {
+          "add_opinion": {
+            "target": "USA",
+            "value": 10,
+            "days": 1825
+          }
+        },
+        {
+          "add_opinion": {
+            "target": "DEU",
+            "value": 10,
+            "days": 1825
+          }
+        },
+        {
+          "add_opinion": {
+            "target": "FRA",
+            "value": 10,
+            "days": 1825
+          }
+        },
+        {
+          "add_opinion": {
+            "target": "GBR",
+            "value": 10,
+            "days": 1825
+          }
+        },
+        {
+          "add_opinion": {
+            "target": "POL",
+            "value": 10,
+            "days": 1825
+          }
+        },
+        {
+          "add_opinion": {
+            "target": "RUS",
+            "value": -15,
+            "days": 1825
+          }
+        }
+      ],
+      "ai_weight": 4
+    },
+    {
+      "id": "ukr_wartime_unity",
+      "name": "Wartime unity",
+      "description": "Parties and regions rally behind the government in a war for the country's survival.",
+      "x": 2,
+      "y": 7,
+      "days": 70,
+      "prerequisites": [
+        [
+          "ukr_euro_atlantic_constitution"
+        ]
+      ],
+      "available": {
+        "all": [
+          {
+            "any": [
+              {
+                "holds_office": {
+                  "person": "ukr.leonid_kuchma",
+                  "office": "ukr.president"
+                }
+              },
+              {
+                "holds_office": {
+                  "person": "ukr.viktor_yushchenko",
+                  "office": "ukr.president"
+                }
+              },
+              {
+                "holds_office": {
+                  "person": "ukr.viktor_yanukovych",
+                  "office": "ukr.president"
+                }
+              },
+              {
+                "holds_office": {
+                  "person": "ukr.oleksandr_turchynov",
+                  "office": "ukr.president"
+                }
+              },
+              {
+                "holds_office": {
+                  "person": "ukr.petro_poroshenko",
+                  "office": "ukr.president"
+                }
+              },
+              {
+                "holds_office": {
+                  "person": "ukr.volodymyr_zelenskyy",
+                  "office": "ukr.president"
+                }
+              }
+            ]
+          },
+          {
+            "at_war_with": "RUS"
+          }
+        ]
+      },
+      "effects": [
+        {
+          "add_stability": 0.03
+        },
+        {
+          "add_war_support": 0.05
+        },
+        {
+          "add_political_power": 50
+        }
+      ],
+      "ai_weight": 5
+    },
+    {
+      "id": "ukr_eastern_course",
+      "name": "Eastern course",
+      "description": "Seek a close partnership with Russia; the Party of Regions, strongest in the east and south, leads the way.",
+      "x": 4,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "ukr_independent_state"
+        ]
+      ],
+      "mutually_exclusive": [
+        "ukr_balancing_act",
+        "ukr_liberal_breakthrough",
+        "ukr_red_revival",
+        "ukr_national_awakening",
+        "ukr_ultranationalist_turn",
+        "ukr_army_steps_in"
+      ],
+      "available": {
+        "all": [
+          {
+            "any": [
+              {
+                "follows_history": false
+              },
+              {
+                "is_player": true
+              }
+            ]
+          },
+          {
+            "not": {
+              "ruling_party": "ukr.regions"
+            }
+          },
+          {
+            "party_exists": "ukr.regions"
+          }
+        ]
+      },
+      "effects": [
+        {
+          "leave_history": true
+        },
+        {
+          "add_opinion": {
+            "target": "RUS",
+            "value": 20,
+            "days": 1825
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "minorities",
+            "value": 5
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "youth_students",
+            "value": -4
+          }
+        }
+      ],
+      "ai_weight": 0.3
+    },
+    {
+      "id": "ukr_regions_rally",
+      "name": "Rally the east and south",
+      "description": "Organise industrial workers and Russian-speaking voters behind the Party of Regions.",
+      "x": 4,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "ukr_eastern_course"
+        ]
+      ],
+      "effects": [
+        {
+          "add_party_popularity": {
+            "party": "ukr.regions",
+            "value": 0.06
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "labour_unions",
+            "value": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "ukr_regions_government",
+      "name": "A Party of Regions government",
+      "description": "The Party of Regions forms the government.",
+      "x": 4,
+      "y": 3,
+      "days": 105,
+      "prerequisites": [
+        [
+          "ukr_regions_rally"
+        ]
+      ],
+      "available": {
+        "party_popularity_above": {
+          "party": "ukr.regions",
+          "value": 0.25
+        }
+      },
+      "effects": [
+        {
+          "install_government": {
+            "party": "ukr.regions"
+          }
+        },
+        {
+          "add_stability": -0.04
+        }
+      ]
+    },
+    {
+      "id": "ukr_russian_language_status",
+      "name": "Status for the Russian language",
+      "description": "Give Russian official status in the regions where most people speak it.",
+      "x": 4,
+      "y": 4,
+      "days": 70,
+      "prerequisites": [
+        [
+          "ukr_regions_government"
+        ]
+      ],
+      "effects": [
+        {
+          "add_interest_group_approval": {
+            "group": "minorities",
+            "value": 8
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "youth_students",
+            "value": -4
+          }
+        },
+        {
+          "add_unrest": -0.02
+        }
+      ]
+    },
+    {
+      "id": "ukr_eurasian_integration",
+      "name": "Eurasian integration",
+      "description": "Join the economic projects led by Russia instead of the European Union.",
+      "x": 5,
+      "y": 5,
+      "days": 70,
+      "prerequisites": [
+        [
+          "ukr_russian_language_status"
+        ]
+      ],
+      "effects": [
+        {
+          "add_opinion": {
+            "target": "RUS",
+            "value": 25,
+            "days": 1825
+          }
+        },
+        {
+          "add_opinion": {
+            "target": "BLR",
+            "value": 15,
+            "days": 1825
+          }
+        },
+        {
+          "add_opinion": {
+            "target": "USA",
+            "value": -15,
+            "days": 1825
+          }
+        },
+        {
+          "add_opinion": {
+            "target": "DEU",
+            "value": -15,
+            "days": 1825
+          }
+        },
+        {
+          "add_opinion": {
+            "target": "FRA",
+            "value": -15,
+            "days": 1825
+          }
+        },
+        {
+          "add_opinion": {
+            "target": "GBR",
+            "value": -15,
+            "days": 1825
+          }
+        },
+        {
+          "add_opinion": {
+            "target": "POL",
+            "value": -15,
+            "days": 1825
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "trade_efficiency",
+            "value": 0.03,
+            "days": 2920
+          }
+        },
+        {
+          "add_treasury": 3
+        }
+      ]
+    },
+    {
+      "id": "ukr_liberal_breakthrough",
+      "name": "Liberal breakthrough",
+      "description": "New liberal parties win over voters tired of the old elites.",
+      "x": 6,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "ukr_independent_state"
+        ]
+      ],
+      "mutually_exclusive": [
+        "ukr_balancing_act",
+        "ukr_eastern_course",
+        "ukr_red_revival",
+        "ukr_national_awakening",
+        "ukr_ultranationalist_turn",
+        "ukr_army_steps_in"
+      ],
+      "available": {
+        "all": [
+          {
+            "any": [
+              {
+                "follows_history": false
+              },
+              {
+                "is_player": true
+              }
+            ]
+          },
+          {
+            "has_party_of_group": "liberal_democratic"
+          },
+          {
+            "not": {
+              "ruling_ideology_group": "liberal_democratic"
+            }
+          },
+          {
+            "any": [
+              {
+                "stability_below": 0.6
+              },
+              {
+                "ig_approval_below": {
+                  "group": "urban_middle_class",
+                  "value": 45
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "effects": [
+        {
+          "leave_history": true
+        },
+        {
+          "add_ideology_support": {
+            "group": "liberal_democratic",
+            "value": 0.04
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "urban_middle_class",
+            "value": 5
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "business",
+            "value": 3
+          }
+        }
+      ],
+      "ai_weight": 0.3
+    },
+    {
+      "id": "ukr_clean_politics",
+      "name": "Clean politics",
+      "description": "Campaign against the influence of business owners on parliament.",
+      "x": 6,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "ukr_liberal_breakthrough"
+        ]
+      ],
+      "effects": [
+        {
+          "add_ideology_support": {
+            "group": "liberal_democratic",
+            "value": 0.05
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "corruption",
+            "value": -0.03,
+            "days": 1825
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "business",
+            "value": -3
+          }
+        }
+      ]
+    },
+    {
+      "id": "ukr_liberal_government",
+      "name": "A liberal government",
+      "description": "The most popular liberal party forms the government.",
+      "x": 6,
+      "y": 3,
+      "days": 105,
+      "prerequisites": [
+        [
+          "ukr_clean_politics"
+        ]
+      ],
+      "available": {
+        "ideology_group_support_above": {
+          "group": "liberal_democratic",
+          "value": 0.18
+        }
+      },
+      "effects": [
+        {
+          "install_government": {
+            "ideology": "liberal_democratic"
+          }
+        },
+        {
+          "change_law": {
+            "category": "political_freedom",
+            "law": "free_elections"
+          }
+        },
+        {
+          "add_stability": -0.04
+        }
+      ]
+    },
+    {
+      "id": "ukr_deregulation",
+      "name": "Deregulation",
+      "description": "Cut licences and inspections for small businesses.",
+      "x": 6,
+      "y": 4,
+      "days": 70,
+      "prerequisites": [
+        [
+          "ukr_liberal_government"
+        ]
+      ],
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "private_sector_output",
+            "value": 0.06,
+            "days": 2920
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "foreign_investment",
+            "value": 0.1,
+            "days": 2920
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "business",
+            "value": 6
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "security_services",
+            "value": -3
+          }
+        }
+      ]
+    },
+    {
+      "id": "ukr_open_government",
+      "name": "Open government",
+      "description": "Publish budgets, contracts and officials' declarations online.",
+      "x": 7,
+      "y": 5,
+      "days": 70,
+      "prerequisites": [
+        [
+          "ukr_deregulation"
+        ]
+      ],
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "corruption",
+            "value": -0.05,
+            "days": 3650
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "media",
+            "value": 5
+          }
+        },
+        {
+          "change_law": {
+            "category": "press_freedom",
+            "law": "free_press"
+          }
+        }
+      ]
+    },
+    {
+      "id": "ukr_red_revival",
+      "name": "Red revival",
+      "description": "Falling wages and pensions turn voters toward the Communist Party of Ukraine and the other parties of the left.",
+      "x": 8,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "ukr_independent_state"
+        ]
+      ],
+      "mutually_exclusive": [
+        "ukr_balancing_act",
+        "ukr_eastern_course",
+        "ukr_liberal_breakthrough",
+        "ukr_national_awakening",
+        "ukr_ultranationalist_turn",
+        "ukr_army_steps_in"
+      ],
+      "available": {
+        "all": [
+          {
+            "any": [
+              {
+                "follows_history": false
+              },
+              {
+                "is_player": true
+              }
+            ]
+          },
+          {
+            "has_party_of_group": "socialist_communist"
+          },
+          {
+            "not": {
+              "ruling_ideology_group": "socialist_communist"
+            }
+          },
+          {
+            "any": [
+              {
+                "gdp_growth_below": 2
+              },
+              {
+                "unrest_above": 0.2
+              },
+              {
+                "ig_approval_below": {
+                  "group": "labour_unions",
+                  "value": 40
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "effects": [
+        {
+          "leave_history": true
+        },
+        {
+          "add_ideology_support": {
+            "group": "socialist_communist",
+            "value": 0.04
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "labour_unions",
+            "value": 5
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "business",
+            "value": -5
+          }
+        }
+      ],
+      "ai_weight": 0.3
+    },
+    {
+      "id": "ukr_pensioners_and_workers",
+      "name": "Pensioners and workers",
+      "description": "Rallies of pensioners and factory workers behind the left.",
+      "x": 8,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "ukr_red_revival"
+        ]
+      ],
+      "effects": [
+        {
+          "add_ideology_support": {
+            "group": "socialist_communist",
+            "value": 0.05
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "rural",
+            "value": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "ukr_red_government",
+      "name": "A government of the left",
+      "description": "The most popular socialist party takes power and rules as the single governing party.",
+      "x": 8,
+      "y": 3,
+      "days": 105,
+      "prerequisites": [
+        [
+          "ukr_pensioners_and_workers"
+        ]
+      ],
+      "available": {
+        "ideology_group_support_above": {
+          "group": "socialist_communist",
+          "value": 0.25
+        }
+      },
+      "effects": [
+        {
+          "install_government": {
+            "ideology": "socialist_communist",
+            "government_type": "one_party_state"
+          }
+        },
+        {
+          "change_law": {
+            "category": "political_freedom",
+            "law": "single_party_elections"
+          }
+        },
+        {
+          "add_stability": -0.05
+        }
+      ]
+    },
+    {
+      "id": "ukr_renationalisation",
+      "name": "Renationalisation",
+      "description": "Return the privatised steel works and mines to public ownership.",
+      "x": 8,
+      "y": 4,
+      "days": 70,
+      "prerequisites": [
+        [
+          "ukr_red_government"
+        ]
+      ],
+      "effects": [
+        {
+          "change_law": {
+            "category": "economic_system",
+            "law": "state_capitalism"
+          }
+        },
+        {
+          "add_spirit": "state_planning"
+        },
+        {
+          "add_buildings": {
+            "building": "military_factory",
+            "count": 2,
+            "regions": [
+              {
+                "from": "UKR",
+                "adm1": [
+                  "UKR-326",
+                  "UKR-328"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "business",
+            "value": -10
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "labour_unions",
+            "value": 6
+          }
+        }
+      ]
+    },
+    {
+      "id": "ukr_fraternal_ties",
+      "name": "Fraternal ties",
+      "description": "Close ties with Russia and Belarus.",
+      "x": 9,
+      "y": 5,
+      "days": 70,
+      "prerequisites": [
+        [
+          "ukr_renationalisation"
+        ]
+      ],
+      "effects": [
+        {
+          "add_opinion": {
+            "target": "RUS",
+            "value": 20,
+            "days": 1825
+          }
+        },
+        {
+          "add_opinion": {
+            "target": "BLR",
+            "value": 20,
+            "days": 1825
+          }
+        },
+        {
+          "add_opinion": {
+            "target": "USA",
+            "value": -15,
+            "days": 1825
+          }
+        },
+        {
+          "add_opinion": {
+            "target": "DEU",
+            "value": -15,
+            "days": 1825
+          }
+        },
+        {
+          "add_opinion": {
+            "target": "FRA",
+            "value": -15,
+            "days": 1825
+          }
+        },
+        {
+          "add_opinion": {
+            "target": "GBR",
+            "value": -15,
+            "days": 1825
+          }
+        },
+        {
+          "add_opinion": {
+            "target": "POL",
+            "value": -15,
+            "days": 1825
+          }
+        }
+      ]
+    },
+    {
+      "id": "ukr_national_awakening",
+      "name": "National awakening",
+      "description": "National-democratic and nationalist parties such as Rukh gain ground on questions of language, history and Russia.",
+      "x": 10,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "ukr_independent_state"
+        ]
+      ],
+      "mutually_exclusive": [
+        "ukr_balancing_act",
+        "ukr_eastern_course",
+        "ukr_liberal_breakthrough",
+        "ukr_red_revival",
+        "ukr_ultranationalist_turn",
+        "ukr_army_steps_in"
+      ],
+      "available": {
+        "all": [
+          {
+            "any": [
+              {
+                "follows_history": false
+              },
+              {
+                "is_player": true
+              }
+            ]
+          },
+          {
+            "has_party_of_group": "nationalist_populist"
+          },
+          {
+            "not": {
+              "ruling_ideology_group": "nationalist_populist"
+            }
+          },
+          {
+            "any": [
+              {
+                "stability_below": 0.5
+              },
+              {
+                "war_support_above": 0.5
+              }
+            ]
+          }
+        ]
+      },
+      "effects": [
+        {
+          "leave_history": true
+        },
+        {
+          "add_ideology_support": {
+            "group": "nationalist_populist",
+            "value": 0.04
+          }
+        },
+        {
+          "add_war_support": 0.03
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "minorities",
+            "value": -4
+          }
+        }
+      ],
+      "ai_weight": 0.3
+    },
+    {
+      "id": "ukr_language_and_memory",
+      "name": "Language and memory",
+      "description": "Promote Ukrainian in public life and a national reading of history.",
+      "x": 10,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "ukr_national_awakening"
+        ]
+      ],
+      "effects": [
+        {
+          "add_ideology_support": {
+            "group": "nationalist_populist",
+            "value": 0.05
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "minorities",
+            "value": -5
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "youth_students",
+            "value": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "ukr_national_government",
+      "name": "A national government",
+      "description": "The most popular nationalist party forms the government.",
+      "x": 10,
+      "y": 3,
+      "days": 105,
+      "prerequisites": [
+        [
+          "ukr_language_and_memory"
+        ]
+      ],
+      "available": {
+        "ideology_group_support_above": {
+          "group": "nationalist_populist",
+          "value": 0.2
+        }
+      },
+      "effects": [
+        {
+          "install_government": {
+            "ideology": "nationalist_populist",
+            "government_type": "hybrid_authoritarian"
+          }
+        },
+        {
+          "add_stability": -0.05
+        }
+      ]
+    },
+    {
+      "id": "ukr_energy_sovereignty",
+      "name": "Energy sovereignty",
+      "description": "End dependence on Russian gas whatever the cost.",
+      "x": 10,
+      "y": 4,
+      "days": 70,
+      "prerequisites": [
+        [
+          "ukr_national_government"
+        ]
+      ],
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "energy_cost",
+            "value": 0.05,
+            "days": 1825
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "foreign_influence_resistance",
+            "value": 0.15,
+            "days": 2920
+          }
+        },
+        {
+          "add_opinion": {
+            "target": "RUS",
+            "value": -20,
+            "days": 1825
+          }
+        }
+      ]
+    },
+    {
+      "id": "ukr_armed_nation",
+      "name": "An armed nation",
+      "description": "Universal military training and a large reserve.",
+      "x": 11,
+      "y": 5,
+      "days": 70,
+      "prerequisites": [
+        [
+          "ukr_energy_sovereignty"
+        ]
+      ],
+      "effects": [
+        {
+          "change_law": {
+            "category": "conscription",
+            "law": "extended_service"
+          }
+        },
+        {
+          "add_divisions": {
+            "template": "infantry_division",
+            "count": 3
+          }
+        },
+        {
+          "add_war_support": 0.05
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "military",
+            "value": 5
+          }
+        }
+      ]
+    },
+    {
+      "id": "ukr_ultranationalist_turn",
+      "name": "Ultranationalist turn",
+      "description": "In a deep crisis, an ultranationalist party gains a mass following and seeks an authoritarian state. This is a counterfactual, not a claim about the party's aims. Available only where such a party exists in the data.",
+      "x": 12,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "ukr_independent_state"
+        ]
+      ],
+      "mutually_exclusive": [
+        "ukr_balancing_act",
+        "ukr_eastern_course",
+        "ukr_liberal_breakthrough",
+        "ukr_red_revival",
+        "ukr_national_awakening",
+        "ukr_army_steps_in"
+      ],
+      "available": {
+        "all": [
+          {
+            "any": [
+              {
+                "follows_history": false
+              },
+              {
+                "is_player": true
+              }
+            ]
+          },
+          {
+            "has_party_of_group": "fascist"
+          },
+          {
+            "stability_below": 0.4
+          },
+          {
+            "war_support_above": 0.4
+          }
+        ]
+      },
+      "effects": [
+        {
+          "leave_history": true
+        },
+        {
+          "add_ideology_support": {
+            "group": "fascist",
+            "value": 0.04
+          }
+        },
+        {
+          "add_war_support": 0.05
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "minorities",
+            "value": -8
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "media",
+            "value": -5
+          }
+        }
+      ],
+      "ai_weight": 0.1
+    },
+    {
+      "id": "ukr_street_movement",
+      "name": "A street movement",
+      "description": "Marches and rallies spread the movement in the cities.",
+      "x": 12,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "ukr_ultranationalist_turn"
+        ]
+      ],
+      "effects": [
+        {
+          "add_ideology_support": {
+            "group": "fascist",
+            "value": 0.06
+          }
+        },
+        {
+          "add_unrest": 0.05
+        }
+      ]
+    },
+    {
+      "id": "ukr_seizure_of_power",
+      "name": "Seizure of power",
+      "description": "The ultranationalist party takes power, abolishes elections and rules as the only party.",
+      "x": 12,
+      "y": 3,
+      "days": 105,
+      "prerequisites": [
+        [
+          "ukr_street_movement"
+        ]
+      ],
+      "available": {
+        "ideology_group_support_above": {
+          "group": "fascist",
+          "value": 0.2
+        }
+      },
+      "effects": [
+        {
+          "install_government": {
+            "ideology": "fascist",
+            "government_type": "one_party_state"
+          }
+        },
+        {
+          "add_stability": -0.08
+        },
+        {
+          "add_war_support": 0.05
+        }
+      ]
+    },
+    {
+      "id": "ukr_total_mobilisation",
+      "name": "Total mobilisation",
+      "description": "State control of the press and the economy for war.",
+      "x": 13,
+      "y": 4,
+      "days": 70,
+      "prerequisites": [
+        [
+          "ukr_seizure_of_power"
+        ]
+      ],
+      "effects": [
+        {
+          "change_law": {
+            "category": "press_freedom",
+            "law": "total_censorship"
+          }
+        },
+        {
+          "change_law": {
+            "category": "conscription",
+            "law": "extended_service"
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "manpower_factor",
+            "value": 0.1,
+            "days": 2920
+          }
+        },
+        {
+          "add_war_support": 0.08
+        },
+        {
+          "every_neighbor": {
+            "effects": [
+              {
+                "add_opinion": {
+                  "target": "ROOT",
+                  "value": -25,
+                  "days": 1825
+                }
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "ukr_army_steps_in",
+      "name": "The army steps in",
+      "description": "With the state in crisis, the generals prepare to take over.",
+      "x": 15,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "ukr_independent_state"
+        ]
+      ],
+      "mutually_exclusive": [
+        "ukr_balancing_act",
+        "ukr_eastern_course",
+        "ukr_liberal_breakthrough",
+        "ukr_red_revival",
+        "ukr_national_awakening",
+        "ukr_ultranationalist_turn"
+      ],
+      "available": {
+        "all": [
+          {
+            "any": [
+              {
+                "follows_history": false
+              },
+              {
+                "is_player": true
+              }
+            ]
+          },
+          {
+            "stability_below": 0.3
+          },
+          {
+            "any": [
+              {
+                "unrest_above": 0.4
+              },
+              {
+                "ig_approval_below": {
+                  "group": "military",
+                  "value": 35
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "effects": [
+        {
+          "leave_history": true
+        },
+        {
+          "add_interest_group_influence": {
+            "group": "military",
+            "value": 0.08
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "military",
+            "value": 5
+          }
+        }
+      ],
+      "ai_weight": 0.2
+    },
+    {
+      "id": "ukr_military_council",
+      "name": "Military council",
+      "description": "The armed forces remove the government. The coup may fail.",
+      "x": 15,
+      "y": 2,
+      "days": 35,
+      "prerequisites": [
+        [
+          "ukr_army_steps_in"
+        ]
+      ],
+      "effects": [
+        {
+          "trigger_coup": {
+            "by": "military",
+            "success_chance": 0.6
+          }
+        }
+      ]
+    },
+    {
+      "id": "ukr_martial_order",
+      "name": "Martial order",
+      "description": "A state of emergency, a curfew and military courts.",
+      "x": 15,
+      "y": 3,
+      "days": 70,
+      "prerequisites": [
+        [
+          "ukr_military_council"
+        ]
+      ],
+      "available": {
+        "government_type": "military_junta"
+      },
+      "effects": [
+        {
+          "change_law": {
+            "category": "civil_rights",
+            "law": "security_state"
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "internal_security",
+            "value": 0.1,
+            "days": 1460
+          }
+        },
+        {
+          "add_unrest": -0.08
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "youth_students",
+            "value": -6
+          }
+        }
+      ]
+    },
+    {
+      "id": "ukr_return_to_barracks",
+      "name": "Return to the barracks",
+      "description": "The council hands power to an elected government.",
+      "x": 16,
+      "y": 4,
+      "days": 140,
+      "prerequisites": [
+        [
+          "ukr_martial_order"
+        ]
+      ],
+      "available": {
+        "government_type": "military_junta"
+      },
+      "effects": [
+        {
+          "set_government_type": "semi_presidential"
+        },
+        {
+          "change_law": {
+            "category": "political_freedom",
+            "law": "free_elections"
+          }
+        },
+        {
+          "hold_election": {
+            "kind": "presidential"
+          }
+        },
+        {
+          "add_stability": 0.05
+        },
+        {
+          "add_interest_group_influence": {
+            "group": "military",
+            "value": -0.08
+          }
+        }
+      ],
+      "ai_weight": 0.5
+    },
+    {
+      "id": "ukr_economic_recovery",
+      "name": "Economic recovery",
+      "description": "Return to growth after a decade of decline.",
+      "x": 21,
+      "y": 0,
+      "days": 70,
+      "effects": [
+        {
+          "add_political_power": 30
+        },
+        {
+          "add_economic_mood": 0.03
+        }
+      ],
+      "ai_weight": 5
+    },
+    {
+      "id": "ukr_hryvnia_stabilisation",
+      "name": "Stabilise the hryvnia",
+      "description": "Tight money and an independent central bank end the inflation of the 1990s.",
+      "x": 19,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "ukr_economic_recovery"
+        ]
+      ],
+      "available": {
+        "has_spirit": "ukr_post_soviet_depression"
+      },
+      "effects": [
+        {
+          "swap_spirit": {
+            "from": "ukr_post_soviet_depression",
+            "to": "ukr_fragile_recovery"
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "inflation",
+            "value": -0.02,
+            "days": 2920
+          }
+        },
+        {
+          "add_political_power": -20
+        }
+      ],
+      "ai_weight": 4
+    },
+    {
+      "id": "ukr_privatisation",
+      "name": "Large-scale privatisation",
+      "description": "Sell the large state enterprises to private owners.",
+      "x": 21,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "ukr_economic_recovery"
+        ]
+      ],
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "private_sector_output",
+            "value": 0.05,
+            "days": 2920
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "business",
+            "value": 6
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "labour_unions",
+            "value": -4
+          }
+        },
+        {
+          "add_treasury": 2
+        }
+      ]
+    },
+    {
+      "id": "ukr_tax_reform",
+      "name": "Tax reform",
+      "description": "Simplify taxes and widen the base.",
+      "x": 23,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "ukr_economic_recovery"
+        ]
+      ],
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "tax_efficiency",
+            "value": 0.05,
+            "days": 2920
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "business",
+            "value": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "ukr_banking_cleanup",
+      "name": "Clean up the banks",
+      "description": "Close insolvent banks and strengthen the central bank's supervision.",
+      "x": 19,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "ukr_hryvnia_stabilisation",
+          "ukr_tax_reform"
+        ]
+      ],
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "interest_rate",
+            "value": -0.005,
+            "days": 2920
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "inflation",
+            "value": -0.01,
+            "days": 2920
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "business",
+            "value": -2
+          }
+        }
+      ]
+    },
+    {
+      "id": "ukr_imf_programme",
+      "name": "An IMF programme",
+      "description": "Loans from the International Monetary Fund in exchange for reforms.",
+      "x": 21,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "ukr_privatisation",
+          "ukr_tax_reform"
+        ]
+      ],
+      "effects": [
+        {
+          "add_treasury": 5
+        },
+        {
+          "set_budget": {
+            "spending": -0.5
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "labour_unions",
+            "value": -3
+          }
+        }
+      ]
+    },
+    {
+      "id": "ukr_steel_and_coal",
+      "name": "Steel and coal",
+      "description": "Modernise the steel works and mines of the east.",
+      "x": 23,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "ukr_privatisation"
+        ]
+      ],
+      "effects": [
+        {
+          "add_buildings": {
+            "building": "civilian_factory",
+            "count": 2,
+            "regions": [
+              {
+                "from": "UKR",
+                "adm1": [
+                  "UKR-326",
+                  "UKR-327",
+                  "UKR-331"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "labour_unions",
+            "value": 4
+          }
+        }
+      ]
+    },
+    {
+      "id": "ukr_recovery_complete",
+      "name": "A full recovery",
+      "description": "The recovery is secure and the banks are sound.",
+      "x": 19,
+      "y": 3,
+      "days": 105,
+      "prerequisites": [
+        [
+          "ukr_banking_cleanup"
+        ],
+        [
+          "ukr_imf_programme"
+        ]
+      ],
+      "available": {
+        "has_spirit": "ukr_fragile_recovery"
+      },
+      "effects": [
+        {
+          "remove_spirit": "ukr_fragile_recovery"
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "foreign_investment",
+            "value": 0.05,
+            "days": 2920
+          }
+        }
+      ],
+      "ai_weight": 4
+    },
+    {
+      "id": "ukr_dcfta",
+      "name": "Free trade with the EU",
+      "description": "The trade part of the Association Agreement, a deep and comprehensive free trade area, applies from 1 January 2016.",
+      "x": 21,
+      "y": 3,
+      "days": 70,
+      "prerequisites": [
+        [
+          "ukr_imf_programme",
+          "ukr_steel_and_coal"
+        ]
+      ],
+      "available": {
+        "all": [
+          {
+            "any": [
+              {
+                "holds_office": {
+                  "person": "ukr.leonid_kuchma",
+                  "office": "ukr.president"
+                }
+              },
+              {
+                "holds_office": {
+                  "person": "ukr.viktor_yushchenko",
+                  "office": "ukr.president"
+                }
+              },
+              {
+                "holds_office": {
+                  "person": "ukr.viktor_yanukovych",
+                  "office": "ukr.president"
+                }
+              },
+              {
+                "holds_office": {
+                  "person": "ukr.oleksandr_turchynov",
+                  "office": "ukr.president"
+                }
+              },
+              {
+                "holds_office": {
+                  "person": "ukr.petro_poroshenko",
+                  "office": "ukr.president"
+                }
+              },
+              {
+                "holds_office": {
+                  "person": "ukr.volodymyr_zelenskyy",
+                  "office": "ukr.president"
+                }
+              }
+            ]
+          },
+          {
+            "date_after": "2016-01-01"
+          }
+        ]
+      },
+      "effects": [
+        {
+          "change_law": {
+            "category": "trade",
+            "law": "free_trade"
+          }
+        },
+        {
+          "add_spirit": "ukr_european_integration"
+        },
+        {
+          "add_buildings": {
+            "building": "civilian_factory",
+            "count": 1,
+            "regions": [
+              {
+                "from": "UKR",
+                "adm1": [
+                  "UKR-291"
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "ai_weight": 4
+    },
+    {
+      "id": "ukr_agricultural_exports",
+      "name": "Grain and oilseed exports",
+      "description": "Invest in grain and sunflower-oil exports through the Black Sea ports.",
+      "x": 23,
+      "y": 3,
+      "days": 70,
+      "prerequisites": [
+        [
+          "ukr_steel_and_coal"
+        ]
+      ],
+      "effects": [
+        {
+          "add_buildings": {
+            "building": "port",
+            "count": 1,
+            "regions": [
+              {
+                "from": "UKR",
+                "adm1": [
+                  "UKR-322"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "add_buildings": {
+            "building": "infrastructure",
+            "count": 1,
+            "regions": [
+              {
+                "from": "UKR",
+                "adm1": [
+                  "UKR-284"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "trade_efficiency",
+            "value": 0.03,
+            "days": 2920
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "rural",
+            "value": 5
+          }
+        }
+      ]
+    },
+    {
+      "id": "ukr_farmland_market",
+      "name": "A farmland market",
+      "description": "Allow the sale of farmland.",
+      "x": 19,
+      "y": 4,
+      "days": 70,
+      "prerequisites": [
+        [
+          "ukr_recovery_complete",
+          "ukr_dcfta"
+        ]
+      ],
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "gdp_growth",
+            "value": 0.002,
+            "days": 2920
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "business",
+            "value": 4
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "rural",
+            "value": -4
+          }
+        }
+      ]
+    },
+    {
+      "id": "ukr_it_sector",
+      "name": "Information technology",
+      "description": "Tax incentives for software and IT services.",
+      "x": 21,
+      "y": 4,
+      "days": 70,
+      "prerequisites": [
+        [
+          "ukr_dcfta",
+          "ukr_agricultural_exports"
+        ]
+      ],
+      "effects": [
+        {
+          "add_buildings": {
+            "building": "data_centre",
+            "count": 1,
+            "regions": [
+              {
+                "from": "UKR",
+                "adm1": [
+                  "UKR-321"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "add_research_bonus": {
+            "category": "economy_digital",
+            "value": 0.2,
+            "uses": 2
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "youth_students",
+            "value": 4
+          }
+        }
+      ]
+    },
+    {
+      "id": "ukr_food_processing",
+      "name": "Food processing",
+      "description": "Process grain and oilseeds at home.",
+      "x": 23,
+      "y": 4,
+      "days": 70,
+      "prerequisites": [
+        [
+          "ukr_agricultural_exports"
+        ]
+      ],
+      "effects": [
+        {
+          "add_buildings": {
+            "building": "civilian_factory",
+            "count": 2,
+            "regions": [
+              {
+                "from": "UKR",
+                "adm1": [
+                  "UKR-330",
+                  "UKR-319"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "rural",
+            "value": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "ukr_reconstruction",
+      "name": "Reconstruction",
+      "description": "Rebuild housing, power and transport damaged by war.",
+      "x": 21,
+      "y": 5,
+      "days": 70,
+      "prerequisites": [
+        [
+          "ukr_it_sector",
+          "ukr_food_processing",
+          "ukr_farmland_market"
+        ]
+      ],
+      "available": {
+        "any": [
+          {
+            "at_war_with": "RUS"
+          },
+          {
+            "date_after": "2022-02-24"
+          }
+        ]
+      },
+      "effects": [
+        {
+          "add_spirit": "reconstruction_effort"
+        },
+        {
+          "add_buildings": {
+            "building": "infrastructure",
+            "count": 3
+          }
+        },
+        {
+          "add_treasury": -2
+        }
+      ]
+    },
+    {
+      "id": "ukr_energy_strategy",
+      "name": "Energy strategy",
+      "description": "Plan the country's energy for the coming decades.",
+      "x": 28,
+      "y": 0,
+      "days": 70,
+      "effects": [
+        {
+          "add_political_power": 20
+        }
+      ],
+      "ai_weight": 4
+    },
+    {
+      "id": "ukr_gas_production",
+      "name": "Domestic gas",
+      "description": "Raise gas output from the fields of Poltava and Kharkiv.",
+      "x": 26,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "ukr_energy_strategy"
+        ]
+      ],
+      "effects": [
+        {
+          "add_buildings": {
+            "building": "refinery",
+            "count": 1,
+            "regions": [
+              {
+                "from": "UKR",
+                "adm1": [
+                  "UKR-330"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "fossil_output",
+            "value": 0.05,
+            "days": 2920
+          }
+        }
+      ]
+    },
+    {
+      "id": "ukr_energy_efficiency",
+      "name": "Energy efficiency",
+      "description": "Insulate homes and meter heat and gas to cut consumption.",
+      "x": 28,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "ukr_energy_strategy"
+        ]
+      ],
+      "available": {
+        "treasury_above": 1
+      },
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "energy_cost",
+            "value": -0.04,
+            "days": 3650
+          }
+        },
+        {
+          "add_treasury": -1
+        }
+      ]
+    },
+    {
+      "id": "ukr_ports_and_rail",
+      "name": "Ports and railways",
+      "description": "Modernise the Black Sea ports and the railways to the west.",
+      "x": 30,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "ukr_energy_strategy"
+        ]
+      ],
+      "effects": [
+        {
+          "add_buildings": {
+            "building": "infrastructure",
+            "count": 3
+          }
+        },
+        {
+          "add_buildings": {
+            "building": "port",
+            "count": 1,
+            "regions": [
+              {
+                "from": "UKR",
+                "adm1": [
+                  "UKR-284"
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "ukr_reverse_gas_flows",
+      "name": "Reverse gas flows",
+      "description": "Import gas from the west through the pipelines that once carried it only one way.",
+      "x": 26,
+      "y": 2,
+      "days": 105,
+      "prerequisites": [
+        [
+          "ukr_gas_production"
+        ],
+        [
+          "ukr_energy_efficiency"
+        ]
+      ],
+      "available": {
+        "has_spirit": "ukr_gas_dependence"
+      },
+      "effects": [
+        {
+          "swap_spirit": {
+            "from": "ukr_gas_dependence",
+            "to": "ukr_gas_diversified"
+          }
+        },
+        {
+          "add_opinion": {
+            "target": "RUS",
+            "value": -5,
+            "days": 1825
+          }
+        }
+      ],
+      "ai_weight": 4
+    },
+    {
+      "id": "ukr_nuclear_fuel",
+      "name": "Nuclear fuel diversification",
+      "description": "Buy fuel for the nuclear power plants from more than one supplier.",
+      "x": 28,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "ukr_energy_efficiency"
+        ]
+      ],
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "nuclear_output",
+            "value": 0.05,
+            "days": 3650
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "energy_cost",
+            "value": -0.02,
+            "days": 3650
+          }
+        }
+      ]
+    },
+    {
+      "id": "ukr_roads_to_europe",
+      "name": "Roads to Europe",
+      "description": "Motorways and border crossings to Poland and Romania.",
+      "x": 30,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "ukr_ports_and_rail"
+        ]
+      ],
+      "effects": [
+        {
+          "add_buildings": {
+            "building": "infrastructure",
+            "count": 2,
+            "regions": [
+              {
+                "from": "UKR",
+                "adm1": [
+                  "UKR-291",
+                  "UKR-288"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "trade_efficiency",
+            "value": 0.02,
+            "days": 2920
+          }
+        }
+      ]
+    },
+    {
+      "id": "ukr_aerospace_industry",
+      "name": "Aerospace industry",
+      "description": "Aircraft and engines from the plants of Kyiv, Kharkiv and Zaporizhzhia.",
+      "x": 26,
+      "y": 3,
+      "days": 70,
+      "prerequisites": [
+        [
+          "ukr_reverse_gas_flows",
+          "ukr_nuclear_fuel"
+        ]
+      ],
+      "effects": [
+        {
+          "add_buildings": {
+            "building": "military_factory",
+            "count": 1,
+            "regions": [
+              {
+                "from": "UKR",
+                "adm1": [
+                  "UKR-328"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "add_buildings": {
+            "building": "civilian_factory",
+            "count": 1,
+            "regions": [
+              {
+                "from": "UKR",
+                "adm1": [
+                  "UKR-331"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "add_research_bonus": {
+            "category": "air_drones",
+            "value": 0.2,
+            "uses": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "ukr_renewables",
+      "name": "Wind and solar",
+      "description": "Wind and solar farms in the south.",
+      "x": 28,
+      "y": 3,
+      "days": 70,
+      "prerequisites": [
+        [
+          "ukr_nuclear_fuel"
+        ]
+      ],
+      "effects": [
+        {
+          "add_buildings": {
+            "building": "renewable_plant",
+            "count": 1,
+            "regions": [
+              {
+                "from": "UKR",
+                "adm1": [
+                  "UKR-4827"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "energy_cost",
+            "value": -0.02,
+            "days": 3650
+          }
+        }
+      ]
+    },
+    {
+      "id": "ukr_machine_building",
+      "name": "Machine building",
+      "description": "Tractors, turbines and rail cars for export.",
+      "x": 30,
+      "y": 3,
+      "days": 70,
+      "prerequisites": [
+        [
+          "ukr_roads_to_europe"
+        ]
+      ],
+      "effects": [
+        {
+          "add_buildings": {
+            "building": "civilian_factory",
+            "count": 2,
+            "regions": [
+              {
+                "from": "UKR",
+                "adm1": [
+                  "UKR-328",
+                  "UKR-326"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "trade_efficiency",
+            "value": 0.02,
+            "days": 2920
+          }
+        }
+      ]
+    },
+    {
+      "id": "ukr_power_grid_europe",
+      "name": "Join the European grid",
+      "description": "Synchronise the power grid with continental Europe.",
+      "x": 28,
+      "y": 4,
+      "days": 70,
+      "prerequisites": [
+        [
+          "ukr_renewables",
+          "ukr_aerospace_industry"
+        ]
+      ],
+      "available": {
+        "date_after": "2015-01-01"
+      },
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "energy_cost",
+            "value": -0.03,
+            "days": 3650
+          }
+        },
+        {
+          "add_opinion": {
+            "target": "POL",
+            "value": 5,
+            "days": 1825
+          }
+        }
+      ]
+    },
+    {
+      "id": "ukr_industrial_parks",
+      "name": "Industrial parks",
+      "description": "Serviced land and tax breaks for new plants in the west.",
+      "x": 30,
+      "y": 4,
+      "days": 70,
+      "prerequisites": [
+        [
+          "ukr_machine_building"
+        ]
+      ],
+      "effects": [
+        {
+          "add_buildings": {
+            "building": "civilian_factory",
+            "count": 2,
+            "regions": [
+              {
+                "from": "UKR",
+                "adm1": [
+                  "UKR-291",
+                  "UKR-318"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "foreign_investment",
+            "value": 0.03,
+            "days": 2920
+          }
+        }
+      ]
+    },
+    {
+      "id": "ukr_defence_review",
+      "name": "Defence review",
+      "description": "Review the armed forces inherited from the Soviet Union.",
+      "x": 35,
+      "y": 0,
+      "days": 70,
+      "effects": [
+        {
+          "add_war_support": 0.02
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "military",
+            "value": 3
+          }
+        }
+      ],
+      "ai_weight": 4
+    },
+    {
+      "id": "ukr_smaller_army",
+      "name": "A smaller, better army",
+      "description": "Cut the size of the forces and spend more per soldier.",
+      "x": 33,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "ukr_defence_review"
+        ]
+      ],
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "army_org",
+            "value": 0.02,
+            "days": 1460
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "manpower_factor",
+            "value": -0.03,
+            "days": 1460
+          }
+        }
+      ]
+    },
+    {
+      "id": "ukr_contract_soldiers",
+      "name": "Contract soldiers",
+      "description": "More professional soldiers alongside conscripts.",
+      "x": 35,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "ukr_defence_review"
+        ]
+      ],
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "army_org",
+            "value": 0.02,
+            "days": 1460
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "youth_students",
+            "value": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "ukr_border_guard",
+      "name": "Border guard",
+      "description": "Strengthen the border guard on the eastern and southern borders.",
+      "x": 37,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "ukr_defence_review"
+        ]
+      ],
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "internal_security",
+            "value": 0.05,
+            "days": 2920
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "army_defence",
+            "value": 0.01,
+            "days": 1460
+          }
+        }
+      ]
+    },
+    {
+      "id": "ukr_nato_standards",
+      "name": "NATO standards",
+      "description": "Train and organise the forces to NATO standards.",
+      "x": 33,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "ukr_smaller_army",
+          "ukr_contract_soldiers"
+        ]
+      ],
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "training_time",
+            "value": -0.05,
+            "days": 1460
+          }
+        },
+        {
+          "add_research_bonus": {
+            "category": "doctrine",
+            "value": 0.2,
+            "uses": 2
+          }
+        },
+        {
+          "add_opinion": {
+            "target": "USA",
+            "value": 5,
+            "days": 1825
+          }
+        }
+      ]
+    },
+    {
+      "id": "ukr_defence_industry",
+      "name": "Defence industry",
+      "description": "Restart production of armoured vehicles, missiles and ammunition at home. Unlocks defence orders.",
+      "x": 35,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "ukr_contract_soldiers"
+        ]
+      ],
+      "effects": [
+        {
+          "add_buildings": {
+            "building": "military_factory",
+            "count": 2,
+            "regions": [
+              {
+                "from": "UKR",
+                "adm1": [
+                  "UKR-328",
+                  "UKR-321"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "add_equipment": {
+            "family": "infantry_equipment",
+            "amount": 300
+          }
+        }
+      ]
+    },
+    {
+      "id": "ukr_rebuild_the_navy",
+      "name": "Rebuild the navy",
+      "description": "A navy and coastal defences based in Odesa and Mykolaiv instead of Sevastopol.",
+      "x": 37,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "ukr_border_guard"
+        ]
+      ],
+      "available": {
+        "all": [
+          {
+            "has_spirit": "ukr_fleet_in_sevastopol"
+          },
+          {
+            "any": [
+              {
+                "date_after": "2014-03-18"
+              },
+              {
+                "any": [
+                  {
+                    "follows_history": false
+                  },
+                  {
+                    "is_player": true
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "effects": [
+        {
+          "swap_spirit": {
+            "from": "ukr_fleet_in_sevastopol",
+            "to": "ukr_navy_rebuilt"
+          }
+        },
+        {
+          "add_buildings": {
+            "building": "port",
+            "count": 1,
+            "regions": [
+              {
+                "from": "UKR",
+                "adm1": [
+                  "UKR-322"
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "ai_weight": 3
+    },
+    {
+      "id": "ukr_armour",
+      "name": "Armoured vehicles",
+      "description": "Modernise tanks and armoured vehicles at the Kharkiv and Kyiv plants.",
+      "x": 33,
+      "y": 3,
+      "days": 70,
+      "prerequisites": [
+        [
+          "ukr_nato_standards",
+          "ukr_defence_industry"
+        ]
+      ],
+      "effects": [
+        {
+          "add_research_bonus": {
+            "category": "armour",
+            "value": 0.2,
+            "uses": 2
+          }
+        },
+        {
+          "add_divisions": {
+            "template": "mechanised_division",
+            "count": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "ukr_missiles",
+      "name": "Missiles and artillery",
+      "description": "Domestic missiles and artillery ammunition.",
+      "x": 35,
+      "y": 3,
+      "days": 70,
+      "prerequisites": [
+        [
+          "ukr_defence_industry"
+        ]
+      ],
+      "effects": [
+        {
+          "add_research_bonus": {
+            "category": "artillery_missiles",
+            "value": 0.25,
+            "uses": 2
+          }
+        },
+        {
+          "add_buildings": {
+            "building": "military_factory",
+            "count": 1,
+            "regions": [
+              {
+                "from": "UKR",
+                "adm1": [
+                  "UKR-326"
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "ukr_air_defence",
+      "name": "Air defence",
+      "description": "Modernise and extend air defence around cities and power plants.",
+      "x": 37,
+      "y": 3,
+      "days": 70,
+      "prerequisites": [
+        [
+          "ukr_rebuild_the_navy",
+          "ukr_border_guard"
+        ]
+      ],
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "army_defence",
+            "value": 0.02,
+            "days": 1460
+          }
+        },
+        {
+          "add_buildings": {
+            "building": "air_base",
+            "count": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "ukr_drones",
+      "name": "Drones",
+      "description": "Reconnaissance and strike drones built by domestic firms and volunteers.",
+      "x": 34,
+      "y": 4,
+      "days": 70,
+      "prerequisites": [
+        [
+          "ukr_armour",
+          "ukr_missiles"
+        ]
+      ],
+      "available": {
+        "date_after": "2014-03-01"
+      },
+      "effects": [
+        {
+          "add_spirit": "ukr_drone_industry"
+        },
+        {
+          "add_research_bonus": {
+            "category": "air_drones",
+            "value": 0.25,
+            "uses": 2
+          }
+        }
+      ]
+    },
+    {
+      "id": "ukr_special_operations",
+      "name": "Special operations forces",
+      "description": "A separate command for special operations.",
+      "x": 36,
+      "y": 4,
+      "days": 70,
+      "prerequisites": [
+        [
+          "ukr_missiles",
+          "ukr_air_defence"
+        ]
+      ],
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "army_attack",
+            "value": 0.02,
+            "days": 1460
+          }
+        },
+        {
+          "add_divisions": {
+            "template": "motorised_division",
+            "count": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "ukr_reserve_army",
+      "name": "A trained reserve",
+      "description": "Regular refresher training for former soldiers.",
+      "x": 38,
+      "y": 4,
+      "days": 70,
+      "prerequisites": [
+        [
+          "ukr_air_defence"
+        ]
+      ],
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "manpower_factor",
+            "value": 0.03,
+            "days": 1460
+          }
+        },
+        {
+          "add_divisions": {
+            "template": "infantry_division",
+            "count": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "ukr_defence_of_ukraine",
+      "name": "The defence of Ukraine",
+      "description": "Organise the country's defence after the annexation of Crimea and the start of the war in the Donbas in 2014.",
+      "x": 42,
+      "y": 0,
+      "days": 70,
+      "available": {
+        "date_after": "2014-03-01"
+      },
+      "effects": [
+        {
+          "add_war_support": 0.05
+        },
+        {
+          "add_stability": 0.02
+        },
+        {
+          "add_political_power": 30
+        }
+      ],
+      "ai_weight": 5
+    },
+    {
+      "id": "ukr_volunteer_battalions",
+      "name": "Volunteer battalions into the army",
+      "description": "Bring the volunteer battalions under the command of the armed forces and the National Guard.",
+      "x": 40,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "ukr_defence_of_ukraine"
+        ]
+      ],
+      "effects": [
+        {
+          "add_divisions": {
+            "template": "infantry_division",
+            "count": 1
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "army_org",
+            "value": 0.02,
+            "days": 1460
+          }
+        }
+      ]
+    },
+    {
+      "id": "ukr_donbas_front",
+      "name": "Fortify the Donbas front",
+      "description": "Trenches and strongpoints along the line of contact.",
+      "x": 42,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "ukr_defence_of_ukraine"
+        ]
+      ],
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "army_defence",
+            "value": 0.03,
+            "days": 1460
+          }
+        },
+        {
+          "add_buildings": {
+            "building": "infrastructure",
+            "count": 1,
+            "regions": [
+              {
+                "from": "UKR",
+                "adm1": [
+                  "UKR-327"
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "ukr_crimea_is_ukraine",
+      "name": "Crimea is Ukraine",
+      "description": "Ukraine does not recognise the annexation of Crimea and claims it back.",
+      "x": 44,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "ukr_defence_of_ukraine"
+        ]
+      ],
+      "available": {
+        "date_after": "2014-03-18"
+      },
+      "effects": [
+        {
+          "add_claim": {
+            "regions": [
+              {
+                "from": "RUS",
+                "adm1": [
+                  "RUS-283",
+                  "RUS-5482"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "add_opinion": {
+            "target": "RUS",
+            "value": -20,
+            "days": 1825
+          }
+        },
+        {
+          "add_war_support": 0.03
+        }
+      ]
+    },
+    {
+      "id": "ukr_territorial_defence",
+      "name": "Territorial Defence Forces",
+      "description": "Volunteer reservists organised in every region, a separate branch of the armed forces from January 2022.",
+      "x": 40,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "ukr_volunteer_battalions"
+        ]
+      ],
+      "available": {
+        "date_after": "2022-01-01"
+      },
+      "effects": [
+        {
+          "add_spirit": "ukr_nation_in_arms"
+        },
+        {
+          "add_divisions": {
+            "template": "infantry_division",
+            "count": 2
+          }
+        }
+      ],
+      "ai_weight": 5
+    },
+    {
+      "id": "ukr_western_aid",
+      "name": "Western military aid",
+      "description": "Training, intelligence and weapons from NATO members.",
+      "x": 42,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "ukr_donbas_front",
+          "ukr_volunteer_battalions"
+        ]
+      ],
+      "available": {
+        "date_after": "2014-06-01"
+      },
+      "effects": [
+        {
+          "add_equipment": {
+            "family": "infantry_equipment",
+            "amount": 800
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "army_org",
+            "value": 0.02,
+            "days": 1460
+          }
+        },
+        {
+          "add_opinion": {
+            "target": "USA",
+            "value": 10,
+            "days": 1825
+          }
+        },
+        {
+          "add_opinion": {
+            "target": "GBR",
+            "value": 10,
+            "days": 1825
+          }
+        }
+      ]
+    },
+    {
+      "id": "ukr_occupied_regions",
+      "name": "The occupied regions",
+      "description": "Claim back every region Russia or its proxies hold.",
+      "x": 44,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "ukr_crimea_is_ukraine"
+        ]
+      ],
+      "available": {
+        "date_after": "2014-04-12"
+      },
+      "effects": [
+        {
+          "add_claim": {
+            "regions": [
+              {
+                "from": "RUS",
+                "adm1": [
+                  "UKR-327",
+                  "UKR-329",
+                  "UKR-331",
+                  "UKR-4827"
+                ]
+              },
+              {
+                "from": "DPR",
+                "adm1": [
+                  "UKR-327"
+                ]
+              },
+              {
+                "from": "LPR",
+                "adm1": [
+                  "UKR-329"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "add_war_support": 0.03
+        }
+      ]
+    },
+    {
+      "id": "ukr_wartime_economy",
+      "name": "A wartime economy",
+      "description": "Put the economy on a war footing.",
+      "x": 40,
+      "y": 3,
+      "days": 70,
+      "prerequisites": [
+        [
+          "ukr_territorial_defence"
+        ]
+      ],
+      "available": {
+        "at_war_with": "RUS"
+      },
+      "effects": [
+        {
+          "add_spirit": "war_economy"
+        },
+        {
+          "add_buildings": {
+            "building": "military_factory",
+            "count": 2,
+            "regions": [
+              {
+                "from": "UKR",
+                "adm1": [
+                  "UKR-291",
+                  "UKR-323"
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "ukr_long_range_strikes",
+      "name": "Long-range strikes",
+      "description": "Drones and missiles that reach depots and airfields far behind the front.",
+      "x": 42,
+      "y": 3,
+      "days": 70,
+      "prerequisites": [
+        [
+          "ukr_western_aid"
+        ]
+      ],
+      "available": {
+        "date_after": "2022-02-24"
+      },
+      "effects": [
+        {
+          "add_research_bonus": {
+            "category": "artillery_missiles",
+            "value": 0.25,
+            "uses": 2
+          }
+        },
+        {
+          "add_research_bonus": {
+            "category": "air_drones",
+            "value": 0.25,
+            "uses": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "ukr_black_sea_denial",
+      "name": "Deny the Black Sea",
+      "description": "Coastal missiles and sea drones push the Russian fleet away from the coast.",
+      "x": 44,
+      "y": 3,
+      "days": 70,
+      "prerequisites": [
+        [
+          "ukr_western_aid",
+          "ukr_occupied_regions"
+        ]
+      ],
+      "available": {
+        "date_after": "2022-02-24"
+      },
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "naval_effectiveness",
+            "value": 0.04,
+            "days": 1460
+          }
+        },
+        {
+          "add_research_bonus": {
+            "category": "naval",
+            "value": 0.2,
+            "uses": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "ukr_energy_resilience",
+      "name": "Energy resilience",
+      "description": "Repair and protect the power grid under attack.",
+      "x": 41,
+      "y": 4,
+      "days": 70,
+      "prerequisites": [
+        [
+          "ukr_wartime_economy",
+          "ukr_long_range_strikes"
+        ]
+      ],
+      "available": {
+        "at_war_with": "RUS"
+      },
+      "effects": [
+        {
+          "add_buildings": {
+            "building": "renewable_plant",
+            "count": 1
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "energy_cost",
+            "value": -0.02,
+            "days": 1460
+          }
+        },
+        {
+          "add_treasury": -1
+        }
+      ]
+    },
+    {
+      "id": "ukr_counteroffensive",
+      "name": "Prepare a counteroffensive",
+      "description": "Train and equip new brigades for an offensive.",
+      "x": 43,
+      "y": 4,
+      "days": 70,
+      "prerequisites": [
+        [
+          "ukr_long_range_strikes",
+          "ukr_black_sea_denial"
+        ]
+      ],
+      "available": {
+        "at_war_with": "RUS"
+      },
+      "effects": [
+        {
+          "add_divisions": {
+            "template": "mechanised_division",
+            "count": 2
+          }
+        },
+        {
+          "add_equipment": {
+            "family": "infantry_equipment",
+            "amount": 500
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "army_attack",
+            "value": 0.02,
+            "days": 730
+          }
+        }
+      ]
+    },
+    {
+      "id": "ukr_foreign_policy",
+      "name": "Foreign policy priorities",
+      "description": "Set the course of foreign policy for an independent Ukraine.",
+      "x": 48,
+      "y": 0,
+      "days": 70,
+      "effects": [
+        {
+          "add_political_power": 30
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "diplomatic_reputation",
+            "value": 0.05,
+            "days": 1825
+          }
+        }
+      ],
+      "ai_weight": 4
+    },
+    {
+      "id": "ukr_european_choice",
+      "name": "European choice",
+      "description": "Make membership of the European Union the long-term goal.",
+      "x": 47,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "ukr_foreign_policy"
+        ]
+      ],
+      "mutually_exclusive": [
+        "ukr_eurasian_choice"
+      ],
+      "effects": [
+        {
+          "add_opinion": {
+            "target": "POL",
+            "value": 10,
+            "days": 1825
+          }
+        },
+        {
+          "add_opinion": {
+            "target": "DEU",
+            "value": 10,
+            "days": 1825
+          }
+        },
+        {
+          "add_opinion": {
+            "target": "FRA",
+            "value": 10,
+            "days": 1825
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "urban_middle_class",
+            "value": 4
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "youth_students",
+            "value": 3
+          }
+        }
+      ],
+      "ai_weight": 6
+    },
+    {
+      "id": "ukr_eurasian_choice",
+      "name": "Eurasian choice",
+      "description": "Tie the economy to Russia and its partners instead.",
+      "x": 49,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "ukr_foreign_policy"
+        ]
+      ],
+      "mutually_exclusive": [
+        "ukr_european_choice"
+      ],
+      "available": {
+        "any": [
+          {
+            "follows_history": false
+          },
+          {
+            "is_player": true
+          }
+        ]
+      },
+      "effects": [
+        {
+          "add_spirit": "ukr_eurasian_integration"
+        },
+        {
+          "add_opinion": {
+            "target": "RUS",
+            "value": 20,
+            "days": 1825
+          }
+        },
+        {
+          "add_opinion": {
+            "target": "BLR",
+            "value": 10,
+            "days": 1825
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "minorities",
+            "value": 4
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "youth_students",
+            "value": -3
+          }
+        }
+      ],
+      "ai_weight": 0.3
+    },
+    {
+      "id": "ukr_kharkiv_pact",
+      "name": "Kharkiv agreements",
+      "description": "Extend the lease of the Russian Black Sea Fleet's base in Crimea to 2042 in exchange for discounted gas, as agreed on 21 April 2010.",
+      "x": 51,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "ukr_foreign_policy"
+        ]
+      ],
+      "available": {
+        "all": [
+          {
+            "holds_office": {
+              "person": "ukr.viktor_yanukovych",
+              "office": "ukr.president"
+            }
+          },
+          {
+            "date_after": "2010-04-21"
+          },
+          {
+            "date_before": "2014-02-22"
+          }
+        ]
+      },
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "energy_cost",
+            "value": -0.04,
+            "days": 1460
+          }
+        },
+        {
+          "add_opinion": {
+            "target": "RUS",
+            "value": 15,
+            "days": 1825
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "military",
+            "value": -3
+          }
+        }
+      ],
+      "ai_weight": 3
+    },
+    {
+      "id": "ukr_nato_perspective",
+      "name": "A NATO perspective",
+      "description": "Seek a path to NATO membership; at the Bucharest summit in April 2008 the allies agreed that Ukraine would become a member, without a Membership Action Plan.",
+      "x": 46,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "ukr_european_choice"
+        ]
+      ],
+      "available": {
+        "date_after": "2008-04-02"
+      },
+      "effects": [
+        {
+          "add_opinion": {
+            "target": "USA",
+            "value": 10,
+            "days": 1825
+          }
+        },
+        {
+          "add_opinion": {
+            "target": "GBR",
+            "value": 5,
+            "days": 1825
+          }
+        },
+        {
+          "add_opinion": {
+            "target": "RUS",
+            "value": -15,
+            "days": 1825
+          }
+        },
+        {
+          "add_war_support": 0.02
+        }
+      ],
+      "ai_weight": 3
+    },
+    {
+      "id": "ukr_association_agreement",
+      "name": "Association Agreement with the EU",
+      "description": "Sign the Association Agreement with the European Union: political provisions on 21 March 2014, provisional application from 1 November 2014, full force on 1 September 2017.",
+      "x": 48,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "ukr_european_choice"
+        ]
+      ],
+      "available": {
+        "all": [
+          {
+            "any": [
+              {
+                "holds_office": {
+                  "person": "ukr.leonid_kuchma",
+                  "office": "ukr.president"
+                }
+              },
+              {
+                "holds_office": {
+                  "person": "ukr.viktor_yushchenko",
+                  "office": "ukr.president"
+                }
+              },
+              {
+                "holds_office": {
+                  "person": "ukr.viktor_yanukovych",
+                  "office": "ukr.president"
+                }
+              },
+              {
+                "holds_office": {
+                  "person": "ukr.oleksandr_turchynov",
+                  "office": "ukr.president"
+                }
+              },
+              {
+                "holds_office": {
+                  "person": "ukr.petro_poroshenko",
+                  "office": "ukr.president"
+                }
+              },
+              {
+                "holds_office": {
+                  "person": "ukr.volodymyr_zelenskyy",
+                  "office": "ukr.president"
+                }
+              }
+            ]
+          },
+          {
+            "date_after": "2014-03-21"
+          }
+        ]
+      },
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "trade_efficiency",
+            "value": 0.04,
+            "days": 3650
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "foreign_investment",
+            "value": 0.05,
+            "days": 3650
+          }
+        },
+        {
+          "add_opinion": {
+            "target": "DEU",
+            "value": 10,
+            "days": 1825
+          }
+        },
+        {
+          "add_opinion": {
+            "target": "FRA",
+            "value": 10,
+            "days": 1825
+          }
+        },
+        {
+          "add_opinion": {
+            "target": "POL",
+            "value": 10,
+            "days": 1825
+          }
+        },
+        {
+          "add_opinion": {
+            "target": "RUS",
+            "value": -10,
+            "days": 1825
+          }
+        }
+      ],
+      "ai_weight": 5
+    },
+    {
+      "id": "ukr_eurasian_customs",
+      "name": "A customs union in the east",
+      "description": "Join a customs union with Russia and its partners.",
+      "x": 50,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "ukr_eurasian_choice"
+        ]
+      ],
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "trade_efficiency",
+            "value": 0.03,
+            "days": 3650
+          }
+        },
+        {
+          "add_buildings": {
+            "building": "civilian_factory",
+            "count": 1,
+            "regions": [
+              {
+                "from": "UKR",
+                "adm1": [
+                  "UKR-328"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "add_opinion": {
+            "target": "RUS",
+            "value": 15,
+            "days": 1825
+          }
+        },
+        {
+          "add_opinion": {
+            "target": "POL",
+            "value": -10,
+            "days": 1825
+          }
+        }
+      ]
+    },
+    {
+      "id": "ukr_minsk_agreements",
+      "name": "Minsk agreements",
+      "description": "Ceasefire agreements for the Donbas signed in September 2014 and on 12 February 2015.",
+      "x": 51,
+      "y": 3,
+      "days": 70,
+      "prerequisites": [
+        [
+          "ukr_kharkiv_pact",
+          "ukr_association_agreement"
+        ]
+      ],
+      "available": {
+        "all": [
+          {
+            "any": [
+              {
+                "holds_office": {
+                  "person": "ukr.leonid_kuchma",
+                  "office": "ukr.president"
+                }
+              },
+              {
+                "holds_office": {
+                  "person": "ukr.viktor_yushchenko",
+                  "office": "ukr.president"
+                }
+              },
+              {
+                "holds_office": {
+                  "person": "ukr.viktor_yanukovych",
+                  "office": "ukr.president"
+                }
+              },
+              {
+                "holds_office": {
+                  "person": "ukr.oleksandr_turchynov",
+                  "office": "ukr.president"
+                }
+              },
+              {
+                "holds_office": {
+                  "person": "ukr.petro_poroshenko",
+                  "office": "ukr.president"
+                }
+              },
+              {
+                "holds_office": {
+                  "person": "ukr.volodymyr_zelenskyy",
+                  "office": "ukr.president"
+                }
+              }
+            ]
+          },
+          {
+            "date_after": "2014-09-05"
+          },
+          {
+            "date_before": "2022-02-24"
+          }
+        ]
+      },
+      "effects": [
+        {
+          "add_stability": 0.03
+        },
+        {
+          "add_unrest": -0.02
+        },
+        {
+          "add_war_support": -0.03
+        },
+        {
+          "add_opinion": {
+            "target": "DEU",
+            "value": 5,
+            "days": 1825
+          }
+        },
+        {
+          "add_opinion": {
+            "target": "FRA",
+            "value": 5,
+            "days": 1825
+          }
+        }
+      ],
+      "ai_weight": 3
+    },
+    {
+      "id": "ukr_polish_partnership",
+      "name": "Partnership with Poland",
+      "description": "A close partnership with Poland as the gateway to the European Union.",
+      "x": 46,
+      "y": 3,
+      "days": 70,
+      "prerequisites": [
+        [
+          "ukr_nato_perspective",
+          "ukr_association_agreement"
+        ]
+      ],
+      "effects": [
+        {
+          "add_opinion": {
+            "target": "POL",
+            "value": 20,
+            "days": 1825
+          }
+        },
+        {
+          "add_buildings": {
+            "building": "infrastructure",
+            "count": 1,
+            "regions": [
+              {
+                "from": "UKR",
+                "adm1": [
+                  "UKR-291"
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "ukr_eu_candidate",
+      "name": "EU candidate status",
+      "description": "The European Council grants Ukraine candidate status on 23 June 2022.",
+      "x": 48,
+      "y": 3,
+      "days": 70,
+      "prerequisites": [
+        [
+          "ukr_association_agreement"
+        ]
+      ],
+      "available": {
+        "all": [
+          {
+            "any": [
+              {
+                "holds_office": {
+                  "person": "ukr.leonid_kuchma",
+                  "office": "ukr.president"
+                }
+              },
+              {
+                "holds_office": {
+                  "person": "ukr.viktor_yushchenko",
+                  "office": "ukr.president"
+                }
+              },
+              {
+                "holds_office": {
+                  "person": "ukr.viktor_yanukovych",
+                  "office": "ukr.president"
+                }
+              },
+              {
+                "holds_office": {
+                  "person": "ukr.oleksandr_turchynov",
+                  "office": "ukr.president"
+                }
+              },
+              {
+                "holds_office": {
+                  "person": "ukr.petro_poroshenko",
+                  "office": "ukr.president"
+                }
+              },
+              {
+                "holds_office": {
+                  "person": "ukr.volodymyr_zelenskyy",
+                  "office": "ukr.president"
+                }
+              }
+            ]
+          },
+          {
+            "date_after": "2022-06-23"
+          }
+        ]
+      },
+      "effects": [
+        {
+          "add_political_power": 50
+        },
+        {
+          "add_stability": 0.03
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "foreign_investment",
+            "value": 0.05,
+            "days": 3650
+          }
+        },
+        {
+          "add_opinion": {
+            "target": "DEU",
+            "value": 10,
+            "days": 1825
+          }
+        },
+        {
+          "add_opinion": {
+            "target": "FRA",
+            "value": 10,
+            "days": 1825
+          }
+        }
+      ],
+      "ai_weight": 5
+    },
+    {
+      "id": "ukr_russian_gas_deal",
+      "name": "A long-term gas deal with Russia",
+      "description": "Cheap gas for a long-term transit contract.",
+      "x": 50,
+      "y": 3,
+      "days": 70,
+      "prerequisites": [
+        [
+          "ukr_eurasian_customs"
+        ]
+      ],
+      "effects": [
+        {
+          "remove_spirit": "ukr_gas_dependence"
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "energy_cost",
+            "value": -0.05,
+            "days": 3650
+          }
+        },
+        {
+          "add_opinion": {
+            "target": "RUS",
+            "value": 10,
+            "days": 1825
+          }
+        }
+      ]
+    },
+    {
+      "id": "ukr_sanctions_coalition",
+      "name": "A sanctions coalition",
+      "description": "Rally partners to keep economic pressure on Russia.",
+      "x": 47,
+      "y": 4,
+      "days": 70,
+      "prerequisites": [
+        [
+          "ukr_polish_partnership",
+          "ukr_eu_candidate"
+        ]
+      ],
+      "available": {
+        "at_war_with": "RUS"
+      },
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "diplomatic_reputation",
+            "value": 0.05,
+            "days": 2920
+          }
+        },
+        {
+          "add_opinion": {
+            "target": "RUS",
+            "value": -20,
+            "days": 1825
+          }
+        },
+        {
+          "add_opinion": {
+            "target": "USA",
+            "value": 5,
+            "days": 1825
+          }
+        },
+        {
+          "add_opinion": {
+            "target": "GBR",
+            "value": 5,
+            "days": 1825
+          }
+        }
+      ]
+    },
+    {
+      "id": "ukr_black_sea_grain",
+      "name": "Black Sea grain exports",
+      "description": "Keep the sea route for grain exports open.",
+      "x": 49,
+      "y": 4,
+      "days": 70,
+      "prerequisites": [
+        [
+          "ukr_eu_candidate",
+          "ukr_minsk_agreements"
+        ]
+      ],
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "trade_efficiency",
+            "value": 0.05,
+            "days": 2920
+          }
+        },
+        {
+          "add_economic_mood": 0.03
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "rural",
+            "value": 4
+          }
+        }
+      ]
+    },
+    {
+      "id": "ukr_social_policy",
+      "name": "Social policy",
+      "description": "Set the government's priorities for health, schools and science.",
+      "x": 54,
+      "y": 0,
+      "days": 70,
+      "effects": [
+        {
+          "add_political_power": 20
+        }
+      ],
+      "ai_weight": 3
+    },
+    {
+      "id": "ukr_health_reform",
+      "name": "Health reform",
+      "description": "Money follows the patient; family doctors and new hospitals.",
+      "x": 53,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "ukr_social_policy"
+        ]
+      ],
+      "available": {
+        "treasury_above": 1
+      },
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "health_outcomes",
+            "value": 0.04,
+            "days": 3650
+          }
+        },
+        {
+          "add_treasury": -1
+        }
+      ]
+    },
+    {
+      "id": "ukr_education_reform",
+      "name": "The new Ukrainian school",
+      "description": "A twelve-year school with new curricula.",
+      "x": 55,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "ukr_social_policy"
+        ]
+      ],
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "education_quality",
+            "value": 0.04,
+            "days": 3650
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "youth_students",
+            "value": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "ukr_digital_state",
+      "name": "A state in a smartphone",
+      "description": "Public services online, from documents to permits.",
+      "x": 54,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "ukr_health_reform",
+          "ukr_education_reform"
+        ]
+      ],
+      "available": {
+        "date_after": "2015-01-01"
+      },
+      "effects": [
+        {
+          "add_buildings": {
+            "building": "data_centre",
+            "count": 1,
+            "regions": [
+              {
+                "from": "UKR",
+                "adm1": [
+                  "UKR-321"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "tax_efficiency",
+            "value": 0.03,
+            "days": 3650
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "corruption",
+            "value": -0.02,
+            "days": 3650
+          }
+        }
+      ]
+    },
+    {
+      "id": "ukr_research_institutes",
+      "name": "Research institutes",
+      "description": "Fund the academy's institutes and the universities.",
+      "x": 56,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "ukr_education_reform"
+        ]
+      ],
+      "effects": [
+        {
+          "add_spirit": "science_drive"
+        },
+        {
+          "add_research_bonus": {
+            "category": "industry_energy",
+            "value": 0.2,
+            "uses": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "ukr_veterans_care",
+      "name": "Care for veterans",
+      "description": "Rehabilitation, housing and jobs for veterans.",
+      "x": 53,
+      "y": 3,
+      "days": 70,
+      "prerequisites": [
+        [
+          "ukr_health_reform"
+        ]
+      ],
+      "available": {
+        "date_after": "2015-01-01"
+      },
+      "effects": [
+        {
+          "add_stability": 0.02
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "military",
+            "value": 4
+          }
+        },
+        {
+          "add_treasury": -1
+        }
+      ]
+    },
+    {
+      "id": "ukr_displaced_people",
+      "name": "Help for the displaced",
+      "description": "Housing and work for people who fled the war zones.",
+      "x": 55,
+      "y": 3,
+      "days": 70,
+      "prerequisites": [
+        [
+          "ukr_digital_state",
+          "ukr_research_institutes"
+        ]
+      ],
+      "available": {
+        "any": [
+          {
+            "at_war_with": "RUS"
+          },
+          {
+            "date_after": "2014-06-01"
+          }
+        ]
+      },
+      "effects": [
+        {
+          "add_stability": 0.02
+        },
+        {
+          "add_unrest": -0.02
+        },
+        {
+          "add_treasury": -1
+        }
+      ]
+    }
+  ]
+}
