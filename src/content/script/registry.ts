@@ -96,9 +96,9 @@ export const EFFECTS: Record<string, ScriptDef> = {
   },
   install_government: {
     args: z
-      .strictObject({ party: ScopedId.optional(), ideology: Id.optional(), government_type: Id, leader: ScopedId.optional() })
+      .strictObject({ party: ScopedId.optional(), ideology: Id.optional(), government_type: Id.optional(), leader: ScopedId.optional() })
       .refine((a) => !!a.party !== !!a.ideology, "give either party or ideology"),
-    description: "A real party takes power (the named one, or the most popular of an ideology group): it rules alone, its leader of the day (or a council) takes the executive, the government type changes and the laws follow the new ideology.",
+    description: "A real party takes power (the named one, or the most popular of an ideology group): it rules alone, its leader of the day (or a council) takes the executive, the government type changes (or stays, if it holds elections and none is given) and the laws follow the new ideology.",
     refs: { party: "party", ideology: "ideology_group", government_type: "government_type", leader: "person" },
   },
   leave_history: {

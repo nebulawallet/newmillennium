@@ -2,13 +2,1116 @@
   "id": "generic",
   "name": "National priorities",
   "countries": [],
-  "note": "The generic focus tree for every country without its own. Effects are gameplay estimates.",
+  "note": "The generic focus tree for every country without its own. The political branch has a steady course (the historical path) and six mutually exclusive alternatives; each brings to power only a real party of the country's data (install_government) and shows only where one exists, except the military junta, which needs none. Alternatives are a counterfactual, not a claim about the parties. Effects are gameplay estimates.",
   "focuses": [
+    {
+      "id": "path_question_of_power",
+      "name": "The question of power",
+      "description": "Decide whether the political order stays as it is or changes course.",
+      "x": 7,
+      "y": 0,
+      "days": 70,
+      "effects": [
+        {
+          "add_political_power": 30
+        }
+      ],
+      "ai_weight": 5
+    },
+    {
+      "id": "path_steady_course",
+      "name": "A steady course",
+      "description": "Keep the political order as it is. This is the path most countries took.",
+      "x": 1,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "path_question_of_power"
+        ]
+      ],
+      "mutually_exclusive": [
+        "path_liberal_opening",
+        "path_socialist_turn",
+        "path_nationalist_turn",
+        "path_ultranationalist_turn",
+        "path_religious_turn",
+        "path_army_steps_in"
+      ],
+      "effects": [
+        {
+          "add_stability": 0.05
+        },
+        {
+          "add_political_power": 40
+        },
+        {
+          "add_ruling_party_popularity": 0.02
+        }
+      ],
+      "ai_weight": 20
+    },
+    {
+      "id": "path_liberal_opening",
+      "name": "Liberal opening",
+      "description": "Open the political system to real competition; the liberal parties gain ground.",
+      "x": 3,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "path_question_of_power"
+        ]
+      ],
+      "mutually_exclusive": [
+        "path_steady_course",
+        "path_socialist_turn",
+        "path_nationalist_turn",
+        "path_ultranationalist_turn",
+        "path_religious_turn",
+        "path_army_steps_in"
+      ],
+      "available": {
+        "all": [
+          {
+            "any": [
+              {
+                "follows_history": false
+              },
+              {
+                "is_player": true
+              }
+            ]
+          },
+          {
+            "has_party_of_group": "liberal_democratic"
+          },
+          {
+            "not": {
+              "ruling_ideology_group": "liberal_democratic"
+            }
+          },
+          {
+            "any": [
+              {
+                "stability_below": 0.6
+              },
+              {
+                "ig_approval_below": {
+                  "group": "urban_middle_class",
+                  "value": 45
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "effects": [
+        {
+          "leave_history": true
+        },
+        {
+          "add_ideology_support": {
+            "group": "liberal_democratic",
+            "value": 0.03
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "urban_middle_class",
+            "value": 5
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "security_services",
+            "value": -5
+          }
+        }
+      ],
+      "ai_weight": 0.3
+    },
+    {
+      "id": "path_free_press",
+      "name": "A free press",
+      "description": "End state pressure on the media.",
+      "x": 3,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "path_liberal_opening"
+        ]
+      ],
+      "effects": [
+        {
+          "change_law": {
+            "category": "press_freedom",
+            "law": "regulated_press"
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "media",
+            "value": 8
+          }
+        },
+        {
+          "add_ideology_support": {
+            "group": "liberal_democratic",
+            "value": 0.04
+          }
+        }
+      ]
+    },
+    {
+      "id": "path_liberal_government",
+      "name": "A liberal government",
+      "description": "The most popular liberal party forms the government and calls free elections.",
+      "x": 3,
+      "y": 3,
+      "days": 105,
+      "prerequisites": [
+        [
+          "path_free_press"
+        ]
+      ],
+      "available": {
+        "ideology_group_support_above": {
+          "group": "liberal_democratic",
+          "value": 0.15
+        }
+      },
+      "effects": [
+        {
+          "install_government": {
+            "ideology": "liberal_democratic"
+          }
+        },
+        {
+          "change_law": {
+            "category": "political_freedom",
+            "law": "free_elections"
+          }
+        },
+        {
+          "add_stability": -0.05
+        }
+      ]
+    },
+    {
+      "id": "path_rule_of_law",
+      "name": "Rule of law",
+      "description": "Independent courts and full civil liberties.",
+      "x": 3,
+      "y": 4,
+      "days": 70,
+      "prerequisites": [
+        [
+          "path_liberal_government"
+        ]
+      ],
+      "effects": [
+        {
+          "change_law": {
+            "category": "civil_rights",
+            "law": "full_civil_liberties"
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "corruption",
+            "value": -0.05,
+            "days": 2920
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "security_services",
+            "value": -6
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "business",
+            "value": 4
+          }
+        }
+      ]
+    },
+    {
+      "id": "path_socialist_turn",
+      "name": "Socialist turn",
+      "description": "Hard times turn voters toward the socialist and communist parties.",
+      "x": 5,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "path_question_of_power"
+        ]
+      ],
+      "mutually_exclusive": [
+        "path_steady_course",
+        "path_liberal_opening",
+        "path_nationalist_turn",
+        "path_ultranationalist_turn",
+        "path_religious_turn",
+        "path_army_steps_in"
+      ],
+      "available": {
+        "all": [
+          {
+            "any": [
+              {
+                "follows_history": false
+              },
+              {
+                "is_player": true
+              }
+            ]
+          },
+          {
+            "has_party_of_group": "socialist_communist"
+          },
+          {
+            "not": {
+              "ruling_ideology_group": "socialist_communist"
+            }
+          },
+          {
+            "any": [
+              {
+                "gdp_growth_below": 2
+              },
+              {
+                "unrest_above": 0.2
+              },
+              {
+                "ig_approval_below": {
+                  "group": "labour_unions",
+                  "value": 40
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "effects": [
+        {
+          "leave_history": true
+        },
+        {
+          "add_ideology_support": {
+            "group": "socialist_communist",
+            "value": 0.04
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "labour_unions",
+            "value": 5
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "business",
+            "value": -5
+          }
+        }
+      ],
+      "ai_weight": 0.3
+    },
+    {
+      "id": "path_workers_movement",
+      "name": "Workers' movement",
+      "description": "Strikes and committees in the factories rally behind the party.",
+      "x": 5,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "path_socialist_turn"
+        ]
+      ],
+      "effects": [
+        {
+          "add_ideology_support": {
+            "group": "socialist_communist",
+            "value": 0.05
+          }
+        },
+        {
+          "add_interest_group_influence": {
+            "group": "labour_unions",
+            "value": 0.05
+          }
+        }
+      ]
+    },
+    {
+      "id": "path_socialist_government",
+      "name": "A socialist government",
+      "description": "The most popular socialist party takes power and rules as the single governing party.",
+      "x": 5,
+      "y": 3,
+      "days": 105,
+      "prerequisites": [
+        [
+          "path_workers_movement"
+        ]
+      ],
+      "available": {
+        "ideology_group_support_above": {
+          "group": "socialist_communist",
+          "value": 0.25
+        }
+      },
+      "effects": [
+        {
+          "install_government": {
+            "ideology": "socialist_communist",
+            "government_type": "one_party_state"
+          }
+        },
+        {
+          "change_law": {
+            "category": "political_freedom",
+            "law": "single_party_elections"
+          }
+        },
+        {
+          "add_stability": -0.05
+        }
+      ]
+    },
+    {
+      "id": "path_public_ownership",
+      "name": "Public ownership",
+      "description": "Bring the large industries and the banks into public ownership.",
+      "x": 5,
+      "y": 4,
+      "days": 70,
+      "prerequisites": [
+        [
+          "path_socialist_government"
+        ]
+      ],
+      "effects": [
+        {
+          "change_law": {
+            "category": "economic_system",
+            "law": "state_capitalism"
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "state_industry_output",
+            "value": 0.08,
+            "days": 2920
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "business",
+            "value": -10
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "labour_unions",
+            "value": 6
+          }
+        }
+      ]
+    },
+    {
+      "id": "path_nationalist_turn",
+      "name": "Nationalist turn",
+      "description": "Nationalist parties gain from a mood of national grievance.",
+      "x": 7,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "path_question_of_power"
+        ]
+      ],
+      "mutually_exclusive": [
+        "path_steady_course",
+        "path_liberal_opening",
+        "path_socialist_turn",
+        "path_ultranationalist_turn",
+        "path_religious_turn",
+        "path_army_steps_in"
+      ],
+      "available": {
+        "all": [
+          {
+            "any": [
+              {
+                "follows_history": false
+              },
+              {
+                "is_player": true
+              }
+            ]
+          },
+          {
+            "has_party_of_group": "nationalist_populist"
+          },
+          {
+            "not": {
+              "ruling_ideology_group": "nationalist_populist"
+            }
+          },
+          {
+            "any": [
+              {
+                "stability_below": 0.5
+              },
+              {
+                "war_support_above": 0.5
+              }
+            ]
+          }
+        ]
+      },
+      "effects": [
+        {
+          "leave_history": true
+        },
+        {
+          "add_ideology_support": {
+            "group": "nationalist_populist",
+            "value": 0.04
+          }
+        },
+        {
+          "add_war_support": 0.03
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "minorities",
+            "value": -5
+          }
+        }
+      ],
+      "ai_weight": 0.3
+    },
+    {
+      "id": "path_patriotic_rallies",
+      "name": "Patriotic rallies",
+      "description": "Mass rallies around national symbols and grievances.",
+      "x": 7,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "path_nationalist_turn"
+        ]
+      ],
+      "effects": [
+        {
+          "add_ideology_support": {
+            "group": "nationalist_populist",
+            "value": 0.05
+          }
+        },
+        {
+          "add_war_support": 0.03
+        }
+      ]
+    },
+    {
+      "id": "path_nationalist_government",
+      "name": "A nationalist government",
+      "description": "The most popular nationalist party forms the government.",
+      "x": 7,
+      "y": 3,
+      "days": 105,
+      "prerequisites": [
+        [
+          "path_patriotic_rallies"
+        ]
+      ],
+      "available": {
+        "ideology_group_support_above": {
+          "group": "nationalist_populist",
+          "value": 0.2
+        }
+      },
+      "effects": [
+        {
+          "install_government": {
+            "ideology": "nationalist_populist",
+            "government_type": "hybrid_authoritarian"
+          }
+        },
+        {
+          "add_stability": -0.05
+        }
+      ]
+    },
+    {
+      "id": "path_national_sovereignty",
+      "name": "National sovereignty first",
+      "description": "Restrict immigration and limit foreign influence.",
+      "x": 7,
+      "y": 4,
+      "days": 70,
+      "prerequisites": [
+        [
+          "path_nationalist_government"
+        ]
+      ],
+      "effects": [
+        {
+          "change_law": {
+            "category": "immigration",
+            "law": "restrictive_immigration"
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "foreign_influence_resistance",
+            "value": 0.1,
+            "days": 2920
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "minorities",
+            "value": -6
+          }
+        }
+      ]
+    },
+    {
+      "id": "path_ultranationalist_turn",
+      "name": "Ultranationalist turn",
+      "description": "In a deep crisis, an ultranationalist party gains a mass following and seeks an authoritarian state. This is a counterfactual, not a claim about the party's aims.",
+      "x": 9,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "path_question_of_power"
+        ]
+      ],
+      "mutually_exclusive": [
+        "path_steady_course",
+        "path_liberal_opening",
+        "path_socialist_turn",
+        "path_nationalist_turn",
+        "path_religious_turn",
+        "path_army_steps_in"
+      ],
+      "available": {
+        "all": [
+          {
+            "any": [
+              {
+                "follows_history": false
+              },
+              {
+                "is_player": true
+              }
+            ]
+          },
+          {
+            "has_party_of_group": "fascist"
+          },
+          {
+            "stability_below": 0.4
+          },
+          {
+            "war_support_above": 0.4
+          }
+        ]
+      },
+      "effects": [
+        {
+          "leave_history": true
+        },
+        {
+          "add_ideology_support": {
+            "group": "fascist",
+            "value": 0.04
+          }
+        },
+        {
+          "add_war_support": 0.05
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "minorities",
+            "value": -8
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "media",
+            "value": -5
+          }
+        }
+      ],
+      "ai_weight": 0.1
+    },
+    {
+      "id": "path_street_movement",
+      "name": "A street movement",
+      "description": "Marches and rallies spread the movement in the cities.",
+      "x": 9,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "path_ultranationalist_turn"
+        ]
+      ],
+      "effects": [
+        {
+          "add_ideology_support": {
+            "group": "fascist",
+            "value": 0.06
+          }
+        },
+        {
+          "add_unrest": 0.05
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "security_services",
+            "value": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "path_seizure_of_power",
+      "name": "Seizure of power",
+      "description": "The ultranationalist party takes power, abolishes elections and rules as the only party.",
+      "x": 9,
+      "y": 3,
+      "days": 105,
+      "prerequisites": [
+        [
+          "path_street_movement"
+        ]
+      ],
+      "available": {
+        "ideology_group_support_above": {
+          "group": "fascist",
+          "value": 0.2
+        }
+      },
+      "effects": [
+        {
+          "install_government": {
+            "ideology": "fascist",
+            "government_type": "one_party_state"
+          }
+        },
+        {
+          "add_stability": -0.08
+        },
+        {
+          "add_war_support": 0.05
+        }
+      ]
+    },
+    {
+      "id": "path_national_mobilisation",
+      "name": "National mobilisation",
+      "description": "State control of the press, universal military training and a war economy.",
+      "x": 9,
+      "y": 4,
+      "days": 70,
+      "prerequisites": [
+        [
+          "path_seizure_of_power"
+        ]
+      ],
+      "effects": [
+        {
+          "change_law": {
+            "category": "press_freedom",
+            "law": "total_censorship"
+          }
+        },
+        {
+          "change_law": {
+            "category": "conscription",
+            "law": "extended_service"
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "manpower_factor",
+            "value": 0.1,
+            "days": 2920
+          }
+        },
+        {
+          "add_war_support": 0.08
+        },
+        {
+          "every_neighbor": {
+            "effects": [
+              {
+                "add_opinion": {
+                  "target": "ROOT",
+                  "value": -25,
+                  "days": 1825
+                }
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "path_religious_turn",
+      "name": "Religious turn",
+      "description": "Religious parties gain support as faith becomes central to politics.",
+      "x": 11,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "path_question_of_power"
+        ]
+      ],
+      "mutually_exclusive": [
+        "path_steady_course",
+        "path_liberal_opening",
+        "path_socialist_turn",
+        "path_nationalist_turn",
+        "path_ultranationalist_turn",
+        "path_army_steps_in"
+      ],
+      "available": {
+        "all": [
+          {
+            "any": [
+              {
+                "follows_history": false
+              },
+              {
+                "is_player": true
+              }
+            ]
+          },
+          {
+            "has_party_of_group": "religious"
+          },
+          {
+            "not": {
+              "ruling_ideology_group": "religious"
+            }
+          },
+          {
+            "any": [
+              {
+                "stability_below": 0.5
+              },
+              {
+                "ig_influence_above": {
+                  "group": "religious_establishment",
+                  "value": 0.15
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "effects": [
+        {
+          "leave_history": true
+        },
+        {
+          "add_ideology_support": {
+            "group": "religious",
+            "value": 0.04
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "religious_establishment",
+            "value": 6
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "youth_students",
+            "value": -3
+          }
+        }
+      ],
+      "ai_weight": 0.3
+    },
+    {
+      "id": "path_faith_networks",
+      "name": "Faith networks",
+      "description": "Charities and congregations organise for the religious parties.",
+      "x": 11,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "path_religious_turn"
+        ]
+      ],
+      "effects": [
+        {
+          "add_ideology_support": {
+            "group": "religious",
+            "value": 0.05
+          }
+        },
+        {
+          "add_interest_group_influence": {
+            "group": "religious_establishment",
+            "value": 0.05
+          }
+        }
+      ]
+    },
+    {
+      "id": "path_religious_government",
+      "name": "A religious government",
+      "description": "The most popular religious party forms the government.",
+      "x": 11,
+      "y": 3,
+      "days": 105,
+      "prerequisites": [
+        [
+          "path_faith_networks"
+        ]
+      ],
+      "available": {
+        "ideology_group_support_above": {
+          "group": "religious",
+          "value": 0.2
+        }
+      },
+      "effects": [
+        {
+          "install_government": {
+            "ideology": "religious"
+          }
+        },
+        {
+          "add_stability": -0.04
+        }
+      ]
+    },
+    {
+      "id": "path_faith_in_public_life",
+      "name": "Faith in public life",
+      "description": "An official religion and religious education in state schools.",
+      "x": 11,
+      "y": 4,
+      "days": 70,
+      "prerequisites": [
+        [
+          "path_religious_government"
+        ]
+      ],
+      "effects": [
+        {
+          "change_law": {
+            "category": "religion_state",
+            "law": "official_religion"
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "religious_establishment",
+            "value": 8
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "minorities",
+            "value": -5
+          }
+        }
+      ]
+    },
+    {
+      "id": "path_army_steps_in",
+      "name": "The army steps in",
+      "description": "With the state in crisis, the generals prepare to take over.",
+      "x": 13,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "path_question_of_power"
+        ]
+      ],
+      "mutually_exclusive": [
+        "path_steady_course",
+        "path_liberal_opening",
+        "path_socialist_turn",
+        "path_nationalist_turn",
+        "path_ultranationalist_turn",
+        "path_religious_turn"
+      ],
+      "available": {
+        "all": [
+          {
+            "any": [
+              {
+                "follows_history": false
+              },
+              {
+                "is_player": true
+              }
+            ]
+          },
+          {
+            "stability_below": 0.3
+          },
+          {
+            "any": [
+              {
+                "unrest_above": 0.4
+              },
+              {
+                "ig_approval_below": {
+                  "group": "military",
+                  "value": 35
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "effects": [
+        {
+          "leave_history": true
+        },
+        {
+          "add_interest_group_influence": {
+            "group": "military",
+            "value": 0.08
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "military",
+            "value": 5
+          }
+        }
+      ],
+      "ai_weight": 0.2
+    },
+    {
+      "id": "path_military_council",
+      "name": "Military council",
+      "description": "The armed forces remove the government. The coup may fail.",
+      "x": 13,
+      "y": 2,
+      "days": 35,
+      "prerequisites": [
+        [
+          "path_army_steps_in"
+        ]
+      ],
+      "effects": [
+        {
+          "trigger_coup": {
+            "by": "military",
+            "success_chance": 0.65
+          }
+        }
+      ]
+    },
+    {
+      "id": "path_martial_order",
+      "name": "Martial order",
+      "description": "A state of emergency, a curfew and military courts.",
+      "x": 13,
+      "y": 3,
+      "days": 70,
+      "prerequisites": [
+        [
+          "path_military_council"
+        ]
+      ],
+      "available": {
+        "government_type": "military_junta"
+      },
+      "effects": [
+        {
+          "change_law": {
+            "category": "civil_rights",
+            "law": "security_state"
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "internal_security",
+            "value": 0.1,
+            "days": 1460
+          }
+        },
+        {
+          "add_unrest": -0.08
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "youth_students",
+            "value": -6
+          }
+        }
+      ]
+    },
+    {
+      "id": "path_return_to_barracks",
+      "name": "Return to the barracks",
+      "description": "The council hands power to an elected government.",
+      "x": 14,
+      "y": 4,
+      "days": 140,
+      "prerequisites": [
+        [
+          "path_martial_order"
+        ]
+      ],
+      "available": {
+        "government_type": "military_junta"
+      },
+      "effects": [
+        {
+          "set_government_type": "transitional_administration"
+        },
+        {
+          "change_law": {
+            "category": "political_freedom",
+            "law": "free_elections"
+          }
+        },
+        {
+          "add_stability": 0.05
+        },
+        {
+          "add_interest_group_influence": {
+            "group": "military",
+            "value": -0.08
+          }
+        }
+      ],
+      "ai_weight": 0.5
+    },
     {
       "id": "pol_national_agenda",
       "name": "National agenda",
       "description": "Set out the government's priorities for its term.",
-      "x": 1,
+      "x": 17,
       "y": 0,
       "days": 70,
       "effects": [
@@ -21,7 +1124,7 @@
       "id": "pol_institutions",
       "name": "Strengthen institutions",
       "description": "Invest in the civil service and the courts.",
-      "x": 0,
+      "x": 16,
       "y": 1,
       "days": 70,
       "effects": [
@@ -46,7 +1149,7 @@
       "id": "pol_public_outreach",
       "name": "Public outreach",
       "description": "Explain the government's programme across the country.",
-      "x": 2,
+      "x": 18,
       "y": 1,
       "days": 70,
       "effects": [
@@ -70,7 +1173,7 @@
       "id": "pol_anti_corruption",
       "name": "Anti-corruption drive",
       "description": "Audit public contracts and strengthen oversight bodies.",
-      "x": 0,
+      "x": 16,
       "y": 2,
       "days": 70,
       "effects": [
@@ -104,7 +1207,7 @@
       "id": "pol_civic_education",
       "name": "Civic education",
       "description": "Fund civic education in schools and universities.",
-      "x": 2,
+      "x": 18,
       "y": 2,
       "days": 70,
       "effects": [
@@ -132,7 +1235,7 @@
       "id": "pol_reconciliation",
       "name": "National reconciliation",
       "description": "Bring regions and communities into the political settlement.",
-      "x": 1,
+      "x": 17,
       "y": 3,
       "days": 105,
       "effects": [
@@ -160,7 +1263,7 @@
       "id": "eco_economic_council",
       "name": "Economic council",
       "description": "Convene ministers, employers and unions on the economy.",
-      "x": 7,
+      "x": 23,
       "y": 0,
       "days": 70,
       "effects": [
@@ -179,7 +1282,7 @@
       "id": "eco_fiscal_review",
       "name": "Fiscal review",
       "description": "Review spending and the tax base.",
-      "x": 6,
+      "x": 22,
       "y": 1,
       "days": 70,
       "effects": [
@@ -204,7 +1307,7 @@
       "id": "eco_infrastructure",
       "name": "Infrastructure programme",
       "description": "Build and repair roads, rail and ports.",
-      "x": 8,
+      "x": 24,
       "y": 1,
       "days": 70,
       "effects": [
@@ -232,7 +1335,7 @@
       "id": "eco_market_reform",
       "name": "Market reform",
       "description": "Open sectors to competition and private investment.",
-      "x": 5,
+      "x": 21,
       "y": 2,
       "days": 70,
       "effects": [
@@ -269,7 +1372,7 @@
       "id": "eco_state_led",
       "name": "State-led development",
       "description": "Direct investment through state enterprises and development banks.",
-      "x": 7,
+      "x": 23,
       "y": 2,
       "days": 70,
       "effects": [
@@ -306,7 +1409,7 @@
       "id": "eco_innovation",
       "name": "Innovation agenda",
       "description": "Fund research and new industries.",
-      "x": 9,
+      "x": 25,
       "y": 2,
       "days": 70,
       "effects": [
@@ -334,7 +1437,7 @@
       "id": "eco_energy_security",
       "name": "Energy security",
       "description": "Diversify energy supplies and storage.",
-      "x": 8,
+      "x": 24,
       "y": 3,
       "days": 70,
       "effects": [
@@ -356,7 +1459,7 @@
       "id": "eco_long_term_growth",
       "name": "Long-term growth plan",
       "description": "Commit to a ten-year plan for growth.",
-      "x": 6,
+      "x": 22,
       "y": 3,
       "days": 105,
       "effects": [
@@ -382,7 +1485,7 @@
       "id": "mil_defence_review",
       "name": "Defence review",
       "description": "Review threats, forces and budgets.",
-      "x": 12,
+      "x": 28,
       "y": 0,
       "days": 70,
       "effects": [
@@ -401,7 +1504,7 @@
       "id": "mil_professional_forces",
       "name": "Professional forces",
       "description": "Move to an all-volunteer professional military.",
-      "x": 11,
+      "x": 27,
       "y": 1,
       "days": 70,
       "effects": [
@@ -438,7 +1541,7 @@
       "id": "mil_mass_reserve",
       "name": "Mass reserve",
       "description": "Keep universal service and a large trained reserve.",
-      "x": 13,
+      "x": 29,
       "y": 1,
       "days": 70,
       "effects": [
@@ -481,7 +1584,7 @@
       "id": "mil_modernisation",
       "name": "Force modernisation",
       "description": "Replace ageing equipment.",
-      "x": 12,
+      "x": 28,
       "y": 2,
       "days": 70,
       "effects": [
@@ -504,7 +1607,7 @@
       "id": "mil_intelligence",
       "name": "Intelligence reform",
       "description": "Reorganise and fund the intelligence services.",
-      "x": 14,
+      "x": 30,
       "y": 2,
       "days": 70,
       "effects": [
@@ -532,7 +1635,7 @@
       "id": "mil_border_security",
       "name": "Border security",
       "description": "Tighten control of borders and ports.",
-      "x": 14,
+      "x": 30,
       "y": 3,
       "days": 70,
       "effects": [
@@ -557,7 +1660,7 @@
       "id": "dip_foreign_policy_review",
       "name": "Foreign policy review",
       "description": "Define the country's place in the world.",
-      "x": 17,
+      "x": 33,
       "y": 0,
       "days": 70,
       "effects": [
@@ -570,7 +1673,7 @@
       "id": "dip_regional_cooperation",
       "name": "Regional cooperation",
       "description": "Seek closer ties and trade with neighbours.",
-      "x": 16,
+      "x": 32,
       "y": 1,
       "days": 70,
       "effects": [
@@ -601,7 +1704,7 @@
       "id": "dip_independent_course",
       "name": "Independent course",
       "description": "Keep freedom of action and limit foreign influence.",
-      "x": 18,
+      "x": 34,
       "y": 1,
       "days": 70,
       "effects": [
@@ -632,7 +1735,7 @@
       "id": "dip_international_standing",
       "name": "International standing",
       "description": "Raise the country's profile in international bodies.",
-      "x": 17,
+      "x": 33,
       "y": 2,
       "days": 70,
       "effects": [

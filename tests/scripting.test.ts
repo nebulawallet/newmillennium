@@ -237,3 +237,25 @@ describe("suspended elections", () => {
     expect(rus.schedule[0]!.day).toBeGreaterThan(sim.state.day);
   });
 });
+
+describe("generic political branch", () => {
+  it("paths open only where a real party of the group exists; a liberal turn keeps the constitution", () => {
+    const state = createInitialState(db, { provinces: [] }, { contentHash: "t", player: "DEU" });
+    const ctx = ctxOf(state);
+    const deu = state.countries.DEU!;
+    deu.focus.tree = "generic";
+    deu.focus.completed.push("path_question_of_power");
+    deu.stability = 0.35;
+    deu.warSupport = 0.5;
+    const st = (id: string) => focusStatus(ctx, deu, focusOf(db, deu, id)!);
+    expect(st("path_steady_course")).toBe("available");
+    expect(st("path_liberal_opening")).toBe("available");
+    expect(st("path_nationalist_turn")).toBe("available");
+    expect(st("path_ultranationalist_turn")).toBe("unavailable"); // no German party in the fascist group
+    expect(st("path_army_steps_in")).toBe("unavailable"); // stability not low enough
+    const gov = deu.govType;
+    runEffects(ctx, scope("DEU"), [{ install_government: { ideology: "liberal_democratic" } }], "test");
+    expect(deu.rulingParties).toEqual(["deu.fdp"]);
+    expect(deu.govType).toBe(gov);
+  });
+});

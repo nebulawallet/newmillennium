@@ -253,7 +253,7 @@ function effect(ctx: SimContext, scope: Scope, k: string, v: unknown, source: st
       break;
     }
     case "install_government": {
-      const spec: InstallSpec = { party: a.party as string | undefined, group: a.ideology as string | undefined, government_type: a.government_type as string, leader: a.leader as string | undefined };
+      const spec: InstallSpec = { party: a.party as string | undefined, group: a.ideology as string | undefined, government_type: a.government_type as string | undefined, leader: a.leader as string | undefined };
       installGovernment(ctx, cs, spec);
       break;
     }
@@ -471,13 +471,13 @@ export function describeEffects(db: ContentDB, effects: unknown[], depth = 0, li
       case "set_party_leader": line = `${name.person(a.person as string)} leads ${name.party(a.party as string)}`; break;
       case "add_ideology_support": line = `${a.group ? `${db.ideologyGroups.get(a.group as string)?.name ?? a.group} (all)` : name.sub(a.sub_ideology as string)} support ${signed(a.value as number, true)}`; break;
       case "install_government": {
-        const gov = db.governmentTypes.get(a.government_type as string)?.name ?? a.government_type;
+        const gov = a.government_type ? (db.governmentTypes.get(a.government_type as string)?.name ?? a.government_type) : null;
         const party = live ? installParty(db, live.state, live.tag, { party: a.party as string | undefined, group: a.ideology as string | undefined }) : null;
         if (live && !party) { line = "No party that could take power: nothing changes"; break; }
         const who = party ? name.party(party) : a.party ? name.party(a.party as string) : `The most popular ${db.ideologyGroups.get(a.ideology as string)?.name ?? a.ideology} party`;
         const head = a.leader ? (a.leader as string) : party ? live!.state.countries[live!.tag]?.partyLeader[party] : null;
         const lead = head ? `, led by ${name.person(head)}` : party ? ", led by a party council" : ", led by its leader of the day";
-        line = `${who} takes power${lead}. Government becomes: ${gov}; laws follow its ideology`;
+        line = `${who} takes power${lead}. ${gov ? `Government becomes: ${gov}; laws` : "Laws"} follow its ideology`;
         break;
       }
       case "leave_history": line = "The country leaves the historical path"; break;

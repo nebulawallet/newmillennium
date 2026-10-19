@@ -27,7 +27,8 @@ export interface InstallSpec {
   /** A named party of the country; otherwise the most popular live party of `group`. */
   party?: string;
   group?: string;
-  government_type: string;
+  /** Omitted: the current type if it holds elections, otherwise a transitional administration. */
+  government_type?: string;
   /** A named person; otherwise the party's leader of the day, or an unnamed council. */
   leader?: string;
 }
@@ -47,7 +48,8 @@ export function installParty(db: ContentDB, state: GameState, tag: string, spec:
 export function installGovernment(ctx: SimContext, cs: CountryState, spec: InstallSpec): string | null {
   const { db, state } = ctx;
   const party = installParty(db, state, cs.tag, spec);
-  const gov = db.governmentTypes.get(spec.government_type);
+  const current = db.governmentTypes.get(cs.govType);
+  const gov = db.governmentTypes.get(spec.government_type ?? (current?.holds_elections ? cs.govType : "transitional_administration"));
   if (!party || !gov) return null;
   const c = db.countries.get(cs.tag)?.country;
   const sub = db.subIdeologies.get(db.parties.get(party)?.sub_ideology ?? "");
