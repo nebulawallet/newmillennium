@@ -1,0 +1,66 @@
+{
+  "categories": [
+    {
+      "id": "pse_projects",
+      "name": "Palestinian projects",
+      "description": "Projects that the national focuses open up."
+    }
+  ],
+  "decisions": [
+    {
+      "id": "pse_donor_conference",
+      "name": "Call a donor conference",
+      "description": "Ask donors for a new round of aid.",
+      "category": "pse_projects",
+      "countries": [
+        "PSE"
+      ],
+      "visible": {
+        "has_completed_focus": "pse_donor_coordination"
+      },
+      "cost": {
+        "political_power": 30
+      },
+      "effects": [
+        {
+          "add_treasury": 0.5
+        },
+        {
+          "add_opinion": {
+            "target": "NOR",
+            "value": 5,
+            "days": 1825
+          }
+        }
+      ],
+      "cooldown_days": 365,
+      "ai_weight": 2
+    },
+    {
+      "id": "pse_un_campaign",
+      "name": "Campaign at the UN",
+      "description": "Seek new recognitions at the UN.",
+      "category": "pse_projects",
+      "countries": [
+        "PSE"
+      ],
+      "visible": {
+        "has_completed_focus": "pse_un_status"
+      },
+      "cost": {
+        "political_power": 30
+      },
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "diplomatic_reputation",
+            "value": 0.02,
+            "days": 730
+          }
+        }
+      ],
+      "cooldown_days": 365,
+      "ai_weight": 2
+    }
+  ]
+}

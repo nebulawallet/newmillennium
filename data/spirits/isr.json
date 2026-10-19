@@ -1,0 +1,137 @@
+{
+  "note": "Israel's national spirits. The ones with `start` describe the situation on 1 January 2000 and cite sources; the others are granted by focuses and decisions. Values are gameplay estimates.",
+  "spirits": [
+    {
+      "id": "isr_conscription",
+      "name": "Compulsory service",
+      "description": "Fixed-term military service has been compulsory since 1948 for Jewish men and women and for Druze and Circassian men.",
+      "kind": "strength",
+      "modifiers": {
+        "manpower_factor": 0.05,
+        "army_org": 0.03
+      },
+      "start": [
+        "ISR"
+      ],
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Conscription_in_Israel",
+          "title": "Wikipedia: Conscription in Israel",
+          "accessed": "2026-10-19"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "isr_start_up_nation",
+      "name": "Start-up nation",
+      "description": "The Silicon Wadi on the coastal plain is a global centre of advanced technology.",
+      "kind": "strength",
+      "modifiers": {
+        "research_speed": 0.05,
+        "private_sector_output": 0.03
+      },
+      "start": [
+        "ISR"
+      ],
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Silicon_Wadi",
+          "title": "Wikipedia: Silicon Wadi",
+          "accessed": "2026-10-19"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "isr_oslo_framework",
+      "name": "The Oslo framework",
+      "description": "The interim Israel-PLO agreements of 1993 and 1995 set the frame for relations with the Palestinians.",
+      "kind": "policy",
+      "modifiers": {
+        "diplomatic_reputation": 0.03
+      },
+      "start": [
+        "ISR"
+      ],
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Oslo_Accords",
+          "title": "Wikipedia: Oslo Accords",
+          "accessed": "2026-10-19"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "isr_rocket_threat",
+      "name": "Rocket threat",
+      "description": "Rockets from Gaza and Lebanon threaten the towns of the south and north.",
+      "kind": "problem",
+      "modifiers": {
+        "stability_factor": -0.03,
+        "war_support_factor": 0.03
+      }
+    },
+    {
+      "id": "isr_iron_dome",
+      "name": "Iron Dome",
+      "description": "A mobile air-defence system intercepts short-range rockets.",
+      "kind": "strength",
+      "modifiers": {
+        "stability_factor": 0.02,
+        "army_defence": 0.03
+      }
+    },
+    {
+      "id": "isr_gas_exporter",
+      "name": "Offshore gas",
+      "description": "Gas from the offshore fields supplies power plants and exports.",
+      "kind": "strength",
+      "modifiers": {
+        "energy_cost": -0.05,
+        "fossil_output": 0.1
+      }
+    },
+    {
+      "id": "isr_cyber_power",
+      "name": "Cyber power",
+      "description": "A world-class cyber industry and military cyber units.",
+      "kind": "strength",
+      "modifiers": {
+        "intelligence_power": 0.08,
+        "research_speed": 0.02
+      }
+    },
+    {
+      "id": "isr_desalination",
+      "name": "Desalinated water",
+      "description": "Desalination plants end the water shortage.",
+      "kind": "strength",
+      "modifiers": {
+        "health_outcomes": 0.02,
+        "gdp_growth": 0.001
+      }
+    },
+    {
+      "id": "isr_deep_divisions",
+      "name": "A divided society",
+      "description": "Mass protests and a deeply split public.",
+      "kind": "problem",
+      "modifiers": {
+        "stability_factor": -0.04,
+        "political_power_gain": -0.05
+      }
+    },
+    {
+      "id": "isr_national_unity",
+      "name": "National unity",
+      "description": "Parties and the public rally together in a crisis.",
+      "kind": "strength",
+      "modifiers": {
+        "stability_factor": 0.03,
+        "war_support_factor": 0.05
+      }
+    }
+  ]
+}

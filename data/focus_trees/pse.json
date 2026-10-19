@@ -1,0 +1,1538 @@
+{
+  "id": "pse",
+  "name": "Palestine",
+  "countries": [
+    "PSE"
+  ],
+  "note": "Palestine in the style of the Russian model tree: the Palestinian Authority under Fatah as the historical path and alternatives led by real movements of the data (Islamist, left fronts, liberal reformers); state-building, economy and diplomacy branches; sourced starting spirits in data/spirits/pse.json. Alternatives are a counterfactual, not a claim about the movements.",
+  "source": [
+    {
+      "url": "https://en.wikipedia.org/wiki/Palestinian_National_Authority",
+      "title": "Wikipedia: Palestinian National Authority",
+      "accessed": "2026-10-19"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/State_of_Palestine",
+      "title": "Wikipedia: State of Palestine",
+      "accessed": "2026-10-19"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Oslo_Accords",
+      "title": "Wikipedia: Oslo Accords",
+      "accessed": "2026-10-19"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Battle_of_Gaza_(2007)",
+      "title": "Wikipedia: Battle of Gaza (2007)",
+      "accessed": "2026-10-19"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Blockade_of_the_Gaza_Strip",
+      "title": "Wikipedia: Blockade of the Gaza Strip",
+      "accessed": "2026-10-19"
+    }
+  ],
+  "confidence": "verified",
+  "focuses": [
+    {
+      "id": "pse_question_of_power",
+      "name": "The Palestinian question",
+      "description": "Which movement leads the Palestinian national cause.",
+      "x": 4,
+      "y": 0,
+      "days": 70,
+      "effects": [
+        {
+          "add_political_power": 30
+        }
+      ],
+      "ai_weight": 5
+    },
+    {
+      "id": "pse_steady_course",
+      "name": "Fatah and the Authority",
+      "description": "Fatah leads the Palestinian Authority, as it did from its foundation.",
+      "x": 0,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "pse_question_of_power"
+        ]
+      ],
+      "mutually_exclusive": [
+        "pse_islamist_rise",
+        "pse_left_fronts",
+        "pse_third_way"
+      ],
+      "available": {
+        "follows_history": true
+      },
+      "effects": [
+        {
+          "add_stability": 0.04
+        },
+        {
+          "add_political_power": 40
+        }
+      ],
+      "ai_weight": 20
+    },
+    {
+      "id": "pse_islamist_rise",
+      "name": "The Islamist movement rises",
+      "description": "Islamist movements such as Hamas gain support.",
+      "x": 2,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "pse_question_of_power"
+        ]
+      ],
+      "mutually_exclusive": [
+        "pse_steady_course",
+        "pse_left_fronts",
+        "pse_third_way"
+      ],
+      "available": {
+        "all": [
+          {
+            "any": [
+              {
+                "follows_history": false
+              },
+              {
+                "is_player": true
+              }
+            ]
+          },
+          {
+            "has_party_of_group": "religious"
+          },
+          {
+            "not": {
+              "ruling_ideology_group": "religious"
+            }
+          },
+          {
+            "any": [
+              {
+                "stability_below": 0.5
+              },
+              {
+                "unrest_above": 0.2
+              }
+            ]
+          }
+        ]
+      },
+      "effects": [
+        {
+          "leave_history": true
+        },
+        {
+          "add_ideology_support": {
+            "group": "religious",
+            "value": 0.04
+          }
+        }
+      ],
+      "ai_weight": 0.3
+    },
+    {
+      "id": "pse_islamist_rise_build",
+      "name": "Charity networks",
+      "description": "Schools, clinics and charities build support.",
+      "x": 2,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "pse_islamist_rise"
+        ]
+      ],
+      "effects": [
+        {
+          "add_ideology_support": {
+            "group": "religious",
+            "value": 0.05
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "religious_establishment",
+            "value": 6
+          }
+        }
+      ]
+    },
+    {
+      "id": "pse_islamist_rise_government",
+      "name": "An Islamist government",
+      "description": "The most popular Islamist party forms the government.",
+      "x": 2,
+      "y": 3,
+      "days": 105,
+      "prerequisites": [
+        [
+          "pse_islamist_rise_build"
+        ]
+      ],
+      "available": {
+        "ideology_group_support_above": {
+          "group": "religious",
+          "value": 0.2
+        }
+      },
+      "effects": [
+        {
+          "install_government": {
+            "ideology": "religious"
+          }
+        },
+        {
+          "add_stability": -0.05
+        }
+      ]
+    },
+    {
+      "id": "pse_islamic_law",
+      "name": "Religious law",
+      "description": "Religious law in family and public life.",
+      "x": 2,
+      "y": 4,
+      "days": 70,
+      "prerequisites": [
+        [
+          "pse_islamist_rise_government"
+        ]
+      ],
+      "effects": [
+        {
+          "change_law": {
+            "category": "religion_state",
+            "law": "religious_law_partial"
+          }
+        },
+        {
+          "add_spirit": "religious_revival"
+        }
+      ]
+    },
+    {
+      "id": "pse_left_fronts",
+      "name": "The left fronts",
+      "description": "The Marxist fronts win back students and workers.",
+      "x": 4,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "pse_question_of_power"
+        ]
+      ],
+      "mutually_exclusive": [
+        "pse_steady_course",
+        "pse_islamist_rise",
+        "pse_third_way"
+      ],
+      "available": {
+        "all": [
+          {
+            "any": [
+              {
+                "follows_history": false
+              },
+              {
+                "is_player": true
+              }
+            ]
+          },
+          {
+            "has_party_of_group": "socialist_communist"
+          },
+          {
+            "not": {
+              "ruling_ideology_group": "socialist_communist"
+            }
+          },
+          {
+            "any": [
+              {
+                "gdp_growth_below": 1
+              },
+              {
+                "unrest_above": 0.25
+              }
+            ]
+          }
+        ]
+      },
+      "effects": [
+        {
+          "leave_history": true
+        },
+        {
+          "add_ideology_support": {
+            "group": "socialist_communist",
+            "value": 0.04
+          }
+        }
+      ],
+      "ai_weight": 0.3
+    },
+    {
+      "id": "pse_left_fronts_build",
+      "name": "Unions and students",
+      "description": "Organise unions and student councils.",
+      "x": 4,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "pse_left_fronts"
+        ]
+      ],
+      "effects": [
+        {
+          "add_ideology_support": {
+            "group": "socialist_communist",
+            "value": 0.05
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "labour_unions",
+            "value": 5
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "youth_students",
+            "value": 5
+          }
+        }
+      ]
+    },
+    {
+      "id": "pse_left_fronts_government",
+      "name": "A left-wing government",
+      "description": "The most popular party of the left forms the government.",
+      "x": 4,
+      "y": 3,
+      "days": 105,
+      "prerequisites": [
+        [
+          "pse_left_fronts_build"
+        ]
+      ],
+      "available": {
+        "ideology_group_support_above": {
+          "group": "socialist_communist",
+          "value": 0.2
+        }
+      },
+      "effects": [
+        {
+          "install_government": {
+            "ideology": "socialist_communist"
+          }
+        },
+        {
+          "add_stability": -0.05
+        }
+      ]
+    },
+    {
+      "id": "pse_third_way",
+      "name": "A third way",
+      "description": "Independent and liberal reformers offer an alternative to both big movements.",
+      "x": 6,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "pse_question_of_power"
+        ]
+      ],
+      "mutually_exclusive": [
+        "pse_steady_course",
+        "pse_islamist_rise",
+        "pse_left_fronts"
+      ],
+      "available": {
+        "all": [
+          {
+            "any": [
+              {
+                "follows_history": false
+              },
+              {
+                "is_player": true
+              }
+            ]
+          },
+          {
+            "has_party_of_group": "liberal_democratic"
+          },
+          {
+            "not": {
+              "ruling_ideology_group": "liberal_democratic"
+            }
+          },
+          {
+            "any": [
+              {
+                "stability_below": 0.6
+              },
+              {
+                "ig_approval_below": {
+                  "group": "urban_middle_class",
+                  "value": 45
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "effects": [
+        {
+          "leave_history": true
+        },
+        {
+          "add_ideology_support": {
+            "group": "liberal_democratic",
+            "value": 0.04
+          }
+        }
+      ],
+      "ai_weight": 0.3
+    },
+    {
+      "id": "pse_third_way_build",
+      "name": "Clean government",
+      "description": "Campaign on transparency and public finances.",
+      "x": 6,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "pse_third_way"
+        ]
+      ],
+      "effects": [
+        {
+          "add_ideology_support": {
+            "group": "liberal_democratic",
+            "value": 0.05
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "urban_middle_class",
+            "value": 5
+          }
+        }
+      ]
+    },
+    {
+      "id": "pse_third_way_government",
+      "name": "A reformist government",
+      "description": "The most popular liberal party forms the government.",
+      "x": 6,
+      "y": 3,
+      "days": 105,
+      "prerequisites": [
+        [
+          "pse_third_way_build"
+        ]
+      ],
+      "available": {
+        "ideology_group_support_above": {
+          "group": "liberal_democratic",
+          "value": 0.2
+        }
+      },
+      "effects": [
+        {
+          "install_government": {
+            "ideology": "liberal_democratic"
+          }
+        },
+        {
+          "add_stability": -0.05
+        }
+      ]
+    },
+    {
+      "id": "pse_transparent_finances",
+      "name": "Transparent finances",
+      "description": "Publish budgets and audit the ministries.",
+      "x": 6,
+      "y": 4,
+      "days": 70,
+      "prerequisites": [
+        [
+          "pse_third_way_government"
+        ]
+      ],
+      "effects": [
+        {
+          "add_spirit": "professional_civil_service"
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "foreign_investment",
+            "value": 0.05,
+            "days": 2920
+          }
+        }
+      ]
+    },
+    {
+      "id": "pse_statehood",
+      "name": "Building a state",
+      "description": "Build the institutions of a future state.",
+      "x": 10,
+      "y": 0,
+      "days": 70,
+      "effects": [
+        {
+          "add_political_power": 30
+        },
+        {
+          "add_stability": 0.02
+        }
+      ],
+      "ai_weight": 5
+    },
+    {
+      "id": "pse_civil_service",
+      "name": "A civil service",
+      "description": "Pay and train the Authority's officials.",
+      "x": 9,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "pse_statehood"
+        ]
+      ],
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "tax_efficiency",
+            "value": 0.05,
+            "days": 2920
+          }
+        },
+        {
+          "add_treasury": -0.2
+        }
+      ]
+    },
+    {
+      "id": "pse_donor_coordination",
+      "name": "Coordinate the donors",
+      "description": "One plan for the donors' money. Unlocks donor conferences.",
+      "x": 11,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "pse_statehood"
+        ]
+      ],
+      "effects": [
+        {
+          "add_spirit": "pse_donor_support"
+        },
+        {
+          "add_treasury": 0.5
+        }
+      ]
+    },
+    {
+      "id": "pse_security_forces",
+      "name": "Security forces",
+      "description": "Train and unify the security services.",
+      "x": 13,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "pse_statehood"
+        ]
+      ],
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "internal_security",
+            "value": 0.05,
+            "days": 2920
+          }
+        },
+        {
+          "add_divisions": {
+            "template": "infantry_division",
+            "count": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "pse_fiscal_reform",
+      "name": "Fiscal reform",
+      "description": "A single treasury account and audited budgets.",
+      "x": 9,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "pse_civil_service"
+        ]
+      ],
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "corruption",
+            "value": -0.03,
+            "days": 2920
+          }
+        },
+        {
+          "add_spirit": "anti_corruption_campaign"
+        }
+      ]
+    },
+    {
+      "id": "pse_municipal_elections",
+      "name": "Local elections",
+      "description": "Elect mayors and councils.",
+      "x": 11,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "pse_donor_coordination",
+          "pse_civil_service"
+        ]
+      ],
+      "effects": [
+        {
+          "add_stability": 0.02
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "urban_middle_class",
+            "value": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "pse_unity_talks",
+      "name": "Reconciliation talks",
+      "description": "Talks between Fatah and Hamas to reunite the West Bank and Gaza.",
+      "x": 13,
+      "y": 2,
+      "days": 105,
+      "prerequisites": [
+        [
+          "pse_security_forces"
+        ]
+      ],
+      "available": {
+        "date_after": "2007-07-01"
+      },
+      "effects": [
+        {
+          "swap_spirit": {
+            "from": "pse_divided_territories",
+            "to": "pse_national_unity"
+          }
+        },
+        {
+          "add_stability": 0.02
+        }
+      ]
+    },
+    {
+      "id": "pse_un_status",
+      "name": "Status at the United Nations",
+      "description": "Seek a higher status at the UN and recognition as a state. Unlocks UN campaigns.",
+      "x": 10,
+      "y": 3,
+      "days": 70,
+      "prerequisites": [
+        [
+          "pse_fiscal_reform",
+          "pse_municipal_elections"
+        ]
+      ],
+      "available": {
+        "date_after": "2011-01-01"
+      },
+      "effects": [
+        {
+          "add_spirit": "pse_state_recognition"
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "diplomatic_reputation",
+            "value": 0.05,
+            "days": 2920
+          }
+        }
+      ]
+    },
+    {
+      "id": "pse_international_courts",
+      "name": "International courts",
+      "description": "Join international treaties and courts.",
+      "x": 12,
+      "y": 3,
+      "days": 70,
+      "prerequisites": [
+        [
+          "pse_municipal_elections",
+          "pse_unity_talks"
+        ]
+      ],
+      "available": {
+        "date_after": "2012-06-01"
+      },
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "diplomatic_reputation",
+            "value": 0.03,
+            "days": 2920
+          }
+        },
+        {
+          "add_opinion": {
+            "target": "ISR",
+            "value": -10,
+            "days": 1825
+          }
+        }
+      ]
+    },
+    {
+      "id": "pse_economy_plan",
+      "name": "A Palestinian economy",
+      "description": "Plan for an economy that can stand on its own.",
+      "x": 16,
+      "y": 0,
+      "days": 70,
+      "effects": [
+        {
+          "add_political_power": 20
+        }
+      ],
+      "ai_weight": 4
+    },
+    {
+      "id": "pse_agriculture",
+      "name": "Olive groves and farms",
+      "description": "Credit and water for farmers.",
+      "x": 15,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "pse_economy_plan"
+        ]
+      ],
+      "effects": [
+        {
+          "add_interest_group_approval": {
+            "group": "rural",
+            "value": 5
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "gdp_growth",
+            "value": 0.002,
+            "days": 2920
+          }
+        }
+      ]
+    },
+    {
+      "id": "pse_industrial_zones",
+      "name": "Industrial zones",
+      "description": "Industrial parks near Jenin and Hebron.",
+      "x": 17,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "pse_economy_plan"
+        ]
+      ],
+      "effects": [
+        {
+          "add_buildings": {
+            "building": "civilian_factory",
+            "count": 1
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "foreign_investment",
+            "value": 0.03,
+            "days": 2920
+          }
+        }
+      ]
+    },
+    {
+      "id": "pse_tech_hub",
+      "name": "A technology hub",
+      "description": "Software and outsourcing companies in Ramallah.",
+      "x": 15,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "pse_agriculture",
+          "pse_industrial_zones"
+        ]
+      ],
+      "effects": [
+        {
+          "add_buildings": {
+            "building": "data_centre",
+            "count": 1
+          }
+        },
+        {
+          "add_research_bonus": {
+            "category": "economy_digital",
+            "value": 0.2,
+            "uses": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "pse_gaza_power_and_water",
+      "name": "Power and water for Gaza",
+      "description": "A power plant and desalination for Gaza.",
+      "x": 17,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "pse_industrial_zones"
+        ]
+      ],
+      "effects": [
+        {
+          "add_buildings": {
+            "building": "renewable_plant",
+            "count": 1
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "health_outcomes",
+            "value": 0.02,
+            "days": 2920
+          }
+        },
+        {
+          "add_treasury": -0.3
+        }
+      ]
+    },
+    {
+      "id": "pse_tourism",
+      "name": "Tourism",
+      "description": "Hotels and services for pilgrims and visitors.",
+      "x": 16,
+      "y": 3,
+      "days": 70,
+      "prerequisites": [
+        [
+          "pse_tech_hub",
+          "pse_gaza_power_and_water"
+        ]
+      ],
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "gdp_growth",
+            "value": 0.002,
+            "days": 2920
+          }
+        },
+        {
+          "add_buildings": {
+            "building": "infrastructure",
+            "count": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "pse_reconstruction",
+      "name": "Rebuild Gaza",
+      "description": "Rebuild housing, water and power after the wars.",
+      "x": 16,
+      "y": 4,
+      "days": 70,
+      "prerequisites": [
+        [
+          "pse_tourism",
+          "pse_gaza_power_and_water"
+        ]
+      ],
+      "available": {
+        "date_after": "2009-01-01"
+      },
+      "effects": [
+        {
+          "add_spirit": "reconstruction_effort"
+        },
+        {
+          "add_buildings": {
+            "building": "infrastructure",
+            "count": 2
+          }
+        }
+      ]
+    },
+    {
+      "id": "pse_diplomacy",
+      "name": "Diplomacy",
+      "description": "Seek support for Palestinian statehood.",
+      "x": 20,
+      "y": 0,
+      "days": 70,
+      "effects": [
+        {
+          "add_political_power": 20
+        }
+      ],
+      "ai_weight": 4
+    },
+    {
+      "id": "pse_arab_support",
+      "name": "Arab support",
+      "description": "Aid and diplomatic backing from the Arab League.",
+      "x": 19,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "pse_diplomacy"
+        ]
+      ],
+      "effects": [
+        {
+          "add_opinion": {
+            "target": "EGY",
+            "value": 10,
+            "days": 1825
+          }
+        },
+        {
+          "add_opinion": {
+            "target": "JOR",
+            "value": 10,
+            "days": 1825
+          }
+        },
+        {
+          "add_treasury": 0.3
+        }
+      ]
+    },
+    {
+      "id": "pse_european_support",
+      "name": "European support",
+      "description": "Aid and recognition from European states.",
+      "x": 21,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "pse_diplomacy"
+        ]
+      ],
+      "effects": [
+        {
+          "add_opinion": {
+            "target": "FRA",
+            "value": 10,
+            "days": 1825
+          }
+        },
+        {
+          "add_opinion": {
+            "target": "ESP",
+            "value": 10,
+            "days": 1825
+          }
+        },
+        {
+          "add_treasury": 0.3
+        }
+      ]
+    },
+    {
+      "id": "pse_peace_talks",
+      "name": "Peace talks",
+      "description": "Negotiate with Israel on a final settlement.",
+      "x": 20,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "pse_arab_support",
+          "pse_european_support"
+        ]
+      ],
+      "effects": [
+        {
+          "add_opinion": {
+            "target": "ISR",
+            "value": 15,
+            "days": 1825
+          }
+        },
+        {
+          "add_stability": 0.01
+        }
+      ]
+    },
+    {
+      "id": "pse_global_recognition",
+      "name": "Recognition by more states",
+      "description": "Win recognition from more states in Europe and the Americas.",
+      "x": 20,
+      "y": 3,
+      "days": 70,
+      "prerequisites": [
+        [
+          "pse_peace_talks"
+        ]
+      ],
+      "available": {
+        "date_after": "2014-01-01"
+      },
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "diplomatic_reputation",
+            "value": 0.04,
+            "days": 2920
+          }
+        },
+        {
+          "add_opinion": {
+            "target": "IRL",
+            "value": 10,
+            "days": 1825
+          }
+        },
+        {
+          "add_opinion": {
+            "target": "NOR",
+            "value": 10,
+            "days": 1825
+          }
+        }
+      ]
+    },
+    {
+      "id": "pse_police_reform",
+      "name": "A civil police",
+      "description": "A professional civil police force.",
+      "x": 13,
+      "y": 3,
+      "days": 70,
+      "prerequisites": [
+        [
+          "pse_unity_talks",
+          "pse_security_forces"
+        ]
+      ],
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "internal_security",
+            "value": 0.03,
+            "days": 2920
+          }
+        },
+        {
+          "add_stability": 0.01
+        }
+      ]
+    },
+    {
+      "id": "pse_basic_law",
+      "name": "A basic law",
+      "description": "A constitution for the future state.",
+      "x": 9,
+      "y": 3,
+      "days": 70,
+      "prerequisites": [
+        [
+          "pse_fiscal_reform"
+        ]
+      ],
+      "effects": [
+        {
+          "add_stability": 0.02
+        },
+        {
+          "add_political_power": 20
+        }
+      ]
+    },
+    {
+      "id": "pse_elections_renewed",
+      "name": "Hold national elections",
+      "description": "Presidential and legislative elections for the whole territory.",
+      "x": 11,
+      "y": 4,
+      "days": 70,
+      "prerequisites": [
+        [
+          "pse_un_status",
+          "pse_international_courts"
+        ]
+      ],
+      "effects": [
+        {
+          "add_stability": 0.02
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "youth_students",
+            "value": 4
+          }
+        }
+      ]
+    },
+    {
+      "id": "pse_anti_corruption",
+      "name": "Anti-corruption commission",
+      "description": "An independent commission against corruption.",
+      "x": 9,
+      "y": 4,
+      "days": 70,
+      "prerequisites": [
+        [
+          "pse_basic_law"
+        ]
+      ],
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "corruption",
+            "value": -0.03,
+            "days": 3650
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "urban_middle_class",
+            "value": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "pse_youth_jobs",
+      "name": "Jobs for the young",
+      "description": "Training and start-up loans for young people.",
+      "x": 13,
+      "y": 4,
+      "days": 70,
+      "prerequisites": [
+        [
+          "pse_police_reform"
+        ]
+      ],
+      "effects": [
+        {
+          "add_interest_group_approval": {
+            "group": "youth_students",
+            "value": 5
+          }
+        },
+        {
+          "add_treasury": -0.2
+        }
+      ]
+    },
+    {
+      "id": "pse_health_service",
+      "name": "Health service",
+      "description": "Clinics and hospitals across the West Bank and Gaza.",
+      "x": 15,
+      "y": 4,
+      "days": 70,
+      "prerequisites": [
+        [
+          "pse_tourism"
+        ]
+      ],
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "health_outcomes",
+            "value": 0.03,
+            "days": 3650
+          }
+        },
+        {
+          "add_treasury": -0.2
+        }
+      ]
+    },
+    {
+      "id": "pse_schools",
+      "name": "Schools",
+      "description": "Schools and universities.",
+      "x": 17,
+      "y": 4,
+      "days": 70,
+      "prerequisites": [
+        [
+          "pse_tourism"
+        ]
+      ],
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "education_quality",
+            "value": 0.03,
+            "days": 3650
+          }
+        }
+      ]
+    },
+    {
+      "id": "pse_roads_and_utilities",
+      "name": "Roads and utilities",
+      "description": "Roads, water networks and power lines.",
+      "x": 15,
+      "y": 5,
+      "days": 70,
+      "prerequisites": [
+        [
+          "pse_health_service",
+          "pse_reconstruction"
+        ]
+      ],
+      "effects": [
+        {
+          "add_buildings": {
+            "building": "infrastructure",
+            "count": 2
+          }
+        },
+        {
+          "add_treasury": -0.3
+        }
+      ]
+    },
+    {
+      "id": "pse_gaza_port",
+      "name": "A port for Gaza",
+      "description": "Plans for a seaport in Gaza.",
+      "x": 17,
+      "y": 5,
+      "days": 70,
+      "prerequisites": [
+        [
+          "pse_schools",
+          "pse_reconstruction"
+        ]
+      ],
+      "effects": [
+        {
+          "add_buildings": {
+            "building": "port",
+            "count": 1
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "trade_efficiency",
+            "value": 0.03,
+            "days": 2920
+          }
+        }
+      ]
+    },
+    {
+      "id": "pse_stone_and_marble",
+      "name": "Stone and marble",
+      "description": "Quarries and stone works for export.",
+      "x": 16,
+      "y": 6,
+      "days": 70,
+      "prerequisites": [
+        [
+          "pse_roads_and_utilities",
+          "pse_gaza_port"
+        ]
+      ],
+      "effects": [
+        {
+          "add_buildings": {
+            "building": "civilian_factory",
+            "count": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "pse_diaspora_investment",
+      "name": "Diaspora investment",
+      "description": "Investment from Palestinians abroad.",
+      "x": 18,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "pse_economy_plan"
+        ]
+      ],
+      "effects": [
+        {
+          "add_treasury": 0.3
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "foreign_investment",
+            "value": 0.03,
+            "days": 2920
+          }
+        }
+      ]
+    },
+    {
+      "id": "pse_banking",
+      "name": "A monetary authority",
+      "description": "A monetary authority that supervises the banks.",
+      "x": 18,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "pse_diaspora_investment"
+        ]
+      ],
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "interest_rate",
+            "value": -0.003,
+            "days": 2920
+          }
+        }
+      ]
+    },
+    {
+      "id": "pse_trade_routes",
+      "name": "Trade through Jordan",
+      "description": "Trade routes through the Allenby crossing.",
+      "x": 18,
+      "y": 3,
+      "days": 70,
+      "prerequisites": [
+        [
+          "pse_banking"
+        ]
+      ],
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "trade_efficiency",
+            "value": 0.03,
+            "days": 2920
+          }
+        },
+        {
+          "add_opinion": {
+            "target": "JOR",
+            "value": 5,
+            "days": 1825
+          }
+        }
+      ]
+    },
+    {
+      "id": "pse_turkey_qatar",
+      "name": "Support from Turkey and Qatar",
+      "description": "Aid and backing from Turkey and Qatar.",
+      "x": 22,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "pse_european_support"
+        ]
+      ],
+      "effects": [
+        {
+          "add_opinion": {
+            "target": "TUR",
+            "value": 10,
+            "days": 1825
+          }
+        },
+        {
+          "add_opinion": {
+            "target": "QAT",
+            "value": 10,
+            "days": 1825
+          }
+        },
+        {
+          "add_treasury": 0.3
+        }
+      ]
+    },
+    {
+      "id": "pse_russia_china",
+      "name": "Ties with Russia and China",
+      "description": "Diplomatic support from Russia and China.",
+      "x": 22,
+      "y": 3,
+      "days": 70,
+      "prerequisites": [
+        [
+          "pse_turkey_qatar"
+        ]
+      ],
+      "effects": [
+        {
+          "add_opinion": {
+            "target": "RUS",
+            "value": 10,
+            "days": 1825
+          }
+        },
+        {
+          "add_opinion": {
+            "target": "CHN",
+            "value": 10,
+            "days": 1825
+          }
+        }
+      ]
+    },
+    {
+      "id": "pse_refugee_services",
+      "name": "Services for refugees",
+      "description": "Work with the UN agency for refugees.",
+      "x": 19,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "pse_arab_support"
+        ]
+      ],
+      "effects": [
+        {
+          "add_stability": 0.01
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "minorities",
+            "value": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "pse_ceasefire",
+      "name": "A lasting ceasefire",
+      "description": "Seek a lasting ceasefire for Gaza.",
+      "x": 19,
+      "y": 3,
+      "days": 70,
+      "prerequisites": [
+        [
+          "pse_refugee_services",
+          "pse_peace_talks"
+        ]
+      ],
+      "available": {
+        "date_after": "2009-01-01"
+      },
+      "effects": [
+        {
+          "add_stability": 0.02
+        },
+        {
+          "add_war_support": -0.03
+        }
+      ]
+    },
+    {
+      "id": "pse_international_conference",
+      "name": "An international conference",
+      "description": "A peace conference under international sponsorship.",
+      "x": 21,
+      "y": 4,
+      "days": 70,
+      "prerequisites": [
+        [
+          "pse_global_recognition",
+          "pse_ceasefire"
+        ]
+      ],
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "diplomatic_reputation",
+            "value": 0.03,
+            "days": 2920
+          }
+        }
+      ]
+    },
+    {
+      "id": "pse_full_membership",
+      "name": "Full UN membership",
+      "description": "Apply for full membership of the United Nations.",
+      "x": 20,
+      "y": 5,
+      "days": 70,
+      "prerequisites": [
+        [
+          "pse_international_conference"
+        ]
+      ],
+      "available": {
+        "date_after": "2024-01-01"
+      },
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "diplomatic_reputation",
+            "value": 0.05,
+            "days": 3650
+          }
+        },
+        {
+          "add_political_power": 30
+        }
+      ]
+    }
+  ]
+}

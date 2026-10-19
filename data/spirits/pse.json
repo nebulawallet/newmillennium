@@ -1,0 +1,86 @@
+{
+  "note": "Palestine's national spirits. The ones with `start` describe the situation on 1 January 2000 and cite sources. Values are gameplay estimates.",
+  "spirits": [
+    {
+      "id": "pse_limited_self_rule",
+      "name": "Limited self-rule",
+      "description": "Under the Oslo Accords the Palestinian Authority has partial civil control in parts of the West Bank and Gaza.",
+      "kind": "problem",
+      "modifiers": {
+        "tax_efficiency": -0.1,
+        "foreign_influence_resistance": -0.1
+      },
+      "start": [
+        "PSE"
+      ],
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Palestinian_National_Authority",
+          "title": "Wikipedia: Palestinian National Authority",
+          "accessed": "2026-10-19"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "pse_occupation",
+      "name": "Under occupation",
+      "description": "The West Bank and the Gaza Strip are under Israeli occupation.",
+      "kind": "problem",
+      "modifiers": {
+        "production_efficiency": -0.05,
+        "unrest": 0.03,
+        "trade_efficiency": -0.05
+      },
+      "start": [
+        "PSE"
+      ],
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/State_of_Palestine",
+          "title": "Wikipedia: State of Palestine",
+          "accessed": "2026-10-19"
+        }
+      ],
+      "confidence": "verified"
+    },
+    {
+      "id": "pse_divided_territories",
+      "name": "Divided territories",
+      "description": "The West Bank and Gaza are ruled by rival governments.",
+      "kind": "problem",
+      "modifiers": {
+        "stability_factor": -0.05,
+        "political_power_gain": -0.1
+      }
+    },
+    {
+      "id": "pse_national_unity",
+      "name": "National unity",
+      "description": "Fatah and Hamas share one government.",
+      "kind": "strength",
+      "modifiers": {
+        "stability_factor": 0.04
+      }
+    },
+    {
+      "id": "pse_state_recognition",
+      "name": "International recognition",
+      "description": "A growing number of states recognise the State of Palestine.",
+      "kind": "strength",
+      "modifiers": {
+        "diplomatic_reputation": 0.08
+      }
+    },
+    {
+      "id": "pse_donor_support",
+      "name": "Donor support",
+      "description": "Aid from donors pays salaries and builds infrastructure.",
+      "kind": "policy",
+      "modifiers": {
+        "welfare_cost": -0.01,
+        "foreign_influence_resistance": -0.05
+      }
+    }
+  ]
+}

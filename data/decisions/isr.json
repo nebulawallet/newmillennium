@@ -1,0 +1,145 @@
+{
+  "categories": [
+    {
+      "id": "isr_projects",
+      "name": "Israeli state projects",
+      "description": "Projects that the national focuses open up."
+    }
+  ],
+  "decisions": [
+    {
+      "id": "isr_iron_dome_battery",
+      "name": "Deploy an Iron Dome battery",
+      "description": "Buy and deploy another interceptor battery.",
+      "category": "isr_projects",
+      "countries": [
+        "ISR"
+      ],
+      "visible": {
+        "has_completed_focus": "isr_iron_dome"
+      },
+      "available": {
+        "treasury_above": 0.5
+      },
+      "cost": {
+        "political_power": 30
+      },
+      "effects": [
+        {
+          "add_treasury": -0.5
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "army_defence",
+            "value": 0.02,
+            "days": 730
+          }
+        },
+        {
+          "add_stability": 0.01
+        }
+      ],
+      "cooldown_days": 365,
+      "ai_weight": 2
+    },
+    {
+      "id": "isr_tech_incubators",
+      "name": "Fund technology incubators",
+      "description": "State support for new technology companies.",
+      "category": "isr_projects",
+      "countries": [
+        "ISR"
+      ],
+      "visible": {
+        "has_completed_focus": "isr_innovation_authority"
+      },
+      "available": {
+        "treasury_above": 0.3
+      },
+      "cost": {
+        "political_power": 25
+      },
+      "effects": [
+        {
+          "add_treasury": -0.3
+        },
+        {
+          "add_research_bonus": {
+            "category": "electronics_cyber",
+            "value": 0.2,
+            "uses": 1
+          }
+        }
+      ],
+      "cooldown_days": 365,
+      "ai_weight": 2
+    },
+    {
+      "id": "isr_reserve_callup",
+      "name": "Call up reservists",
+      "description": "Mobilise reserve units.",
+      "category": "isr_projects",
+      "countries": [
+        "ISR"
+      ],
+      "visible": {
+        "has_completed_focus": "isr_reserve_system"
+      },
+      "available": {
+        "at_war": true
+      },
+      "cost": {
+        "political_power": 40
+      },
+      "effects": [
+        {
+          "add_divisions": {
+            "template": "infantry_division",
+            "count": 2
+          }
+        },
+        {
+          "add_stability": -0.01
+        }
+      ],
+      "cooldown_days": 365,
+      "ai_weight": 2
+    },
+    {
+      "id": "isr_gas_export_deal",
+      "name": "Gas export deal",
+      "description": "Sell gas to Egypt and Jordan.",
+      "category": "isr_projects",
+      "countries": [
+        "ISR"
+      ],
+      "visible": {
+        "has_completed_focus": "isr_leviathan"
+      },
+      "cost": {
+        "political_power": 25
+      },
+      "effects": [
+        {
+          "add_treasury": 1
+        },
+        {
+          "add_opinion": {
+            "target": "EGY",
+            "value": 5,
+            "days": 1825
+          }
+        },
+        {
+          "add_opinion": {
+            "target": "JOR",
+            "value": 5,
+            "days": 1825
+          }
+        }
+      ],
+      "cooldown_days": 540,
+      "ai_weight": 2
+    }
+  ]
+}

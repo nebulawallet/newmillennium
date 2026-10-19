@@ -11,7 +11,7 @@ import { Rng, seedRng } from "../src/sim/rng.ts";
 import { NodeFiles } from "../scripts/lib/nodeFiles.ts";
 import { FixtureFiles, validCountry } from "./fixtures.ts";
 
-const { db, issues } = compileContent(new NodeFiles(), { only: new Set(["USA", "RUS", "DEU", "UKR"]) });
+const { db, issues } = compileContent(new NodeFiles(), { only: new Set(["USA", "RUS", "DEU", "UKR", "ISR", "PSE"]) });
 const ctxOf = (state: GameState): SimContext => ({ db, state, rng: new Rng(seedRng(1)), log() {}, emit() {} });
 const scope = (tag: string) => ({ tag, root: tag, from: null });
 
@@ -357,5 +357,15 @@ describe("United States model tree", () => {
     const usa = state.countries.USA!;
     expect(usa.spirits).toEqual(expect.arrayContaining(["usa_largest_economy", "usa_reserve_currency", "usa_dotcom_bubble"]));
     expect(decisionsUnlockedBy(db, "usa_infrastructure_act")).toEqual(["Highway bill"]);
+  });
+});
+
+describe("Israel and Palestine trees", () => {
+  it("both start with sourced spirits and their focuses unlock projects", () => {
+    const state = createInitialState(db, { provinces: [] }, { contentHash: "t", player: "ISR" });
+    expect(state.countries.ISR!.spirits).toEqual(expect.arrayContaining(["isr_conscription", "isr_start_up_nation"]));
+    expect(state.countries.PSE!.spirits).toEqual(expect.arrayContaining(["pse_limited_self_rule", "pse_occupation"]));
+    expect(decisionsUnlockedBy(db, "isr_iron_dome")).toEqual(["Deploy an Iron Dome battery"]);
+    expect(focusOf(db, state.countries.PSE!, "pse_unity_talks")).toBeDefined();
   });
 });

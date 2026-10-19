@@ -6242,7 +6242,7 @@
     {
       "id": "rus_balkan_ties",
       "name": "Ties in the Balkans",
-      "description": "Close ties with Serbia.",
+      "description": "Close ties with Yugoslavia and later Serbia.",
       "x": 41,
       "y": 5,
       "days": 70,
@@ -6254,7 +6254,7 @@
       "effects": [
         {
           "add_opinion": {
-            "target": "SRB",
+            "target": "YUG",
             "value": 20,
             "days": 1825
           }
