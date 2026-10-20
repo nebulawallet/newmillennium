@@ -6,8 +6,8 @@ The user's request (20 October 2026): "taliban and isis need bigger trees". Toda
 
 | Tree | Tag | Today | Target |
 |---|---|---|---|
-| Islamic State | `ISG` | 8 | 60–80 focuses |
-| Taliban | `TAL` (insurgency 2002–2021); `AFG` once the Taliban govern | 8 | 60–80 focuses |
+| Islamic State | `ISG` | 8 | 70–90 focuses, including a surviving-state branch past 2019 |
+| Taliban | `TAL` (insurgency 2002–2021); `AFG` once the Taliban govern | 8 | 70–90 focuses, including a governing branch past 2021 for a `TAL` that never merged |
 
 Same style as the Russia model tree (`gen_rus.py`): focuses build things, add and remove national spirits, unlock decisions, raise divisions, give equipment and grant research. They don't only nudge modifiers.
 
@@ -68,6 +68,18 @@ Same style as the Russia model tree (`gen_rus.py`): focuses build things, add an
 3. **Diplomacy and negotiations** (about 10): the Doha office (2013, if sourced), talks with the US, the Doha Agreement (29 February 2020), regional ties (Pakistan, Qatar, Iran, Russia, China; opinion effects).
 4. **Strategy choice** (exclusive): a *negotiated path* (talks, prisoner exchanges, stability) against a *military path* (offensives, war support); the historical path gets the higher `ai_weight`.
 5. **The second Emirate, from 15 August 2021** (about 16; these focuses should live in the `AFG` tree, gated on the date or on `ruling_party` `afg.taliban`): ministries, revenue without aid, the poppy ban (swap `afg_opium_economy`), mines (copper, lithium), trade corridors, recognition, an army from captured equipment. Coordinate with the existing Afghanistan tree (`gen_syr_afg.py`, AFG section), which already has a small Emirate branch.
+
+## Beyond the historical end (user request, 20 October 2026)
+
+If the player wins the war and the group survives, the tree must keep going: the Islamic State past 2019, and the Taliban (as `TAL`) past 2021 if it never merged into `AFG`, or if the player plays it and holds land. No focus may have a historical end date that cuts the tree off.
+
+- **Gate on the situation, not the date.** Use `{"exists": "ISG"}`, `at_war`, `has_completed_focus` and stability or support triggers. Don't use `date_before`. Dated focuses only mark real events (for example the Doha Agreement) and never close a branch.
+- **A counterfactual state-building branch for each, about 15–20 focuses, written as neutral alternative history:**
+  - *Islamic State, a surviving proto-state:* a permanent administration, a budget and currency, rebuilding the cities it holds (`add_buildings` infrastructure and factories), trade routes, oil revenue, a standing army (divisions, equipment, research), border defences, attempts at recognition or talks with neighbours (opinion effects only), and internal consolidation (stability, unrest down). Gated on still holding territory after 2017–2019, for example `exists ISG` plus `has_completed_focus` of the consolidation path.
+  - *Taliban, the movement wins without merging:* govern the provinces it holds as a state (ministries, courts, taxes, services), rebuild and develop (roads, irrigation, mines), a standing army, diplomacy with the region, and an end to the war (`white_peace` only on an alternative path).
+- **Spirits that change with the outcome**, for example `isg_besieged` turning into `isg_entrenched_state`, and `tal_insurgent_movement` turning into `tal_governing_movement`.
+- **The AI on the historical path never takes these branches.** Gate them with `ALT` (player, or off history) or with conditions that history never reaches, so the scripted end of both groups stays unchanged in `conflict-trace`.
+- **Wording stays neutral:** describe what the administration does, as a historian would describe any de facto state. No praise, and no violence against civilians as gameplay.
 
 ## Engine notes
 
