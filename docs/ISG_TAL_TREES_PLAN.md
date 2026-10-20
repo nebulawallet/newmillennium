@@ -7,7 +7,8 @@ The user's request (20 October 2026): "taliban and isis need bigger trees". Toda
 | Tree | Tag | Today | Target |
 |---|---|---|---|
 | Islamic State | `ISG` | 8 | 70–90 focuses, including a surviving-state branch past 2019 |
-| Taliban | `TAL` (insurgency 2002–2021); `AFG` once the Taliban govern | 8 | 70–90 focuses, including a governing branch past 2021 for a `TAL` that never merged |
+| Taliban insurgency | `TAL`, 2002 to August 2021 | 8 | 40–50 focuses, ending in the takeover of Kabul |
+| Taliban government | the `AFG` tree, from 15 August 2021 | a small Emirate branch | an Emirate branch of 40–50 focuses with no end date |
 
 Same style as the Russia model tree (`gen_rus.py`): focuses build things, add and remove national spirits, unlock decisions, raise divisions, give equipment and grant research. They don't only nudge modifiers.
 
@@ -67,7 +68,8 @@ Same style as the Russia model tree (`gen_rus.py`): focuses build things, add an
 2. **Military** (about 12): weapons, IEDs only as a neutral "explosives" equipment line, special units, captured equipment after 2021, the border regions.
 3. **Diplomacy and negotiations** (about 10): the Doha office (2013, if sourced), talks with the US, the Doha Agreement (29 February 2020), regional ties (Pakistan, Qatar, Iran, Russia, China; opinion effects).
 4. **Strategy choice** (exclusive): a *negotiated path* (talks, prisoner exchanges, stability) against a *military path* (offensives, war support); the historical path gets the higher `ai_weight`.
-5. **The second Emirate, from 15 August 2021** (about 16; these focuses should live in the `AFG` tree, gated on the date or on `ruling_party` `afg.taliban`): ministries, revenue without aid, the poppy ban (swap `afg_opium_economy`), mines (copper, lithium), trade corridors, recognition, an army from captured equipment. Coordinate with the existing Afghanistan tree (`gen_syr_afg.py`, AFG section), which already has a small Emirate branch.
+5. **The takeover** (about 6, the end of the insurgency tree): the 2021 offensive (on the historical path the scripted events do the fighting; focuses give only modest bonuses), taking the provincial capitals, Kabul. On an alternative path the player can reach this earlier.
+6. **The second Emirate, from 15 August 2021, in the `AFG` tree** (40–50 focuses, no end date): ministries and courts, revenue without aid, the poppy ban (swap `afg_opium_economy`), mines, roads, irrigation and power, trade corridors (Central Asia, Pakistan, Iran, China), recognition, an army from captured equipment, relations with neighbours, and internal consolidation. Extend the small Emirate branch already in `gen_syr_afg.py` (AFG section) rather than starting a separate one.
 
 ## Beyond the historical end (user request, 20 October 2026)
 
@@ -76,8 +78,9 @@ If the player wins the war and the group survives, the tree must keep going: the
 - **Gate on the situation, not the date.** Use `{"exists": "ISG"}`, `at_war`, `has_completed_focus` and stability or support triggers. Don't use `date_before`. Dated focuses only mark real events (for example the Doha Agreement) and never close a branch.
 - **A counterfactual state-building branch for each, about 15–20 focuses, written as neutral alternative history:**
   - *Islamic State, a surviving proto-state:* a permanent administration, a budget and currency, rebuilding the cities it holds (`add_buildings` infrastructure and factories), trade routes, oil revenue, a standing army (divisions, equipment, research), border defences, attempts at recognition or talks with neighbours (opinion effects only), and internal consolidation (stability, unrest down). Gated on still holding territory after 2017–2019, for example `exists ISG` plus `has_completed_focus` of the consolidation path.
-  - *Taliban, the movement wins without merging:* govern the provinces it holds as a state (ministries, courts, taxes, services), rebuild and develop (roads, irrigation, mines), a standing army, diplomacy with the region, and an end to the war (`white_peace` only on an alternative path).
-- **Spirits that change with the outcome**, for example `isg_besieged` turning into `isg_entrenched_state`, and `tal_insurgent_movement` turning into `tal_governing_movement`.
+  - *Taliban:* in real life and in the game the Taliban take Kabul on 15 August 2021, and `TAL` merges into `AFG` (`end_armed_group` with `into: AFG` in `conflicts.json`). From then on the Taliban **are** Afghanistan's government, so their future lives in the **Afghanistan tree's Emirate branch**: ministries, courts, taxes, services, revenue without foreign aid, the poppy ban, mines (copper, lithium), roads and irrigation, an army built from captured equipment, trade corridors, and seeking recognition. It's gated on Taliban rule (`ruling_party` `afg.taliban`, or the date with `follows_history`) and runs with no end date. If the player's Taliban take Kabul earlier than history, the same branch opens then.
+- **Spirits that change with the outcome**, for example `isg_besieged` turning into `isg_entrenched_state`. Taliban spirits carry over to `AFG` at the takeover (add them in the merge event or in the first Emirate focus).
+- **Engine fix needed: the player follows the merge.** Today `endArmedGroup` (`src/sim/conflicts/armedGroups.ts`) deactivates the group and moves its divisions to `into`, but a player who was playing `TAL` is left on an inactive tag. When the ending group is the player's and `into` is set, set `state.player = into`, log it, and emit an event so the UI switches country (check how `src/ui/session.ts` reacts to a change of player). Add a test.
 - **The AI on the historical path never takes these branches.** Gate them with `ALT` (player, or off history) or with conditions that history never reaches, so the scripted end of both groups stays unchanged in `conflict-trace`.
 - **Wording stays neutral:** describe what the administration does, as a historian would describe any de facto state. No praise, and no violence against civilians as gameplay.
 
