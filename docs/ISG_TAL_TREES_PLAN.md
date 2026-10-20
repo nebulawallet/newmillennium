@@ -8,7 +8,7 @@ The user's request (20 October 2026): "taliban and isis need bigger trees". Toda
 |---|---|---|---|
 | Islamic State | `ISG` | 8 | 70–90 focuses, including a surviving-state branch past 2019 |
 | Taliban insurgency | `TAL`, 2002 to August 2021 | 8 | 40–50 focuses, ending in the takeover of Kabul |
-| Taliban government | the `AFG` tree, from 15 August 2021 | a small Emirate branch | an Emirate branch of 40–50 focuses with no end date |
+| Islamic Emirate of Afghanistan | a new tree `iea` that `AFG` switches to at the takeover | none | 60–80 focuses with no end date |
 
 Same style as the Russia model tree (`gen_rus.py`): focuses build things, add and remove national spirits, unlock decisions, raise divisions, give equipment and grant research. They don't only nudge modifiers.
 
@@ -69,20 +69,57 @@ Same style as the Russia model tree (`gen_rus.py`): focuses build things, add an
 3. **Diplomacy and negotiations** (about 10): the Doha office (2013, if sourced), talks with the US, the Doha Agreement (29 February 2020), regional ties (Pakistan, Qatar, Iran, Russia, China; opinion effects).
 4. **Strategy choice** (exclusive): a *negotiated path* (talks, prisoner exchanges, stability) against a *military path* (offensives, war support); the historical path gets the higher `ai_weight`.
 5. **The takeover** (about 6, the end of the insurgency tree): the 2021 offensive (on the historical path the scripted events do the fighting; focuses give only modest bonuses), taking the provincial capitals, Kabul. On an alternative path the player can reach this earlier.
-6. **The second Emirate, from 15 August 2021, in the `AFG` tree** (40–50 focuses, no end date): ministries and courts, revenue without aid, the poppy ban (swap `afg_opium_economy`), mines, roads, irrigation and power, trade corridors (Central Asia, Pakistan, Iran, China), recognition, an army from captured equipment, relations with neighbours, and internal consolidation. Extend the small Emirate branch already in `gen_syr_afg.py` (AFG section) rather than starting a separate one.
+6. **Form the Islamic Emirate early** (alternative path; see "Forming the Islamic Emirate early" below): if the player's Taliban win the war before 2021, a focus takes Kabul and forms the Islamic Emirate of Afghanistan at once.
 
 ## Beyond the historical end (user request, 20 October 2026)
 
-If the player wins the war and the group survives, the tree must keep going: the Islamic State past 2019, and the Taliban (as `TAL`) past 2021 if it never merged into `AFG`, or if the player plays it and holds land. No focus may have a historical end date that cuts the tree off.
+If the player wins the war and the group survives, the tree must keep going: the Islamic State past 2019, and the Taliban into the Islamic Emirate tree (below) whenever they take over. No focus may have a historical end date that cuts a tree off.
 
 - **Gate on the situation, not the date.** Use `{"exists": "ISG"}`, `at_war`, `has_completed_focus` and stability or support triggers. Don't use `date_before`. Dated focuses only mark real events (for example the Doha Agreement) and never close a branch.
 - **A counterfactual state-building branch for each, about 15–20 focuses, written as neutral alternative history:**
   - *Islamic State, a surviving proto-state:* a permanent administration, a budget and currency, rebuilding the cities it holds (`add_buildings` infrastructure and factories), trade routes, oil revenue, a standing army (divisions, equipment, research), border defences, attempts at recognition or talks with neighbours (opinion effects only), and internal consolidation (stability, unrest down). Gated on still holding territory after 2017–2019, for example `exists ISG` plus `has_completed_focus` of the consolidation path.
-  - *Taliban:* in real life and in the game the Taliban take Kabul on 15 August 2021, and `TAL` merges into `AFG` (`end_armed_group` with `into: AFG` in `conflicts.json`). From then on the Taliban **are** Afghanistan's government, so their future lives in the **Afghanistan tree's Emirate branch**: ministries, courts, taxes, services, revenue without foreign aid, the poppy ban, mines (copper, lithium), roads and irrigation, an army built from captured equipment, trade corridors, and seeking recognition. It's gated on Taliban rule (`ruling_party` `afg.taliban`, or the date with `follows_history`) and runs with no end date. If the player's Taliban take Kabul earlier than history, the same branch opens then.
-- **Spirits that change with the outcome**, for example `isg_besieged` turning into `isg_entrenched_state`. Taliban spirits carry over to `AFG` at the takeover (add them in the merge event or in the first Emirate focus).
+  - *Taliban:* in real life and in the game the Taliban take Kabul on 15 August 2021, and `TAL` merges into `AFG` (`end_armed_group` with `into: AFG` in `conflicts.json`). From then on the Taliban **are** Afghanistan's government. Their future is a **new focus tree, "Islamic Emirate of Afghanistan" (`iea`)**, that `AFG` switches to at the takeover (see "The takeover switch" below).
+- **Spirits that change with the outcome**, for example `isg_besieged` turning into `isg_entrenched_state`. Taliban spirits carry over to `AFG` at the takeover.
 - **Engine fix needed: the player follows the merge.** Today `endArmedGroup` (`src/sim/conflicts/armedGroups.ts`) deactivates the group and moves its divisions to `into`, but a player who was playing `TAL` is left on an inactive tag. When the ending group is the player's and `into` is set, set `state.player = into`, log it, and emit an event so the UI switches country (check how `src/ui/session.ts` reacts to a change of player). Add a test.
 - **The AI on the historical path never takes these branches.** Gate them with `ALT` (player, or off history) or with conditions that history never reaches, so the scripted end of both groups stays unchanged in `conflict-trace`.
 - **Wording stays neutral:** describe what the administration does, as a historian would describe any de facto state. No praise, and no violence against civilians as gameplay.
+
+## The takeover switch (user decision, 20 October 2026)
+
+When the Taliban take over Afghanistan (15 August 2021 on the historical path, or earlier if the player's Taliban win first), three things happen together:
+
+1. **Afghanistan switches to a new tree**, "Islamic Emirate of Afghanistan" (`data/focus_trees/iea.json`, written by the same generator). The Islamic Republic tree's progress is dropped; the new tree starts fresh.
+2. **Afghanistan is renamed "Islamic Emirate of Afghanistan"** everywhere the game shows its name: the top bar, the news, tooltips, the map label, the diplomacy and war screens. The flag changes with it through the dated flags in `data/world/flags.json` (check whether an `AFG` Taliban flag entry already exists; `036dfc1` added the real Taliban and Islamic State flags).
+3. **A player who was playing the Taliban continues as Afghanistan.** Today `endArmedGroup` (`src/sim/conflicts/armedGroups.ts`) deactivates the group and leaves the player on an inactive tag.
+
+### Engine work for the switch (main session, pure TypeScript, with tests)
+
+- **`set_focus_tree` effect** `{ "tree": "iea" }`: set `cs.focus.tree`, clear `current` and `progress`, keep `completed` (ids are prefixed, so nothing collides). Registry entry with a `focus_tree` ref check, the engine handler and a description ("Switches to the national focus tree: Islamic Emirate of Afghanistan").
+- **`set_country_name` effect** `{ "name": "Islamic Emirate of Afghanistan", "short_name"?: "..." }`: store a name override in the country's state (a new `CountryState` field, migrated in `migrateState`), and make **one** name helper read it first. Many places look names up on their own (`db.countries.get(tag)?.country?.name.en`, `db.countryList.find(...)`, `state.dynamicCountries[tag]?.name`); route them all through that helper (grep for `name.en` and `countryList.find` in `src/ui`, `src/sim` and `src/render`), so the new name shows everywhere, including the map labels.
+- **The player follows the merge:** in `endArmedGroup`, when the ending group is the player's and `into` is set, set `state.player = into`, log it, and let the UI switch (check how `src/ui/session.ts` handles a change of player).
+- **Where they run:** add `set_focus_tree` and `set_country_name` (scoped to `AFG`) to the takeover event in `data/events/conflicts.json`, the one with `end_armed_group` `TAL` into `AFG`. Run `conflict-trace` afterwards: the date and the outcome of the takeover must not change.
+- **Optional, ask the user first:** the Taliban also governed as the Islamic Emirate in 1996–2001 ("Islamic Emirate of Afghanistan" article: 1996 to 7 December 2001), so `AFG` could start in 2000 under that name and tree, and switch to the Islamic Republic after the Bonn Agreement. The user asked only for the 2021 change.
+
+### Forming the Islamic Emirate early (user request, 20 October 2026)
+
+If the player's Taliban win the war before 2021, they must be able to form the nation at once:
+
+- **A focus "Proclaim the Islamic Emirate of Afghanistan"** at the end of the Taliban insurgency tree. It's available when the Taliban have won: they hold Kabul (a new trigger "controls a region", or check that the province of Kabul, adm1 `AFG-1762`, is controlled by `TAL`), or the war with `AFG` has ended in their favour. Gate it with `ALT` so the AI on the historical path never takes it before the scripted 2021 takeover.
+- **Its effects** do what the 2021 event does: `end_armed_group` `TAL` into `AFG` with `disband_army_of: AFG` (the Taliban take over the state and its land), `install_government` with the Taliban party `afg.taliban` (it's in the data), `set_country_name`, `set_focus_tree` `iea`, and the player moves to `AFG` (the engine fix above). It's scoped so the effects that act on `AFG` run in `AFG`'s scope (`{"country": {"tag": "AFG", "effects": [...]}}`).
+- **The historical 2021 event must not fire a second time** after an early formation: give it a trigger such as `{"not": {"has_global_flag": "iea_formed"}}`, and have both the focus and the event set the global flag `iea_formed`.
+- **New trigger needed:** `controls_region` `{ "adm1": ["AFG-1762"] }` (true when the scoped country controls every province in those regions), unless a simpler existing trigger does the job. Add it to the registry, the engine and a test.
+
+### The Islamic Emirate of Afghanistan tree (`iea`, 60–80 focuses, no end date)
+
+A country only has this tree after the takeover, so its focuses need no takeover gates; use dates only to mark real events.
+1. **The state** (about 15): ministries, courts and the leadership council, provincial governors, the civil service, taxes and customs. Spirits for the new government.
+2. **The economy without aid** (about 15): revenue, the poppy ban (swap `afg_opium_economy`; the ban's 2022 date only if sourced), mines (copper, lithium, coal), irrigation and dams, power imports, roads and the ring road, trade corridors (Central Asia, Pakistan, Iran, China).
+3. **The army** (about 12): an army from captured equipment (`add_equipment`, `add_divisions`), border forces, an air wing from captured aircraft (research bonus), internal security.
+4. **Foreign relations** (about 12): recognition (only states a fetched source confirms), embassies, trade deals, relations with Pakistan, Iran, China, Russia, Central Asia and Qatar (opinion effects).
+5. **Society** (about 10): neutral descriptions of what the government does (schools, health, religious institutions); no editorialising either way.
+6. **Strategic choices** (exclusive pairs where they make sense, for example opening to the region against isolation, or a pragmatic economy against a strict line). The choice closest to what happened gets the higher `ai_weight`.
+
+Remove the small Emirate branch from the current Afghanistan tree (`gen_syr_afg.py`, AFG section, the `emirate_restored` group) once `iea` exists, so the Islamic Republic tree ends at the takeover.
 
 ## Engine notes
 
