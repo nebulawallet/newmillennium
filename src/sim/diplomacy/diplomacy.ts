@@ -19,6 +19,7 @@ import type { SimContext, System } from "../simulation.ts";
 import type { CountryState, GameState } from "../state.ts";
 import { clamp, rulingSubIdeology } from "../politics/common.ts";
 import { evalTrigger, runEffects, shiftPopularity } from "../scripting/engine.ts";
+import { countryShortName } from "../politics/unrest.ts";
 
 export type Pair = [string, string];
 
@@ -553,8 +554,7 @@ export function onWarDeclared(ctx: SimContext, warId: number, attacker: string, 
 
 // ------------------------------------------------------------------ system
 
-const nameOf = (ctx: SimContext, tag: string) =>
-  ctx.state.dynamicCountries[tag]?.name ?? ctx.db.countryList.find((c) => c.tag === tag)?.short_name ?? ctx.db.countryList.find((c) => c.tag === tag)?.name ?? tag;
+const nameOf = (ctx: SimContext, tag: string) => countryShortName(ctx.db, ctx.state, tag);
 
 export const diplomacySystem: System = {
   id: "diplomacy",

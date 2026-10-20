@@ -162,6 +162,9 @@ export interface CountryState {
   /** Provinces this country claims (cheaper at the peace conference). */
   claims: number[];
   focus: FocusState;
+  /** Name shown instead of the standard one (start_name, set_country_name), and the flag code that goes with it. */
+  name?: string;
+  flag?: string;
   /** Decision id -> day it can be taken again; `active` decisions finish on `until`. */
   decisionCooldowns: Record<string, number>;
   activeDecisions: { id: string; until: number }[];
@@ -384,6 +387,7 @@ export function createInitialState(
       decisionCooldowns: {},
       activeDecisions: [],
       eventsFired: {},
+      ...(entry.start_name ? { name: entry.start_name } : {}),
     };
     if (rules.electionMode === "dynamic") dynamicOffices(db, cs);
     if (c || dp) {
@@ -459,8 +463,11 @@ export function dynamicOffices(db: ContentDB, cs: CountryState): void {
 
 /** The focus tree a country uses: one naming it, else the generic tree. */
 export function focusTreeFor(db: ContentDB, tag: string): string {
+  const start = db.countryList.find((c) => c.tag === tag)?.start_focus_tree;
+  if (start && db.focusTrees.has(start)) return start;
   let generic = "";
   for (const t of db.focusTrees.values()) {
+    if (t.switched_to) continue;
     if (t.countries.includes(tag)) return t.id;
     if (!t.countries.length) generic = t.id;
   }

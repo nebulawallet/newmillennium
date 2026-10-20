@@ -10,6 +10,7 @@ import { millerY, type MapView } from "../../render/MapView.ts";
 import type { GameState } from "../../sim/state.ts";
 import { openWar } from "../store.ts";
 import { activeTip } from "../tooltip.tsx";
+import { countryName } from "../../sim/politics/unrest.ts";
 
 const SWORDS = `<svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path d="M4 4l9 9M20 4l-9 9M3 18l3 3M18 21l3-3M7 15l2 2M15 17l2-2" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>`;
 
@@ -63,7 +64,7 @@ export class BattleMarkers {
     const state = this.getState();
     const b = state?.battles.find((x) => x.province === province);
     if (!state || !b) return;
-    const name = (t: string) => state.dynamicCountries[t]?.name ?? this.db.countryList.find((c) => c.tag === t)?.name ?? t;
+    const name = (t: string) => countryName(this.db, state, t);
     activeTip.value = {
       title: `Battle of ${this.map.provinces[province - 1]?.name ?? ""}`,
       rows: [

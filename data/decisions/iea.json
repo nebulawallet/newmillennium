@@ -1,0 +1,97 @@
+{
+  "categories": [
+    {
+      "id": "iea_projects",
+      "name": "Islamic Emirate projects",
+      "description": "Projects that the national focuses open up."
+    }
+  ],
+  "decisions": [
+    {
+      "id": "iea_customs_drive",
+      "name": "Customs drive",
+      "description": "Collect customs at the border crossings.",
+      "category": "iea_projects",
+      "countries": [
+        "AFG"
+      ],
+      "visible": {
+        "has_completed_focus": "iea_customs"
+      },
+      "cost": {
+        "political_power": 20
+      },
+      "effects": [
+        {
+          "add_treasury": 0.2
+        }
+      ],
+      "cooldown_days": 180,
+      "ai_weight": 2
+    },
+    {
+      "id": "iea_canal_works",
+      "name": "Canal works",
+      "description": "Another stretch of canal for the farmers of the north.",
+      "category": "iea_projects",
+      "countries": [
+        "AFG"
+      ],
+      "visible": {
+        "has_completed_focus": "iea_qosh_tepa_canal"
+      },
+      "available": {
+        "treasury_above": 0.2
+      },
+      "cost": {
+        "political_power": 30
+      },
+      "effects": [
+        {
+          "add_treasury": -0.2
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "gdp_growth",
+            "value": 0.002,
+            "days": 1460
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "rural",
+            "value": 3
+          }
+        }
+      ],
+      "cooldown_days": 365,
+      "ai_weight": 2
+    },
+    {
+      "id": "iea_trade_mission",
+      "name": "Trade mission",
+      "description": "A delegation to a neighbour to sign trade deals.",
+      "category": "iea_projects",
+      "countries": [
+        "AFG"
+      ],
+      "visible": {
+        "has_completed_focus": "iea_regional_trade"
+      },
+      "cost": {
+        "political_power": 25
+      },
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "trade_efficiency",
+            "value": 0.02,
+            "days": 730
+          }
+        }
+      ],
+      "cooldown_days": 365,
+      "ai_weight": 2
+    }
+  ]
+}

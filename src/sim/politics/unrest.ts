@@ -21,9 +21,20 @@ const ARMED = new Set(["military", "security_services"]);
 
 /** Display name for any tag, including countries created during play. */
 export function countryName(db: ContentDB, state: GameState | null | undefined, tag: string): string {
+  const own = state?.countries[tag]?.name;
+  if (own) return own;
   const dyn = state?.dynamicCountries[tag];
   if (dyn) return dyn.name;
-  return db.countries.get(tag)?.country?.name.en ?? db.countryList.find((c) => c.tag === tag)?.name ?? tag;
+  return db.countries.get(tag)?.country?.name.en ?? db.countryList.find((c) => c.tag === tag)?.name ?? db.armedGroups.get(tag)?.name ?? tag;
+}
+
+/** Short display name (map labels, news, war names): a renamed country's name, else the short name when there is one. */
+export function countryShortName(db: ContentDB, state: GameState | null | undefined, tag: string): string {
+  const own = state?.countries[tag]?.name;
+  if (own) return own;
+  const dyn = state?.dynamicCountries[tag];
+  if (dyn) return dyn.name;
+  return db.countryList.find((c) => c.tag === tag)?.short_name ?? countryName(db, null, tag);
 }
 
 /** Map colour for any tag. */

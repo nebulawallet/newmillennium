@@ -2,9 +2,10 @@
   "id": "tal",
   "name": "Taliban",
   "countries": [
-    "TAL"
+    "TAL",
+    "AFG"
   ],
-  "note": "A short tree for the Taliban insurgency (2002-2021): organisation, forces and negotiations. Neutral and descriptive; the history is scripted in the conflict events.",
+  "note": "The Taliban from 2000 to 2021: the movement's organisation, its forces, diplomacy, a negotiated or military strategy and the takeover. Afghanistan uses it while the Taliban govern it (2000-2001, start_focus_tree in data/world/countries.json) and the TAL insurgency from December 2001 (hand_over). It ends with \"Proclaim the Islamic Emirate of Afghanistan\", which a player (or an off-history game) can take once the war is won; on the historical path the takeover of 15 August 2021 is scripted in data/events/conflicts.json.",
   "source": [
     {
       "url": "https://en.wikipedia.org/wiki/Taliban",
@@ -17,17 +18,47 @@
       "accessed": "2026-10-19"
     },
     {
+      "url": "https://en.wikipedia.org/wiki/Leadership_Council_of_the_Islamic_Emirate_of_Afghanistan",
+      "title": "Wikipedia: Leadership Council of the Islamic Emirate of Afghanistan",
+      "accessed": "2026-10-19"
+    },
+    {
       "url": "https://en.wikipedia.org/wiki/Doha_Agreement_(2020)",
       "title": "Wikipedia: Doha Agreement (2020)",
+      "accessed": "2026-10-19"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/2021_Taliban_offensive",
+      "title": "Wikipedia: 2021 Taliban offensive",
+      "accessed": "2026-10-19"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Fall_of_Kabul_(2021)",
+      "title": "Wikipedia: Fall of Kabul (2021)",
+      "accessed": "2026-10-19"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/2001_United_States_invasion_of_Afghanistan",
+      "title": "Wikipedia: 2001 United States invasion of Afghanistan",
+      "accessed": "2026-10-19"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Northern_Alliance",
+      "title": "Wikipedia: Northern Alliance",
+      "accessed": "2026-10-19"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Opium_production_in_Afghanistan",
+      "title": "Wikipedia: Opium production in Afghanistan",
       "accessed": "2026-10-19"
     }
   ],
   "confidence": "verified",
   "focuses": [
     {
-      "id": "tal_regroup",
-      "name": "Regroup",
-      "description": "Rebuild the movement's leadership and networks after 2001.",
+      "id": "tal_movement",
+      "name": "The movement",
+      "description": "The Taliban emerged in 1994 and governed most of Afghanistan from 1996 until 2001.",
       "x": 2,
       "y": 0,
       "days": 70,
@@ -36,51 +67,41 @@
           "add_political_power": 30
         }
       ],
-      "ai_weight": 5
+      "ai_weight": 6
     },
     {
-      "id": "tal_shadow_government",
-      "name": "Shadow governors",
-      "description": "Shadow governors and courts in the provinces.",
+      "id": "tal_leadership_council",
+      "name": "The Leadership Council",
+      "description": "The movement's leadership council, kept since its first government in 1996, directs it.",
       "x": 1,
       "y": 1,
       "days": 70,
       "prerequisites": [
         [
-          "tal_regroup"
+          "tal_movement"
         ]
       ],
       "effects": [
         {
-          "add_timed_modifier": {
-            "modifier": "tax_efficiency",
-            "value": 0.05,
-            "days": 1460
-          }
-        },
-        {
-          "add_stability": 0.02
+          "add_spirit": "tal_leadership_council"
         }
       ]
     },
     {
       "id": "tal_rural_base",
       "name": "A rural base",
-      "description": "Win support in the villages of the south and east.",
+      "description": "Support in the villages of the south and east. Unlocks recruitment drives.",
       "x": 3,
       "y": 1,
       "days": 70,
       "prerequisites": [
         [
-          "tal_regroup"
+          "tal_movement"
         ]
       ],
       "effects": [
         {
-          "add_divisions": {
-            "template": "infantry_division",
-            "count": 1
-          }
+          "add_spirit": "tal_rural_networks"
         },
         {
           "add_interest_group_approval": {
@@ -91,15 +112,269 @@
       ]
     },
     {
-      "id": "tal_fighters",
-      "name": "Recruit fighters",
-      "description": "Recruit and train fighters.",
-      "x": 1,
+      "id": "tal_shadow_governors",
+      "name": "Shadow governors",
+      "description": "Governors for each province, alongside the official ones.",
+      "x": 0,
       "y": 2,
       "days": 70,
       "prerequisites": [
         [
-          "tal_shadow_government"
+          "tal_leadership_council"
+        ]
+      ],
+      "available": {
+        "exists": "TAL"
+      },
+      "effects": [
+        {
+          "add_spirit": "tal_shadow_government"
+        }
+      ]
+    },
+    {
+      "id": "tal_religious_courts",
+      "name": "Courts",
+      "description": "The movement's own courts settle disputes in the districts.",
+      "x": 2,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "tal_leadership_council",
+          "tal_rural_base"
+        ]
+      ],
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "internal_security",
+            "value": 0.04,
+            "days": 1460
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "religious_establishment",
+            "value": 5
+          }
+        }
+      ]
+    },
+    {
+      "id": "tal_levies",
+      "name": "Levies",
+      "description": "Levies on trade and farming, including the opium trade.",
+      "x": 4,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "tal_rural_base"
+        ]
+      ],
+      "effects": [
+        {
+          "add_spirit": "war_economy"
+        },
+        {
+          "add_treasury": 0.3
+        }
+      ]
+    },
+    {
+      "id": "tal_regroup",
+      "name": "Regroup",
+      "description": "Rebuild the leadership and networks after losing power in 2001.",
+      "x": 1,
+      "y": 3,
+      "days": 70,
+      "prerequisites": [
+        [
+          "tal_shadow_governors",
+          "tal_religious_courts"
+        ]
+      ],
+      "available": {
+        "date_after": "2001-12-09"
+      },
+      "effects": [
+        {
+          "add_political_power": 30
+        },
+        {
+          "add_stability": 0.03
+        }
+      ]
+    },
+    {
+      "id": "tal_leadership_transition",
+      "name": "A leadership transition",
+      "description": "A new leader was chosen in July 2015, and the leadership changed again in May 2016.",
+      "x": 3,
+      "y": 3,
+      "days": 70,
+      "prerequisites": [
+        [
+          "tal_religious_courts",
+          "tal_levies"
+        ]
+      ],
+      "available": {
+        "date_after": "2015-07-01"
+      },
+      "effects": [
+        {
+          "add_stability": 0.03
+        },
+        {
+          "add_political_power": 20
+        }
+      ]
+    },
+    {
+      "id": "tal_poppy_ban_2000",
+      "name": "Ban the poppy",
+      "description": "A ban on opium poppy cultivation, as the Taliban government decreed in 2000.",
+      "x": 4,
+      "y": 3,
+      "days": 70,
+      "prerequisites": [
+        [
+          "tal_levies",
+          "tal_religious_courts"
+        ]
+      ],
+      "available": {
+        "all": [
+          {
+            "tag": "AFG"
+          },
+          {
+            "has_spirit": "afg_opium_economy"
+          }
+        ]
+      },
+      "effects": [
+        {
+          "swap_spirit": {
+            "from": "afg_opium_economy",
+            "to": "afg_legal_economy"
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "rural",
+            "value": -6
+          }
+        }
+      ]
+    },
+    {
+      "id": "tal_district_control",
+      "name": "District control",
+      "description": "Hold districts and run them.",
+      "x": 2,
+      "y": 4,
+      "days": 70,
+      "prerequisites": [
+        [
+          "tal_regroup",
+          "tal_leadership_transition"
+        ]
+      ],
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "tax_efficiency",
+            "value": 0.04,
+            "days": 1460
+          }
+        },
+        {
+          "add_stability": 0.02
+        }
+      ]
+    },
+    {
+      "id": "tal_commissions",
+      "name": "Commissions",
+      "description": "Commissions for the military, finance and other affairs.",
+      "x": 0,
+      "y": 4,
+      "days": 70,
+      "prerequisites": [
+        [
+          "tal_regroup"
+        ]
+      ],
+      "effects": [
+        {
+          "add_political_power": 30
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "corruption",
+            "value": -0.02,
+            "days": 1460
+          }
+        }
+      ]
+    },
+    {
+      "id": "tal_border_sanctuaries",
+      "name": "Border regions",
+      "description": "Bases and supply routes in the border regions.",
+      "x": 4,
+      "y": 4,
+      "days": 70,
+      "prerequisites": [
+        [
+          "tal_leadership_transition",
+          "tal_levies"
+        ]
+      ],
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "army_defence",
+            "value": 0.03,
+            "days": 1460
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "manpower_factor",
+            "value": 0.02,
+            "days": 1460
+          }
+        }
+      ]
+    },
+    {
+      "id": "tal_fighters",
+      "name": "Fighters",
+      "description": "Organise the fighters.",
+      "x": 8,
+      "y": 0,
+      "days": 70,
+      "effects": [
+        {
+          "add_political_power": 20
+        }
+      ],
+      "ai_weight": 5
+    },
+    {
+      "id": "tal_recruit",
+      "name": "Recruit fighters",
+      "description": "Recruit and train fighters.",
+      "x": 6,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "tal_fighters"
         ]
       ],
       "effects": [
@@ -114,20 +389,78 @@
     {
       "id": "tal_weapons",
       "name": "Weapons",
-      "description": "Acquire weapons and explosives.",
-      "x": 3,
-      "y": 2,
+      "description": "Acquire rifles, machine guns and rockets.",
+      "x": 8,
+      "y": 1,
       "days": 70,
       "prerequisites": [
         [
-          "tal_rural_base"
+          "tal_fighters"
         ]
       ],
       "effects": [
         {
           "add_equipment": {
             "family": "infantry_equipment",
-            "amount": 500
+            "amount": 600
+          }
+        }
+      ]
+    },
+    {
+      "id": "tal_training",
+      "name": "Training",
+      "description": "Camps train fighters in small-unit tactics.",
+      "x": 10,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "tal_fighters"
+        ]
+      ],
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "training_time",
+            "value": -0.1,
+            "days": 1460
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "army_org",
+            "value": 0.02,
+            "days": 1460
+          }
+        }
+      ]
+    },
+    {
+      "id": "tal_explosives",
+      "name": "Explosives",
+      "description": "Mines and explosives for defence and ambushes against military convoys.",
+      "x": 6,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "tal_recruit",
+          "tal_weapons"
+        ]
+      ],
+      "effects": [
+        {
+          "add_equipment": {
+            "family": "support_equipment",
+            "amount": 150
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "army_defence",
+            "value": 0.03,
+            "days": 1460
           }
         }
       ]
@@ -135,14 +468,14 @@
     {
       "id": "tal_spring_offensives",
       "name": "Spring offensives",
-      "description": "Yearly offensives against district centres.",
-      "x": 2,
-      "y": 3,
+      "description": "Offensives against district centres each spring. Unlocks spring offensives.",
+      "x": 8,
+      "y": 2,
       "days": 70,
       "prerequisites": [
         [
-          "tal_fighters",
-          "tal_weapons"
+          "tal_weapons",
+          "tal_training"
         ]
       ],
       "effects": [
@@ -154,30 +487,206 @@
           }
         },
         {
-          "add_war_support": 0.05
+          "add_war_support": 0.03
         }
       ]
     },
     {
-      "id": "tal_doha_office",
-      "name": "The Doha office",
-      "description": "A political office in Qatar for talks.",
-      "x": 2,
-      "y": 4,
+      "id": "tal_special_units",
+      "name": "Special units",
+      "description": "Trained units for the hardest fighting.",
+      "x": 10,
+      "y": 2,
       "days": 70,
       "prerequisites": [
         [
+          "tal_training"
+        ]
+      ],
+      "effects": [
+        {
+          "add_divisions": {
+            "template": "motorised_division",
+            "count": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "tal_night_movement",
+      "name": "Move by night",
+      "description": "Move and attack at night to avoid aircraft.",
+      "x": 7,
+      "y": 3,
+      "days": 70,
+      "prerequisites": [
+        [
+          "tal_explosives",
           "tal_spring_offensives"
         ]
       ],
       "available": {
-        "date_after": "2013-01-01"
+        "date_after": "2001-10-07"
+      },
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "army_defence",
+            "value": 0.03,
+            "days": 1460
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "army_org",
+            "value": 0.02,
+            "days": 1460
+          }
+        }
+      ]
+    },
+    {
+      "id": "tal_captured_equipment",
+      "name": "Captured equipment",
+      "description": "Vehicles and weapons taken from army posts.",
+      "x": 9,
+      "y": 3,
+      "days": 70,
+      "prerequisites": [
+        [
+          "tal_spring_offensives",
+          "tal_special_units"
+        ]
+      ],
+      "effects": [
+        {
+          "add_equipment": {
+            "family": "infantry_equipment",
+            "amount": 400
+          }
+        },
+        {
+          "add_equipment": {
+            "family": "armoured_vehicle",
+            "amount": 20
+          }
+        }
+      ]
+    },
+    {
+      "id": "tal_northern_front",
+      "name": "The northern front",
+      "description": "Push into the north against the United Front.",
+      "x": 10,
+      "y": 3,
+      "days": 70,
+      "prerequisites": [
+        [
+          "tal_special_units"
+        ]
+      ],
+      "available": {
+        "exists": "AFN"
+      },
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "army_attack",
+            "value": 0.02,
+            "days": 730
+          }
+        },
+        {
+          "add_war_support": 0.03
+        }
+      ]
+    },
+    {
+      "id": "tal_motorbike_columns",
+      "name": "Light columns",
+      "description": "Pick-ups and motorbikes for fast moves.",
+      "x": 8,
+      "y": 4,
+      "days": 70,
+      "prerequisites": [
+        [
+          "tal_night_movement",
+          "tal_captured_equipment",
+          "tal_northern_front"
+        ]
+      ],
+      "effects": [
+        {
+          "add_divisions": {
+            "template": "motorised_division",
+            "count": 1
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "army_attack",
+            "value": 0.02,
+            "days": 1460
+          }
+        }
+      ]
+    },
+    {
+      "id": "tal_diplomacy",
+      "name": "Diplomacy",
+      "description": "Talk to the neighbours and the great powers.",
+      "x": 13,
+      "y": 0,
+      "days": 70,
+      "effects": [
+        {
+          "add_political_power": 20
+        }
+      ],
+      "ai_weight": 4
+    },
+    {
+      "id": "tal_pakistan_ties",
+      "name": "Ties with Pakistan",
+      "description": "Relations with Pakistan across the border.",
+      "x": 12,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "tal_diplomacy"
+        ]
+      ],
+      "effects": [
+        {
+          "add_opinion": {
+            "target": "PAK",
+            "value": 10,
+            "days": 1825
+          }
+        }
+      ]
+    },
+    {
+      "id": "tal_qatar_office",
+      "name": "A political office",
+      "description": "A political office in Doha, Qatar, for contacts and talks.",
+      "x": 14,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "tal_diplomacy"
+        ]
+      ],
+      "available": {
+        "exists": "TAL"
       },
       "effects": [
         {
           "add_timed_modifier": {
             "modifier": "diplomatic_reputation",
-            "value": 0.05,
+            "value": 0.04,
             "days": 1460
           }
         },
@@ -191,15 +700,102 @@
       ]
     },
     {
-      "id": "tal_doha_agreement",
-      "name": "The Doha Agreement",
-      "description": "An agreement with the United States, signed on 29 February 2020, on the withdrawal of foreign troops.",
-      "x": 2,
-      "y": 5,
+      "id": "tal_regional_contacts",
+      "name": "Regional contacts",
+      "description": "Contacts with Iran, Russia and China.",
+      "x": 12,
+      "y": 2,
       "days": 70,
       "prerequisites": [
         [
-          "tal_doha_office"
+          "tal_pakistan_ties",
+          "tal_qatar_office"
+        ]
+      ],
+      "effects": [
+        {
+          "add_opinion": {
+            "target": "IRN",
+            "value": 5,
+            "days": 1825
+          }
+        },
+        {
+          "add_opinion": {
+            "target": "RUS",
+            "value": 5,
+            "days": 1825
+          }
+        },
+        {
+          "add_opinion": {
+            "target": "CHN",
+            "value": 5,
+            "days": 1825
+          }
+        }
+      ]
+    },
+    {
+      "id": "tal_talks",
+      "name": "Talks",
+      "description": "Talks with the United States. Unlocks local ceasefires.",
+      "x": 14,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "tal_qatar_office"
+        ]
+      ],
+      "effects": [
+        {
+          "add_spirit": "tal_negotiating_track"
+        },
+        {
+          "add_opinion": {
+            "target": "USA",
+            "value": 5,
+            "days": 1825
+          }
+        }
+      ]
+    },
+    {
+      "id": "tal_prisoner_exchanges",
+      "name": "Prisoner exchanges",
+      "description": "Exchange prisoners as part of the talks.",
+      "x": 13,
+      "y": 3,
+      "days": 70,
+      "prerequisites": [
+        [
+          "tal_talks"
+        ]
+      ],
+      "effects": [
+        {
+          "add_stability": 0.02
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "diplomatic_reputation",
+            "value": 0.02,
+            "days": 1460
+          }
+        }
+      ]
+    },
+    {
+      "id": "tal_doha_agreement",
+      "name": "The Doha Agreement",
+      "description": "An agreement with the United States, signed in Doha on 29 February 2020, on the withdrawal of foreign troops. The Afghan government was not a party.",
+      "x": 14,
+      "y": 4,
+      "days": 70,
+      "prerequisites": [
+        [
+          "tal_prisoner_exchanges"
         ]
       ],
       "available": {
@@ -215,8 +811,529 @@
         },
         {
           "add_war_support": 0.05
+        },
+        {
+          "add_political_power": 30
+        }
+      ],
+      "ai_weight": 10
+    },
+    {
+      "id": "tal_central_asian_contacts",
+      "name": "Central Asian contacts",
+      "description": "Contacts with Uzbekistan and Turkmenistan on trade and the border.",
+      "x": 12,
+      "y": 3,
+      "days": 70,
+      "prerequisites": [
+        [
+          "tal_regional_contacts"
+        ]
+      ],
+      "effects": [
+        {
+          "add_opinion": {
+            "target": "UZB",
+            "value": 5,
+            "days": 1825
+          }
+        },
+        {
+          "add_opinion": {
+            "target": "TKM",
+            "value": 5,
+            "days": 1825
+          }
         }
       ]
+    },
+    {
+      "id": "tal_strategy",
+      "name": "Strategy",
+      "description": "Win by talks or by force.",
+      "x": 18,
+      "y": 0,
+      "days": 70,
+      "prerequisites": [
+        [
+          "tal_fighters",
+          "tal_diplomacy"
+        ]
+      ],
+      "effects": [
+        {
+          "add_political_power": 20
+        }
+      ],
+      "ai_weight": 4
+    },
+    {
+      "id": "tal_negotiated_path",
+      "name": "A negotiated path",
+      "description": "Talks with the United States and the region, alongside the fighting.",
+      "x": 17,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "tal_strategy"
+        ]
+      ],
+      "mutually_exclusive": [
+        "tal_military_path"
+      ],
+      "effects": [
+        {
+          "add_spirit": "tal_negotiating_track"
+        },
+        {
+          "add_stability": 0.02
+        }
+      ],
+      "ai_weight": 10
+    },
+    {
+      "id": "tal_international_contacts",
+      "name": "International contacts",
+      "description": "Delegations travel abroad for talks.",
+      "x": 17,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "tal_negotiated_path"
+        ]
+      ],
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "diplomatic_reputation",
+            "value": 0.04,
+            "days": 1460
+          }
+        },
+        {
+          "add_opinion": {
+            "target": "QAT",
+            "value": 5,
+            "days": 1825
+          }
+        }
+      ]
+    },
+    {
+      "id": "tal_ceasefire_offers",
+      "name": "Ceasefire offers",
+      "description": "Short ceasefires for holidays and talks.",
+      "x": 17,
+      "y": 3,
+      "days": 70,
+      "prerequisites": [
+        [
+          "tal_international_contacts"
+        ]
+      ],
+      "effects": [
+        {
+          "add_stability": 0.02
+        },
+        {
+          "add_unrest": -0.02
+        }
+      ]
+    },
+    {
+      "id": "tal_military_path",
+      "name": "A military path",
+      "description": "Seek victory on the battlefield.",
+      "x": 19,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "tal_strategy"
+        ]
+      ],
+      "mutually_exclusive": [
+        "tal_negotiated_path"
+      ],
+      "effects": [
+        {
+          "add_spirit": "tal_military_track"
+        },
+        {
+          "add_war_support": 0.05
+        }
+      ],
+      "ai_weight": 2
+    },
+    {
+      "id": "tal_all_out_offensives",
+      "name": "Offensives everywhere",
+      "description": "Attack on every front at once.",
+      "x": 19,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "tal_military_path"
+        ]
+      ],
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "army_attack",
+            "value": 0.04,
+            "days": 730
+          }
+        },
+        {
+          "add_divisions": {
+            "template": "infantry_division",
+            "count": 2
+          }
+        }
+      ]
+    },
+    {
+      "id": "tal_encircle_the_cities",
+      "name": "Encircle the cities",
+      "description": "Take the roads around the provincial capitals.",
+      "x": 19,
+      "y": 3,
+      "days": 70,
+      "prerequisites": [
+        [
+          "tal_all_out_offensives"
+        ]
+      ],
+      "available": {
+        "any": [
+          {
+            "follows_history": false
+          },
+          {
+            "is_player": true
+          }
+        ]
+      },
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "army_attack",
+            "value": 0.03,
+            "days": 730
+          }
+        },
+        {
+          "claim_rival_border": {
+            "count": 4
+          }
+        }
+      ]
+    },
+    {
+      "id": "tal_takeover",
+      "name": "Toward Kabul",
+      "description": "Prepare to take the country.",
+      "x": 22,
+      "y": 0,
+      "days": 70,
+      "prerequisites": [
+        [
+          "tal_strategy"
+        ]
+      ],
+      "available": {
+        "any": [
+          {
+            "date_after": "2021-05-01"
+          },
+          {
+            "any": [
+              {
+                "follows_history": false
+              },
+              {
+                "is_player": true
+              }
+            ]
+          }
+        ]
+      },
+      "effects": [
+        {
+          "add_political_power": 20
+        }
+      ],
+      "ai_weight": 3
+    },
+    {
+      "id": "tal_offensive_2021",
+      "name": "The offensive",
+      "description": "An offensive across the country. The real one began on 1 May 2021 as foreign troops withdrew.",
+      "x": 21,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "tal_takeover"
+        ]
+      ],
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "army_attack",
+            "value": 0.04,
+            "days": 365
+          }
+        },
+        {
+          "add_war_support": 0.05
+        }
+      ]
+    },
+    {
+      "id": "tal_district_surrenders",
+      "name": "District surrenders",
+      "description": "Talks with local officials for the handover of districts.",
+      "x": 23,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "tal_takeover"
+        ]
+      ],
+      "effects": [
+        {
+          "add_stability": 0.02
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "army_attack",
+            "value": 0.02,
+            "days": 365
+          }
+        }
+      ]
+    },
+    {
+      "id": "tal_provincial_capitals",
+      "name": "The provincial capitals",
+      "description": "Take the provincial capitals.",
+      "x": 22,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "tal_offensive_2021",
+          "tal_district_surrenders"
+        ]
+      ],
+      "effects": [
+        {
+          "add_divisions": {
+            "template": "infantry_division",
+            "count": 2
+          }
+        },
+        {
+          "add_war_support": 0.03
+        }
+      ]
+    },
+    {
+      "id": "tal_kabul",
+      "name": "Kabul",
+      "description": "Enter Kabul. The Taliban took Kabul on 15 August 2021.",
+      "x": 22,
+      "y": 3,
+      "days": 70,
+      "prerequisites": [
+        [
+          "tal_provincial_capitals"
+        ]
+      ],
+      "available": {
+        "any": [
+          {
+            "date_after": "2021-08-15"
+          },
+          {
+            "all": [
+              {
+                "any": [
+                  {
+                    "follows_history": false
+                  },
+                  {
+                    "is_player": true
+                  }
+                ]
+              },
+              {
+                "controls_region": {
+                  "adm1": [
+                    "AFG-1762"
+                  ],
+                  "label": "Kabul"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "effects": [
+        {
+          "add_political_power": 40
+        },
+        {
+          "add_stability": 0.03
+        }
+      ]
+    },
+    {
+      "id": "tal_proclaim_emirate",
+      "name": "Proclaim the Islamic Emirate of Afghanistan",
+      "description": "Alternative history: with the war won and Kabul held, the movement proclaims the Islamic Emirate of Afghanistan and takes over the state. Afghanistan is renamed and gets the Islamic Emirate's focus tree.",
+      "x": 22,
+      "y": 4,
+      "days": 35,
+      "prerequisites": [
+        [
+          "tal_kabul",
+          "tal_encircle_the_cities",
+          "tal_movement"
+        ]
+      ],
+      "available": {
+        "all": [
+          {
+            "all": [
+              {
+                "any": [
+                  {
+                    "follows_history": false
+                  },
+                  {
+                    "is_player": true
+                  }
+                ]
+              },
+              {
+                "any": [
+                  {
+                    "all": [
+                      {
+                        "tag": "TAL"
+                      },
+                      {
+                        "controls_region": {
+                          "adm1": [
+                            "AFG-1762"
+                          ],
+                          "label": "Kabul"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "all": [
+                      {
+                        "tag": "AFG"
+                      },
+                      {
+                        "controls_region": {
+                          "adm1": [
+                            "AFG-1762"
+                          ],
+                          "label": "Kabul"
+                        }
+                      },
+                      {
+                        "not": {
+                          "exists": "AFN"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "not": {
+              "has_global_flag": "iea_formed"
+            }
+          }
+        ]
+      },
+      "effects": [
+        {
+          "set_global_flag": "iea_formed"
+        },
+        {
+          "if": {
+            "limit": {
+              "tag": "TAL"
+            },
+            "then": [
+              {
+                "hand_over": {
+                  "to": "AFG"
+                }
+              },
+              {
+                "end_armed_group": {
+                  "group": "TAL",
+                  "into": "AFG",
+                  "disband_army_of": "AFG"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "country": {
+            "tag": "AFG",
+            "effects": [
+              {
+                "if": {
+                  "limit": {
+                    "not": {
+                      "ruling_party": "afg.taliban"
+                    }
+                  },
+                  "then": [
+                    {
+                      "install_government": {
+                        "party": "afg.taliban",
+                        "government_type": "theocracy"
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "set_country_name": {
+                  "name": "Islamic Emirate of Afghanistan",
+                  "flag": "x-taliban"
+                }
+              },
+              {
+                "set_focus_tree": {
+                  "tree": "iea"
+                }
+              },
+              {
+                "leave_history": true
+              }
+            ]
+          }
+        }
+      ],
+      "ai_weight": 0
     }
   ]
 }

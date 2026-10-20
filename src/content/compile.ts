@@ -552,6 +552,7 @@ export function refChecker(db: ContentDB) {
       case "spirit": return db.spirits.has(v);
       case "tech_category": return db.techCategories.has(v);
       case "building": return db.buildings.has(v);
+      case "focus_tree": return db.focusTrees.has(v);
     }
   };
 }

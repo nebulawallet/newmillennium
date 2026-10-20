@@ -27,6 +27,7 @@ import { factories } from "../economy/economy.ts";
 import { divisionStats } from "../military/war.ts";
 import { provinceDistance, templateNeeds, templateStats, type Division } from "../military/military.ts";
 import { components, frontPairs, frozenEnemies } from "../military/fronts.ts";
+import { playerGroupWar } from "../military/military.ts";
 import { rulingSubIdeology } from "../politics/common.ts";
 import { countryNeighbours, evalTrigger } from "../scripting/engine.ts";
 import type { SimContext, SimMap, System } from "../simulation.ts";
@@ -359,7 +360,7 @@ export const aiSystem: System = {
     // historical mode: wars with armed groups are frozen (src/sim/conflicts), so they need no planning
     const frozen = state.rules.electionMode === "historical";
     const fighting = new Set<string>();
-    for (const w of state.wars) if (!(frozen && w.armedGroup)) for (const t of [...w.attackers, ...w.defenders]) fighting.add(t);
+    for (const w of state.wars) if (!(frozen && w.armedGroup && !playerGroupWar(state, w))) for (const t of [...w.attackers, ...w.defenders]) fighting.add(t);
     for (const cs of Object.values(state.countries)) if (cs.civilWar) { fighting.add(cs.tag); fighting.add(cs.civilWar.rebel); }
     for (const tag of fighting) if (isAi(state, tag) && bucketOf(tag, 3) === state.day % 3) apply(ctx, planMilitary(ctx, tag));
     // AI armies left from a war that ended stand down

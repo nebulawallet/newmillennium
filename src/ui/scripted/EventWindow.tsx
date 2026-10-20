@@ -5,6 +5,7 @@ import { describeEffects, describeTrigger, evalTrigger } from "../../sim/scripti
 import { Icon } from "../icons.tsx";
 import { electionNight, version, type Session } from "../session.ts";
 import { tip } from "../tooltip.tsx";
+import { countryName } from "../../sim/politics/unrest.ts";
 
 export function EventWindow({ db, session }: { db: ContentDB; session: Session }) {
   version.value;
@@ -24,7 +25,7 @@ export function EventWindow({ db, session }: { db: ContentDB; session: Session }
           <h2 class="hp-title">{ev.title}</h2>
         </header>
         <div class="event-body">
-          <div class="dim small">{country?.name.en}, {formatDate(pe.day)}</div>
+          <div class="dim small">{countryName(db, state, pe.tag)}, {formatDate(pe.day)}</div>
           <p class="ev-text">{ev.description}</p>
           {ev.historical && (
             <p class="faint small" {...tip(() => ({ title: "Sources", rows: ev.historical!.source.map((s) => ["", s.title] as [string, string]) }))}>

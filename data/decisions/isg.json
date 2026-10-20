@@ -1,0 +1,129 @@
+{
+  "categories": [
+    {
+      "id": "isg_projects",
+      "name": "Islamic State projects",
+      "description": "Projects that the national focuses open up."
+    }
+  ],
+  "decisions": [
+    {
+      "id": "isg_recruitment_drive",
+      "name": "Recruitment drive",
+      "description": "Raise new fighters in the towns the group holds.",
+      "category": "isg_projects",
+      "countries": [
+        "ISG"
+      ],
+      "visible": {
+        "has_completed_focus": "isg_recruitment"
+      },
+      "cost": {
+        "political_power": 40
+      },
+      "effects": [
+        {
+          "add_divisions": {
+            "template": "infantry_division",
+            "count": 1
+          }
+        },
+        {
+          "add_unrest": 0.02
+        }
+      ],
+      "cooldown_days": 240,
+      "ai_weight": 2
+    },
+    {
+      "id": "isg_fortify_a_city",
+      "name": "Fortify a city",
+      "description": "Defences around a city under threat.",
+      "category": "isg_projects",
+      "countries": [
+        "ISG"
+      ],
+      "visible": {
+        "has_completed_focus": "isg_defend_the_cities"
+      },
+      "available": {
+        "at_war": true
+      },
+      "cost": {
+        "political_power": 30
+      },
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "army_defence",
+            "value": 0.04,
+            "days": 365
+          }
+        }
+      ],
+      "cooldown_days": 240,
+      "ai_weight": 2
+    },
+    {
+      "id": "isg_sell_oil",
+      "name": "Sell oil",
+      "description": "Sell crude from the fields the group holds.",
+      "category": "isg_projects",
+      "countries": [
+        "ISG"
+      ],
+      "visible": {
+        "has_completed_focus": "isg_oil_fields"
+      },
+      "cost": {
+        "political_power": 20
+      },
+      "effects": [
+        {
+          "add_treasury": 0.3
+        }
+      ],
+      "cooldown_days": 180,
+      "ai_weight": 2
+    },
+    {
+      "id": "isg_open_a_new_front",
+      "name": "Open a new front",
+      "description": "Concentrate forces for an offensive on a new front.",
+      "category": "isg_projects",
+      "countries": [
+        "ISG"
+      ],
+      "visible": {
+        "has_completed_focus": "isg_expansion"
+      },
+      "available": {
+        "any": [
+          {
+            "follows_history": false
+          },
+          {
+            "is_player": true
+          }
+        ]
+      },
+      "cost": {
+        "political_power": 50
+      },
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "army_attack",
+            "value": 0.05,
+            "days": 180
+          }
+        },
+        {
+          "add_war_support": 0.02
+        }
+      ],
+      "cooldown_days": 365,
+      "ai_weight": 2
+    }
+  ]
+}

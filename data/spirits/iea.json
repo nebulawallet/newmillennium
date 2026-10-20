@@ -1,0 +1,98 @@
+{
+  "note": "Spirits of the Islamic Emirate of Afghanistan (AFG after the Taliban takeover; gameplay values).",
+  "spirits": [
+    {
+      "id": "iea_unrecognised",
+      "name": "An unrecognised government",
+      "description": "Few states recognise the government, which limits trade, credit and aid.",
+      "kind": "problem",
+      "modifiers": {
+        "trade_efficiency": -0.06,
+        "foreign_investment": -0.1,
+        "diplomatic_reputation": -0.05
+      }
+    },
+    {
+      "id": "iea_caretaker_government",
+      "name": "A caretaker government",
+      "description": "Acting ministers run the ministries.",
+      "kind": "policy",
+      "modifiers": {
+        "political_power_gain": 0.05,
+        "stability_factor": 0.02,
+        "tax_efficiency": -0.03
+      }
+    },
+    {
+      "id": "iea_central_revenue",
+      "name": "Central revenue",
+      "description": "Customs and taxes are collected centrally.",
+      "kind": "strength",
+      "modifiers": {
+        "tax_efficiency": 0.06,
+        "corruption": -0.03
+      }
+    },
+    {
+      "id": "iea_poppy_ban",
+      "name": "Poppy ban",
+      "description": "Opium poppy cultivation is banned.",
+      "kind": "policy",
+      "modifiers": {
+        "corruption": -0.03,
+        "gdp_growth": -0.002
+      }
+    },
+    {
+      "id": "iea_water_projects",
+      "name": "Water projects",
+      "description": "Canals and dams bring new land under irrigation.",
+      "kind": "strength",
+      "modifiers": {
+        "gdp_growth": 0.002,
+        "stability_factor": 0.01
+      }
+    },
+    {
+      "id": "iea_regional_opening",
+      "name": "Opening to the region",
+      "description": "Trade and transit deals with the neighbours.",
+      "kind": "policy",
+      "modifiers": {
+        "trade_efficiency": 0.05,
+        "foreign_influence_resistance": -0.03
+      }
+    },
+    {
+      "id": "iea_self_reliance",
+      "name": "Self-reliance",
+      "description": "The economy is run with little outside involvement.",
+      "kind": "policy",
+      "modifiers": {
+        "foreign_influence_resistance": 0.08,
+        "trade_efficiency": -0.03,
+        "stability_factor": 0.01
+      }
+    },
+    {
+      "id": "iea_mining_drive",
+      "name": "Mining drive",
+      "description": "Contracts for copper, iron and coal.",
+      "kind": "policy",
+      "modifiers": {
+        "gdp_growth": 0.002,
+        "foreign_investment": 0.04
+      }
+    },
+    {
+      "id": "iea_national_army",
+      "name": "A national army",
+      "description": "The movement's fighters and captured equipment form a national army.",
+      "kind": "strength",
+      "modifiers": {
+        "army_org": 0.04,
+        "internal_security": 0.05
+      }
+    }
+  ]
+}

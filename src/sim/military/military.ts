@@ -15,6 +15,7 @@ import type { CountryState, GameState } from "../state.ts";
 import { clamp, countryModifiers } from "../politics/common.ts";
 import { factories, incomeTier } from "../economy/economy.ts";
 import { divisionStats } from "./war.ts";
+import { countryShortName } from "../politics/unrest.ts";
 
 export interface ProductionLine {
   id: number;
@@ -297,6 +298,12 @@ export function canEnter(state: GameState, owner: string, province: number): boo
   return (hostileTo(state, owner, o) || (!!c && hostileTo(state, owner, c))) && !outsideLimitedZone(state, owner, province);
 }
 
+/** A war of the armed group the player leads: never frozen, so the player's group can win or lose it. */
+export function playerGroupWar(state: GameState, w: GameState["wars"][number]): boolean {
+  const p = state.player;
+  return !!p && state.dynamicCountries[p]?.kind === "armed_group" && (w.attackers.includes(p) || w.defenders.includes(p));
+}
+
 /**
  * True when every war with this province's holder keeps `owner` out of it:
  *  - a limited war (not one against an armed group) restricts its attacker to the war's zone;
@@ -310,7 +317,7 @@ export function outsideLimitedZone(state: GameState, owner: string, province: nu
     const att = w.attackers.includes(owner);
     if (!att && !w.defenders.includes(owner)) continue;
     if (!(att ? w.defenders : w.attackers).includes(holder!)) continue;
-    if (w.armedGroup && frozenGroups) { limited = true; continue; }
+    if (w.armedGroup && frozenGroups && !playerGroupWar(state, w)) { limited = true; continue; }
     if (w.goal !== "limited" || !att || w.armedGroup) return false;
     if (w.zone?.includes(province)) return false;
     limited = true;
@@ -388,7 +395,7 @@ export function moveDivision(ctx: SimContext, tag: string, id: number, province:
   const d = ctx.state.divisions.find((x) => x.id === id && x.owner === tag);
   if (!d) return { ok: false, text: "No such division." };
   if (!ctx.map) return { ok: false, text: "No map." };
-  const nameOf = (t: string) => ctx.state.dynamicCountries[t]?.name ?? ctx.db.countryList.find((c) => c.tag === t)?.short_name ?? ctx.db.countryList.find((c) => c.tag === t)?.name ?? t;
+  const nameOf = (t: string) => countryShortName(ctx.db, ctx.state, t);
   const block = entryBlock(ctx.state, tag, province, nameOf);
   if (block) return { ok: false, text: block };
   const path = findPath(ctx.map, ctx.state, tag, d.province, province);

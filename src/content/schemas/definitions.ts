@@ -220,6 +220,10 @@ export const CountryListEntry = z.strictObject({
   name: z.string(),
   /** Short name for map labels when `name` is long (e.g. "Yugoslavia"). */
   short_name: z.string().optional(),
+  /** Name shown on 1 January 2000 when it differs from `name` (changed later by set_country_name). */
+  start_name: z.string().optional(),
+  /** Focus tree used on 1 January 2000 when it is not the one naming this country (changed later by set_focus_tree). */
+  start_focus_tree: z.string().optional(),
   region: Region,
   start_status: StartStatus,
   /** Member of the UN on 1 January 2000. */

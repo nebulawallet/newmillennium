@@ -1,0 +1,1933 @@
+{
+  "id": "iea",
+  "name": "Islamic Emirate of Afghanistan",
+  "countries": [
+    "AFG"
+  ],
+  "switched_to": true,
+  "note": "The Islamic Emirate of Afghanistan: AFG switches to this tree when the Taliban take over (15 August 2021 in data/events/conflicts.json, or earlier through the Taliban tree's last focus). No end date. Branches for the state, the economy without aid, the army, foreign relations, society and two exclusive directions; neutral and descriptive.",
+  "source": [
+    {
+      "url": "https://en.wikipedia.org/wiki/Islamic_Emirate_of_Afghanistan",
+      "title": "Wikipedia: Islamic Emirate of Afghanistan",
+      "accessed": "2026-10-19"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Fall_of_Kabul_(2021)",
+      "title": "Wikipedia: Fall of Kabul (2021)",
+      "accessed": "2026-10-19"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Leadership_Council_of_the_Islamic_Emirate_of_Afghanistan",
+      "title": "Wikipedia: Leadership Council of the Islamic Emirate of Afghanistan",
+      "accessed": "2026-10-19"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Qosh_Tepa_Canal",
+      "title": "Wikipedia: Qosh Tepa Canal",
+      "accessed": "2026-10-19"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Mes_Aynak",
+      "title": "Wikipedia: Mes Aynak",
+      "accessed": "2026-10-19"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Turkmenistan–Afghanistan–Pakistan–India_Pipeline",
+      "title": "Wikipedia: Turkmenistan–Afghanistan–Pakistan–India Pipeline",
+      "accessed": "2026-10-19"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Afghanistan–Russia_relations",
+      "title": "Wikipedia: Afghanistan–Russia relations",
+      "accessed": "2026-10-19"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Opium_production_in_Afghanistan",
+      "title": "Wikipedia: Opium production in Afghanistan",
+      "accessed": "2026-10-19"
+    }
+  ],
+  "confidence": "verified",
+  "focuses": [
+    {
+      "id": "iea_the_emirate",
+      "name": "The Emirate",
+      "description": "Run the Islamic Emirate of Afghanistan.",
+      "x": 2,
+      "y": 0,
+      "days": 70,
+      "effects": [
+        {
+          "add_political_power": 40
+        },
+        {
+          "add_spirit": "iea_caretaker_government"
+        }
+      ],
+      "ai_weight": 6
+    },
+    {
+      "id": "iea_caretaker_cabinet",
+      "name": "The caretaker cabinet",
+      "description": "Acting ministers take over the ministries. The real caretaker government was announced on 7 September 2021.",
+      "x": 0,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "iea_the_emirate"
+        ]
+      ],
+      "effects": [
+        {
+          "add_political_power": 30
+        },
+        {
+          "add_stability": 0.03
+        }
+      ]
+    },
+    {
+      "id": "iea_leadership_council",
+      "name": "The Leadership Council",
+      "description": "The leadership council advises the supreme leader.",
+      "x": 2,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "iea_the_emirate"
+        ]
+      ],
+      "effects": [
+        {
+          "add_stability": 0.02
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "religious_establishment",
+            "value": 5
+          }
+        }
+      ]
+    },
+    {
+      "id": "iea_provincial_governors",
+      "name": "Provincial governors",
+      "description": "Governors and police chiefs for every province.",
+      "x": 4,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "iea_the_emirate"
+        ]
+      ],
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "internal_security",
+            "value": 0.04,
+            "days": 2920
+          }
+        },
+        {
+          "add_stability": 0.02
+        }
+      ]
+    },
+    {
+      "id": "iea_ministries",
+      "name": "The ministries",
+      "description": "The ministries resume work with their civil servants.",
+      "x": 0,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "iea_caretaker_cabinet"
+        ]
+      ],
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "tax_efficiency",
+            "value": 0.03,
+            "days": 2920
+          }
+        },
+        {
+          "add_political_power": 20
+        }
+      ]
+    },
+    {
+      "id": "iea_courts",
+      "name": "Courts",
+      "description": "Courts across the provinces.",
+      "x": 2,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "iea_leadership_council"
+        ]
+      ],
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "internal_security",
+            "value": 0.04,
+            "days": 2920
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "religious_establishment",
+            "value": 4
+          }
+        }
+      ]
+    },
+    {
+      "id": "iea_district_administration",
+      "name": "District administration",
+      "description": "Officials for every district.",
+      "x": 4,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "iea_provincial_governors"
+        ]
+      ],
+      "effects": [
+        {
+          "add_stability": 0.02
+        },
+        {
+          "add_unrest": -0.02
+        }
+      ]
+    },
+    {
+      "id": "iea_civil_service",
+      "name": "The civil service",
+      "description": "Pay and rules for the civil service.",
+      "x": 0,
+      "y": 3,
+      "days": 70,
+      "prerequisites": [
+        [
+          "iea_ministries"
+        ]
+      ],
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "corruption",
+            "value": -0.03,
+            "days": 2920
+          }
+        },
+        {
+          "set_budget": {
+            "spending": 0.5
+          }
+        }
+      ]
+    },
+    {
+      "id": "iea_customs",
+      "name": "Customs",
+      "description": "Customs at the border crossings. Unlocks customs drives.",
+      "x": 1,
+      "y": 3,
+      "days": 70,
+      "prerequisites": [
+        [
+          "iea_ministries",
+          "iea_courts"
+        ]
+      ],
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "tax_efficiency",
+            "value": 0.04,
+            "days": 2920
+          }
+        },
+        {
+          "add_treasury": 0.3
+        }
+      ]
+    },
+    {
+      "id": "iea_central_revenue",
+      "name": "Central revenue",
+      "description": "All revenue goes to the treasury in Kabul.",
+      "x": 2,
+      "y": 4,
+      "days": 70,
+      "prerequisites": [
+        [
+          "iea_customs"
+        ]
+      ],
+      "effects": [
+        {
+          "add_spirit": "iea_central_revenue"
+        }
+      ]
+    },
+    {
+      "id": "iea_permanent_cabinet",
+      "name": "Permanent ministers",
+      "description": "Acting ministers become ministers.",
+      "x": 0,
+      "y": 4,
+      "days": 70,
+      "prerequisites": [
+        [
+          "iea_civil_service"
+        ]
+      ],
+      "effects": [
+        {
+          "remove_spirit": "iea_caretaker_government"
+        },
+        {
+          "add_political_power": 40
+        },
+        {
+          "add_stability": 0.03
+        }
+      ]
+    },
+    {
+      "id": "iea_police",
+      "name": "Police",
+      "description": "A police force for the cities and highways.",
+      "x": 4,
+      "y": 3,
+      "days": 70,
+      "prerequisites": [
+        [
+          "iea_district_administration"
+        ]
+      ],
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "internal_security",
+            "value": 0.05,
+            "days": 2920
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "security_services",
+            "value": 4
+          }
+        }
+      ]
+    },
+    {
+      "id": "iea_census",
+      "name": "Registers",
+      "description": "Registers of land and residents.",
+      "x": 3,
+      "y": 3,
+      "days": 70,
+      "prerequisites": [
+        [
+          "iea_district_administration",
+          "iea_courts"
+        ]
+      ],
+      "effects": [
+        {
+          "add_political_power": 20
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "tax_efficiency",
+            "value": 0.02,
+            "days": 2920
+          }
+        }
+      ]
+    },
+    {
+      "id": "iea_national_ids",
+      "name": "Identity cards",
+      "description": "Electronic identity cards for residents.",
+      "x": 4,
+      "y": 4,
+      "days": 70,
+      "prerequisites": [
+        [
+          "iea_police",
+          "iea_census"
+        ]
+      ],
+      "effects": [
+        {
+          "add_buildings": {
+            "building": "data_centre",
+            "count": 1
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "internal_security",
+            "value": 0.02,
+            "days": 2920
+          }
+        }
+      ]
+    },
+    {
+      "id": "iea_a_settled_state",
+      "name": "A settled state",
+      "description": "The state's institutions settle into routine.",
+      "x": 2,
+      "y": 5,
+      "days": 105,
+      "prerequisites": [
+        [
+          "iea_central_revenue",
+          "iea_permanent_cabinet",
+          "iea_national_ids"
+        ]
+      ],
+      "effects": [
+        {
+          "add_stability": 0.05
+        },
+        {
+          "add_political_power": 40
+        }
+      ]
+    },
+    {
+      "id": "iea_economy",
+      "name": "An economy without aid",
+      "description": "Run the economy with little foreign aid.",
+      "x": 8,
+      "y": 0,
+      "days": 70,
+      "effects": [
+        {
+          "add_political_power": 20
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "tax_efficiency",
+            "value": 0.03,
+            "days": 2920
+          }
+        }
+      ],
+      "ai_weight": 5
+    },
+    {
+      "id": "iea_poppy_ban",
+      "name": "Ban the poppy",
+      "description": "Ban opium poppy cultivation, as the Taliban also did in 2000.",
+      "x": 6,
+      "y": 1,
+      "days": 105,
+      "prerequisites": [
+        [
+          "iea_economy"
+        ]
+      ],
+      "effects": [
+        {
+          "swap_spirit": {
+            "from": "afg_opium_economy",
+            "to": "iea_poppy_ban"
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "rural",
+            "value": -6
+          }
+        }
+      ]
+    },
+    {
+      "id": "iea_irrigation",
+      "name": "Irrigation",
+      "description": "Repair canals and build new ones.",
+      "x": 8,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "iea_economy"
+        ]
+      ],
+      "effects": [
+        {
+          "add_interest_group_approval": {
+            "group": "rural",
+            "value": 4
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "gdp_growth",
+            "value": 0.001,
+            "days": 2920
+          }
+        }
+      ]
+    },
+    {
+      "id": "iea_mines",
+      "name": "Mines",
+      "description": "Survey and contract the mineral deposits.",
+      "x": 10,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "iea_economy"
+        ]
+      ],
+      "effects": [
+        {
+          "add_spirit": "iea_mining_drive"
+        }
+      ]
+    },
+    {
+      "id": "iea_alternative_crops",
+      "name": "Alternative crops",
+      "description": "Seed and credit for wheat, fruit and cotton.",
+      "x": 6,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "iea_poppy_ban"
+        ]
+      ],
+      "effects": [
+        {
+          "add_interest_group_approval": {
+            "group": "rural",
+            "value": 4
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "gdp_growth",
+            "value": 0.001,
+            "days": 2920
+          }
+        }
+      ]
+    },
+    {
+      "id": "iea_qosh_tepa_canal",
+      "name": "The Qosh Tepa Canal",
+      "description": "A 285 km canal from the Amu Darya through Balkh, Jowzjan and Faryab. Construction began in early 2022. Unlocks canal works.",
+      "x": 8,
+      "y": 2,
+      "days": 140,
+      "prerequisites": [
+        [
+          "iea_irrigation"
+        ]
+      ],
+      "available": {
+        "date_after": "2022-01-01"
+      },
+      "effects": [
+        {
+          "add_spirit": "iea_water_projects"
+        },
+        {
+          "add_buildings": {
+            "building": "infrastructure",
+            "count": 1,
+            "regions": [
+              {
+                "from": "AFG",
+                "adm1": [
+                  "AFG-1744"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "add_treasury": -0.5
+        }
+      ]
+    },
+    {
+      "id": "iea_copper",
+      "name": "Copper",
+      "description": "Mes Aynak, the country's largest known copper deposit.",
+      "x": 10,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "iea_mines"
+        ]
+      ],
+      "effects": [
+        {
+          "add_buildings": {
+            "building": "civilian_factory",
+            "count": 1
+          }
+        },
+        {
+          "add_treasury": 0.4
+        },
+        {
+          "add_opinion": {
+            "target": "CHN",
+            "value": 5,
+            "days": 1825
+          }
+        }
+      ]
+    },
+    {
+      "id": "iea_coal_exports",
+      "name": "Coal exports",
+      "description": "Export coal to the neighbours.",
+      "x": 11,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "iea_mines"
+        ]
+      ],
+      "effects": [
+        {
+          "add_treasury": 0.5
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "fossil_output",
+            "value": 0.05,
+            "days": 2920
+          }
+        }
+      ]
+    },
+    {
+      "id": "iea_dams",
+      "name": "Dams",
+      "description": "Dams for power and irrigation.",
+      "x": 7,
+      "y": 3,
+      "days": 70,
+      "prerequisites": [
+        [
+          "iea_alternative_crops",
+          "iea_qosh_tepa_canal"
+        ]
+      ],
+      "effects": [
+        {
+          "add_buildings": {
+            "building": "renewable_plant",
+            "count": 1
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "rural",
+            "value": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "iea_power_imports",
+      "name": "Power from the north",
+      "description": "Buy power from Central Asia over the existing lines.",
+      "x": 9,
+      "y": 3,
+      "days": 70,
+      "prerequisites": [
+        [
+          "iea_qosh_tepa_canal",
+          "iea_copper"
+        ]
+      ],
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "energy_cost",
+            "value": -0.04,
+            "days": 2920
+          }
+        }
+      ]
+    },
+    {
+      "id": "iea_ring_road",
+      "name": "The ring road",
+      "description": "Repair the ring road between the cities.",
+      "x": 11,
+      "y": 3,
+      "days": 70,
+      "prerequisites": [
+        [
+          "iea_coal_exports",
+          "iea_copper"
+        ]
+      ],
+      "available": {
+        "treasury_above": 0.5
+      },
+      "effects": [
+        {
+          "add_buildings": {
+            "building": "infrastructure",
+            "count": 3
+          }
+        },
+        {
+          "add_treasury": -0.5
+        }
+      ]
+    },
+    {
+      "id": "iea_tapi_pipeline",
+      "name": "The gas pipeline",
+      "description": "The Turkmenistan-Afghanistan-Pakistan-India pipeline, finished on the Turkmen side in 2024, extends into Herat.",
+      "x": 9,
+      "y": 4,
+      "days": 70,
+      "prerequisites": [
+        [
+          "iea_power_imports"
+        ]
+      ],
+      "available": {
+        "date_after": "2024-01-01"
+      },
+      "effects": [
+        {
+          "add_buildings": {
+            "building": "infrastructure",
+            "count": 1,
+            "regions": [
+              {
+                "from": "AFG",
+                "adm1": [
+                  "AFG-1742"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "add_opinion": {
+            "target": "TKM",
+            "value": 10,
+            "days": 1825
+          }
+        },
+        {
+          "add_treasury": 0.3
+        }
+      ]
+    },
+    {
+      "id": "iea_light_industry",
+      "name": "Light industry",
+      "description": "Workshops and factories in Kabul and Herat.",
+      "x": 7,
+      "y": 4,
+      "days": 70,
+      "prerequisites": [
+        [
+          "iea_dams",
+          "iea_power_imports"
+        ]
+      ],
+      "effects": [
+        {
+          "add_buildings": {
+            "building": "civilian_factory",
+            "count": 1,
+            "regions": [
+              {
+                "from": "AFG",
+                "adm1": [
+                  "AFG-1762"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "add_buildings": {
+            "building": "civilian_factory",
+            "count": 1,
+            "regions": [
+              {
+                "from": "AFG",
+                "adm1": [
+                  "AFG-1742"
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "iea_railways",
+      "name": "Railways",
+      "description": "Rail links to Uzbekistan and Turkmenistan.",
+      "x": 11,
+      "y": 4,
+      "days": 70,
+      "prerequisites": [
+        [
+          "iea_ring_road"
+        ]
+      ],
+      "effects": [
+        {
+          "add_buildings": {
+            "building": "infrastructure",
+            "count": 2
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "trade_efficiency",
+            "value": 0.03,
+            "days": 2920
+          }
+        }
+      ]
+    },
+    {
+      "id": "iea_a_working_economy",
+      "name": "A working economy",
+      "description": "Revenue, farms and trade keep the economy running.",
+      "x": 9,
+      "y": 5,
+      "days": 105,
+      "prerequisites": [
+        [
+          "iea_tapi_pipeline",
+          "iea_light_industry",
+          "iea_railways"
+        ]
+      ],
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "gdp_growth",
+            "value": 0.002,
+            "days": 2920
+          }
+        },
+        {
+          "add_stability": 0.03
+        }
+      ]
+    },
+    {
+      "id": "iea_army",
+      "name": "The army",
+      "description": "Turn the movement's fighters into a national army.",
+      "x": 14,
+      "y": 0,
+      "days": 70,
+      "effects": [
+        {
+          "add_political_power": 20
+        }
+      ],
+      "ai_weight": 5
+    },
+    {
+      "id": "iea_captured_equipment",
+      "name": "Captured equipment",
+      "description": "Equipment left by the former army.",
+      "x": 13,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "iea_army"
+        ]
+      ],
+      "effects": [
+        {
+          "add_equipment": {
+            "family": "infantry_equipment",
+            "amount": 1500
+          }
+        },
+        {
+          "add_equipment": {
+            "family": "armoured_vehicle",
+            "amount": 60
+          }
+        },
+        {
+          "add_equipment": {
+            "family": "artillery",
+            "amount": 40
+          }
+        }
+      ]
+    },
+    {
+      "id": "iea_army_corps",
+      "name": "Army corps",
+      "description": "Corps for each region of the country.",
+      "x": 15,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "iea_army"
+        ]
+      ],
+      "effects": [
+        {
+          "add_spirit": "iea_national_army"
+        },
+        {
+          "add_divisions": {
+            "template": "infantry_division",
+            "count": 2
+          }
+        }
+      ]
+    },
+    {
+      "id": "iea_repair_depots",
+      "name": "Repair depots",
+      "description": "Repair captured vehicles and aircraft.",
+      "x": 13,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "iea_captured_equipment"
+        ]
+      ],
+      "effects": [
+        {
+          "add_buildings": {
+            "building": "military_factory",
+            "count": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "iea_border_forces",
+      "name": "Border forces",
+      "description": "Border guards for the long borders.",
+      "x": 15,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "iea_army_corps"
+        ]
+      ],
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "army_defence",
+            "value": 0.04,
+            "days": 2920
+          }
+        },
+        {
+          "add_divisions": {
+            "template": "infantry_division",
+            "count": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "iea_air_wing",
+      "name": "An air wing",
+      "description": "Fly the helicopters and aircraft left behind.",
+      "x": 13,
+      "y": 3,
+      "days": 70,
+      "prerequisites": [
+        [
+          "iea_repair_depots"
+        ]
+      ],
+      "effects": [
+        {
+          "add_buildings": {
+            "building": "air_base",
+            "count": 1
+          }
+        },
+        {
+          "add_research_bonus": {
+            "category": "air_drones",
+            "value": 0.2,
+            "uses": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "iea_mechanised_units",
+      "name": "Mechanised units",
+      "description": "Units with the captured armoured vehicles.",
+      "x": 14,
+      "y": 3,
+      "days": 70,
+      "prerequisites": [
+        [
+          "iea_repair_depots",
+          "iea_border_forces"
+        ]
+      ],
+      "effects": [
+        {
+          "add_divisions": {
+            "template": "motorised_division",
+            "count": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "iea_internal_security",
+      "name": "Internal security",
+      "description": "Units against armed opponents inside the country.",
+      "x": 16,
+      "y": 3,
+      "days": 70,
+      "prerequisites": [
+        [
+          "iea_border_forces"
+        ]
+      ],
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "internal_security",
+            "value": 0.05,
+            "days": 2920
+          }
+        },
+        {
+          "add_unrest": -0.03
+        }
+      ]
+    },
+    {
+      "id": "iea_military_academy",
+      "name": "A military academy",
+      "description": "Train officers.",
+      "x": 14,
+      "y": 4,
+      "days": 70,
+      "prerequisites": [
+        [
+          "iea_air_wing",
+          "iea_mechanised_units",
+          "iea_internal_security"
+        ]
+      ],
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "army_org",
+            "value": 0.04,
+            "days": 2920
+          }
+        },
+        {
+          "add_research_bonus": {
+            "category": "doctrine",
+            "value": 0.2,
+            "uses": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "iea_drones",
+      "name": "Drones",
+      "description": "Buy and build drones.",
+      "x": 13,
+      "y": 5,
+      "days": 70,
+      "prerequisites": [
+        [
+          "iea_military_academy"
+        ]
+      ],
+      "available": {
+        "date_after": "2023-01-01"
+      },
+      "effects": [
+        {
+          "add_equipment": {
+            "family": "combat_drone",
+            "amount": 15
+          }
+        },
+        {
+          "add_research_bonus": {
+            "category": "air_drones",
+            "value": 0.2,
+            "uses": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "iea_conscription_registers",
+      "name": "Recruitment",
+      "description": "Regular recruitment for the army.",
+      "x": 15,
+      "y": 5,
+      "days": 70,
+      "prerequisites": [
+        [
+          "iea_military_academy"
+        ]
+      ],
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "manpower_factor",
+            "value": 0.04,
+            "days": 2920
+          }
+        }
+      ]
+    },
+    {
+      "id": "iea_foreign_relations",
+      "name": "Foreign relations",
+      "description": "Seek relations with the world. The government is widely unrecognised.",
+      "x": 20,
+      "y": 0,
+      "days": 70,
+      "effects": [
+        {
+          "add_political_power": 20
+        },
+        {
+          "add_spirit": "iea_unrecognised"
+        }
+      ],
+      "ai_weight": 5
+    },
+    {
+      "id": "iea_pakistan",
+      "name": "Pakistan",
+      "description": "Trade and the border with Pakistan.",
+      "x": 18,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "iea_foreign_relations"
+        ]
+      ],
+      "effects": [
+        {
+          "add_opinion": {
+            "target": "PAK",
+            "value": 10,
+            "days": 1825
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "trade_efficiency",
+            "value": 0.02,
+            "days": 2920
+          }
+        }
+      ]
+    },
+    {
+      "id": "iea_china",
+      "name": "China",
+      "description": "Mining and trade with China.",
+      "x": 20,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "iea_foreign_relations"
+        ]
+      ],
+      "effects": [
+        {
+          "add_opinion": {
+            "target": "CHN",
+            "value": 10,
+            "days": 1825
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "foreign_investment",
+            "value": 0.03,
+            "days": 2920
+          }
+        }
+      ]
+    },
+    {
+      "id": "iea_qatar",
+      "name": "Qatar",
+      "description": "Contacts through Doha.",
+      "x": 22,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "iea_foreign_relations"
+        ]
+      ],
+      "effects": [
+        {
+          "add_opinion": {
+            "target": "QAT",
+            "value": 10,
+            "days": 1825
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "diplomatic_reputation",
+            "value": 0.02,
+            "days": 2920
+          }
+        }
+      ]
+    },
+    {
+      "id": "iea_iran",
+      "name": "Iran",
+      "description": "Trade and water on the western border.",
+      "x": 18,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "iea_pakistan"
+        ]
+      ],
+      "effects": [
+        {
+          "add_opinion": {
+            "target": "IRN",
+            "value": 10,
+            "days": 1825
+          }
+        }
+      ]
+    },
+    {
+      "id": "iea_central_asia",
+      "name": "Central Asia",
+      "description": "Power, rail and trade with Uzbekistan, Turkmenistan and Tajikistan.",
+      "x": 20,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "iea_china",
+          "iea_pakistan"
+        ]
+      ],
+      "effects": [
+        {
+          "add_opinion": {
+            "target": "UZB",
+            "value": 10,
+            "days": 1825
+          }
+        },
+        {
+          "add_opinion": {
+            "target": "TKM",
+            "value": 10,
+            "days": 1825
+          }
+        },
+        {
+          "add_opinion": {
+            "target": "TJK",
+            "value": 5,
+            "days": 1825
+          }
+        }
+      ]
+    },
+    {
+      "id": "iea_russia",
+      "name": "Russia",
+      "description": "Relations with Russia. In July 2025 Russia became the first country to recognise the Islamic Emirate.",
+      "x": 22,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "iea_qatar",
+          "iea_china"
+        ]
+      ],
+      "effects": [
+        {
+          "add_opinion": {
+            "target": "RUS",
+            "value": 15,
+            "days": 1825
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "diplomatic_reputation",
+            "value": 0.02,
+            "days": 2920
+          }
+        }
+      ]
+    },
+    {
+      "id": "iea_embassies",
+      "name": "Embassies",
+      "description": "Send diplomats to the embassies abroad.",
+      "x": 19,
+      "y": 3,
+      "days": 70,
+      "prerequisites": [
+        [
+          "iea_iran",
+          "iea_central_asia"
+        ]
+      ],
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "diplomatic_reputation",
+            "value": 0.03,
+            "days": 2920
+          }
+        }
+      ]
+    },
+    {
+      "id": "iea_first_recognition",
+      "name": "First recognition",
+      "description": "Recognition by a first state.",
+      "x": 22,
+      "y": 3,
+      "days": 70,
+      "prerequisites": [
+        [
+          "iea_russia"
+        ]
+      ],
+      "available": {
+        "date_after": "2025-07-01"
+      },
+      "effects": [
+        {
+          "remove_spirit": "iea_unrecognised"
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "trade_efficiency",
+            "value": -0.02,
+            "days": 2920
+          }
+        },
+        {
+          "add_political_power": 30
+        }
+      ],
+      "ai_weight": 10
+    },
+    {
+      "id": "iea_regional_trade",
+      "name": "Regional trade",
+      "description": "Trade and transit deals with the region. Unlocks trade missions.",
+      "x": 20,
+      "y": 4,
+      "days": 70,
+      "prerequisites": [
+        [
+          "iea_embassies",
+          "iea_first_recognition"
+        ]
+      ],
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "trade_efficiency",
+            "value": 0.03,
+            "days": 2920
+          }
+        }
+      ]
+    },
+    {
+      "id": "iea_un_seat",
+      "name": "Seek the UN seat",
+      "description": "Ask for the country's seat at the United Nations.",
+      "x": 22,
+      "y": 4,
+      "days": 70,
+      "prerequisites": [
+        [
+          "iea_first_recognition",
+          "iea_embassies"
+        ]
+      ],
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "diplomatic_reputation",
+            "value": 0.03,
+            "days": 2920
+          }
+        }
+      ]
+    },
+    {
+      "id": "iea_wider_recognition",
+      "name": "Wider recognition",
+      "description": "Alternative history: more states recognise the government.",
+      "x": 21,
+      "y": 5,
+      "days": 70,
+      "prerequisites": [
+        [
+          "iea_un_seat",
+          "iea_regional_trade"
+        ]
+      ],
+      "available": {
+        "any": [
+          {
+            "follows_history": false
+          },
+          {
+            "is_player": true
+          }
+        ]
+      },
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "foreign_investment",
+            "value": 0.05,
+            "days": 2920
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "trade_efficiency",
+            "value": 0.03,
+            "days": 2920
+          }
+        },
+        {
+          "add_opinion": {
+            "target": "USA",
+            "value": 5,
+            "days": 1825
+          }
+        }
+      ],
+      "ai_weight": 0
+    },
+    {
+      "id": "iea_society",
+      "name": "Society",
+      "description": "Schools, health and religious institutions.",
+      "x": 25,
+      "y": 0,
+      "days": 70,
+      "effects": [
+        {
+          "add_political_power": 20
+        }
+      ],
+      "ai_weight": 4
+    },
+    {
+      "id": "iea_madrasas",
+      "name": "Religious schools",
+      "description": "Religious schools in every province.",
+      "x": 24,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "iea_society"
+        ]
+      ],
+      "effects": [
+        {
+          "add_interest_group_approval": {
+            "group": "religious_establishment",
+            "value": 5
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "education_quality",
+            "value": 0.01,
+            "days": 2920
+          }
+        }
+      ]
+    },
+    {
+      "id": "iea_clinics",
+      "name": "Clinics",
+      "description": "Keep the clinics and hospitals open.",
+      "x": 26,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "iea_society"
+        ]
+      ],
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "health_outcomes",
+            "value": 0.03,
+            "days": 2920
+          }
+        },
+        {
+          "add_treasury": -0.2
+        }
+      ]
+    },
+    {
+      "id": "iea_mosques_and_endowments",
+      "name": "Religious endowments",
+      "description": "A ministry runs the mosques and endowments.",
+      "x": 24,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "iea_madrasas"
+        ]
+      ],
+      "effects": [
+        {
+          "add_interest_group_approval": {
+            "group": "religious_establishment",
+            "value": 4
+          }
+        },
+        {
+          "add_stability": 0.02
+        }
+      ]
+    },
+    {
+      "id": "iea_returnees",
+      "name": "Returnees",
+      "description": "Land and shelter for refugees who return from Pakistan and Iran.",
+      "x": 26,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "iea_clinics"
+        ]
+      ],
+      "effects": [
+        {
+          "add_stability": 0.02
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "population_growth",
+            "value": 0.001,
+            "days": 2920
+          }
+        }
+      ]
+    },
+    {
+      "id": "iea_universities",
+      "name": "Universities",
+      "description": "Keep the universities running.",
+      "x": 25,
+      "y": 3,
+      "days": 70,
+      "prerequisites": [
+        [
+          "iea_mosques_and_endowments",
+          "iea_returnees"
+        ]
+      ],
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "education_quality",
+            "value": 0.02,
+            "days": 2920
+          }
+        },
+        {
+          "add_research_bonus": {
+            "category": "economy_digital",
+            "value": 0.1,
+            "uses": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "iea_drought_relief",
+      "name": "Drought relief",
+      "description": "Food stores and wells for dry years.",
+      "x": 27,
+      "y": 3,
+      "days": 70,
+      "prerequisites": [
+        [
+          "iea_returnees"
+        ]
+      ],
+      "effects": [
+        {
+          "add_stability": 0.02
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "rural",
+            "value": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "iea_vaccination",
+      "name": "Vaccination",
+      "description": "Vaccination campaigns with the international agencies.",
+      "x": 26,
+      "y": 4,
+      "days": 70,
+      "prerequisites": [
+        [
+          "iea_universities",
+          "iea_drought_relief"
+        ]
+      ],
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "health_outcomes",
+            "value": 0.02,
+            "days": 2920
+          }
+        }
+      ]
+    },
+    {
+      "id": "iea_mobile_networks",
+      "name": "Mobile networks",
+      "description": "Mobile and internet coverage.",
+      "x": 24,
+      "y": 4,
+      "days": 70,
+      "prerequisites": [
+        [
+          "iea_universities"
+        ]
+      ],
+      "effects": [
+        {
+          "add_buildings": {
+            "building": "data_centre",
+            "count": 1
+          }
+        },
+        {
+          "add_research_bonus": {
+            "category": "economy_digital",
+            "value": 0.15,
+            "uses": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "iea_social_order",
+      "name": "Social order",
+      "description": "The state settles into the society it governs.",
+      "x": 25,
+      "y": 5,
+      "days": 105,
+      "prerequisites": [
+        [
+          "iea_vaccination",
+          "iea_mobile_networks"
+        ]
+      ],
+      "effects": [
+        {
+          "add_stability": 0.04
+        },
+        {
+          "add_unrest": -0.04
+        }
+      ]
+    },
+    {
+      "id": "iea_direction",
+      "name": "Direction",
+      "description": "How the Emirate deals with the world and its economy.",
+      "x": 30,
+      "y": 0,
+      "days": 70,
+      "prerequisites": [
+        [
+          "iea_the_emirate"
+        ]
+      ],
+      "effects": [
+        {
+          "add_political_power": 20
+        }
+      ],
+      "ai_weight": 4
+    },
+    {
+      "id": "iea_open_to_region",
+      "name": "Open to the region",
+      "description": "Trade, transit and mining deals with the neighbours.",
+      "x": 29,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "iea_direction"
+        ]
+      ],
+      "mutually_exclusive": [
+        "iea_self_reliance"
+      ],
+      "effects": [
+        {
+          "add_spirit": "iea_regional_opening"
+        },
+        {
+          "add_opinion": {
+            "target": "UZB",
+            "value": 5,
+            "days": 1825
+          }
+        },
+        {
+          "add_opinion": {
+            "target": "CHN",
+            "value": 5,
+            "days": 1825
+          }
+        }
+      ],
+      "ai_weight": 10
+    },
+    {
+      "id": "iea_transit_hub",
+      "name": "A transit hub",
+      "description": "Roads and rail for transit between Central and South Asia.",
+      "x": 29,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "iea_open_to_region"
+        ]
+      ],
+      "effects": [
+        {
+          "add_buildings": {
+            "building": "infrastructure",
+            "count": 2
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "trade_efficiency",
+            "value": 0.03,
+            "days": 2920
+          }
+        }
+      ]
+    },
+    {
+      "id": "iea_foreign_contracts",
+      "name": "Foreign contracts",
+      "description": "Contracts with foreign companies for mines and power.",
+      "x": 29,
+      "y": 3,
+      "days": 70,
+      "prerequisites": [
+        [
+          "iea_transit_hub"
+        ]
+      ],
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "foreign_investment",
+            "value": 0.05,
+            "days": 2920
+          }
+        },
+        {
+          "add_buildings": {
+            "building": "civilian_factory",
+            "count": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "iea_self_reliance",
+      "name": "Self-reliance",
+      "description": "Run the economy with little outside involvement.",
+      "x": 31,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "iea_direction"
+        ]
+      ],
+      "mutually_exclusive": [
+        "iea_open_to_region"
+      ],
+      "effects": [
+        {
+          "add_spirit": "iea_self_reliance"
+        },
+        {
+          "add_stability": 0.02
+        }
+      ],
+      "ai_weight": 3
+    },
+    {
+      "id": "iea_local_production",
+      "name": "Local production",
+      "description": "Workshops make what imports used to supply.",
+      "x": 31,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "iea_self_reliance"
+        ]
+      ],
+      "effects": [
+        {
+          "add_buildings": {
+            "building": "civilian_factory",
+            "count": 1
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "production_efficiency",
+            "value": 0.03,
+            "days": 2920
+          }
+        }
+      ]
+    },
+    {
+      "id": "iea_state_projects",
+      "name": "State projects",
+      "description": "The state builds roads and canals with its own revenue.",
+      "x": 31,
+      "y": 3,
+      "days": 70,
+      "prerequisites": [
+        [
+          "iea_local_production"
+        ]
+      ],
+      "available": {
+        "treasury_above": 0.4
+      },
+      "effects": [
+        {
+          "add_buildings": {
+            "building": "infrastructure",
+            "count": 2
+          }
+        },
+        {
+          "add_treasury": -0.4
+        }
+      ]
+    },
+    {
+      "id": "iea_long_term_plan",
+      "name": "A long-term plan",
+      "description": "A plan for the next decade.",
+      "x": 30,
+      "y": 4,
+      "days": 105,
+      "prerequisites": [
+        [
+          "iea_foreign_contracts",
+          "iea_state_projects"
+        ]
+      ],
+      "effects": [
+        {
+          "add_political_power": 40
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "gdp_growth",
+            "value": 0.002,
+            "days": 3650
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -272,6 +272,12 @@ One file per tree: `{ id, name, countries, focuses: [ { id, name, description, x
 - `prerequisites` is a list of groups: every group must be met, and within a group any one completed focus is enough (`[["a", "b"]]` means a or b).
 - `available` makes branches depend on who governs, e.g. `{ "holds_office": { "person": "usa.al_gore", "office": "usa.president" } }` or `{ "ruling_party": "rus.cprf" }`.
 - Trees that name real laws, reforms or programmes carry `source` and `confidence`, and describe them neutrally (see `usa.json`, `rus.json`).
+- `switched_to: true` marks a tree that no country starts with; only `set_focus_tree` reaches it (the Islamic Emirate tree, `iea`). A country that starts on a tree other than its own names it in `data/world/countries.json` with `start_focus_tree` (Afghanistan starts on the Taliban tree, `tal`), and `start_name` gives a starting name that differs from `name` (Afghanistan starts as "Taliban").
+- Changing name and tree in play:
+  - `set_country_name` = `{ name?, flag? }`: the country is shown under this name (and flag code from `public/flags/`) everywhere, through `countryName` / `countryShortName` in `src/sim/politics/unrest.ts`; `{}` goes back to the standard name and flag. Never look a country's name up any other way.
+  - `set_focus_tree` = `{ tree }`: the current focus is dropped and the new tree starts fresh (its own completed focuses are cleared; other trees' stay).
+  - `hand_over` = `{ to }`: the movement that governed the scoped country carries on as `to`, with its focus tree, progress and the tree's own spirits, and a player playing the country goes with it (the Taliban into TAL in December 2001, and back into AFG in August 2021).
+  - Trigger `controls_region` = `{ adm1: [...], label? }`: the scoped country controls every province in those regions (`label` names them in tooltips).
 
 ## 8. Economy
 
@@ -309,7 +315,8 @@ One file per tree: `{ id, name, countries, focuses: [ { id, name, description, x
   - `end_armed_group` = `{ group, into?, disband_army_of? }`: without `into`, its land goes back and its divisions disband; with `into`, land and divisions pass to that country (a takeover, or an annexation). `disband_army_of` first removes a country's army (it collapsed in the takeover).
 - Wars with a group call in no allies and never end by exhaustion; they end by a script (`white_peace`, `end_armed_group`) or when the group holds nothing. While a group is at war, land changes hands with control.
 - Every date that spawns, shrinks or ends a group is a fact: give the event a `historical` date with a source.
-- Historical mode: AI countries do not attack or enter armed-group land, so group land changes only by script (the player still can); wars started by historical events do not end by exhaustion. Dynamic mode fights both freely.
+- Historical mode: AI countries do not attack or enter armed-group land, so group land changes only by script (the player still can); wars started by historical events do not end by exhaustion. Dynamic mode fights both freely. The wars of a group the player leads are never frozen: the AI fights the player's group, and the scripted Islamic State losses skip a player-led Islamic State (their `trigger`), so it can survive past 2019 if it holds its land.
+- When a group the player leads ends with `into`, the player carries on as that country (`player_changed` event).
 - Related effects:
   - `deploy_divisions` = `{ count, in }` sends the country's hardest-hitting divisions abroad and gets military access from the host (Kuwait 2003, Iraq 2003–2011); `recall_divisions` = `{ from }` brings them home; `add_divisions` takes an optional `in` too.
   - `occupy_provinces` = `{ regions }`: the scoped country takes control of provinces on a real date and the owner's divisions there disband (the fall of Baghdad, 9 April 2003).

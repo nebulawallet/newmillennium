@@ -10,6 +10,8 @@ export const bookmark = signal<string>("new_millennium");
 export const scenarioWorld = signal<import("../sim/state.ts").GameState | null>(null);
 /** The game date flags are drawn for (the running game's day, or the start date chosen on the start screen). */
 export const flagDay = signal(0);
+/** Flags of renamed countries (set_country_name), by tag. */
+export const flagOverrides = signal<Record<string, string>>({});
 /** Country highlighted on the start screen (clicked in the list or on the map). */
 export const pickedCountry = signal<string | null>(null);
 /** The player's selected divisions (ids). */

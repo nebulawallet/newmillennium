@@ -1,0 +1,66 @@
+{
+  "note": "The Taliban's national spirits (gameplay values). They go with the movement: from AFG to the TAL insurgency in December 2001 and back to AFG at the takeover (the hand_over effect).",
+  "spirits": [
+    {
+      "id": "tal_leadership_council",
+      "name": "The Leadership Council",
+      "description": "The movement's leadership council, also called the Quetta Shura, directs it.",
+      "kind": "strength",
+      "modifiers": {
+        "political_power_gain": 0.08,
+        "stability_factor": 0.02
+      }
+    },
+    {
+      "id": "tal_shadow_government",
+      "name": "Shadow government",
+      "description": "Shadow governors and courts work in the districts the movement controls or contests.",
+      "kind": "policy",
+      "modifiers": {
+        "tax_efficiency": 0.05,
+        "internal_security": 0.05
+      }
+    },
+    {
+      "id": "tal_rural_networks",
+      "name": "Rural networks",
+      "description": "Support and recruits in the villages of the south and east.",
+      "kind": "strength",
+      "modifiers": {
+        "manpower_factor": 0.05,
+        "foreign_influence_resistance": 0.05
+      }
+    },
+    {
+      "id": "tal_war_economy",
+      "name": "A war economy",
+      "description": "Levies on trade and farming, including the opium trade, fund the movement.",
+      "kind": "policy",
+      "modifiers": {
+        "tax_efficiency": 0.04,
+        "corruption": 0.02
+      }
+    },
+    {
+      "id": "tal_negotiating_track",
+      "name": "The negotiating track",
+      "description": "Talks run alongside the fighting.",
+      "kind": "policy",
+      "modifiers": {
+        "diplomatic_reputation": 0.05,
+        "war_support_factor": -0.02
+      }
+    },
+    {
+      "id": "tal_military_track",
+      "name": "The military track",
+      "description": "The movement seeks victory on the battlefield.",
+      "kind": "policy",
+      "modifiers": {
+        "army_attack": 0.04,
+        "war_support_factor": 0.03,
+        "diplomatic_reputation": -0.03
+      }
+    }
+  ]
+}

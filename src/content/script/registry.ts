@@ -45,7 +45,8 @@ export type RefKind =
   | "armed_group"
   | "spirit"
   | "tech_category"
-  | "building";
+  | "building"
+  | "focus_tree";
 
 interface ScriptDef {
   args: z.ZodType;
@@ -65,6 +66,21 @@ export const EFFECTS: Record<string, ScriptDef> = {
   set_flag: { args: Id, description: "Set a country flag." },
   clear_flag: { args: Id, description: "Clear a country flag." },
   set_global_flag: { args: Id, description: "Set a global flag." },
+  clear_global_flag: { args: Id, description: "Clear a global flag." },
+  set_country_name: {
+    args: z.strictObject({ name: z.string().min(1).optional(), flag: z.string().min(1).optional() }),
+    description: "The country is shown under this name (and flag code) everywhere; without a name it goes back to its standard name and flag.",
+  },
+  hand_over: {
+    args: z.strictObject({ to: Tag }),
+    description: "The movement that governed this country carries on as `to` (the Taliban after December 2001): its focus tree and progress go with it, and so does a player playing this country.",
+    refs: { to: "tag" },
+  },
+  set_focus_tree: {
+    args: z.strictObject({ tree: Id }),
+    description: "The country switches to this national focus tree: work in progress is dropped and the new tree starts fresh.",
+    refs: { tree: "focus_tree" },
+  },
   add_timed_modifier: {
     args: z.strictObject({ modifier: Id, value: num, days: z.number().int().positive() }),
     description: "Apply a modifier for a number of days.",
@@ -382,6 +398,10 @@ export const TRIGGERS: Record<string, ScriptDef> = {
   },
   has_completed_focus: { args: Id, description: "Focus completed." },
   exists: { args: Tag, description: "Country exists on the map.", refs: { "": "tag" } },
+  controls_region: {
+    args: z.strictObject({ adm1: z.array(z.string()).min(1), /** How the tooltip names the regions. */ label: z.string().optional() }),
+    description: "The country controls every province in these first-level regions (map adm1 codes).",
+  },
   is_player: { args: z.boolean(), description: "Scoped country is the player's." },
   has_tech: { args: Id, description: "The technology has been researched.", refs: { "": "tech" } },
   unrest_above: { args: Share, description: "Unrest above value." },

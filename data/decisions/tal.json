@@ -1,0 +1,96 @@
+{
+  "categories": [
+    {
+      "id": "tal_projects",
+      "name": "Taliban projects",
+      "description": "Projects that the national focuses open up."
+    }
+  ],
+  "decisions": [
+    {
+      "id": "tal_recruitment_drive",
+      "name": "Recruitment drive",
+      "description": "Recruit in the villages.",
+      "category": "tal_projects",
+      "countries": [
+        "TAL",
+        "AFG"
+      ],
+      "visible": {
+        "has_completed_focus": "tal_rural_base"
+      },
+      "cost": {
+        "political_power": 40
+      },
+      "effects": [
+        {
+          "add_divisions": {
+            "template": "infantry_division",
+            "count": 1
+          }
+        }
+      ],
+      "cooldown_days": 240,
+      "ai_weight": 2
+    },
+    {
+      "id": "tal_spring_offensive",
+      "name": "Spring offensive",
+      "description": "A season of attacks on district centres.",
+      "category": "tal_projects",
+      "countries": [
+        "TAL",
+        "AFG"
+      ],
+      "visible": {
+        "has_completed_focus": "tal_spring_offensives"
+      },
+      "available": {
+        "at_war": true
+      },
+      "cost": {
+        "political_power": 40
+      },
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "army_attack",
+            "value": 0.05,
+            "days": 180
+          }
+        },
+        {
+          "add_war_support": 0.02
+        }
+      ],
+      "cooldown_days": 365,
+      "ai_weight": 2
+    },
+    {
+      "id": "tal_local_ceasefire",
+      "name": "Local ceasefire",
+      "description": "A ceasefire for a holiday or an exchange of prisoners.",
+      "category": "tal_projects",
+      "countries": [
+        "TAL",
+        "AFG"
+      ],
+      "visible": {
+        "has_completed_focus": "tal_talks"
+      },
+      "cost": {
+        "political_power": 20
+      },
+      "effects": [
+        {
+          "add_stability": 0.02
+        },
+        {
+          "add_war_support": -0.01
+        }
+      ],
+      "cooldown_days": 365,
+      "ai_weight": 2
+    }
+  ]
+}

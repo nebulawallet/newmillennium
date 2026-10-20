@@ -7,13 +7,13 @@
 import type { ContentDB } from "../content/compile.ts";
 import type { GameState } from "../sim/state.ts";
 import { Flag } from "./Flag.tsx";
+import { countryShortName } from "../sim/politics/unrest.ts";
 
 /** The name a country goes by on the map and on plates (dynamic countries use their own). */
 export function shortName(db: ContentDB, state: GameState | null | undefined, tag: string): string {
-  const dyn = state?.dynamicCountries[tag]?.name;
-  if (dyn) return dyn;
-  const entry = db.countryList.find((c) => c.tag === tag);
-  return entry?.short_name ?? db.countries.get(tag)?.country?.name.en ?? entry?.name ?? tag;
+  // no game yet (the 1 January 2000 start screen): the name a country starts with
+  if (!state) { const start = db.countryList.find((c) => c.tag === tag)?.start_name; if (start) return start; }
+  return countryShortName(db, state, tag);
 }
 
 /** Width-axis setting that fits a name of this length: wide up to ten letters, narrower beyond. */

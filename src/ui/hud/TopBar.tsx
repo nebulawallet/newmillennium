@@ -10,6 +10,7 @@ import { Icon, type IconName } from "../icons.tsx";
 import { panel, paused, speed, version, type Session } from "../session.ts";
 import { TABS } from "../tabs.ts";
 import { tip, type TipContent } from "../tooltip.tsx";
+import { countryName } from "../../sim/politics/unrest.ts";
 
 const compact = (n: number) => (n >= 1e6 ? `${(n / 1e6).toFixed(n >= 1e7 ? 0 : 1)}M` : n >= 1e3 ? `${Math.round(n / 1e3)}k` : String(Math.round(n)));
 
@@ -80,7 +81,7 @@ function FocusTile({ db, session }: { db: ContentDB; session: Session }) {
       {...tip(() => ({
         title: "National focus",
         rows: f ? [["Current", f.name], ["Progress", `${cs.focus.progress} / ${f.days} days`]] : [["Current", "None selected"]],
-        note: `${cs.focus.completed.length} completed. Click to open the focus tree.`,
+        note: `${db.focusTrees.get(cs.focus.tree)?.focuses.filter((x) => cs.focus.completed.includes(x.id)).length ?? 0} completed. Click to open the focus tree.`,
       }))}
     >
       {Icon.focus({ size: 22 })}
@@ -109,7 +110,7 @@ export function TopBar({ db, session }: { db: ContentDB; session: Session }) {
         class="flag-tile"
         onClick={() => (panel.value = open === "politics" ? null : "politics")}
         {...tip(() => ({
-          title: c?.name.en ?? tag,
+          title: countryName(db, state, tag),
           rows: [
             ["Leader", leader?.name.en ?? "—"],
             ["Ruling party", party ? `${party.name.en} (${party.abbrev.en})` : "—"],

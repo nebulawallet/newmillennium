@@ -15,6 +15,7 @@ import { selectedArmy, selectedDivisions, showAlliedDivisions } from "../store.t
 import { divisionVisibility } from "../../sim/military/visibility.ts";
 import { SYMBOL_NAME, symbolSvg } from "./symbols.ts";
 import { activeTip } from "../tooltip.tsx";
+import { countryName } from "../../sim/politics/unrest.ts";
 
 interface Group {
   key: string;
@@ -123,7 +124,7 @@ export class UnitCounters {
     const g = this.group(key);
     if (!g) return;
     const state = this.getState();
-    const owner = state?.dynamicCountries[g.owner]?.name ?? this.db.countries.get(g.owner)?.country?.name.en ?? g.owner;
+    const owner = countryName(this.db, state, g.owner);
     const prov = this.map.provinces[g.province - 1]?.name ?? "";
     const armies = (state?.armies ?? []).filter((a) => a.owner === g.owner && g.divisions.some((d) => a.divisions.includes(d.id)));
     activeTip.value = {

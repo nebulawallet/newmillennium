@@ -21,6 +21,7 @@ import { installGovernment, partiesOfGroup } from "../politics/regime.ts";
 export { partiesOfGroup };
 import { capitalProvince } from "./military.ts";
 import { hostile, makePeace, occupiedShare, warStatus } from "./war.ts";
+import { countryName } from "../politics/unrest.ts";
 
 export type PeaceTerm =
   | { kind: "annex"; target: string }
@@ -130,7 +131,7 @@ function changeIdeology(ctx: SimContext, target: string, group: string): string 
 
 /** Describe a term for the news and the notice. */
 function termText(ctx: SimContext, t: PeaceTerm, to: string): string {
-  const name = (tag: string) => ctx.state.dynamicCountries[tag]?.name ?? ctx.db.countryList.find((c) => c.tag === tag)?.name ?? tag;
+  const name = (tag: string) => countryName(ctx.db, ctx.state, tag);
   switch (t.kind) {
     case "annex": return `${name(to)} annexes ${name(t.target)}`;
     case "provinces": return `${name(t.target)} cedes ${t.provinces.length} province${t.provinces.length > 1 ? "s" : ""} to ${name(to)}`;
@@ -233,7 +234,7 @@ export function offerPeace(ctx: SimContext, tag: string, warId: number): { ok: b
   const support = state.countries[lead]?.warSupport ?? 0;
   const months = (state.day - war.startDay) / 30;
   const accept = st[theirs].score <= st[mine].score + 5 || support < 0.35 || (months > 12 && Math.abs(st[theirs].score - st[mine].score) < 15);
-  const name = state.dynamicCountries[lead]?.name ?? ctx.db.countryList.find((c) => c.tag === lead)?.name ?? lead;
+  const name = countryName(ctx.db, state, lead);
   if (!accept) return { ok: false, text: `${name} refuses: its war score is ${st[theirs].score} against your ${st[mine].score}, and its war support ${Math.round(support * 100)}%.` };
   makePeace(ctx, war, null, false);
   afterPeace(ctx);

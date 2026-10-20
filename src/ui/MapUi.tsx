@@ -7,6 +7,8 @@ import { hoveredProvince, mapMode, pointer, showAlliedDivisions } from "./store.
 import { activeTip, tip, TipBox } from "./tooltip.tsx";
 import { panel, type Session } from "./session.ts";
 import { infrastructureOf, slotUse } from "../sim/economy/construction.ts";
+import { countryName } from "../sim/politics/unrest.ts";
+import type { GameState } from "../sim/state.ts";
 
 /** Building slots of one of the player's provinces (shown in the Building slots map mode). */
 function slotRows(db: ContentDB, map: MapData, session: Session | undefined, id: number): [string, string][] {
@@ -33,8 +35,7 @@ const MODE_ICON: Record<string, IconName> = {
 };
 
 const fmt = new Intl.NumberFormat("en");
-const nameOf = (db: ContentDB, tag: string) =>
-  db.countries.get(tag)?.country?.name.en ?? db.countryList.find((c) => c.tag === tag)?.name ?? tag;
+const nameOf = (db: ContentDB, tag: string, state?: GameState | null) => countryName(db, state, tag);
 
 /** Bottom-right map mode cluster (HOI4 position) with the active mode's legend above it. */
 export function MapModeBar({ db, map, world }: { db: ContentDB; map: MapData; world: WorldMap }) {
@@ -111,8 +112,8 @@ export function ProvinceTooltip({ db, map, session }: { db: ContentDB; map: MapD
       t={{
         title: p.name,
         rows: [
-          ["Owner", nameOf(db, p.owner)],
-          ...(p.controller !== p.owner ? [["Controller", <span class="warn">{nameOf(db, p.controller)}</span>] as [string, preact.ComponentChildren]] : []),
+          ["Owner", nameOf(db, p.owner, session?.state)],
+          ...(p.controller !== p.owner ? [["Controller", <span class="warn">{nameOf(db, p.controller, session?.state)}</span>] as [string, preact.ComponentChildren]] : []),
           ["Terrain", p.terrain],
           ["Population", fmt.format(p.population)],
           ...slotRows(db, map, session, id),

@@ -44,6 +44,16 @@
               }
             },
             {
+              "country": {
+                "tag": "AFG",
+                "effects": [
+                  {
+                    "set_country_name": {}
+                  }
+                ]
+              }
+            },
+            {
               "spawn_armed_group": {
                 "group": "TAL",
                 "regions": [
@@ -58,6 +68,36 @@
                 "divisions": 3,
                 "war_with": [
                   "AFG"
+                ]
+              }
+            },
+            {
+              "country": {
+                "tag": "TAL",
+                "effects": [
+                  {
+                    "add_spirit": "tal_rural_networks"
+                  }
+                ]
+              }
+            },
+            {
+              "country": {
+                "tag": "AFG",
+                "effects": [
+                  {
+                    "hand_over": {
+                      "to": "TAL"
+                    }
+                  },
+                  {
+                    "set_focus_tree": {
+                      "tree": "afg"
+                    }
+                  },
+                  {
+                    "clear_global_flag": "iea_formed"
+                  }
                 ]
               }
             },
@@ -235,11 +275,28 @@
         ],
         "confidence": "verified"
       },
+      "trigger": {
+        "not": {
+          "has_global_flag": "iea_formed"
+        }
+      },
       "options": [
         {
           "id": "ok",
           "name": "Continue",
           "effects": [
+            {
+              "country": {
+                "tag": "TAL",
+                "effects": [
+                  {
+                    "hand_over": {
+                      "to": "AFG"
+                    }
+                  }
+                ]
+              }
+            },
             {
               "end_armed_group": {
                 "group": "TAL",
@@ -249,6 +306,25 @@
             },
             {
               "set_historical_government_type": "theocracy"
+            },
+            {
+              "set_country_name": {
+                "name": "Islamic Emirate of Afghanistan"
+              }
+            },
+            {
+              "set_focus_tree": {
+                "tree": "iea"
+              }
+            },
+            {
+              "remove_spirit": "afg_international_aid"
+            },
+            {
+              "remove_spirit": "afg_insurgency"
+            },
+            {
+              "set_global_flag": "iea_formed"
             }
           ]
         }
@@ -362,9 +438,6 @@
         "USA"
       ],
       "major": true,
-      "trigger": {
-        "at_war_with": "IRQ"
-      },
       "historical": {
         "date": "2003-04-09",
         "any_path": true,
@@ -382,6 +455,9 @@
           }
         ],
         "confidence": "verified"
+      },
+      "trigger": {
+        "at_war_with": "IRQ"
       },
       "options": [
         {
@@ -452,9 +528,6 @@
         "USA"
       ],
       "major": false,
-      "trigger": {
-        "at_war_with": "IRQ"
-      },
       "historical": {
         "date": "2003-05-01",
         "any_path": true,
@@ -472,6 +545,9 @@
           }
         ],
         "confidence": "verified"
+      },
+      "trigger": {
+        "at_war_with": "IRQ"
       },
       "options": [
         {
@@ -899,6 +975,16 @@
                   "SYR"
                 ]
               }
+            },
+            {
+              "country": {
+                "tag": "ISG",
+                "effects": [
+                  {
+                    "add_spirit": "isg_administration_strain"
+                  }
+                ]
+              }
             }
           ]
         }
@@ -1068,6 +1154,16 @@
         ],
         "confidence": "needs_review",
         "review_note": "Dates are sourced. The provinces are a province-level approximation on the game map (one game province can cover a whole governorate); check against the source's territorial-control maps."
+      },
+      "trigger": {
+        "not": {
+          "country": {
+            "tag": "ISG",
+            "trigger": {
+              "is_player": true
+            }
+          }
+        }
       },
       "options": [
         {
@@ -1248,6 +1344,16 @@
         "confidence": "needs_review",
         "review_note": "Dates are sourced. The provinces are a province-level approximation on the game map (one game province can cover a whole governorate); check against the source's territorial-control maps."
       },
+      "trigger": {
+        "not": {
+          "country": {
+            "tag": "ISG",
+            "trigger": {
+              "is_player": true
+            }
+          }
+        }
+      },
       "options": [
         {
           "id": "ok",
@@ -1336,6 +1442,16 @@
         "confidence": "needs_review",
         "review_note": "Dates are sourced. The provinces are a province-level approximation on the game map (one game province can cover a whole governorate); check against the source's territorial-control maps."
       },
+      "trigger": {
+        "not": {
+          "country": {
+            "tag": "ISG",
+            "trigger": {
+              "is_player": true
+            }
+          }
+        }
+      },
       "options": [
         {
           "id": "ok",
@@ -1385,6 +1501,16 @@
         "confidence": "needs_review",
         "review_note": "Dates are sourced. The provinces are a province-level approximation on the game map (one game province can cover a whole governorate); check against the source's territorial-control maps."
       },
+      "trigger": {
+        "not": {
+          "country": {
+            "tag": "ISG",
+            "trigger": {
+              "is_player": true
+            }
+          }
+        }
+      },
       "options": [
         {
           "id": "ok",
@@ -1428,6 +1554,16 @@
           }
         ],
         "confidence": "verified"
+      },
+      "trigger": {
+        "not": {
+          "country": {
+            "tag": "ISG",
+            "trigger": {
+              "is_player": true
+            }
+          }
+        }
       },
       "options": [
         {
@@ -1474,6 +1610,16 @@
         ],
         "confidence": "needs_review",
         "review_note": "Dates are sourced. The provinces are a province-level approximation on the game map (one game province can cover a whole governorate); check against the source's territorial-control maps."
+      },
+      "trigger": {
+        "not": {
+          "country": {
+            "tag": "ISG",
+            "trigger": {
+              "is_player": true
+            }
+          }
+        }
       },
       "options": [
         {

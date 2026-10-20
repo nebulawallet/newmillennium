@@ -100,15 +100,11 @@ write_decisions("afg", "AFG", "Afghan state projects", [
 ])
 A = Tree("afg", "AFG")
 A.political_paths(0, "Who rules Afghanistan", "Which force governs Afghanistan.",
-    "The government of the day", "Afghanistan is governed as it historically was in each period: the Islamic Emirate until 2001, the Islamic Republic until 2021, then the Emirate again.", HIST, [
+    "The government of the day", "Afghanistan is governed as it historically was, from the end of Taliban rule in December 2001 until the takeover of August 2021.", HIST, [
     dict(key="broad_coalition", group="non_aligned", start="A broad coalition", start_desc="Regional and ethnic parties form a broad coalition.", build=("Regional leaders", "Leaders of the regions join the coalition.", [IG("minorities", 6)]),
          gov_name="A coalition government", gov_desc="The most popular non-aligned party leads the government.", gate=ANY({"stability_below": 0.4}, {"unrest_above": 0.3}), threshold=0.15),
 ], junta=True)
 KABUL, KANDAHAR, HERAT, BALKH, NANGARHAR = "AFG-1762", "AFG-1754", "AFG-1742", "AFG-1744", "AFG-1774"
-A.f("emirate", "The Emirate", "Run the state of the Islamic Emirate.", 7, 0, [PP(20)], avail=BEFORE("2001-12-07"), ai=5)
-A.f("emirate_courts", "Religious courts", "Religious courts across the provinces.", 6, 1, [MOD("internal_security", 0.05, 1460), IG("religious_establishment", 5)], pre=["emirate"], avail=BEFORE("2001-12-07"))
-A.f("northern_offensive", "Offensive in the north", "Press the Northern Alliance in the north-east.", 8, 1, [WS(0.05), MOD("army_attack", 0.02, 730)], pre=["emirate"], avail=BEFORE("2001-12-07"))
-A.f("poppy_ban", "Ban the poppy", "Ban opium poppy cultivation.", 7, 2, [A.SWAP("opium_economy", "legal_economy"), IG("rural", -8)], pre=["emirate_courts|northern_offensive"], avail=BEFORE("2001-12-07"))
 A.f("new_state", "A new state", "Build the state after the fall of the Emirate and the Bonn Agreement of 5 December 2001.", 11, 0, [A.REMOVE("un_sanctions"), A.REMOVE("divided_country"), A.SPIRIT("international_aid"), PP(40)], avail=AFTER("2001-12-22"), ai=6)
 A.f("loya_jirga", "Grand assembly", "A grand assembly chooses the transitional government.", 10, 1, [STAB(0.03), IG("minorities", 3)], pre=["new_state"])
 A.f("donor_support", "Donor support", "Aid from the international donors. Unlocks donor conferences.", 12, 1, [TREAS(2), MOD("construction_speed", 0.05, 2920)], pre=["new_state"])
@@ -117,11 +113,6 @@ A.f("national_army", "The Afghan National Army", "Recruit and train a new nation
 A.f("counter_insurgency", "Counter-insurgency", "Fight the insurgency in the south and east.", 11, 3, [A.SPIRIT("insurgency"), MOD("internal_security", 0.05, 1460), WS(0.03)], pre=["national_army|new_constitution"], avail=AFTER("2005-01-01"))
 A.f("security_handover", "Security handover", "Take over security from international forces as they leave by 2014.", 12, 4, [DIVS("infantry_division", 2), MOD("army_org", 0.02, 1460), A.REMOVE("international_aid")], pre=["counter_insurgency"], avail=AFTER("2014-01-01"))
 A.f("peace_talks", "Peace talks", "Talks with the Taliban after the Doha agreement of 29 February 2020.", 10, 4, [A.REMOVE("insurgency"), STAB(0.02), WS(-0.05)], pre=["counter_insurgency"], avail=AFTER("2020-02-29"))
-A.f("emirate_restored", "The Emirate restored", "The Taliban govern again after taking Kabul on 15 August 2021.", 16, 0, [PP(40), A.REMOVE("international_aid")], avail=AFTER("2021-08-15"), ai=5)
-A.f("emirate_economy", "An economy under isolation", "Run the economy without foreign aid.", 15, 1, [MOD("tax_efficiency", 0.04, 2920), TREAS(0.3)], pre=["emirate_restored"])
-A.f("mines_and_minerals", "Mines and minerals", "Contracts for copper, lithium and coal.", 17, 1, [A.BUILD("civilian_factory", 1), TREAS(0.5), OPN("CHN", 10)], pre=["emirate_restored"])
-A.f("regional_trade", "Trade with neighbours", "Trade routes to Central Asia and Pakistan.", 16, 2, [MOD("trade_efficiency", 0.03, 2920), OPN("UZB", 10), OPN("PAK", 5)], pre=["emirate_economy|mines_and_minerals"])
-A.f("recognition", "Seek recognition", "Seek recognition from other states.", 16, 3, [MOD("diplomatic_reputation", 0.03, 2920)], pre=["regional_trade"])
 A.f("economy_plan", "Rebuild the economy", "Roads, power and farms.", 20, 0, [PP(20)], ai=4)
 A.f("ring_road", "The ring road", "Rebuild the ring road between the cities.", 19, 1, [A.BUILD("infrastructure", 3), TREAS(-0.5)], pre=["economy_plan"], avail=CASH(0.5))
 A.f("irrigation", "Irrigation", "Repair canals and build dams. Unlocks irrigation projects.", 21, 1, [IG("rural", 5), MOD("gdp_growth", 0.002, 2920)], pre=["economy_plan"])
@@ -150,31 +141,7 @@ A.f("central_asia_ties", "Central Asian neighbours", "Power and rail from Uzbeki
 A.f("regional_conference", "A regional conference", "Host a regional conference on trade and security.", 25, 3, [MOD("diplomatic_reputation", 0.03, 2920)], pre=["central_asia_ties"])
 
 society_branch(A, max(f["x"] for f in A.F) + 2)
-A.write("Afghanistan", "Afghanistan in the style of the Russian model tree: the government of the day as the historical path (the Emirate, the Islamic Republic from 2001, the Emirate again from 2021), a broad-coalition alternative and a junta; branches for each period and for the economy (roads, irrigation, alternative crops). Sourced starting spirits in data/spirits/afg.json. Wars stay in the scripted conflict events.",
+A.write("Afghanistan", "Afghanistan from December 2001 to August 2021 in the style of the Russian model tree (AFG uses the Taliban tree before and the Islamic Emirate tree after, see gen_isg_tal.py): the government of the day as the historical path, a broad-coalition alternative and a junta; branches for the Islamic Republic and for the economy (roads, irrigation, alternative crops). Sourced starting spirits in data/spirits/afg.json. Wars stay in the scripted conflict events.",
         ["Taliban government (1996–2001)", "Northern Alliance", "United Nations Security Council Resolution 1267", "Opium production in Afghanistan", "2001 United States invasion of Afghanistan", "Bonn Agreement (Afghanistan)", "Afghan National Army", "International Security Assistance Force", "Fall of Kabul (2021)", "Doha Agreement (2020)"])
 
-# ============================================================ ISLAMIC STATE (usable while it holds land)
-G = Tree("isg", "ISG")
-G.f("proto_state", "A proto-state", "Organise an administration in the towns the group holds.", 2, 0, [PP(30), MOD("internal_security", 0.05, 1460)], ai=5)
-G.f("provincial_councils", "Provincial councils", "Councils run the towns.", 1, 1, [STAB(0.03), MOD("tax_efficiency", 0.05, 1460)], pre=["proto_state"])
-G.f("oil_fields", "Seize the oil fields", "Run the oil fields in the territory.", 3, 1, [TREAS(0.5), MOD("fossil_output", 0.05, 1460)], pre=["proto_state"])
-G.f("recruitment", "Recruitment", "Recruit fighters at home and abroad.", 1, 2, [DIVS("infantry_division", 2), MOD("manpower_factor", 0.05, 1460)], pre=["provincial_councils"])
-G.f("captured_arsenals", "Captured arsenals", "Use weapons taken from army depots.", 3, 2, [EQUIP(1000)], pre=["oil_fields"])
-G.f("mobile_columns", "Mobile columns", "Fast columns of light vehicles.", 2, 3, [DIVS("motorised_division", 1), MOD("army_attack", 0.03, 1460)], pre=["recruitment|captured_arsenals"])
-G.f("defend_the_cities", "Defend the cities", "Fortify the cities against offensives.", 2, 4, [MOD("army_defence", 0.05, 1460)], pre=["mobile_columns"])
-G.f("underground", "Go underground", "Prepare cells for an insurgency if the territory falls.", 2, 5, [MOD("internal_security", 0.03, 1460)], pre=["defend_the_cities"])
-G.write("Islamic State", "A short tree for the Islamic State while it holds territory (2014-2019): administration, resources and forces. Neutral and descriptive; the group's history is scripted in the conflict events.",
-        ["Islamic State", "Battle of Mosul (2016–2017)", "Raqqa campaign (2016–2017)", "Battle of Baghuz Fawqani"])
-
-# ============================================================ TALIBAN (insurgency 2002-2021)
-L = Tree("tal", "TAL")
-L.f("regroup", "Regroup", "Rebuild the movement's leadership and networks after 2001.", 2, 0, [PP(30)], ai=5)
-L.f("shadow_government", "Shadow governors", "Shadow governors and courts in the provinces.", 1, 1, [MOD("tax_efficiency", 0.05, 1460), STAB(0.02)], pre=["regroup"])
-L.f("rural_base", "A rural base", "Win support in the villages of the south and east.", 3, 1, [DIVS("infantry_division", 1), IG("rural", 5)], pre=["regroup"])
-L.f("fighters", "Recruit fighters", "Recruit and train fighters.", 1, 2, [DIVS("infantry_division", 2)], pre=["shadow_government"])
-L.f("weapons", "Weapons", "Acquire weapons and explosives.", 3, 2, [EQUIP(500)], pre=["rural_base"])
-L.f("spring_offensives", "Spring offensives", "Yearly offensives against district centres.", 2, 3, [MOD("army_attack", 0.03, 1460), WS(0.05)], pre=["fighters|weapons"])
-L.f("doha_office", "The Doha office", "A political office in Qatar for talks.", 2, 4, [MOD("diplomatic_reputation", 0.05, 1460), OPN("QAT", 10)], pre=["spring_offensives"], avail=AFTER("2013-01-01"))
-L.f("doha_agreement", "The Doha Agreement", "An agreement with the United States, signed on 29 February 2020, on the withdrawal of foreign troops.", 2, 5, [OPN("USA", 10), WS(0.05)], pre=["doha_office"], avail=AFTER("2020-02-29"))
-L.write("Taliban", "A short tree for the Taliban insurgency (2002-2021): organisation, forces and negotiations. Neutral and descriptive; the history is scripted in the conflict events.",
-        ["Taliban", "Islamic Emirate of Afghanistan", "Doha Agreement (2020)"])
+# The Islamic State, Taliban and Islamic Emirate trees are in gen_isg_tal.py.

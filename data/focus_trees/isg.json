@@ -4,11 +4,16 @@
   "countries": [
     "ISG"
   ],
-  "note": "A short tree for the Islamic State while it holds territory (2014-2019): administration, resources and forces. Neutral and descriptive; the group's history is scripted in the conflict events.",
+  "note": "The Islamic State while it holds territory: administration, revenue, forces, a consolidation or expansion strategy, provinces abroad, an insurgency branch for after 2017 and an alternative-history branch for a state that survives past 2019. Neutral and descriptive; the group's rise and fall is scripted in data/events/conflicts.json, and the counterfactual branches are for the player or off-history games only.",
   "source": [
     {
       "url": "https://en.wikipedia.org/wiki/Islamic_State",
       "title": "Wikipedia: Islamic State",
+      "accessed": "2026-10-19"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Fall_of_Mosul",
+      "title": "Wikipedia: Fall of Mosul",
       "accessed": "2026-10-19"
     },
     {
@@ -25,6 +30,51 @@
       "url": "https://en.wikipedia.org/wiki/Battle_of_Baghuz_Fawqani",
       "title": "Wikipedia: Battle of Baghuz Fawqani",
       "accessed": "2026-10-19"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Islamic_State_dinar",
+      "title": "Wikipedia: Islamic State dinar",
+      "accessed": "2026-10-19"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/American-led_intervention_in_Iraq_(2014–2021)",
+      "title": "Wikipedia: American-led intervention in Iraq (2014–2021)",
+      "accessed": "2026-10-19"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/American-led_intervention_in_the_Syrian_civil_war",
+      "title": "Wikipedia: American-led intervention in the Syrian civil war",
+      "accessed": "2026-10-19"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Operation_Inherent_Resolve",
+      "title": "Wikipedia: Operation Inherent Resolve",
+      "accessed": "2026-10-19"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Islamic_State_in_Libya",
+      "title": "Wikipedia: Islamic State in Libya",
+      "accessed": "2026-10-19"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Islamic_State_–_Sinai_Province",
+      "title": "Wikipedia: Islamic State – Sinai Province",
+      "accessed": "2026-10-19"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Islamic_State_–_Khorasan_Province",
+      "title": "Wikipedia: Islamic State – Khorasan Province",
+      "accessed": "2026-10-19"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Islamic_State_in_the_Greater_Sahara",
+      "title": "Wikipedia: Islamic State in the Greater Sahara",
+      "accessed": "2026-10-19"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Islamic_State_insurgency_in_Iraq_(2017–present)",
+      "title": "Wikipedia: Islamic State insurgency in Iraq (2017–present)",
+      "accessed": "2026-10-19"
     }
   ],
   "confidence": "verified",
@@ -32,29 +82,25 @@
     {
       "id": "isg_proto_state",
       "name": "A proto-state",
-      "description": "Organise an administration in the towns the group holds.",
+      "description": "The group organises an administration in the towns it holds, after proclaiming a caliphate in 2014.",
       "x": 2,
       "y": 0,
       "days": 70,
       "effects": [
         {
-          "add_political_power": 30
+          "add_political_power": 40
         },
         {
-          "add_timed_modifier": {
-            "modifier": "internal_security",
-            "value": 0.05,
-            "days": 1460
-          }
+          "add_spirit": "isg_proto_state"
         }
       ],
-      "ai_weight": 5
+      "ai_weight": 6
     },
     {
-      "id": "isg_provincial_councils",
-      "name": "Provincial councils",
-      "description": "Councils run the towns.",
-      "x": 1,
+      "id": "isg_town_councils",
+      "name": "Town councils",
+      "description": "Councils run the towns and the districts around them.",
+      "x": 0,
       "y": 1,
       "days": 70,
       "prerequisites": [
@@ -69,22 +115,314 @@
         {
           "add_timed_modifier": {
             "modifier": "tax_efficiency",
-            "value": 0.05,
+            "value": 0.04,
             "days": 1460
           }
         }
       ]
     },
     {
-      "id": "isg_oil_fields",
-      "name": "Seize the oil fields",
-      "description": "Run the oil fields in the territory.",
-      "x": 3,
+      "id": "isg_courts",
+      "name": "Courts",
+      "description": "Courts replace the state's courts in the territory.",
+      "x": 2,
       "y": 1,
       "days": 70,
       "prerequisites": [
         [
           "isg_proto_state"
+        ]
+      ],
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "internal_security",
+            "value": 0.05,
+            "days": 1460
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "religious_establishment",
+            "value": 5
+          }
+        }
+      ]
+    },
+    {
+      "id": "isg_services",
+      "name": "Water, power and bread",
+      "description": "Keep the waterworks, power stations and bakeries running.",
+      "x": 4,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "isg_proto_state"
+        ]
+      ],
+      "effects": [
+        {
+          "add_stability": 0.02
+        },
+        {
+          "add_unrest": -0.03
+        }
+      ]
+    },
+    {
+      "id": "isg_tax_offices",
+      "name": "Tax offices",
+      "description": "Offices collect levies on trade and farming.",
+      "x": 0,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "isg_town_councils"
+        ]
+      ],
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "tax_efficiency",
+            "value": 0.05,
+            "days": 1460
+          }
+        },
+        {
+          "add_treasury": 0.2
+        }
+      ]
+    },
+    {
+      "id": "isg_records",
+      "name": "Records and registers",
+      "description": "Registers of land, property and residents.",
+      "x": 2,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "isg_courts",
+          "isg_town_councils"
+        ]
+      ],
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "internal_security",
+            "value": 0.03,
+            "days": 1460
+          }
+        },
+        {
+          "add_political_power": 20
+        }
+      ]
+    },
+    {
+      "id": "isg_repair_crews",
+      "name": "Repair crews",
+      "description": "Crews repair roads and power lines in the territory.",
+      "x": 4,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "isg_services"
+        ]
+      ],
+      "effects": [
+        {
+          "add_buildings": {
+            "building": "infrastructure",
+            "count": 1
+          }
+        },
+        {
+          "add_stability": 0.01
+        }
+      ]
+    },
+    {
+      "id": "isg_ease_the_strain",
+      "name": "Ease the strain",
+      "description": "More officials and simpler rules for the administration.",
+      "x": 1,
+      "y": 3,
+      "days": 105,
+      "prerequisites": [
+        [
+          "isg_tax_offices",
+          "isg_records"
+        ]
+      ],
+      "available": {
+        "has_spirit": "isg_administration_strain"
+      },
+      "effects": [
+        {
+          "remove_spirit": "isg_administration_strain"
+        },
+        {
+          "add_political_power": 20
+        }
+      ]
+    },
+    {
+      "id": "isg_internal_police",
+      "name": "Internal police",
+      "description": "A police force patrols the towns.",
+      "x": 3,
+      "y": 3,
+      "days": 70,
+      "prerequisites": [
+        [
+          "isg_records",
+          "isg_repair_crews"
+        ]
+      ],
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "internal_security",
+            "value": 0.05,
+            "days": 1460
+          }
+        },
+        {
+          "add_interest_group_approval": {
+            "group": "security_services",
+            "value": 5
+          }
+        }
+      ]
+    },
+    {
+      "id": "isg_schools_and_clinics",
+      "name": "Schools and clinics",
+      "description": "The administration takes over schools and clinics.",
+      "x": 4,
+      "y": 3,
+      "days": 70,
+      "prerequisites": [
+        [
+          "isg_repair_crews"
+        ]
+      ],
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "education_quality",
+            "value": -0.02,
+            "days": 1460
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "health_outcomes",
+            "value": 0.01,
+            "days": 1460
+          }
+        },
+        {
+          "add_stability": 0.01
+        }
+      ]
+    },
+    {
+      "id": "isg_dinar",
+      "name": "The dinar",
+      "description": "Issue the group's own coinage, the dinar, used from 2014 to 2019.",
+      "x": 0,
+      "y": 4,
+      "days": 70,
+      "prerequisites": [
+        [
+          "isg_ease_the_strain"
+        ]
+      ],
+      "available": {
+        "date_after": "2014-06-10"
+      },
+      "effects": [
+        {
+          "add_spirit": "isg_dinar"
+        }
+      ]
+    },
+    {
+      "id": "isg_provincial_administration",
+      "name": "Provincial administration",
+      "description": "The territory is divided into provinces with their own administrations.",
+      "x": 2,
+      "y": 4,
+      "days": 70,
+      "prerequisites": [
+        [
+          "isg_ease_the_strain",
+          "isg_internal_police"
+        ]
+      ],
+      "effects": [
+        {
+          "add_political_power": 30
+        },
+        {
+          "add_stability": 0.02
+        }
+      ]
+    },
+    {
+      "id": "isg_tribal_agreements",
+      "name": "Tribal agreements",
+      "description": "Agreements with tribes in the Euphrates valley.",
+      "x": 4,
+      "y": 4,
+      "days": 70,
+      "prerequisites": [
+        [
+          "isg_schools_and_clinics",
+          "isg_internal_police"
+        ]
+      ],
+      "effects": [
+        {
+          "add_interest_group_approval": {
+            "group": "rural",
+            "value": 5
+          }
+        },
+        {
+          "add_unrest": -0.02
+        }
+      ]
+    },
+    {
+      "id": "isg_revenue",
+      "name": "Revenue",
+      "description": "Pay for the group from the territory it holds. By the end of 2015 its budget was over US$1 billion.",
+      "x": 7,
+      "y": 0,
+      "days": 70,
+      "effects": [
+        {
+          "add_political_power": 20
+        }
+      ],
+      "ai_weight": 5
+    },
+    {
+      "id": "isg_oil_fields",
+      "name": "The oil fields",
+      "description": "Run the oil fields in the territory. Unlocks oil sales.",
+      "x": 6,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "isg_revenue"
         ]
       ],
       "effects": [
@@ -101,15 +439,260 @@
       ]
     },
     {
-      "id": "isg_recruitment",
-      "name": "Recruitment",
-      "description": "Recruit fighters at home and abroad.",
-      "x": 1,
+      "id": "isg_seized_banks",
+      "name": "Seized banks",
+      "description": "Take over the bank branches in the captured cities.",
+      "x": 8,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "isg_revenue"
+        ]
+      ],
+      "available": {
+        "date_after": "2014-06-10"
+      },
+      "effects": [
+        {
+          "add_treasury": 1
+        }
+      ]
+    },
+    {
+      "id": "isg_makeshift_refineries",
+      "name": "Makeshift refineries",
+      "description": "Small refineries turn crude into fuel.",
+      "x": 6,
       "y": 2,
       "days": 70,
       "prerequisites": [
         [
-          "isg_provincial_councils"
+          "isg_oil_fields"
+        ]
+      ],
+      "effects": [
+        {
+          "add_buildings": {
+            "building": "refinery",
+            "count": 1
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "energy_cost",
+            "value": -0.03,
+            "days": 1460
+          }
+        }
+      ]
+    },
+    {
+      "id": "isg_war_revenue",
+      "name": "A war economy",
+      "description": "Oil, levies and seized assets fund the war.",
+      "x": 8,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "isg_seized_banks",
+          "isg_oil_fields"
+        ]
+      ],
+      "effects": [
+        {
+          "add_spirit": "isg_war_revenue"
+        }
+      ]
+    },
+    {
+      "id": "isg_euphrates_farms",
+      "name": "Farms of the Euphrates",
+      "description": "Wheat and barley from the irrigated valley.",
+      "x": 9,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "isg_revenue"
+        ]
+      ],
+      "effects": [
+        {
+          "add_interest_group_approval": {
+            "group": "rural",
+            "value": 4
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "gdp_growth",
+            "value": 0.001,
+            "days": 1460
+          }
+        }
+      ]
+    },
+    {
+      "id": "isg_smuggling_routes",
+      "name": "Trade routes",
+      "description": "Fuel and goods move through the borderlands.",
+      "x": 6,
+      "y": 3,
+      "days": 70,
+      "prerequisites": [
+        [
+          "isg_makeshift_refineries"
+        ]
+      ],
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "trade_efficiency",
+            "value": 0.03,
+            "days": 1460
+          }
+        },
+        {
+          "add_treasury": 0.3
+        }
+      ]
+    },
+    {
+      "id": "isg_workshops",
+      "name": "Workshops",
+      "description": "Workshops repair vehicles and make spare parts.",
+      "x": 8,
+      "y": 3,
+      "days": 70,
+      "prerequisites": [
+        [
+          "isg_war_revenue"
+        ]
+      ],
+      "effects": [
+        {
+          "add_buildings": {
+            "building": "military_factory",
+            "count": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "isg_grain_stores",
+      "name": "Grain stores",
+      "description": "Silos and mills store the harvest.",
+      "x": 9,
+      "y": 3,
+      "days": 70,
+      "prerequisites": [
+        [
+          "isg_euphrates_farms"
+        ]
+      ],
+      "effects": [
+        {
+          "add_stability": 0.02
+        },
+        {
+          "add_unrest": -0.02
+        }
+      ]
+    },
+    {
+      "id": "isg_budget_office",
+      "name": "A budget office",
+      "description": "One office plans revenue and spending across the provinces.",
+      "x": 7,
+      "y": 4,
+      "days": 70,
+      "prerequisites": [
+        [
+          "isg_smuggling_routes",
+          "isg_workshops",
+          "isg_grain_stores"
+        ]
+      ],
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "tax_efficiency",
+            "value": 0.03,
+            "days": 1460
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "corruption",
+            "value": -0.02,
+            "days": 1460
+          }
+        }
+      ]
+    },
+    {
+      "id": "isg_forces",
+      "name": "Forces",
+      "description": "Organise the group's fighters into an army.",
+      "x": 13,
+      "y": 0,
+      "days": 70,
+      "effects": [
+        {
+          "add_political_power": 20
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "army_org",
+            "value": 0.02,
+            "days": 1460
+          }
+        }
+      ],
+      "ai_weight": 5
+    },
+    {
+      "id": "isg_captured_arsenals",
+      "name": "Captured arsenals",
+      "description": "Use the weapons and vehicles left in army depots.",
+      "x": 11,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "isg_forces"
+        ]
+      ],
+      "available": {
+        "date_after": "2014-06-10"
+      },
+      "effects": [
+        {
+          "add_equipment": {
+            "family": "infantry_equipment",
+            "amount": 1200
+          }
+        },
+        {
+          "add_equipment": {
+            "family": "armoured_vehicle",
+            "amount": 40
+          }
+        }
+      ]
+    },
+    {
+      "id": "isg_recruitment",
+      "name": "Recruitment",
+      "description": "Recruit fighters in the territory. Unlocks recruitment drives.",
+      "x": 13,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "isg_forces"
         ]
       ],
       "effects": [
@@ -129,22 +712,30 @@
       ]
     },
     {
-      "id": "isg_captured_arsenals",
-      "name": "Captured arsenals",
-      "description": "Use weapons taken from army depots.",
-      "x": 3,
-      "y": 2,
+      "id": "isg_training_camps",
+      "name": "Training camps",
+      "description": "Camps train new recruits.",
+      "x": 15,
+      "y": 1,
       "days": 70,
       "prerequisites": [
         [
-          "isg_oil_fields"
+          "isg_forces"
         ]
       ],
       "effects": [
         {
-          "add_equipment": {
-            "family": "infantry_equipment",
-            "amount": 1000
+          "add_timed_modifier": {
+            "modifier": "training_time",
+            "value": -0.1,
+            "days": 1460
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "army_org",
+            "value": 0.02,
+            "days": 1460
           }
         }
       ]
@@ -153,12 +744,11 @@
       "id": "isg_mobile_columns",
       "name": "Mobile columns",
       "description": "Fast columns of light vehicles.",
-      "x": 2,
-      "y": 3,
+      "x": 11,
+      "y": 2,
       "days": 70,
       "prerequisites": [
         [
-          "isg_recruitment",
           "isg_captured_arsenals"
         ]
       ],
@@ -179,15 +769,91 @@
       ]
     },
     {
-      "id": "isg_defend_the_cities",
-      "name": "Defend the cities",
-      "description": "Fortify the cities against offensives.",
-      "x": 2,
-      "y": 4,
+      "id": "isg_foreign_recruits",
+      "name": "Foreign recruits",
+      "description": "Recruits arrive from abroad.",
+      "x": 13,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "isg_recruitment"
+        ]
+      ],
+      "effects": [
+        {
+          "add_spirit": "isg_foreign_recruits"
+        }
+      ]
+    },
+    {
+      "id": "isg_officer_corps",
+      "name": "Former officers",
+      "description": "Experienced officers command the units.",
+      "x": 15,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "isg_training_camps"
+        ]
+      ],
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "army_org",
+            "value": 0.03,
+            "days": 1460
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "army_attack",
+            "value": 0.02,
+            "days": 1460
+          }
+        }
+      ]
+    },
+    {
+      "id": "isg_artillery_units",
+      "name": "Artillery",
+      "description": "Captured guns and mortars form artillery units.",
+      "x": 11,
+      "y": 3,
       "days": 70,
       "prerequisites": [
         [
           "isg_mobile_columns"
+        ]
+      ],
+      "effects": [
+        {
+          "add_equipment": {
+            "family": "artillery",
+            "amount": 60
+          }
+        },
+        {
+          "add_research_bonus": {
+            "category": "artillery_missiles",
+            "value": 0.15,
+            "uses": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "isg_defend_the_cities",
+      "name": "Defend the cities",
+      "description": "Fortify the cities against offensives. Unlocks city defences.",
+      "x": 13,
+      "y": 3,
+      "days": 70,
+      "prerequisites": [
+        [
+          "isg_foreign_recruits",
+          "isg_officer_corps"
         ]
       ],
       "effects": [
@@ -201,23 +867,1519 @@
       ]
     },
     {
-      "id": "isg_underground",
-      "name": "Go underground",
-      "description": "Prepare cells for an insurgency if the territory falls.",
-      "x": 2,
+      "id": "isg_explosives_workshops",
+      "name": "Explosives workshops",
+      "description": "Workshops make mines and explosives for defence.",
+      "x": 15,
+      "y": 3,
+      "days": 70,
+      "prerequisites": [
+        [
+          "isg_officer_corps"
+        ]
+      ],
+      "effects": [
+        {
+          "add_equipment": {
+            "family": "support_equipment",
+            "amount": 200
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "army_defence",
+            "value": 0.02,
+            "days": 1460
+          }
+        }
+      ]
+    },
+    {
+      "id": "isg_drones",
+      "name": "Drones",
+      "description": "Small commercial drones for scouting and attack.",
+      "x": 12,
+      "y": 4,
+      "days": 70,
+      "prerequisites": [
+        [
+          "isg_artillery_units",
+          "isg_defend_the_cities"
+        ]
+      ],
+      "available": {
+        "date_after": "2016-01-01"
+      },
+      "effects": [
+        {
+          "add_equipment": {
+            "family": "combat_drone",
+            "amount": 20
+          }
+        },
+        {
+          "add_research_bonus": {
+            "category": "air_drones",
+            "value": 0.2,
+            "uses": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "isg_adapt_to_air_campaign",
+      "name": "Adapt to the air campaign",
+      "description": "Disperse, hide vehicles and move at night. Coalition airstrikes began in Iraq on 8 August 2014 and in Syria on 22 September 2014.",
+      "x": 14,
+      "y": 4,
+      "days": 70,
+      "prerequisites": [
+        [
+          "isg_defend_the_cities",
+          "isg_explosives_workshops"
+        ]
+      ],
+      "available": {
+        "date_after": "2014-08-08"
+      },
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "army_defence",
+            "value": 0.04,
+            "days": 1460
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "army_org",
+            "value": 0.02,
+            "days": 1460
+          }
+        }
+      ]
+    },
+    {
+      "id": "isg_anti_aircraft",
+      "name": "Anti-aircraft guns",
+      "description": "Guns and missiles against helicopters and aircraft.",
+      "x": 16,
+      "y": 4,
+      "days": 70,
+      "prerequisites": [
+        [
+          "isg_explosives_workshops"
+        ]
+      ],
+      "effects": [
+        {
+          "add_equipment": {
+            "family": "air_defence",
+            "amount": 30
+          }
+        }
+      ]
+    },
+    {
+      "id": "isg_elite_units",
+      "name": "Elite units",
+      "description": "Experienced units for the hardest fighting.",
+      "x": 13,
       "y": 5,
       "days": 70,
       "prerequisites": [
         [
-          "isg_defend_the_cities"
+          "isg_drones",
+          "isg_adapt_to_air_campaign",
+          "isg_anti_aircraft"
+        ]
+      ],
+      "effects": [
+        {
+          "add_divisions": {
+            "template": "motorised_division",
+            "count": 1
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "army_attack",
+            "value": 0.02,
+            "days": 1460
+          }
+        }
+      ]
+    },
+    {
+      "id": "isg_strategy",
+      "name": "Strategy",
+      "description": "Hold what the group has or push on.",
+      "x": 20,
+      "y": 0,
+      "days": 70,
+      "prerequisites": [
+        [
+          "isg_proto_state",
+          "isg_forces"
+        ]
+      ],
+      "effects": [
+        {
+          "add_political_power": 20
+        }
+      ],
+      "ai_weight": 4
+    },
+    {
+      "id": "isg_consolidation",
+      "name": "Consolidation",
+      "description": "Hold Mosul and Raqqa, fortify the territory and administer it.",
+      "x": 18,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "isg_strategy"
+        ]
+      ],
+      "mutually_exclusive": [
+        "isg_expansion"
+      ],
+      "effects": [
+        {
+          "add_stability": 0.03
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "army_defence",
+            "value": 0.04,
+            "days": 1460
+          }
+        }
+      ],
+      "ai_weight": 10
+    },
+    {
+      "id": "isg_defence_lines",
+      "name": "Defence lines",
+      "description": "Trenches, berms and minefields around the cities.",
+      "x": 18,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "isg_consolidation"
+        ]
+      ],
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "army_defence",
+            "value": 0.05,
+            "days": 1460
+          }
+        }
+      ]
+    },
+    {
+      "id": "isg_hold_mosul",
+      "name": "Hold Mosul",
+      "description": "Mosul, taken between 4 and 10 June 2014, is the largest city the group holds.",
+      "x": 17,
+      "y": 3,
+      "days": 70,
+      "prerequisites": [
+        [
+          "isg_defence_lines"
+        ]
+      ],
+      "available": {
+        "date_after": "2014-06-10"
+      },
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "army_defence",
+            "value": 0.03,
+            "days": 1460
+          }
+        },
+        {
+          "add_stability": 0.02
+        }
+      ]
+    },
+    {
+      "id": "isg_hold_raqqa",
+      "name": "Hold Raqqa",
+      "description": "Raqqa, held since January 2014, is the seat of the administration.",
+      "x": 19,
+      "y": 3,
+      "days": 70,
+      "prerequisites": [
+        [
+          "isg_defence_lines"
         ]
       ],
       "effects": [
         {
           "add_timed_modifier": {
             "modifier": "internal_security",
+            "value": 0.04,
+            "days": 1460
+          }
+        },
+        {
+          "add_stability": 0.02
+        }
+      ]
+    },
+    {
+      "id": "isg_besieged",
+      "name": "Under siege",
+      "description": "Prepare the cities for long sieges: stores, tunnels and shelters.",
+      "x": 18,
+      "y": 4,
+      "days": 70,
+      "prerequisites": [
+        [
+          "isg_hold_mosul",
+          "isg_hold_raqqa"
+        ]
+      ],
+      "available": {
+        "at_war": true
+      },
+      "effects": [
+        {
+          "add_spirit": "isg_besieged"
+        },
+        {
+          "add_equipment": {
+            "family": "support_equipment",
+            "amount": 150
+          }
+        }
+      ]
+    },
+    {
+      "id": "isg_expansion",
+      "name": "Expansion",
+      "description": "Push toward Baghdad and Damascus.",
+      "x": 21,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "isg_strategy"
+        ]
+      ],
+      "mutually_exclusive": [
+        "isg_consolidation"
+      ],
+      "available": {
+        "any": [
+          {
+            "follows_history": false
+          },
+          {
+            "is_player": true
+          }
+        ]
+      },
+      "effects": [
+        {
+          "leave_history": true
+        },
+        {
+          "add_war_support": 0.05
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "army_attack",
+            "value": 0.04,
+            "days": 1460
+          }
+        }
+      ],
+      "ai_weight": 0
+    },
+    {
+      "id": "isg_claims_in_iraq",
+      "name": "Claims in Iraq",
+      "description": "Mark the next targets along the front.",
+      "x": 21,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "isg_expansion"
+        ]
+      ],
+      "available": {
+        "any": [
+          {
+            "follows_history": false
+          },
+          {
+            "is_player": true
+          }
+        ]
+      },
+      "effects": [
+        {
+          "claim_rival_border": {
+            "count": 4
+          }
+        }
+      ]
+    },
+    {
+      "id": "isg_offensive_columns",
+      "name": "Offensive columns",
+      "description": "Columns for a new offensive.",
+      "x": 22,
+      "y": 3,
+      "days": 70,
+      "prerequisites": [
+        [
+          "isg_claims_in_iraq"
+        ]
+      ],
+      "available": {
+        "any": [
+          {
+            "follows_history": false
+          },
+          {
+            "is_player": true
+          }
+        ]
+      },
+      "effects": [
+        {
+          "add_divisions": {
+            "template": "motorised_division",
+            "count": 2
+          }
+        }
+      ]
+    },
+    {
+      "id": "isg_claims_in_syria",
+      "name": "Claims in Syria",
+      "description": "Mark targets toward the west.",
+      "x": 20,
+      "y": 3,
+      "days": 70,
+      "prerequisites": [
+        [
+          "isg_claims_in_iraq"
+        ]
+      ],
+      "available": {
+        "any": [
+          {
+            "follows_history": false
+          },
+          {
+            "is_player": true
+          }
+        ]
+      },
+      "effects": [
+        {
+          "claim_rival_border": {
+            "count": 4
+          }
+        }
+      ]
+    },
+    {
+      "id": "isg_total_mobilisation",
+      "name": "Total mobilisation",
+      "description": "Every town sends men to the front.",
+      "x": 21,
+      "y": 4,
+      "days": 70,
+      "prerequisites": [
+        [
+          "isg_offensive_columns",
+          "isg_claims_in_syria"
+        ]
+      ],
+      "available": {
+        "any": [
+          {
+            "follows_history": false
+          },
+          {
+            "is_player": true
+          }
+        ]
+      },
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "manpower_factor",
+            "value": 0.08,
+            "days": 1460
+          }
+        },
+        {
+          "add_war_support": 0.05
+        },
+        {
+          "add_unrest": 0.03
+        }
+      ]
+    },
+    {
+      "id": "isg_open_new_fronts",
+      "name": "Open new fronts",
+      "description": "Attack where the enemy is weakest. Unlocks new fronts.",
+      "x": 21,
+      "y": 5,
+      "days": 70,
+      "prerequisites": [
+        [
+          "isg_total_mobilisation"
+        ]
+      ],
+      "available": {
+        "any": [
+          {
+            "follows_history": false
+          },
+          {
+            "is_player": true
+          }
+        ]
+      },
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "army_attack",
+            "value": 0.04,
+            "days": 1460
+          }
+        },
+        {
+          "add_political_power": 20
+        }
+      ]
+    },
+    {
+      "id": "isg_hold_the_line",
+      "name": "Hold the line",
+      "description": "Whatever the strategy, keep the front.",
+      "x": 19,
+      "y": 5,
+      "days": 70,
+      "prerequisites": [
+        [
+          "isg_besieged",
+          "isg_open_new_fronts"
+        ]
+      ],
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "army_defence",
             "value": 0.03,
             "days": 1460
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "army_org",
+            "value": 0.02,
+            "days": 1460
+          }
+        }
+      ]
+    },
+    {
+      "id": "isg_provinces_abroad",
+      "name": "Provinces abroad",
+      "description": "Groups in other countries pledge allegiance and are named provinces of the group.",
+      "x": 25,
+      "y": 0,
+      "days": 70,
+      "prerequisites": [
+        [
+          "isg_proto_state"
+        ]
+      ],
+      "available": {
+        "date_after": "2014-06-10"
+      },
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "foreign_influence_power",
+            "value": 0.05,
+            "days": 1460
+          }
+        }
+      ],
+      "ai_weight": 3
+    },
+    {
+      "id": "isg_libya_province",
+      "name": "Libya Province",
+      "description": "Three branches in Libya were formed on 13 November 2014.",
+      "x": 24,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "isg_provinces_abroad"
+        ]
+      ],
+      "available": {
+        "date_after": "2014-11-13"
+      },
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "foreign_influence_power",
+            "value": 0.03,
+            "days": 1460
+          }
+        },
+        {
+          "add_political_power": 15
+        }
+      ]
+    },
+    {
+      "id": "isg_sinai_province",
+      "name": "Sinai Province",
+      "description": "A group in the Sinai became a province of the group during 2014.",
+      "x": 26,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "isg_provinces_abroad"
+        ]
+      ],
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "foreign_influence_power",
+            "value": 0.03,
+            "days": 1460
+          }
+        },
+        {
+          "add_political_power": 15
+        }
+      ]
+    },
+    {
+      "id": "isg_khorasan_province",
+      "name": "Khorasan Province",
+      "description": "A province for Afghanistan and Pakistan was announced on 26 January 2015.",
+      "x": 24,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "isg_libya_province",
+          "isg_sinai_province"
+        ]
+      ],
+      "available": {
+        "date_after": "2015-01-26"
+      },
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "foreign_influence_power",
+            "value": 0.03,
+            "days": 1460
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "manpower_factor",
+            "value": 0.02,
+            "days": 1460
+          }
+        }
+      ]
+    },
+    {
+      "id": "isg_greater_sahara",
+      "name": "The Greater Sahara",
+      "description": "A group in the Sahel, formed on 15 May 2015, joins the network.",
+      "x": 26,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "isg_libya_province",
+          "isg_sinai_province"
+        ]
+      ],
+      "available": {
+        "date_after": "2015-05-15"
+      },
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "foreign_influence_power",
+            "value": 0.03,
+            "days": 1460
+          }
+        }
+      ]
+    },
+    {
+      "id": "isg_network_abroad",
+      "name": "A network abroad",
+      "description": "Couriers and money link the provinces abroad.",
+      "x": 25,
+      "y": 3,
+      "days": 70,
+      "prerequisites": [
+        [
+          "isg_khorasan_province",
+          "isg_greater_sahara"
+        ]
+      ],
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "intelligence_power",
+            "value": 0.04,
+            "days": 1460
+          }
+        },
+        {
+          "add_treasury": 0.2
+        }
+      ]
+    },
+    {
+      "id": "isg_outlast_the_centre",
+      "name": "Outlast the centre",
+      "description": "The provinces abroad keep the group alive if the centre falls.",
+      "x": 25,
+      "y": 4,
+      "days": 70,
+      "prerequisites": [
+        [
+          "isg_network_abroad"
+        ]
+      ],
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "stability_factor",
+            "value": 0.02,
+            "days": 2920
+          }
+        },
+        {
+          "add_political_power": 20
+        }
+      ]
+    },
+    {
+      "id": "isg_after_the_caliphate",
+      "name": "After the caliphate",
+      "description": "Prepare for the loss of the cities: cells, hideouts and stores in the desert.",
+      "x": 29,
+      "y": 0,
+      "days": 70,
+      "prerequisites": [
+        [
+          "isg_forces"
+        ]
+      ],
+      "available": {
+        "any": [
+          {
+            "date_after": "2016-10-16"
+          },
+          {
+            "stability_below": 0.3
+          }
+        ]
+      },
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "internal_security",
+            "value": 0.03,
+            "days": 1460
+          }
+        },
+        {
+          "add_political_power": 20
+        }
+      ],
+      "ai_weight": 3
+    },
+    {
+      "id": "isg_desert_hideouts",
+      "name": "Desert hideouts",
+      "description": "Hideouts and supply routes across the desert between Iraq and Syria.",
+      "x": 28,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "isg_after_the_caliphate"
+        ]
+      ],
+      "effects": [
+        {
+          "add_spirit": "isg_desert_networks"
+        }
+      ]
+    },
+    {
+      "id": "isg_go_underground",
+      "name": "Go underground",
+      "description": "Units break up into cells.",
+      "x": 30,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "isg_after_the_caliphate"
+        ]
+      ],
+      "effects": [
+        {
+          "add_spirit": "isg_insurgency_mode"
+        },
+        {
+          "remove_spirit": "isg_besieged"
+        }
+      ]
+    },
+    {
+      "id": "isg_hidden_stores",
+      "name": "Hidden stores",
+      "description": "Weapons and money stored in hiding places.",
+      "x": 28,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "isg_desert_hideouts"
+        ]
+      ],
+      "effects": [
+        {
+          "add_equipment": {
+            "family": "infantry_equipment",
+            "amount": 400
+          }
+        },
+        {
+          "add_treasury": 0.3
+        }
+      ]
+    },
+    {
+      "id": "isg_courier_networks",
+      "name": "Courier networks",
+      "description": "Messages travel by courier, not phone.",
+      "x": 30,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "isg_go_underground"
+        ]
+      ],
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "intelligence_power",
+            "value": 0.04,
+            "days": 1460
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "internal_security",
+            "value": 0.03,
+            "days": 1460
+          }
+        }
+      ]
+    },
+    {
+      "id": "isg_rural_cells",
+      "name": "Rural cells",
+      "description": "Small cells in the countryside of Iraq and Syria, an insurgency that began in 2017.",
+      "x": 29,
+      "y": 3,
+      "days": 70,
+      "prerequisites": [
+        [
+          "isg_hidden_stores",
+          "isg_courier_networks"
+        ]
+      ],
+      "available": {
+        "date_after": "2017-01-01"
+      },
+      "effects": [
+        {
+          "add_divisions": {
+            "template": "infantry_division",
+            "count": 1
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "army_defence",
+            "value": 0.03,
+            "days": 1460
+          }
+        }
+      ]
+    },
+    {
+      "id": "isg_recover",
+      "name": "Recover",
+      "description": "Rebuild the organisation from the cells.",
+      "x": 29,
+      "y": 4,
+      "days": 70,
+      "prerequisites": [
+        [
+          "isg_rural_cells"
+        ]
+      ],
+      "effects": [
+        {
+          "add_political_power": 30
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "manpower_factor",
+            "value": 0.03,
+            "days": 1460
+          }
+        }
+      ]
+    },
+    {
+      "id": "isg_regroup_in_the_desert",
+      "name": "Regroup in the desert",
+      "description": "Larger units form again in the desert.",
+      "x": 29,
+      "y": 5,
+      "days": 70,
+      "prerequisites": [
+        [
+          "isg_recover"
+        ]
+      ],
+      "available": {
+        "any": [
+          {
+            "follows_history": false
+          },
+          {
+            "is_player": true
+          }
+        ]
+      },
+      "effects": [
+        {
+          "add_divisions": {
+            "template": "infantry_division",
+            "count": 1
+          }
+        },
+        {
+          "remove_spirit": "isg_insurgency_mode"
+        }
+      ]
+    },
+    {
+      "id": "isg_surviving_state",
+      "name": "A surviving state",
+      "description": "Alternative history: the group still holds its cities after the offensives of 2016 to 2019 and runs them as a state.",
+      "x": 34,
+      "y": 0,
+      "days": 70,
+      "prerequisites": [
+        [
+          "isg_consolidation"
+        ]
+      ],
+      "available": {
+        "all": [
+          {
+            "any": [
+              {
+                "follows_history": false
+              },
+              {
+                "is_player": true
+              }
+            ]
+          },
+          {
+            "has_completed_focus": "isg_consolidation"
+          },
+          {
+            "date_after": "2017-12-09"
+          }
+        ]
+      },
+      "effects": [
+        {
+          "leave_history": true
+        },
+        {
+          "swap_spirit": {
+            "from": "isg_besieged",
+            "to": "isg_entrenched_state"
+          }
+        },
+        {
+          "add_political_power": 50
+        }
+      ],
+      "ai_weight": 0
+    },
+    {
+      "id": "isg_permanent_ministries",
+      "name": "Permanent ministries",
+      "description": "Offices become ministries with fixed budgets and staff.",
+      "x": 32,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "isg_surviving_state"
+        ]
+      ],
+      "available": {
+        "any": [
+          {
+            "follows_history": false
+          },
+          {
+            "is_player": true
+          }
+        ]
+      },
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "tax_efficiency",
+            "value": 0.05,
+            "days": 2920
+          }
+        },
+        {
+          "add_political_power": 30
+        }
+      ]
+    },
+    {
+      "id": "isg_rebuild_the_cities",
+      "name": "Rebuild the cities",
+      "description": "Rebuild housing, roads and markets in the cities held.",
+      "x": 34,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "isg_surviving_state"
+        ]
+      ],
+      "available": {
+        "any": [
+          {
+            "follows_history": false
+          },
+          {
+            "is_player": true
+          }
+        ]
+      },
+      "effects": [
+        {
+          "add_buildings": {
+            "building": "infrastructure",
+            "count": 3
+          }
+        },
+        {
+          "add_stability": 0.03
+        }
+      ]
+    },
+    {
+      "id": "isg_border_defences",
+      "name": "Border defences",
+      "description": "Fortified lines along the borders of the territory.",
+      "x": 36,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "isg_surviving_state"
+        ]
+      ],
+      "available": {
+        "any": [
+          {
+            "follows_history": false
+          },
+          {
+            "is_player": true
+          }
+        ]
+      },
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "army_defence",
+            "value": 0.06,
+            "days": 2920
+          }
+        },
+        {
+          "add_buildings": {
+            "building": "radar",
+            "count": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "isg_state_budget",
+      "name": "A state budget",
+      "description": "An annual budget with revenue and spending plans.",
+      "x": 32,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "isg_permanent_ministries"
+        ]
+      ],
+      "available": {
+        "any": [
+          {
+            "follows_history": false
+          },
+          {
+            "is_player": true
+          }
+        ]
+      },
+      "effects": [
+        {
+          "add_treasury": 1
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "corruption",
+            "value": -0.03,
+            "days": 2920
+          }
+        }
+      ]
+    },
+    {
+      "id": "isg_factories",
+      "name": "Factories",
+      "description": "Reopen factories in the cities.",
+      "x": 34,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "isg_rebuild_the_cities"
+        ]
+      ],
+      "available": {
+        "any": [
+          {
+            "follows_history": false
+          },
+          {
+            "is_player": true
+          }
+        ]
+      },
+      "effects": [
+        {
+          "add_buildings": {
+            "building": "civilian_factory",
+            "count": 2
+          }
+        }
+      ]
+    },
+    {
+      "id": "isg_standing_army",
+      "name": "A standing army",
+      "description": "Units become a standing army with ranks and barracks.",
+      "x": 36,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "isg_border_defences"
+        ]
+      ],
+      "available": {
+        "any": [
+          {
+            "follows_history": false
+          },
+          {
+            "is_player": true
+          }
+        ]
+      },
+      "effects": [
+        {
+          "add_divisions": {
+            "template": "infantry_division",
+            "count": 2
+          }
+        },
+        {
+          "add_divisions": {
+            "template": "motorised_division",
+            "count": 1
+          }
+        },
+        {
+          "add_equipment": {
+            "family": "infantry_equipment",
+            "amount": 800
+          }
+        }
+      ]
+    },
+    {
+      "id": "isg_oil_exports",
+      "name": "Oil exports",
+      "description": "Repair the oil fields and pipelines for steady exports.",
+      "x": 32,
+      "y": 3,
+      "days": 70,
+      "prerequisites": [
+        [
+          "isg_state_budget"
+        ]
+      ],
+      "available": {
+        "any": [
+          {
+            "follows_history": false
+          },
+          {
+            "is_player": true
+          }
+        ]
+      },
+      "effects": [
+        {
+          "add_buildings": {
+            "building": "refinery",
+            "count": 1
+          }
+        },
+        {
+          "add_treasury": 0.8
+        }
+      ]
+    },
+    {
+      "id": "isg_arms_factories",
+      "name": "Arms factories",
+      "description": "Produce weapons and ammunition at home.",
+      "x": 34,
+      "y": 3,
+      "days": 70,
+      "prerequisites": [
+        [
+          "isg_factories",
+          "isg_standing_army"
+        ]
+      ],
+      "available": {
+        "any": [
+          {
+            "follows_history": false
+          },
+          {
+            "is_player": true
+          }
+        ]
+      },
+      "effects": [
+        {
+          "add_buildings": {
+            "building": "military_factory",
+            "count": 2
+          }
+        },
+        {
+          "add_research_bonus": {
+            "category": "infantry",
+            "value": 0.2,
+            "uses": 2
+          }
+        }
+      ]
+    },
+    {
+      "id": "isg_officer_academy",
+      "name": "An officer academy",
+      "description": "Train officers for the standing army.",
+      "x": 36,
+      "y": 3,
+      "days": 70,
+      "prerequisites": [
+        [
+          "isg_standing_army"
+        ]
+      ],
+      "available": {
+        "any": [
+          {
+            "follows_history": false
+          },
+          {
+            "is_player": true
+          }
+        ]
+      },
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "army_org",
+            "value": 0.04,
+            "days": 2920
+          }
+        },
+        {
+          "add_research_bonus": {
+            "category": "doctrine",
+            "value": 0.2,
+            "uses": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "isg_trade_routes",
+      "name": "Trade routes",
+      "description": "Trade with the neighbouring regions.",
+      "x": 32,
+      "y": 4,
+      "days": 70,
+      "prerequisites": [
+        [
+          "isg_oil_exports"
+        ]
+      ],
+      "available": {
+        "any": [
+          {
+            "follows_history": false
+          },
+          {
+            "is_player": true
+          }
+        ]
+      },
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "trade_efficiency",
+            "value": 0.05,
+            "days": 2920
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "gdp_growth",
+            "value": 0.002,
+            "days": 2920
+          }
+        }
+      ]
+    },
+    {
+      "id": "isg_internal_consolidation",
+      "name": "Internal consolidation",
+      "description": "Fewer offices, clearer rules and a calmer territory.",
+      "x": 34,
+      "y": 4,
+      "days": 70,
+      "prerequisites": [
+        [
+          "isg_arms_factories",
+          "isg_trade_routes"
+        ]
+      ],
+      "available": {
+        "any": [
+          {
+            "follows_history": false
+          },
+          {
+            "is_player": true
+          }
+        ]
+      },
+      "effects": [
+        {
+          "add_stability": 0.05
+        },
+        {
+          "add_unrest": -0.05
+        }
+      ]
+    },
+    {
+      "id": "isg_drone_programme",
+      "name": "A drone programme",
+      "description": "Build drones at home.",
+      "x": 36,
+      "y": 4,
+      "days": 70,
+      "prerequisites": [
+        [
+          "isg_officer_academy"
+        ]
+      ],
+      "available": {
+        "any": [
+          {
+            "follows_history": false
+          },
+          {
+            "is_player": true
+          }
+        ]
+      },
+      "effects": [
+        {
+          "add_equipment": {
+            "family": "combat_drone",
+            "amount": 30
+          }
+        },
+        {
+          "add_research_bonus": {
+            "category": "air_drones",
+            "value": 0.25,
+            "uses": 2
+          }
+        }
+      ]
+    },
+    {
+      "id": "isg_talks_with_neighbours",
+      "name": "Talks with neighbours",
+      "description": "Indirect talks on prisoners, water and trade. No state recognises the group.",
+      "x": 33,
+      "y": 5,
+      "days": 70,
+      "prerequisites": [
+        [
+          "isg_internal_consolidation"
+        ]
+      ],
+      "available": {
+        "any": [
+          {
+            "follows_history": false
+          },
+          {
+            "is_player": true
+          }
+        ]
+      },
+      "effects": [
+        {
+          "add_opinion": {
+            "target": "TUR",
+            "value": 5,
+            "days": 1825
+          }
+        },
+        {
+          "add_opinion": {
+            "target": "SYR",
+            "value": 5,
+            "days": 1825
+          }
+        },
+        {
+          "add_opinion": {
+            "target": "IRQ",
+            "value": 5,
+            "days": 1825
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "international_opinion",
+            "value": 0.03,
+            "days": 2920
+          }
+        }
+      ]
+    },
+    {
+      "id": "isg_entrenched",
+      "name": "An entrenched state",
+      "description": "The territory is run as a state behind fortified borders.",
+      "x": 35,
+      "y": 5,
+      "days": 140,
+      "prerequisites": [
+        [
+          "isg_internal_consolidation",
+          "isg_drone_programme"
+        ]
+      ],
+      "available": {
+        "any": [
+          {
+            "follows_history": false
+          },
+          {
+            "is_player": true
+          }
+        ]
+      },
+      "effects": [
+        {
+          "add_stability": 0.05
+        },
+        {
+          "add_political_power": 50
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "army_defence",
+            "value": 0.03,
+            "days": 2920
           }
         }
       ]

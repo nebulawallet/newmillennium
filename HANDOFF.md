@@ -1,6 +1,6 @@
 # Handoff: New Millennium
 
-Read this first when you pick up the project in a new session, with a new agent, or after a break. Last updated 19 October 2026 (blue UI, wars of 2000, start dates 2014/2017, playable Taliban and ISIS, armies everywhere, GitHub Pages), after the four reworks (UI, war, research, construction and market: commits `72b3f71`, `004fa25`, `043b56f`, `c81a5fc`).
+Read this first when you pick up the project in a new session, with a new agent, or after a break. Last updated 20 October 2026 (Islamic State, Taliban and Islamic Emirate trees; Afghanistan starts as the Taliban and is renamed at the 2021 takeover), after the earlier blue UI, wars of 2000, start dates, playable Taliban and ISIS, armies everywhere and GitHub Pages work, and the four reworks (UI, war, research, construction and market: commits `72b3f71`, `004fa25`, `043b56f`, `c81a5fc`).
 
 ## What this is
 
@@ -55,7 +55,7 @@ New Millennium is a grand strategy game in the style of Hearts of Iron IV, set f
 - **Direction (17 October 2026):** the game is about the major conflicts of 2000–2026 (Israel–Palestine, Russia–Ukraine, Iraq, Afghanistan, Syria/ISIS, Lebanon). See [docs/CONFLICTS_PLAN.md](docs/CONFLICTS_PLAN.md) and CLAUDE.md "Scope and cost".
 - **All of them are scripted** on sourced dates in `data/events/conflicts.json`, with non-state armed groups on the map (see "Conflicts notes" below). `npx tsx scripts/dev/conflict-trace.ts` prints the whole 2000–2026 timeline in about two minutes; run it after any change to wars, the AI or the conflict data.
 - **Research tiers:** 70 full, 9 light, 133 default. No partial folders remain and nothing is untracked. **No research agents are running.** Ask the user before starting one (Sonnet, medium effort, at most 2–3).
-- **Every check passes:** `npm run check` (153 tests) and the whole-world `npm run validate-data`. The start screen shows no data errors.
+- **Every check passes:** `npm run check` (191 tests) and the whole-world `npm run validate-data`. The start screen shows no data errors.
 - **Speed:** about 3.5 ms per game day over a 10-year soak (median 2.6 ms, p99 21 ms, worst 37 ms) after the reworks; it was 2.4 ms before. The extra comes from the bigger tech tree, the goods market (monthly) and AI construction placement. Profile with `scripts/dev/profile-systems.ts`.
 - **Saves:** the Lebanon map rebuild (`64ec430`) renumbered about 1,400 province ids, so saves from before it load misaligned. GameState is v12 (v10 armies, v11 construction money and the goods market, v12 puppets; all migrate).
 - **Dev server:** another worktree may hold port 5173; `.claude/launch.json` has `dev-alt` on 5181.
@@ -65,6 +65,33 @@ New Millennium is a grand strategy game in the style of Hearts of Iron IV, set f
   - Check every death and every claim dated after June 2026 yourself with `scripts/research/wiki.ts`; remove a death that only Wikidata gives.
   - Scan for allegations, convictions, health claims and loaded words.
   - Agent prompts must forbid blanket process kills (`taskkill /IM node.exe`).
+
+### Islamic State, Taliban and Islamic Emirate (20 October 2026)
+
+Built from [docs/ISG_TAL_TREES_PLAN.md](docs/ISG_TAL_TREES_PLAN.md). Generator: `scripts/dev/focus-trees/gen_isg_tal.py` (the AFG Republic tree stays in `gen_syr_afg.py`). Tests: `tests/takeover.test.ts`.
+
+- **Trees:**
+  - Islamic State (`isg`): 80 focuses. Administration, revenue, forces, a consolidation or expansion choice (expansion is ALT-only), provinces abroad, an insurgency branch for after 2017, and a surviving-state branch past 2019 (ALT-only: consolidation completed, after 9 December 2017).
+  - Taliban (`tal`): 44 focuses. It ends in "Proclaim the Islamic Emirate of Afghanistan", available to a player or an off-history game once the Taliban hold Kabul (`controls_region` AFG-1762). For AFG in 2000–2001, the United Front must also be gone.
+  - Islamic Emirate of Afghanistan (`iea`, `switched_to: true`): 71 focuses with no end date.
+  - Spirits are in `data/spirits/isg|tal|iea.json` and decisions in `data/decisions/isg|tal|iea.json`.
+- **Afghanistan's names and trees (user decision, 20 October 2026):**
+  - 2000–2001: Afghanistan is called "Taliban" and uses the Taliban tree (`start_name` and `start_focus_tree` in `data/world/countries.json`).
+  - December 2001: when Taliban rule ends, the movement, its tree progress, its tree spirits and a player leading it carry on as TAL (`hand_over`), and Afghanistan takes back its standard name and the Republic tree.
+  - 15 August 2021, or the early proclamation: TAL hands over to AFG, which is renamed "Islamic Emirate of Afghanistan" and switches to the `iea` tree. The global flag `iea_formed` stops the 2021 event from firing a second time.
+  - The user said no to the Islamic Emirate name in 2000–2001.
+- **Engine:**
+  - Effects `set_country_name`, `set_focus_tree`, `hand_over` and `clear_global_flag`, and the trigger `controls_region` (CONTENT_GUIDE §7).
+  - One name helper (`countryName` / `countryShortName` in `src/sim/politics/unrest.ts`) is used everywhere: map labels, news, war names, tooltips, the top bar and the start screen. Labels redraw on a rename, and flags follow `CountryState.flag`.
+  - The player follows a group that merges into a country (`player_changed`; the UI recentres and pauses).
+  - The wars of a group the player leads are never frozen. The scripted Islamic State losses skip a player-led Islamic State, so it can survive if it holds its land.
+- **Checks:**
+  - conflict-trace is unchanged: the Islamic State holds land from 13 January 2014 to 23 March 2019, and the Taliban take power on 15 August 2021.
+  - scenario-check: 77/77 leaders right.
+  - soak: 10 years with no errors (4.5 ms per day on a busy machine).
+  - `npx tsx scripts/dev/paths-taken.ts`: no AI focus leaves the historical path.
+- **Research:** one Sonnet agent at low effort (9 calls). Several facts were confirmed in the main session: Russia recognised the Emirate in July 2025, the opium ban was in 2000, the Qosh Tepa canal was begun in early 2022, and the Islamic State dinar ran from 2014 to 2019. Not confirmed, so left out or kept generic: the oil-field names, the opening year of the Doha office, the 2022 poppy-ban date and the Amu Darya oil contract.
+- **Worktree note:** this worktree now has its own `node_modules` (`npm install`); the parent's lacked the fontsource packages.
 
 ### Armies everywhere (18 October 2026)
 
@@ -333,7 +360,7 @@ In game: Space pauses, 1–5 or +/- set speed, Q–P open the tab row (Q is Poli
    - **Done:** engine tools (national spirits in `data/spirits`, `add_buildings`, `add_claim`, `add_research_bonus`, `treasury_above`, decision unlocks in tooltips; CONTENT_GUIDE §6) and the **Russia model tree** (158 focuses; `data/spirits/rus.json` with six sourced starting spirits; `data/decisions/rus.json`). Use it as the pattern for every other tree.
    - **Done (19-20 October 2026, user asleep and asked for no confirmations):** every tree rebuilt in the Russia style with sourced starting spirits and decisions: generic (87 focuses), Ukraine 111, United States 108, Israel 99, Iraq 91, China 81, Turkey 73, Germany 70, Japan 77, France 71, United Kingdom 71, Poland 71, Italy 67, Palestine 67, Spain 66, Afghanistan 65, Syria 64, Iran 62, and short trees for the Islamic State and the Taliban (8 each). Generators and the shared helpers are in `scripts/dev/focus-trees/` (README there); rerun a generator instead of hand-editing the JSON.
    - Engine additions on the way: `claim_rival_border` and `wargoal_on_rival` (generic trees name no place); exiled parties can now take power (`regime.ts`).
-   - **Next (user request, 20 October 2026):** bigger trees for the Islamic State and the Taliban, 60-80 focuses each. The full brief is in [docs/ISG_TAL_TREES_PLAN.md](docs/ISG_TAL_TREES_PLAN.md).
+   - **Done (20 October 2026):** the Islamic State (80), Taliban (44) and Islamic Emirate of Afghanistan (71) trees and the takeover switch; see "Islamic State, Taliban and Islamic Emirate" above.
    - **Then:** depth passes with country-specific content where trees still lean on the shared society and industry branches (the European majors, Syria, Afghanistan); the fog-of-war feature below; Yemen and Lebanon still use the generic tree. Research agents ran on Sonnet at low effort, two or three at a time; their notes stayed in the session scratchpad, and every fact used is cited in the tree's `source` list.
    - **Done: fog of war for divisions (user request).** `src/sim/military/visibility.ts` decides what the player sees: own divisions, enemies at war, allies (shared military bloc, overlord or subject, same side of a war) when the map toggle is on, anything in the player's territory, and anything within `detection_radius_km` of the player's radar stations (a new `radar` building, 600 km). The toggle is the last tile of the map-mode panel (remembered in localStorage). Fronts, battle markers and the war panel still show their own information.
    - **Fixed:** the fall of Baghdad and the end of the 2003 invasion now require the US to be at war with Iraq. Before, a US that drifted off history (a different 2002 Senate result) skipped the invasion event but still occupied Iraq for good.
@@ -360,7 +387,7 @@ In game: Space pauses, 1–5 or +/- set speed, Q–P open the tab row (Q is Poli
 8. **Phase 13 polish:**
    - UI: a first pass is done (live province panel, group names in the news).
    - More events where useful: about 500 now; pipeline `scripts/dev/gen-events-history.py` → `scripts/research/verify-events.ts`.
-   - Focus trees for conflict countries: IRQ, AFG, SYR, UKR and PSE use the generic tree.
+   - Focus trees for conflict countries: done for IRQ, AFG (Taliban, Republic and Emirate), SYR, UKR, PSE, ISG and TAL; Yemen and Lebanon still use the generic tree.
 
 For each research batch:
 

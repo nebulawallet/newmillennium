@@ -49,6 +49,8 @@ export type SimEvent =
   | { type: "civil_war"; tag: string }
   | { type: "event"; tag: string; event: string }
   | { type: "map_changed" }
+  /** The player's country changed (a group the player led took over a country). */
+  | { type: "player_changed"; from: string; to: string }
   /** A peace the AI imposed on the player (or a peace the player's side signed). */
   | { type: "peace"; tag: string; title: string; lines: string[] };
 

@@ -1,0 +1,101 @@
+{
+  "note": "The Islamic State's national spirits (gameplay values). Starting ones are added by the spawn event of January 2014 in data/events/conflicts.json.",
+  "spirits": [
+    {
+      "id": "isg_administration_strain",
+      "name": "An overstretched administration",
+      "description": "Services and offices fall behind as the territory grows faster than the administration.",
+      "kind": "problem",
+      "modifiers": {
+        "stability_factor": -0.03,
+        "tax_efficiency": -0.05,
+        "production_efficiency": -0.05
+      }
+    },
+    {
+      "id": "isg_proto_state",
+      "name": "A proto-state",
+      "description": "Councils, offices and courts run the towns the group holds.",
+      "kind": "strength",
+      "modifiers": {
+        "political_power_gain": 0.1,
+        "internal_security": 0.05
+      }
+    },
+    {
+      "id": "isg_war_revenue",
+      "name": "War revenue",
+      "description": "Oil sales, levies and seized assets pay for the group.",
+      "kind": "policy",
+      "modifiers": {
+        "tax_efficiency": 0.06,
+        "foreign_influence_resistance": -0.05,
+        "corruption": 0.02
+      }
+    },
+    {
+      "id": "isg_dinar",
+      "name": "The dinar",
+      "description": "The group issues its own coinage, the dinar, alongside the currencies already in use.",
+      "kind": "policy",
+      "modifiers": {
+        "tax_efficiency": 0.03,
+        "trade_efficiency": -0.03
+      }
+    },
+    {
+      "id": "isg_foreign_recruits",
+      "name": "Foreign recruits",
+      "description": "Recruits from abroad join the group's forces.",
+      "kind": "policy",
+      "modifiers": {
+        "manpower_factor": 0.05,
+        "army_org": -0.02,
+        "international_opinion": -0.05
+      }
+    },
+    {
+      "id": "isg_besieged",
+      "name": "Besieged cities",
+      "description": "The cities are surrounded and supply runs short.",
+      "kind": "problem",
+      "modifiers": {
+        "army_defence": 0.05,
+        "production_efficiency": -0.1,
+        "stability_factor": -0.02
+      }
+    },
+    {
+      "id": "isg_entrenched_state",
+      "name": "An entrenched state",
+      "description": "The administration has outlasted the offensives against it and runs the territory as a state.",
+      "kind": "strength",
+      "modifiers": {
+        "stability_factor": 0.03,
+        "army_defence": 0.05,
+        "production_efficiency": 0.03
+      }
+    },
+    {
+      "id": "isg_insurgency_mode",
+      "name": "Insurgency",
+      "description": "Small cells in the desert and the countryside replace the fixed front lines.",
+      "kind": "policy",
+      "modifiers": {
+        "army_org": -0.05,
+        "internal_security": 0.1,
+        "army_defence": 0.03
+      }
+    },
+    {
+      "id": "isg_desert_networks",
+      "name": "Desert networks",
+      "description": "Hideouts and supply routes across the desert between Iraq and Syria.",
+      "kind": "strength",
+      "modifiers": {
+        "army_defence": 0.04,
+        "manpower_factor": 0.03
+      }
+    }
+  ]
+}

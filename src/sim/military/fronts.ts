@@ -15,8 +15,9 @@ import type { ContentDB } from "../../content/compile.ts";
 import { bucketOf } from "../bucket.ts";
 import type { SimContext, SimMap, System } from "../simulation.ts";
 import type { GameState } from "../state.ts";
-import { canEnter, findPath, provinceDistance, templateStats, type Division } from "./military.ts";
+import { canEnter, findPath, playerGroupWar, provinceDistance, templateStats, type Division } from "./military.ts";
 import { divisionStats, hostile } from "./war.ts";
+import { countryName } from "../politics/unrest.ts";
 
 export type ArmyStatus = "idle" | "no_front" | "moving" | "holding" | "advancing" | "waiting" | "objective" | "unreachable";
 
@@ -130,7 +131,7 @@ export function frozenEnemies(state: GameState, tag: string): Set<string> | unde
   if (state.rules.electionMode !== "historical" || tag === state.player) return undefined;
   const out = new Set<string>();
   for (const w of state.wars) {
-    if (!w.armedGroup) continue;
+    if (!w.armedGroup || playerGroupWar(state, w)) continue;
     if (w.attackers.includes(tag)) w.defenders.forEach((t) => out.add(t));
     else if (w.defenders.includes(tag)) w.attackers.forEach((t) => out.add(t));
   }
@@ -292,7 +293,7 @@ export function applyPlanCommand(ctx: SimContext, c: PlanCommand): { ok: boolean
       if (c.on) {
         const enemy = army.front?.enemy;
         const atWar = enemy ? hostile(state, c.tag, enemy) : state.wars.some((w) => w.attackers.includes(c.tag) || w.defenders.includes(c.tag));
-        if (!atWar) return { ok: false, text: enemy ? `Not at war with ${state.dynamicCountries[enemy]?.name ?? ctx.db.countryList.find((x) => x.tag === enemy)?.name ?? enemy}: the plan can execute once war is declared.` : "Not at war: the plan can execute once war is declared." };
+        if (!atWar) return { ok: false, text: enemy ? `Not at war with ${countryName(ctx.db, state, enemy)}: the plan can execute once war is declared.` : "Not at war: the plan can execute once war is declared." };
         if (!army.offensive.length && !army.spearheads.length) return { ok: false, text: "Draw an offensive line or a spearhead first." };
       }
       army.executing = c.on;

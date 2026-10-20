@@ -86,7 +86,8 @@ export class Labels {
       let it = this.items.find((i) => i.label.tag === l.tag);
       if (!it) { it = this.make(l); this.items.push(it); this.place(it, l); continue; }
       const o = it.label;
-      if (o.x !== l.x || o.y !== l.y || o.angle !== l.angle || o.extent !== l.extent) this.place(it, l);
+      // moved, or renamed (set_country_name)
+      if (o.x !== l.x || o.y !== l.y || o.angle !== l.angle || o.extent !== l.extent || it.text.text !== this.nameOf(l.tag).toUpperCase()) this.place(it, l);
     }
   }
 

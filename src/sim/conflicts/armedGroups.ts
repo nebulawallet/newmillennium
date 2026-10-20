@@ -17,7 +17,7 @@ import { declareWar, hostile } from "../military/war.ts";
 import { groupMilitary, ordinal, templateNeeds } from "../military/military.ts";
 import { initialEconomy } from "../economy/economy.ts";
 import { initialResearch } from "../research/research.ts";
-import { blankCountry } from "../politics/unrest.ts";
+import { blankCountry, countryName } from "../politics/unrest.ts";
 
 export interface GroupRegion {
   from: string;
@@ -222,7 +222,13 @@ export function endArmedGroup(ctx: SimContext, tag: string, into?: string, disba
   if (db.armedGroups.get(tag)?.country_record) state.countries[tag]!.active = false;
   else delete state.countries[tag];
   delete state.dynamicCountries[tag];
-  const intoName = into ? (db.countryList.find((c) => c.tag === into)?.name ?? into) : "";
+  const intoName = into ? countryName(db, state, into) : "";
+  if (into && state.player === tag) {
+    // the player led the group: they carry on as the country it took over or merged into
+    state.player = into;
+    ctx.log(into, "politics", `You now lead ${intoName}`);
+    ctx.emit({ type: "player_changed", from: tag, to: into });
+  }
   ctx.log(into ?? null, "civil_war", !into ? `${name} no longer holds territory` : disbandArmyOf === into ? `${name} takes power in ${intoName}` : `${name} merges into ${intoName}`);
   ctx.emit({ type: "map_changed" });
 }

@@ -21,6 +21,7 @@ import { applyShock } from "../economy/economy.ts";
 import { grantTech } from "../research/research.ts";
 import { grantBuildings } from "../economy/construction.ts";
 import { armedGroupLoses, endArmedGroup, occupyProvinces, select, spawnArmedGroup, type GroupRegion } from "../conflicts/armedGroups.ts";
+import { countryName } from "../politics/unrest.ts";
 
 export interface Scope {
   /** The country the script currently acts on. */
@@ -153,6 +154,10 @@ function trigger(ctx: SimContext, scope: Scope, k: string, v: unknown): boolean 
     case "opinion_of_above": return opinion(db, state, scope.tag, a.target as string) > (a.value as number);
     case "has_completed_focus": return cs.focus.completed.includes(v as string);
     case "exists": return !!state.countries[v as string]?.active && state.provinceOwner.includes(v as string);
+    case "controls_region": {
+      const ids = select(ctx, { from: "", adm1: a.adm1 as string[] }, () => true);
+      return ids.length > 0 && ids.every((id) => state.provinceController[id - 1] === scope.tag);
+    }
     case "unrest_above": return cs.unrest > (v as number);
     case "political_power_above": return cs.politicalPower > (v as number);
     case "has_civil_war": return (!!cs.civilWar) === v;
@@ -199,6 +204,25 @@ export function runEffects(ctx: SimContext, scope: Scope, effects: unknown[], so
   }
 }
 
+/** Switch a country's focus tree: the current focus is dropped and the new tree starts fresh (its own completed focuses are cleared; other trees' stay, so their triggers still hold). */
+export function setFocusTree(db: ContentDB, cs: CountryState, tree: string): void {
+  const t = db.focusTrees.get(tree);
+  if (!t) return;
+  const own = new Set(t.focuses.map((f) => f.id));
+  cs.focus = { tree, current: null, progress: 0, completed: cs.focus.completed.filter((id) => !own.has(id)) };
+}
+
+/** The tree's own national spirits (ids prefixed with the tree id) that its focuses add or swap in. */
+export function treeSpirits(db: ContentDB, tree: string): Set<string> {
+  const text = JSON.stringify(db.focusTrees.get(tree)?.focuses ?? []);
+  const out = new Set<string>();
+  for (const m of text.matchAll(/"add_spirit":"([^"]+)"|"swap_spirit":\{"from":"[^"]+","to":"([^"]+)"\}/g)) {
+    const id = (m[1] ?? m[2])!;
+    if (id.startsWith(`${tree}_`)) out.add(id);
+  }
+  return out;
+}
+
 /** Popular support for all sub-ideologies of a group. */
 export function groupSupport(db: ContentDB, cs: CountryState, group: string): number {
   let t = 0;
@@ -238,6 +262,34 @@ function effect(ctx: SimContext, scope: Scope, k: string, v: unknown, source: st
     case "set_flag": cs.flags[v as string] = state.day; break;
     case "clear_flag": delete cs.flags[v as string]; break;
     case "set_global_flag": state.globalFlags[v as string] = state.day; break;
+    case "clear_global_flag": delete state.globalFlags[v as string]; break;
+    case "set_country_name": {
+      const before = countryName(db, state, scope.tag);
+      if (typeof a.name === "string") cs.name = a.name;
+      else delete cs.name;
+      if (typeof a.flag === "string") cs.flag = a.flag;
+      else delete cs.flag;
+      const after = countryName(db, state, scope.tag);
+      if (after !== before) ctx.log(scope.tag, "politics", `${before} is now ${after}`);
+      ctx.emit({ type: "map_changed" });
+      break;
+    }
+    case "set_focus_tree": setFocusTree(db, cs, a.tree as string); break;
+    case "hand_over": {
+      const to = state.countries[a.to as string];
+      if (!to?.active) break;
+      to.focus = { ...cs.focus, completed: [...new Set([...to.focus.completed, ...cs.focus.completed])] };
+      // the spirits the tree's focuses granted go with it
+      const granted = treeSpirits(db, cs.focus.tree);
+      to.spirits = [...new Set([...to.spirits, ...cs.spirits.filter((s) => granted.has(s))])];
+      cs.spirits = cs.spirits.filter((s) => !granted.has(s));
+      if (state.player === scope.tag) {
+        state.player = to.tag;
+        ctx.log(to.tag, "politics", `You now lead ${countryName(db, state, to.tag)}`);
+        ctx.emit({ type: "player_changed", from: scope.tag, to: to.tag });
+      }
+      break;
+    }
     case "add_timed_modifier":
       cs.timedModifiers.push({ modifier: a.modifier as string, value: a.value as number, until: state.day + (a.days as number), source });
       break;
@@ -423,7 +475,7 @@ function effect(ctx: SimContext, scope: Scope, k: string, v: unknown, source: st
       for (const w of state.wars) { w.attackers = w.attackers.filter((t) => t !== scope.tag); w.defenders = w.defenders.filter((t) => t !== scope.tag); }
       state.wars = state.wars.filter((w) => w.attackers.length && w.defenders.length);
       cs.active = false;
-      const listName = (t: string) => db.countryList.find((c) => c.tag === t)?.name ?? t;
+      const listName = (t: string) => countryName(db, state, t);
       ctx.log(scope.tag, "diplomacy", `${listName(scope.tag)} merges into ${listName(into)}`);
       ctx.emit({ type: "map_changed" });
       break;
@@ -514,7 +566,10 @@ export function describeEffects(db: ContentDB, effects: unknown[], depth = 0, li
       case "add_political_power": line = `Political power ${signed(v as number)}`; break;
       case "add_unrest": line = `Unrest ${signed(v as number, true)}`; break;
       case "add_economic_mood": line = `GDP growth ${signed(Math.round((v as number) * 40) / 10)} points, fading over a year`; break;
-      case "set_flag": case "clear_flag": case "set_global_flag": line = null; break;
+      case "set_flag": case "clear_flag": case "set_global_flag": case "clear_global_flag": line = null; break;
+      case "set_country_name": line = a.name ? `The country is renamed ${a.name}` : "The country takes back its standard name"; break;
+      case "hand_over": line = `The movement carries on as ${name.tag(a.to as string)}, with its focus tree`; break;
+      case "set_focus_tree": line = `Switches to the national focus tree: ${db.focusTrees.get(a.tree as string)?.name ?? a.tree}`; break;
       case "add_timed_modifier": {
         const m = db.modifiers.get(a.modifier as string);
         const val = m?.display === "percent" ? signed(a.value as number, true) : signed(a.value as number);
@@ -670,7 +725,7 @@ export function describeTrigger(db: ContentDB, node: unknown): string[] {
     case "not": return [`not (${describeTrigger(db, v).join(" and ")})`];
     case "date_after": return [`on or after ${v}`];
     case "date_before": return [`before ${v}`];
-    case "tag": return [`country is ${db.countries.get(v as string)?.country?.name.en ?? v}`];
+    case "tag": return [`country is ${countryName(db, null, v as string)}`];
     case "ruling_party": return [`${db.parties.get(v as string)?.name.en ?? v} leads the government`];
     case "party_in_government": return [`${db.parties.get(v as string)?.name.en ?? v} is in government`];
     case "ruling_sub_ideology": return [`ruling ideology is ${db.subIdeologies.get(v as string)?.name ?? v}`];
@@ -679,7 +734,7 @@ export function describeTrigger(db: ContentDB, node: unknown): string[] {
     case "has_law": return [`${db.lawCategories.get(db.lawCategoryOf.get(v as string) ?? "")?.laws.find((l) => l.id === v)?.name ?? v} in force`];
     case "holds_office": return [`${db.people.get(a.person as string)?.name.en ?? a.person} holds ${a.office ? db.offices.get(a.office as string)?.title.en : "office"}`];
     case "has_spirit": return [`national spirit: ${db.spirits.get(v as string)?.name ?? v}`];
-    case "has_claim_on": return [`claims provinces of ${db.countries.get(v as string)?.country?.name.en ?? v}`];
+    case "has_claim_on": return [`claims provinces of ${countryName(db, null, v as string)}`];
     case "treasury_above": return [`reserves above ${v} billion USD`];
     case "ideology_group_support_above": return [`${db.ideologyGroups.get(a.group as string)?.name ?? a.group} support above ${Math.round((a.value as number) * 100)}%`];
     case "has_party_of_group": return [`has a ${db.ideologyGroups.get(v as string)?.name ?? v} party`];
@@ -701,6 +756,7 @@ export function describeTrigger(db: ContentDB, node: unknown): string[] {
     case "gdp_growth_below": return [`GDP growth below ${v}%`];
     case "gdp_growth_above": return [`GDP growth above ${v}%`];
     case "has_flag": case "has_global_flag": return [];
+    case "controls_region": return [`controls ${(a.label as string | undefined) ?? (a.adm1 as string[]).join(", ")}`];
     case "always": return v ? [] : ["never"];
     default: return [k.replace(/_/g, " ")];
   }

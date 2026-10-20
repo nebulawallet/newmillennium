@@ -11,6 +11,7 @@ import { countryLabels } from "./countryLabels.ts";
 import { provinceAt, type MapData } from "./mapData.ts";
 import { millerY, type MapView } from "./MapView.ts";
 import type { GameState } from "../sim/state.ts";
+import { countryShortName } from "../sim/politics/unrest.ts";
 
 export type RenderApproach = "mesh" | "texture";
 
@@ -57,10 +58,9 @@ export class WorldMap {
       view.addToWorld(this.borders.provinceMesh);
     }
     const nameOf = (this.nameOf = (tag: string) => {
-      const dyn = this.state?.dynamicCountries[tag]?.name;
-      if (dyn) return dyn;
-      const entry = db.countryList.find((c) => c.tag === tag);
-      return entry?.short_name ?? db.countries.get(tag)?.country?.name.en ?? entry?.name ?? tag;
+      // no game yet (the 1 January 2000 start screen): the name a country starts with
+      if (!this.state) { const start = db.countryList.find((c) => c.tag === tag)?.start_name; if (start) return start; }
+      return countryShortName(db, this.state, tag);
     });
     this.labels = new Labels(map.labels, nameOf);
     view.scene.add(this.labels.group);
@@ -152,7 +152,9 @@ export class WorldMap {
       if (c === undefined) codes.set(t, (c = codes.size + 1));
       h = (Math.imul(h, 31) + c * (i + 1)) | 0;
     }
-    const sig = owners ? `${owners.length}:${h}:${codes.size}` : "start-map";
+    // renamed countries (set_country_name) need their labels redone too
+    const names = Object.values(this.state?.countries ?? {}).filter((c) => c.name).map((c) => `${c.tag}=${c.name}`).join(",");
+    const sig = owners ? `${owners.length}:${h}:${codes.size}:${names}` : "start-map";
     if (sig === this.ownerSig) return;
     this.ownerSig = sig;
     const ownerOf = (id: number) => owners?.[id - 1] ?? this.map.provinces[id - 1]?.owner;

@@ -11,6 +11,7 @@ import { Flag } from "./Flag.tsx";
 import { Icon } from "./icons.tsx";
 import { plateFit, shortName } from "./Placard.tsx";
 import type { Session } from "./session.ts";
+import { countryName } from "../sim/politics/unrest.ts";
 import { bookmark, flagDay, pickedCountry, scenarioWorld } from "./store.ts";
 import { tip } from "./tooltip.tsx";
 
@@ -80,7 +81,7 @@ export function CountrySelect({ db, session, issues }: { db: ContentDB; session:
   const list = rows.filter(
     (r) =>
       (region === "all" || r.entry.region === region) &&
-      `${r.entry.name} ${r.entry.short_name ?? ""} ${r.entry.tag} ${r.summary?.headOfGovernment ?? ""} ${r.summary?.headOfState ?? ""}`.toLowerCase().includes(q.toLowerCase()),
+      `${r.entry.name} ${r.entry.short_name ?? ""} ${r.entry.start_name ?? ""} ${r.entry.tag} ${r.summary?.headOfGovernment ?? ""} ${r.summary?.headOfState ?? ""}`.toLowerCase().includes(q.toLowerCase()),
   );
   const withData = rows.filter((r) => r.summary).length;
   const errors = issues.filter((i) => i.severity === "error").length;
@@ -139,7 +140,7 @@ export function CountrySelect({ db, session, issues }: { db: ContentDB; session:
           {featured.map(({ entry }) => {
             const n = shortName(db, world, entry.tag);
             return (
-              <button key={entry.tag} class={`feat ${entry.tag === selected ? "on" : ""}`} style={{ "--fit": plateFit(n) }} onClick={() => pick(entry.tag)} {...tip(() => ({ title: entry.name, note: "Click to select, or click any country on the map." }))}>
+              <button key={entry.tag} class={`feat ${entry.tag === selected ? "on" : ""}`} style={{ "--fit": plateFit(n) }} onClick={() => pick(entry.tag)} {...tip(() => ({ title: world ? countryName(db, world, entry.tag) : (entry.start_name ?? entry.name), note: "Click to select, or click any country on the map." }))}>
                 <Flag db={db} tag={entry.tag} size="sm" />
                 <span>{n}</span>
               </button>
@@ -162,7 +163,7 @@ export function CountrySelect({ db, session, issues }: { db: ContentDB; session:
             <li key={entry.tag}>
               <button class={`nrow ${entry.tag === selected ? "on" : ""} ${summary ? "" : "nodata"}`} onClick={() => pick(entry.tag)}>
                 <Flag db={db} tag={entry.tag} size="sm" />
-                <span class="nname">{entry.short_name ?? entry.name}</span>
+                <span class="nname">{shortName(db, world, entry.tag)}</span>
                 <span class="nlead">{summary ? summary.headOfGovernment : "being researched"}</span>
               </button>
             </li>
@@ -185,7 +186,7 @@ export function CountrySelect({ db, session, issues }: { db: ContentDB; session:
         <section class="nation-card hp" aria-label={sel.entry.name}>
           <div class="nc-flag"><Flag db={db} tag={sel.entry.tag} size="lg" /></div>
           <div class="nc-main">
-            <h2 class="nc-name">{world ? shortName(db, world, sel.entry.tag) : sel.entry.name}</h2>
+            <h2 class="nc-name">{world ? shortName(db, world, sel.entry.tag) : (sel.entry.start_name ?? sel.entry.name)}</h2>
             {sel.summary ? (
               <dl class="kv nc-kv">
                 <dt>Government</dt><dd>{sel.summary.govType}</dd>

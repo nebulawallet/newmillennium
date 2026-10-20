@@ -59,6 +59,8 @@ export function FocusTreeView({ db, session }: { db: ContentDB; session: Session
   const W = cols * CW + PAD * 2, H = rows * CH + PAD * 2;
   const cx = (f: FocusDef) => PAD + (f.x - minX) * CW + CW / 2;
   const cy = (f: FocusDef) => PAD + f.y * CH;
+  // completed focuses of this tree (a country that switched trees keeps the old tree's ids)
+  const done = focuses.filter((f) => cs?.focus.completed.includes(f.id)).length;
   const statuses = new Map(cs && ctx ? focuses.map((f) => [f.id, focusStatus(ctx, cs, f)]) : []);
   const current = cs?.focus.current ? focuses.find((f) => f.id === cs.focus.current) : undefined;
   const next = current ?? focuses.filter((f) => statuses.get(f.id) === "available").sort((a, b) => a.y - b.y || a.x - b.x)[0];
@@ -123,8 +125,8 @@ export function FocusTreeView({ db, session }: { db: ContentDB; session: Session
           )}
           {msg && <span class="faint"> · {msg}</span>}
         </span>
-        <span class="fv-count faint small num" {...tip(() => ({ title: "Focuses", rows: [["Completed", cs.focus.completed.length], ["Available now", [...statuses.values()].filter((s) => s === "available").length], ["In the tree", focuses.length]] }))}>
-          {cs.focus.completed.length}/{focuses.length}
+        <span class="fv-count faint small num" {...tip(() => ({ title: "Focuses", rows: [["Completed", done], ["Available now", [...statuses.values()].filter((s) => s === "available").length], ["In the tree", focuses.length]] }))}>
+          {done}/{focuses.length}
         </span>
         <div class="pz-tools">
           <button class="tile mini" aria-label="Zoom out" onClick={() => pz.zoomBy(0.8)} {...tip(() => ({ title: "Zoom out", note: "Or use the mouse wheel." }))}>{Icon.minus({ size: 12 })}</button>

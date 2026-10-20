@@ -18,6 +18,7 @@ import { clamp, countryModifiers } from "../politics/common.ts";
 import { justification, onWarDeclared } from "../diplomacy/diplomacy.ts";
 import { capitalProvince, templateNeeds, templateStats, type Division } from "./military.ts";
 import { afterPeace, aiTerms, capitulated, concludePeace, type PeaceTerm } from "./peace.ts";
+import { countryShortName } from "../politics/unrest.ts";
 
 export interface Battle {
   province: number;
@@ -180,7 +181,7 @@ export function declareWar(ctx: SimContext, tag: string, target: string, goal: W
 }
 
 const countryShort = (db: ContentDB, state: GameState, tag: string) =>
-  state.dynamicCountries[tag]?.name ?? db.countryList.find((c) => c.tag === tag)?.short_name ?? db.countries.get(tag)?.country?.name.en ?? db.countryList.find((c) => c.tag === tag)?.name ?? tag;
+  countryShortName(db, state, tag);
 
 // ------------------------------------------------------------------ peace
 

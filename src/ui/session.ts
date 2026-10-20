@@ -3,7 +3,7 @@
  * from. UI components never mutate GameState directly (later phases route actions through
  * simulation commands).
  */
-import { flagDay, peaceNotice } from "./store.ts";
+import { flagDay, flagOverrides, peaceNotice } from "./store.ts";
 import { signal } from "@preact/signals";
 import type { ContentDB } from "../content/compile.ts";
 import type { MapData } from "../render/mapData.ts";
@@ -70,9 +70,11 @@ export class Session {
     this.world.setOwners(this.sim.state);
     feed.value = [...state.log].reverse().slice(0, 40);
     flagDay.value = this.sim.state.day;
+    this.syncFlags();
     this.clock = new Clock(this.sim, () => {
       version.value += 1;
       if (this.sim) flagDay.value = this.sim.state.day;
+      this.syncFlags();
       if (this.mapDirty) {
         this.mapDirty = false;
         this.world.refresh();
@@ -87,10 +89,27 @@ export class Session {
     if (label) this.world.view.lookAt(label.x, label.y, Math.max(12, Math.min(60, label.extent * 2.2)));
   }
 
+  /** Flags of renamed countries, for the Flag component (only reassigned when they change). */
+  private syncFlags(): void {
+    const next: Record<string, string> = {};
+    for (const cs of Object.values(this.sim?.state.countries ?? {})) if (cs.flag) next[cs.tag] = cs.flag;
+    const cur = flagOverrides.value;
+    const keys = Object.keys(next);
+    if (keys.length !== Object.keys(cur).length || keys.some((k) => cur[k] !== next[k])) flagOverrides.value = next;
+  }
+
   private onSimEvent(e: SimEvent): void {
     const st = this.sim?.state;
     if (!st) return;
     if (e.type !== "coalition_needed") this.mapDirty = true;
+    if (e.type === "player_changed") {
+      // carry on as the new country: show it and pause so the player sees the change
+      const label = this.map.labels.find((l) => l.tag === e.to);
+      if (label) this.world.view.lookAt(label.x, label.y, Math.max(12, Math.min(60, label.extent * 2.2)));
+      panel.value = null;
+      this.setPaused(true);
+      return;
+    }
     if (e.type === "election" && e.result.tag === st.player) {
       electionNight.value = e.result;
       this.setPaused(true);

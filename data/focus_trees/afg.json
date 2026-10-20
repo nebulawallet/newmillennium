@@ -4,7 +4,7 @@
   "countries": [
     "AFG"
   ],
-  "note": "Afghanistan in the style of the Russian model tree: the government of the day as the historical path (the Emirate, the Islamic Republic from 2001, the Emirate again from 2021), a broad-coalition alternative and a junta; branches for each period and for the economy (roads, irrigation, alternative crops). Sourced starting spirits in data/spirits/afg.json. Wars stay in the scripted conflict events.",
+  "note": "Afghanistan from December 2001 to August 2021 in the style of the Russian model tree (AFG uses the Taliban tree before and the Islamic Emirate tree after, see gen_isg_tal.py): the government of the day as the historical path, a broad-coalition alternative and a junta; branches for the Islamic Republic and for the economy (roads, irrigation, alternative crops). Sourced starting spirits in data/spirits/afg.json. Wars stay in the scripted conflict events.",
   "source": [
     {
       "url": "https://en.wikipedia.org/wiki/Taliban_government_(1996–2001)",
@@ -76,7 +76,7 @@
     {
       "id": "afg_steady_course",
       "name": "The government of the day",
-      "description": "Afghanistan is governed as it historically was in each period: the Islamic Emirate until 2001, the Islamic Republic until 2021, then the Emirate again.",
+      "description": "Afghanistan is governed as it historically was, from the end of Taliban rule in December 2001 until the takeover of August 2021.",
       "x": 0,
       "y": 1,
       "days": 70,
@@ -370,113 +370,6 @@
       "ai_weight": 0.5
     },
     {
-      "id": "afg_emirate",
-      "name": "The Emirate",
-      "description": "Run the state of the Islamic Emirate.",
-      "x": 7,
-      "y": 0,
-      "days": 70,
-      "available": {
-        "date_before": "2001-12-07"
-      },
-      "effects": [
-        {
-          "add_political_power": 20
-        }
-      ],
-      "ai_weight": 5
-    },
-    {
-      "id": "afg_emirate_courts",
-      "name": "Religious courts",
-      "description": "Religious courts across the provinces.",
-      "x": 6,
-      "y": 1,
-      "days": 70,
-      "prerequisites": [
-        [
-          "afg_emirate"
-        ]
-      ],
-      "available": {
-        "date_before": "2001-12-07"
-      },
-      "effects": [
-        {
-          "add_timed_modifier": {
-            "modifier": "internal_security",
-            "value": 0.05,
-            "days": 1460
-          }
-        },
-        {
-          "add_interest_group_approval": {
-            "group": "religious_establishment",
-            "value": 5
-          }
-        }
-      ]
-    },
-    {
-      "id": "afg_northern_offensive",
-      "name": "Offensive in the north",
-      "description": "Press the Northern Alliance in the north-east.",
-      "x": 8,
-      "y": 1,
-      "days": 70,
-      "prerequisites": [
-        [
-          "afg_emirate"
-        ]
-      ],
-      "available": {
-        "date_before": "2001-12-07"
-      },
-      "effects": [
-        {
-          "add_war_support": 0.05
-        },
-        {
-          "add_timed_modifier": {
-            "modifier": "army_attack",
-            "value": 0.02,
-            "days": 730
-          }
-        }
-      ]
-    },
-    {
-      "id": "afg_poppy_ban",
-      "name": "Ban the poppy",
-      "description": "Ban opium poppy cultivation.",
-      "x": 7,
-      "y": 2,
-      "days": 70,
-      "prerequisites": [
-        [
-          "afg_emirate_courts",
-          "afg_northern_offensive"
-        ]
-      ],
-      "available": {
-        "date_before": "2001-12-07"
-      },
-      "effects": [
-        {
-          "swap_spirit": {
-            "from": "afg_opium_economy",
-            "to": "afg_legal_economy"
-          }
-        },
-        {
-          "add_interest_group_approval": {
-            "group": "rural",
-            "value": -8
-          }
-        }
-      ]
-    },
-    {
       "id": "afg_new_state",
       "name": "A new state",
       "description": "Build the state after the fall of the Emirate and the Bonn Agreement of 5 December 2001.",
@@ -698,141 +591,6 @@
         },
         {
           "add_war_support": -0.05
-        }
-      ]
-    },
-    {
-      "id": "afg_emirate_restored",
-      "name": "The Emirate restored",
-      "description": "The Taliban govern again after taking Kabul on 15 August 2021.",
-      "x": 16,
-      "y": 0,
-      "days": 70,
-      "available": {
-        "date_after": "2021-08-15"
-      },
-      "effects": [
-        {
-          "add_political_power": 40
-        },
-        {
-          "remove_spirit": "afg_international_aid"
-        }
-      ],
-      "ai_weight": 5
-    },
-    {
-      "id": "afg_emirate_economy",
-      "name": "An economy under isolation",
-      "description": "Run the economy without foreign aid.",
-      "x": 15,
-      "y": 1,
-      "days": 70,
-      "prerequisites": [
-        [
-          "afg_emirate_restored"
-        ]
-      ],
-      "effects": [
-        {
-          "add_timed_modifier": {
-            "modifier": "tax_efficiency",
-            "value": 0.04,
-            "days": 2920
-          }
-        },
-        {
-          "add_treasury": 0.3
-        }
-      ]
-    },
-    {
-      "id": "afg_mines_and_minerals",
-      "name": "Mines and minerals",
-      "description": "Contracts for copper, lithium and coal.",
-      "x": 17,
-      "y": 1,
-      "days": 70,
-      "prerequisites": [
-        [
-          "afg_emirate_restored"
-        ]
-      ],
-      "effects": [
-        {
-          "add_buildings": {
-            "building": "civilian_factory",
-            "count": 1
-          }
-        },
-        {
-          "add_treasury": 0.5
-        },
-        {
-          "add_opinion": {
-            "target": "CHN",
-            "value": 10,
-            "days": 1825
-          }
-        }
-      ]
-    },
-    {
-      "id": "afg_regional_trade",
-      "name": "Trade with neighbours",
-      "description": "Trade routes to Central Asia and Pakistan.",
-      "x": 16,
-      "y": 2,
-      "days": 70,
-      "prerequisites": [
-        [
-          "afg_emirate_economy",
-          "afg_mines_and_minerals"
-        ]
-      ],
-      "effects": [
-        {
-          "add_timed_modifier": {
-            "modifier": "trade_efficiency",
-            "value": 0.03,
-            "days": 2920
-          }
-        },
-        {
-          "add_opinion": {
-            "target": "UZB",
-            "value": 10,
-            "days": 1825
-          }
-        },
-        {
-          "add_opinion": {
-            "target": "PAK",
-            "value": 5,
-            "days": 1825
-          }
-        }
-      ]
-    },
-    {
-      "id": "afg_recognition",
-      "name": "Seek recognition",
-      "description": "Seek recognition from other states.",
-      "x": 16,
-      "y": 3,
-      "days": 70,
-      "prerequisites": [
-        [
-          "afg_regional_trade"
-        ]
-      ],
-      "effects": [
-        {
-          "add_timed_modifier": {
-            "modifier": "diplomatic_reputation",
-            "value": 0.03,
-            "days": 2920
-          }
         }
       ]
     },

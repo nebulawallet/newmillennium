@@ -11,6 +11,7 @@ import { Hemicycle, type SeatGroup } from "../charts/Hemicycle.tsx";
 import { Icon } from "../icons.tsx";
 import { electionNight, type Session } from "../session.ts";
 import { tip } from "../tooltip.tsx";
+import { countryName } from "../../sim/politics/unrest.ts";
 
 const pct = (x: number) => `${(x * 100).toFixed(1)}%`;
 const signed = (x: number, d = 1) => `${x > 0 ? "+" : x < 0 ? "−" : "±"}${Math.abs(x).toFixed(d)}`;
@@ -141,7 +142,7 @@ export function ElectionNight({ db, session }: { db: ContentDB; session: Session
         <div class="event-body">
           <h3 class="en-head">{headline}</h3>
           <div class="dim">
-            {country?.name.en}, {formatDate(res.day)}
+            {countryName(db, state, res.tag)}, {formatDate(res.day)}
             {res.snap ? " · early election" : ""}
             {" · "}
             <span {...tip(() => ({ title: "Turnout", rows: [["Voters who took part", pct(res.turnout)]], note: res.followedHistory ? "The recorded turnout." : "Estimated by the simulation." }))}>turnout {pct(res.turnout)}</span>

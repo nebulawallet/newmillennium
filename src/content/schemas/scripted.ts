@@ -104,6 +104,8 @@ export const FocusTreeFile = z.strictObject({
   name: z.string().min(1),
   /** Countries using this tree; empty = the generic tree for everyone else. */
   countries: z.array(Tag).default([]),
+  /** Only reached by set_focus_tree or start_focus_tree (never the generic tree). */
+  switched_to: z.boolean().default(false),
   focuses: z.array(FocusDef).min(1),
   /** Trees about real governments cite their sources (policies named in focuses). */
   source: sourced.source.optional(),
