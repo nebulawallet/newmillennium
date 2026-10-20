@@ -36,6 +36,7 @@ import {
   type Shares,
 } from "./seats.ts";
 import { affinity, appealFactor, calibrate, countryProvinces, incumbencyFactor, modelShares, noisy, provinceShares } from "./voteModel.ts";
+import { executiveOffice } from "./common.ts";
 
 export const ELECTION_HISTORY_LIMIT = 400;
 const SPECIAL = new Set(["independents", "others", "appointed", "vacant", "speaker"]);
@@ -643,7 +644,7 @@ function applyHeadOfState(ctx: SimContext, cs: CountryState, officeId: string, w
     cs.officeSince[o.id] = state.day;
   }
   // presidential systems: the president's party governs
-  const exec = db.countries.get(cs.tag)?.country?.government.effective_executive;
+  const exec = executiveOffice(db, cs);
   const wp = personParty(db, cs, winner);
   if (exec === officeId && wp && !db.governmentTypes.get(cs.govType)?.needs_majority && cs.rulingParties[0] !== wp) {
     cs.rulingParties = [wp];

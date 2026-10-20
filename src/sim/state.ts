@@ -162,6 +162,8 @@ export interface CountryState {
   /** Provinces this country claims (cheaper at the peace conference). */
   claims: number[];
   focus: FocusState;
+  /** The office that holds executive power, when a dated change moved it (set_effective_executive); else the country's `effective_executive`. */
+  executive?: string;
   /** Name shown instead of the standard one (start_name, set_country_name), and the flag code that goes with it. */
   name?: string;
   flag?: string;

@@ -1,0 +1,112 @@
+{
+  "tag": "HAM",
+  "name": {
+    "en": "Hamas",
+    "native": "حماس",
+    "official": {
+      "en": "Islamic Resistance Movement (Hamas)"
+    }
+  },
+  "adjective": "Hamas",
+  "culture_primary": "palestinian",
+  "government": {
+    "type": "insurgent_movement",
+    "effective_executive": "ham.leader",
+    "head_of_state_office": "ham.leader",
+    "head_of_government_office": "ham.leader",
+    "constitution": {
+      "term_limit_amendable": true,
+      "emergency_powers": true,
+      "referendum_required_for": []
+    },
+    "note": "Hamas as the armed group that holds the Gaza Strip in the game from 15 June 2007. Appears on the map through conflict events. The constitution flags are rough approximations."
+  },
+  "offices": [
+    {
+      "id": "ham.leader",
+      "title": {
+        "en": "Leader of Hamas"
+      },
+      "role": "head_of_state_and_government",
+      "power_weight": 0.8,
+      "selection": "religious_council",
+      "succession": {
+        "type": "council_choice"
+      },
+      "holders": [
+        {
+          "person": "pse.ahmed_yassin",
+          "from": "1999-12-31",
+          "to": "2004-03-22",
+          "note": "De facto leader of Hamas as chairman of the Shura Council from December 1987 until March 2004 (Hamas Political Bureau article)."
+        },
+        {
+          "person": "pse.abdel_aziz_al_rantisi",
+          "from": "2004-03-22",
+          "to": "2004-04-17",
+          "note": "Led Hamas for 26 days after Ahmed Yassin (Hamas Political Bureau article)."
+        },
+        {
+          "person": "pse.khaled_mashal",
+          "from": "2004-04-17",
+          "to": "2017-05-06"
+        },
+        {
+          "person": "pse.ismail_haniyeh",
+          "from": "2017-05-06",
+          "to": "2024-07-31"
+        },
+        {
+          "person": "pse.khaled_mashal",
+          "from": "2024-07-31",
+          "to": "2024-08-06",
+          "note": "Acting chairman."
+        },
+        {
+          "person": "pse.yahya_sinwar",
+          "from": "2024-08-06",
+          "to": "2024-10-16"
+        },
+        {
+          "person": null,
+          "from": "2024-10-16",
+          "to": "2026-07-20",
+          "vacant_reason": "A temporary five-member committee led Hamas; no single chairman."
+        },
+        {
+          "person": "pse.khalil_al_hayya",
+          "from": "2026-07-20"
+        }
+      ],
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Hamas_Political_Bureau",
+          "title": "Wikipedia: Hamas Political Bureau",
+          "accessed": "2026-10-20"
+        }
+      ],
+      "confidence": "verified"
+    }
+  ],
+  "legislature": null,
+  "party_system": "no_parties",
+  "start_2000": {
+    "ruling_parties": [],
+    "ideology_support": {
+      "islamist": 1
+    },
+    "ideology_support_note": "Gameplay judgement: the whole base is counted under one ideology; not measured data.",
+    "stability": 0.5,
+    "war_support": 0.8
+  },
+  "claims": [],
+  "source": [
+    {
+      "url": "https://en.wikipedia.org/wiki/Hamas_Political_Bureau",
+      "title": "Wikipedia: Hamas Political Bureau",
+      "accessed": "2026-10-20"
+    }
+  ],
+  "confidence": "verified",
+  "no_parties_reason": "Hamas is modelled here as an armed movement, not a party system; party and election records are under PSE."
+}

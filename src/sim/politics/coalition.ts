@@ -18,6 +18,7 @@ import type { SimContext, System } from "../simulation.ts";
 import type { CoalitionOption, CountryState, ElectionResult } from "../state.ts";
 import { clamp, isAvailable, partySub, personParty, policyDistance } from "./common.ts";
 import { leadershipChallenges, scheduleSnapElection } from "./elections.ts";
+import { executiveOffice } from "./common.ts";
 
 const SPECIAL = new Set(["independents", "others", "appointed", "vacant", "speaker"]);
 
@@ -165,7 +166,7 @@ function chooseFormateur(ctx: SimContext, cs: CountryState, seats: Record<string
   }
   // a head of state who appoints the government picks from their own camp when it can govern
   const hogOffice = db.offices.get(c.government.head_of_government_office);
-  const presidentLed = c.government.effective_executive === c.government.head_of_state_office;
+  const presidentLed = executiveOffice(db, cs) === c.government.head_of_state_office;
   if (presidentLed && hogOffice?.appointed_by && hogOffice.appointed_by === c.government.head_of_state_office) {
     const hos = cs.offices[c.government.head_of_state_office]?.[0];
     const hp = hos ? personParty(db, cs, hos) : undefined;
@@ -208,7 +209,7 @@ export function applyGovernment(ctx: SimContext, cs: CountryState, opt: Coalitio
     const hog = db.offices.get(hogId);
     const current = cs.offices[hogId]?.[0] ?? null;
     const currentParty = current ? personParty(db, cs, current) : undefined;
-    const hosAppoints = hog?.appointed_by === c.government.head_of_state_office && c.government.effective_executive === c.government.head_of_state_office;
+    const hosAppoints = hog?.appointed_by === c.government.head_of_state_office && executiveOffice(db, cs) === c.government.head_of_state_office;
     const hosParty = (() => {
       const h = cs.offices[c.government.head_of_state_office]?.[0];
       return h ? personParty(db, cs, h) : undefined;
@@ -312,7 +313,7 @@ export const confidenceSystem: System = {
     for (const cs of Object.values(state.countries)) {
       if (!cs.active || !db.governmentTypes.get(cs.govType)?.needs_majority) continue;
       const gv = db.countries.get(cs.tag)?.country?.government;
-      if (!gv || gv.effective_executive !== gv.head_of_government_office) continue; // president-led systems
+      if (!gv || executiveOffice(db, cs) !== gv.head_of_government_office) continue; // president-led systems
       if (state.rules.electionMode === "historical" && cs.followsHistory) continue; // real collapses come from the record
       if (state.pendingCoalition?.tag === cs.tag) continue;
       const g = governmentSupport(db, cs);

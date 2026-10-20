@@ -1,0 +1,753 @@
+{
+  "id": "ham",
+  "name": "Hamas",
+  "countries": [
+    "HAM"
+  ],
+  "note": "Hamas while it holds Gaza (from June 2007 in data/events/conflicts.json): organisation, forces, relations and a strategy choice. Neutral and descriptive; the wars are scripted in the conflict events.",
+  "source": [
+    {
+      "url": "https://en.wikipedia.org/wiki/Hamas",
+      "title": "Wikipedia: Hamas",
+      "accessed": "2026-10-20"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Hamas_Political_Bureau",
+      "title": "Wikipedia: Hamas Political Bureau",
+      "accessed": "2026-10-20"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Gaza_Strip",
+      "title": "Wikipedia: Gaza Strip",
+      "accessed": "2026-10-20"
+    }
+  ],
+  "confidence": "verified",
+  "focuses": [
+    {
+      "id": "ham_movement",
+      "name": "The movement",
+      "description": "Hamas governs the Gaza Strip from June 2007.",
+      "x": 2,
+      "y": 0,
+      "days": 70,
+      "effects": [
+        {
+          "add_political_power": 30
+        },
+        {
+          "add_spirit": "ham_organised_movement"
+        }
+      ],
+      "ai_weight": 6
+    },
+    {
+      "id": "ham_leadership",
+      "name": "Leadership",
+      "description": "The Political Bureau and the consultative council lead the movement.",
+      "x": 0,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "ham_movement"
+        ]
+      ],
+      "effects": [
+        {
+          "add_political_power": 30
+        },
+        {
+          "add_stability": 0.03
+        }
+      ]
+    },
+    {
+      "id": "ham_administration",
+      "name": "Administration",
+      "description": "Ministries run Gaza's services and collect revenue.",
+      "x": 2,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "ham_movement"
+        ]
+      ],
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "tax_efficiency",
+            "value": 0.05,
+            "days": 1460
+          }
+        },
+        {
+          "add_stability": 0.02
+        }
+      ]
+    },
+    {
+      "id": "ham_recruitment",
+      "name": "Recruitment",
+      "description": "Recruit and train members. Unlocks recruitment drives.",
+      "x": 4,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "ham_movement"
+        ]
+      ],
+      "effects": [
+        {
+          "add_divisions": {
+            "template": "infantry_division",
+            "count": 2
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "manpower_factor",
+            "value": 0.04,
+            "days": 1460
+          }
+        }
+      ]
+    },
+    {
+      "id": "ham_services",
+      "name": "Services",
+      "description": "Keep schools, clinics and water running in Gaza.",
+      "x": 1,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "ham_leadership",
+          "ham_administration"
+        ]
+      ],
+      "effects": [
+        {
+          "add_stability": 0.02
+        },
+        {
+          "add_unrest": -0.03
+        }
+      ]
+    },
+    {
+      "id": "ham_revenue",
+      "name": "Revenue",
+      "description": "Taxes and fees in Gaza.",
+      "x": 3,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "ham_administration",
+          "ham_recruitment"
+        ]
+      ],
+      "effects": [
+        {
+          "add_treasury": 0.4
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "tax_efficiency",
+            "value": 0.03,
+            "days": 1460
+          }
+        }
+      ]
+    },
+    {
+      "id": "ham_internal_security",
+      "name": "Internal security",
+      "description": "A security service for the territory held.",
+      "x": 2,
+      "y": 3,
+      "days": 70,
+      "prerequisites": [
+        [
+          "ham_services",
+          "ham_revenue"
+        ]
+      ],
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "internal_security",
+            "value": 0.05,
+            "days": 1460
+          }
+        }
+      ]
+    },
+    {
+      "id": "ham_charter_2017",
+      "name": "The 2017 charter",
+      "description": "A new charter in 2017 supported a Palestinian state within the 1967 borders, without recognising Israel.",
+      "x": 2,
+      "y": 4,
+      "days": 70,
+      "prerequisites": [
+        [
+          "ham_internal_security"
+        ]
+      ],
+      "available": {
+        "date_after": "2017-01-01"
+      },
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "diplomatic_reputation",
+            "value": 0.03,
+            "days": 2920
+          }
+        },
+        {
+          "add_political_power": 20
+        }
+      ]
+    },
+    {
+      "id": "ham_forces",
+      "name": "Forces",
+      "description": "Organise the fighters into units.",
+      "x": 8,
+      "y": 0,
+      "days": 70,
+      "effects": [
+        {
+          "add_political_power": 20
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "army_org",
+            "value": 0.02,
+            "days": 1460
+          }
+        }
+      ],
+      "ai_weight": 5
+    },
+    {
+      "id": "ham_training",
+      "name": "Training",
+      "description": "Training for officers and units.",
+      "x": 6,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "ham_forces"
+        ]
+      ],
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "training_time",
+            "value": -0.1,
+            "days": 1460
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "army_org",
+            "value": 0.02,
+            "days": 1460
+          }
+        }
+      ]
+    },
+    {
+      "id": "ham_weapons",
+      "name": "Weapons",
+      "description": "Rifles, machine guns and ammunition.",
+      "x": 8,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "ham_forces"
+        ]
+      ],
+      "effects": [
+        {
+          "add_equipment": {
+            "family": "infantry_equipment",
+            "amount": 600
+          }
+        }
+      ]
+    },
+    {
+      "id": "ham_anti_armour",
+      "name": "Anti-armour weapons",
+      "description": "Anti-tank weapons against armoured attacks.",
+      "x": 10,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "ham_forces"
+        ]
+      ],
+      "effects": [
+        {
+          "add_equipment": {
+            "family": "anti_tank_weapons",
+            "amount": 80
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "army_defence",
+            "value": 0.02,
+            "days": 1460
+          }
+        }
+      ]
+    },
+    {
+      "id": "ham_defensive_positions",
+      "name": "Defensive positions",
+      "description": "Fortify the front. Unlocks fortifications.",
+      "x": 7,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "ham_training",
+          "ham_weapons"
+        ]
+      ],
+      "effects": [
+        {
+          "add_spirit": "ham_entrenched"
+        }
+      ]
+    },
+    {
+      "id": "ham_workshops",
+      "name": "Workshops",
+      "description": "Workshops repair and produce equipment.",
+      "x": 9,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "ham_weapons",
+          "ham_anti_armour"
+        ]
+      ],
+      "effects": [
+        {
+          "add_buildings": {
+            "building": "military_factory",
+            "count": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "ham_drones",
+      "name": "Drones",
+      "description": "Drones for scouting.",
+      "x": 10,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "ham_anti_armour"
+        ]
+      ],
+      "available": {
+        "date_after": "2014-01-01"
+      },
+      "effects": [
+        {
+          "add_equipment": {
+            "family": "combat_drone",
+            "amount": 10
+          }
+        },
+        {
+          "add_research_bonus": {
+            "category": "air_drones",
+            "value": 0.15,
+            "uses": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "ham_mobile_units",
+      "name": "Mobile units",
+      "description": "Units on light vehicles.",
+      "x": 8,
+      "y": 3,
+      "days": 70,
+      "prerequisites": [
+        [
+          "ham_defensive_positions",
+          "ham_workshops",
+          "ham_drones"
+        ]
+      ],
+      "effects": [
+        {
+          "add_divisions": {
+            "template": "motorised_division",
+            "count": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "ham_hold_the_line",
+      "name": "Hold the line",
+      "description": "Defend every position.",
+      "x": 8,
+      "y": 4,
+      "days": 70,
+      "prerequisites": [
+        [
+          "ham_mobile_units"
+        ]
+      ],
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "army_defence",
+            "value": 0.04,
+            "days": 1460
+          }
+        },
+        {
+          "add_war_support": 0.03
+        }
+      ]
+    },
+    {
+      "id": "ham_relations",
+      "name": "Relations",
+      "description": "Hamas has historically sought relations with Egypt, Iran, Qatar, Saudi Arabia, Syria and Turkey.",
+      "x": 13,
+      "y": 0,
+      "days": 70,
+      "effects": [
+        {
+          "add_political_power": 20
+        }
+      ],
+      "ai_weight": 4
+    },
+    {
+      "id": "ham_egypt",
+      "name": "Egypt",
+      "description": "Relations with Egypt, Gaza's southern neighbour.",
+      "x": 12,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "ham_relations"
+        ]
+      ],
+      "effects": [
+        {
+          "add_opinion": {
+            "target": "EGY",
+            "value": 10,
+            "days": 1825
+          }
+        }
+      ]
+    },
+    {
+      "id": "ham_qatar",
+      "name": "Qatar",
+      "description": "Relations with Qatar.",
+      "x": 13,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "ham_relations"
+        ]
+      ],
+      "effects": [
+        {
+          "add_opinion": {
+            "target": "QAT",
+            "value": 10,
+            "days": 1825
+          }
+        },
+        {
+          "add_treasury": 0.2
+        }
+      ]
+    },
+    {
+      "id": "ham_iran",
+      "name": "Iran",
+      "description": "Relations with Iran.",
+      "x": 14,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "ham_relations"
+        ]
+      ],
+      "effects": [
+        {
+          "add_opinion": {
+            "target": "IRN",
+            "value": 10,
+            "days": 1825
+          }
+        }
+      ]
+    },
+    {
+      "id": "ham_turkey",
+      "name": "Turkey",
+      "description": "Relations with Turkey.",
+      "x": 15,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "ham_relations"
+        ]
+      ],
+      "effects": [
+        {
+          "add_opinion": {
+            "target": "TUR",
+            "value": 10,
+            "days": 1825
+          }
+        }
+      ]
+    },
+    {
+      "id": "ham_external_support",
+      "name": "External support",
+      "description": "Money, arms and training from backers.",
+      "x": 13,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "ham_egypt",
+          "ham_qatar",
+          "ham_iran",
+          "ham_turkey"
+        ]
+      ],
+      "effects": [
+        {
+          "add_spirit": "ham_external_support"
+        },
+        {
+          "add_equipment": {
+            "family": "infantry_equipment",
+            "amount": 400
+          }
+        }
+      ]
+    },
+    {
+      "id": "ham_talks",
+      "name": "Ceasefire talks",
+      "description": "Indirect talks on ceasefires through mediators.",
+      "x": 13,
+      "y": 3,
+      "days": 70,
+      "prerequisites": [
+        [
+          "ham_external_support"
+        ]
+      ],
+      "effects": [
+        {
+          "add_spirit": "ham_negotiating"
+        },
+        {
+          "add_stability": 0.02
+        }
+      ]
+    },
+    {
+      "id": "ham_strategy",
+      "name": "Strategy",
+      "description": "Defend what is held, or push on.",
+      "x": 17,
+      "y": 0,
+      "days": 70,
+      "prerequisites": [
+        [
+          "ham_movement",
+          "ham_forces"
+        ]
+      ],
+      "effects": [
+        {
+          "add_political_power": 20
+        }
+      ],
+      "ai_weight": 4
+    },
+    {
+      "id": "ham_defend",
+      "name": "Hold Gaza",
+      "description": "Defend the Gaza Strip.",
+      "x": 17,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "ham_strategy"
+        ]
+      ],
+      "mutually_exclusive": [
+        "ham_advance"
+      ],
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "army_defence",
+            "value": 0.05,
+            "days": 1460
+          }
+        },
+        {
+          "add_stability": 0.03
+        }
+      ],
+      "ai_weight": 10
+    },
+    {
+      "id": "ham_advance",
+      "name": "Advance",
+      "description": "Alternative history: go on the offensive to take more ground.",
+      "x": 18,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "ham_strategy"
+        ]
+      ],
+      "mutually_exclusive": [
+        "ham_defend"
+      ],
+      "available": {
+        "any": [
+          {
+            "follows_history": false
+          },
+          {
+            "is_player": true
+          }
+        ]
+      },
+      "effects": [
+        {
+          "leave_history": true
+        },
+        {
+          "claim_rival_border": {
+            "count": 3
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "army_attack",
+            "value": 0.04,
+            "days": 1460
+          }
+        },
+        {
+          "add_war_support": 0.05
+        }
+      ],
+      "ai_weight": 0
+    },
+    {
+      "id": "ham_consolidate",
+      "name": "Consolidate",
+      "description": "Make the territory held work as a whole.",
+      "x": 17,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "ham_defend",
+          "ham_advance"
+        ]
+      ],
+      "effects": [
+        {
+          "add_buildings": {
+            "building": "infrastructure",
+            "count": 1
+          }
+        },
+        {
+          "add_stability": 0.03
+        }
+      ]
+    },
+    {
+      "id": "ham_recognised_government",
+      "name": "A recognised administration",
+      "description": "Alternative history: other states deal with the Gaza administration directly.",
+      "x": 17,
+      "y": 3,
+      "days": 140,
+      "prerequisites": [
+        [
+          "ham_consolidate"
+        ]
+      ],
+      "available": {
+        "any": [
+          {
+            "follows_history": false
+          },
+          {
+            "is_player": true
+          }
+        ]
+      },
+      "effects": [
+        {
+          "leave_history": true
+        },
+        {
+          "add_political_power": 50
+        },
+        {
+          "add_stability": 0.05
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "diplomatic_reputation",
+            "value": 0.05,
+            "days": 2920
+          }
+        }
+      ],
+      "ai_weight": 0
+    }
+  ]
+}

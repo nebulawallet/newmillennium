@@ -333,7 +333,7 @@
     {
       "id": "usa_iraq_invasion_force",
       "title": "Invasion force in Kuwait",
-      "description": "US ground forces crossed into Iraq from Kuwait when the invasion began on 20 March 2003 and advanced rapidly on Baghdad, while Iraqi forces collapsed. The number of divisions and the size of the Iraqi penalty are gameplay values.",
+      "description": "US ground forces crossed into Iraq from Kuwait when the invasion began on 20 March 2003 and advanced rapidly on Baghdad, while Iraqi forces collapsed. The number of divisions and the size of the Iraqi penalty are gameplay values. Many Iraqi officers surrendered their units or did not oppose the invasion force; the weakened divisions are a gameplay value.",
       "countries": [
         "USA"
       ],
@@ -386,6 +386,12 @@
                       "value": -0.5,
                       "days": 60
                     }
+                  },
+                  {
+                    "weaken_divisions": {
+                      "strength": 0.6,
+                      "organisation": 0.4
+                    }
                   }
                 ]
               }
@@ -424,6 +430,236 @@
               "deploy_divisions": {
                 "count": 2,
                 "in": "KWT"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "usa_nasiriyah_2003",
+      "title": "Battle of Nasiriyah",
+      "description": "US forces fought for the crossings at Nasiriyah from 23 March to 2 April 2003. On the coarse game map the whole governorate changes hands.",
+      "countries": [
+        "USA"
+      ],
+      "major": false,
+      "historical": {
+        "date": "2003-04-02",
+        "any_path": true,
+        "dynamic_mode": false,
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/Battle_of_Nasiriyah",
+            "title": "Wikipedia: Battle of Nasiriyah",
+            "accessed": "2026-10-20"
+          }
+        ],
+        "confidence": "needs_review",
+        "review_note": "Dates are sourced (infobox). One game province covers the whole governorate; the battle was for the city."
+      },
+      "trigger": {
+        "at_war_with": "IRQ"
+      },
+      "options": [
+        {
+          "id": "ok",
+          "name": "Continue",
+          "effects": [
+            {
+              "occupy_provinces": {
+                "regions": [
+                  {
+                    "from": "IRQ",
+                    "provinces": [
+                      "Dhi-Qar"
+                    ]
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "usa_kut_2003",
+      "title": "Battle of Kut",
+      "description": "US Marines took Kut on 3–4 April 2003. On the coarse game map the whole governorate changes hands.",
+      "countries": [
+        "USA"
+      ],
+      "major": false,
+      "historical": {
+        "date": "2003-04-04",
+        "any_path": true,
+        "dynamic_mode": false,
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/Battle_of_Kut_(2003)",
+            "title": "Wikipedia: Battle of Kut (2003)",
+            "accessed": "2026-10-20"
+          }
+        ],
+        "confidence": "needs_review",
+        "review_note": "Dates are sourced (infobox). One game province covers the whole governorate; the battle was for the city."
+      },
+      "trigger": {
+        "at_war_with": "IRQ"
+      },
+      "options": [
+        {
+          "id": "ok",
+          "name": "Continue",
+          "effects": [
+            {
+              "occupy_provinces": {
+                "regions": [
+                  {
+                    "from": "IRQ",
+                    "provinces": [
+                      "Wasit"
+                    ]
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "usa_najaf_2003",
+      "title": "Battle of Najaf",
+      "description": "US forces fought around Najaf from 24 March to 4 April 2003. On the coarse game map the whole governorate changes hands.",
+      "countries": [
+        "USA"
+      ],
+      "major": false,
+      "historical": {
+        "date": "2003-04-04",
+        "any_path": true,
+        "dynamic_mode": false,
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/Battle_of_Najaf_(2003)",
+            "title": "Wikipedia: Battle of Najaf (2003)",
+            "accessed": "2026-10-20"
+          }
+        ],
+        "confidence": "needs_review",
+        "review_note": "Dates are sourced (infobox). One game province covers the whole governorate; the battle was for the city."
+      },
+      "trigger": {
+        "at_war_with": "IRQ"
+      },
+      "options": [
+        {
+          "id": "ok",
+          "name": "Continue",
+          "effects": [
+            {
+              "occupy_provinces": {
+                "regions": [
+                  {
+                    "from": "IRQ",
+                    "provinces": [
+                      "An-Najaf"
+                    ]
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "usa_samawah_2003",
+      "title": "Battle of Samawah",
+      "description": "US forces fought at Samawah from 30 March to 4 April 2003. On the coarse game map the whole governorate changes hands.",
+      "countries": [
+        "USA"
+      ],
+      "major": false,
+      "historical": {
+        "date": "2003-04-04",
+        "any_path": true,
+        "dynamic_mode": false,
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/Battle_of_Samawah",
+            "title": "Wikipedia: Battle of Samawah",
+            "accessed": "2026-10-20"
+          }
+        ],
+        "confidence": "needs_review",
+        "review_note": "Dates are sourced (infobox). One game province covers the whole governorate; the battle was for the city."
+      },
+      "trigger": {
+        "at_war_with": "IRQ"
+      },
+      "options": [
+        {
+          "id": "ok",
+          "name": "Continue",
+          "effects": [
+            {
+              "occupy_provinces": {
+                "regions": [
+                  {
+                    "from": "IRQ",
+                    "provinces": [
+                      "Al-Muthannia"
+                    ]
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "gbr_basra_2003",
+      "title": "Battle of Basra",
+      "description": "British forces took Basra after fighting from 21 March to 6 April 2003. On the coarse game map the whole governorate changes hands.",
+      "countries": [
+        "GBR"
+      ],
+      "major": false,
+      "historical": {
+        "date": "2003-04-06",
+        "any_path": true,
+        "dynamic_mode": false,
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/Battle_of_Basra_(2003)",
+            "title": "Wikipedia: Battle of Basra (2003)",
+            "accessed": "2026-10-20"
+          }
+        ],
+        "confidence": "needs_review",
+        "review_note": "Dates are sourced (infobox). One game province covers the whole governorate; the battle was for the city."
+      },
+      "trigger": {
+        "at_war_with": "IRQ"
+      },
+      "options": [
+        {
+          "id": "ok",
+          "name": "Continue",
+          "effects": [
+            {
+              "occupy_provinces": {
+                "regions": [
+                  {
+                    "from": "IRQ",
+                    "provinces": [
+                      "Al-Basrah"
+                    ]
+                  }
+                ]
               }
             }
           ]
@@ -515,6 +751,52 @@
           "effects": [
             {
               "set_historical_government_type": "parliamentary"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "irq_prime_minister_executive",
+      "title": "The first permanent government",
+      "description": "Iraq's first full-term government under the 2005 constitution was sworn in on 20 May 2006. Under that constitution the Prime Minister is the country's active executive authority; the presidency is largely ceremonial.",
+      "countries": [
+        "IRQ"
+      ],
+      "major": false,
+      "historical": {
+        "date": "2006-05-20",
+        "any_path": true,
+        "dynamic_mode": true,
+        "source": [
+          {
+            "url": "https://en.wikipedia.org/wiki/Nouri_al-Maliki",
+            "title": "Wikipedia: Nouri al-Maliki",
+            "accessed": "2026-10-20"
+          },
+          {
+            "url": "https://en.wikipedia.org/wiki/Prime_Minister_of_Iraq",
+            "title": "Wikipedia: Prime Minister of Iraq",
+            "accessed": "2026-10-20"
+          },
+          {
+            "url": "https://en.wikipedia.org/wiki/President_of_Iraq",
+            "title": "Wikipedia: President of Iraq",
+            "accessed": "2026-10-20"
+          }
+        ],
+        "confidence": "verified"
+      },
+      "trigger": {
+        "government_type": "parliamentary"
+      },
+      "options": [
+        {
+          "id": "ok",
+          "name": "Continue",
+          "effects": [
+            {
+              "set_effective_executive": "irq.prime_minister"
             }
           ]
         }

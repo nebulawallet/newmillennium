@@ -26,6 +26,7 @@ import { personParty } from "./politics/common.ts";
 import type { SimProvince } from "./politics/voteModel.ts";
 import { Rng } from "./rng.ts";
 import type { CountryState, ElectionResult, GameState, LogEntry } from "./state.ts";
+import { executiveOffice } from "./politics/common.ts";
 
 /** Static map facts the simulation reads (never saved; rebuilt from the map on load). */
 export interface SimMap {
@@ -260,7 +261,7 @@ export function createHistoricalTimelineSystem(): System {
         c.officeSince[ch.officeId] = state.day;
         // the head of government's party governs (where it changes hands on the historical track)
         const gov = db.countries.get(ch.tag)?.country?.government;
-        if (historical && gov && ch.officeId === gov.effective_executive && after[0]) {
+        if (historical && gov && ch.officeId === executiveOffice(db, c) && after[0]) {
           const party = personParty(db, c, after[0]);
           if (party && c.rulingParties[0] !== party && c.partyStatus[party] === "active") {
             // a coalition partner taking the lead keeps the coalition; otherwise the new party governs alone

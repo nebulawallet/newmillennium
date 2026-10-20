@@ -51,7 +51,7 @@ write_spirits("isg", "The Islamic State's national spirits (gameplay values). St
     spirit("isg_desert_networks", "Desert networks", "Hideouts and supply routes across the desert between Iraq and Syria.", "strength", {"army_defence": 0.04, "manpower_factor": 0.03}),
 ])
 write_decisions("isg", "ISG", "Islamic State projects", [
-    ("isg_recruitment_drive", "Recruitment drive", "Raise new fighters in the towns the group holds.", "isg_recruitment", 40, [DIVS("infantry_division", 1), UNREST(0.02)], None, 240),
+    ("isg_recruitment_drive", "Recruitment drive", "Raise new fighters in the towns the group holds.", "isg_recruitment", 40, [DIVS("infantry_division", 1), UNREST(0.02)], AT_WAR, 730),
     ("isg_fortify_a_city", "Fortify a city", "Defences around a city under threat.", "isg_defend_the_cities", 30, [MOD("army_defence", 0.04, 365)], AT_WAR, 240),
     ("isg_sell_oil", "Sell oil", "Sell crude from the fields the group holds.", "isg_oil_fields", 20, [TREAS(0.3)], None, 180),
     ("isg_open_a_new_front", "Open a new front", "Concentrate forces for an offensive on a new front.", "isg_expansion", 50, [MOD("army_attack", 0.05, 180), WS(0.02)], ALT, 365),
@@ -168,7 +168,7 @@ write_spirits("tal", "The Taliban's national spirits (gameplay values). They go 
     spirit("tal_military_track", "The military track", "The movement seeks victory on the battlefield.", "policy", {"army_attack": 0.04, "war_support_factor": 0.03, "diplomatic_reputation": -0.03}),
 ])
 write_decisions("tal", "TAL", "Taliban projects", [
-    ("tal_recruitment_drive", "Recruitment drive", "Recruit in the villages.", "tal_rural_base", 40, [DIVS("infantry_division", 1)], None, 240),
+    ("tal_recruitment_drive", "Recruitment drive", "Recruit in the villages.", "tal_rural_base", 40, [DIVS("infantry_division", 1)], AT_WAR, 730),
     ("tal_spring_offensive", "Spring offensive", "A season of attacks on district centres.", "tal_spring_offensives", 40, [MOD("army_attack", 0.05, 180), WS(0.02)], AT_WAR, 365),
     ("tal_local_ceasefire", "Local ceasefire", "A ceasefire for a holiday or an exchange of prisoners.", "tal_talks", 20, [STAB(0.02), WS(-0.01)], None, 365),
 ])

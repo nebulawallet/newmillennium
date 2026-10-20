@@ -1,0 +1,85 @@
+{
+  "tag": "HEZ",
+  "name": {
+    "en": "Hezbollah",
+    "native": "حزب الله",
+    "official": {
+      "en": "Hezbollah"
+    }
+  },
+  "adjective": "Hezbollah",
+  "culture_primary": "lebanese",
+  "government": {
+    "type": "insurgent_movement",
+    "effective_executive": "hez.leader",
+    "head_of_state_office": "hez.leader",
+    "head_of_government_office": "hez.leader",
+    "constitution": {
+      "term_limit_amendable": true,
+      "emergency_powers": true,
+      "referendum_required_for": []
+    },
+    "note": "Hezbollah as the armed group holding South Lebanon in the game wars (2006, 2023-24, 2026). Appears on the map through conflict events. The constitution flags are rough approximations."
+  },
+  "offices": [
+    {
+      "id": "hez.leader",
+      "title": {
+        "en": "Secretary-General of Hezbollah"
+      },
+      "role": "head_of_state_and_government",
+      "power_weight": 0.9,
+      "selection": "religious_council",
+      "succession": {
+        "type": "council_choice"
+      },
+      "holders": [
+        {
+          "person": "lbn.hassan_nasrallah",
+          "from": "1999-12-31",
+          "to": "2024-09-27",
+          "note": "Secretary-General from 16 February 1992 until 27 September 2024."
+        },
+        {
+          "person": null,
+          "from": "2024-09-27",
+          "to": "2024-10-29",
+          "vacant_reason": "Between the end of the previous term and the appointment of the successor."
+        },
+        {
+          "person": "lbn.naim_qassem",
+          "from": "2024-10-29"
+        }
+      ],
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Secretary-General_of_Hezbollah",
+          "title": "Wikipedia: Secretary-General of Hezbollah",
+          "accessed": "2026-10-20"
+        }
+      ],
+      "confidence": "verified"
+    }
+  ],
+  "legislature": null,
+  "party_system": "no_parties",
+  "start_2000": {
+    "ruling_parties": [],
+    "ideology_support": {
+      "shia_theocratic": 1
+    },
+    "ideology_support_note": "Gameplay judgement: the whole base is counted under one ideology; not measured data.",
+    "stability": 0.6,
+    "war_support": 0.8
+  },
+  "claims": [],
+  "source": [
+    {
+      "url": "https://en.wikipedia.org/wiki/Secretary-General_of_Hezbollah",
+      "title": "Wikipedia: Secretary-General of Hezbollah",
+      "accessed": "2026-10-20"
+    }
+  ],
+  "confidence": "verified",
+  "no_parties_reason": "Hezbollah is modelled here as an armed movement, not a party system; its parliamentary role is under LBN."
+}

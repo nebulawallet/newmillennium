@@ -20,7 +20,8 @@ for (const d of db.bookmarks.filter((b) => b.date > "2000-01-01").map((b) => b.d
   const bad: string[] = []; let n = 0;
   for (const [tag, cc] of db.countries) {
     const c = cc.country; if (!c) continue; const cs = state.countries[tag]; if (!cs?.active) continue;
-    const off = c.offices.find((o) => o.id === c.government.effective_executive); if (!off || off.ex_officio_of) continue;
+    const execId = cs.executive ?? c.government.effective_executive;
+    const off = c.offices.find((o) => o.id === execId); if (!off || off.ex_officio_of) continue;
     const real = off.holders.filter((h) => h.from <= iso && (!h.to || h.to > iso)).map((h) => h.person);
     if (!real.length) continue; n++;
     const got = cs.offices[off.id] ?? [];

@@ -18,6 +18,7 @@ import type { GameState } from "../state.ts";
 import { canEnter, findPath, playerGroupWar, provinceDistance, templateStats, type Division } from "./military.ts";
 import { divisionStats, hostile } from "./war.ts";
 import { countryName } from "../politics/unrest.ts";
+import { countryModifiers } from "../politics/common.ts";
 
 export type ArmyStatus = "idle" | "no_front" | "moving" | "holding" | "advancing" | "waiting" | "objective" | "unreachable";
 
@@ -77,10 +78,23 @@ export function divisionSymbol(db: ContentDB, units: Record<string, number>): Ma
   return best;
 }
 
-export function divisionPower(db: ContentDB, d: Division): number {
+export function divisionPower(db: ContentDB, d: Division, state?: GameState): number {
   const s = divisionStats(db, d);
-  return (s.soft + s.hard + s.defence * 0.5 + s.breakthrough * 0.5) * d.strength * (0.3 + 0.7 * d.organisation);
+  return (s.soft + s.hard + s.defence * 0.5 + s.breakthrough * 0.5) * d.strength * (0.3 + 0.7 * d.organisation) * (state ? combatFactor(db, state, d.owner) : 1);
 }
+
+/** The owner's combat modifiers (army attack, defence and organisation) as one multiplier on division power, so the AI sees a collapsed army as weak. */
+export function combatFactor(db: ContentDB, state: GameState, tag: string): number {
+  if (factorCache.state !== state || factorCache.day !== state.day) { factorCache.state = state; factorCache.day = state.day; factorCache.values.clear(); }
+  let v = factorCache.values.get(tag);
+  if (v !== undefined) return v;
+  const cs = state.countries[tag];
+  const m = cs ? countryModifiers(db, cs) : {};
+  v = cs ? Math.max(0.15, 1 + ((m.army_attack ?? 0) + (m.army_defence ?? 0) + (m.army_org ?? 0)) / 3) : 1;
+  factorCache.values.set(tag, v);
+  return v;
+}
+const factorCache: { state: GameState | null; day: number; values: Map<string, number> } = { state: null, day: -1, values: new Map() };
 
 // ------------------------------------------------------------------ fronts
 
@@ -368,6 +382,7 @@ interface RunCache {
   comps: Map<string, Map<number, number>>;
   power: Map<number, number>;
   enemyPowerAt: Map<string, Map<number, number>>;
+  state: GameState;
 }
 
 /** Order a division to a province if it can get there; returns false when there is no route. */
@@ -396,7 +411,7 @@ function enemyPowerAt(ctx: SimContext, cache: RunCache, tag: string): Map<number
 
 function power(db: ContentDB, cache: RunCache, d: Division): number {
   let p = cache.power.get(d.id);
-  if (p === undefined) cache.power.set(d.id, (p = divisionPower(db, d)));
+  if (p === undefined) cache.power.set(d.id, (p = divisionPower(db, d, cache.state)));
   return p;
 }
 
@@ -406,7 +421,7 @@ export function runPlans(ctx: SimContext, owners?: Set<string>, skipFor?: (tag: 
   if (!map) return;
   const rules = db.warRules.fronts;
   const alive = new Map(state.divisions.map((d) => [d.id, d]));
-  const cache: RunCache = { pairs: new Map(), comps: new Map(), power: new Map(), enemyPowerAt: new Map() };
+  const cache: RunCache = { pairs: new Map(), comps: new Map(), power: new Map(), enemyPowerAt: new Map(), state: ctx.state };
   // armies sharing a front split it in stretches, in army order
   const byFront = new Map<string, Army[]>();
   for (const a of state.armies) {

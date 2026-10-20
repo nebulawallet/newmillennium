@@ -19,6 +19,9 @@
       "visible": {
         "has_completed_focus": "tal_rural_base"
       },
+      "available": {
+        "at_war": true
+      },
       "cost": {
         "political_power": 40
       },
@@ -30,7 +33,7 @@
           }
         }
       ],
-      "cooldown_days": 240,
+      "cooldown_days": 730,
       "ai_weight": 2
     },
     {

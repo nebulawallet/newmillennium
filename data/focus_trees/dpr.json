@@ -1,0 +1,700 @@
+{
+  "id": "dpr",
+  "name": "Donetsk People's Republic",
+  "countries": [
+    "DPR"
+  ],
+  "note": "The Donetsk People's Republic while it holds land (from 2014 until the annexation of September 2022 in data/events/conflicts.json). Neutral and descriptive.",
+  "source": [
+    {
+      "url": "https://en.wikipedia.org/wiki/Donetsk_People's_Republic",
+      "title": "Wikipedia: Donetsk People's Republic",
+      "accessed": "2026-10-20"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Minsk_agreements",
+      "title": "Wikipedia: Minsk agreements",
+      "accessed": "2026-10-20"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/War_in_Donbas",
+      "title": "Wikipedia: War in Donbas",
+      "accessed": "2026-10-20"
+    }
+  ],
+  "confidence": "verified",
+  "focuses": [
+    {
+      "id": "dpr_movement",
+      "name": "The republic",
+      "description": "The Donetsk People's Republic, created in 2014, declared itself an independent state; it was internationally unrecognised.",
+      "x": 2,
+      "y": 0,
+      "days": 70,
+      "effects": [
+        {
+          "add_political_power": 30
+        },
+        {
+          "add_spirit": "dpr_organised_movement"
+        }
+      ],
+      "ai_weight": 6
+    },
+    {
+      "id": "dpr_leadership",
+      "name": "Leadership",
+      "description": "The head of the republic leads the administration.",
+      "x": 0,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "dpr_movement"
+        ]
+      ],
+      "effects": [
+        {
+          "add_political_power": 30
+        },
+        {
+          "add_stability": 0.03
+        }
+      ]
+    },
+    {
+      "id": "dpr_administration",
+      "name": "Administration",
+      "description": "Ministries run Donetsk and the towns held.",
+      "x": 2,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "dpr_movement"
+        ]
+      ],
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "tax_efficiency",
+            "value": 0.05,
+            "days": 1460
+          }
+        },
+        {
+          "add_stability": 0.02
+        }
+      ]
+    },
+    {
+      "id": "dpr_recruitment",
+      "name": "Recruitment",
+      "description": "Recruit and train members. Unlocks recruitment drives.",
+      "x": 4,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "dpr_movement"
+        ]
+      ],
+      "effects": [
+        {
+          "add_divisions": {
+            "template": "infantry_division",
+            "count": 2
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "manpower_factor",
+            "value": 0.04,
+            "days": 1460
+          }
+        }
+      ]
+    },
+    {
+      "id": "dpr_services",
+      "name": "Services",
+      "description": "Keep water, power and pensions paid.",
+      "x": 1,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "dpr_leadership",
+          "dpr_administration"
+        ]
+      ],
+      "effects": [
+        {
+          "add_stability": 0.02
+        },
+        {
+          "add_unrest": -0.03
+        }
+      ]
+    },
+    {
+      "id": "dpr_revenue",
+      "name": "Revenue",
+      "description": "Revenue from industry and trade.",
+      "x": 3,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "dpr_administration",
+          "dpr_recruitment"
+        ]
+      ],
+      "effects": [
+        {
+          "add_treasury": 0.4
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "tax_efficiency",
+            "value": 0.03,
+            "days": 1460
+          }
+        }
+      ]
+    },
+    {
+      "id": "dpr_internal_security",
+      "name": "Internal security",
+      "description": "A security service for the territory held.",
+      "x": 2,
+      "y": 3,
+      "days": 70,
+      "prerequisites": [
+        [
+          "dpr_services",
+          "dpr_revenue"
+        ]
+      ],
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "internal_security",
+            "value": 0.05,
+            "days": 1460
+          }
+        }
+      ]
+    },
+    {
+      "id": "dpr_industry",
+      "name": "The mines and mills",
+      "description": "Restart the mines and steel mills of the Donbas.",
+      "x": 2,
+      "y": 4,
+      "days": 70,
+      "prerequisites": [
+        [
+          "dpr_internal_security"
+        ]
+      ],
+      "effects": [
+        {
+          "add_buildings": {
+            "building": "civilian_factory",
+            "count": 1
+          }
+        },
+        {
+          "add_treasury": 0.3
+        }
+      ]
+    },
+    {
+      "id": "dpr_forces",
+      "name": "Forces",
+      "description": "Organise the fighters into units.",
+      "x": 8,
+      "y": 0,
+      "days": 70,
+      "effects": [
+        {
+          "add_political_power": 20
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "army_org",
+            "value": 0.02,
+            "days": 1460
+          }
+        }
+      ],
+      "ai_weight": 5
+    },
+    {
+      "id": "dpr_training",
+      "name": "Training",
+      "description": "Training for officers and units.",
+      "x": 6,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "dpr_forces"
+        ]
+      ],
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "training_time",
+            "value": -0.1,
+            "days": 1460
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "army_org",
+            "value": 0.02,
+            "days": 1460
+          }
+        }
+      ]
+    },
+    {
+      "id": "dpr_weapons",
+      "name": "Weapons",
+      "description": "Rifles, machine guns and ammunition.",
+      "x": 8,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "dpr_forces"
+        ]
+      ],
+      "effects": [
+        {
+          "add_equipment": {
+            "family": "infantry_equipment",
+            "amount": 600
+          }
+        }
+      ]
+    },
+    {
+      "id": "dpr_anti_armour",
+      "name": "Anti-armour weapons",
+      "description": "Anti-tank weapons against armoured attacks.",
+      "x": 10,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "dpr_forces"
+        ]
+      ],
+      "effects": [
+        {
+          "add_equipment": {
+            "family": "anti_tank_weapons",
+            "amount": 80
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "army_defence",
+            "value": 0.02,
+            "days": 1460
+          }
+        }
+      ]
+    },
+    {
+      "id": "dpr_defensive_positions",
+      "name": "Defensive positions",
+      "description": "Fortify the front. Unlocks fortifications.",
+      "x": 7,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "dpr_training",
+          "dpr_weapons"
+        ]
+      ],
+      "effects": [
+        {
+          "add_spirit": "dpr_entrenched"
+        }
+      ]
+    },
+    {
+      "id": "dpr_workshops",
+      "name": "Workshops",
+      "description": "Workshops repair and produce equipment.",
+      "x": 9,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "dpr_weapons",
+          "dpr_anti_armour"
+        ]
+      ],
+      "effects": [
+        {
+          "add_buildings": {
+            "building": "military_factory",
+            "count": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "dpr_drones",
+      "name": "Drones",
+      "description": "Drones for scouting.",
+      "x": 10,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "dpr_anti_armour"
+        ]
+      ],
+      "available": {
+        "date_after": "2014-01-01"
+      },
+      "effects": [
+        {
+          "add_equipment": {
+            "family": "combat_drone",
+            "amount": 10
+          }
+        },
+        {
+          "add_research_bonus": {
+            "category": "air_drones",
+            "value": 0.15,
+            "uses": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "dpr_mobile_units",
+      "name": "Mobile units",
+      "description": "Units on light vehicles.",
+      "x": 8,
+      "y": 3,
+      "days": 70,
+      "prerequisites": [
+        [
+          "dpr_defensive_positions",
+          "dpr_workshops",
+          "dpr_drones"
+        ]
+      ],
+      "effects": [
+        {
+          "add_divisions": {
+            "template": "motorised_division",
+            "count": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "dpr_hold_the_line",
+      "name": "Hold the line",
+      "description": "Defend every position.",
+      "x": 8,
+      "y": 4,
+      "days": 70,
+      "prerequisites": [
+        [
+          "dpr_mobile_units"
+        ]
+      ],
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "army_defence",
+            "value": 0.04,
+            "days": 1460
+          }
+        },
+        {
+          "add_war_support": 0.03
+        }
+      ]
+    },
+    {
+      "id": "dpr_relations",
+      "name": "Relations",
+      "description": "The republic was created by Russian-backed forces.",
+      "x": 13,
+      "y": 0,
+      "days": 70,
+      "effects": [
+        {
+          "add_political_power": 20
+        }
+      ],
+      "ai_weight": 4
+    },
+    {
+      "id": "dpr_russia",
+      "name": "Russia",
+      "description": "Support from Russia.",
+      "x": 12,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "dpr_relations"
+        ]
+      ],
+      "effects": [
+        {
+          "add_opinion": {
+            "target": "RUS",
+            "value": 15,
+            "days": 1825
+          }
+        }
+      ]
+    },
+    {
+      "id": "dpr_neighbour",
+      "name": "The other republic",
+      "description": "Co-operation with the neighbouring republic.",
+      "x": 13,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "dpr_relations"
+        ]
+      ],
+      "effects": [
+        {
+          "add_opinion": {
+            "target": "LPR",
+            "value": 15,
+            "days": 1825
+          }
+        }
+      ]
+    },
+    {
+      "id": "dpr_external_support",
+      "name": "External support",
+      "description": "Money, arms and training from backers.",
+      "x": 13,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "dpr_russia",
+          "dpr_neighbour"
+        ]
+      ],
+      "effects": [
+        {
+          "add_spirit": "dpr_external_support"
+        },
+        {
+          "add_equipment": {
+            "family": "infantry_equipment",
+            "amount": 400
+          }
+        }
+      ]
+    },
+    {
+      "id": "dpr_talks",
+      "name": "The Minsk talks",
+      "description": "Talks in Minsk with Ukraine, Russia and the OSCE, with French and German mediation.",
+      "x": 13,
+      "y": 3,
+      "days": 70,
+      "prerequisites": [
+        [
+          "dpr_external_support"
+        ]
+      ],
+      "effects": [
+        {
+          "add_spirit": "dpr_negotiating"
+        },
+        {
+          "add_stability": 0.02
+        }
+      ]
+    },
+    {
+      "id": "dpr_strategy",
+      "name": "Strategy",
+      "description": "Defend what is held, or push on.",
+      "x": 17,
+      "y": 0,
+      "days": 70,
+      "prerequisites": [
+        [
+          "dpr_movement",
+          "dpr_forces"
+        ]
+      ],
+      "effects": [
+        {
+          "add_political_power": 20
+        }
+      ],
+      "ai_weight": 4
+    },
+    {
+      "id": "dpr_defend",
+      "name": "Hold the front",
+      "description": "Defend the line of contact.",
+      "x": 17,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "dpr_strategy"
+        ]
+      ],
+      "mutually_exclusive": [
+        "dpr_advance"
+      ],
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "army_defence",
+            "value": 0.05,
+            "days": 1460
+          }
+        },
+        {
+          "add_stability": 0.03
+        }
+      ],
+      "ai_weight": 10
+    },
+    {
+      "id": "dpr_advance",
+      "name": "Advance",
+      "description": "Alternative history: go on the offensive to take more ground.",
+      "x": 18,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "dpr_strategy"
+        ]
+      ],
+      "mutually_exclusive": [
+        "dpr_defend"
+      ],
+      "available": {
+        "any": [
+          {
+            "follows_history": false
+          },
+          {
+            "is_player": true
+          }
+        ]
+      },
+      "effects": [
+        {
+          "leave_history": true
+        },
+        {
+          "claim_rival_border": {
+            "count": 3
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "army_attack",
+            "value": 0.04,
+            "days": 1460
+          }
+        },
+        {
+          "add_war_support": 0.05
+        }
+      ],
+      "ai_weight": 0
+    },
+    {
+      "id": "dpr_consolidate",
+      "name": "Consolidate",
+      "description": "Make the territory held work as a whole.",
+      "x": 17,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "dpr_defend",
+          "dpr_advance"
+        ]
+      ],
+      "effects": [
+        {
+          "add_buildings": {
+            "building": "infrastructure",
+            "count": 1
+          }
+        },
+        {
+          "add_stability": 0.03
+        }
+      ]
+    },
+    {
+      "id": "dpr_recognition",
+      "name": "Wider recognition",
+      "description": "Alternative history: more states recognise the republic.",
+      "x": 17,
+      "y": 3,
+      "days": 140,
+      "prerequisites": [
+        [
+          "dpr_consolidate"
+        ]
+      ],
+      "available": {
+        "any": [
+          {
+            "follows_history": false
+          },
+          {
+            "is_player": true
+          }
+        ]
+      },
+      "effects": [
+        {
+          "leave_history": true
+        },
+        {
+          "add_political_power": 50
+        },
+        {
+          "add_stability": 0.05
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "diplomatic_reputation",
+            "value": 0.05,
+            "days": 2920
+          }
+        }
+      ],
+      "ai_weight": 0
+    }
+  ]
+}

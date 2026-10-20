@@ -1,0 +1,68 @@
+{
+  "categories": [
+    {
+      "id": "dpr_projects",
+      "name": "Donetsk People's Republic projects",
+      "description": "Projects that the national focuses open up."
+    }
+  ],
+  "decisions": [
+    {
+      "id": "dpr_recruitment_drive",
+      "name": "Recruitment drive",
+      "description": "Recruit in the territory held.",
+      "category": "dpr_projects",
+      "countries": [
+        "DPR"
+      ],
+      "visible": {
+        "has_completed_focus": "dpr_recruitment"
+      },
+      "available": {
+        "at_war": true
+      },
+      "cost": {
+        "political_power": 40
+      },
+      "effects": [
+        {
+          "add_divisions": {
+            "template": "infantry_division",
+            "count": 1
+          }
+        }
+      ],
+      "cooldown_days": 730,
+      "ai_weight": 2
+    },
+    {
+      "id": "dpr_fortify",
+      "name": "Fortify a sector",
+      "description": "Dig in on a threatened sector.",
+      "category": "dpr_projects",
+      "countries": [
+        "DPR"
+      ],
+      "visible": {
+        "has_completed_focus": "dpr_defensive_positions"
+      },
+      "available": {
+        "at_war": true
+      },
+      "cost": {
+        "political_power": 30
+      },
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "army_defence",
+            "value": 0.04,
+            "days": 365
+          }
+        }
+      ],
+      "cooldown_days": 240,
+      "ai_weight": 2
+    }
+  ]
+}

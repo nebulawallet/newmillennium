@@ -1,0 +1,44 @@
+{
+  "note": "Hamas: national spirits (gameplay values).",
+  "spirits": [
+    {
+      "id": "ham_organised_movement",
+      "name": "An organised movement",
+      "description": "A political bureau, a consultative council and an armed wing.",
+      "kind": "strength",
+      "modifiers": {
+        "political_power_gain": 0.06,
+        "internal_security": 0.05
+      }
+    },
+    {
+      "id": "ham_entrenched",
+      "name": "Entrenched positions",
+      "description": "Fortified positions across the territory held.",
+      "kind": "strength",
+      "modifiers": {
+        "army_defence": 0.06
+      }
+    },
+    {
+      "id": "ham_external_support",
+      "name": "External support",
+      "description": "Money, arms and training from outside backers.",
+      "kind": "policy",
+      "modifiers": {
+        "production_efficiency": 0.04,
+        "foreign_influence_resistance": -0.05
+      }
+    },
+    {
+      "id": "ham_negotiating",
+      "name": "Talks",
+      "description": "The leadership pursues talks alongside the fighting.",
+      "kind": "policy",
+      "modifiers": {
+        "diplomatic_reputation": 0.05,
+        "war_support_factor": -0.02
+      }
+    }
+  ]
+}

@@ -322,6 +322,8 @@ One file per tree: `{ id, name, countries, focuses: [ { id, name, description, x
   - `occupy_provinces` = `{ regions }`: the scoped country takes control of provinces on a real date and the owner's divisions there disband (the fall of Baghdad, 9 April 2003).
   - `declare_war` takes an optional `zone` (regions of the target) for a limited war: the attacker aims for and may enter only those provinces (Russia 2022: Kherson, Zaporizhzhia, Mariupol).
   - `dissolve_country` = `{ into }` merges the scoped country into another (the United Front into Afghanistan, December 2001).
+  - `weaken_divisions` = `{ strength?, organisation? }` cuts the scoped country's divisions to these shares (an army that surrenders or melts away, Iraq 20 March 2003).
+  - `set_effective_executive` = `"<office id>"` moves executive power to another office on a real date (Iraq's Prime Minister from 20 May 2006); read it through `executiveOffice` in `src/sim/politics/common.ts`, never `government.effective_executive` directly.
 - Wars already under way on 1 January 2000 live in `data/conflicts/wars_2000.json`. A new game opens them before the first day (`src/sim/conflicts/startWars.ts`):
   - `wars`: `{ id, name, attacker, defender, began, goal? }`, limited by default and scripted. No allies are called in.
   - `groups`: `{ group, regions, divisions, war_name?, began? }` puts an armed group on the map at the start.

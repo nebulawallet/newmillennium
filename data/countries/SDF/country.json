@@ -1,0 +1,105 @@
+{
+  "tag": "SDF",
+  "name": {
+    "en": "Syrian Democratic Forces",
+    "native": "قوات سوريا الديمقراطية",
+    "official": {
+      "en": "Syrian Democratic Forces"
+    }
+  },
+  "adjective": "SDF",
+  "culture_primary": "kurdish",
+  "government": {
+    "type": "insurgent_movement",
+    "effective_executive": "sdf.leader",
+    "head_of_state_office": "sdf.leader",
+    "head_of_government_office": "sdf.leader",
+    "constitution": {
+      "term_limit_amendable": true,
+      "emergency_powers": true,
+      "referendum_required_for": []
+    },
+    "note": "A Kurdish-led coalition of militias, the military wing of the Democratic Autonomous Administration of North and East Syria, founded 10 October 2015; it agreed to integrate into Syrian state institutions on 10 March 2025 and was dissolved in August 2026. The 'constitution' flags are rough approximations."
+  },
+  "offices": [
+    {
+      "id": "sdf.leader",
+      "title": {
+        "en": "General Commander of the SDF"
+      },
+      "role": "head_of_state_and_government",
+      "power_weight": 0.9,
+      "selection": "appointed",
+      "succession": {
+        "type": "council_choice"
+      },
+      "holders": [
+        {
+          "person": null,
+          "from": "1999-12-31",
+          "to": "2015-10-10",
+          "vacant_reason": "The SDF was founded on 10 October 2015; it did not exist before."
+        },
+        {
+          "person": "sdf.mazloum_abdi",
+          "from": "2015-10-10",
+          "to": "2026-08-25",
+          "note": "Commander-in-chief of the SDF from its founding until its dissolution in 2026; then Adviser to the Presidency of Syria."
+        }
+      ],
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Syrian_Democratic_Forces",
+          "title": "Wikipedia: Syrian Democratic Forces",
+          "accessed": "2026-10-20"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/Mazloum_Abdi",
+          "title": "Wikipedia: Mazloum Abdi",
+          "accessed": "2026-10-20"
+        },
+        {
+          "url": "https://www.wikidata.org/wiki/Q59727981",
+          "title": "Wikidata: Mazloum Abdi",
+          "accessed": "2026-10-20"
+        }
+      ],
+      "confidence": "needs_review",
+      "review_note": "The article gives the founding date (10 October 2015) and August 2026 for the dissolution; the day 25 August 2026 comes from the brief and is not confirmed by fetched text. Verify it."
+    }
+  ],
+  "legislature": null,
+  "party_system": "no_parties",
+  "start_2000": {
+    "ruling_parties": [],
+    "ideology_support": {
+      "regionalist": 0.6,
+      "democratic_socialist": 0.3,
+      "social_democrat": 0.1
+    },
+    "ideology_support_note": "Gameplay judgement; the entity did not exist in 2000, so this is the base it would have on appearing.",
+    "stability": 0.5,
+    "war_support": 0.8
+  },
+  "claims": [],
+  "source": [
+    {
+      "url": "https://en.wikipedia.org/wiki/Syrian_Democratic_Forces",
+      "title": "Wikipedia: Syrian Democratic Forces",
+      "accessed": "2026-10-20"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Mazloum_Abdi",
+      "title": "Wikipedia: Mazloum Abdi",
+      "accessed": "2026-10-20"
+    },
+    {
+      "url": "https://www.wikidata.org/wiki/Q59727981",
+      "title": "Wikidata: Mazloum Abdi",
+      "accessed": "2026-10-20"
+    }
+  ],
+  "confidence": "needs_review",
+  "review_note": "The article gives the founding date (10 October 2015) and August 2026 for the dissolution; the day 25 August 2026 comes from the brief and is not confirmed by fetched text. Verify it.",
+  "no_parties_reason": "The SDF was a military coalition attached to the Democratic Autonomous Administration, not a party system."
+}

@@ -11,6 +11,7 @@ import { panel, paused, speed, version, type Session } from "../session.ts";
 import { TABS } from "../tabs.ts";
 import { tip, type TipContent } from "../tooltip.tsx";
 import { countryName } from "../../sim/politics/unrest.ts";
+import { executiveOffice } from "../../sim/politics/common.ts";
 
 const compact = (n: number) => (n >= 1e6 ? `${(n / 1e6).toFixed(n >= 1e7 ? 0 : 1)}M` : n >= 1e3 ? `${Math.round(n / 1e3)}k` : String(Math.round(n)));
 
@@ -97,7 +98,8 @@ export function TopBar({ db, session }: { db: ContentDB; session: Session }) {
   const tag = state.player;
   const cs = state.countries[tag]!;
   const c = db.countries.get(tag)?.country;
-  const exec = c ? cs.offices[c.government.effective_executive]?.[0] : null;
+  const execId = executiveOffice(db, cs);
+  const exec = execId ? cs.offices[execId]?.[0] : null;
   const leader = exec ? db.people.get(exec) : undefined;
   const party = cs.rulingParties[0] ? db.parties.get(cs.rulingParties[0]) : undefined;
   const color = db.countryColors.get(tag) ?? "#555";

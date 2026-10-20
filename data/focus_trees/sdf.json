@@ -1,0 +1,690 @@
+{
+  "id": "sdf",
+  "name": "Syrian Democratic Forces",
+  "countries": [
+    "SDF"
+  ],
+  "note": "The Syrian Democratic Forces while they hold land (October 2015 to August 2026 in data/events/conflicts.json). Neutral and descriptive.",
+  "source": [
+    {
+      "url": "https://en.wikipedia.org/wiki/Syrian_Democratic_Forces",
+      "title": "Wikipedia: Syrian Democratic Forces",
+      "accessed": "2026-10-20"
+    }
+  ],
+  "confidence": "verified",
+  "focuses": [
+    {
+      "id": "sdf_movement",
+      "name": "The alliance",
+      "description": "The SDF, formed on 10 October 2015, is an alliance of Kurdish, Arab and Assyrian/Syriac forces.",
+      "x": 2,
+      "y": 0,
+      "days": 70,
+      "effects": [
+        {
+          "add_political_power": 30
+        },
+        {
+          "add_spirit": "sdf_organised_movement"
+        }
+      ],
+      "ai_weight": 6
+    },
+    {
+      "id": "sdf_leadership",
+      "name": "Leadership",
+      "description": "The general command leads the alliance.",
+      "x": 0,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "sdf_movement"
+        ]
+      ],
+      "effects": [
+        {
+          "add_political_power": 30
+        },
+        {
+          "add_stability": 0.03
+        }
+      ]
+    },
+    {
+      "id": "sdf_administration",
+      "name": "Administration",
+      "description": "Councils run the towns of the north-east.",
+      "x": 2,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "sdf_movement"
+        ]
+      ],
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "tax_efficiency",
+            "value": 0.05,
+            "days": 1460
+          }
+        },
+        {
+          "add_stability": 0.02
+        }
+      ]
+    },
+    {
+      "id": "sdf_recruitment",
+      "name": "Recruitment",
+      "description": "Recruit and train members. Unlocks recruitment drives.",
+      "x": 4,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "sdf_movement"
+        ]
+      ],
+      "effects": [
+        {
+          "add_divisions": {
+            "template": "infantry_division",
+            "count": 2
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "manpower_factor",
+            "value": 0.04,
+            "days": 1460
+          }
+        }
+      ]
+    },
+    {
+      "id": "sdf_services",
+      "name": "Services",
+      "description": "Keep water, power and schools running.",
+      "x": 1,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "sdf_leadership",
+          "sdf_administration"
+        ]
+      ],
+      "effects": [
+        {
+          "add_stability": 0.02
+        },
+        {
+          "add_unrest": -0.03
+        }
+      ]
+    },
+    {
+      "id": "sdf_revenue",
+      "name": "Revenue",
+      "description": "Revenue from trade and the oil fields of the north-east.",
+      "x": 3,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "sdf_administration",
+          "sdf_recruitment"
+        ]
+      ],
+      "effects": [
+        {
+          "add_treasury": 0.4
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "tax_efficiency",
+            "value": 0.03,
+            "days": 1460
+          }
+        }
+      ]
+    },
+    {
+      "id": "sdf_internal_security",
+      "name": "Internal security",
+      "description": "A security service for the territory held.",
+      "x": 2,
+      "y": 3,
+      "days": 70,
+      "prerequisites": [
+        [
+          "sdf_services",
+          "sdf_revenue"
+        ]
+      ],
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "internal_security",
+            "value": 0.05,
+            "days": 1460
+          }
+        }
+      ]
+    },
+    {
+      "id": "sdf_raqqa",
+      "name": "Raqqa",
+      "description": "The SDF took Raqqa on 17 October 2017.",
+      "x": 2,
+      "y": 4,
+      "days": 70,
+      "prerequisites": [
+        [
+          "sdf_internal_security"
+        ]
+      ],
+      "available": {
+        "date_after": "2017-10-17"
+      },
+      "effects": [
+        {
+          "add_stability": 0.03
+        },
+        {
+          "add_political_power": 20
+        }
+      ]
+    },
+    {
+      "id": "sdf_forces",
+      "name": "Forces",
+      "description": "Organise the fighters into units.",
+      "x": 8,
+      "y": 0,
+      "days": 70,
+      "effects": [
+        {
+          "add_political_power": 20
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "army_org",
+            "value": 0.02,
+            "days": 1460
+          }
+        }
+      ],
+      "ai_weight": 5
+    },
+    {
+      "id": "sdf_training",
+      "name": "Training",
+      "description": "Training for officers and units.",
+      "x": 6,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "sdf_forces"
+        ]
+      ],
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "training_time",
+            "value": -0.1,
+            "days": 1460
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "army_org",
+            "value": 0.02,
+            "days": 1460
+          }
+        }
+      ]
+    },
+    {
+      "id": "sdf_weapons",
+      "name": "Weapons",
+      "description": "Rifles, machine guns and ammunition.",
+      "x": 8,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "sdf_forces"
+        ]
+      ],
+      "effects": [
+        {
+          "add_equipment": {
+            "family": "infantry_equipment",
+            "amount": 600
+          }
+        }
+      ]
+    },
+    {
+      "id": "sdf_anti_armour",
+      "name": "Anti-armour weapons",
+      "description": "Anti-tank weapons against armoured attacks.",
+      "x": 10,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "sdf_forces"
+        ]
+      ],
+      "effects": [
+        {
+          "add_equipment": {
+            "family": "anti_tank_weapons",
+            "amount": 80
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "army_defence",
+            "value": 0.02,
+            "days": 1460
+          }
+        }
+      ]
+    },
+    {
+      "id": "sdf_defensive_positions",
+      "name": "Defensive positions",
+      "description": "Fortify the front. Unlocks fortifications.",
+      "x": 7,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "sdf_training",
+          "sdf_weapons"
+        ]
+      ],
+      "effects": [
+        {
+          "add_spirit": "sdf_entrenched"
+        }
+      ]
+    },
+    {
+      "id": "sdf_workshops",
+      "name": "Workshops",
+      "description": "Workshops repair and produce equipment.",
+      "x": 9,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "sdf_weapons",
+          "sdf_anti_armour"
+        ]
+      ],
+      "effects": [
+        {
+          "add_buildings": {
+            "building": "military_factory",
+            "count": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "sdf_drones",
+      "name": "Drones",
+      "description": "Drones for scouting.",
+      "x": 10,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "sdf_anti_armour"
+        ]
+      ],
+      "available": {
+        "date_after": "2014-01-01"
+      },
+      "effects": [
+        {
+          "add_equipment": {
+            "family": "combat_drone",
+            "amount": 10
+          }
+        },
+        {
+          "add_research_bonus": {
+            "category": "air_drones",
+            "value": 0.15,
+            "uses": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "sdf_mobile_units",
+      "name": "Mobile units",
+      "description": "Units on light vehicles.",
+      "x": 8,
+      "y": 3,
+      "days": 70,
+      "prerequisites": [
+        [
+          "sdf_defensive_positions",
+          "sdf_workshops",
+          "sdf_drones"
+        ]
+      ],
+      "effects": [
+        {
+          "add_divisions": {
+            "template": "motorised_division",
+            "count": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "sdf_hold_the_line",
+      "name": "Hold the line",
+      "description": "Defend every position.",
+      "x": 8,
+      "y": 4,
+      "days": 70,
+      "prerequisites": [
+        [
+          "sdf_mobile_units"
+        ]
+      ],
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "army_defence",
+            "value": 0.04,
+            "days": 1460
+          }
+        },
+        {
+          "add_war_support": 0.03
+        }
+      ]
+    },
+    {
+      "id": "sdf_relations",
+      "name": "Relations",
+      "description": "The SDF was formed with American support; Turkey opposed it.",
+      "x": 13,
+      "y": 0,
+      "days": 70,
+      "effects": [
+        {
+          "add_political_power": 20
+        }
+      ],
+      "ai_weight": 4
+    },
+    {
+      "id": "sdf_united_states",
+      "name": "The United States",
+      "description": "Support from the United States.",
+      "x": 12,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "sdf_relations"
+        ]
+      ],
+      "effects": [
+        {
+          "add_opinion": {
+            "target": "USA",
+            "value": 15,
+            "days": 1825
+          }
+        }
+      ]
+    },
+    {
+      "id": "sdf_turkey_talks",
+      "name": "Turkey",
+      "description": "Seek calmer relations with Turkey.",
+      "x": 13,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "sdf_relations"
+        ]
+      ],
+      "effects": [
+        {
+          "add_opinion": {
+            "target": "TUR",
+            "value": 10,
+            "days": 1825
+          }
+        }
+      ]
+    },
+    {
+      "id": "sdf_external_support",
+      "name": "External support",
+      "description": "Money, arms and training from backers.",
+      "x": 13,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "sdf_united_states",
+          "sdf_turkey_talks"
+        ]
+      ],
+      "effects": [
+        {
+          "add_spirit": "sdf_external_support"
+        },
+        {
+          "add_equipment": {
+            "family": "infantry_equipment",
+            "amount": 400
+          }
+        }
+      ]
+    },
+    {
+      "id": "sdf_talks",
+      "name": "Talks with Damascus",
+      "description": "Talks on the future of the north-east within Syria.",
+      "x": 13,
+      "y": 3,
+      "days": 70,
+      "prerequisites": [
+        [
+          "sdf_external_support"
+        ]
+      ],
+      "effects": [
+        {
+          "add_spirit": "sdf_negotiating"
+        },
+        {
+          "add_stability": 0.02
+        }
+      ]
+    },
+    {
+      "id": "sdf_strategy",
+      "name": "Strategy",
+      "description": "Defend what is held, or push on.",
+      "x": 17,
+      "y": 0,
+      "days": 70,
+      "prerequisites": [
+        [
+          "sdf_movement",
+          "sdf_forces"
+        ]
+      ],
+      "effects": [
+        {
+          "add_political_power": 20
+        }
+      ],
+      "ai_weight": 4
+    },
+    {
+      "id": "sdf_defend",
+      "name": "Hold the north-east",
+      "description": "Defend the territory held.",
+      "x": 17,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "sdf_strategy"
+        ]
+      ],
+      "mutually_exclusive": [
+        "sdf_advance"
+      ],
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "army_defence",
+            "value": 0.05,
+            "days": 1460
+          }
+        },
+        {
+          "add_stability": 0.03
+        }
+      ],
+      "ai_weight": 10
+    },
+    {
+      "id": "sdf_advance",
+      "name": "Advance",
+      "description": "Alternative history: go on the offensive to take more ground.",
+      "x": 18,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "sdf_strategy"
+        ]
+      ],
+      "mutually_exclusive": [
+        "sdf_defend"
+      ],
+      "available": {
+        "any": [
+          {
+            "follows_history": false
+          },
+          {
+            "is_player": true
+          }
+        ]
+      },
+      "effects": [
+        {
+          "leave_history": true
+        },
+        {
+          "claim_rival_border": {
+            "count": 3
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "army_attack",
+            "value": 0.04,
+            "days": 1460
+          }
+        },
+        {
+          "add_war_support": 0.05
+        }
+      ],
+      "ai_weight": 0
+    },
+    {
+      "id": "sdf_consolidate",
+      "name": "Consolidate",
+      "description": "Make the territory held work as a whole.",
+      "x": 17,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "sdf_defend",
+          "sdf_advance"
+        ]
+      ],
+      "effects": [
+        {
+          "add_buildings": {
+            "building": "infrastructure",
+            "count": 1
+          }
+        },
+        {
+          "add_stability": 0.03
+        }
+      ]
+    },
+    {
+      "id": "sdf_autonomy",
+      "name": "Recognised autonomy",
+      "description": "Alternative history: a settlement recognises the autonomy of the north-east.",
+      "x": 17,
+      "y": 3,
+      "days": 140,
+      "prerequisites": [
+        [
+          "sdf_consolidate"
+        ]
+      ],
+      "available": {
+        "any": [
+          {
+            "follows_history": false
+          },
+          {
+            "is_player": true
+          }
+        ]
+      },
+      "effects": [
+        {
+          "leave_history": true
+        },
+        {
+          "add_political_power": 50
+        },
+        {
+          "add_stability": 0.05
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "diplomatic_reputation",
+            "value": 0.05,
+            "days": 2920
+          }
+        }
+      ],
+      "ai_weight": 0
+    }
+  ]
+}

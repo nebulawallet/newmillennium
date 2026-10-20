@@ -207,6 +207,15 @@ export const EFFECTS: Record<string, ScriptDef> = {
     description: "Rename a party (transfers support to the renamed record).",
     refs: { party: "party", to: "party" },
   },
+  weaken_divisions: {
+    args: z.strictObject({ strength: z.number().min(0).max(1).optional(), organisation: z.number().min(0).max(1).optional() }),
+    description: "The scoped country's divisions drop to this share of their strength and organisation (an army that surrenders or melts away on a real date).",
+  },
+  set_effective_executive: {
+    args: ScopedId,
+    description: "Executive power moves to this office on a real date (Iraq's Prime Minister from 2006): the leader, the governing party and confidence votes follow it.",
+    refs: { "": "office" },
+  },
   set_government_type: { args: Id, description: "Change the government type.", refs: { "": "government_type" } },
   set_historical_government_type: {
     args: Id,

@@ -1,0 +1,68 @@
+{
+  "categories": [
+    {
+      "id": "syo_projects",
+      "name": "Syrian opposition projects",
+      "description": "Projects that the national focuses open up."
+    }
+  ],
+  "decisions": [
+    {
+      "id": "syo_recruitment_drive",
+      "name": "Recruitment drive",
+      "description": "Recruit in the territory held.",
+      "category": "syo_projects",
+      "countries": [
+        "SYO"
+      ],
+      "visible": {
+        "has_completed_focus": "syo_recruitment"
+      },
+      "available": {
+        "at_war": true
+      },
+      "cost": {
+        "political_power": 40
+      },
+      "effects": [
+        {
+          "add_divisions": {
+            "template": "infantry_division",
+            "count": 1
+          }
+        }
+      ],
+      "cooldown_days": 730,
+      "ai_weight": 2
+    },
+    {
+      "id": "syo_fortify",
+      "name": "Fortify a sector",
+      "description": "Dig in on a threatened sector.",
+      "category": "syo_projects",
+      "countries": [
+        "SYO"
+      ],
+      "visible": {
+        "has_completed_focus": "syo_defensive_positions"
+      },
+      "available": {
+        "at_war": true
+      },
+      "cost": {
+        "political_power": 30
+      },
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "army_defence",
+            "value": 0.04,
+            "days": 365
+          }
+        }
+      ],
+      "cooldown_days": 240,
+      "ai_weight": 2
+    }
+  ]
+}

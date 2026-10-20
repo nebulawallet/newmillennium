@@ -1,0 +1,701 @@
+{
+  "id": "hez",
+  "name": "Hezbollah",
+  "countries": [
+    "HEZ"
+  ],
+  "note": "Hezbollah while it holds South Lebanon in the game (the wars of 2006, 2023-24 and 2026 in data/events/conflicts.json). Neutral and descriptive.",
+  "source": [
+    {
+      "url": "https://en.wikipedia.org/wiki/Hezbollah",
+      "title": "Wikipedia: Hezbollah",
+      "accessed": "2026-10-20"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Secretary-General_of_Hezbollah",
+      "title": "Wikipedia: Secretary-General of Hezbollah",
+      "accessed": "2026-10-20"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/2006_Lebanon_War",
+      "title": "Wikipedia: 2006 Lebanon War",
+      "accessed": "2026-10-20"
+    }
+  ],
+  "confidence": "verified",
+  "focuses": [
+    {
+      "id": "hez_movement",
+      "name": "The movement",
+      "description": "Hezbollah, founded in 1982, holds South Lebanon in the game's wars.",
+      "x": 2,
+      "y": 0,
+      "days": 70,
+      "effects": [
+        {
+          "add_political_power": 30
+        },
+        {
+          "add_spirit": "hez_organised_movement"
+        }
+      ],
+      "ai_weight": 6
+    },
+    {
+      "id": "hez_leadership",
+      "name": "Leadership",
+      "description": "The Secretary-General and the council lead the movement.",
+      "x": 0,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "hez_movement"
+        ]
+      ],
+      "effects": [
+        {
+          "add_political_power": 30
+        },
+        {
+          "add_stability": 0.03
+        }
+      ]
+    },
+    {
+      "id": "hez_administration",
+      "name": "Administration",
+      "description": "Services and offices in the areas it holds.",
+      "x": 2,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "hez_movement"
+        ]
+      ],
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "tax_efficiency",
+            "value": 0.05,
+            "days": 1460
+          }
+        },
+        {
+          "add_stability": 0.02
+        }
+      ]
+    },
+    {
+      "id": "hez_recruitment",
+      "name": "Recruitment",
+      "description": "Recruit and train members. Unlocks recruitment drives.",
+      "x": 4,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "hez_movement"
+        ]
+      ],
+      "effects": [
+        {
+          "add_divisions": {
+            "template": "infantry_division",
+            "count": 2
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "manpower_factor",
+            "value": 0.04,
+            "days": 1460
+          }
+        }
+      ]
+    },
+    {
+      "id": "hez_services",
+      "name": "Services",
+      "description": "Schools, clinics and welfare in the south.",
+      "x": 1,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "hez_leadership",
+          "hez_administration"
+        ]
+      ],
+      "effects": [
+        {
+          "add_stability": 0.02
+        },
+        {
+          "add_unrest": -0.03
+        }
+      ]
+    },
+    {
+      "id": "hez_revenue",
+      "name": "Revenue",
+      "description": "Revenue from members and supporters.",
+      "x": 3,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "hez_administration",
+          "hez_recruitment"
+        ]
+      ],
+      "effects": [
+        {
+          "add_treasury": 0.4
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "tax_efficiency",
+            "value": 0.03,
+            "days": 1460
+          }
+        }
+      ]
+    },
+    {
+      "id": "hez_internal_security",
+      "name": "Internal security",
+      "description": "A security service for the territory held.",
+      "x": 2,
+      "y": 3,
+      "days": 70,
+      "prerequisites": [
+        [
+          "hez_services",
+          "hez_revenue"
+        ]
+      ],
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "internal_security",
+            "value": 0.05,
+            "days": 1460
+          }
+        }
+      ]
+    },
+    {
+      "id": "hez_lebanese_politics",
+      "name": "Lebanese politics",
+      "description": "Work with allies in Lebanon's political system.",
+      "x": 2,
+      "y": 4,
+      "days": 70,
+      "prerequisites": [
+        [
+          "hez_internal_security"
+        ]
+      ],
+      "effects": [
+        {
+          "add_opinion": {
+            "target": "LBN",
+            "value": 10,
+            "days": 1825
+          }
+        },
+        {
+          "add_stability": 0.02
+        }
+      ]
+    },
+    {
+      "id": "hez_forces",
+      "name": "Forces",
+      "description": "Organise the fighters into units.",
+      "x": 8,
+      "y": 0,
+      "days": 70,
+      "effects": [
+        {
+          "add_political_power": 20
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "army_org",
+            "value": 0.02,
+            "days": 1460
+          }
+        }
+      ],
+      "ai_weight": 5
+    },
+    {
+      "id": "hez_training",
+      "name": "Training",
+      "description": "Training for officers and units.",
+      "x": 6,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "hez_forces"
+        ]
+      ],
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "training_time",
+            "value": -0.1,
+            "days": 1460
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "army_org",
+            "value": 0.02,
+            "days": 1460
+          }
+        }
+      ]
+    },
+    {
+      "id": "hez_weapons",
+      "name": "Weapons",
+      "description": "Rifles, machine guns and ammunition.",
+      "x": 8,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "hez_forces"
+        ]
+      ],
+      "effects": [
+        {
+          "add_equipment": {
+            "family": "infantry_equipment",
+            "amount": 600
+          }
+        }
+      ]
+    },
+    {
+      "id": "hez_anti_armour",
+      "name": "Anti-armour weapons",
+      "description": "Anti-tank weapons against armoured attacks.",
+      "x": 10,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "hez_forces"
+        ]
+      ],
+      "effects": [
+        {
+          "add_equipment": {
+            "family": "anti_tank_weapons",
+            "amount": 80
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "army_defence",
+            "value": 0.02,
+            "days": 1460
+          }
+        }
+      ]
+    },
+    {
+      "id": "hez_defensive_positions",
+      "name": "Defensive positions",
+      "description": "Fortify the front. Unlocks fortifications.",
+      "x": 7,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "hez_training",
+          "hez_weapons"
+        ]
+      ],
+      "effects": [
+        {
+          "add_spirit": "hez_entrenched"
+        }
+      ]
+    },
+    {
+      "id": "hez_workshops",
+      "name": "Workshops",
+      "description": "Workshops repair and produce equipment.",
+      "x": 9,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "hez_weapons",
+          "hez_anti_armour"
+        ]
+      ],
+      "effects": [
+        {
+          "add_buildings": {
+            "building": "military_factory",
+            "count": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "hez_drones",
+      "name": "Drones",
+      "description": "Drones for scouting.",
+      "x": 10,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "hez_anti_armour"
+        ]
+      ],
+      "available": {
+        "date_after": "2014-01-01"
+      },
+      "effects": [
+        {
+          "add_equipment": {
+            "family": "combat_drone",
+            "amount": 10
+          }
+        },
+        {
+          "add_research_bonus": {
+            "category": "air_drones",
+            "value": 0.15,
+            "uses": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "hez_mobile_units",
+      "name": "Mobile units",
+      "description": "Units on light vehicles.",
+      "x": 8,
+      "y": 3,
+      "days": 70,
+      "prerequisites": [
+        [
+          "hez_defensive_positions",
+          "hez_workshops",
+          "hez_drones"
+        ]
+      ],
+      "effects": [
+        {
+          "add_divisions": {
+            "template": "motorised_division",
+            "count": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "hez_hold_the_line",
+      "name": "Hold the line",
+      "description": "Defend every position.",
+      "x": 8,
+      "y": 4,
+      "days": 70,
+      "prerequisites": [
+        [
+          "hez_mobile_units"
+        ]
+      ],
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "army_defence",
+            "value": 0.04,
+            "days": 1460
+          }
+        },
+        {
+          "add_war_support": 0.03
+        }
+      ]
+    },
+    {
+      "id": "hez_relations",
+      "name": "Relations",
+      "description": "Hezbollah was founded in close cooperation with Iran and has strong ties with it.",
+      "x": 13,
+      "y": 0,
+      "days": 70,
+      "effects": [
+        {
+          "add_political_power": 20
+        }
+      ],
+      "ai_weight": 4
+    },
+    {
+      "id": "hez_iran",
+      "name": "Iran",
+      "description": "Ties with Iran.",
+      "x": 12,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "hez_relations"
+        ]
+      ],
+      "effects": [
+        {
+          "add_opinion": {
+            "target": "IRN",
+            "value": 15,
+            "days": 1825
+          }
+        }
+      ]
+    },
+    {
+      "id": "hez_syria",
+      "name": "Syria",
+      "description": "Relations with Syria.",
+      "x": 13,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "hez_relations"
+        ]
+      ],
+      "effects": [
+        {
+          "add_opinion": {
+            "target": "SYR",
+            "value": 10,
+            "days": 1825
+          }
+        }
+      ]
+    },
+    {
+      "id": "hez_external_support",
+      "name": "External support",
+      "description": "Money, arms and training from backers.",
+      "x": 13,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "hez_iran",
+          "hez_syria"
+        ]
+      ],
+      "effects": [
+        {
+          "add_spirit": "hez_external_support"
+        },
+        {
+          "add_equipment": {
+            "family": "infantry_equipment",
+            "amount": 400
+          }
+        }
+      ]
+    },
+    {
+      "id": "hez_talks",
+      "name": "Ceasefire talks",
+      "description": "Indirect talks on ceasefires through mediators.",
+      "x": 13,
+      "y": 3,
+      "days": 70,
+      "prerequisites": [
+        [
+          "hez_external_support"
+        ]
+      ],
+      "effects": [
+        {
+          "add_spirit": "hez_negotiating"
+        },
+        {
+          "add_stability": 0.02
+        }
+      ]
+    },
+    {
+      "id": "hez_strategy",
+      "name": "Strategy",
+      "description": "Defend what is held, or push on.",
+      "x": 17,
+      "y": 0,
+      "days": 70,
+      "prerequisites": [
+        [
+          "hez_movement",
+          "hez_forces"
+        ]
+      ],
+      "effects": [
+        {
+          "add_political_power": 20
+        }
+      ],
+      "ai_weight": 4
+    },
+    {
+      "id": "hez_defend",
+      "name": "Hold the south",
+      "description": "Defend South Lebanon.",
+      "x": 17,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "hez_strategy"
+        ]
+      ],
+      "mutually_exclusive": [
+        "hez_advance"
+      ],
+      "effects": [
+        {
+          "add_timed_modifier": {
+            "modifier": "army_defence",
+            "value": 0.05,
+            "days": 1460
+          }
+        },
+        {
+          "add_stability": 0.03
+        }
+      ],
+      "ai_weight": 10
+    },
+    {
+      "id": "hez_advance",
+      "name": "Advance",
+      "description": "Alternative history: go on the offensive to take more ground.",
+      "x": 18,
+      "y": 1,
+      "days": 70,
+      "prerequisites": [
+        [
+          "hez_strategy"
+        ]
+      ],
+      "mutually_exclusive": [
+        "hez_defend"
+      ],
+      "available": {
+        "any": [
+          {
+            "follows_history": false
+          },
+          {
+            "is_player": true
+          }
+        ]
+      },
+      "effects": [
+        {
+          "leave_history": true
+        },
+        {
+          "claim_rival_border": {
+            "count": 3
+          }
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "army_attack",
+            "value": 0.04,
+            "days": 1460
+          }
+        },
+        {
+          "add_war_support": 0.05
+        }
+      ],
+      "ai_weight": 0
+    },
+    {
+      "id": "hez_consolidate",
+      "name": "Consolidate",
+      "description": "Make the territory held work as a whole.",
+      "x": 17,
+      "y": 2,
+      "days": 70,
+      "prerequisites": [
+        [
+          "hez_defend",
+          "hez_advance"
+        ]
+      ],
+      "effects": [
+        {
+          "add_buildings": {
+            "building": "infrastructure",
+            "count": 1
+          }
+        },
+        {
+          "add_stability": 0.03
+        }
+      ]
+    },
+    {
+      "id": "hez_recognised_role",
+      "name": "A recognised role",
+      "description": "Alternative history: a settlement recognises the movement's role in the south.",
+      "x": 17,
+      "y": 3,
+      "days": 140,
+      "prerequisites": [
+        [
+          "hez_consolidate"
+        ]
+      ],
+      "available": {
+        "any": [
+          {
+            "follows_history": false
+          },
+          {
+            "is_player": true
+          }
+        ]
+      },
+      "effects": [
+        {
+          "leave_history": true
+        },
+        {
+          "add_political_power": 50
+        },
+        {
+          "add_stability": 0.05
+        },
+        {
+          "add_timed_modifier": {
+            "modifier": "diplomatic_reputation",
+            "value": 0.05,
+            "days": 2920
+          }
+        }
+      ],
+      "ai_weight": 0
+    }
+  ]
+}

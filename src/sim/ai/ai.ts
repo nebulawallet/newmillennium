@@ -26,7 +26,7 @@ import {
 import { factories } from "../economy/economy.ts";
 import { divisionStats } from "../military/war.ts";
 import { provinceDistance, templateNeeds, templateStats, type Division } from "../military/military.ts";
-import { components, frontPairs, frozenEnemies } from "../military/fronts.ts";
+import { combatFactor, components, frontPairs, frozenEnemies } from "../military/fronts.ts";
 import { playerGroupWar } from "../military/military.ts";
 import { rulingSubIdeology } from "../politics/common.ts";
 import { countryNeighbours, evalTrigger } from "../scripting/engine.ts";
@@ -65,13 +65,13 @@ function gdpRanking(state: GameState): string[] {
 /** Fighting power of a country's divisions (attack and defence, scaled by strength and organisation). */
 export function armyPower(db: ContentDB, state: GameState, tag: string): number {
   let p = 0;
-  for (const d of state.divisions) if (d.owner === tag) p += divisionPower(db, d);
+  for (const d of state.divisions) if (d.owner === tag) p += divisionPower(db, d, state);
   return p;
 }
 
-function divisionPower(db: ContentDB, d: Division): number {
+function divisionPower(db: ContentDB, d: Division, state?: GameState): number {
   const s = divisionStats(db, d);
-  return (s.soft + s.hard + s.defence) * d.strength * (0.5 + 0.5 * d.organisation);
+  return (s.soft + s.hard + s.defence) * d.strength * (0.5 + 0.5 * d.organisation) * (state ? combatFactor(db, state, d.owner) : 1);
 }
 
 const isAi = (state: GameState, tag: string) => tag !== state.player && !!state.countries[tag];
@@ -271,10 +271,13 @@ export function planMilitary(ctx: SimContext, tag: string): Command[] {
   const assigned = new Set(live.flatMap((a) => a.divisions));
   const free = state.divisions.filter((d) => d.owner === tag && !assigned.has(d.id) && d.strength > 0.2);
   const enemyDivs = new Map<string, number>(), enemyPower = new Map<string, number>();
+  // allies' army power, computed once per plan and only for allies that fight beside us
+  const powerOf = new Map<string, number>();
+  const allyPower = (t: string) => { let v = powerOf.get(t); if (v === undefined) powerOf.set(t, (v = armyPower(db, state, t))); return v; };
   for (const d of state.divisions)
     if (fronts.has(d.owner)) {
       enemyDivs.set(d.owner, (enemyDivs.get(d.owner) ?? 0) + 1);
-      enemyPower.set(d.owner, (enemyPower.get(d.owner) ?? 0) + divisionPower(db, d));
+      enemyPower.set(d.owner, (enemyPower.get(d.owner) ?? 0) + divisionPower(db, d, state));
     }
   const comp = components(state, map, tag);
   const reachable = (d: Division, targets: number[]) => targets.some((t) => comp.get(t) !== undefined && comp.get(t) === comp.get(d.province));
@@ -300,10 +303,16 @@ export function planMilitary(ctx: SimContext, tag: string): Command[] {
     const lost = provinceIdsWhere(state, (i) => state.provinceOwner[i] === tag && state.provinceController[i] === enemy);
     const limited = state.wars.find((w) => w.goal === "limited" && w.attackers.includes(tag) && w.defenders.includes(enemy) && !w.armedGroup);
     const byId = new Map(state.divisions.map((d) => [d.id, d]));
-    const ours = (army?.divisions ?? []).reduce((s, id) => { const d = byId.get(id); return d ? s + divisionPower(db, d) : s; }, 0) || armyPower(db, state, tag);
-    let targets = lost;
+    const ours = (army?.divisions ?? []).reduce((s, id) => { const d = byId.get(id); return d ? s + divisionPower(db, d, state) : s; }, 0) || armyPower(db, state, tag);
+    // allies on the same side add their strength; a scripted invasion (historical mode) keeps attacking, as the real one did
+    const allies = new Set(state.wars.filter((w) => (w.attackers.includes(tag) && w.defenders.includes(enemy)) || (w.defenders.includes(tag) && w.attackers.includes(enemy))).flatMap((w) => (w.attackers.includes(tag) ? w.attackers : w.defenders)));
+    allies.delete(tag);
+    const scriptedAttack = state.rules.electionMode === "historical" && state.wars.some((w) => w.scripted && w.attackers.includes(tag) && w.defenders.includes(enemy));
+    let alliedPower = 0;
+    if (!scriptedAttack) for (const t of allies) alliedPower += allyPower(t);
+        let targets = lost;
     if (limited) targets = [...lost, ...(limited.zone ?? []).filter((p) => state.provinceController[p - 1] === enemy)];
-    else if (ours >= (enemyPower.get(enemy) ?? 0) * rules.ai_offensive_ratio) {
+    else if (scriptedAttack || ours + alliedPower >= (enemyPower.get(enemy) ?? 0) * rules.ai_offensive_ratio) {
       const cap2 = capitalHeldBy(map, state, enemy);
       if (cap2) targets = [...lost, cap2];
     }

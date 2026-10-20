@@ -12,7 +12,7 @@ import { dayOf } from "../date.ts";
 import type { SimContext } from "../simulation.ts";
 import type { CountryState, GameState } from "../state.ts";
 import { regimeChange, startCivilWar } from "../politics/unrest.ts";
-import { clamp, effectiveLeader, isAvailable, normalise, rulingSubIdeology } from "../politics/common.ts";
+import { clamp, effectiveLeader, isAvailable, normalise, personParty, rulingSubIdeology } from "../politics/common.ts";
 import { mergeParty } from "../politics/parties.ts";
 import { installGovernment, installParty, partiesOfGroup, type InstallSpec } from "../politics/regime.ts";
 import { calibrate } from "../politics/voteModel.ts";
@@ -275,6 +275,23 @@ function effect(ctx: SimContext, scope: Scope, k: string, v: unknown, source: st
       break;
     }
     case "set_focus_tree": setFocusTree(db, cs, a.tree as string); break;
+    case "weaken_divisions":
+      for (const d of state.divisions) {
+        if (d.owner !== scope.tag) continue;
+        if (typeof a.strength === "number") d.strength *= a.strength;
+        if (typeof a.organisation === "number") d.organisation *= a.organisation;
+      }
+      break;
+    case "set_effective_executive": {
+      cs.executive = v as string;
+      // the new executive's party leads the government (on the historical track the record keeps it there)
+      const party = personParty(db, cs, cs.offices[v as string]?.[0]);
+      if (party && cs.partyStatus[party] === "active" && cs.rulingParties[0] !== party) {
+        cs.rulingParties = cs.rulingParties.includes(party) ? [party, ...cs.rulingParties.filter((p) => p !== party)] : [party];
+        cs.govSinceDay = state.day;
+      }
+      break;
+    }
     case "hand_over": {
       const to = state.countries[a.to as string];
       if (!to?.active) break;
@@ -569,6 +586,8 @@ export function describeEffects(db: ContentDB, effects: unknown[], depth = 0, li
       case "set_flag": case "clear_flag": case "set_global_flag": case "clear_global_flag": line = null; break;
       case "set_country_name": line = a.name ? `The country is renamed ${a.name}` : "The country takes back its standard name"; break;
       case "hand_over": line = `The movement carries on as ${name.tag(a.to as string)}, with its focus tree`; break;
+      case "weaken_divisions": line = `Divisions fall to ${Math.round(((a.strength as number | undefined) ?? 1) * 100)}% strength and ${Math.round(((a.organisation as number | undefined) ?? 1) * 100)}% organisation`; break;
+      case "set_effective_executive": line = `Executive power passes to the ${db.offices.get(v as string)?.title.en ?? v}`; break;
       case "set_focus_tree": line = `Switches to the national focus tree: ${db.focusTrees.get(a.tree as string)?.name ?? a.tree}`; break;
       case "add_timed_modifier": {
         const m = db.modifiers.get(a.modifier as string);

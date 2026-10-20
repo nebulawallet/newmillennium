@@ -8,6 +8,7 @@ import { signal } from "@preact/signals";
 import type { ContentDB } from "../content/compile.ts";
 import type { MapData } from "../render/mapData.ts";
 import type { WorldMap } from "../render/WorldMap.ts";
+import { millerY } from "../render/MapView.ts";
 import type { TabId } from "./tabs.ts";
 import { Clock } from "../sim/clock.ts";
 import { Simulation, simMapFrom, type SimEvent, type SimMap } from "../sim/simulation.ts";
@@ -85,8 +86,19 @@ export class Session {
     screen.value = "game";
     version.value += 1;
     // focus the camera on the player's country
-    const label = this.map.labels.find((l) => l.tag === state.player);
-    if (label) this.world.view.lookAt(label.x, label.y, Math.max(12, Math.min(60, label.extent * 2.2)));
+    if (state.player) this.focusOn(state.player);
+  }
+
+  /** Point the camera at a country: its starting-map label, or the provinces it holds now (armed groups, new countries). */
+  focusOn(tag: string): void {
+    const label = this.map.labels.find((l) => l.tag === tag);
+    if (label) { this.world.view.lookAt(label.x, label.y, Math.max(12, Math.min(60, label.extent * 2.2))); return; }
+    const owners = this.sim?.state.provinceOwner ?? [];
+    const held = this.map.provinces.filter((p) => owners[p.id - 1] === tag);
+    if (!held.length) return;
+    const x = held.reduce((s, p) => s + p.centroid[0], 0) / held.length;
+    const y = held.reduce((s, p) => s + millerY(p.centroid[1]), 0) / held.length;
+    this.world.view.lookAt(x, y, 12);
   }
 
   /** Flags of renamed countries, for the Flag component (only reassigned when they change). */
@@ -104,8 +116,7 @@ export class Session {
     if (e.type !== "coalition_needed") this.mapDirty = true;
     if (e.type === "player_changed") {
       // carry on as the new country: show it and pause so the player sees the change
-      const label = this.map.labels.find((l) => l.tag === e.to);
-      if (label) this.world.view.lookAt(label.x, label.y, Math.max(12, Math.min(60, label.extent * 2.2)));
+      this.focusOn(e.to);
       panel.value = null;
       this.setPaused(true);
       return;

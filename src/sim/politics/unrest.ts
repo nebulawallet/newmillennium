@@ -15,6 +15,7 @@ import { clamp, countryModifiers, effectiveLeader, hashNormal, isAvailable, pers
 import { igActions } from "./interestGroups.ts";
 import { countryProvinces, type SimProvince } from "./voteModel.ts";
 import { capitalProvince } from "../military/military.ts";
+import { executiveOffice } from "./common.ts";
 
 export const REBEL_SUFFIX = "-REB";
 const ARMED = new Set(["military", "security_services"]);
@@ -67,7 +68,7 @@ export function regimeChange(ctx: SimContext, cs: CountryState, ig: string, how:
     if (h && isAvailable(db, h, state.day)) { leader = h; break; }
   }
   if (c) {
-    for (const o of new Set([c.government.effective_executive, c.government.head_of_state_office, c.government.head_of_government_office])) {
+    for (const o of new Set([executiveOffice(db, cs) ?? c.government.effective_executive, c.government.head_of_state_office, c.government.head_of_government_office])) {
       if (db.offices.get(o)?.ex_officio_of) continue;
       cs.offices[o] = [leader];
       cs.officeSince[o] = state.day;
@@ -269,7 +270,7 @@ export function endCivilWar(ctx: SimContext, cs: CountryState, governmentWins: b
 function tryImpeachment(ctx: SimContext, cs: CountryState): void {
   const { db, state } = ctx;
   const c = db.countries.get(cs.tag)?.country;
-  const exec = c?.government.effective_executive;
+  const exec = executiveOffice(db, cs);
   const office = exec ? db.offices.get(exec) : undefined;
   if (!c || !office || (office.selection !== "direct_election" && office.selection !== "electoral_college")) return;
   const ch = c.legislature?.chambers.find((x) => x.elected !== "appointed");

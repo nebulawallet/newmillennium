@@ -48,9 +48,9 @@ Live sources sometimes report allegations or investigations involving real peopl
 
 <!-- AUTO-GENERATED BELOW: run `npm run review-report`; edits below this line are overwritten -->
 
-## Needs review: 605 of 6551 records
+## Needs review: 618 of 6597 records
 
-Countries with politics data: 79 / 212.
+Countries with politics data: 87 / 220.
 
 Countries with no data yet (133): KAZ, KGZ, TJK, TKM, UZB, ATG, BHS, BRB, BLZ, BOL, COL, CRI, CUB, DMA, DOM, ECU, SLV, GRD, GTM, GUY, HTI, HND, JAM, NIC, PAN, PRY, PER, KNA, LCA, VCT, SUR, TTO, URY, VEN, FAR, DZA, BHR, EGY, JOR, KWT, LBY, MRT, MAR, OMN, QAT, SAU, TUN, ARE, YEM, ESH, KUR, AGO, BEN, BWA, BFA, BDI, CPV, CMR, CAF, TCD, COM, COD, COG, CIV, DJI, GNQ, ERI, SWZ, ETH, GAB, GMB, GHA, GIN, GNB, KEN, LSO, LBR, MDG, MWI, MLI, MUS, MOZ, NAM, NER, NGA, RWA, STP, SEN, SYC, SLE, ZAF, SDN, TZA, TGO, UGA, ZMB, ZWE, SSD, SML, UNI, RCD, MLC, BGD, BTN, MDV, NPL, LKA, TEL, BRN, KHM, IDN, LAO, MYS, MMR, PHL, SGP, THA, VNM, TLS, AUS, NZL, FJI, PNG, SLB, VUT, WSM, TON, KIR, TUV, NRU, FSM, MHL, PLW
 
@@ -337,6 +337,14 @@ Countries with no data yet (133): KAZ, KGZ, TJK, TKM, UZB, ATG, BHS, BRB, BLZ, B
 | party | `deu.linke` The Left (Linke) | Wikidata lists a change of co-chair on 2026-06-20 (Jan van Aken succeeded by Luigi Pantisano). Confirm with the party or Wikipedia before adding it. | data/countries/DEU/parties.json |
 | party | `deu.dvu` German People's Union (DVU) | Confirm the 1987 registration as a party and the 2010-2011 merger into the NPD. | data/countries/DEU/parties.json |
 
+### DPR — Donetsk People's Republic (3)
+
+| kind | record | what to check | file |
+|---|---|---|---|
+| country | `DPR` Donetsk People's Republic | Wikidata confirms the Borodai, Zakharchenko and Pushilin terms. Who led the republic from 7 April to 16 May 2014 and from 31 August to 7 September 2018 is not recorded; the Borodai start date is for the prime minister post. Check the Wikipedia DPR article. | data/countries/DPR/country.json |
+| office | `dpr.leader` Head of the Donetsk People's Republic | Wikidata confirms the Borodai, Zakharchenko and Pushilin terms. Who led the republic from 7 April to 16 May 2014 and from 31 August to 7 September 2018 is not recorded; the Borodai start date is for the prime minister post. Check the Wikipedia DPR article. | data/countries/DPR/country.json |
+| calendar | `elections` election calendar | No results recorded; check the article if elections are ever modelled. | data/countries/DPR/elections.json |
+
 ### ESP — Spain (24)
 
 | kind | record | what to check | file |
@@ -525,6 +533,15 @@ Countries with no data yet (133): KAZ, KGZ, TJK, TKM, UZB, ATG, BHS, BRB, BLZ, B
 | election | `indirect_presidential_2010` indirect_presidential 2010-11-11 | The fetched text dates the government-formation agreement to 11 November 2010 and says Talabani would remain President; confirm the date of the parliamentary vote and the vote count. | data/countries/IRQ/elections.json |
 | election | `council_of_representatives_2021` legislative 2021-10-10 | Check that the 2021 election counts as early/snap (the parliament elected in 2018 would have served to 2022); this was not confirmed in the fetched infobox lines. | data/countries/IRQ/elections.json |
 
+### ISG — Islamic State (4)
+
+| kind | record | what to check | file |
+|---|---|---|---|
+| person | `isg.abu_ibrahim_al_hashimi_al_qurashi` Abu Ibrahim al-Hashimi al-Qurashi (b. 1976) | Wikidata gives only a month of birth (October 1976); the year is used. | data/countries/ISG/people.json |
+| person | `isg.abu_al_hasan_al_hashimi_al_qurashi` Abu al-Hasan al-Hashimi al-Qurashi (b. 1980) | His identity is disputed in the sources; Wikidata's birth date (31 January 1980) is reduced to the year. | data/countries/ISG/people.json |
+| person | `isg.abu_al_hussein_al_husseini_al_qurashi` Abu al-Hussein al-Husseini al-Qurashi (b. 1979) | Birth year 1979 from Wikidata; his identity is not firmly established. | data/countries/ISG/people.json |
+| person | `isg.abu_hafs_al_hashimi_al_qurashi` Abu Hafs al-Hashimi al-Qurashi (b. 1985) | Birth year 1985 from Wikidata; his identity is not firmly established. | data/countries/ISG/people.json |
+
 ### ISL — Iceland (1)
 
 | kind | record | what to check | file |
@@ -626,6 +643,14 @@ Countries with no data yet (133): KAZ, KGZ, TJK, TKM, UZB, ATG, BHS, BRB, BLZ, B
 | party | `lie.du` The Independents (DU) | The 2013 election article shows DU contesting the February 2013 election while the infobox gives foundation in 2013; confirm whether the group formed in 2012. Quaderer's leadership dates are not sourced (recorded as lead candidate from 2013). | data/countries/LIE/parties.json |
 | party | `lie.dpl` Democrats for Liechtenstein (DpL) | Rehak's start as leader is set to the founding date; confirm. | data/countries/LIE/parties.json |
 | election | `referendum_2009_12_06` referendum 2009-12-06 | The article text says the 2008 law was approved by 57%, but its results template is captioned 'Overturning the 2008 environmental protection law'; confirm what a 'yes' vote meant. | data/countries/LIE/elections.json |
+
+### LPR — Luhansk People's Republic (3)
+
+| kind | record | what to check | file |
+|---|---|---|---|
+| country | `LPR` Luhansk People's Republic | Wikidata and Wikipedia agree on the three terms; Plotnitsky resigned on 24 November 2017 per Wikipedia, approved 25 November. Brief interim arrangements around the changes are not recorded. | data/countries/LPR/country.json |
+| office | `lpr.leader` Head of the Luhansk People's Republic | Wikidata and Wikipedia agree on the three terms; Plotnitsky resigned on 24 November 2017 per Wikipedia, approved 25 November. Brief interim arrangements around the changes are not recorded. | data/countries/LPR/country.json |
+| calendar | `elections` election calendar | No results recorded; check the article if elections are ever modelled. | data/countries/LPR/elections.json |
 
 ### LTU — Lithuania (15)
 
@@ -879,6 +904,14 @@ Countries with no data yet (133): KAZ, KGZ, TJK, TKM, UZB, ATG, BHS, BRB, BLZ, B
 | chamber | `federation_council` Federation Council | The source confirms 89 subjects x 2 members and ex officio membership before the 2000 reform, but not the occupancy on 1 January 2000. Check whether Chechnya's two seats were filled on that date; if not, change 'appointed' to 176 and add 'vacant': 2. | data/countries/RUS/country.json |
 | election | `duma_2003` legislative 2003-12-07 | The infobox gives LDPR 11.35% while LDPR's list votes (6,944,322) against United Russia's (22,776,294 = 37.56%) imply about 11.45%; 11.45% is stored. Check the official CEC figure. | data/countries/RUS/elections.json |
 | election | `duma_2026` legislative 2026-09-20 | Recent article flagged for copy-editing. Confirm the seat totals and list percentages against the final CEC protocol, and settle turnout (infobox 59.58% vs text 55.66%). | data/countries/RUS/elections.json |
+
+### SDF — Syrian Democratic Forces (3)
+
+| kind | record | what to check | file |
+|---|---|---|---|
+| country | `SDF` Syrian Democratic Forces | The article gives the founding date (10 October 2015) and August 2026 for the dissolution; the day 25 August 2026 comes from the brief and is not confirmed by fetched text. Verify it. | data/countries/SDF/country.json |
+| office | `sdf.leader` General Commander of the SDF | The article gives the founding date (10 October 2015) and August 2026 for the dissolution; the day 25 August 2026 comes from the brief and is not confirmed by fetched text. Verify it. | data/countries/SDF/country.json |
+| calendar | `elections` election calendar | No results recorded; check the article if elections are ever modelled. | data/countries/SDF/elections.json |
 
 ### SMR — San Marino (6)
 

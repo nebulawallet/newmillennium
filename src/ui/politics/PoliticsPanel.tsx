@@ -15,6 +15,7 @@ import { electionNight, version, type Session } from "../session.ts";
 import { tip } from "../tooltip.tsx";
 import { describeModifiers } from "../../sim/scripting/engine.ts";
 import { LawPicker } from "./LawPicker.tsx";
+import { executiveOffice } from "../../sim/politics/common.ts";
 
 const pct = (x: number) => `${(x * 100).toFixed(1)}%`;
 const SPECIAL: Record<string, { label: string; color: string }> = {
@@ -59,7 +60,8 @@ export function PoliticsPanel({ db, state, tag, session }: { db: ContentDB; stat
   if (lawCat) return <LawPicker db={db} session={session} state={state} cs={cs} category={lawCat} onClose={() => setLawCat(null)} />;
 
   const gov = db.governmentTypes.get(cs.govType);
-  const execOffice = db.offices.get(c.government.effective_executive);
+  const execId = executiveOffice(db, cs) ?? c.government.effective_executive;
+  const execOffice = db.offices.get(execId);
   const hosOffice = db.offices.get(c.government.head_of_state_office);
   const exOfficio = (officeId: string | undefined) => {
     const o = officeId ? db.offices.get(officeId) : undefined;
@@ -68,14 +70,14 @@ export function PoliticsPanel({ db, state, tag, session }: { db: ContentDB; stat
     const pid = target ? state.countries[target.tag]?.offices[o.ex_officio_of]?.[0] : null;
     return pid ? (db.people.get(pid) ?? null) : null;
   };
-  const leader = execOffice?.ex_officio_of ? exOfficio(execOffice.id) : holders(db, cs, c.government.effective_executive)[0] ?? null;
+  const leader = execOffice?.ex_officio_of ? exOfficio(execOffice.id) : holders(db, cs, execId)[0] ?? null;
   const hos = hosOffice?.ex_officio_of ? [exOfficio(hosOffice.id)] : holders(db, cs, c.government.head_of_state_office);
   const hog = holders(db, cs, c.government.head_of_government_office);
   const leaderParty = (cs.rulingParties[0] ? db.parties.get(cs.rulingParties[0]) : undefined) ?? (leader?.party ? db.parties.get(leader.party) : undefined);
   const leaderSub = leader ? db.subIdeologies.get(leader.sub_ideology) : undefined;
   const others = [
-    ...(c.government.head_of_state_office !== c.government.effective_executive ? hos.map((p) => ({ p, title: hosOffice?.title.en ?? "Head of state" })) : []),
-    ...(c.government.head_of_government_office !== c.government.effective_executive && c.government.head_of_government_office !== c.government.head_of_state_office
+    ...(c.government.head_of_state_office !== execId ? hos.map((p) => ({ p, title: hosOffice?.title.en ?? "Head of state" })) : []),
+    ...(c.government.head_of_government_office !== execId && c.government.head_of_government_office !== c.government.head_of_state_office
       ? hog.map((p) => ({ p, title: db.offices.get(c.government.head_of_government_office)?.title.en ?? "Head of government" }))
       : []),
   ];

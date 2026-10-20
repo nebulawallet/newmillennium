@@ -1,0 +1,138 @@
+{
+  "tag": "SYO",
+  "name": {
+    "en": "Syrian opposition",
+    "native": "المعارضة السورية",
+    "official": {
+      "en": "National Coalition of Syrian Revolution and Opposition Forces"
+    }
+  },
+  "adjective": "Syrian opposition",
+  "culture_primary": "syrian",
+  "government": {
+    "type": "insurgent_movement",
+    "effective_executive": "syo.leader",
+    "head_of_state_office": "syo.leader",
+    "head_of_government_office": "syo.leader",
+    "constitution": {
+      "term_limit_amendable": true,
+      "emergency_powers": true,
+      "referendum_required_for": []
+    },
+    "note": "The Syrian opposition (rebel coalition) on the map from 19 July 2012 until the fall of Assad on 8 December 2024. The coalition presidency is used as the leader office. The constitution flags are rough approximations."
+  },
+  "offices": [
+    {
+      "id": "syo.leader",
+      "title": {
+        "en": "President of the National Coalition"
+      },
+      "role": "head_of_state_and_government",
+      "power_weight": 0.5,
+      "selection": "religious_council",
+      "succession": {
+        "type": "council_choice"
+      },
+      "holders": [
+        {
+          "person": null,
+          "from": "1999-12-31",
+          "to": "2012-11-11",
+          "vacant_reason": "The National Coalition was founded in November 2012; before that the opposition had no single presidency in the game sense."
+        },
+        {
+          "person": "syo.khatib",
+          "from": "2012-11-11",
+          "to": "2013-04-22",
+          "note": "Table gives 22 April 2013 as the end; the text says he announced his resignation on 24 March 2013."
+        },
+        {
+          "person": "syo.sabra",
+          "from": "2013-04-22",
+          "to": "2013-07-06",
+          "note": "Acting president."
+        },
+        {
+          "person": "syo.jarba",
+          "from": "2013-07-06",
+          "to": "2014-07-09"
+        },
+        {
+          "person": "syo.bahra",
+          "from": "2014-07-09",
+          "to": "2015-01-04"
+        },
+        {
+          "person": "syo.khoja",
+          "from": "2015-01-04",
+          "to": "2016-03-05"
+        },
+        {
+          "person": "syo.abdah",
+          "from": "2016-03-05",
+          "to": "2017-05-06"
+        },
+        {
+          "person": "syo.seif",
+          "from": "2017-05-06",
+          "to": "2018-02-28"
+        },
+        {
+          "person": "syo.mustafa",
+          "from": "2018-02-28",
+          "to": "2019-06-29"
+        },
+        {
+          "person": "syo.abdah",
+          "from": "2019-06-29",
+          "to": "2020-07-12"
+        },
+        {
+          "person": "syo.hariri",
+          "from": "2020-07-12",
+          "to": "2021-07-12"
+        },
+        {
+          "person": "syo.meslet",
+          "from": "2021-07-12",
+          "to": "2023-09-12"
+        },
+        {
+          "person": "syo.bahra",
+          "from": "2023-09-12",
+          "to": "2024-12-08",
+          "note": "Second term; the coalition table gives 12 February 2025 as the end, cut here at the fall of Assad."
+        }
+      ],
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Syrian_National_Coalition",
+          "title": "Wikipedia: National Coalition of Syrian Revolution and Opposition Forces (presidents table)",
+          "accessed": "2026-10-20"
+        }
+      ],
+      "confidence": "verified"
+    }
+  ],
+  "legislature": null,
+  "party_system": "no_parties",
+  "start_2000": {
+    "ruling_parties": [],
+    "ideology_support": {
+      "big_tent": 1
+    },
+    "ideology_support_note": "Gameplay judgement: the whole base is counted under one ideology; not measured data.",
+    "stability": 0.3,
+    "war_support": 0.8
+  },
+  "claims": [],
+  "source": [
+    {
+      "url": "https://en.wikipedia.org/wiki/Syrian_National_Coalition",
+      "title": "Wikipedia: National Coalition of Syrian Revolution and Opposition Forces (presidents table)",
+      "accessed": "2026-10-20"
+    }
+  ],
+  "confidence": "verified",
+  "no_parties_reason": "The Syrian opposition is modelled here as a coalition movement, not a party system."
+}

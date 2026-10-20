@@ -58,9 +58,14 @@ export function rulingSubIdeology(db: ContentDB, cs: CountryState): string | nul
   return exec ? (db.people.get(exec)?.sub_ideology ?? null) : null;
 }
 
+/** The office that holds executive power now: a dated change (set_effective_executive) or the country's `effective_executive`. */
+export function executiveOffice(db: ContentDB, cs: CountryState): string | undefined {
+  return cs.executive ?? db.countries.get(cs.tag)?.country?.government.effective_executive;
+}
+
 /** Person id of the effective executive (follows ex officio links within the state). */
 export function effectiveLeader(db: ContentDB, cs: CountryState, state?: GameState): string | null {
-  const office = db.countries.get(cs.tag)?.country?.government.effective_executive;
+  const office = executiveOffice(db, cs);
   if (!office) return null;
   const o = db.offices.get(office);
   if (o?.ex_officio_of && state) {

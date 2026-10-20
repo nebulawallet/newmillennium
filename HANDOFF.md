@@ -1,6 +1,6 @@
 # Handoff: New Millennium
 
-Read this first when you pick up the project in a new session, with a new agent, or after a break. Last updated 20 October 2026 (Islamic State, Taliban and Islamic Emirate trees; Afghanistan starts as the Taliban and is renamed at the 2021 takeover), after the earlier blue UI, wars of 2000, start dates, playable Taliban and ISIS, armies everywhere and GitHub Pages work, and the four reworks (UI, war, research, construction and market: commits `72b3f71`, `004fa25`, `043b56f`, `c81a5fc`).
+Read this first when you pick up the project in a new session, with a new agent, or after a break. Last updated 20 October 2026 (six more playable armed groups, Iraq's dated executive, a fuller 2003 invasion; before that the Islamic State, Taliban and Islamic Emirate trees), after the earlier blue UI, wars of 2000, start dates, playable Taliban and ISIS, armies everywhere and GitHub Pages work, and the four reworks (UI, war, research, construction and market: commits `72b3f71`, `004fa25`, `043b56f`, `c81a5fc`).
 
 ## What this is
 
@@ -55,7 +55,7 @@ New Millennium is a grand strategy game in the style of Hearts of Iron IV, set f
 - **Direction (17 October 2026):** the game is about the major conflicts of 2000–2026 (Israel–Palestine, Russia–Ukraine, Iraq, Afghanistan, Syria/ISIS, Lebanon). See [docs/CONFLICTS_PLAN.md](docs/CONFLICTS_PLAN.md) and CLAUDE.md "Scope and cost".
 - **All of them are scripted** on sourced dates in `data/events/conflicts.json`, with non-state armed groups on the map (see "Conflicts notes" below). `npx tsx scripts/dev/conflict-trace.ts` prints the whole 2000–2026 timeline in about two minutes; run it after any change to wars, the AI or the conflict data.
 - **Research tiers:** 70 full, 9 light, 133 default. No partial folders remain and nothing is untracked. **No research agents are running.** Ask the user before starting one (Sonnet, medium effort, at most 2–3).
-- **Every check passes:** `npm run check` (191 tests) and the whole-world `npm run validate-data`. The start screen shows no data errors.
+- **Every check passes:** `npm run check` (193 tests) and the whole-world `npm run validate-data`. The start screen shows no data errors.
 - **Speed:** about 3.5 ms per game day over a 10-year soak (median 2.6 ms, p99 21 ms, worst 37 ms) after the reworks; it was 2.4 ms before. The extra comes from the bigger tech tree, the goods market (monthly) and AI construction placement. Profile with `scripts/dev/profile-systems.ts`.
 - **Saves:** the Lebanon map rebuild (`64ec430`) renumbered about 1,400 province ids, so saves from before it load misaligned. GameState is v12 (v10 armies, v11 construction money and the goods market, v12 puppets; all migrate).
 - **Dev server:** another worktree may hold port 5173; `.claude/launch.json` has `dev-alt` on 5181.
@@ -65,6 +65,35 @@ New Millennium is a grand strategy game in the style of Hearts of Iron IV, set f
   - Check every death and every claim dated after June 2026 yourself with `scripts/research/wiki.ts`; remove a death that only Wikidata gives.
   - Scan for allegations, convictions, health claims and loaded words.
   - Agent prompts must forbid blanket process kills (`taskkill /IM node.exe`).
+
+### Playable groups, Iraq's executive, the 2003 invasion (20 October 2026, later)
+
+- **Six more playable armed groups:** Hamas (HAM), Hezbollah (HEZ), the Syrian opposition (SYO), the SDF, and the Donetsk and Luhansk republics (DPR, LPR).
+  - Each has a light-tier country record in `data/countries/<TAG>/` (leaders, laws, interest groups), `country_record: true` in `data/conflicts/armed_groups.json`, and an entry in `data/world/countries.json`.
+  - Each has a small tree of 27–29 focuses (`scripts/dev/focus-trees/gen_groups.py`): organisation, forces, sourced relations, and a defend-or-advance choice. Advance and the counterfactual endings are ALT-only.
+  - Research came from two Sonnet agents at low effort, audited here:
+    - Hamas: filled Yassin and Rantisi in before April 2004 and renamed the office "Leader of Hamas". Khalil al-Hayya since 20 July 2026 is verified on Wikipedia.
+    - Donbas republics: removed unsourced election years.
+    - Fixed several schema and ref errors the agents' own validation missed (it never loaded the new tags).
+  - DPR, LPR and SDF office records are `needs_review`: two short DPR vacancies, and SDF's 25 August 2026 end comes from the conflict event.
+  - Flags: none yet; they show the placeholder (tag in map colour). Downloading the real flags needs the user's go-ahead.
+- **Iraq's executive:**
+  - `CountryState.executive` (effect `set_effective_executive`) overrides `effective_executive`. `executiveOffice(db, cs)` in `src/sim/politics/common.ts` is read by the leader, coalition, confidence, election, coup, regime and UI code, and by scenario-check.
+  - Event `irq_prime_minister_executive` (20 May 2006, Maliki's first cabinet) moves power to the Prime Minister. Test: `tests/executive.test.ts`.
+- **The 2003 invasion (trace with `npx tsx scripts/dev/iraq-2003.ts [--units]`):**
+  - The AI's power estimates now include combat modifiers (`combatFactor` in `fronts.ts`) and allies' armies.
+  - Attackers in a scripted historical war keep the offensive.
+  - `weaken_divisions` halves the Iraqi army's readiness on 20 March (the invasion article: many officers surrendered their units).
+  - Dated occupations, with battle dates from the Wikipedia infoboxes: Nasiriyah 2 April, Kut, Najaf and Samawah 4 April, Basra 6 April (British).
+  - The coalition now holds 6–7 of 16 provinces before Baghdad falls, against 1 before.
+- **Recruitment drives** in the group trees are wartime-only with a 730-day cooldown. Before, AI Hamas reached 23 divisions; now it has 2–7.
+- **Camera:** starting as, or following, a group without a starting-map label centres on the land it holds (`Session.focusOn`).
+- **Checks:**
+  - conflict-trace milestones are unchanged.
+  - scenario-check: 82/82 leaders right in 2014 and 83/83 in 2017, the new groups included.
+  - Soak: no errors.
+  - paths-taken: 0 AI focuses left the historical path.
+  - Speed: about 10% more time in AI and fronts (more offensives); `profile-systems` 1500 days went from 6.8 to 7.6 ms per day.
 
 ### Islamic State, Taliban and Islamic Emirate (20 October 2026)
 
@@ -351,6 +380,7 @@ In game: Space pauses, 1–5 or +/- set speed, Q–P open the tab row (Q is Poli
 
 ## Next steps, in order
 
+0. **Possible next asks:** real flags for the six new groups (ask before downloading); Yemen (light research, ask first); the Iraqi insurgency (IQI) is the last armed group without a country record.
 1. **Focus trees with political paths (the user's chosen next job):** follow [docs/FOCUS_TREES_PLAN.md](docs/FOCUS_TREES_PLAN.md).
    - The user wants countries to be able to "go fascist and stuff". There is no fascist ideology yet, and no focus can change the government.
    - Decided (19 October 2026): the fascist ideology group exists in `data/ideologies` (sub-ideologies fascist, national_socialist and ultranationalist). Alternative paths use real parties only (CLAUDE.md).
@@ -371,14 +401,14 @@ In game: Space pauses, 1–5 or +/- set speed, Q–P open the tab row (Q is Poli
    - The UI must stay HOI4-like: the flag sits inside the top bar and nothing hangs under it.
    - The user wants historical accuracy over squeamishness: real flags, ISIS included.
    - The user expects every important side to be playable and able to recruit and produce.
-   - Possible next asks: make more armed groups playable (Hamas, Hezbollah, the Donbas republics, the Syrian opposition and the SDF still have no country record); give the Iraqi army a sourced size in 2014 (the AI rebuild gives only 5 divisions); build a Rise of the Caliphate focus tree.
-3. **Dated effective executive.** `effective_executive` is static content, so post-2005 Iraq still treats the President as the executive and coalitions form around the PUK. Add a state field, set by an effect on a real date, that `effectiveLeader`, the coalition code and the UI read.
+   - Done: Hamas, Hezbollah, the Donbas republics, the Syrian opposition and the SDF are playable. Still possible: give the Iraqi army a sourced size in 2014 (the AI rebuild gives only 5 divisions); build a Rise of the Caliphate focus tree.
+3. **Dated effective executive: done** (`set_effective_executive`; Iraq from 20 May 2006).
 4. **Yemen: light research?** YEM is the only conflict country still on the default profile (CONFLICTS_PLAN lists it as "maybe"). Ask the user before starting an agent.
 5. **Balance:**
    - Brazil's and Argentina's debt rise to about 72% by 2010, partly because Brazil's starting interest rate (57%) is the World Bank lending rate, not the policy rate.
-   - The 2003 invasion takes only four provinces before the scripted fall of Baghdad.
+   - The 2003 invasion: done (6–7 provinces before Baghdad; see the notes above).
    - Default-profile countries are not playable.
-6. **Map polish:** armed groups have no map labels. Isolated slow days (30–48 ms) remain on the US Electoral College day and the busiest invasion days.
+6. **Map polish:** armed groups have map labels now (labels follow ownership). Isolated slow days (30–48 ms) remain on the US Electoral College day and the busiest invasion days.
 7. **After the reworks:**
    - Dated flags: the mechanism exists (`dated` in `data/world/flags.json`, used for Afghanistan). Iraq (2004, 2008) and Libya (2011) still show today's flag. Use openly licensed SVGs from Wikimedia Commons; the user approved downloading real flags rather than drawing them.
    - Commanders: decide with the user whether to source real commanders (Phase 2 rules apply) or leave the slot empty.

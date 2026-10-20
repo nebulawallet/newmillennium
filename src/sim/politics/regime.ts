@@ -9,6 +9,7 @@ import type { CountryState, GameState } from "../state.ts";
 import { leaveBloc } from "../diplomacy/diplomacy.ts";
 import { initialSchedule } from "./schedule.ts";
 import { clamp, isAvailable } from "./common.ts";
+import { executiveOffice } from "./common.ts";
 
 /** Party statuses from which a party can take power (a banned or exiled party can, a dissolved one cannot). */
 const LIVE = new Set(["active", "extra_parliamentary", "banned", "exiled"]);
@@ -64,7 +65,7 @@ export function installGovernment(ctx: SimContext, cs: CountryState, spec: Insta
   const own = cs.partyLeader[party];
   const leader = named ?? (own && isAvailable(db, own, state.day) ? own : null);
   if (c) {
-    const exec = c.government.effective_executive;
+    const exec = executiveOffice(db, cs) ?? c.government.effective_executive;
     if (!db.offices.get(exec)?.ex_officio_of) { cs.offices[exec] = [leader]; cs.officeSince[exec] = state.day; }
   }
   for (const k of Object.keys(cs.historicalOffices)) cs.historicalOffices[k] = false;

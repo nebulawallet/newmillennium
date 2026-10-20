@@ -1,0 +1,155 @@
+{
+  "tag": "DPR",
+  "name": {
+    "en": "Donetsk People's Republic",
+    "native": "Донецкая Народная Республика",
+    "official": {
+      "en": "Donetsk People's Republic"
+    }
+  },
+  "adjective": "Donetsk",
+  "culture_primary": "russian",
+  "government": {
+    "type": "insurgent_movement",
+    "effective_executive": "dpr.leader",
+    "head_of_state_office": "dpr.leader",
+    "head_of_government_office": "dpr.leader",
+    "constitution": {
+      "term_limit_amendable": true,
+      "emergency_powers": true,
+      "referendum_required_for": []
+    },
+    "note": "A self-declared, internationally unrecognised republic in Donetsk Oblast from 7 April 2014; Russia recognised it on 21 February 2022 and announced its annexation on 30 September 2022. The 'constitution' flags are rough approximations."
+  },
+  "offices": [
+    {
+      "id": "dpr.leader",
+      "title": {
+        "en": "Head of the Donetsk People's Republic"
+      },
+      "role": "head_of_state_and_government",
+      "power_weight": 0.9,
+      "selection": "appointed",
+      "succession": {
+        "type": "council_choice"
+      },
+      "holders": [
+        {
+          "person": null,
+          "from": "1999-12-31",
+          "to": "2014-04-07",
+          "vacant_reason": "The Donetsk People's Republic was declared on 7 April 2014; it did not exist before."
+        },
+        {
+          "person": null,
+          "from": "2014-04-07",
+          "to": "2014-05-16",
+          "vacant_reason": "Who led the republic before the first prime minister took office on 16 May 2014 is not recorded here."
+        },
+        {
+          "person": "dpr.alexander_borodai",
+          "from": "2014-05-16",
+          "to": "2014-08-07",
+          "note": "Chairman of the Council of Ministers (Wikidata)."
+        },
+        {
+          "person": "dpr.alexander_zakharchenko",
+          "from": "2014-08-07",
+          "to": "2018-08-31",
+          "note": "Chairman of the Council of Ministers from 7 August 2014, Head from 4 November 2014 (Wikidata); until 31 August 2018."
+        },
+        {
+          "person": null,
+          "from": "2018-08-31",
+          "to": "2018-09-07",
+          "vacant_reason": "Interim arrangements between 31 August and 7 September 2018 are not recorded here."
+        },
+        {
+          "person": "dpr.denis_pushilin",
+          "from": "2018-09-07",
+          "to": "2022-09-30",
+          "note": "Head from 7 September 2018 (Wikidata, confirmed 20 November 2018); continues as Head of the Donetsk People's Republic as a region of Russia after the annexation of 30 September 2022."
+        }
+      ],
+      "source": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Donetsk_People's_Republic",
+          "title": "Wikipedia: Donetsk People's Republic",
+          "accessed": "2026-10-20"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/Alexander_Zakharchenko",
+          "title": "Wikipedia: Alexander Zakharchenko",
+          "accessed": "2026-10-20"
+        },
+        {
+          "url": "https://www.wikidata.org/wiki/Q16514790",
+          "title": "Wikidata: Denis Pushilin",
+          "accessed": "2026-10-20"
+        },
+        {
+          "url": "https://www.wikidata.org/wiki/Q17488307",
+          "title": "Wikidata: Alexander Zakharchenko",
+          "accessed": "2026-10-20"
+        },
+        {
+          "url": "https://www.wikidata.org/wiki/Q16902077",
+          "title": "Wikidata: Alexander Borodai",
+          "accessed": "2026-10-20"
+        }
+      ],
+      "confidence": "needs_review",
+      "review_note": "Wikidata confirms the Borodai, Zakharchenko and Pushilin terms. Who led the republic from 7 April to 16 May 2014 and from 31 August to 7 September 2018 is not recorded; the Borodai start date is for the prime minister post. Check the Wikipedia DPR article."
+    }
+  ],
+  "legislature": null,
+  "party_system": "no_parties",
+  "start_2000": {
+    "ruling_parties": [],
+    "ideology_support": {
+      "ethno_nationalist": 0.5,
+      "tribal_traditional": 0.1,
+      "marxist_leninist": 0.2,
+      "personalist_authoritarian": 0.2
+    },
+    "ideology_support_note": "Gameplay judgement; the entity did not exist in 2000, so this is the base it would have on appearing.",
+    "stability": 0.5,
+    "war_support": 0.8
+  },
+  "claims": [
+    {
+      "tag": "UKR",
+      "note": "The republic claimed the whole of Donetsk Oblast as it stood within Ukraine."
+    }
+  ],
+  "source": [
+    {
+      "url": "https://en.wikipedia.org/wiki/Donetsk_People's_Republic",
+      "title": "Wikipedia: Donetsk People's Republic",
+      "accessed": "2026-10-20"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Alexander_Zakharchenko",
+      "title": "Wikipedia: Alexander Zakharchenko",
+      "accessed": "2026-10-20"
+    },
+    {
+      "url": "https://www.wikidata.org/wiki/Q16514790",
+      "title": "Wikidata: Denis Pushilin",
+      "accessed": "2026-10-20"
+    },
+    {
+      "url": "https://www.wikidata.org/wiki/Q17488307",
+      "title": "Wikidata: Alexander Zakharchenko",
+      "accessed": "2026-10-20"
+    },
+    {
+      "url": "https://www.wikidata.org/wiki/Q16902077",
+      "title": "Wikidata: Alexander Borodai",
+      "accessed": "2026-10-20"
+    }
+  ],
+  "confidence": "needs_review",
+  "review_note": "Wikidata confirms the Borodai, Zakharchenko and Pushilin terms. Who led the republic from 7 April to 16 May 2014 and from 31 August to 7 September 2018 is not recorded; the Borodai start date is for the prime minister post. Check the Wikipedia DPR article.",
+  "no_parties_reason": "The republic was run by its leadership and held no multi-party competition tracked in this game."
+}
